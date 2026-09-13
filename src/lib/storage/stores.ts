@@ -109,7 +109,7 @@ export const settingsStore = createStore<UserSettings>(
 // KNOWN LIMITATION, deliberately visible: a report stored in localStorage stays
 // on the reader's device. It does not reach an editor. The report form says so
 // in its confirmation. Delivering reports needs a server endpoint, which is a
-// decision with running cost (see docs/decisions.md) — not something to fake
+// decision with running cost (docs/decisions.md, JCE-008) — not something to fake
 // by pretending a local write was "sent".
 
 export const REPORT_CATEGORIES = [
