@@ -1,4 +1,5 @@
 import type { Company } from "@/types/company";
+import { mitsubishiCorporation } from "./mitsubishi-corporation";
 import { nintendo } from "./nintendo";
 import { toyota } from "./toyota";
 
@@ -10,4 +11,4 @@ import { toyota } from "./toyota";
  * Add a company here only after its research log exists and the data integrity
  * suite passes (CLAUDE.md, "Adding or correcting a company").
  */
-export const companies: Company[] = [toyota, nintendo];
+export const companies: Company[] = [toyota, nintendo, mitsubishiCorporation];

@@ -111,16 +111,17 @@ function Spine({ company }: { company: Company }) {
                   <NodeName business={business} />
                 </div>
                 {items.length > 0 && (
+                  {/* Space, not "/" separators: a separator wraps to the start of a line. */}
                   <ul
-                    className="flex flex-wrap gap-x-3 gap-y-0.5 text-sm leading-6 text-muted-foreground sm:pt-3"
+                    className="flex flex-wrap gap-x-5 gap-y-0.5 text-sm leading-6 text-muted-foreground sm:pt-3"
                     aria-label={kind === "children" ? "主な事業" : "主な製品・サービス"}
                   >
-                    {items.slice(0, MAX_LEAVES).map((item, i) => (
-                      <li key={item}>
-                        {i > 0 && <span aria-hidden className="mr-3 text-border">/</span>}
-                        {item}
-                      </li>
+                    {items.slice(0, MAX_LEAVES).map((item) => (
+                      <li key={item}>{item}</li>
                     ))}
+                    {items.length > MAX_LEAVES && (
+                      <li className="figures text-xs leading-6">ほか{items.length - MAX_LEAVES}件</li>
+                    )}
                   </ul>
                 )}
               </div>
