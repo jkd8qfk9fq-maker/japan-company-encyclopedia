@@ -38,6 +38,16 @@ export function FinancialSection({
   const revenueLabels = [...new Set(sorted.map((r) => r.revenueLabel))];
   const netIncomeLabels = [...new Set(sorted.map((r) => r.netIncomeLabel))];
   const sourceIds = [...new Set(sorted.flatMap((r) => r.sourceIds))];
+  const notes = sorted.filter((r) => r.note);
+  // Consecutive years sharing a revenue scope, e.g. "2022年3月期〜2023年3月期：金融事業を含む".
+  const bases = sorted.reduce<{ basis: string; first: string; last: string }[]>((runs, r) => {
+    const basis = r.revenueBasis;
+    if (!basis) return runs;
+    const last = runs.at(-1);
+    if (last && last.basis === basis) last.last = r.fiscalYear;
+    else runs.push({ basis, first: r.fiscalYear, last: r.fiscalYear });
+    return runs;
+  }, []).map((run) => ({ basis: run.basis, years: run.first === run.last ? run.first : `${run.first}〜${run.last}` }));
 
   return (
     <div>
@@ -86,6 +96,18 @@ export function FinancialSection({
         {revenueLabels.length > 1 && (
           <p>売上にあたる項目の名称が年度により異なります（{revenueLabels.join("・")}）。</p>
         )}
+        {bases.length > 1 && (
+          <p>
+            売上の集計範囲が年度により異なります（
+            {bases.map((b) => `${b.years}：${b.basis}`).join("／")}
+            ）。範囲をまたぐ年度の売上は、そのままでは比較できません。
+          </p>
+        )}
+        {notes.map((r) => (
+          <p key={r.periodEnd}>
+            {r.fiscalYear}：{r.note}
+          </p>
+        ))}
         {netIncomeLabels.length > 1 && (
           <p>純利益にあたる項目の名称が年度により異なります（{netIncomeLabels.join("・")}）。</p>
         )}

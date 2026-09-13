@@ -158,6 +158,12 @@ describe.each(companies.map((c) => [c.id, c] as const))("company %s", (_, compan
     }
   });
 
+  it("states the revenue scope on every year or on none", () => {
+    // A scope on some years only would draw a break against "undefined", which says nothing.
+    const withBasis = company.financials.filter((f) => f.revenueBasis !== undefined).length;
+    expect([0, company.financials.length]).toContain(withBasis);
+  });
+
   it("marks an entry with a missing figure as needs-attention", () => {
     // Invariant 1: a null is an explicit, reviewed absence — and it must be visible in admin.
     const hasNull = company.financials.some((f) => f.revenue === null || f.netIncome === null);

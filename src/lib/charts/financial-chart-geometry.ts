@@ -44,8 +44,11 @@ export type ChartGeometry = {
   baselineY: number;
   ticks: { value: number; y: number }[];
   bands: ChartBand[];
-  /** x positions between bands where the accounting standard changes. */
-  standardBreaks: { x: number; before: FinancialRecord; after: FinancialRecord }[];
+  /**
+   * x positions between bands where the series stops being comparable: the
+   * accounting standard changes, or what the revenue figure covers changes.
+   */
+  breaks: { x: number; before: FinancialRecord; after: FinancialRecord; reason: "standard" | "basis" }[];
 };
 
 /** A "nice" step (1, 2, 2.5, 5 × 10^k) giving roughly `count` intervals. */
@@ -151,11 +154,15 @@ export function computeChartGeometry(
     };
   });
 
-  const standardBreaks = sorted.flatMap((record, i) =>
-    i > 0 && record.accountingStandard !== sorted[i - 1].accountingStandard
-      ? [{ x: plot.x + i * bandWidth, before: sorted[i - 1], after: record }]
-      : [],
-  );
+  const breaks = sorted.flatMap((record, i): ChartGeometry["breaks"] => {
+    if (i === 0) return [];
+    const before = sorted[i - 1];
+    const x = plot.x + i * bandWidth;
+    // A standard change is named first: it is the more fundamental break.
+    if (record.accountingStandard !== before.accountingStandard) return [{ x, before, after: record, reason: "standard" }];
+    if ((record.revenueBasis ?? null) !== (before.revenueBasis ?? null)) return [{ x, before, after: record, reason: "basis" }];
+    return [];
+  });
 
-  return { width, height, plot, baselineY, ticks, bands, standardBreaks };
+  return { width, height, plot, baselineY, ticks, bands, breaks };
 }

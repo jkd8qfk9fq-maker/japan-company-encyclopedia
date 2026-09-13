@@ -105,6 +105,22 @@ export type FinancialRecord = Sourced & {
   netIncomeLabel: string;
   currency: "JPY";
   accountingStandard: AccountingStandard;
+  /**
+   * What the revenue figure covers, when that differs across the series.
+   * Sony's latest 有報 shows revenue WITH the financial business for two years
+   * and WITHOUT it (discontinued after the spin-off) for three. Same standard,
+   * same label — and still not comparable. The chart breaks where this value
+   * changes, exactly as it does for an accounting-standard change.
+   * Omit on every record when the scope is consistent.
+   */
+  revenueBasis?: string;
+  /**
+   * A one-sentence explanation a reader needs to read this year correctly
+   * (e.g. a loss caused by an accounting reclassification rather than by the
+   * business). Shown under the chart. It is a claim, so it is covered by this
+   * record's `sourceIds`.
+   */
+  note?: string;
 };
 
 export type HistoryEvent = Sourced & {

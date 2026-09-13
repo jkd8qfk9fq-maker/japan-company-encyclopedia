@@ -62,8 +62,21 @@ describe("computeChartGeometry", () => {
       W,
       H,
     );
-    expect(g.standardBreaks).toHaveLength(1);
-    expect(g.standardBreaks[0].after.fiscalYear).toBe("2022年3月期");
+    expect(g.breaks).toHaveLength(1);
+    expect(g.breaks[0].reason).toBe("standard");
+    expect(g.breaks[0].after.fiscalYear).toBe("2022年3月期");
+  });
+
+  it("marks where what the revenue covers changes, even under one standard", () => {
+    const withScope = (fy: number, basis: string) => ({ ...record(fy, 10, 1), revenueBasis: basis });
+    const g = computeChartGeometry(
+      [withScope(2023, "金融事業を含む"), withScope(2024, "金融事業を除く"), withScope(2025, "金融事業を除く")],
+      W,
+      H,
+    );
+    expect(g.breaks).toHaveLength(1);
+    expect(g.breaks[0].reason).toBe("basis");
+    expect(g.breaks[0].after.fiscalYear).toBe("2024年3月期");
   });
 
   it("caps column width at 24px however wide the chart is", () => {

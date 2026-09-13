@@ -85,8 +85,8 @@ export function FinancialChart({
           </g>
         ))}
 
-        {/* Where the accounting standard changes, the series is not strictly comparable. Say so on the chart. */}
-        {g.standardBreaks.map((br) => (
+        {/* Where the series stops being comparable (standard or revenue scope changes), say so on the chart itself. */}
+        {g.breaks.map((br) => (
           <g key={br.x}>
             <line
               x1={br.x}
@@ -98,7 +98,7 @@ export function FinancialChart({
               shapeRendering="crispEdges"
             />
             <text x={br.x + 6} y={g.plot.y + 10} className="fill-muted-foreground text-[11px]">
-              {STANDARD_SHORT[br.after.accountingStandard]}へ変更
+              {br.reason === "standard" ? `${STANDARD_SHORT[br.after.accountingStandard]}へ変更` : "集計範囲の変更"}
             </text>
           </g>
         ))}
