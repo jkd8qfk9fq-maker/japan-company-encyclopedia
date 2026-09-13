@@ -1,0 +1,106 @@
+import type { Metadata, Viewport } from "next";
+import { Bodoni_Moda, Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
+import { BottomNavigation } from "@/components/navigation/bottom-navigation";
+import { SiteFooter } from "@/components/navigation/site-footer";
+import { SiteHeader } from "@/components/navigation/site-header";
+import { OfflineIndicator } from "@/components/pwa/offline-indicator";
+import { ServiceWorkerRegistration } from "@/components/pwa/service-worker-registration";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+import { STORAGE_KEYS } from "@/lib/storage/storage";
+import "./globals.css";
+
+/*
+ * Three faces, three jobs:
+ *   Noto Sans JP  — reading and interface
+ *   Noto Serif JP — Japanese headlines; the encyclopedia/editorial register
+ *   Bodoni Moda   — Latin wordmarks (TOYOTA, JAPANESE COMPANIES); the magazine register
+ * Japanese glyphs are served in unicode-range slices, so a page downloads only
+ * the characters it uses. Preload is limited to Latin for the same reason.
+ */
+const sans = Noto_Sans_JP({
+  variable: "--font-noto-sans-jp",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const serif = Noto_Serif_JP({
+  variable: "--font-noto-serif-jp",
+  weight: ["500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+  preload: false,
+});
+
+const display = Bodoni_Moda({
+  variable: "--font-bodoni-moda",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  metadataBase: SITE_URL,
+  title: {
+    default: SITE_NAME,
+    template: `%s｜${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  appleWebApp: { capable: true, title: SITE_NAME, statusBarStyle: "default" },
+  icons: {
+    icon: [{ url: "/icons/icon.svg", type: "image/svg+xml" }],
+    apple: "/icons/apple-touch-icon.png",
+  },
+  openGraph: {
+    type: "website",
+    siteName: SITE_NAME,
+    locale: "ja_JP",
+  },
+  formatDetection: { telephone: false },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#fdfdfd" },
+    { media: "(prefers-color-scheme: dark)", color: "#1c1c1c" },
+  ],
+  viewportFit: "cover",
+};
+
+/*
+ * Runs synchronously before first paint so a dark-mode reader never sees a
+ * white flash. It reads the same `user-settings` key the settings page writes;
+ * any failure (blocked storage, bad JSON) falls through to the OS preference.
+ */
+const themeScript = `(function(){try{var t="system";try{var s=JSON.parse(localStorage.getItem(${JSON.stringify(
+  STORAGE_KEYS.settings,
+)})||"{}");if(s&&(s.theme==="light"||s.theme==="dark"))t=s.theme}catch(e){}var d=t==="dark"||(t==="system"&&matchMedia("(prefers-color-scheme: dark)").matches);var r=document.documentElement;r.classList.toggle("dark",d);r.style.colorScheme=d?"dark":"light"}catch(e){}})()`;
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html
+      lang="ja"
+      suppressHydrationWarning
+      className={`${sans.variable} ${serif.variable} ${display.variable} antialiased`}
+    >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
+      <body className="flex min-h-dvh flex-col pb-[calc(3.5rem+env(safe-area-inset-bottom))] md:pb-0">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:bg-foreground focus:px-4 focus:py-2 focus:text-background"
+        >
+          本文へ移動
+        </a>
+        <SiteHeader />
+        <OfflineIndicator />
+        <main id="main" className="flex-1">
+          {children}
+        </main>
+        <SiteFooter />
+        <BottomNavigation />
+        <ServiceWorkerRegistration />
+      </body>
+    </html>
+  );
+}

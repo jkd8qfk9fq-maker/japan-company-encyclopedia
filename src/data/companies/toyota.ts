@@ -1,0 +1,356 @@
+import type { Company } from "@/types/company";
+
+/**
+ * トヨタ自動車 (7203).
+ *
+ * Every figure and claim below is traced, page by page, in
+ * `docs/research/toyota.md`. Page numbers there are the printed page numbers
+ * of the PDF (the "― n ―" footer), not PDF page indices.
+ *
+ * Two things here are easy to "fix" wrongly, so they are called out:
+ *
+ * - The top line is 営業収益, not 売上高. Toyota's consolidated table prints
+ *   営業収益 because it includes financial-services revenue; relabelling it
+ *   would misdescribe what the number contains.
+ * - All five years are IFRS. Toyota's IFRS transition date is 2019-04-01
+ *   (2022年3月期 有報 p.2), so no year in the 2022–2026 window is US GAAP and
+ *   the series has no standard break.
+ */
+export const toyota: Company = {
+  id: "toyota",
+  code: "7203",
+  name: "トヨタ自動車",
+  officialName: "トヨタ自動車株式会社",
+  nameEn: "TOYOTA MOTOR CORPORATION",
+  // Judgement call, recorded in the research log: stripping only the legal
+  // suffix gives "TOYOTA MOTOR"; "TOYOTA" follows the protocol's own example
+  // and the company's usage "TOYOTAブランド" (有報 2026 p.15).
+  shortNameEn: "TOYOTA",
+  description:
+    "トヨタやレクサス、ダイハツのブランドで自動車を設計・製造して世界で販売し、車のローンやリースも提供する会社。",
+  // The 有報 (p.74) also lists New York and London. `Listing` is scoped to
+  // Japanese exchanges by design, so those two are recorded in the research
+  // log rather than here.
+  listings: [
+    { exchange: "tse", market: "プライム" },
+    { exchange: "nse", market: "プレミア" },
+  ],
+
+  industries: [
+    { industryId: "automotive", primary: true },
+    // 金融 is a reportable segment in its own right (有報 2026 p.146).
+    { industryId: "finance" },
+  ],
+
+  // Ordered by FY2026 segment 営業収益 (計): 自動車 45,417,703 > 金融 4,857,115
+  // > その他 1,651,412 百万円. Deliberately flat: the 有報 states Toyota does
+  // not manage any part of the automotive business (domestic/overseas, parts)
+  // as a separate segment (p.49), and no document read describes
+  // sub-businesses, so no hierarchy is invented.
+  businesses: [
+    {
+      id: "automotive",
+      name: "自動車",
+      description:
+        "セダン、ミニバン、コンパクト、SUV、トラックなどの自動車と、その関連部品・用品を設計・製造し、販売しています。国内では全国の販売店を通じて、海外では米国トヨタ自動車販売などの販売会社を通じてお客様に販売しています。",
+      products: [
+        "クラウン",
+        "カローラ",
+        "RAV4",
+        "ヤリス",
+        "カムリ",
+        "ランドクルーザー",
+        "シエンタ",
+        "アルファード",
+        "LS",
+        "RX",
+        "タント",
+      ],
+      customers: [
+        "国内の販売店を通じて車を買うお客様",
+        "トヨタが直接販売する一部の大口顧客",
+        "海外の販売会社を通じて車を買うお客様",
+      ],
+      sourceIds: ["yuho-2026"],
+    },
+    {
+      id: "financial-services",
+      name: "金融",
+      description:
+        "トヨタとその関係会社がつくる自動車などの販売を支えるため、お客様や販売店への融資（ローン）と車両のリースを行っています。国内ではトヨタファイナンス、海外ではトヨタ モーター クレジットなどが提供しています。",
+      products: [
+        "自動車ローン（小売融資）",
+        "車両のリース",
+        "販売店向けの融資（卸売融資）",
+        "クレジットカード",
+      ],
+      customers: ["お客様", "販売店"],
+      sourceIds: ["yuho-2026"],
+    },
+    {
+      // Included because the company says what it is; the 有報 says no more
+      // than this, so neither does the entry.
+      id: "other",
+      name: "その他",
+      description: "情報通信事業などを行っています。",
+      sourceIds: ["yuho-2026"],
+    },
+  ],
+
+  businessModel: {
+    description:
+      "自動車とその部品・用品を設計・製造し、販売店や販売会社を通じて世界のお客様に販売して収益を得ています。あわせて、車を買うお客様や販売店にローンやリースを提供し、金融収益も得ています。",
+    products: [
+      "自動車（セダン、ミニバン、コンパクト、SUV、トラックなど）",
+      "自動車の関連部品・用品",
+      "自動車ローン・リースなどの販売金融",
+    ],
+    customers: [
+      "販売店・販売会社を通じて車を買うお客様",
+      "一部の大口顧客（トヨタが直接販売）",
+      "販売店（金融事業の融資先）",
+    ],
+    revenueSources: [
+      "車両の販売",
+      "部品の販売",
+      "金融事業の金融収益（ローン・リースなど）",
+      "その他の事業（情報通信事業など）",
+    ],
+    flow: [
+      {
+        kind: "company",
+        title: "トヨタ自動車",
+        description:
+          "トヨタと子会社602社、関連会社・共同支配企業159社（2026年3月31日現在）で、自動車事業を中心に金融事業とその他の事業を行っています。",
+      },
+      {
+        kind: "offering",
+        title: "自動車と金融サービス",
+        description:
+          "セダンやSUV、トラックなどの自動車と部品・用品をつくり、あわせて車のローンやリースを提供します。",
+      },
+      {
+        kind: "customer",
+        title: "世界のお客様と販売店",
+        description:
+          "国内は全国の販売店、海外は販売会社を通じてお客様に届けます。2026年3月期の連結販売台数は959万5千台です。",
+      },
+      {
+        kind: "revenue",
+        title: "営業収益",
+        description:
+          "車両や部品などの販売による売上収益と、金融事業の金融収益からなります。自動車事業が営業収益（セグメント間の取引を差し引く前）の87％を占めます（2026年3月期）。",
+      },
+      {
+        kind: "profit",
+        title: "利益",
+        description:
+          "事業別の営業利益は自動車事業が最も大きく、金融事業、その他の事業が続きます（2026年3月期）。",
+      },
+    ],
+    sourceIds: ["yuho-2026"],
+  },
+
+  // Source: 有報 2026年3月期 p.2「主要な経営指標等の推移（１）連結経営指標等」.
+  // Values printed in 百万円, converted × 1,000,000.
+  financials: [
+    {
+      fiscalYear: "2022年3月期",
+      periodEnd: "2022-03-31",
+      revenue: 31_379_507_000_000,
+      revenueLabel: "営業収益",
+      netIncome: 2_850_110_000_000,
+      netIncomeLabel: "親会社の所有者に帰属する当期利益",
+      currency: "JPY",
+      accountingStandard: "ifrs",
+      sourceIds: ["yuho-2026", "yuho-2025", "yuho-2022"],
+    },
+    {
+      fiscalYear: "2023年3月期",
+      periodEnd: "2023-03-31",
+      revenue: 37_154_298_000_000,
+      revenueLabel: "営業収益",
+      netIncome: 2_451_318_000_000,
+      netIncomeLabel: "親会社の所有者に帰属する当期利益",
+      currency: "JPY",
+      accountingStandard: "ifrs",
+      sourceIds: ["yuho-2026", "yuho-2025"],
+    },
+    {
+      fiscalYear: "2024年3月期",
+      periodEnd: "2024-03-31",
+      revenue: 45_095_325_000_000,
+      revenueLabel: "営業収益",
+      netIncome: 4_944_933_000_000,
+      netIncomeLabel: "親会社の所有者に帰属する当期利益",
+      currency: "JPY",
+      accountingStandard: "ifrs",
+      sourceIds: ["yuho-2026", "yuho-2025"],
+    },
+    {
+      fiscalYear: "2025年3月期",
+      periodEnd: "2025-03-31",
+      revenue: 48_036_704_000_000,
+      revenueLabel: "営業収益",
+      netIncome: 4_765_086_000_000,
+      netIncomeLabel: "親会社の所有者に帰属する当期利益",
+      currency: "JPY",
+      accountingStandard: "ifrs",
+      sourceIds: ["yuho-2026", "yuho-2025", "tanshin-2026"],
+    },
+    {
+      fiscalYear: "2026年3月期",
+      periodEnd: "2026-03-31",
+      revenue: 50_684_952_000_000,
+      revenueLabel: "営業収益",
+      netIncome: 3_848_098_000_000,
+      netIncomeLabel: "親会社の所有者に帰属する当期利益",
+      currency: "JPY",
+      accountingStandard: "ifrs",
+      sourceIds: ["yuho-2026", "tanshin-2026"],
+    },
+  ],
+
+  history: [
+    {
+      year: 1937,
+      title: "トヨタ自動車工業を設立",
+      description:
+        "1933年に豊田自動織機製作所（現在の豊田自動織機）の中に自動車部が置かれ、自動車の研究が始まりました。1937年、そこから分離独立してトヨタ自動車工業が設立されました。",
+      significance:
+        "トヨタ自動車の「会社創立」にあたる出来事です。この会社が1982年の合併で社名を変え、現在のトヨタ自動車株式会社になりました。",
+      sourceIds: ["yuho-2026", "official-history-founding"],
+    },
+    {
+      year: 1957,
+      title: "アメリカに販売会社を設立",
+      description:
+        "アメリカに米国トヨタ自動車販売（Toyota Motor Sales, U.S.A.）を設立しました。同じ年、クラウンを対米輸出第1号として輸出しています。",
+      significance:
+        "米国トヨタ自動車販売は今も海外での販売を担う会社の一つです。北米はトヨタの車両販売台数の30.6％を占める主要な市場です（2026年3月期）。",
+      sourceIds: ["yuho-2026", "official-history-founding"],
+    },
+    {
+      year: 1982,
+      title: "工販合併でトヨタ自動車が発足",
+      description:
+        "1950年から、車の販売はトヨタ自動車販売という別の会社が担っていました。1982年にトヨタ自動車工業とトヨタ自動車販売が合併し、社名がトヨタ自動車株式会社になりました。",
+      significance:
+        "つくる会社と売る会社が一つになり、現在の社名「トヨタ自動車株式会社」になりました。",
+      sourceIds: ["yuho-2026", "official-history-growth"],
+    },
+    {
+      year: 1986,
+      title: "アメリカとカナダに生産会社を設立",
+      description:
+        "トヨタ モーター マニュファクチャリング U.S.A.（現在のトヨタ モーター マニュファクチャリング ケンタッキー）と、トヨタ モーター マニュファクチャリング カナダを設立しました。",
+      significance:
+        "ケンタッキーの会社は今も海外で自動車を製造する会社の一つです。2026年3月期、北米で販売した車の74.6％は北米で生産されています。",
+      sourceIds: ["yuho-2026", "official-history-growth"],
+    },
+    {
+      year: 1989,
+      title: "高級車ブランド「レクサス」を設定",
+      description:
+        "高級車ブランドのレクサスを設定し、アメリカでレクサス店の営業を始めました。日本国内でレクサス店の営業が始まったのは2005年です。",
+      significance:
+        "レクサスは今も「トヨタ」「ダイハツ」「GR」などと並ぶ、トヨタのブランドの一つです。",
+      sourceIds: ["official-history-growth", "yuho-2026"],
+    },
+    {
+      year: 1998,
+      title: "ダイハツ工業を子会社化",
+      description:
+        "1967年に業務提携していたダイハツ工業を、株式取得により子会社にしました。",
+      significance:
+        "ダイハツ工業は今、トヨタとともに自動車を主に製造する会社の一つで、2026年3月期の有価証券報告書ではトヨタが議決権の100％を持つ子会社です。",
+      sourceIds: ["yuho-2026", "official-history-growth"],
+    },
+    {
+      year: 2018,
+      title: "モビリティカンパニーへの変革を宣言",
+      description:
+        "アメリカのCESで、モビリティカンパニーへの変革を宣言しました。2020年のCESではWoven Cityを発表しています。",
+      significance:
+        "トヨタは現在もモビリティカンパニーへの変革を掲げ、2025年9月にオフィシャルローンチしたToyota Woven Cityなどに取り組んでいます。",
+      sourceIds: ["official-history-growth", "yuho-2026"],
+    },
+    {
+      year: 2025,
+      title: "日野自動車の経営統合で最終契約",
+      description:
+        "ダイムラートラック社、三菱ふそうトラック・バス、日野自動車との間で、三菱ふそうトラック・バスと日野自動車を統合する最終契約を結びました。2023年5月の基本合意に続くものです。",
+      significance:
+        "この契約に基づき、2026年3月期の有価証券報告書で議決権66.16％の連結子会社とされていた日野自動車は、2026年4月1日にトヨタの連結子会社から外れました。",
+      sourceIds: ["yuho-2026"],
+    },
+  ],
+
+  relatedCompanies: [],
+
+  sources: [
+    {
+      id: "yuho-2026",
+      title: "有価証券報告書（2026年3月期）",
+      publisher: "トヨタ自動車株式会社",
+      url: "https://global.toyota/pages/global_toyota/ir/library/securities-report/archives/archives_2026_03.pdf",
+      publishedAt: "2026-06-10",
+      accessedAt: "2026-09-13",
+    },
+    {
+      id: "tanshin-2026",
+      title: "2026年3月期 決算短信〔IFRS〕（連結）",
+      publisher: "トヨタ自動車株式会社",
+      url: "https://global.toyota/pages/global_toyota/ir/financial-results/2026_4q_summary_jp.pdf",
+      publishedAt: "2026-05-08",
+      accessedAt: "2026-09-13",
+    },
+    {
+      id: "yuho-2025",
+      title: "有価証券報告書（2025年3月期）",
+      publisher: "トヨタ自動車株式会社",
+      url: "https://global.toyota/pages/global_toyota/ir/library/securities-report/archives/archives_2025_03.pdf",
+      publishedAt: "2025-06-18",
+      accessedAt: "2026-09-13",
+    },
+    {
+      id: "yuho-2022",
+      title: "有価証券報告書（2022年3月期）",
+      publisher: "トヨタ自動車株式会社",
+      url: "https://global.toyota/pages/global_toyota/ir/library/securities-report/archives/archives_2022_03.pdf",
+      publishedAt: "2022-06-23",
+      accessedAt: "2026-09-13",
+    },
+    {
+      id: "official-history-founding",
+      title: "創業期｜歴史｜トヨタの歩み",
+      publisher: "トヨタ自動車株式会社",
+      url: "https://global.toyota/jp/company/trajectory-of-toyota/history/01/",
+      publishedAt: "2026-01-30",
+      accessedAt: "2026-09-13",
+    },
+    {
+      id: "official-history-growth",
+      title: "継承と進化｜歴史｜トヨタの歩み",
+      publisher: "トヨタ自動車株式会社",
+      url: "https://global.toyota/jp/company/trajectory-of-toyota/history/02/",
+      publishedAt: "2026-01-30",
+      accessedAt: "2026-09-13",
+    },
+  ],
+
+  // Both judgement calls (Japanese-only listings, shortNameEn) are recorded in
+  // the research log; neither is an unverified fact, so the entry is published.
+  status: { state: "published" },
+
+  revisions: [
+    {
+      date: "2026-09-14",
+      kind: "ai-generated",
+      summary:
+        "有価証券報告書（2026年3月期・2025年3月期・2022年3月期）、2026年3月期決算短信、公式サイト「トヨタの歩み（歴史）」に基づきAIが作成",
+    },
+  ],
+
+  updatedAt: "2026-09-14",
+};

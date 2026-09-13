@@ -1,0 +1,208 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/*
+ * Theme is chosen by a class on <html>, set before first paint by the inline
+ * script in layout.tsx from the reader's `user-settings`. "system" resolves to
+ * the OS preference in that same script, so CSS only ever sees .dark or not.
+ */
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-rule: var(--rule);
+
+  --font-sans: var(--font-noto-sans-jp), "Hiragino Sans", "Yu Gothic UI", system-ui, sans-serif;
+  --font-serif: var(--font-noto-serif-jp), "Hiragino Mincho ProN", "Yu Mincho", serif;
+  --font-display: var(--font-bodoni-moda), var(--font-noto-serif-jp), serif;
+  --font-heading: var(--font-serif);
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+/*
+ * The palette is white, off-white, black and gray, with ONE accent: 藍 (indigo
+ * ink). It is used for links, focus and the net-income line — never for
+ * decoration, and never as a red/green gain/loss signal. Nothing here should
+ * make a page read like a trading screen.
+ */
+:root {
+  --background: oklch(0.995 0 0);
+  --foreground: oklch(0.18 0 0);
+  --paper: oklch(0.972 0.004 85);
+  --ink: oklch(0.43 0.09 258);
+  --rule: oklch(0.18 0 0);
+
+  --card: oklch(1 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.18 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.955 0 0);
+  --secondary-foreground: oklch(0.18 0 0);
+  --muted: oklch(0.955 0 0);
+  /* 0.47 keeps small gray labels above 4.5:1 on both white and paper. */
+  --muted-foreground: oklch(0.47 0 0);
+  --accent: oklch(0.955 0 0);
+  --accent-foreground: oklch(0.18 0 0);
+  --destructive: oklch(0.52 0.19 27);
+  --border: oklch(0.89 0 0);
+  --input: oklch(0.86 0 0);
+  --ring: var(--ink);
+  --chart-1: oklch(0.8 0 0);
+  --chart-2: var(--ink);
+  /*
+   * Financial chart series. Validated with the dataviz palette checker
+   * (lightness band, chroma floor, CVD separation ΔE 25.6, normal-vision ΔE 25.5).
+   * Revenue sits below 3:1 against the surface by design — a light column
+   * behind the darker net-income column — so the chart always carries a
+   * legend, a direct label and a table view as relief.
+   */
+  --chart-revenue: #58a7dc;
+  --chart-net-income: #2e5297;
+  --radius: 0.5rem;
+
+  /* Sticky offsets: the section tab bar sits under the header. */
+  --header-height: 3.5rem;
+}
+
+.dark {
+  --background: oklch(0.155 0 0);
+  --foreground: oklch(0.955 0 0);
+  --paper: oklch(0.195 0.003 85);
+  --ink: oklch(0.78 0.08 255);
+  --rule: oklch(0.955 0 0);
+
+  --card: oklch(0.195 0 0);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.195 0 0);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.955 0 0);
+  --primary-foreground: oklch(0.155 0 0);
+  --secondary: oklch(0.25 0 0);
+  --secondary-foreground: oklch(0.955 0 0);
+  --muted: oklch(0.25 0 0);
+  --muted-foreground: oklch(0.72 0 0);
+  --accent: oklch(0.25 0 0);
+  --accent-foreground: oklch(0.955 0 0);
+  --destructive: oklch(0.7 0.17 25);
+  --border: oklch(1 0 0 / 14%);
+  --input: oklch(1 0 0 / 18%);
+  --ring: var(--ink);
+  --chart-1: oklch(0.42 0 0);
+  --chart-2: var(--ink);
+  /* Selected for the dark surface, not flipped: CVD ΔE 16.2, both >= 3:1. */
+  --chart-revenue: #076798;
+  --chart-net-income: #6d92d6;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    /* Japanese body text needs more leading than Latin to stay readable. */
+    line-height: 1.85;
+    -webkit-text-size-adjust: 100%;
+    scroll-padding-top: calc(var(--header-height) + 3.5rem);
+  }
+  body {
+    @apply bg-background text-foreground;
+    text-rendering: optimizeLegibility;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1.4;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+  }
+}
+
+@layer components {
+  /* Figures align in columns wherever they appear. */
+  .figures {
+    font-variant-numeric: tabular-nums lining-nums;
+  }
+  /* Small spaced Latin label above a section: "BUSINESS", "HISTORY". */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted-foreground);
+  }
+  .wordmark {
+    font-family: var(--font-display);
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    line-height: 0.92;
+    font-optical-sizing: auto;
+  }
+  .prose-ja {
+    font-size: 1.0625rem;
+    line-height: 2;
+    letter-spacing: 0.02em;
+  }
+  .link-ink {
+    color: var(--ink);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 0.25em;
+  }
+  .link-ink:hover {
+    text-decoration-thickness: 2px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

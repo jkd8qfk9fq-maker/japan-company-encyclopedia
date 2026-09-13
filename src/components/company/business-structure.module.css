@@ -1,0 +1,119 @@
+/*
+ * Connector lines for the business structure. Drawn with pseudo-elements so
+ * the diagram is plain HTML lists: readable by a screen reader as a nested
+ * list, printable, and free of client JavaScript.
+ */
+
+/* ---------- Columns: top-down tree, for 2–4 top-level businesses ---------- */
+
+.stem {
+  width: 1px;
+  height: 2rem;
+  margin-inline: auto;
+  background: var(--rule);
+}
+
+.branches {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(var(--n), minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+/* The horizontal bus runs from the centre of the first column to the centre of the last. */
+.branches::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 1px;
+  /* Column centres, accounting for the grid gap. */
+  left: calc((100% - (var(--n) - 1) * 1.25rem) / var(--n) / 2);
+  right: calc((100% - (var(--n) - 1) * 1.25rem) / var(--n) / 2);
+  background: var(--rule);
+}
+
+.branch {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.branch::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 1px;
+  height: 2rem;
+  background: var(--rule);
+}
+
+.leaves {
+  position: relative;
+  margin-top: 1.25rem;
+  padding-top: 0.25rem;
+  text-align: center;
+}
+
+.leaves::before {
+  content: "";
+  position: absolute;
+  top: -1.25rem;
+  left: 50%;
+  width: 1px;
+  height: 1.25rem;
+  background: var(--border);
+}
+
+/* ---------- Spine: left-rail tree, for phones and for 5+ businesses ---------- */
+
+.spine {
+  position: relative;
+  margin-left: 1.5rem;
+  padding-top: 1rem;
+}
+
+.spine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1rem;
+  background: var(--rule);
+}
+
+.row {
+  position: relative;
+  padding: 0.5rem 0 0.5rem 1.75rem;
+}
+
+/* Vertical rail through every row... */
+.row::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: var(--rule);
+}
+
+/* ...ending at the last row's elbow instead of running past it. */
+.row:last-child::before {
+  bottom: auto;
+  height: calc(0.5rem + 1.5rem);
+}
+
+/* Elbow into the node, at the vertical centre of its 3rem-tall name box. */
+.row::after {
+  content: "";
+  position: absolute;
+  top: calc(0.5rem + 1.5rem);
+  left: 0;
+  width: 1.75rem;
+  height: 1px;
+  background: var(--rule);
+}
