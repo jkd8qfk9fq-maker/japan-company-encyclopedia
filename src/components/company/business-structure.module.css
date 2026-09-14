@@ -117,3 +117,30 @@
   height: 1px;
   background: var(--rule);
 }
+
+/* The single-segment node in the spine layout, joined to the root by the rail. */
+.spineVia {
+  position: relative;
+  margin-left: 1.5rem;
+  padding: 1rem 0 0 1.75rem;
+}
+
+.spineVia::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 1px;
+  background: var(--rule);
+}
+
+.spineVia::after {
+  content: "";
+  position: absolute;
+  top: calc(1rem + 1.25rem);
+  left: 0;
+  width: 1.75rem;
+  height: 1px;
+  background: var(--rule);
+}

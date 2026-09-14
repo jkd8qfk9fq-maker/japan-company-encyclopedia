@@ -61,17 +61,33 @@ function NodeName({ business }: { business: Business }) {
   );
 }
 
-function Columns({ company }: { company: Company }) {
-  const n = company.businesses.length;
+/** A single reportable segment drawn between the company and its sub-businesses. */
+function ViaNode({ business }: { business: Business }) {
+  return (
+    <span className="relative z-10 inline-flex min-h-10 items-center rounded-full border border-border bg-background px-4 text-sm">
+      <span className="mr-2 text-xs text-muted-foreground">単一セグメント</span>
+      <span className="font-medium">{business.name}</span>
+    </span>
+  );
+}
+
+function Columns({ company, branches, via }: { company: Company; branches: Business[]; via: Business | null }) {
+  const n = branches.length;
   return (
     <div className="flex flex-col items-center">
       <RootNode company={company} align="center" />
       <div className={styles.stem} aria-hidden />
+      {via && (
+        <>
+          <ViaNode business={via} />
+          <div className={styles.stem} aria-hidden />
+        </>
+      )}
       <ol
         className={cn(styles.branches, "w-full")}
         style={{ "--n": n } as React.CSSProperties}
       >
-        {company.businesses.map((business) => {
+        {branches.map((business) => {
           const { items, kind } = leavesOf(business);
           return (
             <li key={business.id} className={styles.branch}>
@@ -97,12 +113,17 @@ function Columns({ company }: { company: Company }) {
   );
 }
 
-function Spine({ company }: { company: Company }) {
+function Spine({ company, branches, via }: { company: Company; branches: Business[]; via: Business | null }) {
   return (
     <div>
       <RootNode company={company} align="start" />
+      {via && (
+        <div className={styles.spineVia}>
+          <ViaNode business={via} />
+        </div>
+      )}
       <ol className={styles.spine}>
-        {company.businesses.map((business) => {
+        {branches.map((business) => {
           const { items, kind } = leavesOf(business);
           return (
             <li key={business.id} className={styles.row}>
@@ -134,8 +155,17 @@ function Spine({ company }: { company: Company }) {
 }
 
 export function BusinessStructure({ company }: { company: Company }) {
-  const n = company.businesses.length;
-  if (n === 0) return null;
+  if (company.businesses.length === 0) return null;
+
+  // One top-level business with sub-businesses (a company reporting a single
+  // segment, like Tokyo Electron) would otherwise draw one lonely branch and
+  // hide the level that actually says what the company makes. Draw the
+  // segment as an intermediate node and branch from its children instead.
+  // This only changes which existing level is drawn; nothing is added.
+  const only = company.businesses.length === 1 ? company.businesses[0] : null;
+  const via = only && only.children && only.children.length > 0 ? only : null;
+  const branches = via ? via.children! : company.businesses;
+  const n = branches.length;
 
   const fitsColumns = n >= 2 && n <= MAX_COLUMNS;
 
@@ -144,15 +174,15 @@ export function BusinessStructure({ company }: { company: Company }) {
       {fitsColumns ? (
         <>
           <div className="hidden md:block">
-            <Columns company={company} />
+            <Columns company={company} branches={branches} via={via} />
           </div>
           <div className="md:hidden">
-            <Spine company={company} />
+            <Spine company={company} branches={branches} via={via} />
           </div>
         </>
       ) : (
         <div className="mx-auto max-w-3xl">
-          <Spine company={company} />
+          <Spine company={company} branches={branches} via={via} />
         </div>
       )}
       <figcaption
