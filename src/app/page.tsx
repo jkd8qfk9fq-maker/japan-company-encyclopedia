@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { AdSlot } from "@/components/ads/ad-slot";
 import { ReaderTrail } from "@/components/company/reader-trail";
 import { toCompanySummary } from "@/lib/company-summary";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
@@ -86,6 +87,8 @@ export default async function HomePage() {
           </Link>
         </section>
       )}
+
+      <AdSlot placement="home-feature" />
 
       {/* EXPLORE INDUSTRIES */}
       <section aria-labelledby="home-industries" className="mx-auto max-w-6xl px-5 pt-24 md:px-8 md:pt-32">

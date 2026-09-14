@@ -9,6 +9,8 @@ A visual encyclopedia of companies listed on Japanese securities exchanges. It a
 its page (the *3-second comprehension rate*). **The most important component**: the
 company-specific business structure.
 
+The operator's master specification: `docs/master-specification.md`. Departures from it: `docs/decisions.md`.
+
 This is a sibling of the VALLE projects in `../`, **not part of VALLE**. It shares no code,
 database or contract with them. Decision recorded in
 `../company-data-platform/docs/VALLE_DECISIONS.md` (D-040).

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
+import { AdSlot } from "@/components/ads/ad-slot";
 import { BusinessList } from "@/components/company/business-list";
 import { BusinessModel } from "@/components/company/business-model";
 import { CompanyHero } from "@/components/company/company-hero";
@@ -117,6 +118,8 @@ export default async function CompanyPage({ params }: PageProps<"/companies/[com
           <RelatedCompanies relations={company.relatedCompanies} sources={company.sources} />
         </CompanySection>
       )}
+
+      <AdSlot placement="company-bottom" />
 
       <footer className="mx-auto max-w-6xl px-5 md:px-8">
         <div className="border-t border-border pt-8 text-xs leading-6 text-muted-foreground">

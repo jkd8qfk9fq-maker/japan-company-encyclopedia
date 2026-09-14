@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AdSlot } from "@/components/ads/ad-slot";
 import { CompanyCard } from "@/components/company/company-card";
 import { IndustryStructure } from "@/components/industry/industry-structure";
 import { RichText } from "@/components/rich-text/rich-text";
@@ -86,6 +87,8 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
           </div>
         </section>
       )}
+
+      <AdSlot placement="industry-inline" />
 
       <section aria-labelledby="industry-companies" className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24">
         <p className="eyebrow" aria-hidden>Companies</p>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { AdSlot } from "@/components/ads/ad-slot";
 import { RichText } from "@/components/rich-text/rich-text";
 import { SourceList } from "@/components/sources/source-list";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
@@ -89,6 +90,8 @@ export async function FeatureArticle({ feature }: { feature: Feature }) {
             }
           }
         })}
+
+        <AdSlot placement="feature-inline" />
 
         <SourceList sources={feature.sources} className="mt-16 border-t border-border pt-4" />
       </div>
