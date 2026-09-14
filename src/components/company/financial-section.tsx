@@ -4,6 +4,10 @@ import type { AccountingStandard, FinancialRecord } from "@/types/company";
 import type { Source } from "@/types/source";
 import { FinancialChart } from "./financial-chart";
 
+function spanLabel(records: FinancialRecord[]): string {
+  return records.length === 1 ? records[0].fiscalYear : `${records[0].fiscalYear}〜${records.at(-1)!.fiscalYear}`;
+}
+
 const STANDARD_NAME: Record<AccountingStandard, string> = {
   ifrs: "国際会計基準（IFRS）",
   jgaap: "日本基準",
@@ -39,6 +43,10 @@ export function FinancialSection({
   const netIncomeLabels = [...new Set(sorted.map((r) => r.netIncomeLabel))];
   const sourceIds = [...new Set(sorted.flatMap((r) => r.sourceIds))];
   const notes = sorted.filter((r) => r.note);
+  // Years whose two columns measure different perimeters, so their gap is not a margin.
+  const mismatched = sorted.filter(
+    (r) => r.revenueBasis !== undefined && r.netIncomeBasis !== undefined && r.revenueBasis !== r.netIncomeBasis,
+  );
   // Consecutive years sharing a revenue scope, e.g. "2022年3月期〜2023年3月期：金融事業を含む".
   const bases = sorted.reduce<{ basis: string; first: string; last: string }[]>((runs, r) => {
     const basis = r.revenueBasis;
@@ -58,6 +66,9 @@ export function FinancialSection({
             <span aria-hidden className="size-3 rounded-[3px] bg-(--chart-revenue)" />
             {latest.revenueLabel}
           </dt>
+          {latest.revenueBasis && (
+            <dd className="mt-0.5 text-sm font-medium">{latest.revenueBasis}</dd>
+          )}
           <dd className="figures mt-1 font-serif text-[1.75rem] font-semibold md:text-[2rem]">
             {latest.revenue === null ? "確認できず" : formatYen(latest.revenue)}
           </dd>
@@ -68,6 +79,9 @@ export function FinancialSection({
             純利益
             <span className="text-xs">（{latest.netIncomeLabel}）</span>
           </dt>
+          {latest.netIncomeBasis && (
+            <dd className="mt-0.5 text-sm font-medium">{latest.netIncomeBasis}</dd>
+          )}
           <dd className="figures mt-1 font-serif text-[1.75rem] font-semibold md:text-[2rem]">
             {latest.netIncome === null ? "確認できず" : formatYen(latest.netIncome)}
           </dd>
@@ -101,6 +115,12 @@ export function FinancialSection({
             売上の集計範囲が年度により異なります（
             {bases.map((b) => `${b.years}：${b.basis}`).join("／")}
             ）。範囲をまたぐ年度の売上は、そのままでは比較できません。
+          </p>
+        )}
+        {mismatched.length > 0 && (
+          <p className="font-medium text-foreground">
+            {mismatched.length === sorted.length ? "全年度" : spanLabel(mismatched)}は、売上と純利益の集計範囲が異なります（売上：
+            {mismatched.at(-1)!.revenueBasis}／純利益：{mismatched.at(-1)!.netIncomeBasis}）。この期間の2本の棒の差は、利益率を表しません。
           </p>
         )}
         {notes.map((r) => (

@@ -163,6 +163,9 @@ describe.each(companies.map((c) => [c.id, c] as const))("company %s", (_, compan
     // A scope on some years only would draw a break against "undefined", which says nothing.
     const withBasis = company.financials.filter((f) => f.revenueBasis !== undefined).length;
     expect([0, company.financials.length]).toContain(withBasis);
+    // Without the net-income scope, a reader cannot tell whether the two columns are comparable.
+    const withNetIncomeBasis = company.financials.filter((f) => f.netIncomeBasis !== undefined).length;
+    expect(withNetIncomeBasis, "netIncomeBasis must accompany revenueBasis on every year").toBe(withBasis);
   });
 
   it("marks an entry with a missing figure as needs-attention", () => {

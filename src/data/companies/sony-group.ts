@@ -318,6 +318,7 @@ export const sonyGroup: Company = {
       currency: "JPY",
       accountingStandard: "ifrs",
       revenueBasis: "金融事業を含む",
+      netIncomeBasis: "金融事業を含む",
       sourceIds: ["yuho-2026", "yuho-2025"],
     },
     {
@@ -330,6 +331,7 @@ export const sonyGroup: Company = {
       currency: "JPY",
       accountingStandard: "ifrs",
       revenueBasis: "金融事業を含む",
+      netIncomeBasis: "金融事業を含む",
       note: "保険契約の会計基準（IFRS第17号）の適用にともない、修正再表示した値。",
       sourceIds: ["yuho-2026", "yuho-2024"],
     },
@@ -343,6 +345,7 @@ export const sonyGroup: Company = {
       currency: "JPY",
       accountingStandard: "ifrs",
       revenueBasis: "金融事業を含まない（非継続事業として除外）",
+      netIncomeBasis: "金融事業を含む",
       sourceIds: ["yuho-2026"],
     },
     {
@@ -355,6 +358,7 @@ export const sonyGroup: Company = {
       currency: "JPY",
       accountingStandard: "ifrs",
       revenueBasis: "金融事業を含まない（非継続事業として除外）",
+      netIncomeBasis: "金融事業を含む",
       sourceIds: ["yuho-2026", "tanshin-2026"],
     },
     {
@@ -367,6 +371,7 @@ export const sonyGroup: Company = {
       currency: "JPY",
       accountingStandard: "ifrs",
       revenueBasis: "金融事業を含まない（非継続事業として除外）",
+      netIncomeBasis: "金融事業を含む",
       note: "金融事業のスピンオフにともない、金融事業の累積その他の包括利益を損失に振り替えたことによる赤字で、継続事業の当社株主に帰属する純利益は黒字だった。",
       sourceIds: ["yuho-2026", "tanshin-2026"],
     },

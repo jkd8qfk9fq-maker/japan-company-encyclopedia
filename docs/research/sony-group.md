@@ -393,3 +393,18 @@ Regional revenue by customer location, p.163 — used only for the ranking 「�
 14. **`yuho-2023` is listed but uncited**, deliberately (see Documents).
 15. **Rounded or derived amounts in the entry: none.** The entry states rankings only. Every amount in this log
     marked "derived" is my arithmetic. All other amounts are as printed.
+
+## netIncomeBasis (added 2026-09-14, after independent review F-01)
+
+The independent review found that for 2024–2026年3月期 the revenue column is continuing operations only while
+the net-income column is total profit attributable to shareholders, including the financial business
+(非継続事業). The page did not say so, so the gap between the columns read as a margin.
+
+`netIncomeBasis: "金融事業を含む"` is set on all five years.
+
+- Source: yuho-2026 p.1 — the 当社株主に帰属する当期純利益（損失） row is not restated to continuing operations
+  (注5 restates only 売上高及び金融ビジネス収入 and related revenue rows); p.132 連結損益計算書 shows
+  当社株主に帰属する当期純利益（損失） as the sum of 継続事業からの純利益 and 非継続事業からの当期純利益（損失）.
+- 2022–2023年3月期: the financial business was consolidated and not yet discontinued, so both scopes include it.
+- The page now states that for 2024年3月期〜2026年3月期 revenue and net income cover different scopes and the
+  bar gap is not a margin.

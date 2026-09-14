@@ -173,7 +173,7 @@ export function FinancialChart({
       {activeBand && (
         <div
           role="presentation"
-          className="pointer-events-none absolute top-0 z-10 w-max max-w-60 rounded-md border border-border bg-popover px-3 py-2.5 text-sm shadow-md"
+          className="pointer-events-none absolute top-0 z-10 w-max max-w-80 rounded-md border border-border bg-popover px-3 py-2.5 text-sm shadow-md"
           style={{
             left: Math.min(Math.max(activeBand.centerX - 90, 0), Math.max(g.width - 200, 0)),
           }}
@@ -195,6 +195,8 @@ export function FinancialChart({
               </span>
               <span className="text-xs text-muted-foreground">
                 {bar.series === "revenue" ? activeBand.record.revenueLabel : "純利益"}
+                {bar.series === "revenue" && activeBand.record.revenueBasis && `（${activeBand.record.revenueBasis}）`}
+                {bar.series === "netIncome" && activeBand.record.netIncomeBasis && `（${activeBand.record.netIncomeBasis}）`}
               </span>
             </p>
           ))}

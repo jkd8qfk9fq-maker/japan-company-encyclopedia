@@ -115,6 +115,14 @@ export type FinancialRecord = Sourced & {
    */
   revenueBasis?: string;
   /**
+   * What the net-income figure covers, when revenueBasis is set. Sony's net
+   * income INCLUDES the discontinued financial business in every year while
+   * its revenue excludes it from 2024年3月期 — so for those years the two
+   * columns cannot be read as a margin, and the page must say so. Set on all
+   * years whenever revenueBasis is set.
+   */
+  netIncomeBasis?: string;
+  /**
    * A one-sentence explanation a reader needs to read this year correctly
    * (e.g. a loss caused by an accounting reclassification rather than by the
    * business). Shown under the chart. It is a claim, so it is covered by this
