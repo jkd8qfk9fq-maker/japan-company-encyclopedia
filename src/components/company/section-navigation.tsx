@@ -41,9 +41,19 @@ export function SectionNavigation({ sections }: { sections: SectionLink[] }) {
   }, [sections]);
 
   // Keep the active tab visible inside the horizontally scrolling bar.
+  //
+  // Scroll the BAR only. scrollIntoView() was used here first and scrolled the
+  // whole document to bring the bar into view on page load, so every company
+  // page opened already scrolled past its hero — hiding exactly the 3-second
+  // content the page exists to show.
   useEffect(() => {
-    const link = listRef.current?.querySelector<HTMLElement>(`[data-section="${active}"]`);
-    link?.scrollIntoView({ block: "nearest", inline: "nearest" });
+    const list = listRef.current;
+    const link = list?.querySelector<HTMLElement>(`[data-section="${active}"]`);
+    if (!list || !link) return;
+    const linkBox = link.getBoundingClientRect();
+    const listBox = list.getBoundingClientRect();
+    if (linkBox.left < listBox.left) list.scrollBy({ left: linkBox.left - listBox.left - 12 });
+    else if (linkBox.right > listBox.right) list.scrollBy({ left: linkBox.right - listBox.right + 12 });
   }, [active]);
 
   return (

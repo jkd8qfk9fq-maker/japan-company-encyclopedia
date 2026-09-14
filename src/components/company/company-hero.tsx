@@ -21,57 +21,67 @@ const EXCHANGE_NAME: Record<Company["listings"][number]["exchange"], string> = {
 export function CompanyHero({ company }: { company: Company }) {
   const primaryIndustries = [...company.industries].sort((a, b) => Number(b.primary ?? false) - Number(a.primary ?? false));
 
+  // A long wordmark ("MITSUBISHI CORPORATION") wraps to two lines at the size a
+  // short one ("SONY GROUP") can take, and would push the structure down.
+  const wordmarkSize =
+    (company.shortNameEn?.length ?? 0) > 12
+      ? "text-[clamp(2.25rem,8vw,4.25rem)]"
+      : "text-[clamp(2.75rem,11vw,5.5rem)]";
+
   return (
     <section id="overview" aria-labelledby="company-name" className="scroll-mt-28">
-      <div className="mx-auto max-w-6xl px-5 pt-12 md:px-8 md:pt-20">
+      {/*
+        Independent review F-07: the wordmark used to dominate the first viewport
+        and the structure started ~690px down at 1280px wide. The hero now follows
+        the spec's own order — name, official name, one sentence, structure — with
+        identifiers and actions moved below the structure, so the 3-second answer
+        (what it is called, what it does, what it is made of) is above the fold.
+      */}
+      <div className="mx-auto max-w-6xl px-5 pt-8 md:px-8 md:pt-12">
         {company.shortNameEn && (
-          <p
-            aria-hidden
-            className="wordmark text-[clamp(3rem,13vw,8.5rem)] break-words"
-          >
+          <p aria-hidden className={`wordmark break-words ${wordmarkSize}`}>
             {company.shortNameEn}
           </p>
         )}
-        <h1 id="company-name" className="mt-4 font-serif text-[1.75rem] font-semibold tracking-[0.04em] md:text-[2.5rem]">
+        <h1 id="company-name" className="mt-3 font-serif text-[1.625rem] font-semibold tracking-[0.04em] md:text-[2.125rem]">
           {company.name}
         </h1>
-        <p className="mt-1 text-sm text-muted-foreground">{company.officialName}</p>
+        <p className="text-sm text-muted-foreground">{company.officialName}</p>
 
-        <p className="mt-8 max-w-3xl text-[1.25rem] leading-[1.9] md:text-[1.5rem]">
+        <p className="mt-5 max-w-3xl text-[1.1875rem] leading-[1.85] md:text-[1.375rem]">
           <RichText text={company.description} />
         </p>
-
-        <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-muted-foreground">
-          <span className="figures">証券コード {company.code}</span>
-          <span>
-            {company.listings.map((l) => `${EXCHANGE_NAME[l.exchange]}${l.market}`).join("・")}
-          </span>
-          <span className="flex flex-wrap gap-x-3">
-            {primaryIndustries.map((ref) => (
-              <Link key={ref.industryId} href={`/industries/${ref.industryId}`} className="link-ink">
-                {INDUSTRY_LABELS[ref.industryId].name}
-              </Link>
-            ))}
-          </span>
-        </div>
-
-        <div className="mt-6 flex flex-wrap gap-3">
-          <FavoriteButton companyId={company.id} companyName={company.name} />
-          <Link
-            href={`/report?company=${company.id}`}
-            className="inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
-          >
-            <Flag className="size-4" aria-hidden />
-            誤りを報告
-          </Link>
-        </div>
       </div>
 
-      <div className="mx-auto mt-14 max-w-6xl px-5 pb-16 md:mt-20 md:px-8 md:pb-24">
-        <p className="eyebrow mb-8 text-center" aria-hidden>
+      <div className="mx-auto mt-8 max-w-6xl px-5 pb-14 md:mt-10 md:px-8 md:pb-20">
+        <p className="eyebrow mb-5 text-center" aria-hidden>
           Business Structure
         </p>
         <BusinessStructure company={company} />
+
+        <div className="mt-10 flex flex-col gap-4 border-t border-border pt-6 md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
+            <span className="figures">証券コード {company.code}</span>
+            <span>{company.listings.map((l) => `${EXCHANGE_NAME[l.exchange]}${l.market}`).join("・")}</span>
+            <span className="flex flex-wrap gap-x-3">
+              {primaryIndustries.map((ref) => (
+                <Link key={ref.industryId} href={`/industries/${ref.industryId}`} className="link-ink inline-flex min-h-11 items-center">
+                  {INDUSTRY_LABELS[ref.industryId].name}
+                </Link>
+              ))}
+            </span>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <FavoriteButton companyId={company.id} companyName={company.name} />
+            <Link
+              href={`/report?company=${company.id}`}
+              className="inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
+            >
+              <Flag className="size-4" aria-hidden />
+              誤りを報告
+            </Link>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -187,7 +187,7 @@ export function BusinessStructure({ company }: { company: Company }) {
       )}
       <figcaption
         id={`${company.id}-structure-caption`}
-        className="mt-8 text-center text-xs leading-5 text-muted-foreground"
+        className="mt-6 text-center text-xs leading-5 text-muted-foreground"
       >
         {company.name}の事業構造。区分は同社の開示に基づきます。
       </figcaption>
