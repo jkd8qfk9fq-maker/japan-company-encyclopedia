@@ -79,6 +79,15 @@ describe("computeChartGeometry", () => {
     expect(g.breaks[0].after.fiscalYear).toBe("2024年3月期");
   });
 
+  it("does not let a small loss pull the floor far below zero", () => {
+    // Synthetic, Sony-shaped: ~12.5兆 revenue and a ~0.33兆 loss.
+    const g = computeChartGeometry([record(2025, 12_479_620_000_000, -326_865_000_000)], W, H);
+    const floor = g.ticks[0].value;
+    expect(floor).toBeLessThan(0);
+    expect(floor).toBeGreaterThanOrEqual(-2_500_000_000_000);
+    expect(g.ticks.length).toBeLessThanOrEqual(8);
+  });
+
   it("caps column width at 24px however wide the chart is", () => {
     const g = computeChartGeometry([record(2025, 10, 1)], 4000, H);
     expect(g.bands[0].bars[0].width).toBe(24);

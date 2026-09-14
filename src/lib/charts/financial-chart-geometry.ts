@@ -61,6 +61,35 @@ export function niceStep(range: number, count: number): number {
   return nice * magnitude;
 }
 
+const MAX_TICKS = 8;
+
+/**
+ * Pick the nice step whose zero-inclusive domain wastes the least height.
+ *
+ * A single fixed tick count fails on a small loss: Sony's −0.33兆円 beside
+ * 12.5兆円 of revenue produced a 5兆円 step and a −5兆円 floor, spending a
+ * quarter of the chart on empty space below the baseline. Trying a few counts
+ * and keeping the tightest fit (fewest ticks on a tie) fixes that without
+ * ever giving up clean tick values.
+ */
+export function chooseScale(dataMin: number, dataMax: number) {
+  const range = dataMax - dataMin;
+  let best: { step: number; domainMin: number; domainMax: number; waste: number; ticks: number } | null = null;
+  for (const count of [4, 5, 6, 7]) {
+    const step = niceStep(range, count);
+    const domainMax = Math.ceil(dataMax / step) * step || step;
+    const domainMin = Math.floor(dataMin / step) * step;
+    const ticks = Math.round((domainMax - domainMin) / step) + 1;
+    if (ticks > MAX_TICKS) continue;
+    const waste = domainMax - domainMin - range;
+    if (!best || waste < best.waste || (waste === best.waste && ticks < best.ticks)) {
+      best = { step, domainMin, domainMax, waste, ticks };
+    }
+  }
+  // range 0 (e.g. no data) still needs a valid scale.
+  return best ?? { step: 1, domainMin: 0, domainMax: 1 };
+}
+
 /**
  * A column with a rounded data end and a square base. For a negative value
  * the data end is at the bottom, so the rounding flips.
@@ -109,9 +138,7 @@ export function computeChartGeometry(
   // Zero is always inside the domain: a column that does not start at zero misstates its value.
   const dataMax = Math.max(0, ...values);
   const dataMin = Math.min(0, ...values);
-  const step = niceStep(dataMax - dataMin, 4);
-  const domainMax = Math.ceil(dataMax / step) * step || step;
-  const domainMin = Math.floor(dataMin / step) * step;
+  const { step, domainMin, domainMax } = chooseScale(dataMin, dataMax);
 
   const y = (v: number) => plot.y + ((domainMax - v) / (domainMax - domainMin)) * plot.height;
   const baselineY = y(0);
