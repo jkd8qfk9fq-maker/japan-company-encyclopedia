@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 export const metadata: Metadata = {
   title: { default: "管理", template: "%s｜管理" },
@@ -17,10 +18,15 @@ const NAV = [
  * Operational, not decorative. READ-ONLY by design until the operator decides
  * how a correction reaches readers (docs/decisions.md, JCE-009): an editor that
  * changed only the editor's own copy would show a correction as published when
- * it is not. There is no authentication because there is nothing here that is
- * not already public, except reports saved on the viewer's own device.
+ * it is not. It has no authentication, so production builds 404 it unless
+ * ENABLE_ADMIN=true (see the guard below).
  */
 export default function AdminLayout({ children }: LayoutProps<"/admin">) {
+  // Fail closed (review F-05): there is no authentication yet, so a production
+  // build serves /admin only when explicitly enabled. Before enabling it on any
+  // public host, add authentication — required anyway for JCE-009 option (b).
+  if (process.env.NODE_ENV === "production" && process.env.ENABLE_ADMIN !== "true") notFound();
+
   return (
     <div className="mx-auto max-w-6xl px-5 pt-8 pb-8 md:px-8">
       <div className="rounded-md border border-border bg-paper px-4 py-3 text-sm leading-6 text-muted-foreground">

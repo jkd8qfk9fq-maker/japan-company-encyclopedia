@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/navigation/site-header";
 import { OfflineIndicator } from "@/components/pwa/offline-indicator";
 import { ServiceWorkerRegistration } from "@/components/pwa/service-worker-registration";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
-import { STORAGE_KEYS } from "@/lib/storage/storage";
+import { THEME_SCRIPT } from "@/lib/storage/theme-script";
 import "./globals.css";
 
 /*
@@ -66,15 +66,6 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-/*
- * Runs synchronously before first paint so a dark-mode reader never sees a
- * white flash. It reads the same `user-settings` key the settings page writes;
- * any failure (blocked storage, bad JSON) falls through to the OS preference.
- */
-const themeScript = `(function(){try{var t="system";try{var s=JSON.parse(localStorage.getItem(${JSON.stringify(
-  STORAGE_KEYS.settings,
-)})||"{}");if(s&&(s.theme==="light"||s.theme==="dark"))t=s.theme}catch(e){}var d=t==="dark"||(t==="system"&&matchMedia("(prefers-color-scheme: dark)").matches);var r=document.documentElement;r.classList.toggle("dark",d);r.style.colorScheme=d?"dark":"light"}catch(e){}})()`;
-
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
@@ -83,7 +74,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${sans.variable} ${serif.variable} ${display.variable} antialiased`}
     >
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        {/* Sets the theme class before first paint, so a dark-mode reader never sees a white flash. */}
+        <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
       </head>
       <body className="flex min-h-dvh flex-col pb-[calc(3.5rem+env(safe-area-inset-bottom))] md:pb-0">
         <a

@@ -138,6 +138,18 @@ export type ContentReport = {
   status: ReportStatus;
 };
 
+/** A same-origin path of lowercase kebab segments. A second "/" or "\" after the first makes it off-site. */
+const PAGE_PATH_PATTERN = /^\/(?![/\\])[a-z0-9/-]*$/;
+
+export const REPORT_CATEGORY_LABEL: Record<ReportCategory, string> = {
+  "company-information": "企業の基本情報",
+  "business-information": "事業の説明",
+  "financial-information": "売上・利益の数値",
+  history: "歴史",
+  "industry-classification": "業界の分類",
+  other: "その他",
+};
+
 const REPORT_STATUSES: readonly ReportStatus[] = ["open", "investigating", "resolved", "rejected"];
 
 function parseReport(value: unknown): ContentReport | null {
@@ -154,7 +166,8 @@ function parseReport(value: unknown): ContentReport | null {
     featureId: optionalId(v.featureId),
     category: v.category as ReportCategory,
     message: v.message,
-    pagePath: typeof v.pagePath === "string" && v.pagePath.startsWith("/") ? v.pagePath : undefined,
+    // Not merely startsWith("/"): "//example.com" and "/\example.com" are off-site links.
+    pagePath: typeof v.pagePath === "string" && PAGE_PATH_PATTERN.test(v.pagePath) ? v.pagePath : undefined,
     createdAt: v.createdAt,
     status: REPORT_STATUSES.includes(v.status as ReportStatus) ? (v.status as ReportStatus) : "open",
   };

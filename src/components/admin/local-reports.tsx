@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useLocalStore } from "@/hooks/use-local-store";
-import { reportsStore, updateReportStatus, type ReportStatus } from "@/lib/storage/stores";
+import { REPORT_CATEGORY_LABEL, reportsStore, updateReportStatus, type ReportStatus } from "@/lib/storage/stores";
 
 const STATUS_LABEL: Record<ReportStatus, string> = {
   open: "未対応",
@@ -24,7 +24,7 @@ export function LocalReports() {
         <li key={report.id} className="grid gap-3 py-5 md:grid-cols-[1fr_10rem]">
           <div>
             <p className="figures text-xs text-muted-foreground">
-              {report.createdAt.slice(0, 10)} · {report.category}
+              {report.createdAt.slice(0, 10)} · {REPORT_CATEGORY_LABEL[report.category]}
               {report.pagePath && (
                 <>
                   {" · "}

@@ -56,8 +56,10 @@ export function FinancialChart({
       <svg
         width={g.width}
         height={g.height}
-        role="img"
-        aria-label={`${revenueLabel}と${netIncomeLabel}の推移。数値は下の表でも確認できます。`}
+        // Not role="img": that makes descendants presentational, and each year
+        // below is a focusable group with its own label (review F-03).
+        role="group"
+        aria-label={`${revenueLabel}と${netIncomeLabel}の推移。年度ごとにTabキーで移動できます。数値は下の表でも確認できます。`}
         className="block overflow-visible"
         onPointerLeave={() => setActive(null)}
       >

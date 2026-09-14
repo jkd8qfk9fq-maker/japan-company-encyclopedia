@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 import { ReaderTrail } from "@/components/company/reader-trail";
 import { toCompanySummary } from "@/lib/company-summary";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
-import { companyRepository, featureRepository, industryRepository } from "@/lib/repositories";
+import { companyRepository, featureRepository, industryRepository, termRepository } from "@/lib/repositories";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE_EN } from "@/lib/site";
 import { INDUSTRY_IDS } from "@/types/company";
 
@@ -19,10 +19,11 @@ export const metadata = {
  * Explore, each a single idea with room around it.
  */
 export default async function HomePage() {
-  const [companies, features, researchedIndustries] = await Promise.all([
+  const [companies, features, researchedIndustries, terms] = await Promise.all([
     companyRepository.list(),
     featureRepository.list(),
     industryRepository.list(),
+    termRepository.list(),
   ]);
   const summaries = companies.map(toCompanySummary);
   const feature = features[0];
@@ -150,8 +151,8 @@ export default async function HomePage() {
           {[
             { href: "/companies", label: "企業一覧" },
             { href: "/industries", label: "業界一覧" },
-            { href: "/features", label: "特集" },
-            { href: "/terms", label: "用語集" },
+            ...(features.length > 0 ? [{ href: "/features", label: "特集" }] : []),
+            ...(terms.length > 0 ? [{ href: "/terms", label: "用語集" }] : []),
           ].map((link) => (
             <li key={link.href}>
               <Link href={link.href} className="group flex min-h-14 items-center justify-between border-b border-border font-serif text-lg">

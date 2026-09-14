@@ -26,9 +26,14 @@ Memory is not a source. A fact you "know" but cannot find in a document is not w
 
 ### Getting documents
 
+- **`pdftotext -layout` has misaligned rows** in the 主要な経営指標等の推移 table of three of the first five
+  filings (it put 包括利益 where net income belongs). Always read figures with `-raw` and `-table`, confirm they
+  agree, and finish with a script that compares stored values to the extracted text.
+- Some IR hosts (sony.com) return 403 to `curl` without browser headers. That is not a dead link; retry with a
+  browser User-Agent before recording a source as unavailable.
 - Company IR libraries host 有価証券報告書 and 決算短信 as PDFs. Download to your scratchpad
   directory (**never into the repository**) with `curl -L -o`, then extract with
-  `pdftotext -layout <file>.pdf <file>.txt` and read the text. The Read tool can also read PDF pages.
+  `pdftotext -raw` and `pdftotext -table` and read the text. The Read tool can also read PDF pages.
 - The EDINET API needs a subscription key this project does not have. Do not try to obtain one.
 - If a page is JavaScript-rendered and fetches nothing, look for the PDF link instead.
 
@@ -66,6 +71,14 @@ Plain words. Concrete nouns. No investment language.
   node (e.g. `ゲーム&ネットワークサービス` → `ゲーム`).
 - **Order** top-level businesses by segment revenue in the latest 有報, largest first. Record the
   figures you ordered by in the research log.
+- **Reorganised after the fiscal year end?** If the 有報 announces a new segment structure effective after the
+  year it reports, and the next quarterly report already uses it, use the new structure — the entry describes
+  the company as it is. Order by the old segments' revenue mapped onto the new ones, mark any sum as derived,
+  and state the basis in the log (Mitsubishi Corporation, 2026).
+- **Single reportable segment?** Do not invent segments. Use the breakdown the company itself prints —
+  sales categories (Nintendo) or the segment's own revenue split (Tokyo Electron) — and say in the log that it
+  is not a segment breakdown. The diagram draws a single top-level business with children through a
+  「単一セグメント」 node automatically.
 - **`children` only where the company itself describes sub-businesses** (事業の内容, 統合報告書,
   official business pages). Do not invent a hierarchy to make a diagram look fuller. A company
   with flat segments has no children, and that is a correct structure.
@@ -103,6 +116,14 @@ Answers three questions: what does the company provide, who pays for it, how doe
   record the difference.
 - `fiscalYear` label: `2026年3月期` form. `periodEnd`: `2026-03-31`.
 - A value you cannot read with certainty is `null`, and the entry becomes `needs-attention`.
+- **Scope changes** (`revenueBasis`, `netIncomeBasis`): if what revenue covers changes across the five years
+  (a spin-off restated as discontinued operations, an acquisition presented retroactively), set `revenueBasis`
+  on every year and `netIncomeBasis` on every year. The page then breaks the chart and states which years'
+  columns measure different perimeters. Omit both when the scope is consistent.
+- **`note`**: one sourced sentence a reader needs to read a year correctly — a loss caused by an accounting
+  reclassification, a restated value. Not commentary.
+- **Also banned in the entry**: 自己資本利益率, 時価総額, 配当性向, 1株当たり… — the rows printed next to revenue and
+  net income in the same table. The integrity suite rejects them.
 
 ### `history`
 

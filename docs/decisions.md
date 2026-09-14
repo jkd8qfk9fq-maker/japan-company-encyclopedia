@@ -82,3 +82,25 @@ per-section sources, explicit nulls, `needs-attention` status with notes, a data
 that rejects unsourced sections, and revision history. The research agents that produced the seed
 entries each caught and removed their own unsupported claims on re-check — evidence that a
 self-verification pass is necessary, not optional, before anything is published automatically.
+
+### JCE-011 · 2026-09-14 · Accepted — responds to independent review F-07
+**The company hero follows the spec's own order (§18): name, official name, one sentence, structure.**
+Code, market, industries and actions moved below the structure; the wordmark shrank (more for long
+names). Measured afterwards in fresh browser contexts: the structure starts at 430–448px on desktop and
+~430px at 390×844; at 1280×800 all first-level businesses are above the fold for three of five companies,
+3 of 6 for Sony Group and 4 of 7 for Mitsubishi Corporation. The measurement also exposed that every
+company page had been opening scrolled 180–490px down (the section tab bar called `scrollIntoView`); fixed.
+
+### JCE-012 · 2026-09-14 · Accepted — responds to independent review F-01
+**Revenue and net income each carry their scope when either changes across the series.** Sony's net
+income includes the discontinued financial business in every year while its revenue excludes it from
+2024年3月期, so for those years the gap between the columns is not a margin. `netIncomeBasis` is required
+on every year whenever `revenueBasis` is set, and the page says in body text which years' columns
+measure different perimeters. Plotting continuing-operations net income instead was rejected: the 有報's
+five-year table does not print it for every year, so the series would mix sources.
+
+### JCE-013 · 2026-09-14 · Accepted — responds to independent review F-05 and P3-2
+**Two fail-closed guards for production builds.** `/admin` returns 404 unless `ENABLE_ADMIN=true`
+(it has no authentication), and a production build throws without `SITE_URL` rather than publish
+localhost canonical URLs, sitemap and robots. Both follow the principle already used for data: an unset
+precondition stops the build instead of producing something that looks right and is not.

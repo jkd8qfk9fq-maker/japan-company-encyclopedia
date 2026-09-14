@@ -10,9 +10,16 @@ export const SITE_DESCRIPTION =
  * chain ends at localhost only for local development, and the value in use is
  * exported so a test can assert it.
  */
-export const SITE_URL = new URL(
-  process.env.SITE_URL ??
-    (process.env.VERCEL_PROJECT_PRODUCTION_URL
-      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : "http://localhost:3000"),
-);
+function resolveSiteUrl(): string {
+  if (process.env.SITE_URL) return process.env.SITE_URL;
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  // Fail closed (review P3-2): a production build without an origin would
+  // publish a sitemap, robots.txt and canonical URLs pointing at localhost.
+  // For a local production check: SITE_URL=http://localhost:3000 npm run build
+  if (process.env.NODE_ENV === "production") {
+    throw new Error("SITE_URL is not set. Set it to the site's public origin before a production build.");
+  }
+  return "http://localhost:3000";
+}
+
+export const SITE_URL = new URL(resolveSiteUrl());

@@ -3,16 +3,14 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useId, useState } from "react";
-import { addReport, MAX_REPORT_LENGTH, REPORT_CATEGORIES, type ContentReport, type ReportCategory } from "@/lib/storage/stores";
-
-const CATEGORY_LABEL: Record<ReportCategory, string> = {
-  "company-information": "企業の基本情報",
-  "business-information": "事業の説明",
-  "financial-information": "売上・利益の数値",
-  history: "歴史",
-  "industry-classification": "業界の分類",
-  other: "その他",
-};
+import {
+  addReport,
+  MAX_REPORT_LENGTH,
+  REPORT_CATEGORIES,
+  REPORT_CATEGORY_LABEL as CATEGORY_LABEL,
+  type ContentReport,
+  type ReportCategory,
+} from "@/lib/storage/stores";
 
 /**
  * Readers cannot edit content; they can say what is wrong.

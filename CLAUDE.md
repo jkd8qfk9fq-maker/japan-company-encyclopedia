@@ -46,11 +46,18 @@ database or contract with them. Decision recorded in
 
 ```bash
 npm run dev          # http://localhost:3000
-npm run build        # production build — the real check for static params and metadata
+SITE_URL=http://localhost:3000 npm run build   # production build; FAILS without SITE_URL by design
 npm run typecheck    # tsc --noEmit
 npm run lint         # eslint
 npm test             # vitest — includes the data integrity suite
 ```
+
+| Variable | Why |
+|---|---|
+| `SITE_URL` | Required for any production build. Canonical URLs, sitemap and robots use it; without it the build throws rather than publish localhost URLs |
+| `ENABLE_ADMIN` | `/admin` 404s in production unless `true`. It has no authentication — do not enable it on a public host (JCE-009) |
+
+**Gate every commit on exit codes**, not on grepped output: `npx tsc --noEmit -p . && npx eslint src tests && npx vitest run && git commit …`. Two commits on 2026-09-14 went in broken because a command checked `grep`'s status instead.
 
 ---
 

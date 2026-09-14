@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Search, Settings } from "lucide-react";
+import { featureRepository } from "@/lib/repositories";
 import { SITE_NAME } from "@/lib/site";
 import { NavLink } from "./nav-link";
 import { desktopNavigation } from "./navigation-items";
@@ -9,7 +10,12 @@ import { desktopNavigation } from "./navigation-items";
  * content. On mobile it carries only the name — navigation lives in the
  * bottom bar, where a thumb can reach it.
  */
-export function SiteHeader() {
+export async function SiteHeader() {
+  // A top-level item that leads to an empty page is a dead end (review P3-4):
+  // 特集 appears once there is a feature to read.
+  const hasFeatures = (await featureRepository.list()).length > 0;
+  const items = desktopNavigation.filter((item) => item.href !== "/features" || hasFeatures);
+
   return (
     <header className="sticky top-0 z-40 h-(--header-height) border-b border-border/70 bg-background/85 backdrop-blur supports-[backdrop-filter]:bg-background/70">
       <div className="mx-auto flex h-full max-w-6xl items-center justify-between px-5 md:px-8">
@@ -21,11 +27,11 @@ export function SiteHeader() {
         </Link>
 
         <nav aria-label="メイン" className="hidden items-center gap-1 md:flex">
-          {desktopNavigation.map((item) => (
+          {items.map((item) => (
             <NavLink
               key={item.href}
               href={item.href}
-              className="rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+              className="inline-flex min-h-11 items-center rounded-md px-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
               activeClassName="text-foreground font-medium"
             >
               {item.label}

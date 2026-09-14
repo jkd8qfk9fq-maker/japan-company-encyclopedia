@@ -8,12 +8,17 @@
  *
  *   navigations          network-first → cached copy of that page → /offline
  *   /_next/static/*      cache-first (content-hashed, immutable)
- *   /icons/*, manifest   cache-first
+ *   /icons/*, manifest   stale-while-revalidate (not content-hashed, so they must refresh)
  *   everything else      untouched (straight to network)
+ *
+ * The page that REGISTERED the worker was loaded before the worker existed, so
+ * the fetch handler never saw it. On activate, every open same-origin window is
+ * fetched once into the page cache — otherwise the first page a reader opens
+ * (for a search visitor, often the only one) would not be readable offline.
  *
  * Bump VERSION when this strategy changes; old caches are deleted on activate.
  */
-const VERSION = "v1";
+const VERSION = "v2";
 const SHELL_CACHE = `shell-${VERSION}`;
 const PAGE_CACHE = `pages-${VERSION}`;
 const STATIC_CACHE = `static-${VERSION}`;
@@ -36,9 +41,27 @@ self.addEventListener("activate", (event) => {
     caches
       .keys()
       .then((keys) => Promise.all(keys.filter((k) => !keep.has(k)).map((k) => caches.delete(k))))
-      .then(() => self.clients.claim()),
+      .then(() => self.clients.claim())
+      .then(cacheOpenPages),
   );
 });
+
+async function cacheOpenPages() {
+  const windows = await self.clients.matchAll({ type: "window", includeUncontrolled: true });
+  const cache = await caches.open(PAGE_CACHE);
+  await Promise.all(
+    windows.map(async (client) => {
+      const url = new URL(client.url);
+      if (url.origin !== self.location.origin) return;
+      try {
+        const response = await fetch(url.href, { cache: "reload", credentials: "same-origin" });
+        if (response.ok && response.type === "basic") await cache.put(url.href, response);
+      } catch {
+        // Offline at activation: nothing to store, and nothing to break.
+      }
+    }),
+  );
+}
 
 async function trimCache(name, limit) {
   const cache = await caches.open(name);
@@ -67,6 +90,21 @@ async function handleNavigation(request) {
   }
 }
 
+async function handleRevalidated(request) {
+  // Any cache: the shell cache pre-stores the manifest and one icon at install.
+  const cached = await caches.match(request);
+  const refresh = fetch(request)
+    .then((response) => {
+      if (response.ok) {
+        const copy = response.clone();
+        caches.open(STATIC_CACHE).then((cache) => cache.put(request, copy));
+      }
+      return response;
+    })
+    .catch(() => cached ?? Response.error());
+  return cached ?? refresh;
+}
+
 async function handleStatic(request) {
   const cached = await caches.match(request);
   if (cached) return cached;
@@ -90,11 +128,12 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  if (
-    url.pathname.startsWith("/_next/static/") ||
-    url.pathname.startsWith("/icons/") ||
-    url.pathname === "/manifest.webmanifest"
-  ) {
+  if (url.pathname.startsWith("/_next/static/")) {
     event.respondWith(handleStatic(request));
+    return;
+  }
+
+  if (url.pathname.startsWith("/icons/") || url.pathname === "/manifest.webmanifest") {
+    event.respondWith(handleRevalidated(request));
   }
 });

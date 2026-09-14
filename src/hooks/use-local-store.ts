@@ -1,5 +1,3 @@
-"use client";
-
 import { useCallback, useRef, useSyncExternalStore } from "react";
 import { readRaw, subscribe } from "@/lib/storage/storage";
 import type { LocalStore } from "@/lib/storage/stores";

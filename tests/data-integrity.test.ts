@@ -209,7 +209,11 @@ describe.each(companies.map((c) => [c.id, c] as const))("company %s", (_, compan
 
   it("never mentions investment metrics (invariant 4)", () => {
     const text = JSON.stringify(company);
-    for (const banned of ["株価", "PER", "PBR", "ROE", "ROA", "配当利回り", "目標株価", "買い推奨", "売り推奨"]) {
+    for (const banned of [
+      "株価", "PER", "PBR", "ROE", "ROA", "EPS", "配当利回り", "目標株価", "買い推奨", "売り推奨",
+      // Rows printed beside revenue and net income in 主要な経営指標等の推移 (review P3-7).
+      "自己資本利益率", "時価総額", "配当性向", "1株当たり", "１株当たり",
+    ]) {
       expect(text.includes(banned), `contains "${banned}"`).toBe(false);
     }
   });

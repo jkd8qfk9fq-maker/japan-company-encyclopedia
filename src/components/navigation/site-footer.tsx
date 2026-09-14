@@ -1,7 +1,10 @@
 import Link from "next/link";
+import { featureRepository, termRepository } from "@/lib/repositories";
 import { SITE_NAME, SITE_NAME_EN } from "@/lib/site";
 
-export function SiteFooter() {
+export async function SiteFooter() {
+  const [features, terms] = await Promise.all([featureRepository.list(), termRepository.list()]);
+
   return (
     <footer className="mt-24 border-t border-border bg-paper">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-[1.4fr_1fr_1fr] md:px-8">
@@ -14,19 +17,24 @@ export function SiteFooter() {
         </div>
         <nav aria-label="探す">
           <p className="eyebrow">Explore</p>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li><Link className="hover:underline" href="/companies">企業</Link></li>
-            <li><Link className="hover:underline" href="/industries">業界</Link></li>
-            <li><Link className="hover:underline" href="/features">特集</Link></li>
-            <li><Link className="hover:underline" href="/search">検索</Link></li>
+          <ul className="mt-4 text-sm">
+            <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/companies">企業</Link></li>
+            <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/industries">業界</Link></li>
+            {features.length > 0 && (
+              <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/features">特集</Link></li>
+            )}
+            {terms.length > 0 && (
+              <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/terms">用語集</Link></li>
+            )}
+            <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/search">検索</Link></li>
           </ul>
         </nav>
         <nav aria-label="サポート">
           <p className="eyebrow">Support</p>
-          <ul className="mt-4 space-y-2 text-sm">
-            <li><Link className="hover:underline" href="/about">このサービスについて</Link></li>
-            <li><Link className="hover:underline" href="/report">情報の誤りを報告</Link></li>
-            <li><Link className="hover:underline" href="/settings">設定</Link></li>
+          <ul className="mt-4 text-sm">
+            <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/about">このサービスについて</Link></li>
+            <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/report">情報の誤りを報告</Link></li>
+            <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/settings">設定</Link></li>
           </ul>
         </nav>
       </div>
