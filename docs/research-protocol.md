@@ -1,9 +1,12 @@
 # Research protocol — one company entry
 
-How a company entry is researched and written. The output is two files:
+How a company entry is researched and written. The output is three files:
 
-- `src/data/companies/<company-id>.json` — valid against `companySchema` (`src/lib/content/schemas.ts`; type in `src/types/company.ts`)
+- `src/data/companies/<company-id>.json` — valid against `companySchema` (`src/lib/content/schemas.ts`; type in `src/types/company.ts`). Use `src/data/companies/toyota.json` as the model of shape and depth
+- `src/data/revisions/<YYYY-MM-DD>-company-<company-id>-initial.json` — the first revision record (see "Other fields")
 - `docs/research/<company-id>.md` — the research log
+
+The project lead registers the company in `src/data/companies/index.ts` after checking the entry.
 
 **The governing rule is CLAUDE.md invariant 1: no fabrication.** Everything below serves it.
 If this protocol and a deadline disagree, the protocol wins and the entry ships with `null`s and
@@ -107,14 +110,20 @@ Answers three questions: what does the company provide, who pays for it, how doe
 - `netIncome`: profit attributable to owners of the parent — `親会社株主に帰属する当期純利益`
   (J-GAAP) or `親会社の所有者に帰属する当期利益` (IFRS). Record the label verbatim in
   `netIncomeLabel`. **Never** substitute 当期利益 including non-controlling interests.
-- **Units**: tables are usually in 百万円. Convert to whole yen (× 1,000,000) and write the number
-  with numeric separators (`48_036_704_000_000`). Record the original value and unit in the log.
+- **Units**: tables are usually in 百万円. Convert to whole yen (× 1,000,000) — JSON has no numeric
+  separators, so write the digits plainly (`48036704000000`) and check the count of zeros with a script.
+  Record the original value and unit in the log.
 - If the table splits across an accounting-standard change, set `accountingStandard` per year.
   If a year appears under two standards, use the standard the company reports for the later years
   and note it.
 - **Cross-check the latest year against the 決算短信.** If they differ, use the 有報 figure and
   record the difference.
-- `fiscalYear` label: `2026年3月期` form. `periodEnd`: `2026-03-31`.
+- `fiscalYear` label: `2026年3月期` form, using the company's own year-end month (`2026年2月期`,
+  `2025年8月期`). `periodEnd`: the actual last day of that fiscal year. **The latest 有報 is the latest one
+  FILED** — for a company whose year ends in August, that may be for a year that ended a year ago.
+- **Banks and other financial groups** print 経常収益 as their top line, not 売上高. Use it, verbatim, as
+  `revenueLabel`; do not substitute 業務粗利益 or anything computed. Explain in the business model, in plain
+  words and only as far as the 有報 does, what 経常収益 consists of (interest, fees, trading…).
 - A value you cannot read with certainty is `null`, and the entry becomes `needs-attention`.
 - **Scope changes** (`revenueBasis`, `netIncomeBasis`): if what revenue covers changes across the five years
   (a spin-off restated as discontinued operations, an acquisition presented retroactively), set `revenueBasis`
@@ -141,7 +150,7 @@ Answers three questions: what does the company provide, who pays for it, how doe
 | `relatedCompanies` | `[]`. Cross-company relationships are researched in a separate pass |
 | `sources` | Every document used. kebab-case `id`s, e.g. `yuho-2026`, `tanshin-2026`, `official-history`. `accessedAt` = the date you read it. `publishedAt` = the document's date |
 | `status` | `{ state: "published" }`, or `{ state: "needs-attention", notes: [...] }` naming each gap |
-| `revisions` | `[{ date: "<today>", kind: "ai-generated", summary: "<sources used>に基づきAIが作成" }]` |
+| revision | Not a field. Write `src/data/revisions/<today>-company-<company-id>-initial.json`: `{ "id": "<same as file name>", "targetType": "company", "targetId": "<company-id>", "changedAt": "<today YYYY-MM-DD>", "reason": "初版。一次ソースを調査してAIが作成し、リサーチログに根拠を記録した", "summary": "<sources used>に基づきAIが作成" }` |
 | `updatedAt` | Today, `YYYY-MM-DD` |
 
 ---
@@ -175,8 +184,7 @@ Everything left null or left out, and every place you had to choose.
 
 ## 4. Before finishing
 
-1. `npx tsc --noEmit -p .` — fix every error in **your** file. Errors in other files are not yours
-   to fix; other work is happening concurrently.
-2. Every `sourceIds` entry resolves to an id in `sources`.
-3. Re-read each financial figure against the extracted text one more time, digit by digit.
-4. Write only your two files. Do not edit types, other companies, or the index.
+1. `npm run content:validate-file -- src/data/companies/<company-id>.json` must pass: schema, every
+   integrity rule the editor enforces, id = file name, and the initial revision file present.
+2. Re-read each financial figure against the extracted text one more time, digit by digit, with a script.
+3. Write only your three files. Do not edit types, other companies, the index, tests or components.

@@ -14,7 +14,8 @@
     "db:migrate": "node scripts/migrate.mjs",
     "content:validate": "vitest run tests/data-integrity.test.ts",
     "content:check": "npm run content:validate && tsc --noEmit && eslint src tests scripts",
-    "content:diff": "node scripts/content-diff.mjs"
+    "content:diff": "node scripts/content-diff.mjs",
+    "content:validate-file": "node scripts/validate-file.mjs"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
