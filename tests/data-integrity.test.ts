@@ -9,6 +9,7 @@ import { terms } from "@/data/terms";
 import { extractReferences, findMalformedMarkup } from "@/lib/rich-text";
 import type { Business, Company } from "@/types/company";
 import { INDUSTRY_IDS, RELATIONSHIP_KINDS } from "@/types/company";
+import { checkCompany, checkIndustry, checkTerm } from "@/lib/content/integrity";
 import { parseContent, revisionSchema } from "@/lib/content/schemas";
 import type { Revision } from "@/types/revision";
 import type { Source } from "@/types/source";
@@ -296,5 +297,21 @@ describe("revisions", () => {
 
   it("have unique ids", () => {
     expect(new Set(revisions.map((r) => r.id)).size).toBe(revisions.length);
+  });
+});
+
+describe("shared integrity rules (the ones the local editor enforces on save)", () => {
+  const context = { companyIds, termIds, featureIds };
+
+  it.each(companies.map((c) => [c.id, c] as const))("company %s passes", (_, company) => {
+    expect(checkCompany(company, context)).toEqual([]);
+  });
+
+  it.each(industries.map((i) => [i.id, i] as const))("industry %s passes", (_, industry) => {
+    expect(checkIndustry(industry, { ...context, companies })).toEqual([]);
+  });
+
+  it.each(terms.map((t) => [t.id, t] as const))("term %s passes", (_, term) => {
+    expect(checkTerm(term, context)).toEqual([]);
   });
 });
