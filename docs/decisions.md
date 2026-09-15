@@ -104,3 +104,13 @@ five-year table does not print it for every year, so the series would mix source
 (it has no authentication), and a production build throws without `SITE_URL` rather than publish
 localhost canonical URLs, sitemap and robots. Both follow the principle already used for data: an unset
 precondition stops the build instead of producing something that looks right and is not.
+
+### JCE-014 · 2026-09-15 · Accepted — departs from spec §25's example chain
+**In a chain industry, equipment and materials are drawn beside the chain, not inside it.**
+The spec's example is 設計 → 製造装置 → 材料 → 製造 → パッケージ → 最終製品. The authoritative source used
+(経済産業省「半導体に係る安定供給確保を図るための取組方針」, 2025 revision) splits making a semiconductor into
+設計・前工程・後工程 and describes 製造装置・部素材・原料 as what that manufacturing needs — not as steps that
+follow design. Arrows through them would teach an order that does not exist. `IndustryCategory.role`
+(`stage` | `input`) now distinguishes the two; stages are drawn in sequence, inputs under
+「工程を支える産業」. Tokyo Electron is placed in 製造装置; Sony Group in 設計, 前工程 and 後工程, with its
+outsourced logic wafer recorded in the research log.

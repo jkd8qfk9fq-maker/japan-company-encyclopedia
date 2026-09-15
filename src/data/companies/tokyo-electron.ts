@@ -48,7 +48,7 @@ export const tokyoElectron: Company = {
       id: "semiconductor-production-equipment",
       name: "半導体製造装置",
       description:
-        "半導体をつくる工場で使う製造装置を開発・製造・販売し、納入した装置の保守サービスも行っています。東京エレクトロンの事業は、この「半導体製造装置」の1つのセグメントだけで構成されています。",
+        "[[term:semiconductor|半導体]]をつくる工場で使う製造装置を開発・製造・販売し、納入した装置の保守サービスも行っています。東京エレクトロンの事業は、この「[[term:semiconductor-manufacturing-equipment|半導体製造装置]]」の1つの[[term:segment|セグメント]]だけで構成されています。",
       customers: [
         "半導体メーカー",
         "Samsung Electronics Co., Ltd.",
@@ -60,7 +60,7 @@ export const tokyoElectron: Company = {
           id: "new-equipment",
           name: "新規装置",
           description:
-            "新しい半導体製造装置を販売し、お客さまの工場に設置して、仕様に合わせて性能を十分に発揮できるよう調整します。決算説明会資料では、半導体製造装置の新規装置の売上を、用途別に「DRAM」「不揮発性メモリ」「非メモリ（ロジック、ファウンドリ、その他）」に分けて示しています。",
+            "新しい半導体製造装置を販売し、お客さまの工場に設置して、仕様に合わせて性能を十分に発揮できるよう調整します。決算説明会資料では、半導体製造装置の新規装置の売上を、用途別に「DRAM」「不揮発性メモリ」「非メモリ（ロジック、[[term:foundry|ファウンドリ]]、その他）」に分けて示しています。",
           customers: ["半導体メーカー"],
           sourceIds: ["yuho-2026", "presentation-2026"],
           children: [
@@ -69,7 +69,7 @@ export const tokyoElectron: Company = {
               name: "コータ/デベロッパ",
               shortName: "塗布現像",
               description:
-                "ウェーハ（半導体チップのもとになる円い板）に、光に反応する樹脂（フォトレジスト）を均一に塗り、露光機で回路の模様を写したあと、現像液で一部を溶かして取り除き、回路の模様をつくります。このうち「塗る」と「現像する」を担う塗布現像装置です。",
+                "[[term:wafer|ウェーハ]]（半導体チップのもとになる円い板）に、光に反応する樹脂（フォトレジスト）を均一に塗り、露光機で回路の模様を写したあと、現像液で一部を溶かして取り除き、回路の模様をつくります。このうち「塗る」と「現像する」を担う塗布現像装置です。",
               sourceIds: [
                 "official-products",
                 "glossary-silicon-wafer",

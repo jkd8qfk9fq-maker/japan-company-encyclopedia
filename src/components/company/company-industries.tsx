@@ -37,13 +37,18 @@ export async function CompanyIndustries({ company }: { company: Company }) {
             <div className="mt-5">
               <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">業界の中での位置</p>
               <ol className="mt-3 flex flex-wrap items-center gap-2 text-sm">
-                {industry.categories.map((category, i) => {
+                {[
+                  ...industry.categories.filter((c) => c.role !== "input"),
+                  ...industry.categories.filter((c) => c.role === "input"),
+                ].map((category, i, all) => {
+                  const firstInput = category.role === "input" && all[i - 1]?.role !== "input";
                   const here = placements.some((p) => p.id === category.id);
                   return (
                     <li key={category.id} className="flex items-center gap-2">
-                      {i > 0 && industry.structure === "chain" && (
+                      {i > 0 && industry.structure === "chain" && category.role !== "input" && (
                         <ArrowRight aria-hidden className="size-3 text-muted-foreground" />
                       )}
+                      {firstInput && <span className="ml-2 text-xs text-muted-foreground">支える産業：</span>}
                       <span
                         className={
                           here

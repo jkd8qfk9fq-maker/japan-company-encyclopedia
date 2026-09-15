@@ -30,6 +30,7 @@ export async function RichText({ text }: { text: string }) {
           return (
             <TermReference
               key={i}
+              id={term.id}
               label={segment.label}
               term={term.term}
               reading={term.reading}

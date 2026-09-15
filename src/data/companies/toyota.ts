@@ -261,7 +261,7 @@ export const toyota: Company = {
       year: 1998,
       title: "ダイハツ工業を子会社化",
       description:
-        "1967年に業務提携していたダイハツ工業を、株式取得により子会社にしました。",
+        "1967年に業務提携していたダイハツ工業を、株式取得により[[term:subsidiary|子会社]]にしました。",
       significance:
         "ダイハツ工業は今、トヨタとともに自動車を主に製造する会社の一つで、2026年3月期の有価証券報告書ではトヨタが議決権の100％を持つ子会社です。",
       sourceIds: ["yuho-2026", "official-history-growth"],

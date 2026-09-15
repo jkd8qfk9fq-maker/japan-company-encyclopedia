@@ -226,6 +226,8 @@ describe.each(industries.map((i) => [i.id, i] as const))("industry %s", (_, indu
     expectRichTextValid(industry.description, `${industry.id}.description`);
     for (const category of industry.categories) {
       expect(category.id).toMatch(KEBAB);
+      expectRichTextValid(category.description, `${industry.id}.${category.id}.description`);
+      if (category.role === "input") expect(industry.structure, "input categories only exist beside a chain").toBe("chain");
       expectSourced(category.sourceIds, industry.sources, `${industry.id}.${category.id}`);
       for (const companyId of category.companyIds) {
         const company = companies.find((c) => c.id === companyId);

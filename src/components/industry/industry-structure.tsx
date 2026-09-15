@@ -17,7 +17,7 @@ function Stage({
   industry: Industry;
   byId: Map<string, Company>;
 }) {
-  const isChain = industry.structure === "chain";
+  const isChain = industry.structure === "chain" && index >= 0;
   const placed = category.companyIds.map((id) => byId.get(id)).filter((c): c is Company => !!c);
   return (
     <div className="grid gap-4 rounded-md border border-border bg-background p-5 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:gap-8 md:p-7">
@@ -70,22 +70,44 @@ function Stage({
 export function IndustryStructure({ industry, companies }: { industry: Industry; companies: Company[] }) {
   const byId = new Map(companies.map((c) => [c.id, c]));
   const isChain = industry.structure === "chain";
+  const stages = industry.categories.filter((c) => c.role !== "input");
+  const inputs = industry.categories.filter((c) => c.role === "input");
 
   return isChain ? (
-    <ol aria-label={`${industry.name}の流れ`}>
-      {industry.categories.map((category, i) => (
-        <Fragment key={category.id}>
-          {i > 0 && (
-            <li aria-hidden className="flex h-10 items-center justify-center text-muted-foreground">
-              <ArrowDown className="size-5" />
+    <div>
+      <ol aria-label={`${industry.name}ができるまでの流れ`}>
+        {stages.map((category, i) => (
+          <Fragment key={category.id}>
+            {i > 0 && (
+              <li aria-hidden className="flex h-10 items-center justify-center text-muted-foreground">
+                <ArrowDown className="size-5" />
+              </li>
+            )}
+            <li>
+              <Stage category={category} index={i} industry={industry} byId={byId} />
             </li>
-          )}
-          <li>
-            <Stage category={category} index={i} industry={industry} byId={byId} />
-          </li>
-        </Fragment>
-      ))}
-    </ol>
+          </Fragment>
+        ))}
+      </ol>
+      {inputs.length > 0 && (
+        <section aria-labelledby={`${industry.id}-inputs`} className="mt-14">
+          <h3 id={`${industry.id}-inputs`} className="font-serif text-xl font-semibold">
+            工程を支える産業
+          </h3>
+          <p className="mt-2 text-[0.9375rem] leading-7 text-muted-foreground">
+            流れの中の一つの段階ではなく、上の工程で使われる装置や材料をつくる産業です。
+          </p>
+          {/* One column, like the stages: two-up cards left ~10 characters per line. */}
+          <ul className="mt-6 space-y-4">
+            {inputs.map((category) => (
+              <li key={category.id}>
+                <Stage category={category} index={-1} industry={industry} byId={byId} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+    </div>
   ) : (
     <ul className="grid gap-4 lg:grid-cols-2">
       {industry.categories.map((category, i) => (

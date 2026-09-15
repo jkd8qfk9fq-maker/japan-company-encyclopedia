@@ -13,8 +13,18 @@ import type { Source, Sourced } from "./source";
 export type IndustryCategory = Sourced & {
   id: string;
   name: string;
+  /** Rich text. */
   description: string;
   companyIds: string[];
+  /**
+   * In a `chain` industry: `stage` (default) is a step in the sequence and is
+   * drawn with arrows; `input` is an industry the steps depend on (equipment,
+   * materials) and is drawn beside the chain, not inside it. Without this, an
+   * arrow from 設計 to 製造装置 would teach an order that does not exist —
+   * 経済産業省 describes equipment and materials as what manufacturing needs,
+   * not as steps after design.
+   */
+  role?: "stage" | "input";
 };
 
 export type Industry = Sourced & {

@@ -9,11 +9,13 @@ import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover
  * definition itself is rendered on the server and passed in.
  */
 export function TermReference({
+  id,
   label,
   term,
   reading,
   description,
 }: {
+  id: string;
   label: string;
   term: string;
   reading?: string;
@@ -34,8 +36,8 @@ export function TermReference({
         <p className="mt-2 font-serif text-lg font-semibold leading-snug">{term}</p>
         {reading && <p className="text-xs text-muted-foreground">{reading}</p>}
         <p className="mt-3 text-sm leading-7">{description}</p>
-        <Link href="/terms" className="link-ink mt-3 inline-flex min-h-8 items-center text-xs">
-          用語一覧
+        <Link href={`/terms#${id}`} className="link-ink mt-3 inline-flex min-h-11 items-center text-xs">
+          用語集で見る
         </Link>
       </PopoverContent>
     </Popover>

@@ -204,7 +204,7 @@ export const nintendo: Company = {
       year: 1980,
       title: "アメリカに現地法人を設立",
       description:
-        "アメリカ・ニューヨーク州に現地法人Nintendo of America Inc.を設立した。1982年にワシントン州で新たに設立した同名の法人がこれを吸収合併し、現在の連結子会社となっている。",
+        "アメリカ・ニューヨーク州に現地法人Nintendo of America Inc.を設立した。1982年にワシントン州で新たに設立した同名の法人がこれを吸収合併し、現在の[[term:consolidated-subsidiary|連結子会社]]となっている。",
       significance:
         "Nintendo of America Inc.は今もグループの主な販売会社のひとつ。2026年3月期は米大陸の売上高が9,352億円で、日本・欧州などを上回る最大の地域だった。",
       sourceIds: ["yuho-2026", "official-history"],
