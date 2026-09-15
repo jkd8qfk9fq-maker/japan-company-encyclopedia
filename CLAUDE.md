@@ -50,6 +50,15 @@ variables, and never reference them in the application. Decision recorded in
 
 ---
 
+## Working with the operator: live preview
+
+**While implementing, keep a live preview open in a separate browser window** (operator request,
+2026-09-15). At the start of any build work: run `npm run dev` in the background on port 3000 and open
+the page being worked on in the default browser (Windows: `Start-Process http://localhost:3000/<path>`).
+Leave it running — Next.js hot-reloads as files change — and tell the operator which URL shows the change.
+If port 3000 is taken, find out what holds it before using another port. Production builds can run
+alongside it.
+
 ## Commands
 
 ```bash
