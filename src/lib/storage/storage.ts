@@ -16,7 +16,6 @@ export const STORAGE_KEYS = {
   favorites: "company-favorites",
   recentlyViewed: "recently-viewed-companies",
   settings: "user-settings",
-  reports: "content-reports",
 } as const;
 
 export type StorageKey = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];

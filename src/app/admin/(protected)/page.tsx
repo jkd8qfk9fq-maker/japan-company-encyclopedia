@@ -1,17 +1,19 @@
 import Link from "next/link";
-import { LocalReportCount } from "@/components/admin/local-report-count";
 import { companyRepository } from "@/lib/repositories";
+import { getReportRepository } from "@/lib/reports";
 import { formatDateJa } from "@/lib/utils/format";
 
 export default async function AdminDashboard() {
   const companies = await companyRepository.list();
+  const reports = getReportRepository();
+  const activeReports = reports ? await reports.count({ statuses: ["open", "investigating"] }) : null;
   const attention = companies.filter((c) => c.status.state === "needs-attention");
   const recent = [...companies].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)).slice(0, 8);
 
   const stats = [
     { label: "掲載企業", value: <>{companies.length}</>, href: "/admin/companies" },
     { label: "要確認", value: <>{attention.length}</>, href: "/admin/companies" },
-    { label: "未対応の報告（この端末）", value: <LocalReportCount />, href: "/admin/reports" },
+    { label: "対応中の報告", value: <>{activeReports ?? "—"}</>, href: "/admin/reports" },
   ];
 
   return (

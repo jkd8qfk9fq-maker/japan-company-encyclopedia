@@ -55,7 +55,7 @@ have no honest home in the spec's list.
 built and rejected after viewing the rendered page: at desktop width each column held about eight
 Japanese characters per line.
 
-### JCE-008 · 2026-09-14 · OPEN — needs the operator
+### JCE-008 · 2026-09-14 · RESOLVED 2026-09-15 (operator) — see JCE-015
 **Reports do not reach anyone yet.** Spec §46–47 and §54 describe reports flowing to admin. With
 static data and no server, a report can only be saved in the reader's localStorage, where no editor
 will ever see it. The form says so plainly rather than pretending it was sent.
@@ -63,7 +63,7 @@ Delivering reports needs a server-side store, which has **recurring cost** — a
 Options: (a) a hosted database or form backend; (b) a repository issue per report via a serverless
 function (no database, needs a token and a repository); (c) email via a transactional mail service.
 
-### JCE-009 · 2026-09-14 · OPEN — needs the operator
+### JCE-009 · 2026-09-14 · RESOLVED 2026-09-15 (operator): git-based
 **Admin corrections cannot reach readers without a persistence decision.** Spec §48–51 describes an
 admin editor whose corrections appear to everyone with revision history. Content is static modules
 today, so an in-browser editor could only change the editor's own copy — a correction that looks
@@ -99,9 +99,9 @@ on every year whenever `revenueBasis` is set, and the page says in body text whi
 measure different perimeters. Plotting continuing-operations net income instead was rejected: the 有報's
 five-year table does not print it for every year, so the series would mix sources.
 
-### JCE-013 · 2026-09-14 · Accepted — responds to independent review F-05 and P3-2
-**Two fail-closed guards for production builds.** `/admin` returns 404 unless `ENABLE_ADMIN=true`
-(it has no authentication), and a production build throws without `SITE_URL` rather than publish
+### JCE-013 · 2026-09-14 · Accepted — responds to independent review F-05 and P3-2 (admin part superseded by JCE-015)
+**Two fail-closed guards for production builds.** `/admin` returned 404 unless `ENABLE_ADMIN=true`
+(it had no authentication; replaced by password login in JCE-015), and a production build throws without `SITE_URL` rather than publish
 localhost canonical URLs, sitemap and robots. Both follow the principle already used for data: an unset
 precondition stops the build instead of producing something that looks right and is not.
 
@@ -114,3 +114,34 @@ follow design. Arrows through them would teach an order that does not exist. `In
 (`stage` | `input`) now distinguishes the two; stages are drawn in sequence, inputs under
 「工程を支える産業」. Tokyo Electron is placed in 製造装置; Sony Group in 設計, 前工程 and 後工程, with its
 outsourced logic wafer recorded in the research log.
+
+### JCE-015 · 2026-09-15 · Accepted (operator) — resolves JCE-008 and JCE-009
+**Readers' reports are stored on the server and read in a password-protected admin. Corrections are git-based.**
+
+The operator is the only editor, and the site is meant for other readers too. First instinct was to keep
+reports in the reader's localStorage and have the form say they reached the editor; that would have been
+true only for reports the operator filed on their own device, and false for every other reader. Instead:
+
+- **Storage.** `POST` via a Server Action → Postgres (`DATABASE_URL`; schema in `db/migrations/`).
+  Development without a database uses `.data/content-reports.json` (gitignored). Production without a
+  database refuses the report and tells the reader so — nothing is "received" into a place nobody reads.
+- **Only now may the form say 「編集者に届きました」**, because it is true.
+- **Abuse.** Every field goes through `validateReportInput` (the only gate; the form's checks are
+  convenience). Page paths are rebuilt from the validated company id, never taken from the post. A hidden
+  honeypot field; 10 reports per sender per hour, keyed by an HMAC of the client address — the address itself
+  is never stored. The database repeats the validation as CHECK constraints.
+- **Admin authentication.** One password (the operator), scrypt-hashed; a stateless HMAC session cookie
+  `admin-session` (HttpOnly, SameSite=Lax, path `/admin`, 12 h). `requireAdmin()` runs in the protected
+  layout AND in every admin Server Action, because actions are reachable by direct POST. Missing settings
+  close the admin. Login attempts are throttled in memory — best effort on serverless; the password length
+  (≥ 12, enforced by the hash script) and scrypt cost are the real defence. Admin routes are forced dynamic:
+  an early return without reading the cookie had let the build prerender them.
+- **Hash format uses ":" not "$".** Next.js expands `$NAME` in .env files; a `$`-separated hash was
+  silently corrupted and the right password never matched. Found by the end-to-end test, now pinned by a unit
+  test.
+- **Corrections (JCE-009 → git-based).** Admin corrections will be produced as changes to `src/data/` with a
+  `Revision` appended, published by deploying. Not yet built.
+- **Removed:** the `content-reports` localStorage key (spec §42) — superseded by server storage.
+- **Verified end to end** (dev server, real browser): unauthenticated `/admin` → login; report submitted
+  and confirmed; wrong password rejected; login; report listed; status changed; logout re-locks. Production
+  build without settings: admin closed, report refused with a visible message, no confirmation shown.

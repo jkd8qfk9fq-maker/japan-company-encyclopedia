@@ -36,7 +36,7 @@ database or contract with them. Decision recorded in
 6. **kebab-case for every external name**: file names, folder names, route segments, data ids,
    localStorage keys. TypeScript identifiers (types, components, functions) follow normal
    TypeScript conventions — `BusinessStructure` lives in `business-structure.tsx`.
-7. **`localStorage` is for user-local state only** (favorites, recently viewed, settings, reports),
+7. **`localStorage` is for user-local state only** (favorites, recently viewed, settings),
    and only through `src/lib/storage/`. Company content never depends on it — it is static data in
    `src/data/`, rendered on the server, and read only through the repositories in `src/lib/repositories/`.
 8. **Server Components by default.** A `"use client"` directive needs a reason (interaction,
@@ -52,12 +52,15 @@ SITE_URL=http://localhost:3000 npm run build   # production build; FAILS without
 npm run typecheck    # tsc --noEmit
 npm run lint         # eslint
 npm test             # vitest — includes the data integrity suite
+npm run admin:hash-password   # prints ADMIN_PASSWORD_HASH and ADMIN_SESSION_SECRET
+npm run db:migrate            # applies db/migrations to DATABASE_URL
 ```
 
 | Variable | Why |
 |---|---|
 | `SITE_URL` | Required for any production build. Canonical URLs, sitemap and robots use it; without it the build throws rather than publish localhost URLs |
-| `ENABLE_ADMIN` | `/admin` 404s in production unless `true`. It has no authentication — do not enable it on a public host (JCE-009) |
+| `DATABASE_URL` | Where reader reports are stored (Postgres; `npm run db:migrate`). Unset in development → `.data/content-reports.json`. Unset in production → the report form refuses to send |
+| `ADMIN_PASSWORD_HASH` / `ADMIN_SESSION_SECRET` | Admin login, from `npm run admin:hash-password`. Either missing → `/admin` is closed. Copy `.env.example` to `.env.local` for development |
 
 **Gate every commit on exit codes**, not on grepped output: `npx tsc --noEmit -p . && npx eslint src tests && npx vitest run && git commit …`. Two commits on 2026-09-14 went in broken because a command checked `grep`'s status instead.
 
