@@ -15,6 +15,9 @@ export interface ReportRepository {
   /** Newest first. */
   list(options?: { statuses?: readonly ReportStatus[] }): Promise<ContentReport[]>;
   count(options?: { statuses?: readonly ReportStatus[] }): Promise<number>;
+  get(id: string): Promise<ContentReport | null>;
   /** Returns false when no report has that id. */
   updateStatus(id: string, status: ReportStatus): Promise<boolean>;
+  /** Empty string clears the note. Returns false when no report has that id. */
+  updateNote(id: string, note: string): Promise<boolean>;
 }

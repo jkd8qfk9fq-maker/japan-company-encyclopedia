@@ -62,7 +62,10 @@ export default async function AdminReports({ searchParams }: PageProps<"/admin/r
                   )}
                 </p>
                 {/* Text, never HTML: a report is untrusted input from anyone. */}
-                <p className="mt-2 text-sm leading-7 whitespace-pre-wrap">{report.message}</p>
+                <p className="mt-2 line-clamp-4 text-sm leading-7 whitespace-pre-wrap">{report.message}</p>
+                <Link href={`/admin/reports/${report.id}`} className="link-ink mt-1 inline-flex min-h-8 items-center text-xs">
+                  詳細・出典の確認・メモ{report.adminNote && "（メモあり）"}
+                </Link>
               </div>
               <form action={updateReportStatus} className="flex items-end gap-2">
                 <input type="hidden" name="id" value={report.id} />

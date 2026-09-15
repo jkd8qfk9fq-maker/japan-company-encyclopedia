@@ -2,7 +2,7 @@
 
 How a company entry is researched and written. The output is two files:
 
-- `src/data/companies/<company-id>.ts` — typed as `Company` (`src/types/company.ts`)
+- `src/data/companies/<company-id>.json` — valid against `companySchema` (`src/lib/content/schemas.ts`; type in `src/types/company.ts`)
 - `docs/research/<company-id>.md` — the research log
 
 **The governing rule is CLAUDE.md invariant 1: no fabrication.** Everything below serves it.

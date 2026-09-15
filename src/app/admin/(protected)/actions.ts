@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { endSession, requireAdmin } from "@/lib/admin/session";
 import { getReportRepository } from "@/lib/reports";
-import { isReportStatus } from "@/lib/reports/report-types";
+import { isReportStatus, MAX_ADMIN_NOTE_LENGTH } from "@/lib/reports/report-types";
 
 export async function logout(): Promise<void> {
   await endSession();
@@ -20,6 +20,16 @@ export async function updateReportStatus(form: FormData): Promise<void> {
   const repository = getReportRepository();
   if (!repository) return;
   await repository.updateStatus(id, status);
-  revalidatePath("/admin/reports");
-  revalidatePath("/admin");
+  revalidatePath("/admin", "layout");
+}
+
+export async function updateReportNote(form: FormData): Promise<void> {
+  await requireAdmin();
+  const id = form.get("id");
+  const note = form.get("note");
+  if (typeof id !== "string" || typeof note !== "string" || note.length > MAX_ADMIN_NOTE_LENGTH) return;
+  const repository = getReportRepository();
+  if (!repository) return;
+  await repository.updateNote(id, note);
+  revalidatePath("/admin", "layout");
 }

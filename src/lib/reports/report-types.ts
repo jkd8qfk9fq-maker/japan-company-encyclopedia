@@ -43,6 +43,7 @@ export const REPORT_STATUS_LABEL: Record<ReportStatus, string> = {
 };
 
 export const MAX_REPORT_LENGTH = 2000;
+export const MAX_ADMIN_NOTE_LENGTH = 4000;
 
 export type ContentReport = {
   id: string;
@@ -55,6 +56,8 @@ export type ContentReport = {
   pagePath?: string;
   createdAt: string;
   status: ReportStatus;
+  /** The editor's correction notes. Admin only; never set from the public form. */
+  adminNote?: string;
 };
 
 export type ReportInput = Pick<ContentReport, "companyId" | "industryId" | "featureId" | "category" | "message" | "pagePath">;

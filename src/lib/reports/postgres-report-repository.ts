@@ -11,8 +11,11 @@ type Row = {
   message: string;
   page_path: string | null;
   status: string;
+  admin_note: string | null;
   created_at: Date;
 };
+
+const COLUMNS = "id, company_id, industry_id, feature_id, category, message, page_path, status, admin_note, created_at";
 
 /**
  * Postgres (any provider reachable by a DATABASE_URL — Neon's free plan is
@@ -36,6 +39,7 @@ export class PostgresReportRepository implements ReportRepository {
       pagePath: row.page_path ?? undefined,
       status: isReportStatus(row.status) ? row.status : "open",
       createdAt: row.created_at.toISOString(),
+      adminNote: row.admin_note ?? undefined,
     };
   }
 
@@ -43,7 +47,7 @@ export class PostgresReportRepository implements ReportRepository {
     const { rows } = await this.pool.query<Row>(
       `insert into content_reports (id, company_id, industry_id, feature_id, category, message, page_path, submitter_hash)
        values (gen_random_uuid(), $1, $2, $3, $4, $5, $6, $7)
-       returning id, company_id, industry_id, feature_id, category, message, page_path, status, created_at`,
+       returning ${COLUMNS}`,
       [input.companyId ?? null, input.industryId ?? null, input.featureId ?? null, input.category, input.message, input.pagePath ?? null, submitterHash],
     );
     return PostgresReportRepository.toReport(rows[0]);
@@ -60,13 +64,11 @@ export class PostgresReportRepository implements ReportRepository {
   async list(options?: { statuses?: readonly ReportStatus[] }): Promise<ContentReport[]> {
     const { rows } = options?.statuses
       ? await this.pool.query<Row>(
-          `select id, company_id, industry_id, feature_id, category, message, page_path, status, created_at
-           from content_reports where status = any($1) order by created_at desc limit 500`,
+          `select ${COLUMNS} from content_reports where status = any($1) order by created_at desc limit 500`,
           [options.statuses],
         )
       : await this.pool.query<Row>(
-          `select id, company_id, industry_id, feature_id, category, message, page_path, status, created_at
-           from content_reports order by created_at desc limit 500`,
+          `select ${COLUMNS} from content_reports order by created_at desc limit 500`,
         );
     return rows.map(PostgresReportRepository.toReport);
   }
@@ -78,9 +80,26 @@ export class PostgresReportRepository implements ReportRepository {
     return Number(rows[0].n);
   }
 
+  /** A malformed id would make Postgres throw on the uuid cast; treat it as "not found". */
+  private static isUuid(id: string) {
+    return /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id);
+  }
+
+  async get(id: string): Promise<ContentReport | null> {
+    if (!PostgresReportRepository.isUuid(id)) return null;
+    const { rows } = await this.pool.query<Row>(`select ${COLUMNS} from content_reports where id = $1`, [id]);
+    return rows[0] ? PostgresReportRepository.toReport(rows[0]) : null;
+  }
+
+  async updateNote(id: string, note: string): Promise<boolean> {
+    if (!PostgresReportRepository.isUuid(id)) return false;
+    const trimmed = note.trim();
+    const result = await this.pool.query("update content_reports set admin_note = $1, updated_at = now() where id = $2", [trimmed === "" ? null : trimmed, id]);
+    return (result.rowCount ?? 0) > 0;
+  }
+
   async updateStatus(id: string, status: ReportStatus): Promise<boolean> {
-    // A malformed id would make Postgres throw on the uuid cast; treat it as "not found".
-    if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) return false;
+    if (!PostgresReportRepository.isUuid(id)) return false;
     const result = await this.pool.query("update content_reports set status = $1, updated_at = now() where id = $2", [status, id]);
     return (result.rowCount ?? 0) > 0;
   }

@@ -99,3 +99,20 @@ describe("FileReportRepository", () => {
     expect(JSON.parse(await readFile(path, "utf8"))).toHaveLength(3); // reading never rewrites
   });
 });
+
+describe("FileReportRepository notes", () => {
+  it("stores, reads and clears a correction note", async () => {
+    const dir = await mkdtemp(join(tmpdir(), "reports-note-"));
+    try {
+      const repo = new FileReportRepository(join(dir, "r.json"));
+      const report = await repo.add({ category: "history", message: "x" }, "s");
+      expect(await repo.updateNote(report.id, "  有報 p.4 で確認。誤りではない  ")).toBe(true);
+      expect((await repo.get(report.id))?.adminNote).toBe("有報 p.4 で確認。誤りではない");
+      expect(await repo.updateNote(report.id, "")).toBe(true);
+      expect((await repo.get(report.id))?.adminNote).toBeUndefined();
+      expect(await repo.updateNote("missing", "n")).toBe(false);
+    } finally {
+      await rm(dir, { recursive: true, force: true });
+    }
+  });
+});

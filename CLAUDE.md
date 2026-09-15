@@ -11,8 +11,9 @@ company-specific business structure.
 
 The operator's master specification: `docs/master-specification.md`. Departures from it: `docs/decisions.md`.
 
-This is a sibling of the VALLE projects in `../`, **not part of VALLE**. It shares no code,
-database or contract with them. Decision recorded in
+This project is **completely independent** of the other projects in `../`: do not reuse, import, copy
+or modify their code, architecture, data models, schemas, design, branding, routes or environment
+variables, and never reference them in the application. Decision recorded in
 `../company-data-platform/docs/VALLE_DECISIONS.md` (D-040).
 
 ---
@@ -37,8 +38,13 @@ database or contract with them. Decision recorded in
    localStorage keys. TypeScript identifiers (types, components, functions) follow normal
    TypeScript conventions — `BusinessStructure` lives in `business-structure.tsx`.
 7. **`localStorage` is for user-local state only** (favorites, recently viewed, settings),
-   and only through `src/lib/storage/`. Company content never depends on it — it is static data in
-   `src/data/`, rendered on the server, and read only through the repositories in `src/lib/repositories/`.
+   and only through `src/lib/storage/`. Company content never depends on it — it is JSON in
+   `src/data/`, parsed through `src/lib/content/schemas.ts`, rendered on the server, and read only through
+   the repositories in `src/lib/repositories/`.
+9. **The repository is the source of truth for published content.** Corrections are made in the local
+   admin editor (development only), which writes the JSON and a Revision; the operator reviews the diff,
+   commits and pushes. Nothing in this app runs git or writes content in production
+   (`docs/correction-workflow.md`, decisions JCE-016).
 8. **Server Components by default.** A `"use client"` directive needs a reason (interaction,
    browser API). Do not turn a page into a Client Component to save effort.
 
@@ -54,6 +60,8 @@ npm run lint         # eslint
 npm test             # vitest — includes the data integrity suite
 npm run admin:hash-password   # prints ADMIN_PASSWORD_HASH and ADMIN_SESSION_SECRET
 npm run db:migrate            # applies db/migrations to DATABASE_URL
+npm run content:check         # integrity tests + typecheck + lint, before committing content
+npm run content:diff          # read-only: changed data files, new revisions, diff
 ```
 
 | Variable | Why |
@@ -68,11 +76,16 @@ npm run db:migrate            # applies db/migrations to DATABASE_URL
 
 ## Adding or correcting a company
 
+**Correcting** published content: use the local admin editor — `docs/correction-workflow.md`. Do not
+hand-edit JSON for a factual correction without also writing a Revision file; the editor does both.
+
+**Adding** a company:
 1. Research protocol: `docs/research-protocol.md`. Follow it exactly.
-2. Data file: `src/data/companies/<company-id>.ts`, typed as `Company`.
+2. Data file: `src/data/companies/<company-id>.json`, valid against `companySchema`.
 3. Research log: `docs/research/<company-id>.md` — every figure traced to a document and page.
-4. Register it in `src/data/companies/index.ts`.
-5. `npm test` must pass. A correction appends a `Revision`; it never rewrites history silently.
+4. Register it in `src/data/companies/index.ts`, and add a first revision
+   `src/data/revisions/<date>-company-<company-id>-initial.json`.
+5. `npm test` must pass.
 
 ## Style
 

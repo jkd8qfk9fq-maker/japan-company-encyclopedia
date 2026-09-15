@@ -1,6 +1,7 @@
 import { randomUUID } from "node:crypto";
-import { mkdir, readFile, rename, writeFile } from "node:fs/promises";
+import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname } from "node:path";
+import { renameWithRetry } from "@/lib/fs/atomic-rename";
 import type { ReportRepository } from "./report-repository";
 import { isReportStatus, validateReportInput, type ContentReport, type ReportInput, type ReportStatus } from "./report-types";
 
@@ -42,6 +43,7 @@ export class FileReportRepository implements ReportRepository {
           updatedAt: typeof row.updatedAt === "string" ? row.updatedAt : row.createdAt,
           status: isReportStatus(row.status) ? row.status : "open",
           submitterHash: typeof row.submitterHash === "string" ? row.submitterHash : "",
+          adminNote: typeof row.adminNote === "string" && row.adminNote !== "" ? row.adminNote : undefined,
         },
       ];
     });
@@ -51,7 +53,7 @@ export class FileReportRepository implements ReportRepository {
     await mkdir(dirname(this.path), { recursive: true });
     const temp = `${this.path}.${randomUUID()}.tmp`;
     await writeFile(temp, `${JSON.stringify(rows, null, 2)}\n`, "utf8");
-    await rename(temp, this.path);
+    await renameWithRetry(temp, this.path);
   }
 
   private exclusive<T>(task: () => Promise<T>): Promise<T> {
@@ -72,6 +74,7 @@ export class FileReportRepository implements ReportRepository {
       pagePath: row.pagePath,
       createdAt: row.createdAt,
       status: row.status,
+      adminNote: row.adminNote,
     };
   }
 
@@ -100,6 +103,21 @@ export class FileReportRepository implements ReportRepository {
 
   async count(options?: { statuses?: readonly ReportStatus[] }): Promise<number> {
     return (await this.list(options)).length;
+  }
+
+  async get(id: string): Promise<ContentReport | null> {
+    return (await this.list()).find((r) => r.id === id) ?? null;
+  }
+
+  updateNote(id: string, note: string): Promise<boolean> {
+    return this.exclusive(async () => {
+      const rows = await this.readAll();
+      const index = rows.findIndex((r) => r.id === id);
+      if (index < 0) return false;
+      rows[index] = { ...rows[index], adminNote: note.trim() === "" ? undefined : note.trim(), updatedAt: new Date().toISOString() };
+      await this.writeAll(rows);
+      return true;
+    });
   }
 
   updateStatus(id: string, status: ReportStatus): Promise<boolean> {

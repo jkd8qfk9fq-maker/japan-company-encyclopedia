@@ -31,7 +31,7 @@ export default async function AdminCompanies() {
               <tr key={c.id} className="border-b border-border">
                 <td className="figures py-3 pr-4">{c.code}</td>
                 <td className="py-3 pr-4">
-                  <Link href={`/companies/${c.id}`} className="font-medium hover:underline">{c.name}</Link>
+                  <Link href={`/admin/companies/${c.id}`} className="font-medium hover:underline">{c.name}</Link>
                   <span className="ml-2 font-mono text-xs text-muted-foreground">{c.id}</span>
                 </td>
                 <td className="py-3 pr-4">

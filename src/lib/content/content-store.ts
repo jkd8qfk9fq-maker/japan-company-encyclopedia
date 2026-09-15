@@ -1,6 +1,7 @@
 import { createHash, randomBytes } from "node:crypto";
-import { readdir, readFile, rename, rm, writeFile } from "node:fs/promises";
+import { readdir, readFile, rm, writeFile } from "node:fs/promises";
 import { join } from "node:path";
+import { renameWithRetry } from "@/lib/fs/atomic-rename";
 import type { Company } from "@/types/company";
 import type { Revision } from "@/types/revision";
 import type { Source } from "@/types/source";
@@ -210,9 +211,9 @@ export class ContentStore {
     await writeFile(`${revisionPath}${suffix}`, `${JSON.stringify(revision, null, 2)}\n`, "utf8");
     await writeFile(`${contentPath}${suffix}`, `${JSON.stringify(ordered, null, 2)}\n`, "utf8");
     // Revision lands first: a content change must never exist without its revision.
-    await rename(`${revisionPath}${suffix}`, revisionPath);
+    await renameWithRetry(`${revisionPath}${suffix}`, revisionPath);
     try {
-      await rename(`${contentPath}${suffix}`, contentPath);
+      await renameWithRetry(`${contentPath}${suffix}`, contentPath);
     } catch (error) {
       await rm(revisionPath, { force: true });
       await rm(`${contentPath}${suffix}`, { force: true });

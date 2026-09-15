@@ -145,3 +145,40 @@ true only for reports the operator filed on their own device, and false for ever
 - **Verified end to end** (dev server, real browser): unauthenticated `/admin` → login; report submitted
   and confirmed; wrong password rejected; login; report listed; status changed; logout re-locks. Production
   build without settings: admin closed, report refused with a visible message, no confirmation shown.
+
+### JCE-016 · 2026-09-15 · Accepted (operator) — Git-Based Correction System
+**Corrections are made locally in the admin editor and published through git. Production never writes content.**
+
+Operator specification of 2026-09-15: local admin editing + git; no GitHub API or pull requests from
+production yet; zero cost and operationally simple; the repository is the source of truth.
+
+- **Content is JSON** (`src/data/**/*.json`), because the editor must rewrite it safely and a TypeScript module
+  with comments cannot be rewritten without losing them. The conversion was proven lossless (every committed
+  TS value deep-equals its JSON), and every comment moved verbatim into the entry's research log.
+- **zod** (the one added dependency) parses every file at load — a malformed file fails the build — and every
+  save. Strict objects make an unknown key an error. Compile-time assertions keep the schemas and
+  `src/types/` in agreement; a planted drift was observed failing the typecheck.
+- **Revisions are records**, the spec's type {id, targetType, targetId, changedAt, reason, summary, before,
+  after}, one file each in `src/data/revisions/` — separate from the content they describe, so an entry
+  cannot rewrite its own history, and one file maps to one database row later. Embedded histories were
+  migrated to `*-initial` records.
+- **The save path** (`src/lib/content/content-store.ts`) refuses: a file changed since the editor loaded it;
+  anything failing the schema or the shared integrity rules (`src/lib/content/integrity.ts`, also run by the
+  tests); no change; no summary or reason; a removed source without explicit confirmation; removing a source
+  a section still cites. It writes the revision before the content and keeps key order so the git diff is
+  the change alone. It never runs git.
+- **Editing is local only**: NODE_ENV=development, not Vercel, not CONTENT_EDITING=off. Production /admin
+  offers login, reports, report details, source review, correction notes (`admin_note`, migration 0002) and
+  revision history — read-only for content.
+- **Report and revision stay separate.** The correction note on a report is where the link is written down.
+- **Statuses**: 未対応 → 調査中 → 解決済み as specified, plus 対応不要 for reports that turn out not to be errors
+  (and spam), so they leave the queue without being marked "resolved".
+- **Naming**: JSON property names stay camelCase, matching the spec's own TypeScript types (`targetType`,
+  `changedAt`); kebab-case applies to ids, file names, routes and storage keys.
+- **Scope**: companies and terms are editable (spec §5). Industry pages are corrected by hand plus a revision
+  file until an industry editor is needed.
+- **Verified in a real browser**: 百万円 input 1695345 saved as 1695345000000; review showed only 財務;
+  the git diff was two lines (value and updatedAt); the revision held before/after; the test change was
+  restored. Report detail: note persisted, status 対応不要 removed it from the active queue.
+- **Future** (not built, by decision): production admin → GitHub pull request → review → merge → deploy.
+  `ContentStore` is the seam where a pull-request writer would replace the file writer.
