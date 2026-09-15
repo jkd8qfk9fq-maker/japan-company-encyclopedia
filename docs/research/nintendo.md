@@ -212,3 +212,37 @@ restated under the new categories (ゲーム専用機 1,083,534 / IP関連収入
     exists in `tests/` yet. The protocol checks were run by hand: flow order company→offering→customer→revenue→profit;
     7 history events; exactly one primary industry; every `sourceIds` entry resolves; every source is referenced.
     `npx tsc --noEmit -p .` exits 0.
+
+
+---
+
+## Notes carried over from the TypeScript data file (2026-09-15)
+
+Content moved from TypeScript modules to JSON so the local admin editor can edit it safely, and JSON cannot hold comments. Every comment that was in the data file is preserved here verbatim, with the field it sat above and its line number in the last TypeScript version (git history has the original file).
+
+### From `src/data/companies/nintendo.ts`
+
+- **file header** (line 16):
+  > 任天堂 (7974). Research log: docs/research/nintendo.md
+  > Nintendo reports a SINGLE business segment (有報 第86期 p.77:「事業セグメントは単一です」),
+  > so there are no reportable segments to put at the top level of `businesses`.
+  > The two top-level nodes are instead the 製品及びサービスごとの情報 categories the
+  > company itself discloses (有報 p.78) — ゲーム専用機 and IP関連収入等 — using the
+  > company's own names and its own footnoted definitions (有報 p.75). They are
+  > categories of sales, not segments, and must not be presented as セグメント.
+  > No `children`: the filing defines what each category contains, but does not
+  > describe sub-businesses with their own figures, so a hierarchy would be invented.
+- **businesses (dedicated-video-game-platforms)** (line 31):
+  > Ordered by 2026年3月期 外部顧客への売上高 (有報 p.78):
+  > ゲーム専用機 2,239,541百万円 > IP関連収入等 73,510百万円.
+- **products** (line 57):
+  > No specific film is named here: the filing says no money or IP licence
+  > passed between Nintendo and the studio for the Mario films (有報 p.35),
+  > and never states how any one film's revenue is booked.
+- **products** (line 72):
+  > トランプ is named as a main product in 事業の内容 (有報 p.5). Which sales
+  > category it falls under is not stated in the 第86期 filing, so it appears
+  > here and not under either business above.
+- **financials** (line 135):
+  > 有報 第86期 p.2「主要な経営指標等の推移 (1) 連結経営指標等」, 百万円 × 1,000,000.
+  > FY2022–FY2025 also appear unchanged in 第85期 p.2, hence yuho-2025 on those years.

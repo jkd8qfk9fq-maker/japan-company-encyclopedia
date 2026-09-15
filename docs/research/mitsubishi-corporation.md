@@ -241,3 +241,64 @@ are the ones a reviewer should look at first.
 publication. "MITSUBISHI" alone is shared by many unrelated listed companies (三菱重工業, 三菱UFJ
 フィナンシャル・グループ, 三菱電機, …); as the hero wordmark it would make a beginner's
 three-second reading *less* accurate. The English 商号 on the 有報 cover is used without abridgement.
+
+
+---
+
+## Notes carried over from the TypeScript data file (2026-09-15)
+
+Content moved from TypeScript modules to JSON so the local admin editor can edit it safely, and JSON cannot hold comments. Every comment that was in the data file is preserved here verbatim, with the field it sat above and its line number in the last TypeScript version (git history has the original file).
+
+### From `src/data/companies/mitsubishi-corporation.ts`
+
+- **file header** (line 24):
+  > 三菱商事 (8058).
+  > Every figure and claim below is traced, page by page, in
+  > `docs/research/mitsubishi-corporation.md`. Page numbers there are the
+  > printed page numbers of the 有報 (the "― n ―" footer), not PDF page indices.
+  > Three things here are easy to "fix" wrongly, so they are called out:
+  > - The top level is the SEVEN 営業グループ in force since 2026-04-01, not the
+  >   eight reportable segments printed in the 2026年3月期 有報 セグメント情報.
+  >   The same 有報 (p.14) says the 8-group structure becomes 7 groups from the
+  >   next fiscal year, and the 2027年3月期 1Q 決算短信 already reports 7
+  >   segments. Showing 地球環境エネルギー and 電力ソリューション as separate
+  >   groups would describe a structure that no longer exists.
+  > - The top line is 収益, not 売上高 or 売上収益. It is printed that way in the
+  >   IFRS consolidated table and is kept verbatim.
+  > - A large part of 収益 is recorded gross, because the company is principal
+  >   on many trades (有報 注記3(15)). Do not read the revenue figure as "size of
+  >   the business" without the business-model text that explains it.
+- **shortNameEn** (line 33):
+  > Not "MITSUBISHI": that word alone is shared by many unrelated listed
+  > companies, and as the hero wordmark it would make the 3-second reading
+  > less accurate. Decided before publication; see the research log.
+- **listings** (line 38):
+  > 有報 p.46: 東京証券取引所 プライム市場 only. 名古屋 was delisted in 2020
+  > (有報 p.3 沿革).
+- **industries** (line 43):
+  > Only `trading`. Every 営業グループ maps to some industry (energy, food,
+  > automotive, chemicals, real-estate…); picking a few as secondary would be
+  > arbitrary. See the research log.
+- **businesses (energy-power-solution)** (line 56):
+  > Ordered by 2026年3月期 segment 収益 (有報 注記24, 百万円):
+  > エネルギー＆パワーソリューション 4,586,279 (= 地球環境エネルギー 3,267,295
+  > + 電力ソリューション 1,318,984; the company's own 7-group restatement of
+  > 2026年3月期 1Q shows the merger is exactly additive) > 金属資源 4,083,329
+  > > マテリアルソリューション 3,631,197 > S.L.C. 2,514,143 > 食品産業
+  > 2,324,535 > 社会インフラ 930,638 > モビリティ 837,375.
+  > 
+  > `children` are the organisational units each group page lists under
+  > 「組織」 on the official site, all of them, in the page's order. They are
+  > how the company itself divides each group; no hierarchy is invented.
+  > 「その他」 is left out: it is the corporate staff function, not a business.
+- **financials** (line 682):
+  > Source: 有報 2025年度（2026年3月期）p.1「主要な経営指標等の推移 (1) 連結経営指標等」.
+  > The company labels years 「2021年度」…「2025年度」 with 決算年月 2022年3月…2026年3月;
+  > `fiscalYear` uses the protocol's 「…年3月期」 form for the same periods.
+  > Values printed in 百万円, converted × 1,000,000. Identical for 2021–2024年度 in
+  > the previous 有報 (2024年度) p.1: no restatement.
+- **status** (line 962):
+  > Every judgement call (7 groups instead of the 有報's 8 segments, the
+  > computed エネルギー＆パワーソリューション revenue used only for ordering,
+  > shortNameEn) is recorded in the research log. None is an unverified fact,
+  > so the entry is published.

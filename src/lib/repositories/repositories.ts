@@ -1,6 +1,7 @@
 import type { Company, IndustryId } from "@/types/company";
 import type { Feature } from "@/types/feature";
 import type { Industry } from "@/types/industry";
+import type { Revision, RevisionTargetType } from "@/types/revision";
 import type { Term } from "@/types/term";
 
 /**
@@ -38,4 +39,11 @@ export interface FeatureRepository {
   get(id: string): Promise<Feature | null>;
   listByCompany(companyId: string): Promise<Feature[]>;
   listByIndustry(industryId: IndustryId): Promise<Feature[]>;
+}
+
+export interface RevisionRepository {
+  /** Newest first. */
+  list(): Promise<Revision[]>;
+  listForTarget(targetType: RevisionTargetType, targetId: string): Promise<Revision[]>;
+  get(id: string): Promise<Revision | null>;
 }

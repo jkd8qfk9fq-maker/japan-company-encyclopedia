@@ -1,6 +1,7 @@
 import { readdirSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { readFileSync } from "node:fs";
 import { companies } from "@/data/companies";
 import { features } from "@/data/features";
 import { industries } from "@/data/industries";
@@ -8,6 +9,8 @@ import { terms } from "@/data/terms";
 import { extractReferences, findMalformedMarkup } from "@/lib/rich-text";
 import type { Business, Company } from "@/types/company";
 import { INDUSTRY_IDS, RELATIONSHIP_KINDS } from "@/types/company";
+import { parseContent, revisionSchema } from "@/lib/content/schemas";
+import type { Revision } from "@/types/revision";
 import type { Source } from "@/types/source";
 
 /**
@@ -24,6 +27,15 @@ const companyIds = new Set(companies.map((c) => c.id));
 const industryIds = new Set<string>(INDUSTRY_IDS);
 const termIds = new Set(terms.map((t) => t.id));
 const featureIds = new Set(features.map((f) => f.id));
+
+const revisionDir = join(process.cwd(), "src/data/revisions");
+const revisions: Revision[] = readdirSync(revisionDir)
+  .filter((f) => f.endsWith(".json"))
+  .map((file) => {
+    const revision = parseContent(revisionSchema, JSON.parse(readFileSync(join(revisionDir, file), "utf8")), file) as Revision;
+    expect(`${revision.id}.json`, "revision file name must equal its id").toBe(file);
+    return revision;
+  });
 
 function flattenBusinesses(list: Business[]): Business[] {
   return list.flatMap((b) => [b, ...flattenBusinesses(b.children ?? [])]);
@@ -92,15 +104,18 @@ describe("registries", () => {
     }
   });
 
-  it("publishes every company data file, and only data files that exist", () => {
-    // A file in src/data/companies that is not registered is either forgotten or
-    // unfinished; either way it should be a conscious state, so list it here.
-    const dir = join(process.cwd(), "src/data/companies");
-    const files = readdirSync(dir)
-      .filter((f) => f.endsWith(".ts") && f !== "index.ts")
-      .map((f) => f.replace(/\.ts$/, ""));
+  it.each([
+    ["companies", companies],
+    ["industries", industries],
+    ["terms", terms],
+  ] as const)("registers every %s JSON file, each named after its id", (dir, items) => {
+    // A data file that is not registered is invisible to readers. An edit saved
+    // to an unregistered file would look done and publish nothing.
+    const files = readdirSync(join(process.cwd(), "src/data", dir))
+      .filter((f) => f.endsWith(".json"))
+      .map((f) => f.replace(/\.json$/, ""));
     for (const file of files) expect(file, "data file name").toMatch(KEBAB);
-    for (const c of companies) expect(files, `${c.id} has no data file named after its id`).toContain(c.id);
+    expect([...files].sort()).toEqual(items.map((i) => i.id).sort());
   });
 });
 
@@ -203,8 +218,7 @@ describe.each(companies.map((c) => [c.id, c] as const))("company %s", (_, compan
   });
 
   it("has a revision history", () => {
-    expect(company.revisions.length).toBeGreaterThan(0);
-    for (const r of company.revisions) expect(r.date).toMatch(ISO_DATE);
+    expect(revisions.filter((r) => r.targetType === "company" && r.targetId === company.id).length).toBeGreaterThan(0);
   });
 
   it("never mentions investment metrics (invariant 4)", () => {
@@ -266,5 +280,21 @@ describe.each(features.map((f) => [f.id, f] as const))("feature %s", (_, feature
       }
       if (block.type === "company-callout") expect(companyIds.has(block.companyId)).toBe(true);
     }
+  });
+});
+
+describe("revisions", () => {
+  it("point only at content that exists", () => {
+    const exists = { company: companyIds, industry: new Set<string>(industries.map((i) => i.id)), term: termIds, feature: featureIds };
+    for (const r of revisions) expect(exists[r.targetType].has(r.targetId), `${r.id} → ${r.targetType} ${r.targetId}`).toBe(true);
+  });
+
+  it("exist for every industry and term too", () => {
+    for (const i of industries) expect(revisions.some((r) => r.targetType === "industry" && r.targetId === i.id), i.id).toBe(true);
+    for (const t of terms) expect(revisions.some((r) => r.targetType === "term" && r.targetId === t.id), t.id).toBe(true);
+  });
+
+  it("have unique ids", () => {
+    expect(new Set(revisions.map((r) => r.id)).size).toBe(revisions.length);
   });
 });

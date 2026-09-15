@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { companyRepository } from "@/lib/repositories";
+import { companyRepository, revisionRepository } from "@/lib/repositories";
 import { formatDateJa } from "@/lib/utils/format";
 
 export const metadata = { title: "企業" };
 
 export default async function AdminCompanies() {
-  const companies = await companyRepository.list();
+  const [companies, revisions] = await Promise.all([companyRepository.list(), revisionRepository.list()]);
+  const revisionCount = (id: string) => revisions.filter((r) => r.targetType === "company" && r.targetId === id).length;
 
   return (
     <div>
@@ -41,7 +42,7 @@ export default async function AdminCompanies() {
                   )}
                 </td>
                 <td className="figures py-3 pr-4 text-right">{c.sources.length}</td>
-                <td className="figures py-3 pr-4 text-right">{c.revisions.length}</td>
+                <td className="figures py-3 pr-4 text-right">{revisionCount(c.id)}</td>
                 <td className="figures py-3">{formatDateJa(c.updatedAt)}</td>
               </tr>
             ))}

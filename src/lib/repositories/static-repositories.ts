@@ -2,11 +2,14 @@ import { companies } from "@/data/companies";
 import { features } from "@/data/features";
 import { industries } from "@/data/industries";
 import { terms } from "@/data/terms";
+import { join } from "node:path";
 import type { Company } from "@/types/company";
+import { FileRevisionRepository } from "./file-revision-repository";
 import type {
   CompanyRepository,
   FeatureRepository,
   IndustryRepository,
+  RevisionRepository,
   TermRepository,
 } from "./repositories";
 
@@ -87,3 +90,5 @@ export const featureRepository: FeatureRepository = {
     return sortedFeatures.filter((f) => f.relatedIndustries.includes(industryId));
   },
 };
+
+export const revisionRepository: RevisionRepository = new FileRevisionRepository(join(process.cwd(), "src", "data", "revisions"));

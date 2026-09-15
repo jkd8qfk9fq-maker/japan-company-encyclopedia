@@ -10,15 +10,31 @@ export type ContentStatus =
   | { state: "published" }
   | { state: "needs-attention"; notes: string[] };
 
-export type RevisionKind = "ai-generated" | "correction" | "update";
+export type RevisionTargetType = "company" | "industry" | "term" | "feature";
 
 /**
- * Every change to published content leaves a revision. Published information
- * stays editable after publication, and the history of edits stays visible.
+ * One change to published content — the answer to "what changed, why, and
+ * when". Stored as its own file in src/data/revisions/, never inside the entry
+ * it describes, so an entry cannot quietly rewrite its own history and each
+ * revision maps to one row if revisions ever move to a database.
+ *
+ * A revision is not a report. A report is a reader's claim that something is
+ * wrong; a revision is a change actually made. A revision may cite a report in
+ * `reason`, but neither depends on the other.
  */
 export type Revision = {
-  /** YYYY-MM-DD */
-  date: string;
-  kind: RevisionKind;
+  /** kebab-case, e.g. "2026-09-15-company-toyota-8f3a1c". Also the file name. */
+  id: string;
+  targetType: RevisionTargetType;
+  targetId: string;
+  /** ISO 8601. Date-only for revisions migrated from before the editor existed. */
+  changedAt: string;
+  /** Why the change was made: the evidence, or the report that prompted it. */
+  reason?: string;
+  /** What changed, in one line. */
   summary: string;
+  /** The changed top-level fields as they were. Absent for a first version. */
+  before?: unknown;
+  /** The changed top-level fields as they became. */
+  after?: unknown;
 };

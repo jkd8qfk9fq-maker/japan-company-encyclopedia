@@ -408,3 +408,63 @@ the net-income column is total profit attributable to shareholders, including th
 - 2022–2023年3月期: the financial business was consolidated and not yet discontinued, so both scopes include it.
 - The page now states that for 2024年3月期〜2026年3月期 revenue and net income cover different scopes and the
   bar gap is not a margin.
+
+
+---
+
+## Notes carried over from the TypeScript data file (2026-09-15)
+
+Content moved from TypeScript modules to JSON so the local admin editor can edit it safely, and JSON cannot hold comments. Every comment that was in the data file is preserved here verbatim, with the field it sat above and its line number in the last TypeScript version (git history has the original file).
+
+### From `src/data/companies/sony-group.ts`
+
+- **file header** (line 17):
+  > ソニーグループ (6758). Research log: docs/research/sony-group.md
+  > The one thing a future editor must not miss: the financial business is GONE.
+  > Sony executed a partial spin-off of ソニーフィナンシャルグループ on 2025-10-01
+  > (有報 2025年度 p.5–6, 注記33 p.257) and the latest 有報 reports it as 非継続事業,
+  > removed from the reportable segments (p.158). So `businesses` has no finance
+  > node, and the five-year financial table is NOT one consistent series — see the
+  > comment on `financials` and each year's `revenueBasis`.
+  > `children` exist because the company itself breaks each segment into named
+  > sub-businesses with their own external revenue (事業の内容 p.8, 製品カテゴリー別
+  > 売上高内訳 p.162–163). I&SS has a single category, so it has no children.
+- **shortNameEn** (line 27):
+  > Not "SONY": since 2021 ソニー株式会社 (Sony Corporation) is a DIFFERENT company —
+  > the electronics subsidiary that inherited the old name (有報 p.5, p.10). A bare
+  > "SONY" wordmark would point a beginner at it. "SONY GROUP" is also exactly the
+  > English 商号 minus the legal suffix.
+- **listings** (line 32):
+  > 有報 p.54 lists 東京・ニューヨーク; `Listing` can only express Japanese
+  > exchanges, so the NYSE listing is recorded in the log rather than dropped silently.
+- **businesses (game-network-services)** (line 46):
+  > Ordered by 2026年3月期 セグメント売上高 (セグメント間取引消去前, 有報 p.159):
+  > G&NS 4,685,651 > ET&S 2,260,532 > I&SS 2,151,533 > 音楽 2,120,110 > 映画 1,499,290
+  > > その他 89,072 (百万円). On external-customer revenue alone 音楽 (2,090,534) would
+  > sit above I&SS (2,059,020); the segment figure is the one Sony itself reports
+  > per 分野 (p.35), so it decides. Children are ordered by their own external
+  > revenue (p.162) — figures in the log.
+- **shortName** (line 93):
+  > The company's own site navigation labels this segment
+  > 「エレクトロニクス製品：エンタテインメント・テクノロジー&サービス」.
+- **id** (line 115):
+  > Named 「その他」 by the company, but it states what is in it (p.163).
+- **financials** (line 310):
+  > 有報 2025年度 p.1「主要な経営指標等の推移 (1) 連結経営指標等」, 百万円 × 1,000,000.
+  > Labels verbatim from that table. The revenue row is NOT one basis across the
+  > five years (注5, p.1; 2023年度有報 注4, p.1):
+  >   2022年3月期  — includes the financial business (as originally reported under IFRS)
+  >   2023年3月期  — includes the financial business, 修正再表示 under IFRS第17号
+  >   2024–2026年3月期 — continuing operations only; financial business excluded
+  > `revenueBasis` is the SCOPE, so the IFRS第17号 restatement of 2023年3月期 (a change of
+  > measurement, not of what is covered) stays in the 「金融事業を含む」 bucket; its `note`
+  > says so instead. Net income attributable to Sony's shareholders includes discontinued
+  > operations in every year; 2026年3月期 is negative because of the spin-off accounting
+  > (注記33) — explained by that year's `note`.
+- **id** (line 484):
+  > Used only to record the 2023年3月期 figures as originally reported, before
+  > the IFRS第17号 restatement (research log). Not cited by any section, on
+  > purpose: its 2023年3月期 numbers differ from the stored ones.
+- **status** (line 510):
+  > Was needs-attention only because the scope break and the 2026年3月期 loss could not be
+  > expressed; `revenueBasis` and `note` now carry both, and every figure is verified.

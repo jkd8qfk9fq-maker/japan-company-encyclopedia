@@ -1,5 +1,5 @@
 import type { IndustryId } from "./company";
-import type { ContentStatus, Revision } from "./revision";
+import type { ContentStatus } from "./revision";
 import type { Source } from "./source";
 
 /**
@@ -28,7 +28,6 @@ export type Feature = {
   relatedTerms: string[];
   sources: Source[];
   status: ContentStatus;
-  revisions: Revision[];
   /** YYYY-MM-DD */
   publishedAt: string;
 };

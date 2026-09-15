@@ -131,3 +131,50 @@ No value is `null`. No unverified claim remains. Status: `published`.
 11. **Extraction limits.** No PDF page rendering was available (pdftoppm not installed), so no page image was checked visually. Every value was confirmed in two independent pdftotext modes (`-raw` and `-table`), and the 有報 figures agree across three filings. The 短信 extraction logged CMap errors for an MSMincho font. The header row and both numeric rows came through intact in both modes and agree with the 有報.
 12. **Not consulted:** 統合報告書. The 有報 sections above were sufficient. I did not check whether a 2026 edition has been published.
 13. **Dates.** `accessedAt` is 2026-09-13, the day every document was downloaded and read. Re-verification on 2026-09-14 used the same downloaded copies, so `accessedAt` was not advanced. `updatedAt` and the revision date are 2026-09-14, the day the entry was finalized.
+
+
+---
+
+## Notes carried over from the TypeScript data file (2026-09-15)
+
+Content moved from TypeScript modules to JSON so the local admin editor can edit it safely, and JSON cannot hold comments. Every comment that was in the data file is preserved here verbatim, with the field it sat above and its line number in the last TypeScript version (git history has the original file).
+
+### From `src/data/companies/toyota.ts`
+
+- **file header** (line 19):
+  > トヨタ自動車 (7203).
+  > Every figure and claim below is traced, page by page, in
+  > `docs/research/toyota.md`. Page numbers there are the printed page numbers
+  > of the PDF (the "― n ―" footer), not PDF page indices.
+  > Two things here are easy to "fix" wrongly, so they are called out:
+  > - The top line is 営業収益, not 売上高. Toyota's consolidated table prints
+  >   営業収益 because it includes financial-services revenue; relabelling it
+  >   would misdescribe what the number contains.
+  > - All five years are IFRS. Toyota's IFRS transition date is 2019-04-01
+  >   (2022年3月期 有報 p.2), so no year in the 2022–2026 window is US GAAP and
+  >   the series has no standard break.
+- **shortNameEn** (line 28):
+  > Judgement call, recorded in the research log: stripping only the legal
+  > suffix gives "TOYOTA MOTOR"; "TOYOTA" follows the protocol's own example
+  > and the company's usage "TOYOTAブランド" (有報 2026 p.15).
+- **listings** (line 34):
+  > The 有報 (p.74) also lists New York and London. `Listing` is scoped to
+  > Japanese exchanges by design, so those two are recorded in the research
+  > log rather than here.
+- **{ industryId: "finance" },** (line 42):
+  > 金融 is a reportable segment in its own right (有報 2026 p.146).
+- **businesses (automotive)** (line 50):
+  > Ordered by FY2026 segment 営業収益 (計): 自動車 45,417,703 > 金融 4,857,115
+  > > その他 1,651,412 百万円. Deliberately flat: the 有報 states Toyota does
+  > not manage any part of the automotive business (domestic/overseas, parts)
+  > as a separate segment (p.49), and no document read describes
+  > sub-businesses, so no hierarchy is invented.
+- **id** (line 93):
+  > Included because the company says what it is; the 有報 says no more
+  > than this, so neither does the entry.
+- **financials** (line 156):
+  > Source: 有報 2026年3月期 p.2「主要な経営指標等の推移（１）連結経営指標等」.
+  > Values printed in 百万円, converted × 1,000,000.
+- **status** (line 344):
+  > Both judgement calls (Japanese-only listings, shortNameEn) are recorded in
+  > the research log; neither is an unverified fact, so the entry is published.

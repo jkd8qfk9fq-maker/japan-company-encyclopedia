@@ -187,3 +187,61 @@ No value is `null`. No unverified claim remains. Status: `published`.
 13. **Extraction limits.** No PDF page rendering was available (pdftoppm not installed), so no page image was checked visually. Every value was confirmed in `-raw` and `-table` modes across three documents. tanshin-2026 attachment pages, the 2027年3月期 1Q 短信 p.1 header and most of 統合報告書 2025 extract as mojibake; only their clean parts were used.
 14. **EDINET not checked.** The project has no EDINET API key. "No 訂正報告書 for 第63期" rests on TEL's IR library listing only.
 15. **Dates.** `accessedAt` 2026-09-13 for every document downloaded and read that day; 2026-09-14 for `tanshin-2027-q1`, first read that day. Re-verification on 2026-09-14 used the same downloaded copies. `updatedAt` and the revision date are 2026-09-14. Web pages carry no publication date, so they have no `publishedAt`.
+
+
+---
+
+## Notes carried over from the TypeScript data file (2026-09-15)
+
+Content moved from TypeScript modules to JSON so the local admin editor can edit it safely, and JSON cannot hold comments. Every comment that was in the data file is preserved here verbatim, with the field it sat above and its line number in the last TypeScript version (git history has the original file).
+
+### From `src/data/companies/tokyo-electron.ts`
+
+- **file header** (line 26):
+  > 東京エレクトロン (8035).
+  > Every figure and claim below is traced, page by page, in
+  > `docs/research/tokyo-electron.md`. Page numbers there are the printed page
+  > numbers of the PDF (the "- n -" footer), not PDF page indices.
+  > Three things here are easy to "fix" wrongly, so they are called out:
+  > - There is exactly ONE top-level business. The 有報 states TEL is
+  >   「半導体製造装置」の単一セグメント (2026 p.5, p.126; also 2025 有報 and the
+  >   2027年3月期 1Q 決算短信). No FPD or other segment is invented from older
+  >   knowledge of the company.
+  > - The net-income row is 親会社株主に帰属する当期純利益, NOT 包括利益. In
+  >   `pdftotext -layout` output of p.2 the 包括利益 figures (486,183 …
+  >   624,335) sit next to the net-income label. Values were read in `-raw` and
+  >   `-table` modes, which agree, and were checked against the 2025 有報, the
+  >   決算短信 and the consolidated income statement (p.81).
+  > - The children of 新規装置 are listed in the order the company itself lists
+  >   them (有報 p.26, 決算説明会資料 p.26), not by size: the only per-product
+  >   figures are chart percentages that could not be tied to their series from
+  >   the extracted text.
+- **shortNameEn** (line 33):
+  > The English 商号 minus the legal suffix "Limited".
+- **businesses (semiconductor-production-equipment)** (line 46):
+  > One reportable segment (有報 p.5). Its children follow the company's own
+  > split of revenue in 収益認識関係 (p.123): 新規装置 1,817,250 > フィールド
+  > ソリューション他 626,282 百万円 (2026年3月期). The product lines under
+  > 新規装置 are the ones the company names in 研究開発活動 (p.26) and in the
+  > 決算説明会資料's product breakdown (p.26); what each one does is written
+  > only as far as TEL's product page and glossary explain it.
+- **id** (line 126):
+  > The 有報 table labels this row フィールドソリューション他 (p.123) and
+  > calls the business フィールドソリューションサービス (p.124); the
+  > company's service page and results materials use
+  > フィールドソリューション. shortName is the product site's own
+  > navigation label for this area, サービス.
+- **financials** (line 203):
+  > Source: 有報 2026年3月期 p.2「主要な経営指標等の推移 (1) 連結経営指標等」.
+  > Values printed in 百万円, converted × 1,000,000. All five years J-GAAP
+  > (p.78; 決算短信 title 〔日本基準〕). The 2025 有報 prints identical values
+  > for 2022–2025, so no year was restated. Revenue scope is consistent
+  > (single segment in both filings; 連結範囲の重要な変更 無), so no
+  > `revenueBasis`.
+- **note** (line 260):
+  > No amount and no causal claim: the 有報 says the 特別利益 came mainly
+  > from this sale (p.24); it does not say how much of the rise in net
+  > income it explains.
+- **status** (line 418):
+  > Every judgement call is recorded in the research log; none leaves an
+  > unverified fact in the entry, so it is published.

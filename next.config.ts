@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Revisions are read from disk (the local editor adds files), so request-time
+  // admin pages need the directory included in the deployment output.
+  outputFileTracingIncludes: {
+    "/admin/**": ["./src/data/revisions/**"],
+  },
   async headers() {
     return [
       {

@@ -192,3 +192,160 @@ Skipped on purpose:
 ## Checks
 
 `npx tsc --noEmit -p .` exit 0 · `npx eslint src tests` exit 0 · `npx vitest run` exit 0 (6 files, 129 tests).
+
+
+---
+
+## Notes carried over from the TypeScript data file (2026-09-15)
+
+Content moved from TypeScript modules to JSON so the local admin editor can edit it safely, and JSON cannot hold comments. Every comment that was in the data file is preserved here verbatim, with the field it sat above and its line number in the last TypeScript version (git history has the original file).
+
+### From `src/data/industries/semiconductors.ts`
+
+- **file header** (line 35):
+  > 半導体 — the semiconductor industry as a chain.
+  > Every stage, description and placement is traced to a quoted passage in
+  > `docs/research/industry-semiconductors-and-terms.md`.
+  > Things a future editor could easily "fix" wrongly:
+  > - The stages are 経済産業省's, not a textbook's. The 取組方針 (p.13–14,
+  >   「サプライチェーンの構造」) splits making a semiconductor into 設計・前工程・後工程,
+  >   says the manufacturing needs 製造装置・部素材・原料 (p.8–9, together 「原料等」),
+  >   and ends with the chips 「様々な電子機器に組み込まれた形で世の中に行き渡る」.
+  >   Those are the six categories below. Four are STAGES in METI's order
+  >   (設計 → 前工程 → 後工程 → 電子機器への組み込み). 製造装置 and 部素材・原料 are
+  >   INPUTS (`role: "input"`): METI describes them as what the manufacturing
+  >   needs, not as steps after design. The spec's example chain puts them in the
+  >   sequence; drawing arrows through them would teach an order that does not
+  >   exist, so they are drawn beside the chain instead (decisions JCE-014).
+  > - SEAJ draws the line differently: its process page lists 設計, mask making
+  >   and wafer making UNDER 前工程. METI's split is used because it is the
+  >   government's and because it keeps 設計 visible as its own stage; the
+  >   difference is recorded in the log, not hidden.
+  > - Sony Group appears in three stages on purpose. Sony's own semiconductor
+  >   site shows it designing image sensors, running the wafer process
+  >   (ウェーハ工程（前工程）) and, through a Thai subsidiary, the 後工程. That page
+  >   also says the logic-circuit wafer stacked into its sensors is made by an
+  >   outside contractor (製造委託), so Sony is not placed as doing everything.
+  > - No company is placed in 部素材・原料 or 電子機器への組み込み. None of the
+  >   published companies that list `semiconductors` has a source placing it
+  >   there, and a company that does not list the industry cannot be placed
+  >   (the integrity test rejects it).
+- **companyIds** (line 53):
+  > Sony: 有報 p.139 「イメージセンサー等を開発、設計、制作、製造」; its semiconductor
+  > site names ソニーセミコンダクタソリューションズ as the group's 設計 company.
+- **companyIds** (line 64):
+  > Sony: its semiconductor site's 生産フロー 「ウェーハ工程（前工程）」, carried out by
+  > ソニーセミコンダクタマニュファクチャリング, a subsidiary the 有報 (p.8) lists under I&SS.
+- **companyIds** (line 75):
+  > Sony: Sony Device Technology (Thailand) 「イメージセンサーの生産（後工程）」
+  > (sony-semicon.com), a subsidiary the 有報 (p.8) lists under I&SS.
+- **companyIds** (line 95):
+  > Tokyo Electron: 有報 p.5 「半導体製造装置の開発・製造・販売・保守サービス」, and
+  > NEDO lists 東京エレクトロン under 半導体製造装置メーカー.
+- **status** (line 188):
+  > Every stage and placement is sourced; the judgement calls (stage order,
+  > METI vs SEAJ split, Sony's outsourced logic wafer) are recorded in the log
+  > and none leaves an unverified claim on the page.
+
+### From `src/data/terms/annual-securities-report.ts`
+
+- **file header** (line 8):
+  > 有価証券報告書. Source passages: docs/research/industry-semiconductors-and-terms.md.
+  > JPX glossary definition, reading included.
+
+### From `src/data/terms/back-end-process.ts`
+
+- **file header** (line 8):
+  > 後工程. Source passages: docs/research/industry-semiconductors-and-terms.md.
+  > METI's description of 後工程, with SEAJ's 組み立て / 試験・検査 split.
+
+### From `src/data/terms/consolidated-subsidiary.ts`
+
+- **file header** (line 9):
+  > 連結子会社. Source passages: docs/research/industry-semiconductors-and-terms.md.
+  > The regulation's own definition (連結財務諸表規則 第2条第4号), with JPX's definition of 連結財務諸表 for what
+  > 連結 means.
+
+### From `src/data/terms/discontinued-operations.ts`
+
+- **file header** (line 10):
+  > 非継続事業. Source passages: docs/research/industry-semiconductors-and-terms.md.
+  > IFRS 5's definition as ASBJ summarises it (§34–35). 「手放すために分けて扱っている」 covers both 売却目的保有
+  > (ASBJ) and the 所有者分配目的で保有する処分グループ Sony's 有報 describes, so Sony's spin-off does not
+  > contradict the definition.
+
+### From `src/data/terms/earnings-release.ts`
+
+- **file header** (line 8):
+  > 決算短信. Source passages: docs/research/industry-semiconductors-and-terms.md.
+  > JPX glossary definition, reading included.
+
+### From `src/data/terms/foundry.ts`
+
+- **file header** (line 9):
+  > ファウンドリ. Source passages: docs/research/industry-semiconductors-and-terms.md.
+  > NEDO's table of semiconductor business models (p.28). Spelled ファウンドリ as METI and Tokyo
+  > Electron write it.
+
+### From `src/data/terms/front-end-process.ts`
+
+- **file header** (line 10):
+  > 前工程. Source passages: docs/research/industry-semiconductors-and-terms.md.
+  > METI's split (設計・前工程・後工程). SEAJ also counts design, mask making and wafer making as 前工程; the
+  > wafer process is central in both, so the definition names only that. No reading: no source
+  > gives one.
+
+### From `src/data/terms/ifrs.ts`
+
+- **file header** (line 9):
+  > 国際会計基準（IFRS）. Source passages: docs/research/industry-semiconductors-and-terms.md.
+  > Named as the company financial table labels it and as 金融庁 writes it; JPX notes the formal
+  > translation is 国際財務報告基準, so the definition says so.
+
+### From `src/data/terms/image-sensor.ts`
+
+- **file header** (line 8):
+  > イメージセンサー. Source passages: docs/research/industry-semiconductors-and-terms.md.
+  > Sony's own semiconductor site: Sony Group is the published company that makes them.
+
+### From `src/data/terms/segment.ts`
+
+- **file header** (line 9):
+  > セグメント. Source passages: docs/research/industry-semiconductors-and-terms.md.
+  > ASBJ Statement No.17 §6 (事業セグメント) and §19 (profit disclosed per 報告セグメント). The chief
+  > operating decision maker is written as 経営者 for a beginner.
+
+### From `src/data/terms/semiconductor-manufacturing-equipment.ts`
+
+- **file header** (line 9):
+  > 半導体製造装置. Source passages: docs/research/industry-semiconductors-and-terms.md.
+  > SEAJ is the equipment makers' own association; its definition lists the kinds of equipment
+  > in plain words. No reading: no source gives one.
+
+### From `src/data/terms/semiconductor.ts`
+
+- **file header** (line 9):
+  > 半導体. Source passages: docs/research/industry-semiconductors-and-terms.md.
+  > Defined the way SEAJ and METI both define it: the material first, then the customary use of
+  > the word for chips. The reading is the one Tokyo Electron's glossary gives.
+
+### From `src/data/terms/sogo-shosha.ts`
+
+- **file header** (line 9):
+  > 総合商社. Source passages: docs/research/industry-semiconductors-and-terms.md.
+  > 日本貿易会 (JFTC) is the trading companies' association. It calls 総合商社 「大手の商社」 (handbook p.32);
+  > the trade + investment description is its current account of 商社.
+
+### From `src/data/terms/subsidiary.ts`
+
+- **file header** (line 9):
+  > 子会社. Source passages: docs/research/industry-semiconductors-and-terms.md.
+  > ASBJ Statement No.22 §6–7. The majority-of-voting-rights case is the example because it is
+  > the first one the standard lists.
+
+### From `src/data/terms/wafer.ts`
+
+- **file header** (line 9):
+  > ウェーハ. Source passages: docs/research/industry-semiconductors-and-terms.md.
+  > Spelled ウェーハ as Tokyo Electron and Sony write it (METI writes ウエハ). The thickness is the
+  > silicon-wafer entry's 「厚さ1ミリ以下」.

@@ -1,5 +1,5 @@
 import type { Source, Sourced } from "./source";
-import type { ContentStatus, Revision } from "./revision";
+import type { ContentStatus } from "./revision";
 
 /**
  * Industry ids are a closed set so that a typo cannot silently create a new,
@@ -196,7 +196,7 @@ export type Company = {
   sources: Source[];
 
   status: ContentStatus;
-  revisions: Revision[];
+  // Revisions live in src/data/revisions/, not here (see Revision).
 
   /** YYYY-MM-DD */
   updatedAt: string;
