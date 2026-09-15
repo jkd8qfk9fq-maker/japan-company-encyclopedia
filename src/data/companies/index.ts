@@ -3,6 +3,7 @@ import type { Company } from "@/types/company";
 import honda from "./honda.json";
 import mitsubishiCorporation from "./mitsubishi-corporation.json";
 import nintendo from "./nintendo.json";
+import nissan from "./nissan.json";
 import sonyGroup from "./sony-group.json";
 import tokyoElectron from "./tokyo-electron.json";
 import toyota from "./toyota.json";
@@ -26,4 +27,5 @@ export const companies: Company[] = Object.entries({
   "mitsubishi-corporation": mitsubishiCorporation,
   "tokyo-electron": tokyoElectron,
   honda,
+  nissan,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
