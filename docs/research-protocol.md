@@ -37,6 +37,11 @@ Memory is not a source. A fact you "know" but cannot find in a document is not w
 - Company IR libraries host 有価証券報告書 and 決算短信 as PDFs. Download to your scratchpad
   directory (**never into the repository**) with `curl -L -o`, then extract with
   `pdftotext -raw` and `pdftotext -table` and read the text. The Read tool can also read PDF pages.
+- **EDINET-rendered PDFs garble Japanese silently.** They use the `UniJIS-UTF16-H` CMap, which the installed
+  `pdftotext` lacks: digits come out right while every Japanese label is garbage, with no error. Use the xpdf
+  Japanese language pack (`https://dl.xpdfreader.com/xpdf-japanese.tar.gz`, unpacked in your scratchpad) and
+  run `pdftotext -cfg <xpdfrc> -enc UTF-8`. Never read a label from an extraction you have not checked is
+  legible. (Found researching Honda, 2026-09-15.)
 - The EDINET API needs a subscription key this project does not have. Do not try to obtain one.
 - If a page is JavaScript-rendered and fetches nothing, look for the PDF link instead.
 

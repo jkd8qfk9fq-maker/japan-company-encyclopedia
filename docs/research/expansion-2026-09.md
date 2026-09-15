@@ -10,8 +10,8 @@ This file is the queue a resumed session continues from. Status: `pending` → `
 
 | # | 分野 | 企業 | id | 状態 | Notes |
 |---|---|---|---|---|---|
-| 1 | 自動車 | 本田技研工業（ホンダ） | `honda` | researching | |
-| 2 | 自動車 | 日産自動車 | `nissan` | pending | |
+| 1 | 自動車 | 本田技研工業（ホンダ） | `honda` | published | 2026年3月期 有報; net loss year noted |
+| 2 | 自動車 | 日産自動車 | `nissan` | researching | |
 | 3 | 半導体 | アドバンテスト | `advantest` | pending | also place in the semiconductor industry page, if sourced |
 | 4 | 半導体 | 信越化学工業 | `shin-etsu-chemical` | pending | also place in the semiconductor industry page, if sourced |
 | 5 | 電機 | 日立製作所 | `hitachi` | pending | |
