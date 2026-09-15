@@ -1,0 +1,398 @@
+{
+  "id": "advantest",
+  "code": "6857",
+  "name": "アドバンテスト",
+  "officialName": "株式会社アドバンテスト",
+  "nameEn": "ADVANTEST CORPORATION",
+  "shortNameEn": "ADVANTEST",
+  "description": "半導体がきちんと動くかを確かめる試験装置（半導体テスタ）とその周辺製品をつくり、世界の半導体関連企業に販売する会社。",
+  "listings": [
+    {
+      "exchange": "tse",
+      "market": "プライム"
+    }
+  ],
+  "industries": [
+    {
+      "industryId": "semiconductors",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "test-systems",
+      "name": "テストシステム事業",
+      "shortName": "テストシステム",
+      "description": "[[term:semiconductor|半導体]]が設計どおりに動くか、求められる性能や耐久性を満たしているかを試験する「半導体テスタ」と、試験する半導体を運ぶ装置やテスタとつなぐ部分など、テスタの周りで使う製品をつくって販売しています。2026年3月期の売上高の90.3%を占める事業です。",
+      "customers": [
+        "半導体関連企業",
+        "NVIDIAグループ",
+        "Taiwan Semiconductor Manufacturing Co., Ltd."
+      ],
+      "sourceIds": [
+        "yuho-2026",
+        "official-semiconductor-test",
+        "official-products",
+        "tanshin-2027-q1"
+      ],
+      "children": [
+        {
+          "id": "soc-test-systems",
+          "name": "SoCテストシステム",
+          "shortName": "SoC",
+          "description": "異なる種類の複数の回路を1つのパッケージにまとめた半導体（SoC）を試験する装置です。機能の違うカードやモジュールを組み合わせて、ロジック、アナログ、無線通信（RF）などの回路をテストします。",
+          "sourceIds": [
+            "official-soc",
+            "official-semiconductor-test",
+            "yuho-2026"
+          ]
+        },
+        {
+          "id": "memory-test-systems",
+          "name": "メモリテストシステム",
+          "shortName": "メモリ",
+          "description": "データを記憶する半導体（メモリ）を試験する装置です。メモリには、高速で読み書きできるDRAMや、電源がなくてもデータを保てるNANDフラッシュなどがあります。メモリは少ない品種を大量に生産するのが一般的で、その量産工程に合わせて、たくさんの半導体を同時にテストできるようにつくられています。",
+          "sourceIds": [
+            "official-memory",
+            "official-semiconductor-test",
+            "yuho-2026"
+          ]
+        },
+        {
+          "id": "test-handlers",
+          "name": "テストハンドラ",
+          "shortName": "ハンドラ",
+          "description": "[[term:back-end-process|後工程]]での半導体の試験を自動化する装置です。半導体を運び、試験のときに温度をかけ、テストの結果にもとづいて半導体を選り分けます。",
+          "sourceIds": [
+            "official-test-handler",
+            "official-products",
+            "yuho-2026"
+          ]
+        },
+        {
+          "id": "device-interfaces",
+          "name": "デバイスインタフェース",
+          "shortName": "インタフェース",
+          "description": "試験する半導体とテスタをつなぐ部分（インタフェース）の製品です。",
+          "sourceIds": [
+            "yuho-2026",
+            "official-products"
+          ]
+        },
+        {
+          "id": "system-level-test",
+          "name": "システムレベルテスト",
+          "shortName": "システムレベル",
+          "description": "半導体が、システムや最終製品に組み込まれて実際に使われる環境で正しく動くかを試験します。半導体を単体で試験するテストを補うものです。",
+          "sourceIds": [
+            "official-system-level-test",
+            "yuho-2026"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "services-and-others",
+      "name": "サービス他",
+      "shortName": "サービス",
+      "description": "サポート・サービスや、試験に使うインタフェースボードなどの消耗品の販売を行っています。サポート・サービスの売上は、アドバンテスト製品の設置台数が増えるにつれて伸びています。ナノテクノロジー関連の製品もこの事業に含まれます。",
+      "products": [
+        "サポート・サービス",
+        "テスト用インタフェースボードなどの消耗品",
+        "ナノテクノロジー関連の製品"
+      ],
+      "sourceIds": [
+        "yuho-2026",
+        "tanshin-2027-q1"
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "半導体が正しく動くかを確かめる試験装置（半導体テスタ）と、半導体を運ぶテストハンドラや半導体とテスタをつなぐデバイスインタフェースなどの周辺製品をつくり、世界の半導体関連企業に販売しています。サポート・サービスの提供や消耗品の販売からも収益を得ています。",
+    "products": [
+      "SoCテストシステム",
+      "メモリテストシステム",
+      "テストハンドラ",
+      "デバイスインタフェース",
+      "システムレベルテストのソリューション",
+      "サポート・サービス",
+      "テスト用インタフェースボードなどの消耗品"
+    ],
+    "customers": [
+      "半導体関連企業",
+      "NVIDIAグループ",
+      "Taiwan Semiconductor Manufacturing Co., Ltd."
+    ],
+    "revenueSources": [
+      "テストシステムやテストハンドラなどの製品の販売",
+      "契約で定めた期間にわたるサービスの提供",
+      "消耗品の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "アドバンテスト",
+        "description": "テストシステム事業の製品は、アドバンテストと複数の外部委託企業が生産します。販売は、主に日本と韓国・中国などの一部の海外顧客をアドバンテストが、その他の海外顧客をAdvantest America, Inc.やAdvantest Taiwan Inc.などの子会社が担当します。"
+      },
+      {
+        "kind": "offering",
+        "title": "半導体テスタと周辺製品、サービス",
+        "description": "SoCやメモリを試験するテストシステム、テストハンドラ、デバイスインタフェース、システムレベルテストのソリューションと、サポート・サービスや消耗品を提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "世界の半導体関連企業",
+        "description": "会社は世界中の半導体関連企業を顧客としています。2026年3月期の海外売上比率は97.8%で、売上高の10%以上を占めた顧客グループはNVIDIAグループとTaiwan Semiconductor Manufacturing Co., Ltd.でした。同じ年、上位5社への売上高が全体の約50%を占めました。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は1兆1,286億円で、そのうちテストシステム事業部門が90.3%、サービス他部門が9.7%を占めました。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益",
+        "description": "2026年3月期の親会社の所有者に帰属する当期利益は3,754億円でした。会社は、テストシステム事業で競争力を保ち、顧客のさまざまなニーズに応えるには、多額の研究開発投資を続ける必要があるとしています。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026",
+      "official-semiconductor-test",
+      "official-products"
+    ]
+  },
+  "financials": [
+    {
+      "fiscalYear": "2022年3月期",
+      "periodEnd": "2022-03-31",
+      "revenue": 416901000000,
+      "revenueLabel": "売上高",
+      "netIncome": 87301000000,
+      "netIncomeLabel": "親会社の所有者に帰属する当期利益",
+      "currency": "JPY",
+      "accountingStandard": "ifrs",
+      "sourceIds": [
+        "yuho-2026",
+        "yuho-2025"
+      ]
+    },
+    {
+      "fiscalYear": "2023年3月期",
+      "periodEnd": "2023-03-31",
+      "revenue": 560191000000,
+      "revenueLabel": "売上高",
+      "netIncome": 130400000000,
+      "netIncomeLabel": "親会社の所有者に帰属する当期利益",
+      "currency": "JPY",
+      "accountingStandard": "ifrs",
+      "sourceIds": [
+        "yuho-2026",
+        "yuho-2025"
+      ]
+    },
+    {
+      "fiscalYear": "2024年3月期",
+      "periodEnd": "2024-03-31",
+      "revenue": 486507000000,
+      "revenueLabel": "売上高",
+      "netIncome": 62290000000,
+      "netIncomeLabel": "親会社の所有者に帰属する当期利益",
+      "currency": "JPY",
+      "accountingStandard": "ifrs",
+      "sourceIds": [
+        "yuho-2026",
+        "yuho-2025"
+      ]
+    },
+    {
+      "fiscalYear": "2025年3月期",
+      "periodEnd": "2025-03-31",
+      "revenue": 779707000000,
+      "revenueLabel": "売上高",
+      "netIncome": 161177000000,
+      "netIncomeLabel": "親会社の所有者に帰属する当期利益",
+      "currency": "JPY",
+      "accountingStandard": "ifrs",
+      "sourceIds": [
+        "yuho-2026",
+        "yuho-2025",
+        "tanshin-2026"
+      ]
+    },
+    {
+      "fiscalYear": "2026年3月期",
+      "periodEnd": "2026-03-31",
+      "revenue": 1128610000000,
+      "revenueLabel": "売上高",
+      "netIncome": 375353000000,
+      "netIncomeLabel": "親会社の所有者に帰属する当期利益",
+      "currency": "JPY",
+      "accountingStandard": "ifrs",
+      "sourceIds": [
+        "yuho-2026",
+        "tanshin-2026"
+      ]
+    }
+  ],
+  "history": [
+    {
+      "year": 1954,
+      "title": "タケダ理研工業を設立",
+      "description": "電子計測器の専門メーカーとして、愛知県豊橋市にタケダ理研工業株式会社を設立しました。創業のころは、電圧電流計や周波数カウンタといった電子計測器を開発・製造していました。",
+      "significance": "現在のアドバンテストの出発点です。会社は、1954年の創業以来培ってきた電子計測技術で顧客の課題の解決に貢献し、半導体の進化を支えていると説明しています。",
+      "sourceIds": [
+        "yuho-2026",
+        "official-history",
+        "official-semiconductor-test"
+      ]
+    },
+    {
+      "year": 1972,
+      "title": "半導体試験装置を発売",
+      "description": "会社が「国産初」とする半導体試験装置「T-320/20」「T-320/30」を発売しました。会社は、1960年代末に半導体産業の発展を予測し、電子計測技術を活かせるテスト・システムの開発に「社運をかけて参入」したと説明しています。",
+      "significance": "電子計測器から始まった会社が、半導体の試験装置を発売した年です。半導体テスタは、現在の会社の主力製品です。",
+      "sourceIds": [
+        "official-history",
+        "official-semiconductor-test"
+      ]
+    },
+    {
+      "year": 1982,
+      "title": "米国に子会社を設立",
+      "description": "子会社Advantest America, Inc.を米国に設立しました。会社はこの年以降、世界各地に拠点を広げています。",
+      "significance": "Advantest America, Inc.は今もテストシステムなどの開発・販売を担う子会社です。2026年3月期の海外売上比率は97.8%でした。",
+      "sourceIds": [
+        "yuho-2026",
+        "official-history"
+      ]
+    },
+    {
+      "year": 1985,
+      "title": "社名を「アドバンテスト」に変更",
+      "description": "タケダ理研工業株式会社から、現在の社名である株式会社アドバンテストに変更しました。同じ年に、東京証券取引所市場第一部に上場しています。",
+      "significance": "会社は、1980年代にテスト・システム事業が会社の「大黒柱」になったと説明しています。2026年3月期も、テストシステム事業部門が売上高の90.3%を占めています。",
+      "sourceIds": [
+        "yuho-2026",
+        "official-history"
+      ]
+    },
+    {
+      "year": 2011,
+      "title": "Verigy社を買収",
+      "description": "半導体試験装置の会社Verigy Ltd.の普通株式をすべて取得し、完全子会社にしました。会社はこの買収を、第2の「社運をかけた一手」と呼んでいます。",
+      "significance": "会社は、Verigy社の顧客基盤と、世界で事業を運営するノウハウが加わったことが、その後の成長の大きな礎になったと説明しています。",
+      "sourceIds": [
+        "yuho-2026",
+        "official-history"
+      ]
+    },
+    {
+      "year": 2019,
+      "title": "システムレベルテスト事業を譲り受ける",
+      "description": "米国Astronics社のシステムレベルテスト事業を譲り受けました。",
+      "significance": "システムレベルテストのソリューションは、現在テストシステム事業に含まれています。会社は、システムレベルテストやテスト周辺機器へと事業を広げてきたとしています。",
+      "sourceIds": [
+        "official-history",
+        "yuho-2026"
+      ]
+    },
+    {
+      "year": 2024,
+      "title": "第3期中期経営計画を発表",
+      "description": "2018年に定めた中長期経営方針「グランドデザイン」を改定し、第3期中期経営計画（MTP3）を発表しました。同じ年、Douglas LefeverがGroup CEOに就任しています。",
+      "significance": "MTP3は2024年度から2026年度までの3か年の計画で、現在の経営の計画です。会社は、最終年度の2026年度もMTP3で掲げた施策を進めるとしています。",
+      "sourceIds": [
+        "yuho-2026",
+        "official-history"
+      ]
+    }
+  ],
+  "relatedCompanies": [],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書兼事業報告書（2026年3月期・第84期）",
+      "publisher": "株式会社アドバンテスト",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/report/IR_SecuritiesandBusinessReport_84th_jp.pdf",
+      "publishedAt": "2026-06-26",
+      "accessedAt": "2026-09-15"
+    },
+    {
+      "id": "tanshin-2026",
+      "title": "2026年3月期 決算短信〔IFRS〕（連結）",
+      "publisher": "株式会社アドバンテスト",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_FR_FY2025_FN.pdf",
+      "publishedAt": "2026-04-27",
+      "accessedAt": "2026-09-15"
+    },
+    {
+      "id": "yuho-2025",
+      "title": "有価証券報告書（2025年3月期・第83期）",
+      "publisher": "株式会社アドバンテスト",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/report/IR_SecuritiesReport_83rd_jp.pdf",
+      "publishedAt": "2025-06-25",
+      "accessedAt": "2026-09-15"
+    },
+    {
+      "id": "tanshin-2027-q1",
+      "title": "2027年3月期 第1四半期決算短信〔IFRS〕（連結）",
+      "publisher": "株式会社アドバンテスト",
+      "url": "https://www.advantest.com/document/ja/investors/ir-library/result/J_FR_FY2026_1Q.pdf",
+      "publishedAt": "2026-07-29",
+      "accessedAt": "2026-09-15"
+    },
+    {
+      "id": "official-history",
+      "title": "アドバンテストのあゆみ",
+      "publisher": "株式会社アドバンテスト",
+      "url": "https://www.advantest.com/ja/about/history/",
+      "accessedAt": "2026-09-15"
+    },
+    {
+      "id": "official-semiconductor-test",
+      "title": "解説：半導体テスト",
+      "publisher": "株式会社アドバンテスト",
+      "url": "https://www.advantest.com/ja/about/business/",
+      "accessedAt": "2026-09-15"
+    },
+    {
+      "id": "official-products",
+      "title": "製品・ソリューション",
+      "publisher": "株式会社アドバンテスト",
+      "url": "https://www.advantest.com/ja/products/",
+      "accessedAt": "2026-09-15"
+    },
+    {
+      "id": "official-soc",
+      "title": "SoCテストシステム",
+      "publisher": "株式会社アドバンテスト",
+      "url": "https://www.advantest.com/ja/products/semiconductor-test-system/soc/",
+      "accessedAt": "2026-09-15"
+    },
+    {
+      "id": "official-memory",
+      "title": "メモリテストシステム",
+      "publisher": "株式会社アドバンテスト",
+      "url": "https://www.advantest.com/ja/products/semiconductor-test-system/memory/",
+      "accessedAt": "2026-09-15"
+    },
+    {
+      "id": "official-test-handler",
+      "title": "テストハンドラ",
+      "publisher": "株式会社アドバンテスト",
+      "url": "https://www.advantest.com/ja/products/component-test-system/test-handler/",
+      "accessedAt": "2026-09-15"
+    },
+    {
+      "id": "official-system-level-test",
+      "title": "システムレベル・テストシステム",
+      "publisher": "株式会社アドバンテスト",
+      "url": "https://www.advantest.com/ja/products/component-test-system/system-level-test-systems/",
+      "accessedAt": "2026-09-15"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-09-15"
+}
