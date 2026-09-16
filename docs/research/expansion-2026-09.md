@@ -13,8 +13,8 @@ This file is the queue a resumed session continues from. Status: `pending` → `
 | 1 | 自動車 | 本田技研工業（ホンダ） | `honda` | published | 2026年3月期 有報; net loss year noted |
 | 2 | 自動車 | 日産自動車 | `nissan` | published | 2026年3月期 有報 (J-GAAP); two loss years noted |
 | 3 | 半導体 | アドバンテスト | `advantest` | published | placed in 製造装置 (industry revision) |
-| 4 | 半導体 | 信越化学工業 | `shin-etsu-chemical` | researching | also place in the semiconductor industry page, if sourced |
-| 5 | 電機 | 日立製作所 | `hitachi` | pending | |
+| 4 | 半導体 | 信越化学工業 | `shin-etsu-chemical` | published | primary chemicals; placed in 部素材・原料 |
+| 5 | 電機 | 日立製作所 | `hitachi` | pending | first company of the EDINET-pipeline batch |
 | 6 | 電機 | 三菱電機 | `mitsubishi-electric` | pending | |
 | — | 総合商社 | 三菱商事 | `mitsubishi-corporation` | published | before this expansion |
 | 7 | 総合商社 | 三井物産 | `mitsui-and-co` | pending | |

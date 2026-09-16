@@ -1,0 +1,375 @@
+{
+  "id": "2026-09-16-industry-semiconductors-686112",
+  "targetType": "industry",
+  "targetId": "semiconductors",
+  "changedAt": "2026-09-16T05:30:57.968Z",
+  "reason": "信越化学工業の有価証券報告書（第149期）p.21「シリコンウエハー、フォトレジスト、マスクブランクス等の半導体材料」および同社シリコンウエハー製品ページ「シリコンウエハーは半導体の「基板」となる素材であり」。工程そのものではなく材料の供給者にあたるため input（部素材・原料）に置いた。根拠は docs/research/shin-etsu-chemical.md「Semiconductor industry placement」",
+  "summary": "信越化学工業を「部素材・原料」に配置",
+  "before": {
+    "categories": [
+      {
+        "id": "design",
+        "name": "設計",
+        "role": "stage",
+        "description": "求められる性能を実現する回路と、その配置（レイアウト）を、専用の設計ツールを使って設計し、動作を確かめます。回路の模様をウェーハに写すためのフォトマスクも、あわせて設計します。工場を持たず、設計に専念して製造を外部に任せる会社（ファブレス）もあります。",
+        "companyIds": [
+          "sony-group"
+        ],
+        "sourceIds": [
+          "meti-supply-policy",
+          "nedo-tsc-trend",
+          "sony-yuho-2026",
+          "sony-semicon-group",
+          "sony-semicon-flow"
+        ]
+      },
+      {
+        "id": "front-end-process",
+        "name": "前工程（回路づくり）",
+        "role": "stage",
+        "description": "ウェーハの上に電子回路をつくる工程です。回路の模様を写し取る露光・現像や、膜を削るエッチングなどの処理を数十回から数百回くり返し、配線をつくったあと、ウェーハのまま電気が正しく通るかを検査します。設計は行わず製造だけを請け負う会社（ファウンドリ）が担うこともあります。",
+        "companyIds": [
+          "sony-group"
+        ],
+        "sourceIds": [
+          "meti-supply-policy",
+          "seaj-process",
+          "nedo-tsc-trend",
+          "sony-semicon-flow",
+          "sony-semicon-group",
+          "sony-yuho-2026"
+        ]
+      },
+      {
+        "id": "back-end-process",
+        "name": "後工程（組み立て・検査）",
+        "role": "stage",
+        "description": "ウェーハを切ってチップに分け、チップをリードフレームに取り付けて金属の線でつなぎ、樹脂などで封じて包みます。最後に外観や電気的な特性を検査して、不良品を取り除きます。組み立てと検査を専門に請け負う会社もあります。",
+        "companyIds": [
+          "sony-group"
+        ],
+        "sourceIds": [
+          "meti-supply-policy",
+          "seaj-process",
+          "nedo-tsc-trend",
+          "sony-semicon-about",
+          "sony-semicon-flow",
+          "sony-yuho-2026"
+        ]
+      },
+      {
+        "id": "electronic-devices",
+        "name": "電子機器への組み込み",
+        "role": "stage",
+        "description": "できあがった半導体は、さまざまな電子機器に組み込まれて世の中に届きます。スマートフォンやパソコン、家電、自動車から人工衛星まで、あらゆるものの中で、情報を記憶したり計算したりする役割を担っています。",
+        "companyIds": [],
+        "sourceIds": [
+          "meti-supply-policy",
+          "tel-about-semiconductor",
+          "seaj-about-semiconductor"
+        ]
+      },
+      {
+        "id": "manufacturing-equipment",
+        "name": "製造装置",
+        "role": "input",
+        "description": "前工程と後工程で使う装置です。膜をつくる成膜装置、回路の模様を写す露光装置、膜を削るエッチング装置、ウェーハをチップに切り分けるダイシング装置、樹脂で包むモールディング装置、検査装置など、さまざまな種類があります。つくる半導体に合わせて仕様を細かく調整することが多く、まったく同じ製品はほとんどありません。",
+        "companyIds": [
+          "tokyo-electron",
+          "advantest"
+        ],
+        "sourceIds": [
+          "meti-supply-policy",
+          "seaj-about-semiconductor",
+          "seaj-process",
+          "sony-semicon-flow",
+          "tel-yuho-2026",
+          "nedo-tsc-trend",
+          "advantest-yuho-2026"
+        ]
+      },
+      {
+        "id": "materials",
+        "name": "部素材・原料",
+        "role": "input",
+        "description": "回路をつくる土台になるシリコンウェーハや、パッケージに使う基板・リードフレーム・樹脂などの部素材と、ヘリウムや希ガスなどの原料です。工程の数がとても多いため使う材料も多く、その品質が半導体の性能に直結します。",
+        "companyIds": [],
+        "sourceIds": [
+          "meti-supply-policy"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "meti-supply-policy",
+        "title": "半導体に係る安定供給確保を図るための取組方針（令和7年5月16日改定）",
+        "publisher": "経済産業省",
+        "url": "https://www.meti.go.jp/policy/economy/economic_security/semicon/torikumihousin_semiconr3.pdf",
+        "publishedAt": "2025-05-16",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "nedo-tsc-trend",
+        "title": "TSCトレンド「グローバルな半導体競争 ～エコシステム確保をかけて～」",
+        "publisher": "国立研究開発法人 新エネルギー・産業技術総合開発機構（NEDO）技術戦略研究センター",
+        "url": "https://www.nedo.go.jp/content/100931733.pdf",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "seaj-about-semiconductor",
+        "title": "半導体とは",
+        "publisher": "一般社団法人 日本半導体製造装置協会（SEAJ）",
+        "url": "https://www.seaj.or.jp/semi/about_semi.html",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "seaj-process",
+        "title": "半導体製造工程とは",
+        "publisher": "一般社団法人 日本半導体製造装置協会（SEAJ）",
+        "url": "https://www.seaj.or.jp/semi/proc/",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "tel-about-semiconductor",
+        "title": "半導体を知る",
+        "publisher": "東京エレクトロン株式会社",
+        "url": "https://www.tel.co.jp/aboutsemiconductor/index.html",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "tel-yuho-2026",
+        "title": "有価証券報告書（2026年3月期・第63期）",
+        "publisher": "東京エレクトロン株式会社",
+        "url": "https://www.tel.co.jp/ir/library/fs/arfnn500000000ni-att/yuho63q4.pdf",
+        "publishedAt": "2026-06-22",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "sony-yuho-2026",
+        "title": "有価証券報告書（2025年度：2025年4月1日〜2026年3月31日）",
+        "publisher": "ソニーグループ株式会社",
+        "url": "https://www.sony.com/ja/SonyInfo/IR/library/r7_q4.pdf",
+        "publishedAt": "2026-06-18",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "sony-semicon-group",
+        "title": "グループ（ソニーセミコンダクタソリューションズグループ）",
+        "publisher": "ソニーセミコンダクタソリューションズ株式会社",
+        "url": "https://www.sony-semicon.com/ja/company/group/index.html",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "sony-semicon-about",
+        "title": "会社概要（ソニーセミコンダクタソリューションズグループ）",
+        "publisher": "ソニーセミコンダクタソリューションズ株式会社",
+        "url": "https://www.sony-semicon.com/ja/company/about/index.html",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "sony-semicon-flow",
+        "title": "開発・設計・生産の取り組み（フロー）",
+        "publisher": "ソニーセミコンダクタソリューションズ株式会社",
+        "url": "https://www.sony-semicon.com/ja/company/operation-flow/index.html",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "advantest-yuho-2026",
+        "title": "アドバンテスト 有価証券報告書兼事業報告書（2026年3月期・第84期）",
+        "publisher": "株式会社アドバンテスト",
+        "url": "https://www.advantest.com/document/ja/investors/ir-library/report/IR_SecuritiesandBusinessReport_84th_jp.pdf",
+        "publishedAt": "2026-06-26",
+        "accessedAt": "2026-09-15"
+      }
+    ]
+  },
+  "after": {
+    "categories": [
+      {
+        "id": "design",
+        "name": "設計",
+        "role": "stage",
+        "description": "求められる性能を実現する回路と、その配置（レイアウト）を、専用の設計ツールを使って設計し、動作を確かめます。回路の模様をウェーハに写すためのフォトマスクも、あわせて設計します。工場を持たず、設計に専念して製造を外部に任せる会社（ファブレス）もあります。",
+        "companyIds": [
+          "sony-group"
+        ],
+        "sourceIds": [
+          "meti-supply-policy",
+          "nedo-tsc-trend",
+          "sony-yuho-2026",
+          "sony-semicon-group",
+          "sony-semicon-flow"
+        ]
+      },
+      {
+        "id": "front-end-process",
+        "name": "前工程（回路づくり）",
+        "role": "stage",
+        "description": "ウェーハの上に電子回路をつくる工程です。回路の模様を写し取る露光・現像や、膜を削るエッチングなどの処理を数十回から数百回くり返し、配線をつくったあと、ウェーハのまま電気が正しく通るかを検査します。設計は行わず製造だけを請け負う会社（ファウンドリ）が担うこともあります。",
+        "companyIds": [
+          "sony-group"
+        ],
+        "sourceIds": [
+          "meti-supply-policy",
+          "seaj-process",
+          "nedo-tsc-trend",
+          "sony-semicon-flow",
+          "sony-semicon-group",
+          "sony-yuho-2026"
+        ]
+      },
+      {
+        "id": "back-end-process",
+        "name": "後工程（組み立て・検査）",
+        "role": "stage",
+        "description": "ウェーハを切ってチップに分け、チップをリードフレームに取り付けて金属の線でつなぎ、樹脂などで封じて包みます。最後に外観や電気的な特性を検査して、不良品を取り除きます。組み立てと検査を専門に請け負う会社もあります。",
+        "companyIds": [
+          "sony-group"
+        ],
+        "sourceIds": [
+          "meti-supply-policy",
+          "seaj-process",
+          "nedo-tsc-trend",
+          "sony-semicon-about",
+          "sony-semicon-flow",
+          "sony-yuho-2026"
+        ]
+      },
+      {
+        "id": "electronic-devices",
+        "name": "電子機器への組み込み",
+        "role": "stage",
+        "description": "できあがった半導体は、さまざまな電子機器に組み込まれて世の中に届きます。スマートフォンやパソコン、家電、自動車から人工衛星まで、あらゆるものの中で、情報を記憶したり計算したりする役割を担っています。",
+        "companyIds": [],
+        "sourceIds": [
+          "meti-supply-policy",
+          "tel-about-semiconductor",
+          "seaj-about-semiconductor"
+        ]
+      },
+      {
+        "id": "manufacturing-equipment",
+        "name": "製造装置",
+        "role": "input",
+        "description": "前工程と後工程で使う装置です。膜をつくる成膜装置、回路の模様を写す露光装置、膜を削るエッチング装置、ウェーハをチップに切り分けるダイシング装置、樹脂で包むモールディング装置、検査装置など、さまざまな種類があります。つくる半導体に合わせて仕様を細かく調整することが多く、まったく同じ製品はほとんどありません。",
+        "companyIds": [
+          "tokyo-electron",
+          "advantest"
+        ],
+        "sourceIds": [
+          "meti-supply-policy",
+          "seaj-about-semiconductor",
+          "seaj-process",
+          "sony-semicon-flow",
+          "tel-yuho-2026",
+          "nedo-tsc-trend",
+          "advantest-yuho-2026"
+        ]
+      },
+      {
+        "id": "materials",
+        "name": "部素材・原料",
+        "role": "input",
+        "description": "回路をつくる土台になるシリコンウェーハや、パッケージに使う基板・リードフレーム・樹脂などの部素材と、ヘリウムや希ガスなどの原料です。工程の数がとても多いため使う材料も多く、その品質が半導体の性能に直結します。",
+        "companyIds": [
+          "shin-etsu-chemical"
+        ],
+        "sourceIds": [
+          "meti-supply-policy",
+          "shin-etsu-yuho-2026"
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "meti-supply-policy",
+        "title": "半導体に係る安定供給確保を図るための取組方針（令和7年5月16日改定）",
+        "publisher": "経済産業省",
+        "url": "https://www.meti.go.jp/policy/economy/economic_security/semicon/torikumihousin_semiconr3.pdf",
+        "publishedAt": "2025-05-16",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "nedo-tsc-trend",
+        "title": "TSCトレンド「グローバルな半導体競争 ～エコシステム確保をかけて～」",
+        "publisher": "国立研究開発法人 新エネルギー・産業技術総合開発機構（NEDO）技術戦略研究センター",
+        "url": "https://www.nedo.go.jp/content/100931733.pdf",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "seaj-about-semiconductor",
+        "title": "半導体とは",
+        "publisher": "一般社団法人 日本半導体製造装置協会（SEAJ）",
+        "url": "https://www.seaj.or.jp/semi/about_semi.html",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "seaj-process",
+        "title": "半導体製造工程とは",
+        "publisher": "一般社団法人 日本半導体製造装置協会（SEAJ）",
+        "url": "https://www.seaj.or.jp/semi/proc/",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "tel-about-semiconductor",
+        "title": "半導体を知る",
+        "publisher": "東京エレクトロン株式会社",
+        "url": "https://www.tel.co.jp/aboutsemiconductor/index.html",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "tel-yuho-2026",
+        "title": "有価証券報告書（2026年3月期・第63期）",
+        "publisher": "東京エレクトロン株式会社",
+        "url": "https://www.tel.co.jp/ir/library/fs/arfnn500000000ni-att/yuho63q4.pdf",
+        "publishedAt": "2026-06-22",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "sony-yuho-2026",
+        "title": "有価証券報告書（2025年度：2025年4月1日〜2026年3月31日）",
+        "publisher": "ソニーグループ株式会社",
+        "url": "https://www.sony.com/ja/SonyInfo/IR/library/r7_q4.pdf",
+        "publishedAt": "2026-06-18",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "sony-semicon-group",
+        "title": "グループ（ソニーセミコンダクタソリューションズグループ）",
+        "publisher": "ソニーセミコンダクタソリューションズ株式会社",
+        "url": "https://www.sony-semicon.com/ja/company/group/index.html",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "sony-semicon-about",
+        "title": "会社概要（ソニーセミコンダクタソリューションズグループ）",
+        "publisher": "ソニーセミコンダクタソリューションズ株式会社",
+        "url": "https://www.sony-semicon.com/ja/company/about/index.html",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "sony-semicon-flow",
+        "title": "開発・設計・生産の取り組み（フロー）",
+        "publisher": "ソニーセミコンダクタソリューションズ株式会社",
+        "url": "https://www.sony-semicon.com/ja/company/operation-flow/index.html",
+        "accessedAt": "2026-09-14"
+      },
+      {
+        "id": "advantest-yuho-2026",
+        "title": "アドバンテスト 有価証券報告書兼事業報告書（2026年3月期・第84期）",
+        "publisher": "株式会社アドバンテスト",
+        "url": "https://www.advantest.com/document/ja/investors/ir-library/report/IR_SecuritiesandBusinessReport_84th_jp.pdf",
+        "publishedAt": "2026-06-26",
+        "accessedAt": "2026-09-15"
+      },
+      {
+        "id": "shin-etsu-yuho-2026",
+        "title": "信越化学工業 有価証券報告書（2026年3月期・第149期）",
+        "publisher": "信越化学工業株式会社",
+        "url": "https://www.shinetsu.co.jp/jp/wp-content/uploads/sites/2/2026/06/yuho_149.pdf",
+        "publishedAt": "2026-06-19",
+        "accessedAt": "2026-09-16"
+      }
+    ]
+  }
+}
