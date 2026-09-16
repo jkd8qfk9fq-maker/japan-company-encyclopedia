@@ -70,14 +70,29 @@ const NOT_REVENUE = /(Profit|Income|Loss|Margin|Ratio|Comprehensive|PerShare|Cos
 /** 相対年度 → offset from the filing's own fiscal year. */
 const YEAR_OFFSET = { 当期: 0, 前期: 1, 前々期: 2, 三期前: 3, 四期前: 4 };
 
+/**
+ * Each file takes the first element present. A J-GAAP filer tags a section under
+ * jpcrp_cor / jpdei_cor; an IFRS filer tags the financial-statement notes under
+ * jpigp_cor instead, which is why the segment note needs both spellings — without
+ * the IFRS one, the most important section of the pack is silently absent.
+ */
 const SECTIONS = {
-  "indicators.txt": "jpcrp_cor:BusinessResultsOfGroupTextBlock",
-  "history.txt": "jpcrp_cor:CompanyHistoryTextBlock",
-  "business.txt": "jpcrp_cor:DescriptionOfBusinessTextBlock",
-  "affiliates.txt": "jpcrp_cor:OverviewOfAffiliatedEntitiesTextBlock",
-  "segments.txt": "jpcrp_cor:NotesSegmentInformationEtcConsolidatedFinancialStatementsTextBlock",
-  "segment-overview.txt": "jpcrp_cor:DescriptionOfReportableSegmentsTextBlock",
-  "facilities.txt": "jpcrp_cor:MajorFacilitiesTextBlock",
+  "indicators.txt": ["jpcrp_cor:BusinessResultsOfGroupTextBlock"],
+  "history.txt": ["jpcrp_cor:CompanyHistoryTextBlock"],
+  "business.txt": ["jpcrp_cor:DescriptionOfBusinessTextBlock"],
+  "affiliates.txt": ["jpcrp_cor:OverviewOfAffiliatedEntitiesTextBlock"],
+  "segments.txt": [
+    "jpcrp_cor:NotesSegmentInformationEtcConsolidatedFinancialStatementsTextBlock",
+    "jpigp_cor:NotesSegmentInformationConsolidatedFinancialStatementsIFRSTextBlock",
+  ],
+  "segment-overview.txt": ["jpcrp_cor:DescriptionOfReportableSegmentsTextBlock"],
+  // Present only when the company changed its reportable segments — exactly the
+  // case the protocol asks a researcher to reason about.
+  "segment-changes.txt": [
+    "jpigp_cor:DisclosureOfChangesInReportableSegmentsIFRSTextBlock",
+    "jpcrp_cor:NotesChangesInReportableSegmentsEtcConsolidatedFinancialStatementsTextBlock",
+  ],
+  "facilities.txt": ["jpcrp_cor:MajorFacilitiesTextBlock"],
 };
 
 /** 相対年度, falling back to the context id (extension rows often leave it blank). */
@@ -265,15 +280,19 @@ async function packFor(companyId, code4, from, to) {
   const dir = join(cacheDir(), "evidence", companyId);
   mkdirSync(dir, { recursive: true });
   const sectionIndex = {};
-  for (const [file, element] of Object.entries(SECTIONS)) {
-    const row = rows.find((r) => r["要素ID"] === element);
+  for (const [file, elements] of Object.entries(SECTIONS)) {
+    const row = rows.find((r) => elements.includes(r["要素ID"]) && r["値"]);
     if (!row) continue;
     const text = textBlockToText(row["値"]);
     writeFileSync(join(dir, file), text, "utf8");
-    sectionIndex[file] = { element, characters: text.length };
+    sectionIndex[file] = { element: row["要素ID"], characters: text.length };
   }
+  if (!sectionIndex["segments.txt"]) {
+    warnings.push("セグメント情報のテキストブロックが見つからない。有報本文でセグメント情報を確認すること");
+  }
+  const taken = Object.values(SECTIONS).flat();
   const others = rows
-    .filter((r) => /TextBlock/.test(r["要素ID"]) && !Object.values(SECTIONS).includes(r["要素ID"]) && r["値"]?.length > 200)
+    .filter((r) => /TextBlock/.test(r["要素ID"]) && !taken.includes(r["要素ID"]) && r["値"]?.length > 200)
     .map((r) => ({ name: r["項目名"], element: r["要素ID"], text: textBlockToText(r["値"]) }));
   writeFileSync(join(dir, "sections.json"), JSON.stringify(others, null, 2), "utf8");
 
