@@ -2,7 +2,7 @@
 
 How a company entry is researched and written. The output is three files:
 
-- `src/data/companies/<company-id>.json` — valid against `companySchema` (`src/lib/content/schemas.ts`; type in `src/types/company.ts`). Use `src/data/companies/toyota.json` as the model of shape and depth
+- `src/data/companies/<company-id>.json` — valid against `companySchema` (`src/lib/content/schemas.ts`)
 - `src/data/revisions/<YYYY-MM-DD>-company-<company-id>-initial.json` — the first revision record (see "Other fields")
 - `docs/research/<company-id>.md` — the research log
 
@@ -12,38 +12,50 @@ The project lead registers the company in `src/data/companies/index.ts` after ch
 If this protocol and a deadline disagree, the protocol wins and the entry ships with `null`s and
 `needs-attention` notes.
 
+Read this document and `src/lib/content/schemas.ts`. Open an existing entry
+(`src/data/companies/advantest.json`) only if the shape of a field is unclear — do not read several.
+
 ---
 
 ## 1. Sources, in order of authority
 
 | Rank | Source | Use it for |
 |---|---|---|
-| 1 | **有価証券報告書** (latest fiscal year) | Financials, segments, 事業の内容, 沿革, 商号, 上場取引所 |
-| 2 | **決算短信** (same fiscal year) | Cross-checking the latest year's revenue and net income |
+| 1 | **有価証券報告書**, via the evidence pack (below) | Financials, segments, 事業の内容, 沿革, 商号, 上場取引所, 関係会社 |
+| 2 | **決算短信** (same fiscal year) | An extra cross-check when something looks odd |
 | 3 | **統合報告書 / アニュアルレポート** | Business descriptions, products, customers, business model |
-| 4 | **Company official pages** (会社概要, 沿革, 事業紹介, IR) | History detail, business detail |
+| 4 | **Company official pages** (会社概要, 沿革, 事業紹介, IR) | Product and history detail the 有報 does not carry |
 | 5 | Exchange / regulator pages (JPX, EDINET) | Listing facts, filing metadata |
 | — | **Never**: Wikipedia, IR aggregators, stock sites, blogs, your own memory | Nothing |
 
 Memory is not a source. A fact you "know" but cannot find in a document is not written down.
 
-### Getting documents
+### The evidence pack — start here, not with a PDF
 
-- **`pdftotext -layout` has misaligned rows** in the 主要な経営指標等の推移 table of three of the first five
-  filings (it put 包括利益 where net income belongs). Always read figures with `-raw` and `-table`, confirm they
-  agree, and finish with a script that compares stored values to the extracted text.
-- Some IR hosts (sony.com) return 403 to `curl` without browser headers. That is not a dead link; retry with a
-  browser User-Agent before recording a source as unavailable.
-- Company IR libraries host 有価証券報告書 and 決算短信 as PDFs. Download to your scratchpad
-  directory (**never into the repository**) with `curl -L -o`, then extract with
-  `pdftotext -raw` and `pdftotext -table` and read the text. The Read tool can also read PDF pages.
-- **EDINET-rendered PDFs garble Japanese silently.** They use the `UniJIS-UTF16-H` CMap, which the installed
-  `pdftotext` lacks: digits come out right while every Japanese label is garbage, with no error. Use the xpdf
-  Japanese language pack (`https://dl.xpdfreader.com/xpdf-japanese.tar.gz`, unpacked in your scratchpad) and
-  run `pdftotext -cfg <xpdfrc> -enc UTF-8`. Never read a label from an extraction you have not checked is
-  legible. (Found researching Honda, 2026-09-15.)
-- The EDINET API needs a subscription key this project does not have. Do not try to obtain one.
-- If a page is JavaScript-rendered and fetches nothing, look for the PDF link instead.
+The lead builds a pack for each company from the filing's **XBRL** (the tagged data EDINET serves
+for the same 有価証券報告書), so figures are read mechanically instead of out of a PDF:
+
+```
+node scripts/research/evidence-pack.mjs <company-id> <4-digit code> [--from YYYY-MM-DD --to YYYY-MM-DD]
+```
+
+It writes, under the research cache (path given in your task):
+
+| File | What it holds |
+|---|---|
+| `summary.json` | The filing (name, docID, submission date, 決算期), the five-year figures **in yen** with the filing's own labels, and a restatement check against the previous year's filing |
+| `indicators.txt` | 主要な経営指標等の推移 as printed — confirm the tagged values against it |
+| `business.txt` | 事業の内容 |
+| `segments.txt`, `segment-overview.txt` | セグメント情報 (including the segment revenue table) |
+| `history.txt` | 沿革 |
+| `affiliates.txt`, `facilities.txt` | 関係会社の状況, 主要な設備の状況 |
+| `sections.json` | Every other TextBlock in the filing, by name |
+
+**Do not re-derive what the pack already contains.** No PDF download, no `pdftotext`, no
+hand-written comparison script. Fetch a company page only for something the pack does not carry
+(a product explanation, a history detail), and cite it as its own source.
+
+If a fact you need is missing from the pack, say so in the log and fetch the document you need.
 
 ---
 
@@ -108,28 +120,23 @@ Answers three questions: what does the company provide, who pays for it, how doe
 
 ### `financials`
 
-- **Source: the latest 有報, 第一部 第1「主要な経営指標等の推移」, the 連結 table.** It shows five
-  fiscal years in one place — use all five.
-- `revenue`: the top-line row as labelled in that table. Record the label verbatim in
-  `revenueLabel` (`売上高`, `営業収益`, `売上収益`, `収益`, …).
-- `netIncome`: profit attributable to owners of the parent — `親会社株主に帰属する当期純利益`
-  (J-GAAP) or `親会社の所有者に帰属する当期利益` (IFRS). Record the label verbatim in
-  `netIncomeLabel`. **Never** substitute 当期利益 including non-controlling interests.
-- **Units**: tables are usually in 百万円. Convert to whole yen (× 1,000,000) — JSON has no numeric
-  separators, so write the digits plainly (`48036704000000`) and check the count of zeros with a script.
-  Record the original value and unit in the log.
-- If the table splits across an accounting-standard change, set `accountingStandard` per year.
-  If a year appears under two standards, use the standard the company reports for the later years
-  and note it.
-- **Cross-check the latest year against the 決算短信.** If they differ, use the 有報 figure and
-  record the difference.
+- **Source: the evidence pack's `summary.json`.** Its `figures.revenue` / `figures.netIncome` are the
+  filing's own tagged values for the last five fiscal years, **already in yen** — copy them; never convert,
+  round or retype a figure by hand.
+- Confirm each value against `indicators.txt` (the same table as printed). If the two disagree, stop and
+  record it: that is a finding, not a formatting problem.
+- `revenueLabel` / `netIncomeLabel`: the filing's own wording, from the pack (`売上高`, `営業収益`,
+  `売上収益`, `収益`, `経常収益`…). Banks and other financial groups report 経常収益 as the top line; use it,
+  and explain in the business model what it consists of, only as far as the 有報 does.
+- `netIncome` is profit attributable to owners of the parent. **Never** the 包括利益 row, and never a figure
+  including non-controlling interests. If the pack offers more than one candidate element, pick the one
+  `indicators.txt` prints and say why in the log.
+- `accountingStandard` per year: J-GAAP, IFRS or US GAAP as the filing states.
+- **Restatements**: the pack compares the overlapping years against the previous filing. Report what it found
+  in the log. A difference is a restatement — record it and use the latest filing's figure.
 - `fiscalYear` label: `2026年3月期` form, using the company's own year-end month (`2026年2月期`,
-  `2025年8月期`). `periodEnd`: the actual last day of that fiscal year. **The latest 有報 is the latest one
-  FILED** — for a company whose year ends in August, that may be for a year that ended a year ago.
-- **Banks and other financial groups** print 経常収益 as their top line, not 売上高. Use it, verbatim, as
-  `revenueLabel`; do not substitute 業務粗利益 or anything computed. Explain in the business model, in plain
-  words and only as far as the 有報 does, what 経常収益 consists of (interest, fees, trading…).
-- A value you cannot read with certainty is `null`, and the entry becomes `needs-attention`.
+  `2025年8月期`). `periodEnd`: the last day of that fiscal year, as in the pack.
+- A value you cannot confirm is `null`, and the entry becomes `needs-attention`.
 - **Scope changes** (`revenueBasis`, `netIncomeBasis`): if what revenue covers changes across the five years
   (a spin-off restated as discontinued operations, an acquisition presented retroactively), set `revenueBasis`
   on every year and `netIncomeBasis` on every year. The page then breaks the chart and states which years'
@@ -189,7 +196,8 @@ Everything left null or left out, and every place you had to choose.
 
 ## 4. Before finishing
 
-1. `npm run content:validate-file -- src/data/companies/<company-id>.json` must pass: schema, every
+1. `node scripts/research/verify-financials.mjs <company-id>` must exit 0 — every stored figure equals the
+   filing's tagged value, and the labels match. Do not hand-write a comparison script.
+2. `npm run content:validate-file -- src/data/companies/<company-id>.json` must pass: schema, every
    integrity rule the editor enforces, id = file name, and the initial revision file present.
-2. Re-read each financial figure against the extracted text one more time, digit by digit, with a script.
 3. Write only your three files. Do not edit types, other companies, the index, tests or components.
