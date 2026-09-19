@@ -23,7 +23,7 @@ This file is the queue a resumed session continues from. Status: `pending` → `
 | 6 | 電機 | 三菱電機 | `mitsubishi-electric` | published | 6 segments; セグメント変更は名称変更のみ（ビジネス・プラットフォーム→デジタルイノベーション） |
 | — | 総合商社 | 三菱商事 | `mitsubishi-corporation` | published | before this expansion |
 | 7 | 総合商社 | 三井物産 | `mitsui-and-co` | published | 7 segments ordered by 収益; note that a 商社 top line is not a manufacturer's 売上高 |
-| 8 | 総合商社 | 伊藤忠商事 | `itochu` | pending | |
+| 8 | 総合商社 | 伊藤忠商事 | `itochu` | published | 8 segments ordered by 収益; profit order differs and is stated |
 | 9 | 金融 | 三菱UFJフィナンシャル・グループ | `mitsubishi-ufj-financial-group` | pending | top line 経常収益; a 2026-09-16 agent was killed mid-write — its unverified draft is not in the repo |
 | 10 | 金融 | 三井住友フィナンシャルグループ | `sumitomo-mitsui-financial-group` | pending | top line 経常収益 |
 | 11 | 金融 | みずほフィナンシャルグループ | `mizuho-financial-group` | pending | top line 経常収益 |
