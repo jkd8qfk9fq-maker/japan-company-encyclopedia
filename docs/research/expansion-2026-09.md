@@ -28,7 +28,7 @@ This file is the queue a resumed session continues from. Status: `pending` → `
 | 10 | 金融 | 三井住友フィナンシャルグループ | `sumitomo-mitsui-financial-group` | published | second bank; 5 事業部門 ordered by 連結粗利益; needs-attention: no segment↔company map in XBRL |
 | 11 | 金融 | みずほフィナンシャルグループ | `mizuho-financial-group` | published | third bank; 5 カンパニー ordered by 業務粗利益; needs-attention: no per-segment 経常収益, no segment↔company map |
 | 12 | 通信 | NTT | `ntt` | published | renamed NTT株式会社 2025年7月1日 (沿革); 4 segments ordered by 営業収益 |
-| 13 | 通信 | KDDI | `kddi` | pending | **restates 2023–2025 revenue and net income** against the prior 有報; also discloses セグメント変更 |
+| 13 | 通信 | KDDI | `kddi` | published | restatement = 架空循環取引 error correction (not a scope change); notes on 3 years, no basis fields |
 | 14 | IT | 富士通 | `fujitsu` | pending | |
 | 15 | IT | NEC | `nec` | pending | filing discloses 報告セグメントの変更 |
 | 16 | 小売 | セブン＆アイ・ホールディングス | `seven-and-i-holdings` | pending | February year-end; scope changes likely |
