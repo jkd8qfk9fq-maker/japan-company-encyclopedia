@@ -54,7 +54,7 @@ export function BasicInfoSection({ draft, update }: SectionProps) {
               </select>
             </label>
             <div className="w-40">
-              <TextField label="市場" value={listing.market} onChange={(v) => update({ listings: list.set(draft.listings, i, { ...listing, market: v ?? "" }) })} />
+              <TextField label="市場" value={listing.market ?? ""} onChange={(v) => update({ listings: list.set(draft.listings, i, { ...listing, market: v ?? "" }) })} />
             </div>
             <RowControls label="取引所" onRemove={() => update({ listings: list.remove(draft.listings, i) })} />
           </div>

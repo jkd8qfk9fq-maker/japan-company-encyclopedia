@@ -164,8 +164,14 @@ export type RelatedCompany = Sourced & {
  */
 export type Listing = {
   exchange: "tse" | "nse" | "fse" | "sse";
-  /** As the exchange names it, e.g. "プライム", "プレミア". */
-  market: string;
+  /**
+   * As the exchange names it, e.g. "プライム", "プレミア". Omitted when the filing
+   * names the exchange but not the segment: 日立製作所 files 上場金融商品取引所名 as
+   * 「東京、名古屋」 and nothing more. The page then shows the exchange alone, which
+   * is what the source supports. Copying the segment from another company entry
+   * would be fabrication.
+   */
+  market?: string;
 };
 
 export type Company = {

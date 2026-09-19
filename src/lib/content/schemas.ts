@@ -73,7 +73,7 @@ export const companySchema = z.strictObject({
   shortNameEn: text.optional(),
   description: text,
   listings: z
-    .array(z.strictObject({ exchange: z.enum(["tse", "nse", "fse", "sse"]), market: text }))
+    .array(z.strictObject({ exchange: z.enum(["tse", "nse", "fse", "sse"]), market: text.optional() }))
     .min(1),
   industries: z.array(z.strictObject({ industryId: z.enum(INDUSTRY_IDS), primary: z.boolean().optional() })).min(1),
   businesses: z.array(businessSchema),

@@ -62,7 +62,7 @@ export function CompanyHero({ company }: { company: Company }) {
         <div className="mt-10 flex flex-col gap-4 border-t border-border pt-6 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
             <span className="figures">証券コード {company.code}</span>
-            <span>{company.listings.map((l) => `${EXCHANGE_NAME[l.exchange]}${l.market}`).join("・")}</span>
+            <span>{company.listings.map((l) => `${EXCHANGE_NAME[l.exchange]}${l.market ?? ""}`).join("・")}</span>
             <span className="flex flex-wrap gap-x-3">
               {primaryIndustries.map((ref) => (
                 <Link key={ref.industryId} href={`/industries/${ref.industryId}`} className="link-ink inline-flex min-h-11 items-center">
