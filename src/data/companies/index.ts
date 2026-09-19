@@ -8,6 +8,7 @@ import mitsubishiCorporation from "./mitsubishi-corporation.json";
 import mitsubishiElectric from "./mitsubishi-electric.json";
 import mitsubishiUfjFinancialGroup from "./mitsubishi-ufj-financial-group.json";
 import mitsuiAndCo from "./mitsui-and-co.json";
+import mizuhoFinancialGroup from "./mizuho-financial-group.json";
 import nintendo from "./nintendo.json";
 import nissan from "./nissan.json";
 import shinEtsuChemical from "./shin-etsu-chemical.json";
@@ -44,4 +45,5 @@ export const companies: Company[] = Object.entries({
   itochu,
   "mitsubishi-ufj-financial-group": mitsubishiUfjFinancialGroup,
   "sumitomo-mitsui-financial-group": sumitomoMitsuiFinancialGroup,
+  "mizuho-financial-group": mizuhoFinancialGroup,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
