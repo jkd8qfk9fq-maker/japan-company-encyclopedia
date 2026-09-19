@@ -22,8 +22,18 @@ const normalize = (s) => s.normalize("NFKC").replace(/\s+/g, "");
  * Net income is profit attributable to the owners of the parent, and its label
  * has to say so: 「当期純利益」 alone is the line that still includes
  * non-controlling interests, and a reader cannot tell the two apart.
+ *
+ * Filers word the attribution differently — 親会社株主, 親会社の所有者, 当社株主,
+ * 当社の所有者, and NTT's plain 「当社に帰属する当期利益」, whose tagged element is
+ * ProfitLossAttributableToOwnersOfParentIFRS all the same. All are accepted.
  */
-const PARENT_ATTRIBUTION = /(親会社株主に帰属|親会社の所有者に帰属|当社株主に帰属|当社の所有者に帰属)/;
+const PARENT_ATTRIBUTION = /(親会社株主に帰属|親会社の所有者に帰属|当社株主に帰属|当社の所有者に帰属|当社に帰属)/;
+/**
+ * …but never the comprehensive-income row, which sits directly beneath net income
+ * in these tables and is worded almost identically (NTT prints both
+ * 「当社に帰属する当期利益」 and 「当社に帰属する当期包括利益」).
+ */
+const COMPREHENSIVE_INCOME = /包括利益/;
 /** A top line is 〜高 / 〜収益 / 〜収入 — never a profit row, never a truncation. */
 const TOP_LINE_ENDING = /(高|収益|収入)$/;
 
@@ -96,6 +106,9 @@ for (const row of entry.financials) {
         `${row.fiscalYear} 純利益: ラベル「${label}」に親会社帰属の明示がありません。` +
           `非支配株主分を含む当期純利益と区別できないため、有報の表記をそのまま使うこと`,
       );
+    }
+    if (kind === "純利益" && COMPREHENSIVE_INCOME.test(label)) {
+      problems.push(`${row.fiscalYear} 純利益: ラベル「${label}」は包括利益の行です。当期純利益の行を使うこと`);
     }
     if (kind === "売上" && (/(利益|損失)/.test(label) || !TOP_LINE_ENDING.test(label))) {
       problems.push(`${row.fiscalYear} 売上: ラベル「${label}」は有報の売上・収益行の表記ではありません`);
