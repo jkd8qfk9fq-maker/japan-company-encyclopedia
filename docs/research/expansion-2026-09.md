@@ -25,7 +25,7 @@ This file is the queue a resumed session continues from. Status: `pending` → `
 | 7 | 総合商社 | 三井物産 | `mitsui-and-co` | published | 7 segments ordered by 収益; note that a 商社 top line is not a manufacturer's 売上高 |
 | 8 | 総合商社 | 伊藤忠商事 | `itochu` | published | 8 segments ordered by 収益; profit order differs and is stated |
 | 9 | 金融 | 三菱UFJフィナンシャル・グループ | `mitsubishi-ufj-financial-group` | published | first bank; 経常収益 top line; 8 事業本部 ordered by 粗利益; needs-attention: segment↔group-company map not in XBRL |
-| 10 | 金融 | 三井住友フィナンシャルグループ | `sumitomo-mitsui-financial-group` | pending | top line 経常収益 |
+| 10 | 金融 | 三井住友フィナンシャルグループ | `sumitomo-mitsui-financial-group` | published | second bank; 5 事業部門 ordered by 連結粗利益; needs-attention: no segment↔company map in XBRL |
 | 11 | 金融 | みずほフィナンシャルグループ | `mizuho-financial-group` | pending | top line 経常収益 |
 | 12 | 通信 | NTT | `ntt` | pending | the 2026 有報 is filed as ＮＴＴ株式会社 — verify the 商号 on the cover page |
 | 13 | 通信 | KDDI | `kddi` | pending | **restates 2023–2025 revenue and net income** against the prior 有報; also discloses セグメント変更 |
