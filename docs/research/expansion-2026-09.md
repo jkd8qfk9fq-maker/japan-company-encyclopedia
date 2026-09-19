@@ -24,7 +24,7 @@ This file is the queue a resumed session continues from. Status: `pending` → `
 | — | 総合商社 | 三菱商事 | `mitsubishi-corporation` | published | before this expansion |
 | 7 | 総合商社 | 三井物産 | `mitsui-and-co` | published | 7 segments ordered by 収益; note that a 商社 top line is not a manufacturer's 売上高 |
 | 8 | 総合商社 | 伊藤忠商事 | `itochu` | published | 8 segments ordered by 収益; profit order differs and is stated |
-| 9 | 金融 | 三菱UFJフィナンシャル・グループ | `mitsubishi-ufj-financial-group` | pending | top line 経常収益; a 2026-09-16 agent was killed mid-write — its unverified draft is not in the repo |
+| 9 | 金融 | 三菱UFJフィナンシャル・グループ | `mitsubishi-ufj-financial-group` | published | first bank; 経常収益 top line; 8 事業本部 ordered by 粗利益; needs-attention: segment↔group-company map not in XBRL |
 | 10 | 金融 | 三井住友フィナンシャルグループ | `sumitomo-mitsui-financial-group` | pending | top line 経常収益 |
 | 11 | 金融 | みずほフィナンシャルグループ | `mizuho-financial-group` | pending | top line 経常収益 |
 | 12 | 通信 | NTT | `ntt` | pending | the 2026 有報 is filed as ＮＴＴ株式会社 — verify the 商号 on the cover page |
