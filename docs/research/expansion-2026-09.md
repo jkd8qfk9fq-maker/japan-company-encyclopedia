@@ -20,7 +20,7 @@ This file is the queue a resumed session continues from. Status: `pending` → `
 | 3 | 半導体 | アドバンテスト | `advantest` | published | placed in 製造装置 (industry revision) |
 | 4 | 半導体 | 信越化学工業 | `shin-etsu-chemical` | published | primary chemicals; placed in 部素材・原料 |
 | 5 | 電機 | 日立製作所 | `hitachi` | published | the six 訂正有報 amend 役員の報酬等 only; no restatement |
-| 6 | 電機 | 三菱電機 | `mitsubishi-electric` | pending | filing discloses 報告セグメントの変更 |
+| 6 | 電機 | 三菱電機 | `mitsubishi-electric` | published | 6 segments; セグメント変更は名称変更のみ（ビジネス・プラットフォーム→デジタルイノベーション） |
 | — | 総合商社 | 三菱商事 | `mitsubishi-corporation` | published | before this expansion |
 | 7 | 総合商社 | 三井物産 | `mitsui-and-co` | pending | |
 | 8 | 総合商社 | 伊藤忠商事 | `itochu` | pending | |
