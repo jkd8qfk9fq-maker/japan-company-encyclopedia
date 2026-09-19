@@ -95,6 +95,27 @@ const SECTIONS = {
   "facilities.txt": ["jpcrp_cor:MajorFacilitiesTextBlock"],
 };
 
+/**
+ * The filing's cover page and DEI header: 商号, 英訳名, 証券コード, 会計基準,
+ * 事業年度, 上場金融商品取引所名. Every one of these is a field an entry needs and
+ * none of them is in the body sections, so without this a researcher goes looking
+ * for a company web page — which is slower, is a weaker source, and has repeatedly
+ * 403'd or 404'd, leaving `nameEn` unfilled when the filing had it all along.
+ */
+function coverPage(rows) {
+  const out = {};
+  for (const row of rows) {
+    const id = row["要素ID"] ?? "";
+    const name = row["項目名"] ?? "";
+    const value = (row["値"] ?? "").trim();
+    if (!value || value === "－" || value.length > 200) continue;
+    if (!/CoverPage$|DEI$/.test(id) && !name.startsWith("上場金融商品取引所名")) continue;
+    if (/TextBlock/.test(id)) continue;
+    out[name || id] = value;
+  }
+  return out;
+}
+
 /** 相対年度, falling back to the context id (extension rows often leave it blank). */
 function relativeYear(row) {
   const stated = row["相対年度"];
@@ -277,8 +298,16 @@ async function packFor(companyId, code4, from, to) {
     previous = { error: String(error) };
   }
 
+  const cover = coverPage(rows);
   const dir = join(cacheDir(), "evidence", companyId);
   mkdirSync(dir, { recursive: true });
+  writeFileSync(
+    join(dir, "cover-page.txt"),
+    Object.entries(cover)
+      .map(([k, v]) => `${k}\t${v}`)
+      .join("\n"),
+    "utf8",
+  );
   const sectionIndex = {};
   for (const [file, elements] of Object.entries(SECTIONS)) {
     const row = rows.find((r) => elements.includes(r["要素ID"]) && r["値"]);
@@ -300,6 +329,7 @@ async function packFor(companyId, code4, from, to) {
     companyId,
     securitiesCode: code4,
     filing: latest,
+    coverPage: cover,
     otherFilingsInWindow: reports.filter((r) => r.docID !== latest.docID),
     corrections,
     warnings,
@@ -338,6 +368,10 @@ for (const kind of ["revenue", "netIncome"]) {
     for (const y of candidate.years) console.log(`   ${y.fiscalYearEnd}  ${y.yen.toLocaleString("ja-JP")} 円  (${(y.yen / 1_000_000).toLocaleString("ja-JP")} 百万円)`);
   }
 }
+console.log(
+  "cover page:",
+  ["会社名、表紙", "英訳名、表紙", "会計基準、DEI"].map((k) => `${k}=${summary.coverPage[k] ?? "-"}`).join(" | "),
+);
 console.log("restatement check:", JSON.stringify(summary.restatementCheck));
 for (const warning of summary.warnings) console.log(`WARNING: ${warning}`);
 for (const correction of summary.corrections) {

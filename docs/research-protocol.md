@@ -43,7 +43,8 @@ It writes, under the research cache (path given in your task):
 
 | File | What it holds |
 |---|---|
-| `summary.json` | The filing (name, docID, submission date, 決算期), the five-year figures **in yen** with the filing's own labels, and a restatement check against the previous year's filing |
+| `summary.json` | The filing (name, docID, submission date, 決算期), the five-year figures **in yen** with the filing's own labels, a restatement check against the previous year's filing, and `coverPage` |
+| `cover-page.txt` | 表紙 and DEI: 商号, **英訳名**, 証券コード, **会計基準**, 事業年度, 上場金融商品取引所名. `nameEn` comes from here — not from a company web page, and never from memory |
 | `indicators.txt` | 主要な経営指標等の推移 as printed — confirm the tagged values against it |
 | `business.txt` | 事業の内容 |
 | `segments.txt`, `segment-overview.txt` | セグメント情報 (including the segment revenue table) |
@@ -71,8 +72,8 @@ Plain words. Concrete nouns. No investment language.
 | `id` | kebab-case slug, given to you. Also the file name |
 | `code` | 証券コード from the 有報 cover page or the company's IR page |
 | `name` | Common display name, e.g. `トヨタ自動車`, `ソニーグループ` |
-| `officialName` | 商号 exactly as on the 有報 cover page |
-| `nameEn` | English 商号 as on the 有報 cover page |
+| `officialName` | 商号 exactly as on the 有報 cover page — `cover-page.txt`, 「会社名、表紙」 |
+| `nameEn` | English 商号 — `cover-page.txt`, 「英訳名、表紙」. It is always there; do not fetch a company page for it, and if the cover page names a former name (「旧会社名…」) the entry uses the current one and the change belongs in `history` |
 | `shortNameEn` | The Latin wordmark for the hero, uppercase, e.g. `TOYOTA`. Use the company's own English name, shortened only by dropping legal suffixes (`Corporation`, `Co., Ltd.`) |
 | `listings` | Every exchange from the 有報 cover page (上場金融商品取引所名), with that exchange's market name |
 
@@ -131,7 +132,10 @@ Answers three questions: what does the company provide, who pays for it, how doe
 - `netIncome` is profit attributable to owners of the parent. **Never** the 包括利益 row, and never a figure
   including non-controlling interests. If the pack offers more than one candidate element, pick the one
   `indicators.txt` prints and say why in the log.
-- `accountingStandard` per year: J-GAAP, IFRS or US GAAP as the filing states.
+- `accountingStandard` per year: as the filing states. The latest year is settled by
+  `cover-page.txt` 「会計基準、DEI」 (`IFRS` / `Japan GAAP` / `US GAAP`); earlier years can differ, and a
+  filer reporting under IFRS may still print Japanese wording (三菱電機 prints 売上高, not 売上収益) — the
+  label comes from `indicators.txt`, the standard from the filing's own statement.
 - **Restatements**: the pack compares the overlapping years against the previous filing. Report what it found
   in the log. A difference is a restatement — record it and use the latest filing's figure.
 - `fiscalYear` label: `2026年3月期` form, using the company's own year-end month (`2026年2月期`,
