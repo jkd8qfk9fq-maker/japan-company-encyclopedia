@@ -11,6 +11,7 @@ import mitsubishiElectric from "./mitsubishi-electric.json";
 import mitsubishiUfjFinancialGroup from "./mitsubishi-ufj-financial-group.json";
 import mitsuiAndCo from "./mitsui-and-co.json";
 import mizuhoFinancialGroup from "./mizuho-financial-group.json";
+import nec from "./nec.json";
 import nintendo from "./nintendo.json";
 import nissan from "./nissan.json";
 import ntt from "./ntt.json";
@@ -52,4 +53,5 @@ export const companies: Company[] = Object.entries({
   ntt,
   kddi,
   fujitsu,
+  nec,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
