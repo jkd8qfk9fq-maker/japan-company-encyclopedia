@@ -187,9 +187,22 @@ function fiveYearFigures(rows, periodEnd) {
   return figures;
 }
 
+/**
+ * The same fiscal year end, `years` earlier.
+ *
+ * Naively subtracting from the day number is wrong for a February year end: a
+ * 2月期 filer's 2026-02-28 is two years after 2024-02-**29**, because 2024 was a
+ * leap year. That put a date on セブン＆アイ's page that never existed as a
+ * fiscal year end. So when the base date is the last day of its month, the
+ * result is the last day of that month in the target year; otherwise the day is
+ * kept as-is (キーエンス closes on the 20th, not a month end).
+ */
 function shiftYear(isoDate, years) {
   const [y, m, d] = isoDate.split("-").map(Number);
-  return `${y - years}-${String(m).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+  const target = y - years;
+  const lastDayOfMonth = (year) => new Date(Date.UTC(year, m, 0)).getUTCDate();
+  const day = d === lastDayOfMonth(y) ? lastDayOfMonth(target) : d;
+  return `${target}-${String(m).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
 }
 
 /**
@@ -238,6 +251,71 @@ async function figuresFor(filing) {
   if (!zip) return null;
   const rows = readCsvRows(zip);
   return { rows, figures: fiveYearFigures(rows, filing.resolvedPeriodEnd ?? resolvePeriodEnd(filing)) };
+}
+
+/**
+ * Everything a researcher needs before opening a section file, on one page.
+ *
+ * Without it each researcher reads summary.json — 14KB of JSON carrying a
+ * section index and per-year context ids it never uses — just to recover the
+ * cover-page fields and ten figures. This is the same data, ~1KB, already in
+ * the units the entry stores.
+ */
+function brief(companyId, code4, filing, cover, figures, previous, warnings, corrections, sections) {
+  const yen = (n) => n.toLocaleString("ja-JP");
+  const million = (n) => (n / 1_000_000).toLocaleString("ja-JP");
+  const rows = [];
+  for (const [kind, list] of [
+    ["売上", figures.revenue],
+    ["純利益", figures.netIncome],
+  ]) {
+    for (const candidate of list) {
+      rows.push(`\n**${kind}** — XBRL label \`${candidate.label ?? "(無題・拡張要素)"}\` [\`${candidate.element}\`]`);
+      rows.push("");
+      rows.push("| 決算期 | 円 | 百万円 |");
+      rows.push("|---|---:|---:|");
+      for (const y of candidate.years) rows.push(`| ${y.fiscalYearEnd} | ${yen(y.yen)} | ${million(y.yen)} |`);
+    }
+  }
+  const restatement = previous?.figures
+    ? (() => {
+        const d = [...compare(figures.revenue, previous.figures.revenue).differences, ...compare(figures.netIncome, previous.figures.netIncome).differences];
+        return d.length === 0
+          ? "前期有報と重複年度は全て一致（修正再表示なし）"
+          : `**前期有報と差異あり — 理由を有報で特定し、ログに記録すること**\n\n\`\`\`json\n${JSON.stringify(d, null, 2)}\n\`\`\``;
+      })()
+    : "前期有報が窓内に見つからず、比較していない";
+
+  return [
+    `# ${companyId} — evidence brief`,
+    "",
+    "数値は有報のXBRLタグそのもの。**円の値をそのままコピーすること**（換算・四捨五入・手入力をしない）。",
+    "ラベルは taxonomy ではなく `indicators.txt` の印字どおりに採ること。",
+    "",
+    "## 表紙・DEI",
+    "",
+    ...Object.entries(cover).map(([k, v]) => `- **${k}**: ${v}`),
+    "",
+    `- **証券コード（検索に使用）**: ${code4}`,
+    `- **有報**: ${filing.docDescription} / docID \`${filing.docID}\` / 提出 ${filing.submitDateTime} / 決算期 ${filing.resolvedPeriodEnd}`,
+    "",
+    "## 5年間の数値",
+    ...rows,
+    "",
+    "## 修正再表示チェック",
+    "",
+    restatement,
+    "",
+    ...(warnings.length > 0 ? ["## 注意", "", ...warnings.map((w) => `- ${w}`), ""] : []),
+    ...(corrections.length > 0
+      ? ["## 訂正有価証券報告書", "", ...corrections.map((c) => `- ${c.docDescription} (docID \`${c.docID}\`, 提出 ${c.submitDateTime})${c.comparedToBase ? ` — 本体との差異: ${JSON.stringify(c.comparedToBase)}` : ""}`), ""]
+      : []),
+    "## 本文ファイル",
+    "",
+    ...Object.entries(sections).map(([file, s]) => `- \`${file}\` (${s.characters.toLocaleString("ja-JP")}字)`),
+    "- `sections.json` — その他の全テキストブロック",
+    "",
+  ].join("\n");
 }
 
 async function packFor(companyId, code4, from, to) {
@@ -324,6 +402,8 @@ async function packFor(companyId, code4, from, to) {
     .filter((r) => /TextBlock/.test(r["要素ID"]) && !taken.includes(r["要素ID"]) && r["値"]?.length > 200)
     .map((r) => ({ name: r["項目名"], element: r["要素ID"], text: textBlockToText(r["値"]) }));
   writeFileSync(join(dir, "sections.json"), JSON.stringify(others, null, 2), "utf8");
+
+  writeFileSync(join(dir, "brief.md"), brief(companyId, code4, latest, cover, figures, previous, warnings, corrections, sectionIndex), "utf8");
 
   const summary = {
     companyId,

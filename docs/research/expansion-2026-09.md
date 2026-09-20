@@ -31,7 +31,7 @@ This file is the queue a resumed session continues from. Status: `pending` → `
 | 13 | 通信 | KDDI | `kddi` | published | restatement = 架空循環取引 error correction (not a scope change); notes on 3 years, no basis fields |
 | 14 | IT | 富士通 | `fujitsu` | published | デバイスソリューション non-continuing from FY2024; revenueBasis set on all 5 years so the chart breaks |
 | 15 | IT | NEC | `nec` | published | segment change = subsidiary reallocation effective 2025-04-01, prior year re-presented; no basis fields |
-| 16 | 小売 | セブン＆アイ・ホールディングス | `seven-and-i-holdings` | pending | February year-end; scope changes likely |
+| 16 | 小売 | セブン＆アイ・ホールディングス | `seven-and-i-holdings` | published | Feb year-end; ヨークHD・セブン銀行 deconsolidated FY2026 so revenueBasis set on all years |
 | 17 | 小売 | ファーストリテイリング | `fast-retailing` | pending | August year-end (2025年8月期) |
 | 18 | 製薬 | 武田薬品工業 | `takeda-pharmaceutical` | published | single segment; therapeutic-area breakdown, not segments; FY2026 loss from AMITIZA litigation provision |
 | 19 | 製薬 | 第一三共 | `daiichi-sankyo` | published | single segment; ビジネスユニット breakdown; 訂正有報 amended governance detail only |

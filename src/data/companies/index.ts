@@ -16,6 +16,7 @@ import nec from "./nec.json";
 import nintendo from "./nintendo.json";
 import nissan from "./nissan.json";
 import ntt from "./ntt.json";
+import sevenAndIHoldings from "./seven-and-i-holdings.json";
 import shinEtsuChemical from "./shin-etsu-chemical.json";
 import sonyGroup from "./sony-group.json";
 import sumitomoMitsuiFinancialGroup from "./sumitomo-mitsui-financial-group.json";
@@ -58,4 +59,5 @@ export const companies: Company[] = Object.entries({
   nec,
   "takeda-pharmaceutical": takedaPharmaceutical,
   "daiichi-sankyo": daiichiSankyo,
+  "seven-and-i-holdings": sevenAndIHoldings,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
