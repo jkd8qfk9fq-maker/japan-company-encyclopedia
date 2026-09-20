@@ -2,6 +2,7 @@ import { parseContent, companySchema } from "@/lib/content/schemas";
 import type { Company } from "@/types/company";
 import advantest from "./advantest.json";
 import daiichiSankyo from "./daiichi-sankyo.json";
+import fastRetailing from "./fast-retailing.json";
 import fujitsu from "./fujitsu.json";
 import hitachi from "./hitachi.json";
 import honda from "./honda.json";
@@ -60,4 +61,5 @@ export const companies: Company[] = Object.entries({
   "takeda-pharmaceutical": takedaPharmaceutical,
   "daiichi-sankyo": daiichiSankyo,
   "seven-and-i-holdings": sevenAndIHoldings,
+  "fast-retailing": fastRetailing,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

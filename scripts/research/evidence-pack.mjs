@@ -261,6 +261,19 @@ async function figuresFor(filing) {
  * cover-page fields and ten figures. This is the same data, ~1KB, already in
  * the units the entry stores.
  */
+const BRIEF_COVER_FIELDS = [
+  "会社名",
+  "英訳名",
+  "提出者名",
+  "証券コード",
+  "会計基準",
+  "事業年度",
+  "当事業年度終了日",
+  "当会計期間終了日",
+  "上場金融商品取引所名",
+  "連結決算の有無",
+];
+
 function brief(companyId, code4, filing, cover, figures, previous, warnings, corrections, sections) {
   const yen = (n) => n.toLocaleString("ja-JP");
   const million = (n) => (n / 1_000_000).toLocaleString("ja-JP");
@@ -294,7 +307,12 @@ function brief(companyId, code4, filing, cover, figures, previous, warnings, cor
     "",
     "## 表紙・DEI",
     "",
-    ...Object.entries(cover).map(([k, v]) => `- **${k}**: ${v}`),
+    // Only the fields an entry actually uses. cover-page.txt keeps the rest
+    // (提出先, 府令, 電話番号, 事務連絡者…), which no company page has ever needed.
+    ...Object.entries(cover)
+      .filter(([k]) => BRIEF_COVER_FIELDS.some((f) => k.startsWith(f)))
+      .map(([k, v]) => `- **${k}**: ${v}`),
+    "- （表紙のその他の項目は `cover-page.txt`）",
     "",
     `- **証券コード（検索に使用）**: ${code4}`,
     `- **有報**: ${filing.docDescription} / docID \`${filing.docID}\` / 提出 ${filing.submitDateTime} / 決算期 ${filing.resolvedPeriodEnd}`,
