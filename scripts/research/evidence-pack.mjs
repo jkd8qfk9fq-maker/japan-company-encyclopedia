@@ -46,6 +46,11 @@ const REVENUE_ELEMENTS = new Set([
   "OperatingRevenue1SummaryOfBusinessResults", // 営業収益
   "OperatingRevenueSummaryOfBusinessResults",
   "OrdinaryIncomeSummaryOfBusinessResults", // 経常収益 (銀行・保険)
+  // 生命保険持株会社 may tag 保険料等収入 as its top line instead of 経常収益
+  // (第一ライフグループ tags no OrdinaryIncome row at all). Which wording the
+  // filing prints is settled by indicators.txt, and the entry must explain that
+  // an insurer's top line is not a manufacturer's 売上高.
+  "PremiumAndOtherIncomeSummaryOfBusinessResults",
   "NetSalesAndOperatingRevenueSummaryOfBusinessResults",
   "TotalOperatingRevenuesSummaryOfBusinessResults",
 ]);
@@ -93,7 +98,15 @@ const SECTIONS = {
     "jpcrp_cor:NotesChangesInReportableSegmentsEtcConsolidatedFinancialStatementsTextBlock",
   ],
   "facilities.txt": ["jpcrp_cor:MajorFacilitiesTextBlock"],
+  // MD&A. Always useful, and the only place a US GAAP filer's segment figures
+  // survive: those filers put every note into one TextBlock that EDINET
+  // truncates (see below), losing セグメント情報 entirely.
+  "md-and-a.txt": ["jpcrp_cor:ManagementAnalysisOfFinancialPositionOperatingResultsAndCashFlowsTextBlock"],
+  "notes-usgaap.txt": ["jpcrp_cor:NotesToConsolidatedFinancialStatementsUSGAAPTextBlock"],
 };
+
+/** EDINET caps a CSV cell at 30,000 characters, cutting long TextBlocks mid-sentence. */
+const CSV_CELL_LIMIT = 30000;
 
 /**
  * The filing's cover page and DEI header: 商号, 英訳名, 証券コード, 会計基準,
@@ -408,12 +421,20 @@ async function packFor(companyId, code4, from, to) {
   for (const [file, elements] of Object.entries(SECTIONS)) {
     const row = rows.find((r) => elements.includes(r["要素ID"]) && r["値"]);
     if (!row) continue;
+    const truncated = row["値"].length >= CSV_CELL_LIMIT;
     const text = textBlockToText(row["値"]);
     writeFileSync(join(dir, file), text, "utf8");
-    sectionIndex[file] = { element: row["要素ID"], characters: text.length };
+    sectionIndex[file] = { element: row["要素ID"], characters: text.length, truncated };
+    if (truncated) {
+      warnings.push(`${file} はEDINETのCSVが3万字で打ち切っており、末尾が欠けている。欠けた部分を根拠に使わないこと`);
+    }
   }
   if (!sectionIndex["segments.txt"]) {
-    warnings.push("セグメント情報のテキストブロックが見つからない。有報本文でセグメント情報を確認すること");
+    warnings.push(
+      sectionIndex["md-and-a.txt"]
+        ? "セグメント情報のテキストブロックがない（US GAAP採用会社に多い）。セグメント別の売上・利益は md-and-a.txt に記載されているので、そこから採り、ログにその旨を書くこと"
+        : "セグメント情報のテキストブロックが見つからない。有報本文でセグメント情報を確認すること",
+    );
   }
   const taken = Object.values(SECTIONS).flat();
   const others = rows
