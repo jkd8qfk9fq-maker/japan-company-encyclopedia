@@ -34,6 +34,6 @@ This file is the queue a resumed session continues from. Status: `pending` → `
 | 16 | 小売 | セブン＆アイ・ホールディングス | `seven-and-i-holdings` | pending | February year-end; scope changes likely |
 | 17 | 小売 | ファーストリテイリング | `fast-retailing` | pending | August year-end (2025年8月期) |
 | 18 | 製薬 | 武田薬品工業 | `takeda-pharmaceutical` | published | single segment; therapeutic-area breakdown, not segments; FY2026 loss from AMITIZA litigation provision |
-| 19 | 製薬 | 第一三共 | `daiichi-sankyo` | pending | a 訂正有報 was filed 2026-07-03 and changed no five-year figure — establish what it did change |
+| 19 | 製薬 | 第一三共 | `daiichi-sankyo` | published | single segment; ビジネスユニット breakdown; 訂正有報 amended governance detail only |
 
 Notes above are prompts to verify, not facts.
