@@ -18,7 +18,7 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 
 | # | 分野 | 企業 | id | コード | 状態 | Notes from the filing |
 |---|---|---|---|---|---|---|
-| 1 | 自動車・輸送機器 | スズキ株式会社 | `suzuki` | 7269 | pending | IFRS; **前期有報と差異1件 — 理由を特定すること**; 候補複数 — indicators.txt で確認 |
+| 1 | 自動車・輸送機器 | スズキ株式会社 | `suzuki` | 7269 | published | 日本基準→IFRS移行 (移行日2023-04-01)。移行日列のnullは修正再表示ではない |
 | 2 | 自動車・輸送機器 | 株式会社ＳＵＢＡＲＵ | `subaru` | 7270 | pending | IFRS; 訂正有報あり (S100YF9D) |
 | 3 | 自動車・輸送機器 | マツダ株式会社 | `mazda` | 7261 | pending |  |
 | 4 | 自動車・輸送機器 | いすゞ自動車株式会社 | `isuzu-motors` | 7202 | pending | IFRS; 候補複数 — indicators.txt で確認 |

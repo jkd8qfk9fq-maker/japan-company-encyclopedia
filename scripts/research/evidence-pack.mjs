@@ -179,6 +179,12 @@ function fiveYearFigures(rows, periodEnd) {
             fiscalYearEnd: shiftYear(periodEnd, YEAR_OFFSET[relative]),
             yen: Number(row["値"]),
           }))
+          // A column the filing prints as 「－」 parses to NaN — the IFRS 移行日
+          // column carries balances but no revenue or profit. Keeping those made
+          // the restatement check report a difference on every such row, because
+          // NaN never equals NaN, and sent a researcher hunting a restatement
+          // that never happened (スズキ, 2026-09-20).
+          .filter((y) => Number.isFinite(y.yen))
           .sort((a, b) => a.fiscalYearEnd.localeCompare(b.fiscalYearEnd)),
       }))
       .filter((candidate) => candidate.years.length > 0);
