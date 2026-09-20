@@ -84,6 +84,8 @@ Plain words. Concrete nouns. No investment language.
 - Name what the company makes or sells, in the words a beginner uses.
 - **No evaluative or superlative words** unless a source states them and they are essential:
   not `日本を代表する`, `世界的な`, `大手`, `リーディングカンパニー`.
+- **Plain form, not polite form**: it ends `…する会社。` / `…メーカー。` / `…総合商社。`, never `…です。`.
+  This is an encyclopedia entry, not a company introducing itself to the reader.
 
 ### `businesses` — the business structure (the most important field)
 

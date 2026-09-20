@@ -29,7 +29,7 @@ This file is the queue a resumed session continues from. Status: `pending` → `
 | 11 | 金融 | みずほフィナンシャルグループ | `mizuho-financial-group` | published | third bank; 5 カンパニー ordered by 業務粗利益; needs-attention: no per-segment 経常収益, no segment↔company map |
 | 12 | 通信 | NTT | `ntt` | published | renamed NTT株式会社 2025年7月1日 (沿革); 4 segments ordered by 営業収益 |
 | 13 | 通信 | KDDI | `kddi` | published | restatement = 架空循環取引 error correction (not a scope change); notes on 3 years, no basis fields |
-| 14 | IT | 富士通 | `fujitsu` | pending | |
+| 14 | IT | 富士通 | `fujitsu` | published | デバイスソリューション non-continuing from FY2024; revenueBasis set on all 5 years so the chart breaks |
 | 15 | IT | NEC | `nec` | pending | filing discloses 報告セグメントの変更 |
 | 16 | 小売 | セブン＆アイ・ホールディングス | `seven-and-i-holdings` | pending | February year-end; scope changes likely |
 | 17 | 小売 | ファーストリテイリング | `fast-retailing` | pending | August year-end (2025年8月期) |
