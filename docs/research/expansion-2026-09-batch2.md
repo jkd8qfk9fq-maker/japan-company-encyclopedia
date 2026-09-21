@@ -19,9 +19,9 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | # | 分野 | 企業 | id | コード | 状態 | Notes from the filing |
 |---|---|---|---|---|---|---|
 | 1 | 自動車・輸送機器 | スズキ株式会社 | `suzuki` | 7269 | published | 日本基準→IFRS移行 (移行日2023-04-01)。移行日列のnullは修正再表示ではない |
-| 2 | 自動車・輸送機器 | 株式会社ＳＵＢＡＲＵ | `subaru` | 7270 | pending | IFRS; 訂正有報あり (S100YF9D) |
-| 3 | 自動車・輸送機器 | マツダ株式会社 | `mazda` | 7261 | pending |  |
-| 4 | 自動車・輸送機器 | いすゞ自動車株式会社 | `isuzu-motors` | 7202 | pending | IFRS; 候補複数 — indicators.txt で確認 |
+| 2 | 自動車・輸送機器 | 株式会社ＳＵＢＡＲＵ | `subaru` | 7270 | published | 3 segments; 自動車・航空宇宙・その他 |
+| 3 | 自動車・輸送機器 | マツダ株式会社 | `mazda` | 7261 | published | 地域別セグメント; 売上高「計」で並べ、外部顧客基準では北米が首位になることをログに記録 |
+| 4 | 自動車・輸送機器 | いすゞ自動車株式会社 | `isuzu-motors` | 7202 | published | 日本基準→IFRS移行; 2024/2025は行内の基準をIFRSに統一し直した |
 | 5 | 自動車・輸送機器 | 株式会社デンソー | `denso` | 6902 | pending | IFRS |
 | 6 | 半導体・電子部品 | 株式会社ソシオネクスト | `socionext` | 6526 | pending |  |
 | 7 | 半導体・電子部品 | ルネサスエレクトロニクス株式会社 | `renesas-electronics` | 6723 | pending | IFRS; **決算期 2025-12-31** |

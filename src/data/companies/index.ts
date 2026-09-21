@@ -6,8 +6,10 @@ import fastRetailing from "./fast-retailing.json";
 import fujitsu from "./fujitsu.json";
 import hitachi from "./hitachi.json";
 import honda from "./honda.json";
+import isuzuMotors from "./isuzu-motors.json";
 import itochu from "./itochu.json";
 import kddi from "./kddi.json";
+import mazda from "./mazda.json";
 import mitsubishiCorporation from "./mitsubishi-corporation.json";
 import mitsubishiElectric from "./mitsubishi-electric.json";
 import mitsubishiUfjFinancialGroup from "./mitsubishi-ufj-financial-group.json";
@@ -20,6 +22,7 @@ import ntt from "./ntt.json";
 import sevenAndIHoldings from "./seven-and-i-holdings.json";
 import shinEtsuChemical from "./shin-etsu-chemical.json";
 import sonyGroup from "./sony-group.json";
+import subaru from "./subaru.json";
 import sumitomoMitsuiFinancialGroup from "./sumitomo-mitsui-financial-group.json";
 import suzuki from "./suzuki.json";
 import takedaPharmaceutical from "./takeda-pharmaceutical.json";
@@ -64,4 +67,7 @@ export const companies: Company[] = Object.entries({
   "seven-and-i-holdings": sevenAndIHoldings,
   "fast-retailing": fastRetailing,
   suzuki,
+  subaru,
+  mazda,
+  "isuzu-motors": isuzuMotors,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

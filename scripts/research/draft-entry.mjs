@@ -29,18 +29,44 @@ if (ids.length === 0) {
 
 const STANDARD = { IFRS: "ifrs", "Japan GAAP": "jgaap", "US GAAP": "usgaap" };
 
+/** Which accounting standard a tagged element belongs to. */
+const standardOf = (element) => (/IFRS/.test(element) ? "ifrs" : /USGAAP/.test(element) ? "usgaap" : "jgaap");
+const RANK = { ifrs: 3, usgaap: 2, jgaap: 1 };
+
 /**
  * The value and printed label for one fiscal year, from the pack's series.
+ *
+ * `standard` matters more than it looks. A filer in the year it changed
+ * standards prints BOTH tables, so the same fiscal year has an IFRS 売上収益 and
+ * a J-GAAP 売上高, an IFRS 税引前利益 and a J-GAAP 経常利益, and so on. Taking
+ * whichever series happened to come first per field built rows that mixed the
+ * two — いすゞ's 2024/2025 rows had IFRS revenue beside J-GAAP equity, and
+ * 純資産 then appeared to fall by 127 billion yen between 2025 and 2026 purely
+ * because the row changed from 純資産額 (including non-controlling interests) to
+ * 親会社の所有者に帰属する持分. Every figure in a row now comes from one standard.
+ *
  * Revenue and net income carry their amount as `yen`, the four series added
  * later as `value`; reading only one of the two silently produced entries with
  * no revenue at all, because JSON.stringify drops undefined.
  */
-function at(series, periodEnd) {
-  for (const s of series ?? []) {
-    const y = s.years.find((y) => y.fiscalYearEnd === periodEnd);
-    if (y) return { value: y.value ?? y.yen ?? null, label: s.label };
-  }
-  return { value: null, label: null };
+function at(series, periodEnd, standard = null) {
+  const covering = (series ?? []).filter((s) => s.years.some((y) => y.fiscalYearEnd === periodEnd));
+  const preferred = standard ? covering.filter((s) => standardOf(s.element) === standard) : covering;
+  const chosen = (preferred.length > 0 ? preferred : covering)[0];
+  if (!chosen) return { value: null, label: null, standard: null };
+  const y = chosen.years.find((y) => y.fiscalYearEnd === periodEnd);
+  return { value: y.value ?? y.yen ?? null, label: chosen.label, standard: standardOf(chosen.element) };
+}
+
+/**
+ * The standard a fiscal year is reported on: the highest-ranked one whose top
+ * line covers that year. A company that has moved to IFRS reports the overlap
+ * years on both, and the entry follows the basis the company reports on now —
+ * the same choice スズキ's researcher made and recorded.
+ */
+function standardForYear(revenueSeries, periodEnd) {
+  const covering = (revenueSeries ?? []).filter((s) => s.years.some((y) => y.fiscalYearEnd === periodEnd));
+  return covering.map((s) => standardOf(s.element)).sort((a, b) => RANK[b] - RANK[a])[0] ?? null;
 }
 
 for (const id of ids) {
@@ -57,13 +83,21 @@ for (const id of ids) {
   // carries for all five years.
   const years = [...new Set((pack.figures.revenue ?? []).flatMap((s) => s.years.map((y) => y.fiscalYearEnd)))].sort();
 
+  const mixed = [];
   const financials = years.map((periodEnd) => {
-    const revenue = at(pack.figures.revenue, periodEnd);
-    const profit = at(pack.figures.profit, periodEnd);
-    const netIncome = at(pack.figures.netIncome, periodEnd);
-    const totalAssets = at(pack.figures.totalAssets, periodEnd);
-    const netAssets = at(pack.figures.netAssets, periodEnd);
+    const yearStandard = standardForYear(pack.figures.revenue, periodEnd) ?? standard;
+    const revenue = at(pack.figures.revenue, periodEnd, yearStandard);
+    const profit = at(pack.figures.profit, periodEnd, yearStandard);
+    const netIncome = at(pack.figures.netIncome, periodEnd, yearStandard);
+    const totalAssets = at(pack.figures.totalAssets, periodEnd, yearStandard);
+    const netAssets = at(pack.figures.netAssets, periodEnd, yearStandard);
+    // Employee counts are not standard-specific.
     const employees = at(pack.figures.employees, periodEnd);
+    // If some figure could only be found on another basis, say so rather than
+    // letting a silently mixed row through.
+    for (const [name, f] of [["利益", profit], ["総資産", totalAssets], ["純資産", netAssets]]) {
+      if (f.standard && f.standard !== yearStandard) mixed.push(`${periodEnd} ${name}: ${f.standard}（この年度は${yearStandard}）`);
+    }
     const [y, m] = periodEnd.split("-");
     return {
       fiscalYear: `${y}年${Number(m)}月期`,
@@ -80,7 +114,7 @@ for (const id of ids) {
       netAssetsLabel: netAssets.label,
       employees: employees.value,
       currency: "JPY",
-      accountingStandard: standard,
+      accountingStandard: yearStandard,
       sourceIds: ["yuho-2026"],
     };
   });
@@ -101,6 +135,7 @@ for (const id of ids) {
     ],
     financials,
   };
+  if (mixed.length > 0) draft._会計基準がそろわない項目 = mixed;
 
   // Beside the evidence pack, never in src/data/companies: anything that globs
   // that directory (the integrity suite, verify-all) would otherwise pick up a

@@ -34,13 +34,25 @@ const ids =
         .filter((f) => f.endsWith(".json"))
         .map((f) => f.replace(/\.json$/, ""));
 
-/** The value for one fiscal year from a list of series, with its printed label. */
-function valueFor(list, periodEnd) {
-  for (const series of list ?? []) {
-    const year = series.years.find((y) => y.fiscalYearEnd === periodEnd);
-    if (year) return { value: year.value, label: series.label };
-  }
-  return { value: null, label: null };
+/** Which accounting standard a tagged element belongs to. */
+const standardOf = (element) => (/IFRS/.test(element) ? "ifrs" : /USGAAP/.test(element) ? "usgaap" : "jgaap");
+
+/**
+ * The value for one fiscal year from a list of series, with its printed label,
+ * preferring the standard the row is reported on.
+ *
+ * In the year a company changes standards its filing prints both tables, so the
+ * same fiscal year has an IFRS 税引前利益 and a J-GAAP 経常利益. Taking whichever
+ * came first gave スズキ rows with IFRS revenue beside J-GAAP equity — figures
+ * that are each individually correct and cannot be added up or compared.
+ */
+function valueFor(list, periodEnd, standard = null) {
+  const covering = (list ?? []).filter((s) => s.years.some((y) => y.fiscalYearEnd === periodEnd));
+  const preferred = standard ? covering.filter((s) => standardOf(s.element) === standard) : covering;
+  const series = (preferred.length > 0 ? preferred : covering)[0];
+  if (!series) return { value: null, label: null };
+  const year = series.years.find((y) => y.fiscalYearEnd === periodEnd);
+  return { value: year.value, label: series.label };
 }
 
 /** Keep the JSON key order stable and readable rather than appending at the end. */
@@ -87,9 +99,11 @@ for (const id of ids) {
   const filled = { profit: 0, totalAssets: 0, netAssets: 0, employees: 0 };
 
   entry.financials = entry.financials.map((row) => {
-    const profit = valueFor(pack.figures.profit, row.periodEnd);
-    const totalAssets = valueFor(pack.figures.totalAssets, row.periodEnd);
-    const netAssets = valueFor(pack.figures.netAssets, row.periodEnd);
+    // The researcher already decided which standard each year is reported on.
+    const profit = valueFor(pack.figures.profit, row.periodEnd, row.accountingStandard);
+    const totalAssets = valueFor(pack.figures.totalAssets, row.periodEnd, row.accountingStandard);
+    const netAssets = valueFor(pack.figures.netAssets, row.periodEnd, row.accountingStandard);
+    // Employee counts are not standard-specific.
     const employees = valueFor(pack.figures.employees, row.periodEnd);
     if (profit.value !== null) filled.profit++;
     if (totalAssets.value !== null) filled.totalAssets++;
