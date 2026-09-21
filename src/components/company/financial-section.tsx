@@ -41,6 +41,17 @@ export function FinancialSection({
   const standards = [...new Set(sorted.map((r) => r.accountingStandard))];
   const revenueLabels = [...new Set(sorted.map((r) => r.revenueLabel))];
   const netIncomeLabels = [...new Set(sorted.map((r) => r.netIncomeLabel))];
+  // The added columns are only drawn when the filings actually carry them: a
+  // bank prints no 営業利益 row at all, and an empty column would read as a gap
+  // in the data rather than as a fact about the company.
+  const labelsOf = (pick: (r: FinancialRecord) => string | null) => [...new Set(sorted.map(pick).filter((l): l is string => Boolean(l)))];
+  const profitLabels = labelsOf((r) => r.profitLabel);
+  const totalAssetsLabels = labelsOf((r) => r.totalAssetsLabel);
+  const netAssetsLabels = labelsOf((r) => r.netAssetsLabel);
+  const hasProfit = sorted.some((r) => r.profit !== null);
+  const hasTotalAssets = sorted.some((r) => r.totalAssets !== null);
+  const hasNetAssets = sorted.some((r) => r.netAssets !== null);
+  const hasEmployees = sorted.some((r) => r.employees !== null);
   const sourceIds = [...new Set(sorted.flatMap((r) => r.sourceIds))];
   const notes = sorted.filter((r) => r.note);
   // Years whose two columns measure different perimeters, so their gap is not a margin.
@@ -140,13 +151,19 @@ export function FinancialSection({
           数値を表で見る
         </summary>
         <div className="mt-3 overflow-x-auto">
-          <table className="figures w-full min-w-[32rem] border-collapse text-sm">
-            <caption className="pb-2 text-left text-xs text-muted-foreground">単位：百万円</caption>
+          <table className="figures w-full min-w-[46rem] border-collapse text-sm">
+            <caption className="pb-2 text-left text-xs text-muted-foreground">
+              単位：百万円{hasEmployees ? "（従業員数は人）" : ""}
+            </caption>
             <thead>
               <tr className="border-b border-foreground text-left text-xs text-muted-foreground">
                 <th scope="col" className="py-2 pr-4 font-semibold">年度</th>
                 <th scope="col" className="py-2 pr-4 text-right font-semibold">売上</th>
+                {hasProfit && <th scope="col" className="py-2 pr-4 text-right font-semibold">利益</th>}
                 <th scope="col" className="py-2 pr-4 text-right font-semibold">純利益</th>
+                {hasTotalAssets && <th scope="col" className="py-2 pr-4 text-right font-semibold">総資産</th>}
+                {hasNetAssets && <th scope="col" className="py-2 pr-4 text-right font-semibold">純資産</th>}
+                {hasEmployees && <th scope="col" className="py-2 pr-4 text-right font-semibold">従業員数</th>}
                 <th scope="col" className="py-2 font-semibold">会計基準</th>
               </tr>
             </thead>
@@ -157,14 +174,68 @@ export function FinancialSection({
                   <td className="py-2.5 pr-4 text-right">
                     {r.revenue === null ? "確認できず" : formatMillionYen(r.revenue)}
                   </td>
+                  {hasProfit && (
+                    <td className="py-2.5 pr-4 text-right">
+                      {r.profit === null ? "—" : formatMillionYen(r.profit)}
+                    </td>
+                  )}
                   <td className="py-2.5 pr-4 text-right">
                     {r.netIncome === null ? "確認できず" : formatMillionYen(r.netIncome)}
                   </td>
+                  {hasTotalAssets && (
+                    <td className="py-2.5 pr-4 text-right">
+                      {r.totalAssets === null ? "—" : formatMillionYen(r.totalAssets)}
+                    </td>
+                  )}
+                  {hasNetAssets && (
+                    <td className="py-2.5 pr-4 text-right">
+                      {r.netAssets === null ? "—" : formatMillionYen(r.netAssets)}
+                    </td>
+                  )}
+                  {hasEmployees && (
+                    <td className="py-2.5 pr-4 text-right">
+                      {r.employees === null ? "—" : r.employees.toLocaleString("ja-JP")}
+                    </td>
+                  )}
                   <td className="py-2.5 text-xs">{STANDARD_NAME[r.accountingStandard]}</td>
                 </tr>
               ))}
             </tbody>
           </table>
+          {/*
+            The headings are short so the table stays readable, but 「利益」 and
+            「純資産」 are not the same line at every company — a 商社 prints
+            売上総利益 where a manufacturer prints 経常利益 or 税引前利益, and some
+            filers report equity attributable to the parent rather than the total.
+            So the filing's own wording is stated here rather than hidden behind a
+            tidy column header.
+          */}
+          <dl className="mt-3 space-y-1 text-xs text-muted-foreground">
+            {hasProfit && (
+              <div className="flex gap-2">
+                <dt className="shrink-0">「利益」は</dt>
+                <dd>有価証券報告書が売上と純利益の間に掲げている行です（{profitLabels.join("・")}）。</dd>
+              </div>
+            )}
+            {hasTotalAssets && totalAssetsLabels.length > 0 && (
+              <div className="flex gap-2">
+                <dt className="shrink-0">「総資産」は</dt>
+                <dd>{totalAssetsLabels.join("・")}。</dd>
+              </div>
+            )}
+            {hasNetAssets && netAssetsLabels.length > 0 && (
+              <div className="flex gap-2">
+                <dt className="shrink-0">「純資産」は</dt>
+                <dd>{netAssetsLabels.join("・")}。</dd>
+              </div>
+            )}
+            {hasEmployees && (
+              <div className="flex gap-2">
+                <dt className="shrink-0">従業員数は</dt>
+                <dd>各年度末時点の連結従業員数です。</dd>
+              </div>
+            )}
+          </dl>
         </div>
       </details>
 

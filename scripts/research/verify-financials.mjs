@@ -127,6 +127,36 @@ if (restatement?.revenue) {
       : `前期有報との差異（修正再表示の可能性・要記録）: ${JSON.stringify(d)}`,
   );
 }
+/**
+ * The four series filled mechanically by backfill-figures.mjs are checked the
+ * same way as revenue and net income: every stored figure must still equal a
+ * value the filing tags for that fiscal year. A value the filing does not carry
+ * must be null — never a number from somewhere else.
+ */
+let extraChecked = 0;
+for (const row of entry.financials) {
+  for (const [kind, stored, series] of [
+    ["利益", row.profit, evidence.figures.profit],
+    ["総資産", row.totalAssets, evidence.figures.totalAssets],
+    ["純資産", row.netAssets, evidence.figures.netAssets],
+    ["従業員数", row.employees, evidence.figures.employees],
+  ]) {
+    if (stored === null || stored === undefined) continue;
+    const tagged = (series ?? []).flatMap((s) => s.years.filter((y) => y.fiscalYearEnd === row.periodEnd).map((y) => y.value));
+    if (tagged.length === 0) {
+      problems.push(`${row.fiscalYear} ${kind}: ${stored.toLocaleString("ja-JP")} と記載されていますが、有報のXBRLにこの決算期の値がありません`);
+      continue;
+    }
+    extraChecked++;
+    if (!tagged.includes(stored)) {
+      problems.push(
+        `${row.fiscalYear} ${kind}: 記載 ${stored.toLocaleString("ja-JP")} ≠ XBRL ${tagged.map((v) => v.toLocaleString("ja-JP")).join(" / ")}`,
+      );
+    }
+  }
+}
+if (extraChecked > 0) console.log(`利益・総資産・純資産・従業員数: ${extraChecked} 件を照合`);
+
 for (const warning of evidence.warnings ?? []) console.log(`注意: ${warning}`);
 if (problems.length > 0) {
   console.error(`\n不一致 ${problems.length} 件:`);

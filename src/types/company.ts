@@ -101,8 +101,32 @@ export type FinancialRecord = Sourced & {
   periodEnd: string;
   revenue: number | null;
   revenueLabel: string;
+  /**
+   * The profit line the filing prints between revenue and net income in its own
+   * 主要な経営指標等の推移 — 経常利益 under J-GAAP, 税引前利益 under IFRS and
+   * US GAAP. Deliberately NOT 営業利益: almost no filer puts operating profit in
+   * that five-year table, so a 営業利益 column could be filled for two years at
+   * most, and not at all for banks, 総合商社 or US GAAP filers. `profitLabel`
+   * carries the filer's own wording, which is what tells a reader which line
+   * this is. Both are null when the filing prints no such row.
+   */
+  profit: number | null;
+  profitLabel: string | null;
   netIncome: number | null;
   netIncomeLabel: string;
+  /** 総資産, as the filing's five-year table prints it. */
+  totalAssets: number | null;
+  totalAssetsLabel: string | null;
+  /**
+   * 純資産. The filing's total (純資産額 / 資本合計, including non-controlling
+   * interests) where it tags one; some IFRS and US GAAP filers tag only
+   * 親会社の所有者に帰属する持分 / 株主資本, and then the label says so — the same
+   * parent-versus-total distinction that matters for net income.
+   */
+  netAssets: number | null;
+  netAssetsLabel: string | null;
+  /** 従業員数 at the fiscal year end, as the filing's five-year table prints it. */
+  employees: number | null;
   currency: "JPY";
   accountingStandard: AccountingStandard;
   /**

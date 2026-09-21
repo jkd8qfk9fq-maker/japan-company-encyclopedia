@@ -62,6 +62,47 @@ const NET_INCOME_ELEMENTS = new Set([
 ]);
 
 /**
+ * The profit line between revenue and net income, as the filing's own five-year
+ * table prints it. It is NOT 営業利益: almost no filer puts operating profit in
+ * 主要な経営指標等の推移 — J-GAAP prints 経常利益 and IFRS/US GAAP print 税引前利益,
+ * and those are the figures that exist for five years. The entry stores whichever
+ * the filer prints, with the filer's own label.
+ */
+const PROFIT_ELEMENTS = [
+  "OrdinaryIncomeLossSummaryOfBusinessResults", // 経常利益又は経常損失（△）
+  "ProfitLossBeforeTaxIFRSSummaryOfBusinessResults", // 税引前利益（IFRS）
+  "ProfitLossBeforeTaxUSGAAPSummaryOfBusinessResults", // 税引前利益（US GAAP）
+  // 総合商社 print 収益 / 売上総利益 / 当期純利益 and tag no pre-tax row at all,
+  // so 売上総利益 is the line their own five-year table puts between the top line
+  // and net income. Last in preference order: it is a different measure from the
+  // rows above, which is exactly why profitLabel travels with the figure.
+  "GrossProfitIFRSSummaryOfBusinessResults",
+];
+const TOTAL_ASSETS_ELEMENTS = [
+  "TotalAssetsSummaryOfBusinessResults",
+  "TotalAssetsIFRSSummaryOfBusinessResults",
+  "TotalAssetsUSGAAPSummaryOfBusinessResults",
+];
+/**
+ * 純資産. Preference order matters: the total (純資産額 / 資本合計) comes first,
+ * and parent-attributable equity is only a fallback for filers that tag no total —
+ * the same parent-versus-total distinction that matters for net income.
+ */
+const NET_ASSETS_ELEMENTS = [
+  "NetAssetsSummaryOfBusinessResults", // 純資産額 (J-GAAP, incl. NCI)
+  "TotalEquityIFRSSummaryOfBusinessResults", // 資本合計 (IFRS, incl. NCI)
+  "EquityIncludingPortionAttributableToNonControllingInterestUSGAAPSummaryOfBusinessResults",
+  "EquityAttributableToOwnersOfParentIFRSSummaryOfBusinessResults", // 親会社の所有者に帰属する持分
+  "EquityAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults", // 株主資本
+];
+const EMPLOYEE_ELEMENTS = [
+  "NumberOfEmployees",
+  "NumberOfEmployeesIFRSSummaryOfBusinessResults",
+  "NumberOfEmployeesJGAAPSummaryOfBusinessResults",
+  "NumberOfEmployeesJapanGAAPKeyFinancialData",
+];
+
+/**
  * A filer whose top line has no standard element tags it with its own extension
  * element instead, in the filer's namespace and with no label at all — Toyota's
  * 営業収益 is `…:OperatingRevenuesIFRSKeyFinancialData`, Sony's
@@ -129,6 +170,60 @@ function coverPage(rows) {
   return out;
 }
 
+/**
+ * The label 主要な経営指標等の推移 actually prints for a series, recovered by
+ * finding that series' own figures in the printed table and reading backwards.
+ *
+ * The taxonomy label is not good enough for the page: it carries suffixes no
+ * filing prints (「親会社の所有者に帰属する持分（IFRS）」 where 三菱商事 prints
+ * 「当社の所有者に帰属する持分」), and some elements carry no label at all
+ * (GrossProfitIFRS, whose row 商社 print as 「売上総利益」). Researchers already
+ * take revenueLabel and netIncomeLabel from this table by hand; this does the
+ * same for the four series filled mechanically.
+ *
+ * Returns null when the figures cannot be located, and the caller falls back to
+ * a cleaned taxonomy label rather than inventing wording.
+ */
+function printedLabel(indicators, years) {
+  if (!indicators || years.length < 2) return null;
+  const table = indicators.replace(/\s+/g, "");
+  // The printed table is in 百万円 for money and bare counts for people, and its
+  // columns run together with no separator, so two consecutive values in a row
+  // are a strong, unambiguous anchor.
+  for (const divisor of [1_000_000, 1]) {
+    for (let i = 0; i + 1 < years.length; i++) {
+      const a = years[i].value / divisor;
+      const b = years[i + 1].value / divisor;
+      if (!Number.isInteger(a) || !Number.isInteger(b)) continue;
+      const probe = a.toLocaleString("en-US") + b.toLocaleString("en-US");
+      const at = table.indexOf(probe);
+      if (at < 0) continue;
+      let start = at;
+      // Stop at the previous figure. Full-width digits count: the header row
+      // above the first data row ends 「2026年３月」, and walking past ３ would
+      // leave 「年３月売上収益」 instead of 「売上収益」.
+      while (start > 0 && !/[0-9０-９\]】]/.test(table[start - 1])) start--;
+      let label = table.slice(start, at);
+      let previous;
+      do {
+        previous = label;
+        label = label
+          // Remnants of the 決算年月 header immediately above the first row.
+          .replace(/^(?:[0-9０-９]{1,4}\s*年)?\s*(?:[0-9０-９]{1,2}\s*月)?\s*(?:[0-9０-９]{1,2}\s*日)?/, "")
+          .replace(/^[年月日度回次)）\s]+/, "")
+          // A trailing unit, including the 「(百万円)」 form — but never a
+          // parenthetical that is part of the label itself, such as
+          // 「当期利益(親会社の所有者に帰属)」.
+          .replace(/[（(]\s*(百万円|千円|billion|円|名|人|％|%)\s*[）)]$/, "")
+          .replace(/(百万円|千円|円|名|人|％|%|〃|－|—|-|、|：|:|\s)+$/, "")
+          .trim();
+      } while (label !== previous);
+      if (label.length >= 2 && label.length <= 40) return label;
+    }
+  }
+  return null;
+}
+
 /** 相対年度, falling back to the context id (extension rows often leave it blank). */
 function relativeYear(row) {
   const stated = row["相対年度"];
@@ -140,7 +235,7 @@ function relativeYear(row) {
 }
 
 /** Five-year figures from one filing: only consolidated rows, labels as filed. */
-function fiveYearFigures(rows, periodEnd) {
+function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
   const summary = rows.filter(
     (r) =>
       // 主要な経営指標等の推移 is tagged either with the standard summary elements
@@ -168,8 +263,9 @@ function fiveYearFigures(rows, periodEnd) {
     return [...byElement.entries()]
       .map(([element, list]) => ({
         element,
-        // Extension elements carry no label; the filing's own wording for them is
-        // only in the printed table, so the researcher reads it from indicators.txt.
+        // Extension elements carry no taxonomy label at all, and the taxonomy's
+        // wording is not what the filing prints anyway, so the printed table is
+        // read first. The researcher still confirms the label in indicators.txt.
         label: (list[0]["項目名"] ?? "").replace(/、経営指標等$/, "") || null,
         years: list
           .map((r) => ({ row: r, relative: relativeYear(r) }))
@@ -187,14 +283,75 @@ function fiveYearFigures(rows, periodEnd) {
           .filter((y) => Number.isFinite(y.yen))
           .sort((a, b) => a.fiscalYearEnd.localeCompare(b.fiscalYearEnd)),
       }))
-      .filter((candidate) => candidate.years.length > 0);
+      .filter((candidate) => candidate.years.length > 0)
+      .map((candidate) => ({
+        ...candidate,
+        taxonomyLabel: candidate.label,
+        label: printedLabel(indicatorsText, candidate.years.map((y) => ({ value: y.yen }))) ?? candidate.label,
+      }));
   };
-  const figures = { revenue: pick(REVENUE_ELEMENTS, REVENUE_EXTENSION), netIncome: pick(NET_INCOME_ELEMENTS, null) };
+  /**
+   * The first element present, in preference order — one series, not a list of
+   * candidates, so a mechanical backfill is deterministic. `rowsFor` keeps its
+   * own unit filter because employee counts are people, not yen.
+   */
+  const pickSeries = (elements, { unit = "円" } = {}) => {
+    const pool = rows.filter(
+      (r) =>
+        /(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"]) === /(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"]) &&
+        !/NonConsolidated/i.test(r["コンテキストID"] ?? "") &&
+        // A bare year context only. Employee counts are also tagged per segment
+        // and per sub-company, and those carry extra dimensions in the context.
+        /^(Current|Prior\d)Year(Instant|Duration)$/.test(r["コンテキストID"] ?? "") &&
+        (unit === null || r["単位"] === unit),
+    );
+    // All matching elements, in preference order — not just the first. A filer
+    // that changed accounting standard mid-series tags 経常利益 for its J-GAAP
+    // years and 税引前利益 for its IFRS years, and the entry needs both
+    // (スズキ, 移行日 2023-04-01).
+    const found = [];
+    for (const element of elements) {
+      const list = pool.filter((r) => r["要素ID"].replace(/^.*:/, "") === element);
+      if (list.length === 0) continue;
+      const years = list
+        .map((r) => ({ relative: relativeYear(r), row: r }))
+        .filter(({ relative }) => relative)
+        .map(({ relative, row }) => ({
+          relative,
+          fiscalYearEnd: shiftYear(periodEnd, YEAR_OFFSET[relative]),
+          value: Number(row["値"]),
+        }))
+        .filter((y) => Number.isFinite(y.value))
+        .sort((a, b) => a.fiscalYearEnd.localeCompare(b.fiscalYearEnd));
+      if (years.length === 0) continue;
+      const taxonomy = (list[0]["項目名"] ?? "").replace(/、経営指標等$/, "") || null;
+      found.push({
+        element,
+        // The filing's own wording wins; the taxonomy label is the fallback.
+        label: printedLabel(indicatorsText, years) ?? taxonomy?.replace(/（(IFRS|US GAAP)）/g, "").replace(/又は.*$/, "").trim() ?? null,
+        taxonomyLabel: taxonomy,
+        years,
+      });
+    }
+    return found.length > 0 ? found : null;
+  };
+
+  const figures = {
+    revenue: pick(REVENUE_ELEMENTS, REVENUE_EXTENSION),
+    netIncome: pick(NET_INCOME_ELEMENTS, null),
+    profit: pickSeries(PROFIT_ELEMENTS),
+    totalAssets: pickSeries(TOTAL_ASSETS_ELEMENTS),
+    netAssets: pickSeries(NET_ASSETS_ELEMENTS),
+    employees: pickSeries(EMPLOYEE_ELEMENTS, { unit: null }),
+  };
   // A filer whose top line or net-income element is not in the allowlist must be
   // added to it deliberately, after checking what the filing prints. Returning an
   // empty list here would hand a researcher a pack with a missing row and no sign
   // that anything was wrong.
-  for (const [kind, list] of Object.entries(figures)) {
+  for (const [kind, list] of [
+    ["revenue", figures.revenue],
+    ["netIncome", figures.netIncome],
+  ]) {
     if (list.length === 0) {
       const available = [...new Set(summary.map((r) => r["要素ID"].replace(/^.*:/, "")))].join(", ");
       throw new Error(
@@ -202,6 +359,11 @@ function fiveYearFigures(rows, periodEnd) {
           `${kind === "revenue" ? "REVENUE_ELEMENTS" : "NET_INCOME_ELEMENTS"}. Tagged here: ${available}`,
       );
     }
+  }
+  // These four are not fatal: a filer may genuinely not print one (銀行 tag no
+  // 営業利益 line at all), and a missing series becomes a null column, not a guess.
+  for (const kind of ["profit", "totalAssets", "netAssets", "employees"]) {
+    if (!figures[kind]) missing.push(kind);
   }
   return figures;
 }
@@ -309,6 +471,26 @@ function brief(companyId, code4, filing, cover, figures, previous, warnings, cor
       for (const y of candidate.years) rows.push(`| ${y.fiscalYearEnd} | ${yen(y.yen)} | ${million(y.yen)} |`);
     }
   }
+  for (const [kind, list, unit] of [
+    ["利益（売上と純利益の間の行）", figures.profit, "yen"],
+    ["総資産", figures.totalAssets, "yen"],
+    ["純資産", figures.netAssets, "yen"],
+    ["従業員数", figures.employees, "people"],
+  ]) {
+    if (!list) {
+      rows.push(`\n**${kind}** — この有報の5年表にはない（空欄のままでよい。理由をログに書くこと）`);
+      continue;
+    }
+    for (const series of list) {
+      rows.push(`\n**${kind}** — 印字ラベル \`${series.label ?? "(無題)"}\` [\`${series.element}\`]`);
+      rows.push("");
+      rows.push(unit === "yen" ? "| 決算期 | 円 | 百万円 |" : "| 決算期 | 人 |");
+      rows.push(unit === "yen" ? "|---|---:|---:|" : "|---|---:|");
+      for (const y of series.years) {
+        rows.push(unit === "yen" ? `| ${y.fiscalYearEnd} | ${yen(y.value)} | ${million(y.value)} |` : `| ${y.fiscalYearEnd} | ${yen(y.value)} |`);
+      }
+    }
+  }
   const restatement = previous?.figures
     ? (() => {
         const d = [...compare(figures.revenue, previous.figures.revenue).differences, ...compare(figures.netIncome, previous.figures.netIncome).differences];
@@ -361,12 +543,27 @@ async function packFor(companyId, code4, from, to) {
   const latest = pickBase(reports);
   if (!latest) throw new Error(`no filing with a readable fiscal year for ${code4} between ${from} and ${to}`);
   const { rows } = await figuresFor(latest);
-  const figures = fiveYearFigures(rows, latest.resolvedPeriodEnd);
+  const missing = [];
+  // 主要な経営指標等の推移 as printed, so each series can carry the filer's own
+  // wording rather than the taxonomy's.
+  const indicatorsRow = rows.find((r) => r["要素ID"] === "jpcrp_cor:BusinessResultsOfGroupTextBlock" && r["値"]);
+  const indicatorsText = indicatorsRow ? textBlockToText(indicatorsRow["値"]) : null;
+  const figures = fiveYearFigures(rows, latest.resolvedPeriodEnd, missing, indicatorsText);
 
   const warnings = [];
+  if (missing.length > 0) {
+    warnings.push(
+      `${missing.join("・")} が5年表に見当たらない。有報が実際に掲げていない項目であれば空欄のままでよい（銀行は営業利益を出さない等）。ログにその旨を書くこと`,
+    );
+  }
   // More than one tagged candidate means the filer tags a line the entry must not
-  // confuse with the top line (売上総利益, 当期利益 including minorities…).
-  for (const [kind, list] of Object.entries(figures)) {
+  // confuse with the top line (売上総利益, 当期利益 including minorities…). Only
+  // revenue and net income: several series for 利益/総資産/純資産 is normal and
+  // expected when a filer changed accounting standard mid-series.
+  for (const [kind, list] of [
+    ["revenue", figures.revenue],
+    ["netIncome", figures.netIncome],
+  ]) {
     if (list.length > 1) {
       warnings.push(
         `${kind} の候補が ${list.length} 件ある（${list.map((c) => c.label ?? c.element).join(" / ")}）。` +

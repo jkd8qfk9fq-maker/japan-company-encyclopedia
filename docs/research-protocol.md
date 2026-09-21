@@ -123,6 +123,22 @@ Answers three questions: what does the company provide, who pays for it, how doe
 
 ### `financials`
 
+Each year carries six figures: **売上・利益・純利益・総資産・純資産・従業員数**.
+
+`profit` is the row the filing prints **between** the top line and net income in its own
+主要な経営指標等の推移 — 経常利益 under J-GAAP, 税引前利益 under IFRS and US GAAP, 売上総利益 at a 総合商社.
+It is deliberately **not 営業利益**: almost no filer puts operating profit in that five-year table, so a
+営業利益 column could be filled for two years at most and not at all for banks, 商社 or US GAAP filers.
+`profitLabel` carries the filer's own wording, and the page prints it under the table — that label is
+what tells a reader which line the column is.
+
+`profit`, `totalAssets`, `netAssets` and `employees` are **filled mechanically** from the pack by
+`scripts/research/backfill-figures.mjs`; you do not transcribe them. Read `brief.md` to see what the
+filing carries, and say in the log if any of them is absent and why (a bank prints no 営業利益 row —
+that is a fact about the company, not a gap). `netAssets` prefers the filing's total
+(純資産額 / 資本合計, including non-controlling interests) and falls back to 親会社の所有者に帰属する持分
+only where the filer tags no total; the label says which it is.
+
 - **Source: the evidence pack's `summary.json`.** Its `figures.revenue` / `figures.netIncome` are the
   filing's own tagged values for the last five fiscal years, **already in yen** — copy them; never convert,
   round or retype a figure by hand.
