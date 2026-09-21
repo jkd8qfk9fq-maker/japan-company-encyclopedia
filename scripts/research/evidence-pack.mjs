@@ -77,6 +77,18 @@ const PROFIT_ELEMENTS = [
   // and net income. Last in preference order: it is a different measure from the
   // rows above, which is exactly why profitLabel travels with the figure.
   "GrossProfitIFRSSummaryOfBusinessResults",
+  // Last resort: a handful of filers (デンソー, 日本製鉄, ニコン, 住友商事) print
+  // 営業利益 in their five-year table and no 経常利益 or 税引前利益 at all. The
+  // column is defined as "the row this filing prints between its top line and
+  // net income", so where that row IS 営業利益, that is the honest value — the
+  // reason it sits last is that it is a different measure from the rows above,
+  // not that it is unusable. profitLabel says which it is.
+  "OperatingIncomeSummaryOfBusinessResults",
+  "OperatingIncomeLossSummaryOfBusinessResults",
+  "OperatingProfitLossIFRSSummaryOfBusinessResults",
+  "OperatingIncomeIFRSSummaryOfBusinessResults",
+  "OperatingProfitIFRSSummaryOfBusinessResults",
+  "OperatingProfitLossIFRSKeyFinancialData",
 ];
 const TOTAL_ASSETS_ELEMENTS = [
   "TotalAssetsSummaryOfBusinessResults",
@@ -113,6 +125,16 @@ const EMPLOYEE_ELEMENTS = [
 const REVENUE_EXTENSION = /^(?:Total)?(?:Net)?(?:Sales|Revenue|Revenues|OperatingRevenue|OperatingRevenues)[A-Za-z]*$/;
 /** Never a top line: a profit, a margin, or a comprehensive-income row. */
 const NOT_REVENUE = /(Profit|Income|Loss|Margin|Ratio|Comprehensive|PerShare|Cost|Expenses)/;
+
+/**
+ * A filer whose profit row has no standard element tags it with its own
+ * extension, exactly as it does for a non-standard top line — 日本製鉄 prints
+ * 事業利益 as `…:BusinessProfitIFRSKeyFinancialData`, with no taxonomy label.
+ * Matched only after every standard element has been tried.
+ */
+const PROFIT_EXTENSION = /^(?:Business|Core|Gross|Operating|Recurring|Ordinary)?(?:Profit|Income)(?:BeforeTax|BeforeIncomeTax|Loss)?[A-Za-z]*$/;
+/** Never the profit row: net income itself, comprehensive income, or a ratio. */
+const NOT_PROFIT = /(AttributableToOwners|NonControlling|Comprehensive|PerShare|Ratio|Margin|Tax(?:Expense|es)|Equity|Asset)/;
 /** 相対年度 → offset from the filing's own fiscal year. */
 const YEAR_OFFSET = { 当期: 0, 前期: 1, 前々期: 2, 三期前: 3, 四期前: 4 };
 
@@ -295,7 +317,7 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
    * candidates, so a mechanical backfill is deterministic. `rowsFor` keeps its
    * own unit filter because employee counts are people, not yen.
    */
-  const pickSeries = (elements, { unit = "円" } = {}) => {
+  const pickSeries = (elements, { unit = "円", extension = null } = {}) => {
     const pool = rows.filter(
       (r) =>
         /(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"]) === /(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"]) &&
@@ -333,13 +355,34 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
         years,
       });
     }
+    // Only if no standard element matched: a filer-specific extension carrying
+    // a non-standard row (事業利益 …). Kept last so it can never displace a
+    // standard 経常利益 or 税引前利益.
+    if (found.length === 0 && extension) {
+      for (const row of pool) {
+        const local = row["要素ID"].replace(/^.*:/, "");
+        if (row["要素ID"].startsWith("jpcrp_cor:") || row["要素ID"].startsWith("jpigp_cor:") || row["要素ID"].startsWith("jppfs_cor:")) continue;
+        const stem = local.replace(/(IFRS|USGAAP|JPGAAP)?KeyFinancialData$/, "").replace(/SummaryOfBusinessResults$/, "");
+        if (!extension.test(stem) || NOT_PROFIT.test(stem)) continue;
+        const list = pool.filter((r) => r["要素ID"] === row["要素ID"]);
+        const years = list
+          .map((r) => ({ relative: relativeYear(r), row: r }))
+          .filter(({ relative }) => relative)
+          .map(({ relative, row: r }) => ({ relative, fiscalYearEnd: shiftYear(periodEnd, YEAR_OFFSET[relative]), value: Number(r["値"]) }))
+          .filter((y) => Number.isFinite(y.value))
+          .sort((a, b) => a.fiscalYearEnd.localeCompare(b.fiscalYearEnd));
+        if (years.length === 0) continue;
+        found.push({ element: local, label: printedLabel(indicatorsText, years), taxonomyLabel: null, years });
+        break;
+      }
+    }
     return found.length > 0 ? found : null;
   };
 
   const figures = {
     revenue: pick(REVENUE_ELEMENTS, REVENUE_EXTENSION),
     netIncome: pick(NET_INCOME_ELEMENTS, null),
-    profit: pickSeries(PROFIT_ELEMENTS),
+    profit: pickSeries(PROFIT_ELEMENTS, { extension: PROFIT_EXTENSION }),
     totalAssets: pickSeries(TOTAL_ASSETS_ELEMENTS),
     netAssets: pickSeries(NET_ASSETS_ELEMENTS),
     employees: pickSeries(EMPLOYEE_ELEMENTS, { unit: null }),

@@ -2,6 +2,8 @@ import { parseContent, companySchema } from "@/lib/content/schemas";
 import type { Company } from "@/types/company";
 import advantest from "./advantest.json";
 import daiichiSankyo from "./daiichi-sankyo.json";
+import denso from "./denso.json";
+import disco from "./disco.json";
 import fastRetailing from "./fast-retailing.json";
 import fujitsu from "./fujitsu.json";
 import hitachi from "./hitachi.json";
@@ -15,6 +17,7 @@ import mitsubishiElectric from "./mitsubishi-electric.json";
 import mitsubishiUfjFinancialGroup from "./mitsubishi-ufj-financial-group.json";
 import mitsuiAndCo from "./mitsui-and-co.json";
 import mizuhoFinancialGroup from "./mizuho-financial-group.json";
+import murataManufacturing from "./murata-manufacturing.json";
 import nec from "./nec.json";
 import nintendo from "./nintendo.json";
 import nissan from "./nissan.json";
@@ -70,4 +73,7 @@ export const companies: Company[] = Object.entries({
   subaru,
   mazda,
   "isuzu-motors": isuzuMotors,
+  denso,
+  "murata-manufacturing": murataManufacturing,
+  disco,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
