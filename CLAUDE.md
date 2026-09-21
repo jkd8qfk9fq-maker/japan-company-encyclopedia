@@ -79,7 +79,9 @@ npm run content:diff          # read-only: changed data files, new revisions, di
 | `DATABASE_URL` | Where reader reports are stored (Postgres; `npm run db:migrate`). Unset in development → `.data/content-reports.json`. Unset in production → the report form refuses to send |
 | `ADMIN_PASSWORD_HASH` / `ADMIN_SESSION_SECRET` | Admin login, from `npm run admin:hash-password`. Either missing → `/admin` is closed. Copy `.env.example` to `.env.local` for development |
 
-**Gate every commit on exit codes**, not on grepped output: `npx tsc --noEmit -p . && npx eslint src tests && npx vitest run && git commit …`. Two commits on 2026-09-14 went in broken because a command checked `grep`'s status instead.
+**Gate every commit on exit codes**, not on grepped output: `npx tsc --noEmit -p . && npx eslint src tests && npx vitest run && git commit …`. Two commits on 2026-09-14 went in broken because a command checked `grep`'s status instead, and one on 2026-09-21 for the same reason — `npm test | grep "Tests "` matches the summary line whether or not the run passed.
+
+**Never restore a file with `git checkout` while uncommitted work is in flight.** The pattern "plant a wrong figure → confirm the checker rejects it → `git checkout` the file" silently reverted a company's newly backfilled fields to HEAD on 2026-09-21, and the broken entry was committed. Copy the file to the scratchpad first and restore from that copy.
 
 ---
 
