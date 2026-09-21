@@ -72,4 +72,27 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 52 | エネルギー | 株式会社INPEX | `inpex` | 1605 | pending | IFRS; **決算期 2025-12-31**; 候補複数 — indicators.txt で確認 |
 | 53 | エネルギー | ENEOSホールディングス株式会社 | `eneos-holdings` | 5020 | pending | IFRS |
 
+## 着眼点（運営者指示 2026-09-21）
+
+その会社を読むときに何が面白いのかを運営者が挙げたもの。3秒文や事業構造を書くときの視点であって、
+**事実の代わりではない** — ここに書かれた関係も、有報が述べている範囲でのみ記載すること。
+
+| id | 着眼点 |
+|---|---|
+| `denso` | トヨタなど自動車産業とのサプライチェーン |
+| `disco` | 東京エレクトロン、アドバンテストなど半導体産業との関係 |
+| `murata-manufacturing` | ソニーなど電子機器メーカーとの部品関係 |
+| `keyence` | FA・製造業のビジネスモデル |
+| `daikin-industries` | 日本のグローバル製造業 |
+| `fanuc` | 工場自動化 |
+| `kubota` | 農業機械・水インフラ |
+| `nippon-steel` | 素材産業 |
+| `mitsui-fudosan` | 三菱地所との比較 |
+| `tokio-marine-holdings` | 金融の中でも銀行とは異なる保険モデル |
+| `zozo` | EC・プラットフォーム型ビジネス |
+| `ajinomoto` | 食品＋化学・バイオという独特の事業構造 |
+| `chugai-pharmaceutical` | 製薬業界の研究開発型モデル |
+| `eneos-holdings` | 石油・エネルギー産業 |
+| `inpex` | 上流の資源開発 |
+
 Notes are read from the evidence packs, not transcribed — they are prompts to verify, not facts.
