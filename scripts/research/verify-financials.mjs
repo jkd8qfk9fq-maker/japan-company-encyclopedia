@@ -121,10 +121,14 @@ console.log(`有報: ${evidence.filing.filerName} ${evidence.filing.docDescripti
 const restatement = evidence.restatementCheck;
 if (restatement?.revenue) {
   const d = [...restatement.revenue.differences, ...restatement.netIncome.differences];
+  const rows = restatement.revenue.comparedRows + restatement.netIncome.comparedRows;
+  // Zero compared rows is not a clean bill of health: it means nothing lined up.
   console.log(
-    d.length === 0
-      ? `前期有報との比較: ${restatement.revenue.comparedRows + restatement.netIncome.comparedRows} 行一致（修正再表示なし）`
-      : `前期有報との差異（修正再表示の可能性・要記録）: ${JSON.stringify(d)}`,
+    d.length > 0
+      ? `前期有報との差異（修正再表示の可能性・要記録）: ${JSON.stringify(d)}`
+      : rows === 0
+        ? "前期有報との比較: **突き合わせられる行がない**。一致ではないので、前期有報を直接読んで確認すること"
+        : `前期有報との比較: ${rows} 行一致（修正再表示なし）`,
   );
 }
 /**

@@ -1,6 +1,7 @@
 import { parseContent, companySchema } from "@/lib/content/schemas";
 import type { Company } from "@/types/company";
 import advantest from "./advantest.json";
+import asahiKasei from "./asahi-kasei.json";
 import canon from "./canon.json";
 import daiichiSankyo from "./daiichi-sankyo.json";
 import daikinIndustries from "./daikin-industries.json";
@@ -17,6 +18,7 @@ import kddi from "./kddi.json";
 import keyence from "./keyence.json";
 import komatsu from "./komatsu.json";
 import mazda from "./mazda.json";
+import mitsubishiChemicalGroup from "./mitsubishi-chemical-group.json";
 import mitsubishiCorporation from "./mitsubishi-corporation.json";
 import mitsubishiElectric from "./mitsubishi-electric.json";
 import mitsubishiUfjFinancialGroup from "./mitsubishi-ufj-financial-group.json";
@@ -26,6 +28,7 @@ import murataManufacturing from "./murata-manufacturing.json";
 import nec from "./nec.json";
 import nikon from "./nikon.json";
 import nintendo from "./nintendo.json";
+import nipponSteel from "./nippon-steel.json";
 import nissan from "./nissan.json";
 import ntt from "./ntt.json";
 import renesasElectronics from "./renesas-electronics.json";
@@ -94,4 +97,7 @@ export const companies: Company[] = Object.entries({
   fanuc,
   "daikin-industries": daikinIndustries,
   komatsu,
+  "nippon-steel": nipponSteel,
+  "asahi-kasei": asahiKasei,
+  "mitsubishi-chemical-group": mitsubishiChemicalGroup,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

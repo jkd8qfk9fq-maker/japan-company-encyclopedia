@@ -461,9 +461,22 @@ function pickBase(reports) {
   )[0];
 }
 
+/**
+ * Compare this filing's five-year figures against last year's filing.
+ *
+ * Keyed on the ELEMENT, not the label. Labels are the filer's own printed
+ * wording and can change between filings — 三菱ケミカルグループ reclassified
+ * 田辺三菱製薬 as a discontinued operation and re-presented the prior year, and
+ * with a label-keyed comparison nothing matched, so the check reported
+ * "comparedRows: 0, differences: []" and the caller printed
+ * 「修正再表示なし」. It was hiding a 459,839百万円 restatement.
+ *
+ * Zero compared rows therefore means "could not compare", never "no change",
+ * and the caller has to say so.
+ */
 function compare(current, previous) {
   const flat = (figures) =>
-    new Map(figures.flatMap((f) => f.years.map((y) => [`${f.label}|${y.fiscalYearEnd}`, y.yen])));
+    new Map(figures.flatMap((f) => f.years.map((y) => [`${f.element}|${y.fiscalYearEnd}`, y.yen ?? y.value])));
   const now = flat(current);
   const before = flat(previous);
   const differences = [];
@@ -472,7 +485,10 @@ function compare(current, previous) {
       differences.push({ key, previousFiling: value, latestFiling: now.get(key) });
     }
   }
-  return { comparedRows: [...before.keys()].filter((k) => now.has(k)).length, differences };
+  const comparedRows = [...before.keys()].filter((k) => now.has(k)).length;
+  return comparedRows === 0
+    ? { comparedRows: 0, differences: [], note: "前期有報と突き合わせられる行がない（一致ではない）。前期有報を直接読んで確認すること" }
+    : { comparedRows, differences };
 }
 
 /** A filing's five-year figures, or null if EDINET has no CSV for it. */
@@ -543,9 +559,11 @@ function brief(companyId, code4, filing, cover, figures, previous, warnings, cor
   const restatement = previous?.figures
     ? (() => {
         const d = [...compare(figures.revenue, previous.figures.revenue).differences, ...compare(figures.netIncome, previous.figures.netIncome).differences];
-        return d.length === 0
-          ? "前期有報と重複年度は全て一致（修正再表示なし）"
-          : `**前期有報と差異あり — 理由を有報で特定し、ログに記録すること**\n\n\`\`\`json\n${JSON.stringify(d, null, 2)}\n\`\`\``;
+        const rows = compare(figures.revenue, previous.figures.revenue).comparedRows + compare(figures.netIncome, previous.figures.netIncome).comparedRows;
+        if (d.length > 0) return `**前期有報と差異あり — 理由を有報で特定し、ログに記録すること**\n\n\`\`\`json\n${JSON.stringify(d, null, 2)}\n\`\`\``;
+        return rows === 0
+          ? "**前期有報と突き合わせられる行がない。一致ではない** — 前期有報を直接読み、非継続事業への組替えや修正再表示がないか確認すること"
+          : `前期有報と重複年度は全て一致（修正再表示なし・${rows}行）`;
       })()
     : "前期有報が窓内に見つからず、比較していない";
 

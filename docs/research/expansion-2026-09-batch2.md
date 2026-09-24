@@ -38,11 +38,11 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 18 | 機械・産業機器 | ＳＭＣ株式会社 | `smc` | 6273 | pending |  |
 | 19 | 機械・産業機器 | 株式会社クボタ | `kubota` | 6326 | pending | IFRS; **決算期 2025-12-31** |
 | 20 | 機械・産業機器 | 株式会社小松製作所 | `komatsu` | 6301 | published | US GAAP; セグメントはXBRLに無くmd-and-a.txtから取得; ラベルは印字（注記番号付き）に修正 |
-| 21 | 素材・化学 | 旭化成株式会社 | `asahi-kasei` | 3407 | pending |  |
-| 22 | 素材・化学 | 三菱ケミカルグループ株式会社 | `mitsubishi-chemical-group` | 4188 | pending | IFRS; **前期有報と差異1件 — 理由を特定すること** |
+| 21 | 素材・化学 | 旭化成株式会社 | `asahi-kasei` | 3407 | published | 3領域; 売上順と営業損益順が異なることを明記 |
+| 22 | 素材・化学 | 三菱ケミカルグループ株式会社 | `mitsubishi-chemical-group` | 4188 | published | 田辺三菱製薬の非継続事業化で前期再表示; basis両方を全年度に設定 |
 | 23 | 素材・化学 | 住友化学株式会社 | `sumitomo-chemical` | 4005 | pending | IFRS |
 | 24 | 素材・化学 | ＡＧＣ株式会社 | `agc` | 5201 | pending | IFRS; **決算期 2025-12-31** |
-| 25 | 素材・化学 | 日本製鉄株式会社 | `nippon-steel` | 5401 | pending | IFRS |
+| 25 | 素材・化学 | 日本製鉄株式会社 | `nippon-steel` | 5401 | published | 利益行は独自指標の事業利益; USスチール取得は将来に向かって適用 |
 | 26 | 商社 | 住友商事株式会社 | `sumitomo-corporation` | 8053 | pending | IFRS |
 | 27 | 商社 | 丸紅株式会社 | `marubeni` | 8002 | pending | IFRS |
 | 28 | 金融 | 野村ホールディングス株式会社 | `nomura-holdings` | 8604 | pending | US GAAP; **セグメント注記なし → md-and-a.txt から**; 候補複数 — indicators.txt で確認; 本文が3万字で打ち切られている箇所あり |
