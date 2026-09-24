@@ -724,11 +724,17 @@ async function packFor(companyId, code4, from, to) {
     warnings,
     figures,
     previousFiling: previous?.filing ?? null,
+    // All six series, not just revenue and net income. 清水建設 finalised the
+    // purchase-price allocation for an acquisition and restated 総資産額 and
+    // 純資産額 only — its revenue and net income were untouched, so a check
+    // that looked at those two alone reported a clean match while two balance
+    // figures had moved.
     restatementCheck: previous?.figures
-      ? {
-          revenue: compare(figures.revenue, previous.figures.revenue),
-          netIncome: compare(figures.netIncome, previous.figures.netIncome),
-        }
+      ? Object.fromEntries(
+          ["revenue", "netIncome", "profit", "totalAssets", "netAssets", "employees"]
+            .filter((kind) => figures[kind] && previous.figures[kind])
+            .map((kind) => [kind, compare(figures[kind], previous.figures[kind])]),
+        )
       : { note: previous?.error ?? "previous filing not found in window" },
     sections: sectionIndex,
     otherSections: others.map((o) => o.name),

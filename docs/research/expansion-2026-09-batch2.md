@@ -48,9 +48,9 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 28 | 金融 | 野村ホールディングス株式会社 | `nomura-holdings` | 8604 | pending | US GAAP; **セグメント注記なし → md-and-a.txt から**; 候補複数 — indicators.txt で確認; 本文が3万字で打ち切られている箇所あり |
 | 29 | 金融 | 東京海上ホールディングス株式会社 | `tokio-marine-holdings` | 8766 | pending | IFRS; 候補複数 — indicators.txt で確認 |
 | 30 | 金融 | 株式会社第一ライフグループ（旧会社名：第一生命ホールディングス株式会社） | `dai-ichi-life-holdings` | 8750 | pending | **前期有報と差異2件 — 理由を特定すること**; 本文が3万字で打ち切られている箇所あり |
-| 31 | 建設・不動産 | 大成建設株式会社 | `taisei` | 1801 | pending | 訂正有報あり (S100YDJC) |
-| 32 | 建設・不動産 | 鹿島建設株式会社 | `kajima` | 1812 | pending |  |
-| 33 | 建設・不動産 | 清水建設株式会社 | `shimizu` | 1803 | pending |  |
+| 31 | 建設・不動産 | 大成建設株式会社 | `taisei` | 1801 | published | 訂正有報は役員報酬の閾値とのれん注記の小見出しのみ; 数値変更なし |
+| 32 | 建設・不動産 | 鹿島建設株式会社 | `kajima` | 1812 | published | 事業3＋関係会社を地域別に2の構成; 海外関係会社が2位 |
+| 33 | 建設・不動産 | 清水建設株式会社 | `shimizu` | 1803 | published | 暫定的な会計処理の確定で総資産・純資産を再表示; noteで明示 |
 | 34 | 建設・不動産 | 三井不動産株式会社 | `mitsui-fudosan` | 8801 | pending |  |
 | 35 | 建設・不動産 | 住友不動産株式会社 | `sumitomo-realty-and-development` | 8830 | pending |  |
 | 36 | 小売・消費 | イオン株式会社 | `aeon` | 8267 | pending | **決算期 2026-02-28**; **前期有報と差異1件 — 理由を特定すること** |

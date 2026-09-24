@@ -120,8 +120,10 @@ console.log(`${companyId}: ${checked} 件の数値を有報XBRLと照合`);
 console.log(`有報: ${evidence.filing.filerName} ${evidence.filing.docDescription} (docID ${evidence.filing.docID})`);
 const restatement = evidence.restatementCheck;
 if (restatement?.revenue) {
-  const d = [...restatement.revenue.differences, ...restatement.netIncome.differences];
-  const rows = restatement.revenue.comparedRows + restatement.netIncome.comparedRows;
+  // Every series the pack compared, not just revenue and net income.
+  const kinds = Object.values(restatement).filter((v) => v && Array.isArray(v.differences));
+  const d = kinds.flatMap((v) => v.differences);
+  const rows = kinds.reduce((n, v) => n + v.comparedRows, 0);
   // Zero compared rows is not a clean bill of health: it means nothing lined up.
   console.log(
     d.length > 0

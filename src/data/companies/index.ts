@@ -14,6 +14,7 @@ import hitachi from "./hitachi.json";
 import honda from "./honda.json";
 import isuzuMotors from "./isuzu-motors.json";
 import itochu from "./itochu.json";
+import kajima from "./kajima.json";
 import kddi from "./kddi.json";
 import keyence from "./keyence.json";
 import komatsu from "./komatsu.json";
@@ -34,12 +35,14 @@ import ntt from "./ntt.json";
 import renesasElectronics from "./renesas-electronics.json";
 import rohm from "./rohm.json";
 import sevenAndIHoldings from "./seven-and-i-holdings.json";
+import shimizu from "./shimizu.json";
 import shinEtsuChemical from "./shin-etsu-chemical.json";
 import socionext from "./socionext.json";
 import sonyGroup from "./sony-group.json";
 import subaru from "./subaru.json";
 import sumitomoMitsuiFinancialGroup from "./sumitomo-mitsui-financial-group.json";
 import suzuki from "./suzuki.json";
+import taisei from "./taisei.json";
 import takedaPharmaceutical from "./takeda-pharmaceutical.json";
 import tokyoElectron from "./tokyo-electron.json";
 import toyota from "./toyota.json";
@@ -100,4 +103,7 @@ export const companies: Company[] = Object.entries({
   "nippon-steel": nipponSteel,
   "asahi-kasei": asahiKasei,
   "mitsubishi-chemical-group": mitsubishiChemicalGroup,
+  taisei,
+  kajima,
+  shimizu,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
