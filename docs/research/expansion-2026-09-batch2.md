@@ -30,9 +30,9 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 10 | 半導体・電子部品 | 株式会社ディスコ | `disco` | 6146 | published | 単一セグメント; 装置と消耗ツールの両方を売るモデル |
 | 11 | 電機・精密機器 | パナソニック ホールディングス株式会社 | `panasonic-holdings` | 6752 | pending | IFRS |
 | 12 | 電機・精密機器 | 富士フイルムホールディングス株式会社 | `fujifilm-holdings` | 4901 | pending | US GAAP; **セグメント注記なし → md-and-a.txt から**; 本文が3万字で打ち切られている箇所あり |
-| 13 | 電機・精密機器 | キヤノン株式会社 | `canon` | 7751 | pending | US GAAP; **決算期 2025-12-31**; **セグメント注記なし → md-and-a.txt から**; 本文が3万字で打ち切られている箇所あり |
-| 14 | 電機・精密機器 | 株式会社ニコン | `nikon` | 7731 | pending | IFRS |
-| 15 | 電機・精密機器 | 株式会社キーエンス | `keyence` | 6861 | pending | **決算期 2026-03-20** |
+| 13 | 電機・精密機器 | キヤノン株式会社 | `canon` | 7751 | published | US GAAP・12月期; セグメントはXBRLに無くmd-and-a.txtから取得 |
+| 14 | 電機・精密機器 | 株式会社ニコン | `nikon` | 7731 | published | needs-attention: 有報は税引前利益を印字するがXBRLに該当タグが無く空欄 |
+| 15 | 電機・精密機器 | 株式会社キーエンス | `keyence` | 6861 | published | 決算期3月20日; 単一セグメント; 直販体制 |
 | 16 | 機械・産業機器 | ダイキン工業株式会社 | `daikin-industries` | 6367 | pending |  |
 | 17 | 機械・産業機器 | ファナック株式会社 | `fanuc` | 6954 | pending |  |
 | 18 | 機械・産業機器 | ＳＭＣ株式会社 | `smc` | 6273 | pending |  |
