@@ -220,12 +220,16 @@ function printedLabel(indicators, years) {
       const probe = a.toLocaleString("en-US") + b.toLocaleString("en-US");
       const at = table.indexOf(probe);
       if (at < 0) continue;
-      let start = at;
-      // Stop at the previous figure. Full-width digits count: the header row
-      // above the first data row ends 「2026年３月」, and walking past ３ would
-      // leave 「年３月売上収益」 instead of 「売上収益」.
-      while (start > 0 && !/[0-9０-９\]】]/.test(table[start - 1])) start--;
-      let label = table.slice(start, at);
+      // Walk back to the end of the previous *figure*, not the previous digit.
+      // A row label often carries a footnote marker — コマツ prints
+      // 「売上高（注）２（百万円）」 — and stopping at that ２ left nothing but
+      // 「）（百万円）」, so the label silently fell back to the taxonomy's
+      // 「売上高（US GAAP）」, which the filing never prints. Real figures are
+      // three or more digits, usually comma-grouped; footnote markers are not.
+      const prefix = table.slice(0, at);
+      const previousFigure = [...prefix.matchAll(/[0-9０-９][0-9０-９,，]{2,}/g)].pop();
+      const start = previousFigure ? previousFigure.index + previousFigure[0].length : 0;
+      let label = prefix.slice(start);
       let previous;
       do {
         previous = label;
@@ -233,6 +237,8 @@ function printedLabel(indicators, years) {
           // Remnants of the 決算年月 header immediately above the first row.
           .replace(/^(?:[0-9０-９]{1,4}\s*年)?\s*(?:[0-9０-９]{1,2}\s*月)?\s*(?:[0-9０-９]{1,2}\s*日)?/, "")
           .replace(/^[年月日度回次)）\s]+/, "")
+          // A footnote marker attached to the row label: 「売上高（注）２」.
+          .replace(/[（(]\s*注\s*[）)]\s*[0-9０-９]*\s*$/, "")
           // A trailing unit, including the 「(百万円)」 form — but never a
           // parenthetical that is part of the label itself, such as
           // 「当期利益(親会社の所有者に帰属)」.

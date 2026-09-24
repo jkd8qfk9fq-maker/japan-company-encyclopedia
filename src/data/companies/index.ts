@@ -3,8 +3,10 @@ import type { Company } from "@/types/company";
 import advantest from "./advantest.json";
 import canon from "./canon.json";
 import daiichiSankyo from "./daiichi-sankyo.json";
+import daikinIndustries from "./daikin-industries.json";
 import denso from "./denso.json";
 import disco from "./disco.json";
+import fanuc from "./fanuc.json";
 import fastRetailing from "./fast-retailing.json";
 import fujitsu from "./fujitsu.json";
 import hitachi from "./hitachi.json";
@@ -13,6 +15,7 @@ import isuzuMotors from "./isuzu-motors.json";
 import itochu from "./itochu.json";
 import kddi from "./kddi.json";
 import keyence from "./keyence.json";
+import komatsu from "./komatsu.json";
 import mazda from "./mazda.json";
 import mitsubishiCorporation from "./mitsubishi-corporation.json";
 import mitsubishiElectric from "./mitsubishi-electric.json";
@@ -88,4 +91,7 @@ export const companies: Company[] = Object.entries({
   canon,
   nikon,
   keyence,
+  fanuc,
+  "daikin-industries": daikinIndustries,
+  komatsu,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

@@ -33,11 +33,11 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 13 | 電機・精密機器 | キヤノン株式会社 | `canon` | 7751 | published | US GAAP・12月期; セグメントはXBRLに無くmd-and-a.txtから取得 |
 | 14 | 電機・精密機器 | 株式会社ニコン | `nikon` | 7731 | published | needs-attention: 有報は税引前利益を印字するがXBRLに該当タグが無く空欄 |
 | 15 | 電機・精密機器 | 株式会社キーエンス | `keyence` | 6861 | published | 決算期3月20日; 単一セグメント; 直販体制 |
-| 16 | 機械・産業機器 | ダイキン工業株式会社 | `daikin-industries` | 6367 | pending |  |
-| 17 | 機械・産業機器 | ファナック株式会社 | `fanuc` | 6954 | pending |  |
+| 16 | 機械・産業機器 | ダイキン工業株式会社 | `daikin-industries` | 6367 | published | 空調・化学・その他; その他のみchildren; 2022年3月期にIAS38アジェンダ決定の遡及修正note |
+| 17 | 機械・産業機器 | ファナック株式会社 | `fanuc` | 6954 | published | 単一セグメント; 商品部門別売上で並べた（セグメント別ではない） |
 | 18 | 機械・産業機器 | ＳＭＣ株式会社 | `smc` | 6273 | pending |  |
 | 19 | 機械・産業機器 | 株式会社クボタ | `kubota` | 6326 | pending | IFRS; **決算期 2025-12-31** |
-| 20 | 機械・産業機器 | 株式会社小松製作所 | `komatsu` | 6301 | pending | US GAAP; **セグメント注記なし → md-and-a.txt から**; 本文が3万字で打ち切られている箇所あり |
+| 20 | 機械・産業機器 | 株式会社小松製作所 | `komatsu` | 6301 | published | US GAAP; セグメントはXBRLに無くmd-and-a.txtから取得; ラベルは印字（注記番号付き）に修正 |
 | 21 | 素材・化学 | 旭化成株式会社 | `asahi-kasei` | 3407 | pending |  |
 | 22 | 素材・化学 | 三菱ケミカルグループ株式会社 | `mitsubishi-chemical-group` | 4188 | pending | IFRS; **前期有報と差異1件 — 理由を特定すること** |
 | 23 | 素材・化学 | 住友化学株式会社 | `sumitomo-chemical` | 4005 | pending | IFRS |
