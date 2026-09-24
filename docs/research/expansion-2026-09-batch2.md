@@ -23,9 +23,9 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 3 | 自動車・輸送機器 | マツダ株式会社 | `mazda` | 7261 | published | 地域別セグメント; 売上高「計」で並べ、外部顧客基準では北米が首位になることをログに記録 |
 | 4 | 自動車・輸送機器 | いすゞ自動車株式会社 | `isuzu-motors` | 7202 | published | 日本基準→IFRS移行; 2024/2025は行内の基準をIFRSに統一し直した |
 | 5 | 自動車・輸送機器 | 株式会社デンソー | `denso` | 6902 | published | 地域別セグメント; 5年表の利益行は営業利益 |
-| 6 | 半導体・電子部品 | 株式会社ソシオネクスト | `socionext` | 6526 | pending |  |
-| 7 | 半導体・電子部品 | ルネサスエレクトロニクス株式会社 | `renesas-electronics` | 6723 | pending | IFRS; **決算期 2025-12-31** |
-| 8 | 半導体・電子部品 | ローム株式会社 | `rohm` | 6963 | pending |  |
+| 6 | 半導体・電子部品 | 株式会社ソシオネクスト | `socionext` | 6526 | published | 単一セグメント; ファブレス; 製品売上/NRE売上の内訳（セグメント別ではない） |
+| 7 | 半導体・電子部品 | ルネサスエレクトロニクス株式会社 | `renesas-electronics` | 6723 | published | 12月期; 2セグメント+その他; FY2025の損失はWolfspeed評価損 |
+| 8 | 半導体・電子部品 | ローム株式会社 | `rohm` | 6963 | published | 3セグメント+その他; 東芝D&S・三菱電機との協議開始合意は未完了のため沿革に入れていない |
 | 9 | 半導体・電子部品 | 株式会社村田製作所 | `murata-manufacturing` | 6981 | published | US GAAP→IFRS移行; 2022年度はUS GAAP列に統一し直した |
 | 10 | 半導体・電子部品 | 株式会社ディスコ | `disco` | 6146 | published | 単一セグメント; 装置と消耗ツールの両方を売るモデル |
 | 11 | 電機・精密機器 | パナソニック ホールディングス株式会社 | `panasonic-holdings` | 6752 | pending | IFRS |

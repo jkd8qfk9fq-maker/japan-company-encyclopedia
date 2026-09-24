@@ -22,8 +22,11 @@ import nec from "./nec.json";
 import nintendo from "./nintendo.json";
 import nissan from "./nissan.json";
 import ntt from "./ntt.json";
+import renesasElectronics from "./renesas-electronics.json";
+import rohm from "./rohm.json";
 import sevenAndIHoldings from "./seven-and-i-holdings.json";
 import shinEtsuChemical from "./shin-etsu-chemical.json";
+import socionext from "./socionext.json";
 import sonyGroup from "./sony-group.json";
 import subaru from "./subaru.json";
 import sumitomoMitsuiFinancialGroup from "./sumitomo-mitsui-financial-group.json";
@@ -76,4 +79,7 @@ export const companies: Company[] = Object.entries({
   denso,
   "murata-manufacturing": murataManufacturing,
   disco,
+  "renesas-electronics": renesasElectronics,
+  rohm,
+  socionext,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
