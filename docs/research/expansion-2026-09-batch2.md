@@ -51,7 +51,7 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 31 | 建設・不動産 | 大成建設株式会社 | `taisei` | 1801 | published | 訂正有報は役員報酬の閾値とのれん注記の小見出しのみ; 数値変更なし |
 | 32 | 建設・不動産 | 鹿島建設株式会社 | `kajima` | 1812 | published | 事業3＋関係会社を地域別に2の構成; 海外関係会社が2位 |
 | 33 | 建設・不動産 | 清水建設株式会社 | `shimizu` | 1803 | published | 暫定的な会計処理の確定で総資産・純資産を再表示; noteで明示 |
-| 34 | 建設・不動産 | 三井不動産株式会社 | `mitsui-fudosan` | 8801 | pending |  |
+| 34 | 建設・不動産 | 三井不動産株式会社 | `mitsui-fudosan` | 8801 | published | 総合不動産; 開発・販売・賃貸・管理の収益構造をゼネコンと書き分け |
 | 35 | 建設・不動産 | 住友不動産株式会社 | `sumitomo-realty-and-development` | 8830 | pending |  |
 | 36 | 小売・消費 | イオン株式会社 | `aeon` | 8267 | pending | **決算期 2026-02-28**; **前期有報と差異1件 — 理由を特定すること** |
 | 37 | 小売・消費 | 株式会社ニトリホールディングス | `nitori-holdings` | 9843 | pending | IFRS; **前期有報と差異2件 — 理由を特定すること**; 候補複数 — indicators.txt で確認 |
