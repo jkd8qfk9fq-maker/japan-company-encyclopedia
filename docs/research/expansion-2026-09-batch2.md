@@ -43,8 +43,8 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 23 | 素材・化学 | 住友化学株式会社 | `sumitomo-chemical` | 4005 | pending | IFRS |
 | 24 | 素材・化学 | ＡＧＣ株式会社 | `agc` | 5201 | pending | IFRS; **決算期 2025-12-31** |
 | 25 | 素材・化学 | 日本製鉄株式会社 | `nippon-steel` | 5401 | published | 利益行は独自指標の事業利益; USスチール取得は将来に向かって適用 |
-| 26 | 商社 | 住友商事株式会社 | `sumitomo-corporation` | 8053 | pending | IFRS |
-| 27 | 商社 | 丸紅株式会社 | `marubeni` | 8002 | pending | IFRS |
+| 26 | 商社 | 住友商事株式会社 | `sumitomo-corporation` | 8053 | published | 9セグメント; 利益行は売上総利益; 本人・代理人判定のnote |
+| 27 | 商社 | 丸紅株式会社 | `marubeni` | 8002 | published | 10セグメント; 利益行は税引前利益（売上総利益の行が無い）; 16→10の再編は表示変更 |
 | 28 | 金融 | 野村ホールディングス株式会社 | `nomura-holdings` | 8604 | published | US GAAP; セグメントはmd-and-a.txtから; 収益合計が最上行 |
 | 29 | 金融 | 東京海上ホールディングス株式会社 | `tokio-marine-holdings` | 8766 | published | 損保グループ; 日本基準5年表を採用しIFRS表はnoteに; 従業員数は連結範囲が異なる |
 | 30 | 金融 | 株式会社第一ライフグループ（旧会社名：第一生命ホールディングス株式会社） | `dai-ichi-life-holdings` | 8750 | published | 第一生命HDから改称; 保険料等収入が最上行; ASC944遡及適用で5系列を再表示 |
@@ -63,7 +63,7 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 43 | 食品・飲料 | アサヒグループホールディングス株式会社 | `asahi-group-holdings` | 2502 | published | 12月期; 訂正有報はDEIメタデータのみ差異・本文2,421行は同一 |
 | 44 | 医薬品 | アステラス製薬株式会社 | `astellas-pharma` | 4503 | published | 単一セグメント; 製品別の内訳（セグメント別ではない） |
 | 45 | 医薬品 | 中外製薬株式会社 | `chugai-pharmaceutical` | 4519 | published | 12月期; 2023年度から製品譲渡収益を除外し2022年度も組替え→2021年度のみ基準が異なるためbasis設定 |
-| 46 | 通信・IT | ソフトバンク株式会社 | `softbank` | 9434 | pending | IFRS |
+| 46 | 通信・IT | ソフトバンク株式会社 | `softbank` | 9434 | published | 9434の通信事業会社（9984とは別）; 外部顧客売上で並べ、合計基準では3位4位が入れ替わる |
 | 47 | 通信・IT | 楽天グループ株式会社 | `rakuten-group` | 4755 | pending | IFRS; **決算期 2025-12-31** |
 | 48 | 交通・物流 | 東日本旅客鉄道株式会社 | `east-japan-railway` | 9020 | pending |  |
 | 49 | 交通・物流 | 東海旅客鉄道株式会社 | `central-japan-railway` | 9022 | pending |  |
