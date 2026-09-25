@@ -35,6 +35,7 @@ import nikon from "./nikon.json";
 import nintendo from "./nintendo.json";
 import nipponSteel from "./nippon-steel.json";
 import nissan from "./nissan.json";
+import nissinFoodsHoldings from "./nissin-foods-holdings.json";
 import nitoriHoldings from "./nitori-holdings.json";
 import ntt from "./ntt.json";
 import renesasElectronics from "./renesas-electronics.json";
@@ -122,4 +123,5 @@ export const companies: Company[] = Object.entries({
   zozo,
   ajinomoto,
   kikkoman,
+  "nissin-foods-holdings": nissinFoodsHoldings,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
