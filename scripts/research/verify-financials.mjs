@@ -73,12 +73,34 @@ const netIncome = index(evidence.figures.netIncome);
 const problems = [];
 let checked = 0;
 
+/**
+ * The pack derives each year's end by shifting the filing's own year end back a
+ * year at a time, which is wrong for a company that CHANGED its year end:
+ * ニトリ moved from 2月20日 to 3月31日, so its 第50期 really ended 2022-02-20
+ * while the pack keys that column 2022-03-31. The entry must carry the true
+ * date, so when a row's periodEnd is not among the tagged dates, fall back to
+ * matching by position — but only when the row count matches exactly, and say
+ * out loud that it happened, so this can never quietly excuse a wrong year.
+ */
+const taggedDates = [...new Set([...revenue.keys(), ...netIncome.keys()])].sort();
+const entryDates = entry.financials.map((r) => r.periodEnd).sort();
+const positional =
+  taggedDates.length === entryDates.length && entryDates.some((d) => !taggedDates.includes(d))
+    ? new Map(entryDates.map((d, i) => [d, taggedDates[i]]))
+    : null;
+/** The tagged date this row's figures should be compared against. */
+const taggedDateFor = (periodEnd) => (taggedDates.includes(periodEnd) ? periodEnd : (positional?.get(periodEnd) ?? periodEnd));
+if (positional) {
+  const remapped = [...positional].filter(([a, b]) => a !== b).map(([a, b]) => `${a}→${b}`);
+  console.log(`注意: 決算期の変更により、次の年度はXBRLの派生日付に読み替えて照合しました（${remapped.join(", ")}）`);
+}
+
 for (const row of entry.financials) {
   for (const [kind, stored, tagged, label] of [
     ["売上", row.revenue, revenue, row.revenueLabel],
     ["純利益", row.netIncome, netIncome, row.netIncomeLabel],
   ]) {
-    const candidates = tagged.get(row.periodEnd);
+    const candidates = tagged.get(taggedDateFor(row.periodEnd));
     if (!candidates) {
       problems.push(`${row.fiscalYear} ${kind}: この決算期 (${row.periodEnd}) は有報のXBRLに含まれていません`);
       continue;
@@ -148,7 +170,7 @@ for (const row of entry.financials) {
     ["従業員数", row.employees, evidence.figures.employees],
   ]) {
     if (stored === null || stored === undefined) continue;
-    const tagged = (series ?? []).flatMap((s) => s.years.filter((y) => y.fiscalYearEnd === row.periodEnd).map((y) => y.value));
+    const tagged = (series ?? []).flatMap((s) => s.years.filter((y) => y.fiscalYearEnd === taggedDateFor(row.periodEnd)).map((y) => y.value));
     if (tagged.length === 0) {
       problems.push(`${row.fiscalYear} ${kind}: ${stored.toLocaleString("ja-JP")} と記載されていますが、有報のXBRLにこの決算期の値がありません`);
       continue;

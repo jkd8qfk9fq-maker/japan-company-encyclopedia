@@ -33,9 +33,11 @@ import nikon from "./nikon.json";
 import nintendo from "./nintendo.json";
 import nipponSteel from "./nippon-steel.json";
 import nissan from "./nissan.json";
+import nitoriHoldings from "./nitori-holdings.json";
 import ntt from "./ntt.json";
 import renesasElectronics from "./renesas-electronics.json";
 import rohm from "./rohm.json";
+import ryohinKeikaku from "./ryohin-keikaku.json";
 import sevenAndIHoldings from "./seven-and-i-holdings.json";
 import shimizu from "./shimizu.json";
 import shinEtsuChemical from "./shin-etsu-chemical.json";
@@ -49,6 +51,7 @@ import taisei from "./taisei.json";
 import takedaPharmaceutical from "./takeda-pharmaceutical.json";
 import tokyoElectron from "./tokyo-electron.json";
 import toyota from "./toyota.json";
+import zozo from "./zozo.json";
 
 /**
  * The registry of published companies. A data file that is not listed here is
@@ -112,4 +115,7 @@ export const companies: Company[] = Object.entries({
   "mitsui-fudosan": mitsuiFudosan,
   "sumitomo-realty-and-development": sumitomoRealtyAndDevelopment,
   aeon,
+  "nitori-holdings": nitoriHoldings,
+  "ryohin-keikaku": ryohinKeikaku,
+  zozo,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
