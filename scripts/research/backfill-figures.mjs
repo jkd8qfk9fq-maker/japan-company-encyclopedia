@@ -103,8 +103,9 @@ for (const id of ids) {
     const profit = valueFor(pack.figures.profit, row.periodEnd, row.accountingStandard);
     const totalAssets = valueFor(pack.figures.totalAssets, row.periodEnd, row.accountingStandard);
     const netAssets = valueFor(pack.figures.netAssets, row.periodEnd, row.accountingStandard);
-    // Employee counts are not standard-specific.
-    const employees = valueFor(pack.figures.employees, row.periodEnd);
+    // Standard-specific too: a filer printing both a J-GAAP and an IFRS table
+    // reports each table's own consolidation scope (東京海上HD: 51,717 vs 67,526).
+    const employees = valueFor(pack.figures.employees, row.periodEnd, row.accountingStandard);
     if (profit.value !== null) filled.profit++;
     if (totalAssets.value !== null) filled.totalAssets++;
     if (netAssets.value !== null) filled.netAssets++;

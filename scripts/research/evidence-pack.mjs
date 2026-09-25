@@ -107,11 +107,19 @@ const NET_ASSETS_ELEMENTS = [
   "EquityAttributableToOwnersOfParentIFRSSummaryOfBusinessResults", // 親会社の所有者に帰属する持分
   "EquityAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults", // 株主資本
 ];
+/**
+ * Elements that name their accounting standard come FIRST, and the unmarked
+ * `NumberOfEmployees` last. 東京海上HD prints two five-year tables and tags the
+ * IFRS table's headcount with the unmarked element while the J-GAAP table gets
+ * NumberOfEmployeesJapanGAAPKeyFinancialData — so preferring the unmarked one
+ * put an IFRS-scope 67,526 into an otherwise J-GAAP row whose real figure is
+ * 51,717, showing a 31% jump in staff that never happened.
+ */
 const EMPLOYEE_ELEMENTS = [
-  "NumberOfEmployees",
-  "NumberOfEmployeesIFRSSummaryOfBusinessResults",
-  "NumberOfEmployeesJGAAPSummaryOfBusinessResults",
   "NumberOfEmployeesJapanGAAPKeyFinancialData",
+  "NumberOfEmployeesJGAAPSummaryOfBusinessResults",
+  "NumberOfEmployeesIFRSSummaryOfBusinessResults",
+  "NumberOfEmployees",
 ];
 
 /**

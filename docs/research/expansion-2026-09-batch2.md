@@ -45,9 +45,9 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 25 | 素材・化学 | 日本製鉄株式会社 | `nippon-steel` | 5401 | published | 利益行は独自指標の事業利益; USスチール取得は将来に向かって適用 |
 | 26 | 商社 | 住友商事株式会社 | `sumitomo-corporation` | 8053 | pending | IFRS |
 | 27 | 商社 | 丸紅株式会社 | `marubeni` | 8002 | pending | IFRS |
-| 28 | 金融 | 野村ホールディングス株式会社 | `nomura-holdings` | 8604 | pending | US GAAP; **セグメント注記なし → md-and-a.txt から**; 候補複数 — indicators.txt で確認; 本文が3万字で打ち切られている箇所あり |
-| 29 | 金融 | 東京海上ホールディングス株式会社 | `tokio-marine-holdings` | 8766 | pending | IFRS; 候補複数 — indicators.txt で確認 |
-| 30 | 金融 | 株式会社第一ライフグループ（旧会社名：第一生命ホールディングス株式会社） | `dai-ichi-life-holdings` | 8750 | pending | **前期有報と差異2件 — 理由を特定すること**; 本文が3万字で打ち切られている箇所あり |
+| 28 | 金融 | 野村ホールディングス株式会社 | `nomura-holdings` | 8604 | published | US GAAP; セグメントはmd-and-a.txtから; 収益合計が最上行 |
+| 29 | 金融 | 東京海上ホールディングス株式会社 | `tokio-marine-holdings` | 8766 | published | 損保グループ; 日本基準5年表を採用しIFRS表はnoteに; 従業員数は連結範囲が異なる |
+| 30 | 金融 | 株式会社第一ライフグループ（旧会社名：第一生命ホールディングス株式会社） | `dai-ichi-life-holdings` | 8750 | published | 第一生命HDから改称; 保険料等収入が最上行; ASC944遡及適用で5系列を再表示 |
 | 31 | 建設・不動産 | 大成建設株式会社 | `taisei` | 1801 | published | 訂正有報は役員報酬の閾値とのれん注記の小見出しのみ; 数値変更なし |
 | 32 | 建設・不動産 | 鹿島建設株式会社 | `kajima` | 1812 | published | 事業3＋関係会社を地域別に2の構成; 海外関係会社が2位 |
 | 33 | 建設・不動産 | 清水建設株式会社 | `shimizu` | 1803 | published | 暫定的な会計処理の確定で総資産・純資産を再表示; noteで明示 |

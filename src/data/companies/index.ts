@@ -8,6 +8,7 @@ import asahiKasei from "./asahi-kasei.json";
 import astellasPharma from "./astellas-pharma.json";
 import canon from "./canon.json";
 import chugaiPharmaceutical from "./chugai-pharmaceutical.json";
+import daiIchiLifeHoldings from "./dai-ichi-life-holdings.json";
 import daiichiSankyo from "./daiichi-sankyo.json";
 import daikinIndustries from "./daikin-industries.json";
 import denso from "./denso.json";
@@ -40,6 +41,7 @@ import nipponSteel from "./nippon-steel.json";
 import nissan from "./nissan.json";
 import nissinFoodsHoldings from "./nissin-foods-holdings.json";
 import nitoriHoldings from "./nitori-holdings.json";
+import nomuraHoldings from "./nomura-holdings.json";
 import ntt from "./ntt.json";
 import renesasElectronics from "./renesas-electronics.json";
 import rohm from "./rohm.json";
@@ -55,6 +57,7 @@ import sumitomoRealtyAndDevelopment from "./sumitomo-realty-and-development.json
 import suzuki from "./suzuki.json";
 import taisei from "./taisei.json";
 import takedaPharmaceutical from "./takeda-pharmaceutical.json";
+import tokioMarineHoldings from "./tokio-marine-holdings.json";
 import tokyoElectron from "./tokyo-electron.json";
 import toyota from "./toyota.json";
 import zozo from "./zozo.json";
@@ -130,4 +133,7 @@ export const companies: Company[] = Object.entries({
   "asahi-group-holdings": asahiGroupHoldings,
   "astellas-pharma": astellasPharma,
   "chugai-pharmaceutical": chugaiPharmaceutical,
+  "tokio-marine-holdings": tokioMarineHoldings,
+  "dai-ichi-life-holdings": daiIchiLifeHoldings,
+  "nomura-holdings": nomuraHoldings,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

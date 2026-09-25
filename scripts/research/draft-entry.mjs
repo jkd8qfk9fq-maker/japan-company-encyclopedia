@@ -91,8 +91,9 @@ for (const id of ids) {
     const netIncome = at(pack.figures.netIncome, periodEnd, yearStandard);
     const totalAssets = at(pack.figures.totalAssets, periodEnd, yearStandard);
     const netAssets = at(pack.figures.netAssets, periodEnd, yearStandard);
-    // Employee counts are not standard-specific.
-    const employees = at(pack.figures.employees, periodEnd);
+    // Standard-specific too: a filer printing both a J-GAAP and an IFRS table
+    // reports each table's own consolidation scope (東京海上HD: 51,717 vs 67,526).
+    const employees = at(pack.figures.employees, periodEnd, yearStandard);
     // If some figure could only be found on another basis, say so rather than
     // letting a silently mixed row through.
     for (const [name, f] of [["利益", profit], ["総資産", totalAssets], ["純資産", netAssets]]) {

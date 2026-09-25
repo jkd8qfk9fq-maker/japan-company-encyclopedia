@@ -34,8 +34,15 @@ const PARENT_ATTRIBUTION = /((親会社|当社)の?(株主|所有者)に帰属|�
  * 「当社に帰属する当期利益」 and 「当社に帰属する当期包括利益」).
  */
 const COMPREHENSIVE_INCOME = /包括利益/;
-/** A top line is 〜高 / 〜収益 / 〜収入 — never a profit row, never a truncation. */
-const TOP_LINE_ENDING = /(高|収益|収入)$/;
+/**
+ * A top line ends 〜高 / 〜収益 / 〜収入 / 〜計, optionally with a qualifier in
+ * parentheses — never a profit row, never a truncation. 「計」 is here because
+ * 野村's printed top line is 「収益合計」 and its filing prints no row ending in
+ * 高/収益/収入 at all; the rule was forcing a choice between failing the check
+ * and writing 「収益」, which is exactly the truncation it exists to stop.
+ * 「売上」 still fails, which is the case that matters.
+ */
+const TOP_LINE_ENDING = /(高|収益|収入|計)(（[^）]*）)?$/;
 
 const companyId = process.argv[2];
 if (!companyId) {
