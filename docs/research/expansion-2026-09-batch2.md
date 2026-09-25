@@ -52,8 +52,8 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 32 | 建設・不動産 | 鹿島建設株式会社 | `kajima` | 1812 | published | 事業3＋関係会社を地域別に2の構成; 海外関係会社が2位 |
 | 33 | 建設・不動産 | 清水建設株式会社 | `shimizu` | 1803 | published | 暫定的な会計処理の確定で総資産・純資産を再表示; noteで明示 |
 | 34 | 建設・不動産 | 三井不動産株式会社 | `mitsui-fudosan` | 8801 | published | 総合不動産; 開発・販売・賃貸・管理の収益構造をゼネコンと書き分け |
-| 35 | 建設・不動産 | 住友不動産株式会社 | `sumitomo-realty-and-development` | 8830 | pending |  |
-| 36 | 小売・消費 | イオン株式会社 | `aeon` | 8267 | pending | **決算期 2026-02-28**; **前期有報と差異1件 — 理由を特定すること** |
+| 35 | 建設・不動産 | 住友不動産株式会社 | `sumitomo-realty-and-development` | 8830 | published | 5セグメント; 今期にセグメント区分変更（共通支配下の取引で範囲は不変） |
+| 36 | 小売・消費 | イオン株式会社 | `aeon` | 8267 | published | 2月期; 法人税等会計基準の遡及適用で前期の純利益・純資産を再表示; 9セグメント |
 | 37 | 小売・消費 | 株式会社ニトリホールディングス | `nitori-holdings` | 9843 | pending | IFRS; **前期有報と差異2件 — 理由を特定すること**; 候補複数 — indicators.txt で確認 |
 | 38 | 小売・消費 | 株式会社良品計画 | `ryohin-keikaku` | 7453 | pending | **決算期 2025-08-31** |
 | 39 | 小売・消費 | 株式会社ZOZO | `zozo` | 3092 | pending |  |
