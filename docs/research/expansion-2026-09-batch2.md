@@ -57,8 +57,8 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 37 | 小売・消費 | 株式会社ニトリホールディングス | `nitori-holdings` | 9843 | published | 決算期を2月20日→3月31日に変更; 第51期は13ヶ月11日; 日本基準とIFRSの二重表示 |
 | 38 | 小売・消費 | 株式会社良品計画 | `ryohin-keikaku` | 7453 | published | 8月期; 地域別4セグメント＋その他; 国内に5children |
 | 39 | 小売・消費 | 株式会社ZOZO | `zozo` | 3092 | published | 単一セグメント; 商品取扱高666,035に対し売上高228,373（受託販売は手数料のみ計上） |
-| 40 | 食品・飲料 | 味の素株式会社 | `ajinomoto` | 2802 | pending | IFRS |
-| 41 | 食品・飲料 | キッコーマン株式会社 | `kikkoman` | 2801 | pending | IFRS |
+| 40 | 食品・飲料 | 味の素株式会社 | `ajinomoto` | 2802 | published | 調味料・食品に加え電子材料とバイオ・医薬サービスを持つ構造 |
+| 41 | 食品・飲料 | キッコーマン株式会社 | `kikkoman` | 2801 | published | 海外の卸売・外食事業を区分; しょうゆ以外の構成を明示 |
 | 42 | 食品・飲料 | 日清食品ホールディングス株式会社 | `nissin-foods-holdings` | 2897 | pending | IFRS |
 | 43 | 食品・飲料 | アサヒグループホールディングス株式会社 | `asahi-group-holdings` | 2502 | pending | IFRS; **決算期 2025-12-31**; 訂正有報あり (S100YVTZ) |
 | 44 | 医薬品 | アステラス製薬株式会社 | `astellas-pharma` | 4503 | pending | IFRS |
