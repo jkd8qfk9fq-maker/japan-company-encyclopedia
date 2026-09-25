@@ -60,9 +60,9 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 40 | 食品・飲料 | 味の素株式会社 | `ajinomoto` | 2802 | published | 調味料・食品に加え電子材料とバイオ・医薬サービスを持つ構造 |
 | 41 | 食品・飲料 | キッコーマン株式会社 | `kikkoman` | 2801 | published | 海外の卸売・外食事業を区分; しょうゆ以外の構成を明示 |
 | 42 | 食品・飲料 | 日清食品ホールディングス株式会社 | `nissin-foods-holdings` | 2897 | published | 6セグメントは事業会社×地域; 顧客所在地別では国内が最大 |
-| 43 | 食品・飲料 | アサヒグループホールディングス株式会社 | `asahi-group-holdings` | 2502 | pending | IFRS; **決算期 2025-12-31**; 訂正有報あり (S100YVTZ) |
-| 44 | 医薬品 | アステラス製薬株式会社 | `astellas-pharma` | 4503 | pending | IFRS |
-| 45 | 医薬品 | 中外製薬株式会社 | `chugai-pharmaceutical` | 4519 | pending | IFRS; **決算期 2025-12-31** |
+| 43 | 食品・飲料 | アサヒグループホールディングス株式会社 | `asahi-group-holdings` | 2502 | published | 12月期; 訂正有報はDEIメタデータのみ差異・本文2,421行は同一 |
+| 44 | 医薬品 | アステラス製薬株式会社 | `astellas-pharma` | 4503 | published | 単一セグメント; 製品別の内訳（セグメント別ではない） |
+| 45 | 医薬品 | 中外製薬株式会社 | `chugai-pharmaceutical` | 4519 | published | 12月期; 2023年度から製品譲渡収益を除外し2022年度も組替え→2021年度のみ基準が異なるためbasis設定 |
 | 46 | 通信・IT | ソフトバンク株式会社 | `softbank` | 9434 | pending | IFRS |
 | 47 | 通信・IT | 楽天グループ株式会社 | `rakuten-group` | 4755 | pending | IFRS; **決算期 2025-12-31** |
 | 48 | 交通・物流 | 東日本旅客鉄道株式会社 | `east-japan-railway` | 9020 | pending |  |

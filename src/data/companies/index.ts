@@ -3,8 +3,11 @@ import type { Company } from "@/types/company";
 import advantest from "./advantest.json";
 import aeon from "./aeon.json";
 import ajinomoto from "./ajinomoto.json";
+import asahiGroupHoldings from "./asahi-group-holdings.json";
 import asahiKasei from "./asahi-kasei.json";
+import astellasPharma from "./astellas-pharma.json";
 import canon from "./canon.json";
+import chugaiPharmaceutical from "./chugai-pharmaceutical.json";
 import daiichiSankyo from "./daiichi-sankyo.json";
 import daikinIndustries from "./daikin-industries.json";
 import denso from "./denso.json";
@@ -124,4 +127,7 @@ export const companies: Company[] = Object.entries({
   ajinomoto,
   kikkoman,
   "nissin-foods-holdings": nissinFoodsHoldings,
+  "asahi-group-holdings": asahiGroupHoldings,
+  "astellas-pharma": astellasPharma,
+  "chugai-pharmaceutical": chugaiPharmaceutical,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

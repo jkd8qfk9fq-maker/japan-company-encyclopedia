@@ -660,7 +660,17 @@ async function packFor(companyId, code4, from, to) {
   }
 
   // Previous year's filing, for the restatement check.
-  const previousWindow = [shiftYear(from, 1), shiftYear(to, 1)];
+  //
+  // Searched from the previous fiscal year END, not by shifting this filing's
+  // submission date back a year. アサヒGHD filed its 2025年12月期 有報 on
+  // 2026-07-27 — seven months after the year end, which the filing attributes to
+  // a cyberattack — so the shifted window looked in July 2025 and missed the
+  // prior report filed normally in March. A filing that arrives late must not
+  // silently lose its restatement check.
+  const previousPeriodEnd = shiftYear(latest.resolvedPeriodEnd, 1);
+  const tenMonthsOn = new Date(`${previousPeriodEnd}T00:00:00Z`);
+  tenMonthsOn.setUTCMonth(tenMonthsOn.getUTCMonth() + 10);
+  const previousWindow = [previousPeriodEnd, tenMonthsOn.toISOString().slice(0, 10)];
   let previous = null;
   try {
     const older = await findAnnualReports(code4, previousWindow[0], previousWindow[1]);
