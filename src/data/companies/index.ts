@@ -46,6 +46,7 @@ import nitoriHoldings from "./nitori-holdings.json";
 import nomuraHoldings from "./nomura-holdings.json";
 import ntt from "./ntt.json";
 import panasonicHoldings from "./panasonic-holdings.json";
+import rakutenGroup from "./rakuten-group.json";
 import renesasElectronics from "./renesas-electronics.json";
 import rohm from "./rohm.json";
 import ryohinKeikaku from "./ryohin-keikaku.json";
@@ -146,4 +147,5 @@ export const companies: Company[] = Object.entries({
   softbank,
   "panasonic-holdings": panasonicHoldings,
   "fujifilm-holdings": fujifilmHoldings,
+  "rakuten-group": rakutenGroup,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

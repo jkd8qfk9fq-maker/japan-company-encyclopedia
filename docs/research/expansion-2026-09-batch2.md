@@ -64,7 +64,7 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 44 | 医薬品 | アステラス製薬株式会社 | `astellas-pharma` | 4503 | published | 単一セグメント; 製品別の内訳（セグメント別ではない） |
 | 45 | 医薬品 | 中外製薬株式会社 | `chugai-pharmaceutical` | 4519 | published | 12月期; 2023年度から製品譲渡収益を除外し2022年度も組替え→2021年度のみ基準が異なるためbasis設定 |
 | 46 | 通信・IT | ソフトバンク株式会社 | `softbank` | 9434 | published | 9434の通信事業会社（9984とは別）; 外部顧客売上で並べ、合計基準では3位4位が入れ替わる |
-| 47 | 通信・IT | 楽天グループ株式会社 | `rakuten-group` | 4755 | pending | IFRS; **決算期 2025-12-31** |
+| 47 | 通信・IT | 楽天グループ株式会社 | `rakuten-group` | 4755 | published | 12月期; 3セグメント; フィンテックに5つのchildren; モバイルは最小かつ赤字 |
 | 48 | 交通・物流 | 東日本旅客鉄道株式会社 | `east-japan-railway` | 9020 | pending |  |
 | 49 | 交通・物流 | 東海旅客鉄道株式会社 | `central-japan-railway` | 9022 | pending |  |
 | 50 | 交通・物流 | ＡＮＡホールディングス株式会社 | `ana-holdings` | 9202 | pending |  |

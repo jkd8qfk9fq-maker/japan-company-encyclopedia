@@ -108,6 +108,11 @@ Plain words. Concrete nouns. No investment language.
 - `description`: 1–2 sentences on what the business does.
 - `products`, `customers`: only what the company names. Omit the key if not stated.
 - If a segment is named "その他" / "Other", include it only if the company describes what it is.
+- **A business the filing calls 報告セグメントに含まれない goes LAST, whatever its revenue.** The
+  ordering rule exists to tell a reader which businesses are the biggest; a residual bucket is not a
+  business the company runs, and putting it above real segments reads as if it were one. パナソニックHD's
+  その他 out-earns every reportable segment and still goes last; 清水建設 and 日清食品HD were moved to
+  match. A その他 that IS a reportable segment stays in revenue order (三井不動産, 三菱電機).
 - Every business carries `sourceIds`.
 
 ### `businessModel`
