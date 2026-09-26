@@ -26,6 +26,7 @@ import kddi from "./kddi.json";
 import keyence from "./keyence.json";
 import kikkoman from "./kikkoman.json";
 import komatsu from "./komatsu.json";
+import kubota from "./kubota.json";
 import marubeni from "./marubeni.json";
 import mazda from "./mazda.json";
 import mitsubishiChemicalGroup from "./mitsubishi-chemical-group.json";
@@ -53,10 +54,12 @@ import ryohinKeikaku from "./ryohin-keikaku.json";
 import sevenAndIHoldings from "./seven-and-i-holdings.json";
 import shimizu from "./shimizu.json";
 import shinEtsuChemical from "./shin-etsu-chemical.json";
+import smc from "./smc.json";
 import socionext from "./socionext.json";
 import softbank from "./softbank.json";
 import sonyGroup from "./sony-group.json";
 import subaru from "./subaru.json";
+import sumitomoChemical from "./sumitomo-chemical.json";
 import sumitomoCorporation from "./sumitomo-corporation.json";
 import sumitomoMitsuiFinancialGroup from "./sumitomo-mitsui-financial-group.json";
 import sumitomoRealtyAndDevelopment from "./sumitomo-realty-and-development.json";
@@ -148,4 +151,7 @@ export const companies: Company[] = Object.entries({
   "panasonic-holdings": panasonicHoldings,
   "fujifilm-holdings": fujifilmHoldings,
   "rakuten-group": rakutenGroup,
+  kubota,
+  smc,
+  "sumitomo-chemical": sumitomoChemical,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

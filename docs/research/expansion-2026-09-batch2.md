@@ -35,12 +35,12 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 15 | 電機・精密機器 | 株式会社キーエンス | `keyence` | 6861 | published | 決算期3月20日; 単一セグメント; 直販体制 |
 | 16 | 機械・産業機器 | ダイキン工業株式会社 | `daikin-industries` | 6367 | published | 空調・化学・その他; その他のみchildren; 2022年3月期にIAS38アジェンダ決定の遡及修正note |
 | 17 | 機械・産業機器 | ファナック株式会社 | `fanuc` | 6954 | published | 単一セグメント; 商品部門別売上で並べた（セグメント別ではない） |
-| 18 | 機械・産業機器 | ＳＭＣ株式会社 | `smc` | 6273 | pending |  |
-| 19 | 機械・産業機器 | 株式会社クボタ | `kubota` | 6326 | pending | IFRS; **決算期 2025-12-31** |
+| 18 | 機械・産業機器 | ＳＭＣ株式会社 | `smc` | 6273 | published | 単一セグメント; 製品別売上が非開示なので有報の列挙順 |
+| 19 | 機械・産業機器 | 株式会社クボタ | `kubota` | 6326 | published | 12月期; その他は報告セグメントなので売上順のまま; 農機とエンジンは売上が分離開示されていない |
 | 20 | 機械・産業機器 | 株式会社小松製作所 | `komatsu` | 6301 | published | US GAAP; セグメントはXBRLに無くmd-and-a.txtから取得; ラベルは印字（注記番号付き）に修正 |
 | 21 | 素材・化学 | 旭化成株式会社 | `asahi-kasei` | 3407 | published | 3領域; 売上順と営業損益順が異なることを明記 |
 | 22 | 素材・化学 | 三菱ケミカルグループ株式会社 | `mitsubishi-chemical-group` | 4188 | published | 田辺三菱製薬の非継続事業化で前期再表示; basis両方を全年度に設定 |
-| 23 | 素材・化学 | 住友化学株式会社 | `sumitomo-chemical` | 4005 | pending | IFRS |
+| 23 | 素材・化学 | 住友化学株式会社 | `sumitomo-chemical` | 4005 | published | その他は報告セグメント外なので末尾; 事業譲渡は遡及組替なしでbasisは設定せずnote |
 | 24 | 素材・化学 | ＡＧＣ株式会社 | `agc` | 5201 | pending | IFRS; **決算期 2025-12-31** |
 | 25 | 素材・化学 | 日本製鉄株式会社 | `nippon-steel` | 5401 | published | 利益行は独自指標の事業利益; USスチール取得は将来に向かって適用 |
 | 26 | 商社 | 住友商事株式会社 | `sumitomo-corporation` | 8053 | published | 9セグメント; 利益行は売上総利益; 本人・代理人判定のnote |
