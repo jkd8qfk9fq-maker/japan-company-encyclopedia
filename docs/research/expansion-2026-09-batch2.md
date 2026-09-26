@@ -28,8 +28,8 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 8 | 半導体・電子部品 | ローム株式会社 | `rohm` | 6963 | published | 3セグメント+その他; 東芝D&S・三菱電機との協議開始合意は未完了のため沿革に入れていない |
 | 9 | 半導体・電子部品 | 株式会社村田製作所 | `murata-manufacturing` | 6981 | published | US GAAP→IFRS移行; 2022年度はUS GAAP列に統一し直した |
 | 10 | 半導体・電子部品 | 株式会社ディスコ | `disco` | 6146 | published | 単一セグメント; 装置と消耗ツールの両方を売るモデル |
-| 11 | 電機・精密機器 | パナソニック ホールディングス株式会社 | `panasonic-holdings` | 6752 | pending | IFRS |
-| 12 | 電機・精密機器 | 富士フイルムホールディングス株式会社 | `fujifilm-holdings` | 4901 | pending | US GAAP; **セグメント注記なし → md-and-a.txt から**; 本文が3万字で打ち切られている箇所あり |
+| 11 | 電機・精密機器 | パナソニック ホールディングス株式会社 | `panasonic-holdings` | 6752 | published | 多角化電機; 日立・三菱電機・ソニー・富士通と書き分け |
+| 12 | 電機・精密機器 | 富士フイルムホールディングス株式会社 | `fujifilm-holdings` | 4901 | published | US GAAP; セグメントはmd-and-a.txtから; 純利益ラベルは「当社株主帰属」 |
 | 13 | 電機・精密機器 | キヤノン株式会社 | `canon` | 7751 | published | US GAAP・12月期; セグメントはXBRLに無くmd-and-a.txtから取得 |
 | 14 | 電機・精密機器 | 株式会社ニコン | `nikon` | 7731 | published | needs-attention: 有報は税引前利益を印字するがXBRLに該当タグが無く空欄 |
 | 15 | 電機・精密機器 | 株式会社キーエンス | `keyence` | 6861 | published | 決算期3月20日; 単一セグメント; 直販体制 |

@@ -15,6 +15,7 @@ import denso from "./denso.json";
 import disco from "./disco.json";
 import fanuc from "./fanuc.json";
 import fastRetailing from "./fast-retailing.json";
+import fujifilmHoldings from "./fujifilm-holdings.json";
 import fujitsu from "./fujitsu.json";
 import hitachi from "./hitachi.json";
 import honda from "./honda.json";
@@ -44,6 +45,7 @@ import nissinFoodsHoldings from "./nissin-foods-holdings.json";
 import nitoriHoldings from "./nitori-holdings.json";
 import nomuraHoldings from "./nomura-holdings.json";
 import ntt from "./ntt.json";
+import panasonicHoldings from "./panasonic-holdings.json";
 import renesasElectronics from "./renesas-electronics.json";
 import rohm from "./rohm.json";
 import ryohinKeikaku from "./ryohin-keikaku.json";
@@ -142,4 +144,6 @@ export const companies: Company[] = Object.entries({
   "sumitomo-corporation": sumitomoCorporation,
   marubeni,
   softbank,
+  "panasonic-holdings": panasonicHoldings,
+  "fujifilm-holdings": fujifilmHoldings,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
