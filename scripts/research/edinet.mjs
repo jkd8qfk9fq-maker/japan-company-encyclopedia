@@ -49,6 +49,13 @@ export async function documentsOn(date) {
   const file = join(cacheDir(), "index", `${date}.json`);
   mkdirSync(join(cacheDir(), "index"), { recursive: true });
   if (existsSync(file)) return JSON.parse(readFileSync(file, "utf8"));
+  // EDINET has no index for a day that has not happened, and answers a future
+  // date with a non-200 metadata status rather than an empty list. Callers build
+  // a window around a filing date, so a company that filed in the last three
+  // weeks always produces one — レーザーテック, whose 有報 lands in late September,
+  // failed here. An empty day is the honest answer and is not cached, so the
+  // real index is fetched once the day exists.
+  if (date > new Date().toISOString().slice(0, 10)) return { metadata: { status: "200" }, results: [] };
   const text = await fetchWithRetry(`${API}/documents.json?date=${date}&type=2&Subscription-Key=${apiKey()}`);
   const json = JSON.parse(text);
   if (json.metadata?.status !== "200") throw new Error(`EDINET ${date}: ${json.metadata?.status} ${json.metadata?.message}`);
