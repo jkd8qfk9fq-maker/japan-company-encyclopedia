@@ -721,6 +721,29 @@ async function packFor(companyId, code4, from, to) {
       warnings.push(`${file} はEDINETのCSVが3万字で打ち切っており、末尾が欠けている。欠けた部分を根拠に使わないこと`);
     }
   }
+  // The restatement check compares this filing against the previous one, so it
+  // cannot see a restatement the PREVIOUS filing already made: ENEOS reclassified
+  // metals as 非継続事業 and re-presented 第14期 in its prior 有報, and this
+  // filing's comparison reported 「28 行一致」 — true, and not the same scope.
+  // A match is not proof of an unchanged perimeter.
+  // A filer with a non-listed class share can have its DEI 上場金融商品取引所名
+  // read off that class's row: INPEX's says 「非上場・非登録」 for its single
+  // 甲種類株式 while its 1.26 billion ordinary shares are on TSE Prime. Taken at
+  // face value the entry would have had no listings at all and failed the schema.
+  const exchangeField = cover["上場金融商品取引所名又は登録認可金融商品取引業協会名"] ?? "";
+  if (/非上場|非登録/.test(exchangeField) && cover["証券コード、DEI"]) {
+    warnings.push(
+      `表紙の上場金融商品取引所名が「${exchangeField}」だが証券コードがある。種類株式の行を拾っている可能性が高いので、発行済株式の表で普通株式の上場先を確認すること`,
+    );
+  }
+
+  const scopeWords = ["非継続事業", "組替", "組み替え", "遡及適用", "遡及修正"];
+  const scopeHits = scopeWords.filter((w) => rows.some((r) => (r["値"] ?? "").includes(w)));
+  if (scopeHits.length > 0) {
+    warnings.push(
+      `本文に ${scopeHits.join("・")} の記載がある。前期有報との一致は「範囲が同じ」ことの証明にはならない（前期の時点で組替済みの場合がある）。該当注記を読んで basis の要否を判断すること`,
+    );
+  }
   if (!sectionIndex["segments.txt"]) {
     warnings.push(
       sectionIndex["md-and-a.txt"]

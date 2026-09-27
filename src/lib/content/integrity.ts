@@ -133,7 +133,15 @@ export function checkCompany(company: Company, context: ContentContext): string[
 
   const serialized = JSON.stringify(company);
   for (const banned of BANNED_INVESTMENT_TERMS) {
-    if (serialized.includes(banned)) e.push(`投資指標にあたる語「${banned}」は掲載しません`);
+    // Latin acronyms need a word boundary. A plain substring test rejected
+    // 「ANA SUPER VALUEセール」 because SU-PER- contains PER, and a researcher had
+    // to drop a brand name the filing prints. Japanese terms have no word
+    // boundary to anchor to and stay substring matches — 「1株当たり」 inside a
+    // longer phrase is still 1株当たり.
+    const hit = /^[A-Za-z]+$/.test(banned)
+      ? new RegExp(`(^|[^A-Za-z])${banned}([^A-Za-z]|$)`).test(serialized)
+      : serialized.includes(banned);
+    if (hit) e.push(`投資指標にあたる語「${banned}」は掲載しません`);
   }
   return e;
 }

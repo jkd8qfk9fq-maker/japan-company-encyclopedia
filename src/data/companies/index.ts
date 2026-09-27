@@ -4,6 +4,7 @@ import advantest from "./advantest.json";
 import aeon from "./aeon.json";
 import agc from "./agc.json";
 import ajinomoto from "./ajinomoto.json";
+import anaHoldings from "./ana-holdings.json";
 import asahiGroupHoldings from "./asahi-group-holdings.json";
 import asahiKasei from "./asahi-kasei.json";
 import astellasPharma from "./astellas-pharma.json";
@@ -16,12 +17,14 @@ import daikinIndustries from "./daikin-industries.json";
 import denso from "./denso.json";
 import disco from "./disco.json";
 import eastJapanRailway from "./east-japan-railway.json";
+import eneosHoldings from "./eneos-holdings.json";
 import fanuc from "./fanuc.json";
 import fastRetailing from "./fast-retailing.json";
 import fujifilmHoldings from "./fujifilm-holdings.json";
 import fujitsu from "./fujitsu.json";
 import hitachi from "./hitachi.json";
 import honda from "./honda.json";
+import inpex from "./inpex.json";
 import isuzuMotors from "./isuzu-motors.json";
 import itochu from "./itochu.json";
 import kajima from "./kajima.json";
@@ -72,6 +75,7 @@ import takedaPharmaceutical from "./takeda-pharmaceutical.json";
 import tokioMarineHoldings from "./tokio-marine-holdings.json";
 import tokyoElectron from "./tokyo-electron.json";
 import toyota from "./toyota.json";
+import yamatoHoldings from "./yamato-holdings.json";
 import zozo from "./zozo.json";
 
 /**
@@ -160,4 +164,8 @@ export const companies: Company[] = Object.entries({
   agc,
   "east-japan-railway": eastJapanRailway,
   "central-japan-railway": centralJapanRailway,
+  "ana-holdings": anaHoldings,
+  "yamato-holdings": yamatoHoldings,
+  inpex,
+  "eneos-holdings": eneosHoldings,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

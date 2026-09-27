@@ -67,10 +67,10 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 47 | 通信・IT | 楽天グループ株式会社 | `rakuten-group` | 4755 | published | 12月期; 3セグメント; フィンテックに5つのchildren; モバイルは最小かつ赤字 |
 | 48 | 交通・物流 | 東日本旅客鉄道株式会社 | `east-japan-railway` | 9020 | published | 鉄道1社目; 運輸に加え流通・不動産等 |
 | 49 | 交通・物流 | 東海旅客鉄道株式会社 | `central-japan-railway` | 9022 | published | 鉄道2社目; その他は報告セグメント外なので末尾（不動産業より大きい）; 中央新幹線を自己負担で建設中 |
-| 50 | 交通・物流 | ＡＮＡホールディングス株式会社 | `ana-holdings` | 9202 | pending |  |
-| 51 | 交通・物流 | ヤマトホールディングス株式会社 | `yamato-holdings` | 9064 | pending |  |
-| 52 | エネルギー | 株式会社INPEX | `inpex` | 1605 | pending | IFRS; **決算期 2025-12-31**; 候補複数 — indicators.txt で確認 |
-| 53 | エネルギー | ENEOSホールディングス株式会社 | `eneos-holdings` | 5020 | pending | IFRS |
+| 50 | 交通・物流 | ＡＮＡホールディングス株式会社 | `ana-holdings` | 9202 | published | 航空持株会社; コロナ期は有報の記載のみで説明 |
+| 51 | 交通・物流 | ヤマトホールディングス株式会社 | `yamato-holdings` | 9064 | published | 宅配; その他がモビリティより大きいが報告セグメント外で末尾; 沿革は混在型で公式社史を併用 |
+| 52 | エネルギー | 株式会社INPEX | `inpex` | 1605 | published | 12月期; 上流（探鉱・開発・生産）; 日本基準→IFRSで2021年のみ日本基準 |
+| 53 | エネルギー | ENEOSホールディングス株式会社 | `eneos-holdings` | 5020 | published | 下流; JX金属の非継続事業化で2024/2025のみ組替済み→basisを全年度に設定 |
 
 ## 着眼点（運営者指示 2026-09-21）
 
