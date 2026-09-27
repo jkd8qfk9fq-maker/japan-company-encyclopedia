@@ -83,7 +83,12 @@ function companyTexts(c: Company): [string, string][] {
   return [
     [`${c.id}.description`, c.description],
     ...flattenBusinesses(c.businesses).map((b): [string, string] => [`${c.id}.businesses.${b.id}`, b.description]),
-    ...(c.businessModel ? [[`${c.id}.businessModel`, c.businessModel.description] as [string, string]] : []),
+    ...(c.businessModel
+      ? [
+          [`${c.id}.businessModel`, c.businessModel.description] as [string, string],
+          ...c.businessModel.flow.map((s): [string, string] => [`${c.id}.businessModel.flow.${s.kind}`, s.description]),
+        ]
+      : []),
     ...c.history.flatMap((h): [string, string][] => [
       [`${c.id}.history.${h.year}.description`, h.description],
       [`${c.id}.history.${h.year}.significance`, h.significance],
@@ -229,7 +234,15 @@ describe.each(companies.map((c) => [c.id, c] as const))("company %s", (_, compan
       // Rows printed beside revenue and net income in 主要な経営指標等の推移 (review P3-7).
       "自己資本利益率", "時価総額", "配当性向", "1株当たり", "１株当たり",
     ]) {
-      expect(text.includes(banned), `contains "${banned}"`).toBe(false);
+      // Word boundary for the Latin acronyms, matching the rule in
+      // src/lib/content/integrity.ts. A plain substring test rejected
+      // 「ANA SUPER VALUEセール」 because SU-PER- contains PER, and a researcher
+      // dropped a brand name the filing prints. Japanese terms have no boundary
+      // to anchor to and stay substring matches.
+      const hit = /^[A-Za-z]+$/.test(banned)
+        ? new RegExp(`(^|[^A-Za-z])${banned}([^A-Za-z]|$)`).test(text)
+        : text.includes(banned);
+      expect(hit, `contains "${banned}"`).toBe(false);
     }
   });
 });

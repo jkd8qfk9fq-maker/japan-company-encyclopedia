@@ -52,7 +52,9 @@ export function BusinessModel({ model, sources }: { model: BusinessModelData; so
               </div>
               <div>
                 <p className="hidden font-serif text-xl leading-snug font-semibold md:block">{step.title}</p>
-                <p className="text-[0.9375rem] leading-7 md:mt-2">{step.description}</p>
+                <p className="text-[0.9375rem] leading-7 md:mt-2">
+                  <RichText text={step.description} />
+                </p>
               </div>
             </li>
           </Fragment>

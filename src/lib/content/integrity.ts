@@ -50,7 +50,9 @@ function citationErrors(sourceIds: string[], sources: Source[], where: string): 
 }
 
 function richTextErrors(text: string, where: string, context: ContentContext): string[] {
-  const errors = findMalformedMarkup(text).map(() => `${where}: [[…]] の書き方が正しくありません`);
+  const errors = findMalformedMarkup(text).map(
+    () => `${where}: [[…]] の書き方が正しくありません（正しくは [[term:segment|セグメント]] のように kind:id とラベルを | で区切ります）`,
+  );
   for (const ref of extractReferences(text)) {
     const exists =
       ref.kind === "company"
@@ -123,13 +125,38 @@ export function checkCompany(company: Company, context: ContentContext): string[
   const texts: [string, string][] = [
     ["一文の説明", company.description],
     ...businesses.map((b): [string, string] => [`事業「${b.name}」`, b.description]),
-    ...(company.businessModel ? [["ビジネスモデル", company.businessModel.description] as [string, string]] : []),
+    ...(company.businessModel
+      ? [
+          ["ビジネスモデル", company.businessModel.description] as [string, string],
+          ...company.businessModel.flow.map((s): [string, string] => [`ビジネスモデル「${s.title}」`, s.description]),
+        ]
+      : []),
     ...company.history.flatMap((h): [string, string][] => [
       [`歴史「${h.year}」の説明`, h.description],
       [`歴史「${h.year}」の意味`, h.significance],
     ]),
   ];
   for (const [where, value] of texts) e.push(...richTextErrors(value, where, context));
+
+  // [[…]] is a link only where the page passes the text through RichText, which
+  // is exactly the `texts` list above. Anywhere else — relatedCompanies[].description,
+  // a financial note, a product name, a step title — the string is rendered as-is
+  // and the reader sees a literal [[term:segment|セグメント]].
+  //
+  // This rule exists because that had already happened: fourteen published entries
+  // had links in businessModel.flow[].description while the component rendered it
+  // raw, and richTextErrors could not see it because it only looks at the fields
+  // that ARE rich text. The flow descriptions are now rendered as rich text (they
+  // are prose, and a beginner needs the term links there); relatedCompanies[]
+  // deliberately is not, because that description sits inside the card's own
+  // <Link> and a RichText link would nest one anchor inside another.
+  const markupCount = (value: string) => (value.match(/\[\[/g) ?? []).length;
+  const markupInRichText = texts.reduce((n, [, value]) => n + markupCount(value), 0);
+  if (markupCount(JSON.stringify(company)) > markupInRichText) {
+    e.push(
+      "[[…]] のリンクは、リンクとして表示される項目（一文の説明・事業の説明・ビジネスモデルの説明と流れの各段階・歴史の説明と意味）にだけ書けます。ほかの項目では [[…]] がそのまま読者に見えます",
+    );
+  }
 
   const serialized = JSON.stringify(company);
   for (const banned of BANNED_INVESTMENT_TERMS) {
