@@ -41,7 +41,7 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 21 | 素材・化学 | 旭化成株式会社 | `asahi-kasei` | 3407 | published | 3領域; 売上順と営業損益順が異なることを明記 |
 | 22 | 素材・化学 | 三菱ケミカルグループ株式会社 | `mitsubishi-chemical-group` | 4188 | published | 田辺三菱製薬の非継続事業化で前期再表示; basis両方を全年度に設定 |
 | 23 | 素材・化学 | 住友化学株式会社 | `sumitomo-chemical` | 4005 | published | その他は報告セグメント外なので末尾; 事業譲渡は遡及組替なしでbasisは設定せずnote |
-| 24 | 素材・化学 | ＡＧＣ株式会社 | `agc` | 5201 | pending | IFRS; **決算期 2025-12-31** |
+| 24 | 素材・化学 | ＡＧＣ株式会社 | `agc` | 5201 | published | 12月期; 5社目の化学・素材 |
 | 25 | 素材・化学 | 日本製鉄株式会社 | `nippon-steel` | 5401 | published | 利益行は独自指標の事業利益; USスチール取得は将来に向かって適用 |
 | 26 | 商社 | 住友商事株式会社 | `sumitomo-corporation` | 8053 | published | 9セグメント; 利益行は売上総利益; 本人・代理人判定のnote |
 | 27 | 商社 | 丸紅株式会社 | `marubeni` | 8002 | published | 10セグメント; 利益行は税引前利益（売上総利益の行が無い）; 16→10の再編は表示変更 |
@@ -65,7 +65,7 @@ Status: `pending` → `researching` → `published` (registered, integrity suite
 | 45 | 医薬品 | 中外製薬株式会社 | `chugai-pharmaceutical` | 4519 | published | 12月期; 2023年度から製品譲渡収益を除外し2022年度も組替え→2021年度のみ基準が異なるためbasis設定 |
 | 46 | 通信・IT | ソフトバンク株式会社 | `softbank` | 9434 | published | 9434の通信事業会社（9984とは別）; 外部顧客売上で並べ、合計基準では3位4位が入れ替わる |
 | 47 | 通信・IT | 楽天グループ株式会社 | `rakuten-group` | 4755 | published | 12月期; 3セグメント; フィンテックに5つのchildren; モバイルは最小かつ赤字 |
-| 48 | 交通・物流 | 東日本旅客鉄道株式会社 | `east-japan-railway` | 9020 | pending |  |
+| 48 | 交通・物流 | 東日本旅客鉄道株式会社 | `east-japan-railway` | 9020 | published | 鉄道1社目; 運輸に加え流通・不動産等 |
 | 49 | 交通・物流 | 東海旅客鉄道株式会社 | `central-japan-railway` | 9022 | pending |  |
 | 50 | 交通・物流 | ＡＮＡホールディングス株式会社 | `ana-holdings` | 9202 | pending |  |
 | 51 | 交通・物流 | ヤマトホールディングス株式会社 | `yamato-holdings` | 9064 | pending |  |

@@ -2,6 +2,7 @@ import { parseContent, companySchema } from "@/lib/content/schemas";
 import type { Company } from "@/types/company";
 import advantest from "./advantest.json";
 import aeon from "./aeon.json";
+import agc from "./agc.json";
 import ajinomoto from "./ajinomoto.json";
 import asahiGroupHoldings from "./asahi-group-holdings.json";
 import asahiKasei from "./asahi-kasei.json";
@@ -13,6 +14,7 @@ import daiichiSankyo from "./daiichi-sankyo.json";
 import daikinIndustries from "./daikin-industries.json";
 import denso from "./denso.json";
 import disco from "./disco.json";
+import eastJapanRailway from "./east-japan-railway.json";
 import fanuc from "./fanuc.json";
 import fastRetailing from "./fast-retailing.json";
 import fujifilmHoldings from "./fujifilm-holdings.json";
@@ -154,4 +156,6 @@ export const companies: Company[] = Object.entries({
   kubota,
   smc,
   "sumitomo-chemical": sumitomoChemical,
+  agc,
+  "east-japan-railway": eastJapanRailway,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
