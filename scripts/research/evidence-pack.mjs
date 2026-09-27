@@ -225,8 +225,12 @@ function printedLabel(indicators, years) {
       const a = years[i].value / divisor;
       const b = years[i + 1].value / divisor;
       if (!Number.isInteger(a) || !Number.isInteger(b)) continue;
-      const probe = a.toLocaleString("en-US") + b.toLocaleString("en-US");
-      const at = table.indexOf(probe);
+      // A loss prints as 「△179,522」, not "-179,522", so a pair containing a
+      // negative year never matched and the label silently fell back to the
+      // taxonomy's — which is where 「経常利益」 came from when the filing prints
+      // 「経常利益又は経常損失（△）」. Two of three packs in one batch had it.
+      const printed = (n) => (n < 0 ? `△${Math.abs(n).toLocaleString("en-US")}` : n.toLocaleString("en-US"));
+      const at = table.indexOf(printed(a) + printed(b));
       if (at < 0) continue;
       // Walk back to the end of the previous *figure*, not the previous digit.
       // A row label often carries a footnote marker — コマツ prints

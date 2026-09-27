@@ -8,6 +8,7 @@ import asahiGroupHoldings from "./asahi-group-holdings.json";
 import asahiKasei from "./asahi-kasei.json";
 import astellasPharma from "./astellas-pharma.json";
 import canon from "./canon.json";
+import centralJapanRailway from "./central-japan-railway.json";
 import chugaiPharmaceutical from "./chugai-pharmaceutical.json";
 import daiIchiLifeHoldings from "./dai-ichi-life-holdings.json";
 import daiichiSankyo from "./daiichi-sankyo.json";
@@ -158,4 +159,5 @@ export const companies: Company[] = Object.entries({
   "sumitomo-chemical": sumitomoChemical,
   agc,
   "east-japan-railway": eastJapanRailway,
+  "central-japan-railway": centralJapanRailway,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

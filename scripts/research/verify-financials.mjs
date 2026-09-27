@@ -183,6 +183,14 @@ for (const row of entry.financials) {
       continue;
     }
     extraChecked++;
+    // These labels are shown under the table on the page, so they must be the
+    // filing's own wording too — the same rule revenue and net income obey.
+    // Without this check a truncated label (「経常利益」 where the filing prints
+    // 「経常利益又は経常損失（△）」) reached three drafts unnoticed.
+    const shownLabel = { 利益: row.profitLabel, 総資産: row.totalAssetsLabel, 純資産: row.netAssetsLabel }[kind];
+    if (shownLabel && indicators && !indicators.includes(normalize(shownLabel))) {
+      problems.push(`${row.fiscalYear} ${kind}: ラベル「${shownLabel}」が有報の主要な経営指標等の推移に見当たりません`);
+    }
     if (!tagged.includes(stored)) {
       problems.push(
         `${row.fiscalYear} ${kind}: 記載 ${stored.toLocaleString("ja-JP")} ≠ XBRL ${tagged.map((v) => v.toLocaleString("ja-JP")).join(" / ")}`,

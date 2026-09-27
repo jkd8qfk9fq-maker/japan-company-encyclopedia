@@ -98,14 +98,37 @@ for (const id of ids) {
   const pack = JSON.parse(readFileSync(packPath, "utf8"));
   const filled = { profit: 0, totalAssets: 0, netAssets: 0, employees: 0 };
 
+  /**
+   * The pack derives each year's end by shifting the filing's own year end back
+   * a year, which is wrong for a company that CHANGED its year end: ニトリ moved
+   * from 2月20日 to 3月31日, so its entry correctly carries 2022-02-20 while the
+   * pack keys that column 2022-03-31. verify-financials already falls back to
+   * positional matching for exactly this; without the same fallback here the
+   * backfill silently emptied that year's four figures.
+   */
+  const taggedDates = [
+    ...new Set((pack.figures.revenue ?? []).flatMap((s) => s.years.map((y) => y.fiscalYearEnd))),
+  ].sort();
+  const entryDates = entry.financials.map((r) => r.periodEnd).sort();
+  const positional =
+    taggedDates.length === entryDates.length && entryDates.some((d) => !taggedDates.includes(d))
+      ? new Map(entryDates.map((d, i) => [d, taggedDates[i]]))
+      : null;
+  const taggedDateFor = (periodEnd) =>
+    taggedDates.includes(periodEnd) ? periodEnd : (positional?.get(periodEnd) ?? periodEnd);
+  if (positional) {
+    const remapped = [...positional].filter(([a, b]) => a !== b).map(([a, b]) => `${a}→${b}`);
+    report.push(`注意 ${id}: 決算期変更のため読み替えて突き合わせ（${remapped.join(", ")}）`);
+  }
+
   entry.financials = entry.financials.map((row) => {
     // The researcher already decided which standard each year is reported on.
-    const profit = valueFor(pack.figures.profit, row.periodEnd, row.accountingStandard);
-    const totalAssets = valueFor(pack.figures.totalAssets, row.periodEnd, row.accountingStandard);
-    const netAssets = valueFor(pack.figures.netAssets, row.periodEnd, row.accountingStandard);
+    const profit = valueFor(pack.figures.profit, taggedDateFor(row.periodEnd), row.accountingStandard);
+    const totalAssets = valueFor(pack.figures.totalAssets, taggedDateFor(row.periodEnd), row.accountingStandard);
+    const netAssets = valueFor(pack.figures.netAssets, taggedDateFor(row.periodEnd), row.accountingStandard);
     // Standard-specific too: a filer printing both a J-GAAP and an IFRS table
     // reports each table's own consolidation scope (東京海上HD: 51,717 vs 67,526).
-    const employees = valueFor(pack.figures.employees, row.periodEnd, row.accountingStandard);
+    const employees = valueFor(pack.figures.employees, taggedDateFor(row.periodEnd), row.accountingStandard);
     if (profit.value !== null) filled.profit++;
     if (totalAssets.value !== null) filled.totalAssets++;
     if (netAssets.value !== null) filled.netAssets++;
