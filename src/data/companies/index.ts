@@ -38,6 +38,7 @@ import mazda from "./mazda.json";
 import mitsubishiChemicalGroup from "./mitsubishi-chemical-group.json";
 import mitsubishiCorporation from "./mitsubishi-corporation.json";
 import mitsubishiElectric from "./mitsubishi-electric.json";
+import mitsubishiMotors from "./mitsubishi-motors.json";
 import mitsubishiUfjFinancialGroup from "./mitsubishi-ufj-financial-group.json";
 import mitsuiAndCo from "./mitsui-and-co.json";
 import mitsuiFudosan from "./mitsui-fudosan.json";
@@ -168,4 +169,5 @@ export const companies: Company[] = Object.entries({
   "yamato-holdings": yamatoHoldings,
   inpex,
   "eneos-holdings": eneosHoldings,
+  "mitsubishi-motors": mitsubishiMotors,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

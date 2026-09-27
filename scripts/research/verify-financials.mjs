@@ -1,7 +1,11 @@
 /**
  * Checks a company entry's figures against the filing's own tagged XBRL.
  *
- *   node scripts/research/verify-financials.mjs <company-id>
+ *   node scripts/research/verify-financials.mjs <company-id> [--entry <path>]
+ *
+ * `--entry` points the check at an entry that is not (yet) registered — the
+ * pipeline stages an assembled entry under pipeline/staging/ and gates it there,
+ * so a wrong figure never reaches src/data/companies in the first place.
  *
  * Every `financials` row must equal the value EDINET serves for that fiscal
  * year, to the yen. This replaces the throwaway comparison script each
@@ -46,11 +50,18 @@ const TOP_LINE_ENDING = /(高|収益|収入|計)(（[^）]*）)?$/;
 
 const companyId = process.argv[2];
 if (!companyId) {
-  console.error("usage: node scripts/research/verify-financials.mjs <company-id>");
+  console.error("usage: node scripts/research/verify-financials.mjs <company-id> [--entry <path>]");
   process.exit(1);
 }
 
-const entry = JSON.parse(readFileSync(join(process.cwd(), "src/data/companies", `${companyId}.json`), "utf8"));
+// The pipeline gates an assembled entry before it is registered, so the entry
+// being checked is not always the published one.
+const entryFlag = process.argv.indexOf("--entry");
+const entryPath =
+  entryFlag !== -1 && process.argv[entryFlag + 1]
+    ? join(process.cwd(), process.argv[entryFlag + 1])
+    : join(process.cwd(), "src/data/companies", `${companyId}.json`);
+const entry = JSON.parse(readFileSync(entryPath, "utf8"));
 const packDir = join(cacheDir(), "evidence", companyId);
 const evidence = JSON.parse(readFileSync(join(packDir, "summary.json"), "utf8"));
 

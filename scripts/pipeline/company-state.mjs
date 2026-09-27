@@ -106,6 +106,33 @@ export function nextAgentGroup(companyId) {
   return null;
 }
 
+/**
+ * Bring the agent stages into line with the fragments on disk.
+ *
+ * An agent writes pipeline/results/<id>-<stage>.json and does not touch the
+ * state file — asking an agent to also record its own bookkeeping is one more
+ * thing it can get wrong, and the fragment is the evidence anyway. So the state
+ * is reconciled from the fragments instead: a fragment that says `completed`
+ * completes its stage, anything else parks it for a human. Without this a
+ * registered company still reported six pending stages and nextAgentGroup kept
+ * offering work that was already done.
+ */
+export function syncAgentStages(companyId) {
+  const dir = join(process.cwd(), "pipeline/results");
+  if (!existsSync(dir)) return loadState(companyId);
+  const agentStages = new Set(AGENT_STAGE_GROUPS.flat());
+  let state = loadState(companyId);
+  for (const file of readdirSync(dir)) {
+    if (!file.startsWith(`${companyId}-`) || !file.endsWith(".json")) continue;
+    const stage = file.slice(companyId.length + 1, -".json".length);
+    if (!agentStages.has(stage) || state.stages[stage].status === "completed") continue;
+    const body = JSON.parse(readFileSync(join(dir, file), "utf8"));
+    state = body.status === "completed"
+      ? setStage(companyId, stage, "completed", `${body.agent ?? "agent"} の成果物あり（警告 ${(body.warnings ?? []).length} 件）`)
+      : setStage(companyId, stage, "needs-review", `成果物の status が ${body.status}`);
+  }
+  return state;
+}
 export function summary(companyId) {
   const state = loadState(companyId);
   return STAGES.map((s) => `${s}:${state.stages[s].status}`).join(" ");

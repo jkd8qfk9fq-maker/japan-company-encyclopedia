@@ -35,7 +35,13 @@ describe.skipIf(!target)("content file", () => {
     const rules = kind === "company" ? checkCompany(parsed.data as Company, context) : checkTerm(parsed.data as Term, context);
     expect(rules, "integrity rules").toEqual([]);
 
-    if (kind === "company") {
+    // A revision record describes a REGISTERED entry, so it is only required of
+    // one. The pipeline validates an assembled entry while it is still staged
+    // outside src/data/companies, and writing its revision first would break
+    // data-integrity.test.ts, which requires every revision to point at an entry
+    // that exists. Registration writes entry and revision together; that every
+    // registered company has one is checked there, not here.
+    if (kind === "company" && path.startsWith(join(process.cwd(), "src", "data", "companies"))) {
       const revisions = readdirSync(join(process.cwd(), "src/data/revisions")).filter((f) => f.includes(`-company-${data.id}-`));
       expect(revisions.length, "an initial revision file must exist").toBeGreaterThan(0);
     }
