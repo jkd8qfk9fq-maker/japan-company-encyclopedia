@@ -36,12 +36,19 @@ const indexPath = join(root, "src/data/companies/index.ts");
 const stagedRelative = `pipeline/staging/${companyId}.json`;
 const today = new Date().toISOString().slice(0, 10);
 
-// npx is a .cmd shim on Windows, which execFile cannot launch directly. Naming
-// the shim is better than shell: true, which passes the arguments through a shell
-// unescaped.
-const bin = (cmd) => (cmd === "npx" && process.platform === "win32" ? "npx.cmd" : cmd);
-const run = (cmd, args, env = {}) =>
-  execFileSync(bin(cmd), args, { cwd: root, encoding: "utf8", env: { ...process.env, ...env } });
+/**
+ * Node is the only executable this script launches.
+ *
+ * Not npx: on Windows it is a .cmd shim, and Node 24 refuses to execFile a .cmd
+ * without a shell (EINVAL) — silently, with an empty stdout, which is exactly how
+ * this stage failed once, reporting nothing at all. `shell: true` works but hands
+ * every argument to a shell unescaped. Both tools ship a plain JS entry point, so
+ * run those with the Node already running this script.
+ */
+const VITEST = "node_modules/vitest/vitest.mjs";
+const TSC = "node_modules/typescript/lib/tsc.js";
+const run = (args, env = {}) =>
+  execFileSync(process.execPath, args, { cwd: root, encoding: "utf8", env: { ...process.env, ...env } });
 
 /** Every sourceId cited anywhere in the entry, so an uncited source becomes visible. */
 function citedSourceIds(entry) {
@@ -124,7 +131,7 @@ function sourceValidation(entry) {
 
   let figureReport = "";
   try {
-    figureReport = run("node", ["scripts/research/verify-financials.mjs", companyId, "--entry", stagedRelative]);
+    figureReport = run(["scripts/research/verify-financials.mjs", companyId, "--entry", stagedRelative]);
   } catch (error) {
     figureReport = `${error.stdout ?? ""}${error.stderr ?? ""}`;
     problems.push("数値の照合に失敗しました（verify-financials.mjs の出力を見ること）");
@@ -134,7 +141,7 @@ function sourceValidation(entry) {
   // financials rows against the XBRL tags, and most of the numbers a reader
   // actually reads are inside a sentence an agent wrote.
   try {
-    figureReport += run("node", ["scripts/pipeline/check-prose-figures.mjs", companyId, "--entry", stagedRelative]);
+    figureReport += run(["scripts/pipeline/check-prose-figures.mjs", companyId, "--entry", stagedRelative]);
   } catch (error) {
     figureReport += `${error.stdout ?? ""}${error.stderr ?? ""}`;
     problems.push("本文中の金額に有報の裏付けがないものがあります（check-prose-figures.mjs の出力を見ること）");
@@ -146,9 +153,12 @@ function sourceValidation(entry) {
 /** Schema + the shared integrity rules, on the staged file, through the existing test. */
 function qualityControl() {
   try {
-    return { ok: true, output: run("npx", ["vitest", "run", "tests/validate-file.test.ts"], { CONTENT_FILE: stagedRelative }) };
+    return { ok: true, output: run([VITEST, "run", "tests/validate-file.test.ts"], { CONTENT_FILE: stagedRelative }) };
   } catch (error) {
-    return { ok: false, output: `${error.stdout ?? ""}${error.stderr ?? ""}` };
+    const output = `${error.stdout ?? ""}${error.stderr ?? ""}`;
+    // An empty output means the runner itself did not start, not that the entry
+    // is fine. Say which, rather than printing nothing and exiting 1.
+    return { ok: false, output: output.trim() === "" ? `${VITEST} を起動できませんでした: ${error.message}` : output };
   }
 }
 
@@ -281,8 +291,8 @@ function registration(entry, validation, merged) {
     // that only breaks in the presence of the other entries: a duplicate id, an
     // industry page that does not list the company back, a revision pointing at
     // nothing.
-    run("npx", ["vitest", "run", "tests/data-integrity.test.ts"]);
-    run("npx", ["tsc", "--noEmit"]);
+    run([VITEST, "run", "tests/data-integrity.test.ts"]);
+    run([TSC, "--noEmit"]);
   } catch (error) {
     revert();
     throw new Error(
