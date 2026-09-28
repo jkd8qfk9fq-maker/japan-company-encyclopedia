@@ -168,7 +168,11 @@ const YEAR_OFFSET = { 当期: 0, 前期: 1, 前々期: 2, 三期前: 3, 四期�
  * the IFRS one, the most important section of the pack is silently absent.
  */
 const SECTIONS = {
-  "indicators.txt": ["jpcrp_cor:BusinessResultsOfGroupTextBlock"],
+  // 主要な経営指標等の推移. The group table first; the 提出会社 one for a company
+  // that publishes no consolidated statements, which prints only that — 52 of 496
+  // packs had no indicators.txt at all, and without it no label can be checked
+  // against the filing s own printing.
+  "indicators.txt": ["jpcrp_cor:BusinessResultsOfGroupTextBlock", "jpcrp_cor:BusinessResultsOfReportingCompanyTextBlock"],
   "history.txt": ["jpcrp_cor:CompanyHistoryTextBlock"],
   "business.txt": ["jpcrp_cor:DescriptionOfBusinessTextBlock"],
   "affiliates.txt": ["jpcrp_cor:OverviewOfAffiliatedEntitiesTextBlock"],
@@ -742,7 +746,15 @@ async function packFor(companyId, code4, from, to) {
   const missing = [];
   // 主要な経営指標等の推移 as printed, so each series can carry the filer's own
   // wording rather than the taxonomy's.
-  const indicatorsRow = rows.find((r) => r["要素ID"] === "jpcrp_cor:BusinessResultsOfGroupTextBlock" && r["値"]);
+  // The same preference list the section files use, rather than a second copy of
+  // the consolidated element: a filer with no consolidated statements prints the
+  // table only as 提出会社の経営指標等, and this line silently disagreed with
+  // SECTIONS about that — the pack had indicators.txt while the labels were still
+  // resolved against nothing.
+  const indicatorsRow = SECTIONS["indicators.txt"].reduce(
+    (found, element) => found ?? rows.find((r) => r["要素ID"] === element && r["値"]) ?? null,
+    null,
+  );
   const indicatorsText = indicatorsRow ? textBlockToText(indicatorsRow["値"]) : null;
   const figures = fiveYearFigures(rows, latest.resolvedPeriodEnd, missing, indicatorsText);
 
@@ -828,7 +840,14 @@ async function packFor(companyId, code4, from, to) {
   );
   const sectionIndex = {};
   for (const [file, elements] of Object.entries(SECTIONS)) {
-    const row = rows.find((r) => elements.includes(r["要素ID"]) && r["値"]);
+    // Array order is preference order, not CSV order: a consolidated filer tags
+    // both the group table and the 提出会社 one, and which came first in the file
+    // would otherwise decide which the pack shows.
+    let row = null;
+    for (const element of elements) {
+      row = rows.find((r) => r["要素ID"] === element && r["値"]);
+      if (row) break;
+    }
     if (!row) continue;
     const truncated = row["値"].length >= CSV_CELL_LIMIT;
     const text = textBlockToText(row["値"]);
