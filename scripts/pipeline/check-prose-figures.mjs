@@ -17,6 +17,11 @@
  * Only a figure that is neither is reported: that is a number with no printed
  * source, which is the one thing no amount of careful writing can excuse.
  *
+ * Two things it cannot settle, so a human still reads the sentence: a round
+ * amount (1,000百万円 → "1000") will almost always appear somewhere in the pack
+ * by coincidence, and an amount written with no unit can only be matched against
+ * the filing's exact printing.
+ *
  * Exit 0 when every figure is accounted for.
  */
 import { existsSync, readFileSync, readdirSync } from "node:fs";
@@ -93,10 +98,7 @@ let checked = 0;
 const seen = new Set();
 
 for (const m of prose.matchAll(AMOUNT)) {
-  const [expression, cho, oku, million, plain] = m;
-  // A bare 「…円」 with no unit is a yen amount (資本金3百万円 is caught by the
-  // 百万 group; 「1,000円」 would be a per-unit price, which no entry states).
-  if (!cho && !oku && !million) continue;
+  const [expression, cho, oku, million] = m;
   if (seen.has(expression)) continue;
   seen.add(expression);
   checked++;
@@ -104,8 +106,17 @@ for (const m of prose.matchAll(AMOUNT)) {
   // The filing's own wording, separators stripped.
   if (packText.includes(expression.normalize("NFKC").replace(/[,\s]/g, ""))) continue;
 
+  // A bare 「34,961,619,000円」 has no 兆/億/百万 to convert — and converting it
+  // would not give a whole number of 百万円 — so the filing's exact printing above
+  // is the only test there is. Skipping these instead (the first version did)
+  // let a whole class of amount through unchecked.
+  if (!cho && !oku && !million) {
+    problems.push(`${expression}（単位のない円額。有報の印字どおりでないと照合できません）が有報の本文に見当たりません`);
+    continue;
+  }
+
   // Or the same amount expressed in 百万円, which is the unit every 有報 table uses.
-  const inMillions = digits(cho) * 1_000_000 + digits(oku) * 100 + digits(million) + (plain ? 0 : 0);
+  const inMillions = digits(cho) * 1_000_000 + digits(oku) * 100 + digits(million);
   if (packText.includes(String(inMillions))) continue;
 
   problems.push(`${expression}（${inMillions.toLocaleString("ja-JP")}百万円として照合）が有報の本文に見当たりません`);
