@@ -13,7 +13,8 @@ export type CompanySummary = {
   name: string;
   nameEn?: string;
   shortNameEn?: string;
-  description: string;
+  /** null on a figures-only entry, where nobody has written it yet. */
+  description: string | null;
   businesses: string[];
   industries: { id: IndustryId; name: string; primary: boolean }[];
 };
@@ -25,7 +26,7 @@ export function toCompanySummary(company: Company): CompanySummary {
     name: company.name,
     nameEn: company.nameEn,
     shortNameEn: company.shortNameEn,
-    description: toPlainText(company.description),
+    description: company.description ? toPlainText(company.description) : null,
     businesses: company.businesses.map((b) => b.shortName ?? b.name),
     industries: company.industries.map((ref) => ({
       id: ref.industryId,

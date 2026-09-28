@@ -81,7 +81,7 @@ function expectRichTextValid(text: string, where: string) {
 /** Every rich-text string on a company, with a path for error messages. */
 function companyTexts(c: Company): [string, string][] {
   return [
-    [`${c.id}.description`, c.description],
+    ...(c.description ? [[`${c.id}.description`, c.description] as [string, string]] : []),
     ...flattenBusinesses(c.businesses).map((b): [string, string] => [`${c.id}.businesses.${b.id}`, b.description]),
     ...(c.businessModel
       ? [
@@ -136,6 +136,12 @@ describe.each(companies.map((c) => [c.id, c] as const))("company %s", (_, compan
 
   it("keeps the one-sentence description short enough to read in three seconds", () => {
     // Not a style preference: the description is the 3-second KPI in data form.
+    // A figures-only entry has no description at all, which checkCompany is what
+    // ties to that status; here there is simply nothing to measure.
+    if (company.description === null) {
+      expect(company.status.state).toBe("figures-only");
+      return;
+    }
     expect(company.description.length).toBeLessThanOrEqual(90);
     expect(company.description.split("。").filter(Boolean).length).toBeLessThanOrEqual(1);
   });
@@ -204,6 +210,13 @@ describe.each(companies.map((c) => [c.id, c] as const))("company %s", (_, compan
   });
 
   it("uses known industries with exactly one primary", () => {
+    // A figures-only entry carries no industry: classifying a company is a
+    // judgement nobody has made for it yet, and guessing one would put it on an
+    // industry page under a claim the entry itself does not make.
+    if (company.status.state === "figures-only") {
+      expect(company.industries).toEqual([]);
+      return;
+    }
     expect(company.industries.length).toBeGreaterThan(0);
     for (const ref of company.industries) expect(industryIds.has(ref.industryId)).toBe(true);
     expect(company.industries.filter((r) => r.primary)).toHaveLength(1);

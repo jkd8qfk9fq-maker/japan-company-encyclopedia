@@ -37,6 +37,8 @@ export default async function AdminCompanies() {
                 <td className="py-3 pr-4">
                   {c.status.state === "published" ? (
                     <span className="text-muted-foreground">公開</span>
+                  ) : c.status.state === "figures-only" ? (
+                    <span className="text-muted-foreground">数値のみ</span>
                   ) : (
                     <span className="font-medium">要確認（{c.status.notes.length}）</span>
                   )}

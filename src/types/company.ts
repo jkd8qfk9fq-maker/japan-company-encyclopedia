@@ -210,8 +210,14 @@ export type Company = {
   nameEn?: string;
   /** The large Latin wordmark in the hero, e.g. "TOYOTA". */
   shortNameEn?: string;
-  /** One sentence. The 3-second answer to "what does this company do?". */
-  description: string;
+  /**
+   * One sentence. The 3-second answer to "what does this company do?".
+   *
+   * null only on a `figures-only` entry, where no one has written it yet. Not an
+   * empty string: a missing explanation and an empty one must not look the same,
+   * and null makes the compiler point at every place that shows it.
+   */
+  description: string | null;
   listings: Listing[];
 
   industries: IndustryReference[];

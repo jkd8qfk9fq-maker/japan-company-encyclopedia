@@ -30,7 +30,7 @@ export function BasicInfoSection({ draft, update }: SectionProps) {
       </div>
       <TextAreaField
         label="一文の説明（3秒で何の会社かわかる文）"
-        value={draft.description}
+        value={draft.description ?? ""}
         onChange={(v) => update({ description: v ?? "" })}
         limit={90}
         rows={2}

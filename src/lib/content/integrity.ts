@@ -71,9 +71,37 @@ export function checkCompany(company: Company, context: ContentContext): string[
   const e: string[] = [];
   const src = company.sources;
 
+  /*
+    A figures-only entry is identity, listings, figures and sources, with none of
+    the writing. The point of checking it here rather than in the schema is that
+    the shape alone cannot tell a deliberate floor from an unfinished entry: what
+    makes it deliberate is that EVERY written part is absent. A half-written entry
+    carrying this status would hide real gaps behind a label that says there are
+    none, which is the failure this whole ruleset exists to prevent.
+  */
+  const figuresOnly = company.status.state === "figures-only";
+  if (figuresOnly) {
+    const written = [
+      ["一文の説明", company.description !== null],
+      ["事業", company.businesses.length > 0],
+      ["ビジネスモデル", Boolean(company.businessModel)],
+      ["歴史", company.history.length > 0],
+      ["業界", company.industries.length > 0],
+      ["関連企業", company.relatedCompanies.length > 0],
+    ].filter(([, present]) => present);
+    if (written.length > 0) {
+      e.push(`状態「数値のみ」: ${written.map(([label]) => label).join("・")} が書かれています。書いたのなら状態を変えてください`);
+    }
+    if (company.financials.length === 0) e.push("状態「数値のみ」: 財務データが1年分もありません");
+  } else if (company.description === null) {
+    e.push("一文の説明がありません（解説を書かないのであれば状態を「数値のみ」にしてください）");
+  }
+
   // The 3-second sentence.
-  if (company.description.length > 90) e.push(`一文の説明: ${company.description.length}文字です（90文字以内）`);
-  if (company.description.split("。").filter(Boolean).length > 1) e.push("一文の説明: 一文にしてください");
+  if (company.description !== null) {
+    if (company.description.length > 90) e.push(`一文の説明: ${company.description.length}文字です（90文字以内）`);
+    if (company.description.split("。").filter(Boolean).length > 1) e.push("一文の説明: 一文にしてください");
+  }
 
   e.push(...sourceErrors(src, "出典"));
 
@@ -112,7 +140,9 @@ export function checkCompany(company: Company, context: ContentContext): string[
 
   for (const h of company.history) e.push(...citationErrors(h.sourceIds, src, `歴史「${h.year} ${h.title}」`));
 
-  if (company.industries.filter((r) => r.primary).length !== 1) e.push("業界: 主な業界をちょうど1つ選んでください");
+  if (!figuresOnly && company.industries.filter((r) => r.primary).length !== 1) {
+    e.push("業界: 主な業界をちょうど1つ選んでください");
+  }
   if (new Set(company.industries.map((r) => r.industryId)).size !== company.industries.length) e.push("業界: 同じ業界が重複しています");
 
   for (const r of company.relatedCompanies) {
@@ -123,7 +153,7 @@ export function checkCompany(company: Company, context: ContentContext): string[
   }
 
   const texts: [string, string][] = [
-    ["一文の説明", company.description],
+    ...(company.description ? ([["一文の説明", company.description]] as [string, string][]) : []),
     ...businesses.map((b): [string, string] => [`事業「${b.name}」`, b.description]),
     ...(company.businessModel
       ? [

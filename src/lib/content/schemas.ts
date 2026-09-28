@@ -38,6 +38,8 @@ const sourced = { sourceIds: z.array(kebab) };
 const contentStatusSchema = z.discriminatedUnion("state", [
   z.strictObject({ state: z.literal("published") }),
   z.strictObject({ state: z.literal("needs-attention"), notes: z.array(text).min(1) }),
+  // Figures and sources only, with the writing not yet done. See ContentStatus.
+  z.strictObject({ state: z.literal("figures-only") }),
 ]);
 
 type BusinessShape = {
@@ -71,11 +73,14 @@ export const companySchema = z.strictObject({
   officialName: text,
   nameEn: text.optional(),
   shortNameEn: text.optional(),
-  description: text,
+  // Nullable and possibly empty only for a figures-only entry; checkCompany is
+  // what ties these three to that status, because the shape alone cannot say
+  // whether an empty entry is deliberate or unfinished.
+  description: text.nullable(),
   listings: z
     .array(z.strictObject({ exchange: z.enum(["tse", "nse", "fse", "sse"]), market: text.optional() }))
     .min(1),
-  industries: z.array(z.strictObject({ industryId: z.enum(INDUSTRY_IDS), primary: z.boolean().optional() })).min(1),
+  industries: z.array(z.strictObject({ industryId: z.enum(INDUSTRY_IDS), primary: z.boolean().optional() })),
   businesses: z.array(businessSchema),
   businessModel: z
     .strictObject({

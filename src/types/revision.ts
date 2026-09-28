@@ -8,7 +8,19 @@
  */
 export type ContentStatus =
   | { state: "published" }
-  | { state: "needs-attention"; notes: string[] };
+  | { state: "needs-attention"; notes: string[] }
+  /**
+   * Identity, listings, the five-year figures and their sources — all extracted
+   * mechanically from the filing and verified against its XBRL — with none of the
+   * writing yet. There are ~3,900 listed companies and the explanation of each one
+   * takes a researcher; this tier exists so that a reader who looks one up finds
+   * verified numbers today instead of nothing, and so that the absence of the
+   * explanation is stated on the page rather than implied by empty sections.
+   *
+   * It is a floor, not a destination: an entry moves to `published` when the
+   * writing is done, and never the other way.
+   */
+  | { state: "figures-only" };
 
 export type RevisionTargetType = "company" | "industry" | "term" | "feature";
 

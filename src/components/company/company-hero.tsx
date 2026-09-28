@@ -48,16 +48,36 @@ export function CompanyHero({ company }: { company: Company }) {
         </h1>
         <p className="text-sm text-muted-foreground">{company.officialName}</p>
 
-        <p className="mt-5 max-w-3xl text-[1.1875rem] leading-[1.85] md:text-[1.375rem]">
-          <RichText text={company.description} />
-        </p>
+        {company.description ? (
+          <p className="mt-5 max-w-3xl text-[1.1875rem] leading-[1.85] md:text-[1.375rem]">
+            <RichText text={company.description} />
+          </p>
+        ) : (
+          /*
+            A figures-only entry. The reader is told what this page is and what it
+            is not, in the position where the 3-second sentence would be — rather
+            than meeting a blank space and guessing. The figures below it are
+            extracted from the filing's XBRL and checked against it, so they are
+            worth arriving for even before anyone has written the explanation.
+          */
+          <p className="mt-5 max-w-3xl text-[0.9375rem] leading-7 text-muted-foreground">
+            この会社の解説はまだ作成していません。下の財務データは有価証券報告書のXBRLから機械的に取り出し、有報の印字と突き合わせたものです。
+          </p>
+        )}
       </div>
 
       <div className="mx-auto mt-8 max-w-6xl px-5 pb-14 md:mt-10 md:px-8 md:pb-20">
-        <p className="eyebrow mb-5 text-center" aria-hidden>
-          Business Structure
-        </p>
-        <BusinessStructure company={company} />
+        {/* A figures-only entry has no segments written, so the diagram — the most
+            important component in the product — would draw a lone root node
+            standing for nothing. Its heading goes with it. */}
+        {company.businesses.length > 0 && (
+          <>
+            <p className="eyebrow mb-5 text-center" aria-hidden>
+              Business Structure
+            </p>
+            <BusinessStructure company={company} />
+          </>
+        )}
 
         <div className="mt-10 flex flex-col gap-4 border-t border-border pt-6 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">

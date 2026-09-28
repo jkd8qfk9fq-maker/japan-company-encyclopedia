@@ -51,6 +51,7 @@ import nintendo from "./nintendo.json";
 import nipponSteel from "./nippon-steel.json";
 import nissan from "./nissan.json";
 import nissinFoodsHoldings from "./nissin-foods-holdings.json";
+import nissui from "./nissui.json";
 import nitoriHoldings from "./nitori-holdings.json";
 import nomuraHoldings from "./nomura-holdings.json";
 import ntt from "./ntt.json";
@@ -176,4 +177,5 @@ export const companies: Company[] = Object.entries({
   tdk: tdk,
   kyocera: kyocera,
   "taiyo-yuden": taiyoYuden,
+  nissui: nissui,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

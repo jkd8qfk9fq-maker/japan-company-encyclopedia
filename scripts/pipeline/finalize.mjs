@@ -19,14 +19,16 @@
  */
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { cacheDir } from "../research/edinet.mjs";
 import { join } from "node:path";
 import { mergeEntry } from "./merge-fragments.mjs";
 import { loadState, saveState, setStage, syncAgentStages } from "./company-state.mjs";
 
 const companyId = process.argv[2];
 const register = process.argv.includes("--register");
+const figuresOnly = process.argv.includes("--figures-only");
 if (!companyId) {
-  console.error("usage: node scripts/pipeline/finalize.mjs <company-id> [--register]");
+  console.error("usage: node scripts/pipeline/finalize.mjs <company-id> [--figures-only] [--register]");
   process.exit(1);
 }
 
@@ -61,8 +63,94 @@ function citedSourceIds(entry) {
   return ids;
 }
 
+/** 東京証券取引所プライム市場 → { exchange: "tse", market: "プライム" } */
+const EXCHANGES = [
+  ["東京", "tse"],
+  ["名古屋", "nse"],
+  ["福岡", "fse"],
+  ["札幌", "sse"],
+];
+const MARKETS = ["プライム", "スタンダード", "グロース", "プレミア", "メイン", "ネクスト", "アンビシャス", "Q-Board", "セントレックス"];
+
+function listingsFrom(text) {
+  const normalized = (text ?? "").normalize("NFKC").replace(/\s+/g, "");
+  const listings = [];
+  for (const [jp, exchange] of EXCHANGES) {
+    const at = normalized.indexOf(jp);
+    if (at === -1) continue;
+    // The segment, when the filing names one, is whatever market word follows this
+    // exchange before the next exchange begins. A filing that names only the
+    // exchange leaves `market` off, which is what Listing.market is optional for.
+    const nextAt = EXCHANGES.map(([other]) => normalized.indexOf(other))
+      .filter((i) => i > at)
+      .sort((a, b) => a - b)[0];
+    const slice = normalized.slice(at, nextAt === undefined ? normalized.length : nextAt);
+    const market = MARKETS.find((m) => slice.includes(m));
+    listings.push(market ? { exchange, market } : { exchange });
+  }
+  return listings;
+}
+
+/**
+ * An entry with the figures and nothing written: the floor tier (§ContentStatus).
+ *
+ * Everything here is a transcription of the filing or of EDINET's own index. The
+ * display name is the 商号 with its corporate form removed, which is the same
+ * mechanical step a researcher takes; nothing infers what the company does,
+ * because that is precisely the part nobody has done yet.
+ */
+function figuresOnlyEntry() {
+  const draftPath = join(cacheDir(), "evidence", companyId, "draft-entry.json");
+  if (!existsSync(draftPath)) throw new Error(`${companyId}: draft-entry.json がありません（edinet 工程が未完了）`);
+  const draft = JSON.parse(readFileSync(draftPath, "utf8"));
+  const state = loadState(companyId);
+  const identity = state.identity ?? {};
+
+  const listings = listingsFrom(draft["_上場金融商品取引所名"]);
+  if (listings.length === 0) {
+    throw new Error(`上場金融商品取引所名「${draft["_上場金融商品取引所名"] ?? ""}」から上場先を読み取れません`);
+  }
+
+  const sourceIds = [...new Set(draft.financials.flatMap((f) => f.sourceIds ?? []))];
+  if (sourceIds.length !== 1) throw new Error(`draft の sourceIds が1つではありません（${sourceIds.join(", ")}）`);
+
+  return {
+    id: companyId,
+    code: draft.code,
+    name: (draft.officialName ?? "").replace(/株式会社/g, "").replace(/\s+/g, "").trim() || draft.officialName,
+    officialName: draft.officialName,
+    ...(draft.nameEn ? { nameEn: draft.nameEn } : {}),
+    description: null,
+    listings,
+    industries: [],
+    businesses: [],
+    financials: draft.financials,
+    history: [],
+    relatedCompanies: [],
+    sources: [
+      {
+        id: sourceIds[0],
+        title: (identity.docID ? draft["_有報"]?.replace(/\s*\(docID [^)]+\)/, "") : draft["_有報"]) ?? "有価証券報告書",
+        publisher: draft.officialName,
+        url: `https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/${identity.docID}.pdf`,
+        ...(identity.submitted ? { publishedAt: identity.submitted } : {}),
+        accessedAt: today,
+      },
+    ],
+    status: { state: "figures-only" },
+    updatedAt: today,
+  };
+}
+
 // ------------------------------------------------------------- assemble and stage
 function stageEntry() {
+  mkdirSync(join(root, "pipeline/staging"), { recursive: true });
+  if (figuresOnly) {
+    const entry = figuresOnlyEntry();
+    const path = join(root, stagedRelative);
+    writeFileSync(path, `${JSON.stringify(entry, null, 2)}\n`);
+    return { entry, missing: [], warnings: [], needsReview: [], fragments: 0, stageCount: 0, docID: loadState(companyId).identity?.docID ?? null, path };
+  }
   // The agents left their fragments on disk without recording anything; do that
   // now, so the state file reflects the work before the gate runs on it.
   syncAgentStages(companyId);
@@ -310,7 +398,7 @@ try {
   console.error(`${companyId}: ${error.message}`);
   process.exit(1);
 }
-console.log(`${companyId}: ${stagedRelative} に組み立てました（fragments ${merged.fragments}/${merged.stageCount}）`);
+console.log(`${companyId}: ${stagedRelative} に組み立てました（${figuresOnly ? "数値のみ" : `fragments ${merged.fragments}/${merged.stageCount}`}）`);
 
 setStage(companyId, "sourceValidation", "running");
 const validation = sourceValidation(merged.entry);

@@ -27,10 +27,20 @@ export async function generateStaticParams() {
   return companies.map((c) => ({ "company-id": c.id }));
 }
 
+/**
+ * What a search result or a link preview says about an entry with no description
+ * yet. Deliberately about the page rather than about the company: nobody has
+ * researched what this company does, and a plausible sentence here would be the
+ * same fabrication the entry itself refuses to make.
+ */
+function metaFallback(company: { officialName: string; code: string }) {
+  return `${company.officialName}（証券コード ${company.code}）の有価証券報告書にもとづく財務データ。解説は未作成です。`;
+}
+
 export async function generateMetadata({ params }: PageProps<"/companies/[company-id]">): Promise<Metadata> {
   const company = await companyRepository.get((await params)["company-id"]);
   if (!company) return {};
-  const description = toPlainText(company.description);
+  const description = company.description ? toPlainText(company.description) : metaFallback(company);
   const path = `/companies/${company.id}`;
   return {
     title: `${company.name}とは？`,
@@ -55,7 +65,7 @@ export default async function CompanyPage({ params }: PageProps<"/companies/[com
     ...(company.businessModel ? [{ id: "business-model", label: "ビジネスモデル" }] : []),
     { id: "financials", label: "財務" },
     ...(company.history.length > 0 ? [{ id: "history", label: "歴史" }] : []),
-    { id: "industry", label: "業界" },
+    ...(company.industries.length > 0 ? [{ id: "industry", label: "業界" }] : []),
     ...(company.relatedCompanies.length > 0 ? [{ id: "related-companies", label: "関連企業" }] : []),
   ];
 
@@ -64,7 +74,7 @@ export default async function CompanyPage({ params }: PageProps<"/companies/[com
     "@type": "Corporation",
     name: company.officialName,
     alternateName: [company.name, company.nameEn].filter(Boolean),
-    description: toPlainText(company.description),
+    description: company.description ? toPlainText(company.description) : metaFallback(company),
     tickerSymbol: company.code,
     url: new URL(`/companies/${company.id}`, SITE_URL).toString(),
   };
@@ -109,9 +119,11 @@ export default async function CompanyPage({ params }: PageProps<"/companies/[com
         </CompanySection>
       )}
 
-      <CompanySection id="industry" eyebrow="Industry" title="業界のどこにいる？">
-        <CompanyIndustries company={company} />
-      </CompanySection>
+      {company.industries.length > 0 && (
+        <CompanySection id="industry" eyebrow="Industry" title="業界のどこにいる？">
+          <CompanyIndustries company={company} />
+        </CompanySection>
+      )}
 
       {company.relatedCompanies.length > 0 && (
         <CompanySection id="related-companies" eyebrow="Related Companies" title="つながりのある企業">
