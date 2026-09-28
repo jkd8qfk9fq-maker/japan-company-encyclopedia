@@ -737,8 +737,21 @@ async function packFor(companyId, code4, from, to) {
     );
   }
 
-  const scopeWords = ["非継続事業", "組替", "組み替え", "遡及適用", "遡及修正"];
-  const scopeHits = scopeWords.filter((w) => rows.some((r) => (r["値"] ?? "").includes(w)));
+  // A warning that fires on every company tells a researcher nothing and teaches
+  // them to skip the whole list. The bare word 組替 did exactly that — it matched
+  // 「組替調整額」, a standard line in every 包括利益 note, and fired on 38 of 38
+  // companies. Narrowed to the wording a filer uses when it has actually
+  // re-presented the comparative period, this list fires on 27 of those 38, so
+  // its ABSENCE now means something too. Every case the check was built for still
+  // trips it: ENEOS on 非継続事業, 清水建設 and パナソニックHD on the reclassification
+  // wording, ソニーG and ニトリHD on both.
+  const scopeWords = [
+    ["非継続事業", /非継続事業/],
+    ["財務諸表の組替え", /(財務諸表|注記|表示|科目)の組替え|組替え(て表示|ています|を行)/],
+    ["遡及適用", /遡及適用/],
+    ["遡及修正", /遡及修正/],
+  ];
+  const scopeHits = scopeWords.filter(([, re]) => rows.some((r) => re.test(r["値"] ?? ""))).map(([label]) => label);
   if (scopeHits.length > 0) {
     warnings.push(
       `本文に ${scopeHits.join("・")} の記載がある。前期有報との一致は「範囲が同じ」ことの証明にはならない（前期の時点で組替済みの場合がある）。該当注記を読んで basis の要否を判断すること`,
