@@ -229,7 +229,7 @@ function coverPage(rows) {
  * Returns null when the figures cannot be located, and the caller falls back to
  * a cleaned taxonomy label rather than inventing wording.
  */
-function printedLabel(indicators, years) {
+function printedLabel(indicators, years, prefer = null) {
   if (!indicators || years.length === 0) return null;
   const table = indicators.replace(/\s+/g, "");
   // The printed table is in 百万円 for money and bare counts for people, and its
@@ -252,10 +252,28 @@ function printedLabel(indicators, years) {
       // taxonomy's — which is where 「経常利益」 came from when the filing prints
       // 「経常利益又は経常損失（△）」. Two of three packs in one batch had it.
       const printed = (n) => (n < 0 ? `△${Math.abs(n).toLocaleString("en-US")}` : n.toLocaleString("en-US"));
-      const at = table.indexOf(printed(a) + printed(b));
-      if (at < 0) continue;
-      const found = labelBefore(table, at);
-      if (found) return found;
+      /*
+        Every occurrence, not just the first.
+
+        Two rows of the same table can print identical numbers: a company with no
+        non-controlling interests prints the same figures for 「当期利益」 and for
+        「親会社の所有者に帰属する当期利益」. indexOf found the first, so the
+        parent-attributable element was labelled with the total row's wording —
+        exactly the confusion verify-financials refuses, and it refused it.
+
+        `prefer` says which one the element means. A label that matches it wins
+        wherever it appears; otherwise the first readable one stands, and the
+        verifier is left to complain about it.
+      */
+      const needle = printed(a) + printed(b);
+      let fallback = null;
+      for (let at = table.indexOf(needle); at !== -1; at = table.indexOf(needle, at + 1)) {
+        const found = labelBefore(table, at);
+        if (!found) continue;
+        if (!prefer || prefer.test(found)) return found;
+        fallback ??= found;
+      }
+      if (fallback) return fallback;
     }
   }
 
@@ -278,9 +296,18 @@ function printedLabel(indicators, years) {
       if (!Number.isInteger(n)) continue;
       const printed = n < 0 ? `△${Math.abs(n).toLocaleString("en-US")}` : n.toLocaleString("en-US");
       const first = table.indexOf(printed);
-      if (first < 0 || table.indexOf(printed, first + 1) !== -1) continue;
-      const found = labelBefore(table, first);
-      if (found) return found;
+      if (first < 0) continue;
+      const second = table.indexOf(printed, first + 1);
+      // Ambiguous unless `prefer` can tell the occurrences apart.
+      if (second !== -1 && !prefer) continue;
+      let fallback = null;
+      for (let at = first; at !== -1; at = table.indexOf(printed, at + 1)) {
+        const found = labelBefore(table, at);
+        if (!found) continue;
+        if (prefer?.test(found)) return found;
+        fallback ??= found;
+      }
+      if (second === -1 && fallback) return fallback;
     }
   }
   return null;
@@ -401,7 +428,15 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
       .map((candidate) => ({
         ...candidate,
         taxonomyLabel: candidate.label,
-        label: printedLabel(indicatorsText, candidate.years.map((y) => ({ value: y.yen }))) ?? candidate.label,
+        // An element that names the parent's owners must not be labelled with the
+        // row that includes non-controlling interests, however identical the
+        // numbers happen to be in a year with none.
+        label:
+          printedLabel(
+            indicatorsText,
+            candidate.years.map((y) => ({ value: y.yen })),
+            /AttributableToOwnersOfParent/.test(candidate.element) ? /帰属/ : null,
+          ) ?? candidate.label,
       }));
   };
   /**
