@@ -129,6 +129,16 @@ function sourceValidation(entry) {
     figureReport = `${error.stdout ?? ""}${error.stderr ?? ""}`;
     problems.push("数値の照合に失敗しました（verify-financials.mjs の出力を見ること）");
   }
+
+  // The figures in the prose, which verify-financials cannot see: it checks the
+  // financials rows against the XBRL tags, and most of the numbers a reader
+  // actually reads are inside a sentence an agent wrote.
+  try {
+    figureReport += run("node", ["scripts/pipeline/check-prose-figures.mjs", companyId, "--entry", stagedRelative]);
+  } catch (error) {
+    figureReport += `${error.stdout ?? ""}${error.stderr ?? ""}`;
+    problems.push("本文中の金額に有報の裏付けがないものがあります（check-prose-figures.mjs の出力を見ること）");
+  }
   return { problems, notes, figureReport };
 }
 
