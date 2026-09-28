@@ -62,6 +62,12 @@ const REVENUE_ELEMENTS = new Set([
   // catch it: the printed label has to end 高／収益／収入／計.
   "IncomeIFRSSummaryOfBusinessResults",
   "IncomeIFRSKeyFinancialData",
+  // Extensions a filer coins when the taxonomy has no element for its top line.
+  // Each is unambiguously a top line by name, and the printed-label rule in
+  // verify-financials — the row must end 高／収益／収入／計 — is what confirms it.
+  "BusinessRevenueKeyFinancialData", // 営業収益
+  "GrossSalesKeyFinancialData", // 総売上高
+  "Revenue2KeyFinancialData",
 ]);
 const NET_INCOME_ELEMENTS = new Set([
   "ProfitLossAttributableToOwnersOfParentSummaryOfBusinessResults", // 親会社株主に帰属する当期純利益
@@ -224,7 +230,7 @@ function coverPage(rows) {
  * a cleaned taxonomy label rather than inventing wording.
  */
 function printedLabel(indicators, years) {
-  if (!indicators || years.length < 2) return null;
+  if (!indicators || years.length === 0) return null;
   const table = indicators.replace(/\s+/g, "");
   // The printed table is in 百万円 for money and bare counts for people, and its
   // columns run together with no separator, so two consecutive values in a row
@@ -248,12 +254,49 @@ function printedLabel(indicators, years) {
       const printed = (n) => (n < 0 ? `△${Math.abs(n).toLocaleString("en-US")}` : n.toLocaleString("en-US"));
       const at = table.indexOf(printed(a) + printed(b));
       if (at < 0) continue;
-      // Walk back to the end of the previous *figure*, not the previous digit.
-      // A row label often carries a footnote marker — コマツ prints
-      // 「売上高（注）２（百万円）」 — and stopping at that ２ left nothing but
-      // 「）（百万円）」, so the label silently fell back to the taxonomy's
-      // 「売上高（US GAAP）」, which the filing never prints. Real figures are
-      // three or more digits, usually comma-grouped; footnote markers are not.
+      const found = labelBefore(table, at);
+      if (found) return found;
+    }
+  }
+
+  /*
+    One value, when the filing prints only one.
+
+    A company that began consolidating in its latest year files 主要な経営指標等の推移
+    with 「－」 in the other four columns — アートナー prints 12,046,664 for 2026年1月期
+    and nothing before it. The pair anchor above cannot form, so every label fell
+    back to the taxonomy's, and verify-financials rejected the entry. Twelve of one
+    150-company batch were this.
+
+    The value must occur exactly once in the table: a single number is a far weaker
+    anchor than two adjacent ones, and 「－」 columns make near-misses likely, so
+    ambiguity is refused rather than guessed at.
+  */
+  for (const divisor of [1_000_000, 1_000, 1]) {
+    for (const year of years) {
+      const n = year.value / divisor;
+      if (!Number.isInteger(n)) continue;
+      const printed = n < 0 ? `△${Math.abs(n).toLocaleString("en-US")}` : n.toLocaleString("en-US");
+      const first = table.indexOf(printed);
+      if (first < 0 || table.indexOf(printed, first + 1) !== -1) continue;
+      const found = labelBefore(table, first);
+      if (found) return found;
+    }
+  }
+  return null;
+}
+
+/**
+ * The row heading immediately before a figure in the flattened table.
+ *
+ * Walks back to the end of the previous *figure*, not the previous digit.
+ * A row label often carries a footnote marker — コマツ prints
+ * 「売上高（注）２（百万円）」 — and stopping at that ２ left nothing but 「）（百万円）」,
+ * so the label silently fell back to the taxonomy's 「売上高（US GAAP）」, which the
+ * filing never prints. Real figures are three or more digits, usually
+ * comma-grouped; footnote markers are not.
+ */
+function labelBefore(table, at) {
       const prefix = table.slice(0, at);
       const previousFigure = [...prefix.matchAll(/[0-9０-９][0-9０-９,，]{2,}/g)].pop();
       const start = previousFigure ? previousFigure.index + previousFigure[0].length : 0;
@@ -275,8 +318,6 @@ function printedLabel(indicators, years) {
           .trim();
       } while (label !== previous);
       if (label.length >= 2 && label.length <= 40) return label;
-    }
-  }
   return null;
 }
 
