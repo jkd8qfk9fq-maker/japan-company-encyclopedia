@@ -79,7 +79,7 @@ if (ready.length === 0) {
 rmSync(stagingDir, { recursive: true, force: true });
 mkdirSync(stagingDir, { recursive: true });
 
-const staged = [];
+let staged = [];
 const skipped = [];
 for (const id of ready) {
   try {
@@ -113,12 +113,22 @@ for (const id of staged) {
     mismatched.push(`${id}: ${detail || "verify-financials が失敗"}`);
   }
 }
+// A company that fails is dropped from this batch, not made to block it. Its id
+// stays unregistered, so the next run retries it for free once whatever the
+// verifier objected to is fixed — and one unreadable label should not hold up a
+// hundred and forty-six sound entries.
 if (mismatched.length > 0) {
-  console.error(`\n数値が有報のXBRLと一致しない会社 ${mismatched.length} 社。登録しません:`);
-  for (const m of mismatched) console.error(`  - ${m}`);
-  process.exit(1);
+  console.log(`\n数値が有報のXBRLと一致しないため、この回は見送る ${mismatched.length} 社:`);
+  for (const m of mismatched) console.log(`  - ${m}`);
+  const failing = new Set(mismatched.map((m) => m.split(":")[0]));
+  for (const id of failing) rmSync(join(stagingDir, `${id}.json`), { force: true });
+  staged = staged.filter((id) => !failing.has(id));
+  if (staged.length === 0) {
+    console.error("登録できる会社が残りませんでした");
+    process.exit(1);
+  }
 }
-console.log(`数値の照合: ${staged.length} 社すべて一致`);
+console.log(`数値の照合: ${staged.length} 社が一致`);
 
 try {
   run([VITEST, "run", "tests/validate-file.test.ts"], { CONTENT_DIR: "pipeline/staging" });
