@@ -59,11 +59,25 @@ const SUFFIX = /^(corporation|corp|co|ltd|limited|inc|incorporated|company|holdi
 function idFromEnglishName(name) {
   const tokens = name
     .normalize("NFKC")
+    // EDINET serves the cover page with HTML entities intact, so 「Akikawa Foods
+    // & Farms」 arrives as "&amp;" — and replacing "&" on that text produced the
+    // id akikawa-foods-AND-AMP-farms, which is a URL. Decode first.
+    .replace(/&amp;/gi, "&")
+    .replace(/&(?:nbsp|#160);/gi, " ")
+    // 株式会社 in the Latin form. Handled before the dots go, because afterwards
+    // it is indistinguishable from two one-letter words (dai-ichi-cutter-kogyo-K-K).
+    .replace(/\bK\.\s*K\.?(?=\s|$)/gi, " ")
     .replace(/[.,]/g, " ")
     .replace(/&/g, " and ")
     .split(/\s+/)
     .filter(Boolean);
-  while (tokens.length > 1 && SUFFIX.test(tokens.at(-1))) tokens.pop();
+  // A corporate-form word preceded by "and" is part of the name, not a suffix:
+  // 「グリーンエナジー＆カンパニー」 files as "GreenEnergy & Company Inc.", where Inc.
+  // is the form and Company is the company. Stripping both left the id
+  // "greenenergy-and". The same rule reproduces the hand-assigned mitsui-and-co
+  // from "MITSUI & CO., LTD.", which is a good sign it is drawing the line where
+  // a person did.
+  while (tokens.length > 1 && SUFFIX.test(tokens.at(-1)) && tokens.at(-2)?.toLowerCase() !== "and") tokens.pop();
   const id = tokens
     .join("-")
     .toLowerCase()

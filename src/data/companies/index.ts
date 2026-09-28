@@ -3,8 +3,9 @@ import type { Company } from "@/types/company";
 import advantest from "./advantest.json";
 import aeon from "./aeon.json";
 import agc from "./agc.json";
+import aisin from "./aisin.json";
 import ajinomoto from "./ajinomoto.json";
-import akikawaFoodsAndAmpFarms from "./akikawa-foods-and-amp-farms.json";
+import akikawaFoodsAndFarms from "./akikawa-foods-and-farms.json";
 import anaHoldings from "./ana-holdings.json";
 import asPartners from "./as-partners.json";
 import asahiGroupHoldings from "./asahi-group-holdings.json";
@@ -24,7 +25,7 @@ import cocolive from "./cocolive.json";
 import columbiaWorks from "./columbia-works.json";
 import comsysHoldings from "./comsys-holdings.json";
 import cyberagent from "./cyberagent.json";
-import daiIchiCutterKogyoKK from "./dai-ichi-cutter-kogyo-k-k.json";
+import daiIchiCutterKogyo from "./dai-ichi-cutter-kogyo.json";
 import daiIchiLifeHoldings from "./dai-ichi-life-holdings.json";
 import daiichiSankyo from "./daiichi-sankyo.json";
 import daikinIndustries from "./daikin-industries.json";
@@ -49,8 +50,8 @@ import fujitaEngineering from "./fujita-engineering.json";
 import fujitsu from "./fujitsu.json";
 import gifuLandscapeArchitect from "./gifu-landscape-architect.json";
 import gikenHoldings from "./giken-holdings.json";
-import greenenergyAndAmp from "./greenenergy-and-amp.json";
-import greenmonster from "./greenmonster.json";
+import greenMonster from "./green-monster.json";
+import greenenergyAndCompany from "./greenenergy-and-company.json";
 import hammock from "./hammock.json";
 import hitachi from "./hitachi.json";
 import honda from "./honda.json";
@@ -64,6 +65,7 @@ import kikkoman from "./kikkoman.json";
 import komatsu from "./komatsu.json";
 import kubota from "./kubota.json";
 import kyocera from "./kyocera.json";
+import lasertec from "./lasertec.json";
 import marubeni from "./marubeni.json";
 import mazda from "./mazda.json";
 import mitsubishiChemicalGroup from "./mitsubishi-chemical-group.json";
@@ -90,6 +92,7 @@ import rakutenGroup from "./rakuten-group.json";
 import renesasElectronics from "./renesas-electronics.json";
 import rohm from "./rohm.json";
 import ryohinKeikaku from "./ryohin-keikaku.json";
+import screenHoldings from "./screen-holdings.json";
 import sevenAndIHoldings from "./seven-and-i-holdings.json";
 import shimizu from "./shimizu.json";
 import shinEtsuChemical from "./shin-etsu-chemical.json";
@@ -110,6 +113,7 @@ import tdk from "./tdk.json";
 import tokioMarineHoldings from "./tokio-marine-holdings.json";
 import tokyoElectron from "./tokyo-electron.json";
 import toyota from "./toyota.json";
+import yamahaMotor from "./yamaha-motor.json";
 import yamatoHoldings from "./yamato-holdings.json";
 import zozo from "./zozo.json";
 
@@ -208,7 +212,7 @@ export const companies: Company[] = Object.entries({
   kyocera: kyocera,
   "taiyo-yuden": taiyoYuden,
   nissui: nissui,
-  "akikawa-foods-and-amp-farms": akikawaFoodsAndAmpFarms,
+  "akikawa-foods-and-farms": akikawaFoodsAndFarms,
   "as-partners": asPartners,
   axyz: axyz,
   "berg-earth": bergEarth,
@@ -221,7 +225,7 @@ export const companies: Company[] = Object.entries({
   "columbia-works": columbiaWorks,
   "comsys-holdings": comsysHoldings,
   cyberagent: cyberagent,
-  "dai-ichi-cutter-kogyo-k-k": daiIchiCutterKogyoKK,
+  "dai-ichi-cutter-kogyo": daiIchiCutterKogyo,
   "daiseki-eco-solution": daisekiEcoSolution,
   "daiwa-house-industry": daiwaHouseIndustry,
   "dentsu-group": dentsuGroup,
@@ -235,7 +239,11 @@ export const companies: Company[] = Object.entries({
   "fujita-engineering": fujitaEngineering,
   "gifu-landscape-architect": gifuLandscapeArchitect,
   "giken-holdings": gikenHoldings,
-  "greenenergy-and-amp": greenenergyAndAmp,
-  greenmonster: greenmonster,
+  "greenenergy-and-company": greenenergyAndCompany,
+  "green-monster": greenMonster,
   hammock: hammock,
+  aisin: aisin,
+  "screen-holdings": screenHoldings,
+  lasertec: lasertec,
+  "yamaha-motor": yamahaMotor,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

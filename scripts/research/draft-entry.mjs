@@ -64,6 +64,18 @@ function at(series, periodEnd, standard = null) {
  * years on both, and the entry follows the basis the company reports on now —
  * the same choice スズキ's researcher made and recorded.
  */
+/** The few entities EDINET leaves in the cover-page text. Names, not markup. */
+function decodeEntities(value) {
+  if (typeof value !== "string") return value ?? null;
+  return value
+    .replace(/&amp;/gi, "&")
+    .replace(/&(?:nbsp|#160);/gi, " ")
+    .replace(/&quot;/gi, String.fromCharCode(34))
+    .replace(/&(?:apos|#39);/gi, String.fromCharCode(39))
+    .replace(/&lt;/gi, "<")
+    .replace(/&gt;/gi, ">");
+}
+
 function standardForYear(revenueSeries, periodEnd) {
   const covering = (revenueSeries ?? []).filter((s) => s.years.some((y) => y.fiscalYearEnd === periodEnd));
   return covering.map((s) => standardOf(s.element)).sort((a, b) => RANK[b] - RANK[a])[0] ?? null;
@@ -82,6 +94,16 @@ for (const id of ids) {
   // Fiscal years come from the revenue series: it is the one row every filing
   // carries for all five years.
   const years = [...new Set((pack.figures.revenue ?? []).flatMap((s) => s.years.map((y) => y.fiscalYearEnd)))].sort();
+
+  /**
+   * The id every row cites for the filing this pack was built from, named after
+   * ITS fiscal year rather than the calendar year the pipeline happens to run in.
+   * ヤマハ発動機 closes in December, so its 有報 covers 2025年12月期; the id was
+   * hardcoded "yuho-2026", and the entry ended up citing a source that no source
+   * declared. It surfaced only because all six agents independently wrote
+   * yuho-2025 — the filing's own year — and the assembler refused the mismatch.
+   */
+  const filingSourceId = `yuho-${(years.at(-1) ?? pack.filing?.resolvedPeriodEnd ?? "").slice(0, 4)}`;
 
   const mixed = [];
   const financials = years.map((periodEnd) => {
@@ -127,15 +149,18 @@ for (const id of ids) {
             netIncomeBasis: "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
           }
         : {}),
-      sourceIds: ["yuho-2026"],
+      sourceIds: [filingSourceId],
     };
   });
 
   const draft = {
     id,
     code: pack.securitiesCode,
-    officialName: cover["会社名、表紙"] ?? null,
-    nameEn: cover["英訳名、表紙"] ?? null,
+    // EDINET serves the cover page with HTML entities intact, so 秋川牧園's English
+    // name arrives as "AKIKAWA FOODS &amp; FARMS CO., LTD." — which would be shown
+    // to a reader exactly like that. These are names, not markup.
+    officialName: decodeEntities(cover["会社名、表紙"]),
+    nameEn: decodeEntities(cover["英訳名、表紙"]),
     _上場金融商品取引所名: cover["上場金融商品取引所名又は登録認可金融商品取引業協会名"] ?? null,
     _決算期: pack.filing.resolvedPeriodEnd,
     _有報: `${pack.filing.docDescription} (docID ${pack.filing.docID})`,
