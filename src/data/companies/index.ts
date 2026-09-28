@@ -4,24 +4,54 @@ import advantest from "./advantest.json";
 import aeon from "./aeon.json";
 import agc from "./agc.json";
 import ajinomoto from "./ajinomoto.json";
+import akikawaFoodsAndAmpFarms from "./akikawa-foods-and-amp-farms.json";
 import anaHoldings from "./ana-holdings.json";
+import asPartners from "./as-partners.json";
 import asahiGroupHoldings from "./asahi-group-holdings.json";
 import asahiKasei from "./asahi-kasei.json";
 import astellasPharma from "./astellas-pharma.json";
+import axyz from "./axyz.json";
+import bergEarth from "./berg-earth.json";
+import besterra from "./besterra.json";
+import brHoldings from "./br-holdings.json";
+import candeal from "./candeal.json";
 import canon from "./canon.json";
+import caulis from "./caulis.json";
 import centralJapanRailway from "./central-japan-railway.json";
+import chugaiMining from "./chugai-mining.json";
 import chugaiPharmaceutical from "./chugai-pharmaceutical.json";
+import cocolive from "./cocolive.json";
+import columbiaWorks from "./columbia-works.json";
+import comsysHoldings from "./comsys-holdings.json";
+import cyberagent from "./cyberagent.json";
+import daiIchiCutterKogyoKK from "./dai-ichi-cutter-kogyo-k-k.json";
 import daiIchiLifeHoldings from "./dai-ichi-life-holdings.json";
 import daiichiSankyo from "./daiichi-sankyo.json";
 import daikinIndustries from "./daikin-industries.json";
+import daisekiEcoSolution from "./daiseki-eco-solution.json";
+import daiwaHouseIndustry from "./daiwa-house-industry.json";
 import denso from "./denso.json";
+import dentsuGroup from "./dentsu-group.json";
 import disco from "./disco.json";
+import dive from "./dive.json";
+import dowaHoldings from "./dowa-holdings.json";
 import eastJapanRailway from "./east-japan-railway.json";
 import eneosHoldings from "./eneos-holdings.json";
+import fantasista from "./fantasista.json";
 import fanuc from "./fanuc.json";
 import fastRetailing from "./fast-retailing.json";
+import firstCorporation from "./first-corporation.json";
+import fujiElectric from "./fuji-electric.json";
+import fujiJapan from "./fuji-japan.json";
 import fujifilmHoldings from "./fujifilm-holdings.json";
+import fujikura from "./fujikura.json";
+import fujitaEngineering from "./fujita-engineering.json";
 import fujitsu from "./fujitsu.json";
+import gifuLandscapeArchitect from "./gifu-landscape-architect.json";
+import gikenHoldings from "./giken-holdings.json";
+import greenenergyAndAmp from "./greenenergy-and-amp.json";
+import greenmonster from "./greenmonster.json";
+import hammock from "./hammock.json";
 import hitachi from "./hitachi.json";
 import honda from "./honda.json";
 import inpex from "./inpex.json";
@@ -178,4 +208,34 @@ export const companies: Company[] = Object.entries({
   kyocera: kyocera,
   "taiyo-yuden": taiyoYuden,
   nissui: nissui,
+  "akikawa-foods-and-amp-farms": akikawaFoodsAndAmpFarms,
+  "as-partners": asPartners,
+  axyz: axyz,
+  "berg-earth": bergEarth,
+  besterra: besterra,
+  "br-holdings": brHoldings,
+  candeal: candeal,
+  caulis: caulis,
+  "chugai-mining": chugaiMining,
+  cocolive: cocolive,
+  "columbia-works": columbiaWorks,
+  "comsys-holdings": comsysHoldings,
+  cyberagent: cyberagent,
+  "dai-ichi-cutter-kogyo-k-k": daiIchiCutterKogyoKK,
+  "daiseki-eco-solution": daisekiEcoSolution,
+  "daiwa-house-industry": daiwaHouseIndustry,
+  "dentsu-group": dentsuGroup,
+  dive: dive,
+  "dowa-holdings": dowaHoldings,
+  fantasista: fantasista,
+  "first-corporation": firstCorporation,
+  "fuji-electric": fujiElectric,
+  "fuji-japan": fujiJapan,
+  fujikura: fujikura,
+  "fujita-engineering": fujitaEngineering,
+  "gifu-landscape-architect": gifuLandscapeArchitect,
+  "giken-holdings": gikenHoldings,
+  "greenenergy-and-amp": greenenergyAndAmp,
+  greenmonster: greenmonster,
+  hammock: hammock,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

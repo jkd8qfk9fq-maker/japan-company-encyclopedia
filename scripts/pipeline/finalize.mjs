@@ -27,6 +27,9 @@ import { loadState, saveState, setStage, syncAgentStages } from "./company-state
 const companyId = process.argv[2];
 const register = process.argv.includes("--register");
 const figuresOnly = process.argv.includes("--figures-only");
+// Stage and stop. register-figures.mjs batches the checks across many companies,
+// so it wants the assembled file and not a per-company test run.
+const stageOnly = process.argv.includes("--stage-only");
 if (!companyId) {
   console.error("usage: node scripts/pipeline/finalize.mjs <company-id> [--figures-only] [--register]");
   process.exit(1);
@@ -399,6 +402,7 @@ try {
   process.exit(1);
 }
 console.log(`${companyId}: ${stagedRelative} に組み立てました（${figuresOnly ? "数値のみ" : `fragments ${merged.fragments}/${merged.stageCount}`}）`);
+if (stageOnly) process.exit(0);
 
 setStage(companyId, "sourceValidation", "running");
 const validation = sourceValidation(merged.entry);

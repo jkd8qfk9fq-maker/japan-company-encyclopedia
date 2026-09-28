@@ -15,14 +15,27 @@ import type { Term } from "@/types/term";
  *
  * Skipped when CONTENT_FILE is unset, so it adds nothing to a normal test run.
  */
+/**
+ * One file, or every .json in a directory. The directory form exists because the
+ * figures-only tier registers companies in batches of hundreds: starting vitest
+ * once per company would cost more time than building the entries did.
+ */
 const target = process.env.CONTENT_FILE;
+const targetDir = process.env.CONTENT_DIR;
+const targets = target
+  ? [target]
+  : targetDir
+    ? readdirSync(join(process.cwd(), targetDir))
+        .filter((f) => f.endsWith(".json"))
+        .map((f) => join(targetDir, f))
+    : [];
 
 const ids = (dir: string) =>
   new Set(readdirSync(join(process.cwd(), "src/data", dir)).filter((f) => f.endsWith(".json")).map((f) => f.replace(/\.json$/, "")));
 
-describe.skipIf(!target)("content file", () => {
-  it(`is valid: ${target}`, () => {
-    const path = resolve(process.cwd(), target!);
+describe.skipIf(targets.length === 0)("content file", () => {
+  it.each(targets)("is valid: %s", (target) => {
+    const path = resolve(process.cwd(), target);
     const data = JSON.parse(readFileSync(path, "utf8"));
     const context = { companyIds: ids("companies"), termIds: ids("terms"), featureIds: ids("features") };
     const kind = path.includes(`${join("src", "data", "terms")}`) ? "term" : "company";

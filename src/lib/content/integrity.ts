@@ -123,8 +123,16 @@ export function checkCompany(company: Company, context: ContentContext): string[
   for (const f of company.financials) {
     const where = `財務「${f.fiscalYear}」`;
     for (const [label, value] of [["売上", f.revenue], ["純利益", f.netIncome]] as const) {
-      if (value !== null && (!Number.isSafeInteger(value) || Math.abs(value % 1_000_000) !== 0)) {
-        e.push(`${where}: ${label}は百万円単位の整数（円換算）である必要があります`);
+      // 千円, not 百万円. Large caps print their five-year table in 百万円 and every
+      // figure in the first 81 entries is divisible by 1,000,000 — but smaller
+      // companies print 千円, and 中外鉱業 (281,692,181,000円) and ベルグアース
+      // (7,303,461,000円) are exact to that. Demanding whole 百万円 would force
+      // their own figures to be rounded away. The point of the rule is to catch a
+      // value entered in the filing’s display unit instead of yen, and 千円
+      // granularity still catches that; the exact match against the XBRL in
+      // verify-financials is what actually guarantees the number.
+      if (value !== null && (!Number.isSafeInteger(value) || Math.abs(value % 1_000) !== 0)) {
+        e.push(`${where}: ${label}は千円単位の整数（円換算）である必要があります`);
       }
     }
     e.push(...citationErrors(f.sourceIds, src, where));

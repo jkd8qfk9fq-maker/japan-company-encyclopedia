@@ -1,0 +1,210 @@
+/**
+ * Register many companies at the figures-only tier in one pass.
+ *
+ *   node scripts/pipeline/register-figures.mjs --limit 100 [--register]
+ *
+ * `finalize.mjs --figures-only` does one company and runs the whole test suite
+ * for it. That is right for an entry someone wrote, and wrong for 3,900: the
+ * suite takes about ten seconds, which alone would be eleven hours.
+ *
+ * So the checks are batched, not skipped. Every entry is staged and put through
+ * the schema and the integrity rules in a single vitest pass over the staging
+ * directory; every entry's figures are re-verified against the filing's own XBRL
+ * individually, because that check is per-company by nature and costs no startup.
+ * Only then are the files written, and the full repository suite and tsc run once
+ * over the result. If anything fails, the whole batch is put back.
+ *
+ * All-or-nothing per batch is deliberate. A partial write would leave the index,
+ * the revisions and the entries disagreeing, and the next run would have to
+ * reason about a half-registered state — which is exactly the situation §27 says
+ * never to create.
+ */
+import { execFileSync } from "node:child_process";
+import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
+import { cacheDir } from "../research/edinet.mjs";
+import { loadState, saveState, setStage } from "./company-state.mjs";
+
+const arg = (name, fallback) => {
+  const i = process.argv.indexOf(`--${name}`);
+  return i !== -1 && process.argv[i + 1] ? process.argv[i + 1] : fallback;
+};
+const limit = Number(arg("limit", "50"));
+const write = process.argv.includes("--register");
+
+const root = process.cwd();
+const today = new Date().toISOString().slice(0, 10);
+const stagingDir = join(root, "pipeline/staging");
+const companiesDir = join(root, "src/data/companies");
+const indexPath = join(companiesDir, "index.ts");
+
+const VITEST = "node_modules/vitest/vitest.mjs";
+const TSC = "node_modules/typescript/lib/tsc.js";
+const run = (args, env = {}) => execFileSync(process.execPath, args, { cwd: root, encoding: "utf8", env: { ...process.env, ...env } });
+
+// ------------------------------------------------------------------ which companies
+const published = new Set(
+  readdirSync(companiesDir)
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => f.replace(/\.json$/, "")),
+);
+
+/**
+ * A company is ready when the mechanical stages finished and nothing has been
+ * written for it. One that has agent fragments is left alone: it is on its way to
+ * a full entry, and registering it as figures-only would have to be undone.
+ */
+const resultsDir = join(root, "pipeline/results");
+const hasFragments = existsSync(resultsDir)
+  ? new Set(readdirSync(resultsDir).map((f) => f.replace(/-[a-zA-Z]+\.json$/, "")))
+  : new Set();
+
+const ready = readdirSync(join(root, "pipeline/state"))
+  .filter((f) => f.endsWith(".json"))
+  .map((f) => f.replace(/\.json$/, ""))
+  .filter((id) => !published.has(id) && !hasFragments.has(id))
+  .filter((id) => {
+    const state = loadState(id);
+    return state.stages.edinet.status === "completed" && existsSync(join(cacheDir(), "evidence", id, "draft-entry.json"));
+  })
+  .sort()
+  .slice(0, limit);
+
+if (ready.length === 0) {
+  console.log("登録できる会社がありません（edinet 工程が完了し、まだ何も書かれていない会社が対象です）");
+  process.exit(0);
+}
+
+// ------------------------------------------------------------------ build and stage
+rmSync(stagingDir, { recursive: true, force: true });
+mkdirSync(stagingDir, { recursive: true });
+
+const staged = [];
+const skipped = [];
+for (const id of ready) {
+  try {
+    const out = run(["scripts/pipeline/finalize.mjs", id, "--figures-only", "--stage-only"]);
+    if (!existsSync(join(stagingDir, `${id}.json`))) throw new Error(out.trim().split("\n").at(-1) ?? "staged file missing");
+    staged.push(id);
+  } catch (error) {
+    const child = `${error.stdout ?? ""}${error.stderr ?? ""}`.split("\n").find((l) => l.trim()) ?? error.message;
+    skipped.push({ id, reason: child.replace(/\s+/g, " ").slice(0, 160) });
+  }
+}
+console.log(`組み立て: ${staged.length} 社${skipped.length > 0 ? ` / 見送り ${skipped.length} 社` : ""}`);
+for (const s of skipped) console.log(`  SKIP ${s.id} — ${s.reason}`);
+if (staged.length === 0) process.exit(1);
+
+// --------------------------------------------------------------------- batch checks
+// Per company, because it is per company by nature and costs no vitest startup:
+// does every figure still equal what EDINET tagged? The draft came from the same
+// pack, so this is close to a tautology — but it is what would notice a draft
+// left behind by an older version of the extractor.
+const mismatched = [];
+for (const id of staged) {
+  try {
+    run(["scripts/research/verify-financials.mjs", id, "--entry", `pipeline/staging/${id}.json`]);
+  } catch (error) {
+    const detail = `${error.stdout ?? ""}${error.stderr ?? ""}`
+      .split("\n")
+      .filter((l) => l.includes("≠") || l.includes("不一致") || l.includes("見当たりません"))
+      .join(" ")
+      .slice(0, 200);
+    mismatched.push(`${id}: ${detail || "verify-financials が失敗"}`);
+  }
+}
+if (mismatched.length > 0) {
+  console.error(`\n数値が有報のXBRLと一致しない会社 ${mismatched.length} 社。登録しません:`);
+  for (const m of mismatched) console.error(`  - ${m}`);
+  process.exit(1);
+}
+console.log(`数値の照合: ${staged.length} 社すべて一致`);
+
+try {
+  run([VITEST, "run", "tests/validate-file.test.ts"], { CONTENT_DIR: "pipeline/staging" });
+  console.log("スキーマ・整合性ルール: OK");
+} catch (error) {
+  console.error(`${error.stdout ?? ""}${error.stderr ?? ""}`.slice(-4000));
+  console.error("\nスキーマまたは整合性ルールに違反している会社があります。登録しません");
+  process.exit(1);
+}
+
+if (!write) {
+  console.log(`\n--register を付けると ${staged.length} 社を登録します`);
+  process.exit(0);
+}
+
+// ------------------------------------------------------------------------ register
+const camel = (id) => id.replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase());
+const keyFor = (id) => (/^[a-z][a-zA-Z0-9]*$/.test(camel(id)) && !id.includes("-") ? id : `"${id}"`);
+
+const indexBefore = readFileSync(indexPath, "utf8");
+const written = [];
+const revert = () => {
+  for (const p of written) rmSync(p, { force: true });
+  writeFileSync(indexPath, indexBefore);
+};
+
+try {
+  let index = indexBefore;
+  for (const id of staged) {
+    const entry = JSON.parse(readFileSync(join(stagingDir, `${id}.json`), "utf8"));
+    const entryPath = join(companiesDir, `${id}.json`);
+    if (existsSync(entryPath)) throw new Error(`${id}: 既存エントリーがあります`);
+    writeFileSync(entryPath, `${JSON.stringify(entry, null, 2)}\n`);
+    written.push(entryPath);
+
+    const identity = loadState(id).identity ?? {};
+    const revisionId = `${today}-company-${id}-initial`;
+    const revisionPath = join(root, "src/data/revisions", `${revisionId}.json`);
+    if (existsSync(revisionPath)) throw new Error(`${id}: 改訂記録が既にあります`);
+    writeFileSync(
+      revisionPath,
+      `${JSON.stringify(
+        {
+          id: revisionId,
+          targetType: "company",
+          targetId: id,
+          changedAt: today,
+          reason: "初版（数値のみ）。EDINETの有価証券報告書から機械的に作成し、XBRLと突き合わせた。解説は未作成",
+          summary: `${entry.officialName} 有価証券報告書（docID ${identity.docID ?? "不明"}）の5年分の指標を登録パイプラインが登録`,
+        },
+        null,
+        2,
+      )}\n`,
+    );
+    written.push(revisionPath);
+
+    // Import lines are alphabetical; the map is registration order.
+    const lines = index.split("\n");
+    const isImport = (l) => /^import \w+ from "\.\/[a-z0-9-]+\.json";$/.test(l);
+    const fileOf = (l) => l.match(/"\.\/([a-z0-9-]+)\.json"/)[1];
+    const importIdx = lines.findIndex((l) => isImport(l) && fileOf(l) > id);
+    const lastImport = lines.reduce((acc, l, i) => (isImport(l) ? i : acc), -1);
+    lines.splice(importIdx === -1 ? lastImport + 1 : importIdx, 0, `import ${camel(id)} from "./${id}.json";`);
+    const closeIdx = lines.findIndex((l) => l.startsWith("}).map("));
+    lines.splice(closeIdx, 0, `  ${keyFor(id)}: ${camel(id)},`);
+    index = lines.join("\n");
+  }
+  writeFileSync(indexPath, index);
+
+  run([VITEST, "run", "tests/data-integrity.test.ts"]);
+  run([TSC, "--noEmit"]);
+} catch (error) {
+  revert();
+  console.error(`${String(error.message).slice(0, 300)}\n${String(error.stdout ?? "").slice(-3000)}`);
+  console.error(`\n登録を取り消しました（${staged.length} 社すべて元に戻しました）`);
+  process.exit(1);
+}
+
+for (const id of staged) {
+  const state = loadState(id);
+  state.registeredAt = new Date().toISOString();
+  saveState(state);
+  for (const stage of ["sourceValidation", "qualityControl"]) setStage(id, stage, "completed", "数値のみの一括登録で検査");
+  setStage(id, "registration", "completed", "数値のみで登録（解説は未作成）");
+}
+rmSync(stagingDir, { recursive: true, force: true });
+
+console.log(`\n登録しました: ${staged.length} 社（状態は figures-only）`);
+console.log("コミットは人が行うこと（パイプラインは git を触りません）");

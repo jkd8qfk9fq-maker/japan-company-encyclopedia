@@ -141,7 +141,11 @@ for (const row of entry.financials) {
     // The printed table runs labels into their figures, so the check above cannot
     // tell a label from a shorter piece of one. These two rules cover the
     // difference that would actually mislead a reader.
-    if (kind === "純利益" && !PARENT_ATTRIBUTION.test(label)) {
+    // A company with no subsidiaries has no non-controlling interests, so its
+    // 「当期純利益」 is already unambiguous and the filing prints no attribution
+    // wording to copy. Requiring one would reject every single-entity filer —
+    // most small caps — over a distinction that does not exist for them.
+    if (kind === "純利益" && !evidence.figures.nonConsolidated && !PARENT_ATTRIBUTION.test(label)) {
       problems.push(
         `${row.fiscalYear} 純利益: ラベル「${label}」に親会社帰属の明示がありません。` +
           `非支配株主分を含む当期純利益と区別できないため、有報の表記をそのまま使うこと`,

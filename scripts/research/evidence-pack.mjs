@@ -229,7 +229,14 @@ function printedLabel(indicators, years) {
   // The printed table is in 百万円 for money and bare counts for people, and its
   // columns run together with no separator, so two consecutive values in a row
   // are a strong, unambiguous anchor.
-  for (const divisor of [1_000_000, 1]) {
+  //
+  // 千円 is here because smaller companies print their five-year table in it —
+  // ベルグアース prints 「親会社株主に帰属する当期純利益(千円)」 and 48,327. Without it
+  // no printed row was ever found for such a filer, every label fell back to the
+  // taxonomy s long form 「…当期純利益又は親会社株主に帰属する当期純損失（△）」 which
+  // the filing does not print, and verify-financials rejected the entry. Tried
+  // after 百万円 so a large cap still matches on its own unit first.
+  for (const divisor of [1_000_000, 1_000, 1]) {
     for (let i = 0; i + 1 < years.length; i++) {
       const a = years[i].value / divisor;
       const b = years[i + 1].value / divisor;

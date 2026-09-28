@@ -180,8 +180,10 @@ describe.each(companies.map((c) => [c.id, c] as const))("company %s", (_, compan
       if (f.netIncome !== null) expect(Number.isSafeInteger(f.netIncome), `${f.fiscalYear} netIncome`).toBe(true);
       // Filings print 百万円; a value that is not a whole number of millions was mis-converted.
       // Math.abs: a loss gives -0, which toBe (Object.is) does not equal to 0.
-      if (f.revenue !== null) expect(Math.abs(f.revenue % 1_000_000), `${f.fiscalYear} revenue unit`).toBe(0);
-      if (f.netIncome !== null) expect(Math.abs(f.netIncome % 1_000_000), `${f.fiscalYear} netIncome unit`).toBe(0);
+      // 千円 granularity: smaller filers print their five-year table in 千円 and
+      // are exact to it. See the same rule in src/lib/content/integrity.ts.
+      if (f.revenue !== null) expect(Math.abs(f.revenue % 1_000), `${f.fiscalYear} revenue unit`).toBe(0);
+      if (f.netIncome !== null) expect(Math.abs(f.netIncome % 1_000), `${f.fiscalYear} netIncome unit`).toBe(0);
       expectSourced(f.sourceIds, company.sources, `${company.id}.financials.${f.fiscalYear}`);
     }
   });
