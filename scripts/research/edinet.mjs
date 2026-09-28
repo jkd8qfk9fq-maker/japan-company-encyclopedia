@@ -115,10 +115,23 @@ export async function downloadDocument(docID, type) {
 export function readCsvRows(zipPath) {
   const dir = `${zipPath}-extracted`;
   if (!existsSync(dir)) {
+    // EDINET answers type=5 for a foreign issuer with something that is not a
+    // zip (ワイ・ティー・エル・コーポレーション・バーハッド, a Malaysian company listed
+    // in Tokyo, is one). Saying so plainly beats an unzip stack trace, which
+    // reads like a corrupted cache rather than a filing with no XBRL.
+    const head = readFileSync(zipPath).subarray(0, 2).toString("latin1");
+    if (head !== "PK") {
+      throw new Error(`EDINET がこの書類のXBRL（CSV）を提供していない（外国会社の可能性）: ${zipPath}`);
+    }
     mkdirSync(dir, { recursive: true });
     execFileSync("unzip", ["-o", "-q", zipPath, "-d", dir]);
   }
   const csvDir = join(dir, "XBRL_TO_CSV");
+  // An extraction directory left behind by a failed run exists but holds nothing,
+  // and existsSync(dir) above would skip the check that produced the real reason.
+  if (!existsSync(csvDir)) {
+    throw new Error(`EDINET がこの書類のXBRL（CSV）を提供していない（外国会社の可能性）: ${zipPath}`);
+  }
   const files = readdirSync(csvDir).filter((f) => f.endsWith(".csv"));
   const rows = [];
   for (const file of files) {

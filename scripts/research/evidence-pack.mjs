@@ -53,6 +53,15 @@ const REVENUE_ELEMENTS = new Set([
   "PremiumAndOtherIncomeSummaryOfBusinessResults",
   "NetSalesAndOperatingRevenueSummaryOfBusinessResults",
   "TotalOperatingRevenuesSummaryOfBusinessResults",
+  "BusinessRevenueSummaryOfBusinessResults", // 営業収益
+  // Some IFRS filers tag 収益 as plain "Income" — ユキグニファクトリー prints
+  // 「収益」 at 53,449百万円 above 税引前利益 4,195百万円. NOT_REVENUE excludes every
+  // element containing "Income" so that a profit row is never mistaken for a top
+  // line, so these two are listed as deliberate exceptions rather than by
+  // weakening that rule. If one were ever the wrong row, verify-financials would
+  // catch it: the printed label has to end 高／収益／収入／計.
+  "IncomeIFRSSummaryOfBusinessResults",
+  "IncomeIFRSKeyFinancialData",
 ]);
 const NET_INCOME_ELEMENTS = new Set([
   "ProfitLossAttributableToOwnersOfParentSummaryOfBusinessResults", // 親会社株主に帰属する当期純利益
@@ -274,17 +283,34 @@ function relativeYear(row) {
   return prior ? { 1: "前期", 2: "前々期", 3: "三期前", 4: "四期前" }[prior[1]] : null;
 }
 
-/** Five-year figures from one filing: only consolidated rows, labels as filed. */
+/**
+ * Five-year figures from one filing, labels as filed.
+ *
+ * Consolidated rows, except for a filer that has no consolidated statements at
+ * all. A company with no subsidiaries files 主要な経営指標等の推移 solely on a
+ * 提出会社 basis, every row carrying NonConsolidatedMember — so excluding that
+ * dimension threw away the only table it has, and the extractor failed with
+ * 「no revenue element matched」 on 11 of the first 40 companies drawn from the
+ * whole listed universe. Those are not exotic filings; they are most small caps.
+ *
+ * The fallback is deliberately all-or-nothing: it is used only when the filing
+ * tags no consolidated summary row whatsoever, never to fill a gap in a
+ * consolidated table. `nonConsolidated` is returned so the pack, the draft and
+ * ultimately the page can say the figures are the parent company alone — the same
+ * distinction `revenueBasis` exists for.
+ */
 function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
-  const summary = rows.filter(
+  const inTable = rows.filter(
     (r) =>
       // 主要な経営指標等の推移 is tagged either with the standard summary elements
       // or, for a line the taxonomy has no element for, a KeyFinancialData extension.
-      /(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"]) &&
-      // Non-consolidated rows carry the dimension in their context id.
-      !/NonConsolidated/i.test(r["コンテキストID"] ?? "") &&
-      r["単位"] === "円",
+      /(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"]) && r["単位"] === "円",
   );
+  // Non-consolidated rows carry the dimension in their context id.
+  const isNonConsolidated = (r) => /NonConsolidated/i.test(r["コンテキストID"] ?? "");
+  const consolidated = inTable.filter((r) => !isNonConsolidated(r));
+  const nonConsolidated = consolidated.length === 0;
+  const summary = nonConsolidated ? inTable.filter(isNonConsolidated) : consolidated;
   const pick = (elements, extension) => {
     const rowsFor = summary.filter((r) => {
       const local = r["要素ID"].replace(/^.*:/, "");
@@ -336,13 +362,20 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
    * own unit filter because employee counts are people, not yen.
    */
   const pickSeries = (elements, { unit = "円", extension = null } = {}) => {
+    // A bare year context only. Employee counts are also tagged per segment and
+    // per sub-company, and those carry extra dimensions in the context. The one
+    // dimension that is allowed is NonConsolidatedMember, and only for a filer
+    // that publishes no consolidated statements — for whom that IS the five-year
+    // table. Without this these four series came back empty on every such filer
+    // while revenue and net income were found, so an entry would have silently
+    // shown four blank columns for a company that prints all six.
+    const context = nonConsolidated
+      ? /^(Current|Prior\d)Year(Instant|Duration)_NonConsolidatedMember$/
+      : /^(Current|Prior\d)Year(Instant|Duration)$/;
     const pool = rows.filter(
       (r) =>
-        /(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"]) === /(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"]) &&
-        !/NonConsolidated/i.test(r["コンテキストID"] ?? "") &&
-        // A bare year context only. Employee counts are also tagged per segment
-        // and per sub-company, and those carry extra dimensions in the context.
-        /^(Current|Prior\d)Year(Instant|Duration)$/.test(r["コンテキストID"] ?? "") &&
+        /(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"]) &&
+        context.test(r["コンテキストID"] ?? "") &&
         (unit === null || r["単位"] === unit),
     );
     // All matching elements, in preference order — not just the first. A filer
@@ -426,6 +459,7 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
   for (const kind of ["profit", "totalAssets", "netAssets", "employees"]) {
     if (!figures[kind]) missing.push(kind);
   }
+  figures.nonConsolidated = nonConsolidated;
   return figures;
 }
 

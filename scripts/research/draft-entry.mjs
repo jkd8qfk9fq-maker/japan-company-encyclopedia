@@ -116,6 +116,17 @@ for (const id of ids) {
       employees: employees.value,
       currency: "JPY",
       accountingStandard: yearStandard,
+      // A filer with no subsidiaries publishes no consolidated statements, so its
+      // 主要な経営指標等の推移 is the parent company alone. Every other entry on the
+      // site is consolidated, and the reader cannot see the difference from the
+      // figures — so it is stated here, on every year, which is also what the
+      // integrity rule requires (all years or none).
+      ...(pack.figures.nonConsolidated
+        ? {
+            revenueBasis: "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+            netIncomeBasis: "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+          }
+        : {}),
       sourceIds: ["yuho-2026"],
     };
   });
