@@ -78,19 +78,25 @@ function proseOf(source) {
 }
 
 let prose;
+let financials;
 if (useFragments) {
   const dir = join(process.cwd(), "pipeline/results");
   const parts = readdirSync(dir)
     .filter((f) => f.startsWith(`${companyId}-`) && f.endsWith(".json"))
     .map((f) => JSON.parse(readFileSync(join(dir, f), "utf8")).data ?? {});
   prose = parts.map(proseOf).join("\n");
+  // A fragment carries no financials — the five-year table is mechanical, and the
+  // draft is where it lives until the entry is assembled.
+  financials = JSON.parse(readFileSync(join(packDir, "draft-entry.json"), "utf8")).financials ?? [];
 } else {
   const path = entryFlag !== -1 && process.argv[entryFlag + 1] ? process.argv[entryFlag + 1] : `src/data/companies/${companyId}.json`;
-  prose = proseOf(JSON.parse(readFileSync(join(process.cwd(), path), "utf8")));
+  const entry = JSON.parse(readFileSync(join(process.cwd(), path), "utf8"));
+  prose = proseOf(entry);
+  financials = entry.financials ?? [];
 }
 
-/** 「6兆2,929億67百万円」「3,553億41百万円」「244億53百万円」「1,370,304百万円」「725億円」 */
-const AMOUNT = /(?:([\d,]+)兆)?(?:([\d,]+)億)?(?:([\d,]+)百万)?([\d,]+)?円/g;
+/** 「6兆2,929億67百万円」「3,553億41百万円」「1,370,304百万円」「725億円」「1,000千円」 */
+const AMOUNT = /(?:([\d,]+)兆)?(?:([\d,]+)億)?(?:([\d,]+)百万)?(?:([\d,]+)千)?([\d,]+)?円/g;
 const digits = (s) => (s ? Number(s.replace(/,/g, "")) : 0);
 
 const problems = [];
@@ -98,7 +104,12 @@ let checked = 0;
 const seen = new Set();
 
 for (const m of prose.matchAll(AMOUNT)) {
-  const [expression, cho, oku, million] = m;
+  const [expression, cho, oku, million, sen] = m;
+  // Every unit group is optional, so a 千円 amount used to match as the single
+  // character 「円」 — and `packText.includes("円")` is always true, so the whole
+  // class passed unread while being counted as checked. A match with no digit in
+  // it is not an amount.
+  if (!/\d/.test(expression)) continue;
   if (seen.has(expression)) continue;
   seen.add(expression);
   checked++;
@@ -106,12 +117,12 @@ for (const m of prose.matchAll(AMOUNT)) {
   // The filing's own wording, separators stripped.
   if (packText.includes(expression.normalize("NFKC").replace(/[,\s]/g, ""))) continue;
 
-  // A bare 「34,961,619,000円」 has no 兆/億/百万 to convert — and converting it
-  // would not give a whole number of 百万円 — so the filing's exact printing above
-  // is the only test there is. Skipping these instead (the first version did)
-  // let a whole class of amount through unchecked.
+  // 「1,000千円」 and 「34,961,619,000円」 have nothing that converts to a whole
+  // number of 百万円, so the filing's exact printing above is the only test there
+  // is. Filings do print capital in 千円 — in the 沿革 and in 関係会社の状況.
   if (!cho && !oku && !million) {
-    problems.push(`${expression}（単位のない円額。有報の印字どおりでないと照合できません）が有報の本文に見当たりません`);
+    const kind = sen ? "千円額" : "単位のない円額";
+    problems.push(`${expression}（${kind}。有報の印字どおりでないと照合できません）が有報の本文に見当たりません`);
     continue;
   }
 
@@ -120,6 +131,21 @@ for (const m of prose.matchAll(AMOUNT)) {
   if (packText.includes(String(inMillions))) continue;
 
   problems.push(`${expression}（${inMillions.toLocaleString("ja-JP")}百万円として照合）が有報の本文に見当たりません`);
+}
+
+/**
+ * The fiscal-year labels, which neither check looked at.
+ *
+ * Two of every batch so far end their year somewhere other than March, and the
+ * prose repeats the label in nearly every sentence — so writing 「2026年3月期」 for
+ * a June filer would ship silently. The labels the mechanical draft built from
+ * the filing's own five-year table are the authority.
+ */
+const knownYears = new Set(financials.map((f) => f.fiscalYear));
+for (const m of new Set([...prose.matchAll(/\d{4}年\d{1,2}月期/g)].map((x) => x[0]))) {
+  if (knownYears.has(m)) continue;
+  if (packText.includes(m.replace(/[,\s]/g, ""))) continue;
+  problems.push(`決算期「${m}」がこの会社の決算期（${[...knownYears].join("・")}）にも有報の本文にもありません`);
 }
 
 console.log(`${companyId}: 本文の金額 ${checked} 件を照合`);
