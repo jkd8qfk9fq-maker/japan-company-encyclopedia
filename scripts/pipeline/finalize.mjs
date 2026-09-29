@@ -343,17 +343,34 @@ ${list(merged.needsReview)}
 }
 
 function registration(entry, validation, merged) {
-  if (existsSync(entryPath)) throw new Error("既存エントリーがあるため上書きしません");
+  /*
+    An existing entry is normally refused (§27). The one exception is the tier
+    this pipeline built on purpose: a figures-only entry is a floor, not a
+    destination, and replacing it with the researched one is the move it exists
+    for. Nothing is lost — its figures came from the same draft, and the revision
+    below records the promotion rather than presenting it as a first version.
+
+    This became necessary rather than theoretical: a bulk figures-only run and a
+    researcher were working at the same time, and the batch registered 富士電機
+    while its five segments and ten history events were still being written.
+  */
+  const existing = existsSync(entryPath) ? JSON.parse(readFileSync(entryPath, "utf8")) : null;
+  const upgrading = existing?.status?.state === "figures-only";
+  if (existing && !upgrading) throw new Error("既存エントリーがあるため上書きしません");
+  if (upgrading && figuresOnly) throw new Error("既に数値のみで登録されています（解説を書いてから昇格させてください）");
+
   const logPath = join(root, "docs/research", `${companyId}.md`);
-  const revisionId = `${today}-company-${companyId}-initial`;
+  const revisionId = `${today}-company-${companyId}-${upgrading ? "described" : "initial"}`;
   const revisionPath = join(root, "src/data/revisions", `${revisionId}.json`);
   if (existsSync(revisionPath)) throw new Error(`改訂記録 ${revisionId}.json が既にあります`);
-  if (existsSync(logPath)) throw new Error(`リサーチログ docs/research/${companyId}.md が既にあります`);
+  if (existsSync(logPath) && !upgrading) throw new Error(`リサーチログ docs/research/${companyId}.md が既にあります`);
 
   const indexBefore = readFileSync(indexPath, "utf8");
   const written = [];
   const revert = () => {
     for (const p of written) rmSync(p, { force: true });
+    // An upgrade replaced a real file; putting it back is the revert, not deleting it.
+    if (existing) writeFileSync(entryPath, `${JSON.stringify(existing, null, 2)}\n`);
     writeFileSync(indexPath, indexBefore);
   };
 
@@ -367,8 +384,10 @@ function registration(entry, validation, merged) {
       targetType: "company",
       targetId: companyId,
       changedAt: today,
-      reason: "初版。登録パイプラインが EDINET の一次資料から作成し、リサーチログに根拠を記録した",
-      summary: `${entry.officialName} 有価証券報告書（docID ${id.docID ?? "不明"}、提出 ${id.submitted ?? "不明"}）に基づき登録パイプラインが作成`,
+      reason: upgrading
+        ? "数値のみで掲載していたエントリーに解説を追加した。財務データは変わっていない"
+        : "初版。登録パイプラインが EDINET の一次資料から作成し、リサーチログに根拠を記録した",
+      summary: `${entry.officialName} 有価証券報告書（docID ${id.docID ?? "不明"}、提出 ${id.submitted ?? "不明"}）に基づき登録パイプラインが${upgrading ? "解説を追加" : "作成"}`,
     };
     writeFileSync(revisionPath, `${JSON.stringify(revision, null, 2)}\n`);
     written.push(revisionPath);
@@ -376,7 +395,8 @@ function registration(entry, validation, merged) {
     writeFileSync(logPath, researchLog(entry, validation, merged));
     written.push(logPath);
 
-    writeFileSync(indexPath, addToIndex(indexBefore));
+    // Already listed when upgrading — the id and the file name do not change.
+    if (!upgrading) writeFileSync(indexPath, addToIndex(indexBefore));
 
     // The gate. The whole-repository integrity suite is what catches anything
     // that only breaks in the presence of the other entries: a duplicate id, an

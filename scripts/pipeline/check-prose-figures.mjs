@@ -96,7 +96,7 @@ if (useFragments) {
 }
 
 /** 「6兆2,929億67百万円」「3,553億41百万円」「1,370,304百万円」「725億円」「1,000千円」 */
-const AMOUNT = /(?:([\d,]+)兆)?(?:([\d,]+)億)?(?:([\d,]+)百万)?(?:([\d,]+)千)?([\d,]+)?円/g;
+const AMOUNT = /(?:([\d,]+)兆)?(?:([\d,]+)億)?(?:([\d,]+)百万)?(?:([\d,]+)万)?(?:([\d,]+)千)?([\d,]+)?円/g;
 const digits = (s) => (s ? Number(s.replace(/,/g, "")) : 0);
 
 const problems = [];
@@ -104,7 +104,7 @@ let checked = 0;
 const seen = new Set();
 
 for (const m of prose.matchAll(AMOUNT)) {
-  const [expression, cho, oku, million, sen] = m;
+  const [expression, cho, oku, million, man, sen] = m;
   // Every unit group is optional, so a 千円 amount used to match as the single
   // character 「円」 — and `packText.includes("円")` is always true, so the whole
   // class passed unread while being counted as checked. A match with no digit in
@@ -120,8 +120,12 @@ for (const m of prose.matchAll(AMOUNT)) {
   // 「1,000千円」 and 「34,961,619,000円」 have nothing that converts to a whole
   // number of 百万円, so the filing's exact printing above is the only test there
   // is. Filings do print capital in 千円 — in the 沿革 and in 関係会社の状況.
+  // 万 joins 千 and the unit-less form: 「200万円」 is 2百万円 but 「50万円」 is not a
+  // whole one, so the filing's exact printing is the only test for them. Before
+  // this, 万 was no unit group at all and every such amount matched as the bare
+  // character 「円」, which meant it was counted as checked and never read.
   if (!cho && !oku && !million) {
-    const kind = sen ? "千円額" : "単位のない円額";
+    const kind = man ? "万円額" : sen ? "千円額" : "単位のない円額";
     problems.push(`${expression}（${kind}。有報の印字どおりでないと照合できません）が有報の本文に見当たりません`);
     continue;
   }

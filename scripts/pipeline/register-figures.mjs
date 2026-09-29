@@ -59,10 +59,30 @@ const hasFragments = existsSync(resultsDir)
   ? new Set(readdirSync(resultsDir).map((f) => f.replace(/-[a-zA-Z]+\.json$/, "")))
   : new Set();
 
+/**
+ * Companies a researcher is working on right now.
+ *
+ * A fragment on disk only protects a company the agent has already reached. A
+ * bulk run and a researcher overlapped once, and this batch registered 富士電機 as
+ * figures-only while its five segments and ten history events were still being
+ * written — the entry then could not be created, because one already existed.
+ * Whoever dispatches an agent writes the ids here first; the file is local
+ * working state, like the rest of pipeline/.
+ */
+const reservedPath = join(root, "pipeline/reserved.tsv");
+const reserved = existsSync(reservedPath)
+  ? new Set(
+      readFileSync(reservedPath, "utf8")
+        .split(/\r?\n/)
+        .map((l) => l.split("\t")[0].trim())
+        .filter((l) => l && !l.startsWith("#")),
+    )
+  : new Set();
+
 const ready = readdirSync(join(root, "pipeline/state"))
   .filter((f) => f.endsWith(".json"))
   .map((f) => f.replace(/\.json$/, ""))
-  .filter((id) => !published.has(id) && !hasFragments.has(id))
+  .filter((id) => !published.has(id) && !hasFragments.has(id) && !reserved.has(id))
   .filter((id) => {
     const state = loadState(id);
     return state.stages.edinet.status === "completed" && existsSync(join(cacheDir(), "evidence", id, "draft-entry.json"));
