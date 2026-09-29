@@ -274,6 +274,7 @@ export function HistorySection({ draft, update }: SectionProps) {
 }
 
 const RELATIONSHIP_LABEL: Record<RelatedCompany["relationship"], string> = {
+  "business-partner": "取引関係",
   "same-industry": "同じ業界",
   competitor: "競合",
   supplier: "仕入先",

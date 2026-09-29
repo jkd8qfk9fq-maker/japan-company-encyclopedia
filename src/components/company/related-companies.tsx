@@ -11,6 +11,7 @@ export const RELATIONSHIP_LABEL: Record<RelationshipKind, string> = {
   customer: "顧客",
   technology: "技術のつながり",
   "same-business-model": "似たビジネスモデル",
+  "business-partner": "取引関係",
 };
 
 /**

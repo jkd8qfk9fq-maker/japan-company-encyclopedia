@@ -170,6 +170,16 @@ export const RELATIONSHIP_KINDS = [
   "customer",
   "technology",
   "same-business-model",
+  /**
+   * A transaction the filing documents without saying who sells to whom.
+   *
+   * 政策保有株式 tables routinely print a purpose like 「主に制御事業における取引等の
+   * 効果」 and stop there. Forcing that into supplier or customer invents the
+   * direction; calling it same-industry is plainly false when the counterparty is
+   * a railway operator or a chemical maker. Five researchers in one batch each
+   * decided this separately, which is how a distinction like this drifts.
+   */
+  "business-partner",
 ] as const;
 
 export type RelationshipKind = (typeof RELATIONSHIP_KINDS)[number];

@@ -64,10 +64,22 @@ function at(series, periodEnd, standard = null) {
  * years on both, and the entry follows the basis the company reports on now —
  * the same choice スズキ's researcher made and recorded.
  */
+/**
+ * EDINET stores cover-page names with Latin letters and digits in their full-width
+ * forms — 「株式会社ＡＤＥＫＡ」, 「ＡＦＣ－ＨＤアムスライフサイエンス」 — which is a
+ * storage convention, not how the company writes itself or how a reader searches
+ * for it. Only the alphanumerics are narrowed: 「（旧会社名…）」 keeps its full-width
+ * brackets, because those are Japanese punctuation and half-width ones would be
+ * wrong beside Japanese text.
+ */
+function narrowLatin(value) {
+  return value.replace(/[Ａ-Ｚａ-ｚ０-９]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0xfee0));
+}
+
 /** The few entities EDINET leaves in the cover-page text. Names, not markup. */
 function decodeEntities(value) {
   if (typeof value !== "string") return value ?? null;
-  return value
+  return narrowLatin(value)
     .replace(/&amp;/gi, "&")
     .replace(/&(?:nbsp|#160);/gi, " ")
     .replace(/&quot;/gi, String.fromCharCode(34))
