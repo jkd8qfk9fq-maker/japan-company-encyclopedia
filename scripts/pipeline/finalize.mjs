@@ -254,7 +254,14 @@ function qualityControl() {
 }
 
 // ------------------------------------------------------------ stage: registration
-const camel = (id) => id.replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase());
+// A JavaScript identifier cannot start with a digit, and securities codes reach
+// the id through the English name: 「4Cs HD」 gave the import name 4csHd, which is
+// a parse error that took down a whole 148-company batch. The prefix is only
+// about the local binding; the id, the file name and the URL are untouched.
+const camel = (id) => {
+  const name = id.replace(/-([a-z0-9])/g, (_, c) => c.toUpperCase());
+  return /^[0-9]/.test(name) ? `c${name}` : name;
+};
 const keyFor = (id) => (id.includes("-") ? `"${id}"` : id);
 
 /**

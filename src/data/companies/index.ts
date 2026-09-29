@@ -1,116 +1,252 @@
 import { parseContent, companySchema } from "@/lib/content/schemas";
 import type { Company } from "@/types/company";
+import c4csHd from "./4cs-hd.json";
 import aDWorksGroup from "./a-d-works-group.json";
+import aTie from "./a-tie.json";
 import abcMart from "./abc-mart.json";
+import accrete from "./accrete.json";
+import adSolNissin from "./ad-sol-nissin.json";
+import adeka from "./adeka.json";
+import adr120s from "./adr120s.json";
+import advancedMedia from "./advanced-media.json";
 import advantest from "./advantest.json";
 import adways from "./adways.json";
 import aeon from "./aeon.json";
+import aeonFantasy from "./aeon-fantasy.json";
 import aeonKyushu from "./aeon-kyushu.json";
+import aeria from "./aeria.json";
 import afcHdAmsLifeScience from "./afc-hd-ams-life-science.json";
 import agc from "./agc.json";
+import agentIgHoldings from "./agent-ig-holdings.json";
+import agratioUrbanDesign from "./agratio-urban-design.json";
+import ags from "./ags.json";
 import ahjikan from "./ahjikan.json";
+import ai from "./ai.json";
+import aiCross from "./ai-cross.json";
 import aiFusionCapitalGroup from "./ai-fusion-capital-group.json";
 import aiHoldings from "./ai-holdings.json";
+import aiInside from "./ai-inside.json";
 import aiRobotics from "./ai-robotics.json";
+import aiStorm from "./ai-storm.json";
+import aicaKogyo from "./aica-kogyo.json";
+import aiming from "./aiming.json";
+import airWater from "./air-water.json";
 import aisin from "./aisin.json";
 import ajinomoto from "./ajinomoto.json";
+import akatsuki from "./akatsuki.json";
 import akatsukiEazima from "./akatsuki-eazima.json";
 import akikawaFoodsAndFarms from "./akikawa-foods-and-farms.json";
 import alconix from "./alconix.json";
 import alfresaHoldings from "./alfresa-holdings.json";
 import allAbout from "./all-about.json";
+import alleanzaHoldings from "./alleanza-holdings.json";
 import alpen from "./alpen.json";
+import alpha from "./alpha.json";
+import alphaxFoodSystem from "./alphax-food-system.json";
 import alsok from "./alsok.json";
 import alt from "./alt.json";
+import altplusinc from "./altplusinc.json";
+import ambitionDxHoldings from "./ambition-dx-holdings.json";
 import amitaHoldings from "./amita-holdings.json";
 import amiyakiTei from "./amiyaki-tei.json";
 import anaHoldings from "./ana-holdings.json";
+import anapHoldings from "./anap-holdings.json";
+import andDoHoldings from "./and-do-holdings.json";
 import andStHd from "./and-st-hd.json";
 import aobaBbt from "./aoba-bbt.json";
 import aohata from "./aohata.json";
+import appierGroup from "./appier-group.json";
+import appirits from "./appirits.json";
 import appleInternational from "./apple-international.json";
 import applied from "./applied.json";
+import appliedTechnology from "./applied-technology.json";
 import arata from "./arata.json";
 import arbeitTimes from "./arbeit-times.json";
 import ariakeJapan from "./ariake-japan.json";
+import arigatouServices from "./arigatou-services.json";
+import arkcore from "./arkcore.json";
 import arrPlanner from "./arr-planner.json";
+import artgreen from "./artgreen.json";
 import artner from "./artner.json";
 import asPartners from "./as-partners.json";
+import asahi from "./asahi.json";
 import asahiGroupHoldings from "./asahi-group-holdings.json";
 import asahiKasei from "./asahi-kasei.json";
 import asahiKogyosha from "./asahi-kogyosha.json";
+import asahiNet from "./asahi-net.json";
+import asahiPrinting from "./asahi-printing.json";
+import asahiYukizai from "./asahi-yukizai.json";
 import asahimatsuFoods from "./asahimatsu-foods.json";
 import asanuma from "./asanuma.json";
+import ascentech from "./ascentech.json";
+import ascot from "./ascot.json";
+import asgent from "./asgent.json";
+import ashimoriIndustry from "./ashimori-industry.json";
+import asiaquest from "./asiaquest.json";
 import asj from "./asj.json";
 import askul from "./askul.json";
+import asmarq from "./asmarq.json";
 import asmo from "./asmo.json";
 import astellasPharma from "./astellas-pharma.json";
+import asteria from "./asteria.json";
 import astroscaleHoldings from "./astroscale-holdings.json";
 import asua from "./asua.json";
+import ateamHoldings from "./ateam-holdings.json";
+import atect from "./atect.json";
+import atled from "./atled.json";
+import atomLivinTech from "./atom-livin-tech.json";
+import atsugi from "./atsugi.json";
+import aubex from "./aubex.json";
+import aucfan from "./aucfan.json";
+import aucnet from "./aucnet.json";
 import aunConsulting from "./aun-consulting.json";
 import autowave from "./autowave.json";
+import avantGroup from "./avant-group.json";
+import awaPaperAndTechnological from "./awa-paper-and-technological.json";
+import axasHoldings from "./axas-holdings.json";
+import axelMark from "./axel-mark.json";
+import axelspaceHoldings from "./axelspace-holdings.json";
+import axis from "./axis.json";
 import axyz from "./axyz.json";
 import azearth from "./azearth.json";
+import azoom from "./azoom.json";
+import azumaHouse from "./azuma-house.json";
+import bLot from "./b-lot.json";
 import bStyleHoldings from "./b-style-holdings.json";
+import balnibarbi from "./balnibarbi.json";
+import bankOfInnovation from "./bank-of-innovation.json";
 import banners from "./banners.json";
+import baroqueJapan from "./baroque-japan.json";
+import base from "./base.json";
+import base4481 from "./base-4481.json";
 import baseFood from "./base-food.json";
+import basis from "./basis.json";
+import baudroie from "./baudroie.json";
+import bbreakSystems from "./bbreak-systems.json";
+import beaglee from "./beaglee.json";
+import beautyGarage from "./beauty-garage.json";
 import beautyKadanHoldings from "./beauty-kadan-holdings.json";
+import beenos from "./beenos.json";
+import beex from "./beex.json";
+import bemap from "./bemap.json";
+import benefitJapan from "./benefit-japan.json";
 import bergEarth from "./berg-earth.json";
 import besterra from "./besterra.json";
+import betrend from "./betrend.json";
 import bicCamera from "./bic-camera.json";
+import billingSystem from "./billing-system.json";
+import blueZonesHoldings from "./blue-zones-holdings.json";
+import bluememe from "./bluememe.json";
+import bookingResort from "./booking-resort.json";
 import bourbon from "./bourbon.json";
+import bplats from "./bplats.json";
 import brHoldings from "./br-holdings.json";
+import brainpad from "./brainpad.json";
+import brainsTechnology from "./brains-technology.json";
 import brass from "./brass.json";
+import broadEnterprise from "./broad-enterprise.json";
+import broadbandSecurity from "./broadband-security.json";
+import broadbandTower from "./broadband-tower.json";
+import broadleaf from "./broadleaf.json";
+import broadmedia from "./broadmedia.json";
 import broncoBilly from "./bronco-billy.json";
 import bruno from "./bruno.json";
+import buffalo from "./buffalo.json";
 import bullDogSauce from "./bull-dog-sauce.json";
+import cIMedical from "./c-i-medical.json";
+import cacco from "./cacco.json";
 import cados from "./cados.json";
 import caicaDigital from "./caica-digital.json";
 import calbee from "./calbee.json";
 import canDo from "./can-do.json";
 import candeal from "./candeal.json";
 import canon from "./canon.json";
+import capitalAssetPlanning from "./capital-asset-planning.json";
 import careService from "./care-service.json";
 import careTwentyone from "./care-twentyone.json";
 import careerDesignCenter from "./career-design-center.json";
 import carenet from "./carenet.json";
+import carlit from "./carlit.json";
+import cartaHoldings from "./carta-holdings.json";
 import caulis from "./caulis.json";
+import caveInteractive from "./cave-interactive.json";
 import cawachi from "./cawachi.json";
 import ccrebAdvisors from "./ccreb-advisors.json";
 import cds from "./cds.json";
+import ceHoldings from "./ce-holdings.json";
 import cedar from "./cedar.json";
+import celsys from "./celsys.json";
+import centralGeneralDevelopment from "./central-general-development.json";
+import centralGlass from "./central-glass.json";
 import centralJapanRailway from "./central-japan-railway.json";
+import ceres from "./ceres.json";
+import chieru from "./chieru.json";
 import chiikishinbunsha from "./chiikishinbunsha.json";
+import chikaranomotoHoldings from "./chikaranomoto-holdings.json";
+import chimney from "./chimney.json";
 import choei from "./choei.json";
 import chordiaTherapeutics from "./chordia-therapeutics.json";
 import choushimaru from "./choushimaru.json";
 import chubushiryo from "./chubushiryo.json";
 import chuco from "./chuco.json";
 import chudenko from "./chudenko.json";
+import chuetsuPulpAndPaper from "./chuetsu-pulp-and-paper.json";
 import chugaiMining from "./chugai-mining.json";
 import chugaiPharmaceutical from "./chugai-pharmaceutical.json";
 import chugaiRo from "./chugai-ro.json";
+import clHoldings from "./cl-holdings.json";
+import classico from "./classico.json";
+import clusterTechnology from "./cluster-technology.json";
 import cmc from "./cmc.json";
+import cns from "./cns.json";
 import cocaColaBottlersJapanHoldings from "./coca-cola-bottlers-japan-holdings.json";
 import cocolive from "./cocolive.json";
+import coconala from "./coconala.json";
+import collabos from "./collabos.json";
+import colopl from "./colopl.json";
 import columbiaWorks from "./columbia-works.json";
+import coly from "./coly.json";
+import cominix from "./cominix.json";
+import commerceOneHoldings from "./commerce-one-holdings.json";
+import commseed from "./commseed.json";
 import como from "./como.json";
+import computerManagement from "./computer-management.json";
 import comsysHoldings from "./comsys-holdings.json";
+import comture from "./comture.json";
 import cookpad from "./cookpad.json";
 import core from "./core.json";
+import cosmoBio from "./cosmo-bio.json";
+import cosmosPharmaceutical from "./cosmos-pharmaceutical.json";
+import cotta from "./cotta.json";
+import cre from "./cre.json";
 import creal from "./creal.json";
 import create from "./create.json";
+import createRestaurantsHoldings from "./create-restaurants-holdings.json";
 import createSdHoldings from "./create-sd-holdings.json";
+import creema from "./creema.json";
+import criMiddleware from "./cri-middleware.json";
 import crooz from "./crooz.json";
 import crossCat from "./cross-cat.json";
 import crossEHoldings from "./cross-e-holdings.json";
+import crossPlus from "./cross-plus.json";
+import crowdworks from "./crowdworks.json";
 import cssHoldings from "./css-holdings.json";
+import cts from "./cts.json";
 import cubeSystem from "./cube-system.json";
+import cyberSecurityCloud from "./cyber-security-cloud.json";
 import cyberagent from "./cyberagent.json";
+import cyberlinks from "./cyberlinks.json";
+import cybersolutions from "./cybersolutions.json";
+import cyberstepHoldings from "./cyberstep-holdings.json";
+import cybertrustJapan from "./cybertrust-japan.json";
+import cynd from "./cynd.json";
+import cypressHoldings from "./cypress-holdings.json";
 import dAndM from "./d-and-m.json";
+import dISystem from "./d-i-system.json";
 import daiDan from "./dai-dan.json";
 import daiIchiCutterKogyo from "./dai-ichi-cutter-kogyo.json";
 import daiIchiLifeHoldings from "./dai-ichi-life-holdings.json";
+import daicel from "./daicel.json";
 import daieisangyo from "./daieisangyo.json";
 import daiho from "./daiho.json";
 import daiichiKensetsu from "./daiichi-kensetsu.json";
@@ -1356,4 +1492,140 @@ export const companies: Company[] = Object.entries({
   takamiya: takamiya,
   "takara-holdings": takaraHoldings,
   "takasago-thermal-engineering": takasagoThermalEngineering,
+  "4cs-hd": c4csHd,
+  "a-tie": aTie,
+  accrete: accrete,
+  "ad-sol-nissin": adSolNissin,
+  adeka: adeka,
+  adr120s: adr120s,
+  "advanced-media": advancedMedia,
+  "aeon-fantasy": aeonFantasy,
+  aeria: aeria,
+  "agent-ig-holdings": agentIgHoldings,
+  "agratio-urban-design": agratioUrbanDesign,
+  ags: ags,
+  ai: ai,
+  "ai-cross": aiCross,
+  "ai-inside": aiInside,
+  "ai-storm": aiStorm,
+  "aica-kogyo": aicaKogyo,
+  aiming: aiming,
+  "air-water": airWater,
+  akatsuki: akatsuki,
+  "alleanza-holdings": alleanzaHoldings,
+  alpha: alpha,
+  "alphax-food-system": alphaxFoodSystem,
+  altplusinc: altplusinc,
+  "ambition-dx-holdings": ambitionDxHoldings,
+  "anap-holdings": anapHoldings,
+  "and-do-holdings": andDoHoldings,
+  "appier-group": appierGroup,
+  appirits: appirits,
+  "applied-technology": appliedTechnology,
+  "arigatou-services": arigatouServices,
+  arkcore: arkcore,
+  artgreen: artgreen,
+  asahi: asahi,
+  "asahi-net": asahiNet,
+  "asahi-printing": asahiPrinting,
+  "asahi-yukizai": asahiYukizai,
+  ascentech: ascentech,
+  ascot: ascot,
+  asgent: asgent,
+  "ashimori-industry": ashimoriIndustry,
+  asiaquest: asiaquest,
+  asmarq: asmarq,
+  asteria: asteria,
+  "ateam-holdings": ateamHoldings,
+  atect: atect,
+  atled: atled,
+  "atom-livin-tech": atomLivinTech,
+  atsugi: atsugi,
+  aubex: aubex,
+  aucfan: aucfan,
+  aucnet: aucnet,
+  "avant-group": avantGroup,
+  "awa-paper-and-technological": awaPaperAndTechnological,
+  "axas-holdings": axasHoldings,
+  "axel-mark": axelMark,
+  "axelspace-holdings": axelspaceHoldings,
+  axis: axis,
+  azoom: azoom,
+  "azuma-house": azumaHouse,
+  "b-lot": bLot,
+  balnibarbi: balnibarbi,
+  "bank-of-innovation": bankOfInnovation,
+  "baroque-japan": baroqueJapan,
+  base: base,
+  "base-4481": base4481,
+  basis: basis,
+  baudroie: baudroie,
+  "bbreak-systems": bbreakSystems,
+  beaglee: beaglee,
+  "beauty-garage": beautyGarage,
+  beenos: beenos,
+  beex: beex,
+  bemap: bemap,
+  "benefit-japan": benefitJapan,
+  betrend: betrend,
+  "billing-system": billingSystem,
+  "blue-zones-holdings": blueZonesHoldings,
+  bluememe: bluememe,
+  "booking-resort": bookingResort,
+  bplats: bplats,
+  brainpad: brainpad,
+  "brains-technology": brainsTechnology,
+  "broad-enterprise": broadEnterprise,
+  "broadband-security": broadbandSecurity,
+  "broadband-tower": broadbandTower,
+  broadleaf: broadleaf,
+  broadmedia: broadmedia,
+  buffalo: buffalo,
+  "c-i-medical": cIMedical,
+  cacco: cacco,
+  "capital-asset-planning": capitalAssetPlanning,
+  carlit: carlit,
+  "carta-holdings": cartaHoldings,
+  "cave-interactive": caveInteractive,
+  "ce-holdings": ceHoldings,
+  celsys: celsys,
+  "central-general-development": centralGeneralDevelopment,
+  "central-glass": centralGlass,
+  ceres: ceres,
+  chieru: chieru,
+  "chikaranomoto-holdings": chikaranomotoHoldings,
+  chimney: chimney,
+  "chuetsu-pulp-and-paper": chuetsuPulpAndPaper,
+  "cl-holdings": clHoldings,
+  classico: classico,
+  "cluster-technology": clusterTechnology,
+  cns: cns,
+  coconala: coconala,
+  collabos: collabos,
+  colopl: colopl,
+  coly: coly,
+  cominix: cominix,
+  "commerce-one-holdings": commerceOneHoldings,
+  commseed: commseed,
+  "computer-management": computerManagement,
+  comture: comture,
+  "cosmo-bio": cosmoBio,
+  "cosmos-pharmaceutical": cosmosPharmaceutical,
+  cotta: cotta,
+  cre: cre,
+  "create-restaurants-holdings": createRestaurantsHoldings,
+  creema: creema,
+  "cri-middleware": criMiddleware,
+  "cross-plus": crossPlus,
+  crowdworks: crowdworks,
+  cts: cts,
+  "cyber-security-cloud": cyberSecurityCloud,
+  cyberlinks: cyberlinks,
+  cybersolutions: cybersolutions,
+  "cyberstep-holdings": cyberstepHoldings,
+  "cybertrust-japan": cybertrustJapan,
+  cynd: cynd,
+  "cypress-holdings": cypressHoldings,
+  "d-i-system": dISystem,
+  daicel: daicel,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
