@@ -31,7 +31,12 @@ const normalize = (s) => s.normalize("NFKC").replace(/\s+/g, "");
  * 当社の所有者, and NTT's plain 「当社に帰属する当期利益」, whose tagged element is
  * ProfitLossAttributableToOwnersOfParentIFRS all the same. All are accepted.
  */
-const PARENT_ATTRIBUTION = /((親会社|当社)の?(株主|所有者)に?帰属|当社に帰属)/;
+/**
+ * …or 「持分」 instead of 「帰属」: some filers print 「当期利益(親会社株主持分)」, which
+ * names the parent's shareholders just as plainly and is the fourth wording this
+ * rule has had to learn.
+ */
+const PARENT_ATTRIBUTION = /((親会社|当社)の?(株主|所有者)に?帰属|当社に帰属|(親会社|当社)(株主|所有者)持分)/;
 /**
  * …but never the comprehensive-income row, which sits directly beneath net income
  * in these tables and is worded almost identically (NTT prints both

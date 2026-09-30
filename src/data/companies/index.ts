@@ -71,6 +71,7 @@ import albalink from "./albalink.json";
 import alconix from "./alconix.json";
 import alfresaHoldings from "./alfresa-holdings.json";
 import alinco from "./alinco.json";
+import alinkInternet from "./alink-internet.json";
 import allAbout from "./all-about.json";
 import alleanzaHoldings from "./alleanza-holdings.json";
 import alliedArchitects from "./allied-architects.json";
@@ -93,9 +94,11 @@ import amada from "./amada.json";
 import amano from "./amano.json";
 import amatei from "./amatei.json";
 import amaze from "./amaze.json";
+import amazia from "./amazia.json";
 import ambitionDxHoldings from "./ambition-dx-holdings.json";
 import ameKazeTaiyo from "./ame-kaze-taiyo.json";
 import amitaHoldings from "./amita-holdings.json";
+import amiya from "./amiya.json";
 import amiyakiTei from "./amiyaki-tei.json";
 import amvisHoldings from "./amvis-holdings.json";
 import anaHoldings from "./ana-holdings.json";
@@ -112,6 +115,7 @@ import anymindGroup from "./anymind-group.json";
 import aobaBbt from "./aoba-bbt.json";
 import aohata from "./aohata.json";
 import aoiElectronics from "./aoi-electronics.json";
+import aplix from "./aplix.json";
 import appierGroup from "./appier-group.json";
 import appirits from "./appirits.json";
 import appleInternational from "./apple-international.json";
@@ -172,6 +176,7 @@ import asti from "./asti.json";
 import astmax from "./astmax.json";
 import astroscaleHoldings from "./astroscale-holdings.json";
 import asua from "./asua.json";
+import asukanet from "./asukanet.json";
 import ateamHoldings from "./ateam-holdings.json";
 import atect from "./atect.json";
 import atled from "./atled.json";
@@ -199,8 +204,10 @@ import axyz from "./axyz.json";
 import azbil from "./azbil.json";
 import azearth from "./azearth.json";
 import azoom from "./azoom.json";
+import azplanning from "./azplanning.json";
 import azumaHouse from "./azuma-house.json";
 import bLot from "./b-lot.json";
+import bR31IceCream from "./b-r-31-ice-cream.json";
 import bStyleHoldings from "./b-style-holdings.json";
 import balmuda from "./balmuda.json";
 import balnibarbi from "./balnibarbi.json";
@@ -231,6 +238,7 @@ import besterra from "./besterra.json";
 import bestoneCom from "./bestone-com.json";
 import betrend from "./betrend.json";
 import bicCamera from "./bic-camera.json";
+import bikeOAndCompany from "./bike-o-and-company.json";
 import billingSystem from "./billing-system.json";
 import birdman from "./birdman.json";
 import blueInnovation from "./blue-innovation.json";
@@ -335,6 +343,7 @@ import chukyoiyakuhin from "./chukyoiyakuhin.json";
 import chuoMalleableIron from "./chuo-malleable-iron.json";
 import chuoSeisakusho from "./chuo-seisakusho.json";
 import chuoSpring from "./chuo-spring.json";
+import cinc from "./cinc.json";
 import circlace from "./circlace.json";
 import ckSanEtsu from "./ck-san-etsu.json";
 import ckd from "./ckd.json";
@@ -367,6 +376,7 @@ import cookbiz from "./cookbiz.json";
 import cookpad from "./cookpad.json";
 import coproHoldings from "./copro-holdings.json";
 import core from "./core.json";
+import coreConceptTechnologies from "./core-concept-technologies.json";
 import corona from "./corona.json";
 import correcHoldings from "./correc-holdings.json";
 import cosel from "./cosel.json";
@@ -513,6 +523,7 @@ import dreamarts from "./dreamarts.json";
 import drecom from "./drecom.json";
 import dualtap from "./dualtap.json";
 import duskin from "./duskin.json";
+import dvx from "./dvx.json";
 import dydoGroupHoldings from "./dydo-group-holdings.json";
 import dynamicMapPlatform from "./dynamic-map-platform.json";
 import dynapac from "./dynapac.json";
@@ -566,6 +577,7 @@ import enomoto from "./enomoto.json";
 import enplas from "./enplas.json";
 import enshu from "./enshu.json";
 import ensuikoSugarRefining from "./ensuiko-sugar-refining.json";
+import entrust from "./entrust.json";
 import enviproHoldings from "./envipro-holdings.json";
 import environmentFriendlyHoldings from "./environment-friendly-holdings.json";
 import environmentalControlCenter from "./environmental-control-center.json";
@@ -626,6 +638,7 @@ import fitcrew from "./fitcrew.json";
 import fixer from "./fixer.json";
 import fixstars from "./fixstars.json";
 import flect from "./flect.json";
+import flier from "./flier.json";
 import flightSolutions from "./flight-solutions.json";
 import flyingGarden from "./flying-garden.json";
 import focusSystems from "./focus-systems.json";
@@ -750,6 +763,7 @@ import globalStyle from "./global-style.json";
 import globalway from "./globalway.json";
 import globeIng from "./globe-ing.json";
 import globee from "./globee.json";
+import glory from "./glory.json";
 import gltechnoHoldings from "./gltechno-holdings.json";
 import gmb from "./gmb.json";
 import gmoCommerce from "./gmo-commerce.json";
@@ -815,6 +829,7 @@ import hatena from "./hatena.json";
 import havix from "./havix.json";
 import hayashikaneSangyo from "./hayashikane-sangyo.json";
 import hazamaAndo from "./hazama-ando.json";
+import headwaters from "./headwaters.json";
 import healios from "./healios.json";
 import heartseed from "./heartseed.json";
 import heianCeremonyService from "./heian-ceremony-service.json";
@@ -846,6 +861,7 @@ import hisakaWorks from "./hisaka-works.json";
 import hisamitsuPharmaceutical from "./hisamitsu-pharmaceutical.json";
 import hit from "./hit.json";
 import hitachi from "./hitachi.json";
+import hitachiConstructionMachinery from "./hitachi-construction-machinery.json";
 import hitoCommunicationsHoldings from "./hito-communications-holdings.json";
 import hitoToHitoHoldings from "./hito-to-hito-holdings.json";
 import hks from "./hks.json";
@@ -875,6 +891,7 @@ import honyakuCenter from "./honyaku-center.json";
 import hoosiersHoldings from "./hoosiers-holdings.json";
 import hope from "./hope.json";
 import horiba from "./horiba.json";
+import horiifoodservice from "./horiifoodservice.json";
 import hoshizaki from "./hoshizaki.json";
 import hosiden from "./hosiden.json";
 import hosokawaMicron from "./hosokawa-micron.json";
@@ -886,6 +903,7 @@ import houseFoodsGroup from "./house-foods-group.json";
 import housei from "./housei.json";
 import howaMachinery from "./howa-machinery.json";
 import howtelevision from "./howtelevision.json";
+import hpcSystems from "./hpc-systems.json";
 import hub from "./hub.json";
 import hulic from "./hulic.json";
 import humanHoldings from "./human-holdings.json";
@@ -895,6 +913,7 @@ import humanTechnologies from "./human-technologies.json";
 import hutzper from "./hutzper.json";
 import hybridTechnologies from "./hybrid-technologies.json";
 import hyper from "./hyper.json";
+import hyugaPrimaryCare from "./hyuga-primary-care.json";
 import iCubedSystems from "./i-cubed-systems.json";
 import iFreekMobile from "./i-freek-mobile.json";
 import iGridSolutions from "./i-grid-solutions.json";
@@ -928,6 +947,7 @@ import ikkHoldings from "./ikk-holdings.json";
 import ikkaHoldings from "./ikka-holdings.json";
 import ikuyo from "./ikuyo.json";
 import imageInformation from "./image-information.json";
+import imageone from "./imageone.json";
 import imagicaGroup from "./imagica-group.json";
 import imagineer from "./imagineer.json";
 import imasenElectricIndustrial from "./imasen-electric-industrial.json";
@@ -935,6 +955,7 @@ import immunoBiologicalLaboratories from "./immuno-biological-laboratories.json"
 import imuraAndCo from "./imura-and-co.json";
 import imurayaGroup from "./imuraya-group.json";
 import inabaSeisakusho from "./inaba-seisakusho.json";
+import inboundPlatform from "./inbound-platform.json";
 import inboundTech from "./inbound-tech.json";
 import inclusiveHoldings from "./inclusive-holdings.json";
 import inest from "./inest.json";
@@ -1158,6 +1179,7 @@ import khNeochem from "./kh-neochem.json";
 import kiStarRealEstate from "./ki-star-real-estate.json";
 import kibunFoods from "./kibun-foods.json";
 import kichiriHoldingsAndCo from "./kichiri-holdings-and-co.json";
+import kidsStar from "./kids-star.json";
 import kidswellBio from "./kidswell-bio.json";
 import kikkoman from "./kikkoman.json";
 import kikuchiSeisakusho from "./kikuchi-seisakusho.json";
@@ -1200,6 +1222,7 @@ import koikeSansoKogyo from "./koike-sanso-kogyo.json";
 import koikeYa from "./koike-ya.json";
 import koitoManufacturing from "./koito-manufacturing.json";
 import kokenBoringMachine from "./koken-boring-machine.json";
+import kokopelli from "./kokopelli.json";
 import kokusaiElectric from "./kokusai-electric.json";
 import komaihaltec from "./komaihaltec.json";
 import komatsu from "./komatsu.json";
@@ -1231,8 +1254,10 @@ import kumiaiChemicalIndustry from "./kumiai-chemical-industry.json";
 import kunimineIndustries from "./kunimine-industries.json";
 import kuraSushi from "./kura-sushi.json";
 import kuraboIndustries from "./kurabo-industries.json";
+import kuradashi from "./kuradashi.json";
 import kuramoto from "./kuramoto.json";
 import kuraray from "./kuraray.json";
+import kurashicom from "./kurashicom.json";
 import kurashiru from "./kurashiru.json";
 import kuraudiaHoldings from "./kuraudia-holdings.json";
 import kureha from "./kureha.json";
@@ -1313,10 +1338,12 @@ import loive from "./loive.json";
 import lonseal from "./lonseal.json";
 import lts from "./lts.json";
 import ly from "./ly.json";
+import mAndACapitalPartners from "./m-and-a-capital-partners.json";
 import mMart from "./m-mart.json";
 import mUpHoldings from "./m-up-holdings.json";
 import m3 from "./m3.json";
 import mabuchiMotor from "./mabuchi-motor.json";
+import macbeePlanet from "./macbee-planet.json";
 import macnicaHoldings from "./macnica-holdings.json";
 import macromill from "./macromill.json";
 import maezawaIndustries from "./maezawa-industries.json";
@@ -1375,6 +1402,7 @@ import medicalNet from "./medical-net.json";
 import medicalSystemNetwork from "./medical-system-network.json";
 import medinet from "./medinet.json";
 import mediusHoldings from "./medius-holdings.json";
+import medix from "./medix.json";
 import medley from "./medley.json";
 import medpeer from "./medpeer.json";
 import medrx from "./medrx.json";
@@ -1414,6 +1442,7 @@ import minkabuTheInfonoid from "./minkabu-the-infonoid.json";
 import minoCeramic from "./mino-ceramic.json";
 import minoya from "./minoya.json";
 import mipox from "./mipox.json";
+import miraiWorks from "./mirai-works.json";
 import miraial from "./miraial.json";
 import mirairo from "./mirairo.json";
 import miraitOne from "./mirait-one.json";
@@ -1503,6 +1532,7 @@ import nagoyaElectricWorks from "./nagoya-electric-works.json";
 import naigaiTec from "./naigai-tec.json";
 import naikaiZosen from "./naikai-zosen.json";
 import nakabohtecCorrosionProtecting from "./nakabohtec-corrosion-protecting.json";
+import nakakitaSeisakusho from "./nakakita-seisakusho.json";
 import nakamuraya from "./nakamuraya.json";
 import nakanipponCasting from "./nakanippon-casting.json";
 import nakanishiMfg from "./nakanishi-mfg.json";
@@ -1557,10 +1587,12 @@ import nichirin from "./nichirin.json";
 import nichiryoBaking from "./nichiryo-baking.json";
 import nichiwaSangyo from "./nichiwa-sangyo.json";
 import nidec from "./nidec.json";
+import niftyLifestyle from "./nifty-lifestyle.json";
 import nihonChouzai from "./nihon-chouzai.json";
 import nihonDengi from "./nihon-dengi.json";
 import nihonEnterprise from "./nihon-enterprise.json";
 import nihonFalcom from "./nihon-falcom.json";
+import nihonHouseHoldings from "./nihon-house-holdings.json";
 import nihonKagakuSangyo from "./nihon-kagaku-sangyo.json";
 import nihonKnowledge from "./nihon-knowledge.json";
 import nihonKogyo from "./nihon-kogyo.json";
@@ -1780,6 +1812,7 @@ import orientalConsultantsHoldings from "./oriental-consultants-holdings.json";
 import orientalLand from "./oriental-land.json";
 import orientalShiraishi from "./oriental-shiraishi.json";
 import origin from "./origin.json";
+import originalEngineeringConsultants from "./original-engineering-consultants.json";
 import orionBreweries from "./orion-breweries.json";
 import oro from "./oro.json";
 import osakaOrganicChemicalIndustry from "./osaka-organic-chemical-industry.json";
@@ -1836,6 +1869,8 @@ import pillar from "./pillar.json";
 import piolax from "./piolax.json";
 import pixelcompanyz from "./pixelcompanyz.json";
 import pixta from "./pixta.json";
+import pkshaTechnology from "./pksha-technology.json";
+import placo from "./placo.json";
 import plaid from "./plaid.json";
 import planet from "./planet.json";
 import platHome from "./plat-home.json";
@@ -1879,6 +1914,7 @@ import qlsHoldings from "./qls-holdings.json";
 import qolHoldings from "./qol-holdings.json";
 import qpsHoldings from "./qps-holdings.json";
 import quantumSolutions from "./quantum-solutions.json";
+import quest from "./quest.json";
 import quick from "./quick.json";
 import rAndDComputer from "./r-and-d-computer.json";
 import raccoonHoldings from "./raccoon-holdings.json";
@@ -2092,8 +2128,11 @@ import shinNipponAirTechnologies from "./shin-nippon-air-technologies.json";
 import shinNipponBiomedicalLaboratories from "./shin-nippon-biomedical-laboratories.json";
 import shinagawaRefra from "./shinagawa-refra.json";
 import shindenHightex from "./shinden-hightex.json";
+import shindengenElectricManufacturing from "./shindengen-electric-manufacturing.json";
 import shinhokokuMaterial from "./shinhokoku-material.json";
+import shinko from "./shinko.json";
 import shinkoWire from "./shinko-wire.json";
+import shinmaywaIndustries from "./shinmaywa-industries.json";
 import shinnihon from "./shinnihon.json";
 import shinnihonseiyaku from "./shinnihonseiyaku.json";
 import shinobuFoodsProducts from "./shinobu-foods-products.json";
@@ -2103,12 +2142,15 @@ import shinto from "./shinto.json";
 import shintoHoldings from "./shinto-holdings.json";
 import shintoPaint from "./shinto-paint.json";
 import shinwa from "./shinwa.json";
+import shinwaHoldings from "./shinwa-holdings.json";
 import shinwaWiseHoldings from "./shinwa-wise-holdings.json";
 import shinyeiKaisha from "./shinyei-kaisha.json";
 import shionogiAndCo from "./shionogi-and-co.json";
 import shipHealthcareHoldings from "./ship-healthcare-holdings.json";
+import shiraiElectronicsIndustrial from "./shirai-electronics-industrial.json";
 import shirohato from "./shirohato.json";
 import shiseido from "./shiseido.json";
+import shizukiElectric from "./shizuki-electric.json";
 import shizuokaFinancialGroup from "./shizuoka-financial-group.json";
 import shoBondHoldings from "./sho-bond-holdings.json";
 import shoeiYakuhin from "./shoei-yakuhin.json";
@@ -2117,88 +2159,607 @@ import showaHoldings from "./showa-holdings.json";
 import showaManufacturing from "./showa-manufacturing.json";
 import showaPaxxs from "./showa-paxxs.json";
 import showaSangyo from "./showa-sangyo.json";
+import showaShinku from "./showa-shinku.json";
 import showaSystemEngineering from "./showa-system-engineering.json";
 import showcase from "./showcase.json";
 import shueiYobiko from "./shuei-yobiko.json";
 import sigGroup from "./sig-group.json";
+import sigmaxyzHoldings from "./sigmaxyz-holdings.json";
 import signpost from "./signpost.json";
 import siliconStudio from "./silicon-studio.json";
 import silverEggTechnology from "./silver-egg-technology.json";
 import simplexHoldings from "./simplex-holdings.json";
+import sinfoniaTechnology from "./sinfonia-technology.json";
+import sinkoIndustries from "./sinko-industries.json";
 import sinops from "./sinops.json";
+import sintokogio from "./sintokogio.json";
 import sios from "./sios.json";
+import siriusvision from "./siriusvision.json";
+import skElectronics from "./sk-electronics.json";
 import skKaken from "./sk-kaken.json";
 import skylarkHoldings from "./skylark-holdings.json";
 import smEntertainmentJapan from "./sm-entertainment-japan.json";
 import smaregi from "./smaregi.json";
 import smartdrive from "./smartdrive.json";
 import smc from "./smc.json";
+import smileHoldings from "./smile-holdings.json";
+import smk from "./smk.json";
 import sms from "./sms.json";
 import sobal from "./sobal.json";
 import socialwire from "./socialwire.json";
 import socionext from "./socionext.json";
+import sockets from "./sockets.json";
+import sodick from "./sodick.json";
+import soft99corporation from "./soft99corporation.json";
 import softbank from "./softbank.json";
+import softcreateHoldings from "./softcreate-holdings.json";
 import softfrontHoldings from "./softfront-holdings.json";
+import softmax from "./softmax.json";
+import softtex from "./softtex.json";
+import softwareService from "./software-service.json";
 import soikenHoldings from "./soiken-holdings.json";
 import sojitz from "./sojitz.json";
+import sokenChemicalAndEngineering from "./soken-chemical-and-engineering.json";
+import solasiaPharma from "./solasia-pharma.json";
+import solasto from "./solasto.json";
 import solitonSystems from "./soliton-systems.json";
+import solizeHoldings from "./solize-holdings.json";
+import solxyz from "./solxyz.json";
 import sompoHoldings from "./sompo-holdings.json";
 import sonec from "./sonec.json";
 import sonyGroup from "./sony-group.json";
+import sophiaHoldings from "./sophia-holdings.json";
 import soracom from "./soracom.json";
+import sotoh from "./sotoh.json";
 import soukenAce from "./souken-ace.json";
+import sourcenext from "./sourcenext.json";
+import spaceMarket from "./space-market.json";
+import spaceShowerSkiyakiHoldings from "./space-shower-skiyaki-holdings.json";
+import speee from "./speee.json";
+import spiderplusAndCo from "./spiderplus-and-co.json";
+import sportsfield from "./sportsfield.json";
+import sprix from "./sprix.json";
+import sraHoldings from "./sra-holdings.json";
 import sreHoldings from "./sre-holdings.json";
 import stCousair from "./st-cousair.json";
+import stanleyElectric from "./stanley-electric.json";
 import starMicaHoldings from "./star-mica-holdings.json";
 import starSeeds from "./star-seeds.json";
+import startiaHoldings from "./startia-holdings.json";
+import startline from "./startline.json";
+import stellaChemifa from "./stella-chemifa.json";
+import stellaPharma from "./stella-pharma.json";
+import stemcellInstitute from "./stemcell-institute.json";
+import stemrim from "./stemrim.json";
+import stg from "./stg.json";
 import stiFoodsHoldings from "./sti-foods-holdings.json";
+import stmn from "./stmn.json";
 import storageOh from "./storage-oh.json";
 import stream from "./stream.json";
+import strike from "./strike.json";
+import strust from "./strust.json";
 import studioAlice from "./studio-alice.json";
+import studioAtao from "./studio-atao.json";
 import subaru from "./subaru.json";
+import sugaiChemicalIndustry from "./sugai-chemical-industry.json";
+import suidoKikoKaisha from "./suido-kiko-kaisha.json";
+import sumco from "./sumco.json";
+import sumida from "./sumida.json";
 import sumikenMitsuiRoad from "./sumiken-mitsui-road.json";
+import suminoe from "./suminoe.json";
 import sumisekiHoldings from "./sumiseki-holdings.json";
+import sumitomoBakelite from "./sumitomo-bakelite.json";
 import sumitomoChemical from "./sumitomo-chemical.json";
 import sumitomoCorporation from "./sumitomo-corporation.json";
 import sumitomoDensetsu from "./sumitomo-densetsu.json";
+import sumitomoElectricIndustries from "./sumitomo-electric-industries.json";
 import sumitomoForestry from "./sumitomo-forestry.json";
 import sumitomoMetalMining from "./sumitomo-metal-mining.json";
 import sumitomoMitsuiConstruction from "./sumitomo-mitsui-construction.json";
 import sumitomoMitsuiFinancialGroup from "./sumitomo-mitsui-financial-group.json";
+import sumitomoOsakaCement from "./sumitomo-osaka-cement.json";
+import sumitomoPharma from "./sumitomo-pharma.json";
 import sumitomoRealtyAndDevelopment from "./sumitomo-realty-and-development.json";
+import sumitomoRiko from "./sumitomo-riko.json";
+import sumitomoRubberIndustries from "./sumitomo-rubber-industries.json";
+import sumitomoSeikaChemicals from "./sumitomo-seika-chemicals.json";
+import sun from "./sun.json";
+import sunAKaken from "./sun-a-kaken.json";
+import sunLifeHolding from "./sun-life-holding.json";
+import suncall from "./suncall.json";
+import suncorporation from "./suncorporation.json";
 import sunnySideUpGroup from "./sunny-side-up-group.json";
 import suntoryBeverageAndFood from "./suntory-beverage-and-food.json";
+import superTool from "./super-tool.json";
 import superValue from "./super-value.json";
+import superbag from "./superbag.json";
+import suralaNet from "./surala-net.json";
+import sus from "./sus.json";
+import susmed from "./susmed.json";
 import suzuki from "./suzuki.json";
+import suzuki6785 from "./suzuki-6785.json";
+import suzumoMachinery from "./suzumo-machinery.json";
+import swcc from "./swcc.json";
+import symbioPharmaceuticals from "./symbio-pharmaceuticals.json";
+import synchroFood from "./synchro-food.json";
 import synclayer from "./synclayer.json";
 import synspective from "./synspective.json";
+import sysHoldings from "./sys-holdings.json";
+import sysmex from "./sysmex.json";
+import systemD from "./system-d.json";
+import systemIntegrator from "./system-integrator.json";
 import systemLocation from "./system-location.json";
+import systemResearch from "./system-research.json";
+import systemSupportHoldings from "./system-support-holdings.json";
+import systemexe from "./systemexe.json";
+import systemsDesign from "./systems-design.json";
+import systemsEngineeringConsultants from "./systems-engineering-consultants.json";
 import systena from "./systena.json";
+import syuppin from "./syuppin.json";
+import tAndSGroup from "./t-and-s-group.json";
+import tHasegawa from "./t-hasegawa.json";
+import tRad from "./t-rad.json";
+import tabikobo from "./tabikobo.json";
 import tabio from "./tabio.json";
+import tac from "./tac.json";
+import tachiS from "./tachi-s.json";
+import tacmina from "./tacmina.json";
+import tadano from "./tadano.json";
 import taiheiDengyoKaisha from "./taihei-dengyo-kaisha.json";
+import taiheiMachineryWorks from "./taihei-machinery-works.json";
+import taiheiyoCement from "./taiheiyo-cement.json";
+import taihoKogyo from "./taiho-kogyo.json";
 import taikisha from "./taikisha.json";
+import taikoPharmaceutical from "./taiko-pharmaceutical.json";
 import taisei from "./taisei.json";
+import taiseiLamickGroupHeadQuarterAndInnovation from "./taisei-lamick-group-head-quarter-and-innovation.json";
 import taiseiOncho from "./taisei-oncho.json";
+import taiyoHoldings from "./taiyo-holdings.json";
 import taiyoKagaku from "./taiyo-kagaku.json";
 import taiyoKisokogyo from "./taiyo-kisokogyo.json";
+import taiyoTechnolex from "./taiyo-technolex.json";
 import taiyoYuden from "./taiyo-yuden.json";
 import takachihoKoheki from "./takachiho-koheki.json";
 import takada from "./takada.json";
+import takadakikoSteelConstruction from "./takadakiko-steel-construction.json";
+import takagiSeiko from "./takagi-seiko.json";
 import takahashiCurtainWall from "./takahashi-curtain-wall.json";
+import takakita from "./takakita.json";
 import takamatsuConstructionGroup from "./takamatsu-construction-group.json";
+import takamisawa from "./takamisawa.json";
+import takamisawaCybernetics from "./takamisawa-cybernetics.json";
 import takamiya from "./takamiya.json";
+import takaokaToko from "./takaoka-toko.json";
+import takaraBio from "./takara-bio.json";
 import takaraHoldings from "./takara-holdings.json";
+import takasagoInternational from "./takasago-international.json";
+import takasagoTekkoKK from "./takasago-tekko-k-k.json";
 import takasagoThermalEngineering from "./takasago-thermal-engineering.json";
+import takatori from "./takatori.json";
+import takeAndGiveNeeds from "./take-and-give-needs.json";
 import takedaPharmaceutical from "./takeda-pharmaceutical.json";
+import takemotoYohki from "./takemoto-yohki.json";
+import takeuchiMfg from "./takeuchi-mfg.json";
+import takiChemical from "./taki-chemical.json";
+import takizawaHam from "./takizawa-ham.json";
+import takuma from "./takuma.json";
+import talentx from "./talentx.json";
+import tamaHome from "./tama-home.json";
+import tamagawaHoldings from "./tamagawa-holdings.json";
+import tamura from "./tamura.json";
+import tanabeEngineering from "./tanabe-engineering.json";
+import tanakaChemical from "./tanaka-chemical.json";
+import tanakaSeimitsuKogyo from "./tanaka-seimitsu-kogyo.json";
+import tanaken from "./tanaken.json";
+import taokaChemical from "./taoka-chemical.json";
+import tasukiHoldings from "./tasuki-holdings.json";
+import taunsLaboratories from "./tauns-laboratories.json";
+import taya from "./taya.json";
+import tayca from "./tayca.json";
+import tazmo from "./tazmo.json";
+import tbGroup from "./tb-group.json";
+import tbk from "./tbk.json";
+import tdcSoft from "./tdc-soft.json";
 import tdk from "./tdk.json";
+import tdse from "./tdse.json";
+import teaLife from "./tea-life.json";
+import teac from "./teac.json";
+import teamspirit from "./teamspirit.json";
+import tear from "./tear.json";
+import techfirmHoldings from "./techfirm-holdings.json";
+import techmatrix from "./techmatrix.json";
+import technoAlpha from "./techno-alpha.json";
+import technoHorizon from "./techno-horizon.json";
+import technoMathematical from "./techno-mathematical.json";
+import technoMedica from "./techno-medica.json";
+import technoRyowa from "./techno-ryowa.json";
+import technoSmart from "./techno-smart.json";
+import technoflex from "./technoflex.json";
+import technologies from "./technologies.json";
+import technoproHoldings from "./technopro-holdings.json";
+import tecmiraHoldings from "./tecmira-holdings.json";
+import tecnisco from "./tecnisco.json";
+import teijin from "./teijin.json";
+import teikoku from "./teikoku.json";
+import teikokuSenI from "./teikoku-sen-i.json";
+import teikokuTsushinKogyo from "./teikoku-tsushin-kogyo.json";
+import tein from "./tein.json";
+import tekken from "./tekken.json";
+import tekscendPhotomask from "./tekscend-photomask.json";
+import temairazu from "./temairazu.json";
+import temona from "./temona.json";
+import tenda from "./tenda.json";
+import tenoHoldings from "./teno-holdings.json";
+import tenox from "./tenox.json";
+import tenposHoldings from "./tenpos-holdings.json";
+import tenryuSawMfg from "./tenryu-saw-mfg.json";
+import tenshoElectricIndustries from "./tensho-electric-industries.json";
+import tential from "./tential.json";
+import teraProbe from "./tera-probe.json";
+import teraTechnology from "./tera-technology.json";
+import terasakiElectric from "./terasaki-electric.json";
+import terilogyHoldings from "./terilogy-holdings.json";
+import terraDrone from "./terra-drone.json";
+import terrasky from "./terrasky.json";
+import terumo from "./terumo.json";
+import tesec from "./tesec.json";
+import tessHoldings from "./tess-holdings.json";
+import tetsujinHoldings from "./tetsujin-holdings.json";
+import theFirstBankOfToyama from "./the-first-bank-of-toyama.json";
+import theFurukawaBattery from "./the-furukawa-battery.json";
+import theGlobal from "./the-global.json";
+import theHanshinDieselWorks from "./the-hanshin-diesel-works.json";
+import theImamuraSecurities from "./the-imamura-securities.json";
+import theJapanSteelWorks from "./the-japan-steel-works.json";
+import theJapanWoolTextile from "./the-japan-wool-textile.json";
+import theKaneshitaConstruction from "./the-kaneshita-construction.json";
+import theKinkiSharyo from "./the-kinki-sharyo.json";
+import theKodensha from "./the-kodensha.json";
+import theLead from "./the-lead.json";
+import theMonogatari from "./the-monogatari.json";
+import theNihonSeima from "./the-nihon-seima.json";
+import theNipponRoad from "./the-nippon-road.json";
+import theNipponSignal from "./the-nippon-signal.json";
+import theNisshinOillioGroup from "./the-nisshin-oillio-group.json";
+import thePack from "./the-pack.json";
+import theTakigamiSteelConstruction from "./the-takigami-steel-construction.json";
+import theTorigoe from "./the-torigoe.json";
+import theWhyHowDo from "./the-why-how-do.json";
+import theYokohamaRubber from "./the-yokohama-rubber.json";
+import theZenitaka from "./the-zenitaka.json";
+import thecoo from "./thecoo.json";
+import thermaeYuHoldings from "./thermae-yu-holdings.json";
+import thinca from "./thinca.json";
+import thineElectronics from "./thine-electronics.json";
+import thk from "./thk.json";
+import tigersPolymer from "./tigers-polymer.json";
+import timee from "./timee.json";
+import tis from "./tis.json";
+import titanKogyo from "./titan-kogyo.json";
+import tkp from "./tkp.json";
+import tmh from "./tmh.json";
+import tms from "./tms.json";
+import toBooks from "./to-books.json";
+import toa from "./toa.json";
+import toa6809 from "./toa-6809.json";
+import toaRoad from "./toa-road.json";
+import toabo from "./toabo.json";
+import toagosei from "./toagosei.json";
+import toami from "./toami.json";
+import tobilaSystems from "./tobila-systems.json";
+import tobishimaHoldings from "./tobishima-holdings.json";
+import tocalo from "./tocalo.json";
+import toda from "./toda.json";
+import todaKogyo from "./toda-kogyo.json";
+import toeiAnimation from "./toei-animation.json";
+import toell from "./toell.json";
+import toenec from "./toenec.json";
+import togamiElectricMfg from "./togami-electric-mfg.json";
+import tohoAcetylene from "./toho-acetylene.json";
+import tohoChemicalIndustry from "./toho-chemical-industry.json";
+import tohoSystemScience from "./toho-system-science.json";
+import tohoTitanium from "./toho-titanium.json";
+import tohokuSteel from "./tohoku-steel.json";
+import tohokushinshaFilm from "./tohokushinsha-film.json";
+import tokaiCarbon from "./tokai-carbon.json";
+import tokaiHoldings from "./tokai-holdings.json";
+import tokaiRika from "./tokai-rika.json";
+import tokaiSenko from "./tokai-senko.json";
+import tokaiSoft from "./tokai-soft.json";
+import token from "./token.json";
 import tokioMarineHoldings from "./tokio-marine-holdings.json";
+import tokuden from "./tokuden.json";
+import tokura from "./tokura.json";
+import tokushuTokaiPaper from "./tokushu-tokai-paper.json";
+import tokuyama from "./tokuyama.json";
+import tokyoAutomaticMachineryWorks from "./tokyo-automatic-machinery-works.json";
+import tokyoBase from "./tokyo-base.json";
+import tokyoCosmosElectric from "./tokyo-cosmos-electric.json";
 import tokyoElectron from "./tokyo-electron.json";
+import tokyoElectronDevice from "./tokyo-electron-device.json";
+import tokyoEnergyAndSystems from "./tokyo-energy-and-systems.json";
+import tokyoIchibanFoods from "./tokyo-ichiban-foods.json";
+import tokyoIndividualizedEducationalInstitute from "./tokyo-individualized-educational-institute.json";
+import tokyoKikaiSeisakusho from "./tokyo-kikai-seisakusho.json";
+import tokyoKiraboshiFinancialGroup from "./tokyo-kiraboshi-financial-group.json";
+import tokyoOhkaKogyo from "./tokyo-ohka-kogyo.json";
+import tokyoPrintingInkMfg from "./tokyo-printing-ink-mfg.json";
+import tokyoRadiatorMfg from "./tokyo-radiator-mfg.json";
+import tokyoRopeMfg from "./tokyo-rope-mfg.json";
+import tokyoTatemono from "./tokyo-tatemono.json";
+import tokyoTekko from "./tokyo-tekko.json";
+import tokyuConstruction from "./tokyu-construction.json";
+import tokyuFudosanHoldings from "./tokyu-fudosan-holdings.json";
+import tomenDevices from "./tomen-devices.json";
+import tomitaElectric from "./tomita-electric.json";
+import tomoe from "./tomoe.json";
+import tomoeEngineering from "./tomoe-engineering.json";
+import tomoegawa from "./tomoegawa.json";
+import tomoku from "./tomoku.json";
+import tone from "./tone.json";
+import topre from "./topre.json";
+import topyIndustries from "./topy-industries.json";
+import toray from "./toray.json";
+import torexSemiconductor from "./torex-semiconductor.json";
+import torico from "./torico.json";
+import toridollHoldings from "./toridoll-holdings.json";
+import toriiPharmaceutical from "./torii-pharmaceutical.json";
+import torishimaPumpMfg from "./torishima-pump-mfg.json";
+import tose from "./tose.json";
+import toshibaTec from "./toshiba-tec.json";
+import tosnet from "./tosnet.json";
+import toso from "./toso.json";
+import tosoh from "./tosoh.json";
+import totetsuKogyo from "./totetsu-kogyo.json";
+import toto from "./toto.json";
+import toubujyuhan from "./toubujyuhan.json";
+import toukeiComputer from "./toukei-computer.json";
+import toumei from "./toumei.json";
+import tow from "./tow.json";
+import towa from "./towa.json";
+import towaFoodService from "./towa-food-service.json";
+import towaHiSystem from "./towa-hi-system.json";
+import towaPharmaceutical from "./towa-pharmaceutical.json";
+import townnewsSha from "./townnews-sha.json";
+import toyoAsanoFoundation from "./toyo-asano-foundation.json";
+import toyoConstruction from "./toyo-construction.json";
+import toyoDenkiSeizo from "./toyo-denki-seizo.json";
+import toyoDrilube from "./toyo-drilube.json";
+import toyoElectric from "./toyo-electric.json";
+import toyoGosei from "./toyo-gosei.json";
+import toyoInnovex from "./toyo-innovex.json";
+import toyoKanetsu from "./toyo-kanetsu.json";
+import toyoSeikanGroupHoldings from "./toyo-seikan-group-holdings.json";
+import toyoShutter from "./toyo-shutter.json";
+import toyoSuisanKaisha from "./toyo-suisan-kaisha.json";
+import toyoTanso from "./toyo-tanso.json";
+import toyoTire from "./toyo-tire.json";
+import toyobo from "./toyobo.json";
+import toyokumo from "./toyokumo.json";
 import toyota from "./toyota.json";
+import toyotaBoshoku from "./toyota-boshoku.json";
+import toyotaIndustries6201 from "./toyota-industries-6201.json";
+import tpr from "./tpr.json";
+import traasOnProduct from "./traas-on-product.json";
+import tradeWorks from "./trade-works.json";
+import trailheadGlobalHoldings from "./trailhead-global-holdings.json";
+import transGenicGroup from "./trans-genic-group.json";
+import transactionMediaNetworks from "./transaction-media-networks.json";
+import treasureFactory from "./treasure-factory.json";
+import trendMicro from "./trend-micro.json";
+import trenders from "./trenders.json";
+import triChemicalLaboratories from "./tri-chemical-laboratories.json";
+import trialHoldings from "./trial-holdings.json";
+import triis from "./triis.json";
+import trinityIndustrial from "./trinity-industrial.json";
+import tripla from "./tripla.json";
+import tripleize from "./tripleize.json";
+import truckOne from "./truck-one.json";
+import trueData from "./true-data.json";
+import trust from "./trust.json";
+import trustHoldings from "./trust-holdings.json";
+import tsiHoldings from "./tsi-holdings.json";
+import tsubakiNakashima from "./tsubaki-nakashima.json";
+import tsubakimotoChain from "./tsubakimoto-chain.json";
+import tsubotaLaboratory from "./tsubota-laboratory.json";
+import tsuburayaFieldsHoldings from "./tsuburaya-fields-holdings.json";
+import tsuchiyaHoldings from "./tsuchiya-holdings.json";
+import tsudakoma from "./tsudakoma.json";
+import tsugami from "./tsugami.json";
+import tsukadaGlobalHoldings from "./tsukada-global-holdings.json";
+import tsukishimaHoldings from "./tsukishima-holdings.json";
+import tsumuraAndCo from "./tsumura-and-co.json";
+import tsunaguGroupHoldings from "./tsunagu-group-holdings.json";
+import tsuruhaHoldings from "./tsuruha-holdings.json";
+import tsurumiManufacturing from "./tsurumi-manufacturing.json";
+import tsuruya from "./tsuruya.json";
+import tve from "./tve.json";
+import twentyFourSevenHoldings from "./twenty-four-seven-holdings.json";
+import twinbird from "./twinbird.json";
+import tyk from "./tyk.json";
+import uacj from "./uacj.json";
+import ube from "./ube.json";
+import ubicomHoldings from "./ubicom-holdings.json";
+import ubiquitousAi from "./ubiquitous-ai.json";
+import ubiteq from "./ubiteq.json";
+import uchiyamaHoldings from "./uchiyama-holdings.json";
+import ueki from "./ueki.json";
+import ulsGroup from "./uls-group.json";
+import uluru from "./uluru.json";
+import ulvac from "./ulvac.json";
+import umenoyadoBrewery from "./umenoyado-brewery.json";
+import umios from "./umios.json";
+import unerry from "./unerry.json";
+import unicafe from "./unicafe.json";
+import uniformNext from "./uniform-next.json";
+import unionTool from "./union-tool.json";
+import unipres from "./unipres.json";
+import unirita from "./unirita.json";
+import unisolHoldings from "./unisol-holdings.json";
+import uniteAndGrow from "./unite-and-grow.json";
+import united from "./united.json";
+import unitedAndCollective from "./united-and-collective.json";
+import unitedSuperMarketsHoldings from "./united-super-markets-holdings.json";
+import univaOakHoldings from "./univa-oak-holdings.json";
+import univance from "./univance.json";
+import universalEngeisha from "./universal-engeisha.json";
+import universalEntertainment from "./universal-entertainment.json";
+import unozawaGumiIronWorks from "./unozawa-gumi-iron-works.json";
+import uoki from "./uoki.json";
+import upGarageGroup from "./up-garage-group.json";
+import upcon from "./upcon.json";
+import upr from "./upr.json";
+import urbanet from "./urbanet.json";
+import uridoki from "./uridoki.json";
+import userLocal from "./user-local.json";
+import ushio from "./ushio.json";
+import usonar from "./usonar.json";
+import uss from "./uss.json";
+import utGroup from "./ut-group.json";
+import uuum from "./uuum.json";
+import vCube from "./v-cube.json";
+import valtesHoldings from "./valtes-holdings.json";
+import valueGolf from "./value-golf.json";
+import valueHr from "./value-hr.json";
+import valuecommerce from "./valuecommerce.json";
+import valuenexJapan from "./valuenex-japan.json";
+import varioSecure from "./vario-secure.json";
+import vector from "./vector.json";
+import vectorHoldings from "./vector-holdings.json";
+import vega from "./vega.json";
+import veltra from "./veltra.json";
+import veritasInSilico from "./veritas-in-silico.json";
+import vertex from "./vertex.json";
+import virtualexHoldings from "./virtualex-holdings.json";
+import vis from "./vis.json";
+import visional from "./visional.json";
+import visualProcessingJapan from "./visual-processing-japan.json";
+import visumo from "./visumo.json";
+import vitalKskHoldings from "./vital-ksk-holdings.json";
+import vlcSecurity from "./vlc-security.json";
+import voltageIncorporation from "./voltage-incorporation.json";
+import vrainSolution from "./vrain-solution.json";
+import wScope from "./w-scope.json";
+import wacoalHoldings from "./wacoal-holdings.json";
+import wacom from "./wacom.json";
+import wacul from "./wacul.json";
+import wakachikuConstruction from "./wakachiku-construction.json";
+import wakamotoPharmaceutical from "./wakamoto-pharmaceutical.json";
+import wakouShokuhin from "./wakou-shokuhin.json";
+import wantedly from "./wantedly.json";
+import waqoo from "./waqoo.json";
+import warabeyaNichiyoHoldings from "./warabeya-nichiyo-holdings.json";
+import wasedaAcademy from "./waseda-academy.json";
+import wasedaGakushukenkyukai from "./waseda-gakushukenkyukai.json";
+import washHouse from "./wash-house.json";
+import washingtonHotel from "./washington-hotel.json";
+import watahanAndCo from "./watahan-and-co.json";
+import watanabeSato from "./watanabe-sato.json";
+import watts from "./watts.json";
+import wdbCoco from "./wdb-coco.json";
+import wdbHoldings from "./wdb-holdings.json";
+import wdi from "./wdi.json";
+import wealthManagement from "./wealth-management.json";
+import weathernews from "./weathernews.json";
+import wedgeHoldings from "./wedge-holdings.json";
+import welby from "./welby.json";
+import welciaHoldings from "./welcia-holdings.json";
+import wellneoSugar from "./wellneo-sugar.json";
+import wellnessCommunications from "./wellness-communications.json";
+import wellnet from "./wellnet.json";
+import wescoHoldings from "./wesco-holdings.json";
+import westHoldings from "./west-holdings.json";
+import will from "./will.json";
+import willGroup from "./will-group.json";
+import willSmart from "./will-smart.json";
+import willplusHoldings from "./willplus-holdings.json";
+import wills from "./wills.json";
+import willtec from "./willtec.json";
+import winPartners from "./win-partners.json";
+import wingarc1st from "./wingarc1st.json";
+import wintest from "./wintest.json";
+import wiseHoldings from "./wise-holdings.json";
+import witz from "./witz.json";
+import wolvesHand from "./wolves-hand.json";
+import wonderplanet from "./wonderplanet.json";
+import worldHoldings from "./world-holdings.json";
+import wowow from "./wowow.json";
+import writeup from "./writeup.json";
+import xnet from "./xnet.json";
+import yACHoldings from "./y-a-c-holdings.json";
+import ySTable from "./y-s-table.json";
+import yaMan from "./ya-man.json";
+import yahagiConstruction from "./yahagi-construction.json";
+import yakinikuSakaiHoldings from "./yakiniku-sakai-holdings.json";
+import yakultHonsha from "./yakult-honsha.json";
+import yamabiko from "./yamabiko.json";
+import yamachuu from "./yamachuu.json";
+import yamada from "./yamada.json";
+import yamadaConsultingGroup from "./yamada-consulting-group.json";
+import yamadaServicerSyntheticOffice from "./yamada-servicer-synthetic-office.json";
+import yamaeGroupHoldings from "./yamae-group-holdings.json";
 import yamahaMotor from "./yamaha-motor.json";
+import yamaichiElectronics from "./yamaichi-electronics.json";
+import yamaichiRealEstate from "./yamaichi-real-estate.json";
+import yamaki from "./yamaki.json";
+import yamami from "./yamami.json";
+import yamashinFilter from "./yamashin-filter.json";
+import yamato from "./yamato.json";
 import yamatoHoldings from "./yamato-holdings.json";
+import yamatoKogyo from "./yamato-kogyo.json";
+import yamauHoldings from "./yamau-holdings.json";
+import yamaura from "./yamaura.json";
+import yamax from "./yamax.json";
+import yamazakiBaking from "./yamazaki-baking.json";
+import yappli from "./yappli.json";
+import yashimaDenki from "./yashima-denki.json";
 import yaskawaElectric from "./yaskawa-electric.json";
+import yasuharaChemical from "./yasuhara-chemical.json";
+import yasunaga from "./yasunaga.json";
+import yeDigital from "./ye-digital.json";
+import ykt from "./ykt.json";
+import ymirlink from "./ymirlink.json";
+import yodoko from "./yodoko.json";
+import yokogawaBridgeHoldings from "./yokogawa-bridge-holdings.json";
 import yokogawaElectric from "./yokogawa-electric.json";
+import yokohamaFinancialGroup from "./yokohama-financial-group.json";
+import yokorei from "./yokorei.json";
+import yokotaManufacturing from "./yokota-manufacturing.json";
+import yokowo from "./yokowo.json";
+import yondenko from "./yondenko.json";
+import yoshicon from "./yoshicon.json";
+import yoshimuraFoodHoldings from "./yoshimura-food-holdings.json";
+import yoshitake from "./yoshitake.json";
+import yossixHoldings from "./yossix-holdings.json";
+import yotaiRefractories from "./yotai-refractories.json";
+import youji from "./youji.json";
+import yrglm from "./yrglm.json";
+import yukeS from "./yuke-s.json";
+import yukenKogyo from "./yuken-kogyo.json";
+import yukiGoseiKogyo from "./yuki-gosei-kogyo.json";
+import yukiguniFactory from "./yukiguni-factory.json";
+import yumemitsuketai from "./yumemitsuketai.json";
+import yurtec from "./yurtec.json";
+import yushin from "./yushin.json";
+import yushiro from "./yushiro.json";
+import yutakaFoods from "./yutaka-foods.json";
+import yutakaGiken from "./yutaka-giken.json";
+import yutori from "./yutori.json";
+import zappallas from "./zappallas.json";
+import zenhoren from "./zenhoren.json";
+import zenkokuHosho from "./zenkoku-hosho.json";
+import zenmutech from "./zenmutech.json";
+import zeon from "./zeon.json";
+import zeriaPharmaceutical from "./zeria-pharmaceutical.json";
+import zeta from "./zeta.json";
+import zigZag from "./zig-zag.json";
+import zigexn from "./zigexn.json";
+import zoa from "./zoa.json";
+import zoom from "./zoom.json";
 import zozo from "./zozo.json";
+import zuiko from "./zuiko.json";
+import zuken from "./zuken.json";
+import zuu from "./zuu.json";
 
 /**
  * The registry of published companies. A data file that is not listed here is
@@ -4412,4 +4973,565 @@ export const companies: Company[] = Object.entries({
   "shikino-high-tech": shikinoHighTech,
   "shima-seiki-mfg": shimaSeikiMfg,
   "shin-maint-holdings": shinMaintHoldings,
+  "alink-internet": alinkInternet,
+  amazia: amazia,
+  amiya: amiya,
+  aplix: aplix,
+  asukanet: asukanet,
+  azplanning: azplanning,
+  "b-r-31-ice-cream": bR31IceCream,
+  "bike-o-and-company": bikeOAndCompany,
+  cinc: cinc,
+  "core-concept-technologies": coreConceptTechnologies,
+  dvx: dvx,
+  entrust: entrust,
+  flier: flier,
+  glory: glory,
+  headwaters: headwaters,
+  horiifoodservice: horiifoodservice,
+  "hpc-systems": hpcSystems,
+  "hyuga-primary-care": hyugaPrimaryCare,
+  imageone: imageone,
+  "inbound-platform": inboundPlatform,
+  "kids-star": kidsStar,
+  kokopelli: kokopelli,
+  kuradashi: kuradashi,
+  kurashicom: kurashicom,
+  "m-and-a-capital-partners": mAndACapitalPartners,
+  "macbee-planet": macbeePlanet,
+  medix: medix,
+  "mirai-works": miraiWorks,
+  "nakakita-seisakusho": nakakitaSeisakusho,
+  "nifty-lifestyle": niftyLifestyle,
+  "original-engineering-consultants": originalEngineeringConsultants,
+  "pksha-technology": pkshaTechnology,
+  placo: placo,
+  quest: quest,
+  "shindengen-electric-manufacturing": shindengenElectricManufacturing,
+  shinko: shinko,
+  "shinmaywa-industries": shinmaywaIndustries,
+  "shinwa-holdings": shinwaHoldings,
+  "shirai-electronics-industrial": shiraiElectronicsIndustrial,
+  "shizuki-electric": shizukiElectric,
+  "showa-shinku": showaShinku,
+  "sigmaxyz-holdings": sigmaxyzHoldings,
+  "sinfonia-technology": sinfoniaTechnology,
+  "sinko-industries": sinkoIndustries,
+  sintokogio: sintokogio,
+  siriusvision: siriusvision,
+  "sk-electronics": skElectronics,
+  "smile-holdings": smileHoldings,
+  smk: smk,
+  sockets: sockets,
+  sodick: sodick,
+  soft99corporation: soft99corporation,
+  "softcreate-holdings": softcreateHoldings,
+  softmax: softmax,
+  softtex: softtex,
+  "software-service": softwareService,
+  "soken-chemical-and-engineering": sokenChemicalAndEngineering,
+  "solasia-pharma": solasiaPharma,
+  solasto: solasto,
+  "solize-holdings": solizeHoldings,
+  solxyz: solxyz,
+  "sophia-holdings": sophiaHoldings,
+  sotoh: sotoh,
+  sourcenext: sourcenext,
+  "space-market": spaceMarket,
+  "space-shower-skiyaki-holdings": spaceShowerSkiyakiHoldings,
+  speee: speee,
+  "spiderplus-and-co": spiderplusAndCo,
+  sportsfield: sportsfield,
+  sprix: sprix,
+  "sra-holdings": sraHoldings,
+  "stanley-electric": stanleyElectric,
+  "startia-holdings": startiaHoldings,
+  startline: startline,
+  "stella-chemifa": stellaChemifa,
+  "stella-pharma": stellaPharma,
+  "stemcell-institute": stemcellInstitute,
+  stemrim: stemrim,
+  stg: stg,
+  stmn: stmn,
+  strike: strike,
+  strust: strust,
+  "studio-atao": studioAtao,
+  "sugai-chemical-industry": sugaiChemicalIndustry,
+  "suido-kiko-kaisha": suidoKikoKaisha,
+  sumco: sumco,
+  sumida: sumida,
+  suminoe: suminoe,
+  "sumitomo-bakelite": sumitomoBakelite,
+  "sumitomo-electric-industries": sumitomoElectricIndustries,
+  "sumitomo-osaka-cement": sumitomoOsakaCement,
+  "sumitomo-pharma": sumitomoPharma,
+  "sumitomo-riko": sumitomoRiko,
+  "sumitomo-rubber-industries": sumitomoRubberIndustries,
+  "sumitomo-seika-chemicals": sumitomoSeikaChemicals,
+  sun: sun,
+  "sun-a-kaken": sunAKaken,
+  "sun-life-holding": sunLifeHolding,
+  suncall: suncall,
+  suncorporation: suncorporation,
+  "super-tool": superTool,
+  superbag: superbag,
+  "surala-net": suralaNet,
+  sus: sus,
+  susmed: susmed,
+  "suzuki-6785": suzuki6785,
+  "suzumo-machinery": suzumoMachinery,
+  "hitachi-construction-machinery": hitachiConstructionMachinery,
+  "nihon-house-holdings": nihonHouseHoldings,
+  swcc: swcc,
+  "symbio-pharmaceuticals": symbioPharmaceuticals,
+  "synchro-food": synchroFood,
+  "sys-holdings": sysHoldings,
+  sysmex: sysmex,
+  "system-d": systemD,
+  "system-integrator": systemIntegrator,
+  "system-research": systemResearch,
+  "system-support-holdings": systemSupportHoldings,
+  systemexe: systemexe,
+  "systems-design": systemsDesign,
+  "systems-engineering-consultants": systemsEngineeringConsultants,
+  syuppin: syuppin,
+  "t-and-s-group": tAndSGroup,
+  "t-hasegawa": tHasegawa,
+  "t-rad": tRad,
+  tabikobo: tabikobo,
+  tac: tac,
+  "tachi-s": tachiS,
+  tacmina: tacmina,
+  tadano: tadano,
+  "taihei-machinery-works": taiheiMachineryWorks,
+  "taiheiyo-cement": taiheiyoCement,
+  "taiho-kogyo": taihoKogyo,
+  "taiko-pharmaceutical": taikoPharmaceutical,
+  "taisei-lamick-group-head-quarter-and-innovation": taiseiLamickGroupHeadQuarterAndInnovation,
+  "taiyo-holdings": taiyoHoldings,
+  "taiyo-technolex": taiyoTechnolex,
+  "takadakiko-steel-construction": takadakikoSteelConstruction,
+  "takagi-seiko": takagiSeiko,
+  takakita: takakita,
+  takamisawa: takamisawa,
+  "takamisawa-cybernetics": takamisawaCybernetics,
+  "takaoka-toko": takaokaToko,
+  "takara-bio": takaraBio,
+  "takasago-international": takasagoInternational,
+  "takasago-tekko-k-k": takasagoTekkoKK,
+  takatori: takatori,
+  "take-and-give-needs": takeAndGiveNeeds,
+  "takemoto-yohki": takemotoYohki,
+  "takeuchi-mfg": takeuchiMfg,
+  "taki-chemical": takiChemical,
+  "takizawa-ham": takizawaHam,
+  takuma: takuma,
+  talentx: talentx,
+  "tama-home": tamaHome,
+  "tamagawa-holdings": tamagawaHoldings,
+  tamura: tamura,
+  "tanabe-engineering": tanabeEngineering,
+  "tanaka-chemical": tanakaChemical,
+  "tanaka-seimitsu-kogyo": tanakaSeimitsuKogyo,
+  tanaken: tanaken,
+  "taoka-chemical": taokaChemical,
+  "tasuki-holdings": tasukiHoldings,
+  "tauns-laboratories": taunsLaboratories,
+  taya: taya,
+  tayca: tayca,
+  tazmo: tazmo,
+  "tb-group": tbGroup,
+  tbk: tbk,
+  "tdc-soft": tdcSoft,
+  tdse: tdse,
+  "tea-life": teaLife,
+  teac: teac,
+  teamspirit: teamspirit,
+  tear: tear,
+  "techfirm-holdings": techfirmHoldings,
+  techmatrix: techmatrix,
+  "techno-alpha": technoAlpha,
+  "techno-horizon": technoHorizon,
+  "techno-mathematical": technoMathematical,
+  "techno-medica": technoMedica,
+  "techno-ryowa": technoRyowa,
+  "techno-smart": technoSmart,
+  technoflex: technoflex,
+  technologies: technologies,
+  "technopro-holdings": technoproHoldings,
+  "tecmira-holdings": tecmiraHoldings,
+  tecnisco: tecnisco,
+  teijin: teijin,
+  teikoku: teikoku,
+  "teikoku-sen-i": teikokuSenI,
+  "teikoku-tsushin-kogyo": teikokuTsushinKogyo,
+  tein: tein,
+  tekken: tekken,
+  "tekscend-photomask": tekscendPhotomask,
+  temairazu: temairazu,
+  temona: temona,
+  tenda: tenda,
+  "teno-holdings": tenoHoldings,
+  tenox: tenox,
+  "tenpos-holdings": tenposHoldings,
+  "tenryu-saw-mfg": tenryuSawMfg,
+  "tensho-electric-industries": tenshoElectricIndustries,
+  tential: tential,
+  "tera-probe": teraProbe,
+  "tera-technology": teraTechnology,
+  "terasaki-electric": terasakiElectric,
+  "terilogy-holdings": terilogyHoldings,
+  "terra-drone": terraDrone,
+  terrasky: terrasky,
+  terumo: terumo,
+  tesec: tesec,
+  "tess-holdings": tessHoldings,
+  "tetsujin-holdings": tetsujinHoldings,
+  "the-first-bank-of-toyama": theFirstBankOfToyama,
+  "the-furukawa-battery": theFurukawaBattery,
+  "the-global": theGlobal,
+  "the-hanshin-diesel-works": theHanshinDieselWorks,
+  "the-imamura-securities": theImamuraSecurities,
+  "the-japan-steel-works": theJapanSteelWorks,
+  "the-japan-wool-textile": theJapanWoolTextile,
+  "the-kaneshita-construction": theKaneshitaConstruction,
+  "the-kinki-sharyo": theKinkiSharyo,
+  "the-kodensha": theKodensha,
+  "the-lead": theLead,
+  "the-monogatari": theMonogatari,
+  "the-nihon-seima": theNihonSeima,
+  "the-nippon-road": theNipponRoad,
+  "the-nippon-signal": theNipponSignal,
+  "the-nisshin-oillio-group": theNisshinOillioGroup,
+  "the-pack": thePack,
+  "the-takigami-steel-construction": theTakigamiSteelConstruction,
+  "the-torigoe": theTorigoe,
+  "the-why-how-do": theWhyHowDo,
+  "the-yokohama-rubber": theYokohamaRubber,
+  "the-zenitaka": theZenitaka,
+  thecoo: thecoo,
+  "thermae-yu-holdings": thermaeYuHoldings,
+  thinca: thinca,
+  "thine-electronics": thineElectronics,
+  thk: thk,
+  "tigers-polymer": tigersPolymer,
+  timee: timee,
+  tis: tis,
+  "titan-kogyo": titanKogyo,
+  tkp: tkp,
+  tmh: tmh,
+  tms: tms,
+  "to-books": toBooks,
+  toa: toa,
+  "toa-6809": toa6809,
+  "toa-road": toaRoad,
+  toabo: toabo,
+  toagosei: toagosei,
+  toami: toami,
+  "tobila-systems": tobilaSystems,
+  "tobishima-holdings": tobishimaHoldings,
+  tocalo: tocalo,
+  toda: toda,
+  "toda-kogyo": todaKogyo,
+  "toei-animation": toeiAnimation,
+  toell: toell,
+  toenec: toenec,
+  "togami-electric-mfg": togamiElectricMfg,
+  "toho-acetylene": tohoAcetylene,
+  "toho-chemical-industry": tohoChemicalIndustry,
+  "toho-system-science": tohoSystemScience,
+  "toho-titanium": tohoTitanium,
+  "tohoku-steel": tohokuSteel,
+  "tohokushinsha-film": tohokushinshaFilm,
+  "tokai-carbon": tokaiCarbon,
+  "tokai-holdings": tokaiHoldings,
+  "tokai-rika": tokaiRika,
+  "tokai-senko": tokaiSenko,
+  "tokai-soft": tokaiSoft,
+  token: token,
+  tokuden: tokuden,
+  tokura: tokura,
+  "tokushu-tokai-paper": tokushuTokaiPaper,
+  tokuyama: tokuyama,
+  "tokyo-automatic-machinery-works": tokyoAutomaticMachineryWorks,
+  "tokyo-base": tokyoBase,
+  "tokyo-cosmos-electric": tokyoCosmosElectric,
+  "tokyo-electron-device": tokyoElectronDevice,
+  "tokyo-energy-and-systems": tokyoEnergyAndSystems,
+  "tokyo-ichiban-foods": tokyoIchibanFoods,
+  "tokyo-individualized-educational-institute": tokyoIndividualizedEducationalInstitute,
+  "tokyo-kikai-seisakusho": tokyoKikaiSeisakusho,
+  "tokyo-kiraboshi-financial-group": tokyoKiraboshiFinancialGroup,
+  "tokyo-ohka-kogyo": tokyoOhkaKogyo,
+  "tokyo-printing-ink-mfg": tokyoPrintingInkMfg,
+  "tokyo-radiator-mfg": tokyoRadiatorMfg,
+  "tokyo-rope-mfg": tokyoRopeMfg,
+  "tokyo-tatemono": tokyoTatemono,
+  "tokyo-tekko": tokyoTekko,
+  "tokyu-construction": tokyuConstruction,
+  "tokyu-fudosan-holdings": tokyuFudosanHoldings,
+  "tomen-devices": tomenDevices,
+  "tomita-electric": tomitaElectric,
+  tomoe: tomoe,
+  "tomoe-engineering": tomoeEngineering,
+  tomoegawa: tomoegawa,
+  tomoku: tomoku,
+  tone: tone,
+  topre: topre,
+  "topy-industries": topyIndustries,
+  toray: toray,
+  "torex-semiconductor": torexSemiconductor,
+  torico: torico,
+  "toridoll-holdings": toridollHoldings,
+  "torii-pharmaceutical": toriiPharmaceutical,
+  "torishima-pump-mfg": torishimaPumpMfg,
+  tose: tose,
+  "toshiba-tec": toshibaTec,
+  tosnet: tosnet,
+  toso: toso,
+  tosoh: tosoh,
+  "totetsu-kogyo": totetsuKogyo,
+  toto: toto,
+  toubujyuhan: toubujyuhan,
+  "toukei-computer": toukeiComputer,
+  toumei: toumei,
+  tow: tow,
+  towa: towa,
+  "towa-food-service": towaFoodService,
+  "towa-hi-system": towaHiSystem,
+  "towa-pharmaceutical": towaPharmaceutical,
+  "townnews-sha": townnewsSha,
+  "toyo-asano-foundation": toyoAsanoFoundation,
+  "toyo-construction": toyoConstruction,
+  "toyo-denki-seizo": toyoDenkiSeizo,
+  "toyo-drilube": toyoDrilube,
+  "toyo-electric": toyoElectric,
+  "toyo-gosei": toyoGosei,
+  "toyo-innovex": toyoInnovex,
+  "toyo-kanetsu": toyoKanetsu,
+  "toyo-seikan-group-holdings": toyoSeikanGroupHoldings,
+  "toyo-shutter": toyoShutter,
+  "toyo-suisan-kaisha": toyoSuisanKaisha,
+  "toyo-tanso": toyoTanso,
+  "toyo-tire": toyoTire,
+  toyobo: toyobo,
+  toyokumo: toyokumo,
+  "toyota-boshoku": toyotaBoshoku,
+  "toyota-industries-6201": toyotaIndustries6201,
+  tpr: tpr,
+  "traas-on-product": traasOnProduct,
+  "trade-works": tradeWorks,
+  "trailhead-global-holdings": trailheadGlobalHoldings,
+  "trans-genic-group": transGenicGroup,
+  "transaction-media-networks": transactionMediaNetworks,
+  "treasure-factory": treasureFactory,
+  "trend-micro": trendMicro,
+  trenders: trenders,
+  "tri-chemical-laboratories": triChemicalLaboratories,
+  "trial-holdings": trialHoldings,
+  triis: triis,
+  "trinity-industrial": trinityIndustrial,
+  tripla: tripla,
+  tripleize: tripleize,
+  "truck-one": truckOne,
+  "true-data": trueData,
+  trust: trust,
+  "trust-holdings": trustHoldings,
+  "tsi-holdings": tsiHoldings,
+  "tsubaki-nakashima": tsubakiNakashima,
+  "tsubakimoto-chain": tsubakimotoChain,
+  "tsubota-laboratory": tsubotaLaboratory,
+  "tsuburaya-fields-holdings": tsuburayaFieldsHoldings,
+  "tsuchiya-holdings": tsuchiyaHoldings,
+  tsudakoma: tsudakoma,
+  tsugami: tsugami,
+  "tsukada-global-holdings": tsukadaGlobalHoldings,
+  "tsukishima-holdings": tsukishimaHoldings,
+  "tsumura-and-co": tsumuraAndCo,
+  "tsunagu-group-holdings": tsunaguGroupHoldings,
+  "tsuruha-holdings": tsuruhaHoldings,
+  "tsurumi-manufacturing": tsurumiManufacturing,
+  tsuruya: tsuruya,
+  tve: tve,
+  "twenty-four-seven-holdings": twentyFourSevenHoldings,
+  twinbird: twinbird,
+  tyk: tyk,
+  uacj: uacj,
+  ube: ube,
+  "ubicom-holdings": ubicomHoldings,
+  "ubiquitous-ai": ubiquitousAi,
+  ubiteq: ubiteq,
+  "uchiyama-holdings": uchiyamaHoldings,
+  ueki: ueki,
+  "uls-group": ulsGroup,
+  uluru: uluru,
+  ulvac: ulvac,
+  "umenoyado-brewery": umenoyadoBrewery,
+  umios: umios,
+  unerry: unerry,
+  unicafe: unicafe,
+  "uniform-next": uniformNext,
+  "union-tool": unionTool,
+  unipres: unipres,
+  unirita: unirita,
+  "unisol-holdings": unisolHoldings,
+  "unite-and-grow": uniteAndGrow,
+  united: united,
+  "united-and-collective": unitedAndCollective,
+  "united-super-markets-holdings": unitedSuperMarketsHoldings,
+  "univa-oak-holdings": univaOakHoldings,
+  univance: univance,
+  "universal-engeisha": universalEngeisha,
+  "universal-entertainment": universalEntertainment,
+  "unozawa-gumi-iron-works": unozawaGumiIronWorks,
+  uoki: uoki,
+  "up-garage-group": upGarageGroup,
+  upcon: upcon,
+  upr: upr,
+  urbanet: urbanet,
+  uridoki: uridoki,
+  "user-local": userLocal,
+  ushio: ushio,
+  usonar: usonar,
+  uss: uss,
+  "ut-group": utGroup,
+  uuum: uuum,
+  "v-cube": vCube,
+  "valtes-holdings": valtesHoldings,
+  "value-golf": valueGolf,
+  "value-hr": valueHr,
+  valuecommerce: valuecommerce,
+  "valuenex-japan": valuenexJapan,
+  "vario-secure": varioSecure,
+  vector: vector,
+  "vector-holdings": vectorHoldings,
+  vega: vega,
+  veltra: veltra,
+  "veritas-in-silico": veritasInSilico,
+  vertex: vertex,
+  "virtualex-holdings": virtualexHoldings,
+  vis: vis,
+  visional: visional,
+  "visual-processing-japan": visualProcessingJapan,
+  visumo: visumo,
+  "vital-ksk-holdings": vitalKskHoldings,
+  "vlc-security": vlcSecurity,
+  "voltage-incorporation": voltageIncorporation,
+  "vrain-solution": vrainSolution,
+  "w-scope": wScope,
+  "wacoal-holdings": wacoalHoldings,
+  wacom: wacom,
+  wacul: wacul,
+  "wakachiku-construction": wakachikuConstruction,
+  "wakamoto-pharmaceutical": wakamotoPharmaceutical,
+  "wakou-shokuhin": wakouShokuhin,
+  wantedly: wantedly,
+  waqoo: waqoo,
+  "warabeya-nichiyo-holdings": warabeyaNichiyoHoldings,
+  "waseda-academy": wasedaAcademy,
+  "waseda-gakushukenkyukai": wasedaGakushukenkyukai,
+  "wash-house": washHouse,
+  "washington-hotel": washingtonHotel,
+  "watahan-and-co": watahanAndCo,
+  "watanabe-sato": watanabeSato,
+  watts: watts,
+  "wdb-coco": wdbCoco,
+  "wdb-holdings": wdbHoldings,
+  wdi: wdi,
+  "wealth-management": wealthManagement,
+  weathernews: weathernews,
+  "wedge-holdings": wedgeHoldings,
+  welby: welby,
+  "welcia-holdings": welciaHoldings,
+  "wellneo-sugar": wellneoSugar,
+  "wellness-communications": wellnessCommunications,
+  wellnet: wellnet,
+  "wesco-holdings": wescoHoldings,
+  "west-holdings": westHoldings,
+  will: will,
+  "will-group": willGroup,
+  "will-smart": willSmart,
+  "willplus-holdings": willplusHoldings,
+  wills: wills,
+  willtec: willtec,
+  "win-partners": winPartners,
+  wingarc1st: wingarc1st,
+  wintest: wintest,
+  "wise-holdings": wiseHoldings,
+  witz: witz,
+  "wolves-hand": wolvesHand,
+  wonderplanet: wonderplanet,
+  "world-holdings": worldHoldings,
+  wowow: wowow,
+  writeup: writeup,
+  xnet: xnet,
+  "y-a-c-holdings": yACHoldings,
+  "y-s-table": ySTable,
+  "ya-man": yaMan,
+  "yahagi-construction": yahagiConstruction,
+  "yakiniku-sakai-holdings": yakinikuSakaiHoldings,
+  "yakult-honsha": yakultHonsha,
+  yamabiko: yamabiko,
+  yamachuu: yamachuu,
+  yamada: yamada,
+  "yamada-consulting-group": yamadaConsultingGroup,
+  "yamada-servicer-synthetic-office": yamadaServicerSyntheticOffice,
+  "yamae-group-holdings": yamaeGroupHoldings,
+  "yamaichi-electronics": yamaichiElectronics,
+  "yamaichi-real-estate": yamaichiRealEstate,
+  yamaki: yamaki,
+  yamami: yamami,
+  "yamashin-filter": yamashinFilter,
+  yamato: yamato,
+  "yamato-kogyo": yamatoKogyo,
+  "yamau-holdings": yamauHoldings,
+  yamaura: yamaura,
+  yamax: yamax,
+  "yamazaki-baking": yamazakiBaking,
+  yappli: yappli,
+  "yashima-denki": yashimaDenki,
+  "yasuhara-chemical": yasuharaChemical,
+  yasunaga: yasunaga,
+  "ye-digital": yeDigital,
+  ykt: ykt,
+  ymirlink: ymirlink,
+  yodoko: yodoko,
+  "yokogawa-bridge-holdings": yokogawaBridgeHoldings,
+  "yokohama-financial-group": yokohamaFinancialGroup,
+  yokorei: yokorei,
+  "yokota-manufacturing": yokotaManufacturing,
+  yokowo: yokowo,
+  yondenko: yondenko,
+  yoshicon: yoshicon,
+  "yoshimura-food-holdings": yoshimuraFoodHoldings,
+  yoshitake: yoshitake,
+  "yossix-holdings": yossixHoldings,
+  "yotai-refractories": yotaiRefractories,
+  youji: youji,
+  yrglm: yrglm,
+  "yuke-s": yukeS,
+  "yuken-kogyo": yukenKogyo,
+  "yuki-gosei-kogyo": yukiGoseiKogyo,
+  "yukiguni-factory": yukiguniFactory,
+  yumemitsuketai: yumemitsuketai,
+  yurtec: yurtec,
+  yushin: yushin,
+  yushiro: yushiro,
+  "yutaka-foods": yutakaFoods,
+  "yutaka-giken": yutakaGiken,
+  yutori: yutori,
+  zappallas: zappallas,
+  zenhoren: zenhoren,
+  "zenkoku-hosho": zenkokuHosho,
+  zenmutech: zenmutech,
+  zeon: zeon,
+  "zeria-pharmaceutical": zeriaPharmaceutical,
+  zeta: zeta,
+  "zig-zag": zigZag,
+  zigexn: zigexn,
+  zoa: zoa,
+  zoom: zoom,
+  zuiko: zuiko,
+  zuken: zuken,
+  zuu: zuu,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

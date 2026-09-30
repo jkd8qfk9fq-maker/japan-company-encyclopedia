@@ -85,6 +85,7 @@ const ready = readdirSync(join(root, "pipeline/state"))
   .filter((id) => !published.has(id) && !hasFragments.has(id) && !reserved.has(id))
   .filter((id) => {
     const state = loadState(id);
+    if (state.stages.registration.status === "needs-review") return false;
     return state.stages.edinet.status === "completed" && existsSync(join(cacheDir(), "evidence", id, "draft-entry.json"));
   })
   .sort()
@@ -108,7 +109,16 @@ for (const id of ready) {
     staged.push(id);
   } catch (error) {
     const child = `${error.stdout ?? ""}${error.stderr ?? ""}`.split("\n").find((l) => l.trim()) ?? error.message;
-    skipped.push({ id, reason: child.replace(/\s+/g, " ").slice(0, 160) });
+    const reason = child.replace(/\s+/g, " ").slice(0, 160);
+    // A company whose 上場金融商品取引所名 reads 非上場 files an 有報 without having
+    // listed shares — it has public bonds, or enough shareholders to oblige it, or
+    // was listed once. It can have no `listings`, and this is an encyclopedia of
+    // listed companies, so it is parked rather than retried. 139 of them were being
+    // re-attempted and re-reported in every single batch.
+    if (/非上場|上場金融商品取引所名「」/.test(reason)) {
+      setStage(id, "registration", "needs-review", `上場していないため数値のみの層にも載せられない: ${reason}`);
+    }
+    skipped.push({ id, reason });
   }
 }
 console.log(`組み立て: ${staged.length} 社${skipped.length > 0 ? ` / 見送り ${skipped.length} 社` : ""}`);

@@ -329,7 +329,12 @@ function printedLabel(indicators, years, prefer = null) {
  */
 function labelBefore(table, at) {
       const prefix = table.slice(0, at);
-      const previousFigure = [...prefix.matchAll(/[0-9０-９][0-9０-９,，]{2,}/g)].pop();
+      // Three or more digits, OR any △-prefixed number however short. A loss of
+      // 「△47」 is a figure, and requiring three digits made the walk-back stop
+      // after it and hand back 「△47」 as the label — a number where a row heading
+      // belongs. Footnote markers, which this length rule exists to skip, are
+      // never written with △.
+      const previousFigure = [...prefix.matchAll(/△\s*[0-9０-９][0-9０-９,，]*|[0-9０-９][0-9０-９,，]{2,}/g)].pop();
       const start = previousFigure ? previousFigure.index + previousFigure[0].length : 0;
       let label = prefix.slice(start);
       let previous;
@@ -438,6 +443,9 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
       .filter((candidate) => candidate.years.length > 0)
       .map((candidate) => ({
         ...candidate,
+        // The filer's printed wording when it can be found; otherwise the taxonomy's,
+        // with the standard名 it appends stripped — 「売上収益（IFRS）」 is the taxonomy
+        // talking, and no filing prints it that way.
         taxonomyLabel: candidate.label,
         // An element that names the parent's owners must not be labelled with the
         // row that includes non-controlling interests, however identical the
@@ -447,7 +455,7 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
             indicatorsText,
             candidate.years.map((y) => ({ value: y.yen })),
             /AttributableToOwnersOfParent/.test(candidate.element) ? /帰属/ : null,
-          ) ?? candidate.label,
+          ) ?? candidate.label?.replace(/[（(](IFRS|US ?GAAP|日本基準|JGAAP)[）)]/g, "").trim() ?? null,
       }));
   };
   /**
@@ -495,7 +503,13 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
       found.push({
         element,
         // The filing's own wording wins; the taxonomy label is the fallback.
-        label: printedLabel(indicatorsText, years) ?? taxonomy?.replace(/（(IFRS|US GAAP)）/g, "").replace(/又は.*$/, "").trim() ?? null,
+        label:
+          printedLabel(indicatorsText, years) ??
+          taxonomy
+            ?.replace(/[（(](IFRS|US ?GAAP|日本基準|JGAAP)[）)]/g, "")
+            .replace(/又は.*$/, "")
+            .trim() ??
+          null,
         taxonomyLabel: taxonomy,
         years,
       });
