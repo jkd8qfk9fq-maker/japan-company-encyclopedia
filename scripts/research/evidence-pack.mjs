@@ -68,12 +68,33 @@ const REVENUE_ELEMENTS = new Set([
   "BusinessRevenueKeyFinancialData", // 営業収益
   "GrossSalesKeyFinancialData", // 総売上高
   "Revenue2KeyFinancialData",
+  "RevenueKeyFinancialData", // 収益 — plain, no series number (丸井グループ, 日本紙パルプ商事)
+  "Revenue2IFRSSummaryOfBusinessResults", // IFRS filers' own numbered variant (デジタルガレージ)
+  "OperatingRevenue2SummaryOfBusinessResults", // 営業収益 — a second numbered variant
+  // 総営業収入: コンビニ・小売チェーンの top line, distinct from 営業収益 because it is
+  // gross of amounts a 加盟店 collects on the company's behalf (ワークマン, ミニストップ).
+  "GrossOperatingRevenueSummaryOfBusinessResults",
+  // 保険料等収入, worded two more ways than PremiumAndOtherIncome above — 生命保険会社
+  // (かんぽ生命保険) and 生命保険持株会社 (T&Dホールディングス) each coin their own extension.
+  "InsurancePremiumsAndOthersSummaryOfBusinessResults",
+  "InsurancePremiumsAndOtherIncomeSummaryOfBusinessResults",
+  "InsuranceRevenueIFRSKeyFinancialData", // 保険収益 (IFRS 保険会社, ライフネット生命保険)
+  "OperatingBusinessRevenueKeyFinancialData", // 営業収益
+  "OperatingRevenuesKeyFinancialData", // 営業収益 — plural form of OperatingRevenue above
 ]);
 const NET_INCOME_ELEMENTS = new Set([
   "ProfitLossAttributableToOwnersOfParentSummaryOfBusinessResults", // 親会社株主に帰属する当期純利益
   "ProfitLossAttributableToOwnersOfParentIFRSSummaryOfBusinessResults", // 親会社の所有者に帰属する当期利益
   "NetIncomeLossAttributableToOwnersOfParentUSGAAPSummaryOfBusinessResults",
   "NetIncomeLossSummaryOfBusinessResults",
+  // A plain "Profit" extension, safe only because it is picked up solely for a
+  // non-consolidated filer (連結決算の有無=false): a company with no subsidiaries
+  // has no non-controlling interests to conflate with, so 「当期純利益」 needs no
+  // attribution wording (東京製鐵). A CONSOLIDATED filer coining the same element
+  // name for an un-split total would still be caught — verify-financials's
+  // PARENT_ATTRIBUTION check is not skipped for a consolidated filer — so this is
+  // not a blanket acceptance of "Profit" as parent-attributable.
+  "ProfitSummaryOfBusinessResults",
 ]);
 
 /**
@@ -328,39 +349,63 @@ function printedLabel(indicators, years, prefer = null) {
  * comma-grouped; footnote markers are not.
  */
 function labelBefore(table, at) {
-      const prefix = table.slice(0, at);
-      // Three or more digits, OR any △-prefixed number however short. A loss of
-      // 「△47」 is a figure, and requiring three digits made the walk-back stop
-      // after it and hand back 「△47」 as the label — a number where a row heading
-      // belongs. Footnote markers, which this length rule exists to skip, are
-      // never written with △.
-      const previousFigure = [...prefix.matchAll(/△\s*[0-9０-９][0-9０-９,，]*|[0-9０-９][0-9０-９,，]{2,}/g)].pop();
-      const start = previousFigure ? previousFigure.index + previousFigure[0].length : 0;
-      let label = prefix.slice(start);
-      let previous;
-      do {
-        previous = label;
-        label = label
-          // Remnants of the 決算年月 header immediately above the first row.
-          .replace(/^(?:[0-9０-９]{1,4}\s*年)?\s*(?:[0-9０-９]{1,2}\s*月)?\s*(?:[0-9０-９]{1,2}\s*日)?/, "")
-          .replace(/^[年月日度回次)）\s]+/, "")
-          // A footnote marker attached to the row label: 「売上高（注）２」.
-          .replace(/[（(]\s*注\s*[）)]\s*[0-9０-９]*\s*$/, "")
-          // A trailing unit, including the 「(百万円)」 form — but never a
-          // parenthetical that is part of the label itself, such as
-          // 「当期利益(親会社の所有者に帰属)」.
-          .replace(/[（(]\s*(百万円|千円|billion|円|名|人|％|%)\s*[）)]$/, "")
-          // Dashes: a filing prints an absent year as a dash, and the columns run
-          // together, so a company whose early years are empty leaves a run of them
-          // sitting between the unit and the first real figure — 「売上高(千円)――――」.
-          // Only ― (U+2015), － and - were listed, and the class missed ─ ‐ ‒ – — ⼀
-          // and the ASCII/full-width variants EDINET actually uses. It cost 428
-          // rejected labels across one run: the walk-back is right and the tidy-up
-          // was leaving the dashes behind.
-          .replace(/(百万円|千円|円|名|人|％|%|〃|[－—―─‐‒–~〜ー−-]|、|：|:|\s)+$/, "")
-          .trim();
-      } while (label !== previous);
-      if (label.length >= 2 && label.length <= 40) return label;
+  // A company that changed its fiscal year end prints SIX columns in this table
+  // while XBRL still tags five periods — 大福 and 住友重機械工業 both moved March→
+  // December and print a short transition period alongside it. The pair we
+  // matched then does not start at the row's first column: one more figure from
+  // the SAME row sits directly before it with nothing between them, e.g.
+  // 「32,39035,87741,248…」 where 32,390 is the untagged transition-period column.
+  // Walking back only one figure lands between two numbers of the same row —
+  // an empty string, not a label — so when that happens the walk retries from
+  // before THAT figure too, however many same-row columns deep it has to go.
+  let cursor = at;
+  for (let guard = 0; guard < 10; guard++) {
+    const prefix = table.slice(0, cursor);
+    // Three or more digits, OR any △-prefixed number however short. A loss of
+    // 「△47」 is a figure, and requiring three digits made the walk-back stop
+    // after it and hand back 「△47」 as the label — a number where a row heading
+    // belongs. Footnote markers, which this length rule exists to skip, are
+    // never written with △.
+    const previousFigure = [...prefix.matchAll(/△\s*[0-9０-９][0-9０-９,，]*|[0-9０-９][0-9０-９,，]{2,}/g)].pop();
+    const start = previousFigure ? previousFigure.index + previousFigure[0].length : 0;
+    if (previousFigure && prefix.slice(start).trim() === "") {
+      cursor = previousFigure.index;
+      continue;
+    }
+    let label = prefix.slice(start);
+    let previous;
+    do {
+      previous = label;
+      label = label
+        // Remnants of the 決算年月 header immediately above the first row.
+        .replace(/^(?:[0-9０-９]{1,4}\s*年)?\s*(?:[0-9０-９]{1,2}\s*月)?\s*(?:[0-9０-９]{1,2}\s*日)?/, "")
+        .replace(/^[年月日度回次)）\s]+/, "")
+        // A footnote marker attached to the row label: 「売上高（注）２」.
+        .replace(/[（(]\s*注\s*[）)]\s*[0-9０-９]*\s*$/, "")
+        // A memo sub-line folded into the same row's label: 証券会社 print
+        // 「営業収益（うち受入手数料）」 where the parenthetical is a breakdown note
+        // for the row underneath, not part of the row's own name — 「うち」 always
+        // signals one (会沢証券グループ). Runs before the unit strip below only
+        // because the loop retries either order; what matters is that neither
+        // treats the other's target as part of the label.
+        .replace(/[（(]\s*うち[^（）()]*\s*[）)]$/, "")
+        // A trailing unit, including the 「(百万円)」 form — but never a
+        // parenthetical that is part of the label itself, such as
+        // 「当期利益(親会社の所有者に帰属)」.
+        .replace(/[（(]\s*(百万円|千円|billion|円|名|人|％|%)\s*[）)]$/, "")
+        // Dashes: a filing prints an absent year as a dash, and the columns run
+        // together, so a company whose early years are empty leaves a run of them
+        // sitting between the unit and the first real figure — 「売上高(千円)――――」.
+        // Only ― (U+2015), － and - were listed, and the class missed ─ ‐ ‒ – — ⼀
+        // and the ASCII/full-width variants EDINET actually uses. It cost 428
+        // rejected labels across one run: the walk-back is right and the tidy-up
+        // was leaving the dashes behind.
+        .replace(/(百万円|千円|円|名|人|％|%|〃|[－—―─‐‒–~〜ー−-]|、|：|:|\s)+$/, "")
+        .trim();
+    } while (label !== previous);
+    if (label.length >= 2 && label.length <= 40) return label;
+    return null;
+  }
   return null;
 }
 

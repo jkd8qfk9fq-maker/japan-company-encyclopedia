@@ -135,6 +135,7 @@ import amifa from "./amifa.json";
 import amitaHoldings from "./amita-holdings.json";
 import amiya from "./amiya.json";
 import amiyakiTei from "./amiyaki-tei.json";
+import amuse from "./amuse.json";
 import amvisHoldings from "./amvis-holdings.json";
 import anaHoldings from "./ana-holdings.json";
 import anabukiKosan from "./anabuki-kosan.json";
@@ -560,6 +561,7 @@ import cubeSystem from "./cube-system.json";
 import cuc from "./cuc.json";
 import cuorips from "./cuorips.json";
 import curvesHoldings from "./curves-holdings.json";
+import cvsBayArea from "./cvs-bay-area.json";
 import cyberSecurityCloud from "./cyber-security-cloud.json";
 import cyberagent from "./cyberagent.json";
 import cyberbuzz from "./cyberbuzz.json";
@@ -669,6 +671,7 @@ import diNikkoEngineering from "./di-nikko-engineering.json";
 import diamondElectricHoldings from "./diamond-electric-holdings.json";
 import dic from "./dic.json";
 import digitalArts from "./digital-arts.json";
+import digitalGarage from "./digital-garage.json";
 import digitalGrid from "./digital-grid.json";
 import digitalHeartsHoldings from "./digital-hearts-holdings.json";
 import digitalHoldings from "./digital-holdings.json";
@@ -1233,6 +1236,7 @@ import humanTechnologies from "./human-technologies.json";
 import hurxley from "./hurxley.json";
 import hutzper from "./hutzper.json";
 import hybridTechnologies from "./hybrid-technologies.json";
+import hyojito from "./hyojito.json";
 import hyokiKaiunKaisha from "./hyoki-kaiun-kaisha.json";
 import hyper from "./hyper.json";
 import hyugaPrimaryCare from "./hyuga-primary-care.json";
@@ -1437,10 +1441,12 @@ import japanPcService from "./japan-pc-service.json";
 import japanPetroleumExploration from "./japan-petroleum-exploration.json";
 import japanPostBank from "./japan-post-bank.json";
 import japanPostHoldings from "./japan-post-holdings.json";
+import japanPostInsurance from "./japan-post-insurance.json";
 import japanPowerFastening from "./japan-power-fastening.json";
 import japanProcessDevelopment from "./japan-process-development.json";
 import japanPropertyManagementCenter from "./japan-property-management-center.json";
 import japanProptech from "./japan-proptech.json";
+import japanPulpAndPaper from "./japan-pulp-and-paper.json";
 import japanPureChemical from "./japan-pure-chemical.json";
 import japanRelianceService from "./japan-reliance-service.json";
 import japanResistorMfg from "./japan-resistor-mfg.json";
@@ -1878,6 +1884,7 @@ import marufujiSheetPiling from "./marufuji-sheet-piling.json";
 import maruhachiHoldings from "./maruhachi-holdings.json";
 import maruhachiSecurities from "./maruhachi-securities.json";
 import maruhachiWarehouse from "./maruhachi-warehouse.json";
+import maruiGroup from "./marui-group.json";
 import maruichi from "./maruichi.json";
 import maruichiSteelTube from "./maruichi-steel-tube.json";
 import marukenLease from "./maruken-lease.json";
@@ -1893,6 +1900,7 @@ import maruyamaMfg from "./maruyama-mfg.json";
 import maruyoshiCenter from "./maruyoshi-center.json";
 import maruzen from "./maruzen.json";
 import maruzenChiHoldings from "./maruzen-chi-holdings.json";
+import maruzenShowaUnyu from "./maruzen-showa-unyu.json";
 import marvelous from "./marvelous.json";
 import masaru from "./masaru.json";
 import matchingServiceJapan from "./matching-service-japan.json";
@@ -1985,6 +1993,7 @@ import milbon from "./milbon.json";
 import mimakiEngineering from "./mimaki-engineering.json";
 import minatoHoldings from "./minato-holdings.json";
 import minebeaMitsumi from "./minebea-mitsumi.json";
+import ministop from "./ministop.json";
 import minkabuTheInfonoid from "./minkabu-the-infonoid.json";
 import minoCeramic from "./mino-ceramic.json";
 import minoya from "./minoya.json";
@@ -2149,6 +2158,7 @@ import nankaiPlywood from "./nankai-plywood.json";
 import nankaiTatsumuraConstruction from "./nankai-tatsumura-construction.json";
 import nanoHoldings from "./nano-holdings.json";
 import nansin from "./nansin.json";
+import nansoTransport from "./nanso-transport.json";
 import nanyo from "./nanyo.json";
 import narasakiSangyo from "./narasaki-sangyo.json";
 import nareruGroup from "./nareru-group.json";
@@ -2857,6 +2867,7 @@ import scroll from "./scroll.json";
 import scsk from "./scsk.json";
 import sdEntertainment from "./sd-entertainment.json";
 import sdsHoldings from "./sds-holdings.json";
+import seHoldingsAndIncubations from "./se-holdings-and-incubations.json";
 import secCarbon from "./sec-carbon.json";
 import secom from "./secom.json";
 import secuavail from "./secuavail.json";
@@ -3177,6 +3188,7 @@ import systemsEngineeringConsultants from "./systems-engineering-consultants.jso
 import systemsoft from "./systemsoft.json";
 import systena from "./systena.json";
 import syuppin from "./syuppin.json";
+import tAndDHoldings from "./t-and-d-holdings.json";
 import tAndSGroup from "./t-and-s-group.json";
 import tHasegawa from "./t-hasegawa.json";
 import tKawabeAndCo from "./t-kawabe-and-co.json";
@@ -3389,6 +3401,7 @@ import thermaeYuHoldings from "./thermae-yu-holdings.json";
 import thinca from "./thinca.json";
 import thineElectronics from "./thine-electronics.json";
 import thk from "./thk.json";
+import threeF from "./three-f.json";
 import tiemco from "./tiemco.json";
 import tigersPolymer from "./tigers-polymer.json";
 import timee from "./timee.json";
@@ -7636,4 +7649,17 @@ export const companies: Company[] = Object.entries({
   wadakohsan: wadakohsan,
   wagokoro: wagokoro,
   "waida-mfg": waidaMfg,
+  amuse: amuse,
+  "cvs-bay-area": cvsBayArea,
+  "digital-garage": digitalGarage,
+  hyojito: hyojito,
+  "japan-post-insurance": japanPostInsurance,
+  "japan-pulp-and-paper": japanPulpAndPaper,
+  "marui-group": maruiGroup,
+  "maruzen-showa-unyu": maruzenShowaUnyu,
+  ministop: ministop,
+  "nanso-transport": nansoTransport,
+  "se-holdings-and-incubations": seHoldingsAndIncubations,
+  "t-and-d-holdings": tAndDHoldings,
+  "three-f": threeF,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

@@ -50,8 +50,13 @@ const COMPREHENSIVE_INCOME = /包括利益/;
  * 高/収益/収入 at all; the rule was forcing a choice between failing the check
  * and writing 「収益」, which is exactly the truncation it exists to stop.
  * 「売上」 still fails, which is the case that matters.
+ *
+ * The parenthetical is matched in both widths: most filings print （） but
+ * 中部電力 and its regulated-utility peers print 「売上高(営業収益)」 with plain
+ * ASCII parens, and the half-width-only form rejected every one of their own
+ * labels for it.
  */
-const TOP_LINE_ENDING = /(高|収益|収入|計)(（[^）]*）)?$/;
+const TOP_LINE_ENDING = /(高|収益|収入|計)([（(][^）)]*[）)])?$/;
 
 const companyId = process.argv[2];
 if (!companyId) {
