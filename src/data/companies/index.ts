@@ -8,6 +8,7 @@ import aDWorksGroup from "./a-d-works-group.json";
 import aOneSeimitsu from "./a-one-seimitsu.json";
 import aTie from "./a-tie.json";
 import abAndCompany from "./ab-and-company.json";
+import abalance from "./abalance.json";
 import abcMart from "./abc-mart.json";
 import abeja from "./abeja.json";
 import abhotel from "./abhotel.json";
@@ -18,6 +19,7 @@ import accrete from "./accrete.json";
 import achilles from "./achilles.json";
 import acmos from "./acmos.json";
 import acom from "./acom.json";
+import acsl from "./acsl.json";
 import adSolNissin from "./ad-sol-nissin.json";
 import adeka from "./adeka.json";
 import adish from "./adish.json";
@@ -88,6 +90,7 @@ import aisanIndustry from "./aisan-industry.json";
 import aisanTechnology from "./aisan-technology.json";
 import aisin from "./aisin.json";
 import ait from "./ait.json";
+import aizawaSecuritiesGroup from "./aizawa-securities-group.json";
 import ajinomoto from "./ajinomoto.json";
 import ajis from "./ajis.json";
 import akasakaDiesels from "./akasaka-diesels.json";
@@ -440,8 +443,10 @@ import century21RealEstateOfJapan from "./century-21-real-estate-of-japan.json";
 import ceres from "./ceres.json";
 import cerespo from "./cerespo.json";
 import cgsHoldings from "./cgs-holdings.json";
+import changeHoldings from "./change-holdings.json";
 import charle from "./charle.json";
 import charmCare from "./charm-care.json";
+import chatplus from "./chatplus.json";
 import chemiproKaseiKaisha from "./chemipro-kasei-kaisha.json";
 import chichibuRailway from "./chichibu-railway.json";
 import chieru from "./chieru.json";
@@ -2415,7 +2420,6 @@ import nsk from "./nsk.json";
 import nsw from "./nsw.json";
 import ntn from "./ntn.json";
 import ntt from "./ntt.json";
-import nttDataGroup from "./ntt-data-group.json";
 import nttDataIntramart from "./ntt-data-intramart.json";
 import nulab from "./nulab.json";
 import nxeraPharma from "./nxera-pharma.json";
@@ -7264,7 +7268,6 @@ export const companies: Company[] = Object.entries({
   "ns-united-kaiun-kaisha": nsUnitedKaiunKaisha,
   nsd: nsd,
   nsw: nsw,
-  "ntt-data-group": nttDataGroup,
   "o-well": oWell,
   "odakyu-electric-railway": odakyuElectricRailway,
   "odawara-auto-machine-mfg": odawaraAutoMachineMfg,
@@ -7662,4 +7665,9 @@ export const companies: Company[] = Object.entries({
   "se-holdings-and-incubations": seHoldingsAndIncubations,
   "t-and-d-holdings": tAndDHoldings,
   "three-f": threeF,
+  abalance: abalance,
+  acsl: acsl,
+  "aizawa-securities-group": aizawaSecuritiesGroup,
+  "change-holdings": changeHoldings,
+  chatplus: chatplus,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
