@@ -257,6 +257,25 @@ node scripts/pipeline/merge-fragments.mjs <company-id>
 node scripts/pipeline/check-prose-figures.mjs <company-id> --fragments
 ```
 
+**`RESEARCH_CACHE` を明示的に設定していないと、証拠パックはOSの一時フォルダに置かれ、
+セッションの再起動やOSの一時ファイル整理で消える。** 数値のみで登録済み（`figures-only`）
+だが解説（businessStructure〜terms）がまだの企業を後日再開するとき、パックが消えていて
+`evidence/<id>/` が無ければ、**`run-mechanical.mjs` は使わない**——`src/data/companies/`
+に既にエントリーがあるため「既存」として identity を `skipped` にするだけで、パックを
+作り直さない。代わりに次を直接叩く。
+
+```
+node scripts/research/evidence-pack.mjs <id> <証券コード>   # pipeline/state/<id>.json の
+                                                              # identity.note に記録した
+                                                              # docID と一致することを確認する
+node scripts/research/draft-entry.mjs <id>
+```
+
+`evidence-pack.mjs` は既定で2026-06-01〜06-30の窓を検索する。それより後の有報を対象にした
+企業は `--from`/`--to` を `identity.note` の提出日に合わせること。窓を合わせれば、過去の
+日次インデックスは変わらないので同じ docID が確実に再現される——出力の `docID` が
+`pipeline/state/<id>.json` の記録と一致することを必ず確認してから先に進む。
+
 1つめ：**「この工程は「」**（かぎ括弧まで含めて）で grep して、担当外のフィールドを書いた警告が
 出ていないことを確認する。アセンブラの文面は `この工程は「X」を書けません` なので、かぎ括弧まで
 入れれば自分が `warnings` に書いた文と衝突しない。「書けません」や「この工程は」だけで探すと、
@@ -292,6 +311,13 @@ node scripts/pipeline/check-prose-figures.mjs <company-id> --fragments
 
 残る穴は1つ、**丸い数字**（1,000百万円 → "1000"）で、ほぼ必ず偶然どこかに一致する。
 通ったからといって確認済みではない項目が残る、ということ。
+
+**兆・億の金額は小数第1位までの要約表記が使える。**「186.1兆円」のように、大きな金額を
+1桁の小数で丸めて書いてよい（日本郵政のゆうちょ銀行・かんぽ生命の総資産級の金額で実例あり）。
+検査は小数点を含めて1つの単位グループとして読み、186,100,000百万円として換算照合する
+（2026-09-30以前は単位グループが整数しか受け付けず、小数点の直後の1桁だけを「1兆円」と
+切り出して、たまたまパック中のどこかに"1000000"があれば通ってしまっていた。誤った値のまま
+黙って通っていたバグで、`scripts/pipeline/check-prose-figures.mjs`側で修正済み）。
 
 ### 同じ回に登録する企業どうしは結べない
 

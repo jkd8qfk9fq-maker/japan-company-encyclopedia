@@ -95,8 +95,15 @@ if (useFragments) {
   financials = entry.financials ?? [];
 }
 
-/** 「6兆2,929億67百万円」「3,553億41百万円」「1,370,304百万円」「725億円」「1,000千円」 */
-const AMOUNT = /(?:([\d,]+)兆)?(?:([\d,]+)億)?(?:([\d,]+)百万)?(?:([\d,]+)万)?(?:([\d,]+)千)?([\d,]+)?円/g;
+/**
+ * 「6兆2,929億67百万円」「3,553億41百万円」「1,370,304百万円」「725億円」「1,000千円」
+ * 「186.1兆円」— 兆・億のような大きな単位は小数第1位までに丸めて書かれることがある
+ * （有報の表そのものではなく、agentが要約するときの house style）。単位グループごとに
+ * 小数点を許可しないと、小数点の直後の1桁だけが「1兆円」のように切り出され、しかも
+ * `packText.includes("1000000")` は巨大な有報の中でほぼ必ず偶然一致するため、誤った
+ * 値のまま黙って通っていた。
+ */
+const AMOUNT = /(?:([\d,]+(?:\.\d+)?)兆)?(?:([\d,]+(?:\.\d+)?)億)?(?:([\d,]+(?:\.\d+)?)百万)?(?:([\d,]+(?:\.\d+)?)万)?(?:([\d,]+(?:\.\d+)?)千)?([\d,]+)?円/g;
 const digits = (s) => (s ? Number(s.replace(/,/g, "")) : 0);
 
 const problems = [];
@@ -131,7 +138,10 @@ for (const m of prose.matchAll(AMOUNT)) {
   }
 
   // Or the same amount expressed in 百万円, which is the unit every 有報 table uses.
-  const inMillions = digits(cho) * 1_000_000 + digits(oku) * 100 + digits(million);
+  // Math.round: 「186.1兆円」→ digits(cho) is 186.1, and 186.1 * 1_000_000 is not
+  // exact in floating point (186100000.00000003) — round before formatting, or the
+  // string comparison below never matches even a genuinely correct figure.
+  const inMillions = Math.round(digits(cho) * 1_000_000 + digits(oku) * 100 + digits(million));
   if (packText.includes(String(inMillions))) continue;
 
   problems.push(`${expression}（${inMillions.toLocaleString("ja-JP")}百万円として照合）が有報の本文に見当たりません`);
