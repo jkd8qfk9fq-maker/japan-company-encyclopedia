@@ -91,6 +91,16 @@ function listingsFrom(text) {
     const market = MARKETS.find((m) => slice.includes(m));
     listings.push(market ? { exchange, market } : { exchange });
   }
+  /*
+    Some filings print only the segment — 「グロース市場」 with no exchange at all.
+    プライム, スタンダード and グロース are Tokyo own segment names and no other
+    exchange uses them, so the exchange follows from the segment rather than being
+    assumed. Only those three, because they are the only unambiguous ones.
+  */
+  if (listings.length === 0) {
+    const tokyoOnly = ["プライム", "スタンダード", "グロース"].find((m) => normalized.includes(m));
+    if (tokyoOnly) listings.push({ exchange: "tse", market: tokyoOnly });
+  }
   return listings;
 }
 

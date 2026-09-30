@@ -345,7 +345,14 @@ function labelBefore(table, at) {
           // parenthetical that is part of the label itself, such as
           // 「当期利益(親会社の所有者に帰属)」.
           .replace(/[（(]\s*(百万円|千円|billion|円|名|人|％|%)\s*[）)]$/, "")
-          .replace(/(百万円|千円|円|名|人|％|%|〃|－|—|-|、|：|:|\s)+$/, "")
+          // Dashes: a filing prints an absent year as a dash, and the columns run
+          // together, so a company whose early years are empty leaves a run of them
+          // sitting between the unit and the first real figure — 「売上高(千円)――――」.
+          // Only ― (U+2015), － and - were listed, and the class missed ─ ‐ ‒ – — ⼀
+          // and the ASCII/full-width variants EDINET actually uses. It cost 428
+          // rejected labels across one run: the walk-back is right and the tidy-up
+          // was leaving the dashes behind.
+          .replace(/(百万円|千円|円|名|人|％|%|〃|[－—―─‐‒–~〜ー−-]|、|：|:|\s)+$/, "")
           .trim();
       } while (label !== previous);
       if (label.length >= 2 && label.length <= 40) return label;
