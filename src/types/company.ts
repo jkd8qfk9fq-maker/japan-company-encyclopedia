@@ -27,6 +27,9 @@ export const INDUSTRY_IDS = [
   "telecommunications",
   "media",
   "entertainment",
+  // Added 2026-10-15 by the operator's decision, for a-tie (永代供養墓の募集代行・寺院コンサルティング);
+  // the 有報 itself names its market 墓地・葬儀・仏壇のライフエンディング市場, which no earlier id described.
+  "funeral-memorial",
 ] as const;
 
 export type IndustryId = (typeof INDUSTRY_IDS)[number];

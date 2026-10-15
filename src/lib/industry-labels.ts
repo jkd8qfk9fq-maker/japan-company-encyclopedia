@@ -23,4 +23,5 @@ export const INDUSTRY_LABELS: Record<IndustryId, { name: string; nameEn: string 
   telecommunications: { name: "通信", nameEn: "Telecommunications" },
   media: { name: "メディア", nameEn: "Media" },
   entertainment: { name: "エンターテインメント", nameEn: "Entertainment" },
+  "funeral-memorial": { name: "葬祭・供養関連", nameEn: "Funeral & Memorial Services" },
 };
