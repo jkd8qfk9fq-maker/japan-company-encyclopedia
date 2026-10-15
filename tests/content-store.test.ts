@@ -11,6 +11,10 @@ import { parseContent, revisionSchema } from "@/lib/content/schemas";
  * traceable and never silent.
  */
 
+// Each test copies the whole content tree (thousands of files), which outgrew vitest's
+// default 5s/10s limits; a timed-out test leaves writes in flight and the cleanup then fails.
+const SLOW_FS_MS = 120_000;
+
 let root: string;
 let store: ContentStore;
 const NOW = new Date("2026-09-15T03:04:05.000Z");
@@ -31,13 +35,13 @@ beforeEach(async () => {
     await cp(join(process.cwd(), "src/data", dir), join(root, "src/data", dir), { recursive: true });
   }
   store = new ContentStore(root);
-});
+}, SLOW_FS_MS);
 
 afterEach(async () => {
   await rm(root, { recursive: true, force: true });
-});
+}, SLOW_FS_MS);
 
-describe("ContentStore.save", () => {
+describe("ContentStore.save", { timeout: SLOW_FS_MS }, () => {
   it("writes the change, bumps updatedAt and records a revision with before/after", async () => {
     const { draft, version } = await loadToyota();
     const before = draft.description;
