@@ -3,6 +3,7 @@ import { features } from "@/data/features";
 import { industries } from "@/data/industries";
 import { terms } from "@/data/terms";
 import { join } from "node:path";
+import { isReleased } from "@/lib/release";
 import type { Company } from "@/types/company";
 import { FileRevisionRepository } from "./file-revision-repository";
 import type {
@@ -28,7 +29,9 @@ const collator = new Intl.Collator("ja-JP");
 // Companies are listed by securities code: stable, familiar to anyone who has
 // seen a 四季報, and independent of how a name is read.
 const sortedCompanies = [...companies].sort((a, b) => a.code.localeCompare(b.code));
+const releasedCompanies = sortedCompanies.filter(isReleased);
 const companyMap = byId(companies);
+const releasedMap = byId(releasedCompanies);
 const industryMap = byId(industries);
 const termMap = byId(terms);
 const featureMap = byId(features);
@@ -40,18 +43,24 @@ function pick<T>(map: Map<string, T>, ids: readonly string[]): T[] {
 
 export const companyRepository: CompanyRepository = {
   async list() {
-    return sortedCompanies;
+    return releasedCompanies;
   },
   async get(id) {
-    return companyMap.get(id) ?? null;
+    return releasedMap.get(id) ?? null;
   },
   async getMany(ids) {
-    return pick(companyMap, ids);
+    return pick(releasedMap, ids);
   },
   async listByIndustry(industryId) {
-    return sortedCompanies.filter((c: Company) =>
+    return releasedCompanies.filter((c: Company) =>
       c.industries.some((ref) => ref.industryId === industryId),
     );
+  },
+  async listAll() {
+    return sortedCompanies;
+  },
+  async getAny(id) {
+    return companyMap.get(id) ?? null;
   },
 };
 

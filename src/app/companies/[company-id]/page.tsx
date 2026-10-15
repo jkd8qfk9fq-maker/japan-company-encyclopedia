@@ -52,6 +52,7 @@ export async function generateMetadata({ params }: PageProps<"/companies/[compan
       url: path,
       type: "article",
     },
+    twitter: { card: "summary", title: `${company.name}とは？｜${SITE_NAME}`, description },
   };
 }
 

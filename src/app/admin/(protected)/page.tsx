@@ -4,7 +4,7 @@ import { getReportRepository } from "@/lib/reports";
 import { formatDateJa } from "@/lib/utils/format";
 
 export default async function AdminDashboard() {
-  const companies = await companyRepository.list();
+  const companies = await companyRepository.listAll();
   const reports = getReportRepository();
   const activeReports = reports ? await reports.count({ statuses: ["open", "investigating"] }) : null;
   const attention = companies.filter((c) => c.status.state === "needs-attention");

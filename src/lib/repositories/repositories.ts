@@ -15,10 +15,14 @@ import type { Term } from "@/types/term";
  */
 
 export interface CompanyRepository {
+  /** The public site's view: released companies only (`src/lib/release.ts`). */
   list(): Promise<Company[]>;
   get(id: string): Promise<Company | null>;
   getMany(ids: readonly string[]): Promise<Company[]>;
   listByIndustry(industryId: IndustryId): Promise<Company[]>;
+  /** Every registered company, released or not — for the admin editor and nothing public. */
+  listAll(): Promise<Company[]>;
+  getAny(id: string): Promise<Company | null>;
 }
 
 export interface IndustryRepository {

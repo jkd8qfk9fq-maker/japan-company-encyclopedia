@@ -5,7 +5,7 @@ import { formatDateJa } from "@/lib/utils/format";
 export const metadata = { title: "企業" };
 
 export default async function AdminCompanies() {
-  const [companies, revisions] = await Promise.all([companyRepository.list(), revisionRepository.list()]);
+  const [companies, revisions] = await Promise.all([companyRepository.listAll(), revisionRepository.list()]);
   const revisionCount = (id: string) => revisions.filter((r) => r.targetType === "company" && r.targetId === id).length;
 
   return (

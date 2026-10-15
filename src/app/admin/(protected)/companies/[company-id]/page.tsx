@@ -15,7 +15,7 @@ export const metadata = { title: "企業の詳細" };
  */
 export default async function AdminCompany({ params }: PageProps<"/admin/companies/[company-id]">) {
   const id = (await params)["company-id"];
-  const company = await companyRepository.get(id);
+  const company = await companyRepository.getAny(id);
   if (!company) notFound();
   const reports = getReportRepository();
   const [revisions, companyReports] = await Promise.all([

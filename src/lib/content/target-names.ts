@@ -15,8 +15,8 @@ export const TARGET_TYPE_LABEL: Record<RevisionTargetType, string> = {
 export async function describeTarget(targetType: RevisionTargetType, targetId: string): Promise<{ name: string; href: string | null }> {
   switch (targetType) {
     case "company": {
-      const company = await companyRepository.get(targetId);
-      return { name: company?.name ?? targetId, href: company ? `/companies/${targetId}` : null };
+      const [company, released] = await Promise.all([companyRepository.getAny(targetId), companyRepository.get(targetId)]);
+      return { name: company?.name ?? targetId, href: released ? `/companies/${targetId}` : null };
     }
     case "industry": {
       const known = INDUSTRY_IDS.includes(targetId as IndustryId);

@@ -19,7 +19,7 @@ export default async function EditCompanyPage({ params }: PageProps<"/admin/comp
   if (!loaded) notFound();
   const parsed = companySchema.safeParse(loaded.data);
 
-  const companies = (await companyRepository.list()).map((c) => ({ id: c.id, name: c.name }));
+  const companies = (await companyRepository.listAll()).map((c) => ({ id: c.id, name: c.name }));
 
   return (
     <div>

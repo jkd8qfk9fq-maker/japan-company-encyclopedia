@@ -25,7 +25,7 @@ export default async function AdminReports({ searchParams }: PageProps<"/admin/r
 
   const [reports, companies] = await Promise.all([
     repository.list({ statuses: showAll ? undefined : ACTIVE }),
-    companyRepository.list(),
+    companyRepository.listAll(),
   ]);
   const companyName = new Map(companies.map((c) => [c.id, c.name]));
 

@@ -2,9 +2,11 @@ import Link from "next/link";
 import { Flag } from "lucide-react";
 import { RichText } from "@/components/rich-text/rich-text";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import type { Company } from "@/types/company";
 import { BusinessStructure } from "./business-structure";
 import { FavoriteButton } from "./favorite-button";
+import { ShareActions } from "./share-actions";
 
 const EXCHANGE_NAME: Record<Company["listings"][number]["exchange"], string> = {
   tse: "東証",
@@ -93,6 +95,7 @@ export function CompanyHero({ company }: { company: Company }) {
           </div>
           <div className="flex flex-wrap gap-3">
             <FavoriteButton companyId={company.id} companyName={company.name} />
+            <ShareActions url={new URL(`/companies/${company.id}`, SITE_URL).toString()} text={`${company.name}とは？｜${SITE_NAME}`} />
             <Link
               href={`/report?company=${company.id}`}
               className="inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-sm text-muted-foreground transition-colors hover:text-foreground"

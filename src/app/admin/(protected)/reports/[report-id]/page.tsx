@@ -25,7 +25,7 @@ export default async function AdminReport({ params }: PageProps<"/admin/reports/
   const report = await repository.get((await params)["report-id"]);
   if (!report) notFound();
 
-  const company = report.companyId ? await companyRepository.get(report.companyId) : null;
+  const company = report.companyId ? await companyRepository.getAny(report.companyId) : null;
   const revisions = company ? await revisionRepository.listForTarget("company", company.id) : [];
   const editable = localEditingStatus().enabled;
 
