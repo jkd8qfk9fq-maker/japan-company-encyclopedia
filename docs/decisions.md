@@ -182,3 +182,90 @@ production yet; zero cost and operationally simple; the repository is the source
   restored. Report detail: note persisted, status 対応不要 removed it from the active queue.
 - **Future** (not built, by decision): production admin → GitHub pull request → review → merge → deploy.
   `ContentStore` is the seam where a pull-request writer would replace the file writer.
+
+### JCE-017 · 2026-10-11 · Accepted (operator) — Front page redesigned after a design reference
+
+The operator supplied a reference image for the front page and asked for it to be built first, leaving out what
+the site does not have. What changed, and what was deliberately left out:
+
+- **Built**: header (name with a 朱 rule, tagline, nav, search field, settings), a hero band with search, search
+  examples and three facts (listed companies, industries, primary sources), and three columns — industries as a
+  starting point; companies with latest revenue, net income and a five-year chart; a reading list and the most
+  recently updated companies. Server Components throughout; the search fields are plain GET forms to `/search?q=`.
+- **Left out because the site has no such thing**: market-cap and fiscal-year filters, the compare tool, company
+  logos, the saved-companies link in the header (saved companies still show on the page when there are any), the
+  market-wide revenue chart, the "popular keywords" label (there is no usage data — shown as "検索例"), and the
+  reference's explainer articles (replaced by the existing features, or the glossary when there are none).
+- **Departure from the palette rule** ("one accent: 藍"): a small 朱 (`--seal`) rule marks the site name, section
+  titles and the active nav item, as in the reference. It is a marker only — never a state, never gain/loss,
+  never text or a fill behind text.
+- **Invariant 4 is kept**: revenue and net income appear only on the three cards, in context with their chart and
+  fiscal year; no ratios, no rankings, no change figures. The cards are headed 「解説つきの企業」: published pages
+  with at least four complete years, largest latest revenue first — the order only picks which three to show
+  (`src/lib/home.ts`, tested).
+- **Header height** 3.5rem → 4.25rem (`--header-height`); desktop nav labels 企業を探す / 業界から探す / 特集 / 用語集.
+
+### JCE-018 · 2026-10-16 · Accepted (operator) — Gradual release, and automatic financial updates
+
+Follows the operator's answers of 2026-10-16 to the release proposal. The repository stays the source of truth
+(option A); problems are reported as they come up.
+
+- **Release line.** Only `published` companies are public: 184 at the first release. `figures-only` and
+  `needs-attention` entries stay in the repository and the admin editor but have no page — not listed, not
+  searched, not in the sitemap, not linked from another company, and their URL is a 404. Promoting an entry to
+  `published` releases it; nothing else changes. Implemented once, in the repository layer (`src/lib/release.ts`;
+  `companyRepository.list/get/getMany/listByIndustry` are the public view, `listAll/getAny` the admin's).
+- **Sharing.** Company pages carry X, copy-link and device share-sheet buttons (Instagram has no web share URL;
+  its routes are the share sheet and a pasted link) and a `twitter:card`. Per-company share images are not built:
+  they need a Japanese font file shipped with the app, which is a separate decision.
+- **Wikipedia** stays a lead-finder only (`wikipedia-company-search`): never a source, never written into
+  `src/data/`. Invariant 3 and the `finalize.mjs` / `npm test` checks are unchanged.
+- **Financial figures update automatically; prose never does.** `scripts/pipeline/refresh-financials.mjs`
+  (`npm run content:refresh-financials -- --all --apply`) finds registered companies whose newest 有価証券報告書
+  has a later fiscal year end than the newest year in their `financials` — decided from the entry alone, so a
+  manual run and CI agree and `pipeline/state` is not needed (it only remembers what a person already looked at).
+  It reads the new year from EDINET and adds it to `financials` with the filing as a new source and a Revision;
+  the oldest year leaves so the five-year window holds. Rows already registered, prose and status are untouched,
+  so a published page stays published. It writes only if verify-financials, the schema/integrity rules and the
+  integrity suite pass (and puts everything back if the suite fails). It HOLDS — not an error — when the new
+  filing prints a different value for a registered year (a restatement), changes the year end, has an irregular
+  period, mixes accounting standards, or the source id clashes. A company whose evidence cannot be fetched or
+  whose result fails verification FAILS the run (exit 1); a day of the EDINET index that cannot be vouched for
+  fails the whole run. Nothing it cannot read is filled in (invariant 1). It never runs git: the operator reviews
+  `npm run content:diff` and commits (invariant 9). `--rehearse <id>` re-derives a company's newest registered
+  year from EDINET without writing anything, to prove the path on real data. Default scope is the promoted tiers.
+- **Scheduled detection (GitHub Actions, private repository).** `.github/workflows/refresh-financials.yml` runs
+  every day at 07:00 JST, **detection only**: no `--apply`, no commit or push, a token with `contents: read`
+  and nothing else, one secret (`EDINET_API_KEY`), and a check that `src/data` did not change. Candidates, holds
+  and failures are in the job log, the job summary and the `refresh-report` artifact (30 days). A person applies an
+  update locally, reviews the diff and commits. Issue notifications are deliberately not built yet; automatic
+  writing, if ever, is a separate decision. `tests/refresh-workflow.test.ts` pins these properties.
+- **Open.** "Quarterly" is not modelled: EDINET carries one 有価証券報告書 a year, which the schema stores, so a
+  daily scan picks each one up as it is filed. Figures from 決算短信 or 半期報告書 would need a schema decision.
+  EDINET's terms of use for scheduled API access are still to be confirmed (continuous-update-decisions B-6).
+
+### JCE-019 · 2026-10-16 · Accepted (operator) — Release review, and an operator-only draft console
+
+Before the first push, what the site would show readers was reviewed on a production build of the publication set (not
+only on the repository), and a place was added where operators can see unreleased entries before releasing them.
+
+- **What was checked.** Every prerendered page, RSC payload and client chunk of the build was scanned for unreleased
+  companies, review notes, working-process wording, local paths and settings; the served site was probed (unreleased
+  pages, admin, search, sitemap, listings); and the 184 published entries were scanned for process wording and
+  unfinished markers. Found: nothing of an unreleased entry reaches readers (404s, sitemap and search index hold the
+  184 released companies only, no client chunk carries company data) — and one defect: prose in published entries
+  linked to registered-but-unreleased companies, which was a 404. `RichText` now links a company or industry only if
+  its page exists, and leaves the label as plain text otherwise (`withoutUnavailableLinks`, tested).
+- **Left as it is, on purpose.** Industry pages without a researched explanation say 「解説は準備中」 (18 of 19 pages):
+  it is an honest placeholder and the page is the way to browse released companies by industry. The admin editor's
+  client code is in the public JavaScript chunks; it carries no data, and every admin page and action checks the session.
+- **The draft console.** `/admin/drafts` lists every entry without a public page (要確認 / 数値のみ), with a search and
+  paging, and `/admin/drafts/<id>` previews one with the component that renders the public page (`CompanyView`), under
+  a banner that says what is still missing. It is under `/admin`: `requireAdmin` guards it, the session cookie exists
+  only on `/admin`, it is `noindex`, never prerendered, and nothing on the public site links to it. A draft is shown as
+  readers would see it today, so a link to a company that is not released is plain text there too.
+- **Readiness** (`releaseReadiness`) is the integrity rules applied to the entry as if it were `published`, plus its open
+  review notes. It decides nothing; it says what stands between the entry and the public site.
+- **Releasing one at a time.** Preview in the console → in the local editor set the state to 公開 (a Revision is
+  written) → `npm run content:check` → commit and push → the site is rebuilt and shows the released companies only.
+  Production still writes no content (JCE-016); releasing is a commit.

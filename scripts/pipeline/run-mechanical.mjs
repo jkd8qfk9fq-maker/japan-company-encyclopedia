@@ -18,7 +18,8 @@ import { execFileSync } from "node:child_process";
 import { join } from "node:path";
 import { cacheDir } from "../research/edinet.mjs";
 import { documentsOn } from "../research/edinet.mjs";
-import { loadState, setStage } from "./company-state.mjs";
+import { amendmentIdentity } from "../research/amendments.mjs";
+import { loadState, saveState, setStage } from "./company-state.mjs";
 
 const normalize = (s) => s.normalize("NFKC").replace(/\s+/g, "").replace(/[（）()]/g, "");
 
@@ -119,6 +120,17 @@ async function processOne(companyId, term, from, to) {
       run(["scripts/research/evidence-pack.mjs", companyId, resolved.code, "--from", shift(-21), "--to", shift(21)]);
       run(["scripts/research/draft-entry.mjs", companyId]);
       const pack = JSON.parse(readFileSync(join(cacheDir(), "evidence", companyId, "summary.json"), "utf8"));
+      // `identity.corrections` keeps its meaning (what the search window showed, written
+      // above); the tracked chain and the filing of record are recorded beside it, the
+      // same way intake.mjs records them for a bulk-built company.
+      const current = loadState(companyId);
+      current.identity = {
+        ...current.identity,
+        docID: pack.filing?.docID ?? current.identity.docID,
+        originalDocID: current.identity.originalDocID ?? resolved.docID,
+        amendments: amendmentIdentity(pack),
+      };
+      saveState(current);
       const warnings = (pack.warnings ?? []).length;
       setStage(companyId, "edinet", "completed", `pack + draft 作成（warnings ${warnings} 件）`);
     } catch (error) {

@@ -1,0 +1,104 @@
+# Daily check for new 有価証券報告書 and for the financial updates they would cause.
+#
+# DETECTION ONLY. This workflow never writes data: no --apply, no commit, no push, a read-only token.
+# What it finds is shown in the job summary and in the `refresh-report` artifact; a person applies an update
+# on their own machine (`npm run content:refresh-financials -- <company-id> --apply`), reviews the diff and
+# commits it. See docs/decisions.md JCE-018 and scripts/pipeline/refresh-financials.mjs.
+#
+# Job result: success = ran to the end (nothing new, candidates, and held companies all count);
+# failure = the EDINET index could not be vouched for, a company failed to fetch / extract / verify,
+# or the committed data changed during the run.
+name: refresh-financials
+
+on:
+  schedule:
+    # 22:00 UTC = 07:00 JST the next day. GitHub may start a scheduled run several minutes late.
+    - cron: "0 22 * * *"
+  workflow_dispatch:
+    inputs:
+      rehearse:
+        description: "Company id to rehearse: re-derive its newest registered year from EDINET as a real update would (writes nothing)"
+        required: false
+        type: string
+
+# The only permission the job has. Nothing here can push, comment or open anything.
+permissions:
+  contents: read
+
+concurrency:
+  group: refresh-financials
+  cancel-in-progress: false
+
+jobs:
+  detect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      EDINET_API_KEY: ${{ secrets.EDINET_API_KEY }}
+      # Everything the run downloads lives here, outside src/ and pipeline/, and is cached between runs.
+      RESEARCH_CACHE: ${{ github.workspace }}/.cache/edinet
+      RESEARCH_INDEX_CACHE: ${{ github.workspace }}/.cache/edinet/index
+      # Passed through the environment, never interpolated into a shell command.
+      REHEARSE_ID: ${{ inputs.rehearse }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Fingerprint the committed data
+        run: |
+          find src/data -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum > "$RUNNER_TEMP/data-before.sha"
+
+      - name: Restore the EDINET cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/edinet
+          key: edinet-cache-${{ github.run_id }}
+          restore-keys: edinet-cache-
+
+      - name: Detect new filings (dry run)
+        run: |
+          mkdir -p out
+          if [ -n "$REHEARSE_ID" ]; then
+            node scripts/pipeline/refresh-financials.mjs --rehearse "$REHEARSE_ID" --report out/refresh-report.json --summary out/summary.md
+          else
+            node scripts/pipeline/refresh-financials.mjs --all --report out/refresh-report.json --summary out/summary.md
+          fi
+
+      - name: Job summary
+        if: always()
+        run: |
+          if [ -f out/summary.md ]; then cat out/summary.md >> "$GITHUB_STEP_SUMMARY"; else echo "The run stopped before it could write a report." >> "$GITHUB_STEP_SUMMARY"; fi
+
+      - name: Upload the report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: refresh-report
+          path: out/
+          if-no-files-found: warn
+          retention-days: 30
+
+      # Saved even when the run failed: index days already fetched are not fetched again.
+      - name: Save the EDINET cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/edinet
+          key: edinet-cache-${{ github.run_id }}
+
+      - name: Check that the committed data did not change
+        if: always()
+        run: |
+          find src/data -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum > "$RUNNER_TEMP/data-after.sha"
+          if ! cmp -s "$RUNNER_TEMP/data-before.sha" "$RUNNER_TEMP/data-after.sha"; then
+            echo "::error::src/data changed during a detection-only run"
+            exit 1
+          fi

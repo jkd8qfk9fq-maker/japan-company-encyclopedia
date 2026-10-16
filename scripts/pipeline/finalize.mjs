@@ -19,9 +19,11 @@
  */
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { amendmentIdentity, correctionsCell, loadIndex } from "../research/amendments.mjs";
 import { cacheDir } from "../research/edinet.mjs";
 import { join } from "node:path";
 import { mergeEntry } from "./merge-fragments.mjs";
+import { finishRegistration } from "./registration-tail.mjs";
 import { loadState, saveState, setStage, syncAgentStages } from "./company-state.mjs";
 
 const companyId = process.argv[2];
@@ -105,6 +107,31 @@ function listingsFrom(text) {
 }
 
 /**
+ * Point `identity.docID` at the document the pack was built from.
+ *
+ * sourceValidation requires every EDINET source URL to contain `identity.docID` — the
+ * document the data was taken from. When a complete 訂正 supersedes the original the
+ * pack is built from the 訂正 (and the agents cite what the pack names), so the identity
+ * has to say so before that check runs. `originalDocID` keeps the universe row's id and
+ * is never changed. A pack of a different original is not adopted: that is a mismatch
+ * for sourceValidation to report, not something to paper over here.
+ */
+function syncIdentityToPack() {
+  const summaryPath = join(cacheDir(), "evidence", companyId, "summary.json");
+  if (!existsSync(summaryPath)) return;
+  const summary = JSON.parse(readFileSync(summaryPath, "utf8"));
+  const state = loadState(companyId);
+  const id = state.identity;
+  if (!id || !summary.filing?.docID) return;
+  const original = summary.filing.originalDocID ?? summary.filing.docID;
+  if (original !== (id.originalDocID ?? id.docID)) return;
+  id.originalDocID ??= original;
+  id.docID = summary.filing.docID;
+  id.amendments = amendmentIdentity(summary) ?? id.amendments;
+  saveState(state);
+}
+
+/**
  * An entry with the figures and nothing written: the floor tier (§ContentStatus).
  *
  * Everything here is a transcription of the filing or of EDINET's own index. The
@@ -145,8 +172,9 @@ function figuresOnlyEntry() {
         id: sourceIds[0],
         title: (identity.docID ? draft["_有報"]?.replace(/\s*\(docID [^)]+\)/, "") : draft["_有報"]) ?? "有価証券報告書",
         publisher: draft.officialName,
-        url: `https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/${identity.docID}.pdf`,
-        ...(identity.submitted ? { publishedAt: identity.submitted } : {}),
+        // The document the draft was read from — a 訂正 when one is of record.
+        url: `https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/${draft._docID ?? identity.docID}.pdf`,
+        ...((draft._提出日 ?? identity.submitted) ? { publishedAt: draft._提出日 ?? identity.submitted } : {}),
         accessedAt: today,
       },
     ],
@@ -326,10 +354,11 @@ evidence pack だけを読むエージェントが書いた。下の警告欄が
 |---|---|
 | 提出者名（EDINET） | ${cell(id.filerName)} |
 | 証券コード | ${cell(id.code)} |
-| docID | \`${cell(id.docID)}\` |
-| 提出日 | ${cell(id.submitted)} |
+| docID（データを取り出した文書） | \`${cell(id.docID)}\` |
+| 原本 docID | \`${cell(id.originalDocID ?? id.docID)}\` |
+| 提出日（原本） | ${cell(id.submitted)} |
 | 決算期 | ${cell(id.periodEnd)} |
-| 訂正報告書 | ${(id.corrections ?? []).length === 0 ? "なし" : id.corrections.join(", ")} |
+| 訂正報告書 | ${cell(correctionsCell(id, loadIndex()))} |
 
 entry の \`sources\`: ${(entry.sources ?? []).map((s) => `\`${s.id}\` ${s.url}`).join(" / ") || "なし"}
 
@@ -356,6 +385,13 @@ ${list(merged.warnings)}
 ## 要確認（status に反映）
 
 ${list(merged.needsReview)}
+
+## 分類の不足（status には反映しない）
+
+データは正しいが、現在の分類（RELATIONSHIP_KINDS / INDUSTRY_IDS）では言い表せないもの。会社を止める理由ではなく、
+分類を決めるための記録（全社分は \`pipeline/taxonomy-gaps.tsv\`）。
+
+${list((merged.taxonomyGaps ?? []).map((g) => `[${g.kind}] ${g.subject} → 提案: ${g.proposed || "なし"}。${g.reason}`))}
 `;
 }
 
@@ -396,13 +432,16 @@ function registration(entry, validation, merged) {
     written.push(entryPath);
 
     const id = loadState(companyId).identity ?? {};
+    const financialsChanged = upgrading && JSON.stringify(existing.financials) !== JSON.stringify(entry.financials);
     const revision = {
       id: revisionId,
       targetType: "company",
       targetId: companyId,
       changedAt: today,
       reason: upgrading
-        ? "数値のみで掲載していたエントリーに解説を追加した。財務データは変わっていない"
+        ? financialsChanged
+          ? "数値のみで掲載していたエントリーに解説を追加した。財務データも、現在の有効な有価証券報告書（訂正を含む）から取り直した値に変わった。変更点は前後の差分を見ること"
+          : "数値のみで掲載していたエントリーに解説を追加した。財務データは変わっていない"
         : "初版。登録パイプラインが EDINET の一次資料から作成し、リサーチログに根拠を記録した",
       summary: `${entry.officialName} 有価証券報告書（docID ${id.docID ?? "不明"}、提出 ${id.submitted ?? "不明"}）に基づき登録パイプラインが${upgrading ? "解説を追加" : "作成"}`,
     };
@@ -432,6 +471,7 @@ function registration(entry, validation, merged) {
 // --------------------------------------------------------------------------- main
 let merged;
 try {
+  syncIdentityToPack();
   merged = stageEntry();
 } catch (error) {
   setStage(companyId, "sourceValidation", "failed", String(error.message));
@@ -476,11 +516,10 @@ try {
   console.error(error.message);
   process.exit(1);
 }
-const state = loadState(companyId);
-state.registeredAt = new Date().toISOString();
-saveState(state);
-setStage(companyId, "registration", "completed", `登録済み（状態 ${merged.entry.status.state}）`);
-rmSync(merged.path, { force: true });
+// After the registration is safe, never inside it: a vocabulary gap must not be able to undo one.
+// The bookkeeping lives in registration-tail.mjs so that recover-registration.mjs can finish exactly
+// this, and only this, for a registration that was interrupted right before it.
+finishRegistration({ companyId, entryState: merged.entry.status.state, taxonomyGaps: merged.taxonomyGaps ?? [], stagedPath: merged.path, root });
 console.log("  registration: OK — 統合テストと型チェックを通過");
 console.log(`\n登録しました: src/data/companies/${companyId}.json / docs/research/${companyId}.md / 改訂記録 / index.ts`);
 console.log("コミットは人が行うこと（パイプラインは git を触りません）");

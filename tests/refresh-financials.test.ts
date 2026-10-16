@@ -2,7 +2,7 @@ import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { financialsBase, isNewer, newestFilings, planFinancialsRefresh, revisionChange } from "../scripts/pipeline/refresh-financials.mjs";
+import { buildReport, exitCodeFor, filingStatus, latestPeriod, message, newestFilings, planFinancialsRefresh, rehearsalEntry, renderSummary, revisionChange, scanFrom } from "../scripts/pipeline/refresh-financials.mjs";
 
 /**
  * The refresh adds a new fiscal year and never rewrites what is registered: a restated year, a changed
@@ -121,20 +121,109 @@ describe("revisionChange", () => {
   });
 });
 
-describe("which filing is newer", () => {
-  const identity = { code: "1000", docID: "S1", submitted: "2026-06-26" };
-  it("is newer only when filed later, under another docID", () => {
-    expect(isNewer({ docID: "S2", submitted: "2027-06-26" }, identity)).toBe(true);
-    expect(isNewer({ docID: "S1", submitted: "2026-06-26" }, identity)).toBe(false);
-    expect(isNewer({ docID: "S9", submitted: "2026-06-26" }, identity)).toBe(false);
-    expect(isNewer(undefined, identity)).toBe(false);
+describe("which filing is newer — decided from the entry alone", () => {
+  const e = entry([2022, 2023, 2024, 2025, 2026]);
+  it("is newer only when the newest filing's fiscal year ends after the newest registered year", () => {
+    expect(latestPeriod(e)).toBe("2026-03-31");
+    expect(filingStatus({ periodEnd: "2027-03-31" }, e)).toBe("newer");
+    expect(filingStatus({ periodEnd: "2026-03-31" }, e)).toBe("current");
+    expect(filingStatus({ periodEnd: "2025-03-31" }, e)).toBe("current");
+    expect(filingStatus(undefined, e)).toBe("current");
   });
 
-  it("measures against the last refresh, not the filing the prose was written from", () => {
-    const refreshed = { ...identity, financials: { docID: "S2", submitted: "2027-06-26", periodEnd: "2027-03-31" } };
-    expect(financialsBase(refreshed).docID).toBe("S2");
-    expect(isNewer({ docID: "S2", submitted: "2027-06-26" }, refreshed)).toBe(false);
-    expect(isNewer({ docID: "S3", submitted: "2028-06-26" }, refreshed)).toBe(true);
+  it("never skips a filing it cannot date: a missing fiscal year end is 'unknown', not 'current'", () => {
+    expect(filingStatus({ periodEnd: "" }, e)).toBe("unknown");
+  });
+
+  it("starts scanning after the newest registered filing was submitted, or after its year end when that is not known", () => {
+    const dated = entry([2025, 2026]);
+    dated.sources[0] = { ...dated.sources[0], publishedAt: "2026-06-26" } as (typeof dated.sources)[number];
+    expect(scanFrom(dated)).toBe("2026-06-26");
+    expect(scanFrom(entry([2025, 2026]))).toBe("2026-03-31");
+  });
+});
+
+describe("rehearsalEntry", () => {
+  it("removes the newest year, and its source when nothing else cites it, so the rehearsal re-adds both", () => {
+    const rehearsal = rehearsalEntry(entry([2022, 2023, 2024, 2025, 2026]));
+    expect(rehearsal?.removed.fiscalYear).toBe("2026年3月期");
+    expect(rehearsal?.entry.financials.map((r: { periodEnd: string }) => r.periodEnd).at(-1)).toBe("2025-03-31");
+    expect(rehearsal?.entry.sources).toEqual([]);
+  });
+
+  it("keeps a source that other rows still cite", () => {
+    const e = entry([2025, 2026]);
+    e.financials[0] = { ...e.financials[0], sourceIds: ["yuho-2025", "yuho-2026"] } as (typeof e.financials)[number];
+    expect(rehearsalEntry(e)?.entry.sources).toHaveLength(1);
+  });
+
+  it("does not change the entry it is given, and refuses an entry with no figures", () => {
+    const e = entry([2025, 2026]);
+    const before = JSON.stringify(e);
+    rehearsalEntry(e);
+    expect(JSON.stringify(e)).toBe(before);
+    expect(rehearsalEntry({ ...e, financials: [] })).toBeNull();
+  });
+
+  it("round-trips: planning against the rehearsal entry re-adds exactly the removed year", () => {
+    const full = entry([2022, 2023, 2024, 2025, 2026]);
+    const rehearsal = rehearsalEntry(full)!;
+    const d = draft([2022, 2023, 2024, 2025, 2026]);
+    const result = plan(rehearsal.entry as typeof full, d);
+    expect(result.kind).toBe("update");
+    if (result.kind === "update") {
+      expect(result.added.map((r: { fiscalYear: string }) => r.fiscalYear)).toEqual(["2026年3月期"]);
+      expect(result.source?.id).toBe("yuho-2026");
+    }
+  });
+});
+
+describe("exit code and report", () => {
+  const o = (result: string, over: object = {}) => ({ id: "a", result, detail: "", ...over }) as Parameters<typeof exitCodeFor>[0][number];
+  it("is 0 for a quiet day, for candidates, and for held companies — a held company is a decision for a person", () => {
+    expect(exitCodeFor([], null)).toBe(0);
+    expect(exitCodeFor([o("would-update"), o("held"), o("current")], null)).toBe(0);
+  });
+
+  it("is 1 for a failed company, an undatable filing, or a fatal problem — never green on failure", () => {
+    expect(exitCodeFor([o("would-update"), o("failed")], null)).toBe(1);
+    expect(exitCodeFor([o("unknown")], null)).toBe(1);
+    expect(exitCodeFor([], "EDINET の日次索引 3 日を確認できず")).toBe(1);
+  });
+
+  const scope = { companies: 258, from: "2026-06-26", to: "2027-07-01" };
+  const candidate = o("would-update", { id: "acme", tier: "published", newFiling: { docID: "S1", submitted: "2027-06-26", periodEnd: "2027-03-31" }, added: [row(2027)], dropped: [row(2022)], source: { id: "yuho-2027", url: "u", title: "t", accessedAt: "x" } });
+
+  it("reports counts, the added figures and the reasons, and leaves out functions", () => {
+    const report = buildReport({ mode: "dry-run", today: "2027-07-01", scope, outcomes: [{ ...candidate, undo: () => {} }, o("held", { id: "b", reasons: ["遡及修正の可能性"] }), o("failed", { id: "c", detail: "証拠パックを作れない" })], fatal: null });
+    expect(report.counts).toMatchObject({ companies: 258, withNewFiling: 3, wouldUpdate: 1, held: 1, failed: 1 });
+    expect(report.exitCode).toBe(1);
+    expect(report.outcomes[0]).toMatchObject({ id: "acme", added: [{ fiscalYear: "2027年3月期", revenue: 2027 * 1_000_000 }], dropped: ["2022年3月期"], source: { id: "yuho-2027" } });
+    expect(JSON.stringify(report)).not.toContain("undo");
+  });
+
+  it("renders a summary a person can act on: candidates with figures, held reasons, failures", () => {
+    const text = renderSummary(buildReport({ mode: "dry-run", today: "2027-07-01", scope, outcomes: [candidate, o("held", { id: "b", reasons: ["遡及修正の可能性"] }), o("failed", { id: "c", detail: "証拠パックを作れない" })], fatal: null }));
+    expect(text).toContain("更新候補");
+    expect(text).toContain("acme（published） | 2027年3月期 | 2,027百万円");
+    expect(text).toContain("遡及修正の可能性");
+    expect(text).toContain("証拠パックを作れない");
+  });
+
+  it("says plainly that there was nothing new, and says so loudly when the run failed", () => {
+    expect(renderSummary(buildReport({ mode: "dry-run", today: "2027-07-01", scope, outcomes: [], fatal: null }))).toContain("新しい有価証券報告書はありません");
+    expect(renderSummary(buildReport({ mode: "dry-run", today: "2027-07-01", scope, outcomes: [], fatal: "索引を確認できない" }))).toContain("**失敗: 索引を確認できない**");
+  });
+});
+
+describe("message", () => {
+  it("scrubs the EDINET API key from anything it prints", () => {
+    process.env.EDINET_API_KEY = "secret-key-123";
+    try {
+      expect(message(new Error("GET https://api.edinet-fsa.go.jp/x?Subscription-Key=secret-key-123 failed"))).not.toContain("secret-key-123");
+    } finally {
+      delete process.env.EDINET_API_KEY;
+    }
   });
 });
 

@@ -9,6 +9,7 @@ const NAV = [
   { href: "/admin", label: "ダッシュボード" },
   { href: "/admin/reports", label: "報告" },
   { href: "/admin/companies", label: "企業" },
+  { href: "/admin/drafts", label: "下書き" },
   { href: "/admin/terms", label: "用語" },
   { href: "/admin/revisions", label: "改訂履歴" },
 ];

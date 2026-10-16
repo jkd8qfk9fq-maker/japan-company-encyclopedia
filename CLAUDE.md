@@ -90,13 +90,82 @@ npm run content:diff          # read-only: changed data files, new revisions, di
 **Correcting** published content: use the local admin editor — `docs/correction-workflow.md`. Do not
 hand-edit JSON for a factual correction without also writing a Revision file; the editor does both.
 
-**Adding** a company:
-1. Research protocol: `docs/research-protocol.md`. Follow it exactly.
-2. Data file: `src/data/companies/<company-id>.json`, valid against `companySchema`.
-3. Research log: `docs/research/<company-id>.md` — every figure traced to a document and page.
-4. Register it in `src/data/companies/index.ts`, and add a first revision
-   `src/data/revisions/<date>-company-<company-id>-initial.json`.
-5. `npm test` must pass.
+**Adding** a company — two paths, both ending in the same `companySchema` shape and both gated by
+`npm test`:
+
+- **A small number of companies, researched fully by hand**: `docs/research-protocol.md`.
+  1. Follow the protocol exactly.
+  2. Data file: `src/data/companies/<company-id>.json`, valid against `companySchema`.
+  3. Research log: `docs/research/<company-id>.md` — every figure traced to a document and page.
+  4. Register it in `src/data/companies/index.ts`, and add a first revision
+     `src/data/revisions/<date>-company-<company-id>-initial.json`.
+  5. `npm test` must pass.
+- **The listed universe, at scale**: `docs/pipeline.md`. A company may be registered with
+  `status: { state: "figures-only" }` — figures and sources only, no prose yet — and promoted
+  later once the prose stages run. `npm test` is the same gate either way.
+
+## Development Workflow
+
+このプロジェクトでは、機能追加・構造変更・データフロー変更を行う際、以下の原則に従う。
+
+### 1. 既存構造を優先する
+
+新しいファイル、コンポーネント、関数、ライブラリ、抽象化を追加する前に、既存コードを確認する。
+
+### 2. Graphifyを構造理解に使用する
+
+変更範囲が複数ファイル・複数機能に及ぶ場合は、Graphifyを使用して関連するコード、データ、依存関係を確認する。
+
+特に以下を確認する。
+
+- データの生成元
+- データの保存先
+- データを利用するコンポーネント
+- import / dependency relationships
+- 関連するadmin、revision、source、agent
+- 変更による影響範囲
+
+単純なUI変更や文言変更ではGraphifyを必須としない。
+
+### 3. Ponytailの原則を維持する
+
+実装前に以下を検討する。
+
+1. 本当に新しいコードが必要か
+2. 既存コードを再利用できないか
+3. 標準ライブラリで対応できないか
+4. Next.js、React、ブラウザ等の既存機能で対応できないか
+5. 既存依存関係を利用できないか
+6. より単純な実装がないか
+7. 最小限の変更で目的を達成できないか
+
+不要な抽象化、不要なutility、不要なwrapper、不要なdependencyを追加しない。
+
+### 4. 変更前に影響範囲を確認する
+
+大規模な変更では、実装前に変更対象と影響範囲を説明する。
+
+### 5. 実装後に確認する
+
+実装後は、
+
+- 変更ファイル
+- データフロー
+- 関連機能
+- 型エラー
+- 既存機能への影響
+
+を確認する。
+
+必要に応じてGraphifyで変更後の構造を再確認する。
+
+### 6. データ整合性を優先する
+
+日本企業辞典のcompany data、financials、sources、revisionsなどについて、単純化を理由にデータ整合性を犠牲にしない。
+
+### 7. ユーザーの要求以上の機能を勝手に追加しない
+
+明示されていない機能、UI、抽象化、依存関係を勝手に追加しない。
 
 ## Style
 

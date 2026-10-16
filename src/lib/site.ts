@@ -1,6 +1,8 @@
 export const SITE_NAME = "日本企業百科事典";
 export const SITE_NAME_EN = "Japanese Companies";
 export const SITE_TAGLINE_EN = "Understand the companies behind Japan.";
+/** The line under the name in the header. */
+export const SITE_TAGLINE = "日本企業を、構造から理解する。";
 export const SITE_DESCRIPTION =
   "日本の上場企業を、会社名ではなく「何をしている会社なのか」から理解するための企業百科事典。";
 

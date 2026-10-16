@@ -462,6 +462,7 @@ import chofuSeisakusho from "./chofu-seisakusho.json";
 import chordiaTherapeutics from "./chordia-therapeutics.json";
 import chori from "./chori.json";
 import choushimaru from "./choushimaru.json";
+import chubuElectricPower from "./chubu-electric-power.json";
 import chubuNipponBroadcasting from "./chubu-nippon-broadcasting.json";
 import chubuSteelPlate from "./chubu-steel-plate.json";
 import chubuSuisan from "./chubu-suisan.json";
@@ -1699,6 +1700,7 @@ import konoikeTransport from "./konoike-transport.json";
 import konoshimaChemical from "./konoshima-chemical.json";
 import koryojyuhan from "./koryojyuhan.json";
 import kosaidoHoldings from "./kosaido-holdings.json";
+import koseHoldings from "./kose-holdings.json";
 import koseRE from "./kose-r-e.json";
 import koshidakaHoldings from "./koshidaka-holdings.json";
 import kotobukiSpirits from "./kotobuki-spirits.json";
@@ -1815,6 +1817,7 @@ import life from "./life.json";
 import lifeFoods from "./life-foods.json";
 import lifeIntelligentEnterpriseHoldings from "./life-intelligent-enterprise-holdings.json";
 import lifedrink from "./lifedrink.json";
+import lifenetInsurance from "./lifenet-insurance.json";
 import lifull from "./lifull.json";
 import lightworks from "./lightworks.json";
 import ligua from "./ligua.json";
@@ -2342,6 +2345,7 @@ import nishimoto from "./nishimoto.json";
 import nishioHoldings from "./nishio-holdings.json";
 import nissan from "./nissan.json";
 import nissanChemicalCorporatiom from "./nissan-chemical-corporatiom.json";
+import nissanSecuritiesGroup from "./nissan-securities-group.json";
 import nissanShatai from "./nissan-shatai.json";
 import nissanTokyoSalesHoldings from "./nissan-tokyo-sales-holdings.json";
 import nisseiAsbMachine from "./nissei-asb-machine.json";
@@ -2709,6 +2713,7 @@ import ricohLeasing from "./ricoh-leasing.json";
 import rideOnExpressHoldings from "./ride-on-express-holdings.json";
 import ridgeI from "./ridge-i.json";
 import rigakuHoldings from "./rigaku-holdings.json";
+import rightOn from "./right-on.json";
 import rikei from "./rikei.json";
 import rikenKeiki from "./riken-keiki.json";
 import rikenTechnos from "./riken-technos.json";
@@ -2939,6 +2944,7 @@ import shigematsuWorks from "./shigematsu-works.json";
 import shikibo from "./shikibo.json";
 import shikigaku from "./shikigaku.json";
 import shikinoHighTech from "./shikino-high-tech.json";
+import shikokuElectricPower from "./shikoku-electric-power.json";
 import shikokuKaseiHoldings from "./shikoku-kasei-holdings.json";
 import shimaSeikiMfg from "./shima-seiki-mfg.json";
 import shimadaya from "./shimadaya.json";
@@ -3345,6 +3351,7 @@ import theBankOfToyama from "./the-bank-of-toyama.json";
 import theChibaBank from "./the-chiba-bank.json";
 import theChibaKogyoBank from "./the-chiba-kogyo-bank.json";
 import theChikuhoBank from "./the-chikuho-bank.json";
+import theChugokuElectricPower from "./the-chugoku-electric-power.json";
 import theDaitoBank from "./the-daito-bank.json";
 import theEhimeBank from "./the-ehime-bank.json";
 import theFirstBankOfToyama from "./the-first-bank-of-toyama.json";
@@ -3360,12 +3367,14 @@ import theImamuraSecurities from "./the-imamura-securities.json";
 import theJapanSteelWorks from "./the-japan-steel-works.json";
 import theJapanWoolTextile from "./the-japan-wool-textile.json";
 import theKaneshitaConstruction from "./the-kaneshita-construction.json";
+import theKansaiElectricPower from "./the-kansai-electric-power.json";
 import theKeihin from "./the-keihin.json";
 import theKeiyoBank from "./the-keiyo-bank.json";
 import theKinkiSharyo from "./the-kinki-sharyo.json";
 import theKitaNipponBank from "./the-kita-nippon-bank.json";
 import theKiyoBank from "./the-kiyo-bank.json";
 import theKodensha from "./the-kodensha.json";
+import theKoseiSecurities from "./the-kosei-securities.json";
 import theKyotoHotel from "./the-kyoto-hotel.json";
 import theLead from "./the-lead.json";
 import theMiyazakiBank from "./the-miyazaki-bank.json";
@@ -3378,6 +3387,7 @@ import theNipponSignal from "./the-nippon-signal.json";
 import theNisshinOillioGroup from "./the-nisshin-oillio-group.json";
 import theOgakiKyoritsuBank from "./the-ogaki-kyoritsu-bank.json";
 import theOitaBank from "./the-oita-bank.json";
+import theOkinawaElectricPower from "./the-okinawa-electric-power.json";
 import thePack from "./the-pack.json";
 import theRoyalHotel from "./the-royal-hotel.json";
 import theSailorPen from "./the-sailor-pen.json";
@@ -3437,6 +3447,7 @@ import toenec from "./toenec.json";
 import togamiElectricMfg from "./togami-electric-mfg.json";
 import tohbuNetwork from "./tohbu-network.json";
 import toho from "./toho.json";
+import toho9602 from "./toho-9602.json";
 import tohoAcetylene from "./toho-acetylene.json";
 import tohoChemicalIndustry from "./toho-chemical-industry.json";
 import tohoGas from "./toho-gas.json";
@@ -3563,6 +3574,7 @@ import toyoTire from "./toyo-tire.json";
 import toyoWharfAndWarehouse from "./toyo-wharf-and-warehouse.json";
 import toyobo from "./toyobo.json";
 import toyodaGosei from "./toyoda-gosei.json";
+import toyokoh from "./toyokoh.json";
 import toyokumo from "./toyokumo.json";
 import toyota from "./toyota.json";
 import toyotaBoshoku from "./toyota-boshoku.json";
@@ -3572,6 +3584,7 @@ import tpr from "./tpr.json";
 import traasOnProduct from "./traas-on-product.json";
 import tradeWorks from "./trade-works.json";
 import tradersHoldings from "./traders-holdings.json";
+import tradia from "./tradia.json";
 import trailheadGlobalHoldings from "./trailhead-global-holdings.json";
 import transGenicGroup from "./trans-genic-group.json";
 import transaction from "./transaction.json";
@@ -3592,6 +3605,7 @@ import trueData from "./true-data.json";
 import truscoNakayama from "./trusco-nakayama.json";
 import trust from "./trust.json";
 import trustHoldings from "./trust-holdings.json";
+import tryt from "./tryt.json";
 import tsTech from "./ts-tech.json";
 import tsiHoldings from "./tsi-holdings.json";
 import tsubakiNakashima from "./tsubaki-nakashima.json";
@@ -3713,6 +3727,7 @@ import wagokoro from "./wagokoro.json";
 import waidaMfg from "./waida-mfg.json";
 import wakachikuConstruction from "./wakachiku-construction.json";
 import wakamotoPharmaceutical from "./wakamoto-pharmaceutical.json";
+import wakitaAndCo from "./wakita-and-co.json";
 import wakouShokuhin from "./wakou-shokuhin.json";
 import wantedly from "./wantedly.json";
 import waqoo from "./waqoo.json";
@@ -3723,85 +3738,125 @@ import washHouse from "./wash-house.json";
 import washingtonHotel from "./washington-hotel.json";
 import watahanAndCo from "./watahan-and-co.json";
 import watanabeSato from "./watanabe-sato.json";
+import wattMann from "./watt-mann.json";
 import watts from "./watts.json";
+import wavelockHoldings from "./wavelock-holdings.json";
 import wdbCoco from "./wdb-coco.json";
 import wdbHoldings from "./wdb-holdings.json";
 import wdi from "./wdi.json";
 import wealthManagement from "./wealth-management.json";
 import weathernews from "./weathernews.json";
 import wedgeHoldings from "./wedge-holdings.json";
+import weds from "./weds.json";
 import welby from "./welby.json";
 import welciaHoldings from "./welcia-holdings.json";
+import wellcoHoldings from "./wellco-holdings.json";
 import wellneoSugar from "./wellneo-sugar.json";
 import wellnessCommunications from "./wellness-communications.json";
 import wellnet from "./wellnet.json";
 import wescoHoldings from "./wesco-holdings.json";
 import westHoldings from "./west-holdings.json";
+import westJapanRailway from "./west-japan-railway.json";
 import will from "./will.json";
 import willGroup from "./will-group.json";
 import willSmart from "./will-smart.json";
 import willplusHoldings from "./willplus-holdings.json";
 import wills from "./wills.json";
 import willtec from "./willtec.json";
+import wilsonLearningWorldwide from "./wilson-learning-worldwide.json";
 import winPartners from "./win-partners.json";
 import wingarc1st from "./wingarc1st.json";
 import wintest from "./wintest.json";
+import wirelessgate from "./wirelessgate.json";
 import wiseHoldings from "./wise-holdings.json";
+import withUs from "./with-us.json";
 import witz from "./witz.json";
 import wolvesHand from "./wolves-hand.json";
 import wonderplanet from "./wonderplanet.json";
+import woodOne from "./wood-one.json";
+import workman from "./workman.json";
 import worldHoldings from "./world-holdings.json";
 import wowow from "./wowow.json";
 import writeup from "./writeup.json";
+import xebioHoldings from "./xebio-holdings.json";
 import xnet from "./xnet.json";
 import yACHoldings from "./y-a-c-holdings.json";
 import ySTable from "./y-s-table.json";
 import yaMan from "./ya-man.json";
+import yagami from "./yagami.json";
+import yagiAndCo from "./yagi-and-co.json";
 import yahagiConstruction from "./yahagi-construction.json";
 import yakinikuSakaiHoldings from "./yakiniku-sakai-holdings.json";
 import yakultHonsha from "./yakult-honsha.json";
+import yakuodoHoldings from "./yakuodo-holdings.json";
 import yamabiko from "./yamabiko.json";
 import yamachuu from "./yamachuu.json";
 import yamada from "./yamada.json";
 import yamadaConsultingGroup from "./yamada-consulting-group.json";
+import yamadaHoldings from "./yamada-holdings.json";
 import yamadaServicerSyntheticOffice from "./yamada-servicer-synthetic-office.json";
+import yamadai from "./yamadai.json";
 import yamaeGroupHoldings from "./yamae-group-holdings.json";
+import yamaguchiFinancialGroup from "./yamaguchi-financial-group.json";
+import yamaha from "./yamaha.json";
 import yamahaMotor from "./yamaha-motor.json";
 import yamaichiElectronics from "./yamaichi-electronics.json";
 import yamaichiRealEstate from "./yamaichi-real-estate.json";
 import yamaki from "./yamaki.json";
 import yamami from "./yamami.json";
+import yamanaka from "./yamanaka.json";
+import yamanoHoldings from "./yamano-holdings.json";
 import yamashinFilter from "./yamashin-filter.json";
+import yamashitaHealthCareHoldings from "./yamashita-health-care-holdings.json";
+import yamatane from "./yamatane.json";
 import yamato from "./yamato.json";
 import yamatoHoldings from "./yamato-holdings.json";
 import yamatoKogyo from "./yamato-kogyo.json";
+import yamatoMobilityAndMfg from "./yamato-mobility-and-mfg.json";
+import yamatointernationalinc from "./yamatointernationalinc.json";
 import yamauHoldings from "./yamau-holdings.json";
 import yamaura from "./yamaura.json";
 import yamax from "./yamax.json";
+import yamaya from "./yamaya.json";
+import yamazaki from "./yamazaki.json";
 import yamazakiBaking from "./yamazaki-baking.json";
+import yamazawa from "./yamazawa.json";
+import yamazen from "./yamazen.json";
+import yaoko from "./yaoko.json";
 import yappli from "./yappli.json";
+import yashimaAndCo from "./yashima-and-co.json";
 import yashimaDenki from "./yashima-denki.json";
 import yaskawaElectric from "./yaskawa-electric.json";
+import yasudaLogistics from "./yasuda-logistics.json";
 import yasuharaChemical from "./yasuhara-chemical.json";
 import yasunaga from "./yasunaga.json";
 import yeDigital from "./ye-digital.json";
+import yellowHat from "./yellow-hat.json";
 import ykt from "./ykt.json";
 import ymirlink from "./ymirlink.json";
 import yodoko from "./yodoko.json";
 import yokogawaBridgeHoldings from "./yokogawa-bridge-holdings.json";
 import yokogawaElectric from "./yokogawa-electric.json";
 import yokohamaFinancialGroup from "./yokohama-financial-group.json";
+import yokohamaGyorui from "./yokohama-gyorui.json";
+import yokohamaMaruuo from "./yokohama-maruuo.json";
 import yokorei from "./yokorei.json";
 import yokotaManufacturing from "./yokota-manufacturing.json";
 import yokowo from "./yokowo.json";
 import yondenko from "./yondenko.json";
+import yondoshiHoldings from "./yondoshi-holdings.json";
+import yonex from "./yonex.json";
+import yorozu from "./yorozu.json";
 import yoshicon from "./yoshicon.json";
 import yoshimuraFoodHoldings from "./yoshimura-food-holdings.json";
+import yoshinoyaHoldings from "./yoshinoya-holdings.json";
 import yoshitake from "./yoshitake.json";
 import yossixHoldings from "./yossix-holdings.json";
 import yotaiRefractories from "./yotai-refractories.json";
 import youji from "./youji.json";
 import yrglm from "./yrglm.json";
+import yuasa from "./yuasa.json";
+import yuasaFunashoku from "./yuasa-funashoku.json";
 import yukeS from "./yuke-s.json";
 import yukenKogyo from "./yuken-kogyo.json";
 import yukiGoseiKogyo from "./yuki-gosei-kogyo.json";
@@ -3812,17 +3867,26 @@ import yushin from "./yushin.json";
 import yushiro from "./yushiro.json";
 import yutakaFoods from "./yutaka-foods.json";
 import yutakaGiken from "./yutaka-giken.json";
+import yutakaTrustySecurities from "./yutaka-trusty-securities.json";
 import yutori from "./yutori.json";
+import zacros from "./zacros.json";
+import zaoh from "./zaoh.json";
 import zappallas from "./zappallas.json";
 import zenhoren from "./zenhoren.json";
+import zenken from "./zenken.json";
 import zenkokuHosho from "./zenkoku-hosho.json";
 import zenmutech from "./zenmutech.json";
+import zenrin from "./zenrin.json";
+import zenshoHoldings from "./zensho-holdings.json";
 import zeon from "./zeon.json";
 import zeriaPharmaceutical from "./zeria-pharmaceutical.json";
+import zero from "./zero.json";
 import zeta from "./zeta.json";
+import zett from "./zett.json";
 import zigZag from "./zig-zag.json";
 import zigexn from "./zigexn.json";
 import zoa from "./zoa.json";
+import zojirushi from "./zojirushi.json";
 import zoom from "./zoom.json";
 import zozo from "./zozo.json";
 import zuiko from "./zuiko.json";
@@ -7670,4 +7734,68 @@ export const companies: Company[] = Object.entries({
   "aizawa-securities-group": aizawaSecuritiesGroup,
   "change-holdings": changeHoldings,
   chatplus: chatplus,
+  "kose-holdings": koseHoldings,
+  "lifenet-insurance": lifenetInsurance,
+  "wellco-holdings": wellcoHoldings,
+  "west-japan-railway": westJapanRailway,
+  yamaha: yamaha,
+  "zensho-holdings": zenshoHoldings,
+  "chubu-electric-power": chubuElectricPower,
+  "nissan-securities-group": nissanSecuritiesGroup,
+  "right-on": rightOn,
+  "shikoku-electric-power": shikokuElectricPower,
+  "the-chugoku-electric-power": theChugokuElectricPower,
+  "the-kansai-electric-power": theKansaiElectricPower,
+  "the-kosei-securities": theKoseiSecurities,
+  "the-okinawa-electric-power": theOkinawaElectricPower,
+  "toho-9602": toho9602,
+  toyokoh: toyokoh,
+  tradia: tradia,
+  tryt: tryt,
+  "wakita-and-co": wakitaAndCo,
+  "watt-mann": wattMann,
+  "wavelock-holdings": wavelockHoldings,
+  weds: weds,
+  "wilson-learning-worldwide": wilsonLearningWorldwide,
+  wirelessgate: wirelessgate,
+  "with-us": withUs,
+  "wood-one": woodOne,
+  workman: workman,
+  "xebio-holdings": xebioHoldings,
+  yagami: yagami,
+  "yagi-and-co": yagiAndCo,
+  "yakuodo-holdings": yakuodoHoldings,
+  "yamada-holdings": yamadaHoldings,
+  yamadai: yamadai,
+  "yamaguchi-financial-group": yamaguchiFinancialGroup,
+  yamanaka: yamanaka,
+  "yamano-holdings": yamanoHoldings,
+  "yamashita-health-care-holdings": yamashitaHealthCareHoldings,
+  yamatane: yamatane,
+  "yamato-mobility-and-mfg": yamatoMobilityAndMfg,
+  yamatointernationalinc: yamatointernationalinc,
+  yamaya: yamaya,
+  yamazaki: yamazaki,
+  yamazawa: yamazawa,
+  yamazen: yamazen,
+  yaoko: yaoko,
+  "yashima-and-co": yashimaAndCo,
+  "yasuda-logistics": yasudaLogistics,
+  "yellow-hat": yellowHat,
+  "yokohama-gyorui": yokohamaGyorui,
+  "yokohama-maruuo": yokohamaMaruuo,
+  "yondoshi-holdings": yondoshiHoldings,
+  yonex: yonex,
+  yorozu: yorozu,
+  "yoshinoya-holdings": yoshinoyaHoldings,
+  yuasa: yuasa,
+  "yuasa-funashoku": yuasaFunashoku,
+  "yutaka-trusty-securities": yutakaTrustySecurities,
+  zacros: zacros,
+  zaoh: zaoh,
+  zenken: zenken,
+  zenrin: zenrin,
+  zero: zero,
+  zett: zett,
+  zojirushi: zojirushi,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));

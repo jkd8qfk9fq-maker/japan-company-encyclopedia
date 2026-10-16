@@ -20,6 +20,7 @@
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { cacheDir } from "./edinet.mjs";
+import { noteCandidates } from "./note-candidates.mjs";
 
 const ids = process.argv.slice(2);
 if (ids.length === 0) {
@@ -114,8 +115,13 @@ for (const id of ids) {
    * hardcoded "yuho-2026", and the entry ended up citing a source that no source
    * declared. It surfaced only because all six agents independently wrote
    * yuho-2025 — the filing's own year — and the assembler refused the mismatch.
+   *
+   * It is the filing's period end, not the last year this extractor managed to
+   * read: アビスト's FY2025 filing yielded only FY2021–22 rows (its consolidated
+   * columns end there), so deriving the id from the last row labelled a FY2025
+   * document `yuho-2022`. The last row is only a fallback for a pack without one.
    */
-  const filingSourceId = `yuho-${(years.at(-1) ?? pack.filing?.resolvedPeriodEnd ?? "").slice(0, 4)}`;
+  const filingSourceId = `yuho-${(pack.filing?.resolvedPeriodEnd ?? years.at(-1) ?? "").slice(0, 4)}`;
 
   const mixed = [];
   const financials = years.map((periodEnd) => {
@@ -150,15 +156,17 @@ for (const id of ids) {
       employees: employees.value,
       currency: "JPY",
       accountingStandard: yearStandard,
-      // A filer with no subsidiaries publishes no consolidated statements, so its
-      // 主要な経営指標等の推移 is the parent company alone. Every other entry on the
-      // site is consolidated, and the reader cannot see the difference from the
-      // figures — so it is stated here, on every year, which is also what the
-      // integrity rule requires (all years or none).
+      // A filer that publishes no consolidated statements for the current period —
+      // it has no subsidiaries, or it stopped consolidating — has a 主要な経営指標等の
+      // 推移 that is the parent company alone. Every other entry on the site is
+      // consolidated, and the reader cannot see the difference from the figures —
+      // so it is stated here, on every year, which is also what the integrity rule
+      // requires (all years or none). The wording names the condition that selects
+      // this series (no consolidated statements), not one of its causes.
       ...(pack.figures.nonConsolidated
         ? {
-            revenueBasis: "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-            netIncomeBasis: "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+            revenueBasis: "提出会社単体（連結財務諸表を作成していないため）",
+            netIncomeBasis: "提出会社単体（連結財務諸表を作成していないため）",
           }
         : {}),
       sourceIds: [filingSourceId],
@@ -176,15 +184,23 @@ for (const id of ids) {
     _上場金融商品取引所名: cover["上場金融商品取引所名又は登録認可金融商品取引業協会名"] ?? null,
     _決算期: pack.filing.resolvedPeriodEnd,
     _有報: `${pack.filing.docDescription} (docID ${pack.filing.docID})`,
+    // The document these figures were read from — a 訂正 when one is of record — and the
+    // original it amends, so a source's URL and date follow the document actually used.
+    _docID: pack.filing.docID,
+    _原本docID: pack.filing.originalDocID ?? pack.filing.docID,
+    _提出日: (pack.filing.submitDateTime ?? "").slice(0, 10) || null,
     _確認すること: [
       "revenueLabel / netIncomeLabel を indicators.txt の印字と突き合わせること",
       "accountingStandard は年度ごとに確認すること（会計基準を変更した会社は年で異なる）",
       "fiscalYear の表記が会社の使い方と合っているか（2月期・8月期・3月20日決算などに注意）",
-      "revenueBasis / netIncomeBasis / note は自分で判断して書き足すこと（このファイルには入っていない）",
+      "revenueBasis / netIncomeBasis は自分で判断して書き足すこと（このファイルには入っていない）",
+      "note は businessModel の fragment の data.financialNotes に [{ fiscalYear, note }] で書く（_注記の候補 は事実の一覧。書くかどうかは自分で判断し、有報の説明だけを書く。原因を推測しない）",
     ],
     financials,
   };
   if (mixed.length > 0) draft._会計基準がそろわない項目 = mixed;
+  const candidates = noteCandidates(pack, financials);
+  if (candidates.length > 0) draft._注記の候補 = candidates;
 
   // Beside the evidence pack, never in src/data/companies: anything that globs
   // that directory (the integrity suite, verify-all) would otherwise pick up a

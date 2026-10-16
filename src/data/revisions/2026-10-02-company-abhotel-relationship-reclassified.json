@@ -1,0 +1,25 @@
+{
+  "id": "2026-10-02-company-abhotel-relationship-reclassified",
+  "targetType": "company",
+  "targetId": "abhotel",
+  "changedAt": "2026-10-02",
+  "reason": "関係の種類に parent（親会社）を追加したため、business-partner で代用していた東祥との関係を付け替えた。同じ項目の説明文が有報の印字として東祥を親会社（議決権52.8%）と明記しており、新しい事実の追加ではない",
+  "summary": "ABホテルの関連企業「東祥」の relationship を business-partner から parent に変更。要確認の注記のうち、この代用に関する1件を解決済みとして外した（業界の注記は残す）",
+  "before": {
+    "relatedCompanies": [
+      {
+        "companyId": "tosho",
+        "relationship": "business-partner"
+      }
+    ],
+    "removedNote": "relatedCompanies: 親会社・支配株主（東祥、議決権の52.8％所有）との関係を表せる RELATIONSHIP_KINDS の値が無く、business-partner に押し込んでいる。RELATIONSHIP_KINDS に資本関係（parent / subsidiary / affiliate など）を足すか、現状の business-partner のままにするか、人が決める必要がある。なお東祥のページから見れば ABホテルは被所有52.8％の子会社にあたるので、相互リンクの追加も登録後に必要"
+  },
+  "after": {
+    "relatedCompanies": [
+      {
+        "companyId": "tosho",
+        "relationship": "parent"
+      }
+    ]
+  }
+}

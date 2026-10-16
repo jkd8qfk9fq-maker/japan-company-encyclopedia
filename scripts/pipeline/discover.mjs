@@ -36,8 +36,21 @@ const twoYearsAgo = (() => {
   return d.toISOString().slice(0, 10);
 })();
 
+// Through YESTERDAY by default. documentsOn caches whatever EDINET answers, so asking for today
+// would store a half-filled day index that every later run then reads as complete — a company
+// that filed this afternoon would be missing from the universe for good.
+const yesterday = (() => {
+  const d = new Date(`${today}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() - 1);
+  return d.toISOString().slice(0, 10);
+})();
 const from = arg("from", twoYearsAgo);
-const to = arg("to", today);
+// An explicit --to is clamped to yesterday as well. The universe that stopped at 2026-09-28 was built
+// on 09-28 itself: that day's index was half-filled when read, and Zenken's 第50期 — filed that
+// afternoon — never made it in. The next run cannot repair a day that was already read as complete.
+const requestedTo = arg("to", yesterday);
+const to = requestedTo > yesterday ? yesterday : requestedTo;
+if (to !== requestedTo) console.log(`--to ${requestedTo} は未完了の日を含むので ${to}（昨日）までに切り詰めた`);
 const universePath = join(process.cwd(), "pipeline/universe.tsv");
 
 /** Ids already published, by securities code, so discovery never proposes a rename. */

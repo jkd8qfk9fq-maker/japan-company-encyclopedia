@@ -15,6 +15,7 @@
   --color-paper: var(--paper);
   --color-ink: var(--ink);
   --color-rule: var(--rule);
+  --color-seal: var(--seal);
 
   --font-sans: var(--font-noto-sans-jp), "Hiragino Sans", "Yu Gothic UI", system-ui, sans-serif;
   --font-serif: var(--font-noto-serif-jp), "Hiragino Mincho ProN", "Yu Mincho", serif;
@@ -59,6 +60,11 @@
   --paper: oklch(0.972 0.004 85);
   --ink: oklch(0.43 0.09 258);
   --rule: oklch(0.18 0 0);
+  /*
+   * 朱: a small vermilion rule beside the wordmark and section titles (the front-page design reference).
+   * A marker only — never a state, never a gain/loss signal, never text or a fill behind text.
+   */
+  --seal: oklch(0.55 0.19 27);
 
   --card: oklch(1 0 0);
   --card-foreground: var(--foreground);
@@ -91,7 +97,7 @@
   --radius: 0.5rem;
 
   /* Sticky offsets: the section tab bar sits under the header. */
-  --header-height: 3.5rem;
+  --header-height: 4.25rem;
 }
 
 .dark {
@@ -100,6 +106,7 @@
   --paper: oklch(0.195 0.003 85);
   --ink: oklch(0.78 0.08 255);
   --rule: oklch(0.955 0 0);
+  --seal: oklch(0.68 0.17 27);
 
   --card: oklch(0.195 0 0);
   --card-foreground: var(--foreground);
@@ -172,6 +179,11 @@
     letter-spacing: 0.22em;
     text-transform: uppercase;
     color: var(--muted-foreground);
+  }
+  /* The 朱 rule that marks a section title or the site name. */
+  .seal-mark {
+    border-left: 3px solid var(--seal);
+    padding-left: 0.75rem;
   }
   .wordmark {
     font-family: var(--font-display);

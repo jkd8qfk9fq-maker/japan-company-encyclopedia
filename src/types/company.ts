@@ -27,6 +27,12 @@ export const INDUSTRY_IDS = [
   "telecommunications",
   "media",
   "entertainment",
+  // Added 2026-10-02, each for a company the pipeline could not place and had to approximate:
+  // 機械 (a-one-seimitsu, filed under electronics) and 人材サービス (tryt, filed under it).
+  // Candidates seen only once or only as a minor segment (環境, 宿泊, 理美容, 印刷, 楽器, 外食)
+  // are deliberately NOT here yet — see pipeline/analysis/taxonomy/report.md.
+  "machinery",
+  "human-resources",
   // Added 2026-10-15 by the operator's decision, for a-tie (永代供養墓の募集代行・寺院コンサルティング);
   // the 有報 itself names its market 墓地・葬儀・仏壇のライフエンディング市場, which no earlier id described.
   "funeral-memorial",
@@ -183,6 +189,23 @@ export const RELATIONSHIP_KINDS = [
    * decided this separately, which is how a distinction like this drifts.
    */
   "business-partner",
+  /*
+   * Capital relationships, in the filing's own four categories (【関係会社の状況】). Read
+   * them the same way as supplier / customer: the related company IS this company's
+   * parent / subsidiary / affiliate / other affiliated company. They describe who owns
+   * whom, not who trades with whom — a subsidiary that also buys from its parent is still
+   * a `subsidiary`, with the trade said in `description`.
+   *
+   * `business-partner` is NOT a stand-in for any of these (it was used as one, which is
+   * why they exist). A major shareholder is deliberately not a kind yet, and a merger or
+   * share exchange is an event, so it belongs in `history`, not here.
+   */
+  "parent",
+  "subsidiary",
+  /** 関連会社 — in practice 持分法適用関連会社. */
+  "affiliate",
+  /** その他の関係会社 — owns a large share of this company without being its 親会社. */
+  "other-affiliated-company",
 ] as const;
 
 export type RelationshipKind = (typeof RELATIONSHIP_KINDS)[number];

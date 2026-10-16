@@ -20,12 +20,24 @@
  * Nothing here ever renames an id that already exists (§27). A company whose id
  * is already in the universe file, in the pipeline state, or in src/data is
  * skipped outright.
+ *
+ * Safe to stop and start. Each company's id is written back to the universe the moment its
+ * pack and state exist (not at the end of the run), and a company whose securities code
+ * already has a pipeline state is never taken again — so a run killed midway cannot assign the
+ * same company a second id. A company is reserved while it is being taken, so two intake
+ * processes cannot both build the same pack.
+ *
+ *   --dry-run        list what would be taken and which filings are not in the cache; write nothing
+ *   --retry-failed   also take companies recorded in intake-failures.tsv (after an extractor fix);
+ *                    a foreign issuer, which EDINET serves no XBRL for, is never retried
  */
 import { execFileSync } from "node:child_process";
 import { existsSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { cacheDir } from "../research/edinet.mjs";
-import { loadState, saveState, setStage } from "./company-state.mjs";
+import { amendmentIdentity, windowCorrections } from "../research/amendments.mjs";
+import { cacheDir, redactLocalPaths } from "../research/edinet.mjs";
+import { allStates, loadState, reapDeadReservations, release, reserve, saveState, setStage } from "./company-state.mjs";
+import { intakeCandidates, loadIntakeFailures } from "./jobs.mjs";
 
 const arg = (name, fallback) => {
   const i = process.argv.indexOf(`--${name}`);
@@ -33,6 +45,8 @@ const arg = (name, fallback) => {
 };
 const limit = Number(arg("limit", "10"));
 const onlyCode = arg("code", null);
+const dryRun = process.argv.includes("--dry-run");
+const retryFailed = process.argv.includes("--retry-failed");
 const universePath = join(process.cwd(), "pipeline/universe.tsv");
 
 if (!existsSync(universePath)) {
@@ -123,15 +137,45 @@ function englishNameFrom(coverPath) {
 }
 
 const taken = takenIds();
-const queue = rows.filter((r) => !r.id && (onlyCode ? r.code === onlyCode : true)).slice(0, onlyCode ? 1 : limit);
+reapDeadReservations();
+const failures = loadIntakeFailures();
+// A failure on record is skipped unless asked for, so known-bad rows do not use up --limit; a
+// foreign issuer (no XBRL exists) is skipped always.
+const skipCodes = new Set([...failures].filter(([, message]) => !retryFailed || /外国会社/.test(message)).map(([code]) => code));
+const queue = intakeCandidates(rows, allStates(), skipCodes)
+  .filter((r) => (onlyCode ? r.code === onlyCode : true))
+  .slice(0, onlyCode ? 1 : limit);
 if (queue.length === 0) {
   console.log("処理する行がありません（id 未割当の行がない、または --code が一致しない）");
   process.exit(0);
 }
 
+if (dryRun) {
+  const cached = (docID) => existsSync(join(cacheDir(), "documents", `${docID}-5.zip`));
+  console.log(`dry-run: ${queue.length} 社を処理する予定（何も書きません）`);
+  for (const r of queue) console.log(`  ${r.code} ${r.filerName} docID ${r.docID} ${cached(r.docID) ? "（キャッシュ有）" : "（要取得）"}`);
+  console.log(`有報が未取得: ${queue.filter((r) => !cached(r.docID)).length} 件`);
+  process.exit(0);
+}
+
+/** Write one company's id into the universe file now, so a stop after this line loses nothing. */
+function writeBack(index, id) {
+  const parts = lines[index].split("\t");
+  parts[5] = id;
+  lines[index] = parts.join("\t");
+  const tmp = `${universePath}.tmp`;
+  writeFileSync(tmp, lines.join("\n"));
+  renameSync(tmp, universePath);
+}
+
 const assigned = [];
 const failed = [];
 for (const row of queue) {
+  // Provisional reservation, named like the provisional pack directory.
+  if (!reserve(`_code-${row.code}`, `intake:${process.pid}`)) {
+    console.log(`SKIP ${row.code} ${row.filerName} — 別のプロセスが処理中`);
+    continue;
+  }
   const provisional = `_code-${row.code}`;
   const packRoot = join(cacheDir(), "evidence");
   try {
@@ -163,10 +207,16 @@ for (const row of queue) {
     state.identity = {
       code: row.code,
       filerName: row.filerName,
-      docID: row.docID,
+      // The document the figures and text were read from: the filing of record, which
+      // is the original unless a complete 訂正 supersedes it. `originalDocID` is the
+      // universe row's; `submitted` stays the ORIGINAL's date because it locates it.
+      docID: summary.filing?.docID ?? row.docID,
+      originalDocID: row.docID,
       submitted: row.submitted,
       periodEnd: row.periodEnd,
-      corrections: [],
+      // What the window showed, as run-mechanical records it — not a hardcoded [].
+      corrections: windowCorrections(summary),
+      amendments: amendmentIdentity(summary),
       englishName: english,
     };
     saveState(state);
@@ -174,6 +224,7 @@ for (const row of queue) {
     setStage(id, "edinet", "completed", `pack + draft 作成（warnings ${(summary.warnings ?? []).length} 件）`);
 
     taken.set(id, row.code);
+    writeBack(row.index, id);
     assigned.push({ ...row, id });
     console.log(`OK   ${row.code} ${row.filerName} → ${id}`);
   } catch (error) {
@@ -184,23 +235,13 @@ for (const row of queue) {
     const child = `${error.stdout ?? ""}${error.stderr ?? ""}`
       .split("\n")
       .find((l) => /^\s*(Error|TypeError|RangeError):/.test(l));
-    const message = (child ?? String(error.message).split("\n")[0]).replace(/\s+/g, " ").trim().slice(0, 200);
+    // The path is redacted BEFORE the cut: a path cut off mid-way would no longer match, and would be written to the log.
+    const message = redactLocalPaths((child ?? String(error.message).split("\n")[0]).replace(/\s+/g, " ").trim()).slice(0, 200);
     failed.push({ code: row.code, message });
     console.log(`FAIL ${row.code} ${row.filerName} — ${message.slice(0, 130)}`);
+  } finally {
+    release(`_code-${row.code}`);
   }
-}
-
-// Write the assigned ids back so a re-run never reprocesses them.
-if (assigned.length > 0) {
-  const byIndex = new Map(assigned.map((a) => [a.index, a.id]));
-  const updated = lines.map((line, index) => {
-    const id = byIndex.get(index);
-    if (!id) return line;
-    const parts = line.split("\t");
-    parts[5] = id;
-    return parts.join("\t");
-  });
-  writeFileSync(universePath, updated.join("\n"));
 }
 
 // A failure is not a dead end: the company keeps its blank id, so a later run

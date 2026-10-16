@@ -281,6 +281,10 @@ const RELATIONSHIP_LABEL: Record<RelatedCompany["relationship"], string> = {
   customer: "顧客",
   technology: "技術のつながり",
   "same-business-model": "似たビジネスモデル",
+  parent: "親会社",
+  subsidiary: "子会社",
+  affiliate: "関連会社",
+  "other-affiliated-company": "その他の関係会社",
 };
 
 export function IndustryRelationsSection({

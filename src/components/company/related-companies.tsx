@@ -12,6 +12,10 @@ export const RELATIONSHIP_LABEL: Record<RelationshipKind, string> = {
   technology: "技術のつながり",
   "same-business-model": "似たビジネスモデル",
   "business-partner": "取引関係",
+  parent: "親会社",
+  subsidiary: "子会社",
+  affiliate: "関連会社",
+  "other-affiliated-company": "その他の関係会社",
 };
 
 /**

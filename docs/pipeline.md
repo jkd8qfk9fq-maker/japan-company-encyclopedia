@@ -30,6 +30,318 @@
 `… <id>` で1社分と次のエージェント作業が出る。成果物から状態を復元する `syncAgentStages` が
 あるので、エージェント側は状態ファイルを触らなくてよい。
 
+### 数千社規模で回すとき — `queue.mjs` / `advance.mjs`
+
+1社ずつ`evidence-pack.mjs`・`merge-fragments.mjs`・`check-prose-figures.mjs`・`finalize.mjs`を
+手で叩く代わりに、この2つを使う（2026-10-01追加。個別コマンドによる手順は変わらず残っている
+——これは利用者が増えただけで、仕組みを置き換えたものではない）。
+
+```
+node scripts/pipeline/queue.mjs status                       # 全体の進捗
+node scripts/pipeline/queue.mjs next group1 --limit N         # 次に group1 (businessStructure,
+                                                                # history) が必要な会社を N件
+node scripts/pipeline/queue.mjs next group2 --limit N          # 次に group2 が必要な会社
+node scripts/pipeline/queue.mjs next finalize --limit N        # 両グループ完了・登録待ちの会社
+
+node scripts/pipeline/advance.mjs <company-id>                 # 1社分の定型処理（下記）
+node scripts/pipeline/advance.mjs <company-id> --register       # 上記＋gateが通れば登録まで
+```
+
+`advance.mjs`がやること、1社について：証拠パックが無い／docIDが`pipeline/state`の記録と
+違えば`evidence-pack.mjs`→`draft-entry.mjs`で再構築する（識別情報の再取得はしない。窓は
+`identity.submitted`の前後21日——`run-mechanical.mjs`が最初に解決するときと同じ窓なので、
+同じdocIDが再現される）→`syncAgentStages`で成果物を状態に反映→次に必要なのが
+`group1`/`group2`ならそれを表示して`pipeline/reserved.tsv`に追加するだけで止まる
+（**実際のプロンプト執筆・Agent派遣はこのスクリプトの仕事ではなく、その手前で止めて
+報告するだけ**。この先は`docs/pipeline.md`の「エージェントへの作業要領」をそのまま渡して
+Agentに書かせる）→両グループ完了済みなら`finalize.mjs`（`--register`時は`--register`付き）を
+呼んでそのまま終わる。
+
+**失敗した会社でバッチを止めない。** どの段階で失敗しても例外を捕まえて
+`setStage(..., "failed", 理由)`を呼び、**常にexit code 0で終わる**——ループ側はこの会社を
+飛ばして次に進めばよい。3回連続failedで`needs-review`に自動的に昇格する既存の仕組み
+（`company-state.mjs`）はそのまま効く。`pipeline/reserved.tsv`に載っている会社・
+`registration`が`needs-review`の会社（delisted企業の永久除外など）は`queue.mjs`の一覧にも
+`advance.mjs`の処理対象にも入らない。
+
+**`finalize`の判定は`pipeline/state`の`registration`工程を見ない。** `figures-only`登録済みの
+会社は全員すでに`registration: completed`になっている（数値のみの登録そのものがこの工程を
+満たすため）。「まだ昇格していないか」を知る唯一の方法はエントリー本体の`status.state`を見る
+ことで、`readyForStage("finalize")`・`advance.mjs`はどちらもそうしている。この区別を間違えると
+figures-onlyの会社が永遠に`finalize`候補として出てこなくなる（実装中に一度この間違いをして、
+`queue.mjs next finalize`が常に0件になる形で見つかった）。
+
+### 訂正有価証券報告書（docTypeCode 130）の扱い
+
+訂正有報は**差分ではなく全文の再提出**で、最新のものが前のものを置き換える。EDINET には
+会社単位の検索がなく日次索引しかないので、訂正は「どの原本を直すか」を指す `parentDocID`
+から**逆引き**する（原本を探す21日窓は原本の発見専用で、訂正の発見には使わない）。
+
+- **索引** `pipeline/amendments-index.json`（git管理外・再生成可能）: `parentDocID → 訂正の列`
+  （提出日時の古い順）と、取り込み済みの最終日 `checkedThrough`。`amendmentsOf(index, 原本)` は
+  `parentDocID` が訂正を指す鎖もたどる（実データには鎖が無いが、コードは原本の鎖を前提にしない）。
+  日次索引のキャッシュから `checkedThrough` より後の日だけを足す。当日（UTC）は未完なので入れない。
+- **有効文書** `effectiveDocID`: 訂正が無ければ原本。あれば**最新の訂正**。ただし最新の訂正に
+  このパックが読む情報（原本にある 沿革／事業の内容／主要な経営指標等の推移／表紙の会社名、
+  かつ5年表を抽出できること）が欠けていれば**採用しない**（`status: "incomplete"`、原本のまま、
+  `needs-attention` 扱い）。古い訂正に黙って戻ることもしない。
+- **パックは有効文書から作る。** `summary.filing` が記録の文書、`summary.amendments` が鎖と
+  原本比較（5系列×決算期、集合として比較）、`summary.filing.originalDocID` が原本。
+- **`identity`**: `docID` は従来どおり「登録データを取り出した文書」（finalize が出典URLに
+  `identity.docID` を含むことを検査する）。原本は `originalDocID`、鎖は `amendments`
+  `{originalDocID, effectiveDocID, amendmentDocIDs, status, blockedBy, checkedThrough}`、
+  最後の確認は `amendmentCheck {at, result, effectiveDocID}`。`identity.corrections` の意味は
+  不変（「identity を決めた時点で窓に見えていた訂正のスナップショット」）で、`intake.mjs` と
+  `run-mechanical.mjs` の両方が同じ `windowCorrections(summary)` で埋める。
+  研究ログの「訂正報告書」欄は `correctionsCell` が索引から書く——訂正があるのに「なし」とは書かない。
+- **財務の比較**: 登録値と有効文書を5系列（売上・利益・純利益・総資産・純資産）で比べる。
+  同一なら財務も出典も Revision も書き換えず、確認結果だけ `amendmentCheck` に残す。
+  異なれば財務を取り直し、引用する出典（`id` は不変、url/title/publishedAt/accessedAt）を有効文書に
+  合わせ、Revision を書く。
+- **本文は自動で書き換えない。** 公開済みの会社は 沿革／事業内容／セグメント／関係会社／株主
+  ＋解説が拠る節（`PROSE_ELEMENTS`）を原本と有効文書で比べ、差があれば `needs-attention`
+  にするだけ（`--flag-text`）。
+
+```
+node scripts/pipeline/amendment-audit.mjs              # 全社を報告のみで監査 → pipeline/amendment-audit.{json,tsv}
+node scripts/pipeline/amendment-audit.mjs <id> …       # 指定した会社だけ
+node scripts/pipeline/amendment-audit.mjs --refresh    # 週次: checkedThrough より後の日だけ取得し、追跡中の会社の新しい訂正を報告
+node scripts/pipeline/apply-amendment.mjs <id>         # 1社分のドライラン（既定は何も書かない）
+node scripts/pipeline/apply-amendment.mjs <id> --apply [--flag-text]
+```
+
+`apply-amendment` は登録値が**原本とも**食い違うときは拒否する（古い抽出器が原因で、訂正とは
+別の問題）。財務を変えるときだけ `verify-financials` を通し、どの場合も `validate-file` と
+`data-integrity` を通す。失敗したら元に戻す。監査の `action` は人への推奨であって、
+パイプラインが自動で実行するものではない。
+
+---
+
+## 大量登録スキーム（上場企業 universe → published）
+
+3,000 社以上を同じ品質基準で継続的に登録するための、既存の部品の**つなぎ方**。新しい状態ファイルも
+スキーマも作っていない。1社＝1 job で、job の位置は既存のファイル（`universe.tsv`、`pipeline/state`、
+エントリーの `status.state`、`reserved.tsv`、`intake-failures.tsv`）から**導出**する（`scripts/pipeline/jobs.mjs`）。
+
+```
+universe.tsv ──discover──▶ queued ──intake──▶ intake ──register-figures──▶ figures-only
+                                                                               │ claim → advance → agent(group1, group2)
+                                                                               ▼
+                                                    research ──▶ registration-ready ──finalize──▶ published
+任意の段階 ──▶ needs-attention（人が見る）   失敗 ──▶ retryable（3回まで）──▶ needs-review ／ 永久除外 ──▶ failed
+```
+
+| job stage | 何でできているか | 次に誰が何をするか |
+|---|---|---|
+| queued | universe に行があり id が空 | `intake.mjs` |
+| intake | identity + edinet 完了、エントリー無し | `register-figures.mjs`（数値のみ登録） |
+| figures-only | エントリー `status.state = figures-only`、エージェント工程0 | `queue.mjs claim group1` → `advance.mjs` |
+| research | エージェント工程が一部完了 | 同上（group2） |
+| registration-ready | 6工程すべて完了、まだ figures-only | `advance.mjs <id> --register` |
+| published | エントリー `published` | — |
+| needs-attention | エントリーが needs-attention、工程が needs-review、**訂正で登録値や本文が変わる**、決算期の変更・変則決算、訂正の不完全 | 人 |
+| failed | 非上場・外国会社（XBRL が無い） | 永久除外 |
+
+`reserved`（作業中）と `retryable`（失敗が3回未満）は stage ではなく旗。editorial の共通デザインは会社ごとの
+工程ではなく共有テンプレート、スキーマ＋整合性の検査は `finalize.mjs` の中（sourceValidation / qualityControl）。
+
+### どの script が何をするか
+
+| 役割 | 担当 |
+|---|---|
+| queue の管理・見える化 | `queue.mjs`（`status` / `jobs` / `plan`（dry-run）/ `check` / `next` / `claim`） |
+| 予約（二重取得の防止） | `company-state.mjs` の `reserve` / `release` / `claim`。**排他**（`pipeline/.lock` の mkdir ロック。取れた呼び出しだけが true）。`claim` は「次の N 社を選ぶ」と「予約する」を1つのロック内で行う |
+| universe の作成 | `discover.mjs`（既定は**昨日まで**。当日の索引は未完で、キャッシュされると以後ずっと完全に見える） |
+| EDINET 取得・証拠パック | `intake.mjs`（id 割当・パック・draft）／`advance.mjs`（再構築）／`pack.mjs`（欠落・別 filing・古い抽出器を一括判定） |
+| figures-only の作成 | `register-figures.mjs`（バッチ、全件 verify-financials、`--ids` で指定可、予約してから処理） |
+| research | `data-research` Agent（group1: businessStructure, history／group2: businessModel, industry, relatedCompanies, terms）。**1つずつ** |
+| quality | `data-quality` の役（登録前に `verify-financials` / `check-prose-figures` と有報の照合。数値は直さず判定のみ） |
+| registration | `finalize.mjs`（`advance.mjs --register` 経由） |
+| verification | `verify-financials.mjs`（財務）、`check-prose-figures.mjs`（本文の金額）、`validate-file` + `data-integrity`（schema・整合性） |
+| published / needs-attention の分岐 | `merge-fragments.mjs`：エージェントの `needsReview`、決算期の変更・変則決算があれば needs-attention。無ければ published |
+| 訂正有報 | 上の節。intake / register-figures は有効文書から作る。**登録済みの会社の訂正は `amendment-audit.mjs --refresh`（週次）→ `apply-amendment.mjs`**。大量登録とは別 |
+
+### 通常ケースは自動、例外は止めて人へ
+
+| 例外 | 検出する場所 | 結果 |
+|---|---|---|
+| EDINET 文書が無い・XBRL が無い（外国会社） | `intake.mjs` の失敗記録 | failed / retryable |
+| 必須の財務（売上・純利益）が取れない | `evidence-pack.mjs` が例外、`verify-financials` | intake 失敗 / 登録見送り |
+| 財務の矛盾 | `verify-financials`、`check-prose-figures` | 登録しない |
+| 関係が事実として不明・出典が不足・捏造の疑い | エージェントの `needsReview`、`integrity.ts`（出典の存在） | needs-attention／登録しない |
+| 分類（業界・関係の種類）が足りない | エージェントの `taxonomyGaps` | **status は変えない**。研究ログと `pipeline/taxonomy-gaps.tsv` に記録 |
+| 上場状態の疑義（非上場・該当なし） | `register-figures.mjs` | failed（永久除外） |
+| 訂正で本文・財務が変わる／訂正が不完全 | `amendment-audit.mjs`、`pack.amendments.status` | needs-attention（本文は自動で書き換えない） |
+| 決算期の変更（5年表の期末日が実際と違う） | `evidence-pack.mjs` `fiscalYearChange` | **登録しない**（needs-review） |
+| 変則決算（12か月でない期） | `evidence-pack.mjs` `irregularPeriods` | 登録しない／公開せず needs-attention |
+| schema 不整合・重複 | `validate-file`、`queue.mjs check`（証券コードの重複ほか） | 登録しない／check が exit 1 |
+
+推測で埋めない。上のどれにも当たらないときだけ、人の指示なしに次の工程へ進む。
+
+### 回し方
+
+```
+node scripts/pipeline/queue.mjs check                       # 先に整合性。error があれば始めない
+node scripts/pipeline/queue.mjs plan                        # dry-run。対象数・要取得の有報・needs-attention 候補・再試行候補
+node scripts/pipeline/discover.mjs                          # 新しい提出を universe に足す（昨日まで。キャッシュ済みの日は無料）
+node scripts/pipeline/intake.mjs --dry-run --limit 50       # 何を取るか／有報が未取得の件数
+node scripts/pipeline/intake.mjs --limit 50                 # id 割当・証拠パック。1社ごとに universe へ書き戻す
+node scripts/pipeline/register-figures.mjs --limit 50       # 数値のみ登録の検査（書かない）
+node scripts/pipeline/register-figures.mjs --limit 50 --register
+node scripts/pipeline/queue.mjs claim group1 --limit 3 --owner me    # 取得＋予約。他のワーカーと重ならない
+node scripts/pipeline/advance.mjs <id>                      # need: group1|group2 を表示 → Agent → もう一度 advance …
+node scripts/pipeline/advance.mjs <id> --register           # ゲートを通れば登録
+node scripts/pipeline/amendment-audit.mjs --refresh         # 登録の前に。索引を最新にする
+```
+
+### 途中で止まったとき
+
+どの script も、完了した工程を二度やらない。再開 = **同じコマンドをもう一度**。
+
+| 止まった場所 | 再開 |
+|---|---|
+| intake の途中 | 1社ごとに universe へ id を書き戻し、**証券コードを持つ state がある会社は取らない**（以前は終了時にまとめて書き、途中で止まると同じ会社に2つ目の id が付いた）。予約 `_code-<コード>` は `finally` で外れる |
+| register-figures の途中 | 全件を検査してから一括で書き、失敗なら全部戻す。予約は `exit` で外れる |
+| agent の途中 | 成果物（`pipeline/results/`）から `syncAgentStages` が状態を復元。`advance` をもう一度 |
+| 工程が `running` のまま | `queue.mjs check` が警告し、再開コマンドを出す（`company-state.mjs <id> <stage> pending`） |
+| 古いロック | 30 秒を過ぎた `pipeline/.lock` は引き継ぐ |
+| 抽出器を直した後 | `EXTRACTOR_VERSION`（`evidence-pack.mjs`）を上げる。**未登録・未昇格の会社のパックは `pack.mjs` が自動で作り直す** |
+
+並列度: エージェントは**常に1つずつ**（セッションのレート制限）。intake は逐次（1プロセスあたり最小 150ms 間隔の
+スロットル、失敗は 0.5s→30s の指数バックオフ＋ジッタ、`Retry-After` を尊重、4xx は即失敗）。
+1社の失敗は `setStage(failed)` に記録され、バッチは止まらない。3回で needs-review。
+
+### 母集団の現在性（2026-10-04 追加、10-09 改訂）
+
+universe は EDINET のスナップショットで、その日以降に出た有報を知らない。20社パイロットで Zenken が前年の
+第49期のまま作られかけたのは、`discover.mjs` の窓の最終日（その日のうちに読んだ日次索引は未完了のまま
+キャッシュされる）に第50期が出ていたため。
+
+- `discover.mjs` は `--to` を指定されても**昨日まで**に切り詰める。
+- `queue.mjs check` は、universe の窓が3日より古いと `universe-window-stale` の警告を出す（直す: `discover.mjs`）。
+- **未昇格**（エントリー無し／figures-only）の会社は、`advance.mjs` が最初に、証拠パックの有報より新しい 120 が
+  日次索引にないか見て、あれば**自動で新しい有報に乗り換える**（旧フラグメントとステージングは
+  `pipeline/analysis/superseded/<id>-<旧docID>/` に退避、パックを作り直し、agent 工程は最初から）。読者に見える
+  ものは、その後の昇格が書き換えるまで変わらないので安全。**境界**: 別の理由で止まっている会社
+  （`registration` が needs-review）には触らない。昇格済み（published / needs-attention）は自動では更新せず、
+  `queue.mjs check` が `entry-built-on-old-filing` として列挙する（人が決める）。
+- 読み取り専用の確認: `pipeline/analysis/universe-staleness/scan.mjs`（universe・state・エントリーのどれが古いか）。
+
+### 日次索引キャッシュの完全性（2026-10-09 追加）
+
+日次索引（`%TEMP%/edinet-cache/index/<日>.json`）は universe の唯一の材料で、新しい有報の検出（`newerFiling`）が
+読む唯一のもの。誤って持っていても、正しく持っているのと見分けがつかない。2026-10-09 に分かったこと:
+
+- **確定前の索引が「完了」として残っていた。** EDINET の応答の `metadata.processDateTime` は EDINET 側の
+  バッチが答えを作った時刻で、**その日のうちに作られた答えは、その後に出た書類を含まない**。2026-10-02 は
+  11:57 に作られた 144 件で、確定後は 244 件だった（10-01 は 23:58、10-04 も当日）。以後の読み取りはすべて
+  これを完全として扱っていた。
+- **%TEMP% から消えていた。** 10-08 に約340日分、10-09 にさらに約460日分（更新から約1週間たったファイルが
+  すべて）。コードに索引を消す処理はなく、Windows の記憶域センサー（一時ファイルの自動削除）が有効で、消えた
+  ファイルの更新日時の切れ目がその挙動と一致するので、これが原因とみてよい。
+- **日次索引だけは %TEMP% の外に置く。** `indexDir()`（`edinet.mjs`）は Windows では
+  `%LOCALAPPDATA%japan-company-encyclopediaedinet-index` を既定にする（`RESEARCH_CACHE` を明示したときはその下の
+  `index/`、`RESEARCH_INDEX_CACHE` で任意の場所）。証拠パックと書類のキャッシュは %TEMP% のまま — 消えても
+  `advance.mjs` が作り直す。
+
+直したこと（`scripts/research/edinet.mjs`）:
+
+- `documentsOn` は、状態が 200、日付が一致、件数が `results` と一致、**`processDateTime` が当日より後**、の
+  すべてを満たす答えだけをキャッシュに書く。書くときは一時ファイルに書いてから置き換える。確定前の答えは
+  使えるが保存しない。キャッシュ済みでも確定前・読めないものは取り直す。**取得に失敗したら既存のファイルは
+  そのまま**（消さない。確定前のものは使い、読めないものはエラー）。
+- `auditIndexCache(from, to)` が欠落・破損・確定前の日を数える。`ensureIndexCache(from, to)` がそれを取り直す。
+- `advance.mjs` は新しい有報を探す前に、その会社の有報提出日から昨日までを `ensureIndexCache` で確かめる。
+  取り直せない日が残れば `FAIL: cache` で止まり、状態は変えない（「新しい有報は無い」と推測しない）。
+- `queue.mjs check` は universe の窓に対して `index-cache-gap`（欠落／破損／確定前に取得）を警告する。
+  `discover.mjs` を走らせれば取り直される。
+
+### 訂正有報の分類（2026-10-09 追加）
+
+証拠パックは、訂正有報ごとに原本とのXBRLを突き合わせ、`summary.amendments.records[]` に分類を持つ
+（`classifyAmendment`、brief.md の「訂正有価証券報告書」と warnings にも出る）:
+
+| 分類 | 意味 | 扱い |
+|---|---|---|
+| `record-only` | 5系列・従業員数・財務諸表の数値・エントリーが引用する本文が原本と同一。違うのは表紙や役員報酬など | 記録のみ。「訂正の中身を確認できない」を理由に needsReview にしない |
+| `text-change` | 数値は同一だが、エントリーが引用する節（沿革・事業の内容・大株主…）の本文が違う | 本文は有効文書から書く。登録済みエントリーなら `amendment-audit` が needs-attention を勧める |
+| `financial-change` | 5系列・従業員数、または財務諸表／主要な経営指標等の数値が違う | 数値は有効文書のもの。原本の数値が文章に混ざっていないか確認 |
+
+`financial-change` の判定は財務諸表（`jppfs_cor`／`jpigp_cor`）と主要な経営指標等の数値。役員報酬や保有株式数など
+その外の開示数値は `otherNumericChanged` に並べるだけで、分類を変えない。
+
+### 財務の注記 `financials[].note`（2026-10-09 追加）
+
+5年表は機械的に作られ、agent は表に直接書けない。年の読み方を読者に伝える注記は、**`businessModel` 工程の
+fragment の `data.financialNotes`**（`data.businessModel.financialNotes` に入れても同じに扱う）に `[{ "fiscalYear": "2023年3月期", "note": "…" }]` で書く。
+`merge-fragments` が `financials[].note` に反映する（表にない年度は needsReview、同じ年度は先のものを採用）。
+
+書くのは、読者が数字の連続性を読み違えそうなときだけ: 会計基準の変更、過年度の訂正・修正再表示、収益認識基準
+などの適用前後、12か月でない期、決算期の変更、訂正有報で数値が変わったとき。**有報が説明している事実だけを書き、
+原因を推測しない。** 用語リンク（`[[term:…]]`）は使えない。`check-prose-figures` が金額を検査する。
+`draft-entry.json` の `_注記の候補` が、パックから機械的に分かる事実（会計基準の変更、前期有報との差、
+変則決算、決算期の変更、数値が変わる訂正）を並べる。書くかどうかは agent が決める。
+
+### 有報提出後の変更（2026-10-09 追加）
+
+有報を出したあと、商号変更や公開買付があっても、パイプラインはそれを知らなかった（パイロットの4社は品質確認で
+初めて分かった）。`scripts/pipeline/post-filing.mjs` は日次索引だけから**候補の書類**を探す:
+
+- 商号変更 — 同じ提出者（EDINETコード）の、有報より後の書類の提出者名が違う。
+- 公開買付 — 意見表明報告書・公開買付届出書・同報告書（と訂正・撤回）で、その会社が提出者か対象。
+- 提出の停止 — 有報の決算期末から14か月以上たつのに次の有報がない。年1回出す会社なら次は決算期末から約3か月で出るので、
+  上場廃止の EDINET 上の現れ方（aeon-delight は最後が2025年2月期）。「止まった」と言うだけで理由は言わない。
+
+見つかった未昇格の会社は `advance.mjs` が `registration` を needs-review にして止まる。人が内容を見て問題なければ
+`advance.mjs <id> --ack-post-filing`（確認した書類を `identity.postFilingAcknowledged` に記録し、止めを外す）。
+昇格済みの会社は `queue.mjs check` の `post-filing-event` に出る。エントリーは書き換えない。
+
+見えないもの: **上場廃止そのもの**（取引所の情報で、人が確認する。上の「提出の停止」はその手がかり）、**臨時報告書**（提出事由は内閣府令の号で、議決権行使結果だけで過半、残りも多くの会社に出るので
+目印にならない）、**株式併合**、有報後に出る
+最初の書類までの商号変更（その会社がまだ何も出していない間は見えない）。
+
+### 登録の中断からの復旧（2026-10-10 追加）
+
+`finalize.mjs --register` は、エントリー・改訂記録・リサーチログ（新規なら index.ts の1行）を書き、整合性テストと型チェックを通したあとで、最後に後処理（`registeredAt`、`registration: completed`、taxonomyGaps、ステージング削除）をする。
+書いたあと後処理の前でプロセスが止まる（PC のスリープ中にテストが走った ahresty がそうなった）と、エントリーは published なのに
+`registration` が `running` のまま残る。この状態では `advance.mjs` は「済み」と答え、`finalize.mjs --register` は既存エントリーの
+上書きを拒むので、通常のコマンドでは終えられない。
+
+```
+node scripts/pipeline/recover-registration.mjs <company-id> [--dry-run]
+```
+
+対象は `registration` が `running` の会社だけ。次を**すべて**確かめ、1つでも外れれば何も変えずに終了コード1で止まる:
+
+- エントリーがあり、解説付き（published / needs-attention）で、id が合う。
+- 現在のエントリーが、既存のフラグメントから作り直したエントリーと**完全に一致**する（`updatedAt` だけは登録した日なので除く）。
+- その日付の改訂記録がちょうど1件、リサーチログがあり、index.ts に載っている。
+- ステージングファイルが残っていれば、エントリーと同一。
+- 整合性テストと型チェックが通る（中断前に通ったかどうかは分からないので、もう一度走らせる）。
+
+通れば、`finalize.mjs` と**同じ関数**（`registration-tail.mjs` の `finishRegistration`）で後処理だけをする。エントリー・改訂記録・
+リサーチログ・財務データは書かない。taxonomyGaps は「その会社の行を置き換える」ので重複しない。`completed` の会社に
+もう一度実行しても何もしない（終了コード0）。`--dry-run` は確認だけで、何も変えず、テストも走らせない。
+
+### 上場廃止会社の扱い（仕様判断を待つ記録）
+
+過去に上場していた会社をどう登録するか、登録済みエントリーの関連会社リンクが上場廃止済みの会社を指して
+いるのをどうするかは、**今は決めていない**（コードも変えない）。会社マスターに「上場／上場廃止」の区別
+そのものがないため、これは別の仕様判断。該当: ftgroup（登録保留）、aeon-mall、aeon-delight、welcia-holdings、
+nihon-chouzai、c-i-medical、sfp-holdings（登録済みのリンク先）。
+
+### 既存の約 3,700 社（figures-only）は別の job
+
+この仕組みは**新しく登録する会社**のためのもの。既存の登録を一括で直す作業は混ぜない:
+
+- `employee-backfill` — 従業員数（`jpcrp_cor:NumberOfEmployees`）を既存エントリーに足す。EDINET の文書の再取得、
+  `verify-financials`、会社ごとの Revision、`pipeline/state` の更新が要る。
+- 決算期の変更・変則決算の見直し — 既登録の figures-only のうち数 % に、5年表の早い列の期末日が
+  実際と違うものがある。同じ再取得で検出できる。
+- 訂正の適用 — `apply-amendment.mjs` を1社ずつ。
+
+いずれも `register-figures` / `advance` の対象外（エントリーが既にある会社は `intake` にも `register-figures` にも入らない）。
+
 ---
 
 ## エージェントへの作業要領
@@ -59,11 +371,21 @@
   "data": { "…この工程が担当するフィールドだけ…" },
   "sources": [{ "id": "yuho-2026", "title": "…", "publisher": "…", "url": "https://…", "publishedAt": "YYYY-MM-DD", "accessedAt": "YYYY-MM-DD" }],
   "warnings": ["判断の記録・省いたものとその理由"],
-  "needsReview": ["人が見る必要があるものだけ"]
+  "needsReview": ["人が見る必要があるものだけ"],
+  "taxonomyGaps": [{ "kind": "relationship | industry", "subject": "誰の何か", "actual": "実際の関係・暫定にした分類", "proposed": "欲しい値", "reason": "なぜ現在の分類で言い表せないか" }]
 }
 ```
 
-`needsReview` が空でないと企業全体が `needs-attention` になる。判断の記録は `warnings` に書く。
+**`needsReview` と `taxonomyGaps` は別のもの。**
+
+- `needsReview`: **何かが間違っているかもしれず、人が見る必要がある**もの（期間が12か月でない、上場が続いているか分からない、
+  数値が有報と食い違う、出典が曖昧）。空でないと企業全体が `needs-attention` になる。判断の記録は `warnings` に書く。
+- `taxonomyGaps`: **データは正しいが、閉じた分類（`INDUSTRY_IDS` / `RELATIONSHIP_KINDS`）では言い表せない**もの
+  （有報が「親会社」と書く相手を表す値が無い、人材サービスの業界が無い）。会社を止める理由ではなく、分類を決めるための記録。
+  **status は変わらない。** 研究ログ（`docs/research/<id>.md`）と `pipeline/taxonomy-gaps.tsv` に残る。
+  `kind` は `relationship` か `industry`。旧規約の `needsReview` の「TAXONOMY: …」も同じ扱いで読まれる。
+- 取り違えない。分類が足りないことを `needsReview` に書かない。逆に、**事実が不明・食い違うことを `taxonomyGaps` に書かない**
+  （親会社を `business-partner` として結ぶ、関係を創作する、は誤りで品質問題）。
 
 `sources` は `src/lib/content/schemas.ts` の `sourceSchema` と**完全に一致**させる。
 `strictObject` なので、`id, title, publisher, url, publishedAt?, accessedAt` 以外の
@@ -140,6 +462,9 @@
    本文のほぼ全ての文にこのラベルが出るので、間違えると全体に広がる。
    `check-prose-figures.mjs` が本文の決算期ラベルを財務の5年分と有報の本文に突き合わせる。
 6. `src/data/` に書き込まない。git を触らない。自分の成果物ファイル以外を作らない・変えない。
+7. **`sources[].accessedAt` は UTC の今日（`date -u +%F`）。** 整合性ルールは「未来の日付」を UTC で
+   判定する。日本時間の朝（0〜9時）に日本の日付を書くと UTC ではまだ前日で、登録ゲートが
+   「accessedAt が未来の日付です」で落ちる（パイロット1社目で実際に起きた）。
 
 ### 業界の選び方
 
@@ -318,6 +643,29 @@ node scripts/research/draft-entry.mjs <id>
 （2026-09-30以前は単位グループが整数しか受け付けず、小数点の直後の1桁だけを「1兆円」と
 切り出して、たまたまパック中のどこかに"1000000"があれば通ってしまっていた。誤った値のまま
 黙って通っていたバグで、`scripts/pipeline/check-prose-figures.mjs`側で修正済み）。
+
+### 資本関係の種類（2026-10-02 追加）
+
+`relationship` には取引関係のほかに、有報の【関係会社の状況】が使う4区分がある。**相手が「この会社の」何であるか**で選ぶ
+（`supplier` と同じ向き）:
+
+| 値 | 意味 | 有報の区分 |
+|---|---|---|
+| `parent` | 相手はこの会社の親会社 | 親会社 |
+| `subsidiary` | 相手はこの会社の子会社 | 連結子会社・非連結子会社 |
+| `affiliate` | 相手はこの会社の関連会社 | 持分法適用関連会社 |
+| `other-affiliated-company` | 相手はこの会社の「その他の関係会社」 | その他の関係会社 |
+
+- **`business-partner` を、これらの代用にしない。** 資本関係と取引関係は別の軸で、子会社が親会社から仕入れていても
+  関係は `subsidiary`（取引は `description` に書く）。本当に取引・提携だけの関係のときは従来どおり `business-partner`。
+- **大株主**は、今は関係の種類にしていない。`business-partner` に当てはめず、`taxonomyGaps` に書く（`kind: relationship`）。
+- **経営統合・株式交換**は関係ではなく出来事。`history` に書く。
+- **相手が未登録でも、それだけでは何も止まらない。** 結べない相手は `warnings` に書き、**架空の企業を作らない・
+  非上場企業・海外企業・個人・資産管理会社を登録対象に加えない**（登録対象は上場会社）。分類が足りないことと同じく、
+  `needsReview` には書かない。
+- **業界**は `machinery`（機械）と `human-resources`（人材サービス）が加わった。それ以外で当てはまる区分が無いときは、
+  最も近い値を暫定で選び、`taxonomyGaps`（`kind: industry`）に書く。環境・宿泊・理美容・印刷・楽器・外食は、
+  根拠がまだ弱いので足していない（記録だけ溜める）。
 
 ### 同じ回に登録する企業どうしは結べない
 

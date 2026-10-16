@@ -25,6 +25,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { cacheDir, downloadDocument, findAnnualReports, readCsvRows, textBlockToText } from "./edinet.mjs";
+import { FIGURE_KINDS, amendmentsOf, chooseEffective, classifyAmendment, diffFigures, ensureIndex, filingCompleteness } from "./amendments.mjs";
 
 /**
  * Which tagged line is the top line, and which is net income — by element ID,
@@ -377,8 +378,14 @@ function labelBefore(table, at) {
     do {
       previous = label;
       label = label
-        // Remnants of the 決算年月 header immediately above the first row.
-        .replace(/^(?:[0-9０-９]{1,4}\s*年)?\s*(?:[0-9０-９]{1,2}\s*月)?\s*(?:[0-9０-９]{1,2}\s*日)?/, "")
+        // A unit printed BEFORE the row heading — 西日本旅客鉄道 prints 「百万円  営業収益  1,031,103…」,
+        // so the walk back from the figures picked the unit up as the label's first word and the
+        // page said 「百万円営業収益」. Only the money units: 「人件費」 begins with 人.
+        .replace(/^(?:百万円|千円)\s*/, "")
+        // Remnants of the 決算年月 header immediately above the first row. Some filings print the
+        // header as 「2025年９月期」 (GMO ペイメントゲートウェイ), so a 期 directly after the month is
+        // part of the header too — it used to survive and the label read 「期売上収益」.
+        .replace(/^(?:[0-9０-９]{1,4}\s*年)?\s*(?:[0-9０-９]{1,2}\s*月\s*期?)?\s*(?:[0-9０-９]{1,2}\s*日)?/, "")
         .replace(/^[年月日度回次)）\s]+/, "")
         // A footnote marker attached to the row label: 「売上高（注）２」.
         .replace(/[（(]\s*注\s*[）)]\s*[0-9０-９]*\s*$/, "")
@@ -435,17 +442,53 @@ function relativeYear(row) {
  * ultimately the page can say the figures are the parent company alone — the same
  * distinction `revenueBasis` exists for.
  */
+/** The 主要な経営指標等の推移 rows: the standard summary elements, or, for a line the taxonomy has
+ * no element for, a KeyFinancialData extension. */
+const summaryRows = (rows) => rows.filter((r) => /(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"]) && r["単位"] === "円");
+/** Non-consolidated rows carry the dimension in their context id. */
+const isNonConsolidatedRow = (r) => /NonConsolidated/i.test(r["コンテキストID"] ?? "");
+
+/**
+ * Is this filing's five-year series the 提出会社 one, because it has no consolidated statements?
+ *
+ * A filer that has stopped consolidating still tags its old consolidated columns
+ * (years before it stopped, and 「－」 after) beside a full 提出会社 table, so
+ * "no consolidated rows at all" is not the only way to have no consolidated
+ * statements. アビスト, FY2025: consolidated rows exist for FY2021–22 only, and
+ * taking them threw away the five-year 提出会社 table. Fall back to the 提出会社
+ * series when there is no numeric consolidated balance sheet for the CURRENT
+ * year and there is a 提出会社 one. Still never to fill a gap in a consolidated
+ * table: a filer whose consolidated statements cover the current year keeps them.
+ *
+ * One decision, three readers — the series, the printed table its labels are read
+ * from, and the indicators.txt a researcher confirms against — because the labels
+ * of one table cannot be found in the other (the 提出会社 table prints 当期純利益,
+ * the consolidated one 親会社株主に帰属する当期純利益).
+ */
+function usesFilerOnlySeries(rows) {
+  const inTable = summaryRows(rows);
+  const consolidated = inTable.filter((r) => !isNonConsolidatedRow(r));
+  const currentTotalAssets = (list) =>
+    list.some(
+      (r) =>
+        /^TotalAssets/.test(r["要素ID"].replace(/^.*:/, "")) &&
+        /^CurrentYear/.test(r["コンテキストID"] ?? "") &&
+        Number.isFinite(Number(r["値"])),
+    );
+  return consolidated.length === 0 || (!currentTotalAssets(consolidated) && currentTotalAssets(inTable.filter(isNonConsolidatedRow)));
+}
+
+/** Which 主要な経営指標等の推移 table to print, first choice first. */
+function indicatorsElements(filerOnly) {
+  const [group, filer] = SECTIONS["indicators.txt"];
+  return filerOnly ? [filer, group] : [group, filer];
+}
+
 function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
-  const inTable = rows.filter(
-    (r) =>
-      // 主要な経営指標等の推移 is tagged either with the standard summary elements
-      // or, for a line the taxonomy has no element for, a KeyFinancialData extension.
-      /(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"]) && r["単位"] === "円",
-  );
-  // Non-consolidated rows carry the dimension in their context id.
-  const isNonConsolidated = (r) => /NonConsolidated/i.test(r["コンテキストID"] ?? "");
+  const inTable = summaryRows(rows);
+  const isNonConsolidated = isNonConsolidatedRow;
   const consolidated = inTable.filter((r) => !isNonConsolidated(r));
-  const nonConsolidated = consolidated.length === 0;
+  const nonConsolidated = usesFilerOnlySeries(rows);
   const summary = nonConsolidated ? inTable.filter(isNonConsolidated) : consolidated;
   const pick = (elements, extension) => {
     const rowsFor = summary.filter((r) => {
@@ -508,7 +551,7 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
    * candidates, so a mechanical backfill is deterministic. `rowsFor` keeps its
    * own unit filter because employee counts are people, not yen.
    */
-  const pickSeries = (elements, { unit = "円", extension = null } = {}) => {
+  const pickSeries = (elements, { unit = "円", extension = null, unmarked = [] } = {}) => {
     // A bare year context only. Employee counts are also tagged per segment and
     // per sub-company, and those carry extra dimensions in the context. The one
     // dimension that is allowed is NonConsolidatedMember, and only for a filer
@@ -519,9 +562,17 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
     const context = nonConsolidated
       ? /^(Current|Prior\d)Year(Instant|Duration)_NonConsolidatedMember$/
       : /^(Current|Prior\d)Year(Instant|Duration)$/;
+    // `unmarked` names the few jpcrp_cor elements that carry a five-year column
+    // WITHOUT the table's suffix. 従業員数 is the case: most filers tag it as the
+    // plain `jpcrp_cor:NumberOfEmployees` (the same element the 従業員の状況 section
+    // uses), so requiring a suffix left it empty for ~99% of the filings checked
+    // (602 of 609 cached) — 2026-09-28 turned a no-op filter into this one. Only
+    // the exact names listed are let through, and the context test above is what
+    // keeps a segment's or a region's headcount out: those carry a dimension.
+    const isUnmarked = (r) => unmarked.some((name) => r["要素ID"] === `jpcrp_cor:${name}`);
     const pool = rows.filter(
       (r) =>
-        /(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"]) &&
+        (/(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"]) || isUnmarked(r)) &&
         context.test(r["コンテキストID"] ?? "") &&
         (unit === null || r["単位"] === unit),
     );
@@ -533,7 +584,7 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
     for (const element of elements) {
       const list = pool.filter((r) => r["要素ID"].replace(/^.*:/, "") === element);
       if (list.length === 0) continue;
-      const years = list
+      const tagged = list
         .map((r) => ({ relative: relativeYear(r), row: r }))
         .filter(({ relative }) => relative)
         .map(({ relative, row }) => ({
@@ -543,6 +594,13 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
         }))
         .filter((y) => Number.isFinite(y.value))
         .sort((a, b) => a.fiscalYearEnd.localeCompare(b.fiscalYearEnd));
+      // The plain NumberOfEmployees is printed in more than one place (the five-year
+      // table AND 従業員の状況), so the same year can arrive twice. Identical repeats
+      // collapse to one; a year whose repeats DISAGREE is left out — a headcount that
+      // cannot be pinned to one number is null, not a pick between two.
+      const years = unmarked.includes(element)
+        ? [...Map.groupBy(tagged, (y) => y.fiscalYearEnd).values()].filter((group) => new Set(group.map((y) => y.value)).size === 1).map((group) => group[0])
+        : tagged;
       if (years.length === 0) continue;
       const taxonomy = (list[0]["項目名"] ?? "").replace(/、経営指標等$/, "") || null;
       found.push({
@@ -589,7 +647,7 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
     profit: pickSeries(PROFIT_ELEMENTS, { extension: PROFIT_EXTENSION }),
     totalAssets: pickSeries(TOTAL_ASSETS_ELEMENTS),
     netAssets: pickSeries(NET_ASSETS_ELEMENTS),
-    employees: pickSeries(EMPLOYEE_ELEMENTS, { unit: null }),
+    employees: pickSeries(EMPLOYEE_ELEMENTS, { unit: null, unmarked: ["NumberOfEmployees"] }),
   };
   // A filer whose top line or net-income element is not in the allowlist must be
   // added to it deliberately, after checking what the filing prints. Returning an
@@ -632,6 +690,86 @@ function shiftYear(isoDate, years) {
   const lastDayOfMonth = (year) => new Date(Date.UTC(year, m, 0)).getUTCDate();
   const day = d === lastDayOfMonth(y) ? lastDayOfMonth(target) : d;
   return `${target}-${String(m).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+}
+
+/**
+ * The year-end months 主要な経営指標等の推移 prints on its 決算年月 row, oldest first —
+ * ["2021-03", "2022-03", "2022-12", …]. Null when the table prints no such row.
+ * @param {string | null} indicatorsText
+ * @returns {string[] | null}
+ */
+export function printedYearEnds(indicatorsText) {
+  if (!indicatorsText) return null;
+  const text = indicatorsText.normalize("NFKC").replace(/\s+/g, "");
+  const row = /決算年月((?:\d{4}年\d{1,2}月)+)/.exec(text);
+  if (!row) return null;
+  return [...row[1].matchAll(/(\d{4})年(\d{1,2})月/g)].map((m) => `${m[1]}-${String(m[2]).padStart(2, "0")}`);
+}
+
+/**
+ * The printed 決算年月 row, oldest first, or null when it cannot be read or oriented: most filers
+ * print oldest first, a few newest first, and a row with 当期 at neither end is not read at all.
+ * @param {string | null} indicatorsText
+ * @param {string | null | undefined} currentPeriodEnd YYYY-MM-DD
+ */
+function orientedYearEnds(indicatorsText, currentPeriodEnd) {
+  const printed = printedYearEnds(indicatorsText);
+  if (!printed || !currentPeriodEnd) return null;
+  const current = currentPeriodEnd.slice(0, 7);
+  if (printed.at(-1) === current) return printed;
+  return printed[0] === current ? [...printed].reverse() : null;
+}
+
+/**
+ * Fiscal years inside the five-year window that are not twelve months long — the transition
+ * period after a change of year end (住友重機械工業's 2022年12月期 is nine months: April to
+ * December). The figures are real but cover a different span from every other column, so the
+ * table must say so; the pack cannot write that sentence, and a person has to.
+ * @param {string | null} indicatorsText
+ * @param {string | null | undefined} currentPeriodEnd YYYY-MM-DD
+ * @returns {{ yearEnd: string, months: number }[]}
+ */
+export function detectIrregularPeriods(indicatorsText, currentPeriodEnd) {
+  const printed = orientedYearEnds(indicatorsText, currentPeriodEnd);
+  if (!printed) return [];
+  const monthIndex = (/** @type {string} */ ym) => Number(ym.slice(0, 4)) * 12 + Number(ym.slice(5, 7));
+  const out = [];
+  for (let i = Math.max(1, printed.length - 5); i < printed.length; i++) {
+    const months = monthIndex(printed[i]) - monthIndex(printed[i - 1]);
+    if (months !== 12) out.push({ yearEnd: printed[i], months });
+  }
+  return out;
+}
+
+/**
+ * Did the filer change its fiscal year end inside the five-year window?
+ *
+ * The pack dates every column by shifting the current year end back a whole number of years,
+ * which is wrong for any column that pre-dates a change of year end: 住友重機械工業's 第126期 ended
+ * 2022年3月 but sits in a column dated 2021-12-31, because it moved from March to December in 2022.
+ * The filing says so itself — the 決算年月 row prints each column's real month — so the two are
+ * compared. A difference is NOT corrected here: the printed row gives only a month, never the day,
+ * and the short transition year needs its length stated. It is reported, and the company goes to a
+ * person rather than being registered with a year-end that never existed.
+ * Columns are matched by RELATIVE year (当期 is the last printed column, 前期 the one before), not
+ * by position in the pack's list: a filer whose XBRL tags only some of the years would otherwise
+ * be compared against the wrong columns.
+ * @param {string | null} indicatorsText
+ * @param {{ fiscalYearEnd: string, relative: string }[]} years the pack's dated columns
+ * @param {string} currentPeriodEnd the filing's own current year end (YYYY-MM-DD), used to find which
+ *   end of the printed row is 当期 — most filers print oldest first, a few newest first, and a row
+ *   that puts 当期 at neither end is not read at all rather than guessed at
+ * @returns {{ printed: string[], assumed: string[] } | null} the disagreeing columns, oldest first
+ */
+export function detectFiscalYearChange(indicatorsText, years, currentPeriodEnd) {
+  const printed = orientedYearEnds(indicatorsText, currentPeriodEnd);
+  if (!printed) return null;
+  const pairs = years
+    .filter((y) => y.relative in YEAR_OFFSET && printed.length > YEAR_OFFSET[y.relative])
+    .map((y) => ({ assumed: y.fiscalYearEnd.slice(0, 7), printed: printed[printed.length - 1 - YEAR_OFFSET[y.relative]] }))
+    .sort((a, b) => a.assumed.localeCompare(b.assumed));
+  const wrong = pairs.filter((p) => p.assumed !== p.printed);
+  return wrong.length === 0 ? null : { printed: wrong.map((p) => p.printed), assumed: wrong.map((p) => p.assumed) };
 }
 
 /**
@@ -793,7 +931,15 @@ function brief(companyId, code4, filing, cover, figures, previous, warnings, cor
     "",
     ...(warnings.length > 0 ? ["## 注意", "", ...warnings.map((w) => `- ${w}`), ""] : []),
     ...(corrections.length > 0
-      ? ["## 訂正有価証券報告書", "", ...corrections.map((c) => `- ${c.docDescription} (docID \`${c.docID}\`, 提出 ${c.submitDateTime})${c.comparedToBase ? ` — 本体との差異: ${JSON.stringify(c.comparedToBase)}` : ""}`), ""]
+      ? [
+          "## 訂正有価証券報告書",
+          "",
+          ...corrections.map(
+            (c) =>
+              `- ${c.docDescription} (docID \`${c.docID}\`, 提出 ${c.submitDateTime})${c.docID === filing.docID ? " — **このパックの有効文書**" : ""}${c.complete === false ? ` — 不完全（${c.missing.join("・")}）` : ""}${c.classification ? ` — 分類 ${c.classification}` : ""}${c.comparedToBase ? ` — 原本との差異: ${JSON.stringify(c.comparedToBase)}` : ""}`,
+          ),
+          "",
+        ]
       : []),
     "## 本文ファイル",
     "",
@@ -803,12 +949,118 @@ function brief(companyId, code4, filing, cover, figures, previous, warnings, cor
   ].join("\n");
 }
 
+/** A figures comparison as the pack stores it: the verdict and the first differences, not all of them. */
+const summarizeDiff = (diff) => ({ changed: diff.changed, differenceCount: diff.differences.length, differences: diff.differences.slice(0, 12) });
+
+/**
+ * The filing of record for an original 有報: its latest 訂正 when that is complete,
+ * otherwise the original (see amendments.mjs for why).
+ *
+ * The corrections come from the reverse index, never from the search window the
+ * original was located with — the window is a locality device for finding the
+ * original, and a correction arrives a median 28 and up to 464 days after it.
+ * Every correction is compared with the original on all five series the entry
+ * stores, so a correction that changes 総資産 but not 売上 is reported too.
+ *
+ * Never throws on the index: if EDINET cannot be reached for the newest days the
+ * answer carries how far it was checked.
+ */
+async function resolveAmendments(original, originalRows, originalFigures) {
+  const { index, error } = await ensureIndex({ fetch: true });
+  const list = amendmentsOf(index, original.docID);
+  const loaded = new Map();
+  for (const a of list) {
+    const zip = await downloadDocument(a.docID, 5);
+    loaded.set(a.docID, zip ? readCsvRows(zip) : []);
+  }
+  // Memoised: completeness and the comparison both need the five-year figures.
+  const read = new Map();
+  const figuresOf = (docID) => {
+    if (read.has(docID)) return read.get(docID);
+    const rows = loaded.get(docID) ?? [];
+    let result;
+    if (rows.length === 0) result = { figures: null, why: "XBRL（CSV）がない" };
+    else {
+      try {
+        result = { figures: fiveYearFigures(rows, original.resolvedPeriodEnd), why: null };
+      } catch (e) {
+        result = { figures: null, why: String(e.message).slice(0, 120) };
+      }
+    }
+    read.set(docID, result);
+    return result;
+  };
+  const completenessOf = (docID) => {
+    const structural = filingCompleteness(loaded.get(docID) ?? [], originalRows);
+    if (!structural.complete) return structural;
+    const probe = figuresOf(docID);
+    return probe.figures ? structural : { complete: false, missing: [`5年表を抽出できない（${probe.why}）`] };
+  };
+  const choice = chooseEffective(original.docID, list, completenessOf);
+  const records = list.map((a) => {
+    const { figures, why } = figuresOf(a.docID);
+    const check = completenessOf(a.docID);
+    return {
+      docID: a.docID,
+      parentDocID: a.parentDocID,
+      periodEnd: original.resolvedPeriodEnd,
+      submitDateTime: a.submitDateTime,
+      docDescription: a.docDescription,
+      complete: check.complete,
+      missing: check.missing,
+      comparedToBase: figures ? summarizeDiff(diffFigures(originalFigures, figures, [...FIGURE_KINDS, "employees"])) : { note: why },
+      // What the correction changed, from the two filings' XBRL end to end (see classifyAmendment).
+      ...(figures && (loaded.get(a.docID) ?? []).length > 0
+        ? classifyAmendment({ figures: diffFigures(originalFigures, figures, [...FIGURE_KINDS, "employees"]), baseRows: originalRows, rows: loaded.get(a.docID), proseElements: PROSE_ELEMENTS })
+        : {}),
+    };
+  });
+  const effectiveRecord = records.find((r) => r.docID === choice.effectiveDocID);
+  const filing = choice.effectiveIsAmendment
+    ? { ...original, docID: effectiveRecord.docID, docTypeCode: "130", docDescription: effectiveRecord.docDescription, submitDateTime: effectiveRecord.submitDateTime, originalDocID: original.docID }
+    : { ...original, originalDocID: original.docID };
+  return {
+    choice,
+    records,
+    filing,
+    rows: choice.effectiveIsAmendment ? loaded.get(choice.effectiveDocID) : originalRows,
+    checkedThrough: index.checkedThrough,
+    indexError: error,
+  };
+}
+
+/**
+ * Which generation of extraction logic built a pack. Bump it whenever a change here alters
+ * what a pack CONTAINS for a filing that has not changed — a new element accepted, a
+ * different basis chosen, the filing of record resolved differently. A pack written by an
+ * older generation is stale: nothing registered is touched, but a company that is not yet
+ * registered (or not yet promoted) is rebuilt before it is, so a fix to the extractor
+ * reaches every future registration without anyone remembering to re-run packs by hand.
+ *
+ *   1  (implicit — packs written before this field existed)
+ *   2  素の NumberOfEmployees を従業員数として採る（2026-10-02）。訂正有報の有効文書から作る
+ *   3  決算期の変更を検出する（summary.fiscalYearChange）。登録前のパックを作り直す
+ *   4  行見出しの前に印字された単位（百万円）をラベルに含めない
+ *   5  変則決算（12か月でない期）を検出する（summary.irregularPeriods）
+ *   6  ヘッダー「９月期」の「期」をラベルに含めない。200文字以下の短いTextBlockも sections.json に残す
+ *   7  訂正有報の分類（record-only / text-change / financial-change）を amendments.records に持つ
+ */
+export const EXTRACTOR_VERSION = 7;
+
 async function packFor(companyId, code4, from, to) {
   const reports = await findAnnualReports(code4, from, to);
   if (reports.length === 0) throw new Error(`no 有価証券報告書 for ${code4} between ${from} and ${to}`);
-  const latest = pickBase(reports);
-  if (!latest) throw new Error(`no filing with a readable fiscal year for ${code4} between ${from} and ${to}`);
-  const { rows } = await figuresFor(latest);
+  // The original, located by the local window. Its corrections are NOT looked for in
+  // that window — see resolveAmendments.
+  const original = pickBase(reports);
+  if (!original) throw new Error(`no filing with a readable fiscal year for ${code4} between ${from} and ${to}`);
+  const originalRead = await figuresFor(original);
+  if (!originalRead) throw new Error(`EDINET がこの書類のXBRL（CSV）を提供していない: ${original.docID}`);
+  const amendment = await resolveAmendments(original, originalRead.rows, originalRead.figures);
+  // Everything below is read from the filing of record: figures, labels, cover
+  // page, text sections.
+  const latest = amendment.filing;
+  const rows = amendment.rows;
   const missing = [];
   // 主要な経営指標等の推移 as printed, so each series can carry the filer's own
   // wording rather than the taxonomy's.
@@ -817,7 +1069,7 @@ async function packFor(companyId, code4, from, to) {
   // table only as 提出会社の経営指標等, and this line silently disagreed with
   // SECTIONS about that — the pack had indicators.txt while the labels were still
   // resolved against nothing.
-  const indicatorsRow = SECTIONS["indicators.txt"].reduce(
+  const indicatorsRow = indicatorsElements(usesFilerOnlySeries(rows)).reduce(
     (found, element) => found ?? rows.find((r) => r["要素ID"] === element && r["値"]) ?? null,
     null,
   );
@@ -825,6 +1077,24 @@ async function packFor(companyId, code4, from, to) {
   const figures = fiveYearFigures(rows, latest.resolvedPeriodEnd, missing, indicatorsText);
 
   const warnings = [];
+  const fiscalYearChange = detectFiscalYearChange(
+    indicatorsText,
+    (figures.revenue ?? []).flatMap((c) => c.years),
+    latest.resolvedPeriodEnd,
+  );
+  if (fiscalYearChange) {
+    warnings.push(
+      `決算期の変更: 有報は 決算年月 を ${fiscalYearChange.printed.join(" / ")} と印字しているが、このパックは各年を ${fiscalYearChange.assumed.join(" / ")} として日付を付けている。` +
+        "年度ラベルと期末日が実際と違うので、人が直すまで登録しないこと（変則決算の期間の長さも記す）",
+    );
+  }
+  const irregularPeriods = detectIrregularPeriods(indicatorsText, latest.resolvedPeriodEnd);
+  if (irregularPeriods.length > 0) {
+    warnings.push(
+      `変則決算: ${irregularPeriods.map((p) => `${p.yearEnd} の期は ${p.months} か月`).join("、")}。` +
+        "決算期の変更による移行期間で、他の年と期間の長さが違う。人が financials の note にその旨を書くまで登録しないこと",
+    );
+  }
   if (missing.length > 0) {
     warnings.push(
       `${missing.join("・")} が5年表に見当たらない。有報が実際に掲げていない項目であれば空欄のままでよい（銀行は営業利益を出さない等）。ログにその旨を書くこと`,
@@ -846,20 +1116,46 @@ async function packFor(companyId, code4, from, to) {
     }
   }
 
-  // 訂正有価証券報告書 amend a filing already submitted. One covering the base
-  // year is compared against the base, so the amendment is reported rather than
-  // discovered by eye; one covering an earlier year still has to be read.
+  // 訂正有価証券報告書 of THIS filing come from the reverse index (resolveAmendments),
+  // however late they were filed. Say which document the pack was built from, and
+  // what the corrections changed against the original, so neither is discovered by eye.
+  const { choice } = amendment;
+  const changedRecords = amendment.records.filter((r) => r.comparedToBase?.changed);
+  if (choice.status === "adopted") {
+    warnings.push(
+      `訂正有価証券報告書（${latest.docDescription}、docID ${latest.docID}）を有効文書としてこのパックを作った。原本は docID ${original.docID}。` +
+        (changedRecords.length > 0
+          ? `原本との主要財務の差異: ${changedRecords.map((r) => `${r.docID}（${r.comparedToBase.differenceCount}件）`).join("・")} — amendments.records[].comparedToBase を見ること`
+          : "原本と主要財務（5系列・従業員数）は同一"),
+    );
+    // The verdict on what the correction changed. A researcher cannot read a 訂正 against its original
+    // by eye, and "中身を確認できない" is not a reason to hold an entry back once this has said.
+    const verdict = amendment.records.find((r) => r.docID === latest.docID);
+    if (verdict?.classification === "record-only") {
+      warnings.push(`訂正有報の分類: record-only — 財務の数値も本文も原本と同一。違うのは${[...verdict.otherTextChanged, ...verdict.otherNumericChanged].length > 0 ? `${[...verdict.otherTextChanged, ...verdict.otherNumericChanged].join("・")}（エントリーが引用しない節・開示数値）` : "表紙の項目"}だけ。「訂正の中身を確認できない」を理由に needsReview にしない`);
+    } else if (verdict?.classification === "financial-change") {
+      warnings.push(`訂正有報の分類: financial-change — 数値が原本と異なる（主要財務 ${verdict.comparedToBase?.differenceCount ?? 0} 件／その他の数値 ${verdict.numericFactsChanged} 件: ${verdict.numericElements.join("・") || "なし"}）。このパックの数値は有効文書のもの。原本の数値を出典にした記述が混ざっていないか確認すること`);
+    } else if (verdict?.classification === "text-change") {
+      warnings.push(`訂正有報の分類: text-change — 数値は同一だが本文が原本と異なる（${verdict.proseTextChanged.join("・")}）。本文は有効文書から書くこと。原本の記述が混ざっていないか確認すること`);
+    }
+  } else if (choice.status === "incomplete") {
+    warnings.push(
+      `最新の訂正有価証券報告書（docID ${choice.blockedBy}）に ${choice.missing.join("・")} が無く、有効文書として採用していない（原本 docID ${original.docID} を使用）。needs-attention として人が確認すること`,
+    );
+  }
+  if (amendment.indexError) {
+    warnings.push(`訂正有報の索引を ${amendment.checkedThrough ?? "不明"} までしか確認できていない: ${amendment.indexError}`);
+  }
+  // The search window still sees corrections of OTHER years (and the base's own,
+  // if they fell inside it). Kept as it was recorded — what the window showed —
+  // with the comparison taken from the index for the base year.
   const corrections = [];
   for (const report of reports) {
     if (report.docTypeCode !== "130") continue;
     const periodEnd = resolvePeriodEnd(report);
     const record = { docID: report.docID, periodEnd, submitDateTime: report.submitDateTime, docDescription: report.docDescription };
-    if (periodEnd === latest.resolvedPeriodEnd && report.submitDateTime > latest.submitDateTime) {
-      const amended = await figuresFor({ ...report, resolvedPeriodEnd: periodEnd });
-      record.comparedToBase = amended
-        ? { revenue: compare(amended.figures.revenue, figures.revenue), netIncome: compare(amended.figures.netIncome, figures.netIncome) }
-        : { note: "EDINET serves no CSV for this correction — read the PDF" };
-      warnings.push(`${report.docDescription} が提出されている。差異は corrections[].comparedToBase を参照し、リサーチログに記録すること`);
+    if (periodEnd === original.resolvedPeriodEnd && report.submitDateTime > original.submitDateTime) {
+      record.comparedToBase = amendment.records.find((r) => r.docID === report.docID)?.comparedToBase ?? { note: "訂正の索引にない" };
     } else {
       warnings.push(`${report.docDescription} が提出されている（当期以外）。過年度の修正再表示の可能性があるため内容を確認すること`);
     }
@@ -910,7 +1206,9 @@ async function packFor(companyId, code4, from, to) {
     // both the group table and the 提出会社 one, and which came first in the file
     // would otherwise decide which the pack shows.
     let row = null;
-    for (const element of elements) {
+    // indicators.txt follows the basis of the series (see usesFilerOnlySeries); the
+    // other sections have a fixed preference.
+    for (const element of file === "indicators.txt" ? indicatorsElements(figures.nonConsolidated) : elements) {
       row = rows.find((r) => r["要素ID"] === element && r["値"]);
       if (row) break;
     }
@@ -959,28 +1257,48 @@ async function packFor(companyId, code4, from, to) {
       `本文に ${scopeHits.join("・")} の記載がある。前期有報との一致は「範囲が同じ」ことの証明にはならない（前期の時点で組替済みの場合がある）。該当注記を読んで basis の要否を判断すること`,
     );
   }
+  const others = extraSections(rows, Object.values(SECTIONS).flat());
   if (!sectionIndex["segments.txt"]) {
+    // The absence of the consolidated segment note says nothing about the accounting standard: a
+    // company that files single-entity statements only (トヨコー, 光世証券) has the note under the
+    // individual-statement element, which lives in sections.json. Say where it is, not why it is
+    // missing — the standard is read from the filing (表紙・経理の状況), never from this.
+    const individual = others.find((b) => /セグメント情報/.test(b.name ?? ""));
     warnings.push(
-      sectionIndex["md-and-a.txt"]
-        ? "セグメント情報のテキストブロックがない（US GAAP採用会社に多い）。セグメント別の売上・利益は md-and-a.txt に記載されているので、そこから採り、ログにその旨を書くこと"
-        : "セグメント情報のテキストブロックが見つからない。有報本文でセグメント情報を確認すること",
+      individual
+        ? `連結のセグメント情報のテキストブロック（segments.txt）は無い。sections.json の「${individual.name}」にセグメント情報の注記があるので、そこから読むこと（会計基準はこの有無からは判断できない。表紙・経理の状況で確認する）`
+        : sectionIndex["md-and-a.txt"]
+          ? "連結のセグメント情報のテキストブロックが無い。セグメント別の売上・利益は md-and-a.txt に記載されていることが多いので、そこから採り、ログにその旨を書くこと（会計基準はこの有無からは判断できない）"
+          : "セグメント情報のテキストブロックが見つからない。有報本文でセグメント情報を確認すること",
     );
   }
-  const taken = Object.values(SECTIONS).flat();
-  const others = rows
-    .filter((r) => /TextBlock/.test(r["要素ID"]) && !taken.includes(r["要素ID"]) && r["値"]?.length > 200)
-    .map((r) => ({ name: r["項目名"], element: r["要素ID"], text: textBlockToText(r["値"]) }));
   writeFileSync(join(dir, "sections.json"), JSON.stringify(others, null, 2), "utf8");
 
-  writeFileSync(join(dir, "brief.md"), brief(companyId, code4, latest, cover, figures, previous, warnings, corrections, sectionIndex), "utf8");
+  writeFileSync(join(dir, "brief.md"), brief(companyId, code4, latest, cover, figures, previous, warnings, amendment.records, sectionIndex), "utf8");
 
   const summary = {
     companyId,
     securitiesCode: code4,
+    // The filing of record (a complete latest 訂正, else the original); `originalDocID`
+    // is always the original, so a pack can be matched to the universe row it came from.
     filing: latest,
     coverPage: cover,
-    otherFilingsInWindow: reports.filter((r) => r.docID !== latest.docID),
+    otherFilingsInWindow: reports.filter((r) => r.docID !== original.docID && r.docID !== latest.docID),
     corrections,
+    // Authoritative: every 訂正 of the original by parentDocID, oldest first, and which
+    // filing is of record. `checkedThrough` is how current the index was when asked.
+    amendments: {
+      originalDocID: original.docID,
+      amendmentDocIDs: choice.amendmentDocIDs,
+      effectiveDocID: choice.effectiveDocID,
+      effectiveIsAmendment: choice.effectiveIsAmendment,
+      status: choice.status,
+      blockedBy: choice.blockedBy,
+      missing: choice.missing,
+      checkedThrough: amendment.checkedThrough,
+      indexError: amendment.indexError,
+      records: amendment.records,
+    },
     warnings,
     figures,
     previousFiling: previous?.filing ?? null,
@@ -996,40 +1314,90 @@ async function packFor(companyId, code4, from, to) {
             .map((kind) => [kind, compare(figures[kind], previous.figures[kind])]),
         )
       : { note: previous?.error ?? "previous filing not found in window" },
+    fiscalYearChange,
+    irregularPeriods,
     sections: sectionIndex,
     otherSections: others.map((o) => o.name),
+    extractorVersion: EXTRACTOR_VERSION,
     generatedAt: new Date().toISOString(),
   };
   writeFileSync(join(dir, "summary.json"), JSON.stringify(summary, null, 2), "utf8");
   return { dir, summary };
 }
 
-const [companyId, code4, ...rest] = process.argv.slice(2);
-if (!companyId || !code4) {
-  console.error("usage: node scripts/research/evidence-pack.mjs <company-id> <4-digit code> [--from YYYY-MM-DD] [--to YYYY-MM-DD]");
-  process.exit(1);
-}
-const options = Object.fromEntries(rest.map((a, i, all) => (a.startsWith("--") ? [a.slice(2), all[i + 1]] : [])).filter((e) => e.length));
-const { dir, summary } = await packFor(companyId, code4, options.from ?? "2026-06-01", options.to ?? "2026-06-30");
+// Declared ABOVE the command-line block on purpose: that block runs packFor at module load, and packFor reaches
+// PROSE_ELEMENTS (classifyAmendment) for any company with a 訂正. A const declared below it is still in its
+// temporal dead zone then, and the rebuild failed with "Cannot access PROSE_ELEMENTS before initialization".
+/**
+ * The text sections an entry's prose is read from: every section file the pack writes
+ * (bar the indicators table, which is financial), plus the regional and revenue notes and the
+ * shareholder tables agents read out of sections.json. A correction that changes one of
+ * these changes something a published entry may quote — 2026-08 yamaha-motor, whose
+ * regional revenue was restated while every total stayed the same.
+ */
+export const PROSE_ELEMENTS = [
+  ...Object.entries(SECTIONS)
+    .filter(([file]) => file !== "indicators.txt")
+    .flatMap(([, elements]) => elements),
+  "jpigp_cor:InformationAboutGeographicalAreasIFRSTextBlock",
+  "jpigp_cor:NotesRevenueConsolidatedFinancialStatementsIFRSTextBlock",
+  "jpcrp_cor:MajorShareholdersTextBlock",
+  "jpcrp_cor:ShareholdingsTextBlock",
+];
 
-console.log(`${companyId} (${code4}) → ${dir}`);
-console.log(`filing: ${summary.filing.filerName} | ${summary.filing.docDescription} | 提出 ${summary.filing.submitDateTime} | 決算期 ${summary.filing.periodEnd} | docID ${summary.filing.docID}`);
-if (summary.otherFilingsInWindow.length) {
-  console.log(`other filings in window: ${summary.otherFilingsInWindow.map((f) => `${f.docTypeCode}:${f.docID}(${f.submitDateTime})`).join(", ")}`);
-}
-for (const kind of ["revenue", "netIncome"]) {
-  for (const candidate of summary.figures[kind]) {
-    console.log(`${kind}: ${candidate.label} [${candidate.element}]`);
-    for (const y of candidate.years) console.log(`   ${y.fiscalYearEnd}  ${y.yen.toLocaleString("ja-JP")} 円  (${(y.yen / 1_000_000).toLocaleString("ja-JP")} 百万円)`);
+if (process.argv[1]?.endsWith("evidence-pack.mjs")) {
+  const [companyId, code4, ...rest] = process.argv.slice(2);
+  if (!companyId || !code4) {
+    console.error("usage: node scripts/research/evidence-pack.mjs <company-id> <4-digit code> [--from YYYY-MM-DD] [--to YYYY-MM-DD]");
+    process.exit(1);
   }
+  const options = Object.fromEntries(rest.map((a, i, all) => (a.startsWith("--") ? [a.slice(2), all[i + 1]] : [])).filter((e) => e.length));
+  const { dir, summary } = await packFor(companyId, code4, options.from ?? "2026-06-01", options.to ?? "2026-06-30");
+
+  console.log(`${companyId} (${code4}) → ${dir}`);
+  console.log(`filing: ${summary.filing.filerName} | ${summary.filing.docDescription} | 提出 ${summary.filing.submitDateTime} | 決算期 ${summary.filing.periodEnd} | docID ${summary.filing.docID}`);
+  if (summary.otherFilingsInWindow.length) {
+    console.log(`other filings in window: ${summary.otherFilingsInWindow.map((f) => `${f.docTypeCode}:${f.docID}(${f.submitDateTime})`).join(", ")}`);
+  }
+  for (const kind of ["revenue", "netIncome"]) {
+    for (const candidate of summary.figures[kind]) {
+      console.log(`${kind}: ${candidate.label} [${candidate.element}]`);
+      for (const y of candidate.years) console.log(`   ${y.fiscalYearEnd}  ${y.yen.toLocaleString("ja-JP")} 円  (${(y.yen / 1_000_000).toLocaleString("ja-JP")} 百万円)`);
+    }
+  }
+  console.log(
+    "cover page:",
+    ["会社名、表紙", "英訳名、表紙", "会計基準、DEI"].map((k) => `${k}=${summary.coverPage[k] ?? "-"}`).join(" | "),
+  );
+  console.log("restatement check:", JSON.stringify(summary.restatementCheck));
+  for (const warning of summary.warnings) console.log(`WARNING: ${warning}`);
+  for (const correction of summary.corrections) {
+    if (correction.comparedToBase) console.log(`correction ${correction.docID} vs base:`, JSON.stringify(correction.comparedToBase));
+  }
+  if (summary.amendments.amendmentDocIDs.length > 0) {
+    console.log(`amendments: ${summary.amendments.amendmentDocIDs.join(", ")} → 有効文書 ${summary.amendments.effectiveDocID}（${summary.amendments.status}）`);
+  }
+  console.log("sections:", Object.entries(summary.sections).map(([f, s]) => `${f} (${s.characters})`).join(", "));
 }
-console.log(
-  "cover page:",
-  ["会社名、表紙", "英訳名、表紙", "会計基準、DEI"].map((k) => `${k}=${summary.coverPage[k] ?? "-"}`).join(" | "),
-);
-console.log("restatement check:", JSON.stringify(summary.restatementCheck));
-for (const warning of summary.warnings) console.log(`WARNING: ${warning}`);
-for (const correction of summary.corrections) {
-  if (correction.comparedToBase) console.log(`correction ${correction.docID} vs base:`, JSON.stringify(correction.comparedToBase));
+
+
+/**
+ * Every TextBlock that has no file of its own, by name — `sections.json`.
+ *
+ * A block used to need MORE than 200 characters of raw value to be kept. That dropped exactly the
+ * short blocks that say something by being short: 【提出会社の親会社等の情報】 「親会社等はありません」
+ * (53 characters), a 【株式の保有状況】 that says the company holds no investment shares (171), an
+ * 追加情報 note on a past error (179). A researcher then could not tell "the filing has no such
+ * section" from "the extractor dropped it", and wrote exactly that doubt into the entry. The only
+ * blocks worth dropping are the ones with nothing in them once the markup is gone.
+ * @param {any[]} rows XBRL rows of the filing
+ * @param {string[]} taken element ids already written to a .txt file of their own
+ */
+export function extraSections(rows, taken) {
+  return rows
+    .filter((r) => /TextBlock/.test(r["要素ID"]) && !taken.includes(r["要素ID"]) && r["値"])
+    .map((r) => ({ name: r["項目名"], element: r["要素ID"], text: textBlockToText(r["値"]) }))
+    .filter((block) => /[^\s－\-‐–—―・]/.test(block.text));
 }
-console.log("sections:", Object.entries(summary.sections).map(([f, s]) => `${f} (${s.characters})`).join(", "));
+
+export { SECTIONS, compare, figuresFor, fiveYearFigures, packFor, pickBase, resolvePeriodEnd };

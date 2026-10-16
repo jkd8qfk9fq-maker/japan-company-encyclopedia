@@ -27,6 +27,7 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { cacheDir } from "../research/edinet.mjs";
+import { fragmentFiles } from "./company-state.mjs";
 
 const companyId = process.argv[2];
 if (!companyId) {
@@ -74,6 +75,9 @@ function proseOf(source) {
   }
   for (const r of source.relatedCompanies ?? []) push(r.description);
   for (const f of source.financials ?? []) push(f.note);
+  // A fragment carries its notes unmerged (see merge-fragments applyFinancialNotes).
+  for (const n of source.financialNotes ?? []) push(n?.note);
+  for (const n of source.businessModel?.financialNotes ?? []) push(n?.note);
   return out.join("\n").normalize("NFKC");
 }
 
@@ -81,8 +85,7 @@ let prose;
 let financials;
 if (useFragments) {
   const dir = join(process.cwd(), "pipeline/results");
-  const parts = readdirSync(dir)
-    .filter((f) => f.startsWith(`${companyId}-`) && f.endsWith(".json"))
+  const parts = fragmentFiles(companyId, dir)
     .map((f) => JSON.parse(readFileSync(join(dir, f), "utf8")).data ?? {});
   prose = parts.map(proseOf).join("\n");
   // A fragment carries no financials — the five-year table is mechanical, and the

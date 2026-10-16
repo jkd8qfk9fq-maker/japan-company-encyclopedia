@@ -42,6 +42,29 @@ export function parseRichText(source: string): RichTextSegment[] {
   return segments;
 }
 
+/**
+ * What a reader gets when some references point at pages that do not exist (yet): a company that is registered
+ * but not released, an industry with no page. The integrity suite only proves the target is registered, so the
+ * renderer has to decide whether a link would be a 404 — and, if so, keeps the label as plain text.
+ */
+export function withoutUnavailableLinks(
+  segments: RichTextSegment[],
+  available: { company: ReadonlySet<string>; industry: ReadonlySet<string> },
+): RichTextSegment[] {
+  const out: RichTextSegment[] = [];
+  for (const segment of segments) {
+    const dead =
+      segment.type === "reference" &&
+      ((segment.kind === "company" && !available.company.has(segment.id)) ||
+        (segment.kind === "industry" && !available.industry.has(segment.id)));
+    const next: RichTextSegment = dead ? { type: "text", text: segment.label } : { ...segment };
+    const previous = out.at(-1);
+    if (next.type === "text" && previous?.type === "text") previous.text += next.text;
+    else out.push(next);
+  }
+  return out;
+}
+
 /** The text a reader sees, with markup removed. For metadata, search and alt text. */
 export function toPlainText(source: string): string {
   return parseRichText(source)

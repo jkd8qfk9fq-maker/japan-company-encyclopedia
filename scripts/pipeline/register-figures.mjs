@@ -22,8 +22,8 @@
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { cacheDir } from "../research/edinet.mjs";
-import { loadState, saveState, setStage } from "./company-state.mjs";
+import { loadState, reapDeadReservations, release, reserve, saveState, setStage } from "./company-state.mjs";
+import { packProblem, readPack, rebuildPack } from "./pack.mjs";
 
 const arg = (name, fallback) => {
   const i = process.argv.indexOf(`--${name}`);
@@ -31,6 +31,8 @@ const arg = (name, fallback) => {
 };
 const limit = Number(arg("limit", "50"));
 const write = process.argv.includes("--register");
+// --ids a,b,c: only these companies (a pilot, or a retry of ones a person fixed).
+const onlyIds = arg("ids", null) ? new Set(arg("ids", "").split(",").map((x) => x.trim()).filter(Boolean)) : null;
 
 const root = process.cwd();
 const today = new Date().toISOString().slice(0, 10);
@@ -69,6 +71,10 @@ const hasFragments = existsSync(resultsDir)
  * Whoever dispatches an agent writes the ids here first; the file is local
  * working state, like the rest of pipeline/.
  */
+// A previous run that was killed leaves its reservations behind; release the ones whose process is gone.
+const reaped = reapDeadReservations();
+if (reaped.length > 0) console.log(`死んだプロセスの予約を ${reaped.length} 件解放しました`);
+
 const reservedPath = join(root, "pipeline/reserved.tsv");
 const reserved = existsSync(reservedPath)
   ? new Set(
@@ -86,14 +92,74 @@ const ready = readdirSync(join(root, "pipeline/state"))
   .filter((id) => {
     const state = loadState(id);
     if (state.stages.registration.status === "needs-review") return false;
-    return state.stages.edinet.status === "completed" && existsSync(join(cacheDir(), "evidence", id, "draft-entry.json"));
+    // The pack itself is not required to be on disk: it lives in the cache, which does not
+    // survive every session, and a missing or stale one is rebuilt below before anything is staged.
+    return state.stages.edinet.status === "completed" && Boolean(state.identity?.docID && state.identity?.code);
   })
+  .filter((id) => !onlyIds || onlyIds.has(id))
   .sort()
   .slice(0, limit);
 
 if (ready.length === 0) {
   console.log("登録できる会社がありません（edinet 工程が完了し、まだ何も書かれていない会社が対象です）");
   process.exit(0);
+}
+
+// ---------------------------------------------------------------- hold, refresh, screen
+// Hold every company for the length of the run, so the queue cannot hand one to an agent
+// that this batch is about to register. A company someone else already holds is left out.
+const held = [];
+process.on("exit", () => {
+  for (const id of held) release(id);
+});
+for (const id of [...ready]) {
+  if (reserve(id, `register-figures:${process.pid}`)) held.push(id);
+  else ready.splice(ready.indexOf(id), 1);
+}
+
+/**
+ * A pack built by an older extractor is rebuilt before it is registered from — this is what
+ * carries an extractor fix (the employee counts, the filing of record) to every company not yet
+ * registered. And a latest 訂正 that lacks what the pack needs is NOT adopted: the original
+ * would be registered under a correction nobody has read, so the company is parked for a person.
+ */
+const unfit = [];
+for (const id of [...ready]) {
+  const identity = loadState(id).identity ?? {};
+  try {
+    if (packProblem(readPack(id), identity)) rebuildPack(id, identity);
+    const pack = readPack(id);
+    const problem = packProblem(pack, identity);
+    if (problem) throw new Error(`証拠パックを使えない（${problem}）`);
+    if (pack.fiscalYearChange) {
+      // The pack dated the early columns by counting whole years back from the current year end,
+      // and the filing prints different months. Registering it would publish a year-end that never existed.
+      const why = `決算期の変更: 有報の決算年月 ${pack.fiscalYearChange.printed.join("・")} に対しパックは ${pack.fiscalYearChange.assumed.join("・")}。年度ラベルと変則決算の期間を人が直してから登録すること`;
+      setStage(id, "registration", "needs-review", why);
+      unfit.push({ id, reason: `needs-attention: ${why}` });
+      ready.splice(ready.indexOf(id), 1);
+    } else if ((pack.irregularPeriods ?? []).length > 0) {
+      // A transition period after a change of year end is real data over a different span; shown as a
+      // plain year it misleads, and only a person can write the note that says how long it was.
+      const why = `変則決算: ${pack.irregularPeriods.map((x) => `${x.yearEnd} の期は ${x.months} か月`).join("、")}。financials の note にその旨を書いてから登録すること`;
+      setStage(id, "registration", "needs-review", why);
+      unfit.push({ id, reason: `needs-attention: ${why}` });
+      ready.splice(ready.indexOf(id), 1);
+    } else if (pack.amendments?.status === "incomplete") {
+      const why = `最新の訂正 ${pack.amendments.blockedBy} に ${(pack.amendments.missing ?? []).join("・")} が無く採用できない。原本のまま登録してよいか人が判断すること`;
+      setStage(id, "registration", "needs-review", `訂正有価証券報告書: ${why}`);
+      unfit.push({ id, reason: `needs-attention: ${why}` });
+      ready.splice(ready.indexOf(id), 1);
+    }
+  } catch (error) {
+    unfit.push({ id, reason: `証拠パックの準備に失敗: ${String(error.message).split("\n")[0].slice(0, 120)}` });
+    ready.splice(ready.indexOf(id), 1);
+  }
+}
+for (const u of unfit) console.log(`  SKIP ${u.id} — ${u.reason}`);
+if (ready.length === 0) {
+  console.log("登録できる会社が残りませんでした");
+  process.exit(unfit.length > 0 ? 1 : 0);
 }
 
 // ------------------------------------------------------------------ build and stage
@@ -115,7 +181,7 @@ for (const id of ready) {
     // was listed once. It can have no `listings`, and this is an encyclopedia of
     // listed companies, so it is parked rather than retried. 139 of them were being
     // re-attempted and re-reported in every single batch.
-    if (/非上場|上場金融商品取引所名「」/.test(reason)) {
+    if (/非上場|上場金融商品取引所名「」|上場金融商品取引所名「該当ありません/.test(reason)) {
       setStage(id, "registration", "needs-review", `上場していないため数値のみの層にも載せられない: ${reason}`);
     }
     skipped.push({ id, reason });

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { localEditingStatus } from "@/lib/content/content-store";
+import { isReleased } from "@/lib/release";
 import { companyRepository, revisionRepository } from "@/lib/repositories";
 import { getReportRepository } from "@/lib/reports";
 import { REPORT_CATEGORY_LABEL, REPORT_STATUS_LABEL } from "@/lib/reports/report-types";
@@ -31,7 +32,11 @@ export default async function AdminCompany({ params }: PageProps<"/admin/compani
         <div className="mt-4 flex flex-wrap items-baseline justify-between gap-4">
           <h1 className="font-serif text-3xl font-semibold">{company.name}</h1>
           <div className="flex gap-4 text-sm">
-            <Link href={`/companies/${id}`} className="link-ink">公開ページ</Link>
+            {isReleased(company) ? (
+              <Link href={`/companies/${id}`} className="link-ink">公開ページ</Link>
+            ) : (
+              <Link href={`/admin/drafts/${id}`} className="link-ink">下書きプレビュー</Link>
+            )}
             {editable ? (
               <Link href={`/admin/companies/${id}/edit`} className="link-ink font-semibold">編集する（ローカル）</Link>
             ) : (
@@ -40,7 +45,7 @@ export default async function AdminCompany({ params }: PageProps<"/admin/compani
           </div>
         </div>
         <p className="mt-2 text-sm text-muted-foreground">
-          最終更新 {formatDateJa(company.updatedAt)} ・ 状態 {company.status.state === "published" ? "公開" : "要確認"}
+          最終更新 {formatDateJa(company.updatedAt)} ・ 状態 {company.status.state === "published" ? "公開" : company.status.state === "figures-only" ? "数値のみ（非公開）" : "要確認（非公開）"}
         </p>
         {company.status.state === "needs-attention" && (
           <ul className="mt-3 list-disc space-y-1 pl-5 text-sm">{company.status.notes.map((n) => <li key={n}>{n}</li>)}</ul>
