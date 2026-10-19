@@ -71,6 +71,8 @@ npm run admin:hash-password   # prints ADMIN_PASSWORD_HASH and ADMIN_SESSION_SEC
 npm run db:migrate            # applies db/migrations to DATABASE_URL
 npm run content:check         # integrity tests + typecheck + lint, before committing content
 npm run content:diff          # read-only: changed data files, new revisions, diff
+npm run content:autopilot -- status          # registration queue → review sheets (docs/auto-registration.md); `approve` is the only step that registers
+npm run content:refresh-financials -- --all  # dry run: registered companies with a newer 有報 (Actions detects this daily — the one EDINET detector)
 ```
 
 | Variable | Why |

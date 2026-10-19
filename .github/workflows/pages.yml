@@ -1,0 +1,71 @@
+# A preview of the site on GitHub Pages: the PUBLIC pages exported as plain files, rebuilt on every push to main.
+#
+# It is a preview, not the production site: everything that needs a server is left out (the admin, the report form,
+# the service worker). The real deployment (admin, reports, DATABASE_URL) is a server build, e.g. on Vercel.
+#
+# One-time setup in the repository (Settings → Pages → Build and deployment → Source: "GitHub Actions"). GitHub Pages
+# is available for public repositories, and for private ones on a paid plan.
+#
+# This workflow never touches EDINET (no key), writes nothing back to the repository, and has no schedule.
+name: pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      PAGES_EXPORT: "1"
+      # https://<owner>.github.io/<repo>/ — the origin and the sub-path are separate settings of the site.
+      SITE_URL: https://${{ github.repository_owner }}.github.io
+      NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      # A static export cannot contain a page that needs a server. These are removed from this build's copy of the tree
+      # only; the repository is untouched, and `npm run typecheck` / `npm run build` check the full tree.
+      - name: Leave out what needs a server
+        run: |
+          rm -rf src/app/admin src/app/report src/components/admin src/components/settings/report-form.tsx
+
+      - name: Build the static site
+        run: npx next build --webpack
+
+      # GitHub Pages serves a 404.html for unknown paths; the export already writes one. .nojekyll keeps "_next" files.
+      - run: touch out/.nojekyll
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

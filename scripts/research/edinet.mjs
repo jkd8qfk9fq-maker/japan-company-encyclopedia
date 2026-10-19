@@ -24,6 +24,19 @@ export function redactLocalPaths(text) {
   return text.replace(/[A-Za-z]:[\\/]+Users[\\/]+[^\s'"]*/g, "<local-path>");
 }
 
+/**
+ * Text that is about to be logged, written to a report or put in an error message, with the EDINET API key taken
+ * out. The key travels in the query of every EDINET URL, so any message that quotes a URL (or an upstream
+ * error that does) could carry it. Applied to everything this module reports about a failure.
+ * @param {string} text
+ */
+export function scrubSecrets(text) {
+  const key = process.env.EDINET_API_KEY;
+  let out = String(text);
+  if (key && key.length >= 6) out = out.split(key).join("***");
+  return out.replace(/Subscription-Key=[^&\s"'<>]+/gi, "Subscription-Key=***");
+}
+
 const API = "https://api.edinet-fsa.go.jp/api/v2";
 
 export function apiKey() {
@@ -69,10 +82,14 @@ async function fetchWithRetry(url, { binary = false, attempts = 5 } = {}) {
         const error = new Error(`HTTP ${response.status}`);
         // @ts-expect-error — carried so the catch below can tell a permanent failure from a transient one
         error.permanent = response.status >= 400 && response.status < 500 && response.status !== 429 && response.status !== 408;
+        // Carried so a caller can say WHY a request failed (classifyIndexFailure) without quoting the URL.
+        /** @type {any} */ (error).httpStatus = response.status;
         throw error;
       }
       return binary ? Buffer.from(await response.arrayBuffer()) : await response.text();
     } catch (error) {
+      // A request that never got an answer: keep only the error's code (ECONNRESET, ETIMEDOUT …), never its text.
+      if (!(/** @type {any} */ (error).httpStatus)) /** @type {any} */ (error).networkCode = /** @type {any} */ (error).cause?.code ?? /** @type {any} */ (error).code ?? /** @type {any} */ (error).name;
       if (attempt >= attempts || /** @type {any} */ (error).permanent) throw error;
       const backoff = Math.min(30_000, 500 * 2 ** (attempt - 1));
       await new Promise((r) => setTimeout(r, Math.max(retryAfterMs, backoff * (0.75 + Math.random() * 0.5))));
@@ -169,7 +186,14 @@ export async function documentsOn(date) {
   const problem = indexProblem(json, date);
   if (problem?.kind === "invalid") {
     if (cached && indexProblem(cached, date)?.kind === "not-final") return cached;
-    throw new Error(`EDINET ${date}: ${problem.reason} ${json.metadata?.message ?? ""}`.trim());
+    // EDINET reports a refused key (and a rate limit) as HTTP 200 with a body like
+    // {"StatusCode": 401, "message": "Access denied due to invalid subscription key …"} — no `metadata` at all.
+    // Carry that status and message so the failure is named for what it is, not as "status undefined".
+    const bodyStatus = Number(json?.StatusCode ?? json?.statusCode);
+    const error = new Error(`EDINET ${date}: ${problem.reason} ${json?.metadata?.message ?? json?.message ?? ""}`.trim());
+    if (!json?.metadata && bodyStatus) /** @type {any} */ (error).httpStatus = bodyStatus;
+    /** @type {any} */ (error).edinetMessage = scrubSecrets(String(json?.message ?? json?.metadata?.message ?? "")).slice(0, 160);
+    throw error;
   }
   if (problem) return json; // not final yet (today, or the batch has not run): usable, but never cached
   const temp = `${file}.tmp-${process.pid}`;
@@ -216,26 +240,90 @@ export function auditIndexCache(from, to, root = undefined) {
  * validates and writes atomically). Returns the days that still could not be vouched for, so a
  * caller that must not guess can stop. Self-healing is deliberate: the cache lives under %TEMP% and
  * Windows Storage Sense can clear it between sessions (340 days vanished on 2026-10-08).
- * @returns {Promise<{ fetched: number, unresolved: string[] }>}
+ *
+ * Why a day stays unresolved is returned too (`reasons`, one per day, secrets already taken out), because
+ * "could not be vouched for" alone hides whether the key was rejected, the network failed, EDINET answered
+ * something invalid, or the day simply is not final yet. EDINET finishes yesterday's index in a nightly batch
+ * (0:00–0:06 JST), so a run that starts just after midnight finds it not final; `waitForFinalMs` makes the
+ * run wait for that — re-asking every `pollMs` — instead of failing. Only reasons that waiting can fix
+ * (not final, a network error, 429, 5xx) are waited for; a missing or rejected key fails at once.
+ * The default is not to wait, so existing callers behave as before.
+ * @param {string} from
+ * @param {string} to
+ * @param {{ waitForFinalMs?: number, pollMs?: number, sleep?: (ms: number) => Promise<void>, log?: (line: string) => void }} [options]
+ * @returns {Promise<{ fetched: number, unresolved: string[], reasons: IndexReason[] }>}
  */
-export async function ensureIndexCache(from, to) {
+export async function ensureIndexCache(from, to, { waitForFinalMs = 0, pollMs = 60_000, sleep = (ms) => new Promise((r) => setTimeout(r, ms)), log = () => {} } = {}) {
   const audit = auditIndexCache(from, to);
   const todo = [...audit.missing, ...audit.corrupt, ...audit.notFinal].sort();
-  const unresolved = [];
+  /** @type {Map<string, IndexReason>} */
+  const reasons = new Map();
   let fetched = 0;
-  for (const date of todo) {
+
+  /** Ask EDINET for one day and record why it is (still) unresolved, if it is. */
+  const attempt = async (/** @type {string} */ date) => {
     try {
-      await documentsOn(date);
-      fetched++;
-    } catch {
-      unresolved.push(date);
+      const json = await documentsOn(date);
+      // documentsOn does not throw for a day EDINET still answers as not final: it returns it, uncached.
+      const problem = indexProblem(json, date);
+      if (problem) reasons.set(date, { date, kind: problem.kind, detail: scrubSecrets(problem.kind === "not-final" ? `${problem.reason}（EDINET の夜間バッチ後に確定する）` : problem.reason), retryable: problem.kind === "not-final" });
+      else {
+        reasons.delete(date);
+        fetched++;
+      }
+    } catch (error) {
+      reasons.set(date, { date, ...classifyIndexFailure(error) });
     }
+  };
+
+  for (const date of todo) {
+    // A missing or refused key fails every day the same way: say so for the rest without asking again,
+    // instead of sending EDINET a hundred more requests it will refuse.
+    const keyProblem = [...reasons.values()].find((r) => r.kind === "key-missing" || r.kind === "key-rejected");
+    if (keyProblem) reasons.set(date, { ...keyProblem, date });
+    else await attempt(date);
   }
+
+  // Wait for what waiting can fix, and only that.
+  const maxPolls = pollMs > 0 ? Math.floor(waitForFinalMs / pollMs) : 0;
+  for (let poll = 1; poll <= maxPolls && reasons.size > 0 && [...reasons.values()].every((r) => r.retryable); poll++) {
+    log(`索引 ${[...reasons.keys()].sort().join(", ")} は未確定（${[...reasons.values()][0].kind}）。${pollMs / 1000}秒後に再取得します（${poll}/${maxPolls}）`);
+    await sleep(pollMs);
+    for (const date of [...reasons.keys()].sort()) await attempt(date);
+  }
+
   // A not-final day that EDINET still answers as not-final (documentsOn returned it uncached) is
   // unresolved too: re-audit instead of trusting that no exception means success.
   const after = auditIndexCache(from, to);
-  for (const date of [...after.missing, ...after.corrupt, ...after.notFinal]) if (!unresolved.includes(date)) unresolved.push(date);
-  return { fetched, unresolved: unresolved.sort() };
+  for (const date of [...after.missing, ...after.corrupt, ...after.notFinal]) {
+    if (!reasons.has(date)) reasons.set(date, { date, kind: "missing", detail: "取得したが、キャッシュに有効な索引が残らなかった", retryable: true });
+  }
+  const list = [...reasons.values()].sort((a, b) => a.date.localeCompare(b.date));
+  return { fetched, unresolved: list.map((r) => r.date), reasons: list };
+}
+
+/**
+ * @typedef {{ date: string, kind: "not-final" | "invalid" | "key-missing" | "key-rejected" | "rate-limited" | "server-error" | "network" | "http" | "other" | "missing", detail: string, retryable: boolean }} IndexReason
+ */
+
+/**
+ * Why a request for a day's index failed, in words that are safe to log: an HTTP status, a network error CODE,
+ * or EDINET's own status and message — never a URL and never the key.
+ * @param {any} error
+ * @returns {{ kind: IndexReason["kind"], detail: string, retryable: boolean }}
+ */
+export function classifyIndexFailure(error) {
+  const text = scrubSecrets(String(error?.message ?? error)).slice(0, 240);
+  const status = Number(error?.httpStatus);
+  if (/EDINET_API_KEY is not set/.test(text)) return { kind: "key-missing", detail: "EDINET_API_KEY が空（渡されていない）", retryable: false };
+  const said = error?.edinetMessage ? `（EDINET: ${scrubSecrets(String(error.edinetMessage)).slice(0, 120)}）` : "";
+  if (status === 401 || status === 403) return { kind: "key-rejected", detail: `HTTP ${status}: キーが拒否された、またはこの接続元が制限されている${said}`, retryable: false };
+  if (status === 429 || status === 408) return { kind: "rate-limited", detail: `HTTP ${status}: 要求が多すぎる／時間切れ${said}`, retryable: true };
+  if (status >= 500) return { kind: "server-error", detail: `HTTP ${status}`, retryable: true };
+  if (status) return { kind: "http", detail: `HTTP ${status}`, retryable: false };
+  if (error?.networkCode) return { kind: "network", detail: `通信エラー ${scrubSecrets(String(error.networkCode))}`, retryable: true };
+  if (/^EDINET \d{4}-\d{2}-\d{2}:/.test(text)) return { kind: "invalid", detail: text, retryable: false };
+  return { kind: "other", detail: text, retryable: false };
 }
 
 function* eachDate(from, to) {

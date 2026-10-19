@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/navigation/site-footer";
 import { SiteHeader } from "@/components/navigation/site-header";
 import { OfflineIndicator } from "@/components/pwa/offline-indicator";
 import { ServiceWorkerRegistration } from "@/components/pwa/service-worker-registration";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+import { BASE_PATH, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import { THEME_SCRIPT } from "@/lib/storage/theme-script";
 import "./globals.css";
 
@@ -38,7 +38,7 @@ const display = Bodoni_Moda({
 });
 
 export const metadata: Metadata = {
-  metadataBase: SITE_URL,
+  metadataBase: BASE_PATH ? new URL(`${BASE_PATH}/`, SITE_URL) : SITE_URL,
   title: {
     default: SITE_NAME,
     template: `%s｜${SITE_NAME}`,
@@ -47,8 +47,8 @@ export const metadata: Metadata = {
   applicationName: SITE_NAME,
   appleWebApp: { capable: true, title: SITE_NAME, statusBarStyle: "default" },
   icons: {
-    icon: [{ url: "/icons/icon.svg", type: "image/svg+xml" }],
-    apple: "/icons/apple-touch-icon.png",
+    icon: [{ url: `${BASE_PATH}/icons/icon.svg`, type: "image/svg+xml" }],
+    apple: `${BASE_PATH}/icons/apple-touch-icon.png`,
   },
   openGraph: {
     type: "website",

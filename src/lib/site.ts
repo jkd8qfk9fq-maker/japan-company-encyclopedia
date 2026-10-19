@@ -25,3 +25,13 @@ function resolveSiteUrl(): string {
 }
 
 export const SITE_URL = new URL(resolveSiteUrl());
+
+/**
+ * The path the site is served under when it is not at the root of its origin — only the GitHub Pages preview
+ * (https://<user>.github.io/<repo>/, built by .github/workflows/pages.yml). Empty everywhere else, so a normal build
+ * is exactly what it was.
+ */
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+/** An absolute URL on this site for a path that starts with "/". */
+export const siteUrl = (path: string) => new URL(`${BASE_PATH}${path}`, SITE_URL).toString();

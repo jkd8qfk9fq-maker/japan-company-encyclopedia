@@ -13,7 +13,8 @@
  *
  * Without --apply it is a dry run: the evidence pack (cache only) is built, the change is planned and gated,
  * and nothing under src/data or pipeline/state is written (a transient pipeline/staging file is removed
- * again). With --apply an entry, a Revision and the pipeline state are written — never git: the operator
+ * again). One derived file does move: pipeline/amendments-index.json, the index of 訂正有報, advances whenever a pack is
+ * built — it is a cache of EDINET, not content, and it is the same on every machine that asks on the same day. With --apply an entry, a Revision and the pipeline state are written — never git: the operator
  * reviews `npm run content:diff` and commits (CLAUDE.md invariant 9). Unattended runs use the dry run only.
  *
  * --rehearse <id> proves the whole path on real data without waiting for a real new filing: it pretends the
@@ -44,7 +45,7 @@ import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { financialsDifferences } from "../research/amendments.mjs";
-import { cacheDir, ensureIndexCache, indexDir, jstToday } from "../research/edinet.mjs";
+import { cacheDir, ensureIndexCache, indexDir, jstToday, scrubSecrets } from "../research/edinet.mjs";
 import { loadState, saveState } from "./company-state.mjs";
 import { loadEntries } from "./jobs.mjs";
 import { readPack, rebuildPack } from "./pack.mjs";
@@ -203,16 +204,36 @@ export function exitCodeFor(outcomes, fatal) {
 const figuresOf = (/** @type {any} */ r) => ({ fiscalYear: r.fiscalYear, periodEnd: r.periodEnd, ...Object.fromEntries(FIGURES.map((f) => [f, r[f] ?? null])) });
 
 /**
- * The run as data, for the Actions artifact. `undo` is a function and is left out on purpose.
- * @param {{ mode: "dry-run" | "apply" | "rehearse", today: string, scope: { companies: number, from: string | null, to: string | null }, outcomes: Outcome[], fatal: string | null }} input
+ * Consecutive days with the same reason as one line — a refused key or an outage fails every day alike, and 113
+ * identical rows hide the one fact that matters.
+ * @param {{ date: string, kind: string, detail: string, retryable: boolean }[]} reasons sorted by date
  */
-export function buildReport({ mode, today, scope, outcomes, fatal }) {
+export function groupReasons(reasons) {
+  /** @type {{ from: string, to: string, days: number, kind: string, detail: string, retryable: boolean }[]} */
+  const groups = [];
+  for (const r of reasons) {
+    const g = groups.at(-1);
+    if (g && g.kind === r.kind && g.detail === r.detail) {
+      g.to = r.date;
+      g.days++;
+    } else groups.push({ from: r.date, to: r.date, days: 1, kind: r.kind, detail: r.detail, retryable: r.retryable });
+  }
+  return groups;
+}
+
+/**
+ * The run as data, for the Actions artifact. `undo` is a function and is left out on purpose.
+ * @param {{ mode: "dry-run" | "apply" | "rehearse", today: string, scope: { companies: number, from: string | null, to: string | null }, outcomes: Outcome[], fatal: string | null, indexProblems?: { date: string, kind: string, detail: string, retryable: boolean }[] }} input
+ */
+export function buildReport({ mode, today, scope, outcomes, fatal, indexProblems = [] }) {
   const count = (/** @type {string} */ r) => outcomes.filter((o) => o.result === r).length;
   return {
     mode,
     date: today,
     scope,
     fatal,
+    // Why EDINET day indexes could not be vouched for — one entry per day, with no URL and no key.
+    indexProblems: indexProblems.map((p) => ({ date: p.date, kind: p.kind, detail: scrubSecrets(p.detail), retryable: p.retryable })),
     exitCode: exitCodeFor(outcomes, fatal),
     counts: { companies: scope.companies, withNewFiling: outcomes.length, updated: count("updated"), wouldUpdate: count("would-update"), current: count("current"), held: count("held"), failed: count("failed"), unknown: count("unknown") },
     outcomes: outcomes.map((o) => ({
@@ -247,6 +268,11 @@ export function renderSummary(report) {
     "",
   ];
   const by = (/** @type {string[]} */ ...results) => report.outcomes.filter((o) => results.includes(o.result));
+  if (report.indexProblems.length > 0) {
+    lines.push("### EDINET の日次索引を確認できなかった日（これが原因で失敗した）", "", "| 日 | 種類 | 内容 | 待てば解決するか |", "|---|---|---|---|");
+    for (const g of groupReasons(report.indexProblems)) lines.push(`| ${g.days === 1 ? cell(g.from) : `${cell(g.from)} 〜 ${cell(g.to)}（${g.days}日）`} | ${cell(g.kind)} | ${cell(g.detail)} | ${g.retryable ? "はい（再実行で解決しうる）" : "いいえ"} |`);
+    lines.push("");
+  }
   const candidates = by("would-update", "updated");
   if (candidates.length > 0) {
     lines.push("### 更新候補（人が確認してから反映する）", "", "| 会社 | 追加される年度 | 売上高 | 純利益 | 新しい有報 |", "|---|---|---:|---:|---|");
@@ -279,10 +305,7 @@ const run = (/** @type {string[]} */ args, env = {}) => execFileSync(process.exe
 
 /** An error as one line, with the API key scrubbed — the key travels in EDINET URLs and must never reach a log. */
 export function message(/** @type {any} */ error) {
-  let text = String(error?.stdout ?? error?.message ?? error).trim().split("\n").slice(-6).join(" / ").slice(0, 600);
-  const key = process.env.EDINET_API_KEY;
-  if (key) text = text.split(key).join("***");
-  return text;
+  return scrubSecrets(String(error?.stdout ?? error?.message ?? error).trim().split("\n").slice(-6).join(" / ").slice(0, 600));
 }
 
 /**
@@ -417,7 +440,7 @@ if (process.argv[1]?.endsWith("refresh-financials.mjs")) {
     const i = args.indexOf(`--${name}`);
     return i !== -1 ? args[i + 1] : undefined;
   };
-  const valueIndexes = new Set(["--tier", "--limit", "--rehearse", "--report", "--summary"].map((f) => args.indexOf(f) + 1).filter((i) => i > 0));
+  const valueIndexes = new Set(["--tier", "--limit", "--rehearse", "--report", "--summary", "--wait-final"].map((f) => args.indexOf(f) + 1).filter((i) => i > 0));
   const rehearseId = value("rehearse");
   const ids = rehearseId ? [rehearseId] : args.filter((a, i) => !a.startsWith("--") && !valueIndexes.has(i));
   const apply = flag("apply");
@@ -435,6 +458,8 @@ if (process.argv[1]?.endsWith("refresh-financials.mjs")) {
   const outcomes = [];
   /** @type {string | null} */
   let fatal = null;
+  /** @type {any[]} */
+  let indexProblems = [];
   const scope = { companies: 0, from: /** @type {string | null} */ (null), to: /** @type {string | null} */ (null) };
 
   try {
@@ -454,8 +479,16 @@ if (process.argv[1]?.endsWith("refresh-financials.mjs")) {
     if (oldest) {
       scope.from = new Date(Date.parse(`${oldest}T00:00:00Z`) + 86_400_000).toISOString().slice(0, 10);
       scope.to = new Date(Date.parse(`${today}T00:00:00Z`) - 86_400_000).toISOString().slice(0, 10);
-      const { unresolved } = await ensureIndexCache(scope.from, scope.to);
-      if (unresolved.length > 0) throw new Error(`EDINET の日次索引 ${unresolved.length} 日（${unresolved.slice(0, 3).join(", ")}…）を確認できず、新しい有報の有無を保証できない。何も変更していない`);
+      // Yesterday's index is final only after EDINET's nightly batch (0:00–0:06 JST): a run that starts just
+      // after midnight waits for it, up to --wait-final minutes (default 10; 0 = do not wait).
+      const waitMinutes = Number(value("wait-final") ?? 10);
+      const checked = await ensureIndexCache(scope.from, scope.to, { waitForFinalMs: Math.max(0, waitMinutes) * 60_000, log: (line) => console.log(line) });
+      indexProblems = checked.reasons;
+      if (checked.unresolved.length > 0) {
+        const groups = groupReasons(checked.reasons);
+        const why = groups.slice(0, 3).map((g) => `${g.days === 1 ? g.from : `${g.from}〜${g.to}（${g.days}日）`} ${g.kind}: ${g.detail.slice(0, 110)}`).join(" ／ ");
+        throw new Error(`EDINET の日次索引 ${checked.unresolved.length} 日を確認できず、新しい有報の有無を保証できない。何も変更していない — ${why}${groups.length > 3 ? ` ほか${groups.length - 3}件` : ""}`);
+      }
     }
     const newest = newestFilings(indexDir(), oldest ?? "");
     const limit = Number(value("limit") ?? Infinity);
@@ -492,7 +525,7 @@ if (process.argv[1]?.endsWith("refresh-financials.mjs")) {
     fatal = message(error);
   }
 
-  const report = buildReport({ mode, today, scope, outcomes, fatal });
+  const report = buildReport({ mode, today, scope, outcomes, fatal, indexProblems });
   for (const [path, body] of [[value("report"), `${JSON.stringify(report, null, 2)}\n`], [value("summary"), renderSummary(report)]]) {
     if (!path) continue;
     mkdirSync(dirname(path), { recursive: true });

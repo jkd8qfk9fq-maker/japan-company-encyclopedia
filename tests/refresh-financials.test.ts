@@ -2,7 +2,7 @@ import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
-import { buildReport, exitCodeFor, filingStatus, latestPeriod, message, newestFilings, planFinancialsRefresh, rehearsalEntry, renderSummary, revisionChange, scanFrom } from "../scripts/pipeline/refresh-financials.mjs";
+import { buildReport, exitCodeFor, groupReasons, filingStatus, latestPeriod, message, newestFilings, planFinancialsRefresh, rehearsalEntry, renderSummary, revisionChange, scanFrom } from "../scripts/pipeline/refresh-financials.mjs";
 
 /**
  * The refresh adds a new fiscal year and never rewrites what is registered: a restated year, a changed
@@ -256,4 +256,47 @@ describe("newestFilings", () => {
   it("returns nothing for a directory that does not exist", () => {
     expect(newestFilings(join(dir, "missing")).size).toBe(0);
   });
+});
+
+describe("why the EDINET index could not be vouched for", () => {
+  const scope = { companies: 258, from: "2026-06-26", to: "2026-10-16" };
+  const problems = [{ date: "2026-10-16", kind: "not-final", detail: "作成 2026-10-16 00:02 は当日以前（EDINET の夜間バッチ後に確定する）", retryable: true }];
+
+  it("puts each day's reason in the report and in the job summary, so the log says why the run failed", () => {
+    const fatal = "EDINET の日次索引 1 日を確認できず — 2026-10-16 not-final";
+    const report = buildReport({ mode: "dry-run", today: "2026-10-17", scope, outcomes: [], fatal, indexProblems: problems });
+    expect(report.exitCode).toBe(1);
+    expect(report.indexProblems).toEqual(problems);
+    const text = renderSummary(report);
+    expect(text).toContain("2026-10-16");
+    expect(text).toContain("not-final");
+    expect(text).toContain("再実行で解決しうる");
+  });
+
+  it("has no index problems on an ordinary day", () => {
+    expect(buildReport({ mode: "dry-run", today: "2026-10-17", scope, outcomes: [], fatal: null }).indexProblems).toEqual([]);
+  });
+
+  it("never writes the API key into the report, whatever text a reason carries", () => {
+    process.env.EDINET_API_KEY = "key-0123456789-abc";
+    try {
+      const leaky = [{ date: "2026-10-16", kind: "other", detail: "failed for key-0123456789-abc via Subscription-Key=key-0123456789-abc", retryable: false }];
+      const report = buildReport({ mode: "dry-run", today: "2026-10-17", scope, outcomes: [], fatal: null, indexProblems: leaky });
+      expect(JSON.stringify(report) + renderSummary(report)).not.toContain("key-0123456789-abc");
+    } finally {
+      delete process.env.EDINET_API_KEY;
+    }
+  });
+});
+
+describe("groupReasons", () => {
+  const r = (date: string, kind = "key-rejected", detail = "HTTP 401") => ({ date, kind, detail, retryable: false });
+  it("folds consecutive days with the same reason into one line and keeps different reasons apart", () => {
+    const groups = groupReasons([r("2026-10-14"), r("2026-10-15"), r("2026-10-16"), r("2026-10-17", "not-final", "確定前")]);
+    expect(groups).toEqual([
+      { from: "2026-10-14", to: "2026-10-16", days: 3, kind: "key-rejected", detail: "HTTP 401", retryable: false },
+      { from: "2026-10-17", to: "2026-10-17", days: 1, kind: "not-final", detail: "確定前", retryable: false },
+    ]);
+  });
+  it("is empty for no reasons", () => expect(groupReasons([])).toEqual([]));
 });

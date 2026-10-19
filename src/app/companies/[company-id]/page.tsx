@@ -4,7 +4,7 @@ import { CompanyView } from "@/components/company/company-view";
 import { RecordView } from "@/components/company/record-view";
 import { companyRepository } from "@/lib/repositories";
 import { toPlainText } from "@/lib/rich-text";
-import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { SITE_NAME, siteUrl } from "@/lib/site";
 
 /*
  * Every published company is prerendered, and any other id is a real 404 —
@@ -57,7 +57,7 @@ export default async function CompanyPage({ params }: PageProps<"/companies/[com
     alternateName: [company.name, company.nameEn].filter(Boolean),
     description: company.description ? toPlainText(company.description) : metaFallback(company),
     tickerSymbol: company.code,
-    url: new URL(`/companies/${company.id}`, SITE_URL).toString(),
+    url: siteUrl(`/companies/${company.id}`),
   };
 
   return (

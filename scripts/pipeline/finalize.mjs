@@ -24,6 +24,7 @@ import { cacheDir } from "../research/edinet.mjs";
 import { join } from "node:path";
 import { mergeEntry } from "./merge-fragments.mjs";
 import { finishRegistration } from "./registration-tail.mjs";
+import { policyFindings } from "./policy-context.mjs";
 import { loadState, saveState, setStage, syncAgentStages } from "./company-state.mjs";
 
 const companyId = process.argv[2];
@@ -213,6 +214,13 @@ function stageEntry() {
  * provenance is wrong — the single failure the figure verifier cannot see,
  * because it compares the entry against the pack and never looks at the URL.
  */
+/** Hosts the operator has cleared as sources besides EDINET: pipeline/source-allowlist.txt, one per line, # comments. */
+function allowedHosts() {
+  const path = join(root, "pipeline/source-allowlist.txt");
+  if (!existsSync(path)) return new Set();
+  return new Set(readFileSync(path, "utf8").split(/\r?\n/).map((l) => l.replace(/#.*/, "").trim()).filter(Boolean));
+}
+
 function sourceValidation(entry) {
   const state = loadState(companyId);
   const problems = [];
@@ -233,10 +241,11 @@ function sourceValidation(entry) {
     }
     const host = s.url.replace(/^https:\/\//, "").split("/")[0];
     if (!/(^|\.)edinet-fsa\.go\.jp$/.test(host)) {
-      // Not a refusal: a company's own IR page is a legitimate primary source.
-      // But nothing mechanical verified it, so it is surfaced instead of waved
-      // through.
-      notes.push(`${where}: EDINET 以外のホスト（${host}）。一次資料かどうかは人が確認すること`);
+      // A company's own IR page is a primary source in principle (invariant 3), but the sites' terms of use are
+      // unconfirmed (docs/source-terms.md), so by the operator's decision of 2026-10-18 only EDINET is accepted
+      // until a host is listed in pipeline/source-allowlist.txt (one host per line, after its terms were read).
+      if (allowedHosts().has(host)) notes.push(`${where}: EDINET 以外のホスト（${host}）。許可リストにある。一次資料かどうかは人が確認すること`);
+      else problems.push(`${where}: EDINET 以外のホスト（${host}）は、利用条件を確認して pipeline/source-allowlist.txt に載せるまで出典にできません`);
     } else if (docID && !s.url.includes(docID)) {
       problems.push(`${where}: EDINET の URL に docID ${docID} が入っていません（数値を取り出した書類と別の書類を引用しています）`);
     }
@@ -274,6 +283,21 @@ function sourceValidation(entry) {
   } catch (error) {
     figureReport += `${error.stdout ?? ""}${error.stderr ?? ""}`;
     problems.push("本文中の金額に有報の裏付けがないものがあります（check-prose-figures.mjs の出力を見ること）");
+  }
+
+  // The writing rules (docs/agent-brief.md): a one-sentence description, the business as the subject, no financial
+  // figures but revenue and net income, links that rest on an identity AND a relationship. A program, no model.
+  // Errors stop the registration like any other gate; items for a person to look at are carried as notes.
+  if (!figuresOnly) {
+    try {
+      for (const f of policyFindings(entry)) {
+        const line = `[${f.rule}] ${f.path}: ${f.message}${f.excerpt ? `（…${f.excerpt}…）` : ""}`;
+        if (f.severity === "error") problems.push(`文章の規則: ${line}`);
+        else if (f.severity === "review") notes.push(`確認: ${line}`);
+      }
+    } catch (error) {
+      problems.push(`文章の規則の検査を実行できませんでした: ${String(error.message).slice(0, 200)}`);
+    }
   }
   return { problems, notes, figureReport };
 }

@@ -269,3 +269,79 @@ only on the repository), and a place was added where operators can see unrelease
 - **Releasing one at a time.** Preview in the console → in the local editor set the state to 公開 (a Revision is
   written) → `npm run content:check` → commit and push → the site is rebuilt and shows the released companies only.
   Production still writes no content (JCE-016); releasing is a commit.
+
+### JCE-020 · 2026-10-17 · Accepted (operator) — EDINET change detection made dependable
+
+The first Actions run failed on 「日次索引 1 日（2026-10-16）を確認できず」. Cause, established by reading EDINET's answers:
+`processDateTime` is the time of EDINET's nightly batch (0:00–0:06 JST, the same value for every day), and a day is final only
+once a batch has run on a LATER date — so the index for "yesterday" is not final between midnight and the batch.
+- `ensureIndexCache` now returns why each day is unresolved (`reasons`: not final, key missing, key refused, rate limit,
+  server error, network error, EDINET's own message) and can wait for what waiting can fix (`waitForFinalMs`, polling).
+  `refresh-financials` waits up to 10 minutes (`--wait-final`); other callers keep the old behaviour.
+- A missing or refused key stops the run at once, for every remaining day, without more requests. EDINET reports a refused key
+  as HTTP 200 with a body `{"StatusCode": 401, "message": …}` (no `metadata`); that is now recognised.
+- Every message and report passes through `scrubSecrets`: the key, and any `Subscription-Key=…`, never reaches a log,
+  the job summary or the report artifact. Network failures are reported by their error code only.
+- Consecutive days with the same reason are shown as one line (`groupReasons`).
+
+### JCE-021 · 2026-10-17 · Accepted (operator) — Listing status, industry and new listings from the EDINET code list
+
+The EDINET code list (EDINETコードリスト, one 0.6 MB file, updated daily) gives every filer's 上場区分, 提出者業種 (33 industries)
+and securities code. `scripts/pipeline/sync-listing.mjs` reads it and reports how it differs from the project.
+- **Terms of use (EDINET 利用規約, WZEK0030, read 2026-10-17).** Content may be used under 公共データ利用規約 (PDL 1.0): name the
+  source; say that a processed result is edited, and by whom. Machine retrieval from the website is prohibited except through the
+  API or for content the API cannot give; the code list is not in the API and the terms do not mention it. Short-term bulk access
+  is prohibited. So: the file is handed to the script (`--file`) by default; `--download` fetches it once, at most every 20 hours,
+  and is not part of any scheduled job. **Still to confirm with the operator**: that this reading of the exception is acceptable.
+- **Open (a requirement, not yet done): the site does not state the PDL 1.0 notice.** /about says facts rest on primary sources, but
+  not that the data is edited and processed from EDINET by the operator. The wording needs the operator's name.
+- **It reads, it does not act.** It writes only its own ledger `pipeline/listing.tsv` (with `--write`; refused if the list is
+  malformed, short, or differs from the last ledger by more than 5%), never an entry, a state file or the universe. A difference —
+  a registered company that is no longer listed, a new listing, a changed industry — is a report; acting on it is a reviewed step.
+- First sync (list of 2026-10-16): 3,813 listed; 185 registered entries are not shown as listed (3 of them published or
+  needs-attention: abalance, right-on, tryt); 106 listed companies have no entry (65 parked, 13 failed intake, 5 in the universe
+  with no record, 23 new listings the universe has not seen).
+- **Operator's decisions of 2026-10-17.** The code list is taken by hand (`--file`); `--download` is not to be scheduled; whether
+  machine retrieval of content the API cannot give is allowed is held until the terms' reading is settled. The PDL 1.0 notice
+  on /about waits for the operator's name; a proposal (position and wording, name still a placeholder) is in
+  docs/source-terms.md, which also records the terms and what remains to do.
+
+
+### JCE-022 · 2026-10-18 · Accepted (operator) — Registration autopilot, and one EDINET detector
+
+Goal set by the operator: stop driving each company by hand. `scripts/pipeline/autopilot.mjs` (docs/auto-registration.md) takes a queue of
+figures-only companies and does everything up to a review sheet; **registering stays a person's command** (`approve --confirm --hash`).
+- **Programs do the work; a model writes two things.** Pre-checks, EDINET evidence, related-company candidates (names that are in the filing,
+  with their listing status), number checks, source checks, schema/integrity, the writing rules, retries, state, the review sheet — programs.
+  Group 1 (business structure, history) and group 2 (business model, industry, related companies) — a headless `claude -p` data-research
+  agent (`ai-executor.mjs`; the operator's own login, a per-call and a total budget, no web tools unless asked, writes only to
+  `pipeline/results`, never sees the EDINET key). Failed lines are repaired by sending the model only those lines (at most twice).
+- **The operator's writing rules of 2026-10-17 became checks** (`prose-policy.mjs`, `check-policy.mjs`, and a gate in `finalize.mjs`): a
+  one-sentence `businessModel.description`; the business, not the filing, is the subject; prose financial figures are revenue and net income only;
+  a link needs an identity (name in the filing, listed per the EDINET code list) AND a relationship the filing states about that pair. They apply
+  to new registrations; already-registered entries (written before the rules) are not rewritten and are not checked by `data-integrity`.
+- **Nothing is registered or published by automation.** Production holds no queue (the files are local and git-ignored); `/admin/queue` is a
+  read-only view; Actions and the site cannot register (pinned by tests). Approval needs `--confirm` and the sheet's content hash, so what was
+  read is what is registered; a double registration is refused (`approve`, `finalize`, and the revision-id check).
+- **One EDINET detector: the GitHub Actions workflow** (`refresh-financials.yml`, JCE-018). No Vercel cron, no second workflow, no site-side EDINET
+  call (`tests/single-detector.test.ts`). The Postgres ledger/cron design of docs/continuous-update-plan.md is **not built**: the daily detection
+  already covers the yearly update, and the registration queue is local. Revisit when the detection needs durable history.
+- **Failure handling.** A rate limit or lost login pauses the whole queue without spending a company's attempt; any other failure costs an
+  attempt (two per group), then holds that company with the reason; an unexpected exception holds only that company; a model that changed a
+  file it must not touch holds the company and names the files; the run is single-instance (lock) and resumable (fragments and state are the memory).
+- **Open.** Company sites are not collected automatically (their terms are unconfirmed, docs/source-terms.md); JPX is uninvestigated; relationship
+  *content* (what the filing says about a pair) is read by a person on the review sheet; entries registered before the rules are not backfilled.
+
+### JCE-023 · 2026-10-18 · Accepted (operator: "全て許可") — Autopilot judgements 1 and 2 decided; registration of the queue authorised
+
+The operator authorised proceeding with the recommendations of docs/autopilot-decisions.md and with building companies.
+- **Judgement 1 (company sites as sources): EDINET only.** `finalize.mjs` refuses a source on any other host unless the host is listed in
+  `pipeline/source-allowlist.txt` (empty; a host is added after its terms of use have been read). Links that rested on a company's own pages
+  (Sojitz→さくらインターネット, Suzuken→Welby, Obayashi→三菱地所) were removed from the queued entries with a line in each research log.
+- **Judgement 2 (links to companies that are not listed): not linked.** A counterpart the EDINET code list does not show as 上場 is refused
+  (`prose-policy.mjs` `not-in-ledger` / `not-listed` are errors); what the filing says about it goes to `warnings`
+  (Idemitsu→富士石油, Daiwa House→住友電設 removed). G-FACTORY was removed from Hanwa's links (identity rested on the filing alone).
+- **Judgement 3 (the 258 registered entries): not done.** It is a bulk change to pages that are already public and needs its own diff-first
+  procedure (the standing rule for large data updates); it stays open in docs/autopilot-decisions.md.
+- **Registration.** Queued companies are registered by the operator-authorised `approve`, after the program checks and my reading of each
+  sheet's flags. Companies whose entry carries `needsReview` register as `needs-attention` (not public). Nothing is committed or pushed.

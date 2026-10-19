@@ -152,6 +152,10 @@ universe.tsv ──discover──▶ queued ──intake──▶ intake ──r
 | queue の管理・見える化 | `queue.mjs`（`status` / `jobs` / `plan`（dry-run）/ `check` / `next` / `claim`） |
 | 予約（二重取得の防止） | `company-state.mjs` の `reserve` / `release` / `claim`。**排他**（`pipeline/.lock` の mkdir ロック。取れた呼び出しだけが true）。`claim` は「次の N 社を選ぶ」と「予約する」を1つのロック内で行う |
 | universe の作成 | `discover.mjs`（既定は**昨日まで**。当日の索引は未完で、キャッシュされると以後ずっと完全に見える） |
+| 上場状況・業種・新規上場の同期 | `sync-listing.mjs`（EDINET コードリスト。**読むだけ**: 台帳 `pipeline/listing.tsv` と差分・影響対象の報告を作り、エントリー・state・universe は変えない。`--file` で渡すのが既定、`--download` は20時間に1回まで・定期実行には入れない） |
+| 新しい年度の財務の追加 | `refresh-financials.mjs`（登録済みの会社に新しい有報の年度を足す。ドライランが既定、Actions は検知のみ。確定前の索引は待つ） |
+| 解説つきへの昇格を自動で進める（確認シートまで） | `autopilot.mjs`（`docs/auto-registration.md`）。キューを順に処理し、モデルを呼ぶのは group1・group2 の本文だけ。事前確認・`advance`・検査・修復・確認シート・再試行・復旧はプログラム。**登録は `approve --confirm --hash` だけ** |
+| 文章の規則の検査 | `check-policy.mjs`／`prose-policy.mjs`（一文・有報を主語にしない・財務語・関連企業の同一性。`finalize.mjs` のゲートにも入っている）。規則の正本は `docs/agent-brief.md` |
 | EDINET 取得・証拠パック | `intake.mjs`（id 割当・パック・draft）／`advance.mjs`（再構築）／`pack.mjs`（欠落・別 filing・古い抽出器を一括判定） |
 | figures-only の作成 | `register-figures.mjs`（バッチ、全件 verify-financials、`--ids` で指定可、予約してから処理） |
 | research | `data-research` Agent（group1: businessStructure, history／group2: businessModel, industry, relatedCompanies, terms）。**1つずつ** |
@@ -324,6 +328,8 @@ node scripts/pipeline/recover-registration.mjs <company-id> [--dry-run]
 もう一度実行しても何もしない（終了コード0）。`--dry-run` は確認だけで、何も変えず、テストも走らせない。
 
 ### 上場廃止会社の扱い（仕様判断を待つ記録）
+
+> 2026-10-17: `sync-listing.mjs` が、EDINET コードリストの「上場区分」を台帳 `pipeline/listing.tsv` にして、登録済みで上場と確認できない会社を報告する（初回は185社、うち公開済み・要確認は3社）。区別の**材料**はできたが、下の仕様判断はまだ。
 
 過去に上場していた会社をどう登録するか、登録済みエントリーの関連会社リンクが上場廃止済みの会社を指して
 いるのをどうするかは、**今は決めていない**（コードも変えない）。会社マスターに「上場／上場廃止」の区別

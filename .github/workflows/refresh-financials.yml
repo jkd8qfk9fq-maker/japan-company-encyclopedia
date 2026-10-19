@@ -8,6 +8,14 @@
 # Job result: success = ran to the end (nothing new, candidates, and held companies all count);
 # failure = the EDINET index could not be vouched for, a company failed to fetch / extract / verify,
 # or the committed data changed during the run.
+#
+# This is the ONLY scheduled caller of EDINET (decision of 2026-10-18; tests/single-detector.test.ts). New registrations are
+# a different lane: `npm run content:autopilot`, run by a person on the machine that holds the evidence, never scheduled.
+#
+# Yesterday's EDINET index is final only after EDINET's nightly batch, which finishes between 0:00 and 0:06 JST.
+# The scheduled run (07:00 JST) is long after that. A run started by hand just after midnight waits for the batch
+# (up to 10 minutes, see --wait-final) instead of failing; if the index is still not usable, the job summary says
+# which day and why (not final / key refused / network / EDINET's own message) — and never the key.
 name: refresh-financials
 
 on:

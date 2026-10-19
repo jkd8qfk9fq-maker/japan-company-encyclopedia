@@ -142,9 +142,10 @@ if (process.argv[1]?.endsWith("advance.mjs")) {
     if (current?.code && current.submitted) {
       const from = new Date(Date.parse(`${current.submitted}T00:00:00Z`) + 86_400_000).toISOString().slice(0, 10);
       const to = new Date(Date.parse(`${jstToday()}T00:00:00Z`) - 86_400_000).toISOString().slice(0, 10);
-      const { unresolved } = await ensureIndexCache(from, to);
+      const { unresolved, reasons } = await ensureIndexCache(from, to);
       if (unresolved.length > 0) {
-        console.log(`FAIL: cache: 日次索引 ${unresolved.length} 日（${unresolved.slice(0, 3).join(", ")}…）を確認できず、新しい有報の有無を保証できない。状態は変更していない`);
+        const why = reasons.slice(0, 2).map((r) => `${r.date} ${r.kind}: ${r.detail.slice(0, 80)}`).join(" ／ ");
+        console.log(`FAIL: cache: 日次索引 ${unresolved.length} 日（${unresolved.slice(0, 3).join(", ")}…）を確認できず、新しい有報の有無を保証できない。状態は変更していない — ${why}`);
         process.exit(0);
       }
     }

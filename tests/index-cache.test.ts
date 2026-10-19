@@ -3,7 +3,7 @@ import { mkdir, mkdtemp, readdir, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { auditIndexCache, documentsOn, indexDir, indexProblem } from "../scripts/research/edinet.mjs";
+import { auditIndexCache, classifyIndexFailure, documentsOn, ensureIndexCache, indexDir, indexProblem, scrubSecrets } from "../scripts/research/edinet.mjs";
 import { checkConsistency } from "../scripts/pipeline/jobs.mjs";
 
 /**
@@ -186,5 +186,153 @@ describe("where the day indexes live", () => {
     const dir = indexDir();
     expect(dir.startsWith(process.env.LOCALAPPDATA)).toBe(true);
     expect(dir.toLowerCase().startsWith((process.env.TEMP ?? "\0").toLowerCase())).toBe(false);
+  });
+});
+
+describe("ensureIndexCache: waiting for a day that is not final yet, and saying why a day failed", () => {
+  let cache: string;
+  const saved = { cache: process.env.RESEARCH_CACHE, key: process.env.EDINET_API_KEY, gap: process.env.EDINET_MIN_INTERVAL_MS };
+  const KEY = "k-1234567890-secret";
+  const DAY = "2025-01-06";
+  const file = (date: string) => join(cache, "index", `${date}.json`);
+  beforeEach(async () => {
+    cache = await mkdtemp(join(tmpdir(), "edinet-ensure-test-"));
+    await mkdir(join(cache, "index"), { recursive: true });
+    process.env.RESEARCH_CACHE = cache;
+    process.env.EDINET_API_KEY = KEY;
+    process.env.EDINET_MIN_INTERVAL_MS = "0";
+  });
+  afterEach(async () => {
+    vi.unstubAllGlobals();
+    for (const [name, value] of [["RESEARCH_CACHE", saved.cache], ["EDINET_API_KEY", saved.key], ["EDINET_MIN_INTERVAL_MS", saved.gap]] as const) {
+      if (value === undefined) delete process.env[name];
+      else process.env[name] = value;
+    }
+    await rm(cache, { recursive: true, force: true });
+  });
+  const notFinal = day(DAY, "2025-01-06 00:02");
+  const final = day(DAY, "2025-01-07 00:03");
+  const serve = (...answers: Array<object | Response>) => {
+    let i = 0;
+    const mock = vi.fn(async () => {
+      const a = answers[Math.min(i++, answers.length - 1)];
+      return a instanceof Response ? a.clone() : new Response(JSON.stringify(a), { status: 200 });
+    });
+    vi.stubGlobal("fetch", mock);
+    return mock;
+  };
+
+  it("waits for the nightly batch and then resolves a day that was not final when the run started", async () => {
+    const fetchMock = serve(notFinal, final);
+    const sleep = vi.fn(async () => {});
+    const result = await ensureIndexCache(DAY, DAY, { waitForFinalMs: 120_000, pollMs: 60_000, sleep });
+    expect(result.unresolved).toEqual([]);
+    expect(result.reasons).toEqual([]);
+    expect(sleep).toHaveBeenCalledTimes(1);
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(existsSync(file(DAY))).toBe(true); // the final answer is cached; the not-final one never was
+  });
+
+  it("gives up after the allowed waiting and says the day was not final, and when EDINET made the answer", async () => {
+    const fetchMock = serve(notFinal);
+    const sleep = vi.fn(async () => {});
+    const result = await ensureIndexCache(DAY, DAY, { waitForFinalMs: 180_000, pollMs: 60_000, sleep });
+    expect(result.unresolved).toEqual([DAY]);
+    expect(result.reasons[0]).toMatchObject({ date: DAY, kind: "not-final", retryable: true });
+    expect(result.reasons[0].detail).toContain("2025-01-06 00:02");
+    expect(sleep).toHaveBeenCalledTimes(3);
+    expect(fetchMock).toHaveBeenCalledTimes(4);
+    expect(existsSync(file(DAY))).toBe(false);
+  });
+
+  it("does not wait unless asked to, so existing callers behave as before", async () => {
+    const fetchMock = serve(notFinal);
+    const sleep = vi.fn(async () => {});
+    const result = await ensureIndexCache(DAY, DAY, { sleep });
+    expect(result.unresolved).toEqual([DAY]);
+    expect(sleep).not.toHaveBeenCalled();
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("fails at once, without waiting or asking, when the key was not passed", async () => {
+    delete process.env.EDINET_API_KEY;
+    const fetchMock = serve(final);
+    const sleep = vi.fn(async () => {});
+    const result = await ensureIndexCache(DAY, DAY, { waitForFinalMs: 600_000, sleep });
+    expect(result.reasons[0]).toMatchObject({ kind: "key-missing", retryable: false });
+    expect(sleep).not.toHaveBeenCalled();
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("fails at once when EDINET refuses the key (HTTP 403), without waiting", async () => {
+    const fetchMock = serve(new Response("denied", { status: 403 }));
+    const sleep = vi.fn(async () => {});
+    const result = await ensureIndexCache(DAY, DAY, { waitForFinalMs: 600_000, sleep });
+    expect(result.reasons[0]).toMatchObject({ kind: "key-rejected", retryable: false });
+    expect(result.reasons[0].detail).toContain("403");
+    expect(sleep).not.toHaveBeenCalled();
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+  });
+
+  it("stops asking after the first refused key and gives every remaining day the same reason", async () => {
+    const fetchMock = serve(new Response("denied", { status: 403 }));
+    const result = await ensureIndexCache("2025-01-06", "2025-01-08");
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(result.unresolved).toEqual(["2025-01-06", "2025-01-07", "2025-01-08"]);
+    expect(result.reasons.map((r) => r.kind)).toEqual(["key-rejected", "key-rejected", "key-rejected"]);
+  });
+
+  it("reports EDINET's own status and message when it answers something invalid, and does not retry that", async () => {
+    serve({ metadata: { status: "401", message: "Access denied" }, results: [] });
+    const sleep = vi.fn(async () => {});
+    const result = await ensureIndexCache(DAY, DAY, { waitForFinalMs: 600_000, sleep });
+    expect(result.reasons[0]).toMatchObject({ kind: "invalid", retryable: false });
+    expect(result.reasons[0].detail).toContain("401");
+    expect(result.reasons[0].detail).toContain("Access denied");
+    expect(sleep).not.toHaveBeenCalled();
+  });
+
+  it("names a refused key correctly although EDINET answers it as HTTP 200 with a StatusCode body, and does not wait", async () => {
+    serve({ StatusCode: 401, message: "Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription." });
+    const sleep = vi.fn(async () => {});
+    const result = await ensureIndexCache(DAY, DAY, { waitForFinalMs: 600_000, sleep });
+    expect(result.reasons[0]).toMatchObject({ kind: "key-rejected", retryable: false });
+    expect(result.reasons[0].detail).toContain("HTTP 401");
+    expect(result.reasons[0].detail).toContain("Access denied due to invalid subscription key");
+    expect(sleep).not.toHaveBeenCalled();
+  });
+
+  it("never lets the key into a reason, even when EDINET's own message repeats it", async () => {
+    serve({ metadata: { status: "400", message: `bad request Subscription-Key=${KEY} and ${KEY}` }, results: [] });
+    const result = await ensureIndexCache(DAY, DAY);
+    const text = JSON.stringify(result);
+    expect(text).not.toContain(KEY);
+    expect(result.reasons[0].detail).toContain("***");
+  });
+});
+
+describe("classifyIndexFailure and scrubSecrets", () => {
+  const saved = process.env.EDINET_API_KEY;
+  afterEach(() => {
+    if (saved === undefined) delete process.env.EDINET_API_KEY;
+    else process.env.EDINET_API_KEY = saved;
+  });
+
+  it("separates what waiting can fix from what it cannot", () => {
+    expect(classifyIndexFailure({ httpStatus: 503, message: "HTTP 503" })).toMatchObject({ kind: "server-error", retryable: true });
+    expect(classifyIndexFailure({ httpStatus: 429, message: "HTTP 429" })).toMatchObject({ kind: "rate-limited", retryable: true });
+    expect(classifyIndexFailure({ networkCode: "ECONNRESET", message: "fetch failed" })).toMatchObject({ kind: "network", retryable: true });
+    expect(classifyIndexFailure({ httpStatus: 401, message: "HTTP 401" })).toMatchObject({ kind: "key-rejected", retryable: false });
+    expect(classifyIndexFailure({ httpStatus: 400, message: "HTTP 400" })).toMatchObject({ kind: "http", retryable: false });
+    expect(classifyIndexFailure(new Error("EDINET_API_KEY is not set (put it in .env.local)"))).toMatchObject({ kind: "key-missing", retryable: false });
+    expect(classifyIndexFailure(new Error("something unexpected"))).toMatchObject({ kind: "other", retryable: false });
+  });
+
+  it("takes the key and any Subscription-Key value out of text, and leaves other text alone", () => {
+    process.env.EDINET_API_KEY = "abcdef-123456";
+    expect(scrubSecrets("GET /x?date=2026-01-01&Subscription-Key=abcdef-123456 failed")).toBe("GET /x?date=2026-01-01&Subscription-Key=*** failed");
+    expect(scrubSecrets("raw abcdef-123456 here")).toBe("raw *** here");
+    expect(scrubSecrets("Subscription-Key=otherkey&x=1")).toBe("Subscription-Key=***&x=1");
+    expect(scrubSecrets("nothing to hide")).toBe("nothing to hide");
   });
 });

@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next";
 import { listIndustryPages } from "@/lib/industries";
 import { companyRepository, featureRepository, industryRepository } from "@/lib/repositories";
-import { SITE_URL } from "@/lib/site";
+import { siteUrl } from "@/lib/site";
+
+export const dynamic = "force-static";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const [companies, industryPages, industries, features] = await Promise.all([
@@ -11,7 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     featureRepository.list(),
   ]);
   const industryUpdated = new Map(industries.map((i) => [i.id, i.updatedAt]));
-  const url = (path: string) => new URL(path, SITE_URL).toString();
+  const url = siteUrl;
 
   return [
     { url: url("/") },
