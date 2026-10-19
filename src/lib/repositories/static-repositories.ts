@@ -4,7 +4,7 @@ import { industries } from "@/data/industries";
 import { terms } from "@/data/terms";
 import { join } from "node:path";
 import { isReleased } from "@/lib/release";
-import type { Company } from "@/types/company";
+import type { Company, RelatedCompany } from "@/types/company";
 import { FileRevisionRepository } from "./file-revision-repository";
 import type {
   CompanyRepository,
@@ -37,6 +37,22 @@ const termMap = byId(terms);
 const featureMap = byId(features);
 const sortedFeatures = [...features].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 
+// Built on first use, not at import: most callers never ask, and the admin imports this module too.
+let relatingIndex: Map<string, { company: Company; relation: RelatedCompany }[]> | null = null;
+function relatingTo(companyId: string) {
+  if (!relatingIndex) {
+    relatingIndex = new Map();
+    for (const company of releasedCompanies) {
+      for (const relation of company.relatedCompanies) {
+        const list = relatingIndex.get(relation.companyId) ?? [];
+        list.push({ company, relation });
+        relatingIndex.set(relation.companyId, list);
+      }
+    }
+  }
+  return relatingIndex.get(companyId) ?? [];
+}
+
 function pick<T>(map: Map<string, T>, ids: readonly string[]): T[] {
   return ids.map((id) => map.get(id)).filter((item): item is T => item !== undefined);
 }
@@ -55,6 +71,9 @@ export const companyRepository: CompanyRepository = {
     return releasedCompanies.filter((c: Company) =>
       c.industries.some((ref) => ref.industryId === industryId),
     );
+  },
+  async listRelatingTo(companyId) {
+    return relatingTo(companyId);
   },
   async listAll() {
     return sortedCompanies;

@@ -2,6 +2,7 @@ import { RichText } from "@/components/rich-text/rich-text";
 import { SourceList } from "@/components/sources/source-list";
 import type { HistoryEvent } from "@/types/company";
 import type { Source } from "@/types/source";
+import { HistoryRail } from "./history-rail";
 
 /**
  * Turning points, not a chronology. The 意味 column is the reason this
@@ -15,9 +16,11 @@ import type { Source } from "@/types/source";
 export function HistoryTimeline({ events, sources }: { events: HistoryEvent[]; sources: Source[] }) {
   const sorted = [...events].sort((a, b) => a.year - b.year);
   const allSourceIds = [...new Set(sorted.flatMap((e) => e.sourceIds))];
+  const rowId = (index: number) => `history-row-${index}`;
 
   return (
     <div>
+      <HistoryRail events={sorted} rowId={rowId} />
       <table className="hidden w-full border-collapse text-left md:table">
         <caption className="sr-only">主な転換点（年・出来事・意味）</caption>
         <thead>
@@ -28,8 +31,8 @@ export function HistoryTimeline({ events, sources }: { events: HistoryEvent[]; s
           </tr>
         </thead>
         <tbody>
-          {sorted.map((event) => (
-            <tr key={`${event.year}-${event.title}`} className="border-b border-border align-top">
+          {sorted.map((event, i) => (
+            <tr key={`${event.year}-${event.title}`} id={rowId(i)} className="scroll-mt-40 border-b border-border align-top">
               <th scope="row" className="wordmark figures py-7 pr-6 text-3xl font-normal">
                 {event.year}
               </th>
@@ -56,7 +59,7 @@ export function HistoryTimeline({ events, sources }: { events: HistoryEvent[]; s
             <p className="mt-2 text-[0.9375rem] leading-7 text-muted-foreground">
               <RichText text={event.description} />
             </p>
-            <div className="mt-4 rounded-md bg-background p-4">
+            <div className="mt-4 rounded-md bg-paper p-4">
               <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">意味</p>
               <p className="mt-1 text-[0.9375rem] leading-7">
                 <RichText text={event.significance} />

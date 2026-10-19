@@ -31,6 +31,25 @@ function leavesOf(business: Business): { items: string[]; kind: "children" | "pr
   return { items: business.products ?? [], kind: "products" };
 }
 
+const SEGMENT_TONES = 6;
+
+/**
+ * A business's marker: its number on its colour. The same mark labels the business in this diagram and in the list
+ * under it (business-list.tsx), so the two read as one object. The number carries the identity — colour only helps
+ * the eye — and past the sixth business there is no colour left, so the mark is the number alone.
+ */
+export function SegmentMark({ index }: { index: number }) {
+  return (
+    <span aria-hidden className="figures inline-flex shrink-0 items-center gap-1.5 font-sans text-xs font-semibold text-muted-foreground">
+      {index < SEGMENT_TONES && (
+        // Text never sits on the colour: a swatch beside the number keeps contrast the same in light and dark.
+        <span className="size-2.5 rounded-[2px]" style={{ background: `var(--segment-${index + 1})` }} />
+      )}
+      {String(index + 1).padStart(2, "0")}
+    </span>
+  );
+}
+
 function RootNode({ company, align }: { company: Company; align: "center" | "start" }) {
   return (
     <div
@@ -49,10 +68,11 @@ function RootNode({ company, align }: { company: Company; align: "center" | "sta
   );
 }
 
-function NodeName({ business }: { business: Business }) {
+function NodeName({ business, index }: { business: Business; index: number }) {
   const label = business.shortName ?? business.name;
   return (
-    <span className="flex min-h-12 items-center justify-center rounded-md border border-foreground bg-background px-4 py-2 font-serif text-[1.0625rem] leading-snug font-semibold">
+    <span className="flex min-h-12 items-center justify-center gap-2.5 rounded-md border border-foreground bg-background px-4 py-2 font-serif text-[1.0625rem] leading-snug font-semibold">
+      <SegmentMark index={index} />
       {label}
       {business.shortName && business.shortName !== business.name && (
         <span className="sr-only">（{business.name}）</span>
@@ -87,11 +107,11 @@ function Columns({ company, branches, via }: { company: Company; branches: Busin
         className={cn(styles.branches, "w-full")}
         style={{ "--n": n } as React.CSSProperties}
       >
-        {branches.map((business) => {
+        {branches.map((business, index) => {
           const { items, kind } = leavesOf(business);
           return (
             <li key={business.id} className={styles.branch}>
-              <NodeName business={business} />
+              <NodeName business={business} index={index} />
               {items.length > 0 && (
                 <ul
                   className={cn(styles.leaves, "space-y-1 text-sm leading-6 text-muted-foreground")}
@@ -123,13 +143,13 @@ function Spine({ company, branches, via }: { company: Company; branches: Busines
         </div>
       )}
       <ol className={styles.spine}>
-        {branches.map((business) => {
+        {branches.map((business, index) => {
           const { items, kind } = leavesOf(business);
           return (
             <li key={business.id} className={styles.row}>
               <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:gap-5">
                 <div className="shrink-0 sm:w-56">
-                  <NodeName business={business} />
+                  <NodeName business={business} index={index} />
                 </div>
                 {items.length > 0 && (
                   // Space, not "/" separators: a separator wraps to the start of a line.

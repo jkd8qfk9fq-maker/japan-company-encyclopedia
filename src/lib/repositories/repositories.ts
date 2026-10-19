@@ -1,4 +1,4 @@
-import type { Company, IndustryId } from "@/types/company";
+import type { Company, IndustryId, RelatedCompany } from "@/types/company";
 import type { Feature } from "@/types/feature";
 import type { Industry } from "@/types/industry";
 import type { Revision, RevisionTargetType } from "@/types/revision";
@@ -20,6 +20,11 @@ export interface CompanyRepository {
   get(id: string): Promise<Company | null>;
   getMany(ids: readonly string[]): Promise<Company[]>;
   listByIndustry(industryId: IndustryId): Promise<Company[]>;
+  /**
+   * Released companies whose own `relatedCompanies` name this company, with the entry as they wrote it. The claim
+   * is theirs — sourced in their `sources` — so a caller showing it on this company's page cites the other company.
+   */
+  listRelatingTo(companyId: string): Promise<{ company: Company; relation: RelatedCompany }[]>;
   /** Every registered company, released or not — for the admin editor and nothing public. */
   listAll(): Promise<Company[]>;
   getAny(id: string): Promise<Company | null>;

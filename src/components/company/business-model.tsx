@@ -1,4 +1,4 @@
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import { Fragment } from "react";
 import { RichText } from "@/components/rich-text/rich-text";
 import { SourceList } from "@/components/sources/source-list";
@@ -29,6 +29,37 @@ export function BusinessModel({ model, sources }: { model: BusinessModelData; so
 
   return (
     <div>
+      {/*
+        The whole flow at a glance on a wide screen: the step titles only, left to right, so the reader sees the
+        chain before reading it. It repeats the titles of the list below, which is the readable version, so it is
+        hidden from assistive technology. Only the steps the entry has are drawn — a missing one is not guessed.
+      */}
+      {steps.length > 1 && (
+        <ol aria-hidden className="mb-10 hidden items-stretch md:flex">
+          {steps.map((step, i) => (
+            <Fragment key={step.kind}>
+              {i > 0 && (
+                <li className="flex w-8 shrink-0 items-center justify-center text-muted-foreground">
+                  <ArrowRight className="size-4" />
+                </li>
+              )}
+              <li
+                className={
+                  step.kind === "profit"
+                    ? "min-w-0 flex-1 rounded-md bg-foreground px-4 py-3 text-background"
+                    : "min-w-0 flex-1 rounded-md border border-foreground bg-background px-4 py-3"
+                }
+              >
+                <p className={step.kind === "profit" ? "text-xs opacity-75" : "text-xs text-muted-foreground"}>
+                  {STEP_LABEL[step.kind]}
+                </p>
+                <p className="mt-1 font-serif text-[0.9375rem] leading-snug font-semibold">{step.title}</p>
+              </li>
+            </Fragment>
+          ))}
+        </ol>
+      )}
+
       {/*
         A vertical flow at every width. Five side-by-side columns were tried and
         rejected: at desktop width each column held ~8 Japanese characters per

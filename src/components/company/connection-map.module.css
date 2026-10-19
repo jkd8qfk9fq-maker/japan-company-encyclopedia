@@ -1,0 +1,60 @@
+/*
+ * The connection map's layout. Phones read it top to bottom in the order the DOM is written — owners, upstream,
+ * the company, downstream, its group, other ties — which is also the order a supply chain is explained in. From
+ * md up the same elements are placed around the company: owners above, the group below, upstream to the left and
+ * downstream to the right, so "who supplies whom" reads left to right like the business model above it.
+ */
+
+.map {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+.owners { grid-area: owners; }
+.up { grid-area: up; }
+.down { grid-area: down; }
+.group { grid-area: group; }
+.center { grid-area: center; }
+.linkUp { grid-area: link-up; }
+.linkDown { grid-area: link-down; }
+.linkOwners { grid-area: link-owners; }
+.linkGroup { grid-area: link-group; }
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.75rem;
+  color: var(--muted-foreground);
+}
+
+/* A plain vertical rule for ownership ties: capital, not a flow of goods, so it carries no arrowhead. */
+.rule {
+  width: 1px;
+  height: 1.75rem;
+  background: var(--rule);
+}
+
+@media (min-width: 48rem) {
+  .map {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 2.5rem minmax(12rem, 15rem) 2.5rem minmax(0, 1fr);
+    grid-template-areas:
+      "owners owners owners owners owners"
+      ". . link-owners . ."
+      "up link-up center link-down down"
+      ". . link-group . ."
+      "group group group group group";
+    align-items: center;
+    gap: 0;
+  }
+
+  /* Owners and group span the row, centred over the company, wider than its column so their names do not wrap. */
+  .owners,
+  .group {
+    justify-self: center;
+    width: min(40rem, 100%);
+  }
+}

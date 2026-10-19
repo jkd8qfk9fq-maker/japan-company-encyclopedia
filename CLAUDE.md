@@ -106,6 +106,15 @@ hand-edit JSON for a factual correction without also writing a Revision file; th
   `status: { state: "figures-only" }` — figures and sources only, no prose yet — and promoted
   later once the prose stages run. `npm test` is the same gate either way.
 
+**The company page is the standard for every entry, old and new** (`docs/decisions.md` JCE-026). It is drawn from the
+entry's data by `src/components/company/company-view.tsx` — no per-company layout, no per-company step at registration.
+What a new entry needs for the page to be full is ordinary, sourced data: `businesses` (with `products`) for the structure
+and its markers, `businessModel.flow` for the flow, `financials` for the key facts and chart, `history` for the timeline,
+and `relatedCompanies` — `supplier` / `customer` wherever the filing states who sells to whom, because only those draw the
+arrows on the connection map and the lines on the industry map (`/industries/map`). A section without data is not drawn;
+never add a fact to make one appear. No photographs on company pages; industry images (Unsplash, captioned with the
+photographer) belong to the industry map only.
+
 ## Development Workflow
 
 このプロジェクトでは、機能追加・構造変更・データフロー変更を行う際、以下の原則に従う。

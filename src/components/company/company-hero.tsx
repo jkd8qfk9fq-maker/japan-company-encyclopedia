@@ -6,6 +6,7 @@ import { SITE_NAME, siteUrl } from "@/lib/site";
 import type { Company } from "@/types/company";
 import { BusinessStructure } from "./business-structure";
 import { FavoriteButton } from "./favorite-button";
+import { KeyFacts } from "./key-facts";
 import { ShareActions } from "./share-actions";
 
 const EXCHANGE_NAME: Record<Company["listings"][number]["exchange"], string> = {
@@ -66,6 +67,24 @@ export function CompanyHero({ company }: { company: Company }) {
             この会社の解説はまだ作成していません。下の財務データは有価証券報告書のXBRLから機械的に取り出し、有報の印字と突き合わせたものです。
           </p>
         )}
+
+        {primaryIndustries.length > 0 && (
+          <ul aria-label="業界" className="mt-5 flex flex-wrap gap-2">
+            {primaryIndustries.map((ref) => (
+              <li key={ref.industryId}>
+                <Link
+                  href={`/industries/${ref.industryId}`}
+                  className="inline-flex min-h-11 items-center rounded-full border border-border px-4 text-sm transition-colors hover:border-foreground"
+                >
+                  {INDUSTRY_LABELS[ref.industryId].name}
+                  {ref.primary && company.industries.length > 1 && (
+                    <span className="ml-2 text-xs text-muted-foreground">主な業界</span>
+                  )}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
       <div className="mx-auto mt-8 max-w-6xl px-5 pb-14 md:mt-10 md:px-8 md:pb-20">
@@ -81,17 +100,14 @@ export function CompanyHero({ company }: { company: Company }) {
           </>
         )}
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-border pt-6 md:flex-row md:items-center md:justify-between">
+        <div className={company.businesses.length > 0 ? "mt-12" : undefined}>
+          <KeyFacts records={company.financials} sources={company.sources} />
+        </div>
+
+        <div className="mt-6 flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-muted-foreground">
             <span className="figures">証券コード {company.code}</span>
             <span>{company.listings.map((l) => `${EXCHANGE_NAME[l.exchange]}${l.market ?? ""}`).join("・")}</span>
-            <span className="flex flex-wrap gap-x-3">
-              {primaryIndustries.map((ref) => (
-                <Link key={ref.industryId} href={`/industries/${ref.industryId}`} className="link-ink inline-flex min-h-11 items-center">
-                  {INDUSTRY_LABELS[ref.industryId].name}
-                </Link>
-              ))}
-            </span>
           </div>
           <div className="flex flex-wrap gap-3">
             <FavoriteButton companyId={company.id} companyName={company.name} />

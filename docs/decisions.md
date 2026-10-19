@@ -345,3 +345,25 @@ The operator authorised proceeding with the recommendations of docs/autopilot-de
   procedure (the standing rule for large data updates); it stays open in docs/autopilot-decisions.md.
 - **Registration.** Queued companies are registered by the operator-authorised `approve`, after the program checks and my reading of each
   sheet's flags. Companies whose entry carries `needsReview` register as `needs-attention` (not public). Nothing is committed or pushed.
+
+### JCE-026 · 2026-10-19 · Accepted (operator) — Company page redesign, stage 1: existing data only
+
+The operator asked for a company page that is understood by looking — structure, flow, connections, history — and approved
+stage 1 of the redesign plan (mockup: the "リデザイン案" canvas). Stage 1 changes presentation only.
+- **No data change.** No new field, no schema change, nothing in `src/data`. What needs a field (revenue by segment and by
+  region, a procurement step, event kinds, the business environment) is stage 2; the page does not draw a placeholder for it.
+- **Order:** hero (name, one sentence, industries, structure, key facts) → 事業 → ビジネスモデル → つながり → 財務 → 歴史 → 業界 → 出典.
+  Every section after the hero is drawn only when the entry has its data.
+- **Key facts:** the latest year's revenue, net income and 従業員数 (operator's decision, 2026-10-19), with the filing's own labels and
+  sources. Size only — no growth rate or ratio (invariant 4).
+- **Connections map:** this entry's `relatedCompanies` plus released entries that name this company, turned around (being X's
+  supplier makes X a customer; 関連会社 / その他の関係会社 become 出資元 / 出資先, since only the direction of ownership survives the
+  inversion). Those inbound ties are listed separately, in the other company's words and with its sources. Unreleased companies
+  are never drawn (no page to link to).
+- **Business markers:** one swatch + number per top-level business, the same in the diagram and the list; colour never alone.
+- **Photographs:** none on company pages (operator, 2026-10-19: the hero has no photo slot). Industry images belong to the
+  industry map only, captioned as images with the photographer and Unsplash; not added until the photos can be fetched.
+- **日経平均・TOPIX:** out of scope until the constituent lists' source and terms are confirmed.
+- **Standard for every company (operator, 2026-10-19):** the design applies to all entries through the shared components
+  and is the default for every future registration. Registration adds data only; CLAUDE.md says which fields fill which
+  section. The industry map (`/industries/map`) aggregates `supplier` / `customer` ties of released companies.

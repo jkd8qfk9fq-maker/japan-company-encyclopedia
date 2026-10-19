@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ArrowRight } from "lucide-react";
 import { listIndustryPages } from "@/lib/industries";
 
 export const metadata: Metadata = {
@@ -18,6 +19,14 @@ export default async function IndustriesPage() {
       <p className="prose-ja mt-4 max-w-2xl text-muted-foreground">
         企業を、業界の中での位置から見る。業界の仕組みを知ると、会社の役割が見えてきます。
       </p>
+
+      <Link
+        href="/industries/map"
+        className="mt-8 inline-flex min-h-12 items-center gap-2 rounded-full border border-foreground px-5 text-sm font-medium hover:bg-foreground hover:text-background"
+      >
+        産業マップで、業界どうしのつながりを見る
+        <ArrowRight className="size-4" aria-hidden />
+      </Link>
 
       <ul className="mt-14 grid border-t border-foreground sm:grid-cols-2">
         {industries.map((industry) => (
