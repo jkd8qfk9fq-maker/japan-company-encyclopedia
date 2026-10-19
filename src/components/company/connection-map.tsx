@@ -5,7 +5,7 @@ import type { Company, RelationshipKind } from "@/types/company";
 import styles from "./connection-map.module.css";
 import { RELATIONSHIP_LABEL } from "./related-companies";
 
-type Lane = "owners" | "up" | "down" | "group" | "other";
+export type Lane = "owners" | "up" | "down" | "group" | "other";
 
 export type Connection = {
   company: Company;

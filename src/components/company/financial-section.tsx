@@ -1,8 +1,8 @@
 import { SourceList } from "@/components/sources/source-list";
-import { formatMillionYen, formatYen } from "@/lib/utils/format";
+import { formatMillionYen } from "@/lib/utils/format";
 import type { AccountingStandard, FinancialRecord } from "@/types/company";
 import type { Source } from "@/types/source";
-import { FinancialChart } from "./financial-chart";
+import { FinancialBars } from "./financial-bars";
 
 function spanLabel(records: FinancialRecord[]): string {
   return records.length === 1 ? records[0].fiscalYear : `${records[0].fiscalYear}〜${records.at(-1)!.fiscalYear}`;
@@ -37,7 +37,6 @@ export function FinancialSection({
   }
 
   const sorted = [...records].sort((a, b) => a.periodEnd.localeCompare(b.periodEnd));
-  const latest = sorted.at(-1)!;
   const standards = [...new Set(sorted.map((r) => r.accountingStandard))];
   const revenueLabels = [...new Set(sorted.map((r) => r.revenueLabel))];
   const netIncomeLabels = [...new Set(sorted.map((r) => r.netIncomeLabel))];
@@ -70,43 +69,27 @@ export function FinancialSection({
 
   return (
     <div>
-      {/* Legend first, carrying the latest year's values: identity is never colour alone. */}
-      <dl className="flex flex-wrap gap-x-10 gap-y-5">
-        <div>
-          <dt className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span aria-hidden className="size-3 rounded-[3px] bg-(--chart-revenue)" />
-            {latest.revenueLabel}
-          </dt>
-          {latest.revenueBasis && (
-            <dd className="mt-0.5 text-sm font-medium">{latest.revenueBasis}</dd>
-          )}
-          <dd className="figures mt-1 font-serif text-[1.75rem] font-semibold md:text-[2rem]">
-            {latest.revenue === null ? "確認できず" : formatYen(latest.revenue)}
-          </dd>
-        </div>
-        <div>
-          <dt className="flex items-center gap-2 text-sm text-muted-foreground">
-            <span aria-hidden className="size-3 rounded-[3px] bg-(--chart-net-income)" />
-            純利益
-            <span className="text-xs">（{latest.netIncomeLabel}）</span>
-          </dt>
-          {latest.netIncomeBasis && (
-            <dd className="mt-0.5 text-sm font-medium">{latest.netIncomeBasis}</dd>
-          )}
-          <dd className="figures mt-1 font-serif text-[1.75rem] font-semibold md:text-[2rem]">
-            {latest.netIncome === null ? "確認できず" : formatYen(latest.netIncome)}
-          </dd>
-        </div>
-      </dl>
-      <p className="mt-2 text-xs text-muted-foreground">{latest.fiscalYear}・連結</p>
-
-      <div className="mt-10">
-        <FinancialChart
+      <div className="grid gap-10 md:grid-cols-2">
+        <FinancialBars
           records={sorted}
-          revenueLabel={latest.revenueLabel}
-          netIncomeLabel="純利益"
+          pick={(r) => r.revenue}
+          title={revenueLabels.length === 1 ? revenueLabels[0] : "売上"}
+          fill="var(--chart-revenue)"
+          latestFill="var(--chart-net-income)"
+          breakOnBasis
+        />
+        <FinancialBars
+          records={sorted}
+          pick={(r) => r.netIncome}
+          title={netIncomeLabels.length === 1 ? netIncomeLabels[0] : "純利益"}
+          fill="color-mix(in oklab, var(--chart-net-income) 45%, var(--background))"
+          latestFill="var(--chart-net-income)"
+          breakOnBasis={false}
         />
       </div>
+      <p className="figures mt-4 text-xs text-muted-foreground">
+        {spanLabel(sorted)}・連結。2つのグラフは目盛りが別です（数値はそれぞれの棒に表示）。
+      </p>
 
       <div className="mt-8 max-w-3xl space-y-2 text-xs leading-6 text-muted-foreground">
         {standards.length === 1 ? (
@@ -142,7 +125,7 @@ export function FinancialSection({
         {netIncomeLabels.length > 1 && (
           <p>純利益にあたる項目の名称が年度により異なります（{netIncomeLabels.join("・")}）。</p>
         )}
-        <p>表示額は億円単位で四捨五入しています。正確な数値は下の表をご覧ください。</p>
+        <p>グラフの数値は単位未満を四捨五入しています。正確な数値は下の表をご覧ください。</p>
       </div>
 
       <details className="group mt-6">

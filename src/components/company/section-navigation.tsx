@@ -63,7 +63,7 @@ export function SectionNavigation({ sections }: { sections: SectionLink[] }) {
     >
       <ul
         ref={listRef}
-        className="mx-auto flex max-w-6xl gap-1 overflow-x-auto px-3 [scrollbar-width:none] md:px-6 [&::-webkit-scrollbar]:hidden"
+        className="mx-auto flex max-w-6xl gap-2 overflow-x-auto px-5 py-2.5 [scrollbar-width:none] md:px-8 [&::-webkit-scrollbar]:hidden"
       >
         {sections.map((section) => (
           <li key={section.id} className="shrink-0">
@@ -72,9 +72,10 @@ export function SectionNavigation({ sections }: { sections: SectionLink[] }) {
               data-section={section.id}
               aria-current={active === section.id ? "true" : undefined}
               className={cn(
-                "relative flex min-h-12 items-center px-3 text-sm whitespace-nowrap text-muted-foreground transition-colors hover:text-foreground",
-                active === section.id &&
-                  "font-medium text-foreground after:absolute after:inset-x-3 after:bottom-0 after:h-0.5 after:bg-foreground",
+                "flex min-h-10 items-center rounded-full border px-4 text-[0.8125rem] whitespace-nowrap transition-colors",
+                active === section.id
+                  ? "border-foreground bg-foreground text-background"
+                  : "border-border text-foreground hover:border-foreground",
               )}
             >
               {section.label}

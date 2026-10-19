@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SourceList } from "@/components/sources/source-list";
+import { firstSentence } from "@/lib/rich-text";
 import type { Company, RelatedCompany, RelationshipKind } from "@/types/company";
 import type { Source } from "@/types/source";
 
@@ -19,13 +20,45 @@ export const RELATIONSHIP_LABEL: Record<RelationshipKind, string> = {
 
 export type ResolvedRelation = { company: Company; relation: RelatedCompany };
 
+function Row({ company, label, description, sources, sourceIds, from }: {
+  company: Company;
+  label: string;
+  description: string;
+  sources: Source[];
+  sourceIds: string[];
+  /** Set for a tie written in another company's entry: the label is in that company's words. */
+  from?: string;
+}) {
+  const short = firstSentence(description);
+  return (
+    <li className="border-b border-border py-3.5">
+      <p className="text-[0.9375rem] leading-7">
+        <Link href={`/companies/${company.id}`} className="font-serif font-semibold hover:underline">
+          {company.name}
+        </Link>
+        <span className="ml-2 inline-flex rounded-full border border-border px-2 text-[0.6875rem] leading-5 text-muted-foreground">
+          {from ? `${from}から見て「${label}」` : label}
+        </span>
+      </p>
+      <p className="mt-1 text-sm leading-7 text-muted-foreground">{short}</p>
+      {short !== description && (
+        <details className="group">
+          <summary className="inline-flex min-h-9 cursor-pointer list-none items-center gap-1.5 text-xs text-muted-foreground select-none hover:text-foreground [&::-webkit-details-marker]:hidden">
+            <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
+            続きを読む
+          </summary>
+          <p className="text-sm leading-7 text-muted-foreground">{description}</p>
+        </details>
+      )}
+      <SourceList sources={sources} sourceIds={sourceIds} />
+    </li>
+  );
+}
+
 /**
- * The ecosystem around a company, grouped by kind of relationship — not a
- * "competitors" list. Each entry says in one line WHY the companies are
- * related, because a bare label teaches a beginner nothing.
- *
- * `inbound` are ties written in another company's entry. They are listed apart, in that company's words and with
- * that company's sources, because the claim is its filing's, not this company's.
+ * Every tie, one line each, beside the network diagram (after the approved mockup): the company, the kind of tie,
+ * and the first sentence of why — the rest opens in place. Ties written in another company's entry come last, in
+ * that company's words and with that company's sources, because the claim is its filing's, not this company's.
  */
 export function RelatedCompanies({
   relations,
@@ -36,48 +69,29 @@ export function RelatedCompanies({
   inbound: ResolvedRelation[];
   sources: Source[];
 }) {
-  const kinds = [...new Set(relations.map((r) => r.relation.relationship))];
-
   return (
-    <div className="space-y-12">
-      {kinds.map((kind) => (
-        <div key={kind}>
-          <h3 className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">{RELATIONSHIP_LABEL[kind]}</h3>
-          <ul className="mt-4 grid gap-4 md:grid-cols-2">
-            {relations
-              .filter((r) => r.relation.relationship === kind)
-              .map(({ company, relation }) => (
-                <li key={`${kind}-${company.id}`} className="rounded-md border border-border p-5">
-                  <Link href={`/companies/${company.id}`} className="group block">
-                    <p className="font-serif text-xl font-semibold group-hover:underline">{company.name}</p>
-                    <p className="mt-2 text-[0.9375rem] leading-7 text-muted-foreground">{relation.description}</p>
-                  </Link>
-                  <SourceList sources={sources} sourceIds={relation.sourceIds} className="mt-2" />
-                </li>
-              ))}
-          </ul>
-        </div>
+    <ul className="border-t border-border">
+      {relations.map(({ company, relation }) => (
+        <Row
+          key={`${relation.relationship}-${company.id}`}
+          company={company}
+          label={RELATIONSHIP_LABEL[relation.relationship]}
+          description={relation.description}
+          sources={sources}
+          sourceIds={relation.sourceIds}
+        />
       ))}
-
-      {inbound.length > 0 && (
-        <div>
-          <h3 className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">ほかの企業の項目に書かれた関係</h3>
-          <ul className="mt-4 grid gap-4 md:grid-cols-2">
-            {inbound.map(({ company, relation }) => (
-              <li key={`inbound-${company.id}-${relation.relationship}`} className="rounded-md border border-dashed border-border p-5">
-                <Link href={`/companies/${company.id}`} className="group block">
-                  <p className="font-serif text-xl font-semibold group-hover:underline">{company.name}</p>
-                  <p className="mt-1 text-xs text-muted-foreground">
-                    {company.name}から見て「{RELATIONSHIP_LABEL[relation.relationship]}」
-                  </p>
-                  <p className="mt-2 text-[0.9375rem] leading-7 text-muted-foreground">{relation.description}</p>
-                </Link>
-                <SourceList sources={company.sources} sourceIds={relation.sourceIds} className="mt-2" />
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
+      {inbound.map(({ company, relation }) => (
+        <Row
+          key={`inbound-${relation.relationship}-${company.id}`}
+          company={company}
+          label={RELATIONSHIP_LABEL[relation.relationship]}
+          description={relation.description}
+          sources={company.sources}
+          sourceIds={relation.sourceIds}
+          from={company.name}
+        />
+      ))}
+    </ul>
   );
 }

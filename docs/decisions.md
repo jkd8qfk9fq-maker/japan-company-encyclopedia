@@ -367,3 +367,12 @@ stage 1 of the redesign plan (mockup: the "リデザイン案" canvas). Stage 1 
 - **Standard for every company (operator, 2026-10-19):** the design applies to all entries through the shared components
   and is the default for every future registration. Registration adds data only; CLAUDE.md says which fields fill which
   section. The industry map (`/industries/map`) aggregates `supplier` / `customer` ties of released companies.
+- **Mockup layout (operator, 2026-10-19, "リデザイン案をできるだけそのまま"):** the page follows the approved canvas: hero
+  with business chips and key facts, pill section navigation; 事業構造 = the structure diagram plus one card per business
+  (first sentence of the entry's description + products; the full text folds open); the business model as a row of
+  step cards (profit dark); a radial network beside a one-line-per-tie list (lanes on phones); revenue and net income
+  as two bar charts, each on its own zero-based scale with values printed on the bars (the single-axis chart was
+  replaced at the operator's request; the note under the charts says the scales differ); history as a horizontal
+  timeline with the full year/出来事/意味 table folded below. Folding shortens nothing permanently: every sentence of
+  the entry is still on the page. The mockup's segment share bar, procurement step and environment panel need data
+  that does not exist yet and are not drawn.

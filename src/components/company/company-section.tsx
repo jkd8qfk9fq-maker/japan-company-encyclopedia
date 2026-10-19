@@ -26,17 +26,21 @@ export function CompanySection({
     <section
       id={id}
       aria-labelledby={`${id}-heading`}
-      className={cn("scroll-mt-28 py-16 md:py-24", tone === "paper" && "bg-paper", className)}
+      className={cn(
+        "scroll-mt-28 py-14 md:py-[4.5rem]",
+        tone === "paper" && "border-t border-border bg-paper",
+        className,
+      )}
     >
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         <p className="eyebrow" aria-hidden>
           {eyebrow}
         </p>
-        <h2 id={`${id}-heading`} className="mt-3 font-serif text-[1.75rem] font-semibold md:text-[2.25rem]">
+        <h2 id={`${id}-heading`} className="seal-mark mt-2 font-serif text-[1.5rem] font-semibold md:text-[1.75rem]">
           {title}
         </h2>
-        {lead && <div className="prose-ja mt-5 max-w-3xl text-muted-foreground">{lead}</div>}
-        <div className="mt-10 md:mt-12">{children}</div>
+        {lead && <div className="mt-3 max-w-3xl text-[0.9375rem] leading-7 text-muted-foreground">{lead}</div>}
+        <div className="mt-8 md:mt-9">{children}</div>
       </div>
     </section>
   );

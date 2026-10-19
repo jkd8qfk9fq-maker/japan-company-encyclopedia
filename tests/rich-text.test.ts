@@ -42,3 +42,13 @@ describe("toPlainText", () => {
     expect(toPlainText("[[company:toyota|トヨタ自動車]]は自動車を作る。")).toBe("トヨタ自動車は自動車を作る。");
   });
 });
+
+describe("firstSentence", () => {
+  it("ends at the first 。 outside markup, quotes and parentheses", async () => {
+    const { firstSentence } = await import("../src/lib/rich-text");
+    expect(firstSentence("一文目です。二文目です。")).toBe("一文目です。");
+    expect(firstSentence("「午後の紅茶。」を売ります。次。")).toBe("「午後の紅茶。」を売ります。");
+    expect(firstSentence("[[term:wafer|ウェーハ。]]を使う会社です。次。")).toBe("[[term:wafer|ウェーハ。]]を使う会社です。");
+    expect(firstSentence("句点のない文")).toBe("句点のない文");
+  });
+});

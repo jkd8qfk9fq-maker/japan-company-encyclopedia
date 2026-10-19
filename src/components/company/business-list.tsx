@@ -1,44 +1,35 @@
 import { RichText } from "@/components/rich-text/rich-text";
 import { SourceList } from "@/components/sources/source-list";
+import { firstSentence } from "@/lib/rich-text";
 import type { Business } from "@/types/company";
-import { SegmentMark } from "./business-structure";
 import type { Source } from "@/types/source";
+import { SegmentMark, segmentTone, structureBranches } from "./business-structure";
 
-function Facts({ label, items }: { label: string; items?: string[] }) {
+const MAX_ITEMS = 4;
+
+function Items({ label, items }: { label: string; items?: string[] }) {
   if (!items || items.length === 0) return null;
   return (
-    <div>
-      <dt className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">{label}</dt>
-      <dd className="mt-1.5">
-        <ul className="flex flex-wrap gap-x-4 gap-y-1 text-[0.9375rem] leading-7">
-          {items.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
+    <div className="text-xs leading-6">
+      <dt className="text-muted-foreground">{label}</dt>
+      <dd className="text-foreground">
+        {items.slice(0, MAX_ITEMS).join(" ・ ")}
+        {items.length > MAX_ITEMS && <span className="figures text-muted-foreground"> ほか{items.length - MAX_ITEMS}件</span>}
       </dd>
     </div>
   );
 }
 
-function SubBusinesses({ items, sources, marked = false }: { items: Business[]; sources: Source[]; marked?: boolean }) {
+function SubBusinesses({ items }: { items: Business[] }) {
   return (
-    <ul className="mt-8 space-y-6 border-l border-border pl-5">
-      {items.map((child, index) => (
+    <ul className="mt-4 space-y-4 border-l border-border pl-4">
+      {items.map((child) => (
         <li key={child.id}>
-          <h4 className="flex items-center gap-2.5 font-serif text-lg font-semibold">
-            {marked && <SegmentMark index={index} />}
-            {child.name}
-          </h4>
-          <p className="mt-1 text-[0.9375rem] leading-7">
+          <p className="font-serif font-semibold">{child.name}</p>
+          <p className="mt-1 text-sm leading-7">
             <RichText text={child.description} />
           </p>
-          <dl className="mt-3 grid gap-3 sm:grid-cols-2">
-            <Facts label="主な製品・サービス" items={child.products} />
-            <Facts label="主な顧客" items={child.customers} />
-          </dl>
-          {child.children && child.children.length > 0 && (
-            <SubBusinesses items={child.children} sources={sources} />
-          )}
+          {child.children && child.children.length > 0 && <SubBusinesses items={child.children} />}
         </li>
       ))}
     </ul>
@@ -46,40 +37,62 @@ function SubBusinesses({ items, sources, marked = false }: { items: Business[]; 
 }
 
 /**
- * "事業" — the 30-second layer: each business, what it does, what it sells and
- * to whom. Numbered in the order of the structure diagram, so the two read as
- * one object at two levels of detail.
+ * "何でできている会社か" below the diagram: one card per business, in the diagram's order and colour, after the
+ * approved mockup. The card shows the first sentence of the entry's own description and the products it lists;
+ * the full description, the sub-businesses and the sources open under "詳しく読む", so nothing is cut — it is only
+ * folded. Cards follow the same level the diagram draws (structureBranches), so marks match.
  */
 export function BusinessList({ businesses, sources }: { businesses: Business[]; sources: Source[] }) {
-  // The diagram draws a lone segment's sub-businesses as its branches (business-structure.tsx); the markers follow
-  // whichever level it drew, so diagram and list carry the same marks.
-  const via = businesses.length === 1 && (businesses[0].children?.length ?? 0) > 0;
+  const { via, branches } = structureBranches(businesses);
+
   return (
-    <ol className="divide-y divide-border border-y border-border">
-      {businesses.map((business, index) => (
-        <li key={business.id} className="grid gap-4 py-10 md:grid-cols-[6rem_1fr] md:gap-8">
-          <div aria-hidden>
-            <p className="wordmark figures text-4xl text-muted-foreground md:text-5xl">{String(index + 1).padStart(2, "0")}</p>
-            {!via && index < 6 && (
-              <span className="mt-3 block h-1 w-10 rounded-full" style={{ background: `var(--segment-${index + 1})` }} />
-            )}
-          </div>
-          <div className="max-w-3xl">
-            <h3 className="font-serif text-2xl font-semibold">{business.name}</h3>
-            <p className="prose-ja mt-3">
-              <RichText text={business.description} />
-            </p>
-            <dl className="mt-6 grid gap-5 sm:grid-cols-2">
-              <Facts label="主な製品・サービス" items={business.products} />
-              <Facts label="主な顧客" items={business.customers} />
-            </dl>
-            {business.children && business.children.length > 0 && (
-              <SubBusinesses items={business.children} sources={sources} marked={via} />
-            )}
-            <SourceList sources={sources} sourceIds={business.sourceIds} className="mt-5" />
-          </div>
-        </li>
-      ))}
-    </ol>
+    <div>
+      {via && (
+        <p className="mb-5 text-sm leading-7 text-muted-foreground">
+          報告セグメントは「{via.name}」の1つです。下はその中の事業です。
+        </p>
+      )}
+      {/* Four across at most: five or six businesses make two even rows of three rather than four and a straggler. */}
+      <ol className={`grid gap-4 sm:grid-cols-2 ${branches.length === 4 ? "lg:grid-cols-4" : branches.length >= 3 ? "lg:grid-cols-3" : ""}`}>
+        {branches.map((business, index) => {
+          const short = firstSentence(business.description);
+          const hasMore = short !== business.description || (business.children?.length ?? 0) > 0;
+          return (
+            <li key={business.id} className="flex flex-col overflow-hidden rounded-md border border-border bg-card">
+              <span aria-hidden className="block h-1.5" style={{ background: segmentTone(index) ?? "var(--border)" }} />
+              <div className="flex flex-1 flex-col p-5">
+                <div className="flex items-center justify-between gap-3">
+                  <h3 className="font-serif text-xl leading-snug font-semibold">{business.name}</h3>
+                  <SegmentMark index={index} />
+                </div>
+                <p className="mt-3 text-sm leading-7">
+                  <RichText text={short} />
+                </p>
+                <dl className="mt-3 space-y-1">
+                  <Items label="製品・サービス" items={business.products} />
+                  <Items label="顧客" items={business.customers} />
+                </dl>
+                <div className="mt-auto pt-3">
+                  {hasMore && (
+                    <details className="group">
+                      <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 text-sm text-muted-foreground select-none hover:text-foreground [&::-webkit-details-marker]:hidden">
+                        <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
+                        詳しく読む
+                      </summary>
+                      <p className="mt-2 text-sm leading-7">
+                        <RichText text={business.description} />
+                      </p>
+                      {business.children && business.children.length > 0 && <SubBusinesses items={business.children} />}
+                    </details>
+                  )}
+                  <SourceList sources={sources} sourceIds={business.sourceIds} />
+                </div>
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+      {via && <SourceList sources={sources} sourceIds={via.sourceIds} className="mt-3" />}
+    </div>
   );
 }

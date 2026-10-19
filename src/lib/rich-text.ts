@@ -84,3 +84,24 @@ export function findMalformedMarkup(source: string): string[] {
     .filter((s) => s.type === "text" && (s.text.includes("[[") || s.text.includes("]]")))
     .map((s) => (s as { text: string }).text);
 }
+
+const OPEN = new Set(["[", "「", "（", "(", "『"]);
+const CLOSE = new Set(["]", "」", "）", ")", "』"]);
+
+/**
+ * The first sentence of a rich-text string, markup intact — what a card shows before "詳しく読む".
+ *
+ * A 。 inside a reference, a quotation or parentheses does not end the sentence: cutting 「…です。」 at its inner
+ * 。 would leave an open quote, and cutting inside [[…]] would break the markup. The words are the entry's own,
+ * shortened, never rephrased; the full text is always one click away.
+ */
+export function firstSentence(source: string): string {
+  let depth = 0;
+  for (let i = 0; i < source.length; i++) {
+    const ch = source[i];
+    if (OPEN.has(ch)) depth++;
+    else if (CLOSE.has(ch)) depth = Math.max(0, depth - 1);
+    else if (ch === "。" && depth === 0) return source.slice(0, i + 1);
+  }
+  return source;
+}
