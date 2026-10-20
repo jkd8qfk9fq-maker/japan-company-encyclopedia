@@ -377,7 +377,7 @@ stage 1 of the redesign plan (mockup: the "リデザイン案" canvas). Stage 1 
   the entry is still on the page. The mockup's segment share bar, procurement step and environment panel need data
   that does not exist yet and are not drawn.
 
-### JCE-027 · 2026-10-20 · Accepted (operator) — Industries as one tabbed hub; phone tabs; stock index lists prepared, not filled
+### JCE-027 · 2026-10-20 · Accepted (operator) — Industries as one tabbed hub; phone tabs
 
 - **Industries hub.** `/industries` is one page with tabs at every width: 業界一覧 (cards with the industry's companies
   and its trade lines) and 産業マップ (the industry map, folded in; `/industries/map` is gone). Each industry page is
@@ -386,8 +386,7 @@ stage 1 of the redesign plan (mockup: the "リデザイン案" canvas). Stage 1 
   tap or swipe; a link into a hidden section opens it. Every section is still server-rendered and in the document, and
   nothing is hidden until the script runs — offline and without JavaScript the page reads top to bottom as before.
   Wide screens keep the continuous page. This reverses the earlier "anchors, not panels" choice at the operator's request.
-- **日経225・TOPIX.** Shown only as a way into the companies (constituents by industry, ties between constituents),
-  never index values or weights. Built (`src/data/stock-indexes`, `stockIndexSchema`, a tab per index) but **empty**:
-  日本経済新聞社 requires a licence for business use and for providing index information to third parties, and JPX's
-  reuse terms could not be read from the build environment. A list needs `usageTerms` recording what the operator
-  confirmed (docs/stock-indexes.md).
+- **日経225・TOPIX: not built (operator, 2026-10-20).** The constituent lists are the providers' work: 日本経済新聞社
+  requires a licence for business use and for providing index information to third parties, and JPX's reuse terms
+  could not be read from the build environment. The prepared code (type, schema with a required `usageTerms`, a tab
+  per index) was taken out before release and is in commit 95a51d2 for when the terms are confirmed.

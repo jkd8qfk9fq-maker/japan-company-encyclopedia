@@ -7,7 +7,6 @@ export {
   featureRepository,
   industryRepository,
   revisionRepository,
-  stockIndexRepository,
   termRepository,
 } from "./static-repositories";
 export type * from "./repositories";

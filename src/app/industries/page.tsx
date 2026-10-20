@@ -3,11 +3,10 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CompanySection } from "@/components/company/company-section";
 import { IndustryFlowMap } from "@/components/industry/industry-flow-map";
-import { StockIndexOverview } from "@/components/industry/stock-index-overview";
 import { SectionTabs, type SectionLink } from "@/components/navigation/section-tabs";
 import { listIndustryPages } from "@/lib/industries";
 import { buildIndustryMap } from "@/lib/industry-map";
-import { companyRepository, stockIndexRepository } from "@/lib/repositories";
+import { companyRepository } from "@/lib/repositories";
 
 export const metadata: Metadata = {
   title: "業界",
@@ -16,16 +15,11 @@ export const metadata: Metadata = {
 };
 
 /**
- * The industries hub: one page, tabs at every width (operator request, 2026-10-20) — the industries, the industry
- * map, and one tab per stock index whose constituent list may be shown (none yet; src/data/stock-indexes). Each
- * tab is rendered on the server and stays in the document; the tabs only choose which one is on screen.
+ * The industries hub: one page, tabs at every width (operator request, 2026-10-20) — the industries and the industry
+ * map. Each tab is rendered on the server and stays in the document; the tabs only choose which one is on screen.
  */
 export default async function IndustriesPage() {
-  const [industries, companies, indexes] = await Promise.all([
-    listIndustryPages(),
-    companyRepository.list(),
-    stockIndexRepository.list(),
-  ]);
+  const [industries, companies] = await Promise.all([listIndustryPages(), companyRepository.list()]);
   const map = buildIndustryMap(companies);
   const pairs = map.flows.reduce((sum, flow) => sum + flow.pairs.length, 0);
   const linesOf = (id: string) => map.flows.filter((f) => f.from === id || f.to === id).length;
@@ -34,7 +28,6 @@ export default async function IndustriesPage() {
   const sections: SectionLink[] = [
     { id: "list", label: "業界一覧" },
     { id: "map", label: "産業マップ" },
-    ...indexes.map((index) => ({ id: index.id, label: index.name })),
   ];
 
   return (
@@ -103,12 +96,6 @@ export default async function IndustriesPage() {
         >
           <IndustryFlowMap data={map} />
         </CompanySection>
-
-        {indexes.map((index) => (
-          <CompanySection key={index.id} id={index.id} eyebrow="Index" title={`${index.name}の構成企業`}>
-            <StockIndexOverview index={index} companies={companies} />
-          </CompanySection>
-        ))}
       </div>
 
       <p className="mx-auto max-w-6xl px-5 pb-12 text-xs text-muted-foreground md:px-8">

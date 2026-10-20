@@ -4,7 +4,6 @@ import type { Feature } from "@/types/feature";
 import type { Industry } from "@/types/industry";
 import type { Revision } from "@/types/revision";
 import type { Source } from "@/types/source";
-import type { StockIndex } from "@/types/stock-index";
 import type { Term } from "@/types/term";
 
 /**
@@ -210,20 +209,6 @@ export const revisionSchema = z.strictObject({
 });
 
 /** Parse or throw an error that names the file and the exact field. */
-export const stockIndexSchema = z.strictObject({
-  id: kebab,
-  name: text,
-  publisher: text,
-  asOf: isoDate,
-  usageTerms: text,
-  description: text,
-  constituents: z
-    .array(z.strictObject({ code: z.string().regex(/^[0-9A-Z]{4}$/, "4桁の証券コードである必要があります"), name: text }))
-    .min(1),
-  sourceIds: z.array(kebab).min(1),
-  sources: z.array(sourceSchema).min(1),
-});
-
 export function parseContent<T>(schema: z.ZodType<T>, value: unknown, label: string): T {
   const result = schema.safeParse(value);
   if (result.success) return result.data;
@@ -242,7 +227,6 @@ type Equals<A, B> =
 type Assert<T extends true> = T;
 
 export type SchemaAgreement = [
-  Assert<Equals<z.infer<typeof stockIndexSchema>, StockIndex>>,
   Assert<Equals<z.infer<typeof sourceSchema>, Source>>,
   Assert<Equals<z.infer<typeof companySchema>, Company>>,
   Assert<Equals<z.infer<typeof industrySchema>, Industry>>,

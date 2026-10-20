@@ -1,7 +1,6 @@
 import { companies } from "@/data/companies";
 import { features } from "@/data/features";
 import { industries } from "@/data/industries";
-import { stockIndexes } from "@/data/stock-indexes";
 import { terms } from "@/data/terms";
 import { join } from "node:path";
 import { isReleased } from "@/lib/release";
@@ -12,7 +11,6 @@ import type {
   FeatureRepository,
   IndustryRepository,
   RevisionRepository,
-  StockIndexRepository,
   TermRepository,
 } from "./repositories";
 
@@ -91,15 +89,6 @@ export const industryRepository: IndustryRepository = {
   },
   async get(id) {
     return industryMap.get(id) ?? null;
-  },
-};
-
-export const stockIndexRepository: StockIndexRepository = {
-  async list() {
-    return stockIndexes;
-  },
-  async get(id) {
-    return stockIndexes.find((index) => index.id === id) ?? null;
   },
 };
 
