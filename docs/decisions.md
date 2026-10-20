@@ -366,7 +366,7 @@ stage 1 of the redesign plan (mockup: the "リデザイン案" canvas). Stage 1 
 - **日経平均・TOPIX:** out of scope until the constituent lists' source and terms are confirmed.
 - **Standard for every company (operator, 2026-10-19):** the design applies to all entries through the shared components
   and is the default for every future registration. Registration adds data only; CLAUDE.md says which fields fill which
-  section. The industry map (`/industries/map`) aggregates `supplier` / `customer` ties of released companies.
+  section. The industry map (the 産業マップ tab of `/industries`) aggregates `supplier` / `customer` ties of released companies.
 - **Mockup layout (operator, 2026-10-19, "リデザイン案をできるだけそのまま"):** the page follows the approved canvas: hero
   with business chips and key facts, pill section navigation; 事業構造 = the structure diagram plus one card per business
   (first sentence of the entry's description + products; the full text folds open); the business model as a row of
@@ -376,3 +376,18 @@ stage 1 of the redesign plan (mockup: the "リデザイン案" canvas). Stage 1 
   timeline with the full year/出来事/意味 table folded below. Folding shortens nothing permanently: every sentence of
   the entry is still on the page. The mockup's segment share bar, procurement step and environment panel need data
   that does not exist yet and are not drawn.
+
+### JCE-027 · 2026-10-20 · Accepted (operator) — Industries as one tabbed hub; phone tabs; stock index lists prepared, not filled
+
+- **Industries hub.** `/industries` is one page with tabs at every width: 業界一覧 (cards with the industry's companies
+  and its trade lines) and 産業マップ (the industry map, folded in; `/industries/map` is gone). Each industry page is
+  split into tabs: 仕組み / 企業 / つながり (the map's flows to and from that industry, company pair by pair) / 特集.
+- **Phone tabs.** On a phone the company page shows one section at a time behind sideways-scrolling tabs, switched by
+  tap or swipe; a link into a hidden section opens it. Every section is still server-rendered and in the document, and
+  nothing is hidden until the script runs — offline and without JavaScript the page reads top to bottom as before.
+  Wide screens keep the continuous page. This reverses the earlier "anchors, not panels" choice at the operator's request.
+- **日経225・TOPIX.** Shown only as a way into the companies (constituents by industry, ties between constituents),
+  never index values or weights. Built (`src/data/stock-indexes`, `stockIndexSchema`, a tab per index) but **empty**:
+  日本経済新聞社 requires a licence for business use and for providing index information to third parties, and JPX's
+  reuse terms could not be read from the build environment. A list needs `usageTerms` recording what the operator
+  confirmed (docs/stock-indexes.md).

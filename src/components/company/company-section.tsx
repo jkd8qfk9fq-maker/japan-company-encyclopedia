@@ -25,6 +25,7 @@ export function CompanySection({
   return (
     <section
       id={id}
+      data-tab-panel={id}
       aria-labelledby={`${id}-heading`}
       className={cn(
         "scroll-mt-28 py-14 md:py-[4.5rem]",

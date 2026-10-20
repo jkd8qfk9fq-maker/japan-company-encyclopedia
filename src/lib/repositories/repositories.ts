@@ -2,6 +2,7 @@ import type { Company, IndustryId, RelatedCompany } from "@/types/company";
 import type { Feature } from "@/types/feature";
 import type { Industry } from "@/types/industry";
 import type { Revision, RevisionTargetType } from "@/types/revision";
+import type { StockIndex } from "@/types/stock-index";
 import type { Term } from "@/types/term";
 
 /**
@@ -34,6 +35,12 @@ export interface IndustryRepository {
   /** Only industries with a researched explanation. */
   list(): Promise<Industry[]>;
   get(id: string): Promise<Industry | null>;
+}
+
+export interface StockIndexRepository {
+  /** Only lists whose provider terms the operator has confirmed (src/data/stock-indexes). */
+  list(): Promise<StockIndex[]>;
+  get(id: string): Promise<StockIndex | null>;
 }
 
 export interface TermRepository {

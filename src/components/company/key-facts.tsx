@@ -25,14 +25,14 @@ export function KeyFacts({ records, sources }: { records: FinancialRecord[]; sou
 
   return (
     <div>
-      <dl className="grid grid-cols-1 border-y border-border border-t-foreground sm:grid-cols-3">
+      {/* Side by side at every width — on a phone too, where stacking three figures cost a screen of scrolling. */}
+      <dl className="grid grid-cols-3 border-y border-border border-t-foreground">
         {facts.map((fact, i) => (
-          <div
-            key={fact.label}
-            className={i > 0 ? "border-t border-border py-4 sm:border-t-0 sm:border-l sm:py-5 sm:pl-6" : "py-4 sm:py-5 sm:pr-6"}
-          >
-            <dt className="text-xs leading-5 text-muted-foreground">{fact.label}</dt>
-            <dd className="figures mt-1.5 font-serif text-[1.625rem] leading-tight font-semibold md:text-[1.875rem]">{fact.value}</dd>
+          <div key={fact.label} className={i > 0 ? "border-l border-border py-3 pl-3 sm:py-5 sm:pl-6" : "py-3 pr-3 sm:py-5 sm:pr-6"}>
+            <dt className="line-clamp-2 text-[0.625rem] leading-4 text-muted-foreground sm:text-xs sm:leading-5">{fact.label}</dt>
+            <dd className="figures mt-1 font-serif text-[1rem] leading-tight font-semibold sm:mt-1.5 sm:text-[1.625rem] md:text-[1.875rem]">
+              {fact.value}
+            </dd>
           </div>
         ))}
       </dl>

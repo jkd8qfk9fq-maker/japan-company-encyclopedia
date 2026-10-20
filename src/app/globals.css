@@ -225,6 +225,28 @@
   }
 }
 
+/*
+ * Section tabs (components/navigation/section-tabs.tsx). The script marks the container with data-tabbed and the
+ * current panel with data-current; until it runs, nothing is hidden. "mobile" hides only on a phone.
+ */
+[data-tabbed="always"] > [data-tab-panel]:not([data-current]) {
+  display: none;
+}
+@media (max-width: 47.99rem) {
+  [data-tabbed="mobile"] > [data-tab-panel]:not([data-current]) {
+    display: none;
+  }
+}
+[data-tab-panel][data-entering] {
+  animation: tab-enter 0.28s ease-out;
+}
+@keyframes tab-enter {
+  from {
+    opacity: 0;
+    transform: translateX(var(--tab-from, 2.5rem));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

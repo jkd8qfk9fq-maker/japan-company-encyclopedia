@@ -13,7 +13,7 @@ import { ConnectionNetwork } from "./connection-network";
 import { FinancialSection } from "./financial-section";
 import { HistoryTimeline } from "./history-timeline";
 import { RelatedCompanies, type ResolvedRelation } from "./related-companies";
-import { SectionNavigation, type SectionLink } from "./section-navigation";
+import { SectionTabs, type SectionLink } from "@/components/navigation/section-tabs";
 import { SourceIndex } from "./source-index";
 
 /**
@@ -44,8 +44,8 @@ export async function CompanyView({ company }: { company: Company }) {
   );
   const hasConnections = relations.length > 0 || inbound.length > 0;
 
+  // The hero is above the tabs and always shown, so it is not one of them.
   const sections: SectionLink[] = [
-    { id: "overview", label: "概要" },
     ...(company.businesses.length > 0 ? [{ id: "business", label: "事業" }] : []),
     ...(company.businessModel ? [{ id: "business-model", label: "ビジネスモデル" }] : []),
     ...(hasConnections ? [{ id: "connections", label: "つながり" }] : []),
@@ -58,7 +58,8 @@ export async function CompanyView({ company }: { company: Company }) {
   return (
     <>
       <CompanyHero company={company} />
-      <SectionNavigation sections={sections} />
+      <SectionTabs sections={sections} containerId="company-sections" tabbed="mobile" />
+      <div id="company-sections">
 
       {company.businesses.length > 0 && (
         <CompanySection
@@ -150,6 +151,8 @@ export async function CompanyView({ company }: { company: Company }) {
           <SourceIndex company={company} hasInbound={inbound.length > 0} />
         </CompanySection>
       )}
+
+      </div>
 
       <AdSlot placement="company-bottom" />
 
