@@ -20,16 +20,21 @@
 import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { amendmentIdentity, correctionsCell, loadIndex } from "../research/amendments.mjs";
-import { cacheDir } from "../research/edinet.mjs";
+import { cacheDir, jstToday } from "../research/edinet.mjs";
 import { join } from "node:path";
 import { mergeEntry } from "./merge-fragments.mjs";
 import { finishRegistration } from "./registration-tail.mjs";
 import { policyFindings } from "./policy-context.mjs";
+import { enrichSources, stampAccessedAt } from "./source-meta.mjs";
+import { changedFields } from "./ownership.mjs";
+import { inScope, retainPublished, updateScope } from "./update-scope.mjs";
 import { loadState, saveState, setStage, syncAgentStages } from "./company-state.mjs";
 
 const companyId = process.argv[2];
 const register = process.argv.includes("--register");
 const figuresOnly = process.argv.includes("--figures-only");
+// Rewriting part of an explanation that is already registered, from a newer filing (diff-filings.mjs, autopilot update).
+const update = process.argv.includes("--update");
 // Stage and stop. register-figures.mjs batches the checks across many companies,
 // so it wants the assembled file and not a per-company test run.
 const stageOnly = process.argv.includes("--stage-only");
@@ -42,7 +47,9 @@ const root = process.cwd();
 const entryPath = join(root, "src/data/companies", `${companyId}.json`);
 const indexPath = join(root, "src/data/companies/index.ts");
 const stagedRelative = `pipeline/staging/${companyId}.json`;
-const today = new Date().toISOString().slice(0, 10);
+// One clock for every date this script writes or checks: the date in Japan. Filings are dated in JST; a UTC "today"
+// made a JST date written in the morning look like the future.
+const today = jstToday();
 
 /**
  * Node is the only executable this script launches.
@@ -66,6 +73,10 @@ function citedSourceIds(entry) {
   walk(entry.businesses);
   add(entry.businessModel);
   for (const list of [entry.financials, entry.history, entry.relatedCompanies]) (list ?? []).forEach(add);
+  for (const p of Object.values(entry.perspectives ?? {})) {
+    add(p?.disclosed);
+    add(p?.analysis);
+  }
   return ids;
 }
 
@@ -184,11 +195,20 @@ function figuresOnlyEntry() {
   };
 }
 
+/** The evidence pack's summary (which filing, and when it was built), or null. */
+function readPackSummary() {
+  const p = join(cacheDir(), "evidence", companyId, "summary.json");
+  return existsSync(p) ? JSON.parse(readFileSync(p, "utf8")) : null;
+}
+
 // ------------------------------------------------------------- assemble and stage
 function stageEntry() {
   mkdirSync(join(root, "pipeline/staging"), { recursive: true });
   if (figuresOnly) {
     const entry = figuresOnlyEntry();
+    entry.sources = enrichSources(entry.sources, loadState(companyId).identity);
+    const pack = readPackSummary();
+    entry.sources = stampAccessedAt(entry.sources, pack?.filing?.docID ?? loadState(companyId).identity?.docID, pack?.generatedAt, today);
     const path = join(root, stagedRelative);
     writeFileSync(path, `${JSON.stringify(entry, null, 2)}\n`);
     return { entry, missing: [], warnings: [], needsReview: [], fragments: 0, stageCount: 0, docID: loadState(companyId).identity?.docID ?? null, path };
@@ -198,6 +218,16 @@ function stageEntry() {
   syncAgentStages(companyId);
   const merged = mergeEntry(companyId);
   if (merged.missing.length > 0) throw new Error(`工程が未完了です（${merged.missing.join(", ")}）`);
+  const pack = readPackSummary();
+  if (update) {
+    // Only the rewritten fields come from the fragments; everything else is the published entry, byte for byte.
+    const scope = updateScope(loadState(companyId).identity);
+    if (!scope) throw new Error("--update ですが pipeline/state に更新の範囲（identity.retainedStages）がありません。start-update.mjs から始めること");
+    if (!existsSync(entryPath)) throw new Error("--update ですが登録済みのエントリーがありません");
+    merged.entry = retainPublished(merged.entry, JSON.parse(readFileSync(entryPath, "utf8")), scope);
+  }
+  merged.entry.sources = enrichSources(merged.entry.sources, loadState(companyId).identity);
+  merged.entry.sources = stampAccessedAt(merged.entry.sources, pack?.filing?.docID ?? loadState(companyId).identity?.docID, pack?.generatedAt, today);
   mkdirSync(join(root, "pipeline/staging"), { recursive: true });
   const path = join(root, stagedRelative);
   writeFileSync(path, `${JSON.stringify(merged.entry, null, 2)}\n`);
@@ -246,7 +276,7 @@ function sourceValidation(entry) {
       // until a host is listed in pipeline/source-allowlist.txt (one host per line, after its terms were read).
       if (allowedHosts().has(host)) notes.push(`${where}: EDINET 以外のホスト（${host}）。許可リストにある。一次資料かどうかは人が確認すること`);
       else problems.push(`${where}: EDINET 以外のホスト（${host}）は、利用条件を確認して pipeline/source-allowlist.txt に載せるまで出典にできません`);
-    } else if (docID && !s.url.includes(docID)) {
+    } else if (docID && !s.url.includes(docID) && !(state.identity?.retainedDocIDs ?? []).some((/** @type {string} */ d) => s.url.includes(d))) {
       problems.push(`${where}: EDINET の URL に docID ${docID} が入っていません（数値を取り出した書類と別の書類を引用しています）`);
     }
   }
@@ -289,12 +319,21 @@ function sourceValidation(entry) {
   // figures but revenue and net income, links that rest on an identity AND a relationship. A program, no model.
   // Errors stop the registration like any other gate; items for a person to look at are carried as notes.
   if (!figuresOnly) {
+    // An update answers for what it rewrote. The published part is the correction workflow's (and the open question of
+    // how the existing entries meet today's rules); its findings are recorded, not counted.
+    const scope = update ? updateScope(state.identity) : null;
     try {
+      let kept = 0;
       for (const f of policyFindings(entry)) {
         const line = `[${f.rule}] ${f.path}: ${f.message}${f.excerpt ? `（…${f.excerpt}…）` : ""}`;
+        if (!inScope(f.path, scope)) {
+          if (f.severity === "error") kept += 1;
+          continue;
+        }
         if (f.severity === "error") problems.push(`文章の規則: ${line}`);
         else if (f.severity === "review") notes.push(`確認: ${line}`);
       }
+      if (kept > 0) notes.push(`公開中のまま残す部分（${scope?.kept.join("・")}）に、今の文章の規則で見た不備が ${kept} 件ある。今回は書き直していないので数えない（node scripts/pipeline/check-policy.mjs ${companyId} --entry src/data/companies/${companyId}.json で一覧）`);
     } catch (error) {
       problems.push(`文章の規則の検査を実行できませんでした: ${String(error.message).slice(0, 200)}`);
     }
@@ -419,7 +458,17 @@ ${list((merged.taxonomyGaps ?? []).map((g) => `[${g.kind}] ${g.subject} → 提�
 `;
 }
 
+/** The approval autopilot's `approve` hands over (JSON in REGISTRATION_APPROVAL), or null. Malformed is an error. */
+function approvalFromEnv() {
+  const raw = process.env.REGISTRATION_APPROVAL;
+  if (!raw) return null;
+  const a = JSON.parse(raw);
+  if (!a?.approver?.id || !a?.approver?.name || !a?.approvedAt) throw new Error("REGISTRATION_APPROVAL が不完全です（approver.id・approver.name・approvedAt が要る）");
+  return a;
+}
+
 function registration(entry, validation, merged) {
+  const approval = approvalFromEnv();
   /*
     An existing entry is normally refused (§27). The one exception is the tier
     this pipeline built on purpose: a figures-only entry is a floor, not a
@@ -433,14 +482,22 @@ function registration(entry, validation, merged) {
   */
   const existing = existsSync(entryPath) ? JSON.parse(readFileSync(entryPath, "utf8")) : null;
   const upgrading = existing?.status?.state === "figures-only";
-  if (existing && !upgrading) throw new Error("既存エントリーがあるため上書きしません");
+  // An update replaces part of a described entry; it must be approved by a person, and it is the only way to.
+  const updating = update && Boolean(existing) && !upgrading;
+  if (update && !updating) throw new Error("--update は解説つきの登録済みエントリーにだけ使えます");
+  if (updating && !approval) throw new Error("解説の更新には承認が要ります（autopilot approve から実行する）");
+  if (existing && !upgrading && !updating) throw new Error("既存エントリーがあるため上書きしません");
   if (upgrading && figuresOnly) throw new Error("既に数値のみで登録されています（解説を書いてから昇格させてください）");
 
   const logPath = join(root, "docs/research", `${companyId}.md`);
-  const revisionId = `${today}-company-${companyId}-${upgrading ? "described" : "initial"}`;
+  const revisionBase = `${today}-company-${companyId}-${updating ? "updated" : upgrading ? "described" : "initial"}`;
+  let revisionId = revisionBase;
+  // Two updates on one day are two revisions; a first version or a promotion happens once.
+  if (updating) for (let n = 2; existsSync(join(root, "src/data/revisions", `${revisionId}.json`)); n++) revisionId = `${revisionBase}-${n}`;
   const revisionPath = join(root, "src/data/revisions", `${revisionId}.json`);
   if (existsSync(revisionPath)) throw new Error(`改訂記録 ${revisionId}.json が既にあります`);
-  if (existsSync(logPath) && !upgrading) throw new Error(`リサーチログ docs/research/${companyId}.md が既にあります`);
+  if (existsSync(logPath) && !upgrading && !updating) throw new Error(`リサーチログ docs/research/${companyId}.md が既にあります`);
+  const logBefore = existsSync(logPath) ? readFileSync(logPath, "utf8") : null;
 
   const indexBefore = readFileSync(indexPath, "utf8");
   const written = [];
@@ -448,6 +505,7 @@ function registration(entry, validation, merged) {
     for (const p of written) rmSync(p, { force: true });
     // An upgrade replaced a real file; putting it back is the revert, not deleting it.
     if (existing) writeFileSync(entryPath, `${JSON.stringify(existing, null, 2)}\n`);
+    if (logBefore !== null) writeFileSync(logPath, logBefore);
     writeFileSync(indexPath, indexBefore);
   };
 
@@ -457,7 +515,25 @@ function registration(entry, validation, merged) {
 
     const id = loadState(companyId).identity ?? {};
     const financialsChanged = upgrading && JSON.stringify(existing.financials) !== JSON.stringify(entry.financials);
-    const revision = {
+    const changed = updating ? changedFields(existing, entry).filter((f) => f !== "updatedAt") : [];
+    if (updating) {
+      const scope = updateScope(id);
+      const outside = changed.filter((f) => !scope?.fields.has(f) && !["sources", "status"].includes(f) && !(f === "financials" && scope?.notes));
+      if (outside.length > 0) throw new Error(`更新の範囲の外が変わっています（${outside.join(", ")}）`);
+    }
+    const revision = updating
+      ? {
+          id: revisionId,
+          targetType: "company",
+          targetId: companyId,
+          changedAt: today,
+          reason: `新しい有価証券報告書（docID ${id.docID ?? "不明"}、提出 ${id.submitted ?? "不明"}）で変わった部分だけを書き直した。書き直さなかった部分は、前の有報（${(id.retainedDocIDs ?? []).join("、") || "不明"}）に基づくまま`,
+          summary: `${entry.officialName} の解説を更新（${changed.join("、")}）`,
+          before: Object.fromEntries(changed.map((f) => [f, existing[f] ?? null])),
+          after: Object.fromEntries(changed.map((f) => [f, entry[f] ?? null])),
+          approval,
+        }
+      : {
       id: revisionId,
       targetType: "company",
       targetId: companyId,
@@ -468,15 +544,18 @@ function registration(entry, validation, merged) {
           : "数値のみで掲載していたエントリーに解説を追加した。財務データは変わっていない"
         : "初版。登録パイプラインが EDINET の一次資料から作成し、リサーチログに根拠を記録した",
       summary: `${entry.officialName} 有価証券報告書（docID ${id.docID ?? "不明"}、提出 ${id.submitted ?? "不明"}）に基づき登録パイプラインが${upgrading ? "解説を追加" : "作成"}`,
+      // An explanation is published only with a person's approval (autopilot approve passes it in REGISTRATION_APPROVAL).
+      ...(approval ? { approval } : {}),
     };
     writeFileSync(revisionPath, `${JSON.stringify(revision, null, 2)}\n`);
     written.push(revisionPath);
 
-    writeFileSync(logPath, researchLog(entry, validation, merged));
+    // An update keeps the log of the first registration and adds what changed below it.
+    writeFileSync(logPath, updating && logBefore !== null ? `${logBefore.trimEnd()}\n\n---\n\n## 更新 ${today}\n\n${researchLog(entry, validation, merged).replace(/^# .*\n/, "")}` : researchLog(entry, validation, merged));
     written.push(logPath);
 
     // Already listed when upgrading — the id and the file name do not change.
-    if (!upgrading) writeFileSync(indexPath, addToIndex(indexBefore));
+    if (!upgrading && !updating) writeFileSync(indexPath, addToIndex(indexBefore));
 
     // The gate. The whole-repository integrity suite is what catches anything
     // that only breaks in the presence of the other entries: a duplicate id, an

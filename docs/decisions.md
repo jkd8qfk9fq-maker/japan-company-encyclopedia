@@ -390,3 +390,47 @@ stage 1 of the redesign plan (mockup: the "リデザイン案" canvas). Stage 1 
   requires a licence for business use and for providing index information to third parties, and JPX's reuse terms
   could not be read from the build environment. The prepared code (type, schema with a required `usageTerms`, a tab
   per index) was taken out before release and is in commit 95a51d2 for when the terms are confirmed.
+
+### JCE-024 · 2026-10-19 · Accepted (operator) — Continuous pipeline: three layers, PRs for figures, all tiers, perspectives
+
+The operator's answers to docs/continuous-pipeline-design.md §6, and the order of work (Phase 0 → master → metadata → figures → explanation).
+- **Three layers by ownership, not by file.** `scripts/pipeline/ownership.mjs` names who may write each field: facts (identity, the five-year
+  table) by programs that verify them; the explanation only through a person's approval; metadata alongside both. Automated writers
+  (`refresh-financials`, `apply-amendment`) call `assertMachineWrite` before writing; `tests/field-ownership.test.ts` keeps the table complete.
+- **Figures: GitHub Actions verifies and opens a pull request** when something changes; the site changes only when a person merges it.
+  This is a change to JCE-016 ("no pull requests from production"): Actions is not the production server, writes nothing to `main`, and the
+  pull request is the review step. The detection workflow keeps being the only scheduled EDINET caller.
+- **All tiers are updated yearly**, figures-only included, with the existing checks; a failed fetch or check never removes good data.
+- **New explanation fields**: growth strategy, competitive advantage, position in the industry — what the company itself discloses is kept
+  apart from any analysis, each with its sources and the point in time it describes.
+- **Approver: `YUGENQ`** for now, recorded so that individual approvers can be added later without changing the shape.
+- **Financial table**: the page keeps showing the filing's six figures (commit d3a448e, 2026-09-21, at the operator's request). CLAUDE.md
+  invariant 4 said "revenue and net income are the only financials", which was written before that change; it now says what the page shows,
+  and that prose cites revenue and net income only.
+
+### JCE-025 · 2026-10-19 · Accepted (operator) — An approval an AI ran is recorded as the AI's, never as the person's
+
+Three companies registered on 2026-10-19 (tohoku-electric-power, sumitomo-forestry, nh-foods) carry a revision whose `approval` names
+YUGENQ (kind operator), but Claude Code ran `autopilot approve`, reading the review hash with a script; no person read the sheets. The
+basis was the operator's standing permission of 2026-10-18 (「全て許可します」), not a reading of each sheet.
+- **The history is appended, not edited.** Each company gets a revision `<date>-company-<id>-approval-correction` with `corrects` (the
+  revision it corrects), `before.approval` (as written) and `after.approval` (as it should read). `effectiveApproval`
+  (src/lib/content/approvers.ts) reads the corrected one; `tests/data-integrity.test.ts` checks that a correction points at an earlier
+  revision of the same content and that its `after.approval` is a valid approval.
+- **Approver kind `agent`.** An agent's approval must carry `onBehalfOf` (the person whose authority it used) and `basis`; a person's must
+  not. `src/data/approvers.json` lists `claude-code` (kind agent); it is never the default and never chosen with `--approver`.
+- **Recorded mechanically.** `approve` run inside an AI agent (`CLAUDECODE=1`, or `JCE_AGENT=1`) records an agent approval on the default
+  approver's authority (`scripts/pipeline/approvers.mjs` `approvalFor`). Only the operator running it is a formal approval.
+- **Not decided here:** whether a proxy-approved entry may stay published until a formal approval, and the 16 companies registered on
+  2026-10-18 the same way (their revisions predate the approval field and record no approver, so they state nothing false).
+
+### JCE-028 · 2026-10-20 · Accepted (operator) — An AI proxy approval is enough to publish; it stays recorded as one
+
+The operator decided that an explanation approved by an AI on the operator's authority may be published without a separate formal approval
+(the question left open in JCE-025; numbered 028 because JCE-026 and JCE-027 were taken by the company-page work merged the same day). The release line is unchanged: `published` entries are public, whoever approved them.
+- **The record keeps the difference.** An `approve` run by an AI is recorded as `approver.kind: "agent"` with `onBehalfOf` and `basis`
+  (JCE-025); the admin revision pages show 「AI の代理承認」 or 「正式な承認」 (`approvalLabel` / `effectiveApproval`).
+- **The 16 companies of 2026-10-18** got approval-correction revisions too (their revisions predate the approval field): the history now
+  says, for all 19, that Claude Code ran `approve` on the standing permission of 2026-10-18. The original revisions are unchanged.
+- **Dates are the system's** (same day): `accessedAt` is set by `finalize` from the evidence pack's build time as a JST date, and every date
+  the pipeline writes or checks is a JST date — agents no longer write it (japan-tobacco and nippon-yusen were held by a UTC/JST mismatch).

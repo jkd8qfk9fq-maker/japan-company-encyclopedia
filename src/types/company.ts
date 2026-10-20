@@ -164,6 +164,39 @@ export type FinancialRecord = Sourced & {
   note?: string;
 };
 
+/**
+ * What the company itself says (in its 有価証券報告書 — 経営方針、経営環境及び対処すべき課題等 — or its own materials), as of
+ * a stated date. A disclosure, not an assessment.
+ */
+export type DisclosedStatement = Sourced & {
+  text: string;
+  /** YYYY-MM-DD. The date the company's statement is made as of (for a 有報, its filing date). */
+  asOf: string;
+};
+
+/**
+ * An inference made by this encyclopedia, kept apart from what the company says. `basis` names the facts it rests on,
+ * so a reader can check the reasoning, and the page labels it as analysis.
+ */
+export type AnalysisStatement = Sourced & {
+  text: string;
+  basis: string;
+  /** YYYY-MM-DD. The point in time the analysis describes. */
+  asOf: string;
+};
+
+export type Perspective = {
+  disclosed?: DisclosedStatement;
+  analysis?: AnalysisStatement;
+};
+
+/** Growth strategy, competitive advantage and position in the industry — each as disclosed, and optionally analysed. */
+export type Perspectives = {
+  strategy?: Perspective;
+  competitiveAdvantage?: Perspective;
+  industryPosition?: Perspective;
+};
+
 export type HistoryEvent = Sourced & {
   year: number;
   title: string;
@@ -259,6 +292,8 @@ export type Company = {
   industries: IndustryReference[];
   businesses: Business[];
   businessModel?: BusinessModel;
+  /** Strategy, competitive advantage, position in the industry. Optional: written only from what the filings support. */
+  perspectives?: Perspectives;
 
   financials: FinancialRecord[];
   history: HistoryEvent[];

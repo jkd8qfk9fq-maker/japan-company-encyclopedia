@@ -21,7 +21,7 @@ import {
   loadIndex,
   windowCorrections,
 } from "../scripts/research/amendments.mjs";
-import { auditAction } from "../scripts/pipeline/amendment-audit.mjs";
+import { auditAction, identityFromEntry, refreshSummary } from "../scripts/pipeline/amendment-audit.mjs";
 import { packMatchesIdentity } from "../scripts/pipeline/advance.mjs";
 
 /**
@@ -312,5 +312,45 @@ describe("what to do about a company (a recommendation only)", () => {
 
   it("a figures-only entry has no prose, so a text change alone is only recorded", () => {
     expect(auditAction(facts({ tier: "figures-only", textChanged: true }))).toBe("record-only");
+  });
+});
+
+describe("the daily audit in GitHub Actions (no pipeline/state there)", () => {
+  const url = (doc: string) => `https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/${doc}.pdf`;
+  const entry = {
+    id: "acme",
+    code: "1001",
+    financials: [
+      { periodEnd: "2025-03-31", sourceIds: ["yuho-2025"] },
+      { periodEnd: "2026-03-31", sourceIds: ["yuho-2026"] },
+    ],
+    sources: [
+      { id: "yuho-2025", url: url("S100AAAA") },
+      { id: "yuho-2026", url: url("S100BBBB") },
+    ],
+  };
+
+  it("reads the filing an entry rests on from the source its newest figures cite", () => {
+    expect(identityFromEntry(entry, emptyIndex())).toEqual({ code: "1001", docID: "S100BBBB", originalDocID: "S100BBBB", periodEnd: "2026-03-31" });
+  });
+
+  it("follows an entry that already cites a correction back to the original, through a chain", () => {
+    const index = { ...emptyIndex(), byParent: { S100BBBB: [row("S100CCCC", "S100BBBB", "2026-07-01 10:00")], S100CCCC: [row("S100DDDD", "S100CCCC", "2026-08-01 10:00")] } };
+    const cited = { ...entry, sources: [entry.sources[0], { id: "yuho-2026", url: url("S100DDDD") }] };
+    expect(identityFromEntry(cited, index)?.originalDocID).toBe("S100BBBB");
+  });
+
+  it("gives up without figures or an EDINET source, rather than guessing", () => {
+    expect(identityFromEntry({ ...entry, financials: [] }, emptyIndex())).toBeNull();
+    expect(identityFromEntry({ ...entry, sources: [{ id: "yuho-2026", url: "https://example.co.jp/ir.pdf" }] }, emptyIndex())).toBeNull();
+  });
+
+  it("summarises for the person who merges, and says when the index could not be read to the end", () => {
+    const none = refreshSummary({ before: "2026-10-17", after: "2026-10-18", added: 0, error: null, rows: [] });
+    expect(none).toContain("新しい訂正はありません");
+    const hit = refreshSummary({ before: "2026-10-17", after: "2026-10-18", added: 1, error: "HTTP 503", rows: [{ companyId: "acme", tier: "published", fresh: ["S100CCCC@2026-10-18"], financialChanged: true, textChanged: false, textChangedSections: [], action: "update-financials" }] });
+    expect(hit).toContain("| acme | published | S100CCCC@2026-10-18 | はい | いいえ | update-financials |");
+    expect(hit).toContain("HTTP 503");
+    expect(hit).toContain("apply-amendment.mjs");
   });
 });

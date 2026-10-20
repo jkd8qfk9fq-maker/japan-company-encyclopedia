@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { approvalLabel, effectiveApproval } from "@/lib/content/approvers";
 import { describeTarget, TARGET_TYPE_LABEL } from "@/lib/content/target-names";
 import { revisionRepository } from "@/lib/repositories";
 
@@ -11,14 +12,14 @@ export const metadata = { title: "改訂履歴" };
  */
 export default async function AdminRevisions() {
   const revisions = await revisionRepository.list();
-  const rows = await Promise.all(revisions.map(async (r) => ({ revision: r, target: await describeTarget(r.targetType, r.targetId) })));
+  const rows = await Promise.all(revisions.map(async (r) => ({ revision: r, target: await describeTarget(r.targetType, r.targetId), approval: approvalLabel(effectiveApproval(r, revisions)) })));
 
   return (
     <div>
       <h1 className="font-serif text-3xl font-semibold">改訂履歴</h1>
       <p className="mt-2 text-sm text-muted-foreground">{revisions.length}件</p>
       <ol className="mt-6 divide-y divide-border border-y border-border">
-        {rows.map(({ revision, target }) => (
+        {rows.map(({ revision, target, approval }) => (
           <li key={revision.id}>
             <Link
               href={`/admin/revisions/${revision.id}`}
@@ -27,7 +28,10 @@ export default async function AdminRevisions() {
               <span className="figures text-muted-foreground">{revision.changedAt.slice(0, 16).replace("T", " ")}</span>
               <span className="text-muted-foreground">{TARGET_TYPE_LABEL[revision.targetType]}</span>
               <span className="font-medium">{target.name}</span>
-              <span className="leading-6">{revision.summary}</span>
+              <span className="leading-6">
+                {revision.summary}
+                {approval.kind === "none" ? null : <span className="ml-2 text-xs text-muted-foreground">［{approval.kind === "proxy" ? "AI代理承認" : "正式承認"}］</span>}
+              </span>
             </Link>
           </li>
         ))}

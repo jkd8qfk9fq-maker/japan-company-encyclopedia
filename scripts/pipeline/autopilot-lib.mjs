@@ -15,7 +15,17 @@
  * a program found wrong. Figures, duplicates, state, retries, checks and the review sheet are programs.
  */
 import { createHash } from "node:crypto";
+import { changedFields } from "./ownership.mjs";
 import { visibleText } from "./prose-policy.mjs";
+
+const PROSE_KEYS = new Set(["name", "title", "description", "significance", "text", "basis"]);
+/** The sentences a reader sees inside a field, in order — for the before/after of an update. */
+function* textsIn(/** @type {unknown} */ value, /** @type {string | null} */ key = null) {
+  if (typeof value === "string") {
+    if (key === null || PROSE_KEYS.has(key)) yield value;
+  } else if (Array.isArray(value)) for (const v of value) yield* textsIn(v, key);
+  else if (value && typeof value === "object") for (const [k, v] of Object.entries(value)) yield* textsIn(v, k);
+}
 
 /** How many times each kind of step may be tried before the company is held for a person. */
 export const LIMITS = { agent: 2, repair: 2, network: 3, advance: 3 };
@@ -59,7 +69,7 @@ export function resolveCandidates(tokens, registry) {
   for (const token of tokens) {
     const entry = registry.byId.get(token) ?? registry.byCode.get(token.toUpperCase());
     if (!entry) skipped.push({ token, reason: "掲載済みのエントリーがありません（universe → intake → register-figures で数値のみ登録してから）" });
-    else if (entry.tier !== "figures-only") skipped.push({ token, reason: `すでに ${entry.tier}（再調査は autopilot の対象外。本文の更新は別の作業）` });
+    else if (entry.tier !== "figures-only") skipped.push({ token, reason: `すでに ${entry.tier}（解説の更新は autopilot update <id>）` });
     else if (!add.includes(entry.id)) add.push(entry.id);
   }
   return { add, skipped };
@@ -91,13 +101,15 @@ export function enqueue(queue, ids, at = now(), note = "") {
  *   registrationNote?: string | null,
  *   reservedBy?: string | null,
  *   self?: string,
- * }} facts
+ *   update?: boolean,
+ * }} facts  update: the company was set up for an update of its explanation (autopilot update)
  * @returns {{ kind: string, reason: string }[]}
  */
-export function precheck({ entry, sameCode, ledger, registrationNote = null, reservedBy = null, self = "autopilot" }) {
+export function precheck({ entry, sameCode, ledger, registrationNote = null, reservedBy = null, self = "autopilot", update = false }) {
   const holds = [];
   if (!entry) return [{ kind: "no-entry", reason: "掲載済みのエントリーがない（数値のみの登録が先）" }];
-  if (entry.tier !== "figures-only") holds.push({ kind: "not-figures-only", reason: `エントリーが ${entry.tier}（すでに解説がある。本文の更新は別の作業）` });
+  if (update && entry.tier === "figures-only") holds.push({ kind: "no-explanation", reason: "数値のみのエントリーには更新する解説がない（昇格は通常の登録）" });
+  if (!update && entry.tier !== "figures-only") holds.push({ kind: "not-figures-only", reason: `エントリーが ${entry.tier}（すでに解説がある。本文の更新は autopilot update）` });
   if (sameCode.length > 0) holds.push({ kind: "duplicate-code", reason: `同じ証券コード ${entry.code} の別エントリーがある: ${sameCode.join(", ")}` });
   if (!ledger) holds.push({ kind: "not-in-ledger", reason: `証券コード ${entry.code} が EDINET コードリストにない（上場を確認できない）` });
   else if (ledger.listing !== "上場") holds.push({ kind: "not-listed", reason: `EDINET コードリストの上場区分が「${ledger.listing}」` });
@@ -138,13 +150,21 @@ export const GROUPS = {
 /**
  * The prompt for one agent group. Short on purpose: the rules are in docs/agent-brief.md and docs/pipeline.md, which
  * the agent reads itself — repeating them here would cost tokens on every call and drift from the source.
- * @param {{ id: string, name: string, code: string, group: "group1" | "group2", cache: string }} p
+ * @param {{ id: string, name: string, code: string, group: "group1" | "group2", cache: string, update?: { stages: string[], oldDoc: string, newDoc: string } | null }} p
+ *   update: rewriting only these stages of a registered explanation from a newer filing (autopilot update)
  */
-export function agentPrompt({ id, name, code, group, cache }) {
+export function agentPrompt({ id, name, code, group, cache, update = null }) {
   const g = GROUPS[group];
-  const files = g.files.map((f) => `pipeline/results/${id}-${f}.json`).join(", ");
+  const stages = update ? g.files.filter((f) => update.stages.includes(f)) : g.files;
+  const files = stages.map((f) => `pipeline/results/${id}-${f}.json`).join(", ");
   return [
     `会社: ${name} (id: ${id}, 証券コード ${code})。${g.label}を担当してください。`,
+    ...(update
+      ? [
+          `これは登録済みの解説の更新です。新しい有報（${update.newDoc}）で変わった工程 ${stages.join("・")} だけを、新しい有報から書き直す（docs/agent-brief.md 第6節）。` +
+            ` 今の公開版は src/data/companies/${id}.json（${update.oldDoc} に基づく）。変わっていない事実は同じ書き方でよいが、出典は新しい有報にする。同じグループの他の成果物（"retained" のもの）は公開中のままにするので、読んでよいが変えない。`,
+        ]
+      : []),
     "最初に docs/agent-brief.md を読む（その中の指示どおり .claude/agents/data-research.md と docs/pipeline.md の「エージェントへの作業要領」も原文で読む）。",
     `証拠パック: ${cache}/evidence/${id}/ （brief.md から読む。EDINET の取り直し・web 検索はしない）。` +
       (group === "group2" ? " 関連企業は同じフォルダの related-candidates.json（有報に社名がある掲載済み企業。機械抽出）の中からだけ選ぶ。グループ1の成果物は文体・出典を揃えるために読んでよい。" : ""),
@@ -195,10 +215,13 @@ const isEdinet = (/** @type {string} */ url) => /(^|\.)edinet-fsa\.go\.jp$/.test
  *   ledger: Map<string, { listing: string }>,
  *   record: { attempts: Record<string, number>, cost: { usd: number, calls: number } },
  *   hash: string,
- * }} p
+ *   previous?: any,
+ *   kept?: { count: number, stages: string[] } | null,
+ * }} p  previous: the published entry, when this is an update (the sheet then shows before and after);
+ *   kept: the findings in the part the update did not rewrite (not counted)
  * @returns {{ markdown: string, readiness: "ready" | "ready-with-flags", errors: number, reviews: number }}
  */
-export function buildReviewSheet({ entry, findings, notes, gate, registry, ledger, record, hash }) {
+export function buildReviewSheet({ entry, findings, notes, gate, registry, ledger, record, hash, previous = null, kept = null }) {
   const errors = findings.filter((f) => f.severity === "error");
   const reviews = findings.filter((f) => f.severity === "review");
   const infos = findings.filter((f) => f.severity === "info");
@@ -216,13 +239,30 @@ export function buildReviewSheet({ entry, findings, notes, gate, registry, ledge
   });
 
   const terms = errors.filter((f) => f.rule === "investment-term" || f.rule === "forbidden-financial-term" || f.rule === "forbidden-financial-amount");
-  const markdown = `# ${entry.name}（${entry.id} / ${entry.code}）— 登録前の確認シート
+  const changes = previous ? changedFields(previous, entry).filter((f) => f !== "updatedAt") : [];
+  // A field with no sentences (industries: ids only) is shown as it is stored.
+  const textLines = (/** @type {unknown} */ v) => [...textsIn(v)].map((t) => `  - ${visibleText(t).slice(0, 300)}`).join("\n") || `  - \`${cell(JSON.stringify(v ?? null).slice(0, 300))}\``;
+  const updateSection = previous
+    ? `## 0. 更新前と後（あなたが確認する）
+
+新しい有報で変わった部分だけを書き直した。ここに無い項目は公開中のまま変わらない。変わる項目: ${changes.join("、") || "なし"}${kept && kept.count > 0 ? `
+
+公開中のまま残す部分（${kept.stages.join("・")}）には、今の文章の規則で見た不備が ${kept.count} 件ある。今回の更新では直さない（訂正は管理画面から）。` : ""}
+
+${changes
+  .filter((f) => !["sources", "status"].includes(f))
+  .map((f) => `### ${f}\n\n前:\n${textLines(previous[f])}\n\n後:\n${textLines(entry[f])}`)
+  .join("\n\n")}
+
+`
+    : "";
+  const markdown = `# ${entry.name}（${entry.id} / ${entry.code}）— ${previous ? "解説の更新の確認シート" : "登録前の確認シート"}
 
 - 判定: **${readiness === "ready" ? "公開候補（確認後に登録）" : "要確認つき（下の確認事項を見てから）"}** ／ 登録後の区分: ${entry.status?.state}
 - 内容のハッシュ: \`${hash}\`（承認時に一致を確かめる。確認後に内容が変わると承認できない）
 - 生成: ${now()} ／ 試行: ${Object.entries(record.attempts).filter(([, n]) => n > 0).map(([k, n]) => `${k} ${n}`).join("、") || "なし"} ／ モデル呼び出し ${record.cost.calls} 回・概算 $${record.cost.usd.toFixed(2)}
 
-## 1. 一文の説明（あなたが確認する）
+${updateSection}## 1. 一文の説明（あなたが確認する）
 
 > ${visibleText(entry.businessModel?.description ?? "")}
 
@@ -318,10 +358,11 @@ export function tally(records) {
  *   stagedHash: string | null,
  *   policyErrors: number,
  *   entryTier: string | null,
- * }} f
+ *   update?: boolean,
+ * }} f  update: an update of a registered explanation (then the entry must be a described one)
  * @returns {string[]}
  */
-export function approvalProblems({ record, confirmed, typedHash, stagedHash, policyErrors, entryTier }) {
+export function approvalProblems({ record, confirmed, typedHash, stagedHash, policyErrors, entryTier, update = false }) {
   if (!record) return ["autopilot の記録がありません"];
   if (record.status === "registered") return ["すでに登録済みです（二重登録の防止）"];
   if (!["ready", "ready-with-flags"].includes(record.status)) return [`状態が ${record.status} なので承認できません（ready / ready-with-flags のみ）`];
@@ -331,6 +372,8 @@ export function approvalProblems({ record, confirmed, typedHash, stagedHash, pol
   else if (stagedHash !== record.review?.hash) out.push(`確認シートを作った後に内容が変わった（シート ${record.review?.hash}、現在 ${stagedHash}）。retry して新しいシートを読み直すこと`);
   if (typedHash !== stagedHash) out.push("--hash に確認シートの値を付けること（読んだ内容と登録する内容が同じであることの確認）");
   if (policyErrors > 0) out.push(`文章の規則の不備が ${policyErrors} 件ある`);
-  if (entryTier !== "figures-only") out.push(`エントリーが ${entryTier ?? "ない"}。数値のみのエントリーだけが昇格できる（二重登録の防止）`);
+  if (update) {
+    if (entryTier === null || entryTier === "figures-only") out.push(`エントリーが ${entryTier ?? "ない"}。更新できるのは解説つきのエントリーだけ`);
+  } else if (entryTier !== "figures-only") out.push(`エントリーが ${entryTier ?? "ない"}。数値のみのエントリーだけが昇格できる（二重登録の防止）`);
   return out;
 }

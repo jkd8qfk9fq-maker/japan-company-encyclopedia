@@ -27,7 +27,8 @@
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { cacheDir } from "../research/edinet.mjs";
-import { fragmentFiles } from "./company-state.mjs";
+import { fragmentFiles, loadState } from "./company-state.mjs";
+import { updateScope } from "./update-scope.mjs";
 
 const companyId = process.argv[2];
 if (!companyId) {
@@ -81,20 +82,33 @@ function proseOf(source) {
   return out.join("\n").normalize("NFKC");
 }
 
+/*
+  During an update (update-scope.mjs) only the rewritten part is checked against this pack, which is the NEW filing.
+  The kept part is the published text, checked against its own filing when it was registered; its amounts are that
+  year's and would not be found here. Said in the output, so a reader of the report knows what was not looked at.
+*/
+const scope = updateScope(loadState(companyId).identity);
 let prose;
 let financials;
 if (useFragments) {
   const dir = join(process.cwd(), "pipeline/results");
-  const parts = fragmentFiles(companyId, dir)
-    .map((f) => JSON.parse(readFileSync(join(dir, f), "utf8")).data ?? {});
-  prose = parts.map(proseOf).join("\n");
+  const bodies = fragmentFiles(companyId, dir).map((f) => JSON.parse(readFileSync(join(dir, f), "utf8")));
+  const kept = bodies.filter((b) => b.retained);
+  if (kept.length > 0) console.log(`${companyId}: 公開中の文章を引き継いだ成果物 ${kept.length} 件は照合しない（前の有報で照合済み）`);
+  prose = bodies.filter((b) => !b.retained).map((b) => proseOf(b.data ?? {})).join("\n");
   // A fragment carries no financials — the five-year table is mechanical, and the
   // draft is where it lives until the entry is assembled.
   financials = JSON.parse(readFileSync(join(packDir, "draft-entry.json"), "utf8")).financials ?? [];
 } else {
   const path = entryFlag !== -1 && process.argv[entryFlag + 1] ? process.argv[entryFlag + 1] : `src/data/companies/${companyId}.json`;
   const entry = JSON.parse(readFileSync(join(process.cwd(), path), "utf8"));
-  prose = proseOf(entry);
+  if (scope) {
+    console.log(`${companyId}: 更新中。照合するのは書き直した部分（${[...scope.fields].join("・")}${scope.notes ? "・財務の注記" : ""}）だけ`);
+    prose = proseOf({
+      ...Object.fromEntries([...scope.fields].map((f) => [f, entry[f]])),
+      financials: scope.notes ? entry.financials : [],
+    });
+  } else prose = proseOf(entry);
   financials = entry.financials ?? [];
 }
 

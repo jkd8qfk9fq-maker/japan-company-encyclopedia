@@ -153,7 +153,10 @@ universe.tsv ──discover──▶ queued ──intake──▶ intake ──r
 | 予約（二重取得の防止） | `company-state.mjs` の `reserve` / `release` / `claim`。**排他**（`pipeline/.lock` の mkdir ロック。取れた呼び出しだけが true）。`claim` は「次の N 社を選ぶ」と「予約する」を1つのロック内で行う |
 | universe の作成 | `discover.mjs`（既定は**昨日まで**。当日の索引は未完で、キャッシュされると以後ずっと完全に見える） |
 | 上場状況・業種・新規上場の同期 | `sync-listing.mjs`（EDINET コードリスト。**読むだけ**: 台帳 `pipeline/listing.tsv` と差分・影響対象の報告を作り、エントリー・state・universe は変えない。`--file` で渡すのが既定、`--download` は20時間に1回まで・定期実行には入れない） |
-| 新しい年度の財務の追加 | `refresh-financials.mjs`（登録済みの会社に新しい有報の年度を足す。ドライランが既定、Actions は検知のみ。確定前の索引は待つ） |
+| 新しい年度の財務の追加 | `refresh-financials.mjs`（登録済みの会社に新しい有報の年度を足す。数値のみの会社も対象（`--tier all`）。ドライランが既定。Actions は毎日検知し、検証を通った更新だけを別ブランチに適用してプルリクエストにする。main には書かず、マージは人（JCE-024）。確定前の索引は待つ） |
+| 訂正有報の監査 | `amendment-audit.mjs --refresh`（前回以降の日だけを読む。Actions では検知と提案の両ジョブで毎日、`--from-entries`＝各社の有報をエントリーの出典から求める。報告のみ。反映は人が `apply-amendment.mjs <id>`） |
+| 出典箇所（locator）の特定 | `find-locators.mjs <id>… | --all`（読み取りのみ。項目の金額・年月・社名を有報の節で探し、1つの節に絞れたときだけ見出しを提案。同点・不明は提案しない） |
+| 解説の差分更新 | `diff-filings.mjs`（新旧の有報の節を比べ、さらに公開中の文章が旧い期の数字・日付を書いている工程も拾って、書き直す工程を決める。読むだけ）→ `start-update.mjs`（変わった工程だけを書き直す準備。残す工程は公開版から書き戻す）→ `autopilot update <id>` → `run` → 確認シート（前後）→ `approve`。`finalize --update` は範囲外の変更・承認なしを拒否する。先に財務を更新しておく |
 | 解説つきへの昇格を自動で進める（確認シートまで） | `autopilot.mjs`（`docs/auto-registration.md`）。キューを順に処理し、モデルを呼ぶのは group1・group2 の本文だけ。事前確認・`advance`・検査・修復・確認シート・再試行・復旧はプログラム。**登録は `approve --confirm --hash` だけ** |
 | 文章の規則の検査 | `check-policy.mjs`／`prose-policy.mjs`（一文・有報を主語にしない・財務語・関連企業の同一性。`finalize.mjs` のゲートにも入っている）。規則の正本は `docs/agent-brief.md` |
 | EDINET 取得・証拠パック | `intake.mjs`（id 割当・パック・draft）／`advance.mjs`（再構築）／`pack.mjs`（欠落・別 filing・古い抽出器を一括判定） |
@@ -468,9 +471,10 @@ nihon-chouzai、c-i-medical、sfp-holdings（登録済みのリンク先）。
    本文のほぼ全ての文にこのラベルが出るので、間違えると全体に広がる。
    `check-prose-figures.mjs` が本文の決算期ラベルを財務の5年分と有報の本文に突き合わせる。
 6. `src/data/` に書き込まない。git を触らない。自分の成果物ファイル以外を作らない・変えない。
-7. **`sources[].accessedAt` は UTC の今日（`date -u +%F`）。** 整合性ルールは「未来の日付」を UTC で
-   判定する。日本時間の朝（0〜9時）に日本の日付を書くと UTC ではまだ前日で、登録ゲートが
-   「accessedAt が未来の日付です」で落ちる（パイロット1社目で実際に起きた）。
+7. **`sources[].accessedAt` は書かない。** `finalize` が、証拠パックを作った日時（`summary.json` の `generatedAt`）を
+   日本時間の日付にして入れる。パイプラインの日付（閲覧日・改訂記録・未来日の判定）はすべて日本時間の日付で揃える。
+   以前は「UTC の今日」を書かせていたが、日本時間の朝（0〜9時）に日本の日付が書かれて「未来の日付」で止まった
+   （2026-10-19、日本たばこ産業・日本郵船）。
 
 ### 業界の選び方
 

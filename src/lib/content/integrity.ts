@@ -160,6 +160,17 @@ export function checkCompany(company: Company, context: ContentContext): string[
     e.push(...citationErrors(r.sourceIds, src, where));
   }
 
+  // Strategy, competitive advantage, position: what the company says and what we infer are separate, and each one
+  // names its sources and the point in time it describes (JCE-024).
+  const PERSPECTIVE_LABELS = { strategy: "成長戦略", competitiveAdvantage: "競争優位性", industryPosition: "業界内の位置づけ" } as const;
+  for (const [key, label] of Object.entries(PERSPECTIVE_LABELS)) {
+    const p = company.perspectives?.[key as keyof typeof PERSPECTIVE_LABELS];
+    if (!p) continue;
+    if (!p.disclosed && !p.analysis) e.push(`${label}: 会社の説明か分析のどちらかが必要です`);
+    if (p.disclosed) e.push(...citationErrors(p.disclosed.sourceIds, src, `${label}（会社の説明）`));
+    if (p.analysis) e.push(...citationErrors(p.analysis.sourceIds, src, `${label}（分析）`));
+  }
+
   const texts: [string, string][] = [
     ...(company.description ? ([["一文の説明", company.description]] as [string, string][]) : []),
     ...businesses.map((b): [string, string] => [`事業「${b.name}」`, b.description]),

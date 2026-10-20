@@ -1,0 +1,69 @@
+{
+  "id": "2026-10-19-company-nh-foods-approval-correction",
+  "targetType": "company",
+  "targetId": "nh-foods",
+  "changedAt": "2026-10-19T11:05:55.208Z",
+  "reason": "改訂記録 2026-10-19-company-nh-foods-described の承認は「YUGENQ（運営者）」と記録されているが、実際には Claude Code（AI）が 2026-10-19T10:00:17.295Z に autopilot approve を実行した。確認シートのハッシュはスクリプトで読み取られ、人が確認シートを読んだ記録はない。根拠は 2026-10-18 の運営者の包括的な許可（「全て許可します」）。正式な承認ではないので、AI の代理承認として記録を訂正する。元の改訂記録は変更しない（履歴は追記だけ）。エントリーの内容は変えていない。正式な承認は、運営者が確認シートを読んで記録するまで無い。",
+  "summary": "日本ハムの解説追加（2026-10-19-company-nh-foods-described）の承認記録を訂正：運営者の承認ではなく AI の代理承認",
+  "before": {
+    "approval": {
+      "approver": {
+        "id": "yugenq",
+        "name": "YUGENQ",
+        "kind": "operator"
+      },
+      "approvedAt": "2026-10-19T10:00:17.295Z",
+      "reviewHash": "9623e72c1ffd1fb1",
+      "fields": [
+        "businessModel",
+        "businesses",
+        "description",
+        "history",
+        "industries",
+        "relatedCompanies",
+        "shortNameEn"
+      ]
+    }
+  },
+  "after": {
+    "approval": {
+      "approver": {
+        "id": "claude-code",
+        "name": "Claude Code（AI）",
+        "kind": "agent"
+      },
+      "approvedAt": "2026-10-19T10:00:17.295Z",
+      "reviewHash": "9623e72c1ffd1fb1",
+      "fields": [
+        "businessModel",
+        "businesses",
+        "description",
+        "history",
+        "industries",
+        "relatedCompanies",
+        "shortNameEn"
+      ],
+      "onBehalfOf": {
+        "id": "yugenq",
+        "name": "YUGENQ",
+        "kind": "operator"
+      },
+      "basis": "2026-10-18 の運営者の包括的な許可（「全て許可します」）に基づき AI が実行。確認シートを人が読んだ記録はない（正式な承認ではない）"
+    }
+  },
+  "corrects": "2026-10-19-company-nh-foods-described",
+  "approval": {
+    "approver": {
+      "id": "claude-code",
+      "name": "Claude Code（AI）",
+      "kind": "agent"
+    },
+    "approvedAt": "2026-10-19T11:05:55.208Z",
+    "onBehalfOf": {
+      "id": "yugenq",
+      "name": "YUGENQ",
+      "kind": "operator"
+    },
+    "basis": "運営者の指示（2026-10-19「AI が代理承認した事実を履歴に追記し、正式承認と区別する」）に基づき AI が記録した"
+  }
+}

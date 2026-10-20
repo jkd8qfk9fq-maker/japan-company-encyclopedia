@@ -10,7 +10,7 @@ import { extractReferences, findMalformedMarkup } from "@/lib/rich-text";
 import type { Business, Company } from "@/types/company";
 import { INDUSTRY_IDS, RELATIONSHIP_KINDS } from "@/types/company";
 import { checkCompany, checkIndustry, checkTerm } from "@/lib/content/integrity";
-import { parseContent, revisionSchema } from "@/lib/content/schemas";
+import { approvalSchema, parseContent, revisionSchema } from "@/lib/content/schemas";
 import type { Revision } from "@/types/revision";
 import type { Source } from "@/types/source";
 
@@ -325,6 +325,18 @@ describe("revisions", () => {
 
   it("have unique ids", () => {
     expect(new Set(revisions.map((r) => r.id)).size).toBe(revisions.length);
+  });
+
+  it("correct only an earlier revision of the same content, and say what the record should read", () => {
+    const byId = new Map(revisions.map((r) => [r.id, r]));
+    for (const r of revisions.filter((x) => x.corrects)) {
+      const target = byId.get(r.corrects!);
+      expect(target, `${r.id} corrects ${r.corrects}`).toBeDefined();
+      expect([target!.targetType, target!.targetId], r.id).toEqual([r.targetType, r.targetId]);
+      expect(target!.changedAt <= r.changedAt, `${r.id} is later than what it corrects`).toBe(true);
+      const after = (r.after ?? {}) as { approval?: unknown };
+      if (after.approval !== undefined) expect(approvalSchema.safeParse(after.approval).success, r.id).toBe(true);
+    }
   });
 });
 

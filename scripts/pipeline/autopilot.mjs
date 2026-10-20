@@ -8,6 +8,8 @@
  *   node scripts/pipeline/autopilot.mjs status [--json] [--refresh-report out/refresh-report.json]
  *   node scripts/pipeline/autopilot.mjs review <id>                                   print the review sheet
  *   node scripts/pipeline/autopilot.mjs approve <id> --confirm --hash <hash>          register (after YOU read the sheet)
+ *   node scripts/pipeline/autopilot.mjs update <id> [--plan]   a registered company with a newer 有報: rewrite only what
+ *                                         changed (start-update.mjs), then run → review → approve as for a registration
  *   node scripts/pipeline/autopilot.mjs retry <id>          clear a hold/pause and run again (finished steps are not redone)
  *   node scripts/pipeline/autopilot.mjs redo <id> group1|group2     set that group's fragments aside and have it rewritten
  *   node scripts/pipeline/autopilot.mjs ack <id>             record that you looked at the post-filing events (advance --ack-post-filing)
@@ -18,7 +20,8 @@
  * It never registers on its own, never runs git, and never writes src/data except through `approve`, which runs
  * the existing registration (advance.mjs --register → finalize.mjs) after the person has confirmed the sheet.
  * New registrations and the yearly update of registered companies are different lanes: this is the first; the
- * second is refresh-financials.mjs (detected daily by the GitHub Actions workflow, applied by a person).
+ * second is refresh-financials.mjs for the figures (detected daily by the GitHub Actions workflow, proposed as a pull
+ * request) and `update` here for the explanation, which goes through the same review sheet and approval.
  *
  * See docs/auto-registration.md.
  */
@@ -28,12 +31,15 @@ import { join } from "node:path";
 import { promisify } from "node:util";
 import { cacheDir, scrubSecrets } from "../research/edinet.mjs";
 import { claudeAvailable, cleanEnv, createExecutor } from "./ai-executor.mjs";
-import { SETTLED, approvalProblems, buildReviewSheet, enqueue, hashOf, now, operatorList, resolveCandidates, tally } from "./autopilot-lib.mjs";
+import { SETTLED, approvalProblems, buildReviewSheet, enqueue, hashOf, newRecord, now, operatorList, resolveCandidates, tally } from "./autopilot-lib.mjs";
 import { PauseRun, processCompany } from "./autopilot-engine.mjs";
-import { loadState, release, reservations } from "./company-state.mjs";
+import { approvalFor } from "./approvers.mjs";
+import { loadState, release, reservations, setStage } from "./company-state.mjs";
+import { changedFields, layerOf } from "./ownership.mjs";
 import { mergeEntry } from "./merge-fragments.mjs";
 import { loadLedger, loadRegistry, policyFindings, writeRelatedCandidates } from "./policy-context.mjs";
 import { errorsOf } from "./prose-policy.mjs";
+import { inScope, updateScope } from "./update-scope.mjs";
 
 const execFileAsync = promisify(execFile);
 const root = process.cwd();
@@ -58,7 +64,7 @@ const flag = (/** @type {string} */ name, /** @type {string | null} */ fallback 
   return i !== -1 && args[i + 1] && !args[i + 1].startsWith("--") ? args[i + 1] : fallback;
 };
 const has = (/** @type {string} */ name) => args.includes(`--${name}`);
-const VALUE_FLAGS = new Set(["file", "limit", "ids", "executor", "model", "budget", "total-budget", "hash", "tail", "sector", "refresh-report"]);
+const VALUE_FLAGS = new Set(["file", "limit", "ids", "executor", "model", "budget", "total-budget", "hash", "tail", "sector", "refresh-report", "approver", "basis"]);
 const positional = args.filter((a, i) => !a.startsWith("--") && !(i > 0 && args[i - 1].startsWith("--") && VALUE_FLAGS.has(args[i - 1].slice(2))));
 
 // --------------------------------------------------------------------------------------------- storage
@@ -113,6 +119,10 @@ const registryMaps = () => {
 };
 
 const fragmentPath = (/** @type {string} */ id, /** @type {string} */ stage) => join(root, "pipeline/results", `${id}-${stage}.json`);
+const updating = (/** @type {string} */ id) => loadRecord(id)?.mode === "update";
+/** During an update only the rewritten part's findings count (update-scope.mjs); otherwise all of them. */
+const scopeOf = (/** @type {string} */ id) => (updating(id) ? updateScope(loadState(id).identity) : null);
+const scoped = (/** @type {string} */ id, /** @type {import("./prose-policy.mjs").Finding[]} */ findings) => findings.filter((f) => inScope(f.path, scopeOf(id)));
 const GROUP_FILES = { group1: ["businessStructure", "history"], group2: ["businessModel", "industry", "relatedCompanies", "terms"] };
 
 /** @type {import("./autopilot-engine.mjs").Deps} */
@@ -127,7 +137,10 @@ const deps = {
   executor: /** @type {any} */ (null),
   identity: (id) => {
     const e = loadRegistry(root).get(id);
-    return { name: e?.name ?? id, code: e?.code ?? "" };
+    const rec = loadRecord(id);
+    // The agent is asked only for the stages still to write: a stage rewritten earlier in this update is done.
+    const update = rec?.mode === "update" ? { ...rec.update, stages: rec.update.stages.filter((/** @type {string} */ s) => !existsSync(fragmentPath(id, s))) } : null;
+    return { name: e?.name ?? id, code: e?.code ?? "", update };
   },
   facts: (id) => {
     const { byId, byCode } = registryMaps();
@@ -138,11 +151,11 @@ const deps = {
     const rec = loadRecord(id);
     const owner = reservations().find((r) => r.id === id)?.owner ?? null;
     void byCode;
-    return { entry, sameCode, ledger: entry ? (loadLedger(root).get(entry.code) ?? null) : null, registrationNote: parked, reservedBy: rec && rec.step !== "queued" ? null : owner };
+    return { entry, sameCode, ledger: entry ? (loadLedger(root).get(entry.code) ?? null) : null, registrationNote: parked, reservedBy: rec && rec.step !== "queued" ? null : owner, update: rec?.mode === "update" };
   },
   advance: async (id) => {
     writeRelatedCandidates(id, { root }); // the mechanical list of names the agent may link; free, and rebuilt if the pack changed
-    return (await runNode(nodeArgs(["scripts/pipeline/advance.mjs", id]))).out;
+    return (await runNode(nodeArgs(["scripts/pipeline/advance.mjs", id, ...(updating(id) ? ["--update"] : [])]))).out;
   },
   order: (id, group, kind, prompt) => {
     const p = join(sub("orders"), `${id}-${group}-${kind}.md`);
@@ -162,17 +175,22 @@ const deps = {
     });
     if (unreadable.length > 0) return { missing: true, figuresOk: false, figuresOutput: "", findings: [] };
     const merged = mergeEntry(id);
-    return { missing: false, ...figures(id), findings: policyFindings(merged.entry, { root }) };
+    return { missing: false, ...figures(id), findings: scoped(id, policyFindings(merged.entry, { root })) };
   },
   sheet: async (id, record) => {
     const stagedPath = join(root, "pipeline/staging", `${id}.json`);
     const text = readFileSync(stagedPath, "utf8");
     const entry = JSON.parse(text);
     const merged = mergeEntry(id);
-    const findings = policyFindings(entry, { root });
+    const all = policyFindings(entry, { root });
+    const findings = scoped(id, all);
     const state = loadState(id);
     const registry = loadRegistry(root);
     const hash = hashOf(text);
+    const published = join(root, "src/data/companies", `${id}.json`);
+    const previous = updating(id) && existsSync(published) ? JSON.parse(readFileSync(published, "utf8")) : null;
+    const scope = scopeOf(id);
+    const kept = scope ? { count: errorsOf(all).length - errorsOf(findings).length, stages: scope.kept } : null;
     const built = buildReviewSheet({
       entry,
       findings,
@@ -182,6 +200,8 @@ const deps = {
       ledger: loadLedger(root),
       record,
       hash,
+      previous,
+      kept,
     });
     const reviewDir = sub("review");
     const path = join(reviewDir, `${id}.md`);
@@ -249,6 +269,8 @@ async function main() {
     }
     case "approve":
       return await approve();
+    case "update":
+      return await startUpdate();
     case "retry":
     case "redo":
     case "discard":
@@ -270,7 +292,7 @@ async function main() {
 }
 
 function usage() {
-  console.error("usage: node scripts/pipeline/autopilot.mjs <enqueue|suggest|run|status|review|approve|retry|redo|ack|discard|check|history> …（冒頭のコメントを参照）");
+  console.error("usage: node scripts/pipeline/autopilot.mjs <enqueue|suggest|run|status|review|approve|update|retry|redo|ack|discard|check|history> …（冒頭のコメントを参照）");
   process.exit(1);
 }
 
@@ -314,6 +336,8 @@ async function run() {
   if (todo.length === 0) return console.log("処理する会社がありません（キューが空、またはすべて確認待ち・保留・登録済み）。status で一覧を見る");
   console.log(`実行: ${Math.min(todo.length, limit)} 社 / キュー ${todo.length} 社（executor: ${mode}${mode === "claude-cli" ? `、1回あたり上限 $${flag("budget", "3")}、合計上限 $${totalBudget}` : "：AI の作業は注文書に書き出す"}）`);
 
+  // The total budget is for THIS run: what earlier runs spent does not count against it.
+  const spentBefore = allRecords().reduce((s, r) => s + (r.cost?.usd ?? 0), 0);
   let spent = 0;
   let n = 0;
   for (const id of todo) {
@@ -324,7 +348,7 @@ async function run() {
       const rec = await processCompany(id, deps);
       spent += 0;
       console.log(`  ${id}: ${rec.status}${rec.holds.length ? `（${rec.holds.map((/** @type {any} */ h) => h.kind).join(", ")}）` : ""} ${Math.round((Date.now() - t0) / 1000)}秒 モデル${rec.cost.calls}回 $${rec.cost.usd.toFixed(2)}`);
-      spent = allRecords().reduce((s, r) => s + (r.cost?.usd ?? 0), 0);
+      spent = allRecords().reduce((s, r) => s + (r.cost?.usd ?? 0), 0) - spentBefore;
       if (mode === "claude-cli" && spent >= totalBudget) return console.log(`合計の上限 $${totalBudget} に達したので止めます（status で確認）`);
     } catch (/** @type {any} */ e) {
       if (e instanceof PauseRun) {
@@ -385,15 +409,22 @@ async function approve() {
     confirmed: has("confirm"),
     typedHash: flag("hash"),
     stagedHash: hash,
-    policyErrors: stagedText === null ? 0 : errorsOf(policyFindings(JSON.parse(stagedText), { root })).length,
+    policyErrors: stagedText === null ? 0 : errorsOf(scoped(id, policyFindings(JSON.parse(stagedText), { root }))).length,
     entryTier: existsSync(existing) ? (JSON.parse(readFileSync(existing, "utf8")).status?.state ?? "published") : null,
+    update: rec?.mode === "update",
   });
   if (problems.length > 0) {
     if (rec?.status === "registered") return console.log(`${id}: すでに登録済みです（${rec.approval?.at}）。何もしません`);
     return fatal(`${id}: 承認できません\n${problems.map((p) => `  - ${p}`).join("\n")}`);
   }
-  event(id, "approve", { hash });
-  const r = await runNode(nodeArgs(["scripts/pipeline/advance.mjs", id, "--register"]));
+  const before = existsSync(existing) ? JSON.parse(readFileSync(existing, "utf8")) : {};
+  const fields = changedFields(before, JSON.parse(/** @type {string} */ (stagedText))).filter((f) => layerOf(f) === "detail");
+  const approval = approvalFor({ id: flag("approver"), root, at: now(), reviewHash: hash, fields, basis: flag("basis") });
+  const approver = approval.approver;
+  const proxy = approver.kind === "agent";
+  if (proxy) console.log(`AI エージェントの実行として記録します（${approver.name}、${approval.onBehalfOf?.name} の権限で。正式な承認ではない）`);
+  event(id, "approve", { hash, approver: approver.id, ...(proxy ? { onBehalfOf: approval.onBehalfOf?.id } : {}) });
+  const r = await runNode(nodeArgs(["scripts/pipeline/advance.mjs", id, "--register", ...(rec.mode === "update" ? ["--update"] : [])]), { ...process.env, REGISTRATION_APPROVAL: JSON.stringify(approval) });
   console.log(r.out.trim());
   if (!/^registered\s*$/m.test(r.out)) {
     rec.holds.push({ kind: "register-failed", reason: r.out.replace(/\s+/g, " ").slice(-300) });
@@ -402,11 +433,52 @@ async function approve() {
     event(id, "held", { kind: "register-failed" });
     return fatal(`${id}: 登録に失敗しました。ファイルは元に戻っています（finalize の仕様）。status を見てください`);
   }
-  Object.assign(rec, { status: "registered", step: "registered", approval: { at: now(), hash }, updatedAt: now() });
+  Object.assign(rec, { status: "registered", step: "registered", approval: { at: approval.approvedAt, hash, approver: approver.id, ...(proxy ? { proxy: true } : {}) }, updatedAt: now() });
   saveRecord(rec);
   release(id);
   event(id, "registered", { hash });
   console.log(`${id}: 登録しました。コミットは人が行います。内容の確認: npm run content:diff`);
+}
+
+// ---------------------------------------------------------------------------------------- update
+/**
+ * A registered company whose newest 有報 is newer than its explanation: start-update.mjs compares the two filings and,
+ * when something changed, sets the company up so that only those stages are rewritten. From there it is an ordinary
+ * queue item (run → review sheet with before/after → approve). Nothing is rewritten when nothing changed enough.
+ */
+async function startUpdate() {
+  const id = positional[0];
+  if (!id) return usage();
+  const rec = loadRecord(id);
+  // An update that is waiting for a person (or held) may be re-planned; one that is being worked on may not.
+  const replanning = rec?.mode === "update" && ["ready", "ready-with-flags", "held", "queued"].includes(rec.status);
+  if (rec && !replanning && !["registered", "discarded"].includes(rec.status)) return fatal(`${id}: autopilot の処理中です（${rec.status}）。終わってから update する`);
+  const r = await runNode(nodeArgs(["scripts/pipeline/start-update.mjs", id, ...(has("plan") ? [] : ["--apply"])]));
+  const last = r.out.trim().split("\n").filter((l) => l.startsWith("{")).pop();
+  const plan = last ? JSON.parse(last) : null;
+  console.log(r.out.split("\n").filter((l) => !l.startsWith("{")).join("\n").trim());
+  if (r.code !== 0 || !plan) return fatal(`${id}: 更新の準備に失敗しました\n${r.out.slice(-600)}`);
+  if (plan.kind === "replanned") {
+    Object.assign(rec, { status: "queued", step: "prechecked", holds: [], review: null, awaiting: null, pause: null, update: { ...rec.update, stages: plan.rewrite, retainedStages: plan.retainedStages }, updatedAt: now() });
+    saveRecord(rec);
+    event(id, "update-replanned", { added: plan.added, stages: plan.rewrite });
+    return console.log(`${id}: 更新の範囲を広げました。追加: ${plan.added.join("・") || "なし"}（書き直す: ${plan.rewrite.join("・")}、公開中のまま: ${plan.retainedStages.join("・")}）。run で続ける`);
+  }
+  if (replanning) return fatal(`${id}: 更新の途中ですが、新しい計画を立てられませんでした（${plan.kind}${plan.detail ? `: ${plan.detail}` : ""}）`);
+  if (plan.kind !== "started") {
+    event(id, "update-skipped", { kind: plan.kind });
+    return console.log(`${id}: ${plan.kind}${plan.detail ? ` — ${plan.detail}` : ""}${plan.kind === "planned" ? "（--plan のため何も変えていない）" : ""}`);
+  }
+  // The registration's record is kept beside the runs; this update is a new run of the same company.
+  if (rec) renameSync(runPath(id), join(sub("archive"), `${id}-run-${Date.now()}.json`));
+  saveRecord({ ...newRecord(id), mode: "update", update: { stages: plan.rewrite, oldDoc: plan.oldDoc, newDoc: plan.newDoc, retainedStages: plan.retainedStages } });
+  const queue = loadQueue();
+  if (!queue.items.some((/** @type {any} */ i) => i.id === id)) {
+    enqueue(queue, [id], now(), "update");
+    writeJson(queuePath, queue);
+  }
+  event(id, "update-started", { oldDoc: plan.oldDoc, newDoc: plan.newDoc, stages: plan.rewrite });
+  console.log(`${id}: ${plan.oldDoc} → ${plan.newDoc}。書き直す工程: ${plan.rewrite.join("・")}（公開中のまま: ${plan.retainedStages.join("・")}）。run で続ける`);
 }
 
 // ---------------------------------------------------------------------------------------- retry / redo / discard / ack
@@ -435,7 +507,13 @@ async function fixups() {
     if (group !== "group1" && group !== "group2") return fatal("redo <id> group1|group2");
     const archive = join(sub("archive"), `${id}-${group}-${Date.now()}`);
     mkdirSync(archive, { recursive: true });
-    for (const s of GROUP_FILES[group]) if (existsSync(fragmentPath(id, s))) renameSync(fragmentPath(id, s), join(archive, `${id}-${s}.json`));
+    // In an update only the rewritten stages are redone; the kept ones are the published text and stay.
+    const stages = rec.mode === "update" ? GROUP_FILES[group].filter((s) => rec.update.stages.includes(s)) : GROUP_FILES[group];
+    for (const s of stages) {
+      if (existsSync(fragmentPath(id, s))) renameSync(fragmentPath(id, s), join(archive, `${id}-${s}.json`));
+      // The state would still say "completed" and advance would go straight to finalize with the fragment missing.
+      setStage(id, s, "pending", `redo: 成果物を ${archive} に退避`);
+    }
     rec.attempts[group === "group1" ? "agent1" : "agent2"] = 0;
     rec.attempts[group === "group1" ? "repair1" : "repair2"] = 0;
     event(id, "redo", { group, archive });

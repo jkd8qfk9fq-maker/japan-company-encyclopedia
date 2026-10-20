@@ -47,6 +47,7 @@ import { dirname, join } from "node:path";
 import { financialsDifferences } from "../research/amendments.mjs";
 import { cacheDir, ensureIndexCache, indexDir, jstToday, scrubSecrets } from "../research/edinet.mjs";
 import { loadState, saveState } from "./company-state.mjs";
+import { assertMachineWrite } from "./ownership.mjs";
 import { loadEntries } from "./jobs.mjs";
 import { readPack, rebuildPack } from "./pack.mjs";
 
@@ -152,6 +153,8 @@ export function planFinancialsRefresh({ entry, draft, pack, today }) {
         url,
         ...(draft._提出日 ? { publishedAt: draft._提出日 } : {}),
         accessedAt: today,
+        ...(/^S[0-9A-Z]{7}$/.test(draft._docID ?? "") ? { docId: draft._docID } : {}),
+        ...(added.length > 0 ? { asOf: added.map((/** @type {any} */ r) => r.periodEnd).sort().at(-1) } : {}),
       };
   return { kind: "update", financials, source, added, dropped };
 }
@@ -377,6 +380,8 @@ export function refreshOne(id, { apply, newest, today, retry = false, rehearse =
     sources: plan.source ? [...entry.sources, plan.source] : entry.sources,
     updatedAt: today,
   };
+  // The explanation is never written by this script (docs/continuous-pipeline-design.md §4.1).
+  assertMachineWrite(entry, next, "refresh-financials");
 
   // Gates, on a staged copy. A result that fails them is a FAILURE, not a hold: the extraction or the data
   // is wrong somewhere and a person must look.
