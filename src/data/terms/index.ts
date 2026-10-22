@@ -15,6 +15,16 @@ import semiconductorManufacturingEquipment from "./semiconductor-manufacturing-e
 import sogoShosha from "./sogo-shosha.json";
 import subsidiary from "./subsidiary.json";
 import wafer from "./wafer.json";
+import holdingCompany from "./holding-company.json";
+import affiliate from "./affiliate.json";
+import otherAffiliatedCompany from "./other-affiliated-company.json";
+import equityMethod from "./equity-method.json";
+import ordinaryProfit from "./ordinary-profit.json";
+import netIncomeAttributableToOwnersOfParent from "./net-income-attributable-to-owners-of-parent.json";
+import absorptionMerger from "./absorption-merger.json";
+import shareExchange from "./share-exchange.json";
+import tenderOffer from "./tender-offer.json";
+import goodwill from "./goodwill.json";
 
 /**
  * Grouped by what the reader is reading: words for any company page and its
@@ -28,6 +38,16 @@ export const terms: Term[] = Object.entries({
   "subsidiary": subsidiary,
   "consolidated-subsidiary": consolidatedSubsidiary,
   "segment": segment,
+  "holding-company": holdingCompany,
+  "affiliate": affiliate,
+  "other-affiliated-company": otherAffiliatedCompany,
+  "equity-method": equityMethod,
+  "ordinary-profit": ordinaryProfit,
+  "net-income-attributable-to-owners-of-parent": netIncomeAttributableToOwnersOfParent,
+  "absorption-merger": absorptionMerger,
+  "share-exchange": shareExchange,
+  "tender-offer": tenderOffer,
+  "goodwill": goodwill,
   "ifrs": ifrs,
   "discontinued-operations": discontinuedOperations,
   "sogo-shosha": sogoShosha,
