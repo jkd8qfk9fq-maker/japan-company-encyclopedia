@@ -92,10 +92,12 @@ export function parseCsvLine(/** @type {string} */ line) {
 }
 
 const COLUMNS = { edinetCode: "ＥＤＩＮＥＴコード", kind: "提出者種別", listing: "上場区分", closing: "決算日", name: "提出者名", industry: "提出者業種", secCode: "証券コード" };
+/** Read when present: the corporate number (法人番号) ties a filer to the national register, across code changes. */
+const OPTIONAL_COLUMNS = { corporateNumber: "提出者法人番号" };
 
 /**
  * @param {string} text the decoded CSV
- * @returns {{ asOf: string | null, declared: number, rows: { edinetCode: string, kind: string, listing: string, closing: string, name: string, industry: string, secCode: string }[] }}
+ * @returns {{ asOf: string | null, declared: number, rows: { edinetCode: string, kind: string, listing: string, closing: string, name: string, industry: string, secCode: string, corporateNumber: string }[] }}
  */
 export function parseCodeList(text) {
   const lines = text.replace(/^﻿/, "").split(/\r?\n/).filter((l) => l !== "");
@@ -106,9 +108,10 @@ export function parseCodeList(text) {
   const at = Object.fromEntries(Object.entries(COLUMNS).map(([key, label]) => [key, header.indexOf(label)]));
   const missing = Object.entries(at).filter(([, i]) => i < 0).map(([k]) => COLUMNS[/** @type {keyof typeof COLUMNS} */ (k)]);
   if (missing.length > 0) throw new Error(`コードリストの列が変わった（無い列: ${missing.join("、")}）`);
+  const corporateAt = header.indexOf(OPTIONAL_COLUMNS.corporateNumber);
   const rows = lines.slice(2).map((line) => {
     const c = parseCsvLine(line);
-    return { edinetCode: c[at.edinetCode], kind: c[at.kind], listing: c[at.listing], closing: c[at.closing], name: c[at.name], industry: c[at.industry], secCode: c[at.secCode] };
+    return { edinetCode: c[at.edinetCode], kind: c[at.kind], listing: c[at.listing], closing: c[at.closing], name: c[at.name], industry: c[at.industry], secCode: c[at.secCode], corporateNumber: corporateAt < 0 ? "" : (c[corporateAt] ?? "").trim() };
   });
   return {
     asOf: date ? `${date[1]}-${date[2].padStart(2, "0")}-${date[3].padStart(2, "0")}` : null,
@@ -119,7 +122,12 @@ export function parseCodeList(text) {
 
 // ----------------------------------------------------------------------------------- the ledger
 
-/** @typedef {{ code: string, edinetCode: string, name: string, industry: string, listing: string, closing: string }} LedgerRow */
+/**
+ * One listed (or formerly listed) company in the master. The EDINET code is the filer's identity and does not change
+ * when a securities code or a name does; the corporate number links it to the national register; `entryId` is the
+ * encyclopedia entry for it, when there is one (registration and publication stay separate from the master).
+ * @typedef {{ code: string, edinetCode: string, name: string, industry: string, listing: string, closing: string, corporateNumber?: string, entryId?: string }} LedgerRow
+ */
 
 /**
  * One row per securities code (4 characters; a code can end in a letter, "285A"). When a code has two filers — an old
@@ -132,14 +140,14 @@ export function toLedger(rows) {
   const byCode = new Map();
   for (const r of rows) {
     if (!r.secCode || r.secCode.length < 4) continue;
-    const row = { code: r.secCode.slice(0, 4), edinetCode: r.edinetCode, name: r.name, industry: r.industry, listing: r.listing, closing: r.closing };
+    const row = { code: r.secCode.slice(0, 4), edinetCode: r.edinetCode, name: r.name, industry: r.industry, listing: r.listing, closing: r.closing, corporateNumber: r.corporateNumber ?? "", entryId: "" };
     const known = byCode.get(row.code);
     if (!known || (known.listing !== "上場" && row.listing === "上場")) byCode.set(row.code, row);
   }
   return [...byCode.values()].sort((a, b) => a.code.localeCompare(b.code));
 }
 
-const HEADER = "# code\tedinetCode\tname\tindustry\tlisting\tclosing";
+const HEADER = "# code\tedinetCode\tname\tindustry\tlisting\tclosing\tcorporateNumber\tentryId";
 
 /** The ledger file's text. `asOf` is the code list's own date, so the same list always gives the same file. */
 export function formatLedger(/** @type {LedgerRow[]} */ rows, /** @type {string | null} */ asOf) {
@@ -147,7 +155,7 @@ export function formatLedger(/** @type {LedgerRow[]} */ rows, /** @type {string 
     `# EDINET コードリスト（金融庁。公共データ利用規約 第1.0版）を、この百科事典が整理したもの。リスト作成日 ${asOf ?? "不明"}`,
     "# scripts/pipeline/sync-listing.mjs が作る。手で直さない（次の同期で置き換わる）。",
     HEADER,
-    ...rows.map((r) => [r.code, r.edinetCode, r.name, r.industry, r.listing, r.closing].join("\t")),
+    ...rows.map((r) => [r.code, r.edinetCode, r.name, r.industry, r.listing, r.closing, r.corporateNumber ?? "", r.entryId ?? ""].join("\t")),
     "",
   ].join("\n");
 }
@@ -156,8 +164,9 @@ export function formatLedger(/** @type {LedgerRow[]} */ rows, /** @type {string 
 export function parseLedger(/** @type {string} */ text) {
   const asOf = /リスト作成日 (\d{4}-\d{2}-\d{2})/.exec(text)?.[1] ?? null;
   const rows = text.split(/\r?\n/).filter((l) => l && !l.startsWith("#")).map((l) => {
-    const [code, edinetCode, name, industry, listing, closing] = l.split("\t");
-    return { code, edinetCode, name, industry, listing, closing };
+    // A ledger written before the master columns existed has six; the rest read as empty.
+    const [code, edinetCode, name, industry, listing, closing, corporateNumber = "", entryId = ""] = l.split("\t");
+    return { code, edinetCode, name, industry, listing, closing, corporateNumber, entryId };
   });
   return { asOf, rows };
 }
@@ -176,7 +185,63 @@ export function diffLedgers(previous, next) {
     listing: next.filter((r) => before.has(r.code) && before.get(r.code)?.listing !== r.listing).map((r) => ({ code: r.code, name: r.name, from: before.get(r.code)?.listing, to: r.listing })),
     industry: next.filter((r) => before.has(r.code) && before.get(r.code)?.industry !== r.industry).map((r) => ({ code: r.code, name: r.name, from: before.get(r.code)?.industry, to: r.industry })),
     name: next.filter((r) => before.has(r.code) && before.get(r.code)?.name !== r.name).map((r) => ({ code: r.code, from: before.get(r.code)?.name, to: r.name })),
+    // The same filer (EDINET code) under another securities code: a code change, not a delisting plus a new listing.
+    code: next
+      .filter((r) => r.edinetCode && !before.has(r.code))
+      .flatMap((r) => {
+        const old = previous.find((p) => p.edinetCode === r.edinetCode && p.code !== r.code);
+        return old ? [{ edinetCode: r.edinetCode, name: r.name, from: old.code, to: r.code }] : [];
+      }),
   };
+}
+
+/**
+ * The master's history: one line per change, keyed by the EDINET code, so a company can be followed through name,
+ * listing, industry and code changes. Pure; the caller appends the lines. Nothing is recorded for the first sync.
+ * @param {ReturnType<typeof diffLedgers>} changes
+ * @param {LedgerRow[]} previous
+ * @param {LedgerRow[]} next
+ * @param {string} asOf the new list's date
+ * @returns {string[]} TSV lines: asOf, edinetCode, code, kind, from, to
+ */
+export function historyLines(changes, previous, next, asOf) {
+  const edinetOf = (/** @type {string} */ code) => next.find((r) => r.code === code)?.edinetCode ?? previous.find((r) => r.code === code)?.edinetCode ?? "";
+  const line = (/** @type {string} */ code, /** @type {string} */ kind, /** @type {unknown} */ from, /** @type {unknown} */ to) => [asOf, edinetOf(code), code, kind, from ?? "", to ?? ""].join("\t");
+  const moved = new Set(changes.code.flatMap((c) => [c.from, c.to]));
+  return [
+    ...changes.code.map((c) => [asOf, c.edinetCode, c.to, "code", c.from, c.to].join("\t")),
+    ...changes.added.filter((r) => !moved.has(r.code)).map((r) => line(r.code, "added", "", r.listing)),
+    ...changes.removed.filter((r) => !moved.has(r.code)).map((r) => line(r.code, "removed", r.listing, "")),
+    ...changes.listing.map((c) => line(c.code, "listing", c.from, c.to)),
+    ...changes.name.map((c) => line(c.code, "name", c.from, c.to)),
+    ...changes.industry.map((c) => line(c.code, "industry", c.from, c.to)),
+  ];
+}
+
+export const HISTORY_HEADER = "# asOf\tedinetCode\tcode\tkind\tfrom\tto";
+
+/**
+ * Link each master row to its encyclopedia entry, and find what would make the master ambiguous: two entries for one
+ * filer (the same EDINET code or the same corporate number), or one corporate number under two listed filers. Pure.
+ * @param {LedgerRow[]} ledger
+ * @param {{ id: string, code: string }[]} entries
+ */
+export function linkEntries(ledger, entries) {
+  const byCode = new Map(entries.map((e) => [e.code, e.id]));
+  const linked = ledger.map((r) => ({ ...r, entryId: byCode.get(r.code) ?? "" }));
+  /** @type {{ kind: string, key: string, ids: string[] }[]} */
+  const duplicates = [];
+  const group = (/** @type {(r: LedgerRow) => string} */ key, /** @type {string} */ kind, /** @type {LedgerRow[]} */ rows, /** @type {(r: LedgerRow) => string} */ id) => {
+    /** @type {Map<string, string[]>} */
+    const m = new Map();
+    for (const r of rows) if (key(r)) m.set(key(r), [...(m.get(key(r)) ?? []), id(r)]);
+    for (const [k, ids] of m) if (ids.length > 1) duplicates.push({ kind, key: k, ids });
+  };
+  const withEntry = linked.filter((r) => r.entryId);
+  group((r) => r.edinetCode, "entries-share-edinet-code", withEntry, (r) => r.entryId);
+  group((r) => r.corporateNumber, "entries-share-corporate-number", withEntry, (r) => r.entryId);
+  group((r) => r.corporateNumber, "listed-filers-share-corporate-number", linked.filter((r) => r.listing === "上場"), (r) => `${r.code}:${r.edinetCode}`);
+  return { ledger: linked, duplicates, linkedEntries: withEntry.length, withCorporateNumber: linked.filter((r) => r.corporateNumber).length };
 }
 
 /**
@@ -254,7 +319,7 @@ export function reconcile(ledger, entries, known) {
 
 const WHY = { "intake-failed": "取り込みに失敗している", parked: "工程の途中で保留されている", "in-universe": "母集団にはあるが記録がない", "new-listing": "母集団にない（新規上場の可能性。discover.mjs で拾えるか確認）" };
 
-/** @param {{ asOf: string | null, result: ReturnType<typeof reconcile>, changes: ReturnType<typeof diffLedgers> | null, affected: { id: string, code: string, tier: string, what: string }[], problems: string[] }} r */
+/** @param {{ asOf: string | null, result: ReturnType<typeof reconcile>, changes: ReturnType<typeof diffLedgers> | null, affected: { id: string, code: string, tier: string, what: string }[], problems: string[], master?: { rows: number, linkedEntries: number, withCorporateNumber: number, duplicates: { kind: string, key: string, ids: string[] }[] } }} r */
 export function renderSummary(r) {
   const cell = (/** @type {unknown} */ v) => String(v ?? "").replace(/\|/g, "\\|");
   const published = r.result.registeredNotListed.filter((e) => e.tier !== "figures-only");
@@ -265,9 +330,13 @@ export function renderSummary(r) {
     "",
   ];
   if (r.problems.length > 0) lines.push(`**書き込み不可: ${r.problems.map(cell).join(" ／ ")}**`, "");
+  if (r.master) {
+    lines.push(`企業マスタ: ${r.master.rows} 社（法人番号あり ${r.master.withCorporateNumber}、エントリーと対応 ${r.master.linkedEntries}） ／ 重複の疑い ${r.master.duplicates.length} 件`, "");
+    if (r.master.duplicates.length > 0) lines.push("### 重複の疑い（人が確認する）", "", ...r.master.duplicates.map((d) => `- ${d.kind}: ${d.key} → ${d.ids.join(", ")}`), "");
+  }
   if (published.length > 0) lines.push("### 公開済み・要確認のエントリーで、上場と確認できないもの（人が確認する）", "", ...published.map((e) => `- ${e.code} ${e.name}（${e.id}、${e.tier}） — リスト上: ${e.ledger}`), "");
   if (r.changes) {
-    lines.push("### 前回の同期からの変化", "", `追加 ${r.changes.added.length} ／ 消えた ${r.changes.removed.length} ／ 上場区分の変更 ${r.changes.listing.length} ／ 業種の変更 ${r.changes.industry.length} ／ 社名の変更 ${r.changes.name.length}`, "");
+    lines.push("### 前回の同期からの変化", "", `追加 ${r.changes.added.length} ／ 消えた ${r.changes.removed.length} ／ 上場区分の変更 ${r.changes.listing.length} ／ 業種の変更 ${r.changes.industry.length} ／ 社名の変更 ${r.changes.name.length} ／ 証券コードの変更 ${r.changes.code.length}`, "");
     if (r.affected.length > 0) lines.push("影響を受ける登録済みエントリー:", "", ...r.affected.map((a) => `- ${a.code}（${a.id}、${a.tier}）: ${a.what}`), "");
   }
   const why = Object.entries(Object.groupBy(r.result.listedWithoutEntry, (c) => c.why));
@@ -340,7 +409,8 @@ if (process.argv[1]?.endsWith("sync-listing.mjs")) {
 
     // 2. parse, compare
     const parsed = parseCodeList(readCodeListFile(/** @type {string} */ (file)));
-    const ledger = toLedger(parsed.rows);
+    const master = linkEntries(toLedger(parsed.rows), readEntries(root));
+    const ledger = master.ledger;
     const previous = existsSync(ledgerPath) ? parseLedger(readFileSync(ledgerPath, "utf8")) : null;
     const entries = readEntries(root);
     const result = reconcile(ledger, entries, readKnowledge(root));
@@ -356,9 +426,9 @@ if (process.argv[1]?.endsWith("sync-listing.mjs")) {
     const problems = ledgerProblems(parsed, ledger, previous?.rows ?? null, flag("accept-large-change"));
 
     // 3. say what was found, then (only if asked, and only if sane) write the ledger
-    const summary = renderSummary({ asOf: parsed.asOf, result, changes, affected, problems });
+    const summary = renderSummary({ asOf: parsed.asOf, result, changes, affected, problems, master: { rows: ledger.length, linkedEntries: master.linkedEntries, withCorporateNumber: master.withCorporateNumber, duplicates: master.duplicates } });
     console.log(summary);
-    const report = { asOf: parsed.asOf, counts: { listed: result.listedCount, registeredNotListed: result.registeredNotListed.length, listedWithoutEntry: result.listedWithoutEntry.length }, problems, ...result, changes, affected };
+    const report = { asOf: parsed.asOf, counts: { listed: result.listedCount, registeredNotListed: result.registeredNotListed.length, listedWithoutEntry: result.listedWithoutEntry.length, linkedEntries: master.linkedEntries, withCorporateNumber: master.withCorporateNumber, duplicates: master.duplicates.length }, problems, duplicates: master.duplicates, ...result, changes, affected };
     for (const [path, body] of [[value("report"), `${JSON.stringify(report, null, 2)}\n`], [value("summary"), summary]]) {
       if (!path) continue;
       mkdirSync(dirname(path), { recursive: true });
@@ -370,6 +440,14 @@ if (process.argv[1]?.endsWith("sync-listing.mjs")) {
       writeFileSync(`${ledgerPath}.tmp`, formatLedger(ledger, parsed.asOf));
       renameSync(`${ledgerPath}.tmp`, ledgerPath);
       console.log(`台帳を書いた: pipeline/listing.tsv（${ledger.length} 行）。コミットは人が行うこと`);
+      // History: only when a different list replaces the last one (the same list twice records nothing).
+      if (changes && parsed.asOf && previous?.asOf !== parsed.asOf) {
+        const historyPath = join(root, "pipeline/listing-history.tsv");
+        const lines = historyLines(changes, previous?.rows ?? [], ledger, parsed.asOf);
+        const before = existsSync(historyPath) ? readFileSync(historyPath, "utf8") : `# EDINET コードリストの変化の記録（sync-listing.mjs が追記する。手で直さない）\n${HISTORY_HEADER}\n`;
+        writeFileSync(historyPath, `${before}${lines.map((l) => `${l}\n`).join("")}`);
+        console.log(`変化の記録: pipeline/listing-history.tsv に ${lines.length} 行`);
+      }
     } else console.log("台帳は書いていません（--write で pipeline/listing.tsv を書く）。エントリーと母集団は変更しません。");
   } catch (error) {
     fail(`FAIL: ${/** @type {Error} */ (error).message}`);

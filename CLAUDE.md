@@ -31,7 +31,11 @@ variables, and never reference them in the application. Decision recorded in
    pages. News articles only for events a company does not document itself. **Never Wikipedia**
    or aggregator sites as a source for a fact.
 4. **Not a brokerage.** No stock price, PER, PBR, ROE, ROA, dividend yield, technical indicators,
-   price targets or recommendations. Revenue and net income, in context, are the only financials.
+   price targets or recommendations, and no ratio computed from the figures. The financial section shows the
+   filing's own five-year summary as printed — revenue, the profit line the filing prints between revenue and net
+   income (with its label), net income, total assets, net assets, employees (operator's request, 2026-09-21,
+   commit "Add 利益・総資産・純資産・従業員数 to every entry"). **Prose** cites revenue and net income only
+   (`docs/agent-brief.md`, checked by `scripts/pipeline/prose-policy.mjs`).
 5. **Users never edit content.** They can report errors. Corrections go through admin and leave a
    `Revision`.
 6. **kebab-case for every external name**: file names, folder names, route segments, data ids,

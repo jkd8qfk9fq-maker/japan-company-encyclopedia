@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { approvalLabel, effectiveApproval } from "@/lib/content/approvers";
 import { describeTarget, TARGET_TYPE_LABEL } from "@/lib/content/target-names";
 import { revisionRepository } from "@/lib/repositories";
 
@@ -25,6 +26,11 @@ export default async function AdminRevision({ params }: PageProps<"/admin/revisi
   const revision = await revisionRepository.get((await params)["revision-id"]);
   if (!revision) notFound();
   const target = await describeTarget(revision.targetType, revision.targetId);
+  // An approval is read with any later correction of its record (corrects): the history is appended, never edited.
+  const all = await revisionRepository.list();
+  const approval = effectiveApproval(revision, all);
+  const label = approvalLabel(approval);
+  const corrections = all.filter((r) => r.corrects === revision.id);
 
   return (
     <article>
@@ -40,6 +46,22 @@ export default async function AdminRevision({ params }: PageProps<"/admin/revisi
         <dd className="figures">{revision.changedAt}</dd>
         <dt className="text-muted-foreground">理由・根拠</dt>
         <dd className="whitespace-pre-wrap">{revision.reason ?? "記録なし"}</dd>
+        <dt className="text-muted-foreground">承認</dt>
+        <dd>
+          {label.text}
+          {approval ? <span className="figures text-muted-foreground">　{approval.approvedAt.slice(0, 16).replace("T", " ")}</span> : null}
+          {approval?.basis ? <p className="mt-1 text-muted-foreground">{approval.basis}</p> : null}
+          {corrections.map((c) => (
+            <p key={c.id} className="mt-1">
+              記録の訂正: <Link href={`/admin/revisions/${c.id}`} className="link-ink">{c.id}</Link>
+            </p>
+          ))}
+          {revision.corrects ? (
+            <p className="mt-1">
+              この改訂は <Link href={`/admin/revisions/${revision.corrects}`} className="link-ink">{revision.corrects}</Link> の記録を訂正する
+            </p>
+          ) : null}
+        </dd>
         <dt className="text-muted-foreground">改訂ID</dt>
         <dd className="font-mono text-xs">{revision.id}</dd>
       </dl>

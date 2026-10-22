@@ -6,6 +6,8 @@ import { describe, expect, it } from "vitest";
 import {
   diffLedgers,
   formatLedger,
+  historyLines,
+  linkEntries,
   ledgerProblems,
   parseCodeList,
   parseCsvLine,
@@ -172,5 +174,46 @@ describe("comparing the list with the project", () => {
     expect(text).toContain("消えた公開済み");
     expect(text).toContain("新規上場の可能性");
     expect(text).toContain("| 銀行業 | 4 | 0 | 0 | 0 | 4 |");
+  });
+});
+
+describe("the company master", () => {
+  const corp = (edinet: string, listing: string, name: string, sec: string, corporate: string) => `"${edinet}","内国法人・組合","${listing}","有","100","3月31日","${name}","EN","YOMI","東京都","化学","${sec}","${corporate}"`;
+  const rows = parseCodeList(csv([corp("E1", "上場", "甲", "10010", "1010001000001"), corp("E2", "上場", "乙", "20020", "1010001000002"), corp("E3", "上場", "丙", "30030", "1010001000002")])).rows;
+
+  it("reads the corporate number (法人番号) and keeps it in the ledger", () => {
+    expect(rows[0].corporateNumber).toBe("1010001000001");
+    const ledger = toLedger(rows);
+    expect(parseLedger(formatLedger(ledger, "2026-10-16")).rows[0]).toMatchObject({ code: "1001", corporateNumber: "1010001000001", entryId: "" });
+  });
+
+  it("still reads a ledger written before the master columns existed", () => {
+    const old = ["# リスト作成日 2026-10-16", "# code\tedinetCode\tname\tindustry\tlisting\tclosing", "1001\tE1\t甲\t化学\t上場\t3月31日", ""].join("\n");
+    expect(parseLedger(old).rows[0]).toEqual({ code: "1001", edinetCode: "E1", name: "甲", industry: "化学", listing: "上場", closing: "3月31日", corporateNumber: "", entryId: "" });
+  });
+
+  it("links entries by securities code and finds what would make the master ambiguous", () => {
+    const result = linkEntries(toLedger(rows), [{ id: "ko", code: "1001" }, { id: "otsu", code: "2002" }]);
+    expect(result.ledger.map((r) => r.entryId)).toEqual(["ko", "otsu", ""]);
+    expect(result.linkedEntries).toBe(2);
+    expect(result.withCorporateNumber).toBe(3);
+    // 乙 and 丙 are listed under one corporate number: a person looks before anything is merged.
+    expect(result.duplicates).toEqual([{ kind: "listed-filers-share-corporate-number", key: "1010001000002", ids: ["2002:E2", "3003:E3"] }]);
+  });
+
+  it("calls a new securities code for the same filer a code change, not a delisting and a new listing", () => {
+    const before = toLedger(rows);
+    const after = before.map((r) => (r.code === "1001" ? { ...r, code: "1009" } : r));
+    const d = diffLedgers(before, after);
+    expect(d.code).toEqual([{ edinetCode: "E1", name: "甲", from: "1001", to: "1009" }]);
+    const lines = historyLines(d, before, after, "2026-11-01");
+    expect(lines).toEqual(["2026-11-01\tE1\t1009\tcode\t1001\t1009"]);
+  });
+
+  it("records listing, name and industry changes by EDINET code", () => {
+    const before = toLedger(rows);
+    const after = before.map((r) => (r.code === "2002" ? { ...r, listing: "非上場", name: "乙ホールディングス" } : r));
+    const lines = historyLines(diffLedgers(before, after), before, after, "2026-11-01");
+    expect(lines).toEqual(["2026-11-01\tE2\t2002\tlisting\t上場\t非上場", "2026-11-01\tE2\t2002\tname\t乙\t乙ホールディングス"]);
   });
 });

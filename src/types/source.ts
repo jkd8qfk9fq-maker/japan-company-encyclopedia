@@ -17,6 +17,10 @@ export type Source = {
   publishedAt?: string;
   /** YYYY-MM-DD. When the document was actually read to verify the fact. */
   accessedAt: string;
+  /** EDINET's document id (S100XXXX) when the source is an EDINET filing — the document, not just its URL. */
+  docId?: string;
+  /** YYYY-MM-DD. The point in time the document describes (a 有報's fiscal year end), as opposed to when it was published. */
+  asOf?: string;
 };
 
 /**
@@ -26,4 +30,6 @@ export type Source = {
  */
 export type Sourced = {
   sourceIds: string[];
+  /** Where in the source the claim is: a section of the filing (「【事業の内容】」), a note, a table. */
+  locator?: string;
 };

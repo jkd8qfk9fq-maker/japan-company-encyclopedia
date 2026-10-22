@@ -27,7 +27,7 @@ import { fragmentFiles, loadState } from "./company-state.mjs";
 import { dedupeGaps, normalizeGap, parseLegacyTaxonomyNote } from "./taxonomy-gaps.mjs";
 
 /** Which top-level entry keys each agent stage is allowed to write. */
-const STAGE_FIELDS = {
+export const STAGE_FIELDS = {
   // This stage reads the cover page for the segment note anyway, so it also owns
   // the three identity fields that need judgement rather than transcription: the
   // common display name, the hero wordmark, and which market segment the filing
@@ -35,7 +35,7 @@ const STAGE_FIELDS = {
   businessStructure: ["businesses", "name", "shortNameEn", "listings"],
   // `financialNotes` is not an entry field: it is [{ fiscalYear, note }] applied to financials[].note
   // below, because the five-year table is mechanical and a stage cannot write into it directly.
-  businessModel: ["businessModel", "description", "financialNotes"],
+  businessModel: ["businessModel", "description", "financialNotes", "perspectives"],
   history: ["history"],
   industry: ["industries"],
   relatedCompanies: ["relatedCompanies"],

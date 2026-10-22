@@ -12,6 +12,7 @@ import { ConnectionMap, placeConnections } from "./connection-map";
 import { ConnectionNetwork } from "./connection-network";
 import { FinancialSection } from "./financial-section";
 import { HistoryTimeline } from "./history-timeline";
+import { PerspectivesSection } from "./perspectives-section";
 import { RelatedCompanies, type ResolvedRelation } from "./related-companies";
 import { SectionTabs, type SectionLink } from "@/components/navigation/section-tabs";
 import { SourceIndex } from "./source-index";
@@ -48,6 +49,7 @@ export async function CompanyView({ company }: { company: Company }) {
   const sections: SectionLink[] = [
     ...(company.businesses.length > 0 ? [{ id: "business", label: "事業" }] : []),
     ...(company.businessModel ? [{ id: "business-model", label: "ビジネスモデル" }] : []),
+    ...(company.perspectives ? [{ id: "perspectives", label: "戦略と強み" }] : []),
     ...(hasConnections ? [{ id: "connections", label: "つながり" }] : []),
     { id: "financials", label: "財務" },
     ...(company.history.length > 0 ? [{ id: "history", label: "歴史" }] : []),
@@ -84,6 +86,12 @@ export async function CompanyView({ company }: { company: Company }) {
           lead="会社から利益まで、事業の流れを順に並べています。有価証券報告書で確かめられた段階だけを描いています。"
         >
           <BusinessModel model={company.businessModel} sources={company.sources} />
+        </CompanySection>
+      )}
+
+      {company.perspectives && (
+        <CompanySection id="perspectives" eyebrow="Strategy" title="これからどうする？何が強み？">
+          <PerspectivesSection perspectives={company.perspectives} sources={company.sources} />
         </CompanySection>
       )}
 

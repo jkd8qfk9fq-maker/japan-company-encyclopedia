@@ -49,4 +49,39 @@ export type Revision = {
   before?: unknown;
   /** The changed top-level fields as they became. */
   after?: unknown;
+  /** Who approved the change, when, and what they read — for changes a person had to approve (an explanation). */
+  approval?: Approval;
+  /**
+   * The id of an earlier revision whose RECORD this one corrects — e.g. an approval recorded as a person's that an AI
+   * agent executed. `before`/`after` hold that record's fields as they were written and as they should read. The
+   * earlier file is never edited: the history only grows.
+   */
+  corrects?: string;
+};
+
+/**
+ * Who approved. Today every formal approval is the operator (YUGENQ); `kind` and `id` let individual approvers be
+ * recorded later without changing this shape. `agent` is an AI that executed an approval on someone's authority: that
+ * is recorded as what it is, never as a formal approval (a person did not read what was approved).
+ */
+export type Approver = {
+  /** kebab-case, e.g. "yugenq". */
+  id: string;
+  /** As shown, e.g. "YUGENQ". */
+  name: string;
+  kind: "operator" | "person" | "agent";
+};
+
+export type Approval = {
+  approver: Approver;
+  /** ISO 8601. */
+  approvedAt: string;
+  /** The hash of the review sheet the approver read (the registration autopilot's `approve`). */
+  reviewHash?: string;
+  /** The top-level fields the approval covered. */
+  fields?: string[];
+  /** Only for an agent: the person whose authority it acted on. */
+  onBehalfOf?: Approver;
+  /** Only for an agent: what that authority was (an instruction, a standing permission) and what was not done. */
+  basis?: string;
 };

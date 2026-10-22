@@ -4,6 +4,7 @@ import { join } from "node:path";
 import { renameWithRetry } from "@/lib/fs/atomic-rename";
 import type { Company } from "@/types/company";
 import type { Revision } from "@/types/revision";
+import { defaultApprover } from "./approvers";
 import type { Source } from "@/types/source";
 import type { Term } from "@/types/term";
 import { changedFields, removedSources, revisionSnapshots, type FieldChange } from "./diff";
@@ -203,6 +204,8 @@ export class ContentStore {
       reason,
       summary,
       ...revisionSnapshots(preview.changes),
+      // The editor is used by the operator; saving is the approval. Individual approvers will be chosen here later.
+      approval: { approver: defaultApprover(), approvedAt: now.toISOString(), fields: preview.changes.map((c) => c.field) },
     };
 
     const contentPath = this.path(input.kind, input.id);

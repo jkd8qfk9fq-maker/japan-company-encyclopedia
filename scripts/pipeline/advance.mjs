@@ -7,7 +7,10 @@
  * agent stage group is next, or — once both groups are done — gate and
  * (with --register) register the entry through the existing finalize.mjs.
  *
- *   node scripts/pipeline/advance.mjs <company-id> [--register]
+ *   node scripts/pipeline/advance.mjs <company-id> [--register] [--update]
+ *
+ * --update: the company is registered and part of its explanation is being rewritten from a newer filing
+ * (start-update.mjs set that up). It is not "done", and finalize runs with --update.
  *
  * A company that has not been promoted (no entry, or figures-only) and has a NEWER 有報 than the one
  * it was built on is moved onto it automatically, first thing: the old fragments and staged entry are
@@ -105,6 +108,7 @@ export function classifyPackFailure(edinetStatus) {
 if (process.argv[1]?.endsWith("advance.mjs")) {
   const companyId = process.argv[2];
   const register = process.argv.includes("--register");
+  const update = process.argv.includes("--update");
   if (!companyId) {
     console.error("usage: node scripts/pipeline/advance.mjs <company-id> [--register]");
     process.exit(1);
@@ -188,7 +192,8 @@ if (process.argv[1]?.endsWith("advance.mjs")) {
   }
 
   // 1/2. Already finished, or permanently parked — nothing left to do.
-  const entryAction = decideEntryAction(tier, loadState(companyId).stages.registration.status);
+  // An update of a registered company was set up on purpose (start-update.mjs), so the entry existing is not "done".
+  const entryAction = decideEntryAction(update && tier !== "figures-only" ? null : tier, loadState(companyId).stages.registration.status);
   if (entryAction === "done") {
     release(companyId);
     console.log("done");
@@ -263,11 +268,13 @@ if (process.argv[1]?.endsWith("advance.mjs")) {
   try {
     const args = ["scripts/pipeline/finalize.mjs", companyId];
     if (register) args.push("--register");
+    if (update) args.push("--update");
     const output = run(args);
     console.log(output.trim());
     console.log(register ? "registered" : "ready: finalize");
   } catch (error) {
-    console.log(`FAIL: finalize: ${String(error.stdout ?? error.message).slice(0, 500)}`);
+    // finalize reports what failed on stderr and its progress on stdout; the reason a person needs comes first.
+    console.log(`FAIL: finalize: ${String(`${error.stderr ?? ""}${error.stdout ?? ""}` || error.message).trim().slice(0, 500)}`);
   }
   process.exit(0);
 }

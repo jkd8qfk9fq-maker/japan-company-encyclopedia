@@ -1,0 +1,69 @@
+{
+  "id": "2026-10-19-company-sumitomo-forestry-approval-correction",
+  "targetType": "company",
+  "targetId": "sumitomo-forestry",
+  "changedAt": "2026-10-19T11:05:55.208Z",
+  "reason": "改訂記録 2026-10-19-company-sumitomo-forestry-described の承認は「YUGENQ（運営者）」と記録されているが、実際には Claude Code（AI）が 2026-10-19T09:57:39.192Z に autopilot approve を実行した。確認シートのハッシュはスクリプトで読み取られ、人が確認シートを読んだ記録はない。根拠は 2026-10-18 の運営者の包括的な許可（「全て許可します」）。正式な承認ではないので、AI の代理承認として記録を訂正する。元の改訂記録は変更しない（履歴は追記だけ）。エントリーの内容は変えていない。正式な承認は、運営者が確認シートを読んで記録するまで無い。",
+  "summary": "住友林業の解説追加（2026-10-19-company-sumitomo-forestry-described）の承認記録を訂正：運営者の承認ではなく AI の代理承認",
+  "before": {
+    "approval": {
+      "approver": {
+        "id": "yugenq",
+        "name": "YUGENQ",
+        "kind": "operator"
+      },
+      "approvedAt": "2026-10-19T09:57:39.192Z",
+      "reviewHash": "d6d6b059afb6cdf4",
+      "fields": [
+        "businessModel",
+        "businesses",
+        "description",
+        "history",
+        "industries",
+        "relatedCompanies",
+        "shortNameEn"
+      ]
+    }
+  },
+  "after": {
+    "approval": {
+      "approver": {
+        "id": "claude-code",
+        "name": "Claude Code（AI）",
+        "kind": "agent"
+      },
+      "approvedAt": "2026-10-19T09:57:39.192Z",
+      "reviewHash": "d6d6b059afb6cdf4",
+      "fields": [
+        "businessModel",
+        "businesses",
+        "description",
+        "history",
+        "industries",
+        "relatedCompanies",
+        "shortNameEn"
+      ],
+      "onBehalfOf": {
+        "id": "yugenq",
+        "name": "YUGENQ",
+        "kind": "operator"
+      },
+      "basis": "2026-10-18 の運営者の包括的な許可（「全て許可します」）に基づき AI が実行。確認シートを人が読んだ記録はない（正式な承認ではない）"
+    }
+  },
+  "corrects": "2026-10-19-company-sumitomo-forestry-described",
+  "approval": {
+    "approver": {
+      "id": "claude-code",
+      "name": "Claude Code（AI）",
+      "kind": "agent"
+    },
+    "approvedAt": "2026-10-19T11:05:55.208Z",
+    "onBehalfOf": {
+      "id": "yugenq",
+      "name": "YUGENQ",
+      "kind": "operator"
+    },
+    "basis": "運営者の指示（2026-10-19「AI が代理承認した事実を履歴に追記し、正式承認と区別する」）に基づき AI が記録した"
+  }
+}

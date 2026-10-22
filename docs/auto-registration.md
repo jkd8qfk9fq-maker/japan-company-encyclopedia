@@ -44,7 +44,8 @@
 | リポジトリ | あり（`origin` = https://github.com/jkd8qfk9fq-maker/japan-company-encyclopedia 、**非公開**）。最初の公開版は push 済み | 以降の変更は、内容を確認したうえで commit・push（個人情報を含めた履歴は push しない。履歴を書き換えたクローンから push する） |
 | Actions の secret `EDINET_API_KEY` | **未確認**（secret の有無はこの PC から確認できない。設定済みとは扱わない） | リポジトリの Settings → Secrets and variables → Actions → New repository secret。名前 `EDINET_API_KEY`、値は `.env.local` と同じキー（または専用に発行したキー） |
 | 動作確認 | 未実施 | Actions → refresh-financials → Run workflow（入力 `rehearse` に登録済みの会社 id を入れると、書き込みなしで実データの更新経路を確かめる）。成功なら job summary に結果が出る。失敗時の理由はキーを含まない形で出る |
-| 権限・性質 | テストで固定 | `permissions: contents: read`、書き込み・commit・push なし、`src/data` の指紋検査、定期実行はこのワークフローだけ（`tests/refresh-workflow.test.ts`、`tests/single-detector.test.ts`） |
+| プルリクエストの作成を許可 | **未設定の可能性** | Settings → Actions → General → Workflow permissions → 「Allow GitHub Actions to create and approve pull requests」をオン（ワークフローは承認もマージもしない。作るだけ） |
+| 権限・性質 | テストで固定 | 2つのジョブ。`detect` は読むだけ（`contents: read`、`src/data` の指紋検査）。`propose` は見つかったときだけ、検証を通った更新を `auto/financials-…` ブランチに適用し、整合性テスト・型検査・変更パスの制限を通してからプルリクエストを作る（`contents: write`・`pull-requests: write`）。main への push・マージ・承認はしない。定期実行はこのワークフローだけ（`tests/refresh-workflow.test.ts`、`tests/single-detector.test.ts`、JCE-024） |
 
 ### 2.3 サイトのプレビュー（GitHub Pages。リンクを得る）
 
@@ -74,7 +75,26 @@ npm run content:autopilot -- status                                   # あな�
 - 1社あたりモデル2回・約8分・約 $2.2（実測）。`--budget`（1回の上限）と `--total-budget`（この実行の合計の上限）で費用を抑える。
 - **実行中は `src/data`・`scripts`・`.claude` を編集しない**（モデルの書き込みと区別できず、その会社が保留になる）。ドキュメントやテストの編集は問題ない。
 - 5社登録するごとに `check`（`status` が促す）。コミットの前に `npm run content:diff`。
-- 登録済み企業の財務の更新は別の経路（`npm run content:refresh-financials`）。Actions の `refresh-report` を `status --refresh-report <ファイル>` で一覧に並べられる。
+- 登録済み企業の財務の更新は別の経路（Actions が毎日プルリクエストを作る。手元では `npm run content:refresh-financials`）。Actions の `refresh-report` を `status --refresh-report <ファイル>` で一覧に並べられる。
+
+### 3.1 解説の更新（登録済みの会社に新しい有報が出たとき）
+
+```
+npm run content:refresh-financials -- <id> --apply          # 先に数値（事実）を更新する（Actions のプルリクエストでもよい）
+npm run content:autopilot -- update <id> --plan             # 何を書き直すかだけを見る（何も変えない）
+npm run content:autopilot -- update <id>                    # 準備する（変わった工程だけを書き直す）
+npm run content:autopilot -- run --ids <id>                 # 書き直し → 検査 → 確認シート
+npm run content:autopilot -- review <id>                    # 「0. 更新前と後」を読む
+npm run content:autopilot -- approve <id> --confirm --hash <hash>
+```
+
+- 新旧の有報の節（事業の内容・沿革・経営方針・関係会社 ほか）を、数字と日付を除いて比べる（`diff-filings.mjs`）。工程ごとのしきい値を超えた工程を書き直す（理由「text」）。
+- もう一つの信号: **公開中の文章が旧い期の数字や日付（「2025年6月期」「2025年6月30日」「2025年6月末」）を書いている工程**も書き直す（理由「figures」。文言が同じでも数字が古くなる）。沿革は出来事に日付があるので、`significance`（今の状況を述べる行）だけを数える。
+- どちらにも当たらなければ「keep」で、モデルを呼ばない。
+- 更新の途中（確認待ち・保留）で `update <id>` をもう一度実行すると、**計画を立て直す**。新しく書き直す工程が加わり、すでに書き直した工程はそのまま使う。
+- 書き直さない工程は、**公開中の内容をそのまま**残す（管理画面での訂正も含む）。その部分の文章の規則の不備は数えず、確認シートに件数だけ出す（既存エントリーの課題として別に扱う）。
+- 数値（財務）は更新しない。新しい有報の年度が財務に無ければ `not-refreshed` で止まる。先に財務を更新する。
+- 承認すると、改訂記録 `<日付>-company-<id>-updated.json`（変わった項目の前後と承認者）を書き、リサーチログに「更新」の節を足す。コミットは人。
 
 ## 4. 確認シートの確認
 
@@ -101,6 +121,7 @@ npm run content:autopilot -- approve <id> --confirm --hash <シートのハッ�
 ```
 
 - `--confirm` は「一文・出典・投資用語を読んだ」の意思表示。`--hash` はシートに書いてある値で、**読んだ内容と登録する内容が同じ**であることの確認（内容が変わっていれば拒否）。
+- **正式な承認は、運営者が自分の端末で実行したものだけ。** AI エージェント（Claude Code。`CLAUDECODE=1` の環境）が `approve` を実行すると、改訂記録の承認者は `claude-code`（kind: agent）、`onBehalfOf` に運営者、`basis` に根拠が入り、**AI の代理承認**として記録される（JCE-025）。代理承認は正式な承認ではない。あとから運営者がシートを読んで正式に承認する手順は残課題。
 - 拒否される場合: 状態が確認待ちでない／すでに登録済み／すでに解説つきのエントリーがある／文章の規則に不備がある。理由が表示される。
 - 実行されること: 既存の `advance.mjs <id> --register`（`finalize.mjs`）。エントリー・`index.ts`・改訂記録（`<日付>-company-<id>-described`）・リサーチログを書き、統合テストと型検査を通らなければ**全ファイルを元に戻す**。`taxonomyGaps` は `pipeline/taxonomy-gaps.tsv` に追記される。
 - そのあと: `npm run content:diff` で差分を確認 → `npm run content:autopilot -- check` → **コミットと push は運営者**（autopilot は git に触れない）。公開されるのは「公開」の企業だけ（JCE-018 の公開ライン）。

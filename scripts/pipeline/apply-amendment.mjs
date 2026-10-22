@@ -24,9 +24,10 @@ import { execFileSync } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { amendmentIdentity, diffTextBlocks, entryMismatches, financialsDifferences } from "../research/amendments.mjs";
-import { cacheDir, downloadDocument, readCsvRows } from "../research/edinet.mjs";
+import { cacheDir, downloadDocument, jstToday, readCsvRows } from "../research/edinet.mjs";
 import { PROSE_ELEMENTS, fiveYearFigures, packFor } from "../research/evidence-pack.mjs";
 import { loadState, saveState } from "./company-state.mjs";
+import { assertMachineWrite } from "./ownership.mjs";
 
 const args = process.argv.slice(2);
 const id = args.find((a) => !a.startsWith("--"));
@@ -38,7 +39,8 @@ if (!id) {
 }
 
 const root = process.cwd();
-const today = new Date().toISOString().slice(0, 10);
+// The pipeline's one clock for dates: the date in Japan (finalize.mjs, refresh-financials.mjs).
+const today = jstToday();
 const entryPath = join(root, "src/data/companies", `${id}.json`);
 const stagedRelative = `pipeline/staging/${id}.json`;
 const stagedPath = join(root, stagedRelative);
@@ -135,6 +137,8 @@ const next = {
   status: nextStatus,
   updatedAt: today,
 };
+// A correction changes figures and the entry's state, never the explanation (docs/continuous-pipeline-design.md §4.1).
+assertMachineWrite(entry, next, "apply-amendment");
 
 if (update) {
   console.log("\n財務の変更（登録値 → 有効文書）:");

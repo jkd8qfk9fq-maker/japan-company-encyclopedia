@@ -31,9 +31,16 @@ export const sourceSchema = z.strictObject({
   url: z.string().regex(/^https:\/\//, "https:// で始まる URL である必要があります"),
   publishedAt: isoDate.optional(),
   accessedAt: isoDate,
+  docId: z.string().regex(/^S[0-9A-Z]{7}$/, "EDINET の書類 ID（S100XXXX）である必要があります").optional(),
+  asOf: isoDate.optional(),
 });
 
-const sourced = { sourceIds: z.array(kebab) };
+const sourced = { sourceIds: z.array(kebab), locator: text.optional() };
+
+const perspectiveSchema = z.strictObject({
+  disclosed: z.strictObject({ text, asOf: isoDate, ...sourced }).optional(),
+  analysis: z.strictObject({ text, basis: text, asOf: isoDate, ...sourced }).optional(),
+});
 
 const contentStatusSchema = z.discriminatedUnion("state", [
   z.strictObject({ state: z.literal("published") }),
@@ -51,6 +58,7 @@ type BusinessShape = {
   customers?: string[];
   children?: BusinessShape[];
   sourceIds: string[];
+  locator?: string;
 };
 
 export const businessSchema: z.ZodType<BusinessShape> = z.lazy(() =>
@@ -96,6 +104,13 @@ export const companySchema = z.strictObject({
         }),
       ),
       ...sourced,
+    })
+    .optional(),
+  perspectives: z
+    .strictObject({
+      strategy: perspectiveSchema.optional(),
+      competitiveAdvantage: perspectiveSchema.optional(),
+      industryPosition: perspectiveSchema.optional(),
     })
     .optional(),
   financials: z.array(
@@ -197,6 +212,22 @@ export const featureSchema = z.strictObject({
   publishedAt: isoDate,
 });
 
+const approverSchema = z.strictObject({ id: kebab, name: text, kind: z.enum(["operator", "person", "agent"]) });
+
+/** A formal approval is a person's; an agent's is a proxy and must say on whose authority, and on what basis. */
+export const approvalSchema = z
+  .strictObject({
+    approver: approverSchema,
+    approvedAt: z.string().regex(/^\d{4}-\d{2}-\d{2}T[\d:.]+Z$/, "ISO 8601 の日時である必要があります"),
+    reviewHash: z.string().regex(/^[0-9a-f]{8,64}$/).optional(),
+    fields: z.array(text).optional(),
+    onBehalfOf: approverSchema.optional(),
+    basis: text.optional(),
+  })
+  .refine((a) => (a.approver.kind === "agent" ? a.onBehalfOf !== undefined && a.onBehalfOf.kind !== "agent" && a.basis !== undefined : a.onBehalfOf === undefined), {
+    message: "AI の代理承認には onBehalfOf（人）と basis が要る。人の承認には onBehalfOf を付けない",
+  });
+
 export const revisionSchema = z.strictObject({
   id: kebab,
   targetType: z.enum(["company", "industry", "term", "feature"]),
@@ -206,6 +237,8 @@ export const revisionSchema = z.strictObject({
   summary: text,
   before: z.unknown().optional(),
   after: z.unknown().optional(),
+  approval: approvalSchema.optional(),
+  corrects: kebab.optional(),
 });
 
 /** Parse or throw an error that names the file and the exact field. */

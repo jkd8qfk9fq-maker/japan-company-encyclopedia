@@ -1,16 +1,20 @@
-# Daily check for new 有価証券報告書 and for the financial updates they would cause.
+# Daily check for new 有価証券報告書, and a pull request with the verified updates.
 #
-# DETECTION ONLY. This workflow never writes data: no --apply, no commit, no push, a read-only token.
-# What it finds is shown in the job summary and in the `refresh-report` artifact; a person applies an update
-# on their own machine (`npm run content:refresh-financials -- <company-id> --apply`), reviews the diff and
-# commits it. See docs/decisions.md JCE-018 and scripts/pipeline/refresh-financials.mjs.
+# Two jobs (decision JCE-024, which changes JCE-018's "detection only"):
+#   detect   read-only. Finds companies (every tier) whose newest 有報 is newer than their figures and plans the update
+#            (dry run), and audits the 訂正有価証券報告書 that arrived since the last check (amendment-audit.mjs
+#            --refresh: report only — the filing each company rests on is read from its entry). Writes nothing in src/data.
+#   propose  runs only when detect found something (on the schedule, or by hand with `propose`). Applies the updates
+#            that pass verify-financials and the schema/integrity rules — on a NEW BRANCH — runs the integrity suite and
+#            the type check, refuses any change outside the data it may write, records the run in pipeline/runs/, and
+#            opens a pull request. It never pushes to main and never merges: the site changes only when a person merges
+#            the pull request (Cloudflare rebuilds main). A company that fails or is held is left exactly as it was.
 #
-# Job result: success = ran to the end (nothing new, candidates, and held companies all count);
-# failure = the EDINET index could not be vouched for, a company failed to fetch / extract / verify,
-# or the committed data changed during the run.
+# Repository settings this needs: the secret EDINET_API_KEY; Settings → Actions → General → "Allow GitHub Actions to
+# create and approve pull requests" (for the pull request; nothing here approves one).
 #
-# This is the ONLY scheduled caller of EDINET (decision of 2026-10-18; tests/single-detector.test.ts). New registrations are
-# a different lane: `npm run content:autopilot`, run by a person on the machine that holds the evidence, never scheduled.
+# This is the ONLY scheduled caller of EDINET (tests/single-detector.test.ts). New registrations are a different lane:
+# `npm run content:autopilot`, run by a person on the machine that holds the evidence, never scheduled.
 #
 # Yesterday's EDINET index is final only after EDINET's nightly batch, which finishes between 0:00 and 0:06 JST.
 # The scheduled run (07:00 JST) is long after that. A run started by hand just after midnight waits for the batch
@@ -28,8 +32,18 @@ on:
         description: "Company id to rehearse: re-derive its newest registered year from EDINET as a real update would (writes nothing)"
         required: false
         type: string
+      propose:
+        description: "Apply the verified updates on a branch and open a pull request (the schedule always does)"
+        required: false
+        type: boolean
+        default: false
+      limit:
+        description: "At most this many companies in one pull request"
+        required: false
+        type: string
+        default: "150"
 
-# The only permission the job has. Nothing here can push, comment or open anything.
+# The workflow's default: read only. Only the propose job raises its own, and only what a pull request needs.
 permissions:
   contents: read
 
@@ -40,7 +54,9 @@ concurrency:
 jobs:
   detect:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
+    outputs:
+      candidates: ${{ steps.detect.outputs.candidates }}
     env:
       EDINET_API_KEY: ${{ secrets.EDINET_API_KEY }}
       # Everything the run downloads lives here, outside src/ and pipeline/, and is cached between runs.
@@ -72,18 +88,27 @@ jobs:
           restore-keys: edinet-cache-
 
       - name: Detect new filings (dry run)
+        id: detect
         run: |
           mkdir -p out
           if [ -n "$REHEARSE_ID" ]; then
             node scripts/pipeline/refresh-financials.mjs --rehearse "$REHEARSE_ID" --report out/refresh-report.json --summary out/summary.md
+            echo "candidates=0" >> "$GITHUB_OUTPUT"
           else
-            node scripts/pipeline/refresh-financials.mjs --all --report out/refresh-report.json --summary out/summary.md
+            node scripts/pipeline/refresh-financials.mjs --all --tier all --report out/refresh-report.json --summary out/summary.md
+            echo "candidates=$(node -e 'const r=require("./out/refresh-report.json");console.log(r.counts.wouldUpdate)')" >> "$GITHUB_OUTPUT"
           fi
+
+      # Report only. A correction is applied by a person, one company at a time (apply-amendment.mjs), never here.
+      - name: Audit new 訂正有価証券報告書 (report only)
+        if: always()
+        run: node scripts/pipeline/amendment-audit.mjs --refresh --from-entries --report out/amendment-report.json --summary out/amendment-summary.md
 
       - name: Job summary
         if: always()
         run: |
           if [ -f out/summary.md ]; then cat out/summary.md >> "$GITHUB_STEP_SUMMARY"; else echo "The run stopped before it could write a report." >> "$GITHUB_STEP_SUMMARY"; fi
+          if [ -f out/amendment-summary.md ]; then cat out/amendment-summary.md >> "$GITHUB_STEP_SUMMARY"; fi
 
       - name: Upload the report
         if: always()
@@ -108,5 +133,109 @@ jobs:
           find src/data -type f -print0 | sort -z | xargs -0 sha256sum | sha256sum > "$RUNNER_TEMP/data-after.sha"
           if ! cmp -s "$RUNNER_TEMP/data-before.sha" "$RUNNER_TEMP/data-after.sha"; then
             echo "::error::src/data changed during a detection-only run"
+            exit 1
+          fi
+
+  propose:
+    needs: detect
+    if: needs.detect.outputs.candidates != '0' && (github.event_name == 'schedule' || inputs.propose)
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    # What a pull request needs, and nothing else: push a branch, open a pull request.
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      EDINET_API_KEY: ${{ secrets.EDINET_API_KEY }}
+      RESEARCH_CACHE: ${{ github.workspace }}/.cache/edinet
+      RESEARCH_INDEX_CACHE: ${{ github.workspace }}/.cache/edinet/index
+      LIMIT: ${{ inputs.limit || '150' }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Restore the EDINET cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/edinet
+          key: edinet-cache-${{ github.run_id }}
+          restore-keys: edinet-cache-
+
+      # Writes only companies whose new year passes verify-financials and the schema/integrity rules; a failed or held
+      # company is left as it was. The exit code is kept and reported at the end, after the verified ones are proposed.
+      - name: Apply the verified updates
+        id: apply
+        run: |
+          mkdir -p out
+          set +e
+          node scripts/pipeline/refresh-financials.mjs --all --tier all --limit "$LIMIT" --apply --report out/refresh-report.json --summary out/summary.md
+          echo "exit=$?" >> "$GITHUB_OUTPUT"
+
+      # The same audit as detect: it advances pipeline/amendments-index.json (committed with the pull request) and its
+      # summary goes into the pull request body, so a correction is seen by the person who merges.
+      - name: Audit new 訂正有価証券報告書 (report only)
+        id: audit
+        run: |
+          set +e
+          node scripts/pipeline/amendment-audit.mjs --refresh --from-entries --report out/amendment-report.json --summary out/amendment-summary.md
+          echo "exit=$?" >> "$GITHUB_OUTPUT"
+
+      - name: Verify the whole repository
+        run: |
+          npx vitest run tests/data-integrity.test.ts
+          npx tsc --noEmit
+
+      - name: Refuse changes outside the data this job may write
+        run: |
+          changed=$(git status --porcelain | awk '{print $2}')
+          outside=$(printf '%s\n' "$changed" | grep -v -E '^(src/data/companies/[a-z0-9-]+\.json|src/data/revisions/[a-z0-9-]+\.json|pipeline/amendments-index\.json)$' | grep -v '^$' || true)
+          if [ -n "$outside" ]; then
+            echo "::error::changes outside the allowed data: $outside"
+            exit 1
+          fi
+
+      - name: Record the run and open a pull request
+        run: |
+          if [ -z "$(git status --porcelain src/data)" ]; then
+            echo "Nothing verified to propose." >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+          day=$(date -u +%Y-%m-%d)
+          mkdir -p pipeline/runs
+          cp out/refresh-report.json "pipeline/runs/financials-${day}-${{ github.run_id }}.json"
+          branch="auto/financials-${day}-${{ github.run_id }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add src/data pipeline/amendments-index.json pipeline/runs
+          git commit -m "Financial figures from new 有価証券報告書 (${day})" -m "Applied by the refresh-financials workflow after verify-financials, the schema/integrity rules, the integrity suite and the type check. Review the diff before merging."
+          git push origin "HEAD:refs/heads/${branch}"
+          if [ -f out/amendment-summary.md ]; then { echo; cat out/amendment-summary.md; } >> out/summary.md; fi
+          gh pr create --base main --head "$branch" --title "財務データの更新（${day}、新しい有価証券報告書）" --body-file out/summary.md
+          cat out/summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Save the EDINET cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/edinet
+          key: edinet-cache-propose-${{ github.run_id }}
+
+      - name: Report companies that failed
+        if: always()
+        run: |
+          if [ "${{ steps.apply.outputs.exit }}" != "0" ]; then
+            echo "::error::Some companies failed to fetch or verify; they were left unchanged (see the pull request body or the job summary)."
+            exit 1
+          fi
+          if [ "${{ steps.audit.outputs.exit }}" != "0" ]; then
+            echo "::error::The amendment audit could not read every day since the last check (see out/amendment-summary.md); the next run continues from where it stopped."
             exit 1
           fi

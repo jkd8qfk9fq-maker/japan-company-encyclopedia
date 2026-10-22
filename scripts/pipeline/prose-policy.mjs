@@ -46,7 +46,7 @@ const NET_INCOME_FORMS = /親会社(?:株主|の所有者)に帰属する当期(
 const FILING_AS_SUBJECT = /(?:有価証券報告書|有報)(?:は|が|では|によれば|によると|の記載では)/;
 
 /** Keys whose string values are identifiers or machine values, not prose. */
-const NON_PROSE_KEYS = new Set(["id", "companyId", "industryId", "sourceIds", "relationship", "kind", "exchange", "market", "type", "state", "url", "publishedAt", "accessedAt", "year", "fiscalYear", "periodEnd", "term", "termId"]);
+const NON_PROSE_KEYS = new Set(["id", "companyId", "industryId", "sourceIds", "relationship", "kind", "exchange", "market", "type", "state", "url", "publishedAt", "accessedAt", "year", "fiscalYear", "periodEnd", "term", "termId", "asOf", "locator", "docId"]);
 /** Top-level keys that hold no prose (or whose prose is checked elsewhere). */
 const NON_PROSE_TOP = new Set(["id", "code", "officialName", "nameEn", "shortNameEn", "name", "listings", "industries", "sources", "status", "updatedAt", "financials", "registeredAt"]);
 

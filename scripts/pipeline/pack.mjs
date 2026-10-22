@@ -123,11 +123,15 @@ export function newerFiling(identity, root = undefined) {
  * what was done. The identity is rewritten, the pack and draft are rebuilt from the cache over the
  * window around the new filing, and the agent stages go back to pending. The registered
  * figures-only entry is not touched here; it is replaced by the normal promotion.
+ *
+ * start-update.mjs uses the same move for a registered company whose explanation is partly rewritten: `identity` adds
+ * what it keeps (retainedStages, retainedDocIDs) and it writes the kept stages back from the published entry.
  * @param {string} id
  * @param {{ docID: string, submitted: string, periodEnd: string }} newer
  * @param {string} [root] repository root
+ * @param {{ identity?: Record<string, unknown>, registrationNote?: string }} [options]
  */
-export function refreshIdentity(id, newer, root = process.cwd()) {
+export function refreshIdentity(id, newer, root = process.cwd(), { identity: extra = {}, registrationNote = "figures-only 登録のまま（新しい有報での昇格はこれから）" } = {}) {
   const state = loadState(id);
   const old = state.identity;
   const oldDoc = old.originalDocID ?? old.docID;
@@ -144,7 +148,7 @@ export function refreshIdentity(id, newer, root = process.cwd()) {
     rmSync(staged);
   }
 
-  state.identity = { ...old, docID: newer.docID, originalDocID: newer.docID, submitted: newer.submitted, periodEnd: newer.periodEnd, corrections: [], amendments: null };
+  state.identity = { ...old, docID: newer.docID, originalDocID: newer.docID, submitted: newer.submitted, periodEnd: newer.periodEnd, corrections: [], amendments: null, ...extra };
   saveState(state);
   rebuildPack(id, state.identity);
   const summary = readPack(id);
@@ -163,7 +167,7 @@ export function refreshIdentity(id, newer, root = process.cwd()) {
   reset("identity", "completed", `${old.filerName} / ${old.code} / docID ${newer.docID}（${oldDoc} から新しい有報に更新。旧成果物は pipeline/analysis/superseded/${id}-${oldDoc}/）`);
   reset("edinet", "completed", `pack + draft 再作成（${newer.docID}）`);
   // The figures-only entry is what "registered" means for this company until it is promoted.
-  reset("registration", "completed", "figures-only 登録のまま（新しい有報での昇格はこれから）");
+  reset("registration", "completed", registrationNote);
   saveState(fresh);
   return fresh;
 }

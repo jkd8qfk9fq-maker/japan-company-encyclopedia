@@ -402,7 +402,7 @@ export function financialsDifferences(registered, drafted) {
 }
 
 /** Normalised text of every non-empty TextBlock by element local name. */
-function textBlocks(/** @type {any[]} */ rows) {
+export function textBlocks(/** @type {any[]} */ rows) {
   /** @type {Record<string, string>} */
   const out = {};
   for (const r of rows) {

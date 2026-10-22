@@ -1,0 +1,43 @@
+{
+  "id": "2026-10-20-company-tokyo-gas-approval-correction",
+  "targetType": "company",
+  "targetId": "tokyo-gas",
+  "changedAt": "2026-10-20T00:23:17.204Z",
+  "reason": "改訂記録 2026-10-18-company-tokyo-gas-described には承認の記録が無い（承認欄を設ける前の登録）。実際には Claude Code（AI）が 2026-10-18T05:04:27.029Z に autopilot approve を実行した（確認シートのハッシュ eb3356961bd86297。ハッシュはスクリプトで読み取られた）。根拠は 2026-10-18 の運営者の包括的な許可（「全て許可します」、JCE-023）。確認シートの要確認事項は AI が読んだが、運営者が確認シートを読んだ記録はない。AI の代理承認として記録を補う。元の改訂記録は変更しない（履歴は追記だけ）。エントリーの内容は変えていない。",
+  "summary": "東京ガスの解説追加（2026-10-18-company-tokyo-gas-described）の承認記録を補う：AI の代理承認",
+  "before": {
+    "approval": null
+  },
+  "after": {
+    "approval": {
+      "approver": {
+        "id": "claude-code",
+        "name": "Claude Code（AI）",
+        "kind": "agent"
+      },
+      "approvedAt": "2026-10-18T05:04:27.029Z",
+      "reviewHash": "eb3356961bd86297",
+      "onBehalfOf": {
+        "id": "yugenq",
+        "name": "YUGENQ",
+        "kind": "operator"
+      },
+      "basis": "2026-10-18 の運営者の包括的な許可（「全て許可します」、JCE-023）に基づき AI が実行。確認シートを運営者が読んだ記録はない"
+    }
+  },
+  "corrects": "2026-10-18-company-tokyo-gas-described",
+  "approval": {
+    "approver": {
+      "id": "claude-code",
+      "name": "Claude Code（AI）",
+      "kind": "agent"
+    },
+    "approvedAt": "2026-10-20T00:23:17.204Z",
+    "onBehalfOf": {
+      "id": "yugenq",
+      "name": "YUGENQ",
+      "kind": "operator"
+    },
+    "basis": "運営者の指示（2026-10-20「AI が処理した事実を記録する場合、過去の承認記録を改変せず、訂正用の Revision を追加する」）に基づき AI が記録した"
+  }
+}

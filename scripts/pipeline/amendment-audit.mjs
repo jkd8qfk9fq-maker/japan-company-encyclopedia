@@ -3,7 +3,12 @@
  *
  *   node scripts/pipeline/amendment-audit.mjs                 every company; writes the report, prints those with amendments
  *   node scripts/pipeline/amendment-audit.mjs <id> [<id> …]   just these
- *   node scripts/pipeline/amendment-audit.mjs --refresh       weekly: read ONLY the days since the last check
+ *   node scripts/pipeline/amendment-audit.mjs --refresh       daily: read ONLY the days since the last check
+ *     [--from-entries] [--report out/amendment-report.json] [--summary out/amendment-summary.md]
+ *
+ * --from-entries (and automatically when pipeline/state is absent, as in GitHub Actions): the filing each company is
+ * built on is read from its ENTRY — the source its newest figures cite, followed back to the original when it is itself
+ * a correction — instead of from pipeline/state, which lives only on the machine that registers companies.
  *
  * For each company: originalDocID → its corrections (reverse index by parentDocID) →
  * the filing of record (effectiveDocID) → did the five-year figures change → did the
@@ -27,7 +32,7 @@ import {
   filingCompleteness,
   loadIndex,
 } from "../research/amendments.mjs";
-import { downloadDocument, readCsvRows } from "../research/edinet.mjs";
+import { downloadDocument, readCsvRows, scrubSecrets } from "../research/edinet.mjs";
 import { PROSE_ELEMENTS, fiveYearFigures } from "../research/evidence-pack.mjs";
 
 /**
@@ -140,6 +145,55 @@ export async function auditCompany({ id, state, entry, index }) {
   return row;
 }
 
+/**
+ * The filing an entry is built on, from the entry alone: the EDINET source its newest figures cite. If that document is
+ * itself a correction in the index, the original is its parent (a chain is followed to the end). Pure.
+ * @param {any} entry
+ * @param {any} index
+ * @returns {{ code: string, docID: string, originalDocID: string, periodEnd: string } | null}
+ */
+export function identityFromEntry(entry, index) {
+  const latest = [...(entry.financials ?? [])].sort((a, b) => String(a.periodEnd).localeCompare(String(b.periodEnd))).at(-1);
+  const source = (entry.sources ?? []).find((/** @type {any} */ s) => (latest?.sourceIds ?? []).includes(s.id));
+  const docID = source?.docId ?? /(S[0-9A-Z]{7})\.pdf/.exec(source?.url ?? "")?.[1];
+  if (!latest || !docID) return null;
+  /** @type {Map<string, string>} */
+  const parentOf = new Map();
+  for (const rows of Object.values(index.byParent ?? {})) for (const r of /** @type {any[]} */ (rows)) parentOf.set(r.docID, r.parentDocID);
+  let original = docID;
+  for (let i = 0; i < 10 && parentOf.has(original); i++) original = /** @type {string} */ (parentOf.get(original));
+  return { code: entry.code, docID, originalDocID: original, periodEnd: latest.periodEnd };
+}
+
+/** Every registered entry, with the filing it is built on read from the entry (no pipeline/state needed). */
+function companiesFromEntries(/** @type {string[]} */ only, /** @type {any} */ index) {
+  const dir = join(process.cwd(), "src/data/companies");
+  const out = [];
+  for (const file of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
+    const entry = JSON.parse(readFileSync(join(dir, file), "utf8"));
+    if (only.length > 0 && !only.includes(entry.id)) continue;
+    const identity = identityFromEntry(entry, index);
+    if (identity) out.push({ id: entry.id, state: { companyId: entry.id, identity }, entry });
+  }
+  return out;
+}
+
+/**
+ * The report's summary for a person (the job summary and the pull request body). Pure.
+ * @param {{ before: string | null, after: string, added: number, error: string | null, rows: any[] }} r
+ */
+export function refreshSummary({ before, after, added, error, rows }) {
+  const lines = [`## 訂正有価証券報告書の監査（索引 ${before ?? "なし"} → ${after}、新しい訂正 ${added} 件）`, ""];
+  if (error) lines.push(`**索引の取得が途中で止まりました:** ${error}（次の実行で続きから読みます）`, "");
+  if (rows.length === 0) lines.push("掲載中の会社に新しい訂正はありません。");
+  else {
+    lines.push("| 会社 | 区分 | 新しい訂正 | 財務が変わる | 本文が変わる | 推奨 |", "|---|---|---|---|---|---|");
+    for (const r of rows) lines.push(`| ${r.companyId} | ${r.tier} | ${r.fresh.join(", ")} | ${r.financialChanged ? "はい" : "いいえ"} | ${r.textChanged ? `はい（${r.textChangedSections.length}節）` : "いいえ"} | ${r.action} |`);
+    lines.push("", "推奨が update-financials・needs-attention のものは、手元で `node scripts/pipeline/apply-amendment.mjs <id>`（ドライラン）で確かめてから `--apply`。この監査はエントリーを変えない。");
+  }
+  return `${lines.join("\n")}\n`;
+}
+
 /** Every company the pipeline has resolved an identity for, with its entry if it has one. */
 function companies(/** @type {string[]} */ only) {
   const root = process.cwd();
@@ -161,24 +215,32 @@ async function main() {
   const args = process.argv.slice(2);
   const refresh = args.includes("--refresh");
   const showAll = args.includes("--all");
-  const only = args.filter((a) => !a.startsWith("--"));
+  const valueOf = (/** @type {string} */ name) => (args.includes(name) ? args[args.indexOf(name) + 1] : null);
+  const reportPath = valueOf("--report");
+  const summaryPath = valueOf("--summary");
+  const only = args.filter((a, i) => !a.startsWith("--") && !["--report", "--summary"].includes(args[i - 1]));
+  const fromEntries = args.includes("--from-entries") || !existsSync(join(process.cwd(), "pipeline/state"));
 
   if (refresh) {
     const before = loadIndex().checkedThrough;
-    const { index, added, error } = await ensureIndex({ fetch: true });
+    const { index, added, error: rawError } = await ensureIndex({ fetch: true });
+    const error = rawError ? scrubSecrets(String(rawError)) : null;
     console.log(`索引: ${before ?? "なし"} → ${index.checkedThrough}（新しい訂正 ${added.length} 件${error ? `。取得中に停止: ${error}` : ""}）`);
-    const tracked = companies(only);
+    const tracked = fromEntries ? companiesFromEntries(only, index) : companies(only);
     const byOriginal = new Map(tracked.map((c) => [c.state.identity.originalDocID ?? c.state.identity.docID, c]));
     const newIds = new Set(added.map((a) => a.docID));
-    let hits = 0;
+    const hits = [];
     for (const [original, company] of byOriginal) {
       const fresh = amendmentsOf(index, original).filter((a) => newIds.has(a.docID));
       if (fresh.length === 0) continue;
-      hits++;
       const row = await auditCompany({ ...company, index });
-      console.log(`${row.companyId}\t${row.tier}\t新規 ${fresh.map((a) => `${a.docID}@${a.submitDateTime.slice(0, 10)}`).join(",")}\t財務=${row.financialChanged}\t本文=${row.textChanged}\t${row.action}`);
+      hits.push({ ...row, fresh: fresh.map((a) => `${a.docID}@${a.submitDateTime.slice(0, 10)}`) });
+      console.log(`${row.companyId}\t${row.tier}\t新規 ${hits.at(-1)?.fresh.join(",")}\t財務=${row.financialChanged}\t本文=${row.textChanged}\t${row.action}`);
     }
-    if (hits === 0) console.log("追跡中の会社に新しい訂正はありません。");
+    if (hits.length === 0) console.log("追跡中の会社に新しい訂正はありません。");
+    const result = { before, after: index.checkedThrough, added: added.length, error, source: fromEntries ? "entries" : "pipeline/state", companies: tracked.length, rows: hits };
+    if (reportPath) writeFileSync(reportPath, `${JSON.stringify(result, null, 1)}\n`);
+    if (summaryPath) writeFileSync(summaryPath, refreshSummary(result));
     process.exit(error ? 1 : 0);
   }
 
