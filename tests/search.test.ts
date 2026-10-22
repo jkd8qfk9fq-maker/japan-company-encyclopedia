@@ -22,7 +22,7 @@ describe("normalizeForSearch", () => {
 });
 
 // Synthetic entries: this tests ranking, not content.
-const entry = (id: string, keys: string[], haystack: string): SearchEntry => ({
+const entry = (id: string, keys: string[], haystack: string, sortKey = keys[0]): SearchEntry => ({
   kind: "company",
   id,
   title: id,
@@ -30,6 +30,7 @@ const entry = (id: string, keys: string[], haystack: string): SearchEntry => ({
   href: `/companies/${id}`,
   keys: keys.map(normalizeForSearch),
   haystack: normalizeForSearch(haystack),
+  sortKey,
 });
 
 describe("searchEntries", () => {
@@ -39,8 +40,17 @@ describe("searchEntries", () => {
     entry("c", ["電池"], "電池"),
   ];
 
-  it("ranks exact key, then key prefix, then text match", () => {
-    expect(searchEntries(entries, "電池").map((e) => e.id)).toEqual(["c", "b", "a"]);
+  it("puts an exact key first, then every other match in 50音順", () => {
+    expect(searchEntries(entries, "電池").map((e) => e.id)).toEqual(["c", "a", "b"]);
+  });
+
+  it("orders by the reading when one is given, hiragana and katakana alike", () => {
+    const list = [
+      entry("sa", ["サービス"], "自動車", "さーびす"),
+      entry("a", ["アイシン"], "自動車"),
+      entry("ka", ["カ"], "自動車", "かいしゃ"),
+    ];
+    expect(searchEntries(list, "自動車").map((e) => e.id)).toEqual(["a", "ka", "sa"]);
   });
 
   it("returns nothing for an empty query", () => {

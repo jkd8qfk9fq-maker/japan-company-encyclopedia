@@ -1,4 +1,5 @@
 import { listIndustryPages } from "@/lib/industries";
+import { INDUSTRY_LABELS } from "@/lib/industry-labels";
 import { companyRepository, featureRepository, industryRepository, termRepository } from "@/lib/repositories";
 import { toPlainText } from "@/lib/rich-text";
 import { normalizeForSearch } from "./normalize";
@@ -26,6 +27,7 @@ export async function buildSearchIndex(): Promise<SearchEntry[]> {
       title: c.name,
       subtitle: c.description ? toPlainText(c.description) : `${c.officialName}（証券コード${c.code}）`,
       href: `/companies/${c.id}`,
+      sortKey: c.name,
       keys: [c.name, c.officialName, c.nameEn ?? "", c.shortNameEn ?? "", c.code].filter(Boolean).map(normalizeForSearch),
       haystack: normalizeForSearch(
         [
@@ -50,6 +52,7 @@ export async function buildSearchIndex(): Promise<SearchEntry[]> {
         title: `${i.name}業界`,
         subtitle: detail ? toPlainText(detail.description) : `${i.companyCount}社を掲載`,
         href: `/industries/${i.id}`,
+        sortKey: INDUSTRY_LABELS[i.id].reading,
         keys: [i.name, i.nameEn].map(normalizeForSearch),
         haystack: normalizeForSearch([i.name, i.nameEn, ...(detail?.categories.map((c) => c.name) ?? [])].join(" ")),
       };
@@ -60,6 +63,7 @@ export async function buildSearchIndex(): Promise<SearchEntry[]> {
       title: t.term,
       subtitle: t.description,
       href: `/terms#${t.id}`,
+      sortKey: t.reading ?? t.term,
       keys: [t.term, t.reading ?? ""].filter(Boolean).map(normalizeForSearch),
       haystack: normalizeForSearch([t.term, t.reading ?? "", t.description].join(" ")),
     })),
@@ -69,6 +73,7 @@ export async function buildSearchIndex(): Promise<SearchEntry[]> {
       title: f.title,
       subtitle: f.subtitle ?? "",
       href: `/features/${f.id}`,
+      sortKey: f.title,
       keys: [f.title].map(normalizeForSearch),
       haystack: normalizeForSearch([f.title, f.subtitle ?? ""].join(" ")),
     })),

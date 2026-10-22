@@ -18,23 +18,30 @@ export type SearchEntry = {
   haystack: string;
   /** Pre-normalised fields that count as an exact hit, ranked first. */
   keys: string[];
+  /**
+   * What the entry sorts by in 50音順: a kana reading where the content has one (terms, industries), else the
+   * name. Company entries carry no reading, so a name in kanji sorts by Japanese collation of the characters,
+   * which follows the kanji's 音読み order rather than the company's own reading.
+   */
+  sortKey: string;
 };
 
+const collator = new Intl.Collator("ja", { sensitivity: "base", numeric: true });
+
 /**
- * Exact key match first, then prefix of a key, then anywhere in the text.
- * Deliberately simple: at this corpus size, predictable ranking beats clever
- * ranking, and a reader can see why each result matched.
+ * Exact key match first — typing "7203" or a full name goes straight to it — then every other match in 50音順
+ * (operator request, 2026-10-22). A key that starts with the query and text that merely contains it are both
+ * matches; neither outranks the other, so the list reads like an index, not a guess at relevance.
  */
 export function searchEntries(entries: SearchEntry[], rawQuery: string): SearchEntry[] {
   const q = normalizeForSearch(rawQuery);
   if (!q) return [];
-  const scored: { entry: SearchEntry; score: number }[] = [];
+  const exact: SearchEntry[] = [];
+  const rest: SearchEntry[] = [];
   for (const entry of entries) {
-    let score = 0;
-    if (entry.keys.includes(q)) score = 3;
-    else if (entry.keys.some((k) => k.startsWith(q))) score = 2;
-    else if (entry.haystack.includes(q)) score = 1;
-    if (score > 0) scored.push({ entry, score });
+    if (entry.keys.includes(q)) exact.push(entry);
+    else if (entry.keys.some((k) => k.startsWith(q)) || entry.haystack.includes(q)) rest.push(entry);
   }
-  return scored.sort((a, b) => b.score - a.score).map((s) => s.entry);
+  const byReading = (a: SearchEntry, b: SearchEntry) => collator.compare(a.sortKey, b.sortKey);
+  return [...exact.sort(byReading), ...rest.sort(byReading)];
 }

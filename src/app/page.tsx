@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, FileText, Search } from "lucide-react";
+import { SearchSuggest } from "@/components/search/search-suggest";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { ReaderTrail } from "@/components/company/reader-trail";
 import { FeaturedCompanyCard } from "@/components/home/featured-company-card";
@@ -79,24 +80,7 @@ export default async function HomePage() {
           </div>
 
           <div>
-            <form action="/search" role="search" className="flex">
-              <label htmlFor="home-search" className="sr-only">
-                企業名・証券コード・業界で検索
-              </label>
-              <div className="relative min-w-0 flex-1">
-                <Search className="pointer-events-none absolute top-1/2 left-4 size-[1.15rem] -translate-y-1/2 text-muted-foreground" aria-hidden />
-                <input
-                  id="home-search"
-                  name="q"
-                  type="search"
-                  placeholder="企業名・証券コード・業界で検索"
-                  className="h-14 w-full border border-input bg-card pr-3 pl-11 text-base outline-offset-2 placeholder:text-muted-foreground"
-                />
-              </div>
-              <button type="submit" className="h-14 shrink-0 bg-ink px-7 text-base font-medium text-background hover:opacity-90">
-                検索
-              </button>
-            </form>
+            <SearchSuggest id="home-search" variant="hero" />
             {examples.length > 0 && (
               <div className="mt-4 flex flex-wrap items-center gap-2">
                 <span className="text-xs text-muted-foreground">検索例</span>

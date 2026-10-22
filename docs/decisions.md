@@ -390,3 +390,15 @@ stage 1 of the redesign plan (mockup: the "リデザイン案" canvas). Stage 1 
   requires a licence for business use and for providing index information to third parties, and JPX's reuse terms
   could not be read from the build environment. The prepared code (type, schema with a required `usageTerms`, a tab
   per index) was taken out before release and is in commit 95a51d2 for when the terms are confirmed.
+
+### JCE-028 · 2026-10-22 · Accepted (operator) — Search suggests as you type; results in 50音順
+
+- The header and front-page search fields suggest up to eight matches as you type (`SearchSuggest`), from
+  `/search-index.json`, a static file built with the site and fetched only when a field is focused. Without JavaScript,
+  or if the file cannot be fetched, the fields are the plain GET forms they were. The form now carries the base path,
+  so it also works on the GitHub Pages preview.
+- Order (suggestions and /search alike): an exact name or code first, then every match in 50音順 by Japanese
+  collation of a sort key — the ひらがな reading for terms and industries (`INDUSTRY_LABELS.reading`), the name for
+  companies and features. **Company names in kanji are not truly 50音順**: entries carry no reading, so a kanji name
+  sorts by its characters (roughly their 音読み). The EDINET code list's 提出者名（ヨミ） would fix this; it is not
+  taken in yet.

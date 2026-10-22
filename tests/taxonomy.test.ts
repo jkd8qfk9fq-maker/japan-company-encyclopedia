@@ -53,9 +53,15 @@ describe("industry ids", () => {
 
   it("has a label for every id (the new ones included)", () => {
     for (const id of INDUSTRY_IDS) expect(INDUSTRY_LABELS[id].name, id).toBeTruthy();
-    expect(INDUSTRY_LABELS.machinery).toEqual({ name: "機械", nameEn: "Machinery" });
-    expect(INDUSTRY_LABELS["human-resources"]).toEqual({ name: "人材サービス", nameEn: "Human Resources" });
-    expect(INDUSTRY_LABELS["funeral-memorial"]).toEqual({ name: "葬祭・供養関連", nameEn: "Funeral & Memorial Services" });
+    // Every label also has an ひらがな reading: search orders industries in 50音順 by it.
+    for (const id of INDUSTRY_IDS) expect(INDUSTRY_LABELS[id].reading, id).toMatch(/^[ぁ-ゖー・]+$/);
+    expect(INDUSTRY_LABELS.machinery).toEqual({ name: "機械", nameEn: "Machinery", reading: "きかい" });
+    expect(INDUSTRY_LABELS["human-resources"]).toEqual({ name: "人材サービス", nameEn: "Human Resources", reading: "じんざいさーびす" });
+    expect(INDUSTRY_LABELS["funeral-memorial"]).toEqual({
+      name: "葬祭・供養関連",
+      nameEn: "Funeral & Memorial Services",
+      reading: "そうさい・くようかんれん",
+    });
   });
 
   it("is accepted as an entry's industry, and an unknown id is still refused", async () => {
