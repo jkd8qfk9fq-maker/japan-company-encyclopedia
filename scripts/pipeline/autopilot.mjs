@@ -8,7 +8,7 @@
  *   node scripts/pipeline/autopilot.mjs status [--json] [--refresh-report out/refresh-report.json]
  *   node scripts/pipeline/autopilot.mjs review <id>                                   print the review sheet
  *   node scripts/pipeline/autopilot.mjs approve <id> --confirm --hash <hash>          register (after YOU read the sheet)
- *   node scripts/pipeline/autopilot.mjs approve-ready [--include-flagged]   register every company whose sheet is ready, one
+ *   node scripts/pipeline/autopilot.mjs approve-ready [--include-flagged] [--except a,b]   register every company whose sheet is ready, one
  *                                         after another (the repository gate runs once, in content:publish)
  *   node scripts/pipeline/autopilot.mjs update <id> [--plan]   a registered company with a newer 有報: rewrite only what
  *                                         changed (start-update.mjs), then run → review → approve as for a registration
@@ -416,7 +416,9 @@ async function approve() {
  */
 async function approveReady() {
   const statuses = new Set(["ready", ...(has("include-flagged") ? ["ready-with-flags"] : [])]);
-  const ids = allRecords().filter((r) => statuses.has(r.status) && r.mode !== "update").map((r) => r.id).sort();
+  // --except: a sheet whose flag is a real data error (not wording) stays out until someone fixes it
+  const except = new Set(flag("except", "").split(",").filter(Boolean));
+  const ids = allRecords().filter((r) => statuses.has(r.status) && r.mode !== "update" && !except.has(r.id)).map((r) => r.id).sort();
   if (ids.length === 0) return console.log("登録できる確認シートはありません");
   console.log(`登録: ${ids.length} 社（${[...statuses].join("・")}）`);
   let done = 0;
