@@ -269,6 +269,7 @@ if (process.argv[1]?.endsWith("advance.mjs")) {
     const args = ["scripts/pipeline/finalize.mjs", companyId];
     if (register) args.push("--register");
     if (update) args.push("--update");
+    if (process.argv.includes("--no-repo-gate")) args.push("--no-repo-gate");
     const output = run(args);
     console.log(output.trim());
     console.log(register ? "registered" : "ready: finalize");

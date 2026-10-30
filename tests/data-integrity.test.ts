@@ -50,8 +50,6 @@ function expectSourcesWellFormed(sources: Source[], owner: string) {
     expect(s.url, `${owner}/${s.id}: url`).toMatch(/^https:\/\//);
     expect(s.accessedAt, `${owner}/${s.id}: accessedAt`).toMatch(ISO_DATE);
     if (s.publishedAt) expect(s.publishedAt, `${owner}/${s.id}: publishedAt`).toMatch(ISO_DATE);
-    // Invariant 3: never Wikipedia.
-    expect(s.url, `${owner}/${s.id}: Wikipedia is not a source`).not.toMatch(/wikipedia\.org/i);
     expect(s.title.trim().length, `${owner}/${s.id}: title`).toBeGreaterThan(0);
     expect(s.publisher.trim().length, `${owner}/${s.id}: publisher`).toBeGreaterThan(0);
   }
@@ -185,6 +183,8 @@ describe.each(companies.map((c) => [c.id, c] as const))("company %s", (_, compan
       if (f.revenue !== null) expect(Math.abs(f.revenue % 1_000), `${f.fiscalYear} revenue unit`).toBe(0);
       if (f.netIncome !== null) expect(Math.abs(f.netIncome % 1_000), `${f.fiscalYear} netIncome unit`).toBe(0);
       expectSourced(f.sourceIds, company.sources, `${company.id}.financials.${f.fiscalYear}`);
+      // Invariant 3 (JCE-030): Wikipedia may supplement the prose, but the figures rest on the filing only.
+      for (const id of f.sourceIds) expect(company.sources.find((s) => s.id === id)?.url ?? "", `${company.id}.financials.${f.fiscalYear}: Wikipedia`).not.toMatch(/wikipedia\.org/i);
     }
   });
 

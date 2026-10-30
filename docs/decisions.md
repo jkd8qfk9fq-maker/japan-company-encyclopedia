@@ -446,3 +446,19 @@ The operator decided that an explanation approved by an AI on the operator's aut
   companies and features. **Company names in kanji are not truly 50音順**: entries carry no reading, so a kanji name
   sorts by its characters (roughly their 音読み). The EDINET code list's 提出者名（ヨミ） would fix this; it is not
   taken in yet.
+
+### JCE-030 · 2026-10-30 · Accepted (operator) — Speed first: EDINET trusted as filed, Wikipedia to supplement, one check to publish
+
+The operator's priority is output speed.
+- **Sources.** The 有価証券報告書 (EDINET) is the basis of every entry and is trusted as filed — nothing in it is re-verified
+  against other material. Japanese Wikipedia may be used to *supplement* it: what the filing does not say (former names,
+  brands, product names, background), paraphrased (CC BY-SA: never copied), cited as its own source. Never a figure
+  (financials may not cite it; `integrity.ts`, `tests/data-integrity.test.ts`), never anything that contradicts the
+  filing, never the only basis of a link. `ja.wikipedia.org` is on `pipeline/source-allowlist.txt`; agents may read one
+  article per company (`autopilot run --allow-web`; `docs/agent-brief.md` §2a). This replaces invariant 3's "never
+  Wikipedia" (CLAUDE.md updated).
+- **Registration in bulk.** `autopilot approve-ready [--include-flagged]` registers every ready sheet in one command,
+  sequentially, with each entry's own checks but without the whole-repository suite per company (`--no-repo-gate`).
+- **One check to publish.** `npm run content:publish`: brings in other sessions' commits from GitHub (stops on a file both
+  sides changed), runs the type check and the whole suite once, copies to the clean clone, commits and pushes. No local
+  static build: Cloudflare builds, and a failing build there leaves the previous site up.

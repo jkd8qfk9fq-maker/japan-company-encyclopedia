@@ -11,11 +11,11 @@
 2. 証拠パック `evidence/<id>/` の `brief.md`。足りないときだけ `sections.json`。`summary.json` の訂正有報・決算期変更・変則決算を必ず見る。
 3. グループ2は `related-candidates.json`（有報の本文に社名がある掲載済み企業。**機械抽出済み**）。関連企業はこの中からだけ選ぶ。
 
-EDINET を取り直さない。web 検索はしない（証拠パックにある事実だけで書く。必要な事実が無ければ書かず `warnings` に理由）。
+EDINET を取り直さない。証拠パック（有報）が土台で、**有報に書かれていることはそのまま信用してよい**（他の資料で確かめ直さない）。web で読んでよいのは日本語版 Wikipedia の**その会社の記事1ページだけ**（第2a節）。それ以外の web 検索はしない。
 
 ## 2. 共通
 
-- **出典は EDINET の有報だけ。** 会社の公式サイトなど EDINET 以外の出典は、利用条件を確認して `pipeline/source-allowlist.txt` に載せたホストでなければ `finalize` が拒否する（2026-10-18 の運営者の決定）。公式資料でしか裏付けられない関係は結ばず、`warnings` に書く。
+- **出典は EDINET の有報が基本。** 補足に限って日本語版 Wikipedia を使える（第2a節、JCE-030）。それ以外のホストは `pipeline/source-allowlist.txt` に無ければ `finalize` が拒否する。公式資料でしか裏付けられない関係は結ばず、`warnings` に書く。
 - `sources[].accessedAt`（閲覧日）は**書かない**。`finalize` が証拠パックを作った日時（日本時間の日付）を機械で入れる（書いても上書きされる）。出典 id は `yuho-<決算期末の西暦年>`（draft-entry.json の financials と同じ）。
 - 決算期は表紙のDEIで確認する（3月期と決めつけない）。会計基準も表紙・経理の状況で確認する。
 - 訂正有報が有効文書のときは、`sources` の url・title・publishedAt を `summary.json` の filing の値にする。訂正の分類が record-only なら記録だけ（`needsReview` にしない）。
@@ -24,6 +24,16 @@ EDINET を取り直さない。web 検索はしない（証拠パックにある
 - `src/data`、`pipeline/state`、git は触らない。`pipeline/results/<id>-<stage>.json` 以外を作らない・変えない。
 - **提出後の予定事項**（取得・譲渡・商号変更・公開買付の予定日が有報の提出後に過ぎているもの）は、完了したと書かない。有報に書かれた「予定」として書き、`needsReview` に入れる。
 - 変則決算・決算期変更・訂正の不完全・有報内の矛盾・数値の食い違いは `needsReview`。**分類が足りないこと（業界・関係の種類）は `taxonomyGaps`**で、`needsReview` に書かない。
+
+## 2a. Wikipedia（補足だけ。JCE-030）
+
+- 読むのは `https://ja.wikipedia.org/wiki/<会社名>` の**1ページだけ**（WebFetch 1回）。見つからなければ使わない。
+- 使ってよいのは、**有報に書かれていない補足**だけ: 旧社名・ブランド名・主な製品名・創業の経緯・通称など。
+- **数値（売上・利益・従業員数・持株比率・順位・シェア）は Wikipedia から書かない。** 数値は有報だけ（`check-prose-figures` が有報に無い金額を拒否する）。
+- **有報と食い違ったら有報が正しい。** Wikipedia の記述は捨てる。
+- **文を写さない**（CC BY-SA）。事実だけを自分の言葉で短く書く。
+- 出典は1件: `{ "id": "wikipedia", "title": "Wikipedia「<記事名>」", "publisher": "Wikipedia", "url": "https://ja.wikipedia.org/wiki/<記事名>" }`（`accessedAt` は書かなくてよい）。補足した項目の `sourceIds` に有報の出典と並べて入れる。`financials` には入れない。
+- 関連企業を Wikipedia だけを根拠に結ばない（関係の根拠は有報）。
 
 ## 3. 文章の規則（機械が検査する）
 

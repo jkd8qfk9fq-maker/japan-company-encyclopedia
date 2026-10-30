@@ -8,6 +8,8 @@
  *   node scripts/pipeline/autopilot.mjs status [--json] [--refresh-report out/refresh-report.json]
  *   node scripts/pipeline/autopilot.mjs review <id>                                   print the review sheet
  *   node scripts/pipeline/autopilot.mjs approve <id> --confirm --hash <hash>          register (after YOU read the sheet)
+ *   node scripts/pipeline/autopilot.mjs approve-ready [--include-flagged]   register every company whose sheet is ready, one
+ *                                         after another (the repository gate runs once, in content:publish)
  *   node scripts/pipeline/autopilot.mjs update <id> [--plan]   a registered company with a newer 有報: rewrite only what
  *                                         changed (start-update.mjs), then run → review → approve as for a registration
  *   node scripts/pipeline/autopilot.mjs retry <id>          clear a hold/pause and run again (finished steps are not redone)
@@ -269,6 +271,8 @@ async function main() {
     }
     case "approve":
       return await approve();
+    case "approve-ready":
+      return await approveReady();
     case "update":
       return await startUpdate();
     case "retry":
@@ -399,6 +403,34 @@ function status() {
 async function approve() {
   const id = positional[0];
   if (!id) return usage();
+  const result = await approveOne(id, { confirmed: has("confirm"), typedHash: flag("hash"), fast: false });
+  if (!result.ok) return fatal(result.message);
+  console.log(result.message);
+}
+
+/**
+ * Speed (2026-10-30): every ready sheet, one after another, in one command. Each goes through exactly the checks a single
+ * approve does (the hash must match what the sheet showed, no rule errors) — the program confirms the hash it wrote, and
+ * the approval is recorded as the AI's when an AI runs it (JCE-025). Updates are left to a single approve. Sequential on
+ * purpose: registrations in parallel ran out of memory (2026-10-20).
+ */
+async function approveReady() {
+  const statuses = new Set(["ready", ...(has("include-flagged") ? ["ready-with-flags"] : [])]);
+  const ids = allRecords().filter((r) => statuses.has(r.status) && r.mode !== "update").map((r) => r.id).sort();
+  if (ids.length === 0) return console.log("登録できる確認シートはありません");
+  console.log(`登録: ${ids.length} 社（${[...statuses].join("・")}）`);
+  let done = 0;
+  for (const id of ids) {
+    const rec = loadRecord(id);
+    const result = await approveOne(id, { confirmed: true, typedHash: rec?.review?.hash ?? null, fast: true });
+    console.log(`  ${result.ok ? "登録" : "見送り"} ${id}${result.ok ? "" : `: ${result.message.split("\n").slice(1, 3).join(" ").trim()}`}`);
+    if (result.ok) done += 1;
+  }
+  console.log(`${done}/${ids.length} 社を登録しました。リポジトリ全体の検査は npm run content:publish で1回`);
+}
+
+/** @returns {Promise<{ ok: boolean, message: string }>} */
+async function approveOne(/** @type {string} */ id, /** @type {{ confirmed: boolean, typedHash: string | null, fast: boolean }} */ { confirmed, typedHash, fast }) {
   const rec = loadRecord(id);
   const staged = join(root, "pipeline/staging", `${id}.json`);
   const stagedText = existsSync(staged) ? readFileSync(staged, "utf8") : null;
@@ -406,38 +438,38 @@ async function approve() {
   const existing = join(root, "src/data/companies", `${id}.json`);
   const problems = approvalProblems({
     record: rec,
-    confirmed: has("confirm"),
-    typedHash: flag("hash"),
+    confirmed,
+    typedHash,
     stagedHash: hash,
     policyErrors: stagedText === null ? 0 : errorsOf(scoped(id, policyFindings(JSON.parse(stagedText), { root }))).length,
     entryTier: existsSync(existing) ? (JSON.parse(readFileSync(existing, "utf8")).status?.state ?? "published") : null,
     update: rec?.mode === "update",
   });
   if (problems.length > 0) {
-    if (rec?.status === "registered") return console.log(`${id}: すでに登録済みです（${rec.approval?.at}）。何もしません`);
-    return fatal(`${id}: 承認できません\n${problems.map((p) => `  - ${p}`).join("\n")}`);
+    if (rec?.status === "registered") return { ok: true, message: `${id}: すでに登録済みです（${rec.approval?.at}）。何もしません` };
+    return { ok: false, message: `${id}: 承認できません\n${problems.map((p) => `  - ${p}`).join("\n")}` };
   }
   const before = existsSync(existing) ? JSON.parse(readFileSync(existing, "utf8")) : {};
   const fields = changedFields(before, JSON.parse(/** @type {string} */ (stagedText))).filter((f) => layerOf(f) === "detail");
   const approval = approvalFor({ id: flag("approver"), root, at: now(), reviewHash: hash, fields, basis: flag("basis") });
   const approver = approval.approver;
   const proxy = approver.kind === "agent";
-  if (proxy) console.log(`AI エージェントの実行として記録します（${approver.name}、${approval.onBehalfOf?.name} の権限で。正式な承認ではない）`);
+  if (proxy && !fast) console.log(`AI エージェントの実行として記録します（${approver.name}、${approval.onBehalfOf?.name} の権限で。正式な承認ではない）`);
   event(id, "approve", { hash, approver: approver.id, ...(proxy ? { onBehalfOf: approval.onBehalfOf?.id } : {}) });
-  const r = await runNode(nodeArgs(["scripts/pipeline/advance.mjs", id, "--register", ...(rec.mode === "update" ? ["--update"] : [])]), { ...process.env, REGISTRATION_APPROVAL: JSON.stringify(approval) });
-  console.log(r.out.trim());
+  const r = await runNode(nodeArgs(["scripts/pipeline/advance.mjs", id, "--register", ...(rec.mode === "update" ? ["--update"] : []), ...(fast ? ["--no-repo-gate"] : [])]), { ...process.env, REGISTRATION_APPROVAL: JSON.stringify(approval) });
+  if (!fast) console.log(r.out.trim());
   if (!/^registered\s*$/m.test(r.out)) {
     rec.holds.push({ kind: "register-failed", reason: r.out.replace(/\s+/g, " ").slice(-300) });
     Object.assign(rec, { status: "held", step: "register", updatedAt: now() });
     saveRecord(rec);
     event(id, "held", { kind: "register-failed" });
-    return fatal(`${id}: 登録に失敗しました。ファイルは元に戻っています（finalize の仕様）。status を見てください`);
+    return { ok: false, message: `${id}: 登録に失敗しました。ファイルは元に戻っています（finalize の仕様）。\n${r.out.replace(/\s+/g, " ").slice(-200)}` };
   }
   Object.assign(rec, { status: "registered", step: "registered", approval: { at: approval.approvedAt, hash, approver: approver.id, ...(proxy ? { proxy: true } : {}) }, updatedAt: now() });
   saveRecord(rec);
   release(id);
   event(id, "registered", { hash });
-  console.log(`${id}: 登録しました。コミットは人が行います。内容の確認: npm run content:diff`);
+  return { ok: true, message: `${id}: 登録しました。公開は npm run content:publish` };
 }
 
 // ---------------------------------------------------------------------------------------- update

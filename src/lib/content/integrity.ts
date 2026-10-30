@@ -37,9 +37,6 @@ function sourceErrors(sources: Source[], owner: string): string[] {
   const errors: string[] = [];
   const ids = sources.map((s) => s.id);
   if (new Set(ids).size !== ids.length) errors.push(`${owner}: 出典の id が重複しています`);
-  for (const s of sources) {
-    if (/wikipedia\.org/i.test(s.url)) errors.push(`${owner}: 出典「${s.title}」— Wikipedia は出典にできません`);
-  }
   return errors;
 }
 
@@ -136,6 +133,8 @@ export function checkCompany(company: Company, context: ContentContext): string[
       }
     }
     e.push(...citationErrors(f.sourceIds, src, where));
+    // Figures are EDINET's alone (JCE-030): Wikipedia may add context to the prose, never a number to the table.
+    if (f.sourceIds.some((id) => /wikipedia\.org/i.test(src.find((s) => s.id === id)?.url ?? ""))) e.push(`${where}: 財務の出典に Wikipedia は使えません（有報だけ）`);
   }
   const withBasis = company.financials.filter((f) => f.revenueBasis !== undefined).length;
   const withNetBasis = company.financials.filter((f) => f.netIncomeBasis !== undefined).length;
