@@ -67,12 +67,13 @@ node scripts/verify-admin-queue.mjs             # /admin/queue の認証と画�
 ```
 npm run content:autopilot -- enqueue --file pipeline/autopilot/batch-NN.txt
 npm run content:autopilot -- run --ids <…> --allow-web --total-budget 130   # 有報＋Wikipedia（補足）で執筆
-npm run content:autopilot -- approve-ready --include-flagged               # 確認シートが出た会社をまとめて登録
+npm run content:autopilot -- approve-ready --include-flagged [--except a,b] # 確認シートが出た会社をまとめて登録
 npm run content:publish                                                     # 1回検査して公開（push まで）
 ```
 
 - 有報（EDINET）に書かれていることは、そのまま信用する。Wikipedia は有報に無い補足（旧社名・ブランド・製品名・経緯）だけ。数値は有報だけ。文は写さない。
 - `approve-ready` は、各社の検査（スキーマ・出典・本文の金額・文章の規則）は1社ずつ行い、リポジトリ全体の検査は省く。全体の検査は `content:publish` で1回。
+- 要確認のうち文言の確認（`other-profit-wording` など）は登録してよい。**データそのものの誤り**（例: 決算期の変更で5年表の期末日・年度ラベルが有報と違う）が書かれた会社は `--except` で外し、直してから登録する。
 - `content:publish` は、GitHub に別のセッションが入れた変更を先に取り込み（同じファイルを両方で変えていたら止まる）、型検査と全テストを1回だけ実行して、公開用クローンへコピー・commit・push する。ローカルの静的ビルドはしない（Cloudflare が build し、失敗すれば前の公開版が残る）。
 
 ## 3a. 通常運用（以前の手順）
