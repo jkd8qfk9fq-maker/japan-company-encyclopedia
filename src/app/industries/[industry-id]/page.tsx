@@ -5,7 +5,10 @@ import { AdSlot } from "@/components/ads/ad-slot";
 import { CompanyCard } from "@/components/company/company-card";
 import { CompanySection } from "@/components/company/company-section";
 import { SectionTabs, type SectionLink } from "@/components/navigation/section-tabs";
+import { IndustryHero } from "@/components/industry/industry-hero";
+import { IndustryNetwork } from "@/components/industry/industry-network";
 import { IndustryStructure } from "@/components/industry/industry-structure";
+import { ValueChain } from "@/components/industry/value-chain";
 import { RichText } from "@/components/rich-text/rich-text";
 import { SourceList } from "@/components/sources/source-list";
 import { toCompanySummary } from "@/lib/company-summary";
@@ -87,24 +90,38 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
 
       <div id="industry-tabs">
         <CompanySection id="about" eyebrow="About" title={industry?.structure === "chain" ? "業界の流れ" : "業界の仕組み"}>
+          <IndustryHero id={listing.id} name={listing.name} nameEn={listing.nameEn} />
           {industry ? (
-            <>
+            <div className="mt-8">
               <p className="max-w-3xl text-[1.0625rem] leading-[1.95]">
                 <RichText text={industry.description} />
               </p>
               <SourceList sources={industry.sources} sourceIds={industry.sourceIds} className="mt-2" />
               {industry.categories.length > 0 && (
-                <div className="mt-10 max-w-4xl">
-                  <IndustryStructure industry={industry} companies={companies} />
+                <div className="mt-10">
+                  {industry.structure === "chain" ? (
+                    <ValueChain industry={industry} companies={companies} />
+                  ) : (
+                    <div className="max-w-4xl">
+                      <IndustryStructure industry={industry} companies={companies} />
+                    </div>
+                  )}
                 </div>
               )}
-              <p className="figures mt-10 text-xs text-muted-foreground">最終更新 {formatDateJa(industry.updatedAt)}</p>
-            </>
+            </div>
           ) : (
-            <p className="max-w-3xl text-[0.9375rem] leading-7 text-muted-foreground">
-              この業界の仕組みの解説は、出典を確認したうえで準備中です。「企業」と「つながり」のタブで、この業界の企業と取引の関係を見られます。
+            <p className="mt-6 max-w-3xl text-[0.9375rem] leading-7 text-muted-foreground">
+              この業界の工程の解説は、出典を確認したうえで準備中です。下の図は、掲載企業の有価証券報告書に書かれた取引の関係から描いています。
             </p>
           )}
+
+          <div className="mt-14">
+            <h3 className="seal-mark font-serif text-xl font-semibold">企業と、つながる業界</h3>
+            <div className="mt-6">
+              <IndustryNetwork industryId={listing.id} data={map} />
+            </div>
+          </div>
+          {industry && <p className="figures mt-10 text-xs text-muted-foreground">最終更新 {formatDateJa(industry.updatedAt)}</p>}
         </CompanySection>
 
         <CompanySection id="companies" eyebrow="Companies" title={`${listing.name}業界の企業`}>

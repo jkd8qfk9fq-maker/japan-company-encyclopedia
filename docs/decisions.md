@@ -446,3 +446,19 @@ The operator decided that an explanation approved by an AI on the operator's aut
   companies and features. **Company names in kanji are not truly 50音順**: entries carry no reading, so a kanji name
   sorts by its characters (roughly their 音読み). The EDINET code list's 提出者名（ヨミ） would fix this; it is not
   taken in yet.
+
+### JCE-030 · 2026-11-01 · Accepted (operator) — Industry 仕組み tab: photographs, an illustrated chain, a network
+
+After the operator's two references (an upstream → own operations → downstream illustration, and a coloured
+industry network):
+- **Photographs.** One per industry at the top of the 仕組み tab, and one per stage of a researched structure, all from
+  Unsplash under the Unsplash License, stored in `src/assets/industries` (served by next/image, so the static export and
+  its base path work). **No credit is shown**, by the operator's choice (the licence does not require it); where each
+  file came from is recorded in `src/assets/industries/SOURCES.md`. A photograph shows the kind of work, never a
+  company's own site, product or a visible brand. Replaces "industry images belong to the industry map only".
+- **Illustrated chain** (`ValueChain`, for `structure: "chain"`): chevron bands, numbered photo cards with the first
+  sentence of each stage's sourced description and its companies; `input` categories in their own band joined by a
+  dashed border, not placed before the first step. On a phone the cards are a sideways swipe row.
+- **Network** (`IndustryNetwork`, every industry): the industry at the centre, its companies on a ring, the industries
+  they trade with outside — only `supplier` / `customer` ties, coloured per industry with the site's segment palette,
+  circles sized by the number of ties. Companies trading with the same industry are grouped so their lines run together.
