@@ -27,6 +27,18 @@ export type IndustryCategory = Sourced & {
   role?: "stage" | "input";
 };
 
+/**
+ * How this industry is tied to another one, as the member companies' filings describe it: what it buys from that
+ * industry (`from`) or sells to it (`to`). An industry-level claim, sourced to those filings — not a line derived
+ * from company ties, which the industry map draws from `relatedCompanies` on its own.
+ */
+export type IndustryLink = Sourced & {
+  industryId: IndustryId;
+  direction: "from" | "to";
+  /** Rich text. */
+  description: string;
+};
+
 export type Industry = Sourced & {
   id: IndustryId;
   name: string;
@@ -39,6 +51,7 @@ export type Industry = Sourced & {
    */
   structure: "chain" | "segments";
   categories: IndustryCategory[];
+  links?: IndustryLink[];
   sources: Source[];
   status: ContentStatus;
   /** YYYY-MM-DD */

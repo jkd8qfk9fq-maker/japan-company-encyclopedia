@@ -1,0 +1,416 @@
+{
+  "id": "energy",
+  "name": "エネルギー",
+  "nameEn": "Energy",
+  "description": "エネルギー業界は、石油・天然ガスなどの資源を取り、燃料に加工したり、電気やガスにして届けたりする仕事です。石油元売り、電力会社、ガス会社が中心です。ガソリンなどの燃料や、電気、ガスが、家庭や企業に売られます。",
+  "sourceIds": [
+    "cosmo-energy-holdings-yuho-2026",
+    "electric-power-development-yuho-2026",
+    "eneos-holdings-yuho-2026",
+    "idemitsu-kosan-yuho-2026",
+    "inpex-yuho-2026",
+    "osaka-gas-yuho-2026",
+    "the-chugoku-electric-power-yuho-2026",
+    "the-kansai-electric-power-yuho-2026",
+    "tohoku-electric-power-yuho-2026"
+  ],
+  "structure": "chain",
+  "categories": [
+    {
+      "id": "resources",
+      "name": "資源の開発",
+      "role": "stage",
+      "description": "石油や天然ガスを探し、掘り、生産して売る段階です。国内でも海外でも行われます。売り先は、石油元売り会社、電力会社、都市ガス事業者などです。",
+      "companyIds": [
+        "inpex",
+        "cosmo-energy-holdings",
+        "eneos-holdings",
+        "idemitsu-kosan",
+        "osaka-gas"
+      ],
+      "sourceIds": [
+        "inpex-yuho-2026",
+        "cosmo-energy-holdings-yuho-2026",
+        "eneos-holdings-yuho-2026",
+        "idemitsu-kosan-yuho-2026",
+        "osaka-gas-yuho-2026"
+      ]
+    },
+    {
+      "id": "refining",
+      "name": "石油製品・化学品の製造",
+      "role": "stage",
+      "description": "原油から、ガソリン・灯油・軽油・重油などの石油製品をつくる段階です。石油化学の原料や製品、潤滑油も、ここでつくります。",
+      "companyIds": [
+        "cosmo-energy-holdings",
+        "eneos-holdings",
+        "idemitsu-kosan"
+      ],
+      "sourceIds": [
+        "cosmo-energy-holdings-yuho-2026",
+        "eneos-holdings-yuho-2026",
+        "idemitsu-kosan-yuho-2026"
+      ]
+    },
+    {
+      "id": "generation",
+      "name": "発電",
+      "role": "stage",
+      "description": "水力・火力・原子力・風力などの再生可能エネルギーで、電気をつくる段階です。電力会社が中心です。石油会社など、ほかの業界の会社も発電の事業を持っています。つくった電気は、小売の会社や卸電力取引市場などに売られます。",
+      "companyIds": [
+        "electric-power-development",
+        "the-chugoku-electric-power",
+        "the-kansai-electric-power",
+        "tohoku-electric-power",
+        "eneos-holdings",
+        "cosmo-energy-holdings",
+        "idemitsu-kosan",
+        "nippon-paper-industries",
+        "tokyo-century",
+        "infroneer-holdings",
+        "furukawa-electric",
+        "alink-internet"
+      ],
+      "sourceIds": [
+        "electric-power-development-yuho-2026",
+        "the-chugoku-electric-power-yuho-2026",
+        "the-kansai-electric-power-yuho-2026",
+        "tohoku-electric-power-yuho-2026",
+        "eneos-holdings-yuho-2026",
+        "cosmo-energy-holdings-yuho-2026",
+        "idemitsu-kosan-yuho-2026",
+        "nippon-paper-industries-yuho-2026",
+        "tokyo-century-yuho-2026",
+        "infroneer-holdings-yuho-2026",
+        "furukawa-electric-yuho-2026",
+        "alink-internet-yuho-2026"
+      ]
+    },
+    {
+      "id": "grid",
+      "name": "送配電・ガス導管",
+      "role": "stage",
+      "description": "つくった電気や都市ガスを、送電線・変電設備・ガス導管で届ける段階です。電力では、送配電を担う会社が「託送」というサービスを出します。小売会社や発電会社も、このサービスで送電線を使えます。",
+      "companyIds": [
+        "electric-power-development",
+        "the-chugoku-electric-power",
+        "the-kansai-electric-power",
+        "tohoku-electric-power",
+        "osaka-gas"
+      ],
+      "sourceIds": [
+        "electric-power-development-yuho-2026",
+        "the-chugoku-electric-power-yuho-2026",
+        "the-kansai-electric-power-yuho-2026",
+        "tohoku-electric-power-yuho-2026",
+        "osaka-gas-yuho-2026"
+      ]
+    },
+    {
+      "id": "sales",
+      "name": "販売",
+      "role": "stage",
+      "description": "家庭や企業に、燃料・電気・ガスを売る段階です。石油製品は、サービスステーションや特約店を通じて売られます。電気とガスは、家庭向けと法人向けに売られます。",
+      "companyIds": [
+        "cosmo-energy-holdings",
+        "eneos-holdings",
+        "idemitsu-kosan",
+        "osaka-gas",
+        "the-chugoku-electric-power",
+        "the-kansai-electric-power",
+        "tohoku-electric-power",
+        "hikari-tsushin",
+        "orix"
+      ],
+      "sourceIds": [
+        "cosmo-energy-holdings-yuho-2026",
+        "eneos-holdings-yuho-2026",
+        "idemitsu-kosan-yuho-2026",
+        "osaka-gas-yuho-2026",
+        "the-chugoku-electric-power-yuho-2026",
+        "the-kansai-electric-power-yuho-2026",
+        "tohoku-electric-power-yuho-2026",
+        "hikari-tsushin-yuho-2026",
+        "orix-yuho-2026"
+      ]
+    },
+    {
+      "id": "equipment",
+      "name": "発電・送配電の設備と電線",
+      "role": "input",
+      "description": "発電所の設備や、電気を送る変電設備・電線・ケーブルをつくる分野です。電力会社などが、お客さまになります。",
+      "companyIds": [
+        "fuji-electric",
+        "hitachi",
+        "mitsubishi-electric",
+        "ihi",
+        "kawasaki-heavy-industries",
+        "fujikura",
+        "furukawa-electric",
+        "sumitomo-electric-industries"
+      ],
+      "sourceIds": [
+        "fuji-electric-yuho-2026",
+        "hitachi-yuho-2026",
+        "mitsubishi-electric-yuho-2026",
+        "ihi-yuho-2026",
+        "kawasaki-heavy-industries-yuho-2026",
+        "fujikura-yuho-2026",
+        "furukawa-electric-yuho-2026",
+        "sumitomo-electric-industries-yuho-2026"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "industryId": "electronics",
+      "direction": "from",
+      "description": "発電設備、受変電設備、送配電用の電線・ケーブルなどを仕入れます。電力会社がお客さまとして挙げられています。",
+      "sourceIds": [
+        "fuji-electric-yuho-2026",
+        "sumitomo-electric-industries-yuho-2026",
+        "fujikura-yuho-2026",
+        "furukawa-electric-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "machinery",
+      "direction": "from",
+      "description": "発電に使う原動機やボイラ、原子力機器などのエネルギー関連機器を仕入れます。電力会社などがお客さまとして挙げられています。",
+      "sourceIds": [
+        "ihi-yuho-2026",
+        "kawasaki-heavy-industries-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "electronics",
+      "direction": "to",
+      "description": "都市ガスを、メーカーなどの大口の取引先に販売します。",
+      "sourceIds": [
+        "osaka-gas-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "transportation",
+      "direction": "to",
+      "description": "石油元売りの取引先として、鉄道会社や航空会社などの運輸の会社が挙げられています。",
+      "sourceIds": [
+        "cosmo-energy-holdings-yuho-2026"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "cosmo-energy-holdings-yuho-2026",
+      "title": "有価証券報告書－第11期(2025/04/01－2026/03/31)",
+      "publisher": "コスモエネルギーホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI3A.pdf",
+      "publishedAt": "2026-06-24",
+      "accessedAt": "2026-10-18"
+    },
+    {
+      "id": "electric-power-development-yuho-2026",
+      "title": "有価証券報告書－第74期(2025/04/01－2026/03/31)",
+      "publisher": "電源開発株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YISC.pdf",
+      "publishedAt": "2026-06-24",
+      "docId": "S100YISC",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "eneos-holdings-yuho-2026",
+      "title": "有価証券報告書－第16期（2025年4月1日－2026年3月31日）",
+      "publisher": "ENEOSホールディングス株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YF7I.pdf",
+      "publishedAt": "2026-06-23",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "idemitsu-kosan-yuho-2026",
+      "title": "有価証券報告書－第111期(2025/04/01－2026/03/31)",
+      "publisher": "出光興産株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCS3.pdf",
+      "publishedAt": "2026-06-17",
+      "accessedAt": "2026-10-17"
+    },
+    {
+      "id": "inpex-yuho-2026",
+      "title": "有価証券報告書－第20期（2025年1月1日－2025年12月31日）",
+      "publisher": "株式会社INPEX（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XU9L.pdf",
+      "publishedAt": "2026-03-26",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "osaka-gas-yuho-2026",
+      "title": "有価証券報告書－第208期(2025/04/01－2026/03/31)",
+      "publisher": "大阪瓦斯株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFQT.pdf",
+      "publishedAt": "2026-06-22",
+      "docId": "S100YFQT",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-21"
+    },
+    {
+      "id": "the-chugoku-electric-power-yuho-2026",
+      "title": "有価証券報告書－第102期(2025/04/01－2026/03/31)",
+      "publisher": "中国電力株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGCV.pdf",
+      "publishedAt": "2026-06-23",
+      "docId": "S100YGCV",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "id": "the-kansai-electric-power-yuho-2026",
+      "title": "有価証券報告書－第102期(2025/04/01－2026/03/31)",
+      "publisher": "関西電力株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFXZ.pdf",
+      "publishedAt": "2026-06-24",
+      "accessedAt": "2026-10-18"
+    },
+    {
+      "id": "tohoku-electric-power-yuho-2026",
+      "title": "有価証券報告書－第102期(2025/04/01－2026/03/31)",
+      "publisher": "東北電力株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEK2.pdf",
+      "publishedAt": "2026-06-23",
+      "accessedAt": "2026-10-18",
+      "docId": "S100YEK2",
+      "asOf": "2026-03-31"
+    },
+    {
+      "id": "nippon-paper-industries-yuho-2026",
+      "title": "有価証券報告書－第102期(2025年4月1日－2026年3月31日)",
+      "publisher": "日本製紙株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ5X.pdf",
+      "publishedAt": "2026-06-25",
+      "docId": "S100YJ5X",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "tokyo-century-yuho-2026",
+      "title": "有価証券報告書－第57期(2025/04/01－2026/03/31)",
+      "publisher": "東京センチュリー株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDRI.pdf",
+      "publishedAt": "2026-06-19",
+      "docId": "S100YDRI",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "id": "infroneer-holdings-yuho-2026",
+      "title": "有価証券報告書－第5期(2025/04/01－2026/03/31)",
+      "publisher": "インフロニア・ホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCIP.pdf",
+      "publishedAt": "2026-06-16",
+      "docId": "S100YCIP",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "furukawa-electric-yuho-2026",
+      "title": "有価証券報告書－第204期(2025年4月1日－2026年3月31日)",
+      "publisher": "古河電気工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCF0.pdf",
+      "publishedAt": "2026-06-24",
+      "docId": "S100YCF0",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "id": "alink-internet-yuho-2026",
+      "title": "有価証券報告書－第13期(2025/03/01－2026/02/28)",
+      "publisher": "株式会社ALiNKインターネット",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y69B.pdf",
+      "publishedAt": "2026-05-27",
+      "accessedAt": "2026-10-11"
+    },
+    {
+      "id": "hikari-tsushin-yuho-2026",
+      "title": "有価証券報告書－第39期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社光通信",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YN0V.pdf",
+      "publishedAt": "2026-06-29",
+      "accessedAt": "2026-10-03"
+    },
+    {
+      "id": "orix-yuho-2026",
+      "title": "有価証券報告書－第63期(2025/04/01－2026/03/31)",
+      "publisher": "オリックス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YG5L.pdf",
+      "publishedAt": "2026-06-22",
+      "accessedAt": "2026-10-18"
+    },
+    {
+      "id": "fuji-electric-yuho-2026",
+      "title": "有価証券報告書－第150期(2025年4月1日－2026年3月31日)",
+      "publisher": "富士電機株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEEB.pdf",
+      "publishedAt": "2026-06-19",
+      "accessedAt": "2026-09-29"
+    },
+    {
+      "id": "hitachi-yuho-2026",
+      "title": "有価証券報告書－第157期（2025年4月1日－2026年3月31日）",
+      "publisher": "株式会社日立製作所（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGBO.pdf",
+      "publishedAt": "2026-06-22",
+      "accessedAt": "2026-09-19"
+    },
+    {
+      "id": "mitsubishi-electric-yuho-2026",
+      "title": "有価証券報告書－第155期（2025年4月1日－2026年3月31日）",
+      "publisher": "三菱電機株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD3V.pdf",
+      "publishedAt": "2026-06-19",
+      "accessedAt": "2026-09-19"
+    },
+    {
+      "id": "ihi-yuho-2026",
+      "title": "有価証券報告書－第209期(2025年4月1日－2026年3月31日)",
+      "publisher": "株式会社IHI",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YENT.pdf",
+      "publishedAt": "2026-06-22",
+      "docId": "S100YENT",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-26"
+    },
+    {
+      "id": "kawasaki-heavy-industries-yuho-2026",
+      "title": "訂正有価証券報告書－第203期(2025/04/01－2026/03/31)",
+      "publisher": "川崎重工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YU10.pdf",
+      "publishedAt": "2026-08-07",
+      "docId": "S100YU10",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-20"
+    },
+    {
+      "id": "fujikura-yuho-2026",
+      "title": "有価証券報告書－第178期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社フジクラ",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGP3.pdf",
+      "publishedAt": "2026-06-23",
+      "docId": "S100YGP3",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "sumitomo-electric-industries-yuho-2026",
+      "title": "有価証券報告書－第156期(2025/04/01－2026/03/31)",
+      "publisher": "住友電気工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YL2M.pdf",
+      "publishedAt": "2026-06-26",
+      "docId": "S100YL2M",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-20"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-01"
+}

@@ -1,0 +1,367 @@
+{
+  "id": "retail",
+  "name": "小売",
+  "nameEn": "Retail",
+  "description": "お店やインターネットで、消費者に食品・衣料品・日用品などを売る業界です。扱う商品や売り方によって、総合的に売る店、分野を絞った専門店、ネット通販などに分かれます。自社で商品を企画して売る会社や、店のほかに金融や不動産を手がける会社もあります。",
+  "sourceIds": [
+    "aeon-yuho-2026",
+    "seven-and-i-holdings-yuho-2026",
+    "cosmos-pharmaceutical-yuho-2026",
+    "fast-retailing-yuho-2025",
+    "zozo-yuho-2026"
+  ],
+  "structure": "segments",
+  "categories": [
+    {
+      "id": "general-stores",
+      "name": "スーパー・コンビニ",
+      "description": "食品、日用品、衣料品などを、ひとつの店でまとめて買えるようにする店です。総合スーパー、食品スーパー、ディスカウントストア、コンビニエンスストアがあります。",
+      "companyIds": [
+        "aeon",
+        "aeon-hokkaido",
+        "aeon-kyushu",
+        "seven-and-i-holdings",
+        "pan-pacific-international-holdings",
+        "yamazaki-baking"
+      ],
+      "sourceIds": [
+        "aeon-yuho-2026",
+        "aeon-hokkaido-yuho-2026",
+        "aeon-kyushu-yuho-2026",
+        "seven-and-i-holdings-yuho-2026",
+        "pan-pacific-international-holdings-yuho-2026",
+        "yamazaki-baking-yuho-2025"
+      ]
+    },
+    {
+      "id": "drugstores",
+      "name": "ドラッグストア・調剤薬局",
+      "description": "医薬品、化粧品、日用品、食品を売るドラッグストアと、薬を出す調剤薬局です。毎日の暮らしに必要な消耗品を、近くの店でそろえられるようにしています。",
+      "companyIds": [
+        "cosmos-pharmaceutical",
+        "matsukiyococokara-and-co",
+        "aeon",
+        "aeon-kyushu",
+        "alfresa-holdings"
+      ],
+      "sourceIds": [
+        "cosmos-pharmaceutical-yuho-2026",
+        "matsukiyococokara-and-co-yuho-2026",
+        "aeon-yuho-2026",
+        "aeon-kyushu-yuho-2026",
+        "alfresa-holdings-yuho-2026"
+      ]
+    },
+    {
+      "id": "specialty-stores",
+      "name": "専門店・自社ブランド",
+      "description": "衣料品、家具・インテリア、生活雑貨、眼鏡、カー用品、スポーツ用品など、分野を絞って商品を売る会社です。自社ブランドの商品を企画して、自社の店やネットストアで売る会社が多くあります。",
+      "companyIds": [
+        "fast-retailing",
+        "ryohin-keikaku",
+        "nitori-holdings",
+        "aigan",
+        "yellow-hat",
+        "yonex"
+      ],
+      "sourceIds": [
+        "fast-retailing-yuho-2025",
+        "ryohin-keikaku-yuho-2025",
+        "nitori-holdings-yuho-2026",
+        "aigan-yuho-2026",
+        "yellow-hat-yuho-2026",
+        "yonex-yuho-2026"
+      ]
+    },
+    {
+      "id": "online-mail-order",
+      "name": "ネット通販・通信販売",
+      "description": "インターネットや電話で注文を受けて商品を届ける通信販売と、ネット上の通販サイトです。出店するブランドの商品を預かって売る形や、月額制で洋服を届けて貸すサービスもあります。",
+      "companyIds": [
+        "zozo",
+        "4cs-hd",
+        "all-about",
+        "ly",
+        "aircloset"
+      ],
+      "sourceIds": [
+        "zozo-yuho-2026",
+        "4cs-hd-yuho-2025",
+        "all-about-yuho-2026",
+        "ly-yuho-2026",
+        "aircloset-yuho-2026"
+      ]
+    },
+    {
+      "id": "department-station",
+      "name": "百貨店・駅の店舗",
+      "description": "百貨店や、鉄道の駅・駅ビルにある店舗です。鉄道会社が、人を運ぶ事業のほかに、百貨店、物販・飲食の店、スーパーなどを運営する例があります。",
+      "companyIds": [
+        "central-japan-railway",
+        "east-japan-railway",
+        "west-japan-railway",
+        "tokyu",
+        "afc-hd-ams-life-science"
+      ],
+      "sourceIds": [
+        "central-japan-railway-yuho-2026",
+        "east-japan-railway-yuho-2026",
+        "west-japan-railway-yuho-2026",
+        "tokyu-yuho-2026",
+        "afc-hd-ams-life-science-yuho-2025"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "industryId": "pharmaceuticals",
+      "direction": "from",
+      "description": "ドラッグストアや調剤薬局は、医薬品を医薬品の会社から仕入れて売ります。仕入先として、医薬品の卸売会社やメーカーが挙げられています。",
+      "sourceIds": [
+        "matsukiyococokara-and-co-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "automotive",
+      "direction": "from",
+      "description": "カー用品を売る会社は、自動車に関わる会社から商品を仕入れます。扱う商品には、タイヤ・ホイールなどがあります。",
+      "sourceIds": [
+        "yellow-hat-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "food",
+      "direction": "from",
+      "description": "量販店やコンビニエンスストアは、食品の会社がつくったパンや菓子などを仕入れて売ります。",
+      "sourceIds": [
+        "yamazaki-baking-yuho-2025"
+      ]
+    },
+    {
+      "industryId": "trading",
+      "direction": "from",
+      "description": "月額制の洋服レンタルの会社は、仕入先として商社が挙げられています。",
+      "sourceIds": [
+        "aircloset-yuho-2026"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "aeon-yuho-2026",
+      "title": "有価証券報告書－第101期（2025年3月1日－2026年2月28日）",
+      "publisher": "イオン株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y5VH.pdf",
+      "publishedAt": "2026-05-25",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "seven-and-i-holdings-yuho-2026",
+      "title": "有価証券報告書－第21期（2025年3月1日－2026年2月28日）",
+      "publisher": "株式会社セブン＆アイ・ホールディングス（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y4VB.pdf",
+      "publishedAt": "2026-05-20",
+      "accessedAt": "2026-09-20"
+    },
+    {
+      "id": "cosmos-pharmaceutical-yuho-2026",
+      "title": "有価証券報告書－第44期(2025/06/01－2026/05/31)",
+      "publisher": "株式会社コスモス薬品",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YYDI.pdf",
+      "publishedAt": "2026-08-26",
+      "docId": "S100YYDI",
+      "asOf": "2026-05-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "fast-retailing-yuho-2025",
+      "title": "有価証券報告書－第64期（2024年9月1日－2025年8月31日）",
+      "publisher": "株式会社ファーストリテイリング（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X6X6.pdf",
+      "publishedAt": "2025-11-28",
+      "accessedAt": "2026-09-20"
+    },
+    {
+      "id": "zozo-yuho-2026",
+      "title": "有価証券報告書－第28期（2025年4月1日－2026年3月31日）",
+      "publisher": "株式会社ZOZO（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y951.pdf",
+      "publishedAt": "2026-06-08",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "aeon-hokkaido-yuho-2026",
+      "title": "有価証券報告書－第48期(2025/03/01－2026/02/28)",
+      "publisher": "イオン北海道株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y36L.pdf",
+      "publishedAt": "2026-05-15",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "aeon-kyushu-yuho-2026",
+      "title": "有価証券報告書－第54期(2025/03/01－2026/02/28)",
+      "publisher": "イオン九州株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y4YP.pdf",
+      "publishedAt": "2026-05-19",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "pan-pacific-international-holdings-yuho-2026",
+      "title": "有価証券報告書－第46期(2025/07/01－2026/06/30)",
+      "publisher": "株式会社パン・パシフィック・インターナショナルホールディングス",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z42G.pdf",
+      "publishedAt": "2026-09-25",
+      "docId": "S100Z42G",
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-10-20"
+    },
+    {
+      "id": "yamazaki-baking-yuho-2025",
+      "title": "有価証券報告書－第78期(2025/01/01－2025/12/31)",
+      "publisher": "山崎製パン株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XQ5C.pdf",
+      "publishedAt": "2026-03-24",
+      "accessedAt": "2026-10-19",
+      "docId": "S100XQ5C",
+      "asOf": "2025-12-31"
+    },
+    {
+      "id": "matsukiyococokara-and-co-yuho-2026",
+      "title": "有価証券報告書－第19期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社マツキヨココカラ＆カンパニー",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD1I.pdf",
+      "publishedAt": "2026-06-18",
+      "docId": "S100YD1I",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "alfresa-holdings-yuho-2026",
+      "title": "有価証券報告書－第23期(2025/04/01－2026/03/31)",
+      "publisher": "アルフレッサ ホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YH29.pdf",
+      "publishedAt": "2026-06-23",
+      "accessedAt": "2026-10-10"
+    },
+    {
+      "id": "ryohin-keikaku-yuho-2025",
+      "title": "有価証券報告書－第47期（2024年9月1日－2025年8月31日）",
+      "publisher": "株式会社良品計画（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X5NI.pdf",
+      "publishedAt": "2025-11-21",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "nitori-holdings-yuho-2026",
+      "title": "有価証券報告書－第54期（2025年4月1日－2026年3月31日）",
+      "publisher": "株式会社ニトリホールディングス（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIMF.pdf",
+      "publishedAt": "2026-06-24",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "aigan-yuho-2026",
+      "title": "有価証券報告書－第66期(2025/04/01－2026/03/31)",
+      "publisher": "愛眼株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJUD.pdf",
+      "publishedAt": "2026-06-25",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "yellow-hat-yuho-2026",
+      "title": "有価証券報告書－第68期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社イエローハット",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC2P.pdf",
+      "publishedAt": "2026-06-23",
+      "accessedAt": "2026-10-02"
+    },
+    {
+      "id": "yonex-yuho-2026",
+      "title": "有価証券報告書－第69期(2025/04/01－2026/03/31)",
+      "publisher": "ヨネックス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCTQ.pdf",
+      "publishedAt": "2026-06-17",
+      "accessedAt": "2026-10-02"
+    },
+    {
+      "id": "4cs-hd-yuho-2025",
+      "title": "有価証券報告書－第23期(2024/10/01－2025/09/30)",
+      "publisher": "株式会社フォーシーズHD",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XCAO.pdf",
+      "publishedAt": "2025-12-22",
+      "accessedAt": "2026-10-01"
+    },
+    {
+      "id": "all-about-yuho-2026",
+      "title": "有価証券報告書－第34期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社オールアバウト",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFW5.pdf",
+      "publishedAt": "2026-06-23",
+      "accessedAt": "2026-10-11"
+    },
+    {
+      "id": "ly-yuho-2026",
+      "title": "訂正有価証券報告書－第31期(2025/04/01－2026/03/31)",
+      "publisher": "LINEヤフー株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YTT6.pdf",
+      "publishedAt": "2026-08-03",
+      "docId": "S100YTT6",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-21"
+    },
+    {
+      "id": "aircloset-yuho-2026",
+      "title": "有価証券報告書－第12期(2025/07/01－2026/06/30)",
+      "publisher": "株式会社エアークローゼット",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z3ST.pdf",
+      "publishedAt": "2026-09-24",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "central-japan-railway-yuho-2026",
+      "title": "有価証券報告書－第39期（2025年4月1日－2026年3月31日）",
+      "publisher": "東海旅客鉄道株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD7H.pdf",
+      "publishedAt": "2026-06-22",
+      "accessedAt": "2026-09-26"
+    },
+    {
+      "id": "east-japan-railway-yuho-2026",
+      "title": "有価証券報告書－第39期（2025年4月1日－2026年3月31日）",
+      "publisher": "東日本旅客鉄道株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC7N.pdf",
+      "publishedAt": "2026-06-17",
+      "accessedAt": "2026-09-26"
+    },
+    {
+      "id": "west-japan-railway-yuho-2026",
+      "title": "有価証券報告書－第39期(2025/04/01－2026/03/31)",
+      "publisher": "西日本旅客鉄道株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCFK.pdf",
+      "publishedAt": "2026-06-16",
+      "accessedAt": "2026-10-01"
+    },
+    {
+      "id": "tokyu-yuho-2026",
+      "title": "有価証券報告書－第157期(2025/04/01－2026/03/31)",
+      "publisher": "東急株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE63.pdf",
+      "publishedAt": "2026-06-23",
+      "docId": "S100YE63",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "afc-hd-ams-life-science-yuho-2025",
+      "title": "有価証券報告書－第45期(2024/09/01－2025/08/31)",
+      "publisher": "株式会社ＡＦＣ－ＨＤアムスライフサイエンス",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X6W8.pdf",
+      "publishedAt": "2025-11-26",
+      "accessedAt": "2026-10-08"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-01"
+}

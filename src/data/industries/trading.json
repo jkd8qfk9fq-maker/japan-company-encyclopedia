@@ -1,0 +1,347 @@
+{
+  "id": "trading",
+  "name": "商社",
+  "nameEn": "Trading",
+  "description": "メーカーなどから商品を仕入れ、それを必要とする企業や店へ売り届けるのが基本の仕事です。扱う商品は、金属、食品、機械、電子部品、日用品、建材など、会社ごとに大きく違います。商品の売買だけでなく、事業への投資や、加工、保管、製造まで手がける会社もあります。",
+  "sourceIds": [
+    "itochu-yuho-2026",
+    "hanwa-yuho-2026",
+    "alconix-yuho-2026",
+    "kato-sangyo-yuho-2025",
+    "macnica-holdings-yuho-2026",
+    "altech-9972-yuho-2025",
+    "yamazen-yuho-2026"
+  ],
+  "structure": "segments",
+  "categories": [
+    {
+      "id": "general-trading",
+      "name": "幅広い分野を扱う商社",
+      "description": "食料、エネルギー、金属、化学品、機械、自動車など、多くの分野で商品の売買を行います。あわせて、事業への投資や経営も手がけます。",
+      "companyIds": [
+        "itochu",
+        "kanematsu",
+        "marubeni",
+        "mitsubishi-corporation",
+        "mitsui-and-co",
+        "sojitz",
+        "sumitomo-corporation"
+      ],
+      "sourceIds": [
+        "itochu-yuho-2026",
+        "kanematsu-yuho-2026",
+        "marubeni-yuho-2026",
+        "mitsubishi-corporation-yuho-2026",
+        "mitsui-and-co-yuho-2026",
+        "sojitz-yuho-2026",
+        "sumitomo-corporation-yuho-2026"
+      ]
+    },
+    {
+      "id": "metals",
+      "name": "鉄鋼・非鉄金属の商社",
+      "description": "鉄鋼製品や、アルミ・銅などの非鉄金属を仕入れて売ります。鋼材の加工や保管、金属部品や装置の製造まで行う会社もあります。",
+      "companyIds": [
+        "hanwa",
+        "alconix"
+      ],
+      "sourceIds": [
+        "hanwa-yuho-2026",
+        "alconix-yuho-2026"
+      ]
+    },
+    {
+      "id": "machinery-electronics",
+      "name": "機械・電子部品の商社",
+      "description": "半導体や電子部品、ネットワーク関連の商品、工作機械、印刷・食品加工の機械など、ものづくりの現場や企業で使う機器を仕入れて売ります。ペットボトルのもとになる部品を製造して売る会社もあります。",
+      "companyIds": [
+        "macnica-holdings",
+        "yamazen",
+        "altech-9972"
+      ],
+      "sourceIds": [
+        "macnica-holdings-yuho-2026",
+        "yamazen-yuho-2026",
+        "altech-9972-yuho-2025"
+      ]
+    },
+    {
+      "id": "food-daily-wholesale",
+      "name": "食品・日用品の卸売",
+      "description": "加工食品、酒類、日用品、化粧品などを仕入れ、スーパーやドラッグストア、ホームセンターなどの小売へ卸します。飼料や住宅資材まで広く扱う会社もあります。",
+      "companyIds": [
+        "kato-sangyo",
+        "yamae-group-holdings",
+        "arata"
+      ],
+      "sourceIds": [
+        "kato-sangyo-yuho-2025",
+        "yamae-group-holdings-yuho-2026",
+        "arata-yuho-2026"
+      ]
+    },
+    {
+      "id": "building-materials-supplies",
+      "name": "建材・間接材の販売",
+      "description": "タイル・石材などの建築用仕上材を輸入して施主や工務店に売る会社と、企業が日常使う工具や文具などをネットの購買システムで売る会社があります。",
+      "companyIds": [
+        "advan-group",
+        "alphapurchase"
+      ],
+      "sourceIds": [
+        "advan-group-yuho-2026",
+        "alphapurchase-yuho-2025"
+      ]
+    },
+    {
+      "id": "trading-in-other-groups",
+      "name": "ほかの本業を持つ会社の商社事業",
+      "description": "航空や鉄鋼など別の本業を持つ企業グループの中で、商社の仕事を担う事業です。航空関連の資材の輸出入や、鉄鋼製品・製鉄原材料の仕入れと販売などを行います。",
+      "companyIds": [
+        "ana-holdings",
+        "jfe-holdings",
+        "japan-airlines"
+      ],
+      "sourceIds": [
+        "ana-holdings-yuho-2026",
+        "jfe-holdings-yuho-2026",
+        "japan-airlines-yuho-2026"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "industryId": "food",
+      "direction": "from",
+      "description": "加工食品や酒類などを、食品や飲料の会社から仕入れています。",
+      "sourceIds": [
+        "kato-sangyo-yuho-2025",
+        "yamae-group-holdings-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "food",
+      "direction": "to",
+      "description": "砂糖や小麦粉などの食品原材料を、食品をつくる会社へ売っています。",
+      "sourceIds": [
+        "yamae-group-holdings-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "retail",
+      "direction": "to",
+      "description": "日用品、化粧品、加工食品などを、ドラッグストア、スーパーマーケット、ホームセンターへ卸しています。",
+      "sourceIds": [
+        "arata-yuho-2026",
+        "kato-sangyo-yuho-2025",
+        "yamae-group-holdings-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "construction",
+      "direction": "to",
+      "description": "鉄鋼製品などの建設資材や、タイル・石材などの建築用仕上材を、建設会社や工務店へ売っています。",
+      "sourceIds": [
+        "hanwa-yuho-2026",
+        "advan-group-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "automotive",
+      "direction": "to",
+      "description": "金属の加工部品などをつくる子会社が、自動車メーカーや自動車部品メーカーと取引しています。",
+      "sourceIds": [
+        "alconix-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "semiconductors",
+      "direction": "from",
+      "description": "半導体や電子部品、化合物半導体などを商品として取り扱い、売っています。",
+      "sourceIds": [
+        "macnica-holdings-yuho-2026",
+        "alconix-yuho-2026"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "itochu-yuho-2026",
+      "title": "有価証券報告書－第102期（2025年4月1日－2026年3月31日）",
+      "publisher": "伊藤忠商事株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YA6H.pdf",
+      "publishedAt": "2026-06-12",
+      "accessedAt": "2026-09-19"
+    },
+    {
+      "id": "hanwa-yuho-2026",
+      "title": "有価証券報告書－第79期(2025/04/01－2026/03/31)",
+      "publisher": "阪和興業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YED6.pdf",
+      "publishedAt": "2026-06-19",
+      "accessedAt": "2026-10-16"
+    },
+    {
+      "id": "alconix-yuho-2026",
+      "title": "有価証券報告書－第45期(2025/04/01－2026/03/31)",
+      "publisher": "アルコニックス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCV6.pdf",
+      "publishedAt": "2026-06-17",
+      "accessedAt": "2026-10-10"
+    },
+    {
+      "id": "kato-sangyo-yuho-2025",
+      "title": "有価証券報告書－第79期(2024/10/01－2025/09/30)",
+      "publisher": "加藤産業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XA3X.pdf",
+      "publishedAt": "2025-12-22",
+      "docId": "S100XA3X",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "id": "macnica-holdings-yuho-2026",
+      "title": "有価証券報告書－第11期(2025/04/01－2026/03/31)",
+      "publisher": "マクニカホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGVR.pdf",
+      "publishedAt": "2026-06-23",
+      "docId": "S100YGVR",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "id": "altech-9972-yuho-2025",
+      "title": "有価証券報告書－第50期(2024/12/01－2025/11/30)",
+      "publisher": "アルテック株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XMNZ.pdf",
+      "publishedAt": "2026-02-24",
+      "accessedAt": "2026-10-13"
+    },
+    {
+      "id": "yamazen-yuho-2026",
+      "title": "有価証券報告書－第80期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社山善",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBDH.pdf",
+      "publishedAt": "2026-06-15",
+      "accessedAt": "2026-10-02"
+    },
+    {
+      "id": "kanematsu-yuho-2026",
+      "title": "有価証券報告書－第132期(2025/04/01－2026/03/31)",
+      "publisher": "兼松株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGCZ.pdf",
+      "publishedAt": "2026-06-22",
+      "docId": "S100YGCZ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "marubeni-yuho-2026",
+      "title": "有価証券報告書－第102期（2025年4月1日－2026年3月31日）",
+      "publisher": "丸紅株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YAY4.pdf",
+      "publishedAt": "2026-06-12",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "mitsubishi-corporation-yuho-2026",
+      "title": "有価証券報告書（2025年度：2025年4月1日〜2026年3月31日）",
+      "publisher": "三菱商事株式会社",
+      "url": "https://www.mitsubishicorp.com/jp/ja/ir/library/fstatement/pdf/2025_04/y2025_04.pdf",
+      "publishedAt": "2026-06-12",
+      "accessedAt": "2026-09-13"
+    },
+    {
+      "id": "mitsui-and-co-yuho-2026",
+      "title": "有価証券報告書－第107期（2025年4月1日－2026年3月31日）",
+      "publisher": "三井物産株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YAVT.pdf",
+      "publishedAt": "2026-06-12",
+      "accessedAt": "2026-09-19"
+    },
+    {
+      "id": "sojitz-yuho-2026",
+      "title": "有価証券報告書－第23期(2025/04/01－2026/03/31)",
+      "publisher": "双日株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y9EI.pdf",
+      "publishedAt": "2026-06-09",
+      "accessedAt": "2026-10-16"
+    },
+    {
+      "id": "sumitomo-corporation-yuho-2026",
+      "title": "有価証券報告書－第158期（2025年4月1日－2026年3月31日）",
+      "publisher": "住友商事株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YARD.pdf",
+      "publishedAt": "2026-06-12",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "yamae-group-holdings-yuho-2026",
+      "title": "有価証券報告書－第5期(2025/04/01－2026/03/31)",
+      "publisher": "ヤマエグループホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE2O.pdf",
+      "publishedAt": "2026-06-18",
+      "docId": "S100YE2O",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "arata-yuho-2026",
+      "title": "有価証券報告書－第24期(2025年4月1日－2026年3月31日)",
+      "publisher": "株式会社あらた",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEVF.pdf",
+      "publishedAt": "2026-06-19",
+      "docId": "S100YEVF",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "advan-group-yuho-2026",
+      "title": "有価証券報告書－第53期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社アドヴァングループ",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YM3U.pdf",
+      "publishedAt": "2026-06-26",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "alphapurchase-yuho-2025",
+      "title": "有価証券報告書－第16期(2025/01/01－2025/12/31)",
+      "publisher": "株式会社アルファパーチェス",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XT1E.pdf",
+      "publishedAt": "2026-03-24",
+      "accessedAt": "2026-10-11"
+    },
+    {
+      "id": "ana-holdings-yuho-2026",
+      "title": "有価証券報告書－第76期（2025年4月1日－2026年3月31日）",
+      "publisher": "ＡＮＡホールディングス株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKL4.pdf",
+      "publishedAt": "2026-06-25",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "jfe-holdings-yuho-2026",
+      "title": "有価証券報告書－第24期(2025/04/01－2026/03/31)",
+      "publisher": "ＪＦＥホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCUD.pdf",
+      "publishedAt": "2026-06-19",
+      "docId": "S100YCUD",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-20"
+    },
+    {
+      "id": "japan-airlines-yuho-2026",
+      "title": "有価証券報告書－第77期(2025/04/01－2026/03/31)",
+      "publisher": "日本航空株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFIO.pdf",
+      "publishedAt": "2026-06-22",
+      "accessedAt": "2026-10-19",
+      "docId": "S100YFIO",
+      "asOf": "2026-03-31"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-01"
+}

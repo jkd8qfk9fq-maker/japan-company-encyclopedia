@@ -1,0 +1,51 @@
+# 業界: 電機・エレクトロニクス（electronics）— リサーチログ
+
+- 作成: 2026-11-01、scripts/industries/write-industries.mjs（モデル呼び出し1〜2回、概算 $0.26）
+- 根拠: 業界パック（この業界を自社の業界に含める掲載企業の、公開中の解説。各社の解説は有価証券報告書に基づく）だけ。一般知識・web は使っていない
+- 出典は掲載企業の有価証券報告書。業界の文の `sourceIds` は、その文の根拠になった企業の有報
+
+## 出典
+- murata-manufacturing-yuho-2026: 株式会社村田製作所（EDINET）「有価証券報告書－第90期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHPY.pdf
+- fanuc-yuho-2026: ファナック株式会社（EDINET）「有価証券報告書－第57期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YG3Q.pdf
+- canon-yuho-2025: キヤノン株式会社（EDINET）「有価証券報告書－第125期（2025年1月1日－2025年12月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XTLJ.pdf
+- panasonic-holdings-yuho-2026: パナソニック ホールディングス株式会社（EDINET）「有価証券報告書－第119期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YETA.pdf
+- hitachi-yuho-2026: 株式会社日立製作所（EDINET）「有価証券報告書－第157期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGBO.pdf
+- nec-yuho-2026: 日本電気株式会社（EDINET）「有価証券報告書－第188期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBFV.pdf
+- alps-alpine-yuho-2026: アルプスアルパイン株式会社「有価証券報告書－第93期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YB8V.pdf
+- taiyo-yuden-yuho-2026: 太陽誘電株式会社「有価証券報告書－第85期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHU5.pdf
+- tdk-yuho-2026: TDK株式会社「有価証券報告書－第130期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD2Y.pdf
+- kyocera-yuho-2026: 京セラ株式会社「有価証券報告書－第72期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YF47.pdf
+- minebea-mitsumi-yuho-2026: ミネベアミツミ株式会社「有価証券報告書－第80期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YISS.pdf
+- rohm-yuho-2026: ローム株式会社（EDINET）「有価証券報告書－第68期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YF41.pdf
+- alinco-yuho-2026: アルインコ株式会社「有価証券報告書－第56期(2025/03/21－2026/03/20)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCY5.pdf
+- fujikura-yuho-2026: 株式会社フジクラ「有価証券報告書－第178期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGP3.pdf
+- sumitomo-electric-industries-yuho-2026: 住友電気工業株式会社「有価証券報告書－第156期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YL2M.pdf
+- nitto-denko-yuho-2026: 日東電工株式会社「有価証券報告書－第161期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCAR.pdf
+- dai-nippon-printing-yuho-2026: 大日本印刷株式会社「有価証券報告書－第132期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YF74.pdf
+- toppan-holdings-yuho-2026: TOPPANホールディングス株式会社「有価証券報告書－第180期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIAY.pdf
+- ajinomoto-yuho-2026: 味の素株式会社（EDINET）「有価証券報告書－第148期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y992.pdf
+- asahi-kasei-yuho-2026: 旭化成株式会社（EDINET）「有価証券報告書－第135期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGRD.pdf
+- aichi-steel-yuho-2026: 愛知製鋼株式会社「有価証券報告書－第122期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YLIN.pdf
+- fujifilm-holdings-yuho-2026: 富士フイルムホールディングス株式会社（EDINET）「有価証券報告書－第130期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIBH.pdf
+- yaskawa-electric-yuho-2026: 株式会社安川電機「有価証券報告書－第110期(2025年3月1日－2026年2月28日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y69H.pdf
+- keyence-yuho-2026: 株式会社キーエンス（EDINET）「有価証券報告書－第57期（2025年3月21日－2026年3月20日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YAHE.pdf
+- omron-yuho-2026: オムロン株式会社「有価証券報告書－第89期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YG81.pdf
+- smc-yuho-2026: ＳＭＣ株式会社（EDINET）「有価証券報告書－第67期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YLC6.pdf
+- yokogawa-electric-yuho-2026: 横河電機株式会社「有価証券報告書－第150期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE3H.pdf
+- fuji-electric-yuho-2026: 富士電機株式会社「有価証券報告書－第150期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEEB.pdf
+- mitsubishi-electric-yuho-2026: 三菱電機株式会社（EDINET）「有価証券報告書－第155期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD3V.pdf
+- adtec-plasma-technology-yuho-2025: 株式会社アドテック　プラズマ　テクノロジー「有価証券報告書－第41期(2024/09/01－2025/08/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X6VA.pdf
+- anritsu-yuho-2026: アンリツ株式会社「有価証券報告書－第100期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YH5E.pdf
+- shimadzu-yuho-2026: 株式会社　島津製作所「有価証券報告書－第163期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGJF.pdf
+- a-and-d-holon-holdings-yuho-2026: 株式会社A＆Dホロンホールディングス「有価証券報告書－第49期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHHI.pdf
+- aichi-tokei-denki-yuho-2026: 愛知時計電機株式会社「有価証券報告書－第103期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YF4W.pdf
+- ricoh-yuho-2026: 株式会社リコー「有価証券報告書－第126期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBFF.pdf
+- konica-minolta-yuho-2026: コニカミノルタ株式会社「有価証券報告書－第122期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YB93.pdf
+- seiko-epson-yuho-2026: セイコーエプソン株式会社「有価証券報告書－第84期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ6A.pdf
+- sony-group-yuho-2026: ソニーグループ株式会社「有価証券報告書（2025年度：2025年4月1日〜2026年3月31日）」 https://www.sony.com/ja/SonyInfo/IR/library/r7_q4.pdf
+- daikin-industries-yuho-2026: ダイキン工業株式会社（EDINET）「有価証券報告書－第123期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFQL.pdf
+- zojirushi-yuho-2025: 象印マホービン株式会社「有価証券報告書－第81期(2024/11/21－2025/11/20)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XL0K.pdf
+- yamaha-yuho-2026: ヤマハ株式会社「有価証券報告書－第202期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJE7.pdf
+- fujitsu-yuho-2026: 富士通株式会社（EDINET）「有価証券報告書－第126期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YM3K.pdf
+- ai-holdings-yuho-2026: あいホールディングス株式会社「有価証券報告書－第20期(2025/07/01－2026/06/30)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z45U.pdf
+- furukawa-electric-yuho-2026: 古河電気工業株式会社「有価証券報告書－第204期(2025年4月1日－2026年3月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCF0.pdf

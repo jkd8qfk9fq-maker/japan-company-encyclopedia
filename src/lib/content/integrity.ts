@@ -248,5 +248,14 @@ export function checkIndustry(industry: Industry, context: ContentContext & { co
       }
     }
   }
+  const seen = new Set<string>();
+  for (const link of industry.links ?? []) {
+    const where = `つながり「${link.industryId}（${link.direction === "from" ? "仕入れる元" : "売る先"}）」`;
+    if (link.industryId === industry.id) e.push(`${where}: 自分の業界とはつなげません`);
+    if (seen.has(`${link.industryId}:${link.direction}`)) e.push(`${where}: 同じ業界・同じ向きが重複しています`);
+    seen.add(`${link.industryId}:${link.direction}`);
+    e.push(...citationErrors(link.sourceIds, industry.sources, where));
+    e.push(...richTextErrors(link.description, where, context));
+  }
   return e;
 }

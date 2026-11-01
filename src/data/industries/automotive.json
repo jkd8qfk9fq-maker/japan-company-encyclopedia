@@ -1,0 +1,482 @@
+{
+  "id": "automotive",
+  "name": "自動車",
+  "nameEn": "Automotive",
+  "description": "自動車やバイクなどの乗り物をつくって、世界で売る業界です。完成車メーカーが組み立てて売り、そのまわりで部品・タイヤ・素材の会社が部品や材料を納めます。完成車メーカーは、車を買う人や販売店向けにローンやリースも行っています。",
+  "sourceIds": [
+    "toyota-yuho-2026",
+    "honda-yuho-2026",
+    "nissan-yuho-2026",
+    "denso-yuho-2026",
+    "aisin-yuho-2026",
+    "bridgestone-yuho-2025"
+  ],
+  "structure": "chain",
+  "categories": [
+    {
+      "id": "materials",
+      "name": "素材・材料",
+      "role": "input",
+      "description": "鋼やアルミニウム、ガラス、化学素材など、部品の元になる材料をつくる区分です。素材そのものに加えて、鍛造品や鋳造品の形にして、自動車メーカーや部品メーカーに納める会社もあります。",
+      "companyIds": [
+        "aichi-steel",
+        "uacj",
+        "agc",
+        "resonac-holdings",
+        "ahresty"
+      ],
+      "sourceIds": [
+        "aichi-steel-yuho-2026",
+        "uacj-yuho-2026",
+        "agc-yuho-2025",
+        "resonac-holdings-yuho-2025",
+        "ahresty-yuho-2026"
+      ]
+    },
+    {
+      "id": "parts",
+      "name": "部品",
+      "role": "stage",
+      "description": "エンジン周りの部品、ブレーキやステアリング、シートなどの内装、車体フレーム、配線や電子部品などをつくり、自動車メーカーに納める区分です。特定の大手メーカーのグループ向けに多く売る会社が目立ちます。",
+      "companyIds": [
+        "denso",
+        "aisin",
+        "aisan-industry",
+        "jtekt",
+        "toyoda-gosei",
+        "toyota-boshoku",
+        "h-one",
+        "alpha",
+        "ahresty",
+        "sumitomo-electric-industries",
+        "furukawa-electric",
+        "fujikura",
+        "alps-alpine",
+        "minebea-mitsumi",
+        "agc",
+        "resonac-holdings",
+        "uacj"
+      ],
+      "sourceIds": [
+        "denso-yuho-2026",
+        "aisin-yuho-2026",
+        "aisan-industry-yuho-2026",
+        "jtekt-yuho-2026",
+        "toyoda-gosei-yuho-2026",
+        "toyota-boshoku-yuho-2026",
+        "h-one-yuho-2026",
+        "alpha-yuho-2026",
+        "ahresty-yuho-2026",
+        "sumitomo-electric-industries-yuho-2026",
+        "furukawa-electric-yuho-2026",
+        "fujikura-yuho-2026",
+        "alps-alpine-yuho-2026",
+        "minebea-mitsumi-yuho-2026",
+        "agc-yuho-2025",
+        "resonac-holdings-yuho-2025",
+        "uacj-yuho-2026"
+      ]
+    },
+    {
+      "id": "tires",
+      "name": "タイヤ",
+      "role": "stage",
+      "description": "乗用車、トラック・バス、鉱山や建設の車両などに使うタイヤをつくる区分です。新車に付けるタイヤは自動車メーカーに、市販用のタイヤは買い替えのお客様に売ります。",
+      "companyIds": [
+        "bridgestone",
+        "sumitomo-rubber-industries",
+        "the-yokohama-rubber"
+      ],
+      "sourceIds": [
+        "bridgestone-yuho-2025",
+        "sumitomo-rubber-industries-yuho-2025",
+        "the-yokohama-rubber-yuho-2025"
+      ]
+    },
+    {
+      "id": "vehicles",
+      "name": "完成車の製造",
+      "role": "stage",
+      "description": "部品や材料を集めて、乗用車・商用車・バイクなどの完成した乗り物をつくる区分です。軽自動車からトラック・バスまで、また船外機のような車以外の乗り物もつくり、世界で売ります。",
+      "companyIds": [
+        "toyota",
+        "honda",
+        "nissan",
+        "mazda",
+        "subaru",
+        "suzuki",
+        "mitsubishi-motors",
+        "isuzu-motors",
+        "yamaha-motor",
+        "kawasaki-heavy-industries"
+      ],
+      "sourceIds": [
+        "toyota-yuho-2026",
+        "honda-yuho-2026",
+        "nissan-yuho-2026",
+        "mazda-yuho-2026",
+        "subaru-yuho-2026",
+        "suzuki-yuho-2026",
+        "mitsubishi-motors-yuho-2026",
+        "isuzu-motors-yuho-2026",
+        "yamaha-motor-yuho-2025",
+        "kawasaki-heavy-industries-yuho-2026"
+      ]
+    },
+    {
+      "id": "sales-finance",
+      "name": "販売・金融",
+      "role": "stage",
+      "description": "つくった車を販売会社を通じてお客様に届ける区分です。買う人に向けた自動車ローンやリース、販売会社への資金の貸し付けなど、販売を支える金融も、メーカーのグループが手がけています。",
+      "companyIds": [
+        "toyota",
+        "honda",
+        "nissan",
+        "mitsubishi-motors",
+        "isuzu-motors",
+        "yamaha-motor"
+      ],
+      "sourceIds": [
+        "toyota-yuho-2026",
+        "honda-yuho-2026",
+        "nissan-yuho-2026",
+        "mitsubishi-motors-yuho-2026",
+        "isuzu-motors-yuho-2026",
+        "yamaha-motor-yuho-2025"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "industryId": "trading",
+      "direction": "from",
+      "description": "自動車メーカーや電線メーカーが、商社から品物を仕入れる取引があります。",
+      "sourceIds": [
+        "mitsubishi-motors-yuho-2026",
+        "sumitomo-electric-industries-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "chemicals",
+      "direction": "from",
+      "description": "タイヤメーカーが、化学の会社から仕入れる取引があります。",
+      "sourceIds": [
+        "the-yokohama-rubber-yuho-2025"
+      ]
+    },
+    {
+      "industryId": "retail",
+      "direction": "to",
+      "description": "タイヤメーカーが、小売の会社にタイヤを売る取引があります。",
+      "sourceIds": [
+        "sumitomo-rubber-industries-yuho-2025"
+      ]
+    },
+    {
+      "industryId": "transportation",
+      "direction": "to",
+      "description": "トラックやバスをつくる会社が、運送会社などの事業者に売っています。部品の会社が、運輸の会社に売る取引もあります。",
+      "sourceIds": [
+        "isuzu-motors-yuho-2026",
+        "jtekt-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "electronics",
+      "direction": "to",
+      "description": "自動車向けの電線や金属素材をつくる会社が、電機の会社にも売っています。",
+      "sourceIds": [
+        "sumitomo-electric-industries-yuho-2026",
+        "uacj-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "construction",
+      "direction": "to",
+      "description": "自動車向けの電線をつくる会社が、建設の会社にも売る取引があります。",
+      "sourceIds": [
+        "sumitomo-electric-industries-yuho-2026"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "toyota-yuho-2026",
+      "title": "有価証券報告書（2026年3月期）",
+      "publisher": "トヨタ自動車株式会社",
+      "url": "https://global.toyota/pages/global_toyota/ir/library/securities-report/archives/archives_2026_03.pdf",
+      "publishedAt": "2026-06-10",
+      "accessedAt": "2026-09-13"
+    },
+    {
+      "id": "honda-yuho-2026",
+      "title": "有価証券報告書（2026年3月期）",
+      "publisher": "本田技研工業株式会社",
+      "url": "https://data.swcms.net/file/honda-ir/dam/jcr:8d6844e8-cedd-4471-aa18-8803e1320434/S100YDD9.pdf",
+      "publishedAt": "2026-06-18",
+      "accessedAt": "2026-09-15"
+    },
+    {
+      "id": "nissan-yuho-2026",
+      "title": "有価証券報告書（2026年3月期）",
+      "publisher": "日産自動車株式会社",
+      "url": "https://www.nissan-global.com/JP/IR/FINANCIAL_RESULTS/ASSETS/FR/2025/PDF/fr2025.pdf",
+      "publishedAt": "2026-06-22",
+      "accessedAt": "2026-09-15"
+    },
+    {
+      "id": "denso-yuho-2026",
+      "title": "有価証券報告書－第103期（2025年4月1日－2026年3月31日）",
+      "publisher": "株式会社デンソー（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y9T1.pdf",
+      "publishedAt": "2026-06-11",
+      "accessedAt": "2026-09-21"
+    },
+    {
+      "id": "aisin-yuho-2026",
+      "title": "有価証券報告書－第103期(2025年4月1日－2026年3月31日)",
+      "publisher": "株式会社アイシン",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YAWO.pdf",
+      "publishedAt": "2026-06-12",
+      "accessedAt": "2026-09-28"
+    },
+    {
+      "id": "bridgestone-yuho-2025",
+      "title": "有価証券報告書－第107期(2025年1月1日－2025年12月31日)",
+      "publisher": "株式会社ブリヂストン",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XRPR.pdf",
+      "publishedAt": "2026-03-18",
+      "docId": "S100XRPR",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-10-20"
+    },
+    {
+      "id": "aichi-steel-yuho-2026",
+      "title": "有価証券報告書－第122期(2025/04/01－2026/03/31)",
+      "publisher": "愛知製鋼株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YLIN.pdf",
+      "publishedAt": "2026-06-29",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "uacj-yuho-2026",
+      "title": "有価証券報告書－第13期(2025年4月1日－2026年3月31日)",
+      "publisher": "株式会社UACJ",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCV0.pdf",
+      "publishedAt": "2026-06-18",
+      "docId": "S100YCV0",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "agc-yuho-2025",
+      "title": "有価証券報告書－第101期（2025年1月1日－2025年12月31日）",
+      "publisher": "ＡＧＣ株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XSTU.pdf",
+      "publishedAt": "2026-03-24",
+      "accessedAt": "2026-09-26"
+    },
+    {
+      "id": "resonac-holdings-yuho-2025",
+      "title": "有価証券報告書－第117期(2025年1月1日－2025年12月31日)",
+      "publisher": "株式会社レゾナック・ホールディングス",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XTT8.pdf",
+      "publishedAt": "2026-03-25",
+      "docId": "S100XTT8",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "id": "ahresty-yuho-2026",
+      "title": "有価証券報告書－第105期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社アーレスティ",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIGS.pdf",
+      "publishedAt": "2026-06-25",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "aisan-industry-yuho-2026",
+      "title": "有価証券報告書－第124期(2025/04/01－2026/03/31)",
+      "publisher": "愛三工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y9N3.pdf",
+      "publishedAt": "2026-06-11",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "jtekt-yuho-2026",
+      "title": "有価証券報告書－第126期(2025年4月1日－2026年3月31日)",
+      "publisher": "株式会社ジェイテクト",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEL3.pdf",
+      "publishedAt": "2026-06-19",
+      "docId": "S100YEL3",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-21"
+    },
+    {
+      "id": "toyoda-gosei-yuho-2026",
+      "title": "有価証券報告書－第103期(2025年4月1日－2026年3月31日)",
+      "publisher": "豊田合成株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC23.pdf",
+      "publishedAt": "2026-06-17",
+      "docId": "S100YC23",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "toyota-boshoku-yuho-2026",
+      "title": "有価証券報告書－第101期(2025年4月1日－2026年3月31日)",
+      "publisher": "トヨタ紡織株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y9AH.pdf",
+      "publishedAt": "2026-06-09",
+      "docId": "S100Y9AH",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-21"
+    },
+    {
+      "id": "h-one-yuho-2026",
+      "title": "有価証券報告書－第20期(2025年4月1日－2026年3月31日)",
+      "publisher": "株式会社エイチワン",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFUA.pdf",
+      "publishedAt": "2026-06-23",
+      "accessedAt": "2026-10-03"
+    },
+    {
+      "id": "alpha-yuho-2026",
+      "title": "有価証券報告書－第88期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社アルファ",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGLQ.pdf",
+      "publishedAt": "2026-06-23",
+      "accessedAt": "2026-10-11"
+    },
+    {
+      "id": "sumitomo-electric-industries-yuho-2026",
+      "title": "有価証券報告書－第156期(2025/04/01－2026/03/31)",
+      "publisher": "住友電気工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YL2M.pdf",
+      "publishedAt": "2026-06-26",
+      "docId": "S100YL2M",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-20"
+    },
+    {
+      "id": "furukawa-electric-yuho-2026",
+      "title": "有価証券報告書－第204期(2025年4月1日－2026年3月31日)",
+      "publisher": "古河電気工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCF0.pdf",
+      "publishedAt": "2026-06-24",
+      "docId": "S100YCF0",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "id": "fujikura-yuho-2026",
+      "title": "有価証券報告書－第178期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社フジクラ",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGP3.pdf",
+      "publishedAt": "2026-06-23",
+      "docId": "S100YGP3",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "alps-alpine-yuho-2026",
+      "title": "有価証券報告書－第93期(2025/04/01－2026/03/31)",
+      "publisher": "アルプスアルパイン株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YB8V.pdf",
+      "publishedAt": "2026-06-18",
+      "accessedAt": "2026-10-11"
+    },
+    {
+      "id": "minebea-mitsumi-yuho-2026",
+      "title": "有価証券報告書－第80期(2025年4月1日－2026年3月31日)",
+      "publisher": "ミネベアミツミ株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YISS.pdf",
+      "publishedAt": "2026-06-24",
+      "accessedAt": "2026-10-26",
+      "docId": "S100YISS",
+      "asOf": "2026-03-31"
+    },
+    {
+      "id": "sumitomo-rubber-industries-yuho-2025",
+      "title": "有価証券報告書－第134期(2025年1月1日－2025年12月31日)",
+      "publisher": "住友ゴム工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XT7A.pdf",
+      "publishedAt": "2026-03-24",
+      "docId": "S100XT7A",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "the-yokohama-rubber-yuho-2025",
+      "title": "訂正有価証券報告書－第150期(2025年1月1日－2025年12月31日)",
+      "publisher": "横浜ゴム株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XV3S.pdf",
+      "publishedAt": "2026-03-27",
+      "docId": "S100XV3S",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "id": "mazda-yuho-2026",
+      "title": "有価証券報告書－第160期（2025年4月1日－2026年3月31日）",
+      "publisher": "マツダ株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDZ1.pdf",
+      "publishedAt": "2026-06-23",
+      "accessedAt": "2026-09-21"
+    },
+    {
+      "id": "subaru-yuho-2026",
+      "title": "有価証券報告書－第95期（2025年4月1日－2026年3月31日）",
+      "publisher": "株式会社ＳＵＢＡＲＵ",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFKZ.pdf",
+      "publishedAt": "2026-06-22",
+      "accessedAt": "2026-09-21"
+    },
+    {
+      "id": "suzuki-yuho-2026",
+      "title": "有価証券報告書－第160期（2025年4月1日－2026年3月31日）",
+      "publisher": "スズキ株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFG2.pdf",
+      "publishedAt": "2026-06-23",
+      "accessedAt": "2026-09-20"
+    },
+    {
+      "id": "mitsubishi-motors-yuho-2026",
+      "title": "有価証券報告書－2025年度（2025年4月1日－2026年3月31日）",
+      "publisher": "三菱自動車工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCMC.pdf",
+      "publishedAt": "2026-06-16",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "isuzu-motors-yuho-2026",
+      "title": "有価証券報告書－第124期（2025年4月1日－2026年3月31日）",
+      "publisher": "いすゞ自動車株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFBQ.pdf",
+      "publishedAt": "2026-06-23",
+      "accessedAt": "2026-09-21"
+    },
+    {
+      "id": "yamaha-motor-yuho-2025",
+      "title": "有価証券報告書－第91期(2025年1月1日－2025年12月31日)",
+      "publisher": "ヤマハ発動機株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XRTH.pdf",
+      "publishedAt": "2026-03-23",
+      "accessedAt": "2026-09-28"
+    },
+    {
+      "id": "kawasaki-heavy-industries-yuho-2026",
+      "title": "訂正有価証券報告書－第203期(2025/04/01－2026/03/31)",
+      "publisher": "川崎重工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YU10.pdf",
+      "publishedAt": "2026-08-07",
+      "docId": "S100YU10",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-20"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-01"
+}

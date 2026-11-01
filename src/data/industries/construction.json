@@ -1,0 +1,438 @@
+{
+  "id": "construction",
+  "name": "建設",
+  "nameEn": "Construction",
+  "description": "建物や道路、橋、トンネルなどをつくる工事を請け負う業界です。工事で使う建材、住宅設備、建設機械をつくる会社も含まれます。完成した住宅や不動産を売ったり、管理したりする会社もあります。",
+  "sourceIds": [
+    "kajima-yuho-2026",
+    "taisei-yuho-2026",
+    "lixil-yuho-2026",
+    "komatsu-yuho-2026",
+    "sekisui-house-yuho-2026",
+    "haseko-yuho-2026"
+  ],
+  "structure": "chain",
+  "categories": [
+    {
+      "id": "materials",
+      "name": "建材・設備をつくる",
+      "role": "stage",
+      "description": "建物に使う素材や部品、住宅設備をつくって売る段階です。不燃建築材料、サッシやドア、水まわり製品、化粧板、板ガラス、配管などがあります。タイルなどを売って、その工事まで行う会社もあります。",
+      "companyIds": [
+        "a-and-a-material",
+        "ainavo-holdings",
+        "almetax-manufacturing",
+        "lixil",
+        "aica-kogyo",
+        "achilles",
+        "agc",
+        "sekisui-chemical",
+        "asahi-kasei",
+        "sumitomo-forestry",
+        "nippon-paper-industries",
+        "nippon-steel"
+      ],
+      "sourceIds": [
+        "a-and-a-material-yuho-2026",
+        "almetax-manufacturing-yuho-2026",
+        "lixil-yuho-2026",
+        "aica-kogyo-yuho-2026",
+        "agc-yuho-2025",
+        "sekisui-chemical-yuho-2026"
+      ]
+    },
+    {
+      "id": "contracting",
+      "name": "設計・工事を請け負う",
+      "role": "stage",
+      "description": "建物や土木の工事を請け負う段階です。オフィスビルなどの建築、橋やトンネルなどの土木のほか、空調や給排水の設備工事、屋根の補強工事など専門の工事もあります。設計や耐震診断を行う会社もあります。",
+      "companyIds": [
+        "kajima",
+        "shimizu",
+        "taisei",
+        "infroneer-holdings",
+        "haseko",
+        "akatsuki-eazima",
+        "toyokoh",
+        "ainavo-holdings",
+        "a-and-a-material",
+        "ai-holdings",
+        "jfe-holdings",
+        "ihi"
+      ],
+      "sourceIds": [
+        "kajima-yuho-2026",
+        "taisei-yuho-2026",
+        "akatsuki-eazima-yuho-2025",
+        "toyokoh-yuho-2026",
+        "ai-holdings-yuho-2026"
+      ]
+    },
+    {
+      "id": "housing-development",
+      "name": "住宅・不動産をつくって売る",
+      "role": "stage",
+      "description": "住宅や不動産を企画してつくり、売る段階です。戸建住宅やマンションの請負・分譲、賃貸住宅の建築、オフィスビルの開発などがあります。",
+      "companyIds": [
+        "sekisui-house",
+        "sumitomo-forestry",
+        "daito-trust-construction",
+        "iida-group-holdings",
+        "haseko",
+        "mitsui-fudosan",
+        "sumitomo-realty-and-development",
+        "asahi-kasei",
+        "sekisui-chemical",
+        "taisei",
+        "shimizu"
+      ],
+      "sourceIds": [
+        "sekisui-house-yuho-2026",
+        "daito-trust-construction-yuho-2026",
+        "iida-group-holdings-yuho-2026",
+        "mitsui-fudosan-yuho-2026",
+        "sumitomo-realty-and-development-yuho-2026"
+      ]
+    },
+    {
+      "id": "management",
+      "name": "完成後の管理・運営",
+      "role": "stage",
+      "description": "完成した建物や住宅を管理し、運営する段階です。賃貸住宅の借り上げと管理、分譲マンションの管理、建物の維持管理などがあります。",
+      "companyIds": [
+        "haseko",
+        "sekisui-house",
+        "daito-trust-construction",
+        "mitsui-fudosan",
+        "sumitomo-realty-and-development",
+        "kajima",
+        "shimizu",
+        "alphapurchase"
+      ],
+      "sourceIds": [
+        "haseko-yuho-2026",
+        "sekisui-house-yuho-2026",
+        "daito-trust-construction-yuho-2026",
+        "shimizu-yuho-2026"
+      ]
+    },
+    {
+      "id": "equipment",
+      "name": "建設機械・仮設機材",
+      "role": "input",
+      "description": "工事現場で使う機械や仮設の機材をつくる、工事を支える分野です。油圧ショベルなどの建設機械、足場、エンジンコンプレッサや発電機などがあります。つくるだけでなく、貸し出す会社もあります。",
+      "companyIds": [
+        "komatsu",
+        "hitachi-construction-machinery",
+        "kubota",
+        "airman",
+        "alinco"
+      ],
+      "sourceIds": [
+        "komatsu-yuho-2026",
+        "hitachi-construction-machinery-yuho-2026",
+        "alinco-yuho-2026",
+        "airman-yuho-2026"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "industryId": "real-estate",
+      "direction": "to",
+      "description": "不動産会社から、マンションなどの建築工事や住宅用の建材を受注します。",
+      "sourceIds": [
+        "haseko-yuho-2026",
+        "infroneer-holdings-yuho-2026",
+        "lixil-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "automotive",
+      "direction": "to",
+      "description": "自動車メーカーや自動車部品メーカーに、工業用摩擦材、車輌内装用資材、自動車用ガラス、プレスなどの産業機械を売ります。",
+      "sourceIds": [
+        "a-and-a-material-yuho-2026",
+        "achilles-yuho-2026",
+        "agc-yuho-2025",
+        "komatsu-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "semiconductors",
+      "direction": "to",
+      "description": "半導体の分野に、半導体関連部材や半導体材料を売ります。",
+      "sourceIds": [
+        "agc-yuho-2025",
+        "sekisui-chemical-yuho-2026",
+        "asahi-kasei-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "energy",
+      "direction": "to",
+      "description": "電力会社やガス会社などに、原動機やボイラ、エネルギープラントを納めます。",
+      "sourceIds": [
+        "ihi-yuho-2026",
+        "jfe-holdings-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "transportation",
+      "direction": "to",
+      "description": "鉄道会社などから建設工事を受注します。",
+      "sourceIds": [
+        "kajima-yuho-2026",
+        "infroneer-holdings-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "chemicals",
+      "direction": "to",
+      "description": "住宅事業を持つ化学会社に、住宅向けの水まわり製品や建材を売ります。",
+      "sourceIds": [
+        "lixil-yuho-2026"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "kajima-yuho-2026",
+      "title": "有価証券報告書－第129期（2025年4月1日－2026年3月31日）",
+      "publisher": "鹿島建設株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGGI.pdf",
+      "publishedAt": "2026-06-24",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "taisei-yuho-2026",
+      "title": "有価証券報告書－第166期（2025年4月1日－2026年3月31日）",
+      "publisher": "大成建設株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBGF.pdf",
+      "publishedAt": "2026-06-16",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "lixil-yuho-2026",
+      "title": "有価証券報告書－第84期(2025年4月1日－2026年3月31日)",
+      "publisher": "株式会社LIXIL",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD5L.pdf",
+      "publishedAt": "2026-06-17",
+      "docId": "S100YD5L",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "id": "komatsu-yuho-2026",
+      "title": "有価証券報告書－第157期（2025年4月1日－2026年3月31日）",
+      "publisher": "株式会社小松製作所（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD25.pdf",
+      "publishedAt": "2026-06-18",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "sekisui-house-yuho-2026",
+      "title": "有価証券報告書－第75期(2025年2月1日－2026年1月31日)",
+      "publisher": "積水ハウス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XZ22.pdf",
+      "publishedAt": "2026-04-16",
+      "accessedAt": "2026-10-18"
+    },
+    {
+      "id": "haseko-yuho-2026",
+      "title": "有価証券報告書－第109期(2025年4月1日－2026年3月31日)",
+      "publisher": "株式会社長谷工コーポレーション",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJVQ.pdf",
+      "publishedAt": "2026-06-25",
+      "docId": "S100YJVQ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "id": "a-and-a-material-yuho-2026",
+      "title": "有価証券報告書－第26期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社エーアンドエーマテリアル",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YK9E.pdf",
+      "publishedAt": "2026-06-25",
+      "accessedAt": "2026-10-01"
+    },
+    {
+      "id": "almetax-manufacturing-yuho-2026",
+      "title": "有価証券報告書－第62期(2025/04/01－2026/03/31)",
+      "publisher": "アルメタックス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YF9N.pdf",
+      "publishedAt": "2026-06-22",
+      "accessedAt": "2026-10-11"
+    },
+    {
+      "id": "aica-kogyo-yuho-2026",
+      "title": "有価証券報告書－第126期(2025/04/01－2026/03/31)",
+      "publisher": "アイカ工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE8Y.pdf",
+      "publishedAt": "2026-06-19",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "agc-yuho-2025",
+      "title": "有価証券報告書－第101期（2025年1月1日－2025年12月31日）",
+      "publisher": "ＡＧＣ株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XSTU.pdf",
+      "publishedAt": "2026-03-24",
+      "accessedAt": "2026-09-26"
+    },
+    {
+      "id": "sekisui-chemical-yuho-2026",
+      "title": "有価証券報告書－第104期(2025年4月1日－2026年3月31日)",
+      "publisher": "積水化学工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBAY.pdf",
+      "publishedAt": "2026-06-12",
+      "docId": "S100YBAY",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "id": "akatsuki-eazima-yuho-2025",
+      "title": "有価証券報告書－第72期(2024/09/01－2025/08/31)",
+      "publisher": "暁飯島工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X59V.pdf",
+      "publishedAt": "2025-11-19",
+      "accessedAt": "2026-10-10"
+    },
+    {
+      "id": "toyokoh-yuho-2026",
+      "title": "有価証券報告書－第31期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社トヨコー",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFPI.pdf",
+      "publishedAt": "2026-06-22",
+      "accessedAt": "2026-10-02"
+    },
+    {
+      "id": "ai-holdings-yuho-2026",
+      "title": "有価証券報告書－第20期(2025/07/01－2026/06/30)",
+      "publisher": "あいホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z45U.pdf",
+      "publishedAt": "2026-09-25",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "daito-trust-construction-yuho-2026",
+      "title": "有価証券報告書－第52期(2025年4月1日－2026年3月31日)",
+      "publisher": "大東建託株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFJK.pdf",
+      "publishedAt": "2026-06-25",
+      "accessedAt": "2026-10-19",
+      "docId": "S100YFJK",
+      "asOf": "2026-03-31"
+    },
+    {
+      "id": "iida-group-holdings-yuho-2026",
+      "title": "有価証券報告書－第13期(2025年4月1日－2026年3月31日)",
+      "publisher": "飯田グループホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YID4.pdf",
+      "publishedAt": "2026-06-23",
+      "docId": "S100YID4",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "id": "mitsui-fudosan-yuho-2026",
+      "title": "有価証券報告書－第114期（2025年4月1日－2026年3月31日）",
+      "publisher": "三井不動産株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHUO.pdf",
+      "publishedAt": "2026-06-24",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "sumitomo-realty-and-development-yuho-2026",
+      "title": "有価証券報告書－第93期（2025年4月1日－2026年3月31日）",
+      "publisher": "住友不動産株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI5D.pdf",
+      "publishedAt": "2026-06-24",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "shimizu-yuho-2026",
+      "title": "有価証券報告書－第124期（2025年4月1日－2026年3月31日）",
+      "publisher": "清水建設株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDXD.pdf",
+      "publishedAt": "2026-06-22",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "hitachi-construction-machinery-yuho-2026",
+      "title": "有価証券報告書－第62期(2025年4月1日－2026年3月31日)",
+      "publisher": "日立建機株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIBR.pdf",
+      "publishedAt": "2026-06-23",
+      "docId": "S100YIBR",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "id": "alinco-yuho-2026",
+      "title": "有価証券報告書－第56期(2025/03/21－2026/03/20)",
+      "publisher": "アルインコ株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCY5.pdf",
+      "publishedAt": "2026-06-17",
+      "accessedAt": "2026-10-10"
+    },
+    {
+      "id": "airman-yuho-2026",
+      "title": "有価証券報告書－第95期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社AIRMAN",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI16.pdf",
+      "publishedAt": "2026-06-25",
+      "accessedAt": "2026-10-09"
+    },
+    {
+      "id": "infroneer-holdings-yuho-2026",
+      "title": "有価証券報告書－第5期(2025/04/01－2026/03/31)",
+      "publisher": "インフロニア・ホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCIP.pdf",
+      "publishedAt": "2026-06-16",
+      "docId": "S100YCIP",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "achilles-yuho-2026",
+      "title": "有価証券報告書－第106期(2025/04/01－2026/03/31)",
+      "publisher": "アキレス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJF9.pdf",
+      "publishedAt": "2026-06-25",
+      "accessedAt": "2026-10-07"
+    },
+    {
+      "id": "asahi-kasei-yuho-2026",
+      "title": "有価証券報告書－第135期（2025年4月1日－2026年3月31日）",
+      "publisher": "旭化成株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGRD.pdf",
+      "publishedAt": "2026-06-24",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "ihi-yuho-2026",
+      "title": "有価証券報告書－第209期(2025年4月1日－2026年3月31日)",
+      "publisher": "株式会社IHI",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YENT.pdf",
+      "publishedAt": "2026-06-22",
+      "docId": "S100YENT",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-26"
+    },
+    {
+      "id": "jfe-holdings-yuho-2026",
+      "title": "有価証券報告書－第24期(2025/04/01－2026/03/31)",
+      "publisher": "ＪＦＥホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCUD.pdf",
+      "publishedAt": "2026-06-19",
+      "docId": "S100YCUD",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-20"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-01"
+}
