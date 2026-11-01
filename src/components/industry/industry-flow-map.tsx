@@ -1,7 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { INDUSTRY_IMAGES } from "@/assets/industries";
 import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import type { IndustryMapData, MapFlow } from "@/lib/industry-map";
@@ -55,13 +57,18 @@ export function IndustryFlowMap({ data }: { data: IndustryMapData }) {
               aria-pressed={selected === i.id}
               onClick={() => select(i.id)}
               className={cn(
-                "flex min-h-16 flex-col items-start justify-center rounded-md border px-4 py-2 text-left transition-colors",
+                "flex min-h-16 items-center gap-3 overflow-hidden rounded-md border py-2 pr-3 pl-2 text-left transition-colors",
                 selected === i.id ? "border-foreground bg-foreground text-background" : "border-border bg-background hover:border-foreground",
               )}
             >
-              <span className="font-serif text-[0.9375rem] font-semibold">{i.name}</span>
-              <span className={cn("figures text-xs", selected === i.id ? "opacity-80" : "text-muted-foreground")}>
-                {i.companies.length}社{lines > 0 ? `・取引の線 ${lines}本` : ""}
+              <span className="relative size-12 shrink-0 overflow-hidden rounded">
+                <Image src={INDUSTRY_IMAGES[i.id]} alt="" fill sizes="3rem" className="object-cover" />
+              </span>
+              <span className="flex min-w-0 flex-col">
+                <span className="font-serif text-[0.9375rem] leading-snug font-semibold">{i.name}</span>
+                <span className={cn("figures text-xs", selected === i.id ? "opacity-80" : "text-muted-foreground")}>
+                  {i.companies.length}社{lines > 0 ? `・線 ${lines}本` : ""}
+                </span>
               </span>
             </button>
           );

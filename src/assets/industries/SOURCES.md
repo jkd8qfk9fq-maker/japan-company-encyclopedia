@@ -1,6 +1,8 @@
 # 業界ページの写真の出典
 
-すべて Unsplash（https://unsplash.com）の写真で、Unsplash License のもとで使っている（クレジット表記は不要）。
+## Unsplash
+
+Unsplash（https://unsplash.com）の写真で、Unsplash License のもとで使っている（クレジット表記は不要）。
 取得日 2026-11-01。`images.unsplash.com` から、表示に合わせた大きさで切り出して保存した。
 
 | ファイル | 写真 |
@@ -31,3 +33,13 @@
 | `stage-devices.jpg` | https://images.unsplash.com/photo-1518770660439-4636190af475 |
 | `stage-equipment.jpg` | https://images.unsplash.com/photo-1581091226825-a6a2a5aee158 |
 | `stage-materials.jpg` | https://images.unsplash.com/photo-1532187863486-abf9dbad1b69 |
+
+## Pexels
+
+Pexels（https://www.pexels.com）の写真で、Pexels License のもとで使っている（クレジット表記は不要）。取得日 2026-11-01。
+`images.pexels.com` から、表示に合わせた大きさで切り出して保存した。
+
+| ファイル | 写真 |
+|---|---|
+| `hub-factory.jpg` | https://www.pexels.com/photo/236705/ |
+| `map-port.jpg` | https://www.pexels.com/photo/1427107/ |

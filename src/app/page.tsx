@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, FileText, Search } from "lucide-react";
+import { INDUSTRY_IMAGES } from "@/assets/industries";
 import { SearchSuggest } from "@/components/search/search-suggest";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { ReaderTrail } from "@/components/company/reader-trail";
@@ -134,8 +136,13 @@ export default async function HomePage() {
           <ul className="mt-2 border-t border-border">
             {topIndustries.map((industry) => (
               <li key={industry.id} className="border-b border-border">
-                <Link href={`/industries/${industry.id}`} className="group flex min-h-11 items-center justify-between gap-3 text-sm">
-                  <span className="group-hover:underline group-hover:underline-offset-4">{industry.name}</span>
+                <Link href={`/industries/${industry.id}`} className="group flex min-h-12 items-center justify-between gap-3 py-1 text-sm">
+                  <span className="flex items-center gap-3">
+                    <span className="relative size-9 shrink-0 overflow-hidden rounded">
+                      <Image src={INDUSTRY_IMAGES[industry.id]} alt="" fill sizes="2.25rem" className="object-cover" />
+                    </span>
+                    <span className="group-hover:underline group-hover:underline-offset-4">{industry.name}</span>
+                  </span>
                   <span className="figures text-xs text-muted-foreground">{industry.count}</span>
                 </Link>
               </li>

@@ -1,5 +1,7 @@
 import type { StaticImageData } from "next/image";
 import type { IndustryId } from "@/types/company";
+import hubFactory from "./hub-factory.jpg";
+import mapPort from "./map-port.jpg";
 import automotive from "./automotive.jpg";
 import semiconductors from "./semiconductors.jpg";
 import electronics from "./electronics.jpg";
@@ -28,10 +30,11 @@ import stageEquipment from "./stage-equipment.jpg";
 import stageMaterials from "./stage-materials.jpg";
 
 /**
- * Images for the industry pages' 仕組み tab: one photograph per industry, and one per stage of a researched
- * industry's structure (keyed by the category id in src/data/industries). Every file is a photograph from Unsplash,
- * used under the Unsplash License, which needs no credit; the operator chose to show none (2026-11-01). Where each
- * file came from is in SOURCES.md beside it.
+ * Images for the industry pages: one photograph per industry (the 仕組み tab, and as a thumbnail wherever the
+ * industry is listed), one per stage of a researched industry's structure (keyed by the category id in
+ * src/data/industries), and the banners of the industries hub. Every file is a photograph from Unsplash or Pexels,
+ * used under their licences, which need no credit; the operator chose to show none (2026-11-01). Where each file
+ * came from is in SOURCES.md beside it.
  *
  * They show the kind of work an industry does, never a particular company: none is of a company's own site or
  * product, and none carries a recognisable brand.
@@ -67,3 +70,6 @@ export const STAGE_IMAGES: Partial<Record<string, StaticImageData>> = {
   "manufacturing-equipment": stageEquipment,
   "materials": stageMaterials,
 };
+
+/** The industries hub: its header, and the 産業マップ tab. */
+export const HUB_IMAGES = { header: hubFactory, map: mapPort };

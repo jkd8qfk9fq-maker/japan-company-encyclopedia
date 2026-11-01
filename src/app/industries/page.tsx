@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { HUB_IMAGES, INDUSTRY_IMAGES } from "@/assets/industries";
+import { IndustryHero } from "@/components/industry/industry-hero";
 import { ArrowRight } from "lucide-react";
 import { CompanySection } from "@/components/company/company-section";
 import { IndustryFlowMap } from "@/components/industry/industry-flow-map";
@@ -32,11 +35,9 @@ export default async function IndustriesPage() {
 
   return (
     <div>
-      <header className="mx-auto max-w-6xl px-5 pt-10 pb-6 md:px-8 md:pt-14">
-        <p className="eyebrow" aria-hidden>
-          Industries
-        </p>
-        <h1 className="mt-2 font-serif text-[1.875rem] font-semibold md:text-[2.5rem]">業界</h1>
+      <header className="mx-auto max-w-6xl px-5 pt-8 pb-6 md:px-8 md:pt-10">
+        <IndustryHero image={HUB_IMAGES.header} eyebrow="Industries" title="業界から、日本の産業を見る" priority />
+        <h1 className="mt-6 font-serif text-[1.875rem] font-semibold md:text-[2.5rem]">業界</h1>
         <p className="mt-3 max-w-2xl text-[0.9375rem] leading-7 text-muted-foreground">
           企業を、業界の中での位置と、業界どうしのつながりから見る。業界の仕組みを知ると、会社の役割が見えてきます。
         </p>
@@ -54,8 +55,19 @@ export default async function IndustriesPage() {
                 <li key={industry.id}>
                   <Link
                     href={`/industries/${industry.id}`}
-                    className="group flex h-full flex-col rounded-md border border-border bg-card p-4 transition-colors hover:border-foreground"
+                    className="group flex h-full flex-col overflow-hidden rounded-md border border-border bg-card transition-colors hover:border-foreground"
                   >
+                    <span className="relative block aspect-[16/7] bg-muted">
+                      <Image
+                        src={INDUSTRY_IMAGES[industry.id]}
+                        alt=""
+                        fill
+                        placeholder="blur"
+                        sizes="(min-width: 64rem) 22rem, (min-width: 40rem) 50vw, 100vw"
+                        className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                      />
+                    </span>
+                    <span className="flex flex-1 flex-col p-4">
                     <span className="flex items-baseline justify-between gap-3">
                       <span className="font-serif text-xl font-semibold group-hover:underline">{industry.name}</span>
                       <span className="figures text-xs text-muted-foreground">{industry.companyCount}社</span>
@@ -74,6 +86,7 @@ export default async function IndustriesPage() {
                       {lines > 0 && (
                         <span className="rounded-full border border-ink px-2 py-0.5 text-ink">取引の線 {lines}本</span>
                       )}
+                    </span>
                     </span>
                   </Link>
                 </li>
@@ -94,7 +107,10 @@ export default async function IndustriesPage() {
             </>
           }
         >
-          <IndustryFlowMap data={map} />
+          <IndustryHero image={HUB_IMAGES.map} eyebrow="Industry Map" title="業界から業界へ、モノとサービスの流れ" />
+          <div className="mt-8">
+            <IndustryFlowMap data={map} />
+          </div>
         </CompanySection>
       </div>
 

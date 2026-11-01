@@ -5,6 +5,7 @@ import { AdSlot } from "@/components/ads/ad-slot";
 import { CompanyCard } from "@/components/company/company-card";
 import { CompanySection } from "@/components/company/company-section";
 import { SectionTabs, type SectionLink } from "@/components/navigation/section-tabs";
+import { INDUSTRY_IMAGES } from "@/assets/industries";
 import { IndustryHero } from "@/components/industry/industry-hero";
 import { IndustryNetwork } from "@/components/industry/industry-network";
 import { IndustryStructure } from "@/components/industry/industry-structure";
@@ -92,7 +93,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
 
       <div id="industry-tabs">
         <CompanySection id="about" eyebrow="About" title={industry?.structure === "chain" ? "業界の流れ" : "業界の仕組み"}>
-          <IndustryHero id={listing.id} name={listing.name} nameEn={listing.nameEn} />
+          <IndustryHero image={INDUSTRY_IMAGES[listing.id]} eyebrow={listing.nameEn} title={`${listing.name}業界の仕組み`} priority />
           {industry ? (
             <div className="mt-8">
               <p className="max-w-3xl text-[1.0625rem] leading-[1.95]">

@@ -478,3 +478,11 @@ industry network):
 - **Network** (`IndustryNetwork`, every industry): the industry at the centre, its companies on a ring, the industries
   they trade with outside — only `supplier` / `customer` ties, coloured per industry with the site's segment palette,
   circles sized by the number of ties. Companies trading with the same industry are grouped so their lines run together.
+
+### JCE-032 · 2026-11-01 · Accepted (operator) — Industry photographs wherever an industry is listed; Pexels as a source
+
+The operator asked for images where they were still missing, from Unsplash or Pexels. unsplash.com and pexels.com
+(site and API) refuse this environment, so photographs are taken from their image CDNs by photo id and each one is
+checked by eye. The industry photographs of JCE-031 now also appear as thumbnails on the 業界一覧 cards, the 産業マップ
+buttons and the front page's industry list; the industries hub and its 産業マップ tab get a Pexels banner each (Pexels
+License, no credit required or shown). Provenance: `src/assets/industries/SOURCES.md`.
