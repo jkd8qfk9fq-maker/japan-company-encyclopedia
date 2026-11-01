@@ -47,7 +47,12 @@ export default async function IndustriesPage() {
 
       <div id="industries-tabs">
         <CompanySection id="list" eyebrow="Industries" title="業界一覧" lead="業界を選ぶと、その業界の仕組み・企業・つながりが開きます。">
-          <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {/*
+            Photograph tiles, after the operator's request to design the list through its images (2026-11-01). Two
+            across on a phone, three to four on a wide screen, all the same size: the order is the taxonomy's and
+            nothing here ranks industries. Now that most industries are researched, the exception is what gets a mark.
+          */}
+          <ul className="grid grid-cols-2 gap-2 sm:gap-3 md:grid-cols-3 lg:grid-cols-4">
             {industries.map((industry) => {
               const members = membersOf(industry.id);
               const lines = linesOf(industry.id);
@@ -55,38 +60,34 @@ export default async function IndustriesPage() {
                 <li key={industry.id}>
                   <Link
                     href={`/industries/${industry.id}`}
-                    className="group flex h-full flex-col overflow-hidden rounded-md border border-border bg-card transition-colors hover:border-foreground"
+                    className="group relative flex h-full min-h-44 flex-col justify-end overflow-hidden rounded-md bg-foreground text-white sm:min-h-60"
                   >
-                    <span className="relative block aspect-[16/7] bg-muted">
-                      <Image
-                        src={INDUSTRY_IMAGES[industry.id]}
-                        alt=""
-                        fill
-                        placeholder="blur"
-                        sizes="(min-width: 64rem) 22rem, (min-width: 40rem) 50vw, 100vw"
-                        className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                      />
-                    </span>
-                    <span className="flex flex-1 flex-col p-4">
-                    <span className="flex items-baseline justify-between gap-3">
-                      <span className="font-serif text-xl font-semibold group-hover:underline">{industry.name}</span>
-                      <span className="figures text-xs text-muted-foreground">{industry.companyCount}社</span>
-                    </span>
-                    <span className="eyebrow mt-0.5">{industry.nameEn}</span>
-                    {members.length > 0 && (
-                      <span className="mt-3 line-clamp-2 text-xs leading-5 text-muted-foreground">
-                        {members.slice(0, 5).map((c) => c.name).join("・")}
-                        {members.length > 5 && ` ほか${members.length - 5}社`}
+                    <Image
+                      src={INDUSTRY_IMAGES[industry.id]}
+                      alt=""
+                      fill
+                      placeholder="blur"
+                      sizes="(min-width: 64rem) 18rem, (min-width: 48rem) 33vw, 50vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    />
+                    <span aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/0" />
+                    <span className="relative flex flex-col p-3 sm:p-4">
+                      <span className="wordmark text-[0.8125rem] tracking-[0.06em] opacity-85 sm:text-sm" aria-hidden>
+                        {industry.nameEn}
                       </span>
-                    )}
-                    <span className="mt-auto flex flex-wrap gap-1.5 pt-3 text-[0.6875rem]">
-                      {industry.researched && (
-                        <span className="rounded-full bg-foreground px-2 py-0.5 text-background">構造の解説あり</span>
+                      <span className="mt-1 font-serif text-lg leading-tight font-semibold sm:text-2xl">{industry.name}</span>
+                      {/* A few of its companies, on screens wide enough to read them: what the industry is, by example. */}
+                      {members.length > 0 && (
+                        <span className="mt-1.5 line-clamp-2 hidden text-xs leading-5 opacity-85 sm:block">
+                          {members.slice(0, 4).map((c) => c.name).join("・")}
+                          {members.length > 4 && ` ほか${members.length - 4}社`}
+                        </span>
                       )}
-                      {lines > 0 && (
-                        <span className="rounded-full border border-ink px-2 py-0.5 text-ink">取引の線 {lines}本</span>
-                      )}
-                    </span>
+                      <span className="mt-2 flex flex-wrap items-center gap-1.5 text-[0.6875rem]">
+                        <span className="figures rounded-full bg-white/90 px-2 py-0.5 text-black">{industry.companyCount}社</span>
+                        {lines > 0 && <span className="figures rounded-full border border-white/70 px-2 py-0.5">線 {lines}本</span>}
+                        {!industry.researched && <span className="rounded-full bg-black/45 px-2 py-0.5 ring-1 ring-white/60">解説は準備中</span>}
+                      </span>
                     </span>
                   </Link>
                 </li>

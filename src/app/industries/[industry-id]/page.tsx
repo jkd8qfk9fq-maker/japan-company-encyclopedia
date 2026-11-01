@@ -8,7 +8,6 @@ import { SectionTabs, type SectionLink } from "@/components/navigation/section-t
 import { INDUSTRY_IMAGES } from "@/assets/industries";
 import { IndustryHero } from "@/components/industry/industry-hero";
 import { IndustryNetwork } from "@/components/industry/industry-network";
-import { IndustryStructure } from "@/components/industry/industry-structure";
 import { ValueChain } from "@/components/industry/value-chain";
 import { RichText } from "@/components/rich-text/rich-text";
 import { SourceList } from "@/components/sources/source-list";
@@ -102,13 +101,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
               <SourceList sources={industry.sources} sourceIds={industry.sourceIds} className="mt-2" />
               {industry.categories.length > 0 && (
                 <div className="mt-10">
-                  {industry.structure === "chain" ? (
-                    <ValueChain industry={industry} companies={companies} />
-                  ) : (
-                    <div className="max-w-4xl">
-                      <IndustryStructure industry={industry} companies={companies} />
-                    </div>
-                  )}
+                  <ValueChain industry={industry} companies={companies} />
                 </div>
               )}
             </div>

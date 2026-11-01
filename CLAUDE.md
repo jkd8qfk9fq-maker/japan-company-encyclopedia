@@ -119,9 +119,9 @@ and its markers, `businessModel.flow` for the flow, `financials` for the key fac
 and `relatedCompanies` — `supplier` / `customer` wherever the filing states who sells to whom, because only those draw the
 arrows on the connection map and the lines on the industry map (the 産業マップ tab of `/industries`). A section without data is not drawn;
 never add a fact to make one appear. No photographs on company pages. Industries carry Unsplash / Pexels photographs:
-one per industry (its 仕組み tab, and as a thumbnail wherever the industry is listed), one per stage of a researched
+one per industry (its 仕組み tab, and as a thumbnail wherever the industry is listed), one per category of a researched
 structure, and the industries hub's banners (`src/assets/industries`, provenance in its SOURCES.md, no credit shown by
-the operator's choice — JCE-031, JCE-032); a photograph is never of a company's own site, product or brand.
+the operator's choice — JCE-031 to JCE-033); a photograph is never of a company's own site, product or brand.
 
 ## Development Workflow
 

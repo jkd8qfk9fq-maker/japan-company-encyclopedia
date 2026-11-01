@@ -22,19 +22,12 @@ import entertainment from "./entertainment.jpg";
 import machinery from "./machinery.jpg";
 import humanResources from "./human-resources.jpg";
 import funeralMemorial from "./funeral-memorial.jpg";
-import stageDesign from "./stage-design.jpg";
-import stageFrontEnd from "./stage-front-end.jpg";
-import stageBackEnd from "./stage-back-end.jpg";
-import stageDevices from "./stage-devices.jpg";
-import stageEquipment from "./stage-equipment.jpg";
-import stageMaterials from "./stage-materials.jpg";
 
 /**
  * Images for the industry pages: one photograph per industry (the 仕組み tab, and as a thumbnail wherever the
- * industry is listed), one per stage of a researched industry's structure (keyed by the category id in
- * src/data/industries), and the banners of the industries hub. Every file is a photograph from Unsplash or Pexels,
- * used under their licences, which need no credit; the operator chose to show none (2026-11-01). Where each file
- * came from is in SOURCES.md beside it.
+ * industry is listed), one per category of a researched industry's structure (stages/index.ts), and the banners of
+ * the industries hub. Every file is a photograph from Unsplash or Pexels, used under their licences, which need no
+ * credit; the operator chose to show none (2026-11-01). Where each file came from is in SOURCES.md beside it.
  *
  * They show the kind of work an industry does, never a particular company: none is of a company's own site or
  * product, and none carries a recognisable brand.
@@ -62,14 +55,7 @@ export const INDUSTRY_IMAGES: Record<IndustryId, StaticImageData> = {
   "funeral-memorial": funeralMemorial,
 };
 
-export const STAGE_IMAGES: Partial<Record<string, StaticImageData>> = {
-  "design": stageDesign,
-  "front-end-process": stageFrontEnd,
-  "back-end-process": stageBackEnd,
-  "electronic-devices": stageDevices,
-  "manufacturing-equipment": stageEquipment,
-  "materials": stageMaterials,
-};
+export { STAGE_IMAGES } from "./stages";
 
 /** The industries hub: its header, and the 産業マップ tab. */
 export const HUB_IMAGES = { header: hubFactory, map: mapPort };

@@ -2,17 +2,17 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { INDUSTRY_IMAGES } from "@/assets/industries";
 import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import type { IndustryMapData, MapFlow } from "@/lib/industry-map";
 import type { IndustryId } from "@/types/company";
 
-const ROW = 40;
-const TOP = 28;
-const LEFT_X = 210;
-const RIGHT_X = 690;
+/** Wide screens and phones draw the same diagram, each with its own measurements. */
+const LAYOUTS = [
+  { width: 900, left: 210, right: 690, row: 40, top: 28, font: 15, stroke: 2, className: "hidden md:block" },
+  { width: 360, left: 124, right: 236, row: 34, top: 14, font: 11.5, stroke: 1.2, className: "md:hidden" },
+];
 
 function involves(flow: MapFlow, id: IndustryId | null) {
   return id !== null && (flow.from === id || flow.to === id);
@@ -23,8 +23,8 @@ function involves(flow: MapFlow, id: IndustryId | null) {
  * name in the diagram — highlights its lines and opens the list of its companies without a page load. Everything it
  * shows is computed on the server (buildIndustryMap) and passed in; it fetches nothing.
  *
- * Wide screens get the two-column diagram (sellers left, buyers right, line width = number of company pairs). Phones
- * get the same lines as a list, because a diagram scaled to 360px would set its labels at 6px.
+ * Two columns, sellers left and buyers right, line width = number of company pairs. A phone gets the same diagram
+ * drawn at its own size (operator request, 2026-11-01), so it is read as a picture there too, not as a list.
  */
 export function IndustryFlowMap({ data }: { data: IndustryMapData }) {
   const [selected, setSelected] = useState<IndustryId | null>(null);
@@ -40,8 +40,6 @@ export function IndustryFlowMap({ data }: { data: IndustryMapData }) {
 
   const sellers = [...new Set(data.flows.map((f) => f.from))];
   const buyers = [...new Set(data.flows.map((f) => f.to))];
-  const height = TOP * 2 + Math.max(sellers.length, buyers.length, 1) * ROW;
-  const y = (list: IndustryId[], id: IndustryId) => TOP + list.indexOf(id) * ROW + ROW / 2;
   const industry = data.industries.find((i) => i.id === selected) ?? null;
   const shownFlows = selected ? data.flows.filter((f) => involves(f, selected)) : data.flows;
 
@@ -82,63 +80,78 @@ export function IndustryFlowMap({ data }: { data: IndustryMapData }) {
             <span>買う側の業界</span>
           </div>
 
-          <svg
-            viewBox={`0 0 900 ${height}`}
-            className="mt-2 hidden h-auto w-full md:block"
-            role="img"
-            aria-label="業界から業界への取引関係の図。同じ内容を下の一覧と企業リストで読めます。"
-          >
-            <g fill="none" strokeLinecap="round">
-              {data.flows.map((flow) => {
-                const y1 = y(sellers, flow.from);
-                const y2 = y(buyers, flow.to);
-                const lit = involves(flow, selected);
-                return (
-                  <path
-                    key={`${flow.from}>${flow.to}`}
-                    d={`M${LEFT_X} ${y1} C${(LEFT_X + RIGHT_X) / 2} ${y1} ${(LEFT_X + RIGHT_X) / 2} ${y2} ${RIGHT_X} ${y2}`}
-                    stroke="var(--ink)"
-                    strokeOpacity={selected ? (lit ? 0.85 : 0.08) : 0.35}
-                    strokeWidth={2 + flow.pairs.length * 2}
-                  />
-                );
-              })}
-            </g>
-            {sellers.map((id) => (
-              <g key={`s-${id}`} onClick={() => select(id)} className="cursor-pointer">
-                <rect x={LEFT_X - 4} y={y(sellers, id) - 12} width={4} height={24} fill="currentColor" />
-                <text
-                  x={LEFT_X - 14}
-                  y={y(sellers, id) + 5}
-                  textAnchor="end"
-                  fontSize={15}
-                  fill="currentColor"
-                  fontWeight={selected === id ? 700 : 400}
-                >
-                  {name.get(id)}
-                </text>
-              </g>
-            ))}
-            {buyers.map((id) => (
-              <g key={`b-${id}`} onClick={() => select(id)} className="cursor-pointer">
-                <rect x={RIGHT_X} y={y(buyers, id) - 12} width={4} height={24} fill="currentColor" />
-                <text x={RIGHT_X + 14} y={y(buyers, id) + 5} fontSize={15} fill="currentColor" fontWeight={selected === id ? 700 : 400}>
-                  {name.get(id)}
-                </text>
-              </g>
-            ))}
-          </svg>
-
-          <ul className="mt-2 space-y-1 md:hidden">
-            {shownFlows.map((flow) => (
-              <li key={`${flow.from}>${flow.to}`} className="flex min-h-9 items-center gap-2 text-sm">
-                <span className="min-w-0 flex-1 text-right">{name.get(flow.from)}</span>
-                <ArrowRight aria-label="から" className="size-4 shrink-0 text-ink" />
-                <span className="min-w-0 flex-1">{name.get(flow.to)}</span>
-                <span className="figures w-10 shrink-0 text-right text-xs text-muted-foreground">{flow.pairs.length}組</span>
-              </li>
-            ))}
-          </ul>
+          {/* The same diagram twice, laid out for each width: a phone gets its own geometry at its real size (labels at
+              11–12px), not the wide one shrunk until its text is unreadable. */}
+          {LAYOUTS.map((layout) => {
+            const rowY = (list: IndustryId[], id: IndustryId) => layout.top + list.indexOf(id) * layout.row + layout.row / 2;
+            const height = layout.top * 2 + Math.max(sellers.length, buyers.length, 1) * layout.row;
+            const mid = (layout.left + layout.right) / 2;
+            return (
+              <svg
+                key={layout.width}
+                viewBox={`0 0 ${layout.width} ${height}`}
+                className={cn("mt-2 h-auto w-full", layout.className)}
+                role="img"
+                aria-label="業界から業界への取引関係の図。産業を選ぶと、その業界の企業と取引の組が下に開きます。"
+              >
+                <g fill="none" strokeLinecap="round">
+                  {data.flows.map((flow) => {
+                    const y1 = rowY(sellers, flow.from);
+                    const y2 = rowY(buyers, flow.to);
+                    const lit = involves(flow, selected);
+                    return (
+                      <path
+                        key={`${flow.from}>${flow.to}`}
+                        d={`M${layout.left} ${y1} C${mid} ${y1} ${mid} ${y2} ${layout.right} ${y2}`}
+                        stroke="var(--ink)"
+                        strokeOpacity={selected ? (lit ? 0.85 : 0.08) : 0.35}
+                        strokeWidth={layout.stroke + flow.pairs.length * layout.stroke}
+                      />
+                    );
+                  })}
+                </g>
+                {([
+                  [sellers, "s"],
+                  [buyers, "b"],
+                ] as const).map(([list, side]) =>
+                  list.map((id) => {
+                    const cy = rowY(list, id);
+                    const left = side === "s";
+                    const x = left ? layout.left : layout.right;
+                    return (
+                      <g key={`${side}-${id}`} onClick={() => select(id)} className="cursor-pointer">
+                        {/* A row-high hit area, so a thumb can choose an industry on a phone. */}
+                        <rect
+                          x={left ? 0 : x}
+                          y={cy - layout.row / 2}
+                          width={left ? x : layout.width - x}
+                          height={layout.row}
+                          fill="transparent"
+                        />
+                        <rect
+                          x={left ? x - 4 : x}
+                          y={cy - layout.row * 0.3}
+                          width={4}
+                          height={layout.row * 0.6}
+                          fill={selected === id ? "var(--ink)" : "currentColor"}
+                        />
+                        <text
+                          x={left ? x - 10 : x + 10}
+                          y={cy + layout.font * 0.35}
+                          textAnchor={left ? "end" : "start"}
+                          fontSize={layout.font}
+                          fill={selected === id ? "var(--ink)" : "currentColor"}
+                          fontWeight={selected === id ? 700 : 400}
+                        >
+                          {name.get(id)}
+                        </text>
+                      </g>
+                    );
+                  }),
+                )}
+              </svg>
+            );
+          })}
         </div>
       )}
 

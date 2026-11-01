@@ -19,12 +19,12 @@ function StageCard({
   dashed,
 }: {
   category: Category;
-  number: string;
+  number?: string;
   industry: Industry;
   byId: Map<string, Company>;
   dashed?: boolean;
 }) {
-  const image = STAGE_IMAGES[category.id];
+  const image = STAGE_IMAGES[`${industry.id}/${category.id}`];
   const placed = category.companyIds.map((id) => byId.get(id)).filter((c): c is Company => !!c);
   return (
     <article
@@ -37,12 +37,14 @@ function StageCard({
         {image && (
           <Image src={image} alt="" fill placeholder="blur" sizes="(min-width: 64rem) 18rem, 100vw" className="object-cover" />
         )}
-        <span
-          aria-hidden
-          className="figures absolute top-3 left-3 flex size-9 items-center justify-center rounded-full bg-ink text-sm font-semibold text-background shadow"
-        >
-          {number}
-        </span>
+        {number && (
+          <span
+            aria-hidden
+            className="figures absolute top-3 left-3 flex size-9 items-center justify-center rounded-full bg-ink text-sm font-semibold text-background shadow"
+          >
+            {number}
+          </span>
+        )}
       </div>
       <div className="flex flex-1 flex-col p-4">
         <h4 className="font-serif text-lg leading-snug font-semibold">{category.name}</h4>
@@ -98,7 +100,7 @@ function Zone({ label, sub, tone }: { label: string; sub: string; tone: "light" 
 }
 
 /**
- * A researched industry's structure as an illustrated chain, after the operator's reference (2026-11-01): a chevron
+ * A researched industry's structure as illustrated cards, after the operator's reference (2026-11-01): a chevron
  * band naming each part, numbered cards with a photograph, the first sentence of the stage's sourced description
  * (the rest folds open with its sources), and the published companies placed there.
  *
@@ -108,6 +110,24 @@ function Zone({ label, sub, tone }: { label: string; sub: string; tone: "light" 
  */
 export function ValueChain({ industry, companies }: { industry: Industry; companies: Company[] }) {
   const byId = new Map(companies.map((c) => [c.id, c]));
+
+  // A `segments` industry is the same cards without numbers or arrows: its parts sit side by side, and drawing them
+  // as steps would teach an order the sources do not state.
+  if (industry.structure !== "chain") {
+    return (
+      <section aria-label={`${industry.name}業界の事業の分類`}>
+        <Zone label="事業の分類" sub={`${industry.categories.length}つの分野に分けて見る`} tone="dark" />
+        <ul className="mt-5 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:pb-0 lg:grid-cols-3">
+          {industry.categories.map((category) => (
+            <li key={category.id} className="w-[78%] shrink-0 snap-start sm:w-auto">
+              <StageCard category={category} industry={industry} byId={byId} />
+            </li>
+          ))}
+        </ul>
+      </section>
+    );
+  }
+
   const stages = industry.categories.filter((c) => c.role !== "input");
   const inputs = industry.categories.filter((c) => c.role === "input");
   const stageCols = { 1: "lg:grid-cols-1", 2: "lg:grid-cols-2", 3: "lg:grid-cols-3", 4: "lg:grid-cols-4" }[Math.min(stages.length, 4)] ?? "lg:grid-cols-4";

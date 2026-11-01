@@ -486,3 +486,15 @@ The operator asked for images where they were still missing, from Unsplash or Pe
 checked by eye. The industry photographs of JCE-031 now also appear as thumbnails on the 業界一覧 cards, the 産業マップ
 buttons and the front page's industry list; the industries hub and its 産業マップ tab get a Pexels banner each (Pexels
 License, no credit required or shown). Provenance: `src/assets/industries/SOURCES.md`.
+
+### JCE-033 · 2026-11-01 · Accepted (operator) — A photograph for every category; segment industries drawn as cards; uniform hub tiles
+
+The operator asked for the industries list to be designed through its images and for the remaining gaps to be filled
+from Pexels. Every category of every researched industry now has its own photograph (93 from Pexels, the six
+semiconductor ones from JCE-031), keyed `<industry id>/<category id>` because category ids repeat across industries
+(`src/assets/industries/stages/`). Each was checked by eye; candidates showing a readable brand (app icons, a shop
+sign, a carrier label, a forklift maker) were rejected. `segments` industries use the same photo cards as the chain,
+under one band 「事業の分類」 and without numbers or arrows, which would state an order the sources do not; the text-only
+`IndustryStructure` is removed. On the hub, every industry tile is the same size (nearly all are researched, so the
+double tile no longer distinguished anything); an unresearched industry is marked 「解説は準備中」 instead. The phone
+gets the industry map drawn as a diagram at its own size rather than a list.
