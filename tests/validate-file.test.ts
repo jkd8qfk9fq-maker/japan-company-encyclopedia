@@ -1,9 +1,10 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { basename, join, resolve } from "node:path";
 import { describe, expect, it } from "vitest";
-import { checkCompany, checkTerm } from "@/lib/content/integrity";
-import { companySchema, termSchema } from "@/lib/content/schemas";
+import { checkCompany, checkIndustry, checkTerm } from "@/lib/content/integrity";
+import { companySchema, industrySchema, termSchema } from "@/lib/content/schemas";
 import type { Company } from "@/types/company";
+import type { Industry } from "@/types/industry";
 import type { Term } from "@/types/term";
 
 /**
@@ -38,14 +39,24 @@ describe.skipIf(targets.length === 0)("content file", () => {
     const path = resolve(process.cwd(), target);
     const data = JSON.parse(readFileSync(path, "utf8"));
     const context = { companyIds: ids("companies"), termIds: ids("terms"), featureIds: ids("features") };
-    const kind = path.includes(`${join("src", "data", "terms")}`) ? "term" : "company";
+    // An industry is told apart by its shape: the industry writer stages it outside src/data/industries.
+    const kind = path.includes(`${join("src", "data", "terms")}`) ? "term" : "structure" in data && "categories" in data ? "industry" : "company";
 
-    const parsed = (kind === "company" ? companySchema : termSchema).safeParse(data);
+    const parsed = (kind === "company" ? companySchema : kind === "industry" ? industrySchema : termSchema).safeParse(data);
     const schemaErrors = parsed.success ? [] : parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`);
     expect(schemaErrors, "schema").toEqual([]);
 
     expect((data as { id: string }).id, "id must equal the file name").toBe(basename(path, ".json"));
-    const rules = kind === "company" ? checkCompany(parsed.data as Company, context) : checkTerm(parsed.data as Term, context);
+    const companies = () =>
+      readdirSync(join(process.cwd(), "src/data/companies"))
+        .filter((f) => f.endsWith(".json"))
+        .map((f) => JSON.parse(readFileSync(join(process.cwd(), "src/data/companies", f), "utf8")) as Company);
+    const rules =
+      kind === "company"
+        ? checkCompany(parsed.data as Company, context)
+        : kind === "industry"
+          ? checkIndustry(parsed.data as Industry, { ...context, companies: companies() })
+          : checkTerm(parsed.data as Term, context);
     expect(rules, "integrity rules").toEqual([]);
 
     // A revision record describes a REGISTERED entry, so it is only required of

@@ -1,0 +1,43 @@
+# 業界: 金融（finance）— リサーチログ
+
+- 作成: 2026-11-01、scripts/industries/write-industries.mjs（モデル呼び出し1〜2回、概算 $0.17）
+- 根拠: 業界パック（この業界を自社の業界に含める掲載企業の、公開中の解説。各社の解説は有価証券報告書に基づく）だけ。一般知識・web は使っていない
+- 出典は掲載企業の有価証券報告書。業界の文の `sourceIds` は、その文の根拠になった企業の有報
+
+## 出典
+- japan-post-bank-yuho-2026: 株式会社ゆうちょ銀行「有価証券報告書－第20期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y9G1.pdf
+- resona-holdings-yuho-2026: 株式会社りそなホールディングス「有価証券報告書－第25期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDP3.pdf
+- ms-and-ad-insurance-group-holdings-yuho-2026: MS＆ADインシュアランスグループホールディングス株式会社「有価証券報告書－第18期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YNCJ.pdf
+- daiwa-securities-group-yuho-2026: 株式会社大和証券グループ本社（EDINET）「有価証券報告書－第89期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCMP.pdf
+- mitsubishi-hc-capital-yuho-2026: 三菱ＨＣキャピタル株式会社「有価証券報告書－第55期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YF4V.pdf
+- gmo-payment-gateway-yuho-2025: GMOペイメントゲートウェイ株式会社「有価証券報告書－第32期(2024年10月1日－2025年9月30日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X9RU.pdf
+- sumitomo-mitsui-trust-group-yuho-2026: 三井住友トラストグループ株式会社「有価証券報告書－第15期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBGM.pdf
+- sony-financial-group-yuho-2026: ソニーフィナンシャルグループ株式会社（EDINET）「有価証券報告書－第22期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCL0.pdf
+- sbi-holdings-yuho-2026: SBIホールディングス株式会社「有価証券報告書－第28期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YK3R.pdf
+- dai-ichi-life-holdings-yuho-2026: 株式会社第一ライフグループ（EDINET）「有価証券報告書－第124期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC7A.pdf
+- japan-post-insurance-yuho-2026: 株式会社かんぽ生命保険「有価証券報告書－第20期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD29.pdf
+- lifenet-insurance-yuho-2026: ライフネット生命保険株式会社「有価証券報告書－第20期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC7R.pdf
+- t-and-d-holdings-yuho-2026: 株式会社T＆Dホールディングス「訂正有価証券報告書－第22期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YZ3S.pdf
+- sompo-holdings-yuho-2026: ＳＯＭＰＯホールディングス株式会社「有価証券報告書－第16期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC6Z.pdf
+- anicom-holdings-yuho-2026: アニコム ホールディングス株式会社「有価証券報告書－第26期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFY1.pdf
+- agent-ig-holdings-yuho-2025: 株式会社エージェントIGホールディングス「有価証券報告書－第1期(2025/07/01－2025/12/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XU0T.pdf
+- orix-yuho-2026: オリックス株式会社「有価証券報告書－第63期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YG5L.pdf
+- aizawa-securities-group-yuho-2026: アイザワ証券グループ株式会社「有価証券報告書－第106期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIEX.pdf
+- akatsuki-8737-yuho-2026: 株式会社あかつき本社「有価証券報告書－第76期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBUN.pdf
+- the-kosei-securities-yuho-2026: 光世証券株式会社「有価証券報告書－第66期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFAQ.pdf
+- ai-partners-financial-yuho-2026: 株式会社アイ・パートナーズフィナンシャル「有価証券報告書－第21期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHKS.pdf
+- ai-fusion-capital-group-yuho-2026: ＡＩフュージョンキャピタルグループ株式会社「有価証券報告書－第2期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCG3.pdf
+- softbank-group-yuho-2026: ソフトバンクグループ株式会社「有価証券報告書－第46期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGH5.pdf
+- acom-yuho-2026: アコム株式会社「有価証券報告書－第49期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBXA.pdf
+- tokyo-century-yuho-2026: 東京センチュリー株式会社「有価証券報告書－第57期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDRI.pdf
+- ly-yuho-2026: LINEヤフー株式会社「訂正有価証券報告書－第31期(2025/04/01－2026/03/31)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YTT6.pdf
+- rakuten-group-yuho-2025: 楽天グループ株式会社（EDINET）「有価証券報告書－第29期（2025年1月1日－2025年12月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XTNW.pdf
+- aeon-yuho-2026: イオン株式会社（EDINET）「有価証券報告書－第101期（2025年3月1日－2026年2月28日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y5VH.pdf
+- seven-and-i-holdings-yuho-2026: 株式会社セブン＆アイ・ホールディングス（EDINET）「有価証券報告書－第21期（2025年3月1日－2026年2月28日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y4VB.pdf
+- toyota-yuho-2026: トヨタ自動車株式会社「有価証券報告書（2026年3月期）」 https://global.toyota/pages/global_toyota/ir/library/securities-report/archives/archives_2026_03.pdf
+- honda-yuho-2026: 本田技研工業株式会社「有価証券報告書（2026年3月期）」 https://data.swcms.net/file/honda-ir/dam/jcr:8d6844e8-cedd-4471-aa18-8803e1320434/S100YDD9.pdf
+- nissan-yuho-2026: 日産自動車株式会社「有価証券報告書（2026年3月期）」 https://www.nissan-global.com/JP/IR/FINANCIAL_RESULTS/ASSETS/FR/2025/PDF/fr2025.pdf
+- mitsubishi-motors-yuho-2026: 三菱自動車工業株式会社「有価証券報告書－2025年度（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCMC.pdf
+- isuzu-motors-yuho-2026: いすゞ自動車株式会社「有価証券報告書－第124期（2025年4月1日－2026年3月31日）」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFBQ.pdf
+- yamaha-motor-yuho-2025: ヤマハ発動機株式会社「有価証券報告書－第91期(2025年1月1日－2025年12月31日)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XRTH.pdf
+- and-do-holdings-yuho-2026: 株式会社And Doホールディングス「有価証券報告書－第18期(2025/07/01－2026/06/30)」 https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z3PT.pdf

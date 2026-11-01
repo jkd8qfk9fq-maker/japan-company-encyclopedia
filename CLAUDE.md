@@ -27,9 +27,11 @@ variables, and never reference them in the application. Decision recorded in
 2. **Every factual section is sourced.** `Business`, `BusinessModel`, `FinancialRecord`,
    `HistoryEvent` and `RelatedCompany` carry `sourceIds` that resolve to the entity's `sources`.
    `tests/data-integrity.test.ts` enforces this; do not weaken it to make data pass.
-3. **Primary sources first.** 有価証券報告書, 決算短信, 統合報告書 and the company's own official
-   pages. News articles only for events a company does not document itself. **Never Wikipedia**
-   or aggregator sites as a source for a fact.
+3. **EDINET first, Wikipedia only to supplement.** The 有価証券報告書 (EDINET) is the basis of every entry and
+   is trusted as filed. Japanese Wikipedia may add what the filing does not say (former names, brand and product
+   names, background) — paraphrased, never copied (CC BY-SA), cited as its own source — and never a figure, never
+   anything that contradicts the filing (operator decision 2026-10-30, `docs/decisions.md` JCE-030). Other
+   aggregator sites are not sources.
 4. **Not a brokerage.** No stock price, PER, PBR, ROE, ROA, dividend yield, technical indicators,
    price targets or recommendations, and no ratio computed from the figures. The financial section shows the
    filing's own five-year summary as printed — revenue, the profit line the filing prints between revenue and net
@@ -118,7 +120,7 @@ and `relatedCompanies` — `supplier` / `customer` wherever the filing states wh
 arrows on the connection map and the lines on the industry map (the 産業マップ tab of `/industries`). A section without data is not drawn;
 never add a fact to make one appear. No photographs on company pages. Industry pages' 仕組み tab carries one Unsplash
 photograph per industry and per stage of a researched structure (`src/assets/industries`, provenance in its SOURCES.md,
-no credit shown by the operator's choice — JCE-030); a photograph is never of a company's own site, product or brand.
+no credit shown by the operator's choice — JCE-031); a photograph is never of a company's own site, product or brand.
 
 ## Development Workflow
 

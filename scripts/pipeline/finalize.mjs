@@ -38,6 +38,9 @@ const update = process.argv.includes("--update");
 // Stage and stop. register-figures.mjs batches the checks across many companies,
 // so it wants the assembled file and not a per-company test run.
 const stageOnly = process.argv.includes("--stage-only");
+// Bulk registration (autopilot approve-ready): the whole-repository suite runs once, in content:publish, before anything
+// is pushed — not once per company (2.5 minutes each). The entry's own schema and integrity checks still run here.
+const skipRepoGate = process.argv.includes("--no-repo-gate");
 if (!companyId) {
   console.error("usage: node scripts/pipeline/finalize.mjs <company-id> [--figures-only] [--register]");
   process.exit(1);
@@ -228,6 +231,8 @@ function stageEntry() {
   }
   merged.entry.sources = enrichSources(merged.entry.sources, loadState(companyId).identity);
   merged.entry.sources = stampAccessedAt(merged.entry.sources, pack?.filing?.docID ?? loadState(companyId).identity?.docID, pack?.generatedAt, today);
+  // A Wikipedia page (JCE-030) was read by the agent during this run: the date it was read is today, set here too.
+  merged.entry.sources = merged.entry.sources.map((s) => (/^https:\/\/ja\.wikipedia\.org\//.test(s.url) ? { ...s, accessedAt: today } : s));
   mkdirSync(join(root, "pipeline/staging"), { recursive: true });
   const path = join(root, stagedRelative);
   writeFileSync(path, `${JSON.stringify(merged.entry, null, 2)}\n`);
@@ -261,7 +266,6 @@ function sourceValidation(entry) {
   for (const s of entry.sources ?? []) {
     const where = `出典「${s.id}」`;
     if (!/^https:\/\//.test(s.url)) problems.push(`${where}: URL が https:// で始まりません`);
-    if (/wikipedia\.org/i.test(s.url)) problems.push(`${where}: Wikipedia は出典にできません`);
     if (!s.accessedAt) problems.push(`${where}: accessedAt がありません`);
     for (const [key, value] of [
       ["accessedAt", s.accessedAt],
@@ -561,8 +565,10 @@ function registration(entry, validation, merged) {
     // that only breaks in the presence of the other entries: a duplicate id, an
     // industry page that does not list the company back, a revision pointing at
     // nothing.
-    run([VITEST, "run", "tests/data-integrity.test.ts"]);
-    run([TSC, "--noEmit"]);
+    if (!skipRepoGate) {
+      run([VITEST, "run", "tests/data-integrity.test.ts"]);
+      run([TSC, "--noEmit"]);
+    }
   } catch (error) {
     revert();
     throw new Error(

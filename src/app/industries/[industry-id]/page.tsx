@@ -62,12 +62,14 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
   const sells = map.flows.filter((f) => f.from === listing.id);
   const buys = map.flows.filter((f) => f.to === listing.id && f.from !== listing.id);
   const name = (id: string) => map.industries.find((i) => i.id === id)?.name ?? id;
+  const links = industry?.links ?? [];
+  const hasConnections = sells.length + buys.length + links.length > 0;
 
   // Tabs, at every width (operator request, 2026-10-20): what the industry is, who is in it, who it trades with.
   const sections: SectionLink[] = [
     { id: "about", label: "仕組み" },
     { id: "companies", label: `企業 ${companies.length}` },
-    ...(sells.length + buys.length > 0 ? [{ id: "connections", label: "つながり" }] : []),
+    ...(hasConnections ? [{ id: "connections", label: "つながり" }] : []),
     ...(features.length > 0 ? [{ id: "features", label: "特集" }] : []),
   ];
 
@@ -138,13 +140,41 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
           )}
         </CompanySection>
 
-        {sells.length + buys.length > 0 && (
+        {hasConnections && (
           <CompanySection
             id="connections"
             eyebrow="Connections"
             title="どの業界と取引している？"
-            lead="掲載企業の有価証券報告書に「仕入先」「顧客」として書かれた関係から。出典は各企業のページにあります。"
+            lead="業界として何を仕入れ、どこへ売るかと、掲載企業の有価証券報告書に「仕入先」「顧客」として書かれた企業どうしの関係。"
           >
+            {industry && links.length > 0 && (
+              <div className="mb-10 grid gap-8 md:grid-cols-2">
+                {[
+                  { title: "仕入れる元の業界", direction: "from" as const },
+                  { title: "売る先の業界", direction: "to" as const },
+                ].map((side) => {
+                  const rows = links.filter((l) => l.direction === side.direction);
+                  return rows.length > 0 ? (
+                    <div key={side.direction}>
+                      <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">{side.title}</h3>
+                      <ul className="mt-3 divide-y divide-border border-y border-border">
+                        {rows.map((link) => (
+                          <li key={link.industryId} className="py-3">
+                            <Link href={`/industries/${link.industryId}`} className="font-serif font-semibold hover:underline">
+                              {INDUSTRY_LABELS[link.industryId].name}
+                            </Link>
+                            <p className="mt-1 text-sm leading-6">
+                              <RichText text={link.description} />
+                            </p>
+                            <SourceList sources={industry.sources} sourceIds={link.sourceIds} className="mt-1" />
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null;
+                })}
+              </div>
+            )}
             <div className="grid gap-8 md:grid-cols-2">
               {[
                 { title: "この業界から売る先", flows: sells, other: (f: (typeof sells)[number]) => f.to },

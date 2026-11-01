@@ -174,6 +174,16 @@ export const industrySchema = z.strictObject({
       ...sourced,
     }),
   ),
+  links: z
+    .array(
+      z.strictObject({
+        industryId: z.enum(INDUSTRY_IDS),
+        direction: z.enum(["from", "to"]),
+        description: text,
+        ...sourced,
+      }),
+    )
+    .optional(),
   sources: z.array(sourceSchema).min(1),
   status: contentStatusSchema,
   updatedAt: isoDate,

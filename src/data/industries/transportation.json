@@ -1,0 +1,297 @@
+{
+  "id": "transportation",
+  "name": "運輸",
+  "nameEn": "Transportation",
+  "description": "人やモノを、ある場所から別の場所へ運ぶ仕事です。鉄道や航空は主に人を運び、海運や宅配、物流の会社は荷物を運びます。駅や空港のまわりで、店舗、不動産、ホテル、旅行などを営む会社も多くあります。",
+  "sourceIds": [
+    "ait-yuho-2026",
+    "ana-holdings-yuho-2026",
+    "central-japan-railway-yuho-2026",
+    "east-japan-railway-yuho-2026",
+    "hankyu-hanshin-holdings-yuho-2026",
+    "japan-airlines-yuho-2026",
+    "kawasaki-kisen-kaisha-yuho-2026",
+    "nippon-express-holdings-yuho-2025",
+    "nippon-yusen-kabushiki-kaisha-yuho-2026",
+    "sg-holdings-yuho-2026",
+    "tokyu-yuho-2026",
+    "west-japan-railway-yuho-2026",
+    "yamato-holdings-yuho-2026",
+    "yasuda-logistics-yuho-2026"
+  ],
+  "structure": "segments",
+  "categories": [
+    {
+      "id": "railway",
+      "name": "鉄道",
+      "description": "新幹線や在来線、バスなどで、通勤・通学や出張、旅行の利用者を運びます。駅ビルや百貨店、ホテル、不動産を同じグループで営む会社が多いのが特徴です。",
+      "companyIds": [
+        "central-japan-railway",
+        "east-japan-railway",
+        "west-japan-railway",
+        "hankyu-hanshin-holdings",
+        "tokyu"
+      ],
+      "sourceIds": [
+        "central-japan-railway-yuho-2026",
+        "east-japan-railway-yuho-2026",
+        "west-japan-railway-yuho-2026",
+        "hankyu-hanshin-holdings-yuho-2026",
+        "tokyu-yuho-2026"
+      ]
+    },
+    {
+      "id": "air",
+      "name": "航空",
+      "description": "国内線と国際線で、旅客と貨物、郵便を運びます。空港での地上業務や航空機の整備、マイレージ、旅行商品の販売など、飛行機に関わる事業もあわせて営みます。",
+      "companyIds": [
+        "ana-holdings",
+        "japan-airlines"
+      ],
+      "sourceIds": [
+        "ana-holdings-yuho-2026",
+        "japan-airlines-yuho-2026"
+      ]
+    },
+    {
+      "id": "shipping",
+      "name": "海運",
+      "description": "コンテナ船、自動車専用船、ばら積み船、タンカー、LNG船などで、自動車や鉄鉱石、石炭、エネルギー資源などの貨物を世界に運びます。",
+      "companyIds": [
+        "kawasaki-kisen-kaisha",
+        "nippon-yusen-kabushiki-kaisha"
+      ],
+      "sourceIds": [
+        "kawasaki-kisen-kaisha-yuho-2026",
+        "nippon-yusen-kabushiki-kaisha-yuho-2026"
+      ]
+    },
+    {
+      "id": "parcel-delivery",
+      "name": "宅配・陸上輸送",
+      "description": "トラックなどの自動車運送で、個人や企業の荷物を集めて届けます。宅配便のほか、法人向けの輸送の管理や、企業の荷物をまとめて運ぶ仕事もあります。",
+      "companyIds": [
+        "sg-holdings",
+        "yamato-holdings",
+        "nippon-express-holdings"
+      ],
+      "sourceIds": [
+        "sg-holdings-yuho-2026",
+        "yamato-holdings-yuho-2026",
+        "nippon-express-holdings-yuho-2025"
+      ]
+    },
+    {
+      "id": "logistics-forwarding",
+      "name": "倉庫・国際物流",
+      "description": "倉庫での保管や荷役、物流センターの運営、通関、航空や海上の輸送手配までを請け負います。荷主に代わって、荷物が届くまでの流れ全体を組み立てる役目です。",
+      "companyIds": [
+        "ait",
+        "yasuda-logistics",
+        "nippon-express-holdings",
+        "sg-holdings",
+        "yamato-holdings",
+        "nippon-yusen-kabushiki-kaisha",
+        "kawasaki-kisen-kaisha",
+        "hankyu-hanshin-holdings"
+      ],
+      "sourceIds": [
+        "ait-yuho-2026",
+        "yasuda-logistics-yuho-2026",
+        "nippon-express-holdings-yuho-2025",
+        "sg-holdings-yuho-2026",
+        "yamato-holdings-yuho-2026",
+        "nippon-yusen-kabushiki-kaisha-yuho-2026",
+        "kawasaki-kisen-kaisha-yuho-2026",
+        "hankyu-hanshin-holdings-yuho-2026"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "industryId": "automotive",
+      "direction": "to",
+      "description": "自動車や建機、農機などの荷主から、貨物の輸送や物流を請け負います。自動車専用船で自動車を海外へ運ぶ仕事もあります。",
+      "sourceIds": [
+        "nippon-express-holdings-yuho-2025",
+        "yamato-holdings-yuho-2026",
+        "kawasaki-kisen-kaisha-yuho-2026",
+        "nippon-yusen-kabushiki-kaisha-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "electronics",
+      "direction": "to",
+      "description": "電機や電子部品、産業用機械の荷主から、航空・海上・陸上の輸送や物流を請け負います。",
+      "sourceIds": [
+        "nippon-express-holdings-yuho-2025"
+      ]
+    },
+    {
+      "industryId": "pharmaceuticals",
+      "direction": "to",
+      "description": "医薬品や医療機器の荷主から、貨物の輸送や物流を請け負います。航空貨物でも、医薬品が高単価の貨物として運ばれます。",
+      "sourceIds": [
+        "nippon-express-holdings-yuho-2025",
+        "japan-airlines-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "food",
+      "direction": "to",
+      "description": "食品関連の企業から、貨物の輸送や物流を請け負います。",
+      "sourceIds": [
+        "nippon-express-holdings-yuho-2025",
+        "yamato-holdings-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "chemicals",
+      "direction": "to",
+      "description": "化学メーカーの荷主から、貨物の輸送や物流を請け負います。",
+      "sourceIds": [
+        "nippon-express-holdings-yuho-2025"
+      ]
+    },
+    {
+      "industryId": "entertainment",
+      "direction": "to",
+      "description": "エンターテインメント企業の荷主から、貨物の輸送や物流を請け負います。",
+      "sourceIds": [
+        "nippon-express-holdings-yuho-2025"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "ait-yuho-2026",
+      "title": "有価証券報告書－第39期(2025/03/01－2026/02/28)",
+      "publisher": "株式会社エーアイテイー",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y53V.pdf",
+      "publishedAt": "2026-05-22",
+      "accessedAt": "2026-10-10"
+    },
+    {
+      "id": "ana-holdings-yuho-2026",
+      "title": "有価証券報告書－第76期（2025年4月1日－2026年3月31日）",
+      "publisher": "ＡＮＡホールディングス株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKL4.pdf",
+      "publishedAt": "2026-06-25",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "central-japan-railway-yuho-2026",
+      "title": "有価証券報告書－第39期（2025年4月1日－2026年3月31日）",
+      "publisher": "東海旅客鉄道株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD7H.pdf",
+      "publishedAt": "2026-06-22",
+      "accessedAt": "2026-09-26"
+    },
+    {
+      "id": "east-japan-railway-yuho-2026",
+      "title": "有価証券報告書－第39期（2025年4月1日－2026年3月31日）",
+      "publisher": "東日本旅客鉄道株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC7N.pdf",
+      "publishedAt": "2026-06-17",
+      "accessedAt": "2026-09-26"
+    },
+    {
+      "id": "hankyu-hanshin-holdings-yuho-2026",
+      "title": "有価証券報告書－第188期(2025/04/01－2026/03/31)",
+      "publisher": "阪急阪神ホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCBL.pdf",
+      "publishedAt": "2026-06-17",
+      "docId": "S100YCBL",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "japan-airlines-yuho-2026",
+      "title": "有価証券報告書－第77期(2025/04/01－2026/03/31)",
+      "publisher": "日本航空株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFIO.pdf",
+      "publishedAt": "2026-06-22",
+      "accessedAt": "2026-10-19",
+      "docId": "S100YFIO",
+      "asOf": "2026-03-31"
+    },
+    {
+      "id": "kawasaki-kisen-kaisha-yuho-2026",
+      "title": "有価証券報告書－第158期(2025/04/01－2026/03/31)",
+      "publisher": "川崎汽船株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC6B.pdf",
+      "publishedAt": "2026-06-18",
+      "docId": "S100YC6B",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "nippon-express-holdings-yuho-2025",
+      "title": "有価証券報告書－第4期(2025/01/01－2025/12/31)",
+      "publisher": "NIPPON EXPRESSホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XTG8.pdf",
+      "publishedAt": "2026-03-25",
+      "docId": "S100XTG8",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-10-20"
+    },
+    {
+      "id": "nippon-yusen-kabushiki-kaisha-yuho-2026",
+      "title": "有価証券報告書－第139期(2025/04/01－2026/03/31)",
+      "publisher": "日本郵船株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBT6.pdf",
+      "publishedAt": "2026-06-16",
+      "accessedAt": "2026-10-19",
+      "docId": "S100YBT6",
+      "asOf": "2026-03-31"
+    },
+    {
+      "id": "sg-holdings-yuho-2026",
+      "title": "有価証券報告書－第20期(2025/04/01－2026/03/31)",
+      "publisher": "ＳＧホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y9P7.pdf",
+      "publishedAt": "2026-06-10",
+      "docId": "S100Y9P7",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-26"
+    },
+    {
+      "id": "tokyu-yuho-2026",
+      "title": "有価証券報告書－第157期(2025/04/01－2026/03/31)",
+      "publisher": "東急株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE63.pdf",
+      "publishedAt": "2026-06-23",
+      "docId": "S100YE63",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "west-japan-railway-yuho-2026",
+      "title": "有価証券報告書－第39期(2025/04/01－2026/03/31)",
+      "publisher": "西日本旅客鉄道株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCFK.pdf",
+      "publishedAt": "2026-06-16",
+      "accessedAt": "2026-10-01"
+    },
+    {
+      "id": "yamato-holdings-yuho-2026",
+      "title": "有価証券報告書－第161期（2025年4月1日－2026年3月31日）",
+      "publisher": "ヤマトホールディングス株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YAYL.pdf",
+      "publishedAt": "2026-06-12",
+      "accessedAt": "2026-09-27"
+    },
+    {
+      "id": "yasuda-logistics-yuho-2026",
+      "title": "有価証券報告書－第158期(2025/04/01－2026/03/31)",
+      "publisher": "安田倉庫株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEO5.pdf",
+      "publishedAt": "2026-06-19",
+      "accessedAt": "2026-10-02"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-01"
+}

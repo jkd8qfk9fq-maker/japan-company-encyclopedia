@@ -1,0 +1,325 @@
+{
+  "id": "food",
+  "name": "食品",
+  "nameEn": "Food",
+  "description": "食べものや飲みものを、育てる、つくる、卸す、お店で出す、という流れで届ける業界です。食肉や卵を育てる会社、調味料・めん・パン・飲料・酒類をつくる会社、スーパーなどへ卸す会社、飲食店やコンビニエンスストアを営む会社が並んでいます。つくる会社の中には、医薬品用の原料や健康食品など、食品以外に事業を広げる会社もあります。",
+  "sourceIds": [
+    "nh-foods-yuho-2026",
+    "ajinomoto-yuho-2026",
+    "asahi-group-holdings-yuho-2025",
+    "kato-sangyo-yuho-2025",
+    "yoshinoya-holdings-yuho-2026",
+    "otsuka-holdings-yuho-2025",
+    "afc-hd-ams-life-science-yuho-2025"
+  ],
+  "structure": "chain",
+  "categories": [
+    {
+      "id": "production",
+      "name": "育てる",
+      "role": "stage",
+      "description": "豚・鶏・牛などの食肉や、鶏卵、牛乳を、育てる段階から手がけます。育てたものは、生活協同組合や量販店、小売店などへ売られます。",
+      "companyIds": [
+        "nh-foods",
+        "akikawa-foods-and-farms"
+      ],
+      "sourceIds": [
+        "nh-foods-yuho-2026",
+        "akikawa-foods-and-farms-yuho-2026"
+      ]
+    },
+    {
+      "id": "ingredients",
+      "name": "食品の材料を支える",
+      "role": "input",
+      "description": "食品をつくる側に向けて、材料を供給します。パンや菓子、カフェなどの作り手に向けた油脂類、砂糖・小麦粉・油脂などの食品原材料、畜産に使う飼料が当たります。",
+      "companyIds": [
+        "adeka",
+        "yamae-group-holdings"
+      ],
+      "sourceIds": [
+        "adeka-yuho-2026",
+        "yamae-group-holdings-yuho-2026"
+      ]
+    },
+    {
+      "id": "manufacturing",
+      "name": "食品・飲料をつくる",
+      "role": "stage",
+      "description": "調味料、即席めん、パン、菓子、ハム・ソーセージ、冷凍食品、飲料、ビールなどの酒類、健康食品をつくって売ります。国内だけでなく、海外でも製造・販売する会社があります。",
+      "companyIds": [
+        "ajinomoto",
+        "kikkoman",
+        "nissin-foods-holdings",
+        "yamazaki-baking",
+        "ahjikan",
+        "nh-foods",
+        "asahi-group-holdings",
+        "kirin-holdings",
+        "japan-tobacco",
+        "otsuka-holdings",
+        "afc-hd-ams-life-science",
+        "akikawa-foods-and-farms"
+      ],
+      "sourceIds": [
+        "ajinomoto-yuho-2026",
+        "kikkoman-yuho-2026",
+        "nissin-foods-holdings-yuho-2026",
+        "yamazaki-baking-yuho-2025",
+        "ahjikan-yuho-2026",
+        "nh-foods-yuho-2026",
+        "asahi-group-holdings-yuho-2025",
+        "kirin-holdings-yuho-2025",
+        "japan-tobacco-yuho-2025",
+        "otsuka-holdings-yuho-2025",
+        "afc-hd-ams-life-science-yuho-2025",
+        "akikawa-foods-and-farms-yuho-2026"
+      ]
+    },
+    {
+      "id": "wholesale",
+      "name": "仕入れて卸す",
+      "role": "stage",
+      "description": "加工食品や酒類、冷蔵・冷凍が必要な食品などを仕入れ、スーパーやドラッグストアなどの得意先へ卸します。外食産業向けの取引や、海外の得意先への卸売もあります。",
+      "companyIds": [
+        "kato-sangyo",
+        "yamae-group-holdings"
+      ],
+      "sourceIds": [
+        "kato-sangyo-yuho-2025",
+        "yamae-group-holdings-yuho-2026"
+      ]
+    },
+    {
+      "id": "food-service",
+      "name": "お店で出す・売る",
+      "role": "stage",
+      "description": "牛丼、焼肉、ステーキ、寿司、うどんなどの飲食店を、直営やフランチャイズで広げます。パンをつくる会社がコンビニエンスストアやスーパーを営む例や、宿泊施設に飲食店を併設する例もあります。",
+      "companyIds": [
+        "anrakutei",
+        "yoshinoya-holdings",
+        "zensho-holdings",
+        "amaze",
+        "yamazaki-baking",
+        "afc-hd-ams-life-science"
+      ],
+      "sourceIds": [
+        "anrakutei-yuho-2026",
+        "yoshinoya-holdings-yuho-2026",
+        "zensho-holdings-yuho-2026",
+        "amaze-yuho-2025",
+        "yamazaki-baking-yuho-2025",
+        "afc-hd-ams-life-science-yuho-2025"
+      ]
+    }
+  ],
+  "links": [
+    {
+      "industryId": "retail",
+      "direction": "to",
+      "description": "つくった食品を、スーパーマーケットやコンビニエンスストアなどの店に売ります。卸売会社を通じて小売の会社に届く流れもあります。",
+      "sourceIds": [
+        "ahjikan-yuho-2026",
+        "yamazaki-baking-yuho-2025",
+        "japan-tobacco-yuho-2025",
+        "kato-sangyo-yuho-2025",
+        "yamae-group-holdings-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "trading",
+      "direction": "from",
+      "description": "食品の卸売会社は、仕入れ先に商社を挙げています。",
+      "sourceIds": [
+        "kato-sangyo-yuho-2025"
+      ]
+    },
+    {
+      "industryId": "pharmaceuticals",
+      "direction": "to",
+      "description": "医薬用のアミノ酸や、医薬品の原料・中間体の受託開発製造を、製薬会社に提供する会社があります。",
+      "sourceIds": [
+        "ajinomoto-yuho-2026"
+      ]
+    },
+    {
+      "industryId": "semiconductors",
+      "direction": "to",
+      "description": "高純度の半導体材料などを、半導体の製造に関わる会社へ売る会社があります。",
+      "sourceIds": [
+        "adeka-yuho-2026",
+        "ajinomoto-yuho-2026"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "nh-foods-yuho-2026",
+      "title": "有価証券報告書－第81期(2025/04/01－2026/03/31)",
+      "publisher": "日本ハム株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEEQ.pdf",
+      "publishedAt": "2026-06-23",
+      "accessedAt": "2026-10-18",
+      "docId": "S100YEEQ",
+      "asOf": "2026-03-31"
+    },
+    {
+      "id": "ajinomoto-yuho-2026",
+      "title": "有価証券報告書－第148期（2025年4月1日－2026年3月31日）",
+      "publisher": "味の素株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y992.pdf",
+      "publishedAt": "2026-06-12",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "asahi-group-holdings-yuho-2025",
+      "title": "有価証券報告書－第102期（2025年1月1日－2025年12月31日）",
+      "publisher": "アサヒグループホールディングス株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YSGA.pdf",
+      "publishedAt": "2026-07-27",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "kato-sangyo-yuho-2025",
+      "title": "有価証券報告書－第79期(2024/10/01－2025/09/30)",
+      "publisher": "加藤産業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XA3X.pdf",
+      "publishedAt": "2025-12-22",
+      "docId": "S100XA3X",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-10-30"
+    },
+    {
+      "id": "yoshinoya-holdings-yuho-2026",
+      "title": "有価証券報告書－第69期(2025/03/01－2026/02/28)",
+      "publisher": "株式会社吉野家ホールディングス",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y5NR.pdf",
+      "publishedAt": "2026-05-22",
+      "accessedAt": "2026-10-02"
+    },
+    {
+      "id": "otsuka-holdings-yuho-2025",
+      "title": "有価証券報告書－第18期(2025/01/01－2025/12/31)",
+      "publisher": "大塚ホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XUA7.pdf",
+      "publishedAt": "2026-03-26",
+      "docId": "S100XUA7",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-10-20"
+    },
+    {
+      "id": "afc-hd-ams-life-science-yuho-2025",
+      "title": "有価証券報告書－第45期(2024/09/01－2025/08/31)",
+      "publisher": "株式会社ＡＦＣ－ＨＤアムスライフサイエンス",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X6W8.pdf",
+      "publishedAt": "2025-11-26",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "akikawa-foods-and-farms-yuho-2026",
+      "title": "有価証券報告書－第47期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社秋川牧園",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YK4U.pdf",
+      "publishedAt": "2026-06-25",
+      "accessedAt": "2026-10-10"
+    },
+    {
+      "id": "adeka-yuho-2026",
+      "title": "有価証券報告書－第164期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社ADEKA",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBCU.pdf",
+      "publishedAt": "2026-06-15",
+      "accessedAt": "2026-10-07"
+    },
+    {
+      "id": "yamae-group-holdings-yuho-2026",
+      "title": "有価証券報告書－第5期(2025/04/01－2026/03/31)",
+      "publisher": "ヤマエグループホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE2O.pdf",
+      "publishedAt": "2026-06-18",
+      "docId": "S100YE2O",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "kikkoman-yuho-2026",
+      "title": "有価証券報告書－第109期（2025年4月1日－2026年3月31日）",
+      "publisher": "キッコーマン株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE5V.pdf",
+      "publishedAt": "2026-06-19",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "nissin-foods-holdings-yuho-2026",
+      "title": "有価証券報告書－第78期（2025年4月1日－2026年3月31日）",
+      "publisher": "日清食品ホールディングス株式会社（EDINET）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEWB.pdf",
+      "publishedAt": "2026-06-22",
+      "accessedAt": "2026-09-25"
+    },
+    {
+      "id": "yamazaki-baking-yuho-2025",
+      "title": "有価証券報告書－第78期(2025/01/01－2025/12/31)",
+      "publisher": "山崎製パン株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XQ5C.pdf",
+      "publishedAt": "2026-03-24",
+      "accessedAt": "2026-10-19",
+      "docId": "S100XQ5C",
+      "asOf": "2025-12-31"
+    },
+    {
+      "id": "ahjikan-yuho-2026",
+      "title": "有価証券報告書－第62期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社あじかん",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGFU.pdf",
+      "publishedAt": "2026-06-23",
+      "accessedAt": "2026-10-08"
+    },
+    {
+      "id": "kirin-holdings-yuho-2025",
+      "title": "訂正有価証券報告書－第187期(2025/01/01－2025/12/31)",
+      "publisher": "キリンホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YT3M.pdf",
+      "publishedAt": "2026-08-03",
+      "accessedAt": "2026-10-18"
+    },
+    {
+      "id": "japan-tobacco-yuho-2025",
+      "title": "有価証券報告書－第41期(2025/01/01－2025/12/31)",
+      "publisher": "日本たばこ産業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XSSA.pdf",
+      "publishedAt": "2026-03-23",
+      "accessedAt": "2026-10-19",
+      "docId": "S100XSSA",
+      "asOf": "2025-12-31"
+    },
+    {
+      "id": "anrakutei-yuho-2026",
+      "title": "有価証券報告書－第48期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社安楽亭",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEJV.pdf",
+      "publishedAt": "2026-06-24",
+      "accessedAt": "2026-10-14"
+    },
+    {
+      "id": "zensho-holdings-yuho-2026",
+      "title": "有価証券報告書－第44期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社ゼンショーホールディングス",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKA9.pdf",
+      "publishedAt": "2026-06-25",
+      "accessedAt": "2026-10-01"
+    },
+    {
+      "id": "amaze-yuho-2025",
+      "title": "有価証券報告書－第100期(2024/12/01－2025/11/30)",
+      "publisher": "株式会社アメイズ",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XMEJ.pdf",
+      "publishedAt": "2026-02-20",
+      "accessedAt": "2026-10-13"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-01"
+}

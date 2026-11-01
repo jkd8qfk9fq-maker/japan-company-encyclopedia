@@ -37,9 +37,6 @@ function sourceErrors(sources: Source[], owner: string): string[] {
   const errors: string[] = [];
   const ids = sources.map((s) => s.id);
   if (new Set(ids).size !== ids.length) errors.push(`${owner}: 出典の id が重複しています`);
-  for (const s of sources) {
-    if (/wikipedia\.org/i.test(s.url)) errors.push(`${owner}: 出典「${s.title}」— Wikipedia は出典にできません`);
-  }
   return errors;
 }
 
@@ -136,6 +133,8 @@ export function checkCompany(company: Company, context: ContentContext): string[
       }
     }
     e.push(...citationErrors(f.sourceIds, src, where));
+    // Figures are EDINET's alone (JCE-030): Wikipedia may add context to the prose, never a number to the table.
+    if (f.sourceIds.some((id) => /wikipedia\.org/i.test(src.find((s) => s.id === id)?.url ?? ""))) e.push(`${where}: 財務の出典に Wikipedia は使えません（有報だけ）`);
   }
   const withBasis = company.financials.filter((f) => f.revenueBasis !== undefined).length;
   const withNetBasis = company.financials.filter((f) => f.netIncomeBasis !== undefined).length;
@@ -248,6 +247,15 @@ export function checkIndustry(industry: Industry, context: ContentContext & { co
         e.push(`${where}: 企業「${company.name}」はこの業界を自社の業界に含めていません`);
       }
     }
+  }
+  const seen = new Set<string>();
+  for (const link of industry.links ?? []) {
+    const where = `つながり「${link.industryId}（${link.direction === "from" ? "仕入れる元" : "売る先"}）」`;
+    if (link.industryId === industry.id) e.push(`${where}: 自分の業界とはつなげません`);
+    if (seen.has(`${link.industryId}:${link.direction}`)) e.push(`${where}: 同じ業界・同じ向きが重複しています`);
+    seen.add(`${link.industryId}:${link.direction}`);
+    e.push(...citationErrors(link.sourceIds, industry.sources, where));
+    e.push(...richTextErrors(link.description, where, context));
   }
   return e;
 }
