@@ -36,8 +36,9 @@
 | relatedCompanies | `relatedCompanies` |
 | terms | なし（助言のみ。空の `data` でよい） |
 
-- `sources` のキーは `id, title, publisher, url, publishedAt` だけ（`kind` は無い。`accessedAt` は書かない — 機械が入れる）。有報の出典 id は `yuho-<決算期末の西暦年>`。訂正有報が有効文書なら url・title・publishedAt は `summary.json` の filing の値。
+- `sources` のキーは `id, title, publisher, url, publishedAt` だけ（`kind` は無い。`accessedAt` は書かない — 機械が入れる）。有報の出典 id は `yuho-<決算期末の西暦年>`、url は `https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/<docID>.pdf`（API の URL は不可）。訂正有報が有効文書なら url・title・publishedAt は `summary.json` の filing の値。
 - `businesses[]`（`children[]` も）・`businessModel`・`history[]`・`relatedCompanies[]` は `sourceIds` 必須。`locator`（根拠の節の見出し「【事業の内容】」など）は `sourceIds` を持つ所にだけ書く。**`businessModel.flow[]` の各段には `kind`・`title`・`description` だけ**（`sourceIds`・`locator` を書くとスキーマが拒否する。出典は `businessModel.sourceIds` に）。
+- 必須の形: `name`（通称。表紙の社名から「株式会社」を除く）／`industries[]` は `{ "industryId": "<値>", "primary": true }`（`id` ではない）／`businessModel` は `description`・`products[]`・`customers[]`・`revenueSources[]`・`flow[]`・`sourceIds`。
 - `officialName`・`nameEn`・`code`・`financials` は書かない（機械が入れる）。`listings` の `market` は表紙が市場区分を印字しているときだけ。取引所は tse / nse / fse / sse。
 - **`needsReview`** = 何かが間違っているかもしれない（変則決算・決算期変更・訂正の不完全・有報内の矛盾・提出後の予定事項）。空でないと会社は非公開の要確認になる。**`taxonomyGaps`** = データは正しいが閉じた分類で言えない（業界が無い）。取り違えない。分類の不足を `needsReview` に書かない。
 
@@ -45,7 +46,7 @@
 
 1. やさしい日本語（です・ます）。その会社を知らない読者向け。
 2. 最上位の `description`（一文の説明）は90文字以内・句点1つ。`businessModel.description` は100文字以内・句点1つ。何をしている会社かを直接述べる。
-3. **有報を主語にしない**（「有報によると」「有報は〜と書いています」は不可）。欠落の宣言「有報には書かれていません」は可。
+3. **有報を主語にしない**（「有報によると」「有報は〜と書いています」「有報は、〜と説明しています」は不可。会社や事業を主語に、事実だけを書く）。欠落の宣言「有報には書かれていません」は可。
 4. **本文の財務数値は売上高（収益）と当期純利益だけ。** 営業利益・経常利益・売上総利益・セグメント利益・税引前利益・持分法損益は金額も増減率も理由も書かない。総資産・純資産・計上額・帳簿価額・受注高・研究開発費・資本金・販管費の金額も書かない。売上高の増減と理由は可。従業員数・子会社数・持株比率は可。
 5. 投資の語（株価・PER・PBR・ROE・ROA・EPS・配当利回り・目標株価・時価総額・配当性向・1株当たり・推奨）を書かない。
 6. 金額は有報の印字どおりの表記で、年度を添える（「428億円」と印字なら「428億円」。百万円を継ぎ足して書き換えない）。千円額・単位なしの円額は印字と完全一致のときだけ。書き換えたくなったら金額をやめて印字の増減率を使う。`brief.md` にしかない数値は使えない。

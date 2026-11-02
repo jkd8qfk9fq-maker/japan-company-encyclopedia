@@ -120,6 +120,20 @@ export function checkProsePolicy(entry) {
     const extra = Object.keys(s ?? {}).filter((k) => !["kind", "title", "description"].includes(k));
     if (extra.length > 0) findings.push({ severity: "error", rule: "flow-shape", path: `businessModel.flow[${i}]`, message: `流れの各段に書けるのは kind・title・description だけ（${extra.join(", ")} を消す。出典は businessModel.sourceIds）` });
   });
+  // Batch 3 (2026-11-02) lost companies to each of these at finalize, after the repair call could have fixed them.
+  if (entry?.status?.state !== "figures-only") {
+    (Array.isArray(entry?.industries) ? entry.industries : []).forEach((/** @type {any} */ r, /** @type {number} */ i) => {
+      if (typeof r?.industryId !== "string" || Object.keys(r).some((k) => k !== "industryId" && k !== "primary")) findings.push({ severity: "error", rule: "industry-shape", path: `industries[${i}]`, message: "業界の各行は { \"industryId\": \"<値>\", \"primary\": true|false } だけ（id ではなく industryId）" });
+    });
+    if (entry && "name" in entry && (typeof entry.name !== "string" || entry.name.trim() === "")) findings.push({ severity: "error", rule: "name-missing", path: "name", message: "name（通称。表紙の社名から「株式会社」を除いたもの）が要る" });
+    if (entry?.businessModel) {
+      const missing = ["products", "customers", "revenueSources", "flow"].filter((k) => !Array.isArray(entry.businessModel[k]));
+      if (missing.length > 0) findings.push({ severity: "error", rule: "business-model-shape", path: "businessModel", message: `businessModel に配列 ${missing.join("・")} が要る` });
+    }
+    for (const s of Array.isArray(entry?.sources) ? entry.sources : []) {
+      if (/^yuho-/.test(s?.id ?? "") && /edinet-fsa\.go\.jp\/api\//.test(s?.url ?? "")) findings.push({ severity: "error", rule: "source-url", path: `sources.${s.id}`, message: "有報の url は https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/<docID>.pdf（API の URL は使わない）" });
+    }
+  }
 
   // P1 — the one-sentence descriptions: short, exactly one sentence.
   const sentences = [
