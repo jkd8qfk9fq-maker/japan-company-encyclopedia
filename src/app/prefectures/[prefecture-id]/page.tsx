@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JapanMap } from "@/components/region/japan-map";
 import { HeadquartersSource } from "@/components/region/headquarters-source";
+import { PrefectureCompanies } from "@/components/region/prefecture-companies";
 import { PREFECTURES, prefectureById } from "@/lib/prefectures";
 import { companiesByPrefecture, type PlacedCompany } from "@/lib/regions";
 
@@ -92,30 +93,8 @@ export default async function PrefecturePage({ params }: PageProps<"/prefectures
           </dl>
 
           {municipalities.length > 0 ? (
-            <div className="mt-10 space-y-10">
-              {municipalities.map(([name, list]) => (
-                <section key={name} aria-labelledby={`m-${name}`}>
-                  <h2 id={`m-${name}`} className="flex items-baseline gap-3 border-b border-foreground pb-1.5">
-                    <span className="font-serif text-lg font-semibold">{name}</span>
-                    <span className="figures text-xs text-muted-foreground">{list.length}社</span>
-                  </h2>
-                  <ul className="mt-1 grid gap-x-8 sm:grid-cols-2">
-                    {list.map((company) => (
-                      <li key={company.id} className="border-b border-border">
-                        <Link href={`/companies/${company.id}`} className="group flex min-h-12 items-baseline gap-3 py-2.5">
-                          <span className="figures w-10 shrink-0 text-xs text-muted-foreground">{company.code}</span>
-                          <span className="min-w-0">
-                            <span className="block font-serif text-[0.9375rem] font-semibold group-hover:underline group-hover:underline-offset-4">
-                              {company.name}
-                            </span>
-                            {company.industry && <span className="block text-xs text-muted-foreground">{company.industry}</span>}
-                          </span>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              ))}
+            <div className="mt-8">
+              <PrefectureCompanies groups={municipalities.map(([name, list]) => [name, [...list]])} prefectureName={prefecture.name} />
             </div>
           ) : (
             <p className="mt-10 text-muted-foreground">この都道府県に本社がある企業は、まだ掲載していません。</p>
@@ -124,8 +103,8 @@ export default async function PrefecturePage({ params }: PageProps<"/prefectures
 
         <aside className="order-first lg:order-none">
           <div className="lg:sticky lg:top-28">
-            {/* Where the prefecture is, at a glance; on a phone small enough to leave the list in view. */}
-            <JapanMap counts={counts} current={prefecture.id} className="mx-auto max-w-[13rem] lg:max-w-[18rem]" />
+            {/* Where the prefecture is, and a way to the next one: zoom in on a phone to tap a neighbour. */}
+            <JapanMap counts={counts} current={prefecture.id} className="mx-auto max-w-[20rem] lg:max-w-[18rem]" />
             <nav aria-label="隣の都道府県" className="mt-4 flex justify-between gap-3 text-sm">
               {previous ? (
                 <Link href={`/prefectures/${previous.id}`} className="inline-flex min-h-11 items-center hover:underline">

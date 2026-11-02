@@ -521,3 +521,8 @@ office. What it rests on:
 - **Home**: hero and search as before, then 本社所在地から探す (map and the prefectures with most companies), 業界から
   探す as photograph cards, then the written companies beside the glossary and recent updates. No stock-photo hero, no
   logos of companies, no figure the encyclopedia does not have.
+
+Amended 2026-11-02 (operator): the map zooms — pinch, the ＋/−/全体 buttons under it, or a trackpad pinch — and pans
+once zoomed, so a phone can tap a small prefecture; a drag never opens a prefecture. Prefecture names (with their
+counts) are written only when zoomed in. A prefecture page opens its map zoomed on that prefecture. Each prefecture's
+company list has a search box (name, securities code, municipality, industry; width- and kana-insensitive).
