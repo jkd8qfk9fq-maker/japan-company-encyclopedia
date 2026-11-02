@@ -138,7 +138,8 @@ export const companySchema = z.strictObject({
   ),
   history: z.array(
     z.strictObject({
-      year: z.number().int().min(1600).max(2100),
+      // 1500: some 沿革 begin before 1600 (住友金属鉱山 dates its founding to 1590)
+      year: z.number().int().min(1500).max(2100),
       title: text,
       description: text,
       significance: text,
