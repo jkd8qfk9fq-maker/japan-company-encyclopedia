@@ -1,9 +1,9 @@
 "use client";
 
 import map from "@/assets/japan/prefectures.json";
+import Link from "next/link";
 import { Minus, Plus, Maximize2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { BASE_PATH } from "@/lib/site";
 import { PREFECTURES } from "@/lib/prefectures";
 
 /** Company counts at which a prefecture's shade steps up. Steps, not a continuous scale: Tokyo alone is over half. */
@@ -195,9 +195,11 @@ export function JapanMap({
           const count = counts[prefecture.id] ?? 0;
           const here = prefecture.id === current;
           return (
-            <a
+            // next/link, not a raw href with BASE_PATH: @/lib/site checks the server-only SITE_URL when it loads, which
+            // throws in the browser and took the whole home page down (2026-11-02).
+            <Link
               key={shape.code}
-              href={`${BASE_PATH}/prefectures/${prefecture.id}`}
+              href={`/prefectures/${prefecture.id}`}
               aria-label={`${prefecture.name} ${count}社`}
               className="group outline-none"
               draggable={false}
@@ -215,7 +217,7 @@ export function JapanMap({
                 vectorEffect="non-scaling-stroke"
                 className="transition-[fill-opacity] group-hover:fill-[var(--seal)] group-hover:[fill-opacity:0.85] group-focus-visible:fill-[var(--seal)]"
               />
-            </a>
+            </Link>
           );
         })}
         {labels && (
