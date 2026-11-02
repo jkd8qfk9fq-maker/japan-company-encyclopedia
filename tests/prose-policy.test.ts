@@ -55,7 +55,7 @@ describe("the business is the subject, not the filing", () => {
 });
 
 describe("financial figures other than revenue and net income", () => {
-  const model = (text: string) => entry({ businessModel: { description: "商社です。", flow: [{ kind: "profit", title: "当期純利益", description: text }] } });
+  const model = (text: string) => entry({ businessModel: { description: "商社です。", products: [], customers: [], revenueSources: [], flow: [{ kind: "profit", title: "当期純利益", description: text }] } });
 
   it.each(["営業利益は前期比5.0％減りました。", "経常利益が目標に届きませんでした。", "セグメント利益は増えました。", "売上総利益の大きさ", "持分法による投資損益が加わります。", "特別利益が減りました。"])("refuses a profit measure even without a number: %s", (text) => {
     expect(rules(checkProsePolicy(model(text)), "error")).toContain("forbidden-financial-term");
