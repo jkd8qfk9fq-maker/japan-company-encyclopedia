@@ -94,8 +94,17 @@ export function createExecutor({ mode = "claude-cli", model = "sonnet", budgetUs
     const args = [
       "-p",
       prompt,
-      "--agent",
-      "data-research",
+      // The brief is the whole rulebook, given as system prompt; MCP servers, plugins' skills, slash commands and
+      // user settings are left out — they were three quarters of every turn's context (56k → 14k tokens, 2026-11-02)
+      "--append-system-prompt-file",
+      "docs/agent-brief.md",
+      "--strict-mcp-config",
+      "--disable-slash-commands",
+      "--exclude-dynamic-system-prompt-sections",
+      "--setting-sources",
+      "project,local",
+      "--tools",
+      ["Read", "Glob", "Grep", "Write", "Edit", "Bash", ...(allowWeb ? ["WebSearch", "WebFetch"] : [])].join(","),
       "--model",
       model,
       "--permission-mode",

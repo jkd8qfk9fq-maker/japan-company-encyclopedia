@@ -19,12 +19,12 @@ describe("relationship kinds", () => {
     for (const kind of ["same-industry", "competitor", "supplier", "customer", "technology", "same-business-model", "business-partner"]) {
       expect(RELATIONSHIP_KINDS).toContain(kind);
     }
-    for (const kind of ["parent", "subsidiary", "affiliate", "other-affiliated-company"]) expect(RELATIONSHIP_KINDS).toContain(kind);
-    expect(RELATIONSHIP_KINDS).toHaveLength(11);
+    for (const kind of ["parent", "subsidiary", "affiliate", "other-affiliated-company", "major-shareholder"]) expect(RELATIONSHIP_KINDS).toContain(kind);
+    expect(RELATIONSHIP_KINDS).toHaveLength(12);
   });
 
-  it("does NOT add a major shareholder or a merger partner — the first awaits a decision, the second is an event", () => {
-    for (const kind of ["major-shareholder", "shareholder", "merger-partner", "capital-partner"]) expect(RELATIONSHIP_KINDS).not.toContain(kind);
+  it("adds a major shareholder (JCE-035) but not a merger partner, which is an event", () => {
+    for (const kind of ["shareholder", "merger-partner", "capital-partner"]) expect(RELATIONSHIP_KINDS).not.toContain(kind);
   });
 
   const company = async () => JSON.parse(await readFile(join(process.cwd(), "src/data/companies/toho-9602.json"), "utf8"));
@@ -33,7 +33,7 @@ describe("relationship kinds", () => {
   it("accepts every kind in a company entry, and rejects one that is not a kind", async () => {
     const c = await company();
     for (const kind of RELATIONSHIP_KINDS) expect(companySchema.safeParse(withRelationship(c, kind)).success, kind).toBe(true);
-    for (const kind of ["major-shareholder", "merger-partner", "parent-company", ""]) {
+    for (const kind of ["shareholder", "merger-partner", "parent-company", ""]) {
       expect(companySchema.safeParse(withRelationship(c, kind)).success, kind || "(empty)").toBe(false);
     }
   });

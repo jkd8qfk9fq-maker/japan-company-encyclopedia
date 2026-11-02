@@ -944,7 +944,7 @@ function brief(companyId, code4, filing, cover, figures, previous, warnings, cor
     "## 本文ファイル",
     "",
     ...Object.entries(sections).map(([file, s]) => `- \`${file}\` (${s.characters.toLocaleString("ja-JP")}字)`),
-    "- `sections.json` — その他の全テキストブロック",
+    "- `sections.txt` — その他のテキストブロック（1行1文。Grep で探す。役員・監査・会計方針・財務諸表は除く）",
     "",
   ].join("\n");
 }
@@ -1266,13 +1266,14 @@ async function packFor(companyId, code4, from, to) {
     const individual = others.find((b) => /セグメント情報/.test(b.name ?? ""));
     warnings.push(
       individual
-        ? `連結のセグメント情報のテキストブロック（segments.txt）は無い。sections.json の「${individual.name}」にセグメント情報の注記があるので、そこから読むこと（会計基準はこの有無からは判断できない。表紙・経理の状況で確認する）`
+        ? `連結のセグメント情報のテキストブロック（segments.txt）は無い。sections.txt の「${individual.name.replace(/\s*\[テキストブロック\]$/, "")}」にセグメント情報の注記があるので、そこから読むこと（会計基準はこの有無からは判断できない。表紙・経理の状況で確認する）`
         : sectionIndex["md-and-a.txt"]
           ? "連結のセグメント情報のテキストブロックが無い。セグメント別の売上・利益は md-and-a.txt に記載されていることが多いので、そこから採り、ログにその旨を書くこと（会計基準はこの有無からは判断できない）"
           : "セグメント情報のテキストブロックが見つからない。有報本文でセグメント情報を確認すること",
     );
   }
   writeFileSync(join(dir, "sections.json"), JSON.stringify(others, null, 2), "utf8");
+  writeFileSync(join(dir, "sections.txt"), sectionsText(others), "utf8");
 
   writeFileSync(join(dir, "brief.md"), brief(companyId, code4, latest, cover, figures, previous, warnings, amendment.records, sectionIndex), "utf8");
 
@@ -1380,6 +1381,19 @@ if (process.argv[1]?.endsWith("evidence-pack.mjs")) {
   console.log("sections:", Object.entries(summary.sections).map(([f, s]) => `${f} (${s.characters})`).join(", "));
 }
 
+/**
+ * The agent's view of sections.json: one sentence per line, so a Grep returns a sentence instead of a whole
+ * block, without the blocks no stage writes from (officers, governance, audit, accounting policy, the statements
+ * and their notes). sections.json stays whole — the figure checker reads it.
+ */
+/** @param {{ name: string, text: string }[]} others */
+export function sectionsText(others) {
+  // inside the function: main() runs while the module loads, before a top-level const below it exists
+  const AGENT_SKIP = /役員|ガバナンス|企業統治|監査|報酬|会計方針|会計上の見積り|会計基準|基本となる重要な事項|貸借対照表|損益計算書|包括利益|キャッシュ・フロー|株主資本等変動|明細表|金融商品関係|有価証券関係|デリバティブ|退職給付|税効果|ストック・オプション|１株当たり|1株当たり|資産除去債務|追加情報|表示方法の変更|発行済株式|配当に関する注記|自己株式|株式事務|株価|新株予約権|減価償却累計額|担保|当座貸越|販売費及び一般管理費|所有者別状況|株式の総数|株式の種類|取得の状況|ライツプラン|ストックオプション|縦覧|その他の記載内容|決議に基づかない/;
+  const bare = (/** @type {string} */ name) => name.replace(/\s*\[テキストブロック\]$/, "");
+  const sentences = (/** @type {string} */ text) => text.replace(/。(?![」）])/g, "。\n").split("\n").map((l) => l.trim()).filter(Boolean).join("\n");
+  return others.filter((o) => !AGENT_SKIP.test(o.name)).map((o) => "## " + bare(o.name) + "\n" + sentences(o.text)).join("\n\n") + "\n";
+}
 
 /**
  * Every TextBlock that has no file of its own, by name — `sections.json`.

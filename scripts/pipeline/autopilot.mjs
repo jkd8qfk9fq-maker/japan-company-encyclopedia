@@ -42,6 +42,7 @@ import { mergeEntry } from "./merge-fragments.mjs";
 import { loadLedger, loadRegistry, policyFindings, writeRelatedCandidates } from "./policy-context.mjs";
 import { errorsOf } from "./prose-policy.mjs";
 import { inScope, updateScope } from "./update-scope.mjs";
+import { fetchWikipedia } from "../research/wikipedia.mjs";
 
 const execFileAsync = promisify(execFile);
 const root = process.cwd();
@@ -98,11 +99,25 @@ const runNode = async (/** @type {string[]} */ rest, /** @type {NodeJS.ProcessEn
  * definitions: any change after a model call is a hold. One line per file, "path<TAB>size<TAB>mtime", so the hold can
  * name the files. (A person editing those files while the queue runs causes the same hold: edit between runs.)
  */
+/**
+ * A pack whose fiscal years disagree with the filing's printed 決算年月 (tsuruha-holdings, 2026-10-31): every figure
+ * and period label written from it would be wrong, so the company waits for a rebuilt pack instead of a model call.
+ * @param {string} id
+ */
+function packProblem(id) {
+  const path = join(cacheDir(), "evidence", id, "summary.json");
+  if (!existsSync(path)) return null;
+  const change = JSON.parse(readFileSync(path, "utf8")).fiscalYearChange;
+  return change ? `決算期の不一致: 有報の決算年月 ${change.printed.join("・")} に対しパックは ${change.assumed.join("・")}。パックを作り直すまで執筆・公開しない` : null;
+}
+
 function fingerprint() {
   const parts = [];
   const walk = (/** @type {string} */ d) => {
     for (const e of readdirSync(d, { withFileTypes: true })) {
       if (e.name === "node_modules" || e.name === ".next" || e.name === ".git") continue;
+      // Claude Code itself rewrites this file (permission prompts); it held konica-minolta for nothing on 2026-10-31
+      if (e.name === "settings.local.json" && d.endsWith(".claude")) continue;
       const p = join(d, e.name);
       if (e.isDirectory()) walk(p);
       else {
@@ -125,7 +140,7 @@ const updating = (/** @type {string} */ id) => loadRecord(id)?.mode === "update"
 /** During an update only the rewritten part's findings count (update-scope.mjs); otherwise all of them. */
 const scopeOf = (/** @type {string} */ id) => (updating(id) ? updateScope(loadState(id).identity) : null);
 const scoped = (/** @type {string} */ id, /** @type {import("./prose-policy.mjs").Finding[]} */ findings) => findings.filter((f) => inScope(f.path, scopeOf(id)));
-const GROUP_FILES = { group1: ["businessStructure", "history"], group2: ["businessModel", "industry", "relatedCompanies", "terms"] };
+const GROUP_FILES = { group1: ["businessStructure", "history"], group2: ["businessModel", "industry", "relatedCompanies", "terms"], all: ["businessStructure", "history", "businessModel", "industry", "relatedCompanies", "terms"] };
 
 /** @type {import("./autopilot-engine.mjs").Deps} */
 const deps = {
@@ -137,6 +152,9 @@ const deps = {
   release,
   fingerprint,
   executor: /** @type {any} */ (null),
+  single: !process.argv.includes("--two-calls"),
+  isUpdate: (id) => updating(id),
+  packProblem,
   identity: (id) => {
     const e = loadRegistry(root).get(id);
     const rec = loadRecord(id);
@@ -157,6 +175,9 @@ const deps = {
   },
   advance: async (id) => {
     writeRelatedCandidates(id, { root }); // the mechanical list of names the agent may link; free, and rebuilt if the pack changed
+    // Wikipedia once, beside the pack, so the agent needs no web tools (JCE-035); a failed fetch only means no supplement
+    const pack = join(cacheDir(), "evidence", id);
+    if (existsSync(pack)) await fetchWikipedia({ id, ...deps.identity(id), dir: pack }).catch(() => null);
     return (await runNode(nodeArgs(["scripts/pipeline/advance.mjs", id, ...(updating(id) ? ["--update"] : [])]))).out;
   },
   order: (id, group, kind, prompt) => {
@@ -447,6 +468,8 @@ async function approveOne(/** @type {string} */ id, /** @type {{ confirmed: bool
     entryTier: existsSync(existing) ? (JSON.parse(readFileSync(existing, "utf8")).status?.state ?? "published") : null,
     update: rec?.mode === "update",
   });
+  const pack = packProblem(id);
+  if (pack) problems.push(pack);
   if (problems.length > 0) {
     if (rec?.status === "registered") return { ok: true, message: `${id}: すでに登録済みです（${rec.approval?.at}）。何もしません` };
     return { ok: false, message: `${id}: 承認できません\n${problems.map((p) => `  - ${p}`).join("\n")}` };

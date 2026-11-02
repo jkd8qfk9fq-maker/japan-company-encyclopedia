@@ -1,73 +1,47 @@
-#!/usr/bin/env node
 /**
- * Wikipedia（日本語版）の読み取り CLI。結果は JSON で stdout に出す。何も登録・保存しない。
+ * The company's ja.wikipedia article, fetched once beside the evidence pack — `evidence/<id>/wikipedia.json`.
  *
- *   node scripts/research/wikipedia.mjs search "トヨタ自動車" ["ソニーグループ" …] [--limit 5]
- *   node scripts/research/wikipedia.mjs article --title "トヨタ自動車" [--intro]
- *   node scripts/research/wikipedia.mjs article --page-id 12345 [--intro]
- *
- * Wikipedia は出典にできない（CLAUDE.md 不変条件 3）。ここで得た内容は調査の手がかり止まり。
- * `.ts` を直接 import している（Node の型ストリップ）ので Node 22.18 以降が要る。
+ * JCE-030 allows Wikipedia as a supplement; agents used to search for it themselves, a web search and several fetches
+ * per company. Here it is one search and at most three page reads, and the identity check is mechanical: an article is
+ * the company's only if its wikitext prints the securities code (the 上場情報 / 証券コード of the infobox). Not found is
+ * written too (`{ found: false }`), so the search is not repeated. The file is JSON, never .txt: the figure checker reads
+ * every .txt in the pack, and no figure may come from Wikipedia.
  */
+import { existsSync, writeFileSync } from "node:fs";
+import { join } from "node:path";
 
-import { fetchWikipediaArticle, searchWikipedia, WikipediaError } from "../../src/lib/wikipedia/client.ts";
+const API = "https://ja.wikipedia.org/w/api.php";
+const HEADERS = { "User-Agent": "japan-company-encyclopedia/1.0 (research pipeline)" };
 
-// 複数語を検索するときの間隔。API に連続アクセスしない。
-const PAUSE_BETWEEN_REQUESTS_MS = 1000;
-
-function parseArgs(argv) {
-  const positional = [];
-  const flags = {};
-  for (let i = 0; i < argv.length; i++) {
-    const arg = argv[i];
-    if (!arg.startsWith("--")) {
-      positional.push(arg);
-    } else if (arg === "--intro") {
-      flags.intro = true;
-    } else {
-      flags[arg.slice(2)] = argv[++i];
-    }
-  }
-  return { positional, flags };
+/** @param {Record<string, string>} params */
+async function api(params) {
+  const url = `${API}?${new URLSearchParams({ format: "json", formatversion: "2", ...params })}`;
+  const res = await fetch(url, { headers: HEADERS });
+  if (!res.ok) throw new Error(`Wikipedia ${res.status}`);
+  return res.json();
 }
 
-function fail(message) {
-  console.error(message);
-  process.exit(1);
-}
+/** The code as an infobox prints it: in 上場情報 / 証券コード, or as a bare 4-character code next to an exchange. */
+export const printsCode = (/** @type {string} */ wikitext, /** @type {string} */ code) =>
+  new RegExp(`(上場情報|証券コード|東証|名証|福証|札証)[^\\n]{0,40}\\b${code}\\b`).test(wikitext.normalize("NFKC"));
 
-async function main() {
-  const [command, ...rest] = process.argv.slice(2);
-  const { positional, flags } = parseArgs(rest);
-
-  if (command === "search") {
-    if (positional.length === 0) fail('使い方: search "<企業名>" [...] [--limit N]');
-    const limit = flags.limit === undefined ? undefined : Number(flags.limit);
-    if (limit !== undefined && !Number.isFinite(limit)) fail("--limit は数値で指定する");
-    const results = [];
-    for (const [index, query] of positional.entries()) {
-      if (index > 0) await new Promise((resolve) => setTimeout(resolve, PAUSE_BETWEEN_REQUESTS_MS));
-      results.push({ query, hits: await searchWikipedia(query, { limit }) });
-    }
-    console.log(JSON.stringify(results, null, 2));
-    return;
+/**
+ * @param {{ id: string, name: string, code: string, dir: string }} company dir = the evidence pack
+ * @returns {Promise<{ found: boolean, title?: string }>}
+ */
+export async function fetchWikipedia({ name, code, dir }) {
+  const path = join(dir, "wikipedia.json");
+  if (existsSync(path)) return { found: true };
+  const search = await api({ action: "query", list: "search", srsearch: name, srlimit: "3", srnamespace: "0" });
+  for (const hit of search.query?.search ?? []) {
+    const page = await api({ action: "query", prop: "revisions|extracts", rvprop: "content", rvslots: "main", exintro: "1", explaintext: "1", titles: hit.title, redirects: "1" });
+    const p = page.query?.pages?.[0];
+    const wikitext = p?.revisions?.[0]?.slots?.main?.content ?? "";
+    if (!printsCode(wikitext, code)) continue;
+    const body = { found: true, title: p.title, url: `https://ja.wikipedia.org/wiki/${encodeURIComponent(p.title.replaceAll(" ", "_"))}`, matchedBy: `記事に証券コード ${code} の印字`, extract: String(p.extract ?? "").slice(0, 3000) };
+    writeFileSync(path, `${JSON.stringify(body, null, 2)}\n`);
+    return { found: true, title: p.title };
   }
-
-  if (command === "article") {
-    const intro = flags.intro === true;
-    let target;
-    if (flags.title) target = { title: flags.title, intro };
-    else if (flags["page-id"]) target = { pageId: Number(flags["page-id"]), intro };
-    else fail("使い方: article --title <記事名> | --page-id <ID> [--intro]");
-    const article = await fetchWikipediaArticle(target);
-    console.log(JSON.stringify(article, null, 2)); // 存在しなければ null
-    return;
-  }
-
-  fail("使い方: search | article（詳細はファイル先頭のコメント）");
+  writeFileSync(path, `${JSON.stringify({ found: false, searched: name }, null, 2)}\n`);
+  return { found: false };
 }
-
-main().catch((error) => {
-  if (error instanceof WikipediaError) fail(`[${error.kind}] ${error.message}`);
-  throw error;
-});

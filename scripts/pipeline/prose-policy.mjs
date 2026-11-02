@@ -100,6 +100,27 @@ export function checkProsePolicy(entry) {
   /** @type {Finding[]} */
   const findings = [];
 
+  // P0 — industries, checked here so a missing or doubled one is repaired from the fragment, not found at finalize.
+  if (Array.isArray(entry?.industries) && entry?.status?.state !== "figures-only") {
+    const ids = entry.industries.map((/** @type {any} */ r) => r.industryId);
+    if (ids.length === 0) findings.push({ severity: "error", rule: "industry-missing", path: "industries", message: "業界が1つも無い。主たる業界を1つ選ぶ（合う値が無ければ最も近い値を暫定にして taxonomyGaps に書く）" });
+    else if (entry.industries.filter((/** @type {any} */ r) => r.primary).length !== 1) findings.push({ severity: "error", rule: "industry-primary", path: "industries", message: "primary: true の業界はちょうど1つ" });
+    const doubled = ids.filter((/** @type {string} */ v, /** @type {number} */ i) => ids.indexOf(v) !== i);
+    if (doubled.length > 0) findings.push({ severity: "error", rule: "industry-duplicate", path: "industries", message: `同じ業界が重複している: ${[...new Set(doubled)].join(", ")}` });
+  }
+
+  // P0 — the shape the schema demands of the parts agents most often get wrong (nsk left out significance, brother put
+  // sourceIds on flow steps, 2026-11-02), so the repair call fixes them instead of finalize holding the company.
+  (Array.isArray(entry?.history) ? entry.history : []).forEach((/** @type {any} */ h, /** @type {number} */ i) => {
+    for (const key of ["title", "description", "significance"]) {
+      if (typeof h?.[key] !== "string" || h[key].trim() === "") findings.push({ severity: "error", rule: "history-shape", path: `history[${i}].${key}`, message: `沿革の各行には ${key} が要る（空にできない）` });
+    }
+  });
+  (Array.isArray(entry?.businessModel?.flow) ? entry.businessModel.flow : []).forEach((/** @type {any} */ s, /** @type {number} */ i) => {
+    const extra = Object.keys(s ?? {}).filter((k) => !["kind", "title", "description"].includes(k));
+    if (extra.length > 0) findings.push({ severity: "error", rule: "flow-shape", path: `businessModel.flow[${i}]`, message: `流れの各段に書けるのは kind・title・description だけ（${extra.join(", ")} を消す。出典は businessModel.sourceIds）` });
+  });
+
   // P1 — the one-sentence descriptions: short, exactly one sentence.
   const sentences = [
     ["description", entry?.description, 90],
@@ -232,6 +253,21 @@ export function checkRelatedCompanies(entry, { registry, ledger, evidenceText = 
  * @param {{ id: string, code: string, name: string, officialName: string, tier: string }[]} entries
  * @param {{ selfId?: string, ledger?: Map<string, { listing: string }> }} [options]
  */
+const KANA_LATIN = /^[p{Script=Katakana}ーA-Za-z0-9・&]+$/u;
+/**
+ * The next place a name occurs as a word of its own. A katakana or latin name inside a longer katakana or latin
+ * word is another word (アイ in アイデア, NEC in NECK), so it does not count; kanji names keep plain matching.
+ * @param {string} text @param {string} name @param {number} from
+ */
+function boundedAt(text, name, from) {
+  if (!KANA_LATIN.test(name)) return text.indexOf(name, from);
+  const word = /[p{Script=Katakana}ーA-Za-z0-9]/u;
+  for (let at = text.indexOf(name, from); at !== -1; at = text.indexOf(name, at + 1)) {
+    if (!word.test(text[at - 1] ?? "") && !word.test(text[at + name.length] ?? "")) return at;
+  }
+  return -1;
+}
+
 export function findRelatedCandidates(evidenceText, entries, { selfId = "", ledger = new Map() } = {}) {
   const text = evidenceText.normalize("NFKC").replace(/\s+/g, "").replace(/株式会社|有限会社|合同会社|㈱|\(株\)/g, "");
   const found = [];
@@ -240,13 +276,13 @@ export function findRelatedCandidates(evidenceText, entries, { selfId = "", ledg
     const names = [...new Set([...nameVariants(e.officialName), ...nameVariants(e.name)])];
     let best = null;
     for (const n of names) {
-      const first = text.indexOf(n);
+      const first = boundedAt(text, n, 0);
       if (first === -1) continue;
       if (!best || n.length > best.matched.length) best = { matched: n, first };
     }
     if (!best) continue;
     let count = 0;
-    for (let at = text.indexOf(best.matched); at !== -1; at = text.indexOf(best.matched, at + best.matched.length)) count++;
+    for (let at = best.first; at !== -1; at = boundedAt(text, best.matched, at + best.matched.length)) count++;
     found.push({
       id: e.id,
       code: e.code,

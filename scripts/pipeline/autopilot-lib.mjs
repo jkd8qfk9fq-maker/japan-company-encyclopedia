@@ -123,7 +123,7 @@ export function precheck({ entry, sameCode, ledger, registrationNote = null, res
 /**
  * advance.mjs always exits 0 and speaks in short lines; this turns them into a decision.
  * @param {string} stdout
- * @returns {{ kind: "need", group: "group1" | "group2" } | { kind: "ready" } | { kind: "registered" } | { kind: "done" } | { kind: "needs-review", reason: string } | { kind: "fail", stage: string, reason: string } | { kind: "unknown", reason: string }}
+ * @returns {{ kind: "need", group: "group1" | "group2" | "all" } | { kind: "ready" } | { kind: "registered" } | { kind: "done" } | { kind: "needs-review", reason: string } | { kind: "fail", stage: string, reason: string } | { kind: "unknown", reason: string }}
  */
 export function parseAdvance(stdout) {
   const text = String(stdout ?? "");
@@ -145,12 +145,14 @@ export function parseAdvance(stdout) {
 export const GROUPS = {
   group1: { stages: ["businessStructure", "history"], files: ["businessStructure", "history"], label: "グループ1（businessStructure, history）" },
   group2: { stages: ["businessModel", "industry", "relatedCompanies", "terms"], files: ["businessModel", "industry", "relatedCompanies", "terms"], label: "グループ2（businessModel, industry, relatedCompanies, terms[助言のみ]）" },
+  // One call for a new company: the second call re-read the same pack and brief, which was most of its cost (2026-11-02)
+  all: { stages: ["businessStructure", "history", "businessModel", "industry", "relatedCompanies", "terms"], files: ["businessStructure", "history", "businessModel", "industry", "relatedCompanies", "terms"], label: "全工程（businessStructure, history, businessModel, industry, relatedCompanies, terms[助言のみ]）" },
 };
 
 /**
- * The prompt for one agent group. Short on purpose: the rules are in docs/agent-brief.md and docs/pipeline.md, which
- * the agent reads itself — repeating them here would cost tokens on every call and drift from the source.
- * @param {{ id: string, name: string, code: string, group: "group1" | "group2", cache: string, update?: { stages: string[], oldDoc: string, newDoc: string } | null }} p
+ * The prompt for one agent group. Short on purpose: the rules are in docs/agent-brief.md, given as system prompt by
+ * the executor — repeating them here would cost tokens on every call and drift from the source.
+ * @param {{ id: string, name: string, code: string, group: "group1" | "group2" | "all", cache: string, update?: { stages: string[], oldDoc: string, newDoc: string } | null }} p
  *   update: rewriting only these stages of a registered explanation from a newer filing (autopilot update)
  */
 export function agentPrompt({ id, name, code, group, cache, update = null }) {
@@ -165,7 +167,7 @@ export function agentPrompt({ id, name, code, group, cache, update = null }) {
             ` 今の公開版は src/data/companies/${id}.json（${update.oldDoc} に基づく）。変わっていない事実は同じ書き方でよいが、出典は新しい有報にする。同じグループの他の成果物（"retained" のもの）は公開中のままにするので、読んでよいが変えない。`,
         ]
       : []),
-    "最初に docs/agent-brief.md を読む（その中の指示どおり .claude/agents/data-research.md と docs/pipeline.md の「エージェントへの作業要領」も原文で読む）。",
+    "規則はシステムプロンプト（docs/agent-brief.md）にすべてある。ほかの文書は読まない。",
     `証拠パック: ${cache}/evidence/${id}/ （brief.md から読む。EDINET の取り直し・web 検索はしない）。` +
       (group === "group2" ? " 関連企業は同じフォルダの related-candidates.json（有報に社名がある掲載済み企業。機械抽出）の中からだけ選ぶ。グループ1の成果物は文体・出典を揃えるために読んでよい。" : ""),
     `成果物: ${files}。`,
@@ -177,7 +179,7 @@ export function agentPrompt({ id, name, code, group, cache, update = null }) {
 /**
  * The prompt for repairing named lines. Only the violations are sent: the agent edits those spots and leaves the
  * rest, which is both cheaper and safer than asking for a rewrite.
- * @param {{ id: string, group: "group1" | "group2", violations: string[], cache: string }} p
+ * @param {{ id: string, group: "group1" | "group2" | "all", violations: string[], cache: string }} p
  */
 export function repairPrompt({ id, group, violations, cache }) {
   const g = GROUPS[group];
@@ -192,8 +194,8 @@ export function repairPrompt({ id, group, violations, cache }) {
 export const violationLines = (findings) => findings.map((f) => `${f.path}: ${f.message}${f.excerpt ? `（…${f.excerpt}…）` : ""}`);
 
 /** Which entry fields a group owns — so the check after group 1 does not complain about group 2's empty fields. */
-const OWNED = { group1: /^(businesses|history|name|shortNameEn|listings)/, group2: /^(description|businessModel|industries|relatedCompanies|financials)/ };
-/** @param {import("./prose-policy.mjs").Finding[]} findings @param {"group1" | "group2"} group */
+const OWNED = { group1: /^(businesses|history|name|shortNameEn|listings)/, group2: /^(description|businessModel|industries|relatedCompanies|financials)/, all: /^(businesses|history|name|shortNameEn|listings|description|businessModel|industries|relatedCompanies|financials)/ };
+/** @param {import("./prose-policy.mjs").Finding[]} findings @param {"group1" | "group2" | "all"} group */
 export const findingsForGroup = (findings, group) => findings.filter((f) => OWNED[group].test(f.path));
 
 // ------------------------------------------------------------------------------------------------ the review sheet
