@@ -521,3 +521,20 @@ office. What it rests on:
 - **Home**: hero and search as before, then 本社所在地から探す (map and the prefectures with most companies), 業界から
   探す as photograph cards, then the written companies beside the glossary and recent updates. No stock-photo hero, no
   logos of companies, no figure the encyclopedia does not have.
+
+### JCE-035 · 2026-11-02 · Accepted (operator) — Cheaper registration: one writing call, a short AI-only brief, a compact pack
+
+Operator order of 2026-10-31 (after batch 2): cut tokens and cost per company without lowering quality.
+A new company is written in **one** model call (group `all`: all six stages); updates keep the two groups, since they
+rewrite only the stages a newer filing changed (`--two-calls` restores the old split). The rules the agent needs are in
+`docs/agent-brief.md` alone, passed as system prompt (`--append-system-prompt-file`); the agent no longer loads
+`.claude/agents/data-research.md` or reads `docs/pipeline.md`, and the call runs without MCP servers, plugins' skills,
+slash commands or user settings (a turn's base context 56k → 14k tokens). The pack adds `sections.txt` (one sentence per
+line, without officers, governance, audit, accounting policy and the statements; 204k → 61k characters for
+mizuho-leasing) and the candidate list ignores officers' careers and the audit sections and katakana/latin names inside a
+longer word (−25–45 %, no published link lost). A pack whose fiscal years disagree with the printed 決算年月 is held
+before any model call and refused at approve. **`major-shareholder`** becomes a relationship kind: a business company in
+【大株主の状況】 that is none of the four capital kinds (trust banks and financial institutions' pure investments are not
+linked). A fragment with no industry, no or two primaries, or a doubled industry fails the fragment check. Wikipedia
+(JCE-030) is fetched once when the pack is built (`wikipedia.json`, identity by securities code in the article), so the
+agent has no web tools.
