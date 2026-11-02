@@ -27,8 +27,8 @@ export class PauseRun extends Error {
  * @property {(id: string) => { entry: any, sameCode: string[], ledger: any, registrationNote: string | null, reservedBy: string | null }} facts
  * @property {(id: string) => Promise<string>} advance
  * @property {{ mode: string, run: (job: { prompt: string, label: string }) => Promise<any> }} executor
- * @property {(id: string, group: "group1" | "group2") => { missing: boolean, figuresOk: boolean, figuresOutput: string, findings: any[] }} checkGroup
- * @property {((id: string, group: "group1" | "group2") => boolean) | undefined} [fragmentsExist]
+ * @property {(id: string, group: "group1" | "group2" | "all") => { missing: boolean, figuresOk: boolean, figuresOutput: string, findings: any[] }} checkGroup
+ * @property {((id: string, group: "group1" | "group2" | "all") => boolean) | undefined} [fragmentsExist]
  * @property {() => string} fingerprint
  * @property {(id: string, record: any) => Promise<{ path: string, hash: string, readiness: string, errors: number, reviews: number }>} sheet
  * @property {(id: string, group: string, kind: string, prompt: string) => string} order
@@ -36,6 +36,9 @@ export class PauseRun extends Error {
  * @property {(id: string) => void} release
  * @property {string} cache
  * @property {(ms: number) => Promise<void>} sleep
+ * @property {boolean} [single] write a new company in one call (group "all") instead of two
+ * @property {(id: string) => boolean} [isUpdate]
+ * @property {(id: string) => string | null} [packProblem] a reason the pack must not be written from, or null
  */
 
 /** Paths whose fingerprint line differs (one line per file: "path<TAB>size<TAB>mtime"). */
@@ -48,8 +51,8 @@ export function changedBetween(/** @type {string} */ a, /** @type {string} */ b)
   return [...out];
 }
 
-const attemptKey = (/** @type {"group1" | "group2"} */ group) => (group === "group1" ? "agent1" : "agent2");
-const repairKey = (/** @type {"group1" | "group2"} */ group) => (group === "group1" ? "repair1" : "repair2");
+const attemptKey = (/** @type {"group1" | "group2" | "all" | "all"} */ group) => (group === "group2" ? "agent2" : "agent1");
+const repairKey = (/** @type {"group1" | "group2" | "all" | "all"} */ group) => (group === "group2" ? "repair2" : "repair1");
 
 /**
  * @param {string} id
@@ -90,7 +93,7 @@ export async function processCompany(id, deps) {
   save({ step: "prechecked" });
   const before = deps.fingerprint();
   /** Call the model; classify what came back. Returns the result when it worked, null when the caller should loop again. */
-  const callModel = async (/** @type {"group1" | "group2"} */ group, /** @type {string} */ prompt, /** @type {string} */ label, /** @type {string} */ counter) => {
+  const callModel = async (/** @type {"group1" | "group2" | "all"} */ group, /** @type {string} */ prompt, /** @type {string} */ label, /** @type {string} */ counter) => {
     rec.attempts[counter] = (rec.attempts[counter] ?? 0) + 1;
     save({ step: label });
     const res = await deps.executor.run({ prompt, label });
@@ -119,7 +122,7 @@ export async function processCompany(id, deps) {
    * on fragments that already exist when the company comes in (written by hand, by an earlier run, or before a rule
    * changed): the same checks, the same bounded repair.
    */
-  const verifyGroup = async (/** @type {"group1" | "group2"} */ group) => {
+  const verifyGroup = async (/** @type {"group1" | "group2" | "all"} */ group) => {
     let check = deps.checkGroup(id, group);
     const problems = () => (check.missing ? ["成果物（pipeline/results/<id>-*.json）が見つからない、または読めない"] : [...(check.figuresOk ? [] : [`本文の金額が有報の印字と合わない（check-prose-figures の出力）: ${check.figuresOutput.slice(0, 600)}`]), ...violationLines(errorsOf(findingsForGroup(check.findings, group)))]);
     let repairs = 0;
@@ -150,7 +153,8 @@ export async function processCompany(id, deps) {
     const step = parseAdvance(out);
 
     if (step.kind === "need") {
-      const group = step.group;
+      // A new company is written in one call; an update rewrites only the stages a newer filing changed, by group
+      const group = step.group === "group1" && deps.single && !deps.isUpdate?.(id) ? "all" : step.group;
       if (deps.executor.mode === "work-orders") {
         const who = deps.identity(id);
         const path = deps.order(id, group, "write", agentPrompt({ ...who, id, group, cache: deps.cache }));
@@ -161,6 +165,8 @@ export async function processCompany(id, deps) {
       if ((rec.attempts[attemptKey(group)] ?? 0) >= LIMITS.agent) {
         return hold("ai-failed", `${group} をモデルに ${LIMITS.agent} 回依頼したが、使える成果物にならなかった: ${rec.errors.slice(-2).map((e) => e.message).join(" / ")}`, group);
       }
+      const packIssue = deps.packProblem?.(id);
+      if (packIssue) return hold("pack-mismatch", packIssue, "pack");
       const who = deps.identity(id);
       const first = await callModel(group, agentPrompt({ ...who, id, group, cache: deps.cache }), `${group}`, attemptKey(group));
       if (first.stop) return rec;

@@ -19,6 +19,7 @@ export type Connection = {
 const LANE_OF: Record<RelationshipKind, Lane> = {
   parent: "owners",
   "other-affiliated-company": "owners",
+  "major-shareholder": "owners",
   supplier: "up",
   customer: "down",
   subsidiary: "group",
@@ -43,6 +44,7 @@ const INVERSE: Record<RelationshipKind, { lane: Lane; label: string }> = {
   subsidiary: { lane: "owners", label: "親会社" },
   affiliate: { lane: "owners", label: "出資元" },
   "other-affiliated-company": { lane: "group", label: "出資先" },
+  "major-shareholder": { lane: "group", label: "出資先" },
   technology: { lane: "other", label: RELATIONSHIP_LABEL.technology },
   "business-partner": { lane: "other", label: RELATIONSHIP_LABEL["business-partner"] },
   "same-industry": { lane: "other", label: RELATIONSHIP_LABEL["same-industry"] },

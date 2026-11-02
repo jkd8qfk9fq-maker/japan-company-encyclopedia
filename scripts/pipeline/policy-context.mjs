@@ -37,9 +37,21 @@ export function loadEvidenceText(companyId, cache = cacheDir()) {
   const dir = join(cache, "evidence", companyId);
   if (!existsSync(dir)) return null;
   return readdirSync(dir)
-    .filter((f) => f.endsWith(".txt") || f === "sections.json")
+    // sections.txt is the agent's sentence-per-line copy of part of sections.json: reading both would count names twice
+    .filter((f) => (f.endsWith(".txt") && f !== "sections.txt") || f === "sections.json")
     .map((f) => readFileSync(join(dir, f), "utf8"))
     .join("\n");
+}
+
+/** Officers' careers and the audit sections name many companies the filer has no relationship with. */
+const NOT_RELATIONS = /役員の状況|社外取締役|監査/;
+/** As loadEvidenceText, without the sections that only name people's past employers. @param {string} companyId @param {string} cache */
+function candidateText(companyId, cache) {
+  const dir = join(cache, "evidence", companyId);
+  if (!existsSync(dir)) return null;
+  const files = readdirSync(dir).filter((f) => f.endsWith(".txt") && f !== "sections.txt").map((f) => readFileSync(join(dir, f), "utf8"));
+  const sections = existsSync(join(dir, "sections.json")) ? JSON.parse(readFileSync(join(dir, "sections.json"), "utf8")) : [];
+  return [...files, ...sections.filter((/** @type {any} */ o) => !NOT_RELATIONS.test(o.name)).map((/** @type {any} */ o) => o.text)].join("\n");
 }
 
 /**
@@ -60,7 +72,7 @@ export function policyFindings(entry, { root = process.cwd(), cache = cacheDir()
  * @returns {{ path: string, count: number } | null}
  */
 export function writeRelatedCandidates(companyId, { root = process.cwd(), cache = cacheDir() } = {}) {
-  const text = loadEvidenceText(companyId, cache);
+  const text = candidateText(companyId, cache);
   if (text == null) return null;
   const candidates = findRelatedCandidates(text, [...loadRegistry(root).values()], { selfId: companyId, ledger: loadLedger(root) });
   const path = join(cache, "evidence", companyId, "related-candidates.json");

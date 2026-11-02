@@ -230,8 +230,7 @@ export const RELATIONSHIP_KINDS = [
    * a `subsidiary`, with the trade said in `description`.
    *
    * `business-partner` is NOT a stand-in for any of these (it was used as one, which is
-   * why they exist). A major shareholder is deliberately not a kind yet, and a merger or
-   * share exchange is an event, so it belongs in `history`, not here.
+   * why they exist). A merger or share exchange is an event, so it belongs in `history`, not here.
    */
   "parent",
   "subsidiary",
@@ -239,6 +238,8 @@ export const RELATIONSHIP_KINDS = [
   "affiliate",
   /** その他の関係会社 — owns a large share of this company without being its 親会社. */
   "other-affiliated-company",
+  /** 大株主 — a business company in 【大株主の状況】 that is none of the four above (operator, 2026-10-31; JCE-035). */
+  "major-shareholder",
 ] as const;
 
 export type RelationshipKind = (typeof RELATIONSHIP_KINDS)[number];

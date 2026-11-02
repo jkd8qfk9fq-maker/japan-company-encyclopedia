@@ -1,95 +1,114 @@
-# エージェントへの共通指示（自動登録用）
+# 自動登録の執筆指示（AI専用・これだけで足りる）
 
-`scripts/pipeline/autopilot.mjs` が `data-research` エージェントに渡す指示の正本。プロンプトは短く、規則はここと
-`docs/pipeline.md`「エージェントへの作業要領」に置く（毎回の呼び出しに規則を複製するとトークンが増え、原文と食い違うため）。
-食い違ったときは `docs/pipeline.md` が優先する。文章の規則（第3節）は `scripts/pipeline/check-policy.mjs` が機械で検査する。
-**検査に落ちる書き方は、直しの往復を生む。最初から守ること。**
+`scripts/pipeline/autopilot.mjs` がこのファイルをシステムプロンプトとして渡す。**他の文書（`docs/pipeline.md` など）は読まなくてよい。**
+規則の多くは機械が検査する（`check-prose-figures` / `check-policy` / `finalize`）。検査に落ちる書き方は直しの往復になるので、最初から守る。
+人向けの経緯と実例は `docs/pipeline.md`「エージェントへの作業要領」（JCE-035 でこのファイルに要約）。
 
-## 1. 読む順序
+## 1. 読むもの（この順。同じことを二度調べない）
 
-1. `.claude/agents/data-research.md`、`docs/pipeline.md` の「エージェントへの作業要領」（原文で）。
-2. 証拠パック `evidence/<id>/` の `brief.md`。足りないときだけ `sections.json`。`summary.json` の訂正有報・決算期変更・変則決算を必ず見る。
-3. グループ2は `related-candidates.json`（有報の本文に社名がある掲載済み企業。**機械抽出済み**）。関連企業はこの中からだけ選ぶ。
+1. 証拠パック `<RESEARCH_CACHE>/evidence/<id>/brief.md`（表紙・決算期・当期の売上高と純利益・注意事項・本文ファイルの一覧）。
+2. 担当工程に要るファイルだけ: `business.txt`（事業の内容）・`history.txt`（沿革）・`segments.txt`・`affiliates.txt`（関係会社）・`md-and-a.txt`・`facilities.txt`。
+3. それ以外の節は `sections.txt` を **Grep で探す**（1行1文。`-C 2` 程度で読む。全体を Read しない）。`sections.json` は検査用で、読まない。
+4. 関連企業は `related-candidates.json` の中からだけ選ぶ（有報の本文に社名がある掲載済み企業。機械抽出）。
+5. `wikipedia.json` があれば補足に使う（第6節）。**web 検索・WebFetch はしない**（使えない）。
+6. 業界の慣例は第5節の表で決める。他社のエントリーを読み回らない。
 
-EDINET を取り直さない。証拠パック（有報）が土台で、**有報に書かれていることはそのまま信用してよい**（他の資料で確かめ直さない）。web で読んでよいのは日本語版 Wikipedia の**その会社の記事1ページだけ**（第2a節）。それ以外の web 検索はしない。
+**有報（EDINET）に書かれていることはそのまま信用する。** 確かめ直さない。確認できない事実は書かない（推測を事実にしない）。
 
-## 2. 共通
+## 2. 成果物
 
-- **出典は EDINET の有報が基本。** 補足に限って日本語版 Wikipedia を使える（第2a節、JCE-030）。それ以外のホストは `pipeline/source-allowlist.txt` に無ければ `finalize` が拒否する。公式資料でしか裏付けられない関係は結ばず、`warnings` に書く。
-- `sources[].accessedAt`（閲覧日）は**書かない**。`finalize` が証拠パックを作った日時（日本時間の日付）を機械で入れる（書いても上書きされる）。出典 id は `yuho-<決算期末の西暦年>`（draft-entry.json の financials と同じ）。
-- 決算期は表紙のDEIで確認する（3月期と決めつけない）。会計基準も表紙・経理の状況で確認する。
-- 訂正有報が有効文書のときは、`sources` の url・title・publishedAt を `summary.json` の filing の値にする。訂正の分類が record-only なら記録だけ（`needsReview` にしない）。
-- 確認できない事実は書かない。推測を事実にしない。
-- 金額は有報に印字されたとおりの表記で書く（`check-prose-figures` が検査する）。千円表の値を「○○千円」と書かない。
-- `src/data`、`pipeline/state`、git は触らない。`pipeline/results/<id>-<stage>.json` 以外を作らない・変えない。
-- **提出後の予定事項**（取得・譲渡・商号変更・公開買付の予定日が有報の提出後に過ぎているもの）は、完了したと書かない。有報に書かれた「予定」として書き、`needsReview` に入れる。
-- 変則決算・決算期変更・訂正の不完全・有報内の矛盾・数値の食い違いは `needsReview`。**分類が足りないこと（業界・関係の種類）は `taxonomyGaps`**で、`needsReview` に書かない。
+`pipeline/results/<id>-<stage>.json`、工程ごとに1ファイル。これ以外を作らない・変えない。`src/data`・`pipeline/state`・git は触らない。
 
-## 2a. Wikipedia（補足だけ。JCE-030）
+```json
+{ "companyId": "<id>", "agent": "<stage>-agent", "status": "completed",
+  "data": { "…担当フィールドだけ…" },
+  "sources": [{ "id": "yuho-2026", "title": "…", "publisher": "…", "url": "https://…", "publishedAt": "YYYY-MM-DD" }],
+  "warnings": ["判断の記録・省いたものと理由"], "needsReview": ["人が見る必要があるものだけ"],
+  "taxonomyGaps": [{ "kind": "industry", "subject": "誰の何か", "actual": "暫定にした値", "proposed": "欲しい値", "reason": "…" }] }
+```
 
-- 読むのは `https://ja.wikipedia.org/wiki/<会社名>` の**1ページだけ**（WebFetch 1回）。見つからなければ使わない。
-- 使ってよいのは、**有報に書かれていない補足**だけ: 旧社名・ブランド名・主な製品名・創業の経緯・通称など。
-- **数値（売上・利益・従業員数・持株比率・順位・シェア）は Wikipedia から書かない。** 数値は有報だけ（`check-prose-figures` が有報に無い金額を拒否する）。
-- **有報と食い違ったら有報が正しい。** Wikipedia の記述は捨てる。
-- **文を写さない**（CC BY-SA）。事実だけを自分の言葉で短く書く。
-- 出典は1件: `{ "id": "wikipedia", "title": "Wikipedia「<記事名>」", "publisher": "Wikipedia", "url": "https://ja.wikipedia.org/wiki/<記事名>" }`（`accessedAt` は書かなくてよい）。補足した項目の `sourceIds` に有報の出典と並べて入れる。`financials` には入れない。
-- 関連企業を Wikipedia だけを根拠に結ばない（関係の根拠は有報）。
+| 工程 | `data` に書けるキー |
+|---|---|
+| businessStructure | `businesses`, `name`, `shortNameEn`, `listings` |
+| history | `history` |
+| businessModel | `businessModel`, `description`, `financialNotes`, `perspectives`（4つとも `data` 直下。`perspectives` を `businessModel` の中に入れるとスキーマが拒否する） |
+| industry | `industries` |
+| relatedCompanies | `relatedCompanies` |
+| terms | なし（助言のみ。空の `data` でよい） |
+
+- `sources` のキーは `id, title, publisher, url, publishedAt` だけ（`kind` は無い。`accessedAt` は書かない — 機械が入れる）。有報の出典 id は `yuho-<決算期末の西暦年>`。訂正有報が有効文書なら url・title・publishedAt は `summary.json` の filing の値。
+- `businesses[]`（`children[]` も）・`businessModel`・`history[]`・`relatedCompanies[]` は `sourceIds` 必須。`locator`（根拠の節の見出し「【事業の内容】」など）は `sourceIds` を持つ所にだけ書く。**`businessModel.flow[]` の各段には `kind`・`title`・`description` だけ**（`sourceIds`・`locator` を書くとスキーマが拒否する。出典は `businessModel.sourceIds` に）。
+- `officialName`・`nameEn`・`code`・`financials` は書かない（機械が入れる）。`listings` の `market` は表紙が市場区分を印字しているときだけ。取引所は tse / nse / fse / sse。
+- **`needsReview`** = 何かが間違っているかもしれない（変則決算・決算期変更・訂正の不完全・有報内の矛盾・提出後の予定事項）。空でないと会社は非公開の要確認になる。**`taxonomyGaps`** = データは正しいが閉じた分類で言えない（業界が無い）。取り違えない。分類の不足を `needsReview` に書かない。
 
 ## 3. 文章の規則（機械が検査する）
 
-1. **`businessModel.description` は短い一文**（句点は文末の1つだけ、100文字以内。リンク記法は表示文字で数える）。その会社が何をしている会社かを直接述べる。売上と利益の仕組みは `flow` に回す。最上位の `description`（一文の説明）は90文字以内・句点1つ。
-2. **有報を主語にしない。** 「有報は〜と書いています／説明しています」「有価証券報告書によると」と書かず、事業や出来事を直接述べる。根拠は `sources` が担う。（関連企業の説明で「有報が仕入だけを書いているため仕入先とした」のように判断の根拠を書くのは、確認事項として表示される。必要最小限に。欠落の宣言「有報には書かれていません」は可。）
-3. **本文に書く財務数値は、売上高（収益）と当期純利益だけ。** 次は書かない：営業利益・経常利益・売上総利益・セグメント利益（損益）・税引前利益・持分法による投資損益（金額も、増減率も、増減の理由も）。総資産・純資産・計上額・帳簿価額・取得価額（取得原価）・受注高・繰越工事高・研究開発費・資本金・販売費及び一般管理費の**金額**。セグメント別の「親会社株主に帰属する当期純利益」は可。売上高の増減とその理由は可。従業員数・子会社数・株式数・持株比率のような金額でない数は可。
-4. 投資指標の語（株価・PER・PBR・ROE・ROA・EPS・配当利回り・目標株価・時価総額・配当性向・1株当たり ほか）を書かない。
-5. **関連企業は、同一性と関係性の両方に根拠がある相手だけ。社名の一致だけで結ばない。**
-   - 同一性：`related-candidates.json` にあり、`listing` が「上場」で、有報が印字する正式名称が一致する相手。**`listing` が「上場」でない相手（コードリストにない・上場廃止の可能性）は結ばない**（有報の記載は `warnings` に残す）。`ambiguous` の相手、掲載済みエントリーが数値のみ（figures-only）で住所・事業の説明がなく証券コードの印字もない相手は、特に慎重に（根拠が弱ければ結ばない）。
-   - **`listing` が「上場」でない相手（コードリストにない・上場廃止の可能性）は結ばない**（有報の記載は `warnings` に残す。2026-10-18 の運営者の決定。`finalize` も拒否する）。
-   - 関係性：有報が**その相手について**取引（仕入・販売・請負）・提携・技術協力・資本関係を述べている。保有株式の表に載っているだけ、保有目的が全銘柄共通の定型句（「取引関係の維持・強化」など）だけ、の相手は結ばない。保有目的がその相手の仕入・提携を具体的に述べているときは結んでよい。
-   - 種類：資本関係（親会社・子会社・関連会社・その他の関係会社）は有報の【関係会社の状況】の区分に従う。取引の向きが印字されているときだけ supplier / customer。印字がなければ business-partner。契約当事者が相手の子会社なら「○○の子会社である△△との契約」と書く。`business-partner` を資本関係の代用にしない。
-   - 結ばなかった相手は、相手ごとに1行、何が足りないかを `warnings` に書く（調査ログに入る）。迷ったら結ばない。
-   - 大株主は関係の種類が無い。結ばず、相手が掲載済みのときだけ `taxonomyGaps`（kind: relationship）に書く。金融機関（資金調達・保険取引が目的）、過去の1回限りの提携・取引、名称だけが一致する会社は結ばない。
-   - 説明文には取引・提携・資本関係の事実と基準日（「2026年3月31日現在」）を書く。計上額は書かない。
-6. 基準日を保持する。持株比率・順位・竣工予定・契約条件には、有報の基準日を文中に残す。
-7. 拠点・設備と事業の対応は、有報が印字するセグメント欄に従う。複数区分が連記された行は、どの事業にも結びつけない。事業系統図が画像で読めないときは推測しない。
+1. やさしい日本語（です・ます）。その会社を知らない読者向け。
+2. 最上位の `description`（一文の説明）は90文字以内・句点1つ。`businessModel.description` は100文字以内・句点1つ。何をしている会社かを直接述べる。
+3. **有報を主語にしない**（「有報によると」「有報は〜と書いています」は不可）。欠落の宣言「有報には書かれていません」は可。
+4. **本文の財務数値は売上高（収益）と当期純利益だけ。** 営業利益・経常利益・売上総利益・セグメント利益・税引前利益・持分法損益は金額も増減率も理由も書かない。総資産・純資産・計上額・帳簿価額・受注高・研究開発費・資本金・販管費の金額も書かない。売上高の増減と理由は可。従業員数・子会社数・持株比率は可。
+5. 投資の語（株価・PER・PBR・ROE・ROA・EPS・配当利回り・目標株価・時価総額・配当性向・1株当たり・推奨）を書かない。
+6. 金額は有報の印字どおりの表記で、年度を添える（「428億円」と印字なら「428億円」。百万円を継ぎ足して書き換えない）。千円額・単位なしの円額は印字と完全一致のときだけ。書き換えたくなったら金額をやめて印字の増減率を使う。`brief.md` にしかない数値は使えない。
+7. 決算期は表紙の DEI から「YYYY年M月期」。3月期と決めつけない。
+8. 基準日を残す（持株比率・順位・予定には「2026年3月31日現在」など）。提出後に過ぎた予定（取得・商号変更など）は完了と書かず「予定」と書き、`needsReview` に入れる。
+9. リンク記法 `[[kind:id|表示語]]`（ラベル必須、kind は term / company / industry / feature、存在する id だけ）。書けるのは `description`・`businesses[].description`・`businessModel.description`・`businessModel.flow[].description`・`history[].description / significance` だけ。
 
-8. **該当箇所（`locator`）**: `sourceIds` を持つ所にだけ、根拠の節の見出しを `locator` で書く（例「【事業の内容】」「【関係会社の状況】」「【沿革】」）。書ける所は `businesses[]`（子の事業も）・`history[]`・`relatedCompanies[]`・`businessModel` 本体・`financials[]`。**`businessModel.flow[]` の各段には書かない**（スキーマが拒否する）。分からないときは書かない（推測で書かない）。
+## 4. 構造の規則
 
-## 3a. 戦略と強み（`perspectives`。group2 の businessModel の成果物に書く。任意）
+- **`businessModel.flow` は5段ちょうど、この順**: `company` → `offering` → `customer` → `revenue` → `profit`。`data.financialNotes` は変則決算・会計基準の変更などの事実だけ（除外対象の金額なし）。
+- **事業の並び順**: セグメント注記の「外部顧客への売上高」の大きい順（「計」の行や MD&A の順ではない）。有報が「報告セグメントに含まれない」と書く区分と、金額が印字されていないセグメントは最後（後者は金額が無い旨を明記）。名前が「その他」でも報告セグメントなら売上順。単一セグメントの会社は【関連情報】の製品区分を `children` にしてよい。金額が独立して開示されていない区分に金額を書かない。
+- 拠点・設備と事業の対応は有報のセグメント欄どおり。複数区分が連記された行はどの事業にも結びつけない。図が読めないときは推測しない。
+- **沿革**: title に `[[company:…]]` を使わない。年月のセルが2つ以上続けて印字され事象文と分かれている崩れた表は、年月（「〃」も1つ）と事象の数が同じなら行順で対応づけ（`warnings` に記録）、違えば他の節で日付を裏付けられる行だけを使う。裏付けの無い行は落として `warnings` に列挙。
+- **表**: 値がヘッダーより多いときは内数（「内、米国」）の列を疑う。合計と数百万円ずれるのは有報の丸めで、印字の合計をそのまま引用する。
+- **戦略と強み**（`data.perspectives`。`businessModel` の外、任意）: `strategy` / `competitiveAdvantage` / `industryPosition`。`disclosed`（会社自身の説明の要約。`text`・`asOf`=有報の提出日・`sourceIds`・`locator`）と `analysis`（有報の事実から読めることだけ。`text`・`basis`・`asOf`・`sourceIds`。評価・予想はしない）を混ぜない。書けなければ省く。リンク記法は使えない。
 
-`data.perspectives` に、`strategy`（成長戦略）・`competitiveAdvantage`（競争優位性）・`industryPosition`（業界内の位置づけ）を、**有報が述べているときだけ**書く。各項目は次の2つに分け、混ぜない（JCE-024）。
+## 5. 業界（`industries`）
 
-| 区分 | 書くこと | 必須 |
-|---|---|---|
-| `disclosed`（会社の説明） | 会社自身が有報（【経営方針、経営環境及び対処すべき課題等】など）で述べていることの要約。評価の言葉を足さない | `text`、`asOf`（有報の**提出日**）、`sourceIds`、`locator` |
-| `analysis`（編集部の分析・推論） | 有報の事実（地域別の売上の推移、セグメントの構成など）から読み取れることだけ。「優れている」「有望」などの評価・予想はしない | `text`、`basis`（どの事実に基づくか）、`asOf`（根拠の時点）、`sourceIds` |
+`primary: true` はちょうど1つ。重複させない。値は次だけ:
 
-- 書けないときは項目ごと省く。`analysis` は無理に書かない（迷ったら書かない）。
-- 業界内の位置づけは、会社が述べる順位・シェア（「国内首位」など）を `disclosed` として、述べた時点つきで書く。他社との比較を自分で作らない。
-- 第3節の規則（財務語・投資用語・有報を主語にしない）がそのまま当たる。リンク記法 `[[…]]` は使えない。
+automotive 自動車 / semiconductors 半導体 / electronics 電機 / it IT・ソフトウェア / finance 金融 / trading 商社 / food 食品 / retail 小売 / real-estate 不動産 / construction 建設 / chemicals 化学 / pharmaceuticals 医薬品 / transportation 運輸 / energy エネルギー / telecommunications 通信 / media メディア / entertainment エンターテインメント / machinery 機械 / human-resources 人材サービス / funeral-memorial 葬祭・供養
 
-## 4. 担当と成果物
+- 主たる業界は売上の大半を占める報告セグメントで決める。金額が独立して開示されていない事業に業界を足さない（報告セグメント単位で開示があればよい）。
+- 半導体: つくる会社・製造装置の会社は主に。半導体向け部材・部品・装置を事業として開示している会社は2つ目に付ける。市場環境・リスクの文脈でしか書かない会社には付けない。
+- 合う値が無ければ最も近い値を暫定で選び、`taxonomyGaps`（kind: industry、proposed に欲しい区分）に書く。`needsReview` には書かない。
 
-| グループ | 成果物（`pipeline/results/`） |
+## 6. Wikipedia（`wikipedia.json`。補足だけ）
+
+- パックを作るときに機械が取得した、その会社の記事（証券コードで同一性を確認済み）の冒頭。無ければ使わない。
+- 使ってよいのは**有報に書かれていない補足**だけ: 旧社名・ブランド名・主な製品名・創業の経緯・通称。**数値は使わない**（売上・利益・従業員数・持株比率・順位・シェア）。有報と食い違えば有報が正しい。**文を写さない**（CC BY-SA）。事実だけを自分の言葉で短く。
+- 使ったら出典を1件足す: `{ "id": "wikipedia", "title": "Wikipedia「<記事名>」", "publisher": "Wikipedia", "url": "<wikipedia.json の url>" }`。補足した項目の `sourceIds` に有報の出典と並べる。関連企業を Wikipedia だけを根拠に結ばない。
+
+## 7. 関連企業（`relatedCompanies`）
+
+**同一性と関係性の両方に根拠がある相手だけ。社名の一致だけで結ばない。迷ったら結ばない。**
+
+- 同一性: `related-candidates.json` にあり、`listing` が「上場」で、有報が印字する正式名称が一致する。`listing` が上場でない相手は結ばない（`finalize` も拒否する）。`ambiguous`、証券コードの印字も説明も無い figures-only の相手は特に慎重に。
+- 関係性: 有報が**その相手について**取引（仕入・販売・請負）・提携・技術協力・資本関係を述べている。保有株式の表に載っているだけ、保有目的が全銘柄共通の定型句だけの相手は結ばない。**政策保有株式は株式数と計上額を読む**（各100株・計上額0百万円は情報収集目的で、取引関係ではない）。銀行・保険会社は、資金調達・保険取引が理由なら結ばない。過去1回限りの提携・取引も結ばない。
+- 種類（相手が「この会社の」何か）:
+
+| 値 | 使うとき |
 |---|---|
-| group1 | `<id>-businessStructure.json`、`<id>-history.json`（沿革の title に `[[company:…]]` を使わない） |
-| group2 | `<id>-businessModel.json`、`-industry.json`、`-relatedCompanies.json`、`-terms.json`（助言のみ） |
+| `parent` / `subsidiary` / `affiliate` / `other-affiliated-company` | 【関係会社の状況】の区分（親会社 / 子会社 / 持分法適用関連会社 / その他の関係会社）どおり |
+| `major-shareholder` | 【大株主の状況】に載る**事業会社**で、上の4区分に当たらない相手。説明に持株比率と基準日を書く。信託銀行・資産管理会社・金融機関の純投資は結ばない |
+| `supplier` / `customer` | 取引の向きが印字されているときだけ |
+| `business-partner` | 取引・提携はあるが向きが印字されていない。**資本関係の代用にしない** |
+| `technology` / `same-industry` / `competitor` / `same-business-model` | 有報がそう述べているとき |
 
-`industryId` は `INDUSTRY_IDS` の閉じた集合から選ぶ（掲載済みの同業の慣例に揃える）。合う区分が無ければ最も近いものを暫定で選び `taxonomyGaps`（kind: industry）に書く。`financialNotes` は会計基準の変更・変則決算などの事実だけを、除外対象の金額なしで書く。
+- 子会社が親会社から仕入れていても `subsidiary`（取引は説明に書く）。経営統合・株式交換は関係ではなく `history` の出来事。契約当事者が相手の子会社なら「○○の子会社である△△との契約」と書く。
+- 説明文には取引・提携・資本関係の事実と基準日を書く。計上額は書かない。
+- 結ばなかった候補は、相手ごとに1行、何が足りないかを `warnings` に書く。
 
-## 5. 終わったら
+## 8. 終わったら
 
 ```
 RESEARCH_CACHE=<証拠パックの場所> node scripts/pipeline/check-prose-figures.mjs <id> --fragments
 node scripts/pipeline/check-policy.mjs <id> --fragments
 ```
 
-どちらも不備が 0 になるまで直す。`merge-fragments --write`・`finalize`・`advance` は走らせない。報告は、成果物のパスと `needsReview` / `taxonomyGaps` の要点だけを短く。
+どちらも不備 0 になるまで直す。`merge-fragments --write`・`finalize`・`advance` は走らせない。最後の報告は、成果物のパスと `needsReview` / `taxonomyGaps` の要点だけを短く。
 
-## 6. 解説の更新（`autopilot update`）
+## 9. 解説の更新（`autopilot update` の依頼のとき）
 
-登録済みの会社に新しい有報が出て、`diff-filings.mjs` が「変わった」と判定した工程だけを書き直す依頼。
-
-- 書くのは、依頼文に名前のある工程の成果物だけ。証拠パックは**新しい有報**のもの。出典 id も新しい有報の `yuho-<年>`。
-- 今の公開版（`src/data/companies/<id>.json`）は前の有報に基づく。読んで、変わっていない事実は同じ書き方にしてよい（読者にとって不要な揺れを作らない）。ただし数値・基準日・順位は新しい有報の値にする。前の版の文を写して出典だけ変えることはしない（新しい有報で確かめた文だけを書く）。
-- 同じフォルダの `"retained"` がついた成果物は公開中の内容そのもの。変えない（変えても登録時に公開版で上書きされ、`finalize` が範囲外の変更として拒否する）。
-- 第3節・第3a節の規則はそのまま当たる。機械の検査は書き直した部分だけを数える。
+- 依頼文に名前のある工程の成果物だけを書く。証拠パックは新しい有報のもの、出典 id も新しい `yuho-<年>`。
+- 今の公開版 `src/data/companies/<id>.json` は前の有報に基づく。変わっていない事実は同じ書き方でよいが、数値・基準日・順位は新しい有報の値にし、新しい有報で確かめた文だけを書く。
+- `"retained"` がついた成果物は公開中の内容そのもの。変えない。

@@ -16,6 +16,7 @@ export const RELATIONSHIP_LABEL: Record<RelationshipKind, string> = {
   subsidiary: "子会社",
   affiliate: "関連会社",
   "other-affiliated-company": "その他の関係会社",
+  "major-shareholder": "大株主",
 };
 
 export type ResolvedRelation = { company: Company; relation: RelatedCompany };

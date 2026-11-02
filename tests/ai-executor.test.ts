@@ -43,12 +43,16 @@ describe("what a failed run said", () => {
 });
 
 describe("the headless agent", () => {
-  it("passes the brief as a prompt to the data-research agent, with a budget, a tool allow-list and no session kept", async () => {
+  it("passes the brief as system prompt, without MCP, skills or user settings, with a budget, a tool allow-list and no session kept", async () => {
     const { impl, calls } = fakeSpawn(JSON.stringify({ result: "完了", total_cost_usd: 0.8, is_error: false }));
     const r = await createExecutor({ spawnImpl: impl, budgetUsd: 2 }).run({ prompt: "会社: アクメ", label: "group1" });
     expect(r).toMatchObject({ ok: true, kind: "ok", costUsd: 0.8 });
     const args = calls[0].args;
-    expect(args[args.indexOf("--agent") + 1]).toBe("data-research");
+    expect(args).not.toContain("--agent");
+    expect(args[args.indexOf("--append-system-prompt-file") + 1]).toBe("docs/agent-brief.md");
+    for (const f of ["--strict-mcp-config", "--disable-slash-commands"]) expect(args).toContain(f);
+    expect(args[args.indexOf("--setting-sources") + 1]).toBe("project,local");
+    expect(args[args.indexOf("--tools") + 1]).not.toMatch(/WebSearch|WebFetch/);
     expect(args[args.indexOf("--max-budget-usd") + 1]).toBe("2");
     expect(args).toContain("--no-session-persistence");
     expect(args[args.indexOf("--permission-mode") + 1]).toBe("dontAsk");
