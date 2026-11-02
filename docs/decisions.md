@@ -498,3 +498,26 @@ under one band 「事業の分類」 and without numbers or arrows, which would 
 `IndustryStructure` is removed. On the hub, every industry tile is the same size (nearly all are researched, so the
 double tile no longer distinguished anything); an unresearched industry is marked 「解説は準備中」 instead. The phone
 gets the industry map drawn as a diagram at its own size rather than a list.
+
+### JCE-034 · 2026-11-02 · Accepted (operator) — Head offices on a map: the home page and /prefectures
+
+The operator asked for the home page to be redesigned after a reference image (generated, so its elements were
+taken and its look was not) and for a map of Japan from which a reader can find where companies have their head
+office. What it rests on:
+
+- **Where**: the EDINET code list's 所在地 (金融庁, under 公共データ利用規約 PDL 1.0 — named and marked as edited on every
+  page that shows it). The address rarely names the prefecture, so `scripts/pipeline/sync-headquarters.mjs` reads the
+  municipality it opens with and looks it up in 総務省's 全国地方公共団体コード (`pipeline/municipalities.tsv`). A name
+  that exists in more than one prefecture (府中市, 森町, 朝日町 …) gives a prefecture only when the address names it;
+  otherwise the company is left out, never guessed. Only the prefecture and municipality are kept, in
+  `src/data/headquarters.json`; the street address is not.
+- **The map**: Natural Earth admin-1 outlines (public domain), simplified by `scripts/maps/build-japan-map.mjs` into
+  `src/assets/japan/prefectures.json`. Prefectures are shaded in steps by the number of published companies whose head
+  office is there — no dots placed inside a prefecture, which would show positions the data does not have. The
+  Okinawa Islands sit in an inset; Natural Earth's filing of Amami and Yoron under Okinawa is corrected by leaving them
+  out of it.
+- **Pages**: `/prefectures` (the map and the 47 as a list by region) and `/prefectures/<id>` (the companies by
+  municipality, the most common industries). Company pages show 本社 with a link to their prefecture.
+- **Home**: hero and search as before, then 本社所在地から探す (map and the prefectures with most companies), 業界から
+  探す as photograph cards, then the written companies beside the glossary and recent updates. No stock-photo hero, no
+  logos of companies, no figure the encyclopedia does not have.

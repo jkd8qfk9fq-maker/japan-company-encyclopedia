@@ -1,14 +1,17 @@
 import { companies } from "@/data/companies";
+import headquartersJson from "@/data/headquarters.json";
 import { features } from "@/data/features";
 import { industries } from "@/data/industries";
 import { terms } from "@/data/terms";
 import { join } from "node:path";
+import { headquartersSchema, parseContent } from "@/lib/content/schemas";
 import { isReleased } from "@/lib/release";
 import type { Company, RelatedCompany } from "@/types/company";
 import { FileRevisionRepository } from "./file-revision-repository";
 import type {
   CompanyRepository,
   FeatureRepository,
+  HeadquartersRepository,
   IndustryRepository,
   RevisionRepository,
   TermRepository,
@@ -120,3 +123,18 @@ export const featureRepository: FeatureRepository = {
 };
 
 export const revisionRepository: RevisionRepository = new FileRevisionRepository(join(process.cwd(), "src", "data", "revisions"));
+
+const headquarters = parseContent(headquartersSchema, headquartersJson, "src/data/headquarters.json");
+const headquartersEntries = Object.entries(headquarters.companies);
+
+export const headquartersRepository: HeadquartersRepository = {
+  async source() {
+    return headquarters.source;
+  },
+  async get(companyId) {
+    return headquarters.companies[companyId] ?? null;
+  },
+  async list() {
+    return headquartersEntries;
+  },
+};

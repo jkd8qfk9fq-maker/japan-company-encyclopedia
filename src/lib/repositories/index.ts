@@ -5,6 +5,7 @@
 export {
   companyRepository,
   featureRepository,
+  headquartersRepository,
   industryRepository,
   revisionRepository,
   termRepository,

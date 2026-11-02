@@ -20,6 +20,7 @@ export async function SiteFooter() {
           <ul className="mt-4 text-sm">
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/companies">企業</Link></li>
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/industries">業界</Link></li>
+            <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/prefectures">本社所在地</Link></li>
             {features.length > 0 && (
               <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/features">特集</Link></li>
             )}

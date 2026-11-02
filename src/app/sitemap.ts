@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { listIndustryPages } from "@/lib/industries";
+import { PREFECTURES } from "@/lib/prefectures";
 import { companyRepository, featureRepository, industryRepository } from "@/lib/repositories";
 import { siteUrl } from "@/lib/site";
 
@@ -19,11 +20,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: url("/") },
     { url: url("/companies") },
     { url: url("/industries") },
+    { url: url("/prefectures") },
     { url: url("/features") },
     { url: url("/terms") },
     { url: url("/about") },
     ...companies.map((c) => ({ url: url(`/companies/${c.id}`), lastModified: c.updatedAt })),
     ...industryPages.map((i) => ({ url: url(`/industries/${i.id}`), lastModified: industryUpdated.get(i.id) })),
+    ...PREFECTURES.map((p) => ({ url: url(`/prefectures/${p.id}`) })),
     ...features.map((f) => ({ url: url(`/features/${f.id}`), lastModified: f.publishedAt })),
   ];
 }

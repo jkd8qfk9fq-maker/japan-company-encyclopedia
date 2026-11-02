@@ -3,8 +3,10 @@ import { Flag } from "lucide-react";
 import { Fragment } from "react";
 import { RichText } from "@/components/rich-text/rich-text";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
+import { prefectureByName } from "@/lib/prefectures";
 import { SITE_NAME, siteUrl } from "@/lib/site";
 import type { Company } from "@/types/company";
+import type { Headquarters } from "@/types/headquarters";
 import { segmentTone, structureBranches } from "./business-structure";
 import { FavoriteButton } from "./favorite-button";
 import { KeyFacts } from "./key-facts";
@@ -23,7 +25,8 @@ const EXCHANGE_NAME: Record<Company["listings"][number]["exchange"], string> = {
  * how big it is (the key facts). Nothing here is decoration and nothing is invented: every chip and figure is the
  * entry's own data, and a part with no data is left out.
  */
-export function CompanyHero({ company }: { company: Company }) {
+export function CompanyHero({ company, headquarters }: { company: Company; headquarters?: Headquarters | null }) {
+  const prefecture = headquarters ? prefectureByName(headquarters.prefecture) : null;
   const industries = [...company.industries].sort((a, b) => Number(b.primary ?? false) - Number(a.primary ?? false));
   const { branches } = structureBranches(company.businesses);
 
@@ -50,6 +53,16 @@ export function CompanyHero({ company }: { company: Company }) {
               </Link>
             </Fragment>
           ))}
+          {/* Where the head office is (EDINET code list), and a way to the other companies of that prefecture. */}
+          {headquarters && prefecture && (
+            <>
+              {" ・ 本社 "}
+              <Link href={`/prefectures/${prefecture.id}`} className="underline-offset-4 hover:text-foreground hover:underline">
+                {prefecture.name}
+              </Link>
+              {headquarters.municipality}
+            </>
+          )}
         </p>
 
         {company.shortNameEn && (

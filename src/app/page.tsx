@@ -1,14 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, FileText, Search } from "lucide-react";
+import { ArrowRight, FileText } from "lucide-react";
 import { INDUSTRY_IMAGES } from "@/assets/industries";
 import { SearchSuggest } from "@/components/search/search-suggest";
 import { AdSlot } from "@/components/ads/ad-slot";
+import { JapanMap, JapanMapLegend } from "@/components/region/japan-map";
 import { ReaderTrail } from "@/components/company/reader-trail";
 import { FeaturedCompanyCard } from "@/components/home/featured-company-card";
 import { toCompanySummary } from "@/lib/company-summary";
 import { featuredCompanies, recentlyUpdated, shortDate } from "@/lib/home";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
+import { PREFECTURES } from "@/lib/prefectures";
+import { companiesByPrefecture } from "@/lib/regions";
 import { companyRepository, featureRepository, industryRepository, termRepository } from "@/lib/repositories";
 import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
 import { INDUSTRY_IDS } from "@/types/company";
@@ -36,11 +39,12 @@ function SectionTitle({ id, children }: { id: string; children: React.ReactNode 
  * and are left out rather than drawn as dead controls. No stock data, no rankings (CLAUDE.md invariant 4).
  */
 export default async function HomePage() {
-  const [companies, features, researchedIndustries, terms] = await Promise.all([
+  const [companies, features, researchedIndustries, terms, regions] = await Promise.all([
     companyRepository.list(),
     featureRepository.list(),
     industryRepository.list(),
     termRepository.list(),
+    companiesByPrefecture(),
   ]);
   const summaries = companies.map(toCompanySummary);
   const featured = featuredCompanies(companies);
@@ -53,6 +57,8 @@ export default async function HomePage() {
     count: summaries.filter((c) => c.industries.some((i) => i.id === id)).length,
   })).filter((i) => i.count > 0 || researched.has(i.id));
   const topIndustries = [...industries].sort((a, b) => b.count - a.count).slice(0, 8);
+  const prefecturesWithCompanies = PREFECTURES.filter((p) => regions.counts[p.id] > 0);
+  const topPrefectures = [...prefecturesWithCompanies].sort((a, b) => regions.counts[b.id] - regions.counts[a.id]).slice(0, 6);
 
   // Search examples are companies with a written page, so a click always lands on something worth reading.
   const examples = featured.length > 0 ? featured : recent;
@@ -114,7 +120,16 @@ export default async function HomePage() {
                 <span className="ml-1 text-sm">分類</span>
               </dd>
             </div>
-            <div className="col-span-2">
+            <div>
+              <dt className="text-xs font-semibold text-muted-foreground">本社のある都道府県</dt>
+              <dd className="mt-1 font-serif text-[2rem] leading-none font-semibold">
+                <Link href="/prefectures" className="hover:underline hover:underline-offset-4">
+                  <span className="figures">{prefecturesWithCompanies.length}</span>
+                  <span className="ml-1 text-sm">都道府県</span>
+                </Link>
+              </dd>
+            </div>
+            <div>
               <dt className="text-xs font-semibold text-muted-foreground">一次資料を重視</dt>
               <dd className="mt-2 flex items-start gap-2 text-xs leading-5 text-muted-foreground">
                 <FileText className="mt-0.5 size-5 shrink-0 text-foreground" aria-hidden />
@@ -127,42 +142,81 @@ export default async function HomePage() {
 
       <ReaderTrail companies={summaries} />
 
-      {/* THREE COLUMNS: where to start / companies / what to read next */}
-      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-12 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-[14rem_minmax(0,1fr)_17rem] lg:gap-10">
-        {/* WHERE TO START */}
-        <aside aria-labelledby="home-explore" className="order-2 lg:order-1">
-          <SectionTitle id="home-explore">企業を探す</SectionTitle>
-          <p className="mt-6 text-xs font-semibold text-muted-foreground">業界</p>
-          <ul className="mt-2 border-t border-border">
-            {topIndustries.map((industry) => (
-              <li key={industry.id} className="border-b border-border">
-                <Link href={`/industries/${industry.id}`} className="group flex min-h-12 items-center justify-between gap-3 py-1 text-sm">
-                  <span className="flex items-center gap-3">
-                    <span className="relative size-9 shrink-0 overflow-hidden rounded">
-                      <Image src={INDUSTRY_IMAGES[industry.id]} alt="" fill sizes="2.25rem" className="object-cover" />
-                    </span>
-                    <span className="group-hover:underline group-hover:underline-offset-4">{industry.name}</span>
-                  </span>
-                  <span className="figures text-xs text-muted-foreground">{industry.count}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <Link href="/industries" className="mt-3 inline-flex min-h-11 items-center gap-1.5 text-sm text-ink">
+      {/* WHERE: head offices on the map. Every prefecture is a link; the list beside it is the same data in words. */}
+      <section aria-labelledby="home-map" className="border-b border-border">
+        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-10 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-center lg:gap-16">
+          <div>
+            <SectionTitle id="home-map">本社所在地から探す</SectionTitle>
+            <p className="mt-4 max-w-md text-sm leading-7 text-muted-foreground">
+              掲載企業の本社がある都道府県を、地図に色の濃さで示しました。都道府県を選ぶと、そこに本社がある企業を市区町村ごとに一覧できます。
+            </p>
+            <ol className="mt-6 grid max-w-md grid-cols-2 gap-x-6 border-t border-border">
+              {topPrefectures.map((p) => (
+                <li key={p.id} className="border-b border-border">
+                  <Link href={`/prefectures/${p.id}`} className="group flex min-h-11 items-baseline justify-between gap-3 py-2 text-sm">
+                    <span className="group-hover:underline group-hover:underline-offset-4">{p.name}</span>
+                    <span className="figures text-xs text-muted-foreground">{regions.counts[p.id].toLocaleString("ja-JP")}社</span>
+                  </Link>
+                </li>
+              ))}
+            </ol>
+            <Link
+              href="/prefectures"
+              className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full border border-foreground px-5 text-sm hover:bg-foreground hover:text-background"
+            >
+              47都道府県の一覧と地図を見る
+              <ArrowRight className="size-4" aria-hidden />
+            </Link>
+          </div>
+          <figure className="m-0">
+            <JapanMap counts={regions.counts} className="mx-auto max-w-[30rem]" />
+            <figcaption className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+              <JapanMapLegend />
+              <span className="text-[0.6875rem] text-muted-foreground">出典：金融庁 EDINETコードリスト（加工）</span>
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+      {/* WHAT: industries, each with its photograph. Ordered by how many companies the encyclopedia has in them. */}
+      <section aria-labelledby="home-industries" className="mx-auto max-w-7xl px-5 pt-12 md:px-8 md:pt-16">
+        <div className="flex items-baseline justify-between gap-4">
+          <SectionTitle id="home-industries">業界から探す</SectionTitle>
+          <Link href="/industries" className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-sm text-ink">
             すべての業界を見る
             <ArrowRight className="size-4" aria-hidden />
           </Link>
-          <Link
-            href="/companies"
-            className="mt-4 flex h-12 items-center justify-center gap-2 bg-ink text-sm font-medium text-background hover:opacity-90"
-          >
-            <Search className="size-4" aria-hidden />
-            企業の一覧を見る
-          </Link>
-        </aside>
+        </div>
+        <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {topIndustries.map((industry) => (
+            <li key={industry.id}>
+              <Link href={`/industries/${industry.id}`} className="group block overflow-hidden rounded-md border border-border bg-card">
+                <span className="relative block aspect-[16/10] bg-muted">
+                  <Image
+                    src={INDUSTRY_IMAGES[industry.id]}
+                    alt=""
+                    fill
+                    placeholder="blur"
+                    sizes="(min-width: 40rem) 18rem, 50vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                  />
+                </span>
+                <span className="flex flex-col gap-0.5 px-3 py-2.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-2">
+                  <span className="font-serif text-[0.9375rem] font-semibold group-hover:underline group-hover:underline-offset-4">
+                    {industry.name}
+                  </span>
+                  <span className="figures text-xs text-muted-foreground">{industry.count}社</span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
 
+      {/* WHO: companies with their numbers, and what to read next. */}
+      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-12 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-[minmax(0,1fr)_19rem] lg:gap-12">
         {/* COMPANIES */}
-        <section aria-labelledby="home-featured" className="order-1 min-w-0 lg:order-2">
+        <section aria-labelledby="home-featured" className="min-w-0">
           <div className="flex items-baseline justify-between gap-4">
             <SectionTitle id="home-featured">解説つきの企業</SectionTitle>
             <Link href="/companies" className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-sm text-ink">
@@ -181,7 +235,7 @@ export default async function HomePage() {
         </section>
 
         {/* WHAT TO READ NEXT */}
-        <aside aria-label="読みもの" className="order-3 grid content-start gap-10">
+        <aside aria-label="読みもの" className="grid content-start gap-10">
           {reading && (
             <section aria-labelledby="home-reading">
               <SectionTitle id="home-reading">{reading.heading}</SectionTitle>

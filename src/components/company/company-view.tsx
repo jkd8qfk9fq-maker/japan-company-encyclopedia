@@ -1,6 +1,6 @@
 import { AdSlot } from "@/components/ads/ad-slot";
 import type { Company } from "@/types/company";
-import { companyRepository } from "@/lib/repositories";
+import { companyRepository, headquartersRepository } from "@/lib/repositories";
 import { formatDateJa } from "@/lib/utils/format";
 import { BusinessList } from "./business-list";
 import { BusinessModel } from "./business-model";
@@ -59,7 +59,7 @@ export async function CompanyView({ company }: { company: Company }) {
 
   return (
     <>
-      <CompanyHero company={company} />
+      <CompanyHero company={company} headquarters={await headquartersRepository.get(company.id)} />
       <SectionTabs sections={sections} containerId="company-sections" tabbed="mobile" />
       <div id="company-sections">
 

@@ -1,6 +1,8 @@
 import { z } from "zod";
 import { INDUSTRY_IDS, RELATIONSHIP_KINDS, type Company } from "@/types/company";
+import { PREFECTURE_NAMES } from "@/lib/prefectures";
 import type { Feature } from "@/types/feature";
+import type { HeadquartersData } from "@/types/headquarters";
 import type { Industry } from "@/types/industry";
 import type { Revision } from "@/types/revision";
 import type { Source } from "@/types/source";
@@ -252,6 +254,11 @@ export const revisionSchema = z.strictObject({
   corrects: kebab.optional(),
 });
 
+export const headquartersSchema = z.strictObject({
+  source: z.strictObject({ title: text, publisher: text, url: z.string().regex(/^https:\/\//), downloadedAt: isoDate }),
+  companies: z.record(kebab, z.strictObject({ prefecture: z.enum(PREFECTURE_NAMES), municipality: text })),
+});
+
 /** Parse or throw an error that names the file and the exact field. */
 export function parseContent<T>(schema: z.ZodType<T>, value: unknown, label: string): T {
   const result = schema.safeParse(value);
@@ -273,6 +280,7 @@ type Assert<T extends true> = T;
 export type SchemaAgreement = [
   Assert<Equals<z.infer<typeof sourceSchema>, Source>>,
   Assert<Equals<z.infer<typeof companySchema>, Company>>,
+  Assert<Equals<z.infer<typeof headquartersSchema>, HeadquartersData>>,
   Assert<Equals<z.infer<typeof industrySchema>, Industry>>,
   Assert<Equals<z.infer<typeof termSchema>, Term>>,
   Assert<Equals<z.infer<typeof featureSchema>, Feature>>,

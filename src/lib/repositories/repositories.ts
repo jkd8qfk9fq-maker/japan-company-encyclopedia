@@ -1,5 +1,6 @@
 import type { Company, IndustryId, RelatedCompany } from "@/types/company";
 import type { Feature } from "@/types/feature";
+import type { Headquarters, HeadquartersData } from "@/types/headquarters";
 import type { Industry } from "@/types/industry";
 import type { Revision, RevisionTargetType } from "@/types/revision";
 import type { Term } from "@/types/term";
@@ -55,4 +56,13 @@ export interface RevisionRepository {
   list(): Promise<Revision[]>;
   listForTarget(targetType: RevisionTargetType, targetId: string): Promise<Revision[]>;
   get(id: string): Promise<Revision | null>;
+}
+
+export interface HeadquartersRepository {
+  /** Where the prefectures and municipalities come from (the EDINET code list, and when it was downloaded). */
+  source(): Promise<HeadquartersData["source"]>;
+  /** The head office of a company, or null when it could not be placed. */
+  get(companyId: string): Promise<Headquarters | null>;
+  /** Every placed company id with its head office, in no particular order. */
+  list(): Promise<[string, Headquarters][]>;
 }
