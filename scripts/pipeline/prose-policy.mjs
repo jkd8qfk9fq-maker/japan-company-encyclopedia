@@ -115,6 +115,10 @@ export function checkProsePolicy(entry) {
     for (const key of ["title", "description", "significance"]) {
       if (typeof h?.[key] !== "string" || h[key].trim() === "") findings.push({ severity: "error", rule: "history-shape", path: `history[${i}].${key}`, message: `沿革の各行には ${key} が要る（空にできない）` });
     }
+    // Batch 4 wrote "date": "2003-09" for year (2026-11-03)
+    if (!Number.isInteger(h?.year)) findings.push({ severity: "error", rule: "history-shape", path: `history[${i}].year`, message: "沿革の各行には year（西暦の整数。月は書かない）が要る" });
+    const extra = Object.keys(h ?? {}).filter((k) => !["year", "title", "description", "significance", "sourceIds", "locator"].includes(k));
+    if (extra.length > 0) findings.push({ severity: "error", rule: "history-shape", path: `history[${i}]`, message: `沿革の各行に書けるのは year・title・description・significance・sourceIds・locator だけ（${extra.join(", ")} を消す）` });
   });
   (Array.isArray(entry?.businessModel?.flow) ? entry.businessModel.flow : []).forEach((/** @type {any} */ s, /** @type {number} */ i) => {
     const extra = Object.keys(s ?? {}).filter((k) => !["kind", "title", "description"].includes(k));

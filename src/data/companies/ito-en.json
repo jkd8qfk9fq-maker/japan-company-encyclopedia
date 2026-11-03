@@ -4,15 +4,162 @@
   "name": "伊藤園",
   "officialName": "株式会社伊藤園",
   "nameEn": "ITO EN,LTD.",
-  "description": null,
+  "shortNameEn": "ITO EN",
+  "description": "緑茶などの茶葉と飲料を国内外でつくって売り、コーヒーの飲食店も運営する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "leaf-drink",
+      "name": "リーフ・ドリンク関連事業",
+      "shortName": "リーフ・ドリンク",
+      "description": "緑茶・麦茶・ウーロン茶などの茶葉（リーフ）製品と飲料（ドリンク）製品を、国内外でつくって売る事業です。2026年4月期の外部顧客への売上高は443,443百万円で、前期（420,328百万円）より増えました。連結売上高497,877百万円の大半を占める中心の事業です。",
+      "products": [
+        "茶葉（リーフ）製品",
+        "緑茶・麦茶・ウーロン茶などの飲料（ドリンク）製品",
+        "乳類・発酵乳",
+        "コーヒー豆",
+        "自動販売機を通じた飲料"
+      ],
+      "children": [
+        {
+          "id": "leaf-products",
+          "name": "茶葉（リーフ）製品",
+          "shortName": "リーフ",
+          "description": "茶葉を仕入れて製造し、緑茶・麦茶・ウーロン茶などを中心に全国へ販売します。伊藤園ティーファクトリー㈱が緑茶・麦茶などを製造加工し、その大部分を伊藤園が仕入れています。この区分だけの売上高は印字されていません。",
+          "products": [
+            "緑茶",
+            "麦茶",
+            "ウーロン茶"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "drink-products",
+          "name": "飲料（ドリンク）製品",
+          "shortName": "ドリンク",
+          "description": "飲料を企画・開発し、生産はグループ外のメーカーに委託して完成品を仕入れ、全国で販売します。自動販売機での販売はネオス㈱、乳類の加工販売はチチヤス㈱が担います。この区分だけの売上高は印字されていません。",
+          "products": [
+            "飲料（ドリンク）",
+            "自動販売機での飲料販売",
+            "乳類・発酵乳"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "overseas-leaf-drink",
+          "name": "海外のリーフ・ドリンク",
+          "shortName": "海外",
+          "description": "米国ハワイ州・米国・中国・豪州・東南アジアなどで、製品の製造や販売を行います。米国のDistant Lands Trading Co.はコーヒー豆の栽培から販売までを行っています。2026年4月期の顧客の所在地別売上高は、日本425,938百万円、米国64,291百万円、その他7,647百万円です。",
+          "products": [
+            "現地製造の飲料",
+            "ティーバッグ",
+            "コーヒー豆"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "food-service",
+      "name": "飲食関連事業",
+      "shortName": "飲食",
+      "description": "タリーズコーヒージャパン㈱が、国内でスペシャルティコーヒーの飲食店を経営し、フランチャイズ展開します。2026年4月期の外部顧客への売上高は46,495百万円で、前期（43,769百万円）より増えました。",
+      "products": [
+        "スペシャルティコーヒーの飲食店（直営・フランチャイズ）"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "shortName": "その他",
+      "description": "米国のMason Distributors, Inc.が、サプリメントの製造と販売を行います。2026年4月期の外部顧客への売上高は7,938百万円で、前期（8,619百万円）より減りました。",
+      "products": [
+        "サプリメント"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "茶葉と飲料の製造・販売を主な事業とし、飲食店の運営も行います。",
+    "products": [
+      "茶葉（リーフ）製品",
+      "緑茶・麦茶・ウーロン茶などの飲料（ドリンク）製品",
+      "スペシャルティコーヒーの飲食店",
+      "サプリメント"
+    ],
+    "customers": [
+      "全国の販売先（国内）",
+      "米国を中心とする海外の販売先",
+      "コーヒー店の来店客"
+    ],
+    "revenueSources": [
+      "リーフ・ドリンク関連事業の製品販売",
+      "飲食関連事業の店舗売上",
+      "その他（サプリメント）の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "伊藤園",
+        "description": "株式会社伊藤園は、子会社37社と関連会社7社で企業集団を構成しています（2026年4月期）。茶葉と飲料の製造販売を主たる事業とし、飲食関連事業なども行います。飲料の生産はグループ外のメーカーへ委託し、国内の物流は主に㈱伊藤園ロジテムに委託しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "茶葉と飲料、コーヒーの飲食店",
+        "description": "茶葉は仕入れて製造し、緑茶・麦茶・ウーロン茶などを中心に全国で売ります。飲料は企画・開発し、委託製造の完成品を仕入れて売ります。タリーズコーヒージャパン㈱は国内でスペシャルティコーヒーの飲食店を経営し、フランチャイズ展開もしています。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外の販売先とコーヒー店の来店客",
+        "description": "2026年4月期の顧客の所在地別売上高は、日本425,938百万円、米国64,291百万円、その他7,647百万円です。沖縄と北海道は㈱沖縄伊藤園・㈱北海道伊藤園が、自動販売機での飲料販売はネオス㈱が担います。連結売上高の10％以上を占める顧客はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高（茶葉・飲料の販売と飲食店の売上）",
+        "description": "2026年4月期の連結売上高は497,877百万円で、前期の472,716百万円より増えました。外部顧客への売上高は、リーフ・ドリンク関連事業が443,443百万円、飲食関連事業が46,495百万円、その他が7,938百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "親会社株主に帰属する当期純利益は、2026年4月期が3,466百万円で、前期の14,156百万円より減りました。自動販売機事業などで減損損失を計上した期です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年4月期",
@@ -27,7 +174,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 163012000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8028,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 172128000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7928,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 183216000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7929,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +234,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 175971000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7916,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +254,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 177951000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7945,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +262,168 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1966,
+      "title": "前身のフロンティア製茶を静岡市に設立",
+      "description": "1966年8月、日本ファミリーサービス株式会社と合資会社ビーエー商会の共同出資で、前身のフロンティア製茶株式会社を静岡県静岡市に設立しました。緑茶のルートセールス（小売店などへの直接販売）を始めました。",
+      "significance": "伊藤園は、緑茶を小売店へ直接売る営業から始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "株式会社伊藤園に商号変更",
+      "description": "1969年5月にフロンティア製茶から「株式会社伊藤園」へ商号を変更しました。同年6月には、株式会社本庄商事と合資会社ビーエー商会から緑茶事業の営業譲渡を受け、生産部門を確保しました。",
+      "significance": "現在の社名が生まれ、販売だけでなく生産の部門も持つようになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "茶産地育成事業を開始",
+      "description": "1976年4月に茶産地育成事業の展開を始めました。",
+      "significance": "茶葉の調達に関わる取り組みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "缶入りウーロン茶を発売し、缶飲料に本格進出",
+      "description": "1979年8月に日本初のウーロン茶輸入代理店契約を結び、1981年3月に無糖茶飲料「缶入りウーロン茶」の全国販売を始めました。缶飲料業界に本格的に進出しました。",
+      "significance": "茶葉の販売に加え、飲料（ドリンク）の販売へ広がった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "緑茶飲料「缶入り煎茶」を発売",
+      "description": "1985年2月に緑茶飲料「缶入り煎茶」の全国販売を始めました。1989年2月に名称を変更し、「お～いお茶」ブランドとして販売を始めました。",
+      "significance": "「お～いお茶」ブランドの原点となる製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "米国ハワイ州に海外拠点を設立",
+      "description": "1987年7月に米国ハワイ州にITO-EN(USA)INC.（後のITO EN(USA)INC.）を設立しました。同社は2017年4月に解散し、2016年12月にITO EN(Hawaii)LLCへ事業譲渡を行っています。",
+      "significance": "海外展開の最初の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1992年5月に日本証券業協会へ店頭登録し、1996年9月に東京証券取引所市場第二部に株式を上場しました。1998年10月に市場第一部銘柄に指定されました。",
+      "significance": "上場会社として歩み始めました。2022年4月の市場区分の見直しで、市場第一部からプライム市場へ移行しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "タリーズコーヒージャパンの株式を取得",
+      "description": "2006年10月にフードエックス・グローブ株式会社（現・連結子会社のタリーズコーヒージャパン株式会社）の株式を取得しました。",
+      "significance": "飲食関連事業の中心となる会社が、グループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "チチヤスの株式を取得",
+      "description": "2011年5月にチチヤス株式会社の株式を取得しました。同社は乳類の処理加工販売と発酵乳などの製造販売を行っています。",
+      "significance": "お茶以外の飲料・乳製品の分野に広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "シンガポールと上海に海外拠点を設立、ネオスの株式を取得",
+      "description": "2012年6月にシンガポールに持株会社ITO EN Asia Pacific Holdings Pte.Ltd.を設立し、同年9月に中国上海市に伊藤園飲料（上海）有限公司を設立しました。同年10月にはネオス株式会社の株式を取得しました。",
+      "significance": "アジアでの販売体制と、自動販売機での飲料販売を担う会社がそろいました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "Distant Lands Trading Co.の株式を取得し、ハワイにも製造会社を設立",
+      "description": "2015年2月にITO EN(North America)INC.がDistant Lands Trading Co.の株式を取得し、同年11月に米国ハワイ州にITO EN(Hawaii)LLCを設立しました。",
+      "significance": "米国でコーヒー豆の栽培から販売までを行う会社が加わり、ハワイでの製造・販売の会社も整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "神戸工場を建設",
+      "description": "2016年9月に兵庫県神戸市西区に「神戸工場」を建設しました。",
+      "significance": "国内の生産拠点に加わった工場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "「お～いお茶」がギネス世界記録に認定",
+      "description": "2019年5月に「お～いお茶」ブランドが「ナチュラルヘルシーRTD緑茶飲料（最新年間売り上げ）」販売実績世界一として、ギネス世界記録™に認定されました。",
+      "significance": "「お～いお茶」の販売実績が、世界一として認められました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "欧州・ベトナム・北海道に会社を設立し、お茶の博物館を開館",
+      "description": "2024年3月にドイツのデュッセルドルフ市にITO EN Europe GmbH、同年5月にベトナムのホーチミン市にITO EN VIETNAM CO.,LTD.、北海道札幌市に株式会社北海道伊藤園を設立しました。同月に複合型博物館「お～いお茶ミュージアム」「お茶の文化創造博物館」をオープンしました。",
+      "significance": "海外の販売拠点を広げるとともに、お茶の文化を伝える施設を開きました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "伊藤園産業と伊藤園関西茶業が合併し、伊藤園ティーファクトリーに",
+      "description": "2025年5月に伊藤園産業株式会社（存続会社）と株式会社伊藤園関西茶業が合併し、商号を「伊藤園ティーファクトリー株式会社」に変更しました。",
+      "significance": "緑茶・麦茶などの製造加工を担うグループ会社が、1社にまとまりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "伊藤園ロジテムの株式を取得し、インドに会社を設立",
+      "description": "2026年4月に株式会社伊藤園ロジテム（2025年5月にトーウンロジテム株式会社から商号変更）の株式を取得しました。同月にインドのムンバイ市にITO EN INDIA PRIVATE LIMITEDを設立しました。",
+      "significance": "国内の物流業務を主に委託している会社をグループに加え、アジアの新たな市場にも拠点を置きました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +432,16 @@
       "publisher": "株式会社伊藤園",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YRK7.pdf",
       "publishedAt": "2026-07-21",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YRK7",
+      "asOf": "2026-04-30",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: financialNotes の年度「undefined」が5年表にありません"
+    ]
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-03"
 }

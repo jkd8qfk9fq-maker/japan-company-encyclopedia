@@ -38,7 +38,7 @@
 
 - `sources` のキーは `id, title, publisher, url, publishedAt` だけ（`kind` は無い。`accessedAt` は書かない — 機械が入れる）。有報の出典 id は `yuho-<決算期末の西暦年>`、url は `https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/<docID>.pdf`（API の URL は不可）。訂正有報が有効文書なら url・title・publishedAt は `summary.json` の filing の値。
 - `businesses[]`（`children[]` も）・`businessModel`・`history[]`・`relatedCompanies[]` は `sourceIds` 必須。`locator`（根拠の節の見出し「【事業の内容】」など）は `sourceIds` を持つ所にだけ書く。**`businessModel.flow[]` の各段には `kind`・`title`・`description` だけ**（`sourceIds`・`locator` を書くとスキーマが拒否する。出典は `businessModel.sourceIds` に）。
-- 必須の形: `name`（通称。表紙の社名から「株式会社」を除く）／`industries[]` は `{ "industryId": "<値>", "primary": true }`（`id` ではない）／`businessModel` は `description`・`products[]`・`customers[]`・`revenueSources[]`・`flow[]`・`sourceIds`。
+- 必須の形: `name`（通称。表紙の社名から「株式会社」を除く）／`industries[]` は `{ "industryId": "<値>", "primary": true }`（`id` ではない）／`history[]` は `{ "year": 2003, "title", "description", "significance", "sourceIds", "locator" }`（`year` は整数。`date`・月は書かない）／`businessModel` は `description`・`products[]`・`customers[]`・`revenueSources[]`・`flow[]`・`sourceIds`。
 - `officialName`・`nameEn`・`code`・`financials` は書かない（機械が入れる）。`listings` の `market` は表紙が市場区分を印字しているときだけ。取引所は tse / nse / fse / sse。
 - **`needsReview`** = 何かが間違っているかもしれない（変則決算・決算期変更・訂正の不完全・有報内の矛盾・提出後の予定事項）。空でないと会社は非公開の要確認になる。**`taxonomyGaps`** = データは正しいが閉じた分類で言えない（業界が無い）。取り違えない。分類の不足を `needsReview` に書かない。
 

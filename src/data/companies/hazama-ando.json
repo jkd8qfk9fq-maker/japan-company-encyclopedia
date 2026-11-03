@@ -4,15 +4,154 @@
   "name": "安藤・間",
   "officialName": "株式会社安藤・間",
   "nameEn": "HAZAMA ANDO CORPORATION",
-  "description": null,
+  "description": "土木と建築の工事を国内外で請け負う総合建設会社で、通称は安藤ハザマです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "building-construction",
+      "name": "建築事業",
+      "shortName": "建築",
+      "description": "国内外の建築工事全般を請け負っています。2026年3月期の外部顧客への売上高は2,622億円(前期比0.4%増)で、三つの報告セグメントのうち最大です。",
+      "customers": [
+        "民間企業",
+        "官公庁"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "civil-engineering",
+      "name": "土木事業",
+      "shortName": "土木",
+      "description": "国内外の土木工事全般を請け負っています。2026年3月期の外部顧客への売上高は1,408億円(前期比6.1%増)です。トンネルや道路、ダムなどの工事が含まれます。",
+      "customers": [
+        "官公庁",
+        "民間企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "group-business",
+      "name": "グループ事業",
+      "shortName": "グループ",
+      "description": "連結子会社7社を集めた区分で、建設用資材の販売やリース、土木・建築工事の施工などを行っています。2026年3月期の外部顧客への売上高は265億円(前期比11.5%増)です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "materials-sales-leasing",
+          "name": "建設用資材の販売・リース",
+          "description": "子会社の安藤ハザマ興業が、当社グループ向けを中心に建設用資材の販売とリースを行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ]
+        },
+        {
+          "id": "construction-cooperation",
+          "name": "工事の施工協力",
+          "description": "子会社の青山機工が、当社の建設事業で土木・建築工事の施工に協力しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ]
+        },
+        {
+          "id": "real-estate",
+          "name": "不動産の売買・賃貸・仲介",
+          "description": "子会社の菱晃開発が、不動産の売買、賃貸、仲介を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ]
+        },
+        {
+          "id": "overseas-construction",
+          "name": "海外の建設事業",
+          "description": "タイ、インドネシア、ベトナム、シンガポールの現地子会社が、それぞれの国で建設事業を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "shortName": "その他",
+      "description": "報告セグメントに含まれない区分で、調査・研究の受託業務などを含みます。2026年3月期の外部顧客への売上高は99億円(前期比37.6%増)です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "官公庁や民間企業から土木・建築工事を請け負い、工事の進み具合に応じて完成工事高を計上しています。",
+    "products": [
+      "土木工事(トンネル、道路、ダムなど)",
+      "建築工事",
+      "建設用資材の販売・リース",
+      "不動産の売買・賃貸・仲介"
+    ],
+    "customers": [
+      "官公庁",
+      "民間企業",
+      "海外の発注者"
+    ],
+    "revenueSources": [
+      "建築事業 2,622億円(2026年3月期)",
+      "土木事業 1,408億円(2026年3月期)",
+      "グループ事業 265億円(2026年3月期)",
+      "その他 99億円(2026年3月期)"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "安藤・間",
+        "description": "総合建設業を営む当社が土木事業と建築事業を担い、子会社10社・関連会社15社とともに2026年3月31日現在のグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "土木・建築工事の請負",
+        "description": "国内外の土木工事と建築工事を請け負います。子会社は建設用資材の販売・リース、工事の施工協力、不動産の売買・賃貸・仲介などで事業を支えています。"
+      },
+      {
+        "kind": "customer",
+        "title": "官公庁と民間企業",
+        "description": "工事の受注方法は特命と競争に分かれます。2026年3月31日現在の手持工事は、官公庁向けと民間向けの両方があります。売上高の10%以上を占める顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の連結売上高は4,396億円(前期比3.4%増)でした。完成工事高が前期より2.8%増えたことが主な理由です。工事は進み具合に応じて売上を計上します。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は297億円(前期比12.5%増)でした。投資有価証券の売却益の増加など、特別損益が前期より改善しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +166,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 141682000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3669,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +186,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 141324000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3677,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +206,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 154470000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3691,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +226,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 172183000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3753,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +246,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 209380000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3957,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +254,78 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1873,
+      "title": "安藤庄太郎が「安藤方」として創業",
+      "description": "安藤庄太郎が東京・神田松枝町で「安藤方」と称し、煉瓦建築を施工する建築業者として始めました。のちに安藤建設となる会社の起源です。",
+      "significance": "現在の安藤・間の二つの源流のうち、建築を軸とする安藤建設側の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1889,
+      "title": "間猛馬が福岡県門司で創業",
+      "description": "4月、間猛馬の個人企業として福岡県門司に創業し、土木建築の請負を始めました。のちに特に大型土木を得意とする総合建設業者になりました。",
+      "significance": "もう一つの源流である間組の出発点です。土木に強みを持つ現在の事業の背景になっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1918,
+      "title": "株式会社安藤組を設立",
+      "description": "3月、株式会社安藤組を設立し、合名会社安藤組の営業譲渡を受けました。",
+      "significance": "個人の請負から株式会社へと、安藤建設側が組織を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "社名を安藤建設株式会社に変更",
+      "description": "3月、社名を安藤組から安藤建設株式会社に変更しました。この会社は1961年に東京証券取引所市場第二部へ上場し、1963年に市場第一部の指定を受けています。",
+      "significance": "2013年の合併の一方の当事会社となった「安藤建設」の名称の由来です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "旧ハザマの会社分割で株式会社間組を設立し上場",
+      "description": "10月1日、旧ハザマ(青山管財株式会社)が分割型分割(混合型)の新設分割を行い、建設事業部門の承継会社として設立されました。同月、東京証券取引所市場第一部に上場しています。",
+      "significance": "現在の会社の法人としての直接の前身にあたる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "間組と安藤建設が合併し安藤・間が発足",
+      "description": "4月1日付で株式会社間組と安藤建設株式会社が合併し、株式会社安藤・間が発足しました。本店は港区赤坂六丁目1番20号へ移転しました。",
+      "significance": "土木に強い間組と建築に強い安藤建設が一つになり、現在の会社の形ができた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "4月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。5月には本店を港区東新橋一丁目9番1号へ移転しています。",
+      "significance": "現在の上場区分と本店所在地の経緯です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +334,13 @@
       "publisher": "株式会社安藤・間",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHJP.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YHJP",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-03"
 }

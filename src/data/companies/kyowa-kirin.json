@@ -4,15 +4,118 @@
   "name": "協和キリン",
   "officialName": "協和キリン株式会社",
   "nameEn": "Kyowa Kirin Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Kyowa Kirin",
+  "description": "骨・ミネラル、血液がん、希少疾患の医療用医薬品を研究開発し、製造・販売する製薬会社。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "pharmaceuticals",
+      "name": "医薬事業",
+      "shortName": "医薬",
+      "description": "病院で医師が処方する医療用医薬品を、研究開発から製造・販売まで行う事業です。協和キリングループの事業は、この「医薬事業」の1つだけで、報告セグメントも1つです。2025年12月期の売上収益は496,826百万円でした。顧客の所在地別では、米州が245,494百万円（うち米国238,907百万円）、日本が128,837百万円、欧州が84,822百万円、アジアが36,294百万円で、米州が最も大きくなっています。会社は、自社で力を入れる疾患領域として「骨・ミネラル」「血液がん・難治性血液疾患」「希少疾患（造血幹細胞遺伝子治療）」の3つを挙げ、海外でも販売している主な製品として「Crysvita」「Poteligeo」「Libmeldy/Lenmeldy」を挙げています。従業員数は5,161人（2025年12月31日現在）です。",
+      "products": [
+        "医療用医薬品",
+        "Crysvita（日本製品名：クリースビータ）",
+        "Poteligeo（日本製品名：ポテリジオ）",
+        "OTL-200（欧州製品名：Libmeldy、米国製品名：Lenmeldy）"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "products-and-goods",
+          "name": "製商品",
+          "shortName": "製商品",
+          "description": "つくった医薬品や仕入れた医薬品を、病院や医薬品の流通を担う会社などへ販売する区分です。2025年12月期の売上収益は438,380百万円（前期は446,786百万円）で、売上収益全体の大半を占めます。当社は医療用医薬品の製造・販売を行い、米国のKyowa Kirin, Inc.、カナダのKyowa Kirin Canada, Inc.、韓国協和キリン株式会社、台湾の台灣協和麒麟股份有限公司などの子会社が海外の販売を担っています。売上収益の10％以上を占める顧客として、米国のCVS Caremark社（71,036百万円）が印字されています。",
+          "products": [
+            "医療用医薬品"
+          ],
+          "customers": [
+            "CVS Caremark社"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "５．事業セグメント（製品及びサービスに関する情報）"
+        },
+        {
+          "id": "technology-revenue",
+          "name": "技術収入",
+          "shortName": "技術収入",
+          "description": "自社の技術や権利を他社に使わせることなどで得る収入の区分です。2025年12月期の売上収益は58,446百万円（前期は48,772百万円）でした。売上収益の中身の分け方は「製商品」と「技術収入」の2つで、技術収入の内訳は有報に細かく印字されていません。関係会社の状況では、米国のBioWa, Inc.が「抗体技術の導出」を事業とし、当社が同社に技術等を供与しています。",
+          "products": [
+            "技術収入"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "５．事業セグメント（製品及びサービスに関する情報）"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "医療用医薬品を製造・販売し、製商品の販売に加えて、技術収入も得ています。",
+    "products": [
+      "医療用医薬品",
+      "Crysvita（日本製品名：クリースビータ）",
+      "Poteligeo（日本製品名：ポテリジオ）",
+      "OTL-200（欧州製品名：Libmeldy、米国製品名：Lenmeldy）",
+      "技術収入"
+    ],
+    "customers": [
+      "CVS Caremark社",
+      "日本・米州・欧州・アジアの医療機関や医薬品の流通を担う会社"
+    ],
+    "revenueSources": [
+      "製商品の販売",
+      "技術収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "協和キリングループ",
+        "description": "当社、子会社44社、持分法適用会社14社、親会社1社（キリンホールディングス株式会社）で構成され、医薬に関係する事業を行っています。事業は「医薬事業」の単一セグメントです。"
+      },
+      {
+        "kind": "offering",
+        "title": "医療用医薬品",
+        "description": "当社は医療用医薬品の製造・販売を行っています。自社で力を入れる疾患領域は「骨・ミネラル」「血液がん・難治性血液疾患」「希少疾患（造血幹細胞遺伝子治療）」の3つです。"
+      },
+      {
+        "kind": "customer",
+        "title": "世界各地の顧客",
+        "description": "2025年12月期の売上収益を顧客の所在地で分けると、日本が128,837百万円、米州が245,494百万円（うち米国238,907百万円）、欧州が84,822百万円、アジアが36,294百万円、その他が1,379百万円です。売上収益の10％以上を占める顧客は、米国のCVS Caremark社（71,036百万円）です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製商品の販売と技術収入",
+        "description": "2025年12月期の売上収益496,826百万円の内訳は、製商品が438,380百万円、技術収入が58,446百万円です。前期（2024年12月期）の売上収益は495,558百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年12月期の親会社の所有者に帰属する当期利益は67,040百万円で、前期（2024年12月期）の59,870百万円より増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】、５．事業セグメント"
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +130,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 737162000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 5752,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -47,7 +150,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 762826000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 5982,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -67,7 +170,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 836418000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 5974,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -87,7 +190,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 850811000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 5669,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -107,7 +210,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 893332000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 5161,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -115,7 +218,128 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1936,
+      "title": "協和会を設立（会社の始まり）",
+      "description": "1936年に協和会が設立され、翌1937年には加藤辨三郎を所長とする協和化学研究所が設立されました。会社はこの2つに始まります。その後、研究所の成果の事業化や政府の要請などを経て、1939年に協和化学興業株式会社、1943年に東亜化学興業株式会社が設立され、この2社は1945年4月に合併しました。1945年10月には協和産業株式会社と社名を改めています。",
+      "significance": "会社の出発点は工場ではなく研究所と、その母体の会として印字されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "協和醱酵工業株式会社を設立し、東京証券取引所に上場",
+      "description": "1949年7月、企業再建整備法に基づいて協和産業株式会社を解散し、その第二会社として協和醱酵工業株式会社を設立しました。同年8月には株式を東京証券取引所に上場しています。",
+      "significance": "現在の会社は、この1949年に設立された協和醱酵工業が前身です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "米国のメルク社から「ストレプトマイシン」の製造技術を導入",
+      "description": "1951年4月、米国のメルク社から「ストレプトマイシン」の製造技術を導入しました。1956年9月には発酵法によるグルタミン酸ソーダ製造法の発明とその企業化を公表し、1959年9月には抗悪性腫瘍剤「マイトマイシン」を発売しています。",
+      "significance": "発酵の技術を土台に、医薬品を世に送り出してきたことが沿革から分かります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "米国にKyowa Pharmaceutical, Inc.（現 Kyowa Kirin, Inc.）を設立",
+      "description": "1992年10月、米国にKyowa Pharmaceutical, Inc.を設立しました。現在はKyowa Kirin, Inc.という名前で、医療用医薬品の研究開発・販売を行う連結子会社です。2003年2月には米国にBioWa, Inc.も設立しています。",
+      "significance": "2025年12月期の顧客の所在地別の売上収益では米州が245,494百万円と最も大きく、米国での事業が会社の売上を支えています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "酒類事業をアサヒビールに譲渡",
+      "description": "2002年9月、酒類事業をアサヒビール株式会社に譲渡しました。その後、2004年4月には化学品事業を協和油化株式会社に分割承継し、2005年4月には食品事業を新設分割して協和発酵フーズ株式会社を設立しています。",
+      "significance": "医薬以外の事業を切り分けていく流れの始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "キリンファーマと統合し、協和発酵キリン株式会社に商号変更",
+      "description": "2008年4月、株式交換によってキリンファーマ株式会社が当社の完全子会社となり、キリンホールディングス株式会社が当社の発行済株式総数の50.10％を保有する親会社になりました。同年10月にはキリンファーマを吸収合併し、商号を協和醱酵工業株式会社から協和発酵キリン株式会社に変更しています。バイオケミカル事業は新設分割して協和発酵バイオ株式会社としました。",
+      "significance": "キリンホールディングスは現在も親会社で、2025年12月31日現在の議決権の被所有割合は55.2％です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】、【関係会社の状況】"
+    },
+    {
+      "year": 2011,
+      "title": "英国のProStrakan Groupを完全子会社化",
+      "description": "2011年4月、英国のProStrakan Group plc（現 Kyowa Kirin International plc）の全株式を取得して完全子会社にしました。同年1月にはキリン協和フーズ株式会社の全株式をキリンホールディングスに、3月には協和発酵ケミカル株式会社の全株式をケイジェイホールディングスに譲渡しています。2014年8月には英国のArchimedes Pharma Limitedの全株式を取得し、完全子会社にしました。",
+      "significance": "Kyowa Kirin International plcは、現在も欧州の傘下子会社を統括・管理する連結子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】、【関係会社の状況】"
+    },
+    {
+      "year": 2012,
+      "title": "富士フイルムとの合弁会社を設立",
+      "description": "2012年3月、富士フイルム株式会社との合弁会社として、バイオシミラー医薬品の開発・製造・販売を行う協和キリン富士フイルムバイオロジクス株式会社を設立しました。",
+      "significance": "同社は議決権50.0％の持分法適用会社として、2025年12月期の有報にも載っています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】、【関係会社の状況】"
+    },
+    {
+      "year": 2018,
+      "title": "X染色体連鎖性低リン血症治療剤「Crysvita」を米国で発売",
+      "description": "2018年4月、X染色体連鎖性低リン血症治療剤「Crysvita」を米国で発売しました。同年1月には協和メデックス株式会社の株式の66.6％を日立化成株式会社に譲渡しています（残りの持分は2021年4月に譲渡）。",
+      "significance": "Crysvitaは会社が「骨・ミネラル」領域の柱とする製品で、2025年には皮下注シリンジが日本・欧州で発売されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】、【経営方針、経営環境及び対処すべき課題等】"
+    },
+    {
+      "year": 2019,
+      "title": "商号を協和キリン株式会社に変更",
+      "description": "2019年7月、商号を協和発酵キリン株式会社から協和キリン株式会社に変更しました。同年4月には協和発酵バイオ株式会社の株式の95％をキリンホールディングスに譲渡しています（残りの持分は2023年1月に譲渡）。",
+      "significance": "この変更で、現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しに伴い、市場第一部からプライム市場に移りました。",
+      "significance": "現在の上場先は東京証券取引所プライム市場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "英国のOrchard Therapeuticsを完全子会社化",
+      "description": "2024年1月、英国のOrchard Therapeutics plc（現 Orchard Therapeutics Limited）の全株式を取得して完全子会社にしました。同年9月には協和麒麟（中国）製薬有限公司の全株式をHong Kong WinHealth Pharma社に譲渡しています。なお、Orchard Therapeutics Limitedは2025年7月11日に解散及び清算を決定し、2026年1月20日に清算結了しています。",
+      "significance": "Orchardが手がけた造血幹細胞遺伝子治療「OTL-200」（Libmeldy/Lenmeldy）は、会社が自社で力を入れる「希少疾患」領域の製品として、2025年12月期の有報にも書かれています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】、【事業の内容】、【経営方針、経営環境及び対処すべき課題等】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +348,28 @@
       "publisher": "協和キリン株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XPTY.pdf",
       "publishedAt": "2026-03-10",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XPTY",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: financialNotes の年度「undefined」が5年表にありません"
+    ]
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念は「ライフサイエンスとテクノロジーの進歩を追求し、新しい価値の創造により、世界の人々の健康と豊かさに貢献します。」です。2030年に向けて「日本発のグローバル・スペシャリティファーマ」を目指すビジョンを掲げ、戦略「Story for Vision 2030」では、自社で力を入れる疾患領域と、パートナーと価値を最大化する領域を分けています。",
+        "asOf": "2026-03-10",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  }
 }

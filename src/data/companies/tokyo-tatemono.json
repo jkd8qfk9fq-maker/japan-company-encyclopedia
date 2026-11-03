@@ -4,15 +4,185 @@
   "name": "東京建物",
   "officialName": "東京建物株式会社",
   "nameEn": "Tokyo Tatemono Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Tokyo Tatemono",
+  "description": "オフィスビルやマンションを開発・販売・賃貸・運営し、仲介や駐車場なども手がける総合不動産会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "real-estate",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "building",
+      "name": "ビル事業",
+      "shortName": "ビル",
+      "description": "オフィスビル・商業施設・物流施設などを開発し、売ったり貸したり運営したりする事業で、最も売上が大きい区分です。2025年12月期の外部顧客への営業収益は220,177百万円（前期は176,573百万円）です。連結子会社が、ビルの管理・清掃、サービスオフィスやコワーキングスペースの運営、商業施設の管理・運営も行っています。",
+      "products": [
+        "オフィスビル",
+        "商業施設",
+        "物流施設",
+        "ビルの管理・清掃",
+        "サービスオフィス・コワーキングスペース"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "housing",
+      "name": "住宅事業",
+      "shortName": "住宅",
+      "description": "マンションなどを開発し、売ったり貸したり管理したりする事業です。2025年12月期の外部顧客への営業収益は165,139百万円（前期は211,481百万円）です。マンションのブランドは2003年に「Brillia（ブリリア）」に統一されました。連結子会社がマンション管理やマンション分譲のWEBプロモーションなども行っています。",
+      "products": [
+        "分譲マンション（Brillia）",
+        "賃貸マンション",
+        "マンション管理"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "asset-service",
+      "name": "アセットサービス事業",
+      "shortName": "アセットサービス",
+      "description": "不動産の仲介・コンサルティング、買取再販、駐車場の開発・運営を行う事業です。2025年12月期の外部顧客への営業収益は63,454百万円（前期は54,742百万円）です。仲介などは東京建物不動産販売㈱が、駐車場は日本パーキング㈱が担います。",
+      "products": [
+        "不動産の仲介・コンサルティング",
+        "買取再販",
+        "駐車場の開発・運営"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他事業",
+      "shortName": "その他",
+      "description": "報告セグメントに含まれない事業の区分で、体験型施設運営、ファンド、海外などの事業を行います。2025年12月期の外部顧客への営業収益は25,814百万円（前期は20,926百万円）です。ホテル・温浴施設・ゴルフ場の運営、不動産ファンドの組成・運用、米国・豪州・タイ・中国などでの不動産開発、不動産の鑑定評価などが含まれます。",
+      "products": [
+        "ホテル・温浴施設・ゴルフ場の運営",
+        "不動産ファンドの組成・運用",
+        "海外の不動産開発",
+        "不動産の鑑定評価",
+        "デジタルサイネージの運営"
+      ],
+      "children": [
+        {
+          "id": "experience-facilities",
+          "name": "体験型施設運営事業（旧クオリティライフ事業）",
+          "shortName": "体験型施設運営",
+          "description": "東京建物リゾート㈱がホテル、温浴施設及びゴルフ場の運営を行い、当社などがゴルフ場を運営しています。この区分の金額は単独では印字されていません。",
+          "products": [
+            "ホテル",
+            "温浴施設",
+            "ゴルフ場"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "fund",
+          "name": "ファンド事業（旧資産運用事業）",
+          "shortName": "ファンド",
+          "description": "東京建物不動産投資顧問㈱が不動産投資のコンサルティングと不動産ファンドの組成・運用を行い、㈱東京建物リアルティ・インベストメント・マネジメントが投資法人の資産運用を行います。この区分の金額は単独では印字されていません。",
+          "products": [
+            "不動産ファンドの組成・運用",
+            "投資法人の資産運用"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "overseas",
+          "name": "海外事業",
+          "shortName": "海外",
+          "description": "米国、豪州、タイ及び中国等で不動産の開発等を行う区分です。連結子会社5社と持分法適用関連会社37社を通じて行い、中国では不動産コンサルティングも行います。この区分の金額は単独では印字されていません。",
+          "products": [
+            "海外の不動産開発",
+            "不動産コンサルティング"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "オフィスビルやマンションなどを開発・販売・賃貸・運営し、仲介や駐車場の運営なども行う会社です。",
+    "products": [
+      "オフィスビル・商業施設・物流施設",
+      "分譲マンション（Brillia）",
+      "不動産の仲介・買取再販",
+      "駐車場",
+      "ホテル・ゴルフ場",
+      "不動産ファンドの組成・運用"
+    ],
+    "customers": [
+      "ビルのテナント企業",
+      "マンションの購入者・入居者",
+      "不動産の売り手・買い手",
+      "駐車場の利用者"
+    ],
+    "revenueSources": [
+      "ビル事業の営業収益（2025年12月期は外部顧客への営業収益220,177百万円）",
+      "住宅事業の営業収益（同165,139百万円）",
+      "アセットサービス事業の営業収益（同63,454百万円）",
+      "その他事業の営業収益（同25,814百万円）"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京建物グループ",
+        "description": "当社と連結子会社44社、持分法適用関連会社41社などで、ビル・住宅・アセットサービスなどの事業を行います。"
+      },
+      {
+        "kind": "offering",
+        "title": "つくって届けるもの",
+        "description": "オフィスビルや商業施設、物流施設、マンションを開発します。そのほか不動産の仲介、駐車場、ホテルやゴルフ場の運営、不動産ファンドの運用、海外の不動産開発も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "届け先",
+        "description": "ビルを借りる企業、マンションを買う人や借りる人、不動産を売り買いする人、駐車場を使う人に届けます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上のもと",
+        "description": "2025年12月期の営業収益は474,586百万円で、前期の463,724百万円から増えました。ビル事業が最も大きく、住宅事業がそれに続きます。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の出方",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は58,879百万円で、前期の65,882百万円から減りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +197,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 427661000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 5648,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +217,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 456838000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 5878,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +237,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 508035000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 4661,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +257,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 547524000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 4925,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +277,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 603137000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 5035,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +285,176 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1896,
+      "title": "初代安田善次郎らの発起により設立",
+      "description": "1896年10月1日に設立され、一般不動産業務と不動産担保貸付を主要業務として営業を始めました。同月には、住宅ローンの原型となった割賦販売方式での不動産売買も始めています。",
+      "significance": "不動産の割賦販売など、早い時期から新しい売り方に取り組んだ会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1907,
+      "title": "株式取引所に株式を上場",
+      "description": "1907年9月に㈱東京株式取引所に株式を上場しました。その後、1949年5月に東京証券取引所に株式を再上場しています。",
+      "significance": "戦前から株式を公開していた、歴史の長い上場企業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1945,
+      "title": "終戦で在外資産を失う",
+      "description": "横浜支店や、1903年に開いた天津支店など海外にも拠点を持っていましたが、終戦により在外資産のすべてを失いました（天津支店は1945年8月に廃止）。戦後はビル賃貸事業を中心に、住宅分譲、仲介、鑑定、コンサルティングへと事業を広げ、総合不動産会社としての地歩を固めたと説明しています。",
+      "significance": "海外拠点を失ったあと国内の事業を広げ、現在の総合不動産会社の形につながりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "旧東京建物本社ビル新館が竣工し、戦後のビル事業を本格化",
+      "description": "1958年3月に旧東京建物本社ビルの新館増築工事が竣工し、戦後のビル事業が本格化しました。1963年8月には府中市中河原で住宅地開発を始め、戦後の住宅事業を本格化しています。",
+      "significance": "現在の2本柱であるビル事業と住宅事業が、この時期に戦後の事業として動き出しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "藤沢市でマンション分譲事業を開始",
+      "description": "1968年9月に藤沢市でマンション分譲事業を始めました。2003年4月にはマンションのブランドを「Brillia（ブリリア）」に統一しています。",
+      "significance": "今のマンションブランド「Brillia」につながる事業の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "SPC法の国内第1号登録を取得",
+      "description": "1998年11月にSPC法（現在の資産流動化法）の国内第1号登録を取得しました。2000年4月には㈱東京リアルティ・インベストメント・マネジメント（現 ㈱東京建物リアルティ・インベストメント・マネジメント）を設立しています。",
+      "significance": "不動産を使った資金調達や運用の仕組みを、国内でいち早く取り入れました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "日本パーキング㈱の株式を取得",
+      "description": "2011年2月に日本パーキング㈱の株式を取得して連結子会社とし、同年6月に完全子会社としました。現在はアセットサービス事業で駐車場の開発・運営を担う会社です。",
+      "significance": "駐車場事業が、ビルや住宅に並ぶ事業の一つになりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "「東京スクエアガーデン」が竣工",
+      "description": "2013年3月に「東京スクエアガーデン」が竣工しました。同年3月には東京不動産管理㈱と東京ビルサービス㈱（旧 東京不動産清掃㈱）を連結子会社としています。2014年4月には「大手町タワー」が竣工しました。",
+      "significance": "大規模なオフィスビルの竣工が続き、ビル事業の中心が都心の大型ビルになりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "Tokyo Tatemono Asia Pte. Ltd.を設立",
+      "description": "2014年2月にシンガポールにTokyo Tatemono Asia Pte. Ltd.を設立しました。その後、2023年10月にTokyo Tatemono US Ltd.、2024年2月にTokyo Tatemono (Thailand) Ltd.を設立しています。",
+      "significance": "海外事業の拠点が、アジアから米国・タイへと増えていきました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "本社事務所を東京建物八重洲ビルに移転",
+      "description": "2020年5月に東京建物八重洲ビルに本社事務所を移転しました。同じ月には「Hareza Tower（ハレザタワー）」が竣工しています。",
+      "significance": "自社開発のビルに本社を置いています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "エキスパートオフィス㈱の株式を取得",
+      "description": "2021年8月にエキスパートオフィス㈱の株式を取得して連結子会社とし、2022年1月に完全子会社としました。サービスオフィス・コワーキングスペースの運営を行う会社です。",
+      "significance": "オフィスの貸し方に、サービスオフィスという形が加わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "「ONE DOJIMA PROJECT」が竣工",
+      "description": "2024年1月に、「フォーシーズンズホテル大阪」と「Brillia Tower 堂島」を一体的に開発した「ONE DOJIMA PROJECT」が竣工しました。",
+      "significance": "ホテルと分譲マンションを一体で開発した、大阪での大型プロジェクトです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "WonderScape㈱を設立",
+      "description": "2025年6月にWonderScape㈱を設立しました。都市空間における大型デジタルサイネージの企画・開発・運営等を行う連結子会社です。",
+      "significance": "ビルや街づくりの経験を生かした、新しい分野の事業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sompo-holdings",
+      "relationship": "customer",
+      "description": "SOMPOホールディングス㈱は、当社グループ所有オフィスビルのテナントです。当社は同社の株式を保有し、高齢者向け施設の開発・運営等に関する業務提携も実施しています（2025年12月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "taisei",
+      "relationship": "business-partner",
+      "description": "大成建設㈱は、当社グループ所有オフィスビルのテナントで、ビル事業での不動産取引、共同事業、建設・設備取引があります（2025年12月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "space-market",
+      "relationship": "business-partner",
+      "description": "㈱スペースマーケットとは、スペースシェア事業等に関する業務提携を実施しています（2025年12月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "global-kids",
+      "relationship": "business-partner",
+      "description": "㈱グローバルキッズCOMPANYとは、保育施設の開発・運営等に関する業務提携を実施しています（2025年12月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,11 +462,13 @@
       "publisher": "東京建物株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XSKF.pdf",
       "publishedAt": "2026-03-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XSKF",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03"
 }

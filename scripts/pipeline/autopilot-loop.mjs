@@ -67,31 +67,42 @@ for (let n = from; n <= to; n++) {
   autopilot(["enqueue", "--file", `pipeline/autopilot/${name}`]);
   log(`${name}: ${ids.length} 社`);
 
-  let stalled = 0;
-  for (;;) {
-    const spent = ids.reduce((s, id) => s + (record(id)?.cost?.usd ?? 0), 0);
-    const left = batchBudget - spent;
-    if (left < 3) {
-      log(`${name}: 上限 $${batchBudget} に達した（$${spent.toFixed(2)}）。停止`);
-      process.exit(1);
+  // A run or approval just after midnight reads the day's EDINET index before it is final and holds the company
+  // (Batch 4, 2026-11-03: 41 held). Those are retried once the nightly batch is done, not left held.
+  for (let pass = 0; pass < 2; pass++) {
+    let stalled = 0;
+    for (;;) {
+      const spent = ids.reduce((s, id) => s + (record(id)?.cost?.usd ?? 0), 0);
+      const left = batchBudget - spent;
+      if (left < 3) {
+        log(`${name}: 上限 $${batchBudget} に達した（$${spent.toFixed(2)}）。停止`);
+        process.exit(1);
+      }
+      const before = JSON.stringify(tally(ids));
+      autopilot(["run", "--ids", ids.join(","), "--limit", String(ids.length), "--budget", "3", "--total-budget", String(Math.floor(left))]);
+      const paused = ids.map(record).filter((r) => r?.status === "paused");
+      log(`${name}: ${JSON.stringify(tally(ids))}`);
+      if (paused.length > 0) {
+        const ms = waitFor(paused[0].pause?.hint ?? "");
+        log(`使用上限。${Math.round(ms / 60_000)} 分後に再開`);
+        await sleep(ms);
+        for (const r of paused) autopilot(["retry", r.id]);
+        continue;
+      }
+      if (JSON.stringify(tally(ids)) === before && ++stalled >= 2) break;
+      if (!ids.some((id) => ["queued", "running", "prechecked"].includes(record(id)?.status ?? "queued"))) break;
     }
-    const before = JSON.stringify(tally(ids));
-    autopilot(["run", "--ids", ids.join(","), "--limit", String(ids.length), "--budget", "3", "--total-budget", String(Math.floor(left))]);
-    const paused = ids.map(record).filter((r) => r?.status === "paused");
-    log(`${name}: ${JSON.stringify(tally(ids))}`);
-    if (paused.length > 0) {
-      const ms = waitFor(paused[0].pause?.hint ?? "");
-      log(`使用上限。${Math.round(ms / 60_000)} 分後に再開`);
-      await sleep(ms);
-      for (const r of paused) autopilot(["retry", r.id]);
-      continue;
-    }
-    if (JSON.stringify(tally(ids)) === before && ++stalled >= 2) break;
-    if (!ids.some((id) => ["queued", "running", "prechecked"].includes(record(id)?.status ?? "queued"))) break;
-  }
 
-  const approved = autopilot(["approve-ready", "--include-flagged"]);
-  log(approved.out.split("\n").filter((l) => /社を登録|登録できません/.test(l)).join(" / ") || "登録なし");
+    const approved = autopilot(["approve-ready", "--include-flagged"]);
+    log(approved.out.split("\n").filter((l) => /社を登録|登録できません/.test(l)).join(" / ") || "登録なし");
+    const notFinal = ids.filter((id) => record(id)?.status === "held" && /not-final/.test(String(record(id)?.holds?.at(-1)?.reason ?? "")));
+    if (notFinal.length === 0) break;
+    const jstHour = new Date(Date.now() + 9 * 3600_000).getUTCHours();
+    const ms = jstHour < 8 ? waitFor("8:05am") : 0;
+    log(`確定前の日次索引で保留 ${notFinal.length} 社。${Math.round(ms / 60_000)} 分後に再試行`);
+    await sleep(ms);
+    for (const id of notFinal) autopilot(["retry", id]);
+  }
   const published = sh("npm", ["run", "content:publish"]);
   if (!published.ok) {
     log(`公開に失敗。停止:\n${published.out.slice(-1500)}`);

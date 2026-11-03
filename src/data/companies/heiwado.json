@@ -4,15 +4,113 @@
   "name": "平和堂",
   "officialName": "株式会社  平和堂",
   "nameEn": "HEIWADO CO.,LTD.",
-  "description": null,
+  "shortNameEn": "HEIWADO",
+  "description": "滋賀県を中心に総合スーパーを運営し、食料品や衣料品、日用雑貨を地域のお客さまに売る会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "retail",
+      "name": "小売事業",
+      "shortName": "小売",
+      "description": "食料品・衣料品・日用雑貨品などを売る総合スーパーを運営する事業です。中国で百貨店を営む平和堂（中国）有限公司と、書籍販売とフィットネスを行うダイレクト・ショップもここに入ります。2026年2月期の外部顧客への売上高は432,348百万円で、グループの大半を占めます。",
+      "customers": [
+        "店舗に来店するお客さま"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】／【セグメント情報】",
+      "children": []
+    },
+    {
+      "id": "retail-related",
+      "name": "小売周辺事業",
+      "shortName": "小売周辺",
+      "description": "店舗の賃貸、商業施設の運営管理、ビルメンテナンスなどを行う事業です。ベストーネは平和堂が売る米飯・惣菜を作り、精肉・鮮魚を加工します。ナショナルメンテナンスはビル管理、武生駅北パーキングは店舗駐車場の管理を担います。2026年2月期の外部顧客への売上高は6,867百万円です。",
+      "customers": [
+        "平和堂（店舗への商品供給）",
+        "商業施設のテナント・利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】／【関係会社の状況】／【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他事業",
+      "shortName": "その他",
+      "description": "報告セグメントに含まれない区分で、レストランなどの外食事業（ファイブスター、シー・オー・エム）と、中国での不動産開発・販売・ビルメンテナンスを含みます。2026年2月期の外部顧客への売上高は16,793百万円で、そのうち外食事業は16,583百万円です。",
+      "customers": [
+        "外食店に来店するお客さま"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】／【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "総合スーパーで商品を売った代金と、店舗賃貸などのサービス収入を収益とする小売の会社です。",
+    "products": [
+      "食料品",
+      "衣料品",
+      "日用雑貨品",
+      "惣菜・米飯",
+      "外食サービス"
+    ],
+    "customers": [
+      "店舗に来店するお客さま",
+      "店舗に入るテナント"
+    ],
+    "revenueSources": [
+      "物販売上",
+      "サービス収入",
+      "不動産賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "平和堂グループ",
+        "description": "平和堂と子会社12社で、総合スーパーの運営と、その周辺の業務を行います。"
+      },
+      {
+        "kind": "offering",
+        "title": "売る商品とサービス",
+        "description": "食料品・衣料品・日用雑貨品を売り、店舗の賃貸や外食サービスも提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "お客さま",
+        "description": "店舗に来るお客さまと、店舗に入るテナントです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "収益の入り方",
+        "description": "2026年2月期は物販売上417,976百万円、サービス収入20,915百万円、その他の収益17,117百万円で、営業収益は4,560億10百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益",
+        "description": "親会社株主に帰属する当期純利益は94億9百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】／【セグメント情報】／【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,7 +125,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 177332000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5324,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +145,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 182297000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5053,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +165,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 188266000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4783,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +185,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 192026000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4735,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +205,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 197962000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4674,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,20 +213,155 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1953,
+      "title": "滋賀県彦根市で「夏原商店」として創業",
+      "description": "1953年12月、滋賀県彦根市で夏原平次郎が経営する「夏原商店」の名称で、靴・鞄・履物の販売を目的に創業しました。",
+      "significance": "当社の事業の始まりとなった出来事で、履物の販売から出発しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "株式会社平和堂を設立",
+      "description": "業容の拡大のため、1957年6月に彦根市で株式会社平和堂を設立しました。",
+      "significance": "個人の商店が会社組織になった節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "食料品の販売を開始",
+      "description": "1966年11月に食料品の販売を始めました。",
+      "significance": "現在の総合スーパーの中心である食料品の取り扱いが始まった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "株式額面変更のため合併し、流通センターを開設",
+      "description": "1976年2月、株式額面変更のため長浜市の株式会社平和堂と合併し、本店を彦根市小泉町に移しました。同年11月には物流の合理化を目的に流通センターを開設しました。",
+      "significance": "店舗への商品供給を支える物流拠点づくりの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "大阪証券取引所市場第二部などに上場",
+      "description": "1981年10月に株式を大阪証券取引所市場第二部と京都証券取引所に上場しました。1984年8月には大阪証券取引所市場第一部、1990年11月には東京証券取引所市場第一部に上場しました。",
+      "significance": "株式公開を経て、全国の取引所に上場した流れを示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "ポイントカード「HOPカード」を導入",
+      "description": "1989年9月に平和堂オリジナルのポイントカード「HOPカード」を導入しました。",
+      "significance": "後の電子マネー「HOPマネー」やアプリ「HOPアプリ」につながる、自社の会員の仕組みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "中国湖南省長沙市に合弁会社を設立",
+      "description": "1995年3月、中国湖南省長沙市に合弁会社「湖南平和堂実業有限公司」を設立しました。",
+      "significance": "海外での百貨店事業につながる出来事です。現在、中国の百貨店は子会社の平和堂（中国）有限公司が運営しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】【事業の内容】"
+    },
+    {
+      "year": 2005,
+      "title": "ヤナゲン及びヤナゲンストアーを子会社とする",
+      "description": "2005年9月に株式会社ヤナゲンと株式会社ヤナゲンストアーを子会社としました。2012年2月には株式会社丸善も子会社としています。",
+      "significance": "子会社を増やして店舗網を広げた時期の出来事です。これらの子会社は後に平和堂に合併されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "電子マネー「HOPマネー」を導入",
+      "description": "2016年7月に平和堂オリジナルの電子マネー「HOPマネー」を導入しました。",
+      "significance": "自社の決済手段を持ち、お客さまとの接点を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場区分になった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "「HOPアプリ」導入、丸善と合併",
+      "description": "2024年7月に平和堂オリジナルアプリ「HOPアプリ」を導入し、同年8月に株式会社丸善と合併しました。",
+      "significance": "アプリで会員向けの情報発信を進めるとともに、子会社の整理を始めた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ヤナゲン・エールと合併し、新店を開設",
+      "description": "2025年5月に株式会社ヤナゲン、同年8月に株式会社エールと合併しました。同年4月から12月にかけて、フレンドマートの新設や建替えなど、店舗の開設を続けました。2026年2月現在の店舗数は170店舗です。",
+      "significance": "子会社を取り込んで平和堂本体に集約するとともに、店舗の新設・建替えを進めた直近の動きです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第69期(2025/02/21－2026/02/20)",
-      "publisher": "株式会社  平和堂",
+      "publisher": "株式会社平和堂",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y2FB.pdf",
       "publishedAt": "2026-05-11",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y2FB",
+      "asOf": "2026-02-20",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中長期ビジョンとして「地域密着ライフスタイル総合（創造）企業」を掲げ、第五次中期経営計画（2024年度〜2026年度）の重点戦略に、子育て世代ニーズへの対応、ドミナント戦略をベースとしたHOP経済圏の拡大、コスト構造改革を挙げています。",
+        "asOf": "2026-05-11",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    }
+  }
 }

@@ -1,10 +1,11 @@
 {
   "id": "kraftia",
   "code": "1959",
-  "name": "クラフティア(旧会社名九電工)",
+  "name": "クラフティア",
   "officialName": "株式会社クラフティア (旧会社名　株式会社九電工)",
   "nameEn": "KRAFTIA　CORPORATION (旧英訳名　KYUDENKO　CORPORATION) （注）2025年6月26日開催の第97期定時株主総会の決議により、　　　 2025年10月1日から会社名を上記のように変更している。",
-  "description": null,
+  "shortNameEn": "KRAFTIA",
+  "description": "九州を地盤に、電気工事と空調管工事の設計・施工を行う設備工事会社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -14,8 +15,141 @@
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "facility-construction",
+      "name": "設備工事業",
+      "shortName": "設備工事",
+      "description": "配電線工事・屋内配線工事・電気通信工事などの電気工事と、空気調和・冷暖房・給排水衛生設備・水処理工事などの空調管工事を、設計から施工まで行う事業です。唯一の報告セグメントで、2026年3月期の外部顧客への売上高は457,524百万円（前期454,373百万円）です。九州電力とその子会社から配電線工事を受注して施工するほか、グループ各社へ工事の一部を外注しています。",
+      "products": [
+        "配電線工事",
+        "屋内配線工事",
+        "電気通信工事",
+        "空気調和・冷暖房設備工事",
+        "給排水衛生設備工事",
+        "水処理工事",
+        "設備の保守・点検・メンテナンス"
+      ],
+      "customers": [
+        "九州電力とその子会社",
+        "民間・公共の建築主"
+      ],
+      "children": [
+        {
+          "id": "electrical-work",
+          "name": "電気工事",
+          "description": "配電線工事・屋内配線工事・電気通信工事などです。配電線工事は、その他の関係会社である九州電力と、同社の子会社の九州電力送配電、九電送配サービスから、当社と子会社の明光社が受注して施工しています。配電線工事以外の電気工事全般は当社が受注し、一部をグループ各社へ外注しています。金額は区分ごとには開示されていません。",
+          "products": [
+            "配電線工事",
+            "屋内配線工事",
+            "電気通信工事"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "air-conditioning-piping-work",
+          "name": "空調管工事",
+          "description": "空気調和・冷暖房・給排水衛生設備・水処理工事などです。空調管工事全般を当社が受注して施工し、一部をグループ各社へ外注しています。金額は区分ごとには開示されていません。",
+          "products": [
+            "空気調和・冷暖房設備工事",
+            "給排水衛生設備工事",
+            "水処理工事"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業の区分です。2026年3月期の外部顧客への売上高は18,598百万円（前期19,580百万円）です。電気工事・空調管工事に関連する材料・機器の販売、不動産、再生可能エネルギー発電、人材派遣、ソフト開発、環境分析・測定、医療関連、印刷、ビジネスホテル、ゴルフ場、商業施設の企画・運営などを含みます。事業ごとの金額は印字されていません。",
+      "products": [
+        "工事用の材料・機器の販売",
+        "不動産の販売・賃貸・管理",
+        "再生可能エネルギー発電",
+        "人材派遣",
+        "ソフトウエア開発",
+        "環境分析・測定",
+        "遠隔画像診断支援",
+        "印刷・製本",
+        "ビジネスホテル経営",
+        "ゴルフ場経営",
+        "商業施設の企画・運営"
+      ],
+      "customers": [
+        "グループ各社",
+        "不動産・宿泊・ゴルフ場などの利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "電気工事と空調管工事を設計から施工まで請け負い、工事代金を売上にする設備工事会社です。",
+    "products": [
+      "配電線工事",
+      "屋内配線工事",
+      "電気通信工事",
+      "空調・給排水衛生・水処理の管工事"
+    ],
+    "customers": [
+      "九州電力とその子会社",
+      "民間・公共の建築主"
+    ],
+    "revenueSources": [
+      "電気工事・空調管工事の請負代金",
+      "材料・機器の販売、不動産、再生可能エネルギー発電などその他の事業"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "クラフティアグループ",
+        "description": "当社と子会社63社、関連会社51社で、設備工事業を中心に事業を行っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "電気工事・空調管工事",
+        "description": "配電線・屋内配線・電気通信などの電気工事と、空調・給排水衛生・水処理などの空調管工事を設計・施工します。"
+      },
+      {
+        "kind": "customer",
+        "title": "電力会社と建築主",
+        "description": "九州電力とその子会社の配電線工事を受注するほか、配電線以外の電気工事・空調管工事も受注します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "工事の請負代金",
+        "description": "2026年3月期の売上高は476,123百万円で、うち設備工事業の外部顧客への売上高が457,524百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は40,053百万円（前期28,883百万円）でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -30,7 +164,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 241194000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10425,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 263017000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10504,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -70,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 291125000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10572,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 312152000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10828,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,7 +244,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 351644000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 11122,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,20 +252,116 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1944,
+      "title": "九州電気工事株式会社を設立",
+      "description": "1944年12月に、電気工事業整備要綱にもとづき、九州の主要電気工事業者13社が統合して、九州電気工事株式会社を設立しました。本社は福岡市に置きました。",
+      "significance": "現在のクラフティアの出発点です。翌1945年にも2回、他の工事業者を統合しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "九州配電と配電工事委託契約を締結",
+      "description": "1947年6月に、九州配電株式会社（現、九州電力株式会社）と配電工事委託契約を結びました。",
+      "significance": "九州電力は、2026年3月31日現在で当社の議決権の22.6％を直接保有するその他の関係会社で、配電線工事は今も事業の柱の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "空気調和・冷暖房・管工事の営業を開始",
+      "description": "1964年7月に、空気調和・冷暖房・管工事の営業を始めました。",
+      "significance": "電気工事に加えて空調管工事を手がけるようになった出来事です。1971年には水処理工事、1981年には公共下水道工事の営業も始めています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1968年11月に大阪証券取引所市場第二部と福岡証券取引所市場に上場し、1971年11月に東京証券取引所市場第二部に上場しました。1972年9月には東京・大阪の市場第一部へ指定替え上場しました。",
+      "significance": "九州の工事会社から、全国の取引所に上場する会社へ広がった時期です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "株式会社九電工に商号変更",
+      "description": "1989年12月に、九州電気工事株式会社から株式会社九電工へ商号を変更しました。",
+      "significance": "2025年10月に株式会社クラフティアへ変わるまで使われた社名です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "シンガポールの工事会社の株式を一部取得",
+      "description": "2013年5月に、シンガポールにあるASIA PROJECTS ENGINEERING PTE. LTD.の株式の一部を取得しました。同社は現在、連結子会社です。",
+      "significance": "沿革に載る最初の海外の工事会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "セントラル総合開発と資本業務提携契約を締結",
+      "description": "2021年6月に、セントラル総合開発株式会社（現、持分法適用関連会社）と資本業務提携契約を結びました。同年9月には東京都の中央理化工業株式会社の株式を取得しました（現、連結子会社）。",
+      "significance": "不動産事業と設備の保守事業を広げる動きです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行、監査等委員会設置会社へ",
+      "description": "2022年4月に、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。同年6月には監査役会設置会社から監査等委員会設置会社へ移行しました。",
+      "significance": "市場区分の再編と、会社の機関設計の変更が続いた年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "本社を移転し、株式会社クラフティアに商号変更",
+      "description": "2025年5月に、本社を福岡市中央区天神一丁目のONE FUKUOKA BLDG.14階へ移転しました。同年10月1日に、株式会社クラフティアへ商号を変更しました。英訳名もKRAFTIA CORPORATIONになりました。",
+      "significance": "2025年6月26日の第97期定時株主総会の決議にもとづく商号変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第98期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社クラフティア (旧会社名　株式会社九電工)",
+      "publisher": "株式会社クラフティア",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI0L.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YI0L",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: financialNotes の年度「undefined」が5年表にありません"
+    ]
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-03"
 }

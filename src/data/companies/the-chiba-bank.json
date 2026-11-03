@@ -4,15 +4,319 @@
   "name": "千葉銀行",
   "officialName": "株式会社千葉銀行",
   "nameEn": "The Chiba Bank, Ltd.",
-  "description": null,
+  "shortNameEn": "Chiba Bank",
+  "description": "千葉市に本店を置き、地域の皆さまに幅広い金融商品・サービスを提供する銀行です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "banking",
+      "name": "銀行業務（千葉銀行本体）",
+      "shortName": "銀行業務",
+      "description": "千葉銀行が、地域の皆さまに幅広い金融商品・サービスを提供する中心の事業です。国内には本支店164、出張所14、特別出張所5、両替出張所3があり、海外には支店4と駐在員事務所2があります。",
+      "products": [
+        "金融商品・サービス",
+        "外国為替業務",
+        "信託業務"
+      ],
+      "customers": [
+        "地域の皆さま"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "securities-asset-management",
+      "name": "証券・資産運用・ベンチャーキャピタル",
+      "description": "グループの証券会社、投資運用会社、ベンチャーキャピタルが担当する分野です。証券業務、投資運用・投資助言業務、ベンチャーキャピタル業務を行います。",
+      "children": [
+        {
+          "id": "chibagin-securities",
+          "name": "ちばぎん証券",
+          "description": "証券業務を行う完全子会社です（議決権100.00％）。",
+          "products": [
+            "証券業務"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "chibagin-asset-management",
+          "name": "ちばぎんアセットマネジメント",
+          "description": "投資運用・投資助言業務を行う持分法適用子会社です（議決権70.00％）。",
+          "products": [
+            "投資運用",
+            "投資助言"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "chibagin-capital",
+          "name": "ちばぎんキャピタル",
+          "description": "ベンチャーキャピタル業務を行う持分法適用子会社です（議決権100.00％）。",
+          "products": [
+            "ベンチャーキャピタル"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "credit-payment-leasing",
+      "name": "保証・カード・リース・債権回収",
+      "description": "信用保証、クレジットカード、リース、債権管理回収を行うグループ会社の分野です。",
+      "children": [
+        {
+          "id": "chibagin-guarantee",
+          "name": "ちばぎん保証",
+          "description": "信用保証と集金代行業務を行う連結子会社です（議決権100.00％）。",
+          "products": [
+            "信用保証",
+            "集金代行"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "chibagin-card",
+          "name": "ちばぎんカード",
+          "description": "クレジットカードと信用保証の業務を行う連結子会社です（議決権100.00％）。2024年4月1日にちばぎんジェーシービーカードを吸収合併しました。",
+          "products": [
+            "クレジットカード",
+            "信用保証"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "chibagin-lease",
+          "name": "ちばぎんリース",
+          "description": "リース業務を行う連結子会社です（議決権100.00％）。",
+          "products": [
+            "リース"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "chiba-credit-collection",
+          "name": "ちば債権回収",
+          "description": "債権管理回収業務を行う連結子会社です（議決権100.00％）。",
+          "products": [
+            "債権管理回収"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "research-digital-regional",
+      "name": "調査・コンサルティング、デジタル、地域商社",
+      "description": "調査研究やコンサルティング、IT・AI・フィンテック、地域商社の分野を担うグループ会社です。",
+      "children": [
+        {
+          "id": "chibagin-research",
+          "name": "ちばぎん総合研究所",
+          "description": "調査・研究とコンサルティング業務を行う持分法適用子会社です（議決権100.00％）。",
+          "products": [
+            "調査・研究",
+            "コンサルティング"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "chibagin-computer-service",
+          "name": "ちばぎんコンピューターサービス",
+          "description": "ソフトウェアの開発と情報処理受託を行う持分法適用子会社です（議決権100.00％）。",
+          "products": [
+            "ソフトウェア開発",
+            "情報処理受託"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "edge-technology",
+          "name": "エッジテクノロジー",
+          "description": "AIアルゴリズム事業を行う連結子会社です（議決権100.00％）。2024年10月30日に株式取得でグループ会社になりました。",
+          "products": [
+            "AIアルゴリズム"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "ti-innovation-center",
+          "name": "T＆Iイノベーションセンター",
+          "description": "フィンテックの調査・研究と、金融サービスの企画・開発を行う持分法適用子会社です（議決権40.00％）。",
+          "products": [
+            "フィンテックの調査・研究",
+            "金融サービスの企画・開発"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "chibagin-shoten",
+          "name": "ちばぎん商店",
+          "description": "地域商社の業務を行う持分法適用子会社です（議決権100.00％）。",
+          "products": [
+            "地域商社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "operations-support",
+      "name": "店舗保守・事務・人材などの業務支援",
+      "description": "グループの業務を支える会社の分野です。店舗保守管理、経理総務の受託と職業紹介、事務代行を行います。",
+      "children": [
+        {
+          "id": "somu",
+          "name": "総武",
+          "description": "店舗保守管理業務を行う連結子会社です（議決権100.00％）。当行へ建物の一部を貸しています。",
+          "products": [
+            "店舗保守管理"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "chibagin-career-service",
+          "name": "ちばぎんキャリアサービス",
+          "description": "経理総務の受託業務と職業紹介業務を行う連結子会社です（議決権100.00％）。",
+          "products": [
+            "経理総務受託",
+            "職業紹介"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "chibagin-heartful",
+          "name": "ちばぎんハートフル",
+          "description": "事務代行業務を行う連結子会社です（議決権100.00％）。",
+          "products": [
+            "事務代行"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "銀行業務と、証券・保証・カード・リースなどのグループ会社の業務で収益を得る銀行グループです。",
+    "products": [
+      "金融商品・サービス",
+      "証券業務",
+      "信用保証",
+      "クレジットカード",
+      "リース"
+    ],
+    "customers": [
+      "地域の皆さま"
+    ],
+    "revenueSources": [
+      "銀行業務の収益",
+      "グループ会社の業務の収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "千葉銀行とグループ15社",
+        "description": "千葉銀行と子会社15社などで構成され、銀行業の単一セグメントとして事業を行います。"
+      },
+      {
+        "kind": "offering",
+        "title": "金融商品・サービス",
+        "description": "地域の皆さまに幅広い金融商品・サービスを提供します。グループ会社が証券、保証、カード、リース、投資運用などを担当します。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域の皆さま",
+        "description": "国内の本支店などの拠点と、海外の支店・駐在員事務所を通じて顧客に接します。特定の顧客への依存はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "経常収益",
+        "description": "売上高に代えて経常収益を使います。日本の拠点の経常収益が大部分を占めます。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期は、経常収益と当期純利益がともに前期より増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +331,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 1059091000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 4292,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +351,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 1061115000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 4164,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +371,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 1181503000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 4142,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +391,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 1145190000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 4280,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +411,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 1257300000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 4377,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +419,108 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1943,
+      "title": "3行の合併で千葉銀行が設立される",
+      "description": "1943年3月31日、千葉合同銀行、第九十八銀行、小見川農商銀行の3行が合併し、株式会社千葉銀行が設立されました。",
+      "significance": "現在の千葉銀行の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "外国為替業務を開始",
+      "description": "1963年4月1日に外国為替業務の取扱いを始めました。",
+      "significance": "海外との取引に対応する業務の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "東京証券取引所に上場",
+      "description": "1970年10月1日に東京証券取引所市場第二部へ株式を上場し、1971年8月2日に市場第一部に指定されました。",
+      "significance": "株式を広く公開する会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "ニューヨーク支店を開設",
+      "description": "1987年4月20日にニューヨーク支店を開きました。その後、1989年に香港支店、1991年にロンドン支店を開設しました。",
+      "significance": "海外拠点づくりの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "中央証券をグループ会社化",
+      "description": "1998年3月31日に中央証券の株式を取得してグループ会社にしました。同社は2011年1月1日にちばぎん証券へ社名を変更しました。",
+      "significance": "証券業務をグループの事業に加えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "信託業務を開始",
+      "description": "2006年6月8日に信託業務の取扱いを始めました。",
+      "significance": "銀行が扱う業務の幅が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "ちばぎん証券を完全子会社化",
+      "description": "2011年10月1日に株式交換でちばぎん証券を完全子会社にしました。",
+      "significance": "証券会社との結びつきが強まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "カード会社の合併とエッジテクノロジーの取得",
+      "description": "2024年4月1日にちばぎんカードがちばぎんジェーシービーカードを吸収合併しました。2024年10月30日にはエッジテクノロジーの株式を取得し、グループ会社にしました。",
+      "significance": "カード事業の整理と、AIアルゴリズム事業のグループ入りが同じ年に進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "シンガポール支店を開設",
+      "description": "2025年1月7日にシンガポール支店を開きました。2025年3月31日には、同地のシンガポール駐在員事務所を閉鎖しています。",
+      "significance": "同地の拠点が駐在員事務所から支店へ変わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "千葉興業銀行との経営統合契約を締結",
+      "description": "2026年3月25日の取締役会で、千葉興業銀行と共同株式移転により共同持株会社「ちばフィナンシャルグループ」を設立することを決め、同日に経営統合契約書を結びました。設立は2027年4月1日の予定で、両行の株主総会の承認と関係当局の認可等が前提です。",
+      "significance": "実現すれば、両行は共同持株会社の完全子会社になる予定です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +529,28 @@
       "publisher": "株式会社千葉銀行",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDSE.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YDSE",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "history: 千葉興業銀行との経営統合（共同持株会社ちばフィナンシャルグループの設立は2027年4月1日予定、株主総会の承認と関係当局の認可等が前提）。提出後の予定事項のため、実現の状況を確認すること。"
+    ]
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "3つの基本方針「最高の顧客体験の創造」「既存事業の質の向上」「新たな価値の提供」と、これらを支える5つの価値創出の基盤「DX」「GX」「WX」「アライアンス」「グループ・ガバナンス」を掲げ、取組みを強化するとしています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  }
 }

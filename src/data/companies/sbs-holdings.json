@@ -1,18 +1,170 @@
 {
   "id": "sbs-holdings",
   "code": "2384",
-  "name": "SBSホールディングス",
+  "name": "ＳＢＳホールディングス",
   "officialName": "SBSホールディングス株式会社",
   "nameEn": "SBS Holdings, Inc.",
-  "description": null,
+  "shortNameEn": "SBS Holdings",
+  "description": "荷主企業の物流を包括して請け負う3PL・4PLを中核とする、物流の持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "logistics",
+      "name": "物流事業",
+      "shortName": "物流",
+      "description": "荷主企業の物流業務をまとめて請け負う3PL・4PLを軸に、食品の三温度帯物流、トラック輸送、即配サービス、国際物流などを手がけています。2025年12月期の外部顧客への売上高は4,602億33百万円で、グループ全体の売上高の大半を占めます。",
+      "customers": [
+        "荷主である企業（B2B）"
+      ],
+      "products": [
+        "3PL・4PL",
+        "三温度帯の食品物流",
+        "運送",
+        "即配サービス",
+        "国際物流",
+        "物流コンサルティング"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】(1) 物流事業",
+      "children": [
+        {
+          "id": "3pl-4pl",
+          "name": "3PL・4PL事業",
+          "description": "荷主企業に物流改革を提案し、物流業務を包括して受託します。各物流業者と連携して運営することもあります。個別の売上高は開示されていません。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】(1) 物流事業"
+        },
+        {
+          "id": "food-logistics",
+          "name": "食品物流事業",
+          "description": "全国のネットワークを使い、冷凍・冷蔵・常温の三温度帯で食品を運びます。個別の売上高は開示されていません。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】(1) 物流事業"
+        },
+        {
+          "id": "transport",
+          "name": "運送事業",
+          "description": "顧客企業の倉庫や工場から、材料・製品などを運送・配送します。個別の売上高は開示されていません。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】(1) 物流事業"
+        },
+        {
+          "id": "express-delivery",
+          "name": "即配サービス事業",
+          "description": "主に小型の貨物を即日で配達します。個別の売上高は開示されていません。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】(1) 物流事業"
+        },
+        {
+          "id": "international-logistics",
+          "name": "国際物流・物流コンサルティング事業",
+          "description": "国際物流と、物流に関するコンサルティングを行っています。個別の売上高は開示されていません。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】(1) 物流事業"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "shortName": "不動産",
+      "description": "所有するオフィス・住居・倉庫などの賃貸と、物流施設の開発・販売を行っています。2025年12月期の外部顧客への売上高は193億31百万円です。物流施設を開発して顧客の物流を受託し、のちに流動化して資金を回収する流れの一部です。",
+      "customers": [
+        "賃借人",
+        "物流施設の購入者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】(2) 不動産事業"
+    },
+    {
+      "id": "other",
+      "name": "その他事業",
+      "shortName": "その他",
+      "description": "物流センターなどで働くスタッフの派遣・紹介を行う人材事業、廃棄物の回収から再資源化までを行う環境事業、広告制作などのマーケティング事業、太陽光発電事業から成ります。2025年12月期の外部顧客への売上高は107億78百万円です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】(3) その他事業"
+    }
+  ],
+  "businessModel": {
+    "description": "荷主企業の物流業務を3PL・4PLなどで包括して請け負い、物流施設の開発・賃貸も組み合わせる持株会社です。",
+    "products": [
+      "3PL・4PL",
+      "三温度帯の食品物流",
+      "運送",
+      "即配サービス",
+      "国際物流",
+      "物流施設の開発・賃貸"
+    ],
+    "customers": [
+      "荷主である企業（B2B）"
+    ],
+    "revenueSources": [
+      "物流事業（2025年12月期の外部顧客への売上高4,602億33百万円）",
+      "不動産事業（同193億31百万円）",
+      "その他事業（同107億78百万円）"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ＳＢＳホールディングス",
+        "description": "持株会社として、グループ戦略の立案・決定とグループ会社のモニタリングを行い、共通サービスを提供しています。2025年12月31日現在、子会社69社と関連会社6社でグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "物流の包括受託と物流施設",
+        "description": "顧客企業に物流改革を提案し、物流業務を包括して受託する3PL・4PLを中心に、食品の三温度帯物流、運送、即配、国際物流を提供します。物流施設の開発・販売・賃貸も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "荷主である顧客企業",
+        "description": "主に企業間（B2B）の物流の分野で、荷主である顧客企業にサービスを提供しています。2025年12月期は、連結売上高の10％以上を占める顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "物流サービス料と不動産収益",
+        "description": "2025年12月期の売上高は4,903億44百万円で、前期比9.4％増えました。物流事業の売上高は4,602億33百万円で、新規顧客の獲得や新たに連結した会社の寄与が増加の理由として挙げられています。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は117億83百万円で、前期比22.5％増となり、過去最高でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 80707000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10689,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 92172000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10859,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 102592000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10903,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +239,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 112948000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10759,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +259,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 126553000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 11772,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,20 +267,145 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1987,
+      "title": "株式会社関東即配として設立",
+      "description": "1987年12月、東京都江東区に株式会社関東即配を設立しました。この会社が現在のＳＢＳホールディングスです。",
+      "significance": "即配サービスから始まった、グループの出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "純粋持株会社へ移行、雪印物流を傘下に",
+      "description": "2004年5月に雪印物流（現ＳＢＳフレック）の株式を取得し、2004年7月に持株会社へ移行しました。",
+      "significance": "傘下の事業会社が独立して事業を行う、現在の持株会社体制の始まりです。食品物流の事業も加わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "東急ロジスティックなどの株式を取得",
+      "description": "2005年6月に東急ロジスティック（現ＳＢＳロジコム）と関係会社2社、日本貨物急送、伊豆貨物急送の株式を取得しました。",
+      "significance": "現在も売上の大きい主要子会社の一つ、ＳＢＳロジコムがグループに加わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "商号をＳＢＳホールディングスに変更",
+      "description": "2006年4月に商号をＳＢＳホールディングス株式会社に変更し、本社を東京都墨田区太平に移しました。",
+      "significance": "現在の社名になった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "インドの国際物流会社の株式を取得",
+      "description": "2011年10月にインドの国際物流会社Atlas Logistics Pvt. Ltd.の株式を取得しました。",
+      "significance": "海外での物流事業に踏み出した出来事の一つです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "東京証券取引所市場第二部へ上場",
+      "description": "2012年12月に東京証券取引所市場第二部へ上場しました。2012年5月にはシンガポールにSBS Logistics RHQ Pte. Ltd.を設立し、東南アジアの拠点整備を進めています。",
+      "significance": "東京証券取引所への上場と、東南アジア展開の拠点づくりが同じ年に進みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第一部へ指定替え",
+      "description": "2013年12月に東京証券取引所市場第一部へ指定替えとなりました。同年6月にはブランド統一の一環として、新ロゴマークの導入や物流14社の社名変更を行いました。",
+      "significance": "グループ会社の名称をＳＢＳに統一した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "リコーロジスティクスの株式を取得",
+      "description": "2018年8月にリコーロジスティクス（現ＳＢＳネクサード）の株式を取得しました。",
+      "significance": "大手メーカーの物流を担う会社がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "東芝ロジスティクスの株式を取得",
+      "description": "2020年11月に東芝ロジスティクス（現ＳＢＳ東芝ロジスティクス）の株式を取得しました。",
+      "significance": "大手メーカー系の物流会社を相次いで迎え入れる動きの一つです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "2022年4月に東京証券取引所プライム市場へ移行しました。同年3月にはグループの本社機能を東京都墨田区から新宿区へ移しています。",
+      "significance": "現在の上場区分になった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "オランダの3PL持株会社とブリヂストン物流の株式を取得",
+      "description": "2025年4月にオランダの3PL企業の持株会社Blackbird Logistics B.V.の株式を、2025年10月にブリヂストン物流の株式を取得しました。",
+      "significance": "海外と国内の両方で、買収によるグループの拡大が続いています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2025",
       "title": "有価証券報告書－第40期(2025/01/01－2025/12/31)",
-      "publisher": "SBSホールディングス株式会社",
+      "publisher": "ＳＢＳホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XSXL.pdf",
       "publishedAt": "2026-03-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100XSXL",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "物流施設の自社開発と流動化を計画的に繰り返し、3PL・4PL事業の安定的な成長を図る独自のビジネスモデルを進めています。M&Aで売上高が大きく広がった一方で利益率が伸び悩んだため、不採算拠点の収支改善や倉庫の空き解消などの収益構造改革に取り組んでいます。",
+        "asOf": "2026-03-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    }
+  }
 }

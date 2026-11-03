@@ -4,15 +4,181 @@
   "name": "髙島屋",
   "officialName": "株式会社髙島屋",
   "nameEn": "Takashimaya Company, Limited",
-  "description": null,
+  "shortNameEn": "Takashimaya",
+  "description": "全国と海外で百貨店を営み、商業開発や金融、内装工事も手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "domestic-department-store",
+      "name": "国内百貨店業",
+      "shortName": "国内百貨店",
+      "description": "髙島屋と国内の子会社・関連会社が、衣料品・身回品・雑貨・家庭用品・食料品などを百貨店で売る事業です。商品券などの共通取扱も行います。2026年2月期の外部顧客への営業収益は303,856百万円で、報告セグメントのなかで最も大きい事業です。",
+      "products": [
+        "衣料品",
+        "身回品",
+        "雑貨",
+        "家庭用品",
+        "食料品",
+        "商品券等の共通取扱"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "domestic-commercial-development",
+      "name": "国内商業開発業",
+      "shortName": "国内商業開発",
+      "description": "東神開発などが、百貨店とのシナジー効果を発揮する商業開発と、資産・施設の管理運営を行う事業です。2026年2月期の外部顧客への営業収益は41,767百万円です。",
+      "products": [
+        "商業開発",
+        "資産・施設の管理運営"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "overseas-department-store",
+      "name": "海外百貨店業",
+      "shortName": "海外百貨店",
+      "description": "タカシマヤ シンガポールなどの子会社が、海外の百貨店で商品を供給する事業です。2026年2月期の外部顧客への営業収益は34,310百万円です。",
+      "products": [
+        "衣料品",
+        "身回品",
+        "雑貨",
+        "家庭用品",
+        "食料品"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "interior-construction",
+      "name": "建装業",
+      "shortName": "建装",
+      "description": "髙島屋スペースクリエイツなどが、内装工事を受注して施工する事業です。2026年2月期の外部顧客への営業収益は33,240百万円です。",
+      "products": [
+        "内装工事の受注・施工"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "finance",
+      "name": "金融業",
+      "shortName": "金融",
+      "description": "髙島屋ファイナンシャル・パートナーズなどが、クレジットカードの発行、積立投資や団体保険などの金融商品の仲介、保険事業を行う事業です。2026年2月期の外部顧客への営業収益は20,699百万円です。",
+      "products": [
+        "クレジットカード",
+        "ファイナンシャルカウンター事業",
+        "保険事業",
+        "金融商品仲介"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "overseas-commercial-development",
+      "name": "海外商業開発業",
+      "shortName": "海外商業開発",
+      "description": "トーシン ディベロップメント シンガポールなどが、住宅・オフィス・商業の複合開発事業や、学校不動産賃貸事業を行う事業です。2026年2月期の外部顧客への営業収益は15,738百万円です。",
+      "products": [
+        "住宅・オフィス・商業の複合開発",
+        "学校不動産賃貸"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "shortName": "その他",
+      "description": "報告セグメントに含まれない区分で、通信販売業、卸売業、広告宣伝業、飲食業などを含みます。2026年2月期の外部顧客への営業収益は42,756百万円です。",
+      "products": [
+        "通信販売",
+        "卸売（酒類等）",
+        "広告宣伝",
+        "飲食"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "百貨店で商品を売る事業を中心に、商業施設の開発やクレジットカードなども手がけます。",
+    "products": [
+      "衣料品・身回品・雑貨・家庭用品・食料品",
+      "商業施設・複合施設の開発と管理運営",
+      "クレジットカード・保険・金融商品の仲介",
+      "内装工事の受注・施工"
+    ],
+    "customers": [
+      "百貨店の来店客（個人）",
+      "百貨店や商業施設に入る店舗・企業",
+      "グループ各社（内装工事・業務の受託先）"
+    ],
+    "revenueSources": [
+      "商品の販売（百貨店業）",
+      "施設の賃貸と管理運営（商業開発業）",
+      "カード・保険などの手数料（金融業）",
+      "内装工事の受注（建装業）"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "髙島屋グループ",
+        "description": "髙島屋と子会社47社、関連会社18社が、国内外の百貨店を中心に事業を営みます（2026年2月28日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "百貨店と関連サービス",
+        "description": "衣料品や食料品などを百貨店で売り、商業開発、金融、建装でも事業を広げます。"
+      },
+      {
+        "kind": "customer",
+        "title": "来店客と入居企業",
+        "description": "百貨店を使う個人のお客さまのほか、グループ各社や商業施設に入る企業が相手です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益",
+        "description": "2026年2月期の営業収益は492,370百万円で、国内百貨店業の外部顧客への営業収益が303,856百万円と最も大きい区分です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年2月期の親会社株主に帰属する当期純損益は、8,194百万円の純損失でした。前期は39,525百万円の純利益でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 420489000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7223,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 436482000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6897,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +233,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 478802000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6733,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +253,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 500348000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6574,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +273,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 477749000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6518,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +281,78 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1831,
+      "title": "初代飯田新七が京都で古着木綿商を始める",
+      "description": "1831年（天保2年）、初代飯田新七が京都烏丸松原で古着木綿商を始めました。これが髙島屋の創業です。その後、京都・大阪・東京に店舗を広げました。",
+      "significance": "現在の百貨店の始まりにあたる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1919,
+      "title": "株式会社髙島屋呉服店を設立",
+      "description": "1919年8月、組織を変更して株式会社髙島屋呉服店を設立しました。本店は京都に置き、店舗は京都のほか大阪、東京にありました。1930年12月に商号を「株式会社髙島屋」に変更しています。",
+      "significance": "株式会社としての髙島屋の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "大阪証券取引所及び東京証券取引所に上場",
+      "description": "1949年5月、大阪証券取引所及び東京証券取引所に上場しました。2022年4月には東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しています。",
+      "significance": "株式を公開する会社になった時期です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "シンガポールに現地法人を設立し、海外百貨店業に進出",
+      "description": "1989年6月、シンガポールにTAKASHIMAYA SINGAPORE PTE.LTD.（現・TAKASHIMAYA SINGAPORE LTD.）を設立し、1993年10月にシンガポール髙島屋を開店しました。その後、上海（2012年12月開店）、ホーチミン（2016年7月開店）、バンコク（2018年11月開店）にも店を開いています。",
+      "significance": "現在の海外百貨店業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "地域の百貨店子会社を合併し、各店を髙島屋の店舗に",
+      "description": "1995年9月、株式会社横浜髙島屋、岐阜髙島屋、泉北髙島屋、岡山髙島屋、米子髙島屋を合併しました。各社はそれぞれ髙島屋の店舗になりました。1990年9月には関東髙島屋も合併しています。",
+      "significance": "店舗運営を髙島屋本体に集めた動きです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "会社分割で岡山店・岐阜店・高崎店を分社化",
+      "description": "2004年4月、会社分割により岡山店、岐阜店、高崎店を分社化し、株式会社岡山髙島屋、岐阜髙島屋、高崎髙島屋を設立しました。岡山髙島屋と高崎髙島屋は現在も連結子会社です。",
+      "significance": "一部の店を子会社で運営する体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "岐阜店を閉店",
+      "description": "1977年9月に開店した岐阜店を、2024年7月に閉店しました。2023年1月には立川店の百貨店区画営業を終了し、2026年1月には堺店を閉店しています。2026年8月には洛西店が閉店予定です。",
+      "significance": "店舗網の見直しが続いていることを示します。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +361,16 @@
       "publisher": "株式会社髙島屋",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y4X5.pdf",
       "publishedAt": "2026-05-20",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y4X5",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "history: 2026年8月に洛西店が閉店予定（有報提出後の予定事項）。"
+    ]
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03"
 }
