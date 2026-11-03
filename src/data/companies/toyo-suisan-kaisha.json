@@ -4,15 +4,171 @@
   "name": "東洋水産",
   "officialName": "東洋水産株式会社",
   "nameEn": "TOYO SUISAN KAISHA, LTD.",
-  "description": null,
+  "shortNameEn": "Toyo Suisan",
+  "description": "マルちゃんブランドの即席麺を日本と米州でつくって売る食品会社で、低温食品や水産食品、冷蔵保管も手がけています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "overseas-instant-noodles",
+      "name": "海外即席麺事業",
+      "description": "主に米国・メキシコなど米州で、カップ麺や袋麺をつくって売っています。米国の子会社マルチャン,INC.などが担い、売上高は全セグメントで最も大きい事業です。",
+      "products": [
+        "カップ麺",
+        "袋麺"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】(2)海外即席麺事業"
+    },
+    {
+      "id": "domestic-instant-noodles",
+      "name": "国内即席麺事業",
+      "description": "国内でカップ麺、袋麺、ワンタンをつくって売っています。当社が製造・販売するほか、国内の連結子会社7社も製造しています。",
+      "products": [
+        "カップ麺",
+        "袋麺",
+        "ワンタン"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】(3)国内即席麺事業"
+    },
+    {
+      "id": "chilled-frozen-foods",
+      "name": "低温食品事業",
+      "description": "主に国内で、蒸し焼そば、生ラーメン、茹でうどん、冷凍麺、業務用調理品などの低温食品をつくって売っています。海外では関連会社が冷凍麺をつくって売っています。",
+      "products": [
+        "蒸し焼そば",
+        "生ラーメン",
+        "茹でうどん",
+        "冷凍麺",
+        "業務用調理品"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】(4)低温食品事業"
+    },
+    {
+      "id": "seafood",
+      "name": "水産食品事業",
+      "description": "国内と海外で水産食品を仕入れ、加工し、販売しています。海外では米国の連結子会社が仕入を行っています。",
+      "products": [
+        "水産食品"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】(1)水産食品事業"
+    },
+    {
+      "id": "cold-storage",
+      "name": "冷蔵事業",
+      "description": "国内で、得意先から預かった貨物を冷蔵・冷凍して保管しています。当社と連結子会社5社が営み、グループの水産食品などの貨物も保管します。",
+      "products": [
+        "冷蔵・冷凍保管"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】(6)冷蔵事業"
+    },
+    {
+      "id": "processed-foods",
+      "name": "加工食品事業",
+      "description": "国内で、無菌包装米飯、レトルト米飯、スープ、だしの素、ねり製品などの加工食品をつくって売っています。",
+      "products": [
+        "無菌包装米飯",
+        "レトルト米飯",
+        "スープ",
+        "だしの素",
+        "ねり製品"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】(5)加工食品事業"
+    },
+    {
+      "id": "others",
+      "name": "その他（弁当・惣菜など）",
+      "description": "主に弁当・惣菜事業を営んでいます。報告セグメントには含まれない区分で、当社と連結子会社5社などで構成されています。",
+      "products": [
+        "弁当",
+        "惣菜"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】(7)その他"
+    }
+  ],
+  "businessModel": {
+    "description": "即席麺を中心に食品をつくって売り、水産物の売買や冷蔵保管でも収益を得ています。",
+    "products": [
+      "カップ麺・袋麺",
+      "蒸し焼そば・生ラーメン・冷凍麺",
+      "無菌包装米飯・スープ・だしの素",
+      "水産食品",
+      "冷蔵・冷凍保管サービス"
+    ],
+    "customers": [
+      "国内の卸・小売など（主要な顧客に三井物産㈱）",
+      "米国の小売（主要な顧客にWalmart Inc.）",
+      "冷蔵倉庫に貨物を預ける得意先"
+    ],
+    "revenueSources": [
+      "海外即席麺事業の製品販売",
+      "国内即席麺事業の製品販売",
+      "低温食品・加工食品の販売",
+      "水産食品の販売",
+      "冷蔵・冷凍保管の料金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東洋水産グループ",
+        "description": "当社と連結子会社23社などで、製造・仕入・販売・保管を分担しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "即席麺と食品",
+        "description": "カップ麺や袋麺を中心に、低温食品、加工食品、水産食品を扱い、冷蔵保管も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外の取引先",
+        "description": "2026年3月期は、三井物産㈱とWalmart Inc.が主要な顧客として印字されています。売上高は、日本と米州にほぼ二分されます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品販売が中心",
+        "description": "2026年3月期の売上高は536,636百万円で、海外即席麺事業が最も大きく、国内即席麺事業が続きます。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は70,188百万円で、2025年3月期の63,847百万円から増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 367145000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4839,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 404750000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4745,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 474534000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4738,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +243,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 493644000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4696,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +263,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 543927000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4717,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +271,119 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1953,
+      "title": "横須賀水産として設立",
+      "description": "築地魚市場内に横須賀水産株式会社を設立し、冷凍鮪の輸出と国内水産物の取扱いを始めました。",
+      "significance": "水産物の取引が、現在の東洋水産の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "東洋水産株式会社に商号変更",
+      "description": "魚肉ハム・ソーセージの生産を始め、同じ年の7月に東洋水産株式会社へ商号を変更しました。1955年には川崎市に冷蔵庫を取得し、冷蔵庫事業も始めています。",
+      "significance": "水産物の売買から、食品をつくる会社へ広がる一歩になりました。冷蔵庫事業は今の冷蔵事業につながります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "即席麺の生産を開始",
+      "description": "即席麺の生産を始めました。1962年にはマルちゃんマークの使用も始めています。",
+      "significance": "即席麺は、現在の売上の中心となる事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。1973年には東京・大阪・名古屋の各取引所の市場第一部に指定替えとなっています。",
+      "significance": "株式を公開し、全国の投資家に開かれた会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "米国にマルチャン,INC.を設立",
+      "description": "米国カリフォルニア州にマルチャン,INC.を設立しました。現在は連結子会社です。",
+      "significance": "米州での即席麺事業の拠点になり、今では最も売上高の大きい海外即席麺事業を担う会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "生麺の生産を開始",
+      "description": "生麺の生産を始めました。",
+      "significance": "即席麺に加え、生ラーメンなど低温食品の分野へ広がるきっかけになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "フクシマフーズを完全子会社化",
+      "description": "上場子会社だったフクシマフーズ株式会社を、株式交換によって完全子会社にしました。",
+      "significance": "加工食品の製造を担うグループ会社を、100%の子会社に組み込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "株式会社シマヤを子会社化",
+      "description": "山口県周南市の株式会社シマヤを子会社にしました。現在は連結子会社です。",
+      "significance": "国内即席麺事業や加工食品事業を支える製造会社が、グループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "ブラジルにマルチャン・ド・ブラジルを設立",
+      "description": "ブラジルのサンパウロ市にマルチャン・ド・ブラジルを設立しました。現在は連結子会社です。",
+      "significance": "米国・メキシコに続き、南米にも海外即席麺事業の拠点が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場区分は、このとき決まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "yutaka-foods",
+      "relationship": "subsidiary",
+      "description": "愛知県の連結子会社で、議決権の50.9%を所有しています（2026年3月31日現在）。当社の即席麺などの下請生産を行い、東京証券取引所スタンダード市場と名古屋証券取引所メイン市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +391,14 @@
       "publisher": "東洋水産株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDW0.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YDW0",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03",
+  "perspectives": {}
 }

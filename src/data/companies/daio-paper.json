@@ -4,15 +4,181 @@
   "name": "大王製紙",
   "officialName": "大王製紙株式会社",
   "nameEn": "Daio Paper Corporation",
-  "description": null,
+  "shortNameEn": "Daio Paper",
+  "description": "新聞用紙や段ボール原紙などの紙・板紙と、エリエールのティシューや紙おむつをつくって売る製紙会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "paper-paperboard",
+      "name": "紙・板紙事業",
+      "description": "新聞用紙、印刷用紙、包装用紙、板紙、段ボール、パルプなどをつくって売る事業です。2026年3月期の外部顧客への売上高は350,283百万円で、グループで最も大きい事業です。当連結会計年度から組織変更により、従来「その他」に含めていた事業の一部がこの事業に移りました。",
+      "products": [
+        "新聞用紙",
+        "印刷用紙",
+        "包装用紙",
+        "板紙",
+        "段ボール",
+        "パルプ"
+      ],
+      "customers": [],
+      "children": [
+        {
+          "id": "newsprint-printing-paper",
+          "name": "新聞用紙・印刷用紙・包装用紙",
+          "description": "新聞用紙は当社といわき大王製紙株式会社がつくり、当社と株式会社ＥＢＳが売ります。印刷用紙と包装用紙は主に当社がつくり、当社とＥＢＳが売ります。印刷用紙の一部は、ダイオーミウラ株式会社が印刷加工物として売ります。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "paperboard-corrugated",
+          "name": "板紙・段ボール",
+          "description": "板紙は主に当社、いわき大王製紙、大津板紙株式会社、ダイオーペーパーテクノ株式会社がつくり、当社とＥＢＳが売ります。一部は段ボールとして大王パッケージ株式会社などが売ります。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "home-personal-care",
+      "name": "ホーム＆パーソナルケア事業",
+      "description": "衛生用紙（ティシューなど）、紙おむつ、フェミニンケア用品、ウエットワイプ、ペット用品などをつくって売る事業です。2026年3月期の外部顧客への売上高は298,857百万円です。海外ではブラジルや中国などで事業を行っています。",
+      "products": [
+        "衛生用紙",
+        "紙おむつ",
+        "フェミニンケア用品",
+        "ウエットワイプ",
+        "ペット用品"
+      ],
+      "customers": [
+        "日本国内の市場",
+        "中国市場",
+        "ブラジル市場"
+      ],
+      "children": [
+        {
+          "id": "tissue-paper",
+          "name": "衛生用紙",
+          "description": "衛生用紙は、主に当社、エリエールペーパー株式会社、ダイオーペーパープロダクツ株式会社がつくり、当社とＥＢＳが売ります。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "diapers-feminine-care",
+          "name": "紙おむつ・フェミニンケア用品",
+          "description": "紙おむつやフェミニンケア用品などは、主にエリエールプロダクト株式会社がつくり、当社とＥＢＳが売ります。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "overseas-home-care",
+          "name": "海外の事業",
+          "description": "大王（南通）生活用品有限公司は主に中国市場向けに紙おむつなどの仕入・製造・販売を行っています。サンテルS.A.は主にブラジル市場向けに衛生用紙や紙おむつなどをつくって売っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他（報告セグメントに含まれない事業）",
+      "description": "木材事業、造林事業、機械事業、物流事業、ゴルフ場事業、CNF（セルロースナノファイバー）事業などです。2026年3月期の外部顧客への売上高は17,629百万円です。チリとアメリカで植林・木材販売、ダイオーエンジニアリング株式会社がエンジニアリング、ダイオーロジスティクス株式会社が物流を担います。",
+      "products": [
+        "木材",
+        "植林",
+        "エンジニアリング",
+        "物流",
+        "CNF複合樹脂"
+      ],
+      "customers": [],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "紙・板紙と、ティシューや紙おむつなどの家庭用品を、自社や子会社の工場でつくって売る会社です。",
+    "products": [
+      "新聞用紙",
+      "印刷用紙",
+      "包装用紙",
+      "板紙・段ボール",
+      "パルプ",
+      "衛生用紙",
+      "紙おむつ",
+      "フェミニンケア用品",
+      "ウエットワイプ",
+      "ペット用品"
+    ],
+    "customers": [
+      "紙・板紙を扱う国内の販売先",
+      "家庭用品の国内外の市場（中国・ブラジルなど）"
+    ],
+    "revenueSources": [
+      "紙・板紙事業の製品販売",
+      "ホーム＆パーソナルケア事業の製品販売",
+      "木材・物流・エンジニアリングなどの事業"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "大王製紙グループ",
+        "description": "当社、連結子会社31社、関連会社1社で構成されます（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "紙・板紙と家庭用品",
+        "description": "新聞用紙や板紙などの紙・板紙と、衛生用紙や紙おむつなどの家庭用品の二つが柱です。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外の販売先",
+        "description": "製品は当社と株式会社ＥＢＳが主に売ります。海外では中国やブラジルの市場に向けて、現地の子会社が製造・販売します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売",
+        "description": "2026年3月期の売上高は666,770百万円です。紙・板紙事業が350,283百万円、ホーム＆パーソナルケア事業が298,857百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は8,886百万円で、前期は11,197百万円の純損失でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 266704000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 12917,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 244670000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 12634,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +233,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 260086000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 12372,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +253,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 249713000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 12191,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +273,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 242757000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 11639,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +281,108 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1943,
+      "title": "和紙の製造販売を目的に設立",
+      "description": "1942年9月の製紙工業企業整備要綱に基づき、四国紙業株式会社など14企業が合同し、1943年5月に大王製紙株式会社を設立しました。",
+      "significance": "戦時下の企業整備で14社が1社になったのが、会社の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "会社更生手続を申し立て",
+      "description": "1962年5月に会社更生手続開始の申立てを行い、同年6月に開始決定を受けました。1964年4月に更生計画が認可され、1965年4月に手続が終結しました。",
+      "significance": "経営再建を経て、その後の増設や新事業に進んだ時期の前提となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "「エリエール」でティシューペーパーを製造販売開始",
+      "description": "1979年4月、ティシューペーパー「エリエール」の製造販売を始め、家庭紙市場に参入しました。",
+      "significance": "現在のホーム＆パーソナルケア事業につながる、家庭用の衛生用紙への入口です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "東京証券取引所市場第一部に再上場",
+      "description": "1988年2月に東京証券取引所市場第一部へ再上場しました。2022年4月の市場区分の見直しで、プライム市場へ移りました。",
+      "significance": "現在はプライム市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "いわき大王製紙を設立",
+      "description": "1996年4月にいわき大王製紙株式会社を設立しました。現在は連結子会社で、新聞用紙や板紙をつくっています。",
+      "significance": "紙・板紙事業の生産を担う子会社の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "米国P&G社から大人用紙おむつ「アテント」事業を譲受",
+      "description": "2007年9月に米国P&G社から大人用紙おむつ「アテント」事業を譲り受け、新10号塗工紙抄紙機も増設しました。",
+      "significance": "紙おむつ事業を広げた節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "海外での衛生用品の事業を広げる",
+      "description": "2011年1月にタイ、2012年2月に韓国、2012年12月に中国（南通）、2013年3月と2014年11月にインドネシアで子会社を設立しました。2023年7月にはベトナムにも設立しました。",
+      "significance": "東南アジアや東アジアに、衛生用品の拠点を広げてきたことが分かります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "日清紡の紙製品事業と三浦印刷を取得",
+      "description": "2017年4月に日清紡ホールディングス株式会社から紙製品事業を譲り受けるため、日清紡ペーパープロダクツ株式会社（現・ダイオーペーパープロダクツ株式会社）の全株式を取得しました。同月に三浦印刷株式会社も取得しました。",
+      "significance": "衛生用紙の生産体制を広げ、印刷関連の子会社が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "ブラジルのサンテルS.A.の株式51％を取得",
+      "description": "2020年6月にブラジルの衛生用品メーカー、サンテルS.A.の発行済株式総数の51％を取得しました。現在は連結子会社です。2020年5月にはトルコのウゼンA.S.の全株式も取得しましたが、2025年6月に全株式を譲渡しました。",
+      "significance": "ブラジルは、2026年3月期の売上高で日本に次ぐ地域です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "ダイオーミウラ設立、ペット用品の大貴を取得",
+      "description": "2022年4月に連結子会社5社の合併でダイオーミウラ株式会社を設立しました。2022年10月にはペット用品製造業者の株式会社大貴の全株式を取得しました。",
+      "significance": "印刷関連を一つにまとめ、ペット用品にも事業を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +391,28 @@
       "publisher": "大王製紙株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ8D.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YJ8D",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-02"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: financialNotes の年度「undefined」が5年表にありません"
+    ]
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "国内の洋紙の需要が減る中、段ボールなど加工度の高い最終製品やパッケージ分野を強め、北越コーポレーション株式会社との戦略的業務提携でコスト構造の改革を進めると述べています。セルロースナノファイバー複合樹脂の商用プラントを2025年7月に稼働させ、新素材の事業化も進めています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  }
 }

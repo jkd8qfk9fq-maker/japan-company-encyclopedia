@@ -4,15 +4,122 @@
   "name": "バイタルケーエスケー・ホールディングス",
   "officialName": "株式会社バイタルケーエスケー・ホールディングス",
   "nameEn": "VITAL KSK HOLDINGS,INC.",
-  "description": null,
+  "shortNameEn": "VITAL KSK",
+  "description": "病院や薬局などに医薬品を卸売りする、東北・新潟と近畿に強い医薬品卸の持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "pharmaceutical-wholesale",
+      "name": "医薬品卸売事業",
+      "shortName": "医薬品卸売",
+      "description": "病院・開業医・薬局などの医療機関に、医薬品・診断薬・医療機器・材料などを販売する、グループの中核の事業です。2026年3月期の外部顧客への売上高は572,860百万円で、連結の売上高610,497百万円の大部分を占めます。当社、㈱バイタルネット、㈱ケーエスケー、㈱ファイネスが担い、㈱バイタルネットは東北・新潟を、㈱ケーエスケーは近畿２府４県を主な商圏としています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】【セグメント情報】【経営成績の分析】"
+    },
+    {
+      "id": "pharmacy",
+      "name": "薬局事業",
+      "shortName": "薬局",
+      "description": "一般消費者に、医薬品・医療機器・器具・衛生材料などを販売する事業です。2026年3月期の外部顧客への売上高は19,960百万円でした。㈱オオノ、㈱グッドネイバー、㈱健康堂薬局、㈲天王保健調剤センターが担います。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】【セグメント情報】【経営成績の分析】"
+    },
+    {
+      "id": "animal-pharmaceutical-wholesale",
+      "name": "動物用医薬品卸売事業",
+      "shortName": "動物用医薬品卸売",
+      "description": "農場・牧場・動物病院・診療所などに、動物用医薬品や飼料などを販売する事業です。2026年3月期の外部顧客への売上高は12,627百万円でした。㈱アグロジャパンとアローメディカル㈱が担い、アローメディカル㈱は2024年8月に株式の過半数を取得して連結子会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】【セグメント情報】【沿革】"
+    },
+    {
+      "id": "nursing-care-rental-and-others",
+      "name": "介護レンタルその他事業",
+      "shortName": "介護レンタル他",
+      "description": "介護レンタル、介護サービス、農薬などの卸売、運送、スポーツ関連施設の運営、医療機関へのコンサルティングなどを含む事業です。2026年3月期の外部顧客への売上高は5,048百万円でした。㈱たんぽぽ、八千代ケアサポート㈱、㈱医療経営研究所、共和運送㈱などが担います。報告セグメントとしては2026年3月期から記載しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】【セグメント情報】"
+    },
+    {
+      "id": "pharmaceutical-development",
+      "name": "製薬事業",
+      "shortName": "製薬",
+      "description": "欧米で承認済みで、日本にはまだ入っていない新薬を、国内で発売できるように支える事業です。㈱メドリープファーマが担います。2026年3月期に始めた新規事業で、売上高は計上されておらず、外部顧客への売上高の金額は印字されていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】【セグメント情報】【経営成績の分析】"
+    }
+  ],
+  "businessModel": {
+    "description": "傘下の事業会社が医療機関や薬局に医薬品などを卸売りし、薬局や動物用医薬品なども手がけます。",
+    "products": [
+      "医薬品・診断薬・医療機器・材料",
+      "動物用医薬品・飼料",
+      "介護レンタル・介護サービス"
+    ],
+    "customers": [
+      "病院・開業医・薬局などの医療機関",
+      "一般消費者",
+      "農場・牧場・動物病院"
+    ],
+    "revenueSources": [
+      "医薬品卸売事業の売上",
+      "薬局事業の売上",
+      "動物用医薬品卸売事業の売上",
+      "介護レンタルその他事業の売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "持株会社と事業会社",
+        "description": "当社は子会社23社と関連会社4社を率いる持株会社で、医薬品卸売の㈱バイタルネットと㈱ケーエスケーに経営指導を行っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "医薬品などを届ける",
+        "description": "医薬品・診断薬・医療機器・材料などを卸売りし、薬局では一般消費者に、動物用では農場や動物病院に販売します。"
+      },
+      {
+        "kind": "customer",
+        "title": "医療機関・消費者・農場",
+        "description": "病院、開業医、薬局などの医療機関が主な顧客です。連結売上高の10％以上を占める相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "商品の販売による売上",
+        "description": "2026年3月期の売上高は610,497百万円で、うち医薬品卸売事業が572,860百万円を占めます。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は7,362百万円（前期は7,308百万円）でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】【セグメント情報】【経営成績の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +134,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 100041000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3754,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +154,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 100165000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3719,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +174,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 105940000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3705,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 107306000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3756,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 118707000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3871,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +222,78 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2009,
+      "title": "共同持株会社として設立し、上場",
+      "description": "2008年11月に㈱バイタルネットと㈱ケーエスケーが共同持株会社の設立に合意し、2009年4月に株式移転で「株式会社バイタルケーエスケー・ホールディングス」を設立しました。同月、東京証券取引所市場第一部に上場しました。",
+      "significance": "二つの医薬品卸売会社を一つの持株会社の下にまとめた、現在のグループの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "㈱オオノを子会社化",
+      "description": "2014年7月に㈱バイタルネットが㈱オオノを株式取得で子会社にしました。2018年7月には㈱医療経営研究所が会社分割で㈱オオノを子会社にしています。",
+      "significance": "薬局事業の会社がグループに加わった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "㈱健康堂薬局を完全子会社化",
+      "description": "2021年4月に㈱医療経営研究所が㈱健康堂薬局を完全子会社にしました。2023年8月には同社が㈲天王保健調剤センターも完全子会社にしました。",
+      "significance": "薬局事業の拡大にあたる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "2022年4月に東京証券取引所の市場区分の見直しで、市場第一部からプライム市場へ移行しました。",
+      "significance": "東京証券取引所の市場区分の見直しに伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "監査等委員会設置会社へ移行",
+      "description": "2023年6月に監査等委員会設置会社へ移行しました。",
+      "significance": "経営の監督体制を改めた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "アローメディカル㈱を連結子会社化",
+      "description": "2024年8月に㈱アグロジャパンがアローメディカル㈱の株式の過半数を取得しました。",
+      "significance": "動物用医薬品卸売事業の拡大にあたる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "製薬事業と介護事業で新たな会社を迎える",
+      "description": "2025年4月に大伸通商㈱が共和運送㈱を完全子会社にしました。9月に㈱メドリープファーマを設立し、12月に㈱ケーエスケーが八千代ケアホールディングス㈱を完全子会社にしました。八千代ケアホールディングス㈱は2026年3月に八千代ケアサポート㈱へ合併されました。",
+      "significance": "製薬事業の始まりと、介護レンタルその他事業の拡大にあたる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +302,28 @@
       "publisher": "株式会社バイタルケーエスケー・ホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDSN.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YDSN",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-02"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: financialNotes の年度「undefined」が5年表にありません"
+    ]
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "欧米承認済みで本邦未導入の新薬の国内上市を支援する製薬事業を、将来の成長戦略として新たに立ち上げました。資本収益性が高い介護レンタル事業に経営資源を傾斜投入し、拡大を図る方針です。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【セグメント情報】"
+      }
+    }
+  }
 }

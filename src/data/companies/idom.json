@@ -4,15 +4,151 @@
   "name": "IDOM",
   "officialName": "株式会社IDOM",
   "nameEn": "IDOM Inc.",
-  "description": null,
+  "shortNameEn": "IDOM",
+  "description": "中古車を一般消費者に小売する事業を中心に、新車の販売や自動車のリース・レンタルも行って収益を得ています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    },
+    {
+      "industryId": "automotive"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "japan",
+      "name": "日本",
+      "description": "日本国内で中古車の販売と、これに付帯する事業を行う区分で、新車の販売も行っています。2026年2月期の外部顧客への売上高は553,744百万円で、連結売上高の大半を占めます。提出会社の株式会社IDOMが中古車販売を担い、東京マイカー販売株式会社が中古車の売買を、株式会社IDOM CaaS Technologyが自動車のリースとレンタルを行っています。ほかに、事務処理の受託、ソフトウェアの開発、人材紹介を行う子会社があります。",
+      "products": [
+        "中古車の販売",
+        "新車の販売",
+        "自動車のリース・レンタル",
+        "ソフトウェア等の開発",
+        "人材紹介"
+      ],
+      "customers": [
+        "一般消費者"
+      ],
+      "children": [
+        {
+          "id": "used-car-sales",
+          "name": "中古車販売",
+          "description": "提出会社の株式会社IDOMと、福島県郡山市の東京マイカー販売株式会社が、中古車の販売と売買を行っています。一般消費者への小売が主要な販路です。",
+          "products": [
+            "中古車の販売",
+            "新車の販売"
+          ],
+          "customers": [
+            "一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "lease-and-rental",
+          "name": "自動車のリース・レンタル",
+          "description": "株式会社IDOM CaaS Technologyが、自動車のリースとレンタル、およびその仲介を行っています。株式会社IDOMが67.91％を所有しています（2026年2月28日現在）。",
+          "products": [
+            "自動車のリース",
+            "自動車のレンタル"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "group-support",
+          "name": "事務受託・システム開発・人材紹介",
+          "description": "株式会社IDOMビジネスサポートが事務処理等の業務を受託し、株式会社IDOM Digital Driveがソフトウェア等の開発を行い、株式会社IDOM Career Connectionsが人材紹介を行っています。Digital Driveは当社の事業用システムの開発も担っています。",
+          "products": [
+            "事務処理等の受託",
+            "ソフトウェア等の開発",
+            "人材紹介"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "米国で中古車の売買を行う区分です。Gulliver USA, Inc.とGulliver EAST, Inc.の2社が行っています。2026年2月期の外部顧客への売上高は9,030百万円です。",
+      "products": [
+        "中古車の売買（米国）"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "中古車を一般消費者に小売する事業を中心に、新車の販売や自動車のリース・レンタルも行って収益を得ています。",
+    "products": [
+      "中古車",
+      "新車",
+      "自動車のリース・レンタル",
+      "ソフトウェア等の開発",
+      "人材紹介"
+    ],
+    "customers": [
+      "一般消費者",
+      "株式会社ユー・エス・エス"
+    ],
+    "revenueSources": [
+      "中古車の販売（小売・卸売）",
+      "新車の販売",
+      "自動車のリース・レンタル"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "IDOMと子会社16社",
+        "description": "提出会社の株式会社IDOMと子会社16社で、中古車販売事業とこれに付帯する事業を主たる業務としています。国内直営店の小売台数は2026年2月期に163,931台で、過去最高でした。"
+      },
+      {
+        "kind": "offering",
+        "title": "中古車を中心とした自動車",
+        "description": "中古車を主に扱い、新車も販売しています。付帯する事業として、自動車のリースとレンタル、ソフトウェア等の開発、人材紹介などがあります。米国では子会社が中古車の売買を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "一般消費者への小売が主要な販路",
+        "description": "一般消費者への小売が主要な販路です。主な販売先として、株式会社ユー・エス・エスへの売上高が110,243百万円あり、連結売上高の19.6％にあたります（2026年2月期）。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高562,774百万円",
+        "description": "2026年2月期の売上高は562,774百万円で、前期より13.3％増えました。日本では、オートオークション相場の上昇による小売・卸売の単価の上昇などが増収の理由です。売上の90％超が単一の製品・サービス区分に当たるため、区分別の売上は開示されていません。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益11,914百万円",
+        "description": "2026年2月期の親会社株主に帰属する当期純利益は11,914百万円で、前期より11.4％減りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 55709000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4347,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 62702000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3132,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 69930000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3508,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 80832000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4023,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +243,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 89668000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4260,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,20 +251,93 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1994,
+      "title": "中古車買い取り業の会社を福島県郡山市に設立",
+      "description": "1994年10月に株式会社ガリバーインターナショナル・コーポレーションを福島県郡山市富田町に、中古車買い取り業を目的として設立しました。",
+      "significance": "現在のIDOMの事業の出発点です。1996年4月に商号を株式会社ガリバーインターナショナルに変更しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "ドルフィネットシステムの本格運営を開始",
+      "description": "1997年9月にドルフィネットシステムを試験的に導入し、1998年2月に本格的な運営を始めました。沿革では、1996年2月にフランチャイズチェーンの拡大に伴って東京本社を開設したことも記されています。",
+      "significance": "沿革にはシステムの内容までは書かれていません。1997年の試験導入から約5か月で本格運営に進んだことが分かります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "2000年12月に東京証券取引所市場第二部に上場しました。2003年8月には市場第一部に指定されています。",
+      "significance": "株式を公開した会社になりました。現在の上場先は、表紙に印字された東京証券取引所プライム市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "米国子会社のGulliver USA, Inc.を設立",
+      "description": "2004年11月に全額出資の子会社としてGulliver USA, Inc.を設立しました。",
+      "significance": "同社は現在も米国で中古車の売買を行っており、報告セグメント「その他」の事業にあたります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京マイカー販売の全株式を取得",
+      "description": "2013年11月に東京マイカー販売株式会社の全株式を取得し、完全子会社にしました。",
+      "significance": "同社は現在も中古車の売買を行う連結子会社で、当社が100.00％を所有しています（2026年2月28日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "商号を株式会社IDOMに変更",
+      "description": "2016年7月に商号を株式会社IDOMに変更しました。翌8月には、月額定額でクルマを乗り換えられるサービス「NOREL」を始めています。",
+      "significance": "ガリバーの名前を冠した会社から、現在の社名になりました。自動車のリースとレンタルは、現在は子会社の株式会社IDOM CaaS Technologyが行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "人材紹介の子会社を設立",
+      "description": "2025年6月に100％出資の子会社として株式会社IDOM Career Connectionsを設立しました。関係会社の状況によると、設立日は2025年6月23日で、連結の範囲に含まれています。",
+      "significance": "同社は人材紹介事業を行っています。報告セグメントは日本とその他の2つで、同社は日本に含まれます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第32期(2025/03/01－2026/02/28)",
+      "title": "訂正有価証券報告書－第32期(2025/03/01－2026/02/28)",
       "publisher": "株式会社IDOM",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y64O.pdf",
-      "publishedAt": "2026-05-25",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y6I6.pdf",
+      "publishedAt": "2026-05-27",
+      "docId": "S100Y6I6",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-02"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03"
 }

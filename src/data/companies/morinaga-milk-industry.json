@@ -4,15 +4,103 @@
   "name": "森永乳業",
   "officialName": "森永乳業株式会社",
   "nameEn": "Morinaga Milk Industry Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Morinaga Milk Industry",
+  "description": "牛乳・ヨーグルト・アイスクリームなどの乳製品を製造・販売する、国内の大手乳業会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "food",
+      "name": "食品事業",
+      "shortName": "食品",
+      "description": "市乳（牛乳など）、乳製品、アイスクリーム、飲料などを製造・販売しています。2026年3月期の外部顧客への売上高は547,418百万円です。当社が製造販売するほか、商品の一部は子会社などに委託して製造し、販売子会社が全国の得意先に販売しています。",
+      "products": [
+        "市乳",
+        "乳製品",
+        "アイスクリーム",
+        "飲料"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】／【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他の事業",
+      "shortName": "その他",
+      "description": "飼料やペットフードの販売、プラント設備の設計施工、不動産の賃貸、運輸倉庫業などを行っています。報告セグメントには含まれない区分で、2026年3月期の外部顧客への売上高は24,039百万円です。",
+      "products": [
+        "飼料",
+        "ペットフード",
+        "プラント設備の設計施工",
+        "不動産の賃貸"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】／【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "市乳、乳製品、アイスクリーム、飲料を作り、販売子会社を通じて全国の得意先に届けています。",
+    "products": [
+      "市乳",
+      "乳製品",
+      "アイスクリーム",
+      "飲料",
+      "飼料",
+      "ペットフード"
+    ],
+    "customers": [
+      "全国の得意先（販売子会社を通じて販売）"
+    ],
+    "revenueSources": [
+      "食品事業（2026年3月期の外部顧客への売上高547,418百万円）",
+      "その他の事業（同24,039百万円）"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "森永乳業",
+        "description": "当社、子会社48社および関連会社4社で、市乳、乳製品、アイスクリーム等の食品の製造販売を中心に事業を行っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "市乳・乳製品・アイスクリーム・飲料",
+        "description": "当社が製造するほか、一部の商品はエムケーチーズ、横浜森永乳業、冨士森永乳業、東北森永乳業など子会社に委託して製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "全国の得意先",
+        "description": "森永乳業販売ほか16社が、主に当社から商品を仕入れて全国の得意先に販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は571,458百万円で、前期の561,173百万円から増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は22,599百万円でした。前期は5,459百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +115,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 208026000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6839,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +135,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 228249000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7040,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +155,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 282135000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7415,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +175,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 271103000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7453,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +195,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 279749000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7345,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +203,148 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1917,
+      "title": "日本煉乳株式会社として設立",
+      "description": "乳製品の製造販売を主な目的とする日本煉乳株式会社として、1917年9月に設立されました。",
+      "significance": "現在の森永乳業につながる出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1919,
+      "title": "小缶煉乳「森永ミルク」を発売",
+      "description": "1919年5月に小缶煉乳の森永ミルクを発売しました。",
+      "significance": "乳製品メーカーとしての最初期の商品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1920,
+      "title": "森永製菓と合併",
+      "description": "1920年7月に森永製菓株式会社と合併し、同社の畜産部（後に煉乳部）となりました。",
+      "significance": "後に分離独立する前の、菓子会社の一部門だった時期です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1927,
+      "title": "森永煉乳株式会社を設立",
+      "description": "1927年9月に森永製菓の煉乳部を分離し、新たに森永煉乳株式会社を設立しました。",
+      "significance": "乳製品事業が独立した会社になった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "現在の森永乳業株式会社が設立",
+      "description": "森永製菓との合併と分離を経て、1949年4月に現在の森永乳業株式会社が設立されました。",
+      "significance": "現在の会社の設立年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "東京証券取引所に株式を上場",
+      "description": "1954年9月に東京証券取引所に株式を上場しました。",
+      "significance": "株式を公開する会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "森永商事の乳製品販売部門を譲り受け",
+      "description": "生産と販売を一体で行うため、1967年10月に森永商事株式会社の乳製品販売部門を譲り受けました。",
+      "significance": "製造から販売までを自社で担う体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "「森永ビヒダス」を発売",
+      "description": "1977年6月にビフィズス菌入りの乳製品、森永ビヒダスを発売しました。",
+      "significance": "ビフィズス菌を使った商品の先駆けとなる商品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "「マウントレーニア カフェラッテ」を発売",
+      "description": "1993年2月にカップ入り乳飲料のマウントレーニア・カフェラッテを発売しました。",
+      "significance": "カップ入りの乳飲料という商品分野を広げた商品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "全国の販売子会社9社を合併",
+      "description": "2005年4月に全国の販売子会社9社を株式会社デイリーフーズ（現在の森永乳業販売）に吸収合併しました。",
+      "significance": "販売会社を一つにまとめた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "MILEI GmbH（ドイツ）を完全子会社化",
+      "description": "2012年5月にドイツのMILEI GmbHの株式を追加取得し、完全子会社としました。",
+      "significance": "原料乳製品を扱う海外拠点を持つようになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "創業100周年",
+      "description": "2017年9月に創業100周年を迎えました。同年3月にはパキスタンの2社と合弁会社NutriCo Morinagaを設立しています。",
+      "significance": "海外展開を進めながら迎えた節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所のプライム市場に移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "米国のTurtle Island Foodsの株式を取得",
+      "description": "2023年2月に米国のTurtle Island Foods Holdings, Inc.の株式を取得しました。同年1月にはパキスタンのNutriCo Morinagaを、5月にはベトナムのMorinaga Le May Vietnamを連結子会社としています。",
+      "significance": "プラントベースフードなど海外の事業を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +353,13 @@
       "publisher": "森永乳業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIHY.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YIHY",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-02"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-03"
 }

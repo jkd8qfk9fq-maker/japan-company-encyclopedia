@@ -4,15 +4,183 @@
   "name": "レスター",
   "officialName": "株式会社レスター",
   "nameEn": "Restar Corporation",
-  "description": null,
+  "shortNameEn": "Restar",
+  "description": "半導体・電子部品を国内外で販売し、電子機器の受託製造やシステム、電力の事業も行う、エレクトロニクスの専門商社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "device-bu",
+      "name": "デバイスビジネスユニット",
+      "shortName": "デバイスBU",
+      "description": "半導体や電子部品を国内外で販売し、製造を請け負う事業です。2026年3月期の外部顧客への売上高は555,863百万円で、グループの売上高の大半を占めます。",
+      "products": [
+        "半導体",
+        "電子部品",
+        "電子機器の実装受託製造"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "device",
+          "name": "デバイス",
+          "description": "国内外の半導体・電子部品と関連商材を販売します。多様なメーカーの商品を組み合わせたシステム提案、技術サポート、設計・製造の受託、LSI設計開発の支援、信頼性試験の受託も行います。2026年3月期の外部顧客への売上高は533,805百万円です。",
+          "products": [
+            "半導体・電子部品の販売",
+            "LSI設計開発・支援",
+            "信頼性試験の受託",
+            "グローバル調達トレーディング"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ems",
+          "name": "EMS",
+          "description": "自社工場で電子部品やモジュールを基板に実装し、電子機器を受託製造します。購買、生産管理、品質保証の機能も付けて提供します。2026年3月期の外部顧客への売上高は22,057百万円です。",
+          "products": [
+            "電子機器の実装受託製造"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "system-bu",
+      "name": "システムビジネスユニット",
+      "shortName": "システムBU",
+      "description": "映像・音響・通信のシステム、再生可能エネルギーや電力、植物工場野菜を手がける事業です。2026年3月期の外部顧客への売上高は48,860百万円です。",
+      "products": [
+        "映像・音響・通信ソリューション",
+        "キャッシュレス端末",
+        "再生可能エネルギー・電力",
+        "植物工場産野菜"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "system-solution",
+          "name": "システムソリューション",
+          "description": "放送、企業、教育、医療、官公庁・自治体などに、映像・音響・通信のソリューションを提案し、設計・施工や保守を行います。NFC（近距離無線通信）を使ったキャッシュレス端末やマイナンバー個人認証関連製品の開発・製造・販売も行います。2026年3月期の外部顧客への売上高は31,493百万円です。",
+          "products": [
+            "映像・音響・通信ソリューション",
+            "キャッシュレス端末",
+            "マイナンバー個人認証関連製品"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "eco-solution",
+          "name": "エコソリューション",
+          "description": "自社の太陽光・風力発電所を運営して再生可能エネルギーの普及を進め、公共施設や企業に電力を供給します。完全閉鎖型の植物工場で育てた野菜をコンビニエンスストアやスーパーマーケット、外食チェーンなどへ販売する事業もあります。2026年3月期の外部顧客への売上高は17,367百万円です。",
+          "products": [
+            "太陽光・風力発電",
+            "電力供給・電力コンサルティング",
+            "植物工場産野菜"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "it-sier-bu",
+      "name": "IT＆SIerビジネスユニット",
+      "shortName": "IT＆SIer BU",
+      "description": "ソフトウエア開発や産業用PCの設計・製造、半導体の設計・テストなどの情報サービスを提供する事業です。2024年9月にPCIホールディングスを子会社にして加わりました。2026年3月期の外部顧客への売上高は26,181百万円です。",
+      "products": [
+        "ソフトウエア開発",
+        "産業用PC",
+        "半導体の設計・テスト"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "半導体・電子部品の販売を中心に、システム構築、電力、ITサービスも手がけ、顧客から商品やサービスの対価を得ています。",
+    "products": [
+      "半導体・電子部品",
+      "電子機器の実装受託製造",
+      "映像・音響・通信システム",
+      "再生可能エネルギー・電力",
+      "ソフトウエア開発・産業用PC"
+    ],
+    "customers": [
+      "電子機器メーカーなど半導体・電子部品の買い手",
+      "放送、企業、教育、医療、官公庁・自治体",
+      "公共施設・民間企業（電力）",
+      "コンビニエンスストア、スーパーマーケット、外食チェーン（植物工場産野菜）"
+    ],
+    "revenueSources": [
+      "半導体・電子部品などの販売（デバイスBU）",
+      "電子機器の受託製造（EMS）",
+      "システムの設計・施工・保守、端末の販売（システムBU）",
+      "電力の供給、植物工場産野菜の販売",
+      "ソフトウエア開発・産業用PCの設計製造（IT＆SIerBU）"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "レスター",
+        "description": "東京都港区に本社を置き、デバイス、システム、IT＆SIerの3つのビジネスユニットで事業を行います。2026年3月31日現在の従業員数は連結で4,637人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "半導体・電子部品とシステム・サービス",
+        "description": "国内外のメーカーの半導体・電子部品を組み合わせて提案し、技術サポートや設計・製造の受託も行います。映像・音響・通信のシステム、再生可能エネルギーによる電力、ITサービスも提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "電子機器メーカーや公共・民間の事業者",
+        "description": "電子機器メーカー、放送・教育・医療などの法人、官公庁・自治体が顧客です。売上高の10％以上を占める相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "商品の販売と、受託・サービスの対価",
+        "description": "2026年3月期の売上高は630,905百万円（前年同期比12.5％増）で、データセンター向けなどの商材の伸びと企業買収が増収の理由です。売上高は5期連続で増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は7,691百万円（前年同期比2.9％増）です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +195,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 81657000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2831,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +215,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 85095000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2601,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +235,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 91024000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3232,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +255,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 100061000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4655,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +275,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 109504000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4637,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +283,68 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2009,
+      "title": "共同持株会社ＵＫＣホールディングスを設立",
+      "description": "ユーエスシーと共信テクノソニックが株式移転で共同持株会社「株式会社ＵＫＣホールディングス」を設立し、東京証券取引所市場第一部に上場しました。",
+      "significance": "現在のレスターにつながる経営統合の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "ユーエスシーと共信テクノソニックが合併",
+      "description": "共信テクノソニックを存続会社とする吸収合併でユーエスシーと合併し、商号を「株式会社ＵＫＣエレクトロニクス」に変更しました。",
+      "significance": "半導体・電子部品を扱う事業会社が一つにまとまりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ＵＫＣホールディングスとバイテックホールディングスが経営統合",
+      "description": "2019年4月に株式会社ＵＫＣホールディングスと株式会社バイテックホールディングスが経営統合し、商号を「株式会社レスターホールディングス」に変更しました。",
+      "significance": "レスターの名前の始まりで、現在のデバイス、システムの事業の土台になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "2022年4月に東京証券取引所プライム市場へ移行しました。",
+      "significance": "現在の上場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "事業会社に再編し、社名を株式会社レスターに変更",
+      "description": "2024年4月に、100％子会社のレスターエレクトロニクス、レスターコミュニケーションズ、バイテックエネスタの3社を吸収合併し、社名を株式会社レスターに変更しました。同年9月にはＰＣＩホールディングスを子会社にしました。",
+      "significance": "純粋持株会社から事業会社に移り、現在のBU体制の形になりました。ＰＣＩホールディングスは現在のIT＆SIerBUの中心です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "欧米の半導体販売を強化するため、FRAMOS Technologies Inc.を子会社化",
+      "description": "2025年10月に、子会社のViMOS Technologies GmbH（現 RESTAR FRAMOS Technologies GmbH）が、FRAMOS Technologies Inc.（現 RESTAR FRAMOS Technologies Inc.）の株式を取得して子会社にしました。",
+      "significance": "欧米での半導体製品の取り扱いを広げる動きです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +353,25 @@
       "publisher": "株式会社レスター",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ4V.pdf",
       "publishedAt": "2026-06-29",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YJ4V",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-02"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2027年3月期までの中期経営計画のもとで、4つのビジネスユニット体制を目指しています。国内外のM&Aや資本業務提携を進め、「エレクトロニクスの情報プラットフォーマー」になることをビジョンに掲げています。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    }
+  }
 }
