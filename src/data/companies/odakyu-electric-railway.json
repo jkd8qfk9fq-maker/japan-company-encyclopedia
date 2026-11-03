@@ -4,15 +4,128 @@
   "name": "小田急電鉄",
   "officialName": "小田急電鉄株式会社",
   "nameEn": "Odakyu Electric Railway Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Odakyu",
+  "description": "小田急線沿線を中心に、鉄道を軸として不動産や百貨店・ホテルなどを営み、運賃や賃料、販売で稼ぐ会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "transportation",
+      "name": "交通業",
+      "shortName": "交通",
+      "description": "鉄道を中心に、バス・タクシー・航路・ロープウェイなどを運行する事業で、最も売上が大きい報告セグメントです。2026年3月期の外部顧客への営業収益は178,787百万円でした。鉄道では定期・定期外ともに輸送人員が増え、バスや箱根エリアでは運賃を改定しました。",
+      "products": [
+        "鉄道（小田急線・箱根登山線・江ノ島電鉄）",
+        "路線バス・高速バス",
+        "タクシー",
+        "航路・索道・鋼索",
+        "鉄道メンテナンス"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】、【セグメント情報】、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "id": "lifestyle-services",
+      "name": "生活サービス業",
+      "shortName": "生活サービス",
+      "description": "百貨店、スーパーなどの小売、ホテル、レストラン、旅行、広告、人材派遣、保険代理などを営む事業です。2026年3月期の外部顧客への営業収益は155,100百万円でした。前期に百貨店業とストア・小売業が決算期を変更して13ヵ月分を連結した反動で、前期より減りました。",
+      "products": [
+        "百貨店",
+        "スーパー・小売",
+        "ホテル",
+        "レストラン・飲食",
+        "旅行",
+        "広告代理",
+        "人材派遣",
+        "保険代理",
+        "食品製造"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】、【セグメント情報】、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産業",
+      "shortName": "不動産",
+      "description": "住宅の分譲、ビルや商業施設の賃貸、ビルの管理・メンテナンスなどを行う事業です。2026年3月期の外部顧客への営業収益は84,844百万円でした。新宿駅西口地区の開発計画を進めたほか、商業施設の開業や賃貸レジデンスの開業を行いました。",
+      "products": [
+        "住宅・マンションの分譲",
+        "商業施設・オフィスの賃貸",
+        "ビル管理・メンテナンス"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】、【セグメント情報】、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道を軸に、沿線の不動産・小売・ホテルなどを一体で営み、運賃や賃料、販売で収益を得ます。",
+    "products": [
+      "鉄道・バス・タクシーなどの輸送サービス",
+      "住宅の分譲、商業施設・オフィスの賃貸",
+      "百貨店・小売、ホテル、レストラン、旅行などのサービス"
+    ],
+    "customers": [
+      "小田急線沿線の通勤・通学客",
+      "箱根・江の島などへの観光客",
+      "住宅の購入者、商業施設やオフィスのテナント",
+      "百貨店・ホテル・飲食店などの利用者"
+    ],
+    "revenueSources": [
+      "旅客運賃などの交通業の収入",
+      "不動産の分譲代金と賃料",
+      "百貨店・小売・ホテル・飲食などの売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "小田急電鉄グループ",
+        "description": "当社と連結子会社などで、交通業、不動産業、生活サービス業の3つの報告セグメントを営みます。"
+      },
+      {
+        "kind": "offering",
+        "title": "鉄道を軸にした暮らしのサービス",
+        "description": "鉄道・バスなどの輸送に加え、沿線で住宅や商業施設、百貨店、ホテル、レストランなどを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "沿線の住民と観光客",
+        "description": "通勤・通学の利用者や箱根方面への観光客、住宅の購入者、商業施設のテナントなどが顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "運賃・賃料・販売代金",
+        "description": "2026年3月期の営業収益は418,732百万円でした。交通業の外部顧客への営業収益が最も大きく、次いで生活サービス業、不動産業の順です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は37,368百万円で、前期比28.1％減でした。前期にUDS㈱の外部譲渡に伴う株式売却益を計上した反動などによります。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】、【セグメント情報】、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +140,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 349257000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 13272,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +160,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 388490000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 12629,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +180,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 460176000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 11661,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +200,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 479263000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 11517,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +220,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 508783000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 11656,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +228,158 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1923,
+      "title": "小田原急行鉄道が設立される",
+      "description": "小田原急行鉄道が設立されました。のちの小田急電鉄につながる会社です。",
+      "significance": "小田急の鉄道事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革"
+    },
+    {
+      "year": 1927,
+      "title": "小田原線（新宿～小田原間）が開通",
+      "description": "新宿と小田原を結ぶ小田原線が開通しました。",
+      "significance": "現在の小田急線の幹線にあたります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革"
+    },
+    {
+      "year": 1929,
+      "title": "江ノ島線が開通",
+      "description": "相模大野と片瀬江ノ島を結ぶ江ノ島線が開通しました。",
+      "significance": "観光地の江の島方面へ路線が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革"
+    },
+    {
+      "year": 1948,
+      "title": "東京急行電鉄から分離し、小田急電鉄が設立される",
+      "description": "戦時中に東京急行電鉄に合併されていましたが、1948年6月に再編成で分離し、小田急電鉄が設立されました。",
+      "significance": "現在の小田急電鉄の設立にあたります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革、② 新会社関係"
+    },
+    {
+      "year": 1949,
+      "title": "東京証券取引所に上場",
+      "description": "新会社として設立の翌年に東京証券取引所に上場しました。",
+      "significance": "上場会社としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革、② 新会社関係"
+    },
+    {
+      "year": 1950,
+      "title": "箱根登山線への乗入れを開始",
+      "description": "小田原から箱根湯本までの箱根登山線に乗り入れました。",
+      "significance": "新宿から箱根への観光輸送を支える運行の基盤になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革、② 新会社関係"
+    },
+    {
+      "year": 1961,
+      "title": "小田急百貨店を設立",
+      "description": "関係会社として小田急百貨店を設立し、1962年に新宿店が営業を始めました。",
+      "significance": "鉄道に加えて小売事業へ広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(2) 関係会社の沿革"
+    },
+    {
+      "year": 1964,
+      "title": "小田急不動産を設立",
+      "description": "関係会社として小田急不動産を設立しました。",
+      "significance": "沿線での不動産事業を担う会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(2) 関係会社の沿革"
+    },
+    {
+      "year": 1978,
+      "title": "地下鉄千代田線との相互直通運転を開始",
+      "description": "本厚木から綾瀬までの区間で、地下鉄千代田線との相互直通運転を始めました。",
+      "significance": "都心の地下鉄へ直接乗り入れる運行が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革、② 新会社関係"
+    },
+    {
+      "year": 1991,
+      "title": "JR東海御殿場線との相互直通運転を開始",
+      "description": "新宿から沼津までの区間で、JR東海の御殿場線との相互直通運転を始めました。",
+      "significance": "富士山麓方面への直通運転が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革、② 新会社関係"
+    },
+    {
+      "year": 1997,
+      "title": "喜多見～和泉多摩川間の複々線化工事が完成",
+      "description": "線路を2組に増やす複々線化の工事が、喜多見から和泉多摩川の区間で完成しました。",
+      "significance": "混雑を和らげるための複々線化が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革、② 新会社関係"
+    },
+    {
+      "year": 2007,
+      "title": "小田急不動産を株式交換で完全子会社化",
+      "description": "株式交換により、小田急不動産を完全子会社にしました。同じ年に、住宅販売業を小田急不動産へ会社分割しています。",
+      "significance": "不動産事業をグループ内で整理しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革、(2) 関係会社の沿革"
+    },
+    {
+      "year": 2018,
+      "title": "複々線運転を開始",
+      "description": "東北沢から世田谷代田までの複々線化工事が完成し、代々木上原から登戸までの複々線での運転が始まりました。",
+      "significance": "長年の複々線化工事が一区切りを迎えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革、② 新会社関係"
+    },
+    {
+      "year": 2019,
+      "title": "江ノ島電鉄を株式交換で完全子会社化",
+      "description": "株式交換により、江ノ島電鉄を完全子会社にしました。",
+      "significance": "湘南エリアの鉄道会社がグループの完全子会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(2) 関係会社の沿革"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所のプライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移りました。",
+      "significance": "現在の上場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革、② 新会社関係"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +388,28 @@
       "publisher": "小田急電鉄株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIM7.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YIM7",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: financialNotes の年度「undefined」が5年表にありません"
+    ]
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "analysis": {
+        "text": "鉄道では特急ロマンスカーの増発や長編成化、ホームドア整備、耐震補強などに投資しています。不動産では新宿駅西口地区の開発計画を進めています。設備投資は鉄道を中心に継続すると同社は述べています。",
+        "basis": "経営成績の概要で述べられた鉄道・不動産の取組みと、資本の財源の項にある設備投資の方針による。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

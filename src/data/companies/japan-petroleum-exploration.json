@@ -4,15 +4,199 @@
   "name": "石油資源開発",
   "officialName": "石油資源開発株式会社",
   "nameEn": "Japan Petroleum Exploration Co., Ltd.",
-  "description": null,
+  "shortNameEn": "JAPEX",
+  "description": "国内外で原油・天然ガスを探し、生産して販売し、ガスや電力も供給する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "energy",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "japan",
+      "name": "日本",
+      "shortName": "日本",
+      "description": "日本国内で原油・天然ガスの探鉱・開発・生産を行い、天然ガスやLNG、電力を販売しています。ガスパイプライン網を持ち、沿線の需要家へガスを届けるほか、石油製品の製造・販売や坑井の掘さく作業の請負も行います。報告セグメントのうち外部顧客への売上高が最も大きい区分です。",
+      "customers": [
+        "ガス・電力の需要家",
+        "都市ガス会社",
+        "小売電気事業者",
+        "石油関連会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】／【セグメント情報】",
+      "children": [
+        {
+          "id": "japan-ep",
+          "name": "E&P事業（日本）",
+          "description": "当社と連結子会社の日本海洋石油資源開発が、国内で原油・天然ガスを生産しています。連結子会社の北日本オイルは、当社の原油を購入して販売しています。",
+          "products": [
+            "原油",
+            "天然ガス"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "japan-infrastructure-utility",
+          "name": "インフラ・ユーティリティ事業",
+          "description": "国産天然ガスと、相馬LNG基地などで輸入LNGを気化したガスを、総延長800km超のパイプライン網で沿線の需要家に販売しています。北海道では勇払LNG受入基地を使い、タンクローリーによるLNGサテライト供給や託送供給サービスも行います。関連会社の福島ガス発電に発電を委託して電力を販売するほか、バイオマス発電など再生可能エネルギーや蓄電池事業にも取り組んでいます。",
+          "products": [
+            "天然ガス",
+            "LNG",
+            "電力",
+            "バイオマス燃料",
+            "託送供給サービス"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "japan-other",
+          "name": "その他の事業",
+          "description": "連結子会社が、坑井の掘さく作業や物理検層・マッドロギング、物理探鉱作業を当社等から請け負っています。また、エスケイ産業が石油製品等の製造・販売を行っています。",
+          "products": [
+            "坑井掘さく・改修作業の請負",
+            "物理探鉱作業",
+            "石油製品"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "north-america",
+      "name": "北米",
+      "shortName": "北米",
+      "description": "米国で原油・天然ガスの探鉱・開発・生産・販売を行っています。連結子会社のJapex (U.S.) Corp.がテキサス州・オクラホマ州でタイトオイルを、2026年2月に全持分を取得したVerdad Resources Intermediate Holdings LLCがコロラド州・ワイオミング州でタイトオイル・ガスを扱っています。関連会社のGulf Coast LNG Holdings LLCはテキサス州のフリーポートLNGプロジェクトに参画しています。",
+      "customers": [
+        "原油・天然ガスの購入者"
+      ],
+      "products": [
+        "原油（タイトオイル）",
+        "天然ガス"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】／【セグメント情報】"
+    },
+    {
+      "id": "middle-east",
+      "name": "中東",
+      "shortName": "中東",
+      "description": "連結子会社のジャペックスガラフが、イラクのガラフ油田で原油の開発・生産・販売を行っています。",
+      "customers": [
+        "原油の購入者"
+      ],
+      "products": [
+        "原油"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】／【セグメント情報】"
+    },
+    {
+      "id": "europe",
+      "name": "欧州",
+      "shortName": "欧州",
+      "description": "連結子会社のJAPEX Norge ASが、ノルウェー領海上の鉱区で原油・天然ガスの探鉱開発と生産を行っています。2024年7月に同社の株式を取得しました。",
+      "customers": [
+        "原油・天然ガスの購入者"
+      ],
+      "products": [
+        "原油",
+        "天然ガス"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】／【沿革】"
+    },
+    {
+      "id": "other-ep",
+      "name": "その他（報告セグメントに含まれない区分）",
+      "shortName": "その他",
+      "description": "報告セグメントに含まれない事業セグメントで、ロシア（関連会社のサハリン石油ガス開発）や東南アジア（開発段階の関連会社EMP Gebang Ltd.）のE&P事業を含みます。この区分の外部顧客への売上高は印字されていません。",
+      "customers": [],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】／【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "原油・天然ガスの探鉱と生産を行い、ガスパイプラインでガスや電力も届けます。",
+    "products": [
+      "原油",
+      "天然ガス",
+      "LNG",
+      "電力",
+      "坑井掘さく等の請負",
+      "石油製品"
+    ],
+    "customers": [
+      "ガス・電力の需要家",
+      "都市ガス会社",
+      "小売電気事業者",
+      "原油の購入者"
+    ],
+    "revenueSources": [
+      "原油の販売",
+      "天然ガス（国内・海外）の販売",
+      "LNGの販売",
+      "電力の販売",
+      "請負・石油製品などの販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "石油資源開発グループ",
+        "description": "当社と子会社32社、関連会社19社（2026年3月31日現在）が、国内外で事業を進めています。海外では拠点ごとのプロジェクト会社を使い、他社との共同事業でリスクを分けています。"
+      },
+      {
+        "kind": "offering",
+        "title": "原油・ガス・電力",
+        "description": "国内外で原油・天然ガスを探して生産するE&P事業と、天然ガスやLNG、電力を供給するインフラ・ユーティリティ事業を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "需要家・購入者",
+        "description": "パイプライン沿線の需要家、都市ガス会社、小売電気事業者、原油の購入者などに販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品・サービスの販売代金",
+        "description": "原油、国内外の天然ガス、LNG、電力、バイオマス燃料、請負、石油製品などの販売で収益を得ています。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の売上高は340,336百万円で、前期より12.5％減りました。親会社株主に帰属する当期純利益は534億円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】／【セグメント情報】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +211,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 402770000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1634,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +231,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 457169000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1617,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +251,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 537574000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1641,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +271,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 557257000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1653,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +291,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 658897000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1670,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +299,108 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1955,
+      "title": "前身の特殊会社を設立",
+      "description": "政府が半額以上を出資する特殊会社「石油資源開発株式会社」が設立されました。設立時の政府出資は約56%でした。当社の事業はここから始まっています。",
+      "significance": "国産の石油・天然ガス開発を担う会社として出発した起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "民間会社として再発足",
+      "description": "1967年に特殊会社は石油開発公団の設立に伴い解散し、業務は公団が引き継ぎました。1970年4月、公団から分離して民間会社の石油資源開発として再発足しました。",
+      "significance": "現在の会社の設立時期にあたります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "勇払油ガス田（北海道）を発見",
+      "description": "新潟県や秋田県での油ガス田の発見に続き、北海道で勇払油ガス田を発見しました。",
+      "significance": "北海道での事業の基盤となる発見です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "新潟・仙台間ガスパイプラインが完成",
+      "description": "天然ガスを広い地域に供給するため、総延長251kmの新潟・仙台間ガスパイプラインが完成しました。",
+      "significance": "生産した天然ガスを需要地へ届ける、ガス供給事業の土台になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "2003年12月に東京証券取引所市場第一部へ上場しました。同年10月には都市ガスを供給する白根瓦斯を設立しています。",
+      "significance": "上場により民間の株式会社として広く資金を調達できる体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "イラク・ガラフ油田で生産開始",
+      "description": "2010年に設立したジャペックスガラフが、2013年8月にイラクのガラフ油田から原油の生産を始めました。",
+      "significance": "中東での海外E&P事業の柱になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "相馬LNG基地が操業開始",
+      "description": "福島県で相馬LNG基地が操業を始めました。2020年には隣接する福島ガス発電の電力販売も始まりました。",
+      "significance": "輸入LNGを使うガス供給と電力販売を広げる拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しに伴い、市場第一部からプライム市場へ移行しました。",
+      "significance": "上場する市場区分が変わった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ノルウェーのJAPEX Norge ASの株式を取得",
+      "description": "2024年7月にジャペックス・ノーゲ・エーエス社の株式を取得し、ノルウェー領海上での探鉱開発・生産に参入しました。",
+      "significance": "欧州での海外E&P事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "米国のVerdad Resourcesの持分を取得",
+      "description": "2026年2月に、連結子会社のPeoria Resources, LLCが管理する会社を通じて、コロラド州・ワイオミング州でタイトオイル・ガス資産を持つVerdad Resources Intermediate Holdings LLCの全持分を取得しました。2025年11月にはインドネシアのEMP Gebang Ltd.の株式50%も取得しています。",
+      "significance": "北米のE&P事業を大きく広げた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +409,35 @@
       "publisher": "石油資源開発株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YERU.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YERU",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年4月に「JAPEX経営計画2026-2035」を公表しました。2026〜2030年度を海外E&PとCCUSに集中して「コア資産群」を築く期間、2031〜2035年度を収益貢献が本格化する期間と位置づけています。2035年度に当期純利益1,000億円への利益成長を目指すとしています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "強みとして、地質的に難しい国内で鍛えた探鉱・物理探査・貯留層技術などのE&Pの総合技術力、国内トップのCCUSの実績と知見、厳格なポートフォリオ管理を挙げています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  }
 }

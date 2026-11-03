@@ -4,15 +4,101 @@
   "name": "リョーサン菱洋ホールディングス",
   "officialName": "リョーサン菱洋ホールディングス株式会社",
   "nameEn": "Ryoyo Ryosan Holdings, Inc.",
-  "description": null,
+  "shortNameEn": "Ryoyo Ryosan Holdings",
+  "description": "半導体・電子部品とIT機器を国内外の顧客へ販売する、エレクトロニクス商社グループの持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors"
+    },
+    {
+      "industryId": "it"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "device",
+      "name": "デバイス事業",
+      "description": "半導体や電子部品を仕入れて、国内外のメーカーなどに販売する事業です。製造も一部行います。2026年3月期の外部顧客への売上高は2,546億82百万円で、前期比1.9％減でした。",
+      "products": [
+        "半導体",
+        "電子部品"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "solution",
+      "name": "ソリューション事業",
+      "description": "IT機器や付随するシステムの販売、製造、構築を行う事業です。2026年3月期の外部顧客への売上高は1,052億65百万円で、前期比5.0％増でした。AI分野などで高付加価値型の案件が増えました。",
+      "products": [
+        "IT製品",
+        "ソリューション"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "半導体や電子部品、IT機器とシステムを仕入れて販売し、その差益を得る事業です。",
+    "products": [
+      "半導体",
+      "電子部品",
+      "IT製品",
+      "ソリューション（システムの構築など）"
+    ],
+    "customers": [
+      "国内外のメーカーなどの法人顧客"
+    ],
+    "revenueSources": [
+      "デバイス事業（半導体・電子部品の販売）",
+      "ソリューション事業（IT製品・システムの販売、構築）"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "持株会社と事業子会社",
+        "description": "持株会社の下に、リョーサンと菱洋エレクトロなど子会社28社が入っています。2026年4月に両社は合併しました。"
+      },
+      {
+        "kind": "offering",
+        "title": "半導体・電子部品とIT製品",
+        "description": "デバイス事業では半導体や電子部品を、ソリューション事業ではIT製品とシステムを扱います。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外の顧客",
+        "description": "2026年3月期の売上高は、顧客の所在地で日本が55.1％、中国が24.5％、アジアが16.9％、その他が3.5％でした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "商品・製品の販売",
+        "description": "2026年3月期の売上高は3,599億48百万円でした。デバイス事業が2,546億82百万円、ソリューション事業が1,052億65百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は74億40百万円で、前期比20.7％減でした。前期に段階取得に係る差益があったことなどが理由です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2025年3月期",
@@ -27,7 +113,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 131450000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1649,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +133,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 136895000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1644,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -55,7 +141,58 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1953,
+      "title": "菱三電気を創立",
+      "description": "後にリョーサンとなる有限会社菱三電気が創立されました。",
+      "significance": "現在のグループの一方の源流です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "菱洋電機を設立",
+      "description": "後に菱洋エレクトロとなる菱洋電機株式会社が設立されました。",
+      "significance": "現在のグループのもう一方の源流です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "経営統合へ向けた合意と承認",
+      "description": "2023年5月にリョーサンと菱洋エレクトロが経営統合の基本合意書を結びました。同年10月に最終契約書を結び、12月の臨時株主総会で株式移転計画が承認されました。",
+      "significance": "二つの会社が共同持株会社の下に入る道筋が決まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "持株会社を設立し東証プライム市場に上場",
+      "description": "2024年4月に両社が株式移転で、完全親会社のリョーサン菱洋ホールディングスを設立しました。同社は東京証券取引所プライム市場に新規上場しました。",
+      "significance": "二つの半導体・電子部品商社が一つのグループになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "事業子会社2社が合併",
+      "description": "2026年4月1日に、リョーサンが菱洋エレクトロを吸収合併し、社名をリョーサン菱洋株式会社に変更しました。",
+      "significance": "グループの事業子会社が一社にまとまりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -64,11 +201,25 @@
       "publisher": "リョーサン菱洋ホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHJV.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YHJV",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「生産性の向上」「統合シナジーの創出」「独自性の創出」を進めたと説明しています。事業子会社2社の統合準備も進めました。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    }
+  }
 }

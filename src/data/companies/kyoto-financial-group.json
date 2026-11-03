@@ -4,15 +4,140 @@
   "name": "京都フィナンシャルグループ",
   "officialName": "株式会社京都フィナンシャルグループ",
   "nameEn": "Kyoto Financial Group, Inc.",
-  "description": null,
+  "shortNameEn": "Kyoto FG",
+  "description": "傘下の京都銀行などを通じて、銀行業務やリースなどの金融サービスを提供する持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "banking",
+      "name": "銀行業",
+      "description": "京都銀行を中心に、預金・貸出などの銀行業務を行う事業です。当社グループの報告セグメントは銀行業のみです。",
+      "products": [
+        "預金",
+        "貸出",
+        "有価証券投資"
+      ],
+      "customers": [
+        "個人",
+        "法人"
+      ],
+      "children": [
+        {
+          "id": "securities-investment",
+          "name": "有価証券投資業務",
+          "description": "有価証券に資金を運用する業務です。2026年3月期の外部顧客に対する経常収益では、サービス別で最も大きい区分でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "lending",
+          "name": "貸出業務",
+          "description": "企業や個人に資金を貸し出す業務です。2026年3月期の外部顧客に対する経常収益では、サービス別で2番目の区分でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "banking-other",
+          "name": "その他の業務",
+          "description": "貸出業務・有価証券投資業務以外の業務です。内訳は有報に印字されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他",
+      "description": "リース業務、クレジットカード業務、金融商品取引業務、投資業務、コンサルティング業務などを行う事業です。報告セグメントではなく、金額は有報に独立して印字されていません。",
+      "products": [
+        "リース",
+        "クレジットカード",
+        "証券",
+        "投資",
+        "コンサルティング",
+        "M&A支援"
+      ],
+      "customers": [
+        "個人",
+        "法人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】【関係会社の状況】"
+    }
+  ],
+  "businessModel": {
+    "description": "京都銀行を中心に、貸出や有価証券投資などの金融サービスで経常収益を得ます。",
+    "products": [
+      "預金",
+      "貸出",
+      "リース",
+      "クレジットカード",
+      "証券"
+    ],
+    "customers": [
+      "個人",
+      "法人"
+    ],
+    "revenueSources": [
+      "貸出業務",
+      "有価証券投資業務",
+      "その他"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "京都フィナンシャルグループ",
+        "description": "持株会社として、連結子会社12社と持分法適用会社1社のグループを経営管理します（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "金融サービス",
+        "description": "銀行業務を中心に、リース、クレジットカード、金融商品取引などのサービスを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "個人・法人のお客さま",
+        "description": "預金や貸出、リースなどを使う個人と企業です。経常収益の10%以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "経常収益",
+        "description": "2026年3月期の連結経常収益（売上高にあたる）は366,704百万円でした。サービス別では貸出業務、有価証券投資業務、その他に分かれます。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は96,723百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】【関連情報】"
+  },
   "financials": [
     {
       "fiscalYear": "2024年3月期",
@@ -27,7 +152,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 1141082000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 3473,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +172,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 1083193000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 3580,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +192,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 1136251000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 3676,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -75,7 +200,68 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1941,
+      "title": "丹和銀行が創立",
+      "description": "両丹銀行、宮津銀行、丹後商工銀行、丹後産業銀行の4行が合併し、丹和銀行が創立されました。のちの京都銀行です。",
+      "significance": "京都銀行の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "京都銀行へ行名を改称",
+      "description": "株式会社京都銀行と行名を改めました。1953年には本店を福知山市から京都市へ移しました。",
+      "significance": "京都を拠点とする銀行になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "東京・大阪の証券取引所に上場",
+      "description": "東京証券取引所と大阪証券取引所の市場第二部へ上場しました。1986年に市場第一部へ移り、2022年にプライム市場へ移行しました。",
+      "significance": "京都銀行の株式が広く取引される会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "京都フィナンシャルグループを設立",
+      "description": "京都銀行が単独株式移転で当社を設立し、持株会社体制に移りました。京都銀行が持っていたリースやカードなどの子会社は、現物配当で当社の直接出資子会社になりました。当社は東京証券取引所プライム市場に上場しました。",
+      "significance": "銀行を中心に、グループ全体で事業を広げる体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "積水リースを子会社化",
+      "description": "2024年4月にきょうと事業再生債権回収を設立し、6月に積水リース株式会社を子会社にしました。",
+      "significance": "リース業務の事業を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "京都M&Aアドバイザリーを設立",
+      "description": "2025年7月に京都Ｍ＆Ａアドバイザリー株式会社を設立しました。",
+      "significance": "M&A支援の専門会社をグループに加えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -84,11 +270,13 @@
       "publisher": "株式会社京都フィナンシャルグループ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEHZ.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YEHZ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-03"
 }

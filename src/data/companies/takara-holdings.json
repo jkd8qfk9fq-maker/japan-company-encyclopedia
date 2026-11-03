@@ -4,15 +4,171 @@
   "name": "宝ホールディングス",
   "officialName": "宝ホールディングス株式会社",
   "nameEn": "TAKARA HOLDINGS INC.",
-  "description": null,
+  "shortNameEn": "Takara Holdings",
+  "description": "酒類・調味料の製造販売、海外の酒類と日本食材卸、バイオ試薬・受託を持株会社として束ねる企業グループです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "takara-international",
+      "name": "宝酒造インターナショナルグループ",
+      "shortName": "海外",
+      "description": "日本からの酒類の輸出、海外での酒類の製造・販売、海外の日本食レストランなどへの日本食材の卸売を行います。2026年3月期の外部顧客への売上高は221,549百万円です。",
+      "products": [
+        "清酒（米国製造）",
+        "スコッチウイスキー",
+        "バーボンウイスキー",
+        "日本食材・調味料・酒類の卸売"
+      ],
+      "customers": [
+        "海外の日本食レストラン等",
+        "米国・欧州・豪州の小売・飲食関連の事業者"
+      ],
+      "children": [
+        {
+          "id": "takara-international-sake-whisky",
+          "name": "酒類の輸出と海外製造・販売",
+          "description": "宝酒造インターナショナル株式会社が宝酒造の酒類・調味料を輸出販売します。Takara Sake USA Inc.は米国で主に清酒をつくり、The Tomatin Distillery Co.Ltdはスコッチウイスキーを、Age International,Inc.はバーボンウイスキーを扱います。",
+          "products": [
+            "清酒",
+            "スコッチウイスキー",
+            "バーボンウイスキー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "takara-international-japanese-food-wholesale",
+          "name": "日本食材卸",
+          "description": "Mutual Trading Co.,Inc.は米国を中心に、日本食材・調味料・酒類やレストランの調理器具、食器類まで扱います。欧州ではFoodex SAS、Cominport Distribución, S.L.、Tazaki Foods Ltd.、Kagerer & Co. GmbHが、豪州ではNippon Food Supplies Company Pty Ltdが日本食材を卸売します。",
+          "products": [
+            "日本食材",
+            "調味料",
+            "酒類",
+            "冷凍食品",
+            "水産品"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "takara-shuzo",
+      "name": "宝酒造",
+      "description": "宝酒造株式会社が、国内で焼酎・清酒・ソフトアルコール飲料などの酒類、本みりんなどの酒類調味料、食品調味料、原料用アルコールをつくって販売します。2026年3月期の外部顧客への売上高は118,032百万円です。",
+      "products": [
+        "焼酎",
+        "清酒",
+        "ソフトアルコール飲料",
+        "本みりん",
+        "食品調味料",
+        "原料用アルコール"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "takara-bio-group",
+      "name": "タカラバイオグループ",
+      "description": "試薬・機器の開発・製造・販売と、再生医療等製品の開発製造支援や遺伝子解析などの受託（CDMO）を行います。遺伝子治療に必要なバイオ創薬基盤技術の開発にも取り組みます。2026年3月期の外部顧客への売上高は40,317百万円です。",
+      "products": [
+        "試薬",
+        "機器",
+        "CDMO受託サービス",
+        "遺伝子治療の基盤技術・製造補助剤"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他",
+      "description": "報告セグメントに含まれない区分です。タカラ物流システム株式会社の貨物運送、株式会社ラック・コーポレーションのワイン輸入販売、主に当社が営む不動産賃貸などがあります。2026年3月期の外部顧客への売上高は14,416百万円です。",
+      "products": [
+        "貨物運送",
+        "ブルゴーニュ産ワインの輸入販売",
+        "不動産賃貸"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "宝酒造などの事業会社が酒類・調味料・日本食材・バイオ試薬を販売し、持株会社の当社がグループを統括します。",
+    "products": [
+      "焼酎・清酒・本みりんなどの酒類・調味料",
+      "スコッチウイスキー・バーボンウイスキー・米国製清酒",
+      "日本食材の卸売",
+      "バイオ試薬・機器とCDMO受託サービス"
+    ],
+    "customers": [
+      "国内の酒類・調味料の取引先",
+      "海外の日本食レストランなど日本食材の取引先",
+      "試薬・機器や受託サービスを使う研究・医療関連の顧客"
+    ],
+    "revenueSources": [
+      "酒類・調味料の販売",
+      "海外での酒類の製造・販売と日本食材卸",
+      "バイオ試薬・機器の販売と受託サービス",
+      "貨物運送・ワイン輸入販売・不動産賃貸"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "持株会社",
+        "description": "当社が宝酒造、宝酒造インターナショナル、タカラバイオの各グループを統括し、グループ各社の間接業務の受託や不動産賃貸も行います。"
+      },
+      {
+        "kind": "offering",
+        "title": "提供するもの",
+        "description": "国内の酒類・調味料、海外の酒類と日本食材、バイオ試薬・機器と受託サービスなどを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "届け先",
+        "description": "国内の取引先に加え、米国・欧州・豪州などの日本食レストランや卸売先、研究・医療関連の顧客に届けます。連結売上高の10％以上を占める相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "収益の源",
+        "description": "2026年3月期の売上高は394,316百万円です。製品区分では海外日本食材卸が195,937百万円、国内・海外酒類が151,044百万円、バイオが40,317百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は11,696百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 224555000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4934,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 255318000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5171,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 280465000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5492,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +243,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 300903000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5729,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +263,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 310937000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5720,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +271,128 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1925,
+      "title": "寳酒造株式会社を設立",
+      "description": "京都市伏見区に、酒類、酒精、清涼飲料水、調味料などの製造・販売を目的として設立されました。江戸後期の天保年間以降、京都伏見で酒造業を営んでいた四方合名会社を改組したものです。",
+      "significance": "現在の宝ホールディングスの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "株式を上場",
+      "description": "東京、大阪、名古屋の各証券取引所の開設にあわせて株式を上場しました。その後、取引所の整理・統合を経て、現在は東京証券取引所のみに上場しています。",
+      "significance": "公開会社として事業規模を広げる土台になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "米国で清酒の製造を開始",
+      "description": "米国カリフォルニア州のNUMANO SAKE CO.（現・Takara Sake USA Inc.）の株式を取得し、米国本土での清酒製造を始めました。",
+      "significance": "海外で酒類をつくる事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "スコットランドにトマーチン蒸溜所の会社を設立",
+      "description": "英国スコットランドにThe Tomatin Distillery Co.Ltdを設立しました。翌年にウイスキーメーカーの資産を買収し、スコッチウイスキーの製造を始めました。",
+      "significance": "ウイスキーを手がけるきっかけになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "持株会社へ移行",
+      "description": "酒類・食品・酒精事業とバイオ事業を分割し、新設の宝酒造株式会社とタカラバイオ株式会社が引き継ぎました。当社は持株会社となり、商号を宝ホールディングス株式会社に変更しました。",
+      "significance": "現在の「持株会社と事業会社」のグループ体制になった年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "米国のClontech Laboratoriesを買収",
+      "description": "米国カリフォルニア州のClontech Laboratories, Inc.（現・Takara Bio USA, Inc.）の全株式を、Takara Bio USA Holdings Inc.を通じて取得しました。",
+      "significance": "バイオ事業が米国で開発・製造・販売する拠点になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "欧州の日本食材卸事業に進出",
+      "description": "フランス・パリのFoodex SASの発行済株式の80％を宝酒造を通じて取得し、傘下の子会社とともに連結子会社としました。2015年に残りの20％も取得しています。",
+      "significance": "海外の日本食材卸事業の広がりの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "米国の日本食材卸Mutual Tradingを連結子会社化",
+      "description": "持分法適用関連会社だったMutual Trading Co.,Inc.の第三者割当増資を宝酒造が引き受け、発行済株式の51％を取得して傘下の子会社とともに連結子会社としました。",
+      "significance": "米国で日本食材の卸売業を展開する基盤になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "宝酒造インターナショナルを設立",
+      "description": "宝酒造の海外事業を新設分割し、宝酒造インターナショナル株式会社が引き継ぎました。同社の株式は剰余金の配当として当社へ交付され、当社の連結子会社となりました。",
+      "significance": "海外事業を担う会社が独立し、現在の報告セグメントの一つになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "市場区分の見直しにより、当社とタカラバイオ株式会社は東京証券取引所の市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ドイツの日本食材卸Kagerer & Co.を取得",
+      "description": "ドイツ・ミュンヘン近郊のKagerer & Co. GmbHの出資持分の90％を、宝酒造インターナショナルを通じて取得しました。",
+      "significance": "欧州の日本食材卸ネットワークに水産品を主力とする会社が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "Curio Bioscienceを買収",
+      "description": "米国パロアルト市で空間トランスクリプトーム解析用試薬を開発するCurio Bioscience, Inc.の全株式を、Takara Bio USA Holdings Inc.を通じて取得しました。",
+      "significance": "バイオ事業が試薬の開発分野を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +401,28 @@
       "publisher": "宝ホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YINV.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YINV",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 提出後の重要な後発事象: 2026年2月に公開買付けを決議し、2026年4月6日に成立、2026年6月12日にタカラバイオが上場廃止（完全子会社化）。有報の関係会社表はタカラバイオの議決権所有割合を60.91％（提出日現在は100％となる予定）と印字している。"
+    ]
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高を製品区分で見ると、海外日本食材卸が最も大きく、国内・海外の酒類がこれに続きます。",
+        "basis": "【関連情報】の製品及びサービスごとの情報（2026年3月期）。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

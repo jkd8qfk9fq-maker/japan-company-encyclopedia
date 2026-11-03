@@ -4,15 +4,200 @@
   "name": "東京地下鉄",
   "officialName": "東京地下鉄株式会社",
   "nameEn": "Tokyo Metro Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Tokyo Metro",
+  "description": "東京都区部を中心に9路線の地下鉄を運行し、沿線で不動産賃貸や駅の商業・広告も手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "transportation",
+      "name": "運輸業",
+      "shortName": "運輸",
+      "description": "東京都区部を中心に9路線からなる地下鉄ネットワークを保有し、鉄道の運行・運営と鉄道施設などの保守管理を行う報告セグメントです。2026年3月期の外部顧客への営業収益は384,108百万円（前期は370,121百万円）で、最大の事業です。",
+      "children": [
+        {
+          "id": "railway",
+          "name": "鉄道事業",
+          "shortName": "鉄道",
+          "description": "当社が地下鉄の運行と運営を行う事業です。駅の清掃は㈱メトロセルビス、駅の運営管理は㈱メトロコマースが担います。この区分だけの金額は有報に載っていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "maintenance",
+          "name": "鉄道施設等の整備・保守管理",
+          "shortName": "整備・保守",
+          "description": "駅設備は㈱メトロステーションファシリティーズ、車両はメトロ車両㈱、土木構築物・建築物は㈱メトロレールファシリティーズとメトロ開発㈱、電気設備は東京メトロ電気メインテナンス㈱が担います。この区分だけの金額は有報に載っていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "overseas",
+          "name": "海外都市鉄道の運営・維持の支援",
+          "shortName": "海外支援",
+          "description": "ベトナム東京メトロ（VIETNAM TOKYO METRO ONE MEMBER LIMITED LIABILITY COMPANY）が担う区分です。2017年3月にベトナムに設立されました。海外の外部顧客への営業収益はありません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "life-business-service",
+      "name": "ライフ・ビジネスサービス事業",
+      "shortName": "ライフ・ビジネス",
+      "description": "当社の資産を活用し、駅の商業施設運営、駅構内や車内の広告、携帯電話通信サービスの営業許諾などを行う報告セグメントです。2026年3月期の外部顧客への営業収益は23,603百万円（前期は23,048百万円）で、2番目に大きい事業です。2025年4月からの会計年度に、従来の「流通・広告」から名称を変えました。",
+      "children": [
+        {
+          "id": "life-service",
+          "name": "ライフサービス事業",
+          "shortName": "ライフ",
+          "description": "Echikaなどの商業施設の開発・運営を行う区分です。駅構内の売店は㈱メトロコマース、高架下の商業施設はメトロ開発㈱、駅構内・駅周辺の商業施設と飲食店舗は㈱メトロプロパティーズが運営します。この区分だけの金額は有報に載っていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "advertising-service",
+          "name": "アドバタイジングサービス事業",
+          "shortName": "広告",
+          "description": "主に駅構内や車両内の広告を扱う区分で、㈱メトロアドエージェンシーが担います。この区分だけの金額は有報に載っていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "communication-service",
+          "name": "コミュニケーションサービス事業",
+          "shortName": "通信",
+          "description": "携帯電話通信サービスの営業許諾などを当社が行う区分です。この区分だけの金額は有報に載っていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "shortName": "不動産",
+      "description": "鉄道とのシナジーが出せる範囲で、沿線のオフィスビルやホテルを中心に不動産を賃貸する報告セグメントです。渋谷マークシティ、渋谷ヒカリエ、東急プラザ原宿「ハラカド」などがあります。2026年3月期の外部顧客への営業収益は14,455百万円（前期は14,429百万円）です。",
+      "children": [
+        {
+          "id": "development-and-leasing",
+          "name": "不動産の開発・賃貸・管理",
+          "shortName": "開発・賃貸",
+          "description": "開発と賃貸は当社、賃貸と管理は東京メトロ都市開発㈱が担います。この区分だけの金額は有報に載っていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "asset-management",
+          "name": "投資法人の資産運用",
+          "shortName": "資産運用",
+          "description": "東京メトロアセットマネジメント㈱が担う区分です。同社は2024年4月に設立されました。この区分だけの金額は有報に載っていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "shortName": "その他",
+      "description": "「報告セグメントに含まれない事業セグメント」にあたる区分で、当社施設の管理運営事業などを含みます。福利厚生施設の運営（㈱メトロライフサポート）、人事・経理・システムの事務（㈱メトロビジネスアソシエ）、施設の清掃（㈱メトロフルール）があります。2026年3月期の外部顧客への営業収益は246百万円（前期は232百万円）です。報告セグメントではないため、最後に置いています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "地下鉄の運賃収入を柱に、沿線の不動産賃貸と駅の商業・広告で収益を上げています。",
+    "products": [
+      "地下鉄の旅客輸送（9路線）",
+      "オフィスビル・ホテルなどの賃貸",
+      "駅の商業施設・広告・携帯電話通信サービスの営業許諾"
+    ],
+    "customers": [
+      "地下鉄の利用者",
+      "賃借するテナント企業",
+      "駅や車内の広告主・出店者"
+    ],
+    "revenueSources": [
+      "運輸業",
+      "ライフ・ビジネスサービス事業",
+      "不動産事業"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京地下鉄とグループ会社",
+        "description": "当社と連結子会社14社などが、地下鉄の運行、施設の保守、不動産、商業・広告を分担します。"
+      },
+      {
+        "kind": "offering",
+        "title": "地下鉄の運行と沿線の事業",
+        "description": "東京都区部を中心に9路線の地下鉄を走らせるほか、沿線でオフィスビルやホテルを貸し、駅でEchikaなどの商業施設や広告を運営します。"
+      },
+      {
+        "kind": "customer",
+        "title": "利用者・テナント・広告主",
+        "description": "地下鉄の利用者のほか、不動産を借りる企業、駅の出店者や広告主が顧客です。10％以上を占める顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "運輸収入が中心",
+        "description": "2026年3月期の外部顧客への営業収益は、運輸業384,108百万円、ライフ・ビジネスサービス事業23,603百万円、不動産事業14,455百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "売上高と当期純利益",
+        "description": "2026年3月期の営業収益は4,224億1千4百万円で、旅客運輸収入が好調だったことなどから前期より増えました。親会社株主に帰属する当期純利益は59,015百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】【セグメント情報】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +212,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 618360000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 11794,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +232,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 633344000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 11571,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +252,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 668395000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 11390,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +272,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 716529000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 11328,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +292,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 734751000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 11441,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,20 +300,106 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1941,
+      "title": "帝都高速度交通営団が設立される",
+      "description": "地下鉄の建設と運営を目的に、特殊法人の帝都高速度交通営団が設立されました。同年9月に営業を始め、設立時の営業キロは現在の銀座線の14.3キロでした。",
+      "significance": "現在の東京地下鉄の前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(2) 営団の沿革"
+    },
+    {
+      "year": 1954,
+      "title": "丸ノ内線が開業する",
+      "description": "営団として2番目の路線、丸ノ内線の運輸営業が始まりました。その後、日比谷線（1961年）、東西線（1964年）、千代田線（1969年）、有楽町線（1974年）、半蔵門線（1978年）が順に開業しました。",
+      "significance": "地下鉄ネットワークが広がっていった時期です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(2) 営団の沿革"
+    },
+    {
+      "year": 1991,
+      "title": "南北線が開業する",
+      "description": "南北線の運輸営業が始まり、2000年9月に全線が開通しました。",
+      "significance": "営団最後の新線として、ネットワークがほぼ整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(2) 営団の沿革"
+    },
+    {
+      "year": 2004,
+      "title": "営団が民営化され、東京地下鉄株式会社が設立される",
+      "description": "東京地下鉄株式会社法に基づき、営団の財産を現物出資で引き継いで、2004年4月1日に設立されました。営団は解散しました。",
+      "significance": "特殊会社として、完全民営化への第一段階になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革"
+    },
+    {
+      "year": 2007,
+      "title": "ICカード乗車券「PASMO」のサービスを開始する",
+      "description": "3月にICカード乗車券「PASMO」のサービスが始まりました。",
+      "significance": "乗車券の電子化が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革"
+    },
+    {
+      "year": 2008,
+      "title": "副都心線が開業し、現在の9路線がそろう",
+      "description": "6月に副都心線の運輸営業を始め、全線が開通しました。",
+      "significance": "現在の9路線の地下鉄ネットワークが完成しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革"
+    },
+    {
+      "year": 2017,
+      "title": "ベトナムに現地法人を設立する",
+      "description": "3月にベトナム東京メトロ（VIETNAM TOKYO METRO ONE MEMBER LIMITED LIABILITY COMPANY）を設立しました。海外の都市鉄道の運営・維持を支援する会社です。",
+      "significance": "海外での事業の足がかりになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(1) 提出会社の沿革"
+    },
+    {
+      "year": 2024,
+      "title": "東京証券取引所プライム市場に上場する",
+      "description": "10月23日に、財務大臣と東京都が保有する株式の2分の1の売出しが行われ、同日に東京証券取引所プライム市場に上場しました。",
+      "significance": "完全民営化に向けた取り組みの大きな節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】(3) 当社の完全民営化について"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第22期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第22期(2025/04/01－2026/03/31)",
       "publisher": "東京地下鉄株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHLQ.pdf",
-      "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YZAA.pdf",
+      "publishedAt": "2026-08-28",
+      "docId": "S100YZAA",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: financialNotes の年度「undefined」が5年表にありません"
+    ]
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03"
 }

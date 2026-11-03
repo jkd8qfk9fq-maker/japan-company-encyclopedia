@@ -4,15 +4,161 @@
   "name": "ニップン",
   "officialName": "株式会社ニップン",
   "nameEn": "NIPPN CORPORATION",
-  "description": null,
+  "shortNameEn": "NIPPN",
+  "description": "小麦粉をつくり、プレミックスやパスタ、冷凍食品などの食品に広げて売る総合食品会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "food",
+      "name": "食品事業",
+      "shortName": "食品",
+      "description": "家庭用小麦粉やプレミックス、パスタ、冷凍食品、中食関連食品、米粉などをつくり、国内外で売る事業です。2026年3月期の外部顧客への売上高は3つの区分のうち最も大きくなりました。",
+      "products": [
+        "家庭用小麦粉",
+        "プレミックス",
+        "パスタ",
+        "冷凍食品",
+        "中食関連食品",
+        "米粉"
+      ],
+      "children": [
+        {
+          "id": "food-domestic",
+          "name": "国内",
+          "description": "ニップンが家庭用小麦粉、プレミックス、冷凍食品類をつくり、特約店を通じて売ります。オーマイがパスタ類、畑中食品が冷凍食品、ファーストフーズなどが中食関連食品、オーケー食品工業とナガノトマトが加工調理製品をつくります。",
+          "products": [
+            "家庭用小麦粉",
+            "プレミックス",
+            "冷凍食品",
+            "パスタ",
+            "中食関連食品",
+            "加工調理製品"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "food-overseas",
+          "name": "海外",
+          "description": "タイ、中国、米国、インドネシアで、プレミックスや冷凍生地、パスタ類をつくって売ります。米国のPasta Montanaはパスタ類を製造・販売する子会社です。",
+          "products": [
+            "プレミックス",
+            "冷凍生地",
+            "パスタ"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "flour-milling",
+      "name": "製粉事業",
+      "shortName": "製粉",
+      "description": "小麦粉、ふすま、そば粉をつくる事業です。ニップンが小麦粉とふすまをつくり、特約店を通じて売ります。松屋製粉がそば粉をつくって売ります。",
+      "products": [
+        "小麦粉",
+        "ふすま",
+        "そば粉"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "others",
+      "name": "その他事業",
+      "shortName": "その他",
+      "description": "ペットフード、健康食品類、食品プラントの設計・施工、外食、不動産の賃貸、情報処理、物流などの事業です。報告セグメントには含まれない区分です。",
+      "products": [
+        "ペットフード",
+        "健康食品類",
+        "食品プラントの設計・施工",
+        "ドーナツ店などの外食",
+        "不動産賃貸",
+        "物流サービス"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "小麦粉などを特約店を通じて売り、プレミックスやパスタ、冷凍食品などの食品も国内外で手がけます。",
+    "products": [
+      "小麦粉",
+      "ふすま",
+      "そば粉",
+      "家庭用小麦粉",
+      "プレミックス",
+      "パスタ",
+      "冷凍食品",
+      "中食関連食品",
+      "ペットフード"
+    ],
+    "customers": [
+      "特約店",
+      "伊藤忠商事株式会社",
+      "株式会社ファミリーマート"
+    ],
+    "revenueSources": [
+      "製粉事業（小麦粉、ふすま、そば粉の販売）",
+      "食品事業（家庭用小麦粉、プレミックス、パスタ、冷凍食品、中食関連食品などの販売）",
+      "その他事業（ペットフード、健康食品類、外食、不動産賃貸など）"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ニップングループ",
+        "description": "ニップンと子会社59社、関連会社21社で構成するグループです（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "小麦粉と食品",
+        "description": "小麦粉やふすまをつくる製粉事業と、プレミックス、パスタ、冷凍食品などをつくる食品事業が中心です。"
+      },
+      {
+        "kind": "customer",
+        "title": "特約店と大口の販売先",
+        "description": "小麦粉などは特約店を通じて売ります。2026年3月期の主要な顧客は伊藤忠商事株式会社とファミリーマートです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売",
+        "description": "売上は、製粉事業と食品事業の製品を売った代金が中心です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の業績",
+        "description": "2026年3月期の売上高は418,425百万円、親会社株主に帰属する当期純利益は21,803百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 178697000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3775,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 192613000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3848,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 228285000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3829,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +233,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 246484000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3863,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +253,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 289877000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3935,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +261,128 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1896,
+      "title": "日本製粉株式会社を設立",
+      "description": "東京深川扇橋に設立され、日本で初めて欧米式の機械製粉設備を採用して操業を始めました。",
+      "significance": "現在のニップンにつながる創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1924,
+      "title": "横浜工場が完成",
+      "description": "日本で初めての本格的な大規模臨海工場として完成しました。",
+      "significance": "海外から輸入した小麦を港で受け入れて製粉する拠点の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京・大阪証券取引所に株式を上場",
+      "description": "東京と大阪の証券取引所に株式の上場登録をしました。",
+      "significance": "株式を公開する会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "日粉食糧を設立し「オーマイ」ブランドが誕生",
+      "description": "日粉食糧株式会社（1983年にオーマイ株式会社へ社名変更）を設立し、「オーマイ」ブランドが生まれました。",
+      "significance": "小麦粉だけでなく、家庭向けの食品に事業を広げるきっかけです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "タイに海外拠点を設立",
+      "description": "タイにNippon Flour Mills(Thailand) Ltd.（現・NIPPN FOODS CORPORATION(THAILAND) LTD.）を設立しました。",
+      "significance": "海外でプレミックスなどを売る事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "米国のPasta Montanaを買収",
+      "description": "米国でパスタを手がけるPasta Montana,L.L.C.を買収しました。",
+      "significance": "米国でパスタ類をつくって売る子会社を得ました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "社名を株式会社ニップンに変更",
+      "description": "社名を「株式会社ニップン」に変更しました。同年4月には東福製粉を吸収合併して福岡那の津工場とし、ニップン冷食から冷凍食品製造事業を譲り受けました。",
+      "significance": "製粉と冷凍食品の製造体制を会社の中に集めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "オーケー食品工業を完全子会社に",
+      "description": "オーケー食品工業の株式を追加取得し、完全子会社としました。",
+      "significance": "加工調理製品の製造を担う会社をグループに完全に取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "米国のUtah Flour Millingに出資",
+      "description": "米国のUtah Flour Milling,LLCに出資し、持分法適用会社としました。",
+      "significance": "米国での製粉に関わる事業へ広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ベトナムにNIPPN Vietnamを設立",
+      "description": "ベトナムにNIPPN Vietnam Company Limitedを設立しました。",
+      "significance": "東南アジアでの拠点がベトナムにも広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "畑中食品を連結子会社に",
+      "description": "株式会社畑中食品を連結子会社としました。",
+      "significance": "冷凍食品をつくる会社がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "知多工場が完成",
+      "description": "知多工場が完成しました。",
+      "significance": "国内の生産拠点が増えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +391,13 @@
       "publisher": "株式会社ニップン",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIC9.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YIC9",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-03"
 }
