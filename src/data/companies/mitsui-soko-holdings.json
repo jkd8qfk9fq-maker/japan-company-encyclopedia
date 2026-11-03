@@ -4,15 +4,97 @@
   "name": "三井倉庫ホールディングス",
   "officialName": "三井倉庫ホールディングス株式会社",
   "nameEn": "MITSUI-SOKO HOLDINGS Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Mitsui-Soko",
+  "description": "倉庫保管や国際輸送などの物流サービスを企業に提供し、ビル賃貸も行う物流グループの持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "logistics",
+      "name": "物流事業",
+      "shortName": "物流",
+      "description": "倉庫保管・荷役、港湾作業・運送、海外での物流サービス・複合一貫輸送、航空貨物輸送、3PL（物流の一括請負）、サプライチェーンマネジメント支援、陸上貨物運送など、さまざまな物流サービスを顧客に提供する事業です。2026年3月期の外部顧客への営業収益は291,963百万円で、連結の営業収益299,472百万円の大部分を占めます。主な担い手は、三井倉庫、三井倉庫ロジスティクス、三井倉庫エクスプレス、三井倉庫サプライチェーンソリューション、三井倉庫トランスポートなどの子会社で、いずれも関係会社の状況で物流事業に区分されています。米国・中国・シンガポール・タイ・マレーシア・チェコなど海外にも子会社があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】【セグメント情報】【関係会社の状況】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "shortName": "不動産",
+      "description": "ビルの賃貸を中心としたサービスを提供する事業です。2026年3月期の外部顧客への営業収益は7,509百万円でした。主要な設備の状況では、提出会社の賃貸ビルとして東京都中央区の箱崎ビルほかが不動産事業に区分されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】【主要な設備の状況】"
+    }
+  ],
+  "businessModel": {
+    "description": "倉庫・港湾・航空・陸上輸送・3PLなどの物流サービスを企業に提供し、料金を得ます。",
+    "products": [
+      "倉庫保管・荷役",
+      "港湾作業・運送",
+      "海外での物流サービス・複合一貫輸送",
+      "航空貨物輸送",
+      "3PL（サードパーティロジスティクス）",
+      "サプライチェーンマネジメント支援",
+      "陸上貨物運送",
+      "ビル賃貸"
+    ],
+    "customers": [
+      "物流サービスを必要とする企業（荷主）",
+      "ビルの入居者"
+    ],
+    "revenueSources": [
+      "物流事業（2026年3月期の外部顧客への営業収益は291,963百万円）",
+      "不動産事業（同7,509百万円）"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "三井倉庫グループ",
+        "description": "持株会社のもとで、子会社が倉庫・港湾・運送・3PLなどの物流を担い、ビル賃貸も行います。"
+      },
+      {
+        "kind": "offering",
+        "title": "物流サービスとビル賃貸",
+        "description": "倉庫保管・荷役、港湾作業・運送、航空貨物輸送、3PL、サプライチェーン支援などを組み合わせて提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "荷主企業とビルの入居者",
+        "description": "物流を任せたい企業や、賃貸ビルを借りる入居者が顧客です。特定の顧客への営業収益は、連結の営業収益の10％未満です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益",
+        "description": "2026年3月期の営業収益299,472百万円のうち、物流事業が291,963百万円、不動産事業が7,509百万円（外部顧客分）です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は11,151百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】【セグメント情報】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +109,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 88631000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8172,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +129,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 104078000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8057,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +149,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 120828000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7882,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +169,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 129749000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7924,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +189,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 157093000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7654,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +197,138 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1909,
+      "title": "三井銀行倉庫部から分離独立",
+      "description": "1909年10月11日、三井銀行倉庫部から「東神倉庫株式会社」として分離独立しました。本店は東京に置き、支店を東京、神戸、門司に設けました。",
+      "significance": "現在の三井倉庫グループの出発点となる創業の出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1917,
+      "title": "港湾運送事業に進出",
+      "description": "1917年8月、神戸桟橋会社の海上業務を買収し、港湾運送事業に進出しました。",
+      "significance": "倉庫業から港湾での運送へと事業を広げた最初の動きです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1942,
+      "title": "社名を三井倉庫株式会社に改称",
+      "description": "1942年3月、社名を「三井倉庫株式会社」と改めました。",
+      "significance": "現在まで続く「三井倉庫」の名称が使われ始めた時期です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "東京証券取引所に上場",
+      "description": "1950年4月、東京証券取引所に株式を上場しました。",
+      "significance": "株式を公開する会社になった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "海上コンテナの取扱いを開始",
+      "description": "1968年3月、海上コンテナの取扱いと、国内でのコンテナ・ターミナルの運営を始めました。",
+      "significance": "コンテナ輸送の広がりに合わせ、港湾での物流機能を強めた動きです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "航空貨物の取扱いを本格化",
+      "description": "1982年6月にIATA航空貨物代理店の資格を取得し、航空貨物の取扱いを本格化しました。同年12月には米国ニューヨークに現地法人を設立しました。",
+      "significance": "海上・陸上に加えて航空輸送と海外拠点を持つ、国際物流への広がりを示します。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "不動産賃貸業務を本格展開",
+      "description": "1989年3月、「三井倉庫箱崎ビル」が竣工し、不動産賃貸業務を本格的に始めました。このビルは2024年に「MSH日本橋箱崎ビル」と改称されました。",
+      "significance": "物流に加えて、現在の不動産事業につながるビル賃貸が始まった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "3PL事業を本格展開",
+      "description": "2008年4月、本社に3PL推進部を設置し、3PL（サード・パーティ・ロジスティクス）事業を本格的に始めました。",
+      "significance": "荷主の物流を一括して請け負う事業が、会社の柱の一つとして位置づけられたことを示します。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "三洋電機ロジスティクスを子会社化",
+      "description": "2012年4月、三洋電機ロジスティクス㈱の全株式を取得し、三井倉庫ロジスティクス㈱に改称しました。",
+      "significance": "現在も連結子会社である三井倉庫ロジスティクスのもとになる会社を、グループに迎えた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "持株会社制に移行し三井倉庫ホールディングスに改称",
+      "description": "2014年10月、持株会社制への移行に伴い、社名を「三井倉庫ホールディングス株式会社」と改めました。倉庫事業部門と港湾運送事業部門は「三井倉庫㈱」、BPO事業部門は「三井倉庫ビジネストラスト㈱」として分社化しました。",
+      "significance": "上場会社が持株会社となり、事業を子会社が担う現在の形になった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "ソニーサプライチェーンソリューションの株式を取得",
+      "description": "2015年4月、ソニーサプライチェーンソリューション㈱の株式を66％取得し、三井倉庫サプライチェーンソリューション㈱に改称しました。同年12月には、三井倉庫トランスポート㈱が丸協運輸㈱などの全株式を取得し、連結子会社としました。",
+      "significance": "サプライチェーン支援と国内の陸上運送の担い手が、グループに加わった年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式分割と本店移転",
+      "description": "2025年5月、普通株式を1対3の割合で分割しました。同月に本店所在地を東京都港区西新橋から東京都中央区日本橋箱崎町へ移しました。",
+      "significance": "株式の単位を分けたことと、本店を自社ビルのある日本橋箱崎町に移したことを示します。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "三井不動産と資本業務提携契約を締結",
+      "description": "2026年2月、三井不動産㈱と資本業務提携契約を締結しました。",
+      "significance": "沿革に載る直近の出来事です。契約の内容は、この沿革の欄からは分かりません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +337,14 @@
       "publisher": "三井倉庫ホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEZT.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YEZT",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-04"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03",
+  "perspectives": {}
 }

@@ -4,15 +4,129 @@
   "name": "日本空港ビルデング",
   "officialName": "日本空港ビルデング株式会社",
   "nameEn": "Japan Airport Terminal Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Japan Airport Terminal",
+  "description": "羽田空港のターミナルを運営して施設を貸し、店舗での物品販売と飲食でも稼ぐ会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    },
+    {
+      "industryId": "transportation"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "goods-sales",
+      "name": "物品販売業",
+      "description": "羽田空港・成田空港・関西空港などで旅客に商品を売り、中部空港をはじめ空港会社などに商品を卸す事業です。2026年3月期の外部顧客への売上高は154,053百万円で、3つの報告セグメントのうち最大です。",
+      "products": [
+        "空港店舗での商品販売",
+        "空港会社などへの商品卸売",
+        "商品の運送・倉庫管理"
+      ],
+      "customers": [
+        "航空旅客",
+        "空港会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "facility-management",
+      "name": "施設管理運営業",
+      "description": "羽田空港の旅客ターミナルの施設を管理・運営し、主に航空会社へ貸し出す事業です。保守、警備、清掃、広告代理なども手がけます。2026年3月期の外部顧客への売上高は117,765百万円です。",
+      "products": [
+        "旅客ターミナル施設の賃貸",
+        "施設の保守・営繕・警備・清掃",
+        "広告代理・旅客サービス",
+        "空港運営コンサルティング"
+      ],
+      "customers": [
+        "航空会社を中心とする航空関連企業",
+        "空港の旅客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "food-service",
+      "name": "飲食業",
+      "description": "羽田空港と成田空港の利用者に飲食サービスを提供し、機内食や冷凍食品も作って販売する事業です。2026年3月期の外部顧客への売上高は18,004百万円です。",
+      "products": [
+        "空港内の飲食店",
+        "機内食の製造・販売",
+        "冷凍食品の製造・販売"
+      ],
+      "customers": [
+        "空港の利用者",
+        "国際線の航空会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "羽田空港のターミナルを運営して施設を貸し、店舗での物品販売と飲食でも稼ぐ会社です。",
+    "products": [
+      "旅客ターミナル施設の賃貸と運営",
+      "空港店舗での商品販売・卸売",
+      "空港内の飲食サービス・機内食"
+    ],
+    "customers": [
+      "航空会社を中心とする航空関連企業",
+      "空港の旅客・利用者",
+      "空港会社"
+    ],
+    "revenueSources": [
+      "施設管理運営業の売上",
+      "物品販売業の売上",
+      "飲食業の売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日本空港ビルデングと子会社",
+        "description": "当社と子会社24社、関連会社16社で、羽田空港を中心にターミナルの管理運営を行います。"
+      },
+      {
+        "kind": "offering",
+        "title": "施設・商品・飲食の提供",
+        "description": "ターミナル施設の賃貸と運営、空港店舗での商品販売、飲食サービスを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "航空会社と旅客",
+        "description": "施設を借りる航空会社、店舗や飲食店を使う旅客、商品を仕入れる空港会社が相手です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "3つのセグメントの売上",
+        "description": "2026年3月期の売上高は289,823百万円で、物品販売業が154,053百万円、施設管理運営業が117,765百万円、飲食業が18,004百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は29,139百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +141,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 156009000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2729,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +161,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 140951000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2499,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +181,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 166036000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2660,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 198347000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2871,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +221,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 229885000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3018,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +229,108 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1953,
+      "title": "会社の設立",
+      "description": "運輸大臣の方針に基づき、民間の資本で新しいターミナルビルを建てるため、設立されました。",
+      "significance": "羽田空港のターミナルを民間の会社が運営する、今の事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "東京国際空港ターミナルビルの開館",
+      "description": "東京国際空港（羽田）のターミナルビルが開館し、営業を始めました。",
+      "significance": "ターミナルの管理運営が事業として動き出しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場し、翌1991年に市場第一部に指定されました。",
+      "significance": "株式を公開する会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "国際線旅客ターミナルビルの開館",
+      "description": "東京国際空港国際線旅客ターミナルビルが開館しました。",
+      "significance": "羽田で国際線の利用者向けにも施設を運営する土台ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "第2ターミナルの開館と本社の移転",
+      "description": "東京国際空港第2ターミナルが開館しました。同じ年に、本社を羽田空港第1旅客ターミナルビルに移しました。",
+      "significance": "羽田空港の中に本社を置き、ターミナルを近くで運営する体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東京国際空港ターミナル株式会社の設立",
+      "description": "東京国際空港ターミナル株式会社を共同出資により設立しました。",
+      "significance": "のちに連結子会社となり、現在は施設管理運営業の中心の一社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "新国際線ターミナル（現・第3ターミナル）の供用開始",
+      "description": "東京国際空港の新国際線ターミナル（現・第3ターミナル）が供用を始め、これに合わせて受託業務や卸売などを広げました。",
+      "significance": "羽田の国際線の拡大とともに、事業の範囲が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東京国際空港ターミナル株式会社を連結子会社化",
+      "description": "東京国際空港ターミナル株式会社を、第三者割当増資の引受により連結子会社にしました。",
+      "significance": "第3ターミナルを運営する会社がグループの連結に加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移りました。",
+      "significance": "現在の上場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "第2ターミナル北側サテライトと本館の接続部分の供用開始",
+      "description": "東京国際空港第2ターミナルの北側サテライトと本館をつなぐ部分が供用を始めました。",
+      "significance": "直近の沿革に載る、ターミナル施設の拡張です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +339,13 @@
       "publisher": "日本空港ビルデング株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGGN.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YGGN",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-04"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03"
 }

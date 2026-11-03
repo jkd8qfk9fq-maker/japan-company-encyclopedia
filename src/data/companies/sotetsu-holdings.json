@@ -4,15 +4,151 @@
   "name": "相鉄ホールディングス",
   "officialName": "相鉄ホールディングス株式会社",
   "nameEn": "Sotetsu Holdings,Inc.",
-  "description": null,
+  "shortNameEn": "Sotetsu Holdings",
+  "description": "相模鉄道などを子会社に持つ純粋持株会社で、鉄道を中心に流通・不動産・ホテルを営む会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate"
+    },
+    {
+      "industryId": "retail"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "distribution",
+      "name": "流通業",
+      "shortName": "流通",
+      "description": "スーパーマーケットなどを営む報告セグメントです。2026年3月期の外部顧客への営業収益は97,196百万円（前期は94,844百万円）で、報告セグメントのなかで最大です。主な会社は、スーパーマーケット業の相鉄ローゼン㈱と、その他流通業の相鉄ステーションリテール㈱です（2026年3月31日現在、このセグメントは5社）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "hotel",
+      "name": "ホテル業",
+      "shortName": "ホテル",
+      "description": "宿泊特化型とシティホテルを運営する報告セグメントです。2026年3月期の外部顧客への営業収益は75,060百万円（前期は66,518百万円）です。主な会社は相鉄ホテル㈱、㈱相鉄ホテルマネジメント、㈱相鉄ホテル開発、㈱相鉄インターナショナル韓国で、このセグメントは10社です（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産業",
+      "shortName": "不動産",
+      "description": "不動産分譲業と不動産賃貸業などを営む報告セグメントです。2026年3月期の外部顧客への営業収益は68,798百万円（前期は66,934百万円）です。分譲は相鉄不動産㈱と相鉄不動産販売㈱、賃貸は㈱相鉄アーバンクリエイツと㈱相鉄ビルマネジメントが担います。このセグメントは8社です（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "transportation",
+      "name": "運輸業",
+      "shortName": "運輸",
+      "description": "鉄道業とバス業を営む報告セグメントです。2026年3月期の外部顧客への営業収益は44,375百万円（前期は42,890百万円）です。鉄道は相模鉄道㈱、バスは相鉄バス㈱が営みます。このセグメントは2社です（2026年3月31日現在）。当社グループは鉄道業を中心に沿線地域の暮らしに密着した事業を展開しています。",
+      "children": [
+        {
+          "id": "railway",
+          "name": "鉄道業",
+          "shortName": "鉄道",
+          "description": "相模鉄道㈱が営む鉄道業です。この区分だけの営業収益は、有報の【セグメント情報】には印字されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "bus",
+          "name": "バス業",
+          "shortName": "バス",
+          "description": "相鉄バス㈱が営むバス業です。この区分だけの営業収益は、有報の【セグメント情報】には印字されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "shortName": "その他",
+      "description": "報告セグメントに含まれない事業セグメントで、ビルメンテナンス業等を含みます。2026年3月期の外部顧客への営業収益は22,142百万円（前期は20,990百万円）です。主な会社は、ビルメンテナンス業の相鉄企業㈱、熱供給事業の横浜熱供給㈱、建設業の相鉄リフォーム㈱、その他サービス業の相鉄ビジネスサービス㈱などで、20社です（2026年3月31日現在）。報告セグメントではないため、金額にかかわらず最後に置いています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道を中心に、スーパー・不動産・ホテルなどを沿線で営む子会社を、持株会社として束ねる会社です。",
+    "products": [
+      "鉄道・バス",
+      "スーパーマーケット",
+      "不動産の分譲・賃貸",
+      "ホテル（宿泊特化型・シティ）"
+    ],
+    "customers": [
+      "沿線の住民・利用者",
+      "宿泊客",
+      "不動産の購入者・入居者"
+    ],
+    "revenueSources": [
+      "流通業の営業収益",
+      "ホテル業の営業収益",
+      "不動産業の営業収益",
+      "運輸業の営業収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "相鉄ホールディングス",
+        "description": "純粋持株会社です。2026年3月31日現在、子会社45社と関連会社7社で構成されます。"
+      },
+      {
+        "kind": "offering",
+        "title": "沿線の暮らしを支える事業",
+        "description": "鉄道業・バス業、スーパーマーケット業、不動産分譲・賃貸業、ホテル業などを子会社が営みます。"
+      },
+      {
+        "kind": "customer",
+        "title": "沿線の利用者・宿泊客",
+        "description": "営業収益の10％以上を占める特定の外部顧客はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益",
+        "description": "2026年3月期の営業収益は307,572百万円でした（2025年3月期は292,178百万円）。外部顧客への営業収益は流通業が最も大きく、ホテル業、不動産業、運輸業の順です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は24,848百万円でした（2025年3月期は22,407百万円）。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 139707000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5039,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 145789000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4975,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 164732000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5075,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 182079000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5246,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +243,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 203314000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5321,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +251,108 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1918,
+      "title": "相模鉄道として設立",
+      "description": "相模鉄道㈱（現在の相鉄ホールディングス㈱）が設立されました。",
+      "significance": "現在のグループの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "神中鉄道を合併",
+      "description": "横浜～海老名間などで鉄道を営んでいた神中鉄道㈱を吸収合併しました。",
+      "significance": "現在の相鉄本線にあたる横浜方面への路線を手に入れ、鉄道網の骨格ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京証券取引所に上場",
+      "description": "東京証券取引所に上場しました。",
+      "significance": "株式を公開する会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "不動産分譲業とバス事業を開始",
+      "description": "相模野興業㈱を吸収合併して不動産分譲業を始め、同年に一般乗合旅客自動車運送事業（バス）も始めました。",
+      "significance": "鉄道だけでなく、沿線の暮らしに広く関わる会社へ広がる最初の一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "新相鉄ビル（相鉄ジョイナス）開業",
+      "description": "新相鉄ビル（相鉄ジョイナス）が開業し、1978年に全館が完成しました。",
+      "significance": "横浜駅の駅ビル事業の中心になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "いずみ野線が湘南台まで開通",
+      "description": "いずみ野線の、いずみ中央～湘南台間が開通しました。1976年の二俣川～いずみ野間の開通から段階的に延びた路線です。",
+      "significance": "小田急線・横浜市営地下鉄などに接続する湘南台まで路線がつながりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "持株会社体制へ移行",
+      "description": "鉄道事業を相鉄準備会社㈱に会社分割し、商号を相鉄ホールディングス㈱に変更しました。相鉄準備会社㈱は相模鉄道㈱に商号を変更しました。",
+      "significance": "当社は純粋持株会社となり、鉄道を子会社が担う現在の形になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "サンルートの全株式を取得",
+      "description": "㈱サンルートの全株式を取得しました。同社は2026年2月に㈱相鉄ホテルマネジメントに吸収合併されました。",
+      "significance": "ホテル事業を広げるきっかけになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "相鉄新横浜線（西谷～羽沢横浜国大間）開通",
+      "description": "相模鉄道㈱の相鉄新横浜線の西谷～羽沢横浜国大間が開通し、ＪＲ線との相互直通運転が始まりました。",
+      "significance": "相鉄線からＪＲ線に乗り入れられるようになり、都心方面への行き来が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "相鉄新横浜線が新横浜まで開通",
+      "description": "相鉄新横浜線の羽沢横浜国大～新横浜間が開通し、東急線との相互直通運転が始まりました。",
+      "significance": "相鉄線が新横浜や東急線沿線ともつながりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +361,13 @@
       "publisher": "相鉄ホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFL1.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YFL1",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-04"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03"
 }

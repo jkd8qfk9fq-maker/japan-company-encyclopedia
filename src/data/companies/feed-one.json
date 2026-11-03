@@ -4,15 +4,142 @@
   "name": "フィード・ワン",
   "officialName": "フィード・ワン株式会社",
   "nameEn": "FEED ONE CO.,LTD.",
-  "description": null,
+  "shortNameEn": "Feed One",
+  "description": "牛・豚・鶏・魚などの配合飼料をつくって農家や養殖業者に売り、食肉や鶏卵も扱う会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "livestock-feed",
+      "name": "畜産飼料事業",
+      "shortName": "畜産飼料",
+      "description": "牛・豚・鶏などに与える配合飼料をつくって売る事業で、会社の中心です。グループには、豚や鶏卵を育てて売る畜産の会社もあります。2026年3月期の外部顧客への売上高は会社全体の大部分を占め、前期より3.7％減りました。販売数量と平均販売価格が前年を下回ったためです。",
+      "products": [
+        "配合飼料",
+        "豚",
+        "鶏卵"
+      ],
+      "customers": [
+        "畜産農家などの一般得意先",
+        "グループの養豚・採卵の会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】【セグメント情報】"
+    },
+    {
+      "id": "food",
+      "name": "食品事業",
+      "shortName": "食品",
+      "description": "食肉と鶏卵を仕入れ、加工して売る事業です。子会社のフィード・ワンフーズ、横浜ミート、マジックパール、ゴールドエッグが担当しています。",
+      "products": [
+        "食肉",
+        "鶏卵",
+        "畜産物の加工品"
+      ],
+      "customers": [
+        "食肉・鶏卵の取引先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】【セグメント情報】"
+    },
+    {
+      "id": "aquaculture-feed",
+      "name": "水産飼料事業",
+      "shortName": "水産飼料",
+      "description": "養殖の魚に与える配合飼料をつくって売る事業です。水産物の仕入・販売も行い、子会社の南洋漁業は自社の飼料を研究するために養殖をしています。2026年3月期の外部顧客への売上高は前期より3.0％減りました。販売数量と平均販売価格が前年を下回ったためです。",
+      "products": [
+        "水産用配合飼料",
+        "水産物"
+      ],
+      "customers": [
+        "養殖業者などの一般得意先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "shortName": "その他",
+      "description": "報告セグメントに含まれない区分で、不動産の賃貸と海外事業があります。海外では、関連会社のKYODO SOJITZ FEED COMPANY LIMITED（ベトナム）とNIPPAI SHALIMAR FEEDS PRIVATE LIMITED（インド）が飼料をつくって売っています。外部顧客への売上高は13百万円と印字され、ほかの区分に比べてごくわずかです。",
+      "products": [
+        "不動産賃貸",
+        "海外での飼料の製造・販売"
+      ],
+      "customers": [],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "配合飼料をつくって売り、豚・鶏卵の生産や食肉の加工販売までグループで手がけます。",
+    "products": [
+      "畜産用の配合飼料",
+      "水産用の配合飼料",
+      "豚・鶏卵",
+      "食肉・鶏卵の加工品"
+    ],
+    "customers": [
+      "畜産農家などの一般得意先",
+      "養殖業者",
+      "グループの養豚・採卵の会社",
+      "食肉・鶏卵の取引先"
+    ],
+    "revenueSources": [
+      "畜産飼料事業の売上",
+      "食品事業の売上",
+      "水産飼料事業の売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "フィード・ワングループ",
+        "description": "当社と子会社16社・関連会社11社などで構成され、2026年3月31日現在の従業員数は935人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "配合飼料と畜産物",
+        "description": "自社や委託先の工場で配合飼料をつくります。グループの会社が豚・鶏卵を育てて売り、食肉・鶏卵の加工も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "農家・養殖業者・食品の取引先",
+        "description": "飼料は当社が直接、または販売子会社や特約店を通じて売ります。その他の関係会社の三井物産とは、原料の購入と製品の販売の両方があります。"
+      },
+      {
+        "kind": "revenue",
+        "title": "飼料と畜産物の販売",
+        "description": "2026年3月期の売上高は前期より1.8％減りました。畜産飼料事業が売上の大部分を占めます。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は増加",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は、前期より18.4％増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +154,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 44840000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 932,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +174,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 45314000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 910,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 50856000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 902,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 55347000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 925,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +234,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 62385000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 935,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +242,109 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2014,
+      "title": "協同飼料と日本配合飼料が株式移転で当社を設立し上場",
+      "description": "2014年10月、協同飼料と日本配合飼料が株式移転で持株会社として当社を設立し、当社の普通株式が東京証券取引所に上場しました。",
+      "significance": "飼料メーカー2社が一つのグループになった出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "2社を吸収合併し、商号をフィード・ワンに変更",
+      "description": "2015年10月、当社が協同飼料と日本配合飼料を吸収合併し、商号を「フィード・ワン」に変更しました。",
+      "significance": "持株会社から、飼料をつくって売る事業会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "北九州工場を開設",
+      "description": "2017年3月に北九州工場を開設しました。2020年4月に北九州水産工場へ名称が変わりました。",
+      "significance": "九州に水産飼料の工場を持つことになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "関西工場を閉鎖、食肉子会社を再編",
+      "description": "2018年1月に関西工場を閉鎖しました。同年7月には、横浜ミートセンターが三河畜産工業を吸収合併し、商号をフィード・ワンフーズに変更しました。",
+      "significance": "工場の整理と、食品事業の子会社の再編が同じ年に進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "北九州畜産工場を開設",
+      "description": "2020年7月に北九州畜産工場を開設しました。同年4月には、マジックパールが西日本マジックパールを吸収合併しています。",
+      "significance": "九州で畜産飼料をつくる体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "販売会社を会社分割で設立",
+      "description": "2021年2月にフィードグローブを会社分割して八戸フィードワン販売を、4月に北海道フィードワン販売を設立しました。",
+      "significance": "地域ごとに飼料を売る会社を分けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所のプライム市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場区分になった年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "本社を横浜市西区に移転",
+      "description": "2024年7月に、本社を神奈川県横浜市西区に移しました。",
+      "significance": "現在の本社の所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "子会社を吸収合併し、販売会社も統合",
+      "description": "2025年4月に苫小牧飼料と東北飼料を吸収合併し、苫小牧工場と八戸工場を設置しました。同年10月には、販売会社の東北フィードワン販売が八戸フィードワン販売を、鹿島フィードワン販売が東海フィードワン販売を吸収合併しました。",
+      "significance": "工場と販売会社をまとめ、グループの形を整理しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "other-affiliated-company",
+      "description": "当社の議決権の25.7％を持つ、その他の関係会社の総合商社です（2026年3月31日現在）。当社は同社から原料を購入し、同社に製品を販売しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】【事業の内容】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +352,14 @@
       "publisher": "フィード・ワン株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC1Q.pdf",
       "publishedAt": "2026-06-16",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YC1Q",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-04"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-03",
+  "perspectives": {}
 }

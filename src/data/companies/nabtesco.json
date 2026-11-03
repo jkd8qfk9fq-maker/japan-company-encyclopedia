@@ -4,28 +4,150 @@
   "name": "ナブテスコ",
   "officialName": "ナブテスコ株式会社",
   "nameEn": "Nabtesco Corporation",
-  "description": null,
+  "shortNameEn": "Nabtesco",
+  "description": "産業用ロボット部品、鉄道・航空機・船舶・自動車の機器、自動ドアをつくって売る機械メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "accessibility-solutions",
+      "name": "アクセシビリティソリューション事業",
+      "shortName": "アクセシビリティ",
+      "description": "建物や一般産業用の自動扉装置、排煙設備機器、プラットホーム安全設備、福祉・介護用機器などを、設計・製造・販売し、据付や保守・修理まで手がける事業です。2025年12月期の外部売上高は110,668百万円（前期比3.7％増）で、国内の建物用ドアとプラットホームドアの需要が堅調だったことと、為替の影響で増えました。",
+      "products": [
+        "建物用自動ドア",
+        "一般産業用自動扉装置",
+        "排煙設備機器",
+        "プラットホーム安全設備",
+        "福祉・介護用機器"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "transport-solutions",
+      "name": "トランスポートソリューション事業",
+      "shortName": "トランスポート",
+      "description": "鉄道車両用のブレーキ装置・自動扉装置・連結装置・安全設備、航空機用部品、自動車用のブレーキ装置・駆動制御装置・安全装置、舶用の制御装置・消火装置などを、設計・製造・販売し、保守や修理も行う事業です。2025年12月期の外部売上高は100,473百万円（前期比13.2％増）で、鉄道車両用機器、航空機器、舶用機器の需要が好調でした。",
+      "products": [
+        "鉄道車両用ブレーキ装置",
+        "鉄道車両用自動扉装置",
+        "航空機用部品",
+        "自動車用ブレーキ装置",
+        "舶用制御装置"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "component-solutions",
+      "name": "コンポーネントソリューション事業",
+      "shortName": "コンポーネント",
+      "description": "産業用ロボットに使う部品（精密減速機など）と、その部品の設計・製造・販売・保守・修理を行う事業です。2025年12月期の外部売上高は79,325百万円（前期比17.3％増）で、産業用ロボットの在庫が適正水準になり、需要も堅調だったため増えました。油圧機器事業は2025年12月期から非継続事業として扱われ、この金額に入っていません。",
+      "products": [
+        "産業用ロボット部品",
+        "精密減速機"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他（報告セグメントに含まれない事業）",
+      "shortName": "その他",
+      "description": "包装機械、立体モデル作成装置などと、その部品の設計・製造・販売・保守・修理を行う事業です。報告セグメントには含まれません。2025年12月期の外部売上高は17,445百万円（前期比0.8％増）で、包装機は前期並みでした。",
+      "products": [
+        "包装機械",
+        "立体モデル作成装置"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "部品や装置を設計・製造して売り、据付や保守・修理でも収益を得る機械メーカーです。",
+    "products": [
+      "産業用ロボット部品（精密減速機など）",
+      "鉄道車両用ブレーキ装置・自動扉装置",
+      "航空機用部品",
+      "自動車用ブレーキ装置・駆動制御装置",
+      "舶用制御装置",
+      "建物用・一般産業用の自動扉装置",
+      "プラットホーム安全設備"
+    ],
+    "customers": [
+      "産業用ロボット向けの部品を必要とする企業",
+      "鉄道車両・航空機・船舶・自動車の機器を必要とする企業",
+      "建物や駅のホームに自動ドアなどの設備を入れる企業"
+    ],
+    "revenueSources": [
+      "製品・部品の販売",
+      "設備の据付",
+      "保守・修理"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ナブテスコ",
+        "description": "ナブテスコと子会社66社、関連会社12社のグループが、事業を3つの報告セグメントに分けて営んでいます。"
+      },
+      {
+        "kind": "offering",
+        "title": "部品・装置とサービス",
+        "description": "産業用ロボット部品、鉄道車両・航空機・船舶・自動車の機器、自動ドアなどを、設計・製造して提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "機器メーカーや設備の持ち主",
+        "description": "ロボットや車両、船舶、建物、駅のホームなどに使う部品・装置を必要とする企業に届けます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "販売と保守・修理",
+        "description": "製品や部品の販売に加え、据付や保守・修理でも収益を得ています。"
+      },
+      {
+        "kind": "profit",
+        "title": "2025年12月期の売上高と純利益",
+        "description": "2025年12月期の売上高は307,912百万円（前期比9.8％増）、親会社の所有者に帰属する当期利益は15,255百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
       "periodEnd": "2021-12-31",
-      "revenue": 299802000000,
+      "revenue": 299641000000,
       "revenueLabel": "売上高",
-      "profit": 101966000000,
+      "profit": 101806000000,
       "profitLabel": "税引前当期利益",
-      "netIncome": 64818000000,
+      "netIncome": 64771000000,
       "netIncomeLabel": "親会社の所有者に帰属する当期利益",
-      "totalAssets": 481718000000,
+      "totalAssets": 483653000000,
       "totalAssetsLabel": "資産合計",
-      "netAssets": 239910000000,
+      "netAssets": 241372000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
       "employees": 7844,
       "currency": "JPY",
@@ -37,15 +159,15 @@
     {
       "fiscalYear": "2022年12月期",
       "periodEnd": "2022-12-31",
-      "revenue": 308691000000,
+      "revenue": 309123000000,
       "revenueLabel": "売上高",
-      "profit": 15763000000,
+      "profit": 16553000000,
       "profitLabel": "税引前当期利益",
-      "netIncome": 9464000000,
+      "netIncome": 10415000000,
       "netIncomeLabel": "親会社の所有者に帰属する当期利益",
-      "totalAssets": 459293000000,
+      "totalAssets": 462440000000,
       "totalAssetsLabel": "資産合計",
-      "netAssets": 248696000000,
+      "netAssets": 251250000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
       "employees": 7928,
       "currency": "JPY",
@@ -57,15 +179,15 @@
     {
       "fiscalYear": "2023年12月期",
       "periodEnd": "2023-12-31",
-      "revenue": 333631000000,
+      "revenue": 333367000000,
       "revenueLabel": "売上高",
-      "profit": 25629000000,
+      "profit": 25316000000,
       "profitLabel": "税引前当期利益",
-      "netIncome": 14554000000,
+      "netIncome": 14226000000,
       "netIncomeLabel": "親会社の所有者に帰属する当期利益",
-      "totalAssets": 422065000000,
+      "totalAssets": 428630000000,
       "totalAssetsLabel": "資産合計",
-      "netAssets": 260470000000,
+      "netAssets": 262721000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
       "employees": 8158,
       "currency": "JPY",
@@ -79,13 +201,13 @@
       "periodEnd": "2024-12-31",
       "revenue": 280458000000,
       "revenueLabel": "売上高",
-      "profit": 13788000000,
+      "profit": 14225000000,
       "profitLabel": "税引前当期利益",
-      "netIncome": 10119000000,
+      "netIncome": 10188000000,
       "netIncomeLabel": "親会社の所有者に帰属する当期利益",
-      "totalAssets": 445544000000,
+      "totalAssets": 449845000000,
       "totalAssetsLabel": "資産合計",
-      "netAssets": 270093000000,
+      "netAssets": 272559000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
       "employees": 8227,
       "currency": "JPY",
@@ -99,13 +221,13 @@
       "periodEnd": "2025-12-31",
       "revenue": 307912000000,
       "revenueLabel": "売上高",
-      "profit": 21656000000,
+      "profit": 21983000000,
       "profitLabel": "税引前当期利益",
-      "netIncome": 15695000000,
+      "netIncome": 15255000000,
       "netIncomeLabel": "親会社の所有者に帰属する当期利益",
-      "totalAssets": 463991000000,
+      "totalAssets": 466632000000,
       "totalAssetsLabel": "資産合計",
-      "netAssets": 271932000000,
+      "netAssets": 273466000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
       "employees": 8472,
       "currency": "JPY",
@@ -115,20 +237,151 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1925,
+      "title": "日本エヤーブレーキを神戸に設立",
+      "description": "神戸製鋼所など3社の出資で、神戸に日本エヤーブレーキ株式会社（のちのナブコ）が設立され、鉄道車両用のエアブレーキ装置の製造を始めました。",
+      "significance": "現在の鉄道車両用機器につながる、統合前の一方の会社の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "帝人航空工業として分離独立",
+      "description": "もう一方の統合前の会社が、帝国人造絹絲（のちの帝人）から分離独立し、帝人航空工業として発足しました。のちに帝人製機、ティーエスコーポレーションと社名を変えました。",
+      "significance": "ナブテスコを構成する2社のうち、帝人側の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "株式移転でナブテスコを設立し上場",
+      "description": "2003年9月、ティーエスコーポレーション（旧 帝人製機）とナブコが株式移転でナブテスコを設立し、東京証券取引所（市場第一部）に上場しました。",
+      "significance": "2社の事業が1つのグループになった年です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "完全子会社2社を吸収合併",
+      "description": "2004年10月、完全子会社だったティーエスコーポレーションとナブコを簡易合併の手続きで吸収合併しました。",
+      "significance": "統合した2社が1つの会社になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "ナブテスコオートモーティブを設立",
+      "description": "2009年12月にナブテスコオートモーティブ株式会社を設立し、自動車関連機器の事業をこの会社に移しました。",
+      "significance": "自動車用機器の事業を、専門の子会社で営む形にしました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "スイスの自動ドア部門を買収",
+      "description": "2011年4月、スイスのKABA社から自動ドア部門（現在のGilgen Door Systems AG）を買収しました。",
+      "significance": "自動ドア事業が海外に広がるきっかけになりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "ナブコシステムを子会社化",
+      "description": "2016年4月、ナブコシステム株式会社の株式を追加で取得し、子会社にしました。",
+      "significance": "アクセシビリティ分野の販売・据付・保守を担うグループ会社が加わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "OVALO社を子会社化",
+      "description": "2017年3月、ドイツのOVALO GmbHの出資持分を取得し、子会社にしました。",
+      "significance": "トランスポート分野の海外のグループ会社が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証プライム市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しで、市場第一部からプライム市場へ移りました。",
+      "significance": "市場区分の変更に伴う移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "R.K. DEEP SEA TECHNOLOGIESを子会社化",
+      "description": "2023年8月、R.K. DEEP SEA TECHNOLOGIES LIMITEDの株式を取得し、子会社にしました。",
+      "significance": "舶用機器まわりのグループ会社が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "油圧機器事業をコムテスコに移す",
+      "description": "2025年12月、油圧機器事業を吸収分割でコムテスコ株式会社に移しました。コムテスコの発行済株式の70％は、2026年1月1日付でイタリアのComer Industries S.p.A.に譲渡されました。",
+      "significance": "油圧機器事業は2025年12月期の決算で非継続事業として扱われ、売上高に入っていません。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2025",
-      "title": "有価証券報告書－第23期(2025/01/01－2025/12/31)",
+      "title": "訂正有価証券報告書－第23期(2025/01/01－2025/12/31)",
       "publisher": "ナブテスコ株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XTOY.pdf",
-      "publishedAt": "2026-03-25",
-      "accessedAt": "2026-09-28"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z4C8.pdf",
+      "publishedAt": "2026-09-30",
+      "docId": "S100Z4C8",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-04"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: financialNotes の年度「undefined」が5年表にありません",
+      "businessModel: financialNotes の年度「undefined」が5年表にありません",
+      "businessModel: financialNotes の年度「undefined」が5年表にありません",
+      "businessModel: 訂正有価証券報告書（2026-09-30提出）で2021〜2025年の売上高・当期利益などが原本から変わっている（2024年12月期の売上高は油圧機器の非継続事業組替で説明がつくが、2021〜2023年の小幅な差は訂正理由をこのパックで確認できていない）。"
+    ]
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年度から2027年度の中期経営計画で、Project 10による収益性の改善（再興）と、モーションコントロールをスマートモーションコントロール（電動化・インテグレーション・データ活用）へ発展させること（進化）を基本方針にしています。",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  }
 }

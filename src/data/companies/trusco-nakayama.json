@@ -4,15 +4,155 @@
   "name": "トラスコ中山",
   "officialName": "トラスコ中山株式会社",
   "nameEn": "TRUSCO NAKAYAMA CORPORATION",
-  "description": null,
+  "shortNameEn": "TRUSCO NAKAYAMA",
+  "description": "工場や建設現場で使う工具・作業用品を、在庫を持って卸売りし、販売店経由でユーザーへ届ける会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "factory-route",
+      "name": "ファクトリールート",
+      "shortName": "ファクトリー",
+      "description": "製造業や建設関連業などの会社に、工具や作業用品を卸売りする事業で、トラスコ中山の中心です。2025年12月期の外部顧客への売上高は2,112億23百万円（前期比7.2％増）で、会社全体の売上高3,200億43百万円の大部分を占めました。生産工場で使う環境安全用品、ハンドツール、作業用品などが増えました。",
+      "products": [
+        "環境安全用品",
+        "ハンドツール",
+        "作業用品",
+        "工事用品",
+        "物流保管用品"
+      ],
+      "customers": [
+        "製造業の会社",
+        "建設関連業の会社"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報等】【経営成績等の状況の概要】"
+    },
+    {
+      "id": "e-business-route",
+      "name": "eビジネスルート",
+      "shortName": "eビジネス",
+      "description": "ネット通販の会社などに商品を販売する事業です。商品データベースや仕入先の在庫データを得意先のシステムとつなぎ、ユーザーへの直送などを行います。2025年12月期の外部顧客への売上高は769億60百万円（前期比12.9％増）でした。",
+      "products": [
+        "環境安全用品",
+        "ハンドツール",
+        "作業用品",
+        "オフィス住設用品"
+      ],
+      "customers": [
+        "ネット通販企業"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報等】【経営成績等の状況の概要】"
+    },
+    {
+      "id": "home-center-route",
+      "name": "ホームセンタールート",
+      "shortName": "ホームセンター",
+      "description": "ホームセンターやプロショップ（建築現場などで働く人向けの専門店）に商品を販売する事業です。2025年12月期の外部顧客への売上高は283億96百万円（前期比5.9％増）でした。作業用品や環境安全用品の受注が増えました。",
+      "products": [
+        "作業用品",
+        "環境安全用品",
+        "ハンドツール",
+        "工事用品"
+      ],
+      "customers": [
+        "ホームセンター",
+        "プロショップ"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報等】【経営成績等の状況の概要】"
+    },
+    {
+      "id": "overseas-route",
+      "name": "海外ルート",
+      "shortName": "海外",
+      "description": "タイとインドネシアの連結子会社の業績と、海外部の諸外国向け販売をあわせた区分です。子会社は主に親会社から仕入れた商品を現地で卸売りしています。2025年12月期の外部顧客への売上高は34億63百万円（前期比12.0％増）でした。",
+      "products": [
+        "工場用副資材（プロツール）"
+      ],
+      "customers": [
+        "タイ・インドネシアなど海外の得意先"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報等】【関係会社の状況】"
+    }
+  ],
+  "businessModel": {
+    "description": "工具・作業用品を自社の物流センターに在庫し、卸売りや直送で販売する会社です。",
+    "products": [
+      "環境安全用品",
+      "ハンドツール",
+      "作業用品",
+      "工事用品",
+      "物流保管用品",
+      "オフィス住設用品",
+      "生産加工用品",
+      "研究管理用品",
+      "切削工具",
+      "自社ブランド「TRUSCO」の商品"
+    ],
+    "customers": [
+      "製造業・建設関連業の会社",
+      "ネット通販企業",
+      "ホームセンター・プロショップ",
+      "海外の得意先"
+    ],
+    "revenueSources": [
+      "工具・作業用品などの商品の卸売",
+      "ネット通販企業やホームセンター向けの販売",
+      "子会社による海外での卸売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "トラスコ中山",
+        "description": "全国に物流センターと在庫保有支店を持つ、工具・作業用品の卸売会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "作業用品・工具などの商品",
+        "description": "仕入先の商品と自社ブランド「TRUSCO」の商品を在庫し、注文に合わせて出荷します。複数の商品を1つの梱包にまとめてユーザーへ直送するサービスもあります。"
+      },
+      {
+        "kind": "customer",
+        "title": "販売ルートごとの得意先",
+        "description": "製造業・建設関連業の会社、ネット通販企業、ホームセンターやプロショップ、海外の得意先に、販売ルート別に商品を届けます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "商品の卸売による売上",
+        "description": "2025年12月期の売上高は3,200億43百万円（前期比8.5％増）で、ファクトリールートが最も大きな割合を占めました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は158億81百万円（前期比1.3％減）でした。前期に旧大阪本社の土地・建物を売却した影響があったためです。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】【経営成績等の状況の概要】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +167,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 142426000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1632,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +187,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 151002000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1633,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 160716000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1655,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 173996000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1704,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +247,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 186252000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1809,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +255,128 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1959,
+      "title": "大阪で機械工具の卸売業を創業",
+      "description": "大阪市天王寺区で、機械工具の卸売業「中山機工商会」として創業しました。",
+      "significance": "工具の卸売という、現在まで続く事業の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "中山機工株式会社を設立",
+      "description": "創業者の中山注次が、大阪市で中山機工株式会社を設立しました。",
+      "significance": "個人の商会から会社組織になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "ホームセンター業界へ進出",
+      "description": "ホームセンター向けの販売を始めました。",
+      "significance": "現在のホームセンタールートにつながる販路です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "トラスコ中山株式会社に商号変更し、大阪証券取引所に上場",
+      "description": "商号をトラスコ中山株式会社に変更し、大阪証券取引所市場第二部に上場しました。同じ年に、初の物流センターも開設しました。",
+      "significance": "株式を公開し、在庫を持つ物流センターを広げていく土台ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "プライベート・ブランド商品を「TRUSCO」に統一",
+      "description": "自社企画のプライベート・ブランド商品を「TRUSCO」ブランドに統一しました。",
+      "significance": "自社ブランドを軸にした商品展開が進みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "初の海外現地法人をタイに設立",
+      "description": "タイに、初の海外現地法人となる子会社を設立しました。",
+      "significance": "海外ルートの始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "eコマース営業部と海外部を新設",
+      "description": "ネット通販企業向けのeコマース営業部（現 eビジネス営業部）と海外部を新設しました。",
+      "significance": "ネット通販向けのeビジネスルートが組織として始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "決算期を3月から12月に変更し、インドネシアに子会社を設立",
+      "description": "決算期を3月から12月に変更しました。同じ年にインドネシアにも子会社を設立しました。",
+      "significance": "決算期が変わったため、2014年前後の年度は期間が異なります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "連結財務諸表の作成を開始",
+      "description": "子会社を含めた連結財務諸表の作成を始めました。",
+      "significance": "海外子会社を含むグループ全体の業績を開示する形になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "「DX銘柄2020」に選定",
+      "description": "情報システム本部をデジタル戦略本部に改称し、「DX銘柄2020」に選定され、「DXグランプリ2020」を受賞しました。",
+      "significance": "デジタル技術を使った経営が外部から評価されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場区分です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "オレンジブック本部を開設し、米国子会社を設立",
+      "description": "4月にオレンジブック本部を開設しました。9月には子会社TRUSCO NAKAYAMA USA,INC.を設立しました。",
+      "significance": "商品データの仕組みを担う組織を強め、海外では米国にも拠点を持ちました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +385,28 @@
       "publisher": "トラスコ中山株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XRJW.pdf",
       "publishedAt": "2026-03-18",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XRJW",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: financialNotes の年度「undefined」が5年表にありません"
+    ]
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「がんばれ！！日本のモノづくり」の企業メッセージのもと、日本のモノづくりを支えるプラットフォーマーになることなど10項目の「ありたい姿」を掲げ、在庫の拡充、荷物の詰合わせ直送、置き工具「MRO ストッカー」、災害時にも供給を止めないBCP対応などに取り組んでいます。",
+        "asOf": "2026-03-18",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営成績等の状況の概要】"
+      }
+    }
+  }
 }

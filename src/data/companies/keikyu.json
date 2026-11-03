@@ -4,15 +4,174 @@
   "name": "京浜急行電鉄",
   "officialName": "京浜急行電鉄株式会社",
   "nameEn": "Keikyu Corporation",
-  "description": null,
+  "shortNameEn": "Keikyu",
+  "description": "京急線の鉄道とバスを核に、沿線で不動産・ホテル・百貨店なども営む会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate"
+    },
+    {
+      "industryId": "retail"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "transportation",
+      "name": "交通事業",
+      "shortName": "交通",
+      "description": "鉄道、バス、タクシー等の営業を行う報告セグメントです。2026年3月期の外部顧客への営業収益は120,587百万円で、最大の区分です。鉄道事業は当社が営み、バス事業は京浜急行バス㈱、川崎鶴見臨港バス㈱、東洋観光㈱などが担っています。タクシーを営む京急タクシーグループ6社は、2026年3月31日付で当社が全株式を譲渡し、連結の範囲から外れました。",
+      "children": [
+        {
+          "id": "railway",
+          "name": "鉄道事業",
+          "shortName": "鉄道",
+          "description": "当社が営む鉄道事業です。都心から品川、羽田空港、川崎、横浜を経て三浦半島に至る当社線の沿線が事業の中心になっています。この区分だけの売上高は、有報に載っていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "bus",
+          "name": "バス事業",
+          "shortName": "バス",
+          "description": "京浜急行バス㈱、川崎鶴見臨港バス㈱、東洋観光㈱などが営む区分です。京浜急行バス㈱は当社から周遊バスの運行業務を受託しています。この区分だけの売上高は、有報に載っていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "retail",
+      "name": "流通事業",
+      "shortName": "流通",
+      "description": "百貨店業とストア業を中心に商品の販売を行う報告セグメントです。2026年3月期の外部顧客への営業収益は83,717百万円でした。百貨店は㈱京急百貨店、スーパーなどのストアは㈱京急ストアが担っています。",
+      "children": [
+        {
+          "id": "department-store",
+          "name": "百貨店・ショッピングセンター業",
+          "shortName": "百貨店",
+          "description": "㈱京急百貨店が営む区分です。この区分だけの売上高は、有報に載っていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "store",
+          "name": "ストア業",
+          "shortName": "ストア",
+          "description": "㈱京急ストアが営む区分です。同社の2026年3月期の営業収益は64,562百万円で、連結営業収益の10％を超える連結子会社として有報に載っています。駅構内での営業は当社が承認しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "shortName": "不動産",
+      "description": "土地・建物の販売と賃貸等を行う報告セグメントです。2026年3月期の外部顧客への営業収益は45,139百万円でした。不動産販売は当社と京急不動産㈱、賃貸は当社、京急不動産㈱、京急開発㈱、臨港エステート㈱などが担っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "leisure-service",
+      "name": "レジャー・サービス事業",
+      "shortName": "レジャー・サービス",
+      "description": "ホテル・旅館、レジャー施設、ゴルフ場、飲食店等の営業を行う報告セグメントです。2026年3月期の外部顧客への営業収益は30,949百万円でした。ビジネスホテルは当社と㈱京急イーエックスイン、ゴルフ場は㈱市原京急カントリークラブ、マリーナは㈱葉山マリーナーなどが担っています。長野京急カントリークラブの事業は、2024年9月に会社分割で他社に承継されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "shortName": "その他",
+      "description": "「報告セグメントに含まれない事業セグメント」にあたる区分で、建設・土木・電気設備の工事、輸送用機器の修理・改造、ビル管理業務、自動車教習所などを含みます。2026年3月期の外部顧客への営業収益は23,797百万円でした。報告セグメントではないため、売上の順ではなく最後に置いています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道とバスを軸に、沿線で不動産・レジャー・流通を広げて収益を得る会社です。",
+    "products": [
+      "鉄道・バス",
+      "不動産の販売・賃貸",
+      "ホテル・レジャー施設",
+      "百貨店・ストア"
+    ],
+    "customers": [
+      "沿線の利用者・住民",
+      "不動産の購入者・入居者",
+      "ホテル・レジャー施設の利用者",
+      "百貨店・ストアの買い物客"
+    ],
+    "revenueSources": [
+      "交通事業の運賃など",
+      "不動産の販売収入・賃貸収入",
+      "ホテル・レジャー事業の収入",
+      "百貨店・ストアの商品販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "京浜急行電鉄グループ",
+        "description": "鉄道を営む当社と、バス・不動産・ホテル・百貨店などを営む子会社が、沿線を中心に事業を展開します。"
+      },
+      {
+        "kind": "offering",
+        "title": "鉄道・バスと沿線の暮らしのサービス",
+        "description": "都心から品川、羽田空港、川崎、横浜を経て三浦半島に至る沿線で、移動と住まい、宿泊、買い物を提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "沿線の利用者と住民",
+        "description": "通勤・通学や観光で鉄道・バスを使う人、沿線で住まいや店を利用する人が主な顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の営業収益は304,192百万円",
+        "description": "交通事業が120,587百万円、流通事業が83,717百万円、不動産事業が45,139百万円、レジャー・サービス事業が30,949百万円の外部顧客への営業収益でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は27,492百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は27,492百万円で、前期は24,301百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +186,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 256898000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8938,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +206,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 273465000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8630,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +226,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 357697000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8587,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +246,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 372587000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8484,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +266,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 390430000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8177,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +274,108 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1898,
+      "title": "大師電気鉄道が創立",
+      "description": "京急の前身のひとつ、大師電気鉄道株式会社が創立されました。1899年に六郷橋〜大師間で営業を始め、同年に京浜電気鉄道株式会社へ商号を変えています。",
+      "significance": "京急の鉄道事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1925,
+      "title": "湘南電気鉄道が創立",
+      "description": "湘南電気鉄道株式会社が創立され、1930年に黄金町〜浦賀間などを開通しました。",
+      "significance": "三浦半島方面の路線を築いた、もうひとつの前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1933,
+      "title": "京浜電気鉄道と湘南電気鉄道が直通運転を開始",
+      "description": "両社が相互に電車の直通運転を始め、品川〜浦賀間がつながりました。1941年には京浜電気鉄道が湘南電気鉄道を合併しています。",
+      "significance": "現在の京急線の骨格がこの時期にできました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "東京急行電鉄から分離して京浜急行電鉄が創立",
+      "description": "小田急電鉄、京王帝都電鉄とともに東京急行電鉄から分離し、京浜急行電鉄株式会社が創立されました。1949年には東京証券取引所に株式を上場しています。",
+      "significance": "現在の京浜急行電鉄の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "品川〜泉岳寺間が開通し都心乗り入れを開始",
+      "description": "品川〜泉岳寺間の開通で都心への乗り入れが始まりました。同じ年に京急油壺マリンパークも開業しています。",
+      "significance": "都心と三浦半島を直接つなぐ路線網になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "羽田空港への乗り入れを開始",
+      "description": "天空橋〜羽田空港間が開通し、空港ターミナルへの乗り入れが始まりました。2010年には羽田空港国際線ターミナル駅（現羽田空港第3ターミナル駅）が開業しています。",
+      "significance": "空港アクセスは、いまも当社グループの戦略拠点のひとつです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "バス事業を京浜急行バスに完全分社化",
+      "description": "京浜急行バス株式会社を設立し、自動車事業を同社に承継して完全分社化しました。",
+      "significance": "バス事業をグループ会社が担う形になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "本社を横浜市に移転",
+      "description": "本社を東京都港区から神奈川県横浜市に移し、京急グループ本社が完成しました。",
+      "significance": "沿線の中心である横浜に本社を置く形になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "SHINAGAWA GOOSと京急油壺マリンパークが閉館",
+      "description": "SHINAGAWA GOOSは2021年3月に、京急油壺マリンパークは同年9月に閉館しました。",
+      "significance": "レジャー施設の見直しが進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "京急アセットマネジメントが京急SMTBアセットマネジメントに商号変更",
+      "description": "2024年7月に設立された京急アセットマネジメント株式会社が、2025年10月に京急SMTBアセットマネジメント株式会社へ商号を変更しました。",
+      "significance": "不動産の運用を扱う会社が、グループに加わっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +384,28 @@
       "publisher": "京浜急行電鉄株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YK5J.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YK5J",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-04"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: financialNotes の年度「undefined」が5年表にありません"
+    ]
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年度から2026年度を中期経営計画期間とし、2040年度を長期ビジョンの実現年度とする第20次総合経営計画を進めています。羽田エリアでは、羽田空港第1・第2ターミナル駅の引上線の整備で輸送力を増強し、周辺の活性化も図るとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境および対処すべき課題等】"
+      }
+    }
+  }
 }

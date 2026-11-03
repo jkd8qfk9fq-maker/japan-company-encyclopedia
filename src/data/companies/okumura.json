@@ -4,15 +4,120 @@
   "name": "奥村組",
   "officialName": "株式会社奥村組",
   "nameEn": "OKUMURA CORPORATION",
-  "description": null,
+  "description": "土木・建築工事を請け負う総合建設会社で、不動産や再生可能エネルギーの事業も行っています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "building",
+      "name": "建築事業",
+      "shortName": "建築",
+      "description": "建築その他の建設工事を請け負う事業で、当社と関連会社の㈱オーゼットユーが営んでいます。2026年3月期の外部顧客への売上高は180,142百万円で、国内民間向けが145,323百万円、国内官公庁向けが34,818百万円でした。",
+      "customers": [
+        "国内民間",
+        "国内官公庁"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "civil-engineering",
+      "name": "土木事業",
+      "shortName": "土木",
+      "description": "土木その他の建設工事を請け負う事業で、当社と関連会社の㈱オーゼットユーが営んでいます。2026年3月期の外部顧客への売上高は115,248百万円で、国内官公庁向けが66,777百万円、国内民間向けが37,152百万円、海外向けが11,318百万円でした。",
+      "customers": [
+        "国内官公庁",
+        "国内民間",
+        "海外"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "investment-development",
+      "name": "投資開発事業",
+      "shortName": "投資開発",
+      "description": "不動産の販売・賃貸と、再生可能エネルギーによる発電・売電を行う事業です。不動産は当社と子会社の太平不動産㈱が、発電・売電は子会社の石狩バイオエナジー(同)と平田バイオエナジー(同)が営んでいます。2026年3月期の外部顧客への売上高は7,206百万円です。石狩バイオエナジー(同)の発電施設は爆発事故以降、商業運転を止めていましたが、2026年4月から再開しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない区分です。当社が建設事業に付帯するコンサルティング等を行い、子会社の奥村機械製作㈱が建設資機材等の製造・販売を、吹田南千里ＰＦＩ㈱など子会社と関連会社がＰＦＩ事業等を営んでいます。2026年3月期の外部顧客への売上高は4,604百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "土木・建築の工事を発注者から請け負い、完成した工事の代金を売上にします。",
+    "products": [
+      "建築工事",
+      "土木工事",
+      "不動産の販売・賃貸",
+      "再生可能エネルギーによる発電・売電"
+    ],
+    "customers": [
+      "国内官公庁",
+      "国内民間企業",
+      "海外の発注者"
+    ],
+    "revenueSources": [
+      "建築事業の完成工事",
+      "土木事業の完成工事",
+      "投資開発事業（不動産・発電）",
+      "建設資機材の製造・販売など"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "奥村組グループ",
+        "description": "当社と子会社9社、関連会社6社で、土木事業・建築事業・投資開発事業を営んでいます。"
+      },
+      {
+        "kind": "offering",
+        "title": "建設工事と投資開発",
+        "description": "土木・建築の工事の請負が中心です。兼業として不動産の販売・賃貸と、再生可能エネルギーによる発電・売電を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "官公庁と民間",
+        "description": "2026年3月期の売上高307,202百万円のうち、国内官公庁が102,090百万円、国内民間が189,404百万円、海外が11,325百万円です。売上高の10％以上を占める相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "工事の代金",
+        "description": "売上高の中心は建築事業（180,142百万円）と土木事業（115,248百万円）です。投資開発事業は7,206百万円、その他は4,604百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は18,360百万円で、前期より574.3％増えました。前期に子会社の石狩バイオエナジー(同)の減損損失を計上した反動があります。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +132,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 167425000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2194,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +152,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 173215000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2281,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +172,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 191573000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2344,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +192,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 172455000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2505,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,15 +212,87 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 193964000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2586,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "連結子会社の石狩バイオエナジー(同)の発電施設は爆発事故以降、商業運転を止めていましたが、2026年4月から再開しています。"
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1907,
+      "title": "奥村太平が土木建築請負業を創業",
+      "description": "奥村太平が個人企業として土木建築請負業を始め、本店を奈良県に置きました。",
+      "significance": "現在の建設会社の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1938,
+      "title": "株式会社に組織変更",
+      "description": "株式会社に組織を変更しました。それ以前に、1928年に東京支店、1937年に八幡支店を開いています。",
+      "significance": "個人企業から会社組織になり、各地に支店を広げる土台ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "奥村機械製作株式会社を設立",
+      "description": "建設資機材の製造を担う奥村機械製作株式会社を設立しました。現在も連結子会社で、当社は建設資機材の一部を購入しています。",
+      "significance": "建設に使う機械や資材をグループ内でまかなう体制の基になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "大阪・東京の証券取引所市場第一部に上場",
+      "description": "1962年に大阪証券取引所市場第二部へ上場した後、1963年に大阪及び東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "株式を広く公開し、資金調達と社会的な信用の面で基盤を固めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "太平不動産株式会社を設立",
+      "description": "不動産事業を担う太平不動産株式会社を設立しました。現在も連結子会社です。1972年には定款の事業目的に住宅事業と不動産取引等を加えています。",
+      "significance": "建設工事の請負に加えて、不動産を扱う事業へ広がるきっかけになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "石狩新港のバイオマス発電事業会社の持分を取得",
+      "description": "石狩新港新エネルギー発電合同会社の持分を取得しました。2019年11月に石狩バイオエナジー合同会社へ社名を変更し、現在は連結子会社です。2019年6月には定款の事業目的に発電・エネルギー供給事業を加えています。",
+      "significance": "再生可能エネルギーによる発電・売電事業に取り組む出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "平田バイオエナジー合同会社を設立し、プライム市場へ移行",
+      "description": "1月に平田バイオエナジー合同会社を設立しました（現在は連結子会社）。4月には東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "発電事業を広げるとともに、上場市場の区分が新しくなりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +301,25 @@
       "publisher": "株式会社奥村組",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y95Z.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-28"
+      "docId": "S100Y95Z",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-04"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「中期経営計画(2025～2027年度)」で「企業価値の向上」「事業領域の拡大」「人的資源の活用」を事業戦略の基本方針としています。2026年3月期は計画の初年度で、売上高は前期比3.0％増の307,202百万円でした。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    }
+  }
 }

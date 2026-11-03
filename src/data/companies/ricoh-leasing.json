@@ -4,15 +4,124 @@
   "name": "リコーリース",
   "officialName": "リコーリース株式会社",
   "nameEn": "RICOH LEASING COMPANY,LTD.",
-  "description": null,
+  "shortNameEn": "Ricoh Leasing",
+  "description": "リコー製品などの機器を企業にリースし、融資や手数料型のサービスも手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "lease-finance",
+      "name": "リース＆ファイナンス事業",
+      "shortName": "リース＆ファイナンス",
+      "description": "事務用・情報関連機器、医療機器、産業工作機械、車両などを企業にリースし、融資も行う事業です。2026年3月期の外部顧客への売上高は316,388百万円で、全体の大半を占めます。",
+      "products": [
+        "ファイナンス・リース",
+        "オペレーティング・リース",
+        "割賦",
+        "法人向け融資・業界特化型融資・マンションローン等の貸付"
+      ],
+      "customers": [
+        "法人のお客さま"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】／（セグメント情報等）"
+    },
+    {
+      "id": "investment",
+      "name": "インベストメント事業",
+      "shortName": "インベストメント",
+      "description": "太陽光発電や住宅賃貸など、発電や不動産に投資する事業です。2026年3月期の外部顧客への売上高は11,892百万円でした。",
+      "products": [
+        "太陽光発電",
+        "住宅賃貸・不動産関連"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】／（セグメント情報等）"
+    },
+    {
+      "id": "service",
+      "name": "サービス事業",
+      "shortName": "サービス",
+      "description": "物件を使わず手数料を得る事業です。請求書発行・売掛金回収の代行、医療・介護報酬ファクタリング、住宅ローン保証、介護施設運営などを行います。2026年3月期の外部顧客への売上高は10,298百万円でした。",
+      "products": [
+        "請求書発行・売掛金回収等の代行サービス",
+        "医療・介護報酬ファクタリングサービス",
+        "債権保証",
+        "住宅ローンの保証サービス",
+        "リロケーションマネジメント・サービスアパートメント事業",
+        "介護施設・老人ホーム運営"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】／（セグメント情報等）"
+    }
+  ],
+  "businessModel": {
+    "description": "リコー製品などの機器を企業にリースし、融資や手数料型のサービスも行う会社です。",
+    "products": [
+      "ファイナンス・リース",
+      "オペレーティング・リース",
+      "割賦",
+      "法人向け融資",
+      "請求書発行・売掛金回収の代行",
+      "医療・介護報酬ファクタリング",
+      "太陽光発電・住宅賃貸"
+    ],
+    "customers": [
+      "法人のお客さま（外部顧客への売上高の10％以上を占める相手先はありません）"
+    ],
+    "revenueSources": [
+      "リース料・割賦・貸付（リース＆ファイナンス事業）",
+      "手数料（サービス事業）",
+      "発電・不動産賃貸（インベストメント事業）"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "リコーリース",
+        "description": "株式会社リコーの持分法適用会社で、リコーの製品などをリース物件として扱います。"
+      },
+      {
+        "kind": "offering",
+        "title": "リースと金融サービス",
+        "description": "機器のリース、融資、売掛金回収の代行、ファクタリング、債権保証などを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "法人のお客さま",
+        "description": "リコー製品を使う企業や医療・介護、産業分野の法人がお客さまです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上",
+        "description": "2026年3月期の売上高は338,579百万円（2025年3月期は312,156百万円）で、リース＆ファイナンス事業が大半です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は12,821百万円（2025年3月期は15,658百万円）でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】／（セグメント情報等）／【主要な経営指標等の推移】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +136,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 201480000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1227,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +156,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 211701000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1588,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +176,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 221936000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1641,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +196,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 234070000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1657,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +216,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 241680000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1686,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +224,148 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1976,
+      "title": "リコークレジット株式会社として設立",
+      "description": "1976年12月にリコークレジット株式会社として設立され、事務用機器を中心にクレジット販売と、金融機関と提携したローンの営業を始めました。",
+      "significance": "リコーの機器を売る仕組みを金融面で支える会社として出発しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "リース事業の営業開始",
+      "description": "1977年6月に事務用機器を中心にリース事業を始めました。",
+      "significance": "現在の主力であるリースの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "商号をリコーリース株式会社に変更",
+      "description": "1984年4月に商号をリコーリース株式会社に変えました。同年2月には売掛金集金代行事業も始めています。",
+      "significance": "リースを中心とする現在の社名になり、手数料型のサービスにも広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "ファクタリング事業の営業開始",
+      "description": "1986年3月にファクタリング事業を始めました。",
+      "significance": "物件を使わない手数料ビジネスの一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1996年1月に東京証券取引所市場第二部に株式を上場し、2001年3月に市場第一部に指定されました。",
+      "significance": "株式を公開する会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "テクノレント株式会社の株式を70％取得",
+      "description": "2005年12月にテクノレント株式会社の株式の70％を取得し、2019年1月に追加取得して完全子会社にしました。同社は計測機器などのレンタルを行い、2026年4月1日付で当社が吸収合併しています。",
+      "significance": "機器のレンタル事業を子会社として広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】／【事業の内容】"
+    },
+    {
+      "year": 2011,
+      "title": "介護報酬ファクタリングサービス事業開始",
+      "description": "2011年10月に介護報酬ファクタリングサービスを始めました。",
+      "significance": "医療・介護分野向けのサービスの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "住宅賃貸事業の営業開始",
+      "description": "2017年7月に住宅賃貸事業を始めました。",
+      "significance": "リース以外の不動産関連事業に広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "リコー、みずほリースと業務提携契約を締結",
+      "description": "2020年3月に株式会社リコー、みずほリース株式会社と3社間の業務提携契約を結びました。同年6月に監査等委員会設置会社へ移行しています。",
+      "significance": "リコーとみずほリースの2社が、現在のその他の関係会社として並んでいます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】／【関係会社の状況】"
+    },
+    {
+      "year": 2020,
+      "title": "エンプラス株式会社の株式を取得",
+      "description": "2020年11月にエンプラス株式会社の株式を取得しました。同社はリロケーションマネジメントなどを行う完全子会社です。",
+      "significance": "不動産関連のサービス事業が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】／【関係会社の状況】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行、Welfareすずらんの株式を取得",
+      "description": "2022年4月に東京証券取引所の市場区分の見直しでプライム市場に移行しました。同年12月には介護施設を運営する株式会社Welfareすずらんの株式を取得しています。",
+      "significance": "介護分野へ事業を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "債権保証事業の営業開始",
+      "description": "2023年4月に債権保証事業を始めました。",
+      "significance": "サービス事業の手数料型の商品が増えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "ricoh",
+      "relationship": "other-affiliated-company",
+      "description": "リコーリースの議決権の33.7％を持つその他の関係会社（2026年3月31日現在）で、リコーリースはリコーの持分法適用会社です。リコー等の製品をリースする「販売支援リース」を行い、両社の間にリース取引があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】（2）その他の関係会社"
+    },
+    {
+      "companyId": "mizuho-leasing",
+      "relationship": "other-affiliated-company",
+      "description": "リコーリースの議決権の20.0％を持つその他の関係会社（2026年3月31日現在）で、両社の間にリース取引があります。2020年3月にはリコーを加えた3社間で業務提携契約を結んでいます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】（2）その他の関係会社／【沿革】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +373,25 @@
       "publisher": "リコーリース株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YF3N.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YF3N",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "リコー等の製品をリース物件として顧客に提供する「販売支援リース」を、リース＆ファイナンス事業の主要な活動として展開しています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】（2）リコーグループとの関係"
+      }
+    }
+  }
 }

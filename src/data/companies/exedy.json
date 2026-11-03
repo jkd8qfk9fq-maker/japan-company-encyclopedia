@@ -4,15 +4,130 @@
   "name": "エクセディ",
   "officialName": "株式会社エクセディ",
   "nameEn": "EXEDY Corporation",
-  "description": null,
+  "shortNameEn": "EXEDY",
+  "description": "自動車の変速装置まわりの部品を、国内と海外の工場でつくり自動車メーカーなどへ売る会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "automatic-transmission",
+      "name": "自動変速装置関連事業",
+      "shortName": "AT",
+      "description": "オートマチック車の変速に使うトルクコンバータなどの部品をつくって売る事業です。2026年3月期の外部顧客への売上収益は1,883億円で、報告セグメントの中でいちばん大きい事業です。",
+      "products": [
+        "トルクコンバータ",
+        "オートマチックトランスミッション部品"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "manual-transmission",
+      "name": "手動変速装置関連事業",
+      "shortName": "MT",
+      "description": "マニュアル車の変速に使うクラッチなどの部品をつくって売る事業です。2026年3月期の外部顧客への売上収益は755億円でした。",
+      "products": [
+        "クラッチディスク",
+        "クラッチカバー",
+        "2マスフライホイール"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "industrial-drive",
+      "name": "産業機械用駆動伝動装置事業",
+      "shortName": "TS",
+      "description": "建設機械や産業車両に使う駆動伝動装置をつくって売る事業です。2026年3月期の外部顧客への売上収益は128億円でした。",
+      "products": [
+        "パワーシフトトランスミッション・同部品"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "2輪用クラッチ、機械装置、金型治工具、運送請負などの事業です。報告セグメントには含まれず、2026年3月期の外部顧客への売上収益は274億円でした。",
+      "products": [
+        "2輪用クラッチ",
+        "機械装置",
+        "金型治工具",
+        "運送請負"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "クラッチやトルクコンバータなどの自動車用変速部品をつくり、自動車メーカーなどに売って収益を得ます。",
+    "products": [
+      "トルクコンバータ、オートマチックトランスミッション部品",
+      "クラッチディスク、クラッチカバー、2マスフライホイール",
+      "建設機械や産業車両向けのパワーシフトトランスミッション・同部品",
+      "2輪用クラッチ"
+    ],
+    "customers": [
+      "株式会社アイシンおよびそのグループ会社",
+      "日産自動車株式会社およびそのグループ会社",
+      "海外の現地得意先"
+    ],
+    "revenueSources": [
+      "自動変速装置関連事業の製品販売",
+      "手動変速装置関連事業の製品販売",
+      "産業機械用駆動伝動装置事業の製品販売",
+      "2輪用クラッチなど、その他の事業"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "エクセディグループ",
+        "description": "当社と50社の子会社、8社の関連会社で構成されています（2026年3月31日現在）。国内は当社とダイナックスが製品・部品の製造販売を行い、ほかの会社は製造下請やサービスを分担しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "変速装置まわりの部品",
+        "description": "オートマチック車向けのトルクコンバータ、マニュアル車向けのクラッチ、建設機械向けの駆動伝動装置などをつくります。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車メーカーなど",
+        "description": "株式会社アイシンおよびそのグループ会社、日産自動車株式会社およびそのグループ会社などに製品を販売しています。海外では、グループ各社が現地の得意先に製造・販売を行っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売による売上",
+        "description": "2026年3月期の売上収益は3,039億円（前年同期比1.8%減）でした。自動変速装置関連事業の受注が減ったことが主な理由として説明されています。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社の所有者に帰属する当期利益は137億円（前年同期比7.3%増）でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +142,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 221756000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 11940,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -47,7 +162,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 225563000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 11725,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -67,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 218548000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 11444,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -87,7 +202,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 180478000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 10997,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -107,7 +222,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 192711000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 10970,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -115,7 +230,128 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1923,
+      "title": "大阪市生野区で創業",
+      "description": "足立一馬が大阪市生野区で個人企業として創業しました。",
+      "significance": "現在のエクセディにつながる、いちばん最初の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "株式会社大金製作所を設立",
+      "description": "大阪市生野区に株式会社大金製作所を設立しました。",
+      "significance": "個人企業から会社組織になり、事業を広げる土台ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に上場しました。同じ年に北海道千歳市に湿式摩擦材をつくる合弁会社を設立し、のちのダイナックスの前身になりました。",
+      "significance": "資金調達の道が開け、自動変速装置向けの摩擦材づくりにも踏み出しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "米国に販売会社を設立",
+      "description": "米国カリフォルニア州に全額出資の販売会社ダイキンクラッチＵ.Ｓ.Ａ.を設立しました（2006年にエクセディグローバルパーツに社名変更）。",
+      "significance": "海外で製品を売る体制づくりの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "商号をエクセディに変更",
+      "description": "商号を株式会社大金製作所から株式会社エクセディに変更しました。同じ1995年には、オーストラリアに販売合弁会社、米国に自動変速装置用部品の製造会社、中国重慶にマニュアルクラッチの製造合弁会社を設立しています。",
+      "significance": "現在の社名になり、海外展開を進める時期の節目となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "1996年9月の大阪証券取引所市場第一部への上場に続き、東京証券取引所市場第一部にも上場しました。",
+      "significance": "上場市場が広がり、全国的な知名度と資金調達力が高まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "アイシン精機と業務提携",
+      "description": "アイシン精機株式会社（現 株式会社アイシン）と、海外事業を中心とした業務提携契約を結びました。",
+      "significance": "自動車部品の大手との提携で、海外での事業を強める後ろ盾を得ました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "衣川鋳鉄の株式を取得",
+      "description": "京都府福知山市の衣川鋳鉄の株式を取得しました（2009年にエクセディ鋳造に社名変更）。",
+      "significance": "部品の素材となる鋳造品を、グループ内でつくる力を強めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "メキシコに自動変速装置用部品の製造会社を設立",
+      "description": "メキシコのアグアスカリエンテス州に、自動変速装置用部品を製造するエクセディダイナックスメキシコを設立しました。",
+      "significance": "北米向けの自動変速装置用部品を、現地でつくる拠点が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分見直しにより、市場第一部からプライム市場に移行しました。同年1月には株式会社アスターと、新事業領域を開拓するための業務提携契約を結んでいます。",
+      "significance": "上場市場の区分が変わり、あわせて既存の変速装置の外に事業を広げる動きも始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "PRE-EVモビリティなどを子会社化",
+      "description": "8月に山形県山形市のPRE-EVモビリティ株式会社、10月に京都府京都市の株式会社WorldLink&Companyの株式を取得し、それぞれ子会社にしました。6月には米国のエクセディアメリカを完全子会社にしています。",
+      "significance": "電動化など新しい分野に向けて、グループの顔ぶれが増えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "Protean Electricを子会社化、イタリアに合弁会社を設立",
+      "description": "2月に英国サリー州のProtean Electricの株式を取得して子会社にしました。3月にはイタリアのトリノに合弁会社EXEDY FRAPを設立しています。",
+      "significance": "海外で電動化に関わる事業へ踏み出した動きとして、直近の沿革に載っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +360,25 @@
       "publisher": "株式会社エクセディ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBAF.pdf",
       "publishedAt": "2026-06-15",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YBAF",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-04"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "industryPosition": {
+      "disclosed": {
+        "text": "連結売上収益の約9割が自動車用部品であり、自動車の電動化や主要な販売先である自動車メーカーの生産・販売動向の影響を受ける可能性があると説明しています。特にアジア・オセアニアでの販売拡大を最重要戦略としています。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    }
+  }
 }
