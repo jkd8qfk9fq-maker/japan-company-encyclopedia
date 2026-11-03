@@ -4,7 +4,8 @@
   "name": "西日本鉄道",
   "officialName": "西日本鉄道株式会社",
   "nameEn": "Nishi-Nippon Railroad Co.，Ltd.",
-  "description": null,
+  "shortNameEn": "Nishi-Nippon Railroad",
+  "description": "福岡を中心に鉄道・バスを運行し、物流・不動産・流通・ホテルなどを幅広く営む会社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -14,8 +15,353 @@
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "logistics",
+      "name": "物流業",
+      "shortName": "物流",
+      "description": "航空貨物や海上貨物を海外と結ぶ国際物流事業と、国内の物流事業を行う区分です。外部顧客への営業収益が最も大きく、2026年3月期の営業収益は前期比3.4％増でした。海外拠点の拡充や半導体を扱う専業部署の新設を進めています。",
+      "products": [
+        "国際物流事業",
+        "国内物流事業"
+      ],
+      "children": [
+        {
+          "id": "international-logistics",
+          "name": "国際物流事業",
+          "shortName": "国際物流",
+          "description": "国際航空貨物や国際海上貨物の取り扱いを、米国・中国・欧州などの現地法人とともに行う事業です。2026年3月期は、メキシコとフィリピンに事務所を新設しました。",
+          "products": [
+            "国際航空貨物",
+            "国際海上貨物"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "domestic-logistics",
+          "name": "国内物流事業",
+          "shortName": "国内物流",
+          "description": "西鉄運輸㈱や西鉄物流㈱などが国内の物流を担う事業です。",
+          "products": [
+            "国内物流"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産業",
+      "shortName": "不動産",
+      "description": "オフィスや商業施設の賃貸、マンションなどの住宅の分譲、不動産の流動化を行う区分です。2025年4月に福岡市中心部でONE FUKUOKA BLDG.を開業し、2026年3月期の営業収益は前期比8.2％増でした。",
+      "products": [
+        "賃貸事業",
+        "住宅事業",
+        "その他不動産事業"
+      ],
+      "children": [
+        {
+          "id": "leasing",
+          "name": "賃貸事業",
+          "shortName": "賃貸",
+          "description": "オフィスビルや商業施設、物流施設を貸す事業です。2025年4月24日にONE FUKUOKA BLDG.を開業しました。",
+          "products": [
+            "オフィス",
+            "商業施設",
+            "賃貸用物流施設"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "housing",
+          "name": "住宅事業",
+          "shortName": "住宅",
+          "description": "首都圏と関西圏でマンションを供給・販売する事業です。ベトナムやフィリピンでの分譲開発も共同で進めています。",
+          "products": [
+            "分譲マンション",
+            "戸建区画"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-real-estate",
+          "name": "その他不動産事業",
+          "shortName": "その他不動産",
+          "description": "私募ファンドの組成やアセットマネジメント業務の一部受託など、不動産の流動化に関わる事業です。",
+          "products": [
+            "私募ファンドの組成",
+            "アセットマネジメント業務"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "id": "transportation",
+      "name": "運輸業",
+      "shortName": "運輸",
+      "description": "福岡県を中心に鉄道・バス・タクシーを運行する、会社の中核の区分です。2026年3月期の営業収益は前期比2.8％増でした。鉄道は2026年4月1日に運賃を改定し、有料座席列車「Nライナー」の運行も始めました。",
+      "products": [
+        "鉄道事業",
+        "バス事業",
+        "タクシー事業",
+        "運輸関連事業"
+      ],
+      "children": [
+        {
+          "id": "railway",
+          "name": "鉄道事業",
+          "shortName": "鉄道",
+          "description": "当社と筑豊電気鉄道㈱が営む事業です。当社の営業キロは106.1キロで、2026年3月期の旅客人員は前期比5.7％増でした。",
+          "products": [
+            "鉄道"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "bus",
+          "name": "バス事業",
+          "shortName": "バス",
+          "description": "当社と西鉄バス北九州㈱などが路線バスや高速バス、観光バスを運行する事業です。博多駅と福岡空港国際線を結ぶ連節バスの導入や、オープントップバスの運行も行っています。",
+          "products": [
+            "路線バス",
+            "高速バス",
+            "観光バス"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "taxi",
+          "name": "タクシー事業",
+          "shortName": "タクシー",
+          "description": "福岡西鉄タクシー㈱や久留米西鉄タクシー㈱などが営む事業です。",
+          "products": [
+            "タクシー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "transport-related",
+          "name": "運輸関連事業",
+          "shortName": "運輸関連",
+          "description": "㈱西鉄ステーションサービスや西鉄エンジニアリング㈱などが、運輸を支える業務を行う事業です。",
+          "products": [
+            "駅業務",
+            "運輸関連サービス"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "id": "retail",
+      "name": "流通業",
+      "shortName": "流通",
+      "description": "スーパーマーケットを営むストア事業と、生活雑貨の販売を行う区分です。2026年3月期の営業収益は前期比2.8％増でした。沿線に「レガネット」などの店舗を展開しています。",
+      "products": [
+        "ストア事業",
+        "生活雑貨販売業"
+      ],
+      "children": [
+        {
+          "id": "store",
+          "name": "ストア事業",
+          "shortName": "ストア",
+          "description": "㈱西鉄ストアが営む事業です。2026年3月期は「レガネット春日原」を開業しました。",
+          "products": [
+            "スーパーマーケット"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "household-goods",
+          "name": "生活雑貨販売業",
+          "shortName": "生活雑貨",
+          "description": "㈱インキューブ西鉄が営む事業です。2025年10月に「イオンモール大牟田店」を開業しました。",
+          "products": [
+            "生活雑貨"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "id": "leisure-service",
+      "name": "レジャー・サービス業",
+      "shortName": "レジャー・サービス",
+      "description": "ホテル、旅行、娯楽、飲食、広告などの事業を行う区分です。2026年3月期の営業収益は前期比12.1％増で、2025年4月にONE FUKUOKA HOTELを開業しました。",
+      "products": [
+        "ホテル事業",
+        "旅行事業",
+        "娯楽事業",
+        "飲食事業",
+        "広告事業",
+        "その他サービス事業"
+      ],
+      "children": [
+        {
+          "id": "hotel",
+          "name": "ホテル事業",
+          "shortName": "ホテル",
+          "description": "国内と海外で「ソラリア西鉄ホテル」などのホテルを運営する事業です。2025年4月にONE FUKUOKA HOTELを開業しました。",
+          "products": [
+            "ホテル"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "travel",
+          "name": "旅行事業",
+          "shortName": "旅行",
+          "description": "西鉄旅行㈱が営む事業です。",
+          "products": [
+            "旅行"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "id": "others",
+      "name": "その他",
+      "shortName": "その他",
+      "description": "ICカード事業、車両整備関連事業、建設関連事業、金属リサイクル事業、農業関連事業を含む区分で、報告セグメントには含まれません。2025年10月にヒノマル㈱など5社を子会社にし、農業関連事業を加えました。",
+      "products": [
+        "ICカード事業",
+        "車両整備関連事業",
+        "建設関連事業",
+        "金属リサイクル事業",
+        "農業関連事業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道・バスを軸に、沿線の不動産や店舗、ホテル、国際物流まで手がけ、運賃や賃料、販売代金で稼ぎます。",
+    "products": [
+      "鉄道・バス・タクシー",
+      "オフィス・商業施設の賃貸とマンション分譲",
+      "スーパーマーケットと生活雑貨の販売",
+      "国際航空貨物・国際海上貨物の物流",
+      "ホテル・旅行・広告"
+    ],
+    "customers": [
+      "福岡県を中心とする通勤・通学・観光の利用者",
+      "ビルの入居企業やマンションの購入者",
+      "沿線の買い物客",
+      "貨物を運ぶ荷主企業",
+      "ホテルや旅行の利用者"
+    ],
+    "revenueSources": [
+      "鉄道・バスなどの運賃",
+      "ビルなどの賃料と住宅の販売代金",
+      "店舗の商品販売代金",
+      "国際貨物の物流の取扱料",
+      "ホテル・旅行・広告の利用料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "西日本鉄道とグループ会社",
+        "description": "当社と連結子会社84社、関連会社53社で、運輸・不動産・流通・物流・レジャー・サービスなどの事業を営みます。"
+      },
+      {
+        "kind": "offering",
+        "title": "沿線のくらしを支える事業",
+        "description": "鉄道・バスの運行を軸に、沿線のビルや住宅、店舗、ホテル、国際物流を提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域の利用者と企業",
+        "description": "通勤客や観光客、入居企業、買い物客、荷主企業、宿泊客が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益",
+        "description": "2026年3月期の営業収益は前期比6.9％増でした。ヒノマル㈱の子会社化とONE FUKUOKA BLDG.の開業が増収の理由です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は前期比54.5％増でした。不動産の流動化による売却益などが増えたためです。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -30,7 +376,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 179084000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 18576,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,7 +396,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 201881000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 18456,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -70,7 +416,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 235839000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 18687,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,7 +436,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 256039000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 18956,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,7 +456,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 293044000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 19505,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,7 +464,108 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1908,
+      "title": "九州電気軌道が設立される",
+      "description": "九州電気軌道㈱が設立されました。西日本鉄道の始まりとなる会社です。",
+      "significance": "鉄道事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1929,
+      "title": "バス事業を開始",
+      "description": "バス事業を始めました。",
+      "significance": "現在のバス事業につながる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1942,
+      "title": "4社を合併し西日本鉄道に商号変更",
+      "description": "九州鉄道㈱が博多湾鉄道汽船㈱、福博電車㈱、筑前参宮鉄道㈱を合併し、商号を西日本鉄道㈱に変更しました。本店は福岡市に移しました。",
+      "significance": "福岡を中心とする現在の会社の形ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "株式を上場",
+      "description": "大阪証券取引所と東京証券取引所に株式を上場しました。翌月の1949年6月には福岡証券取引所にも上場しました。",
+      "significance": "上場会社としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "不動産事業を開始",
+      "description": "不動産事業を始めました。",
+      "significance": "運輸以外の事業が広がる一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "米国に国際物流の拠点を設立",
+      "description": "米国にNNR・エアカーゴ・サービス(U.S.A.)（現NNR Global Logistics USA Inc.）を設立しました。",
+      "significance": "国際物流事業の海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "ICカード「nimoca」のサービスを開始",
+      "description": "ICカード「nimoca」のサービスを始めました。",
+      "significance": "現在のICカード事業につながります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "監査等委員会設置会社に移行",
+      "description": "監査等委員会設置会社に移行しました。",
+      "significance": "経営の監督体制を変えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ONE FUKUOKA BLDG.が開業",
+      "description": "ONE FUKUOKA BLDG.（ワン・フクオカ・ビルディング）が開業しました。2025年5月には本店を同ビルに移しました。",
+      "significance": "不動産業の賃貸事業の新しい中心になる施設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ヒノマルグループを子会社化",
+      "description": "ヒノマルホールディングス㈱の株式を取得し、ヒノマル㈱など5社を子会社にしました。",
+      "significance": "農業関連事業が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -127,11 +574,35 @@
       "publisher": "西日本鉄道株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YAAB.pdf",
       "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YAAB",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年度から始まる第17次中期経営計画で、沿線まちづくりの推進と深化、まちづくりソリューションの域外展開、産業サポート分野の事業拡大などを掲げています。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "会社は、強みとして鉄道・バス沿線での幅広い事業による顧客接点と、公共交通運営とまちづくりの実績・ノウハウ、そこから築いた信頼のブランド力を挙げています。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  }
 }

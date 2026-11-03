@@ -4,15 +4,146 @@
   "name": "TBSホールディングス",
   "officialName": "株式会社TBSホールディングス",
   "nameEn": "TBS HOLDINGS, INC.",
-  "description": null,
+  "shortNameEn": "TBS Holdings",
+  "description": "TBSテレビなどを傘下に持ち、放送を中心に、雑貨小売・教育、不動産賃貸も手がける持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "media",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "media-content",
+      "name": "メディア・コンテンツ事業",
+      "description": "テレビ・ラジオの放送と、番組制作、映像・音楽ソフトの制作・販売、配信、各種催物などを手がける、グループの中心の事業です。",
+      "products": [
+        "テレビ放送",
+        "ラジオ放送",
+        "BS・CS放送",
+        "配信",
+        "番組販売",
+        "映画・アニメの企画制作",
+        "音楽ソフト"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "broadcasting",
+          "name": "放送関連事業",
+          "description": "放送、番組制作、映像技術、美術制作、VFX、音声技術、照明技術、カメラ取材、調査・研究などを行います。主な会社にTBSテレビ、TBSラジオ、BS-TBSがあります。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "events-and-software",
+          "name": "各種催物・ソフト・配信事業",
+          "description": "各種催物、ビデオソフトなどの企画・制作、CS事業、映像・音声ソフトの制作・販売・配信、番組販売、アニメ・マンガの企画・制作、音楽ソフトの企画・制作などを行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "lifestyle",
+      "name": "ライフスタイル事業",
+      "description": "雑貨小売、化粧品の製造・販売、個別指導塾や幼児教育などの知育・教育事業を行います。スタイリングライフ・ホールディングスとやる気スイッチグループが中心です。",
+      "products": [
+        "雑貨小売",
+        "化粧品",
+        "個別指導塾",
+        "幼児教育"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate-and-others",
+      "name": "不動産・その他事業",
+      "description": "土地・建物の賃貸のほか、スタジオ管理、冷暖房管理、駐車場管理、機材リース、保険代理などのサービスを行います。",
+      "products": [
+        "不動産賃貸",
+        "スタジオ管理",
+        "冷暖房管理",
+        "駐車場管理",
+        "機材リース",
+        "保険代理"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "放送の広告収入を軸に、コンテンツ、ライフスタイル、不動産の収入でグループを支えます。",
+    "products": [
+      "テレビ・ラジオ放送とその番組",
+      "配信、番組販売、映画・アニメ、音楽ソフト",
+      "雑貨小売、化粧品、個別指導塾、幼児教育",
+      "不動産賃貸、スタジオ・駐車場などの管理"
+    ],
+    "customers": [
+      "広告会社",
+      "広告主",
+      "視聴者・消費者",
+      "生徒・保護者",
+      "不動産の賃借人"
+    ],
+    "revenueSources": [
+      "放送収入（タイム収入・スポット収入）",
+      "配信広告収入、有料配信収入",
+      "映画・アニメ、音楽ソフトなどの事業収入",
+      "雑貨・化粧品の販売、教室の授業料",
+      "不動産の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "TBSホールディングス",
+        "description": "持株会社として、TBSテレビ、TBSラジオ、BS-TBSなどの放送会社と、ライフスタイル・不動産の各社を束ねます。2026年3月31日現在、子会社62社、関連会社47社でグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "番組・コンテンツと各種サービス",
+        "description": "テレビ・ラジオの番組や配信コンテンツを作って届けるほか、雑貨や化粧品の販売、個別指導塾などの教育、不動産の賃貸を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "広告会社と一般の消費者",
+        "description": "放送の広告枠は主に広告会社が買います。主要な顧客は電通と博報堂で、2026年3月期の売上高に占める割合はそれぞれ24.0％と13.1％です。店舗や教室では一般の消費者や生徒が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "広告収入が中心の収益",
+        "description": "2026年3月期の売上高は4,248億５千万円で、前年比4.5％増でした。TBSテレビの広告収入の増収や、配信広告収入の伸びが主な理由です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は522億２千８百万円で、前年比18.9％増でした。投資有価証券売却益の増加などが理由です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +158,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 883002000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6454,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +178,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 796184000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6586,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +198,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1149947000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7992,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +218,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 949232000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8095,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +238,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1135390000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8518,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,20 +246,175 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1951,
+      "title": "ラジオ東京として設立、ラジオ本放送を開始",
+      "description": "1951年5月に関東地区で最初の民間放送局として、商号「株式会社ラジオ東京」で設立されました。同年12月にラジオの本放送を始めました。",
+      "significance": "現在のTBSグループの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "テレビ本放送を開始",
+      "description": "1955年4月に東京都港区赤坂でテレビの本放送を始めました。1960年9月にはカラー本放送も始めています。",
+      "significance": "ラジオに加えてテレビが事業の柱になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "東京証券取引所に上場、商号を東京放送に変更",
+      "description": "1960年10月に東京証券取引所に株式を上場し、同年11月に商号を「株式会社東京放送」、略称を「TBS」に変更しました。",
+      "significance": "「TBS」の名前がここから使われています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "BSデジタル放送が始まり、分社化を進める",
+      "description": "2000年3月に分社化の一環としてラジオ、エンタテインメント、スポーツの3社を設立しました。同年12月には出資先のビーエス・アイがBSデジタル放送を始めました。",
+      "significance": "放送を分社で担う、今のグループ体制につながる動きです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "地上デジタル放送を開始",
+      "description": "2003年12月に地上デジタル放送を始めました。2011年7月には地上波テレビがデジタルに完全移行しました。",
+      "significance": "放送がアナログからデジタルへ切り替わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "TBSテレビが発足",
+      "description": "2004年10月に、ティ・ビー・エス・エンタテインメントがスポーツ・ライブの2社を吸収合併し、商号をTBSテレビに変更しました。",
+      "significance": "テレビ事業を担う中核の子会社が形になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "赤坂再開発が終わり、スタイリングライフを連結化",
+      "description": "2008年2月に「赤坂再開発工事」が終わり、赤坂サカスが営業を始めました。同年7月にはスタイリングライフ・ホールディングスの株式を取得し、同社と関係会社を連結グループに加えました。",
+      "significance": "不動産事業と、放送以外のライフスタイル事業が広がった時期です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "認定放送持株会社へ移行",
+      "description": "2009年4月に東京放送を放送法上の認定放送持株会社とし、商号を東京放送ホールディングスに変更しました。同時にTBSテレビへ放送事業と映像・文化事業を吸収分割で移しました。",
+      "significance": "持株会社が各事業会社を束ねる、現在の形になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "BS-TBSを完全子会社化",
+      "description": "2015年4月にBS-TBSを完全子会社にしました。",
+      "significance": "BS放送がグループの中でより一体になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "BS-TBSが4K放送を開始",
+      "description": "2018年12月に、BS-TBSが4K放送を始めました。2018年4月には、出資先のプレミアム・プラットフォーム・ジャパンが定額制動画配信サービス「Paravi」を始めています。同社は2023年3月にU-NEXTと統合しました。",
+      "significance": "放送の高画質化と、動画配信への取り組みが進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "商号をTBSホールディングスに変更",
+      "description": "2020年10月に、東京放送ホールディングスが商号をTBSホールディングスに変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証プライム市場へ移行",
+      "description": "2022年4月に、東京証券取引所の市場区分の見直しで、市場第一部からプライム市場に移りました。",
+      "significance": "現在の上場市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "やる気スイッチグループを連結化",
+      "description": "2023年6月に、やる気スイッチグループホールディングスの株式を取得し、同社、子会社3社、関連会社1社を連結グループに加えました。",
+      "significance": "個別指導塾や幼児教育が、ライフスタイル事業に加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "米国にTHE SEVEN USを設立",
+      "description": "2025年10月に、THE SEVEN US, INC.を設立しました。",
+      "significance": "海外でのコンテンツ展開に向けた拠点の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第99期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社TBSホールディングス",
+      "publisher": "株式会社ＴＢＳホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI1U.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YI1U",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-03"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-03",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「TBSグループ VISION2030」のもと、コンテンツ制作力とコンテンツIPを価値の源泉と位置づけています。放送を土台に、配信（Digital）、海外（Global）、ライブエンタテインメントなどの体験（Experience）へ広げる拡張戦略「EDGE」を進めています。「中期経営計画2026」を2024年5月に発表し、2026年5月にその一部を更新しました。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  }
 }
