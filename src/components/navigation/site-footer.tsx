@@ -14,6 +14,14 @@ export async function SiteFooter() {
           <p className="mt-5 max-w-sm text-sm leading-7 text-muted-foreground">
             掲載情報は有価証券報告書などの公開資料に基づいています。投資の勧誘や助言を目的としたものではありません。
           </p>
+          {/* 公共データ利用規約（PDL 1.0）の出典・加工の表示。全文は /about の「データの出典と加工について」（docs/source-terms.md）。 */}
+          <p className="mt-3 max-w-sm text-xs leading-6 text-muted-foreground">
+            データの出典：金融庁 EDINET（YUGENQ が編集・加工して作成）。詳しくは
+            <Link href="/about#data" className="underline underline-offset-2 hover:text-foreground">
+              「このサービスについて」
+            </Link>
+            。
+          </p>
         </div>
         <nav aria-label="探す">
           <p className="eyebrow">Explore</p>
@@ -35,6 +43,7 @@ export async function SiteFooter() {
           <ul className="mt-4 text-sm">
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/about">このサービスについて</Link></li>
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/report">情報の誤りを報告</Link></li>
+            <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/privacy">プライバシーポリシー</Link></li>
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/settings">設定</Link></li>
           </ul>
         </nav>

@@ -32,6 +32,9 @@ jobs:
       # https://<owner>.github.io/<repo>/ — the origin and the sub-path are separate settings of the site.
       SITE_URL: https://${{ github.repository_owner }}.github.io
       NEXT_PUBLIC_BASE_PATH: /${{ github.event.repository.name }}
+      # Cookieless page counts (JCE-036). Empty until the repository variable CF_ANALYTICS_TOKEN is set; then the beacon
+      # is added to every page. The token is public by design (every page sends it), so it is a variable, not a secret.
+      NEXT_PUBLIC_CF_ANALYTICS_TOKEN: ${{ vars.CF_ANALYTICS_TOKEN }}
     steps:
       - uses: actions/checkout@v4
         with:

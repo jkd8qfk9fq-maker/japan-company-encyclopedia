@@ -20,7 +20,7 @@ Cloudflare ダッシュボード → Workers & Pages → Create → **Import a r
 | Worker の名前（Project name） | **`nihonkigyohyakka`**（`wrangler.jsonc` の `name` と**一致させる**。違うとデプロイが「名前が違う」で失敗する） |
 | Build command | `npm run build:static` |
 | Deploy command | `npx wrangler deploy` |
-| 環境変数（Build の Variables） | `SITE_URL` = `https://nihonkigyohyakka.<あなたのアカウントのサブドメイン>.workers.dev`<br>`NODE_VERSION` = `22`（または `24`） |
+| 環境変数（Build の Variables） | `SITE_URL` = `https://nihonkigyohyakka.<あなたのアカウントのサブドメイン>.workers.dev`<br>`NODE_VERSION` = `22`（または `24`）<br>`NEXT_PUBLIC_CF_ANALYTICS_TOKEN` = Web Analytics のトークン（下の「アクセス計測」。未設定なら計測しない） |
 
 - 公開 URL は **`https://nihonkigyohyakka.<アカウントのサブドメイン>.workers.dev`**。`<アカウントのサブドメイン>` は Cloudflare のアカウントで決まる部分で（Workers & Pages → 右の「Account subdomain」）、リポジトリでは変えられない。
 - `SITE_URL` は最初のデプロイの後に正確な URL が分かるので、**一度目は仮でよい**（未設定でも `build:static` は仮の値で動き、警告を出す）。正しい値を設定して再デプロイすると、サイトマップと共有リンクが正しくなる。
@@ -54,3 +54,15 @@ npx wrangler deploy --dry-run      # 設定と配信ファイルの検証だけ�
 - 「誤りを報告」のリンクは、静的な書き出しでは行き先がない（フォームはサーバーが要る）。
 - 内容を更新するには、リポジトリに push する（Cloudflare が自動で再ビルド・再デプロイ）。
 - ビルドにはメモリを使う（ビルドの並列度を 2 に絞ってある）。無料のビルドで失敗する場合は、ビルド時間・メモリの制限を確認する。
+
+## アクセス計測（Cloudflare Web Analytics・JCE-036）
+
+Cookie を使わない計測なので、同意のバナーは要らない（/privacy に記載済み）。
+
+1. Cloudflare ダッシュボード → **Analytics & Logs → Web Analytics** → **Add a site** で、公開 URL のホスト名（`nihonkigyohyakka.<サブドメイン>.workers.dev`）を登録する
+2. 表示される JavaScript スニペットの `"token": "…"` の値を控える（公開される値で、秘密ではない）
+3. Workers のビルド設定の Variables に `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` = 2 の値 を追加して再デプロイする
+4. GitHub Pages のプレビューでも計測するなら、GitHub リポジトリの Settings → Secrets and variables → Actions → **Variables** に `CF_ANALYTICS_TOKEN` を登録する（`.github/workflows/pages.yml` が読む）
+
+数分後から Web Analytics の画面にページビューが出る。
+

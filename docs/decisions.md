@@ -543,3 +543,31 @@ before any model call and refused at approve. **`major-shareholder`** becomes a 
 linked). A fragment with no industry, no or two primaries, or a doubled industry fails the fragment check. Wikipedia
 (JCE-030) is fetched once when the pack is built (`wikipedia.json`, identity by securities code in the article), so the
 agent has no web tools.
+
+### JCE-036 · 2026-11-08 · Accepted (operator) — Groundwork for revenue: PDL attribution, privacy policy, analytics, and the advertising rules
+
+The operator asked for a monetisation proposal and then for its first steps 1, 2 and 4 (2026-11-08): the groundwork
+every revenue source needs, the rules for advertising, and a sample teaching material with a proposal for schools and
+companies (kept outside the repositories).
+
+- **PDL 1.0 attribution**: wording 案A of docs/source-terms.md is now on /about (「データの出典と加工について」, with the
+  Wikipedia supplement of JCE-030 named) and as one line in the footer.
+- **/privacy**: states only what the site does — browser-local favourites/history/settings, reader reports (no name or
+  e-mail; an irreversible key from the IP address for rate limiting), cookieless page counts, the host's access logs,
+  no ads. Any new collection, an ad network above all, is added there before it goes live.
+- **Analytics**: Cloudflare Web Analytics (no cookies, no identifier in the browser, so no consent banner). Off until
+  the operator sets `NEXT_PUBLIC_CF_ANALYTICS_TOKEN` (Workers build) / the repository variable `CF_ANALYTICS_TOKEN`
+  (Pages workflow); the token is public by design. Steps in docs/cloudflare.md.
+- **Advertising rules** (published on /about#advertising before any ad exists; ADS_ENABLED stays false until the
+  operator decides a placement):
+  1. Every advertisement, affiliate link and sponsored article is labelled 「広告」 or 「PR」 where it starts
+     (景品表示法 告示 令和5年第19号, in force 2023-10-01).
+  2. Ads go only in the AdSlot placements (feature-inline, company-bottom, industry-inline, home-feature) — never inside
+     the one-sentence description, the business structure, the business model, the financials or the history, and
+     never between a claim and its sources.
+  3. No advertiser or payment changes what an entry says or the order entries appear in. Sponsored articles are
+     separate from entries; any fact in them is sourced like an entry's.
+  4. No advertising or affiliate for opening securities accounts or buying financial products: it would contradict
+     invariant 4, and paid introductions of that kind may need registration (金融サービス仲介業).
+  5. Affiliate partners fit the readers (job hunting, careers, learning about industries and companies). Each one is
+     recorded here before it goes live.

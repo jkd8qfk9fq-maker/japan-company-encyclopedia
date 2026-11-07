@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/navigation/site-footer";
 import { SiteHeader } from "@/components/navigation/site-header";
 import { OfflineIndicator } from "@/components/pwa/offline-indicator";
 import { ServiceWorkerRegistration } from "@/components/pwa/service-worker-registration";
-import { BASE_PATH, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+import { ANALYTICS_TOKEN, BASE_PATH, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import { THEME_SCRIPT } from "@/lib/storage/theme-script";
 import "./globals.css";
 
@@ -92,6 +92,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteFooter />
         <BottomNavigation />
         <ServiceWorkerRegistration />
+        {ANALYTICS_TOKEN && (
+          <script
+            defer
+            src="https://static.cloudflareinsights.com/beacon.min.js"
+            data-cf-beacon={JSON.stringify({ token: ANALYTICS_TOKEN })}
+          />
+        )}
       </body>
     </html>
   );

@@ -33,5 +33,12 @@ export const SITE_URL = new URL(resolveSiteUrl());
  */
 export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
+/**
+ * Cloudflare Web Analytics: page views counted without cookies or any identifier stored in the browser, so no consent
+ * banner is needed (/privacy says what it collects). The token is public by design — every page sends it — and is set
+ * at build time, so the counter is off until the operator adds one (JCE-036).
+ */
+export const ANALYTICS_TOKEN = process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN ?? "";
+
 /** An absolute URL on this site for a path that starts with "/". */
 export const siteUrl = (path: string) => new URL(`${BASE_PATH}${path}`, SITE_URL).toString();
