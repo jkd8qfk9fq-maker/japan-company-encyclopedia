@@ -4,24 +4,185 @@
   "name": "三菱重工業",
   "officialName": "三菱重工業株式会社",
   "nameEn": "Mitsubishi Heavy Industries, Ltd.",
-  "description": null,
+  "description": "火力・原子力発電システムから防衛航空機・艦艇、産業機械や冷熱製品までを手がける総合重工業メーカーです。",
   "listings": [
     {
-      "exchange": "tse"
+      "exchange": "tse",
+      "market": "プライム"
     },
     {
-      "exchange": "nse"
+      "exchange": "nse",
+      "market": "プレミア"
     },
     {
       "exchange": "fse"
     },
     {
-      "exchange": "sse",
-      "market": "プライム"
+      "exchange": "sse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "energy"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "energy",
+      "name": "エナジー",
+      "description": "火力発電システム（GTCC、スチームパワー）、原子力発電システム（軽水炉、原子燃料サイクルや新分野）、風力発電システム、航空機用エンジン、コンプレッサ、舶用機械などの設計、製造、販売、サービス及び据付けを行っています。",
+      "products": [
+        "火力発電システム（GTCC、スチームパワー）",
+        "原子力発電システム",
+        "風力発電システム",
+        "航空機用エンジン",
+        "コンプレッサ",
+        "舶用機械"
+      ],
+      "customers": [
+        "電力会社などの発電事業者",
+        "航空機メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "aerospace-defense-space",
+      "name": "航空・防衛・宇宙",
+      "description": "民間航空機、防衛航空機、飛しょう体、艦艇、特殊機械（魚雷）、特殊車両、宇宙機器などの設計、製造、販売、サービス及び据付けを行っています。防衛省は、連結売上収益の10％以上を占める主要な顧客で、主にこのセグメントに帰属しています。",
+      "products": [
+        "民間航空機",
+        "防衛航空機",
+        "飛しょう体",
+        "艦艇",
+        "特殊機械（魚雷）",
+        "特殊車両",
+        "宇宙機器"
+      ],
+      "customers": [
+        "防衛省",
+        "民間航空機メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "plant-infrastructure",
+      "name": "プラント・インフラ",
+      "description": "製鉄機械、商船、エンジニアリング（交通システム、化学プラント）、環境設備、機械システム（紙工機械、ITS、試験装置）などの設計、製造、販売、サービス及び据付けを行っています。",
+      "products": [
+        "製鉄機械",
+        "商船",
+        "交通システム",
+        "化学プラント",
+        "環境設備",
+        "機械システム"
+      ],
+      "customers": [
+        "鉄鋼メーカー",
+        "海運会社",
+        "化学メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "logistics-thermal-drive",
+      "name": "物流・冷熱・ドライブシステム",
+      "description": "冷熱製品、エンジン、ターボチャージャ、カーエアコンなどの設計、製造、販売、サービス及び据付けを行っています。フォークリフトなどの物流機器は、三菱ロジスネクスト（現 ロジスネクスト）の事業が2026年3月期に非継続事業へ分類されたため、この区分には含まれていません。",
+      "products": [
+        "冷熱製品",
+        "エンジン",
+        "ターボチャージャ",
+        "カーエアコン"
+      ],
+      "customers": [
+        "自動車メーカー",
+        "建物や工場の所有者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない、データセンター＆エネルギーマネジメント事業などの成長分野に関する事業や、アセットビジネスなどです。",
+      "products": [
+        "データセンター＆エネルギーマネジメント事業",
+        "アセットビジネス"
+      ],
+      "customers": [
+        "データセンター事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "電力会社や防衛省、産業界の顧客の注文に応じて、発電設備や航空機、産業機械などの大型製品・システムを設計・製造し、据付けや保守サービスまで一貫して提供しています。",
+    "products": [
+      "発電システム（火力・原子力・風力）",
+      "航空機・艦艇・宇宙機器",
+      "製鉄機械や商船などの産業インフラ",
+      "冷熱製品・エンジン・ターボチャージャ"
+    ],
+    "customers": [
+      "電力会社などの発電事業者",
+      "防衛省",
+      "鉄鋼・化学などの産業会社や海運会社",
+      "自動車メーカー"
+    ],
+    "revenueSources": [
+      "製品やシステムの販売",
+      "据付けやエンジニアリングの請負",
+      "保守やサービス"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "三菱重工業グループ",
+        "description": "当社と国内外の関係会社が連携して、事業ごとに設計、製造、販売、サービス及び据付けを担っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "大型製品とシステムの提供",
+        "description": "発電システム、防衛・航空宇宙の製品、産業機械やプラント、冷熱製品などを、顧客の用途に合わせて設計・製造し、据付けまで行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "電力会社・防衛省・産業界の顧客",
+        "description": "電力会社などの発電事業者、防衛省、鉄鋼・化学などの産業会社、海運会社、自動車メーカーなどが顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "販売・請負・サービスによる売上",
+        "description": "製品やシステムの販売、据付けやエンジニアリングの請負、納入後の保守やサービスによって売上収益を得ています。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "受注した仕事を計画どおりに進めることや、納入後のサービスを続けることで、利益を確保しています。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -36,7 +197,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 1576611000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 77991,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -56,7 +217,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 1740974000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 76859,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -76,7 +237,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 2244620000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 77697,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -96,12 +257,13 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 2346702000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 77274,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "三菱ロジスネクスト事業の非継続事業への分類に合わせて、継続事業の金額に修正再表示されています。前の有価証券報告書に掲載された金額とは異なります。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -116,28 +278,338 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 3088566000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 78793,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "三菱ロジスネクスト（現 ロジスネクスト）及びその子会社・関連会社に係る事業を非継続事業に分類し、売上収益などは継続事業の金額で表示しています。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1884,
+      "title": "長崎造船所として創立",
+      "description": "三菱の創業者である岩崎彌太郎が、1884年7月7日に工部省から長崎造船局を借り受け、長崎造船所と命名して造船事業に本格的に乗り出しました。",
+      "significance": "三菱重工業は、この日を創立日としています。造船から始まったことが、その後の重工業全般への広がりの原点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1917,
+      "title": "三菱造船を設立",
+      "description": "三菱合資会社から同社の造船部に属する業務の一切を引き継ぎ、三菱造船株式会社を設立しました。",
+      "significance": "造船事業が独立した会社となり、現在の三菱重工業につながる組織の形ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1934,
+      "title": "商号を三菱重工業に変更",
+      "description": "三菱造船株式会社から、三菱重工業株式会社へ商号を変更しました。",
+      "significance": "社名が現在の三菱重工業になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "過度経済力集中排除法により3社に分割",
+      "description": "過度経済力集中排除法により、中日本重工業、東日本重工業、西日本重工業の3社に分割され、それぞれ新発足しました。",
+      "significance": "戦後の財閥解体の一環で会社は3つに分かれました。この3社が1964年に再び合併します。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "東京・大阪の証券取引所に株式を上場",
+      "description": "東京、大阪の各証券取引所に株式を上場しました。その後、1952年までに札幌、名古屋、福岡の各証券取引所にも上場しました。",
+      "significance": "株式が市場で取引される会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "3社が合併し三菱重工業が発足",
+      "description": "新三菱重工業、三菱日本重工業、三菱造船の3社が合併し、三菱重工業株式会社の商号で、本社を東京都千代田区に置いて発足しました。",
+      "significance": "1950年に分割された3社が再び1つになり、現在の三菱重工業の体制が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "自動車部門を三菱自動車工業へ譲渡",
+      "description": "自動車部門の営業を、三菱自動車工業株式会社へ譲渡しました。",
+      "significance": "自動車は独立した会社（三菱自動車工業）が担うことになり、三菱重工業は自動車以外の重工業に専念する形になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "三菱原子力工業を合併",
+      "description": "三菱原子力工業株式会社を合併しました。",
+      "significance": "原子力発電システムの事業体制を自社に一本化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "三菱日立パワーシステムズが営業開始",
+      "description": "火力発電システム事業の合弁会社である三菱日立パワーシステムズ株式会社（現在の三菱パワー株式会社）が営業を開始しました。",
+      "significance": "火力発電事業を日立製作所との合弁会社に移して始めた体制で、その後、2021年に三菱重工業が事業を引き継ぎました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "監査等委員会設置会社へ移行",
+      "description": "監査等委員会設置会社へ移行しました。",
+      "significance": "取締役会の監督機能を強めるための統治形態の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "火力発電システム事業などを三菱パワーから承継",
+      "description": "火力発電システム事業などを、三菱パワー株式会社から承継しました。また、三菱重工マリタイムシステムズ株式会社が営業を開始しました。",
+      "significance": "合弁会社に移していた火力発電事業が、再び三菱重工業自身の事業に戻りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "Concentric, LLCを連結子会社化",
+      "description": "米国のConcentric, LLCを連結子会社化しました。",
+      "significance": "「その他」の区分のアセットビジネスなどに関わる、米国での事業基盤の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "hoden-seimitsu-kako-kenkyusho",
+      "relationship": "affiliate",
+      "description": "持分法適用関連会社です（議決権の所有割合35.1％、2026年3月31日現在）。エナジー関連の事業を担い、三菱重工業から業務の受託があります。有価証券報告書を提出している会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "ryoyu-systems",
+      "relationship": "affiliate",
+      "description": "持分法適用関連会社です（議決権の所有割合32.1％、2026年3月31日現在）。全社共通の情報システム関連の事業を担い、三菱重工業との間に販売、仕入、業務受託の関係があります。有価証券報告書を提出している会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "east-japan-railway",
+      "relationship": "customer",
+      "description": "鉄道車両製品（ブレーキ装置等）や発電設備の納入などの取引を行う重要取引先として、株式の保有状況に記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "central-japan-railway",
+      "relationship": "customer",
+      "description": "鉄道車両製品（ブレーキ装置等）の取引を行う重要取引先として、株式の保有状況に記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-kansai-electric-power",
+      "relationship": "customer",
+      "description": "発電プラントの建設、保守などの取引を行う重要取引先として、株式の保有状況に記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "chubu-electric-power",
+      "relationship": "customer",
+      "description": "発電プラントの建設、保守などの取引を行う重要取引先として、株式の保有状況に記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "electric-power-development",
+      "relationship": "customer",
+      "description": "発電プラントの建設、保守などの取引を行う重要取引先として、株式の保有状況に記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hokuriku-electric-power",
+      "relationship": "customer",
+      "description": "発電プラントの建設、保守などの取引を行う重要取引先として、株式の保有状況に記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-gas-chemical",
+      "relationship": "customer",
+      "description": "発電設備の納入、保守などの取引を行っている会社として、株式の保有状況に記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-motors",
+      "relationship": "customer",
+      "description": "車載用エアコンやターボチャージャなどの取引を行っている会社として、株式の保有状況に記載されています。三菱重工業の物流・冷熱・ドライブシステムの製品の取引です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "japan-airport-terminal",
+      "relationship": "customer",
+      "description": "旅客搭乗橋など空港施設製品の取引を行っている会社として、株式の保有状況に記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "airport-facilities",
+      "relationship": "customer",
+      "description": "旅客搭乗橋など空港施設製品の取引を行っている会社として、株式の保有状況に記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-japan-steel-works",
+      "relationship": "supplier",
+      "description": "原子力製品用鋳造品の購入などの取引を行っている会社として、株式の保有状況に記載されています。三菱重工業が部品の供給を受ける側です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "japan-engine",
+      "relationship": "supplier",
+      "description": "舶用エンジンの購入などの取引を行っている会社として、株式の保有状況に記載されています。三菱重工業がエンジンの供給を受ける側です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-steel-mfg",
+      "relationship": "supplier",
+      "description": "ばねや素形材の購入などの取引を行っている会社として、株式の保有状況に記載されています。三菱重工業が材料の供給を受ける側です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-research-institute",
+      "relationship": "supplier",
+      "description": "各種解析業務やコンサルティング業務を委託するなどの取引を行っている会社として、株式の保有状況に記載されています。三菱重工業が業務の委託先として使っている会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "namura-shipbuilding",
+      "relationship": "business-partner",
+      "description": "商船事業分野で提携関係にある会社として、株式の保有状況に記載されています。取引の向きは印字されていないため business-partner としました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書",
+      "title": "有価証券報告書（2026年3月期）",
       "publisher": "三菱重工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHZG.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YHZG",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-07",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「2024事業計画」（2024年4月開始）では、「伸長事業」と「成長領域」を重点領域とし、「ポートフォリオ経営の強化」「技術・人的基盤の強化」「MISSION NET ZEROの推進」に取り組んでいます。加えて2025年5月には、新たな経営方針として「高利益体質と成長投資の好循環」を掲げました。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "4つの報告セグメントを持ち、発電、航空・防衛・宇宙、産業インフラ、冷熱・駆動製品と、顧客も市場も異なる事業が並んでいます。外部顧客への売上収益は日本が最も大きく、次いでアメリカ、アジア、欧州の順で、世界各地に広がっています。",
+        "basis": "セグメント情報（報告セグメントの概要と地域市場別の内訳、2026年3月期）",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "多くの事業で、当社と関係会社が連携して設計、製造、販売、サービス及び据付けまでを一貫して担う体制が、事業の内容として説明されています。納入して終わりではなく、据付けやその後のサービスまで自社グループで担う点が特徴です。",
+        "basis": "【事業の内容】冒頭の事業体制の説明",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }
