@@ -4,14 +4,143 @@
   "name": "キオクシアホールディングス",
   "officialName": "キオクシアホールディングス株式会社",
   "nameEn": "Kioxia Holdings Corporation",
-  "description": null,
+  "description": "NAND型フラッシュメモリを発明した技術を基盤に、フラッシュメモリとSSDを製造・販売する、世界最大級のフラッシュメモリ専業メーカーです。",
   "listings": [
     {
       "exchange": "tse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "semiconductors",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "children": [
+        {
+          "customers": [
+            "PCメーカー",
+            "データセンター・クラウド事業者"
+          ],
+          "description": "主にPC、データセンター、エンタープライズ向けのSSD製品及びメモリ製品です。自社製フラッシュメモリを活用し、一般汎用品から高付加価値品まで幅広いラインアップを展開しています。アプリケーション別の売上収益で最も大きい区分です。",
+          "id": "ssd-storage",
+          "locator": "【事業の内容】",
+          "name": "SSD & ストレージ",
+          "products": [
+            "クライアント向けSSD",
+            "データセンター・エンタープライズ向けSSD"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ]
+        },
+        {
+          "customers": [
+            "スマートフォンメーカー",
+            "自動車・産業機器メーカー"
+          ],
+          "description": "スマートフォン、タブレット、テレビ等の民生機器、車載、産業機器等の用途で使用される、制御機能付きの組み込み式メモリ製品です。特にスマートフォン向けメモリ製品の市場は規模が大きく、当社グループにとって重要なマーケットです。",
+          "id": "smart-devices",
+          "locator": "【事業の内容】",
+          "name": "スマートデバイス",
+          "products": [
+            "組み込み式メモリ製品（UFS等）"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ]
+        },
+        {
+          "customers": [
+            "小売店を通じた個人顧客",
+            "Sandiskグループ"
+          ],
+          "description": "SDメモリカード、USBメモリ等のリテール向け製品及び、製造合弁会社3社経由で計上されるSandiskグループ向けの売上収益等が含まれます。",
+          "id": "other-products",
+          "locator": "【事業の内容】",
+          "name": "その他",
+          "products": [
+            "SDメモリカード",
+            "USBメモリ"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ]
+        }
+      ],
+      "customers": [
+        "PCメーカー",
+        "データセンター・クラウド事業者",
+        "スマートフォンメーカー",
+        "自動車・産業機器メーカー"
+      ],
+      "description": "NAND型フラッシュメモリ及び関連製品の製造、販売、研究開発、その他サービスを行う単一の報告セグメントです。四日市工場（三重県）と北上工場（岩手県）でフラッシュメモリチップを製造しています。Sandiskグループと共同出資する製造合弁会社3社を通じ、両工場の生産能力の約80％をSandiskグループと共有しています。",
+      "id": "memory",
+      "locator": "【事業の内容】",
+      "name": "メモリ事業",
+      "products": [
+        "NAND型フラッシュメモリ（BiCS FLASH™）",
+        "SSD",
+        "組み込み式メモリ製品",
+        "SDメモリカード・USBメモリ"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    }
+  ],
+  "businessModel": {
+    "customers": [
+      "データセンター・クラウド事業者",
+      "PCメーカー",
+      "スマートフォンメーカー等の機器メーカー",
+      "自動車・産業機器メーカー",
+      "Appleグループ"
+    ],
+    "description": "自社工場で製造したNAND型フラッシュメモリを、SSDや組み込み式メモリなどの製品として、データセンター、PC、スマートフォンなど幅広い用途向けに販売しています。",
+    "flow": [
+      {
+        "description": "純粋持株会社の当社の傘下で、キオクシア株式会社を中心とする連結子会社22社（国内7社、海外15社）が事業を行っています。",
+        "kind": "company",
+        "title": "キオクシアグループ"
+      },
+      {
+        "description": "メモリセルを積み上げる積層化技術で大容量化と信頼性の向上を実現したBiCS FLASH™を、四日市工場と北上工場で製造し、SSDや組み込み式メモリに加工しています。",
+        "kind": "offering",
+        "title": "フラッシュメモリとSSDの製造"
+      },
+      {
+        "description": "データセンター・クラウド事業者、PCメーカー、スマートフォンメーカーなどが顧客です。Appleグループは売上収益の10％以上を占める主要な顧客です。",
+        "kind": "customer",
+        "title": "データセンター、PC、スマートフォン向けの顧客"
+      },
+      {
+        "description": "SSD & ストレージ、スマートデバイス、その他（リテール向け製品やSandiskグループ向けの売上等）の製品販売によって売上収益を得ています。",
+        "kind": "revenue",
+        "title": "製品の販売による売上"
+      },
+      {
+        "description": "Sandiskグループとの製造合弁により生産能力を共有して設備投資の負担を分け合い、生産効率の向上とコスト低減を進めることで、利益を確保しています。",
+        "kind": "profit",
+        "title": "生産効率とコスト競争力による利益の確保"
+      }
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "NAND型フラッシュメモリ（BiCS FLASH™）",
+      "SSD（クライアント向け・データセンター・エンタープライズ向け）",
+      "組み込み式メモリ製品",
+      "SDメモリカード・USBメモリ"
+    ],
+    "revenueSources": [
+      "フラッシュメモリ及び関連製品の販売"
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -26,7 +155,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 793855000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 14199,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -46,7 +175,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 658068000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 15231,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -66,7 +195,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 449635000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 15249,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -86,7 +215,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 737565000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 15042,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -106,7 +235,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 1398929000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 15218,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -114,20 +243,175 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "description": "株式会社東芝において、世界初のNAND型フラッシュメモリが発明されました。",
+      "locator": "【沿革】",
+      "significance": "電源を切っても記憶が消えない不揮発性メモリとして世界標準となり、現在のキオクシアグループの事業の原点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "世界初のNAND型フラッシュメモリを発明",
+      "year": 1987
+    },
+    {
+      "description": "三重県に四日市工場が設立されました。",
+      "locator": "【沿革】",
+      "significance": "現在もキオクシア株式会社の主力製造拠点であり、6つの製造棟を棟間搬送で連結する統合生産体制の中心です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "四日市工場を設立",
+      "year": 1992
+    },
+    {
+      "description": "Sandiskグループ（当時のSanDisk Corporation）とフラッシュメモリについて協業を開始しました。",
+      "locator": "【沿革】",
+      "significance": "共同出資の製造合弁会社による四日市・北上両工場での共同生産へと発展し、現在まで続く提携の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "Sandiskグループとフラッシュメモリの協業を開始",
+      "year": 2000
+    },
+    {
+      "description": "メモリセルを垂直方向に積み上げる3次元フラッシュメモリ技術が開発されました。",
+      "locator": "【沿革】",
+      "significance": "微細化の限界を積層化で乗り越える技術で、後のBiCS FLASH™につながりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "3次元フラッシュメモリ技術を開発",
+      "year": 2007
+    },
+    {
+      "description": "48層積層プロセスを用いたBiCS FLASH™のサンプル出荷が始まりました。",
+      "locator": "【沿革】",
+      "significance": "3次元フラッシュメモリの製品化が進み、現在は第8世代BiCS FLASH™を量産しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "BiCS FLASH™のサンプル出荷を開始",
+      "year": 2015
+    },
+    {
+      "description": "株式会社東芝の100％子会社として旧東芝メモリ株式会社が設立され、同年4月に会社分割により東芝のメモリ事業（SSD事業を含み、イメージセンサ事業を除く）を承継しました。",
+      "locator": "【沿革】",
+      "significance": "東芝の社内カンパニーだったメモリ事業が独立した会社となり、現在のキオクシア株式会社の直接の前身ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "東芝メモリ株式会社を設立し、東芝のメモリ事業を承継",
+      "year": 2017
+    },
+    {
+      "description": "株式会社東芝が旧東芝メモリ株式会社の全株式を、Bain Capital Private Equity, L.P.を軸とする企業コンソーシアムにより組成された買収目的会社・株式会社Pangeaへ譲渡しました。同年8月、Pangeaが旧東芝メモリ株式会社を吸収合併し、東芝メモリ株式会社に社名変更しました。",
+      "locator": "【沿革】",
+      "significance": "東芝グループを離れ、投資ファンド主導の経営体制に移行しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "東芝がメモリ事業をPangeaへ譲渡",
+      "year": 2018
+    },
+    {
+      "description": "東芝メモリ株式会社からの単独株式移転により、持株会社の東芝メモリホールディングス株式会社が設立されました。同年10月、ブランド名称のキオクシアへの刷新に伴い、当社はキオクシアホールディングス株式会社に、東芝メモリ株式会社はキオクシア株式会社に社名変更しました。",
+      "locator": "【沿革】",
+      "significance": "現在の純粋持株会社体制と「キオクシア」の社名がこの年に始まりました。キオクシアは日本語の「記憶」とギリシャ語の「価値（AXIA）」に由来します。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "持株会社を設立し、キオクシアに社名変更",
+      "year": 2019
+    },
+    {
+      "description": "キオクシア株式会社が、台湾・LITE-ONテクノロジー社の子会社であるSolid State Storage Technology Corporationとその関係会社の全株式を取得しました。",
+      "locator": "【沿革】",
+      "significance": "SSD製品の製造、販売及び研究開発を行う会社がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "LITE-ON社のSSD事業会社を取得",
+      "year": 2020
+    },
+    {
+      "description": "当社の株式が東京証券取引所プライム市場に上場しました。",
+      "locator": "【沿革】",
+      "significance": "2018年の東芝グループ離脱以来、非上場だった当社が上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "東京証券取引所プライム市場に上場",
+      "year": 2024
+    },
+    {
+      "description": "岩手県北上市の北上工場で第2製造棟（K2棟）が稼働を開始しました。2022年4月から建設が進められていた製造棟です。",
+      "locator": "【沿革】",
+      "significance": "四日市工場と並ぶ製造拠点である北上工場の生産能力が増強されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "北上工場第2製造棟が稼働開始",
+      "year": 2025
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "fixstars",
+      "description": "製品開発に関連する取引を行っている会社として、株式の保有状況に記載されています。キオクシア株式会社は同社の株式500,000株を保有しています（2026年3月31日現在）。",
+      "locator": "【株式の保有状況】",
+      "relationship": "business-partner",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第8期(2025/04/01－2026/03/31)",
-      "publisher": "キオクシアホールディングス株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ18.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-28"
+      "publisher": "キオクシアホールディングス株式会社",
+      "title": "有価証券報告書（2026年3月期）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ18.pdf",
+      "docId": "S100YJ18",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-07",
+  "perspectives": {
+    "competitiveAdvantage": {
+      "disclosed": {
+        "asOf": "2026-06-24",
+        "locator": "【経営方針、経営環境及び対処すべき課題等】",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "text": "当社グループは、自らをフラッシュメモリ業界におけるテクノロジーリーダーと位置づけ、市場リーダーの求める製品の開発を推進するとともに、世界最大級のフラッシュメモリ工場を活用し、生産規模及び生産効率を最大化することで高いコスト競争力を実現するとしています。"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "asOf": "2026-06-24",
+        "basis": "セグメント情報（製品及びサービスに関する情報、地域別情報、主要な顧客に関する情報、2026年3月期）",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "text": "売上収益をアプリケーション別に見ると、SSD & ストレージが最も大きく、スマートデバイス、その他の順です。地域別では欧米向けが最も大きく、アジア、日本の順に続いています。外部顧客への売上収益の10％以上を占める顧客はAppleグループです。"
+      }
+    },
+    "strategy": {
+      "disclosed": {
+        "asOf": "2026-06-24",
+        "locator": "【経営方針、経営環境及び対処すべき課題等】",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "text": "「『記憶』で世界をおもしろくする」というミッションのもと、高成長市場にアクセス可能な幅広い製品ポートフォリオを持ち、各アプリケーションの主要顧客との強固な関係構築を継続するとしています。SSD & ストレージでは、中期的に大手データセンター、エンタープライズ顧客向けを中心にシェアの確保に取り組み、長期的にはSSD市場におけるより高いシェアの獲得を目指します。2024年11月に策定した長期財務モデルについては、業績がこれを大幅に上回って成長しているため、2026年6月2日のInvestor Dayで新しいモデルに置き換えたことが報告されています。"
+      }
+    }
+  }
 }
