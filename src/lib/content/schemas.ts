@@ -198,6 +198,7 @@ export const termSchema = z.strictObject({
   term: text,
   reading: text.optional(),
   description: text,
+  aliases: z.array(text).optional(),
   relatedTermIds: z.array(kebab).optional(),
   sources: z.array(sourceSchema).min(1),
   updatedAt: isoDate,

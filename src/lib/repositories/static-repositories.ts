@@ -38,6 +38,8 @@ const releasedMap = byId(releasedCompanies);
 const industryMap = byId(industries);
 const termMap = byId(terms);
 const featureMap = byId(features);
+// One array for the life of the process: the term linker (src/lib/term-linking.ts) builds its matcher once per array.
+const sortedTerms = [...terms].sort((a, b) => collator.compare(a.reading ?? a.term, b.reading ?? b.term));
 const sortedFeatures = [...features].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt));
 
 // Built on first use, not at import: most callers never ask, and the admin imports this module too.
@@ -97,7 +99,7 @@ export const industryRepository: IndustryRepository = {
 
 export const termRepository: TermRepository = {
   async list() {
-    return [...terms].sort((a, b) => collator.compare(a.reading ?? a.term, b.reading ?? b.term));
+    return sortedTerms;
   },
   async get(id) {
     return termMap.get(id) ?? null;

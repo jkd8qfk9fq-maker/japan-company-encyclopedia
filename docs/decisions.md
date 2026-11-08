@@ -571,3 +571,18 @@ companies (kept outside the repositories).
      invariant 4, and paid introductions of that kind may need registration (金融サービス仲介業).
   5. Affiliate partners fit the readers (job hunting, careers, learning about industries and companies). Each one is
      recorded here before it goes live.
+
+### JCE-037 · 2026-11-08 · Accepted (operator) — Glossary words explained wherever they appear
+
+The operator asked for the difficult words of every company and industry page to carry the same tap/hover explanation
+the glossary already gives (example: 「精密切削加工部品」「精密研削加工部品」). Marking each word up in 3,900 entries by
+hand would not keep up, so the explanation is attached at render time: `src/lib/term-linking.ts` finds glossary words in
+the plain text of any rich text (descriptions, businesses, the business model, industry pages) and in the products and
+customers lists, and links the first occurrence of each per text. Explicit `[[term:…]]` markup still works and wins.
+Latin and katakana names match only as whole words (「リース」 is not found in 「リリース」); the longest name wins; the
+four accounting words that are in almost every entry (有価証券報告書, セグメント, 連結子会社, 子会社) stay explicit-only.
+A term may list `aliases` (「切削」 for 切削加工, 「ジェネリック医薬品」 for 後発医薬品) used only for finding it.
+
+Nineteen terms were added from primary sources (industry associations, the e-Gov text of the laws), recorded in
+docs/research/terms-2026-11-08.md with the words that could not be sourced this round. Adding a term to src/data/terms
+is now all it takes for every page that uses the word to explain it.

@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import { listIndustryPages } from "@/lib/industries";
 import { companyRepository, termRepository } from "@/lib/repositories";
 import { parseRichText, withoutUnavailableLinks } from "@/lib/rich-text";
+import { linkTerms } from "@/lib/term-linking";
 import { TermReference } from "./term-reference";
 
 const HREF = {
@@ -24,12 +25,16 @@ export async function RichText({ text }: { text: string }) {
     refs("company").length > 0 ? companyRepository.getMany(refs("company")) : [],
     refs("industry").length > 0 ? listIndustryPages() : [],
   ]);
-  const segments = withoutUnavailableLinks(parsed, {
-    company: new Set(releasedCompanies.map((c) => c.id)),
-    industry: new Set(industryPages.map((i) => i.id)),
-  });
-  const termIds = segments.flatMap((s) => (s.type === "reference" && s.kind === "term" ? [s.id] : []));
-  const terms = new Map((await termRepository.getMany(termIds)).map((t) => [t.id, t]));
+  // Glossary words are linked where they occur, as well as where the text marks them (src/lib/term-linking.ts).
+  const glossary = await termRepository.list();
+  const segments = linkTerms(
+    withoutUnavailableLinks(parsed, {
+      company: new Set(releasedCompanies.map((c) => c.id)),
+      industry: new Set(industryPages.map((i) => i.id)),
+    }),
+    glossary,
+  );
+  const terms = new Map(glossary.map((t) => [t.id, t]));
 
   return (
     <>

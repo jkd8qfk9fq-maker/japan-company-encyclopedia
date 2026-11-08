@@ -25,6 +25,25 @@ import absorptionMerger from "./absorption-merger.json";
 import shareExchange from "./share-exchange.json";
 import tenderOffer from "./tender-offer.json";
 import goodwill from "./goodwill.json";
+import machineTool from "./machine-tool.json";
+import cutting from "./cutting.json";
+import grinding from "./grinding.json";
+import industrialRobot from "./industrial-robot.json";
+import carbonFiber from "./carbon-fiber.json";
+import lease from "./lease.json";
+import trust from "./trust.json";
+import assetManagement from "./asset-management.json";
+import propertyManagement from "./property-management.json";
+import reit from "./reit.json";
+import genericDrug from "./generic-drug.json";
+import cro from "./cro.json";
+import workerDispatch from "./worker-dispatch.json";
+import jobPlacement from "./job-placement.json";
+import retailElectricity from "./retail-electricity.json";
+import powerTransmissionDistribution from "./power-transmission-distribution.json";
+import constructionSupervision from "./construction-supervision.json";
+import renewableEnergy from "./renewable-energy.json";
+import customsClearance from "./customs-clearance.json";
 
 /**
  * Grouped by what the reader is reading: words for any company page and its
@@ -58,4 +77,23 @@ export const terms: Term[] = Object.entries({
   "back-end-process": backEndProcess,
   "foundry": foundry,
   "image-sensor": imageSensor,
+  "machine-tool": machineTool,
+  "cutting": cutting,
+  "grinding": grinding,
+  "industrial-robot": industrialRobot,
+  "carbon-fiber": carbonFiber,
+  "lease": lease,
+  "trust": trust,
+  "asset-management": assetManagement,
+  "property-management": propertyManagement,
+  "reit": reit,
+  "generic-drug": genericDrug,
+  "cro": cro,
+  "worker-dispatch": workerDispatch,
+  "job-placement": jobPlacement,
+  "retail-electricity": retailElectricity,
+  "power-transmission-distribution": powerTransmissionDistribution,
+  "construction-supervision": constructionSupervision,
+  "renewable-energy": renewableEnergy,
+  "customs-clearance": customsClearance,
 }).map(([file, data]) => parseContent(termSchema, data, `src/data/terms/${file}.json`));

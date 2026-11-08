@@ -13,7 +13,8 @@ function Items({ label, items }: { label: string; items?: string[] }) {
     <div className="text-xs leading-6">
       <dt className="text-muted-foreground">{label}</dt>
       <dd className="text-foreground">
-        {items.slice(0, MAX_ITEMS).join(" ・ ")}
+        {/* Plain text through RichText so the glossary words in a product name are explained too. */}
+        <RichText text={items.slice(0, MAX_ITEMS).join(" ・ ")} />
         {items.length > MAX_ITEMS && <span className="figures text-muted-foreground"> ほか{items.length - MAX_ITEMS}件</span>}
       </dd>
     </div>

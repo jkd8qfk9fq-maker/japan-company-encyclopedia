@@ -12,6 +12,11 @@ export type Term = {
   reading?: string;
   /** Two or three sentences at most. Shown inline, so it must be short. */
   description: string;
+  /**
+   * Other spellings a page may use for the same thing (「切削」 for 切削加工, 「ジェネリック医薬品」 for 後発医薬品).
+   * Used only to find the term in text (src/lib/term-linking.ts); the glossary shows `term`.
+   */
+  aliases?: string[];
   relatedTermIds?: string[];
   sources: Source[];
   /** YYYY-MM-DD */
