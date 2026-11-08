@@ -419,6 +419,44 @@ export function readCsvRows(zipPath) {
   return rows;
 }
 
+/**
+ * The period each XBRL context in a filing ends, by context id: the context's instant, or its
+ * duration's end date. Read from the type=1 zip's instance documents (XBRL/PublicDoc/*.xbrl) —
+ * the type=5 CSV conversion drops the context definitions entirely, and with them the only place
+ * a filing states, exactly, the day each prior-year column ended. A context whose definitions
+ * disagree with each other (same id, different periods) is omitted rather than guessed at.
+ * @param {string} docID
+ * @returns {Promise<Map<string, string> | null>} null when EDINET serves no zip for the document
+ */
+export async function contextPeriodEnds(docID) {
+  const zip = await downloadDocument(docID, 1);
+  if (!zip) return null;
+  const dir = `${zip}-extracted`;
+  if (!existsSync(dir)) {
+    const head = readFileSync(zip).subarray(0, 2).toString("latin1");
+    if (head !== "PK") return null;
+    mkdirSync(dir, { recursive: true });
+    execFileSync("unzip", ["-o", "-q", zip, "-d", dir]);
+  }
+  const publicDoc = join(dir, "XBRL", "PublicDoc");
+  if (!existsSync(publicDoc)) return null;
+  const found = new Map();
+  for (const path of readdirSync(publicDoc, { recursive: true })) {
+    const name = String(path);
+    if (!name.endsWith(".xbrl")) continue;
+    const text = readFileSync(join(publicDoc, name), "utf8");
+    for (const match of text.matchAll(/<(?:[\w.-]+:)?context\s+id="([^"]+)"[^>]*>([\s\S]*?)<\/(?:[\w.-]+:)?context>/g)) {
+      const period = /<(?:[\w.-]+:)?(?:instant|endDate)>([^<]+)<\//.exec(match[2]);
+      if (!period) continue;
+      if (!found.has(match[1])) found.set(match[1], new Set());
+      found.get(match[1]).add(period[1].trim());
+    }
+  }
+  const ends = new Map();
+  for (const [id, dates] of found) if (dates.size === 1) ends.set(id, [...dates][0]);
+  return ends;
+}
+
 /** Strip an XBRL TextBlock's HTML down to readable text, keeping table cells separated. */
 export function textBlockToText(html) {
   return html

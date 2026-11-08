@@ -30,8 +30,25 @@ if (ids.length === 0) {
 
 const STANDARD = { IFRS: "ifrs", "Japan GAAP": "jgaap", "US GAAP": "usgaap" };
 
-/** Which accounting standard a tagged element belongs to. */
-const standardOf = (element) => (/IFRS/.test(element) ? "ifrs" : /USGAAP/.test(element) ? "usgaap" : "jgaap");
+/** The standard an element names outright, if it names one. */
+const explicitStandardOf = (element) => (/IFRS/.test(element) ? "ifrs" : /USGAAP/.test(element) ? "usgaap" : /JPGAAP/.test(element) ? "jgaap" : null);
+/**
+ * Which accounting standard a tagged element belongs to.
+ *
+ * An element whose name carries no marker is not automatically J-GAAP.
+ * The plain SummaryOfBusinessResults elements ARE the J-GAAP taxonomy, so
+ * they stay jgaap — but a KeyFinancialData element is the filer's summary
+ * row for the basis it reports on, and a filer reporting in a foreign
+ * currency prints its 邦貨併記 series with exactly those elements. MODEC
+ * (found 2026-11-08): its JPY revenue series is only
+ * RevenueKeyFinancialData, calling it jgaap made every year "jgaap", and
+ * the 2021 row then mixed the unaudited J-GAAP reference table (純損失
+ * △50,359) into an IFRS series whose own printed figure is △41,860.
+ * Unmarked KeyFinancialData elements therefore take the filing's DEI
+ * standard, passed in as `deiStandard`.
+ */
+const standardOf = (element, deiStandard = null) =>
+  explicitStandardOf(element) ?? (/KeyFinancialData$/.test(element) && deiStandard ? deiStandard : "jgaap");
 const RANK = { ifrs: 3, usgaap: 2, jgaap: 1 };
 
 /**
@@ -50,13 +67,13 @@ const RANK = { ifrs: 3, usgaap: 2, jgaap: 1 };
  * later as `value`; reading only one of the two silently produced entries with
  * no revenue at all, because JSON.stringify drops undefined.
  */
-function at(series, periodEnd, standard = null) {
+function at(series, periodEnd, standard = null, deiStandard = null) {
   const covering = (series ?? []).filter((s) => s.years.some((y) => y.fiscalYearEnd === periodEnd));
-  const preferred = standard ? covering.filter((s) => standardOf(s.element) === standard) : covering;
+  const preferred = standard ? covering.filter((s) => standardOf(s.element, deiStandard) === standard) : covering;
   const chosen = (preferred.length > 0 ? preferred : covering)[0];
   if (!chosen) return { value: null, label: null, standard: null };
   const y = chosen.years.find((y) => y.fiscalYearEnd === periodEnd);
-  return { value: y.value ?? y.yen ?? null, label: chosen.label, standard: standardOf(chosen.element) };
+  return { value: y.value ?? y.yen ?? null, label: chosen.label, standard: standardOf(chosen.element, deiStandard) };
 }
 
 /**
@@ -89,9 +106,9 @@ function decodeEntities(value) {
     .replace(/&gt;/gi, ">");
 }
 
-function standardForYear(revenueSeries, periodEnd) {
+function standardForYear(revenueSeries, periodEnd, deiStandard = null) {
   const covering = (revenueSeries ?? []).filter((s) => s.years.some((y) => y.fiscalYearEnd === periodEnd));
-  return covering.map((s) => standardOf(s.element)).sort((a, b) => RANK[b] - RANK[a])[0] ?? null;
+  return covering.map((s) => standardOf(s.element, deiStandard)).sort((a, b) => RANK[b] - RANK[a])[0] ?? null;
 }
 
 for (const id of ids) {
@@ -125,15 +142,15 @@ for (const id of ids) {
 
   const mixed = [];
   const financials = years.map((periodEnd) => {
-    const yearStandard = standardForYear(pack.figures.revenue, periodEnd) ?? standard;
-    const revenue = at(pack.figures.revenue, periodEnd, yearStandard);
-    const profit = at(pack.figures.profit, periodEnd, yearStandard);
-    const netIncome = at(pack.figures.netIncome, periodEnd, yearStandard);
-    const totalAssets = at(pack.figures.totalAssets, periodEnd, yearStandard);
-    const netAssets = at(pack.figures.netAssets, periodEnd, yearStandard);
+    const yearStandard = standardForYear(pack.figures.revenue, periodEnd, standard) ?? standard;
+    const revenue = at(pack.figures.revenue, periodEnd, yearStandard, standard);
+    const profit = at(pack.figures.profit, periodEnd, yearStandard, standard);
+    const netIncome = at(pack.figures.netIncome, periodEnd, yearStandard, standard);
+    const totalAssets = at(pack.figures.totalAssets, periodEnd, yearStandard, standard);
+    const netAssets = at(pack.figures.netAssets, periodEnd, yearStandard, standard);
     // Standard-specific too: a filer printing both a J-GAAP and an IFRS table
     // reports each table's own consolidation scope (東京海上HD: 51,717 vs 67,526).
-    const employees = at(pack.figures.employees, periodEnd, yearStandard);
+    const employees = at(pack.figures.employees, periodEnd, yearStandard, standard);
     // If some figure could only be found on another basis, say so rather than
     // letting a silently mixed row through.
     for (const [name, f] of [["利益", profit], ["総資産", totalAssets], ["純資産", netAssets]]) {

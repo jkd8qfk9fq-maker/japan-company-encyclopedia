@@ -34,8 +34,16 @@ const ids =
         .filter((f) => f.endsWith(".json"))
         .map((f) => f.replace(/\.json$/, ""));
 
-/** Which accounting standard a tagged element belongs to. */
-const standardOf = (element) => (/IFRS/.test(element) ? "ifrs" : /USGAAP/.test(element) ? "usgaap" : "jgaap");
+/** The standard an element names outright, if it names one. */
+const explicitStandardOf = (element) => (/IFRS/.test(element) ? "ifrs" : /USGAAP/.test(element) ? "usgaap" : /JPGAAP/.test(element) ? "jgaap" : null);
+/**
+ * Which accounting standard a tagged element belongs to. Same rule as
+ * draft-entry.mjs: an unmarked KeyFinancialData element is the filer's
+ * summary row for the basis it reports on (MODEC's 邦貨併記 series), not
+ * J-GAAP — here the fallback is the standard of the row being backfilled.
+ */
+const standardOf = (element, rowStandard = null) =>
+  explicitStandardOf(element) ?? (/KeyFinancialData$/.test(element) && rowStandard ? rowStandard : "jgaap");
 
 /**
  * The value for one fiscal year from a list of series, with its printed label,
@@ -48,7 +56,7 @@ const standardOf = (element) => (/IFRS/.test(element) ? "ifrs" : /USGAAP/.test(e
  */
 function valueFor(list, periodEnd, standard = null) {
   const covering = (list ?? []).filter((s) => s.years.some((y) => y.fiscalYearEnd === periodEnd));
-  const preferred = standard ? covering.filter((s) => standardOf(s.element) === standard) : covering;
+  const preferred = standard ? covering.filter((s) => standardOf(s.element, standard) === standard) : covering;
   const series = (preferred.length > 0 ? preferred : covering)[0];
   if (!series) return { value: null, label: null };
   const year = series.years.find((y) => y.fiscalYearEnd === periodEnd);
