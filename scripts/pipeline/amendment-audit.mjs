@@ -33,7 +33,7 @@ import {
   loadIndex,
 } from "../research/amendments.mjs";
 import { downloadDocument, readCsvRows, scrubSecrets } from "../research/edinet.mjs";
-import { PROSE_ELEMENTS, fiveYearFigures } from "../research/evidence-pack.mjs";
+import { PROSE_ELEMENTS, fiveYearFiguresDated } from "../research/evidence-pack.mjs";
 
 /**
  * What to do about a company, from its facts. A recommendation only.
@@ -59,10 +59,10 @@ const rowsOf = async (/** @type {string} */ docID) => {
   const zip = await downloadDocument(docID, 5);
   return zip ? readCsvRows(zip) : [];
 };
-const tryFigures = (/** @type {any[]} */ rows, /** @type {string} */ periodEnd) => {
+const tryFigures = async (/** @type {any[]} */ rows, /** @type {string} */ periodEnd, /** @type {string} */ docID) => {
   if (rows.length === 0) return null;
   try {
-    return fiveYearFigures(rows, periodEnd);
+    return await fiveYearFiguresDated(rows, periodEnd, docID);
   } catch {
     return null;
   }
@@ -111,11 +111,17 @@ export async function auditCompany({ id, state, entry, index }) {
     const originalRows = await rowsOf(original);
     const loaded = new Map();
     for (const a of amendments) loaded.set(a.docID, await rowsOf(a.docID));
+    // Dated once, up front: a filer that changed its fiscal year end must be compared on the
+    // true year ends, or every pre-change column reads as a difference against the entry.
+    const figuresByDoc = new Map();
+    for (const [docID, rows] of [[original, originalRows], ...loaded]) {
+      figuresByDoc.set(docID, await tryFigures(rows, periodEnd, docID));
+    }
     const completenessOf = (/** @type {string} */ docID) => {
       const rows = loaded.get(docID) ?? [];
       const structural = filingCompleteness(rows, originalRows);
       if (!structural.complete) return structural;
-      return tryFigures(rows, periodEnd) ? structural : { complete: false, missing: ["5年表を抽出できない"] };
+      return figuresByDoc.get(docID) ? structural : { complete: false, missing: ["5年表を抽出できない"] };
     };
     const choice = chooseEffective(original, amendments, completenessOf);
     row.status = choice.status;
@@ -124,8 +130,8 @@ export async function auditCompany({ id, state, entry, index }) {
       row.note = `最新の訂正 ${choice.blockedBy} に ${choice.missing.join("・")} が無く採用しない`;
     } else if (choice.effectiveIsAmendment) {
       const effectiveRows = /** @type {any[]} */ (loaded.get(choice.effectiveDocID));
-      const before = tryFigures(originalRows, periodEnd);
-      const after = tryFigures(effectiveRows, periodEnd);
+      const before = figuresByDoc.get(original);
+      const after = figuresByDoc.get(choice.effectiveDocID);
       const figures = diffFigures(before, after);
       row.financialChanged = figures.changed;
       row.financialDifferences = figures.differences.length;

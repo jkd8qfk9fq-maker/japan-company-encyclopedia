@@ -25,7 +25,7 @@ import { existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node
 import { join } from "node:path";
 import { amendmentIdentity, diffTextBlocks, entryMismatches, financialsDifferences } from "../research/amendments.mjs";
 import { cacheDir, downloadDocument, jstToday, readCsvRows } from "../research/edinet.mjs";
-import { PROSE_ELEMENTS, fiveYearFigures, packFor } from "../research/evidence-pack.mjs";
+import { PROSE_ELEMENTS, fiveYearFiguresDated, packFor } from "../research/evidence-pack.mjs";
 import { loadState, saveState } from "./company-state.mjs";
 import { assertMachineWrite } from "./ownership.mjs";
 
@@ -84,7 +84,7 @@ const figuresChanged = Boolean(effective?.comparedToBase?.changed);
 const periodEnd = identity.periodEnd;
 const originalRows = readCsvRows(/** @type {string} */ (await downloadDocument(original, 5)));
 const effectiveRows = readCsvRows(/** @type {string} */ (await downloadDocument(amend.effectiveDocID, 5)));
-const originalFigures = fiveYearFigures(originalRows, periodEnd);
+const originalFigures = await fiveYearFiguresDated(originalRows, periodEnd, original);
 const staleAgainstOriginal = entryMismatches(originalFigures, entry);
 
 const differences = financialsDifferences(entry.financials, draft.financials);

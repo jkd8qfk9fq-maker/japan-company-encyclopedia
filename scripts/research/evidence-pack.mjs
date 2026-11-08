@@ -24,7 +24,7 @@
  */
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { cacheDir, downloadDocument, findAnnualReports, readCsvRows, textBlockToText } from "./edinet.mjs";
+import { cacheDir, contextPeriodEnds, downloadDocument, findAnnualReports, readCsvRows, textBlockToText } from "./edinet.mjs";
 import { FIGURE_KINDS, amendmentsOf, chooseEffective, classifyAmendment, diffFigures, ensureIndex, filingCompleteness } from "./amendments.mjs";
 
 /**
@@ -484,7 +484,7 @@ function indicatorsElements(filerOnly) {
   return filerOnly ? [filer, group] : [group, filer];
 }
 
-function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
+function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null, periodEnds = null) {
   const inTable = summaryRows(rows);
   const isNonConsolidated = isNonConsolidatedRow;
   const consolidated = inTable.filter((r) => !isNonConsolidated(r));
@@ -517,7 +517,7 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
           .filter(({ relative }) => relative)
           .map(({ row, relative }) => ({
             relative,
-            fiscalYearEnd: shiftYear(periodEnd, YEAR_OFFSET[relative]),
+            fiscalYearEnd: periodEnds?.get(relative) ?? shiftYear(periodEnd, YEAR_OFFSET[relative]),
             yen: Number(row["値"]),
           }))
           // A column the filing prints as 「－」 parses to NaN — the IFRS 移行日
@@ -589,7 +589,7 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
         .filter(({ relative }) => relative)
         .map(({ relative, row }) => ({
           relative,
-          fiscalYearEnd: shiftYear(periodEnd, YEAR_OFFSET[relative]),
+          fiscalYearEnd: periodEnds?.get(relative) ?? shiftYear(periodEnd, YEAR_OFFSET[relative]),
           value: Number(row["値"]),
         }))
         .filter((y) => Number.isFinite(y.value))
@@ -630,7 +630,7 @@ function fiveYearFigures(rows, periodEnd, missing = [], indicatorsText = null) {
         const years = list
           .map((r) => ({ relative: relativeYear(r), row: r }))
           .filter(({ relative }) => relative)
-          .map(({ relative, row: r }) => ({ relative, fiscalYearEnd: shiftYear(periodEnd, YEAR_OFFSET[relative]), value: Number(r["値"]) }))
+          .map(({ relative, row: r }) => ({ relative, fiscalYearEnd: periodEnds?.get(relative) ?? shiftYear(periodEnd, YEAR_OFFSET[relative]), value: Number(r["値"]) }))
           .filter((y) => Number.isFinite(y.value))
           .sort((a, b) => a.fiscalYearEnd.localeCompare(b.fiscalYearEnd));
         if (years.length === 0) continue;
@@ -748,9 +748,11 @@ export function detectIrregularPeriods(indicatorsText, currentPeriodEnd) {
  * which is wrong for any column that pre-dates a change of year end: 住友重機械工業's 第126期 ended
  * 2022年3月 but sits in a column dated 2021-12-31, because it moved from March to December in 2022.
  * The filing says so itself — the 決算年月 row prints each column's real month — so the two are
- * compared. A difference is NOT corrected here: the printed row gives only a month, never the day,
- * and the short transition year needs its length stated. It is reported, and the company goes to a
- * person rather than being registered with a year-end that never existed.
+ * compared. A difference is not corrected in this function: the printed row gives only a month,
+ * never the day. fiveYearFiguresDated corrects the dates from the filing's XBRL contexts before
+ * this comparison runs on a pack, so what is still reported here is what could not be corrected
+ * that way; it is reported, and the company goes to a person rather than being registered with a
+ * year-end that never existed.
  * Columns are matched by RELATIVE year (当期 is the last printed column, 前期 the one before), not
  * by position in the pack's list: a filer whose XBRL tags only some of the years would otherwise
  * be compared against the wrong columns.
@@ -770,6 +772,91 @@ export function detectFiscalYearChange(indicatorsText, years, currentPeriodEnd) 
     .sort((a, b) => a.assumed.localeCompare(b.assumed));
   const wrong = pairs.filter((p) => p.assumed !== p.printed);
   return wrong.length === 0 ? null : { printed: wrong.map((p) => p.printed), assumed: wrong.map((p) => p.assumed) };
+}
+
+/** 相対年度 → the XBRL context id prefix that carries that year's period (CurrentYear / Prior1Year …). */
+const CONTEXT_YEAR_PREFIXES = [
+  ["CurrentYear", "当期"],
+  ["Prior1Year", "前期"],
+  ["Prior2Year", "前々期"],
+  ["Prior3Year", "三期前"],
+  ["Prior4Year", "四期前"],
+];
+
+/**
+ * The year end each 相対年度 actually had, from the filing's own XBRL contexts.
+ *
+ * A filer's instance states every context's period exactly — Prior2YearDuration in
+ * ツルハホールディングス' FY2026 filing runs 2023-05-16 to 2024-05-15, because its year end was
+ * 5月15日 until the move to February. The CSV conversion drops those definitions, which is why
+ * fiveYearFigures had to guess by shifting the current year end. All dimensional variants of a
+ * year share its period; a year whose contexts disagree with each other, or that has none, is
+ * left out — the caller then keeps the shifted date for it and the disagreement stays visible.
+ * @param {string} docID
+ * @returns {Promise<Map<string, string> | null>} 相対年度 → YYYY-MM-DD
+ */
+async function truePeriodEnds(docID) {
+  const byContext = await contextPeriodEnds(docID).catch(() => null);
+  if (!byContext) return null;
+  const ends = new Map();
+  for (const [prefix, relative] of CONTEXT_YEAR_PREFIXES) {
+    const dates = new Set();
+    for (const [id, date] of byContext) {
+      if (id === `${prefix}Duration` || id === `${prefix}Instant` || id.startsWith(`${prefix}Duration_`) || id.startsWith(`${prefix}Instant_`)) {
+        dates.add(date);
+      }
+    }
+    if (dates.size === 1) ends.set(relative, [...dates][0]);
+  }
+  return ends.size > 0 ? ends : null;
+}
+
+/**
+ * 主要な経営指標等の推移 as printed. The same preference list the section files use, rather than
+ * a second copy of the consolidated element: a filer with no consolidated statements prints
+ * the table only as 提出会社の経営指標等, and this line once silently disagreed with SECTIONS
+ * about that — the pack had indicators.txt while the labels were still resolved against nothing.
+ * The series basis (usesFilerOnlySeries) decides which table, here as everywhere.
+ * @param {any[]} rows
+ * @returns {string | null}
+ */
+function indicatorsTextOf(rows) {
+  const row = indicatorsElements(usesFilerOnlySeries(rows)).reduce(
+    (found, element) => found ?? rows.find((r) => r["要素ID"] === element && r["値"]) ?? null,
+    null,
+  );
+  return row ? textBlockToText(row["値"]) : null;
+}
+
+/**
+ * fiveYearFigures, with the columns' dates put right when the filer changed its fiscal year
+ * end inside the window.
+ *
+ * The shifted dates are wrong for every column that pre-dates the change (ツルハ's 2022年５月
+ * columns were dated 2022-02). When the printed 決算年月 row says a column's month is not the
+ * shifted one, the true ends are read from the filing's XBRL contexts (truePeriodEnds) and the
+ * figures are recomputed with them. The recomputation is trusted only if the printed row then
+ * agrees on every series' columns: a partial fix (a year with no usable context) keeps the
+ * shifted figures whole, so detectFiscalYearChange still parks the company for a person
+ * exactly as before. Ordinary filers never reach the instance download — their printed row
+ * already agrees with the shifted dates, byte for byte the same pack as before.
+ * @param {any[]} rows
+ * @param {string} periodEnd the filing's own current year end (YYYY-MM-DD)
+ * @param {string | null} docID the filing the rows came from (its instance carries the contexts)
+ * @param {string[]} [missing]
+ * @param {string | null} [indicatorsText]
+ */
+async function fiveYearFiguresDated(rows, periodEnd, docID, missing = [], indicatorsText = null) {
+  const figures = fiveYearFigures(rows, periodEnd, missing, indicatorsText);
+  if (!docID) return figures;
+  const checkText = indicatorsText ?? indicatorsTextOf(rows);
+  const allYears = (/** @type {any} */ f) =>
+    [f.revenue, f.netIncome, f.profit, f.totalAssets, f.netAssets, f.employees].flatMap((list) => (list ?? []).flatMap((c) => c.years));
+  if (!detectFiscalYearChange(checkText, allYears(figures), periodEnd)) return figures;
+  const ends = await truePeriodEnds(docID);
+  if (!ends) return figures;
+  const corrected = fiveYearFigures(rows, periodEnd, [], indicatorsText, ends);
+  return detectFiscalYearChange(checkText, allYears(corrected), periodEnd) ? figures : corrected;
 }
 
 /**
@@ -833,7 +920,7 @@ async function figuresFor(filing) {
   const zip = await downloadDocument(filing.docID, 5);
   if (!zip) return null;
   const rows = readCsvRows(zip);
-  return { rows, figures: fiveYearFigures(rows, filing.resolvedPeriodEnd ?? resolvePeriodEnd(filing)) };
+  return { rows, figures: await fiveYearFiguresDated(rows, filing.resolvedPeriodEnd ?? resolvePeriodEnd(filing), filing.docID) };
 }
 
 /**
@@ -973,23 +1060,22 @@ async function resolveAmendments(original, originalRows, originalFigures) {
     const zip = await downloadDocument(a.docID, 5);
     loaded.set(a.docID, zip ? readCsvRows(zip) : []);
   }
-  // Memoised: completeness and the comparison both need the five-year figures.
+  // Read once, up front: completeness and the comparison both need the five-year figures,
+  // and dating them (fiveYearFiguresDated) may need the filing's XBRL instance, which is async.
   const read = new Map();
-  const figuresOf = (docID) => {
-    if (read.has(docID)) return read.get(docID);
-    const rows = loaded.get(docID) ?? [];
-    let result;
-    if (rows.length === 0) result = { figures: null, why: "XBRL（CSV）がない" };
-    else {
-      try {
-        result = { figures: fiveYearFigures(rows, original.resolvedPeriodEnd), why: null };
-      } catch (e) {
-        result = { figures: null, why: String(e.message).slice(0, 120) };
-      }
+  for (const a of list) {
+    const amendmentRows = loaded.get(a.docID) ?? [];
+    if (amendmentRows.length === 0) {
+      read.set(a.docID, { figures: null, why: "XBRL（CSV）がない" });
+      continue;
     }
-    read.set(docID, result);
-    return result;
-  };
+    try {
+      read.set(a.docID, { figures: await fiveYearFiguresDated(amendmentRows, original.resolvedPeriodEnd, a.docID), why: null });
+    } catch (e) {
+      read.set(a.docID, { figures: null, why: String(e.message).slice(0, 120) });
+    }
+  }
+  const figuresOf = (docID) => read.get(docID) ?? { figures: null, why: "XBRL（CSV）がない" };
   const completenessOf = (docID) => {
     const structural = filingCompleteness(loaded.get(docID) ?? [], originalRows);
     if (!structural.complete) return structural;
@@ -1044,8 +1130,9 @@ async function resolveAmendments(original, originalRows, originalFigures) {
  *   5  変則決算（12か月でない期）を検出する（summary.irregularPeriods）
  *   6  ヘッダー「９月期」の「期」をラベルに含めない。200文字以下の短いTextBlockも sections.json に残す
  *   7  訂正有報の分類（record-only / text-change / financial-change）を amendments.records に持つ
+ *   8  決算期を変更した会社の各列の期末日を、XBRLインスタンスのコンテキスト期間が示す本当の期末日で付ける（2026-11-08）。印字と一致するまで直せない場合は従来どおり検出して止める
  */
-export const EXTRACTOR_VERSION = 7;
+export const EXTRACTOR_VERSION = 8;
 
 async function packFor(companyId, code4, from, to) {
   const reports = await findAnnualReports(code4, from, to);
@@ -1064,17 +1151,8 @@ async function packFor(companyId, code4, from, to) {
   const missing = [];
   // 主要な経営指標等の推移 as printed, so each series can carry the filer's own
   // wording rather than the taxonomy's.
-  // The same preference list the section files use, rather than a second copy of
-  // the consolidated element: a filer with no consolidated statements prints the
-  // table only as 提出会社の経営指標等, and this line silently disagreed with
-  // SECTIONS about that — the pack had indicators.txt while the labels were still
-  // resolved against nothing.
-  const indicatorsRow = indicatorsElements(usesFilerOnlySeries(rows)).reduce(
-    (found, element) => found ?? rows.find((r) => r["要素ID"] === element && r["値"]) ?? null,
-    null,
-  );
-  const indicatorsText = indicatorsRow ? textBlockToText(indicatorsRow["値"]) : null;
-  const figures = fiveYearFigures(rows, latest.resolvedPeriodEnd, missing, indicatorsText);
+  const indicatorsText = indicatorsTextOf(rows);
+  const figures = await fiveYearFiguresDated(rows, latest.resolvedPeriodEnd, latest.docID, missing, indicatorsText);
 
   const warnings = [];
   const fiscalYearChange = detectFiscalYearChange(
@@ -1414,4 +1492,4 @@ export function extraSections(rows, taken) {
     .filter((block) => /[^\s－\-‐–—―・]/.test(block.text));
 }
 
-export { SECTIONS, compare, figuresFor, fiveYearFigures, packFor, pickBase, resolvePeriodEnd };
+export { SECTIONS, compare, figuresFor, fiveYearFigures, fiveYearFiguresDated, packFor, pickBase, resolvePeriodEnd };
