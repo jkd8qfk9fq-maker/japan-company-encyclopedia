@@ -4,15 +4,282 @@
   "name": "京阪ホールディングス",
   "officialName": "京阪ホールディングス株式会社",
   "nameEn": "Keihan Holdings Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Keihan Holdings Co.,Ltd.",
+  "description": "大阪・京都・滋賀を結ぶ鉄道を軸に、沿線で不動産や百貨店、ホテルなどを展開する京阪グループの持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "real-estate",
+      "primary": true
+    },
+    {
+      "industryId": "transportation",
+      "primary": false
+    },
+    {
+      "industryId": "retail",
+      "primary": false
+    },
+    {
+      "industryId": "entertainment",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "real-estate",
+      "name": "不動産業",
+      "description": "グループで最も大きな事業です。2026年3月期の外部顧客への営業収益は131,121百万円でした。不動産の販売及び賃貸のほか、建築材料の卸売や測量・設計などを行っています。「けいはんな学研都市」の事業用地の分譲や分譲マンションの販売、賃貸ビル・賃貸マンションの運営などを行っています。",
+      "products": [
+        "分譲マンション・宅地",
+        "賃貸ビル・賃貸マンション",
+        "建築材料の卸売",
+        "測量・設計"
+      ],
+      "customers": [
+        "住宅の購入者",
+        "オフィスや店舗のテナント"
+      ],
+      "children": [
+        {
+          "id": "real-estate-business",
+          "name": "不動産事業",
+          "description": "当社や京阪電鉄不動産株式会社、京阪建物株式会社などが担い、不動産の販売と賃貸を行っています。",
+          "products": [
+            "分譲マンション・宅地の販売",
+            "ビル・マンションの賃貸"
+          ],
+          "customers": [
+            "住宅の購入者",
+            "オフィスや店舗のテナント"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "construction",
+          "name": "建設事業",
+          "description": "京阪ビルテクノサービス株式会社などが担い、設備の保守管理や造園、測量・設計などを行っています。",
+          "products": [
+            "設備の保守管理",
+            "造園",
+            "測量・設計"
+          ],
+          "customers": [
+            "ビルや施設の所有者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "transportation",
+      "name": "運輸業",
+      "description": "グループの基盤となる事業です。2026年3月期の外部顧客への営業収益は95,173百万円でした。大阪・京都・滋賀を結ぶ鉄道と、沿線を中心としたバスを運行しています。2025年10月には京阪線と大津線の旅客運賃を改定しました。",
+      "products": [
+        "鉄道の旅客輸送",
+        "路線バス・高速バス"
+      ],
+      "customers": [
+        "沿線の通勤・通学客",
+        "観光客"
+      ],
+      "children": [
+        {
+          "id": "railway",
+          "name": "鉄道事業",
+          "description": "京阪電気鉄道株式会社や京福電気鉄道株式会社、叡山電鉄株式会社などが担い、大阪・京都・滋賀で鉄道を運行しています。",
+          "products": [
+            "鉄道の旅客輸送"
+          ],
+          "customers": [
+            "沿線の通勤・通学客",
+            "観光客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "bus",
+          "name": "バス事業",
+          "description": "京阪バス株式会社や京都バス株式会社などが担い、沿線の路線バスや高速バスを運行しています。",
+          "products": [
+            "路線バス",
+            "高速バス"
+          ],
+          "customers": [
+            "沿線の住民",
+            "観光客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "retail",
+      "name": "流通業",
+      "description": "2026年3月期の外部顧客への営業収益は57,048百万円でした。百貨店業、ストア業、ショッピングモールの経営などを行っています。",
+      "products": [
+        "百貨店",
+        "食品などを扱うストア",
+        "ショッピングモール"
+      ],
+      "customers": [
+        "沿線の買い物客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "leisure-services",
+      "name": "レジャー・サービス業",
+      "description": "2026年3月期の外部顧客への営業収益は43,922百万円でした。ホテル業や観光船業などを営んでいます。",
+      "products": [
+        "ホテル",
+        "観光船",
+        "ゴルフコース"
+      ],
+      "customers": [
+        "宿泊客",
+        "観光客"
+      ],
+      "children": [
+        {
+          "id": "hotel",
+          "name": "ホテル事業",
+          "description": "株式会社ホテル京阪や京阪ホテルズ＆リゾーツ株式会社が担い、「ホテル京阪」や「京都センチュリーホテル」などのホテルを運営しています。",
+          "products": [
+            "ホテルの宿泊・宴会"
+          ],
+          "customers": [
+            "宿泊客",
+            "観光客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "leisure",
+          "name": "レジャー事業",
+          "description": "大阪水上バス株式会社や琵琶湖汽船株式会社などが担い、観光船やゴルフコースなどを運営しています。",
+          "products": [
+            "観光船",
+            "ゴルフコース"
+          ],
+          "customers": [
+            "観光客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他の事業",
+      "description": "2026年3月期の外部顧客への営業収益は5,090百万円でした。サステナブルな体験を提供する複合型商業施設「GOOD NATURE STATION」の運営や、クレジットカード事業などを行っています。",
+      "products": [
+        "複合型商業施設の運営",
+        "クレジットカード"
+      ],
+      "customers": [
+        "施設の来店客",
+        "カード会員"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道・バスの運輸業を基盤に、不動産の販売・賃貸、百貨店やショッピングモール、ホテル・レジャーまで、沿線のくらしと観光に関わる事業をグループで展開しています。",
+    "products": [
+      "鉄道・バスの旅客輸送",
+      "分譲マンション・宅地",
+      "賃貸ビル・賃貸マンション",
+      "百貨店・ストアでの商品販売",
+      "ホテルの宿泊",
+      "観光船などのレジャーサービス"
+    ],
+    "customers": [
+      "沿線の通勤・通学客",
+      "観光客",
+      "住宅の購入者",
+      "オフィスや店舗のテナント",
+      "百貨店やショッピングモールの来店客"
+    ],
+    "revenueSources": [
+      "鉄道・バスの運賃収入",
+      "不動産の販売収入と賃料収入",
+      "商品の販売収入",
+      "宿泊料や施設の利用料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "京阪グループ",
+        "description": "当社と子会社51社、関連会社6社で構成されています（2026年3月31日現在）。連結の従業員数は6,233人です（2026年3月期）。大阪と京都を結ぶ京阪本線を軸に、滋賀まで広がる沿線で事業を展開しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "沿線のくらしと観光のサービス",
+        "description": "鉄道・バスの輸送サービス、不動産の販売・賃貸、百貨店・ストア・ショッピングモールの運営、ホテルや観光船などのサービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "沿線の住民と観光客",
+        "description": "通勤・通学や買い物で沿線を利用する住民、大阪・京都を訪れる観光客、住宅の購入者やテナント企業などがお客様です。営業収益の10％以上を占める特定のお客様はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "運賃や賃料、販売で得る収入",
+        "description": "運賃、不動産の販売代金や賃料、商品の販売代金、宿泊料などから収入を得ています。2026年3月期の営業収益は332,471百万円で、前期の313,546百万円から6.0％増えました。最も大きな事業は不動産業です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "沿線の拠点開発やホテルの新規出店などの成長投資を進めながら、利益を確保しています。2026年3月期の親会社株主に帰属する当期純利益は33,581百万円で、前期から18.8％増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +294,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 255876000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6667,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +314,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 273510000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6526,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +334,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 304820000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6353,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +354,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 314508000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6354,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号 2022年10月28日）等を第103期（2025年3月期）の期首から適用しており、第102期（2024年3月期）に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっている。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +375,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 349563000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6233,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +383,149 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1906,
+      "title": "京阪電気鉄道を設立",
+      "description": "京阪電気鉄道株式会社が設立されました。",
+      "significance": "京阪グループの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1910,
+      "title": "京阪本線が開業",
+      "description": "京阪本線の天満橋～五条（現清水五条）間で営業を開始しました。",
+      "significance": "現在の京阪本線の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "阪神急行電鉄と合併",
+      "description": "阪神急行電鉄株式会社と合併し、社名を京阪神急行電鉄株式会社に変更しました。",
+      "significance": "戦時下に阪急との経営統合が行われました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "京阪電気鉄道として分離",
+      "description": "京阪神急行電鉄株式会社より分離し、京阪電気鉄道株式会社が設立されました。",
+      "significance": "現在の京阪グループにつながる体制の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "株式を上場",
+      "description": "大阪証券取引所と京都証券取引所に上場しました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "京阪百貨店を設立",
+      "description": "株式会社京阪百貨店を設立しました。1985年には1号店の守口店が開業しました。",
+      "significance": "流通業への本格的な展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "鴨東線が開業",
+      "description": "鴨東線（三条～出町柳）の営業を開始しました。",
+      "significance": "京都市内へのアクセスが広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に上場しました。",
+      "significance": "全国の投資家に向けた上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "中之島線が開業",
+      "description": "中之島線（天満橋～中之島）の営業を開始しました。",
+      "significance": "大阪のビジネス中心部への乗り入れが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "持株会社体制へ移行",
+      "description": "会社分割により、鉄軌道事業や遊園地業を京阪電気鉄道株式会社に、不動産販売事業を京阪電鉄不動産株式会社に移転し、持株会社体制に移行するとともに、商号を京阪ホールディングス株式会社に変更しました。",
+      "significance": "現在のグループ経営体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "フラッグシップホテルが開業",
+      "description": "京阪グループのフラッグシップホテル「THE THOUSAND KYOTO」が開業しました。",
+      "significance": "ホテル事業の旗艦施設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "GOOD NATURE STATIONが開業",
+      "description": "「BIOSTYLE」を具現化するフラッグシップ施設「GOOD NATURE STATION」が開業しました。",
+      "significance": "グループのブランド「BIOSTYLE」の発信拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "keifuku-electric-railroad",
+      "relationship": "subsidiary",
+      "description": "【関係会社の状況】で連結子会社に区分されています。議決権の所有割合は43.5％で、支配力基準により実質的に支配していると認められるため子会社とされています（2026年3月31日現在）。福井県を中心に運輸業を営み、東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +533,45 @@
       "publisher": "京阪ホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCVR.pdf",
       "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YCVR",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-07",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2050年を見据えた経営ビジョン「美しい京阪沿線、世界とつながる京阪グループへ」の実現に向け、長期経営戦略と3ヵ年の中期経営計画「真価を磨く 2028」（2026～2028年度）を策定しました。「くらしと観光を彩るまちづくり企業」として京阪沿線の価値を高め続けることを掲げ、長期経営戦略の主軸戦略は「沿線再耕」「体験価値共創」「地球環境保全」で、京阪版SDGsと位置づける「BIOSTYLE」を軸にした経営を推進するとしています。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "沿線の拠点開発を着実に進めるとともに、沿線に息づく歴史・伝統・文化を発掘し、商品・サービスへ付加して事業を高付加価値化することで収益力の向上を図るとしています。また、全事業が連携して「くらし」と「観光」の両面で沿線価値を磨き上げ、エリア全体の価値向上を見据えた投資を続ける方針です。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "大阪・京都・滋賀を結ぶ鉄道網を基盤に、沿線の不動産開発・賃貸、百貨店やショッピングモール、ホテルまでを一つのグループで一体的に展開していることが特徴です。鉄道の利用者を沿線の商業や住まい、観光にもつなげる複合型の事業構成になっています。",
+        "basis": "【事業の内容】と【セグメント情報】に記載された事業構成（子会社51社・関連会社6社、5つの報告セグメント）に基づく。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

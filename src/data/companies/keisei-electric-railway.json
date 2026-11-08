@@ -4,15 +4,347 @@
   "name": "京成電鉄",
   "officialName": "京成電鉄株式会社",
   "nameEn": "Keisei Electric Railway Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Keisei Electric Railway Co.,Ltd.",
+  "description": "東京都東部から千葉県にかけて鉄道・バス・タクシーを運行し、成田空港へのアクセス輸送を担う鉄道会社で、不動産や流通などの事業もグループで手がけています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "retail",
+      "primary": false
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    },
+    {
+      "industryId": "construction",
+      "primary": false
+    },
+    {
+      "industryId": "entertainment",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "transportation",
+      "name": "運輸業",
+      "description": "グループで最も大きな事業です。2026年3月期の外部顧客への営業収益は205,095百万円でした。鉄道、バス、タクシーの営業を行っています。鉄道では、都心と成田空港を結ぶ有料特急「スカイライナー」を運行し、成田空港へのアクセス輸送を担っています。",
+      "products": [
+        "鉄道の旅客輸送",
+        "路線バス・高速バス",
+        "タクシー"
+      ],
+      "customers": [
+        "沿線の通勤・通学客",
+        "成田空港の利用客",
+        "観光客"
+      ],
+      "children": [
+        {
+          "id": "railway",
+          "name": "鉄道事業",
+          "description": "当社や北総鉄道株式会社、関東鉄道株式会社などが担います。2026年3月期の顧客との契約から生じる収益は106,128百万円でした（セグメント情報の収益の分解情報）。上野・押上方面と千葉・成田を結ぶ本線や、成田空港線（成田スカイアクセス）などを運行しています。",
+          "products": [
+            "鉄道の旅客輸送",
+            "有料特急「スカイライナー」"
+          ],
+          "customers": [
+            "沿線の通勤・通学客",
+            "成田空港の利用客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "bus",
+          "name": "バス事業",
+          "description": "京成バス株式会社や関東鉄道株式会社、京成バス千葉ウエスト株式会社などが担います。2026年3月期の顧客との契約から生じる収益は61,497百万円でした（セグメント情報の収益の分解情報）。千葉県内を中心に路線バスと高速バスを運行しています。",
+          "products": [
+            "路線バス",
+            "高速バス"
+          ],
+          "customers": [
+            "沿線の住民",
+            "成田空港の利用客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "taxi",
+          "name": "タクシー事業",
+          "description": "帝都自動車交通株式会社や京成タクシーウエスト株式会社などが担います。2026年3月期の顧客との契約から生じる収益は35,150百万円でした（セグメント情報の収益の分解情報）。東京都内と千葉県内でタクシーを運行しています。",
+          "products": [
+            "タクシー"
+          ],
+          "customers": [
+            "タクシーの利用客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "retail",
+      "name": "流通業",
+      "description": "2026年3月期の外部顧客への営業収益は58,846百万円でした。ストア業や百貨店業などにより商品の販売を行っています。",
+      "products": [
+        "ストアでの商品販売",
+        "百貨店",
+        "ショッピングセンターの運営"
+      ],
+      "customers": [
+        "沿線の買い物客"
+      ],
+      "children": [
+        {
+          "id": "store",
+          "name": "ストア業",
+          "description": "株式会社京成ストアや株式会社コミュニティー京成などが担います。2026年3月期の顧客との契約から生じる収益は44,419百万円でした（セグメント情報の収益の分解情報）。沿線でスーパーマーケットなどを運営しています。",
+          "products": [
+            "食品などの販売"
+          ],
+          "customers": [
+            "沿線の買い物客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "department-store",
+          "name": "百貨店業",
+          "description": "株式会社水戸京成百貨店が担います。2026年3月期の顧客との契約から生じる収益は9,340百万円でした（セグメント情報の収益の分解情報）。茨城県水戸市で百貨店を運営しています。",
+          "products": [
+            "百貨店での商品販売"
+          ],
+          "customers": [
+            "買い物客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-retail",
+          "name": "その他流通業",
+          "description": "株式会社ユアエルム京成などが担い、ショッピングセンターの運営などを行っています。2026年3月期の顧客との契約から生じる収益は1,330百万円でした（セグメント情報の収益の分解情報）。",
+          "products": [
+            "ショッピングセンターの運営"
+          ],
+          "customers": [
+            "買い物客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産業",
+      "description": "2026年3月期の外部顧客への営業収益は31,259百万円でした。不動産の賃貸や販売、管理を行っています。グループでは「第2の柱」として位置づけ、強化を進めている事業です。",
+      "products": [
+        "賃貸住宅・賃貸ビル",
+        "分譲マンション",
+        "不動産の管理"
+      ],
+      "customers": [
+        "住宅の入居者・購入者",
+        "オフィスや店舗のテナント"
+      ],
+      "children": [
+        {
+          "id": "real-estate-leasing",
+          "name": "不動産賃貸業",
+          "description": "当社や京成不動産株式会社などが担い、賃貸住宅やオフィスビルなどの賃貸を行っています。沿線を中心に賃貸住宅の取得や開発を進めています。",
+          "products": [
+            "賃貸住宅",
+            "賃貸ビル"
+          ],
+          "customers": [
+            "住宅の入居者",
+            "オフィスや店舗のテナント"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-estate-sales",
+          "name": "不動産販売業",
+          "description": "当社が担い、「サングランデ」シリーズなどの中高層住宅の分譲を行っています。",
+          "products": [
+            "分譲マンション"
+          ],
+          "customers": [
+            "住宅の購入者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-estate-management",
+          "name": "不動産管理業",
+          "description": "京成ビルサービス株式会社が担い、不動産の管理を行っています。",
+          "products": [
+            "不動産の管理業務"
+          ],
+          "customers": [
+            "建物の所有者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "construction",
+      "name": "建設業",
+      "description": "2026年3月期の外部顧客への営業収益は18,093百万円でした。京成建設株式会社と京成電設工業株式会社が、土木・建築工事などの請負を行っています。鉄道施設の改良工事のほか、グループ外からの受注工事も手がけています。",
+      "products": [
+        "土木・建築工事の請負",
+        "鉄道施設の改良工事"
+      ],
+      "customers": [
+        "鉄道会社",
+        "工事の発注者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "leisure-services",
+      "name": "レジャー・サービス業",
+      "description": "2026年3月期の外部顧客への営業収益は13,860百万円でした。ホテルや映画、飲食などの事業を行っています。持分法適用関連会社の株式会社オリエンタルランドもこの区分に含まれます。",
+      "products": [
+        "ホテル",
+        "映画館",
+        "ケーブルカー・ロープウェイ"
+      ],
+      "customers": [
+        "宿泊客",
+        "観光客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他の事業",
+      "description": "2026年3月期の外部顧客への営業収益は5,269百万円でした。鉄道車両や自動車の整備、自動車教習所の運営などを行っています。",
+      "products": [
+        "鉄道車両・自動車の整備",
+        "自動車教習所"
+      ],
+      "customers": [
+        "鉄道・バス事業者",
+        "教習生"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道・バス・タクシーの運輸業を基盤に、沿線で不動産の賃貸・販売、ストアや百貨店、ホテル・レジャー、建設などを展開し、運賃や賃料、販売代金などから収入を得ています。",
+    "products": [
+      "鉄道・バス・タクシーの輸送サービス",
+      "賃貸住宅・賃貸ビル",
+      "分譲マンション",
+      "ストア・百貨店での商品販売",
+      "ホテルの宿泊や映画などのレジャーサービス",
+      "土木・建築工事"
+    ],
+    "customers": [
+      "沿線の通勤・通学客",
+      "成田空港の利用客",
+      "住宅の入居者・購入者",
+      "オフィスや店舗のテナント",
+      "買い物客や宿泊客"
+    ],
+    "revenueSources": [
+      "鉄道・バス・タクシーの運賃・料金収入",
+      "不動産の賃料収入と販売収入",
+      "商品の販売収入",
+      "宿泊料や施設の利用料",
+      "工事の請負収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "京成グループ",
+        "description": "当社と子会社55社、関連会社6社で構成されています（2026年3月31日現在）。連結の従業員数は13,231人です（2026年3月期）。東京都東部から千葉県北部に鉄道網を持ち、成田空港へのアクセスを担っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "輸送と沿線のサービス",
+        "description": "鉄道・バス・タクシーの輸送サービス、不動産の賃貸・販売、ストアや百貨店での商品販売、ホテルや映画などのレジャーサービス、建設工事などを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "沿線の住民と空港の利用客",
+        "description": "通勤・通学や買い物で沿線を利用する住民、成田空港を使う旅行者、住宅の購入者やテナント企業などがお客様です。営業収益の10％以上を占める特定のお客様はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "運賃や賃料、販売で得る収入",
+        "description": "運賃、不動産の賃料や販売代金、商品の販売代金、宿泊料などから収入を得ています。2026年3月期の営業収益は332,424百万円で、前期の319,314百万円から4.1％増えました。最も大きな事業は運輸業です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "空港アクセスの強化や収益賃貸物件の取得などの投資を進めながら、利益を確保しています。2026年3月期の親会社株主に帰属する当期純利益は48,023百万円で、関係会社株式売却益の減少により前期から31.4％減りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +359,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 387705000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10855,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +379,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 410945000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 12013,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +399,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 469157000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 12283,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +419,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 524658000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 12818,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +439,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 575605000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 13231,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +447,263 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1909,
+      "title": "京成電気軌道を設立",
+      "description": "京成電気軌道株式会社が設立されました。",
+      "significance": "京成グループの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1912,
+      "title": "最初の区間が開通",
+      "description": "押上～市川（現・江戸川）間と、曲金（現・京成高砂）～柴又間が開通しました。",
+      "significance": "営業運転の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1931,
+      "title": "青砥～日暮里間が開通",
+      "description": "青砥～日暮里間が開通し、都心方面への路線が延びました。",
+      "significance": "上野方面へのアクセスの基礎になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1933,
+      "title": "不動産業の営業を開始",
+      "description": "不動産業の営業を開始しました。",
+      "significance": "鉄道以外の事業への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1933,
+      "title": "日暮里～上野公園間が開通",
+      "description": "日暮里～上野公園（現・京成上野）間が開通しました。",
+      "significance": "上野への乗り入れが実現しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1945,
+      "title": "商号を京成電鉄に変更",
+      "description": "商号を京成電鉄株式会社に変更しました。「京成」は、路線の起点である東京の「京」と、成田の「成」を組み合わせた名前です。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京証券取引所に上場",
+      "description": "東京証券取引所に上場しました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "都営地下鉄との相互直通運転を開始",
+      "description": "都営地下鉄1号線（現・浅草線）との相互乗り入れ運転を開始しました。",
+      "significance": "都心への直通運転が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "成田空港への乗り入れとスカイライナーの運転開始",
+      "description": "京成成田～成田空港（現・東成田）間が開通し、空港特急「スカイライナー」の運転を開始しました。",
+      "significance": "成田空港へのアクセス輸送の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "成田空港ターミナルへの乗り入れを開始",
+      "description": "成田空港ターミナル地下駅への乗り入れによる営業を開始しました。",
+      "significance": "空港ターミナルに直結するアクセスになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "千葉急行電鉄の営業を譲り受ける",
+      "description": "千葉急行電鉄株式会社の千葉中央～ちはら台間の営業を譲り受けました。",
+      "significance": "千葉市方面の路線網が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "バス事業を京成バスに営業譲渡",
+      "description": "バス事業を京成バス株式会社に営業譲渡しました。",
+      "significance": "バス事業の分社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "帝都自動車交通を連結子会社化",
+      "description": "帝都自動車交通株式会社の株式を追加取得し、連結子会社としました。",
+      "significance": "タクシー事業が拡大しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "成田スカイアクセスが開業",
+      "description": "成田空港線（成田スカイアクセス）が開業しました。",
+      "significance": "成田空港へのアクセスの中核路線になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "関東鉄道を連結子会社化",
+      "description": "関東鉄道株式会社の株式を追加取得し、連結子会社としました。",
+      "significance": "茨城県内の鉄道・バス事業がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "新京成電鉄を連結子会社化",
+      "description": "新京成電鉄株式会社の株式を追加取得し、連結子会社としました。",
+      "significance": "千葉県内の鉄道網が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "バス事業を再編",
+      "description": "京成電鉄バスホールディングス株式会社を設立し、バス事業を再編しました。",
+      "significance": "バス事業の中間持株会社体制への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "新京成電鉄を吸収合併",
+      "description": "新京成電鉄株式会社を吸収合併しました。同社の路線は松戸線として営業を開始しています。",
+      "significance": "新京成線が京成の路線になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "oriental-land",
+      "relationship": "affiliate",
+      "description": "【関係会社の状況】で持分法適用関連会社に区分されています。議決権の所有割合は20.1％（間接所有0.1％を含みます）で、営業上の取引があります（2026年3月31日現在）。千葉県浦安市でレジャー・サービス業を営んでいます。同社は当社の株式3.61％を保有する大株主でもあります（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "east-japan-railway",
+      "relationship": "business-partner",
+      "description": "特定投資株式の保有目的に、成田空港輸送で取引・協力関係にあるほか、運輸業での共同誘客や成田空港の機能拡張による需要拡大への対応などで取引・協力関係を維持強化するためと記載されており、当事業年度に新たに株式を取得しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsui-fudosan",
+      "relationship": "business-partner",
+      "description": "特定投資株式の保有目的に、不動産業、流通業での建物賃貸借のほか、運輸業における同社施設への輸送受託等の取引・協力関係を維持強化するためと記載されています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shochiku",
+      "relationship": "business-partner",
+      "description": "特定投資株式の保有目的に、運輸業における映画と連携したイベントの開催や広告展開のほか、共同顧客誘致策の実施、不動産事業における連携など、取引・協力関係を維持強化するためと記載されており、当事業年度に新たに株式を取得しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-realty-and-development",
+      "relationship": "business-partner",
+      "description": "特定投資株式の保有目的に、運輸業での運営施設輸送、不動産業での賃貸物件の紹介のほか、共通する事業での取引・協力関係を維持強化するためと記載されています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "keikyu",
+      "relationship": "business-partner",
+      "description": "特定投資株式の保有目的に、相互直通運転を行っており、運輸業での共同誘客のほか、共通する事業におけるノウハウ共有等の取引・協力関係を維持強化するためと記載されています。また、当期には持続可能な沿線の実現等に向けて、共同検討に関する合意書を締結しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "keio",
+      "relationship": "business-partner",
+      "description": "特定投資株式の保有目的に、タクシー事業で業務提携をしており、運輸業での共同誘客のほか、共通する事業におけるノウハウ共有等の取引・協力関係を維持強化するためと記載されています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "orient",
+      "relationship": "business-partner",
+      "description": "特定投資株式の保有目的に、提携カードを発行しており、不動産業・その他の事業における取引・協力関係を維持強化するためと記載されています（2026年3月31日現在）。資金調達ではなく提携カードの発行という事業上の提携であるため結んだ。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +711,52 @@
       "publisher": "京成電鉄株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YL5Y.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YL5Y",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「京成電鉄」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E4%BA%AC%E6%88%90%E9%9B%BB%E9%89%84",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-07",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2022～2030年度の長期経営計画「Dプラン」を推進し、グループビジョンとして「京成グループの事業エリアのみなさまとの共創、及び、日本の玄関口、成田空港の機能強化への寄与を通じ、サステナブルな社会の実現に貢献する」ことを掲げています。その第2段階となる中期経営計画「D2プラン」（2025～2027年度）では、空港アクセス強化を推進するとともに、外部環境変化への耐性強化を目指し、「第2の柱」である不動産業を中心に強化するとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "成田空港の機能強化を企業価値向上の機会として活かすべく、輸送力とサービスを継続的に強化するとしています。宗吾車両基地の拡充や押上駅発着の新型有料特急の導入、成田空港周辺の単線区間の複線化など、空港輸送の拡大に向けた大型の投資を継続的に実行していく方針です。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "東京都心と成田空港を結ぶ鉄道網を持ち、空港アクセス輸送が事業の中核の一つになっていることが特徴です。沿線では不動産の賃貸・販売や流通、レジャーまでをグループで展開し、鉄道の利用者を沿線の住まいや商業にもつなげる事業構成になっています。",
+        "basis": "【事業の内容】と【セグメント情報】に記載された事業構成（子会社55社・関連会社6社、6つの報告セグメント）と、【経営方針、経営環境及び対処すべき課題等】の空港アクセス強化の方針に基づく。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

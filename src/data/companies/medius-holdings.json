@@ -4,36 +4,113 @@
   "name": "メディアスホールディングス",
   "officialName": "メディアスホールディングス株式会社",
   "nameEn": "MEDIUS HOLDINGS Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "MEDIUS HOLDINGS Co.,Ltd.",
+  "description": "全国の病院などの医療施設へ医療機器や医療材料を販売し、修理やメンテナンス、介護福祉機器の販売・レンタルも手がける医療機器商社の持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
-  "financials": [
+  "industries": [
     {
-      "fiscalYear": "2021年6月期",
-      "periodEnd": "2021-06-30",
-      "revenue": 213329593000,
-      "revenueLabel": "売上高",
-      "profit": 3176970000,
-      "profitLabel": "経常利益",
-      "netIncome": 2065996000,
-      "netIncomeLabel": "親会社株主に帰属する当期純利益",
-      "totalAssets": 84479914000,
-      "totalAssetsLabel": "総資産額",
-      "netAssets": 15843153000,
-      "netAssetsLabel": "純資産額",
-      "employees": null,
-      "currency": "JPY",
-      "accountingStandard": "jgaap",
+      "industryId": "trading",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "medical-device-sales",
+      "name": "医療機器販売事業",
+      "description": "国内の医療機器メーカー・代理店・商社などから仕入れた医療機器（備品・消耗品）を、国内の病院などの医療施設へ販売する、グループの基幹となる事業です。販売した医療機器の修理や、保守契約に基づく医療機器全般のメンテナンスも行っています。あわせて、医療材料の購買・在庫管理ソフトのASPサービスを、医療施設や医療材料ディーラー、SPD事業者向けに提供しています。2026年6月期の外部顧客への売上高は296,023百万円で、グループ全体の約98％を占めます。",
+      "products": [
+        "医療機器（備品）",
+        "医療機器（消耗品）",
+        "医療材料",
+        "医療材料の購買・在庫管理ソフト"
+      ],
+      "customers": [
+        "病院等の医療施設",
+        "医療材料ディーラー",
+        "SPD事業者"
+      ],
       "sourceIds": [
-        "yuho-2025"
-      ]
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
     },
+    {
+      "id": "care-welfare",
+      "name": "介護・福祉事業",
+      "description": "国内の介護福祉機器メーカー・代理店・商社などから仕入れた介護福祉機器（備品・消耗品）を、国内の病院などの医療施設や介護施設、一般個人へ販売し、一般個人向けのレンタルも行っています。2026年6月期の外部顧客への売上高は6,313百万円でした。",
+      "products": [
+        "介護福祉機器（備品）",
+        "介護福祉機器（消耗品）"
+      ],
+      "customers": [
+        "病院等の医療施設",
+        "介護施設",
+        "一般個人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "医療機器メーカーなどから仕入れた医療機器・医療材料を病院などの医療施設へ販売して代金を得るほか、販売した機器の修理・保守、介護福祉機器の販売・レンタルからも収入を得ています。",
+    "products": [
+      "医療機器（備品・消耗品）",
+      "医療材料",
+      "医療材料の購買・在庫管理ソフト",
+      "介護福祉機器"
+    ],
+    "customers": [
+      "病院等の医療施設",
+      "介護施設",
+      "医療材料ディーラー",
+      "一般個人"
+    ],
+    "revenueSources": [
+      "医療機器・医療材料の販売代金",
+      "医療機器の修理・メンテナンスの対価",
+      "介護福祉機器の販売代金・レンタル料",
+      "購買・在庫管理ソフトのASPサービス料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "メディアスグループ",
+        "description": "当社と連結子会社15社、非連結子会社2社、持分法非適用関連会社4社の計22社で構成され、連結の従業員数は2,716人です（2026年6月30日現在）。本社は東京都千代田区にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "医療機器の販売と保守、介護福祉機器",
+        "description": "医療機器販売事業が医療機器や医療材料を医療施設へ届け、販売した機器の修理や保守契約に基づくメンテナンスを行い、介護・福祉事業が介護福祉機器の販売とレンタルを行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "医療施設と介護の現場",
+        "description": "顧客は国内の病院などの医療施設が中心で、介護・福祉事業では介護施設や医療機器販売業者、一般個人にも販売・レンタルを行っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "販売代金とサービスの対価",
+        "description": "医療機器や医療材料の販売代金、修理・保守の対価、介護福祉機器の販売代金やレンタル料などが収入になります。2026年6月期の売上高は302,336百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から商品の仕入れや物流、人件費などの費用を差し引いた残りが利益になります。2026年6月期の親会社株主に帰属する当期純利益は944百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
+  "financials": [
     {
       "fiscalYear": "2022年6月期",
       "periodEnd": "2022-06-30",
@@ -47,12 +124,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17307764000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2182,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
-      ]
+        "yuho-2026"
+      ],
+      "note": "第13期（2022年6月期）の主要な経営指標は、誤謬の訂正による遡及処理後の数値である。過年度の決算訂正が行われ、2023年8月14日に訂正報告書が提出されている。"
     },
     {
       "fiscalYear": "2023年6月期",
@@ -67,11 +145,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18572069000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2288,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -87,11 +165,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19737425000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2517,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -107,28 +185,250 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20478129000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2614,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
+      ]
+    },
+    {
+      "fiscalYear": "2026年6月期",
+      "periodEnd": "2026-06-30",
+      "revenue": 302336775000,
+      "revenueLabel": "売上高",
+      "profit": 2306403000,
+      "profitLabel": "経常利益",
+      "netIncome": 944092000,
+      "netIncomeLabel": "親会社株主に帰属する当期純利益",
+      "totalAssets": 112594534000,
+      "totalAssetsLabel": "総資産額",
+      "netAssets": 20746745000,
+      "netAssetsLabel": "純資産額",
+      "employees": 2716,
+      "currency": "JPY",
+      "accountingStandard": "jgaap",
+      "sourceIds": [
+        "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1952,
+      "title": "池谷医療器械店の創業",
+      "description": "1952年、静岡県清水市（現在の静岡市清水区）で、池谷定氏が医療機器の販売を目的として池谷医療器械店を創業しました。",
+      "significance": "メディアスグループの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "前身となる協和医科器械の設立",
+      "description": "1959年、グループの前身となる協和医科器械株式会社が設立されました。",
+      "significance": "現在の事業会社の中心となる会社が生まれました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "協和医科器械のジャスダック上場",
+      "description": "2006年、協和医科器械株式会社がジャスダック証券取引所へ上場しました。その後、静岡県外への進出や同業他社との経営統合を進めました。",
+      "significance": "グループとして株式上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "株式移転による持株会社の設立",
+      "description": "2009年7月、協和医科器械株式会社からの単独株式移転により、持株会社の協和医科ホールディングス株式会社（現在のメディアスホールディングス）が静岡市清水区に設立され、ジャスダック証券取引所に上場しました。",
+      "significance": "現在の持株会社体制が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "メディアスホールディングスへの商号変更",
+      "description": "2010年10月、商号をメディアスホールディングス株式会社に変更し、本社を東京都中央区へ移転しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "栗原医療器械店の子会社化",
+      "description": "2010年7月、北関東及び首都圏における販売力を強化するため、群馬県太田市の株式会社栗原医療器械店の株式100％を取得しました。",
+      "significance": "現在の主要子会社の一つがグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "鴻池運輸との合弁会社をインドに設立",
+      "description": "2013年11月、インド共和国国内で医療材料データベースの構築と配信、データベースを用いた物流ネットワークの構築を目的に、鴻池運輸株式会社との合弁会社CARNA MEDICAL DATABASE PVT.LTD.を設立しました。",
+      "significance": "海外での医療材料データ事業への取り組みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "東京証券取引所市場第二部への市場変更",
+      "description": "2016年9月、東京証券取引所JASDAQ（スタンダード）から東京証券取引所市場第二部へ市場変更しました。",
+      "significance": "上場市場を移しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "東京証券取引所市場第一部への指定",
+      "description": "2017年3月、東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "第一部銘柄となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "連結子会社4社の合併によりアルバースが発足",
+      "description": "2021年10月、旧・株式会社アクティブメディカルを存続会社として、株式会社オズ、イーバスメディカル株式会社、ディーセンス株式会社の吸収合併を実施し、株式会社アルバースへ商号変更しました。",
+      "significance": "首都圏の販売子会社が再編されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "オルバヘルスケアホールディングスとの合弁会社を設立",
+      "description": "2025年4月、医療材料等に関する共通商品データベース事業を行うため、オルバヘルスケアホールディングス株式会社との合弁事業としてエムジェイシー株式会社を設立しました。事業の開始は2026年7月とされています。",
+      "significance": "医療材料のデータベース事業に共同で取り組み始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "伊藤忠リーテイルリンクとの合弁会社を設立",
+      "description": "2025年5月、グループにおける調達機能を強化するため、伊藤忠リーテイルリンク株式会社との合弁事業としてミウル・ヘルスケア株式会社を設立し、同年8月より事業を開始しました。同社は連結子会社です。",
+      "significance": "グループの調達機能を担う会社が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "terumo",
+      "relationship": "supplier",
+      "description": "主要仕入先であり、医療機器の調達取引があります。同社の株式750,400株を保有し、うち504,000株を同社との取引に対する担保として提供しています（2026年6月30日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "alfresa-holdings",
+      "relationship": "major-shareholder",
+      "description": "医療用医薬品などの卸売を手がける事業会社で、【大株主の状況】に載っています。2026年6月30日現在、発行済株式（自己株式を除く。）の1.7％を所有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "konoike-transport",
+      "relationship": "business-partner",
+      "description": "2013年11月、インド共和国国内において医療材料データベースの構築とその配信、データベースを用いた物流ネットワークの構築を目的として、同社との合弁会社CARNA MEDICAL DATABASE PVT.LTD.を設立しました。同社は現在も持分法非適用関連会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "olba-healthcare-holdings",
+      "relationship": "business-partner",
+      "description": "2025年4月、医療材料等に関する共通商品データベース事業を行う合弁事業として、同社と共同出資でエムジェイシー株式会社を設立しました。事業の開始は2026年7月とされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "sources": [
     {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第16期(2024/07/01－2025/06/30)",
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第17期(2025/07/01－2026/06/30)",
       "publisher": "メディアスホールディングス株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WQP5.pdf",
-      "publishedAt": "2025-09-25",
-      "accessedAt": "2026-09-28"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z48T.pdf",
+      "publishedAt": "2026-09-28",
+      "docId": "S100Z48T",
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-08",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "『地域医療への貢献』を理念として掲げ、独自のサービス提案の強化、M&Aによる企業規模の拡大と効率的な資源配分、シナジーの創出により安定的な成長を目指し、業界におけるリーディングカンパニーとなることを目指しています。また、SPDや「SURGELANE®」「meccul®」などのソリューションビジネスの推進により、医療機関の経営改善を支援していく方針です。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "医療機器の販売に加えて、販売した機器の修理・アフターサービスや保守契約に基づくメンテナンス、医療材料の購買・在庫管理ソフトのASPサービス、SPDの運用までを手がけており、医療機関の物品管理や経営改善を支援するサービスも一体で提供しています。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "医療機器の販売を中核とするヘルスケア流通グループで、2026年6月期は医療機器販売事業が外部顧客への売上高の約98％を占め、介護・福祉事業は小規模な第二の柱という構成です。",
+        "basis": "セグメント注記の外部顧客への売上高（2026年6月期：医療機器販売事業296,023百万円、介護・福祉事業6,313百万円、連結売上高302,336百万円）に基づく。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

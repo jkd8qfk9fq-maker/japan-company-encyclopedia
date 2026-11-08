@@ -4,15 +4,174 @@
   "name": "芙蓉総合リース",
   "officialName": "芙蓉総合リース株式会社",
   "nameEn": "Fuyo General Lease Co., Ltd.",
-  "description": null,
+  "description": "情報関連機器や産業機械のリース、不動産リース、割賦販売や貸付などを手がける総合リース会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "lease-and-installment",
+      "name": "リース及び割賦",
+      "description": "情報関連機器・事務用機器や産業工作機械などのリース（リース期間の満了・解約に伴う物件の販売を含みます）、不動産リース、商業設備・生産設備・病院設備などの割賦販売を行う事業です。外部顧客への売上高は2026年3月期で677,005百万円と、3つの報告セグメントの中で最も大きい事業です。",
+      "products": [
+        "情報関連機器・事務用機器のリース",
+        "産業工作機械のリース",
+        "不動産リース",
+        "商業設備・生産設備・病院設備の割賦販売"
+      ],
+      "customers": [
+        "設備投資を行う国内外の事業会社",
+        "病院などの医療機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "operating-lease",
+          "name": "オペレーティング・リース",
+          "description": "会社が物件を購入して所有し、顧客に貸し出してリース料を得る方式のリースです。不動産などの物件が中心で、2026年3月期の売上高は337,755百万円でした。",
+          "products": [
+            "不動産などのオペレーティング・リース"
+          ],
+          "customers": [
+            "設備や不動産を使う事業会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "finance-lease",
+          "name": "ファイナンス・リース",
+          "description": "顧客が選んだ物件を会社が購入して貸し出し、リース期間を通じて代金を回収する方式のリースです。2026年3月期の売上高は308,364百万円でした。",
+          "products": [
+            "情報・事務用機器のファイナンス・リース",
+            "産業・土木・建設機械のファイナンス・リース"
+          ],
+          "customers": [
+            "設備投資を行う事業会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "installment-sales",
+          "name": "割賦",
+          "description": "商業設備、生産設備、病院設備などを顧客に割賦販売する事業です。2026年3月期の売上高は30,885百万円でした。",
+          "products": [
+            "商業設備・生産設備・病院設備の割賦販売"
+          ],
+          "customers": [
+            "設備を導入する事業会社や医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他",
+      "description": "環境エネルギー関連の事業や手数料事業、BPO（業務の受託）やモビリティビジネスなどを行う、報告セグメントの1つです。外部顧客への売上高は2026年3月期で66,093百万円でした。",
+      "products": [
+        "環境エネルギー関連事業",
+        "BPOサービス",
+        "モビリティ関連サービス",
+        "手数料事業"
+      ],
+      "customers": [
+        "国内外の事業会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "finance",
+      "name": "ファイナンス",
+      "description": "金銭の貸付や、営業目的の金融収益を得るために所有する有価証券の運用、匿名組合の組成などを行う事業です。外部顧客への売上高は2026年3月期で45,571百万円でした。",
+      "products": [
+        "金銭の貸付",
+        "有価証券の運用",
+        "匿名組合の組成"
+      ],
+      "customers": [
+        "資金調達を行う事業会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "企業が使う情報関連機器や産業工作機械、不動産などをリースや割賦販売で提供し、貸付などの金融サービスもあわせて行うことで、顧客の設備投資と資金調達を支えています。",
+    "products": [
+      "情報関連機器・事務用機器、産業工作機械等のリース",
+      "不動産リース",
+      "商業設備・生産設備・病院設備等の割賦販売",
+      "金銭の貸付、有価証券の運用、匿名組合の組成",
+      "環境エネルギー関連、BPO、モビリティなどのサービス"
+    ],
+    "customers": [
+      "設備投資や資金調達を行う国内外の事業会社",
+      "病院などの医療機関"
+    ],
+    "revenueSources": [
+      "リース料とリース物件の売却による収益",
+      "割賦販売による収益",
+      "貸付などの金融収益",
+      "手数料などのサービス収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "芙蓉総合リースグループ",
+        "description": "芙蓉総合リースを中心として、子会社241社（国内201社、海外40社）及び関連会社23社で構成されています（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "リースと金融サービスを提供",
+        "description": "情報関連機器や産業工作機械、不動産のリースと設備の割賦販売に加え、貸付や有価証券の運用、匿名組合の組成などの金融サービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "事業会社が顧客",
+        "description": "設備投資を行う製造業をはじめとする事業会社や、病院などの医療機関が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "リース料や金融収益による売上高",
+        "description": "リース料や割賦販売、貸付などから売上高を得ています。2026年3月期の連結売上高は788,669百万円で、前連結会計年度比16.3％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "営業資産の積み上げや不動産リースの売却などによって利益を確保しています。2026年3月期の親会社株主に帰属する当期純利益は21,565百万円で、海外の再生可能エネルギー関連の一部案件で損失を計上したことなどにより、前連結会計年度比52.4％減りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +186,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 374239000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3189,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +206,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 410197000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3437,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +226,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 477326000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3503,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +246,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 538054000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4095,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "株式会社ワコーパレットとの企業結合について、前連結会計年度に行った暫定的な会計処理が当連結会計年度に確定し、取得原価の当初配分額の重要な見直しが反映されています。これにより、前連結会計年度末の総資産額や純資産額などの数値は、見直し後の金額で開示されています。なお、この見直しによる前連結会計年度の連結損益計算書への影響はありません。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +267,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 568309000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4410,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,20 +275,260 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1969,
+      "title": "芙蓉グループ6社を株主として設立",
+      "description": "丸紅飯田株式会社（現・丸紅株式会社）と株式会社富士銀行（現・株式会社みずほ銀行）を中心とする芙蓉グループ6社を株主として設立され、総合リース会社として発足しました。",
+      "significance": "現在の芙蓉総合リースグループの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "芙蓉オートリースを設立",
+      "description": "自動車リースを手がける芙蓉オートリース株式会社を設立しました。",
+      "significance": "現在も連結子会社として自動車リースを担っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "横河レンタ・リースを共同出資で設立",
+      "description": "横河電機株式会社と共同出資にて、横河レンタ・リース株式会社を設立しました。",
+      "significance": "現在も持分法適用関連会社として続く共同事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "米国に現地法人を設立",
+      "description": "米国に現地法人Fuyo General Lease (USA) Inc.を設立しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "アイルランドに現地法人を設立",
+      "description": "アイルランドにFGL Aircraft Ireland Limitedを設立しました。",
+      "significance": "航空機リース事業の海外拠点になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "シャープファイナンスを連結子会社化",
+      "description": "シャープファイナンス株式会社の株式を65％取得し、連結子会社化しました。",
+      "significance": "現在もグループの主要な連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "中国に現地法人を設立",
+      "description": "中国に芙蓉綜合融資租賃（中国）有限公司を設立しました。",
+      "significance": "アジアでの事業基盤が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "英国の航空機リース会社を連結子会社化",
+      "description": "ALM 2010 Limited（現・Fuyo Aviation Capital Europe Limited）の全株式を取得して連結子会社化し、同社が直接に出資するAircraft Leasing and Management Limitedも連結子会社化しました。",
+      "significance": "航空機リース事業の基盤が強化されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "アクリーティブを連結子会社化",
+      "description": "アクリーティブ株式会社の株式を公開買付けにより51％取得し、連結子会社化しました。",
+      "significance": "診療・介護報酬ファクタリングなどの事業がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "ヤマトリースを連結子会社化",
+      "description": "ヤマトリース株式会社の株式を60％取得し、連結子会社化しました。",
+      "significance": "モビリティ／ロジスティクス領域の事業が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所のプライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "Pacific Rim Capitalを連結子会社化",
+      "description": "米国のPacific Rim Capital, Inc.の株式を追加取得し、連結子会社化しました。2019年には持分法適用関連会社化していました。",
+      "significance": "北米のリース事業が連結の範囲に取り込まれました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "CBホールディングスを連結子会社化",
+      "description": "株式会社CBホールディングスの株式を100％取得し、連結子会社化しました。",
+      "significance": "医療・介護・福祉分野の経営支援事業がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ワコーパレットを連結子会社化",
+      "description": "株式会社ワコーパレットの株式を51％取得し、連結子会社化しました。",
+      "significance": "物流関連の機能の強化につながりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "hulic",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況で筆頭に載る事業会社です（発行済株式（自己株式を除く。）の総数に対する所有株式数の割合13.94％、2026年3月31日現在）。関連当事者情報では主要株主として、賃貸取引や営業資産の購入・売却などの取引が記載されており、当社はヒューリックの株式を直接5.3％所有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "azbil",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に載る事業会社です（発行済株式（自己株式を除く。）の総数に対する所有株式数の割合2.70％、2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "nichirei",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に載る事業会社です（発行済株式（自己株式を除く。）の総数に対する所有株式数の割合1.38％、2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "yokogawa-electric",
+      "relationship": "business-partner",
+      "description": "横河レンタ・リース株式会社を共同出資で設立した相手です。同社は持分法適用関連会社で、当社の議決権の所有割合は47.35％です（2026年3月31日現在）。特定投資株式の保有目的にも、関係会社への共同出資を通じた業務提携・協業と記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "yamato-holdings",
+      "relationship": "business-partner",
+      "description": "特定投資株式の保有目的として、関係会社への共同出資を通じたモビリティビジネス関連における業務提携・協業や営業連携の維持・強化が記載されています。関係会社のヤマトリース株式会社は、当社が株式の60％を取得して連結子会社化した会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yokohama-financial-group",
+      "relationship": "business-partner",
+      "description": "三井住友信託銀行株式会社とともに、三井住友トラスト・パナソニックファイナンス株式会社の共同事業化について基本合意書を締結した相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第57期(2025/04/01－2026/03/31)",
+      "title": "有価証券報告書（2026年3月期）",
       "publisher": "芙蓉総合リース株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YF6A.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YF6A",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-07",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "5か年の中期経営計画「Fuyo Shared Value 2026」（2022年度～2026年度）に取り組んでいます。社会課題の解決と経済価値の同時実現（CSV）による持続的な成長を目指し、モビリティ／ロジスティクス、サーキュラーエコノミー、エネルギー環境、BPO／ICT、ヘルスケア、不動産、航空機などの事業領域に経営資源を配分しています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1969年の設立以来の総合リースの実績に加え、航空機リースの海外拠点、BPOやヘルスケアの経営支援など、リースの周辺領域まで事業を広げていることが特徴です。",
+        "basis": "【沿革】の設立年と子会社化の履歴、【事業の内容】のグループ会社の事業領域",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントはリース及び割賦、ファイナンス、その他の3つで、2026年3月期の外部顧客への売上高はリース及び割賦が677,005百万円と全体の8割以上を占め、次いでその他が66,093百万円、ファイナンスが45,571百万円です。",
+        "basis": "セグメント情報（報告セグメントの概要と外部顧客への売上高、2026年3月期）",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

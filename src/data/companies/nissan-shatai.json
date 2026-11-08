@@ -4,15 +4,158 @@
   "name": "日産車体",
   "officialName": "日産車体株式会社",
   "nameEn": "NISSAN SHATAI CO., LTD.",
-  "description": null,
+  "shortNameEn": "NISSAN SHATAI",
+  "description": "日産自動車グループの完成車メーカーで、親会社の日産自動車向けに乗用車や商用車、小型バスとその部分品を製造・販売しています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "automobile-related",
+      "name": "自動車関連",
+      "description": "親会社の日産自動車向けに、乗用車、商用車、小型バスなどの完成車と、その部分品や車体、特別架装を製造・販売する、グループの中核事業です。本社・湘南工場や秦野事業所、子会社の日産車体九州の工場などで生産しています。2026年3月期の外部顧客への売上高は397,590百万円でした。",
+      "products": [
+        "乗用車",
+        "商用車",
+        "小型バス",
+        "自動車の部分品・車体",
+        "特別架装"
+      ],
+      "customers": [
+        "日産自動車株式会社"
+      ],
+      "children": [
+        {
+          "id": "finished-vehicles",
+          "name": "完成車",
+          "description": "乗用車、商用車、小型バスの完成車を製造・販売しています。中近東向けの「パトロール」や北米向けの「アルマーダ」などを生産しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "parts-body-special",
+          "name": "部分品・車体・特別架装",
+          "description": "自動車の部分品や車体の製造と、車両の用途に合わせた特別架装を行っています。子会社の日産車体マニュファクチュアリングやオートワークス京都も担っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "information-processing",
+      "name": "情報処理",
+      "description": "子会社の日産車体コンピュータサービスが、情報システムの構築や保守・運用サービスを提供する事業です。2026年3月期の外部顧客への売上高は3,169百万円でした。",
+      "products": [
+        "情報システムの構築",
+        "情報システムの保守・運用サービス"
+      ],
+      "customers": [
+        "情報システムを利用する企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "staffing",
+      "name": "人材派遣",
+      "description": "子会社の株式会社プロスタッフが人材派遣を行う事業です。2026年3月期の外部顧客への売上高は2,167百万円でした。",
+      "products": [
+        "人材派遣"
+      ],
+      "customers": [
+        "人材を必要とする企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "equipment-maintenance",
+      "name": "設備メンテナンス",
+      "description": "子会社の日産車体エンジニアリングが、生産設備の製作や施工、維持管理を行う事業です。2026年3月期の外部顧客への売上高は872百万円でした。",
+      "products": [
+        "生産設備の製作・施工",
+        "生産設備の維持管理"
+      ],
+      "customers": [
+        "生産設備を持つ企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "日産自動車からの受注に基づいて完成車や部分品を自社工場で製造し、日産自動車に販売することで収益を得ています。",
+    "products": [
+      "乗用車",
+      "商用車",
+      "小型バス",
+      "自動車の部分品・車体",
+      "特別架装"
+    ],
+    "customers": [
+      "日産自動車株式会社"
+    ],
+    "revenueSources": [
+      "完成車の販売代金",
+      "部分品・車体の販売代金",
+      "特別架装の対価",
+      "設備メンテナンス・情報処理・人材派遣のサービス収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日産車体グループ",
+        "description": "当社と子会社6社で構成され、親会社は日産自動車株式会社です（議決権の被所有割合50.0％、2026年3月31日現在）。連結の従業員数は3,639人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "完成車と部分品の製造・販売",
+        "description": "乗用車、商用車、小型バスなどの完成車と、その部分品や車体、特別架装を製造・販売しています。子会社を通じて、生産設備のメンテナンスや情報処理、人材派遣のサービスも提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "親会社の日産自動車",
+        "description": "販売先はほぼ親会社の日産自動車株式会社で、2026年3月期の日産自動車への販売額は396,706百万円でした。日産自動車からはエンジンなどの部分品の有償支給も受けています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "完成車・部分品の販売による収入",
+        "description": "完成車や部分品を日産自動車へ販売する代金が収入の中心です。2026年3月期の売上高は403,800百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から、材料費や人件費、工場の維持費用などのコストを差し引いた残りが利益になります。2026年3月期の親会社株主に帰属する当期純利益は6,893百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +170,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 172190000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4016,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +190,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 172987000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3951,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 174333000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3866,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +230,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 176561000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3842,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号 2022年10月28日。2022年改正会計基準）等を第102期の期首から適用しており、第101期に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっている。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +251,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 183821000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3639,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +259,119 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1941,
+      "title": "日本国際航空工業株式会社を設立",
+      "description": "1941年7月、日本航空工業株式会社（1937年5月創立）と国際工業株式会社（1939年11月創立）が合併し、日本国際航空工業株式会社が設立され、航空機を製作していました。",
+      "significance": "今の日産車体の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "新日国工業株式会社を設立し事業を継承",
+      "description": "1949年4月、企業再建整備法による整備計画に基づき、第二会社として新日国工業株式会社が設立され、鉄道車両と自動車車体の製作事業を引き継ぎました。本店は東京都に置かれました。",
+      "significance": "戦後の再出発の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "日産自動車株式会社と提携",
+      "description": "1951年6月に日産自動車株式会社と提携し、1956年6月には主業を日産自動車株式会社の中小型自動車の製作に転換しました。",
+      "significance": "日産自動車向けの車両生産が事業の中心になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京・大阪証券取引所の市場第一部に上場",
+      "description": "1961年10月、当社の株式が東京証券取引所と大阪証券取引所の市場第一部に上場しました。なお、大阪証券取引所については2003年3月に上場を廃止しています。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "本店を神奈川県平塚市へ移転",
+      "description": "1968年11月、本店を東京都から神奈川県平塚市に移転しました。",
+      "significance": "現在の本社所在地になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "日産車体株式会社に改称",
+      "description": "1971年6月、日産車体工機株式会社（1962年1月に改称）から日産車体株式会社に社名を変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "日産車体九州株式会社を設立",
+      "description": "2007年5月、福岡県に日産車体九州株式会社を設立し、2010年1月に同社での量産を開始しました。",
+      "significance": "九州に生産拠点が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "湘南工場の車両生産体制の再編を完了",
+      "description": "2012年2月に湘南工場第1地区での車両生産を終了し、同年12月に第4地区での車両生産を終了して、湘南工場の車両生産体制の再編を完了しました。",
+      "significance": "湘南工場の生産体制が大きく変わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "市場再編への対応です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場へ市場変更",
+      "description": "2023年10月、東京証券取引所プライム市場から同取引所スタンダード市場に市場変更しました。",
+      "significance": "現在の上場市場になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nissan",
+      "relationship": "parent",
+      "description": "親会社です。議決権の被所有割合は50.0％です（2026年3月31日現在）。当社は日産自動車からエンジン等の部分品の有償支給を受けて自動車を製造し、日産自動車へ販売しています。日産自動車は主要な顧客でもあり、2026年3月期の同社への販売額は396,706百万円でした。土地建物の賃貸借もあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +379,45 @@
       "publisher": "日産車体株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGCO.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YGCO",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-07",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2023年度にスタートした2023－2027中期経営計画では、目指す姿を「商用車とプレミアムカー、特装車、サポート事業で社会に貢献し、お客さまから頼られる唯一無二の存在となる」と定め、「持続可能な企業基盤」「魅力ある商品の創出」「独自性の進化と深化」の3つを重点課題として取り組んでいます。コーポレートパーパスは「人々の生活を豊かに。イノベーションをドライブし続ける。」です。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "自社の強みである開発から生産まで一貫したモノづくり体制を活かし、市場の動向に柔軟に対応できる生産運営の構築に取り組むとしています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高のほぼすべてが親会社の日産自動車向けで、2026年3月期の日産自動車への販売額は396,706百万円と、売上高全体の98.2％を占めています。日産自動車から生産計画を受け、それに基づいて生産を行う体制です。",
+        "basis": "【セグメント情報】の主要な顧客ごとの情報（日産自動車株式会社への売上高396,706百万円）と、経営成績の分析における販売実績の割合（98.2％）の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

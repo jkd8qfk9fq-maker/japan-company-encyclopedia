@@ -4,14 +4,179 @@
   "name": "ほくやく・竹山ホールディングス",
   "officialName": "株式会社ほくやく・竹山ホールディングス",
   "nameEn": "HOKUYAKU TAKEYAMA Holdings,Inc.",
-  "description": null,
+  "shortNameEn": "HOKUYAKU TAKEYAMA Holdings,Inc.",
+  "description": "北海道を地盤に、医薬品と医療機器の卸売を中核として、調剤薬局、介護、ICTまでを手がける総合ヘルスケア企業グループの持株会社です。",
   "listings": [
     {
       "exchange": "sse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    },
+    {
+      "industryId": "it",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "pharmaceutical-wholesale",
+      "name": "医薬品卸売事業",
+      "description": "子会社の株式会社ほくやくが、医療用医薬品と一般用医薬品を北海道内の医療機関や調剤薬局に卸売しています。持分法適用関連会社の株式会社アグロジャパンは農畜産用薬品を、株式会社リードスペシャリティーズは医薬品の卸売を手がけています。2026年3月期の外部顧客への売上高は215,897百万円で、グループ全体の約7割を占める最大の事業です。",
+      "products": [
+        "医療用医薬品",
+        "一般用医薬品",
+        "農畜産用薬品"
+      ],
+      "customers": [
+        "医療機関",
+        "調剤薬局"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "medical-device-wholesale",
+      "name": "医療機器卸売事業",
+      "description": "子会社の株式会社竹山、株式会社ノバメディカル、株式会社テスコが、医療機器などを北海道内の医療機関に卸売しています。2026年3月期の外部顧客への売上高は69,698百万円でした。",
+      "products": [
+        "医療機器"
+      ],
+      "customers": [
+        "医療機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "pharmacy",
+      "name": "薬局事業",
+      "description": "子会社の株式会社そえるなどが、北海道内で調剤薬局を運営しています。全店舗の名称を「そえる薬局」に統一する取り組みを進めています。2026年3月期の外部顧客への売上高は12,638百万円でした。",
+      "products": [
+        "調剤"
+      ],
+      "customers": [
+        "患者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "care",
+      "name": "介護事業",
+      "description": "子会社の株式会社マルベリーが介護用品のレンタルや販売、介護・福祉のコンサルティングを行い、株式会社モルスがサービス付き高齢者向け住宅などの介護施設を運営しています。2026年3月期の外部顧客への売上高は4,717百万円でした。",
+      "products": [
+        "介護用品",
+        "介護施設の運営"
+      ],
+      "customers": [
+        "介護サービス利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "ict",
+      "name": "ICT事業",
+      "description": "子会社の株式会社アドウイックが、コンピュータとソフトウエアの開発・販売、および計算業務の受託を行っています。2026年3月期の外部顧客への売上高は680百万円でした。",
+      "products": [
+        "ソフトウエア",
+        "コンピュータ"
+      ],
+      "customers": [
+        "医療機関",
+        "企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他事業",
+      "description": "当社が子会社の経営指導業務を行い、子会社の株式会社北海道医療情報サービスがSPD（院内物流）と新規開業支援を行っています。2026年3月期の外部顧客への売上高は34百万円と小さく、売上の中心はグループ内取引です。",
+      "products": [
+        "経営指導",
+        "SPD（院内物流）",
+        "新規開業支援"
+      ],
+      "customers": [
+        "グループ会社",
+        "医療機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "グループは、医療機関や調剤薬局への医薬品・医療機器の卸売で販売代金を得て、薬局や介護の現場では地域の人々に直接サービスを提供して対価を得ています。",
+    "products": [
+      "医療用医薬品",
+      "一般用医薬品",
+      "医療機器",
+      "介護用品",
+      "調剤",
+      "ソフトウエア"
+    ],
+    "customers": [
+      "医療機関",
+      "調剤薬局",
+      "介護サービス利用者",
+      "地域の人々"
+    ],
+    "revenueSources": [
+      "医薬品の卸売売上",
+      "医療機器の卸売売上",
+      "調剤の対価",
+      "介護用品のレンタル・販売収入",
+      "ICTの開発・受託収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ほくやく・竹山グループ",
+        "description": "当社と連結子会社13社、持分法適用関連会社3社で構成され、連結の従業員数は1,591人です（2026年3月31日現在）。札幌市に本社を置き、北海道内を地盤としています。"
+      },
+      {
+        "kind": "offering",
+        "title": "卸売と現場サービスの提供",
+        "description": "医薬品卸売事業が医療用医薬品などを、医療機器卸売事業が医療機器などを医療機関へ届け、薬局事業と介護事業が地域の人々に直接サービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "医療機関と地域の人々",
+        "description": "顧客は北海道内の病院や診療所などの医療機関と調剤薬局で、薬局や介護の現場では患者や高齢者など地域の人々が直接の利用者です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "販売代金とサービスの対価",
+        "description": "医薬品や医療機器の販売代金、調剤の対価、介護用品のレンタル料や介護サービスの対価などが収入になります。2026年3月期の売上高は303,667百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から商品の仕入れや物流、人件費などの費用を差し引いた残りが利益になります。2026年3月期の親会社株主に帰属する当期純利益は1,683百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -26,7 +191,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 55543000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1625,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -46,12 +211,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 57443000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1626,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第18期第1四半期連結会計期間より、従来は営業外収益に含めて表示していた受取事務手数料を売上高へ表示する方法に変更しており、第17期（2023年3月期）の主要な経営指標は、この遡及処理の内容を反映させた数値となっている。"
     },
     {
       "fiscalYear": "2024年3月期",
@@ -66,7 +232,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 60684000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1601,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -86,7 +252,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 61861000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1605,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -106,7 +272,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 64663000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1591,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -114,8 +280,137 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2006,
+      "title": "ほくやくと竹山の経営統合に基本合意",
+      "description": "2006年3月、医薬品卸売の株式会社ほくやくと医療機器卸売の株式会社竹山は、株式移転により完全親会社となる共同持株会社を設立し、両社がその完全子会社となる経営統合に基本合意しました。",
+      "significance": "現在のグループの出発点となる統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "共同持株会社の設立と札幌証券取引所への上場",
+      "description": "2006年9月、共同持株会社として当社が設立され、札幌証券取引所に上場しました。",
+      "significance": "ほくやくと竹山を傘下に持つ持株会社体制が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "両社の支店統合を開始",
+      "description": "2007年1月に北見支店、同年7月に旭川支店など、ほくやくと竹山の支店を順次統合し、北海道内での営業拠点の重複を解消していきました。",
+      "significance": "経営統合によるグループ内の効率化が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "リードスペシャリティーズを同業2社と設立",
+      "description": "2018年7月、当社は同業2社と合同で出資し、医薬品卸売を行う株式会社リードスペシャリティーズを設立しました。",
+      "significance": "同社は持分法適用関連会社となり、医薬品卸売事業の一翼を担っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ノバメディカルを連結子会社化",
+      "description": "2019年4月、当社は医療機器卸売の株式会社ノバメディカルの株式を取得し、同社が連結子会社となりました。",
+      "significance": "医療機器卸売事業の体制が厚くなりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "薬局事業を「そえる」に再編",
+      "description": "2022年10月、株式会社パルスが北日本調剤株式会社、株式会社メイプルファーマシー、株式会社カエデを吸収合併し、株式会社そえるへ社名を変更しました。",
+      "significance": "薬局事業の運営会社がそえるに集約されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "サステナビリティ委員会を設置",
+      "description": "2024年2月、当社はサステナビリティ委員会を設置しました。",
+      "significance": "持続可能性への取り組みを進める体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "三興保険サービスを吸収合併",
+      "description": "2025年10月1日、当社は連結子会社であった株式会社三興保険サービスを吸収合併しました。",
+      "significance": "グループの再編が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "TSUMUGU HOLDINGSへの商号変更予定を公表",
+      "description": "2025年11月、2026年6月26日開催予定の第20回定時株主総会で定款の一部が承認されることを条件として、2026年9月29日に商号を「株式会社TSUMUGU HOLDINGS」に変更する予定であることを公表しました。",
+      "significance": "設立20周年の節目の商号変更であり、まだ予定の段階です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "竹山がエイエックスを吸収合併",
+      "description": "2026年1月1日、連結子会社の株式会社竹山が、同じく連結子会社であった株式会社エイエックスを吸収合併しました。",
+      "significance": "医療機器卸売事業の再編が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "eisai",
+      "relationship": "major-shareholder",
+      "description": "医薬品メーカーで、【大株主の状況】に載る事業会社です。2026年3月31日現在、発行済株式（自己株式を除く。）の2.66％を所有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "sumitomo-pharma",
+      "relationship": "major-shareholder",
+      "description": "医薬品メーカーで、【大株主の状況】に載る事業会社です。2026年3月31日現在、発行済株式（自己株式を除く。）の2.28％を所有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "daiichi-sankyo",
+      "relationship": "major-shareholder",
+      "description": "医薬品メーカーで、【大株主の状況】に載る事業会社です。2026年3月31日現在、発行済株式（自己株式を除く。）の2.13％を所有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -123,11 +418,48 @@
       "publisher": "株式会社ほくやく・竹山ホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJPG.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YJPG",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 商号変更が予定されている。2026年6月26日開催予定の第20回定時株主総会で定款の一部が承認されることを条件として、2026年9月29日に商号を「株式会社TSUMUGU HOLDINGS」へ変更する予定であることが、有報の沿革とMD&Aに公表済みの予定として記載されている（2026年3月31日現在の商号は株式会社ほくやく・竹山ホールディングス）。本登録は現在の商号に基づいており、株主総会の承認と変更の実施は未確認のため、承認者の確認を求める。"
+    ]
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-08",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "第6次中期経営計画では「北海道に根ざした、地域包括ヘルスケアグループになる」など3つのビジョンを掲げ、エリアサミット、DXの推進、従業員力の最大化を重点戦略として実施しています。2026年9月に迎える設立20周年を「第二の創業」と位置づけ、新たな企業理念を策定しました。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "医薬品卸売事業と医療機器卸売事業に加えて、薬局事業と介護事業を通じて地域社会の一人ひとりに直接つながる事業を展開しているため、地域固有のニーズを迅速に捉えることができる点を強みとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "北海道を地盤とするヘルスケアの持株会社で、医薬品卸売事業がグループ売上高の約7割を占め、医療機器卸売事業がこれに次ぐ二本柱の構成になっています。",
+        "basis": "セグメント注記の外部顧客への売上高（2026年3月期：医薬品卸売事業215,897百万円、医療機器卸売事業69,698百万円、連結売上高303,667百万円）に基づく。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

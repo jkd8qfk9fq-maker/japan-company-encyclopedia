@@ -4,15 +4,157 @@
   "name": "テレビ朝日ホールディングス",
   "officialName": "株式会社テレビ朝日ホールディングス",
   "nameEn": "TV Asahi Holdings Corporation",
-  "description": null,
+  "shortNameEn": "TV Asahi Holdings",
+  "description": "テレビ朝日を傘下に持つ認定放送持株会社で、テレビ放送を中心に、動画配信や通販、音楽出版、イベントなども手がけています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "media",
+      "primary": true
+    },
+    {
+      "industryId": "entertainment",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "tv-broadcasting",
+      "name": "テレビ放送事業",
+      "description": "テレビ番組の制作及び放送を行う主力事業です（2026年3月期の外部顧客への売上高245,469百万円）。子会社の株式会社テレビ朝日、株式会社ＢＳ朝日、株式会社シーエス・ワンテン、テレビ朝日映像株式会社などが行っており、広告収入（タイム収入・スポット収入）、番組販売収入、BS・CS収入などを得ています。",
+      "products": [
+        "テレビ番組の制作・放送",
+        "番組販売",
+        "BS・CS放送"
+      ],
+      "customers": [
+        "視聴者",
+        "広告主・広告会社",
+        "放送局"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他事業",
+      "description": "音楽出版事業、イベント事業、機器販売・リース事業、出資映画事業などを行う事業です（2026年3月期の外部顧客への売上高41,845百万円）。子会社の株式会社テレビ朝日ミュージックや株式会社テレビ朝日サービスなどが行っています。2026年3月には複合型エンタテインメント施設「TOKYO DREAM PARK（東京ドリームパーク）」が開業しました。",
+      "products": [
+        "音楽出版",
+        "イベント",
+        "機器販売・リース",
+        "出資映画",
+        "DVD販売"
+      ],
+      "customers": [
+        "イベントの来場者",
+        "音楽出版の利用者",
+        "映画の観客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "internet",
+      "name": "インターネット事業",
+      "description": "インターネットを利用した広告付動画配信や、動画配信コンテンツの制作及び権利許諾などを行う事業です（2026年3月期の外部顧客への売上高33,800百万円）。サイバーエージェントとの共同事業「ABEMA」、KDDIとの共同事業「TELASA」、無料見逃し動画配信などを展開し、子会社の株式会社テレビ朝日、株式会社テレビ朝日メディアプレックス、シンエイ動画株式会社などが行っています。",
+      "products": [
+        "動画配信サービス「ABEMA」",
+        "定額制動画配信サービス「TELASA」",
+        "無料見逃し動画配信",
+        "動画配信コンテンツの制作・権利許諾"
+      ],
+      "customers": [
+        "視聴者",
+        "広告主"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "shopping",
+      "name": "ショッピング事業",
+      "description": "テレビ通販番組やECサイトにおける通信販売を行う事業です（2026年3月期の外部顧客への売上高18,372百万円）。子会社の株式会社ロッピングライフが行っており、通販番組とECサイトで商品を販売しています。",
+      "products": [
+        "テレビ通販番組",
+        "ECサイトにおける通信販売"
+      ],
+      "customers": [
+        "視聴者",
+        "ECサイトの利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "子会社の株式会社テレビ朝日などがテレビ番組を制作・放送して広告収入や番組販売収入を得るほか、動画配信や通販など、コンテンツを活かした事業を展開しています。",
+    "products": [
+      "テレビ番組",
+      "動画配信サービス「ABEMA」「TELASA」",
+      "テレビ通販・ECサイトの通信販売",
+      "音楽出版",
+      "イベント",
+      "出資映画"
+    ],
+    "customers": [
+      "視聴者",
+      "広告主・広告会社",
+      "通販の購入者"
+    ],
+    "revenueSources": [
+      "広告収入（タイム収入・スポット収入）",
+      "番組販売収入",
+      "BS・CS収入",
+      "動画配信の広告・課金収入",
+      "通信販売の売上",
+      "音楽出版・イベント等の収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "テレビ朝日ホールディングスグループ",
+        "description": "当社と子会社36社、関連会社22社で構成されています（2026年3月31日現在）。連結の従業員数は5,622人です（2026年3月期）。地上波・BS・CSの放送事業者を完全子会社とする認定放送持株会社として、グループの経営管理を行っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "番組の制作・放送と配信、通販などを用意する",
+        "description": "中核子会社の株式会社テレビ朝日などがテレビ番組を制作・放送し、BS・CS放送も行っています。動画配信サービス「ABEMA」「TELASA」や無料見逃し配信、テレビ通販、音楽出版、イベント、出資映画なども展開しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "視聴者と広告主に届ける",
+        "description": "番組や配信コンテンツは視聴者に届けられ、広告主や広告会社が番組の広告枠を購入します。主要な顧客は広告会社の株式会社電通と株式会社博報堂です（2026年3月期）。"
+      },
+      {
+        "kind": "revenue",
+        "title": "広告収入や番組販売などによる売上高",
+        "description": "広告収入（タイム収入・スポット収入）、番組販売収入、BS・CS収入、配信や通販の収入などから売上高を得ています。2026年3月期の売上高は339,487百万円で、前期の324,056百万円から4.8％増えました。スポット収入が好調なテレビ放送事業や、音楽出版事業が好調なその他事業、インターネット事業の増収などによります。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "コンテンツの制作・放送や配信などの事業を通じて利益を確保しています。2026年3月期の親会社株主に帰属する当期純利益は29,654百万円で、前期の25,816百万円から14.9％増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +169,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 393215000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5336,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +189,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 394763000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5379,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +209,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 423577000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5452,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +229,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 447842000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5526,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +249,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 467686000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5622,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +257,210 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1957,
+      "title": "日本教育テレビとして創立",
+      "description": "株式会社日本教育テレビが東京都中央区銀座西に創立されました。",
+      "significance": "テレビ朝日の前身が誕生しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "テレビ放送を開始（開局）",
+      "description": "JOEX-TVの本免許を受け、テレビ放送を開始しました。",
+      "significance": "放送事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "総合番組局へ移行",
+      "description": "教育専門局から総合番組局に移行しました。",
+      "significance": "教育番組中心の編成から、総合編成の放送局になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "全国朝日放送へ社名変更",
+      "description": "社名を全国朝日放送株式会社に変更し、略称をテレビ朝日に統一しました。",
+      "significance": "「テレビ朝日」の呼称が正式な略称になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "テレビ朝日に社名変更",
+      "description": "社名を株式会社テレビ朝日に変更しました。同年12月には地上デジタル放送を開始しました。",
+      "significance": "略称だったテレビ朝日が正式な社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "シンエイ動画を連結子会社化",
+      "description": "アニメ制作のシンエイ動画株式会社を連結子会社化しました。",
+      "significance": "アニメ制作の体制をグループ内に持ちました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "地上デジタル放送へ完全移行",
+      "description": "地上アナログ放送を終了し、地上デジタル放送に完全移行しました。",
+      "significance": "放送のデジタル化が完了しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "認定放送持株会社へ移行し、現社名に変更",
+      "description": "認定放送持株会社体制に移行し、社名を株式会社テレビ朝日ホールディングスに変更しました。放送事業は新設された株式会社テレビ朝日（現・連結子会社）が引き継ぎました。",
+      "significance": "現在の持株会社体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "TOKYO DREAM PARKが開業",
+      "description": "複合型エンタテインメント施設「TOKYO DREAM PARK（東京ドリームパーク）」が東京都江東区に開業しました。",
+      "significance": "放送の枠を超えた新しい事業拠点が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "toei-animation",
+      "relationship": "affiliate",
+      "description": "持分法適用関連会社です。【関係会社の状況】で、その他事業を営む関連会社として、議決権の所有割合20.00％（間接所有、2026年3月31日現在）が記載されています。アニメーションの制作会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "kotobukiya",
+      "relationship": "affiliate",
+      "description": "持分法適用関連会社です。【関係会社の状況】で、その他事業を営む関連会社として、議決権の所有割合15.12％（間接所有、2026年3月31日現在）が記載されています。議決権の所有割合は100分の20未満ですが、実質的な影響力を持っているため持分法適用関連会社とされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "ray",
+      "relationship": "affiliate",
+      "description": "持分法適用関連会社です。【関係会社の状況】で、その他事業を営む関連会社として、議決権の所有割合21.79％（間接所有、2026年3月31日現在）が記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "cyberagent",
+      "relationship": "business-partner",
+      "description": "共同事業の相手です。サイバーエージェントとの共同事業として動画配信サービス「ABEMA」を展開しています。ABEMAを運営する株式会社AbemaTVは当社の持分法適用関連会社です（議決権の間接所有割合36.79％、2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "kddi",
+      "relationship": "business-partner",
+      "description": "共同事業の相手です。KDDIとの共同事業として定額制動画配信サービス「TELASA」を提供しており、運営するTELASA株式会社は当社の持分法適用関連会社です（議決権の間接所有割合50.00％、2026年3月31日現在）。当社は特定投資株式としてKDDIの株式も保有し、コンテンツを核に通信と放送の融合を進めることで関係強化・協業推進を図るとしています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "dentsu-group",
+      "relationship": "customer",
+      "description": "主要な顧客である広告会社の親会社です。電通グループの子会社である株式会社電通への売上高は2026年3月期に95,235百万円で、テレビ放送事業、インターネット事業、その他事業に関連しています。当社は電通グループの株式800,000株を保有し、相互保有の関係にあります（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "hakuhodo-dy-holdings",
+      "relationship": "customer",
+      "description": "主要な顧客である広告会社の親会社です。博報堂DYホールディングスの子会社である株式会社博報堂への売上高は2026年3月期に61,887百万円で、テレビ放送事業、インターネット事業、その他事業に関連しています。株式会社博報堂は2025年4月1日付で株式会社博報堂DYメディアパートナーズを吸収分割により統合しました。当社は博報堂DYホールディングスの株式3,440,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "asahi-broadcasting-group-holdings",
+      "relationship": "business-partner",
+      "description": "放送ネットワークのパートナーです。コンテンツ・情報の発信基盤となるネットワークの重要なパートナーとして関係強化のため相互に株式を保有しており、番組販売等の取引があります。当社は同社の株式3,877,600株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sky-perfect-jsat",
+      "relationship": "business-partner",
+      "description": "取引関係のある事業パートナーです。コンテンツ制作・発信を通じて関係強化を図るため、当社は同社の株式1,118,600株を保有しており、広告出稿やCS放送事業等の取引関係があります（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shochiku",
+      "relationship": "business-partner",
+      "description": "映画事業のパートナーです。当社の映画事業、テレビ放送事業等において関係強化・協業推進のため、当社は同社の株式49,400株を保有しており、広告出稿等の取引関係や出資映画の配分金などの関係があります（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +468,48 @@
       "publisher": "株式会社テレビ朝日ホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCD2.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YCD2",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 報告セグメントの変更が予定されている。セグメント情報の追加情報によれば、2026年2月12日開催の取締役会で決議した経営計画「START UP テレ朝!! 経営計画2026-2029」を踏まえ、翌連結会計年度（2027年3月期）より報告セグメントを従来の「テレビ放送事業」「インターネット事業」「ショッピング事業」「その他事業」から「メディア・コンテンツ事業」「TDP・イベント事業」「その他事業」に変更する。本登録は2026年3月期の報告セグメントに基づいており、変更は翌期の予定事項であるため、承認者の確認を求める。"
+    ]
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-07",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年度から開局70周年を迎える2029年度までの経営計画「START UP テレ朝!! 経営計画2026-2029」を策定しました。コンテンツ・IPを核とした収益基盤の多様化を進め、テレビ朝日のコンテンツ制作力と2026年3月に開業した東京ドリームパークを両輪に成長を目指すとしています。具体的な成長戦略として、TDP、IP、ABEMA、CVC、AIの5つのキーストラテジーを設定しています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "2025年度の視聴率は、全日、ゴールデンタイム、プライムタイムのすべてで個人全体・世帯ともに1位となり、個人全体では2年連続、世帯では4年連続の3冠を達成したとしています。視聴率3冠という良好な媒体力を背景に、スポット収入は過去最高を更新しました。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の外部顧客への売上高は、テレビ放送事業が245,469百万円と全体の約7割を占め、その他事業が41,845百万円、インターネット事業が33,800百万円、ショッピング事業が18,372百万円です。テレビ放送事業が売上の中心です。",
+        "basis": "セグメント情報の報告セグメントごとの外部顧客への売上高（2026年3月期）",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }
