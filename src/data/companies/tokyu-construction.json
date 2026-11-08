@@ -4,15 +4,124 @@
   "name": "東急建設",
   "officialName": "東急建設株式会社",
   "nameEn": "TOKYU CONSTRUCTION CO., LTD.",
-  "description": null,
+  "shortNameEn": "TOKYU CONSTRUCTION",
+  "description": "東急グループの総合建設会社で、建築・土木工事を中心に、不動産事業なども手がけています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "building",
+      "name": "建設事業（建築）",
+      "description": "建築工事とそれに附帯する事業を行う、グループで最も大きな事業です。2026年3月期の外部顧客への売上高は259,236百万円でした。事務所や物流施設、住宅、ホテル、再開発などの工事を国内で手がけるほか、インドネシアやミャンマー、シンガポールなどの海外子会社も建築工事を行っています。",
+      "products": [
+        "建築工事"
+      ],
+      "customers": [
+        "民間企業",
+        "官公庁"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "civil-engineering",
+      "name": "建設事業（土木）",
+      "description": "土木工事とそれに附帯する事業を行う事業です。2026年3月期の外部顧客への売上高は74,350百万円でした。鉄道や道路、トンネル、上・下水道などのインフラ工事を手がけ、インドネシアとミャンマーの子会社も土木工事を行っています。",
+      "products": [
+        "土木工事"
+      ],
+      "customers": [
+        "官公庁",
+        "民間企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate-and-other",
+      "name": "不動産事業等",
+      "description": "不動産の販売や賃貸などを行う事業です。2026年3月期の外部顧客への売上高は7,593百万円でした。子会社がICT関連サービス事業や、消防学校の再整備を行うPFI事業、ベンチャー企業への投資も行っています。",
+      "products": [
+        "不動産の販売・賃貸",
+        "ICT関連サービス"
+      ],
+      "customers": [
+        "不動産の購入者・賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "官公庁や民間企業から建築・土木工事を請け負う建設事業を中心に、不動産の販売や賃貸なども行う事業モデルです。",
+    "products": [
+      "建築工事",
+      "土木工事",
+      "不動産の販売・賃貸",
+      "建築リニューアル",
+      "ICT関連サービス"
+    ],
+    "customers": [
+      "国や地方公共団体などの官公庁",
+      "民間企業",
+      "不動産の購入者・賃借人"
+    ],
+    "revenueSources": [
+      "工事請負による完成工事の収入",
+      "不動産の賃貸収入と販売収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東急建設グループ",
+        "description": "当社と子会社11社、関連会社5社で構成されています（2026年3月31日現在）。連結の従業員数は2,911人です（2026年3月期）。東急グループの一員として、開発・建設の分野を担っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "建設工事の請負と不動産事業",
+        "description": "建築工事と土木工事を請け負って施工する建設事業を中心に、不動産の販売や賃貸なども行っています。海外では、インドネシアやミャンマー、シンガポールなどの子会社が工事を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "官公庁と民間企業、東急グループのお客様",
+        "description": "工事の発注者は官公庁と民間企業です。東急や東急電鉄など東急グループ各社からも、工事の一部を継続的に受注しています。2026年3月期に売上高の10％以上を占めた顧客は囲町東地区市街地再開発組合で、売上高は35,718百万円でした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "工事の完成と不動産事業で得る収入",
+        "description": "工事を完成させることで請負代金を得るほか、不動産の賃貸や販売でも収入を得ています。2026年3月期の売上高は341,181百万円で、前期の293,139百万円から16.4％増えました。最も大きい事業は建設事業（建築）です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "長期経営計画 “To zero, from zero.”のもと、コア事業の深化と戦略事業の成長などに取り組んで利益を確保しています。2026年3月期の親会社株主に帰属する当期純利益は13,390百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +136,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 93064000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3012,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +156,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 96020000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3041,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +176,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 100789000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2877,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +196,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 102667000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2845,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号、2022年改正）等を2025年3月期の期首から適用しており、2024年3月期の主要な経営指標等は当該会計基準等を遡って適用した後の数値である。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +217,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 112676000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2911,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +225,128 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2003,
+      "title": "ＴＣホールディングズとして設立",
+      "description": "2003年4月、ＴＣホールディングズ株式会社として設立しました。",
+      "significance": "現在の東急建設の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "（旧）東急建設の建設事業を引き継ぎ、東急建設として再出発",
+      "description": "2003年10月、（旧）東急建設の建設事業部門を商号とともに引き継ぎ、東急建設株式会社に社名を変更しました。あわせて株式を東京証券取引所市場第一部に上場しました。",
+      "significance": "東急グループの建設事業を担う会社として再出発し、上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "田園都市設備工業の全株式を売却",
+      "description": "2008年8月、田園都市設備工業株式会社の全株式をグループ外に売却しました。",
+      "significance": "グループの事業の絞り込みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "インドネシアに現地法人を設立",
+      "description": "2011年3月、インドネシアにPT. TOKYU CONSTRUCTION INDONESIAを設立しました。",
+      "significance": "海外事業の拠点づくりが進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東建産業の仮設機材事業を分離・売却",
+      "description": "2013年6月、東建産業株式会社の仮設機材事業を会社分割し、承継会社のトーケン機材株式会社の全株式をグループ外に売却しました。",
+      "significance": "グループ事業の見直しの一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "ミャンマーに現地法人を設立",
+      "description": "2013年11月、ミャンマーにGOLDEN TOKYU CONSTRUCTION CO., LTD.を設立しました。",
+      "significance": "東南アジアでの事業展開を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "建築リニューアル事業などを東急リニューアルに移す",
+      "description": "2018年4月、首都圏における建築リニューアル事業とICT関連サービス事業を、子会社の東急リニューアル株式会社に譲渡しました。",
+      "significance": "グループ内の役割分担を進めた移管です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "INDOCHINE ENGINEERING LIMITEDの全株式を取得",
+      "description": "2020年10月、シンガポールのINDOCHINE ENGINEERING LIMITEDの全株式を取得し、子会社としました。",
+      "significance": "海外の設計・建築事業の体制を強めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "グアムにTC PACIFIC CONSTRUCTION, LLCを設立",
+      "description": "2020年11月、グアムにTC PACIFIC CONSTRUCTION, LLCを設立しました。",
+      "significance": "太平洋地域への展開の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "新たな市場区分での上場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "seikitokyu-kogyo",
+      "relationship": "affiliate",
+      "description": "【関係会社の状況】で持分法適用関連会社に区分されています。当社の議決権の所有割合は24.5％で、当社の施工協力をしています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "kinden",
+      "relationship": "major-shareholder",
+      "description": "【大株主の状況】に載る事業会社です。2026年3月31日現在、発行済株式（自己株式を除く）の1.81％を所有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +354,45 @@
       "publisher": "東急建設株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFDZ.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YFDZ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-07",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2030年の企業ビジョン「VISION2030」の達成に向けた長期経営計画 “To zero, from zero.”（2021年度から2030年度）を進めています。国内土木・建築・建築リニューアル事業を「コア事業」、国際・不動産・新規事業を「戦略事業」と位置づけ、人材とデジタル技術を競争優位の源泉として、「脱炭素」「廃棄物ゼロ」「防災・減災」の3つの提供価値を軸とした5つの重点戦略を実行するとしています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "東急グループの一員として建設事業の分野を担い、東急グループ各社と連携しながら、東急ブランドの価値を競争力の一つとしています。あわせて、人材とデジタル技術を競争優位の源泉と位置づけています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の中心は国内の建設事業です。2026年3月期の外部顧客への売上高は、建設事業（建築）が259,236百万円、建設事業（土木）が74,350百万円で、この2事業で連結売上高341,181百万円のほとんどを占めます。不動産事業等は7,593百万円とまだ小さく、会社は不動産や国際事業を成長させる「戦略事業」と位置づけています。",
+        "basis": "セグメント情報に2026年3月期の外部顧客への売上高（建設事業（建築）259,236百万円、建設事業（土木）74,350百万円、不動産事業等7,593百万円、連結売上高341,181百万円）が印字され、【経営方針、経営環境及び対処すべき課題等】に国際・不動産・新規事業を「戦略事業」と位置づける記載がある。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

@@ -4,15 +4,189 @@
   "name": "エイチ・アイ・エス",
   "officialName": "株式会社エイチ・アイ・エス",
   "nameEn": "H.I.S. Co., Ltd.",
-  "description": null,
+  "shortNameEn": "H.I.S.",
+  "description": "海外・国内旅行を扱う大手の旅行会社で、ホテルやテーマパークの運営、九州でのバス事業なども手がけるグループです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "entertainment",
+      "primary": true
+    },
+    {
+      "industryId": "transportation",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "travel",
+      "name": "旅行事業",
+      "description": "海外旅行と国内旅行の手配・企画・販売と、その付帯事業を行う、グループの中核の事業です。国内149拠点、海外58カ国110都市141拠点のネットワークを持ちます（2025年10月末時点）。2025年10月期の外部顧客への売上高は307,976百万円でした。",
+      "products": [
+        "海外旅行の企画・手配・販売",
+        "国内旅行の企画・手配・販売",
+        "訪日旅行の受入れ",
+        "法人向け旅行の企画・手配"
+      ],
+      "customers": [
+        "旅行を予約する個人の旅行者",
+        "法人の旅行利用者",
+        "訪日外国人旅行者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "overseas-travel",
+          "name": "海外旅行",
+          "description": "日本から海外への旅行の手配・企画・販売を行っています。添乗員付きツアーや、海外航空券とホテルを自由に組み合わせる商品などを扱っています。",
+          "products": [
+            "添乗員付きツアー",
+            "海外航空券とホテルの組み合わせ商品",
+            "海外旅行のパッケージツアー"
+          ],
+          "customers": [
+            "海外へ旅行する個人の旅行者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "domestic-travel",
+          "name": "国内旅行",
+          "description": "日本国内の旅行の手配・企画・販売を行っています。沖縄方面のツアーや、大阪・関西万博に合わせた関西方面へのツアーなどを扱っています。",
+          "products": [
+            "国内旅行のパッケージツアー",
+            "沖縄方面のツアー"
+          ],
+          "customers": [
+            "国内を旅行する個人の旅行者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "kyushu-sanko-group",
+      "name": "九州産交グループ",
+      "description": "九州産業交通ホールディングス株式会社を持株会社とするグループの事業です。熊本県を地盤に、路線バス・高速バス・貸切バスなどの自動車運送事業や、大型商業施設「サクラマチ クマモト」の運営を含む不動産賃貸業などを行っています。2025年10月期の外部顧客への売上高は25,355百万円でした。",
+      "products": [
+        "路線バス・高速バス・貸切バスの運行",
+        "大型商業施設「サクラマチ クマモト」の運営",
+        "航空代理事業"
+      ],
+      "customers": [
+        "バスを利用する乗客",
+        "商業施設の来館者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "hotel",
+      "name": "ホテル事業",
+      "description": "日本、台湾、アメリカ、トルコなどにおいてホテルを運営する事業です。「変なホテル」や「ウォーターマークホテル」などのブランドを展開しています。2025年10月期の外部顧客への売上高は24,734百万円でした。",
+      "products": [
+        "ホテル「変なホテル」",
+        "ホテル「ウォーターマークホテル」"
+      ],
+      "customers": [
+        "ホテルの宿泊客"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他の事業",
+      "description": "報告セグメントに含まれない事業の区分です。愛知県蒲郡市のテーマパーク「ラグーナテンボス」の所有及び運営、海外旅行保険を中心とした損害保険事業、客室予約システムの開発・運営、施設管理や機械設置工事・メンテナンスなどのインフラ事業を行っています。2025年10月期の外部顧客への売上高は15,039百万円でした。",
+      "products": [
+        "テーマパーク「ラグーナテンボス」",
+        "海外旅行保険",
+        "客室予約システム",
+        "施設管理・インフラ事業"
+      ],
+      "customers": [
+        "テーマパークの来場者",
+        "海外旅行の旅行者",
+        "ホテルなどの事業者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "旅行事業を中核に、ホテル事業、九州産交グループ、その他の事業を展開し、旅行商品の販売やホテル・テーマパークの運営などから収入を得る事業モデルです。",
+    "products": [
+      "海外旅行・国内旅行のツアーなどの旅行商品",
+      "ホテル「変なホテル」「ウォーターマークホテル」",
+      "テーマパーク「ラグーナテンボス」",
+      "九州産交グループのバス事業",
+      "海外旅行保険"
+    ],
+    "customers": [
+      "旅行を予約する個人の旅行者",
+      "法人や官公庁・自治体",
+      "訪日外国人旅行者",
+      "ホテルやテーマパークの利用者"
+    ],
+    "revenueSources": [
+      "旅行商品の販売による収入",
+      "ホテルの宿泊などによる収入",
+      "バスの運賃などによる収入",
+      "テーマパークの入場料などによる収入",
+      "保険の代理販売による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "エイチ・アイ・エスグループ",
+        "description": "当社と子会社153社、関連会社10社で構成されています。連結の従業員数は10,804人です（2025年10月期）。"
+      },
+      {
+        "kind": "offering",
+        "title": "旅行を中心としたサービスの提供",
+        "description": "海外旅行や国内旅行の手配・企画・販売を行うほか、ホテルの運営、九州でのバス事業や商業施設の運営、テーマパークの運営などを行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "旅行者と施設の利用者",
+        "description": "個人や法人の旅行者、訪日外国人旅行者、ホテルやテーマパーク、バスの利用者が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "旅行商品や宿泊などの販売で得る収入",
+        "description": "旅行商品の販売やホテルの宿泊などによる収入が中心です。2025年10月期の売上高は373,106百万円で、前期の343,334百万円から増加しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から、旅行商品の仕入れや人件費、施設の運営にかかる費用などを差し引いた残りが利益になります。2025年10月期の親会社株主に帰属する当期純利益は4,719百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年10月期",
@@ -27,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 57656000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10618,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +221,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 48238000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 9389,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年3月31日）等を第42期の期首から適用しており、第42期以降の主要な経営指標等は、当該会計基準等を適用した後の数値となっている。"
     },
     {
       "fiscalYear": "2023年10月期",
@@ -67,12 +242,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 49741000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10131,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "第41期から第43期の主要な経営指標等の数値は、誤謬の訂正による遡及処理後の数値である。過年度の決算訂正を行い、2025年3月31日に有価証券報告書の訂正報告書を提出している。"
     },
     {
       "fiscalYear": "2024年10月期",
@@ -87,7 +263,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 62343000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10664,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +283,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 67205000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10804,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +291,159 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1980,
+      "title": "株式会社インターナショナルツアーズを設立",
+      "description": "東京都新宿区西新宿に株式会社インターナショナルツアーズを設立しました。",
+      "significance": "今の会社の創業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "初の海外拠点として香港に現地法人を設立",
+      "description": "HIS (HONG KONG) COMPANY LIMITEDを設立し、初の海外拠点として香港支店を開業しました。",
+      "significance": "海外ネットワークづくりの始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "商号を株式会社エイチ・アイ・エスに変更",
+      "description": "商号を株式会社インターナショナルツアーズから株式会社エイチ・アイ・エスに変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "日本証券業協会に株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "市場第一部の会社になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "九州産業交通に資本参加",
+      "description": "九州産業交通株式会社（現九州産業交通ホールディングス株式会社）に資本参加しました。",
+      "significance": "現在の九州産交グループとの関係の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "ハウステンボスを子会社化",
+      "description": "ハウステンボス株式会社を子会社化しました。",
+      "significance": "テーマパークの運営に本格的に関わるきっかけです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "九州産業交通ホールディングスを子会社化",
+      "description": "九州産業交通ホールディングス株式会社を子会社化しました。",
+      "significance": "九州産交グループが当社グループに入りました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "株式会社ラグーナテンボスを設立",
+      "description": "愛知県蒲郡市のテーマパークを所有・運営する株式会社ラグーナテンボスを設立しました。",
+      "significance": "現在のテーマパーク事業の会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "Ｈ.Ｉ.Ｓ.ホテルホールディングスを設立",
+      "description": "ホテル事業を担うＨ.Ｉ.Ｓ.ホテルホールディングス株式会社を設立しました。",
+      "significance": "ホテル事業の推進体制を整えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "エイチ・エス損害保険を子会社化",
+      "description": "エイチ・エス損害保険株式会社を子会社化しました。",
+      "significance": "海外旅行保険を中心とする損害保険事業がグループに入りました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "ハウステンボスの全株式を譲渡",
+      "description": "ハウステンボス株式会社の全株式をPAG HTB Holdings株式会社へ譲渡しました。",
+      "significance": "ハウステンボスは当社グループを離れました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "cross-e-holdings",
+      "relationship": "subsidiary",
+      "description": "【関係会社の状況】で連結子会社に区分されています。議決権の所有割合は70.4％です（2025年10月31日現在）。その他の事業に属し、施設管理事業や機械設置工事・メンテナンスなどのインフラ事業を行う事業会社を傘下に持つ持株会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,11 +451,45 @@
       "publisher": "株式会社エイチ・アイ・エス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XHDP.pdf",
       "publishedAt": "2026-01-27",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XHDP",
+      "asOf": "2025-10-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-07",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画（FY2024-2026）を策定し、HIS Group Purpose“「心躍る」を解き放つ”を旗印に、2030年の創業50周年に目指す姿としてVision2030「挑戦心あふれ 世界をつなぎ 選ばれ続ける企業」を掲げています。",
+        "asOf": "2026-01-27",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "国内149拠点、海外58カ国110都市141拠点（2025年10月末現在）のグローバルネットワークを、グループの強みと位置づけています。",
+        "asOf": "2026-01-27",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "連結売上高の8割以上を旅行事業が占め、九州産交グループとホテル事業がこれに続く、旅行を中核とするグループです。",
+        "basis": "セグメント情報の外部顧客への売上高（2025年10月期）で、旅行事業が307,976百万円、連結売上高が373,106百万円である。",
+        "asOf": "2026-01-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  }
 }

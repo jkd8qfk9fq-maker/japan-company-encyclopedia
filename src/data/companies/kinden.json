@@ -4,15 +4,179 @@
   "name": "きんでん",
   "officialName": "株式会社きんでん",
   "nameEn": "KINDEN　CORPORATION",
-  "description": null,
+  "shortNameEn": "Kinden Corporation",
+  "description": "関西電力グループの総合設備工事会社で、電気工事を中心に、情報通信工事や空調などの環境関連工事、内装設備工事、土木工事を手がけています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "children": [
+        {
+          "customers": [
+            "電力会社",
+            "一般の事業会社",
+            "官公庁"
+          ],
+          "description": "配電工事、ビル・工場等の一般電気工事、送電線工事、発変電所工事などを行う、中心の工事分野です。",
+          "id": "electrical-construction",
+          "locator": "【事業の内容】",
+          "name": "電気工事",
+          "products": [
+            "配電工事",
+            "一般電気工事",
+            "送電線工事",
+            "発変電所工事"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ]
+        },
+        {
+          "customers": [
+            "電力会社",
+            "一般の事業会社"
+          ],
+          "description": "電気通信工事や計装工事などを行う工事分野です。子会社の株式会社きんでんスピネットが情報通信システム機器の販売やエンジニアリングも担っています。",
+          "id": "telecom-construction",
+          "locator": "【事業の内容】",
+          "name": "情報通信工事",
+          "products": [
+            "電気通信工事",
+            "計装工事"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ]
+        },
+        {
+          "customers": [
+            "一般の事業会社",
+            "官公庁"
+          ],
+          "description": "空調管工事などを行う工事分野です。連結子会社の株式会社西原衛生工業所は給排水衛生工事を担っています。",
+          "id": "environmental-construction",
+          "locator": "【事業の内容】",
+          "name": "環境関連工事",
+          "products": [
+            "空調管工事",
+            "給排水衛生工事"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ]
+        },
+        {
+          "customers": [
+            "一般の事業会社"
+          ],
+          "description": "建物の内装に伴う設備工事を行う工事分野です。",
+          "id": "interior-construction",
+          "locator": "【事業の内容】",
+          "name": "内装設備工事",
+          "products": [
+            "内装設備工事"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ]
+        },
+        {
+          "customers": [
+            "官公庁",
+            "一般の事業会社"
+          ],
+          "description": "土木工事を行う工事分野です。",
+          "id": "civil-construction",
+          "locator": "【事業の内容】",
+          "name": "土木工事",
+          "products": [
+            "土木工事"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ]
+        }
+      ],
+      "customers": [
+        "電力会社",
+        "一般の事業会社",
+        "官公庁"
+      ],
+      "description": "グループ唯一の報告セグメントで、電気工事を中心に設備工事全般を請け負う事業です。[[company:the-kansai-electric-power|関西電力]]をはじめとする電力会社や一般の事業会社、官公庁などから工事を受注し、当社と連結子会社25社などが施工を担っています。",
+      "id": "facility-construction",
+      "locator": "【事業の内容】",
+      "name": "設備工事業",
+      "products": [
+        "電気工事",
+        "情報通信工事",
+        "環境関連工事",
+        "内装設備工事",
+        "土木工事"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    }
+  ],
+  "businessModel": {
+    "customers": [
+      "関西電力をはじめとする電力会社",
+      "工場・物流施設・商業施設などを建てる一般の事業会社",
+      "官公庁"
+    ],
+    "description": "電力会社や一般の事業会社などから設備工事を請け負い、電気・情報通信・環境関連などの工事を施工して、完成工事高を売上高として得る形です。",
+    "flow": [
+      {
+        "description": "当社並びに連結子会社25社、持分法適用関連会社1社などにより構成され、大阪市北区に本店を置き、全国の支社・支店と海外子会社で事業を営んでいます（2026年3月31日現在）。",
+        "kind": "company",
+        "title": "きんでんグループ"
+      },
+      {
+        "description": "配電工事やビル・工場等の一般電気工事、送電線工事、発変電所工事などの電気工事を中心に、情報通信工事、空調管工事などの環境関連工事、内装設備工事、土木工事を提供しています。",
+        "kind": "offering",
+        "title": "設備工事を請け負う"
+      },
+      {
+        "description": "関西電力をはじめとする電力会社のほか、工場や物流施設、商業施設などを建てる一般の事業会社や官公庁が顧客です。工事の受注は特命と競争、関西電力グループとの配電関係工事の請負契約に大別されます。",
+        "kind": "customer",
+        "title": "電力会社や事業会社が顧客"
+      },
+      {
+        "description": "設備工事の完成工事高が売上高です。2026年3月期の売上高は、受注が堅調に推移し工事進捗も順調だったことなどから、前連結会計年度に比べ6.5％増の7,507億4千2百万円となりました。",
+        "kind": "revenue",
+        "title": "完成工事高が売上高"
+      },
+      {
+        "description": "生産性の向上や原価低減の取り組みなどにより利益を確保しています。2026年3月期の親会社株主に帰属する当期純利益は694億4千7百万円でした。",
+        "kind": "profit",
+        "title": "利益の確保"
+      }
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】",
+    "products": [
+      "電気工事（配電・一般電気・送電線・発変電所）",
+      "情報通信工事",
+      "環境関連工事（空調管工事等）",
+      "内装設備工事",
+      "土木工事"
+    ],
+    "revenueSources": [
+      "設備工事の完成工事高"
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +191,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 511843000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 12892,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +211,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 532713000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 12704,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +231,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 574053000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 13240,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +251,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 599738000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 14359,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +271,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 661895000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 15440,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,20 +279,178 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "description": "電気工事業整備要綱に基づき、近畿地方の電気工事業者が統合し、関西配電株式会社の後援の下で、近畿電気工事株式会社として大阪市に設立されました。",
+      "locator": "【沿革】",
+      "significance": "現在のきんでんの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "近畿電気工事として設立",
+      "year": 1944
+    },
+    {
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "locator": "【沿革】",
+      "significance": "株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "大阪証券取引所に上場",
+      "year": 1961
+    },
+    {
+      "description": "東京証券取引所市場第一部に株式を上場しました。",
+      "locator": "【沿革】",
+      "significance": "全国の市場で株式が取引されるようになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "東京証券取引所に上場",
+      "year": 1970
+    },
+    {
+      "description": "キンデンコウ（タイランド）・カンパニー・リミテッド（現・キンデン（タイランド）・カンパニー・リミテッド）を設立しました。",
+      "locator": "【沿革】",
+      "significance": "海外事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "タイに現地法人を設立",
+      "year": 1984
+    },
+    {
+      "description": "ユー・エス・キンデン・コーポレーションを設立しました（現・連結子会社）。",
+      "locator": "【沿革】",
+      "significance": "北米への展開が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "米国ハワイ州に現地法人を設立",
+      "year": 1987
+    },
+    {
+      "description": "商号を近畿電気工事株式会社から株式会社きんでんに変更しました。",
+      "locator": "【沿革】",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "商号を「きんでん」に変更",
+      "year": 1990
+    },
+    {
+      "description": "株式会社西原衛生工業所に出資しました（現・連結子会社）。",
+      "locator": "【沿革】",
+      "significance": "給排水衛生工事の事業がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "西原衛生工業所に出資",
+      "year": 2007
+    },
+    {
+      "description": "株式会社フジクラエンジニアリングに出資しました（現・株式会社FEN、連結子会社）。",
+      "locator": "【沿革】",
+      "significance": "電力・情報通信工事の担い手がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "フジクラエンジニアリングに出資",
+      "year": 2021
+    },
+    {
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "locator": "【沿革】",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "東証プライム市場へ移行",
+      "year": 2022
+    },
+    {
+      "description": "三菱電機株式会社から株式会社北弘電社の発行済株式の全てを取得し、連結子会社としました。",
+      "locator": "【沿革】",
+      "significance": "北海道エリアの事業基盤を強化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "北弘電社を子会社化",
+      "year": 2025
+    },
+    {
+      "description": "株式会社弘電社の完全子会社化を目的とする取引の一環として、公開買付けの実施を決議しました。",
+      "locator": "【重要な契約等】",
+      "significance": "完全子会社化に向けた手続が進められています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "弘電社への公開買付けを決議",
+      "year": 2026
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "the-kansai-electric-power",
+      "description": "【関係会社の状況】で「その他の関係会社」とされる会社で、きんでんの議決権の37.2％（間接保有7.4％を含みます）を保有しています（2026年3月31日現在）。きんでんは同社から発電事業工事等を受注しており、主要な顧客としても開示されています。",
+      "locator": "【関係会社の状況】",
+      "relationship": "other-affiliated-company",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第112期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社きんでん",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFY8.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-28"
+      "publisher": "株式会社きんでん",
+      "title": "有価証券報告書（2026年3月期）",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFY8.pdf",
+      "docId": "S100YFY8",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "relatedCompanies: 有報提出後の公開買付報告書（2026年7月7日提出、S100YPAQ）を確認し、ack 済み。有報の【重要な契約等】に記載された株式会社弘電社への公開買付け（2026年5月25日決議、買付期間2026年5月26日から7月6日まで）は成立して終了し、応募のあった3,714,499株の全部を買い付け、買付け後の株券等所有割合は特別関係者と合わせて93.89％となった。弘電社の株主を当社と三菱電機のみとする手続や、三菱電機の保有株式を対象とする弘電社の自己株式取得などの完全子会社化に向けた残りの手続は、報告書の時点で未了である。本エントリーは有報（2026年3月期）に基づく記載とし、弘電社は related-candidates の listing が上場でないため関連企業には結んでいない。"
+    ]
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-07",
+  "perspectives": {
+    "competitiveAdvantage": {
+      "analysis": {
+        "asOf": "2026-06-22",
+        "basis": "【事業の内容】のグループ構成と各関係会社の事業内容",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "text": "電気工事にとどまらず、情報通信工事や空調・給排水などの工事分野と、保守管理までをグループで担える体制が特徴です。連結子会社には給排水衛生工事の西原衛生工業所や情報通信システム機器のきんでんスピネットなどがそろい、国内の支社・支店網と海外子会社で広い地域の工事に対応しています。"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "asOf": "2026-06-22",
+        "basis": "セグメント情報等の【関連情報】（主要な顧客ごとの情報）と連結経営指標等の推移",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "text": "報告セグメントは設備工事業（建設事業）の単一セグメントで、2026年3月期の売上高は7,507億4千2百万円と5年連続で増えています。主要な顧客として開示されているのは関西電力で、同社向けの売上高が主要な顧客ごとの情報に掲げられています。"
+      }
+    },
+    "strategy": {
+      "disclosed": {
+        "asOf": "2026-06-22",
+        "locator": "【経営方針、経営環境及び対処すべき課題等】",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "text": "2021年に策定した中期経営計画『Sustainable Growth 2026 ～人、心、そして未来へ～』のもと、人と心を経営の根幹に置き、人的資本を軸とした経営を実践してきました。今期は計画の最終年度であり、当社グループの持続的な成長と発展に向けて、事業基盤の整備・拡充に引き続き注力するとしています。"
+      }
+    }
+  }
 }

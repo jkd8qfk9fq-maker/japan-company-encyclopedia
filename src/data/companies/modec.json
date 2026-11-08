@@ -4,51 +4,428 @@
   "name": "三井海洋開発",
   "officialName": "三井海洋開発株式会社",
   "nameEn": "MODEC, INC.",
-  "description": null,
+  "shortNameEn": "MODEC",
+  "description": "三井海洋開発は、FPSOをはじめとする浮体式の海洋石油・ガス生産設備について、設計・建造から保有・リース、操業までを一貫して提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "energy",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "floating-production-systems",
+      "name": "浮体式海洋石油・ガス生産設備事業",
+      "description": "当社と子会社24社、関連会社21社で構成されるグループが、海洋石油・ガス生産の中流領域で使われるFPSO、FSO、TLPといった浮体式生産・貯蔵・積出設備について、設計から建造、保有、操業までを手がける事業です。事業はほぼ単一のセグメントで、2025年12月期の売上収益は717,100百万円でした。",
+      "products": [
+        "FPSO（浮体式海洋石油・ガス生産貯蔵積出設備）",
+        "FSO（浮体式海洋石油・ガス貯蔵積出設備）",
+        "TLP（緊張係留式プラットフォーム）"
+      ],
+      "customers": [
+        "海外各国の政府系又は民間の石油・ガス開発会社"
+      ],
+      "children": [
+        {
+          "id": "epci",
+          "name": "EPCIサービス",
+          "description": "浮体式海洋石油・ガス生産設備の設計・調達・建造・据付を一括で受注し、客先に提供するサービスです。自社の工場や造船所を持たないファブレス企業として、設計や調達、建造の管理といったプロジェクトマネジメントに特化し、建造や据付は海外の造船所や専門業者に外注しています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "charter-and-operation",
+          "name": "チャーターサービス（リース及びオペレーション）",
+          "description": "関係会社がFPSOやFSOを保有してクライアントにリースするサービスと、洋上に据え付けられた設備を操業して石油・ガスの生産や保守点検、管理を行うオペレーションサービスを、合わせて提供するものです。プロジェクトごとに、海運会社や総合商社を中心とするパートナーとの合弁で関係会社を設立して運営しています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-services",
+          "name": "その他サービス",
+          "description": "建造して石油・ガス開発事業者に引き渡したFPSOなどへの部品供給やエンジニアリングサポートといったアフターサービスと、関連会社や共同支配企業へのマネジメントサポート、オペレーションサポートなどを提供するサービスです。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "三井海洋開発は、FPSOをはじめとする浮体式の海洋石油・ガス生産設備について、設計・建造から保有・リース、操業までを一貫して提供する会社です。",
+    "products": [
+      "FPSO（浮体式海洋石油・ガス生産貯蔵積出設備）",
+      "FSO（浮体式海洋石油・ガス貯蔵積出設備）",
+      "TLP（緊張係留式プラットフォーム）"
+    ],
+    "customers": [
+      "海外各国の政府系又は民間の石油・ガス開発会社",
+      "ExxonMobil Guyana Limited",
+      "Equinor Energy do Brasil Ltda.",
+      "Shell Brasil Petróleo Ltda."
+    ],
+    "revenueSources": [
+      "浮体式海洋石油・ガス生産設備のEPCI（設計・調達・建造・据付）",
+      "チャーターサービス（リース及びオペレーション）",
+      "アフターサービスなどのその他サービス"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "三井海洋開発グループ",
+        "description": "当社と子会社24社、関連会社21社で構成されています（2025年12月31日現在）。自社の工場や造船所を持たないファブレス企業として、プロジェクトマネジメントに特化しています。連結の従業員数は6,460人です（2025年12月期）。"
+      },
+      {
+        "kind": "offering",
+        "title": "浮体式生産設備のトータルソリューション",
+        "description": "FPSO、FSO、TLPといった浮体式海洋石油・ガス生産設備について、EPCI（設計・調達・建造・据付）と、設備を保有して貸し出すリース、操業を担うオペレーションを組み合わせたトータルソリューションを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "海外の石油・ガス開発会社",
+        "description": "主な取引先は海外各国の政府系又は民間の石油・ガス開発会社です。2025年12月期の主な顧客にはExxonMobil Guyana Limited、Equinor Energy do Brasil Ltda.、Shell Brasil Petróleo Ltda.があり、関係会社が行うチャーター事業ではPetrobrasが最大の顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "建造工事とチャーターによる売上収益",
+        "description": "建造プロジェクトの進捗に応じた工事代金と、チャーターやオペレーションのサービス提供によって売上収益を得ています。2025年12月期の売上収益は717,100百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "浮体式生産設備の建造と、長期のチャーター・オペレーションサービスの提供を通じて利益を確保しています。2025年12月期の親会社の所有者に帰属する当期利益は56,456百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
       "periodEnd": "2021-12-31",
-      "revenue": 429272000000,
-      "revenueLabel": "売上高",
-      "profit": -47757000000,
-      "profitLabel": "経常損失（△）",
-      "netIncome": -50359000000,
-      "netIncomeLabel": "親会社株主に帰属する当期純損失（△）",
-      "totalAssets": 390039000000,
-      "totalAssetsLabel": "総資産額",
-      "netAssets": 60690000000,
-      "netAssetsLabel": "純資産額",
-      "employees": null,
+      "revenue": 448510000000,
+      "revenueLabel": "売上収益",
+      "profit": -39597000000,
+      "profitLabel": "税引前利益又は税引前損失（△）",
+      "netIncome": -41860000000,
+      "netIncomeLabel": "親会社の所有者に帰属する当期利益又は親会社の所有者に帰属する当期損失（△）",
+      "totalAssets": 393971000000,
+      "totalAssetsLabel": "資産合計",
+      "netAssets": 61247000000,
+      "netAssetsLabel": "親会社の所有者に帰属する持分",
+      "employees": 5173,
       "currency": "JPY",
-      "accountingStandard": "jgaap",
+      "accountingStandard": "ifrs",
       "sourceIds": [
-        "yuho-2021"
+        "yuho-2025"
+      ],
+      "note": "第36期（2021年12月期）より、国際財務報告基準（IFRS）に基づいて連結財務諸表を作成しています。"
+    },
+    {
+      "fiscalYear": "2022年12月期",
+      "periodEnd": "2022-12-31",
+      "revenue": 363593000000,
+      "revenueLabel": "売上収益",
+      "profit": 7277000000,
+      "profitLabel": "税引前利益又は税引前損失（△）",
+      "netIncome": 4960000000,
+      "netIncomeLabel": "親会社の所有者に帰属する当期利益又は親会社の所有者に帰属する当期損失（△）",
+      "totalAssets": 416206000000,
+      "totalAssetsLabel": "資産合計",
+      "netAssets": 107712000000,
+      "netAssetsLabel": "親会社の所有者に帰属する持分",
+      "employees": 5225,
+      "currency": "JPY",
+      "accountingStandard": "ifrs",
+      "sourceIds": [
+        "yuho-2025"
+      ]
+    },
+    {
+      "fiscalYear": "2023年12月期",
+      "periodEnd": "2023-12-31",
+      "revenue": 507031000000,
+      "revenueLabel": "売上収益",
+      "profit": 30446000000,
+      "profitLabel": "税引前利益又は税引前損失（△）",
+      "netIncome": 13691000000,
+      "netIncomeLabel": "親会社の所有者に帰属する当期利益又は親会社の所有者に帰属する当期損失（△）",
+      "totalAssets": 551423000000,
+      "totalAssetsLabel": "資産合計",
+      "netAssets": 140811000000,
+      "netAssetsLabel": "親会社の所有者に帰属する持分",
+      "employees": 5792,
+      "currency": "JPY",
+      "accountingStandard": "ifrs",
+      "sourceIds": [
+        "yuho-2025"
+      ]
+    },
+    {
+      "fiscalYear": "2024年12月期",
+      "periodEnd": "2024-12-31",
+      "revenue": 662088000000,
+      "revenueLabel": "売上収益",
+      "profit": 48706000000,
+      "profitLabel": "税引前利益又は税引前損失（△）",
+      "netIncome": 34857000000,
+      "netIncomeLabel": "親会社の所有者に帰属する当期利益又は親会社の所有者に帰属する当期損失（△）",
+      "totalAssets": 711145000000,
+      "totalAssetsLabel": "資産合計",
+      "netAssets": 186685000000,
+      "netAssetsLabel": "親会社の所有者に帰属する持分",
+      "employees": 5962,
+      "currency": "JPY",
+      "accountingStandard": "ifrs",
+      "sourceIds": [
+        "yuho-2025"
+      ]
+    },
+    {
+      "fiscalYear": "2025年12月期",
+      "periodEnd": "2025-12-31",
+      "revenue": 717100000000,
+      "revenueLabel": "売上収益",
+      "profit": 79566000000,
+      "profitLabel": "税引前利益又は税引前損失（△）",
+      "netIncome": 56456000000,
+      "netIncomeLabel": "親会社の所有者に帰属する当期利益又は親会社の所有者に帰属する当期損失（△）",
+      "totalAssets": 745485000000,
+      "totalAssetsLabel": "資産合計",
+      "netAssets": 227408000000,
+      "netAssetsLabel": "親会社の所有者に帰属する持分",
+      "employees": 6460,
+      "currency": "JPY",
+      "accountingStandard": "ifrs",
+      "sourceIds": [
+        "yuho-2025"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1968,
+      "title": "前身の旧三井海洋開発が設立",
+      "description": "三井造船株式会社（現 [[company:mitsui-e-and-s|株式会社三井E&S]]）と[[company:mitsui-and-co|三井物産株式会社]]の出資により、三井海洋開発株式会社（旧三井海洋開発）が設立されました。海洋開発関連船舶や海洋構造物の企画・設計・建造・施工などを事業としていました。",
+      "significance": "現在の三井海洋開発グループの起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "モデック・テクニカル・サービスとして設立",
+      "description": "旧三井海洋開発の子会社として、地中レーダーなどによる地質の調査やコンサルティングを目的に、モデック・テクニカル・サービス株式会社として設立されました。",
+      "significance": "現在の三井海洋開発株式会社そのものの設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "株式会社モデックに商号変更し事業を継承",
+      "description": "親会社の解散を受けて株式会社モデックに商号を変更し、旧三井海洋開発の事業を継承しました。全株式は三井造船と三井物産に折半で引き継がれました。",
+      "significance": "事業の主体が現在の会社に移りました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "三井造船の子会社となる",
+      "description": "[[company:mitsui-and-co|三井物産]]が保有する当社株式の全部が譲渡され、三井造船の子会社となりました。",
+      "significance": "資本構成が三井造船単独の傘下に変わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "ISO 9001の認証を取得",
+      "description": "浮体式海洋石油・ガス生産設備などの設計・建造・据付とオペレーション業務を対象に、ISO「9001」の認証を取得しました。",
+      "significance": "現在の主力である浮体式生産設備の事業体制が整った時期の出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "三井海洋開発に商号変更し東証二部に上場",
+      "description": "商号を三井海洋開発株式会社に変更し、東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "社名が前身と同じ三井海洋開発に戻り、上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "東証一部銘柄に指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "上場市場が一部に移りました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "SOFEC, INC.を子会社化",
+      "description": "係留システムを手がける米国のSOFEC, INC.の全株式をFMC TECHNOLOGIES, INC.（現 TechnipFMC社）から取得し、子会社化しました。",
+      "significance": "浮体式設備に欠かせない係留技術をグループ内に取り込みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "三井物産とデジタル事業会社SHAPEを設立",
+      "description": "デジタルソリューション事業会社SHAPE PTE. LTD.を[[company:mitsui-and-co|三井物産]]と共同でシンガポールに設立しました。また、株式会社三井E&Sホールディングス（現 [[company:mitsui-e-and-s|株式会社三井E&S]]）が保有株式の一部を売却したことにより親会社の異動があり、同社はその他の関係会社となりました。",
+      "significance": "デジタル分野への展開と、親会社との資本関係の変化が重なった年です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東洋エンジニアリングとEPCI事業会社を設立",
+      "description": "FPSOのEPCI事業会社OFFSHORE FRONTIER SOLUTIONS PTE. LTD.を東洋エンジニアリング株式会社と共同でシンガポールに設立しました。",
+      "significance": "建造プロジェクトの遂行体制を合弁で強化しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "商船三井が主要株主に",
+      "description": "第三者割当による新株式の発行に伴い、[[company:mitsui-o-s-k-lines|株式会社商船三井]]が[[company:mitsui-e-and-s|株式会社三井E&S]]、[[company:mitsui-and-co|三井物産]]とともに主要株主となりました。",
+      "significance": "商船三井との資本・業務提携関係が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "商船三井が筆頭株主に",
+      "description": "[[company:mitsui-o-s-k-lines|株式会社商船三井]]が当社株式を追加取得し、主要株主である筆頭株主となりました。一方、[[company:mitsui-e-and-s|株式会社三井E&S]]は株式の売出しなどにより、その他の関係会社並びに主要株主及び筆頭株主に該当しなくなりました。",
+      "significance": "筆頭株主が三井E&Sから商船三井に入れ替わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "米国子会社がSOFEC, INC.を吸収合併",
+      "description": "米国のMODEC AMERICA, INC.（旧MODEC INTERNATIONAL, INC.）が、2025年12月31日付でSOFEC, INC.を吸収合併しました。",
+      "significance": "米国の事業拠点と係留システム事業が一体となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsui-o-s-k-lines",
+      "relationship": "major-shareholder",
+      "description": "【大株主の状況】に載る筆頭株主で、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は15.00％です（2025年12月31日現在）。2023年に業務提携契約を締結した戦略的パートナーで、FPSOなどに関する事業の共同推進に取り組んでいます。チャーター事業では合弁で事業会社を設立するパートナーでもあります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "major-shareholder",
+      "description": "【大株主の状況】に載る事業会社で、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は14.86％です（2025年12月31日現在）。2010年に業務提携契約を締結した戦略的パートナーで、FPSOなどに関する事業の共同推進に取り組んでいます。旧三井海洋開発の設立時の出資者の一つで、チャーター事業の合弁パートナーであり、デジタル事業会社SHAPEを共同で設立しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "mitsui-e-and-s",
+      "relationship": "major-shareholder",
+      "description": "【大株主の状況】に載る事業会社で、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は3.66％です（2025年12月31日現在）。旧三井海洋開発の設立時の出資者で、かつては親会社、その他の関係会社でしたが、2024年5月に株式の売出しなどにより、その他の関係会社並びに主要株主及び主要株主である筆頭株主に該当しなくなりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
-      "id": "yuho-2021",
-      "title": "有価証券報告書－第40期(2025/01/01－2025/12/31)",
+      "id": "yuho-2025",
+      "title": "有価証券報告書（2025年12月期）",
       "publisher": "三井海洋開発株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XU6C.pdf",
       "publishedAt": "2026-03-26",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XU6C",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-07",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画2024-2026『イノベーションで持続可能な未来を拓く』のもと、まず収益力の強化を掲げ、事業面では中核事業であるFPSO事業の脱炭素化の推進と新事業の開拓・育成を進め、並行して人的資本を含めた事業基盤の強化に取り組む計画です。洋上風力発電や代替エネルギー事業では、独自の浮体式構造や係留技術の開発も推進するとしています。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "自社の工場や造船所を持たないファブレス企業として設計や調達、建造の管理に特化し、建造は世界の造船所や専門業者へ外注する体制です。チャーター事業はプロジェクトごとに関係会社を設立し、海運会社や総合商社との合弁で設備を保有するため、長期の資金負担とプロジェクトのリスクをパートナーと分け合う形になっています。",
+        "basis": "【事業の内容】に記載された事業の推進体制（ファブレスであること、プロジェクトごとに関係会社を設立し合弁で展開する方針）に基づきます。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "地域別の売上収益ではブラジル向けが最も大きく、ガイアナ向けが続いており、南米の深海油ガス田開発向けの大型プロジェクトが事業の中心になっています。会社は、超大水深や大水深の油田・ガス田は今後も高いニーズが期待でき、自社の競争力を活かせる領域だと説明しています。",
+        "basis": "セグメント情報の地域別売上収益（2025年12月期）と、【経営方針、経営環境及び対処すべき課題等】の事業環境の説明に基づきます。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  }
 }

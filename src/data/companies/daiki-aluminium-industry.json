@@ -4,15 +4,135 @@
   "name": "大紀アルミニウム工業所",
   "officialName": "株式会社大紀アルミニウム工業所",
   "nameEn": "DAIKI ALUMINIUM INDUSTRY CO.,LTD.",
-  "description": null,
+  "shortNameEn": "DAIKI ALUMINIUM INDUSTRY CO.,LTD.",
+  "description": "アルミニウム屑を溶かして再生したアルミニウム二次合金地金を製造販売し、自動車・輸送機器関連向けに供給する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "aluminium-secondary-alloy",
+      "name": "アルミニウム二次合金",
+      "description": "当社グループの唯一の報告セグメントです。アルミニウム屑を原料として溶解・精錬し、アルミニウム二次合金地金（塊）を製造販売しています。2026年3月期の外部顧客への売上高は325,308百万円でした。原料のアルミニウム屑は、子会社などから仕入れるほか、商品として販売もしています。",
+      "products": [
+        "アルミニウム二次合金地金（塊）",
+        "アルミニウム屑"
+      ],
+      "customers": [
+        "自動車・輸送機器関連のメーカー",
+        "ダイカスト製品メーカー"
+      ],
+      "children": [
+        {
+          "id": "alloy-ingot-products",
+          "name": "製品（自社製造の地金）",
+          "description": "当社と国内子会社の株式会社九州ダイキアルミ・株式会社北海道ダイキアルミ、海外子会社のダイキアルミニウム インダストリー（タイランド）などが製造販売するアルミニウム二次合金地金です。区分ごとの金額は開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "alloy-merchandise",
+          "name": "商品（仕入れた地金・屑の販売）",
+          "description": "当社と海外子会社が仕入れたアルミニウム二次合金地金を商品として販売するほか、原料のアルミニウム屑を仕入れて子会社などに販売しています。区分ごとの金額は開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他",
+      "description": "報告セグメントに含まれない区分です。ダイカスト製品事業とアルミニウム溶解炉事業を含みます。2026年3月期の外部顧客への売上高は5,800百万円でした。",
+      "children": [
+        {
+          "id": "die-cast-products",
+          "name": "ダイカスト製品事業",
+          "description": "株式会社聖心製作所とセイシン（タイランド）が、ダイカスト製品を製造販売しています。区分ごとの金額は開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "melting-furnaces",
+          "name": "アルミニウム溶解炉事業",
+          "description": "株式会社ダイキエンジニアリングなどが、溶解技術と経験を生かして溶解炉の製造販売や新築補修を行っています。区分ごとの金額は開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
+  "businessModel": {
+    "description": "アルミニウム屑などの原料を仕入れて国内外の工場で溶解・精錬し、アルミニウム二次合金地金として自動車・輸送機器関連のメーカーなどに販売しています。",
+    "products": [
+      "アルミニウム二次合金地金（塊）",
+      "アルミニウム屑",
+      "ダイカスト製品",
+      "アルミニウム溶解炉"
+    ],
+    "customers": [
+      "自動車・輸送機器関連のメーカー",
+      "ダイカスト製品メーカー"
+    ],
+    "revenueSources": [
+      "アルミニウム二次合金地金などの販売による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "大紀アルミグループ",
+        "description": "当社と子会社18社、関連会社2社で構成されています。連結の従業員数は1,275人です（2026年3月31日現在）。生産拠点は日本のほか、タイ、インドネシア、マレーシア、フィリピン、インドなどにあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "アルミニウム二次合金地金の製造販売",
+        "description": "アルミニウム屑を原料として溶解・精錬し、アルミニウム二次合金地金を製造販売しています。仕入れた地金やアルミニウム屑の商品販売も行い、溶解炉の製造販売や新築補修、ダイカスト製品の製造販売も手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車・輸送機器関連を中心とする顧客",
+        "description": "主な顧客は自動車・輸送機器関連のメーカーです。売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品・商品の販売で得る収入",
+        "description": "製品と商品の販売が収入源です。2026年3月期の売上高は331,109百万円で、前連結会計年度比10.4％増となりました。製品の販売価格が上昇したことなどが増収の要因です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から、原料の仕入や製造、販売などの費用を差し引いた残りが利益になります。2026年3月期の親会社株主に帰属する当期純利益は3,680百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +147,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 58505000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1239,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +167,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 68370000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1221,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +187,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 72062000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1265,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 73712000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1292,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 77102000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1275,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +235,158 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1922,
+      "title": "二次アルミニウム製錬業を創業",
+      "description": "初代社長の山本繁一が大阪市において、わが国で初めての二次アルミニウム製錬業を創業しました。",
+      "significance": "グループの起源であり、日本のアルミニウムリサイクルの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1924,
+      "title": "合資会社大紀アルミニウム工業所を設立",
+      "description": "大阪市浪速区に合資会社大紀アルミニウム工業所を設立しました。",
+      "significance": "「大紀アルミニウム工業所」の名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "株式会社大紀アルミニウム工業所を設立",
+      "description": "大阪市浪速区に株式会社大紀アルミニウム工業所を設立しました。",
+      "significance": "現在の会社の法人としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "大博アルミニウム工業の全株式を取得",
+      "description": "福岡県福岡市の大博アルミニウム工業株式会社の全株式を取得しました。同社は後に株式会社九州ダイキアルミに社名を変更しています。",
+      "significance": "九州への生産展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "米国のトレーディング子会社を設立",
+      "description": "米国にダイキ インターナショナル トレーディング コーポレーションを設立しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "タイの現地会社に出資",
+      "description": "タイ国のダイキ ニッケイ タイに出資しました。同社は後にダイキアルミニウム インダストリー（タイランド）に社名を変更し、現在は主力の海外生産拠点の一つです。",
+      "significance": "アジアでの生産展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "東証上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部と大阪証券取引所市場第一部に株式を上場しました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "インドネシアに子会社を設立",
+      "description": "ダイキアルミニウム インドネシアを設立しました。同社は後にダイキアルミニウム インダストリー インドネシアに社名を変更しています。",
+      "significance": "東南アジアの生産拠点の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東京アルミセンターの全株式を取得",
+      "description": "東京アルミセンター株式会社の全株式を取得しました。",
+      "significance": "原料のアルミニウム屑の調達網の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "インドに子会社を設立",
+      "description": "ダイキアルミニウム インダストリー インディアを設立しました。",
+      "significance": "南アジアへの生産展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分見直しに伴い、東京証券取引所プライム市場に移行しました。同年に創業100周年を迎えました。",
+      "significance": "現在の市場区分と、創業100年の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "本店と本社事務所を大阪市北区に移転",
+      "description": "本店及び本社事務所を大阪市北区に移転しました。",
+      "significance": "現在の本社体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "バーレーンの合弁会社に出資",
+      "description": "バーレーン王国の有限責任会社アルバ-大紀サステナブルソリューションズに出資し、持分法適用関連会社としました。",
+      "significance": "中東への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +395,45 @@
       "publisher": "株式会社大紀アルミニウム工業所",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCJD.pdf",
       "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YCJD",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-07",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営の基本方針として「Ｇ＆Ｇ（Global & Green）」を掲げ、「事業」と「環境」を同軸にとらえることを企業アイデンティティとしています。2030年に目指す姿『DAIKI∞NEXT∞』を描き、中期経営計画2024-2026では、ハイブリッド車・電気自動車・燃料電池車向けリサイクル合金の開発・供給などの成長分野への投資、経営基盤の強化、環境保全、地域や社会への貢献、人材の育成と活用を柱としています。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1922年に日本で初めて二次アルミニウム製錬業を始めた歴史を持ち、原料のアルミニウム屑の調達から地金の製造販売までをグループで担っています。タイやインドネシアなど海外の生産拠点も含め、顧客の近くで調達と供給を行う体制が強みと読めます。",
+        "basis": "【沿革】に1922年の創業（わが国で初めての二次アルミニウム製錬業）が、【事業の内容】に子会社からのアルミニウム屑の仕入れと地金の製造販売の体制が、【関係会社の状況】にタイ・インドネシアなど海外の連結子会社が印字されている。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高のほとんどをアルミニウム二次合金が占める、この素材の専業に近いメーカーです。地域別では日本が最大ですが、タイやインドネシア、中国など海外の売上も大きな割合を占めています。",
+        "basis": "【セグメント情報等】に、2026年3月期の外部顧客への売上高（アルミニウム二次合金325,308百万円、その他5,800百万円）と、地域ごとの売上高（日本163,003百万円、タイ49,645百万円、インドネシア34,964百万円、中国21,249百万円、その他62,245百万円）が印字されている。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

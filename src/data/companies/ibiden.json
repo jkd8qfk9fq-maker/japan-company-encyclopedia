@@ -4,7 +4,8 @@
   "name": "イビデン",
   "officialName": "イビデン株式会社",
   "nameEn": "IBIDEN CO.,LTD.",
-  "description": null,
+  "shortNameEn": "IBIDEN",
+  "description": "半導体向けのパッケージ基板と、自動車向けなどのセラミック製品を作る部材メーカーです。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,8 +16,117 @@
       "market": "プレミア"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "electronics",
+      "name": "電子事業",
+      "description": "半導体向けのパッケージ基板を製造販売する、グループで最も大きな事業です。2026年3月期の外部顧客への売上高は243,316百万円でした。主要な顧客にはNVIDIA Corp.やIntel Corp.などの半導体メーカーがあります。",
+      "products": [
+        "パッケージ基板"
+      ],
+      "customers": [
+        "半導体メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "ceramics",
+      "name": "セラミック事業",
+      "description": "自動車の排気系部品や特殊炭素製品などを作る事業です。環境関連セラミック製品、特殊炭素製品、ファインセラミックス製品、セラミックファイバーを製造販売しており、2026年3月期の外部顧客への売上高は82,554百万円でした。",
+      "products": [
+        "環境関連セラミック製品",
+        "特殊炭素製品",
+        "ファインセラミックス製品",
+        "セラミックファイバー"
+      ],
+      "customers": [
+        "自動車関連メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他事業",
+      "description": "報告セグメントに含まれない事業の区分です。建設、建材、合成樹脂の加工、農畜水産物の加工、石油製品の販売、情報サービスなどを行っており、2026年3月期の外部顧客への売上高は90,330百万円でした。",
+      "products": [
+        "設備の設計・施工",
+        "メラミン化粧板",
+        "合成樹脂加工品",
+        "農畜水産物加工品"
+      ],
+      "customers": [
+        "住宅・設備の発注者など"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "電子事業で半導体向けパッケージ基板を、セラミック事業で自動車排気系部品や特殊炭素製品などを製造販売し、建設や建材などのその他事業も手がける事業モデルです。",
+    "products": [
+      "パッケージ基板",
+      "環境関連セラミック製品",
+      "特殊炭素製品",
+      "ファインセラミックス製品",
+      "セラミックファイバー"
+    ],
+    "customers": [
+      "半導体メーカー",
+      "自動車関連メーカー"
+    ],
+    "revenueSources": [
+      "パッケージ基板やセラミック製品などの製品販売収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "イビデングループ",
+        "description": "当社と子会社29社、関連会社1社で構成されています（2026年3月31日現在）。1912年に電力会社として創業し、現在の主力は電子部品とセラミック製品の製造です。連結の従業員数は11,105人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "パッケージ基板とセラミック製品の製造販売",
+        "description": "半導体向けのパッケージ基板のほか、自動車排気系部品などの環境関連セラミック製品、特殊炭素製品、ファインセラミックス製品、セラミックファイバーを、国内と海外の工場で製造し販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "半導体メーカーなどのお客様",
+        "description": "主な販売先は半導体メーカーです。主要な顧客であるNVIDIA Corp.向けの売上高は2026年3月期に122,470百万円、Intel Corp.向けは75,319百万円で、いずれも電子事業の売上高です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売で得る収入",
+        "description": "製品の販売によって売上高を得ています。2026年3月期の売上高は416,201百万円で、電子事業の伸びにより前期に比べ12.7％増えました。最も大きい事業は電子事業です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "中期経営計画の活動の柱に沿って、事業の競争力強化やDXを活用したモノづくり改革などに取り組むことで利益を確保しています。2026年3月期の親会社株主に帰属する当期純利益は63,713百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +141,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 370728000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 12958,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +161,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 425606000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 12744,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +181,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 501796000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 11375,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 497298000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 11168,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +221,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 557412000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 11105,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,20 +229,221 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1912,
+      "title": "揖斐川電力株式会社を設立",
+      "description": "岐阜県の揖斐川の流域で、電力会社「揖斐川電力株式会社」として設立されました。",
+      "significance": "電力会社としての創業が会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1915,
+      "title": "西横山発電所で発電を開始",
+      "description": "西横山発電所の発電を開始し、電力供給業を始めました。",
+      "significance": "最初の事業である電力の供給が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1940,
+      "title": "揖斐川電気工業株式会社に改称",
+      "description": "商号を揖斐川電気工業株式会社に改称しました。",
+      "significance": "電気工業へ広がる事業を示す社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1942,
+      "title": "電力供給業を廃止",
+      "description": "西横山・西平の両発電所を譲渡し、創業事業である電力供給業を廃止しました。",
+      "significance": "電力会社から工業メーカーへ転換する節目になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京・大阪・名古屋の証券取引所に上場",
+      "description": "東京・大阪・名古屋の各証券取引所に株式を上場しました（大阪証券取引所は2004年9月に上場廃止）。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "特殊炭素製品の製造・販売を開始",
+      "description": "特殊炭素製品の製造・販売を開始しました。",
+      "significance": "現在のセラミック事業につながる製品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "電子回路製品の製造・販売を開始",
+      "description": "電子回路製品の製造・販売を開始しました。",
+      "significance": "現在の主力である電子事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "セラミックファイバーの製造・販売を開始",
+      "description": "断熱材セラミックファイバーの製造・販売を開始しました。",
+      "significance": "セラミック製品の幅が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "イビデン株式会社に改称",
+      "description": "商号をイビデン株式会社に改称しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "ファインセラミックス製品の製造・販売を開始",
+      "description": "ファインセラミックス製品の製造・販売を開始しました。",
+      "significance": "セラミック事業の製品分野がさらに広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ハンガリーにDPF製造会社を設立",
+      "description": "ハンガリーに、自動車排気系部品であるDPFの製造会社イビデンハンガリー株式会社を設立しました。",
+      "significance": "セラミック製品の海外生産が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場・プレミア市場へ移行",
+      "description": "証券取引所の市場区分の見直しにより、東京証券取引所では市場第一部からプライム市場へ、名古屋証券取引所ではプレミア市場へ移行しました。",
+      "significance": "現在の市場区分になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "大野事業場を開設",
+      "description": "岐阜県大野町に大野事業場を開設しました。",
+      "significance": "パッケージ基板の生産を担う新しい拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nippon-sanso-holdings",
+      "relationship": "supplier",
+      "description": "子会社のイビデンケミカル株式会社を通じて、主に中部地区でエアセパレートガスやプロパンガスなどの取引を行っています。当社は同社の株式1,502,444株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsui-fudosan",
+      "relationship": "customer",
+      "description": "子会社のイビデングリーンテック株式会社を通じて、主に商業ビルの造園工事や植栽管理業務などの取引を行っています。当社は同社の株式1,629,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ushio",
+      "relationship": "supplier",
+      "description": "電子分野で、露光用ランプや光学装置（露光装置）の取引を行っています。当社は同社の株式1,224,100株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toho-gas",
+      "relationship": "business-partner",
+      "description": "エネルギー分野の取引を行っています。取引の向きは有報に印字されていないため、取引相手として結びました。当社は同社の株式313,472株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "japan-pure-chemical",
+      "relationship": "supplier",
+      "description": "電子分野で、メッキ薬品の取引を行っています。当社は同社の株式56,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第173期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第173期(2025/04/01－2026/03/31)",
       "publisher": "イビデン株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC4B.pdf",
-      "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-29"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFCS.pdf",
+      "publishedAt": "2026-06-22",
+      "docId": "S100YFCS",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-07",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2023年度から始まった5ヵ年の中期経営計画「Moving on to our New Stage 115 Plan」を進めています。事業の競争力強化「稼ぐ力」、新規製品の事業化「伸ばす力」、モノづくりの改革「継続する力」、企業文化の改革「変える力」、ESG経営の推進「永続する力」という5本の活動の柱を軸に、事業環境の変化に対応しながら持続可能な成長を目指すとしています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の中心は電子事業です。2026年3月期の外部顧客への売上高は、電子事業が243,316百万円と連結売上高416,201百万円の過半を占め、主要な顧客はNVIDIA Corp.やIntel Corp.などの半導体メーカーです。1912年の創業時は電力会社でしたが、現在は半導体向けの部材が事業の軸になっています。",
+        "basis": "セグメント情報に2026年3月期の外部顧客への売上高（電子243,316百万円、連結416,201百万円）と、関連情報の主要な顧客ごとの情報（NVIDIA Corp.とIntel Corp.、いずれも電子事業）が印字され、【沿革】に1912年の揖斐川電力株式会社の設立が記載されている。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

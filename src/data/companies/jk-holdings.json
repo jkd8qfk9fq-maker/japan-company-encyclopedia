@@ -4,15 +4,157 @@
   "name": "JKホールディングス",
   "officialName": "JKホールディングス株式会社",
   "nameEn": "JK Holdings Co., Ltd.",
-  "description": null,
+  "shortNameEn": "JK Holdings",
+  "description": "合板や建材、住宅機器の卸売を中核に、合板の製造や建材の小売まで手がける、住宅資材の流通を担う持株会社グループです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "retail",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "building-materials-wholesale",
+      "name": "総合建材卸売事業",
+      "description": "合板や合板二次製品、建材、住宅機器などを建材販売店や工務店に卸売する、グループの中核事業です。中核会社のジャパン建材株式会社は、連結売上高の10％を超える売上高を持つ最大の事業会社です。連結子会社9社と非連結子会社3社の計12社で構成されています。2026年3月期の外部顧客への売上高は331,072百万円でした。",
+      "products": [
+        "合板",
+        "合板二次製品",
+        "建材",
+        "住宅機器"
+      ],
+      "customers": [
+        "建材販売店",
+        "工務店"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "building-materials-retail",
+      "name": "総合建材小売事業",
+      "description": "合板や合板二次製品、建材、住宅機器などを小売する事業です。株式会社ブルケン・マルタマや株式会社ブルケン東日本など各地の建材販売会社が担っており、M&Aによる事業承継を通じてネットワークを広げています。連結子会社12社と関連会社4社の計16社で構成されています。2026年3月期の外部顧客への売上高は51,241百万円でした。",
+      "products": [
+        "合板",
+        "合板二次製品",
+        "建材",
+        "住宅機器"
+      ],
+      "customers": [
+        "工務店などの建築事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "plywood-manufacturing",
+      "name": "合板製造・木材加工事業",
+      "description": "針葉樹を主原料とした普通合板や構造用合板、長尺合板、構造用LVL「キーラム」などの製造販売のほか、集成材や合板二次製品の製造販売、木材の加工・販売を行う事業です。中核会社は株式会社キーテックで、連結子会社10社で構成されています。2026年3月期の外部顧客への売上高は11,342百万円でした。",
+      "products": [
+        "普通合板",
+        "構造用合板",
+        "長尺合板",
+        "構造用LVL「キーラム」",
+        "集成材",
+        "合板二次製品"
+      ],
+      "customers": [
+        "建材卸売・小売事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業の区分です。建材小売店の経営指導を中心とするフランチャイズ事業（株式会社ハウス・デポ・ジャパン）のほか、建設工事業、倉庫及び運送業、資材取次業、不動産賃貸業、旅行・保険代理業、住宅ローン仲介業、EC事業、管理事業などを含みます。連結子会社13社、非連結子会社4社、関連会社4社の計21社で構成されています。2026年3月期の外部顧客への売上高は5,163百万円でした。",
+      "products": [
+        "フランチャイズ事業",
+        "建設工事",
+        "倉庫・運送サービス",
+        "不動産賃貸",
+        "EC事業"
+      ],
+      "customers": [
+        "建材小売店",
+        "グループ各社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "メーカーなどから合板や建材、住宅機器を仕入れ、グループの製造・卸売・小売の各事業を通じて建材販売店や工務店などに販売し、その代金を受け取ることで収益を得ています。",
+    "products": [
+      "合板",
+      "合板二次製品",
+      "建材",
+      "住宅機器",
+      "構造用LVL「キーラム」",
+      "集成材",
+      "プライベートブランド『Bulls』"
+    ],
+    "customers": [
+      "建材販売店",
+      "工務店"
+    ],
+    "revenueSources": [
+      "合板・建材・住宅機器の卸売販売代金",
+      "建材・住宅機器の小売販売代金",
+      "合板・木材加工品の製造販売代金",
+      "フランチャイズ事業、運送、不動産賃貸などのサービス収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "JKホールディングスグループ",
+        "description": "純粋持株会社の当社と、子会社51社・関連会社8社で構成されています。連結の従業員数は3,438人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "合板・建材の製造・卸売・小売",
+        "description": "合板や合板二次製品、建材、住宅機器などを、合板製造・木材加工、総合建材卸売、総合建材小売の3事業で製造・販売しています。フランチャイズや倉庫・運送、不動産賃貸などの周辺事業も営んでいます。"
+      },
+      {
+        "kind": "customer",
+        "title": "建材販売店や工務店",
+        "description": "主な販売先は全国の建材販売店や工務店です。商品の販売に加えて、住宅建築関連のサービスや企業経営のノウハウも提供し、取引先との共存共栄を図っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "商品販売による収入",
+        "description": "合板や建材、住宅機器を販売する代金が収入の中心です。2026年3月期の売上高は398,820百万円で、前期に比べて1.4％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から、商品の仕入れや人件費、運賃などのコストを差し引いた残りが利益になります。2026年3月期の親会社株主に帰属する当期純利益は4,033百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026",
+      "wikipedia"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +169,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 53279000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3011,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +189,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 57897000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3114,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +209,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 63107000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3368,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +229,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 65707000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3442,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +249,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 66280000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3438,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +257,315 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1949,
+      "title": "株式会社丸吉商店を設立",
+      "description": "1949年2月、各種合板の仕入・販売を目的として、東京都墨田区に株式会社丸吉商店を設立しました。",
+      "significance": "JKホールディングスグループの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "晴海プライウッド株式会社を設立",
+      "description": "1958年4月、東京都江東区に晴海プライウッド株式会社を設立しました。同社は現在の株式会社キーテックで、合板製造の中核会社です。",
+      "significance": "製造事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "株式会社丸吉に商号変更",
+      "description": "1963年2月、株式会社丸吉に商号を変更し、新建材の販売を開始しました。",
+      "significance": "取扱商品を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "顧客組織「丸吉会」の組織づくりに着手",
+      "description": "1972年9月、顧客とのコミュニケーション組織「丸吉会」（現在のジャパン建材会）の組織づくりに着手しました。",
+      "significance": "取引先とのネットワークづくりの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "店頭登録銘柄の指定を受ける",
+      "description": "1990年4月、本社社屋を東京都江東区平野三丁目に建設して移転し、同年11月に社団法人日本証券業協会より店頭登録銘柄の指定を受けました。",
+      "significance": "株式公開への第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1996年11月、東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "興国ハウジング株式会社と合併しジャパン建材株式会社に商号変更",
+      "description": "1998年10月、興国ハウジング株式会社との対等合併を行い、商号をジャパン建材株式会社に変更して、本店所在地を東京都豊島区目白に移しました。",
+      "significance": "社名がジャパン建材になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "株式会社ハウス・デポ・ジャパンを設立",
+      "description": "2000年10月、子会社の株式会社ハウス・デポ・ジャパン（現・連結子会社）を東京都江東区に設立しました。同社は現在、フランチャイズ事業を担っています。",
+      "significance": "フランチャイズ事業の担い手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "2003年3月、東京証券取引所の市場第一部銘柄に指定されました。",
+      "significance": "東証一部銘柄になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "通商株式会社を子会社化",
+      "description": "2004年4月、大阪府大阪市の通商株式会社を子会社としました。",
+      "significance": "関西の事業基盤が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "持株会社体制へ移行しJKホールディングス株式会社に商号変更",
+      "description": "2006年10月、持株会社体制へ移行し、商号をJKホールディングス株式会社に変更しました。事業は会社分割により、子会社のJKC株式会社から商号を変更したジャパン建材株式会社が承継しました。「JK」は中核会社のジャパン建材（Japan Kenzai）の略称に由来します。",
+      "significance": "現在のグループ体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "物林株式会社を子会社化し本店を新木場へ移転",
+      "description": "2007年3月、株式交換により物林株式会社を子会社とし、同年10月に本店所在地を東京都江東区新木場に移しました。",
+      "significance": "現在の本店所在地になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "市場再編への対応です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "2023年10月、東京証券取引所の規則改正に伴い、プライム市場からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "太平洋建材株式会社を子会社化",
+      "description": "2024年5月、大阪府大阪市の太平洋建材株式会社を子会社としました。",
+      "significance": "小売事業のネットワークが広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社大和ビケサービスを子会社化",
+      "description": "2025年1月、神奈川県大和市の株式会社大和ビケサービスを子会社としました。",
+      "significance": "グループの事業基盤の拡大を続けています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "eidai",
+      "relationship": "supplier",
+      "description": "当社グループとして主に内装建材や住宅設備機器の仕入れを行っています。当社は同社の株式1,100,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nichiha",
+      "relationship": "supplier",
+      "description": "当社グループとして主に外壁材の仕入れを行っています。当社は同社の株式599,400株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "noda",
+      "relationship": "supplier",
+      "description": "当社グループとして主に床材の仕入れを行っており、取引金額として上位に位置しています。当社は同社の株式92,200株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aica-kogyo",
+      "relationship": "supplier",
+      "description": "当社グループとして主にキッチンパネルの仕入れを行っています。当社は同社の株式67,700株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "cleanup",
+      "relationship": "supplier",
+      "description": "当社グループとして、キッチンやバスを中心に仕入れを行っています。当社は同社の株式46,700株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nichias",
+      "relationship": "supplier",
+      "description": "当社グループとして主に内装建材の仕入れを行っています。当社は同社の株式40,500株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "noritz",
+      "relationship": "supplier",
+      "description": "当社グループとして主に住宅設備機器の仕入れを行っています。当社は同社の株式28,800株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takara-standard",
+      "relationship": "supplier",
+      "description": "当社グループとして、キッチンやバスを中心に仕入れを行っています。当社は同社の株式22,500株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-forestry",
+      "relationship": "supplier",
+      "description": "当社グループとして主に木材や合板の仕入れを行っています。当社は同社の株式99,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "wood-one",
+      "relationship": "supplier",
+      "description": "当社グループとして主に内装建材の仕入れを行っています。当社は同社の株式8,600株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nitto-boseki",
+      "relationship": "supplier",
+      "description": "当社グループが、同社の関係会社から内装建材の仕入れを行っています。当社は同社の株式6,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "supplier",
+      "description": "当社グループが、同社の関係会社から内装建材の仕入れを行っています。当社は同社の株式12,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daiwa-house-industry",
+      "relationship": "customer",
+      "description": "当社グループが建材や住宅設備機器などの販売を行っています。当社は同社の株式20,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nagawa",
+      "relationship": "customer",
+      "description": "当社グループが建材や住宅設備機器などの販売を行っています。当社は同社の株式1,400株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-realty-and-development",
+      "relationship": "customer",
+      "description": "当社グループが、同社の関係会社へ建材や住宅設備機器などの販売を行っています。当社は同社の株式40,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "starts",
+      "relationship": "customer",
+      "description": "当社グループが、同社の関係会社へ建材や住宅設備機器などの販売を行っています。当社は同社の株式3,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +573,52 @@
       "publisher": "JKホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ4A.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJ4A",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「JKホールディングス」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/JK%E3%83%9B%E3%83%BC%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B9",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-07",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年度からの3ヵ年を対象とする中期経営計画『Value Proposition 27』を掲げ、「価値提案によるパートナーとの結びつき強化」の実現に向けて、「基盤事業の強化」「事業領域の拡張と深耕」「持続可能な経営基盤構築」「人的資本経営の実践」の4つの柱に取り組んでいます。長期ビジョンとして、2030年度をターゲットイヤーとする『Brand-New JKHD 2030』を掲げています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "単にモノを販売するだけでなく、取引先である建材販売店や工務店などに住宅建築関連のさまざまなサービスを提供するほか、企業経営のノウハウを提供することで、取引先との共存共栄を図る仕組みづくりに取り組んでいるとしています。より良い住宅資材を、適正価格で、お客様の要望される場所へタイムリーに届けることを目標に掲げています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の中心は総合建材卸売事業で、2026年3月期の外部顧客への売上高は331,072百万円と、連結売上高の8割超を占めています。合板の製造から卸売、小売までをグループ内で担い、住宅資材の流通を川上から川下まで手がける体制です。",
+        "basis": "【セグメント情報等】の外部顧客への売上高（総合建材卸売事業331,072百万円、連結売上高398,820百万円）と、【事業の内容】の事業構成に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }
