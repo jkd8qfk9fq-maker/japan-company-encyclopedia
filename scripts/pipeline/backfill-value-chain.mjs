@@ -1,11 +1,13 @@
 /**
- * Fill `workforce` (【従業員の状況】 of the 提出会社, JCE-038) for registered entries that do not have it, from the
- * filing their newest financial year already cites.
+ * Fill the JCE-038 facts — `workforce` (【従業員の状況】 of the 提出会社), `segmentRevenue` and `regionalRevenue` — for
+ * registered entries that lack them, from the filing their newest financial year already cites.
  *
- *   node scripts/pipeline/backfill-workforce.mjs [--tier published|all] [--limit N] [--ids a,b] [--write]
- *   node scripts/pipeline/backfill-workforce.mjs --probe a,b      # print the filing's tagged rows that matter here
+ *   node scripts/pipeline/backfill-value-chain.mjs [--tier published|all] [--limit N] [--ids a,b] [--write]
+ *   node scripts/pipeline/backfill-value-chain.mjs --probe a,b      # print the filing's tagged rows that matter here
  *
- * New registrations get workforce from draft-entry; this is for the entries registered before it existed. It reads
+ * New registrations get these from draft-entry and merge-fragments, and refresh-financials keeps them current; this
+ * is for the entries registered before they existed. Each is transcribed and checked (segment-revenue.mjs): a
+ * table that does not add up, or a segment whose name matches no business, is left out, never approximated. It reads
  * the same document the entry's figures came from (the source's docID) — never a newer one, which is
  * refresh-financials' job — so the year it writes is a year the entry already has. Dry run unless --write.
  *
@@ -17,6 +19,7 @@ import { join } from "node:path";
 import { downloadDocument, readCsvRows, scrubSecrets, textBlockToText } from "../research/edinet.mjs";
 import { workforceFigures } from "../research/evidence-pack.mjs";
 import { assertMachineWrite } from "./ownership.mjs";
+import { labelDocumentsFor, namedSegmentFacts, regionalNoteOf, regionalRevenueBlock, segmentRevenueBlock } from "./segment-revenue.mjs";
 
 const arg = (name, fallback = null) => {
   const i = process.argv.indexOf(`--${name}`);
@@ -73,6 +76,11 @@ if (probe) {
       console.log([r["要素ID"], r["項目名"], r["コンテキストID"], r["単位"], String(r["値"]).slice(0, 40)].join("\t"));
     }
     console.log(`workforceFigures → ${JSON.stringify(workforceFigures(rows))}`);
+    const entry = read(id);
+    const facts = namedSegmentFacts(rows, await labelDocumentsFor(found.docID));
+    console.log(`segmentFacts → ${JSON.stringify(facts)}`);
+    console.log(`segmentRevenue → ${JSON.stringify(segmentRevenueBlock(facts, entry.businesses, found.latest, found.sourceId))}`);
+    console.log(`regionalRevenue → ${JSON.stringify(regionalRevenueBlock(regionalNoteOf(rows), found.latest, found.sourceId))}`);
     // The regional and major-customer notes are text blocks; print them as text to see how they are laid out.
     for (const r of rows.filter((r) => /(Geographic|RelatedInformation|MajorCustomers)\w*TextBlock$/.test(r["要素ID"] ?? "") && /^CurrentYear/.test(r["コンテキストID"] ?? ""))) {
       console.log(`--- ${r["要素ID"]} ${r["コンテキストID"]}`);
@@ -87,11 +95,11 @@ const candidates = readdirSync(dir)
   .map((f) => f.replace(/\.json$/, ""))
   .filter((id) => !ids || ids.has(id))
   .map((id) => ({ id, entry: read(id) }))
-  .filter(({ entry }) => !entry.workforce)
+  .filter(({ entry }) => !entry.workforce || !entry.regionalRevenue || (!entry.segmentRevenue && entry.businesses.length >= 2))
   .filter(({ entry }) => tier === "all" || entry.status.state === "published")
   .slice(0, limit);
 
-const counts = { written: 0, none: 0, skipped: 0, failed: 0 };
+const counts = { written: 0, none: 0, skipped: 0, failed: 0, workforce: 0, segmentRevenue: 0, regionalRevenue: 0 };
 const lines = [];
 for (const { id, entry } of candidates) {
   const found = filingOf(entry);
@@ -99,10 +107,24 @@ for (const { id, entry } of candidates) {
   try {
     const rows = await rowsOf(found.docID);
     const nonConsolidated = entry.financials.some((f) => /提出会社単体/.test(f.revenueBasis ?? ""));
-    const block = workforceBlock(found.latest, found.sourceId, workforceFigures(rows, nonConsolidated));
-    if (!block) { counts.none++; lines.push(`- ${id}: 有報に従業員の状況のタグがない（${found.docID}）`); continue; }
-    const next = { ...entry, workforce: block };
-    assertMachineWrite(entry, next, "backfill-workforce");
+    const added = {};
+    if (!entry.workforce) {
+      const block = workforceBlock(found.latest, found.sourceId, workforceFigures(rows, nonConsolidated));
+      if (block) added.workforce = block;
+    }
+    if (!entry.segmentRevenue && entry.businesses.length >= 2) {
+      const facts = namedSegmentFacts(rows, await labelDocumentsFor(found.docID));
+      const block = segmentRevenueBlock(facts, entry.businesses, found.latest, found.sourceId);
+      if (block) added.segmentRevenue = block;
+    }
+    if (!entry.regionalRevenue) {
+      const block = regionalRevenueBlock(regionalNoteOf(rows), found.latest, found.sourceId);
+      if (block) added.regionalRevenue = block;
+    }
+    if (Object.keys(added).length === 0) { counts.none++; continue; }
+    for (const key of Object.keys(added)) counts[key]++;
+    const next = { ...entry, ...added };
+    assertMachineWrite(entry, next, "backfill-value-chain");
     if (write) writeFileSync(join(dir, `${id}.json`), `${JSON.stringify(next, null, 2)}\n`);
     counts.written++;
   } catch (error) {
@@ -112,9 +134,11 @@ for (const { id, entry } of candidates) {
 }
 
 const summary = [
-  `## 従業員の状況の追加（${write ? "書き込み" : "試行"}）`,
+  `## 従業員の状況・事業別の売上・地域別の売上の追加（${write ? "書き込み" : "試行"}）`,
   "",
-  `対象 ${candidates.length} 社: 追加 ${counts.written}・タグなし ${counts.none}・見送り ${counts.skipped}・失敗 ${counts.failed}`,
+  `対象 ${candidates.length} 社: 更新 ${counts.written}（従業員の状況 ${counts.workforce}・事業別 ${counts.segmentRevenue}・地域別 ${counts.regionalRevenue}）・追加なし ${counts.none}・見送り ${counts.skipped}・失敗 ${counts.failed}`,
+  "",
+  "追加なし・一部だけの会社は、有報がタグを付けていない（米国基準など）、合計が合わない、セグメント名が事業名と一致しない、地域の表が省略されている、のどれか。推測では埋めない。",
   "",
   ...lines.slice(0, 200),
 ].join("\n");

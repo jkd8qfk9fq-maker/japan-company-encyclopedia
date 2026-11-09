@@ -90,16 +90,12 @@ function proseOf(source) {
 const scope = updateScope(loadState(companyId).identity);
 let prose;
 let financials;
-/** segmentRevenue / regionalRevenue written in this round (JCE-038); their amounts are checked below. */
-let tables = [];
-const tablesOf = (source) => [source.segmentRevenue, source.regionalRevenue].filter(Boolean);
 if (useFragments) {
   const dir = join(process.cwd(), "pipeline/results");
   const bodies = fragmentFiles(companyId, dir).map((f) => JSON.parse(readFileSync(join(dir, f), "utf8")));
   const kept = bodies.filter((b) => b.retained);
   if (kept.length > 0) console.log(`${companyId}: 公開中の文章を引き継いだ成果物 ${kept.length} 件は照合しない（前の有報で照合済み）`);
   prose = bodies.filter((b) => !b.retained).map((b) => proseOf(b.data ?? {})).join("\n");
-  tables = bodies.filter((b) => !b.retained).flatMap((b) => tablesOf(b.data ?? {}));
   // A fragment carries no financials — the five-year table is mechanical, and the
   // draft is where it lives until the entry is assembled.
   financials = JSON.parse(readFileSync(join(packDir, "draft-entry.json"), "utf8")).financials ?? [];
@@ -113,7 +109,6 @@ if (useFragments) {
       financials: scope.notes ? entry.financials : [],
     });
   } else prose = proseOf(entry);
-  tables = tablesOf(scope ? Object.fromEntries([...scope.fields].map((f) => [f, entry[f]])) : entry);
   financials = entry.financials ?? [];
 }
 
@@ -167,23 +162,6 @@ for (const m of prose.matchAll(AMOUNT)) {
   if (packText.includes(String(inMillions))) continue;
 
   problems.push(`${expression}（${inMillions.toLocaleString("ja-JP")}百万円として照合）が有報の本文に見当たりません`);
-}
-
-/*
-  The amounts of the segment and regional tables (JCE-038) are yen, converted by the agent from the note's 百万円 or
-  千円. The shares on the page are computed from them, so each must be the printed figure in one of those units —
-  the same conversion the prose check accepts, applied to a number instead of a sentence.
-*/
-for (const table of tables) {
-  for (const item of table.items ?? []) {
-    const what = `${table.label ?? "売上"}（${item.businessId ?? item.region}）`;
-    checked++;
-    const amount = Number(item.amount);
-    const printed = [1_000_000, 1_000, 1].filter((unit) => Number.isInteger(amount / unit)).map((unit) => String(amount / unit));
-    if (!printed.some((p) => p !== "0" && packText.includes(p)) && amount !== 0) {
-      problems.push(`${what}: ${amount.toLocaleString("ja-JP")}円 が百万円・千円・円のどの単位でも有報の本文に見当たりません`);
-    }
-  }
 }
 
 /**

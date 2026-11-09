@@ -43,7 +43,7 @@ on:
         type: string
         default: "150"
       backfill_workforce:
-        description: "Instead of detection: add 従業員の状況 (JCE-038) to entries without it, from the filing each already cites, and open a pull request into the branch this runs on"
+        description: "Instead of detection: add 従業員の状況・事業別/地域別の売上 (JCE-038) to entries without them, from the filing each already cites, and open a pull request into the branch this runs on"
         required: false
         type: choice
         options: ["", "published", "all"]
@@ -283,13 +283,13 @@ jobs:
 
       - name: Probe
         if: env.PROBE != ''
-        run: node scripts/pipeline/backfill-workforce.mjs --probe "$PROBE"
+        run: node scripts/pipeline/backfill-value-chain.mjs --probe "$PROBE"
 
-      - name: Add 従業員の状況
+      - name: Add 従業員の状況 and the revenue tables
         if: env.TIER != ''
         run: |
           mkdir -p out
-          node scripts/pipeline/backfill-workforce.mjs --tier "$TIER" --limit "$LIMIT" --write --summary out/summary.md
+          node scripts/pipeline/backfill-value-chain.mjs --tier "$TIER" --limit "$LIMIT" --write --summary out/summary.md
 
       - name: Check the result
         if: env.TIER != ''
@@ -307,11 +307,11 @@ jobs:
         run: |
           cat out/summary.md >> "$GITHUB_STEP_SUMMARY"
           if [ -z "$(git status --porcelain src/data)" ]; then exit 0; fi
-          branch="auto/workforce-$(date -u +%Y-%m-%d)-${{ github.run_id }}"
+          branch="auto/value-chain-$(date -u +%Y-%m-%d)-${{ github.run_id }}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c "$branch"
           git add src/data/companies
-          git commit -m "従業員の状況（提出会社）を追加（JCE-038）" -m "Transcribed by backfill-workforce.mjs from the filing each entry already cites; checked by the integrity suite and the type check."
+          git commit -m "従業員の状況（提出会社）を追加（JCE-038）" -m "Transcribed by backfill-value-chain.mjs from the filing each entry already cites; checked by the integrity suite and the type check."
           git push origin "HEAD:refs/heads/${branch}"
-          gh pr create --base "$BASE" --head "$branch" --title "従業員の状況（提出会社）の追加" --body-file out/summary.md
+          gh pr create --base "$BASE" --head "$branch" --title "従業員の状況・事業別/地域別の売上の追加" --body-file out/summary.md

@@ -21,6 +21,7 @@ import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { join } from "node:path";
 import { cacheDir } from "./edinet.mjs";
 import { noteCandidates } from "./note-candidates.mjs";
+import { regionalRevenueBlock } from "../pipeline/segment-revenue.mjs";
 
 const ids = process.argv.slice(2);
 if (ids.length === 0) {
@@ -231,6 +232,13 @@ for (const id of ids) {
       locator: "【従業員の状況】（提出会社の状況）",
     };
   }
+  // JCE-038. Regional revenue needs only the table's revenue to be checked against, so it is settled here; segment
+  // revenue waits for the businesses (merge-fragments, refresh-financials), so its facts ride along as they are.
+  if (current) {
+    const regional = regionalRevenueBlock(pack.regionalNote, current, filingSourceId);
+    if (regional) draft.regionalRevenue = regional;
+  }
+  if (pack.segmentFacts) draft.segmentFacts = pack.segmentFacts;
   if (mixed.length > 0) draft._会計基準がそろわない項目 = mixed;
   const candidates = noteCandidates(pack, financials);
   if (candidates.length > 0) draft._注記の候補 = candidates;

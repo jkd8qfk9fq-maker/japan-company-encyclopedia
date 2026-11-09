@@ -162,33 +162,15 @@ describe("candidates for links, found by program", () => {
 });
 
 describe("the value chain (JCE-038)", () => {
-  const businesses = [{ id: "steel", name: "鉄鋼", description: "鉄鋼を売ります。" }, { id: "food", name: "食品", description: "食品を売ります。" }];
-  const table = { fiscalYear: "2026年3月期", periodEnd: "2026-03-31", label: "外部顧客への売上高", sourceIds: ["yuho-2026"] };
+  const businesses = [{ id: "steel", name: "鉄鋼", description: "鉄鋼を売ります。" }];
+  const withSuppliers = (suppliers: object[]) => entry({ businesses, businessModel: { ...entry().businessModel, suppliers } });
 
-  it("accepts segment revenue in yen tied to the top-level businesses", () => {
-    const e = entry({ businesses, segmentRevenue: { ...table, items: [{ businessId: "steel", amount: 1_000_000_000 }, { businessId: "food", amount: 2_000_000 }] } });
-    expect(errorsOf(checkProsePolicy(e))).toEqual([]);
-    expect(rules(checkProsePolicy(e))).not.toContain("value-chain-missing");
+  it("accepts a supplier in the filing's words, tied to a business that is there", () => {
+    expect(errorsOf(checkProsePolicy(withSuppliers([{ name: "鉄鉱石の仕入先", description: "鉄鉱石を仕入れます。", businessIds: ["steel"] }])))).toEqual([]);
   });
 
-  it("sends back an amount in the display unit, an unknown business and two domestic rows", () => {
-    const e = entry({
-      businesses,
-      segmentRevenue: { ...table, items: [{ businessId: "steel", amount: 1234 }, { businessId: "copper", amount: 1_000 }] },
-      regionalRevenue: { ...table, label: "売上高", items: [{ region: "日本", domestic: true, amount: 1_000 }, { region: "本邦", domestic: true, amount: 1_000 }] },
-    });
-    const errors = rules(checkProsePolicy(e), "error");
-    expect(errors).toContain("value-chain-amount");
-    expect(errors.filter((r) => r === "value-chain-shape").length).toBe(2);
-  });
-
-  it("asks the reviewer, without failing, when several businesses have no segment revenue", () => {
-    expect(rules(checkProsePolicy(entry({ businesses })), "review")).toContain("value-chain-missing");
-    expect(errorsOf(checkProsePolicy(entry({ businesses })))).toEqual([]);
-  });
-
-  it("refuses a supplier tied to a business that is not there", () => {
-    const e = entry({ businesses, businessModel: { ...entry().businessModel, suppliers: [{ name: "原材料の仕入先", description: "原材料を仕入れます。", businessIds: ["copper"] }] } });
-    expect(rules(checkProsePolicy(e), "error")).toContain("value-chain-shape");
+  it("sends back a supplier tied to a business that is not there, or without a description", () => {
+    expect(rules(checkProsePolicy(withSuppliers([{ name: "原材料の仕入先", description: "原材料を仕入れます。", businessIds: ["copper"] }])), "error")).toContain("value-chain-shape");
+    expect(rules(checkProsePolicy(withSuppliers([{ name: "原材料の仕入先" }])), "error")).toContain("value-chain-shape");
   });
 });

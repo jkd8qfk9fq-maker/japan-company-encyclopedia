@@ -25,6 +25,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { cacheDir, contextPeriodEnds, downloadDocument, findAnnualReports, readCsvRows, textBlockToText } from "./edinet.mjs";
+import { labelDocumentsFor, namedSegmentFacts, regionalNoteOf } from "../pipeline/segment-revenue.mjs";
 import { FIGURE_KINDS, amendmentsOf, chooseEffective, classifyAmendment, diffFigures, ensureIndex, filingCompleteness } from "./amendments.mjs";
 
 /**
@@ -1419,6 +1420,10 @@ async function packFor(companyId, code4, from, to) {
     warnings,
     figures,
     workforce: workforceFigures(rows, figures.nonConsolidated),
+    // JCE-038: segment revenue as tagged (with each member's Japanese name, to be matched to the businesses once
+    // they are written) and the note 地域ごとの情報 is read from. Both checked again where they become entry data.
+    segmentFacts: namedSegmentFacts(rows, await labelDocumentsFor(latest.docID).catch(() => [])),
+    regionalNote: regionalNoteOf(rows),
     previousFiling: previous?.filing ?? null,
     // All six series, not just revenue and net income. 清水建設 finalised the
     // purchase-price allocation for an acquisition and restated 総資産額 and

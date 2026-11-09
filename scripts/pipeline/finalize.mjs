@@ -181,6 +181,7 @@ function figuresOnlyEntry() {
     businesses: [],
     financials: draft.financials,
     ...(draft.workforce ? { workforce: draft.workforce } : {}),
+    ...(draft.regionalRevenue ? { regionalRevenue: draft.regionalRevenue } : {}),
     history: [],
     relatedCompanies: [],
     sources: [

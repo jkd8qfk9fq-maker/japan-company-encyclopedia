@@ -25,6 +25,7 @@ import { join } from "node:path";
 import { cacheDir } from "../research/edinet.mjs";
 import { fragmentFiles, loadState } from "./company-state.mjs";
 import { dedupeGaps, normalizeGap, parseLegacyTaxonomyNote } from "./taxonomy-gaps.mjs";
+import { segmentRevenueBlock } from "./segment-revenue.mjs";
 
 /** Which top-level entry keys each agent stage is allowed to write. */
 export const STAGE_FIELDS = {
@@ -32,9 +33,7 @@ export const STAGE_FIELDS = {
   // the three identity fields that need judgement rather than transcription: the
   // common display name, the hero wordmark, and which market segment the filing
   // actually states (it often names only the exchange).
-  // segmentRevenue / regionalRevenue (JCE-038): which printed segment row is which business needs the same judgement
-  // as the structure itself; the amounts are checked against the printed note by check-prose-figures.
-  businessStructure: ["businesses", "name", "shortNameEn", "listings", "segmentRevenue", "regionalRevenue"],
+  businessStructure: ["businesses", "name", "shortNameEn", "listings"],
   // `financialNotes` is not an entry field: it is [{ fiscalYear, note }] applied to financials[].note
   // below, because the five-year table is mechanical and a stage cannot write into it directly.
   businessModel: ["businessModel", "description", "financialNotes", "perspectives"],
@@ -198,6 +197,13 @@ export function mergeEntry(companyId) {
   for (const key of ["shortNameEn", "businessModel"]) {
     if (entry[key] === null) delete entry[key];
   }
+
+  // JCE-038: the tables are transcribed, not written — regional revenue was settled in the draft, segment revenue is
+  // matched here to the businesses the agent just wrote, by the filing's own segment names.
+  const newest = [...entry.financials].sort((a, b) => a.periodEnd.localeCompare(b.periodEnd)).at(-1);
+  if (draft.regionalRevenue) entry.regionalRevenue = draft.regionalRevenue;
+  const segments = newest && segmentRevenueBlock(draft.segmentFacts, entry.businesses, newest, newest.sourceIds[0]);
+  if (segments) entry.segmentRevenue = segments;
 
   // A company whose fiscal year end changed inside the five-year window has year labels the pack
   // could not date correctly (evidence-pack.mjs detectFiscalYearChange). Whatever the agents
