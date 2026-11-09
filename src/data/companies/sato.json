@@ -1,18 +1,214 @@
 {
   "id": "sato",
   "code": "6287",
-  "name": "サトー（旧会社名サトーホールディングス）",
+  "name": "サトー",
   "officialName": "株式会社サトー（旧会社名　サトーホールディングス株式会社）",
   "nameEn": "SATO CORPORATION（旧英訳名　SATO HOLDINGS CORPORATION）",
-  "description": null,
+  "shortNameEn": "sato",
+  "description": "現場の人やモノに情報をひも付けるタギングを軸に、自動認識ソリューションを提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "electronics",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "japan",
+      "name": "自動認識ソリューション事業（日本）",
+      "description": "日本で自動認識ソリューションを提供し、2026年3月期の売上高は85,038百万円です。",
+      "products": [
+        "電子プリンタ",
+        "ハンドラベラー",
+        "ICタグ・ラベル",
+        "シール",
+        "ラベル",
+        "リボン",
+        "MCカード"
+      ],
+      "customers": [
+        "物流や製造などの現場を持つ企業",
+        "医療機関"
+      ],
+      "children": [
+        {
+          "id": "mechatronics",
+          "name": "メカトロ製品",
+          "description": "電子プリンタやハンドラベラーなどの機器とソフトウエアや保守サービスを提供します。",
+          "products": [
+            "電子プリンタ",
+            "ハンドラベラー",
+            "ラベリングロボット",
+            "オートラベラー",
+            "ソフトウエア",
+            "保守サービス"
+          ],
+          "customers": [
+            "物流や製造などの現場を持つ企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "supply",
+          "name": "サプライ製品",
+          "description": "ICタグ・ラベルやシール、チケット、リボンなどの消耗品を提供します。",
+          "products": [
+            "ICタグ・ラベル",
+            "シール",
+            "ラベル",
+            "タグ",
+            "チケット",
+            "リボン",
+            "MCカード",
+            "インク"
+          ],
+          "customers": [
+            "物流や製造などの現場を持つ企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "overseas",
+      "name": "自動認識ソリューション事業（海外）",
+      "description": "海外で自動認識ソリューションを提供し、2026年3月期の売上高は78,396百万円です。",
+      "products": [
+        "電子プリンタ",
+        "ハンドラベラー",
+        "ICタグ・ラベル",
+        "シール",
+        "ラベル",
+        "リボン",
+        "MCカード"
+      ],
+      "customers": [
+        "物流や製造などの現場を持つ企業"
+      ],
+      "children": [
+        {
+          "id": "mechatronics-overseas",
+          "name": "メカトロ製品",
+          "description": "電子プリンタやハンドラベラーなどの機器とソフトウエアや保守サービスを提供します。",
+          "products": [
+            "電子プリンタ",
+            "ハンドラベラー",
+            "ソフトウエア",
+            "保守サービス"
+          ],
+          "customers": [
+            "物流や製造などの現場を持つ企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "supply-overseas",
+          "name": "サプライ製品",
+          "description": "ICタグ・ラベルやシール、プライマリーラベルなどの消耗品を提供します。",
+          "products": [
+            "ICタグ・ラベル",
+            "シール",
+            "ラベル",
+            "プライマリーラベル",
+            "リボン",
+            "MCカード"
+          ],
+          "customers": [
+            "物流や製造などの現場を持つ企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "現場の人やモノに情報をひも付けるタギングを軸に、自動認識ソリューションを提供する会社です。",
+    "products": [
+      "電子プリンタ",
+      "ハンドラベラー",
+      "ラベリングロボット",
+      "オートラベラー",
+      "ICタグ・ラベル",
+      "シール",
+      "ラベル",
+      "タグ",
+      "チケット",
+      "リボン",
+      "MCカード",
+      "インク",
+      "ソフトウエア",
+      "保守サービス"
+    ],
+    "customers": [
+      "物流や製造などの現場を持つ企業",
+      "医療機関"
+    ],
+    "revenueSources": [
+      "メカトロ製品の販売",
+      "サプライ製品の販売",
+      "ソフトウエアと保守サービス"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "サトー",
+        "description": "自動認識ソリューション事業を日本と海外で展開します。連結子会社は49社で、従業員数は2026年3月31日現在6,012人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "タギングによる自動認識ソリューション",
+        "description": "電子プリンタやハンドラベラーなどのメカトロ製品と、ICタグ・ラベルなどのサプライ製品を提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "現場を持つ企業",
+        "description": "物流や製造などの現場を持つ企業や医療機関に、現場の情報をデータに変える仕組みを届けます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品とサービスの販売",
+        "description": "2026年3月期の売上高は163,434百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は5,086百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 64508000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5656,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +243,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 67694000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5637,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +263,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 74085000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5744,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +283,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 80237000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5986,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +303,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 89585000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6012,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,20 +311,203 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1951,
+      "title": "株式会社佐藤竹工機械製作所の設立",
+      "description": "パッケージに関する加工機械の製造販売を目的に、埼玉県さいたま市で株式会社佐藤竹工機械製作所を設立しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "サトー機工株式会社への商号変更",
+      "description": "商号をサトー機工株式会社に変更しました。",
+      "significance": "現在の社名につながる商号変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "株式会社サトーへの商号変更",
+      "description": "商号を株式会社サトーに変更しました。",
+      "significance": "サトーの社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "マレーシアへの現地法人の設立",
+      "description": "ハンドラベラーの生産のため、マレーシアに現地法人を設立しました。",
+      "significance": "海外生産の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "米国への現地法人の設立",
+      "description": "北米地域での販売を強化するため、米国に現地法人SATO AMERICA INC.を設立しました。",
+      "significance": "北米での販売体制を築きました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "株式の上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "東京証券取引所市場第一部への指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "上場市場の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "Checkpoint Systemsからの事業買収",
+      "description": "米国Checkpoint Systems, Inc.からの事業買収により、米国やドイツ、スペイン、オーストラリア、ニュージーランドに現地法人を設立しました。",
+      "significance": "海外事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "純粋持株会社への移行",
+      "description": "新設分割により純粋持株会社へ移行し、商号をサトーホールディングス株式会社に変更しました。",
+      "significance": "持株会社体制への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "ARGOX INFORMATIONの買収",
+      "description": "台湾のARGOX INFORMATION CO., LTD.を買収しました。",
+      "significance": "アジアでの事業基盤の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "サトーヘルスケア株式会社の設立",
+      "description": "ヘルスケア事業を強化するため、サトーヘルスケア株式会社を設立しました。",
+      "significance": "医療分野への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "国内グループ会社3社の統合",
+      "description": "国内グループ会社3社を株式会社サトーに統合しました。",
+      "significance": "経営資源の統合による効率化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "本社の東京都港区芝浦への移転",
+      "description": "本社を東京都港区芝浦に移転しました。",
+      "significance": "本社の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "上場市場の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社サトーの吸収合併と商号変更",
+      "description": "完全子会社である株式会社サトーを吸収合併し、存続会社の商号を株式会社サトーに変更しました。",
+      "significance": "事業持株会社体制への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第76期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社サトー（旧会社名　サトーホールディングス株式会社）",
+      "publisher": "株式会社サトー",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE10.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YE10",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年6月15日に株式会社平野屋物産の議決権のある全株式を取得し、完全子会社化しました。取得の対価は現金2,119百万円です。2026年3月31日現在の事業構成には含まれていません。",
+      "businessStructure: 2026年6月15日に株式会社平野屋物産の議決権のある全株式を取得し、完全子会社化しました。取得の対価は現金2,119百万円です。2026年3月31日現在の事業構成には含まれていません。",
+      "history: 2026年6月15日に株式会社平野屋物産の議決権のある全株式を取得し、完全子会社化しました。取得の対価は現金2,119百万円です。2026年3月31日現在の事業構成には含まれていません。",
+      "industry: 2026年6月15日に株式会社平野屋物産の議決権のある全株式を取得し、完全子会社化しました。取得の対価は現金2,119百万円です。2026年3月31日現在の事業構成には含まれていません。",
+      "relatedCompanies: 2026年6月15日に株式会社平野屋物産の議決権のある全株式を取得し、完全子会社化しました。取得の対価は現金2,119百万円です。2026年3月31日現在の事業構成には含まれていません。",
+      "terms: 2026年6月15日に株式会社平野屋物産の議決権のある全株式を取得し、完全子会社化しました。取得の対価は現金2,119百万円です。2026年3月31日現在の事業構成には含まれていません。"
+    ]
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "ビジョンは「お客さまに最も信頼され、お客さまと共に成長し、変わりゆく社会から必要とされ続ける会社になること。」です。2024年度を起点とする5カ年の中期経営計画（2024～2028年度）に基づき、「Perfect and Unique Tagging（PUT）構想の事業化」「コアビジネスの収益盤石化」「グローバル経営基盤の強化」を重点課題とします。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "日本と海外の2つの報告セグメントで自動認識ソリューションを展開し、2026年3月期の売上高は163,434百万円です。メカトロ製品とサプライ製品の両方を手掛け、現場の情報をデータに変えるタギングを軸にします。",
+        "basis": "【事業の内容】と【セグメント情報】の記載に基づきます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

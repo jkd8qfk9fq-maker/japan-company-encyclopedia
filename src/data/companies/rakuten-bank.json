@@ -4,15 +4,139 @@
   "name": "楽天銀行",
   "officialName": "楽天銀行株式会社",
   "nameEn": "Rakuten Bank, Ltd.",
-  "description": null,
+  "shortNameEn": "Rakuten Bank",
+  "description": "楽天グループのインターネット銀行で、店舗を持たずに、個人と法人へ預金・融資・決済などの銀行サービスを提供しています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "banking",
+      "name": "銀行業",
+      "description": "楽天銀行が日本と台湾で個人・法人にインターネットを通じて銀行サービスを提供する、単一セグメントの事業です。2026年3月期の連結経常収益は255,579百万円でした。2026年3月31日現在の口座数は1,807万口座、預金量は12.9兆円です。",
+      "products": [
+        "預金",
+        "住宅ローン",
+        "カードローン",
+        "法人融資",
+        "為替",
+        "決済",
+        "外貨預金",
+        "デビットカード",
+        "信託"
+      ],
+      "customers": [
+        "個人のお客さま",
+        "法人のお客さま"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "personal-banking",
+          "name": "個人向け銀行業務",
+          "description": "日本の個人向けに、預金、住宅ローンやカードローンなどのローン、口座振替やデビットカードなどの決済、外貨預金や海外送金などを提供しています。給与振込や口座振替に使われる「生活口座」としての利用を推進しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "corporate-banking",
+          "name": "法人向け銀行業務",
+          "description": "日本の法人向けに、融資、預金、為替を含む銀行サービスを提供しています。提携企業に専用支店を設け、提携企業が銀行代理業者として口座開設を媒介するBaaS（バンキング・アズ・ア・サービス）の提供も行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "trust",
+          "name": "信託業務（楽天信託株式会社）",
+          "description": "連結子会社の楽天信託株式会社が信託業務を行い、顧客から金銭、金銭債権、不動産等を受託しています。当行が企業の金銭債権や不動産等を流動化して運用資産を組成する際にも、その信託機能が活用されています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "taiwan-banking",
+          "name": "台湾における銀行業（樂天國際商業銀行股份有限公司）",
+          "description": "特定子会社である樂天國際商業銀行股份有限公司が、台湾で個人・法人向けに、インターネットを活用した銀行業を営んでいます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "物理的な店舗や自前のATMを持たず、インターネットを通じて個人・法人に銀行サービスを提供し、預金で集めた資金をローンや証券化資産などで運用する事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "預金",
+      "住宅ローン",
+      "カードローン",
+      "法人融資",
+      "為替",
+      "決済",
+      "外貨預金",
+      "デビットカード",
+      "信託"
+    ],
+    "customers": [
+      "個人のお客さま",
+      "法人のお客さま",
+      "BaaSの提携企業"
+    ],
+    "revenueSources": [
+      "貸出金などの利息を中心とする資金運用収益",
+      "為替・決済などの手数料",
+      "証券化資産の運用収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "楽天銀行グループ",
+        "description": "楽天銀行と、連結子会社23社、非連結子会社5社で構成されています。親会社は楽天グループ株式会社で、2026年3月31日現在の議決権の49.27％を保有しています。2026年3月期の連結の従業員数は1,186人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "インターネット銀行サービス",
+        "description": "店舗を持たず、スマートフォンアプリなどのインターネットバンキングで、預金、住宅ローンやカードローンなどのローン、決済、為替、外貨預金などを提供しています。連結子会社の楽天信託株式会社による信託業務や、台湾での銀行業も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "個人と法人の顧客",
+        "description": "日本では個人と法人、台湾では個人と法人が顧客です。新規口座の多くは楽天グループの会員基盤を通じて獲得しており、2026年3月31日現在の口座数は1,807万口座です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "利息と手数料による経常収益",
+        "description": "貸出金の利息などの資金運用収益と、為替・決済などの手数料により経常収益を得ています。2026年3月期の連結経常収益は255,579百万円で、前期の184,534百万円から増えました。運用資産の増加や、日本銀行の政策金利の引き上げに伴う運用利回りの上昇で資金運用収益が増えたことなどが主な要因です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は73,072百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +151,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 206494000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 925,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +171,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 231684000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1001,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +191,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 279587000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1056,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +211,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 319117000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1076,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +231,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 389529000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1186,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +239,146 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2000,
+      "title": "日本電子決済企画株式会社を設立",
+      "description": "銀行の設立を目的として、日本電子決済企画株式会社を東京都千代田区に設立しました。",
+      "significance": "楽天銀行の起源です。資本金の金額は文章規則により書いていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "銀行業の免許を取得し開業",
+      "description": "銀行業の免許を取得して開業し、商号をイーバンク銀行株式会社に変更しました。",
+      "significance": "インターネット銀行としての事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "楽天株式会社が親会社となる",
+      "description": "楽天株式会社（現・楽天グループ株式会社）が主要株主認可を取得し、親会社となりました。前年の2008年9月には同社と資本・業務提携契約を締結しています。",
+      "significance": "楽天グループの一員となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "商号を楽天銀行株式会社に変更",
+      "description": "楽天株式会社による当行株式の公開買付けを経て商号を楽天銀行株式会社に変更し、同年10月には株式交換により同社の完全子会社となりました。",
+      "significance": "現在の商号になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "トランスバリュー信託株式会社を完全子会社化",
+      "description": "トランスバリュー信託株式会社（現・楽天信託株式会社）を完全子会社化しました。",
+      "significance": "グループ内で信託機能を持つようになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "楽天カード株式会社が親会社となる",
+      "description": "楽天グループにおける会社分割による組織再編に伴い、楽天カード株式会社が当行の株式を承継し、親会社となりました。",
+      "significance": "グループ再編による親会社の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "台湾で樂天國際商業銀行が営業開始",
+      "description": "台湾において、樂天國際商業銀行股份有限公司が営業を開始しました。",
+      "significance": "海外での銀行業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "楽天グループ株式会社が親会社となる",
+      "description": "楽天カード株式会社が[[company:rakuten-group|楽天グループ株式会社]]に対して当行株式の現物配当を実施し、同社が親会社となりました。あわせて同社と経営基本契約と非独占的ブランドライセンス契約を締結しています。",
+      "significance": "現在の親会社体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所プライム市場に上場",
+      "description": "東京証券取引所プライム市場に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "「JRE BANK」の提供を開始",
+      "description": "東日本旅客鉄道株式会社と株式会社ビューカードとともに、新たなデジタル金融サービス「JRE BANK」の提供を開始しました。",
+      "significance": "BaaSを活用した提携サービスの一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "rakuten-group",
+      "relationship": "parent",
+      "description": "親会社です。2026年3月31日現在、当行の議決権の49.27％を保有しています。当行は同社と経営基本契約と非独占的ブランドライセンス契約を締結しており、ブランドライセンス料の支払や業務委託などの取引があります。主要な顧客でもあり、2026年3月期の楽天グループ株式会社及びそのグループ会社からの経常収益は61,046百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "the-ogaki-kyoritsu-bank",
+      "relationship": "business-partner",
+      "description": "銀行代理業務に関する提携先です。2019年11月から、同行の顧客に対するインターネットバンキングサービスの提供（BaaS）を開始しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "companyId": "and-do-holdings",
+      "relationship": "business-partner",
+      "description": "銀行代理業務に関する提携先です。2022年6月に提携を開始しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "east-japan-railway",
+      "relationship": "business-partner",
+      "description": "株式会社ビューカードとともに、2024年5月に新たなデジタル金融サービス「JRE BANK」の提供を開始した提携先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +386,48 @@
       "publisher": "楽天銀行株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGME.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YGME",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 重要な後発事象（提出後の予定事項）：2026年5月20日の取締役会で、株式交付により楽天カード株式会社と楽天証券ホールディングス株式会社を当行の完全子会社とする、楽天グループのフィンテック事業再編を決議した。効力発生日は2026年10月1日の予定で、実施には2026年6月24日開催予定の第27期定時株主総会の承認や、国内外の政府機関からの必要な許認可等が前提条件となっており、有報提出日（2026年6月22日）時点では未実施である。このため本文は2026年3月31日現在の体制で書き、完了したとは書いていない。あわせて同日、株式会社みずほ銀行と資本業務提携契約を締結しており、同行は本株式交付により当行の主要株主（普通株式への転換後の議決権比率10.52％）となる予定である。"
+    ]
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2022年4月に公表した中長期ビジョンで、ゼロキャッシュ時代の到来を見据えたFinTechのリーディングカンパニーを目指すとしています。「顧客基盤の拡充」「収益力の強化（貸出利息収益と手数料収益の両輪の拡充）」「FinTech領域の成長取込み」を三位一体で進め、楽天エコシステムとのシナジーを最大限に発揮して、顧客数と顧客当たりの取引機会を増やす方針です。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "物理的な支店や自前のATMを持たないため、従来の銀行と比べて低コストでの事業運営が可能です。システムを自行で開発、運用、保守する体制により、システムコストの面でも競争力を持ちます。楽天グループの1億を超えるIDの顧客基盤を活用でき、2025年度の新規口座開設の約60％が楽天グループ経由の申込でした。",
+        "basis": "【事業の内容】",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月31日現在、口座数1,807万口座、預金量12.9兆円と、日本のインターネット銀行業界において最大の顧客基盤を有しています。2026年3月期の連結経常収益255,579百万円のうち、楽天グループ株式会社及びそのグループ会社からの経常収益は61,046百万円でした。",
+        "basis": "【事業の内容】と【セグメント情報】の関連情報",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

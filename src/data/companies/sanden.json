@@ -4,15 +4,176 @@
   "name": "サンデン",
   "officialName": "サンデン株式会社",
   "nameEn": "SANDEN CORPORATION",
-  "description": null,
+  "shortNameEn": "Sanden",
+  "description": "自動車の空調システムやコンプレッサーを製造・販売し、住宅用の給湯機器も手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "automotive-equipment",
+      "name": "自動車機器事業",
+      "description": "自動車用空調システムやコンプレッサー、熱交換器などを製造・販売する報告セグメントです。2025年12月期の販売実績は189,799百万円でした。",
+      "products": [
+        "自動車用空調システム",
+        "カーエアコン用コンプレッサー",
+        "電動コンプレッサー",
+        "自動車用熱交換器",
+        "空調室内ユニット",
+        "エンジン用熱交換器",
+        "空調用熱交換器"
+      ],
+      "customers": [
+        "自動車メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "ac-system-compressor",
+          "name": "自動車用空調システム及びコンプレッサー",
+          "description": "自動車の空調システムとコンプレッサーを扱う部門です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "heat-exchanger",
+          "name": "自動車用熱交換器",
+          "description": "自動車用の熱交換器を扱う部門です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "car-ac-compressor",
+          "name": "カーエアコン用コンプレッサー",
+          "description": "カーエアコン用のコンプレッサーを扱う部門です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "indoor-unit",
+          "name": "空調室内ユニット",
+          "description": "空調の室内ユニットを扱う部門です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "engine-heat-exchanger",
+          "name": "エンジン用熱交換器",
+          "description": "エンジン用の熱交換器を扱う部門です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ac-heat-exchanger",
+          "name": "空調用熱交換器",
+          "description": "空調用の熱交換器を扱う部門です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれていない事業で、住宅用給湯・環境機器のエコキュートを扱います。2025年12月期の販売実績は1,076百万円でした。",
+      "products": [
+        "エコキュート",
+        "住宅用給湯・環境機器"
+      ],
+      "customers": [
+        "住宅用の給湯機器の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "ecocute",
+          "name": "エコキュート",
+          "description": "住宅用の給湯機器です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自動車用空調システムやコンプレッサーの製造・販売を中心に、住宅用の給湯機器も販売する事業モデルです。",
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "自動車用空調システム",
+      "カーエアコン用コンプレッサー",
+      "電動コンプレッサー",
+      "自動車用熱交換器",
+      "空調室内ユニット",
+      "エコキュート"
+    ],
+    "customers": [
+      "自動車メーカー",
+      "住宅用の給湯機器の利用者"
+    ],
+    "revenueSources": [
+      "自動車機器の販売による売上高",
+      "住宅用給湯・環境機器の販売による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社グループ",
+        "description": "当社、子会社29社及び関連会社7社で構成されるグループです。2025年12月31日現在の従業員数は4,791人です。群馬県伊勢崎市に本社を置いています。"
+      },
+      {
+        "kind": "offering",
+        "title": "自動車用空調システムと住宅用給湯機器",
+        "description": "自動車用空調システムやコンプレッサー、熱交換器を製造・販売しています。住宅用の給湯機器であるエコキュートも扱っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "世界の自動車メーカーと住宅の利用者",
+        "description": "世界の自動車メーカーに空調システムやコンプレッサーを納めています。海外向けの売上高が全体の93％を占めています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "自動車機器と給湯機器の販売による売上高",
+        "description": "2025年12月期の売上高は190,875百万円で、前年同期比3.8％増でした。自動車機器事業の販売実績は189,799百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は274百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -20,19 +181,20 @@
       "revenue": 119587000000,
       "revenueLabel": "売上高",
       "profit": -11728000000,
-      "profitLabel": "経常利益",
+      "profitLabel": "経常利益又は経常損失（△）",
       "netIncome": 15888000000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）",
       "totalAssets": 151189000000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 23835000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5897,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "決算期の変更により、2021年12月期は9か月の変則決算です。"
     },
     {
       "fiscalYear": "2022年12月期",
@@ -40,14 +202,14 @@
       "revenue": 175683000000,
       "revenueLabel": "売上高",
       "profit": -4140000000,
-      "profitLabel": "経常利益",
+      "profitLabel": "経常利益又は経常損失（△）",
       "netIncome": -1613000000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）",
       "totalAssets": 157428000000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 23366000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5608,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -60,14 +222,14 @@
       "revenue": 179279000000,
       "revenueLabel": "売上高",
       "profit": -8382000000,
-      "profitLabel": "経常利益",
+      "profitLabel": "経常利益又は経常損失（△）",
       "netIncome": -3359000000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）",
       "totalAssets": 162539000000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 20836000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5587,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -80,14 +242,14 @@
       "revenue": 183848000000,
       "revenueLabel": "売上高",
       "profit": -176000000,
-      "profitLabel": "経常利益",
+      "profitLabel": "経常利益又は経常損失（△）",
       "netIncome": -777000000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）",
       "totalAssets": 175459000000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 23582000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5344,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -100,14 +262,14 @@
       "revenue": 190875000000,
       "revenueLabel": "売上高",
       "profit": 1774000000,
-      "profitLabel": "経常利益",
+      "profitLabel": "経常利益又は経常損失（△）",
       "netIncome": 274000000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）",
       "totalAssets": 185633000000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 28126000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4791,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +277,169 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1943,
+      "title": "三共電器株式会社の創立",
+      "description": "ベークライト成型による無線通信機用部品などの製造のため、群馬県伊勢崎市に三共電器株式会社として創立しました。",
+      "significance": "同社の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "株式の公開市場への上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "ミッチェル社との技術提携",
+      "description": "米国のミッチェル社とカーエアコン用コンプレッサーの技術提携を結びました。",
+      "significance": "カーエアコン事業への参入のきっかけです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "カーエアコン用コンプレッサーの生産開始",
+      "description": "カーエアコン用コンプレッサーの生産を開始しました。",
+      "significance": "現在の主力事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "東京証券取引所市場第一部への指定と「サンデン」への改称",
+      "description": "株式が東京証券取引所市場第一部に指定され、同時に「三共」の商標を「サンデン」に改称しました。",
+      "significance": "サンデンの名前での事業展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "サンデン株式会社への商号変更",
+      "description": "商号をサンデン株式会社に変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "天津三電汽車空調有限公司の設立",
+      "description": "自動車空調システムを生産する天津三電汽車空調有限公司を中国に設立しました。",
+      "significance": "中国での自動車空調システムの生産の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "電動コンプレッサーの生産開始",
+      "description": "八斗島事業所で電動コンプレッサーの生産を開始しました。",
+      "significance": "電動化に対応する製品の生産の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "持株会社体制への移行",
+      "description": "持株会社体制へ移行し、商号をサンデンホールディングス株式会社に変更しました。",
+      "significance": "グループ経営体制への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "事業再生ADR手続の正式申請",
+      "description": "事業再生実務家協会に対し、事業再生ADR手続の正式申請を行いました。",
+      "significance": "経営再建への取り組みの始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "事業再生ADR手続の成立と第三者割当増資",
+      "description": "事業再生ADR手続が成立し、海信日本オートモーティブエアコンシステムズ合同会社を引受先とする第三者割当増資を実施しました。",
+      "significance": "経営再建の手続が成立し、新しい親会社のもとでの経営が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "事業会社体制への移行とサンデン株式会社への商号変更",
+      "description": "事業会社体制へ移行し、商号をサンデン株式会社に変更しました。東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の事業会社体制と社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "スタンダード市場への市場変更",
+      "description": "東京証券取引所プライム市場からスタンダード市場に市場変更しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "新コーポレートスローガンの発表",
+      "description": "新コーポレートスローガン「INNOVATING COMFORT」を発表し、コンプレッサーのグローバル累計生産台数4億台を達成しました。",
+      "significance": "ブランドの刷新と生産実績の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "新ビジョン及びミッションの発表",
+      "description": "新ビジョン及びミッションを発表しました。",
+      "significance": "新しい経営の方向性の発表です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "honda",
+      "relationship": "customer",
+      "description": "顧客の自動車に搭載する空調用部品を継続的に販売しています。2025年12月31日現在、228,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,11 +447,49 @@
       "publisher": "サンデン株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XUJB.pdf",
       "publishedAt": "2026-03-27",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XUJB",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2021年12月期は決算期の変更による9か月の変則決算のため、他年度と期間の長さが異なります。5年間の数値の比較には注意が必要です。",
+      "財務: 変則決算。2021-12 の期は 9 か月。他の年と期間の長さが違うので、businessModel の data.financialNotes にその旨を書くこと"
+    ]
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「安心と快適をドライブする熱マネジメント技術のリーディングカンパニーへ」というビジョンのもと、コンポーネントサプライヤーからフルソリューション・システム・サプライヤーへの変化を目指す中期経営計画「ＳＨＩＦＴ２０２８」（2024年1月1日～2028年12月31日）に取り組んでいます。2028年度の売上高目標は3,000億円です。",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "電動コンプレッサーの製品力を軸に、統合熱マネジメントシステムのソリューションを提供しています。日本、中国、欧州、北米の4極で電動コンプレッサーを生産する体制を築いています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】及び【沿革】の記載",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年12月期の売上高は190,875百万円で、海外向けが93％を占めています。欧州と中国の売上が全体の約6割を占めています。主要な顧客はVolkswagen Groupで、売上高は28,205百万円でした。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】及び【セグメント情報】の記載",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  }
 }

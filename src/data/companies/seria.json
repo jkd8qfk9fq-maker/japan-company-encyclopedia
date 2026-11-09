@@ -4,15 +4,106 @@
   "name": "セリア",
   "officialName": "株式会社セリア",
   "nameEn": "Seria Co., Ltd.",
-  "description": null,
+  "shortNameEn": "SERIA",
+  "description": "100円ショップ「Seria」を全国で展開し、雑貨や菓子・食品を税抜100円の均一価格で販売する小売チェーンです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "hundred-yen-shop",
+      "name": "100円ショップ事業",
+      "description": "100円ショップ「Seria」を展開する単一セグメントの事業です。取扱商品は雑貨と菓子食品で、2026年3月期の売上高は255,695百万円でした。2026年3月31日現在の店舗数は、直営店2,101店とFC店33店の合計2,134店です。",
+      "products": [
+        "雑貨",
+        "菓子食品"
+      ],
+      "customers": [
+        "一般消費者",
+        "フランチャイジー",
+        "大口顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "directly-managed-stores",
+          "name": "小売（直営店）",
+          "description": "直営店舗で商品（消費財）を消費者に販売する事業です。2026年3月期の直営店売上高は253,162百万円で、売上高全体の99.0％を占めました。当期は直営店117店舗を出店し、53店舗を退店しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "wholesale",
+          "name": "卸売（FC店・大口顧客向け）",
+          "description": "フランチャイジーや大口顧客に商品を卸販売する事業です。FC店は、当社の商品発注システムの利用について基本契約を締結している先の店舗の総称で、2026年3月31日現在で33店あります。海外のFC店向けの輸出や国内代理店への卸販売も行っており、2026年3月期のFC店売上高は1,972百万円、卸売等と海外を合わせた売上高は561百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "直営店舗で雑貨や菓子・食品を消費者に販売する小売を中心に、フランチャイジーや大口顧客への卸販売も行い、商品の販売代金を受け取っています。",
+    "products": [
+      "雑貨",
+      "菓子食品"
+    ],
+    "customers": [
+      "店舗を利用する一般消費者",
+      "フランチャイジー・大口顧客"
+    ],
+    "revenueSources": [
+      "直営店舗での商品販売による収入",
+      "フランチャイジー・大口顧客への卸販売による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "セリア",
+        "description": "岐阜県大垣市に本社を置く単独の会社で、連結財務諸表は作成していません。2026年3月31日現在の従業員数は566人で、年間平均12,590人の臨時雇用者が店舗の運営を支えています。"
+      },
+      {
+        "kind": "offering",
+        "title": "100円ショップの運営",
+        "description": "100円ショップ「Seria」を運営し、雑貨や菓子・食品を税抜100円の均一価格で販売しています。取扱商品は、キッチン用品や文具、衛生・健康用品など幅広いカテゴリーにわたります。"
+      },
+      {
+        "kind": "customer",
+        "title": "店舗を利用する一般消費者",
+        "description": "顧客は店舗を利用する一般消費者です。2026年3月31日現在の店舗数は直営店2,101店とFC店33店の合計2,134店で、国内の全都道府県に出店しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "商品の販売で得る収入",
+        "description": "収入源は、直営店舗での商品販売と、フランチャイジーなどへの卸販売です。2026年3月期の売上高は255,695百万円で、前期に比べ8.2％増えました。直営店の既存店売上高が前期比105.5％と順調に推移し、出店による純増店舗数が64店舗あったことが増収につながりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から、商品の仕入れや店舗の運営などの費用を差し引いた残りが利益になります。2026年3月期の当期純利益は14,696百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +118,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 92458000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 515,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +140,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 97447000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 550,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +162,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 102038000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 551,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +184,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 108002000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 565,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +206,109 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 92837000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 566,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1985,
+      "title": "創業",
+      "description": "1985年3月に創業しました。",
+      "significance": "セリアの事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "株式会社山洋エージェンシーを設立",
+      "description": "岐阜県大垣市に株式会社山洋エージェンシーを設立しました。",
+      "significance": "会社としての出発点です。資本金の金額は文章規則により書いていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "100円ショップの1号店を開店",
+      "description": "新潟県十日町市に、100円ショップ「ショップ・ワン・オー・オー」の1号店を開店しました。",
+      "significance": "現在の主力事業である100円ショップの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "商号を株式会社セリアに変更",
+      "description": "商号を株式会社セリアに変更しました。同じ年には、岐阜県大垣市に「Seria 生活良品」の1号店を開店し、海外貿易を行うため中国・上海市に賽利亜（上海）国際貿易有限公司を設立しています。",
+      "significance": "現在の社名と店舗ブランドになりました。社名の「セリア」は、イタリア語で「まじめな」を意味します。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。店頭登録は前年の2003年9月に行っていました。",
+      "significance": "取引所への上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "「Color the days」の1号店を開店",
+      "description": "千葉県八千代市に、新しい店舗ブランド「Color the days」の1号店を開店しました。",
+      "significance": "「Seria」とは別の店舗ブランドの展開を始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "東京証券取引所と大阪証券取引所の統合に伴い、東京証券取引所JASDAQ（スタンダード）に株式を上場しました。",
+      "significance": "上場先が東京証券取引所に移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "lec",
+      "relationship": "supplier",
+      "description": "商品の仕入先の1社です。買掛金の主要な相手先に数えられています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主な資産及び負債の内容】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,11 +316,45 @@
       "publisher": "株式会社セリア",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YH2R.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YH2R",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期3か年経営計画（2026年4月から2029年3月まで。毎年見直しを行うローリング方式）では、「多様化するニーズを捉える商品開発」「戦略的出店によるシェア拡大」「オペレーションの効率化」を経営目標に掲げています。出店については、複数出店案件が見込める企業との関係強化と、北関東・中国・四国など未出店地域の多い地域の重点開拓に取り組むとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "同業他社が100円を超える価格の商品の取扱いを広げるなかで、セリアは100円商品に特化する方針を掲げています。売上高の99.0％を直営店が占め、出店から店舗運営までを自社で担っていることも特徴です。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の経営環境に「同業他社は、100円を超える価格の商品の取扱いを開始、拡充する動きを見せており、当社は100円商品に特化することで、100円商品のシェア獲得の好機と考えております」と印字され、MD&Aの部門別売上高で直営店の構成比が99.0％と印字されている。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "100円ショップ業界は、セリアを含む4社の寡占状態にあると会社は見ています。セリアの店舗数は直営店とFC店を合わせて2,134店で、業界全体の店舗数が8,000店を超えるなかで店舗網を広げています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の経営環境に「100円ショップ業界は、当社を含む4社の寡占状態にあり、その店舗数は日本全体で8,000店を超えております」と印字され、MD&Aに期末店舗数（直営店2,101店、FC店33店、合計2,134店）が印字されている。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

@@ -4,15 +4,123 @@
   "name": "プレス工業",
   "officialName": "プレス工業株式会社",
   "nameEn": "PRESS KOGYO CO.,LTD.",
-  "description": null,
+  "shortNameEn": "PRESS KOGYO",
+  "description": "トラック用フレームやアクスルなどの自動車部品と、建設機械用キャビンなどの部品を製造・販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    },
+    {
+      "industryId": "machinery",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "automotive-parts",
+      "name": "自動車関連事業",
+      "description": "トラック用フレーム、アクスル、パネルなどの自動車用部分品と自動車金型を製造・販売する事業です。日本、タイ、米国、中国、スウェーデン、インドネシアに生産拠点を持ちます。2026年3月期の外部顧客への売上高は166,558百万円で、連結売上高の8割以上を占める最大の事業です。主要な顧客は[[company:isuzu-motors|いすゞ自動車]]です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "automobile-parts",
+          "name": "自動車用部分品",
+          "description": "フレーム、アクスル、パネルなどの自動車用部分品です。フレームとアクスルは同社が「コア商品」と位置づける製品です。分類ごとの金額は開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "automobile-dies",
+          "name": "自動車金型",
+          "description": "自動車金型の製造・販売です。分類ごとの金額は開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "construction-machinery-parts",
+      "name": "建設機械関連事業",
+      "description": "油圧ショベル用キャビンなどの建設機械用部分品を製造・販売する事業です。2026年3月期の外部顧客への売上高は32,664百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-business",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業セグメントで、立体駐車装置事業等です。2026年3月期の外部顧客への売上高は2,943百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自動車メーカーや建設機械メーカーから受注した部品を、日本・タイ・米国などのグループ工場で製造し、販売する事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "トラック用フレーム、アクスル、パネルなどの自動車用部分品",
+      "自動車金型",
+      "油圧ショベル用キャビンなどの建設機械用部分品",
+      "立体駐車装置"
+    ],
+    "customers": [
+      "自動車メーカー（いすゞ自動車など）",
+      "建設機械メーカー",
+      "海外の自動車生産会社"
+    ],
+    "revenueSources": [
+      "自動車用部分品と自動車金型の販売代金",
+      "建設機械用部分品の販売代金",
+      "立体駐車装置などの販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "グループの構成",
+        "description": "2026年3月31日現在、当社と子会社19社でグループを構成し、子会社はすべて連結子会社です。連結の従業員数は5,433人です。日本、タイ、米国、中国、スウェーデン、インドネシアに生産拠点を持ちます。"
+      },
+      {
+        "kind": "offering",
+        "title": "提供する製品",
+        "description": "トラック用フレーム、アクスル、パネルなどの自動車用部分品と自動車金型、油圧ショベル用キャビンなどの建設機械用部分品を製造・販売しています。製品の一部は子会社に製造を委託し、子会社から得意先への直接販売も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "顧客",
+        "description": "主な顧客は自動車メーカーと建設機械メーカーです。最大の顧客は[[company:isuzu-motors|いすゞ自動車]]で、2026年3月期の売上高は37,864百万円と、連結売上高の18.7％を占めました。タイのAUTO ALLIANCE (THAILAND) CO.,LTD.向けの売上高も22,193百万円でした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高の動き",
+        "description": "2026年3月期の売上高は202,167百万円で、前期の189,883百万円から6.5％増えました。国内で普通トラック用部品の販売が好調だったことや、油圧ショベル用キャビンの生産が増えたことなどによるものです。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は8,475百万円で、前期の6,080百万円から39.4％増えました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +135,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 103219000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5765,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +155,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 111087000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5628,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +175,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 120444000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5602,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +195,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 127481000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5438,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +215,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 134651000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5433,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +223,149 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1925,
+      "title": "合資会社プレッス作業所を創業",
+      "description": "当社の前身である合資会社プレッス作業所を、東京都品川区で創業しました。",
+      "significance": "当社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1929,
+      "title": "自動車部分品部門に進出",
+      "description": "自動車部分品部門に進出しました。",
+      "significance": "現在の主力である自動車関連事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1934,
+      "title": "株式会社に改組し、プレス工業株式会社と改称",
+      "description": "会社組織を株式会社に改め、プレス工業株式会社と改称しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1937,
+      "title": "本社・工場を川崎市に移転",
+      "description": "本社と工場を川崎市に移転しました。",
+      "significance": "現在の本店も川崎市川崎区にあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "株式を東京証券取引所市場第一部に上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "自動車組立部門に進出",
+      "description": "自動車組立部門に進出しました。",
+      "significance": "部品の製造にとどまらず、組立まで手がけるようになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "建設機械用部分品部門に進出",
+      "description": "建設機械用部分品部門に進出しました。",
+      "significance": "現在の建設機械関連事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "米国に合弁会社PK U.S.A.,INC.を設立",
+      "description": "合弁会社PK U.S.A.,INC.を米国に設立しました。",
+      "significance": "海外生産拠点づくりの始まりです。同社は現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "タイの合弁会社THAI SUMMIT PKKに出資",
+      "description": "タイ王国の合弁会社THAI SUMMIT PKK CO.,LTD.に出資しました。",
+      "significance": "タイは現在、地域別の売上高で日本に次ぐ規模の生産・販売地域になっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "中国に合弁会社を設立",
+      "description": "合弁会社である蘇州普美駕駛室有限公司を中華人民共和国に設立しました。",
+      "significance": "中国での生産拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "PRESS KOGYO SWEDEN ABを連結子会社化",
+      "description": "PRESS KOGYO SWEDEN ABの株式を追加取得し、連結子会社としました。",
+      "significance": "欧州の生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "インドネシアに子会社を設立",
+      "description": "インドネシア共和国にPT.PK Manufacturing Indonesiaを設立しました。",
+      "significance": "東南アジアの生産拠点を広げました。同社は現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "isuzu-motors",
+      "relationship": "customer",
+      "description": "最大の顧客です。関連当事者情報では主要株主として開示され、2026年3月期の製品の販売額は37,864百万円で、連結売上高の18.7％を占めました。当社グループは同社から部品の仕入も行っています。また同社は大株主でもあり、2026年3月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は10.41％です。当社も同社の株式3,422,125株を、フレーム・アクスル等の営業取引の円滑化のために保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連当事者情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +373,45 @@
       "publisher": "プレス工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGAC.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YGAC",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年度から2028年度までの5か年中期経営計画では、基本方針に「質を追求し、プレゼンスを高める」を掲げ、「コア事業における攻めと挑戦」「電動化に向けたコア商品の進化」「サステナビリティ経営の推進」の3つを骨子として取り組みを進めています。企業スローガンは「製造の先の創造へ。」で、ものづくりを通して人、車、機械を支える力であり続けることをミッションとしています。中期経営計画では、2026年3月期の売上高の目標を2,400億円としていました。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "フレーム、アクスル、建設機械用キャビン、パネルを「コア商品」と位置づけ、現行の生産設備を活用して電動車用の商品も生産できることが強みです。穴あけや成形から塗装までを一貫して行う生産ラインの構築など、技術開発・提案力とものづくり力の追求を掲げています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高202,167百万円のうち、自動車関連事業が166,558百万円と8割以上を占め、建設機械関連事業が32,664百万円、その他が2,943百万円です。地域別では日本が88,043百万円、タイが71,159百万円、米国が20,844百万円、その他が22,120百万円で、海外の売上高が半分を超えています。",
+        "basis": "セグメント情報および【関連情報】の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

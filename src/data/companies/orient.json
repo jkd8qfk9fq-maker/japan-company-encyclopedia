@@ -4,15 +4,310 @@
   "name": "オリエントコーポレーション",
   "officialName": "株式会社オリエントコーポレーション",
   "nameEn": "Orient Corporation",
-  "description": null,
+  "shortNameEn": "Orient Corporation",
+  "description": "「オリコ」のブランドで知られる大手信販会社で、クレジットカード、オートローン、ショッピングクレジットと、金融機関向け保証などの事業を展開しています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "installment-credit",
+      "name": "個品割賦事業",
+      "description": "加盟店で商品の購入やサービスの提供を受けるお客さまに代わり、当社が利用代金を立替払いし、お客さまが分割払い等で支払う仕組みの事業です。主要な商品はオートローン、オートリース及びショッピングクレジットです。2026年3月期の外部顧客に対する営業収益は77,002百万円でした。",
+      "products": [
+        "オートローン",
+        "オートリース",
+        "ショッピングクレジット"
+      ],
+      "customers": [
+        "加盟店で商品やサービスを購入する個人のお客さま"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "auto-loan",
+          "name": "オートローン",
+          "description": "株式会社ＣＡＬ信用保証と株式会社オリコプロダクトファイナンスが担う、自動車購入のための分割払いの仕組みです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "auto-lease",
+          "name": "オートリース",
+          "description": "株式会社オリコオートリースが担っています。2026年3月31日現在、当社はその議決権の65.9％を保有しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "shopping-credit",
+          "name": "ショッピングクレジット",
+          "description": "株式会社オリコプロダクトファイナンスが担う、加盟店での商品購入代金を分割払いにする仕組みです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    },
+    {
+      "id": "card-and-loan",
+      "name": "カード・融資事業",
+      "description": "クレジットカードの発行と融資を行う事業です。当社が単独で発行するプロパーカード、加盟店と提携して発行する提携カード、法人代表者や個人事業主向けのビジネスカードがあり、ショッピングやキャッシングに使われます。融資専用のローンカードの発行や、目的ローン等の無担保融資も行っています。2026年3月期の外部顧客に対する営業収益は71,612百万円でした。",
+      "products": [
+        "クレジットカード（プロパーカード）",
+        "提携カード",
+        "ビジネスカード",
+        "ローンカード",
+        "目的ローン"
+      ],
+      "customers": [
+        "個人のお客さま",
+        "法人代表者・個人事業主"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "credit-card",
+          "name": "クレジットカード",
+          "description": "信用調査で承認したお客さまにクレジットカードを発行し、当社が加盟店に利用代金を立替払いする仕組みです。支払いは1回払い、分割払い、リボルビング払いから選べます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "loan",
+          "name": "融資",
+          "description": "融資専用のローンカードの発行や、目的ローン等の無担保融資を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "bank-guarantee",
+      "name": "銀行保証事業",
+      "description": "お客さまが提携金融機関に対して借入の申し込みを行うにあたり、当社が信用調査を実施し、承認したお客さまの債務を保証する事業です。2026年3月期の外部顧客に対する営業収益は37,610百万円でした。",
+      "products": [
+        "個人融資保証"
+      ],
+      "customers": [
+        "提携金融機関から借入を行う個人のお客さま",
+        "提携金融機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "settlement-and-guarantee",
+      "name": "決済・保証事業",
+      "description": "企業間の売掛金の決済保証、家賃の決済保証、小口リースの保証、集金代行などを手がける事業です。2026年3月期の外部顧客に対する営業収益は26,007百万円でした。",
+      "products": [
+        "売掛金決済保証",
+        "家賃決済保証",
+        "集金代行",
+        "小口リース保証"
+      ],
+      "customers": [
+        "加盟店の企業",
+        "賃貸住宅の入居者",
+        "集金を依頼する加盟店"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "receivables-guarantee",
+          "name": "売掛金決済保証",
+          "description": "事業者間取引における売掛金等について、当社が販売先の信用調査を行い、承認した販売先から集金して加盟店へ支払い、債務を保証する仕組みです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "rent-guarantee",
+          "name": "家賃決済保証",
+          "description": "アパートやマンション等の毎月の賃料について、グループ会社の株式会社オリコフォレントインシュアが信用調査を行い、承認したお客さまの債務を保証する仕組みです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "collection-agency",
+          "name": "集金代行",
+          "description": "加盟店からの依頼に基づき、お客さまから各種費用の徴収・収納代行を行う仕組みです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "small-lease-guarantee",
+          "name": "小口リース保証",
+          "description": "加盟店を通じてリース契約を希望するお客さまについて当社が信用調査を行い、承認したお客さまの債務を保証する仕組みです。リース契約はグループ会社の株式会社オリコビジネスリースが締結しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "overseas",
+      "name": "海外事業",
+      "description": "タイ、フィリピン、インドネシアにおけるオートローン及びこれに関連する事業を行っています。2026年3月期の外部顧客に対する営業収益は12,495百万円でした。",
+      "products": [
+        "オートローン"
+      ],
+      "customers": [
+        "進出国の個人のお客さま"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "thailand",
+          "name": "タイのオートローン事業",
+          "description": "Orico Auto Leasing (Thailand) Ltd.が担っています。2026年3月31日現在、当社はその議決権の100.0％（うち間接保有90.0％）を保有しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "philippines",
+          "name": "フィリピンのオートローン事業",
+          "description": "Orico Auto Finance Philippines Inc.が担っています。2026年3月31日現在、当社はその議決権の100.0％を保有しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "indonesia",
+          "name": "インドネシアのオートローン事業",
+          "description": "PT Orico Balimor Financeが担っています。2026年3月31日現在、当社はその議決権の51.0％を保有しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業セグメントで、サービサー（債権管理回収）等の事業を行っています。2026年3月期の外部顧客に対する営業収益は8,386百万円でした。",
+      "products": [
+        "債権管理回収"
+      ],
+      "customers": [
+        "債権の管理・回収を委託する金融機関等"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "servicer",
+          "name": "債権管理回収（サービサー）",
+          "description": "日本債権回収株式会社とオリファサービス債権回収株式会社が担っています。いずれも当社の100％子会社です（2026年3月31日現在）。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "お客さまの信用調査を行い、カード利用代金の立替払いや分割払い、債務の保証を引き受けることで手数料や保証料を得る、「オリコカード」などのクレジットカードを発行する事業モデルです。",
+    "sourceIds": [
+      "yuho-2026",
+      "wikipedia"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "クレジットカード",
+      "オートローン",
+      "オートリース",
+      "ショッピングクレジット",
+      "家賃決済保証",
+      "売掛金決済保証",
+      "銀行保証",
+      "集金代行",
+      "ローンカード"
+    ],
+    "customers": [
+      "個人のお客さま",
+      "加盟店（小売店・自動車販売店など）",
+      "提携金融機関",
+      "賃貸住宅の入居者"
+    ],
+    "revenueSources": [
+      "分割払いの手数料",
+      "カードショッピング・キャッシングの利息と手数料",
+      "保証料",
+      "集金代行などの役務手数料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "オリエントコーポレーション",
+        "description": "当社と連結子会社18社及び持分法適用会社4社で構成されています（2026年3月31日現在）。2026年3月期の連結の従業員数は6,411人です。株式会社みずほフィナンシャルグループのその他の関係会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "分割払いと保証の金融サービス",
+        "description": "個品割賦（オートローン・オートリース・ショッピングクレジット）、クレジットカードと融資、提携金融機関の個人融資保証、家賃決済保証や売掛金決済保証などの決済・保証、東南アジア3ヵ国でのオートローンを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "個人・加盟店・提携金融機関",
+        "description": "主な顧客は、加盟店で商品やサービスを購入する個人のお客さま、クレジットカード会員、提携金融機関、賃貸住宅の入居者などです。営業収益の9割超は国内の外部顧客からのものです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "手数料と保証料による営業収益",
+        "description": "分割払いの手数料、カードの利息と手数料、保証料などにより営業収益を得ています。2026年3月期の連結営業収益は247,631百万円で、前期の245,270百万円から増えました。決済・保証事業と銀行保証事業の伸長が主な要因です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は12,889百万円で、前期の13,943百万円から減りました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +322,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 216837000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 6084,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +342,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 229775000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 6098,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,12 +362,13 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 245683000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 6729,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "債権の回収を行う保証について、従来は保証残高を信用保証割賦売掛金と信用保証買掛金として連結貸借対照表に計上していましたが、第64期（2024年3月期）から連結貸借対照表に計上せず、偶発債務として注記する方法に変更しました。第62期（2022年3月期）及び第63期（2023年3月期）の総資産と自己資本比率も、遡及適用後の数値で表示されています。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -87,7 +383,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 246559000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 6683,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +403,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 257188000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 6411,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +411,182 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1951,
+      "title": "株式会社オリエントコーポレーションを設立",
+      "description": "当社（株式会社オリエントコーポレーション）の設立年月日は1951年3月15日です。なお、沿革は実質上の存続会社である広島信販株式会社の歴史から記載されています。",
+      "significance": "現在のオリエントコーポレーションの法的な出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "広島信販株式会社を吸収合併し営業を承継",
+      "description": "1974年4月1日を合併期日として、広島信販株式会社の株式の額面変更（500円から50円への変更）のため、同社を吸収合併し、その資産、負債及び権利・義務の一切を引き継いで営業活動を全面的に承継しました。",
+      "significance": "実質上の存続会社である広島信販の事業が、現在の当社に引き継がれました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "株式会社みずほフィナンシャルグループの持分法適用関連会社となる",
+      "description": "2010年9月、当社は株式会社みずほフィナンシャルグループの持分法適用関連会社となりました。",
+      "significance": "みずほグループとの資本関係が明確になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "東京証券取引所市場第一部に復帰",
+      "description": "2011年3月、東京証券取引所市場第一部に復帰しました。",
+      "significance": "市場第一部への復帰を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "株式会社オリコビジネスリースを設立",
+      "description": "2015年4月、小口リースを担う株式会社オリコビジネスリースを設立しました。",
+      "significance": "小口リース保証と一体のリース体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "タイでOrico Auto Leasing (Thailand) Ltd.を設立",
+      "description": "2015年5月、タイでオートローン事業を行うOrico Auto Leasing (Thailand) Ltd.を設立しました。",
+      "significance": "東南アジアでのオートローン事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "家賃保証会社を買収し株式会社オリコフォレントインシュアへ商号変更",
+      "description": "2017年10月、家賃保証会社を買収し、株式会社オリコフォレントインシュアへ商号を変更しました。",
+      "significance": "家賃決済保証事業がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "フィリピンでOrico Auto Finance Philippines Inc.を設立",
+      "description": "2019年9月、フィリピンでオートローン事業を行うOrico Auto Finance Philippines Inc.を設立しました。",
+      "significance": "海外事業が3ヵ国体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "個品割賦事業会社を買収し株式会社オリコプロダクトファイナンスへ商号変更",
+      "description": "個品割賦事業を営む会社を買収し、株式会社オリコプロダクトファイナンスへ商号を変更しました。",
+      "significance": "個品割賦事業の担い手が再編されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "株式会社オリコビジネスリースを完全子会社化",
+      "description": "株式会社オリコビジネスリースが自己株式の取得を行ったことにより、2026年3月期に当社の完全子会社となりました。",
+      "significance": "小口リース事業の体制が当社の完全子会社体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mizuho-financial-group",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】で「その他の関係会社」に区分されている会社です。2026年3月31日現在、当社の議決権の48.8％（間接保有）を保有しています。子会社の株式会社みずほ銀行は当社株式の48.66％を保有する筆頭株主で、当社は売掛金決済保証などで株式会社みずほ銀行との連携を進めています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "aucnet",
+      "relationship": "business-partner",
+      "description": "個品割賦事業におけるオートローン取引の円滑化のため、当社が株式を保有している取引先です（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "keisei-electric-railway",
+      "relationship": "business-partner",
+      "description": "カード・融資事業における提携カード（京成カード）取引等の円滑化のため、当社が株式を保有している提携先です（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yellow-hat",
+      "relationship": "business-partner",
+      "description": "カード・融資事業における提携カード（イエローハットクレジット＆ポイントカード等）取引等の円滑化のため、当社が株式を保有している提携先です（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "estelle-holdings",
+      "relationship": "business-partner",
+      "description": "個品割賦事業におけるショッピングクレジット取引等の円滑化のため、当社が株式を保有している取引先です（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kyodo-printing",
+      "relationship": "business-partner",
+      "description": "カード発券及び印刷関連取引の円滑化のため、当社が株式を保有している取引先です（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "procrea-holdings",
+      "relationship": "business-partner",
+      "description": "銀行保証事業及び財務取引の円滑化のため、当社が株式を保有している金融持株会社です（2026年3月31日現在）。銀行保証事業は、提携金融機関の個人融資を当社が保証する事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-chikuho-bank",
+      "relationship": "business-partner",
+      "description": "銀行保証事業及び財務取引の円滑化のため、当社が株式を保有している銀行です（2026年3月31日現在）。銀行保証事業は、提携金融機関の個人融資を当社が保証する事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +594,52 @@
       "publisher": "株式会社オリエントコーポレーション",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCKH.pdf",
       "publishedAt": "2026-06-17",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YCKH",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「オリエントコーポレーション」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%AA%E3%82%A8%E3%83%B3%E3%83%88%E3%82%B3%E3%83%BC%E3%83%9D%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "パーパス「その夢の、一歩先へ Open the Future with You」のもと、2026年3月期を初年度とする5ヵ年の中期経営計画を進めています。前半の3年間で事業構造改革を早期に完遂して競争優位性のある事業基盤を固め、後半の2年間で成果の刈り取りを進める計画で、5年後の到達点を「オリコならではの金融モデルの確立」としています。強みである与信力（与信・回収・オペレーション）をテクノロジーの力でさらに磨き、新たなソリューションを創出するとしています。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "与信・回収・オペレーションの与信力を強みとし、個品割賦を含む分割払い市場でリーディングカンパニーとしての地位を築いています。決済・保証事業では、株式会社みずほ銀行との連携強化により売掛金決済保証の新規提携社数が拡大しており、みずほグループとの関係を活かした事業展開が進んでいます。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の個人戦略・法人戦略の記載と、MD&Aの決済・保証事業に関する記載",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の連結営業収益247,631百万円のうち、個品割賦事業が77,002百万円、カード・融資事業が71,612百万円と、個人向けの分割払い・カードが中心です。銀行保証事業は37,610百万円と伸長しています。株式会社みずほフィナンシャルグループが議決権の48.8％を間接的に保有するその他の関係会社です（2026年3月31日現在）。",
+        "basis": "セグメント情報（2026年3月期）・【関係会社の状況】",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

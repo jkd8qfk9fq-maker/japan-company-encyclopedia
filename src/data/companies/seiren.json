@@ -4,15 +4,351 @@
   "name": "セーレン",
   "officialName": "セーレン株式会社",
   "nameEn": "SEIREN CO.,LTD.",
-  "description": null,
+  "shortNameEn": "SEIREN",
+  "description": "繊維技術を軸に、車輌資材や衣料、電子材料などを手がけ、国内外のメーカーに届ける会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors"
+    },
+    {
+      "industryId": "electronics"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "vehicle-materials",
+      "name": "車輌資材",
+      "description": "自動車や鉄道車輌の内装材として、シート材やエアバッグ、加飾部品を製造販売しています。2026年3月期の外部顧客への売上高は115,258百万円です。",
+      "products": [
+        "車輌シート材",
+        "エアバッグ",
+        "加飾部品"
+      ],
+      "customers": [
+        "自動車メーカー",
+        "鉄道車輌メーカー"
+      ],
+      "children": [
+        {
+          "id": "vehicle-materials-seat",
+          "name": "シート材",
+          "description": "自動車や鉄道車輌のシート材の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "vehicle-materials-airbag",
+          "name": "エアバッグ",
+          "description": "自動車用エアバッグの製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "vehicle-materials-trim",
+          "name": "加飾部品",
+          "description": "自動車や鉄道車輌の加飾部品の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "high-fashion",
+      "name": "ハイファッション",
+      "description": "各種衣料製品の製造販売と衣料用繊維加工を行います。2026年3月期の外部顧客への売上高は21,324百万円です。",
+      "products": [
+        "衣料製品",
+        "衣料用繊維加工"
+      ],
+      "customers": [
+        "アパレルメーカー"
+      ],
+      "children": [
+        {
+          "id": "high-fashion-apparel",
+          "name": "衣料製品",
+          "description": "各種衣料製品の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "high-fashion-processing",
+          "name": "衣料用繊維加工",
+          "description": "衣料用繊維の加工を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "electronics",
+      "name": "エレクトロニクス",
+      "description": "導電性素材や電子機器、シリコンウェーハの成膜加工、人工衛星などを手がけています。2026年3月期の外部顧客への売上高は13,388百万円です。",
+      "products": [
+        "導電性素材",
+        "工業用ワイピングクロス",
+        "電子機器",
+        "シリコンウェーハの成膜加工",
+        "人工衛星"
+      ],
+      "customers": [
+        "ゲーム機やモバイル端末のメーカー",
+        "半導体メーカー"
+      ],
+      "children": [
+        {
+          "id": "electronics-conductive",
+          "name": "導電性素材",
+          "description": "導電性素材の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "electronics-devices",
+          "name": "電子機器",
+          "description": "各種電子機器の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "electronics-wafer",
+          "name": "シリコンウェーハの成膜加工",
+          "description": "シリコンウェーハの成膜加工やＳＯＩウェーハの製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "electronics-satellite",
+          "name": "人工衛星",
+          "description": "人工衛星及び人工衛星部品の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "environment-living",
+      "name": "環境・生活資材",
+      "description": "建築用資材やインテリア用資材、健康・介護商品、環境・土木資材を手がけています。2026年3月期の外部顧客への売上高は13,284百万円です。",
+      "products": [
+        "建築用資材",
+        "インテリア用資材",
+        "健康・介護商品",
+        "環境・土木資材"
+      ],
+      "customers": [
+        "病院や介護施設",
+        "住宅関連企業"
+      ],
+      "children": [
+        {
+          "id": "environment-living-construction",
+          "name": "建築用資材",
+          "description": "建築用資材の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "environment-living-interior",
+          "name": "インテリア用資材",
+          "description": "インテリア用資材の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "environment-living-healthcare",
+          "name": "健康・介護商品",
+          "description": "健康・介護商品の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "environment-living-civil",
+          "name": "環境・土木資材",
+          "description": "環境・土木資材の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "medical",
+      "name": "メディカル",
+      "description": "医療用資材や化粧品、水処理用資材を手がけています。2026年3月期の外部顧客への売上高は6,676百万円です。",
+      "products": [
+        "医療用資材",
+        "化粧品",
+        "水処理用資材"
+      ],
+      "customers": [
+        "医療・ヘルスケア関連の企業"
+      ],
+      "children": [
+        {
+          "id": "medical-materials",
+          "name": "医療用資材",
+          "description": "医療用資材の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "medical-cosmetics",
+          "name": "化粧品",
+          "description": "化粧品の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "medical-water",
+          "name": "水処理用資材",
+          "description": "水処理用資材の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "包装フィルムや容器類の原料販売、ソフトウエアの開発及び販売、保険代理業、人材派遣事業、不動産賃貸管理事業を行います。2026年3月期の外部顧客への売上高は1,832百万円です。",
+      "products": [
+        "包装フィルム・容器類の原料",
+        "ソフトウエア",
+        "保険代理業",
+        "人材派遣事業",
+        "不動産賃貸管理事業"
+      ],
+      "customers": [
+        "保険の契約者",
+        "人材派遣先の企業",
+        "不動産の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "繊維技術を軸に、車輌資材や衣料、電子材料などを手がけ、国内外のメーカーに届ける会社です。",
+    "products": [
+      "車輌シート材",
+      "エアバッグ",
+      "衣料製品",
+      "導電性素材",
+      "電子機器",
+      "人工衛星",
+      "建築用資材",
+      "医療用資材",
+      "化粧品"
+    ],
+    "customers": [
+      "自動車メーカー",
+      "アパレルメーカー",
+      "ゲーム機やモバイル端末のメーカー",
+      "半導体メーカー",
+      "病院や介護施設"
+    ],
+    "revenueSources": [
+      "車輌資材の販売",
+      "衣料製品の販売",
+      "電子材料・電子機器の販売",
+      "環境・生活資材の販売",
+      "医療用資材の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "繊維技術を軸とするメーカー",
+        "description": "セーレンは、繊維技術を軸に車輌資材や衣料、電子材料などを手がけるメーカーです。"
+      },
+      {
+        "kind": "offering",
+        "title": "車輌シート材や衣料製品、電子機器など",
+        "description": "車輌シート材やエアバッグ、衣料製品、導電性素材や電子機器、人工衛星、建築用資材や医療用資材などを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外のメーカーや医療機関",
+        "description": "製品は、自動車メーカーやアパレルメーカー、ゲーム機やモバイル端末のメーカー、半導体メーカー、病院や介護施設などに届けられます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "車輌資材や衣料製品などの販売",
+        "description": "車輌資材や衣料製品、電子材料などの販売が売上高につながります。2026年3月期の売上高は171,765百万円で、前期比7.6％増です。"
+      },
+      {
+        "kind": "profit",
+        "title": "独自技術と一貫生産体制による収益の確保",
+        "description": "小ロット・短納期・在庫レスの生産体制や独自技術の活用により、収益の確保を目指します。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +363,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 91845000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6341,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +383,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 105785000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6200,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +403,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 124689000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6108,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +423,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 143882000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6228,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +443,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 161787000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6506,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +451,169 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1889,
+      "title": "京越組の設立",
+      "description": "福井市で黒川栄次郎と上田伊八が京越組を設立し、輸出羽二重の精練業を開始しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1911,
+      "title": "福井県精練株式会社の設立",
+      "description": "福井県内の同業16業者が統合し、福井県精練株式会社を設立しました。",
+      "significance": "精練業の統合により事業の基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1923,
+      "title": "福井精練加工株式会社の設立",
+      "description": "福井撚糸染工株式会社、福井県絹紬精練株式会社、福井県精練株式会社など4つの会社が統合し、福井精練加工株式会社を設立しました。",
+      "significance": "現在のセーレンの前身となる会社が生まれました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "大阪証券取引所市場第二部への上場",
+      "description": "大阪証券取引所市場第二部に上場しました。",
+      "significance": "株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "東京でも株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "セーレン株式会社への商号変更と市場第一部指定替",
+      "description": "商号をセーレン株式会社に変更し、東京証券取引所と大阪証券取引所で市場第一部に指定替えされました。",
+      "significance": "現在の社名となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "Seiren U.S.A. Corporationの設立",
+      "description": "米国にSeiren U.S.A. Corporationを設立しました。",
+      "significance": "海外展開の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "Saha Seiren Co., Ltd.の設立",
+      "description": "タイにSaha Seiren Co., Ltd.を設立しました。",
+      "significance": "アジアでの生産体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "世聯汽車内飾（蘇州）有限公司の設立",
+      "description": "中国・蘇州に世聯汽車内飾（蘇州）有限公司を設立しました。",
+      "significance": "中国での車輌内装材の生産が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "ＫＢセーレン株式会社の設立とカネボウ繊維事業の譲受",
+      "description": "ＫＢセーレン株式会社を設立し、同社がカネボウ株式会社の繊維事業の営業を譲り受けました。",
+      "significance": "繊維事業の規模が大きく広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "インドとインドネシアへの進出",
+      "description": "インドにSEIREN INDIA PRIVATE LIMITED、インドネシアにPT. SEIREN INDONESIAを設立しました。",
+      "significance": "新興国での生産体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "セーレンアドバンストマテリアルズ株式会社の子会社化",
+      "description": "ケイ・エス・ティ・ワールド株式会社（現・セーレンアドバンストマテリアルズ株式会社）を子会社化しました。",
+      "significance": "半導体関連のウェーハ事業が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "SEIREN Hungary Kft.の設立",
+      "description": "ハンガリーにSEIREN Hungary Kft.を設立しました。",
+      "significance": "欧州での生産拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "ＮＢセーレン株式会社の連結子会社化",
+      "description": "ユニチカ株式会社から岡崎事業所における繊維事業を承継した新会社の株式を取得し、商号をＮＢセーレン株式会社に変更しました。",
+      "significance": "繊維事業の新たな拠点が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "asahi-kasei",
+      "relationship": "major-shareholder",
+      "description": "旭化成株式会社は、2026年3月31日現在、当社の株式1,624千株（2.76％）を所有する大株主です。セーレンも旭化成の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +621,45 @@
       "publisher": "セーレン株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YH1G.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YH1G",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期事業戦略として「素材から製品化、BtoBからBtoC」を掲げ、付加価値の高い流通ポジションでの販売事業拡大と高収益モデルへの転換に取り組みます。基本戦略は、ＩＴ化・ビジネスモデル転換、非衣料・非繊維化、グローバル化、企業体質の改革の4点です。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "車輌資材事業は2026年3月期の外部顧客への売上高が115,258百万円で、5つの報告セグメントの中で最も大きいです。原糸製造から縫製までの一貫生産体制を持ち、独自のデジタルプロダクションシステム「Viscotecs®」で小ロット・短納期・在庫レスの製造を行います。",
+        "basis": "2026年3月期のセグメント情報と経営方針",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は171,765百万円で、親会社株主に帰属する当期純利益は15,599百万円です。従業員数は6,506人です。",
+        "basis": "2026年3月期の連結経営指標",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

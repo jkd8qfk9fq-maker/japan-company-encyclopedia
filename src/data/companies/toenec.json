@@ -4,7 +4,8 @@
   "name": "トーエネック",
   "officialName": "株式会社トーエネック",
   "nameEn": "TOENEC CORPORATION",
-  "description": null,
+  "shortNameEn": "TOENEC",
+  "description": "中部電力グループの一員として、配電線工事や屋内線工事などの設備工事を手がけ、太陽光発電などのエネルギー事業も行う総合設備企業です。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,8 +16,181 @@
       "market": "プレミア"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "energy",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "facility-works",
+      "name": "設備工事業",
+      "description": "配電線工事、地中線工事、屋内線工事、空調管工事、通信工事を行う、グループの中心事業です。2026年3月期の外部顧客への売上高は254,991百万円でした。[[company:chubu-electric-power|中部電力]]グループから配電設備の新増設工事や修繕工事などを受注しているほか、中国、タイ、フィリピン、インドネシアの子会社も現地で工事を行っています。なお、タイのTOENEC (THAILAND) CO.,LTD.は事業移管を終えて清算手続中です。",
+      "products": [
+        "配電線工事",
+        "地中線工事",
+        "屋内線工事",
+        "空調管工事",
+        "通信工事"
+      ],
+      "customers": [
+        "中部電力グループ",
+        "民間企業",
+        "官公庁"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "distribution-line",
+          "name": "配電線工事",
+          "description": "中部電力パワーグリッドなどから、配電設備の新増設工事や修繕工事などを受注して施工します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "underground-line",
+          "name": "地中線工事",
+          "description": "配電地中線などの地中線工事を施工します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "indoor-line",
+          "name": "屋内線工事",
+          "description": "工場や事務所、商業施設などの電気設備工事を施工します。海外の子会社も、それぞれの国で屋内線工事を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "hvac-piping",
+          "name": "空調管工事",
+          "description": "冷暖房や衛生、水道などの管工事を施工します。子会社の旭シンクロテックも空調管工事を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "telecommunications-works",
+          "name": "通信工事",
+          "description": "電気通信工事や消防施設工事などを施工します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "energy",
+      "name": "エネルギー事業",
+      "description": "FIT太陽光発電事業やPPAサービス、学校空調システムサービス、マンション高圧一括受電サービスなどを行う事業です。2026年3月期の外部顧客への売上高は12,704百万円でした。子会社の合同会社たてしなサンサンファームは、営農型太陽光発電所に係る営農事業として、農産物の生産、加工及び販売を行っています。",
+      "products": [
+        "FIT太陽光発電事業",
+        "PPAサービス",
+        "学校空調システムサービス",
+        "マンション高圧一括受電サービス"
+      ],
+      "customers": [
+        "電力会社",
+        "学校",
+        "マンションの管理組合など"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業で、商品販売や土地建物の賃貸、事務用機器の賃貸、損害保険代理業などを行っています。2026年3月期の外部顧客への売上高は4,771百万円でした。持分法適用関連会社のＰＦＩ豊川宝飯斎場が行っていた豊川市斎場会館のPFI事業は、2026年3月31日に事業契約期間の満了に伴い終了し、今後、清算手続を行う予定です。",
+      "products": [
+        "商品販売",
+        "賃貸リース",
+        "損害保険代理業"
+      ],
+      "customers": [
+        "同業者",
+        "民間企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "電力会社や民間企業などから設備工事を受注して施工し、工事の請負代金を得る事業を中心に、太陽光発電による売電や各種サービスでも収入を得る事業モデルです。",
+    "products": [
+      "配電線工事",
+      "地中線工事",
+      "屋内線工事",
+      "空調管工事",
+      "通信工事",
+      "FIT太陽光発電事業",
+      "PPAサービス",
+      "学校空調システムサービス",
+      "マンション高圧一括受電サービス",
+      "商品販売"
+    ],
+    "customers": [
+      "中部電力グループ（中部電力、中部電力パワーグリッド、中部電力ミライズ）",
+      "民間企業",
+      "官公庁"
+    ],
+    "revenueSources": [
+      "工事請負による完成工事の収入",
+      "太陽光発電による売電収入",
+      "サービス提供による収入",
+      "商品販売による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "トーエネックグループ",
+        "description": "当社と連結子会社8社、持分法適用関連会社4社で構成されています（2026年3月31日現在）。連結の従業員数は6,487人です（2026年3月期）。当社は中部電力の関連会社で、本店は名古屋市中区にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "設備工事の施工とエネルギーサービス",
+        "description": "配電線工事、地中線工事、屋内線工事、空調管工事、通信工事を受注して施工する設備工事業が中心です。中国、タイ、フィリピン、インドネシアの子会社も現地で工事を行っています。エネルギー事業では、FIT太陽光発電事業やPPAサービスなどを行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "中部電力グループと民間企業、官公庁",
+        "description": "主な発注者は中部電力グループ、民間企業、官公庁です。中部電力グループからは配電設備の新増設工事や修繕工事などを継続して受注しており、2026年3月期の中部電力グループへの売上高は89,398百万円で、売上高全体の32.8％を占めました。"
+      },
+      {
+        "kind": "revenue",
+        "title": "工事の完成と売電などで得る収入",
+        "description": "工事を施工し、進捗に応じて収益を計上することで請負代金を得るほか、太陽光発電による売電や商品販売でも収入を得ています。2026年3月期の売上高は272,468百万円で、前期の270,966百万円から0.6％増えました。最も大きい事業は設備工事業です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "中期経営計画2027の基本方針の推進などに取り組んで利益を確保しています。2026年3月期の親会社株主に帰属する当期純利益は17,810百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +205,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 126596000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5938,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +225,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 117193000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6038,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +245,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 131140000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6077,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +265,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 136681000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6416,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +285,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 153170000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6487,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +293,170 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1944,
+      "title": "東海4県の電気工事業者23社の合併で東海電気工事株式会社を設立",
+      "description": "1944年10月、電気工事業整備要綱により、愛知、静岡、三重、岐阜の東海4県に所在した有力電気工事業者23社が合併し、本社を名古屋市に置く東海電気工事株式会社を設立しました。",
+      "significance": "現在のトーエネックの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "建設業法による建設大臣登録を完了",
+      "description": "1949年10月、建設業法による建設大臣登録第128号の登録を完了しました。",
+      "significance": "戦後の建設業制度のもとで事業を続ける体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "管工事の営業を開始",
+      "description": "1961年11月、冷暖房、衛生、水道、その他管工事の営業を開始しました。",
+      "significance": "電気工事に加えて管工事も手がけるようになり、現在の空調管工事につながっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "名古屋証券取引所第二部に上場",
+      "description": "1962年4月、名古屋証券取引所第二部に株式を上場しました。",
+      "significance": "上場会社としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "名古屋・東京・大阪証券取引所第一部に指定",
+      "description": "1972年2月、名古屋、東京、大阪の各証券取引所第一部に指定されました。",
+      "significance": "主要市場の一部上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "電気通信工事、消防施設工事の営業を開始",
+      "description": "1984年6月、電気通信工事、消防施設工事の営業を開始しました。",
+      "significance": "現在の通信工事を含む、工事の幅の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "社名を株式会社トーエネックに変更",
+      "description": "1989年10月、東海電気工事株式会社から株式会社トーエネックに社名を変更しました。",
+      "significance": "現在の社名になりました。トーエネック（TOENEC）は、TOKAI ENERGY ENGINEERING and CONSTRUCTIONの頭文字をつないだ名前です。",
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "株式会社トーエネックサービスが発足",
+      "description": "1994年7月、関係会社の合併により株式会社トーエネックサービスが発足しました。現在の連結子会社です。",
+      "significance": "屋内線工事などの施工や商品販売を担う、グループの中核子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "フィリピンにTOENEC PHILIPPINES INCORPORATEDを設立",
+      "description": "1995年10月、フィリピン共和国に合弁会社TOENEC PHILIPPINES INCORPORATEDを設立しました。現在の連結子会社です。",
+      "significance": "海外子会社による現地工事の展開が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "中国・上海に統一能科建筑安装（上海）有限公司を設立",
+      "description": "2003年9月、中華人民共和国に統一能科建筑安装（上海）有限公司を設立しました。現在の連結子会社です。",
+      "significance": "中国でも屋内線工事や空調管工事などの施工を行う体制ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "株式会社シーテックとの間で事業を譲渡・譲受",
+      "description": "2007年10月、株式会社シーテックへ変電・送電・工務地中線に係る事業を譲渡し、同社より配電地中線に係る事業を譲り受けました。",
+      "significance": "中部電力グループ内での役割分担に沿った事業の組み替えです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "旭シンクロテック株式会社を子会社化",
+      "description": "2016年2月、旭シンクロテック株式会社の株式を取得し、子会社化しました。これにより、同社の子会社であるPT. ASAHI SYNCHROTECH INDONESIAも子会社となりました。",
+      "significance": "空調管工事の体制が広がり、インドネシアにも拠点が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場、名古屋証券取引所プレミア市場へ移行",
+      "description": "2022年4月、東京証券取引所プライム市場と名古屋証券取引所プレミア市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "タイのTri-En TOENEC Co.,Ltd.を子会社化",
+      "description": "2024年5月、タイ王国のTri-En TOENEC Co.,Ltd.の株式を追加取得し、実質支配力基準により子会社化しました。",
+      "significance": "タイでの屋内線工事、空調管工事などの体制が子会社として整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "合同会社たてしなサンサンファームを子会社化",
+      "description": "2024年11月、合同会社たてしなサンサンファームの持分を取得し、子会社化しました。",
+      "significance": "営農型太陽光発電に係る営農事業を行う子会社で、エネルギー事業の一部を担っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "chubu-electric-power",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】で「その他の関係会社」に区分され、2026年3月31日現在、当社の議決権の44.64％を所有しています。当社は中部電力グループ（中部電力、中部電力パワーグリッド、中部電力ミライズ）から配電設備の新増設工事や修繕工事などを受注しており、2026年3月期の中部電力グループへの売上高は89,398百万円でした。役員の転籍は2名です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -128,11 +464,45 @@
       "publisher": "株式会社トーエネック",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIKH.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YIKH",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「トーエネック」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%88%E3%83%BC%E3%82%A8%E3%83%8D%E3%83%83%E3%82%AF",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessStructure: 持分法適用関連会社のＰＦＩ豊川宝飯斎場は、2026年3月31日に豊川市との事業契約期間満了に伴い事業を終了した。今後は清算手続を行う予定とされており、清算の完了時期は有報に記載がない（【事業の内容】・【関係会社の状況】注5）。"
+    ]
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画2027（2023年度から2027年度）を進めています。基本方針は「成長分野への挑戦」「既存事業の深化」「人材投資の更なる拡充」「経営基盤の強化」の4つで、カーボンニュートラルへの取り組み、デジタル化・DXの推進、人材の確保・活躍推進を成長ドライバーと位置づけています。成長が期待されるカーボンニュートラルやDX関連の分野と、首都圏・近畿圏・アジア地域のエリアで戦略的な営業活動を展開し、2027年度の連結売上高3,100億円を数値目標に掲げています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "中部電力グループが最大の顧客であり、配電線工事の受注の多くが中部電力パワーグリッドとの配電関係工事請負契約によるものです。電力インフラの新増設や修繕の需要に継続的に応える施工体制が、受注の安定した基盤になっています。",
+        "basis": "【関連情報】主要な顧客ごとの情報で中部電力グループへの売上高89,398百万円（2026年3月期、全体の32.8％）が開示され、受注方法別比率では配電線工事の93.7％が中部電力パワーグリッドとの配電関係工事請負契約によることが示されている。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

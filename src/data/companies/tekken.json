@@ -4,15 +4,250 @@
   "name": "鉄建建設",
   "officialName": "鉄建建設株式会社",
   "nameEn": "TEKKEN CORPORATION",
-  "description": null,
+  "shortNameEn": "TEKKEN",
+  "description": "土木工事と建築工事を中心に、不動産事業なども手がける総合建設会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "civil",
+      "name": "土木工事",
+      "description": "土木工事の請負並びに調査、企画、測量、設計、監理、マネジメント及びコンサルティングを行っています。2026年3月期の売上高は91,165百万円です。",
+      "products": [
+        "土木工事の請負",
+        "調査",
+        "企画",
+        "測量",
+        "設計",
+        "監理",
+        "マネジメント",
+        "コンサルティング"
+      ],
+      "customers": [
+        "鉄道会社",
+        "官公庁",
+        "民間企業"
+      ],
+      "children": [
+        {
+          "id": "civil-contract",
+          "name": "土木工事の請負",
+          "description": "土木工事の請負を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "civil-consulting",
+          "name": "調査、企画、測量、設計、監理",
+          "description": "土木工事に関する調査、企画、測量、設計、監理を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "building",
+      "name": "建築工事",
+      "description": "建築工事の請負並びに調査、企画、測量、設計、監理、マネジメント及びコンサルティングを行っています。2026年3月期の売上高は83,229百万円です。",
+      "products": [
+        "建築工事の請負",
+        "調査",
+        "企画",
+        "測量",
+        "設計",
+        "監理",
+        "マネジメント",
+        "コンサルティング"
+      ],
+      "customers": [
+        "鉄道会社",
+        "官公庁",
+        "民間企業"
+      ],
+      "children": [
+        {
+          "id": "building-contract",
+          "name": "建築工事の請負",
+          "description": "建築工事の請負を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "building-consulting",
+          "name": "調査、企画、測量、設計、監理",
+          "description": "建築工事に関する調査、企画、測量、設計、監理を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "不動産の売買及び賃貸等の不動産に関する事業全般を行っています。2026年3月期の売上高は5,002百万円です。",
+      "products": [
+        "不動産の売買",
+        "不動産の賃貸"
+      ],
+      "customers": [
+        "不動産の購入者",
+        "不動産の賃借人"
+      ],
+      "children": [
+        {
+          "id": "real-estate-sales",
+          "name": "不動産の売買",
+          "description": "不動産の売買を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-estate-rent",
+          "name": "不動産の賃貸",
+          "description": "不動産の賃貸を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "ancillary",
+      "name": "付帯事業",
+      "description": "主に土木工事及び建築工事に付帯する資機材販売や警備業務等の事業を行っています。2026年3月期の売上高は232百万円です。",
+      "products": [
+        "建設資機材の販売",
+        "警備業務"
+      ],
+      "customers": [
+        "建設工事の現場"
+      ],
+      "children": [
+        {
+          "id": "ancillary-materials",
+          "name": "建設資機材の販売",
+          "description": "土木工事及び建築工事に付帯する資機材の販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ancillary-security",
+          "name": "警備業務",
+          "description": "土木工事及び建築工事に付帯する警備業務を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業で、保険代理店等の事業を含んでいます。2026年3月期の売上高は195百万円です。",
+      "products": [
+        "保険代理店業"
+      ],
+      "customers": [
+        "保険の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "土木工事と建築工事の請負を中心に、調査から設計、監理まで手がけ、不動産の売買や賃貸、資機材の販売なども行っています。",
+    "products": [
+      "土木工事",
+      "建築工事",
+      "不動産の売買",
+      "不動産の賃貸",
+      "建設資機材",
+      "警備業務"
+    ],
+    "customers": [
+      "東日本旅客鉄道株式会社",
+      "官公庁",
+      "民間企業"
+    ],
+    "revenueSources": [
+      "土木工事の完成工事高",
+      "建築工事の完成工事高",
+      "不動産事業の売上高",
+      "付帯事業の売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "会社",
+        "description": "東京都千代田区に本社を置き、子会社10社と関連会社3社でグループを構成しています。1944年に鉄道建設興業株式会社として設立されました。"
+      },
+      {
+        "kind": "offering",
+        "title": "商品",
+        "description": "土木工事と建築工事の請負を中心に、調査、企画、測量、設計、監理、マネジメント及びコンサルティングを行っています。不動産事業と付帯事業も手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "お客様",
+        "description": "鉄道会社や官公庁、民間企業などから工事を受注しています。2026年3月期の完成工事高のうち、東日本旅客鉄道株式会社向けは41,658百万円で、完成工事高総額に対する割合は24.0％です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は179,825百万円で、前連結会計年度と比べて2.9％減少しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "収益の積み上げ",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は5,029百万円で、前連結会計年度と比べて46.7％増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +262,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 63931000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1972,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +282,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 65543000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1963,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +302,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 72131000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1909,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +322,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 70116000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1871,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +342,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 78746000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1837,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +350,313 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1944,
+      "title": "鉄道建設興業株式会社を設立",
+      "description": "陸運輸送力の確保と増強を目的に、鉄道建設興業株式会社として設立されました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "営業種目を土木建築工事に広げる",
+      "description": "営業種目を「土木建築工事の施行並びに測量、設計、監理」及び「工事用資材の製造、販売及び運搬」と改めました。",
+      "significance": "土木建築工事への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "東京証券取引所と大阪証券取引所の市場第一部に上場",
+      "description": "株式を東京、大阪両証券取引所市場第一部に上場しました。",
+      "significance": "市場第一部への指定替えです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "鉄建建設株式会社に商号変更",
+      "description": "商号を「鉄建建設株式会社」に変更し、広島支店を開設しました。",
+      "significance": "現在の商号になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "営業種目の追加と整備",
+      "description": "事業規模の拡大と事業の多角化をはかるため、営業種目の追加、整備を行いました。",
+      "significance": "事業の多角化への取組みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "テッケン興産株式会社とする",
+      "description": "千代田共栄株式会社とパレス不動産株式会社が合併し、テッケン興産株式会社としました。",
+      "significance": "不動産・付帯事業の体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "株式会社ジェイテックを設立",
+      "description": "株式会社ジェイテックを設立しました。",
+      "significance": "土木工事の施工協力体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "大阪証券取引所市場第一部の上場を廃止",
+      "description": "株式会社大阪証券取引所市場第一部の株式上場を廃止しました。",
+      "significance": "東京証券取引所への上場に集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "テッケン興産株式会社を完全子会社とする",
+      "description": "テッケン興産株式会社を完全子会社としました。",
+      "significance": "グループ経営の体制を強めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "東京鉄道支店を開設",
+      "description": "東京鉄道支店を開設しました。",
+      "significance": "鉄道工事の体制を強めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "海外事業部を再編",
+      "description": "海外事業部を再編し、海外事業推進室とインド高速鉄道ＰＪ準備室としました。",
+      "significance": "海外事業の推進体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "鉄建プロパティーズ株式会社を設立",
+      "description": "鉄建プロパティーズ株式会社を設立しました。",
+      "significance": "不動産・事務受託事業の体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "株式を東京証券取引所市場第一部からプライム市場へ移行しました。",
+      "significance": "プライム市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "千葉営業所と横浜営業所を設置",
+      "description": "東関東支店、横浜支店を廃止し、千葉営業所、横浜営業所を設置しました。",
+      "significance": "営業体制の見直しです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "east-japan-railway",
+      "relationship": "other-affiliated-company",
+      "description": "その他の関係会社で、2026年3月31日現在、議決権の19.9％を所有されています。同社の土木工事・建築工事を受注しており、2026年3月期の同社向け完成工事高は41,658百万円で、完成工事高総額に対する割合は24.0％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "central-japan-railway",
+      "relationship": "customer",
+      "description": "建設工事を受注しており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、1,785,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kajima",
+      "relationship": "business-partner",
+      "description": "建設工事の共同企業体の構成員として共同で工事の施工を行っており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、600,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hulic",
+      "relationship": "customer",
+      "description": "建設工事を受注しており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、1,530,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kyushu-railway",
+      "relationship": "customer",
+      "description": "建設工事を受注しており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、533,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "west-japan-railway",
+      "relationship": "customer",
+      "description": "建設工事を受注しており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、419,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-realty-and-development",
+      "relationship": "customer",
+      "description": "建設工事を受注しており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、244,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hankyu-hanshin-holdings",
+      "relationship": "customer",
+      "description": "建設工事を受注しており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、204,994株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "katakura-industries",
+      "relationship": "customer",
+      "description": "建設工事を受注しており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、316,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "meiko-construction",
+      "relationship": "business-partner",
+      "description": "建設工事の共同企業体の構成員として共同で工事の施工を行っており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、340,061株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-densetsu-kogyo",
+      "relationship": "customer",
+      "description": "建設工事を受注しており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、120,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "keisei-electric-railway",
+      "relationship": "customer",
+      "description": "建設工事を受注しており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、363,276株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nankai",
+      "relationship": "customer",
+      "description": "建設工事を受注しており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、100,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "keihan-holdings",
+      "relationship": "customer",
+      "description": "建設工事を受注しており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、72,400株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "keikyu",
+      "relationship": "customer",
+      "description": "建設工事を受注しており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、116,595株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "keio",
+      "relationship": "customer",
+      "description": "建設工事を受注しており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、14,700株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "odakyu-electric-railway",
+      "relationship": "customer",
+      "description": "建設工事を受注しており、良好な取引関係の維持、発展を図るため株式を保有しています。2026年3月31日現在、21,640株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +664,47 @@
       "publisher": "鉄建建設株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGCF.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YGCF",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念として、信用と技術を基本に、安全で良質な社会基盤を創造することを通じて社会の繁栄に貢献し、持続的に成長する企業をめざすことを掲げています。2026年5月8日にパーパス「動き続ける街に、進化し続ける力を」を公表し、2024年度から2028年度を対象とする中期経営計画2028「誇れる企業へ」を推進しています。取組方針は、生産性と利益創出力の回復と強化、成長領域における積極的な投資、人的資本の更なる充実とＥＳＧの推進、資本効率を意識した経営への転換の4つです。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1944年の設立以来の鉄道工事の実績があり、鉄道近接施工で培った技術力を強みにしています。羽田空港アクセス新線の建設や品川駅北口広場の改良、防衛関連工事など、将来への布石となる大規模な案件を手がけています。鉄道工事現場へのＩＣＴ建設機械の導入や自社専用の生成ＡＩの活用など、ＤＸ推進による業務変革にも取り組んでいます。",
+        "basis": "有報の沿革に1944年の設立と鉄道工事の記載があり、MD&Aに羽田空港アクセス新線や品川駅北口広場、防衛関連工事、ＩＣＴ建設機械や生成ＡＩの活用の記載があります。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は179,825百万円で、土木工事が91,165百万円、建築工事が83,229百万円です。地域別の売上高は日本が175,457百万円、アジアが4,367百万円で、従業員数は1,837人です。",
+        "basis": "有報のセグメント情報と地域ごとの情報、従業員の状況の記載によります。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【セグメント情報】"
+      }
+    }
+  }
 }

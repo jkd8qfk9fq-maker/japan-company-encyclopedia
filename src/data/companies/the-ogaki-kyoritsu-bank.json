@@ -4,7 +4,8 @@
   "name": "大垣共立銀行",
   "officialName": "株式会社大垣共立銀行",
   "nameEn": "The Ogaki Kyoritsu Bank, Ltd.",
-  "description": null,
+  "shortNameEn": "OKB",
+  "description": "岐阜県大垣市に本店を置く地方銀行で、預金を貸出や有価証券投資に運用し、地域へ総合金融サービスを提供します。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,8 +16,162 @@
       "market": "プレミア"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "banking",
+      "name": "銀行業",
+      "description": "預金業務、貸出業務、内国・外国為替業務、国債・投資信託・保険の販売業務、社債の受託業務、信託業務などを営んでいます。2026年3月期の外部顧客に対する経常収益は124,110百万円です。",
+      "products": [
+        "預金業務",
+        "貸出業務",
+        "内国為替業務",
+        "外国為替業務",
+        "国債・投資信託・保険の販売業務",
+        "社債の受託業務",
+        "信託業務",
+        "有価証券投資業務"
+      ],
+      "customers": [
+        "地域の個人のお客さま",
+        "地域の中小企業や法人のお客さま"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "lending",
+          "name": "貸出業務",
+          "description": "貸出業務の2026年3月期の外部顧客に対する経常収益は52,838百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "securities-investment",
+          "name": "有価証券投資業務",
+          "description": "有価証券投資業務の2026年3月期の外部顧客に対する経常収益は48,840百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        }
+      ]
+    },
+    {
+      "id": "leasing",
+      "name": "リース業",
+      "description": "共友リース株式会社がリース業務及び割賦販売業務を行っています。2026年3月期の外部顧客に対する経常収益は43,132百万円です。",
+      "products": [
+        "リース業務",
+        "割賦販売業務"
+      ],
+      "customers": [
+        "地域のお客さま"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "credit-guarantee",
+      "name": "信用保証業",
+      "description": "株式会社ＯＫＢ信用保証が信用保証業務を行っています。2026年3月期の外部顧客に対する経常収益は1,576百万円です。",
+      "products": [
+        "信用保証業務"
+      ],
+      "customers": [
+        "地域のお客さま"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "コンピュータ関連業務、証券業務、クレジットカード業務などを行っています。報告セグメントに含まれない区分で、2026年3月期の外部顧客に対する経常収益は7,757百万円です。",
+      "products": [
+        "コンピュータ関連業務",
+        "証券業務",
+        "クレジットカード業務",
+        "シンクタンク業務",
+        "ベンチャーキャピタル業務"
+      ],
+      "customers": [
+        "地域のお客さま"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "岐阜県大垣市に本店を置く地方銀行で、預金を貸出や有価証券投資に運用し、地域へ総合金融サービスを提供します。",
+    "products": [
+      "預金業務",
+      "貸出業務",
+      "内国為替業務",
+      "外国為替業務",
+      "国債・投資信託・保険の販売業務",
+      "社債の受託業務",
+      "信託業務",
+      "リース業務",
+      "信用保証業務",
+      "証券業務",
+      "クレジットカード業務"
+    ],
+    "customers": [
+      "岐阜県や愛知県を中心とする地域の個人のお客さま",
+      "地域の中小企業や法人のお客さま"
+    ],
+    "revenueSources": [
+      "資金運用収益",
+      "役務取引等収益",
+      "その他経常収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "岐阜県の地方銀行",
+        "description": "岐阜県大垣市に本店を置く地方銀行です。本支店122か店と出張所35か店を構えています。"
+      },
+      {
+        "kind": "offering",
+        "title": "預金・貸出と総合金融サービス",
+        "description": "預金や貸出、内国・外国為替、国債・投資信託・保険の販売、社債の受託、信託業務のほか、リースや信用保証、証券、クレジットカードなどの金融サービスを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域の個人や企業へ",
+        "description": "岐阜県や愛知県を中心とする地域の個人のお客さまや、中小企業や法人のお客さまにサービスを届けます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "預金の運用が収益に",
+        "description": "お客さまからお預かりした預金を貸出や有価証券投資に運用し、資金運用収益や役務取引等収益を得ます。2026年3月期の連結経常収益は1,765億76百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "収益から費用を引いた結果",
+        "description": "収益から費用などを差し引いた結果、2026年3月期の親会社株主に帰属する当期純利益は193億82百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +186,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 323287000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 3257,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +206,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 288073000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 3143,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +226,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 338704000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 3023,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +246,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 318525000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2960,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +266,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 364482000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2959,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +274,223 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1896,
+      "title": "株式会社大垣共立銀行の設立",
+      "description": "旧第百二十九国立銀行の業務を継承し、株式会社大垣共立銀行を設立しました。本店を岐阜県大垣市に置きました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "外国為替業務の取扱開始",
+      "description": "外国為替業務の取扱いを開始しました。",
+      "significance": "海外との取引を扱うようになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "名古屋証券取引所市場第二部への上場",
+      "description": "名古屋証券取引所市場第二部に上場しました。",
+      "significance": "株式の上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "東京証券取引所市場第一部への上場",
+      "description": "東京証券取引所市場第一部に上場しました。",
+      "significance": "東京証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "共友リースの子会社化",
+      "description": "共友リース株式会社（旧協栄リース株式会社）を子会社化しました。",
+      "significance": "リース業への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "債券ディーリング業務の開始",
+      "description": "債券ディーリング業務を開始しました。",
+      "significance": "有価証券の売買業務を始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "サンデーバンキング業務の開始",
+      "description": "サンデーバンキング業務（ＣＤ・ＡＴＭの休日稼働）を開始しました。",
+      "significance": "休日にも現金自動設備を使えるようにしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "エブリデーバンキング業務の開始",
+      "description": "エブリデーバンキング業務（ＣＤ・ＡＴＭの年中無休稼働）を開始しました。",
+      "significance": "現金自動設備を年中無休で使えるようにしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "東海信用組合の事業譲受け",
+      "description": "東海信用組合の事業を譲り受けました。",
+      "significance": "営業基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "全国初の年中無休窓口営業の開始",
+      "description": "全国の金融機関で初めてとなる年中無休の窓口営業を、エブリデープラザ岐阜出張所で開始しました。",
+      "significance": "窓口営業の新しい形を全国に先がけて始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "郡上信用組合との合併",
+      "description": "郡上信用組合を合併しました。",
+      "significance": "営業基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "証券仲介業務の取扱開始",
+      "description": "証券仲介業務の取扱いを開始しました。",
+      "significance": "証券の仲介業務を始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "全国初の手のひら認証ＡＴＭの取扱開始",
+      "description": "全国で初めてとなる「手のひら認証ＡＴＭ」の取扱いを開始しました。",
+      "significance": "生体認証によるＡＴＭを全国に先がけて導入しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "信託業務の取扱開始",
+      "description": "信託業務の取扱いを開始しました。",
+      "significance": "信託業務を始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "創立130周年",
+      "description": "2026年3月9日に創立130周年を迎えました。",
+      "significance": "130年の歴史を持つ銀行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営方針、経営環境及び対処すべき課題等】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "matsui-construction",
+      "relationship": "business-partner",
+      "description": "ビジネスマッチング契約先として協力関係にあります。2026年3月31日現在、1,229,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fuyo-general-lease",
+      "relationship": "business-partner",
+      "description": "ビジネスマッチング契約先として協力関係にあります。2026年3月31日現在、192,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daiwa-securities-group",
+      "relationship": "business-partner",
+      "description": "業務提携の一環として、同社グループとの経営戦略上の協力関係にあります。2026年3月31日現在、536,064株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-hyakugo-bank",
+      "relationship": "business-partner",
+      "description": "営業基盤が隣接する同業種で、アライアンス締結などの業務提携により経営戦略上の協力関係にあります。2026年3月31日現在、927,434株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-musashino-bank",
+      "relationship": "business-partner",
+      "description": "営業基盤が異なる同業種で、アライアンスによる業務提携の維持・強化を図っています。2026年3月31日現在、489,900株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tdc-soft",
+      "relationship": "business-partner",
+      "description": "ＩＴ分野での業務提携による協力関係にあります。2026年3月31日現在、192,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "chubu-electric-power",
+      "relationship": "supplier",
+      "description": "子会社である中部電力ミライズ株式会社から電気の直接供給を受け、2026年4月から全量をＣＯ２フリー電気に切り替える予定です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【サステナビリティに関する考え方及び取組】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -128,11 +498,47 @@
       "publisher": "株式会社大垣共立銀行",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YELN.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YELN",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営の基本理念に「地域に愛され、親しまれ、信頼される銀行」を掲げ、長期ビジョン「地域と社員を幸せにするＯＫＢグループ」の実現に向け、中期経営計画「Ａｌｗａｙｓ　～変わらぬ想いで、明日を変える～」（2024年度～2026年度）を進めています。成長戦略、人財戦略、経営基盤強化の3つの基本戦略とＤＸ戦略を推し進めています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "全国で初めてとなる手のひら認証ＡＴＭの取扱いや、全国の金融機関で初めての年中無休の窓口営業など、新しいサービスを早く取り入れてきた歴史があります。岐阜県や愛知県を中心に本支店122か店と出張所35か店の店舗網を持っています。",
+        "basis": "沿革、事業の内容の記載",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【沿革】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "岐阜県大垣市に本店を置く地方銀行で、2026年3月期の連結経常収益は1,765億76百万円、親会社株主に帰属する当期純利益は193億82百万円、従業員数は2,959人です。本邦の外部顧客に対する経常収益が全体の90％を超え、国内を中心に事業を行っています。",
+        "basis": "2026年3月期の主要な経営指標等、セグメント情報の地域ごとの情報",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【セグメント情報】"
+      }
+    }
+  }
 }

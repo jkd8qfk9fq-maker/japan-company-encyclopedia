@@ -1,18 +1,163 @@
 {
   "id": "tokyo-electron-device",
   "code": "2760",
-  "name": "東京エレクトロンデバイス",
+  "name": "東京エレクトロン デバイス",
   "officialName": "東京エレクトロン デバイス株式会社",
   "nameEn": "TOKYO ELECTRON DEVICE LIMITED",
-  "description": null,
+  "shortNameEn": "Tokyo Electron Device",
+  "description": "半導体・電子部品の販売と自社ブランド製品の製造、ネットワーク・ストレージ・セキュリティ製品の販売と保守・監視サービスを行う技術商社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "electronics",
+      "primary": false
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "semiconductor-devices",
+      "name": "半導体及び電子デバイス事業",
+      "description": "半導体製品、ボード・電子部品、ソフトウェア・サービスの販売と、プライベートブランド（PB）製品の製造・販売を行う事業です。東京エレクトロン デバイス長崎が電子機器の開発・設計・製造・販売を担い、アジアと北米の子会社が半導体関連製品の販売・マーケティングを行っています。2026年3月期の外部顧客への売上高は162,543百万円で、2つの報告セグメントのうち最大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "semiconductor-products",
+          "name": "半導体製品",
+          "description": "アナログIC、プロセッサ、ロジックIC、メモリICなどの集積回路です。分類ごとの金額は開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "boards-components",
+          "name": "ボード・電子部品",
+          "description": "ボードや一般電子部品です。分類ごとの金額は開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "software-services",
+          "name": "ソフトウェア・サービス",
+          "description": "組み込みソフトウェアやクラウドサービスです。分類ごとの金額は開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "private-brand",
+          "name": "プライベートブランド（PB）製品",
+          "description": "設計・量産受託サービス、受託製品、ウェーハ検査装置などの自社ブランド製品です。分類ごとの金額は開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "computer-systems",
+      "name": "コンピュータシステム関連事業",
+      "description": "ネットワーク関連製品、ストレージ関連製品、セキュリティ関連製品の販売と、保守・監視サービスを行う事業です。2026年3月期の外部顧客への売上高は41,204百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "storage-network-equipment",
+          "name": "ストレージ・ネットワーク機器等",
+          "description": "ネットワークスイッチやネットワーク負荷分散装置、フラッシュストレージなどの機器の販売です。2026年3月期の売上高は24,466百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "maintenance-monitoring",
+          "name": "保守・監視サービス",
+          "description": "製品保守やセキュリティ監視などのサービスです。2026年3月期の売上高は16,738百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "半導体メーカーなどから集積回路を中心とする半導体製品やIT関連製品を仕入れて販売し、自社ブランド製品の製造・販売と保守・監視サービスも行う事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "半導体製品（アナログIC・プロセッサ・ロジックIC・メモリICなど）",
+      "ボード・電子部品",
+      "ソフトウェア・サービス",
+      "プライベートブランド（PB）製品（設計・量産受託サービス、ウェーハ検査装置など）",
+      "ネットワーク関連製品",
+      "ストレージ関連製品",
+      "セキュリティ関連製品"
+    ],
+    "customers": [
+      "大手エレクトロニクスメーカー",
+      "車載機器・産業機器メーカー",
+      "通信事業者やデータセンター・クラウド事業者"
+    ],
+    "revenueSources": [
+      "半導体製品・ボード・電子部品の販売代金",
+      "プライベートブランド製品の製造・販売代金",
+      "ネットワーク・ストレージ・セキュリティ関連製品の販売代金",
+      "保守・監視サービスの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "グループの構成",
+        "description": "2026年3月31日現在、当社と連結子会社6社、持分法適用関連会社1社で構成されています。連結の従業員数は1,408人です。親会社はなく、東京エレクトロン株式会社がその他の関係会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "提供する製品とサービス",
+        "description": "半導体製品、ボード・電子部品、ソフトウェア・サービスと、設計・量産受託やウェーハ検査装置などのプライベートブランド製品を販売・製造し、ネットワーク・ストレージ・セキュリティ関連製品の販売と保守・監視サービスも提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "顧客",
+        "description": "顧客は主として大手エレクトロニクスメーカーです。車載機器や産業機器のメーカー、通信事業者、データセンター・クラウド事業者にも販売しています。連結売上高の10％以上を占める顧客はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高の動き",
+        "description": "2026年3月期の売上高は203,748百万円で、前期の216,379百万円から5.8％減りました。産業機器向け半導体製品の販売が顧客の在庫調整で減った一方、ストレージ関連製品と保守・監視サービス、セキュリティ関連製品の販売は伸びました。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は7,842百万円で、前期の8,874百万円から11.6％減りました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +172,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32018000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1279,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +192,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 38997000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1318,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +212,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 46190000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1357,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +232,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 49004000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1383,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +252,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 53756000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1408,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +260,148 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1986,
+      "title": "テル管理サービス株式会社を設立",
+      "description": "東京エレクトロン株式会社の子会社で機器のリースを主要業務としていた株式会社テル・データ・システムが、東京都新宿区に当社の前身であるテル管理サービス株式会社を設立し、建物及び建物付属設備の保守管理業務を始めました。",
+      "significance": "当社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "東京エレクトロン デバイス株式会社に社名変更",
+      "description": "社名を東京エレクトロン デバイス株式会社へ変更しました。同時に従来の業務を東京エレクトロングループ他社へ移管し、新たに外国製半導体を中心とする電子部品の販売を始めました。",
+      "significance": "現在の社名と事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "東京エレクトロンから電子部品部門の事業を全て譲受け",
+      "description": "1996年の富士通社製品、1997年のモトローラ社製品の販売事業の譲受けに続き、東京エレクトロン株式会社から電子部品部門に関する事業を全て譲り受けました。",
+      "significance": "半導体・電子部品の販売体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "コンピュータ・ネットワーク事業を承継",
+      "description": "東京エレクトロン株式会社から吸収分割によりコンピュータ・ネットワーク事業を承継しました。",
+      "significance": "現在のコンピュータシステム関連事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "東京エレクトロンがその他の関係会社に変更",
+      "description": "当社株式の売出しにより、東京エレクトロン株式会社が当社の親会社からその他の関係会社になりました。",
+      "significance": "親会社ではなくなった一方、資本関係は続いています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "東京エレクトロン デバイス長崎を連結子会社化",
+      "description": "株式会社アバール長崎（現・東京エレクトロン デバイス長崎株式会社）の株式取得により、同社を連結子会社としました。",
+      "significance": "電子機器の開発・設計・製造を担う国内子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ウェーハ検査装置事業を譲受け",
+      "description": "日本エレクトロセンサリデバイス株式会社からウェーハ検査装置事業を譲り受けました。",
+      "significance": "プライベートブランド事業の製品の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "本社を東京都渋谷区に移転",
+      "description": "本社を神奈川県横浜市神奈川区から東京都渋谷区に移転しました。",
+      "significance": "現在の本社所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社ファーストを吸収合併",
+      "description": "連結子会社だった株式会社ファーストを吸収合併しました。",
+      "significance": "グループの再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tokyo-electron",
+      "relationship": "other-affiliated-company",
+      "description": "その他の関係会社です。有報の【関係会社の状況】に、同社が当社の議決権の33.9％を所有し、その関係内容は土地の賃借・商品の販売であることが印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "aval-data",
+      "relationship": "business-partner",
+      "description": "業務提携先です。有報の特定投資株式に、同社の株式35,000株を保有し、2007年11月に業務提携、2016年8月に資本提携を行い、半導体及び電子デバイス事業・プライベートブランド事業における相互協力関係を継続していることが印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +409,45 @@
       "publisher": "東京エレクトロン デバイス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBV4.pdf",
       "publishedAt": "2026-06-16",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YBV4",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「VISION2030」（2026年3月期から2030年3月期まで）を策定し、ミッションとして「半導体やITを中心とする最先端テクノロジーを通して社会課題に向き合い、期待を超える価値を持つ解決策を提供することで、社会の持続的発展に貢献する」を、VISIONとして「メーカーと技術商社の力で潜在的な社会課題を解決する会社」を掲げています。半導体及び電子デバイス事業では産業機器、車載関連機器、クラウドサービス、OTセキュリティなどの成長マーケットに注力し、コンピュータシステム関連事業ではDXを支えるソリューションとサービスの提供を進め、2030年3月期の売上高300,000～350,000百万円を目指しています。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "インフィニオン テクノロジーズ、テキサス・インスツルメンツ、NXP Semiconductorsとの販売代理店契約に基づく半導体製品の調達力・販売力と、東京エレクトロン デバイス長崎やエンジニアリングセンターが担う開発・製造のメーカー機能を併せ持つことが強みです。",
+        "basis": "【重要な契約等】の販売代理店契約と【事業の内容】の子会社・設備の記載に基づきます。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の連結売上高203,748百万円のうち、半導体及び電子デバイス事業が162,543百万円と約8割を占め、コンピュータシステム関連事業が41,204百万円です。地域別では日本が162,140百万円と大半を占め、中国が14,401百万円、アジアその他が19,688百万円、その他が7,518百万円です。",
+        "basis": "セグメント情報と【関連情報】の地域別売上高の記載に基づきます。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

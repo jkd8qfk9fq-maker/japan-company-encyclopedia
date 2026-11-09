@@ -4,7 +4,8 @@
   "name": "西部ガスホールディングス",
   "officialName": "西部ガスホールディングス株式会社",
   "nameEn": "SAIBU GAS HOLDINGS CO.,LTD.",
-  "description": null,
+  "shortNameEn": "SAIBU GAS HOLDINGS",
+  "description": "福岡・北九州・熊本・長崎を中心に都市ガスを供給し、LPG、電力、不動産も手がける西部ガスグループの持株会社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -14,8 +15,336 @@
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "energy",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "gas",
+      "name": "ガス事業",
+      "description": "都市ガスの製造、供給及び販売を行う事業です。西部瓦斯が福岡・北九州地区で、西部瓦斯熊本、西部瓦斯長崎、西部瓦斯佐世保などが各地域で都市ガスを販売し、ガス機器の販売や内管工事も行います。2026年3月期の外部顧客への売上高は151,133百万円で、グループで最大の事業です。",
+      "products": [
+        "都市ガス",
+        "都市ガス機器",
+        "ガス配管工事",
+        "LNG販売",
+        "リフォーム"
+      ],
+      "customers": [
+        "家庭用のガス利用者",
+        "業務用のガス利用者",
+        "他のガス事業者（卸供給先）"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "city-gas-supply",
+          "name": "都市ガスの供給・販売",
+          "description": "西部瓦斯、西部瓦斯熊本、西部瓦斯長崎、西部瓦斯佐世保、久留米ガス、大牟田瓦斯、筑後ガス圧送が、家庭用・業務用に都市ガスを供給・販売しています。他の事業者への卸供給も行います。",
+          "products": [
+            "都市ガス"
+          ],
+          "customers": [
+            "家庭用のガス利用者",
+            "業務用のガス利用者",
+            "他のガス事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "gas-manufacturing",
+          "name": "ガスの製造",
+          "description": "ひびきエル・エヌ・ジーと九州ガス圧送が、西部瓦斯などからガスの製造を受託しています。原料のLNGは、ひびきLNG基地などで受け入れています。",
+          "products": [
+            "都市ガス（製造受託）"
+          ],
+          "customers": [
+            "西部瓦斯などのグループ会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "gas-appliances",
+          "name": "ガス機器の販売・検針等",
+          "description": "西部ガスリビングがガス機器を販売し、お客さま負担の内管工事も行います。西部ガス・カスタマーサービスが、ガス消費機器の調査、内管検査、ガスメーターの検針、ガス料金の収納を行っています。",
+          "products": [
+            "ガス機器",
+            "内管工事",
+            "検針・料金収納業務"
+          ],
+          "customers": [
+            "ガスを利用する家庭・事業所"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "不動産の分譲・賃貸・管理、住宅建築、宅地開発を行う事業です。エストラストが不動産分譲事業と不動産賃貸事業を行い、九州八重洲が住宅建築や宅地開発を行います。タイではSG ENRICHが住宅建築や不動産の販売を行っています。2026年3月期の外部顧客への売上高は42,006百万円で、グループ第2の事業です。",
+      "products": [
+        "分譲マンション・住宅",
+        "賃貸不動産",
+        "宅地開発"
+      ],
+      "customers": [
+        "住宅の購入者",
+        "不動産の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "real-estate-sales-leasing",
+          "name": "不動産の分譲・賃貸",
+          "description": "エストラストが不動産分譲事業と不動産賃貸事業を行っています。西部ガス都市開発は、当社などに対して不動産賃貸を行っています。",
+          "products": [
+            "分譲不動産",
+            "賃貸不動産"
+          ],
+          "customers": [
+            "住宅の購入者",
+            "不動産の賃借人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "housing-development",
+          "name": "住宅建築・宅地開発",
+          "description": "九州八重洲が住宅建築、宅地開発、不動産の売買を行っています。タイのSG ENRICHは、住宅建築、宅地開発、不動産の販売を行っています。",
+          "products": [
+            "住宅建築",
+            "宅地開発"
+          ],
+          "customers": [
+            "住宅の購入者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "electricity-other-energy",
+      "name": "電力・その他エネルギー事業",
+      "description": "電力の販売、熱供給、太陽光など再生可能エネルギーによる発電などを行う事業です。2026年3月期の外部顧客への売上高は30,621百万円でした。持分法適用関連会社のひびき発電はガス火力発電を行い、ひびき発電所が2026年3月に営業運転を開始しました。",
+      "products": [
+        "電力",
+        "熱供給",
+        "太陽光発電"
+      ],
+      "customers": [
+        "電力の利用者",
+        "熱供給の利用事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "heat-supply",
+          "name": "熱供給・ガス設備の設計施工",
+          "description": "西部ガステクノソリューションが熱供給事業を行い、熱源の一部として西部瓦斯からガスを購入しています。西部瓦斯などのガス設備の設計・施工業務も行います。",
+          "products": [
+            "熱供給",
+            "ガス設備の設計・施工"
+          ],
+          "customers": [
+            "熱供給の利用事業者",
+            "西部瓦斯などのグループ会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "renewable-energy",
+          "name": "再生可能エネルギー発電",
+          "description": "エネ・シードとエネ・シードひびきが、太陽光など再生可能エネルギーによる発電事業を行っています。",
+          "products": [
+            "太陽光発電"
+          ],
+          "customers": [
+            "電力の購入者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "gas-fired-power",
+          "name": "ガス火力発電",
+          "description": "持分法適用関連会社のひびき発電がガス火力発電事業を行い、ひびき発電所は2026年3月に営業運転を開始しました。米国のTSH Birdsboro LLCは、ガス火力発電事業への出資を行っています。",
+          "products": [
+            "ガス火力発電"
+          ],
+          "customers": [
+            "電力の購入者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "lpg",
+      "name": "LPG事業",
+      "description": "西部ガスエネルギーが、LPGとLPG用ガス機器の販売、これに伴う工事の施工を行う事業です。西部瓦斯に対して都市ガス原料用LPGも販売しています。2026年3月期の外部顧客への売上高は21,535百万円でした。",
+      "products": [
+        "LPG",
+        "LPG用ガス機器"
+      ],
+      "customers": [
+        "LPGを利用する家庭・事業所",
+        "西部瓦斯"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "lpg-sales",
+          "name": "LPGの販売",
+          "description": "西部ガスエネルギーがLPGを販売しています。西部瓦斯に対して、都市ガス原料用LPGも販売しています。",
+          "products": [
+            "LPG"
+          ],
+          "customers": [
+            "LPGを利用する家庭・事業所",
+            "西部瓦斯"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "lpg-appliances",
+          "name": "LPG用ガス機器の販売・工事",
+          "description": "西部ガスエネルギーが、LPG用ガス機器の販売と、これに伴う工事の施工を行っています。",
+          "products": [
+            "LPG用ガス機器",
+            "工事の施工"
+          ],
+          "customers": [
+            "LPGを利用する家庭・事業所"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業で、食品販売事業、情報処理事業、飲食店事業などを含みます。投資事業を行うSGインキュベートの各ファンド、情報処理サービスを提供する西部ガス情報システム、飲食店を経営する八仙閣、炭素材や塗料・化成品を製造・販売するエスジーケミカルなどです。2026年3月期の外部顧客への売上高は16,369百万円でした。",
+      "products": [
+        "投資事業",
+        "情報処理サービス",
+        "飲食店",
+        "炭素材・塗料化成品"
+      ],
+      "customers": [
+        "出資先の成長企業",
+        "当社などのグループ会社",
+        "飲食店の利用客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "LNGを原料として都市ガスを製造し、導管で家庭や事業所へ供給・販売するほか、LPG、電力、不動産の事業も行います。",
+    "products": [
+      "都市ガス",
+      "LPG",
+      "電力",
+      "ガス機器",
+      "熱供給",
+      "不動産（分譲・賃貸）"
+    ],
+    "customers": [
+      "家庭用のガス・電力利用者",
+      "業務用・産業用のガス利用者",
+      "他のガス事業者（卸供給先）",
+      "不動産の購入者・賃借人"
+    ],
+    "revenueSources": [
+      "都市ガスの販売収入",
+      "LPGの販売収入",
+      "電力の販売収入",
+      "ガス機器の販売・工事収入",
+      "不動産の分譲・賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "西部ガスグループ",
+        "description": "持株会社の当社と連結子会社45社、持分法適用関連会社5社などで構成されています。本社は福岡市博多区にあり、連結の従業員数は3,725人です（2026年3月期）。"
+      },
+      {
+        "kind": "offering",
+        "title": "都市ガスを中心とするエネルギーと不動産",
+        "description": "都市ガスの製造・供給・販売を中心に、LPG、電力・その他エネルギー、不動産の事業を行っています。原料のLNGはひびきLNG基地などで受け入れ、都市ガスを製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "九州北部の家庭・事業所などが顧客",
+        "description": "顧客は、福岡、北九州、熊本、長崎などを中心とする家庭用・業務用のガス利用者です。売上高の10％以上を占める特定の外部顧客はありません。期末のガス小売お客さま件数は874千件です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "ガスの販売などで得る収入",
+        "description": "収入源は、都市ガスやLPG、電力の販売、不動産の分譲・賃貸などです。2026年3月期の売上高は261,823百万円で、前連結会計年度に比べ2.9％増えました。事業別では、ガス事業が151,133百万円、不動産事業が42,006百万円、電力・その他エネルギー事業が30,621百万円、LPG事業が21,535百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から、LNGなどの原料の購入や、導管をはじめとする供給設備の維持、販売活動などにかかる費用を差し引いた残りが利益になります。2026年3月期の親会社株主に帰属する当期純利益は7,147百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -30,7 +359,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 80721000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3799,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,7 +379,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 93705000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3797,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -70,7 +399,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 105574000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3852,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,12 +419,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 111709000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3840,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号）等を2025年3月期の期首から適用しており、2022年3月期以降の主要な経営指標等は、当該会計基準等を遡及適用した後の数値となっている。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -110,7 +440,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 123331000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3725,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,8 +448,205 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1930,
+      "title": "西部瓦斯を設立",
+      "description": "東邦瓦斯株式会社から福岡、熊本、佐世保、長崎各市の供給区域を分離し、本社を福岡市に置いて西部瓦斯株式会社が設立されました。",
+      "significance": "西部ガスグループの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "九州瓦斯を吸収合併",
+      "description": "供給区域が小倉、門司、八幡、若松、戸畑及び島原の各市に及ぶ九州瓦斯株式会社を吸収合併しました。",
+      "significance": "北九州地区へ供給区域が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "福岡証券取引所に上場",
+      "description": "福岡証券取引所に株式を上場しました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "大阪証券取引所に上場",
+      "description": "大阪証券取引所（現東京証券取引所）に株式を上場しました。",
+      "significance": "全国市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "東京証券取引所に上場",
+      "description": "東京証券取引所に株式を上場しました。",
+      "significance": "東京証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "LNGの導入を開始",
+      "description": "旧北九州工場で、原料としてLNGの導入を開始しました。",
+      "significance": "天然ガスへの転換の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "天然ガス転換を開始",
+      "description": "北九州地区から天然ガス転換を開始しました。",
+      "significance": "供給ガスの高熱量化が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "LNG基地を新設しマレーシアからLNGを導入",
+      "description": "旧福北工場にLNG基地を新設し、マレーシアからLNGの導入を開始しました。",
+      "significance": "LNGの本格導入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "ガスお客さま数が100万戸を突破",
+      "description": "ガスお客さま数が100万戸を突破しました。",
+      "significance": "供給規模の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "全社で天然ガス転換を完了",
+      "description": "長崎地区を最後に、全社で天然ガス転換作業を完了しました。",
+      "significance": "天然ガス転換の完了です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "供給ガスの熱量を変更",
+      "description": "供給ガスの熱量を変更しました。福岡地区・北九州地区は1立方メートル当たり45メガジュール、熊本地区・長崎地区・佐世保地区・島原地区は46メガジュールとしました。",
+      "significance": "現在の熱量への変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "ひびきLNG基地が運用を開始",
+      "description": "ひびきLNG基地が運用を開始しました。",
+      "significance": "LNGの受入・供給拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "持株会社体制へ移行",
+      "description": "西部瓦斯株式会社から西部ガスホールディングス株式会社に商号変更するとともに、西部瓦斯株式会社、西部瓦斯熊本株式会社、西部瓦斯長崎株式会社、西部瓦斯佐世保株式会社に会社分割し、事業を承継しました。",
+      "significance": "現在の持株会社体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "ひびき発電所が営業運転を開始",
+      "description": "ひびき発電所が営業運転を開始しました。",
+      "significance": "ガス火力発電事業の本格化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "strust",
+      "relationship": "subsidiary",
+      "description": "連結子会社で、不動産事業を行っています。2026年3月31日現在の議決権所有割合は51.9％で、同社は有価証券報告書の提出会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "greenland-resort",
+      "relationship": "affiliate",
+      "description": "持分法適用関連会社で、遊園地及びゴルフ場の経営を行っています。2026年3月31日現在の議決権所有割合は24.4％（間接所有9.8％を含みます）で、同社は有価証券報告書の提出会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "marutai",
+      "relationship": "affiliate",
+      "description": "持分法適用関連会社で、即席めんの製造及び販売を行っています。2026年3月31日現在の議決権所有割合は33.5％で、同社は有価証券報告書の提出会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "toho-gas",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の株式の1.69％を保有する大株主の事業会社です。1930年には、同社から福岡、熊本、佐世保、長崎各市の供給区域を分離して西部瓦斯株式会社が設立されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "kubota",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の株式の1.63％を保有する大株主の事業会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -127,11 +654,45 @@
       "publisher": "西部ガスホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE54.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YE54",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2021年11月に「西部ガスグループビジョン2030」を公表し、2030年のありたい姿として「つながりをチカラに未来を変える価値の創造に挑み、持続可能で豊かな社会の実現をリードする」ことを掲げています。2025年3月に発表した中期経営計画「ACT2027」（2025～2027年度）では、ガスと電力を中心とするエネルギー事業の成長の加速と、不動産事業の安定的な収益確保により利益を最大化するとともに、グループ経営管理の高度化による資本効率の向上に取り組みます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "ガスエネルギー事業は福岡・北九州・熊本・長崎など九州北部の供給区域に根差した事業体制をとり、ひびきLNG基地をLNGの受入と国際エネルギー事業の拠点としています。不動産事業は第2の収益の柱と位置付けられ、ガスエネルギー事業との相乗効果を生み出す提案をディベロッパーやハウスメーカーに行っています。",
+        "basis": "MD&Aに、ガスエネルギー事業は「地域に根差した事業体制のもと」で取り組むこと、国際エネルギー事業は「ひびきLNG基地の立地条件の優位性や拡張性を活かし」て実績を積み重ねてきたこと、不動産事業は「第2の収益の柱」と位置付けられることが記載されている。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の中心はガス事業で、2026年3月期の外部顧客への売上高の半分以上を占めます。不動産事業が第2の柱として続き、電力・その他エネルギー事業は電力販売事業や国際エネルギー事業の販売量の増加により前期から大きく伸びました。",
+        "basis": "セグメント注記に2026年3月期の外部顧客への売上高（ガス事業151,133百万円、不動産事業42,006百万円、電力・その他エネルギー事業30,621百万円、LPG事業21,535百万円）が印字され、電力・その他エネルギー事業は前期の22,509百万円から増えている。MD&Aに、電力・その他エネルギー事業の売上高の増加は電力販売事業や国際エネルギー事業における販売量の増加等によるものと記載されている。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

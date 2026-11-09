@@ -4,15 +4,169 @@
   "name": "三信電気",
   "officialName": "三信電気株式会社",
   "nameEn": "SANSHIN ELECTRONICS CO., LTD.",
-  "description": null,
+  "shortNameEn": "SANSHIN ELECTRONICS",
+  "description": "半導体や電子部品を販売し、ネットワークインフラや業務システムを提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "device",
+      "name": "デバイス事業",
+      "description": "エレクトロニクスメーカー向けに半導体や電子部品を販売し、ソフト開発やモジュール開発などの技術サポートを行っています。2026年3月期の売上高は150,217百万円です。",
+      "products": [
+        "システムＬＳＩ",
+        "マイコン",
+        "パワー半導体",
+        "液晶ディスプレイドライバＩＣ",
+        "メモリ",
+        "コネクタ",
+        "コンデンサ",
+        "液晶パネル",
+        "モジュール"
+      ],
+      "customers": [
+        "エレクトロニクスメーカー"
+      ],
+      "children": [
+        {
+          "id": "semiconductor",
+          "name": "半導体",
+          "description": "システムＬＳＩ、マイコン、パワー半導体、液晶ディスプレイドライバＩＣ、メモリなどの半導体を販売します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "electronic-components",
+          "name": "電子部品",
+          "description": "コネクタ、コンデンサ、液晶パネル、モジュールなどの電子部品を販売します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "solution",
+      "name": "ソリューション事業",
+      "description": "クラウドサービスを利用したネットワークインフラやセキュリティ製品を、お客様の環境に最適化したオファリングで設計・構築から運用・保守まで一貫して提供します。2026年3月期の売上高は22,148百万円です。",
+      "products": [
+        "ネットワークインフラ",
+        "セキュリティ製品",
+        "基幹系業務システム",
+        "人事・給与・会計アプリケーション",
+        "ＡＩ商材・サービス"
+      ],
+      "customers": [
+        "企業",
+        "公共機関"
+      ],
+      "children": [
+        {
+          "id": "network-infrastructure",
+          "name": "ネットワークインフラ",
+          "description": "クラウドサービスを利用したネットワークインフラやセキュリティ製品を提供します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "business-systems",
+          "name": "業務システム",
+          "description": "販売・生産管理をはじめとした基幹系業務システムや、人事・給与・会計等のアプリケーションを提供します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "半導体や電子部品を販売し、ネットワークインフラや業務システムを提供する会社です。",
+    "products": [
+      "システムＬＳＩ",
+      "マイコン",
+      "パワー半導体",
+      "液晶ディスプレイドライバＩＣ",
+      "メモリ",
+      "コネクタ",
+      "コンデンサ",
+      "液晶パネル",
+      "モジュール",
+      "ネットワークインフラ",
+      "セキュリティ製品",
+      "基幹系業務システム",
+      "人事・給与・会計アプリケーション",
+      "ＡＩ商材・サービス"
+    ],
+    "customers": [
+      "エレクトロニクスメーカー",
+      "企業",
+      "公共機関"
+    ],
+    "revenueSources": [
+      "半導体・電子部品の販売",
+      "技術サポート",
+      "ネットワークインフラの設計・構築・運用・保守",
+      "業務システムの提供"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "半導体・電子部品の商社",
+        "description": "三信電気は、半導体や電子部品を販売し、ネットワークインフラや業務システムを提供する会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "半導体・電子部品とネットワーク・業務システム",
+        "description": "半導体や電子部品の販売に加え、ソフト開発やモジュール開発の技術サポート、ネットワークインフラやセキュリティ製品、業務システムを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "エレクトロニクスメーカーと企業、公共機関",
+        "description": "商品やサービスは、エレクトロニクスメーカーや、デジタル化を進める企業、公共機関に届けられます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "商品の販売とサービスの提供による売上高",
+        "description": "半導体・電子部品の販売と、ネットワークインフラや業務システムの提供が売上高につながります。2026年3月期の売上高は172,366百万円で、前期比9.5％増です。"
+      },
+      {
+        "kind": "profit",
+        "title": "商社機能と技術サポートによる成長",
+        "description": "仕入先との関係や技術サポート、国内外の販売網を生かし、売上高の成長につなげます。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +181,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 30683000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 579,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +201,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 34252000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 567,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +221,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 38373000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 584,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +241,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 40551000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 616,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +261,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 45995000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 642,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +269,241 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1951,
+      "title": "三信電気の設立",
+      "description": "三信電気株式会社を設立しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "大阪営業所の設置",
+      "description": "大阪営業所（現在の大阪支店）を設置しました。",
+      "significance": "関西での営業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "台湾現地法人の設立",
+      "description": "台湾・台北に現地法人松栄電気股份有限公司（現在の台湾三信電気股份有限公司）を設立しました。",
+      "significance": "海外展開が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "香港現地法人の設立",
+      "description": "香港に現地法人SANSHIN ELECTRONICS (HONG KONG) CO., LTD.を設立しました。",
+      "significance": "海外での販売体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "シンガポール現地法人の設立",
+      "description": "シンガポールに現地法人SANSHIN ELECTRONICS SINGAPORE (PTE) LTD.を設立しました。",
+      "significance": "東南アジアでの販売体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式の公開が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "米国現地法人の設立",
+      "description": "米国・カリフォルニア州に現地法人SANSHIN ELECTRONICS CORPORATIONを設立しました。",
+      "significance": "北米での販売体制が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "日本情報機器の吸収合併",
+      "description": "日本情報機器株式会社を吸収合併しました。",
+      "significance": "事業基盤が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "東京証券取引所市場第一部への指定替え",
+      "description": "東京証券取引所市場第一部に指定替えしました。",
+      "significance": "上場市場が上がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "タイ現地法人の設立",
+      "description": "タイ・バンコクに現地法人SANSHIN ELECTRONICS (THAILAND) CO., LTD.を設立しました。",
+      "significance": "タイでの販売体制が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "上海現地法人の設立",
+      "description": "中国・上海に現地法人三信国際貿易（上海）有限公司を設立しました。",
+      "significance": "中国での販売体制が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "韓国現地法人の設立",
+      "description": "韓国・ソウルに現地法人SANSHIN ELECTRONICS KOREA CO., LTD.を設立しました。",
+      "significance": "韓国での販売体制が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "ＴＡＫＵＭＩの子会社化",
+      "description": "株式会社ＴＡＫＵＭＩを子会社化しました。",
+      "significance": "開発・受託開発の事業が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "上場市場が変わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "子会社の吸収合併",
+      "description": "三信ネットワークサービス株式会社および株式会社三信メディア・ソリューションズを吸収合併しました。",
+      "significance": "グループの体制が整理されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nintendo",
+      "relationship": "customer",
+      "description": "デバイス事業の主要な顧客です。2026年3月期の売上高は29,752百万円で、連結売上高の17.3％を占めます。重要な得意先として、2026年3月31日現在、10,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yokogawa-electric",
+      "relationship": "customer",
+      "description": "重要な得意先として、2026年3月31日現在、158,515株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nec",
+      "relationship": "supplier",
+      "description": "重要な仕入先として、2026年3月31日現在、147,155株を保有しています。サーバ等電子機器やネットワーク周辺機器などの販売特約店契約を締結しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "king-jim",
+      "relationship": "customer",
+      "description": "重要な得意先として、2026年3月31日現在、376,100株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nikkiso",
+      "relationship": "customer",
+      "description": "重要な得意先として、2026年3月31日現在、106,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "riken-keiki",
+      "relationship": "customer",
+      "description": "重要な得意先として、2026年3月31日現在、35,200株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-seiki",
+      "relationship": "customer",
+      "description": "重要な得意先として、2026年3月31日現在、36,300株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "japan-aviation-electronics-industry",
+      "relationship": "supplier",
+      "description": "重要な仕入先として、2026年3月31日現在、30,325株を保有しています。コネクタ等電子部品の販売店契約を締結しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shinko-shoji",
+      "relationship": "major-shareholder",
+      "description": "大株主です。2026年3月31日現在、802千株を保有し、発行済株式（自己株式を除く）の総数に対する割合は6.50％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +511,50 @@
       "publisher": "三信電気株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCKF.pdf",
       "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YCKF",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年4月22日の取締役会で本社の仮移転を決議し、2026年6月5日に定期建物賃貸借契約を締結しました。移転予定先は東京都港区高輪三丁目25番29号のAve.Takanawaで、移転時期は2027年9月（予定）です。本社ビル（東京都港区芝四丁目4番12号）の建て直しのための仮移転で、定款上の本店所在地の変更はありません。"
+    ]
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "存在意義は「テクノロジーの新しい可能性を探究し、人々の豊かな暮らしと社会の発展に貢献します」です。目指す姿は「人と技術と英知を磨き、お客様の課題解決のベストパートナーとして選ばれる企業」です。2027年3月期を最終年度とするＶ76中期経営計画を策定し、事業の持続的成長と資本効率の向上に取り組んでいます。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "デバイス事業では顧客ニーズの理解力やデザインイン能力、調達・受給調整力、グローバルな販売網が強みです。ソリューション事業では、設計・構築から運用・保守までを一貫して提供するワンストップの提案力が強みです。",
+        "basis": "経営方針と人材戦略に記載の競争優位の源泉",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は172,366百万円で、前期比9.5％増です。親会社株主に帰属する当期純利益は4,955百万円で、同40.7％増です。地域別の売上高は日本76,522百万円、中国45,111百万円、台湾17,384百万円、その他アジア31,585百万円、北米1,390百万円です。従業員数は642人です。",
+        "basis": "2026年3月期のセグメント情報と連結経営指標",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【セグメント情報】"
+      }
+    }
+  }
 }

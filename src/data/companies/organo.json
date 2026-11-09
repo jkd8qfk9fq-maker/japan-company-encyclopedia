@@ -4,15 +4,184 @@
   "name": "オルガノ",
   "officialName": "オルガノ株式会社",
   "nameEn": "ORGANO CORPORATION",
-  "description": null,
+  "shortNameEn": "ORGANO",
+  "description": "半導体工場や発電所などに純水・超純水をつくる設備と水処理薬品を届け、保守も手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "chemicals",
+      "primary": false
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "water-treatment-engineering",
+      "name": "水処理エンジニアリング事業",
+      "description": "純水・超純水製造設備や用水処理設備、排水処理・排水回収設備の製造販売と、消耗品交換やメンテナンス、運転管理などのソリューションを手がけています。2026年3月期の売上高は151,961百万円です。",
+      "products": [
+        "純水・超純水製造設備",
+        "用水処理設備",
+        "排水処理・排水回収設備",
+        "有価物回収設備",
+        "プロセス関連設備",
+        "消耗品交換",
+        "メンテナンス",
+        "運転管理",
+        "水処理加工受託"
+      ],
+      "customers": [
+        "電子産業の企業",
+        "一般産業の企業",
+        "社会インフラ事業者"
+      ],
+      "children": [
+        {
+          "id": "plant",
+          "name": "プラント事業",
+          "description": "純水・超純水製造設備、用水処理設備、排水処理・排水回収設備、有価物回収設備、プロセス関連設備の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "solution",
+          "name": "ソリューション事業",
+          "description": "消耗品交換、メンテナンス、運転管理、改造工事、水処理加工受託、包括メンテナンスを行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "functional-products",
+      "name": "機能商品事業",
+      "description": "水処理薬品や標準型の純水・超純水製造装置、フィルタ機能材、食品素材・食品添加剤の製造販売を行っています。2026年3月期の売上高は25,693百万円です。",
+      "products": [
+        "ＲＯ水処理薬品",
+        "排水処理薬品",
+        "冷却水処理薬品",
+        "洗浄薬品",
+        "ボイラ水処理薬品",
+        "純水・超純水製造装置",
+        "フィルタ機能材",
+        "食品素材",
+        "食品添加剤"
+      ],
+      "customers": [
+        "電子産業の企業",
+        "医療・研究機関",
+        "食品メーカー"
+      ],
+      "children": [
+        {
+          "id": "water-treatment-chemicals",
+          "name": "水処理薬品事業",
+          "description": "ＲＯ水処理薬品、排水処理薬品、冷却水処理薬品、洗浄薬品、ボイラ水処理薬品の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "standard-equipment",
+          "name": "標準型機器・機能材事業",
+          "description": "標準型の純水・超純水製造装置やフィルタ、機能材（分離精製材）の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "food",
+          "name": "食品事業",
+          "description": "食品素材や食品添加剤の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "半導体工場や発電所などに純水・超純水をつくる設備と水処理薬品を届け、保守も手がける会社です。",
+    "products": [
+      "純水・超純水製造設備",
+      "用水処理設備",
+      "排水処理・排水回収設備",
+      "水処理薬品",
+      "標準型純水・超純水製造装置",
+      "フィルタ機能材",
+      "食品素材",
+      "食品添加剤"
+    ],
+    "customers": [
+      "電子産業の企業",
+      "一般産業の企業",
+      "社会インフラ事業者"
+    ],
+    "revenueSources": [
+      "プラント事業の設備の販売",
+      "ソリューション事業の保守・メンテナンスなどのサービスの提供",
+      "水処理薬品の販売",
+      "標準型機器・機能材の販売",
+      "食品素材・食品添加剤の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "水処理の会社",
+        "description": "オルガノは、総合水処理エンジニアリング会社として、水処理エンジニアリング事業と機能商品事業を手がけています。"
+      },
+      {
+        "kind": "offering",
+        "title": "純水・超純水の設備と薬品、保守サービス",
+        "description": "純水・超純水製造設備や水処理薬品、標準型の純水製造装置を提供し、消耗品交換やメンテナンス、運転管理も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "電子産業と一般産業、社会インフラ",
+        "description": "設備やサービスは、半導体工場をはじめとする電子産業の企業や、一般産業の企業、電力・上下水などの社会インフラ事業者に届けられます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "設備の販売と継続的なサービス",
+        "description": "プラント事業の設備の販売と、ソリューション事業や水処理薬品の継続的な販売が売上高につながります。2026年3月期の売上高は177,654百万円で、前連結会計年度比8.8％増です。"
+      },
+      {
+        "kind": "profit",
+        "title": "安定した収益基盤づくり",
+        "description": "設備保有型サービスやソリューション事業、機能商品事業を拡大し、収益基盤の安定化に取り組みます。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +196,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 76004000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2476,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +216,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 86371000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2506,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +236,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 102147000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2512,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +256,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 121194000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2660,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +276,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 142962000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2658,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +284,169 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1946,
+      "title": "創業",
+      "description": "1941年に設立された山梨化学工業株式会社を株式会社日本オルガノ商会と商号変更し、イオン交換樹脂の応用と企業化を目的に長野県諏訪市で創業しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第2部への上場",
+      "description": "東京証券取引所市場第2部に上場しました。",
+      "significance": "株式市場への上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "オルガノ株式会社への商号変更",
+      "description": "オルガノ株式会社に商号を変更しました。",
+      "significance": "現在の社名となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "東京証券取引所市場第1部への指定替え",
+      "description": "東京証券取引所市場第1部に指定替えとなりました。",
+      "significance": "上場市場が第1部となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "マレーシアへの進出",
+      "description": "マレーシアにオルガノ(マレーシア)SDN.BHD.（現・オルガノ(アジア)SDN.BHD.）を設立しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "タイへの進出",
+      "description": "タイにオルガノ(タイランド)CO.,LTD.を設立しました。",
+      "significance": "東南アジアでの展開が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "つくば工場の開設",
+      "description": "茨城県つくば市につくば工場を開設しました。",
+      "significance": "生産拠点が拡充されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "オルガノフードテックの設立",
+      "description": "東京都江東区にオルガノローディアフードテクノ株式会社（現・オルガノフードテック株式会社）を設立しました。",
+      "significance": "食品事業の基盤となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "中国への進出",
+      "description": "中国にオルガノ（蘇州）水処理有限公司を設立しました。",
+      "significance": "中国での事業基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "開発センターの開設",
+      "description": "神奈川県相模原市に開発センターを開設しました。",
+      "significance": "技術開発の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "インドネシアへの進出",
+      "description": "PT Lautan Luas Tbkとの合弁により、インドネシアにPTラウタン・オルガノ・ウォーターを設立しました。",
+      "significance": "インドネシアでの事業基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "完全子会社7社の吸収合併",
+      "description": "完全子会社7社（オルガノ北海道株式会社、オルガノ東北株式会社、オルガノ東京株式会社、オルガノ中部株式会社、オルガノ関西株式会社、オルガノ九州株式会社、オルガノ山下薬品株式会社）を吸収合併しました。",
+      "significance": "国内の販売体制が統合されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "アメリカへの進出",
+      "description": "アメリカにオルガノUSA,Inc.を設立しました。",
+      "significance": "米国での事業基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "PTラウタン・オルガノ・ウォーター株式の一部譲渡",
+      "description": "PTラウタン・オルガノ・ウォーターの株式を一部譲渡しました。",
+      "significance": "インドネシアの合弁会社の持ち分が変わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tosoh",
+      "relationship": "parent",
+      "description": "東ソー株式会社は、当社の親会社で、2026年3月31日現在、当社の議決権の44.47％を所有しています。当社は東ソーから水処理薬品の原材料の一部などを仕入れるとともに、同社に各種水処理装置及び関連薬品を販売しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +454,45 @@
       "publisher": "オルガノ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YK07.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YK07",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念は「オルガノは水で培った先端技術を駆使して未来をつくる産業と社会基盤の発展に貢献するパートナー企業としてあり続けます」です。中長期経営計画“ORGANO 2030”では、2030年度の売上高2,600億円を目指し、先端半導体市場での事業機会に対応するため、グローバルでのエンジニアリング体制を拡充し、コア技術の深化と新たな価値の創出を目指した技術開発を加速します。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "水処理エンジニアリング事業の売上高は151,961百万円で、全体の85.5％を占めます。台湾、米国、欧州で大型の半導体向けプロジェクトを受注し、2026年3月期の地域別売上高は日本が111,128百万円、台湾が44,220百万円です。設備保有型サービスやメンテナンスなどのソリューション事業も好調に推移しています。",
+        "basis": "2026年3月期のセグメント別売上高と地域別売上高、MD&Aの受注・売上の説明",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は177,654百万円で、前連結会計年度比8.8％増となり、過去最高となりました。従業員数は2,658人です。主要な顧客であるTaiwan Semiconductor Manufacturing Company, Ltd.への売上高は44,818百万円で、売上高の25.2％を占めます。",
+        "basis": "2026年3月期の連結経営指標と主要な顧客ごとの情報",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

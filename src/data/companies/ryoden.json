@@ -4,15 +4,117 @@
   "name": "RYODEN",
   "officialName": "株式会社RYODEN",
   "nameEn": "RYODEN CORPORATION",
-  "description": null,
+  "shortNameEn": "RYODEN",
+  "description": "三菱電機製品を中心にFA機器・空調機器・半導体などを仕入れ販売し、空調の保守サービスや植物工場も手がける商社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "electronics",
+      "primary": false
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "electronics",
+      "name": "エレクトロニクス事業",
+      "description": "メモリ、マイコン、パワーデバイスなどの半導体や、素材、素形材といったエレクトロニクス品を仕入れて販売する事業です。上海、香港、台湾、韓国、シンガポール、タイ、インド、米国、ドイツなどに置く海外子会社が各地で販売しています。2026年３月期の外部顧客への売上高は117,471百万円で、連結売上高の半分以上を占めます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "fa-systems",
+      "name": "FAシステム事業",
+      "description": "サーボシステム、インバータ、NC装置などのFAシステム品を仕入れて販売する事業です。国内では連結子会社の双和テクニカル株式会社が、海外では上海、タイ、マレーシア、米国などの子会社が販売しています。2026年３月期の外部顧客への売上高は50,023百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "building-systems",
+      "name": "冷熱ビルシステム事業",
+      "description": "パッケージエアコン、チリングユニット、冷凍機、エレベーターなどの冷熱ビルシステム品を仕入れて販売する事業です。連結子会社の株式会社テクノフォートが空調機器の保守・サービスを担い、海外ではインドネシア、タイ、ベトナム、メキシコなどの子会社が販売しています。2026年３月期の外部顧客への売上高は36,779百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "x-tech",
+      "name": "X-Tech事業",
+      "description": "映像・画像情報システム、メディカルファシリティ、植物工場システムなどを扱う事業です。連結子会社のブロックファーム合同会社が植物工場野菜の生産・販売を行い、株式会社ファームシップが植物工場野菜の卸売りや植物工場の企画コンサルティングを行っています。2026年３月期の外部顧客への売上高は8,496百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "三菱電機をはじめとするメーカーのFA機器、空調機器、半導体・電子デバイスなどを仕入れて販売し、保守サービスや植物工場野菜の生産・販売も展開する事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "FAシステム品（サーボシステム、インバータ、NC装置）",
+      "冷熱ビルシステム品（パッケージエアコン、チリングユニット、冷凍機、エレベーター）",
+      "エレクトロニクス品（メモリ、マイコン、パワーデバイス、素材、素形材）",
+      "X-Tech品（映像・画像情報システム、メディカルファシリティ、植物工場システム、植物工場野菜）"
+    ],
+    "customers": [
+      "工場・ビルなどの設備ユーザー",
+      "販売店",
+      "電子機器メーカー",
+      "医療機関"
+    ],
+    "revenueSources": [
+      "FAシステム品・冷熱ビルシステム品・エレクトロニクス品の販売代金",
+      "空調機器の保守・サービスの対価",
+      "植物工場野菜の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "RYODENグループ",
+        "description": "当社と子会社19社、その他の関係会社１社で構成されています。2026年３月31日現在の連結の従業員数は1,555人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "機器と半導体の販売にサービスを付加",
+        "description": "FAシステム事業ではサーボシステムやインバータ、NC装置を、冷熱ビルシステム事業ではパッケージエアコンや冷凍機、エレベーターを、エレクトロニクス事業ではメモリやマイコン、パワーデバイスなどの半導体や素材を販売しています。X-Tech事業では映像・画像情報システムや植物工場システムを扱い、植物工場野菜の生産・販売も行っています。空調機器の保守・サービスは子会社のテクノフォートが担います。"
+      },
+      {
+        "kind": "customer",
+        "title": "工場・ビルから電子機器メーカーまで",
+        "description": "顧客は、メーカーが製造した商品を購入するユーザーや販売店、材料・半製品を購入するメーカーなどです。売上高の10％以上を占める主要な顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "商品の販売による売上高",
+        "description": "2026年３月期の連結売上高は212,772百万円で、前期の215,790百万円から1.4％減りました。エレクトロニクス事業が117,471百万円、FAシステム事業が50,023百万円、冷熱ビルシステム事業が36,779百万円、X-Tech事業が8,496百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は5,275百万円で、前期の4,700百万円から12.2％増えました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +129,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 74766000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1214,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +149,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 79898000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1242,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +169,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 87083000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1360,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +189,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 89213000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1451,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +209,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 94533000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1555,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +217,324 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1947,
+      "title": "株式会社利興商会を設立",
+      "description": "三菱電機株式会社の東部代理店として、同社製のミシン、電気冷蔵庫、ラジオをはじめとする各種電気機械・一般機械類の販売を目的に、東京都千代田区に株式会社利興商会を設立しました。",
+      "significance": "三菱電機の代理店として始まった、グループの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "大興商会と合併",
+      "description": "三菱電機株式会社の西部代理店であった株式会社大興商会と合併し、同社の福岡支店や京都・広島の各出張所を継承しました。",
+      "significance": "東部と西部の三菱電機代理店が一体となり、全国展開の土台ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "菱電商事株式会社に商号変更",
+      "description": "商号を菱電商事株式会社に変更しました。",
+      "significance": "長く使われた旧社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "家電部門を分離",
+      "description": "家庭電気品の営業権を三菱電機株式会社と共同で設立した新販売会社へ逐次譲渡し、家電部門を完全に分離しました。",
+      "significance": "産業用機器を中心とする現在の事業構成への転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "シンガポールに子会社を設立",
+      "description": "シンガポールに子会社RYOSHO TECHNO SINGAPORE PTE LTDを設立しました。",
+      "significance": "海外販売網の拡充が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "米国に子会社を設立",
+      "description": "米国カリフォルニア州に子会社RYOSHO U.S.A., INC.を設立しました。",
+      "significance": "北米での販売体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "上海に子会社を設立",
+      "description": "中国上海市に菱商電子(上海)有限公司を設立しました。",
+      "significance": "中国での販売体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "台湾に子会社を設立",
+      "description": "台湾に子会社台灣菱商股份有限公司を設立しました。",
+      "significance": "アジアの販売網を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "ドイツに子会社を設立",
+      "description": "ドイツに子会社RYOSHO EUROPE GmbHを設立しました。",
+      "significance": "欧州での販売体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ベトナムに子会社を設立",
+      "description": "ベトナムにRYOSHO VIETNAM CO.,LTD.を設立しました。",
+      "significance": "東南アジアの販売網を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "双和テクニカルを子会社化",
+      "description": "双和テクニカル株式会社（広島県広島市）の全株式を取得し、子会社化しました。",
+      "significance": "FAシステム事業の国内体制を強化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "新市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社RYODENに商号変更",
+      "description": "商号を菱電商事株式会社から株式会社RYODENに変更しました。あわせて菱商テクノ株式会社の社名を株式会社テクノフォートに変更しました。",
+      "significance": "創業以来の社名を改めた大きな転換です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "監査等委員会設置会社に移行",
+      "description": "監査等委員会設置会社に移行しました。",
+      "significance": "ガバナンス体制の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "三菱電機保険サービスの株式を譲渡",
+      "description": "三菱電機保険サービス株式会社の全株式を三菱電機株式会社へ譲渡しました。",
+      "significance": "グループ構成の見直しの一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-electric",
+      "relationship": "other-affiliated-company",
+      "description": "その他の関係会社です。2026年３月31日現在、同社が当社の議決権の35.97％を保有しています。当社は同社と販売代理店契約・販売特約店契約を結び、同社の機器製品や半導体製品などを代理店として購入し販売する一方、同社に部材等を販売しています。同社はFAシステム事業・冷熱ビルシステム事業の主要な仕入先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "sanken-electric",
+      "relationship": "supplier",
+      "description": "仕入先です。2018年４月１日から１か年の販売特約店契約（自動更新）を結び、同社の半導体・電子製品を仕入れて販売しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "citizen-watch",
+      "relationship": "customer",
+      "description": "顧客です。特定投資株式として857,000株を保有しています。FAシステム事業における取引先であり、同社グループとの間で三菱電機製NC品を中心に取引しています。同社は2026年３月31日現在、当社の株式の1.92％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "galilei",
+      "relationship": "customer",
+      "description": "顧客です。特定投資株式として351,948株を保有しています。冷熱ビルシステム事業における販売先であり、同社の全国拠点を対象に冷凍機器、空調・照明機器等を納入しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamato",
+      "relationship": "customer",
+      "description": "顧客です。特定投資株式として183,275株を保有しています。冷熱ビルシステム事業における販売先であり、三菱電機製空調設備を納入しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fukuda-denshi",
+      "relationship": "customer",
+      "description": "顧客です。特定投資株式として109,400株を保有しています。エレクトロニクス事業における販売先であり、電子デバイス品を中心に取引しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aiphone",
+      "relationship": "customer",
+      "description": "顧客です。特定投資株式として66,976株を保有しています。エレクトロニクス事業における販売先であり、電子デバイス品のほか空調設備、LED照明等も取引しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takasago-thermal-engineering",
+      "relationship": "customer",
+      "description": "顧客です。特定投資株式として60,190株を保有しています。冷熱ビルシステム事業における販売先であり、空調設備ビジネスを中心に取引しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nitto-kogyo",
+      "relationship": "customer",
+      "description": "顧客です。特定投資株式として15,074株を保有しています。FAシステム事業における販売先であり、FA品を中心に取引しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shizuki-electric",
+      "relationship": "customer",
+      "description": "顧客です。特定投資株式として17,875株を保有しています。FAシステム事業における販売先であり、三菱電機製機器品の取引をしています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "rheon-automatic-machinery",
+      "relationship": "customer",
+      "description": "顧客です。特定投資株式として8,872株を保有しています。FAシステム事業における販売先であり、三菱電機製機器品および機械部品等を中心に取引しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nipro",
+      "relationship": "customer",
+      "description": "顧客です。特定投資株式として6,200株を保有しています。FAシステム事業における販売先であり、三菱電機製FA機器品を医療関連設備向けに納入しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "stanley-electric",
+      "relationship": "customer",
+      "description": "顧客です。特定投資株式として5,300株を保有しています。エレクトロニクス事業における販売先であり、電子デバイス品を中心に取引しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ito-en",
+      "relationship": "customer",
+      "description": "顧客です。特定投資株式として普通株式4,000株と第１種優先株式1,200株を保有しています。冷熱ビルシステム事業における販売先であり、三菱電機製だけでなく海外製の冷蔵ショーケースの取引も行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "dai-dan",
+      "relationship": "customer",
+      "description": "顧客です。特定投資株式として9,690株を保有しています。冷熱ビルシステム事業における販売先であり、空調設備ビジネスを中心に取引しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sanden",
+      "relationship": "business-partner",
+      "description": "取引先です。特定投資株式として4,000株を保有しています。エレクトロニクス事業における取引先であり、電子デバイス製品を中心に取引しています（取引の向きは印字されていません）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +542,45 @@
       "publisher": "株式会社RYODEN",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGNM.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YGNM",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "パーパスとして「人とテクノロジーをつなぐ力で“ワクワク”をカタチにする」を掲げ、ビジョンとして「未来を共創するエクセレントカンパニー」を目指しています。2025年度に始まった中長期経営計画「ONE RYODEN Growth 2029 | 2034」では事業創出会社への変革を進め、2026年度を「収益化・拡大フェーズ」への移行年度と位置づけています。各事業部門の強みを掛け合わせた全社横断的なソリューション提案のため、「SI事業推進室」を新設しました。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1947年に三菱電機の代理店として創業して以来の三菱電機製品の取扱い実績が土台です。三菱電機とは販売代理店契約・販売特約店契約を結び、FAシステム事業と冷熱ビルシステム事業の主要な仕入先である一方、同社に部材等も販売しています。FA機器から空調機器、半導体まで幅広い商品を扱い、保守サービスを担う子会社やアジア・北米・欧州の販売子会社をグループ内に持っています。",
+        "basis": "【沿革】・【関係会社の状況】・【重要な契約等】・【事業の内容】の記載",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年３月期の外部顧客への売上高は、エレクトロニクス事業が117,471百万円と全体の半分以上を占め、FAシステム事業が50,023百万円、冷熱ビルシステム事業が36,779百万円、X-Tech事業が8,496百万円です。顧客の所在地別では日本が162,614百万円と大部分を占め、アジア27,615百万円、北米15,833百万円、欧州5,417百万円が続きます。",
+        "basis": "【セグメント情報】・【関連情報】の記載",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

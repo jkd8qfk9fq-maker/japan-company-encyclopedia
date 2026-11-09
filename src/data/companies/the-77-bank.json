@@ -4,7 +4,8 @@
   "name": "七十七銀行",
   "officialName": "株式会社七十七銀行",
   "nameEn": "The 77 Bank，Ltd.",
-  "description": null,
+  "shortNameEn": "The 77 Bank",
+  "description": "宮城県仙台市に本店を置く地方銀行で、銀行業務を中心に、リースやクレジットカード、証券などの金融サービスをグループで提供しています。",
   "listings": [
     {
       "exchange": "tse",
@@ -14,8 +15,115 @@
       "exchange": "sse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "banking",
+      "name": "銀行業務",
+      "description": "当行が、預金業務、貸出業務、商品有価証券売買業務、有価証券投資業務、内国為替業務、外国為替業務のほか、社債受託業務、代理業務、債務の保証、国債等公共債・投資信託・保険商品の窓口販売、信託業務などを行っている事業です。当行グループの報告セグメントは銀行業務のみです。グループは当行と子会社19社で構成され、2026年3月期の連結経常収益は211,208百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "securities-investment",
+          "name": "有価証券投資業務",
+          "description": "株式や国債、地方債、社債などの有価証券への投資から収益を得る業務です。2026年3月期の外部顧客に対する経常収益は85,897百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "lending",
+          "name": "貸出業務",
+          "description": "中小企業向け貸出や住宅ローンを中心とする個人向け貸出、地方公共団体向け貸出などから収益を得る業務です。2026年3月期の外部顧客に対する経常収益は79,034百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other-services",
+          "name": "その他",
+          "description": "為替や窓口販売、信託業務など、貸出業務・有価証券投資業務・リース業務以外のサービスから収益を得る業務です。2026年3月期の外部顧客に対する経常収益は33,771百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "leasing",
+          "name": "リース業務",
+          "description": "連結子会社の七十七リース株式会社が行っているリース業務です。2026年3月期の外部顧客に対する経常収益は12,505百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "宮城県を中心とする地域の法人や個人、地方公共団体を顧客に、預金・貸出・為替などの銀行業務を行い、グループ会社がリースや証券などの金融サービスを担う事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "預金",
+      "貸出",
+      "内国為替・外国為替",
+      "有価証券投資",
+      "信託業務",
+      "リース",
+      "クレジットカード",
+      "信用保証"
+    ],
+    "customers": [
+      "宮城県を中心とする地域の法人",
+      "個人",
+      "地方公共団体"
+    ],
+    "revenueSources": [
+      "資金運用収益（貸出金利息や有価証券利息配当金）",
+      "役務取引等収益",
+      "信託報酬"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "七十七銀行グループ",
+        "description": "当行と子会社19社で構成される金融グループです。2026年3月期の連結の従業員数は2,456人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "銀行業務とグループの金融サービス",
+        "description": "預金、貸出、為替、有価証券投資、信託業務などの銀行業務に加え、グループ会社がリース、クレジットカード、証券、信用保証、コンサルティングなどの金融サービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域の法人・個人・地方公共団体",
+        "description": "宮城県を中心とする地域の法人や個人、地方公共団体が顧客です。本店のある仙台市内をはじめ、宮城県内に多くの店舗を構えています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "資金運用収益を中心とする経常収益",
+        "description": "貸出金利息や有価証券利息配当金などの資金運用収益を中心に経常収益を得ています。2026年3月期の連結経常収益は211,208百万円で、貸出金利息及び有価証券利息配当金の増加等により資金運用収益が増加したことなどから、前期の171,553百万円から増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "預金利息などの資金調達費用や営業経費、与信関係費用を差し引いた残りが利益になります。2026年3月期の親会社株主に帰属する当期純利益は54,007百万円で、前期の39,270百万円から増えました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -30,7 +138,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 513316000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2754,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,7 +158,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 504487000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2653,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -70,7 +178,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 601700000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2587,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,7 +198,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 573945000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2537,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,7 +218,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 691904000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2456,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,8 +226,176 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1932,
+      "title": "七十七銀行・東北実業銀行・五城銀行の合併により設立",
+      "description": "仙台市に本店を置く七十七銀行、東北実業銀行、五城銀行の3行が合併し、現在の株式会社七十七銀行が設立されました。",
+      "significance": "現在の七十七銀行の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "株式を上場",
+      "description": "株式を東京証券取引所市場第二部と札幌証券取引所に上場しました。",
+      "significance": "上場企業になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "東証一部上場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "七十七リースを設立",
+      "description": "リース業務を行う七十七リース株式会社を設立しました。",
+      "significance": "グループでリース業務を始めた子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "七十七信用保証を設立",
+      "description": "信用保証業務を行う七十七信用保証株式会社を設立しました。",
+      "significance": "住宅ローンなどの保証を担うグループ会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "七十七カードを設立",
+      "description": "クレジットカード業務を行う株式会社七十七カードを設立しました。",
+      "significance": "グループのカード事業の担い手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "七十七キャピタルと七十七証券設立準備を設立",
+      "description": "投資業務を行う七十七キャピタル株式会社と、証券子会社の準備会社である七十七証券設立準備株式会社を設立しました。",
+      "significance": "投資と証券の分野にグループで本格進出する布石となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "七十七証券が開業",
+      "description": "七十七証券設立準備株式会社を七十七証券株式会社に商号変更し、第一種金融商品取引業に登録しました。",
+      "significance": "グループに証券会社が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "七十七リサーチ＆コンサルティングを設立",
+      "description": "調査研究業務とコンサルティング業務を行う七十七リサーチ＆コンサルティング株式会社を設立しました。",
+      "significance": "地域へのコンサルティング機能を担う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "七十七パートナーズを設立",
+      "description": "ファンド運営などを行う七十七パートナーズ株式会社を設立しました。",
+      "significance": "地域企業の事業承継や成長支援を担う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場再編に伴い、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "信託業務を開始",
+      "description": "当行本体で信託業務を開始しました。",
+      "significance": "銀行本体の機能が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "シンガポールにコンサルティング子会社を設立",
+      "description": "非連結子会社の77 NEXT CONSULTING PTE. LTD.を設立しました。",
+      "significance": "海外でのコンサルティング拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tohoku-electric-power",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在の【大株主の状況】に載る事業会社で、発行済株式（自己株式を除く）の2.26％（1,695千株）を保有する大株主です。【関係会社の状況】の4区分には当たらず、関係は大株主としての資本関係です。当行も東北電力の株式6,468,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "jimoto-holdings",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に「業務上の連携等を通じた経営戦略上の協力関係ならびに取引関係の維持・強化」と印字されている金融グループです。当行は同社の株式を128,700株保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-yamagata-bank",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に「業務上の連携等を通じた経営戦略上の協力関係ならびに取引関係の維持・強化」と印字されている地方銀行です。当行は同行の株式を10,850株保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "seven-bank",
+      "relationship": "business-partner",
+      "description": "当行の店舗外現金自動設備について、株式会社セブン銀行、株式会社イーネット及び株式会社ローソン銀行との提携による設置分があることが【主要な設備の状況】に印字されている提携先の銀行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主要な設備の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -127,11 +403,45 @@
       "publisher": "株式会社七十七銀行",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YAM0.pdf",
       "publishedAt": "2026-06-15",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YAM0",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "行是として「地域の繁栄を願い、地域社会に奉仕する」という理念を掲げ、10年間の経営計画「『Vision 2030』（R.V.）～地域を豊かにするリーディングカンパニー～」のもと、顧客満足度ナンバーワン戦略、生産性倍増戦略、地域成長戦略、企業文化改革戦略の4つの基本戦略に取り組んでいます。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "仙台市に本店を置き、宮城県内を中心に店舗網を持つ地域金融機関です。銀行本体の預金・貸出・為替などの業務に、グループ会社のリース、証券、クレジットカード、信用保証、コンサルティングなどを組み合わせ、顧客の課題解決を支援する体制を持っています。",
+        "basis": "【事業の内容】・【主要な設備の状況】の記載",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期のサービス別の経常収益は、有価証券投資業務が85,897百万円、貸出業務が79,034百万円、その他が33,771百万円、リース業務が12,505百万円です。本邦の外部顧客に対する経常収益が連結経常収益の90％を超えており、国内、とりわけ宮城県を中心とする営業基盤です。帝国データバンクの調査では、宮城県内のメインバンク比率は2025年度で55％でした。",
+        "basis": "【セグメント情報】・【経営方針、経営環境及び対処すべき課題等】の記載",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

@@ -4,15 +4,124 @@
   "name": "セブン銀行",
   "officialName": "株式会社セブン銀行",
   "nameEn": "Seven Bank, Ltd.",
-  "description": null,
+  "shortNameEn": "Seven Bank",
+  "description": "セブン銀行は、セブン‐イレブン等の店舗に設置したATMのネットワークを中核に、口座サービスやクレジットカード・電子マネー、海外でのATM事業を展開する銀行です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "domestic-banking",
+      "name": "国内事業（銀行業その他）",
+      "description": "セブン‐イレブン等の店舗をはじめ、空港や駅、金融機関の店舗などにATMを設置し、多くの国内金融機関等と提携して、原則24時間365日稼働するATMネットワークを通じてATMサービスを提供する事業です。口座を持つお客さま向けに、普通預金や定期預金、ローンサービス、海外送金サービス、デビットサービスなどの口座サービスも提供しています。2026年3月末現在のATM設置台数は28,536台、提携金融機関等は696先です。2026年3月期の外部顧客に対する経常収益は145,846百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "atm-platform",
+          "name": "ATMプラットフォーム事業",
+          "description": "提携金融機関等のお客さまが当社のATMで出金、入金、残高照会などを行えるようにする事業で、当社の中核事業です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "account-services",
+          "name": "口座サービス",
+          "description": "当社に口座を持つお客さまを対象に、普通預金や定期預金、ローンサービス、海外送金サービス、デビットサービスなどを提供する事業です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "overseas",
+      "name": "海外事業",
+      "description": "米国、インドネシア、フィリピン、マレーシアの4か国において、それぞれ現地の連結子会社がATMサービスを展開する事業です。米国ではセブン‐イレブン店舗等にATMを設置しています。2026年3月期の外部顧客に対する経常収益は43,602百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "credit-card-e-money",
+      "name": "クレジットカード・電子マネー事業",
+      "description": "連結子会社の株式会社セブン・カードサービスが、クレジットカード事業及び電子マネー事業を中心とするノンバンク事業等を展開する事業です。2026年3月期の外部顧客に対する経常収益は30,577百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "セブン‐イレブン等の店舗や空港・駅などに設置したATMを多くの金融機関等に開放して手数料を得るATMプラットフォーム事業を中核に、口座サービスや海外ATM事業を組み合わせた事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "ATMサービス",
+      "普通預金・定期預金",
+      "ローンサービス",
+      "海外送金サービス",
+      "デビットサービス",
+      "クレジットカード",
+      "電子マネー「nanaco」"
+    ],
+    "customers": [
+      "ATMを利用する個人のお客さま",
+      "提携金融機関等",
+      "当社に口座を持つお客さま",
+      "クレジットカード・電子マネーの会員"
+    ],
+    "revenueSources": [
+      "ATM受入手数料",
+      "クレジットカード営業収入",
+      "電子マネー営業収入",
+      "資金運用収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "セブン銀行グループ",
+        "description": "当社と連結子会社9社の計10社で構成される金融グループです。2026年3月期の連結の従業員数は1,393人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ATMを軸にした金融サービス",
+        "description": "セブン‐イレブン等の店舗や空港・駅などに設置したATMを通じたサービスを中心に、預金やローン、海外送金などの口座サービス、クレジットカードや電子マネー、海外4か国でのATMサービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "提携金融機関等と個人のお客さま",
+        "description": "ATMは提携する多くの金融機関等のお客さまが利用し、2026年3月末現在の提携金融機関等は696先、ATM設置台数は28,536台です。口座を持つ個人のお客さまにもサービスを提供しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "ATM手数料を中心とする経常収益",
+        "description": "提携金融機関等から受け取るATM受入手数料が主要な収益源です。2026年3月期の連結経常収益は220,025百万円で、前期の214,408百万円から増えました。ATMの総利用件数が増えたことが主な背景です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は13,476百万円で、前期の18,221百万円から減りました。クレジットカード事業を推進する過程で発生した減損損失を計上したことが主な理由です。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +136,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 244113000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 911,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +156,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 254242000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1016,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +176,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 275856000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1301,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +196,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 282489000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1398,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +216,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 286265000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1393,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +224,205 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2001,
+      "title": "アイワイバンク銀行として設立し営業開始",
+      "description": "銀行業の予備免許を取得して「株式会社アイワイバンク銀行」を設立し、銀行営業免許を取得して営業を開始しました。",
+      "significance": "現在のセブン銀行の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "セブン銀行に社名変更",
+      "description": "社名を「株式会社アイワイバンク銀行」から「株式会社セブン銀行」に変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "47都道府県へのATM展開を完了",
+      "description": "全都道府県にATMを展開し、全国で使えるATMネットワークが整いました。",
+      "significance": "ATM網が全国規模になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "ジャスダック証券取引所に株式を上場しました（2012年4月に上場廃止）。",
+      "significance": "株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "個人向けローンサービス開始",
+      "description": "個人のお客さま向けのローンサービスを開始しました。",
+      "significance": "口座を持つお客さま向けのサービスが広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "海外送金サービス開始",
+      "description": "海外送金サービスを開始しました。",
+      "significance": "外国人居住者を含む個人のお客さま向けサービスが広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "上場市場が東証第一部に移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "米国のFCTIを子会社化",
+      "description": "米国にてFinancial Consulting & Trading International, Inc.（現 FCTI, Inc.）の全発行済株式を取得して子会社化しました。",
+      "significance": "海外でのATM事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "インドネシアに合弁会社を設立",
+      "description": "インドネシアにて合弁会社PT. ABADI TAMBAH MULIA INTERNASIONAL（子会社）を設立しました。",
+      "significance": "アジアでのATM事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "フィリピンに子会社を設立",
+      "description": "フィリピンにてPito AxM Platform, Inc.（子会社）を設立しました。",
+      "significance": "海外ATM事業の展開国が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "新しい市場区分のもとでの上場が続いています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "セブン・カードサービスを子会社化",
+      "description": "株式会社セブン・カードサービスを子会社化しました。",
+      "significance": "クレジットカード・電子マネー事業がグループに入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "セブン＆アイ・ホールディングスがその他の関係会社に異動",
+      "description": "株式会社セブン＆アイ・ホールディングスが当社の親会社からその他の関係会社に異動しました。",
+      "significance": "親会社が不在となり、資本関係の位置づけが変わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "伊藤忠商事と資本業務提携を締結",
+      "description": "伊藤忠商事株式会社との間で資本業務提携契約を締結し、同社はその他の関係会社に異動しました。",
+      "significance": "新たな大株主との提携関係ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "ファミリーマートとATM設置契約を締結",
+      "description": "株式会社ファミリーマートとATM設置契約を締結しました。全国のファミリーマート店舗へのATM設置は2026年初夏より順次開始し、4年程度で約16,000台の設置を行う予定です。",
+      "significance": "セブン‐イレブン以外のコンビニチェーンへのATM展開が始まります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "seven-and-i-holdings",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】で「その他の関係会社」とされている会社です。2025年6月に当社の親会社からその他の関係会社に異動しました。2026年3月31日現在、議決権の33.40％を間接的に保有されています。当社との間には預金取引関係があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "itochu",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】で「その他の関係会社」とされている総合商社です。2025年9月に当社との間で資本業務提携契約を締結し、同年10月に第三者割当による自己株式の処分の払込が完了して、同年12月にその他の関係会社に異動しました。2026年3月31日現在、議決権の20.43％を保有されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "alsok",
+      "relationship": "supplier",
+      "description": "ATMサービスの提供における重要取引先で、当社との間に業務委託関係があります。AIによる現金予測やコスト管理の効率化、取引先紹介などの協働事例もある戦略的な事業パートナーです。当社は同社の株式を650,000株保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "caulis",
+      "relationship": "business-partner",
+      "description": "当社および業界横断でのATM・金融サービス事業のセキュリティや不正防止技術の面で協業している提携先です。当社は同社の株式を58,300株保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nomura-research-institute",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在の【大株主の状況】に載る事業会社で、発行済株式（自己株式を除く）の0.85％を保有する大株主です。【関係会社の状況】の区分には当たらず、関係は大株主としての資本関係です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +430,45 @@
       "publisher": "株式会社セブン銀行",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC1N.pdf",
       "publishedAt": "2026-06-17",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YC1N",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "パーパス（存在意義）として「お客さまの『あったらいいな』を超えて、日常の未来を生みだし続ける。」を掲げ、中核事業であるATMプラットフォーム事業の磨き上げと、事業の多角化を推進しています。2026年5月に公表した3か年見通しでは、2028年度の連結経常収益の目標を2,800億円と設定し、連結経常収益の拡大に重点を置いた施策を進めています。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "セブン‐イレブン等の店舗を中心に全国28,536台のATMを設置し、696先の提携金融機関等のお客さまが原則24時間365日利用できるネットワークを持っています。第4世代ATMに実装した本人認証やスキャニングの機能を使い、金融機関などの手続きをATMで受け付けるサービス「+Connect」の提供も進めています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】・【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の記載",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の経常収益の内訳は、国内事業（銀行業その他）が145,846百万円と全体の約3分の2を占め、海外事業が43,602百万円、クレジットカード・電子マネー事業が30,577百万円です。サービス別ではATM関連業務の経常収益が159,240百万円と全体の7割以上を占め、ATMを軸とした構成になっています。",
+        "basis": "【セグメント情報】の記載",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }
