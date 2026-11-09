@@ -161,6 +161,23 @@ describe("merging fragments: only needsReview sets the status", () => {
     expect(m.taxonomyGaps.map((g: { kind: string }) => g.kind).sort()).toEqual(["industry", "relationship"]);
   });
 
+  it("keeps the registered entry's transcribed facts when the draft predates them (JCE-038)", async () => {
+    const year = { fiscalYear: "2026年3月期", periodEnd: "2026-03-31", revenue: 1_000_000, sourceIds: ["yuho-2026"] };
+    await writeFile(join(root, "cache/evidence/acme/draft-entry.json"), JSON.stringify({ code: "1000", officialName: "株式会社アクミー", financials: [year] }));
+    const workforce = { fiscalYear: "2026年3月期", asOf: "2026-03-31", employees: 10, averageAnnualSalary: 5_000_000, averageTenureYears: 3, averageTenureMonths: null, sourceIds: ["yuho-2026"] };
+    const segmentRevenue = { fiscalYear: "2026年3月期", periodEnd: "2026-03-31", label: "外部顧客への売上高", items: [{ businessId: "steel", amount: 1_000_000 }], sourceIds: ["yuho-2026"] };
+    await mkdir(join(root, "src/data/companies"), { recursive: true });
+    await writeFile(join(root, "src/data/companies/acme.json"), JSON.stringify({ id: "acme", workforce, segmentRevenue }));
+    await writeAll({ businessStructure: { data: { businesses: [{ id: "steel", name: "鉄鋼", description: "鉄鋼。", sourceIds: ["yuho-2026"] }] } } });
+    expect(mergeEntry("acme").entry).toMatchObject({ workforce, segmentRevenue });
+
+    // A business renamed in the update: the old segment table no longer fits and is not kept.
+    await writeAll({ businessStructure: { data: { businesses: [{ id: "metals", name: "金属", description: "金属。", sourceIds: ["yuho-2026"] }] } } });
+    const m = mergeEntry("acme");
+    expect(m.entry.workforce).toEqual(workforce);
+    expect((m.entry as Record<string, unknown>).segmentRevenue).toBeUndefined();
+  });
+
   it("still sets needs-attention from needsReview, exactly as before", async () => {
     await writeAll({ history: { needsReview: ["2021年12月期は合併後1か月分"] } });
     const m = mergeEntry("acme");

@@ -204,6 +204,21 @@ export function mergeEntry(companyId) {
   if (draft.regionalRevenue) entry.regionalRevenue = draft.regionalRevenue;
   const segments = newest && segmentRevenueBlock(draft.segmentFacts, entry.businesses, newest, newest.sourceIds[0]);
   if (segments) entry.segmentRevenue = segments;
+  // A draft from a pack built before these existed has none of them, and a promotion or an explanation update would
+  // then drop what the backfill (backfill-value-chain.mjs) already gave the registered entry. Kept while they still
+  // fit: their year is in the table, and every business they name is still there.
+  const registeredPath = join(process.cwd(), "src/data/companies", `${companyId}.json`);
+  if (existsSync(registeredPath)) {
+    const registered = JSON.parse(readFileSync(registeredPath, "utf8"));
+    const years = new Set(entry.financials.map((f) => f.fiscalYear));
+    const ids = new Set(entry.businesses.map((b) => b.id));
+    for (const key of ["workforce", "segmentRevenue", "regionalRevenue"]) {
+      const kept = registered[key];
+      if (entry[key] || !kept || !years.has(kept.fiscalYear)) continue;
+      if (key === "segmentRevenue" && !kept.items.every((i) => ids.has(i.businessId))) continue;
+      entry[key] = kept;
+    }
+  }
 
   // A company whose fiscal year end changed inside the five-year window has year labels the pack
   // could not date correctly (evidence-pack.mjs detectFiscalYearChange). Whatever the agents
