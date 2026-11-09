@@ -627,7 +627,12 @@ salary and tenure**, **implement the diagram and the pipeline support** now.
   use the same functions; agents write only `businessModel.suppliers`, checked by prose-policy in the repair loop.
   Existing entries are filled by a hand-started job of the one EDINET workflow (`backfill_workforce` input,
   `backfill-value-chain.mjs`, pull request into the branch it runs on); no new workflow and no second detector.
-- **Not done in this session:** filling the new fields. EDINET is not reachable from the cloud session, so no
-  existing entry has suppliers, segment or regional revenue, or workforce yet; the diagram draws from the existing
-  `businesses` / `customers` for every published entry, and the new parts appear as entries are registered or
-  refreshed. No comparison page was built (JCE-017's "no compare tool" stands until asked).
+- **Filled (2026-11-09, backfill run of the EDINET workflow, merged by hand because the repository does not let
+  Actions open pull requests):** of 618 published entries, 605 have 従業員の状況, 417 segment revenue, 50 regional
+  revenue. The rest are left out by the checks, not approximated: segments whose names match no business, US GAAP
+  filers (no tags), eight segment tables wider than the revenue line they would sit beside (第一生命, retailers and
+  banks whose segments include other income), regional tables that are omitted (domestic ≥ 90%), transposed
+  (味の素) or two-level. **Suppliers** are filled only by the writing agent, at registration or an explanation update.
+- **Kept through every later write:** refresh-financials replaces all three with the newest filing's; merge-fragments
+  keeps a registered entry's while its year and businesses still fit (a draft from an older pack has none).
+- No comparison page was built (JCE-017's "no compare tool" stands until asked).
