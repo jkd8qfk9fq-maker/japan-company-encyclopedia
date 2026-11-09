@@ -193,6 +193,9 @@ export function regionalRevenueFromText(text, revenueYen) {
     .filter((r) => r.values.length === numbers(totalBlob[1]).length && !/^[自至年月日期]+$/.test(r.region))
     .filter((r) => !/^[(（]?うち/.test(r.region));
   if (rows.length < 2 || total === undefined) return null;
+  // A region printed twice (「その他」 under アジア and under 米州) is a two-level table read flat: the amounts may add
+  // up, but which その他 is which is lost. No table rather than an ambiguous one.
+  if (new Set(rows.map((r) => r.region)).size !== rows.length) return null;
   const current = rows.map((r) => ({ region: r.region, amount: /** @type {number} */ (r.values.at(-1)) }));
   const sum = current.reduce((s, r) => s + r.amount, 0);
   if (Math.abs(sum - total) > rows.length) return null; // each figure is rounded to the unit: one unit per row

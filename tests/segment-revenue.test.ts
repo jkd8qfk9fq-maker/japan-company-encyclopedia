@@ -127,6 +127,11 @@ describe("regionalRevenueFromText", () => {
     expect(regionalRevenueFromText(aisin, 4_896_104_000_000)).toBeNull();
   });
 
+  it("refuses a two-level table read flat (a region name printed twice)", () => {
+    const twoLevel = "地域ごとの情報(単位:百万円)日本600アジア中国100その他50米州米国200その他50合計1,000";
+    expect(regionalRevenueFromText(twoLevel, 1_000_000_000)).toBeNull();
+  });
+
   it("returns nothing when the note omits the table", () => {
     expect(regionalRevenueFromText("本邦の外部顧客への売上高が連結損益計算書の売上高の90％を超えるため、地域ごとの情報の記載を省略しております。", 1_000_000_000)).toBeNull();
   });
