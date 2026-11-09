@@ -202,6 +202,8 @@ jobs:
       - name: Verify the whole repository
         run: |
           npx vitest run tests/data-integrity.test.ts
+          # next-env.d.ts (image imports, route types) is generated, not committed; without it tsc fails on every photo.
+          npx next typegen
           npx tsc --noEmit
 
       - name: Refuse changes outside the data this job may write
@@ -281,6 +283,13 @@ jobs:
 
       - run: npm ci
 
+      - name: Restore the EDINET cache
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache/edinet
+          key: edinet-cache-backfill-${{ github.run_id }}
+          restore-keys: edinet-cache-
+
       - name: Probe
         if: env.PROBE != ''
         run: node scripts/pipeline/backfill-value-chain.mjs --probe "$PROBE"
@@ -294,9 +303,11 @@ jobs:
       - name: Check the result
         if: env.TIER != ''
         run: |
+          npx next typegen
           npx tsc --noEmit -p .
           npx vitest run tests/data-integrity.test.ts
-          outside=$(git status --porcelain | grep -v ' src/data/companies/' || true)
+          # Tracked files only: the EDINET downloads under .cache/ are untracked and never committed.
+          outside=$(git status --porcelain --untracked-files=no | grep -v ' src/data/companies/' || true)
           if [ -n "$outside" ]; then
             echo "::error::changes outside the allowed data: $outside"
             exit 1
@@ -315,3 +326,11 @@ jobs:
           git commit -m "従業員の状況（提出会社）を追加（JCE-038）" -m "Transcribed by backfill-value-chain.mjs from the filing each entry already cites; checked by the integrity suite and the type check."
           git push origin "HEAD:refs/heads/${branch}"
           gh pr create --base "$BASE" --head "$branch" --title "従業員の状況・事業別/地域別の売上の追加" --body-file out/summary.md
+
+      # Saved even when a later step failed: the documents already fetched are not fetched again.
+      - name: Save the EDINET cache
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .cache/edinet
+          key: edinet-cache-backfill-${{ github.run_id }}
