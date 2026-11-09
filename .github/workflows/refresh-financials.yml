@@ -323,7 +323,7 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git switch -c "$branch"
           git add src/data/companies
-          git commit -m "従業員の状況（提出会社）を追加（JCE-038）" -m "Transcribed by backfill-value-chain.mjs from the filing each entry already cites; checked by the integrity suite and the type check."
+          git commit -m "従業員の状況・事業別/地域別の売上を追加（JCE-038）" -m "Transcribed by backfill-value-chain.mjs from the filing each entry already cites; checked by the integrity suite and the type check."
           git push origin "HEAD:refs/heads/${branch}"
           gh pr create --base "$BASE" --head "$branch" --title "従業員の状況・事業別/地域別の売上の追加" --body-file out/summary.md
 

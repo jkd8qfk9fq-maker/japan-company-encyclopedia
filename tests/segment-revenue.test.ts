@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { mapSegmentsToBusinesses, memberLabels, regionalRevenueFromText, segmentRevenueFacts } from "../scripts/pipeline/segment-revenue.mjs";
+import { mapSegmentsToBusinesses, memberLabels, regionalRevenueFromText, segmentRevenueBlock, segmentRevenueFacts } from "../scripts/pipeline/segment-revenue.mjs";
 
 /**
  * Segment revenue from the XBRL (JCE-038). The rows are shaped as A&Aマテリアル's FY2025 filing tags them (probe of
@@ -153,5 +153,25 @@ describe("segmentRevenueFacts — その他 inside the reportable segments (愛�
     expect(facts.items).toHaveLength(5);
     const mapped = mapSegmentsToBusinesses(facts, new Map(), [{ id: "other", name: "その他" }]);
     expect(mapped).toHaveProperty("problem"); // the four companies have no label here: nothing is guessed
+  });
+});
+
+describe("segmentRevenueBlock", () => {
+  const facts = {
+    label: "外部顧客への売上高",
+    items: [
+      { member: "a", other: false, amount: 8_155_625_000_000, name: "国内保険事業" },
+      { member: "b", other: false, amount: 3_523_786_000_000, name: "海外保険事業" },
+    ],
+  };
+  const businesses = [{ id: "domestic", name: "国内保険事業" }, { id: "overseas", name: "海外保険事業" }];
+  const year = (revenue: number) => ({ fiscalYear: "2026年3月期", periodEnd: "2026-03-31", revenue });
+
+  it("refuses segments that add up to more than the revenue line (第一生命: 経常収益 against 保険料等収入)", () => {
+    expect(segmentRevenueBlock(facts, businesses, year(6_944_066_000_000), "yuho-2026")).toBeNull();
+  });
+
+  it("keeps segments that fit within the revenue line", () => {
+    expect(segmentRevenueBlock(facts, businesses, year(11_700_000_000_000), "yuho-2026")?.items).toHaveLength(2);
   });
 });

@@ -110,7 +110,7 @@ export type BusinessModel = Sourced & {
 export type SegmentRevenue = Sourced & {
   fiscalYear: string;
   periodEnd: string;
-  /** The row the amounts come from, as printed: 「外部顧客への売上高」「外部顧客からの売上収益」. */
+  /** The XBRL item the amounts are tagged with (「外部顧客への売上高」「外部顧客への売上収益」), which measures the revenue line. */
   label: string;
   items: { businessId: string; amount: number }[];
 };

@@ -226,7 +226,7 @@ export function regionalNoteOf(rows) {
  * (`name`), as packs and drafts store it.
  * @param {{ label: string, items: { member: string, other: boolean, amount: number, name?: string | null }[] } | null | undefined} facts
  * @param {{ id: string, name: string, shortName?: string }[]} businesses
- * @param {{ fiscalYear: string, periodEnd: string }} year
+ * @param {{ fiscalYear: string, periodEnd: string, revenue: number | null }} year
  * @param {string} sourceId
  */
 export function segmentRevenueBlock(facts, businesses, year, sourceId) {
@@ -234,6 +234,11 @@ export function segmentRevenueBlock(facts, businesses, year, sourceId) {
   const labels = new Map(facts.items.filter((i) => i.name).map((i) => [i.member, /** @type {string} */ (i.name)]));
   const mapped = mapSegmentsToBusinesses(facts, labels, businesses);
   if ("problem" in mapped) return null;
+  // The segments must measure the revenue line the entry shows. When they add up to more than it, the note is on a
+  // wider basis (第一生命: segments on 経常収益 against 保険料等収入; retailers whose segments add rental income to
+  // 売上高), and printing them as 「外部顧客への売上高」 beside that revenue would mislead: no table.
+  const sum = mapped.items.reduce((total, i) => total + i.amount, 0);
+  if (year.revenue == null || sum > year.revenue + 1_000_000 * mapped.items.length) return null;
   return { fiscalYear: year.fiscalYear, periodEnd: year.periodEnd, label: facts.label, items: mapped.items, sourceIds: [sourceId], locator: "【セグメント情報】" };
 }
 
