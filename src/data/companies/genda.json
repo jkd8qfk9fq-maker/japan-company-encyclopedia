@@ -4,15 +4,190 @@
   "name": "GENDA",
   "officialName": "株式会社GENDA",
   "nameEn": "GENDA Inc.",
-  "description": null,
+  "shortNameEn": "GENDA",
+  "description": "アミューズメント施設やカラオケ施設の運営を中心に、エンターテイメント事業を幅広く手がける純粋持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "グロース"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "entertainment",
+      "primary": true
+    },
+    {
+      "industryId": "media",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "entertainment-platform",
+      "name": "エンタメ・プラットフォーム事業",
+      "description": "アミューズメント施設やカラオケ施設の開発・運営、カラオケ機器の流通、飲食の提供、外貨両替機の運営、フォトスタジオの運営などを行っています。2026年1月期の外部顧客への売上高は156,451百万円です。",
+      "products": [
+        "アミューズメント施設の運営",
+        "カラオケ施設の運営",
+        "カラオケ機器の流通",
+        "飲食の提供",
+        "外貨両替機の運営",
+        "フォトスタジオの運営"
+      ],
+      "customers": [
+        "アミューズメント施設の利用者",
+        "カラオケ施設の利用者",
+        "飲食店の利用者"
+      ],
+      "children": [
+        {
+          "id": "entertainment-platform-amusement",
+          "name": "アミューズメント",
+          "description": "国内外におけるアミューズメント施設の開発・運営を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "entertainment-platform-karaoke",
+          "name": "カラオケ",
+          "description": "カラオケ施設の開発・運営及びカラオケ機器の流通を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "entertainment-platform-food-beverage",
+          "name": "フード＆ビバレッジ",
+          "description": "エンターテイメントとしての飲食の提供を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "entertainment-platform-tourism",
+          "name": "ツーリズム",
+          "description": "旅行代理店事業を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "entertainment-platform-lifestyle",
+          "name": "ライフスタイル",
+          "description": "外貨両替機の運営及びフォトスタジオの運営を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "entertainment-content",
+      "name": "エンタメ・コンテンツ事業",
+      "description": "プライズゲームの景品等の企画・販売、映画の配給、VR・体感型アトラクションの開発・運営などを行っています。2026年1月期の外部顧客への売上高は14,304百万円です。",
+      "products": [
+        "プライズゲームの景品の企画・販売",
+        "映画の配給",
+        "VR・体感型アトラクションの開発・運営"
+      ],
+      "customers": [
+        "プライズゲームの景品を購入する事業者",
+        "映画の観客",
+        "VR・体感型アトラクションの利用者"
+      ],
+      "children": [
+        {
+          "id": "entertainment-content-character-md",
+          "name": "キャラクターMD",
+          "description": "プライズゲームの景品等の企画・販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "entertainment-content-contents-promotion",
+          "name": "コンテンツ＆プロモーション",
+          "description": "映画の配給及びVR・体感型アトラクションの開発・運営を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "アミューズメント施設やカラオケ施設の運営を軸に、プライズや映画などのコンテンツ事業も手がけています。",
+    "products": [
+      "アミューズメント施設の運営",
+      "カラオケ施設の運営",
+      "プライズゲームの景品の企画・販売",
+      "映画の配給",
+      "VR・体感型アトラクションの開発・運営",
+      "飲食の提供",
+      "外貨両替機の運営",
+      "フォトスタジオの運営"
+    ],
+    "customers": [
+      "アミューズメント施設の利用者",
+      "カラオケ施設の利用者",
+      "プライズゲームの景品を購入する事業者",
+      "映画の観客"
+    ],
+    "revenueSources": [
+      "アミューズメント施設の売上",
+      "カラオケ施設の売上",
+      "プライズゲームの景品の販売",
+      "映画の配給収入",
+      "飲食の売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "アミューズメントとカラオケを手がけるグループ",
+        "description": "GENDAは、エンタメ・プラットフォーム事業とエンタメ・コンテンツ事業を手がけるグループです。"
+      },
+      {
+        "kind": "offering",
+        "title": "アミューズメント施設やカラオケ施設、プライズや映画",
+        "description": "アミューズメント施設やカラオケ施設の運営、プライズゲームの景品の企画・販売、映画の配給などを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "アミューズメント施設やカラオケ施設の利用者",
+        "description": "アミューズメント施設やカラオケ施設の利用者、プライズゲームの景品を購入する事業者、映画の観客にサービスを届けます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "施設の利用料や景品の販売などによる売上高",
+        "description": "アミューズメント施設やカラオケ施設の利用料、プライズゲームの景品の販売、映画の配給収入などが売上高につながります。2026年1月期の売上高は170,787百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "売上高から費用を差し引いた当期純利益",
+        "description": "売上高から費用を差し引いた残りが当期純利益となります。2026年1月期の親会社株主に帰属する当期純利益は3,826百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年1月期",
@@ -27,7 +202,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7744000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 357,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +222,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11240000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 367,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +242,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19664000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 599,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +262,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 35638000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1730,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2025年1月期の売上高及び当期純利益は、株式会社音通及びClaw Holdings, LLCとの企業結合に係る暫定的な会計処理の確定に伴い、遡及的に修正された値です。"
     },
     {
       "fiscalYear": "2026年1月期",
@@ -107,7 +283,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 65357000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2018,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +291,187 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2018,
+      "title": "株式会社ミダスエンターテイメントの設立",
+      "description": "東京都港区に株式会社ミダスエンターテイメント（現 株式会社GENDA）を設立しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "株式会社GENDAへの社名変更",
+      "description": "株式会社ミダスエンターテイメントから株式会社GENDAへ社名を変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "セガ エンタテインメントの子会社化",
+      "description": "株式会社セガより株式会社セガ エンタテインメントの株式85.1％を取得し、子会社化しました。",
+      "significance": "アミューズメント施設運営事業の基盤を獲得しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "純粋持株会社体制への移行",
+      "description": "吸収分割によりアミューズメント施設運営事業を株式会社GENDA GiGO Entertainmentに承継し、純粋持株会社体制へ移行しました。",
+      "significance": "持株会社としての体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "セガ エンタテインメントの完全子会社化",
+      "description": "株式会社セガより株式会社セガ エンタテインメントの株式14.9％を取得し、完全子会社化するとともに、株式会社GENDA GiGO Entertainmentへ社名を変更しました。",
+      "significance": "アミューズメント施設運営事業を完全に傘下に収めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所グロース市場への上場",
+      "description": "東京証券取引所グロース市場に上場しました。",
+      "significance": "上場会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ギャガの子会社化",
+      "description": "ギャガ株式会社の株式78.05％を取得し、子会社化しました。",
+      "significance": "映画の配給事業に進出しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "フクヤホールディングスの子会社化",
+      "description": "株式会社フクヤホールディングスの全株式を取得し、子会社化しました。",
+      "significance": "カラオケ事業に進出しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "シン・コーポレーションの子会社化",
+      "description": "株式会社シン・コーポレーションの株式78.05％を取得し、子会社化しました。",
+      "significance": "カラオケ事業の基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "Claw Holdingsの子会社化",
+      "description": "Claw Holdings, LLCの持分100％を取得し、子会社化しました。",
+      "significance": "北米の事業基盤を獲得しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "SMART EXCHANGEの子会社化",
+      "description": "株式会社SMART EXCHANGEの全株式を取得し、子会社化しました。",
+      "significance": "フード＆ビバレッジ事業に進出しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "Player One Amusement Groupの子会社化",
+      "description": "Player One Amusement Groupの全株式を取得し、子会社化しました。",
+      "significance": "北米のアミューズメント事業を拡大しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "映画.comの子会社化",
+      "description": "株式会社映画.comの全株式を取得し、子会社化しました。",
+      "significance": "映画関連のコンテンツ事業を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "キャラットの子会社化",
+      "description": "株式会社キャラットの全株式を取得し、子会社化しました。",
+      "significance": "カラオケ機器の流通事業を獲得しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ブシロードとの業務提携",
+      "description": "株式会社ブシロードとの業務提携を開始しました。",
+      "significance": "エンターテイメント領域での連携を広げる一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "fuji-kyuko",
+      "relationship": "business-partner",
+      "description": "富士山エリアの国内外の観光客へエンターテイメントを提供することを目的として、2024年10月に富士急行株式会社との業務提携を開始しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "u-next-holdings",
+      "relationship": "business-partner",
+      "description": "2024年11月に株式会社U-NEXT HOLDINGSとの業務提携を開始しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "bushiroad",
+      "relationship": "business-partner",
+      "description": "2025年12月に株式会社ブシロードとの業務提携を開始しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +479,45 @@
       "publisher": "株式会社GENDA",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y1F9.pdf",
       "publishedAt": "2026-04-28",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y1F9",
+      "asOf": "2026-01-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "Aspiration「世界中の人々の人生をより楽しく」を掲げ、グローバルにエンターテイメントのネットワークを構築し、世の中に流通する「楽しさの総量」を増やすことを目指しています。成長戦略の柱として、M&Aを通じた「連続的な非連続な成長」を定め、2040年には世界一のエンターテイメント企業になることを目指しています。",
+        "asOf": "2026-04-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "アミューズメント施設の運営で培った知見と、会員数163万人のGiGOアプリを擁する顧客基盤を持ち、M&Aを成長の柱として2026年1月末時点で累計60件の案件を公表してきました。国内419店舗のアミューズメント施設に加え、北米では約10,000箇所のミニロケーションを展開しています。",
+        "basis": "2026年1月期の事業の内容、経営方針及びセグメント情報の記載に基づきます。",
+        "asOf": "2026-04-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年1月期の売上高は170,787百万円で、地域別では日本が135,445百万円、米国が25,290百万円、その他が10,050百万円です。従業員数は2,018人で、連結子会社は45社です。",
+        "basis": "2026年1月期の連結経営指標等、セグメント情報及び従業員の状況の記載に基づきます。",
+        "asOf": "2026-04-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

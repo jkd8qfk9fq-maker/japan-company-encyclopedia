@@ -1,10 +1,11 @@
 {
   "id": "fuji",
   "code": "6134",
-  "name": "FUJI",
+  "name": "ＦＵＪＩ",
   "officialName": "株式会社FUJI",
   "nameEn": "FUJI CORPORATION",
-  "description": null,
+  "shortNameEn": "FUJI",
+  "description": "電子部品実装ロボットと工作機械をつくり、世界の製造現場に届ける会社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,8 +16,180 @@
       "market": "プレミア"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "robot-solution",
+      "name": "ロボットソリューション事業",
+      "description": "電子部品実装ロボットや半導体製造装置を製造・販売する事業です。2026年3月期の売上高は1,687億37百万円です。",
+      "products": [
+        "電子部品実装ロボット",
+        "半導体製造装置"
+      ],
+      "customers": [
+        "電子部品メーカー",
+        "半導体メーカー"
+      ],
+      "children": [
+        {
+          "id": "robot-solution-mounter",
+          "name": "電子部品実装ロボット",
+          "description": "モジュール型電子部品装着機「ＮＸＴＲ」や拡張型オールインワン装着機「ＡＩＭＥＸＲ」などの電子部品実装ロボットです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "robot-solution-semiconductor",
+          "name": "半導体製造装置",
+          "description": "ダイボンダを含む半導体製造装置です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "machine-tool",
+      "name": "マシンツール事業",
+      "description": "工作機械を製造・販売する事業です。2026年3月期の売上高は97億5百万円です。",
+      "products": [
+        "工作機械"
+      ],
+      "customers": [
+        "自動車関連メーカー",
+        "部品加工メーカー"
+      ],
+      "children": [
+        {
+          "id": "machine-tool-lathe",
+          "name": "工作機械",
+          "description": "複合加工旋盤「ＡＣＵＦＬＥＸ」などの工作機械です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "制御機器や電子機器の製造、画像処理開発を行う事業です。2026年3月期の外部顧客への売上高は21億99百万円です。報告セグメントに含まれない事業です。",
+      "products": [
+        "制御機器",
+        "電子機器",
+        "画像処理"
+      ],
+      "customers": [
+        "当社グループ"
+      ],
+      "children": [
+        {
+          "id": "other-control",
+          "name": "制御機器",
+          "description": "制御機器の製造を行う事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-electronics",
+          "name": "電子機器",
+          "description": "電子機器の製造を行う事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-image",
+          "name": "画像処理開発",
+          "description": "画像処理の開発を行う事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "電子部品実装ロボットや半導体製造装置、工作機械を製造・販売し、海外の製造現場を中心に届けています。",
+    "products": [
+      "電子部品実装ロボット",
+      "半導体製造装置",
+      "工作機械",
+      "制御機器",
+      "電子機器"
+    ],
+    "customers": [
+      "電子部品メーカー",
+      "半導体メーカー",
+      "自動車関連メーカー",
+      "部品加工メーカー"
+    ],
+    "revenueSources": [
+      "電子部品実装ロボットの販売",
+      "半導体製造装置の販売",
+      "工作機械の販売",
+      "制御機器・電子機器の販売及び画像処理開発"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "会社",
+        "description": "愛知県知立市に本社を置き、当社と子会社18社でグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "商品",
+        "description": "モジュール型電子部品装着機「ＮＸＴＲ」や拡張型オールインワン装着機「ＡＩＭＥＸＲ」、複合加工旋盤「ＡＣＵＦＬＥＸ」などの製品を取り扱っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "お客様",
+        "description": "電子部品や半導体、自動車関連の製造業で、海外の売上高が全体の90.8％を占めています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は1,806億42百万円で、前連結会計年度と比べて41.8％増加しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "収益の積み上げ",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は157億33百万円で、前連結会計年度と比べて44.3％増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 208782000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2791,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 225104000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2848,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +244,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 228278000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2911,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +264,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 218682000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2976,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +284,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 232454000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3132,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,20 +292,298 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1959,
+      "title": "富士機械製造株式会社を設立",
+      "description": "名古屋市中川区昭和橋通において富士機械製造株式会社を設立し、旋削機械などの工作機械の製造を開始しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "名古屋証券取引所市場第二部に上場",
+      "description": "名古屋証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "「電子部品自動挿入機」を完成",
+      "description": "「電子部品自動挿入機」を完成させました。",
+      "significance": "電子部品実装への進出の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "「電子部品自動装着機」を完成",
+      "description": "「電子部品自動装着機」を完成させました。",
+      "significance": "電子部品実装ロボットの技術基盤を築きました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "名古屋証券取引所市場第一部銘柄に指定替え",
+      "description": "名古屋証券取引所市場第一部銘柄に指定替えとなりました。",
+      "significance": "市場第一部への指定替えです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "ドイツに現地法人を設立",
+      "description": "ドイツ・フランクフルトに現地法人フジ マシン マニュファクチュアリング（ヨーロッパ）ゲーエムベーハーを設立しました。",
+      "significance": "欧州展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "「モジュール型高速多機能装着機 ＮＸＴ」を完成",
+      "description": "「モジュール型高速多機能装着機 ＮＸＴ」を完成させました。",
+      "significance": "旗艦機種の礎となる製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "中国・昆山に製造会社を設立",
+      "description": "中国・昆山に昆山之富士機械製造有限公司を設立しました。",
+      "significance": "中国での製造体制を築きました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "東京証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "株式会社ＦＵＪＩに商号変更",
+      "description": "商号を株式会社ＦＵＪＩに変更しました。",
+      "significance": "現在の商号になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "ファスフォードテクノロジ株式会社を買収",
+      "description": "山梨県南アルプス市のファスフォードテクノロジ株式会社を買収しました。",
+      "significance": "半導体関連の事業基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "インドに現地法人を設立",
+      "description": "インド・ハリヤナ州に現地法人フジ インディア コーポレイション プライベート リミテッドを設立しました。",
+      "significance": "インド展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "ＦＵＪＩリニア株式会社を設立",
+      "description": "愛知県知立市にＦＵＪＩリニア株式会社を設立しました。",
+      "significance": "リニアモータ事業への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場と名古屋証券取引所プレミア市場へ移行",
+      "description": "東京証券取引所の市場第一部からプライム市場、名古屋証券取引所の市場第一部からプレミア市場にそれぞれ移行しました。",
+      "significance": "現在の市場区分になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "名古屋市科学館のネーミングライツを取得",
+      "description": "名古屋市科学館および一部施設のネーミングライツを取得しました。",
+      "significance": "地域とのつながりを深めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "yaskawa-electric",
+      "relationship": "customer",
+      "description": "ロボットソリューション事業における電子部品実装ロボットの販売先であり、電子部品実装ロボット用部品及びマシンツール事業における工作機械用部品の調達先です。2026年3月31日現在、649,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "alconix",
+      "relationship": "customer",
+      "description": "当該会社の子会社がロボットソリューション事業における製品の販売先であり、電子部品実装ロボット用部品及びマシンツール事業における工作機械用部品の調達先です。2026年3月31日現在、948,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-zenitaka",
+      "relationship": "supplier",
+      "description": "建物、工場設備等の施工委託先の1社です。2026年3月31日現在、149,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sintokogio",
+      "relationship": "customer",
+      "description": "子会社であるＦＵＪＩリニア株式会社の製品販売先です。2026年3月31日現在、612,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tachibana-eletech",
+      "relationship": "customer",
+      "description": "ロボットソリューション事業における電子部品実装ロボットの販売先であり、電子部品実装ロボット用部品及びマシンツール事業における工作機械用部品の調達先です。2026年3月31日現在、193,116株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "meiko-construction",
+      "relationship": "supplier",
+      "description": "建物、工場設備等の施工委託先の1社です。2026年3月31日現在、293,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sanyo-denki",
+      "relationship": "supplier",
+      "description": "ロボットソリューション事業における電子部品実装ロボット用部品及びマシンツール事業における工作機械用部品の調達先です。2026年3月31日現在、63,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okaya-and-co",
+      "relationship": "customer",
+      "description": "マシンツール事業における工作機械の販売先であり、工作機械用部品の調達先です。2026年3月31日現在、25,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sun-wa-technos",
+      "relationship": "customer",
+      "description": "ロボットソリューション事業における電子部品実装ロボットの販売先であり、電子部品実装ロボット用部品及びマシンツール事業における工作機械用部品の調達先です。2026年3月31日現在、13,200株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-thompson",
+      "relationship": "supplier",
+      "description": "ロボットソリューション事業における電子部品実装ロボット用部品及びマシンツール事業における工作機械用部品の調達先です。2026年3月31日現在、10,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第80期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社FUJI",
+      "publisher": "株式会社ＦＵＪＩ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKAW.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YKAW",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "パーパスは「人々の 心豊かな 暮らしのために」です。ビジョンは「半導体後工程チェーンにおけるＦＡブランドとして業界No.1へ」です。2024年度にスタートした中期経営計画では、事業ポートフォリオの再構築と社会的企業価値の向上を方針とし、2027年3月期の売上高2,110億円を目指しています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "電子部品実装ロボットの旗艦機種「ＮＸＴＲ」への切り替えを完了し、手掛ける全ての製品でシェアNo.1を目指しています。海外売上高は全体の90.8％で、中国やタイ、インドを中心とするアジア地域が大きく、スマートロッカーシステム「Ｑｕｉｓｔ」や移乗サポートロボット「Ｈｕｇ」など次世代の製品の事業化も進めています。",
+        "basis": "MD&Aに、ＮＸＴＲへの切り替え完了やシェアNo.1の方針、海外売上高の割合、次世代製品の事業化の記載があります。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は1,806億42百万円で、ロボットソリューション事業が1,687億37百万円と最も大きく、地域別では中国が27.4％、タイが13.4％、他アジアが29.3％、北米が11.9％、欧州が6.6％です。主要な顧客であるアメリカンテック カンパニーリミテッド（中国）への売上高は217億16百万円で、売上高の12.0％を占めています。従業員数は3,132人です。",
+        "basis": "売上高とセグメント別売上高、地域別売上高の構成比、主要な顧客の売上高、従業員数が有報に記載されています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    }
+  }
 }

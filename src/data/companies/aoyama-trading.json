@@ -4,15 +4,239 @@
   "name": "青山商事",
   "officialName": "青山商事株式会社",
   "nameEn": "AOYAMA TRADING Co., Ltd.",
-  "description": null,
+  "shortNameEn": "AOYAMA TRADING",
+  "description": "紳士服専門店「洋服の青山」を中心に、ビジネスウェアやカード、飲食などの事業を展開する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "business-wear",
+      "name": "ビジネスウェア事業",
+      "description": "スーツやジャケット、スラックス、コート、フォーマルなどの衣料品を販売する事業です。2026年3月期の外部顧客への売上高は124,224百万円でした。",
+      "products": [
+        "スーツ",
+        "ジャケット",
+        "スラックス",
+        "コート",
+        "フォーマル"
+      ],
+      "customers": [
+        "国内の一般消費者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "business-wear-heavy",
+          "name": "重衣料",
+          "description": "スーツ、スリーピース、ジャケット、スラックス、コート、フォーマル、ベストの販売です。2026年3月期の売上高は65,300百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "business-wear-light",
+          "name": "軽衣料",
+          "description": "シャツ、洋品類、カジュアル類、レディース類などの販売です。2026年3月期の売上高は55,631百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "business-wear-alteration",
+          "name": "補正加工賃収入",
+          "description": "既製服の補正加工による収入です。2026年3月期の売上高は3,292百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "franchisee",
+      "name": "フランチャイジー事業",
+      "description": "外食産業を中心としたフランチャイズ店舗で飲食やサービスを提供する事業です。2026年3月期の外部顧客への売上高は17,545百万円でした。",
+      "products": [
+        "焼肉きんぐ",
+        "ゆず庵",
+        "PISOLA",
+        "セカンドストリート",
+        "エニタイムフィットネス",
+        "WECLE"
+      ],
+      "customers": [
+        "フランチャイズ店舗の利用客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "general-goods",
+      "name": "雑貨販売事業",
+      "description": "日用雑貨品や加工食品を販売する事業です。100円ショップ「ダイソー」を展開しています。2026年3月期の外部顧客への売上高は15,268百万円でした。",
+      "products": [
+        "日用雑貨品",
+        "加工食品"
+      ],
+      "customers": [
+        "国内の一般消費者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "repair-service",
+      "name": "総合リペアサービス事業",
+      "description": "「ミスターミニット」の統一ブランドで靴修理や鍵複製などのサービスを提供する事業です。2026年3月期の外部顧客への売上高は14,531百万円でした。",
+      "products": [
+        "靴修理",
+        "鍵複製"
+      ],
+      "customers": [
+        "消費者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "print-media",
+      "name": "印刷・メディア事業",
+      "description": "各種チラシやカタログなどの印刷、雑誌の出版を行う事業です。2026年3月期の外部顧客への売上高は8,238百万円でした。",
+      "products": [
+        "チラシ",
+        "カタログ",
+        "雑誌"
+      ],
+      "customers": [
+        "全国の流通小売業を中心とする顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "card",
+      "name": "カード事業",
+      "description": "クレジットカード事業を中心に、小口金融やクレジットサービスを提供する事業です。2026年3月期の外部顧客への売上高は5,506百万円でした。",
+      "products": [
+        "クレジットカード",
+        "AOYAMA Pay"
+      ],
+      "customers": [
+        "クレジットカード会員"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "所有不動産及び賃貸借不動産の総合管理や転貸借を行う事業です。2026年3月期の外部顧客への売上高は2,731百万円でした。",
+      "products": [
+        "不動産の総合管理",
+        "転貸借"
+      ],
+      "customers": [
+        "不動産の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "Webメディア事業など、報告セグメントに含まれない事業です。2026年3月期の外部顧客への売上高は964百万円でした。",
+      "products": [
+        "Webメディア"
+      ],
+      "customers": [
+        "Webメディアの利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "紳士服専門店「洋服の青山」を中心にビジネスウェアを販売し、カードや印刷・メディア、雑貨販売、リペアサービス、フランチャイジー、不動産の事業も展開しています。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "スーツやジャケットなどのビジネスウェア",
+      "クレジットカード",
+      "チラシやカタログなどの印刷物",
+      "日用雑貨品",
+      "靴修理や鍵複製などのリペアサービス",
+      "フランチャイズ店舗の飲食・サービス"
+    ],
+    "customers": [
+      "国内の一般消費者",
+      "クレジットカード会員",
+      "チラシやダイレクトメールを発注する流通小売業"
+    ],
+    "revenueSources": [
+      "ビジネスウェアなどの商品販売による収入",
+      "クレジットカードの利用による収入",
+      "印刷物の受注による収入",
+      "フランチャイズ店舗の運営による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社グループ",
+        "description": "青山商事株式会社を中心に、子会社32社で構成されるグループです。2026年3月31日現在の従業員数は6,666人です。本社は広島県福山市にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "ビジネスウェアを中心とした事業",
+        "description": "スーツやジャケットなどのビジネスウェアの販売を中心に、カード、印刷・メディア、雑貨販売、総合リペアサービス、フランチャイジー、不動産の事業を展開しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内の一般消費者を中心とする顧客",
+        "description": "ビジネスウェア事業では国内の一般消費者に販売し、印刷・メディア事業では全国の流通小売業を中心顧客としています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は189,011百万円で、前期比96.6%でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は6,918百万円で、前期比73.6%でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +251,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 164501000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6523,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +271,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 170029000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6638,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +291,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 180877000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6636,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +311,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 181488000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6561,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "表示方法の変更により、店舗用不動産の一部賃貸に係る収入を売上高に計上する方法に変更したため、2025年3月期の売上高は組替え後の数値を記載しています。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +332,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 180853000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6666,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +340,214 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1964,
+      "title": "青山商事の設立",
+      "description": "広島県府中市で紳士既製服の小売を中心とする青山商事株式会社を設立しました。",
+      "significance": "青山商事の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "紳士服販売への特化",
+      "description": "食料品と特産品の部門から撤退し、紳士服の販売に特化しました。",
+      "significance": "紳士服専門店への転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "「洋服の青山」1号店の開店",
+      "description": "郊外立地の紳士服専門店「洋服の青山」の1号店として西条店を開店しました。以後の出店はほとんど郊外型店舗となりました。",
+      "significance": "主力業態の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "株式上場",
+      "description": "大阪証券取引所市場第二部と広島証券取引所に株式を上場しました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "本社の福山市への移転と東証二部上場",
+      "description": "広島県福山市に本社ビルを新築して本社機構を移転し、東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "本社機能の福山市への集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "市場第一部銘柄への指定",
+      "description": "東京証券取引所と大阪証券取引所の市場第一部銘柄に指定されました。",
+      "significance": "上場市場の格上げです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "カード事業への進出",
+      "description": "青山キャピタルを設立し、カード事業に進出しました。",
+      "significance": "ビジネスウェア事業以外の事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "「ザ・スーツカンパニー」1号店の開店",
+      "description": "「ザ・スーツカンパニー」の1号店として日本橋店を開店しました。",
+      "significance": "都心型の新業態の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "「ユニバーサル ランゲージ」1号店の開店",
+      "description": "「ユニバーサル ランゲージ」の1号店として渋谷店を開店しました。",
+      "significance": "新しい紳士服業態の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "エム・ディー・エスの子会社化",
+      "description": "エム・ディー・エスを株式交換により子会社としました。",
+      "significance": "店舗演出の企画をグループ内に取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "フードサービス事業への進出と服良の子会社化",
+      "description": "物語コーポレーションのフランチャイズとして「焼肉きんぐ」などのフードサービス事業を展開するためglobを設立し、スーツ等のメーカーである服良の全株式を取得しました。",
+      "significance": "フランチャイジー事業の始まりと、スーツの製造・供給体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "総合リペアサービス事業への進出",
+      "description": "靴修理や鍵複製などの総合リペアサービスを提供するミニット・アジア・パシフィックの全株式を取得しました。",
+      "significance": "総合リペアサービス事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "WTWの子会社化",
+      "description": "雑貨・インテリアショップを運営するWTWの全株式を取得しました。",
+      "significance": "雑貨・インテリア事業への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "上場市場のプライムへの移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "WTWの解散",
+      "description": "連結子会社のWTWを2026年3月31日付で解散しました。",
+      "significance": "事業ポートフォリオの最適化の一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nisshinbo-holdings",
+      "relationship": "business-partner",
+      "description": "当社ビジネスウェア事業の戦略商品であるノーアイロンシャツ「ノンアイロンマックス」をはじめとする商品の取引を長年続けており、アセアン生産における戦略的商品等の取引拡大が見込まれています。2026年3月31日現在、1,094,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toray",
+      "relationship": "business-partner",
+      "description": "繊維製品及び副資材、合繊織物など多岐にわたる取引を長年続けており、ビジネスウェア事業の成長のため円滑な取引継続と数量確保が欠かせない関係にあります。2026年3月31日現在、760,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-japan-wool-textile",
+      "relationship": "business-partner",
+      "description": "毛織物等の取引を長年続けており、ビジネスウェア事業が生産戦略上重視しているアセアン生産や、新素材開発の面で円滑な取引継続と関係強化が欠かせない関係にあります。2026年3月31日現在、454,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "teijin",
+      "relationship": "business-partner",
+      "description": "繊維製品及び副資材、合繊織物など多岐にわたる取引を長年続けており、ビジネスウェア事業の成長のため円滑な取引継続と数量確保が欠かせない関係にあります。2026年3月31日現在、281,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toyobo",
+      "relationship": "business-partner",
+      "description": "繊維製品及び副資材、合繊織物など多岐にわたる取引を長年続けており、ビジネスウェア事業の成長のため円滑な取引継続と数量確保が欠かせない関係にあります。2026年3月31日現在、246,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-monogatari",
+      "relationship": "business-partner",
+      "description": "フランチャイジー事業で展開する「焼肉きんぐ」及び「ゆず庵」は、物語コーポレーションが開発した業態のフランチャイズであり、フランチャイジー事業の中期経営計画の実現は同社との良好な関係の維持・強化を前提としています。2026年3月31日現在、200,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +555,45 @@
       "publisher": "青山商事株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ44.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJ44",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「持続的な成長をもとに、生活者への小売・サービスを通じてさらなる社会への貢献を目指す」という経営理念の下、「働く人のために働こう」という青山マインドを掲げています。2027年3月期を最終年度とする中期経営計画で、連結売上高2,100億円の達成を目指し、既存店の収益改善やシェア拡大、ガバナンス強化など5つの基本戦略を推進しています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "郊外型の紳士服専門店「洋服の青山」を中心に、スーツやジャケットなどのビジネスウェアを販売しています。ビジネスカジュアル商品が好調で、2025年11月から販売を開始した「みんなのスーツ」が新規顧客層の開拓に寄与しています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の記載",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は189,011百万円で、ビジネスウェア事業が124,224百万円を占めています。本邦の外部顧客への売上高が連結売上高の90%を超えています。",
+        "basis": "【セグメント情報】及び【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の記載",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

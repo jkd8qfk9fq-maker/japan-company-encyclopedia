@@ -4,15 +4,177 @@
   "name": "福田組",
   "officialName": "株式会社福田組",
   "nameEn": "FUKUDA CORPORATION",
-  "description": null,
+  "shortNameEn": "fukuda",
+  "description": "新潟市に本社を置く総合建設会社で、土木・建築工事と不動産事業を手がけます。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "construction",
+      "name": "建設事業",
+      "description": "土木工事と建築工事の受注・施工を手がけます。2025年12月期の売上高は164,947百万円です。",
+      "products": [
+        "土木工事",
+        "建築工事",
+        "舗装工事"
+      ],
+      "customers": [
+        "官公庁",
+        "民間企業"
+      ],
+      "children": [
+        {
+          "id": "civil-engineering",
+          "name": "土木工事",
+          "description": "土木工事の受注・施工です。2025年12月期の売上高は68,731百万円です。",
+          "products": [
+            "土木工事"
+          ],
+          "customers": [
+            "官公庁",
+            "民間企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "building-construction",
+          "name": "建築工事",
+          "description": "建築工事の受注・施工です。2025年12月期の売上高は83,322百万円です。",
+          "products": [
+            "建築工事"
+          ],
+          "customers": [
+            "官公庁",
+            "民間企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "construction-other",
+          "name": "その他",
+          "description": "建設工事関連資機材の賃貸や製造販売など、建設事業のその他の売上です。2025年12月期の売上高は11,176百万円です。",
+          "products": [
+            "建設工事関連資機材の賃貸",
+            "建設工事関連資機材の製造販売"
+          ],
+          "customers": [
+            "官公庁",
+            "民間企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "宅地や建物の販売と賃貸を手がけます。2025年12月期の売上高は2,306百万円です。",
+      "products": [
+        "宅地",
+        "建物"
+      ],
+      "customers": [
+        "宅地や建物を購入するお客様",
+        "宅地や建物を賃借するお客様"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other-business",
+      "name": "その他",
+      "description": "福祉関連事業など、報告セグメントに含まれない事業です。2025年12月期の売上高は707百万円です。",
+      "products": [
+        "福祉施設の運営"
+      ],
+      "customers": [
+        "福祉施設の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "土木工事と建築工事の受注・施工、宅地や建物の販売・賃貸を手がけ、2025年12月期の売上高は167,960百万円です。",
+    "products": [
+      "土木工事",
+      "建築工事",
+      "舗装工事",
+      "宅地",
+      "建物",
+      "福祉施設の運営"
+    ],
+    "customers": [
+      "官公庁",
+      "民間企業"
+    ],
+    "revenueSources": [
+      "建設工事の請負代金",
+      "不動産の売買による収入",
+      "不動産の賃貸による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "新潟市に本社を置く総合建設会社",
+        "description": "当社と子会社25社、関連会社4社で建設事業と不動産事業を展開します。"
+      },
+      {
+        "kind": "offering",
+        "title": "土木・建築工事と不動産の提供",
+        "description": "土木工事と建築工事を受注・施工し、宅地や建物の販売と賃貸を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "官公庁と民間企業",
+        "description": "官公庁や民間企業から工事を受注します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "請負代金と不動産収入",
+        "description": "工事の請負代金と、不動産の売買・賃貸による収入が売上高となります。"
+      },
+      {
+        "kind": "profit",
+        "title": "適正な請負代金と生産性の向上",
+        "description": "適正な請負代金の確保と生産性の向上に取り組み、受注した工事を計画どおりに進めます。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +189,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 76412000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2096,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +209,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 78504000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2230,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年3月31日）等を第96期の期首から適用しており、第96期以降の主要な経営指標等は当該会計基準等を適用した後の数値です。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 80333000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2215,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +250,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 85407000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2215,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +270,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 90166000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2226,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +278,158 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1902,
+      "title": "福田組の創業",
+      "description": "福田藤吉が新潟市で土木建築請負を行う個人企業「福田組」を創業しました。",
+      "significance": "建設業としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1927,
+      "title": "株式会社福田組の設立",
+      "description": "株式会社福田組を設立し、総合建設業者となりました。",
+      "significance": "会社組織としての基盤ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "道路部門の発足",
+      "description": "建設業法による新潟県知事登録を完了し、新潟県下で初めて道路部門を発足しました。",
+      "significance": "道路事業への進出の始まりとなりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "名古屋支店の設置",
+      "description": "名古屋支店を設置しました。",
+      "significance": "中部地方への拠点展開が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "東京支店の設置",
+      "description": "東京支店（現在の東京本店）を設置しました。",
+      "significance": "首都圏への拠点展開が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "福田道路の設立",
+      "description": "道路舗装部門を分離独立させ、福田道路株式会社（現在の連結子会社）を設立しました。",
+      "significance": "舗装工事を担う子会社ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "株式上場",
+      "description": "東京証券取引所市場第二部並びに新潟証券取引所に上場しました。",
+      "significance": "株式公開により資金調達の道が開けました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "市場第一部への指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "上場市場が第一部に上がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "本店の分離",
+      "description": "本店を本社と本店（現在の新潟本店）に分離しました。",
+      "significance": "本社機能と新潟本店を分けました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "福田リニューアルの設立",
+      "description": "福田リニューアル株式会社（現在の連結子会社）を設立しました。",
+      "significance": "建築リニューアルを担う子会社ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "北日本ハウジングの吸収合併",
+      "description": "株式会社北日本ハウジングを株式会社リフレに吸収合併しました。",
+      "significance": "住宅関連事業の体制を整えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "戸建住宅事業の会社分割",
+      "description": "戸建住宅事業部門を株式会社リフレへ会社分割し、フクダハウジング株式会社に商号変更しました。",
+      "significance": "戸建住宅事業を子会社に集約しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "建築リニューアル部門の会社分割",
+      "description": "建築リニューアル部門を福田リニューアル株式会社へ会社分割しました。",
+      "significance": "リニューアル事業を子会社に集約しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "プライム市場に上場しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "監査等委員会設置会社への移行",
+      "description": "監査役会設置会社から監査等委員会設置会社へ移行しました。",
+      "significance": "ガバナンス体制を監査等委員会設置会社に変えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +438,35 @@
       "publisher": "株式会社福田組",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XT0V.pdf",
       "publishedAt": "2026-03-25",
-      "accessedAt": "2026-09-28"
+      "docId": "S100XT0V",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "社是「わが社は誠実と創造をもって事にあたり 建設を通じ社会に貢献します」と経営理念「わが社は挑戦する企業体質のもと 人間と環境を大切にし 感動的価値の創造をめざします」を掲げます。2026年12月期を起点とする長期ビジョン「FUKUDA VISION 2035」と、その第1フェーズの5ヶ年計画「中期経営計画2030」を推進し、スローガン「誇る、繋ぐ、挑む。そして、未来を創る。」の実現を目指します。",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1902年の創業から続く総合建設会社で、新潟市に本社を置き、東京・名古屋・大阪・仙台・福岡・札幌に支店を持ちます。子会社25社と関連会社4社で建設事業と不動産事業を展開し、福田道路をはじめとする子会社が施工に協力します。",
+        "basis": "【事業の内容】と【主要な設備の状況】と【沿革】の記載に基づきます。",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  }
 }

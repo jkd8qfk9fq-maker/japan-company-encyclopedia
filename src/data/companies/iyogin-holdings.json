@@ -4,15 +4,179 @@
   "name": "いよぎんホールディングス",
   "officialName": "株式会社いよぎんホールディングス",
   "nameEn": "Iyogin Holdings, Inc.",
-  "description": null,
+  "shortNameEn": "Iyogin Holdings",
+  "description": "愛媛県松山市に本店を置く伊予銀行を中核とする銀行持株会社で、銀行業を中心にリースや証券などの金融サービスを地域に提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "banking",
+      "name": "銀行業",
+      "description": "株式会社伊予銀行を中心に、預金業務、貸出業務、有価証券投資業務、為替業務などを行う、グループの中心事業です。2026年3月期の外部顧客に対する経常収益は242,018百万円でした。",
+      "products": [
+        "預金",
+        "貸出",
+        "有価証券投資",
+        "為替",
+        "信託"
+      ],
+      "customers": [
+        "地域の個人のお客さま",
+        "地域の法人のお客さま",
+        "地方自治体"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "iyo-bank",
+          "name": "銀行業務（株式会社伊予銀行）",
+          "description": "愛媛県松山市に本店を置くグループの中核銀行で、本店ほか支店142店、出張所8店において、預金業務、貸出業務、有価証券投資業務、為替業務などを行い、信託業務も営んでいます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "bank-support",
+          "name": "銀行周辺業務",
+          "description": "株式会社伊予銀行以外の連結子会社が、銀行事務代行業務、信用保証業務、債権管理回収業務、クレジットカード業務などを行っています。債権管理回収業務を担う株式会社いしづち事業再生債権回収は、2025年10月に新設されました。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "fund-management",
+          "name": "投資ファンドの運営業務",
+          "description": "連結子会社を通じ、ベンチャーファンドや事業承継・成長支援ファンドなどの投資ファンドを運営しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "leasing",
+      "name": "リース業",
+      "description": "いよぎんリース株式会社において、リース業務などを行っています。2026年3月期の外部顧客に対する経常収益は21,463百万円でした。",
+      "products": [
+        "リース"
+      ],
+      "customers": [
+        "地域の法人のお客さま"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない区分で、情報処理受託・ソフトウェア開発業及び証券業などを行っています。2026年3月期の外部顧客に対する経常収益は2,636百万円でした。",
+      "products": [
+        "情報処理受託・ソフトウェア開発",
+        "証券"
+      ],
+      "customers": [
+        "地域の個人のお客さま",
+        "地域の法人のお客さま"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "it-services",
+          "name": "情報処理受託・ソフトウェア開発",
+          "description": "株式会社いよぎんコンピュータサービスと株式会社いよぎんデジタルソリューションズが、情報処理の受託やソフトウェア開発を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "securities",
+          "name": "証券業",
+          "description": "四国アライアンス証券株式会社が証券業を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "当社がグループ会社の経営管理を行い、伊予銀行の銀行業務を中心に、リース、証券、クレジットカード、投資ファンド運営などの金融サービスをグループで提供する事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "預金",
+      "貸出",
+      "有価証券投資",
+      "為替",
+      "信託",
+      "リース",
+      "証券",
+      "クレジットカード"
+    ],
+    "customers": [
+      "地域の個人のお客さま",
+      "地域の法人のお客さま",
+      "地方自治体"
+    ],
+    "revenueSources": [
+      "貸出金の利息",
+      "有価証券の利息配当金",
+      "為替などの役務取引の手数料",
+      "リース料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "いよぎんグループ",
+        "description": "銀行持株会社である当社と、連結子会社17社、非連結子会社9社、関連会社3社で構成されています。2026年3月期の連結の従業員数は3,098人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "銀行業を中心とした金融サービス",
+        "description": "預金、貸出、有価証券投資、為替、信託などの銀行業務を中心に、リース、証券、クレジットカード、信用保証、債権管理回収、投資ファンドの運営などの金融サービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "愛媛県を中心とする地域の顧客",
+        "description": "愛媛県を主な営業基盤とし、株式会社伊予銀行の本店ほか支店142店、出張所8店の店舗網を通じて、個人や法人、地方自治体などが顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "利息と手数料による経常収益",
+        "description": "貸出金の利息や有価証券の利息配当金、手数料などにより経常収益を得ています。2026年3月期の連結経常収益は266,118百万円で、前期の231,888百万円から増えました。国内金利の上昇や貸出金残高の増加で資金運用収益が増えたことなどが主な要因です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は74,253百万円でした。経常収益の増加などが増益につながりました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2023年3月期",
@@ -27,12 +191,13 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 759838000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2986,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "当社は2022年10月3日に株式会社伊予銀行の単独株式移転により設立されたため、2023年3月期の連結財務諸表は伊予銀行の連結財務諸表を引き継いで作成されており、同行の第2四半期連結累計期間を含んでいます。"
     },
     {
       "fiscalYear": "2024年3月期",
@@ -47,7 +212,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 843027000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 3019,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +232,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 802723000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 3039,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +252,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 877882000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 3098,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -95,8 +260,155 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1941,
+      "title": "伊豫合同銀行を設立",
+      "description": "今治商業銀行、松山五十二銀行、豫州銀行の合併により、株式会社伊豫合同銀行が設立されました。",
+      "significance": "現在の株式会社伊予銀行の起源となる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "商号を伊豫銀行に変更",
+      "description": "商号を株式会社伊豫銀行と改称しました。",
+      "significance": "その後の伊予銀行への改称につながる商号の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "東京証券取引所市場第1部に上場",
+      "description": "東京証券取引所市場第1部に上場しました。大阪証券取引所には1969年に市場第2部へ上場し、1970年に市場第1部へ指定替えとなっていました。",
+      "significance": "全国の市場で株式が取引される銀行となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "商号を伊予銀行に変更",
+      "description": "商号を株式会社伊予銀行と改称しました。",
+      "significance": "現在の伊予銀行の名称が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "東邦相互銀行を合併",
+      "description": "株式会社東邦相互銀行を合併しました。",
+      "significance": "愛媛県内での営業基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "富士貯蓄信用組合を合併",
+      "description": "富士貯蓄信用組合を合併しました。",
+      "significance": "地域の信用組合を取り込み、営業基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "四国アライアンス証券の前身を設立",
+      "description": "いよぎん証券株式会社（現・四国アライアンス証券株式会社）を設立しました。",
+      "significance": "グループで証券業を担う会社が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "いよぎんホールディングスを設立し持株会社体制へ移行",
+      "description": "株式会社伊予銀行の単独株式移転により当社が設立され、伊予銀行が完全子会社となりました。あわせて、伊予銀行が保有していたグループ会社の株式を現物配当の方法で取得し、直接出資子会社として再編しました。当社は東京証券取引所プライム市場に上場しました。",
+      "significance": "現在の銀行持株会社体制の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "いよぎんデジタルソリューションズを設立",
+      "description": "株式会社いよぎんデジタルソリューションズを設立しました。",
+      "significance": "デジタル分野のサービスを担う子会社が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "いしづち事業再生債権回収を設立",
+      "description": "株式会社いしづち事業再生債権回収を設立しました。",
+      "significance": "債権管理回収業務を担う子会社が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "daishi-hokuetsu-financial-group",
+      "relationship": "business-partner",
+      "description": "地方銀行の広域提携「TSUBASAアライアンス」に関する基本合意書を締結しており、金融関連業務における協力関係があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-toho-bank",
+      "relationship": "business-partner",
+      "description": "地方銀行の広域提携「TSUBASAアライアンス」に関する基本合意書を締結しており、金融関連業務における協力関係があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-awa-bank",
+      "relationship": "business-partner",
+      "description": "四国創生に向けた包括提携「四国アライアンス」を締結しており、金融関連業務における協力関係があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-hyakujushi-bank",
+      "relationship": "business-partner",
+      "description": "四国創生に向けた包括提携「四国アライアンス」を締結しており、金融関連業務における協力関係があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-forestry",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に載る事業会社で、2026年3月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は2.04％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -104,11 +416,45 @@
       "publisher": "株式会社いよぎんホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBIB.pdf",
       "publishedAt": "2026-06-16",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YBIB",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-08",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期ビジョンとして「新たな価値を創造・提供し続ける企業グループ」を掲げています。2024年度中期経営計画では、3年間を構造改革のフェーズ1「基礎構築」と位置づけ、デジタル実装を土台にした「営業×人財」の構造改革として、事業ポートフォリオと人財ポートフォリオの再構築を進めています。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "中核の株式会社伊予銀行は、愛媛県内に本店ほか支店142店、出張所8店を持つ店舗網を有しています。リース、証券、クレジットカード、信用保証、債権管理回収、情報処理、デジタルソリューション、投資ファンド運営まで担う子会社をグループ内に持ち、銀行業務以外の金融サービスも一体で提供できる体制です。",
+        "basis": "【事業の内容】と【関係会社の状況】",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の連結経常収益266,118百万円のうち、銀行業セグメントが242,018百万円と大半を占めています。四国の地方銀行との包括提携「四国アライアンス」や、地方銀行の広域提携「TSUBASAアライアンス」の枠組みを通じて、他行との協力関係を持っています。",
+        "basis": "セグメント情報（2026年3月期）と【株式の保有状況】",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

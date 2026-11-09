@@ -4,15 +4,151 @@
   "name": "アース製薬",
   "officialName": "アース製薬株式会社",
   "nameEn": "Earth Corporation",
-  "description": null,
+  "shortNameEn": "Earth",
+  "description": "虫ケア用品や日用品を製造販売し、食品工場や医療機関の衛生管理サービスも手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "household-products",
+      "name": "家庭用品事業",
+      "description": "虫ケア用品、園芸用品、日用品、ペット用品などの製造販売を行っています。2025年12月期の売上高は145,263百万円です。",
+      "products": [
+        "虫ケア用品",
+        "園芸用品",
+        "日用品",
+        "ペット用品"
+      ],
+      "customers": [
+        "家庭の消費者",
+        "ドラッグストアやホームセンターなどの小売業"
+      ],
+      "children": [
+        {
+          "id": "insect-care",
+          "name": "虫ケア用品",
+          "description": "アースノーマット、おすだけノーマット、アースジェット、ごきぶりホイホイ、ブラックキャップなどの製造販売を行います。2025年12月期の売上高は61,386百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "daily-goods",
+          "name": "日用品",
+          "description": "モンダミン、ポリデント、シュミテクト、バスロマン、バスクリン、きき湯などの製造販売を行います。2025年12月期の売上高は65,717百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "garden-products",
+          "name": "園芸用品",
+          "description": "やさお酢、おうちの草コロリなどの製造販売を行います。2025年12月期の売上高は7,594百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "pet-and-other",
+          "name": "ペット用品・その他",
+          "description": "ペット用虫ケア用品、ペットフード、健康食品、防疫・農林畜産薬剤、海外向け原材料などの製造販売を行います。2025年12月期の売上高は10,565百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【関連情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "comprehensive-environmental-health",
+      "name": "総合環境衛生事業",
+      "description": "食品工場や医薬品工場、医療機関などを対象に、総合環境衛生管理、殺菌・防除管理、異物検定、微生物検査などの衛生管理サービスを提供しています。2025年12月期の売上高は33,918百万円です。",
+      "products": [
+        "総合環境衛生管理サービス",
+        "殺菌・防除管理サービス",
+        "異物検定サービス",
+        "微生物検査サービス"
+      ],
+      "customers": [
+        "食品工場",
+        "医薬品工場",
+        "医療機関"
+      ],
+      "children": [],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "虫ケア用品や日用品を製造販売し、食品工場や医療機関の衛生管理サービスも手がける会社です。",
+    "products": [
+      "虫ケア用品",
+      "日用品",
+      "園芸用品",
+      "ペット用品",
+      "衛生管理サービス"
+    ],
+    "customers": [
+      "家庭の消費者",
+      "ドラッグストアやホームセンターなどの小売業",
+      "食品工場や医薬品工場、医療機関",
+      "日用品の卸売業"
+    ],
+    "revenueSources": [
+      "虫ケア用品や日用品などの製品の販売",
+      "衛生管理サービスの提供",
+      "園芸用品やペット用品の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "虫ケア用品と日用品の会社",
+        "description": "アース製薬は、虫ケア用品や口腔衛生用品、入浴剤などの日用品を製造販売する会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "虫ケア用品と日用品、衛生管理サービス",
+        "description": "虫ケア用品、日用品、園芸用品、ペット用品を製造販売し、食品工場や医療機関向けに衛生管理サービスを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "家庭と小売業、食品・医薬品工場",
+        "description": "製品は家庭の消費者に届けられ、ドラッグストアやホームセンターなどの小売業を通じて販売されます。衛生管理サービスは食品工場や医療機関に提供されます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売とサービスの提供",
+        "description": "虫ケア用品や日用品の販売と、衛生管理サービスの提供が売上高につながります。2025年12月期の売上高は1,791億82百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "収益の積み上げ",
+        "description": "売上高の増加や、価格改定と処方変更による収益改善で、事業の収益を生み出します。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 64596000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4522,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 68018000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4727,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 72000000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4788,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 74652000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4878,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +243,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 81290000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4963,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +251,277 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1925,
+      "title": "木村製薬所の設立",
+      "description": "兵庫県赤穂市に株式会社木村製薬所を設立しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "アース製薬への商号変更",
+      "description": "株式会社木村製薬所からアース製薬株式会社に商号を変更しました。",
+      "significance": "現在の社名となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "大塚グループの資本参加",
+      "description": "大塚製薬株式会社を中核とする大塚グループが当社に資本参加しました。",
+      "significance": "大塚グループとの関係の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "アース環境サービスの設立",
+      "description": "アース環境サービス株式会社を設立しました。",
+      "significance": "総合環境衛生事業の基盤となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "タイへの進出",
+      "description": "タイにオーシャン＆オーツカ株式会社を設立しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "赤穂工場の新設",
+      "description": "赤穂市西浜北町に赤穂工場を新設しました。",
+      "significance": "生産拠点が拡充されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "義歯関連商品の販売提携",
+      "description": "ブロックドラッグジャパン株式会社と義歯関連商品の販売提携契約を締結しました。",
+      "significance": "日用品分野が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "殺虫剤事業の譲受け",
+      "description": "シェルジャパン株式会社から殺虫剤製品の営業を譲り受けるとともに、静岡県掛川市の工場を買収し掛川工場としました。",
+      "significance": "虫ケア用品事業が拡大しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東京証券取引所市場第一部銘柄への指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "市場第一部に移行しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "バスクリンの完全子会社化",
+      "description": "株式会社バスクリンの全株式等を取得し完全子会社化しました。",
+      "significance": "入浴剤事業がグループに入りました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "白元アースの設立",
+      "description": "白元アース株式会社を設立し、民事再生手続きを申し立てた株式会社白元の事業の一部を承継しました。",
+      "significance": "白元の事業を承継しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "大幸薬品との資本業務提携",
+      "description": "大幸薬品株式会社と資本業務提携契約を締結しました。",
+      "significance": "大幸薬品との提携関係が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場への移行",
+      "description": "東京証券取引所プライム市場へ移行しました。",
+      "significance": "プライム市場の上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "バスクリンの吸収合併",
+      "description": "完全子会社である株式会社バスクリンを吸収合併しました。",
+      "significance": "グループ内の再編が進みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "otsuka-holdings",
+      "relationship": "other-affiliated-company",
+      "description": "大塚ホールディングス株式会社は、当社の議決権の24.7％を間接に所有する持株会社で、その他の関係会社です。2025年12月31日現在、当社グループとの重要な取引は行われていません。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "taiko-pharmaceutical",
+      "relationship": "business-partner",
+      "description": "大幸薬品株式会社は、2016年7月に資本業務提携契約を締結した業務提携先で、共同研究や業務委託などで関係を維持・強化しています。2025年12月31日現在、当社は同社の株式1,311,400株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "arata",
+      "relationship": "customer",
+      "description": "株式会社あらたは、2025年12月期の売上高40,307百万円を占める主要な販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "companyId": "matsukiyococokara-and-co",
+      "relationship": "customer",
+      "description": "マツキヨココカラ＆カンパニーは、当社製品の販売を行っており、安定的・中長期的な営業取引関係を維持・強化しています。2025年12月31日現在、当社は同社の株式780,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fujita-kanko",
+      "relationship": "business-partner",
+      "description": "藤田観光株式会社は、安定的・中長期的な取引関係の維持・強化を目的に株式を保有する取引先です。2025年12月31日現在、当社は同社の株式231,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ohki-healthcare-holdings",
+      "relationship": "customer",
+      "description": "大木ヘルスケアホールディングスは、当社製品の卸売を行っており、安定的・中長期的な営業取引関係を維持・強化しています。2025年12月31日現在、当社は同社の株式200,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kohnan-shoji",
+      "relationship": "customer",
+      "description": "コーナン商事は、当社製品の販売を行っており、安定的・中長期的な営業取引関係を維持・強化しています。2025年12月31日現在、当社は同社の株式20,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "dcm-holdings",
+      "relationship": "customer",
+      "description": "ＤＣＭホールディングスは、当社製品の販売を行っており、安定的・中長期的な営業取引関係を維持・強化しています。2025年12月31日現在、当社は同社の株式13,175株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "planet",
+      "relationship": "supplier",
+      "description": "プラネットは、当社が利用しているEDIサービスを担う取引先で、安定的・中長期的な取引関係の維持・強化を目的に株式を保有しています。2025年12月31日現在、当社は同社の株式12,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aeon",
+      "relationship": "customer",
+      "description": "イオンは、当社製品の販売を行っており、安定的・中長期的な営業取引関係を維持・強化しています。2025年12月31日現在、当社は同社の株式6,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kusuri-no-aoki-holdings",
+      "relationship": "customer",
+      "description": "クスリのアオキホールディングスは、当社製品の販売を行っており、安定的・中長期的な営業取引関係を維持・強化しています。2025年12月31日現在、当社は同社の株式3,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "harima-kyowa",
+      "relationship": "customer",
+      "description": "ハリマ共和物産は、当社製品の卸売を行っており、安定的・中長期的な営業取引関係を維持・強化しています。2025年12月31日現在、当社は同社の株式6,600株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tsuruha-holdings",
+      "relationship": "customer",
+      "description": "ツルハホールディングスは、当社製品の販売を行っており、安定的・中長期的な営業取引関係を維持・強化しています。2025年12月31日現在、当社は同社の株式2,300株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,11 +529,47 @@
       "publisher": "アース製薬株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XSLS.pdf",
       "publishedAt": "2026-03-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XSLS",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念は「生命と暮らしに寄り添い、地球との共生を実現する。」です。中期経営計画「Act For SMILE COMPASS 2026」（2026年度まで）では、国内の構造改革と日用品のブランド力向上による収益力の強化と、現地法人を通じたアジア市場での展開や輸出事業による海外売上高の拡大を目指します。最終年度の連結売上高の目標は1,700億円で、2025年12月期に1年前倒しで達成しました。",
+        "asOf": "2026-03-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "虫ケア用品ではアースノーマットやごきぶりホイホイ、ブラックキャップ、日用品ではモンダミンやバスロマン、バスクリン、きき湯など、家庭で広く使われるブランドを持ちます。タイやマレーシア、中国、ベトナム、フィリピンにも現地法人を持ち、海外でも虫ケア用品や日用品を製造販売しています。",
+        "basis": "有報の事業の内容とMD&Aの記載によります。",
+        "asOf": "2026-03-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年12月期の売上高は1,791億82百万円で、家庭用品事業が145,263百万円、総合環境衛生事業が33,918百万円です。地域別では日本が159,511百万円、アジアが18,314百万円です。従業員数は4,963人です。",
+        "basis": "有報のセグメント情報と関連情報の記載によります。",
+        "asOf": "2026-03-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【セグメント情報】"
+      }
+    }
+  }
 }

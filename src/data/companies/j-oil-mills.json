@@ -1,18 +1,177 @@
 {
   "id": "j-oil-mills",
   "code": "2613",
-  "name": "J－オイルミルズ",
+  "name": "J-オイルミルズ",
   "officialName": "株式会社J－オイルミルズ",
   "nameEn": "J-OIL MILLS, INC.",
-  "description": null,
+  "shortNameEn": "J-OIL MILLS",
+  "description": "大豆や菜種から食用油を搾る製油会社で、家庭用・業務用油脂と飼料用ミールを製造・販売し、乳系PBFや食品素材も手がける食品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "oils-and-fats",
+      "name": "油脂事業",
+      "description": "大豆や菜種などの油糧種子を搾油し、家庭用油脂・業務用油脂とミールを製造・販売する、グループの中核をなす報告セグメントです。2026年3月期の外部顧客への売上高は206,849百万円で、連結売上高の9割以上を占めます。千葉工場・横浜工場・神戸工場などで製造しています。",
+      "products": [
+        "家庭用油脂",
+        "業務用油脂",
+        "ミール（大豆ミール・菜種ミール）"
+      ],
+      "customers": [
+        "小売店を通じて購入する家庭の消費者",
+        "外食産業・食品メーカー",
+        "飼料メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "commercial-oils",
+          "name": "業務用油脂",
+          "description": "外食産業や食品メーカーなどに向けた業務用の食用油脂です。品質の劣化を抑えて長く使用できる「SUSTEC®（サステック）」シリーズなどの高付加価値品も含みます。2026年3月期の売上高は115,603百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "meal",
+          "name": "ミール類",
+          "description": "搾油の際に得られる大豆ミールや菜種ミールで、主に飼料の原料として販売されます。2026年3月期の売上高は62,320百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "household-oils",
+          "name": "家庭用油脂",
+          "description": "家庭向けの食用油です。製品はほぼ「AJINOMOTO」ブランドに集約されており、紙パック容器の「スマートグリーンパック®」などの商品があります。2026年3月期の売上高は28,925百万円です。",
+          "sourceIds": [
+            "yuho-2026",
+            "wikipedia"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "specialty-food",
+      "name": "スペシャリティフード事業",
+      "description": "乳系PBF（マーガリンやショートニングなどの加工油脂）と食品素材を製造・販売する報告セグメントです。2026年3月期の外部顧客への売上高は18,991百万円でした。マレーシアのPremium Fats Sdn BhdやタイのJ-OIL MILLS (THAILAND) Co., Ltd.などが海外の製造を担っています。",
+      "products": [
+        "乳系PBF（マーガリン・ショートニング・粉末油脂）",
+        "食品素材（澱粉・大豆シート食品など）"
+      ],
+      "customers": [
+        "製菓・製パンメーカーなどの食品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "dairy-like-pbf",
+          "name": "乳系PBF",
+          "description": "マーガリンやショートニングなどの業務用加工油脂と、粉末油脂です。コンビニエンスストアやスーパー向けの菓子、大手製パン向けなどに販売されます。2026年3月期の売上高は11,223百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "food-ingredients",
+          "name": "食品素材",
+          "description": "機能性スターチなどの澱粉製品や、大豆たん白をベースとした大豆シート食品「まめのりさん®」、ビタミンK2などの素材です。2026年3月期の売上高は7,768百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業セグメントで、その他付帯業務や不動産賃貸などを行っています。2026年3月期の外部顧客への売上高は733百万円でした。",
+      "products": [
+        "不動産賃貸などの付帯業務"
+      ],
+      "customers": [
+        "不動産賃貸の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "大豆・菜種などの油糧種子を搾油して家庭用・業務用の食用油脂とミールを製造・販売し、あわせて乳系PBFや澱粉などの食品素材を製造・販売する事業モデルです。",
+    "products": [
+      "家庭用油脂（「AJINOMOTO」ブランドの食用油など）",
+      "業務用油脂（「SUSTEC®」シリーズなど）",
+      "ミール（大豆ミール・菜種ミール）",
+      "乳系PBF（マーガリン・ショートニング・粉末油脂）",
+      "食品素材（澱粉、大豆シート食品、ビタミンK2など）"
+    ],
+    "customers": [
+      "味の素株式会社などの食品メーカー",
+      "外食・中食事業者",
+      "全国農業協同組合連合会などの飼料関係の顧客",
+      "小売店を通じて商品を購入する家庭の消費者"
+    ],
+    "revenueSources": [
+      "油脂事業の製品販売による収入",
+      "スペシャリティフード事業の製品販売による収入",
+      "不動産賃貸などその他の事業による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "J-オイルミルズグループ",
+        "description": "株式会社J-オイルミルズと子会社6社、関連会社6社で構成されています。連結の従業員数は1,222人です（2026年3月期）。"
+      },
+      {
+        "kind": "offering",
+        "title": "食用油脂と食品素材の製造・販売",
+        "description": "大豆や菜種などの油糧種子を千葉・横浜・静岡・神戸・若松の工場で搾油し、家庭用・業務用の食用油脂とミールを製造しています。乳系PBFや澱粉などの食品素材も製造・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "食品メーカーや外食産業などの顧客",
+        "description": "最大の顧客は[[company:ajinomoto|味の素株式会社]]で、2026年3月期の売上高は46,736百万円と、連結売上高の20.6％を占めました。全国農業協同組合連合会向けの売上高は20,255百万円でした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売で得る収入",
+        "description": "油脂事業とスペシャリティフード事業の製品販売が収入です。2026年3月期の連結売上高は226,574百万円で、業務用油脂の販売は堅調だった一方、ミールの販売価格が相場の下落の影響を受け、前期比1.8％減となりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から、原料費や製造費用、物流費などの費用を差し引いた残りが利益になります。2026年3月期の親会社株主に帰属する当期純利益は4,753百万円で、前期比32.1％減となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +186,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 94523000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1361,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +206,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 94263000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1330,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +226,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 102051000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1275,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +246,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 106288000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1248,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +266,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 111102000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1222,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,20 +274,193 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1922,
+      "title": "豊年製油が設立される",
+      "description": "現在のJ-オイルミルズに合併された株式会社ホーネンコーポレーションの起源として、鈴木商店製油部の四工場とその営業権の一切を継承して、豊年製油株式会社が設立されました。",
+      "significance": "グループの製油事業の起源の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "ホーネンコーポレーションと味の素製油の共同持株会社として設立",
+      "description": "株式会社ホーネンコーポレーションと味の素製油株式会社の共同株式移転により、共同持株会社「株式会社豊年味の素製油」として設立され、株式は東京証券取引所・大阪証券取引所の市場第一部に上場しました。",
+      "significance": "現在の会社の出発点であり、製油事業の経営統合の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "吉原製油を完全子会社化し、社名をJ-オイルミルズに変更",
+      "description": "株式交換により吉原製油株式会社を完全子会社とするとともに、社名を株式会社J-オイルミルズに変更しました。",
+      "significance": "現在の社名の始まりであり、統合に加わる製油会社が3社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "事業会社4社を吸収合併",
+      "description": "連結子会社であった株式会社ホーネンコーポレーション、味の素製油株式会社、吉原製油株式会社、日本大豆製油株式会社を吸収合併しました。",
+      "significance": "持株会社体制から事業会社体制へ移行し、3社の製油事業の統合が完了しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "タイに合弁会社を設立",
+      "description": "タイにToyota Tsusho (Thailand) Co., Ltd.およびMHCB Consulting (Thailand) Co., Ltd.との合弁会社J-OIL MILLS (THAILAND) Co., Ltd.を設立しました。",
+      "significance": "スペシャリティフード事業の海外製造拠点の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "マレーシアのPremium Fatsを連結子会社化",
+      "description": "マレーシアの油脂加工品会社Premium Fats Sdn Bhdの株式を51％取得し、連結子会社としました。",
+      "significance": "スペシャリティフード事業の海外製造拠点の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "上場市場区分の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "倉敷工場の搾油工程を日清オイリオグループとの合弁会社へ承継",
+      "description": "倉敷工場における搾油工程を、日清オイリオグループ株式会社と設立した合弁会社、製油パートナーズジャパン株式会社に承継しました。",
+      "significance": "他の製油会社との協業による搾油工程の共同化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "子会社のJ-若松サービスを吸収合併",
+      "description": "子会社である株式会社J-若松サービスを、2026年4月1日付で当社を存続会社として吸収合併しました。",
+      "significance": "グループ再編の一環です。決算期末（2026年3月31日）の後に行われた合併です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "ajinomoto",
+      "relationship": "other-affiliated-company",
+      "description": "その他の関係会社です。2026年3月31日現在、当社の議決権の27.2％を保有しています。当社にとって最大の販売先でもあり、2026年3月期の油脂製品の販売額は46,736百万円で、連結売上高の20.6％を占めました。原材料の仕入先でもあります。2004年7月からは、日本食用油脂事業に関する業務提携の下で、同社のブランドの使用や一部販売ルートの利用も行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "major-shareholder",
+      "description": "主要株主です。2026年3月31日現在、当社の発行済株式（自己株式を除く）の12.53％を保有しています。当社製品の販売先であり、原材料の仕入先でもあります。当社も同社の株式385,154株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "fuji-oil",
+      "relationship": "business-partner",
+      "description": "日本食用油脂事業に関する業務提携の相手先です。業務提携及び株式相互保有に関する基本契約に基づき、各種油脂原料の効率的調達や中間原料油の相互供給、受委託生産などの協業を行っています。当社は同社の株式200,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "the-nisshin-oillio-group",
+      "relationship": "business-partner",
+      "description": "日本搾油工程（原油と油粕の製造）を範囲とした業務提携の相手先です。2020年3月に業務提携の基本契約を締結し、2023年10月には当社倉敷工場の搾油工程を、共同で設立した合弁会社の製油パートナーズジャパン株式会社に承継しました。同合弁会社は当社の持分法適用関連会社で、当社の議決権所有割合は50％です（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第24期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社J－オイルミルズ",
+      "publisher": "株式会社Ｊ－オイルミルズ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFUT.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YFUT",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「J-オイルミルズ」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/J-%E3%82%AA%E3%82%A4%E3%83%AB%E3%83%9F%E3%83%AB%E3%82%BA",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 決算期末後のグループ構成の変更（1）: 2026年5月28日付で、連結子会社Premium Fats Sdn Bhdの全株式を、関連会社であるPremium Vegetable Oils Sdn Bhdへ譲渡し、同社は連結子会社から除外されました（2026年5月11日取締役会決議、重要な後発事象として開示）。本エントリーは2026年3月31日現在のグループ構成に基づきます。",
+      "businessModel: 決算期末後のグループ構成の変更（2）: 2026年4月1日付で、連結子会社の株式会社J-若松サービスを当社を存続会社として吸収合併しました。本エントリーは2026年3月31日現在のグループ構成に基づきます。"
+    ]
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-08",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2021年4月に新たな企業理念体系を制定し、コミュニケーションブランド「JOYL」の下で、目指すべき未来として「Joy for Life®－食で未来によろこびを®－」を掲げています。2026年度を最終年度とする第六期中期経営計画「Transforming for Growth」を推進し、「おいしさ×健康×低負荷」を通じた社会課題の解決と企業価値の持続的向上に向けた取組みを強化し、事業ポートフォリオの高度化や海外展開の推進などの成長戦略を加速させるとしています。なお、同計画の当初目標は未達となる見込みであることが開示されています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "2002年の共同持株会社設立と2004年の事業会社4社の吸収合併によって、ホーネンコーポレーション・味の素製油・吉原製油の製油事業が統合された会社です。味の素株式会社との業務提携により、同社のブランドの使用や一部販売ルートの利用が可能になっています。日清オイリオグループ株式会社とは搾油工程の合弁会社を運営するなど、生産面での協業も行っています。",
+        "basis": "【沿革】の統合の経緯、【重要な契約等】の味の素株式会社・日清オイリオグループ株式会社との業務提携、【関係会社の状況】の合弁会社の記載に基づく。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の連結売上高226,574百万円のうち、油脂事業が206,849百万円と9割以上を占め、スペシャリティフード事業は18,991百万円でした。売上は国内が中心で、本邦の外部顧客への売上高が連結売上高の90％を超えています。一方で、味の素株式会社向けの売上高が連結売上高の20.6％を占めるなど、特定の顧客への依存も見られます。",
+        "basis": "セグメント情報の外部顧客への売上高、【関連情報】の地域ごとの情報と主要な顧客ごとの情報に基づく。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

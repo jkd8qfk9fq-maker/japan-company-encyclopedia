@@ -1,18 +1,398 @@
 {
   "id": "gsi-creos",
   "code": "8101",
-  "name": "GSIクレオス",
+  "name": "ＧＳＩクレオス",
   "officialName": "株式会社GSIクレオス",
   "nameEn": "GSI Creos Corporation",
-  "description": null,
+  "shortNameEn": "GSI Creos",
+  "description": "繊維と工業製品を扱う商社で、原糸やアパレル製品、半導体部材などを国内外で販売しています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "fiber",
+      "name": "ファイバー事業",
+      "description": "原糸や繊維原料の国内外での販売と輸出入、メディカル繊維原料・製品の製造加工と販売を行う事業です。2026年3月期の外部顧客への売上高は118,301百万円でした。",
+      "products": [
+        "原糸",
+        "繊維原料",
+        "メディカル繊維原料・製品"
+      ],
+      "customers": [
+        "国内外の繊維関連企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "fiber-yarn",
+          "name": "原糸・繊維原料",
+          "description": "原糸や繊維原料の国内外での販売と輸出入です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "fiber-medical",
+          "name": "メディカル繊維原料・製品",
+          "description": "メディカル繊維原料・製品の製造加工と販売です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "outer",
+      "name": "アウター事業",
+      "description": "アパレル製品のOEMとODM、テキスタイル・アパレル製品の卸売りと輸出入、自社ブランド製品の販売、トリアセテート繊維の生産、加工、販売を行う事業です。2026年3月期の外部顧客への売上高は26,716百万円でした。",
+      "products": [
+        "アパレル製品",
+        "テキスタイル製品",
+        "トリアセテート繊維"
+      ],
+      "customers": [
+        "国内外のアパレル関連企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "outer-oem",
+          "name": "アパレル製品のOEM・ODM",
+          "description": "アパレル製品のOEMとODMです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "outer-textile",
+          "name": "テキスタイル・アパレル製品の卸売り",
+          "description": "テキスタイル・アパレル製品の卸売りと輸出入、自社ブランド製品の販売です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "outer-triacetate",
+          "name": "トリアセテート繊維",
+          "description": "トリアセテート繊維の生産、加工、販売です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "chemical",
+      "name": "ケミカル事業",
+      "description": "塗料原料やその他化学品の輸出入、機能性プラスチック樹脂の輸入、フィルムの国内販売、カーボンナノチューブの開発、製造、販売を行う事業です。2026年3月期の外部顧客への売上高は15,073百万円でした。",
+      "products": [
+        "塗料原料",
+        "機能性プラスチック樹脂",
+        "フィルム",
+        "カーボンナノチューブ"
+      ],
+      "customers": [
+        "国内外の化学品関連企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "chemical-paint",
+          "name": "塗料原料・化学品",
+          "description": "塗料原料やその他化学品の輸出入です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "chemical-resin-film",
+          "name": "機能性プラスチック樹脂・フィルム",
+          "description": "機能性プラスチック樹脂の輸入とフィルムの国内販売です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "chemical-cnt",
+          "name": "カーボンナノチューブ",
+          "description": "カーボンナノチューブの開発、製造、販売です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "inner",
+      "name": "インナー事業",
+      "description": "インナー製品のOEMとODM、販売、輸出入、インナー用生地の開発と販売、自社ブランド製品の販売を行う事業です。2026年3月期の外部顧客への売上高は11,407百万円でした。",
+      "products": [
+        "インナー製品",
+        "インナー用生地"
+      ],
+      "customers": [
+        "国内外のインナー関連企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "inner-products",
+          "name": "インナー製品",
+          "description": "インナー製品のOEMとODM、販売、輸出入です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "inner-fabric",
+          "name": "インナー用生地",
+          "description": "インナー用生地の開発と販売です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "inner-brand",
+          "name": "自社ブランド製品",
+          "description": "自社ブランド製品の販売です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "semiconductor",
+      "name": "セミコンダクター事業",
+      "description": "最先端半導体製造装置用部材や汎用性半導体部材、半導体製造設備用の部材の輸出入を行う事業です。2026年3月期の外部顧客への売上高は6,085百万円でした。",
+      "products": [
+        "半導体製造装置用部材",
+        "汎用性半導体部材",
+        "半導体製造設備用の部材"
+      ],
+      "customers": [
+        "国内外の半導体関連企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "semiconductor-advanced",
+          "name": "最先端半導体製造装置用部材",
+          "description": "最先端半導体製造装置用部材の輸出入です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "semiconductor-general",
+          "name": "汎用性半導体部材",
+          "description": "汎用性半導体部材の輸出入です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "semiconductor-equipment",
+          "name": "半導体製造設備用の部材",
+          "description": "半導体製造設備用の部材の輸出入です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "machinery-equipment",
+      "name": "マシナリー＆イクイップメント事業",
+      "description": "産業機械や理化学機器の輸入販売とメンテナンス、複合材成形設備・材料の輸入販売、炭素繊維強化樹脂の開発、製造、販売を行う事業です。2026年3月期の外部顧客への売上高は6,056百万円でした。",
+      "products": [
+        "産業機械",
+        "理化学機器",
+        "複合材成形設備・材料",
+        "炭素繊維強化樹脂"
+      ],
+      "customers": [
+        "国内外の製造業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "machinery-machines",
+          "name": "産業機械・理化学機器",
+          "description": "産業機械や理化学機器の輸入販売とメンテナンスです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "machinery-composite",
+          "name": "複合材成形設備・材料",
+          "description": "複合材成形設備・材料の輸入販売です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "machinery-cfrp",
+          "name": "炭素繊維強化樹脂",
+          "description": "炭素繊維強化樹脂の開発、製造、販売です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "hobby-life",
+      "name": "ホビー＆ライフ事業",
+      "description": "ホビー関連商材の国内・海外販売、化粧品原料の輸入と国内販売、健康食品の国内販売を行う事業です。2026年3月期の外部顧客への売上高は5,036百万円でした。",
+      "products": [
+        "ホビー関連商材",
+        "化粧品原料",
+        "健康食品"
+      ],
+      "customers": [
+        "国内外の小売業や化粧品関連企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "hobby-goods",
+          "name": "ホビー関連商材",
+          "description": "ホビー関連商材の国内・海外販売です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "hobby-cosmetics",
+          "name": "化粧品原料",
+          "description": "化粧品原料の輸入と国内販売です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "hobby-health",
+          "name": "健康食品",
+          "description": "健康食品の国内販売です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "原糸や繊維原料からアパレル製品、半導体部材、化学品、産業機械まで、幅広い商品を国内外の取引先に販売しています。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "原糸・繊維原料",
+      "アパレル製品",
+      "インナー製品",
+      "半導体製造装置用部材",
+      "塗料原料・化学品",
+      "ホビー関連商材",
+      "産業機械・理化学機器"
+    ],
+    "customers": [
+      "Toray Industries (HK) Ltd.",
+      "Pacific Textiles Limited",
+      "アパレル製品を発注する国内外の企業",
+      "半導体関連部材を購入する国内外の企業"
+    ],
+    "revenueSources": [
+      "繊維製品の販売による収入",
+      "工業製品の販売による収入",
+      "アパレル製品のOEM・ODMによる収入",
+      "自社ブランド製品の販売による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社グループ",
+        "description": "ＧＳＩクレオスを中心に、子会社26社、関連会社2社で構成されるグループです。2026年3月31日現在の従業員数は845人で、本社は東京都港区にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "繊維と工業製品の販売",
+        "description": "原糸や繊維原料、アパレル製品、インナー製品、半導体部材、化学品、ホビー関連商材、産業機械などを扱っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外の取引先",
+        "description": "Toray Industries (HK) Ltd.やPacific Textiles Limitedをはじめ、国内外の取引先に販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は188,677百万円で、前期比14.0%増でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は2,544百万円で、前期比7.9%増でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +407,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24512000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 624,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +427,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25929000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 610,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +447,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27450000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 658,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +467,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 30086000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 823,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,28 +487,314 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32210000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 845,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "当連結会計年度より株式会社ソアロン及び株式会社GSIソアロンテキスタイルラボを連結範囲に含めています。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1927,
+      "title": "林大作商店の開業",
+      "description": "林大作が横浜市に個人商店として林大作商店を開業し、米国・欧州への生糸・絹撚糸の輸出を開始しました。",
+      "significance": "当社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1931,
+      "title": "株式会社林大作商店の設立",
+      "description": "横浜市に株式会社林大作商店を設立しました。",
+      "significance": "会社としての始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1934,
+      "title": "郡是シルクコーポレーションへの商号変更",
+      "description": "商号を株式会社郡是シルクコーポレーションに変更しました。",
+      "significance": "繊維の商社としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1942,
+      "title": "郡是産業への商号変更",
+      "description": "商号を郡是産業株式会社に変更しました。",
+      "significance": "商号の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "米国への進出",
+      "description": "Gunze New York, Inc.を米国に設立しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "グンゼ産業への商号変更",
+      "description": "商号をグンゼ産業株式会社に変更し、本社を東京都千代田区に移転しました。",
+      "significance": "現在の事業の基盤となる商号になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "株式の上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "東京・大阪証券取引所市場第一部への上場",
+      "description": "東京・大阪証券取引所市場第一部に上場しました。",
+      "significance": "市場第一部への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "GSIクレオスへの商号変更",
+      "description": "商号を株式会社GSIクレオスに変更しました。",
+      "significance": "現在の商号になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "中国への進出",
+      "description": "GSI (Shenzhen) Ltd.を中国に設立しました。",
+      "significance": "中国での事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "韓国への進出",
+      "description": "GSI Creos Korea Co., Ltd.を韓国に設立しました。",
+      "significance": "韓国での事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "GSI Creos Chinaの増資引受",
+      "description": "GSI (Shanghai) Ltd.（現GSI Creos China Co., Ltd.）の増資を引き受けました。",
+      "significance": "中国事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "プライム市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "本社の移転",
+      "description": "本社を東京都港区芝三丁目8番2号に移転しました。",
+      "significance": "現在の本社への移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ソアロンの株式取得",
+      "description": "株式会社ソアロンの株式を取得し、連結子会社としました。",
+      "significance": "トリアセテート繊維事業の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "gunze",
+      "relationship": "customer",
+      "description": "当社繊維事業・工業製品事業における重要な販売及び仕入先です。2026年3月31日現在、542,586株を保有しています。同社は同日現在、当社株式378千株（3.10%）を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toray",
+      "relationship": "customer",
+      "description": "当社繊維事業・工業製品事業における重要な販売及び仕入先です。2026年3月31日現在、775,000株を保有しています。同社は同日現在、当社株式329千株（2.69%）を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "komatsu-matere",
+      "relationship": "supplier",
+      "description": "当社繊維事業における重要な仕入先です。2026年3月31日現在、100,000株を保有しています。同社は同日現在、当社株式126千株（1.03%）を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toabo",
+      "relationship": "customer",
+      "description": "当社繊維事業・工業製品事業における販売及び仕入先です。2026年3月31日現在、140,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aoyama-trading",
+      "relationship": "customer",
+      "description": "当社繊維事業における重要な販売先です。2026年3月31日現在、18,025株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokyo-soir",
+      "relationship": "customer",
+      "description": "当社グループの繊維事業における重要な販売先です。2026年3月31日現在、40,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "eagle-industry",
+      "relationship": "customer",
+      "description": "当社工業製品事業における重要な販売先です。2026年3月31日現在、10,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fujikura-kasei",
+      "relationship": "supplier",
+      "description": "当社工業製品事業における重要な仕入先です。2026年3月31日現在、22,300株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toyobo",
+      "relationship": "supplier",
+      "description": "当社繊維事業・工業製品事業における重要な仕入先です。2026年3月31日現在、10,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "taisei-lamick-group-head-quarter-and-innovation",
+      "relationship": "customer",
+      "description": "当社工業製品事業における重要な販売先です。2026年3月31日現在、3,884株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "business-brain-showaota",
+      "relationship": "business-partner",
+      "description": "当社の基幹システムに係る取引先です。2026年3月31日現在、30,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第96期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社GSIクレオス",
+      "publisher": "株式会社ＧＳＩクレオス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGXI.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YGXI",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "パーパス「次代の生活品質を高める 事業の創造者として 人びとの幸せを実現する」のもと、2031年の創立100周年を見据え、長期ビジョン「創造と刷新を続ける類いなき事業創造型商社」の実現を掲げています。中期経営計画“GSI CONNECT Phase2”（2025-2027）では、資本コスト経営の実践、グループ基盤強化・協働推進、ESG経営の推進の3つの重点施策を進めています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "繊維事業と工業製品事業をあわせ持つ商社で、国内9拠点と海外27拠点で事業を展開しています。ファイバー事業が売上高の最大の区分で、香港の現地法人は連結売上高の10%超を占めています。",
+        "basis": "【事業の内容】、【セグメント情報】及び【関係会社の状況】の記載",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は188,677百万円で、地域別ではアジアが119,614百万円、日本が57,721百万円でした。主要な顧客はToray Industries (HK) Ltd.とPacific Textiles Limitedです。",
+        "basis": "【セグメント情報】の記載",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

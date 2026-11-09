@@ -4,15 +4,128 @@
   "name": "イーレックス",
   "officialName": "イーレックス株式会社",
   "nameEn": "erex Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "erex",
+  "description": "再生可能エネルギーを軸に、電力の小売と発電、バイオマス燃料の供給を手がける電力会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "energy",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "electric-power",
+      "name": "電力事業",
+      "description": "再生可能エネルギーを基軸に、電力の小売と卸売、バイオマス燃料の卸売を手がけます。発電所の運営や燃料の調達、トレーディングも一体で行います。2026年3月期の売上高は169,170百万円です。",
+      "products": [
+        "電力",
+        "パーム椰子殻（PKS）",
+        "木質ペレット"
+      ],
+      "customers": [
+        "法人・個人の需要家",
+        "一般送配電事業者",
+        "他社のバイオマス発電事業者"
+      ],
+      "children": [
+        {
+          "id": "retail",
+          "name": "電力小売",
+          "description": "法人や個人の需要家に電力を販売します。完全固定プランやハイブリッドプラン、市場連動型プランなどを提供します。2026年3月期の売上高は91,326百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "wholesale",
+          "name": "電力卸売",
+          "description": "相対取引や日本卸電力取引所を通じて電力を販売します。2026年3月期の売上高は51,660百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "fuel-wholesale",
+          "name": "燃料卸売",
+          "description": "他社のバイオマス発電事業者にパーム椰子殻や木質ペレットなどのバイオマス燃料を販売します。2026年3月期の売上高は22,750百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other",
+          "name": "その他",
+          "description": "上記の区分に含まれない収入です。2026年3月期の売上高は3,433百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "再生可能エネルギーを軸に、電力の小売と発電、バイオマス燃料の供給を手がける電力会社です。",
+    "products": [
+      "電力",
+      "パーム椰子殻（PKS）",
+      "木質ペレット"
+    ],
+    "customers": [
+      "法人・個人の需要家",
+      "一般送配電事業者",
+      "他社のバイオマス発電事業者"
+    ],
+    "revenueSources": [
+      "電力小売による収入",
+      "電力卸売による収入",
+      "燃料卸売による収入",
+      "その他の収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "再生可能エネルギーを基軸とする電力事業グループ",
+        "description": "イーレックスは、再生可能エネルギーを基軸とする電力事業を手がけるグループです。連結子会社は19社、持分法適用会社は8社で、従業員数は2026年3月31日現在302人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "電力の販売とバイオマス燃料の供給",
+        "description": "自社のバイオマス発電所で発電した電力や、市場などから調達した電力を販売します。バイオマス燃料の販売も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "法人・個人の需要家や送配電事業者など",
+        "description": "法人や個人の需要家、一般送配電事業者、他社のバイオマス発電事業者に電力や燃料を提供します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "電力小売と電力卸売、燃料卸売による売上高",
+        "description": "電力小売と電力卸売、燃料卸売が売上高につながります。2026年3月期の売上高は169,170百万円で、前期比1.2％減です。"
+      },
+      {
+        "kind": "profit",
+        "title": "売上高から費用を差し引いた当期利益",
+        "description": "売上高から費用を差し引いた残りが当期利益となります。2026年3月期の親会社の所有者に帰属する当期利益は5,332百万円で、前期比151.7％増です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +140,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 66820000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 214,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +160,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 73953000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 263,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +180,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 48104000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 269,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -87,12 +200,13 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 64144000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 284,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2025年3月期から国際会計基準（IFRS）に基づいて連結財務諸表を作成しています。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +221,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 70388000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 302,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -115,20 +229,286 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1999,
+      "title": "日短エナジー株式会社の設立",
+      "description": "日短エクスコ株式会社が事業多角化の一環として、電力事業を行う子会社「日短エナジー株式会社」を東京都中央区日本橋本石町に設立しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "イーレックス株式会社への社名変更",
+      "description": "「イーレックス株式会社」へ社名を変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "特定規模電気事業者の届出",
+      "description": "経済産業省へ「特定規模電気事業者」の届出を行いました。",
+      "significance": "電力小売事業への参入の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "九州地区電力小売開始",
+      "description": "九州地区で電力小売を開始しました。",
+      "significance": "電力小売事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "関東地区電力小売開始",
+      "description": "関東地区で電力小売を開始しました。",
+      "significance": "電力小売の地域を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "日本卸電力取引所の設立に参画",
+      "description": "有限責任中間法人日本卸電力取引所（現 一般社団法人日本卸電力取引所）の社員として設立に参画しました。",
+      "significance": "電力取引市場の立ち上げに関わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "日本卸電力取引所の取引会員登録",
+      "description": "一般社団法人日本卸電力取引所の取引会員登録を行いました。",
+      "significance": "卸電力市場での取引を始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "東北地区電力小売開始",
+      "description": "東北地区で電力小売を開始しました。",
+      "significance": "電力小売の地域をさらに広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "イーレックスニューエナジー株式会社設立",
+      "description": "イーレックスニューエナジー株式会社を設立しました。",
+      "significance": "発電事業を担う子会社ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "土佐発電所の商業運転開始",
+      "description": "イーレックスニューエナジー株式会社の土佐発電所が商業運転を開始しました。",
+      "significance": "自社発電所の運転を始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "中部地区電力小売開始",
+      "description": "中部地区で電力小売を開始しました。",
+      "significance": "電力小売の地域をさらに広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "イーレックスニューエナジー佐伯株式会社設立",
+      "description": "イーレックスニューエナジー佐伯株式会社を設立しました。",
+      "significance": "バイオマス発電所の運営体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ティーダッシュ合同会社の全持分譲渡",
+      "description": "ティーダッシュ合同会社の全持分を譲渡しました。",
+      "significance": "販売子会社を手放しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ハウジャンバイオマス発電所の商業運転開始",
+      "description": "ベトナムのハウジャン省で、ハウジャンバイオマス発電所が商業運転を開始しました。同国初の大型商用バイオマス発電所です。",
+      "significance": "海外初の発電所が稼働しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "east-japan-railway",
+      "relationship": "major-shareholder",
+      "description": "東日本旅客鉄道株式会社は、2026年3月31日現在、当社の発行済株式（自己株式を除く。）の総数の4.66％を保有する大株主です。2024年12月20日に「再生可能エネルギー発電事業」に関するアグリゲーションの受託検討等について資本業務提携契約を締結しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "toda",
+      "relationship": "major-shareholder",
+      "description": "戸田建設株式会社は、2026年3月31日現在、当社の発行済株式（自己株式を除く。）の総数の5.61％を保有する大株主です。2024年5月10日に国内外の発電事業及び燃料開発事業における協業について資本業務提携契約を締結しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "kraftia",
+      "relationship": "major-shareholder",
+      "description": "株式会社クラフティアは、2026年3月31日現在、当社の発行済株式（自己株式を除く。）の総数の4.56％を保有する大株主です。2024年5月10日の取締役会で決議した第三者割当による新株発行の割当先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "hanwa",
+      "relationship": "supplier",
+      "description": "阪和興業株式会社とは、2016年12月21日にバイオマス燃料調達契約を締結し、2020年1月1日から2029年12月31日までバイオマス燃料を調達しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "marubeni",
+      "relationship": "supplier",
+      "description": "丸紅株式会社とは、2016年12月2日にバイオマス燃料調達契約を締結し、2020年1月1日から2029年12月31日までバイオマス燃料を調達しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "sumitomo-realty-and-development",
+      "relationship": "customer",
+      "description": "住友不動産株式会社が手掛ける建設物件および所有物件への電気の供給のため、株式を保有しています。関連不動産施設等へのCO2フリー電気の供給の機会獲得も目的としています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "wakachiku-construction",
+      "relationship": "supplier",
+      "description": "若築建設株式会社は、当社グループの佐伯、豊前、沖縄発電所建設の土木工事を請け負っており、その関係強化のため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daimaru-enawin",
+      "relationship": "business-partner",
+      "description": "大丸エナウィン株式会社は、当社グループの小売事業における有力販売パートナーであり、その関係強化のため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "osaka-gas",
+      "relationship": "customer",
+      "description": "大阪ガス株式会社の関連子会社である広畑バイオマス発電株式会社と、当社初となるバイオマス（PKS）燃料長期供給契約を締結しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "taiheiyo-cement",
+      "relationship": "business-partner",
+      "description": "連結子会社イーレックスニューエナジー佐伯株式会社は、太平洋セメント株式会社から佐伯発電所の事業用地を借りています。事業用定期借地権設定契約の期間は2014年9月1日から2036年9月30日までです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第28期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第28期(2025/04/01－2026/03/31)",
       "publisher": "イーレックス株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKV1.pdf",
-      "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z1YQ.pdf",
+      "publishedAt": "2026-09-14",
+      "docId": "S100Z1YQ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「～持続可能な社会実現のために～再生可能エネルギーをコアに電力新時代の先駆者になる」という2030年ビジョンの下、「総合エネルギー企業」への進化を目指します。2027年3月期から2029年3月期の中期経営計画では、電力小売、トレーディング、発電、燃料、海外の各事業の拡大と、カーボンクレジットの獲得に取り組みます。",
+        "asOf": "2026-09-14",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "バイオマス発電の先駆者として培ったノウハウを持ち、インドネシアにパーム椰子殻の備蓄ヤードを整備し、ベトナムで木質ペレット工場を運営するなど、燃料の調達から発電、販売までを一体で行います。佐伯、豊前、大船渡、沖縄の4発電所はFIT制度に基づく事業認定を受けています。",
+        "basis": "【事業の内容】の記載に基づきます。",
+        "asOf": "2026-09-14",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "電力事業を主な事業とする単一セグメントの会社です。2026年3月期の売上高は169,170百万円で、電力小売が91,326百万円と最も大きく、電力卸売が51,660百万円、燃料卸売が22,750百万円と続きます。ベトナムやカンボジアでも再生可能エネルギー事業を展開しています。",
+        "basis": "2026年3月期の売上高の分解と【事業の内容】の記載に基づきます。",
+        "asOf": "2026-09-14",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

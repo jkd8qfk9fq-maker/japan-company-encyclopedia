@@ -4,7 +4,8 @@
   "name": "北海道瓦斯",
   "officialName": "北海道瓦斯株式会社",
   "nameEn": "HOKKAIDO GAS CO., LTD.",
-  "description": null,
+  "shortNameEn": "HOKKAIDO GAS",
+  "description": "北海道の家庭や事業者へ都市ガスと電気を届け、熱や工事もあわせて提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -14,8 +15,225 @@
       "exchange": "sse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "energy",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "gas",
+      "name": "ガス",
+      "description": "札幌市、小樽市、函館市、千歳市、北見市を主な供給区域として、都市ガスの製造・供給及び販売を行っています。2026年3月期の外部顧客への売上高は105,658百万円です。",
+      "products": [
+        "都市ガス",
+        "LNG販売"
+      ],
+      "customers": [
+        "家庭のお客さま",
+        "業務用のお客さま"
+      ],
+      "children": [
+        {
+          "id": "city-gas",
+          "name": "都市ガス",
+          "description": "都市ガスを製造し、札幌市、小樽市、函館市、千歳市、北見市を主な供給区域として供給しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "lng-sales",
+          "name": "LNG販売",
+          "description": "LNGの販売を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "energy-related",
+      "name": "エネルギー関連",
+      "description": "液化石油ガスや熱供給、ガス工事、ガス器具の販売などを行っています。2026年3月期の外部顧客への売上高は39,543百万円です。",
+      "products": [
+        "液化石油ガス",
+        "熱供給",
+        "石油製品",
+        "ガス工事",
+        "ガス器具",
+        "エネルギーサービス"
+      ],
+      "customers": [
+        "家庭のお客さま",
+        "事業者のお客さま"
+      ],
+      "children": [
+        {
+          "id": "lpg",
+          "name": "液化石油ガス",
+          "description": "液化石油ガスの販売を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "heat-supply",
+          "name": "熱供給",
+          "description": "冷温熱を供給する事業を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "gas-works-equipment",
+          "name": "ガス工事・ガス器具",
+          "description": "ガスの引込に関する工事やガス機器の販売を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "electricity",
+      "name": "電力",
+      "description": "北海道内を販売区域として、電力の発電及び販売を行っています。2026年3月期の外部顧客への売上高は27,530百万円です。",
+      "products": [
+        "電力"
+      ],
+      "customers": [
+        "家庭のお客さま",
+        "事業者のお客さま"
+      ],
+      "children": [
+        {
+          "id": "power-generation",
+          "name": "発電",
+          "description": "北ガス石狩発電所などで発電を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "power-sales",
+          "name": "電力販売",
+          "description": "北海道内のお客さまへ電力を販売しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "ITソリューション、不動産、保険代理業など、報告セグメントに含まれない事業を行っています。2026年3月期の外部顧客への売上高は1,787百万円です。",
+      "products": [
+        "ITソリューション",
+        "不動産",
+        "保険代理業"
+      ],
+      "customers": [
+        "事業者のお客さま"
+      ],
+      "children": [
+        {
+          "id": "it-solutions",
+          "name": "ITソリューション",
+          "description": "ITソリューションの事業を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "real-estate",
+          "name": "不動産",
+          "description": "不動産の事業を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "北海道の家庭や事業者へ都市ガスと電気を届け、熱や工事もあわせて提供する会社です。",
+    "products": [
+      "都市ガス",
+      "電力",
+      "液化石油ガス",
+      "熱供給",
+      "ガス工事",
+      "ガス器具"
+    ],
+    "customers": [
+      "北海道の家庭のお客さま",
+      "北海道の事業者のお客さま"
+    ],
+    "revenueSources": [
+      "都市ガスの販売",
+      "電力の販売",
+      "液化石油ガスなどのエネルギー関連の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "北海道の総合エネルギーサービス会社",
+        "description": "北海道瓦斯は、北海道で都市ガスと電気を供給する会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ガス・電気・熱のエネルギー",
+        "description": "都市ガス、電力、液化石油ガス、熱供給、ガス工事、ガス器具を提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "北海道の家庭と事業者",
+        "description": "札幌市など5市を主な供給区域とする家庭や、北海道内の事業者のお客さまに届けます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "エネルギー販売による売上高",
+        "description": "都市ガスと電気の販売などから売上を得ます。2026年3月期の売上高は174,519百万円で、前期比2.5％増です。"
+      },
+      {
+        "kind": "profit",
+        "title": "販売量の増加と効率的な運営",
+        "description": "販売量の増加と効率的な運営により、事業を続けられる収益を確保します。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -30,7 +248,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 59195000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1459,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,7 +268,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 67996000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1476,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -70,7 +288,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 79001000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1536,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,7 +308,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 88486000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1563,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,7 +328,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 99710000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1641,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,8 +336,169 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1911,
+      "title": "北海道瓦斯株式会社の設立",
+      "description": "北海道瓦斯株式会社を設立しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1912,
+      "title": "札幌・小樽・函館でのガス供給開始",
+      "description": "札幌市、小樽市、函館市の各市内でガス供給を開始しました。",
+      "significance": "ガス事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京証券取引所への株式上場",
+      "description": "東京証券取引所に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "札幌証券取引所への株式上場",
+      "description": "札幌証券取引所に株式を上場しました。",
+      "significance": "札幌証券取引所にも上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "本社の札幌市への移転",
+      "description": "本社を東京都から札幌市に移転しました。",
+      "significance": "北海道に本拠を置く会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "北ガス燃料株式会社の設立",
+      "description": "札幌市に北ガス燃料株式会社（現在の北ガスジェネックス株式会社）を設立しました。",
+      "significance": "グループ会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "天然ガスの導入開始",
+      "description": "天然ガスの導入を開始し、札幌地区の天然ガス転換を開始しました。",
+      "significance": "天然ガスへの転換の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "千歳地区の天然ガス転換の完了",
+      "description": "千歳地区の天然ガス転換を開始し、同年5月に同地区の転換を完了しました。",
+      "significance": "千歳地区で天然ガスへの転換を終えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "会社創立100周年",
+      "description": "会社創立100周年を迎えました。",
+      "significance": "創立100年の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "石狩LNG基地の運転開始",
+      "description": "石狩LNG基地の運転を開始しました。",
+      "significance": "LNGの供給拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "電力小売事業の開始",
+      "description": "電力小売事業を開始しました。",
+      "significance": "電力事業への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "北ガス石狩発電所の営業運転開始",
+      "description": "北ガス石狩発電所の営業運転を開始しました。",
+      "significance": "自社での発電の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "北ガス札幌発電所の営業運転開始",
+      "description": "北ガス札幌発電所の営業運転を開始しました。",
+      "significance": "発電事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "プライム市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "北ガス石狩風力発電所の営業運転開始",
+      "description": "北ガス石狩風力発電所の営業運転を開始しました。",
+      "significance": "再生可能エネルギーによる発電の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tokyo-gas",
+      "relationship": "major-shareholder",
+      "description": "東京瓦斯株式会社は、2026年3月31日現在、発行済株式（自己株式を除く）の4.84％を所有する大株主です。当社も東京瓦斯の株式を保有しており、保有目的はガス・電気等の事業の発展のための協力関係の維持・強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -127,11 +506,45 @@
       "publisher": "北海道瓦斯株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGOL.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YGOL",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2022年に策定した北ガスグループ経営計画「Challenge 2030」のもと、「エネルギーと環境の最適化による快適な社会の創造」の実現に向け、総合エネルギーサービス事業の進化による分散型社会の形成、カーボンニュートラルへの挑戦、デジタル技術の活用による事業構造変革の3つの主要施策に取り組みます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "都市ガス、電力、熱を組み合わせた総合エネルギーサービスを北海道全域に展開しています。石狩LNG基地や北ガス石狩発電所などの供給拠点を持ち、取付メーター件数は2026年3月末現在で606,177件です。",
+        "basis": "有報の事業の内容とセグメント情報、経営者による分析に印字された供給拠点と取付メーター件数です。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は174,519百万円、親会社株主に帰属する当期純利益は11,525百万円で、従業員数は1,641人です。東京証券取引所プライム市場と札幌証券取引所に上場しています。",
+        "basis": "有報の連結経営指標等に印字された2026年3月期の数値と表紙の上場取引所です。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

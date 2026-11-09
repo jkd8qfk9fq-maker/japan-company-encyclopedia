@@ -4,7 +4,8 @@
   "name": "ダイヘン",
   "officialName": "株式会社ダイヘン",
   "nameEn": "DAIHEN Corporation",
-  "description": null,
+  "shortNameEn": "DAIHEN",
+  "description": "変圧器などの電力機器、各種溶接機やプラズマ発生用電源、産業用ロボットなどを製造・販売する電機メーカーです。",
   "listings": [
     {
       "exchange": "tse",
@@ -14,8 +15,133 @@
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "energy-management",
+      "name": "エネルギーマネジメント",
+      "description": "各種変圧器や受変電設備、開閉器、制御通信機器、分散電源機器、充電システム機器などを製造・販売する、グループ最大の報告セグメントです。2026年3月期の外部顧客への売上高は128,220百万円でした。電力会社向け・一般民需向けの電力機器製品群に加え、再生可能エネルギーの活用拡大に資する蓄電池システムなどの機器・システムにより、電力インフラを支えています。当社のほか、四変テック株式会社、株式会社キューヘン、中国電機製造株式会社、東北電機製造株式会社などの連結子会社が製造・販売を担っています。",
+      "products": [
+        "各種変圧器",
+        "受変電設備",
+        "開閉器",
+        "制御通信機器",
+        "分散電源機器",
+        "充電システム機器"
+      ],
+      "customers": [
+        "電力会社",
+        "工場などの一般民需の顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "material-processing",
+      "name": "マテリアルプロセシング",
+      "description": "各種溶接機やプラズマ切断機、プラズマ発生用電源などを製造・販売する報告セグメントです。2026年3月期の外部顧客への売上高は76,419百万円でした。エネルギー源の高精度な制御技術により、金属・半導体・樹脂材料の接合・切断・成膜・表面処理・造形などの加工領域で事業を展開しています。主要な顧客として、半導体製造装置向けの取引がある東京エレクトロン宮城株式会社が開示されています。当社のほか、ダイヘン産業機器株式会社、ダイヘンスタッド株式会社などの連結子会社が担っています。",
+      "products": [
+        "各種溶接機",
+        "プラズマ切断機",
+        "プラズマ発生用電源"
+      ],
+      "customers": [
+        "半導体製造装置メーカー",
+        "金属加工を行う製造業の顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "factory-automation",
+      "name": "ファクトリーオートメーション",
+      "description": "産業用ロボットやクリーン搬送ロボットなどを製造・販売する報告セグメントです。2026年3月期の外部顧客への売上高は32,896百万円でした。強みとする溶接ロボットのほか、ハンドリングや組立・加工などの多様な産業用ロボットや搬送システムにより、工場の自動化・省力化に貢献する分野です。当社のほか、ダイヘンテック株式会社、DAIHEN,Inc.などの連結子会社が担っています。",
+      "products": [
+        "産業用ロボット",
+        "クリーン搬送ロボット"
+      ],
+      "customers": [
+        "自動車関連メーカー",
+        "工場の自動化を進める製造業の顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他",
+      "description": "不動産賃貸事業等を行う区分で、報告セグメントには含まれません。連結子会社の株式会社ダイキが担っており、2026年3月期の外部顧客への売上高は200百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "変圧器などの電力機器、溶接機やプラズマ発生用電源、産業用ロボットをグループで製造し、電力会社や製造業の顧客に販売する事業モデルです。",
+    "products": [
+      "変圧器・受変電設備・充電システム機器などの電力機器",
+      "溶接機・プラズマ切断機・プラズマ発生用電源",
+      "産業用ロボット・クリーン搬送ロボット"
+    ],
+    "customers": [
+      "電力会社",
+      "半導体製造装置メーカーなどの製造業",
+      "工場などの一般民需の顧客"
+    ],
+    "revenueSources": [
+      "電力機器の販売による収入",
+      "溶接・加工機器の販売による収入",
+      "産業用ロボットの販売による収入",
+      "不動産賃貸事業等による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ダイヘングループ",
+        "description": "株式会社ダイヘンと子会社55社、関連会社8社で構成されています。連結の従業員数は4,542人です（2026年3月期）。"
+      },
+      {
+        "kind": "offering",
+        "title": "電力機器・溶接機器・ロボットの製造と販売",
+        "description": "変圧器や受変電設備などの電力機器、溶接機やプラズマ発生用電源などの加工機器、産業用ロボットやクリーン搬送ロボットを、国内外のグループ会社で製造・販売し、修理も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "電力会社と製造業の顧客",
+        "description": "電力会社や、半導体製造装置メーカー、自動車関連メーカーなどの製造業が主な顧客です。主要な顧客として東京エレクトロン宮城株式会社と関西電力株式会社が開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売で得る収入",
+        "description": "電力機器、溶接・加工機器、産業用ロボットの販売が主な収入です。2026年3月期の売上高は237,735百万円で、電力インフラ及び半導体関連企業の設備投資増加を背景に、前期比5.0％増でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から、材料費や人件費などの費用を差し引いた残りが利益になります。2026年3月期の親会社株主に帰属する当期純利益は14,108百万円で、売上高の増加やコスト削減の成果により、前期比18.0％増でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -30,7 +156,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 105636000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3783,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,7 +176,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 119905000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3732,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -70,12 +196,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 148595000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4669,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第161期において、企業結合に係る暫定的な会計処理の確定を行っており、第160期（2024年3月期）の関連する主要な経営指標等については、暫定的な会計処理の確定の内容を反映させたものとなっている。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -90,7 +217,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 153285000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4606,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,7 +237,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 170746000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4542,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,8 +245,382 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1919,
+      "title": "大阪変圧器株式会社を設立",
+      "description": "大阪市大淀区（現・北区）中津南通に大阪変圧器株式会社を設立し、柱上用変圧器の専門多量生産を開始しました。",
+      "significance": "会社の創業であり、現在のエネルギーマネジメント事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1934,
+      "title": "電気溶接機の生産を開始",
+      "description": "電気溶接機の生産を開始しました。",
+      "significance": "現在のマテリアルプロセシング事業につながる溶接事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "大阪証券取引所に株式を上場",
+      "description": "大阪証券取引所に株式を上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所に株式を上場",
+      "description": "東京証券取引所に株式を上場しました。",
+      "significance": "東京市場への株式公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "米国にDAIHEN, Inc.を設立",
+      "description": "米国にDAIHEN, Inc.（現・連結子会社）を設立しました。",
+      "significance": "海外子会社による本格的な海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "アーク溶接用コンピューターロボットの生産を開始",
+      "description": "アーク溶接用コンピューターロボットの生産を開始しました。",
+      "significance": "現在のファクトリーオートメーション事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "株式会社ダイヘンに商号変更",
+      "description": "大阪変圧器株式会社から株式会社ダイヘンに商号を変更しました。",
+      "significance": "現在の社名の発足です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "タイに子会社を設立",
+      "description": "タイにDAIHEN(THAILAND)Co.,Ltd.（現・連結子会社OTC DAIHEN Asia Co.,Ltd.）を設立しました。",
+      "significance": "アジアでの生産・販売体制の展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "スロベニアのVARSTROJを買収",
+      "description": "スロベニアのVARSTROJ Tovarna varilne in rezalne opreme d.d.（現・連結子会社DAIHEN VARSTROJ welding cutting and robotics d.d.）を買収しました。",
+      "significance": "欧州での生産・販売拠点の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ドイツのLorch Schweißtechnik GmbHを買収",
+      "description": "ドイツのLorch Schweißtechnik GmbH（現・連結子会社）を買収しました。",
+      "significance": "欧州事業の拡大に向けた買収です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "東京本社を設置し二本社制へ移行",
+      "description": "大阪本社に加え、東京本社を東京都千代田区大手町に設置し、二本社制に移行しました。",
+      "significance": "本社体制の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "the-kansai-electric-power",
+      "relationship": "customer",
+      "description": "主要な顧客です。2026年3月期の同社への販売実績は23,435百万円（総販売実績の9.9％）で、同一企業集団に属する関西電力送配電株式会社への販売高を含みます。主にエネルギーマネジメントにおける販売先で、変圧器等の販売を行っています。同社は2026年3月31日現在、当社の発行済株式（自己株式を除く）の6.16％を保有する大株主でもあります。当社は同社の株式を、特定投資株式として771株、退職給付信託を通じたみなし保有株式として398,000株保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "companyId": "tokyo-electron",
+      "relationship": "customer",
+      "description": "同社の子会社である東京エレクトロン宮城株式会社が主要な顧客です。2026年3月期の同社向け販売実績は38,332百万円（総販売実績の16.1％）で、マテリアルプロセシングセグメントに属します。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "companyId": "meidensha",
+      "relationship": "supplier",
+      "description": "主にマテリアルプロセシングにおける仕入先で、電源用部材等の安定供給を受けています。2026年3月期において同社の株式286,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sanyo-denki",
+      "relationship": "supplier",
+      "description": "主にファクトリーオートメーションにおける仕入先で、ロボット用部材等の安定供給を受けています。2026年3月期において同社の株式412,200株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tsubakimoto-chain",
+      "relationship": "supplier",
+      "description": "主にファクトリーオートメーションにおける仕入先で、ロボット用部材等の安定供給を受けています。2026年3月期において同社の株式145,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tachibana-eletech",
+      "relationship": "supplier",
+      "description": "主にマテリアルプロセシングにおける仕入先で、溶接機用部材等の安定供給を受けています。2026年3月期において同社の株式11,340株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kinden",
+      "relationship": "customer",
+      "description": "主にエネルギーマネジメントにおける販売先で、変圧器等の販売を行っています。2026年3月期において同社の株式286,284株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "iwatani",
+      "relationship": "customer",
+      "description": "主にファクトリーオートメーション・マテリアルプロセシングにおける販売先で、溶接機等の販売を行っています。2026年3月期において同社の株式960,220株を保有しています。同社は2026年3月31日現在、当社の発行済株式（自己株式を除く）の1.47％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "denyo",
+      "relationship": "customer",
+      "description": "主にマテリアルプロセシングにおける販売先で、溶接機等の販売を行っています。2026年3月期において同社の株式177,100株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "koike-sanso-kogyo",
+      "relationship": "customer",
+      "description": "主にファクトリーオートメーション・マテリアルプロセシングにおける販売先で、産業用ロボット・溶接機等の販売を行っています。2026年3月期において同社の株式161,135株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okabe",
+      "relationship": "customer",
+      "description": "主にマテリアルプロセシングにおける販売先で、溶接機等の販売を行っています。2026年3月期において同社の株式262,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "wakita-and-co",
+      "relationship": "customer",
+      "description": "主にマテリアルプロセシングにおける販売先で、溶接機等の販売を行っています。2026年3月期において同社の株式106,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "togami-electric-mfg",
+      "relationship": "customer",
+      "description": "主にエネルギーマネジメントにおける販売先で、開閉器等の販売を行っています。2026年3月期において同社の株式29,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "asia-pile-holdings",
+      "relationship": "customer",
+      "description": "主にマテリアルプロセシングにおける販売先で、溶接機用部材等の販売を行っています。2026年3月期において同社の株式74,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yondenko",
+      "relationship": "customer",
+      "description": "主にエネルギーマネジメントにおける販売先で、変圧器等の販売を行っています。2026年3月期において同社の株式54,054株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nitto-kogyo",
+      "relationship": "customer",
+      "description": "主にエネルギーマネジメントにおける販売先で、変圧器等の販売を行っています。2026年3月期において同社の株式15,972株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "koatsu-gas-kogyo",
+      "relationship": "customer",
+      "description": "主にマテリアルプロセシングにおける販売先で、溶接機等の販売を行っています。2026年3月期において同社の株式50,067株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamazen",
+      "relationship": "customer",
+      "description": "主にファクトリーオートメーション・マテリアルプロセシングにおける販売先で、産業用ロボット・溶接機等の販売を行っています。2026年3月期において同社の株式27,400株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "trusco-nakayama",
+      "relationship": "customer",
+      "description": "主にマテリアルプロセシングにおける販売先で、溶接機等の販売を行っています。2026年3月期において同社の株式6,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hokuriku-electric-power",
+      "relationship": "customer",
+      "description": "主にエネルギーマネジメントにおける販売先で、変圧器等の販売を行っています。2026年3月期において同社の株式6,711株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "unisol-holdings",
+      "relationship": "customer",
+      "description": "主にファクトリーオートメーション・マテリアルプロセシングにおける販売先で、産業用ロボット・溶接機等の販売を行っています。2026年3月期において同社の株式2,900株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "air-water",
+      "relationship": "customer",
+      "description": "主にファクトリーオートメーション・マテリアルプロセシングにおける販売先で、産業用ロボット・溶接機等の販売を行っています。2026年3月期において同社の株式を、特定投資株式として500株、退職給付信託を通じたみなし保有株式として283,000株保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "chubu-electric-power",
+      "relationship": "customer",
+      "description": "主にエネルギーマネジメントにおける販売先で、変圧器等の販売を行っています。2026年3月期において同社の株式を、特定投資株式として340株、退職給付信託を通じたみなし保有株式として160,000株保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hokkaidenko",
+      "relationship": "customer",
+      "description": "主にエネルギーマネジメントにおける販売先で、変圧器等の販売を行っています。2026年3月期において同社の株式を、特定投資株式として926株、退職給付信託を通じたみなし保有株式として154,000株保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shikoku-electric-power",
+      "relationship": "customer",
+      "description": "主にエネルギーマネジメントにおける販売先で、変圧器等の販売を行っています。2026年3月期において同社の株式を、特定投資株式として699株、退職給付信託を通じたみなし保有株式として92,000株保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-chugoku-electric-power",
+      "relationship": "customer",
+      "description": "主にエネルギーマネジメントにおける販売先で、変圧器等の販売を行っています。2026年3月期において同社の株式を、特定投資株式として424株、退職給付信託を通じたみなし保有株式として39,000株保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tohoku-electric-power",
+      "relationship": "customer",
+      "description": "主にエネルギーマネジメントにおける販売先で、変圧器等の販売を行っています。2026年3月期において同社の株式を、特定投資株式として18株、退職給付信託を通じたみなし保有株式として39,000株保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sun-wa-technos",
+      "relationship": "business-partner",
+      "description": "主にエネルギーマネジメントにおける変圧器等の販売先であり、マテリアルプロセシングにおける溶接機用部材等の仕入先でもある取引先です。売買両方向の取引があるためbusiness-partnerとしました。2026年3月期において同社の株式26,448株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -127,11 +628,45 @@
       "publisher": "株式会社ダイヘン",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEET.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YEET",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-08",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "会社の目的として、ステークホルダーの「みんなの幸せ同時達成」を掲げ、社会課題解決に積極的に貢献する「研究開発型企業」となることを目指しています。2026年度中期計画では、「社会課題解決に資する開発の領域拡大」「代理店販売の革新と新領域の販売拡大」「自動化追求と最適生産体制の構築」「長期人材育成計画に基づく人的資本の充実」の4つを基本方針とし、売上高は2026年度に2,500億円以上、2030年度に3,000億円以上を目標としています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1919年の創業以来の変圧器の技術を土台に、溶接機や産業用ロボットへと事業を広げ、電力機器・溶接加工・ロボットの3つの技術ドメインを持つ構成になっています。米国・ドイツ・タイ・中国・韓国・インドなど世界各地に生産・販売子会社を置き、マテリアルプロセシングでは半導体製造装置向けのプラズマ発生用電源などで大口の顧客との取引があります。",
+        "basis": "【沿革】の変圧器から溶接機・ロボットへの展開、【事業の内容】の3セグメント構成、【関係会社の状況】の海外子会社の一覧、【関連情報】の主要な顧客の開示に基づく。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高の内訳は、エネルギーマネジメントが128,220百万円と全体の約半分を占め、マテリアルプロセシングが76,419百万円、ファクトリーオートメーションが32,896百万円でした。地域別では日本が188,749百万円と全体の約8割を占め、アジアが30,505百万円、北米が7,318百万円、その他の地域が11,162百万円でした。主要な顧客として、東京エレクトロン宮城株式会社（総販売実績の16.1％）と関西電力株式会社（同9.9％）が開示されています。",
+        "basis": "【セグメント情報】の外部顧客への売上高と【関連情報】の地域別売上高・主要な顧客の開示に基づく。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

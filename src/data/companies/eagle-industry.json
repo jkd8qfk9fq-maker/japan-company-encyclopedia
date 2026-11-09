@@ -4,15 +4,179 @@
   "name": "イーグル工業",
   "officialName": "イーグル工業株式会社",
   "nameEn": "EAGLE INDUSTRY CO.,LTD.",
-  "description": null,
+  "shortNameEn": "EAGLE INDUSTRY",
+  "description": "自動車やプラント、半導体製造装置、船舶、航空機に使うメカニカルシールなどを作り、保守も手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "automotive",
+      "primary": false
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "automotive-construction-machinery",
+      "name": "自動車・建設機械業界向け事業",
+      "description": "自動車や建設機械、電力業界向けのメカニカルシールや特殊バルブを作り、保守や工事も手がけています。2026年3月期の売上高は93,267百万円です。",
+      "products": [
+        "自動車向けメカニカルシール",
+        "建設機械向けメカニカルシール",
+        "特殊バルブ",
+        "サスペンション用ソレノイドバルブ",
+        "電力業界向け特殊バルブ"
+      ],
+      "customers": [
+        "自動車メーカー",
+        "建設機械メーカー",
+        "電力会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "general-industrial-machinery",
+      "name": "一般産業機械業界向け事業",
+      "description": "産業機械や石油精製、石油化学プラント向けのメカニカルシールを作り、保守も手がけています。2026年3月期の売上高は39,492百万円です。",
+      "products": [
+        "産業機械向けメカニカルシール",
+        "石油精製プラント向けメカニカルシール",
+        "石油化学プラント向けメカニカルシール"
+      ],
+      "customers": [
+        "石油精製会社",
+        "石油化学会社",
+        "産業機械メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "marine",
+      "name": "舶用業界向け事業",
+      "description": "船尾管シールや軸受を作り、保守修理も手がけています。2026年3月期の売上高は19,479百万円です。",
+      "products": [
+        "船尾管シール",
+        "船尾管軸受"
+      ],
+      "customers": [
+        "造船会社",
+        "船舶運航会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "semiconductor",
+      "name": "半導体業界向け事業",
+      "description": "半導体製造装置向けの各種シールや精密ベローズを作っています。2026年3月期の売上高は16,488百万円です。",
+      "products": [
+        "半導体製造装置向けシール",
+        "精密ベローズ",
+        "電子機器向けシール",
+        "精密機器向けシール"
+      ],
+      "customers": [
+        "半導体製造装置メーカー",
+        "電子機器メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "aerospace",
+      "name": "航空宇宙業界向け事業",
+      "description": "航空機やロケットエンジン向けの各種シールや圧力センサーを作っています。2026年3月期の売上高は8,760百万円です。",
+      "products": [
+        "航空機向けシール",
+        "ロケットエンジン向けシール",
+        "圧力センサー"
+      ],
+      "customers": [
+        "航空機メーカー",
+        "宇宙関連企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "自動車やプラント、半導体製造装置、船舶、航空機に使うメカニカルシールなどを作り、保守も手がける会社です。",
+    "products": [
+      "メカニカルシール",
+      "特殊バルブ",
+      "船尾管シール",
+      "船尾管軸受",
+      "精密ベローズ",
+      "圧力センサー",
+      "サスペンション用ソレノイドバルブ"
+    ],
+    "customers": [
+      "自動車メーカー",
+      "建設機械メーカー",
+      "石油精製・石油化学会社",
+      "半導体製造装置メーカー",
+      "造船会社",
+      "航空機メーカー"
+    ],
+    "revenueSources": [
+      "メカニカルシールなどの製品の販売",
+      "特殊バルブの販売",
+      "保守・工事などのサービスの提供"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "密封装置の会社",
+        "description": "イーグル工業は、メカニカルシールや特殊バルブなどの密封装置を手がける会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "5つの業界向けのシールとバルブ",
+        "description": "自動車・建設機械、一般産業機械、半導体、舶用、航空宇宙の5つの業界向けに、メカニカルシールや特殊バルブなどを届けます。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車から航空機まで",
+        "description": "製品は、自動車や建設機械のメーカー、石油精製・石油化学プラント、半導体製造装置メーカー、造船会社、航空機メーカーに届けられます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売と保守サービス",
+        "description": "製品の販売と、保守・工事などのサービスの提供が売上高につながります。2026年3月期の売上高は1,774億88百万円で、前期比5.5％増です。"
+      },
+      {
+        "kind": "profit",
+        "title": "アフターサービスによる収益基盤",
+        "description": "納入した製品のアフターサービスでも収益を確保し、収益基盤の安定化に取り組みます。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +191,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 103094000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6393,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +211,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 112930000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6300,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +231,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 125671000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6280,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +251,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 122519000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6268,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +271,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 142621000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6188,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +279,259 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1964,
+      "title": "日本シールオール株式会社の設立",
+      "description": "ＮＯＫ株式会社と米国のEG&GシーロールINC.との合弁事業契約に基づき、メカニカルシールなどの製造と販売を目的に日本シールオール株式会社を設立しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "岡山事業場の新設",
+      "description": "岡山県高梁市に岡山事業場を新設しました。",
+      "significance": "生産拠点が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "イーグル工業株式会社への商号変更",
+      "description": "商号をイーグル工業株式会社に変更しました。",
+      "significance": "現在の社名となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "台湾への進出",
+      "description": "台湾にイーグルインダストリー台湾CORP.を設立しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式市場への上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "東京証券取引所市場第一部への上場",
+      "description": "東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "上場市場が第1部となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "中国への進出",
+      "description": "中国にイーグルインダストリー（WUXI）CO.,LTD.を設立しました。",
+      "significance": "中国での事業基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "コベルコ・マリンエンジニアリングの株式取得",
+      "description": "株式会社神戸製鋼所から株式会社コベルコ・マリンエンジニアリングの株式65％を取得しました。",
+      "significance": "舶用事業の基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "ブルグマン社との合弁事業契約",
+      "description": "一般産業機械業界向けメカニカルシールなどについて、ブルグマン社との合弁事業契約を締結しました。",
+      "significance": "一般産業機械事業での提携が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "インドにおけるメカニカルシール事業の強化",
+      "description": "インドのイーグル・シールズ・アンド・システムズ・インディアLTD.とブルグマンインディアPVT.LTD.を合併し、商号をイーグルブルグマンインディアPVT.LTD.に変更して、インドにおけるメカニカルシール事業を強化しました。",
+      "significance": "インドでの事業基盤が強まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "ＫＥＭＥＬ株式会社の株式取得",
+      "description": "コベルコイーグル・マリンエンジニアリング株式会社の株式を100％取得し、ＫＥＭＥＬ株式会社に商号を変更しました。",
+      "significance": "舶用事業の子会社化が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "メキシコへの進出",
+      "description": "メキシコにEKKイーグルインダストリーメキシコS.A. de C.V.を設立しました。",
+      "significance": "北米での生産基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "本社事務所の移転",
+      "description": "本社事務所を東京都港区芝公園2丁目4番1号に移転しました。",
+      "significance": "本社の所在地が現在地となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所市場第一部からプライム市場に移行しました。",
+      "significance": "上場市場がプライム市場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ＮＯＫとの経営統合契約の締結",
+      "description": "ＮＯＫ株式会社との共同株式移転による経営統合について合意し、経営統合契約を締結しました。2026年10月1日をもって共同持株会社を設立する予定です。",
+      "significance": "ＮＯＫとの経営統合に向けた動きが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nok",
+      "relationship": "other-affiliated-company",
+      "description": "ＮＯＫ株式会社は、当社のその他の関係会社で、2026年3月31日現在、当社の議決権の32.3％を所有しています。当社は同社に製品を販売するとともに、同社から製品を仕入れています。また、同社は当社製品の販売代理店です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "hitachi-construction-machinery",
+      "relationship": "customer",
+      "description": "日立建機株式会社は、自動車・建設機械業界向け事業における当社の顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kuriyama-holdings",
+      "relationship": "customer",
+      "description": "クリヤマホールディングス株式会社は、自動車・建設機械業界向け事業における当社の顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sanden",
+      "relationship": "customer",
+      "description": "サンデン株式会社は、自動車・建設機械業界向け事業における当社の顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tsurumi-manufacturing",
+      "relationship": "customer",
+      "description": "株式会社鶴見製作所は、一般産業機械業界向け事業における当社の顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "rix",
+      "relationship": "customer",
+      "description": "リックス株式会社は、一般産業機械業界向け事業等における当社の顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daio-paper",
+      "relationship": "customer",
+      "description": "大王製紙株式会社は、一般産業機械業界向け事業における当社の顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "dmw",
+      "relationship": "customer",
+      "description": "株式会社電業社機械製作所は、一般産業機械業界向け事業における当社の顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "namura-shipbuilding",
+      "relationship": "customer",
+      "description": "株式会社名村造船所は、舶用業界向け事業における当社の顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-hanshin-diesel-works",
+      "relationship": "customer",
+      "description": "阪神内燃機工業株式会社は、舶用業界向け事業における当社の顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "meiji-shipping-group",
+      "relationship": "customer",
+      "description": "明海グループ株式会社は、舶用業界向け事業における当社の顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +539,48 @@
       "publisher": "イーグル工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFUB.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YFUB",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: ＮＯＫ株式会社との共同株式移転による経営統合は2026年10月1日を予定しています。2025年11月10日に経営統合契約を締結し、両社の完全親会社となる「NOK Group株式会社」を設立する予定です。提出日時点では計画であり、完了した取引ではありません。"
+    ]
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営の基本方針は「企業は株主・従業員・社会の三者の共有物であり、これにお客様、サプライヤー、金融機関等を加えた全てのステークホルダーに利益と誇りをもたらす」ことです。2026年度から2028年度の中期経営計画では「持続性ある企業体質の構築 ～Fly Sky High!～」を基本方針とし、次世代製品の開発と事業化を進めます。2026年10月1日に予定するＮＯＫ株式会社との共同株式移転による経営統合により、シナジーの創出に努めます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "メカニカルシールを軸に、自動車・建設機械、一般産業機械、半導体、舶用、航空宇宙の5つの業界向け事業を持ちます。自動車・建設機械業界向け事業の売上高は93,267百万円で、全体の半分以上を占めます。舶用事業では、1万トン以上の中大型船向けの船尾管シールが主要造船国において約6割のマーケットシェアを有しています。",
+        "basis": "2026年3月期のセグメント別売上高とMD&Aの事業別説明",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は1,774億88百万円で、前期比5.5％増です。地域別売上高は日本が63,304百万円、中国が19,032百万円、その他アジア・オセアニアが47,594百万円、欧州・米州等が47,556百万円です。従業員数は6,188人です。",
+        "basis": "2026年3月期の売上高と地域別売上高、従業員数",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

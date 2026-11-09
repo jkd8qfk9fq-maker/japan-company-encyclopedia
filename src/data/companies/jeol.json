@@ -4,15 +4,226 @@
   "name": "日本電子",
   "officialName": "日本電子株式会社",
   "nameEn": "JEOL Ltd.",
-  "description": null,
+  "shortNameEn": "JEOL",
+  "description": "電子顕微鏡をはじめとする理科学・計測機器、電子ビーム描画装置などの産業機器、自動分析装置などの医用機器の製造販売を主な内容とする精密機器メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "scientific",
+      "name": "理科学・計測機器事業",
+      "description": "電子顕微鏡、核磁気共鳴装置、質量分析計等の製造販売を行っています。2026年3月期の売上高は116,295百万円です。",
+      "products": [
+        "透過電子顕微鏡",
+        "分析電子顕微鏡",
+        "電子プローブマイクロアナライザ",
+        "核磁気共鳴装置",
+        "質量分析計",
+        "走査電子顕微鏡",
+        "複合ビーム加工観察装置",
+        "集束イオンビーム加工観察装置"
+      ],
+      "customers": [
+        "大学・研究機関",
+        "半導体メーカー",
+        "医療機関・検査機関"
+      ],
+      "children": [
+        {
+          "id": "scientific-electron-optics",
+          "name": "電子光学機器",
+          "description": "透過電子顕微鏡、分析電子顕微鏡、電子プローブマイクロアナライザ、光電子分光装置、オージェマイクロプローブ、電子顕微鏡周辺機器を扱います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "scientific-analytical",
+          "name": "分析機器",
+          "description": "核磁気共鳴装置、電子スピン共鳴装置、質量分析計、ポータブルガスクロマトグラフ、ガスモニタ分析装置、Ｘ線ＣＴ微細構造解析システムを扱います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "scientific-measurement",
+          "name": "計測検査機器",
+          "description": "走査電子顕微鏡、分析走査電子顕微鏡、電子顕微鏡周辺機器、複合ビーム加工観察装置、集束イオンビーム加工観察装置、薄膜試料作製装置、クロスセクションポリッシャ、エネルギー分散形蛍光Ｘ線分析装置を扱います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "industrial",
+      "name": "産業機器事業",
+      "description": "電子ビーム描画装置、電子ビーム金属３Dプリンター、高周波電源等の製造販売を行っています。2026年3月期の売上高は48,131百万円です。",
+      "products": [
+        "電子ビーム描画装置",
+        "電子ビーム金属３Dプリンター",
+        "高周波電源",
+        "電子ビーム蒸着用電子銃・電源",
+        "高周波誘導熱プラズマ装置"
+      ],
+      "customers": [
+        "半導体メーカー"
+      ],
+      "children": [
+        {
+          "id": "industrial-ebeam-lithography",
+          "name": "電子ビーム描画装置",
+          "description": "スポットビーム描画、可変成形ビーム描画の電子ビーム描画装置を扱います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "industrial-3d-printer",
+          "name": "電子ビーム金属３Dプリンター",
+          "description": "電子ビーム金属３Dプリンターを扱います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "industrial-power",
+          "name": "電子銃・電源",
+          "description": "直進形電子銃・電源、電子ビーム蒸着用電子銃・電源、プラズマ発生用高周波電源、内蔵形プラズマ銃・電源、高周波誘導熱プラズマ装置を扱います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "medical",
+      "name": "医用機器事業",
+      "description": "自動分析装置等の製造販売を行っています。2026年3月期の売上高は14,926百万円です。",
+      "products": [
+        "自動分析装置",
+        "臨床検査情報処理システム",
+        "全自動アミノ酸分析機"
+      ],
+      "customers": [
+        "医療機関・検査機関"
+      ],
+      "children": [
+        {
+          "id": "medical-analyzer",
+          "name": "自動分析装置",
+          "description": "生化学自動分析装置などの自動分析装置を扱います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "medical-info-system",
+          "name": "臨床検査情報処理システム",
+          "description": "臨床検査情報処理システムを扱います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "medical-amino-acid",
+          "name": "全自動アミノ酸分析機",
+          "description": "全自動アミノ酸分析機を扱います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "電子光学機器、分析機器、計測検査機器、産業機器、医用機器の製造販売を主な内容とし、これらに附帯する製品・部品の加工委託、保守・サービス、周辺機器の仕入販売を営んでいます。",
+    "products": [
+      "透過電子顕微鏡",
+      "核磁気共鳴装置",
+      "質量分析計",
+      "走査電子顕微鏡",
+      "電子ビーム描画装置",
+      "電子ビーム金属３Dプリンター",
+      "自動分析装置"
+    ],
+    "customers": [
+      "大学・研究機関",
+      "半導体メーカー",
+      "医療機関・検査機関"
+    ],
+    "revenueSources": [
+      "理科学・計測機器事業の売上高",
+      "産業機器事業の売上高",
+      "医用機器事業の売上高",
+      "保守・サービス、周辺機器の仕入販売による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "会社",
+        "description": "東京都昭島市に本社を置き、子会社33社および関連会社1社でグループを構成しています。1949年に株式会社日本電子光学研究所として設立されました。"
+      },
+      {
+        "kind": "offering",
+        "title": "商品",
+        "description": "電子光学機器、分析機器、計測検査機器、産業機器、医用機器の製造販売を主な内容とし、これらに附帯する製品・部品の加工委託、保守・サービス、周辺機器の仕入販売を営んでいます。"
+      },
+      {
+        "kind": "customer",
+        "title": "お客様",
+        "description": "大学や研究機関、半導体メーカー、医療機関などに製品を販売しています。2026年3月期の売上高のうち、連結売上高の10％以上を占める相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は179,353百万円で、前連結会計年度と比べて8.8％減少しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "収益の積み上げ",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は22,097百万円で、前連結会計年度と比べて18.2％増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +238,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 85904000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3291,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +258,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 101895000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3351,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +278,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 125513000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3435,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +298,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 136653000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3604,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +318,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 144898000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3731,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +326,214 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1949,
+      "title": "株式会社日本電子光学研究所を設立",
+      "description": "東京都三鷹市に株式会社日本電子光学研究所を設立し、電子顕微鏡の製造・販売を開始しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "産業機器分野に進出",
+      "description": "高周波焼入装置を完成させ、産業機器分野に進出しました。",
+      "significance": "産業機器事業への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "分析機器分野に進出",
+      "description": "磁気共鳴装置を完成させ、分析機器分野に進出しました。",
+      "significance": "分析機器事業への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "日本電子株式会社に商号変更",
+      "description": "商号を日本電子株式会社に変更しました。",
+      "significance": "現在の商号になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東証二部に上場、米国法人を設立",
+      "description": "東京証券取引所市場第二部に上場し、米国にJEOLCO(U.S.A.)INC.を設立しました。",
+      "significance": "株式公開と海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "本店を昭島市へ移転、東証一部に上場",
+      "description": "本店を三鷹市より昭島市へ移転登記し、東京証券取引所市場第一部に上場しました。",
+      "significance": "本店の昭島への移転と市場第一部への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "英文社名をJEOL Ltd.に変更",
+      "description": "英文社名をJEOL Ltd.に変更しました。",
+      "significance": "現在の英文社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "医用機器分野に進出",
+      "description": "生化学自動分析装置を完成させ、医用機器分野に進出しました。",
+      "significance": "医用機器事業への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "イタリア法人を設立",
+      "description": "イタリアにJEOL(ITALIA)S.p.A.を設立しました。",
+      "significance": "欧州での体制を強めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "韓国法人を設立",
+      "description": "韓国にJEOL KOREA LTD.を設立しました。",
+      "significance": "韓国での体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "ドイツ法人を設立",
+      "description": "ドイツにJEOL(GERMANY)GmbHを設立しました。",
+      "significance": "ドイツでの体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "株式会社JEOL RESONANCEを設立",
+      "description": "東京都昭島市に分社型の新設分割により株式会社JEOL RESONANCEを設立しました。",
+      "significance": "核磁気共鳴装置の体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "米国のIDESの全株式を取得",
+      "description": "米国のIntegrated Dynamic Electron Solutions, Inc.の全株式を取得しました。",
+      "significance": "米国での電子顕微鏡の開発・製造体制を強めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "JEOL RESONANCEを吸収合併、プライム市場へ移行",
+      "description": "株式会社JEOL RESONANCEを吸収合併し、東京証券取引所市場第一部からプライム市場へ移行しました。",
+      "significance": "グループ体制の集約とプライム市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ジャパンスーパーコンダクタテクノロジーの全株式を取得",
+      "description": "ジャパンスーパーコンダクタテクノロジー株式会社の全株式を取得し、フランスにJEOL HOLDING EUROPE SASを設立しました。",
+      "significance": "半導体関連の製造体制と欧州の統括体制を強めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tokuyama",
+      "relationship": "customer",
+      "description": "理科学計測機器の重要顧客です。2026年3月31日現在、545,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shimadzu",
+      "relationship": "business-partner",
+      "description": "（一社）日本分析機器工業会の役員企業であり、事業連携先です。2026年3月31日現在、447,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "techno-ryowa",
+      "relationship": "supplier",
+      "description": "構内設備の取引関係の維持による工場設備の安定性確保のため株式を保有しています。2026年3月31日現在、119,020株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "saxa",
+      "relationship": "supplier",
+      "description": "当社製品（理科学機器）の主要なユニットの供給パートナーであり、安定的なサプライチェーンを構築するため株式を保有しています。2026年3月31日現在、59,900株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ulvac",
+      "relationship": "supplier",
+      "description": "理科学機器および産業機器における取引関係および資材調達面での協力関係の維持・発展のため株式を保有しています。2026年3月31日現在、30,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokai-carbon",
+      "relationship": "business-partner",
+      "description": "理科学機器等における取引関係の維持・発展のため株式を保有しています。2026年3月31日現在、42,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +541,55 @@
       "publisher": "日本電子株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIDD.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YIDD",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 医用機器事業を会社分割によりシスメックス株式会社へ譲渡しました。2026年4月1日付で株式譲渡手続きが完了しています。本文の事業構成は2026年3月31日現在のもので、この譲渡後の事業構成は含まれていません。譲渡した事業の2026年3月期の売上高は14,926百万円、営業利益は64百万円です。譲渡価額と譲渡損益は未定です。",
+      "businessStructure: 医用機器事業を会社分割によりシスメックス株式会社へ譲渡しました。2026年4月1日付で株式譲渡手続きが完了しています。本文の事業構成は2026年3月31日現在のもので、この譲渡後の事業構成は含まれていません。譲渡した事業の2026年3月期の売上高は14,926百万円、営業利益は64百万円です。譲渡価額と譲渡損益は未定です。",
+      "history: 医用機器事業を会社分割によりシスメックス株式会社へ譲渡しました。2026年4月1日付で株式譲渡手続きが完了しています。本文の事業構成は2026年3月31日現在のもので、この譲渡後の事業構成は含まれていません。譲渡した事業の2026年3月期の売上高は14,926百万円、営業利益は64百万円です。譲渡価額と譲渡損益は未定です。",
+      "industry: 医用機器事業を会社分割によりシスメックス株式会社へ譲渡しました。2026年4月1日付で株式譲渡手続きが完了しています。本文の事業構成は2026年3月31日現在のもので、この譲渡後の事業構成は含まれていません。譲渡した事業の2026年3月期の売上高は14,926百万円、営業利益は64百万円です。譲渡価額と譲渡損益は未定です。",
+      "relatedCompanies: 医用機器事業を会社分割によりシスメックス株式会社へ譲渡しました。2026年4月1日付で株式譲渡手続きが完了しています。本文の事業構成は2026年3月31日現在のもので、この譲渡後の事業構成は含まれていません。譲渡した事業の2026年3月期の売上高は14,926百万円、営業利益は64百万円です。譲渡価額と譲渡損益は未定です。",
+      "terms: 医用機器事業を会社分割によりシスメックス株式会社へ譲渡しました。2026年4月1日付で株式譲渡手続きが完了しています。本文の事業構成は2026年3月31日現在のもので、この譲渡後の事業構成は含まれていません。譲渡した事業の2026年3月期の売上高は14,926百万円、営業利益は64百万円です。譲渡価額と譲渡損益は未定です。"
+    ]
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念として、「創造と開発」を基本とし、常に世界最高の技術に挑戦し、製品を通じて科学の進歩と社会の発展に貢献することを掲げています。長期ビジョンとして『ビジョン2035』を設定し、「最先端テクノロジーに挑戦するお客様とイノベーションを共創する、グローバルリーダーになる」ことを掲げています。2025年度から2029年度を対象とする中期経営計画「Evolving Growth 2.0 -A New Horizon-」では、従来の「YOKOGUSHI」戦略を深化させた「YOKOGUSHI 2.0」として分野別のソリューション提供の基盤を更に強化し、半導体・ライフサイエンスの分野を重点領域に設定しています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1949年の設立以来、電子顕微鏡をはじめとする理科学機器で培った技術を軸に、産業機器事業と医用機器事業を展開しています。電子ビーム描画装置では、AIデータセンター向け光トランシーバに用いられるDFBレーザーの高性能化・多様化を背景に、スポットビーム型電子ビーム描画装置の量産立ち上げを含む製造工程向けの需要増加が期待されています。国内外に販売・サービスの拠点を持ち、海外の売上高は連結売上高の約3分の2を占めています。",
+        "basis": "有報の事業の内容、沿革、MD&Aのセグメントごとの経営成績と地域ごとの売上高の記載によります。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は179,353百万円で、理科学・計測機器事業が116,295百万円、産業機器事業が48,131百万円、医用機器事業が14,926百万円です。地域別の売上高は日本が58,788百万円、北中南米が27,636百万円、中国が35,609百万円、その他が57,319百万円で、従業員数は3,731人です。",
+        "basis": "有報のセグメント情報と地域ごとの情報、従業員の状況の記載によります。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【セグメント情報】"
+      }
+    }
+  }
 }

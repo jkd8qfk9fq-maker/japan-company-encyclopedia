@@ -4,15 +4,162 @@
   "name": "カシオ計算機",
   "officialName": "カシオ計算機株式会社",
   "nameEn": "CASIO COMPUTER CO.,LTD.",
-  "description": null,
+  "shortNameEn": "CASIO",
+  "description": "腕時計「G-SHOCK」などの時計や、電卓・電子辞書・電子楽器といった個人向けの電子機器を開発・生産し、世界各地で販売する電機メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "watches",
+      "name": "時計事業",
+      "description": "ウオッチとクロックを手がける、グループ最大の事業です。「G-SHOCK」と「CASIO WATCH」の2つのブランドを軸に展開しています。2026年3月期の外部顧客への売上高は184,966百万円でした。山形カシオやCasio(Thailand)などの生産関係会社で製造しています。",
+      "products": [
+        "ウオッチ",
+        "クロック"
+      ],
+      "customers": [
+        "腕時計や時計を購入する個人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "consumer",
+      "name": "コンシューマ事業",
+      "description": "電子辞書、電卓、電子文具、電子楽器を手がける事業です。教育向けの製品と、楽器などの音響製品が柱です。2026年3月期の外部顧客への売上高は82,057百万円でした。カシオ電子科技(中山)有限公司などで製造しています。",
+      "products": [
+        "電子辞書",
+        "電卓",
+        "電子文具",
+        "電子楽器"
+      ],
+      "customers": [
+        "個人",
+        "学校・教育機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "edtech",
+          "name": "EdTech",
+          "description": "教育分野向けの製品群です。関数電卓が堅調に推移しました。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "関数電卓",
+            "電子辞書"
+          ],
+          "customers": [
+            "学校・教育機関",
+            "学習者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "sound",
+          "name": "サウンド",
+          "description": "電子楽器などの音響製品の分野です。市況の厳しさが続きました。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "電子楽器"
+          ],
+          "customers": [
+            "個人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "成形部品や金型など、グループ会社の独自事業と非継続事業を含む区分です。2026年3月期の外部顧客への売上高は9,244百万円でした。",
+      "products": [
+        "成形部品",
+        "金型"
+      ],
+      "customers": [
+        "部品や金型を使う製造業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社で開発した時計や電卓などの製品を、グループの生産会社で製造し、国内外の販売会社や小売店・代理店を通じて、個人や教育機関に届ける事業です。",
+    "products": [
+      "ウオッチ",
+      "クロック",
+      "電卓",
+      "電子辞書",
+      "電子文具",
+      "電子楽器",
+      "成形部品",
+      "金型"
+    ],
+    "customers": [
+      "個人",
+      "学校・教育機関",
+      "小売店・代理店"
+    ],
+    "revenueSources": [
+      "時計製品の販売収入",
+      "電卓・電子辞書・電子楽器などの販売収入",
+      "成形部品・金型の販売収入",
+      "製品の保守サービスによる収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "カシオ計算機グループ",
+        "description": "当社と連結子会社36社、持分法適用関連会社2社で構成されています。連結の従業員数は8,259人です（2026年3月期）。基礎研究や新製品の開発は主に当社が担います。"
+      },
+      {
+        "kind": "offering",
+        "title": "製品の開発と生産",
+        "description": "当社が開発した製品は、山形カシオや海外の生産関係会社が、主要部品の支給を受けて組み立て、当社へ供給します。"
+      },
+      {
+        "kind": "customer",
+        "title": "個人と教育機関",
+        "description": "国内では当社が小売店や代理店を通して販売し、海外では北米・欧州・アジアなどの販売関係会社を通して販売します。教育向けの製品は学校などの教育機関にも届けられています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品販売による収入",
+        "description": "2026年3月期の売上高は276,267百万円で、前期から5.5％増えました。時計事業の184,966百万円が売上の中心です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "製品の製造や販売、保守サービスにかかる費用を差し引いた残りが利益になります。2026年3月期の親会社株主に帰属する当期純利益は18,227百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +174,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 218897000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10152,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 221600000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 9732,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 231153000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 9594,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +234,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 218927000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8801,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,16 +254,155 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 235191000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8259,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2026年3月期から、報告セグメントを「時計」「コンシューマ」「システム」「その他」の4区分から、「時計」「コンシューマ」「その他」の3区分に変更しています。「システム」に含まれていたHR事業とSMB事業を2025年6月に株式会社CSホールディングスへ譲渡したことに伴う変更で、前期のセグメント情報も新しい区分に組み替えて表示しています。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1946,
+      "title": "樫尾製作所を創業",
+      "description": "東京都三鷹市に樫尾製作所を創業しました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "カシオ計算機株式会社を設立",
+      "description": "世界初の小型純電気式計算機「14-A」を商品化し、東京都武蔵野市にカシオ計算機株式会社を設立しました。",
+      "significance": "法人としての出発点で、計算機の事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "電子式卓上計算機を発売",
+      "description": "電子式卓上計算機を発売しました。",
+      "significance": "後の電卓事業につながる製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "東京証券取引所第二部に株式を上場",
+      "description": "東京証券取引所第二部に株式を上場しました。あわせて、ニューヨーク州に現地販売会社（現・Casio America, Inc.）を設立しました。",
+      "significance": "上場と海外販売の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "「カシオミニ」を発売",
+      "description": "パーソナル電卓「カシオミニ」を発売し、個人向け電卓の市場を確立しました。同年、東京証券取引所第一部に指定替えとなりました。",
+      "significance": "電卓が一般家庭に広がるきっかけになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "電子腕時計を発売",
+      "description": "電子腕時計を発売しました。",
+      "significance": "現在の主力である時計事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "電子楽器「カシオトーン」を発売",
+      "description": "電子楽器「カシオトーン」を発売しました。",
+      "significance": "電子楽器事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "携帯電話端末事業を統合",
+      "description": "携帯電話端末事業をNECカシオモバイルコミュニケーションズ株式会社に統合しました。あわせて、TFT液晶ディスプレイ事業を凸版印刷株式会社との共同出資会社へ移管しました。",
+      "significance": "事業ポートフォリオを見直す動きの一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "システム事業を譲渡",
+      "description": "HRソリューション事業を運営するカシオヒューマンシステムズ株式会社に、経営支援システム事業を吸収分割で承継させた上で、同社の株式の全てを株式会社CSホールディングスに譲渡しました。",
+      "significance": "事業ポートフォリオ整理の一環で、この譲渡に伴い報告セグメントは3区分に変更されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "yamada-holdings",
+      "relationship": "customer",
+      "description": "電卓、電子楽器、電子文具及び時計製品の主力販売先です。同社が全国展開する店舗で当社製品が販売されており、取引関係の強化のため、当社は同社の株式を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "bic-camera",
+      "relationship": "customer",
+      "description": "電卓、電子楽器、電子文具及び時計製品（G-SHOCK、OCEANUSブランド等）の主力販売先で、新しい分野の製品の展開にも協力している販売先です。取引関係の強化のため、当社は同社の株式を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "joshin",
+      "relationship": "customer",
+      "description": "電卓、電子楽器、電子文具及び時計製品の主力販売先です。同社が全国展開する店舗で当社製品が販売されており、取引関係の強化のため、当社は同社の株式を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kojima",
+      "relationship": "customer",
+      "description": "電卓、電子楽器、電子文具及び時計製品（G-SHOCK、OCEANUSブランド等）の主力販売先で、新しい分野の製品の展開にも協力している販売先です。取引関係の強化のため、当社は同社の株式を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +410,45 @@
       "publisher": "カシオ計算機株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ1H.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YJ1H",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-08",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念「創造 貢献」を軸に、2030年に向けて企業価値の極大化を目指しています。2027年3月期から2029年3月期の3ヶ年中期経営計画を「持続的成長に向けた基盤確立期」と位置付け、新たな成長領域におけるイノベーションと経営基盤の強化により、「足元の収益性強化」と「中期の成長基盤確立」の両輪の実現を図るとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "時計事業では「G-SHOCK」と「CASIO WATCH」の2軸戦略が奏功し、2026年3月期は前期比11.3％の増収となりました。コンシューマ事業では、教育向けの関数電卓が堅調に推移しています。長く続く製品ブランドと、教育現場での利用実績が事業の土台になっています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の事業概況",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高276,267百万円のうち、時計事業が184,966百万円と約3分の2を占め、コンシューマ事業が82,057百万円、その他が9,244百万円です。地域別の売上高は、日本が52,301百万円、アジアが75,986百万円、欧州が60,270百万円、北米が40,457百万円などで、海外の売上が過半を占めています。",
+        "basis": "セグメント情報（2026年3月期）",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

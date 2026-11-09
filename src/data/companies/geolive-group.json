@@ -4,15 +4,182 @@
   "name": "ジオリーブグループ",
   "officialName": "ジオリーブグループ株式会社",
   "nameEn": "GEOLIVE Group Corporation",
-  "description": null,
+  "shortNameEn": "GEOLIVE",
+  "description": "合板や建材、住宅設備機器などの住宅資材を建材販売店や住宅会社、ホームセンターへ販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "housing-materials-sales",
+      "name": "住宅資材販売事業",
+      "description": "合板、建材、住宅設備機器などの住宅資材を建材販売店や住宅会社、ホームセンターへ販売する事業です。2026年3月期の外部顧客への売上高は171,785百万円でした。",
+      "products": [
+        "合板",
+        "建材",
+        "住宅設備機器",
+        "DIY商品"
+      ],
+      "customers": [
+        "建材販売店",
+        "住宅会社",
+        "ホームセンター"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "plywood",
+          "name": "合板",
+          "description": "合板です。2026年3月期の販売実績は10,364百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "building-materials",
+          "name": "建材",
+          "description": "建材です。2026年3月期の販売実績は73,160百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "housing-equipment",
+          "name": "住宅設備機器",
+          "description": "住宅設備機器です。2026年3月期の販売実績は45,711百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "diy-products",
+          "name": "DIY商品",
+          "description": "ホームセンター等へ販売したDIY商品です。2026年3月期の販売実績は5,798百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other-housing-materials",
+          "name": "住宅資材販売その他",
+          "description": "上記以外の住宅資材販売です。2026年3月期の販売実績は36,750百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "other-business",
+      "name": "その他",
+      "description": "一般貨物の運送を行う物流事業、建築・工事請負業、情報システムの賃貸及び不動産事業などを営む事業です。2026年3月期の外部顧客への売上高は13,968百万円でした。",
+      "products": [
+        "物流サービス",
+        "建築・工事請負",
+        "情報システムの賃貸",
+        "不動産事業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "logistics",
+          "name": "物流事業",
+          "description": "一般貨物の運送を行う物流事業です。金額の内訳は印字されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "construction-contracting",
+          "name": "建築・工事請負業",
+          "description": "建築・工事請負業です。金額の内訳は印字されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "it-leasing-real-estate",
+          "name": "情報システムの賃貸及び不動産事業",
+          "description": "情報システムの賃貸及び不動産事業です。金額の内訳は印字されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "合板、建材、住宅設備機器などの住宅資材を仕入れ、建材販売店や住宅会社、ホームセンターへ販売しています。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "合板",
+      "建材",
+      "住宅設備機器",
+      "DIY商品"
+    ],
+    "customers": [
+      "建材販売店",
+      "住宅会社",
+      "ホームセンター"
+    ],
+    "revenueSources": [
+      "住宅資材の販売による売上高",
+      "物流事業、建築・工事請負業、情報システムの賃貸及び不動産事業による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社グループ",
+        "description": "当社と連結子会社24社の計25社で構成されるグループです。2026年3月31日現在の従業員数は1,870人です。本店は東京都港区にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "合板や建材、住宅設備機器などの住宅資材",
+        "description": "合板、建材、住宅設備機器、DIY商品などの住宅資材をそろえ、建材販売店や住宅会社、ホームセンターへ販売します。"
+      },
+      {
+        "kind": "customer",
+        "title": "建材販売店や住宅会社、ホームセンター",
+        "description": "建材販売店や住宅会社、ホームセンターなどがお客様です。売上高の10％以上を占める相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "住宅資材の販売による売上高",
+        "description": "2026年3月期の売上高は185,754百万円で、前連結会計年度に比べ9,639百万円（5.5％）増えました。住宅資材販売事業の売上高は171,785百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は2,136百万円で、前連結会計年度に比べ631百万円（42.0％）増えました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18165000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1131,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20599000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1155,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +234,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22422000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1166,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +254,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23206000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1511,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "企業結合に係る暫定的な会計処理の確定により、2025年3月期の数値は遡及修正後のものを記載しています。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +275,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24998000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1870,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +283,205 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1923,
+      "title": "ベニア商会を開業",
+      "description": "ベニア専門のベニア商会を開業しました。",
+      "significance": "会社の原点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "株式会社ベニア商会に組織変更",
+      "description": "ベニア商会を株式会社ベニア商会に組織変更しました。",
+      "significance": "法人としての会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "日本ベニア株式会社に商号変更",
+      "description": "株式会社ベニア商会を日本ベニア株式会社に商号変更しました。",
+      "significance": "ベニアの商号を掲げた時期です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "クワザワ、越智産業と三社業務提携",
+      "description": "株式会社クワザワ、越智産業株式会社と三社業務提携を結びました。",
+      "significance": "同業他社との提携の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "日本ベニアホールディング株式会社を設立",
+      "description": "株式移転により日本ベニアホールディング株式会社を設立しました。",
+      "significance": "持株会社体制への第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "丸長産業と合併し、ジューテックに商号変更",
+      "description": "丸長産業株式会社と合併し、株式会社ジューテックに商号変更しました。",
+      "significance": "現在の事業基盤の原型ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ヤマキと合併",
+      "description": "株式会社ヤマキと合併しました。",
+      "significance": "事業規模の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "当社を設立し、ジャスダックに上場",
+      "description": "株式会社ジューテックが単独株式移転の方法により当社を設立し、当社株式をジャスダック証券取引所に上場しました。",
+      "significance": "現在の持株会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "江守建材工業を子会社化",
+      "description": "江守建材工業株式会社の全株式を取得し、子会社としました。",
+      "significance": "地域の販売基盤の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "東証市場第二部へ市場変更し、第一部銘柄に指定",
+      "description": "東京証券取引所市場第二部に市場変更し、同年9月に市場第一部銘柄に指定されました。",
+      "significance": "上場市場の格上げです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "ユニマテックからDIYベンダー事業を譲受",
+      "description": "ユニマテック株式会社より同社のホームセンター向けDIYベンダー事業を譲り受けました。",
+      "significance": "DIY卸売事業の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより市場第一部からスタンダード市場へ移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ジオリーブグループに商号変更",
+      "description": "当社の商号をジオリーブグループ株式会社に変更しました。",
+      "significance": "現在の商号への変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "住友林業と資本業務提携",
+      "description": "住友林業株式会社と資本業務提携契約を締結しました。",
+      "significance": "大手住宅・木材会社との提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "井桁藤とスミリンサッシセンターを完全子会社化",
+      "description": "株式会社井桁藤とスミリンサッシセンター株式会社の全株式を取得し、完全子会社としました。",
+      "significance": "資本業務提携による事業基盤の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sumitomo-forestry",
+      "relationship": "other-affiliated-company",
+      "description": "2026年3月31日現在、議決権の30.4％を所有されるその他の関係会社です。2025年8月29日に資本業務提携契約を締結し、サプライチェーンの強化と機能補完による協業を進めています。同社は住宅資材販売事業の仕入先でもあり、当社は2026年3月31日現在、同社の株式222,600株を保有しています。2026年4月8日付の大量保有報告書では、同社がベニア商会から当社株式の全部を現物配当により取得した旨が記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "nichiha",
+      "relationship": "supplier",
+      "description": "住宅資材販売事業の仕入先です。2026年3月31日現在、60,920株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "noda",
+      "relationship": "supplier",
+      "description": "住宅資材販売事業の仕入先です。2026年3月31日現在、358,100株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "panasonic-holdings",
+      "relationship": "supplier",
+      "description": "住宅資材販売事業の仕入先です。2026年3月31日現在、50,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takara-standard",
+      "relationship": "supplier",
+      "description": "住宅資材販売事業の仕入先です。2026年3月31日現在、69,300株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +489,45 @@
       "publisher": "ジオリーブグループ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI2B.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YI2B",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "グループパーパスは「人と自然が共栄する、次代の生き方をつくる。」です。2027年3月期から2031年3月期までの5ヶ年の中期経営計画では、「Dynamic Capability 2.0 企業変革力を強化し、次代を切り拓く企業グループの基盤をつくる。」をテーマに、事業ポートフォリオの最適化に取り組んでいます。2025年8月には住友林業株式会社と資本業務提携契約を締結しました。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "合板、建材、住宅設備機器をそろえる品ぞろえと、建材販売店や住宅会社への販売網を持ちます。エネルギー関連商材や認証材の拡販、非住宅木構造分野への取組みを進めています。2026年1月には住友林業の子会社であった井桁藤とスミリンサッシセンターを完全子会社とし、事業基盤を強化しました。",
+        "basis": "【事業の内容】及び【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の記載",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は185,754百万円で、住宅資材販売事業が171,785百万円を占めています。本邦の外部顧客への売上高が連結売上高の90％を超えています。新設住宅着工戸数が前期比12.9％減となる中で、売上高は前連結会計年度比5.5％増えました。",
+        "basis": "【セグメント情報】及び【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の記載",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }
