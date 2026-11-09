@@ -4,15 +4,143 @@
   "name": "オークワ",
   "officialName": "株式会社オークワ",
   "nameEn": "OKUWA CO., LTD.",
-  "description": null,
+  "shortNameEn": "OKUWA",
+  "description": "和歌山県を地盤に近畿・東海地方でスーパーマーケットを展開する小売企業で、外食やクリーニングなどの事業も営んでいます。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "supermarket",
+      "name": "スーパーマーケット事業",
+      "description": "和歌山県を中心に近畿・東海地方でスーパーマーケットをチェーン展開する、グループ唯一の報告セグメントです。2026年2月期の売上高は238,163百万円でした。",
+      "products": [
+        "食料品",
+        "日用品"
+      ],
+      "customers": [
+        "店舗を利用する地域の買い物客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "sunrise",
+          "name": "サンライズ（農産物の加工・配送）",
+          "description": "連結子会社で、主に農産物等の加工及び配送業務を行っています。1982年に青果の安定的な供給を確保するため、和歌山津田青果株式会社と共同出資により設立されました。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "wakayama-daido-seika",
+          "name": "和歌山大同青果（農産物の卸売）",
+          "description": "子会社で、農産物の卸売業を営んでいます。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他の事業",
+      "description": "外食事業、施設管理業務の受託、クリーニング事業などを行う事業で、報告セグメントには含まれません。2026年2月期の売上高は1,385百万円で、主に外食事業の売上高です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "oku-foods",
+          "name": "オークフーズ（外食事業）",
+          "description": "連結子会社で、外食店をチェーン展開しており、オークワの店舗内にも出店しています。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "retail-backoffice-support",
+          "name": "リテールバックオフィスサポート（施設管理業務の受託）",
+          "description": "連結子会社で、施設管理業務等を受託しています。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "mammy",
+          "name": "マミー（クリーニング事業）",
+          "description": "子会社で、クリーニング事業をチェーン展開し、オークワの店舗内にも出店しています。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "スーパーマーケットで食料品や日用品を販売する事業モデルで、連結子会社が農産物の加工・配送や外食、クリーニングなどを担っています。",
+    "products": [
+      "スーパーマーケットでの食料品・日用品の販売",
+      "農産物の加工・配送",
+      "外食店舗の運営",
+      "クリーニング"
+    ],
+    "customers": [
+      "店舗を利用する地域の買い物客"
+    ],
+    "revenueSources": [
+      "食料品・日用品等の商品販売による収入",
+      "外食事業等のその他の事業による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "オークワグループ",
+        "description": "当社と子会社5社で構成されています。連結の従業員数は2,068人です（2026年2月期）。"
+      },
+      {
+        "kind": "offering",
+        "title": "スーパーマーケットのチェーン展開",
+        "description": "スーパーマーケットをチェーン展開し、食料品や日用品を販売しています。連結子会社の株式会社サンライズが農産物等の加工及び配送を、子会社の和歌山大同青果株式会社が農産物の卸売を担い、その他の事業として外食やクリーニングも営んでいます。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域の買い物客",
+        "description": "和歌山県を中心とする近畿・東海地方の店舗を利用する、日常の食料品や日用品を買う地域の買い物客が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "商品の販売で得る収入",
+        "description": "店舗での食料品や日用品の販売が主な収入です。2026年2月期の売上高は239,549百万円で、前期比0.9％増でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から、商品の仕入れや人件費、店舗の運営にかかる費用などを差し引いた残りが利益になります。2026年2月期の親会社株主に帰属する当期純利益は264百万円でした（前期は親会社株主に帰属する当期純損失2,381百万円）。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,7 +155,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 78170000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2113,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +175,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 77928000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2128,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年3月31日）等を第54期の期首から適用しており、第54期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっている。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -67,7 +196,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 78679000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2112,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +216,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 74527000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2104,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +236,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 74641000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2068,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +244,128 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1969,
+      "title": "株式会社主婦の店オークワを設立",
+      "description": "大阪市生野区において、創業者の大桑勇が株式会社主婦の店オークワを設立し、有限会社主婦の店オークワよりスーパーマーケット4店の営業を譲り受けました。",
+      "significance": "今の会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "チェーンストア6社と日本流通産業を設立",
+      "description": "チェーンストア6社（株式会社イズミ、株式会社平和堂など）と共同仕入機構である日本流通産業株式会社を設立しました。",
+      "significance": "共同仕入の仕組みづくりの節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "株式会社チェーンストアオークワに商号変更",
+      "description": "株式会社チェーンストアオークワに商号を変更しました。",
+      "significance": "チェーンストアとしての体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "株式会社サンライズを設立",
+      "description": "青果の安定的な供給を確保するため、仕入会社の株式会社サンライズ（現・連結子会社）を和歌山津田青果株式会社と共同出資により設立しました。",
+      "significance": "生鮮品の仕入・加工・配送を担う子会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "公募増資を行い、大阪証券取引所市場第二部に上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "大阪証券取引所市場第一部銘柄に指定",
+      "description": "大阪証券取引所市場第一部銘柄に指定されました。",
+      "significance": "上場市場での地位が高まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "株式会社オークワに商号変更",
+      "description": "三重県熊野市の株式会社オークワを1999年8月に吸収合併し、2000年2月に株式会社オークワへ商号を変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "全国市場での株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "株式会社オージョイフルの持分株式を売却",
+      "description": "ホームセンター等を営む株式会社オージョイフルの当社持分株式を、全てDCM Japanホールディングス株式会社に売却しました。",
+      "significance": "スーパーマーケット事業への集中を進めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "株式会社パレを吸収合併",
+      "description": "2008年6月に株式を取得し子会社としていた、愛知県名古屋市のスーパーマーケット株式会社パレを吸収合併しました。",
+      "significance": "東海地区の店舗網を本体に取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所プライム市場へ移行しました。あわせて監査役会設置会社から監査等委員会設置会社へ移行しました。",
+      "significance": "現在の市場区分とガバナンス体制の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "株式会社ヒラマツを吸収合併",
+      "description": "2006年7月に株式を取得し子会社としていた、和歌山市のスーパーマーケット株式会社ヒラマツを吸収合併しました。",
+      "significance": "地盤の和歌山県での店舗網を本体に取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +374,45 @@
       "publisher": "株式会社オークワ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y362.pdf",
       "publishedAt": "2026-05-13",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y362",
+      "asOf": "2026-02-20",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念として「わが社の成長発展こそがお客様の生活文化の向上を促し、社会への大きな貢献となることを念願し、チェーンストア業界の名門としての地位を永遠に確立する」を掲げています。中期経営計画（2026年度を最終年度）については、市場環境の変化や施策の進捗、直近の営業成績を鑑み、計画最終年度における達成が困難であると判断し、目標数値を取り下げました。資本政策・店舗戦略・商品戦略・販売促進施策等の中長期戦略に変更はなく、引き続き注力するとしています。",
+        "asOf": "2026-05-13",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "地盤の和歌山県に48店舗と最も厚い店舗網を持ち、農産物の加工・配送を担う連結子会社をグループ内に抱えることで、生鮮品の供給体制を自前で整えています。",
+        "basis": "【主要な設備の状況】に和歌山県48店舗（スーパーセンターオークワ南紀店他47店舗）と印字され都道府県別で最多であり、【事業の内容】に連結子会社の株式会社サンライズが主に農産物等の加工及び配送業務を行うと印字されている。",
+        "asOf": "2026-05-13",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントはスーパーマーケット事業のみで、単一の製品・サービス区分の外部顧客への売上高が連結売上高の90％を超えています。店舗は和歌山県を中心に近畿・東海の7府県に153店舗あります（2026年2月20日現在）。",
+        "basis": "【セグメント情報】に報告セグメントはスーパーマーケット事業のみと印字され、【関連情報】に単一の製品・サービス区分の外部顧客への売上高が連結損益計算書の売上高の90％を超えると印字されている。店舗数は【主要な設備の状況】の都道府県別の店舗数の合計。",
+        "asOf": "2026-05-13",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

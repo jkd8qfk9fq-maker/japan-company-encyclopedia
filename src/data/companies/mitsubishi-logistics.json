@@ -4,15 +4,237 @@
   "name": "三菱倉庫",
   "officialName": "三菱倉庫株式会社",
   "nameEn": "Mitsubishi Logistics Corporation",
-  "description": null,
+  "shortNameEn": "Mitsubishi Logistics",
+  "description": "倉庫事業を中核とする総合物流と、ビル賃貸を中心とする不動産事業を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "logistics",
+      "name": "物流事業",
+      "description": "倉庫事業を中核として、陸上運送、国際運送取扱、港湾運送の各事業を総合的、一貫的に運営する事業です。2026年3月期の外部顧客への営業収益は238,013百万円でした。",
+      "products": [
+        "倉庫保管",
+        "陸上運送",
+        "国際運送取扱",
+        "港湾運送"
+      ],
+      "customers": [
+        "貨物を預ける荷主",
+        "船舶運航事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "international-forwarding",
+          "name": "国際運送取扱事業",
+          "description": "荷主の委託を受け、さまざまな輸送手段を組み合わせて国際間の物品運送の取扱いを行う事業です。国内における海運貨物の取扱いも含みます。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "国際運送の取扱い",
+            "輸出入通関"
+          ],
+          "customers": [
+            "国際間で貨物を運ぶ荷主"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "warehousing",
+          "name": "倉庫事業",
+          "description": "貨物の寄託を受けて倉庫に保管し、あわせて庫入、庫出などの荷役を行う事業です。冷蔵倉庫も手がけています。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "貨物の保管",
+            "倉庫での荷役"
+          ],
+          "customers": [
+            "貨物を預ける荷主"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "land-transportation",
+          "name": "陸上運送事業",
+          "description": "貨物自動車による貨物の運送のほか、利用運送や運送取次を行う事業です。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "トラックによる貨物運送"
+          ],
+          "customers": [
+            "貨物を運ぶ荷主"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "port-transportation",
+          "name": "港湾運送事業",
+          "description": "荷主や船舶運航事業者の委託を受け、港湾において貨物の船舶への積込みや船舶からの取卸し、はしけによる運送、上屋などへの搬入、搬出、保管を一貫して、または個別に行う事業です。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "港湾での荷役",
+            "コンテナターミナルの荷役"
+          ],
+          "customers": [
+            "荷主",
+            "船舶運航事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "logistics-other",
+          "name": "その他（物流関連の付帯事業）",
+          "description": "物流情報システムの開発など、上記各事業に関連した付帯事業です。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "物流情報システムの開発"
+          ],
+          "customers": [
+            "当社グループ"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "ビル等の賃貸・管理を中心に、駐車場・ショッピングセンターの管理・運営、マンション分譲を中心とする不動産販売、投資・開発後の売却を通じた資産回転型ビジネスなどを行う事業です。2026年3月期の外部顧客への営業収益は35,432百万円でした。",
+      "products": [
+        "オフィスビルなどの賃貸・管理",
+        "マンション分譲",
+        "駐車場・ショッピングセンターの管理・運営"
+      ],
+      "customers": [
+        "ビルに入居する企業",
+        "マンションの購入者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "real-estate-leasing",
+          "name": "不動産賃貸事業",
+          "description": "オフィスビルや商業施設などの賃貸・管理を行う事業です。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "オフィスビルの賃貸・管理",
+            "商業施設の賃貸・管理"
+          ],
+          "customers": [
+            "ビルに入居する企業",
+            "商業施設の利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-estate-other",
+          "name": "その他（不動産販売など）",
+          "description": "マンション分譲を中心とする不動産販売や、投資・開発後の売却などを通じた資産回転型ビジネスを行う事業です。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "マンション分譲",
+            "開発した不動産の売却"
+          ],
+          "customers": [
+            "マンションの購入者",
+            "不動産の買い手"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "荷主から貨物の保管や運送を請け負う物流事業と、ビルなどの賃貸・管理や不動産販売を行う不動産事業で、保管料・運送取扱料や賃貸料などの対価を得ています。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "倉庫での貨物の保管と荷役",
+      "貨物自動車による陸上運送",
+      "国際間の物品運送の取扱い",
+      "港湾での貨物の積卸しなどの港湾運送",
+      "オフィスビル・商業施設の賃貸と管理",
+      "マンション分譲などの不動産販売"
+    ],
+    "customers": [
+      "貨物の保管や運送を委託する荷主",
+      "船舶運航事業者",
+      "ビルに入居する企業",
+      "マンションの購入者"
+    ],
+    "revenueSources": [
+      "倉庫保管料",
+      "倉庫荷役料",
+      "陸上運送料",
+      "港湾荷役料",
+      "国際運送取扱料",
+      "不動産賃貸料",
+      "マンション分譲などの不動産販売収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "三菱倉庫グループ",
+        "description": "当社と子会社55社、関連会社28社で構成されています。連結の従業員数は4,991人です（2026年3月期）。"
+      },
+      {
+        "kind": "offering",
+        "title": "物流と不動産のサービス",
+        "description": "倉庫事業を中核に、陸上運送、国際運送取扱、港湾運送を総合的、一貫的に運営し、併せてビル賃貸を中心とした不動産事業を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "荷主とビルの利用者",
+        "description": "物流事業では、貨物の保管や運送を委託する荷主と船舶運航事業者が顧客です。不動産事業では、ビルに入居する企業とマンションの購入者が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "保管料・運送料と賃貸料で得る収入",
+        "description": "倉庫保管料や運送取扱料、不動産賃貸料などが収入源です。2026年3月期の営業収益は273,446百万円で、前期の284,069百万円から3.7％減りました。物流事業の収入は増えましたが、不動産事業で不動産販売収入などが減りました。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から、保管や運送にかかる営業原価や人件費などの費用を差し引いた残りが利益になります。2026年3月期の親会社株主に帰属する当期純利益は54,773百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +249,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 347759000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4732,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +269,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 354432000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4708,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +289,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 411703000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4922,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +309,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 379276000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5004,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2024年11月１日付で株式分割（普通株式１株を５株に分割）を実施しました。経営指標等は、この分割が2022年3月期の期首に行われたと仮定して算定されています。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +330,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 384517000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4991,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +338,169 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1887,
+      "title": "有限責任東京倉庫会社として設立",
+      "description": "三菱為換店（1880年３月開業）の倉庫業務を継承し、東京・深川に有限責任東京倉庫会社として設立されました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1893,
+      "title": "東京倉庫株式会社に改組",
+      "description": "東京倉庫株式会社に改組し、商号を変更しました。",
+      "significance": "株式会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1907,
+      "title": "神戸港に海陸一貫取扱施設を完成",
+      "description": "神戸港に海運貨物の海陸一貫取扱施設を完成させ、海陸連絡業（のちの港湾運送事業）の体制を確立しました。",
+      "significance": "港湾運送事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1918,
+      "title": "三菱倉庫株式会社に商号変更",
+      "description": "商号を三菱倉庫株式会社に変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1931,
+      "title": "我が国最初のトランクルームサービスを開始",
+      "description": "東京・江戸橋（現在の日本橋）で、我が国最初のトランクルームサービスを開始しました。",
+      "significance": "個人向け保管サービスの先駆けです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京証券取引所に上場",
+      "description": "東京証券取引所に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "コンピュータ用賃貸ビル事業を開始",
+      "description": "東京・深川にコンピュータ・倉庫・住宅の複合賃貸ビルを建設し、コンピュータ用賃貸ビル事業を開始しました。こののち、オフィスビルや商業施設の賃貸、マンション分譲を継続的に実施し、不動産事業に本格進出しました。",
+      "significance": "不動産事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "自動車運送事業に本格進出",
+      "description": "自動車運送事業に本格的に進出しました。",
+      "significance": "陸上運送事業の本格化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "米国に倉庫会社を設立",
+      "description": "米国カリフォルニア州に倉庫会社を設立しました。こののち、ニュージャージー州に倉庫会社、ニューヨーク州に運送取扱会社を設立するなど、海外展開を進めました。",
+      "significance": "海外事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "航空貨物取扱事業に本格進出",
+      "description": "航空貨物取扱事業に本格的に進出しました。",
+      "significance": "国際運送取扱事業の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "冷蔵倉庫業に本格進出",
+      "description": "東京・大井に冷蔵倉庫を建設するなど、冷蔵倉庫業に本格進出しました（2002年12月には神戸・六甲にも冷蔵倉庫を建設）。",
+      "significance": "温度管理が必要な貨物の取扱いが広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "富士物流を連結子会社化",
+      "description": "富士物流株式会社の株式公開買付けを実施し、同社及びその子会社10社を連結子会社化しました。",
+      "significance": "倉庫事業の体制が大きく広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "日本橋の倉庫ビルを建て替え",
+      "description": "東京・日本橋に所有する倉庫ビル（本店事務所、トランクルーム）を建て替え、オフィスビル（本店事務所、賃貸用オフィス、トランクルーム）を建設しました。",
+      "significance": "本店所在地のビルが、事務所と賃貸オフィスを併せ持つ形になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "Cavalier Logisticsグループを連結子会社化",
+      "description": "米国に設立した持株会社を通じて、Cavalier Logisticsグループを構成する米国及び英国の４社を連結子会社化しました。",
+      "significance": "北米・英国での事業体制が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-estate",
+      "relationship": "major-shareholder",
+      "description": "【大株主の状況】に載る事業会社で、2026年３月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は5.32％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +508,45 @@
       "publisher": "三菱倉庫株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YA7K.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YA7K",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-08",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営計画[2025-2030]では、2030年に目指す姿「MLC2030ビジョン」の実現に向けた最終フェーズとして、５つの成長戦略を掲げています。物流事業の飛躍（トータルロジスティクスサービスの強化、カテゴリー戦略の推進など）、不動産事業の進化（資産回転型ビジネスの本格稼働、アセットマネジメント事業への進出、海外不動産ビジネスへの進出など）、海外事業の拡大（ASEAN、北米、インドを最重点領域とし、有力物流事業者とのパートナーシップで成長を加速すること）、先端技術の活用による業務プロセスの改善と新ビジネス創出、グループ経営基盤の強化です。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "倉庫事業を中核に、陸上運送、国際運送取扱、港湾運送までを当社グループで一貫して担う体制が、事業の内容として説明されています。保管だけでなく、国内外の輸送と港湾での荷役までをまとめて引き受けられる点が特徴です。",
+        "basis": "【事業の内容】の事業構成の説明",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは物流事業と不動産事業の２つで、2026年3月期の外部顧客への営業収益は物流事業が238,013百万円、不動産事業が35,432百万円と、物流事業が大半を占めています。海外にも米国、欧州、中国、アジア各国の子会社を持ち、地域ごとの営業収益では日本が最も大きくなっています。",
+        "basis": "セグメント情報（報告セグメントごとの営業収益、地域ごとの情報、2026年3月期）",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

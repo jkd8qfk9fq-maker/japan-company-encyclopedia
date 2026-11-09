@@ -4,15 +4,172 @@
   "name": "日本新薬",
   "officialName": "日本新薬株式会社",
   "nameEn": "Nippon Shinyaku Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Nippon Shinyaku",
+  "description": "医薬品と機能食品を製造・販売し、国内外の医療機関や卸売業者などに届けています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    },
+    {
+      "industryId": "food",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "pharmaceuticals",
+      "name": "医薬品事業",
+      "description": "泌尿器科系治療剤、血液がん治療剤、難病・希少疾患治療剤、婦人科系治療剤を生産・販売しています。2026年3月期の外部顧客への売上収益は148,484百万円です。",
+      "products": [
+        "泌尿器科系治療剤",
+        "血液がん治療剤",
+        "難病・希少疾患治療剤",
+        "婦人科系治療剤",
+        "肺動脈性肺高血圧症治療剤「ウプトラビ」",
+        "てんかん発作治療剤「フィンテプラ」",
+        "前立腺癌治療剤「アーリーダ」"
+      ],
+      "customers": [
+        "医療機関",
+        "医薬品卸売業者",
+        "海外の製薬会社"
+      ],
+      "children": [
+        {
+          "id": "pharmaceuticals-products",
+          "name": "製商品販売",
+          "description": "医薬品の製品を販売します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "pharmaceuticals-royalty",
+          "name": "工業所有権等収益",
+          "description": "海外売上に伴うロイヤリティ収入などが入ります。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "pharmaceuticals-copromotion",
+          "name": "共同販促収入",
+          "description": "共同販促による収入が入ります。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "functional-food",
+      "name": "機能食品事業",
+      "description": "健康食品素材、品質安定保存剤、プロテイン製剤、サプリメントを生産・販売しています。2026年3月期の外部顧客への売上収益は22,287百万円です。",
+      "products": [
+        "健康食品素材",
+        "品質安定保存剤",
+        "プロテイン製剤",
+        "サプリメント"
+      ],
+      "customers": [
+        "食品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他の事業",
+      "description": "連結子会社の日本新薬アドバンス株式会社が、ビジネスサポート業務、損害保険代理及び生命保険の募集、不動産の賃貸、教育支援サービスを行っています。報告セグメントには含まれておらず、売上収益の金額は独立して開示されていません。",
+      "products": [
+        "ビジネスサポート業務",
+        "損害保険代理及び生命保険の募集",
+        "不動産の賃貸",
+        "教育支援サービス"
+      ],
+      "customers": [
+        "グループ会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "医薬品と機能食品を製造・販売し、国内外の医療機関や卸売業者などに届けています。",
+    "products": [
+      "肺動脈性肺高血圧症治療剤「ウプトラビ」",
+      "てんかん発作治療剤「フィンテプラ」",
+      "前立腺癌治療剤「アーリーダ」",
+      "泌尿器科系治療剤",
+      "血液がん治療剤",
+      "難病・希少疾患治療剤",
+      "婦人科系治療剤",
+      "健康食品素材",
+      "品質安定保存剤",
+      "プロテイン製剤",
+      "サプリメント"
+    ],
+    "customers": [
+      "医療機関",
+      "医薬品卸売業者",
+      "海外の製薬会社",
+      "食品メーカー"
+    ],
+    "revenueSources": [
+      "医薬品の製品販売による収入",
+      "工業所有権等収益",
+      "共同販促収入",
+      "機能食品の製品販売による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "医薬品と機能食品を手がけるグループ",
+        "description": "日本新薬は、医薬品事業と機能食品事業を手がけるグループです。連結子会社は6社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "医薬品と機能食品の製造・販売",
+        "description": "泌尿器科系治療剤や血液がん治療剤などの医薬品と、健康食品素材やサプリメントなどの機能食品を製造・販売します。"
+      },
+      {
+        "kind": "customer",
+        "title": "医療機関や卸売業者、食品メーカー",
+        "description": "医薬品は医療機関や医薬品卸売業者、海外の製薬会社に届け、機能食品は食品メーカーなどに届けます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品販売などによる売上収益",
+        "description": "医薬品と機能食品の販売による収入などが売上収益につながります。2026年3月期の売上収益は1,707億7千1百万円で、前期比6.6％増です。"
+      },
+      {
+        "kind": "profit",
+        "title": "売上収益から費用を差し引いた当期利益",
+        "description": "売上収益から費用を差し引いた残りが当期利益となります。2026年3月期の親会社の所有者に帰属する当期利益は297億2千1百万円で、前期比8.7％減です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 180585000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 2125,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -47,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 195625000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 2186,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -67,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 220224000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 2213,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -87,7 +244,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 247028000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 2243,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -107,7 +264,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 291551000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 2309,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -115,8 +272,331 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1911,
+      "title": "京都新薬堂の創設",
+      "description": "京都で薬種商「京都新薬堂」を創設しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1919,
+      "title": "株式会社への組織変更",
+      "description": "株式会社に組織を変更し、社名を日本新薬株式会社としました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1929,
+      "title": "国産サントニン結晶の抽出",
+      "description": "探索していた回虫駆除薬サントニン含有の新植物の花蕾から、国産サントニン結晶を抽出し、新植物を「みぶよもぎ」と命名しました。",
+      "significance": "国産サントニンの開発につながりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1940,
+      "title": "国産「サントニン」の発売",
+      "description": "国産「サントニン」を発売しました。",
+      "significance": "国産の回虫駆除薬を世に出しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "京都証券取引所への上場",
+      "description": "京都証券取引所に株式を上場しました。",
+      "significance": "上場会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "大阪証券取引所への上場",
+      "description": "大阪証券取引所に株式を上場しました。",
+      "significance": "上場市場を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "黒石製薬との提携",
+      "description": "黒石製薬株式会社（現連結子会社シオエ製薬株式会社）と提携しました。",
+      "significance": "現在の連結子会社との関係が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "食品事業への進出",
+      "description": "食品事業へ進出し、スパイス工場を建設して第1号製品の粉末香辛料「スパイス・ケンダ」を発売しました。",
+      "significance": "機能食品事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所への上場",
+      "description": "東京証券取引所に株式を上場しました。",
+      "significance": "東京証券取引所に上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "小田原工場の設置",
+      "description": "東日本の医薬品生産拠点として小田原工場（現小田原総合製剤工場）を設置しました。",
+      "significance": "医薬品の生産拠点が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "東部創薬研究所の設置",
+      "description": "つくば市に東部創薬研究所を設置しました。",
+      "significance": "創薬研究の拠点が増えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "NS Pharma, Inc.の設立",
+      "description": "ニューヨーク事務所を現地法人化し、NS Pharma, Inc.（連結子会社）を設立しました。",
+      "significance": "米国での事業拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "小田原総合製剤工場への改称",
+      "description": "小田原工場敷地内に新製剤棟を設置し、医薬品製剤の生産機能を小田原工場に集約化して小田原総合製剤工場に改称しました。",
+      "significance": "医薬品製剤の生産機能を集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "中国現地法人の設立",
+      "description": "中国現地法人として北京艾努愛世医薬科技有限公司と天津艾努愛世医薬有限公司を設立しました。",
+      "significance": "中国での事業拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "プライム市場に移行しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "suzuken",
+      "relationship": "customer",
+      "description": "株式会社スズケンは、医薬品事業の主要な顧客です。2026年3月期のスズケン及びその子会社への売上収益は21,587百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "medipal-holdings",
+      "relationship": "customer",
+      "description": "株式会社メディパルホールディングスは、医薬品事業の販売取引関係の維持・強化を目的に株式を保有する相手です。販売は同社の子会社である株式会社メディセオを通じて行い、2026年3月期のメディセオへの売上収益は12,958百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toho-holdings",
+      "relationship": "customer",
+      "description": "東邦ホールディングス株式会社は、医薬品事業の販売取引関係の維持・強化を目的に株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hokuyaku-takeyama-holdings",
+      "relationship": "customer",
+      "description": "株式会社ほくやく・竹山ホールディングスは、医薬品事業の販売取引関係の維持・強化を目的に株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "vital-ksk-holdings",
+      "relationship": "customer",
+      "description": "株式会社バイタルケーエスケー・ホールディングスは、医薬品事業の販売取引関係の維持・強化を目的に株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "marudai-food",
+      "relationship": "customer",
+      "description": "丸大食品株式会社は、機能食品事業の販売取引関係の維持・強化を目的に株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nh-foods",
+      "relationship": "customer",
+      "description": "日本ハム株式会社は、機能食品事業の販売取引関係の維持・強化を目的に株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hayashikane-sangyo",
+      "relationship": "customer",
+      "description": "林兼産業株式会社は、機能食品事業の販売取引関係の維持・強化を目的に株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "itoham-yonekyu-holdings",
+      "relationship": "customer",
+      "description": "伊藤ハム米久ホールディングス株式会社は、機能食品事業の販売取引関係の維持・強化を目的に株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takizawa-ham",
+      "relationship": "customer",
+      "description": "滝沢ハム株式会社は、機能食品事業の販売取引関係の維持・強化を目的に株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "horiba",
+      "relationship": "supplier",
+      "description": "株式会社堀場製作所は、仕入取引関係の維持・強化を目的に株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shimadzu",
+      "relationship": "supplier",
+      "description": "株式会社島津製作所は、仕入取引関係の維持・強化を目的に株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-logistics",
+      "relationship": "supplier",
+      "description": "三菱倉庫株式会社は、仕入取引関係の維持・強化を目的に株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "gs-yuasa",
+      "relationship": "supplier",
+      "description": "株式会社ジーエス・ユアサコーポレーションは、仕入取引関係の維持・強化を目的に株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takara-holdings",
+      "relationship": "supplier",
+      "description": "宝ホールディングス株式会社は、仕入取引関係の維持・強化を目的に株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takebishi",
+      "relationship": "supplier",
+      "description": "株式会社たけびしは、仕入取引関係の維持・強化を目的に株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kissei-pharmaceutical",
+      "relationship": "supplier",
+      "description": "キッセイ薬品工業株式会社は、医薬品製造の受託取引関係の維持・強化を目的に株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "chugai-pharmaceutical",
+      "relationship": "business-partner",
+      "description": "中外製薬株式会社は、ガザイバ点滴静注の共同開発及び共同販売契約（2012年11月締結）の相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "santen-pharmaceutical",
+      "relationship": "business-partner",
+      "description": "参天製薬株式会社は、リボスチン点眼液の供給、販売契約（2022年11月締結）の相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +604,45 @@
       "publisher": "日本新薬株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGRG.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YGRG",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念「人々の健康と豊かな生活創りに貢献する」のもと、長期ビジョンとして2035年のありたい姿「京都のグローバルヘルスケアカンパニーとして、一人ひとりの新しい生きるを世界に届ける会社」を掲げ、第七次5ヵ年中期経営計画（2024年度～2028年度）で、ウプトラビに替わる成長ドライバーの育成、グローバル展開の拡大、パイプラインの拡充に取り組んでいます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "医薬品事業の売上収益は148,484百万円で、機能食品事業の22,287百万円を大きく上回ります。2026年3月期は「ウプトラビ」や「フィンテプラ」などが伸長し、売上収益は前期比6.6％増となりました。",
+        "basis": "2026年3月期のセグメント情報と経営成績の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上収益は170,771百万円で、従業員数は2,309人です。地域別の売上収益は日本が93,672百万円、欧州が56,447百万円、米国が16,413百万円です。",
+        "basis": "2026年3月期の連結経営指標等と地域ごとの情報の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

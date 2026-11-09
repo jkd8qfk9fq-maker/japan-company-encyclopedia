@@ -4,15 +4,260 @@
   "name": "丸善CHIホールディングス",
   "officialName": "丸善CHIホールディングス株式会社",
   "nameEn": "Maruzen CHI Holdings Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Maruzen CHI Holdings",
+  "description": "書店の運営や大学・図書館への書籍販売、図書館の運営受託、学術書などの出版を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    },
+    {
+      "industryId": "media",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "store-online-sales",
+      "name": "店舗・ネット販売事業",
+      "description": "全国の都市部を中心に店舗を設け、書籍のほか文具等の複合的な店舗販売を行う事業です。通信ネットワークを利用した情報提供サービスも行っています。2026年1月期の外部顧客への売上高は81,776百万円でした。",
+      "products": [
+        "書籍",
+        "文具",
+        "雑貨",
+        "洋品"
+      ],
+      "customers": [
+        "店舗の来店客",
+        "通信ネットワークの利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "education-market-sales",
+      "name": "文教市場販売事業",
+      "description": "大学や公共図書館などに、学術情報を中心にした書籍やコンテンツを提供する事業です。教育・研究施設や図書館の内装設備の設計・施工も行っています。2026年1月期の外部顧客への売上高は49,196百万円でした。",
+      "products": [
+        "書籍",
+        "学術情報",
+        "電子ジャーナル",
+        "電子情報データベース",
+        "書誌データベース「TRC MARC」",
+        "デジタルアーカイブシステム「ADEAC」"
+      ],
+      "customers": [
+        "大学",
+        "公共図書館",
+        "学校図書館",
+        "官庁付置研究機関",
+        "企業資料室",
+        "研究者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "academic-info-sales",
+          "name": "学術情報販売",
+          "description": "大学などの教育研究機関や研究者に対する、輸入洋書を含む出版物や電子ジャーナル、電子情報データベースの提供などを行います。金額の内訳は印字されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "library-facility-design",
+          "name": "図書館・教育施設の設計施工",
+          "description": "大学などの教育研究機関や図書館の建築及び内装設備の設計施工を行います。金額の内訳は印字されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "adeac",
+          "name": "デジタルアーカイブ「ADEAC」",
+          "description": "図書館・博物館などにおけるデジタルアーカイブシステム「ADEAC」の運用と、デジタルデータの作成を行います。金額の内訳は印字されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "library-support",
+      "name": "図書館サポート事業",
+      "description": "公共図書館や大学図書館を中心に、図書館の運営業務を受託する事業です。指定管理者制度による図書館の運営も行っています。2026年1月期の外部顧客への売上高は39,272百万円でした。",
+      "products": [
+        "図書館運営業務の受託",
+        "指定管理者制度による図書館運営",
+        "図書館業務の請負",
+        "人材派遣"
+      ],
+      "customers": [
+        "公共図書館",
+        "大学図書館",
+        "学校図書館"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "publishing",
+      "name": "出版事業",
+      "description": "学術専門書を中心に、児童書や図書館向け書籍などを出版する事業です。2026年1月期の外部顧客への売上高は3,696百万円でした。",
+      "products": [
+        "学術専門書",
+        "児童書",
+        "図書館向け書籍",
+        "『理科年表』",
+        "DVD"
+      ],
+      "customers": [
+        "大学",
+        "図書館",
+        "読者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "academic-publishing",
+          "name": "学術専門書出版",
+          "description": "丸善出版株式会社と株式会社サイオ出版が、学術専門書を中心とした出版を行います。金額の内訳は印字されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "children-books",
+          "name": "児童図書出版",
+          "description": "株式会社岩崎書店が、児童図書及び図書館向け図書の出版を行います。金額の内訳は印字されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "publishing-contract",
+          "name": "出版の企画・編集・製作請負",
+          "description": "丸善プラネット株式会社が、出版に係る企画、編集、製作などの請負を行います。金額の内訳は印字されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other-business",
+      "name": "その他事業",
+      "description": "報告セグメントに含まれない事業です。書店などの店舗内装の設計・施工、倉庫業、パソコンなどの修理、総合保育サービス、専門書の検索・閲覧サービス「丸善リサーチ」などを行っています。2026年1月期の外部顧客への売上高は11,111百万円でした。",
+      "products": [
+        "店舗内装の設計・施工",
+        "倉庫業",
+        "パソコン・タブレット等の修理",
+        "総合保育サービス",
+        "専門書の検索・閲覧サービス「丸善リサーチ」"
+      ],
+      "customers": [
+        "書店・文具店などの小売業",
+        "図書館",
+        "保育園・託児所の利用者",
+        "専門書の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "書店の運営や大学・図書館への書籍販売、図書館の運営受託、学術書などの出版を行う会社です。",
+    "products": [
+      "書籍",
+      "文具",
+      "雑貨",
+      "洋品",
+      "学術情報",
+      "電子ジャーナル",
+      "電子情報データベース",
+      "書誌データベース「TRC MARC」",
+      "デジタルアーカイブシステム「ADEAC」",
+      "図書館運営サービス",
+      "学術専門書",
+      "児童書",
+      "図書館向け書籍",
+      "店舗内装の設計・施工",
+      "専門書の検索・閲覧サービス「丸善リサーチ」"
+    ],
+    "customers": [
+      "大学",
+      "公共図書館",
+      "大学図書館",
+      "学校図書館",
+      "官庁付置研究機関",
+      "企業資料室",
+      "研究者",
+      "書店の来店客",
+      "通信ネットワークの利用者"
+    ],
+    "revenueSources": [
+      "店舗における書籍・文具等の販売による収入",
+      "大学・図書館への書籍・コンテンツ等の販売による収入",
+      "図書館運営業務の受託による収入",
+      "学術専門書・児童書等の出版による収入",
+      "店舗内装の設計・施工による収入",
+      "専門書の検索・閲覧サービスによる収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社グループ",
+        "description": "当社と子会社36社、関連会社4社で構成されるグループです。2026年1月31日現在の従業員数は1,574人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "書籍と知のサービス",
+        "description": "書店で書籍や文具などを販売し、大学や図書館に学術情報や書籍を提供し、図書館の運営を受託し、学術書などを出版します。"
+      },
+      {
+        "kind": "customer",
+        "title": "大学・図書館と書店の来店客",
+        "description": "大学や公共図書館、研究者に書籍や情報を届け、書店では来店客に書籍や文具などを販売します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年1月期の売上高は185,053百万円で、前連結会計年度に比べ11.6％増えました。店舗・ネット販売事業の売上高は81,776百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年1月期の親会社株主に帰属する当期純利益は3,334百万円で、前連結会計年度に比べ14.7％減りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年1月期",
@@ -27,7 +272,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 43530000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1579,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +292,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 45702000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1566,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +312,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 47766000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1541,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +332,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 51742000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1533,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "表示方法の変更により、自社保有不動産のテナントに対する賃貸取引を売上高に計上する方法に変更したため、2025年1月期の売上高は組替え後の数値を記載しています。"
     },
     {
       "fiscalYear": "2026年1月期",
@@ -107,7 +353,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 54630000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1574,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,20 +361,241 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2008,
+      "title": "経営統合の基本合意を締結",
+      "description": "丸善株式会社と株式会社図書館流通センターが、親会社である[[company:dai-nippon-printing|大日本印刷]]を含む3社で、共同株式移転による共同持株会社の設立に向けた経営統合の基本合意を締結しました。",
+      "significance": "丸善CHIホールディングス設立への出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "CHIグループ株式会社を設立し上場",
+      "description": "丸善株式会社と株式会社図書館流通センターが共同株式移転により、両社を完全子会社とする共同持株会社のCHIグループ株式会社を設立しました。同日、東京証券取引所市場第一部に上場しました。",
+      "significance": "現在の会社の設立と上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "ジュンク堂書店と株式交換契約を締結",
+      "description": "当社を完全親会社、株式会社ジュンク堂書店を完全子会社とする株式交換契約を締結しました。",
+      "significance": "書店事業の拡大への一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "丸善書店株式会社を設立",
+      "description": "丸善株式会社の完全子会社として、丸善書店株式会社を設立しました。",
+      "significance": "書店事業を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "雄松堂書店と株式交換契約を締結",
+      "description": "当社を完全親会社、株式会社雄松堂書店を完全子会社とする株式交換契約を締結しました。",
+      "significance": "教育・学術関連事業の拡大への一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "株式会社hontoを設立",
+      "description": "グループにおけるインターネット事業の企画・推進のため、事業子会社として株式会社hontoを設立しました。",
+      "significance": "インターネット事業への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "ジュンク堂書店と雄松堂書店を完全子会社化",
+      "description": "株式会社ジュンク堂書店と株式会社雄松堂書店を株式交換により完全子会社化し、丸善株式会社の出版事業を分社化した丸善出版株式会社を設立しました。",
+      "significance": "グループの事業体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "丸善CHIホールディングス株式会社に商号変更",
+      "description": "商号を「丸善CHIホールディングス株式会社」に変更しました。「CHI」は「知」を意味します。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "オンライン書店ビーケーワンを譲渡",
+      "description": "株式会社図書館流通センターが運営するネット通販型書籍販売事業「オンライン書店ビーケーワン」を、株式会社トゥ・ディファクトに譲渡しました。",
+      "significance": "電子書籍販売サイト『honto』との連携の基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "丸善ジュンク堂書店に商号変更",
+      "description": "丸善書店株式会社が子会社である株式会社ジュンク堂書店を吸収合併し、商号を「株式会社丸善ジュンク堂書店」に変更しました。",
+      "significance": "書店事業の経営が一本化されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "丸善雄松堂株式会社に商号変更",
+      "description": "丸善株式会社が株式会社雄松堂書店を吸収合併し、商号を「丸善雄松堂株式会社」に変更しました。",
+      "significance": "教育・学術関連事業が一本化されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "丸善が創業150周年を迎える",
+      "description": "グループ会社の丸善雄松堂株式会社、株式会社丸善ジュンク堂書店、丸善出版株式会社が社名に冠する「丸善」は創業150周年を迎えました。",
+      "significance": "「丸善」の長い歴史を示す節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分再編により、当社の上場市場区分をスタンダード市場に移行しました。",
+      "significance": "現在の上場市場区分になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "丸善リサーチサービスに商号変更",
+      "description": "事業子会社である株式会社hontoブックサービスの商号を「株式会社丸善リサーチサービス」に変更しました。",
+      "significance": "専門情報の調査・分析を支援するWebサービスが中心になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "テックリブ株式会社を設立",
+      "description": "株式会社インプレスと、技術書籍読み放題サービスの企画運営事業を目的とした合弁会社「テックリブ株式会社」を設立しました。",
+      "significance": "技術書籍の読み放題サービスへの進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "dai-nippon-printing",
+      "relationship": "parent",
+      "description": "親会社です。2026年1月31日現在、議決権の55.0％を所有されています。当社の事務所を賃借し、従業員の出向を受け入れています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "bookoff-group-holdings",
+      "relationship": "business-partner",
+      "description": "その他セグメントの店舗内装事業における営業取引の関係強化を目的に株式を保有しています。2026年1月31日現在、612,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fujisan-magazine-service",
+      "relationship": "business-partner",
+      "description": "文教市場販売事業における電子雑誌コンテンツの提供等における営業取引の関係強化及び事業の連携強化を目的に株式を保有しています。2026年1月31日現在、350,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第16期(2025/02/01－2026/01/31)",
-      "publisher": "丸善CHIホールディングス株式会社",
+      "publisher": "丸善ＣＨＩホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y0TV.pdf",
       "publishedAt": "2026-04-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100Y0TV",
+      "asOf": "2026-01-31",
+      "accessedAt": "2026-11-09"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「丸善CHIホールディングス」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E4%B8%B8%E5%96%84CHI%E3%83%9B%E3%83%BC%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B9",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "グループビジョンは「知の生成と流通に革新をもたらす企業集団となる」です。中期経営計画では「グループ資産の活用促進」「成長領域の創出」「収益構造の転換」の3点を基本方針とし、2029年1月期の売上高1,850億円を目標としています。",
+        "asOf": "2026-04-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "「丸善」「ジュンク堂書店」の書店網と、大学・図書館との取引基盤を持ちます。2026年1月末時点で店舗数は116店舗、図書館の受託館数は1,851館です。デジタルアーカイブシステム「ADEAC」など、図書館向けのデジタルサービスも手がけています。",
+        "basis": "【事業の内容】及び【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の記載",
+        "asOf": "2026-04-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年1月期の売上高は185,053百万円で、店舗・ネット販売事業が81,776百万円と最も大きく、文教市場販売事業が49,196百万円、図書館サポート事業が39,272百万円です。本邦の外部顧客への売上高が90％を超えています。",
+        "basis": "【セグメント情報】の記載",
+        "asOf": "2026-04-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

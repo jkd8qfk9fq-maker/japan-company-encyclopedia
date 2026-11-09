@@ -4,15 +4,362 @@
   "name": "日産化学",
   "officialName": "日産化学株式会社",
   "nameEn": "Nissan Chemical Corporation",
-  "description": null,
+  "shortNameEn": "Nissan Chemical Corporation",
+  "description": "硫酸などの基礎化学品から、半導体材料、農薬、医薬品原薬までを手がける化学メーカーで、化学品の卸売事業も行っています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    },
+    {
+      "industryId": "pharmaceuticals",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "chemicals",
+      "name": "化学品事業",
+      "description": "硫酸、硝酸、アンモニアなどの基礎化学品と、封止材用などの特殊エポキシ、難燃剤、殺菌消毒剤などのファインケミカルを製造・販売しています。半導体の洗浄に使う高純度硫酸や、ディーゼル車の排ガス浄化に使う高品位尿素水「アドブルー」も手がけています。2026年3月期の外部顧客への売上高は126,198百万円で、6つの事業のうち最大です。",
+      "products": [
+        "硫酸",
+        "硝酸",
+        "アンモニア",
+        "高純度硫酸",
+        "高品位尿素水（アドブルー）",
+        "特殊エポキシ",
+        "難燃剤",
+        "殺菌消毒剤"
+      ],
+      "customers": [
+        "半導体メーカー",
+        "化学メーカー",
+        "化粧品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "basic-chemicals",
+          "name": "基礎化学品",
+          "description": "硫酸、硝酸、アンモニアなどの基礎化学品を製造・販売しています。高純度硫酸は半導体用洗浄剤として使われ、尿素は高品位尿素水「アドブルー」などに使われています。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "硫酸",
+            "硝酸",
+            "アンモニア",
+            "高純度硫酸",
+            "尿素"
+          ],
+          "customers": [
+            "半導体メーカー",
+            "化学メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "fine-chemicals",
+          "name": "ファインケミカル",
+          "description": "封止材用などの特殊エポキシ、難燃剤、殺菌消毒剤などを製造・販売しています。化粧品原料のファインオキソコールも手がけています。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "特殊エポキシ",
+            "難燃剤",
+            "殺菌消毒剤",
+            "ファインオキソコール"
+          ],
+          "customers": [
+            "電子部品メーカー",
+            "化粧品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "wholesale",
+      "name": "卸売事業",
+      "description": "化学品の卸売などを行う事業です。子会社の日星産業株式会社が中心となり、当社製品の販売や保険代理業なども行っています。2026年3月期の外部顧客への売上高は98,050百万円でした。",
+      "products": [
+        "化学品（卸売）"
+      ],
+      "customers": [
+        "化学品の需要家",
+        "化学メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "agrochemicals",
+      "name": "農業化学品事業",
+      "description": "除草剤、殺虫剤、殺菌剤などの農薬と、動物用医薬品の原薬を製造・販売しています。水稲用除草剤「アルテア」や殺菌剤「ライメイ」が伸び、動物用医薬品原薬のフルララネルも増収となりました。2026年3月期の外部顧客への売上高は82,109百万円でした。",
+      "products": [
+        "除草剤",
+        "殺虫剤",
+        "殺菌剤",
+        "殺虫殺菌剤",
+        "植物成長調整剤",
+        "動物用医薬品原薬"
+      ],
+      "customers": [
+        "農家",
+        "農業資材の販売店",
+        "動物用医薬品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "pesticides",
+          "name": "農薬",
+          "description": "除草剤、殺虫剤、殺菌剤、殺虫殺菌剤、植物成長調整剤などの農薬を製造・販売しています。水稲用除草剤「アルテア」「ベルダー」や殺菌剤「ライメイ」などがあります。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "除草剤",
+            "殺虫剤",
+            "殺菌剤",
+            "植物成長調整剤"
+          ],
+          "customers": [
+            "農家",
+            "農業資材の販売店"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "veterinary-api",
+          "name": "動物用医薬品原薬",
+          "description": "動物用医薬品の原薬を製造・販売しています。ペット用などの動物薬に使われるフルララネルが増収となりました。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "動物用医薬品原薬（フルララネル）"
+          ],
+          "customers": [
+            "動物用医薬品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "functional-materials",
+      "name": "機能性材料事業",
+      "description": "ディスプレイ材料、半導体材料、無機コロイドの3分野の機能性材料を製造・販売しています。半導体用反射防止コーティング材などが顧客の稼働好調を受けて大きく伸び、2026年3月期の外部顧客への売上高は78,310百万円でした。",
+      "products": [
+        "液晶配向材用ポリイミド（サンエバー）",
+        "半導体用反射防止コーティング材",
+        "多層材料",
+        "電子材料用研磨剤（スノーテックス）",
+        "各種表面処理剤"
+      ],
+      "customers": [
+        "半導体メーカー",
+        "ディスプレイメーカー",
+        "電子材料メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "display-materials",
+          "name": "ディスプレイ材料",
+          "description": "液晶配向材用ポリイミド「サンエバー」などのディスプレイ材料を製造・販売しています。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "液晶配向材用ポリイミド"
+          ],
+          "customers": [
+            "ディスプレイメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "semiconductor-materials",
+          "name": "半導体材料",
+          "description": "半導体用反射防止コーティング材や多層材料などの半導体材料を製造・販売しています。顧客の稼働好調を受けて大幅な増収となりました。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "半導体用反射防止コーティング材",
+            "多層材料"
+          ],
+          "customers": [
+            "半導体メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "inorganic-colloids",
+          "name": "無機コロイド",
+          "description": "電子材料用研磨剤や各種表面処理剤などの無機コロイドを製造・販売しています。「スノーテックス」や、シェールオイル・ガス採掘の効率向上に使うオイル＆ガス材料があります。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "電子材料用研磨剤",
+            "各種表面処理剤",
+            "オイル＆ガス材料"
+          ],
+          "customers": [
+            "電子材料メーカー",
+            "エネルギー関連企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other-business",
+      "name": "その他の事業",
+      "description": "肥料（高度化成など）、造園緑化、運送、プラントエンジニアリング、硫酸の製造、電子材料の製造販売などを行う事業です。日本肥糧株式会社、日産物流株式会社、日産緑化株式会社、日産エンジニアリング株式会社、NC東京ベイ株式会社、日本ポリテック株式会社などが担っています。2026年3月期の外部顧客への売上高は15,542百万円でした。",
+      "products": [
+        "肥料（高度化成）",
+        "造園緑化",
+        "運送",
+        "プラントエンジニアリング"
+      ],
+      "customers": [
+        "農家",
+        "化学メーカー",
+        "荷主企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "healthcare",
+      "name": "ヘルスケア事業",
+      "description": "高コレステロール血症治療薬「リバロ」の原薬と、医薬品の受託製造などを行う課題解決型受託事業「ファインテック」を手がけています。2026年3月期の外部顧客への売上高は5,133百万円でした。",
+      "products": [
+        "高コレステロール血症治療薬原薬",
+        "医薬品の受託製造"
+      ],
+      "customers": [
+        "製薬メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "drug-api",
+          "name": "高コレステロール血症治療薬原薬",
+          "description": "高コレステロール血症治療薬「リバロ」の原薬を製造・販売しています。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "高コレステロール血症治療薬原薬"
+          ],
+          "customers": [
+            "製薬メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "finetech",
+          "name": "ファインテック",
+          "description": "医薬品原薬の受託製造などを行う課題解決型受託事業です。金額は区分ごとに独立して開示されていません。",
+          "products": [
+            "医薬品原薬の受託製造"
+          ],
+          "customers": [
+            "製薬メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "化学品、機能性材料、農業化学品、ヘルスケアの各事業で製品を製造し、グループの卸売事業を通じて化学品を販売して収入を得ています。",
+    "products": [
+      "硫酸・硝酸・アンモニアなどの基礎化学品",
+      "半導体用反射防止コーティング材などの機能性材料",
+      "農薬・動物用医薬品原薬",
+      "高コレステロール血症治療薬原薬",
+      "化学品（卸売）"
+    ],
+    "customers": [
+      "半導体メーカー",
+      "ディスプレイメーカー",
+      "製薬メーカー",
+      "農家",
+      "化学品の需要家"
+    ],
+    "revenueSources": [
+      "化学品・機能性材料・農薬・医薬品原薬などの製品販売による収入",
+      "化学品の卸売による収入",
+      "医薬品の受託製造による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日産化学グループ",
+        "description": "当社と子会社36社、関連会社9社で構成されています。連結の従業員数は3,411人です（2026年3月31日現在）。1887年にわが国初の化学肥料製造会社として創業しました。"
+      },
+      {
+        "kind": "offering",
+        "title": "化学品から半導体材料・農薬・医薬品原薬まで",
+        "description": "硫酸・硝酸・アンモニアなどの基礎化学品、半導体用反射防止コーティング材などの機能性材料、農薬、動物用医薬品原薬、高コレステロール血症治療薬の原薬などを製造・販売し、化学品の卸売も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "半導体・製薬・農業などの顧客",
+        "description": "製品は半導体メーカーや製薬メーカー、農業関係者などに販売しています。【関連情報】に主要な顧客として、SINTECH International Trading (Shanghai) Co., Ltd.（2026年3月期の売上高29,925百万円、卸売事業）が印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売で得る収入",
+        "description": "収入源は製品の販売と卸売です。2026年3月期の売上高は279,586百万円で、前連結会計年度の251,365百万円から増えました。半導体材料が好調だった機能性材料や、国内外向けの農薬が増収となった農業化学品などが全体を押し上げました。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から、原材料の仕入や製造、販売などの費用を差し引いた残りが利益になります。2026年3月期の親会社株主に帰属する当期純利益は49,707百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +374,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 208059000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2737,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +394,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 221575000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2965,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,12 +414,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 230952000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3137,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号、2022年10月28日）等を第155期（2025年3月期）の期首から適用しており、第154期（2024年3月期）以前に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっています。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -87,7 +435,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 236180000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3283,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +455,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 259051000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3411,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +463,178 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1887,
+      "title": "東京人造肥料会社として創業",
+      "description": "高峰譲吉、渋沢栄一、益田孝らにより、わが国初の化学肥料製造会社である東京人造肥料会社が設立されました。",
+      "significance": "日産化学の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1910,
+      "title": "大日本人造肥料に改称",
+      "description": "東京人造肥料株式会社が大日本人造肥料株式会社に改称しました。",
+      "significance": "化学肥料会社としての規模を広げていく時期の改称です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1923,
+      "title": "関東酸曹と日本化学肥料を合併",
+      "description": "大日本人造肥料株式会社が関東酸曹株式会社と日本化学肥料株式会社を合併しました。",
+      "significance": "肥料と化学品の事業基盤が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1937,
+      "title": "日産化学工業に改称",
+      "description": "大日本人造肥料株式会社が日本化学工業株式会社に資産等を譲渡し、日本化学工業株式会社は日産化学工業株式会社に改称しました。",
+      "significance": "「日産化学」の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "株式を上場",
+      "description": "証券取引所の再開に伴い、当社株式が上場しました。",
+      "significance": "株式公開を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "油脂部門を分離",
+      "description": "企業再建整備法により、油脂部門（現在の日油株式会社）を分離しました。",
+      "significance": "戦後の企業再建に伴う事業の分離です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "石油化学事業に進出",
+      "description": "日産石油化学株式会社を設立し、石油化学事業へ進出しました。",
+      "significance": "事業領域を広げた進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "石油化学事業から撤退",
+      "description": "協和醗酵工業株式会社（現在のKHネオケム株式会社）などへ石油化学部門を営業譲渡し、同事業から撤退しました。",
+      "significance": "事業の選択と集中を進めた転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "米国にNissan Chemical America Corporationを設立",
+      "description": "Nissan Chemical America Corporationをアメリカに設立しました。",
+      "significance": "海外展開の拠点づくりが進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "韓国にNCK Co., Ltd.を設立",
+      "description": "韓国日産化学株式会社（現在のNCK Co., Ltd.）を韓国に設立しました。",
+      "significance": "機能性材料の海外販売・開発拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "日本モンサントから国内農薬除草剤事業を買収",
+      "description": "日本モンサント株式会社より国内農薬除草剤事業を買収しました。",
+      "significance": "農薬事業を強化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "米Dow AgroSciencesから農薬殺菌剤を買収",
+      "description": "アメリカのDow AgroSciences社より農薬殺菌剤を買収しました。",
+      "significance": "海外農薬の製品基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "日産化学株式会社に商号変更",
+      "description": "「工業」の枠を超えた事業展開を明確化するため、日産化学工業株式会社から日産化学株式会社に商号を変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "米Corteva Agriscienceから農薬殺菌剤を買収",
+      "description": "アメリカのCorteva Agriscience社より農薬殺菌剤を買収しました。",
+      "significance": "海外農薬の製品基盤をさらに広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "NC東京ベイを子会社化",
+      "description": "日本燐酸株式会社（現在のNC東京ベイ株式会社）を株式取得により子会社化しました。",
+      "significance": "硫酸などの製造基盤を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "日本ポリテックを子会社化",
+      "description": "日本ポリテック株式会社を株式取得により子会社化しました。",
+      "significance": "電子材料の製造販売を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "台湾に半導体材料の子会社を設立",
+      "description": "台湾日産化学半導体材料股份有限公司を台湾に設立しました。",
+      "significance": "半導体材料の海外供給体制を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +643,45 @@
       "publisher": "日産化学株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIML.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YIML",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "6ヵ年の中期経営計画『Vista2027』の後半3ヵ年（2025年度～2027年度）であるStageⅡを進めています。最重要課題を新製品の創出とし、基本戦略は「現有事業の利益拡大」「2030年を見据えた新製品の開発」「事業基盤の強化」の3つです。成長が見込まれる機能性材料と農業化学品の2つのセグメントへ、M&Aを含めて経営資源を集中的に投下するとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "半導体製造の工程で使われる反射防止コーティング材や多層材料など、特定の工程に欠かせない材料を持っていることが読み取れます。2026年3月期は、半導体材料の好調が機能性材料事業の増収を牽引しました。",
+        "basis": "【事業の内容】の製品構成と、MD&Aのセグメント別概況（半導体材料が大幅な増収）に基づく。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "disclosed": {
+        "text": "農業化学品では、国内販売出荷金額ベースでシェア1位を堅持することを掲げています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  }
 }

@@ -4,15 +4,167 @@
   "name": "メルカリ",
   "officialName": "株式会社メルカリ",
   "nameEn": "Mercari, Inc.",
-  "description": null,
+  "shortNameEn": "Mercari",
+  "description": "フリマアプリ「メルカリ」を中核に、個人間取引のマーケットプレイスと決済・与信などのフィンテック事業を日本と米国で運営しています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    },
+    {
+      "industryId": "finance",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "japan-business",
+      "name": "Japan Business",
+      "description": "日本国内でフリマアプリ「メルカリ」を中核に事業を行う報告セグメントです。2026年6月期の外部顧客への売上収益は180,858百万円でした。MarketplaceとFintechの2つのドメインで構成されています。",
+      "products": [
+        "フリマアプリ「メルカリ」",
+        "メルカリShops",
+        "スマホ決済サービス「メルペイ」",
+        "クレジットカード「メルカード」"
+      ],
+      "customers": [
+        "商品を出品する個人",
+        "商品を購入する個人",
+        "ネットショップを開設する事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "marketplace-japan",
+          "name": "Marketplace",
+          "description": "日本国内でCtoCマーケットプレイスのフリマアプリ「メルカリ」を運営するドメインです。2026年6月期の売上収益は129,526百万円でした。2019年10月から日本で出品された商品を海外から購入できる越境取引を行い、2021年10月からはBtoCマーケットプレイス「メルカリShops」も運営しています。",
+          "products": [
+            "フリマアプリ「メルカリ」",
+            "メルカリShops",
+            "メルカリ グローバルアプリ"
+          ],
+          "customers": [
+            "商品を出品する個人",
+            "商品を購入する個人",
+            "ネットショップを開設する事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "fintech",
+          "name": "Fintech",
+          "description": "日本国内で決済・金融サービスを行うドメインです。2026年6月期の売上収益は51,201百万円でした。スマホ決済サービス「メルペイ」、利用履歴に基づくAI与信を活用したクレジットカード「メルカード」、株式会社メルコインによる暗号資産関連サービスなどを含みます。",
+          "products": [
+            "スマホ決済サービス「メルペイ」",
+            "クレジットカード「メルカード」",
+            "暗号資産取引サービス"
+          ],
+          "customers": [
+            "「メルカリ」「メルペイ」の利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "us",
+      "name": "US",
+      "description": "米国でCtoCマーケットプレイス「Mercari」を運営する報告セグメントです。2026年6月期の外部顧客への売上収益は40,782百万円でした。連結子会社のMercari, Inc.が企画・開発・運営を行っています。",
+      "products": [
+        "マーケットプレイス「Mercari」（米国）"
+      ],
+      "customers": [
+        "商品を出品する個人",
+        "商品を購入する個人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業セグメントで、スポーツビジネス事業などを含みます。2026年6月期の外部顧客への売上収益は7,653百万円でした。プロサッカー球団「鹿島アントラーズ」を運営する株式会社鹿島アントラーズ・エフ・シー（議決権の所有割合71.2％、2026年6月30日現在）が含まれます。",
+      "products": [
+        "プロサッカー球団「鹿島アントラーズ」の運営"
+      ],
+      "customers": [
+        "サッカーファン",
+        "スポンサー企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "誰でも簡単に出品・購入できるCtoCマーケットプレイス「メルカリ」を運営し、取引手数料を主な収入源としながら、スマホ決済や与信、暗号資産などの金融サービスも提供しています。",
+    "products": [
+      "フリマアプリ「メルカリ」",
+      "BtoCマーケットプレイス「メルカリShops」",
+      "スマホ決済サービス「メルペイ」",
+      "クレジットカード「メルカード」",
+      "暗号資産取引サービス",
+      "米国向けマーケットプレイス「Mercari」"
+    ],
+    "customers": [
+      "商品を出品する個人",
+      "商品を購入する個人",
+      "「メルカリShops」に出店する事業者"
+    ],
+    "revenueSources": [
+      "取引手数料（商品代金の10％）",
+      "決済・与信サービスの収入",
+      "暗号資産取引の収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "メルカリグループ",
+        "description": "株式会社メルカリと、Mercari, Inc.（米国）、株式会社メルペイ、株式会社メルコイン、株式会社鹿島アントラーズ・エフ・シーなどの連結子会社で構成されています。連結の従業員数は2,065人です（2026年6月30日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "マーケットプレイスとフィンテック",
+        "description": "Japan Businessでは、フリマアプリ「メルカリ」を中心とするMarketplaceと、スマホ決済「メルペイ」やクレジットカード「メルカード」などのFintechを展開しています。米国では連結子会社がマーケットプレイス「Mercari」を運営しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "個人の出品者と購入者",
+        "description": "主な顧客は、不要品を出品する個人と、それを購入する個人です。「メルカリ」のMAU（月間利用者数）は2,400万人を超えています（2026年6月期）。「メルカリShops」には事業者も出店しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "取引手数料を中心とする収入",
+        "description": "2026年6月期の連結売上収益は229,293百万円で、前期に比べて19.0％増えました。内訳はJapan Businessが180,858百万円、USが40,782百万円、その他が7,653百万円です。MarketplaceのGMV（流通取引総額）は1兆2,856億円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "2026年6月期の親会社の所有者に帰属する当期利益は35,401百万円で、前期に比べて35.6％増えました。増益を伴うトップラインの成長を目指す経営方針のもと、売上収益の成長が増益につながりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 37998000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2209,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +199,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 55346000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 2101,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第12期（2023年6月期）より、国際会計基準（IFRS）に基づいて連結財務諸表を作成しています。第11期以前の主要な経営指標等は日本基準に基づいており、売上高と売上収益など表示が異なります。"
     },
     {
       "fiscalYear": "2024年6月期",
@@ -67,7 +220,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 71836000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 2080,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -87,7 +240,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 99269000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 2159,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -107,7 +260,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 137069000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 2065,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -115,7 +268,169 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2013,
+      "title": "創業と「メルカリ」の提供開始",
+      "description": "2013年2月、山田進太郎が東京都港区六本木で株式会社コウゾウを設立しました。同年7月にCtoCマーケットプレイス「メルカリ」の提供を開始し、同年11月に社名を株式会社メルカリに変更しました。",
+      "significance": "メルカリグループの創業です。",
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "米国への進出",
+      "description": "2014年1月に米国子会社Mercari, Inc.を設立し、同年9月に米国でCtoCマーケットプレイス「Mercari」の提供を開始しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "株式会社メルペイの設立",
+      "description": "2017年11月、国内子会社として株式会社メルペイを設立しました。",
+      "significance": "Fintech事業の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東京証券取引所マザーズへの上場",
+      "description": "2018年6月、東京証券取引所マザーズに株式を上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "スマホ決済サービス「メルペイ」の開始",
+      "description": "2019年2月、株式会社メルペイがスマホ決済サービス「メルペイ」の提供を開始しました。",
+      "significance": "決済事業が本格的に始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "鹿島アントラーズの子会社化",
+      "description": "2019年8月、株式会社鹿島アントラーズ・エフ・シーの株式を取得し、子会社化しました。",
+      "significance": "スポーツビジネスがグループに入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "越境販売の開始",
+      "description": "2019年10月、「メルカリ」で日本から出品された商品を海外から購入できる越境販売を開始しました。",
+      "significance": "国境を越えた取引の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "株式会社NTTドコモとの業務提携",
+      "description": "2020年2月、株式会社NTTドコモとの業務提携を開始しました。",
+      "significance": "国内大手通信事業者グループとの提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社メルコインの設立",
+      "description": "2021年4月、国内子会社として株式会社メルコインを設立しました。",
+      "significance": "暗号資産関連事業の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "「メルカリShops」の提供開始",
+      "description": "2021年10月、国内子会社株式会社ソウゾウが、ネットショップを開設できるBtoCマーケットプレイス「メルカリShops」の提供を開始しました。",
+      "significance": "個人間取引から事業者の販売へ広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行と「メルカード」の開始",
+      "description": "2022年6月、東京証券取引所プライム市場へ市場区分を変更しました。同年11月には、株式会社メルペイがAI与信を活用したクレジットカード「メルカード」の提供を開始しました。",
+      "significance": "市場区分の移行と与信事業の拡大が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "新グループミッションの策定",
+      "description": "2023年2月、新たなグループミッション「あらゆる価値を循環させ、あらゆる人の可能性を広げる」を策定しました。同年3月には、株式会社メルコインが「メルカリ」でビットコイン取引サービスの提供を開始しました。",
+      "significance": "現在のグループミッションの起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "世界共通アプリ「メルカリ グローバルアプリ」の提供開始",
+      "description": "2025年9月、越境取引において世界共通アプリ「メルカリ グローバルアプリ」の提供を開始しました。同年3月には「メルカリモバイル」の提供も開始しています。",
+      "significance": "グローバル展開の基盤づくりが進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "鹿島アントラーズのJ1リーグ優勝",
+      "description": "2025年12月、グループ会社の鹿島アントラーズが2025明治安田J1リーグにおいて優勝しました。",
+      "significance": "グループのスポーツビジネスの出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社駿河屋との資本業務提携",
+      "description": "2025年12月、株式会社駿河屋と資本業務提携契約を締結しました。",
+      "significance": "越境取引における取扱在庫の拡充に向けた提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "「メルカリ グローバルアプリ」の米国提供開始",
+      "description": "2026年6月、「メルカリ グローバルアプリ」を米国で提供開始しました。",
+      "significance": "越境取引と米国事業をつなぐ展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +439,52 @@
       "publisher": "株式会社メルカリ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z2BE.pdf",
       "publishedAt": "2026-09-17",
-      "accessedAt": "2026-09-29"
+      "docId": "S100Z2BE",
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-08"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「メルカリ」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%AB%E3%82%AB%E3%83%AA",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-08",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "グループミッション「あらゆる価値を循環させ、あらゆる人の可能性を広げる」の達成に向け、物理的なモノだけでなく、信用やデジタルアセットなどへ価値循環の対象を広げ、国や地域を越えてお客さま体験の進化に挑み続けるとしています。経営方針としては、原則として増益を伴うトップラインの成長を目指し、GMV（流通取引総額）及び売上収益の成長などを通じて企業価値の向上を図るとしています。",
+        "asOf": "2026-09-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "会社の強みとして、CtoCマーケットプレイスのパイオニアとしてのポジショニング、MAUが2,400万人を超えるエンゲージメントの高いユーザ基盤と取引データの活用、出品と購入が相互に増えるネットワーク効果による高いロイヤルティを挙げています。「メルカリ」の利用実績に基づく与信など、グループ内でのシナジーも生かしています。",
+        "asOf": "2026-09-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年6月期の売上収益の内訳は、Japan Businessが180,858百万円と全体の約8割を占め、USが40,782百万円、その他が7,653百万円です。MarketplaceのGMV（流通取引総額）は1兆2,856億円で前期に比べて14.7％増え、このうち越境取引のGMVは1,122億円でした。",
+        "basis": "【セグメント情報】・【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の記載",
+        "asOf": "2026-09-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

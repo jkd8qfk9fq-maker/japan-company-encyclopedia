@@ -4,15 +4,147 @@
   "name": "ノーリツ",
   "officialName": "株式会社ノーリツ",
   "nameEn": "NORITZ CORPORATION",
-  "description": null,
+  "shortNameEn": "NORITZ",
+  "description": "ノーリツは、給湯器などの温水機器や、ビルトインコンロなどの厨房機器を製造・販売する住宅設備機器メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "domestic",
+      "name": "国内事業",
+      "description": "日本国内で温水機器や厨房機器の製造・販売を行う事業です。子会社の大成工業、信和工業、ハーマン、多田スミス、アールビーなどが製品や部品の製造を担い、当社の全国各地の支店・営業所から代理店を通じて販売しています。2025年12月期の外部顧客への売上高は136,748百万円で、2つの報告セグメントのうち最大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "domestic-water-heating",
+          "name": "温水空調分野",
+          "description": "給湯器や暖房機器などの温水空調機器を扱う分野です。2025年12月期の売上高は111,356百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "domestic-kitchen",
+          "name": "厨房分野",
+          "description": "ビルトインコンロやレンジフードなどの厨房機器を扱う分野です。2025年12月期の売上高は16,448百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "domestic-other",
+          "name": "その他",
+          "description": "温水空調分野と厨房分野に含まれない事業です。2025年12月期の売上高は8,943百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "overseas",
+      "name": "海外事業",
+      "description": "中国・北米・豪州などで温水機器や厨房機器の製造・販売を行う事業です。中国では能率（上海）住宅設備有限公司が製造し、北米ではNORITZ AMERICA CORPORATION、豪州ではDUX MANUFACTURING LIMITEDが製造・販売しています。2025年12月期の外部顧客への売上高は65,301百万円です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "overseas-water-heating",
+          "name": "温水空調分野",
+          "description": "給湯器や暖房機器などの温水空調機器を扱う分野です。2025年12月期の売上高は55,117百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "overseas-kitchen",
+          "name": "厨房分野",
+          "description": "ビルトインコンロやレンジフードなどの厨房機器を扱う分野です。2025年12月期の売上高は9,789百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "overseas-other",
+          "name": "その他",
+          "description": "温水空調分野と厨房分野に含まれない事業です。2025年12月期の売上高は394百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "給湯器・暖房機器などの温水空調機器と、ビルトインコンロなどの厨房機器をグループで製造し、代理店やガス事業者、住宅メーカーなどを通じて販売して対価を得る事業モデルです。",
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "給湯器・暖房機器などの温水空調機器",
+      "ビルトインコンロ・レンジフードなどの厨房機器",
+      "浄水器などの海外向け製品"
+    ],
+    "customers": [
+      "全国各地の代理店",
+      "ガス事業者や住宅メーカーなどの取引先",
+      "中国・北米・豪州などの海外の販売先"
+    ],
+    "revenueSources": [
+      "温水空調機器の販売対価",
+      "厨房機器の販売対価",
+      "修理・保守などのアフターサービスの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ノーリツグループ",
+        "description": "2025年12月31日現在、当社と子会社32社、関連会社5社の計38社で構成されるグループで、2025年12月期の連結の従業員数は5,934人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "温水機器と厨房機器の製造・販売",
+        "description": "給湯器や暖房機器などの温水空調機器と、ビルトインコンロやレンジフードなどの厨房機器を、当社と国内外の関係会社が製造し、販売しています。国内では子会社のハーマンなどが厨房機器を手がけ、中国・北米・豪州では現地の子会社が製造・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "代理店とガス事業者・住宅メーカー",
+        "description": "国内では、当社の全国各地の支店・営業所から代理店を通じて販売しています。ガス事業者や住宅メーカーも販売先で、海外では現地の子会社が販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品販売の売上高",
+        "description": "2025年12月期の売上高は202,049百万円で、前期の202,204百万円から0.1％減りました。国内事業の売上高は136,748百万円、海外事業は65,301百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は3,358百万円で、前期の4,383百万円から23.4％減りました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +159,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 116193000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6720,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +179,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 119656000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6569,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第73期（2022年12月期）の期首から適用しています。第72期（2021年12月期）の主要な経営指標等は、この会計基準等を適用する前の数値です。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +200,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 126667000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6280,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +220,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 136939000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6128,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,16 +240,438 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 145029000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5934,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号、2022年改正）等を当期の期首から適用しています。前連結会計年度（2024年12月期）の主要な経営指標等は、この会計基準等を遡って適用した後の数値です。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1951,
+      "title": "能率風呂工業を設立",
+      "description": "能率風呂工業株式会社を設立し、本店を神戸市生田区（現在の神戸市中央区）に開設しました。",
+      "significance": "ノーリツの創業です。創業の原点である「お風呂は人を幸せにする」という考え方は、現在のグループミッションにもつながっています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "商号をノーリツに変更",
+      "description": "商号を株式会社ノーリツに変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "大阪証券取引所市場第2部に上場",
+      "description": "大阪証券取引所市場第2部に上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "市場第1部に指定",
+      "description": "大阪証券取引所並びに東京証券取引所の市場第1部に指定されました。",
+      "significance": "両取引所の最上位市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "中国・上海に進出",
+      "description": "上海水仙能率有限公司を中国・上海市に設立し、現地でのガス給湯器の生産・販売に進出しました。",
+      "significance": "海外での生産・販売の始まりで、現在の海外事業につながります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "ハーマンと業務提携し、関係会社を子会社化",
+      "description": "株式会社ハーマンとの業務提携により、株式会社ハーマンプロ、株式会社多田スミス、周防金属工業株式会社を子会社化し、同時に株式会社ハーマンに出資して関連会社化しました。",
+      "significance": "厨房機器事業を広げる提携です。ハーマンは2003年4月に追加出資して子会社化されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "NORITZ AMERICA CORPORATIONを設立",
+      "description": "子会社NORITZ AMERICA CORPORATIONを米国カリフォルニア州に設立しました。",
+      "significance": "北米事業の拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "櫻花衛厨（中国）などを子会社化",
+      "description": "Sakura(Cayman)Co.,Ltd.に出資し、同社とその子会社である櫻花衛厨（中国）股份有限公司など5社を子会社化しました。",
+      "significance": "中国事業の規模を広げました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "DUX MANUFACTURING LIMITEDを子会社化",
+      "description": "子会社NORITZ AUSTRALIA PTY LTDを通じて、オーストラリアのDUX MANUFACTURING LIMITEDとWARAPAVE PTY LTDの株式を取得し、子会社化しました。",
+      "significance": "豪州での製造・販売体制を得ました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "PB Heat, LLCを子会社化",
+      "description": "子会社NORITZ USA CORPORATIONを通じて、米国ペンシルベニア州のPB Heat, LLCの持分を取得し、子会社化しました。",
+      "significance": "北米の温水機器事業を広げました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "住設システム事業から撤退",
+      "description": "国内事業の構造改革の実施に伴い、住設システム事業から撤退しました。",
+      "significance": "事業ポートフォリオを見直した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "Kangaroo Internationalを持分法適用関連会社化",
+      "description": "ベトナムのKangaroo International Joint Venture Companyの株式44％を取得し、持分法適用関連会社としました。",
+      "significance": "東南アジアでの事業展開につながる出資です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "荻原製作所を関連会社化",
+      "description": "株式会社荻原製作所の株式を取得し、関連会社化しました。",
+      "significance": "2025年12月の簡易株式交付により子会社化されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sumitomo-realty-and-development",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、当社グループの販売取引先として、同社の分譲マンション・戸建住宅・戸建リフォームにおける省エネ機器の採用・拡販を相互に協力して推進していると印字され、同社の株式1,557,200株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-forestry",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、当社グループの販売取引先として、高付加価値の省エネ機器の拡販を推進していると印字され、同社の株式2,895,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sekisui-house",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、当社グループの販売取引先として、同社の戸建住宅や賃貸住宅におけるZEHの普及に向けて省エネ機器の採用・拡販を相互に協力して推進していると印字され、同社の株式844,650株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daiwa-house-industry",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、当社グループの販売取引先として、同社の住宅におけるZEHの普及に向けた省エネ機器の採用・拡販や、BIMの連携強化を推進していると印字され、同社の株式76,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "osaka-gas",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、当社グループの販売取引先として、同社ブランドのガス機器の製造販売を行い、高付加価値の省エネ機器の拡販を協力して推進していると印字され、同社の株式493,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokyo-gas",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、当社グループの販売取引先として、同社の温水システムへの当社製品の採用や、首都圏を中心とした省エネ機器の拡販を相互に協力して推進していると印字され、同社の株式324,300株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sinanen-holdings",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、省エネ機器の販売、経年劣化事故の抑制に向けた点検活動、給湯器リサイクル事業を相互に協力して推進する販売取引先と印字され、同社の株式223,770株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsuuroko-group-holdings",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、省エネ機器や高付加価値製品の販売、点検活動を相互に協力して推進する販売取引先と印字され、同社の株式568,700株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "iwatani",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、省エネ機器の拡販や受発注のデジタル化を相互に協力して推進する販売取引先と印字され、同社の株式492,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shizuoka-gas",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、高付加価値の省エネ機器の拡販や給湯器リサイクル事業を相互に協力して推進する販売取引先と印字され、同社の株式112,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hokkaido-gas",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、寒冷地向けガス機器開発に関する包括的な協力関係にある販売取引先と印字され、同社の株式21,484株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yuasa",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、省エネ機器の拡販や高付加価値製品の販売、点検活動を相互に協力して推進する販売取引先と印字され、同社の株式102,306株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamazen",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、高付加価値の省エネ機器や業務用給湯機器の拡販を相互に協力して推進する販売取引先と印字され、同社の株式170,238株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitani-sangyo",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、高付加価値の省エネ機器の拡販を相互に協力して推進する販売取引先と印字され、同社の株式113,740株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "glory",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、ソフト開発等の取引を行い、高付加価値製品の拡販を相互に協力する販売取引先と印字され、同社の株式116,100株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kyoritsu-maintenance",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、同社が保有する施設における省エネ機器の採用や、故障の未然防止に向けた保守・点検活動を相互に協力して推進する販売取引先と印字され、同社の株式69,184株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "jk-holdings",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、省エネ機器や高付加価値製品の拡販を相互に協力して推進する販売取引先と印字され、同社の株式73,456株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hashimoto-sogyo-holdings",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、省エネ機器や高付加価値製品の拡販、流通機能の充実を相互に協力して推進する販売取引先と印字され、同社の株式52,904株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daimaru-enawin",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、省エネ機器の販売、点検活動、給湯器リサイクル事業を相互に協力して推進する販売取引先と印字され、同社の株式48,100株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kamei",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、高付加価値の省エネ機器の拡販や業務・営業の効率化を相互に協力して推進する販売取引先と印字され、同社の株式42,350株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "k-and-amp-o-energy-group",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、省エネ機器や高付加価値製品の拡販・販売を相互に協力して推進する販売取引先と印字され、同社の株式30,904株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sala",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、省エネ機器や高付加価値製品の拡販・販売を相互に協力して推進する販売取引先と印字され、同社の株式51,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ochi-holdings",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、高付加価値の省エネ機器の拡販を相互に協力して推進する販売取引先と印字され、同社の株式13,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tsuchiya-holdings",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、同社の寒冷地向け戸建住宅や賃貸住宅におけるZEHの普及に向けて省エネ機器の採用・拡販を相互に協力して推進する販売取引先と印字され、同社の株式28,028株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "new-cosmos-electric",
+      "relationship": "customer",
+      "description": "販売取引先です。有報の特定投資株式に、当社グループの販売取引先として事業上の関係を維持・強化するために、同社の株式50,000株を保有していることが印字されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tachibana-eletech",
+      "relationship": "supplier",
+      "description": "購買取引先（仕入先）です。有報の特定投資株式に、リモコンや給湯器のコントローラに搭載する電子部品・半導体を同社から購入している購買取引先と印字され、同社の株式742,560株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-electric-glass",
+      "relationship": "supplier",
+      "description": "購買取引先（仕入先）です。有報の特定投資株式に、厨房分野の主要部品を同社から購入している購買取引先と印字され、同社の株式175,000株を保有しています。同社は2025年12月31日現在、当社株式の2.44％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "diamond-electric-holdings",
+      "relationship": "supplier",
+      "description": "購買取引先（仕入先）です。有報の特定投資株式に、オイル給湯器・浴室乾燥機などのコントローラの生産を委託している購買取引先と印字され、同社の株式24,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nozawa",
+      "relationship": "supplier",
+      "description": "購買取引先（仕入先）です。有報の特定投資株式に、当社グループの購買取引先として事業上の関係を維持・強化するために、同社の株式50,500株を保有していることが印字されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "chofu-seisakusho",
+      "relationship": "business-partner",
+      "description": "業務提携先です。有報の特定投資株式に、温水事業において製品・部品の相互OEM供給を実施している業務提携先と印字され、同社の株式1,079,400株を保有しています。同社は2025年12月31日現在、当社株式の3.31％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "miura",
+      "relationship": "business-partner",
+      "description": "業務提携先です。有報の特定投資株式に、非住宅分野において中長期視点で協業を推進している業務提携先と印字され、同社の株式104,700株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,11 +679,45 @@
       "publisher": "株式会社ノーリツ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XUKL.pdf",
       "publishedAt": "2026-03-26",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XUKL",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「Ｖプラン26」（2024年度から2026年度までの3カ年）では、グループミッション「新しい幸せを、わかすこと。」のもと、重点戦略として事業ポートフォリオの変革、戦略投資の拡大と資本政策、サステナビリティ経営の推進を掲げています。国内事業は非住宅分野や厨房分野の拡大により住宅向け温水分野への偏重を改め、海外事業は中国エリアへの依存を減らして北米エリアの拡大と東南アジアでの展開を進めます。最終年度となる2026年12月期の売上高目標は2,100億円（国内事業1,400億円、海外事業700億円）です。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1951年の創業以来、風呂・給湯の分野を手がけてきたメーカーで、温水空調分野が売上高の大部分を占めます。国内では製造から販売、アフターサービスまでをグループで担う体制を持ち、海外でも中国・北米・豪州に製造拠点を持つことが特徴です。",
+        "basis": "【沿革】・【事業の内容】・【セグメント情報】の記載",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年12月期の外部顧客への売上高は、国内事業が136,748百万円、海外事業が65,301百万円でした。分野別では温水空調分野が166,473百万円、厨房分野が26,238百万円です。地域別では日本が136,828百万円、中国が32,038百万円でした。",
+        "basis": "【セグメント情報】・【関連情報】の記載",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  }
 }

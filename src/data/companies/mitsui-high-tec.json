@@ -4,7 +4,8 @@
   "name": "三井ハイテック",
   "officialName": "株式会社三井ハイテック",
   "nameEn": "Mitsui High-tec,Inc.",
-  "description": null,
+  "shortNameEn": "Mitsui High-tec",
+  "description": "三井ハイテックは、電動車向けモーターコアと半導体用リードフレーム、金型・工作機械をつくる福岡県北九州市の部品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
@@ -14,8 +15,96 @@
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "electrical-components",
+      "name": "電機部品",
+      "description": "モーターコア製品などを製造・販売する事業です。電動車向けの駆動・発電用モーターコアが中心で、主要な顧客であるトヨタ自動車への売上高は2026年1月期に69,421百万円でした。2026年1月期の外部顧客への売上高は154,649百万円で、連結売上高の約7割を占めます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "electronic-components",
+      "name": "電子部品",
+      "description": "半導体パッケージの端子となるリードフレームなどを製造・販売する事業です。シンガポールやマレーシア、中国、台湾の連結子会社でも生産しています。2026年1月期の外部顧客への売上高は59,567百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "dies-and-machine-tools",
+      "name": "金型・工作機械",
+      "description": "プレス用金型と平面研削盤を製造・販売する事業です。金型はグループ内の部品生産にも使われており、外部顧客への売上高は2026年1月期に4,112百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "超精密加工技術を核に、モーターコアやリードフレームなどの部品と、それらを量産するための金型・工作機械を製造・販売する事業モデルです。",
+    "sourceIds": [
+      "yuho-2026",
+      "wikipedia"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "モーターコア製品",
+      "リードフレーム",
+      "プレス用金型",
+      "平面研削盤"
+    ],
+    "customers": [
+      "トヨタ自動車などの自動車メーカー",
+      "半導体メーカー",
+      "金型・工作機械を使う製造業の企業"
+    ],
+    "revenueSources": [
+      "モーターコア製品の販売",
+      "リードフレームの販売",
+      "金型・工作機械の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "三井ハイテックグループ",
+        "description": "当社と連結子会社14社の計15社で構成されるグループです。本社は福岡県北九州市にあり、社名の「三井」は創業者である三井孝昭の名字に由来します。2026年1月期の連結の従業員数は4,858人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "超精密加工による部品と金型・工作機械",
+        "description": "電動車向けの駆動・発電用モーターコア、半導体パッケージの端子となるリードフレーム、その量産に使うプレス用金型や平面研削盤を、アジア・米州・欧州の拠点で製造・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車業界と半導体業界",
+        "description": "主な供給先は自動車業界と半導体業界です。主要な顧客であるトヨタ自動車への売上高は、2026年1月期に69,421百万円でした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売による売上高",
+        "description": "2026年1月期の連結売上高は218,329百万円で、前期の214,890百万円から増えました。大幅な円安の進行などが背景です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "2026年1月期の親会社株主に帰属する当期純利益は3,151百万円で、前期の12,219百万円から減りました。欧州における電気自動車市場の成長鈍化を受け、一部顧客向けの取引に関連する減損損失を計上したことなどが主な理由です。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年1月期",
@@ -30,7 +119,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 61383000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3803,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,12 +139,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 80607000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4084,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第89期（2023年1月期）から適用しています。経営指標等の注記には、第89期以降の主要な経営指標等は当該会計基準等を適用した後の指標等であることが印字されており、5年間の数値のうち2022年1月期は適用前、2023年1月期以降は適用後の基準で表示されています。"
     },
     {
       "fiscalYear": "2024年1月期",
@@ -70,7 +160,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 96993000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4282,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,7 +180,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 110327000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4609,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,7 +200,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 113614000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4858,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,8 +208,208 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1949,
+      "title": "創業者が金型の製造販売業を開始",
+      "description": "創業者である三井孝昭が、福岡県八幡市筒井町（現北九州市八幡西区黒崎）で金型の製造販売業を開始しました。",
+      "significance": "現在の三井ハイテックの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "株式会社三井工作所を設立",
+      "description": "金型の製造販売を手がける会社として、株式会社三井工作所を設立しました。",
+      "significance": "法人としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "モーターコア用精密順送り金型の製造販売を開始",
+      "description": "モーターコア用のタングステンカーバイド精密順送り金型の製造技術を開発し、製造販売を開始しました。",
+      "significance": "現在の主力事業である電機部品につながる技術です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "平面研削盤の外販を開始",
+      "description": "平面研削盤の量産化体制を整え、外販を開始しました。",
+      "significance": "金型・工作機械事業の柱の一つになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "ICリードフレームの製造販売を開始",
+      "description": "ICリードフレームの製造販売を開始しました。",
+      "significance": "電子部品事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "シンガポールに現地法人を設立",
+      "description": "シンガポールに現地法人（現ミツイ・ハイテック（シンガポール）プライベート・リミテッド）を設立しました。",
+      "significance": "海外生産の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "株式会社三井ハイテックに商号変更",
+      "description": "商号を株式会社三井ハイテックに変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "福岡証券取引所に上場",
+      "description": "福岡証券取引所に株式を上場しました。",
+      "significance": "株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "東京証券取引所にも上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "上場市場が東証第一部に移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "中国・天津に現地法人を設立",
+      "description": "中国に現地法人である三井高科技（天津）有限公司を設立しました。",
+      "significance": "中国での生産が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "株式会社三井スタンピングを設立",
+      "description": "モーターコア製品の生産を担う株式会社三井スタンピングを北九州市八幡西区に設立しました。",
+      "significance": "電機部品の国内生産を担う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "カナダに現地法人を設立",
+      "description": "カナダに現地法人ミツイ・ハイテック（カナダ）インコーポレイテッドを設立しました。",
+      "significance": "北米でのモーターコア生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "ポーランドに現地法人を設立",
+      "description": "ポーランドに現地法人ミツイ・ハイテック（ヨーロッパ）エスペーゾーを設立しました。",
+      "significance": "欧州でのモーターコア生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所市場第一部から新市場区分のプライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "メキシコに現地法人を設立",
+      "description": "メキシコに現地法人ミツイ・ハイテック メヒカーナ エス・エー・デ・シー・ブイを設立しました。モーターコア製品の量産開始に向けて準備を進めています。",
+      "significance": "米州での生産体制を広げています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ドイツに現地法人を設立",
+      "description": "ドイツに現地法人ミツイ・ハイテック ドイチュランド ゲーエムベーハーを設立しました。",
+      "significance": "欧州での販売支援の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "香港の現地法人の清算が結了",
+      "description": "1973年に設立した香港の現地法人ミツイ・ハイテック（ホンコン）リミテッドの清算が結了しました。",
+      "significance": "グループ会社の整理の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "toyota",
+      "relationship": "customer",
+      "description": "【関連情報】の主要な顧客として印字されている顧客です。2026年1月期の売上高は69,421百万円で、関連するセグメントは電機部品です。当社は同社の株式を165,000株保有しており（2026年1月31日現在）、保有目的には販売関係で取引があることが印字されています。同社は当社の株式の2.55％を保有する大株主でもあります（2026年1月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "companyId": "aida-engineering",
+      "relationship": "supplier",
+      "description": "プレス機械などを手がける会社で、当社は同社の株式を296,700株保有しています（2026年1月31日現在）。【株式の保有状況】の保有目的には、購買関係で取引があり、取引を維持・円滑にするために保有することが印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -127,11 +417,52 @@
       "publisher": "株式会社三井ハイテック",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XZDC.pdf",
       "publishedAt": "2026-04-17",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XZDC",
+      "asOf": "2026-01-31",
+      "accessedAt": "2026-11-08"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「三井ハイテック」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E4%B8%89%E4%BA%95%E3%83%8F%E3%82%A4%E3%83%86%E3%83%83%E3%82%AF",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-08",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "創業以来の社是として「世界の人々に役立つ製品をつくる」「互恵互善の理念に徹し相互の利益をはかる」「平等の精神を基本とし働く者の楽園を築く」を掲げ、経営指針の柱に「Save energy. Save earth. Save life.」を置いています。2025年3月に公表した中期経営計画については、電動車市場の成長やレガシー半導体市場の回復の遅れを踏まえて目標を見直し、2028年1月期の売上高目標を2,630億円としています。",
+        "asOf": "2026-04-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "金型を自社で開発・生産し、その金型を使ってモーターコアやリードフレームを量産する一貫した体制を持っています。超精密加工技術を核に、アジア・米州・欧州に生産拠点を置くグローバルな供給体制を整えています。",
+        "basis": "【事業の内容】・【経営方針、経営環境及び対処すべき課題等】の記載",
+        "asOf": "2026-04-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年1月期の売上高の内訳は、電機部品が154,649百万円と全体の約7割を占め、電子部品が59,567百万円、金型・工作機械が4,112百万円です。顧客の所在地別では日本が109,582百万円と約半分を占めています。主要な顧客であるトヨタ自動車への売上高は69,421百万円で、全体の約3割です。",
+        "basis": "【セグメント情報】の記載",
+        "asOf": "2026-04-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

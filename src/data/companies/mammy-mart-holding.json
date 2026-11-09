@@ -1,18 +1,158 @@
 {
   "id": "mammy-mart-holding",
   "code": "9823",
-  "name": "マミーマートホールディングス（旧会社名マミーマート）",
+  "name": "マミーマートホールディングス",
   "officialName": "株式会社マミーマートホールディングス（旧会社名　株式会社マミーマート）",
   "nameEn": "Mammy Mart Holding Corporation（旧英訳名　Mammy Mart Corporation）(注)2025年12月19日開催予定の第60期定時株主総会の議案（決議事項）として「定款一部変更の件」を付議しており、当該議案が承認可決されると同日を効力発生日として英訳名を下記のとおり変更する予定であります。新英訳名　Mami-mart Holdings Corporation",
-  "description": null,
+  "shortNameEn": "Mammy Mart Holding",
+  "description": "埼玉県を中心に関東でスーパーマーケットを運営し、生鮮食品を中心に食料品や日用雑貨を販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "supermarket",
+      "name": "スーパーマーケット事業",
+      "description": "生鮮食品を中心に、加工食品・惣菜・日用雑貨等の販売を主体とする報告セグメントです。当社が販売を行い、生鮮食料品の一部は子会社の彩裕フーズ株式会社が加工し、店舗の清掃・管理サービスは子会社のマミーサービス株式会社が行っています。2025年9月期の外部顧客への営業収益は193,196百万円でした。",
+      "products": [
+        "生鮮食料品",
+        "一般食料品",
+        "日用雑貨",
+        "加工食品",
+        "惣菜"
+      ],
+      "customers": [
+        "一般消費者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "fresh-food",
+          "name": "生鮮食料品",
+          "description": "生鮮食料品の販売を行う部門です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "general-food",
+          "name": "一般食料品",
+          "description": "一般食料品の販売を行う部門です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "daily-goods",
+          "name": "日用雑貨",
+          "description": "日用雑貨の販売を行う部門です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他",
+      "description": "報告セグメントに含まれていない事業セグメントで、温浴事業と葬祭事業です。子会社のマミーサービス株式会社が行っています。2025年9月期の外部顧客への営業収益は493百万円でした。",
+      "products": [
+        "温浴事業",
+        "葬祭事業"
+      ],
+      "customers": [
+        "温浴事業の利用者",
+        "葬祭事業の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "bath-business",
+          "name": "温浴事業",
+          "description": "温浴事業を行う部門です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "funeral-business",
+          "name": "葬祭事業",
+          "description": "葬祭事業を行う部門です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "当社グループは、埼玉県を中心に関東でスーパーマーケットを運営し、店舗での商品販売による売上高を得る事業モデルです。",
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "生鮮食料品",
+      "一般食料品",
+      "日用雑貨",
+      "加工食品",
+      "惣菜"
+    ],
+    "customers": [
+      "一般消費者"
+    ],
+    "revenueSources": [
+      "店舗での商品販売による売上高",
+      "温浴事業・葬祭事業の売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社グループ",
+        "description": "当社及び子会社2社で構成されるグループです。2025年9月30日現在の連結の従業員数は1,137人です。埼玉県さいたま市北区に本部を置き、埼玉県を中心に関東で店舗を運営しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "生鮮食品を中心とした商品の販売と温浴・葬祭サービス",
+        "description": "「マミーマート」「生鮮市場ＴＯＰ！」「マミープラス」の3つの業態の店舗で、生鮮食料品を中心に一般食料品や日用雑貨などを販売しています。子会社のマミーサービス株式会社が温浴事業と葬祭事業を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "埼玉県を中心とした関東の地域のお客様",
+        "description": "埼玉県、千葉県、東京都、群馬県、栃木県に店舗を構え、地域のお客様に日々の食生活を支える商品を提供しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "店舗での商品販売による売上高",
+        "description": "2025年9月期の売上高は191,390百万円でした。売上高のほとんどはスーパーマーケット事業によるものです。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "2025年9月期の親会社株主に帰属する当期純利益は5,246百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年9月期",
@@ -27,7 +167,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 29279000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 908,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +187,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32063000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 965,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 34014000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 992,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 37911000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1041,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +247,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 42416000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1137,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,20 +255,208 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1965,
+      "title": "岩崎商事株式会社の設立",
+      "description": "生鮮食料品等の小売販売を目的として、埼玉県東松山市に岩崎商事株式会社を設立しました。",
+      "significance": "同社の事業の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "東松山ショッピングセンター店の出店",
+      "description": "埼玉県東松山市に東松山ショッピングセンター店を出店しました。",
+      "significance": "店舗展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "株式会社ヤオセーへの吸収合併と商号変更",
+      "description": "株式の額面金額を変更するため、株式会社ヤオセーに吸収合併され、商号を岩崎商事株式会社としました。",
+      "significance": "株式の額面金額の変更に伴う合併です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "生鮮加工センターの開設",
+      "description": "埼玉県坂戸市に生鮮加工センターを開設しました。",
+      "significance": "生鮮食品の加工体制を整えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "株式会社マミーマートへの商号変更",
+      "description": "株式会社マミーマート流通グループを吸収合併し、商号を株式会社マミーマートに変更しました。",
+      "significance": "現在の屋号の基となる商号になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式の店頭登録",
+      "description": "社団法人日本証券業協会の店頭登録銘柄として株式を公開しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "本部の移転",
+      "description": "埼玉県さいたま市北区宮原町に本部を移転しました。",
+      "significance": "本部機能をさいたま市に移しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "千葉県への初出店",
+      "description": "千葉県に第1号店である増尾台店を複合型店舗として出店しました。",
+      "significance": "千葉県への進出の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "ソシオ熊谷物流センターの開設",
+      "description": "埼玉県熊谷市に「ソシオ熊谷物流センター」を開設しました。",
+      "significance": "物流体制を整えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "子会社2社の設立と住友商事との資本業務提携",
+      "description": "彩裕フーズ株式会社とマミーサービス株式会社を子会社として設立し、住友商事株式会社と資本業務提携を結びました。",
+      "significance": "グループ体制の基盤ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所への上場",
+      "description": "ジャスダック証券取引所に上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "売上高1,000億円への到達",
+      "description": "売上高が1,000億円に到達しました。",
+      "significance": "事業規模の拡大を示す節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場への上場",
+      "description": "東京証券取引所スタンダード市場に上場しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "持株会社体制への移行",
+      "description": "商号を株式会社マミーマートホールディングスに変更し、新設分割により株式会社マミーマートを新設して、持株会社体制へ移行しました。",
+      "significance": "持株会社体制への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sumitomo-corporation",
+      "relationship": "other-affiliated-company",
+      "description": "その他の関係会社です。1999年に資本業務提携を結びました。2025年9月30日現在、議決権の21.64％を所有されています。当社店舗の不動産賃貸借を行い、役員を受け入れています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
       "title": "有価証券報告書－第60期(2024/10/01－2025/09/30)",
-      "publisher": "株式会社マミーマートホールディングス（旧会社名　株式会社マミーマート）",
+      "publisher": "株式会社マミーマートホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XBFS.pdf",
       "publishedAt": "2025-12-18",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XBFS",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessStructure: 表紙の注記によると、2025年12月19日開催予定の第60期定時株主総会で定款一部変更が承認可決されれば、英訳名が「Mami-mart Holdings Corporation」に変更される予定です。有報の提出日（2025年12月18日）時点では未承認のため、英訳名の確定には株主総会の結果の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「Ｅｎｊｏｙ Ｌｉｆｅ !」のグループコンセプトのもと、「圧倒的地域Ｎｏ．１店舗の構築」「出店・改装スピードアップとエリア拡大」「人材育成」を重点方針とする中期経営計画（2024年９月期～2026年９月期）の「先行投資フェーズ」に取り組んでいます。",
+        "asOf": "2025-12-18",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "生鮮食品を中心とした商品開発力と競争力のある価格を強みとしています。既存店の売上高は前年同期比で9.9％増と伸び、来店客数が6.5％増、客単価が3.2％増でした。当連結会計年度は新規出店6店舗と既存店の改装10店舗を実施しました。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の記載",
+        "asOf": "2025-12-18",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年9月30日現在の店舗数は86店舗で、マミーマート35店舗、生鮮市場ＴＯＰ！34店舗、マミープラス15店舗、温浴事業1店舗、葬祭事業1店舗です。売上高のほとんどはスーパーマーケット事業によるもので、本邦以外の外部顧客への営業収益はありません。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】及び【セグメント情報】の記載",
+        "asOf": "2025-12-18",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  }
 }

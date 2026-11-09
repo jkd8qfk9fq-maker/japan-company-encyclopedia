@@ -1,18 +1,355 @@
 {
   "id": "nankai",
   "code": "9044",
-  "name": "NANKAI（旧会社名南海電気鉄道）",
+  "name": "NANKAI",
   "officialName": "株式会社NANKAI（旧会社名　南海電気鉄道株式会社）",
   "nameEn": "NANKAI Co.,Ltd.（旧英訳名　Nankai Electric Railway Co.,Ltd.）（注）2025年6月18日開催の第108期定時株主総会の決議により、2026年4月1日から会社名を上記のとおり変更いたしました。",
-  "description": null,
+  "shortNameEn": "NANKAI",
+  "description": "大阪・なんばを拠点とし、鉄道などの公共交通と不動産、流通、レジャー・サービスなどを沿線地域で展開する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "transportation",
+      "name": "運輸業",
+      "description": "鉄道事業を中心に、軌道、バス、海運、貨物運送、車両整備を行う、グループ最大の事業です。2026年3月期の外部顧客への営業収益は115,953百万円でした。",
+      "products": [
+        "鉄道輸送",
+        "軌道輸送",
+        "バス輸送",
+        "フェリー輸送",
+        "貨物運送",
+        "車両整備"
+      ],
+      "customers": [
+        "沿線の鉄道・バスの利用者",
+        "旅行者",
+        "荷主企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "railway",
+          "name": "鉄道事業",
+          "description": "当社が、大阪の難波から和歌山市方面と高野山方面を結ぶ南海本線・高野線などの鉄道を運営しています。関西国際空港への空港線や、2025年4月に合併した泉北高速鉄道の路線を引き継いだ泉北線も含まれます。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "tram",
+          "name": "軌道事業",
+          "description": "連結子会社の阪堺電気軌道が、大阪市内と堺市で路面電車（阪堺線・上町線）を運営しています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "bus",
+          "name": "バス事業",
+          "description": "南海バス、和歌山バス、関西空港交通、徳島バスなどの連結子会社が、沿線地域で路線バスや空港バスなどを運行しています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ferry",
+          "name": "海運業",
+          "description": "連結子会社の南海フェリーが、和歌山と徳島を結ぶフェリーを運航しています。なお、事業環境の変化などから、2028年3月末を目途にフェリー事業から撤退することが決まっています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "freight",
+          "name": "貨物運送業",
+          "description": "サザントランスポートサービスや南海エクスプレスなどの連結子会社が、貨物の運送を行っています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "vehicle-maintenance",
+          "name": "車両整備業",
+          "description": "連結子会社の南海車両工業が、鉄道車両の整備を行っています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産業",
+      "description": "不動産の賃貸と販売を行う事業です。なんばスカイオやなんばパークスなどの賃貸物件を持ち、物流施設の運営も行っています。2026年3月期の外部顧客への営業収益は51,636百万円でした。",
+      "products": [
+        "オフィス・商業施設の賃貸",
+        "物流施設の運営",
+        "マンションなどの不動産販売"
+      ],
+      "customers": [
+        "テナント企業",
+        "不動産の購入者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "real-estate-leasing",
+          "name": "不動産賃貸業",
+          "description": "当社が、オフィスビルや商業施設、物流施設などの賃貸を行っています。物流施設は「NANKAI-LOGI」のブランドで運営しています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-estate-sales",
+          "name": "不動産販売業",
+          "description": "当社と連結子会社の南海不動産が、不動産の販売を行っています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "leisure-services",
+      "name": "レジャー・サービス業",
+      "description": "旅行、ホテル・旅館、ボートレース施設の賃貸、ビルの管理メンテナンス、葬祭などを手がける事業です。通天閣を運営する会社もグループに含まれます。2026年3月期の外部顧客への営業収益は36,884百万円でした。",
+      "products": [
+        "旅行商品",
+        "ホテル・旅館",
+        "ボートレース施設の賃貸",
+        "ビル管理メンテナンス",
+        "葬祭サービス"
+      ],
+      "customers": [
+        "旅行者",
+        "宿泊客",
+        "ビルや施設の所有者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "travel",
+          "name": "旅行業",
+          "description": "連結子会社の南海国際旅行が、旅行の企画や販売を行っています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "hotel",
+          "name": "ホテル・旅館業",
+          "description": "連結子会社の株式会社中の島が和歌山県那智勝浦町で旅館を運営するなど、ホテル・旅館事業を行っています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "boatrace-facility",
+          "name": "ボートレース施設賃貸業",
+          "description": "連結子会社の住之江興業が、ボートレース住之江の施設の賃貸を行っています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "building-maintenance",
+          "name": "ビル管理メンテナンス業",
+          "description": "連結子会社の南海ビルサービスが、ビルや駅の設備の管理・メンテナンスを行っています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "funeral",
+          "name": "葬祭事業",
+          "description": "連結子会社の南海グリーフサポートが、葬祭事業を行っています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "construction",
+      "name": "建設業",
+      "description": "連結子会社の南海辰村建設と日電商会が、建設工事や電気通信工事を行う事業です。2026年3月期の外部顧客への営業収益は30,418百万円でした。",
+      "products": [
+        "建設工事",
+        "電気通信工事"
+      ],
+      "customers": [
+        "官公庁",
+        "民間の発注者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "distribution",
+      "name": "流通業",
+      "description": "ショッピングセンターの経営と、駅に直結した施設などでの駅ビジネスを行う事業です。2026年3月期の外部顧客への営業収益は29,690百万円でした。",
+      "products": [
+        "ショッピングセンターの運営",
+        "駅ナカ店舗の運営"
+      ],
+      "customers": [
+        "買い物客",
+        "駅の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "shopping-center",
+          "name": "ショッピングセンターの経営",
+          "description": "当社がなんばCITYやなんばパークスを、連結子会社のパンジョが堺市の商業施設パンジョを運営しています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "station-business",
+          "name": "駅ビジネス事業",
+          "description": "連結子会社の南海商事が、駅直結施設や沿線の商業施設で店舗を運営しています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other-services",
+      "name": "その他の事業",
+      "description": "経理や情報処理などの業務代行を行う事業です。2026年3月期の外部顧客への営業収益は131百万円でした。",
+      "products": [
+        "経理業務代行",
+        "情報処理業務代行"
+      ],
+      "customers": [
+        "グループ会社",
+        "取引先企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "back-office",
+          "name": "経理・情報処理業務代行業",
+          "description": "連結子会社の南海マネジメントサービスが経理業務の代行を、南海システムソリューションズが情報処理業務の代行を行っています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道やバスなどの運輸業を基軸に、不動産の賃貸・販売、ショッピングセンターの経営、旅行やホテル、建設などをグループで手がけ、沿線の暮らしに関わる多様なサービスを提供する事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "鉄道輸送",
+      "バス輸送",
+      "フェリー輸送",
+      "不動産賃貸",
+      "不動産販売",
+      "ショッピングセンター",
+      "旅行サービス",
+      "ホテル・旅館",
+      "建設工事",
+      "ビル管理メンテナンス"
+    ],
+    "customers": [
+      "沿線の住民や鉄道・バスの利用者",
+      "旅行者や宿泊客",
+      "テナント企業",
+      "工事の発注者"
+    ],
+    "revenueSources": [
+      "旅客運賃などの運輸収入",
+      "不動産の賃貸料",
+      "不動産の販売収入",
+      "ショッピングセンターの賃料など",
+      "旅行やホテルの収入",
+      "完成工事高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "NANKAIグループ",
+        "description": "当社と子会社74社、関連会社5社で構成される企業グループです。2026年3月31日現在の連結の従業員数は9,408人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "交通と沿線サービスの提供",
+        "description": "鉄道、軌道、バス、フェリーなどの運輸サービスを基軸に、不動産の賃貸・販売、ショッピングセンターの経営、旅行やホテル、ボートレース施設の賃貸、ビル管理、葬祭、建設などを沿線地域で提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "沿線の住民と利用者",
+        "description": "大阪府南部と和歌山県を主な営業基盤とし、沿線に暮らす人や鉄道・バスの利用者、難波などの拠点を訪れる人が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "運賃と賃貸料などによる営業収益",
+        "description": "旅客運賃や不動産の賃貸料、販売収入などにより営業収益を得ています。2026年3月期の営業収益は264,714百万円で、前期の260,787百万円から増えました。運輸業における大阪・関西万博の効果やインバウンド需要の拡大、レジャー・サービス業における通天閣観光株式会社の寄与などが主な要因です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は25,135百万円で、前期の22,548百万円から増えました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +364,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 260716000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8887,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +384,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 274586000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8905,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +404,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 307102000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8919,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +424,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 329865000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 9247,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "企業結合に係る暫定的な会計処理の確定を行っており、2025年3月期の数値は、暫定的な会計処理の確定による取得原価の当初配分額の重要な見直しが反映された後の金額となっております。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +445,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 354085000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 9408,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,20 +453,298 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1885,
+      "title": "難波～大和川間で鉄道の営業を開始",
+      "description": "1884年に設立された大阪堺間鉄道（のち阪堺鉄道）が、1885年に大阪の難波から大和川の間で運輸営業を開始しました。",
+      "significance": "当社の創業と位置づけられている出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1925,
+      "title": "高野山電気鉄道を設立",
+      "description": "高野下から高野山までの鉄道敷設を目的として、高野山電気鉄道が設立されました。1930年には高野下～高野山間が開通し、今日の幹線ができあがりました。",
+      "significance": "当社そのものの設立であり、現在のNANKAIにつながる起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "南海電気鉄道として新発足",
+      "description": "高野山電気鉄道が南海電気鉄道と社名を改め、近畿日本鉄道から旧南海鉄道に属した鉄軌道事業を譲り受けて、新しく発足しました。",
+      "significance": "戦後の分離により、現在の南海の鉄道事業の体制が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "証券取引所に株式を上場",
+      "description": "大阪と名古屋の各証券取引所に株式を上場しました。",
+      "significance": "上場会社としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "初の大規模住宅開発を開始",
+      "description": "初の大規模な住宅開発として、南海狭山ニュータウンの分譲を開始しました。",
+      "significance": "沿線開発を通じた不動産事業の展開の起点となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "なんばCITYが全館営業を開始",
+      "description": "難波の商業施設なんばCITYが全館で営業を開始しました。同年には、軌道事業を新設した阪堺電気軌道へ譲渡しました。",
+      "significance": "難波を拠点とする流通・不動産事業の基盤が形づくられました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "空港線の営業を開始",
+      "description": "関西国際空港へのアクセス路線である空港線の営業を開始しました。",
+      "significance": "国際空港へのアクセスを担う路線が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "なんばパークスが全館営業を開始",
+      "description": "難波の複合施設なんばパークスが全館で営業を開始しました。",
+      "significance": "難波エリアの拠点としての性格が強まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "泉北高速鉄道を連結子会社化",
+      "description": "大阪府都市開発株式会社（同日に泉北高速鉄道株式会社へ商号変更）の株式を取得し、連結子会社としました。",
+      "significance": "泉北エリアの鉄道と沿線開発がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "なんばスカイオが開業",
+      "description": "難波のオフィスビル、なんばスカイオが開業しました。",
+      "significance": "難波エリアの拠点機能が強化されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の市場区分での取引が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "泉北高速鉄道と合併",
+      "description": "連結子会社だった泉北高速鉄道株式会社を吸収合併し、その路線を泉北線として運行を開始しました。",
+      "significance": "泉北線と南海線・高野線の一体的な運営が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "鉄道事業を分社化し、NANKAIへ商号変更",
+      "description": "2026年4月1日付で、鉄道事業を吸収分割により南海電気鉄道分割準備株式会社へ承継させ、同社は南海電気鉄道株式会社へ商号を変更しました。当社は株式会社NANKAIへ商号を変更し、事業持株会社へ移行しました。",
+      "significance": "当社が事業持株会社としてグループ経営を担い、鉄道事業は南海電気鉄道株式会社が担う体制となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な後発事象】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nankai-tatsumura-construction",
+      "relationship": "subsidiary",
+      "description": "連結子会社で、建設業を営んでいます。2026年3月31日現在の議決権の所有割合は62.2％で、同社も有価証券報告書を提出しています。当社は同社へ建築工事を発注しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "takashimaya",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に載る事業会社で、2026年3月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は0.93％です。当社の主要事業エリアであるなんばエリアや沿線地域の保有物件の主要テナントでもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "obayashi",
+      "relationship": "supplier",
+      "description": "当社の不動産開発事業における建設工事の主要請負先です。当社は取引関係のため同社の株式1,096,200株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okumura",
+      "relationship": "supplier",
+      "description": "当社の不動産開発事業における建設工事の主要請負先です。当社は取引関係のため同社の株式53,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "osaka-gas",
+      "relationship": "supplier",
+      "description": "当社の不動産事業におけるガス供給およびエネルギーサービスの主要取引先です。当社は取引関係のため同社の株式620,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daikin-industries",
+      "relationship": "supplier",
+      "description": "当社グループのビル管理メンテナンス業における空調設備工事および保守業務の主要取引先です。当社は取引関係のため同社の株式177,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takasago-thermal-engineering",
+      "relationship": "supplier",
+      "description": "当社グループのビル管理メンテナンス業における空調設備工事および保守業務の主要取引先です。当社は取引関係のため同社の株式522,720株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kyosan-electric-manufacturing",
+      "relationship": "supplier",
+      "description": "当社の鉄道事業における信号設備等の主要な調達先です。当社は取引関係のため同社の株式260,452株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kubota",
+      "relationship": "customer",
+      "description": "当社グループの貨物運送業における主要な取引先です。当社は取引関係のため同社の株式959,966株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "keisei-electric-railway",
+      "relationship": "business-partner",
+      "description": "鉄道事業における企画乗車券販売等の事業連携関係があります。当社は同社の株式855,600株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "keihanshin-building",
+      "relationship": "business-partner",
+      "description": "当社の主要事業エリアであるなんばエリアの保有物件において、共同事業を展開する主要取引先です。当社は同社の株式204,350株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "west-japan-railway",
+      "relationship": "business-partner",
+      "description": "関西国際空港への空港線について、新関西国際空港株式会社が保有する鉄道施設を利用する協定を共同で結んでおり、連絡橋部分の使用料は両社がそれぞれの輸送実績に応じて負担しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主要な設備の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第109期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社NANKAI（旧会社名　南海電気鉄道株式会社）",
+      "publisher": "株式会社ＮＡＮＫＡＩ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBA0.pdf",
       "publishedAt": "2026-06-15",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YBA0",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 提出後の事項（2026年4月1日に実施済み）: 当社は2026年4月1日付で、鉄道事業を吸収分割により南海電気鉄道分割準備株式会社（同日付で南海電気鉄道株式会社に商号変更）へ承継させ、当社の商号を株式会社NANKAIに変更して事業持株会社へ移行した（2025年6月18日開催の第108期定時株主総会で承認。【重要な後発事象】【重要な契約等】に記載）。本エントリーの事業構成と数値は2026年3月31日現在のものである。",
+      "businessModel: 海運業の撤退決定: MD&Aに、事業環境の変化、運航コストの上昇、船舶・設備の老朽化などを踏まえ、2028年3月末を目途にフェリー事業（和歌山・徳島航路）から撤退することを決定した旨が記載されている。撤退は未実施であり、本エントリーは2026年3月31日現在の事業構成によっている。"
+    ]
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「NANKAIグループ中期経営計画 2025－2027」に基づき、コア事業である不動産事業と公共交通事業の強化に向けた集中的な投資を最優先に進めています。不動産事業では「大家業から総合不動産事業への脱却」を掲げ、公共交通事業では将来を見据えた投資を集中的に実行するほか、新事業の創出にも取り組んでいます。2026年4月には鉄道事業を分社化し、当社は事業持株会社として、不動産事業の拡大と新事業の創造に注力する体制へ移行しました。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "大阪のターミナルである難波に、なんばCITYやなんばパークス、なんばスカイオなどの自社の商業・オフィス拠点を持ち、鉄道の利用と沿線の不動産・商業を一体で展開できる体制を持っています。関西国際空港へのアクセス路線である空港線も運営しています。",
+        "basis": "【事業の内容】・【主要な設備の状況】・【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の外部顧客への営業収益では、運輸業が115,953百万円と最も大きく、不動産業が51,636百万円で続く構成です。大阪府南部と和歌山県を主な営業基盤とする、公共交通と沿線事業をあわせ持つ複合型のグループです。",
+        "basis": "セグメント情報（2026年3月期）・【経営方針、経営環境及び対処すべき課題等】",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

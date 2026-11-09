@@ -4,15 +4,149 @@
   "name": "日本電設工業",
   "officialName": "日本電設工業株式会社",
   "nameEn": "NIPPON DENSETSU KOGYO CO., LTD.",
-  "description": null,
+  "description": "鉄道電気工事を中心に、一般電気工事、情報通信工事、環境エネルギー工事を行う総合設備工事会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "facility-construction",
+      "name": "設備工事業",
+      "description": "当社グループの唯一の報告セグメントで、設備工事（電気工事、情報通信工事、管工事）の請負、企画、設計・積算、監理を主に行う事業です。鉄道電気工事、一般電気工事、情報通信工事、環境エネルギー工事の4部門で構成されています。各部門の金額は、経営成績の分析に印字された2026年3月期の部門別売上実績によります。",
+      "products": [
+        "鉄道電気工事",
+        "一般電気工事",
+        "情報通信工事",
+        "環境エネルギー工事"
+      ],
+      "customers": [
+        "東日本旅客鉄道をはじめとする鉄道会社",
+        "民間企業",
+        "官公庁"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "railway-electrical",
+          "name": "鉄道電気工事",
+          "description": "電車線路、発変電、送電線、電灯電力、信号工事を行う部門で、2026年3月期の売上高は120,127百万円と、連結売上高の過半を占めます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "general-electrical",
+          "name": "一般電気工事",
+          "description": "建築電気設備工事を行う部門で、2026年3月期の売上高は64,522百万円です。駅周辺の大規模再開発やデータセンターなどの大型工事を手がけています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "telecom-construction",
+          "name": "情報通信工事",
+          "description": "情報通信設備工事を行う部門で、2026年3月期の売上高は31,148百万円です。ネットワークインフラの構築工事や通信事業者の基地局建設工事などを手がけています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "environment-energy",
+          "name": "環境エネルギー工事",
+          "description": "再生可能エネルギー工事、ZEB・省エネルギー対策工事、空気調和・給排水衛生設備工事を行う部門で、2026年3月期の売上高は5,962百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "related-businesses",
+      "name": "関連事業等",
+      "description": "設備工事業以外の事業で、2026年3月期の売上高は7,446百万円です。不動産の賃貸・仲介・管理、ビル総合管理、電気設備の保守・管理、電気機器・材料の製作・販売、電気設備の企画・設計、電気設備に関する教育・図書出版、ソフトウェアの開発等の情報サービス、通信インフラシェアリング事業などを含んでいます。",
+      "products": [
+        "不動産の賃貸・仲介・管理",
+        "電気設備の保守",
+        "電気機器・材料の販売",
+        "情報サービス",
+        "通信インフラシェアリング"
+      ],
+      "customers": [
+        "民間企業",
+        "鉄道会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道会社や民間企業から電気設備などの工事を請け負い、グループ会社と連携して企画・設計から施工、保守までを行う事業モデルです。",
+    "products": [
+      "鉄道電気工事",
+      "一般電気工事",
+      "情報通信工事",
+      "環境エネルギー工事",
+      "電気設備の保守・管理",
+      "通信インフラシェアリング事業"
+    ],
+    "customers": [
+      "東日本旅客鉄道をはじめとする鉄道会社",
+      "民間企業",
+      "官公庁"
+    ],
+    "revenueSources": [
+      "設備工事の請負による完成工事高",
+      "不動産の賃貸・管理等による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日本電設工業グループ",
+        "description": "当社と子会社17社、関連会社5社及びその他の関係会社1社で構成されています。本店は東京都台東区にあり、連結の従業員数は4,645人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "設備工事の請負と周辺事業",
+        "description": "設備工事（電気工事、情報通信工事、管工事）の請負、企画、設計・積算、監理を主として、電気設備の保守、電気機器・材料の製作・販売、不動産の賃貸・仲介・管理、情報サービス、通信インフラシェアリング事業なども行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "鉄道会社を中心とする顧客",
+        "description": "最大の顧客は東日本旅客鉄道で、2026年3月期の同社向け完成工事高は110,181百万円と、連結完成工事高の48.1％を占めています。ほかにJR各社、公営鉄道、民営鉄道、民間企業、官公庁が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "完成工事高による収入",
+        "description": "2026年3月期の連結完成工事高は229,207百万円で、前期に比べて5.7％増えました。部門別では鉄道電気工事が120,127百万円、一般電気工事が64,522百万円、情報通信工事が31,148百万円などとなっています。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は18,060百万円で、過去最高となりました。豊富な手持工事の効率的な施工や、新規工事の受注確保に努めたことによるものです。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +161,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 185192000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4706,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +181,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 190234000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4738,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 199115000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4744,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +221,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 209649000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4676,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +241,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 230726000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4645,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +249,345 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1942,
+      "title": "鉄道電気工業株式会社の設立",
+      "description": "当時の鉄道省の要請で、鉄道省の電気工事指定業者と電気機器・電線等の指定製造業者の共同出資により、東京都神田区須田町に鉄道電気工業株式会社を設立しました。鉄道省における電気設備の設計と工事請負を事業目的として営業を開始しました。",
+      "significance": "グループの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "日本電設工業株式会社への商号変更",
+      "description": "商号を日本電設工業株式会社に変更し、事業目的に電気機器及び材料の製作、販売を追加しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "当社株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "東京証券取引所市場第一部への指定替",
+      "description": "当社株式が東京証券取引所市場第一部に指定替えとなりました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "電設工サービス株式会社の設立",
+      "description": "電設工サービス株式会社（現・連結子会社のＮＤＫ総合サービス株式会社）を設立しました。",
+      "significance": "関連事業を行う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "株式会社エヌディーケー・イッツの設立",
+      "description": "株式会社エヌディーケー・イッツ（現・連結子会社のＮＤＫイッツ株式会社）を設立しました。",
+      "significance": "情報サービス事業の子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "東日本電気エンジニアリング株式会社の発足",
+      "description": "東京電気保全株式会社と東日本電気保安株式会社が合併し、商号を東日本電気エンジニアリング株式会社に変更しました。現在は連結子会社です。",
+      "significance": "電気・通信設備の検査、修繕、工事請負を行う中核子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "ＮＤＫアールアンドイー株式会社の設立",
+      "description": "ＮＤＫアールアンドイー株式会社を設立しました。現在は連結子会社です。",
+      "significance": "電気設備に関する教育、図書出版を行う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "監査等委員会設置会社への移行",
+      "description": "監査等委員会設置会社へ移行しました。",
+      "significance": "ガバナンス体制の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しに伴い、当社株式をプライム市場に移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ＪＣｒｏｃ株式会社の設立",
+      "description": "ＪＣｒｏｃ株式会社を設立し、連結の範囲に含めました。",
+      "significance": "通信インフラシェアリング事業を行う新しい連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "east-japan-railway",
+      "relationship": "other-affiliated-company",
+      "description": "その他の関係会社です。2026年3月31日現在、議決権の19.5％を直接、0.1％を間接に保有されています。当社グループは同社の電気・情報通信工事を受注しており、2026年3月期の同社向け完成工事高は110,181百万円と、連結完成工事高の48.1％を占める最大の顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "okamura",
+      "relationship": "customer",
+      "description": "オフィスビルの改修工事等を受注している顧客です。当社は、取引関係の維持のため同社株式961,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kyushu-railway",
+      "relationship": "customer",
+      "description": "鉄道関連工事及び駅ビル工事等を受注している顧客です。当社は、取引関係の維持のため同社株式320,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "west-japan-railway",
+      "relationship": "customer",
+      "description": "鉄道関連工事及び駅ビル工事等を受注している顧客です。当社は、取引関係の維持のため同社株式300,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "exeo-group",
+      "relationship": "customer",
+      "description": "携帯電話基地局工事等を受注している顧客です。当社は、取引関係の維持のため同社株式329,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mirait-one",
+      "relationship": "customer",
+      "description": "携帯電話基地局工事等を受注している顧客です。当社は、取引関係の維持のため同社株式215,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daiwa-securities-group",
+      "relationship": "customer",
+      "description": "オフィスビルの改修工事等を受注している顧客です。当社は、取引関係の維持のため同社株式399,366株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "oriental-land",
+      "relationship": "customer",
+      "description": "一般電気工事における案件を受注している顧客です。当社は、取引関係の維持のため同社株式150,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "keisei-electric-railway",
+      "relationship": "customer",
+      "description": "鉄道関連工事等を受注している顧客です。当社は、取引関係の維持のため同社株式315,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokyu",
+      "relationship": "customer",
+      "description": "鉄道関連工事及び駅ビル工事等を受注している顧客です。当社は、取引関係の維持のため同社株式83,777株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "odakyu-electric-railway",
+      "relationship": "customer",
+      "description": "鉄道関連工事等を受注している顧客です。当社は、取引関係の維持のため同社株式72,640株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "dai-ichi-life-holdings",
+      "relationship": "customer",
+      "description": "オフィスビルの改修工事等を受注している顧客です。当社は、取引関係の維持のため同社株式19,600株を保有しています。同社は2026年4月1日に株式会社第一ライフグループへ商号を変更しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daido-signal",
+      "relationship": "supplier",
+      "description": "鉄道信号をはじめとする資材の調達先です。当社は、施工に必要な資材を安定的に調達するため同社株式2,395,273株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "inaba-denki-sangyo",
+      "relationship": "supplier",
+      "description": "電設資材をはじめとする資材の調達先です。当社は、施工に必要な資材を安定的に調達するため同社株式477,600株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-concrete-industries",
+      "relationship": "supplier",
+      "description": "コンクリート柱をはじめとする資材の調達先です。当社は、施工に必要な資材を安定的に調達するため同社株式2,008,750株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-nippon-signal",
+      "relationship": "supplier",
+      "description": "鉄道信号をはじめとする資材の調達先です。当社は、施工に必要な資材を安定的に調達するため同社株式236,250株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "dkk",
+      "relationship": "supplier",
+      "description": "携帯電話基地局アンテナをはじめとする資材の調達先です。当社は、施工に必要な資材を安定的に調達するため同社株式111,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "furukawa-electric",
+      "relationship": "supplier",
+      "description": "各種電線ケーブルをはじめとする資材の調達先です。当社は、施工に必要な資材を安定的に調達するため同社株式10,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "meidensha",
+      "relationship": "supplier",
+      "description": "変電・配電システムをはじめとする資材の調達先です。当社は、施工に必要な資材を安定的に調達するため同社株式20,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "totetsu-kogyo",
+      "relationship": "business-partner",
+      "description": "鉄道関連の工事会社で、営業・施工面での協力体制の強化や、駅ビル工事等の受注による収益向上のため取引関係を維持しています。当社は同社株式1,088,149株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daiichi-kensetsu",
+      "relationship": "business-partner",
+      "description": "鉄道関連の工事会社で、営業・施工面での協力体制の強化や、鉄道施設関連工事等の受注による収益向上のため取引関係を維持しています。当社は同社株式162,576株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tekken",
+      "relationship": "business-partner",
+      "description": "鉄道関連の工事会社で、営業・施工面での協力体制の強化や、駅ビル工事等の受注による収益向上のため取引関係を維持しています。当社は同社株式10,623株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "central-security-patrols",
+      "relationship": "business-partner",
+      "description": "JR東日本関連の警備会社で、営業・施工面での協力体制の強化や、駅ビル工事等の受注による収益向上のため取引関係を維持しています。当社は同社株式90,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shin-nippon-air-technologies",
+      "relationship": "business-partner",
+      "description": "当社と同様に空調衛生工事を営む会社で、施工技術に関する情報交換や社員教育等における協業を継続しています。当社は同社株式1,521,400株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-rietec",
+      "relationship": "business-partner",
+      "description": "鉄道関連の電気設備工事会社で、施工技術に関する情報交換や大型工事等における協業を継続しています。当社は同社株式1,045,684株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +595,45 @@
       "publisher": "日本電設工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGLL.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YGLL",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念として「お客様本位の精神で安全・確実な業務の遂行により顧客の信頼を高め、人々の生活や経済を支える社会的に重要なインフラの創造をとおして社会に貢献する」を掲げ、安全を会社経営上の最重要課題としています。鉄道電気工事では最大の得意先である東日本旅客鉄道をはじめJR各社からの受注の確保、一般電気工事では駅周辺の大型再開発やデータセンターなどへの営業、情報通信工事では基地局建設工事やインフラシェアリング事業の拡大、環境エネルギー工事ではZEBの技術力をもとにした再生可能エネルギーの提案営業に取り組むとしており、2027年3月期の目標とする経営指標として連結売上高2,423億円を掲げています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1942年に鉄道省の要請を受けて設立された経緯を持ち、鉄道電気工事が連結売上高の過半を占めています。東日本旅客鉄道は議決権の19.5％を保有するその他の関係会社であり、最大の顧客でもあります。企画・設計・積算から施工、保守までをグループで担い、電車線工事や信号工事などの専門分野を持つ連結子会社を擁しています。",
+        "basis": "【沿革】・【関係会社の状況】・【事業の内容】の記載",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "設備工事業の単一セグメントで、売上高はすべて本邦の顧客に対するものです。2026年3月期の連結完成工事高229,207百万円のうち、東日本旅客鉄道向けが110,181百万円と48.1％を占め、鉄道電気工事部門が120,127百万円と過半を占めています。",
+        "basis": "【セグメント情報】の記載",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

@@ -4,15 +4,160 @@
   "name": "松屋フーズホールディングス",
   "officialName": "株式会社松屋フーズホールディングス",
   "nameEn": "MATSUYA FOODS HOLDINGS CO., LTD.",
-  "description": null,
+  "shortNameEn": "MATSUYA FOODS HOLDINGS",
+  "description": "牛めし・カレー・定食などを提供する和風ファーストフード店「松屋」などを運営しています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "food-service",
+      "name": "飲食事業",
+      "description": "牛めし・カレー・各種定食などを提供する和風ファーストフード店「松屋」を中心に、とんかつ、ラーメン、鮨などの飲食店を運営する事業です。2026年3月期の売上高は1,844億74百万円で、店舗数はフランチャイズ店を含め1,573店舗です。",
+      "products": [
+        "牛めし",
+        "カレー",
+        "各種定食",
+        "とんかつ",
+        "ラーメン",
+        "鮨"
+      ],
+      "customers": [
+        "来店する一般顧客",
+        "フランチャイズ加盟店",
+        "食材などの取引先"
+      ],
+      "children": [
+        {
+          "id": "gyumeshi-teishoku",
+          "name": "牛めし定食事業",
+          "description": "牛めしや定食を直営店で販売する事業で、売上高は1,441億79百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "tonkatsu",
+          "name": "とんかつ事業",
+          "description": "とんかつを直営店で販売する事業で、売上高は234億57百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "sushi",
+          "name": "鮨事業",
+          "description": "鮨を直営店で販売する事業で、売上高は35億46百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-direct-stores",
+          "name": "その他（国内直営店売上）",
+          "description": "国内直営店売上のその他の事業で、売上高は22億5百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "food-ingredients-sales",
+          "name": "食材売上",
+          "description": "フランチャイズ店などへの食材の販売で、売上高は81億91百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "royalty-revenue",
+          "name": "ロイヤルティ等収益",
+          "description": "ロイヤルティなどの収益で、売上高は91百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-external-sales",
+          "name": "その他売上",
+          "description": "外部販売売上のその他の事業で、売上高は28億3百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "牛めし・カレー・定食などを提供する和風ファーストフード店「松屋」を中心に、とんかつ、ラーメン、鮨などの飲食店を運営しています。",
+    "products": [
+      "牛めし",
+      "カレー",
+      "各種定食",
+      "とんかつ",
+      "ラーメン",
+      "鮨"
+    ],
+    "customers": [
+      "来店する一般顧客",
+      "フランチャイズ加盟店",
+      "食材などの取引先"
+    ],
+    "revenueSources": [
+      "直営店での飲食の販売",
+      "フランチャイズ店などへの食材の販売",
+      "ロイヤルティ等収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "会社",
+        "description": "東京都武蔵野市に本社を置く持株会社で、連結子会社8社と非連結子会社8社でグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "商品",
+        "description": "牛めし・カレー・各種定食などを提供する和風ファーストフード店「松屋」を中心に、とんかつ、ラーメン、鮨などの飲食店を展開しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "お客様",
+        "description": "店舗に来店する一般顧客に直接販売するほか、フランチャイズ加盟店や取引先を通じて最終消費者へ提供しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は1,844億74百万円で、前期比19.6％増です。"
+      },
+      {
+        "kind": "profit",
+        "title": "収益の積み上げ",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は37億72百万円で、前期比72.6％増です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +172,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 40591896000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1835,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +192,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 41403131000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1821,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +212,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 43873981000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1958,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +232,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 45615389000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2180,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,15 +252,167 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 57667969000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2617,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "株式会社松富士及び株式会社松富士食品を連結範囲に含めています。"
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1966,
+      "title": "個人経営の中華飯店「松屋」を創業",
+      "description": "現代表取締役会長の瓦葺利夫が、東京都練馬区に中華飯店「松屋」を個人経営で創業しました。",
+      "significance": "松屋の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "株式会社松屋商事を設立",
+      "description": "有限会社松屋商事から7店舗の営業と工場及び社員を引き継ぎ、株式会社松屋商事を設立しました。",
+      "significance": "会社組織としての始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "株式会社松屋フーズに商号を変更",
+      "description": "商号を株式会社松屋フーズに変更しました。",
+      "significance": "現在の社名につながる商号変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "日本証券業協会に店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式市場への第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式市場への上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "上場市場での位置づけを高めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "中国・青島市に全額出資子会社を設立",
+      "description": "中華人民共和国（青島市）に全額出資子会社、青島松屋快餐有限公司を設立しました。",
+      "significance": "中国への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "鮨業態12店舗などを譲受け",
+      "description": "コバヤシフーズインターナショナルと営業譲渡契約を締結し、鮨業態12店舗などを譲り受けました。",
+      "significance": "鮨業態への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "国内総店舗数が1,000店舗に到達",
+      "description": "松屋フーズグループの国内総店舗数が1,000店舗に到達しました。",
+      "significance": "店舗網の拡大の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "創業50周年",
+      "description": "創業50周年を迎えました。",
+      "significance": "創業からの節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "持株会社体制へ移行し松屋フーズホールディングスに商号変更",
+      "description": "持株会社体制へ移行し、商号を株式会社松屋フーズホールディングスに変更しました。",
+      "significance": "現在の持株会社体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場に移行しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "香港に全額出資子会社を設立",
+      "description": "香港に全額出資子会社、香港松屋餐飲有限公司を設立しました。",
+      "significance": "香港への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社亀製麺の株式を取得",
+      "description": "株式会社亀製麺の株式（100％）を取得しました。",
+      "significance": "ラーメン業態の拡大につながる取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "株式会社松富士の株式を取得",
+      "description": "株式会社松富士の株式（100％）を取得し、ラーメン業態が121店舗増加しました。",
+      "significance": "ラーメン業態を大きく広げた取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +421,47 @@
       "publisher": "株式会社松屋フーズホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ71.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJ71",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念は「店はお客様の満足を得るために存在する」ことです。「安全・安心で、おいしさを追求した価値観のある商品」と「高い付加価値のサービス」を提供することを基本方針としています。“みんなの食卓でありたい”をスローガンに、新規出店、既存店改装、人材投資に取り組んでいます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "牛めし「松屋」を中心に、とんかつ、ラーメン、鮨、カレーなど多様な業態を展開し、フランチャイズ店を含め1,573店舗を運営しています。セントラルキッチン方式で工場・生産物流センターから店舗へ食材を供給しています。",
+        "basis": "多業態の展開と店舗数が有報に記載されており、セントラルキッチン方式による食材の加工・供給も有報に記載されています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は1,844億74百万円で前期比19.6％増、親会社株主に帰属する当期純利益は37億72百万円で前期比72.6％増となり、いずれも過去最高益です。国内直営店売上が売上高の94.0％を占めています。",
+        "basis": "売上高・当期純利益と前期比、国内直営店売上の構成比が有報に記載されています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    }
+  }
 }

@@ -4,15 +4,104 @@
   "name": "ケーユーホールディングス",
   "officialName": "株式会社ケーユーホールディングス",
   "nameEn": "KU HOLDINGS CO., LTD.",
-  "description": null,
+  "shortNameEn": "ku-holdings",
+  "description": "国産車と輸入車の新車・中古車の販売と修理を手がける自動車販売グループの持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "imported-car-dealer",
+      "name": "輸入車ディーラー事業",
+      "description": "メルセデス・ベンツ車やBMW車を中心とする輸入車の販売と修理を手がけます。2026年3月期の売上高は116,915百万円です。",
+      "products": [
+        "メルセデス・ベンツ車",
+        "BMW車",
+        "ジープ車",
+        "フォルクスワーゲン車",
+        "ハーレーダビッドソン車"
+      ],
+      "customers": [
+        "自動車を購入するお客様"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "domestic-car-sales",
+      "name": "国産車販売事業",
+      "description": "国産の新車と中古車の販売と修理を手がけます。2026年3月期の売上高は52,179百万円です。",
+      "products": [
+        "国産新車",
+        "国産中古車"
+      ],
+      "customers": [
+        "自動車を購入するお客様"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "国産車と輸入車の新車・中古車の販売と修理を手がける自動車販売グループの持株会社です。",
+    "products": [
+      "新車",
+      "中古車",
+      "修理サービス"
+    ],
+    "customers": [
+      "自動車を購入するお客様",
+      "中古車を売却するお客様"
+    ],
+    "revenueSources": [
+      "新車と中古車の販売による商品売上高",
+      "自動車の修理による売上高",
+      "手数料収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "自動車販売グループの純粋持株会社",
+        "description": "ケーユーホールディングスは、子会社6社の純粋持株会社として経営指導を行い、一部の業務を受託します。従業員数は2026年3月31日現在1,461人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "国産車と輸入車の販売と修理",
+        "description": "国産車販売事業では国産の新車と中古車を、輸入車ディーラー事業ではメルセデス・ベンツ車やBMW車を中心とする輸入車を販売し、修理も手がけます。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車を買うお客様",
+        "description": "新車や中古車を買うお客様に販売し、お客様から中古車を仕入れることもあります。"
+      },
+      {
+        "kind": "revenue",
+        "title": "車両の販売と修理、手数料収入による売上高",
+        "description": "車両の販売と修理、手数料収入が売上高につながります。2026年3月期の売上高は169,094百万円で、前期比5.7％増です。"
+      },
+      {
+        "kind": "profit",
+        "title": "売上高から費用を差し引いた当期純利益",
+        "description": "売上高から費用を差し引いた残りが当期純利益となります。2026年3月期の親会社株主に帰属する当期純利益は5,700百万円で、前期比12.7％減です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +116,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 53613000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1259,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +136,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 58624000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1308,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +156,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 63111000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1383,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +176,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 67971000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1395,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +196,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 69902000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1461,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +204,169 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1972,
+      "title": "ケーユー商事の設立",
+      "description": "東京都町田市でケーユー商事株式会社を設立し、自動車販売業務を開始しました。",
+      "significance": "自動車販売から事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "シュテルン世田谷の前身の設立",
+      "description": "株式会社ビ・ケーユー（現在の株式会社シュテルン世田谷）を設立しました。",
+      "significance": "輸入車ディーラー事業の礎となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "メルセデス・ベンツ日本との販売店契約の締結",
+      "description": "メルセデス・ベンツ日本株式会社と販売店契約を締結しました。",
+      "significance": "輸入車の取り扱いが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "株式の店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "資本市場への第一歩となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場会社としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "シュテルン世田谷の買収",
+      "description": "株式会社シュテルン世田谷を買収しました。",
+      "significance": "輸入車ディーラー事業の基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "モトーレン東名横浜の設立",
+      "description": "株式会社モトーレン東名横浜を設立しました。",
+      "significance": "BMWの取り扱いを広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "純粋持株会社への移行",
+      "description": "商号を株式会社ケーユーホールディングスに変更し、新設分割により事業会社株式会社ケーユーを設立しました。",
+      "significance": "持株会社体制に移行しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第一部への指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "市場第一部への指定を受けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "横須賀ヤナセの完全子会社化",
+      "description": "株式譲受により横須賀ヤナセ株式会社を完全子会社化しました。",
+      "significance": "輸入車ディーラー事業の拠点を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "シュテルン横浜東の完全子会社化",
+      "description": "株式譲受により株式会社シュテルン横浜東を完全子会社化しました。",
+      "significance": "メルセデス・ベンツの販売拠点を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所市場第一部からスタンダード市場に移行しました。",
+      "significance": "新しい市場区分での上場が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "シュテルン横浜東の吸収合併",
+      "description": "株式会社シュテルン世田谷が株式会社シュテルン横浜東を吸収合併しました。",
+      "significance": "輸入車ディーラー事業の運営を集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "シュテルン西多摩とシュテルン中央の完全子会社化",
+      "description": "株式譲受により株式会社シュテルン西多摩と株式会社シュテルン中央を完全子会社化しました。",
+      "significance": "輸入車ディーラー事業の拠点をさらに広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "シュテルン西多摩の吸収合併",
+      "description": "株式会社シュテルン世田谷が株式会社シュテルン西多摩を吸収合併しました。",
+      "significance": "輸入車ディーラー事業の運営をさらに集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "jaccs",
+      "relationship": "business-partner",
+      "description": "株式会社ジャックスは、当社グループの商品を販売する際の提携信販会社です。2026年3月31日現在、当社は同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +374,45 @@
       "publisher": "株式会社ケーユーホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIY6.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YIY6",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「信頼と安心を通じ豊かなカーライフの創造」を基本理念に、多様なメーカーの新車・中古車を取り扱う「トータルディーラー」を目指します。企業規模の追求ではなく、売上高の収益性と総資産の効率的な活用を意識した経営を志向します。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "国産車販売事業と輸入車ディーラー事業の二つの事業を持ちます。輸入車ではメルセデス・ベンツ車やBMW車を中心に扱い、国産車では中古車販売を中心とします。子会社6社で販売と修理を行います。",
+        "basis": "【事業の内容】と【経営方針、経営環境及び対処すべき課題等】の記載に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "自動車販売業界では、2026年3月期の新車登録台数は軽自動車を含め452万台で前期比0.9％減、中古車登録台数は649万台で同0.6％増、外国メーカー車の新車登録台数は23万台で同3.4％増でした。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の記載に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

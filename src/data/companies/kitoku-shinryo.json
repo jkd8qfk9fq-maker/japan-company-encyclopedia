@@ -4,15 +4,282 @@
   "name": "木徳神糧",
   "officialName": "木徳神糧株式会社",
   "nameEn": "KITOKU SHINRYO CO., LTD.",
-  "description": null,
+  "shortNameEn": "KITOKU SHINRYO",
+  "description": "米穀を中心に飼料、鶏卵、食品を扱い、生産者と消費者をつなぐ食品の卸売会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "rice",
+      "name": "米穀事業",
+      "description": "精米と玄米の製造販売を行います。業務用精米、家庭用精米、玄米、ミニマム・アクセス米などを扱います。2025年12月期の外部顧客への売上高は151,325百万円です。",
+      "products": [
+        "業務用精米",
+        "家庭用精米",
+        "玄米",
+        "ミニマム・アクセス米",
+        "加工米飯用米"
+      ],
+      "customers": [
+        "量販店",
+        "スーパー",
+        "生協",
+        "米穀小売店",
+        "コンビニエンスストア",
+        "外食チェーン",
+        "農林水産省"
+      ],
+      "children": [
+        {
+          "id": "rice-polished",
+          "name": "精米",
+          "description": "家庭用精米と業務用精米の販売を行います。2025年12月期の売上高は122,455百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "rice-brown",
+          "name": "玄米",
+          "description": "米穀卸会社への販売を中心に、米穀小売店への販売も行います。2025年12月期の売上高は27,808百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "rice-other",
+          "name": "その他",
+          "description": "精米と玄米以外の米穀の販売です。2025年12月期の売上高は1,062百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "eggs",
+      "name": "鶏卵事業",
+      "description": "鶏卵と鶏卵加工品の販売を行います。2025年12月期の外部顧客への売上高は10,882百万円です。",
+      "products": [
+        "家庭用卵",
+        "業務用卵",
+        "鶏卵加工品"
+      ],
+      "customers": [
+        "量販店",
+        "スーパー",
+        "外食チェーン"
+      ],
+      "children": [
+        {
+          "id": "eggs-household",
+          "name": "家庭用卵",
+          "description": "一般家庭向けの鶏卵の販売を行います。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "eggs-commercial",
+          "name": "業務用卵",
+          "description": "業務用の鶏卵の販売を行います。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "eggs-processed",
+          "name": "鶏卵加工品",
+          "description": "鶏卵加工品の販売を行います。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "feed",
+      "name": "飼料事業",
+      "description": "飼料と飼料原料の販売を行います。2025年12月期の外部顧客への売上高は10,556百万円です。",
+      "products": [
+        "飼料",
+        "飼料原料"
+      ],
+      "customers": [
+        "配合飼料メーカー",
+        "飼料販売店",
+        "企業畜産"
+      ],
+      "children": [
+        {
+          "id": "feed-feed",
+          "name": "飼料",
+          "description": "配合飼料原料や単体飼料の販売を行います。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "feed-materials",
+          "name": "飼料原料",
+          "description": "配合飼料メーカー向けの飼料原料の販売を行います。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "food",
+      "name": "食品事業",
+      "description": "米粉、加工食品、たんぱく質調整米、小麦粉などの製造販売を行います。2025年12月期の外部顧客への売上高は3,426百万円です。",
+      "products": [
+        "米粉",
+        "加工食品",
+        "たんぱく質調整米",
+        "小麦粉"
+      ],
+      "customers": [
+        "米菓メーカー",
+        "コンビニエンスストア",
+        "製パン業者"
+      ],
+      "children": [
+        {
+          "id": "food-rice-flour",
+          "name": "米粉",
+          "description": "製菓及び加工食品用米粉の製造・販売を行います。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "food-processed",
+          "name": "加工食品",
+          "description": "加工食品の製造・販売を行います。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "food-protein-rice",
+          "name": "たんぱく質調整米",
+          "description": "たんぱく質調整米「真粒米」の製造・販売を行います。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "food-wheat-flour",
+          "name": "小麦粉",
+          "description": "小麦粉などの製造・販売を行います。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "米穀を中心に飼料、鶏卵、食品を扱い、生産者と消費者をつなぐ食品の卸売会社です。",
+    "products": [
+      "精米",
+      "玄米",
+      "ミニマム・アクセス米",
+      "飼料",
+      "飼料原料",
+      "鶏卵",
+      "鶏卵加工品",
+      "米粉",
+      "たんぱく質調整米",
+      "小麦粉"
+    ],
+    "customers": [
+      "量販店",
+      "スーパー",
+      "生協",
+      "米穀小売店",
+      "コンビニエンスストア",
+      "外食チェーン",
+      "農林水産省",
+      "配合飼料メーカー",
+      "企業畜産"
+    ],
+    "revenueSources": [
+      "精米・玄米の販売",
+      "飼料・飼料原料の販売",
+      "鶏卵・鶏卵加工品の販売",
+      "米粉・加工食品などの販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "米穀を中心とする食品の卸売会社",
+        "description": "木徳神糧は、米穀を中心に飼料、鶏卵、食品を扱う食品の卸売会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "精米、玄米、飼料、鶏卵、米粉など",
+        "description": "精米、玄米、飼料、鶏卵、米粉、たんぱく質調整米、小麦粉などを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "量販店、スーパー、外食チェーン、農林水産省など",
+        "description": "商品は、量販店やスーパー、生協、米穀小売店、コンビニエンスストア、外食チェーン、農林水産省などに届けられます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "精米や玄米などの販売",
+        "description": "精米、玄米、飼料、鶏卵、食品の販売が売上高につながります。2025年12月期の売上高は176,191百万円で、前期比48.1％増です。"
+      },
+      {
+        "kind": "profit",
+        "title": "安定調達と適正な価格形成による収益の改善",
+        "description": "安定調達を重視しつつ機動的な調達を進め、販売価格への適時・適切な反映と構造改革によるコスト削減に取り組み、収益の改善を目指します。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +294,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10579597000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 379,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +314,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11337760000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 389,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +334,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13390911000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 383,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +354,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15560043000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 374,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +374,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21034615000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 385,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +382,323 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1882,
+      "title": "米穀商木村徳兵衛商店の開業",
+      "description": "東京都日本橋兜町に、米穀商木村徳兵衛商店として開業しました。社名は創業者の木村徳兵衛に由来します。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2025",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "株式会社木村徳兵衛商店の設立",
+      "description": "神奈川県横須賀市に、米穀及び飼料の販売を目的として株式会社木村徳兵衛商店を設立しました。",
+      "significance": "会社としての始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "米穀の販売開始",
+      "description": "米穀卸売販売業者の資格を取得し、米穀の販売を開始しました。",
+      "significance": "米穀の卸売販売を始めました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "木徳株式会社への商号変更",
+      "description": "商号を木徳株式会社に変更しました。",
+      "significance": "木徳の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "アンジメックス・キトク合弁会社の設立",
+      "description": "ベトナム産米の取扱いを目的として、アンジメックス・キトク合弁会社を設立しました。",
+      "significance": "海外での事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "ミニマム・アクセスによる政府米の輸入開始",
+      "description": "輸入米穀の買入委託契約の参加資格を取得し、ミニマム・アクセスによる政府米の輸入業務を開始しました。",
+      "significance": "輸入米の取扱いを始めました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "神糧物産との合併と木徳神糧への商号変更",
+      "description": "神糧物産株式会社と合併し、商号を木徳神糧株式会社に変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "ＪＡＳＤＡＱ市場への銘柄登録",
+      "description": "日本証券業協会の店頭売買有価証券市場（ＪＡＳＤＡＱ市場）へ銘柄登録しました。",
+      "significance": "株式の公開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "食品事業部門の吸収分割",
+      "description": "食品事業部門を、キトクフーズ株式会社を承継会社とする吸収分割で分離しました。",
+      "significance": "食品事業を子会社に移しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所への株式上場",
+      "description": "日本証券業協会への登録を取消し、株式会社ジャスダック証券取引所に株式を上場しました。",
+      "significance": "上場市場を移しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "キトク・タイランド会社の設立",
+      "description": "タイ国産米の輸出販売を目的として、キトク・タイランド会社を設立しました。",
+      "significance": "タイでの事業を始めました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "木徳（大連）貿易有限公司の設立",
+      "description": "中国産米の取扱いを目的として、木徳（大連）貿易有限公司を設立しました。",
+      "significance": "中国での事業を始めました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所ＪＡＳＤＡＱ（スタンダード）への上場",
+      "description": "大阪証券取引所と東京証券取引所の現物市場の統合に伴い、東京証券取引所ＪＡＳＤＡＱ（スタンダード）に株式を上場しました。",
+      "significance": "東京証券取引所に上場しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所スタンダード市場に移行しました。",
+      "significance": "現在の市場区分になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "キトクフーズの吸収合併",
+      "description": "キトクフーズ株式会社を吸収合併しました。",
+      "significance": "食品事業を再び本体に取り込みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "seven-and-i-holdings",
+      "relationship": "customer",
+      "description": "当社の重要販売先であり、主に米穀の販売を行っています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamae-group-holdings",
+      "relationship": "customer",
+      "description": "当社の主要販売先であるヤマエ久野株式会社の親会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "warabeya-nichiyo-holdings",
+      "relationship": "customer",
+      "description": "当社の主要販売先であるわらべや日洋食品株式会社などの親会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yoshinoya-holdings",
+      "relationship": "customer",
+      "description": "当社の重要販売先であり、主に米穀の販売を行っています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "royal-holdings",
+      "relationship": "customer",
+      "description": "当社の主要販売先であるロイヤル株式会社の親会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "matsuya-foods-holdings",
+      "relationship": "customer",
+      "description": "当社の重要販売先である株式会社松屋フーズの親会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kameda-seika",
+      "relationship": "customer",
+      "description": "当社の販売先であり、主に米穀の販売を行っています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "s-and-b-foods",
+      "relationship": "customer",
+      "description": "当社の販売先であり、米穀の販売を行っています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shinobu-foods-products",
+      "relationship": "customer",
+      "description": "当社の販売先であり、米穀の販売を行っています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "oie-sangyo",
+      "relationship": "customer",
+      "description": "当社の販売先であり、米穀の販売を行っています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tenmaya-store",
+      "relationship": "customer",
+      "description": "当社の販売先であり、米穀の販売を行っています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "business-partner",
+      "description": "当社の海外事業における重要なパートナーで、海外事業で提携し、良好な関係の維持・強化を図っています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kanematsu",
+      "relationship": "business-partner",
+      "description": "当社の飼料事業における重要なパートナーで、飼料事業で提携し、良好な関係の維持・強化を図っています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "chubushiryo",
+      "relationship": "business-partner",
+      "description": "当社の飼料事業の取引先で、良好な関係の維持・強化を図るために株式を継続保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "feed-one",
+      "relationship": "business-partner",
+      "description": "当社の飼料事業の取引先で、良好な関係の維持・強化を図るために株式を継続保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "showa-sangyo",
+      "relationship": "business-partner",
+      "description": "当社の飼料事業の取引先で、良好な関係の維持・強化を図るために株式を継続保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "umios",
+      "relationship": "business-partner",
+      "description": "当社の米穀事業の取引先です。有報には旧社名のマルハニチロ株式会社と印字されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippn",
+      "relationship": "supplier",
+      "description": "当社の仕入先であり、飼料などの取引を行っています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,11 +706,52 @@
       "publisher": "木徳神糧株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XSQ8.pdf",
       "publishedAt": "2026-03-25",
-      "accessedAt": "2026-09-28"
+      "docId": "S100XSQ8",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-09"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「木徳神糧」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E6%9C%A8%E5%BE%B3%E7%A5%9E%E7%B3%9E",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念は「当社の存在意義は、生産者と消費者の架け橋となることです。米の安定調達・供給を実現し、食のインフラを支え、日本の食文化を守ります。」です。新中期経営計画（2026～2028年）では、「ステージチェンジ」を見据えた「ステップアップ」を掲げ、米穀卸からコメ食のインフラ企業への進化を目指します。長期ビジョンとして2040年の到達目標を定めています。",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "米穀事業が主力で、2025年12月期の外部顧客への売上高は151,325百万円です。政府備蓄米が放出される当初から、全国の量販店やスーパー、生協、米穀小売店、コンビニ、外食チェーンへ最速の出荷に取り組みました。ミニマム・アクセス米の取扱数量は前年を大幅に上回りました。",
+        "basis": "2025年12月期の経営成績の状況とセグメント情報",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年12月期の売上高は176,191百万円で、親会社株主に帰属する当期純利益は5,520百万円です。従業員数は385人です。",
+        "basis": "2025年12月期の連結経営指標",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  }
 }

@@ -4,15 +4,336 @@
   "name": "共立メンテナンス",
   "officialName": "株式会社共立メンテナンス",
   "nameEn": "KYORITSU MAINTENANCE CO.,LTD.",
-  "description": null,
+  "shortNameEn": "KYORITSU MAINTENANCE",
+  "description": "学生寮・社員寮の運営と、ビジネスホテル「ドーミーイン」やリゾートホテルを手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "entertainment",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    },
+    {
+      "industryId": "food",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "hotel",
+      "name": "ホテル事業",
+      "description": "ビジネスホテルとリゾートホテルを運営する事業です。2026年3月期の外部顧客への売上高は148,957百万円で、グループ全体の過半を占める最大の事業です。2026年3月末時点で143事業所、22,294室を運営しています。",
+      "products": [
+        "ビジネスホテル「ドーミーイン」",
+        "ビジネスホテル「御宿 野乃」",
+        "リゾートホテル「ラビスタ」"
+      ],
+      "customers": [
+        "出張客",
+        "観光客"
+      ],
+      "children": [
+        {
+          "id": "dormy-inn",
+          "name": "ドーミーイン（ビジネスホテル）事業",
+          "description": "出張や観光で利用するビジネスホテルを、「ドーミーイン」と上位ブランド「御宿 野乃」の名前で運営しています。天然温泉の大浴場を備えた施設を多く展開しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "resort",
+          "name": "リゾート（リゾートホテル）事業",
+          "description": "「ラビスタ」の名前でリゾートホテルを運営しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "dormitory",
+      "name": "寮事業",
+      "description": "学生寮・社員寮・ワンルームタイプの寮・受託寮を管理運営する事業で、会社の出発点となった中核事業です。2026年3月期の外部顧客への売上高は57,543百万円でした。2026年3月末時点で536事業所、定員46,147名です（受託寮を除く）。",
+      "products": [
+        "学生寮",
+        "社員寮",
+        "ドミール（ワンルームマンションタイプの寮）",
+        "受託寮の管理運営"
+      ],
+      "customers": [
+        "学生",
+        "社員寮を用意する企業",
+        "学校"
+      ],
+      "children": [
+        {
+          "id": "student-dormitory",
+          "name": "学生寮",
+          "description": "大学や専門学校に通う学生が入居する寮を運営しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "employee-dormitory",
+          "name": "社員寮",
+          "description": "企業が福利厚生として用意する、社員向けの寮を運営しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "domir",
+          "name": "ドミール",
+          "description": "ワンルームマンションタイプの寮です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "entrusted-dormitory",
+          "name": "受託寮",
+          "description": "企業や学校が保有する寮の管理運営を受託しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "development",
+      "name": "デベロップメント事業",
+      "description": "寮やホテルなどの建設・企画・設計・仲介、分譲マンションの販売、不動産流動化を行う事業です。連結子会社の株式会社共立エステートなどが担っています。2026年3月期の外部顧客への売上高は38,669百万円で、不動産流動化の実施と開発案件の増加により前期から大きく増えました。",
+      "products": [
+        "寮・ホテル等の開発",
+        "分譲マンション",
+        "不動産流動化"
+      ],
+      "customers": [
+        "マンションの購入者",
+        "不動産の投資家"
+      ],
+      "children": [
+        {
+          "id": "construction-planning",
+          "name": "建設・企画・設計・仲介事業",
+          "description": "寮やホテルなどの建物の建設、企画、設計、仲介を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "condominium",
+          "name": "分譲マンション事業",
+          "description": "分譲マンションの開発と販売を行っています。持分法適用関連会社の株式会社コスモスイニシアもこの事業を手がけています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-estate-securitization",
+          "name": "不動産流動化事業",
+          "description": "開発した不動産を投資家向けに流動化する事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "building-management",
+      "name": "総合ビルマネジメント事業",
+      "description": "オフィスビルとレジデンス（賃貸マンション）の管理を行う事業です。連結子会社の株式会社ビルネットと株式会社セントラルビルワークが担い、グループの寮やホテルのメンテナンスも行っています。2026年3月期の外部顧客への売上高は9,039百万円でした。",
+      "products": [
+        "オフィスビルマネジメント",
+        "レジデンスビルマネジメント",
+        "施設のメンテナンス"
+      ],
+      "customers": [
+        "ビルオーナー",
+        "賃貸マンションのオーナー"
+      ],
+      "children": [
+        {
+          "id": "office-building-management",
+          "name": "オフィスビルマネジメント事業",
+          "description": "オフィスビルの管理運営を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "residence-building-management",
+          "name": "レジデンスビルマネジメント事業",
+          "description": "レジデンス（賃貸マンション）の管理運営を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "foods",
+      "name": "フーズ事業",
+      "description": "外食、受託給食、ホテルレストランなどの受託運営を行う事業です。連結子会社の株式会社共立フーズサービスなどが、グループのホテルレストランの運営受託を中心に担っています。2026年3月期の外部顧客への売上高は2,126百万円でした。",
+      "products": [
+        "外食店舗の運営",
+        "受託給食",
+        "ホテルレストランの受託運営"
+      ],
+      "customers": [
+        "ホテル",
+        "給食を委託する企業・学校"
+      ],
+      "children": [
+        {
+          "id": "restaurant",
+          "name": "外食事業",
+          "description": "飲食店の運営を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "contract-food-service",
+          "name": "受託給食事業",
+          "description": "給食の運営を受託しています。会社が最初に始めた事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "hotel-restaurant-operation",
+          "name": "ホテルレストラン等の受託運営事業",
+          "description": "ホテルのレストランなどの運営を受託しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他事業",
+      "description": "報告セグメントに含まれない事業の集まりです。高齢者向け住宅の管理運営（シニアライフ事業）、自治体向けの業務受託（ＰＫＰ事業）、単身生活者支援事業、保険代理店事業、総合人材サービス事業、融資事業、事務代行業などを含みます。2026年3月期の外部顧客への売上高は18,912百万円でした。",
+      "products": [
+        "高齢者向け住宅の管理運営",
+        "自治体向け業務受託",
+        "保険代理店",
+        "総合人材サービス"
+      ],
+      "customers": [
+        "高齢者",
+        "自治体",
+        "単身生活者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "寮やホテルなどの施設を自ら企画・開発して運営し、食事の提供まで含めたサービスで、利用者や宿泊客から料金を得ています。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "学生寮・社員寮の運営",
+      "ワンルームタイプの寮「ドミール」",
+      "ビジネスホテル「ドーミーイン」",
+      "リゾートホテル「ラビスタ」",
+      "ビル管理（オフィス・レジデンス）",
+      "外食・受託給食",
+      "マンション開発・不動産流動化",
+      "高齢者向け住宅の運営"
+    ],
+    "customers": [
+      "学生",
+      "社員寮を用意する企業",
+      "出張・観光の宿泊客",
+      "ビルオーナー",
+      "自治体"
+    ],
+    "revenueSources": [
+      "寮の利用料",
+      "ホテルの宿泊料",
+      "ビル管理の受託料",
+      "飲食の売上",
+      "マンション分譲や不動産流動化の売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "共立メンテナンス",
+        "description": "1979年に設立され、本社は東京都千代田区にあります。子会社17社・関連会社3社とグループを構成し、連結の従業員数は6,614人です（2026年3月期）。"
+      },
+      {
+        "kind": "offering",
+        "title": "寮とホテルの運営サービス",
+        "description": "学生寮・社員寮の運営、ビジネスホテル「ドーミーイン」とリゾートホテルの運営を中心に、ビル管理、給食・外食、不動産開発などを手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "学生・企業・宿泊客",
+        "description": "学生や企業の社員が寮を使い、出張客や観光客がホテルに泊まります。ビルオーナーからはビルの管理を、自治体からは業務を受託します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "利用料と宿泊料が収入",
+        "description": "寮の利用料やホテルの宿泊料、ビル管理の受託料などが収入です。2026年3月期の売上高は275,247百万円で、前期の228,933百万円から20.2％増えました。インバウンドの追い風を受けたホテル事業の好調などが伸びを支えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から、施設の賃借料や食材費、人件費などの費用を差し引いた残りが利益になります。2026年3月期の親会社株主に帰属する当期純利益は18,709百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +348,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 70586000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5639,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +368,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 74579000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5682,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +388,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 86604000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5939,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +408,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 99360000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6213,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +428,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 145528000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6614,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +436,148 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1979,
+      "title": "株式会社共立メンテナンスを設立",
+      "description": "東京都葛飾区で株式会社共立メンテナンスを設立しました。同年10月に受託給食事業を開始しました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "学生寮事業を開始",
+      "description": "学生寮事業を開始しました。",
+      "significance": "中核事業である寮事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "社員寮事業を開始",
+      "description": "1984年に受託寮事業を、1985年に社員寮事業を開始し、寮の種類を広げました。",
+      "significance": "寮事業の幅を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "ホテル事業を開始",
+      "description": "1993年7月にリゾートホテル事業を、8月にビジネスホテル「ドーミーイン」事業を開始しました。",
+      "significance": "現在の最大事業であるホテル事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "シニアライフ事業を開始",
+      "description": "高齢者向け住宅の管理運営を行うシニアライフ事業を開始しました。",
+      "significance": "高齢者向け事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "東京証券取引所市場第一部に指定替え",
+      "description": "東京証券取引所市場第一部に指定替えとなりました。同年、日産ビルネット株式会社（現・株式会社ビルネット）の株式を100％取得し、ビル管理の事業を取り込みました。",
+      "significance": "市場第一部への移行と事業拡大が重なった年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "ＰＫＰ事業を開始",
+      "description": "地方自治体向けの業務受託事業（ＰＫＰ事業）を開始しました。",
+      "significance": "自治体向けの事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "韓国に子会社を設立",
+      "description": "株式会社韓国共立メンテナンスを設立しました。同社は韓国でホテル事業を担っています。",
+      "significance": "海外の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "大和ハウス工業・コスモスイニシアと資本業務提携",
+      "description": "2024年1月に大和ハウス工業株式会社・株式会社コスモスイニシアとの3社間で資本業務提携契約を締結し、2月にコスモスイニシアの株式の一部を取得して持分法適用関連会社としました。",
+      "significance": "デベロップメント事業の提携基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "cosmos-initia",
+      "relationship": "affiliate",
+      "description": "持分法適用関連会社で、議決権の25.04％を所有しています（2026年3月31日現在）。デベロップメント事業（分譲マンションなど）を手がけています。2024年1月に資本業務提携契約を結び、同年2月に株式の一部を取得しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "daiwa-house-industry",
+      "relationship": "business-partner",
+      "description": "2024年1月11日に、株式会社コスモスイニシアとともに3社間で資本業務提携契約を締結しました。事業提携によるシナジーを促進し、企業価値を向上させることを目的としています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +585,45 @@
       "publisher": "株式会社共立メンテナンス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIIM.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YIIM",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30"
+  "updatedAt": "2026-11-08",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "創業以来「顧客第一」を原点に、ライフステージの様々な場面での「食」と「住」、さらに「癒し」のサービスを通じ、社会の発展に寄与することを経営方針としています。具体的な事業戦略として「中核事業である寮事業のさらなる拡大展開と収益力再強化」「成長力の高いホテル事業の基盤強化と拡大」「第３の柱となる新規事業の早期確立」を掲げ、2028年3月期を最終年度とする中期経営計画「KYORITSU Growth Vision / Rise Up Plan 2028」を進めています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "寮とホテルを自ら開発して運営し、食事のサービスまで組み合わせる一貫した運営の仕組みを持っています。2026年3月末時点で寮536事業所・ホテル143事業所を運営する規模があり、大都市圏を中心に新規開業を続けています。",
+        "basis": "【事業の内容】【経営方針、経営環境及び対処すべき課題等】【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の事業概況",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の外部顧客への売上高は、ホテル事業が148,957百万円と全体の過半を占め、寮事業が57,543百万円で続きます。ホテルと寮の2事業で全体の約4分の3を占めています。",
+        "basis": "セグメント情報（2026年3月期の外部顧客への売上高）",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

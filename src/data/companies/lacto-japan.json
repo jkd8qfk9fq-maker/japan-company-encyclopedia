@@ -4,15 +4,275 @@
   "name": "ラクト・ジャパン",
   "officialName": "株式会社ラクト・ジャパン",
   "nameEn": "Lacto Japan Co., Ltd.",
-  "description": null,
+  "shortNameEn": "LACTO JAPAN",
+  "description": "乳製品原料や食肉、機能性食品原料の輸入販売と、アジアでのチーズの製造販売をしています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "food",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "dairy-cheese",
+      "name": "乳原料・チーズ部門",
+      "description": "海外から仕入れた乳製品原料やチーズを、国内の乳製品メーカーをはじめとする食品メーカーへ販売する事業です。2025年11月期の売上高は1,186億79百万円です。",
+      "products": [
+        "乳製品原料",
+        "チーズ",
+        "乳調製品"
+      ],
+      "customers": [
+        "乳製品メーカー",
+        "食品メーカー"
+      ],
+      "children": [
+        {
+          "id": "raw-milk-ingredients",
+          "name": "乳原料",
+          "description": "チーズ以外の乳製品原料を取り扱う事業です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "cheese",
+          "name": "チーズ",
+          "description": "ナチュラルチーズを主として取り扱う事業です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "milk-preparations",
+          "name": "乳調製品",
+          "description": "乳製品原料に砂糖や油脂類などを加えて一次加工した原料を取り扱う事業です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "asia-business",
+      "name": "アジア事業・その他",
+      "description": "アジアで乳製品原料の販売とチーズの製造販売を行う事業です。2025年11月期の売上高は317億72百万円です。アジア事業・その他には、LACTO USA INC.などのアジア事業以外の海外子会社や、株式会社LJフーズのその他事業も含まれています。",
+      "products": [
+        "乳製品原料",
+        "チーズ"
+      ],
+      "customers": [
+        "アジアの日系企業",
+        "アジアの現地企業"
+      ],
+      "children": [
+        {
+          "id": "asia-ingredient-sales",
+          "name": "乳原料販売",
+          "description": "アジアで乳製品原料を販売する事業で、売上高は228億19百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "asia-cheese-manufacturing",
+          "name": "チーズ製造販売",
+          "description": "アジアでチーズを製造販売する事業で、売上高は63億91百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "meat-ingredients",
+      "name": "食肉食材部門",
+      "description": "チルドや冷凍の豚肉を中心に、鶏肉や食肉加工品を海外から輸入し、国内のハム・ソーセージメーカーや外食企業、食品スーパーなどへ販売する事業です。2025年11月期の売上高は227億70百万円です。",
+      "products": [
+        "豚肉",
+        "鶏肉",
+        "鶏肉加工品",
+        "生ハム",
+        "サラミ"
+      ],
+      "customers": [
+        "ハム・ソーセージメーカー",
+        "外食企業",
+        "食品スーパー"
+      ],
+      "children": [
+        {
+          "id": "pork",
+          "name": "豚肉",
+          "description": "チルド及び冷凍の豚肉を輸入販売する事業です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "chicken",
+          "name": "鶏肉・鶏肉加工品",
+          "description": "鶏肉及び鶏肉加工品を輸入販売する事業です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "processed-meat",
+          "name": "生ハム・サラミ等の食肉加工品",
+          "description": "生ハムやサラミなどの食肉加工品を輸入販売する事業です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "functional-food-ingredients",
+      "name": "機能性食品原料部門",
+      "description": "乳由来の高たんぱく食品原料や大豆たんぱく、ゼラチン、コラーゲンなどの機能性食品原料を輸入し、スポーツニュートリション業界や美容・健康業界、介護業界、食品業界へ販売する事業です。2025年11月期の売上高は95億94百万円です。",
+      "products": [
+        "乳由来の高たんぱく食品原料",
+        "大豆たんぱく",
+        "ゼラチン",
+        "コラーゲン"
+      ],
+      "customers": [
+        "スポーツニュートリション業界",
+        "美容・健康業界",
+        "介護業界",
+        "食品業界"
+      ],
+      "children": [
+        {
+          "id": "milk-protein",
+          "name": "乳由来の高たんぱく食品原料",
+          "description": "乳由来の高たんぱく食品原料を販売する事業です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "soy-protein",
+          "name": "大豆たんぱく",
+          "description": "大豆たんぱくを販売する事業です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "gelatin",
+          "name": "ゼラチン",
+          "description": "ゼラチンを販売する事業です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "collagen",
+          "name": "コラーゲン",
+          "description": "コラーゲンを販売する事業です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "乳製品原料やチーズ、食肉、機能性食品原料を海外から輸入し、国内の食品メーカーなどへ販売するとともに、アジアでチーズを製造販売しています。",
+    "products": [
+      "乳製品原料",
+      "チーズ",
+      "乳調製品",
+      "豚肉",
+      "鶏肉",
+      "食肉加工品",
+      "機能性食品原料"
+    ],
+    "customers": [
+      "国内の食品メーカー",
+      "乳製品メーカー",
+      "ハム・ソーセージメーカー",
+      "外食企業",
+      "食品スーパー",
+      "アジアの日系企業や現地企業"
+    ],
+    "revenueSources": [
+      "乳原料・チーズの販売",
+      "食肉食材の販売",
+      "機能性食品原料の販売",
+      "アジアでの乳原料の販売とチーズの製造販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "会社",
+        "description": "東京都中央区日本橋に本社を置き、国内子会社1社と海外子会社9社、海外関連会社1社でグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "商品",
+        "description": "乳製品原料やチーズ、食肉、機能性食品原料を海外から輸入し、国内の食品メーカーなどへ販売するとともに、アジアでチーズを製造販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "お客様",
+        "description": "国内の乳製品メーカーをはじめとする食品メーカーや、ハム・ソーセージメーカー、外食企業、食品スーパー、アジアの日系企業や現地企業です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年11月期の売上高は1,828億16百万円で、前期比7.0％増です。"
+      },
+      {
+        "kind": "profit",
+        "title": "収益の積み上げ",
+        "description": "2025年11月期の親会社株主に帰属する当期純利益は43億17百万円で、前期比37.2％増です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年11月期",
@@ -27,7 +287,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19578000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 323,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +307,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22481000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 364,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +327,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24724000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 377,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +347,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27581000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 398,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +367,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32448000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 424,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +375,158 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1998,
+      "title": "株式会社ラクト・ジャパンを設立",
+      "description": "東京都台東区浅草橋で株式会社ラクト・ジャパンを設立し、農産物や農産物加工品の輸出入と販売を開始しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "シンガポールに現地法人を設立",
+      "description": "乳製品原料の卸売のため、シンガポールに現地法人を設立しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "シンガポールでチーズの製造販売を開始",
+      "description": "チーズの製造販売のため、シンガポールに現地法人を設立しました。",
+      "significance": "チーズ製造事業への進出です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "食肉加工品の取扱いを開始",
+      "description": "生ハムやサラミなどの食肉加工品の仕入と販売を開始しました。",
+      "significance": "食肉事業への進出です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "LACTO ASIA PTE.LTD.を設立",
+      "description": "シンガポールの現地法人2社を統合し、乳製品原料の卸売とチーズの製造販売を行うLACTO ASIA PTE.LTD.を設立しました。",
+      "significance": "アジア事業の基盤を整えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "LACTO USA INC.への社名変更とLACTO OCEANIA PTY.LTD.の設立",
+      "description": "米国の現地法人をLACTO USA INC.に社名変更し、オーストラリア・メルボルンにLACTO OCEANIA PTY.LTD.を設立しました。",
+      "significance": "米州とオセアニアでの体制を整えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "マレーシアに現地法人を設立",
+      "description": "シンガポールで製造したチーズの販売のため、マレーシアにLACTO ASIA (M) SDN.BHD.を設立しました。",
+      "significance": "東南アジアでの販売網の拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "中国に合弁会社を設立",
+      "description": "中国・煙台に現地資本と合弁で、チーズの製造販売会社を設立しました。",
+      "significance": "中国への進出です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "インドネシアに合弁会社を設立",
+      "description": "インドネシア・ジャカルタに現地資本と合弁で、チーズの製造販売を行うPT. PACIFIC LACTO JAYAを設立しました。",
+      "significance": "インドネシアへの進出です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "タイと上海に現地法人を設立",
+      "description": "タイにチーズの製造販売会社を、中国・上海に加工食品などの販売会社を設立しました。",
+      "significance": "アジアでの事業基盤の拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式市場への上場を果たしました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "上場市場での位置づけを高めました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "フィリピンに現地法人を設立",
+      "description": "フィリピン・マニラに乳製品原料などの仕入と販売のため、LACTO PHILIPPINES INC.を設立しました。",
+      "significance": "フィリピンへの進出です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社LJフーズを設立",
+      "description": "国内販売を目的として、株式会社LJフーズを設立しました。",
+      "significance": "国内販売体制の強化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "プライム市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +535,47 @@
       "publisher": "株式会社ラクト・ジャパン",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XMUD.pdf",
       "publishedAt": "2026-02-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100XMUD",
+      "asOf": "2025-11-30",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "パーパスは「世界を食でつなぎ、人々を健康に、そして笑顔にする」ことです。長期ビジョン「LACTO VISION 2032」では、乳製品専門商社から複合型食品企業への進化と、乳製品取扱高45万トンを目指しています。新中期経営計画「NEXT-LJ 2028」では「つなぐ」をコンセプトに掲げ、アジアのチーズ製造販売事業の拡大などに取り組んでいます。",
+        "asOf": "2026-02-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "大手企業グループに属さない独立系の乳製品専門商社として、世界各地の生産地との長年の関係を活かし、仕入先と販売先の双方のニーズに応じた原料の開発や提案を行っています。仕入先の選定では品質や技術力、開発力に加え、生産プロセスの安全管理体制を条件とし、担当者が現地に赴いて製造工程を確認しています。",
+        "basis": "事業の内容に、独立系としての全方位性や仕入先・販売先への対応、品質管理の取組みが記載されています。",
+        "asOf": "2026-02-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年11月期の売上高は1,828億16百万円で、地域別では日本153,967百万円、アジア地域28,782百万円、その他66百万円です。部門別では乳原料・チーズ部門の売上高が1,186億79百万円と最も大きく、従業員数は424人です。",
+        "basis": "売上高と地域別売上高、部門別売上高、従業員数が有報に記載されています。",
+        "asOf": "2026-02-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    }
+  }
 }

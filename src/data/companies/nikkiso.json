@@ -4,15 +4,123 @@
   "name": "日機装",
   "officialName": "日機装株式会社",
   "nameEn": "NIKKISO CO., LTD.",
-  "description": null,
+  "shortNameEn": "NIKKISO",
+  "description": "日機装は、液化ガス用などの産業用特殊ポンプや航空機向けの複合材部品、血液透析装置などを製造・販売するメーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "industrial",
+      "name": "工業部門",
+      "description": "液化ガスに使われる極低温用ポンプを中心とする工業用特殊ポンプ・システム、発電所向けの水質調整装置などの精密機器、民間航空機向けの炭素繊維強化プラスチック（CFRP）成形品などを製造・販売し、メンテナンスも行っています。2025年12月期の外部顧客への売上収益は136,750百万円で、2つの部門のうち大きい方です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "industrial-business",
+          "name": "インダストリアル事業",
+          "description": "産業用ポンプ・システムと液化ガス・産業ガス関連機器・装置を扱うポンプ・システム事業と、発電プラント向け水質調整装置や電子部品製造関連装置を扱う精密機器事業で構成されます。極低温用ポンプや熱交換器・気化器、極低温用プロセスプラントなどが製品です。金額は工業部門としてのみ開示され、この事業だけの金額は印字されていません。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "aerospace-business",
+          "name": "航空宇宙事業",
+          "description": "民間航空機向けの炭素繊維強化プラスチック（CFRP）成形品や金属接着部品を製造・販売しています。逆噴射装置の部品や主翼部品、胴体部品、人工衛星用部品などが製品です。金額は工業部門としてのみ開示され、この事業だけの金額は印字されていません。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "medical",
+      "name": "医療部門",
+      "description": "血液透析装置やダイアライザー、血液回路、粉末型透析用剤など血液透析に関連した製品や、マイクロ波外科手術用エネルギーデバイスなどを製造・販売し、メンテナンスも行っています。2025年12月期の外部顧客への売上収益は78,891百万円でした。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "medical-business",
+          "name": "メディカル事業",
+          "description": "血液透析関連製品が中心です。多用途透析装置や多人数用透析液供給装置、人工腎臓透析用剤、中空糸型透析器（ダイアライザー）などを国内外で製造・販売しています。医療部門はこの事業のみで構成され、金額は医療部門の金額と同一です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "産業用特殊ポンプや極低温機器、航空機用複合材部品、血液透析関連製品を開発・製造し、産業顧客や航空機メーカー、医療機関に販売し、メンテナンスまで担う事業モデルです。",
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "極低温用ポンプなどの産業用特殊ポンプ・システム",
+      "液化ガス・産業ガス関連機器・装置",
+      "発電プラント向け水質調整装置",
+      "電子部品製造関連装置",
+      "民間航空機向けCFRP成形品",
+      "血液透析装置・ダイアライザーなどの血液透析関連製品"
+    ],
+    "customers": [
+      "LNG・産業ガスなどのプラント関係者",
+      "火力・原子力などの発電所",
+      "航空機メーカー",
+      "医療機関"
+    ],
+    "revenueSources": [
+      "工業部門の製品の販売とメンテナンス",
+      "医療部門の製品の販売とメンテナンス"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日機装グループ",
+        "description": "当社と連結子会社43社、持分法適用会社4社で構成されるグループで、2025年12月31日現在の連結の従業員数は8,120人です。工業部門と医療部門の2つの部門で事業を行っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "流体を扱う製品の提供",
+        "description": "極低温用ポンプをはじめとする産業用特殊ポンプ・システム、発電所向け水質調整装置、民間航空機向けのCFRP成形品、血液透析装置やダイアライザーなどを提供し、メンテナンスも行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "産業顧客と医療機関",
+        "description": "主な顧客は、液化ガスや産業ガスのプラント関係者、発電所、航空機メーカー、医療機関などです。連結売上収益の10％以上を占める特定の顧客はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品販売の売上収益",
+        "description": "2025年12月期の売上収益は215,642百万円で、前期の213,379百万円から1.1％増えました。工業部門が136,750百万円、医療部門が78,891百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "2025年12月期の親会社の所有者に帰属する当期利益は13,652百万円で、前期の7,957百万円から71.6％増えました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +135,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 92197000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 8638,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -47,7 +155,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 114227000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 7629,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -67,7 +175,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 124426000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 8131,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -87,7 +195,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 140070000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 8337,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -107,15 +215,207 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 158176000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 8120,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "2025年12月期における組織変更により、従来「工業部門」に属していた一部事業を「医療部門」に区分変更しています。前連結会計年度のセグメント数値についても、変更後の区分に組み替えて表示されています。"
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1953,
+      "title": "特殊ポンプ工業株式会社を創立",
+      "description": "米国ミルトン・ロイポンプの輸入販売と、火力発電所用ボイラ水質調整装置の計画および主要部機器の納入販売を主な業務として、特殊ポンプ工業株式会社を創立しました。",
+      "significance": "日機装グループの始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "商号を日本機械計装株式会社に変更",
+      "description": "商号を日本機械計装株式会社に変更しました。",
+      "significance": "現在の社名につながる商号変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "日本初の人工心臓を開発",
+      "description": "日本初の人工心臓を開発し、東京大学木本外科に提供しました。",
+      "significance": "医療分野への取り組みの原点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "人工腎臓装置の販売を開始",
+      "description": "人工腎臓装置の販売を開始しました。",
+      "significance": "現在のメディカル事業につながる医療機器の取り組みの始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "商号を日機装株式会社に変更",
+      "description": "商号を日機装株式会社に変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "国産初の人工腎臓装置が完成",
+      "description": "国産初の人工腎臓装置が完成しました。",
+      "significance": "血液透析分野の国産化を進めました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "東京・大阪証券取引所市場第一部に上場",
+      "description": "東京証券取引所と大阪証券取引所の市場第一部に上場しました。",
+      "significance": "第一部上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "CFRPなどの製造販売を開始",
+      "description": "静岡工場に炭素繊維複合材料の開発プラントを建設し、CFRPなどの製造販売を開始しました。",
+      "significance": "現在の航空宇宙事業の土台となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "中国に威高日機装（威海）透析機器を設立",
+      "description": "中国に、持分法適用会社となる威高日機装（威海）透析機器有限公司を設立しました。",
+      "significance": "中国での透析機器の製造・販売の拠点となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "米国バクスターのCRRT事業を取得",
+      "description": "米国バクスターの急性血液浄化療法（CRRT）に関する事業を取得しました。",
+      "significance": "急性血液浄化の分野に事業を広げました。この事業は2025年2月に譲渡されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "クライオジェニックポンプ事業を譲り受け",
+      "description": "米国子会社のNikkiso Cryo, Inc.が、Atlas Copco社グループのクライオジェニックポンプ事業を譲り受けました。",
+      "significance": "液化ガス分野の製品の幅を広げました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "米国のAquiSense Technologiesを取得",
+      "description": "米国のAquiSense Technologies LLCの全株式を取得し、連結子会社としました。",
+      "significance": "深紫外線LEDの事業を取り込みました。この事業からは2025年に撤退を概ね完了しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "宮崎日機装株式会社を設立",
+      "description": "宮崎日機装株式会社を設立し、連結子会社としました。",
+      "significance": "宮崎県に新たな生産拠点を設けました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "米国のCryogenic Industriesグループを取得",
+      "description": "米国のCryogenic Industriesグループの全株式を取得し、連結子会社としました。",
+      "significance": "液化ガス関連のプラントエンジニアリングなど、事業の幅を大きく広げました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "マイクロトラック・ベルなどを譲渡",
+      "description": "連結子会社のマイクロトラック・ベル株式会社とMicrotrac, Inc.の全株式を譲渡しました。",
+      "significance": "事業ポートフォリオの見直しの一環です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "LEWAグループとGevekeグループを譲渡",
+      "description": "LEWA GmbHグループとGeveke B.V.グループの全株式を譲渡しました。",
+      "significance": "事業ポートフォリオの再構築を進めました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東村山製作所を技術研究所と事業所に改編",
+      "description": "東村山製作所を、新設の日機装技術研究所と東村山事業所に改編しました。",
+      "significance": "研究開発と生産の体制を分けました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "日機装（上海）実業とNikkiso Europe GmbHを譲渡",
+      "description": "連結子会社の日機装（上海）実業有限公司とNikkiso Europe GmbHの全株式を譲渡しました。",
+      "significance": "事業ポートフォリオの再構築の一環です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +424,45 @@
       "publisher": "日機装株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XU3R.pdf",
       "publishedAt": "2026-03-26",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XU3R",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営の理念として、流体を扱う多様な産業や航空宇宙、透析医療など暮らしの根幹分野で、他にない技術の提供を通じて創造的な貢献を果たすことを掲げています。2026年から2028年までの新中期経営計画「NIKKISO 2028 – Toward a Healthier World」では、「品質」を原点とした確かな価値の創出や、長期ビジョンの実現に向けた事業・製品ポートフォリオの拡大・再構築などを基本方針とし、2028年12月期に売上収益2,700億円の達成を目指します。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "ポンプの技術を核として、産業用ポンプから血液透析装置まで、流体を扱う製品を幅広く手がけています。米国のCE&IGグループをはじめとする海外の連結子会社を通じ、液化ガス関連機器や透析関連製品を世界各地で製造・販売する体制を持っています。",
+        "basis": "【事業の内容】・【関係会社の状況】の記載",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年12月期の外部顧客への売上収益は、工業部門が136,750百万円、医療部門が78,891百万円で、工業部門が全体の約6割を占めます。製品の仕向地別では日本が70,698百万円と最も大きく、アジアが60,216百万円、北アメリカが49,718百万円と続きます。",
+        "basis": "セグメント情報（【事業セグメント】）の記載",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  }
 }

@@ -4,15 +4,134 @@
   "name": "丸大食品",
   "officialName": "丸大食品株式会社",
   "nameEn": "MARUDAI FOOD CO., LTD.",
-  "description": null,
+  "shortNameEn": "MARUDAI FOOD",
+  "description": "ハム・ソーセージや調理加工食品を製造・販売する加工食品事業と、食肉の加工・販売を行う食肉事業を営む食品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "processed-foods",
+      "name": "加工食品事業",
+      "description": "ハム・ソーセージや調理加工食品の製造及び販売を行う、グループ最大の報告セグメントです。2026年3月期の外部顧客への売上高は160,500百万円でした。当社のほか、戸田フーズ株式会社、安曇野食品工房株式会社、トーラク株式会社などの連結子会社が製造・販売を担っています。",
+      "products": [
+        "ハム・ソーセージ",
+        "調理加工食品"
+      ],
+      "customers": [
+        "量販店やコンビニエンスストアなどの小売業者",
+        "外食産業などの業務用顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "prepared-foods",
+          "name": "調理加工食品部門",
+          "description": "レトルトカレーやスープ、チキン惣菜、デザート類などの調理加工食品の製造・販売を行う部門です。2026年3月期の売上高は86,000百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ham-sausage",
+          "name": "ハム・ソーセージ部門",
+          "description": "ハム・ソーセージやフィッシュソーセージの製造・販売を行う部門です。2026年3月期の売上高は74,499百万円でした。「燻製屋」シリーズなどの商品があります。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "meat",
+      "name": "食肉事業",
+      "description": "牛肉、豚肉、鶏肉等の食肉の加工及び販売を行う報告セグメントです。2026年3月期の外部顧客への売上高は77,763百万円でした。当社のほか、丸大ミート株式会社、丸大フード株式会社、株式会社ミートサプライなどが担っています。",
+      "products": [
+        "牛肉",
+        "豚肉",
+        "鶏肉"
+      ],
+      "customers": [
+        "量販店などの小売業者",
+        "外食産業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他",
+      "description": "保険代行事業等のサービス業務を行う区分で、報告セグメントには含まれません。株式会社丸大サービスが担っており、2026年3月期の外部顧客への売上高は132百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "ハム・ソーセージやレトルト食品などの加工食品と食肉を製造し、量販店やコンビニエンスストア、外食産業などに販売する事業モデルです。",
+    "products": [
+      "ハム・ソーセージ",
+      "調理加工食品（レトルトカレー、スープ、惣菜、デザート類など）",
+      "食肉（牛肉・豚肉・鶏肉等）"
+    ],
+    "customers": [
+      "量販店やコンビニエンスストアなどの小売業者",
+      "外食産業などの業務用顧客"
+    ],
+    "revenueSources": [
+      "加工食品の販売による収入",
+      "食肉の販売による収入",
+      "保険代行事業等のサービスによる収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "丸大食品グループ",
+        "description": "当社と連結子会社23社、関連会社1社で構成されています。連結の従業員数は1,928人です（2026年3月期）。"
+      },
+      {
+        "kind": "offering",
+        "title": "加工食品と食肉の製造・販売",
+        "description": "ハム・ソーセージや調理加工食品の製造・販売と、牛肉・豚肉・鶏肉などの食肉の加工・販売を行っています。加工食品は全国の自社工場と子会社が製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "小売業者や外食産業",
+        "description": "量販店やコンビニエンスストアなどの小売業者や、外食産業などの業務用顧客が主な顧客です。主要な顧客として株式会社ファミリーマートが開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "商品の販売で得る収入",
+        "description": "加工食品と食肉の販売が主な収入です。2026年3月期の売上高は238,396百万円で、ハム・ソーセージ部門の販売拡大やデザート・飲料類の伸長などから、前期比1.5％増でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から、原材料費や人件費、物流費などの費用を差し引いた残りが利益になります。2026年3月期の親会社株主に帰属する当期純利益は9,786百万円で、投資有価証券売却益などを計上したことから前期を上回りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +146,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 75489000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2066,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +166,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 69014000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1967,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +186,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 62751000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1931,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +206,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 67007000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1902,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号 2022年10月28日）等を第77期の期首から適用しており、第76期に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっている。なお、連結経営指標等に影響はない旨が注記されている。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,16 +227,434 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 76971000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1928,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "当連結会計年度より、生産体制の変更などに伴い「加工食品事業」セグメントのうち「調理加工食品部門」の一部を「ハム・ソーセージ部門」へ集計するよう変更している。前連結会計年度の部門別情報については、変更後の区分により作成したものが記載されている。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1954,
+      "title": "魚肉ハム・ソーセージの製造販売を創業",
+      "description": "故小森敏之氏が大阪市福島区で魚肉ハム・ソーセージの製造販売を創業し、丸大食品工場と称しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "株式会社に改組し丸大食品株式会社となる",
+      "description": "大阪市大淀区への工場移転とともに株式会社に改組し、商号を丸大食品株式会社としました（登記上の設立は合併会社のものですが、事実上の存続会社である旧丸大食品株式会社の設立は1958年6月10日です）。",
+      "significance": "現在の会社の発足です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "畜肉ハム・ソーセージの製造販売を開始",
+      "description": "畜肉ハム・ソーセージの製造販売を開始しました。",
+      "significance": "主力の畜肉加工品への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "株式額面変更のため丸大食品商事株式会社に吸収合併された後、社名を丸大食品株式会社に改称し、大阪証券取引所市場第二部に上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "東京市場への株式公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "東京・大阪両証券取引所市場第一部に指定",
+      "description": "東京・大阪両証券取引所市場第一部に指定されました。",
+      "significance": "上場市場での地位が高まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "フランクフルト証券取引所に上場",
+      "description": "フランクフルト証券取引所に上場しました（2024年3月に上場廃止）。",
+      "significance": "海外市場への上場の記録です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "株式会社マルシンフーズを買収",
+      "description": "東京都中央区の株式会社マルシンフーズ（現・連結子会社）を買収しました。",
+      "significance": "買収による事業拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "トーラク株式会社を買収",
+      "description": "兵庫県神戸市のトーラク株式会社（現・連結子会社）を買収しました。",
+      "significance": "デザート類などを手がける会社の買収です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "rengo",
+      "relationship": "supplier",
+      "description": "資材等の仕入取引を行っている仕入先です。2026年3月期において同社の株式653,000株を保有しています。同社は2026年3月31日現在、当社の発行済株式（自己株式を除く）の1.26％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kanematsu",
+      "relationship": "supplier",
+      "description": "原材料等の仕入取引を行っている仕入先です。2026年3月期において同社の株式164,000株を保有しています。同社は2026年3月31日現在、当社の発行済株式（自己株式を除く）の4.88％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-shinyaku",
+      "relationship": "supplier",
+      "description": "原材料等の仕入取引を行っている仕入先です。2026年3月期において同社の株式47,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "oug-holdings",
+      "relationship": "business-partner",
+      "description": "同社の連結子会社と原材料等の仕入取引を行っています。2026年3月期において同社の株式115,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kaneka",
+      "relationship": "business-partner",
+      "description": "同社の連結子会社と原材料等の仕入取引を行っています。2026年3月期において同社の株式42,600株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "izumi",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式1,143,780株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "life",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式115,399株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fuji-8278",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式66,429株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aeon-hokkaido",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式75,900株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okuwa",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式58,107株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ministop",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式33,674株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamanaka",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式28,059株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mammy-mart-holding",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式25,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "oomitsu",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式22,369株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "albis",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式22,223株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aeon-kyushu",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式16,460株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "heiwado",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式11,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "eco-s",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式10,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ocean-system",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式10,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "halows",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式6,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kanemi",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式5,578株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "belc",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式4,400株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "gourmet-kineya",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式3,300株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kakiyasu-honten",
+      "relationship": "business-partner",
+      "description": "加工食品等の取引を行っている取引先です。2026年3月期において同社の株式2,978株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "united-super-markets-holdings",
+      "relationship": "business-partner",
+      "description": "同社の連結子会社と加工食品等の取引を行っています。2026年3月期において同社の株式290,233株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "h2o-retailing",
+      "relationship": "business-partner",
+      "description": "同社の連結子会社と加工食品等の取引を行っています。2026年3月期において同社の株式193,667株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "retail-partners",
+      "relationship": "business-partner",
+      "description": "同社の連結子会社と加工食品等の取引を行っています。2026年3月期において同社の株式141,058株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "seven-and-i-holdings",
+      "relationship": "business-partner",
+      "description": "同社の連結子会社と加工食品等の取引を行っています。2026年3月期において同社の株式109,560株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "axial-retailing",
+      "relationship": "business-partner",
+      "description": "同社の連結子会社と加工食品等の取引を行っています。2026年3月期において同社の株式84,448株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "om2-network",
+      "relationship": "business-partner",
+      "description": "同社の連結子会社と加工食品等の取引を行っています。2026年3月期において同社の株式47,757株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "arcs",
+      "relationship": "business-partner",
+      "description": "同社の連結子会社と加工食品等の取引を行っています。2026年3月期において同社の株式34,690株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "valor-holdings",
+      "relationship": "business-partner",
+      "description": "同社の連結子会社と加工食品等の取引を行っています。2026年3月期において同社の株式15,840株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "three-f",
+      "relationship": "business-partner",
+      "description": "同社の連結子会社と加工食品等の取引を行っています。2026年3月期において同社の株式6,050株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "central-forest-group",
+      "relationship": "business-partner",
+      "description": "同社の連結子会社と加工食品等の取引を行っています。2026年3月期において同社の株式3,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "isetan-mitsukoshi-holdings",
+      "relationship": "business-partner",
+      "description": "同社の連結子会社と加工食品等の取引を行っています。2026年3月期において同社の株式2,250株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,11 +662,45 @@
       "publisher": "丸大食品株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD4W.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YD4W",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28"
+  "updatedAt": "2026-11-08",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念として「日々の活動に精一杯の真心を込め、誠意を尽くすことにより、社会に貢献します」を掲げ、未来像として、美味しさと健康を追求し、安全・安心な食品を通してお客様の幸せな食生活に貢献することを掲げています。2026年4月を起点とする中期三ヵ年経営計画（2029年3月31日まで）では、「新たな顧客価値の創造」「収益構造の改革」「事業領域の拡大」「人財の育成」「持続可能な社会への貢献」の5つを基本方針とし、計画最終年度である2029年3月期の連結売上高2,550億円を目標としています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "北海道から九州まで全国11か所に自社工場を持ち、戸田フーズやトーラクなどの製造子会社とあわせて、全国で加工食品を製造する体制を備えています。食肉事業でも丸大ミートやミートサプライなどの子会社が加工・販売を担い、製造から販売までをグループ内で行えることが強みです。",
+        "basis": "【主要な設備の状況】に提出会社の工場11か所（北海道・岩手・新潟・関東・茨城・横須賀・静岡・松阪・高槻・広島・唐津）がいずれも加工食品事業の製造設備として印字され、【事業の内容】に戸田フーズ株式会社・安曇野食品工房株式会社・トーラク株式会社などが加工食品事業を、丸大ミート株式会社・株式会社ミートサプライなどが食肉事業を担うと印字されている。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の約3分の2を加工食品事業が占める構成で、本邦の外部顧客への売上高が連結売上高の90％を超える、国内中心の事業です。",
+        "basis": "【セグメント情報】の外部顧客への売上高（加工食品事業160,500百万円、食肉事業77,763百万円、その他132百万円、連結238,396百万円）と、【関連情報】に本邦の外部顧客への売上高が連結損益計算書の売上高の90％を超えると印字されていることによる。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }
