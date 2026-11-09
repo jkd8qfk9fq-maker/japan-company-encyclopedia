@@ -14,7 +14,7 @@
  */
 import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { downloadDocument, readCsvRows, scrubSecrets } from "../research/edinet.mjs";
+import { downloadDocument, readCsvRows, scrubSecrets, textBlockToText } from "../research/edinet.mjs";
 import { workforceFigures } from "../research/evidence-pack.mjs";
 import { assertMachineWrite } from "./ownership.mjs";
 
@@ -73,6 +73,11 @@ if (probe) {
       console.log([r["要素ID"], r["項目名"], r["コンテキストID"], r["単位"], String(r["値"]).slice(0, 40)].join("\t"));
     }
     console.log(`workforceFigures → ${JSON.stringify(workforceFigures(rows))}`);
+    // The regional and major-customer notes are text blocks; print them as text to see how they are laid out.
+    for (const r of rows.filter((r) => /(Geographic|RelatedInformation|MajorCustomers)\w*TextBlock$/.test(r["要素ID"] ?? "") && /^CurrentYear/.test(r["コンテキストID"] ?? ""))) {
+      console.log(`--- ${r["要素ID"]} ${r["コンテキストID"]}`);
+      console.log(textBlockToText(String(r["値"])).slice(0, 2500));
+    }
   }
   process.exit(0);
 }
