@@ -139,6 +139,35 @@ export function checkProsePolicy(entry) {
     }
   }
 
+  // P0 — the value chain (JCE-038): shape errors go back to the agent in the repair call, so a registration does not
+  // reach finalize with an amount in 百万円 or a row tied to a business that is not there.
+  if (entry?.status?.state !== "figures-only") {
+    const top = new Set((Array.isArray(entry?.businesses) ? entry.businesses : []).map((/** @type {any} */ b) => b?.id));
+    const yen = (/** @type {unknown} */ a) => Number.isSafeInteger(a) && /** @type {number} */ (a) >= 0 && /** @type {number} */ (a) % 1000 === 0;
+    for (const key of ["segmentRevenue", "regionalRevenue"]) {
+      const table = entry?.[key];
+      if (!table) continue;
+      const items = Array.isArray(table.items) ? table.items : [];
+      if (items.length === 0) findings.push({ severity: "error", rule: "value-chain-shape", path: key, message: `${key}.items が空。書けないなら ${key} ごと省く` });
+      items.forEach((/** @type {any} */ item, /** @type {number} */ i) => {
+        if (!yen(item?.amount)) findings.push({ severity: "error", rule: "value-chain-amount", path: `${key}.items[${i}].amount`, message: "金額は円の整数（百万円の印字は ×1,000,000、千円は ×1,000）" });
+        if (key === "segmentRevenue" && !top.has(item?.businessId)) findings.push({ severity: "error", rule: "value-chain-shape", path: `${key}.items[${i}].businessId`, message: `businessId「${item?.businessId}」は最上位の事業の id ではない` });
+      });
+      if (key === "regionalRevenue" && items.filter((/** @type {any} */ i) => i?.domestic === true).length > 1) findings.push({ severity: "error", rule: "value-chain-shape", path: key, message: "domestic: true は日本の行1つだけ" });
+      for (const field of ["fiscalYear", "periodEnd", "label"]) {
+        if (typeof table[field] !== "string" || table[field].trim() === "") findings.push({ severity: "error", rule: "value-chain-shape", path: `${key}.${field}`, message: `${key} には ${field} が要る` });
+      }
+    }
+    (Array.isArray(entry?.businessModel?.suppliers) ? entry.businessModel.suppliers : []).forEach((/** @type {any} */ s, /** @type {number} */ i) => {
+      for (const id of Array.isArray(s?.businessIds) ? s.businessIds : []) {
+        if (!top.has(id)) findings.push({ severity: "error", rule: "value-chain-shape", path: `businessModel.suppliers[${i}].businessIds`, message: `「${id}」は最上位の事業の id ではない` });
+      }
+    });
+    // Not an error: a filing may print no amount per segment, or segments that do not map to the businesses. The
+    // reviewer sees it, and the agent's warnings say why.
+    if (top.size >= 2 && !entry?.segmentRevenue) findings.push({ severity: "review", rule: "value-chain-missing", path: "segmentRevenue", message: "事業が複数あるのに事業別の売上（segmentRevenue）が無い。セグメント注記に印字が無いか確認する" });
+  }
+
   // P1 — the one-sentence descriptions: short, exactly one sentence.
   const sentences = [
     ["description", entry?.description, 90],
