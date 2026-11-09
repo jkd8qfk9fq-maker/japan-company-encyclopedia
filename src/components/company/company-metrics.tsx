@@ -44,9 +44,10 @@ export function CompanyMetrics({ metrics, sources }: { metrics: Metrics; sources
   return (
     <div className="mb-12">
       <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">比較の目安</h3>
-      <dl className="mt-3 grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+      {/* Cells grow to fill their row, so two or four figures leave no empty slot showing the divider colour. */}
+      <dl className="mt-3 flex flex-wrap gap-px overflow-hidden rounded-md border border-border bg-border">
         {items.map((item) => (
-          <div key={item.label} className="bg-card p-4">
+          <div key={item.label} className="min-w-[14rem] flex-1 basis-56 bg-card p-4">
             <dt className="text-xs text-muted-foreground">{item.label}</dt>
             <dd className="figures mt-1 font-serif text-lg font-semibold">{item.value}</dd>
             {item.note && <dd className="mt-1 text-xs leading-5 text-muted-foreground">{item.note}</dd>}
@@ -54,7 +55,8 @@ export function CompanyMetrics({ metrics, sources }: { metrics: Metrics; sources
         ))}
       </dl>
       <p className="mt-2 text-xs leading-5 text-muted-foreground">
-        「計算値」は有価証券報告書に印字された数値から当サイトが計算したものです。給与と勤続年数は提出会社（グループ全体ではない）の値です。
+        「計算値」は有価証券報告書に印字された数値から当サイトが計算したものです。
+        {w && "給与と勤続年数は提出会社（グループ全体ではない）の値です。"}
       </p>
       {sourceIds.length > 0 && <SourceList sources={sources} sourceIds={sourceIds} />}
     </div>
