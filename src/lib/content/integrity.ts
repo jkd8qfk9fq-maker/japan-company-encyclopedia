@@ -145,6 +145,44 @@ export function checkCompany(company: Company, context: ContentContext): string[
     e.push("財務: 確認できない数値（空欄）がある場合、状態は「要確認」にして理由を書きます");
   }
 
+  // JCE-038. The share of each business and the overseas share are computed from these amounts on the page, so
+  // an amount entered in the filing's display unit (百万円) instead of yen would make every share wrong silently.
+  const topLevelIds = new Set(company.businesses.map((b) => b.id));
+  const fiscalYears = new Set(company.financials.map((f) => f.fiscalYear));
+  const yenErrors = (amounts: number[], where: string) =>
+    amounts.some((a) => !Number.isSafeInteger(a) || a % 1_000 !== 0) ? [`${where}: 金額は千円単位の整数（円換算）である必要があります`] : [];
+  const noWikipedia = (sourceIds: string[], where: string) =>
+    sourceIds.some((id) => /wikipedia\.org/i.test(src.find((s) => s.id === id)?.url ?? "")) ? [`${where}: 数値の出典に Wikipedia は使えません（有報だけ）`] : [];
+  for (const supplier of company.businessModel?.suppliers ?? []) {
+    for (const id of supplier.businessIds ?? []) {
+      if (!topLevelIds.has(id)) e.push(`調達先「${supplier.name}」: 事業「${id}」は最上位の事業にありません`);
+    }
+  }
+  if (company.segmentRevenue) {
+    const s = company.segmentRevenue;
+    const where = `事業別の売上「${s.fiscalYear}」`;
+    const ids = s.items.map((i) => i.businessId);
+    if (new Set(ids).size !== ids.length) e.push(`${where}: 同じ事業が重複しています`);
+    for (const id of ids) if (!topLevelIds.has(id)) e.push(`${where}: 事業「${id}」は最上位の事業にありません`);
+    e.push(...yenErrors(s.items.map((i) => i.amount), where), ...citationErrors(s.sourceIds, src, where), ...noWikipedia(s.sourceIds, where));
+  }
+  if (company.regionalRevenue) {
+    const r = company.regionalRevenue;
+    const where = `地域別の売上「${r.fiscalYear}」`;
+    if (r.items.filter((i) => i.domestic).length > 1) e.push(`${where}: 国内（domestic）は1行だけです`);
+    if (new Set(r.items.map((i) => i.region)).size !== r.items.length) e.push(`${where}: 同じ地域が重複しています`);
+    e.push(...yenErrors(r.items.map((i) => i.amount), where), ...citationErrors(r.sourceIds, src, where), ...noWikipedia(r.sourceIds, where));
+  }
+  if (company.workforce) {
+    const w = company.workforce;
+    const where = `従業員の状況「${w.fiscalYear}」`;
+    if (!fiscalYears.has(w.fiscalYear)) e.push(`${where}: 財務にない年度です`);
+    if (w.averageTenureMonths !== null && w.averageTenureYears !== null && !Number.isInteger(w.averageTenureYears)) {
+      e.push(`${where}: 勤続年数を「年・月」で書くときは年を整数にします`);
+    }
+    e.push(...citationErrors(w.sourceIds, src, where), ...noWikipedia(w.sourceIds, where));
+  }
+
   for (const h of company.history) e.push(...citationErrors(h.sourceIds, src, `歴史「${h.year} ${h.title}」`));
 
   if (!figuresOnly && company.industries.filter((r) => r.primary).length !== 1) {

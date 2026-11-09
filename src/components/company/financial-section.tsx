@@ -17,7 +17,8 @@ const STANDARD_NAME: Record<AccountingStandard, string> = {
 /**
  * "財務" — context, not a scorecard. Two figures a beginner can connect to the
  * business they just read about: how much the company sells, and how much of
- * that it keeps. No ratios, no market data, no colour for "good" or "bad".
+ * that it keeps. No market data, no colour for "good" or "bad"; the computed ratios of JCE-038 sit above this
+ * section in CompanyMetrics, labelled as computed.
  */
 export function FinancialSection({
   companyName,

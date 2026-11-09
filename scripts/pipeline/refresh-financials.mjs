@@ -47,6 +47,7 @@ import { dirname, join } from "node:path";
 import { financialsDifferences } from "../research/amendments.mjs";
 import { cacheDir, ensureIndexCache, indexDir, jstToday, scrubSecrets } from "../research/edinet.mjs";
 import { loadState, saveState } from "./company-state.mjs";
+import { segmentRevenueBlock } from "./segment-revenue.mjs";
 import { assertMachineWrite } from "./ownership.mjs";
 import { loadEntries } from "./jobs.mjs";
 import { readPack, rebuildPack } from "./pack.mjs";
@@ -112,7 +113,7 @@ const strip = (/** @type {string} */ s) => s.replace(/\s*\(docID [^)]+\)/, "");
 /**
  * What adding the new filing's year would change. Pure: no file, no process state.
  * @param {{ entry: any, draft: any, pack: any, today: string }} input
- * @returns {{ kind: "hold", reasons: string[] } | { kind: "current" } | { kind: "update", financials: any[], source: any | null, added: any[], dropped: any[] }}
+ * @returns {{ kind: "hold", reasons: string[] } | { kind: "current" } | { kind: "update", financials: any[], source: any | null, added: any[], dropped: any[], workforce: any | null, segmentRevenue: any | null, regionalRevenue: any | null }}
  */
 export function planFinancialsRefresh({ entry, draft, pack, today }) {
   const reasons = [];
@@ -156,7 +157,16 @@ export function planFinancialsRefresh({ entry, draft, pack, today }) {
         ...(/^S[0-9A-Z]{7}$/.test(draft._docID ?? "") ? { docId: draft._docID } : {}),
         ...(added.length > 0 ? { asOf: added.map((/** @type {any} */ r) => r.periodEnd).sort().at(-1) } : {}),
       };
-  return { kind: "update", financials, source, added, dropped };
+  // 従業員の状況 follows the newest filing (JCE-038). An older one is kept only while its year is still in the table;
+  // a year that has left the table would leave it pointing at nothing.
+  const stillInTable = (/** @type {any} */ block) => (block && financials.some((/** @type {any} */ r) => r.fiscalYear === block.fiscalYear) ? block : null);
+  const workforce = draft.workforce ?? stillInTable(entry.workforce);
+  // The two revenue tables (JCE-038) follow the newest filing the same way; segment revenue is matched to the
+  // entry's businesses by the filing's own segment names, and is left out when they no longer match.
+  const newest = [...financials].sort((/** @type {any} */ a, /** @type {any} */ b) => a.periodEnd.localeCompare(b.periodEnd)).at(-1);
+  const segmentRevenue = segmentRevenueBlock(draft.segmentFacts, entry.businesses ?? [], newest, sourceIds[0]) ?? stillInTable(entry.segmentRevenue);
+  const regionalRevenue = draft.regionalRevenue ?? stillInTable(entry.regionalRevenue);
+  return { kind: "update", financials, source, added, dropped, workforce, segmentRevenue, regionalRevenue };
 }
 
 /** `before`/`after` for a Revision: the figures of the years that left and the years that arrived. */
@@ -376,7 +386,13 @@ export function refreshOne(id, { apply, newest, today, retry = false, rehearse =
 
   const next = {
     ...entry,
+    workforce: undefined,
+    segmentRevenue: undefined,
+    regionalRevenue: undefined,
     financials: plan.financials,
+    ...(plan.workforce ? { workforce: plan.workforce } : {}),
+    ...(plan.segmentRevenue ? { segmentRevenue: plan.segmentRevenue } : {}),
+    ...(plan.regionalRevenue ? { regionalRevenue: plan.regionalRevenue } : {}),
     sources: plan.source ? [...entry.sources, plan.source] : entry.sources,
     updatedAt: today,
   };

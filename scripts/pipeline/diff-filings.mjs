@@ -29,7 +29,7 @@ import { sourceIdsIn } from "./update-scope.mjs";
 
 /** The sections of the filing each stage rests on (XBRL element names without the prefix). */
 export const STAGE_SECTIONS = {
-  businessStructure: ["DescriptionOfBusinessTextBlock", "DescriptionOfReportableSegmentsTextBlock", "NotesSegmentInformationEtcConsolidatedFinancialStatementsTextBlock", "NotesSegmentInformationConsolidatedFinancialStatementsIFRSTextBlock", "MajorFacilitiesTextBlock"],
+  businessStructure: ["DescriptionOfBusinessTextBlock", "DescriptionOfReportableSegmentsTextBlock", "NotesSegmentInformationEtcConsolidatedFinancialStatementsTextBlock", "NotesSegmentInformationConsolidatedFinancialStatementsIFRSTextBlock", "MajorFacilitiesTextBlock", "InformationAboutGeographicalAreasTextBlock", "InformationAboutGeographicalAreasIFRSTextBlock"],
   history: ["CompanyHistoryTextBlock"],
   businessModel: ["DescriptionOfBusinessTextBlock", "ManagementAnalysisOfFinancialPositionOperatingResultsAndCashFlowsTextBlock", "BusinessPolicyBusinessEnvironmentIssuesToAddressEtcTextBlock"],
   industry: ["DescriptionOfBusinessTextBlock", "DescriptionOfReportableSegmentsTextBlock"],

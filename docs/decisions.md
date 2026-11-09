@@ -586,3 +586,53 @@ A term may list `aliases` (「切削」 for 切削加工, 「ジェネリック�
 Nineteen terms were added from primary sources (industry associations, the e-Gov text of the laws), recorded in
 docs/research/terms-2026-11-08.md with the words that could not be sourced this round. Adding a term to src/data/terms
 is now all it takes for every page that uses the word to explain it.
+
+### JCE-038 · 2026-11-09 · Accepted (operator) — モノとお金の流れ, comparison figures, and three computed ratios
+
+The operator brought an extraction prompt (a Sankey `sankey_data` of supplier → segment → customer with segment
+shares as weights, and `comparison_metrics`: revenue, 純利益率, 海外売上高比率, 平均年間給与, 平均勤続年数, 従業員数,
+top 3 segments) and a reference image of a value-chain flow with a すべて／モノ／お金 switch and a node detail panel.
+Asked where it conflicted with the invariants, the operator answered (2026-11-09): **allow all three ratios**, **add
+salary and tenure**, **implement the diagram and the pipeline support** now.
+
+- **Invariant 4 amended.** Allowed: each business's share of segment revenue, 純利益率 (net income ÷ revenue of the
+  same year, with the filing's labels as the formula) and 海外売上高比率 (non-Japan rows ÷ all rows of 地域ごとの情報).
+  Computed by code at render time from printed figures, labelled 計算値, never stored, never written by an agent
+  (a ratio typed into prose or data could disagree with the figures beside it). Investment metrics stay banned.
+- **Not taken from the reference, because they would be invented (invariant 1, not negotiable):** 推定営業利益率
+  ranges, 「約75%」, generic explanations such as 「固定費比率が高いため稼働率の維持が必須」, money labels the filing does
+  not support (卸売代金・金融配当), and **link widths** (`links.value` 1–100): no filing prints what a company spends
+  with each kind of supplier or how a segment's revenue splits between its customers. The diagram therefore draws
+  lines without widths; only a business carries a size, from its printed segment revenue.
+- **Data (schema):** `businessModel.suppliers[]` (the filing's own general noun for its procurement, optional
+  `businessIds`), `segmentRevenue` and `regionalRevenue` (yen, as printed in the segment note and 地域ごとの情報),
+  `workforce` (【従業員の状況】 of the 提出会社: headcount, 平均年間給与, 平均勤続年数 as years or years + months). All
+  sourced; Wikipedia is refused as their source. Segment and regional revenue are `detail` (agent maps rows to
+  businesses, `check-prose-figures` matches each amount to the printed note in 百万円・千円・円); workforce is a `fact`,
+  transcribed from the XBRL (`workforceFigures`, evidence-pack) and carried by `draft-entry`, `merge-fragments`,
+  `finalize` and `refresh-financials`. EXTRACTOR_VERSION is not bumped (it would rebuild every pack); packs gain
+  workforce when rebuilt for a new filing.
+- **Page:** a 「モノとお金の流れ」 section after 事業 (`ValueChainFlow`, a Client Component for the switch and the lines;
+  lines are not drawn on phones, where the detail panel lists every tie in words), and 「比較の目安」 above the
+  financial charts. Customers come from each business's `customers`; the business model's list is used only when no
+  business names any, so a company-wide list is never drawn as one segment's buyers. A supplier with no named
+  business points at the company as a whole. With no suppliers the column is replaced by a sentence saying so.
+- **Amended the same day (operator: "目的の完遂までの方法は問いません"; new registrations must include it).** Probes of real
+  filings through the EDINET workflow showed segment external revenue is detail-tagged (three element spellings), so
+  `segmentRevenue` and `regionalRevenue` became **facts transcribed by machine**, not agent writing:
+  `scripts/pipeline/segment-revenue.mjs` matches each tagged segment to a business by the filing's own Japanese
+  segment name (label linkbase) and requires the members to add up to the filing's printed total; regional revenue is
+  read from the note's text and kept only when the regions add up to the printed 合計 and that 合計 equals the
+  consolidated revenue. The pack, the draft, merge-fragments, refresh-financials (every new filing) and the backfill
+  use the same functions; agents write only `businessModel.suppliers`, checked by prose-policy in the repair loop.
+  Existing entries are filled by a hand-started job of the one EDINET workflow (`backfill_workforce` input,
+  `backfill-value-chain.mjs`, pull request into the branch it runs on); no new workflow and no second detector.
+- **Filled (2026-11-09, backfill run of the EDINET workflow, merged by hand because the repository does not let
+  Actions open pull requests):** of 618 published entries, 605 have 従業員の状況, 417 segment revenue, 50 regional
+  revenue. The rest are left out by the checks, not approximated: segments whose names match no business, US GAAP
+  filers (no tags), eight segment tables wider than the revenue line they would sit beside (第一生命, retailers and
+  banks whose segments include other income), regional tables that are omitted (domestic ≥ 90%), transposed
+  (味の素) or two-level. **Suppliers** are filled only by the writing agent, at registration or an explanation update.
+- **Kept through every later write:** refresh-financials replaces all three with the newest filing's; merge-fragments
+  keeps a registered entry's while its year and businesses still fit (a draft from an older pack has none).
+- No comparison page was built (JCE-017's "no compare tool" stands until asked).

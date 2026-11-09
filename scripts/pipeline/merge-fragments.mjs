@@ -25,6 +25,7 @@ import { join } from "node:path";
 import { cacheDir } from "../research/edinet.mjs";
 import { fragmentFiles, loadState } from "./company-state.mjs";
 import { dedupeGaps, normalizeGap, parseLegacyTaxonomyNote } from "./taxonomy-gaps.mjs";
+import { segmentRevenueBlock } from "./segment-revenue.mjs";
 
 /** Which top-level entry keys each agent stage is allowed to write. */
 export const STAGE_FIELDS = {
@@ -105,6 +106,8 @@ export function mergeEntry(companyId) {
     businesses: [],
     businessModel: null,
     financials: draft.financials,
+    // 従業員の状況 is transcribed from the XBRL like the five-year table (JCE-038); a draft from an older pack has none.
+    ...(draft.workforce ? { workforce: draft.workforce } : {}),
     history: [],
     relatedCompanies: [],
     sources: [],
@@ -193,6 +196,28 @@ export function mergeEntry(companyId) {
   // the correct value for an unfinished figures-only entry, not a bug.
   for (const key of ["shortNameEn", "businessModel"]) {
     if (entry[key] === null) delete entry[key];
+  }
+
+  // JCE-038: the tables are transcribed, not written — regional revenue was settled in the draft, segment revenue is
+  // matched here to the businesses the agent just wrote, by the filing's own segment names.
+  const newest = [...entry.financials].sort((a, b) => a.periodEnd.localeCompare(b.periodEnd)).at(-1);
+  if (draft.regionalRevenue) entry.regionalRevenue = draft.regionalRevenue;
+  const segments = newest && segmentRevenueBlock(draft.segmentFacts, entry.businesses, newest, newest.sourceIds[0]);
+  if (segments) entry.segmentRevenue = segments;
+  // A draft from a pack built before these existed has none of them, and a promotion or an explanation update would
+  // then drop what the backfill (backfill-value-chain.mjs) already gave the registered entry. Kept while they still
+  // fit: their year is in the table, and every business they name is still there.
+  const registeredPath = join(process.cwd(), "src/data/companies", `${companyId}.json`);
+  if (existsSync(registeredPath)) {
+    const registered = JSON.parse(readFileSync(registeredPath, "utf8"));
+    const years = new Set(entry.financials.map((f) => f.fiscalYear));
+    const ids = new Set(entry.businesses.map((b) => b.id));
+    for (const key of ["workforce", "segmentRevenue", "regionalRevenue"]) {
+      const kept = registered[key];
+      if (entry[key] || !kept || !years.has(kept.fiscalYear)) continue;
+      if (key === "segmentRevenue" && !kept.items.every((i) => ids.has(i.businessId))) continue;
+      entry[key] = kept;
+    }
   }
 
   // A company whose fiscal year end changed inside the five-year window has year labels the pack

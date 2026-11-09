@@ -160,3 +160,17 @@ describe("candidates for links, found by program", () => {
     expect(findRelatedCandidates("取引先は海外の会社だけです。", entries, { selfId: "self" })).toEqual([]);
   });
 });
+
+describe("the value chain (JCE-038)", () => {
+  const businesses = [{ id: "steel", name: "鉄鋼", description: "鉄鋼を売ります。" }];
+  const withSuppliers = (suppliers: object[]) => entry({ businesses, businessModel: { ...entry().businessModel, suppliers } });
+
+  it("accepts a supplier in the filing's words, tied to a business that is there", () => {
+    expect(errorsOf(checkProsePolicy(withSuppliers([{ name: "鉄鉱石の仕入先", description: "鉄鉱石を仕入れます。", businessIds: ["steel"] }])))).toEqual([]);
+  });
+
+  it("sends back a supplier tied to a business that is not there, or without a description", () => {
+    expect(rules(checkProsePolicy(withSuppliers([{ name: "原材料の仕入先", description: "原材料を仕入れます。", businessIds: ["copper"] }])), "error")).toContain("value-chain-shape");
+    expect(rules(checkProsePolicy(withSuppliers([{ name: "原材料の仕入先" }])), "error")).toContain("value-chain-shape");
+  });
+});

@@ -78,12 +78,66 @@ export type BusinessModelStep = {
   description: string;
 };
 
+/**
+ * Where the company buys what it makes and sells — the procurement side of the value chain (JCE-038).
+ *
+ * `name` is a general noun the filing itself uses (「部品メーカー」「原材料の仕入先」), never a category inferred
+ * from the industry: a filing that does not describe its procurement gets no suppliers, and the diagram then
+ * starts at the company. `businessIds` names the top-level businesses the filing ties the supply to; without it
+ * the supply is drawn into the company as a whole, because saying which segment it feeds would be a guess.
+ */
+export type Supplier = {
+  name: string;
+  description: string;
+  businessIds?: string[];
+};
+
 export type BusinessModel = Sourced & {
   description: string;
   products: string[];
   customers: string[];
   revenueSources: string[];
   flow: BusinessModelStep[];
+  suppliers?: Supplier[];
+};
+
+/**
+ * One year's revenue by top-level business, as the segment note prints it (外部顧客への売上高), in yen (JCE-038).
+ *
+ * The amounts are the filing's; the share of each business is computed from them on the page, never stored,
+ * so a share can never disagree with the amounts it came from.
+ */
+export type SegmentRevenue = Sourced & {
+  fiscalYear: string;
+  periodEnd: string;
+  /** The XBRL item the amounts are tagged with (「外部顧客への売上高」「外部顧客への売上収益」), which measures the revenue line. */
+  label: string;
+  items: { businessId: string; amount: number }[];
+};
+
+/**
+ * One year's revenue by region, as 【関連情報】（地域ごとの情報） prints it, in yen (JCE-038).
+ * `domestic` marks the 日本 row; the overseas share is every other row over the total, computed on the page.
+ */
+export type RegionalRevenue = Sourced & {
+  fiscalYear: string;
+  periodEnd: string;
+  label: string;
+  items: { region: string; domestic: boolean; amount: number }[];
+};
+
+/**
+ * 【従業員の状況】（提出会社の状況） as printed (JCE-038). The filing prints these for the filing company alone, not
+ * the group — for a holding company that is the head office's few staff — so the page always says 提出会社.
+ * Tenure is kept as the filing writes it: 「15.3年」 is years 15.3, 「15年3ヶ月」 is years 15 and months 3.
+ */
+export type Workforce = Sourced & {
+  fiscalYear: string;
+  asOf: string;
+  employees: number | null;
+  averageAnnualSalary: number | null;
+  averageTenureYears: number | null;
+  averageTenureMonths: number | null;
 };
 
 export type AccountingStandard = "ifrs" | "jgaap" | "usgaap";
@@ -297,6 +351,9 @@ export type Company = {
   perspectives?: Perspectives;
 
   financials: FinancialRecord[];
+  segmentRevenue?: SegmentRevenue;
+  regionalRevenue?: RegionalRevenue;
+  workforce?: Workforce;
   history: HistoryEvent[];
 
   relatedCompanies: RelatedCompany[];

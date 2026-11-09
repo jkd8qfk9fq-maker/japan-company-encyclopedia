@@ -141,3 +141,46 @@ describe("perspectives", () => {
     expect(checkCompany(empty as Company, context).join()).toContain("業界内の位置づけ");
   });
 });
+
+describe("value chain and comparison data (JCE-038)", () => {
+  const yuho = { id: "yuho-2026", title: "有価証券報告書", publisher: "アクメ株式会社", url: "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100AAAA.pdf", accessedAt: "2026-10-19" };
+  const wiki = { id: "wikipedia", title: "Wikipedia「アクメ」", publisher: "Wikipedia", url: "https://ja.wikipedia.org/wiki/x", accessedAt: "2026-10-19" };
+  const year = {
+    fiscalYear: "2026年3月期", periodEnd: "2026-03-31", revenue: 1_000_000_000, revenueLabel: "売上高", profit: null, profitLabel: null,
+    netIncome: 100_000_000, netIncomeLabel: "当期純利益", totalAssets: null, totalAssetsLabel: null, netAssets: null, netAssetsLabel: null,
+    employees: 10, currency: "JPY", accountingStandard: "jgaap", sourceIds: ["yuho-2026"],
+  };
+  const base = {
+    id: "acme", code: "1001", name: "アクメ", officialName: "アクメ株式会社", description: "鉄を売る会社です。",
+    listings: [{ exchange: "tse" }], industries: [{ industryId: "trading", primary: true }],
+    businesses: [{ id: "steel", name: "鉄鋼", description: "鉄鋼を売ります。", sourceIds: ["yuho-2026"] }],
+    financials: [year], history: [], relatedCompanies: [], sources: [yuho, wiki], status: { state: "published" }, updatedAt: "2026-10-19",
+  };
+  const context = { companyIds: new Set(["acme"]), termIds: new Set<string>(), featureIds: new Set<string>() };
+  const segmentRevenue = { fiscalYear: "2026年3月期", periodEnd: "2026-03-31", label: "外部顧客への売上高", items: [{ businessId: "steel", amount: 1_000_000_000 }], sourceIds: ["yuho-2026"] };
+  const workforce = { fiscalYear: "2026年3月期", asOf: "2026-03-31", employees: 8, averageAnnualSalary: 6_500_000, averageTenureYears: 12, averageTenureMonths: 4, sourceIds: ["yuho-2026"] };
+  const errors = (over: object) => checkCompany({ ...base, ...over } as unknown as Company, context);
+
+  it("accept sourced segment revenue and workforce", () => {
+    const entry = { ...base, segmentRevenue, workforce };
+    expect(companySchema.safeParse(entry).success).toBe(true);
+    expect(errors({ segmentRevenue, workforce })).toEqual([]);
+  });
+
+  it("refuse an amount in the display unit, an unknown business, and Wikipedia as the source", () => {
+    expect(errors({ segmentRevenue: { ...segmentRevenue, items: [{ businessId: "steel", amount: 1_234 }] } }).join()).toContain("千円単位");
+    expect(errors({ segmentRevenue: { ...segmentRevenue, items: [{ businessId: "copper", amount: 1_000 }] } }).join()).toContain("copper");
+    expect(errors({ segmentRevenue: { ...segmentRevenue, sourceIds: ["wikipedia"] } }).join()).toContain("Wikipedia");
+  });
+
+  it("refuse two domestic rows, a supplier tied to an unknown business, and workforce for a year not in the table", () => {
+    const regionalRevenue = {
+      fiscalYear: "2026年3月期", periodEnd: "2026-03-31", label: "売上高", sourceIds: ["yuho-2026"],
+      items: [{ region: "日本", domestic: true, amount: 1_000 }, { region: "国内", domestic: true, amount: 2_000 }],
+    };
+    expect(errors({ regionalRevenue }).join()).toContain("国内（domestic）は1行だけ");
+    const businessModel = { description: "鉄を売る。", products: [], customers: [], revenueSources: [], flow: [], sourceIds: ["yuho-2026"], suppliers: [{ name: "鉄鉱石の仕入先", description: "鉄鉱石を仕入れる。", businessIds: ["copper"] }] };
+    expect(errors({ businessModel }).join()).toContain("copper");
+    expect(errors({ workforce: { ...workforce, fiscalYear: "2020年3月期" } }).join()).toContain("財務にない年度");
+  });
+});

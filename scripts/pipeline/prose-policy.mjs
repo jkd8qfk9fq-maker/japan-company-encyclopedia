@@ -139,6 +139,20 @@ export function checkProsePolicy(entry) {
     }
   }
 
+  // P0 — the value chain (JCE-038): the one part an agent writes is the suppliers; a supplier tied to a business
+  // that is not there goes back to the agent in the repair call. The revenue tables are transcribed by machine.
+  if (entry?.status?.state !== "figures-only") {
+    const top = new Set((Array.isArray(entry?.businesses) ? entry.businesses : []).map((/** @type {any} */ b) => b?.id));
+    (Array.isArray(entry?.businessModel?.suppliers) ? entry.businessModel.suppliers : []).forEach((/** @type {any} */ s, /** @type {number} */ i) => {
+      for (const key of ["name", "description"]) {
+        if (typeof s?.[key] !== "string" || s[key].trim() === "") findings.push({ severity: "error", rule: "value-chain-shape", path: `businessModel.suppliers[${i}].${key}`, message: `調達先の各行には ${key} が要る` });
+      }
+      for (const id of Array.isArray(s?.businessIds) ? s.businessIds : []) {
+        if (!top.has(id)) findings.push({ severity: "error", rule: "value-chain-shape", path: `businessModel.suppliers[${i}].businessIds`, message: `「${id}」は最上位の事業の id ではない` });
+      }
+    });
+  }
+
   // P1 — the one-sentence descriptions: short, exactly one sentence.
   const sentences = [
     ["description", entry?.description, 90],

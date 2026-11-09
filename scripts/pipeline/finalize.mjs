@@ -180,6 +180,8 @@ function figuresOnlyEntry() {
     industries: [],
     businesses: [],
     financials: draft.financials,
+    ...(draft.workforce ? { workforce: draft.workforce } : {}),
+    ...(draft.regionalRevenue ? { regionalRevenue: draft.regionalRevenue } : {}),
     history: [],
     relatedCompanies: [],
     sources: [
@@ -522,7 +524,10 @@ function registration(entry, validation, merged) {
     const changed = updating ? changedFields(existing, entry).filter((f) => f !== "updatedAt") : [];
     if (updating) {
       const scope = updateScope(id);
-      const outside = changed.filter((f) => !scope?.fields.has(f) && !["sources", "status"].includes(f) && !(f === "financials" && scope?.notes));
+      // The JCE-038 facts are transcribed from the filing the update rests on and checked by machine, like the
+      // sources; an update that brings them up to that filing is not writing outside its scope.
+      const transcribed = ["workforce", "segmentRevenue", "regionalRevenue"];
+      const outside = changed.filter((f) => !scope?.fields.has(f) && !["sources", "status", ...transcribed].includes(f) && !(f === "financials" && scope?.notes));
       if (outside.length > 0) throw new Error(`更新の範囲の外が変わっています（${outside.join(", ")}）`);
     }
     const revision = updating
