@@ -21,7 +21,12 @@ import { downloadDocument } from "../research/edinet.mjs";
  * RevenueFromExternalCustomersIFRS (アイシン) and SalesToExternalCustomersIFRS (AGC).
  */
 const ELEMENT = /^(?:jpcrp_cor|jpigp_cor):(?:Revenues?From|SalesTo)ExternalCustomers(?:IFRS)?$/;
+/**
+ * The taxonomy's own その他 members: outside the reportable segments (most filers), or inside them (愛知製鋼 FY2025
+ * tags its その他 as OtherReportableSegmentsMember, counted in the reportable total).
+ */
 const OTHER = "OperatingSegmentsNotIncludedInReportableSegmentsAndOtherRevenueGeneratingBusinessActivitiesMember";
+const OTHER_REPORTABLE = "OtherReportableSegmentsMember";
 /** A filer's own member in a context id: `jpcrp030000-asr_E01163-000` + `ConstructionAnd…Member`. */
 const FILER_MEMBER = /^(jpcrp\d{6}-[a-z]{3}_[A-Z]\d{5}-\d{3})([A-Za-z0-9]+Member)$/;
 
@@ -57,12 +62,12 @@ export function segmentRevenueFacts(rows) {
     const items = [];
     for (const context of byContext.keys()) {
       const match = FILER_MEMBER.exec(context);
-      if (!match && context !== OTHER) continue;
+      if (!match && context !== OTHER && context !== OTHER_REPORTABLE) continue;
       const amount = one(context);
       if (amount === null) return null; // tagged twice with different values: no table rather than a pick
-      items.push({ member: match ? `${match[1]}_${match[2]}` : OTHER, other: !match, amount });
+      items.push({ member: match ? `${match[1]}_${match[2]}` : context, other: !match, amount });
     }
-    const reportable = items.filter((i) => !i.other);
+    const reportable = items.filter((i) => !i.other || i.member === OTHER_REPORTABLE);
     if (reportable.length === 0) return null;
     // Checked against whichever total the filing prints: the reportable segments' (A&Aマテリアル), or the one that
     // includes その他 (AGC prints only that). Each figure is rounded to the note's unit, so the members may miss the
@@ -167,9 +172,10 @@ const UNIT = { 百万円: 1_000_000, 千円: 1_000, 円: 1 };
 export function regionalRevenueFromText(text, revenueYen) {
   if (!text || !revenueYen) return null;
   const flat = text.normalize("NFKC").replace(/\s+/g, "");
-  // The J-GAAP note prints the prior year's 関連情報 first; the current year's table is the last one.
-  const heading = Math.max(flat.lastIndexOf("地域ごとの情報"), flat.lastIndexOf("地域に関する情報"), flat.lastIndexOf("地域別"));
-  const from = heading === -1 ? 0 : heading;
+  // The first heading: revenue comes before 非流動資産 in the note (AGC's says 「地域別」 for both). The J-GAAP note's
+  // prior-year table is cut off before this is called (regionalNoteOf starts at the last 「地域ごとの情報」).
+  const headings = ["地域ごとの情報", "地域に関する情報", "地域別"].map((h) => flat.indexOf(h)).filter((i) => i !== -1);
+  const from = headings.length > 0 ? Math.min(...headings) : 0;
   const unitMatch = /単位:?(百万円|千円|円)/.exec(flat.slice(from));
   if (!unitMatch) return null;
   const unit = UNIT[/** @type {keyof typeof UNIT} */ (unitMatch[1])];

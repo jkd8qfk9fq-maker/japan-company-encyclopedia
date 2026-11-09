@@ -108,7 +108,8 @@ describe("segmentRevenueFacts — AGC's IFRS spelling", () => {
 describe("regionalRevenueFromText", () => {
   // As EDINET's CSV gives アイシン's FY2025 note (probe of 2026-11-09).
   const aisin = "(4）地域に関する情報①　外部顧客に対する売上収益   （単位：百万円） 　前連結会計年度（自　2024年４月１日　　至　2025年３月31日）　当連結会計年度（自　2025年４月１日　　至　2026年３月31日）日本2,175,2162,316,889米国839,538941,282中国639,548588,382その他1,241,8021,271,209合計4,896,1045,117,764（注）　売上収益は顧客の所在地を基礎としています。 ②　非流動資産   （単位：百万円） 前連結会計年度（2025年３月31日）当連結会計年度（2026年３月31日）日本923,870890,313合計1,581,6911,599,420";
-  const agc = "（4）地域別セグメント　各年度の売上高の地域別内訳は以下のとおりであります。（単位：百万円） 前連結会計年度（自　2024年1月1日至　2024年12月31日）当連結会計年度（自　2025年1月1日至　2025年12月31日）日本649,856652,144アジア668,218646,856アメリカ256,889244,006ヨーロッパ492,639515,825合計2,067,6032,058,832（注）　売上高は、各拠点の所在地によっております。";
+  // AGC's note as EDINET gives it: 「地域別」 heads the non-current assets too, after the revenue table.
+  const agc = "（4）地域別セグメント　各年度の売上高の地域別内訳は以下のとおりであります。（単位：百万円） 前連結会計年度（自　2024年1月1日至　2024年12月31日）当連結会計年度（自　2025年1月1日至　2025年12月31日）日本649,856652,144アジア668,218646,856アメリカ256,889244,006ヨーロッパ492,639515,825合計2,067,6032,058,832（注）　売上高は、各拠点の所在地によっております。 　各年度の非流動資産の地域別内訳は以下のとおりであります。（単位：百万円） 前連結会計年度末（2024年12月31日）当連結会計年度末（2025年12月31日）日本464,705533,869アジア781,918775,248アメリカ83,38476,808ヨーロッパ336,716388,243合計1,666,7241,774,169";
 
   it("reads the current year's column and marks 日本", () => {
     expect(regionalRevenueFromText(aisin, 5_117_764_000_000)).toEqual({
@@ -128,5 +129,24 @@ describe("regionalRevenueFromText", () => {
 
   it("returns nothing when the note omits the table", () => {
     expect(regionalRevenueFromText("本邦の外部顧客への売上高が連結損益計算書の売上高の90％を超えるため、地域ごとの情報の記載を省略しております。", 1_000_000_000)).toBeNull();
+  });
+});
+
+describe("segmentRevenueFacts — その他 inside the reportable segments (愛知製鋼)", () => {
+  const A = "jpcrp030000-asr_E01234-000";
+  const r = (member: string, value: string) => ({ 要素ID: "jpigp_cor:RevenueFromExternalCustomersIFRS", 項目名: "外部顧客への売上収益（IFRS）", コンテキストID: `CurrentYearDuration_${member}`, 単位: "円", 値: value });
+  it("counts OtherReportableSegmentsMember in the reportable total and names it その他", () => {
+    const rows = [
+      r(`${A}HaganeCompanyReportableSegmentMember`, "105567000000"),
+      r(`${A}StainlessCompanyReportableSegmentMember`, "38897000000"),
+      r(`${A}KitaeruCompanyReportableSegmentMember`, "134823000000"),
+      r(`${A}SmartCompanyReportableSegmentMember`, "22107000000"),
+      r("OtherReportableSegmentsMember", "2945000000"),
+      r("ReportableSegmentsMember", "304341000000"),
+    ];
+    const facts = segmentRevenueFacts(rows)!;
+    expect(facts.items).toHaveLength(5);
+    const mapped = mapSegmentsToBusinesses(facts, new Map(), [{ id: "other", name: "その他" }]);
+    expect(mapped).toHaveProperty("problem"); // the four companies have no label here: nothing is guessed
   });
 });
