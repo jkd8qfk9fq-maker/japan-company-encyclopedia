@@ -617,6 +617,16 @@ salary and tenure**, **implement the diagram and the pipeline support** now.
   financial charts. Customers come from each business's `customers`; the business model's list is used only when no
   business names any, so a company-wide list is never drawn as one segment's buyers. A supplier with no named
   business points at the company as a whole. With no suppliers the column is replaced by a sentence saying so.
+- **Amended the same day (operator: "目的の完遂までの方法は問いません"; new registrations must include it).** Probes of real
+  filings through the EDINET workflow showed segment external revenue is detail-tagged (three element spellings), so
+  `segmentRevenue` and `regionalRevenue` became **facts transcribed by machine**, not agent writing:
+  `scripts/pipeline/segment-revenue.mjs` matches each tagged segment to a business by the filing's own Japanese
+  segment name (label linkbase) and requires the members to add up to the filing's printed total; regional revenue is
+  read from the note's text and kept only when the regions add up to the printed 合計 and that 合計 equals the
+  consolidated revenue. The pack, the draft, merge-fragments, refresh-financials (every new filing) and the backfill
+  use the same functions; agents write only `businessModel.suppliers`, checked by prose-policy in the repair loop.
+  Existing entries are filled by a hand-started job of the one EDINET workflow (`backfill_workforce` input,
+  `backfill-value-chain.mjs`, pull request into the branch it runs on); no new workflow and no second detector.
 - **Not done in this session:** filling the new fields. EDINET is not reachable from the cloud session, so no
   existing entry has suppliers, segment or regional revenue, or workforce yet; the diagram draws from the existing
   `businesses` / `customers` for every published entry, and the new parts appear as entries are registered or
