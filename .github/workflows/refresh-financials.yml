@@ -42,6 +42,16 @@ on:
         required: false
         type: string
         default: "150"
+      backfill_workforce:
+        description: "Instead of detection: add 従業員の状況 (JCE-038) to entries without it, from the filing each already cites, and open a pull request into the branch this runs on"
+        required: false
+        type: choice
+        options: ["", "published", "all"]
+        default: ""
+      probe:
+        description: "Instead of detection: print the XBRL rows of these companies' filings that the value chain reads (comma-separated ids; writes nothing)"
+        required: false
+        type: string
 
 # The workflow's default: read only. Only the propose job raises its own, and only what a pull request needs.
 permissions:
@@ -53,6 +63,8 @@ concurrency:
 
 jobs:
   detect:
+    # A backfill or a probe is a separate, hand-started run; it does not also detect.
+    if: github.event_name == 'schedule' || (inputs.backfill_workforce == '' && inputs.probe == '')
     runs-on: ubuntu-latest
     timeout-minutes: 60
     outputs:
@@ -239,3 +251,67 @@ jobs:
             echo "::error::The amendment audit could not read every day since the last check (see out/amendment-summary.md); the next run continues from where it stopped."
             exit 1
           fi
+
+  # Hand-started only (JCE-038). Reads the filing each entry's newest year already cites — no new filing — so it is not a
+  # second detector; it fills a field entries registered before 2026-11-09 lack. Same rules as propose: a new branch,
+  # the integrity suite and the type check, nothing outside src/data, a pull request a person merges.
+  backfill:
+    if: github.event_name == 'workflow_dispatch' && (inputs.backfill_workforce != '' || inputs.probe != '')
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    permissions:
+      contents: write
+      pull-requests: write
+    env:
+      EDINET_API_KEY: ${{ secrets.EDINET_API_KEY }}
+      RESEARCH_CACHE: ${{ github.workspace }}/.cache/edinet
+      RESEARCH_INDEX_CACHE: ${{ github.workspace }}/.cache/edinet/index
+      TIER: ${{ inputs.backfill_workforce }}
+      PROBE: ${{ inputs.probe }}
+      LIMIT: ${{ inputs.limit || '150' }}
+      BASE: ${{ github.ref_name }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: npm ci
+
+      - name: Probe
+        if: env.PROBE != ''
+        run: node scripts/pipeline/backfill-workforce.mjs --probe "$PROBE"
+
+      - name: Add 従業員の状況
+        if: env.TIER != ''
+        run: |
+          mkdir -p out
+          node scripts/pipeline/backfill-workforce.mjs --tier "$TIER" --limit "$LIMIT" --write --summary out/summary.md
+
+      - name: Check the result
+        if: env.TIER != ''
+        run: |
+          npx tsc --noEmit -p .
+          npx vitest run tests/data-integrity.test.ts
+          outside=$(git status --porcelain | grep -v ' src/data/companies/' || true)
+          if [ -n "$outside" ]; then
+            echo "::error::changes outside the allowed data: $outside"
+            exit 1
+          fi
+
+      - name: Open a pull request
+        if: env.TIER != ''
+        run: |
+          cat out/summary.md >> "$GITHUB_STEP_SUMMARY"
+          if [ -z "$(git status --porcelain src/data)" ]; then exit 0; fi
+          branch="auto/workforce-$(date -u +%Y-%m-%d)-${{ github.run_id }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add src/data/companies
+          git commit -m "従業員の状況（提出会社）を追加（JCE-038）" -m "Transcribed by backfill-workforce.mjs from the filing each entry already cites; checked by the integrity suite and the type check."
+          git push origin "HEAD:refs/heads/${branch}"
+          gh pr create --base "$BASE" --head "$branch" --title "従業員の状況（提出会社）の追加" --body-file out/summary.md
