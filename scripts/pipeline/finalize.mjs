@@ -180,6 +180,7 @@ function figuresOnlyEntry() {
     industries: [],
     businesses: [],
     financials: draft.financials,
+    ...(draft.workforce ? { workforce: draft.workforce } : {}),
     history: [],
     relatedCompanies: [],
     sources: [

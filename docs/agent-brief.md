@@ -29,7 +29,7 @@
 
 | 工程 | `data` に書けるキー |
 |---|---|
-| businessStructure | `businesses`, `name`, `shortNameEn`, `listings` |
+| businessStructure | `businesses`, `name`, `shortNameEn`, `listings`, `segmentRevenue`, `regionalRevenue` |
 | history | `history` |
 | businessModel | `businessModel`, `description`, `financialNotes`, `perspectives`（4つとも `data` 直下。`perspectives` を `businessModel` の中に入れるとスキーマが拒否する） |
 | industry | `industries` |
@@ -61,6 +61,12 @@
 - 拠点・設備と事業の対応は有報のセグメント欄どおり。複数区分が連記された行はどの事業にも結びつけない。図が読めないときは推測しない。
 - **沿革**: title に `[[company:…]]` を使わない。年月のセルが2つ以上続けて印字され事象文と分かれている崩れた表は、年月（「〃」も1つ）と事象の数が同じなら行順で対応づけ（`warnings` に記録）、違えば他の節で日付を裏付けられる行だけを使う。裏付けの無い行は落として `warnings` に列挙。
 - **表**: 値がヘッダーより多いときは内数（「内、米国」）の列を疑う。合計と数百万円ずれるのは有報の丸めで、印字の合計をそのまま引用する。
+- **バリューチェーン（JCE-038）**: 図は 調達先 → 事業 → 顧客。事業は `businesses`、顧客は各事業の `customers` から機械が描く。足すのは次の3つだけ。どれも書けなければ省く（省いた理由を `warnings` に1行）。
+  - `businessModel.suppliers[]`（businessModel 工程）: `{ "name", "description", "businessIds"? }`。`name` は**有報が自社の調達について使う一般名詞**（「部品メーカー」「原材料の仕入先」「協力会社」）。業種から推した調達先、取引先の社名、有報が調達に触れていない会社の調達先は書かない。`businessIds` は有報がその調達をどの事業のものと書いているときだけ（最上位の事業の id）。出典は `businessModel.sourceIds`。
+  - `segmentRevenue`（businessStructure 工程）: セグメント注記の当期の「外部顧客への売上高」（IFRS は「外部顧客からの売上収益」など印字どおり）。`{ "fiscalYear", "periodEnd", "label": "<行の印字>", "items": [{ "businessId", "amount" }], "sourceIds", "locator" }`。`amount` は**円の整数**（百万円の印字なら ×1,000,000、千円なら ×1,000。丸めない）。最上位の事業と1対1に対応する行だけ。調整額・セグメント間の行は入れない。対応がつかなければ書かない。
+  - `regionalRevenue`（businessStructure 工程）: 【関連情報】（地域ごとの情報）の当期の売上高。`items: [{ "region": "<印字の地域名>", "domestic": <日本の行だけ true>, "amount" }]`、他は `segmentRevenue` と同じ形。日本の行が無い・地域の表が無いときは書かない。
+  - 比率（構成比・純利益率・海外売上高比率）は**書かない**。ページが印字の金額から計算する。推定・概算の値（「約」「〜程度」）は数値欄にも本文にも書かない。
+  - `check-prose-figures` が `amount` を百万円・千円・円のいずれかで有報の本文と照合する。
 - **戦略と強み**（`data.perspectives`。`businessModel` の外、任意）: `strategy` / `competitiveAdvantage` / `industryPosition`。`disclosed`（会社自身の説明の要約。`text`・`asOf`=有報の提出日・`sourceIds`・`locator`）と `analysis`（有報の事実から読めることだけ。`text`・`basis`・`asOf`・`sourceIds`。評価・予想はしない）を混ぜない。書けなければ省く。リンク記法は使えない。
 
 ## 5. 業界（`industries`）

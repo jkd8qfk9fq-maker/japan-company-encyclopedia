@@ -33,11 +33,14 @@ variables, and never reference them in the application. Decision recorded in
    anything that contradicts the filing (operator decision 2026-10-30, `docs/decisions.md` JCE-030). Other
    aggregator sites are not sources.
 4. **Not a brokerage.** No stock price, PER, PBR, ROE, ROA, dividend yield, technical indicators,
-   price targets or recommendations, and no ratio computed from the figures. The financial section shows the
-   filing's own five-year summary as printed — revenue, the profit line the filing prints between revenue and net
-   income (with its label), net income, total assets, net assets, employees (operator's request, 2026-09-21,
-   commit "Add 利益・総資産・純資産・従業員数 to every entry"). **Prose** cites revenue and net income only
-   (`docs/agent-brief.md`, checked by `scripts/pipeline/prose-policy.mjs`).
+   price targets or recommendations. The financial section shows the filing's own five-year summary as printed —
+   revenue, the profit line the filing prints between revenue and net income (with its label), net income, total
+   assets, net assets, employees (operator's request, 2026-09-21, commit "Add 利益・総資産・純資産・従業員数 to every
+   entry"). **Three ratios are allowed** (operator decision 2026-11-09, `docs/decisions.md` JCE-038): each business's
+   share of segment revenue, 純利益率 and 海外売上高比率 — computed by code on the page from printed figures of one
+   year (`src/lib/company-metrics.ts`, `src/lib/value-chain.ts`), labelled 計算値 with their formula, never stored,
+   never written by hand or by an agent, never estimated. 平均年間給与・平均勤続年数 (提出会社) are shown as printed.
+   **Prose** cites revenue and net income only (`docs/agent-brief.md`, checked by `scripts/pipeline/prose-policy.mjs`).
 5. **Users never edit content.** They can report errors. Corrections go through admin and leave a
    `Revision`.
 6. **kebab-case for every external name**: file names, folder names, route segments, data ids,
@@ -116,7 +119,8 @@ hand-edit JSON for a factual correction without also writing a Revision file; th
 entry's data by `src/components/company/company-view.tsx` — no per-company layout, no per-company step at registration.
 What a new entry needs for the page to be full is ordinary, sourced data: `businesses` (with `products`) for the structure
 and its markers, `businessModel.flow` for the flow, `financials` for the key facts and chart, `history` for the timeline,
-and `relatedCompanies` — `supplier` / `customer` wherever the filing states who sells to whom, because only those draw the
+`businessModel.suppliers`, `segmentRevenue` and `regionalRevenue` for the モノとお金の流れ diagram and the comparison
+figures (JCE-038; `workforce` is transcribed mechanically), and `relatedCompanies` — `supplier` / `customer` wherever the filing states who sells to whom, because only those draw the
 arrows on the connection map and the lines on the industry map (the 産業マップ tab of `/industries`). A section without data is not drawn;
 never add a fact to make one appear. No photographs on company pages. Industries carry Unsplash / Pexels photographs:
 one per industry (its 仕組み tab, and as a thumbnail wherever the industry is listed), one per category of a researched

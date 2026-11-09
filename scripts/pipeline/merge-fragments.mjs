@@ -32,7 +32,9 @@ export const STAGE_FIELDS = {
   // the three identity fields that need judgement rather than transcription: the
   // common display name, the hero wordmark, and which market segment the filing
   // actually states (it often names only the exchange).
-  businessStructure: ["businesses", "name", "shortNameEn", "listings"],
+  // segmentRevenue / regionalRevenue (JCE-038): which printed segment row is which business needs the same judgement
+  // as the structure itself; the amounts are checked against the printed note by check-prose-figures.
+  businessStructure: ["businesses", "name", "shortNameEn", "listings", "segmentRevenue", "regionalRevenue"],
   // `financialNotes` is not an entry field: it is [{ fiscalYear, note }] applied to financials[].note
   // below, because the five-year table is mechanical and a stage cannot write into it directly.
   businessModel: ["businessModel", "description", "financialNotes", "perspectives"],
@@ -105,6 +107,8 @@ export function mergeEntry(companyId) {
     businesses: [],
     businessModel: null,
     financials: draft.financials,
+    // 従業員の状況 is transcribed from the XBRL like the five-year table (JCE-038); a draft from an older pack has none.
+    ...(draft.workforce ? { workforce: draft.workforce } : {}),
     history: [],
     relatedCompanies: [],
     sources: [],

@@ -105,6 +105,9 @@ export const companySchema = z.strictObject({
           description: text,
         }),
       ),
+      suppliers: z
+        .array(z.strictObject({ name: text, description: text, businessIds: z.array(kebab).min(1).optional() }))
+        .optional(),
       ...sourced,
     })
     .optional(),
@@ -138,6 +141,37 @@ export const companySchema = z.strictObject({
       ...sourced,
     }),
   ),
+  segmentRevenue: z
+    .strictObject({
+      fiscalYear: text,
+      periodEnd: isoDate,
+      label: text,
+      items: z.array(z.strictObject({ businessId: kebab, amount: z.number().int().nonnegative() })).min(1),
+      ...sourced,
+    })
+    .optional(),
+  regionalRevenue: z
+    .strictObject({
+      fiscalYear: text,
+      periodEnd: isoDate,
+      label: text,
+      items: z
+        .array(z.strictObject({ region: text, domestic: z.boolean(), amount: z.number().int().nonnegative() }))
+        .min(1),
+      ...sourced,
+    })
+    .optional(),
+  workforce: z
+    .strictObject({
+      fiscalYear: text,
+      asOf: isoDate,
+      employees: z.number().int().nonnegative().nullable(),
+      averageAnnualSalary: z.number().int().positive().nullable(),
+      averageTenureYears: z.number().nonnegative().nullable(),
+      averageTenureMonths: z.number().int().min(0).max(11).nullable(),
+      ...sourced,
+    })
+    .optional(),
   history: z.array(
     z.strictObject({
       // 1500: some 沿革 begin before 1600 (住友金属鉱山 dates its founding to 1590)

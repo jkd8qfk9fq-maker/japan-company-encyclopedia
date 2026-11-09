@@ -2,11 +2,15 @@ import { AdSlot } from "@/components/ads/ad-slot";
 import type { Company } from "@/types/company";
 import { companyRepository, headquartersRepository } from "@/lib/repositories";
 import { formatDateJa } from "@/lib/utils/format";
+import { companyMetrics } from "@/lib/company-metrics";
+import { buildValueChain } from "@/lib/value-chain";
+import { SourceList } from "@/components/sources/source-list";
 import { BusinessList } from "./business-list";
 import { BusinessModel } from "./business-model";
 import { BusinessStructure } from "./business-structure";
 import { CompanyHero } from "./company-hero";
 import { CompanyIndustries } from "./company-industries";
+import { CompanyMetrics } from "./company-metrics";
 import { CompanySection } from "./company-section";
 import { ConnectionMap, placeConnections } from "./connection-map";
 import { ConnectionNetwork } from "./connection-network";
@@ -16,6 +20,7 @@ import { PerspectivesSection } from "./perspectives-section";
 import { RelatedCompanies, type ResolvedRelation } from "./related-companies";
 import { SectionTabs, type SectionLink } from "@/components/navigation/section-tabs";
 import { SourceIndex } from "./source-index";
+import { ValueChainFlow } from "./value-chain-flow";
 
 /**
  * The body of a company page — hero to footer — and nothing around it. One component, two callers: the public page
@@ -44,10 +49,20 @@ export async function CompanyView({ company }: { company: Company }) {
     inbound.map((r) => ({ company: r.company, kind: r.relation.relationship })),
   );
   const hasConnections = relations.length > 0 || inbound.length > 0;
+  const chain = buildValueChain(company);
+  const metrics = companyMetrics(company);
+  const chainSourceIds = [
+    ...new Set([
+      ...company.businesses.flatMap((b) => b.sourceIds),
+      ...(company.businessModel?.sourceIds ?? []),
+      ...(company.segmentRevenue?.sourceIds ?? []),
+    ]),
+  ];
 
   // The hero is above the tabs and always shown, so it is not one of them.
   const sections: SectionLink[] = [
     ...(company.businesses.length > 0 ? [{ id: "business", label: "事業" }] : []),
+    ...(chain ? [{ id: "value-chain", label: "モノとお金" }] : []),
     ...(company.businessModel ? [{ id: "business-model", label: "ビジネスモデル" }] : []),
     ...(company.perspectives ? [{ id: "perspectives", label: "戦略と強み" }] : []),
     ...(hasConnections ? [{ id: "connections", label: "つながり" }] : []),
@@ -75,6 +90,18 @@ export async function CompanyView({ company }: { company: Company }) {
           <div className="mt-12">
             <BusinessList businesses={company.businesses} sources={company.sources} />
           </div>
+        </CompanySection>
+      )}
+
+      {chain && (
+        <CompanySection
+          id="value-chain"
+          eyebrow="Value Chain"
+          title="モノとお金の流れ"
+          lead="調達から事業、顧客までのモノの流れと、その逆に流れるお金を描いています。カードを選ぶと、つながりと詳しい説明が下に出ます。線の太さは取引の大きさを表しません（有価証券報告書に金額がないため）。"
+        >
+          <ValueChainFlow chain={chain} companyName={company.name} />
+          <SourceList sources={company.sources} sourceIds={chainSourceIds} className="mt-4" />
         </CompanySection>
       )}
 
@@ -133,6 +160,7 @@ export async function CompanyView({ company }: { company: Company }) {
         title="売上と利益の推移"
         lead="規模の違う2つの数字を同じ目盛りに載せると利益が見えなくなるため、別々のグラフにしています。"
       >
+        {metrics && <CompanyMetrics metrics={metrics} sources={company.sources} />}
         <FinancialSection companyName={company.name} records={company.financials} sources={company.sources} />
       </CompanySection>
 

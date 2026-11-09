@@ -1132,6 +1132,44 @@ async function resolveAmendments(original, originalRows, originalFigures) {
  *   7  訂正有報の分類（record-only / text-change / financial-change）を amendments.records に持つ
  *   8  決算期を変更した会社の各列の期末日を、XBRLインスタンスのコンテキスト期間が示す本当の期末日で付ける（2026-11-08）。印字と一致するまで直せない場合は従来どおり検出して止める
  */
+/**
+ * 【従業員の状況】（提出会社の状況）: headcount, average annual salary and average tenure of the filing company
+ * (JCE-038). The salary and tenure elements name the 提出会社 themselves, so their context is the current year,
+ * with or without NonConsolidatedMember. The headcount element does not — plain NumberOfEmployees in the current
+ * year is the GROUP's — so it is taken only in the NonConsolidatedMember context, or plain for a filer with no
+ * consolidated statements, whose only headcount is its own. A value tagged twice with different numbers is null.
+ * Tenure stays as printed: 「15.3年」 arrives as Years 15.3, 「15年3ヶ月」 as Years 15 and Months 3.
+ */
+export function workforceFigures(rows, nonConsolidated = false) {
+  const value = (element, contexts) => {
+    for (const context of contexts) {
+      const values = [
+        ...new Set(
+          rows
+            .filter((r) => r["要素ID"] === `jpcrp_cor:${element}` && r["コンテキストID"] === context)
+            .map((r) => Number(String(r["値"]).replace(/,/g, "")))
+            .filter((v) => Number.isFinite(v)),
+        ),
+      ];
+      if (values.length === 1) return values[0];
+      if (values.length > 1) return null;
+    }
+    return null;
+  };
+  const own = ["CurrentYearInstant_NonConsolidatedMember", "CurrentYearInstant"];
+  const about = (name) => `${name}InformationAboutReportingCompanyInformationAboutEmployees`;
+  const salary = value(about("AverageAnnualSalary"), own);
+  const months = value(about("AverageLengthOfServiceMonths"), own);
+  return {
+    employees: value("NumberOfEmployees", nonConsolidated ? own : own.slice(0, 1)),
+    averageAnnualSalary: salary !== null && Number.isInteger(salary) && salary > 0 ? salary : null,
+    averageTenureYears: value(about("AverageLengthOfServiceYears"), own),
+    averageTenureMonths: months !== null && Number.isInteger(months) && months >= 0 && months <= 11 ? months : null,
+  };
+}
+
+// Not bumped for `workforce` (JCE-038): a version change rebuilds every pack, and a pack without the field only
+// means a draft without 従業員の状況. Packs gain it as they are rebuilt for a new filing.
 export const EXTRACTOR_VERSION = 8;
 
 async function packFor(companyId, code4, from, to) {
@@ -1380,6 +1418,7 @@ async function packFor(companyId, code4, from, to) {
     },
     warnings,
     figures,
+    workforce: workforceFigures(rows, figures.nonConsolidated),
     previousFiling: previous?.filing ?? null,
     // All six series, not just revenue and net income. 清水建設 finalised the
     // purchase-price allocation for an acquisition and restated 総資産額 and
