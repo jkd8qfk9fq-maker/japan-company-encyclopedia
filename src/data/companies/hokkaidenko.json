@@ -4,14 +4,135 @@
   "name": "北海電工",
   "officialName": "株式会社北海電工",
   "nameEn": "HOKKAIDENKO CORPORATION",
-  "description": null,
+  "shortNameEn": "HOKKAIDENKO",
+  "description": "北海道電力グループの総合設備工事会社として、配電線・発送変電・地中線などの電気工事を中心とする設備工事業を営む。",
   "listings": [
     {
       "exchange": "sse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "facility-construction",
+      "name": "設備工事業",
+      "description": "電気工事を中心に、電気通信工事、土木工事、建築工事、鋼構造物工事、管工事、消防施設工事などを請け負い施工する単一セグメントの事業。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／2 事業の内容】",
+      "children": [
+        {
+          "id": "distribution-line-works",
+          "name": "配電線工事",
+          "description": "配電線の新設・保守などの工事で、2026年3月期の売上高は31,418百万円。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【第一部 企業情報／第5 経理の状況／1 連結財務諸表等／注記事項（収益認識関係）】"
+        },
+        {
+          "id": "power-transmission-substation-works",
+          "name": "発送変電工事",
+          "description": "発電・送電・変電設備の工事で、2026年3月期の売上高は13,695百万円。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【第一部 企業情報／第5 経理の状況／1 連結財務諸表等／注記事項（収益認識関係）】"
+        },
+        {
+          "id": "underground-line-works",
+          "name": "地中線工事",
+          "description": "電線の地中化などの地中線工事で、2026年3月期の売上高は8,114百万円。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【第一部 企業情報／第5 経理の状況／1 連結財務諸表等／注記事項（収益認識関係）】"
+        },
+        {
+          "id": "other-works",
+          "name": "その他工事",
+          "description": "上記以外の設備工事で、2026年3月期の売上高は8,106百万円。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【第一部 企業情報／第5 経理の状況／1 連結財務諸表等／注記事項（収益認識関係）】"
+        },
+        {
+          "id": "indoor-wiring-works",
+          "name": "屋内配線工事",
+          "description": "建物内の電気配線などの工事で、2026年3月期の売上高は5,942百万円。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【第一部 企業情報／第5 経理の状況／1 連結財務諸表等／注記事項（収益認識関係）】"
+        },
+        {
+          "id": "telecommunications-works",
+          "name": "通信工事",
+          "description": "電気通信設備の工事で、2026年3月期の売上高は5,168百万円。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【第一部 企業情報／第5 経理の状況／1 連結財務諸表等／注記事項（収益認識関係）】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "親会社の北海道電力・北海道電力ネットワークからの電気工事の受注を基盤に、官公庁や民間企業向けの設備工事も手がけ、工事の完成により収益を得る事業モデルである。",
+    "products": [
+      "配電線工事",
+      "発送変電工事",
+      "地中線工事",
+      "屋内配線工事",
+      "通信工事",
+      "その他の設備工事"
+    ],
+    "customers": [
+      "北海道電力・北海道電力ネットワーク（親会社）",
+      "官公庁",
+      "民間企業"
+    ],
+    "revenueSources": [
+      "完成工事高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "北海電工",
+        "description": "1944年の創立以来、北海道を地盤に電力設備工事を担ってきた総合設備工事会社である。"
+      },
+      {
+        "kind": "offering",
+        "title": "設備工事の請負施工",
+        "description": "配電線・発送変電・地中線などの電気工事を中心に、電気通信・土木・建築などの設備工事を請け負い、連結子会社等と連携して施工する。"
+      },
+      {
+        "kind": "customer",
+        "title": "親会社・官公庁・民間企業",
+        "description": "親会社の北海道電力関係を主な発注者とし、官公庁や民間企業からも設備工事を受注する。"
+      },
+      {
+        "kind": "revenue",
+        "title": "完成工事高",
+        "description": "2026年3月期の売上高は724億45百万円となった。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は37億17百万円となった。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -26,7 +147,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26895000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1825,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -46,7 +167,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27654000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1800,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -66,7 +187,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 30058000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1806,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -86,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 33311000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1791,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -106,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 36932000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1794,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -114,8 +235,129 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1944,
+      "title": "会社の設立",
+      "description": "電気工事業整備要綱に基づき、札幌市に本店を置いて設立された。",
+      "significance": "北海道の電気工事を担う会社として発足した。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "建設業者登録",
+      "description": "建設業法に基づき北海道知事の建設業者登録を受けた。",
+      "significance": "建設業者としての基盤を整えた。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "本店の移転",
+      "description": "本店を札幌市菊水地区の現在地へ移転した。",
+      "significance": "現在の本店所在地に移った。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "東京出張所の開設",
+      "description": "東京都台東区に東京出張所（現・東京支社）を開設し、東京方面へ進出した。",
+      "significance": "北海道外への事業展開が始まった。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "札幌証券取引所への上場",
+      "description": "札幌証券取引所に株式を上場した。",
+      "significance": "上場会社となった。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "株式会社アイテスの設立",
+      "description": "連結子会社となる株式会社アイテスを設立した。",
+      "significance": "グループの施工体制が拡充された。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "株式会社テクセルとの合併",
+      "description": "株式会社テクセルを合併し、10支店体制とした。",
+      "significance": "施工体制が道内全域に拡大した。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "北海道用地株式会社との合併",
+      "description": "北海道用地株式会社を合併し、電力保守部を設置した。",
+      "significance": "電力保守の分野を取り込んだ。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "北海道計器工業との合併と配電事業の承継",
+      "description": "北海道計器工業株式会社を合併するとともに、ほくでんサービス株式会社から配電事業を吸収分割により承継し、計測器部を設置した。",
+      "significance": "計測器と配電の事業を取り込み、事業領域が広がった。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "GXソリューション部の設置",
+      "description": "再生可能エネルギー関連の事業に対応するGXソリューション部を設置した。",
+      "significance": "脱炭素関連事業の体制を整えた。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社北海電工への商号変更",
+      "description": "創立80周年を迎え、株式会社北海電工へ商号を変更した。",
+      "significance": "現在の社名となった。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "dai-ichi-life-holdings",
+      "relationship": "customer",
+      "description": "特定投資株式として10,800株を保有する。当社が設備工事を請け負う重要な顧客であり、中長期的・安定的な取引関係の維持向上のために保有している。同社は2026年4月1日に第一生命ホールディングス株式会社から株式会社第一ライフグループへ商号を変更した。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第4 提出会社の状況／3 株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -123,13 +365,47 @@
       "publisher": "株式会社北海電工",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YH4H.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YH4H",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-10",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "創立80周年を機に、100年企業を目指す長期ビジョン『北海電工VISION100』を策定した。パーパス『技術を磨き、未来を創る』のもと、『社会インフラ建設への永続的貢献』『技術・技能の継承と安定した施工体制の構築』『事業領域拡大への挑戦』『持続的成長を支える企業体質の構築と企業価値向上の追求』の4つのありたい姿を掲げ、『地域発展への貢献』『施工力の確保』『人的資本経営の推進』『持続可能な経営の実現』をマテリアリティ（重要課題）として取り組む。中期経営計画2021-2025を推進し、次世代半導体工場や再生可能エネルギー関連の需要も取り込んできた。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【第一部 企業情報／第2 事業の状況／1 経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "北海道電力グループの一員として、配電線・発送変電・地中線などの電力関連工事に長年の施工実績と技術を蓄積している。親会社グループからの継続的な受注を基盤とし、道内各地の支店網と連結子会社・関連会社を含む施工体制で、電力インフラの建設と保守を担う。一般の大規模工事についても全社営業体制で受注拡大を図っている。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【第一部 企業情報／第2 事業の状況／1 経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "設備工事業の単一セグメントで、2026年3月期の連結売上高は72,445百万円である。工事種別では配電線工事31,418百万円が最大で、発送変電工事13,695百万円、地中線工事8,114百万円、その他工事8,106百万円、屋内配線工事5,942百万円、通信工事5,168百万円と続く。主要な顧客は親会社の北海道電力関係で、売上高55,105百万円と連結売上高の大半を占める。特定投資株式の保有目的ではKDDIが設備工事を請け負う重要な顧客として挙げられている。連結従業員数は1,794名で、海外売上高はない。",
+        "basis": "セグメント情報等の主要な顧客ごとの情報、収益認識関係の工事種別売上高、関連情報（所在地別情報・主要な顧客ごとの情報）、株式の保有状況に基づく分析",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

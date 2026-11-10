@@ -4,15 +4,142 @@
   "name": "不二家",
   "officialName": "株式会社不二家",
   "nameEn": "Fujiya Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Fujiya Co.,Ltd.",
+  "description": "ケーキなどの洋菓子店とレストランを展開し、「ミルキー」「カントリーマアム」などの菓子や飲料も製造販売する、山崎製パンの子会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "seika",
+      "name": "製菓事業",
+      "description": "チョコレート、キャンディ、ビスケットなどの菓子類と、飲料、乳製品などを製造・販売する事業です。2025年12月期の外部顧客への売上高は84,067百万円で、連結売上高の70.3％を占める最大の事業です。当社に加えて、日本食材株式会社、不二家乳業株式会社、株式会社不二家神戸、中国の不二家（杭州）食品有限公司、ベトナムの不二家ベトナムCo.,Ltd.などが担います。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "seika-kashi",
+          "name": "菓子",
+          "description": "チョコレート、キャンディ、ビスケットなどの菓子類の製造・販売です。2025年12月期の売上高は80,244百万円です。『ミルキー』『カントリーマアム』『ホームパイ』『ルック』などの製品ブランドがあります。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "seika-inryo",
+          "name": "飲料",
+          "description": "飲料と乳製品などの販売です。2025年12月期の売上高は3,823百万円です。主力の飲料ブランドには『ネクター』や『レモンスカッシュ』があります。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "yogashi",
+      "name": "洋菓子事業",
+      "description": "ケーキ、ベーカリー、デザートなどの洋菓子類とアイスクリームの製造・販売に加えて、喫茶や飲食店の経営を行う事業です。2025年12月期の外部顧客への売上高は31,838百万円です。当社や株式会社ダロワイヨジャポン、[[company:b-r-31-ice-cream|B－R サーティワン アイスクリーム株式会社]]、FUJIYA USA Corporationが担い、親会社の[[company:yamazaki-baking|山崎製パン株式会社]]も主要な会社に含まれます。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "yogashi-cakes",
+          "name": "洋菓子",
+          "description": "ケーキ、ベーカリー、デザートなどの洋菓子類とアイスクリームの販売です。2025年12月期の売上高は25,506百万円です。不二家洋菓子店は当連結会計年度末時点で850店を展開しています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "yogashi-restaurant",
+          "name": "レストラン",
+          "description": "喫茶・飲食店（レストラン）の経営です。2025年12月期の売上高は6,332百万円です。期間限定のフェアメニューなどによる集客に取り組んでいます。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "others",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業で、キャラクターグッズなどの通信販売とライセンス事業、不動産の賃貸・管理、事務受託業務やアウトソーシング受託などを行います。2025年12月期の外部顧客への売上高は3,652百万円です。株式会社不二家システムセンターなどが担います。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "洋菓子店やレストランを運営する洋菓子事業と、チョコレートやキャンディ、ビスケット、飲料などを製造販売する製菓事業を、全国の店舗と量販店などの販路で展開するモデルです。",
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "ケーキ・ベーカリー・デザート等の洋菓子類",
+      "アイスクリーム",
+      "チョコレート",
+      "キャンディ",
+      "ビスケット",
+      "飲料",
+      "乳製品"
+    ],
+    "customers": [
+      "洋菓子店・レストランの来店客",
+      "スーパーマーケット・コンビニエンスストア等の流通事業者",
+      "菓子卸売事業者"
+    ],
+    "revenueSources": [
+      "製品販売に係る収益",
+      "レストラン等の店舗運営に係る収益",
+      "その他の収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "不二家グループ",
+        "description": "1910年に横浜元町で創業した菓子メーカーで、本社は東京都文京区大塚にあります。親会社は[[company:yamazaki-baking|山崎製パン株式会社]]で、子会社9社と関連会社2社でグループを構成し、2025年12月期の連結の従業員数は2,457人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "洋菓子・レストランと製菓製品",
+        "description": "洋菓子事業では、ケーキなどの洋菓子類やアイスクリームの販売と、喫茶・飲食店の運営を行います。製菓事業では、チョコレート、キャンディ、ビスケットなどの菓子類と、飲料や乳製品を製造販売します。"
+      },
+      {
+        "kind": "customer",
+        "title": "店舗の来店客と流通事業者",
+        "description": "洋菓子店やレストランの来店客のほか、スーパーマーケットやコンビニエンスストアなどの流通事業者がお客様です。最大の販売先は株式会社山星屋で、2025年12月期の販売高は12,524百万円と売上高の10.4％を占めます。売上の9割超は国内です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年12月期の売上高は119,558百万円で、前期に比べて8.7％増加しました。事業別では製菓事業が84,067百万円、洋菓子事業が31,838百万円、その他が3,652百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は2,031百万円で、前期に比べて21.4％増加しました。カカオ豆をはじめとする原材料価格の高騰が続くなか、『ホームパイ』『カントリーマアム』などの主力製品の販売拡大や生産性向上の取り組みが寄与しました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +154,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 54356000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2176,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +174,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 59165000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2381,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年3月31日）等を第128期（2022年12月期）の期首から適用しており、第128期以降の主要な経営指標等は、当該会計基準等を適用した後の数値となっています。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +195,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 60640000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2409,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +215,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 63067000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2436,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,16 +235,700 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 66104000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2457,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "2025年7月に一部の子会社で洋菓子事業から製菓事業への業態変更を行っており、当該子会社の売上高などは、変更以降は製菓事業に含まれています。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1910,
+      "title": "横浜元町に洋菓子店を開店",
+      "description": "1910年11月16日、藤井林右衛門が横浜元町に洋菓子店を開店しました。これが不二家の前身です。",
+      "significance": "不二家の事業の起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1938,
+      "title": "株式会社第二不二家の設立",
+      "description": "1938年6月、株式会社第二不二家が設立されました。",
+      "significance": "法人としての出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1938,
+      "title": "合名会社不二家を吸収合併",
+      "description": "1938年9月、株式会社第二不二家が合名会社不二家を吸収合併しました。",
+      "significance": "前身の事業を引き継ぎました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1938,
+      "title": "株式会社不二家への商号変更",
+      "description": "1938年12月、商号を株式会社不二家に変更しました。",
+      "significance": "現在の社名がここから始まります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1946,
+      "title": "本社を銀座に移転",
+      "description": "1946年8月、本社を東京都中央区銀座七丁目に移転しました。",
+      "significance": "戦後の事業再建の拠点となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "ペコちゃんの誕生",
+      "description": "1950年、同社のマスコットキャラクターであるペコちゃんが誕生しました。",
+      "significance": "現在まで続くブランドの象徴です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "卸売への進出",
+      "description": "1952年3月、東京都中央区銀座に関東販売所を設置し、卸売に進出しました。",
+      "significance": "店舗販売から量販への広がりの始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "合名会社不二家の吸収合併",
+      "description": "1958年11月、合名会社不二家（1941年7月に藤井食品合名会社として設立され、1956年10月に商号変更）を吸収合併しました。",
+      "significance": "グループの事業基盤を一本化しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "平塚工場の開設",
+      "description": "1959年9月、神奈川県平塚市にチョコレートを生産する平塚工場を開設しました。",
+      "significance": "製菓事業の量産体制の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "不二家食品の吸収合併",
+      "description": "1961年11月、不二家食品株式会社を吸収合併しました。",
+      "significance": "事業の統合を進めました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "証券取引所への上場",
+      "description": "1962年6月、東京、大阪、名古屋の各証券取引所の市場第二部に株式を上場しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "不二農産工業の設立",
+      "description": "1962年8月、岩手県大東町（現一関市）の斡旋により地元の酪農家と不二農産工業株式会社（現不二家乳業株式会社、連結子会社）を設立しました。",
+      "significance": "乳製品事業の基盤となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "日本食材の株式取得",
+      "description": "1963年8月、日本食材株式会社（現連結子会社）の株式を取得しました。",
+      "significance": "現在の主要子会社の一つです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "フランチャイズ・チェーン制の導入",
+      "description": "1963年10月、京都市伏見区に、フランチャイズ・チェーン制を導入した伏見店を開店しました。",
+      "significance": "洋菓子店のチェーン展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "市場第一部への上場",
+      "description": "1965年2月、東京、大阪、名古屋の各証券取引所の市場第一部に株式を上場しました。",
+      "significance": "上場市場を移行しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "秦野工場の開設",
+      "description": "1968年8月、神奈川県秦野市に、キャンディや焼物（焼き菓子）を生産する秦野工場を開設しました。",
+      "significance": "製菓の生産拠点が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "埼玉工場の開設",
+      "description": "1968年11月、埼玉県新座市に洋菓子を生産する埼玉工場を開設しました。",
+      "significance": "洋菓子の生産拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "泉佐野工場の開設",
+      "description": "1971年5月、大阪府泉佐野市に洋菓子を生産する泉佐野工場を開設しました。",
+      "significance": "西日本の洋菓子生産拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "山交フッドサービスの設立",
+      "description": "1972年4月、山形交通株式会社（現株式会社ヤマコー）と合弁会社・山交フッドサービス（2013年4月に株式会社不二家東北へ商号変更）を設立しました。",
+      "significance": "東北での事業展開の基盤となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "アイスクリームチェーン事業への進出",
+      "description": "1973年12月、米国バスキン・ロビンス社と合弁会社ビー・アールジャパン株式会社（現B－R サーティワン アイスクリーム株式会社）を設立し、アイスクリームチェーン事業に進出しました。",
+      "significance": "現在も持分法適用関連会社として続く事業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "ファーストコンピューターセンターの設立",
+      "description": "1973年12月、株式会社ファーストコンピューターセンター（現株式会社不二家システムセンター、連結子会社）を設立しました。",
+      "significance": "事務受託業務などを担う子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "不二家サンヨーの設立",
+      "description": "1974年6月、サンヨー缶詰株式会社と合弁会社不二家サンヨー株式会社（2022年9月に株式会社不二家福島へ商号変更）を設立しました。",
+      "significance": "福島の生産拠点の前身です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "郊外型外食産業への進出",
+      "description": "1978年3月、株式会社不二家ロードサイドレストラン（2004年4月に株式会社不二家フードサービスへ商号変更）を設立し、郊外型の外食産業に進出しました。",
+      "significance": "レストラン事業の本格展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "ネッスル社との合弁会社設立",
+      "description": "1989年6月、ネッスル社と合弁会社ネッスルマッキントッシュ株式会社（後にネスレマッキントッシュ株式会社、菓子製造販売業）を設立しました。",
+      "significance": "海外メーカーとの提携による事業拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "ダロワイヨジャポンの設立",
+      "description": "1989年10月、洋菓子製造販売業の株式会社ダロワイヨジャポン（現連結子会社）を設立しました。",
+      "significance": "高級洋菓子ブランドの展開です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "富士裾野工場の開設",
+      "description": "1990年6月、静岡県裾野市に、ミルキーや焼物を生産する富士裾野工場を開設しました。",
+      "significance": "主力製品の生産拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "九州工場の開設",
+      "description": "1994年11月、佐賀県神埼郡に九州工場（現吉野ヶ里工場、洋菓子）を開設しました。",
+      "significance": "九州の洋菓子生産拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "ネスレマッキントッシュの株式売却",
+      "description": "2000年9月、ネスレマッキントッシュ株式会社の株式を売却しました。",
+      "significance": "合弁事業を終了しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "大阪・名古屋証券取引所の上場廃止",
+      "description": "2003年6月、大阪、名古屋の各証券取引所への上場を廃止しました。",
+      "significance": "上場市場を東京証券取引所に集約しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "中国現地法人の設立",
+      "description": "2004年2月、旺陞貿易有限公司（台湾）、豊和貿易株式会社、江顕堂氏とともに、中国現地法人として不二家（杭州）食品有限公司（現連結子会社）を設立しました。",
+      "significance": "海外生産の拠点となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "山崎製パンとの業務資本提携",
+      "description": "2007年2月に[[company:yamazaki-baking|山崎製パン株式会社]]と食品安全管理体制整備の支援に関する覚書を締結し、同年3月に業務資本提携契約を締結しました。さらに同年4月、同社に対する第三者割当増資を実施しました。",
+      "significance": "山崎製パングループ入りの始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "本社を大塚に移転",
+      "description": "2008年7月、本社を東京都文京区大塚二丁目に移転しました。",
+      "significance": "現在の本店所在地です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "山崎製パンの連結子会社化",
+      "description": "2008年11月、[[company:yamazaki-baking|山崎製パン株式会社]]と新たな業務資本提携契約を締結し、同社に対する第三者割当増資を実施して、同社の連結子会社となりました。",
+      "significance": "現在の親子関係がここで確定しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "決算期の変更",
+      "description": "2010年6月、決算期を3月期から12月期に変更しました。",
+      "significance": "現在の12月決算の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "スイートガーデンの子会社化",
+      "description": "2014年2月に株式会社プレシアホールディングスとの間で株式会社スイートガーデンの株式譲渡契約を締結し、同年4月に全株式を取得しました（現株式会社不二家神戸、連結子会社）。",
+      "significance": "神戸の製菓拠点を取り込みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "不二家フードサービスの吸収合併",
+      "description": "2021年7月、株式会社不二家フードサービスを吸収合併しました。",
+      "significance": "レストラン事業を本体に統合しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "不二家東北の吸収合併",
+      "description": "2021年10月、株式会社不二家東北を吸収合併しました。",
+      "significance": "東北の事業を本体に統合しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しに伴い、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "ベトナム現地法人の設立",
+      "description": "2022年9月、丸紅株式会社と合弁会社・不二家ベトナムCo.,Ltd.をベトナム現地法人として設立しました。",
+      "significance": "東南アジアの生産拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "アメリカ現地法人の設立",
+      "description": "2024年4月、FUJIYA USA Corporationをアメリカ現地法人として設立しました。",
+      "significance": "北米展開の拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "不二家福島の吸収合併",
+      "description": "2024年6月、株式会社不二家福島を吸収合併しました。",
+      "significance": "生産体制の統合です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "天然水ボトリング工場の開設",
+      "description": "2025年12月、富士裾野工場の敷地内に天然水のボトリング工場を開設しました。",
+      "significance": "飲料事業の新しい取り組みです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "yamazaki-baking",
+      "relationship": "parent",
+      "description": "親会社で、2025年12月31日現在、当社の議決権の54.4％を保有しています。当社製品の販売や同社製品の仕入れ、当社の事務受託業務、土地・建物等の賃貸などの関係があり、役員の兼任もあります。2007年に業務資本提携契約を締結し、2008年に同社の連結子会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "b-r-31-ice-cream",
+      "relationship": "affiliate",
+      "description": "持分法適用関連会社で、2025年12月31日現在、当社が議決権の36.7％を保有しています。洋菓子事業でアイスクリームチェーンを営み、当社へ製品を販売しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "bandai-namco-holdings",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に載る事業会社で、2025年12月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は1.93％です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "marubeni",
+      "relationship": "business-partner",
+      "description": "丸紅株式会社とは事業提携の関係があり、2022年9月には同社との共同出資により、ベトナム現地法人の不二家ベトナムCo.,Ltd.を合弁会社として設立しました。不二家ベトナムは製菓事業の主要な会社の一つで、2025年11月に竣工した新工場で『カントリーマアム』などの生産を開始しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "seven-and-i-holdings",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "life",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "maruichi",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kato-sangyo",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamae-group-holdings",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "arcs",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "united-super-markets-holdings",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tsuruha-holdings",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "blue-zones-holdings",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "heiwado",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "eco-s",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "retail-partners",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "valor-holdings",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "h2o-retailing",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sojitz",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamanaka",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aeon-hokkaido",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yuasa-funashoku",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "central-forest-group",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "maruyoshi-center",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okuwa",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamazawa",
+      "relationship": "customer",
+      "description": "当社が、製品販売における安定的な営業取引関係の維持・強化のため株式を保有している販売先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "asahi-group-holdings",
+      "relationship": "supplier",
+      "description": "当社が、製品製造に必要な原材料の安定的な調達を確保するための協力関係の維持・強化のため株式を保有している仕入先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fuji-oil",
+      "relationship": "supplier",
+      "description": "当社が、製品製造に必要な原材料の安定的な調達を確保するための協力関係の維持・強化のため株式を保有している仕入先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "rengo",
+      "relationship": "supplier",
+      "description": "当社が、製品製造に必要な原材料の安定的な調達を確保するための協力関係の維持・強化のため株式を保有している仕入先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +936,47 @@
       "publisher": "株式会社不二家",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XS9W.pdf",
       "publishedAt": "2026-03-23",
-      "accessedAt": "2026-09-28"
+      "docId": "S100XS9W",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-10",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "社是として「愛と誠心（まごころ）と感謝をこめて お客様に愛される不二家になります」を掲げ、お菓子が作り出す人と人との「絆」や生活への「彩り」を創造し、「こころあたたまる世界」を実現することを使命としています。中長期ビジョン（グランドデザイン）として『Sweets to next stage! 安心からwakuwakuへ』を掲げ、洋菓子と製菓の両事業を持つ強みを活かしたグループシナジーの創出や、親会社の山崎製パンとの連携強化に取り組む方針です。サステナビリティ経営の実現に向けては、2024年にESG委員会を発足させました。",
+        "asOf": "2026-03-23",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "洋菓子と製菓の両事業を併せ持つことを強みとして掲げています。発売75周年を迎えた『ミルキー』をはじめ、『カントリーマアム』『ホームパイ』『ルック』などの長く親しまれてきた製品ブランドと、キャラクターのペコちゃんを持ち、食品安全マネジメントシステムの国際規格であるFSSC22000をはじめとする食品安全衛生管理を事業の基盤としています。",
+        "asOf": "2026-03-23",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは製菓事業と洋菓子事業の2つです。2025年12月期の外部顧客への売上高は、製菓事業が84,067百万円（連結売上高の70.3％）、洋菓子事業が31,838百万円（26.6％）で、報告セグメントに含まれないその他が3,652百万円です。最大の販売先は株式会社山星屋で12,524百万円（売上高の10.4％）を占め、本邦の売上高が連結売上高の90％を超えています。親会社の山崎製パン株式会社が議決権の54.4％を保有しています。",
+        "basis": "セグメント情報の報告セグメントごとの外部顧客への売上高と、関連情報の主要な顧客ごとの情報・地域ごとの情報、関係会社の状況によります。",
+        "asOf": "2026-03-23",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

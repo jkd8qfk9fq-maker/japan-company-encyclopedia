@@ -4,15 +4,118 @@
   "name": "はごろもフーズ",
   "officialName": "はごろもフーズ株式会社",
   "nameEn": "HAGOROMO FOODS CORPORATION",
-  "description": null,
+  "shortNameEn": "HAGOROMO FOODS",
+  "description": "ツナ缶「シーチキン」を主力に、缶詰・レトルト食品やパスタなどを製造・販売する食品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "food-business",
+      "name": "食品事業",
+      "description": "当社と連結子会社1社、持分法適用関連会社1社で構成されるグループの中核事業で、缶詰・レトルト食品・パスタ・包装米飯・削りぶし・のり・ふりかけ類などの製造販売を行っています。食品事業およびこの付帯事業の単一セグメントです（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "household-foods",
+          "name": "家庭用食品",
+          "description": "ツナ等（主力の「シーチキン」など）、デザート、パスタ＆ソース、総菜、削りぶし・のり・ふりかけ類、ギフト・その他食品の家庭向け製品群で、売上高の中心を占めています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "food-service-foods",
+          "name": "業務用食品",
+          "description": "コンビニエンスストアや給食向けなど、業務用の食品を販売する製品群です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "pet-bio",
+          "name": "ペットフード・バイオ他",
+          "description": "愛猫用おやつ「無一物舌福」などのペットフードと、バイオ製品などを扱う製品群です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "other-business",
+      "name": "その他事業",
+      "description": "当社が東京都中央区のはごろもビルなどで行う不動産賃貸などの事業です。売上高に占める割合は小さく、金額は独立して開示されていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社工場と国内外の協力工場で缶詰やレトルト食品、パスタなどを製造し、商社や卸売業者を通じて量販店などに販売して収益を得る事業モデルです。",
+    "products": [
+      "ツナ缶「シーチキン」などの缶詰（ツナ等、デザート、総菜）",
+      "レトルト食品、パスタ＆ソース（「ポポロスパ」など）",
+      "包装米飯「パパッとライス」、削りぶし・のり・ふりかけ類",
+      "ペットフード（愛猫用おやつ「無一物舌福」など）とバイオ製品"
+    ],
+    "customers": [
+      "量販店などの小売業者（商社や卸売業者を通じて販売）",
+      "コンビニエンスストアや給食事業者などの業務用顧客"
+    ],
+    "revenueSources": [
+      "家庭用食品の販売による売上",
+      "業務用食品の販売による売上",
+      "ペットフード・バイオ製品の販売による売上",
+      "不動産賃貸など、その他事業による売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "はごろもフーズと子会社・関連会社各1社のグループ",
+        "description": "はごろもフーズ株式会社は静岡県静岡市に本店を置く食品メーカーで、連結子会社1社、持分法適用関連会社1社とグループを構成しています。連結の従業員数は667人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "自社工場と協力工場で食品を製造",
+        "description": "焼津プラントや新清水プラント、富士山パスタプラントなどの自社工場に加え、国内外の約70か所の協力工場に製造を委託し、シーチキンなどの缶詰やレトルト食品、パスタなどを製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "商社・卸売業者を通じて量販店などへ販売",
+        "description": "製品は主に卸売業者を経由して量販店などで販売されています。2026年3月期の主要な顧客は、売上高の32.0％を占める伊藤忠商事、16.3％の三菱商事、14.9％の三井物産です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は750億78百万円",
+        "description": "2026年3月期の売上高は750億78百万円で、前期比0.6％増となりました。家庭用食品の販売が増えた一方、業務用食品の販売は減少しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は26億36百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は26億36百万円で、前期比7.2％増となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +130,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 34930790000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 714,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +150,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 33999147000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 692,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +170,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 39258660000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 694,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +190,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 41385780000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 677,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 49664456000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 667,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +218,331 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1931,
+      "title": "鮪油漬缶詰事業を開始",
+      "description": "1931年5月、漁業用縄卸売業等を営んでいた後藤磯吉（初代）が鮪油漬缶詰事業を起こしました。",
+      "significance": "当社の源流となる事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "株式会社清水屋を設立",
+      "description": "1947年7月、戦後に缶詰製造事業を再開し、静岡県清水市（現・静岡市）に株式会社清水屋を設立しました。その後、後藤物産株式会社、後藤物産罐詰株式会社へ商号を変更しました。",
+      "significance": "現在の法人組織の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "後藤罐詰株式会社に商号変更",
+      "description": "1950年10月、商号を後藤罐詰株式会社に変更しました。",
+      "significance": "缶詰専業としての体制が固まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "焼津プラントを新設",
+      "description": "1951年2月、焼津食品合資会社と焼津水産缶詰株式会社を吸収合併し、静岡県焼津市に焼津プラントを新設しました。",
+      "significance": "現在の主力生産拠点である焼津プラントの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "「シーチキン」を商標登録",
+      "description": "1958年11月、鮪油漬缶詰類の製品名「シーチキン」を商標登録しました。",
+      "significance": "現在の主力ブランドの誕生です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "パスタの製造工場を新設",
+      "description": "1962年10月、静岡県清水市（現・静岡市）にマカロニ類の製造工場（パスタプラント）を新設しました。",
+      "significance": "パスタ事業への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "はごろも罐詰株式会社に商号変更",
+      "description": "1969年7月、商号をはごろも罐詰株式会社に変更しました。",
+      "significance": "「はごろも」の商号が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "はごろもフーズ株式会社に商号変更",
+      "description": "1987年12月、商号をはごろもフーズ株式会社に変更しました。",
+      "significance": "缶詰以外へ広がった事業内容に合わせた商号変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "物流子会社を設立",
+      "description": "1990年12月、物流体制の強化のため、子会社のセントラル物流株式会社（現・連結子会社のセントラルサービス株式会社）を設立しました。",
+      "significance": "現在の唯一の連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "インドネシアに合弁会社を設立",
+      "description": "1991年10月、インドネシア国に鮪・鰹缶詰製造の合弁会社PT.アネカ・ツナ・インドネシアを設立しました。",
+      "significance": "現在の持分法適用関連会社で、ツナ製品等の製造委託先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "2000年2月、東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "マルアイ等の全株式を取得",
+      "description": "2005年4月、株式会社マルアイ、マルアイ商事株式会社、愛食興産株式会社の全株式を取得しました。",
+      "significance": "グループの販売体制の再編につながる取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "マルアイを吸収合併",
+      "description": "2017年4月、株式会社マルアイを吸収合併しました。",
+      "significance": "2005年に取得した会社の統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "新清水プラントを新設",
+      "description": "2020年10月、静岡県静岡市に鮪・鰹缶詰の製造工場である新清水プラントを新設しました。",
+      "significance": "主力の缶詰生産体制の更新です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しによりスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "itochu",
+      "relationship": "customer",
+      "description": "原材料や製品等の輸入取引や販売の代理店業務を委託している取引先で、2026年3月期の売上高の32.0％を占める最大の顧客です。関連会社のPT.アネカ・ツナ・インドネシアとの缶詰等の仕入取引も同社を経由しています。当社は同社の株式1,525,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-corporation",
+      "relationship": "customer",
+      "description": "原材料や製品等の輸入取引や販売の代理店業務を委託している取引先で、2026年3月期の売上高の16.3％を占める主要な顧客です。当社は同社の株式906,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "customer",
+      "description": "原材料や製品等の輸入取引や販売の代理店業務を委託している取引先で、2026年3月期の売上高の14.9％を占める主要な顧客です。当社は同社の株式614,000株を保有しており、同社は2026年3月31日現在、当社の発行済株式の1.15％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "central-forest-group",
+      "relationship": "customer",
+      "description": "主に中京エリアでの製品の販売取引を行っている取引先です。当社は同社の株式75,224株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "seven-and-i-holdings",
+      "relationship": "customer",
+      "description": "主に同社傘下の事業会社等と製品の販売取引を行っている取引先です。当社は同社の株式83,807株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kato-sangyo",
+      "relationship": "customer",
+      "description": "全国の量販店等への製品の販売取引を行っている取引先です。当社は同社の株式25,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamae-group-holdings",
+      "relationship": "customer",
+      "description": "主に九州エリアでの製品の販売取引を行っている取引先です。当社は同社の株式31,435株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "maruichi",
+      "relationship": "customer",
+      "description": "主に甲信エリアでの製品の販売取引を行っている取引先です。当社は同社の株式54,846株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "satoh-and-co",
+      "relationship": "customer",
+      "description": "主に東北エリアでの製品の販売取引を行っている取引先です。当社は同社の株式18,916株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "h2o-retailing",
+      "relationship": "customer",
+      "description": "主に関西エリアでの製品の販売取引を行っている取引先です。当社は同社の株式13,830株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okuwa",
+      "relationship": "customer",
+      "description": "主に関西エリアでの製品の販売取引を行っている取引先です。当社は同社の株式23,196株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aeon-hokkaido",
+      "relationship": "customer",
+      "description": "北海道エリアでの製品の販売取引を行っている取引先です。当社は同社の株式15,840株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "echo-trading",
+      "relationship": "customer",
+      "description": "ペットフード専門店等への製品の販売取引を行っている取引先です。当社は同社の株式2,704株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ahjikan",
+      "relationship": "customer",
+      "description": "主に中国エリアでの製品の販売取引を行っている取引先です。当社は同社の株式1,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamanaka",
+      "relationship": "customer",
+      "description": "主に中京エリアでの製品の販売取引を行っている取引先です。当社は同社の株式9,400株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nitto-fuji-flour-milling",
+      "relationship": "supplier",
+      "description": "主にパスタの原材料であるデュラム小麦粉を購入している仕入先です。当社は同社の株式38,480株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toyo-seikan-group-holdings",
+      "relationship": "supplier",
+      "description": "同社傘下の事業会社より空缶等の容器の購入や製造ラインの設計・管理等を委託している取引先です。当社は同社の株式11,000株を保有しており、同社は2026年3月31日現在、当社の発行済株式の0.91％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "rengo",
+      "relationship": "supplier",
+      "description": "主に段ボールを購入している仕入先です。当社は同社の株式12,612株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "k-r-s",
+      "relationship": "supplier",
+      "description": "製品の運送・保管業務を委託している取引先です。当社は同社の株式11,600株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +550,50 @@
       "publisher": "はごろもフーズ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJSM.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YJSM",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 重要な後発事象：保有していた伊藤忠食品株式会社の株式について、合同会社FMDIが2026年2月25日から実施していた公開買付けに応募し、2026年4月9日に成立しました。売却に伴う利益は2027年3月期に計上される予定であり、登録は2026年3月31日現在の保有状況に基づきます。"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-10",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「Challenge ＆ Change for 100th！ ～もっとおいしく、もっと便利に、もっと優しく、そしてもっと元気に！～」（2024年4月から2027年3月まで）を進めています。製品ブランドの価値向上を優先課題とし、製品の安全・安心と安定生産・供給のための設備・人財投資と生産ネットワークの構築、既存事業の強化と高付加価値な新製品の投入やデジタル化、新たな事業の柱の育成、多様な人財が活躍できる職場づくり、環境保全や社会貢献活動への取り組みを基本方針としています。計画の指標の数値は将来に関する事項であるため、ここには記載しません。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "主力製品のシーチキンをはじめとする製品ブランドの価値向上に取り組み、お客様の声（VOC）などのマーケティングデータを活用した新製品の開発を進めています。生産では、自社工場に加えて国内外の約70か所の協力工場に製造を委託する生産ネットワークを持ち、多品種の製品を安定的に供給する体制を取っています。品質面では、FSSC（食品安全マネジメントシステム）にもとづく品質マネジメントの高度化を進めています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "食品事業およびこの付帯事業の単一セグメントで、海外売上高はありません。2026年3月期の売上高は、家庭用食品が中心で、業務用食品とペットフード・バイオ他が続きます。販売は商社や卸売業者を経由する形態が中心で、伊藤忠商事が売上高の32.0％、三菱商事が16.3％、三井物産が14.9％を占める主要な顧客です。ツナ製品は、持分法適用関連会社のPT.アネカ・ツナ・インドネシアに製造を委託しています。",
+        "basis": "【セグメント情報等】の主要な顧客ごとの情報と地域ごとの情報、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の製品群別売上高と相手先別販売実績、【関係会社の状況】に基づく",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

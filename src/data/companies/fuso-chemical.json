@@ -4,15 +4,104 @@
   "name": "扶桑化学工業",
   "officialName": "扶桑化学工業株式会社",
   "nameEn": "FUSO CHEMICAL CO.,LTD.",
-  "description": null,
+  "shortNameEn": "FUSO CHEMICAL",
+  "description": "リンゴ酸やクエン酸などの果実酸と、半導体向けの超高純度コロイダルシリカを製造・販売する化学メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "fuso-chemical-group",
+      "name": "扶桑化学工業グループの事業",
+      "description": "扶桑化学工業と連結子会社からなるグループで、果実酸などのライフサイエンス事業と、半導体向け材料などの電子材料事業の2分野の事業を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "electronic-materials",
+          "name": "電子材料事業",
+          "description": "半導体の研磨剤原料として使われる超高純度コロイダルシリカの製造・販売を中心とし、プラスチックや塗料の添加剤、香料・化粧品の原料となる樹脂添加剤やファインケミカルも販売しています。2026年3月期の外部顧客への売上高は41,514百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "life-science",
+          "name": "ライフサイエンス事業",
+          "description": "リンゴ酸、クエン酸、グルコン酸等の果実酸類や無水マレイン酸等の有機酸類の製造・販売と、それらを原料にした麺食品の品質改良剤、日持ち向上剤などの応用開発商品の製造・販売を行っています。2026年3月期の外部顧客への売上高は35,411百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "果実酸類・有機酸類などのライフサイエンス製品と、超高純度コロイダルシリカなどの電子材料を製造・販売し、食品メーカーや半導体メーカーに供給する事業モデルです。",
+    "products": [
+      "リンゴ酸、クエン酸、グルコン酸等の果実酸類・有機酸類",
+      "麺食品の品質改良剤、日持ち向上剤などの応用開発商品（食品添加物製剤）",
+      "半導体CMPスラリー用研磨剤原料の超高純度コロイダルシリカ",
+      "樹脂添加剤、ファインケミカル等の機能性化学品"
+    ],
+    "customers": [
+      "飲料・加工食品メーカーなどの食品メーカー",
+      "半導体メーカー",
+      "洗剤・化粧品・塗料などのメーカー"
+    ],
+    "revenueSources": [
+      "果実酸類・有機酸類および応用開発商品の販売",
+      "超高純度コロイダルシリカなど電子材料の販売",
+      "樹脂添加剤・ファインケミカル等の機能性化学品の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "扶桑化学工業と連結子会社のグループ",
+        "description": "扶桑化学工業は大阪市中央区に本店を置き、中国・米国・タイの子会社を含む連結子会社とグループを構成しています。連結の従業員数は956人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "果実酸と電子材料を製造・販売",
+        "description": "ライフサイエンス事業でリンゴ酸・クエン酸等の果実酸類と応用開発商品を、電子材料事業で半導体研磨剤原料の超高純度コロイダルシリカや樹脂添加剤を製造・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "食品メーカーや半導体メーカーが顧客",
+        "description": "果実酸類は飲料・加工食品メーカーなどへ、超高純度コロイダルシリカは半導体メーカーへ販売しています。主要な顧客であるFUJIFILM Electronic Materials Taiwan Co., Ltd.への販売が連結売上高の13.9％を占めています（2026年3月期）。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は76,926百万円",
+        "description": "2026年3月期の売上高は76,926百万円で、電子材料事業の販売数量の増加を中心に、前期比10.7％増となりました。電子材料事業の外部顧客への売上高は41,514百万円、ライフサイエンス事業は35,411百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は14,311百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は14,311百万円で、前期比23.1％増となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +116,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 75303348000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 805,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +136,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 87502824000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 859,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +156,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 95025016000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 892,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +176,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 104048977000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 915,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +196,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 117216923000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 956,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +204,189 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1957,
+      "title": "扶桑化学工業株式会社を設立",
+      "description": "1957年6月、帝國製薬株式会社の大阪工場を独立させ、扶桑化学工業株式会社を設立しました。",
+      "significance": "同社の創立です。帝國製薬は現在の大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "食品添加物「リンゴ酸」の製造開始",
+      "description": "1962年9月、食品添加物「リンゴ酸」の製造を開始しました。",
+      "significance": "現在のライフサイエンス事業の主力製品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "「樹脂添加剤」の製造開始",
+      "description": "1966年5月、イソブチレン誘導体「樹脂添加剤」の製造を開始しました。",
+      "significance": "現在の電子材料事業につながる機能性化学品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "FDA規格の「リンゴ酸」の製造に成功",
+      "description": "1975年11月、FDA規格の「リンゴ酸」の製造に成功しました。",
+      "significance": "海外市場への展開の基盤となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "「クエン酸」の製造開始",
+      "description": "1986年6月、「クエン酸」の製造を開始しました。",
+      "significance": "果実酸類の製品構成が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "電子材料「コロイダルシリカ」の試験生産開始",
+      "description": "1987年8月、電子材料「コロイダルシリカ」の試験生産を開始しました。",
+      "significance": "現在の電子材料事業の主力製品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "青島扶桑精製加工有限公司を設立",
+      "description": "1994年7月、中国山東省青島市に青島扶桑精製加工有限公司を設立しました。",
+      "significance": "中国での生産体制の構築の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "株式を店頭登録",
+      "description": "2001年5月、日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "藤沢薬品工業から国内化成品事業を買収",
+      "description": "2003年12月、藤沢薬品工業株式会社より国内化成品事業および米国子会社PMP Fermentation Products, Inc.の全株式を買収しました。",
+      "significance": "グルコン酸類の事業基盤と米国の生産拠点を得ました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "2004年12月、ジャスダック証券取引所（現 東京証券取引所JASDAQ（スタンダード））に株式を上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "FUSO (THAILAND) CO.,LTD.を設立",
+      "description": "2008年8月、タイにFUSO (THAILAND) CO.,LTD.を設立しました。",
+      "significance": "東南アジアでの生産・販売体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "三井化学から有機酸事業を承継",
+      "description": "2014年10月、三井化学株式会社より有機酸事業を承継し、無水マレイン酸・フマル酸の販売を開始しました。",
+      "significance": "有機酸類の製品構成が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東京証券取引所市場第一部に市場変更",
+      "description": "2015年12月、公募増資を実施し、東京証券取引所市場第一部に市場変更しました。",
+      "significance": "資本市場の位置づけが高まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "鹿島事業所を開設",
+      "description": "2017年11月、茨城県神栖市に鹿島事業所を開設しました。",
+      "significance": "両事業の生産拠点が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "鹿島事業所の超高純度コロイダルシリカ製造設備が完成",
+      "description": "2023年4月、鹿島事業所の超高純度コロイダルシリカ製造設備が完成しました。",
+      "significance": "電子材料事業の供給能力が拡大しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "株式会社扶桑コーポレーションの解散",
+      "description": "2026年3月31日付で、株式会社扶桑コーポレーションは解散しました。",
+      "significance": "グループ会社の整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "fujimi",
+      "relationship": "business-partner",
+      "description": "株式会社フジミインコーポレーテッドは電子材料事業の取引先であり、製商品の販売・仕入の取引関係の維持・強化のため、当社は同社の株式を保有しています（2026年3月31日現在）。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +394,51 @@
       "publisher": "扶桑化学工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEIS.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YEIS",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 株式分割: 2026年4月1日付で普通株式1株につき3株の割合による株式分割を実施（2026年2月6日取締役会決議）。株式数に関する指標は第65期（2022年3月期）の期首に当該分割が行われたと仮定して算定されている旨が印字されている。登録は有報の印字どおり。",
+      "businessModel: 重要な後発事象: 京都事業所第二工場の超高純度コロイダルシリカ生産設備について、「サプライチェーン対策のための国内投資促進事業費補助金（2次公募）」の確定通知書を受領し、交付決定額は3,694百万円、交付決定日は2026年6月15日である旨が印字されている。2027年3月期に補助金収入を計上する予定であり、登録は2026年3月31日現在の構造に基づく。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-10",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期ビジョンに「グローバルニッチトップ企業として進化する」「FUSOの技術で未来を支える」などを掲げ、2026年5月に2030年度を最終年度とする5カ年の新中期経営計画「飛躍2030」を発表しました。半導体需要の拡大に対応するため、2026年3月に京都事業所における超高純度コロイダルシリカの新規設備投資を決定するなど（2029年2月操業開始予定）、供給能力の強化を進めています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "主力の超高純度コロイダルシリカは、粒度分布制御技術により粗大粒子や微粒子を低減した製品を取りそろえ、重要な顧客の最先端製造プロセスで採用されています。ライフサイエンス事業では、リンゴ酸・クエン酸等の果実酸に加え、食品添加物製剤（FFA）などの応用開発商品を展開し、米国子会社PMP Fermentation Products, Inc.がグルコン酸類の発酵生産を担っています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高76,926百万円の内訳は、電子材料事業が41,514百万円、ライフサイエンス事業が35,411百万円で、電子材料事業が過半を占めています。主要な顧客であるFUJIFILM Electronic Materials Taiwan Co., Ltd.への販売が連結売上高の13.9％を占めています。販売は日本に加え、台湾を含むアジア、北米など海外にも広がっています。",
+        "basis": "セグメント情報等（報告セグメントごとの外部顧客への売上高、関連情報の地域ごとの情報・主要な顧客ごとの情報）に基づきます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
