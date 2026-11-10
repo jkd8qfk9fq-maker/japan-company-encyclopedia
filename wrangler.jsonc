@@ -1,10 +1,17 @@
 {
-  // Cloudflare Workers: the public pages as static assets (the output of `npm run build:static`).
-  // The Worker name is the first part of the free URL: https://nihonkigyohyakka.<account>.workers.dev
+  // Cloudflare Workers: the public pages as static assets (the output of `npm run build:static`), served at
+  // kigyo-hyakka.com (JCE-038). worker/index.ts only redirects the old workers.dev address and www. there.
   "name": "nihonkigyohyakka",
   "compatibility_date": "2026-10-01",
+  "main": "worker/index.ts",
+  "routes": [
+    { "pattern": "kigyo-hyakka.com", "custom_domain": true },
+    { "pattern": "www.kigyo-hyakka.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./out",
-    "not_found_handling": "404-page"
+    "binding": "ASSETS",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/*", "!/_next/*"]
   }
 }

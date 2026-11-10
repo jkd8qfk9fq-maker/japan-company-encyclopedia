@@ -11,12 +11,24 @@ const script = read("scripts/build-static.mjs");
 
 describe("wrangler.jsonc", () => {
   it("names the Worker nihonkigyohyakka, so the free URL starts with it", () => expect(wrangler.name).toBe("nihonkigyohyakka"));
-  it("serves ./out as static assets with a 404 page", () => {
-    expect(wrangler.assets).toEqual({ directory: "./out", not_found_handling: "404-page" });
+  it("serves ./out as static assets with a 404 page; the Worker runs for pages only, never for /_next assets", () => {
+    expect(wrangler.assets).toEqual({
+      directory: "./out",
+      binding: "ASSETS",
+      not_found_handling: "404-page",
+      run_worker_first: ["/*", "!/_next/*"],
+    });
   });
-  it("holds no secret and no binding", () => {
+  it("is served at kigyo-hyakka.com; its only code redirects old addresses (JCE-039)", () => {
+    expect(wrangler.main).toBe("worker/index.ts");
+    expect(wrangler.routes).toEqual([
+      { pattern: "kigyo-hyakka.com", custom_domain: true },
+      { pattern: "www.kigyo-hyakka.com", custom_domain: true },
+    ]);
+  });
+  it("holds no secret and no binding but the assets", () => {
     expect(JSON.stringify(wrangler)).not.toMatch(/key|token|secret|password/i);
-    expect(Object.keys(wrangler).sort()).toEqual(["assets", "compatibility_date", "name"]);
+    expect(Object.keys(wrangler).sort()).toEqual(["assets", "compatibility_date", "main", "name", "routes"]);
   });
 });
 

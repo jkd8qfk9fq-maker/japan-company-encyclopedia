@@ -636,3 +636,16 @@ salary and tenure**, **implement the diagram and the pipeline support** now.
 - **Kept through every later write:** refresh-financials replaces all three with the newest filing's; merge-fragments
   keeps a registered entry's while its year and businesses still fit (a draft from an older pack has none).
 - No comparison page was built (JCE-017's "no compare tool" stands until asked).
+
+### JCE-039 · 2026-11-10 · Accepted (operator) — kigyo-hyakka.com, and Google AdSense in the four placements
+
+The operator chose Google AdSense for the 企業タイプ診断 and the encyclopedia. AdSense will not take a `*.workers.dev`
+address (it asks for the root domain, which belongs to Cloudflare), so the operator bought `kigyo-hyakka.com` on
+Cloudflare: the encyclopedia is served at the root and the 診断 at `shindan.kigyo-hyakka.com`, both attached by
+`routes` in their wrangler config. `worker/index.ts` answers only to redirect the old workers.dev address and `www.`
+(301, path kept), so shared links keep working; `/_next/*` assets skip it.
+
+Ownership is claimed with AdSense's meta tag on every page and `/ads.txt`; neither loads a script. Ads appear only once
+the operator's display ad unit id is set in `src/components/ads/ad-slot.tsx` (after Google approves the site), and then
+only in the four AdSlot placements, labelled 広告, under the rules of JCE-036. /privacy and /about#advertising switch to
+the AdSense disclosure on the same flag, so the pages never say less than the site does.

@@ -11,6 +11,10 @@
 | `content-store.ts` のファイル検索パターンが 16,134 ファイルに一致する | 警告。管理画面のエディタ（ローカル専用）が `src/data` を動的に読むため。静的書き出しには管理画面が含まれないので、この警告は出ない | 対応不要 |
 | `npx wrangler deploy` で何も載らない | 通常の `npm run build` の出力（`.next`）は Workers の静的アセットではなく、Next.js のサーバー実行が要る。`wrangler.jsonc` もなかった | `wrangler.jsonc`（`./out` を配信）を追加した |
 
+## 独自ドメイン（JCE-039）
+
+公開アドレスは **https://kigyo-hyakka.com**（Cloudflare で購入。`wrangler.jsonc` の `routes` でつなぐ）。古い `*.workers.dev` と `www.` は `worker/index.ts` が新しいアドレスへ転送する。ビルド変数 `SITE_URL` は `https://kigyo-hyakka.com` にする。
+
 ## 設定（Workers：`*.workers.dev`）
 
 Cloudflare ダッシュボード → Workers & Pages → Create → **Import a repository**（GitHub）→ このリポジトリを選ぶ。

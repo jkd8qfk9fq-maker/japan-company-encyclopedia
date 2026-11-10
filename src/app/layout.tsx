@@ -56,6 +56,8 @@ export const metadata: Metadata = {
     locale: "ja_JP",
   },
   formatDetection: { telephone: false },
+  // Google AdSense's site-ownership check (JCE-039). A claim of the site only: it loads no script and shows no ad.
+  other: { "google-adsense-account": "ca-pub-6016615044830350" },
 };
 
 export const viewport: Viewport = {

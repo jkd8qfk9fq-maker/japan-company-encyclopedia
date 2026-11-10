@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { ADS_ENABLED } from "@/components/ads/ad-slot";
 import Link from "next/link";
 import { SITE_NAME } from "@/lib/site";
 
@@ -78,7 +79,11 @@ export default function AboutPage() {
       <section id="advertising" aria-labelledby="advertising-heading" className="mt-16 scroll-mt-28">
         <h2 id="advertising-heading" className="font-serif text-xl font-semibold">広告とPR表記について</h2>
         <div className="prose-ja mt-4 space-y-4">
-          <p>現在、このサイトに広告は掲載していません。今後掲載する場合は、次の方針に従います。</p>
+          <p>
+            {ADS_ENABLED
+              ? "このサイトは Google AdSense による広告を掲載しています（扱う情報はプライバシーポリシーをご覧ください）。広告は次の方針に従います。"
+              : "現在、このサイトに広告は掲載していません。今後掲載する場合は、次の方針に従います。"}
+          </p>
           <ul className="list-disc space-y-2 pl-5">
             <li>広告・アフィリエイトリンク・広告主の依頼による記事には、すべて「広告」または「PR」と明示します。</li>
             <li>企業の一文の説明、事業構造、ビジネスモデル、財務、沿革の中や、記述とその出典の間には広告を置きません。</li>

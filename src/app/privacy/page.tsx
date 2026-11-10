@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ADS_ENABLED } from "@/components/ads/ad-slot";
 import { SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
@@ -59,11 +60,36 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
     id: "ads",
     title: "広告",
     body: (
-      <p>
-        現在、本サイトに広告は掲載しておらず、広告のための Cookie や追跡は行っていません。今後、広告を掲載する場合は、使う広告サービスと、そのサービスが扱う情報をこのページに記載してから始めます。広告の方針は
-        <Link href="/about#advertising" className="link-ink">「広告とPR表記について」</Link>
-        をご覧ください。
-      </p>
+      ADS_ENABLED ? (
+        <>
+          <p>
+            本サイトは、Google LLC の広告配信サービス「Google AdSense」による広告を掲載しています。Google などの第三者配信事業者は、Cookie を使って、お使いのブラウザでの本サイトや他のサイトへの過去のアクセス情報にもとづいて広告を配信します。
+          </p>
+          <p>
+            パーソナライズ広告は
+            <a href="https://adssettings.google.com/" className="link-ink" target="_blank" rel="noopener">
+              Google の広告設定
+            </a>
+            で、第三者配信事業者の Cookie は
+            <a href="https://www.aboutads.info/" className="link-ink" target="_blank" rel="noopener">
+              www.aboutads.info
+            </a>
+            で無効にできます。Google による情報の扱いは
+            <a href="https://policies.google.com/technologies/ads?hl=ja" className="link-ink" target="_blank" rel="noopener">
+              「広告」のページ
+            </a>
+            をご覧ください。広告の方針は
+            <Link href="/about#advertising" className="link-ink">「広告とPR表記について」</Link>
+            をご覧ください。
+          </p>
+        </>
+      ) : (
+        <p>
+          現在、本サイトに広告は掲載しておらず、広告のための Cookie や追跡は行っていません。今後、広告を掲載する場合は、使う広告サービスと、そのサービスが扱う情報をこのページに記載してから始めます。広告の方針は
+          <Link href="/about#advertising" className="link-ink">「広告とPR表記について」</Link>
+          をご覧ください。
+        </p>
+      )
     ),
   },
   {
