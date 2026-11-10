@@ -4,15 +4,136 @@
   "name": "大水",
   "officialName": "株式会社大水",
   "nameEn": "DAISUI CO.,LTD.",
-  "description": null,
+  "shortNameEn": "DAISUI CO.,LTD.",
+  "description": "京阪神の中央卸売市場を拠点に水産物を販売する卸売事業と、冷蔵倉庫事業を営む会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "marine-products-sales",
+      "name": "水産物販売事業",
+      "description": "卸売市場法に基づき、中央卸売市場等において水産物の販売を行う事業です。2026年3月期の外部顧客への売上高は105,540百万円で、連結売上高のほぼ全てを占めています。当社のほか、子会社4社がこの事業に属しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "kyoto-kosan",
+          "name": "京都興産",
+          "description": "大阪市北区に本社を置く連結子会社（議決権の所有割合100.0％）で、水産物販売事業を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "maruo-foods",
+          "name": "丸魚食品",
+          "description": "京都市南区に本社を置く連結子会社（議決権の所有割合100.0％）で、水産物販売事業を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "oita-suisan",
+          "name": "大分水産",
+          "description": "大分県大分市に本社を置く連結子会社（議決権の所有割合100.0％）で、水産物販売事業を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "beppu-uoichi",
+          "name": "別府魚市",
+          "description": "大分県別府市に本社を置く連結子会社（議決権の所有割合100.0％）で、水産物販売事業を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    },
+    {
+      "id": "cold-storage",
+      "name": "冷蔵倉庫等事業",
+      "description": "子会社の大阪東部冷蔵が、市場内及び市場外流通の拠点として冷蔵倉庫業を行う事業です。2026年3月期の外部顧客への売上高は229百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "osaka-tobu-reizo",
+          "name": "大阪東部冷蔵",
+          "description": "大阪市東住吉区に本社を置く連結子会社（議決権の所有割合100.0％）で、冷蔵倉庫を運営しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "大阪・京都・神戸の中央卸売市場等で集荷した水産物を、市場内外の卸売会社、量販店、食品メーカーなどへ販売し、子会社が冷蔵倉庫を運営するグループです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "水産物全般（生鮮水産物、冷凍水産物、塩干品など）の卸売販売",
+      "冷蔵倉庫による水産物等の保管"
+    ],
+    "customers": [
+      "市場内外の卸売会社",
+      "量販店",
+      "食品メーカー"
+    ],
+    "revenueSources": [
+      "水産物の販売による売上高",
+      "冷蔵倉庫の保管料収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "大水グループ",
+        "description": "株式会社大水と子会社5社、関連会社3社で構成されています。2026年3月期の連結従業員数は438人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "水産物の卸売と冷蔵保管",
+        "description": "卸売市場法に基づき、中央卸売市場等において水産物の販売を行い、子会社が市場内及び市場外流通の拠点として冷蔵倉庫を運営しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "卸売会社・量販店・食品メーカー",
+        "description": "大阪・京都・神戸の卸売市場を主な営業拠点として、市場内外の卸売会社、量販店、食品メーカーなどへ水産物全般を販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "水産物の販売と冷蔵倉庫の保管料などで収益を得ています。2026年3月期の売上高は105,770百万円で、前期比6.5％増となりました。外部顧客への売上高は、水産物販売事業が105,540百万円、冷蔵倉庫等事業が229百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は730百万円で、前期比38.6％減となりました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +148,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7554000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 446,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +168,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8232000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 435,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10042000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 424,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +208,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11457000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 434,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +228,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12842000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 438,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +236,226 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1939,
+      "title": "大阪冷凍海老株式会社を設立",
+      "description": "1939年4月、大阪冷凍海老株式会社を設立しました。",
+      "significance": "現在の大水の前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1941,
+      "title": "商号を共同水産加工株式会社に変更",
+      "description": "1941年8月、商号を共同水産加工株式会社に変更しました。",
+      "significance": "社名の変遷の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "商号を共同水産株式会社に変更",
+      "description": "1944年1月、商号を共同水産株式会社に変更しました。",
+      "significance": "社名の変遷の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "商号を大阪水産物株式会社に変更し公認荷受機関となる",
+      "description": "1947年9月、商号を大阪水産物株式会社に変更し、大阪府における公認荷受機関となりました。",
+      "significance": "卸売市場における荷受としての役割の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "商号を株式会社大水に変更",
+      "description": "1948年3月、水産物の売買及び販売の受託を目的とし、商号を株式会社大水に変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "水産物卸売人の許可を受ける",
+      "description": "1950年8月、大阪府知事より水産物卸売人として許可を受けました。",
+      "significance": "水産物卸売業の許可取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "大阪塩干株式会社の営業権を一部譲り受ける",
+      "description": "1956年11月、大阪塩干株式会社の営業権の一部を譲り受けました。",
+      "significance": "取扱分野の広がりにつながる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "大阪府中央卸売市場に進出し北部支社を開設",
+      "description": "1978年5月、大阪府中央卸売市場に水産物部卸売業者として農林大臣より許可を受け、北部支社を開設しました。",
+      "significance": "中央卸売市場での営業基盤の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "東部支社を開設",
+      "description": "1981年10月、大阪東部水産市場株式会社より営業権の一部を譲り受け、水産物部卸売業者として農林水産大臣より許可を受け、東部支社を開設しました。",
+      "significance": "大阪市中央卸売市場東部市場での営業開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "大阪東部冷蔵株式会社を子会社化",
+      "description": "1992年3月、大阪東部冷蔵株式会社を子会社化しました。",
+      "significance": "現在の冷蔵倉庫等事業の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "1997年3月、大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式上場の出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "神戸海産物株式会社を吸収合併",
+      "description": "2000年9月、神戸海産物株式会社を吸収合併しました。",
+      "significance": "神戸地区での営業基盤の統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "京都魚市場株式会社を吸収合併",
+      "description": "2001年10月、京都魚市場株式会社を吸収合併し、この合併により同社の子会社であった株式会社京都興産及び丸魚食品株式会社を子会社化しました。",
+      "significance": "京都地区への展開と子会社の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "株式会社明石丸海を吸収合併",
+      "description": "2005年5月、株式会社明石丸海を吸収合併しました。",
+      "significance": "合併による営業基盤の統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "大分水産が大分市公設地方卸売市場で事業を開始",
+      "description": "2013年4月、子会社の株式会社大分水産が、水産物部の営業の譲受けについて大分県知事より認可を受け、大分市公設地方卸売市場において事業を開始しました。",
+      "significance": "九州地区での事業開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "2013年7月、東京証券取引所と大阪証券取引所の統合に伴い、東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "取引所統合に伴う上場市場の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "株式会社別府魚市を子会社化",
+      "description": "2020年4月、株式会社別府魚市を子会社化しました。",
+      "significance": "大分県での営業基盤の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に上場",
+      "description": "2022年4月、東京証券取引所の市場区分見直しに伴い、東京証券取引所スタンダード市場に株式を上場しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nissui",
+      "relationship": "other-affiliated-company",
+      "description": "その他の関係会社です。2026年3月31日現在、当社の議決権の31.6％を保有しています。当社は同社の関連会社であり、同社は水産物販売事業における主要な仕入先で、子会社の大阪東部冷蔵が運営する冷蔵倉庫の寄託者でもあります。商品の売買や役員の受入れがあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "kyokuyo",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の議決権の8.66％を保有する大株主の事業会社です。当社も同社の株式を保有しており、水産物販売事業における取引先として、売上及び仕入を維持・拡大させることを目的とした良好な取引関係の維持を保有目的としています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "nichimo",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の議決権の3.30％を保有する大株主の事業会社です。当社も同社の株式を保有しており、水産物販売事業における取引先として、売上及び仕入を維持・拡大させることを目的とした良好な取引関係の維持を保有目的としています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "chubu-suisan",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の議決権の1.90％を保有する大株主の事業会社です。当社も同社の株式を保有しており、水産物販売事業における取引先として、売上及び仕入を維持・拡大させることを目的とした良好な取引関係の維持を保有目的としています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +463,47 @@
       "publisher": "株式会社大水",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YM6T.pdf",
       "publishedAt": "2026-06-29",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YM6T",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-10",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「水産物販売事業」をグループの中核事業とし、大阪・京都・神戸の卸売市場を主な営業拠点として、市場内外の卸売会社、量販店、食品メーカーなどへ水産物全般を販売し、関西の食卓へ届ける役割を担っています。「冷蔵倉庫事業」は水産物販売にかかる流通機能を補完する役割とし、組織的な調達力を強化し、顧客の期待に応えることで、企業価値の向上を目指しています。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "京阪神の中央卸売市場に営業拠点を持ち、市場内の取引を担う市場営業部門と、海外向け冷凍魚の販売や国内加工メーカー向けの原料販売を行う市場外営業部門の両方を備えています。冷蔵倉庫をグループ内に持ち、生鮮品の品質維持や安定供給を支える流通機能を一体で運営しています。",
+        "basis": "事業の内容、経営方針、経営成績等の状況（部門別の販売状況）に基づきます。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "水産物販売事業が連結売上高のほぼ全てを占める水産物の卸売会社です。株式会社ニッスイは当社の議決権の31.6％を保有するその他の関係会社であり、水産物販売事業における主要な仕入先です。2026年3月期に売上高の10％を超える販売先はありません。",
+        "basis": "セグメント注記の外部顧客への売上高、事業の内容におけるニッスイとの関係、関係会社の状況、セグメント情報の主要な顧客ごとの情報に基づきます。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

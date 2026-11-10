@@ -4,15 +4,147 @@
   "name": "ダイハツインフィニアース",
   "officialName": "ダイハツインフィニアース株式会社",
   "nameEn": "DAIHATSU INFINEARTH MFG.CO.,LTD.",
-  "description": null,
+  "shortNameEn": "DAIHATSU INFINEARTH MFG.CO.,LTD.",
+  "description": "船舶用・陸用のディーゼル機関とガス機関を製造販売し、保守サービスまで手がける内燃機関メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "daihatsu-infinearth-group",
+      "name": "ダイハツインフィニアースグループの事業",
+      "description": "ダイハツインフィニアース株式会社（本社・大阪市北区）と子会社等18社で構成されるグループです（2026年3月31日現在）。舶用・陸用の内燃機関を扱う内燃機関部門と、産業機器・不動産賃貸・売電・精密部品のその他の部門を営んでいます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "marine-engines",
+          "name": "舶用機関関連事業",
+          "description": "船舶用のディーゼル機関・ガス機関を製造販売する事業です。守山工場（滋賀県守山市）と姫路工場（兵庫県姫路市）で製造し、国内外の販売子会社を通じて造船会社などに販売するほか、部品供給や保守のメンテナンスサービスも行っています。2026年3月期の外部顧客への売上高は71,829百万円で、グループ最大の事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "land-engines",
+          "name": "陸用機関関連事業",
+          "description": "陸用のディーゼル機関・ガス機関を製造販売する事業です。発電用やコージェネレーション用などの機関を、販売子会社を通じて事業者に販売し、メンテナンスサービスも提供しています。2026年3月期の外部顧客への売上高は11,545百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-businesses",
+          "name": "その他",
+          "description": "産業機器関連、不動産賃貸関連、売電関連、精密部品関連の4つの事業からなります。2026年3月期の外部顧客への売上高は4,691百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "children": [
+            {
+              "id": "industrial-equipment",
+              "name": "産業機器関連",
+              "description": "当社がアルミホイールの販売を行う事業です。",
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "real-estate-leasing",
+              "name": "不動産賃貸関連",
+              "description": "当社と株式会社梅田シティが貸事務所業を行う事業です。本社が入居する大阪市北区のビルなどの賃貸を行っています。",
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "solar-power",
+              "name": "売電関連",
+              "description": "当社が太陽光発電事業を行い、電力を販売する事業です。",
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "precision-parts",
+              "name": "精密部品関連",
+              "description": "日本ノッズル精機株式会社が精密部品の製造を行う事業です。",
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "造船会社などの顧客に舶用・陸用のディーゼル機関やガス機関を販売し、機関の販売とその後のメンテナンスサービスで収益を得る事業モデルです。",
+    "products": [
+      "舶用ディーゼル機関・ガス機関（推進用主機関・発電機用機関）",
+      "陸用ディーゼル機関・ガス機関（発電用・コージェネレーション用）",
+      "機関のメンテナンスサービス（部品供給・保守）",
+      "アルミホイール、精密部品、不動産賃貸、太陽光発電による売電"
+    ],
+    "customers": [
+      "国内外の造船会社",
+      "発電設備を導入する事業者",
+      "機関の保守や部品を必要とする既存の顧客"
+    ],
+    "revenueSources": [
+      "舶用機関関連事業における機関の販売とメンテナンスサービスによる収益",
+      "陸用機関関連事業における機関の販売とサービスによる収益",
+      "産業機器・不動産賃貸・売電・精密部品などのその他の事業による収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ダイハツインフィニアースとグループ会社",
+        "description": "ダイハツインフィニアース株式会社は大阪市北区に本社を置き、当社および子会社等18社でグループを構成しています。連結の従業員数は1,476人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "舶用・陸用機関を製造販売",
+        "description": "滋賀県守山市と兵庫県姫路市の工場で、船舶用と陸用のディーゼル機関・ガス機関を製造しています。国内外の販売子会社を通じて機関を販売するほか、部品の供給や保守などのメンテナンスサービスも提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "造船会社などの顧客",
+        "description": "舶用機関は国内外の造船会社などに、陸用機関は発電設備などを導入する事業者に販売しています。販売地域は日本を中心に、中国、アジア、中南米など海外にも広がっています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は88,066百万円",
+        "description": "2026年3月期の連結売上高は88,066百万円で、前期から0.8％減少しました。事業別の外部顧客への売上高は、舶用機関関連事業が71,829百万円、陸用機関関連事業が11,545百万円、その他が4,691百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は5,920百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は5,920百万円で、前期から3.6％増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +159,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 43069000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1258,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 45724000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1270,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 50843000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1327,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +219,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 44206000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1377,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（2022年改正会計基準）を第65期の期首から経過措置により適用しており、主要な経営指標は第65期以降が適用後の数値です。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +240,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 49432000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1476,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +248,242 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1966,
+      "title": "ダイハツ工業から分離独立",
+      "description": "1966年5月、ダイハツ工業株式会社の大阪事業所における舶用・汎用ディーゼル機関部門が分離独立し、ダイハツディーゼル株式会社として発足しました。",
+      "significance": "現在のダイハツインフィニアースの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "守山工場が完成",
+      "description": "1969年、滋賀県守山市に守山工場が完成しました。",
+      "significance": "自社工場での機関生産が本格化しました。現在の守山第一工場につながる拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "株式の額面変更のための合併",
+      "description": "1970年4月、株式の額面金額を変更するため合併を行いました。このため登記上の設立年月日は1939年4月29日となっています。",
+      "significance": "書類上の設立年月日と、1966年の分離独立による創業が異なる理由です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "1977年11月、大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "本社を大阪市中央区へ移転",
+      "description": "1990年9月、本社を大阪市中央区へ移転しました。",
+      "significance": "本社機能を大阪市の中心部へ移しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式会社梅田シティを設立",
+      "description": "1991年11月、旧本社跡地に積水ハウス株式会社ほか2社と再開発事業を行うため、株式会社梅田シティを設立しました。",
+      "significance": "再開発で生まれた梅田スカイビルは現在の本社所在地であり、不動産賃貸関連事業の土台です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "上海に総販売代理店子会社を設立",
+      "description": "2000年5月、中国総販売代理店としてDAIHATSU DIESEL (SHANGHAI) CO.,LTD.（現・DAIHATSU INFINEARTH (SHANGHAI) CO.,LTD.）を設立しました。",
+      "significance": "中国市場での販売体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "三井造船とガスエンジンの技術提携",
+      "description": "2004年10月、三井造船株式会社（現・株式会社三井E&S）とガスエンジンに関する技術提携契約を締結しました。",
+      "significance": "ガス機関の技術基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "中国に合弁会社を設立",
+      "description": "2007年7月、安慶中船柴油機有限公司との共同出資により、中国に合弁会社を設立しました。",
+      "significance": "中国での現地生産に参画しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "三井造船との合弁会社を設立",
+      "description": "2010年9月、三井造船株式会社（現・株式会社三井E&S）との共同出資により合弁会社MDエンジニアリング株式会社を設立しました（現・非連結子会社）。",
+      "significance": "三井E&Sとの共同事業の体制が続いています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "日本ノッズル精機を子会社化",
+      "description": "2015年7月、日本ノッズル精機株式会社の株式を取得し、子会社化しました。",
+      "significance": "精密部品関連事業を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "姫路工場の開設準備会社を設立",
+      "description": "2015年11月、姫路工場の開設に向け、ダイハツディーゼル姫路株式会社を設立しました。",
+      "significance": "姫路工場開設の準備が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "姫路工場が竣工し操業開始",
+      "description": "2018年8月、姫路工場が竣工し、操業を開始しました。",
+      "significance": "守山と並ぶ機関の生産拠点が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "Rolls-Royce Solutionsと技術提携",
+      "description": "2018年9月、ドイツのMTUフリードリヒスハーフェンGmbH（現・Rolls-Royce Solutions GmbH）と技術提携契約を締結しました。",
+      "significance": "舶用機関の技術提携先を海外にも広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証スタンダード市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場再編に伴い、スタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ダイハツインフィニアースへ社名変更",
+      "description": "2025年5月、商号をダイハツディーゼル株式会社からダイハツインフィニアース株式会社に変更しました。インフィニアースは、永遠・無限を意味するInfinityと地球を意味するEarthを組み合わせた造語です。",
+      "significance": "創業以来の社名を変更し、現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "meiji-shipping-group",
+      "relationship": "customer",
+      "description": "明海グループ株式会社の株式58,800株を保有しています。当社の製品販売先であり、安定的な取引関係の維持と今後の取引拡大を目的として株式を保有する顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "namura-shipbuilding",
+      "relationship": "customer",
+      "description": "株式会社名村造船所の株式57,638株を保有しています。当社の製品販売先であり、安定的な取引関係の維持と今後の取引拡大を目的として株式を保有する顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "kubota",
+      "relationship": "customer",
+      "description": "株式会社クボタの株式18,000株を保有しています。当社の製品販売先であり、安定的な取引関係の維持と今後の取引拡大を目的として株式を保有する顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "seika",
+      "relationship": "customer",
+      "description": "西華産業株式会社の株式12,000株を保有しています。当社の製品販売先であり、安定的な取引関係の維持と今後の取引拡大を目的として株式を保有する顧客です。株式数は、同社が2025年10月1日に実施した株式分割により前期の4,000株から増加しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "naikai-zosen",
+      "relationship": "customer",
+      "description": "内海造船株式会社の株式5,366株を保有しています。当社の製品販売先であり、安定的な取引関係の維持と今後の取引拡大を目的として株式を保有する顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "dmw",
+      "relationship": "customer",
+      "description": "株式会社電業社機械製作所の株式1,800株を保有しています。当社の製品販売先であり、安定的な取引関係の維持と今後の取引拡大を目的として株式を保有する顧客です。同社は当社株式も保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "sekisui-house",
+      "relationship": "business-partner",
+      "description": "積水ハウス株式会社の株式78,110株を保有しています。当社本社が所在する梅田スカイビルの共同所有者であり、共同事業の関係強化と安定的な推進を目的として株式を保有しています。1991年には旧本社跡地の再開発事業を同社ほか2社と共同で進めるため株式会社梅田シティを設立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "mitsui-e-and-s",
+      "relationship": "business-partner",
+      "description": "株式会社三井E&Sとは、2004年にガスエンジンに関する技術提携契約を締結し、2010年には共同出資によりMDエンジニアリング株式会社を設立しました（現在は当社の非連結子会社）。技術提携と共同出資による事業上の提携関係にあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +491,47 @@
       "publisher": "ダイハツインフィニアース株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCLQ.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YCLQ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-10",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "パーパス「TECHNOLOGY FOR THE EARTH －技術は地球を守るために－」を掲げ、2023年11月に公表した中長期ビジョン「POWER! FOR ALL beyond 2030」のもとで事業を進めています。重点課題は、安全・品質・生産性の向上による事業基盤の強化、次世代燃料対応機関の開発や機関の包括メンテナンスをはじめとするサービタイズの加速による成長領域への対応と収益体質の改善、DX・人材・ガバナンスを通じた経営基盤の強化の3つです。2026年5月には創業60周年と社名変更1周年を迎えます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1966年にダイハツ工業から分離独立して以来、内燃機関の製造販売と保守を一貫して手がけています。守山の2工場と姫路工場に生産拠点を置き、アメリカ、ヨーロッパ、中国、アジア太平洋に販売子会社を展開して、機関の販売から部品供給、保守までを担う体制を整えています。機関の包括メンテナンスをはじめとするサービタイズを進めている点も特徴です。",
+        "basis": "【事業の内容】のグループ体制、【設備の状況】の主要な設備、【経営方針、経営環境及び対処すべき課題等】のサービタイズの記載に基づく。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "外部顧客への売上高では舶用機関関連事業が全体の約8割を占める主力事業で、陸用機関関連事業は約1割強、その他は約5％です。地域別では日本が最も大きく、中国、アジア（中国を除く）が続き、中南米やその他地域にも販売しています。売上高の10％以上を占める単一の外部顧客はいません。",
+        "basis": "セグメント情報における事業別・地域別の外部顧客への売上高と、主要な顧客に関する情報（売上高の10％以上を占める相手先はない）の記載に基づく。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,129 @@
   "name": "アルゴグラフィックス",
   "officialName": "株式会社アルゴグラフィックス",
   "nameEn": "ARGO GRAPHICS Inc.",
-  "description": null,
+  "shortNameEn": "ARGO GRAPHICS",
+  "description": "自動車などの製造業向けに、3次元CADを中心とした設計・開発支援システムの販売と構築支援を行い、電子部品向けの設計ソフトも手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "plm",
+      "name": "PLM事業",
+      "description": "自動車や電機などの製造業の設計及び生産部門に対してCADシステムを、研究開発部門に対してサーバー等を販売、サポートする事業です。2026年3月期の外部顧客への売上高は69,489百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】",
+      "children": [
+        {
+          "id": "plm-solution",
+          "name": "PLMソリューション",
+          "description": "フランスのダッソーシステムズ社が開発した3次元CADシステム「CATIA」を主力製品として、自動車、航空機、電機、機械といった業界に設計を効率化するソリューションを提供します。CAEやCAM、PDMなどのCAD応用技術も扱います。2026年3月期の外部顧客への売上高は41,482百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "system-construction",
+          "name": "システム構築支援",
+          "description": "ビッグデータの処理・分析のためのシステム設計や、業務効率化・コスト削減のためのインフラ統合など、顧客の課題に合わせてクラウドやPCクラスターといった先端技術を活用した最適なシステムを構築します。2026年3月期の外部顧客への売上高は24,844百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "hw-maintenance",
+          "name": "HW販売に付帯する保守・その他",
+          "description": "PLMソリューションとシステム構築支援で提供したハードウェアについて保守を行う事業です。2026年3月期の外部顧客への売上高は3,162百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    },
+    {
+      "id": "eda",
+      "name": "EDA事業",
+      "description": "子会社のジーダットが開発した、電子部品の設計に関するCADシステムを、主に半導体業界を中心に販売、サポートする事業です。2026年3月期の外部顧客への売上高は2,036百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】",
+      "children": [
+        {
+          "id": "eda-solution",
+          "name": "EDAソリューション",
+          "description": "子会社のジーダットにおいて、大規模集積回路や液晶ディスプレイ等の電子部品、磁気ヘッドやマイクロマシン等の微細加工部品を設計するための電子系CADソフトウェア製品を自社開発し、販売、サポート、コンサルテーションを行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "主力のPLM事業では、3次元CAD「CATIA」を中心に製造業の設計・開発を支援するシステムを販売・構築し、EDA事業では子会社が電子系CADソフトを開発・販売しています。",
+    "products": [
+      "3次元CADシステム「CATIA」を中心としたPLMソリューション（CAE・CAM・PDMなどのCAD応用技術を含む）",
+      "クラウドやPCクラスターなどを活用したシステム構築支援",
+      "販売したハードウェアの保守サービス",
+      "子会社ジーダットが自社開発する電子系CADソフトウェア"
+    ],
+    "customers": [
+      "自動車、航空機、電機、機械などの製造業の設計・生産部門と研究開発部門",
+      "半導体業界をはじめとする電子部品の設計を行う企業"
+    ],
+    "revenueSources": [
+      "PLMソリューションの販売代金",
+      "システム構築支援の対価",
+      "ハードウェア保守の対価",
+      "EDAソリューションの販売・サポートの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "子会社15社・持分法適用関連会社3社のグループ",
+        "description": "当社、子会社15社及び持分法適用関連会社3社で構成され、PLM事業とEDA事業を行っています。2026年3月期の連結従業員数は1,198人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "設計支援システムと電子系CADソフトの提供",
+        "description": "3次元CAD「CATIA」を中心とした設計支援システム、サーバーなどのシステム構築、ハードウェアの保守、電子部品設計用のCADソフトを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "製造業の設計・開発部門と半導体業界",
+        "description": "自動車をはじめとする製造業の設計・生産部門や研究開発部門と、半導体業界の企業が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高71,526百万円",
+        "description": "2026年3月期の売上高は71,526百万円で、PLM事業が69,489百万円、EDA事業が2,036百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益19,190百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は19,190百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +141,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 39859260000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1036,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +161,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 43941843000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1076,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +181,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 52441857000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1135,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 59669909000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1166,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +221,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 51378714000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1198,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +229,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第42期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社アルゴグラフィックス",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YF23.pdf",
-      "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +240,186 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1985,
+      "title": "アルゴグラフィックスを設立",
+      "description": "図形処理・画像処理及びビデオテックス分野に関わるコンピュータ・システムの販売と関連ソフトウェアの開発・販売等を目的として、東京都港区芝大門に設立されました。",
+      "significance": "現在のPLM事業につながる、設計支援ビジネスの起点です。設立時の資本金の金額は本文に書かない規則のため記載していません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "株式を店頭登録",
+      "description": "株式を日本証券業協会に店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジーダットを子会社化",
+      "description": "電子系CADソフトの開発・販売を主業務とするジーダットを買収し、子会社化しました。",
+      "significance": "現在のEDA事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に上場しました。",
+      "significance": "市場第一部への指定替えです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "住商情報システム（現SCSK）と資本提携",
+      "description": "当社自己株式のうち2,370,000株を第三者割当により住商情報システム（現SCSK）に譲渡し、資本・業務提携を結びました。",
+      "significance": "SCSKはその後、前連結会計年度末時点で筆頭株主となっていました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "タイとベトナムの会社を子会社化",
+      "description": "タイ企業New System Service Co., Ltd. の株式を直接及びArgo Graphics Thailand Co., Ltd.を通じて追加取得し、同社と、その子会社のベトナム企業New System Vietnam Co., Ltd. を子会社化しました。",
+      "significance": "東南アジアに事業基盤を持ちました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "SCSKと住友商事がその他の関係会社に該当しなくなった",
+      "description": "SCSKによる当社株式の売却により、2025年7月2日をもってSCSKと住友商事はその他の関係会社に該当しなくなり、SCSKは筆頭株主ではなくなりました。",
+      "significance": "2008年以来続いたSCSKとの資本関係が終了しました。期中に完了し、2026年3月31日現在の構成に反映されているため、needsReviewではなく沿革と警告に記録しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "アルゴ北見テクノセンターが竣工",
+      "description": "北海道北見市に、データセンターであるアルゴ北見テクノセンターが竣工しました。",
+      "significance": "データセンターを基盤としたサービス拡充の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第42期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社アルゴグラフィックス",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YF23.pdf",
+      "publishedAt": "2026-06-19",
+      "docId": "S100YF23",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2025年10月1日付で普通株式1株につき4株の割合で株式分割を実施。株式数に関する指標は第38期（2022年3月期）の期首に当該分割が行われたと仮定して算定。"
+    ]
+  },
+  "updatedAt": "2026-11-10",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年度から2027年度の3カ年中期経営計画では、ものづくりプラットフォームの高度化、AIを活用した予測・分析ソリューションの展開、VDI・HPC・データセンターを基盤としたハイブリッドIT環境及びマネージドサービスの拡充を掲げ、人的資本経営を重要な経営戦略として位置付けています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "主要顧客である自動車関連業界では開発強化に向けたIT投資が堅調で、PLMソリューションの売上高が伸びています。半導体需要の拡大を背景に、システム構築支援でもハードウェアを中心としたソリューションが伸長しました。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析におけるセグメント別の概要",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "設計DX・製造DXを中核としたワンストップDXソリューションの提供を強みとしており、主力製品である3次元CAD「CATIA」については、開発したダッソー・システムズとの販売代理店契約に基づいて販売しています。コンサルティングから開発、運用、保守までをグループで担う体制があります。",
+        "basis": "事業の内容におけるPLMソリューションの説明と、重要な契約等におけるダッソー・システムズとの販売代理店契約",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の外部顧客への売上高は、PLM事業が69,489百万円、EDA事業が2,036百万円で、売上高の大半をPLM事業が占めています。主要な顧客であるホンダグループへの売上高は14,143百万円でした。",
+        "basis": "セグメント情報の報告セグメントごとの売上高と、関連情報の主要な顧客ごとの情報",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
+  "segmentRevenue": {
+    "fiscalYear": "2026年3月期",
+    "periodEnd": "2026-03-31",
+    "label": "外部顧客への売上高",
+    "items": [
+      {
+        "businessId": "plm",
+        "amount": 69489760000
+      },
+      {
+        "businessId": "eda",
+        "amount": 2036244000
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【セグメント情報】"
   }
 }

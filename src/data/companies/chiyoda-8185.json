@@ -4,15 +4,105 @@
   "name": "チヨダ",
   "officialName": "株式会社チヨダ",
   "nameEn": "CHIYODA CO., LTD.",
-  "description": null,
+  "shortNameEn": "CHIYODA",
+  "description": "靴専門店チェーンとして全国863店舗と公式オンラインショップで靴を販売する企業です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "shoe-business",
+      "name": "靴事業",
+      "description": "靴の小売及び卸売です。2026年2月期の売上高は81,377百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "shoe-retail",
+          "name": "靴の小売",
+          "description": "当社は、シュープラザチヨダ、東京靴流通センター、シューズ・パレッタの店舗と公式オンラインショップ「kutsu.com」で靴の小売を行っています。当連結会計年度末の店舗数は863店舗です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "chiyoda-bussan",
+          "name": "チヨダ物産",
+          "description": "連結子会社のチヨダ物産株式会社は、靴の卸売を行い、当社へ商品を販売しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "tomoe-shoji",
+          "name": "トモエ商事",
+          "description": "連結子会社のトモエ商事株式会社は、靴の卸売を行い、当社へ商品を販売しています。2025年5月にオークニジャパン株式会社の事業を譲り受けました。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "靴専門店チェーンを全国に展開し、靴の小売と卸売を営み、商品の販売代金で対価を得ます。",
+    "products": [
+      "プライベートブランドの靴（セダークレスト、ハイドロテックなど）",
+      "シュープラザチヨダ、東京靴流通センター、シューズ・パレッタの店舗",
+      "公式オンラインショップ「kutsu.com」",
+      "立ったまま履ける「スパットシューズ」などの機能性商品"
+    ],
+    "customers": [
+      "靴を購入する一般消費者"
+    ],
+    "revenueSources": [
+      "靴の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社チヨダ",
+        "description": "チヨダは東京都杉並区荻窪に本社を置き、靴事業のみの単一セグメントを営んでいます。当社及び子会社2社で構成されています。従業員数は1,231人です（2026年2月28日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "シュープラザチヨダ、東京靴流通センター、シューズ・パレッタとkutsu.com",
+        "description": "シュープラザチヨダ、東京靴流通センター、シューズ・パレッタの店舗と公式オンラインショップ「kutsu.com」で靴を販売しています。当連結会計年度末の店舗数は863店舗です。"
+      },
+      {
+        "kind": "customer",
+        "title": "靴を購入する一般消費者が顧客",
+        "description": "靴を購入する一般消費者が顧客です。店舗と自社ECサイトのID連携により、店舗とECの双方で購入できます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は81,377百万円",
+        "description": "2026年2月期の売上高は81,377百万円（前期比11.4％減）です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は237百万円",
+        "description": "2026年2月期の親会社株主に帰属する当期純利益は237百万円（前期比91.9％減）です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,7 +117,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 55455000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1563,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +137,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 51352000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1519,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年3月31日）等を第76期の期首から適用しており、第76期以降の主要な経営指標等は当該会計基準等を適用した後の指標等となっている。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -67,7 +158,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 51853000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1554,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +178,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 52031000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1171,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +198,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 49964000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1231,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +206,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第79期(2025/03/01－2026/02/28)",
-      "publisher": "株式会社チヨダ",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y563.pdf",
-      "publishedAt": "2026-05-20",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",
@@ -142,5 +217,246 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1936,
+      "title": "チヨダ靴店を創業",
+      "description": "1936年、舟橋義雄が東京都杉並区の高円寺において、「チヨダ靴店」の名称で靴店を創業しました。",
+      "significance": "チヨダの創業です。靴店として始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "法人組織に改組",
+      "description": "1948年6月、法人組織に改組し、株式会社チヨダ靴店となりました。",
+      "significance": "法人としての発足です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "中野店を開店",
+      "description": "1962年8月、中野店を開店し、多店舗化への進出を開始しました。",
+      "significance": "チェーン・ストアー化の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "東京靴卸売センター第1号店を開店",
+      "description": "1977年8月、「東京靴卸売センター」（現「東京靴流通センター」）第1号店を開店しました。",
+      "significance": "靴の卸売・流通センター事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "株式を公開",
+      "description": "1980年5月、日本証券業協会東京地区協会に店頭登録し、株式を公開しました。",
+      "significance": "株式の公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1985年7月、東京証券取引所市場第二部へ株式を上場しました。",
+      "significance": "証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "チヨダ物産とマックハウスを設立",
+      "description": "1990年2月に靴の卸売であるチヨダ物産株式会社を、1990年6月に衣料品事業である株式会社マックハウスを設立しました。",
+      "significance": "卸売と衣料品事業への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "商号を株式会社チヨダに変更",
+      "description": "1990年8月、商号を株式会社チヨダに変更しました。",
+      "significance": "現在の商号への変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "シュープラザチヨダ第1号店を開店",
+      "description": "1994年9月、靴の大型専門店「シュープラザチヨダ」第1号店を開店しました。",
+      "significance": "靴の大型専門店への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "2003年2月、東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "市場第一部への指定です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "アイウォークの株式を取得",
+      "description": "2009年3月、靴事業強化のため株式会社アイウォークの株式を取得し、連結子会社としました。",
+      "significance": "靴事業の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "シューズ・パレッタの展開を開始",
+      "description": "2014年9月、都市型靴専門店「シューズ・パレッタ」の展開を開始しました。",
+      "significance": "都市型靴専門店への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "アイウォークを吸収合併",
+      "description": "2017年9月、靴事業の営業力強化のため、子会社の株式会社アイウォークを吸収合併しました。",
+      "significance": "靴事業の営業力強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "公式オンラインショップをリニューアル",
+      "description": "2022年3月、EC事業強化のため公式オンラインショップを「kutsu.com」にリニューアルしました。",
+      "significance": "EC事業の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しに伴い、東京証券取引所プライム市場に移行しました。",
+      "significance": "プライム市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "トモエ商事の株式を取得",
+      "description": "2023年8月、靴事業強化のためトモエ商事株式会社の株式を取得し、連結子会社としました。",
+      "significance": "靴事業の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "マックハウスを株式譲渡",
+      "description": "2024年11月、靴事業に専念するため、衣料品事業である株式会社マックハウスの全株式を譲渡し、連結から除外しました。",
+      "significance": "靴事業への専念です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "トモエ商事がオークニジャパンの事業を譲受",
+      "description": "2025年5月、トモエ商事株式会社が、靴事業強化のためオークニジャパン株式会社の事業を譲り受けました。",
+      "significance": "靴事業の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sumitomo-mitsui-financial-group",
+      "relationship": "business-partner",
+      "description": "株式会社三井住友フィナンシャルグループの株式45,000株を特定投資株式として保有しています。預金や有価証券の取引等を行っており、取引関係の強化を目的に保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第79期(2025/03/01－2026/02/28)",
+      "publisher": "株式会社チヨダ",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y563.pdf",
+      "publishedAt": "2026-05-20",
+      "docId": "S100Y563",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-10",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「Change」に基づき、プライベートブランド商品の拡大、店舗・業態別戦略の推進、デジタル販促強化とOMOの推進、販売チャネルの拡大、業務効率の改善、サステナビリティ経営の実践に取り組んでいます。",
+        "asOf": "2026-05-20",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "セダークレストのユーティリティスニーカーやハイドロテックの多機能ビジネスシューズ、スパットシューズなど、機能性やデザイン性を兼ね備えたプライベートブランド商品を展開し、1,990円スニーカーや450円上履きなどの低価格商品群もそろえています。スパットシューズは累計販売数500万足を達成しました。",
+        "basis": "MD&Aの商品面の記載と【事業の内容】の靴の小売・卸売の分担に基づく。",
+        "asOf": "2026-05-20",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年2月期の売上高は81,377百万円です。地区別の売上実績は、関東地区が35,919百万円、北海道・東北地区が13,546百万円、中部地区が11,939百万円、九州・沖縄地区が8,164百万円、近畿地区が7,248百万円、中国地区が2,674百万円、四国地区が1,886百万円です。売上高の10％以上を占める顧客はなく、本邦の外部顧客への売上高が全体の90％を超えています。",
+        "basis": "MD&Aの販売実績の地区別売上実績と【関連情報】の主要な顧客ごとの情報及び地域ごとの情報の記載に基づく。",
+        "asOf": "2026-05-20",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

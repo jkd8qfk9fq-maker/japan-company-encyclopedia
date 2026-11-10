@@ -4,7 +4,8 @@
   "name": "琉球銀行",
   "officialName": "株式会社琉球銀行",
   "nameEn": "Bank of The Ryukyus, Limited",
-  "description": null,
+  "shortNameEn": "Bank of The Ryukyus",
+  "description": "沖縄県那覇市に本店を置く地方銀行で、銀行業務を中心にリースやクレジットカードなどの金融サービスをグループで提供しています。",
   "listings": [
     {
       "exchange": "tse",
@@ -14,8 +15,129 @@
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "ryukyu-bank-group",
+      "name": "琉球銀行グループの事業",
+      "description": "当行と連結子会社6社でグループを構成し、銀行業務を中心に、リース業務、クレジットカード業務、信用保証業務、IT業務などを行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "banking",
+          "name": "銀行業",
+          "description": "当行が本店を含む営業店75カ店（うち出張所14）において、預金業務、貸出業務、内国為替業務、外国為替業務、有価証券投資業務などを行う、グループの主力事業です。沖縄県内の中小企業や個人の資金ニーズに応えています。2026年3月期の外部顧客に対する経常収益は54,192百万円で、セグメントの中で最も大きくなっています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "leasing",
+          "name": "リース業",
+          "description": "連結子会社の株式会社琉球リースがリース業務などを行うセグメントです。2026年3月期の外部顧客に対する経常収益は19,527百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "credit-card",
+          "name": "クレジットカード業",
+          "description": "連結子会社の株式会社りゅうぎんディーシーと株式会社OCSがクレジットカード業務を行うセグメントです。株式会社OCSは個別信用購入斡旋も行っています。2026年3月期の外部顧客に対する経常収益は3,177百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "it",
+          "name": "IT事業",
+          "description": "連結子会社の株式会社リウコムが、システム設計・開発やITインフラなどのIT業務を行うセグメントです。2026年3月期の外部顧客に対する経常収益は2,997百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "credit-guarantee",
+          "name": "信用保証業",
+          "description": "連結子会社のりゅうぎん保証株式会社が、住宅ローン等の保証業務を行うセグメントです。2026年3月期の外部顧客に対する経常収益は421百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other",
+          "name": "その他",
+          "description": "報告セグメントに含まれない区分で、連結子会社の株式会社りゅうぎん総合研究所による産業、経済、金融に関する調査研究業務などです。2026年3月期の外部顧客に対する経常収益は6百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "預金で資金を調達し貸出や有価証券で運用する銀行業務を中核に、連結子会社がリース・クレジットカード・信用保証・ITなどの金融サービスを担う事業モデルです。",
+    "products": [
+      "預金・貸出・内国為替・外国為替などの銀行業務",
+      "有価証券投資、商品有価証券売買、投資信託の窓口販売",
+      "連結子会社によるリース業務",
+      "クレジットカード・個別信用購入斡旋",
+      "住宅ローン等の信用保証業務",
+      "IT業務・調査研究業務"
+    ],
+    "customers": [
+      "沖縄県内の中小企業や個人の顧客",
+      "沖縄県内の地方公共団体など"
+    ],
+    "revenueSources": [
+      "貸出金の利息などの資金運用収益",
+      "為替や窓口販売などの手数料収入",
+      "連結子会社のリースなどの収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当行と連結子会社6社のグループ",
+        "description": "株式会社琉球銀行は沖縄県那覇市久茂地に本店を置き、連結子会社6社とともにグループを構成しています。連結の従業員数は1,802人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "銀行業務とグループの金融サービスを提供",
+        "description": "銀行業務として預金・貸出・内国為替・外国為替・有価証券投資などを行い、連結子会社がリース、クレジットカード、信用保証、IT、調査研究などのサービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "沖縄県内の企業・個人が顧客",
+        "description": "沖縄県内の中小企業や個人を主な顧客とし、本店を含む営業店75カ店の店舗網を通じて金融サービスを提供しています。本邦の外部顧客に対する経常収益が90％を超え、経常収益の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "経常収益は80,322百万円",
+        "description": "2026年3月期の連結経常収益は80,322百万円でした。セグメント別の外部顧客に対する経常収益は、銀行業が54,192百万円、リース業が19,527百万円、クレジットカード業が3,177百万円、IT事業が2,997百万円、信用保証業が421百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は9,084百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は9,084百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -30,7 +152,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 135018000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1544,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,7 +172,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 138162000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1758,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -70,7 +192,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 142564000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1772,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,7 +212,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 139831000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1794,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,7 +232,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 145524000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1802,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,22 +240,370 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1948,
+      "title": "琉球銀行の設立",
+      "description": "琉球列島米国軍政府布令第1号により、1948年5月1日に琉球銀行が設立されました。",
+      "significance": "同行の創立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "外国為替公認銀行に指定",
+      "description": "琉球列島米国軍政本部指令第11号「琉球列島における外国貿易及び外国為替」の公布に伴い、外国為替公認銀行に指定されました。",
+      "significance": "外国為替業務の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "米国政府公金受託銀行に指定",
+      "description": "米国財務省より、米国政府公金受託銀行として指定されました。",
+      "significance": "公金取扱いの開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "金銭信託業務の取扱いを開始",
+      "description": "金銭信託業務の取扱いを開始しました。",
+      "significance": "信託業務への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "株式会社琉球銀行への改組",
+      "description": "琉球列島米国軍政府布令に基づく特殊法人から商法上の株式会社へ改組し、株式会社琉球銀行と改称しました。同年5月には銀行法による営業免許を取得しました。",
+      "significance": "現在の株式会社としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "全店総合オンラインシステムが完了",
+      "description": "全店総合オンラインシステムが完了しました。",
+      "significance": "事務のオンライン化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "りゅうぎん保証を設立",
+      "description": "信用保証業務を行う会社として、りゅうぎん保証株式会社を設立しました。",
+      "significance": "信用保証事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "東京証券取引所市場第2部と福岡証券取引所に上場",
+      "description": "東京証券取引所市場第2部および福岡証券取引所に上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "りゅうぎんディーシーを設立",
+      "description": "クレジットカード業務を行う会社として、株式会社りゅうぎんディーシーを設立しました。",
+      "significance": "クレジットカード事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "東京証券取引所市場第1部に指定",
+      "description": "東京証券取引所市場第1部に指定されました。",
+      "significance": "市場第1部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "証券投資信託の窓口販売を開始",
+      "description": "証券投資信託の窓口販売業務を開始しました。",
+      "significance": "窓口販売業務の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "りゅうぎん総合研究所を設立",
+      "description": "調査・研究等を行う会社として、株式会社りゅうぎん総合研究所を設立しました。",
+      "significance": "シンクタンク機能の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "りゅうぎん保証を完全子会社化",
+      "description": "りゅうぎん保証株式会社を100％子会社化しました。",
+      "significance": "グループ体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "琉球リースを連結子会社化",
+      "description": "リース業務を行う持分法適用関連会社の株式会社琉球リースを連結子会社化しました。",
+      "significance": "リース事業の取り込みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "OCSを連結子会社化",
+      "description": "クレジットカード・個別信用購入斡旋業の株式会社OCSの全株式を取得し、連結子会社化しました。",
+      "significance": "クレジットカード事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "琉球リースを完全子会社化",
+      "description": "株式会社琉球リースを100％子会社化しました。",
+      "significance": "リース事業の完全な取り込みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "TSUBASAアライアンスの基本合意を締結",
+      "description": "TSUBASAアライアンスに関する基本合意書を締結しました。",
+      "significance": "他の地方銀行との連携の枠組みへの参加です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "沖縄銀行と包括業務提携を締結",
+      "description": "株式会社沖縄銀行と「沖縄経済活性化パートナーシップ（包括業務提携に関する協定書）」を締結しました。",
+      "significance": "県内の銀行との包括提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "リウコムを完全子会社化",
+      "description": "株式会社リウコムを100％子会社化しました。",
+      "significance": "IT事業の取り込みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ゆいパートナーサービスを設立",
+      "description": "株式会社沖縄海邦銀行と共同出資会社「ゆいパートナーサービス株式会社」を設立しました。",
+      "significance": "県内の銀行との共同事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "九州・沖縄地銀連携協定を締結",
+      "description": "九州・沖縄地銀連携協定（Q-BASS）に関する協定書を締結しました。",
+      "significance": "広域連携の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "中期経営計画「Empower 2025」を開始",
+      "description": "中期経営計画「Empower 2025」をスタートしました。",
+      "significance": "現行の経営計画の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "新本店ビルが竣工",
+      "description": "本店ビルの建て替えに伴い、新本店ビルが竣工しました。",
+      "significance": "本店機能の刷新です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "新本店ビルへ移転しグランドオープン",
+      "description": "新本店ビルへ本店営業部・那覇空港内出張所を移転し、グランドオープンしました。",
+      "significance": "新本店での営業開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "okinawa-financial-group",
+      "relationship": "business-partner",
+      "description": "株式会社おきなわフィナンシャルグループとは、その中核子会社である株式会社沖縄銀行との間で2021年1月に「沖縄経済活性化パートナーシップ（包括業務提携に関する協定書）」を締結し、うちなー金融リテラシー向上コミュニティ（U-FLEC）にも共同参画するなど、地域経済への貢献に関する協力関係にあります。当行は2026年3月31日現在、同社の株式100,009株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-musashino-bank",
+      "relationship": "business-partner",
+      "description": "株式会社武蔵野銀行とは、じゅうだん会やTSUBASAアライアンスを通して、システム面を含む様々な分野において協力する業務提携等の関係にあります。当行は2026年3月31日現在、同行の株式50,200株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-awa-bank",
+      "relationship": "business-partner",
+      "description": "株式会社阿波銀行とは、じゅうだん会を通して、システム面を含む様々な分野において協力する業務提携等の関係にあります。当行は2026年3月31日現在、同行の株式41,832株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-yamagata-bank",
+      "relationship": "business-partner",
+      "description": "株式会社山形銀行とは、じゅうだん会を通して、システム面を含む様々な分野において協力する業務提携等の関係にあります。当行は2026年3月31日現在、同行の株式66,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tsukuba-bank",
+      "relationship": "business-partner",
+      "description": "株式会社筑波銀行とは、じゅうだん会を通して、システム面を含む様々な分野において協力する業務提携等の関係にあります。当行は2026年3月31日現在、同行の株式348,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hachijuni-nagano-bank",
+      "relationship": "business-partner",
+      "description": "株式会社八十二長野銀行とは、じゅうだん会を通して、システム面を含む様々な分野において協力する業務提携等の関係にあります。当行は2026年3月31日現在、同行の株式118,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "san-a",
+      "relationship": "business-partner",
+      "description": "株式会社サンエーとは、キャッシュレス推進の取り組みを通して地域社会の発展に協力する業務提携等の関係にあります。当行は2026年3月31日現在、同社の株式23,280株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-okinawa-electric-power",
+      "relationship": "supplier",
+      "description": "沖縄電力株式会社は、当行が2021年11月から導入している、非化石証書を用いた再生可能エネルギー由来の電力「うちなーCO2フリーメニュー」の提供事業者です。当行はこの電力の使用により脱炭素化を進めています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【サステナビリティに関する考え方及び取組】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第110期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第110期(2025/04/01－2026/03/31)",
       "publisher": "株式会社琉球銀行",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCM2.pdf",
-      "publishedAt": "2026-06-17",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YR60.pdf",
+      "publishedAt": "2026-07-17",
+      "docId": "S100YR60",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-10",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年4月にスタートした中期経営計画「Empower 2025」では、長期ビジョンである「地域経済の好循環サイクルを実現し、地域とともに成長する金融グループ」の実現に向け、預貸金・有価証券運用の強化、地域課題解決の先導、グループ連携とアライアンスの強化、人的資本投資の増強と最適化を重点戦略に掲げています。計画2年目となる2026年度は生成AI活用元年と位置付け、生成AIやデータ活用による業務効率化で生まれた余力を営業店支援や新規事業領域に重点配分する方針です。",
+        "asOf": "2026-07-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "本店を含む営業店75カ店の店舗網を持ち、県内中小企業ならびに個人の資金ニーズに対して安定的に資金を供給する、沖縄県における中核的金融機関であることを強みとしています。資金証券部門では県内の投資ニーズに対応するため、商品有価証券売買業務や投資信託の窓口販売も取り扱っています。",
+        "asOf": "2026-07-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の連結経常収益80,322百万円の内訳は、セグメント別の外部顧客に対する経常収益で銀行業が54,192百万円、リース業が19,527百万円、クレジットカード業が3,177百万円、IT事業が2,997百万円、信用保証業が421百万円、その他が6百万円です。サービス別では貸出業務が34,026百万円、有価証券投資業務が7,204百万円、リース業務が19,460百万円、その他が19,631百万円です。本邦の外部顧客に対する経常収益が90％を超え、経常収益の10％以上を占める特定の顧客はありません。",
+        "basis": "セグメント情報の外部顧客に対する経常収益、関連情報のサービスごとの情報・地域ごとの情報・主要な顧客ごとの情報に基づきます。",
+        "asOf": "2026-07-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

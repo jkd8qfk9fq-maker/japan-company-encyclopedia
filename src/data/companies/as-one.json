@@ -4,15 +4,109 @@
   "name": "アズワン",
   "officialName": "アズワン株式会社",
   "nameEn": "AS ONE CORPORATION",
-  "description": null,
+  "shortNameEn": "AS ONE",
+  "description": "研究・産業・医療の現場で使われる科学機器や備品・消耗品を、販売店を通じて研究者や医療従事者に届ける専門商社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "wholesale",
+      "name": "機器・備品・消耗品等の卸売事業",
+      "description": "当社グループの主たる事業で、各種研究所、研究機関、生産施設、医療施設等において使用される科学機器、備品等を取り扱う専門商社として、機器・備品・消耗品等を卸売の形態で販売しています。報告セグメントはこの事業の一つだけです。両部門の物流倉庫の運営は、連結子会社の井内物流株式会社に委託しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "lab-industry",
+          "name": "ラボ・インダストリー部門",
+          "description": "科学機器販売店に対し、研究者や技術者の皆様が使用する機器・備品などの商品を卸売しています。商品情報を紙カタログやWEBサイト等で提供し、販売店を経由してユーザーに販売するカタログ販売形態を主にとっています。中国では連結子会社の亜速旺（上海）商貿有限公司が研究用科学機器等の販売を、ニッコー・ハンセン株式会社が理化学実験用プラスチック製容器等の製造・販売を、AS ONE INTERNATIONAL, INC.が主に北米製品の日本等への輸出を、株式会社カスタムが電子計測器及び関連商品の製造・販売を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "medical",
+          "name": "メディカル部門",
+          "description": "医療及び介護関係販売店に対し、看護・介護関係者の皆様が使用する機器・備品などの商品を卸売しています。販売形態はラボ・インダストリー部門と同様のカタログ販売形態をとっています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "web-purchasing-agency",
+          "name": "その他（WEB購買業務代行事業）",
+          "description": "連結子会社の株式会社トライアンフ・ニジュウイチが、WEBシステムによる購買業務代行サービス等を提供し、そのシステムに参加する最終ユーザー等からシステム利用料をいただく事業です。重要性が乏しいため、セグメント情報の記載は省略されています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "サプライヤーから仕入れた機器・備品・消耗品を、カタログやECで販売店に卸売し、販売店を通じて研究機関や医療施設などの最終ユーザーに届ける事業モデルです。",
+    "products": [
+      "科学機器・装置（汎用科学機器・装置、分析・特殊機器・装置、物理・物性測定機器・装置、実験用設備機器）",
+      "科学器具・消耗品（汎用器具・消耗品、半導体関係特殊器具）",
+      "看護・介護用品",
+      "機器のレンタル・校正サービス"
+    ],
+    "customers": [
+      "科学機器販売店（大学・研究機関や企業の研究・生産部門向け）",
+      "医療・介護関係販売店",
+      "集中購買システム「ocean」や販売店支援型ECシステム「Wave」を利用する大手ユーザー・販売店",
+      "WEB購買業務代行サービスの利用企業"
+    ],
+    "revenueSources": [
+      "機器・備品・消耗品等の卸売による販売代金",
+      "WEB購買業務代行サービスのシステム利用料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と連結子会社6社のグループ",
+        "description": "アズワングループは、当社と連結子会社6社（亜速旺（上海）商貿有限公司、ニッコー・ハンセン株式会社、井内物流株式会社、AS ONE INTERNATIONAL, INC.、株式会社トライアンフ・ニジュウイチ、株式会社カスタム）、持分法適用関連会社1社で構成されています。連結の従業員数は758人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "1,400万点を超える取扱商品",
+        "description": "科学機器・装置、科学器具・消耗品、看護・介護用品など多種多様な商品を取り扱い、商品データベース「SHARE-DB」上の取扱商品は1,400万点を超えています。商品情報は紙カタログやWEBサイト等で提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "販売店を通じて最終ユーザーへ販売",
+        "description": "科学機器販売店や医療・介護関係販売店に卸売し、販売店を通じて大学・研究機関、企業の研究・生産部門、医療機関・介護施設などの最終ユーザーに届けています。外部顧客への売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は110,698百万円",
+        "description": "2026年3月期の連結売上高は110,698百万円（前期比6.7％増）で、16期連続の増収となりました。部門別の販売実績は、ラボ・インダストリー部門が93,185百万円、メディカル部門が16,925百万円、その他が587百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は9,179百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は9,179百万円（前期比11.5％増）でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +121,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 66154000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 648,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +141,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 63968000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 668,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +161,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 64662000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 711,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +181,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 66709000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 731,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 71178000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 758,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +209,476 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1933,
+      "title": "井内盛栄堂商舗を創業",
+      "description": "井内盛一が大阪市北区において、医業用のガラス製品の卸売業者として個人商店「井内盛栄堂商舗」を創業しました。",
+      "significance": "現在の事業の原点となる創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "株式会社井内盛栄堂を設立",
+      "description": "科学機器の販売を目的として、大阪市北区に株式会社井内盛栄堂を設立しました。",
+      "significance": "法人としての事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "研究用カタログを発刊",
+      "description": "プラスチック素材の将来性と営業におけるカタログの重要性に着眼して、研究用カタログを発刊しました。",
+      "significance": "後のカタログ販売の原型ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "本店を天満へ移転",
+      "description": "本店を大阪市北区河内町一丁目50番地（現・天満四丁目）に移転しました。",
+      "significance": "本店の所在地が天満地区に移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "東京営業所を開設",
+      "description": "東京地区の事業拡大に伴い、東京営業所（現・東京オフィス）を文京区湯島に開設しました。",
+      "significance": "関東での営業基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "大阪物流センターを開設",
+      "description": "大阪市北区天満に大阪物流センターを開設しました。",
+      "significance": "自社の物流拠点を持つようになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "半導体関連商品市場へ本格的に進出",
+      "description": "クリーンルーム専用手袋の販売を開始し、半導体関連商品市場へ本格的に進出を開始しました。",
+      "significance": "現在のインダストリー分野につながる進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "東京業務本部を開設",
+      "description": "東日本の流通機能充実のため、東京業務本部（現・東京物流センター）を東京都足立区に開設しました。",
+      "significance": "東日本の物流機能が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "病院・介護分野へ本格的に進出",
+      "description": "病院用看護用品カタログを発刊し、病院・介護部門に本格的に進出しました。",
+      "significance": "現在のメディカル部門の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "井内物流株式会社を設立",
+      "description": "当社の倉庫業務運営を主目的に、関係会社の井内物流株式会社（現・連結子会社）を設立しました。",
+      "significance": "物流業務を担うグループ会社ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "大阪物流センターを此花区へ移転",
+      "description": "物流体制の充実を目指し、大阪物流センターを大阪市此花区に移転しました。",
+      "significance": "西日本の物流体制が強化されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "全社オンラインシステムを導入",
+      "description": "全社オンラインシステムを導入し、受発注、入出庫、在庫管理システムの統合を実現しました。",
+      "significance": "業務のシステム化が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "和歌山CIC研究所を開設",
+      "description": "特殊表面洗浄分野への本格的進出のため、和歌山県海草郡野上町（現・紀美野町）に和歌山CIC研究所（現・和歌山CIC）を開設し、高品位無塵商品の販売に着手しました。",
+      "significance": "無塵化洗浄加工の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "本社を天満四丁目へ移転",
+      "description": "大阪市北区天満四丁目15番5号に本社を移転しました。",
+      "significance": "本社が天満四丁目に移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "井内物流を100％子会社化",
+      "description": "井内物流株式会社を100％子会社としました。",
+      "significance": "物流子会社が完全子会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "東京物流センターを岩槻市へ移転",
+      "description": "埼玉県岩槻市（現・さいたま市岩槻区）に東京物流センターを移転し、物流の効率化を目指して自動化設備を設置しました。",
+      "significance": "東日本の物流拠点が拡充されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "ホームページを開設",
+      "description": "ホームページを開設し、インターネットによる双方向性情報発信を開始しました。",
+      "significance": "インターネット活用の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "ISO9002の認証を取得",
+      "description": "国際規格「ISO9002」（2003年10月にISO9001に改訂）の認証を国内全事業所で取得しました。",
+      "significance": "品質管理の体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "東証・大証の各市場第二部に上場",
+      "description": "東京証券取引所、大阪証券取引所の各市場第二部に上場しました。",
+      "significance": "取引所市場への上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "各市場第一部に指定",
+      "description": "東京証券取引所、大阪証券取引所の各市場第一部に指定されました。",
+      "significance": "第一部上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "社名をアズワン株式会社に変更",
+      "description": "社名を株式会社井内盛栄堂からアズワン株式会社に変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "東京物流センターを杉戸町へ移転",
+      "description": "埼玉県北葛飾郡杉戸町に東京物流センター（現・東京DC）を移転しました。",
+      "significance": "東日本の物流拠点が移転・拡充されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "集中購買システム「ocean」の供用を開始",
+      "description": "集中購買システム「ocean」の供用を開始しました。",
+      "significance": "現在のeコマース事業の基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "本社を江戸堀へ移転",
+      "description": "大阪市西区江戸堀二丁目1番27号に本社を移転しました。",
+      "significance": "本社が現在の所在地に移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "大阪物流センターを西淀川区へ移転",
+      "description": "大阪市西淀川区に大阪物流センター（現・大阪DC）を移転しました。",
+      "significance": "西日本の物流拠点が移転しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "アーンスト・ハンセン商会を子会社化",
+      "description": "株式会社アーンスト・ハンセン商会（現・ニッコー・ハンセン株式会社）を子会社としました（所有割合90％）。",
+      "significance": "プラスチック製容器の製造会社がグループに入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "亜速旺（上海）商貿有限公司を設立",
+      "description": "中国上海市に亜速旺（上海）商貿有限公司（現・連結子会社）を設立しました。",
+      "significance": "中国での販売拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "ISO14001の認証を取得",
+      "description": "国際規格「ISO14001」の認証を本社、大阪DCで取得しました。",
+      "significance": "環境管理の体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "ニッコー・ハンセンを100％子会社化",
+      "description": "ニッコー・ハンセン株式会社を100％子会社としました。",
+      "significance": "製造子会社が完全子会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "九州物流センターを開設",
+      "description": "福岡県朝倉市に九州物流センターを開設しました。",
+      "significance": "九州の物流拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "「AXEL」をオープン",
+      "description": "商品検索サイト兼通販サイト「AXEL」をオープンしました。",
+      "significance": "自社のECサイトが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "プライバシーマークの認証を取得",
+      "description": "一般財団法人日本情報経済社会推進協会より「プライバシーマーク」の認証を取得しました。",
+      "significance": "個人情報保護の体制が認められました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "AS ONE INTERNATIONAL, INC.を設立",
+      "description": "AS ONE INTERNATIONAL, INC.（現・連結子会社）を米国に設立しました。",
+      "significance": "北米製品の調達拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "トライアンフ・ニジュウイチを子会社化",
+      "description": "株式会社トライアンフ・ニジュウイチを子会社とし（所有割合51％）、同年に100％子会社としました。",
+      "significance": "WEB購買業務代行事業がグループに入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "「Smart DC」を開設",
+      "description": "千葉市稲毛区に物流拠点「Smart DC」を開設しました。",
+      "significance": "首都圏の物流キャパシティが拡大しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しに伴い、プライム市場へ移行しました。",
+      "significance": "現在の市場区分になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "「as kitchen」をオープン",
+      "description": "食品事業者向け通販サイト「as kitchen」をオープンしました。",
+      "significance": "食品事業者向けの販路が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "「阪神DC」を開設",
+      "description": "尼崎市に物流拠点「阪神DC」を開設しました。",
+      "significance": "関西の物流拠点が増えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社カスタムを100％子会社化",
+      "description": "株式会社カスタムを100％子会社としました。",
+      "significance": "電子計測器の製造会社がグループに入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "アズワン中之島クロスラボを開設",
+      "description": "大阪市北区にアズワン中之島クロスラボを開設しました。",
+      "significance": "新たな販売施設ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "「九州DC」を開設",
+      "description": "九州物流センターを福岡県古賀市に移転し、「九州DC」を開設しました。",
+      "significance": "九州の物流拠点が移転・新設されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "殿町ソリューションリサーチラボを統合",
+      "description": "殿町ソリューションリサーチラボをアズワン中之島クロスラボへ統合しました。",
+      "significance": "ラボ施設の集約が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "alphapurchase",
+      "relationship": "customer",
+      "description": "株式会社アルファパーチェスはラボ・インダストリー部門における当社の販売店で、売買基本契約を締結しています。取引関係の維持・強化のため、当社は同社の株式718,500株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sugimoto-and-co",
+      "relationship": "customer",
+      "description": "杉本商事株式会社はラボ・インダストリー部門における当社の販売店で、売買基本契約を締結しています。取引関係の維持・強化のため、当社は同社の株式6,900株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "gltechno-holdings",
+      "relationship": "supplier",
+      "description": "ジーエルテクノホールディングス株式会社とは、同社が取り扱うクロマトグラフィ関連製品の販売強化に関する資本業務提携契約を締結しています。提携に伴い、当社は同社の株式138,200株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hpc-systems",
+      "relationship": "business-partner",
+      "description": "HPCシステムズ株式会社とは、計算科学分野のシミュレーション用ハード及びソフトウェアの拡販に関する資本業務提携契約を締結しています。提携に伴い、当社は同社の株式145,800株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +686,47 @@
       "publisher": "アズワン株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHL5.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YHL5",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-10",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念に「革新と創造」を掲げ、研究・産業・医療のフィールドにおいてヒト・モノ・情報・サービスをつなぎ、研究者や医療従事者の活動を後押しすることを目的としています。2025年5月に策定した長期ビジョン「AS ONE VISION-2035」では、研究者が直面する課題である“3つのない”（お金がない、時間がない、もったいない）を解消するため、研究リソースが「見える・つながる・手に入る」プラットフォームの創造を目指しています。中期経営計画「FY2025-27」（2026年3月期から2028年3月期まで）のもとで既存事業の持続的な成長を図り、M&Aやアライアンスの積極的な活用による非連続な成長も志向しています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "サプライヤー・販売店・エンドユーザーをつなぐハブとして、幅広い品揃えやカタログおよびインターネットによる商品情報の提供、顧客の事業規模に応じたeコマースツールの開発、豊富な在庫や配送ネットワークによるクイックデリバリーなど、業界に先駆けた施策を実行してきました。大手ユーザー向け集中購買システム「ocean」や販売店向けEC支援システム「Wave」の利用拡大を通じて、顧客の購買業務の効率化に貢献しています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の連結売上高110,698百万円のうち、部門別の販売実績はラボ・インダストリー部門が93,185百万円（ラボラトリー分野69,387百万円、インダストリー分野23,798百万円）、メディカル部門が16,925百万円、その他（WEB購買業務代行事業）が587百万円です。本邦の外部顧客への売上高が連結売上高の90％を超えており、外部顧客への売上高の10％以上を占める特定の顧客はありません。",
+        "basis": "【セグメント情報等】の【関連情報】（製品及びサービスごとの情報、地域ごとの情報、主要な顧客ごとの情報）と、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の部門別販売実績によります。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

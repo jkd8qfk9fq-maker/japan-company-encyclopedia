@@ -4,15 +4,126 @@
   "name": "ダイヤモンドエレクトリックホールディングス",
   "officialName": "ダイヤモンドエレクトリックホールディングス株式会社",
   "nameEn": "DIAMOND ELECTRIC HOLDINGS Co.,  Ltd.",
-  "description": null,
+  "shortNameEn": "Diamond Electric Holdings",
+  "description": "自動車用点火コイルなどの自動車機器、蓄電システムなどのエネルギー機器、電子制御機器を製造・販売するグループの持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    },
+    {
+      "industryId": "electronics",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "diamond-electric-group",
+      "name": "ダイヤモンドエレクトリックホールディングスグループの事業",
+      "description": "当社は大阪市淀川区に本店を置く持株会社で、連結子会社21社、持分法適用関連会社3社とともにグループを構成しています（2026年3月31日現在）。自動車機器事業、エネルギーソリューション事業、電子機器事業の3つを報告セグメントとし、金型成型事業なども行っています。連結の従業員数は3,503人、2026年3月期の連結売上高は96,768百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "automotive-equipment",
+          "name": "自動車機器事業",
+          "description": "自動車用点火コイル、ミッションスイッチ、回転センサー、車載用制御基板などの開発、製造、販売と保守サービスを行っています。ダイヤゼブラ電機株式会社、ダイヤモンド電機株式会社、米国ダイヤモンド電機などが担い、外部顧客への売上高は40,468百万円です（2026年3月期）。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "electronic-equipment",
+          "name": "電子機器事業",
+          "description": "ファンヒーター用、エアコン用、給湯器用などの電子制御機器や電子着火装置、トランス・リアクター、パワーコンディショナなどの開発、製造、販売と保守サービスを行っています。ダイヤモンド電子株式会社などが担い、外部顧客への売上高は30,956百万円です（2026年3月期）。最大の販売先はダイキン工業株式会社です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "energy-solution",
+          "name": "エネルギーソリューション事業",
+          "description": "太陽光発電用パワーコンディショナや蓄電ハイブリッドシステムなどの開発、製造、販売と保守サービスを行っています。主力製品は蓄電ハイブリッドシステム「EIBS7」で、後継機種の開発も進めています。ゼブラ電子株式会社などが担い、外部顧客への売上高は24,142百万円です（2026年3月期）。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-businesses",
+          "name": "その他",
+          "description": "報告セグメントに含まれない事業セグメントで、金型の製作や射出成型を行う金型成型事業などです。ダイヤクラフト株式会社などが担い、外部顧客への売上高は1,201百万円です（2026年3月期）。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自動車メーカーや空調機器メーカーなどに、点火コイルや電子制御機器、蓄電システムなどを販売して売上を得る事業モデルです。",
+    "products": [
+      "自動車用点火コイル・電装品",
+      "太陽光発電用パワーコンディショナ",
+      "蓄電ハイブリッドシステム",
+      "電子制御機器・電子着火装置",
+      "トランス・リアクター等の電子デバイス",
+      "金型・射出成型品"
+    ],
+    "customers": [
+      "自動車メーカー",
+      "空調機器メーカーなどの住宅設備機器メーカー",
+      "蓄電システムの販売商社など"
+    ],
+    "revenueSources": [
+      "自動車機器の製品販売",
+      "エネルギーソリューション機器の製品販売",
+      "電子機器の製品販売",
+      "金型成型品の販売",
+      "保守サービス"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "持株会社と事業会社",
+        "description": "当社は大阪市淀川区に本店を置く持株会社で、ダイヤゼブラ電機株式会社、ダイヤモンド電機株式会社、ダイヤモンド電子株式会社などの事業会社と連結子会社21社を傘下に持ちます。連結の従業員数は3,503人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "自動車機器・エネルギー機器・電子機器",
+        "description": "自動車用点火コイルなどの自動車機器、太陽光発電用パワーコンディショナや蓄電ハイブリッドシステムなどのエネルギーソリューション機器、電子制御機器などの電子機器を開発、製造、販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車メーカーや空調機器メーカー",
+        "description": "顧客は自動車メーカーや空調機器メーカーなどの製造業です。最大の販売先はダイキン工業株式会社で、2026年3月期の売上高全体の10％を超えています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品販売による売上",
+        "description": "2026年3月期の連結売上高は96,768百万円で、最も大きいのは自動車機器事業の40,468百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は217百万円となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +138,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10176000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4156,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +158,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10903000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4091,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +178,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10280000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3751,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +198,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11553000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3681,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」等を第7期の期首から適用している（経過的な取扱いを適用）。このため、第7期以降の主要な経営指標等は当該会計基準等を適用した後の指標となっている。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14168000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3503,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -116,19 +228,108 @@
     }
   ],
   "history": [],
-  "relatedCompanies": [],
+  "relatedCompanies": [
+    {
+      "companyId": "daikin-industries",
+      "relationship": "customer",
+      "description": "主要な顧客ごとの情報に印字された最大の販売先です。電子機器事業の電子制御機器などを販売する取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】（主要な顧客ごとの情報）"
+    },
+    {
+      "companyId": "corona",
+      "relationship": "customer",
+      "description": "当社が株式を保有し、主に電子制御機器の販売取引を行っている取引先です。ダイヤモンド電機の前身は1984年に同社（当時は株式会社内田製作所）と合弁で新潟ダイヤモンド電子株式会社（現・ダイヤモンド電子株式会社）を設立しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "digital-grid",
+      "relationship": "business-partner",
+      "description": "エネルギーソリューション事業の協業先として業務提携等の関係にある会社です。当社は同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "itochu",
+      "relationship": "business-partner",
+      "description": "連結子会社のダイヤゼブラ電機株式会社が株式を保有する取引先で、同社及びその関係会社は当社グループの取引先である旨が保有目的に印字されています。業務提携等の関係にある取引先として登録します。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "mitsubishi-motors",
+      "relationship": "customer",
+      "description": "連結子会社のダイヤゼブラ電機株式会社が株式を保有し、主に自動車用点火コイルの販売取引を行っている取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "toyota",
+      "relationship": "customer",
+      "description": "連結子会社のダイヤゼブラ電機株式会社が株式を保有し、主に自動車用点火コイルの販売取引を行っている取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第8期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第8期(2025/04/01－2026/03/31)",
       "publisher": "ダイヤモンドエレクトリックホールディングス株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YLYF.pdf",
-      "publishedAt": "2026-06-29",
-      "accessedAt": "2026-09-29"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YRS9.pdf",
+      "publishedAt": "2026-07-27",
+      "docId": "S100YRS9",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-10",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2023年10月に、2028年3月期を最終年度とする中長期経営計画「炎のスクラム」を策定しました。ビジョンに「車と家を地球環境に資するものづくりでつなぐ」を掲げ、三事業の横断的な販売の強みを活かして、カーボンニュートラル社会の実現に向けた技術・製品開発を進めています。目指す姿として、自動車機器事業では点火コイルの世界シェア首位、エネルギーソリューション事業では住宅用蓄電システムの国内シェア首位の堅持、電子機器事業では国内インバーターエアコン用リアクター市場のシェア首位を掲げています。新規事業では、アンモニア燃焼技術などの次世代燃料の点火燃焼技術、熱電発電システム、地域脱炭素・マイクログリッド、バッテリー診断技術の確立に取り組んでいます。",
+        "asOf": "2026-07-27",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "自動車用点火コイルは創業以来の主力製品で、点火コイルなどの内燃機関向け部品と、太陽光発電用パワーコンディショナなどの定置型エネルギー機器の両分野に製品を持っています。製造拠点は日本、米国、ハンガリー、中国、インド、タイ、インドネシア、ベトナム、メキシコなどに広がり、自動車メーカーの海外展開に沿った供給体制を持っています。アンモニア燃焼などの次世代燃料向けの点火技術の開発も進めています。",
+        "basis": "事業の内容、主要な設備の状況、経営方針に基づく。",
+        "asOf": "2026-07-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは自動車機器事業、エネルギーソリューション事業、電子機器事業の3つです。2026年3月期の外部顧客への売上高は、自動車機器事業が40,468百万円と最も大きく、電子機器事業が30,956百万円、エネルギーソリューション事業が24,142百万円でした。地域別では日本が39,529百万円で、米国、中華人民共和国、インドなど海外の売上も広がっています。電子機器事業の主要な顧客はダイキン工業株式会社で、売上高全体の10％を超える最大の販売先です。",
+        "basis": "セグメント情報（報告セグメントの外部顧客への売上高、地域ごとの情報、主要な顧客ごとの情報）に基づく。",
+        "asOf": "2026-07-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

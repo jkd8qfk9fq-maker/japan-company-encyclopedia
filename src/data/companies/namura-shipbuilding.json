@@ -4,15 +4,146 @@
   "name": "名村造船所",
   "officialName": "株式会社名村造船所",
   "nameEn": "Namura Shipbuilding Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Namura Shipbuilding",
+  "description": "船舶の新造と修繕、鉄鋼構造物や舶用機械の製造販売を手がける造船会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "customers": [
+        "国内外の海運会社"
+      ],
+      "description": "各種船舶の製造販売をおこなう、グループの中核の事業です。2026年3月期の外部顧客への売上高は125,643百万円でした。主力のハンディ型撒積運搬船に加え、大型撒積運搬船とのプロダクトミックス建造体制への移行を進めています。当社と函館どつく株式会社が製造販売を担っています。",
+      "id": "new-shipbuilding",
+      "locator": "【事業の内容】",
+      "name": "新造船事業",
+      "products": [
+        "ハンディ型撒積運搬船",
+        "大型撒積運搬船",
+        "各種船舶"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "customers": [
+        "海上自衛隊",
+        "海上保安庁",
+        "米海軍",
+        "海運会社"
+      ],
+      "description": "船舶の修繕と解体をおこなう事業です。2026年3月期の外部顧客への売上高は20,538百万円でした。佐世保重工業株式会社と函館どつく株式会社が担い、国内艦艇や巡視船、米海軍艦艇の修繕のほか、技術難易度の高い民間船の工事も手がけています。",
+      "id": "repair-ship",
+      "locator": "【事業の内容】",
+      "name": "修繕船事業",
+      "products": [
+        "船舶の修繕",
+        "船舶の解体",
+        "艦艇の修繕"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "customers": [
+        "当社および関係会社"
+      ],
+      "description": "ソフトウェア開発や船舶貸渡業、卸売、設備工事などをおこなう事業です。2026年3月期の外部顧客への売上高は6,575百万円でした。名村情報システム株式会社がソフトウェア開発と情報機器の販売を、モーニング ダイダラス ナビゲーション社など3社が船舶貸渡業を営んでいます。",
+      "id": "other",
+      "locator": "【事業の内容】",
+      "name": "その他事業",
+      "products": [
+        "ソフトウェア開発",
+        "情報機器",
+        "船舶貸渡業",
+        "設備の保全・保安業務"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "description": "鉄鋼構造物の製造販売と、クランク軸などの舶用機械の製造販売をおこなう事業です。2026年3月期の外部顧客への売上高は6,279百万円でした。鉄鋼構造物は主に当社が、舶用機械は佐世保重工業株式会社が製造販売しています。",
+      "id": "steel-structures-machinery",
+      "locator": "【事業の内容】",
+      "name": "鉄構・機械事業",
+      "products": [
+        "鉄鋼構造物（鋼製橋梁）",
+        "舶用エンジン向けクランクシャフト",
+        "舶用機械"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    }
+  ],
+  "businessModel": {
+    "customers": [
+      "国内外の海運会社",
+      "海上自衛隊",
+      "海上保安庁",
+      "米海軍",
+      "国や地方自治体"
+    ],
+    "description": "各種船舶の製造販売と修繕、鉄鋼構造物や舶用機械の製造販売を、佐世保重工業や函館どつくなどの子会社とともに手がける事業モデルです。",
+    "flow": [
+      {
+        "description": "当社、子会社13社および関連会社3社で構成されています（2026年3月31日現在）。本社は大阪市西区にあり、主力の造船所である伊万里事業所は佐賀県伊万里市にあります。連結の従業員数は2,436人です。",
+        "kind": "company",
+        "title": "名村造船所グループ"
+      },
+      {
+        "description": "ハンディ型撒積運搬船を主力とし、大型撒積運搬船とのプロダクトミックス建造体制への移行を進めています。鉄鋼構造物や舶用エンジン向けクランクシャフトなどの舶用機械も製造販売し、船舶の修繕も手がけています。",
+        "kind": "offering",
+        "title": "船舶の製造と販売、修繕"
+      },
+      {
+        "description": "2026年3月期の顧客の所在地別の売上高は、日本が45,981百万円、マーシャル諸島が51,171百万円、リベリアが21,203百万円、パナマが34,632百万円でした。LEPTA SHIPPING CO., LTD.への売上高は17,386百万円で、新造船事業に関連しています。",
+        "kind": "customer",
+        "title": "国内外の船主と防衛・海上保安の関係機関へ"
+      },
+      {
+        "description": "2026年3月期の売上高は159,035百万円で、前期に比べ192百万円減少しました。新造船事業が増収となった一方、修繕船事業とその他事業が減収となりました。",
+        "kind": "revenue",
+        "title": "船舶の製造販売と修繕で得る収入"
+      },
+      {
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は21,590百万円で、前期に比べ4,655百万円減少しました。法人税等の計上が増えたことが主な理由です。",
+        "kind": "profit",
+        "title": "受注と原価削減で当期純利益を確保"
+      }
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】",
+    "products": [
+      "ハンディ型撒積運搬船",
+      "大型撒積運搬船",
+      "鉄鋼構造物（鋼製橋梁）",
+      "舶用エンジン向けクランクシャフト",
+      "舶用機械",
+      "船舶の修繕サービス"
+    ],
+    "revenueSources": [
+      "船舶の製造販売による収入",
+      "船舶の修繕による収入",
+      "鉄鋼構造物や舶用機械の製造販売による収入",
+      "ソフトウェア開発や船舶貸渡業などによる収入"
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +158,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 37173000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2294,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +178,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 49964000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2213,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +198,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 79899000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2232,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +218,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 105142000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2297,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」等を当期の期首から適用しています。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +239,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 137441000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2436,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +247,331 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "description": "1911年2月、名村源之助個人により大阪市大正区において、名村造船鉄工所の名称のもとに創業しました。",
+      "locator": "【沿革】",
+      "significance": "現在の名村造船所の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "名村造船鉄工所として創業",
+      "year": 1911
+    },
+    {
+      "description": "1931年4月、大阪市住之江区において旧村尾造船所の施設一切を買収し、株式会社に改組して、株式会社名村造船所として新発足しました。",
+      "locator": "【沿革】",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "株式会社名村造船所として新発足",
+      "year": 1931
+    },
+    {
+      "description": "1949年6月、大阪証券取引所に株式を上場しました。",
+      "locator": "【沿革】",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "大阪証券取引所に株式上場",
+      "year": 1949
+    },
+    {
+      "description": "1961年9月、鉄構工場を新設し、陸上部門に進出しました。",
+      "locator": "【沿革】",
+      "significance": "造船以外の鉄構事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "鉄構工場を新設し陸上部門に進出",
+      "year": 1961
+    },
+    {
+      "description": "1974年11月、伊万里工場が竣工しました。",
+      "locator": "【沿革】",
+      "significance": "現在の伊万里事業所の基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "伊万里工場が竣工",
+      "year": 1974
+    },
+    {
+      "description": "2001年3月、函館どつく株式会社に資本参加しました。",
+      "locator": "【沿革】",
+      "significance": "函館どつくがグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "函館どつく株式会社に資本参加",
+      "year": 2001
+    },
+    {
+      "description": "2004年4月、オリイメック株式会社を株式交換により完全子会社化しました。",
+      "locator": "【沿革】",
+      "significance": "オリイメックが完全子会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "オリイメック株式会社を完全子会社化",
+      "year": 2004
+    },
+    {
+      "description": "2013年7月、東京証券取引所と大阪証券取引所の現物市場の統合に伴い、東京証券取引所市場第一部に上場しました。",
+      "locator": "【沿革】",
+      "significance": "東京証券取引所への上場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "東京証券取引所市場第一部に上場",
+      "year": 2013
+    },
+    {
+      "description": "2014年10月、佐世保重工業株式会社を株式交換により完全子会社化しました。",
+      "locator": "【沿革】",
+      "significance": "佐世保重工業が完全子会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "佐世保重工業株式会社を完全子会社化",
+      "year": 2014
+    },
+    {
+      "description": "2018年10月、オリイメック株式会社を株式会社アマダホールディングスに全株譲渡しました。",
+      "locator": "【沿革】",
+      "significance": "オリイメックがグループから離れました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "オリイメック株式会社を全株譲渡",
+      "year": 2018
+    },
+    {
+      "description": "2022年1月、佐世保重工業株式会社の新造船事業を休止し、艦艇修繕と機械の両事業を柱とする事業構造改革を実施しました。",
+      "locator": "【沿革】",
+      "significance": "佐世保重工業は修繕と機械を柱とする体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "佐世保重工業株式会社の事業構造改革を実施",
+      "year": 2022
+    },
+    {
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、東京証券取引所市場第一部からスタンダード市場に移行しました。",
+      "locator": "【沿革】",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "year": 2022
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kawasaki-kisen-kaisha",
+      "description": "船舶の建造等の取引をおこなっている取引先です（2026年3月31日現在）。",
+      "locator": "【株式の保有状況】",
+      "relationship": "customer",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "mitsui-o-s-k-lines",
+      "description": "船舶の建造等の取引をおこなっている取引先です（2026年3月31日現在）。",
+      "locator": "【株式の保有状況】",
+      "relationship": "customer",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "nippon-yusen-kabushiki-kaisha",
+      "description": "船舶の建造等の取引をおこなっている取引先です（2026年3月31日現在）。",
+      "locator": "【株式の保有状況】",
+      "relationship": "customer",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "ns-united-kaiun-kaisha",
+      "description": "船舶の建造等の取引をおこなっている取引先です（2026年3月31日現在）。",
+      "locator": "【株式の保有状況】",
+      "relationship": "customer",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "idemitsu-kosan",
+      "description": "同社グループの出光タンカー株式会社との間で、船舶の建造等の取引をおこなっています（2026年3月31日現在）。",
+      "locator": "【株式の保有状況】",
+      "relationship": "customer",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "mitsui-e-and-s",
+      "description": "舶用エンジンの調達等の取引をおこなっています（2026年3月31日現在）。",
+      "locator": "【株式の保有状況】",
+      "relationship": "supplier",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "hisaka-works",
+      "description": "舶用機器の調達等の取引をおこなっています（2026年3月31日現在）。",
+      "locator": "【株式の保有状況】",
+      "relationship": "supplier",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "koike-sanso-kogyo",
+      "description": "舶用機器の調達等の取引をおこなっています（2026年3月31日現在）。",
+      "locator": "【株式の保有状況】",
+      "relationship": "supplier",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "nakakita-seisakusho",
+      "description": "舶用機器の調達等の取引をおこなっています（2026年3月31日現在）。",
+      "locator": "【株式の保有状況】",
+      "relationship": "supplier",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "onoken",
+      "description": "鋼材の調達等の取引をおこなっています（2026年3月31日現在）。",
+      "locator": "【株式の保有状況】",
+      "relationship": "supplier",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "mitsubishi-heavy-industries",
+      "description": "同社グループの三菱重工マリンマシナリ株式会社との間で、舶用機器の調達等の取引をおこなっています（2026年3月31日現在）。",
+      "locator": "【株式の保有状況】",
+      "relationship": "supplier",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "japan-engine",
+      "description": "舶用低速エンジンを得意分野とする同社との関係を強化し、高付加価値の商品開発を促進させるため、同社の株式を保有しています（2026年3月31日現在）。",
+      "locator": "【株式の保有状況】",
+      "relationship": "business-partner",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "mitsubishi-corporation",
+      "description": "新造船商談の仲介等の取引をおこなっています（2026年3月31日現在）。",
+      "locator": "【株式の保有状況】",
+      "relationship": "business-partner",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "sojitz",
+      "description": "同社グループの双日マシナリー株式会社を通じて、舶用機器の取引や新造船商談の仲介をおこなっています（2026年3月31日現在）。",
+      "locator": "【株式の保有状況】",
+      "relationship": "business-partner",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "nippon-steel",
+      "description": "2026年3月31日現在、3,778千株（発行済株式（自己株式を除く。）の総数に対する所有株式数の割合5.44％）を保有する大株主です。鋼材の調達等の取引もおこなっています。",
+      "locator": "【大株主の状況】",
+      "relationship": "major-shareholder",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "air-water",
+      "description": "2026年3月31日現在、1,658千株（発行済株式（自己株式を除く。）の総数に対する所有株式数の割合2.39％）を保有する大株主です。産業ガスの購入等の取引もおこなっています。",
+      "locator": "【大株主の状況】",
+      "relationship": "major-shareholder",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    },
+    {
+      "companyId": "yamato-kogyo",
+      "description": "2026年3月31日現在、1,626千株（発行済株式（自己株式を除く。）の総数に対する所有株式数の割合2.34％）を保有する大株主です。",
+      "locator": "【大株主の状況】",
+      "relationship": "major-shareholder",
+      "sourceIds": [
+        "yuho-2026"
+      ]
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第127期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社名村造船所",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEFT.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-29"
+      "publisher": "株式会社名村造船所",
+      "title": "有価証券報告書－第127期(2025/04/01－2026/03/31)",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEFT.pdf",
+      "docId": "S100YEFT",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "competitiveAdvantage": {
+      "disclosed": {
+        "asOf": "2026-06-19",
+        "locator": "【会社の支配に関する基本方針】",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "text": "企業価値の源泉は、国内外の顧客との長期的視野に立った緊密な相互信頼関係、舶用資機材供給者との中・長期的かつ安定的な取引関係、顧客ニーズを的確にとらえた高品質な製品を開発・受注・製造するための開発力・技術力および生産管理ノウハウ、地域社会との良好な相互関係にあるとしています。"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "asOf": "2026-06-19",
+        "basis": "セグメント情報に2026年3月期の報告セグメントごとの外部顧客への売上高（新造船事業125,643百万円、修繕船事業20,538百万円、鉄構・機械事業6,279百万円、その他事業6,575百万円、連結売上高159,035百万円）が印字されている。",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "text": "売上高の中心は新造船事業です。2026年3月期の外部顧客への売上高は、新造船事業が125,643百万円と連結売上高159,035百万円の4分の3以上を占め、修繕船事業が20,538百万円、その他事業が6,575百万円、鉄構・機械事業が6,279百万円でした。"
+      }
+    },
+    "strategy": {
+      "disclosed": {
+        "asOf": "2026-06-19",
+        "locator": "【経営方針、経営環境及び対処すべき課題等】",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "text": "既存事業のさらなる「深化」と、長期的な成長に向けた新たな事業展開による「進化」を基本戦略とし、成長投資を加速させています。新造船事業ではゼロエミッション船の国内建造シェアの拡大を図るとともに、2040年より前にゼロエミッション船建造比率100％体制の構築を目標としています。"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
