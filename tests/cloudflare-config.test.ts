@@ -21,6 +21,7 @@ describe("wrangler.jsonc", () => {
   });
   it("is served at kigyo-hyakka.com; its only code redirects old addresses (JCE-039)", () => {
     expect(wrangler.main).toBe("worker/index.ts");
+    expect(wrangler.workers_dev).toBe(true);
     expect(wrangler.routes).toEqual([
       { pattern: "kigyo-hyakka.com", custom_domain: true },
       { pattern: "www.kigyo-hyakka.com", custom_domain: true },
@@ -28,7 +29,7 @@ describe("wrangler.jsonc", () => {
   });
   it("holds no secret and no binding but the assets", () => {
     expect(JSON.stringify(wrangler)).not.toMatch(/key|token|secret|password/i);
-    expect(Object.keys(wrangler).sort()).toEqual(["assets", "compatibility_date", "main", "name", "routes"]);
+    expect(Object.keys(wrangler).sort()).toEqual(["assets", "compatibility_date", "main", "name", "routes", "workers_dev"]);
   });
 });
 
