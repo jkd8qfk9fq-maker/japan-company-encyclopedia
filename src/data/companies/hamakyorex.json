@@ -4,15 +4,140 @@
   "name": "ハマキョウレックス",
   "officialName": "株式会社ハマキョウレックス",
   "nameEn": "HAMAKYOREX CO., LTD.",
-  "description": null,
+  "shortNameEn": "Hamakyorex",
+  "description": "物流センターの運営と貨物自動車運送を手がける、静岡県浜松市に本社を置く物流会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "logistics-center",
+      "name": "物流センター事業",
+      "description": "物流センターの運営とセンター配送を行います。荷主の物流業務を一括で受託する3PL物流が中心です。2026年3月期の外部顧客への営業収益は100,937百万円です。2026年3月31日現在、物流センターの総数は194です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "center-operation",
+          "name": "物流センターの運営",
+          "description": "物流センターを運営し、荷主の商品の保管や入出荷を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "center-delivery",
+          "name": "センター配送",
+          "description": "物流センターから配送先へ商品を配送します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "ec-logistics",
+          "name": "EC物流",
+          "description": "EC物流センターのノウハウを活かし、EC物流の受注拡大と自社配送を進めます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営方針、経営環境及び対処すべき課題等】"
+        }
+      ]
+    },
+    {
+      "id": "truck-transport",
+      "name": "貨物自動車運送事業",
+      "description": "一般貨物運送と特別積み合わせ貨物運送を行います。2026年3月期の外部顧客への営業収益は54,562百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "general-freight",
+          "name": "一般貨物運送",
+          "description": "トラックによる一般貨物の運送を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "special-consolidated-freight",
+          "name": "特別積み合わせ貨物運送",
+          "description": "複数の荷主の貨物を積み合わせて運送します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "荷主から物流業務を一括で受託し、物流センターの運営や配送、貨物自動車運送を行います。",
+    "products": [
+      "物流センターの運営",
+      "センター配送",
+      "一般貨物運送",
+      "特別積み合わせ貨物運送",
+      "EC物流"
+    ],
+    "customers": [
+      "大手量販店",
+      "EC事業者",
+      "荷主企業"
+    ],
+    "revenueSources": [
+      "物流センター運営の受託料",
+      "センター配送の受託料",
+      "貨物自動車運送の運賃"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と子会社43社が物流事業を展開する",
+        "description": "当社と子会社43社で構成されるグループが、物流センター事業と貨物自動車運送事業を展開します。全国に194の物流センターを運営します。"
+      },
+      {
+        "kind": "offering",
+        "title": "荷主の物流業務を一括で受託する",
+        "description": "荷主から物流業務を一括で受託し、物流センターの運営や配送、貨物自動車運送を提供します。2026年3月31日現在、物流センターの総数は194です。"
+      },
+      {
+        "kind": "customer",
+        "title": "大手量販店やEC事業者などの荷主へ提供する",
+        "description": "大手量販店やEC事業者などの荷主へ、物流センターの運営や配送、貨物自動車運送のサービスを提供します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "物流センター事業と貨物自動車運送事業で売上を得る",
+        "description": "物流センター事業と貨物自動車運送事業で売上を得ます。2026年3月期の売上高は155,500百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "新規センターの受託やM&Aなどで売上を伸ばす",
+        "description": "新規センターの受託やM&Aによる効果、運賃の値上げ交渉などで売上を伸ばします。2026年3月期の親会社株主に帰属する当期純利益は10,720百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +152,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 81592000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5079,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +172,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 88149000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5176,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +192,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 95631000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5778,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +212,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 101896000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5813,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +232,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 111111000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6010,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +240,208 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1971,
+      "title": "株式会社遠織輸送センターを設立",
+      "description": "株式会社遠織輸送センターを設立し、一般区域貨物自動車運送事業を開始しました。",
+      "significance": "現在の会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "倉庫業を開始",
+      "description": "静岡県浜松市湖東町において倉庫業を開始しました。",
+      "significance": "倉庫業への進出で、後の物流センター事業につながります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "株式会社ハマキョウレックスに商号変更",
+      "description": "株式会社ハマキョウレックスに商号を変更し、本社を静岡県浜松市寺脇町に移転しました。",
+      "significance": "現在の商号になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "伊藤忠商事と合弁でスーパーレックスを設立",
+      "description": "神奈川県相模原市に大手量販店向けの業務取扱のため、伊藤忠商事株式会社と合弁により株式会社スーパーレックスを設立しました。",
+      "significance": "大手量販店向けの物流センター事業への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部へ株式を上場しました。",
+      "significance": "証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "東海乳菓運輸を連結子会社化",
+      "description": "静岡県静岡市に本社のある東海乳菓運輸株式会社の株式70.0％を取得し、連結子会社としました。",
+      "significance": "M&Aによるグループ拡大の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "市場第一部への指定です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "近鉄物流を株式公開買付けにより連結子会社化",
+      "description": "静岡県駿東郡清水町に本社のある近鉄物流株式会社の株式を株式公開買付けにより86.5％取得し、連結子会社としました。近鉄物流は2005年4月1日より近物レックス株式会社に商号を変更しました。",
+      "significance": "現在の主力子会社の一つをグループに加えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "松本運送、大浜運輸、浜松興運を連結子会社化",
+      "description": "松本運送株式会社、大浜運輸株式会社、浜松興運株式会社の株式を取得し、連結子会社としました。",
+      "significance": "貨物自動車運送事業の基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "JALロジスティクスを連結子会社化",
+      "description": "東京都大田区に本社のある株式会社JALロジスティクス（2010年11月2日より株式会社ロジ・レックスに商号変更）の株式71.9％を取得し、連結子会社としました。",
+      "significance": "物流センター事業の拠点を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "ジェイティービー物流サービスを連結子会社化",
+      "description": "千葉県船橋市に本社のある株式会社ジェイティービー物流サービス（2012年4月2日より株式会社ジェイビーエスに商号変更）の株式100％を取得し、連結子会社としました。",
+      "significance": "首都圏の物流センター事業を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "藤栄運輸を連結子会社化",
+      "description": "藤栄運輸株式会社の株式70％を取得し、連結子会社としました。",
+      "significance": "中部地区の運送体制を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "千代田運輸を連結子会社化",
+      "description": "山口県防府市に本社のある千代田運輸株式会社の株式100％を取得し、連結子会社としました。",
+      "significance": "中国地区の物流センター事業を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "ロジ・レックスがジェイビーエスを吸収合併",
+      "description": "株式会社ロジ・レックスを存続会社として株式会社ジェイビーエスを吸収合併しました。",
+      "significance": "グループ内の物流センター事業を統合しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "HMK Nexusを設立しラストワンマイル物流を開始",
+      "description": "静岡県浜松市にHMK Nexus株式会社を設立し、当社グループ会社、近物レックス株式会社、株式会社シティーラインと共同出資により、ラストワンマイル物流を開始しました。",
+      "significance": "EC物流のラストワンマイルへの進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東日本急行を連結子会社化",
+      "description": "東京都大田区に本社のある東日本急行株式会社の株式100％を取得し、連結子会社としました。",
+      "significance": "首都圏の物流センター事業を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分見直しにより、東京証券取引所の市場第一部からプライム市場に移行しました。",
+      "significance": "現在の市場区分になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "サカイアゼットロジ他5社を連結子会社化",
+      "description": "神奈川県相模原市に本社のある株式会社サカイアゼットロジ他5社の株式100％を取得し、連結子会社としました。",
+      "significance": "物流センター事業の基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "リケン、石丸運輸、バンスポート、クラスターを連結子会社化",
+      "description": "リケン株式会社、石丸運輸株式会社、株式会社バンスポート、株式会社クラスターの株式100％を取得し、連結子会社としました。",
+      "significance": "M&Aによるグループの拡大が続きました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +450,46 @@
       "publisher": "株式会社ハマキョウレックス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBXW.pdf",
       "publishedAt": "2026-06-16",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YBXW",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "物流センター（3PL）事業を成長ドライバーとした拡大戦略をとり、お客様とのコミュニケーションを重視して提案型物流企業を目指します。「日々収支」「全員参加」「コミュニケーション」の3つのキーワードを徹底し、新センターの建設やDX推進による物流ロボットの導入、EC物流の受注拡大、M&Aの継続に取り組みます。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "「心」を経営の基本理念とし、お客様第一、品質第一を基本に、3PL物流における質的内容の日本一を目指します。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "物流センター事業の外部顧客への売上高は2026年3月期に100,937百万円と連結売上高の大半を占め、貨物自動車運送事業54,562百万円とあわせ、センター運営から輸送までをグループ内で担う体制です。",
+        "basis": "【セグメント情報】の報告セグメントごとの外部顧客への売上高",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【セグメント情報】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

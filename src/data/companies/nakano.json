@@ -4,15 +4,148 @@
   "name": "ナカノフドー建設",
   "officialName": "株式会社ナカノフドー建設",
   "nameEn": "NAKANO CORPORATION",
-  "description": null,
+  "shortNameEn": "NAKANO",
+  "description": "日本と東南アジアで総合建設業を営み、不動産賃貸や再生可能エネルギー事業も手がける建設会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "construction-japan",
+      "name": "建設事業（日本）",
+      "description": "提出会社と連結子会社7社、関連会社3社が日本で建設業を営む事業です。2026年3月期の外部顧客への売上高は75,500百万円で、4つの報告セグメントのうち最大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "construction-southeast-asia",
+      "name": "建設事業（東南アジア）",
+      "description": "シンガポール、マレーシア、インドネシア、タイ、ベトナムの現地子会社が建設業を営む事業です。2026年3月期の外部顧客への売上高は61,054百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate-japan",
+      "name": "不動産事業（日本）",
+      "description": "提出会社と、株式会社NFリアルティなど連結子会社が日本で主に不動産賃貸業を営む事業です。2026年3月期の外部顧客への売上高は1,364百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate-southeast-asia",
+      "name": "不動産事業（東南アジア）",
+      "description": "マレーシアの連結子会社ナカノコンストラクションSDN.BHD.が不動産賃貸業を営む事業です。2026年3月期の外部顧客への売上高は4百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他の事業",
+      "description": "報告セグメントに含まれない事業で、2026年3月期の外部顧客への売上高は147百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "renewable-energy",
+          "name": "再生可能エネルギー事業",
+          "description": "提出会社が営む太陽光・風力発電事業です。金額は区分ごとに開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "insurance-agency",
+          "name": "保険代理業",
+          "description": "連結子会社の株式会社NFエージェンシーが営む保険代理業です。金額は区分ごとに開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "pfi",
+          "name": "PFI事業等",
+          "description": "関連会社2社が行うPFI事業等です。金額は区分ごとに開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "日本と東南アジア5か国で建築・土木工事を請け負い、不動産賃貸や再生可能エネルギー事業も営み、工事の請負代金や賃貸収入などで収益を得る事業モデルです。",
+    "products": [
+      "建築工事",
+      "土木工事",
+      "不動産賃貸",
+      "再生可能エネルギー（太陽光・風力発電）",
+      "保険代理"
+    ],
+    "customers": [
+      "官公庁",
+      "工場・物流施設・ホテルなどを発注する民間企業",
+      "不動産の賃借人"
+    ],
+    "revenueSources": [
+      "工事請負代金",
+      "賃貸収入",
+      "売電収入",
+      "保険代理手数料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日本と東南アジアに広がるグループ",
+        "description": "提出会社と国内子会社10社、在外子会社5社、関連会社5社で構成されます。2026年3月期の連結従業員数は1,394人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "建設と不動産の4セグメントとその他事業",
+        "description": "建設事業と不動産事業を日本と東南アジアで営む4つの報告セグメントに、その他の事業として再生可能エネルギー事業や保険代理業が加わります。"
+      },
+      {
+        "kind": "customer",
+        "title": "日本と東南アジアの官公庁と民間発注者",
+        "description": "日本と東南アジア5か国の官公庁や民間企業が工事の発注者です。売上高の10％以上を占める相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高138,071百万円",
+        "description": "2026年3月期の連結売上高は138,071百万円で、前連結会計年度と比べて24.9％増えました。建設事業が136,555百万円で、そのうち日本が75,500百万円、東南アジアが61,054百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益4,385百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は4,385百万円で、前連結会計年度と比べて51.0％増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +160,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 35576000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1278,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +180,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 37839000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1315,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +200,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 42159000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1331,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +220,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 44458000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1357,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,15 +240,197 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 51392000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1394,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "表示方法の変更に伴い、前連結会計年度の連結財務諸表について、従来「その他」に含めていた項目の区分掲記など、表示区分の変更を反映した組替えを行っています。"
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1885,
+      "title": "中野喜三郎が開業",
+      "description": "中野喜三郎が開業し、石材を主とする土木建築工事を次々と手がけました。中央線笹子トンネルや国会議事堂、日本橋の架橋などの工事に携わりました。",
+      "significance": "同社の創業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1933,
+      "title": "「中野組大島事務所」として独立",
+      "description": "大島義愛が事業を継承し、「中野組大島事務所」として独立しました。",
+      "significance": "今日の同社の基盤につながる独立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1942,
+      "title": "株式会社中野組に組織変更",
+      "description": "「株式会社中野組」に組織を変更し、今日の同社の基盤を築きました。",
+      "significance": "法人としての体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "株式の公開を図り、東京証券取引所市場第二部に上場しました。",
+      "significance": "上場企業としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "不動産事業に進出",
+      "description": "経営の多角化と業容の拡大を期し、不動産事業に進出しました。",
+      "significance": "現在の不動産事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "第一部上場企業となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "シンガポールに子会社を設立",
+      "description": "シンガポールに子会社（現・ナカノシンガポール(PTE.)LTD.）を設立しました。",
+      "significance": "東南アジア展開の拠点の始まりで、同子会社は現在の特定子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "インドネシアに子会社を設立",
+      "description": "インドネシアに子会社（現・PT.インドナカノ）を設立しました。",
+      "significance": "東南アジアの拠点を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "タイに子会社タイナカノを設立",
+      "description": "タイに子会社タイナカノCO.,LTD.を設立しました。",
+      "significance": "東南アジアの拠点をさらに広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "マレーシアに子会社を設立",
+      "description": "マレーシアに子会社（現・ナカノコンストラクションSDN.BHD.）を設立しました。",
+      "significance": "マレーシアでの建設・不動産事業の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "商号を株式会社ナカノコーポレーションに変更",
+      "description": "商号を「株式会社中野組」から「株式会社ナカノコーポレーション」へ変更しました。",
+      "significance": "中野組の名を改めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "大島興業株式会社を吸収合併",
+      "description": "企業体質の強化と業績の安定向上を図るため、大島興業株式会社を吸収合併しました。",
+      "significance": "創業家の事業を統合しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "不動建設株式会社の建築事業の営業を譲り受け",
+      "description": "事業基盤の拡充と建築事業の強化を図るため、不動建設株式会社の建築事業の営業を譲り受けました。",
+      "significance": "現在の社名の由来となる事業の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "商号を株式会社ナカノフドー建設に変更",
+      "description": "商号を「株式会社ナカノコーポレーション」から「株式会社ナカノフドー建設」へ変更しました。",
+      "significance": "現在の社名となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "ベトナムに子会社を設立",
+      "description": "ベトナムに子会社ナカノベトナムCO.,LTD.を設立しました。",
+      "significance": "東南アジア5か国目の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社トライネットホールディングスを子会社化",
+      "description": "株式会社トライネットホールディングスの株式を取得し、同社及びそのグループ子会社を子会社化しました。",
+      "significance": "長野県を地盤とする建設グループを取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "国内建設事業本部を新設",
+      "description": "営業本部と技術本部を統合し、国内建設事業本部を新設しました。",
+      "significance": "国内建設事業の体制を一本化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +439,37 @@
       "publisher": "株式会社ナカノフドー建設",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHMT.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YHMT",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年4月から中期経営計画「中計86」（2026年3月期～2028年3月期）を進めており、基本方針は「国内建設事業のさらなる収益性改善」と「海外建設事業の拡大」です。国内では顧客対応の迅速化、人材力の充実、土木事業の拡大に取り組み、海外では拠点体制の拡充や収益基盤の強化を進め、最終年度の建設事業売上高1,270億円と海外事業比率35％以上を目標に掲げています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の外部顧客への売上高は、建設事業（日本）が75,500百万円で連結売上高の約55％、建設事業（東南アジア）が61,054百万円で約44％を占め、不動産事業とその他の事業は合わせて約1％です。東南アジアの建設事業は前連結会計年度の28,023百万円から大きく増えました。",
+        "basis": "セグメント情報（外部顧客への売上高）の印字に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -1,39 +1,214 @@
 {
   "id": "jm-holdings",
   "code": "3539",
-  "name": "JMホールディングス",
+  "name": "ＪＭホールディングス",
   "officialName": "株式会社JMホールディングス",
   "nameEn": "JM HOLDINGS CO.,LTD.",
-  "description": null,
+  "shortNameEn": "JM HOLDINGS",
+  "description": "精肉を核とした食品スーパーマーケットを関東を中心に展開する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
-  "financials": [
+  "industries": [
     {
-      "fiscalYear": "2021年7月期",
-      "periodEnd": "2021-07-31",
-      "revenue": 129823000000,
-      "revenueLabel": "売上高",
-      "profit": 6693000000,
-      "profitLabel": "経常利益",
-      "netIncome": 4246000000,
-      "netIncomeLabel": "親会社株主に帰属する当期純利益",
-      "totalAssets": 55391000000,
-      "totalAssetsLabel": "総資産額",
-      "netAssets": 32348000000,
-      "netAssetsLabel": "純資産額",
-      "employees": null,
-      "currency": "JPY",
-      "accountingStandard": "jgaap",
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "supermarket-business",
+      "name": "スーパーマーケット事業",
+      "description": "精肉を核とし、青果・鮮魚・惣菜の専門性を強調した食品スーパーマーケットを展開する報告セグメントです。2026年7月期の外部顧客への売上高は192,599百万円でした。",
+      "products": [
+        "精肉",
+        "青果",
+        "鮮魚",
+        "惣菜",
+        "食品"
+      ],
+      "customers": [
+        "一般家庭の顧客",
+        "飲食店事業者"
+      ],
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "supermarket-seisenkan",
+          "name": "ジャパンミート生鮮館",
+          "description": "大型商業施設内に17店舗を展開する、精肉売場を核とした大型食品スーパーマーケットです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "supermarket-roadside",
+          "name": "ジャパンミート卸売市場・パワーマート・食肉卸売センターMEAT Meet",
+          "description": "関東圏のロードサイドに23店舗を展開する、生鮮館を小型化した単独店舗です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "supermarket-hanamasa",
+          "name": "肉のハナマサ",
+          "description": "東京都内と大阪市内を中心に64店舗を展開する、飲食店事業者向けの業務用スーパーです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "supermarket-mirabelle",
+          "name": "スーパーみらべる",
+          "description": "東京都北部を中心に12店舗を展開する、地域に密着した食品スーパーです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "supermarket-produce-wholesale",
+          "name": "青果仲卸事業",
+          "description": "茨城県水戸市で青果の仲卸事業を営み、グループの青果部門の商品調達を支えています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "supermarket-rice-retail",
+          "name": "米穀小売業",
+          "description": "茨城県東茨城郡で米穀小売業を営み、グループで販売する米の安定調達に寄与しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
       ]
     },
+    {
+      "id": "other-businesses",
+      "name": "その他",
+      "description": "外食事業、イベント関連事業、アウトソーシング事業、施設運営管理事業を行う、報告セグメントに含まれない事業です。2026年7月期の外部顧客への売上高は5,940百万円でした。",
+      "products": [
+        "外食",
+        "食のイベント",
+        "レジ業務の受託",
+        "ショッピングセンターの運営"
+      ],
+      "customers": [
+        "一般顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "other-restaurant",
+          "name": "外食事業",
+          "description": "「焼肉や漫遊亭」など19店舗を運営する外食事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-event",
+          "name": "イベント関連事業",
+          "description": "「肉フェス」など食に関わるイベントの展開や、イベントの制作・運営を行う事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-outsourcing",
+          "name": "アウトソーシング事業",
+          "description": "スーパーマーケットのレジ業務の受託を中心とする事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-facility",
+          "name": "施設運営管理事業",
+          "description": "群馬県太田市のショッピングセンター「ニコモール」の運営管理を行う事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "精肉や青果、鮮魚、惣菜を扱う食品スーパーマーケットを関東を中心に展開し、外食やイベントなども手がけています。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "精肉",
+      "青果",
+      "鮮魚",
+      "惣菜",
+      "食品",
+      "外食",
+      "食のイベント",
+      "レジ業務の受託",
+      "ショッピングセンターの運営"
+    ],
+    "customers": [
+      "一般家庭の顧客",
+      "飲食店事業者"
+    ],
+    "revenueSources": [
+      "スーパーマーケットでの商品販売による売上高",
+      "外食店舗での飲食提供による売上高",
+      "イベントの制作・運営による売上高",
+      "レジ業務の受託による売上高",
+      "ショッピングセンターの運営管理による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社グループ",
+        "description": "当社と連結子会社10社の計11社で構成されるグループです。2026年7月31日現在の従業員数は1,543人です。本社は茨城県土浦市にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "精肉を核とした食品スーパーと外食などの事業",
+        "description": "精肉、青果、鮮魚、惣菜を販売する食品スーパーマーケットを展開し、外食店舗の運営や食のイベント、レジ業務の受託、ショッピングセンターの運営も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域の家庭と飲食店の事業者",
+        "description": "関東を中心とする地域の家庭の顧客と、業務用スーパー「肉のハナマサ」を利用する飲食店の事業者が主な顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "店舗での商品販売による売上高",
+        "description": "2026年7月期の売上高は198,540百万円で、前連結会計年度に比べ12,332百万円（6.6％）増えました。スーパーマーケット事業と外食事業の既存店が順調に推移したことが主な理由です。"
+      },
+      {
+        "kind": "profit",
+        "title": "純利益",
+        "description": "2026年7月期の親会社株主に帰属する当期純利益は4,958百万円で、前連結会計年度に比べ1,499百万円（23.2％）減りました。"
+      }
+    ]
+  },
+  "financials": [
     {
       "fiscalYear": "2022年7月期",
       "periodEnd": "2022-07-31",
@@ -47,11 +222,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 35898000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1236,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -67,11 +242,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 39416000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1487,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -87,11 +262,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 43768000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1444,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -107,17 +282,208 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 45347000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1525,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
+      ]
+    },
+    {
+      "fiscalYear": "2026年7月期",
+      "periodEnd": "2026-07-31",
+      "revenue": 198540000000,
+      "revenueLabel": "売上高",
+      "profit": 9183000000,
+      "profitLabel": "経常利益",
+      "netIncome": 4958000000,
+      "netIncomeLabel": "親会社株主に帰属する当期純利益",
+      "totalAssets": 76574000000,
+      "totalAssetsLabel": "総資産額",
+      "netAssets": 49252000000,
+      "netAssetsLabel": "純資産額",
+      "employees": 1543,
+      "currency": "JPY",
+      "accountingStandard": "jgaap",
+      "sourceIds": [
+        "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1945,
+      "title": "丸八肉店を個人創業",
+      "description": "境博確が、茨城県行方郡北浦町で食肉の小売・卸売を目的として丸八肉店を個人創業しました。",
+      "significance": "食肉の卸売から始まった、会社の原点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "当社を設立",
+      "description": "食肉卸売を目的として、茨城県東茨城郡小川町に当社を設立しました。",
+      "significance": "法人としての会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "小売店第1号となる勝田店を開設",
+      "description": "長崎屋勝田店内に、小売店第1号となる勝田店を開設しました。ひたちなか店の開設に伴い、1998年1月に閉店しました。",
+      "significance": "小売業への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "ジャパンデリカを設立",
+      "description": "惣菜の製造販売を目的に、茨城県東茨城郡小川町に株式会社ジャパンデリカを設立しました。",
+      "significance": "惣菜部門の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "ホームセンター1号店の守谷店を開設",
+      "description": "[[company:joyful-honda|ジョイフル本田]]守谷店内に、ホームセンター1号店である守谷店を開設しました。",
+      "significance": "大型商業施設内への出店の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "外食事業に転換し「焼肉や漫遊亭」1号店を開設",
+      "description": "株式会社ジャパンデリカの事業目的を外食事業に転換し、「焼肉や漫遊亭」1号店の水戸50号店を開設しました。",
+      "significance": "外食事業への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "カスミ畜産をジャパンミートに商号変更",
+      "description": "株式会社カスミ畜産をジャパンミート株式会社に商号変更しました。",
+      "significance": "現在の主力子会社の名前が決まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "黒田青果を完全子会社化し「パワーマート」の運営を開始",
+      "description": "株式会社黒田青果を完全子会社とし、青果部門をグループ化するとともに、「パワーマート」の運営を開始しました。",
+      "significance": "青果部門のグループ化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "花正を完全子会社化し「肉のハナマサ」の運営を開始",
+      "description": "株式会社花正を完全子会社とし、「肉のハナマサ」の運営を開始しました。",
+      "significance": "都心部の業務用スーパーへの進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "東京証券取引所市場第二部へ上場",
+      "description": "東京証券取引所市場第二部へ上場しました。",
+      "significance": "株式の公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東京証券取引所市場第一部に指定替え",
+      "description": "東京証券取引所市場第一部に指定替えとなりました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "持株会社体制へ移行しJMホールディングスに商号変更",
+      "description": "持株会社体制に移行し、スーパーマーケット事業を株式会社ジャパンミートに承継して、当社は株式会社ＪＭホールディングスに商号を変更しました。",
+      "significance": "持株会社体制への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "プライム市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "スーパーみらべるを完全子会社化",
+      "description": "株式会社スーパーみらべるを完全子会社化しました。",
+      "significance": "東京都北部での食品スーパーの拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "JMトレードセンターを開設",
+      "description": "茨城県つくば市にJMトレードセンターを開設しました。",
+      "significance": "グロッサリー商品の備蓄と物流体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "joyful-honda",
+      "relationship": "business-partner",
+      "description": "協力関係の維持強化のため、当社は同社の株式を保有しています。2026年7月31日現在、同社は当社株式の3.14％を保有する大株主です。同社が開発運営するホームセンターの敷地内には「ジャパンミート生鮮館」を14店舗出店しており、2026年7月期の売上高のうち約26.0％が同社のホームセンター内での店舗売上です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第48期(2025/08/01－2026/07/31)",
+      "publisher": "株式会社ＪＭホールディングス",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z9E6.pdf",
+      "publishedAt": "2026-10-27",
+      "docId": "S100Z9E6",
+      "asOf": "2026-07-31",
+      "accessedAt": "2026-11-09"
+    },
     {
       "id": "yuho-2025",
       "title": "有価証券報告書－第47期(2024/08/01－2025/07/31)",
@@ -128,9 +494,41 @@
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念は「食を守り、ひとを育む」です。経営方針として人材育成、お客様第一主義、変化対応、本物の商品開発と技術の修得を掲げています。2026年7月期から2029年7月期までの中期経営計画では、新規出店の加速や独自の商品開発、内製化の推進に取り組み、2029年7月期の売上高目標は250,000百万円です。",
+        "asOf": "2026-10-27",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "精肉専門店として創業し、加工物流センターでの大量かつ効率的な精肉加工と、単品を大量に陳列して販売する「異常値販売」を強みとしています。6つの店舗業態を持ち、2026年7月末現在でスーパーマーケット事業の店舗数は116店舗です。",
+        "basis": "【事業の内容】及び【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の記載",
+        "asOf": "2026-10-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年7月期の売上高は198,540百万円で、スーパーマーケット事業が192,599百万円を占めています。本邦以外の外部顧客への売上高はなく、国内のみで事業を行っています。",
+        "basis": "【セグメント情報】の記載",
+        "asOf": "2026-10-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年7月期",
     "asOf": "2025-07-31",

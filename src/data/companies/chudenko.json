@@ -1,18 +1,175 @@
 {
   "id": "chudenko",
   "code": "1941",
-  "name": "中電工",
+  "name": "株式会社中電工",
   "officialName": "株式会社中電工",
   "nameEn": "CHUDENKO  CORPORATION",
-  "description": null,
+  "shortNameEn": "CHUDENKO",
+  "description": "広島市に本店を置き、中国電力グループの電気工事を担うとともに中国地域を地盤に官公庁や民間企業の設備工事も請け負う、電気工事を中心とした設備工事会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "facility-construction",
+      "name": "設備工事業",
+      "description": "屋内電気工事、空調管工事、情報通信工事、配電線工事、送変電地中線工事など、設備工事全般を行う同社グループ唯一の報告セグメントです。中国電力と中国電力ネットワークの電気工事も請け負っています。2026年3月期の外部顧客への売上高は204,448百万円で、連結売上高の約9割を占めます。",
+      "products": [
+        "屋内電気工事",
+        "空調管工事",
+        "情報通信工事",
+        "配電線工事",
+        "送変電地中線工事"
+      ],
+      "customers": [
+        "中国電力グループ",
+        "官公庁",
+        "民間企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "indoor-electrical",
+          "name": "屋内電気工事",
+          "description": "建物内の電気設備工事です。2026年3月期の売上高は102,882百万円で、設備工事業の中で最大です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "air-conditioning-piping",
+          "name": "空調管工事",
+          "description": "空調・管工事です。2026年3月期の売上高は37,698百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "distribution-line",
+          "name": "配電線工事",
+          "description": "配電線の工事です。2026年3月期の売上高は33,630百万円でした。中国電力ネットワークの配電設備工事などを担います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other-construction-work",
+          "name": "その他の設備工事",
+          "description": "上記の工事区分以外の設備工事です。2026年3月期の売上高は10,389百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "transmission-underground",
+          "name": "送変電地中線工事",
+          "description": "送変電設備と地中線の工事です。2026年3月期の売上高は10,239百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "information-communication",
+          "name": "情報通信工事",
+          "description": "情報通信設備の工事です。2026年3月期の売上高は9,605百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他の事業",
+      "description": "報告セグメントに含まれない事業です。連結子会社の三親電材による電気機器・工事材料の販売、昭和コーポレーションによる工事材料の製造・販売、中工開発による保険代理・リース等のほか、農業関連事業、学校空調設備のPFI事業、太陽光発電事業などを行っています。2026年3月期の外部顧客への売上高は23,401百万円でした。",
+      "products": [
+        "電気機器・工事材料の販売",
+        "工事材料の製造・販売",
+        "保険代理・リース",
+        "農業関連事業",
+        "PFI事業",
+        "太陽光発電事業"
+      ],
+      "customers": [
+        "工事事業者",
+        "官公庁"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "設備工事の請負を中心に、グループ内で工事材料の販売・製造まで担う事業モデルです。",
+    "products": [
+      "屋内電気工事",
+      "空調管工事",
+      "情報通信工事",
+      "配電線工事",
+      "送変電地中線工事",
+      "電気機器・工事材料の販売",
+      "工事材料の製造・販売"
+    ],
+    "customers": [
+      "中国電力グループ",
+      "官公庁",
+      "民間企業"
+    ],
+    "revenueSources": [
+      "設備工事の請負代金",
+      "工事材料などの販売収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "中電工グループ",
+        "description": "中電工と子会社19社、関連会社9社、その他の関係会社1社で構成されています（2026年3月31日現在）。連結の従業員数は4,697人です。本社は広島市中区にあり、中国地域を地盤としながら、東京・大阪の本部やマレーシア・シンガポール・ベトナムの子会社でも事業を行っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "設備工事全般の請負",
+        "description": "屋内電気工事、空調管工事、情報通信工事、配電線工事、送変電地中線工事など設備工事全般を請け負っています。あわせて、連結子会社が電気機器・工事材料の販売や工事材料の製造・販売、保険代理・リースなども行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "中国電力グループと官公庁・民間企業",
+        "description": "主な顧客は中国電力グループ、官公庁、民間企業です。2026年3月期の中国電力グループへの売上高は44,840百万円で、連結売上高の19.7％を占める最大の顧客です。売上高の9割超は日本国内です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "工事の請負代金",
+        "description": "設備工事の請負代金を中心に収入を得ています。2026年3月期の売上高は227,850百万円で、前期から2.7％増えました。情報通信工事は減ったものの、屋内電気工事や配電線工事などが増えました。設備工事業が売上高の約9割を占めます。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "原価管理の徹底や施工の効率化、全社的なコスト低減で利益を確保しています。2026年3月期の親会社株主に帰属する当期純利益は18,482百万円でした。前期にあった持分法適用会社の解散に伴う法人税等の減少の反動などで、前期からは減りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 216329000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4531,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 202069000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4556,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 213921000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4519,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +244,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 229601000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4612,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +264,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 247823000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4697,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +272,515 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1944,
+      "title": "中国電気工事株式会社を設立",
+      "description": "1944年9月、中国地方の電気工事業者12社が軍需省の要請により合同し、広島市に中国電気工事株式会社を設立しました。",
+      "significance": "中電工グループの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "広島証券取引所に上場",
+      "description": "1949年6月、広島証券取引所に株式を上場しました。",
+      "significance": "資本市場への第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "東京営業所を開設",
+      "description": "1950年1月、東京都に東京営業所（現在の東京本部）を開設しました。",
+      "significance": "中国地方以外への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "三親電材を子会社化",
+      "description": "1967年4月、電気機器・工事材料の販売を行う三親電材株式会社の株式を取得し、子会社としました。",
+      "significance": "工事材料の調達・販売を担う会社がグループに入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "1968年10月、大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場市場が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1970年11月、東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "全国市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "東証・大証の市場第一部に上場",
+      "description": "1972年2月、東京証券取引所と大阪証券取引所の市場第一部に株式を上場しました。",
+      "significance": "第一部上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "中工開発を設立",
+      "description": "1990年4月、保険代理・リース等を行う中工開発株式会社を設立しました。",
+      "significance": "設備工事以外の事業を行う会社が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "株式会社中電工に商号変更",
+      "description": "1990年10月、中国電気工事株式会社から株式会社中電工に商号を変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "本店を現在地へ移転",
+      "description": "1996年3月、本店を広島市中区小網町6番12号（現在地）へ移転しました。",
+      "significance": "現在の本店所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "中電工テクノなどを設立",
+      "description": "2002年4月、配電線工事の施工を行う株式会社中電工テクノと、電気工事等の設計・施工を行う株式会社中電工エレテック広島・島根を設立しました。",
+      "significance": "地域ごとの施工体制を担う子会社が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "大証の上場を廃止",
+      "description": "2003年11月、大阪証券取引所の上場を廃止しました。同年4月には株式会社中電工エレテック岡山・鳥取を設立しています。",
+      "significance": "上場市場は東京証券取引所に一本化されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "マレーシアに子会社を設立",
+      "description": "2010年12月、マレーシアにCHUDENKO (MALAYSIA) SDN. BHD.を設立しました。",
+      "significance": "海外事業の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "杉山管工設備を子会社化",
+      "description": "2016年8月、空調管工事等の設計・施工を行う杉山管工設備株式会社の株式を取得し、子会社としました。",
+      "significance": "首都圏の空調管工事の体制が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "早水電機工業を子会社化",
+      "description": "2016年9月、電気工事等の設計・施工を行う早水電機工業株式会社の株式を取得し、子会社としました。",
+      "significance": "関西圏の電気工事の体制が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "シンガポールのRYB ENGINEERINGを子会社化",
+      "description": "2017年10月、シンガポールのRYB ENGINEERING PTE LTDの株式を取得し、子会社としました。",
+      "significance": "東南アジアの事業基盤が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "昭和コーポレーションを子会社化",
+      "description": "2020年3月、熱絶縁工事の設計・施工・監理や断熱配管支持金具の製造・販売を行う株式会社昭和コーポレーションの株式を取得し、子会社としました。同社の売上高は連結売上高の10％を超えています。",
+      "significance": "材料の製造・販売まで担う会社がグループの中核に加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "監査等委員会設置会社へ移行",
+      "description": "2023年6月、監査等委員会設置会社へ移行しました。",
+      "significance": "現在のガバナンス体制です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "the-chugoku-electric-power",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】で「その他の関係会社」とされる会社で、2026年3月31日現在、当社の議決権の41.41％を保有しています。当社は同社グループの電気工事等を請け負っており、2026年3月期の中国電力グループへの売上高は44,840百万円で、連結売上高の19.7％を占めています。また、当社は同社に設備資金を貸し付けています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "sumitomo-realty-and-development",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先で、特定投資株式として1,730,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamaguchi-financial-group",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに地元金融取引先の一つで、特定投資株式として2,962,127株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "murata-manufacturing",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先で、特定投資株式として1,105,335株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nitto-denko",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先で、特定投資株式として1,000,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-ufj-financial-group",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに金融取引先の一つで、特定投資株式として1,004,210株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "chugin-financial-group",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに地元金融取引先の一つで、特定投資株式として792,600株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hirogin-holdings",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに地元金融取引先の一つで、特定投資株式として1,125,790株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-san-in-godo-bank",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに地元金融取引先の一つで、特定投資株式として850,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fukuyama-transporting",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに継続的に取引がある地元企業で、特定投資株式として200,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mazda",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに継続的に取引がある地元企業で、特定投資株式として587,600株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toda",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先で、特定投資株式として343,278株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sompo-holdings",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに金融取引先の一つで、特定投資株式として74,775株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okumura",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先で、特定投資株式として64,600株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "izumi",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに継続的に取引がある地元企業で、特定投資株式として300,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokio-marine-holdings",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに金融取引先の一つで、特定投資株式として37,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ryobi",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに継続的に取引がある地元企業で、特定投資株式として80,200株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "retail-partners",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに継続的に取引がある地元企業で、特定投資株式として149,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-paint-holdings",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先で、特定投資株式として180,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "jms",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに継続的に取引がある地元企業で、特定投資株式として250,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ohmoto-gumi",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに継続的に取引がある地元企業で、特定投資株式として55,440株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "dai-ichi-life-holdings",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに金融取引先の一つで、第一生命ホールディングスとして特定投資株式53,600株を保有しています。同社は2026年4月1日付で第一ライフグループに商号を変更しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fuji-8278",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに継続的に取引がある地元企業で、特定投資株式として35,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kitagawa",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに継続的に取引がある地元企業で、特定投資株式として43,700株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tomato-bank",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに地元金融取引先の一つで、特定投資株式として39,600株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "jfe-holdings",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先で、特定投資株式として22,450株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ntn",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先で、特定投資株式として121,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokuyama",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに継続的に取引がある地元企業で、特定投資株式として10,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "penta-ocean-construction",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先で、特定投資株式として22,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-kayaku",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先で、特定投資株式として13,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-tottori-bank",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに地元金融取引先の一つで、特定投資株式として13,700株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shinagawa-refra",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先で、特定投資株式として5,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "wood-one",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先であるとともに継続的に取引がある地元企業で、特定投資株式として7,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sharp",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先で、特定投資株式として10,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toda-kogyo",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負っている主要な取引先で、特定投資株式として3,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +788,47 @@
       "publisher": "株式会社中電工",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD98.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YD98",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「中期経営計画2027（2025～2027年度）」を掲げ、テーマを「Change & Growth For All to 2027 ～営業力・施工力の強化と人的資本経営の推進～」として、安全・コンプライアンスの徹底と品質の向上、営業力・施工力の一層の強化と受注の拡大、生産性の向上による利益の創出、人材の確保・育成の強化と魅力ある職場づくり、成長投資による事業拡大に取り組んでいます。2027年度の目標として連結売上高2,600億円を掲げています。あわせて「中電工グループ 2030ビジョン」では、2030年度の目標として連結売上高3,000億円と、カーボンニュートラルに向けたCO2排出量の削減46％以上（2013年度比）を掲げています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "中国電力グループの配電線工事や送変電地中線工事を担う施工体制を持ち、中国地域に支社網を置いています。グループ内に工事材料を販売する三親電材と、工事材料を製造・販売する昭和コーポレーションを持ち、材料の調達から施工までをグループで担える体制です。",
+        "basis": "【事業の内容】が、設備工事業を当社と国内・海外の連結子会社11社で行い、中国電力と中国電力ネットワークの電気工事を請け負っていること、【関係会社の状況】で三親電材が電気機器・工事材料の販売、昭和コーポレーションが熱絶縁工事と断熱配管支持金具の製造・販売を行っていることに拠ります。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは設備工事業のみで、2026年3月期の外部顧客への売上高204,448百万円と連結売上高の約9割を占めています。最大の顧客である中国電力グループへの売上高は44,840百万円で、全体の19.7％です。",
+        "basis": "【セグメント情報】の外部顧客への売上高と、【関連情報】の主要な顧客ごとの情報（中国電力グループ44,840百万円）、MD&Aの相手先別売上高の割合（19.7％）に印字された数値に拠ります。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

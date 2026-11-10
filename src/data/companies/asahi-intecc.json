@@ -4,7 +4,8 @@
   "name": "朝日インテック",
   "officialName": "朝日インテック株式会社",
   "nameEn": "ASAHI INTECC CO., LTD.",
-  "description": null,
+  "shortNameEn": "ASAHI INTECC",
+  "description": "ワイヤー加工技術を核に、血管内治療用のガイドワイヤーやカテーテルなどの低侵襲治療製品と、医療・産業用部材を開発・製造・販売する医療機器メーカーです。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,8 +16,131 @@
       "market": "プレミア"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "medical",
+      "name": "メディカル事業",
+      "description": "血管内治療に使う低侵襲治療製品（治療用のガイドワイヤーやカテーテルなど）を開発・製造・販売する事業です。国内では主に直接販売により、海外では大半を販売代理店を通じて、米国・フランス・ドイツ・イタリアでは主に直接販売により病院などへ販売しています。2026年6月期の外部顧客への売上高は126,798百万円で、グループの売上高の大半を占めます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "cardiovascular",
+          "name": "循環器系製品",
+          "description": "心臓などの循環器領域で使う、PCIガイドワイヤーや貫通カテーテルなどの製品です。2026年6月期の売上高は94,778百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "non-cardiovascular",
+          "name": "非循環器系製品",
+          "description": "腹部・末梢・脳血管系などの領域で使うカテーテル関連製品です。2026年6月期の売上高は24,370百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "oem",
+          "name": "OEM製品",
+          "description": "他社のブランドで供給するOEM製品です。2026年6月期の売上高は7,650百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        }
+      ]
+    },
+    {
+      "id": "device",
+      "name": "デバイス事業",
+      "description": "医療機器分野と産業機器分野の部材を開発・製造し、国内外のメーカーへ販売する事業です。2026年6月期の外部顧客への売上高は18,620百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "medical-components",
+          "name": "医療部材",
+          "description": "循環器系の検査・治療用カテーテル向けなどの、医療機器に使われる部材です。2026年6月期の売上高は11,859百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "industrial-components",
+          "name": "産業部材",
+          "description": "レジャーや自動車、OA機器などに使われる、産業機器向けの部材です。2026年6月期の売上高は6,760百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "素材から完成品まで一貫して開発・製造した医療機器と部材を、国内では病院へ直接販売し、海外では販売代理店や現地子会社を通じて販売して売上を得る事業モデルです。",
+    "products": [
+      "PCIガイドワイヤー",
+      "ガイディングカテーテル",
+      "貫通カテーテル",
+      "医療機器用部材",
+      "産業機器用部材"
+    ],
+    "customers": [
+      "病院などの医療機関",
+      "国内外の医療機器メーカー",
+      "産業機器メーカー"
+    ],
+    "revenueSources": [
+      "医療機器製品の販売収入",
+      "医療・産業用部材の販売収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "連結子会社20社とグループを構成する",
+        "description": "朝日インテックは、当社と連結子会社20社でグループを構成しています（2026年6月30日現在）。本社は愛知県瀬戸市にあり、連結従業員数は10,177名です。タイやベトナム、フィリピンに製造拠点を持ち、世界121を超える国と地域に製品を供給しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "ワイヤー技術で医療機器と部材をつくる",
+        "description": "伸線技術、ワイヤーフォーミング技術、コーティング技術、トルク技術の4つのコアテクノロジーを応用し、素材から完成品まで一貫した開発・製造を行います。循環器・腹部・末梢・脳血管系のカテーテル関連製品のほか、医療・産業用の部材も手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "病院とメーカーに届ける",
+        "description": "メディカル事業の製品は、国内では主に直接販売により病院などへ届け、海外では大半を販売代理店を通じて、米国・フランス・ドイツ・イタリアでは主に直接販売により届けます。デバイス事業の部材は、国内外のメーカーへ販売します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売で売上を得る",
+        "description": "製品の販売が売上高になります。2026年6月期の売上高は145,419百万円で、メディカル事業が126,798百万円、デバイス事業が18,620百万円です。売上高は前期と比べて21.2％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "2つの事業が収益の柱",
+        "description": "メディカル事業とデバイス事業が、グループの収益の柱です。2026年6月期の親会社株主に帰属する当期純利益は32,075百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -31,11 +155,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 121130000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10435,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -51,11 +175,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 134300000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10187,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -71,11 +195,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 151961000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 9371,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -91,11 +215,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 151354000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 9473,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -119,32 +243,207 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
+  "history": [
     {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第49期(2024/07/01－2025/06/30)",
-      "publisher": "朝日インテック株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WQNM.pdf",
-      "publishedAt": "2025-09-24",
-      "accessedAt": "2026-09-30"
+      "year": 1976,
+      "title": "朝日ミニロープ販売を設立",
+      "description": "極細ステンレスロープの製造を目的として1972年4月に創業した朝日ミニロープ工業の販売部門として、中部地区のメーカーとの取引の円滑化を図るため、名古屋市守山区に朝日ミニロープ販売株式会社が設立されました。",
+      "significance": "朝日インテックの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
     },
+    {
+      "year": 1988,
+      "title": "朝日インテックに商号変更",
+      "description": "朝日ミニロープ販売株式会社から、朝日インテック株式会社に商号を変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "タイに子会社を設立",
+      "description": "タイにASAHI INTECC THAILAND CO.,LTD.（現・連結子会社）を設立しました。",
+      "significance": "海外生産の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "瀬戸メディカル工場を新設",
+      "description": "愛知県瀬戸市に、医療機器の製造認可工場である瀬戸メディカル工場を新設しました。",
+      "significance": "医療機器の製造に本格的に取り組み始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "国内初のPCIガイドワイヤーなどの製品化に成功",
+      "description": "厚生省（現・厚生労働省）より医療用具製造業の許可を受け、国内初となる心筋梗塞治療用のPCIガイドワイヤーとガイディングカテーテルの製品化に成功しました。",
+      "significance": "医療機器事業の転機となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "アテック（現・フィルメック）を設立",
+      "description": "大阪府高石市に、メディカル製品の製造販売を目的としたアテック株式会社を設立しました。現在のフィルメック株式会社（愛知県瀬戸市）です。",
+      "significance": "メディカル製品の製造・販売体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "東証・名証の市場第二部に上場",
+      "description": "東京証券取引所市場第二部と名古屋証券取引所市場第二部に上場しました。同年、ベトナムにASAHI INTECC HANOI CO.,LTD.（現・連結子会社）を設立しました。",
+      "significance": "上場企業となり、アジアの生産拠点も広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "トヨフレックスを子会社化",
+      "description": "デバイス事業の強化と製造拠点の拡充を目的として、トヨフレックス株式会社とその子会社TOYOFLEX CEBU CORPORATION（フィリピン）を子会社化しました。トヨフレックスは2023年7月に当社へ吸収合併されました。",
+      "significance": "デバイス事業の基盤が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東証・名証の市場第一部へ市場変更",
+      "description": "東京証券取引所市場第一部と名古屋証券取引所市場第一部へ市場変更しました。同年、愛知県瀬戸市にグローバル本社・R&Dセンターを開設しました。",
+      "significance": "本社と研究開発の拠点が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "米国とイタリアの4社を子会社化",
+      "description": "腹腔鏡手術支援ロボットの開発を行う株式会社A-Traction（現・朝日サージカルロボティクス株式会社）、イタリアの販売代理店KARDIA S.R.L.、薄膜電気導通体技術の開発を行う米国Pathways Medical Corporation、医療機器の設計開発に関する受託業務を行う米国Rev.1 Engineering, Inc.を子会社化しました。",
+      "significance": "医療機器の開発領域と販売網が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証プライム市場・名証プレミア市場へ移行",
+      "description": "証券取引所の市場区分の見直しにより、東京証券取引所市場第一部からプライム市場へ、名古屋証券取引所市場第一部からプレミア市場へ移行しました。",
+      "significance": "現在の市場区分になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ニッタモールドを子会社化",
+      "description": "金型製作と射出成形の技術の内製化を目的として、ニッタモールド株式会社（滋賀県甲賀市）とその子会社NITTA M&T(THAILAND)CO.,LTD.を子会社化しました。",
+      "significance": "ものづくりの技術の内製化が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "中国に南寧の子会社を設立",
+      "description": "中国に朝日英達医療器械（南寧）有限公司を設立しました。同社では製造工場を建設中で、2030年12月の生産開始を予定しています。また、サウジアラビアにサウジアラビア地域統括拠点を開設しました。",
+      "significance": "中国での生産体制の準備が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "cuorips",
+      "relationship": "technology",
+      "description": "技術・研究開発における協力関係の維持・強化を目的として株式を保有しており、業務提携の概要として新規デバイスの開発が挙げられています（2026年6月30日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第50期(2025/07/01－2026/06/30)",
       "publisher": "朝日インテック株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z3SS.pdf",
       "publishedAt": "2026-09-28",
-      "accessedAt": "2026-10-19",
       "docId": "S100Z3SS",
-      "asOf": "2026-06-30"
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-10-19",
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画『Building the Future 2030』（2026年6月期から2030年6月期までの5年間）では、事業ポートフォリオの構築と収益力の強化を基本方針とし、循環器領域でのグローバルニッチトップの維持・強化、非循環器領域でのグローバルニッチトップを目指した販売戦略と製品ポートフォリオの強化、新規事業の創出と高付加価値治療デバイスへの参入に取り組みます。見直し後の目標として、2030年6月期に連結売上高2,125億円を掲げています。長期ビジョンでは『低侵襲治療において、臨床課題を総合的に解決できるグローバルニッチトップ企業』を2035年のありたい姿とし、2035年6月期に連結売上高3,300億円の達成を目指しています。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "研究開発型メーカーとして、素材から完成品まで一貫した開発・製造が可能であることを強みとしています。伸線技術、ワイヤーフォーミング技術、コーティング技術、トルク技術という4つのコアテクノロジーを応用し、循環器系のみならず、腹部・末梢・脳血管系など幅広い領域の医療機器製品や、多分野の産業機器製品を生み出しています。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の約87％をメディカル事業が占めます。地域別では日本が20,844百万円、北米が32,811百万円、欧州が28,449百万円、中国が37,982百万円で、海外の売上高が大半を占める構成です。",
+        "basis": "セグメント情報（2026年6月期の外部顧客への売上高）と、収益認識注記の地域別の内訳（2026年6月期）の印字から読み取った。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",

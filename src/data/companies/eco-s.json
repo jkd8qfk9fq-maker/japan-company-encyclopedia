@@ -4,15 +4,107 @@
   "name": "エコス",
   "officialName": "株式会社エコス",
   "nameEn": "Eco's Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Eco's",
+  "description": "首都圏と北関東を中心に食品スーパーマーケットを展開し、生鮮食品や日用雑貨を地域のお客様に販売する小売企業です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "supermarket-business",
+      "name": "スーパーマーケット事業",
+      "description": "生鮮食品、一般食品及び日用雑貨品等を販売するスーパーマーケット事業です。グループはこの事業の単一セグメントで、2026年2月期の連結売上高は134,198百万円です。店舗運営のほか、一般食品等の卸売、店舗・不動産の賃貸、物流センターの管理運営なども子会社とともに手がけています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "fresh-foods",
+          "name": "生鮮部門",
+          "description": "青果、鮮魚、精肉、惣菜の生鮮食品を販売する部門です。2026年2月期の売上高は65,163百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "grocery",
+          "name": "グロサリー部門",
+          "description": "デイリー（牛乳・乳製品・パン・冷凍食品など）、一般食品、酒類、雑貨などを販売する部門です。2026年2月期の売上高は68,321百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "logistics",
+          "name": "物流部門",
+          "description": "グループの商品配送を担う物流の部門です。2026年2月期の売上高は714百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "子会社とともにスーパーマーケットを運営し、生鮮食品・一般食品・日用雑貨の販売で対価を得るほか、共同仕入や物流センターで仕入と配送を担う事業モデルです。",
+    "products": [
+      "生鮮食品（青果・鮮魚・精肉・惣菜）",
+      "一般食品・日用雑貨品",
+      "プライベートブランド「ナチュライブ」「サスベジタブル」",
+      "一般食品及び日用雑貨品等の卸売"
+    ],
+    "customers": [
+      "店舗周辺地域の一般消費者"
+    ],
+    "revenueSources": [
+      "商品の販売対価",
+      "卸売・配送代行・不動産賃貸などの営業収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "連結子会社5社のグループ",
+        "description": "当社と連結子会社5社、非連結子会社2社で構成されています。2026年2月期の連結従業員数は1,574人で、店舗数は137店舗です。"
+      },
+      {
+        "kind": "offering",
+        "title": "食品スーパーマーケットの運営",
+        "description": "「エコス」などの店舗で、生鮮食品、一般食品、日用雑貨を販売しています。プライベートブランド「ナチュライブ」も展開しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域のお客様への販売",
+        "description": "首都圏と北関東を中心とする店舗周辺地域のお客様が主な顧客です。売上高の10％以上を占める主要な顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高134,198百万円",
+        "description": "2026年2月期の連結売上高は134,198百万円で、前連結会計年度と比べて0.5％増えました。新規出店3店舗や、2024年9月に連結子会社化したココスナカムラの実績が1年分寄与したことなどが要因です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益2,645百万円",
+        "description": "2026年2月期の親会社株主に帰属する当期純利益は2,645百万円で、前連結会計年度と比べて36.0％減りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,7 +119,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 19544000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 1480,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +139,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 20065000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 1488,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +159,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 23274000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 1485,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +179,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 26864000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 1609,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +199,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 29229000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 1574,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +207,198 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1965,
+      "title": "有限会社たいらや商店を設立",
+      "description": "有限会社たいらや商店を設立しました。この年がエコスの設立元年とされています。",
+      "significance": "エコスグループの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "スーパーマーケット1号店を開店",
+      "description": "多摩ニュータウンに、スーパーマーケットの1号店として愛宕店を開店しました。",
+      "significance": "スーパーマーケット事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "株式会社スーパーたいらやを設立",
+      "description": "有限会社たいらや商店を組織変更し、株式会社スーパーたいらやを設立しました。",
+      "significance": "株式会社としての体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "協同組合セルコチェーンに加盟",
+      "description": "共同仕入等を事業とするボランタリーチェーン、協同組合セルコチェーンに加盟しました。",
+      "significance": "共同仕入の仕組みを取り入れました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式会社たいらやに商号変更",
+      "description": "株式会社トーワマートと合併し、株式会社たいらやに商号を変更しました。",
+      "significance": "合併により店舗網が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "株式会社味好屋と合併",
+      "description": "埼玉県鶴ヶ島市に本店を置く株式会社味好屋（店舗数14店）と合併しました。",
+      "significance": "埼玉県内への展開が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "資本市場への第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "株式会社たいらや北関東を設立",
+      "description": "株式会社エーリスウエノより営業権を譲り受け、栃木県宇都宮市に株式会社たいらや北関東（現・株式会社たいらや）を設立しました。",
+      "significance": "北関東展開の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "株式会社エコスに商号変更",
+      "description": "茨城県筑西市の株式会社ハイマートと合併し、商号を株式会社エコスに変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "松菱商事を連結子会社化",
+      "description": "静岡県浜松市に本店を置く松菱商事株式会社の株式を取得し、連結子会社化しました。",
+      "significance": "グループの店舗網が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場企業となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "マスダとやまうちを連結子会社化",
+      "description": "茨城県常総市の株式会社マスダと、茨城県石岡市の株式会社やまうちの株式を取得し、それぞれ連結子会社化しました。",
+      "significance": "茨城県内の店舗網が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "第一部上場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "ニチリウグループに加盟",
+      "description": "ニチリウグループ（日本流通産業株式会社）に加盟しました。",
+      "significance": "共同仕入の基盤が変わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "シーズンセレクトの全株式を譲渡",
+      "description": "連結子会社の株式会社シーズンセレクト（旧・松菱商事）の全株式をマックスバリュ東海株式会社に譲渡しました。",
+      "significance": "グループの再編の一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "株式会社TSロジテックを設立",
+      "description": "東京都昭島市に、連結子会社の株式会社TSロジテックを設立しました。",
+      "significance": "物流センターの管理運営を担う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "与野フードセンターを連結子会社化",
+      "description": "埼玉県さいたま市中央区に本店を置く株式会社与野フードセンターの株式を取得し、連結子会社化しました。",
+      "significance": "埼玉県南部の店舗網が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ココスナカムラを連結子会社化",
+      "description": "東京都台東区に本店を置く株式会社ココスナカムラの株式を取得し、連結子会社化しました。",
+      "significance": "東京都内への展開が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +407,47 @@
       "publisher": "株式会社エコス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y4BQ.pdf",
       "publishedAt": "2026-05-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y4BQ",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2027年2月期を最終年度とする中期経営計画（3カ年計画）では、「サステナブルな企業へ」をテーマに掲げ、商品改革、サービス力向上、人材育成、法令順守、従業員満足度の向上に取り組んでいます。社是は「正しい商売」です。",
+        "asOf": "2026-05-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "「安全・安心」「健康」「美味しさ」「鮮度」を重視した商品の提供と、地域に根ざした店舗づくりを掲げています。プライベートブランド「ナチュライブ」のラインナップ強化や、環境に配慮した商品の提供にも取り組んでいます。",
+        "asOf": "2026-05-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年2月期の部門別売上高は、生鮮部門が65,163百万円、グロサリー部門が68,321百万円、物流部門が714百万円で、スーパー部門が全体の99.5％を占めます。売上はすべて本邦で、店舗数は137店舗です。",
+        "basis": "MD&Aの部門別販売実績と、セグメント情報の関連情報（地域ごとの情報・主要な顧客ごとの情報）の印字に基づきます。",
+        "asOf": "2026-05-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",

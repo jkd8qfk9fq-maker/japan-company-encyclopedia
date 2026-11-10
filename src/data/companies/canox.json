@@ -4,7 +4,8 @@
   "name": "カノークス",
   "officialName": "株式会社カノークス",
   "nameEn": "CANOX　CORPORATION",
-  "description": null,
+  "shortNameEn": "CANOX",
+  "description": "鉄鋼メーカーなどから鋼材を仕入れ、加工して自動車や建築の得意先へ販売する鉄鋼専門商社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,8 +16,119 @@
       "market": "メイン"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "steel-sales",
+      "name": "鉄鋼販売事業",
+      "description": "鉄鋼メーカーや造管メーカー、建材メーカーから鋼材を仕入れ、子会社や委託加工先で加工して、自動車業界や建築業界を中心とした得意先へ販売します。[[company:toyota|トヨタ自動車]]をはじめとする自動車メーカーへの販売が大きな割合を占めます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "steel-plates",
+          "name": "鋼板",
+          "description": "自動車部品や鋼製シャッターなどに使う薄板を中心に扱います。鉄鋼メーカーから購入した大型コイルを、関連会社をはじめとする委託加工先で指定の幅に小割または板に剪断して、得意先へ販売します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "stainless-steel",
+          "name": "ステンレス等",
+          "description": "自動車のマフラーなどに使うステンレス薄板やステンレス鋼管を扱います。鉄鋼メーカーや造管メーカーから購入し、子会社や委託加工先で加工して、得意先へ販売します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "steel-pipes",
+          "name": "鋼管",
+          "description": "自動車部品や建築部材に使う小中径鋼管、建物の柱に使う角型鋼管を中心に扱います。造管メーカーから購入した長尺材を、事業所や子会社で指定の長さに切断、穴開け、曲げなどの加工を行って、得意先へ販売します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "steel-bars",
+          "name": "条鋼",
+          "description": "鋼板、鋼管、ステンレスと並ぶ取り扱い商品です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-products",
+          "name": "その他",
+          "description": "上記の4区分以外の商品です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "鉄鋼メーカーや造管メーカーから鋼材を仕入れ、子会社や委託加工先で加工し、自動車業界や建築業界を中心に販売します。",
+    "products": [
+      "鋼板",
+      "鋼管",
+      "条鋼",
+      "ステンレス等"
+    ],
+    "customers": [
+      "自動車業界",
+      "建築業界"
+    ],
+    "revenueSources": [
+      "紐付販売",
+      "店売在庫販売",
+      "店売販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "鉄鋼メーカーなどから鋼材を仕入れる",
+        "description": "高炉メーカーや電炉メーカーなどの鉄鋼メーカー、造管メーカー、建材メーカーから鋼板、鋼管、条鋼、ステンレスなどを仕入れます。高炉メーカーから直接仕入れができる一次商です。"
+      },
+      {
+        "kind": "offering",
+        "title": "子会社や委託加工先で加工して在庫する",
+        "description": "仕入れた鋼材を、子会社や事業所、外部の委託加工先で指定の幅や長さに切断・剪断し、穴開けや曲げなどの加工を行って在庫します。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車業界や建築業界の得意先へ販売する",
+        "description": "自動車業界や建築業界を中心とした各得意先へ販売します。大口顧客へ継続して安定的に納品する紐付販売が高い割合を占めます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "紐付販売と店売販売で売上を得る",
+        "description": "大口顧客への紐付販売に加え、需要や市況を予測してあらかじめ在庫して販売する店売在庫販売、受注した鋼材を他社から仕入れて販売する店売販売にも注力しています。2026年3月期の売上高は1,587億51百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "安定した供給と在庫・価格管理で当期純利益を確保する",
+        "description": "販売動向に応じた在庫の適正化と、需要が堅調な自動車分野を中心とした販売の拡大、適正な販売価格の維持に努めています。2026年3月期の親会社株主に帰属する当期純利益は21億4百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +143,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25769000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 296,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26502000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 290,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 29570000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 296,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 31695000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 303,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 33392000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 349,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +231,320 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1897,
+      "title": "加納小太郎が鉄鋼商を開業",
+      "description": "加納小太郎が名古屋市西区塩町四丁目9番地に鉄鋼商を開業しました。",
+      "significance": "カノークスの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1919,
+      "title": "合名会社加納商店を設立",
+      "description": "合名会社加納商店を設立しました。",
+      "significance": "会社組織としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "株式会社加納商店に組織変更",
+      "description": "合名会社加納商店を株式会社加納商店に組織変更しました。",
+      "significance": "現在の株式会社としての体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "商号を加納鉄鋼株式会社に変更",
+      "description": "商号を加納鉄鋼株式会社に変更しました。",
+      "significance": "鉄鋼を社名に掲げ、鉄鋼商としての姿を明確にしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "名古屋証券取引所市場第二部へ上場",
+      "description": "名古屋証券取引所市場第二部へ上場しました。",
+      "significance": "株式を公開し、上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "空見工場を完成",
+      "description": "名古屋市港区空見町1番地の3に空見工場を完成しました。",
+      "significance": "自前の加工拠点を持ち、鋼材の加工・供給体制を強めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "空見工場を分離し加納鋼板工業を設立",
+      "description": "空見工場を分離独立させ、加納鋼板工業株式会社として営業を開始しました。",
+      "significance": "加工部門を子会社化し、販売と加工の体制を分けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "新々商事株式会社を吸収合併",
+      "description": "新々商事株式会社を吸収合併し、同社の子会社だった新日本鋼業株式会社を引き継ぎました。",
+      "significance": "合併により事業基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "日商岩井への第三者割当増資を実施",
+      "description": "日商岩井株式会社（現在の[[company:sojitz|双日]]）への第三者割当増資を実施しました。",
+      "significance": "大手商社との資本関係が生まれました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "商号を株式会社カノークスに変更",
+      "description": "商号を株式会社カノークスに変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "株式会社メタルワンが発足",
+      "description": "日商岩井株式会社と[[company:mitsubishi-corporation|三菱商事]]の鉄鋼部門が分社化・統合され、株式会社メタルワンが発足しました。以降、メタルワンが当社の株主となりました。",
+      "significance": "鉄鋼商社の再編により、メタルワンが主要株主となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "加納鋼板工業を空見スチールサービスへ事業統合",
+      "description": "加納鋼板工業株式会社を株式会社空見スチールサービスへ営業譲渡により事業統合しました。",
+      "significance": "加工機能を関連会社に集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "株式会社カノークス北上を設立",
+      "description": "株式会社カノークス北上を設立しました。",
+      "significance": "東北での事業拠点を設けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "加納興産の商号をカノークス鋼管九州に変更",
+      "description": "加納興産株式会社の商号を株式会社カノークス鋼管九州に変更し、主要な事業内容を不動産管理から鋼管切断加工としました。",
+      "significance": "子会社を鋼管加工の拠点に転換しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "子会社3社の商号を変更",
+      "description": "新日本鋼業株式会社の商号を株式会社カノークス鋼管関東に、株式会社カノークス北上の商号を株式会社カノークス鋼管北上に、加納物流センター株式会社の商号を株式会社カノークス物流に変更しました。",
+      "significance": "グループ各社の商号をカノークスに統一しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "株式会社カノークス鋼管東海を設立",
+      "description": "株式会社カノークス鋼管東海を設立しました。",
+      "significance": "東海地区の鋼管加工拠点を設けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "カノークス物流の商号をカノークス建材に変更",
+      "description": "株式会社カノークス物流の商号を株式会社カノークス建材に変更しました。",
+      "significance": "物流子会社を建材事業の会社に位置づけ直しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "名古屋証券取引所メイン市場へ移行",
+      "description": "名古屋証券取引所の市場区分の見直しにより、市場第二部からメイン市場に移行しました。",
+      "significance": "名古屋証券取引所の最上位市場に移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ上場",
+      "description": "東京証券取引所スタンダード市場へ上場しました。",
+      "significance": "東京と名古屋の二市場上場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "カノークス鋼管関東の商号をカノークス建材関東に変更",
+      "description": "株式会社カノークス鋼管関東の商号を株式会社カノークス建材関東に変更しました。",
+      "significance": "関東の加工子会社を建材事業の会社に位置づけ直しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社カノークス鋼管関東を設立",
+      "description": "株式会社カノークス鋼管関東を設立しました。",
+      "significance": "関東地区に新たな鋼管加工の会社を設けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "子会社3社を吸収合併し鋼管北上の事業を継承",
+      "description": "2026年1月1日を効力発生日として、完全子会社のカノークス鋼管東海、カノークス鋼管九州、カノークス鋼管関東の3社を吸収合併し、カノークス鋼管北上が営む鉄鋼加工品などの事業を吸収分割により継承しました。同日、子会社のカノークス鋼管関東がミツミ九州株式会社と株式会社昭和金属が営む鋼材加工・販売事業の一部を譲り受けました。",
+      "significance": "自動車用鋼管分野のサプライチェーン機能を強化するため、経営資源を集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "toyota",
+      "relationship": "customer",
+      "description": "2026年3月期は総販売実績の38.7%を占める主要な販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "sanwa-holdings",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、建材関連等の鋼材の主要な販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mory-industries",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の株式の2.03%を保有する大株主であり、鋼材の主要な販売先及び仕入先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "daiwa-house-industry",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、建材関連等の鋼材の主要な販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "araya-industrial",
+      "relationship": "business-partner",
+      "description": "2026年3月31日現在、鋼材の主要な販売先及び仕入先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daido-metal",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、鋼材の主要な販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nhk-spring",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、自動車関連等の鋼材の主要な販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "futaba-industrial",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、自動車関連等の鋼材の主要な販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "rinnai",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、鋼材の主要な販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tachi-s",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、自動車関連等の鋼材の主要な販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -128,13 +552,49 @@
       "publisher": "株式会社カノークス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YAX9.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YAX9",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 株式会社小川真功商店の完全子会社化は、有報の提出日（2026年6月19日）時点で予定の段階です。2026年4月28日の取締役会で全株式の取得を決議し、2026年4月30日に株式譲渡契約を締結しましたが、企業結合日は2026年7月1日です。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "パーパス「地域社会と地域産業の持続的成長に信頼のサプライチェーンで貢献する」を掲げ、長期経営ビジョンCANOX2030「お客様にとってかけがえのない鋼材パートナーへ」の実現を目指します。2025年度から始まった第11次中期経営計画では「第二の創業NEXT ～カノークスらしさのシンカ～」をテーマに、人的資本経営の確立を最重要課題としています。2026年7月1日には、宮城県仙台市を拠点とする小川真功商店を完全子会社化し、東北エリア全域をカバーする鋼材販売チャネルの確立を目指す予定です。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "高炉メーカーから直接鋼材を仕入れられる一次商としての強みを活かし、受注、発注、加工、品質・在庫管理、タイムリーな小口納入まで、一気通貫できめ細かな供給対応ができる体制を構築しています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      },
+      "analysis": {
+        "text": "大口顧客へ継続して安定的に納品する紐付販売の割合が高く、市況による販売単価と仕入単価の変動リスクの影響が相対的に小さいため、安定した売上数量と金額を確保しやすい構造です。",
+        "basis": "【事業の内容】の紐付販売に関する記載",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

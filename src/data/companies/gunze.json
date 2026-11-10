@@ -4,15 +4,149 @@
   "name": "グンゼ",
   "officialName": "グンゼ株式会社",
   "nameEn": "GUNZE LIMITED",
-  "description": null,
+  "description": "肌着やストッキングなどの衣料品に加え、プラスチックフィルムやメディカル材料も手がけるメーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "apparel",
+      "name": "アパレル事業",
+      "description": "衣料品と繊維資材の製造・販売を行う事業で、2026年3月期の外部顧客への売上高は58,334百万円と、4つの報告セグメントの中で最も大きくなっています。",
+      "children": [
+        {
+          "id": "apparel-clothing",
+          "name": "衣料品分野",
+          "description": "インナーウエア、レッグウエア、アウターウエアなどの衣料品を製造・販売しています。国内の関係会社に製造加工を委託し、海外の関係会社が現地での仕入・販売を行っています。分野ごとの金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "apparel-textile-materials",
+          "name": "繊維資材分野",
+          "description": "各種ミシン糸などの繊維資材を製造・販売しています。インドネシアやベトナム、中国などの海外関係会社が現地生産と販売を行い、製品の一部は当社が仕入れています。分野ごとの金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "functional-solutions",
+      "name": "機能ソリューション事業",
+      "description": "プラスチックを加工した機能資材と機械類の製造・販売を行う事業で、2026年3月期の外部顧客への売上高は46,898百万円でした。",
+      "children": [
+        {
+          "id": "functional-materials",
+          "name": "機能資材分野",
+          "description": "プラスチックフィルムやエンジニアリングプラスチックスなどの製造・販売を行っています。国内の関係会社に製造加工を委託し、米国の関係会社などが現地で製造・加工と販売を行っています。分野ごとの金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "machinery",
+          "name": "機械類分野",
+          "description": "印刷関係機械や食品関係機械の製造・販売を行っています。分野ごとの金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "medical",
+      "name": "メディカル事業",
+      "description": "メディカル材料の製造・販売を行う事業で、2026年3月期の外部顧客への売上高は13,196百万円でした。当社が製造を行い、グンゼメディカル株式会社が仕入販売を担うほか、中国の関係会社が現地で製造・販売を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "life-create",
+      "name": "ライフクリエイト事業",
+      "description": "商業施設の運営、スポーツクラブの運営、緑化樹木の販売、太陽光発電などを行う事業で、2026年3月期の外部顧客への売上高は12,487百万円でした。関係会社が工場跡地の再開発や建築工事の請負・設計施工なども行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社とグループ会社で衣料品、機能資材、メディカル材料などを製造し、国内外の小売店やメーカー、医療機関などへ販売する事業モデルです。",
+    "products": [
+      "インナーウエアやレッグウエア、アウターウエアなどの衣料品",
+      "各種ミシン糸などの繊維資材",
+      "プラスチックフィルムやエンジニアリングプラスチックスなどの機能資材",
+      "印刷関係機械や食品関係機械",
+      "癒着防止材などのメディカル材料",
+      "商業施設やスポーツクラブの運営、緑化樹木"
+    ],
+    "customers": [
+      "量販店などの小売店や通信販売の購入者",
+      "国内外の製造業の事業者",
+      "医療機関",
+      "商業施設の利用者やスポーツクラブの会員"
+    ],
+    "revenueSources": [
+      "衣料品や機能資材、メディカル材料などの製品の販売代金",
+      "商業施設の賃貸やスポーツクラブの運営による収入",
+      "太陽光発電による売電収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社を中核とする関係会社51社のグループ",
+        "description": "当社を中核として、子会社45社と関連会社6社の関係会社51社でグループを構成しています。国内の関係会社が製造加工や流通加工を担い、海外の関係会社が現地での製造・加工と販売を行っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "衣料品から機能資材、メディカル材料までを製造販売",
+        "description": "インナーウエアやレッグウエアなどの衣料品とミシン糸、プラスチックフィルムやエンジニアリングプラスチックス、印刷・食品関係機械、メディカル材料を製造・販売し、商業施設やスポーツクラブの運営も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "小売店やメーカー、医療機関などへ販売",
+        "description": "衣料品は量販店などの既存ルートと通信販売で販売し、機能資材や機械類は製造業の事業者へ、メディカル材料は医療機関へ届けています。売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売で売上を得る",
+        "description": "2026年3月期の連結売上高は130,918百万円で、前期比4.5％の減収でした。アパレル事業が58,334百万円と最も大きく、機能ソリューション事業が46,898百万円でした。前期末に事業を終息した電子部品の売上の影響や、プラスチックフィルムの海外での売上減少、量販店など既存ルートでの販売減少が減収の要因です。"
+      },
+      {
+        "kind": "profit",
+        "title": "構造改革を進めながら収益を確保する",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は509百万円でした。第1四半期に計上したアパレル事業の事業構造改善費用の影響などにより、前期から大きく減少しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +161,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 114790000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5692,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +181,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 117691000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5214,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 120467000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4883,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +221,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 120982000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4339,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +241,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 113746000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4102,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +249,206 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1896,
+      "title": "郡是製絲株式会社を設立",
+      "description": "京都府綾部市で、生糸の製造販売を目的として郡是製絲株式会社を設立しました。",
+      "significance": "会社の創業です。生糸メーカーとして出発しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1934,
+      "title": "絹婦人長靴下の事業を開始",
+      "description": "塚口工場を新設し、絹婦人長靴下（ストッキング）の事業を開始しました。",
+      "significance": "現在のレッグウエアにつながる事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "商号を郡是工業株式会社に変更",
+      "description": "商号を郡是工業株式会社に変更しました。あわせて戦時体制のため、日本蚕糸製造株式会社へ製糸17工場ほかを移管しました。",
+      "significance": "戦時下での社名変更と事業の移管です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1946,
+      "title": "メリヤス肌着の事業を開始",
+      "description": "終戦により移管していた工場などが復帰し、商号を郡是製絲株式会社に戻しました。宮津工場でメリヤス肌着の事業を開始しました。",
+      "significance": "戦後の復帰と、現在のインナーウエア事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京・大阪・名古屋証券取引所に上場",
+      "description": "東京・大阪・名古屋の各証券取引所に株式を上場しました。",
+      "significance": "株式の公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "ナイロンストッキングの生産を開始",
+      "description": "ナイロンストッキングの生産を開始しました。",
+      "significance": "合成繊維を使ったレッグウエアへの展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "ミシン糸の事業を開始",
+      "description": "津山工場でミシン糸の事業を開始しました。",
+      "significance": "現在の繊維資材分野の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "商号をグンゼ株式会社に変更",
+      "description": "商号をグンゼ株式会社に変更しました。",
+      "significance": "現在の社名の成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "プラスチックフィルム事業を強化",
+      "description": "守山工場を新設し、プラスチックフィルム事業を強化しました。",
+      "significance": "現在の機能資材分野につながる、繊維以外の事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "スポーツクラブ事業を開始",
+      "description": "グンゼスポーツ株式会社を設立し、スポーツクラブ事業を開始しました。",
+      "significance": "現在のライフクリエイト事業の一つ、スポーツクラブの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "ショッピングセンター「つかしん」が発足",
+      "description": "塚口工場の跡地に商業・文化・スポーツ施設などを完成させ、ショッピングセンター「つかしん」として発足しました。2006年4月には「グンゼ タウンセンター つかしん」としてリニューアルしています。",
+      "significance": "工場跡地の再開発による不動産事業の代表例です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "印刷・食品関係機械の事業に進出",
+      "description": "新大阪造機株式会社を吸収合併し、印刷・食品関係機械の事業に進出しました。",
+      "significance": "現在の機械類分野の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "太陽光発電による売電を開始",
+      "description": "宇都宮事業所などで、太陽光発電による売電を順次開始しました。",
+      "significance": "ライフクリエイト事業の太陽光発電の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "メディカル事業の一部をグンゼメディカルへ承継",
+      "description": "メディカル事業の一部を、会社分割によりグンゼメディカル株式会社に承継しました。",
+      "significance": "メディカル事業の体制再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "津山グンゼを吸収合併",
+      "description": "ミシン糸の製造加工を行う津山グンゼ株式会社を吸収合併しました。",
+      "significance": "繊維資材分野の体制再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "gsi-creos",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式（自己株式を除く）の1.73％を保有する大株主の事業会社です。機能ソリューション事業の製品提供や原料仕入を中心に取引を行っており、良好な取引関係の維持・強化のため当社も同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "yakult-honsha",
+      "relationship": "customer",
+      "description": "プラスチックカンパニーの収縮ラベル事業の成長を支えた重要取引先です。当社は同社向けの収縮ラベルに関わる取引関係の維持・強化のため、同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "taisei-lamick-group-head-quarter-and-innovation",
+      "relationship": "customer",
+      "description": "プラスチックカンパニーのナイロンフィルム製品の提供先です。当社は同社との良好な取引関係の維持・強化のため、同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kurabo-industries",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式（自己株式を除く）の0.96％を保有する大株主の事業会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +456,37 @@
       "publisher": "グンゼ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGEM.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YGEM",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2030年ビジョン「新しい価値を創造し『ここちよさ』を提供することで持続可能な社会の実現に貢献します」を掲げ、2025年度から2027年度までの3ヵ年を「創りかえる3年間」と位置づける中期経営計画「VISION 2030 stage2」を進めています。機能ソリューション事業とメディカル事業の強化・拡大、アパレル事業とライフクリエイト事業の構造改革に取り組んでいます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の外部顧客への売上高では、アパレル事業が58,334百万円と連結売上高130,918百万円の4割超を占め、機能ソリューション事業が46,898百万円、メディカル事業が13,196百万円、ライフクリエイト事業が12,487百万円です。地域別では日本が103,392百万円と大半を占めています。",
+        "basis": "セグメント情報の外部顧客への売上高と、関連情報の地域ごとの情報（日本103,392百万円、その他27,525百万円）による。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

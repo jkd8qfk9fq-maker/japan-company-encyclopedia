@@ -4,7 +4,8 @@
   "name": "ミスターマックス・ホールディングス",
   "officialName": "株式会社　ミスターマックス・ホールディングス",
   "nameEn": "Mr Max Holdings Ltd.",
-  "description": null,
+  "shortNameEn": "Mr Max Holdings",
+  "description": "食品や家電、日用雑貨などを毎日低価格で販売する総合ディスカウントストア「MrMax」を、九州を中心に59店舗展開する持株会社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -14,8 +15,147 @@
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "discount-store",
+      "name": "ディスカウントストア事業",
+      "description": "子会社の株式会社ミスターマックスが、家庭用電器製品、日用雑貨、衣料品、食品などをセルフサービス方式で販売する事業です。2026年2月期の全店売上高は142,134百万円で、期末時点の店舗数は59店舗でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "food",
+          "name": "食品",
+          "description": "米や加工食品などの食品を取り扱う部門です。2026年2月期の外部顧客への売上高は56,386百万円で、部門の中で最大でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "hbc",
+          "name": "HBC",
+          "description": "日用雑貨や化粧品などを取り扱う部門です。2026年2月期の外部顧客への売上高は27,714百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "appliances",
+          "name": "家電",
+          "description": "家庭用電器製品を取り扱う部門です。2026年2月期の外部顧客への売上高は20,225百万円でした。家電メーカーの製品を当社専用機種として販売するプライベートブランド商品も扱います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "lifestyle",
+          "name": "ライフスタイル",
+          "description": "ライフスタイル関連の商品を取り扱う部門です。2026年2月期の外部顧客への売上高は18,797百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "home-living",
+          "name": "ホームリビング",
+          "description": "住まい関連の商品を取り扱う部門です。2026年2月期の外部顧客への売上高は12,504百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "apparel",
+          "name": "アパレル",
+          "description": "衣料品を取り扱う部門です。2026年2月期の外部顧客への売上高は6,897百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        }
+      ]
+    },
+    {
+      "id": "shopping-center",
+      "name": "ショッピングセンター運営事業",
+      "description": "当社が、グループ会社の経営管理とあわせて行う事業です。国内の59店舗のうち25店舗については、ショッピングセンターとして運営・管理しています。この事業の金額は独立して開示されていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "logistics",
+      "name": "物流事業",
+      "description": "子会社の株式会社ロジディアが、当社グループのサプライチェーンにおける3PL事業を行う事業です。この事業の金額は独立して開示されていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "子会社の株式会社ミスターマックスが、食品や家庭用電器製品、日用雑貨、衣料品などをセルフサービス方式で販売するディスカウントストアを運営する持株会社です。",
+    "products": [
+      "食品",
+      "日用雑貨・化粧品などのHBC",
+      "家庭用電器製品",
+      "衣料品",
+      "住生活関連商品",
+      "プライベートブランド（PB）商品"
+    ],
+    "customers": [
+      "店舗に来店する一般消費者",
+      "インターネット販売の利用者"
+    ],
+    "revenueSources": [
+      "商品の販売代金",
+      "不動産賃貸収入などの営業収入",
+      "物流事業（3PL）の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "持株会社と子会社2社のグループ",
+        "description": "当社グループは、持株会社の当社と、ディスカウントストア事業の株式会社ミスターマックス、物流事業の株式会社ロジディアの子会社2社で構成されています。"
+      },
+      {
+        "kind": "offering",
+        "title": "生活必需品を毎日低価格で販売する",
+        "description": "食品、家電、日用雑貨、衣料品などをセルフサービス方式で販売します。生活必需品を中心とした商品を毎日低価格で販売するエブリデイ・ロープライス（EDLP）に注力し、家電メーカーの製品を当社専用機種として販売するプライベートブランド商品も扱います。"
+      },
+      {
+        "kind": "customer",
+        "title": "九州を地盤に59店舗を展開する",
+        "description": "九州地区を中心に、中国地区と関東地区にも店舗があります。2026年2月期末の店舗数は59店舗で、2025年7月には千葉県佐倉市のSelectユーカリが丘店、8月には大分県別府市の別府店を開店しました。"
+      },
+      {
+        "kind": "revenue",
+        "title": "商品の販売と営業収入で収益を得る",
+        "description": "2026年2月期の営業収益は147,684百万円で、前期から8.1％増えました。営業収益は、商品の売上高に不動産賃貸収入などの営業収入を合計したもので、全店売上高は142,134百万円と過去最高になりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "ローコスト運営で収益を支える",
+        "description": "2026年2月期の親会社株主に帰属する当期純利益は2,715百万円でした。セルフレジの導入など業務の効率化を進めるエブリデイ・ローコスト（EDLC）の徹底で、賃金の上昇による人件費の増加を抑えています。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -30,7 +170,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 29706000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 727,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,12 +190,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32452000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 722,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」等を2023年2月期の期首から適用しており、2023年2月期以降の主要な経営指標等は、当該会計基準等を適用した後の指標等となっています。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -70,7 +211,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 34129000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 708,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,7 +231,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 36058000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 689,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,7 +251,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 38374000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 719,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,22 +259,277 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1950,
+      "title": "有限会社平野ラジオ電気商会を設立",
+      "description": "実質上の存続会社である平野電機の前身として、有限会社平野ラジオ電気商会が設立されました。",
+      "significance": "現在のミスターマックスの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "平野電機株式会社に改組",
+      "description": "有限会社平野ラジオ電気商会が、平野電機株式会社に改組されました。",
+      "significance": "家電販売を担う会社の体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "平野電機株式会社を吸収合併",
+      "description": "法律上の存続会社が、実質上の存続会社である平野電機株式会社を吸収合併しました。平野電機の株式の額面金額を変更するための合併でした。",
+      "significance": "現在の当社の法律上の形ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "株式会社ミスターマックスに商号変更",
+      "description": "平野電機株式会社から、株式会社ミスターマックスに商号を変更しました。",
+      "significance": "ミスターマックスの社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "株式会社MrMaxに商号変更",
+      "description": "株式会社ミスターマックスから、株式会社MrMaxに商号を変更しました。",
+      "significance": "店舗ブランドと同じ英字表記の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "福岡証券取引所に上場",
+      "description": "福岡証券取引所に株式を上場しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所の市場第二部に株式を上場しました。",
+      "significance": "関西の証券市場にも上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "本社を福岡市東区に移転",
+      "description": "本社を福岡市東区に移転しました。",
+      "significance": "現在の本社所在地の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "決算期を変更",
+      "description": "決算期を8月20日から3月31日に変更しました。",
+      "significance": "決算期の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "大阪証券取引所市場第一部に上場",
+      "description": "大阪証券取引所の市場第一部に上場しました。",
+      "significance": "大阪でも第一部上場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所の市場第一部に上場しました。",
+      "significance": "東京証券取引所の第一部上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "西日本物流センターを開設",
+      "description": "西日本物流センター（現・MrMax福岡物流センター）を開設しました。",
+      "significance": "九州の物流拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "大阪証券取引所の上場を廃止",
+      "description": "大阪証券取引所市場第一部の上場を廃止しました。",
+      "significance": "上場市場を東京と福岡に集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "関東物流センターを開設",
+      "description": "関東物流センター（後のMrMax埼玉物流センター）を開設しました。",
+      "significance": "関東地区の物流拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "MrMax広島物流センターを開設",
+      "description": "MrMax広島物流センターを開設しました。",
+      "significance": "中国地区の物流拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "決算期を2月末日に変更",
+      "description": "決算期を3月31日から2月28日に変更しました。",
+      "significance": "現在の2月決算の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "持株会社体制に移行",
+      "description": "商号を株式会社ミスターマックス・ホールディングスに変更し、会社分割によりディスカウントストア事業を、新設した子会社の株式会社ミスターマックスに承継しました。",
+      "significance": "現在の持株会社体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "中国に上海最高先生商貿有限公司を設立",
+      "description": "中華人民共和国に、上海最高先生商貿有限公司を設立しました。同社は2025年11月に清算を終えています。",
+      "significance": "海外子会社の設立と、その後の清算です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しに伴い、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "株式会社ロジディアを設立",
+      "description": "物流事業を担う子会社として、株式会社ロジディアを設立しました。",
+      "significance": "グループの物流機能を担う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "MrMax千葉物流センターへ移設",
+      "description": "MrMax埼玉物流センターを千葉県へ移設し、名称をMrMax千葉物流センターに変更しました。",
+      "significance": "関東の物流拠点の移設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "arata",
+      "relationship": "supplier",
+      "description": "日用雑貨などの卸売を行う会社です。2026年2月期の株式の保有状況には、全社仕入高の約1割を占める主要な仕入先であると書かれています。当社は、商品調達に関する中長期的な関係を維持するため、同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第77期(2025/03/01－2026/02/28)",
-      "publisher": "株式会社　ミスターマックス・ホールディングス",
+      "publisher": "株式会社ミスターマックス・ホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y58I.pdf",
       "publishedAt": "2026-05-20",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y58I",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2029年2月期を最終年度とする5ヵ年の中期経営計画を進めています。成長戦略の柱は、北部九州エリアと首都圏中心部へのドミナント化を進める店舗出店、実店舗を超えた品揃えと集客を目指すオムニチャネル、M&A及び新規事業戦略の3つです。",
+        "asOf": "2026-05-20",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "生活必需品を中心とした商品を毎日低価格で販売するエブリデイ・ロープライス（EDLP）に注力し、それを支えるエブリデイ・ローコスト（EDLC）を徹底しているとしています。プライベートブランド商品の売上高構成比は、2026年2月期に22.2％となりました。",
+        "asOf": "2026-05-20",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年2月期の全店売上高142,134百万円の地区別内訳は、九州地区が89,199百万円、中国地区が15,964百万円、関東地区が35,205百万円で、九州地区が6割を超えています。",
+        "basis": "MD&Aに印字された地区別売上高に基づきます。",
+        "asOf": "2026-05-20",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",

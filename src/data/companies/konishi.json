@@ -4,15 +4,164 @@
   "name": "コニシ",
   "officialName": "コニシ株式会社",
   "nameEn": "KONISHI CO., LTD.",
-  "description": null,
+  "shortNameEn": "KONISHI",
+  "description": "接着剤「ボンド」の製造販売を中心に、化学品の専門商社事業と、インフラ補修などの工事事業を手がけるグループです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "trading",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "bond",
+      "name": "ボンド",
+      "description": "工業用・一般家庭用・建築用・土木建設用の接着剤やシーリング材、ワックス、粘着テープを製造販売する事業です。2026年3月期の外部顧客への売上高は743億15百万円で、グループ最大の事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "adhesives-manufacturing",
+          "name": "接着剤・シーリング材等の製造販売",
+          "description": "工業用接着剤、一般家庭用接着剤、建築用接着剤、土木建設用接着剤、補修材、シーリング材、ワックスおよび粘着テープの製造販売です。金額は区分ごとに開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "raw-materials-trading",
+          "name": "原料の仕入販売",
+          "description": "子会社のボンドケミカル商事が、接着剤、シーリング材およびワックスの原料等の仕入販売を行います。金額は区分ごとに開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "logistics",
+          "name": "製品倉庫の管理業務請負・運送業",
+          "description": "子会社のボンド物流やKB LINEが、製品倉庫の管理業務の請負や運送業を行います。金額は区分ごとに開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "chemical-products",
+      "name": "化成品",
+      "description": "工業薬品、合成樹脂、樹脂成型品、電子部品材料、薄膜材料などを仕入れて販売する、化学品を専門に扱う商社事業です。2026年3月期の外部顧客への売上高は391億94百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "industrial-chemicals",
+          "name": "工業薬品・合成樹脂などの販売",
+          "description": "化学メーカー向けの原材料をはじめ、工業薬品、合成樹脂、樹脂成型品、医薬品原料などの仕入販売です。金額は区分ごとに開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "electronic-materials",
+          "name": "電子部品材料・薄膜材料などの販売",
+          "description": "自動車分野や電子電機分野向けの電子部品材料、薄膜材料などの仕入販売です。金額は区分ごとに開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "construction-works",
+      "name": "工事事業",
+      "description": "インフラおよびストック市場における補修・改修・補強工事を請け負う土木建設工事業です。2026年3月期の外部顧客への売上高は230億59百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "repair-works",
+          "name": "補修・改修・補強工事の請負",
+          "description": "橋梁などの社会インフラや建築ストックを対象に、ボンド事業の接着剤や工法を活用した補修・改修・補強工事を請け負います。金額は区分ごとに開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "接着剤やシーリング材を自社で製造して販売するほか、化学品の仕入販売や、接着技術を生かした補修・改修・補強工事の請負で収益を得る事業モデルです。",
+    "products": [
+      "工業用・一般家庭用・建築用・土木建設用の接着剤",
+      "シーリング材、ワックス、粘着テープ",
+      "工業薬品、合成樹脂、樹脂成型品、電子部品材料、薄膜材料などの化学品",
+      "インフラや建築ストックの補修・改修・補強工事"
+    ],
+    "customers": [
+      "接着剤を使う製造業や建設業などの事業者",
+      "ホームセンターなどを通じて接着剤を購入する一般消費者",
+      "電子部品材料などを購入する自動車・電子電機分野の事業者",
+      "インフラ補修工事の発注者"
+    ],
+    "revenueSources": [
+      "接着剤やシーリング材などの製品の販売代金",
+      "化学品の販売代金",
+      "工事の請負代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "子会社20社と関連会社1社のグループ",
+        "description": "当社と子会社20社、関連会社1社で構成されています。2026年3月期の連結従業員数は1,561人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "接着剤、化学品、工事の3事業",
+        "description": "ボンド事業では接着剤やシーリング材を製造販売し、化成品事業では化学品を仕入れて販売し、工事事業では補修・改修・補強工事を請け負っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "製造業・建設業から一般消費者まで",
+        "description": "主要な顧客である株式会社デンソー向けの2026年3月期の販売実績は203億82百万円で、総販売実績の14.9％を占めています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高1,365億69百万円",
+        "description": "2026年3月期の連結売上高は1,365億69百万円で、前連結会計年度と比べて0.6％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益80億33百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は80億33百万円で、前連結会計年度と比べて0.6％減りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +176,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 72897000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1529,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +196,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 81482000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1556,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +216,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 84685000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1540,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +236,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 86672000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1537,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,16 +256,391 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 88860000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1561,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2026年3月期の期首より、不動産賃貸に係る収入と原価について、売上高および売上原価に計上する方法から、売上高および売上原価に含めない表示に変更したため、2025年3月期の売上高は当該表示方法の変更を遡って適用した後の数値で記載されています。あわせて、報告セグメントは「ボンド」「化成品」「工事事業」の3区分（従来は「その他」を含む4区分）となり、前期のセグメント情報も組替えられています。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1925,
+      "title": "株式会社小西儀助商店を設立",
+      "description": "1914年に設立された合資会社を改組し、株式会社小西儀助商店を設立しました。",
+      "significance": "現在のコニシの原点です。接着剤を主力とする前は、ワイン製造と製薬を本業としていた会社です。",
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "合成接着剤ボンドの生産を開始",
+      "description": "東京工場を開設し、合成接着剤ボンドの生産を開始しました。",
+      "significance": "主力製品「ボンド」の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "大阪工場を開設",
+      "description": "大阪工場を開設しました。",
+      "significance": "関西の生産拠点の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "滋賀工場を開設",
+      "description": "滋賀工場を開設しました。",
+      "significance": "現在の主力工場につながる生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "コニシ株式会社に社名変更",
+      "description": "社名を「コニシ株式会社」に改称しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "栃木工場を開設",
+      "description": "栃木工場を開設しました。",
+      "significance": "関東の生産拠点の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "水口化学産業株式会社を設立",
+      "description": "子会社として水口化学産業株式会社を設立しました。",
+      "significance": "一般家庭用接着剤の生産を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "ボンドワックス株式会社と合併",
+      "description": "ボンドワックス株式会社と合併し、茨城工場とワックス研究所を承継しました。",
+      "significance": "ワックス事業の取り込みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場企業としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に上場し、大阪証券取引所市場第一部に指定替えとなりました。",
+      "significance": "東証一部上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "コニシ工営株式会社の株式を取得",
+      "description": "コニシ工営株式会社の株式を取得しました。",
+      "significance": "工事事業の基盤づくりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "丸安産業株式会社の株式を取得",
+      "description": "丸安産業株式会社の株式を取得しました。",
+      "significance": "化成品事業の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "ボンドエンジニアリング株式会社を設立",
+      "description": "子会社としてボンドエンジニアリング株式会社を設立しました。",
+      "significance": "工事事業を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "科昵西貿易（上海）有限公司を設立",
+      "description": "中国・上海に子会社科昵西貿易（上海）有限公司を設立しました。",
+      "significance": "海外販売拠点の展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "KF Instruments India Pvt.Ltd.を設立",
+      "description": "インドに子会社KF Instruments India Pvt.Ltd.を設立しました（2018年に株式の一部売却により関連会社に変更）。",
+      "significance": "インドでの精密成型部品事業の展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "近畿鉄筋コンクリート株式会社の株式を取得",
+      "description": "近畿鉄筋コンクリート株式会社の株式を取得しました。",
+      "significance": "工事事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "角丸建設株式会社の株式を取得",
+      "description": "角丸建設株式会社の株式を取得しました。",
+      "significance": "工事事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "中信建設株式会社の株式を取得",
+      "description": "中信建設株式会社の株式を取得しました。",
+      "significance": "工事事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "中井土木株式会社の株式を取得",
+      "description": "中井土木株式会社の株式を取得しました。",
+      "significance": "工事事業のM＆Aによる拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "denso",
+      "relationship": "customer",
+      "description": "化成品事業の主要な顧客です。2026年3月期の販売実績は203億82百万円で、総販売実績の14.9％を占めています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "toagosei",
+      "relationship": "supplier",
+      "description": "ボンド事業の接着剤「ボンド アロンアルフア」の仕入先です。東亞合成株式会社が生産する家庭用シアノアクリレート系瞬間接着剤（釣り用を除く）について、日本における独占的販売権の契約を結んでいます。また、2026年3月31日現在、発行済株式（自己株式を除く。）の1.28％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "osaka-soda",
+      "relationship": "supplier",
+      "description": "化成品事業の仕入先であり、その旨が特定投資株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shin-etsu-chemical",
+      "relationship": "supplier",
+      "description": "ボンド事業のシーリング材や原材料の仕入先であり、化成品事業の仕入先でもあります。その旨が特定投資株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "inabata-and-co",
+      "relationship": "supplier",
+      "description": "ボンド事業の原材料の仕入先であり、その旨が特定投資株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-pigment-holdings",
+      "relationship": "supplier",
+      "description": "ボンド事業の原材料の仕入先であり、その旨が特定投資株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "arakawa-chemical-industries",
+      "relationship": "supplier",
+      "description": "ボンド事業の原材料の仕入先であり、その旨が特定投資株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "koatsu-gas-kogyo",
+      "relationship": "supplier",
+      "description": "ボンド事業の原材料の仕入先であり、その旨が特定投資株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "altech-9972",
+      "relationship": "supplier",
+      "description": "化成品事業の仕入先であり、その旨が特定投資株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kaneka",
+      "relationship": "supplier",
+      "description": "ボンド事業の原材料の仕入先であり、化成品事業の仕入先および顧客でもあります。その旨が特定投資株式の保有目的に銘柄固有に印字されています。また、2026年3月31日現在、発行済株式（自己株式を除く。）の2.19％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daiwa-house-industry",
+      "relationship": "customer",
+      "description": "ボンド事業の住関連分野の接着剤、シーリング材の顧客であり、その旨が特定投資株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nitto-denko",
+      "relationship": "customer",
+      "description": "化成品事業の顧客であり、仕入先でもあります。その旨が特定投資株式およびみなし保有株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kimura",
+      "relationship": "customer",
+      "description": "ボンド事業の顧客であり、その旨が特定投資株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "trusco-nakayama",
+      "relationship": "customer",
+      "description": "ボンド事業の顧客であり、その旨が特定投資株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nihon-flush",
+      "relationship": "customer",
+      "description": "ボンド事業の顧客であり、その旨が特定投資株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ochi-holdings",
+      "relationship": "customer",
+      "description": "ボンド事業の顧客であり、その旨が特定投資株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "isamu-paint",
+      "relationship": "customer",
+      "description": "化成品事業の顧客であり、その旨が特定投資株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "taiyo-yuden",
+      "relationship": "customer",
+      "description": "化成品事業の顧客であり、その旨がみなし保有株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toyoda-gosei",
+      "relationship": "customer",
+      "description": "化成品事業の顧客であり、その旨がみなし保有株式の保有目的に銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +648,58 @@
       "publisher": "コニシ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC07.pdf",
       "publishedAt": "2026-06-16",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YC07",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「コニシ」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E3%82%B3%E3%83%8B%E3%82%B7",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年3月期の期首より、不動産賃貸に係る収入と原価の表示区分が変更され、報告セグメントは「ボンド」「化成品」「工事事業」の3区分となりました（従来は不動産賃貸を含む「その他」を加えた4区分）。本登録の事業構成は変更後の3区分に基づきます。前期のセグメント情報と売上高も組替え済みです。",
+      "businessModel: 2024年1月1日付で普通株式1株につき2株の割合の株式分割を実施済みです。有報の連結経営指標等の株式数に係る数値は、この分割が2022年3月期の期首に行われたと仮定して算定されています。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年3月期に策定した「中期経営計画2027（2025年3月期～2027年3月期）」に基づき、新製品の市場導入などによる新規開拓や成長分野への注力の強化を進めています。生産・物流・DX関連に3年累計で約150億円の設備投資を計画し、2027年3月期に連結売上高1,500億円を目指しています。ボンド事業では電子電材や自動車などの成長市場向け製品の開発と非住宅分野のシェア向上、化成品事業では自動車、電子電機、化学工業分野への営業活動の強化、工事事業では社会インフラや建築ストック市場における補修・改修・補強工事の拡大に取り組んでいます。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "工事事業において、ボンド事業が持つ補修・改修・補強用接着剤や工法を活用できることが、グループ内の事業をまたぐ強みとして説明されています。ボンド事業では、住関連分野向け接着剤や土木建築用接着剤・シーリング材などのコア事業の強化に加え、自動車・電子部品に使用される弾性接着剤など成長分野の製品開発と新規開拓を進めています。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上構成は、ボンドが743億15百万円、化成品が391億94百万円、工事事業が230億59百万円です。地域別の売上高は本邦が連結売上高の90％を超えています。主要な顧客である株式会社デンソー向けが総販売実績の14.9％を占めています。",
+        "basis": "セグメント情報、セグメント情報の関連情報（地域ごとの情報・主要な顧客ごとの情報）および経営者による分析の印字に基づきます。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

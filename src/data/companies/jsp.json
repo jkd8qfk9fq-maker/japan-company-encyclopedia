@@ -1,18 +1,141 @@
 {
   "id": "jsp",
   "code": "7942",
-  "name": "ジェイエスピー（商号JSP）",
+  "name": "ジェイエスピー",
   "officialName": "株式会社ジェイエスピー（商号　株式会社JSP）",
   "nameEn": "JSP Corporation",
-  "description": null,
+  "shortNameEn": "JSP",
+  "description": "発泡技術を主体として、発泡ポリプロピレンのARPROや発泡ポリスチレンシートなどを世界各地で製造販売するプラスチック製品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "beads",
+      "name": "ビーズ事業",
+      "description": "ビーズ発泡技術をベースに、発泡ポリプロピレンや発泡ポリエチレン、発泡性ポリスチレンの製品を生産・販売する事業です。2026年3月期の外部顧客への売上高は95,905百万円で、グループの売上高の約3分の2を占めます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "arpro",
+          "name": "高機能材製品",
+          "description": "発泡ポリプロピレン「ARPRO」を中心とした製品です。世界各国で製造販売され、自動車部品のほか、包装材などの非自動車分野にも使われています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "expandable-beads",
+          "name": "発泡性ビーズ製品",
+          "description": "発泡性ポリスチレン「スチロダイア」を中心とした製品です。水産分野の容器などに使われています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "extrusion",
+      "name": "押出事業",
+      "description": "押出発泡技術をコアとして、ポリスチレンやポリエチレン、ポリプロピレンのシート及びボードなどを生産・販売する事業です。2026年3月期の外部顧客への売上高は49,550百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "living-materials",
+          "name": "生活資材製品",
+          "description": "発泡ポリスチレンシート「スチレンペーパー」を中心とした、食品容器向けの製品です。広告宣伝用のディスプレイ材「ミラボード」も含まれます。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "industrial-materials",
+          "name": "産業資材製品",
+          "description": "発泡ポリエチレンシート「ミラマット」を中心とした、産業用包装材やフラットパネルディスプレイ向けの製品です。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "construction-materials",
+          "name": "建築土木資材製品",
+          "description": "発泡ポリスチレン押出ボード「ミラフォーム」を中心とした、建築・住宅の断熱材や土木資材の製品です。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "発泡プラスチック製品を国内外の工場で製造し、自動車部品や食品容器、建築資材などのメーカーに販売して売上を得る事業モデルです。",
+    "products": [
+      "発泡ポリプロピレン「ARPRO」",
+      "発泡性ポリスチレン「スチロダイア」",
+      "発泡ポリスチレンシート「スチレンペーパー」",
+      "発泡ポリスチレンボード「ミラフォーム」",
+      "発泡ポリエチレンシート「ミラマット」"
+    ],
+    "customers": [
+      "自動車部品メーカー",
+      "食品容器や包装資材のメーカー",
+      "建築・土木資材のメーカー"
+    ],
+    "revenueSources": [
+      "発泡プラスチック製品の販売収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "国内外38社の子会社とグループを構成する",
+        "description": "株式会社ジェイエスピーは、当社と国内子会社11社、海外子会社27社、関連会社4社及びその他の関係会社1社でグループを構成します（2026年3月31日現在）。2026年3月期の連結従業員数は3,096名です。"
+      },
+      {
+        "kind": "offering",
+        "title": "発泡技術でビーズやシートを製造する",
+        "description": "発泡技術を主体として、発泡ポリプロピレンのARPROや発泡性ポリスチレンのスチロダイア、発泡ポリスチレンシートのスチレンペーパーなどを、国内外の工場で製造します。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車や食品、建築などのメーカーに届ける",
+        "description": "製品は、自動車部品や食品容器、包装資材、建築・土木資材などのメーカーに販売されます。売上高の10％以上を占める特定の顧客はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売で売上を得る",
+        "description": "製品の販売が売上高になります。2026年3月期の売上高は145,456百万円で、ビーズ事業が95,905百万円、押出事業が49,550百万円です。売上高は前期比2.3％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "ビーズ事業がグループの収益の柱",
+        "description": "ビーズ事業と押出事業が、グループの収益の柱です。2026年3月期の親会社株主に帰属する当期純利益は6,602百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +150,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 90231000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2966,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +170,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 96123000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2966,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +190,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 100069000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3053,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 105855000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3053,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 113514000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3096,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +238,298 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1962,
+      "title": "日本スチレンペーパーを設立",
+      "description": "日本瓦斯化学工業株式会社（現・三菱瓦斯化学株式会社）の出資により、発泡技術を主体としたプラスチック製品の事業を営むことを目的として、日本スチレンペーパー株式会社が設立されました。同年、神奈川県平塚市で発泡ポリスチレンペーパーの製造を開始しました。",
+      "significance": "ジェイエスピーの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "鹿沼工場が操業を開始",
+      "description": "栃木県鹿沼市に鹿沼工場が操業を開始し、発泡ポリエチレンシート「ミラマット」の製造を始めました。",
+      "significance": "主力工場と主力製品の基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "日本ザンパックを設立",
+      "description": "発泡ポリスチレンペーパー及び各種熱可塑性合成樹脂加工品の開発、販売を目的として、日本ザンパック株式会社（現・株式会社JSPパッケージング）が設立されました。",
+      "significance": "シートの成形加工品を担う子会社ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "ミラフォームの製造を開始",
+      "description": "押出発泡ポリスチレンボード「ミラフォーム」の製造を開始しました。",
+      "significance": "建築土木資材製品の主力ブランドが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "ARPROの製造を開始",
+      "description": "ポリプロピレン発泡ビーズ及び成型品「ARPRO」（旧・ピーブロック）の製造を開始しました。",
+      "significance": "現在の主力製品であるARPROが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "北米の事業持株会社を設立",
+      "description": "北米における事業持株会社として、JSP America INC.（現・JSP International Group LTD.）が設立されました。",
+      "significance": "海外展開の体制づくりが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "社名を株式会社ジェイエスピーに変更",
+      "description": "社名を株式会社ジェイエスピー（商号　株式会社JSP）に変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場企業としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "韓国の合弁会社KOSPAを設立",
+      "description": "韓国に合弁会社KOSPA株式会社が設立されました。",
+      "significance": "アジアでの製造・販売体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "欧州に販売子会社を設立",
+      "description": "欧州での販売拠点として、JSP Europe S.A.R.L.（現・JSP International S.A.R.L.）ほか3社の販売子会社が設立されました。",
+      "significance": "欧州市場への展開が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "シンガポールにJSP Foam Productsを設立",
+      "description": "アジア地域の製造・販売拠点として、シンガポールにJSP Foam Products PTE.LTD.が設立されました。",
+      "significance": "東南アジアの拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "ドイツの自動車部品成型部門を買収",
+      "description": "JSP International S.A.R.L.が、ドイツの樹脂成型メーカーの自動車部品成型部門を買収し、JSP International GmbH & Co.KGを設立しました。",
+      "significance": "欧州の自動車部品分野への展開が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "ビーズ成型品部門をJSPモールディングへ分割",
+      "description": "発泡ポリオレフィンビーズ成型品の製造部門及び販売部門が、JSPモールディング株式会社へ会社分割されました。同年、中国の製造拠点としてJSP Plastics (Wuxi) Co.,LTD.（現・JSP Advanced Materials (Wuxi) Co.,LTD.）も設立されています。",
+      "significance": "国内の生産体制の再編と、中国進出が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "三菱化学フォームプラスティックと合併",
+      "description": "三菱化学フォームプラスティック株式会社と合併しました。",
+      "significance": "発泡ポリスチレン事業の基盤が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "東京証券取引所市場第一部に指定替え",
+      "description": "東京証券取引所市場第一部への指定替え上場をしました。",
+      "significance": "市場第一部の会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "日立化成工業から発泡ポリスチレン事業を譲受け",
+      "description": "日立化成工業株式会社からビーズ法発泡ポリスチレン事業を譲り受けるとともに、日化化成品株式会社（現・NK化成株式会社）の全株式を取得しました。",
+      "significance": "発泡性ポリスチレンの事業が拡大しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "インドにJSP Foam Indiaを設立",
+      "description": "インドの製造・販売拠点として、JSP Foam India Pvt.LTD.が設立されました。",
+      "significance": "南アジアの拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "ブラジルのFagerdala Brasilを買収",
+      "description": "JSP Participacoes LTDA.が、ブラジルの製造・販売拠点としてFagerdala Brasil LTDA.を買収し、同社をJSP Brasil Industria de Plasticos LTDA.に社名変更しました。",
+      "significance": "南米の製造・販売拠点を得ました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "三菱瓦斯化学の公開買付けにより親会社に異動",
+      "description": "三菱瓦斯化学株式会社による当社株式の公開買付けにより、同社はその他の関係会社から親会社へ異動しました。",
+      "significance": "三菱瓦斯化学の子会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "鹿沼ミラフォーム工場を新設",
+      "description": "鹿沼ミラフォーム工場を新設し、2月1日より本格稼働を開始しました。",
+      "significance": "ミラフォームの生産能力が増強されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "関西にミラフォームの新工場を建設",
+      "description": "関西工場に隣接する土地にミラフォームの新工場を建設し、8月1日より本格稼働を開始しました。",
+      "significance": "西日本でのミラフォーム供給体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の市場区分になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "三菱瓦斯化学がその他の関係会社へ異動",
+      "description": "自己株式の公開買付けにより、三菱瓦斯化学株式会社は親会社からその他の関係会社へ異動しました。",
+      "significance": "三菱瓦斯化学は親会社ではなくなりましたが、最大の株主のままです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-gas-chemical",
+      "relationship": "other-affiliated-company",
+      "description": "2026年3月31日現在、議決権の47.74％を保有されるその他の関係会社です。原材料の仕入等の取引があり、役員の兼任等もあります。1962年に同社の前身の出資で当社が設立され、2015年から2023年までは親会社でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第68期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社ジェイエスピー（商号　株式会社JSP）",
+      "publisher": "株式会社ジェイエスピー",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEL0.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YEL0",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「Change for Growth 2026」（第67期から第69期）では、「グループ全体の収益力強化」「発泡樹脂製品による社会への貢献」「経営基盤の強化」を基本コンセプトに掲げています。長期ビジョン『VISION2027』では、ARPRO事業、建築住宅断熱材、FPD表面保護材、新たな事業領域の4つを進むべき事業領域とし、中期経営計画の最終年度である2027年3月期の売上高目標は160,000百万円です。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "発泡ポリプロピレン「ARPRO」について、グローバル対応力と高い開発・提案力を優位性として掲げ、各地域の市場の要求に対応した次世代製品の投入で市場シェアの拡大を図るとしています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の約3分の2をビーズ事業が占め、地域別では日本が約半分、アメリカとヨーロッパ、アジアを合わせた海外が約半分という構成です。",
+        "basis": "セグメント情報の外部顧客への売上高（2026年3月期：ビーズ事業95,905百万円、押出事業49,550百万円）と、関連情報の地域別売上高（日本71,522百万円、アメリカ32,811百万円、ヨーロッパ17,424百万円、アジア23,392百万円、その他306百万円）",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【セグメント情報】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

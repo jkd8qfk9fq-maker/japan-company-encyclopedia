@@ -4,7 +4,8 @@
   "name": "CKD",
   "officialName": "CKD株式会社",
   "nameEn": "CKD Corporation",
-  "description": null,
+  "shortNameEn": "CKD",
+  "description": "空気圧機器などの機能部品と、薬品包装機などの自動機械装置を製造・販売する機械メーカーです。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,8 +16,166 @@
       "market": "プレミア"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "components",
+      "name": "機器部門",
+      "description": "半導体関連業界や輸送機械業界をはじめ、幅広い市場に機能部品を供給する部門です。需要予測に基づく見込生産方式を採用しています。2026年3月期の外部顧客への売上高は138,513百万円で、連結売上高の大部分を占めます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "drive-equipment",
+          "name": "駆動機器",
+          "description": "空気圧シリンダや電動アクチュエータ、ダイレクトドライブモータ、インデックスユニットなど、工場の自動化に使う駆動部品です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "pneumatic-controls",
+          "name": "空気圧制御機器",
+          "description": "空気圧方向制御弁や手動切換弁など、圧縮空気の流れを切り替える機器です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "pneumatic-accessories",
+          "name": "空気圧関連機器",
+          "description": "窒素などの気体発生装置やドライヤ、フィルタ、レギュレータ、継手、スピードコントローラ、流量センサ、圧力センサなど、圧縮空気を整えたり測ったりする機器です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "fluid-controls",
+          "name": "流体制御機器",
+          "description": "水・空気・蒸気・切削油用バルブのほか、半導体製造プロセスガス用バルブ、薬液用バルブ、真空用バルブ、ライフサイエンス機器、ガス燃焼バルブなど、液体や気体の流れを制御する機器です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "automatic-machinery",
+      "name": "自動機械部門",
+      "description": "自動包装システムやリチウムイオン電池製造システムを中心とした大型設備を、個別受注生産方式で生産・販売する部門です。2026年3月期の外部顧客への売上高は19,373百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "packaging-systems",
+          "name": "自動包装システム",
+          "description": "薬品・食品・医療器具などを自動で包装するシステムです。保守・改造を中心とした包装サービスも行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "battery-systems",
+          "name": "リチウムイオン電池製造システム",
+          "description": "リチウムイオン電池を製造するためのシステムです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "inspection-systems",
+          "name": "検査システム",
+          "description": "画像処理検査システムや三次元はんだ印刷検査機など、製品や基板を検査するシステムです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other-services",
+      "name": "その他",
+      "description": "連結子会社のCKDグローバルサービスが行う保険代理店業務とファクタリング業務です。報告セグメントには含まれておらず、売上高は独立して開示されていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "半導体や自動車などの工場で使う空気圧シリンダやバルブなどの機能部品と、薬品包装システムなどの自動機械装置を、国内外の生産拠点で作り、各地の子会社を通じて販売しています。",
+    "products": [
+      "空気圧シリンダ",
+      "電動アクチュエータ",
+      "空気圧制御弁",
+      "フィルタ・レギュレータ",
+      "流体制御機器",
+      "自動包装システム",
+      "リチウムイオン電池製造システム",
+      "画像処理検査システム"
+    ],
+    "customers": [
+      "半導体関連業界",
+      "輸送機械業界",
+      "医薬品業界",
+      "食品業界"
+    ],
+    "revenueSources": [
+      "機能部品の販売",
+      "自動機械装置の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "国内外の拠点で作る体制",
+        "description": "CKDグループは当社と子会社21社で構成され、本社のある愛知県小牧市の工場をはじめ、春日井・犬山・四日市・東北・北陸の国内工場と、中国・米国・マレーシアなど海外の生産拠点で製造しています。連結の従業員数は4,826人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "機能部品と自動機械装置を提供",
+        "description": "機器部門では、空気圧シリンダやバルブ、フィルタ、センサなどの機能部品を提供しています。自動機械部門では、自動包装システムやリチウムイオン電池製造システム、三次元はんだ印刷検査機などの大型設備を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "幅広い産業の工場へ届ける",
+        "description": "機器部門の機能部品は、半導体関連業界や輸送機械業界をはじめ幅広い市場に、需要予測に基づく見込生産で供給しています。自動機械部門の設備は、医薬品や食品などのメーカーに個別受注生産で納め、海外では現地の子会社を通じて販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "部品と装置の販売で売上を得る",
+        "description": "機能部品と自動機械装置の販売が売上の柱です。2026年3月期の売上高は157,886百万円で、機器部門が138,513百万円、自動機械部門が19,373百万円でした。売上高は前期比1.4％増となっています。"
+      },
+      {
+        "kind": "profit",
+        "title": "生産性向上とサービスで当期純利益を確保",
+        "description": "生産能力の増強と生産性向上に継続して取り組み、自動機械部門では包装機の保守・改造を中心とした包装サービスも堅調に推移しました。2026年3月期の親会社株主に帰属する当期純利益は13,578百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +190,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 109571000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4660,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 119730000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4684,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 129098000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4645,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +250,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 136521000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4641,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,16 +270,387 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 153538000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4826,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "表示方法の変更により、補助金収入と固定資産除却損を独立掲記とし、前期の連結財務諸表を組み替えている。売上高や当期純利益の合計への影響はない。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1943,
+      "title": "日本航空電機株式会社として設立",
+      "description": "日本電気（当時の住友通信工業）、川崎重工業（当時の川崎航空機工業）、小糸製作所、日本製鉄（当時の住友金属工業）、東洋紡（当時の東洋紡績）の5社の出資により、名古屋市に「日本航空電機株式会社」として設立されました。",
+      "significance": "CKDの創業です。航空機関連の電機メーカーとして出発しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1945,
+      "title": "社名を中京電機株式会社に改称",
+      "description": "社名を「中京電機株式会社」と改称しました。",
+      "significance": "戦後の再出発に合わせた改称です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "中京精機を設立",
+      "description": "愛知県丹羽郡扶桑町に「中京精機株式会社」を設立しました。1978年に「シーケーディ精機株式会社」へ改称しています。",
+      "significance": "現在の犬山工場の前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "名古屋証券取引所市場第二部に上場",
+      "description": "株式を名古屋証券取引所市場第二部に上場しました。これに先立ち、本社所在地を愛知県小牧市としています。",
+      "significance": "株式を公開し、上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "日本コントロールズを設立",
+      "description": "愛知県春日井市に「日本コントロールズ株式会社」を設立しました。1978年に「シーケーディコントロールズ株式会社」へ改称しています。",
+      "significance": "現在の春日井工場の前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "名古屋証券取引所市場第一部に上場",
+      "description": "株式を名古屋証券取引所市場第一部に上場しました。",
+      "significance": "名証の第一部に昇格しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "社名をシーケーディ株式会社に改称",
+      "description": "社名を「シーケーディ株式会社」と改称しました。",
+      "significance": "現在の「CKD」のもとになる社名となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "株式を東京証券取引所市場第一部に上場しました。",
+      "significance": "東証にも上場し、全国市場で取引されるようになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "マレーシアにM-CKD PRECISIONを設立",
+      "description": "マレーシアに「M-CKD PRECISION SDN.BHD.」を設立しました。",
+      "significance": "海外生産の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "米国にCKD USA CORP.を設立",
+      "description": "米国イリノイ州に「CKD USA CORP.」を設立しました。",
+      "significance": "北米への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "タイにCKD THAIを設立",
+      "description": "タイに「CKD THAI CO.LTD.」を設立しました。同じ年に、保険代理店などを担うシーケーディグローバルサービスも設立しています。",
+      "significance": "東南アジアの生産拠点を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "シコク精工を買収",
+      "description": "シコク精工株式会社を買収しました。2016年に「CKDシコク精工株式会社」へ改称しています。",
+      "significance": "自動機械と機器の両製品を手がける製造子会社をグループに迎えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "中国・無錫市に合弁会社を設立",
+      "description": "中国無錫市に合弁会社として「無錫喜開理気動工業有限公司」を設立しました。",
+      "significance": "中国への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "製造子会社3社を吸収合併",
+      "description": "シーケーディコントロールズ（現・春日井工場）、シーケーディ精機（現・犬山工場）、シーケーディプレシジョン（現・四日市工場）を吸収合併しました。",
+      "significance": "国内の製造体制を当社本体に集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "販売事業を当社に統合",
+      "description": "販売子会社5社の販売事業を当社に統合しました。",
+      "significance": "国内販売を本体直轄とする体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "中国・無錫市に喜開理（中国）有限公司を設立",
+      "description": "中国無錫市に「喜開理（中国）有限公司」を設立しました。翌年、無錫喜開理気動工業有限公司と統合しています。",
+      "significance": "中国での製造・販売の中核会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "社名をCKD株式会社に改称",
+      "description": "社名を「CKD株式会社」と改称しました。同じ年に、自動機械製品の部品販売とサービスを担うCKDフィールドエンジニアリングを設立しています。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "日機電装を買収",
+      "description": "日機電装株式会社を買収し、「CKD日機電装株式会社」へ改称しました。",
+      "significance": "機器製品の製造・販売子会社をグループに迎えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "東北工場が竣工",
+      "description": "宮城県黒川郡大衡村に東北工場が竣工しました。",
+      "significance": "東北地方に機器部門の生産拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証プライム市場・名証プレミア市場へ移行",
+      "description": "東京証券取引所プライム市場と名古屋証券取引所プレミア市場へ移行しました。",
+      "significance": "取引所の市場再編に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "米国テキサス州に新工場が竣工",
+      "description": "米国テキサス州に新工場「CKD USA Austin Manufacturing」が竣工しました。",
+      "significance": "北米の生産体制を強化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "イタリアのEPSITECを完全子会社化",
+      "description": "イタリアの「EPSITEC S.R.L.」の株式を追加取得し、完全子会社化しました。同年7月に「CKD ITALIA S.R.L.」へ改称しています。",
+      "significance": "欧州の販売拠点を完全子会社化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "マレーシアのCKD MALAYSIAを完全子会社化",
+      "description": "マレーシアの「CKD MALAYSIA SDN.BHD.」への設立時資本金の払込を完了し、完全子会社化しました。",
+      "significance": "マレーシアの製造・販売会社を完全子会社化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "北陸工場が竣工",
+      "description": "石川県小松市に北陸工場が竣工しました。",
+      "significance": "国内の生産拠点がさらに広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "インドにNeemrana工場が竣工",
+      "description": "インドのラジャスタン州に新工場「CKD INDIA Neemrana Manufacturing Plant」が竣工しました。",
+      "significance": "インドの生産体制を強化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "マレーシア・ケダ州に新工場が竣工",
+      "description": "マレーシアのケダ州に新工場が竣工しました。",
+      "significance": "マレーシアでの生産能力を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "ono-pharmaceutical",
+      "relationship": "customer",
+      "description": "医薬品メーカーで、2026年3月31日現在、長年にわたり薬品包装システムの取引がある得意先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okuma",
+      "relationship": "customer",
+      "description": "大手工作機械メーカーで、2026年3月31日現在、機器製品を採用している取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "screen-holdings",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、機器製品を採用している取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sinfonia-technology",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、機器製品を採用している取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sintokogio",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、機器製品を採用している取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toho-gas",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、機器製品を採用している取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "espec",
+      "relationship": "customer",
+      "description": "大手環境試験器メーカーで、2026年3月31日現在、機器製品を採用している取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamazen",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、機器製品の契約代理店で、世界各地の営業拠点を通じて機器製品の拡販に取り組む取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "inaba-denki-sangyo",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、機器製品の契約代理店である取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "meiji-electric-industries",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、機器製品の契約代理店である取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "suzuden",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、機器製品の契約代理店である取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "trusco-nakayama",
+      "relationship": "customer",
+      "description": "2026年3月31日現在、幅広い顧客の販売ネットワークを活用して機器製品の拡販を行う取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -128,13 +658,45 @@
       "publisher": "CKD株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGB2.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YGB2",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2027年3月期は、新しい長期経営ビジョン「CKD VISION 2035」と、2029年3月期までの3か年計画である第6次中期経営計画「All CKD Together 2028」のスタートの年です。中期経営計画では「人的資本経営の推進と経営基盤の強化」「R＆D体制強化」「グローバル成長領域への経営資源集中」「高付加価値ビジネスモデルへの移行」の4つの成長方針を掲げています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "「自動化技術の探究と共創を続け健やかな地球環境と豊かな未来を拓きます。」というPurposeを起点に、これまで磨き上げてきた「技術力」「革新力」、そして「共創力」の3つを強みとして生かすとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "自動機械部門は個別受注生産、機器部門は需要予測に基づく見込生産と、部門ごとに生産方式を使い分けています。米国・インド・マレーシアでは新工場が相次いで竣工・稼働し、海外の生産体制を広げています。",
+        "basis": "【セグメント情報】の報告セグメントの概要と【経営方針、経営環境及び対処すべき課題等】の海外生産体制に関する記載",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

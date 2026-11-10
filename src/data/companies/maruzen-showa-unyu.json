@@ -4,15 +4,202 @@
   "name": "丸全昭和運輸",
   "officialName": "丸全昭和運輸株式会社",
   "nameEn": "Maruzen Showa Unyu Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Maruzen Showa Unyu",
+  "description": "貨物自動車運送や港湾運送、倉庫業などで物流サービスを提供する、横浜の総合物流会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "logistics",
+      "name": "物流事業",
+      "description": "2026年3月期の外部顧客への売上高は1,293億18百万円で、売上の大半を占めます。貨物自動車運送や港湾運送、倉庫業、通関業、梱包業などを行います。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "road-freight",
+          "name": "貨物自動車運送",
+          "description": "工場の建設資材や原料、製品などをトラックで運びます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "combined-transport",
+          "name": "利用運送",
+          "description": "貨物自動車や鉄道、外航海運、内航海運、航空を利用して貨物を運びます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "port-transport",
+          "name": "港湾運送",
+          "description": "一般港湾運送や港湾荷役、艀運送を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "warehousing",
+          "name": "倉庫業",
+          "description": "貨物の保管を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "customs-clearance",
+          "name": "通関業",
+          "description": "輸出入貨物の通関手続きを行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "packing",
+          "name": "梱包業",
+          "description": "輸出入貨物の梱包を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "ocean-shipping",
+          "name": "海上運送事業",
+          "description": "海上での貨物の運送を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "air-freight-forwarding",
+          "name": "航空運送代理店業",
+          "description": "航空貨物の運送の手配を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "on-site-work",
+      "name": "構内作業及び機械荷役事業",
+      "description": "2026年3月期の外部顧客への売上高は168億84百万円です。工場構内での原料や製品、重量物、精密機械などの移送や組立、充填、保管、入出荷作業と、機械の賃貸を行います。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "on-site-operations",
+          "name": "構内作業",
+          "description": "工場構内での原料、製品、重量物、精密機械等の移送、組立、充填、構内倉庫への保管、入出荷作業とこれらに附帯する諸作業を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "equipment-rental",
+          "name": "機械の賃貸",
+          "description": "機械の賃貸を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他事業",
+      "description": "2026年3月期の外部顧客への売上高は24億円です。報告セグメントに含まれない事業で、建設業や警備業、不動産業、保険代理業、自動車整備業などを行います。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "貨物自動車運送や港湾運送、倉庫業、通関業などの物流事業と、工場の構内作業や機械荷役を行います。",
+    "products": [
+      "貨物自動車運送",
+      "港湾運送",
+      "倉庫業",
+      "通関業",
+      "梱包業",
+      "利用運送",
+      "構内作業",
+      "機械荷役",
+      "機械の賃貸"
+    ],
+    "customers": [
+      "鉄鋼メーカー",
+      "化学メーカー",
+      "建設機械メーカー",
+      "電力機器メーカー",
+      "精密機器メーカー",
+      "日用雑貨メーカー",
+      "食品メーカー"
+    ],
+    "revenueSources": [
+      "物流事業の売上",
+      "構内作業及び機械荷役事業の売上",
+      "その他事業の売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "全国の拠点と子会社で物流網を運営する",
+        "description": "横浜に本社を置き、子会社37社と関連会社5社でグループを構成し、国内外の拠点で物流サービスを提供します。"
+      },
+      {
+        "kind": "offering",
+        "title": "物流サービスと構内作業を提供する",
+        "description": "貨物自動車運送や港湾運送、倉庫業、通関業などの物流サービスと、工場の構内作業や機械荷役を提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "メーカーなどの荷主へ届ける",
+        "description": "鉄鋼や化学、建設機械などのメーカーをはじめとする荷主へ、物流サービスを届けます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "物流事業の売上で売上を得る",
+        "description": "2026年3月期の売上高は1,486億3百万円で、前年度比2.8％増です。物流事業が売上の大半を占めます。"
+      },
+      {
+        "kind": "profit",
+        "title": "新規受注と料金改定で当期純利益の増加につなげる",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は126億85百万円で、前年度比29.4％増です。酒類の輸入保管輸送業務の新規受注や料金改定の推進による増収が、当期純利益の増加につながりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 108514000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3825,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +234,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 116085000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3790,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +254,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 127941000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3709,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +274,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 132151000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3660,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +294,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 144377000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3723,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +302,338 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1931,
+      "title": "丸全昭和組を創立",
+      "description": "横浜市中区太田町に株式会社丸全昭和組を創立し、京浜工業地帯の鉄鋼、化学工業メーカーの工場建設資材や原料、製品の荷造りと運搬を開始しました。",
+      "significance": "丸全昭和運輸の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1940,
+      "title": "直轄店が23ヶ所に達する",
+      "description": "事業の発展により、京浜工業地帯のほかに大阪、名古屋、飾磨の各港と高萩、勿来に支店や出張所を設け、直轄店が23ヶ所に達しました。",
+      "significance": "全国の港湾拠点への広がりの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "商号を丸全昭和運輸に改称",
+      "description": "商号を丸全昭和運輸株式会社に改称しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東証市場第二部に上場",
+      "description": "株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "公開会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "東証市場第一部に上場",
+      "description": "株式を東京証券取引所市場第一部に上場しました。",
+      "significance": "東証一部上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "丸全水戸運輸を設立",
+      "description": "茨城県水戸市に丸全水戸運輸株式会社を設立しました。",
+      "significance": "茨城県の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "国際埠頭を共同出資で設立",
+      "description": "国際埠頭株式会社を共同出資により設立しました。",
+      "significance": "港湾荷役の体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "米国に子会社を設立",
+      "description": "アメリカにMaruzen of America, Inc.を設立しました。",
+      "significance": "海外進出の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "輸出梱包センターを建設",
+      "description": "横浜市に輸出梱包センターを建設し、輸出貨物の入庫、梱包、船積までの一貫業務を開始しました。",
+      "significance": "輸出物流の一貫体制ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "シンガポールに子会社を設立",
+      "description": "シンガポールに丸全昭和新加坡有限公司を設立しました。",
+      "significance": "東南アジアへの進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "中国に合弁会社を設立",
+      "description": "中国に合弁会社である徐州丸全外運有限公司を設立しました。",
+      "significance": "中国への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "トラック事業を分社する",
+      "description": "鹿島、京浜、川崎、中部、関西各支店のトラック事業を分社し、丸全鹿島物流、丸全京浜物流、丸全川崎物流、丸全中部物流、丸全関西物流の5社が事業を開始しました。",
+      "significance": "地域のトラック事業の体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "昭和物流と昭和アルミサービスをグループ化",
+      "description": "昭和電工の子会社である昭和物流株式会社と昭和アルミサービス株式会社の株式を取得し、グループ会社としました。",
+      "significance": "物流グループが広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "３ＰＬ事業システムを稼働",
+      "description": "３ＰＬ事業システム（ＭＬＰシステム）を稼働しました。",
+      "significance": "３ＰＬ事業の仕組みができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "丸全港運を設立",
+      "description": "丸全港運株式会社を設立しました。",
+      "significance": "港湾運送の体制を強めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "認定通関業者の資格を取得",
+      "description": "AEO制度に係る認定通関業者の資格を取得しました。",
+      "significance": "通関の信頼性を高めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "ベトナムに会社を設立",
+      "description": "ベトナムにUnithai Maruzen Logistics (Vietnam) Corp.を設立しました。",
+      "significance": "ベトナムへの進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "鹿島タンクターミナルを設立",
+      "description": "鹿島タンクターミナル株式会社を設立しました。",
+      "significance": "液体貨物の取扱い体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "丸全トランスパックが誕生",
+      "description": "子会社の佐野陸運株式会社が同じく子会社の丸全テクノパック株式会社を吸収合併し、丸全トランスパック株式会社に商号を変更しました。",
+      "significance": "梱包と輸送の体制を統合しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "タイに子会社を設立",
+      "description": "タイにMaruzen Showa (Thailand) Ltd.を設立しました。",
+      "significance": "タイへの進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "丸全電産ロジステックをグループ化",
+      "description": "日本電産の物流子会社である日本電産ロジステック株式会社の株式を取得し、会社名を丸全電産ロジステック株式会社に変更してグループ会社としました。",
+      "significance": "精密機械部品の物流に進出しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "メキシコに合弁会社を設立",
+      "description": "メキシコに合弁会社であるSojitz Maruzen Logistics, S.A. de C.V.を設立しました。",
+      "significance": "メキシコへの進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "鹿島バルクターミナルが営業開始",
+      "description": "鹿島バルクターミナル株式会社が営業を開始しました。",
+      "significance": "バルク貨物の取扱いが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "情報セキュリティの認証を取得",
+      "description": "情報システム部、物流品質環境部、東京海運支店芝浦流通センター営業所・ワールド流通営業所、輸出梱包センターにて情報セキュリティマネジメントシステム国際標準規格ISO27001の認証を取得しました。",
+      "significance": "情報セキュリティの体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "丸十運輸倉庫を完全子会社とする",
+      "description": "丸十運輸倉庫株式会社の株式を追加取得し、完全子会社としました。",
+      "significance": "山陽地区の拠点を強めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "丸全川崎運輸を解散",
+      "description": "丸全川崎運輸株式会社を解散しました。",
+      "significance": "グループの体制を整理しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "国際埠頭を連結子会社とする",
+      "description": "国際埠頭株式会社の株式を追加取得し、連結子会社としました。",
+      "significance": "港湾荷役の体制を強めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "執行役員制度を導入",
+      "description": "執行役員制度を導入しました。",
+      "significance": "経営の体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "監査等委員会設置会社へ移行",
+      "description": "監査等委員会設置会社へ移行しました。",
+      "significance": "ガバナンスの体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "丸全トランスポートが誕生",
+      "description": "丸全京浜物流株式会社が丸全鹿島物流株式会社、丸全中部物流株式会社、丸全関西物流株式会社を吸収合併し、丸全トランスポート株式会社に商号を変更しました。",
+      "significance": "トラック事業の体制を統合しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所の市場第一部からプライム市場に移行しました。",
+      "significance": "プライム市場上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "タイに新会社を設立",
+      "description": "タイにSiam Maruzen Showa Co., Ltd.を設立しました。",
+      "significance": "タイの体制を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "Ｍ＆Ｆロジスティクスを連結子会社とする",
+      "description": "日東富士製粉の物流子会社である日東富士運輸株式会社の株式を取得し、会社名をＭ＆Ｆロジスティクス株式会社に変更して連結子会社としました。",
+      "significance": "食料原料の物流に進出しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +642,57 @@
       "publisher": "丸全昭和運輸株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKCI.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YKCI",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-09",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年度から2027年度までの3年間を対象とする第9次中期経営計画を推進します。2030年度に向けた長期ビジョンでは「テクノロジーと現場力で、お客様の未来を創造するロジスティクスパートナー」を目指す姿とし、「売上の拡大」「事業競争力の強化」「企業基盤の変革」の3つの重点施策に取り組みます。2026年度の連結売上高1,620億円の達成を目指します。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "物流の共同化や標準化を進める中で、独自の現場対応でお客様に貢献します。DXの取り組みで自社内の省力化を図るとともに、データを蓄積する仕組みを整備し、そのデータを利用した提案で、物流の効率化だけでなく、生産や販売の効率化、高付加価値化をグローバルに提供します。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "貨物自動車運送から港湾運送、倉庫業、通関業、梱包業まで物流の一連の工程をグループで対応できる体制です。国内の拠点に加え、米国や中国、東南アジアなど海外にも子会社や関連会社を持ちます。",
+        "basis": "【事業の内容】の事業系統の記載",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "物流事業が2026年3月期の売上高の87.0％を占め、国内の物流を中心とする会社です。本邦の外部顧客への売上高が連結売上高の90％を超えます。",
+        "basis": "【セグメント情報】の売上高の構成比と【関連情報】の地域ごとの情報",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【セグメント情報】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
