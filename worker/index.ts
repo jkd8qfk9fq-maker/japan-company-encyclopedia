@@ -5,8 +5,8 @@
  * assets cost no invocation.
  */
 export const CANONICAL_HOST = "kigyo-hyakka.com";
-/** On once the new address answered: until then a failed domain attach must not send everyone to a dead address. */
-export const REDIRECT_OLD_HOST = false;
+/** Switched on 2026-11-10, after kigyo-hyakka.com answered: a failed domain attach must never send everyone to a dead address. */
+export const REDIRECT_OLD_HOST = true;
 
 type Env = { ASSETS: { fetch(request: Request): Promise<Response> } };
 
