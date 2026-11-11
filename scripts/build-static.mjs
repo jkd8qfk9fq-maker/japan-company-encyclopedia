@@ -43,7 +43,17 @@ try {
   const result = spawnSync(process.execPath, ["node_modules/next/dist/bin/next", "build", "--webpack"], {
     cwd: work,
     stdio: "inherit",
-    env: { ...process.env, PAGES_EXPORT: "1", NEXT_PUBLIC_BASE_PATH: "", SITE_URL: siteUrl, NODE_ENV: "production" },
+    env: {
+      ...process.env,
+      PAGES_EXPORT: "1",
+      NEXT_PUBLIC_BASE_PATH: "",
+      SITE_URL: siteUrl,
+      NODE_ENV: "production",
+      // The Google Fonts in src/assets/fonts/google instead of a download during the build (JCE-040): Google's answer
+      // sometimes broke next/font on Cloudflare. next/font reads local files only from a path starting with "/", so
+      // a Windows build keeps downloading.
+      ...(process.platform === "win32" ? {} : { NEXT_FONT_GOOGLE_MOCKED_RESPONSES: join(work, "src", "assets", "fonts", "google", "responses.cjs") }),
+    },
   });
   if (result.status !== 0 || !existsSync(join(work, "out"))) throw new Error(`next build が失敗しました（終了コード ${result.status}）`);
 

@@ -15,6 +15,8 @@
 
 公開アドレスは **https://kigyo-hyakka.com**（Cloudflare で購入。`wrangler.jsonc` の `routes` でつなぐ）。古い `*.workers.dev` と `www.` は `worker/index.ts` が新しいアドレスへ転送する。ビルド変数 `SITE_URL` は `https://kigyo-hyakka.com` にする。
 
+**フォント**：本番ビルドは Google Fonts をダウンロードせず、`src/assets/fonts/google` のファイルを使う（JCE-040）。`layout.tsx` のフォントを変えたら `node scripts/fonts/vendor-google-fonts.mjs` を実行してコミットする。
+
 **ビルドが失敗したとき**：Build command が `npm run build:static` か（`npm run build` だと静的書き出しにならず、`SITE_URL is not set` で止まる）、`SITE_URL` があるかを確かめる。やり直しは、ビルド一覧の**いちばん新しい**ビルドの Retry、またはリポジトリへの push で行う。古いビルドの Retry はそのときのコミットを公開し直し、転送も AdSense の確認タグもない版に戻る（2026-11-11 に実際に起きた。公開中の版は Deployments から 18:55 の版に戻した）。
 
 ## 設定（Workers：`*.workers.dev`）

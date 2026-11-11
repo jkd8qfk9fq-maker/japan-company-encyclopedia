@@ -649,3 +649,17 @@ Ownership is claimed with AdSense's meta tag on every page and `/ads.txt`; neith
 the operator's display ad unit id is set in `src/components/ads/ad-slot.tsx` (after Google approves the site), and then
 only in the four AdSlot placements, labelled 広告, under the rules of JCE-036. /privacy and /about#advertising switch to
 the AdSense disclosure on the same flag, so the pages never say less than the site does.
+
+### JCE-040 · 2026-11-11 · Accepted — Google Fonts are kept in the repository for the production build
+
+Cloudflare builds failed now and then (2026-11-11: three of five) inside next/font: Google's CSS sometimes listed a
+font file whose URL has no extension, and next/font's loader throws on it ("Cannot read properties of null (reading
+'1')"). The same build always passed elsewhere. Retrying would only make the failure rarer, and a failed build had
+already led to an old build being retried — and an old version published (JCE-039).
+
+`scripts/fonts/vendor-google-fonts.mjs` now copies the three families (252 woff2 files, 13 MB) and their unicode-range
+stylesheets into `src/assets/fonts/google`, and `build-static.mjs` points next/font at them through its
+`NEXT_FONT_GOOGLE_MOCKED_RESPONSES` hook, so the build never asks Google. Readers get the same self-hosted, sliced
+fonts as before. The hook is next/font's own (its test mocks): a font request the folder does not hold fails the build
+naming the URL — run the script again. A Windows build keeps downloading (the hook reads only "/"-rooted paths).
+`tests/vendored-fonts.test.ts` checks the folder matches the layout.
