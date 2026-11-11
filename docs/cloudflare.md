@@ -15,6 +15,8 @@
 
 公開アドレスは **https://kigyo-hyakka.com**（Cloudflare で購入。`wrangler.jsonc` の `routes` でつなぐ）。古い `*.workers.dev` と `www.` は `worker/index.ts` が新しいアドレスへ転送する。ビルド変数 `SITE_URL` は `https://kigyo-hyakka.com` にする。
 
+**ビルドが失敗したとき**：Build command が `npm run build:static` か（`npm run build` だと静的書き出しにならず、`SITE_URL is not set` で止まる）、`SITE_URL` があるかを確かめる。やり直しは、ビルド一覧の**いちばん新しい**ビルドの Retry、またはリポジトリへの push で行う。古いビルドの Retry はそのときのコミットを公開し直し、転送も AdSense の確認タグもない版に戻る（2026-11-11 に実際に起きた。公開中の版は Deployments から 18:55 の版に戻した）。
+
 ## 設定（Workers：`*.workers.dev`）
 
 Cloudflare ダッシュボード → Workers & Pages → Create → **Import a repository**（GitHub）→ このリポジトリを選ぶ。
@@ -24,7 +26,7 @@ Cloudflare ダッシュボード → Workers & Pages → Create → **Import a r
 | Worker の名前（Project name） | **`nihonkigyohyakka`**（`wrangler.jsonc` の `name` と**一致させる**。違うとデプロイが「名前が違う」で失敗する） |
 | Build command | `npm run build:static` |
 | Deploy command | `npx wrangler deploy` |
-| 環境変数（Build の Variables） | `SITE_URL` = `https://nihonkigyohyakka.<あなたのアカウントのサブドメイン>.workers.dev`<br>`NODE_VERSION` = `22`（または `24`）<br>`NEXT_PUBLIC_CF_ANALYTICS_TOKEN` = Web Analytics のトークン（下の「アクセス計測」。未設定なら計測しない） |
+| 環境変数（Build の Variables） | `SITE_URL` = `https://kigyo-hyakka.com`<br>`NODE_VERSION` = `22`（または `24`）<br>`NEXT_PUBLIC_CF_ANALYTICS_TOKEN` = Web Analytics のトークン（下の「アクセス計測」。未設定なら計測しない） |
 
 - 公開 URL は **`https://nihonkigyohyakka.<アカウントのサブドメイン>.workers.dev`**。`<アカウントのサブドメイン>` は Cloudflare のアカウントで決まる部分で（Workers & Pages → 右の「Account subdomain」）、リポジトリでは変えられない。
 - `SITE_URL` は最初のデプロイの後に正確な URL が分かるので、**一度目は仮でよい**（未設定でも `build:static` は仮の値で動き、警告を出す）。正しい値を設定して再デプロイすると、サイトマップと共有リンクが正しくなる。
