@@ -60,7 +60,17 @@ try {
   // next.config.ts headers() is not applied to a static export; Cloudflare reads these from a _headers file.
   writeFileSync(
     join(work, "out", "_headers"),
-    "/*\n  X-Content-Type-Options: nosniff\n  X-Frame-Options: DENY\n  Referrer-Policy: strict-origin-when-cross-origin\n",
+    [
+      "/*",
+      "  X-Content-Type-Options: nosniff",
+      "  X-Frame-Options: DENY",
+      "  Referrer-Policy: strict-origin-when-cross-origin",
+      "  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()",
+      "  Strict-Transport-Security: max-age=31536000",
+      // Same policy as next.config.ts (see the reason there).
+      "  Content-Security-Policy: object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
+      "",
+    ].join("\n"),
   );
 
   rmSync(join(root, "out"), { recursive: true, force: true });

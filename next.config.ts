@@ -22,6 +22,12 @@ const serverConfig: NextConfig = {
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "X-Frame-Options", value: "DENY" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), payment=(), usb=()" },
+          { key: "Strict-Transport-Security", value: "max-age=31536000" },
+          // Not a full policy on purpose: the pages carry Next.js inline scripts and AdSense / Cloudflare Analytics load
+          // from several hosts, so script-src and img-src would have to be wide open to work. These four close the
+          // clickjacking, <base> hijack, plugin and form-redirect routes at no such cost. Keep in step with scripts/build-static.mjs.
+          { key: "Content-Security-Policy", value: "object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'" },
         ],
       },
       {

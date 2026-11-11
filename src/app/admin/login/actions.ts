@@ -23,6 +23,8 @@ export async function login(_previous: LoginState, form: FormData): Promise<Logi
 
   const address = await clientAddress();
   const now = Date.now();
+  // Drop expired windows so a stream of one-off addresses cannot grow the map without bound.
+  for (const [key, entry] of failures) if (now - entry.first >= WINDOW_MS) failures.delete(key);
   const record = failures.get(address);
   if (record && now - record.first < WINDOW_MS && record.count >= MAX_ATTEMPTS) {
     return { error: "試行回数が多すぎます。15分ほどしてからもう一度お試しください。" };
