@@ -4,15 +4,135 @@
   "name": "中部水産",
   "officialName": "中部水産株式会社",
   "nameEn": "CHŪBU SUISAN CO.,LTD.",
-  "description": null,
+  "shortNameEn": "CHUBU SUISAN",
+  "description": "名古屋市中央卸売市場で水産物を卸売し、冷蔵倉庫と不動産賃貸も営む会社です。",
   "listings": [
     {
       "exchange": "nse",
       "market": "メイン"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "wholesale",
+      "name": "水産物卸売業",
+      "description": "卸売部門です。卸売市場法に基づく農林水産大臣許可の水産物卸売業として、全国各地の生産者等から生鮮、冷凍、加工水産物の販売の委託を受け、また買付を行い、名古屋市中央卸売市場においてせり売りなどの方法により仲卸業者などに販売しています。2026年3月期の売上高は36,620百万円です。",
+      "customers": [
+        "仲卸業者など"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "salted-chilled-processed",
+          "name": "塩冷加工品",
+          "description": "塩冷加工品の販売です。卸売部門のうち、顧客との契約から生じる収益の分解情報で鮮魚と並ぶ区分として印字されています。金額は千円単位の表にのみ印字されているため、ここには金額を書いていません。",
+          "customers": [
+            "仲卸業者など"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係、財務諸表】"
+        },
+        {
+          "id": "fresh-fish",
+          "name": "鮮魚",
+          "description": "鮮魚の販売です。卸売部門のうち、顧客との契約から生じる収益の分解情報で塩冷加工品と並ぶ区分として印字されています。金額は千円単位の表にのみ印字されているため、ここには金額を書いていません。",
+          "customers": [
+            "仲卸業者など"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係、財務諸表】"
+        }
+      ]
+    },
+    {
+      "id": "cold-storage",
+      "name": "冷蔵倉庫業",
+      "description": "冷蔵倉庫部門です。水産会社及び仲卸業者の生鮮、冷凍及び加工水産物等の保管業務をしています。名古屋市熱田区に市場冷蔵倉庫と日比野冷蔵倉庫があります。2026年3月期の売上高は538百万円です。",
+      "customers": [
+        "水産会社",
+        "仲卸業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸業",
+      "description": "不動産賃貸部門です。マンション等不動産の賃貸業務をしています。賃貸マンション、賃貸事務所、賃貸工場、賃貸店舗及び賃貸土地が名古屋市内にあります。2026年3月期の売上高は240百万円です。",
+      "customers": [
+        "マンション等不動産の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "水産物卸売業を主要事業とし、生鮮、冷凍、加工水産物を仲卸業者などへ販売し、附帯事業として冷蔵倉庫業と不動産賃貸業を営んでいます。",
+    "products": [
+      "生鮮水産物",
+      "冷凍水産物",
+      "加工水産物",
+      "水産物等の冷蔵保管",
+      "マンション等不動産の賃貸"
+    ],
+    "customers": [
+      "仲卸業者など",
+      "水産会社及び仲卸業者",
+      "マンション等不動産の賃借人"
+    ],
+    "revenueSources": [
+      "水産物の販売による売上",
+      "冷蔵倉庫の保管業務による売上",
+      "不動産賃貸による売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "中部水産",
+        "description": "1946年に設立され、名古屋市中央卸売市場を拠点とする会社です。2026年3月31日現在の従業員数は83人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "水産物の卸売、冷蔵保管と不動産賃貸",
+        "description": "生産者等から生鮮、冷凍、加工水産物の販売の委託を受け、また買付を行い、せり売りなどの方法で販売するほか、水産物等の冷蔵保管とマンション等不動産の賃貸を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "仲卸業者などが顧客",
+        "description": "卸売の顧客は仲卸業者などであり、冷蔵倉庫では水産会社及び仲卸業者の水産物等を保管しています。主要な顧客ごとの情報には丸鮮が印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は37,400百万円",
+        "description": "2026年3月期の売上高は37,400百万円でした。卸売部門は36,620百万円、冷蔵倉庫部門は538百万円、不動産賃貸部門は240百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は440百万円",
+        "description": "2026年3月期の当期純利益は440百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,14 +147,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12208847000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 91,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2022年3月期（第79期）の数値は、誤謬の訂正による遡及処理後の数値であります。また、過年度の決算訂正を行い、2024年4月15日に訂正報告書を提出しております。"
     },
     {
       "fiscalYear": "2023年3月期",
@@ -49,14 +170,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12306279000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 87,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2023年3月期（第80期）の数値は、誤謬の訂正による遡及処理後の数値であります。また、過年度の決算訂正を行い、2024年4月15日に訂正報告書を提出しております。"
     },
     {
       "fiscalYear": "2024年3月期",
@@ -71,11 +193,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13123329000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 86,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +215,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13239874000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 84,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,32 +237,232 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14824284000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 83,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1946,
+      "title": "中部水産株式会社の設立",
+      "description": "中部水産株式会社が設立され、本社を名古屋市中村区西柳町に置きました。",
+      "significance": "当社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "飼料及び魚粉の製造販売業務の開始",
+      "description": "名古屋市熱田区（現中央卸売市場内）において、飼料及び魚粉の製造販売業務を開始しました。",
+      "significance": "水産物卸売以外の事業への広がりの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "名古屋市中央卸売市場の卸売人となる",
+      "description": "農林省許可の名古屋市中央卸売市場卸売人となりました。本社は名古屋市熱田区の中央卸売市場内へ移転しました。",
+      "significance": "現在の主要事業である中央卸売市場での水産物卸売の地位が確立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "名古屋魚市株式会社の営業権の譲受",
+      "description": "名古屋魚市株式会社（卸売人）の営業権を譲り受けました。",
+      "significance": "名古屋市中央卸売市場における卸売の体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "冷蔵倉庫業務の開始",
+      "description": "名古屋市熱田区（中央卸売市場内）に市場冷蔵工場を建設し、冷蔵倉庫業務を開始しました。",
+      "significance": "現在の冷蔵倉庫部門につながる附帯事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "名古屋証券取引所市場第二部への上場",
+      "description": "名古屋証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場企業としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "不動産賃貸業務の開始",
+      "description": "名古屋市熱田区比々野町にマンションを建設し、不動産賃貸業務を開始しました。",
+      "significance": "現在の不動産賃貸部門が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "食品加工場の閉鎖",
+      "description": "食品加工場を閉鎖しました。1961年に名古屋海産加工所を譲り受けて始めた食品加工業務が終了しました。",
+      "significance": "加工業務から撤退しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "ＭＫフード株式会社の完全子会社化",
+      "description": "ＭＫフード株式会社の全株式を取得し、完全子会社化しました。",
+      "significance": "子会社を持つ体制となりました。金額は転記していません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "飼料工場の閉鎖",
+      "description": "飼料工場を閉鎖しました。1949年に始めた飼料及び魚粉の製造販売の流れが終了しました。",
+      "significance": "飼料事業から撤退しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "名古屋証券取引所メイン市場への移行",
+      "description": "名古屋証券取引所の市場区分の見直しにより、市場第二部からメイン市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "福岡出張所の閉鎖",
+      "description": "福岡出張所を閉鎖しました。閉鎖は2026年3月31日をもって行われ、当事業年度末現在の体制に反映されています。",
+      "significance": "1951年に開設した福岡出張所が閉鎖されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nissui",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、株式会社ニッスイは発行済株式（自己株式を除く。）の総数に対する所有株式数の割合が14.6％の大株主の事業会社です。関連当事者情報では主要株主（法人）とされ、当社は同社から水産物等の仕入を行い、役員の兼任があります。当社も同社の株式1,208,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "kyokuyo",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、株式会社極洋は発行済株式（自己株式を除く。）の総数に対する所有株式数の割合が7.3％の大株主の事業会社です。当社は同社の株式を保有し、水産物の取引を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "chuo-gyorui",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、中央魚類株式会社は発行済株式（自己株式を除く。）の総数に対する所有株式数の割合が2.8％の大株主の事業会社です。当社は同社の株式18,256株を保有し、水産物の取引を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "daisui",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、株式会社大水は発行済株式（自己株式を除く。）の総数に対する所有株式数の割合が1.5％の大株主の事業会社です。当社は同社の株式259,000株を保有し、水産物の取引を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第83期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第83期(2025/04/01－2026/03/31)",
       "publisher": "中部水産株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI2J.pdf",
-      "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z8W1.pdf",
+      "publishedAt": "2026-10-20",
+      "docId": "S100Z8W1",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-11"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-12",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中央卸売市場の卸売業者として、安全、安心で良質な水産物の安定供給、適正な価格形成、効率的な物流機能、的確な情報提供などによって地域社会の食生活の充実安定に寄与し、営業力の強化と経営の効率化により強固な経営基盤を確立することを基本方針としています。",
+        "asOf": "2026-10-20",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "戦略の中心は、集荷力と販売力の強化です。広範な情報収集や企画提案力を高めて荷主や販売先の開拓を図り、加工、物流などの市場機能を充実させる方針が示されています。冷蔵倉庫部門では営業の強化と新規顧客の開拓で事業の拡大を図る方針です。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における経営方針と経営戦略等の記載",
+        "asOf": "2026-10-20",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、名古屋市中央卸売市場における卸売人としての地位と、市場に隣接する冷蔵保管体制が一体となっていることです。市場冷蔵倉庫と日比野冷蔵倉庫を持ち、日比野冷蔵倉庫には超低温室があり、生鮮、冷凍、加工水産物の販売と保管を同じ市場圏で担えます。",
+        "basis": "事業の内容における主要事業の記載と、主要な設備の状況における冷蔵倉庫の記載",
+        "asOf": "2026-10-20",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の大半は卸売部門によるもので、2026年3月期の卸売部門の売上高は36,620百万円と、売上高37,400百万円の大半を占めています。地域ごとの情報は本邦の外部顧客への売上高が90％を超えるため省略され、主要な顧客ごとの情報には丸鮮が卸売部門及び冷蔵倉庫部門の顧客として印字されています。",
+        "basis": "セグメント情報における製品及びサービスごとの情報、地域ごとの情報、主要な顧客ごとの情報の記載と、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における経営成績の状況の記載",
+        "asOf": "2026-10-20",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

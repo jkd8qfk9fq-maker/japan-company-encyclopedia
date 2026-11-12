@@ -4,15 +4,122 @@
   "name": "アリアケジャパン",
   "officialName": "アリアケジャパン株式会社",
   "nameEn": "ARIAKE JAPAN Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "ARIAKE JAPAN Co.,Ltd.",
+  "description": "天然調味料の製造販売を行う食品メーカーで、長崎県の工場と海外子会社を通じて食品メーカーなどに天然エキスを供給しています。",
   "listings": [
     {
-      "exchange": "tse",
-      "market": "プライム"
+      "exchange": "tse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "natural-seasonings",
+      "name": "天然調味料事業",
+      "description": "当社と連結子会社8社・非連結子会社1社で構成するグループの中核事業で、天然調味料の製造販売を行う単一セグメントです。2026年3月期の売上高は66,957百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "liquid-natural-seasonings",
+          "name": "液体天然調味料",
+          "description": "畜産エキスなどを液体状にした主力の天然調味料で、製品として販売するほか、商品としても仕入れて販売しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "powdered-natural-seasonings",
+          "name": "粉体天然調味料",
+          "description": "天然調味料を粉体状にした製品で、製品として販売するほか、商品としても仕入れて販売しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "liquid-soups",
+          "name": "液体スープ",
+          "description": "液体状のスープ製品で、天然調味料と並ぶ製品区分の一つです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-products",
+          "name": "その他",
+          "description": "上記以外の製品・商品の区分です。非連結子会社のアリアケファーム株式会社は農産物の生産を行い、当社への供給と国内消費者への販売を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "畜産エキスなどの天然調味料を国内工場と海外子会社の工場で製造し、食品メーカーや外食事業者などに販売する事業モデルです。",
+    "products": [
+      "液体天然調味料",
+      "粉体天然調味料",
+      "液体スープ"
+    ],
+    "customers": [
+      "国内の食品メーカーや外食事業者などの業務用顧客",
+      "中国・東南アジア・欧州・米国などの海外の食品メーカーなどのユーザー"
+    ],
+    "revenueSources": [
+      "天然調味料の製品・商品の販売代金"
+    ],
+    "suppliers": [
+      {
+        "name": "原材料の仕入先",
+        "description": "国内における原料調達は、創業来50年以上の事業の中で安定調達ができる仕組みが確立されています。一部の原料は海外子会社の工場からも戦略的に調達し、調達に支障が生じてもグローバルで補完できる体制としています。",
+        "businessIds": [
+          "natural-seasonings"
+        ]
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "アリアケジャパンとグループ会社",
+        "description": "アリアケジャパン株式会社は東京都渋谷区に本社を置き、連結子会社8社と非連結子会社1社でグループを構成しています。連結の従業員数は1,201人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "天然調味料を世界各地の工場で製造",
+        "description": "畜産エキスなどの天然調味料を、長崎県佐々町の九州第1工場・九州第2工場と、中国・台湾・フランス・ベルギー・オランダ・インドネシア・米国の子会社工場で製造し、液体・粉体の天然調味料や液体スープとして提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "食品メーカーなどの業務用顧客",
+        "description": "販売先は主として国内の食品メーカーや外食事業者などの顧客で、海外子会社は中国・東南アジア・欧州・米国などのユーザーに販売しています。連結売上高の10％以上を占める主要な顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は66,957百万円",
+        "description": "2026年3月期の連結売上高は66,957百万円（前期比2.4％増）でした。地域別の売上高は日本が48,456百万円、アジアが10,039百万円、欧州が8,461百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は9,458百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は9,458百万円（前期比15.3％増）でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +134,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 106338971000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1041,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +154,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 111743316000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1061,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +174,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 120279238000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1106,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 128383495000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1166,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 134749918000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1201,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +222,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第48期(2025/04/01－2026/03/31)",
-      "publisher": "アリアケジャパン株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDGM.pdf",
-      "publishedAt": "2026-06-17",
-      "accessedAt": "2026-09-28"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-28",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +233,286 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1978,
+      "title": "日本食資工業株式会社を設立",
+      "description": "1978年5月に日本食資工業株式会社を設立し、同年8月に長崎県小佐々町に畜産エキス生産工場を建設しました。",
+      "significance": "現在のアリアケジャパンの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "米国に子会社ARIAKE U.S.A.,Inc.を設立",
+      "description": "1985年2月に海外拠点として米国カリフォルニア州に現地法人ARIAKE U.S.A.,Inc.（旧社名INTERNATIONAL SEASONING,Inc.）を設立しました。",
+      "significance": "海外展開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "有明フードマテリアル株式会社に商号変更",
+      "description": "1988年5月に本店を長崎県佐世保市に移転し、同年6月に有明フードマテリアル株式会社に商号変更しました。",
+      "significance": "食品素材メーカーとしての社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "アリアケジャパン株式会社に商号変更",
+      "description": "1990年4月に有明食品化工株式会社を吸収合併し、アリアケジャパン株式会社に商号変更するとともに、本店を東京都目黒区に移転しました。同年9月には長崎県小佐々町に立体自動倉庫を建設し、米国バージニア州ハリソンバーグ市にARIAKE U.S.A.,Inc.の工場を建設しました。",
+      "significance": "現在の社名と体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "日本証券業協会に店頭売買銘柄として登録",
+      "description": "1991年10月に日本証券業協会に店頭売買銘柄として登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "中国に青島有明食品有限公司を設立",
+      "description": "1994年12月に海外拠点として中国山東省に現地法人青島有明食品有限公司を設立しました。",
+      "significance": "中国での生産体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "東京証券取引所市場第2部に上場",
+      "description": "1995年9月に東京証券取引所市場第2部に株式を上場しました。",
+      "significance": "取引所上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "本店を東京都渋谷区恵比寿南に移転",
+      "description": "1998年6月に新本社社屋の建設に伴い本店を東京都渋谷区恵比寿南に移転し、長崎県佐々町に九州第2工場を建設しました。",
+      "significance": "現在の本社所在地と主力工場体制の形成です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "R&Dセンターを建設",
+      "description": "2000年11月に長崎県佐々町にR&Dセンターを建設しました。",
+      "significance": "研究開発体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "東京証券取引所市場第1部に上場",
+      "description": "2002年3月に東京証券取引所市場第1部に株式を上場しました。",
+      "significance": "市場第1部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "フランスにF.P. Natural Ingredients S.A.S.を設立",
+      "description": "2003年3月に海外拠点としてフランス・パリに現地法人F.P. Natural Ingredients S.A.S.を設立しました。",
+      "significance": "欧州での生産体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ベルギーにAriake Europe N.V.を設立",
+      "description": "2004年1月に海外拠点としてベルギーのマースメヒレン市に現地法人Ariake Europe N.V.（旧F.P.N.I.BELGIUM N.V.）を設立しました。",
+      "significance": "欧州体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "アリアケファーム株式会社を設立",
+      "description": "2005年7月に子会社アリアケフードシステム株式会社を吸収合併し、同年8月に農業事業を行う法人としてアリアケファーム株式会社を設立しました。",
+      "significance": "原料となる農産物の生産体制の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "台湾有明食品股份有限公司を買収",
+      "description": "2006年5月に台湾の現地法人である台湾有明食品股份有限公司（旧社名 台湾東幸食品股份有限公司）を買収しました。",
+      "significance": "台湾での生産体制の確保です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "九州第2工場の隣接地に新工場を建設",
+      "description": "2007年4月に長崎県佐々町の九州第2工場の隣接地に新工場を建設しました。",
+      "significance": "国内生産能力の増強です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "ベルギーとフランスに工場を建設",
+      "description": "2008年6月にベルギーのマースメヒレン市にAriake Europe N.V.の工場を、フランスのアランソン市にF.P. Natural Ingredients S.A.S.の工場を建設しました。",
+      "significance": "欧州での現地生産の本格化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "Henningsen Nederland B.V.を買収",
+      "description": "2013年11月にAriake Europe N.V.がオランダのHenningsen Nederland B.V.を買収しました。",
+      "significance": "欧州子会社の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "インドネシアにPT.Ariake Europe Indonesiaを設立",
+      "description": "2016年3月に海外拠点としてインドネシア西ジャワ州に現地法人PT.Ariake Europe Indonesiaを設立しました。",
+      "significance": "「世界7極体制」の一角を担う東南アジア拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ARIAKE U.S.A., Inc.の全株式を譲渡",
+      "description": "2019年3月にARIAKE U.S.A., Inc.の当社保有の全株式をKerry Holding Co.へ譲渡しました。",
+      "significance": "米国事業の体制見直しです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "中国に日照有明食品有限公司を設立",
+      "description": "2021年11月に海外拠点として中国山東省に現地法人日照有明食品有限公司を設立しました。",
+      "significance": "中国体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "2022年4月に東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "米国にARIAKE U.S.A., Inc.を設立",
+      "description": "2024年7月に海外拠点として米国バージニア州に現地法人ARIAKE U.S.A., Inc.を設立しました。",
+      "significance": "米国での生産体制の再構築です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "ohsho-food-service",
+      "relationship": "major-shareholder",
+      "description": "株式会社王将フードサービスは、2026年3月31日現在、当社の発行済株式（自己株式を除く。）の総数に対する割合で2.46％を保有する大株主です。当社も同社の株式3,300,000株を保有しており、その保有目的は企業間取引の強化とされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第48期(2025/04/01－2026/03/31)",
+      "publisher": "アリアケジャパン株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDGM.pdf",
+      "publishedAt": "2026-06-17",
+      "docId": "S100YDGM",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-12",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念として、天然調味料の生産を通して健康で豊かな食文化に寄与することと、顧客第一主義を掲げています。中期的な経営戦略では、天然調味料の専業メーカーから総合調味料メーカーへ事業を広げること、国内マーケットの徹底した追求による需要拡大と世界マーケットの開拓をポイントとし、日本と海外子会社の生産拠点による「世界7極体制」で最適地生産を実現するとしています。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "競争優位の源泉として、中国・ヨーロッパをはじめ海外に生産拠点を有し良質で廉価な原料調達ができること、コンピューター生産方式による大規模工場を確立していること、約50年の歴史の中で蓄積された経験曲線や工程の「カイゼン」が生きていることの3点を挙げ、これらによって高品質な製品を安価で生産する仕組みができていると説明しています。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "事業は天然調味料事業の単一セグメントで、2026年3月期の売上高66,957百万円の地域別の内訳は日本48,456百万円、アジア10,039百万円、欧州8,461百万円です。欧州は前期比16.3％増と伸びが大きく、アジアは前期比3.2％減でした。売上高の10％以上を占める主要な顧客はなく、販売実績が最も大きい相手先は三井物産流通グループ株式会社で、総販売実績に対する割合は9.2％です。",
+        "basis": "セグメント情報（天然調味料事業の単一セグメントであること）、関連情報の地域ごとの情報と主要な顧客ごとの情報、MD&Aの地域別の売上高に基づきます。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

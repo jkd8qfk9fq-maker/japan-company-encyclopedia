@@ -4,19 +4,141 @@
   "name": "中部鋼鈑",
   "officialName": "中部鋼鈑株式会社",
   "nameEn": "Chubu Steel Plate Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Chubu Steel Plate Co.,Ltd.",
+  "description": "鉄スクラップを主原料に電気炉で厚板を製造・販売する鉄鋼メーカーで、レンタル・物流・エンジニアリングの子会社事業も営む会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     },
     {
       "exchange": "nse",
-      "market": "プレミア"
+      "market": "プレミア市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "chubu-steel-plate",
+      "name": "中部鋼鈑株式会社",
+      "description": "名古屋市中川区に本社・工場を置く電気炉メーカーで、連結子会社4社とグループを構成しています。報告セグメントは鉄鋼関連・レンタル・物流・エンジニアリングの4事業で、2026年3月期の連結従業員数は521人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "steel",
+          "name": "鉄鋼関連事業",
+          "description": "当社とシーケー商事株式会社で構成され、主原料の鉄スクラップを仕入れ、電気炉による厚板鉄鋼製品の製造・販売を行います。2026年3月期の外部顧客への売上高は48,346百万円です。",
+          "customers": [
+            "鉄鋼商社",
+            "産業機械・建設機械分野の需要家",
+            "建築分野の需要家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "engineering",
+          "name": "エンジニアリング事業",
+          "description": "明徳産業株式会社が担い、鉄鋼関連設備を中心とするプラントの設計・施工及び設備保全に関するエンジニアリング事業を行います。2026年3月期の外部顧客への売上高は1,468百万円です。",
+          "customers": [
+            "鉄鋼関連設備を保有する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "rental",
+          "name": "レンタル事業",
+          "description": "シーケークリーンアド株式会社が担い、業務用厨房向グリスフィルターのレンタル事業及び広告看板事業を行います。2026年3月期の外部顧客への売上高は785百万円です。",
+          "customers": [
+            "業務用厨房の運営事業者",
+            "広告看板の発注企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "logistics",
+          "name": "物流事業",
+          "description": "シーケー物流株式会社が担い、運送・荷役事業と危険物倉庫事業を行います。2026年3月期の外部顧客への売上高は503百万円です。",
+          "customers": [
+            "荷主企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "鉄スクラップを仕入れて電気炉で厚板鉄鋼製品を製造し、鉄鋼商社などを通じて産業機械・建設機械・建築向けに販売して代金を得る事業モデルです。",
+    "products": [
+      "厚板鉄鋼製品",
+      "業務用厨房向グリスフィルターのレンタルサービス",
+      "広告看板",
+      "運送・荷役サービス及び危険物倉庫サービス",
+      "プラントの設計・施工及び設備保全サービス"
+    ],
+    "customers": [
+      "鉄鋼商社",
+      "産業機械・建設機械分野の需要家",
+      "建築分野の需要家",
+      "業務用厨房の運営事業者"
+    ],
+    "revenueSources": [
+      "厚板鉄鋼製品の販売代金",
+      "グリスフィルターのレンタル料及び広告看板事業の対価",
+      "運送・荷役及び倉庫事業の対価",
+      "エンジニアリング事業の対価"
+    ],
+    "suppliers": [],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "中部鋼鈑株式会社",
+        "description": "名古屋市中川区に本社・工場を置き、連結子会社4社とグループを構成する電気炉メーカーです。2026年3月期の連結従業員数は521人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "厚板鉄鋼製品と子会社のサービス事業",
+        "description": "主原料の鉄スクラップから電気炉で厚板を製造する鉄鋼関連事業が中核で、2026年3月期の外部顧客への売上高は48,346百万円です。連結子会社がレンタル・物流・エンジニアリングの各事業も営みます。"
+      },
+      {
+        "kind": "customer",
+        "title": "鉄鋼商社を通じた産業機械・建設機械・建築向け",
+        "description": "主要な販売先は阪和興業、日鉄物産、株式会社メタルワンの鉄鋼商社で、主需要先は産業機械・建設機械向けと建築向けです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は51,103百万円",
+        "description": "2026年3月期の売上高は51,103百万円でした。セグメント別では鉄鋼関連事業が48,346百万円、エンジニアリング事業が1,468百万円、レンタル事業が785百万円、物流事業が503百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は1,275百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,275百万円でした。前連結会計年度は1,731百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +153,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 66058000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 500,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 73720000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 504,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 77494000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 521,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 76022000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 522,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +233,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 75736000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 521,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,22 +241,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第102期(2025/04/01－2026/03/31)",
-      "publisher": "中部鋼鈑株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y9WS.pdf",
-      "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-29"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-29",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -146,5 +252,228 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1950,
+      "title": "中部鋼鈑株式会社を設立",
+      "description": "鋼板の製造及び販売を目的として中部鋼鈑株式会社を設立し、熱田工場で鋼板の圧延を開始しました。",
+      "significance": "当社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "電気炉を設置し製鋼・圧延の一貫体制を確立",
+      "description": "熱田工場に電気炉を設置し、製鋼から圧延までの一貫体制を確立しました。",
+      "significance": "電気炉メーカーとしての生産体制の確立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "名古屋証券取引所市場第二部に上場",
+      "description": "名古屋証券取引所の市場第二部に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "明徳産業株式会社を設立",
+      "description": "連結子会社となる明徳産業株式会社を設立しました。現在のエンジニアリング事業の担い手です。",
+      "significance": "グループ事業の展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "名古屋証券取引所市場第一部に指定",
+      "description": "名古屋証券取引所の市場第一部に指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "シーケー商事株式会社を設立",
+      "description": "連結子会社となるシーケー商事株式会社を設立しました。鉄鋼関連事業で当社製品の販売や原材料の納入を担います。",
+      "significance": "鉄鋼関連事業の販売体制の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "シーケー物流株式会社を設立",
+      "description": "連結子会社となるシーケー物流株式会社を設立しました。現在の物流事業の担い手です。1994年にはシーケークリーンアド株式会社も設立しています。",
+      "significance": "子会社事業の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "ベトナム子会社の全出資持分を譲渡",
+      "description": "MEITOKU ENGINEERING VIETNAM CO.,LTD.の全出資持分を譲渡しました。",
+      "significance": "海外子会社の整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に上場",
+      "description": "東京証券取引所のプライム市場に株式を上場しました。名古屋証券取引所では市場第一部からプレミア市場へ移行しました。",
+      "significance": "東証上場と市場区分の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "製鋼工場の電気炉を更新",
+      "description": "製鋼工場の電気炉を更新しました。新しい電気炉は、その後の安定操業と生産性の改善の基盤となっています。",
+      "significance": "主力設備の更新です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "hanwa",
+      "relationship": "customer",
+      "description": "主要な顧客ごとの情報に最大の販売先として印字され、特定投資株式の保有目的にも鉄鋼製品の販売、資材の仕入取引を行っている旨が個別に印字される販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "companyId": "okaya-and-co",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に「鉄鋼製品の販売、資材の仕入取引を行っており、取引関係の維持・強化を図るため保有しております」と個別に印字される取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nakayama-steel-works",
+      "relationship": "business-partner",
+      "description": "経営方針に、24中期経営計画の諸施策を「株式会社中山製鋼所との業務提携を有効に活用しつつ推進しております」と印字される、業務提携等の関係にある提携先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営方針、経営環境及び対処すべき課題等】"
+    },
+    {
+      "companyId": "yotai-refractories",
+      "relationship": "supplier",
+      "description": "特定投資株式の保有目的に「重要資材の仕入取引を行っており、取引関係の維持・強化を図るため保有しております」と個別に印字される仕入先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toho-gas",
+      "relationship": "supplier",
+      "description": "特定投資株式の保有目的に「重要資材の仕入取引を行っており、取引関係の維持・強化を図るため保有しております」と個別に印字される仕入先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sec-carbon",
+      "relationship": "supplier",
+      "description": "特定投資株式の保有目的に「重要資材の仕入取引を行っており、取引関係の維持・強化を図るため保有しております」と個別に印字される仕入先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "meidensha",
+      "relationship": "supplier",
+      "description": "特定投資株式の保有目的に「製鉄設備の維持更新に関わる取引を行っており、同社との関係の維持・強化を図るため保有しております」と個別に印字される取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第102期(2025/04/01－2026/03/31)",
+      "publisher": "中部鋼鈑株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y9WS.pdf",
+      "publishedAt": "2026-06-22",
+      "docId": "S100Y9WS",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-12",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "24中期経営計画（2024～2026年度）では「鉄鋼製品80万トンの販売」「脱炭素対応」「持続可能な基盤整備」の3つの基本方針を掲げ、新電気炉の性能を発揮した効率的な操業とコストダウン、環境負荷低減、品質の更なる向上を進め、高品質な製品を市場に安定的に供給することで企業価値の持続的な向上に努める方針です。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "中計の主要KPIの進捗として、鉄鋼製品販売量は2025年度実績45万トンで、2025年1月に発生した製鋼工場の事故による製造・販売面への影響が継続し進捗が遅延している旨が印字されています。環境配慮型電気炉鋼材「すみれす」の開発及び販売開始や、製鋼工場の勤務体制の4直化などの施策が進められています。",
+        "basis": "経営方針（24中期経営計画の概要と進捗状況、主要KPIの進捗状況）、MD&Aの経営成績の概要",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "鉄スクラップを主原料とする電気炉製鋼で、製鋼から圧延までの一貫体制を持ち、資源リサイクルによる鉄づくりを原点としています。2024年10月に製鋼工場の電気炉を更新し、新電気炉の安定操業と生産性の改善を進めており、環境配慮型電気炉鋼材「すみれす」を開発して販売を開始しています。",
+        "basis": "経営方針（会社の経営の基本方針）、沿革、事業の内容、MD&Aの経営成績の概要",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の大半を鉄鋼関連事業が占め、残りをエンジニアリング・レンタル・物流の子会社事業が構成します。主要な顧客ごとの情報では、阪和興業、日鉄物産、株式会社メタルワンの鉄鋼商社3社への販売がそれぞれ連結売上高の1割を超えています。地域ごとの情報は、本邦の外部顧客への売上高が9割を超えるため記載が省略されています。",
+        "basis": "セグメント情報（報告セグメントごとの外部顧客への売上高、関連情報の主要な顧客ごとの情報・地域ごとの情報）、MD&Aの経営成績の概要",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

@@ -4,15 +4,158 @@
   "name": "アスカ",
   "officialName": "アスカ株式会社",
   "nameEn": "ASKA CORPORATION",
-  "description": null,
+  "shortNameEn": "ASKA CORPORATION",
+  "description": "自動車部品を中心に制御盤や産業用ロボットシステムを製造販売し、サーキット経営なども手がける会社です。",
   "listings": [
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    },
+    {
+      "industryId": "machinery",
+      "primary": false
+    },
+    {
+      "industryId": "electronics",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "aska",
+      "name": "アスカ株式会社",
+      "description": "愛知県刈谷市に本店を置き、当社と子会社8社及び関連会社1社でグループを構成しています。自動車部品、制御システム及びロボットシステムの製造・販売を主な事業とし、モータースポーツ事業、賃貸及び太陽光事業、損害保険代理業も行っています。2025年11月期の連結従業員数は746人です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "automobile-parts",
+          "name": "自動車部品事業",
+          "description": "ピラー、サイドルーフレール、フロアクロス、ラジエーターサポート等の自動車部品を製造販売する事業です。当社が製造・販売し、子会社AMI株式会社は金型の設計・製作・販売、子会社PT.AUTO ASKA INDONESIAは自動車部品の製造・販売、関連会社N&Aテック株式会社も自動車部品の製造・販売を行っています。2025年11月期の外部顧客への売上高は36,254百万円です。",
+          "customers": [
+            "自動車メーカー",
+            "自動車関連メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "robot-system",
+          "name": "ロボットシステム事業",
+          "description": "産業用ロボット（ユニロボ）、自動化システム、制御装置、情報通信機器等を製造販売する事業です。当社が製造・販売し、子会社株式会社ジャスティスと子会社株式会社MIRAI-LABはロボットシステムの設計・製作・販売を行い、子会社ASKA USA CORPORATIONは製造・販売・メンテナンスを行っています。2025年11月期の外部顧客への売上高は5,120百万円です。",
+          "customers": [
+            "製造業の生産現場",
+            "自動車関連メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "control-system",
+          "name": "制御システム事業",
+          "description": "分電盤、制御盤、FAボックス、盤用キャビネット等を製造販売する事業です。当社が製造・販売しています。2025年11月期の外部顧客への売上高は3,419百万円です。",
+          "customers": [
+            "工場などの設備需要家",
+            "製造業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "motorsports",
+          "name": "モータースポーツ事業",
+          "description": "サーキット場の経営を行う事業です。子会社株式会社岡山国際サーキットがサーキット場の経営を行い、子会社株式会社チームルマンは自動車レース業を行っています。2025年11月期の外部顧客への売上高は1,410百万円です。",
+          "customers": [
+            "サーキットの利用者",
+            "レースイベントの来場者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "lease-and-solar",
+          "name": "賃貸及び太陽光事業",
+          "description": "倉庫・工場の賃貸業務と、太陽光発電による電力の売却を行う事業です。当社が行っています。2025年11月期の外部顧客への売上高は152百万円です。",
+          "customers": [
+            "倉庫・工場の借主",
+            "電力の購入者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自動車部品・制御システム・ロボットシステムの製造販売を中核に、モータースポーツや賃貸・太陽光も行い、製品とサービスの販売対価を得る事業モデルです。",
+    "products": [
+      "ピラーやサイドルーフレールなどの自動車部品",
+      "分電盤・制御盤・FAボックスなどの制御システム",
+      "産業用ロボット（ユニロボ）や自動化システム",
+      "サーキット場の運営サービス",
+      "倉庫・工場の賃貸と太陽光発電による電力"
+    ],
+    "customers": [
+      "自動車メーカーと自動車関連メーカー",
+      "電機・建設・繊維・流通などの業界の需要家",
+      "サーキットの利用者とレース関係者",
+      "倉庫・工場の借主"
+    ],
+    "revenueSources": [
+      "自動車部品の販売による売上高",
+      "制御システムとロボットシステムの販売による売上高",
+      "サーキット場の経営による売上高",
+      "賃貸料と太陽光発電による電力の売却による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "アスカ株式会社",
+        "description": "愛知県刈谷市に本店を置き、子会社8社と関連会社1社でグループを構成するメーカーです。2025年11月期の連結従業員数は746人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "自動車部品と制御・ロボットシステム",
+        "description": "ピラーなどの自動車部品、分電盤や制御盤などの制御システム、産業用ロボット（ユニロボ）や自動化システムを製造販売し、サーキット場の経営や倉庫・工場の賃貸、太陽光発電による電力の売却も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車メーカーなど",
+        "description": "販売先は自動車メーカーや自動車関連メーカーのほか、電機、建設、繊維、流通など多岐にわたる業界です。主要な顧客には豊田鉄工株式会社や三菱自動車工業株式会社などがあります。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は463億5,673万円",
+        "description": "2025年11月期の売上高は463億5,673万円でした。事業別では自動車部品事業が36,254百万円、ロボットシステム事業が5,120百万円、制御システム事業が3,419百万円、モータースポーツ事業が1,410百万円、賃貸及び太陽光事業が152百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は15億2,141万円",
+        "description": "2025年11月期の親会社株主に帰属する当期純利益は15億2,141万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年11月期",
@@ -27,7 +170,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8681695000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 724,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +190,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10447654000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 749,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11821533000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 756,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12984302000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 719,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +250,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14534456000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 746,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +258,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第72期(2024/12/01－2025/11/30)",
-      "publisher": "アスカ株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XNA6.pdf",
-      "publishedAt": "2026-02-26",
-      "accessedAt": "2026-09-29"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-29",
   "workforce": {
     "fiscalYear": "2025年11月期",
     "asOf": "2025-11-30",
@@ -142,5 +269,267 @@
       "yuho-2025"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1953,
+      "title": "片山工業株式会社を設立",
+      "description": "1953年、一般金属製品及び自動車用板金部品の製造販売を目的として、名古屋市中区伊勢山に片山工業株式会社を設立しました。",
+      "significance": "アスカの創業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "配電盤・制御盤の生産を開始",
+      "description": "1967年、配電盤、制御盤を完成品として生産を開始しました。",
+      "significance": "現在の制御システム事業につながる製品の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "ロボットシステム事業に参入",
+      "description": "1986年、ロボットシステム事業に参入しました。",
+      "significance": "現在のロボットシステム事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "商号をアスカ株式会社に変更",
+      "description": "1992年、商号をアスカ株式会社に変更しました。同年、損害保険代理店業務を目的として子会社アスカ有限会社を設立しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "名古屋証券取引所市場第二部に上場",
+      "description": "1997年、名古屋証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式上場の年です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "米国にASKA USA CORPORATIONを設立",
+      "description": "2007年、米国に子会社ASKA USA CORPORATIONを設立しました。",
+      "significance": "ロボットシステム事業の米国拠点の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "岡山国際サーキットを子会社化し、インドネシアと小牧に子会社を設立",
+      "description": "2012年、株式会社岡山国際サーキットの全株式を取得し子会社化しました。同年、インドネシアに子会社PT.AUTO ASKA INDONESIAを、愛知県小牧市に金型の子会社AMI株式会社を設立しました。",
+      "significance": "モータースポーツ事業への参入と、自動車部品事業の海外生産・金型体制の拡充です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "賃貸及び太陽光事業に参入",
+      "description": "2014年、賃貸及び太陽光事業に参入しました。",
+      "significance": "現在の賃貸及び太陽光事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "ジャスティスを子会社化",
+      "description": "2016年、株式会社ジャスティスの全株式を取得し子会社化しました。",
+      "significance": "ロボットシステム事業の体制拡充です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "ニチアスと合弁でN&Aテックを設立",
+      "description": "2017年、ニチアス株式会社と合弁でN&Aテック株式会社を設立しました。",
+      "significance": "自動車部品事業の持分法適用関連会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "MIRAI-LABを設立",
+      "description": "2018年、子会社株式会社MIRAI-LABを設立しました。同社は当連結会計年度から、重要性が増したため連結の範囲に含まれています。",
+      "significance": "ロボットシステム事業の子会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "名古屋証券取引所メイン市場へ移行",
+      "description": "2022年、名古屋証券取引所の市場区分の見直しにより、市場第二部からメイン市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "本店を刈谷市新富町へ移転",
+      "description": "2024年、本店を愛知県刈谷市新富町に移転しました。同年、中国の連結子会社阿司科機電（上海）有限公司の清算を結了しました。",
+      "significance": "現在の本店所在地への移転です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-motors",
+      "relationship": "customer",
+      "description": "【セグメント情報】の主要な顧客ごとの情報に載る顧客で、関連するセグメントは自動車部品事業です。前連結会計年度に続いて当連結会計年度も主要な顧客として印字されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "nichias",
+      "relationship": "major-shareholder",
+      "description": "2025年11月30日現在、発行済株式（自己株式を除く。）の13.63％を保有する大株主の事業会社です。アスカと合弁で持分法適用関連会社N&Aテック株式会社を設立しており、自動車部品事業では受注活動における重要取引先として、アスカが同社株式100,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "nissan",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式に載る会社で、自動車部品事業において受注活動における重要取引先と印字されており、アスカが同社株式9,200株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "panasonic-holdings",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式に載る会社で、制御システム事業において受注活動における重要取引先と印字されており、アスカが同社株式49,950株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okaya-and-co",
+      "relationship": "supplier",
+      "description": "【株式の保有状況】の特定投資株式に載る会社で、自動車部品事業において材料調達における重要取引先と印字されており、アスカが同社株式400株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "oyo",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】の特定投資株式に載る会社で、当社グループにおいて自動化設備等の重要取引先と印字されており、取引関係の維持・強化を目的とする業務提携等の関係として、アスカが同社株式78,300株を保有しています。保有目的に取引の向きの印字がないためbusiness-partnerとした。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "unipres",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】の特定投資株式に載る会社で、ロボットシステム事業において自動化設備等の重要取引先と印字されており、取引関係の維持・強化を目的とする業務提携等の関係として、アスカが同社株式8,561株を保有しています。保有目的に取引の向きの印字がないためbusiness-partnerとした。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "unisol-holdings",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】の特定投資株式に載る会社で、当社グループの生産設備において重要取引先と印字されており、取引関係の維持・強化を目的とする業務提携等の関係として、アスカが同社株式77,400株を保有しています。保有目的に取引の向きの印字がないためbusiness-partnerとした。同社は2026年1月1日付でフルサト・マルカホールディングス株式会社から商号変更したと注記されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2025",
+      "title": "有価証券報告書－第72期(2024/12/01－2025/11/30)",
+      "publisher": "アスカ株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XNA6.pdf",
+      "publishedAt": "2026-02-26",
+      "docId": "S100XNA6",
+      "asOf": "2025-11-30",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-12",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営の基本方針である「人材育成こそ経営そのもの」との理念に基づき、「人と技術に優れた会社」を目指しています。中長期の経営戦略では、自動車部品事業、制御システム事業及びロボットシステム事業を中核事業として発展させ、顧客起点に立った営業力の強化、新規市場の開拓、戦略に合致する企業のM&Aによる事業の拡大を中心に進めるとしています。",
+        "asOf": "2026-02-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2025年11月期の売上高は463億5,673万円で、自動車部品事業の36,254百万円が大半を占めています。販売実績ではロボットシステム事業が前期比35.1％増の5,120百万円と伸びており、当連結会計年度から株式会社MIRAI-LABを連結対象に含めたことが印字されています。",
+        "basis": "セグメント情報の外部顧客への売上高、MD&Aの販売実績、連結の範囲の変更に関する注記",
+        "asOf": "2026-02-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "創業から蓄積した自動車部品製造におけるプレスや溶接に対するノウハウや高度な技術を活かし、溶接に必要な自動化設備の制御や組立の設計の技術を伝えていくことを大切にしてきたと説明されています。研究開発では、電気自動車部品の軽量化対応による超ハイテン部品への取組や、協働ロボットを利用した設備検討を行っています。",
+        "basis": "サステナビリティに関する考え方及び取組、研究開発活動、事業の内容",
+        "asOf": "2026-02-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは自動車部品、制御システム、ロボットシステム、モータースポーツ、賃貸及び太陽光の5つです。地域ごとの売上高は日本が37,124百万円、インドネシアが7,337百万円、米国が1,895百万円で、主要な顧客ごとの情報には豊田鉄工株式会社、PT.Mitsubishi Motors Krama Yudha Indonesia、株式会社協豊製作所、三菱自動車工業株式会社が並んでいます。",
+        "basis": "セグメント情報（報告セグメントの概要と外部顧客への売上高、関連情報の地域ごとの情報と主要な顧客ごとの情報）",
+        "asOf": "2026-02-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
   }
 }

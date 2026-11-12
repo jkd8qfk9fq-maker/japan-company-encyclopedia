@@ -4,15 +4,153 @@
   "name": "中部日本放送",
   "officialName": "中部日本放送株式会社",
   "nameEn": "CHUBU-NIPPON BROADCASTING CO.,LTD.",
-  "description": null,
+  "shortNameEn": "CHUBU-NIPPON BROADCASTING CO.,LTD.",
+  "description": "名古屋市を拠点とする認定放送持株会社で、テレビ・ラジオ放送を中心とするメディアコンテンツ事業と不動産事業を展開する会社です。",
   "listings": [
     {
       "exchange": "nse",
-      "market": "プレミア"
+      "market": "プレミア市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "media",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "media-contents",
+      "name": "メディアコンテンツ関連",
+      "description": "放送法によるテレビおよびラジオの放送、放送番組の制作・販売、動画コンテンツ等の制作・販売、音楽、スポーツ等のイベント、住宅展示場関連事業、広告代理業を行う事業です。当社、株式会社ＣＢＣテレビ、株式会社ＣＢＣラジオ、株式会社ＣＢＣクリエイション、株式会社ＣＢＣコミュニケーションズ、株式会社ケイマックス、株式会社ＣＢＣ Ｄテックなどで構成されます。2026年3月期の外部顧客への売上高は32,062百万円でした。",
+      "customers": [
+        "広告主",
+        "広告代理店",
+        "視聴者・聴取者",
+        "イベントのスポンサー企業と来場者",
+        "コンテンツの配信先・販売先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "television-radio",
+          "name": "テレビ・ラジオ",
+          "description": "株式会社ＣＢＣテレビがテレビの放送を、株式会社ＣＢＣラジオがラジオの放送を行います。2026年3月期の外部顧客への売上高は28,242百万円でした。",
+          "customers": [
+            "広告主",
+            "広告代理店",
+            "視聴者・聴取者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other-media-contents",
+          "name": "その他メディアコンテンツ",
+          "description": "放送番組や動画コンテンツ等の制作・販売、音楽、スポーツ等のイベント、住宅展示場関連事業、広告代理業など、テレビ・ラジオ以外のメディアコンテンツ事業です。2026年3月期の外部顧客への売上高は3,819百万円でした。",
+          "customers": [
+            "広告主",
+            "イベントのスポンサー企業と来場者",
+            "コンテンツの配信先・販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産関連",
+      "description": "不動産の賃貸・管理ならびに太陽光発電事業を行う事業です。当社、株式会社千代田会館、株式会社ＣＢＣビップスで構成されます。名古屋市の商業施設「グランパルク」や賃貸ビル、長島太陽光発電所などを保有しています。2026年3月期の外部顧客への売上高は1,905百万円でした。",
+      "customers": [
+        "賃貸ビル・商業施設のテナント"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業で、ゴルフ場の経営、保険代理業、ＯＡ機器販売等を行う事業です。株式会社南山カントリークラブ、株式会社ＣＢＣビップス、春日井開発株式会社、株式会社中日新聞保険サービス、株式会社インターシンクなどで構成されます。2026年3月期の外部顧客への売上高は975百万円でした。",
+      "customers": [
+        "ゴルフ場の利用者",
+        "保険の契約者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "子会社によるテレビ・ラジオ放送と番組・コンテンツの制作販売、放送時間の販売、不動産の賃貸・管理などで収益を得る事業モデルです。",
+    "products": [
+      "テレビ放送とラジオ放送",
+      "放送番組の制作・販売",
+      "動画コンテンツ等の制作・販売",
+      "音楽、スポーツ等のイベント",
+      "住宅展示場関連事業と広告代理業",
+      "不動産の賃貸・管理と太陽光発電"
+    ],
+    "customers": [
+      "広告主と広告代理店",
+      "視聴者・聴取者",
+      "イベントのスポンサー企業と来場者",
+      "賃貸ビル・商業施設のテナント",
+      "ゴルフ場の利用者"
+    ],
+    "revenueSources": [
+      "放送時間の販売による収入",
+      "コンテンツの制作・販売による収入",
+      "イベントや広告代理業による収入",
+      "不動産の賃貸・管理による収入"
+    ],
+    "suppliers": [],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "中部日本放送株式会社",
+        "description": "名古屋市中区に本社を置く認定放送持株会社で、連結子会社9社、非連結子会社1社、関連会社5社とグループを構成しています。2026年3月31日現在の連結従業員数は731人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "メディアコンテンツと不動産",
+        "description": "テレビおよびラジオの放送、放送番組や動画コンテンツ等の制作・販売、音楽、スポーツ等のイベント、広告代理業を行い、あわせて不動産の賃貸・管理と太陽光発電を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "広告主・視聴者・テナント",
+        "description": "広告主や広告代理店に放送時間を販売し、視聴者・聴取者に番組を届け、賃貸ビルや商業施設のテナントに不動産を賃貸します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は34,942百万円",
+        "description": "2026年3月期の売上高は34,942百万円でした。メディアコンテンツ関連が32,062百万円、不動産関連が1,905百万円、その他が975百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は1,836百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,836百万円でした。前連結会計年度は1,331百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +165,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 59935000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 733,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +185,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 61350000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 695,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +205,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 70115000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 695,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +225,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 71834000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 735,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +245,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 79829000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 731,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +253,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第100期(2025/04/01－2026/03/31)",
-      "publisher": "中部日本放送株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ8A.pdf",
-      "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +264,313 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1950,
+      "title": "中部日本放送株式会社を設立",
+      "description": "1950年12月に中部日本放送株式会社を設立しました。",
+      "significance": "当社の創立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "日本最初の民間放送としてラジオ本放送を開始",
+      "description": "1951年9月1日午前6時30分、わが国最初の民間放送としてラジオ本放送を開始しました。",
+      "significance": "民間放送の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "株式会社シービーシーテレビ映画社を設立",
+      "description": "1955年6月、愛知県名古屋市に株式会社シービーシーテレビ映画社（後、株式会社ＣＢＣクリエイションに社名変更）を設立しました。現・連結子会社です。",
+      "significance": "番組制作を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "テレビ本放送を開始",
+      "description": "1956年12月にテレビ本放送を開始しました。",
+      "significance": "テレビ事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "名古屋証券取引所に上場",
+      "description": "1960年10月に株式を名古屋証券取引所に上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "カラーテレビ放送を開始",
+      "description": "1964年9月にカラーテレビ放送を開始しました。同年12月には東京都千代田区に株式会社千代田会館を設立しました。現・連結子会社です。",
+      "significance": "カラー放送への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "株式会社シービーシーヴィジョンを設立",
+      "description": "1992年1月、愛知県名古屋市に株式会社シービーシーヴィジョン（後、株式会社ＣＢＣラジオに社名変更）を設立しました。現・連結子会社です。",
+      "significance": "後のラジオ子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "ＣＢＣ放送センターが竣工",
+      "description": "1998年4月にＣＢＣ放送センターが竣工しました。",
+      "significance": "現在の放送拠点の完成です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "アナログテレビ放送を終了",
+      "description": "2011年7月にアナログテレビ放送を終了しました。",
+      "significance": "地上デジタル放送への完全移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "ラジオ事業を株式会社ＣＢＣラジオに承継",
+      "description": "2013年4月にラジオ事業を株式会社ＣＢＣラジオに承継しました。",
+      "significance": "ラジオ事業の分社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "認定放送持株会社体制へ移行",
+      "description": "2014年4月にテレビ事業を株式会社ＣＢＣテレビに承継し、認定放送持株会社体制へ移行しました。",
+      "significance": "現在の持株会社体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "ＡＭラジオのＦＭ補完放送（ワイドＦＭ）を開始",
+      "description": "2015年10月にＡＭラジオのＦＭ補完放送（ワイドＦＭ）を開始しました。",
+      "significance": "ラジオ放送の聴取環境の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社ケイマックスを連結子会社化",
+      "description": "2021年4月に東京都港区の株式会社ケイマックスを連結子会社化しました。",
+      "significance": "番組・動画コンテンツ制作の子会社の加入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "株式会社ＣＢＣ Ｄテックを設立",
+      "description": "2022年1月に愛知県名古屋市にＣＢＣ共同技術美術設立準備株式会社を設立し、同年4月に株式会社ＣＢＣ Ｄテックに社名変更しました。現・連結子会社です。",
+      "significance": "送出・制作技術を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "株式会社ケイマックスを完全子会社化",
+      "description": "2026年4月に株式会社ケイマックスを完全子会社化しました。",
+      "significance": "2026年3月31日時点では議決権の所有割合80.0％の連結子会社でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tbs-holdings",
+      "relationship": "business-partner",
+      "description": "放送事業におけるネットワークの提携先で、番組の編成や報道、制作、営業等において協力し合う業務提携等の関係にあります。当社は同社の株式2,488,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "rkb-mainichi-holdings",
+      "relationship": "business-partner",
+      "description": "放送事業におけるネットワークの提携先で、番組の編成や報道、制作、営業等において協力し合う業務提携等の関係にあります。当社は同社の株式38,400株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "dentsu-group",
+      "relationship": "business-partner",
+      "description": "放送事業における取引先で、当社グループの広告枠を販売する取引関係があり、業務提携等の関係にあります。当社は同社の株式100,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hakuhodo-dy-holdings",
+      "relationship": "business-partner",
+      "description": "放送事業における取引先で、当社グループの広告枠を販売する取引関係があり、業務提携等の関係にあります。当社は同社の株式180,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "misonoza-theatrical",
+      "relationship": "business-partner",
+      "description": "地域における文化事業の協業先で、地域文化の発展を目的としたイベントの開催で協力する業務提携等の関係にあります。当社は同社の株式160,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "chubu-electric-power",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在の大株主の事業会社で、発行済株式（自己株式を除く）の総数に対する所有株式数の割合は3.35％（883千株）です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "nagoya-railroad",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在の大株主の事業会社で、発行済株式（自己株式を除く）の総数に対する所有株式数の割合は3.12％（822千株）です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "nec",
+      "relationship": "major-shareholder",
+      "description": "日本電気株式会社は、2026年3月31日現在の大株主の事業会社で、発行済株式（自己株式を除く）の総数に対する所有株式数の割合は2.38％（626千株）です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第100期(2025/04/01－2026/03/31)",
+      "publisher": "中部日本放送株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ8A.pdf",
+      "publishedAt": "2026-06-25",
+      "docId": "S100YJ8A",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-11"
+    }
+  ],
+  "status": {
+    "state": "needs-attention",
+    "notes": [
+      "businessStructure: 株式会社ケイマックスは、2026年3月31日現在、議決権の所有割合80.0％の連結子会社です。同社は2026年4月1日付で当社の完全子会社となりました（関係会社の状況の注記と沿革に印字）。本登録は2026年3月31日現在の体制（議決権の所有割合80.0％）で行います。"
+    ]
+  },
+  "updatedAt": "2026-11-12",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営の基本理念として「地域で最も信頼されるメディアコンテンツグループとして地域社会の経済や文化の発展に寄与し続ける」ことを掲げ、3か年の「中期経営計画2024-2026」の最終年度を迎えています。本計画では「放送ビジネスの再価値化」、「新たな収益の柱」の構築、テクノロジーを力に変える「ＤＸ（デジタルトランスフォーメーション）」の3点を軸に事業構造の変革を進め、「地域」「コンテンツ」「人財」をキーワードに、知的財産（ＩＰ）事業やビジネスプロデュース（ＢＰ）事業を成長させ、新たな収益ポートフォリオの構築を進めています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高は前期比4.9％増の34,942百万円で、メディアコンテンツ関連の売上高は前期比5.2％増の32,062百万円でした。会社は、テレビスポット収入をはじめクロスメディア収入、イベント収入、テレビタイム収入が増加したと説明しています。",
+        "basis": "MD&Aの経営成績の概要、セグメント情報（外部顧客への売上高）",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "ＣＢＣテレビの情報生ワイド番組『ゴゴスマ～GOGO!Smile!～』は全国25局40都道府県で放送され、名古屋地区の個人視聴率で3期連続同時間帯1位を獲得しています。情報生ワイド番組『なるほどプレゼンター！花咲かタイムズ』は個人および世帯視聴率で放送開始から18年連続同時間帯1位です。ＣＢＣラジオはｒａｄｉｋｏの各指標で中京圏エリア1位を維持しています。",
+        "basis": "MD&Aのセグメントごとの業績（メディアコンテンツ関連）",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の外部顧客への売上高は、メディアコンテンツ関連が32,062百万円、不動産関連が1,905百万円、その他が975百万円で、メディアコンテンツ関連が連結売上高の大半を占めています。本邦の外部顧客への売上高が連結売上高の90％を超えるため、地域ごとの売上高の記載は省略されています。主要な顧客は、株式会社電通（売上高8,027百万円、関連するセグメントはメディアコンテンツ関連）と株式会社博報堂（同6,290百万円）です。ＣＢＣテレビのキー局は株式会社ＴＢＳテレビです。",
+        "basis": "セグメント情報（報告セグメントごとの金額、関連情報の地域ごとの情報・主要な顧客ごとの情報）、事業等のリスクのキー局に関する記載",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
+  "segmentRevenue": {
+    "fiscalYear": "2026年3月期",
+    "periodEnd": "2026-03-31",
+    "label": "外部顧客への売上高",
+    "items": [
+      {
+        "businessId": "media-contents",
+        "amount": 32062000000
+      },
+      {
+        "businessId": "real-estate",
+        "amount": 1905000000
+      },
+      {
+        "businessId": "other",
+        "amount": 975000000
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【セグメント情報】"
   }
 }
