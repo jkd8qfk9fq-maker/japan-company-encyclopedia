@@ -5,9 +5,11 @@ import { HUB_IMAGES, INDUSTRY_IMAGES } from "@/assets/industries";
 import { IndustryHero } from "@/components/industry/industry-hero";
 import { ArrowRight } from "lucide-react";
 import { CompanySection } from "@/components/company/company-section";
+import { IndustryFiguresOverview } from "@/components/industry/industry-figures";
 import { IndustryFlowMap } from "@/components/industry/industry-flow-map";
 import { SectionTabs, type SectionLink } from "@/components/navigation/section-tabs";
 import { listIndustryPages } from "@/lib/industries";
+import { buildIndustryFigures } from "@/lib/industry-figures";
 import { buildIndustryMap } from "@/lib/industry-map";
 import { companyRepository } from "@/lib/repositories";
 
@@ -24,6 +26,7 @@ export const metadata: Metadata = {
 export default async function IndustriesPage() {
   const [industries, companies] = await Promise.all([listIndustryPages(), companyRepository.list()]);
   const map = buildIndustryMap(companies);
+  const figures = buildIndustryFigures(companies);
   const pairs = map.flows.reduce((sum, flow) => sum + flow.pairs.length, 0);
   const linesOf = (id: string) => map.flows.filter((f) => f.from === id || f.to === id).length;
   const membersOf = (id: string) => map.industries.find((i) => i.id === id)?.companies.filter((c) => c.primary) ?? [];
@@ -31,6 +34,7 @@ export default async function IndustriesPage() {
   const sections: SectionLink[] = [
     { id: "list", label: "業界一覧" },
     { id: "map", label: "産業マップ" },
+    { id: "figures", label: "数字で見る" },
   ];
 
   return (
@@ -112,6 +116,20 @@ export default async function IndustriesPage() {
           <div className="mt-8">
             <IndustryFlowMap data={map} />
           </div>
+        </CompanySection>
+
+        {/* The industry figures (JCE-041): what the filings add up to, industry by industry. Computed at build time. */}
+        <CompanySection
+          id="figures"
+          eyebrow="Figures"
+          title="数字で見る"
+          lead={
+            <>
+              掲載企業<span className="figures">{figures.totals.companies}</span>社の有価証券報告書の数値を、業界ごとに足し合わせたものです。規模、純利益率、5期の伸び、上位3社への集中、海外売上高比率。すべて印字された数値の計算値で、推定はしていません。
+            </>
+          }
+        >
+          <IndustryFiguresOverview data={figures} />
         </CompanySection>
       </div>
 

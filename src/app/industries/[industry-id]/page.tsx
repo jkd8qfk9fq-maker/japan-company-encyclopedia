@@ -6,6 +6,7 @@ import { CompanyCard } from "@/components/company/company-card";
 import { CompanySection } from "@/components/company/company-section";
 import { SectionTabs, type SectionLink } from "@/components/navigation/section-tabs";
 import { INDUSTRY_IMAGES } from "@/assets/industries";
+import { IndustryFiguresBlock } from "@/components/industry/industry-figures";
 import { IndustryHero } from "@/components/industry/industry-hero";
 import { IndustryNetwork } from "@/components/industry/industry-network";
 import { ValueChain } from "@/components/industry/value-chain";
@@ -13,6 +14,7 @@ import { RichText } from "@/components/rich-text/rich-text";
 import { SourceList } from "@/components/sources/source-list";
 import { toCompanySummary } from "@/lib/company-summary";
 import { listIndustryPages } from "@/lib/industries";
+import { buildIndustryFigures } from "@/lib/industry-figures";
 import { buildIndustryMap } from "@/lib/industry-map";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
 import { companyRepository, featureRepository, industryRepository } from "@/lib/repositories";
@@ -37,7 +39,8 @@ async function load(id: string) {
     featureRepository.listByIndustry(industryId),
     companyRepository.list(),
   ]);
-  return { listing, industry, companies, features, map: buildIndustryMap(all) };
+  const figures = buildIndustryFigures(all).industries.find((i) => i.id === industryId) ?? null;
+  return { listing, industry, companies, features, map: buildIndustryMap(all), figures };
 }
 
 export async function generateMetadata({ params }: PageProps<"/industries/[industry-id]">): Promise<Metadata> {
@@ -58,7 +61,7 @@ export async function generateMetadata({ params }: PageProps<"/industries/[indus
 export default async function IndustryPage({ params }: PageProps<"/industries/[industry-id]">) {
   const data = await load((await params)["industry-id"]);
   if (!data) notFound();
-  const { listing, industry, companies, features, map } = data;
+  const { listing, industry, companies, features, map, figures } = data;
   const sells = map.flows.filter((f) => f.from === listing.id);
   const buys = map.flows.filter((f) => f.to === listing.id && f.from !== listing.id);
   const name = (id: string) => map.industries.find((i) => i.id === id)?.name ?? id;
@@ -70,6 +73,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
     { id: "about", label: "仕組み" },
     { id: "companies", label: `企業 ${companies.length}` },
     ...(hasConnections ? [{ id: "connections", label: "つながり" }] : []),
+    ...(figures ? [{ id: "figures", label: "数字" }] : []),
     ...(features.length > 0 ? [{ id: "features", label: "特集" }] : []),
   ];
 
@@ -133,6 +137,19 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
             <p className="text-muted-foreground">この業界の企業はまだ掲載していません。</p>
           )}
         </CompanySection>
+
+        {/* The industry's figures (JCE-041): sums and ratios of the members' printed figures, computed at build time. */}
+        {figures && (
+          <CompanySection
+            id="figures"
+            eyebrow="Figures"
+            title={`${listing.name}業界の数字`}
+            lead={`掲載企業${figures.companies}社の有価証券報告書の数値を足し合わせたものです。推定はしていません。`}
+            tone="paper"
+          >
+            <IndustryFiguresBlock figures={figures} />
+          </CompanySection>
+        )}
 
         {hasConnections && (
           <CompanySection

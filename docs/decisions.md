@@ -663,3 +663,26 @@ stylesheets into `src/assets/fonts/google`, and `build-static.mjs` points next/f
 fonts as before. The hook is next/font's own (its test mocks): a font request the folder does not hold fails the build
 naming the URL — run the script again. A Windows build keeps downloading (the hook reads only "/"-rooted paths).
 `tests/vendored-fonts.test.ts` checks the folder matches the layout.
+
+### JCE-041 · 2026-11-12 · Accepted (operator) — 産業インデックス: the industries' figures, inside the encyclopedia
+
+The operator had a proposal to grow a separate "Japan Industry Index" product on the encyclopedia's data, and decided
+instead that the index belongs **inside the encyclopedia** ("インデックスは日本企業百科事典に組み込みたい"), with the
+companies being registered separately and all of them expected by the coming Sunday. This is a departure from the
+master specification's "do not build a financial dashboard" (§03 18, §Final) and is kept narrow on purpose:
+
+- **What it is**: a third tab on `/industries` (数字で見る) and a 数字 section on each industry page, drawn on the server
+  from the released companies' own `financials`, `regionalRevenue` and `relatedCompanies` at build time
+  (`src/lib/industry-figures.ts`, `src/components/industry/industry-figures.tsx`). As companies are registered and
+  released, the figures grow with the next build; nothing is written by hand or by an agent.
+- **The figures**: per industry, the sums of the latest year's revenue, net income and employees (each saying how
+  many companies it adds and how many it had to leave out); and four ratios, every one a 計算値 with its formula
+  printed beside it — 純利益率 (Σ純利益 ÷ Σ売上高), 5期の売上高の伸び (latest ÷ five years earlier, median over
+  companies), 上位3社への集中 (top three ÷ the industry), 海外売上高比率 (median of the companies' printed ratio).
+  JCE-038 allowed three ratios on a company page; this adds the sums and two industry-level ratios (growth multiple,
+  concentration) under the same rule: printed figures of one year, computed on the page, never stored or estimated.
+- **What it is not**: no stock price, valuation, ranking of good companies or recommendation (invariant 4). A missing
+  figure leaves a company out of that sum, counted in `excluded`, never approximated (invariant 1). Only released
+  companies add to a public sum. The hub still opens on the industry list; the figures are the last tab.
+- The ten largest companies of an industry are listed by revenue, with each one's own margin and growth beside it:
+  a size order from the filings, labelled as such, not a quality order.
