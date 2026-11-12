@@ -1,5 +1,6 @@
 import Link from "next/link";
-import type { IndustryFigures, IndustryFiguresData } from "@/lib/industry-figures";
+import { deltaAgainst, Donut, FigureCard, IndexSparkline, partsOf, PerformanceTable } from "@/components/industry/industry-charts";
+import type { IndexSeries, IndustryFigures, IndustryFiguresData } from "@/lib/industry-figures";
 import { formatYen } from "@/lib/utils/format";
 
 /**
@@ -66,20 +67,27 @@ export function IndustryFiguresOverview({ data }: { data: IndustryFiguresData })
 
   return (
     <div>
-      <dl className="grid grid-cols-2 border-y border-border border-t-foreground sm:grid-cols-4">
-        {[
-          { label: "売上高の合計", value: formatYen(totals.revenue), note: `${industries.reduce((a, i) => a + i.revenue.companies, 0)}社` },
-          { label: "純利益の合計", value: formatYen(totals.netIncome), note: `${industries.reduce((a, i) => a + i.netIncome.companies, 0)}社` },
-          { label: "従業員数の合計", value: `${Math.round(totals.employees / 10000).toLocaleString("ja-JP")}万人`, note: `${industries.reduce((a, i) => a + i.employees.companies, 0)}社` },
-          { label: "掲載企業", value: `${totals.companies.toLocaleString("ja-JP")}社`, note: `${industries.length}業界` },
-        ].map((fact, i) => (
-          <div key={fact.label} className={i % 2 === 1 ? "border-l border-border py-3 pl-3 sm:py-5 sm:pl-6" : "py-3 pr-3 sm:py-5 sm:pr-6"}>
-            <dt className="text-[0.625rem] leading-4 text-muted-foreground sm:text-xs sm:leading-5">{fact.label}</dt>
-            <dd className="figures mt-1 font-serif text-[1rem] leading-tight font-semibold sm:text-[1.5rem]">{fact.value}</dd>
-            <dd className="figures mt-0.5 text-xs text-muted-foreground">{fact.note}</dd>
-          </div>
-        ))}
-      </dl>
+      <div className="grid grid-cols-2 gap-x-4 sm:grid-cols-4">
+        <FigureCard label="売上高の合計" value={formatYen(totals.revenue)} context={`${industries.reduce((a, i) => a + i.revenue.companies, 0)}社の最新期`} />
+        <FigureCard label="純利益の合計" value={formatYen(totals.netIncome)} context={`純利益率 ${data.reference.netProfitMargin !== null ? percent(data.reference.netProfitMargin) : "—"}`} />
+        <FigureCard label="5期の売上高の伸び" value={data.reference.revenueGrowth5y !== null ? times(data.reference.revenueGrowth5y) : "—"} context="全社の中央値" />
+        <FigureCard label="掲載企業" value={`${totals.companies.toLocaleString("ja-JP")}社`} context={`${industries.length}業界・従業員 ${Math.round(totals.employees / 10000).toLocaleString("ja-JP")}万人`} />
+      </div>
+
+      <div className="mt-10 grid gap-10 md:grid-cols-2">
+        <Donut
+          title="売上高の構成（業界別）"
+          parts={partsOf(industries.map((i) => ({ id: i.id, name: i.name, value: i.revenue.total })))}
+          format={formatYen}
+          centre={{ value: formatYen(totals.revenue).replace(/円$/, ""), label: "円・合計" }}
+        />
+        <Donut
+          title="従業員数の構成（業界別）"
+          parts={partsOf(industries.map((i) => ({ id: i.id, name: i.name, value: i.employees.total })))}
+          format={(v) => `${Math.round(v / 10000).toLocaleString("ja-JP")}万人`}
+          centre={{ value: `${Math.round(totals.employees / 10000).toLocaleString("ja-JP")}万`, label: "人・合計" }}
+        />
+      </div>
 
       <div className="mt-10">
         <h3 className="font-serif text-lg font-semibold">業界の規模</h3>
@@ -124,8 +132,32 @@ export function IndustryFiguresOverview({ data }: { data: IndustryFiguresData })
         </div>
       </div>
 
+      <div className="mt-12">
+        <h3 className="font-serif text-lg font-semibold">5期の売上高の推移（指数）</h3>
+        <p className="mt-1 text-sm text-muted-foreground">
+          5期そろった会社だけを同じ顔ぶれで足し合わせ、5期前を100とした指数。濃い線が業界、薄い線が全業界（{data.index.all.companies}社）。右端の数字が最新期。
+        </p>
+        <ul className="mt-5 grid grid-cols-2 gap-x-6 gap-y-5 md:grid-cols-3 lg:grid-cols-4">
+          {data.index.industries.filter((s) => s.values.length === 5).map((s) => (
+            <li key={s.id} className="min-w-0">
+              <p className="truncate text-sm">
+                <Link href={`/industries/${s.id}#figures`} className="hover:underline">{s.name}</Link>
+                <span className="figures ml-1 text-xs text-muted-foreground">{s.companies}社</span>
+              </p>
+              <IndexSparkline series={s} reference={data.index.all} />
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="mt-12">
+        <h3 className="font-serif text-lg font-semibold">業界別パフォーマンス</h3>
+        <p className="mt-1 mb-4 text-sm text-muted-foreground">各業界の値を、全業界の値と比べたもの。</p>
+        <PerformanceTable industries={industries} reference={data.reference} />
+      </div>
+
       <details className="mt-10">
-        <summary className="cursor-pointer text-sm text-muted-foreground hover:text-foreground">表で見る</summary>
+        <summary className="cursor-pointer text-sm text-muted-foreground hover:text-foreground">表で見る（全指標）</summary>
         <div className="mt-4 overflow-x-auto">
           <table className="figures w-full min-w-[40rem] text-sm">
             <thead>
@@ -165,34 +197,54 @@ export function IndustryFiguresOverview({ data }: { data: IndustryFiguresData })
   );
 }
 
-/** One industry's block, on its own page: the figures and the ten largest companies. */
-export function IndustryFiguresBlock({ figures }: { figures: IndustryFigures }) {
-  const facts = [
-    { label: "売上高の合計", value: formatYen(figures.revenue.total), note: `${figures.revenue.companies}社` },
-    figures.netProfitMargin && { label: "純利益率", value: percent(figures.netProfitMargin.value), note: `${figures.netProfitMargin.companies}社` },
-    figures.revenueGrowth5y && { label: "5期の売上高の伸び", value: times(figures.revenueGrowth5y.value), note: `${figures.revenueGrowth5y.companies}社の中央値` },
-    figures.top3Share && { label: "上位3社への集中", value: percent(figures.top3Share.value), note: `${figures.top3Share.companies}社` },
-    figures.overseasSalesRatio && { label: "海外売上高比率", value: percent(figures.overseasSalesRatio.value), note: `${figures.overseasSalesRatio.companies}社の中央値` },
-    figures.employees.companies > 0 && { label: "従業員数の合計", value: `${Math.round(figures.employees.total / 10000).toLocaleString("ja-JP")}万人`, note: `${figures.employees.companies}社` },
-  ].filter((f): f is { label: string; value: string; note: string } => Boolean(f));
-
+/** One industry's block, on its own page: the figures against the all-industry reference, the split, the trend, the ten largest companies. */
+export function IndustryFiguresBlock({ figures, reference, index, all }: { figures: IndustryFigures; reference: IndustryFiguresData["reference"]; index: IndexSeries | null; all: IndexSeries }) {
+  const restOfIndustry = figures.revenue.total - figures.ranking.reduce((a, c) => a + c.revenue, 0);
+  const parts = partsOf([
+    ...figures.ranking.map((c) => ({ id: c.id, name: c.name, value: c.revenue })),
+    ...(restOfIndustry > 0 ? [{ id: "other", name: `ほか${figures.revenue.companies - figures.ranking.length}社`, value: restOfIndustry }] : []),
+  ]);
   return (
     <div>
-      <dl className="grid grid-cols-2 gap-y-4 border-y border-border border-t-foreground py-4 sm:grid-cols-3">
-        {facts.map((fact) => (
-          <div key={fact.label} className="pr-3">
-            <dt className="text-[0.625rem] leading-4 text-muted-foreground sm:text-xs sm:leading-5">{fact.label}</dt>
-            <dd className="figures mt-1 font-serif text-[1rem] leading-tight font-semibold sm:text-[1.5rem]">{fact.value}</dd>
-            <dd className="figures mt-0.5 text-xs text-muted-foreground">{fact.note}</dd>
-          </div>
-        ))}
-      </dl>
-      <p className="mt-2 text-xs leading-5 text-muted-foreground">
-        計算値：純利益率＝純利益の合計 ÷ 売上高の合計。5期の伸び＝最新期の売上高 ÷ 5期前の売上高。上位3社＝売上高の上位3社の合計 ÷ 業界の合計。海外比率＝日本以外の売上高 ÷ 地域別売上高の合計。各社の最新期を使い、決算期は会社ごとに異なります。
+      <div className="grid grid-cols-2 gap-x-4 sm:grid-cols-3">
+        <FigureCard label="売上高の合計" value={formatYen(figures.revenue.total)} context={`${figures.revenue.companies}社の最新期`} />
+        <FigureCard
+          label="純利益率"
+          value={figures.netProfitMargin ? percent(figures.netProfitMargin.value) : "—"}
+          delta={figures.netProfitMargin && reference.netProfitMargin !== null ? deltaAgainst(figures.netProfitMargin.value, reference.netProfitMargin, (v) => percent(v), "全業界") : null}
+          context={figures.netProfitMargin ? `${figures.netProfitMargin.companies}社` : undefined}
+        />
+        <FigureCard
+          label="5期の売上高の伸び"
+          value={figures.revenueGrowth5y ? times(figures.revenueGrowth5y.value) : "—"}
+          delta={figures.revenueGrowth5y && reference.revenueGrowth5y !== null ? deltaAgainst(figures.revenueGrowth5y.value, reference.revenueGrowth5y, (v) => `${v.toFixed(2)}倍`, "全業界") : null}
+          context={figures.revenueGrowth5y ? `${figures.revenueGrowth5y.companies}社の中央値` : undefined}
+        />
+        <FigureCard label="上位3社への集中" value={figures.top3Share ? percent(figures.top3Share.value) : "—"} context={figures.top3Share ? `${figures.top3Share.companies}社` : undefined} />
+        <FigureCard label="海外売上高比率" value={figures.overseasSalesRatio ? percent(figures.overseasSalesRatio.value) : "—"} context={figures.overseasSalesRatio ? `${figures.overseasSalesRatio.companies}社の中央値` : "地域別の情報が無い"} />
+        <FigureCard label="従業員数の合計" value={figures.employees.companies > 0 ? `${Math.round(figures.employees.total / 10000).toLocaleString("ja-JP")}万人` : "—"} context={figures.employees.companies > 0 ? `${figures.employees.companies}社` : undefined} />
+      </div>
+      <p className="mt-3 text-xs leading-5 text-muted-foreground">
+        計算値：純利益率＝純利益の合計 ÷ 売上高の合計。5期の伸び＝最新期の売上高 ÷ 5期前の売上高。上位3社＝売上高の上位3社の合計 ÷ 業界の合計。海外比率＝日本以外の売上高 ÷ 地域別売上高の合計。各社の最新期を使い、決算期は会社ごとに異なります。▲▼は全業界の値との比較で、良し悪しの判定ではありません。
       </p>
 
+      <div className="mt-10 grid gap-10 md:grid-cols-2">
+        {parts.length > 0 && (
+          <Donut title={`${figures.name}業界の売上高の構成`} parts={parts} format={formatYen} centre={{ value: `${figures.revenue.companies}社`, label: figures.name }} />
+        )}
+        {index && index.values.length === 5 && (
+          <div>
+            <p className="text-sm font-medium">5期の売上高の推移（指数）</p>
+            <p className="mt-1 text-xs text-muted-foreground">5期そろった{index.companies}社の合計。5期前＝100。薄い線は全業界（{all.companies}社）。</p>
+            <div className="mt-3 max-w-sm">
+              <IndexSparkline series={index} reference={all} width={320} height={140} />
+            </div>
+          </div>
+        )}
+      </div>
+
       {figures.ranking.length > 0 && (
-        <div className="mt-8">
+        <div className="mt-10">
           <h3 className="font-serif text-lg font-semibold">売上高の大きい順</h3>
           <p className="mt-1 text-sm text-muted-foreground">最新期の売上高。括弧は純利益率と、5期の売上高の伸び。</p>
           <div className="mt-4">

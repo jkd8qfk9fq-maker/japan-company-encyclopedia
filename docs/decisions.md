@@ -686,3 +686,26 @@ master specification's "do not build a financial dashboard" (§03 18, §Final) a
   companies add to a public sum. The hub still opens on the industry list; the figures are the last tab.
 - The ten largest companies of an industry are listed by revenue, with each one's own margin and growth beside it:
   a size order from the filings, labelled as such, not a quality order.
+
+### JCE-042 · 2026-11-12 · Accepted (operator) — The figures tab draws like a data book: cards with ▲▼, a donut, small line charts, a performance table
+
+The operator showed the design of their economic data book (a dashboard of "latest" cards, each figure with a ▲▼
+against its forecast and a line of context; period line charts; a release table; a per-country performance table
+with ▲▼ counts) and asked for the industry figures (JCE-041) to borrow that visual language — "円グラフなど BI ツールを
+駆使して視覚的理解を助ける". The data book's own data is **not** imported: the operator said so, and macro statistics
+would be a new class of fact outside invariant 3's sources. Only the forms are taken:
+
+- **Cards** for the headline figures, each with its ▲▼ against the all-industry value and a line saying how many
+  companies it adds; the ▲▼ is a comparison, never a judgement (the caption says so, as the data book's does).
+- **A donut** for one whole split into a few parts (revenue and employees by industry on the hub; revenue by
+  company on an industry page): at most six named parts and the rest folded into その他, the share printed on each
+  part that has room, the names and values listed beside it as the legend. One hue stepped light to dark, the
+  largest part darkest, the rest lightest; a 2px gap of surface between parts.
+- **Small line charts** of the five-year revenue index, one per industry, the all-industry line in grey behind
+  each. The index counts only companies with five complete years, added up as the same roster and set to 100 at
+  the oldest year (`revenueIndexSeries`), so a line never shows growth that is only new entries.
+- **A performance table** with ▲▼ against the all-industry reference for margin and growth.
+
+All of it is server-rendered SVG and HTML in the site's own ink and type — no chart library, no script, no data
+colour on text — so the pages stay plain documents and the figures read with styles off (the list beside a donut
+carries every value).

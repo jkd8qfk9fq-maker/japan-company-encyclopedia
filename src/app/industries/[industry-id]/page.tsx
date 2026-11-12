@@ -39,8 +39,10 @@ async function load(id: string) {
     featureRepository.listByIndustry(industryId),
     companyRepository.list(),
   ]);
-  const figures = buildIndustryFigures(all).industries.find((i) => i.id === industryId) ?? null;
-  return { listing, industry, companies, features, map: buildIndustryMap(all), figures };
+  const data = buildIndustryFigures(all);
+  const figures = data.industries.find((i) => i.id === industryId) ?? null;
+  const index = data.index.industries.find((i) => i.id === industryId) ?? null;
+  return { listing, industry, companies, features, map: buildIndustryMap(all), figures, reference: data.reference, index, indexAll: data.index.all };
 }
 
 export async function generateMetadata({ params }: PageProps<"/industries/[industry-id]">): Promise<Metadata> {
@@ -61,7 +63,7 @@ export async function generateMetadata({ params }: PageProps<"/industries/[indus
 export default async function IndustryPage({ params }: PageProps<"/industries/[industry-id]">) {
   const data = await load((await params)["industry-id"]);
   if (!data) notFound();
-  const { listing, industry, companies, features, map, figures } = data;
+  const { listing, industry, companies, features, map, figures, reference, index, indexAll } = data;
   const sells = map.flows.filter((f) => f.from === listing.id);
   const buys = map.flows.filter((f) => f.to === listing.id && f.from !== listing.id);
   const name = (id: string) => map.industries.find((i) => i.id === id)?.name ?? id;
@@ -147,7 +149,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
             lead={`掲載企業${figures.companies}社の有価証券報告書の数値を足し合わせたものです。推定はしていません。`}
             tone="paper"
           >
-            <IndustryFiguresBlock figures={figures} />
+            <IndustryFiguresBlock figures={figures} reference={reference} index={index} all={indexAll} />
           </CompanySection>
         )}
 

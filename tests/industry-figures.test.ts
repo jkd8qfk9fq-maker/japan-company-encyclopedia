@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildIndustryFigures, median, revenueGrowth5y } from "../src/lib/industry-figures";
+import { buildIndustryFigures, median, revenueGrowth5y, revenueIndexSeries } from "../src/lib/industry-figures";
 import type { Company, IndustryId } from "../src/types/company";
 
 /** The industry figures are sums and ratios of printed figures: a missing figure is left out, never guessed. */
@@ -83,5 +83,31 @@ describe("median", () => {
     expect(median([])).toBeNull();
     expect(median([3, 1, 2])).toBe(2);
     expect(median([4, 1, 3, 2])).toBe(2.5);
+  });
+});
+
+describe("revenueIndexSeries", () => {
+  const years5 = (revenues: number[]) =>
+    revenues.map((revenue, i) => ({ fiscalYear: `${2022 + i}年3月期`, periodEnd: `${2022 + i}-03-31`, revenue, revenueLabel: "売上高", netIncome: null, netIncomeLabel: "当期純利益", employees: null, sourceIds: ["s"] }));
+  const c = (id: string, industry: IndustryId, financials: unknown[]): Company =>
+    ({ id, name: id, industries: [{ industryId: industry, primary: true }], relatedCompanies: [], financials }) as unknown as Company;
+
+  it("adds up only the companies with five complete years, and sets the oldest year to 100", () => {
+    const { all, industries } = revenueIndexSeries([
+      c("a", "retail", years5([100, 110, 120, 130, 150])),
+      c("b", "retail", years5([100, 100, 100, 100, 100])),
+      c("short", "retail", years5([1, 2, 3]).slice(0, 3)),
+    ]);
+    expect(all.companies).toBe(2);
+    expect(all.values.map((v) => Math.round(v * 1000) / 1000)).toEqual([100, 105, 110, 115, 125]);
+    expect(all.labels).toEqual(["2022", "2023", "2024", "2025", "2026"]);
+    expect(industries).toHaveLength(1);
+    expect(industries[0]).toMatchObject({ id: "retail", companies: 2 });
+  });
+
+  it("gives an empty line, not a guess, when no company has five years", () => {
+    const { all } = revenueIndexSeries([c("a", "retail", years5([1, 2]).slice(0, 2))]);
+    expect(all.companies).toBe(0);
+    expect(all.values).toEqual([]);
   });
 });

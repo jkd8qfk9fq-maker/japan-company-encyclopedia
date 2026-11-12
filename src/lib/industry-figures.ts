@@ -48,6 +48,10 @@ export type IndustryFlowCount = { from: IndustryId; to: IndustryId; ties: number
 
 export type IndustryFiguresData = {
   industries: IndustryFigures[];
+  /** The same ratios over every released company, the reference the ▲▼ marks compare against. */
+  reference: { netProfitMargin: number | null; revenueGrowth5y: number | null };
+  /** The five-year revenue index of every industry and of all companies together (JCE-042). */
+  index: { all: IndexSeries; industries: IndexSeries[] };
   /** Seller industry → buyer industry, counted from `supplier` / `customer` relations, each pair once. */
   flows: IndustryFlowCount[];
   totals: { companies: number; revenue: number; netIncome: number; employees: number };
@@ -201,8 +205,17 @@ export function buildIndustryFigures(companies: Company[]): IndustryFiguresData 
     counts.set(key, flow);
   }
 
+  const both = companies.map((c) => byPeriod(c.financials).at(-1)).filter((r): r is FinancialRecord => r !== undefined && r.revenue !== null && r.revenue > 0 && r.netIncome !== null);
+  const refDen = both.reduce((acc, r) => acc + r.revenue!, 0);
+  const reference = {
+    netProfitMargin: refDen > 0 ? both.reduce((acc, r) => acc + r.netIncome!, 0) / refDen : null,
+    revenueGrowth5y: median(companies.map(revenueGrowth5y).filter((v): v is number => v !== null)),
+  };
+
   return {
     industries,
+    reference,
+    index: revenueIndexSeries(companies),
     flows: [...counts.values()].sort((a, b) => b.ties - a.ties),
     totals: {
       companies: industries.reduce((acc, i) => acc + i.companies, 0),
@@ -210,5 +223,47 @@ export function buildIndustryFigures(companies: Company[]): IndustryFiguresData 
       netIncome: industries.reduce((acc, i) => acc + i.netIncome.total, 0),
       employees: industries.reduce((acc, i) => acc + i.employees.total, 0),
     },
+  };
+}
+
+/**
+ * The five-year revenue index (JCE-042): for each industry, the revenue of the companies whose five printed years
+ * are complete, added up year by year and set to 100 at the oldest year. Companies with fewer years are left out
+ * of the series (not of the sums above), so the line compares the same companies with themselves — a changing
+ * roster would otherwise draw growth that is only new entries. Years are positions in the filing's five-year
+ * table (5期前 … 最新期); the label is the calendar year most of the companies' periods end in.
+ */
+export type IndexSeries = { id: IndustryId | "all"; name: string; companies: number; labels: string[]; values: number[] };
+
+export function revenueIndexSeries(companies: Company[]): { all: IndexSeries; industries: IndexSeries[] } {
+  const complete = companies
+    .map((c) => ({ c, records: byPeriod(c.financials) }))
+    .filter(({ records }) => records.length >= 5 && records.slice(-5).every((r) => r.revenue !== null && r.revenue > 0))
+    .map(({ c, records }) => ({ c, records: records.slice(-5) }));
+
+  const build = (id: IndexSeries["id"], name: string, members: typeof complete): IndexSeries => {
+    const sums = [0, 0, 0, 0, 0];
+    const years: Map<string, number>[] = [new Map(), new Map(), new Map(), new Map(), new Map()];
+    for (const { records } of members) {
+      records.forEach((r, k) => {
+        sums[k] += r.revenue!;
+        const y = r.periodEnd.slice(0, 4);
+        years[k].set(y, (years[k].get(y) ?? 0) + 1);
+      });
+    }
+    const labels = years.map((m) => [...m.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? "");
+    const base = sums[0];
+    return { id, name, companies: members.length, labels, values: base > 0 ? sums.map((s) => (s / base) * 100) : [] };
+  };
+
+  const groups = new Map<IndustryId, typeof complete>();
+  for (const m of complete) {
+    const id = primaryIndustry(m.c);
+    if (!id) continue;
+    groups.set(id, [...(groups.get(id) ?? []), m]);
+  }
+  return {
+    all: build("all", "全業界", complete),
+    industries: [...groups.entries()].map(([id, members]) => build(id, INDUSTRY_LABELS[id].name, members)).sort((a, b) => b.companies - a.companies),
   };
 }
