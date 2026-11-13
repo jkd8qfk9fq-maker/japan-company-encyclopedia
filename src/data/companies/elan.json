@@ -4,15 +4,91 @@
   "name": "エラン",
   "officialName": "株式会社エラン",
   "nameEn": "ELAN Corporation",
-  "description": null,
+  "shortNameEn": "ELAN Corporation",
+  "description": "長野県松本市に本社を置き、病院や介護施設の入院・入所者向けに、衣類・タオル類の洗濯サービス付きレンタルと日常生活用品の提供を組み合わせた「CSセット」を展開する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "elan",
+      "name": "株式会社エラン",
+      "description": "長野県松本市に本社を置き、当社と連結子会社6社、持分法適用会社1社でグループを構成しています。病院や介護施設の入院・入所者向けサービス「CSセット」を中心とする介護医療関連事業を展開しています。2025年12月31日現在の連結従業員数は974人です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "care-medical",
+          "name": "介護医療関連事業",
+          "description": "病院に入院する方や介護施設に入所する方に、衣類・タオル類の洗濯サービス付きレンタルと日常生活用品の提供を組み合わせた「CSセット」を提供する事業です。単一セグメントであり、2025年12月期の売上高は55,448百万円です。ベトナムの連結子会社GREEN LAUNDRY JOINT STOCK COMPANYとTMC VIET NAM TRADING AND SERVICE JOINT STOCK COMPANYは病院向けランドリーサービスを行っています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "病院・介護施設やリネンサプライ業者等と分担してCSセットを運営し、利用者から日額制の利用料金を受け取り、施設に業務委託手数料を、業者等に洗濯代金等を支払う事業モデルです。",
+    "products": [
+      "CSセット（衣類・タオル類の洗濯サービス付きレンタルと日常生活用品の提供を組み合わせたサービス）"
+    ],
+    "customers": [
+      "病院に入院する方",
+      "介護老人保健施設・特別養護老人ホーム・有料老人ホーム等の介護施設に入所する方"
+    ],
+    "revenueSources": [
+      "CSセットの利用料金（入院・入所日数で計算する日額制）"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社エラン",
+        "description": "長野県松本市に本社を置き、当社と連結子会社6社、持分法適用会社1社でグループを構成しています。2025年12月31日現在の連結従業員数は974人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "CSセットの提供",
+        "description": "衣類・タオル類の貸与と洗濯、日常生活用品の販売を組み合わせた「CSセット」を提供し、利用者が手ぶらで入院・入所できるようにするサービスです。"
+      },
+      {
+        "kind": "customer",
+        "title": "病院の入院者・介護施設の入所者",
+        "description": "病院に入院する方や、介護老人保健施設、特別養護老人ホーム、有料老人ホーム等の介護施設に入所する方が利用者となり、当社グループと契約を締結します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高55,448百万円",
+        "description": "2025年12月期の連結売上高は55,448百万円で、全額が単一セグメントである介護医療関連事業によるものです。料金は使用量ではなく入院・入所日数で計算する日額制です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益2,767百万円",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は2,767百万円です。"
+      }
+    ],
+    "suppliers": [
+      {
+        "name": "リネンサプライ業者等",
+        "description": "病院・介護施設等が指定した場所に洗濯済みの寝巻き等や日常生活用品等を納入し、使用後の寝巻き等を回収して洗濯を行う事業者です。当社グループはその対価として洗濯代金等を支払います。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +103,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7483722000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 320,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +123,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8989708000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 349,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +143,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10814362000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 378,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +163,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12501850000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 676,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "当連結会計年度において、企業結合に係る暫定的な会計処理の確定を行っており、前連結会計年度の関連する主要な経営指標等については、暫定的な会計処理の確定による取得原価の当初配分額の重要な見直しが反映された後の金額によっております。"
     },
     {
       "fiscalYear": "2025年12月期",
@@ -107,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14681563000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 974,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +192,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第32期(2025/01/01－2025/12/31)",
-      "publisher": "株式会社エラン",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XU87.pdf",
-      "publishedAt": "2026-03-26",
-      "accessedAt": "2026-09-29"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-29",
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",
@@ -142,5 +203,264 @@
       "yuho-2025"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1995,
+      "title": "有限会社エランを設立",
+      "description": "神奈川県相模原市にて、寝具販売業を事業目的として有限会社エランを設立しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "株式会社エランに組織変更",
+      "description": "株式会社エランに組織変更しました。",
+      "significance": "株式会社への組織変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "寝具リフォーム事業を開始",
+      "description": "長野県松本市に松本支店を開設し、寝具リフォーム事業を開始しました。",
+      "significance": "寝具リフォーム事業の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "本社を長野県松本市に移転",
+      "description": "寝具リフォーム事業の拡大のため、本社を長野県松本市（南原）に移転しました。",
+      "significance": "現在の本社所在地への移転です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "介護医療関連事業を開始し、CSセットのサービスを開始",
+      "description": "神奈川県相模原市に相模原支店を開設し、介護医療関連事業を開始するとともに、相模原支店においてCSセットのサービスを開始しました。",
+      "significance": "現在の主力サービスであるCSセットの開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "介護医療関連事業に経営資源を集中",
+      "description": "介護医療関連事業に経営資源を集中させるため、寝具販売業及び寝具リフォーム事業を縮小しました。2006年1月には松本本社でもCSセットのサービスを開始しました。",
+      "significance": "事業の軸足を介護医療関連事業へ移した転機です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東京証券取引所市場第一部に変更",
+      "description": "上場市場を東京証券取引所市場第一部に変更しました。",
+      "significance": "市場第一部への市場変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "株式会社エルタスクを子会社化",
+      "description": "株式会社エルタスクを子会社化しました。",
+      "significance": "子会社の取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "株式会社エランサービスを設立",
+      "description": "個人請求・カスタマーサポート部門を分社化するため、完全子会社の株式会社エランサービスを設立しました。",
+      "significance": "カスタマーサポート機能の分社化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "株式会社エルタスクを吸収合併",
+      "description": "株式会社エルタスクを吸収合併しました。",
+      "significance": "グループ再編です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "株式会社琉球エランを設立",
+      "description": "完全子会社の株式会社琉球エランを設立しました。",
+      "significance": "沖縄地域の子会社設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "プライム市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社エランクルールを設立",
+      "description": "完全子会社の株式会社エランクルールを設立しました。",
+      "significance": "子会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社エラン・ロジスティクスを設立",
+      "description": "完全子会社の株式会社エラン・ロジスティクスを設立しました。",
+      "significance": "物流機能の子会社設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "GREEN LAUNDRY JOINT STOCK COMPANYを子会社化",
+      "description": "ベトナムのGREEN LAUNDRY JOINT STOCK COMPANYを子会社化しました。",
+      "significance": "ベトナムでの病院向けランドリー事業の取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "エムスリー株式会社が親会社となる",
+      "description": "エムスリー株式会社による当社の普通株式に対する公開買付により、エムスリー株式会社が当社の親会社となりました。",
+      "significance": "親会社の異動です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "TMC VIET NAM TRADING AND SERVICE JOINT STOCK COMPANYを子会社化",
+      "description": "ベトナムのTMC VIET NAM TRADING AND SERVICE JOINT STOCK COMPANYを子会社化しました。",
+      "significance": "ベトナム事業の拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "クラシコ株式会社を持分法適用会社化",
+      "description": "メディカルアパレルの企画・開発・販売を行うクラシコ株式会社を持分法適用会社としました。",
+      "significance": "持分法適用会社の追加です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "m3",
+      "relationship": "parent",
+      "description": "親会社です。2024年10月の公開買付により当社の親会社となり、2025年12月31日現在、議決権の55.02％を保有しています。【関係会社の状況】に親会社として記載されており、インターネットを利用した医療関連サービスを提供しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2025",
+      "title": "有価証券報告書－第32期(2025/01/01－2025/12/31)",
+      "publisher": "株式会社エラン",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XU87.pdf",
+      "publishedAt": "2026-03-26",
+      "docId": "S100XU87",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-12",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中長期的な経営戦略として、当面はCSセットの全国シェア拡大に注力し、サービスの改善を継続しながら営業展開を進めるとしています。また、CSセット利用者の個人情報や病院その他関係者との強固な関係を用いた新規ビジネスへの参入を、事業提携やM&Aを含めて推進し、システム化を含めた生産性の向上にも取り組み、インドや東南アジア諸国等の新興国における事業展開も積極的に検討するとしています。2024年10月にエムスリーグループに入っており、同グループとのシナジーによる事業規模の拡大を目指すとしています。なお、当連結会計年度は第6次中期経営計画期間の最終年度でした。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "CSセットの導入施設数は、前連結会計年度末の2,570施設から当連結会計年度末には2,830施設となり、新規契約359施設に対して解約は99施設でした。売上高は前期比16.7％増の55,448百万円であり、MD&Aは増収の要因を導入施設数の増加と説明しています。",
+        "basis": "MD&A「経営成績等の状況の概況」の導入施設数と売上高の記述、及びセグメント情報（単一セグメント）の売上高に基づく",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "CSセットの料金は「何をどれだけ使ったか」ではなく入院・入所日数で計算する日額制であり、利用者は洗濯・交換の頻度や日用品の使用量を気にせず利用できます。運営は、施設が利用者への説明・受付・貸与・回収・配布を担い、リネンサプライ業者等が納入・回収・洗濯を担い、当社グループがプラン設計や料金回収・問い合わせ対応を担う分担構造で、施設側は保険適用外サービスの料金請求について行政指導に適合した形態で提供でき、現場の洗濯や日用品補充の作業負担も軽減される仕組みです。",
+        "basis": "【事業の内容】のCSセットの仕組み、日額制の特徴、関係者の役割とメリットの記述に基づく",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは介護医療関連事業のみの単一セグメントで、本邦の外部顧客への売上高が連結売上高の90％を超えるため地域ごとの情報は省略され、売上高の10％以上を占める主要な顧客もありません。MD&Aは、65歳以上人口が2026年1月1日現在で総人口の29.4％を占めるなど高齢化が進行し、当社グループに係るサービスの市場規模は拡大するとの見方を示しています。",
+        "basis": "セグメント情報の【関連情報】（地域ごとの情報・主要な顧客ごとの情報）とMD&A「経営成績等の状況の概況」の経営環境の記述に基づく",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
   }
 }

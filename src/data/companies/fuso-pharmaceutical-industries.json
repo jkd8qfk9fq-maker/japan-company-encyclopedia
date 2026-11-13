@@ -4,15 +4,136 @@
   "name": "扶桑薬品工業",
   "officialName": "扶桑薬品工業株式会社",
   "nameEn": "Fuso Pharmaceutical Industries, Ltd.",
-  "description": null,
+  "shortNameEn": "Fuso Pharmaceutical Industries, Ltd.",
+  "description": "輸液や人工腎臓用透析剤を中心とする医療用医薬品と医療用機械器具を製造・販売する医薬品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "pharmaceuticals",
+      "name": "医薬品事業",
+      "description": "輸液を中心とする注射剤や人工腎臓用透析剤等の医療用医薬品及び医療用機械器具の製造・販売や、医療用医薬品の製造受託等を行っています。2026年3月期の販売高は622億８百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "infusion-and-injection",
+          "name": "輸液等の注射剤",
+          "description": "ブドウ糖注射液、リンゲル液、生理食塩液などの輸液を中心とする注射剤を製造・販売しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "dialysis-agents",
+          "name": "人工腎臓用透析剤",
+          "description": "主力製品の人工腎臓用透析剤キンダリー等の透析関連製品を製造・販売しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "medical-devices",
+          "name": "医療用機械器具",
+          "description": "医療用機械器具の製造・販売を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "contract-manufacturing",
+          "name": "製造受託等",
+          "description": "医療用医薬品の製造受託や、コ・プロモーション契約に係る業務を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "art-products",
+          "name": "生殖補助医療関連製品",
+          "description": "体外受精用組織培養液等の生殖補助医療（ART）分野の製品を扱っており、ブランドを「HiGROW」に統一しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【サステナビリティに関する考え方及び取組】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "不動産の賃貸を行っています。2026年3月期の販売高は99百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "大阪市に本社を置き、輸液等の注射剤や人工腎臓用透析剤キンダリー等の医療用医薬品と医療用機械器具を製造・販売し、医薬品の製造受託も行うメーカーです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "輸液を中心とする注射剤",
+      "人工腎臓用透析剤キンダリー等の透析関連製品",
+      "医療用機械器具",
+      "生殖補助医療（ART）関連製品"
+    ],
+    "customers": [
+      "医療機関",
+      "医薬品卸売業者"
+    ],
+    "revenueSources": [
+      "医療用医薬品及び医療用機械器具の販売",
+      "医療用医薬品の製造受託・コプロモーション契約に係る報酬",
+      "不動産の賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "扶桑薬品工業",
+        "description": "大阪市中央区道修町に本社を置き、城東・大東・岡山・茨城の四工場と研究開発センターを持つ医薬品メーカーです。"
+      },
+      {
+        "kind": "offering",
+        "title": "医療用医薬品等の製造・販売",
+        "description": "輸液を中心とする注射剤、人工腎臓用透析剤キンダリー等の透析関連製品、医療用機械器具を製造・販売し、医療用医薬品の製造受託も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "医療機関への販売",
+        "description": "製商品は医薬品卸売業者を通じて、病院等の医療機関に販売されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は623億７百万円で、腎・透析関連の後発医薬品の販売促進等により、前事業年度と比べ2.9％増加しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は20億11百万円でした。前事業年度は当期純損失32億88百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +148,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 34532000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1344,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +170,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 35649000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1314,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +192,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 36661000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1307,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,14 +214,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 33043000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1340,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "東レ株式会社との特許権侵害差止等請求訴訟について、2025年５月の控訴審判決に伴い訴訟関連損失引当金を計上したことにより、当期純損失となりました。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -115,18 +237,158 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 35057000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1374,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1937,
+      "title": "株式会社大和商会として設立",
+      "description": "国産ブドウ糖の販売を主事業として、大阪市南区（現・大阪市中央区）に株式会社大和商会の商号で設立されました。",
+      "significance": "現在の扶桑薬品工業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1942,
+      "title": "扶桑産業に商号変更",
+      "description": "ブドウ糖が一元的配給統制になったため、ブドウ糖を原料とする注射液の製造への転換を企図し、商号を扶桑産業株式会社に変更しました。",
+      "significance": "医薬品製造への転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "注射液の製造販売を開始",
+      "description": "大阪市東成区に今里工場を設置し、ブドウ糖注射液、リンゲル液、生理食塩液などの注射液の製造販売を開始しました。",
+      "significance": "注射剤事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "扶桑薬品工業に商号変更",
+      "description": "商号を扶桑薬品工業株式会社に変更しました。",
+      "significance": "現在の社名の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "国産初の透析液の供給を開始",
+      "description": "我が国で最初の透析液として、人工腎臓灌流原液を開発し、供給を開始しました。",
+      "significance": "現在の主力領域である透析事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "人工腎臓用透析液キンダリー液を発売",
+      "description": "人工腎臓用透析液キンダリー液を開発し、発売しました。",
+      "significance": "主力製品キンダリーの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "医療用機器分野へ進出",
+      "description": "小型ディスポーザブル血液透析器を開発し、医療用機器分野へ進出しました。",
+      "significance": "医療用機械器具事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "東京証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "子会社扶桑興発を清算結了",
+      "description": "1970年に設立した子会社で、文化・スポーツセンター扶桑会館の賃貸・経営委託等を行っていた扶桑興発株式会社を清算結了しました。",
+      "significance": "不動産関連の子会社体制の一区切りです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "茨城工場で粉末型透析剤の製造設備が稼働",
+      "description": "茨城工場の第２製剤棟で、人工腎臓用粉末型透析剤製造設備の新規ラインが稼働しました。",
+      "significance": "粉末型透析剤の生産体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "suzuken",
+      "relationship": "customer",
+      "description": "医薬品卸売業者であり、当社の製商品の主要な販売先です。2026年3月期の主な相手先別販売実績では筆頭に記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "daito-pharmaceutical",
+      "relationship": "supplier",
+      "description": "商品及び原材料の仕入先であり、2026年3月31日現在の電子記録債務及び買掛金の相手先として記載されています。当社は、仕入等を行う取引先企業との経営戦略の一環として同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +396,47 @@
       "publisher": "扶桑薬品工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHSC.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YHSC",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-12",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営方針「FUSOビジョン2030 Next Stage」（2025年８月公表）では、基礎的医薬品メーカーとして徹底した品質管理と持続的な安定供給を行い、腎臓・泌尿器領域におけるアンメットメディカルニーズに対応するスペシャリティファーマとして、医療を通じて社会を支える企業となることを掲げています。研究・開発（FSGS治療薬「DMX-200」の開発等）、生産（岡山第二工場の建設や生産拠点の再編）、販売・マーケティング、経営管理体制のDX、人的資本・サステナビリティの５つの基本方針を推進します。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "人工腎臓用透析剤では、1964年に我が国で最初の透析液の供給を始めて以来の実績があり、主力製品キンダリーを中心とする透析関連製品が事業の中核です。医療の提供に不可欠な基礎的医薬品や供給確保医薬品を多く取り扱い、安定供給の体制を整えています。",
+        "basis": "沿革における透析液開発の経緯と、経営方針における基礎的医薬品・供給確保医薬品の位置づけに基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高62,307百万円のうち、医療用医薬品及び医療用機械器具は59,499百万円、製造受託・コプロモーション契約に係る報酬や不動産賃貸等のその他は2,808百万円です。販売は医薬品卸売業者を通じて行われ、主な相手先はスズケン（総販売実績の18.7％）、アルフレッサ（18.0％）、メディセオ（15.6％）、東邦薬品（11.7％）です。",
+        "basis": "財務諸表の収益認識関係における収益の分解情報と、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における主な相手先別の販売実績に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

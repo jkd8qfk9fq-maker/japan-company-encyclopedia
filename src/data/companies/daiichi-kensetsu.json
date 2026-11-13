@@ -4,15 +4,111 @@
   "name": "第一建設工業",
   "officialName": "第一建設工業株式会社",
   "nameEn": "DAIICHI KENSETSU CORPORATION",
-  "description": null,
+  "shortNameEn": "DAIICHI KENSETSU CORPORATION",
+  "description": "新潟市に本社を置き、鉄道工事を基盤として土木・建築工事の請負と不動産賃貸を行う建設会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "construction",
+      "name": "建設事業",
+      "description": "当社グループの主たる事業です。当社が建設工事の施工を行うほか、子会社の株式会社ホームテック・旭、株式会社シビル旭が建築及び土木の少額工事の施工を行っており、その一部を当社が発注しています。その他の関係会社である東日本旅客鉄道株式会社は、当社の建設事業の主要な取引先です。2026年3月期の外部顧客への売上高は58,885百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "civil-engineering",
+          "name": "土木工事",
+          "description": "鉄道工事を基盤とする土木工事の請負施工です。2026年3月期の売上高は39,596百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "building-construction",
+          "name": "建築工事",
+          "description": "建築工事の請負施工です。2026年3月期の売上高は19,288百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "当社及び株式会社ホームテック・旭が不動産の賃貸及び仲介等を行っています。2026年3月期の外部顧客への売上高は1,118百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道工事を中心に土木・建築工事を請け負って施工するほか、不動産の賃貸・仲介を行い、工事の請負代金と賃貸料等を得る事業モデルです。",
+    "products": [
+      "土木工事（鉄道工事を含む）",
+      "建築工事",
+      "不動産の賃貸及び仲介等"
+    ],
+    "customers": [
+      "東日本旅客鉄道株式会社",
+      "官公庁",
+      "民間の発注者"
+    ],
+    "revenueSources": [
+      "建設工事の請負による完成工事高",
+      "不動産賃貸・仲介等による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "第一建設工業グループ",
+        "description": "当社及び子会社2社（株式会社ホームテック・旭、株式会社シビル旭）で構成されるグループです。従業員数は1,004人（2026年3月31日現在）です。"
+      },
+      {
+        "kind": "offering",
+        "title": "土木・建築工事の請負施工と不動産賃貸",
+        "description": "鉄道工事を基盤とする土木工事と建築工事を請け負って施工するほか、不動産の賃貸及び仲介等を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "JR東日本・官公庁・民間への提供",
+        "description": "最大の顧客はその他の関係会社である東日本旅客鉄道株式会社で、官公庁や民間の発注者からも工事を請け負います。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は60,003百万円",
+        "description": "2026年3月期の売上高は60,003百万円でした。建設事業は58,885百万円、不動産事業は1,118百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は5,223百万円",
+        "description": "2026年3月期の当期純利益は5,223百万円でした（前期は5,242百万円）。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -22,16 +118,16 @@
       "profit": 3328960000,
       "profitLabel": "経常利益",
       "netIncome": 2596513000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 73097861000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 65403199000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1010,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -44,16 +140,16 @@
       "profit": 3882241000,
       "profitLabel": "経常利益",
       "netIncome": 2643496000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 75548603000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 66511895000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1012,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -66,16 +162,16 @@
       "profit": 4096026000,
       "profitLabel": "経常利益",
       "netIncome": 2791939000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 80943341000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 69339203000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1019,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -88,16 +184,16 @@
       "profit": 7604601000,
       "profitLabel": "経常利益",
       "netIncome": 5242713000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 83941535000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 71657146000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1004,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -110,37 +206,21 @@
       "profit": 7508553000,
       "profitLabel": "経常利益",
       "netIncome": 5223898000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 86339041000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 74702667000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1004,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第84期(2025/04/01－2026/03/31)",
-      "publisher": "第一建設工業株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YILN.pdf",
-      "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-28"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-28",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -152,5 +232,145 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1942,
+      "title": "新鉄工業株式会社として設立",
+      "description": "鉄道省新潟鉄道局所管区域内における鉄道土木及び建築工事の請負を事業目的として、新鉄工業株式会社を設立しました。新潟県新津町に新津支店、長野県長野市に長野支店、山形県山形市に山形支店、秋田県秋田市に秋田支店を設置しました。",
+      "significance": "鉄道工事の請負会社としての出発点であり、現在の事業の原点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "商号を第一建設工業株式会社に変更",
+      "description": "1950年に商号を新鉄工業株式会社に戻し、鉄道工事専門会社から諸官公庁及び民間の土木建築工事の請負に進出した後、1957年に商号を第一建設工業株式会社に変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "子会社2社を設立",
+      "description": "関連会社として株式会社ホームテック・旭を、子会社として株式会社シビル旭を設立しました。株式会社ホームテック・旭は1991年に子会社化しました。",
+      "significance": "現在のグループ（当社及び子会社2社）の体制の基礎です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "日本証券業協会に株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "東京証券取引所と大阪証券取引所の統合に伴い、東京証券取引所JASDAQ（スタンダード）に上場しました。",
+      "significance": "現在の上場市場につながる移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "east-japan-railway",
+      "relationship": "other-affiliated-company",
+      "description": "東日本旅客鉄道株式会社は、当社の議決権の20.59％を保有するその他の関係会社です（2026年3月31日現在）。当社の建設事業の主要な取引先であり、建設工事を受注しています。役員の兼任等もあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "tenryu-saw-mfg",
+      "relationship": "supplier",
+      "description": "天龍製鋸株式会社は、鉄道メンテナンス工事において使用する工具の調達先です。当社は、取引関係の維持・発展のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第84期(2025/04/01－2026/03/31)",
+      "publisher": "第一建設工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YILN.pdf",
+      "publishedAt": "2026-06-24",
+      "docId": "S100YILN",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-12",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "鉄道を中心とした地域の交通インフラなど公共性の高い建設事業を柱に、「安全・安心」を常に最優先とする企業風土を構築し、地域社会の発展に貢献することを経営方針としています。2026年5月に、2026年度を初年度とする中期経営計画「変革2030」を策定し、経営スローガンのもとで4つの経営方針を基盤とした「4つの変革」と「成長戦略」の推進に取り組んでいます。なお、計画の数値目標は転記していません。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "1942年に鉄道工事の請負を目的として設立されて以来、鉄道工事を基盤とする総合建設業を営んでいます。その他の関係会社である東日本旅客鉄道株式会社は建設事業の主要な取引先であり、継続的な取引関係があります。安全を最優先し、最良の総合品質の提供によりお客様満足の向上を目指すとともに、技術力の向上や厳密な原価管理に取り組んでいます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは建設事業と不動産事業の2つです。2026年3月期の外部顧客への売上高は、建設事業が58,885百万円、不動産事業が1,118百万円でした。主要な顧客は東日本旅客鉄道株式会社で、建設事業の売上高の大部分を占めています。",
+        "basis": "注記事項（セグメント情報等）の報告セグメントごとの売上高と主要な顧客ごとの情報に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

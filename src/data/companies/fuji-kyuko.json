@@ -4,15 +4,362 @@
   "name": "富士急行",
   "officialName": "富士急行株式会社",
   "nameEn": "FUJI KYUKO CO., LTD.",
-  "description": null,
+  "shortNameEn": "FUJI KYUKO CO., LTD.",
+  "description": "富士急行は、富士山麓を中心に鉄道・バスなどの運輸業と、富士急ハイランドなどのレジャー・サービス業、不動産業を営む会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "entertainment",
+      "primary": true
+    },
+    {
+      "industryId": "transportation",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "leisure-service",
+      "name": "レジャー・サービス業",
+      "description": "遊園地、ホテル、ゴルフ場、スキー場、アウトドア施設、旅行業などを営む事業です。2026年3月期の外部顧客への営業収益は25,174百万円で、グループ最大の事業です。",
+      "customers": [
+        "遊園地やホテルを利用する観光客",
+        "ゴルフ場・スキー場の利用客",
+        "旅行商品の利用者"
+      ],
+      "children": [
+        {
+          "id": "amusement-park",
+          "name": "遊園地事業",
+          "description": "富士急ハイランド（山梨県富士吉田市）、さがみ湖MORI MORI（神奈川県相模原市）、Grinpa（静岡県裾野市）の3つの遊園地を運営しています。富士急ハイランドなどの営業は、連結子会社に委託しています。",
+          "customers": [
+            "若者やファミリーを中心とする遊園地の来園者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "hotel",
+          "name": "ホテル事業",
+          "description": "ハイランドリゾート ホテル＆スパ、ホテルマウント富士、熱海シーサイド スパ＆リゾートなどのホテルを運営しています。営業は連結子会社に委託しています。",
+          "customers": [
+            "宿泊する観光客",
+            "外国人旅行者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "golf-ski",
+          "name": "ゴルフ・スキー事業",
+          "description": "当社直営の富士ゴルフコースと、表富士観光が運営する大富士ゴルフクラブの2つのゴルフ場と、スノーパークYeti、あだたら高原スキー場の2つのスキー場を運営しています。",
+          "customers": [
+            "ゴルフ場の利用客",
+            "スキー場の利用客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "outdoor",
+          "name": "アウトドア事業",
+          "description": "「PICA」ブランドで、グランピング施設やログハウス、トレーラーハウスを備えたアウトドア施設を山梨県や静岡県などで展開しています。",
+          "customers": [
+            "キャンプやグランピングを楽しむ利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "travel-leisure",
+          "name": "旅行業・その他レジャー事業",
+          "description": "富士急トラベルが旅行業を営み、グループ施設への送客や貸切バスの斡旋を行っています。十国峠のケーブルカーや温泉施設なども運営しています。",
+          "customers": [
+            "旅行を申し込む個人や団体",
+            "温泉施設などの利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "transportation",
+      "name": "運輸業",
+      "description": "鉄道、バス、ハイヤー・タクシー、船舶、索道を営む事業です。2026年3月期の外部顧客への営業収益は20,418百万円でした。",
+      "customers": [
+        "沿線地域の住民や通勤・通学の利用者",
+        "富士山エリアを訪れる観光客"
+      ],
+      "children": [
+        {
+          "id": "railway",
+          "name": "鉄道事業",
+          "description": "富士山麓電気鉄道がJR中央線の大月駅から河口湖駅までの26.6kmを、岳南電車がJR東海道線の吉原駅から岳南江尾駅までの9.2kmを運行しています。",
+          "customers": [
+            "沿線の通勤・通学客",
+            "富士五湖方面への観光客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "bus",
+          "name": "バス事業",
+          "description": "高速バス、乗合バス、貸切バスを運行しています。貸切バスは連結子会社5社で185両、高速バスを含む乗合バスは連結子会社5社で473両を保有しています。",
+          "customers": [
+            "高速バスや路線バスの乗客",
+            "貸切バスを利用する団体"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ropeway",
+          "name": "索道事業",
+          "description": "河口湖の富士山パノラマロープウェイなどの索道施設の営業を行っています。営業の一部は連結子会社に委託しています。",
+          "customers": [
+            "ロープウェイを利用する観光客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "taxi",
+          "name": "ハイヤー・タクシー事業",
+          "description": "連結子会社4社が山梨県と静岡県でハイヤー・タクシーを運行し、合計215両を保有しています。",
+          "customers": [
+            "ハイヤー・タクシーの利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "marine",
+          "name": "船舶運送事業",
+          "description": "富士急マリンリゾートが熱海と初島を結ぶ航路を運航し、箱根遊船が芦ノ湖で遊覧船を運航しています。",
+          "customers": [
+            "航路や遊覧船を利用する観光客と地域の利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産業",
+      "description": "不動産の売買・仲介斡旋、建物や土地の賃貸、別荘地の管理を営む事業です。2026年3月期の外部顧客への営業収益は2,162百万円でした。",
+      "customers": [
+        "別荘地の購入者",
+        "建物や土地を借りる企業や個人"
+      ],
+      "children": [
+        {
+          "id": "real-estate-sales",
+          "name": "不動産売買・仲介斡旋事業",
+          "description": "山中湖畔別荘地（約3,200区画）や、1966年に分譲を始めた十里木高原別荘地（約2,700区画）など、富士山麓を中心に別荘地の開発と分譲を行っています。",
+          "customers": [
+            "別荘地を購入する個人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-estate-leasing",
+          "name": "不動産賃貸事業",
+          "description": "甲府富士急ビルや富士吉田富士急ターミナルビル（Q-STA）などの建物を賃貸するほか、東京都内などで社有地の土地賃貸を行っています。",
+          "customers": [
+            "ビルや土地を借りる企業や店舗"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "villa-management",
+          "name": "別荘地管理事業",
+          "description": "山中湖畔別荘地などの管理を行っています。管理業務全般は連結子会社の富士急リゾートアメニティに委託しています。",
+          "customers": [
+            "別荘地の区画所有者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業で、物品販売、建設、ミネラルウォーターなどの製造販売、情報処理サービスなどを含みます。2026年3月期の外部顧客への営業収益は5,760百万円でした。",
+      "customers": [
+        "百貨店や売店の買い物客",
+        "建設工事の発注者"
+      ],
+      "children": [
+        {
+          "id": "retail-sales",
+          "name": "物品販売業",
+          "description": "富士急百貨店が百貨店を運営するほか、駅や観光施設の売店などで物品販売を行っています。",
+          "customers": [
+            "百貨店や売店の買い物客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "construction-business",
+          "name": "建設業",
+          "description": "富士急建設が建設工事を請け負い、グループ各施設の建設や修繕も数多く手掛けています。",
+          "customers": [
+            "建設工事を発注する企業やグループ会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "manufacturing-sales",
+          "name": "製造販売業",
+          "description": "富士ミネラルウォーターがミネラルウォーターを製造販売し、レゾナント・システムズがバスの放送機器を製造販売しています。",
+          "customers": [
+            "ミネラルウォーターを購入する販売先",
+            "放送機器を導入するバス事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "information-services",
+          "name": "情報処理サービス業",
+          "description": "レゾナント・システムズが情報処理サービスを提供しています。",
+          "customers": [
+            "情報処理サービスを利用する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-services",
+          "name": "その他のサービス業",
+          "description": "富士急ビジネスサポートが人材派遣を行い、持分法適用関連会社のテレビ山梨が民間放送を行っています。",
+          "customers": [
+            "人材派遣を利用する企業",
+            "テレビ番組の視聴者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "富士急グループは、鉄道・バス・船舶などの交通サービスと遊園地・ホテルなどのレジャー施設を提供し、運賃や利用料、不動産の賃料や分譲収入を得ています。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "鉄道・バス・タクシー・船舶による旅客輸送サービス",
+      "遊園地「富士急ハイランド」などのレジャー施設",
+      "ホテル・ゴルフ場・スキー場の運営",
+      "アウトドア施設「PICA」の運営",
+      "別荘地の分譲と建物・土地の賃貸"
+    ],
+    "customers": [
+      "富士山エリアを訪れる観光客",
+      "沿線地域の住民や通勤・通学の利用者",
+      "別荘地の購入者や賃貸施設の利用者"
+    ],
+    "revenueSources": [
+      "旅客運賃",
+      "レジャー施設の利用料と宿泊料",
+      "不動産の賃料と分譲収入",
+      "物品販売や建設工事の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "富士急グループ",
+        "description": "富士急グループは、当社と連結子会社35社、持分法適用関連会社3社で構成されています。2026年3月31日現在の連結従業員数は1,979人で、本社は山梨県富士吉田市にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "交通とレジャーの提供",
+        "description": "鉄道・バス・タクシー・船舶などの交通手段と、富士急ハイランドをはじめとする遊園地、ホテル、ゴルフ場、スキー場、アウトドア施設を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "観光客と地域住民",
+        "description": "富士山エリアを訪れる国内外の観光客や沿線地域の住民が、交通手段やレジャー施設を利用します。営業収益の10％以上を占める顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益",
+        "description": "2026年3月期の営業収益は53,517百万円で、レジャー・サービス業が25,174百万円、運輸業が20,418百万円、不動産業が2,162百万円、その他が5,760百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は5,798百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +374,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24582941000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1697,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +394,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26784031000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1657,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +414,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32351617000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1727,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +434,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 36786623000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1919,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +454,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 42995759000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1979,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +462,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第125期(2025/04/01－2026/03/31)",
-      "publisher": "富士急行株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBGE.pdf",
-      "publishedAt": "2026-06-15",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +473,285 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1926,
+      "title": "富士山麓電気鉄道株式会社を設立",
+      "description": "1926年9月、富士山麓電気鉄道株式会社を設立しました。",
+      "significance": "富士急行の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1929,
+      "title": "大月～富士吉田間の鉄道営業を開始",
+      "description": "1929年6月、大月から富士吉田までの23.6kmで鉄道営業を開始しました。",
+      "significance": "現在の富士急行線につながる鉄道事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "東京証券取引所に上場",
+      "description": "1950年9月、東京証券取引所に上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "富士急行株式会社に商号を変更",
+      "description": "1960年5月、富士急行株式会社に商号を変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "富士五湖国際スケートセンターの営業を開始",
+      "description": "1961年12月、富士五湖国際スケートセンター（現在の富士急ハイランド）の営業を開始しました。",
+      "significance": "レジャー事業の中核施設の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "ホテルマウント富士が開業",
+      "description": "1963年7月、ホテルマウント富士が開業しました。",
+      "significance": "ホテル事業の展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "中央高速バス富士五湖線の運行を開始",
+      "description": "1969年3月、新宿と富士五湖を結ぶ中央高速バス富士五湖線の運行を開始しました。",
+      "significance": "高速バス事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "富士急ハイランドに「トーマスランド」がオープン",
+      "description": "1998年7月、富士急ハイランドに「トーマスランド」がオープンしました。",
+      "significance": "キャラクター施設の導入による集客の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "相模湖ピクニックランドの事業を譲受",
+      "description": "2007年2月、相模湖ピクニックランド（現在のさがみ湖MORI MORI）の事業を譲り受けました。",
+      "significance": "神奈川県への遊園地事業の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "富士急ハイランドの入園を無料化",
+      "description": "2018年7月、富士急ハイランドの入園を無料化しました。",
+      "significance": "入園無料化による集客モデルの転換です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "鉄道事業を富士山麓電気鉄道へ移譲し、プライム市場へ移行",
+      "description": "2022年4月、鉄道事業の富士急行線を子会社の富士山麓電気鉄道株式会社へ移譲しました。同じ月に、東京証券取引所の市場再編によりプライム市場へ移行しました。",
+      "significance": "鉄道事業のグループ内再編と市場区分の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "「箱根 芦ノ湖遊覧船」の事業を譲受",
+      "description": "2023年3月、「箱根 芦ノ湖遊覧船」の事業を譲り受けました。",
+      "significance": "箱根エリアへの船舶事業の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sumitomo-realty-and-development",
+      "relationship": "customer",
+      "description": "特定投資株式として保有しています。同社関連ビルへの契約バス輸送等の営業取引があり、当社の不動産事業に資する不動産情報の収集等でも協力関係を構築しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hanwa",
+      "relationship": "supplier",
+      "description": "特定投資株式として保有しています。海外の遊戯機械メーカーの代理店である同社への発注取引があり、当社事業への広告協賛等の営業取引もあります（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mos-food-services",
+      "relationship": "business-partner",
+      "description": "特定投資株式として保有しています。同社が展開するフードチェーン店とのテナント契約等の営業取引があります（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yakult-honsha",
+      "relationship": "supplier",
+      "description": "特定投資株式として保有しています。飲料商品の仕入取引先であり、安定的な仕入取引の維持・強化や情報収集等で協力関係を構築しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "rion",
+      "relationship": "supplier",
+      "description": "特定投資株式として保有しています。遊戯機械や探傷機器等の導入先であり、安全確保に関する情報収集等で協力関係を構築しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mirait-one",
+      "relationship": "supplier",
+      "description": "特定投資株式として保有しています。情報通信機器等の導入先であり、情報通信分野での情報収集等で協力関係を構築しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kyowa-electronic-instruments",
+      "relationship": "supplier",
+      "description": "特定投資株式として保有しています。バスの安全訓練車システムの導入先であり、運輸事業の安全性の向上に資する情報収集等で協力関係を構築しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokai-kisen",
+      "relationship": "business-partner",
+      "description": "特定投資株式として保有しています。港の運営受託等の営業取引があり、旅客船事業を営む同社と情報交換等でも協力関係を構築しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "meiji-shipping-group",
+      "relationship": "business-partner",
+      "description": "特定投資株式として保有しています。ホテル・リゾート開発や不動産賃貸事業におけるノウハウの共有や情報収集等で協力関係を構築しており、当事業年度に協業関係の強化を目的として株式を取得しました（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第125期(2025/04/01－2026/03/31)",
+      "publisher": "富士急行株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBGE.pdf",
+      "publishedAt": "2026-06-15",
+      "docId": "S100YBGE",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-12",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "第七次中期経営計画（2026-2028年度）では、顧客体験価値を起点としたビジネスの再構築、将来のキャッシュフローの極大化に向けた成長投資の強化、3つの遊園地のアミューズメント機能を他の施設やサービスに広げる組織横断プロジェクト「ULTRA Q」の推進を重点方針としています。2026年度は、富士急ハイランドを中心にグループ各施設と地域を一体的に繋ぎ、体験価値の提供に取り組みます。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "富士急ハイランドと隣接するホテルが一体のアメニティゾーンを形成し、自社の鉄道・バスの路線網がその施設へのアクセスを担うため、交通とレジャーが互いに送客し合う構造になっていることが読み取れます。",
+        "basis": "【事業の内容】の各事業の記載と【セグメント情報】の報告セグメント別営業収益、MD&Aのセグメント別経営成績の記載に基づきます。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "富士山麓と富士五湖のエリアを中心に、鉄道・バスの路線網から遊園地、ホテル、別荘地までを一つのグループで運営し、レジャー・サービス業が営業収益の最大の柱になっています。2025年12月には環境省と「国立公園オフィシャルパートナーシップ」を締結し、富士山エリアや箱根エリアで持続的な観光と自然環境保全の両立を目指しています。",
+        "basis": "【事業の内容】の事業エリアの記載、【セグメント情報】の外部顧客への営業収益、【経営方針、経営環境及び対処すべき課題等】の対処すべき課題の記載に基づきます。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
+  "segmentRevenue": {
+    "fiscalYear": "2026年3月期",
+    "periodEnd": "2026-03-31",
+    "label": "外部顧客への売上高",
+    "items": [
+      {
+        "businessId": "transportation",
+        "amount": 20418499000
+      },
+      {
+        "businessId": "real-estate",
+        "amount": 2162930000
+      },
+      {
+        "businessId": "leisure-service",
+        "amount": 25174970000
+      },
+      {
+        "businessId": "other",
+        "amount": 5760881000
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【セグメント情報】"
   }
 }

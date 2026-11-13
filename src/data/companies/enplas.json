@@ -4,15 +4,145 @@
   "name": "エンプラス",
   "officialName": "株式会社エンプラス",
   "nameEn": "ENPLAS CORPORATION",
-  "description": null,
+  "shortNameEn": "ENPLAS CORPORATION",
+  "description": "エンジニアリングプラスチックでICテスト用ソケットや精密ギヤなどをつくる精密プラスチック部品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "semiconductors",
+      "primary": true
+    },
+    {
+      "industryId": "electronics",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "engineering-plastics-products",
+      "name": "エンジニアリングプラスチック製品事業",
+      "description": "当社と子会社22社で構成されるグループです。エンジニアリングプラスチック及びその複合材料による各種製品の製造、加工並びに販売を主業とする専業メーカーで、本社は埼玉県川口市にあります。連結従業員数は1,371人です（2026年3月31日現在）。研究開発は当社と株式会社エンプラス研究所が全事業分野にわたって行い、ENPLAS AMERICA, INC.が北米地域を、ENPLAS（EUROPE）LTD.が欧州地域のグループ会社を統括しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "semiconductor",
+          "name": "Semiconductor事業",
+          "description": "各種ICテスト用ソケットとバーンインソケットを製造・販売する事業です。2026年3月期の外部顧客への売上高は23,603百万円です。国内では株式会社エンプラス半導体機器とQMS株式会社が製造・販売し、海外ではENPLAS SEMICONDUCTOR PERIPHERALS PTE.LTD.などが製造・販売し、ENPLAS TECH SOLUTIONS, INC.などが販売しています。",
+          "customers": [
+            "半導体メーカー",
+            "電子機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "energy-saving-solution",
+          "name": "Energy Saving Solution事業",
+          "description": "高精度ギヤを核とした自動車機器、OA、計器、住宅機器向けの製品を製造・販売する事業です。2026年3月期の外部顧客への売上高は14,201百万円です。国内ではQMS株式会社が製造・販売し、海外ではENPLAS（U.S.A.）, INC.、ENPLAS PRECISION（MALAYSIA）SDN.BHD.、ENPLAS PRECISION（THAILAND）CO.,LTD.などが製造・販売しています。",
+          "customers": [
+            "自動車機器メーカー",
+            "OA機器メーカー",
+            "計器メーカー",
+            "住宅機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "life-science",
+          "name": "Life Science事業",
+          "description": "ライフサイエンス関連製品を製造・販売する事業です。2026年3月期の外部顧客への売上高は3,083百万円です。遺伝子検査用製品や、生体分子や細胞などの解析に用いられるマイクロ流路デバイスなどが含まれます。国内ではQMS株式会社が製造・販売し、海外ではENPLAS LIFE TECH, INC.が製造・販売し、ENPLAS（U.S.A.）, INC.とENPLAS（EUROPE）LTD.が販売しています。",
+          "customers": [
+            "ライフサイエンス関連企業",
+            "遺伝子検査関連企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "digital-communication",
+          "name": "Digital Communication事業",
+          "description": "光通信デバイスとLED用拡散レンズを製造・販売する事業です。2026年3月期の外部顧客への売上高は1,652百万円です。海外ではENPLAS HI-TECH（SINGAPORE）PTE.LTD.とENPLAS TECH SOLUTIONS, INC.などが販売し、ENPLAS（VIETNAM）CO.,LTD.が製造・販売しています。",
+          "customers": [
+            "光通信機器メーカー",
+            "液晶テレビメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "エンジニアリングプラスチックの超精密加工を核に、ICテスト用ソケットやライフサイエンス製品、光通信デバイス、精密ギヤなどを製造し、国内外の顧客に販売して売上高を得る事業モデルです。",
+    "products": [
+      "ICテスト用ソケット",
+      "バーンインソケット",
+      "ライフサイエンス関連製品",
+      "光通信デバイス",
+      "LED用拡散レンズ",
+      "高精度ギヤを核とした自動車機器、OA、計器、住宅機器向け製品"
+    ],
+    "customers": [
+      "半導体メーカー",
+      "ライフサイエンス関連企業",
+      "光通信機器メーカー",
+      "自動車機器メーカー",
+      "OA機器メーカー"
+    ],
+    "revenueSources": [
+      "Semiconductor事業の製品販売",
+      "Energy Saving Solution事業の製品販売",
+      "Life Science事業の製品販売",
+      "Digital Communication事業の製品販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と子会社22社のグループ",
+        "description": "エンプラスグループは、当社と子会社22社で構成されています。連結従業員数は1,371人です（2026年3月31日現在）。埼玉県川口市に本社を置き、世界各地の子会社が製造と販売を担っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "精密プラスチック製品を提供",
+        "description": "エンジニアリングプラスチックの超精密加工をコア技術として、ICテスト用ソケットやバーンインソケット、ライフサイエンス関連製品、光通信デバイス、LED用拡散レンズ、高精度ギヤを核とした自動車機器やOA、計器、住宅機器向け製品を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外のメーカー等へ販売",
+        "description": "製品は国内外の半導体メーカーやライフサイエンス関連企業、光通信機器メーカー、自動車機器メーカーなどへ販売されています。売上高の10％以上を占める特定の顧客はありません。地域別では米国向けが10,780百万円と最も大きく、日本向けは6,544百万円です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は42,540百万円",
+        "description": "2026年3月期の連結売上高は42,540百万円（前期比11.7％増）でした。事業別ではSemiconductor事業が23,603百万円、Energy Saving Solution事業が14,201百万円、Life Science事業が3,083百万円、Digital Communication事業が1,652百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は5,233百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は5,233百万円（前期比32.7％増）でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +157,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 41493000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1420,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +177,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 47307000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1527,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +197,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 52667000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1521,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +217,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 56216000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1478,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +237,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 62571000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1371,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +245,158 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1962,
+      "title": "第一精工株式会社を設立",
+      "description": "プラスチックねじ及びリベットの製造販売、金型及び精密機構部品の製造及び加工を目的として、第一精工株式会社の商号により東京都板橋区に設立されました。",
+      "significance": "現在のエンプラスの実質的な創業です。なお、設立時の資本金の金額は本文に書かなかった。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "本店を埼玉県川口市へ移転",
+      "description": "本店を埼玉県川口市に移転しました。",
+      "significance": "現在の本社所在地である川口市への移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "シンガポールに子会社を設立",
+      "description": "シンガポールにENPLAS CO.,(SINGAPORE)PTE. LTD.（現、ENPLAS HI-TECH(SINGAPORE)PTE.LTD.）を設立しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "米国子会社の設立と研究所の分離",
+      "description": "米国ジョージア州にENPLAS(U.S.A.), INC.を設立し、埼玉県川口市に基礎研究部門を分離独立して株式会社第一精工研究所（現、株式会社エンプラス研究所）を設立しました。",
+      "significance": "北米進出と研究開発体制の独立が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "額面変更のための合併",
+      "description": "株式額面金額の変更を目的として、エンプラス株式会社を形式上の存続会社として合併し、合併と同時に商号を第一精工株式会社に変更しました。実質上の存続会社である旧第一精工株式会社の営業活動を全面的に継承しました。",
+      "significance": "現在の沿革が旧第一精工株式会社を実質上の存続会社として記載される体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "店頭登録により株式を公開",
+      "description": "店頭銘柄として日本証券業協会東京地区協会（現、東京証券取引所）へ登録し、株式を公開しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "東京証券取引所市場第二部へ上場",
+      "description": "東京証券取引所市場第二部へ上場しました。",
+      "significance": "取引所上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "マレーシアに子会社を設立",
+      "description": "マレーシアのジョホール州にENPLAS PRECISION(MALAYSIA)SDN.BHD.を設立しました。",
+      "significance": "アジアでの製造・販売体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "商号を株式会社エンプラスに変更",
+      "description": "決算期を12月31日から3月31日に変更し、商号を株式会社エンプラスに変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所市場第一部へ指定替え",
+      "description": "東京証券取引所市場第一部へ指定替えになりました。",
+      "significance": "上場市場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "半導体機器事業を分社化",
+      "description": "半導体機器事業部を会社分割の方法で分社化し、埼玉県さいたま市に株式会社エンプラス半導体機器を設立しました。",
+      "significance": "Semiconductor事業の国内製造・販売会社ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "シンガポールに半導体周辺事業会社を設立",
+      "description": "シンガポールにENPLAS SEMICONDUCTOR PERIPHERALS PTE.LTD.を設立しました。半導体機器事業の本社機能を移転するとともに、株式会社エンプラス半導体機器を同社の子会社としました。",
+      "significance": "Semiconductor事業の海外統括体制が変わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "グローバル本社を東京に開設",
+      "description": "東京都千代田区にグローバル本社を開設しました。同じ年に監査役会設置会社から監査等委員会設置会社へ移行しました。",
+      "significance": "東京拠点とガバナンス体制の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "ディスプレイ デバイス子会社を吸収合併",
+      "description": "株式会社エンプラス ディスプレイ デバイスを吸収合併しました。",
+      "significance": "LED関連事業を分社化していた子会社を本体に戻しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。京都府京都市下京区に京都共創センターも開設しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +405,55 @@
       "publisher": "株式会社エンプラス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YLHU.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YLHU",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-12",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画を策定し、「ソリューションプロバイダーとして顧客価値を創出する」を中期経営方針として掲げ、事業領域の拡大と、ニッチトップ戦略による付加価値の向上に取り組んでいます。成長領域に経営資源を集中し、人材への投資を積極的に進めるとしています。重点施策として、Semiconductor事業の成長と事業ポートフォリオの分散、イノベーションセンターによる顧客価値の創出、各事業の成長と事業領域の拡大、成長分野への投資と投資回収の徹底を挙げています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "戦略の中心は、AIの社会実装に向けた事業機会を各事業で取り込むことです。売上高の過半を占めるSemiconductor事業を伸ばしながら、偏重を避けるためにポートフォリオを広げる投資を加速するとしている点が、事業別の売上構成と合わせて読めます。イノベーションセンターで顧客の課題やアイデアを引き出し、試作・検証・評価までを一体で提供する形も、製品販売にとどまらない顧客価値の創出を目指す表れです。",
+        "basis": "経営方針、経営環境及び対処すべき課題等の重点施策の記載と、セグメント情報の外部顧客への売上高、事業の内容の4事業の製品の記載によります。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、創業以来培ってきたエンジニアリングプラスチックの超精密加工をコア技術として、精密成形技術、微細接触技術、光学設計技術と光束制御技術、マイクロ流路技術を、それぞれ半導体ICソケット、オプトデバイス、ライフサイエンス製品などへ展開していることです。高精度・高強度・静音を要素技術とするギヤ開発も含め、用途ごとに異なる技術を同じ素材と加工の基盤から広げている点に特徴があります。",
+        "basis": "研究開発活動のコア技術と各事業分野の開発の記載と、事業の内容の4事業の製品の記載によります。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の連結売上高42,540百万円のうち、Semiconductor事業が23,603百万円と過半を占め、Energy Saving Solution事業が14,201百万円、Life Science事業が3,083百万円、Digital Communication事業が1,652百万円です。地域別売上高は米国が10,780百万円と最も大きく、その他アジアが8,954百万円、日本が6,544百万円、中国が6,096百万円と続き、海外向けが大半を占める構成です。売上高の10％以上を占める特定の顧客はありません。",
+        "basis": "セグメント情報の外部顧客への売上高と関連情報の地域ごとの情報、主要な顧客ごとの情報と、経営者による分析の経営成績の概要によります。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

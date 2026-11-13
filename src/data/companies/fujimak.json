@@ -4,15 +4,183 @@
   "name": "フジマック",
   "officialName": "株式会社フジマック",
   "nameEn": "FUJIMAK CORPORATION",
-  "description": null,
+  "shortNameEn": "FUJIMAK CORPORATION",
+  "description": "業務用厨房機器の製造・販売と保守修理を行い、厨房づくりを総合的に支える会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "kitchen-equipment",
+      "name": "厨房機器",
+      "description": "業務用厨房機器の製造・販売及び保守修理を行う単一セグメントの事業です。当社と子会社21社でグループを構成し、2025年12月期の連結従業員数は1,160人です。製造は当社のほか株式会社フジマックネオ、中国とベトナムの製造子会社が担い、販売と保守修理は当社と国内外の販売子会社が担います。",
+      "customers": [
+        "外食産業の事業者",
+        "宿泊施設",
+        "レジャー産業の事業者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "heating-equipment",
+          "name": "熱機器",
+          "description": "調理に使う熱機器の区分です。2025年12月期の外部顧客への売上高は11,667百万円です。",
+          "customers": [
+            "外食産業の事業者",
+            "宿泊施設",
+            "レジャー産業の事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "cooling-equipment",
+          "name": "冷機器",
+          "description": "冷蔵・冷凍などに使う冷機器の区分です。2025年12月期の外部顧客への売上高は10,299百万円です。",
+          "customers": [
+            "外食産業の事業者",
+            "宿泊施設",
+            "レジャー産業の事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "maintenance-repair",
+          "name": "保守修理",
+          "description": "業務用厨房機器の保守修理の区分です。2025年12月期の外部顧客への売上高は8,742百万円です。",
+          "customers": [
+            "外食産業の事業者",
+            "宿泊施設",
+            "レジャー産業の事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "service-equipment",
+          "name": "サービス機器",
+          "description": "配膳などに使うサービス機器の区分です。2025年12月期の外部顧客への売上高は7,547百万円です。",
+          "customers": [
+            "外食産業の事業者",
+            "宿泊施設",
+            "レジャー産業の事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other-equipment",
+          "name": "その他",
+          "description": "上記の各区分に含まれない製品等の区分です。2025年12月期の外部顧客への売上高は4,821百万円です。",
+          "customers": [
+            "外食産業の事業者",
+            "宿泊施設",
+            "レジャー産業の事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "washing-disinfection",
+          "name": "洗浄・消毒機器",
+          "description": "食器等の洗浄・消毒に使う機器の区分です。2025年12月期の外部顧客への売上高は4,357百万円です。",
+          "customers": [
+            "外食産業の事業者",
+            "宿泊施設",
+            "レジャー産業の事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "業務用厨房機器を自社グループで開発・製造して外食産業などへ販売し、保守修理とあわせて対価を得る事業モデルです。",
+    "products": [
+      "熱機器",
+      "冷機器",
+      "洗浄・消毒機器",
+      "サービス機器",
+      "輸入商品・食器・厨房用什器備品",
+      "保守修理サービス"
+    ],
+    "customers": [
+      "外食産業の事業者",
+      "宿泊施設",
+      "レジャー産業の事業者",
+      "海外の販売先"
+    ],
+    "revenueSources": [
+      "業務用厨房機器の販売による売上高",
+      "保守修理による売上高"
+    ],
+    "suppliers": [
+      {
+        "name": "原材料・部品等の仕入先",
+        "description": "連結子会社の株式会社ジーシーエスから、業務用厨房機器の原材料・部品等を仕入れています。"
+      },
+      {
+        "name": "輸入商品等の仕入先",
+        "description": "連結子会社の株式会社エピックから、輸入商品・食器・厨房用什器備品を仕入れています。"
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社フジマック",
+        "description": "東京都港区南麻布に本社を置く業務用厨房機器メーカーで、当社と子会社21社でグループを構成しています。2025年12月期の連結従業員数は1,160人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "業務用厨房機器と保守修理",
+        "description": "熱機器、冷機器、洗浄・消毒機器、サービス機器などの業務用厨房機器を製造・販売し、保守修理も行います。厨房レイアウトのコンサルティングから開発・製造・販売・施工・保守までの一貫体制を取っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "外食産業・宿泊施設・レジャー産業",
+        "description": "お客様は外食産業、宿泊施設、レジャー産業などです。売上高の10％以上を占める特定の相手先はなく、本邦の外部顧客への売上高が全体の90％を超えています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は474億3千6百万円",
+        "description": "2025年12月期の売上高は474億3千6百万円で、前連結会計年度比3.9％増でした。製品別では熱機器が最も大きく、次いで冷機器、保守修理の順です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は23億4千3百万円",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は23億4千3百万円で、前連結会計年度比3.4％増でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +195,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19068039000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1045,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +215,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20113296000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1045,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年3月31日）等を第74期（2022年12月期）の期首から適用しており、第74期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +236,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21894274000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1093,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +256,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24416381000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1141,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +276,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26438519000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1160,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +284,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第77期(2025/01/01－2025/12/31)",
-      "publisher": "株式会社フジマック",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XV4T.pdf",
-      "publishedAt": "2026-03-30",
-      "accessedAt": "2026-09-29"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-29",
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",
@@ -142,5 +295,237 @@
       "yuho-2025"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1950,
+      "title": "富士厨房設備株式会社を設立",
+      "description": "1950年3月、業務用厨房機器の販売、厨房及び付帯設備の設計並びに工事請負等を目的として、東京都港区に富士厨房設備株式会社を設立しました。",
+      "significance": "当社の創業です。設立時の資本金の金額は書いていません。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "福岡工場の操業を開始",
+      "description": "1962年5月、福岡県糟屋郡新宮町に福岡工場を新築し、操業を開始しました。同年10月には東京都港区に富士厨房サービス株式会社を設立しました。",
+      "significance": "九州の製造拠点とサービス会社の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "シンガポールに販売現地法人を設立",
+      "description": "1982年10月、シンガポールの駐在員事務所を廃止し、販売現地法人FUJIMAK FOOD SERVICE EQUIPMENT(S)PTE.,LTD.を設立しました。",
+      "significance": "海外販売体制の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "株式会社フジマックに社名変更",
+      "description": "1990年10月、商号を株式会社フジマックに変更しました。富士厨房サービス株式会社も株式会社フジマックサービスに社名変更しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "フジマックサービスを吸収合併",
+      "description": "1992年1月、株式会社フジマックサービスを吸収合併しました。同年3月には株式会社ノヴァックスよりコンビオーブンの輸出入及び国内販売と関連事業の譲渡を受けました。",
+      "significance": "保守修理体制の統合とコンビオーブン事業の取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "株式を店頭登録",
+      "description": "1996年8月、日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1998年2月、東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "工場を分社化",
+      "description": "2000年7月、福岡工場を分社化して株式会社ネオシスを設立し、本社工場を分社化して株式会社エクステインを設立しました。",
+      "significance": "製造部門の分社化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "台湾と中国上海に販売現地法人を設立",
+      "description": "2003年5月に台湾に販売現地法人富士瑪克股份有限公司を設立し、同年9月に中国上海に販売現地法人福喜瑪克貿易(上海)有限公司を設立しました。",
+      "significance": "アジア販売網の拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "中国上海に製造現地法人を設立",
+      "description": "2004年4月、中国上海に製造現地法人福喜厨房設備(上海)有限公司を設立しました。同年5月には東京都港区に株式会社トライアンスを設立し、物流業務を開始しました。",
+      "significance": "海外製造拠点と物流会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ネオシスをフジマックネオに社名変更",
+      "description": "2019年5月、株式会社ネオシスを株式会社フジマックネオに社名変更しました。同年7月には上海の製造現地法人の商号も変更しました。",
+      "significance": "製造子会社の現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "本社を南麻布に新築移転",
+      "description": "2020年7月、東京都港区南麻布に本社を新築移転しました。同年にはベトナムに販売現地法人も設立しました。",
+      "significance": "現在の本社所在地への移転です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "太洋エースを子会社化",
+      "description": "2021年9月、太洋エース株式会社の株式を買い取り、子会社化しました。同社は2022年3月に株式会社エピックに吸収合併されました。",
+      "significance": "輸入販売事業の再編につながる取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "シンガポールの会社を子会社化",
+      "description": "2023年11月、SOMERVILLE(SINGAPORE) PRIVATE LIMITEDの株式を買い取り、子会社化しました。",
+      "significance": "シンガポール事業の拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "インドネシアに販売現地法人を設立",
+      "description": "2024年4月、インドネシア共和国に販売現地法人PT FUJIMAK FOOD SERVICE INDONESIAを設立しました。",
+      "significance": "直近の海外販売拠点の新設です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "hoshizaki",
+      "relationship": "supplier",
+      "description": "【株式の保有状況】の特定投資株式に記載される会社です。当社グループの資材等の仕入において重要な取引先であり、同社株式40,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2025",
+      "title": "有価証券報告書－第77期(2025/01/01－2025/12/31)",
+      "publisher": "株式会社フジマック",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XV4T.pdf",
+      "publishedAt": "2026-03-30",
+      "docId": "S100XV4T",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 重要な後発事象として、当社と連結子会社の株式会社エピックが所有する東京都港区新橋の賃貸用土地の譲渡が印字されています。2026年3月13日の取締役会で決議し、同年3月17日に売買契約を締結済みですが、物件の引渡しは2026年5月29日の予定です。本登録は譲渡前の体制で記載しています。"
+    ]
+  },
+  "updatedAt": "2026-11-12",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念として「フードビジネスのトータルサポート」と「お客様満足の創造」を掲げ、グループ各社の連携による生産・物流・設計・施工・営業・サービスの一貫体制の強化、地域密着の営業とアフターメンテナンスの徹底、取引先の拡大、安全性・衛生性・省エネ性に優れた製品の開発、海外部門の強化、ESG経営の推進に取り組んでいます。",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2025年12月期の売上高は474億3千6百万円と前連結会計年度比3.9％増でした。経営成績の概要では、インバウンド消費による需要と、省人化ニーズの高まりを受けた省人対応厨房機器の需要が順調に推移したと説明されています。",
+        "basis": "セグメント関連情報の製品及びサービスごとの情報、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "厨房レイアウトのコンサルティングから厨房機器の開発・製造・販売・施工・保守までをグループの一貫体制で担い、地域密着型の直販体制と各拠点のアフターメンテナンス体制を組み合わせています。製造は国内（福岡県）と中国（上海）、ベトナムの3拠点で連携しています。",
+        "basis": "事業の内容、経営方針・対処すべき課題、関係会社の状況",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "事業は業務用厨房機器の製造・販売及び保守修理の単一セグメントです。2025年12月期の製品及びサービスごとの外部顧客への売上高は、熱機器11,667百万円、冷機器10,299百万円、保守修理8,742百万円、サービス機器7,547百万円、その他4,821百万円、洗浄・消毒機器4,357百万円で、本邦の外部顧客への売上高が全体の90％を超え、売上高の10％以上を占める相手先はありません。",
+        "basis": "セグメント情報の関連情報（製品及びサービスごとの情報、地域ごとの情報、主要な顧客ごとの情報）",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
   }
 }

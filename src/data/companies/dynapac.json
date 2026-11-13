@@ -4,7 +4,8 @@
   "name": "ダイナパック",
   "officialName": "ダイナパック株式会社",
   "nameEn": "Dynapac　Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Dynapac",
+  "description": "段ボール、印刷紙器、軟包装材などの包装資材を製造・販売する総合包装メーカーで、不動産賃貸事業も営む会社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,8 +16,121 @@
       "market": "メイン"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "packaging",
+      "name": "包装材関連事業",
+      "description": "当社および連結子会社が段ボール、印刷紙器、軟包装材などの包装資材を製造・販売する事業で、一部の国内子会社では包装・梱包サービスも行っています。2025年12月期の外部顧客への売上高は66,717百万円です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "corrugated",
+          "name": "段ボール部門",
+          "description": "段ボールシートと段ボールケースを製造・販売する部門です。製品及びサービスごとの外部顧客への売上高は49,191百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "flexible-packaging",
+          "name": "軟包装材部門",
+          "description": "プラスチックフィルムや紙などのグラビア印刷物を取り扱う部門です。製品及びサービスごとの外部顧客への売上高は8,078百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "printed-cartons",
+          "name": "印刷紙器部門",
+          "description": "印刷紙器、美粧段ボール、紙トレー、マイクロフルート段ボールなどを取り扱う部門です。製品及びサービスごとの外部顧客への売上高は6,699百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "packaging-other",
+          "name": "その他部門",
+          "description": "紙製緩衝材（ハイモール）や化成品などを取り扱う部門です。製品及びサービスごとの外部顧客への売上高は3,114百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸事業",
+      "description": "当社が保有する不動産の賃貸および管理を行う事業で、商業施設等への土地の賃貸やマンション等建物の賃貸を主としています。2025年12月期の外部顧客への売上高は365百万円です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "原紙などの原材料を仕入れて段ボールや印刷紙器、軟包装材に加工し、食品メーカーなどの顧客に販売して製品の対価を受け取る事業モデルです。",
+    "products": [
+      "段ボールシート・段ボールケース",
+      "印刷紙器",
+      "軟包装材",
+      "紙製緩衝材"
+    ],
+    "customers": [
+      "包装資材を使う製造業などの法人顧客",
+      "商業施設やマンションなどの不動産賃借人"
+    ],
+    "revenueSources": [
+      "包装資材の販売による収益",
+      "不動産の賃貸による収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と連結子会社18社のグループ",
+        "description": "当社、連結子会社18社、持分法適用関連会社１社でグループを構成し、連結の従業員数は2,418人です（2025年12月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "個装から外装まで包装資材を製造・販売",
+        "description": "段ボール、印刷紙器および軟包装材の個装から外装まで、包装資材の製造・販売とこれに附帯する業務を行い、不動産賃貸事業も営んでいます。"
+      },
+      {
+        "kind": "customer",
+        "title": "食品メーカーなど包装を使う事業者がお客さま",
+        "description": "売上高の10％を超える特定の外部顧客はないと開示されており、幅広い業種の事業者に包装資材を販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は67,083百万円",
+        "description": "2025年12月期の売上高は67,083百万円で、包装材関連事業の外部顧客への売上高は66,717百万円、不動産賃貸事業は365百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は3,178百万円",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は3,178百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -31,7 +145,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 39176265000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2257,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +165,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 40657175000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2193,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +185,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 42909805000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2143,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,12 +205,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 46131525000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2281,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "2024年３月に取得したVietnam TKT Plastic Packaging Joint Stock Companyの企業結合に係る暫定的な会計処理が2025年12月期に確定し、取得原価の当初配分額の重要な見直しが反映されたため、2024年12月期の主要な経営指標は前期有報の印字と異なります。値は今期有報のものを用いています。"
     },
     {
       "fiscalYear": "2025年12月期",
@@ -111,7 +226,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 47840573000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2418,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +234,129 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1962,
+      "title": "大日本紙業株式会社が設立",
+      "description": "1962年８月、大日本紙業株式会社が三和印刷株式会社と堤紙工株式会社との合併により設立されました。",
+      "significance": "現在のダイナパックの源流となる設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "名古屋証券取引所市場二部に上場",
+      "description": "1976年７月、大日本紙業株式会社が名古屋証券取引所市場二部に株式を上場しました。",
+      "significance": "株式上場の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "東京証券取引所市場二部に上場",
+      "description": "1993年10月、大日本紙業株式会社が東京証券取引所市場二部に株式を上場しました。",
+      "significance": "東京証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "日本ハイパック株式会社と提携契約を締結",
+      "description": "2001年３月、大日本紙業株式会社および日本ハイパック株式会社が業務提携および資本提携の契約を締結しました。",
+      "significance": "後の合併につながる提携です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "合併によりダイナパック株式会社に商号を変更",
+      "description": "2005年１月、大日本紙業株式会社と日本ハイパック株式会社が合併し、ダイナパック株式会社に商号を変更しました。",
+      "significance": "現在の社名と体制の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "中央紙器工業株式会社と業務提携の契約を締結",
+      "description": "2006年10月、中央紙器工業株式会社と業務提携の契約を締結しました。",
+      "significance": "同業との提携の広がりを示す出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "クラウン紙工業株式会社を連結子会社化",
+      "description": "2016年７月、クラウン紙工業株式会社の株式を取得し、連結子会社としました。",
+      "significance": "印刷紙器部門の基盤を広げた買収です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "旭段ボール株式会社を連結子会社化",
+      "description": "2018年７月、旭段ボール株式会社の株式を取得し、連結子会社としました。",
+      "significance": "段ボール事業の基盤を広げた買収です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証スタンダード市場・名証メイン市場へ移行",
+      "description": "2022年４月、東京証券取引所および名古屋証券取引所の市場区分の見直しにより、東京証券取引所の市場第二部からスタンダード市場に、名古屋証券取引所の市場二部からメイン市場にそれぞれ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "VIETNAM TKT PLASTIC PACKAGING JOINT STOCK COMPANYを連結子会社化",
+      "description": "2024年３月、VIETNAM TKT PLASTIC PACKAGING JOINT STOCK COMPANYの株式を取得し、連結子会社としました。",
+      "significance": "ベトナムの軟包装材事業を取り込んだ買収です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "HOANG HAI VIETNAM PACKAGINGと丸中紙工を連結子会社化",
+      "description": "2025年８月にHOANG HAI VIETNAM PACKAGING JOINT STOCK COMPANYの株式を、2025年11月に丸中紙工株式会社の株式を、それぞれ取得し、連結子会社としました。",
+      "significance": "期中の買収で、2025年12月31日現在のグループ構成に反映されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kagome",
+      "relationship": "major-shareholder",
+      "description": "カゴメ株式会社は、2025年12月31日現在の大株主の状況に筆頭株主として記載されており、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は16.8％です。当社の本店は名古屋市中区のカゴメビルに所在しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -128,13 +364,47 @@
       "publisher": "ダイナパック株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XT1X.pdf",
       "publishedAt": "2026-03-26",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XT1X",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-12",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年から2026年度までを対象期間とする中期経営計画を公表し、命題を「現在の深化と未来の創造」として、「既存事業強化」と「成長分野の取込みと創出」の２つの成長戦略に取り組んでいます。既存事業では主力の段ボール事業の収益力強化や、商品・顧客ポートフォリオへの組み換えを進め、成長分野ではＭ＆Ａの積極的な実施や国内・海外の生産拠点の拡充を掲げています。計画の目標数値は将来に関する事項のため、ここには転記していません。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "「トータルパッケージング・ソリューション・プロバイダー」として、段ボール、印刷紙器、軟包装材および紙製緩衝材などの各種商品群を取り揃え、お客様のニーズに合わせた商品開発、製造および販売まで総合的に手がけていると説明しています。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【セグメント情報等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年12月期の売上高67,083百万円の内訳は、報告セグメントの外部顧客への売上高で包装材関連事業が66,717百万円、不動産賃貸事業が365百万円です。製品及びサービスごとでは段ボールが49,191百万円、軟包装材が8,078百万円、印刷紙器が6,699百万円、その他が3,114百万円となっています。地域ごとでは日本が51,469百万円、ベトナムが12,238百万円、東南アジアが1,904百万円、中国が1,471百万円で、売上高の10％を超える特定の外部顧客はありません。",
+        "basis": "セグメント情報等の報告セグメントごとの外部顧客への売上高と、関連情報の製品及びサービスごとの情報、地域ごとの情報、主要な顧客ごとの情報に基づきます。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

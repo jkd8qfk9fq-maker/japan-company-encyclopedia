@@ -4,15 +4,119 @@
   "name": "ダイト",
   "officialName": "ダイト株式会社",
   "nameEn": "Daito Pharmaceutical Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Daito Pharmaceutical Co.,Ltd.",
+  "description": "富山県富山市の本社工場を生産拠点とし、原薬と製剤を一貫して製造・販売する、ジェネリック医薬品を中心とする製薬会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "pharmaceutical-business",
+      "name": "医薬品事業",
+      "description": "医薬品事業の単一セグメントです。外部顧客への売上高は50,650百万円で、原薬及び製剤（医療用医薬品・一般用医薬品）の製造販売及び仕入販売、原薬及び製剤に係る製造受託、並びに健康食品他の販売を行っています。連結従業員数は1,085人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "formulations",
+          "name": "製剤",
+          "description": "外部顧客への売上高は27,984百万円です。医療用医薬品（ジェネリック医薬品など）や一般用医薬品の製剤の製造販売、仕入販売及び製造受託を行っています。",
+          "customers": [
+            "医薬品メーカーなどの販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "active-pharmaceutical-ingredients",
+          "name": "原薬",
+          "description": "外部顧客への売上高は22,482百万円です。医薬品を製造するための原材料である原薬の製造販売、仕入販売及び製造受託を行っており、ジェネリック医薬品メーカーを中心に自社開発の原薬を供給しています。",
+          "customers": [
+            "ジェネリック医薬品メーカーなどの販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "health-foods-and-others",
+          "name": "健康食品他",
+          "description": "外部顧客への売上高は184百万円です。健康食品や、医薬部外品等の医薬関連商品を販売しています。",
+          "customers": [
+            "医薬関連商品の購入者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "原薬の製造販売から、医療用医薬品・一般用医薬品の製剤の製造販売と製造受託までを手がけ、国内外の医薬品メーカーへ製品を供給しています。",
+    "products": [
+      "原薬（医薬品原料）",
+      "医療用医薬品（ジェネリック医薬品など）",
+      "一般用医薬品（OTC医薬品）",
+      "健康食品・医薬部外品等の医薬関連商品",
+      "原薬及び製剤の製造受託"
+    ],
+    "customers": [
+      "ジェネリック医薬品メーカーを中心とする医薬品メーカー",
+      "先発医薬品メーカーなどの製造受託の委託元",
+      "自社開発ジェネリック医薬品の販売を委託する医薬品メーカー"
+    ],
+    "revenueSources": [
+      "原薬及び製剤の販売代金",
+      "原薬及び製剤の製造受託の対価",
+      "健康食品等の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ダイト株式会社",
+        "description": "1942年に富山県で設立された製薬会社で、連結子会社2社及び持分法適用会社3社とともに医薬品事業を営んでいます。連結従業員数は1,085人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "原薬と製剤を提供",
+        "description": "原薬の製造販売、仕入販売及び製造受託と、医療用医薬品・一般用医薬品の製剤の製造販売、仕入販売及び製造受託を行い、原薬から製剤までの一貫した製造が可能な体制を持っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "医薬品メーカーが顧客",
+        "description": "ジェネリック医薬品メーカーを中心に自社開発の原薬を供給し、国内大手メーカー等からは製剤の製造受託を受けています。主要な顧客ごとの情報には株式会社フェルゼンファーマと東和薬品株式会社が印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は50,650百万円",
+        "description": "2026年5月期の売上高は50,650百万円（前期比0.0％増）となりました。製品及びサービス別では製剤が27,984百万円、原薬が22,482百万円、健康食品他が184百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は3,161百万円",
+        "description": "2026年5月期の親会社株主に帰属する当期純利益は3,161百万円（前期比65.7％増）となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年5月期",
@@ -27,7 +131,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 47674000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 915,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +151,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 50971000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1011,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +171,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 52265000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1070,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +191,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 52067000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1073,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +211,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 52938000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1085,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +219,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第84期(2025/06/01－2026/05/31)",
-      "publisher": "ダイト株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YYNI.pdf",
-      "publishedAt": "2026-08-26",
-      "accessedAt": "2026-09-29"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-29",
   "workforce": {
     "fiscalYear": "2026年5月期",
     "asOf": "2026-05-31",
@@ -142,5 +230,382 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1942,
+      "title": "輸出統制会社として設立",
+      "description": "富山家庭薬の東南アジアへの輸出統制会社として、富山県の指導のもと富山市下木田に大東亜薬品交易統制株式会社を設立しました。",
+      "significance": "ダイト株式会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "家庭薬製造許可を取得",
+      "description": "家庭薬製造許可を取得し、翌1949年には配置用医薬品の製造を開始しました。",
+      "significance": "医薬品製造への進出の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "医薬品原料の販売を開始",
+      "description": "医薬品原料卸業部門を開設し、医薬品原料の販売を開始しました。",
+      "significance": "原薬事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "研究所を新設",
+      "description": "医薬品原料の製造・開発のため、研究所を富山市奥田新町に新設しました。",
+      "significance": "原薬の自社製造・開発体制の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "医療用医薬品（後発品）の製造を開始",
+      "description": "高付加価値の医療用医薬品（後発品）の製造を開始しました。",
+      "significance": "ジェネリック医薬品事業への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "本社工場を新設",
+      "description": "GMP適合の第一製剤棟と原薬実験棟を富山市八日町に本社工場として新設し、配置用医薬品及び医療用医薬品の増産と医薬品原料の製造を開始しました。",
+      "significance": "現在の本社工場の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "新薬中間体の受託製造を開始",
+      "description": "本社工場に第二原薬棟を新設し、医薬品原料の新薬中間体の受託製造を開始しました。",
+      "significance": "受託製造事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "商号をダイト株式会社に変更",
+      "description": "商号をダイト株式会社（現社名）に変更しました。",
+      "significance": "現在の社名の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "医療用医薬品の受託製造を開始",
+      "description": "本社工場に第五製剤棟・第三物流センターを新設し、医療用医薬品の受託製造を開始しました。",
+      "significance": "製剤の受託製造の本格化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "米国子会社を設立",
+      "description": "米国イリノイ州にDaito Pharmaceuticals America, Inc.を設立しました。",
+      "significance": "海外展開の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式上場の転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "市場第一部銘柄となった転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "中国製剤子会社を子会社化",
+      "description": "安徽微納生命科学技術開発有限公司を子会社化しました（現・大桐製薬(中国)有限責任公司）。",
+      "significance": "中国における製剤生産の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "中国関連会社への出資比率を引き上げ",
+      "description": "千輝薬業(安徽)有限責任公司及び安徽鼎旺医薬有限公司に対する出資比率を21％に引き上げました。",
+      "significance": "中国ビジネスの強化の一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "大和薬品工業株式会社を吸収合併",
+      "description": "連結子会社である大和薬品工業株式会社を吸収合併しました。",
+      "significance": "グループ再編による構造変化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "takeda-pharmaceutical",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に当社の原薬及び製剤の販売先と印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daiichi-sankyo",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に当社の製剤販売先と印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ono-pharmaceutical",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に当社の製剤販売先と印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kaken-pharmaceutical",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に当社の製剤販売先と印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "towa-pharmaceutical",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に当社の原薬及び製剤の販売先と印字され、主要な顧客ごとの情報にも販売先として印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sawai-group-holdings",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に当社の原薬及び製剤の販売先と印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aska-pharmaceutical-holdings",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に当社の原薬及び製剤の販売先と印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fuso-pharmaceutical-industries",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に当社の製剤販売先と印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-chemiphar",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に当社の製剤販売先と印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kobayashi-pharmaceutical",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に当社の原薬販売先と印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fujifilm-holdings",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に当社の原薬販売先と印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kyorin-pharmaceutical",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に当社の原薬及び製剤の販売先と印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "meiji-holdings",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に当社の原薬及び製剤の販売先と印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mochida-pharmaceutical",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に当社の原薬販売先と印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "wakamoto-pharmaceutical",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に当社の原薬及び製剤の販売先と印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "riken-vitamin",
+      "relationship": "supplier",
+      "description": "特定投資株式の保有目的に当社の医薬品原料の仕入先と印字されている仕入先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "asahi-printing",
+      "relationship": "supplier",
+      "description": "特定投資株式の保有目的に当社の包装資材の仕入先と印字されている仕入先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第84期(2025/06/01－2026/05/31)",
+      "publisher": "ダイト株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YYNI.pdf",
+      "publishedAt": "2026-08-26",
+      "docId": "S100YYNI",
+      "asOf": "2026-05-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 当社は、2023年9月1日付で普通株式1株につき1.1株の割合で株式分割を行いました。株式数に関する指標は、当該株式分割が第80期の期首に行われたと仮定して算定されています。",
+      "businessModel: 当社は、2025年6月1日付で普通株式1株につき2株の割合で株式分割を行いました。株式数に関する指標は、当該株式分割が第80期の期首に行われたと仮定して算定されています。"
+    ]
+  },
+  "updatedAt": "2026-11-12",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「Daito Transformation Plan 2027（DTP2027）」のもと、「既存ビジネスの効率化」「中国ビジネスの強化」「新規ビジネスへの参入」「資本配分の高度化」「人的資本への投資」の5つの柱を推進し、業績の改善と企業価値の向上を図るとしています。",
+        "asOf": "2026-08-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "実装面では、既存ビジネスの効率化としてポートフォリオ会議とSales & Operations Planning（S&OP）プロセスを導入し、上市後の製品価値最大化を目的とするLife Cycle Management（LCM）会議を新設して運用を開始しました。Meiji Seika ファルマ株式会社と進める「新・コンソーシアム構想」では参画各社が相互に品質管理体制の点検及び検証を行い、新たに設立予定の株式会社医薬品共創機構（仮称）を通じて杏林製薬株式会社の後発医薬品事業の承継に取り組むとしています。中国では出資先との連携により「日本品質・中国コスト」の原薬・製剤を生産し、日本市場で販売しています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における中長期的な経営戦略と優先的に対処すべき事業上及び財務上の課題の記載、事業の内容におけるグループ構成と中国事業の記載",
+        "asOf": "2026-08-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "優位性は、医薬品原料である原薬の製造・販売に加え製剤の製造・販売も行い、原薬から製剤までの一貫した製造が可能な体制にあります。本社工場には製剤棟と原薬棟が集積し、大量生産から少量多品種生産まで対応できる生産設備を保有しています。品質面では日本のGMPに加え、FDA（米国食品医薬品局）及びEMA（欧州医薬品庁）の要求する基準も充足しています。また、MR（医薬情報担当者）を有さず研究開発と製造に経営資源を集中させ、自社開発したジェネリック医薬品については薬効領域で強い販売力を持つ医薬品メーカーと製品ごとに連携して販売・販促活動を依頼する体制も特徴です。",
+        "basis": "事業の内容における当社グループの事業の特徴（当社グループの位置づけ、原薬、製剤、研究開発・生産及び営業体制）の記載、主要な設備の状況における本社、工場、研究所の記載",
+        "asOf": "2026-08-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "当社グループは医薬品事業の単一セグメントで、2026年5月期の売上高50,650百万円の内訳は、製品及びサービス別で製剤27,984百万円、原薬22,482百万円、健康食品他184百万円です。売上高の9割超は本邦の外部顧客向けであり、主要な顧客は持分法適用会社の株式会社フェルゼンファーマと東和薬品株式会社です。業界では後発医薬品の数量シェアが2025年4月から2026年3月までの期間に89.7％（日本ジェネリック製薬協会調べ）に達し、普及が拡大しています。",
+        "basis": "セグメント情報の関連情報における製品及びサービスごとの情報、地域ごとの情報、主要な顧客ごとの情報、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における販売実績、経営方針、経営環境及び対処すべき課題等における経営環境の記載",
+        "asOf": "2026-08-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

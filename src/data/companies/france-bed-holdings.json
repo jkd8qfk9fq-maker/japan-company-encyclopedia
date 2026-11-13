@@ -4,15 +4,158 @@
   "name": "フランスベッドホールディングス",
   "officialName": "フランスベッドホールディングス株式会社",
   "nameEn": "FRANCE BED HOLDINGS CO.,LTD.",
-  "description": null,
+  "shortNameEn": "FRANCE BED HOLDINGS CO.,LTD.",
+  "description": "福祉用具のレンタルや医療・介護用ベッド、家庭用ベッド・家具の製造・販売を行う持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "medical-service",
+      "name": "メディカルサービス",
+      "description": "福祉用具や医療・介護用ベッドのレンタル、小売、卸売、仕入及び製造と、病院・ホテル等のリネンサプライを行う事業です。2026年3月期の外部顧客に対する売上高は41,830百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "welfare-equipment-rental",
+          "name": "福祉用具・医療・介護用ベッドのレンタル",
+          "description": "福祉用具や医療・介護用ベッドのレンタルを行います。主力は介護保険下の福祉用具貸与です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "welfare-equipment-sales",
+          "name": "福祉用具・医療・介護用ベッドの販売",
+          "description": "福祉用具や医療・介護用ベッドの小売、卸売、仕入及び製造を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "linen-supply",
+          "name": "リネンサプライ",
+          "description": "病院・ホテル等のリネンサプライを行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "interior-health",
+      "name": "インテリア健康",
+      "description": "ベッド・家具類・寝装品・健康機器等の製造・仕入及び卸売、戸別訪問販売、広告・展示会場設営を行う事業です。2026年3月期の外部顧客に対する売上高は19,380百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "beds-furniture",
+          "name": "ベッド・家具類・寝装品",
+          "description": "ベッド・家具類・寝装品の製造・仕入及び卸売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "health-equipment",
+          "name": "健康機器等",
+          "description": "健康機器等の製造・仕入及び卸売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "direct-sales",
+          "name": "戸別訪問販売・展示販売",
+          "description": "戸別訪問販売と、広告・展示会場設営による販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "不動産賃貸等の事業です。2026年3月期の外部顧客に対する売上高は557百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "東京都新宿区に本社を置き、福祉用具のレンタルや医療・介護用ベッドを扱うメディカルサービス事業と、家庭用ベッド・家具のインテリア健康事業を傘下で営む持株会社です。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "福祉用具",
+      "医療・介護用ベッド",
+      "ベッド・家具類・寝装品",
+      "健康機器"
+    ],
+    "customers": [
+      "介護保険を利用する高齢者",
+      "病院・介護施設",
+      "ホテル",
+      "家庭の消費者"
+    ],
+    "revenueSources": [
+      "福祉用具・医療・介護用ベッドのレンタル及び販売",
+      "ベッド・家具類・寝装品・健康機器の販売",
+      "リネンサプライ等のサービス提供"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "フランスベッドホールディングス",
+        "description": "東京都新宿区に本社を置き、当社と子会社10社及び関連会社２社でグループを構成する持株会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "福祉用具・ベッドのレンタルと製造・販売",
+        "description": "メディカルサービス事業では福祉用具や医療・介護用ベッドのレンタル・販売とリネンサプライを、インテリア健康事業では家庭用ベッド・家具類・寝装品・健康機器等の製造・販売を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "病院・介護施設・ホテルと家庭への提供",
+        "description": "福祉用具は介護保険を利用する在宅の高齢者等へ貸与し、医療・介護用ベッドは病院や介護施設へ、ベッド・家具類は家庭の消費者やホテルへ販売します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年３月期の売上高は61,769百万円で、前連結会計年度と比べ1.9％増加しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は2,746百万円で、前連結会計年度と比べ6.8％減少しました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +170,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 37540000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1768,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +190,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 38124000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1785,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 38211000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1783,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +230,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 40607000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1812,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "連結子会社の株式会社ホームケアサービス山口が決算日を10月31日から３月31日に変更したため、2025年３月期における同社の事業年度は2024年２月１日から2025年３月31日までの14か月となり、その期間の業績を連結決算に取り込んでいます。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +251,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 40162000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1834,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +259,116 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2003,
+      "title": "株式移転による経営統合を決定",
+      "description": "フランスベッド株式会社及びフランスベッドメディカルサービス株式会社が、株式移転により完全親会社（共同持株会社）である当社を設立し、経営統合を行う株式移転契約書を締結しました。",
+      "significance": "現在の持株会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "株式移転により当社を設立し、東証・大証第一部に上場",
+      "description": "両社の株式移転により当社を設立し、東京証券取引所市場第一部及び大阪証券取引所市場第一部に上場しました。",
+      "significance": "持株会社体制の発足です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "フランスベッドメディカルサービス㈱をフランスベッド㈱に吸収合併",
+      "description": "連結子会社のフランスベッドメディカルサービス株式会社をフランスベッド株式会社に吸収合併しました。同年、大阪証券取引所の上場を廃止しました。",
+      "significance": "中核事業会社の統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "中国に江蘇芙蘭舒床有限公司を設立",
+      "description": "中国に江蘇芙蘭舒床有限公司を設立しました（現・非連結子会社）。",
+      "significance": "海外展開の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "カシダス㈱の株式を取得",
+      "description": "カシダス株式会社の株式をフランスベッド株式会社が取得し、連結子会社としました。",
+      "significance": "福祉用具貸与事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "㈱ホームケアサービス山口の株式を取得",
+      "description": "株式会社ホームケアサービス山口の株式をフランスベッド株式会社が取得し、連結子会社としました。",
+      "significance": "メディカルサービス事業の地域拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "fb-care-service",
+      "relationship": "customer",
+      "description": "メディカルサービス事業において介護福祉用具の販売及びレンタル取引を行っており、良好な関係の維持のため、当社が同社株式を継続して保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "wakita-and-co",
+      "relationship": "customer",
+      "description": "同社の子会社はメディカルサービス事業における介護福祉用具の販売先であり、良好な関係の維持のため、フランスベッド株式会社が当事業年度に同社株式を取得しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "imperial-hotel",
+      "relationship": "customer",
+      "description": "インテリア健康事業のホテル部門においてベッド等の納入を行っており、良好な関係の維持のため、フランスベッド株式会社が同社株式を継続して保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toyobo",
+      "relationship": "supplier",
+      "description": "マットレスに使用する製品の仕入や共同開発を行っており、良好な関係の維持のため、フランスベッド株式会社が同社株式を継続して保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +376,50 @@
       "publisher": "フランスベッドホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE44.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YE44",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 連結子会社フランスベッドファニチャー株式会社は、2026年７月１日付でフランスベッド株式会社を存続会社とする吸収合併により消滅する予定です（重要な契約等・関係会社の状況に印字。取締役会決議は2025年９月26日、合併契約の締結は2026年５月１日）。本登録は、2026年３月31日現在の連結子会社８社（フランスベッドファニチャー株式会社を含みます）の構造によります。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-12",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年５月に公表した中期経営計画では「シルバービジネスへの経営資源の集中と深化」を掲げ、①高齢者を対象としたレンタルビジネスへの経営資源の重点投入（メディカルサービス事業）、②高付加価値商品の開発と品質へのこだわり（インテリア健康事業）、③サステナビリティ経営の推進、の３つの基本政策に取り組んでいます。主力の福祉用具貸与事業では、都市部での営業員の増員や営業所の新規出店、M＆Aなどを行い、福祉用具貸与事業者として国内シェアNo.1の地位の確立を目指しています。なお、事業環境の変化を踏まえ、2026年２月６日に中期経営計画の業績目標を取り下げています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "主力の福祉用具貸与事業では、倉庫・メンテナンス機能を有するサービスセンターの網を活かし、レンタル資産の供給から保守までを自社で担う体制を強みとしています。ベッドの製造では、国家標準のJIS規格よりも厳しい独自の品質基準であるFES規格に基づく品質管理と、睡眠の科学を追究するスリープ研究センターの知見を商品開発に活かしています。",
+        "basis": "【研究開発活動】におけるFES規格とスリープ研究センターの記述、及び【経営方針、経営環境及び対処すべき課題等】におけるサービスセンター増強の記述に基づきます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年３月期の売上高61,769百万円のうち、メディカルサービスが41,830百万円、インテリア健康が19,380百万円、その他が557百万円です。地域ごとの情報では、本邦の外部顧客への売上高が連結売上高の90％を超えるため開示が省略されており、主要な顧客ごとの情報の開示もありません。",
+        "basis": "セグメント情報における報告セグメントごとの外部顧客に対する売上高、及び関連情報（地域ごとの情報）の開示省略の記述に基づきます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

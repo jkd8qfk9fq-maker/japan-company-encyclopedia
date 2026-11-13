@@ -4,15 +4,165 @@
   "name": "ファルコホールディングス",
   "officialName": "株式会社ファルコホールディングス",
   "nameEn": "FALCO HOLDINGS Co., Ltd.",
-  "description": null,
+  "shortNameEn": "FALCO HOLDINGS",
+  "description": "病院や診療所から臨床検査を受託し、調剤薬局の運営と医療情報システムの提供も行う持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    },
+    {
+      "industryId": "it",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "clinical-testing",
+      "name": "臨床検査事業",
+      "description": "株式会社ファルコバイオシステムズが各地の病院及び診療所等から臨床検体検査等を受託する事業です。体外診断用医薬品等の製造・販売や医療情報システムの販売も行い、株式会社アテストが体外診断用医薬品等の卸売を行っています。2026年3月期の外部顧客への売上高は26,662百万円です。",
+      "customers": [
+        "各地の病院及び診療所等の医療機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "specimen-testing",
+          "name": "臨床検体検査受託",
+          "description": "各地の病院や診療所等から臨床検体を受け取り、総合研究所等の検査施設で検査を行って結果を提供する業務です。大都市圏を重点地域とした事業展開を進めています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "genome-testing",
+          "name": "ゲノム事業",
+          "description": "周産期医療に係る遺伝子検査（NIPT：非侵襲性出生前遺伝学的検査）の受託や、体外診断用医薬品「MSI検査キット（FALCO）」の販売を行う事業です。遺伝性腫瘍パネル検査の薬事申請・保険適用に向けた研究開発も進めています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "ivd-products",
+          "name": "体外診断用医薬品等",
+          "description": "株式会社ファルコバイオシステムズが体外診断用医薬品等の製造・販売を行い、株式会社アテストが体外診断用医薬品等の卸売を行う業務です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "dispensing-pharmacy",
+      "name": "調剤薬局事業",
+      "description": "株式会社ファルコファーマシーズとチューリップ調剤株式会社が、処方箋応需に基づく調剤薬局の店舗運営を行う事業です。2026年3月期に6店舗を閉局し、店舗数は101店舗（フランチャイズ店3店舗を含みます）となりました。2026年3月期の外部顧客への売上高は15,195百万円です。",
+      "customers": [
+        "調剤薬局を利用する患者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "ict",
+      "name": "ICT事業",
+      "description": "株式会社メディサージュが、電子カルテ等の医療情報システムの開発・販売を行う事業です。診療所向けクラウドサービスの提供や中小規模病院向けクラウドシステムの販売及び保守サービスを提供しています。2026年3月期の外部顧客への売上高は1,720百万円です。",
+      "customers": [
+        "診療所",
+        "中小規模病院等の医療機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "resesta",
+          "name": "レセスタ",
+          "description": "診療所向けのクラウド型レセプト総合支援サービスです。契約数は順調に増加しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "hayate-neo",
+          "name": "HAYATE／NEO",
+          "description": "中小規模病院向けのクラウド型電子カルテです。導入数は順調に増加しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "医療機関から臨床検体検査を受託して検査結果を提供し、調剤薬局の運営や電子カルテ等の医療情報システムの販売で対価を得る事業モデルです。",
+    "products": [
+      "臨床検体検査の受託サービス",
+      "体外診断用医薬品等の製造・販売と卸売",
+      "ゲノム事業の遺伝子検査（NIPT：非侵襲性出生前遺伝学的検査）と体外診断用医薬品「MSI検査キット（FALCO）」",
+      "処方箋に基づく調剤を行う調剤薬局店舗の運営",
+      "診療所向けクラウド型レセプト総合支援サービス「レセスタ」",
+      "中小規模病院向けクラウド型電子カルテ「HAYATE／NEO」",
+      "医療情報システムの販売と保守サービス"
+    ],
+    "customers": [
+      "各地の病院及び診療所等の医療機関",
+      "調剤薬局で処方箋調剤を受ける患者",
+      "医療情報システムを導入する診療所や中小規模病院"
+    ],
+    "revenueSources": [
+      "臨床検体検査の受託の対価",
+      "体外診断用医薬品等の販売代金",
+      "処方箋調剤の対価",
+      "医療情報システムの販売代金と保守サービスの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と連結子会社5社のグループ",
+        "description": "当社グループは、持株会社である当社と連結子会社5社で構成されています。2026年3月31日現在の連結の従業員数は1,037人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "臨床検査・調剤薬局・医療情報システムの提供",
+        "description": "臨床検査事業では医療機関から臨床検体検査を受託して検査結果を提供し、調剤薬局事業では処方箋応需に基づく調剤薬局を運営し、ICT事業では診療所向けクラウドサービスや中小規模病院向けクラウドシステムを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "医療機関と患者がお客さま",
+        "description": "各地の病院や診療所等の医療機関と、調剤薬局を利用する患者がお客さまです。連結売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "連結売上高は43,578百万円",
+        "description": "2026年3月期の連結売上高は43,578百万円で、前連結会計年度の43,313百万円から増加しました。事業別では、臨床検査事業が26,662百万円、調剤薬局事業が15,195百万円、ICT事業が1,720百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は2,016百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は2,016百万円で、前連結会計年度の1,920百万円から増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +177,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23478000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1179,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +197,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26591000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1159,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +217,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26026000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1117,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +237,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25253000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1062,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +257,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25869000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1037,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +265,205 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1962,
+      "title": "母体となる関西医学検査センターの設立",
+      "description": "1962年7月に設立された株式会社関西医学検査センターを母体として、株式会社中部医学検査センター他5社が独立創業し、関西医学検査センターグループが形成されました。",
+      "significance": "当社グループの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "実質上の存続会社の設立",
+      "description": "京都府久世郡久御山町において、株式会社ファルコ・バイオシステムズ（実質上の存続会社）が設立されました。",
+      "significance": "現在の臨床検査事業を担う中核会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "総合研究所の竣工",
+      "description": "グループの中核検査施設として、京都府久世郡久御山町に総合研究所が竣工しました。",
+      "significance": "臨床検査の中核施設が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "株式の上場",
+      "description": "大阪証券取引所市場第二部並びに京都証券取引所に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "調剤薬局事業の開始",
+      "description": "京都市山科区に調剤薬局1号店のファルコおとわ薬局を開設しました。",
+      "significance": "現在の調剤薬局事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "チューリップ調剤の子会社化",
+      "description": "チューリップ調剤株式会社の株式を取得し、子会社としました。",
+      "significance": "調剤薬局事業の店舗網が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "市場第一部への指定",
+      "description": "東京証券取引所、大阪証券取引所の市場第一部に指定されました。",
+      "significance": "上場市場の区分が第一部となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "持株会社体制への移行",
+      "description": "臨床検査事業、周辺事業であるIT事業及びバイオ事業を株式会社ファルココミュニケーションズに吸収分割した後、商号を株式会社ファルコSDホールディングスに変更しました。",
+      "significance": "事業を子会社に承継する持株会社体制となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "アテストの子会社化",
+      "description": "株式会社アテストの全株式を取得し、子会社としました。",
+      "significance": "体外診断用医薬品等の卸売を行う会社がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "現在の商号への変更",
+      "description": "株式会社ファルコホールディングスに商号を変更しました。",
+      "significance": "現在の会社名となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "ICT事業をメディサージュが承継",
+      "description": "株式会社ファルコバイオシステムズのICT事業を、株式会社ファルコビジネスサポートが吸収分割により承継しました。同社は株式会社メディサージュに商号を変更しました。",
+      "significance": "ICT事業を担う現在の子会社の体制となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "スタンダード市場への移行",
+      "description": "東京証券取引所の市場区分の再選択により、東京証券取引所のプライム市場からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場区分となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "bml",
+      "relationship": "major-shareholder",
+      "description": "株式会社ビー・エム・エルは、2026年3月31日現在、当社の発行済株式（自己株式を除く。）の総数に対する所有株式数の割合9.84％を保有する大株主の事業会社です。2023年3月10日に資本業務提携契約を締結し、特殊検査の委託や検査の相互委託、遺伝子検査の相互連携等の業務提携等の関係にあり、株式を相互に保有しています。当社は同社の株式462,100株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "odk-solutions",
+      "relationship": "business-partner",
+      "description": "株式会社ODKソリューションズとは、2016年8月5日に業務・資本提携契約を締結し、ITシステムに係る業務の委託やITシステム開発における協力、協業サービスの共同営業展開等の業務提携等の関係にあります。株式を相互に保有しており、当社は同社の株式850,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "matsumoto-yushi-seiyaku",
+      "relationship": "major-shareholder",
+      "description": "松本油脂製薬株式会社は、2026年3月31日現在、当社の発行済株式（自己株式を除く。）の総数に対する所有株式数の割合3.01％を保有する大株主の事業会社です。当社も同社の株式21,700株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第39期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第39期(2025/04/01－2026/03/31)",
       "publisher": "株式会社ファルコホールディングス",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIIX.pdf",
-      "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YS5W.pdf",
+      "publishedAt": "2026-07-24",
+      "docId": "S100YS5W",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-12",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期ビジョン「FALCO VISION 2030」では、2030年までの期間を事業の転換期と位置づけ、事業ポートフォリオの変革を通じて、持続的成長が可能な収益構造への転換を目指しています。中期経営計画「FALCO INNOVATION 2026」では、臨床検査事業・調剤薬局事業の事業変革の推進、ゲノム事業・ICT事業の更なる成長に向けた取り組みの推進、サステナビリティの実現に向けた取り組みの推進、中長期的な成長に向けた事業基盤の確立、適切なキャピタルアロケーション等を基本方針としています。",
+        "asOf": "2026-07-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "臨床検査事業は、各地の医療機関から検体検査を受託し、総合研究所等の検査施設で検査を行う体制を持ち、情報化の推進による集荷体制の強化と検査業務の効率化を進めています。ゲノム事業ではNIPTの受託に加え、体外診断用医薬品「MSI検査キット（FALCO）」を自ら販売しています。臨床検査、調剤薬局、医療情報システムの3事業を同じグループで持ち、医療機関と患者の双方にサービスを提供できることが特徴です。",
+        "basis": "事業の内容（臨床検査事業の受託内容と検査施設、体外診断用医薬品等、調剤薬局事業とICT事業の記載）と、経営成績等の状況の概要（集荷体制の強化と検査業務の効率化、NIPTとMSI検査キットの記載）に基づく。",
+        "asOf": "2026-07-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "最大の事業は臨床検査事業で、2026年3月期の外部顧客への売上高は26,662百万円です。次いで調剤薬局事業が15,195百万円、ICT事業が1,720百万円です。本邦の外部顧客への売上高が連結売上高の90％を超えており、連結売上高の10％以上を占める主要な顧客はありません。調剤薬局事業は101店舗（フランチャイズ店3店舗を含みます）を運営しています。",
+        "basis": "セグメント情報の注記（報告セグメントごとの外部顧客への売上高、関連情報の地域ごとの情報と主要な顧客ごとの情報）と、経営成績等の状況の概要（調剤薬局の店舗数）に基づく。",
+        "asOf": "2026-07-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
