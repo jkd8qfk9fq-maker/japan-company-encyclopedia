@@ -3,6 +3,7 @@ import type { Company } from "@/types/company";
 import { companyRepository, headquartersRepository } from "@/lib/repositories";
 import { formatDateJa } from "@/lib/utils/format";
 import { companyMetrics } from "@/lib/company-metrics";
+import { financialDeepDive } from "@/lib/financial-deep-dive";
 import { industryComparison } from "@/lib/industry-comparison";
 import { buildValueChain } from "@/lib/value-chain";
 import { SourceList } from "@/components/sources/source-list";
@@ -16,6 +17,7 @@ import { CompanySection } from "./company-section";
 import { ConnectionMap, placeConnections } from "./connection-map";
 import { ConnectionNetwork } from "./connection-network";
 import { FinancialSection } from "./financial-section";
+import { FinancialDeepDiveBlock } from "./financial-deep-dive";
 import { IndustryComparisonBlock } from "./industry-comparison";
 import { PremiumGate } from "./premium-gate";
 import { HistoryTimeline } from "./history-timeline";
@@ -55,7 +57,10 @@ export async function CompanyView({ company }: { company: Company }) {
   const chain = buildValueChain(company);
   const metrics = companyMetrics(company);
   // 業界比較 (JCE-043): the company among the released companies of its industry, computed at build time.
-  const comparison = industryComparison(company, await companyRepository.list());
+  const released = await companyRepository.list();
+  const comparison = industryComparison(company, released);
+  // 財務の深掘り (JCE-044): the five-year structure beside the industry's year-by-year median.
+  const deepDive = financialDeepDive(company, released);
   const chainSourceIds = [
     ...new Set([
       ...company.businesses.flatMap((b) => b.sourceIds),
@@ -170,9 +175,10 @@ export async function CompanyView({ company }: { company: Company }) {
           <div className="mb-12">
             <PremiumGate
               title="業界比較"
-              teaser={`${comparison.industryName}業界の掲載企業${comparison.members}社の中で、この会社の売上高・純利益率・5期の伸び・海外売上高比率・平均年間給与がどこに位置するか（順位と中央値との差）と、5期の売上高の推移を業界と並べて見られます。`}
+              teaser={`${comparison.industryName}業界の掲載企業${comparison.members}社の中での位置（売上高・純利益率・5期の伸び・海外売上高比率・平均年間給与の順位と中央値との差）に加え、5期の利益率・自己資本比率・従業員1人あたりの売上と利益・資産と人員の推移を、業界の中央値と重ねて読めます。`}
             >
               <IndustryComparisonBlock comparison={comparison} />
+              {deepDive && <FinancialDeepDiveBlock deepDive={deepDive} />}
             </PremiumGate>
           </div>
         )}

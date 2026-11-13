@@ -732,3 +732,15 @@ premium plan ("この業界比較システムはプレミアムプランで進�
   plan is sold, a field for the code), and the comparison, computed from public filings, is shown once the browser
   holds a paid plan — the same rule the 診断 site applies to its own paid parts.
 - The figures tab of /industries (JCE-041/042) stays free: the plan pays for the company-level position.
+
+### JCE-044 · 2026-11-13 · Accepted (operator) — 財務の深掘り: five-year structure beside the industry, in the premium block
+
+The operator asked for more in the encyclopedia's premium part, and for readings worth more than a pie chart or a
+position in the market. What is added (`src/lib/financial-deep-dive.ts`, drawn by `financial-deep-dive.tsx` inside
+the same `PremiumGate` as 業界比較): for the five printed years, 純利益率 and the filing's own profit line ÷ 売上高,
+自己資本比率 (純資産 ÷ 総資産), 売上高 and 純利益 ÷ 従業員数 (連結), and 総資産・純資産・従業員数 as an index of the oldest
+year — each beside the median of the industry's other released companies in the same position of their table.
+These extend the computed-ratio rule of JCE-038/041: same-year printed figures only, formula beside each, a missing
+year a gap in the line. 自己資本比率 and the per-employee figures are balance-sheet and headcount arithmetic, not
+market measures; ROE, ROA, PER and everything priced by the market remain excluded (invariant 4). The copy explains
+each group in a sentence a beginner can use ("借りたものではなく自分のもの", "人手で稼ぐか、仕組みで稼ぐか").
