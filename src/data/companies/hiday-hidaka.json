@@ -4,15 +4,114 @@
   "name": "ハイデイ日高",
   "officialName": "株式会社ハイデイ日高",
   "nameEn": "HIDAY HIDAKA Corp.",
-  "description": null,
+  "shortNameEn": "HIDAY HIDAKA Corp.",
+  "description": "中華そばが1杯420円の「日高屋」を中心に、関東で中華系レストランを直営する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "restaurant-chain",
+      "name": "飲食店チェーン関連事業",
+      "description": "中華系レストランの直営チェーン事業です。2026年2月末現在、東京都に210店舗、埼玉県に109店舗、神奈川県に73店舗、千葉県に59店舗など、関東1都6県で472店舗を直営で経営しています。品質の向上と安定、均一化のため、食材の購買、麺・餃子・調味料などの製造、各店舗の発注に関わる業務管理、物流までの機能を埼玉県行田市の行田工場に集約しています。2026年2月期の売上高は622億52百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "hidayaya",
+          "name": "日高屋",
+          "description": "当社の中核業態です。「美味・廉価」を掲げ、1杯420円の「中華そば」や「野菜たっぷりタンメン」などを提供しています。「中華食堂日高屋」と「来来軒」を含み、2026年2月末現在の店舗数は440店舗、2026年2月期の販売実績は前年同期比111.9％でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "yakitori-hidaka",
+          "name": "焼鳥日高",
+          "description": "焼鳥を提供する業態です。居酒屋の「大衆酒場日高」を含み、2026年2月末現在の店舗数は27店舗、2026年2月期の販売実績は前年同期比112.2％でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-formats",
+          "name": "その他業態",
+          "description": "中華料理の「中華一番」、おつまみと定食メニューの「大衆食堂日高」、台湾屋台料理の「屋台料理　台南」、鶏白湯の「らーめん日高」などの業態です。FC向けの売上高を含み、2026年2月末現在の店舗数は5店舗、2026年2月期の販売実績は前年同期比114.2％でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "行田工場で麺や餃子などを製造して関東1都6県の直営店舗に供給し、低価格の中華料理を提供して、店舗での飲食代金で収益を得る事業モデルです。",
+    "products": [
+      "「日高屋」の中華そばや野菜たっぷりタンメンなどの中華料理",
+      "「焼鳥日高」の焼鳥などの居酒屋メニュー",
+      "「中華一番」「大衆食堂日高」「屋台料理　台南」「らーめん日高」などの各業態の料理"
+    ],
+    "customers": [
+      "関東1都6県の直営店舗に来店する個人のお客様"
+    ],
+    "revenueSources": [
+      "直営店舗における飲食の提供による売上高",
+      "FC店舗向けの売上高"
+    ],
+    "suppliers": [
+      {
+        "name": "食材の仕入先",
+        "description": "米、豚肉、卵、アルコール類などの食材を仕入れており、食材の購買は行田工場に集約しています。",
+        "businessIds": [
+          "restaurant-chain"
+        ]
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ハイデイ日高",
+        "description": "さいたま市大宮区に本社を置く単独の会社で、子会社や関連会社はありません。2026年2月28日現在の従業員数は1,088人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "中華系レストランの直営運営",
+        "description": "「日高屋」を中核とする中華系レストランを関東1都6県で直営し、麺や餃子、調味料などは埼玉県行田市の行田工場で製造して各店舗に供給します。"
+      },
+      {
+        "kind": "customer",
+        "title": "店舗に来店するお客様",
+        "description": "東京都に210店舗、埼玉県に109店舗など、駅前や繁華街、ロードサイドの店舗で、幅広いお客様に低価格の中華料理を提供します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は622億52百万円",
+        "description": "2026年2月期の売上高は622億52百万円で、前期比11.9％増となり、3期連続で過去最高を更新しました。業態別では「日高屋」が440店舗で売上の中心です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は47億31百万円",
+        "description": "2026年2月期の当期純利益は47億31百万円で、前期比15.6％増でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,11 +126,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22361271000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 847,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,14 +148,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22974269000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 853,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第45期（2023年2月期）の期首から適用しており、第45期以降の主要な経営指標等は、当該会計基準等を適用した後の指標となっています。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -71,11 +171,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25113984000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 913,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +193,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25861208000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 988,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,32 +215,16 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24872849000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1088,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第48期(2025/03/01－2026/02/28)",
-      "publisher": "株式会社ハイデイ日高",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y64B.pdf",
-      "publishedAt": "2026-05-26",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",
@@ -152,5 +236,235 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1973,
+      "title": "中華料理「来々軒」を創業",
+      "description": "現代表取締役の神田正が、さいたま市大宮区宮町に中華料理「来々軒」を創業しました。",
+      "significance": "ハイデイ日高の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "有限会社日高商事を設立",
+      "description": "さいたま市大宮区宮町に有限会社日高商事を設立しました。",
+      "significance": "法人としての事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "株式会社へ改組",
+      "description": "有限会社から株式会社に改組しました。",
+      "significance": "株式会社としての体制が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "株式会社日高食品を設立",
+      "description": "食材供給子会社の株式会社日高食品をさいたま市大宮区三橋に設立し、麺と餃子の生産を開始しました。",
+      "significance": "自社製造による品質の均一化の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "株式会社日高食品を吸収合併",
+      "description": "食品供給子会社の株式会社日高食品を吸収合併しました。",
+      "significance": "製造機能を自社に取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "商号を株式会社ハイデイ日高に変更",
+      "description": "CIを導入し、商号を「株式会社ハイデイ日高」に変更するとともに、シンボルマークとブランドマークを制定しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "株式を店頭登録",
+      "description": "当社株式を日本証券業協会に店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "主力業態「日高屋」が始動",
+      "description": "現在の主力業態である「日高屋」が始動し、第1号店の「日高屋新宿東口店」を開店しました。同年、総店舗数が100店舗に達しました。",
+      "significance": "現在の中核業態の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "行田工場が完成し、東京証券取引所市場第二部に上場",
+      "description": "埼玉県行田市に行田工場が完成しました。また、東京証券取引所市場第二部に上場しました。",
+      "significance": "製造・物流の集約拠点が整い、上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "市場第一部の会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "総店舗数200店舗を達成",
+      "description": "「日高屋茅ヶ崎北口店」の開店をもって、総店舗数が200店舗に達しました。",
+      "significance": "店舗網の拡大が続きました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "店舗数300店舗を達成",
+      "description": "FC3店舗を含め、店舗数が300店舗に達しました。",
+      "significance": "株式公開時の目標としていた店舗数に届きました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "行田工場がISO22000の認証を取得",
+      "description": "行田工場において、食品安全マネジメントシステムISO22000の認証を取得しました。",
+      "significance": "食品安全の国際規格への対応です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "店舗数400店舗を達成",
+      "description": "FC2店舗を含め、店舗数が400店舗に達しました。",
+      "significance": "店舗網の拡大が続きました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "本社を現在地へ移転し、プライム市場へ移行",
+      "description": "本社をさいたま市大宮区大門町二丁目の現在地へ移転しました。東京証券取引所の市場区分の見直しによりプライム市場へ移行し、群馬県への初出店で関東1都6県への店舗展開がそろいました。",
+      "significance": "現在の本社と市場の体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社オーシャンシステムとFC契約を締結",
+      "description": "新潟県三条市の株式会社オーシャンシステムとフランチャイズ契約を締結しました。",
+      "significance": "FC展開による関東以外への進出の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "ocean-system",
+      "relationship": "business-partner",
+      "description": "株式会社オーシャンシステムとは、2025年10月にフランチャイズ契約を締結し、業務提携等の関係にあります。新潟県三条市に本社を置く同社とのFC展開により、2026年4月には新潟県へ初出店しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "showa-sangyo",
+      "relationship": "major-shareholder",
+      "description": "昭和産業株式会社は、2026年2月28日現在、発行済株式（自己株式を除く）の総数の1.83％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "訂正有価証券報告書－第48期(2025/03/01－2026/02/28)",
+      "publisher": "株式会社ハイデイ日高",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YQ0A.pdf",
+      "publishedAt": "2026-07-13",
+      "docId": "S100YQ0A",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-13",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「Hiday Challenge」を2025年4月に策定し、事業環境の変化に迅速に対応するため毎年見直すローリング方式で進めています。重点施策は、北関東への出店拡大と未出店エリアやロードサイドへの出店加速などの店舗戦略、FC事業による国内シェア拡大と海外進出、アライアンス・M&Aの検討、採用の強化と人財育成、DX推進による省人化と店舗運営の効率化、新商品開発と販路の拡大、ブランディングの強化、サステナビリティの取組推進です。店舗網の拡大を通じて社会インフラとして地域活性化に貢献することを目指しています。",
+        "asOf": "2026-07-13",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "「美味・廉価」を掲げ、中華そばを1杯420円で提供する低価格と、味へのこだわりを両立させています。品質の向上と安定、均一化のため、食材の購買から麺・餃子・調味料などの製造、各店舗の発注に関わる業務管理、物流までの機能を行田工場に集約し、どの店舗でも均一な品質の料理を提供できる体制を整えています。",
+        "asOf": "2026-07-13",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "事業は飲食店チェーン関連事業の単一セグメントです。2026年2月期の売上高は622億52百万円でした。業態別の販売実績は、「日高屋」が440店舗で前年同期比111.9％、「焼鳥日高」が27店舗で同112.2％、その他業態等が5店舗で同114.2％です。店舗は東京都の210店舗、埼玉県の109店舗、神奈川県の73店舗、千葉県の59店舗など関東1都6県に集中しています。従業員数は1,088人で、平均臨時雇用者数は4,327人です。",
+        "basis": "セグメント情報等の関連情報における業態別の販売実績、事業の内容における都道府県別の店舗数、従業員の状況に基づきます。",
+        "asOf": "2026-07-13",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

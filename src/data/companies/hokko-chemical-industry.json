@@ -4,15 +4,132 @@
   "name": "北興化学工業",
   "officialName": "北興化学工業株式会社",
   "nameEn": "HOKKO CHEMICAL INDUSTRY CO.,LTD.",
-  "description": null,
+  "shortNameEn": "HOKKO CHEMICAL INDUSTRY CO.,LTD.",
+  "description": "農薬と、樹脂添加剤・電子材料原料等のファインケミカル製品の製造・販売を二本柱とする化学メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "hokko-chemical-industry",
+      "name": "北興化学工業グループ",
+      "description": "当社、連結子会社5社（北興産業株式会社、美瑛白土工業株式会社、ホクコーパツクス株式会社、村田長株式会社、張家港北興化工有限公司）および非連結子会社1社（HOKKO CHEMICAL AMERICA CORPORATION）により構成され、農薬ならびにファインケミカル製品の製造・販売を主たる事業としています。2025年11月期の売上高は49,125百万円、従業員数は742人です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "agrochemicals",
+          "name": "農薬事業",
+          "description": "農薬製品、農薬原体等を製造・販売するセグメントです。当社が製造し主として販売しており、農薬原料の一部は連結子会社の美瑛白土工業株式会社が製造しています。2025年11月期の外部顧客への売上高は29,398百万円で、主要な顧客である全国農業協同組合連合会向けがその大きな部分を占めています。",
+          "customers": [
+            "全国農業協同組合連合会をはじめとする農薬の販売先",
+            "中南米等の海外市場の販売先"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "fine-chemicals",
+          "name": "ファインケミカル事業",
+          "description": "樹脂添加剤、医農薬中間体、電子材料原料等を製造・販売するセグメントです。当社が主として製造し、製造の一部は連結子会社の張家港北興化工有限公司が行っています。2025年11月期の外部顧客への売上高は17,785百万円で、信越化学工業株式会社が主要な顧客として印字されています。",
+          "customers": [
+            "信越化学工業株式会社等の化学・電子材料分野の産業顧客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "textile-materials",
+          "name": "繊維資材事業",
+          "description": "繊維資材を販売するセグメントで、連結子会社の村田長株式会社が販売を行っています。2025年11月期の外部顧客への売上高は1,936百万円です。",
+          "customers": [
+            "産業用繊維素材等の需要家"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other",
+          "name": "その他",
+          "description": "報告セグメントに含まれない事業セグメントで、石油製品の販売等を含んでいます。連結子会社のホクコーパツクス株式会社が石油製品等の販売を行っています。2025年11月期の外部顧客への売上高は6百万円です。",
+          "customers": [
+            "石油製品等の需要家"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "農薬事業とファインケミカル事業を両輪とし、繊維資材事業を加えた事業構成で、農業と産業の現場に化学製品を供給しています。",
+    "products": [
+      "農薬製品・農薬原体（水稲剤・園芸剤等）",
+      "樹脂添加剤・石化用触媒",
+      "医農薬中間体",
+      "電子材料原料（半導体封止剤用硬化促進剤、フォトレジスト用モノマー原料等）",
+      "繊維資材（産業用繊維素材等）"
+    ],
+    "customers": [
+      "全国農業協同組合連合会をはじめとする農薬の販売先",
+      "化学・電子材料メーカー等の産業顧客",
+      "繊維資材の需要家"
+    ],
+    "revenueSources": [
+      "農薬製品・農薬原体の販売収益",
+      "ファインケミカル製品の販売収益",
+      "繊維資材の販売収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "北興化学工業株式会社",
+        "description": "1950年に野村鉱業株式会社製薬部より分離独立した化学メーカーで、東京都中央区に本社を置き、連結子会社5社と非連結子会社1社を有しています。2025年11月期の従業員数は742人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "農薬とファインケミカル製品の製造・販売",
+        "description": "農薬製品・農薬原体に加え、樹脂添加剤、医農薬中間体、電子材料原料等のファインケミカル製品を製造・販売し、連結子会社を通じて繊維資材や石油製品等も取り扱っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "農協系の販売先と産業顧客",
+        "description": "農薬は全国農業協同組合連合会向けの売上高が20,652百万円と最大で、ファインケミカル製品は信越化学工業株式会社向けが6,543百万円と印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "3セグメントからの売上高",
+        "description": "2025年11月期の売上高は49,125百万円で、前期比6.3％増でした。内訳は農薬事業29,398百万円、ファインケミカル事業17,785百万円、繊維資材事業1,936百万円、その他6百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2025年11月期の親会社株主に帰属する当期純利益は4,452百万円で、前期比11.1％増でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年11月期",
@@ -27,7 +144,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 34220000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 772,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +164,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 38240000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 760,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年3月31日）等を第73期の期首から適用しており、第73期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年11月期",
@@ -67,7 +185,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 46770000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 749,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +205,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 46198000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 747,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +225,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 52900000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 742,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +233,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第76期(2024/12/01－2025/11/30)",
-      "publisher": "北興化学工業株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XMF0.pdf",
-      "publishedAt": "2026-02-20",
-      "accessedAt": "2026-09-29"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-29",
   "workforce": {
     "fiscalYear": "2025年11月期",
     "asOf": "2025-11-30",
@@ -142,5 +244,312 @@
       "yuho-2025"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1950,
+      "title": "北興化学株式会社を設立",
+      "description": "1950年2月、野村鉱業株式会社製薬部より分離独立し、北興化学株式会社として設立され、北海道常呂郡留辺蘂町に留辺蘂工場を設置して農薬の生産・販売を開始しました。",
+      "significance": "当社の設立です。設立時の資本金額は禁止金額に当たるため記載していません。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "北興化学工業株式会社に商号変更",
+      "description": "1953年11月、商号を北興化学工業株式会社（現商号）に変更しました。同年12月には岡山工場を設置しました。",
+      "significance": "現在の商号の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "新潟工場を設置し東京証券取引所市場第二部に上場",
+      "description": "1961年3月に新潟県新発田市に新潟工場を設置し、同年10月に東京証券取引所市場第二部に上場しました。",
+      "significance": "生産拠点の拡充と株式上場の年です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "美瑛白土工業株式会社を設立",
+      "description": "1967年12月、美瑛白土工業株式会社（現 連結子会社）を設立しました。",
+      "significance": "農薬原料の製造を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "ファインケミカル部を設置",
+      "description": "1972年1月、ファインケミカル部（現 ファインケミカル事業グループ）を設置しました。",
+      "significance": "ファインケミカル事業の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "双商株式会社を北興産業株式会社に改称",
+      "description": "1976年12月、双商株式会社の商号を北興産業株式会社（現 連結子会社）と改称しました。",
+      "significance": "現在の販売子会社の商号の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "1987年5月、東京証券取引所市場第一部に上場しました。",
+      "significance": "市場第一部への上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "ホクコーパツクス株式会社を設立",
+      "description": "1991年8月、ホクコーパツクス株式会社（現 連結子会社）を設立しました。",
+      "significance": "石油製品等の販売を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "中国江蘇省に張家港北興化工有限公司を設立",
+      "description": "2002年8月、中国江蘇省に張家港北興化工有限公司（現 連結子会社）を設立しました。",
+      "significance": "ファインケミカル製品の海外生産拠点の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "本社事務所を日本橋本町に移転",
+      "description": "2015年1月、本社事務所を東京都中央区日本橋本町に移転しました。",
+      "significance": "現在の本社所在地への移転です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "米国にHOKKO CHEMICAL AMERICA CORPORATIONを設立",
+      "description": "2016年5月、米国ノースカロライナ州にHOKKO CHEMICAL AMERICA CORPORATION（現 非連結子会社）を設立しました。",
+      "significance": "北中南米の農薬市場調査・普及活動の拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "村田長株式会社を子会社化",
+      "description": "2019年3月、村田長株式会社の全株式を取得し、子会社化しました。",
+      "significance": "繊維資材事業を取得した取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "shin-etsu-chemical",
+      "relationship": "customer",
+      "description": "セグメント関連情報の主要な顧客ごとの情報に主要な顧客として印字され、株式の保有状況でもファインケミカル事業における業務（生産や販売）面や研究開発面での協力・協業関係が印字される企業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "sumitomo-chemical",
+      "relationship": "customer",
+      "description": "株式の保有状況に、農薬事業とファインケミカル事業における業務（購買や販売）面や研究開発面での協力関係が印字され、大株主の状況にも7.63％を保有する大株主として印字される企業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nissan-chemical-corporatiom",
+      "relationship": "customer",
+      "description": "株式の保有状況に、農薬事業における業務（購買や販売）面での協力関係が印字される企業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "oat-agrio",
+      "relationship": "customer",
+      "description": "株式の保有状況に、農薬事業における業務（販売や生産）面や研究開発面での協力関係が印字され、当事業年度に業務面の協力体制を維持するため株式を追加取得した企業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-soda",
+      "relationship": "customer",
+      "description": "株式の保有状況に、農薬事業とファインケミカル事業における業務（購買や販売）面や研究開発面での協力関係が印字される企業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-kayaku",
+      "relationship": "customer",
+      "description": "株式の保有状況に、農薬事業とファインケミカル事業における業務（購買や販売）面での協力関係が印字される企業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-shinyaku",
+      "relationship": "customer",
+      "description": "株式の保有状況に、ファインケミカル事業における業務（販売）面や強化分野における協力関係が印字される企業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nagase-and-co",
+      "relationship": "customer",
+      "description": "株式の保有状況に、ファインケミカル事業における業務（販売）面での協力関係が印字される企業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsui-chemicals",
+      "relationship": "customer",
+      "description": "株式の保有状況に、農薬事業における業務（購買や販売）面や研究開発面での協力関係が印字される企業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kureha",
+      "relationship": "supplier",
+      "description": "株式の保有状況に、主に農薬事業における業務（購買）面や研究開発面での協力関係が印字される企業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nomura-micro-science",
+      "relationship": "business-partner",
+      "description": "株式の保有状況に、環境規制に関する情報収集や環境対策技術等の支援などの面での協力関係が印字される企業で、業務提携等の関係にあります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ono-pharmaceutical",
+      "relationship": "business-partner",
+      "description": "株式の保有状況に、ファインケミカル事業の強化分野における協力関係が印字される企業で、業務提携等の関係にあります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nomura-holdings",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に3.24％を保有する大株主として印字される企業です。株式の保有状況では資本政策や株主政策、コーポレートガバナンス情報の収集など財務・経営戦略面での協力関係が印字されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2025",
+      "title": "訂正有価証券報告書－第76期(2024/12/01－2025/11/30)",
+      "publisher": "北興化学工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XVAV.pdf",
+      "publishedAt": "2026-03-30",
+      "docId": "S100XVAV",
+      "asOf": "2025-11-30",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-13",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2029年度をゴールとする長期経営計画「HOKKO Value Up Plan 2029」および2024年度を初年度とする第2次3ヵ年経営計画（2nd Stage）のもと、生産能力向上等の成長投資を基盤に、収益構造改革・造り方改革・働き方改革の3つの改革を柱として収益基盤と生産基盤の強化に取り組み、農薬事業とファインケミカル事業を両輪とした経営をさらに進化させていくとしています。",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "成長投資ではファインケミカル事業の生産能力増強を主体とする戦略的設備投資・投融資枠100億円が設定され、岡山工場では化成品合成設備（合成第10工場）の新設が進められています。農薬事業では2030年度を目途に生産拠点を北海道工場と新潟工場の2拠点に集約し、岡山工場のファインケミカル事業専用化を目指す方針が示されています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等（経営計画・成長戦略）、設備の新設、除却等の計画",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "ファインケミカル事業では、半導体封止剤用の硬化促進剤やフォトレジスト用のモノマー原料など電子材料分野の製品を有し、生成AI向け原料の受注増が印字されています。農薬事業では自社原体の創製と製剤技術を基盤とし、高拡散性粒剤「楽粒」等の省力化志向の製品やバイオスティミュラント剤の導入を進めています。",
+        "basis": "MD&Aのセグメントごとの経営成績、経営方針、経営環境及び対処すべき課題等（対処すべき課題）",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "主要な顧客ごとの情報では、全国農業協同組合連合会向けの売上高が20,652百万円（売上高の42.0％）と最大で、信越化学工業株式会社向けが6,543百万円（13.3％）と印字されています。地域ごとの売上高は日本が39,784百万円、アジアが5,249百万円、その他が4,092百万円です。国内農業では農業従事者の高齢化や耕作面積の減少が続く一方、海外では世界的な人口増加や新興国経済の成長を背景に農作物需要の拡大基調が見込まれると印字されています。",
+        "basis": "セグメント情報の関連情報（地域ごとの情報、主要な顧客ごとの情報）、MD&Aの経営環境",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
   }
 }

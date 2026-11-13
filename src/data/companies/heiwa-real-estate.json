@@ -4,15 +4,16 @@
   "name": "平和不動産",
   "officialName": "平和不動産株式会社",
   "nameEn": "HEIWA REAL ESTATE CO.,LTD.",
-  "description": null,
+  "shortNameEn": "HEIWA REAL ESTATE CO.,LTD.",
+  "description": "証券取引所ビルをはじめとするオフィス・商業施設・ホテル等の開発・賃貸と、リートの資産運用を行う不動産会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     },
     {
       "exchange": "nse",
-      "market": "プレミア"
+      "market": "プレミア市場"
     },
     {
       "exchange": "fse"
@@ -21,8 +22,149 @@
       "exchange": "sse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "real-estate",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "building",
+      "name": "ビルディング事業",
+      "description": "証券取引所、オフィス、商業施設及び住宅等の開発、賃貸、管理ならびに売却等を行います。2026年3月期の外部顧客への売上高は46,236百万円で、その内訳は賃貸収益28,932百万円、物件売却収入15,675百万円、その他1,628百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "rental",
+          "name": "賃貸",
+          "description": "証券取引所ビルやオフィス、商業施設、ホテル等を賃貸します。2026年3月期の賃貸収益は28,932百万円です。",
+          "customers": [
+            "証券取引所",
+            "オフィス・商業施設のテナント",
+            "ホテル運営会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "property-sales",
+          "name": "物件売却",
+          "description": "販売用不動産等の売却を行います。2026年3月期の物件売却収入は15,675百万円です。",
+          "customers": [
+            "不動産の購入者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "asset-management",
+      "name": "アセットマネジメント事業",
+      "description": "平和不動産リート投資法人の資産運用等と、ハウジングサービス株式会社による不動産の仲介等を行います。2026年3月期の外部顧客への売上高は4,619百万円で、その内訳はアセットマネジメント収益3,152百万円、仲介手数料1,466百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "reit-asset-management",
+          "name": "資産運用",
+          "description": "平和不動産リート投資法人の資産運用を行います。2026年3月期のアセットマネジメント収益は3,152百万円です。",
+          "customers": [
+            "平和不動産リート投資法人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "brokerage",
+          "name": "不動産仲介",
+          "description": "ハウジングサービス株式会社が不動産の仲介等を行います。2026年3月期の仲介手数料は1,466百万円です。",
+          "customers": [
+            "不動産の売主・買主"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "証券取引所やオフィス、商業施設、ホテル等の開発・賃貸・管理・売却を行うビルディング事業と、平和不動産リート投資法人の資産運用や不動産仲介を行うアセットマネジメント事業で収益を得る事業モデルです。",
+    "products": [
+      "証券取引所ビル・オフィス・商業施設等の賃貸",
+      "ホテル（キャプション by Hyatt 兜町 東京、メルキュール東京日比谷等）",
+      "販売用不動産の売却",
+      "平和不動産リート投資法人の資産運用サービス",
+      "不動産仲介サービス"
+    ],
+    "customers": [
+      "証券取引所",
+      "オフィス・商業施設のテナント",
+      "ホテル宿泊客",
+      "不動産の購入者",
+      "平和不動産リート投資法人",
+      "不動産の売主・買主"
+    ],
+    "revenueSources": [
+      "賃貸収益",
+      "物件売却収入",
+      "アセットマネジメント収益",
+      "仲介手数料"
+    ],
+    "suppliers": [
+      {
+        "name": "設備工事業者",
+        "description": "保有ビルの適切な維持管理のため、改修工事を発注する設備工事業者です。",
+        "businessIds": [
+          "building"
+        ]
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "平和不動産",
+        "description": "東京都中央区日本橋兜町に本店を置き、連結子会社7社とグループを構成します。2026年3月期の連結従業員数は265人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ビルディング事業とアセットマネジメント事業",
+        "description": "ビルディング事業では証券取引所、オフィス、商業施設及び住宅等の開発、賃貸、管理ならびに売却等を行い、2026年3月期の外部顧客への売上高は46,236百万円です。アセットマネジメント事業では平和不動産リート投資法人の資産運用等を行い、同4,619百万円です。"
+      },
+      {
+        "kind": "customer",
+        "title": "テナントと平和不動産リート投資法人",
+        "description": "主要な顧客は平和不動産リート投資法人で、2026年3月期の売上高は15,909百万円です。証券取引所やオフィス・商業施設のテナント、ホテル宿泊客、不動産の購入者も顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は50,855百万円",
+        "description": "2026年3月期の売上高は50,855百万円（前期比20.9％増）でした。ビルディング事業が46,236百万円、アセットマネジメント事業が4,619百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は11,032百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は11,032百万円でした。前期は9,565百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -37,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 119278000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 240,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -57,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 119324000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 253,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -77,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 125645000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 255,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -97,7 +239,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 117999000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 259,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -117,7 +259,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 126763000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 265,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -125,22 +267,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第106期(2025/04/01－2026/03/31)",
-      "publisher": "平和不動産株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ5I.pdf",
-      "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -152,5 +278,293 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1947,
+      "title": "設立",
+      "description": "日本証券取引所の解散にあたり、同取引所が所有する東京、大阪、名古屋その他の証券市場建物等を現物出資として設立されました。本店を東京に置きました。",
+      "significance": "証券取引所建物等の賃貸を目的とする創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "株式を上場",
+      "description": "東京、大阪、名古屋の各証券取引所に株式を上場し、福岡証券取引所にも上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "東京証券取引所ビル本館が竣工",
+      "description": "東京証券取引所ビル本館が竣工しました。市場館（現アローズ）は1984年に竣工しています。",
+      "significance": "旗艦ビルの完成です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "大阪証券取引所ビルが竣工",
+      "description": "大阪証券取引所ビルが竣工しました。",
+      "significance": "関西の拠点ビルの完成です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "カナル投信を連結子会社化",
+      "description": "カナル投信株式会社（現 平和不動産アセットマネジメント株式会社）を連結子会社化しました。",
+      "significance": "アセットマネジメント事業の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "KABUTO ONEが開業",
+      "description": "日本橋兜町の複合ビルKABUTO ONEが開業しました。",
+      "significance": "兜町・茅場町の場づくりの拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "パーパスと長期ビジョン『WAY 2040』を策定",
+      "description": "平和不動産グループパーパスを制定し、平和不動産グループ長期ビジョン『WAY 2040』を策定しました。",
+      "significance": "現在の経営の枠組みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ホテル『キャプション by Hyatt 兜町 東京』が開業",
+      "description": "日本橋兜町にホテル『キャプション by Hyatt 兜町 東京』が開業しました。",
+      "significance": "ホテル事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "taisei",
+      "relationship": "other-affiliated-company",
+      "description": "関係会社の状況に『その他の関係会社』として印字され、当社株式の議決権の20.31％を保有しています（2026年3月31日現在）。2024年６月７日付で資本業務提携契約を締結し、再開発事業の拡大や新規事業分野、サステナビリティ・DX分野における業務提携等の関係を推進しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "mitsubishi-estate",
+      "relationship": "business-partner",
+      "description": "当社の株主であり、2011年２月17日付で資本業務提携契約を締結しています。日本橋兜町・茅場町地区の再開発に関する取り組み等の推進について包括的な協働関係を構築し、ノウハウや顧客基盤の相互提供を行う業務提携等の関係です。2024年６月７日には大成建設株式会社を含む３社間で資本業務提携に係る協定も締結しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "takasago-thermal-engineering",
+      "relationship": "supplier",
+      "description": "設備工事に係る取引実績があり、保有ビルの維持管理のための改修工事発注先として取引関係の強化を図るため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kinden",
+      "relationship": "supplier",
+      "description": "設備工事に係る取引実績があり、保有ビルの維持管理のための改修工事発注先として取引関係の強化を図るため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shin-nippon-air-technologies",
+      "relationship": "supplier",
+      "description": "設備工事に係る取引実績があり、保有ビルの維持管理のための改修工事発注先として取引関係の強化を図るため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokyo-tatemono",
+      "relationship": "business-partner",
+      "description": "分譲マンション開発等に係る共同事業の実績があり、取引関係の強化を図るため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokyu-fudosan-holdings",
+      "relationship": "customer",
+      "description": "当社保有ビルのテナントとしての不動産賃貸に係る取引実績及び不動産売買に係る取引実績があり、取引関係の強化を図るため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-realty-and-development",
+      "relationship": "customer",
+      "description": "当社保有ビルのテナントとしての不動産賃貸に係る取引実績及び分譲マンション開発に係る共同事業の実績があり、取引関係の強化を図るため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "haseko",
+      "relationship": "customer",
+      "description": "当社保有ビルのテナントとしての不動産賃貸に係る取引実績があり、取引関係の強化を図るため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "japan-exchange-group",
+      "relationship": "customer",
+      "description": "旗艦ビルである東京証券取引所ビルや大阪証券取引所ビル等のテナントとして、不動産賃貸に係る取引実績があります。日本橋兜町・茅場町の街づくりにおいて中心的な存在であり、協力関係を構築しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "iwaicosmo-holdings",
+      "relationship": "customer",
+      "description": "当社保有ビルのテナントとしての不動産賃貸に係る取引実績があり、取引関係の強化を図るため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okasan-securities-group",
+      "relationship": "customer",
+      "description": "当社保有ビルのテナントとしての不動産賃貸に係る取引実績があり、取引関係の強化を図るため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kyokuto-securities",
+      "relationship": "customer",
+      "description": "当社グループ保有ビルのテナントとしての不動産賃貸に係る取引実績があり、取引関係の強化を図るため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "marusan-securities",
+      "relationship": "customer",
+      "description": "当社保有ビルのテナントとしての不動産賃貸に係る取引実績があり、取引関係の強化を図るため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第106期(2025/04/01－2026/03/31)",
+      "publisher": "平和不動産株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ5I.pdf",
+      "publishedAt": "2026-06-24",
+      "docId": "S100YJ5I",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2025年７月１日付で普通株式１株につき２株の割合で株式分割を行いました。株式数に関する指標は、第102期の期首に当該株式分割が行われたと仮定して算定されています。"
+    ]
+  },
+  "updatedAt": "2026-11-13",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期ビジョン『WAY 2040』のもと、中期経営計画『WAY 2040 Stage 1』（2024年度から2026年度）では、日本橋兜町・茅場町ブランドの確立と当社史上最大規模となる札幌再開発プロジェクトの推進に取り組み、再開発事業の拡大、資本回転型ビジネスの拡大と新規事業分野への進出を進める方針です。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "中期経営計画の最終年度にあたる2026年3月期は、物件売却収入の増加と当期に開業したホテルの収益貢献により、売上高が前期比20.9％増となりました。札幌では2つの再開発プロジェクトが進行中であり、賃料の増額改定も進んでいます。",
+        "basis": "セグメント情報（外部顧客への売上高）、MD&A（経営成績等の状況の概要、経営者の視点による分析）",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1947年の設立以来、東京・大阪・名古屋・福岡・札幌の証券取引所の建物を所有し賃貸してきた実績を持ち、日本橋兜町・茅場町には旗艦ビルに加えてホテルや商業機能を集積させています。大成建設株式会社、三菱地所株式会社との資本業務提携により、再開発事業で協働関係を構築しています。",
+        "basis": "沿革、事業の内容、主要な設備の状況、重要な契約等",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントはビルディング事業とアセットマネジメント事業の2つで、ビルディング事業が売上の大半を占めます。主要な顧客である平和不動産リート投資法人への売上高は15,909百万円で、売上全体の31.3％です。本邦以外の外部顧客への売上高はありません。",
+        "basis": "セグメント情報（外部顧客への売上高、主要な顧客ごとの情報、地域ごとの情報）",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
+  "segmentRevenue": {
+    "fiscalYear": "2026年3月期",
+    "periodEnd": "2026-03-31",
+    "label": "外部顧客への売上高",
+    "items": [
+      {
+        "businessId": "building",
+        "amount": 46236000000
+      },
+      {
+        "businessId": "asset-management",
+        "amount": 4619000000
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【セグメント情報】"
   }
 }

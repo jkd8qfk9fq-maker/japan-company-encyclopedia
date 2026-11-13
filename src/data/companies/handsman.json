@@ -4,15 +4,121 @@
   "name": "ハンズマン",
   "officialName": "株式会社ハンズマン",
   "nameEn": "HANDSMAN　CO．，LTD．",
-  "description": null,
+  "shortNameEn": "HANDSMAN CO., LTD.",
+  "description": "宮崎県都城市に本社を置き、九州を中心にDIY用品などを販売するホームセンターを展開する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "home-center",
+      "name": "ホームセンター事業",
+      "description": "DIY用品、家庭用品、カー・レジャー用品の販売を行う単一セグメントの事業です。2026年6月30日現在、宮崎県、鹿児島県、熊本県、大分県、福岡県と大阪府に合わせて12店舗を展開しています。2026年6月期の売上高は35,251百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "diy-products",
+          "name": "DIY用品",
+          "description": "ホビー・木製品、建材、手工具、電動工具、金物、塗料、接着剤、園芸資材、薬剤肥料・用土、植物、エクステリア用品、石材などを販売する商品区分です。2026年6月期の売上高は19,170百万円です。",
+          "customers": [
+            "ホームセンター店舗に来店する一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "household-products",
+          "name": "家庭用品",
+          "description": "家庭用品、日用品、インテリア用品、電気資材用品、収納用品、住宅設備用品、季節用品などを販売する商品区分です。2026年6月期の売上高は11,153百万円です。",
+          "customers": [
+            "ホームセンター店舗に来店する一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "car-leisure-products",
+          "name": "カー・レジャー用品",
+          "description": "カー用品、アウトドア用品、ペット用品、文具などを販売する商品区分です。2026年6月期の売上高は4,928百万円です。",
+          "customers": [
+            "ホームセンター店舗に来店する一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "ホームセンター店舗でDIY用品、家庭用品、カー・レジャー用品を販売し、その販売代金を得る事業モデルです。",
+    "products": [
+      "DIY用品（ホビー・木製品、建材、手工具、電動工具、金物、塗料、接着剤、園芸資材、薬剤肥料・用土、植物、エクステリア用品、石材）",
+      "家庭用品（家庭用品、日用品、インテリア用品、電気資材用品、収納用品、住宅設備用品、季節用品）",
+      "カー・レジャー用品（カー用品、アウトドア用品、ペット用品、文具）"
+    ],
+    "customers": [
+      "ホームセンター店舗に来店する一般消費者"
+    ],
+    "revenueSources": [
+      "DIY用品の販売による売上高",
+      "家庭用品の販売による売上高",
+      "カー・レジャー用品の販売による売上高"
+    ],
+    "suppliers": [
+      {
+        "name": "商品の仕入先",
+        "description": "取引先からDIY用品、家庭用品、カー・レジャー用品を仕入れています。商品の廃番や値上げに対しては、代替商品の発掘や新たな仕入先の開拓を進めています。"
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社ハンズマン",
+        "description": "宮崎県都城市に本社を置くホームセンター事業の会社で、関係会社はありません。2026年6月30日現在の従業員数は179人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ホームセンター店舗での商品販売",
+        "description": "DIY用品、家庭用品、カー・レジャー用品を、九州を中心とする12店舗のホームセンターで販売します。DIYアドバイザーの資格取得に向けた研修会も開催し、店舗での相談対応を担う人材を育てています。"
+      },
+      {
+        "kind": "customer",
+        "title": "店舗に来店する一般消費者",
+        "description": "主なお客様はホームセンター店舗に来店する一般消費者です。売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は35,251百万円",
+        "description": "2026年6月期の売上高は35,251百万円でした。商品区分別ではDIY用品が19,170百万円、家庭用品が11,153百万円、カー・レジャー用品が4,928百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は1,055百万円",
+        "description": "2026年6月期の当期純利益は1,055百万円でした。前期の当期純利益は1,027百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,11 +133,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16493000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 186,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +155,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17480000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 176,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +177,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17864000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 179,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +199,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18102000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 184,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,32 +221,16 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18840000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 179,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第62期(2025/07/01－2026/06/30)",
-      "publisher": "株式会社ハンズマン",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z3HP.pdf",
-      "publishedAt": "2026-09-24",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",
@@ -152,5 +242,184 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1964,
+      "title": "株式会社大薗硝子建材商会を設立",
+      "description": "1964年12月、宮崎県都城市中町に株式会社大薗硝子建材商会を設立しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "大薗硝子建材株式会社に社名を変更",
+      "description": "1972年12月に大薗硝子建材株式会社に社名を変更しました。",
+      "significance": "社名の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "オーゾノ株式会社に社名を変更",
+      "description": "1985年7月にオーゾノ株式会社に社名を変更しました。",
+      "significance": "社名の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "ハンズマン吉尾店がオープン",
+      "description": "1986年4月、宮崎県都城市吉尾町にDIYホームセンターハンズマン吉尾店がオープンしました。",
+      "significance": "ホームセンター事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "株式会社ハンズマンに社名を変更",
+      "description": "1995年7月、建材部門をマルダイ建材株式会社（現オーゾノ建材株式会社）に営業譲渡し、株式会社ハンズマンに社名を変更しました。本社社屋も宮崎県都城市吉尾町に移転しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "株式を店頭市場に登録し、鹿児島県に初出店",
+      "description": "2000年3月に株式を日本証券業協会店頭市場に登録しました。同年9月には鹿児島県国分市（現霧島市）にハンズマン国分店がオープンしました。",
+      "significance": "株式の店頭登録と鹿児島県への出店です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "熊本県に初出店",
+      "description": "2001年12月、熊本県熊本市にハンズマン画図店がオープンしました。",
+      "significance": "熊本県への出店です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "大分県に初出店",
+      "description": "2003年9月、大分県大分市にハンズマンわさだ店がオープンしました。",
+      "significance": "大分県への出店です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "2004年12月に株式を株式会社ジャスダック証券取引所に上場しました。",
+      "significance": "証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "福岡県に初出店",
+      "description": "2005年11月、福岡県大野城市にハンズマン大野城店がオープンしました。",
+      "significance": "福岡県への出店です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、東京証券取引所JASDAQ（スタンダード）からスタンダード市場へ移行しました。",
+      "significance": "市場区分の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "大阪府に松原店がオープン",
+      "description": "2023年10月、大阪府松原市にホームセンターハンズマン松原店がオープンしました。",
+      "significance": "九州地区の外への出店です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第62期(2025/07/01－2026/06/30)",
+      "publisher": "株式会社ハンズマン",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z3HP.pdf",
+      "publishedAt": "2026-09-24",
+      "docId": "S100Z3HP",
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-11"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-13",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念は「お客様第一主義」で、ホームセンター事業を通して「住まいと暮らしに関するお客様の要望をすべて満たす」ことを経営の基本方針としています。創業以来、九州地区で店舗網を広げてきましたが、2023年10月に新規出店した松原店（大阪府）の運営も軌道に乗っており、今後は大都市圏を中心に本州で出店エリアを拡大し、各地域のお客様に支持される店舗づくりに努めるとしています。対処すべき課題として、お客様満足度の向上、従業員満足度の向上、業務効率の改善、優良新規物件の開発を挙げています。",
+        "asOf": "2026-09-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年6月期の売上高は35,251百万円で、商品区分ではDIY用品が19,170百万円と最も大きく、次いで家庭用品、カー・レジャー用品の順です。店舗はこれまで九州地区が中心でしたが、松原店の出店を踏まえて本州の大都市圏への出店拡大が中長期的な会社の経営戦略に掲げられています。",
+        "basis": "セグメント情報（単一セグメント）、MD&Aの販売実績、経営方針の中長期的な会社の経営戦略",
+        "asOf": "2026-09-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "豊富な品揃えと、お客様のニーズに寄り添った接客及び売場づくりを重要な競争力と位置付けています。MD&Aでは、DIYアドバイザーの資格取得に向けた研修会を積極的に開催して資格取得者を大幅に増やし、店舗におけるコンサルティング販売能力の向上を図ったことや、取引先の廃番や値上げに対して代替商品の発掘や新たな仕入先の開拓で品揃えの維持・拡充に努めたことが説明されています。",
+        "basis": "人材戦略に関する基本方針、MD&Aの経営成績の状況、経営方針の対処すべき課題",
+        "asOf": "2026-09-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントはホームセンター事業のみの単一セグメントです。本邦以外の外部顧客への売上高はなく、売上高の10％以上を占める相手先もありません。2026年6月30日現在の店舗は12店舗で、宮崎県、鹿児島県、熊本県、大分県、福岡県の九州5県と大阪府に所在します。",
+        "basis": "セグメント情報（単一セグメント、関連情報の地域ごとの情報・主要な顧客ごとの情報）、主要な設備の状況",
+        "asOf": "2026-09-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

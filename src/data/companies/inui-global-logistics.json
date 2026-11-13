@@ -4,15 +4,175 @@
   "name": "乾汽船",
   "officialName": "乾汽船株式会社",
   "nameEn": "Inui Global Logistics Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Inui Global Logistics Co.,Ltd.",
+  "description": "外航海運・倉庫運送・不動産賃貸を手がける、子会社3社を持つ物流・不動産の会社グループです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "ocean-shipping",
+      "name": "外航海運事業",
+      "description": "船舶の自社運航による貨物輸送と船舶貸渡業を行う、当社グループ最大の事業です。子会社または船主（同業他社）より定期用船した船舶による貨物輸送（自社運航）と、用船者（同業他社）への定期用船を行っています。主に当社への定期用船を行っているのは連結子会社のDELICA SHIPPING S.A.です。2026年3月期の外部顧客への売上高は25,747百万円、従業員数は2026年3月31日現在32人です。",
+      "customers": [
+        "貨物の荷主",
+        "用船者である同業他社"
+      ],
+      "children": [
+        {
+          "id": "ocean-shipping-operation",
+          "name": "船舶の自社運航による貨物輸送",
+          "description": "定期用船した船舶などを自社で運航し、貨物を輸送します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ocean-shipping-charter",
+          "name": "船舶貸渡業",
+          "description": "用船者（同業他社）への定期用船を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "warehouse-transport",
+      "name": "倉庫・運送事業",
+      "description": "倉庫、荷役、貨物運送を行う事業です。顧客のために物品を倉庫に保管する倉庫保管事業、国土交通省の認定を受けた文書保管事業、当社倉庫ほかの寄託貨物を運送する貨物運送事業などで構成されます。連結子会社のイヌイ運送株式会社とイヌイ倉庫オペレーションズ株式会社が、庫内作業や自動車運送、引越し業務などを担います。2026年3月期の外部顧客への売上高は3,955百万円、従業員数は2026年3月31日現在123人です。",
+      "customers": [
+        "倉庫に物品を預ける顧客",
+        "文書保管を利用する顧客",
+        "貨物運送を利用する顧客"
+      ],
+      "children": [
+        {
+          "id": "warehouse-storage",
+          "name": "倉庫保管事業",
+          "description": "顧客のために物品を倉庫に保管します。普通倉庫業のほかに保税蔵置場の許可を受け、関税未納の輸出入貨物の保管業務も行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "document-storage",
+          "name": "文書保管事業",
+          "description": "国土交通省の認定を受け、文書箱や什器等を倉庫に保管します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "cargo-transport",
+          "name": "貨物運送事業",
+          "description": "当社倉庫ほかの寄託貨物を運送します。引越し業務も行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "施設賃貸を行う事業です。勝どきエリアを中心に、自らが所有する住宅及び事務所等を賃貸しています。賃貸マンションのプラザ勝どきやプラザタワー勝どき、賃貸オフィスビルのイヌイビル・カチドキなどを営業してきました。2026年3月期の外部顧客への売上高は3,933百万円、従業員数は2026年3月31日現在5人です。",
+      "customers": [
+        "住宅及び事務所の賃借人"
+      ],
+      "children": [
+        {
+          "id": "real-estate-leasing",
+          "name": "施設賃貸",
+          "description": "勝どきエリアを中心に、所有する住宅及び事務所等を賃貸します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "外航海運での貨物輸送と船舶貸渡、倉庫保管・文書保管・貨物運送、勝どきを中心とする施設賃貸で対価を得る事業モデルです。",
+    "products": [
+      "船舶の自社運航による貨物輸送と船舶貸渡",
+      "倉庫保管と文書保管",
+      "貨物運送と引越し",
+      "住宅及び事務所等の施設賃貸"
+    ],
+    "customers": [
+      "貨物の荷主と用船者である同業他社",
+      "倉庫に物品や文書を預ける顧客",
+      "住宅及び事務所の賃借人"
+    ],
+    "revenueSources": [
+      "貨物輸送の運賃収入と貸船収入",
+      "倉庫の保管料等",
+      "貨物運送の対価",
+      "施設の賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "乾汽船と連結子会社3社のグループ",
+        "description": "2026年3月31日現在、当社と連結子会社3社でグループを構成し、連結従業員数は188人です。外航海運事業、倉庫・運送事業、不動産事業の3事業を展開しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "輸送・保管・賃貸のサービスを提供",
+        "description": "外航海運事業では船舶の自社運航による貨物輸送と船舶貸渡を、倉庫・運送事業では倉庫保管・文書保管・貨物運送を、不動産事業では勝どきエリアを中心とする施設賃貸を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "荷主・用船者・寄託顧客・賃借人が顧客",
+        "description": "外航海運事業の顧客は貨物の荷主と用船者である同業他社、倉庫・運送事業の顧客は物品や文書を預ける顧客と運送を利用する顧客、不動産事業の顧客は住宅及び事務所の賃借人です。売上高の10％以上を占める主要な顧客はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "運賃・保管料・賃貸収入として売上高を得る",
+        "description": "2026年3月期の売上高は33,636百万円（前期比5.9％増）です。外航海運事業が25,747百万円、倉庫・運送事業が3,955百万円、不動産事業が3,933百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は833百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は833百万円です（前期は5,021百万円）。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +187,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 29882000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 174,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 34060000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 174,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 31618000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 176,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +247,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 36875000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 181,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +267,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 37415000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 188,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +275,252 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1904,
+      "title": "旧乾汽船の創業（参考）",
+      "description": "旧乾汽船株式会社の沿革として、乾新兵衛が中古船を購入し船名を乾坤丸と命名して創業したことが記されています。",
+      "significance": "海運事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1908,
+      "title": "旧乾汽船が乾合名会社を創立（参考）",
+      "description": "旧乾汽船株式会社の沿革として、外航海運業として乾合名会社を兵庫県神戸市に創立したことが記されています。",
+      "significance": "外航海運の会社としての形ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1925,
+      "title": "関東土地株式会社を創立",
+      "description": "東京都に関東土地株式会社を創立し、不動産の賃貸借売買を主体に営業を開始しました。",
+      "significance": "現在の会社の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1929,
+      "title": "乾倉庫土地株式会社に改め倉庫業を開始",
+      "description": "商号を乾倉庫土地株式会社と改め、営業倉庫業を開始しました。",
+      "significance": "倉庫事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1933,
+      "title": "旧乾汽船が株式会社に改組（参考）",
+      "description": "旧乾汽船株式会社の沿革として、株式会社に改組し商号を乾汽船株式会社に変更したことが記されています。",
+      "significance": "乾汽船の社名の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1936,
+      "title": "乾倉庫株式会社に商号変更",
+      "description": "商号を乾倉庫株式会社と改めました。",
+      "significance": "倉庫会社としての社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "旧乾汽船が東京・大阪証券取引所に上場（参考）",
+      "description": "旧乾汽船株式会社の沿革として、東京証券取引所と大阪証券取引所に上場したことが記されています。",
+      "significance": "海運会社として上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "イヌイ運送株式会社を設立",
+      "description": "イヌイ運送株式会社（現・連結子会社）を設立しました。",
+      "significance": "運送事業の担い手ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "イヌイ建物株式会社に商号変更",
+      "description": "商号をイヌイ建物株式会社と改めました。",
+      "significance": "不動産を軸とする社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "賃貸マンション「プラザ勝どき」の営業開始",
+      "description": "賃貸マンション（プラザ勝どき）の営業を開始しました。",
+      "significance": "勝どきエリアでの賃貸事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "賃貸オフィスビル「イヌイビル・カチドキ」の営業開始",
+      "description": "賃貸オフィスビル（イヌイビル・カチドキ）の営業を開始しました。",
+      "significance": "オフィス賃貸が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "超高層賃貸マンション「プラザタワー勝どき」の営業開始",
+      "description": "超高層賃貸マンション（プラザタワー勝どき）の営業を開始しました。",
+      "significance": "勝どきの賃貸マンションが大型化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "イヌイ倉庫株式会社に商号変更",
+      "description": "商号をイヌイ倉庫株式会社と改めました。",
+      "significance": "倉庫を軸とする社名に戻りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "シェア型企業寮「月島荘」の営業開始",
+      "description": "シェア型企業寮（月島荘）の営業を開始しました。",
+      "significance": "賃貸の形が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "旧乾汽船株式会社と経営統合し乾汽船株式会社に商号変更",
+      "description": "当社を存続会社、旧乾汽船株式会社を消滅会社とする吸収合併により経営統合し、商号を乾汽船株式会社と改め、東京証券取引所市場第一部に指定されました。",
+      "significance": "現在の乾汽船が成立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "yasuda-logistics",
+      "relationship": "business-partner",
+      "description": "安田倉庫株式会社とは業務提携等の関係にあります。当社が主たる出資先であり倉庫事業の主要拠点を置く東京団地倉庫株式会社における関係において円滑な協力関係を維持・強化するため、また同業他社として機能補完や情報交換等を行うため、当社は同社株式250,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "chuo-warehouse",
+      "relationship": "business-partner",
+      "description": "株式会社中央倉庫とは業務提携等の関係にあります。近畿地方を地盤とする同業他社として、エリア間での機能補完や情報交換等、安定的な取引・協力関係を維持・強化するため、当社は同社株式268,788株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shibusawa-logistics",
+      "relationship": "business-partner",
+      "description": "澁澤倉庫株式会社とは業務提携等の関係にあります。当社が主たる出資先であり倉庫事業の主要拠点を置く東京団地倉庫株式会社における関係において円滑な協力関係を維持・強化するため、また同業他社として機能補完や情報交換等を行うため、当社は同社株式378,400株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamatane",
+      "relationship": "business-partner",
+      "description": "株式会社ヤマタネとは業務提携等の関係にあります。当社が主たる出資先であり倉庫事業の主要拠点を置く東京団地倉庫株式会社における関係において円滑な協力関係を維持・強化するため、また同業他社として機能補完や情報交換等を行うため、当社は同社株式196,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-paper-industries",
+      "relationship": "business-partner",
+      "description": "日本製紙株式会社とは業務提携等の関係にあります。当社倉庫事業における主要取引先であり、安定的な取引関係の維持・強化を図るため、当社は同社株式48,640株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "osaki-electric",
+      "relationship": "business-partner",
+      "description": "大崎電気工業株式会社とは業務提携等の関係にあります。当社不動産事業との間で取引と共同研究を行っており、その領域における協力関係の維持・強化を図るため、当社は同社株式171,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tamai-steamship",
+      "relationship": "business-partner",
+      "description": "玉井商船株式会社とは業務提携等の関係にあります。同業他社として情報交換や機能補完等の安定的な取引・協力関係を維持・強化するため、当社は同社株式40,600株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-keihin",
+      "relationship": "business-partner",
+      "description": "ケイヒン株式会社とは業務提携等の関係にあります。当社が主たる出資先であり倉庫事業の主要拠点を置く東京団地倉庫株式会社における関係において円滑な協力関係を維持・強化するため、また同業他社として機能補完や情報交換等を行うため、当社は同社株式1,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +528,55 @@
       "publisher": "乾汽船株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD46.pdf",
       "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YD46",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-13",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期ビジョンとして「よくはこぶ」を掲げ、2026年3月に新中期経営計画「あしたも元気」（計画期間：2026年4月～2029年3月）を策定しています。事業別の方針は、外航海運事業が長期的に「よくはこぶ」Handy船隊を運営すること、倉庫・運送事業が実業の地力は鍛え続けつつ新たな構想で「あした」を創ること、不動産事業が事業基盤を支え勝どきの暮らしを未来へはこぶことです。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "外航海運事業では、既存保有船の長寿命化を重視しつつフレキシブルな調達を並行し、2050年までの長期スパンで一定規模の船隊形成を目指す方針が示されています。不動産事業では、再開発からリノベーションへの転換が示され、プラザ勝どきの活用方針は建替えを前提とする再開発計画からリノベーションを中心とする活用へ見直されています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等に記載された外航海運事業の船隊整備の方針と不動産事業の再開発からリノベーションへの転換、および経営成績等の状況の概要に記載されたプラザ勝どきの計画見直しによる。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "経営の基本方針の第一に「資産の力を事業の力に」を掲げ、勝どき・月島の施設賃貸による安定した収益と財務基盤があるからこそ、海運市況の変動に抗って船舶投資を行うことができると説明しています。倉庫・運送事業は、多様な小口荷主が主体で標準化が難しい領域を担い、倉庫の多くが人を集めやすい市街地に立地していることが特性として示されています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等に記載された経営の基本方針（資産の力を事業の力に）と倉庫・運送事業の事業特性、および事業の内容に記載された各事業の内容による。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は、外航海運事業が25,747百万円と全体の4分の3以上を占め、倉庫・運送事業が3,955百万円、不動産事業が3,933百万円です。顧客の所在地を基礎とした地域別の売上高では、日本のほかニュージーランドやシンガポールなど海外の顧客向けの売上高も開示されています。売上高の10％以上を占める主要な顧客はいないため、特定の顧客への依存は開示されていません。",
+        "basis": "セグメント情報に記載された報告セグメントごとの外部顧客への売上高、地域ごとの情報（売上高）および主要な顧客ごとの情報による。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
