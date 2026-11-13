@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { applyPlan, checkPlan, isValidCode, PLAN_PAGE, usePlan } from "@/lib/plan";
+import { applyPlan, checkPlan, isValidCode, PLAN_PAGE, startCheckout, usePlan } from "@/lib/plan";
 
 /**
  * Wraps a part of the page that belongs to the YUGENQ premium plan (JCE-043). The static HTML always holds the
@@ -14,6 +14,7 @@ export function PremiumGate({ title, teaser, children }: { title: string; teaser
   const plan = usePlan();
   const [code, setCode] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "inactive" | "error">("idle");
+  const [buying, setBuying] = useState<"idle" | "sending" | "error">("idle");
 
   if (plan) return <>{children}</>;
 
@@ -35,6 +36,25 @@ export function PremiumGate({ title, teaser, children }: { title: string; teaser
       <p className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">PREMIUM</p>
       <h3 className="mt-1 font-serif text-lg font-semibold">{title}</h3>
       <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">{teaser}</p>
+      <div className="mt-4 flex flex-wrap items-center gap-3">
+        <button
+          type="button"
+          onClick={async () => {
+            setBuying("sending");
+            try {
+              await startCheckout(`${window.location.origin}${window.location.pathname}#financials`);
+            } catch {
+              setBuying("error");
+            }
+          }}
+          disabled={buying === "sending"}
+          className="rounded-md bg-foreground px-5 py-2.5 text-sm font-medium text-background disabled:opacity-50"
+        >
+          {buying === "sending" ? "お支払い画面へ…" : "プレミアムプランに申し込む（月額390円）"}
+        </button>
+        <span className="text-xs text-muted-foreground">お支払いは Stripe の画面で。済むとこのページに戻ります。</span>
+      </div>
+      {buying === "error" && <p className="mt-2 text-xs text-muted-foreground">いまは申し込みの画面を開けませんでした。しばらくしてからもう一度お試しください。</p>}
       <p className="mt-3 text-sm leading-6">
         プレミアムプラン（月額390円・税込）は、企業タイプ診断・最初の一社と共通です。
         <a href={PLAN_PAGE} className="ml-1 underline underline-offset-2 hover:text-foreground" target="_blank" rel="noopener">

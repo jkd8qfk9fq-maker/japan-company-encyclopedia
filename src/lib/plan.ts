@@ -13,6 +13,7 @@ import { planStore, type StoredPlan } from "@/lib/storage/stores";
  */
 
 export const PLAN_ENDPOINT = "https://shindan.kigyo-hyakka.com/api/plan";
+export const CHECKOUT_ENDPOINT = "https://shindan.kigyo-hyakka.com/api/checkout";
 export const PLAN_PAGE = "https://shindan.kigyo-hyakka.com/plan/";
 const COOKIE = "yugenq_plan";
 const CODE_PATTERN = /^sub_[A-Za-z0-9]{8,64}$/;
@@ -27,6 +28,22 @@ export async function checkPlan(code: string): Promise<PlanResponse> {
   });
   if (!response.ok) throw new Error(`plan check failed: ${response.status}`);
   return (await response.json()) as PlanResponse;
+}
+
+/**
+ * Starts Stripe Checkout for the plan from this site (JCE-043 / the 診断 site's CTS-024): the 診断 site's worker creates
+ * the session and sends the buyer back to `returnTo` (this page) once the code is saved there — and, through the
+ * parent-domain cookie, here. Card details never touch either site.
+ */
+export async function startCheckout(returnTo: string): Promise<void> {
+  const response = await fetch(CHECKOUT_ENDPOINT, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify({ returnTo }),
+  });
+  const body = (await response.json().catch(() => ({}))) as { url?: string };
+  if (!response.ok || !body.url) throw new Error(`checkout failed: ${response.status}`);
+  window.location.assign(body.url);
 }
 
 export function applyPlan(result: PlanResponse): StoredPlan | null {
