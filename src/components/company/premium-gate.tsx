@@ -40,6 +40,11 @@ export function PremiumGate({ title, teaser, children }: { title: string; teaser
         <a href={PLAN_PAGE} className="ml-1 underline underline-offset-2 hover:text-foreground" target="_blank" rel="noopener">
           プランの内容と申し込み
         </a>
+        ・すでに申し込んだ方は
+        <a href={`${PLAN_PAGE}#recover`} className="ml-1 underline underline-offset-2 hover:text-foreground" target="_blank" rel="noopener">
+          メールで復元
+        </a>
+        （開いたあと、このページを再読み込みしてください）
       </p>
       <form onSubmit={submit} className="mt-4 flex max-w-md flex-wrap items-center gap-2">
         <label htmlFor="plan-code" className="sr-only">
