@@ -141,6 +141,26 @@ export const companySchema = z.strictObject({
       ...sourced,
     }),
   ),
+  interimFinancials: z
+    .array(
+      z.strictObject({
+        fiscalYear: text,
+        period: z.literal("H1"),
+        periodStart: isoDate,
+        periodEnd: isoDate,
+        revenue: z.number().int().nullable(),
+        revenueLabel: text,
+        profit: z.number().int().nullable(),
+        profitLabel: text.nullable(),
+        netIncome: z.number().int().nullable(),
+        netIncomeLabel: text,
+        currency: z.literal("JPY"),
+        accountingStandard: z.enum(["ifrs", "jgaap", "usgaap"]),
+        note: text.optional(),
+        ...sourced,
+      }),
+    )
+    .optional(),
   segmentRevenue: z
     .strictObject({
       fiscalYear: text,

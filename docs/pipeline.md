@@ -152,6 +152,7 @@ universe.tsv ──discover──▶ queued ──intake──▶ intake ──r
 | queue の管理・見える化 | `queue.mjs`（`status` / `jobs` / `plan`（dry-run）/ `check` / `next` / `claim`） |
 | 予約（二重取得の防止） | `company-state.mjs` の `reserve` / `release` / `claim`。**排他**（`pipeline/.lock` の mkdir ロック。取れた呼び出しだけが true）。`claim` は「次の N 社を選ぶ」と「予約する」を1つのロック内で行う |
 | universe の作成 | `discover.mjs`（既定は**昨日まで**。当日の索引は未完で、キャッシュされると以後ずっと完全に見える） |
+| 半期報告書の転記（JCE-045） | `interim-financials.mjs`（`<id …>` か `--all`。既定は dry run、`--apply` で `interimFinancials`・出典・改訂記録を書く。日次ワークフローの detect / propose の中で動く。要素の対応は年次と同じ、文脈は `CurrentYTDDuration` / `Prior1YTDDuration`） |
 | 上場状況・業種・新規上場の同期 | `sync-listing.mjs`（EDINET コードリスト。**読むだけ**: 台帳 `pipeline/listing.tsv` と差分・影響対象の報告を作り、エントリー・state・universe は変えない。`--file` で渡すのが既定、`--download` は20時間に1回まで・定期実行には入れない） |
 | 新しい年度の財務の追加 | `refresh-financials.mjs`（登録済みの会社に新しい有報の年度を足す。数値のみの会社も対象（`--tier all`）。ドライランが既定。Actions は毎日検知し、検証を通った更新だけを別ブランチに適用してプルリクエストにする。main には書かず、マージは人（JCE-024）。確定前の索引は待つ） |
 | 訂正有報の監査 | `amendment-audit.mjs --refresh`（前回以降の日だけを読む。Actions では検知と提案の両ジョブで毎日、`--from-entries`＝各社の有報をエントリーの出典から求める。報告のみ。反映は人が `apply-amendment.mjs <id>`） |

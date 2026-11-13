@@ -164,6 +164,9 @@ describe.each(companies.map((c) => [c.id, c] as const))("company %s", (_, compan
     if (!model) return;
     expect(model.flow.map((s) => s.kind)).toEqual(["company", "offering", "customer", "revenue", "profit"]);
     expectSourced(model.sourceIds, company.sources, `${company.id}.businessModel`);
+    for (const half of company.interimFinancials ?? []) expectSourced(half.sourceIds, company.sources, `${company.id}.interimFinancials.${half.periodEnd}`);
+    const halves = (company.interimFinancials ?? []).map((h) => `${h.period}:${h.periodEnd}`);
+    expect(new Set(halves).size, `${company.id}: an interim period appears twice`).toBe(halves.length);
   });
 
   it("has sourced, ordered, non-duplicated financial years in JPY", () => {

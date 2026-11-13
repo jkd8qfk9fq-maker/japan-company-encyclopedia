@@ -744,3 +744,24 @@ These extend the computed-ratio rule of JCE-038/041: same-year printed figures o
 year a gap in the line. 自己資本比率 and the per-employee figures are balance-sheet and headcount arithmetic, not
 market measures; ROE, ROA, PER and everything priced by the market remain excluded (invariant 4). The copy explains
 each group in a sentence a beginner can use ("借りたものではなく自分のもの", "人手で稼ぐか、仕組みで稼ぐか").
+
+### JCE-045 · 2026-11-13 · Accepted (operator) — 半期の数字: the 半期報告書 read into `interimFinancials`, shown in the premium block
+
+The operator asked for quarterly results to be shown ("四半期決算で表示が可能かシステムを構築"). Since April 2024 the
+quarterly report no longer exists on EDINET; the first half still does, as the 半期報告書 (docTypeCode 160, 訂正 170),
+and its own 主要な経営指標等の推移 prints the half's cumulative figures beside the same half of the previous year. The
+third and first quarters live only in 決算短信 on TDnet, which has no free API and whose terms of automated use are
+unconfirmed, so they are not read (see `docs/proposals/2026-11-12-interim-reports.md` in the supervisor repository).
+
+- **Data**: `interimFinancials[]` on the entry — fiscal year, `period: "H1"`, the half's start and end, 売上高・利益・純利益
+  with the filer's own labels, the accounting standard, cited to a new source (`hanki-YYYYMM`, the filing's docID). The
+  five full years in `financials` are untouched; a half is never mixed into them, and 総資産・純資産 at mid-year are
+  not stored. A line the filing does not tag is null (invariant 1).
+- **Pipeline**: `scripts/pipeline/interim-financials.mjs` reads the type=5 CSV like the annual extractor, by the same
+  element ids (summary rows, consolidated unless the filer has none), from the `CurrentYTDDuration` and
+  `Prior1YTDDuration` contexts; plans from the entry and the cached day indexes alone; with `--apply` writes the entry,
+  the source and a Revision, gated by `tests/validate-file.test.ts`. It runs inside the one scheduled EDINET workflow
+  (detect: dry run and count; propose: apply), so JCE-018's single detector stands.
+- **Page**: 「半期の動き」 at the top of the premium block — each line's half figure, its 前年同期比 and its share of the
+  last full year, with the previous half beside it as a grey bar. Computed on the page, formulas printed, nothing
+  annualised or forecast.

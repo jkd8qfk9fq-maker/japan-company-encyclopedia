@@ -5,6 +5,7 @@ import { formatDateJa } from "@/lib/utils/format";
 import { companyMetrics } from "@/lib/company-metrics";
 import { financialDeepDive } from "@/lib/financial-deep-dive";
 import { industryComparison } from "@/lib/industry-comparison";
+import { interimView } from "@/lib/interim";
 import { buildValueChain } from "@/lib/value-chain";
 import { SourceList } from "@/components/sources/source-list";
 import { BusinessList } from "./business-list";
@@ -19,6 +20,7 @@ import { ConnectionNetwork } from "./connection-network";
 import { FinancialSection } from "./financial-section";
 import { FinancialDeepDiveBlock } from "./financial-deep-dive";
 import { IndustryComparisonBlock } from "./industry-comparison";
+import { InterimSection } from "./interim-section";
 import { PremiumGate } from "./premium-gate";
 import { HistoryTimeline } from "./history-timeline";
 import { PerspectivesSection } from "./perspectives-section";
@@ -61,6 +63,8 @@ export async function CompanyView({ company }: { company: Company }) {
   const comparison = industryComparison(company, released);
   // 財務の深掘り (JCE-044): the five-year structure beside the industry's year-by-year median.
   const deepDive = financialDeepDive(company, released);
+  // 半期の動き (JCE-045): the newest 半期報告書, when one has been read for the company.
+  const interim = interimView(company);
   const chainSourceIds = [
     ...new Set([
       ...company.businesses.flatMap((b) => b.sourceIds),
@@ -177,6 +181,7 @@ export async function CompanyView({ company }: { company: Company }) {
               title="業界比較"
               teaser={`${comparison.industryName}業界の掲載企業${comparison.members}社の中での位置（売上高・純利益率・5期の伸び・海外売上高比率・平均年間給与の順位と中央値との差）に加え、5期の利益率・自己資本比率・従業員1人あたりの売上と利益・資産と人員の推移を、業界の中央値と重ねて読めます。`}
             >
+              {interim && <InterimSection view={interim} />}
               <IndustryComparisonBlock comparison={comparison} />
               {deepDive && <FinancialDeepDiveBlock deepDive={deepDive} />}
             </PremiumGate>

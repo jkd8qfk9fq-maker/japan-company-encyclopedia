@@ -143,6 +143,32 @@ export type Workforce = Sourced & {
 export type AccountingStandard = "ifrs" | "jgaap" | "usgaap";
 
 /**
+ * One interim period (JCE-045): the first half of a fiscal year as the 半期報告書 prints it in its own
+ * 主要な経営指標等の推移 — the cumulative figures from the year's start to the half's end. Kept apart from
+ * `financials`, which stays the five full years; a half is never mixed into that series. The 半期報告書 prints
+ * the same half of the previous year beside it, so the previous half is stored too, cited to the same filing.
+ * 総資産・純資産 are not stored: a balance at mid-year is a different kind of figure from a flow over a half.
+ */
+export type InterimRecord = Sourced & {
+  /** The fiscal year the half belongs to, as the filing labels it, e.g. "2026年3月期". */
+  fiscalYear: string;
+  /** Which part of the year. Only the first half exists on EDINET since 2024; quarters would come from 決算短信. */
+  period: "H1";
+  /** YYYY-MM-DD, the half's start and end. */
+  periodStart: string;
+  periodEnd: string;
+  revenue: number | null;
+  revenueLabel: string;
+  profit: number | null;
+  profitLabel: string | null;
+  netIncome: number | null;
+  netIncomeLabel: string;
+  currency: "JPY";
+  accountingStandard: AccountingStandard;
+  note?: string;
+};
+
+/**
  * One consolidated fiscal year.
  *
  * Deviations from the spec's `revenue?: number`, each deliberate:
@@ -351,6 +377,8 @@ export type Company = {
   perspectives?: Perspectives;
 
   financials: FinancialRecord[];
+  /** The halves (JCE-045), oldest first. Absent until a 半期報告書 has been read for the company. */
+  interimFinancials?: InterimRecord[];
   segmentRevenue?: SegmentRevenue;
   regionalRevenue?: RegionalRevenue;
   workforce?: Workforce;

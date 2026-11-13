@@ -108,7 +108,9 @@ jobs:
             echo "candidates=0" >> "$GITHUB_OUTPUT"
           else
             node scripts/pipeline/refresh-financials.mjs --all --tier all --report out/refresh-report.json --summary out/summary.md
-            echo "candidates=$(node -e 'const r=require("./out/refresh-report.json");console.log(r.counts.wouldUpdate)')" >> "$GITHUB_OUTPUT"
+            # 半期報告書 (JCE-045): the same day indexes, read once more for docTypeCode 160/170. Published companies only.
+            node scripts/pipeline/interim-financials.mjs --all --report out/interim-report.json || true
+            echo "candidates=$(node -e 'const r=require("./out/refresh-report.json");const h=require("./out/interim-report.json");console.log(r.counts.wouldUpdate+h.outcomes.filter(o=>o.result==="would-update").length)')" >> "$GITHUB_OUTPUT"
           fi
 
       # Report only. A correction is applied by a person, one company at a time (apply-amendment.mjs), never here.
@@ -189,6 +191,8 @@ jobs:
           set +e
           node scripts/pipeline/refresh-financials.mjs --all --tier all --limit "$LIMIT" --apply --report out/refresh-report.json --summary out/summary.md
           echo "exit=$?" >> "$GITHUB_OUTPUT"
+          # 半期報告書 (JCE-045): adds interimFinancials rows to published companies whose newest half is not yet held.
+          node scripts/pipeline/interim-financials.mjs --all --apply --report out/interim-report.json || true
 
       # The same audit as detect: it advances pipeline/amendments-index.json (committed with the pull request) and its
       # summary goes into the pull request body, so a correction is seen by the person who merges.
