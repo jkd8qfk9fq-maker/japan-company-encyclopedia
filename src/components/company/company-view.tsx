@@ -3,6 +3,7 @@ import type { Company } from "@/types/company";
 import { companyRepository, headquartersRepository } from "@/lib/repositories";
 import { formatDateJa } from "@/lib/utils/format";
 import { companyMetrics } from "@/lib/company-metrics";
+import { industryComparison } from "@/lib/industry-comparison";
 import { buildValueChain } from "@/lib/value-chain";
 import { SourceList } from "@/components/sources/source-list";
 import { BusinessList } from "./business-list";
@@ -15,6 +16,8 @@ import { CompanySection } from "./company-section";
 import { ConnectionMap, placeConnections } from "./connection-map";
 import { ConnectionNetwork } from "./connection-network";
 import { FinancialSection } from "./financial-section";
+import { IndustryComparisonBlock } from "./industry-comparison";
+import { PremiumGate } from "./premium-gate";
 import { HistoryTimeline } from "./history-timeline";
 import { PerspectivesSection } from "./perspectives-section";
 import { RelatedCompanies, type ResolvedRelation } from "./related-companies";
@@ -51,6 +54,8 @@ export async function CompanyView({ company }: { company: Company }) {
   const hasConnections = relations.length > 0 || inbound.length > 0;
   const chain = buildValueChain(company);
   const metrics = companyMetrics(company);
+  // 業界比較 (JCE-043): the company among the released companies of its industry, computed at build time.
+  const comparison = industryComparison(company, await companyRepository.list());
   const chainSourceIds = [
     ...new Set([
       ...company.businesses.flatMap((b) => b.sourceIds),
@@ -161,6 +166,16 @@ export async function CompanyView({ company }: { company: Company }) {
         lead="規模の違う2つの数字を同じ目盛りに載せると利益が見えなくなるため、別々のグラフにしています。"
       >
         {metrics && <CompanyMetrics metrics={metrics} sources={company.sources} />}
+        {comparison && (
+          <div className="mb-12">
+            <PremiumGate
+              title="業界比較"
+              teaser={`${comparison.industryName}業界の掲載企業${comparison.members}社の中で、この会社の売上高・純利益率・5期の伸び・海外売上高比率・平均年間給与がどこに位置するか（順位と中央値との差）と、5期の売上高の推移を業界と並べて見られます。`}
+            >
+              <IndustryComparisonBlock comparison={comparison} />
+            </PremiumGate>
+          </div>
+        )}
         <FinancialSection companyName={company.name} records={company.financials} sources={company.sources} />
       </CompanySection>
 

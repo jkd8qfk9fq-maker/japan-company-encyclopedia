@@ -102,3 +102,24 @@ export const settingsStore = createStore<UserSettings>(
     };
   },
 );
+
+// ---------------------------------------------------------------------------
+// Premium plan (JCE-043) — the purchase code of the YUGENQ premium plan (sold on the 企業タイプ診断 site, shared by
+// the YUGENQ services) and what its server said about it. Only the code and dates: no name, no payment detail.
+
+export type StoredPlan = {
+  code: string;
+  /** Until when the subscription is paid (ms since epoch). */
+  paidUntil: number;
+  /** After this (ms) the code is checked again. */
+  checkAfter: number;
+};
+
+const CODE_PATTERN = /^sub_[A-Za-z0-9]{8,64}$/;
+
+export const planStore = createStore<StoredPlan | null>(STORAGE_KEYS.plan, null, (value) => {
+  if (typeof value !== "object" || value === null) return null;
+  const v = value as Partial<StoredPlan>;
+  if (typeof v.code !== "string" || !CODE_PATTERN.test(v.code) || typeof v.paidUntil !== "number" || typeof v.checkAfter !== "number") return null;
+  return { code: v.code, paidUntil: v.paidUntil, checkAfter: v.checkAfter };
+});

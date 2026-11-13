@@ -709,3 +709,26 @@ would be a new class of fact outside invariant 3's sources. Only the forms are t
 All of it is server-rendered SVG and HTML in the site's own ink and type — no chart library, no script, no data
 colour on text — so the pages stay plain documents and the figures read with styles off (the list beside a donut
 carries every value).
+
+### JCE-043 · 2026-11-13 · Accepted (operator) — 業界比較 on the company page, as a premium feature of the YUGENQ plan
+
+The operator asked for an industry comparison in each company's financial section, and for it to be part of the
+premium plan ("この業界比較システムはプレミアムプランで進める"). Two departures are recorded, both the operator's:
+
+- **A comparison tool exists** (JCE-017's "no compare tool" ends here, for this one form): `src/lib/industry-comparison.ts`
+  places a company among the released companies of its primary industry — rank out of N and the industry median
+  for 純利益率, 5期の売上高の伸び, 海外売上高比率 and 平均年間給与, the company's share of the industry's revenue, and its
+  own five-year index beside the industry's (`revenueIndexSeries` of JCE-042). Arithmetic on printed figures only,
+  computed at build time, formula and count beside each; a company without a figure has no comparison for it; an
+  industry with fewer than three released companies has none at all. A rank is a position by size, labelled so and
+  never a verdict (invariant 4); the block says the comparison is against this encyclopedia's companies, not every
+  listed company.
+- **The site reads the YUGENQ plan** (the plan sold on the 企業タイプ診断 site, 月額390円, shared by the YUGENQ services).
+  D-040 keeps this project's code and data its own: nothing is imported from the other repositories. What crosses
+  is one HTTPS call — `POST https://shindan.kigyo-hyakka.com/api/plan` with a purchase code, which that site now
+  answers for this origin (its CTS-022) — and one cookie on the parent domain that may carry the code. The answer
+  is kept through the storage layer (`planStore`, invariant 7); nothing about the reader is sent anywhere.
+  `PremiumGate` is a view switch, not a wall: the static HTML holds the free view (what the block shows, where the
+  plan is sold, a field for the code), and the comparison, computed from public filings, is shown once the browser
+  holds a paid plan — the same rule the 診断 site applies to its own paid parts.
+- The figures tab of /industries (JCE-041/042) stays free: the plan pays for the company-level position.
