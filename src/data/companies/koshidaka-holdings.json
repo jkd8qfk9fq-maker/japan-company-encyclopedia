@@ -4,15 +4,125 @@
   "name": "コシダカホールディングス",
   "officialName": "株式会社コシダカホールディングス",
   "nameEn": "KOSHIDAKA HOLDINGS Co., LTD.",
-  "description": null,
+  "shortNameEn": "KOSHIDAKA HOLDINGS Co., LTD.",
+  "description": "カラオケボックス「カラオケまねきねこ」を全国展開するコシダカグループの持株会社で、不動産管理や温浴・飲食店も運営しています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "entertainment",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "karaoke",
+      "name": "カラオケ",
+      "description": "株式会社コシダカが、カラオケボックス「カラオケまねきねこ」と一人カラオケ専門店「ワンカラ」を直営で展開する主力事業です。韓国でも子会社が「まねきねこ」ブランドで直営店を展開しています。2025年8月期の外部顧客への売上高は671億62百万円でした。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "manekineko",
+          "name": "カラオケまねきねこ",
+          "description": "日本国内で展開するカラオケボックスの主力ブランドです。居抜き出店を基本の出店形態として店舗網を広げてきました。韓国でも子会社が同じブランドで直営店を展開しています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "onekara",
+          "name": "ワンカラ",
+          "description": "一人カラオケ専門店のブランドです。2011年に1号店を開設し、店舗展開を行っています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-management",
+      "name": "不動産管理",
+      "description": "株式会社コシダカプロダクツが、群馬県や神奈川県などに保有する不動産賃貸ビル（アクエル前橋、MANEKI新橋ビル、フルーレ花咲ビルなど）の所有と運営管理を行う事業です。2025年8月期の外部顧客への売上高は13億45百万円でした。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他事業",
+      "description": "株式会社コシダカが、温浴施設「まねきの湯」2施設と、飲食店「銀だこハイボール」4店舗、「カフェエクラ」1店舗などを運営する事業です。2025年8月期の外部顧客への売上高は8億79百万円でした。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "直営のカラオケボックスを全国と海外に展開し、利用料で収益を得る事業を中核に、賃貸不動産の管理や温浴・飲食店の運営も行う事業モデルです。",
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "カラオケボックス（カラオケまねきねこ）",
+      "一人カラオケ専門店（ワンカラ）",
+      "エンタメボックス「E-bo」",
+      "温浴施設（まねきの湯）",
+      "飲食店（銀だこハイボール、カフェエクラ）",
+      "賃貸不動産の管理"
+    ],
+    "customers": [
+      "カラオケを利用する個人のお客さま",
+      "温浴施設や飲食店を利用する個人のお客さま",
+      "賃貸物件の入居者"
+    ],
+    "revenueSources": [
+      "カラオケ店舗の利用料",
+      "温浴施設と飲食店の売上",
+      "不動産の賃料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "コシダカグループ",
+        "description": "純粋持株会社の当社と連結子会社8社などで構成されるグループです。2025年8月期の連結従業員数は1,106人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "カラオケ店舗と多様な店舗サービス",
+        "description": "主力のカラオケ事業では「カラオケまねきねこ」と一人カラオケ専門店「ワンカラ」を直営で展開し、2025年8月31日現在の店舗数は国内703店舗、海外4か国25店舗です。あわせて不動産管理と、温浴施設や飲食店の運営も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "個人のお客さま",
+        "description": "主なお客さまは、カラオケや温浴、飲食を利用する個人のお客さまです。売上高の10％以上を占める特定の顧客はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年8月期の連結売上高は693億87百万円で、前連結会計年度から9.7％増えました。セグメント別ではカラオケが671億62百万円、不動産管理が13億45百万円、その他事業が8億79百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年8月期の親会社株主に帰属する当期純利益は52億58百万円で、前連結会計年度の67億35百万円から減りました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年8月期",
@@ -27,7 +137,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18178360000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 768,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +157,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19508647000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 859,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年3月31日）等を第53期（2022年8月期）の期首から適用しており、第53期以降の主要な経営指標等は当該会計基準等を適用した数値です。"
     },
     {
       "fiscalYear": "2023年8月期",
@@ -67,7 +178,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25394514000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1041,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +198,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 30354638000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1136,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +218,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 35105556000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1106,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +226,158 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1967,
+      "title": "有限会社新盛軒の設立",
+      "description": "1967年3月、群馬県前橋市千代田町に、中華料理店を営む有限会社新盛軒が設立されました。",
+      "significance": "現在のコシダカホールディングスの発祥です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "カラオケ店の経営を開始",
+      "description": "1990年8月、本社所在地にカラオケキャビン・オイコットを開設し、カラオケ店の経営を始めました。",
+      "significance": "カラオケ事業への進出です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "カラオケ本舗まねきねこ1号店の開設",
+      "description": "1993年12月、前橋小相木店としてカラオケ本舗まねきねこ1号店を開設しました。",
+      "significance": "現在の主力ブランド「カラオケまねきねこ」の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "居抜き出店の開始",
+      "description": "1997年6月、伊勢崎店で居抜き出店を開始しました。",
+      "significance": "当社カラオケ店の基本出店形態の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "ジャスダック証券取引所への上場",
+      "description": "2007年6月、ジャスダック証券取引所に上場しました。",
+      "significance": "株式上場の出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "株式会社北海道コシダカへの新設分割",
+      "description": "2008年9月、会社分割（新設分割）により株式会社北海道コシダカ（現在の株式会社コシダカ）を設立しました。",
+      "significance": "現在の中核子会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "株式会社スポルトの株式取得",
+      "description": "2010年9月、株式会社スポルトの株式を取得し、ボウリング事業と不動産管理事業に進出しました。",
+      "significance": "不動産管理事業への進出です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "純粋持株会社制への移行",
+      "description": "2010年9月、純粋持株会社に組織変更し、株式会社コシダカホールディングスに商号を変更しました。",
+      "significance": "現在の持株会社体制の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "温浴事業への進出",
+      "description": "2010年10月、箕郷温泉まねきの湯を開設し、温浴事業に進出しました。",
+      "significance": "その他事業の温浴施設の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "一人カラオケ専門店の展開開始",
+      "description": "2011年11月、ワンカラ神田駅前店を開設し、一人カラオケ専門店の店舗展開を始めました。",
+      "significance": "新業態「ワンカラ」の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "シンガポールのカラオケ事業会社の株式取得",
+      "description": "2014年2月、K BOX ENTERTAINMENT GROUP PTE.LTD.（後にKOSHIDAKA SINGAPORE PTE.LTD.に商号変更）の株式を取得しました。",
+      "significance": "東南アジア展開の足がかりとなった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "東京証券取引所市場第一部への市場変更",
+      "description": "2016年11月、東京証券取引所市場第一部へ上場市場を変更しました。",
+      "significance": "上場市場の変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "Curves International Holdingsの株式取得",
+      "description": "2018年3月、カーブス事業の世界総本部であるCurves International Holdings, Inc.の株式を取得しました。",
+      "significance": "フィットネス事業の世界総本部の取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "カーブス事業のスピンオフ",
+      "description": "2020年3月、株式分配型スピンオフによりカーブス事業をすべて非連結子会社化し、完全に分離しました。",
+      "significance": "カラオケを主力とする現在の事業構成への転換です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +386,50 @@
       "publisher": "株式会社コシダカホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X7DQ.pdf",
       "publishedAt": "2025-11-28",
-      "accessedAt": "2026-09-28"
+      "docId": "S100X7DQ",
+      "asOf": "2025-08-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 重要な後発事象: 連結子会社の株式会社コシダカSPは、2025年9月12日の決議と契約締結により、株式会社スタンダードが運営するカラオケボックス・複合カフェ・飲食店（約70店舗、「JOYSOUND」ブランド）の事業を吸収分割により承継し、2025年11月1日に効力が発生した。承継したコシダカSPは株式会社スタンダードに商号を変更している。登録は2025年8月31日現在のグループ構成（連結子会社8社）に基づく。"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2019年9月から取り組む中期経営ビジョン「エンタメをインフラに」（EIP）について、最終目標の達成時期を2027年8月期と定め、仕上げの時期（EIPファイナルステージ）と位置付けています。重点課題は、店舗網の拡充とカラオケルーム数の拡大、各種エンターテインメントの提供、高度人財の採用と組織体制づくりです。施策として、出店ペースの加速と既存店のリロケーションによる大型化・効率化、エンタメプラットフォーム「E-bo」の全店導入などによる、カラオケルームで楽しめるエンターテインメントの拡充、新人事制度WIP（Koshidaka Workstyle Innovation Plan）の推進を掲げています。",
+        "asOf": "2025-11-28",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "居抜き出店を基本の出店形態として店舗網を広げ、国内703店舗の直営カラオケ店舗網を持ちます（2025年8月31日現在）。「カラオケまねきねこ」と一人カラオケ専門店「ワンカラ」の2つのブランドを展開し、カラオケルームでカラオケ以外の楽しみ方も提供する取り組みや、エンタメボックス「E-bo」の導入を進めています。",
+        "basis": "【沿革】の居抜き出店の開始、【事業の内容】のブランド展開、経営成績等の状況の分析における店舗数と「E-bo」導入の記載に基づきます。",
+        "asOf": "2025-11-28",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントはカラオケ、不動産管理、その他事業の3区分で、2025年8月期の外部顧客への売上高はカラオケ671億62百万円、不動産管理13億45百万円、その他事業8億79百万円と、カラオケが全体の大半を占めます。海外では韓国、マレーシア、タイ、インドネシアの4か国に25店舗を展開しています。本邦の外部顧客への売上高が全体の90％を超えるため地域ごとの情報の開示は省略され、売上高の10％以上を占める特定の顧客もありません。",
+        "basis": "セグメント情報等の外部顧客への売上高と関連情報（製品及びサービスごとの情報・地域ごとの情報・主要な顧客ごとの情報）、経営成績等の状況の分析における店舗数の記載に基づきます。",
+        "asOf": "2025-11-28",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年8月期",
     "asOf": "2025-08-31",

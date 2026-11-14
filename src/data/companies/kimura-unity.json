@@ -4,7 +4,8 @@
   "name": "キムラユニティー",
   "officialName": "キムラユニティー株式会社",
   "nameEn": "KIMURA UNITY CO.,LTD.",
-  "description": null,
+  "shortNameEn": "KIMURA UNITY",
+  "description": "自動車関連の顧客を中心に、包装・物流と車両リース・整備を軸とし、情報・人材サービスも手がける名古屋の総合サービス会社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,23 +16,216 @@
       "market": "プレミア"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "it",
+      "primary": false
+    },
+    {
+      "industryId": "human-resources",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "logistics-services",
+      "name": "物流サービス事業",
+      "description": "自動車部品メーカー等の顧客から包装・梱包・入出庫作業を請け負い、鉄製・木製の格納器具製品も製造する、当社グループの中核事業です。2026年3月期の外部顧客への売上高は45,864百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "packaging",
+          "name": "包装",
+          "description": "自動車部品等の包装・梱包・入出庫作業を行う事業です。2026年3月期の売上高は40,820百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "storage-equipment",
+          "name": "格納器具製品",
+          "description": "鉄製・木製の格納器具（物流用の容器・器具）を製造・販売する事業です。2026年3月期の売上高は5,043百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "mobility-services",
+      "name": "モビリティサービス事業",
+      "description": "法人向けの車両リースを軸に、車両整備・メンテナンス、車両販売、保険代理店を手がける事業です。2026年3月期の外部顧客への売上高は14,948百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "vehicle-lease",
+          "name": "車両リース",
+          "description": "法人向けに車両をリースする事業で、駐車場の賃貸も行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "vehicle-maintenance",
+          "name": "車両整備・メンテナンス",
+          "description": "車両の整備と、リース車両のメンテナンス（リースメンテ）を行う事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "vehicle-sales",
+          "name": "車両販売",
+          "description": "新車・中古車の販売とカー用品の販売を行う事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "insurance-agency",
+          "name": "保険代理店",
+          "description": "損害保険等の保険代理店業務を行う事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "information-services",
+      "name": "情報サービス事業",
+      "description": "システム開発、包括保守及びネットワーク関連サービスを行う事業です。2026年3月期の外部顧客への売上高は2,676百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "human-resources-services",
+      "name": "人材サービス事業",
+      "description": "連結子会社のビジネスピープル株式会社が、人材派遣サービスとアウトソーシングサービスを行う事業です。2026年3月期の外部顧客への売上高は1,118百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "staffing",
+          "name": "人材派遣",
+          "description": "企業へ人材を派遣するサービスです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "outsourcing",
+          "name": "アウトソーシング",
+          "description": "業務の受託（アウトソーシング）を行うサービスです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない区分で、太陽光発電による売電を行う事業です。2026年3月期の外部顧客への売上高は44百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "物流サービスとモビリティサービスを両輪に、包装・入出庫から車両のリース・整備までを一貫して請け負い、情報・人材サービスを組み合わせて顧客の業務を支える事業モデルです。",
+    "products": [
+      "自動車部品等の包装・梱包・入出庫作業",
+      "鉄製・木製の格納器具製品（物流容器）の製造・販売",
+      "法人向け車両リースと車両整備・メンテナンス",
+      "新車・中古車の販売とカー用品販売、保険代理店",
+      "システム開発・包括保守・ネットワーク関連サービス",
+      "人材派遣・アウトソーシングサービス",
+      "太陽光発電による売電"
+    ],
+    "customers": [
+      "自動車メーカー・自動車部品メーカー等の製造業",
+      "車両を保有・運用する法人",
+      "物流のアウトソーシングを求める荷主企業",
+      "人材を必要とする企業"
+    ],
+    "revenueSources": [
+      "包装・入出庫等の物流サービスの作業料",
+      "格納器具製品の販売代金",
+      "車両リース料と整備・メンテナンスの対価",
+      "車両・カー用品の販売代金と保険代理店手数料",
+      "システム開発・保守の対価と人材派遣の料金",
+      "売電収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と連結子会社6社・持分法適用関連会社8社のグループ",
+        "description": "当社グループは、当社と連結子会社6社及び持分法適用関連会社8社で構成されています。2026年3月31日現在の連結の従業員数は2,328人です。本社は名古屋市中区にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "物流と車両のサービスを組み合わせた提供価値",
+        "description": "物流サービス事業の包装・入出庫・格納器具製品、モビリティサービス事業の車両リース・整備・販売・保険代理店、情報サービス事業のシステム開発・保守、人材サービス事業の人材派遣・アウトソーシングを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車関連を中心とする法人がお客さま",
+        "description": "自動車メーカーや自動車部品メーカー等の製造業を中心に、物流の外部委託を求める荷主企業や、車両を運用する法人、人材を必要とする企業がお客さまです。最大の顧客はトヨタ自動車株式会社で、2026年3月期の販売実績は連結売上高の18.8％を占めます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "連結売上高は64,652百万円",
+        "description": "2026年3月期の連結売上高は64,652百万円で、前連結会計年度の61,234百万円から増加しました。事業別では、物流サービス事業が45,864百万円、モビリティサービス事業が14,948百万円、情報サービス事業が2,676百万円、人材サービス事業が1,118百万円、その他（太陽光発電）が44百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は3,196百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は3,196百万円で、前連結会計年度の3,310百万円から減少しました。米国子会社の物流部門再編に伴う減損損失の計上や、中国子会社の倉庫撤退に伴う退職金の発生が主な要因です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
       "periodEnd": "2022-03-31",
-      "revenue": 57082000000,
+      "revenue": 57192000000,
       "revenueLabel": "売上高",
-      "profit": 3670000000,
+      "profit": 3694000000,
       "profitLabel": "経常利益",
-      "netIncome": 2181000000,
+      "netIncome": 2256000000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益",
-      "totalAssets": 56024000000,
+      "totalAssets": 55663000000,
       "totalAssetsLabel": "総資産額",
-      "netAssets": 33519000000,
+      "netAssets": 33512000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2429,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -41,17 +235,17 @@
     {
       "fiscalYear": "2023年3月期",
       "periodEnd": "2023-03-31",
-      "revenue": 59139000000,
+      "revenue": 59256000000,
       "revenueLabel": "売上高",
-      "profit": 3965000000,
+      "profit": 4004000000,
       "profitLabel": "経常利益",
-      "netIncome": 2471000000,
+      "netIncome": 2446000000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益",
-      "totalAssets": 57770000000,
+      "totalAssets": 57430000000,
       "totalAssetsLabel": "総資産額",
-      "netAssets": 35114000000,
+      "netAssets": 35080000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2415,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -61,17 +255,17 @@
     {
       "fiscalYear": "2024年3月期",
       "periodEnd": "2024-03-31",
-      "revenue": 61493000000,
+      "revenue": 61603000000,
       "revenueLabel": "売上高",
-      "profit": 4897000000,
+      "profit": 4918000000,
       "profitLabel": "経常利益",
-      "netIncome": 3168000000,
+      "netIncome": 3195000000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益",
-      "totalAssets": 64711000000,
+      "totalAssets": 64451000000,
       "totalAssetsLabel": "総資産額",
-      "netAssets": 40454000000,
+      "netAssets": 40457000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2395,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -81,17 +275,17 @@
     {
       "fiscalYear": "2025年3月期",
       "periodEnd": "2025-03-31",
-      "revenue": 61129000000,
+      "revenue": 61234000000,
       "revenueLabel": "売上高",
-      "profit": 5117000000,
+      "profit": 5061000000,
       "profitLabel": "経常利益",
-      "netIncome": 3300000000,
+      "netIncome": 3310000000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益",
-      "totalAssets": 64549000000,
+      "totalAssets": 64212000000,
       "totalAssetsLabel": "総資産額",
-      "netAssets": 41171000000,
+      "netAssets": 41157000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2377,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -101,40 +295,357 @@
     {
       "fiscalYear": "2026年3月期",
       "periodEnd": "2026-03-31",
-      "revenue": 64546000000,
+      "revenue": 64652000000,
       "revenueLabel": "売上高",
-      "profit": 5769000000,
+      "profit": 5759000000,
       "profitLabel": "経常利益",
-      "netIncome": 3203000000,
+      "netIncome": 3196000000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益",
-      "totalAssets": 71341000000,
+      "totalAssets": 70965000000,
       "totalAssetsLabel": "総資産額",
-      "netAssets": 46302000000,
+      "netAssets": 46043000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2328,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "本表の数値は、2026年10月29日に提出された訂正有価証券報告書に基づく訂正後のものです。第51期から第54期までの売上高や親会社株主に帰属する当期純利益などの経営指標もあわせて訂正されています。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1951,
+      "title": "合資会社木村製凾所を設立",
+      "description": "個人商店「木村製箱店」の格納器具製品事業を継承し、合資会社木村製凾所（後に合資会社木村本社に改称）を設立しました。",
+      "significance": "格納器具製品（物流容器）づくりが同社の原点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "車両整備事業を開始",
+      "description": "錦工場・錦営業所を設置し、車両整備事業を開始しました。同年、保険代理店事業も開始しています。",
+      "significance": "モビリティサービス事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "包装事業・運送事業を開始",
+      "description": "包装事業と運送事業を開始しました。",
+      "significance": "現在の物流サービス事業の核となる包装事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "情報サービス事業を開始",
+      "description": "情報サービス事業を開始しました。",
+      "significance": "情報サービス事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "車両リース事業を開始",
+      "description": "車両リース事業を開始しました。",
+      "significance": "モビリティサービスの中核となる車両リースの開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "キムラユニティー株式会社に商号変更",
+      "description": "株式会社木村本社から、キムラユニティー株式会社に商号を変更しました。",
+      "significance": "現在の社名への変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "グループ子会社7社を吸収合併",
+      "description": "グループ子会社7社を吸収合併し、格納器具製品事業、包装事業、運送事業、車両リース事業、車両整備事業、自動車（中古車）販売事業、保険代理店事業、情報サービス事業を継承しました。",
+      "significance": "グループの事業を本社に集約した再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "名古屋証券取引所市場第二部に上場",
+      "description": "名古屋証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式上場の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "豊田通商株式会社と海外物流事業で業務提携",
+      "description": "豊田通商株式会社と海外物流事業で業務提携しました。",
+      "significance": "海外物流の合弁展開の起点となる提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "東京証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "ブラジルに合弁会社TK Logistica do Brasil Ltda.を設立",
+      "description": "ブラジルに豊田通商グループと合弁で物流会社TK Logistica do Brasil Ltda.を設立しました。",
+      "significance": "海外物流事業の本格展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "人材サービス事業の子会社ビジネスピープル株式会社を設立",
+      "description": "人材サービス事業を行う子会社ビジネスピープル株式会社を設立しました。同年、米国に物流機器の製造販売を行う子会社KIMURA, INC.も設立しています。",
+      "significance": "人材サービス事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東京証券取引所・名古屋証券取引所の市場第一部に指定",
+      "description": "東京証券取引所及び名古屋証券取引所の市場第一部に指定されました。",
+      "significance": "両取引所の第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "タイに合弁会社TTK Asia Transport (THAILAND) Co.,LTD.を設立",
+      "description": "タイに豊田通商グループと合弁で物流会社TTK Asia Transport (THAILAND) Co.,LTD.を設立しました。",
+      "significance": "アジアの物流ネットワークの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより市場第一部からスタンダード市場に移行し、名古屋証券取引所の市場第一部はプレミア市場に名称変更されました。",
+      "significance": "現在の上場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "中国・蘇州市に常熟木進物流有限公司を設立",
+      "description": "中国蘇州市に合弁で物流子会社常熟木進物流有限公司を設立しました。2026年7月より事業開始を予定しています。",
+      "significance": "中国事業の再編の受け皿となる新会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "toyota-tsusho",
+      "relationship": "major-shareholder",
+      "description": "豊田通商株式会社は、2026年3月31日現在、当社の株式4,000千株（発行済株式（自己株式を除く。）の総数に対する割合9.73％）を所有する大株主です。2000年12月に主として海外における物流事業等の展開を目的として業務提携し、2001年4月に資本提携した合弁パートナーであり、物流サービスの顧客でもあります。当社も取引の維持や拡大のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "toyota",
+      "relationship": "customer",
+      "description": "トヨタ自動車株式会社は、当社の主要な販売先で、2026年3月期の販売実績は連結売上高の18.8％を占めています。取引は物流サービス事業が中心で、モビリティサービス事業・情報サービス事業にも及びます。当社は、主要な物流サービスの顧客として、取引の維持や拡大のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "canox",
+      "relationship": "supplier",
+      "description": "株式会社カノークスは、主要な物流サービスの仕入先であり、当社は取引の維持や拡大のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "meito",
+      "relationship": "customer",
+      "description": "株式会社meitoは、車両リースの顧客であり、当社は取引の維持と拡大のため同社の株式を保有しています。2026年3月31日現在、同社は当社の株式の1.21％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "token",
+      "relationship": "customer",
+      "description": "東建コーポレーション株式会社は、車両リースの顧客であり、当社は取引の維持のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokai",
+      "relationship": "customer",
+      "description": "株式会社トーカイは、車両リースの顧客であり、当社は取引の維持と拡大のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toppan-holdings",
+      "relationship": "customer",
+      "description": "TOPPANホールディングス株式会社は、車両リースの顧客であり、当社は取引の維持や拡大のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sangetsu",
+      "relationship": "customer",
+      "description": "株式会社サンゲツは、車両整備の顧客であり、当社は取引の維持や拡大のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kikusui-chemical-industries",
+      "relationship": "customer",
+      "description": "菊水化学工業株式会社は、車両リースの顧客であり、当社は取引の維持や拡大のため同社の株式を保有しています。2026年3月31日現在、同社は当社の株式の0.91％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokai-electronics",
+      "relationship": "customer",
+      "description": "東海エレクトロニクス株式会社は、車両整備の顧客であり、当社は取引の維持や拡大のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tsuzuki-denki",
+      "relationship": "customer",
+      "description": "都築電気株式会社は、車両リースの顧客であり、当社は取引の維持や拡大のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "suzuken",
+      "relationship": "customer",
+      "description": "株式会社スズケンは、主要な物流サービスまたはモビリティサービスの顧客であり、当社は取引の維持や拡大のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ichinen-holdings",
+      "relationship": "customer",
+      "description": "株式会社イチネンホールディングスは、車両整備の顧客であり、当社は取引の維持や拡大のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第55期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第55期(2025/04/01－2026/03/31)",
       "publisher": "キムラユニティー株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCXZ.pdf",
-      "publishedAt": "2026-06-17",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100ZARO.pdf",
+      "publishedAt": "2026-10-29",
+      "docId": "S100ZARO",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 中国事業の再編: 連結子会社の天津木村進和物流有限公司（議決権の所有割合89.7％）は、収益性を高めるための再構築を図るため2026年度中に解散する予定です。受け皿として2026年2月に常熟木進物流有限公司（同90.0％、連結子会社）を設立し、2026年7月より事業開始を予定しています（2026年4月27日に適時開示）。本登録は2026年3月31日現在の構造（天津木村進和物流有限公司を含む）によります。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念「会社はお客様のためにあり　社員とともに会社は栄える」を基盤に、全ての従業員が参画するOne Team経営をテーマとして掲げています。2027年3月期を最終年度とする「中期経営計画2026」の達成に向け、物流サービス事業と情報サービス事業、モビリティサービス事業と情報サービス事業を組み合わせるDX戦略、エリア戦略の推進強化、現場とITによる拡販戦略を進めるとともに、豊田通商株式会社との連携強化による更なる海外進出の検討や、モビリティサービスの「KIBACO」を軸としたビジネスの拡大、「唯一無二のカーメンテ」を掲げています。優先的に対処すべき課題として、人的リソースの確保と人材の育成を挙げています。",
+        "asOf": "2026-10-29",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "包装・入出庫の作業から格納器具製品の製造まで物流を一貫して担える体制に、車両のリース・整備・販売まで含むモビリティサービスを併せ持つことが特徴です。自動車関連の顧客の物流と車両の業務をまとめて請け負えるため、顧客との取引が複数の事業に広がっています。",
+        "basis": "事業の内容（各事業の主なサービス・製品）とセグメント情報の注記（報告セグメントの概要）の記載に基づく。",
+        "asOf": "2026-10-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "最大の事業は物流サービス事業で、2026年3月期の外部顧客への売上高は45,864百万円と連結売上高の約7割を占めます。次いでモビリティサービス事業が14,948百万円、情報サービス事業が2,676百万円、人材サービス事業が1,118百万円、その他（太陽光発電）が44百万円です。地域別の売上高は日本が54,877百万円、中国が7,102百万円、北米が2,640百万円、その他が32百万円です。主要な顧客はトヨタ自動車株式会社で、販売実績は12,136百万円と連結売上高の18.8％を占めます。",
+        "basis": "セグメント情報の注記（報告セグメントごとの外部顧客への売上高、関連情報の地域ごとの情報・主要な顧客ごとの情報）に基づく。",
+        "asOf": "2026-10-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

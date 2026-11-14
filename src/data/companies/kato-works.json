@@ -4,15 +4,115 @@
   "name": "加藤製作所",
   "officialName": "株式会社加藤製作所",
   "nameEn": "KATO WORKS CO.,LTD.",
-  "description": null,
+  "shortNameEn": "KATO WORKS CO.,LTD.",
+  "description": "建設用クレーンや油圧ショベルなどの建設機械を製造し、日本・欧州を中心に世界へ販売する建設機械メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "kato-works",
+      "name": "株式会社加藤製作所",
+      "description": "東京都品川区に本社を置き、建設用クレーン、油圧ショベル等及びその他の製品の製造ならびに販売を主な事業とします。当社と連結子会社５社、非連結子会社２社及び関連会社６社でグループを構成し、2026年３月期の連結従業員数は932人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "japan",
+          "name": "日本",
+          "description": "当社が担当し、建設用クレーン、油圧ショベル等、その他の製品の製造・販売を行います。生産は茨城工場、群馬工場、坂東工場が担います。2026年３月期の外部顧客への売上高は50,831百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "europe",
+          "name": "欧州",
+          "description": "KATO Construction Machinery Europe S.p.A.（イタリア）がミニショベル等の製造・販売を、KATO EUROPE B.V.（オランダ）が建設用クレーン、油圧ショベル等の販売を行います。2026年３月期の外部顧客への売上高は4,374百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "other",
+          "name": "その他",
+          "description": "タイ、アメリカ、中国を含みます。KATO WORKS(THAILAND)CO.,LTD.が建設用クレーンの製品及び部品の製造販売を、米国の販売会社が当社製品の販売を行います。2026年３月期の外部顧客への売上高は1,129百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "日本では当社が、欧州では現地子会社が建設用クレーンや油圧ショベル等を製造・販売し、製品の販売代金を得る事業モデルです。",
+    "products": [
+      "建設用クレーン",
+      "油圧ショベル等（ミニショベルを含む）",
+      "アースドリル等の基礎工事用機械",
+      "その他の建設機械"
+    ],
+    "customers": [
+      "日本国内の建設会社等の顧客",
+      "欧州の顧客",
+      "その他海外地域の顧客"
+    ],
+    "revenueSources": [
+      "建設用クレーンの販売収入",
+      "油圧ショベル等の販売収入",
+      "その他の製品の販売収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社加藤製作所",
+        "description": "東京都品川区に本社を置き、当社と連結子会社５社、非連結子会社２社、関連会社６社でグループを構成します。2026年３月期の連結従業員数は932人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "建設用クレーンや油圧ショベル等の製造販売",
+        "description": "日本では当社が茨城・群馬・坂東の各工場で生産し、欧州ではイタリアとオランダの子会社がミニショベル等の製造・販売を担います。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外の顧客へ",
+        "description": "建設用クレーンや油圧ショベル等を、日本国内のほか欧州、その他海外地域の顧客へ販売します。売上高の10％以上を占める主要な顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は56,335百万円",
+        "description": "2026年３月期の売上高は56,335百万円で、前連結会計年度の52,932百万円から6.4％増えました。地域別では日本50,831百万円、欧州4,374百万円、その他1,129百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は4,526百万円",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は4,526百万円で、前連結会計年度は親会社株主に帰属する当期純損失6,033百万円でした。"
+      }
+    ],
+    "suppliers": [
+      {
+        "name": "仕入先企業",
+        "description": "製品の製造に必要な部品や資材を仕入れる先で、油圧部品や電子・自動車部品など多種の部材や外注品を調達します。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +127,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 44245000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1196,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +147,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 46906000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1009,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +167,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 51551000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 990,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +187,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 44603000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 976,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 42467000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 932,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +215,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第127期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社加藤製作所",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YG4R.pdf",
-      "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-29",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +226,219 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1935,
+      "title": "個人事業を改組し株式会社加藤製作所を設立",
+      "description": "個人事業を改組し、東京品川に株式会社加藤製作所を設立しました。",
+      "significance": "グループの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1939,
+      "title": "モビールクレーンの生産を開始",
+      "description": "モビールクレーンの生産を開始しました。",
+      "significance": "クレーン事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "油圧式トラッククレーンの生産を開始",
+      "description": "油圧式トラッククレーンの生産を開始しました。同年に基礎工事用アースドリルの生産も開始しました。",
+      "significance": "主力の油圧式クレーンへの転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "茨城工場が操業開始",
+      "description": "茨城工場の第一期工事が完了し、操業を開始しました。",
+      "significance": "現在の主力生産拠点の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "全油圧式パワーショベルの生産を開始",
+      "description": "全油圧式パワーショベルの生産を開始しました。",
+      "significance": "油圧ショベル事業への本格的な展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "群馬工場が操業開始",
+      "description": "群馬工場の第一期工事が完了し、操業を開始しました。",
+      "significance": "生産能力の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "ラフテレーンクレーンの生産を開始",
+      "description": "ラフテレーンクレーンの生産を開始しました。",
+      "significance": "現在の主力製品の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "中国に加藤（中国）工程机械有限公司を設立",
+      "description": "中国江蘇省に現地法人加藤（中国）工程机械有限公司（連結子会社）を設立しました。2025年10月に全持分を譲渡し、連結子会社から除外しました。",
+      "significance": "中国事業の開始と、その後の撤退です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "三陽電器株式会社を子会社化",
+      "description": "三陽電器株式会社の株式を取得し、子会社化しました。2022年10月に吸収合併しました。",
+      "significance": "グループの拡大と、その後の統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "タイに現地法人を設立",
+      "description": "タイ王国ラヨーン県に現地法人KATO WORKS(THAILAND)CO.,LTD.（連結子会社）を設立しました。",
+      "significance": "東南アジアの生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "株式会社ＫＡＴＯ ＨＩＣＯＭを子会社化",
+      "description": "株式会社ＫＡＴＯ ＨＩＣＯＭ（旧社名：ＩＨＩ建機株式会社）の株式を取得し、子会社化しました。2018年３月に吸収合併しました。",
+      "significance": "建機事業の統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "オランダにKATO EUROPE B.V.を設立",
+      "description": "オランダ王国ユトレヒト州デ・メールンに現地法人KATO EUROPE B.V.（連結子会社）を設立しました。",
+      "significance": "欧州の販売体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "坂東工場の操業を開始",
+      "description": "坂東工場の操業を開始しました。",
+      "significance": "国内生産拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "多摩工業株式会社を子会社化",
+      "description": "多摩工業株式会社の株式を取得し、子会社化しました。",
+      "significance": "グループの拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第127期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社加藤製作所",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YG4R.pdf",
+      "publishedAt": "2026-06-24",
+      "docId": "S100YG4R",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "needs-attention",
+    "notes": [
+      "businessStructure: 連結子会社の加藤中駿（厦門）建機有限公司とKATO WORKS (THAILAND) CO.,LTD.は、2026年３月31日現在、清算手続き中である旨が【関係会社の状況】の注記に印字されている。登録は2026年３月31日現在の体制（両社を含む連結子会社５社）に基づく。"
+    ]
+  },
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念「優秀な製品による社会への貢献」のもと、高性能・高品質の製品を開発し、国内外の顧客に供給することによって豊かな社会作りに貢献するとともに、会社の限りない繁栄を実現することを経営の基本方針としています。2026年３月期を初年度とする中期経営計画では『飛躍、そして次の時代へ』をテーマに、「企業価値の向上」「成長戦略の推進と有効投資」「収益性の更なる向上」「サステナビリティ経営の実践」の各施策に取り組んでいます。当期は棚卸資産の適正化を最優先課題とし、海外事業ポートフォリオの健全化に向けたイタリア子会社への増資や中国事業の見直し、インド企業との合弁会社の設立・操業開始の準備を進めました。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1935年の創業以来、モビールクレーンに始まり、油圧式トラッククレーン、全油圧式パワーショベル、ラフテレーンクレーン、オールテレーンクレーンと、クレーンとショベルの開発・生産の技術と経験を蓄積してきたことが強みです。茨城・群馬・坂東の国内工場とイタリア・オランダ等の海外拠点を持ち、地域ごとの市場ニーズを反映した製造・販売体制を備えています。",
+        "basis": "【沿革】における製品開発の歩み、【事業の内容】及び【主要な設備の状況】における国内外の製造・販売体制の記載に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは地域別の日本・欧州・その他の３つで、2026年３月期の外部顧客への売上高は日本50,831百万円、欧州4,374百万円、その他1,129百万円です。製品及びサービスごとでは建設用クレーン38,849百万円、油圧ショベル等16,265百万円、その他1,220百万円です。顧客の所在地を基礎とした地域別の売上高は、日本44,246百万円、欧州4,304百万円、その他の地域7,783百万円です。売上高の10％以上を占める主要な顧客はありません。",
+        "basis": "【セグメント情報等】の報告セグメントごとの売上高、製品及びサービスごとの情報、地域ごとの情報及び主要な顧客ごとの情報の記載に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }
