@@ -51,7 +51,13 @@ describe("refresh-financials workflow", () => {
 
   it("proposes only when something was found, on the schedule or when asked", () => {
     expect(propose).toContain("needs: detect");
-    expect(propose).toMatch(/if: needs\.detect\.outputs\.candidates != '0' && \(github\.event_name == 'schedule' \|\| inputs\.propose\)/);
+    expect(propose).toMatch(/if: \$\{\{ !cancelled\(\) && needs\.detect\.outputs\.candidates != '0' && needs\.detect\.outputs\.candidates != '' && \(github\.event_name == 'schedule' \|\| inputs\.propose\) \}\}/);
+  });
+
+  it("does not let one failed company hold back the rest, and still reports the failure", () => {
+    expect(detect).toMatch(/set \+e\n\s+node scripts\/pipeline\/refresh-financials\.mjs --all --tier all[^\n]*\n\s+echo "exit=\$\?" >> "\$GITHUB_OUTPUT"/);
+    expect(detect).toMatch(/- name: Report companies that failed\n\s+if: always\(\)/);
+    expect(detect).toContain('steps.detect.outputs.exit }}" != "0"');
   });
 
   it("verifies the whole repository and refuses any change outside the data before it proposes", () => {

@@ -107,10 +107,18 @@ jobs:
             node scripts/pipeline/refresh-financials.mjs --rehearse "$REHEARSE_ID" --report out/refresh-report.json --summary out/summary.md
             echo "candidates=0" >> "$GITHUB_OUTPUT"
           else
+            # A company that fails must not hold back the ones that pass (they were stuck for a week, 2026-11-07..14):
+            # the exit code is kept, the candidates are still counted, and the failure is reported by the last step —
+            # the same order the propose job uses.
+            set +e
             node scripts/pipeline/refresh-financials.mjs --all --tier all --report out/refresh-report.json --summary out/summary.md
+            echo "exit=$?" >> "$GITHUB_OUTPUT"
             # 半期報告書 (JCE-045): the same day indexes, read once more for docTypeCode 160/170. Published companies only.
-            node scripts/pipeline/interim-financials.mjs --all --report out/interim-report.json || true
-            echo "candidates=$(node -e 'const r=require("./out/refresh-report.json");const h=require("./out/interim-report.json");console.log(r.counts.wouldUpdate+h.outcomes.filter(o=>o.result==="would-update").length)')" >> "$GITHUB_OUTPUT"
+            node scripts/pipeline/interim-financials.mjs --all --report out/interim-report.json
+            echo "interim_exit=$?" >> "$GITHUB_OUTPUT"
+            set -e
+            # A run that wrote no report found nothing it can stand behind: 0 candidates, so nothing is proposed.
+            echo "candidates=$(node -e 'let n=0;try{n+=require("./out/refresh-report.json").counts.wouldUpdate}catch{};try{n+=require("./out/interim-report.json").outcomes.filter(o=>o.result==="would-update").length}catch{};console.log(n)')" >> "$GITHUB_OUTPUT"
           fi
 
       # Report only. A correction is applied by a person, one company at a time (apply-amendment.mjs), never here.
@@ -150,9 +158,18 @@ jobs:
             exit 1
           fi
 
+      - name: Report companies that failed
+        if: always()
+        run: |
+          if [ "${{ steps.detect.outputs.exit }}" != "" ] && [ "${{ steps.detect.outputs.exit }}" != "0" ]; then
+            echo "::error::Some companies failed to fetch or verify; the others are still proposed (see the job summary)."
+            exit 1
+          fi
+
   propose:
     needs: detect
-    if: needs.detect.outputs.candidates != '0' && (github.event_name == 'schedule' || inputs.propose)
+    # !cancelled(): detect reports failed companies by failing at its end; the ones that passed are still proposed.
+    if: ${{ !cancelled() && needs.detect.outputs.candidates != '0' && needs.detect.outputs.candidates != '' && (github.event_name == 'schedule' || inputs.propose) }}
     runs-on: ubuntu-latest
     timeout-minutes: 120
     # What a pull request needs, and nothing else: push a branch, open a pull request.
