@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { allTargets, extractInterim, latestHalf, planInterim, sourceFor } from "../scripts/pipeline/interim-financials.mjs";
+import { allTargets, extractInterim, latestHalf, planInterim, sourceFor, summaryContexts } from "../scripts/pipeline/interim-financials.mjs";
 import { loadEntries } from "../scripts/pipeline/jobs.mjs";
 import type { InterimRecord } from "../src/types/company";
 
@@ -63,6 +63,19 @@ describe("extractInterim", () => {
 
   it("gives nothing when no top line is tagged", () => {
     expect(extract(rows.slice(0, 5), { docID: "S100TEST", sourceId: "s" })).toBeNull();
+  });
+});
+
+describe("half-year contexts", () => {
+  it("reads the 半期報告書's own InterimDuration / Prior1InterimDuration names", () => {
+    const renamed = rows.map((r) => ({ ...r, コンテキストID: r.コンテキストID.replace("CurrentYTDDuration", "InterimDuration").replace("Prior1YTDDuration", "Prior1InterimDuration") }));
+    const x = extract(renamed, { docID: "S100TEST", sourceId: "s" })!;
+    expect(x.current.revenue).toBe(5_000_000_000);
+    expect(x.prior?.revenue).toBe(4_500_000_000);
+  });
+
+  it("names what the filing does carry when no half is found", () => {
+    expect(summaryContexts(rows)).toContain("NetSalesSummaryOfBusinessResults@CurrentYTDDuration");
   });
 });
 

@@ -69,13 +69,29 @@ const isoDates = (/** @type {string} */ text) => [...String(text ?? "").matchAll
  * One column of the half-year summary: the first listed element tagged in the given context, consolidated
  * unless the filer has no consolidated statements (then its NonConsolidated rows are the only table).
  */
-function pick(rows, elements, context, nonConsolidated) {
-  const wanted = nonConsolidated ? `${context}_NonConsolidatedMember` : context;
+function pick(rows, elements, contexts, nonConsolidated) {
+  const wanted = contexts.map((c) => (nonConsolidated ? `${c}_NonConsolidatedMember` : c));
   for (const element of elements) {
-    const row = rows.find((r) => r["要素ID"] === `jpcrp_cor:${element}` && (r["コンテキストID"] ?? "") === wanted && r["単位"] === "円" && Number.isFinite(Number(r["値"])));
-    if (row) return { value: Number(row["値"]), label: strip(row["項目名"] ?? ""), element, period: isoDates(row["期間・時点"]) };
+    for (const context of wanted) {
+      const row = rows.find((r) => r["要素ID"] === `jpcrp_cor:${element}` && (r["コンテキストID"] ?? "") === context && r["単位"] === "円" && Number.isFinite(Number(r["値"])));
+      if (row) return { value: Number(row["値"]), label: strip(row["項目名"] ?? ""), element, period: isoDates(row["期間・時点"]) };
+    }
   }
   return null;
+}
+
+/**
+ * The context names of the half and of the same half a year earlier. The 半期報告書 of 2024 onwards names them
+ * InterimDuration / Prior1InterimDuration; the quarterly report it replaced used CurrentYTDDuration /
+ * Prior1YTDDuration, which a filer may still carry. Both are accepted, the half-year names first.
+ */
+const CURRENT_CONTEXTS = ["InterimDuration", "CurrentYTDDuration"];
+const PRIOR_CONTEXTS = ["Prior1InterimDuration", "Prior1YTDDuration"];
+
+/** What a filing's summary rows are tagged with, for a failure message a person can act on. */
+export function summaryContexts(rows) {
+  const seen = new Set(rows.filter((r) => /(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"] ?? "")).map((r) => `${(r["要素ID"] ?? "").replace(/^jpcrp_cor:/, "")}@${r["コンテキストID"] ?? ""}`));
+  return [...seen].slice(0, 6);
 }
 
 /** A DEI value by element id, or by the printed name when a filer's CSV leaves the id blank. */
@@ -97,11 +113,11 @@ export function extractInterim(rows, { docID, sourceId }) {
   const periodEnd = dei(rows, "CurrentPeriodEndDateDEI", "当会計期間終了日、DEI");
   const periodStart = dei(rows, "CurrentFiscalYearStartDateDEI", "当事業年度開始日、DEI");
 
-  const column = (context, start, end) => {
-    const revenue = pick(rows, REVENUE_ELEMENTS, context, nonConsolidated);
+  const column = (contexts, start, end) => {
+    const revenue = pick(rows, REVENUE_ELEMENTS, contexts, nonConsolidated);
     if (!revenue) return null;
-    const profit = pick(rows, PROFIT_ELEMENTS, context, nonConsolidated);
-    const net = pick(rows, NET_INCOME_ELEMENTS, context, nonConsolidated);
+    const profit = pick(rows, PROFIT_ELEMENTS, contexts, nonConsolidated);
+    const net = pick(rows, NET_INCOME_ELEMENTS, contexts, nonConsolidated);
     const [s, e] = revenue.period.length === 2 ? revenue.period : [start, end];
     if (!e) return null;
     return {
@@ -123,11 +139,11 @@ export function extractInterim(rows, { docID, sourceId }) {
     };
   };
 
-  const current = column("CurrentYTDDuration", periodStart, periodEnd);
+  const current = column(CURRENT_CONTEXTS, periodStart, periodEnd);
   if (!current) return null;
   // The year label is the fiscal year the half belongs to, which the DEI states outright.
   if (fiscalYearEnd) current.fiscalYear = `${fiscalYearEnd.slice(0, 4)}年${Number(fiscalYearEnd.slice(5, 7))}月期`;
-  const prior = column("Prior1YTDDuration", "", "");
+  const prior = column(PRIOR_CONTEXTS, "", "");
   if (prior) {
     const shift = (/** @type {string} */ d) => `${Number(d.slice(0, 4)) - 1}${d.slice(4)}`;
     if (prior.period.length !== 2) {
@@ -222,13 +238,15 @@ export async function refreshInterim(id, { apply, newest, today, root = process.
   if (filing.periodEnd && filing.periodEnd <= latestHalf(entry) && filing.docTypeCode !== "170") return { ...base, result: "current", detail: `${latestHalf(entry)} まで登録済み` };
   const source = sourceFor(filing, today);
   let extracted;
+  let rows = [];
   try {
     const zip = await downloadDocument(filing.docID, 5);
-    extracted = extractInterim(readCsvRows(zip), { docID: filing.docID, sourceId: source.id });
+    rows = readCsvRows(zip);
+    extracted = extractInterim(rows, { docID: filing.docID, sourceId: source.id });
   } catch (error) {
     return { ...base, result: "failed", detail: `読み取れない: ${String(error?.message ?? error).slice(0, 200)}` };
   }
-  if (!extracted) return { ...base, result: "failed", detail: "半期の売上高の行が見つからない（要素が未対応）" };
+  if (!extracted) return { ...base, result: "failed", detail: `半期の売上高の行が見つからない（docID ${filing.docID}。主要な経営指標の要素@文脈: ${summaryContexts(rows).join(", ") || "なし"}）` };
   const plan = planInterim(entry, extracted, filing, source);
   if (plan.added.length + plan.replaced.length === 0) return { ...base, result: "current", detail: "新しい半期はない" };
   const halves = plan.added.map((h) => `${h.fiscalYear} ${h.period}`).join("・");
