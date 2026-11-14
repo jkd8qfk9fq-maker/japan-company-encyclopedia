@@ -1,13 +1,13 @@
 "use client";
 
-import { ArrowDown, ArrowRight, BookMarked, Compass } from "lucide-react";
+import { ArrowDown, ArrowRight, BookMarked, Check, Compass, Plus, Star } from "lucide-react";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useLocalStore } from "@/hooks/use-local-store";
 import type { DiscoverCard } from "@/lib/discover";
-import { discoveredStore, recordDiscovered } from "@/lib/storage/stores";
+import { discoveredStore, followedIndustriesStore, recordDiscovered, toggleFollowedIndustry } from "@/lib/storage/stores";
 import { formatYen } from "@/lib/utils/format";
-import { dailyOrder, loadDiscoverFeed, todayInJapan } from "./discover-data";
+import { feedOrder, loadDiscoverFeed, todayInJapan } from "./discover-data";
 
 const SHINDAN_URL = "https://shindan.kigyo-hyakka.com";
 const PAGE = 8;
@@ -31,6 +31,11 @@ export function DiscoverFeed() {
   const [slots, setSlots] = useState<Slot[]>([]);
   const [shown, setShown] = useState(PAGE);
   const discovered = useLocalStore(discoveredStore);
+  const following = useLocalStore(followedIndustriesStore);
+  // The follows the order is built from. Updated when the reader closes the follow panel, not on every tap: a
+  // follow from a card must not move the feed away from the card being read. It takes effect at the next rebuild.
+  const [orderFollows, setOrderFollows] = useState<string[] | null>(null);
+  const [choosing, setChoosing] = useState(false);
   const scroller = useRef<HTMLDivElement>(null);
   const day = useMemo(() => todayInJapan(), []);
 
@@ -42,13 +47,28 @@ export function DiscoverFeed() {
 
   const ordered = useMemo(() => {
     if (!cards) return [];
-    const pool = industry === "all" ? cards : cards.filter((c) => c.industry.id === industry);
-    // Companies already in the reader's collection go to the back: the feed is for meeting new ones.
-    const met = new Set(discoveredStore.get());
-    const order = dailyOrder(pool, day);
-    return [...order.filter((c) => !met.has(c.id)), ...order.filter((c) => met.has(c.id))];
-    // The collection is read once per filter on purpose: re-sorting while the reader swipes would move cards away.
-  }, [cards, industry, day]);
+    // The collection and the follows are read once per rebuild on purpose: re-sorting while the reader swipes
+    // would move cards away from under them.
+    return feedOrder(cards, day, { industry, met: new Set(discoveredStore.get()), followed: orderFollows ?? followedIndustriesStore.get() });
+  }, [cards, industry, day, orderFollows]);
+
+  const jumpTo = useCallback(
+    (companyId: string) => {
+      const index = slots.findIndex((slot) => slot.kind === "company" && slot.id === companyId);
+      if (index === -1) return;
+      setShown((n) => Math.max(n, index + 2));
+      // Wait for the card to render (it may be beyond the cards drawn so far) before moving to it.
+      requestAnimationFrame(() => {
+        scroller.current?.querySelector<HTMLElement>(`[data-slot="${index}"]`)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+    },
+    [slots],
+  );
+
+  const closeChooser = () => {
+    setChoosing(false);
+    setOrderFollows(followedIndustriesStore.get());
+  };
 
   useEffect(() => {
     if (!cards) return;
@@ -117,6 +137,11 @@ export function DiscoverFeed() {
     }
     return [...counts.values()].sort((a, b) => b.count - a.count);
   }, [cards]);
+  // Followed industries lead the filter row too, in the order they were followed.
+  const chips = [
+    ...following.map((id) => industries.find((i) => i.id === id)).filter((i): i is (typeof industries)[number] => Boolean(i)),
+    ...industries.filter((i) => !following.includes(i.id)),
+  ];
 
   if (failed) {
     return (
@@ -131,7 +156,7 @@ export function DiscoverFeed() {
   return (
     <div className="relative h-full">
       <div className="absolute inset-x-0 top-0 z-20 flex gap-2 overflow-x-auto px-4 pt-3 pb-2 [scrollbar-width:none]">
-        {[{ id: "all", name: "すべて" }, ...industries].map((i) => (
+        {[{ id: "all", name: "すべて" }, ...chips].map((i) => (
           <button
             key={i.id}
             type="button"
@@ -141,10 +166,15 @@ export function DiscoverFeed() {
               industry === i.id ? "border-white bg-white text-neutral-950" : "border-white/25 bg-black/30 text-white/85 hover:bg-white/15"
             }`}
           >
+            {following.includes(i.id) && <Star className="mr-1 inline size-3 -translate-y-px fill-current" aria-label="フォロー中" />}
             {i.name}
           </button>
         ))}
       </div>
+
+      {choosing && (
+        <FollowChooser industries={industries} following={following} onToggle={toggleFollowedIndustry} onClose={closeChooser} />
+      )}
 
       <div ref={scroller} className="h-full snap-y snap-mandatory overflow-y-auto overscroll-contain [scrollbar-width:none]">
         {cards === null ? (
@@ -152,7 +182,18 @@ export function DiscoverFeed() {
         ) : (
           slots.slice(0, shown).map((slot, index) => {
             if (slot.kind === "intro") {
-              return <IntroCard key="intro" index={index} today={today} met={discovered.length} total={cards.length} />;
+              return (
+                <IntroCard
+                  key="intro"
+                  index={index}
+                  today={today}
+                  met={discovered.length}
+                  total={cards.length}
+                  following={following.map((id) => industries.find((i) => i.id === id)?.name).filter((n): n is string => Boolean(n))}
+                  onJump={jumpTo}
+                  onChoose={() => setChoosing(true)}
+                />
+              );
             }
             if (slot.kind === "promo") return <PromoCard key={`promo-${slot.n}`} index={index} n={slot.n} />;
             const card = byId.get(slot.id);
@@ -164,6 +205,8 @@ export function DiscoverFeed() {
                 card={card}
                 via={slot.via}
                 inCollection={discovered.includes(card.id)}
+                followingIndustry={following.includes(card.industry.id)}
+                onFollowIndustry={() => toggleFollowedIndustry(card.industry.id)}
                 onFollow={(to) => follow(index, card, to)}
               />
             );
@@ -182,11 +225,27 @@ function Screen({ index, company, children, className = "" }: { index: number; c
   );
 }
 
-function IntroCard({ index, today, met, total }: { index: number; today: DiscoverCard[]; met: number; total: number }) {
+function IntroCard({
+  index,
+  today,
+  met,
+  total,
+  following,
+  onJump,
+  onChoose,
+}: {
+  index: number;
+  today: DiscoverCard[];
+  met: number;
+  total: number;
+  following: string[];
+  onJump: (companyId: string) => void;
+  onChoose: () => void;
+}) {
   return (
-    <Screen index={index} className="justify-center-safe bg-[radial-gradient(120%_80%_at_80%_0%,#1e3a5f_0%,#0a0f1a_55%,#05070b_100%)] px-6 pt-20 pb-14 text-white">
-      <p className="text-xs font-semibold tracking-[0.2em] text-amber-300">DISCOVER</p>
-      <h1 className="mt-2 font-serif text-[2rem] leading-tight font-semibold">
+    <Screen index={index} className="justify-center-safe bg-[radial-gradient(120%_80%_at_80%_0%,#1e3a5f_0%,#0a0f1a_55%,#05070b_100%)] px-6 pt-20 pb-14 text-white [@media(max-height:700px)]:pt-14 [@media(max-height:700px)]:pb-4">
+      <p className="text-xs font-semibold tracking-[0.2em] text-amber-300 [@media(max-height:700px)]:hidden">DISCOVER</p>
+      <h1 className="mt-2 font-serif text-[2rem] leading-tight font-semibold [@media(max-height:700px)]:text-[1.5rem]">
         今日、出会う
         <br />
         日本の会社。
@@ -194,28 +253,47 @@ function IntroCard({ index, today, met, total }: { index: number; today: Discove
       <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/70 [@media(max-height:700px)]:hidden">
         上にスワイプすると、次の会社。気になる会社のつながりをたどると、知らなかった会社に出会えます。
       </p>
-      <div className="mt-6 max-w-sm">
+      <div className="mt-6 max-w-sm [@media(max-height:700px)]:mt-3">
         <p className="text-xs font-semibold text-white/60">今日の3社</p>
-        <ol className="mt-2 space-y-2">
+        <ol className="mt-2 space-y-2 [@media(max-height:700px)]:space-y-1.5">
           {today.map((c, i) => (
-            <li key={c.id} className="flex items-baseline gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5">
-              <span className="figures text-amber-300">{i + 1}</span>
-              <span className="min-w-0 truncate font-medium">{c.name}</span>
-              <span className="ml-auto shrink-0 text-xs text-white/50">{c.industry.name}</span>
+            <li key={c.id}>
+              {/* A button, not a link: it moves the feed to the company's card, which is where the feed tells it. */}
+              <button
+                type="button"
+                onClick={() => onJump(c.id)}
+                className="flex w-full items-baseline gap-3 rounded-xl border border-white/10 bg-white/5 px-4 py-2.5 text-left transition-colors hover:bg-white/10 [@media(max-height:700px)]:py-1.5"
+              >
+                <span className="figures text-amber-300">{i + 1}</span>
+                <span className="min-w-0 truncate font-medium">{c.name}</span>
+                <span className="ml-auto shrink-0 text-xs text-white/50">{c.industry.name}</span>
+                <ArrowDown className="size-3.5 shrink-0 self-center text-white/40" aria-hidden />
+              </button>
             </li>
           ))}
         </ol>
       </div>
-      <div className="mt-6 flex items-center gap-4 text-sm">
+      <div className="mt-5 max-w-sm [@media(max-height:700px)]:mt-3">
+        <button
+          type="button"
+          onClick={onChoose}
+          className="flex w-full items-center gap-2 rounded-xl border border-amber-300/30 bg-amber-300/10 px-4 py-2.5 text-left text-sm hover:bg-amber-300/15 [@media(max-height:700px)]:py-2"
+        >
+          <Star className="size-4 shrink-0 text-amber-300" aria-hidden />
+          <span className="min-w-0 truncate">{following.length > 0 ? `フォロー中：${following.join("・")}` : "気になる業界をフォローすると、先に出てきます"}</span>
+          <span className="ml-auto shrink-0 text-xs text-amber-300">{following.length > 0 ? "変更" : "選ぶ"}</span>
+        </button>
+      </div>
+      <div className="mt-4 flex items-center gap-4 text-sm [@media(max-height:700px)]:mt-3">
         <Link href="/discover/collection" className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-4 py-2 hover:bg-white/10">
           <BookMarked className="size-4" aria-hidden />
           マイ企業図鑑 <span className="figures">{met}</span>/<span className="figures">{total}</span>
         </Link>
       </div>
-      <p className="mt-6 max-w-sm text-[0.6875rem] leading-relaxed text-white/45 [@media(max-height:700px)]:mt-3">
+      <p className="mt-6 max-w-sm text-[0.6875rem] leading-relaxed text-white/45 [@media(max-height:700px)]:hidden">
         カードの内容は各社の有価証券報告書をもとにした百科事典の記載です。良い会社のおすすめや投資の判断材料ではありません。
       </p>
-      <ArrowDown className="absolute bottom-3 left-1/2 size-5 -translate-x-1/2 animate-bounce text-white/60" aria-hidden />
+      <ArrowDown className="absolute bottom-3 left-1/2 size-5 -translate-x-1/2 animate-bounce text-white/60 [@media(max-height:700px)]:hidden" aria-hidden />
     </Screen>
   );
 }
@@ -225,12 +303,16 @@ function CompanyCard({
   card,
   via,
   inCollection,
+  followingIndustry,
+  onFollowIndustry,
   onFollow,
 }: {
   index: number;
   card: DiscoverCard;
   via?: { from: string; label: string };
   inCollection: boolean;
+  followingIndustry: boolean;
+  onFollowIndustry: () => void;
   onFollow: (to: { id: string; label: string }) => void;
 }) {
   return (
@@ -249,6 +331,15 @@ function CompanyCard({
           <Link href={`/industries/${card.industry.id}`} className="rounded-sm bg-amber-300 px-2 py-0.5 font-semibold text-neutral-950">
             {card.industry.name}
           </Link>
+          <button
+            type="button"
+            onClick={onFollowIndustry}
+            aria-pressed={followingIndustry}
+            className={`inline-flex items-center gap-0.5 rounded-sm border px-1.5 py-0.5 ${followingIndustry ? "border-amber-300 text-amber-300" : "border-white/30 text-white/70 hover:text-white"}`}
+          >
+            {followingIndustry ? <Check className="size-3" aria-hidden /> : <Plus className="size-3" aria-hidden />}
+            {followingIndustry ? "フォロー中" : "フォロー"}
+          </button>
           {card.revenue && (
             <span className="text-white/60">
               売上高 <span className="figures">{formatYen(card.revenue.amount)}</span>（{card.revenue.fiscalYear}）
@@ -261,7 +352,7 @@ function CompanyCard({
         {/* The businesses only when there is no one to follow: following is how the feed moves on, and the
             businesses are the first thing on the full page. */}
         {card.businesses.length > 0 && card.related.length === 0 && (
-          <ul className="flex flex-wrap gap-1.5 text-xs">
+          <ul className="flex flex-wrap gap-1.5 text-xs [@media(max-height:700px)]:hidden">
             {card.businesses.map((b) => (
               <li key={b} className="rounded-full border border-white/20 px-2.5 py-1 text-white/80">
                 {b}
@@ -328,7 +419,7 @@ function Hook({ hook }: { hook: NonNullable<DiscoverCard["hook"]> }) {
   return (
     <div className="rounded-xl border border-amber-300/30 bg-amber-300/10 px-4 py-2.5">
       <p className="text-[0.6875rem] font-semibold text-amber-300">沿革のはじまり</p>
-      <p className="mt-1 text-sm">
+      <p className="mt-1 text-sm [@media(max-height:700px)]:line-clamp-2">
         <span className="figures text-xl font-semibold text-amber-300">{hook.year}</span>年　{hook.title}
       </p>
     </div>
@@ -370,5 +461,54 @@ function PromoCard({ index, n }: { index: number; n: number }) {
       </a>
       <p className="mt-6 text-xs text-white/45">上にスワイプすると、フィードの続き。</p>
     </Screen>
+  );
+}
+
+/**
+ * Choosing industries to follow (JCE-048). The order is rebuilt when the panel closes, so the followed industries'
+ * companies are first when the reader returns to the top of the feed.
+ */
+function FollowChooser({
+  industries,
+  following,
+  onToggle,
+  onClose,
+}: {
+  industries: { id: string; name: string; count: number }[];
+  following: string[];
+  onToggle: (industryId: string) => void;
+  onClose: () => void;
+}) {
+  return (
+    <div role="dialog" aria-modal="true" aria-labelledby="follow-title" className="absolute inset-0 z-30 flex flex-col bg-neutral-950/95 px-5 pt-6 pb-5 text-white backdrop-blur">
+      <h2 id="follow-title" className="font-serif text-xl font-semibold">
+        気になる業界をフォロー
+      </h2>
+      <p className="mt-1 text-sm text-white/65">フォローした業界の会社が、フィードの先頭に来ます。フォローはこのブラウザの中だけに残ります。</p>
+      <ul className="mt-5 flex flex-1 flex-wrap content-start gap-2 overflow-y-auto">
+        {industries.map((i) => {
+          const on = following.includes(i.id);
+          return (
+            <li key={i.id}>
+              <button
+                type="button"
+                onClick={() => onToggle(i.id)}
+                aria-pressed={on}
+                className={`inline-flex min-h-10 items-center gap-1.5 rounded-full border px-3.5 text-sm transition-colors ${
+                  on ? "border-amber-300 bg-amber-300 text-neutral-950" : "border-white/25 text-white/85 hover:bg-white/10"
+                }`}
+              >
+                {on ? <Check className="size-3.5" aria-hidden /> : <Plus className="size-3.5" aria-hidden />}
+                {i.name}
+                <span className={`figures text-xs ${on ? "text-neutral-950/60" : "text-white/45"}`}>{i.count}</span>
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+      <button type="button" onClick={onClose} className="mt-4 min-h-11 rounded-full bg-white text-sm font-semibold text-neutral-950 hover:bg-white/90">
+        {following.length > 0 ? `${following.length}業界を先頭にしてフィードへ` : "フィードへ戻る"}
+      </button>
+    </div>
   );
 }

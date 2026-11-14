@@ -813,3 +813,17 @@ use, and more figures, index charts and pie charts in 業界の数字.
   revenue, and its size ranking switches between 売上高, 従業員数 and 総資産.
 - All of it is arithmetic on printed figures with its formula beside it, as JCE-038/041/044. No market measure; the
   ▲▼ marks are direction against a reference, never a judgement.
+
+### JCE-048 · 2026-11-15 · Accepted (operator) — DISCOVER: 今日の3社 jump to their cards; followed industries come first
+
+- Tapping one of 今日の3社 on the intro card scrolls the feed to that company's card (it is a button, not a link: the
+  card is in the feed, the full entry is one tap further).
+- A reader can follow industries — from the intro card's panel, or with the フォロー button beside a card's industry.
+  Follows are kept in `localStorage` (`followed-industries`, through `src/lib/storage/`), never sent anywhere. The
+  companies of followed industries come first in the feed, in the order the industries were followed, each group
+  still in the day's shuffle with met companies last (`feedOrder` in `discover-data.ts`, tested). Followed industries
+  also lead the filter row, starred. 今日の3社 are the first three of the reader's own order, so with follows they are
+  from those industries; without follows they are the same for everyone, as JCE-046 had it.
+- The order is rebuilt when the follow panel closes, not when a card's フォロー is tapped: a feed that reorders under the
+  reader's finger loses their place. A follow from a card applies from the next rebuild (closing the panel, changing
+  the filter, or opening the page again).

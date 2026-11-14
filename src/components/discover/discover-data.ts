@@ -44,3 +44,23 @@ export function dailyOrder<T>(items: readonly T[], day: string): T[] {
   }
   return out;
 }
+
+/**
+ * The reader's feed: the day's order, with the companies of followed industries first (in the order the industries
+ * were followed), and within each group the companies already in the collection last — the feed is for meeting new
+ * ones. With a filter, only that industry (JCE-046, JCE-048).
+ */
+export function feedOrder<T extends { id: string; industry: { id: string } }>(
+  cards: readonly T[],
+  day: string,
+  { industry, met, followed }: { industry: string; met: ReadonlySet<string>; followed: readonly string[] },
+): T[] {
+  const pool = industry === "all" ? cards : cards.filter((c) => c.industry.id === industry);
+  const order = dailyOrder(pool, day);
+  const rank = (c: T) => {
+    const f = followed.indexOf(c.industry.id);
+    return f === -1 ? followed.length : f;
+  };
+  // Array.prototype.sort is stable, so the day's shuffle survives inside each group.
+  return [...order].sort((a, b) => rank(a) - rank(b) || Number(met.has(a.id)) - Number(met.has(b.id)));
+}

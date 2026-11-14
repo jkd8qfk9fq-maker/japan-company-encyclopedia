@@ -20,6 +20,8 @@ export const STORAGE_KEYS = {
   plan: "premium-plan",
   /** マイ企業図鑑 (JCE-046): companies this reader has met in the discovery feed. */
   discovered: "discovered-companies",
+  /** Industries the reader follows in DISCOVER (JCE-048): their companies come first in the feed. */
+  followedIndustries: "followed-industries",
 } as const;
 
 export type StorageKey = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];

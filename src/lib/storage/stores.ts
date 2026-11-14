@@ -135,3 +135,16 @@ export function recordDiscovered(companyId: string): void {
   if (current.includes(companyId)) return;
   discoveredStore.set([...current, companyId]);
 }
+
+// ---------------------------------------------------------------------------
+// Followed industries (JCE-048) — industry ids, in the order the reader followed them. Like every store here it
+// stays in this browser: following is a reading preference, not an account.
+
+export const followedIndustriesStore = createStore<string[]>(STORAGE_KEYS.followedIndustries, [], parseIdList);
+
+export function toggleFollowedIndustry(industryId: string): boolean {
+  const current = followedIndustriesStore.get();
+  const next = current.includes(industryId) ? current.filter((id) => id !== industryId) : [...current, industryId];
+  followedIndustriesStore.set(next);
+  return next.includes(industryId);
+}
