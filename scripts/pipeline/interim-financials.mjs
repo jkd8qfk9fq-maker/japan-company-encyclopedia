@@ -143,15 +143,11 @@ export function extractInterim(rows, { docID, sourceId }) {
   if (!current) return null;
   // The year label is the fiscal year the half belongs to, which the DEI states outright.
   if (fiscalYearEnd) current.fiscalYear = `${fiscalYearEnd.slice(0, 4)}年${Number(fiscalYearEnd.slice(5, 7))}月期`;
-  const prior = column(PRIOR_CONTEXTS, "", "");
-  if (prior) {
-    const shift = (/** @type {string} */ d) => `${Number(d.slice(0, 4)) - 1}${d.slice(4)}`;
-    if (prior.period.length !== 2) {
-      prior.periodStart = shift(current.periodStart);
-      prior.periodEnd = shift(current.periodEnd);
-    }
-    prior.fiscalYear = fiscalYearEnd ? `${Number(fiscalYearEnd.slice(0, 4)) - 1}年${Number(fiscalYearEnd.slice(5, 7))}月期` : shift(current.fiscalYear);
-  }
+  // The CSV's 期間・時点 is text for these rows (「前中間期」), not dates; the previous year's half is the current
+  // half moved back one year, which is what the filing's own column header states.
+  const shift = (/** @type {string} */ d) => (d ? `${Number(d.slice(0, 4)) - 1}${d.slice(4)}` : d);
+  const prior = column(PRIOR_CONTEXTS, shift(current.periodStart), shift(current.periodEnd));
+  if (prior) prior.fiscalYear = fiscalYearEnd ? `${Number(fiscalYearEnd.slice(0, 4)) - 1}年${Number(fiscalYearEnd.slice(5, 7))}月期` : prior.fiscalYear;
   return { current, prior, docID };
 }
 

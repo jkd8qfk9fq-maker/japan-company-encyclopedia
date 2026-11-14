@@ -74,6 +74,17 @@ describe("half-year contexts", () => {
     expect(x.prior?.revenue).toBe(4_500_000_000);
   });
 
+  it("reads the previous year's half when 期間・時点 is text, as real 半期報告書 rows carry it (2026-11-14)", () => {
+    const real = rows.map((r) => ({
+      ...r,
+      コンテキストID: r.コンテキストID.replace("CurrentYTDDuration", "InterimDuration").replace("Prior1YTDDuration", "Prior1InterimDuration"),
+      "期間・時点": r.コンテキストID.startsWith("Prior1YTD") ? "前中間期" : r.コンテキストID.startsWith("CurrentYTD") ? "当中間期" : r["期間・時点"],
+    }));
+    const x = extract(real, { docID: "S100TEST", sourceId: "s" })!;
+    expect(x.current).toMatchObject({ periodStart: "2025-04-01", periodEnd: "2025-09-30", revenue: 5_000_000_000 });
+    expect(x.prior).toMatchObject({ fiscalYear: "2025年3月期", periodStart: "2024-04-01", periodEnd: "2024-09-30", revenue: 4_500_000_000, profit: -50_000_000 });
+  });
+
   it("names what the filing does carry when no half is found", () => {
     expect(summaryContexts(rows)).toContain("NetSalesSummaryOfBusinessResults@CurrentYTDDuration#円");
   });
