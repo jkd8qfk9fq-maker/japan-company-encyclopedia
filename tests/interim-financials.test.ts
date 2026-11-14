@@ -75,7 +75,7 @@ describe("half-year contexts", () => {
   });
 
   it("names what the filing does carry when no half is found", () => {
-    expect(summaryContexts(rows)).toContain("NetSalesSummaryOfBusinessResults@CurrentYTDDuration");
+    expect(summaryContexts(rows)).toContain("NetSalesSummaryOfBusinessResults@CurrentYTDDuration#円");
   });
 });
 

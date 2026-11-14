@@ -90,8 +90,8 @@ const PRIOR_CONTEXTS = ["Prior1InterimDuration", "Prior1YTDDuration"];
 
 /** What a filing's summary rows are tagged with, for a failure message a person can act on. */
 export function summaryContexts(rows) {
-  const seen = new Set(rows.filter((r) => /(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"] ?? "")).map((r) => `${(r["要素ID"] ?? "").replace(/^jpcrp_cor:/, "")}@${r["コンテキストID"] ?? ""}`));
-  return [...seen].slice(0, 6);
+  const seen = new Set(rows.filter((r) => /(SummaryOfBusinessResults|KeyFinancialData)$/.test(r["要素ID"] ?? "") && /(NetSales|Revenue)/.test(r["要素ID"] ?? "")).map((r) => `${(r["要素ID"] ?? "").replace(/^jpcrp_cor:/, "")}@${r["コンテキストID"] ?? ""}#${r["単位"] ?? ""}`));
+  return [...seen].slice(0, 8);
 }
 
 /** A DEI value by element id, or by the printed name when a filer's CSV leaves the id blank. */
@@ -258,7 +258,9 @@ export async function refreshInterim(id, { apply, newest, today, root = process.
   const plan = planInterim(entry, extracted, filing, source);
   if (plan.added.length + plan.replaced.length === 0) return { ...base, result: "current", detail: "新しい半期はない" };
   const halves = plan.added.map((h) => `${h.fiscalYear} ${h.period}`).join("・");
-  if (!apply) return { ...base, result: "would-update", detail: `${halves} を追加（出典 ${source.id}、docID ${filing.docID}）`, added: plan.added };
+  // Without the previous year's half there is no 前年同期比; say which contexts the filing's summary rows did carry.
+  const priorNote = extracted.prior ? "" : `（前年の半期なし。要素@文脈: ${summaryContexts(rows).join(", ")}）`;
+  if (!apply) return { ...base, result: "would-update", detail: `${halves} を追加（出典 ${source.id}、docID ${filing.docID}）${priorNote}`, added: plan.added };
 
   const next = { ...entry, interimFinancials: plan.next, sources: plan.sources, updatedAt: today };
   assertMachineWrite(entry, next, "interim-financials");
