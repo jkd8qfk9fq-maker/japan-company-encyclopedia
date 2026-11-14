@@ -169,6 +169,31 @@ export type InterimRecord = Sourced & {
 };
 
 /**
+ * A first or third quarter, cumulative from the start of the fiscal year (JCE-049).
+ *
+ * Since 2024 Q1 and Q3 exist only in 決算短信, which EDINET does not hold. These come from EDINET DB's structured
+ * copy of the company's 決算短信 — the one source here that is not EDINET or Wikipedia, by the operator's decision —
+ * and are shown with its attribution. EDINET DB prints 百万円, so amounts are exact to the million (below that is
+ * cut, not rounded). The first half (Q2) is never taken from here: it is read from the 半期報告書 (`interimFinancials`).
+ */
+export type QuarterlyRecord = Sourced & {
+  /** YYYY-MM-DD, the end of the fiscal year the quarter belongs to. */
+  fiscalYearEnd: string;
+  /** e.g. "2027年3月期". */
+  fiscalYear: string;
+  quarter: 1 | 3;
+  /** In yen: EDINET DB's 百万円 × 1,000,000. */
+  revenue: number | null;
+  operatingIncome: number | null;
+  /** 親会社株主（所有者）に帰属する純利益. */
+  netIncome: number | null;
+  accountingStandard: AccountingStandard;
+  consolidated: boolean;
+  /** YYYY-MM-DD, when the 決算短信 was published. */
+  disclosedAt: string;
+};
+
+/**
  * One consolidated fiscal year.
  *
  * Deviations from the spec's `revenue?: number`, each deliberate:
@@ -379,6 +404,8 @@ export type Company = {
   financials: FinancialRecord[];
   /** The halves (JCE-045), oldest first. Absent until a 半期報告書 has been read for the company. */
   interimFinancials?: InterimRecord[];
+  /** First and third quarters from 決算短信 via EDINET DB (JCE-049), oldest first. */
+  quarterlyEarnings?: QuarterlyRecord[];
   segmentRevenue?: SegmentRevenue;
   regionalRevenue?: RegionalRevenue;
   workforce?: Workforce;

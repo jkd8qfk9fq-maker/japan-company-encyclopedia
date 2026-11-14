@@ -97,10 +97,11 @@ describe("refresh-financials workflow", () => {
     expect(propose).toContain("git add src/data pipeline/amendments-index.json pipeline/runs");
   });
 
-  it("uses one secret, EDINET_API_KEY, and never writes a key into the file", () => {
+  it("uses two secrets — EDINET_API_KEY, and EDINETDB_API_KEY for 決算短信 Q1/Q3 (JCE-049) — and never writes a key into the file", () => {
     const secrets = [...body.matchAll(/secrets\.([A-Za-z0-9_]+)/g)].map((m) => m[1]);
-    expect([...new Set(secrets)]).toEqual(["EDINET_API_KEY"]);
+    expect([...new Set(secrets)]).toEqual(["EDINET_API_KEY", "EDINETDB_API_KEY"]);
     expect(body).not.toMatch(/EDINET_API_KEY:\s*(?!\$\{\{)\S/);
+    expect(body).not.toMatch(/EDINETDB_API_KEY:\s*(?!\$\{\{)\S/);
     expect(body).not.toMatch(/Subscription-Key=/);
   });
 

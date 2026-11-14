@@ -22,6 +22,12 @@ describe("one detector", () => {
     expect(users).toEqual(["refresh-financials.yml"]);
   });
 
+  it("reads EDINET DB (JCE-049) from the same one place, and never from the site", () => {
+    expect(workflows.filter((f) => read(f).includes("EDINETDB_API_KEY"))).toEqual(["refresh-financials.yml"]);
+    const walk = (d: string): string[] => readdirSync(join(root, d), { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(join(d, e.name)) : [join(d, e.name)]));
+    expect(walk("src").filter((f) => /\.(ts|tsx)$/.test(f) && /EDINETDB_API_KEY|edinetdb\.jp\/v1/.test(readFileSync(join(root, f), "utf8")))).toEqual([]);
+  });
+
   it("has no Vercel cron: the site does not call EDINET", () => {
     expect(existsSync(join(root, "vercel.json"))).toBe(false);
     const route = join(root, "src/app/api/cron");

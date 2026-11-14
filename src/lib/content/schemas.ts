@@ -161,6 +161,22 @@ export const companySchema = z.strictObject({
       }),
     )
     .optional(),
+  quarterlyEarnings: z
+    .array(
+      z.strictObject({
+        fiscalYearEnd: isoDate,
+        fiscalYear: text,
+        quarter: z.union([z.literal(1), z.literal(3)]),
+        revenue: z.number().int().nullable(),
+        operatingIncome: z.number().int().nullable(),
+        netIncome: z.number().int().nullable(),
+        accountingStandard: z.enum(["ifrs", "jgaap", "usgaap"]),
+        consolidated: z.boolean(),
+        disclosedAt: isoDate,
+        ...sourced,
+      }),
+    )
+    .optional(),
   segmentRevenue: z
     .strictObject({
       fiscalYear: text,

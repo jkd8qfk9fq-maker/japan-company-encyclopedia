@@ -31,7 +31,8 @@ variables, and never reference them in the application. Decision recorded in
    is trusted as filed. Japanese Wikipedia may add what the filing does not say (former names, brand and product
    names, background) — paraphrased, never copied (CC BY-SA), cited as its own source — and never a figure, never
    anything that contradicts the filing (operator decision 2026-10-30, `docs/decisions.md` JCE-030). Other
-   aggregator sites are not sources.
+   aggregator sites are not sources — with one exception: 第1・第3四半期 come from EDINET DB's structured 決算短信,
+   checked against the entry's EDINET figures and shown with its attribution (operator decision 2026-11-15, JCE-049).
 4. **Not a brokerage.** No stock price, PER, PBR, ROE, ROA, dividend yield, technical indicators,
    price targets or recommendations. The financial section shows the filing's own five-year summary as printed —
    revenue, the profit line the filing prints between revenue and net income (with its label), net income, total

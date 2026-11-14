@@ -827,3 +827,29 @@ use, and more figures, index charts and pie charts in 業界の数字.
 - The order is rebuilt when the follow panel closes, not when a card's フォロー is tapped: a feed that reorders under the
   reader's finger loses their place. A follow from a card applies from the next rebuild (closing the panel, changing
   the filter, or opening the page again).
+
+### JCE-049 · 2026-11-15 · Accepted (operator) — 決算短信 Q1/Q3 from EDINET DB, shown free with its attribution
+
+Since 2024 the first and third quarters exist only in 決算短信 (TDnet), which EDINET does not hold and TDnet offers
+no free API for. The operator subscribed to EDINET DB's API and decided to take Q1/Q3 from it, with the source stated —
+the one exception to invariant 3's "other aggregator sites are not sources", and only for these two quarters.
+
+- **What comes from EDINET DB**: `quarterlyEarnings` — 第1・第3四半期 cumulative 売上・営業利益・純利益 (百万円, below
+  that cut off), for the latest three fiscal years. The half stays the 半期報告書 (JCE-045) and the full year the
+  有価証券報告書; EDINET DB's Q2 and full-year rows are never stored, only used to check it.
+- **Checked before written** (`scripts/pipeline/quarterly-earnings.mjs`): EDINET DB's Q2 and full year are compared with
+  the entry's own EDINET figures. A revenue more than ¥1 million apart holds the company (EDINET DB's 営業収益 vs 売上高,
+  a different perimeter). A net income apart while revenue agrees means EDINET DB carries the group's profit including
+  non-controlling interests (AGC, イオン): the quarters are kept without net income. A proportional tolerance was tried
+  and dropped the same day: it let ¥3,696 million pass as ¥3,698 million.
+- **Sources**: one per quarter (`tanshin-YYYYMM-qN`), publisher naming EDINET DB, linking the company's own document
+  where EDINET DB gives one; the integrity suite checks the attribution.
+- **Shown free** (operator, 2026-11-15) as 「四半期の動き（累計）」 under the latest year's figures: Q1, 中間期, Q3 and
+  the previous full year, each beside the same point a year earlier, 前年同期比 computed. Wherever an EDINET DB figure
+  is on the page, its terms' attribution ("Powered by EDINET DB") and the substance of its disclaimer are printed. The
+  premium 「半期の動き」 block is replaced by this free section.
+- **Rate**: the plan allows 100 requests a day. The detect job reads the announcement calendar only; the propose job
+  fetches companies that announced a quarter we lack, then never-checked companies, up to 80 a run. Responses are kept
+  in the EDINET cache (never committed) so a held company can be re-examined without a request.
+- **Key**: `EDINETDB_API_KEY`, a repository secret used only by refresh-financials (tests/single-detector.test.ts),
+  never by the site.

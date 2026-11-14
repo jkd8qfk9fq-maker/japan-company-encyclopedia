@@ -167,6 +167,13 @@ describe.each(companies.map((c) => [c.id, c] as const))("company %s", (_, compan
     for (const half of company.interimFinancials ?? []) expectSourced(half.sourceIds, company.sources, `${company.id}.interimFinancials.${half.periodEnd}`);
     const halves = (company.interimFinancials ?? []).map((h) => `${h.period}:${h.periodEnd}`);
     expect(new Set(halves).size, `${company.id}: an interim period appears twice`).toBe(halves.length);
+    // Q1/Q3 (JCE-049): sourced, once each, and always attributed to EDINET DB — the one non-EDINET figure source.
+    for (const q of company.quarterlyEarnings ?? []) {
+      expectSourced(q.sourceIds, company.sources, `${company.id}.quarterlyEarnings.${q.fiscalYearEnd}.Q${q.quarter}`);
+      for (const id of q.sourceIds) expect(company.sources.find((x) => x.id === id)?.publisher ?? "", `${company.id}.quarterlyEarnings: EDINET DB attribution`).toContain("EDINET DB");
+    }
+    const quarters = (company.quarterlyEarnings ?? []).map((q) => `${q.fiscalYearEnd}:${q.quarter}`);
+    expect(new Set(quarters).size, `${company.id}: a quarter appears twice`).toBe(quarters.length);
   });
 
   it("has sourced, ordered, non-duplicated financial years in JPY", () => {

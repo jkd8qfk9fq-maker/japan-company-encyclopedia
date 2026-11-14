@@ -11,7 +11,8 @@
 #            the pull request (Cloudflare rebuilds main). A company that fails or is held is left exactly as it was.
 #
 # Repository settings this needs: the secret EDINET_API_KEY; Settings → Actions → General → "Allow GitHub Actions to
-# create and approve pull requests" (for the pull request; nothing here approves one).
+# create and approve pull requests" (for the pull request; nothing here approves one). The secret EDINETDB_API_KEY
+# adds 決算短信 Q1/Q3 from EDINET DB (JCE-049); without it that step says so and the rest runs as before.
 #
 # This is the ONLY scheduled caller of EDINET (tests/single-detector.test.ts). New registrations are a different lane:
 # `npm run content:autopilot`, run by a person on the machine that holds the evidence, never scheduled.
@@ -71,6 +72,8 @@ jobs:
       candidates: ${{ steps.detect.outputs.candidates }}
     env:
       EDINET_API_KEY: ${{ secrets.EDINET_API_KEY }}
+      # 決算短信 Q1/Q3 via EDINET DB (JCE-049). Unset → the quarterly step reports that and the rest runs on.
+      EDINETDB_API_KEY: ${{ secrets.EDINETDB_API_KEY }}
       # Everything the run downloads lives here, outside src/ and pipeline/, and is cached between runs.
       RESEARCH_CACHE: ${{ github.workspace }}/.cache/edinet
       RESEARCH_INDEX_CACHE: ${{ github.workspace }}/.cache/edinet/index
@@ -116,9 +119,12 @@ jobs:
             # 半期報告書 (JCE-045): the same day indexes, read once more for docTypeCode 160/170. Published companies only.
             node scripts/pipeline/interim-financials.mjs --all --report out/interim-report.json
             echo "interim_exit=$?" >> "$GITHUB_OUTPUT"
+            # 決算短信 Q1/Q3 (JCE-049): the announcement calendar only (one or two EDINET DB requests); the figures are
+            # fetched by the propose job, so a day's allowance is not spent twice.
+            node scripts/pipeline/quarterly-earnings.mjs --due --backfill --plan-only --report out/quarterly-plan.json
             set -e
             # A run that wrote no report found nothing it can stand behind: 0 candidates, so nothing is proposed.
-            echo "candidates=$(node -e 'let n=0;try{n+=require("./out/refresh-report.json").counts.wouldUpdate}catch{};try{n+=require("./out/interim-report.json").outcomes.filter(o=>o.result==="would-update").length}catch{};console.log(n)')" >> "$GITHUB_OUTPUT"
+            echo "candidates=$(node -e 'let n=0;try{n+=require("./out/refresh-report.json").counts.wouldUpdate}catch{};try{n+=require("./out/interim-report.json").outcomes.filter(o=>o.result==="would-update").length}catch{};try{const q=require("./out/quarterly-plan.json");n+=(q.due??0)+(q.backfill??0)}catch{};console.log(n)')" >> "$GITHUB_OUTPUT"
           fi
 
       # Report only. A correction is applied by a person, one company at a time (apply-amendment.mjs), never here.
@@ -178,6 +184,7 @@ jobs:
       pull-requests: write
     env:
       EDINET_API_KEY: ${{ secrets.EDINET_API_KEY }}
+      EDINETDB_API_KEY: ${{ secrets.EDINETDB_API_KEY }}
       RESEARCH_CACHE: ${{ github.workspace }}/.cache/edinet
       RESEARCH_INDEX_CACHE: ${{ github.workspace }}/.cache/edinet/index
       LIMIT: ${{ inputs.limit || '150' }}
@@ -210,6 +217,11 @@ jobs:
           echo "exit=$?" >> "$GITHUB_OUTPUT"
           # 半期報告書 (JCE-045): adds interimFinancials rows to published companies whose newest half is not yet held.
           node scripts/pipeline/interim-financials.mjs --all --apply --report out/interim-report.json || true
+          # 決算短信 Q1/Q3 via EDINET DB (JCE-049): companies that announced one we lack, then never-checked companies,
+          # within 80 requests (the plan allows 100 a day); each cross-checked against the entry's EDINET figures.
+          node scripts/pipeline/quarterly-earnings.mjs --due --backfill --budget 80 --apply --report out/quarterly-report.json || true
+          # Into the pull request body: what was added, and every company held with the figures that disagreed.
+          node -e 'try{const r=require("./out/quarterly-report.json");const c={};for(const o of r.outcomes)c[o.result]=(c[o.result]??0)+1;const held=r.outcomes.filter(o=>o.result==="held"||o.result==="failed").map(o=>`- ${o.name}（${o.id}）: ${o.detail}`);require("fs").appendFileSync("out/summary.md",`\n\n### 決算短信 第1・第3四半期（EDINET DB、JCE-049）\n${Object.entries(c).map(([k,v])=>`${k} ${v}`).join(" / ")||"対象なし"}（残りリクエスト ${r.remaining ?? "—"}）\n${held.join("\n")}\n`)}catch{}' || true
 
       # The same audit as detect: it advances pipeline/amendments-index.json (committed with the pull request) and its
       # summary goes into the pull request body, so a correction is seen by the person who merges.
