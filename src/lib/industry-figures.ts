@@ -24,6 +24,12 @@ export type RankedCompany = {
   revenueGrowth5y: number | null;
 };
 
+/** A company and one printed figure of its latest year, for the size rankings. */
+export type SizeRow = { id: string; name: string; value: number };
+
+/** How many companies fall in each part of a whole: size bands, accounting standards. */
+export type CountPart = { id: string; name: string; companies: number };
+
 export type IndustryFigures = {
   id: IndustryId;
   name: string;
@@ -31,6 +37,27 @@ export type IndustryFigures = {
   revenue: IndustrySum;
   netIncome: IndustrySum;
   employees: IndustrySum;
+  totalAssets: IndustrySum;
+  netAssets: IndustrySum;
+  /** Σ純資産 ÷ Σ総資産 over the companies that print both (JCE-047). */
+  equityRatio: IndustryRatio | null;
+  /** Σ売上高 ÷ Σ従業員数 over the companies that print both, in yen per person. */
+  revenuePerEmployee: IndustryRatio | null;
+  /** Companies whose latest 純利益 is below zero, of those that print it. */
+  lossMaking: { companies: number; of: number };
+  /** Median of the latest revenue. */
+  revenueMedian: number | null;
+  /** Median of 平均年間給与 (提出会社) as printed, in yen. */
+  salaryMedian: IndustryRatio | null;
+  /** Companies by size of their latest revenue. */
+  sizeBands: CountPart[];
+  /** Companies by the accounting standard of their latest year. */
+  standards: CountPart[];
+  /** Σ of the amounts printed as 日本 and as every other region, over companies with one domestic region. */
+  domesticOverseas: { domestic: number; overseas: number; companies: number } | null;
+  /** The ten largest by 従業員数 and by 総資産, beside `ranking` (売上高). */
+  rankingByEmployees: SizeRow[];
+  rankingByAssets: SizeRow[];
   /** Σ純利益 ÷ Σ売上高 over the companies that print both. */
   netProfitMargin: IndustryRatio | null;
   /** Median over companies of (latest revenue ÷ revenue five years earlier). */
@@ -49,13 +76,27 @@ export type IndustryFlowCount = { from: IndustryId; to: IndustryId; ties: number
 export type IndustryFiguresData = {
   industries: IndustryFigures[];
   /** The same ratios over every released company, the reference the ▲▼ marks compare against. */
-  reference: { netProfitMargin: number | null; revenueGrowth5y: number | null };
+  reference: { netProfitMargin: number | null; revenueGrowth5y: number | null; equityRatio: number | null; revenuePerEmployee: number | null };
   /** The five-year revenue index of every industry and of all companies together (JCE-042). */
   index: { all: IndexSeries; industries: IndexSeries[] };
+  /** The same index for 総資産 and 従業員数, each over the companies whose five years of that line are complete (JCE-047). */
+  indexes: { totalAssets: { all: IndexSeries; industries: IndexSeries[] }; employees: { all: IndexSeries; industries: IndexSeries[] } };
+  /** Every released company by size band and by accounting standard. */
+  sizeBands: CountPart[];
+  standards: CountPart[];
   /** Seller industry → buyer industry, counted from `supplier` / `customer` relations, each pair once. */
   flows: IndustryFlowCount[];
-  totals: { companies: number; revenue: number; netIncome: number; employees: number };
+  totals: { companies: number; revenue: number; netIncome: number; employees: number; totalAssets: number; lossMaking: number; withNetIncome: number };
 };
+
+const OKU = 1e8;
+const BANDS: { id: string; name: string; min: number }[] = [
+  { id: "1-cho", name: "1兆円以上", min: 10000 * OKU },
+  { id: "1000-oku", name: "1,000億〜1兆円", min: 1000 * OKU },
+  { id: "100-oku", name: "100億〜1,000億円", min: 100 * OKU },
+  { id: "under-100-oku", name: "100億円未満", min: -Infinity },
+];
+const STANDARD_NAMES: Record<FinancialRecord["accountingStandard"], string> = { jgaap: "日本基準", ifrs: "IFRS", usgaap: "米国会計基準" };
 
 const RANKING_SIZE = 10;
 
@@ -80,7 +121,8 @@ function sum(companies: Company[], pick: (latest: FinancialRecord) => number | n
   for (const company of companies) {
     const latest = byPeriod(company.financials).at(-1);
     const value = latest ? pick(latest) : null;
-    if (value === null) continue;
+    // == null: a figure absent from the record is as missing as one printed as null.
+    if (value == null) continue;
     total += value;
     counted += 1;
   }
@@ -120,10 +162,70 @@ function rank(companies: Company[]): RankedCompany[] {
     }));
 }
 
+/** Σa ÷ Σb over the companies whose latest year prints both, with b above zero. */
+function ratioOfSums(companies: Company[], a: (r: FinancialRecord) => number | null, b: (r: FinancialRecord) => number | null, formula: string): IndustryRatio | null {
+  let num = 0;
+  let den = 0;
+  let counted = 0;
+  for (const c of companies) {
+    const r = byPeriod(c.financials).at(-1);
+    const x = r ? a(r) : null;
+    const y = r ? b(r) : null;
+    if (x == null || y == null || y <= 0) continue;
+    num += x;
+    den += y;
+    counted += 1;
+  }
+  return counted > 0 && den > 0 ? { value: num / den, formula, companies: counted } : null;
+}
+
+function countBy(companies: Company[], key: (latest: FinancialRecord) => { id: string; name: string } | null, order: string[]): CountPart[] {
+  const counts = new Map<string, CountPart>();
+  for (const c of companies) {
+    const latest = byPeriod(c.financials).at(-1);
+    const k = latest ? key(latest) : null;
+    if (!k) continue;
+    const part = counts.get(k.id) ?? { ...k, companies: 0 };
+    part.companies += 1;
+    counts.set(k.id, part);
+  }
+  return [...counts.values()].sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
+}
+
+const sizeBandsOf = (companies: Company[]) =>
+  countBy(companies, (r) => (r.revenue == null ? null : BANDS.find((b) => r.revenue! >= b.min)!), BANDS.map((b) => b.id));
+const standardsOf = (companies: Company[]) =>
+  countBy(companies, (r) => ({ id: r.accountingStandard, name: STANDARD_NAMES[r.accountingStandard] }), Object.keys(STANDARD_NAMES));
+
+function topBy(companies: Company[], pick: (r: FinancialRecord) => number | null): SizeRow[] {
+  return companies
+    .map((c) => ({ c, v: (() => { const r = byPeriod(c.financials).at(-1); return r ? pick(r) : null; })() }))
+    .filter((x): x is { c: Company; v: number } => x.v != null && x.v > 0)
+    .sort((a, b) => b.v - a.v)
+    .slice(0, RANKING_SIZE)
+    .map(({ c, v }) => ({ id: c.id, name: c.name, value: v }));
+}
+
 function figuresOf(id: IndustryId, companies: Company[]): IndustryFigures {
   const revenue = sum(companies, (r) => r.revenue);
   const netIncome = sum(companies, (r) => r.netIncome);
   const employees = sum(companies, (r) => r.employees);
+  const totalAssets = sum(companies, (r) => r.totalAssets);
+  const netAssets = sum(companies, (r) => r.netAssets);
+  const latestOf = companies.map((c) => byPeriod(c.financials).at(-1)).filter((r): r is FinancialRecord => r !== undefined);
+  const withNetIncome = latestOf.filter((r) => r.netIncome != null);
+  const salaries = companies.map((c) => c.workforce?.averageAnnualSalary ?? null).filter((v): v is number => v !== null);
+  const salary = median(salaries);
+  let domestic = 0;
+  let overseasSum = 0;
+  let regionalCompanies = 0;
+  for (const c of companies) {
+    const items = c.regionalRevenue?.items;
+    if (!items || items.filter((i) => i.domestic).length !== 1) continue;
+    domestic += items.filter((i) => i.domestic).reduce((acc, i) => acc + i.amount, 0);
+    overseasSum += items.filter((i) => !i.domestic).reduce((acc, i) => acc + i.amount, 0);
+    regionalCompanies += 1;
+  }
 
   const both = companies
     .map((c) => byPeriod(c.financials).at(-1))
@@ -161,6 +263,18 @@ function figuresOf(id: IndustryId, companies: Company[]): IndustryFigures {
     revenue,
     netIncome,
     employees,
+    totalAssets,
+    netAssets,
+    equityRatio: ratioOfSums(companies, (r) => r.netAssets, (r) => r.totalAssets, "純資産の合計 ÷ 総資産の合計（両方が印字された会社）"),
+    revenuePerEmployee: ratioOfSums(companies, (r) => r.revenue, (r) => r.employees, "売上高の合計 ÷ 従業員数の合計（両方が印字された会社）"),
+    lossMaking: { companies: withNetIncome.filter((r) => r.netIncome! < 0).length, of: withNetIncome.length },
+    revenueMedian: median(latestOf.map((r) => r.revenue).filter((v): v is number => v !== null)),
+    salaryMedian: salary !== null ? { value: salary, formula: "平均年間給与（提出会社・印字どおり）の中央値", companies: salaries.length } : null,
+    sizeBands: sizeBandsOf(companies),
+    standards: standardsOf(companies),
+    domesticOverseas: regionalCompanies > 0 ? { domestic, overseas: overseasSum, companies: regionalCompanies } : null,
+    rankingByEmployees: topBy(companies, (r) => r.employees),
+    rankingByAssets: topBy(companies, (r) => r.totalAssets),
     netProfitMargin,
     revenueGrowth5y: revenueGrowth,
     top3Share,
@@ -210,18 +324,26 @@ export function buildIndustryFigures(companies: Company[]): IndustryFiguresData 
   const reference = {
     netProfitMargin: refDen > 0 ? both.reduce((acc, r) => acc + r.netIncome!, 0) / refDen : null,
     revenueGrowth5y: median(companies.map(revenueGrowth5y).filter((v): v is number => v !== null)),
+    equityRatio: ratioOfSums(companies, (r) => r.netAssets, (r) => r.totalAssets, "")?.value ?? null,
+    revenuePerEmployee: ratioOfSums(companies, (r) => r.revenue, (r) => r.employees, "")?.value ?? null,
   };
 
   return {
     industries,
     reference,
     index: revenueIndexSeries(companies),
+    indexes: { totalAssets: indexSeries(companies, (r) => r.totalAssets), employees: indexSeries(companies, (r) => r.employees) },
+    sizeBands: sizeBandsOf(companies),
+    standards: standardsOf(companies),
     flows: [...counts.values()].sort((a, b) => b.ties - a.ties),
     totals: {
       companies: industries.reduce((acc, i) => acc + i.companies, 0),
       revenue: industries.reduce((acc, i) => acc + i.revenue.total, 0),
       netIncome: industries.reduce((acc, i) => acc + i.netIncome.total, 0),
       employees: industries.reduce((acc, i) => acc + i.employees.total, 0),
+      totalAssets: industries.reduce((acc, i) => acc + i.totalAssets.total, 0),
+      lossMaking: industries.reduce((acc, i) => acc + i.lossMaking.companies, 0),
+      withNetIncome: industries.reduce((acc, i) => acc + i.lossMaking.of, 0),
     },
   };
 }
@@ -236,9 +358,14 @@ export function buildIndustryFigures(companies: Company[]): IndustryFiguresData 
 export type IndexSeries = { id: IndustryId | "all"; name: string; companies: number; labels: string[]; values: number[] };
 
 export function revenueIndexSeries(companies: Company[]): { all: IndexSeries; industries: IndexSeries[] } {
+  return indexSeries(companies, (r) => r.revenue);
+}
+
+/** The five-year index of any printed line, built the same way as the revenue index (JCE-042, JCE-047). */
+export function indexSeries(companies: Company[], pick: (r: FinancialRecord) => number | null): { all: IndexSeries; industries: IndexSeries[] } {
   const complete = companies
     .map((c) => ({ c, records: byPeriod(c.financials) }))
-    .filter(({ records }) => records.length >= 5 && records.slice(-5).every((r) => r.revenue !== null && r.revenue > 0))
+    .filter(({ records }) => records.length >= 5 && records.slice(-5).every((r) => { const v = pick(r); return v != null && v > 0; }))
     .map(({ c, records }) => ({ c, records: records.slice(-5) }));
 
   const build = (id: IndexSeries["id"], name: string, members: typeof complete): IndexSeries => {
@@ -246,7 +373,7 @@ export function revenueIndexSeries(companies: Company[]): { all: IndexSeries; in
     const years: Map<string, number>[] = [new Map(), new Map(), new Map(), new Map(), new Map()];
     for (const { records } of members) {
       records.forEach((r, k) => {
-        sums[k] += r.revenue!;
+        sums[k] += pick(r)!;
         const y = r.periodEnd.slice(0, 4);
         years[k].set(y, (years[k].get(y) ?? 0) + 1);
       });

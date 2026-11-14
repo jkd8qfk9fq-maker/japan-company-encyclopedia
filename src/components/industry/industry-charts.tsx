@@ -46,26 +46,27 @@ export function Donut({
   title: string;
   format: (value: number) => string;
   centre: { value: string; label: string };
-  /** Where a part leads: an industry's figures on the hub, a company's page on an industry page. その他 leads nowhere. */
-  hrefOf: (id: string) => string;
+  /** Where a part leads: an industry's figures on the hub, a company's page on an industry page. その他 leads nowhere,
+   * and so does every part when this is left out (a company's own businesses and regions). */
+  hrefOf?: (id: string) => string | null;
 }) {
   const R = 64;
   const W = 28;
   // Each part is a filled ring sector, not a dashed stroke: browsers hit-test a dashed stroke as if it
   // were solid, so with dashes the last circle drawn caught every tap and no part could be opened.
   const starts = parts.map((_, i) => parts.slice(0, i).reduce((acc, q) => acc + q.share, 0));
-  const arcs = parts.map((p, i) => ({ ...p, ink: inkOf(i, parts.length, p.id), path: sector(starts[i], starts[i] + p.share, R, W), mid: starts[i] + p.share / 2 }));
+  const arcs = parts.map((p, i) => ({ ...p, ink: inkOf(i, parts.length, p.id), path: sector(starts[i], starts[i] + p.share, R, W), mid: starts[i] + p.share / 2, href: p.id === "other" || !hrefOf ? null : hrefOf(p.id) }));
   const label = `${title}。${parts.map((p) => `${p.name} ${percent(p.share)}`).join("、")}`;
   return (
     <figure className="m-0 grid items-center gap-6 sm:grid-cols-[11rem_1fr]">
       <svg viewBox="0 0 180 180" role="img" aria-label={label} className="mx-auto h-auto w-44">
         <g transform="translate(90 90)">
           {arcs.map((a) =>
-            a.id === "other" ? (
+            a.href === null ? (
               <path key={a.id} d={a.path} fill={a.ink} />
             ) : (
               // Each part can be tapped, not only its name in the list beside the ring.
-              <a key={a.id} href={hrefOf(a.id)} aria-label={`${a.name} ${percent(a.share)}`}>
+              <a key={a.id} href={a.href} aria-label={`${a.name} ${percent(a.share)}`}>
                 <path d={a.path} fill={a.ink} className="cursor-pointer transition-opacity hover:opacity-80" />
               </a>
             ),
@@ -97,7 +98,7 @@ export function Donut({
           {arcs.map((a) => (
             <li key={a.id} className="grid grid-cols-[0.75rem_1fr_auto_3.5em] items-center gap-2 py-0.5">
               <span className="inline-block size-3 rounded-sm" style={{ background: a.ink }} aria-hidden />
-              <span className="truncate">{a.id === "other" ? a.name : <Link href={hrefOf(a.id)} className="hover:underline">{a.name}</Link>}</span>
+              <span className="truncate">{a.href === null ? a.name : <Link href={a.href} className="hover:underline">{a.name}</Link>}</span>
               <span className="figures text-muted-foreground">{format(a.value)}</span>
               <span className="figures text-right text-muted-foreground">{percent(a.share)}</span>
             </li>
@@ -230,4 +231,65 @@ function sector(from: number, to: number, r: number, width: number): string {
   const at = (radius: number, angle: number) => `${(Math.sin(angle) * radius).toFixed(2)} ${(-Math.cos(angle) * radius).toFixed(2)}`;
   const large = a1 - a0 > Math.PI ? 1 : 0;
   return `M${at(outer, a0)}A${outer} ${outer} 0 ${large} 1 ${at(outer, a1)}L${at(inner, a1)}A${inner} ${inner} 0 ${large} 0 ${at(inner, a0)}Z`;
+}
+
+/**
+ * Several five-point indexes on one axis (JCE-047): each line labelled at its right end with its name and latest
+ * value, told apart by weight and dash rather than colour, so it reads in print and for colour-blind readers.
+ * Every series is 100 at its oldest year; lines whose rosters differ say so in the caption, not here.
+ */
+export function MultiIndexChart({ lines, width = 560, height = 220 }: { lines: { series: IndexSeries; name: string; style: "strong" | "medium" | "dashed" | "faint" }[]; width?: number; height?: number }) {
+  const drawn = lines.filter((l) => l.series.values.length === 5);
+  if (drawn.length === 0) return null;
+  const all = drawn.flatMap((l) => l.series.values);
+  const lo = Math.min(100, ...all) - 3;
+  const hi = Math.max(100, ...all) + 3;
+  const pad = { l: 34, r: 150, t: 12, b: 24 };
+  const x = (i: number) => pad.l + (i / 4) * (width - pad.l - pad.r);
+  const y = (v: number) => pad.t + (1 - (v - lo) / (hi - lo)) * (height - pad.t - pad.b);
+  const path = (vals: number[]) => vals.map((v, i) => `${i === 0 ? "M" : "L"}${x(i).toFixed(1)} ${y(v).toFixed(1)}`).join(" ");
+  const STYLE = {
+    strong: { width: 2.5, dash: undefined, opacity: 1 },
+    medium: { width: 2, dash: "6 4", opacity: 0.85 },
+    dashed: { width: 2, dash: "2 4", opacity: 0.85 },
+    faint: { width: 2, dash: undefined, opacity: 0.3 },
+  } as const;
+  // Right-end labels are nudged apart so two lines ending close together stay readable.
+  const ends = drawn.map((l) => ({ l, y: y(l.series.values.at(-1)!) })).sort((a, b) => a.y - b.y);
+  for (let i = 1; i < ends.length; i++) if (ends[i].y - ends[i - 1].y < 14) ends[i].y = ends[i - 1].y + 14;
+  const labels = drawn[0].series.labels;
+  const ticks = [lo + 3, 100, hi - 3].filter((v, i, a) => a.indexOf(v) === i && (v === 100 || Math.abs(v - 100) > 8));
+  const aria = drawn.map((l) => `${l.name} ${l.series.values.map((v) => v.toFixed(0)).join("→")}`).join("。");
+  return (
+    <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`5期の指数（5期前＝100）。${aria}`} className="h-auto w-full">
+      {ticks.map((t) => (
+        <g key={t}>
+          <line x1={pad.l} x2={width - pad.r} y1={y(t)} y2={y(t)} stroke="currentColor" strokeOpacity={t === 100 ? 0.3 : 0.1} strokeWidth={1} />
+          <text x={pad.l - 6} y={y(t)} textAnchor="end" dominantBaseline="central" fontSize={10} fill="currentColor" opacity={0.6} className="figures">
+            {t.toFixed(0)}
+          </text>
+        </g>
+      ))}
+      {drawn.map((l) => {
+        const s = STYLE[l.style];
+        return <path key={l.name} d={path(l.series.values)} fill="none" stroke="currentColor" strokeOpacity={s.opacity} strokeWidth={s.width} strokeDasharray={s.dash} strokeLinejoin="round" strokeLinecap="round" />;
+      })}
+      {ends.map(({ l, y: ly }) => (
+        <text key={l.name} x={width - pad.r + 8} y={ly} dominantBaseline="central" fontSize={11} fill="currentColor" opacity={STYLE[l.style].opacity < 0.5 ? 0.6 : 1} className="figures">
+          <tspan fontWeight={600}>{l.series.values.at(-1)!.toFixed(0)}</tspan> {l.name}
+        </text>
+      ))}
+      {labels.map((label, i) => (
+        <text key={i} x={x(i)} y={height - 6} textAnchor="middle" fontSize={10} fill="currentColor" opacity={0.6} className="figures">
+          {label}
+        </text>
+      ))}
+    </svg>
+  );
+}
+
+/** A count of companies as donut parts (size bands, accounting standards), in the order given, not by size. */
+export function countParts(parts: { id: string; name: string; companies: number }[]) {
+  const total = parts.reduce((acc, p) => acc + p.companies, 0);
+  return parts.filter((p) => p.companies > 0).map((p) => ({ id: p.id, name: p.name, value: p.companies, share: total > 0 ? p.companies / total : 0 }));
 }

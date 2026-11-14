@@ -37,7 +37,28 @@ describe("buildIndustryFigures", () => {
     expect(auto.ranking.map((r) => r.id)).toEqual(["a", "b"]);
     expect(auto.ranking[0]).toMatchObject({ revenue: 200, netProfitMargin: 0.1, revenueGrowth5y: 2 });
     expect(auto.overseasSalesRatio).toBeNull();
-    expect(data.totals).toEqual({ companies: 3, revenue: 300, netIncome: 20, employees: 0 });
+    expect(data.totals).toEqual({ companies: 3, revenue: 300, netIncome: 20, employees: 0, totalAssets: 0, lossMaking: 0, withNetIncome: 1 });
+  });
+
+  it("adds balance-sheet and headcount ratios only over companies that print both lines (JCE-047)", () => {
+    const withSheet = (id: string, revenue: number, netIncome: number, totalAssets: number | null, netAssets: number | null, employees: number | null) =>
+      company(id, "machinery", years([revenue], [netIncome]).map((r) => ({ ...r, totalAssets, netAssets, employees, accountingStandard: "jgaap" as const })) as unknown as ReturnType<typeof years>);
+    const data = buildIndustryFigures([
+      withSheet("a", 2e12, 100, 1000, 400, 1000),
+      withSheet("b", 5e10, -10, 1000, 200, null),
+      withSheet("c", 1e9, 5, null, 50, 10),
+    ]);
+    const m = data.industries[0];
+    // c prints no 総資産, so its 純資産 is left out of the ratio: (400 + 200) ÷ (1000 + 1000).
+    expect(m.equityRatio?.value).toBeCloseTo(0.3);
+    expect(m.equityRatio?.companies).toBe(2);
+    // b prints no 従業員数: (2e12 + 1e9) ÷ (1000 + 10).
+    expect(m.revenuePerEmployee?.value).toBeCloseTo((2e12 + 1e9) / 1010);
+    expect(m.lossMaking).toEqual({ companies: 1, of: 3 });
+    expect(m.sizeBands.map((b) => [b.id, b.companies])).toEqual([["1-cho", 1], ["100-oku", 1], ["under-100-oku", 1]]);
+    expect(m.standards).toEqual([{ id: "jgaap", name: "日本基準", companies: 3 }]);
+    expect(m.rankingByAssets.map((r) => r.id)).toEqual(["a", "b"]);
+    expect(m.revenueMedian).toBe(5e10);
   });
 
   it("takes the overseas ratio only from a filing with exactly one domestic region", () => {

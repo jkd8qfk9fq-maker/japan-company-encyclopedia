@@ -791,3 +791,25 @@ companies ("企業を調べる必要がなくても、次々と日本企業を�
 - **Photographs**: the industry's photograph (JCE-031), never the company's own.
 - Not built yet: a quiz, a daily quiz. They need questions whose answers are the entry's own data, designed so that a
   wrong option is never a false statement about a real company.
+
+### JCE-047 · 2026-11-14 · Accepted (operator) — 財務の詳細化と業界の数字の拡充
+
+The operator asked for the analysis tools to be extended: the company's financial section more detailed and easier to
+use, and more figures, index charts and pie charts in 業界の数字.
+
+- **Company page (free)**: the latest year's printed lines first, each with its 前期比 (`src/lib/financial-summary.ts`,
+  計算値, 最新期 ÷ 前期 − 1). 前期比 is left out across a change of accounting standard, across a change of revenue
+  scope (for 売上 and 純利益), and over a base of zero or below — a percentage over a loss says nothing. The five-year
+  charts become tabs (売上と純利益 / the filing's profit line / 総資産と純資産 / 従業員数), each tab only where the
+  filings print that line. 売上の内訳: the printed セグメント and 地域 amounts as donuts. The table gains 前期比 under
+  each value and a CSV of the printed figures in yen (a `data:` link made with the page; no script, no request).
+- **業界の数字**: sums of 総資産; Σ純資産 ÷ Σ総資産 (自己資本比率) and Σ売上高 ÷ Σ従業員数 over companies printing both;
+  the count of companies whose latest 純利益 is below zero; the median of revenue and of 平均年間給与 (提出会社, as
+  printed); companies by revenue band and by accounting standard; Japan against the rest of the world from 地域ごとの
+  情報. Five-year indexes of 総資産 and 従業員数 are built like the revenue index (JCE-042): each over the companies whose
+  five years of that line are complete. The hub adds the donuts of 純利益 (industries whose sum is positive only — a
+  negative part cannot be drawn in a ring, and the page says so) and 総資産 by industry, and the index small multiples
+  switch between the three lines; an industry page draws its three indexes on one chart against the all-industry
+  revenue, and its size ranking switches between 売上高, 従業員数 and 総資産.
+- All of it is arithmetic on printed figures with its formula beside it, as JCE-038/041/044. No market measure; the
+  ▲▼ marks are direction against a reference, never a judgement.

@@ -5,8 +5,9 @@ const W = 560;
 const H = 260;
 const PLOT = { left: 12, right: 548, top: 28, bottom: 222 };
 
-/** One unit per chart, so every label in it reads the same way: 億円 from 10億円 up, else 百万円. */
-function unitFor(values: number[]) {
+/** One unit per chart, so every label in it reads the same way: 億円 from 10億円 up, else 百万円; people as people. */
+function unitFor(values: number[], people: boolean) {
+  if (people) return { divisor: 1, name: "人" };
   const max = Math.max(0, ...values.map(Math.abs));
   return max >= 1e9 ? { divisor: 1e8, name: "億円" } : { divisor: 1e6, name: "百万円" };
 }
@@ -33,6 +34,7 @@ export function FinancialBars({
   latestFill,
   fill,
   breakOnBasis,
+  people = false,
 }: {
   records: FinancialRecord[];
   pick: (r: FinancialRecord) => number | null;
@@ -40,12 +42,14 @@ export function FinancialBars({
   latestFill: string;
   fill: string;
   breakOnBasis: boolean;
+  /** A headcount, drawn in people rather than yen. */
+  people?: boolean;
 }) {
   const values = records.map(pick);
   const present = values.filter((v): v is number => v !== null);
   if (present.length === 0) return null;
 
-  const unit = unitFor(present);
+  const unit = unitFor(present, people);
   const show = (v: number) => {
     const n = v / unit.divisor;
     const text = Math.abs(n).toLocaleString("ja-JP", { maximumFractionDigits: 0 });

@@ -18,6 +18,8 @@ import { CompanySection } from "./company-section";
 import { ConnectionMap, placeConnections } from "./connection-map";
 import { ConnectionNetwork } from "./connection-network";
 import { FinancialSection } from "./financial-section";
+import { FinancialSummaryRow } from "./financial-summary";
+import { financialSummary } from "@/lib/financial-summary";
 import { FinancialDeepDiveBlock } from "./financial-deep-dive";
 import { IndustryComparisonBlock } from "./industry-comparison";
 import { InterimSection } from "./interim-section";
@@ -58,6 +60,8 @@ export async function CompanyView({ company }: { company: Company }) {
   const hasConnections = relations.length > 0 || inbound.length > 0;
   const chain = buildValueChain(company);
   const metrics = companyMetrics(company);
+  // The latest year first: the reader's first question in 財務 is "how big, and which way" (JCE-047).
+  const summary = financialSummary(company.financials);
   // 業界比較 (JCE-043): the company among the released companies of its industry, computed at build time.
   const released = await companyRepository.list();
   const comparison = industryComparison(company, released);
@@ -172,8 +176,9 @@ export async function CompanyView({ company }: { company: Company }) {
         id="financials"
         eyebrow="Financials"
         title="売上と利益の推移"
-        lead="規模の違う2つの数字を同じ目盛りに載せると利益が見えなくなるため、別々のグラフにしています。"
+        lead="最新期の数字と前期比、5期のグラフ（数字を選んで切り替え）、売上の内訳の順に並べています。規模の違う数字は同じ目盛りに載せず、別々のグラフにしています。"
       >
+        {summary && <FinancialSummaryRow summary={summary} />}
         {metrics && <CompanyMetrics metrics={metrics} sources={company.sources} />}
         {comparison && (
           <div className="mb-12">
@@ -187,7 +192,7 @@ export async function CompanyView({ company }: { company: Company }) {
             </PremiumGate>
           </div>
         )}
-        <FinancialSection companyName={company.name} records={company.financials} sources={company.sources} />
+        <FinancialSection company={company} />
       </CompanySection>
 
       {company.history.length > 0 && (

@@ -1,8 +1,26 @@
+import { Donut, partsOf } from "@/components/industry/industry-charts";
 import { SourceList } from "@/components/sources/source-list";
-import { formatMillionYen } from "@/lib/utils/format";
-import type { AccountingStandard, FinancialRecord } from "@/types/company";
-import type { Source } from "@/types/source";
+import { changeBetween, financialCsv } from "@/lib/financial-summary";
+import { formatMillionYen, formatYen } from "@/lib/utils/format";
+import type { AccountingStandard, Business, Company, FinancialRecord } from "@/types/company";
+import { ChartTabs } from "./chart-tabs";
 import { FinancialBars } from "./financial-bars";
+
+/** 前期比 of one table cell, only between comparable years (same standard; revenue and net income in the same scope). */
+function ChangeNote({ records, index, pick, scoped }: { records: FinancialRecord[]; index: number; pick: (r: FinancialRecord) => number | null; scoped: boolean }) {
+  if (index === 0) return null;
+  const r = records[index];
+  const prev = records[index - 1];
+  if (r.accountingStandard !== prev.accountingStandard || (scoped && r.revenueBasis !== prev.revenueBasis)) return null;
+  const change = changeBetween(pick(r), pick(prev));
+  if (change === null) return null;
+  return (
+    <span className="block text-[0.6875rem] text-muted-foreground">
+      {change >= 0 ? "▲" : "▼"}
+      {Math.abs(change * 100).toFixed(1)}%
+    </span>
+  );
+}
 
 function spanLabel(records: FinancialRecord[]): string {
   return records.length === 1 ? records[0].fiscalYear : `${records[0].fiscalYear}〜${records.at(-1)!.fiscalYear}`;
@@ -20,15 +38,51 @@ const STANDARD_NAME: Record<AccountingStandard, string> = {
  * that it keeps. No market data, no colour for "good" or "bad"; the computed ratios of JCE-038 sit above this
  * section in CompanyMetrics, labelled as computed.
  */
-export function FinancialSection({
-  companyName,
-  records,
-  sources,
-}: {
-  companyName: string;
-  records: FinancialRecord[];
-  sources: Source[];
-}) {
+function flatten(businesses: Business[]): Business[] {
+  return businesses.flatMap((b) => [b, ...flatten(b.children ?? [])]);
+}
+
+/**
+ * What the latest revenue is made of, as the filing prints it: by business (セグメント情報) and by region
+ * (地域ごとの情報). Each is one year's printed amounts, split as printed — the shares are computed (JCE-038).
+ */
+function Breakdown({ company }: { company: Company }) {
+  const names = new Map(flatten(company.businesses).map((b) => [b.id, b.shortName ?? b.name]));
+  const segment = company.segmentRevenue;
+  const regional = company.regionalRevenue;
+  const segmentParts = segment ? partsOf(segment.items.map((i) => ({ id: i.businessId, name: names.get(i.businessId) ?? i.businessId, value: i.amount }))) : [];
+  const regionalParts = regional ? partsOf(regional.items.map((i, k) => ({ id: `region-${k}`, name: i.region, value: i.amount }))) : [];
+  if (segmentParts.length < 2 && regionalParts.length < 2) return null;
+  const sourceIds = [...new Set([...(segmentParts.length > 1 ? segment!.sourceIds : []), ...(regionalParts.length > 1 ? regional!.sourceIds : [])])];
+  return (
+    <div className="mt-12">
+      <h3 className="font-serif text-lg font-semibold">売上の内訳</h3>
+      <p className="mt-1 text-sm text-muted-foreground">有価証券報告書のセグメント情報・地域ごとの情報に印字された金額。割合は計算値です。</p>
+      <div className="mt-6 grid gap-10 md:grid-cols-2">
+        {segmentParts.length > 1 && (
+          <Donut
+            title={`事業別の${segment!.label}（${segment!.fiscalYear}）`}
+            parts={segmentParts}
+            format={formatYen}
+            centre={{ value: `${segment!.items.length}`, label: "事業" }}
+          />
+        )}
+        {regionalParts.length > 1 && (
+          <Donut
+            title={`地域別の${regional!.label}（${regional!.fiscalYear}）`}
+            parts={regionalParts}
+            format={formatYen}
+            centre={{ value: `${regional!.items.length}`, label: "地域" }}
+          />
+        )}
+      </div>
+      <SourceList sources={company.sources} sourceIds={sourceIds} className="mt-4" />
+    </div>
+  );
+}
+
+export function FinancialSection({ company }: { company: Company }) {
+  const { name: companyName, financials: records, sources } = company;
   if (records.length === 0) {
     return (
       <p className="prose-ja text-muted-foreground">
@@ -68,17 +122,14 @@ export function FinancialSection({
     return runs;
   }, []).map((run) => ({ basis: run.basis, years: run.first === run.last ? run.first : `${run.first}〜${run.last}` }));
 
-  return (
-    <div>
-      <div className="grid gap-10 md:grid-cols-2">
-        <FinancialBars
-          records={sorted}
-          pick={(r) => r.revenue}
-          title={revenueLabels.length === 1 ? revenueLabels[0] : "売上"}
-          fill="var(--chart-revenue)"
-          latestFill="var(--chart-net-income)"
-          breakOnBasis
-        />
+  const pair = (a: React.ReactNode, b: React.ReactNode) => <div className="grid gap-10 md:grid-cols-2">{a}{b}</div>;
+  // Only the charts the filings can fill: a bank prints no 営業利益, and an empty tab would read as missing data.
+  const charts = [
+    {
+      id: "revenue",
+      label: "売上と純利益",
+      panel: pair(
+        <FinancialBars records={sorted} pick={(r) => r.revenue} title={revenueLabels.length === 1 ? revenueLabels[0] : "売上"} fill="var(--chart-revenue)" latestFill="var(--chart-net-income)" breakOnBasis />,
         <FinancialBars
           records={sorted}
           pick={(r) => r.netIncome}
@@ -86,11 +137,46 @@ export function FinancialSection({
           fill="color-mix(in oklab, var(--chart-net-income) 45%, var(--background))"
           latestFill="var(--chart-net-income)"
           breakOnBasis={false}
-        />
-      </div>
+        />,
+      ),
+    },
+    hasProfit && {
+      id: "profit",
+      label: profitLabels.length === 1 ? profitLabels[0] : "利益",
+      panel: (
+        <div className="max-w-2xl">
+          <FinancialBars records={sorted} pick={(r) => r.profit} title={profitLabels.length === 1 ? profitLabels[0] : "利益"} fill="color-mix(in oklab, var(--chart-net-income) 45%, var(--background))" latestFill="var(--chart-net-income)" breakOnBasis={false} />
+        </div>
+      ),
+    },
+    (hasTotalAssets || hasNetAssets) && {
+      id: "assets",
+      label: "総資産と純資産",
+      panel: pair(
+        hasTotalAssets && <FinancialBars records={sorted} pick={(r) => r.totalAssets} title={totalAssetsLabels.length === 1 ? totalAssetsLabels[0] : "総資産"} fill="var(--chart-revenue)" latestFill="var(--chart-net-income)" breakOnBasis={false} />,
+        hasNetAssets && <FinancialBars records={sorted} pick={(r) => r.netAssets} title={netAssetsLabels.length === 1 ? netAssetsLabels[0] : "純資産"} fill="color-mix(in oklab, var(--chart-net-income) 45%, var(--background))" latestFill="var(--chart-net-income)" breakOnBasis={false} />,
+      ),
+    },
+    hasEmployees && {
+      id: "employees",
+      label: "従業員数",
+      panel: (
+        <div className="max-w-2xl">
+          <FinancialBars records={sorted} pick={(r) => r.employees} title="従業員数（連結）" fill="var(--chart-revenue)" latestFill="var(--chart-net-income)" breakOnBasis={false} people />
+        </div>
+      ),
+    },
+  ].filter((c): c is { id: string; label: string; panel: React.ReactElement } => Boolean(c));
+  const csv = financialCsv(companyName, sorted);
+
+  return (
+    <div>
+      <ChartTabs tabs={charts.map((c) => ({ id: c.id, label: c.label }))}>{charts.map((c) => c.panel)}</ChartTabs>
       <p className="figures mt-4 text-xs text-muted-foreground">
-        {spanLabel(sorted)}・連結。2つのグラフは目盛りが別です（数値はそれぞれの棒に表示）。
+        {spanLabel(sorted)}・連結。グラフは数字ごとに目盛りが別です（数値はそれぞれの棒に表示）。
       </p>
+
+      <Breakdown company={company} />
 
       <div className="mt-8 max-w-3xl space-y-2 text-xs leading-6 text-muted-foreground">
         {standards.length === 1 ? (
@@ -134,6 +220,17 @@ export function FinancialSection({
           <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
           数値を表で見る
         </summary>
+        <p className="mt-1 text-xs text-muted-foreground">
+          {/* A data: link, so the file is made on the server with the page and the download needs no script or request. */}
+          <a
+            href={`data:text/csv;charset=utf-8,${encodeURIComponent(csv)}`}
+            download={`${company.id}-financials.csv`}
+            className="inline-flex min-h-9 items-center rounded-full border border-border px-3 text-foreground hover:border-foreground"
+          >
+            CSVでダウンロード
+          </a>
+          <span className="ml-2">円単位・印字どおりの値。各値の下は前期比（計算値）。</span>
+        </p>
         <div className="mt-3 overflow-x-auto">
           <table className="figures w-full min-w-[46rem] border-collapse text-sm">
             <caption className="pb-2 text-left text-xs text-muted-foreground">
@@ -152,33 +249,39 @@ export function FinancialSection({
               </tr>
             </thead>
             <tbody>
-              {sorted.map((r) => (
+              {sorted.map((r, i) => (
                 <tr key={r.periodEnd} className="border-b border-border">
                   <th scope="row" className="py-2.5 pr-4 text-left font-normal">{r.fiscalYear}</th>
                   <td className="py-2.5 pr-4 text-right">
                     {r.revenue === null ? "確認できず" : formatMillionYen(r.revenue)}
+                    <ChangeNote records={sorted} index={i} pick={(x) => x.revenue} scoped />
                   </td>
                   {hasProfit && (
                     <td className="py-2.5 pr-4 text-right">
                       {r.profit === null ? "—" : formatMillionYen(r.profit)}
+                      <ChangeNote records={sorted} index={i} pick={(x) => x.profit} scoped={false} />
                     </td>
                   )}
                   <td className="py-2.5 pr-4 text-right">
                     {r.netIncome === null ? "確認できず" : formatMillionYen(r.netIncome)}
+                    <ChangeNote records={sorted} index={i} pick={(x) => x.netIncome} scoped />
                   </td>
                   {hasTotalAssets && (
                     <td className="py-2.5 pr-4 text-right">
                       {r.totalAssets === null ? "—" : formatMillionYen(r.totalAssets)}
+                      <ChangeNote records={sorted} index={i} pick={(x) => x.totalAssets} scoped={false} />
                     </td>
                   )}
                   {hasNetAssets && (
                     <td className="py-2.5 pr-4 text-right">
                       {r.netAssets === null ? "—" : formatMillionYen(r.netAssets)}
+                      <ChangeNote records={sorted} index={i} pick={(x) => x.netAssets} scoped={false} />
                     </td>
                   )}
                   {hasEmployees && (
                     <td className="py-2.5 pr-4 text-right">
                       {r.employees === null ? "—" : r.employees.toLocaleString("ja-JP")}
+                      <ChangeNote records={sorted} index={i} pick={(x) => x.employees} scoped={false} />
                     </td>
                   )}
                   <td className="py-2.5 text-xs">{STANDARD_NAME[r.accountingStandard]}</td>
