@@ -70,3 +70,7 @@ pipeline/reserved.tsv
 
 # wrangler dev / deploy local state
 .wrangler/
+
+# The EDINET download cache (RESEARCH_CACHE in the workflow). Downloads, never content: the propose job refuses any
+# untracked path outside the data it may write, and this folder must not count as one.
+/.cache/

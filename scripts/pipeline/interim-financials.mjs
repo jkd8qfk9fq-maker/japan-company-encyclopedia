@@ -161,6 +161,9 @@ export function newestHalfYearReports(dir = indexDir(), onlyAfter = "") {
   return best;
 }
 
+/** `--all`: the published companies. `loadEntries` (jobs.mjs) gives each entry's status as `tier`. */
+export const allTargets = (/** @type {{ id: string, tier: string }[]} */ entries) => entries.filter((e) => e.tier === "published").map((e) => e.id);
+
 /** The newest half the entry already holds ("" if none). */
 export const latestHalf = (/** @type {any} */ entry) => (entry.interimFinancials ?? []).reduce((/** @type {string} */ m, /** @type {any} */ r) => (r.periodEnd > m ? r.periodEnd : m), "");
 
@@ -268,7 +271,7 @@ if (process.argv[1]?.endsWith("interim-financials.mjs")) {
   const value = (name) => (args.includes(`--${name}`) ? args[args.indexOf(`--${name}`) + 1] : undefined);
   const skip = new Set(["--limit", "--report"].map((f) => args.indexOf(f) + 1).filter((i) => i > 0));
   let ids = args.filter((a, i) => !a.startsWith("--") && !skip.has(i));
-  if (flag("all")) ids = loadEntries().filter((e) => e.status?.state === "published").map((e) => e.id);
+  if (flag("all")) ids = allTargets(loadEntries());
   if (value("limit")) ids = ids.slice(0, Number(value("limit")));
   if (ids.length === 0) {
     console.error("usage: node scripts/pipeline/interim-financials.mjs <company-id …> | --all [--limit N] [--apply] [--report f.json]");

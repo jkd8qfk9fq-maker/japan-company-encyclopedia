@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { extractInterim, latestHalf, planInterim, sourceFor } from "../scripts/pipeline/interim-financials.mjs";
+import { allTargets, extractInterim, latestHalf, planInterim, sourceFor } from "../scripts/pipeline/interim-financials.mjs";
+import { loadEntries } from "../scripts/pipeline/jobs.mjs";
 import type { InterimRecord } from "../src/types/company";
 
 type Extracted = { current: InterimRecord; prior: InterimRecord | null; docID: string };
@@ -94,5 +95,13 @@ describe("planInterim", () => {
   it("knows the newest half an entry holds", () => {
     expect(latestHalf({})).toBe("");
     expect(latestHalf({ interimFinancials: [x.prior, x.current] })).toBe("2025-09-30");
+  });
+});
+
+describe("allTargets", () => {
+  it("takes the published companies from the entries as loadEntries gives them", () => {
+    expect(allTargets([{ id: "a", tier: "published" }, { id: "b", tier: "figures-only" }])).toEqual(["a"]);
+    // Against the real data: --all must find companies, not an empty list (the bug of 2026-11-14).
+    expect(allTargets(loadEntries()).length).toBeGreaterThan(500);
   });
 });
