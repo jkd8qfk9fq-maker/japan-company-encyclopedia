@@ -208,17 +208,23 @@ export function planInterim(entry, extracted, filing, source) {
   return { next, added, replaced, sources };
 }
 
-export function sourceFor(filing, today) {
-  const half = filing.periodEnd ? `${filing.periodEnd.slice(0, 4)}年${Number(filing.periodEnd.slice(5, 7))}月` : filing.submitted.slice(0, 4);
+/**
+ * The filing as a source, named after the half it covers. `halfEnd` is the half's own end as the filing's XBRL
+ * states it: the day index's periodEnd is the fiscal year end for some filers and the half's end for others
+ * (2026-11-14: hanki-202703 beside hanki-202609 for halves that both end in September), so it is not used for the name.
+ */
+export function sourceFor(filing, today, halfEnd = filing.periodEnd) {
+  const end = halfEnd || filing.submitted;
+  const half = `${end.slice(0, 4)}年${Number(end.slice(5, 7))}月`;
   return {
-    id: `hanki-${(filing.periodEnd || filing.submitted).slice(0, 7).replace("-", "")}`,
+    id: `hanki-${end.slice(0, 7).replace("-", "")}`,
     title: `半期報告書（${half}中間期）${filing.docTypeCode === "170" ? "（訂正）" : ""}`,
     publisher: "EDINET（金融庁）",
     url: `https://disclosure2.edinet-fsa.go.jp/WZEK0040.aspx?S100=${filing.docID}`,
     publishedAt: filing.submitted,
     accessedAt: today,
     docId: filing.docID,
-    ...(filing.periodEnd ? { asOf: filing.periodEnd } : {}),
+    ...(halfEnd ? { asOf: halfEnd } : {}),
   };
 }
 
@@ -236,17 +242,19 @@ export async function refreshInterim(id, { apply, newest, today, root = process.
   const filing = newest.get(entry.code);
   if (!filing) return { ...base, result: "none", detail: "半期報告書が索引にない" };
   if (filing.periodEnd && filing.periodEnd <= latestHalf(entry) && filing.docTypeCode !== "170") return { ...base, result: "current", detail: `${latestHalf(entry)} まで登録済み` };
-  const source = sourceFor(filing, today);
   let extracted;
   let rows = [];
   try {
     const zip = await downloadDocument(filing.docID, 5);
     rows = readCsvRows(zip);
-    extracted = extractInterim(rows, { docID: filing.docID, sourceId: source.id });
+    extracted = extractInterim(rows, { docID: filing.docID, sourceId: "pending" });
   } catch (error) {
     return { ...base, result: "failed", detail: `読み取れない: ${String(error?.message ?? error).slice(0, 200)}` };
   }
   if (!extracted) return { ...base, result: "failed", detail: `半期の売上高の行が見つからない（docID ${filing.docID}。主要な経営指標の要素@文脈: ${summaryContexts(rows).join(", ") || "なし"}）` };
+  // The source is named after the half the filing itself states, then cited by both halves read from it.
+  const source = sourceFor(filing, today, extracted.current.periodEnd);
+  for (const half of [extracted.current, extracted.prior]) if (half) half.sourceIds = [source.id];
   const plan = planInterim(entry, extracted, filing, source);
   if (plan.added.length + plan.replaced.length === 0) return { ...base, result: "current", detail: "新しい半期はない" };
   const halves = plan.added.map((h) => `${h.fiscalYear} ${h.period}`).join("・");

@@ -105,6 +105,11 @@ describe("planInterim", () => {
     expect(plan2.next.every((h: InterimRecord) => h.sourceIds[0] === "hanki-202509-2")).toBe(true);
   });
 
+  it("names the source after the half's own end, not the index's period end", () => {
+    const fyEnd = { ...filing, periodEnd: "2026-03-31" };
+    expect(sourceFor(fyEnd, "2025-11-15", "2025-09-30")).toMatchObject({ id: "hanki-202509", title: "半期報告書（2025年9月中間期）", asOf: "2025-09-30" });
+  });
+
   it("knows the newest half an entry holds", () => {
     expect(latestHalf({})).toBe("");
     expect(latestHalf({ interimFinancials: [x.prior, x.current] })).toBe("2025-09-30");
