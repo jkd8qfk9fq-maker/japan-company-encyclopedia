@@ -80,12 +80,14 @@ export function IndustryFiguresOverview({ data }: { data: IndustryFiguresData })
           parts={partsOf(industries.map((i) => ({ id: i.id, name: i.name, value: i.revenue.total })))}
           format={formatYen}
           centre={{ value: formatYen(totals.revenue).replace(/円$/, ""), label: "円・合計" }}
+          hrefOf={(id) => `/industries/${id}#figures`}
         />
         <Donut
           title="従業員数の構成（業界別）"
           parts={partsOf(industries.map((i) => ({ id: i.id, name: i.name, value: i.employees.total })))}
           format={(v) => `${Math.round(v / 10000).toLocaleString("ja-JP")}万人`}
           centre={{ value: `${Math.round(totals.employees / 10000).toLocaleString("ja-JP")}万`, label: "人・合計" }}
+          hrefOf={(id) => `/industries/${id}#figures`}
         />
       </div>
 
@@ -230,7 +232,13 @@ export function IndustryFiguresBlock({ figures, reference, index, all }: { figur
 
       <div className="mt-10 grid gap-10 md:grid-cols-2">
         {parts.length > 0 && (
-          <Donut title={`${figures.name}業界の売上高の構成`} parts={parts} format={formatYen} centre={{ value: `${figures.revenue.companies}社`, label: figures.name }} />
+          <Donut
+            title={`${figures.name}業界の売上高の構成`}
+            parts={parts}
+            format={formatYen}
+            centre={{ value: `${figures.revenue.companies}社`, label: figures.name }}
+            hrefOf={(id) => `/companies/${id}`}
+          />
         )}
         {index && index.values.length === 5 && (
           <div>

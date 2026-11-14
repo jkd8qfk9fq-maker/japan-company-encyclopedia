@@ -40,28 +40,36 @@ export function Donut({
   title,
   format,
   centre,
+  hrefOf,
 }: {
   parts: ReturnType<typeof partsOf>;
   title: string;
   format: (value: number) => string;
   centre: { value: string; label: string };
+  /** Where a part leads: an industry's figures on the hub, a company's page on an industry page. その他 leads nowhere. */
+  hrefOf: (id: string) => string;
 }) {
   const R = 64;
-  const C = 2 * Math.PI * R;
-  // The arc of each part starts where the previous one ended: a running sum of the shares before it.
-  const starts = parts.map((_, i) => parts.slice(0, i).reduce((acc, q) => acc + q.share * C, 0));
-  const arcs = parts.map((p, i) => {
-    const length = p.share * C;
-    return { ...p, ink: inkOf(i, parts.length, p.id), dash: `${Math.max(0, length - 2)} ${C - Math.max(0, length - 2) + 2}`, offset: -starts[i], mid: (starts[i] + length / 2) / C };
-  });
+  const W = 28;
+  // Each part is a filled ring sector, not a dashed stroke: browsers hit-test a dashed stroke as if it
+  // were solid, so with dashes the last circle drawn caught every tap and no part could be opened.
+  const starts = parts.map((_, i) => parts.slice(0, i).reduce((acc, q) => acc + q.share, 0));
+  const arcs = parts.map((p, i) => ({ ...p, ink: inkOf(i, parts.length, p.id), path: sector(starts[i], starts[i] + p.share, R, W), mid: starts[i] + p.share / 2 }));
   const label = `${title}。${parts.map((p) => `${p.name} ${percent(p.share)}`).join("、")}`;
   return (
     <figure className="m-0 grid items-center gap-6 sm:grid-cols-[11rem_1fr]">
       <svg viewBox="0 0 180 180" role="img" aria-label={label} className="mx-auto h-auto w-44">
-        <g transform="translate(90 90) rotate(-90)">
-          {arcs.map((a) => (
-            <circle key={a.id} r={R} fill="none" stroke={a.ink} strokeWidth={28} strokeDasharray={a.dash} strokeDashoffset={a.offset} />
-          ))}
+        <g transform="translate(90 90)">
+          {arcs.map((a) =>
+            a.id === "other" ? (
+              <path key={a.id} d={a.path} fill={a.ink} />
+            ) : (
+              // Each part can be tapped, not only its name in the list beside the ring.
+              <a key={a.id} href={hrefOf(a.id)} aria-label={`${a.name} ${percent(a.share)}`}>
+                <path d={a.path} fill={a.ink} className="cursor-pointer transition-opacity hover:opacity-80" />
+              </a>
+            ),
+          )}
         </g>
         {arcs
           .filter((a) => a.share >= 0.07)
@@ -71,7 +79,7 @@ export function Donut({
             const y = 90 + Math.sin(angle) * R;
             const dark = STEPS.indexOf(a.ink) < 3;
             return (
-              <text key={a.id} x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize={10} fontWeight={600} fill={dark ? "#fff" : "#111"} className="figures">
+              <text key={a.id} x={x} y={y} textAnchor="middle" dominantBaseline="central" fontSize={10} fontWeight={600} fill={dark ? "#fff" : "#111"} className="figures" pointerEvents="none">
                 {percent(a.share, 0)}
               </text>
             );
@@ -89,7 +97,7 @@ export function Donut({
           {arcs.map((a) => (
             <li key={a.id} className="grid grid-cols-[0.75rem_1fr_auto_3.5em] items-center gap-2 py-0.5">
               <span className="inline-block size-3 rounded-sm" style={{ background: a.ink }} aria-hidden />
-              <span className="truncate">{a.id === "other" ? a.name : <Link href={`/industries/${a.id}#figures`} className="hover:underline">{a.name}</Link>}</span>
+              <span className="truncate">{a.id === "other" ? a.name : <Link href={hrefOf(a.id)} className="hover:underline">{a.name}</Link>}</span>
               <span className="figures text-muted-foreground">{format(a.value)}</span>
               <span className="figures text-right text-muted-foreground">{percent(a.share)}</span>
             </li>
@@ -206,4 +214,20 @@ export function PerformanceTable({ industries, reference }: { industries: Indust
       <p className="mt-2 text-xs text-muted-foreground">▲＝全業界の値を上回る　▼＝下回る（良し悪しの判定ではありません）。全業界の純利益率は全社の純利益の合計 ÷ 売上高の合計、5期の伸びは全社の中央値。</p>
     </div>
   );
+}
+
+/**
+ * The ring sector from share `from` to share `to` (0 = twelve o'clock, clockwise), centred on the origin,
+ * with a 2px gap of surface at its end like the ring had before.
+ */
+function sector(from: number, to: number, r: number, width: number): string {
+  const outer = r + width / 2;
+  const inner = r - width / 2;
+  const gap = (to - from) * 2 * Math.PI * r > 2 ? 2 / r : 0;
+  const a0 = from * 2 * Math.PI;
+  // A single part covering the whole ring would be a zero-length arc; stop just short of a full turn.
+  const a1 = Math.max(a0, Math.min(to * 2 * Math.PI - gap, a0 + 2 * Math.PI - 1e-4));
+  const at = (radius: number, angle: number) => `${(Math.sin(angle) * radius).toFixed(2)} ${(-Math.cos(angle) * radius).toFixed(2)}`;
+  const large = a1 - a0 > Math.PI ? 1 : 0;
+  return `M${at(outer, a0)}A${outer} ${outer} 0 ${large} 1 ${at(outer, a1)}L${at(inner, a1)}A${inner} ${inner} 0 ${large} 0 ${at(inner, a0)}Z`;
 }
