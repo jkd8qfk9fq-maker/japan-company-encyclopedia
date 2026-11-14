@@ -4,15 +4,161 @@
   "name": "明海グループ",
   "officialName": "明海グループ株式会社",
   "nameEn": "Meiji Shipping Group Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Meiji Shipping Group Co., Ltd.",
+  "description": "船舶貸渡業を柱とする外航海運を中心に、ホテル・ゴルフ場の運営と不動産賃貸を手がける神戸発祥のグループです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "ocean-shipping",
+      "name": "外航海運業",
+      "description": "船舶貸渡業を柱に、船舶管理業を加えた海運に係る事業です。2026年3月期の外部顧客への売上高は50,489百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "ship-leasing",
+          "name": "船舶貸渡業",
+          "description": "タンカー・自動車専用船およびバルカー等の不定期船を保有する船舶オーナー会社を国内外に擁し、貸船料収入を収受する事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ship-management",
+          "name": "船舶管理業",
+          "description": "船舶の運航管理業務を担う事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "hotel-related",
+      "name": "ホテル関連事業",
+      "description": "国内各所にてホテルおよびゴルフ場を所有し、それぞれのサービスを提供する事業です。2026年3月期の外部顧客への売上高は10,129百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "hotels",
+          "name": "ホテル",
+          "description": "ラグナガーデンホテル、ザ・ウィンザーホテル洞爺リゾート＆スパ、ニセコノーザンリゾート・アンヌプリ、シーサイドホテル舞子ビラ神戸、サフィールホテル稚内等のホテルを所有し、宿泊・宴会等のサービスを提供しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【主要な設備の状況】"
+        },
+        {
+          "id": "golf-courses",
+          "name": "ゴルフ場",
+          "description": "早来カントリー倶楽部等のゴルフ場を所有し、サービスを提供しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【主要な設備の状況】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸業",
+      "description": "所有ビルを事務所用物件としてテナントに賃貸する不動産貸室業を中心とする事業です。2026年3月期の外部顧客への売上高は652百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "office-leasing",
+          "name": "不動産貸室業",
+          "description": "明海ビル、明海京橋ビル、明海三宮ビル等の所有ビルを事務所用物件としてテナントに賃貸しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【主要な設備の状況】"
+        },
+        {
+          "id": "real-estate-services",
+          "name": "不動産斡旋・仲介およびビル管理",
+          "description": "持分法適用関連会社にて不動産斡旋・仲介業務や、ビルの総合運営管理を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "国内外に船舶オーナー会社を擁して貸船料収入を得る外航海運業を柱に、ホテル関連事業と不動産賃貸業を併営しています。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "タンカー・自動車専用船・バルカー等の不定期船の貸渡し",
+      "ホテル・ゴルフ場の施設とサービス",
+      "オフィスビルの賃貸"
+    ],
+    "customers": [
+      "船舶を借り受ける国内外の海運会社等",
+      "ホテル・ゴルフ場の利用客",
+      "オフィスビルのテナント"
+    ],
+    "revenueSources": [
+      "貸船料収入",
+      "ホテル・ゴルフ場の利用料収入",
+      "不動産の賃貸料収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "明海グループ",
+        "description": "兵庫県神戸市に本社を置き、連結子会社16社および関連会社15社により構成されています。2026年3月31日現在の従業員数は634名です。"
+      },
+      {
+        "kind": "offering",
+        "title": "船舶の貸渡しとホテル・不動産賃貸",
+        "description": "タンカー、自動車専用船、バルカー等の不定期船を保有して貸し渡す船舶貸渡業を柱に、船舶管理業、ホテル・ゴルフ場の運営、オフィスビルの賃貸を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "海運会社・ホテル利用客・テナント",
+        "description": "船舶は国内外の海運会社等へ貸し渡し、ホテルとゴルフ場は宿泊客や利用客に、オフィスビルはテナント企業に提供しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は61,271百万円で、前連結会計年度と比べ9.3％減少しました。内訳は外航海運業が50,489百万円、ホテル関連事業が10,129百万円、不動産賃貸業が652百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は4,314百万円でした。前連結会計年度は2,812百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 47382318000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 501,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 68433792000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 489,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 81413394000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 540,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +233,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 91214584000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 590,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +253,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 97720511000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 634,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +261,159 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1911,
+      "title": "兵庫県神戸市で創業",
+      "description": "兵庫県神戸市において創業し、外航海運業を開始しました。",
+      "significance": "現在の明海グループの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1921,
+      "title": "明海ビルを建設しビル業を併営",
+      "description": "兵庫県神戸市に明海ビルを建設し、ビル業を併営し始めました。",
+      "significance": "不動産賃貸業につながる事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京・大阪・神戸の3市場に株式を上場",
+      "description": "東京・大阪・神戸の3市場に株式を上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "海運集約に参加",
+      "description": "大阪商船三井船舶株式会社（現・株式会社商船三井）グループの専属会社として海運集約に参加しました。",
+      "significance": "戦後の海運再編のなかでの位置付けを示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "15万トン型タンカー「明扇丸」が竣工",
+      "description": "計画造船史上最大船型の15万トン型タンカー「明扇丸」が竣工しました。",
+      "significance": "大型タンカーを擁する船主への成長を示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "東明汽船株式会社を設立",
+      "description": "東明汽船株式会社（現・株式会社明治海運、現・連結子会社）を設立しました。",
+      "significance": "現在の主要な連結子会社の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "株式会社ラグナガーデンホテルを設立",
+      "description": "株式会社ラグナガーデンホテル（現・連結子会社）を設立しました。",
+      "significance": "ホテル関連事業の本格化の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "ラグナガーデンホテルが開業",
+      "description": "沖縄県宜野湾市のラグナガーデンホテルが開業しました。",
+      "significance": "ホテル運営の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "明海ビルを再建",
+      "description": "阪神大震災で被災した明海ビルを再建しました。",
+      "significance": "本社所在地のビルの復興です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "株式会社ホテルアンヌプリの株式を取得",
+      "description": "株式会社ホテルアンヌプリ（旧・株式会社ホテル日航アンヌプリ）の株式を取得しました（現・連結子会社）。",
+      "significance": "北海道ニセコのホテル事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "株式会社ザ・ウィンザー・ホテルズインターナショナルの株式を取得",
+      "description": "株式会社ザ・ウィンザー・ホテルズインターナショナルの株式を取得しました（現・連結子会社）。",
+      "significance": "ザ・ウィンザーホテル洞爺リゾート＆スパの運営基盤の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "フィリピンで船員トレーニングセンターの運営を開始",
+      "description": "フィリピンにおいて船員トレーニングセンターの運営を開始しました。",
+      "significance": "船舶管理体制の海外展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "商号を明海グループ株式会社に変更",
+      "description": "当社は明治海運株式会社から明海グループ株式会社に商号を変更しました。あわせて、連結子会社の東明汽船株式会社は株式会社明治海運に、MK CENTENNIAL MARITIME B.V.はMeiji Shipping B.V.に、MK CENTENNIAL MARITIME PTE.LTD.はMeiji Shipping Pte. Ltd.に商号を変更しました。",
+      "significance": "現在の社名の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nippon-yusen-kabushiki-kaisha",
+      "relationship": "customer",
+      "description": "外航海運業における主要な顧客です。有報の「主要な顧客ごとの情報」および相手先別の販売実績に、2026年3月期の主要な販売先として開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +421,50 @@
       "publisher": "明海グループ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGYV.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YGYV",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 重要な後発事象として、オランダ王国の連結子会社1社が、同社の期末日後に所有船舶1隻を売却したことが開示されています。本登録は2026年3月31日現在の船隊・グループ構造に基づきます。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "事業の根幹である外航海運業では、国際競争力の強化を念頭に、安全運航体制を確保し、時代のニーズに合った船隊の整備と高品質なサービスの提供を続ける方針です。海運市況動向を見極めながら、将来の市場ニーズに即した船型を順次投入し、老齢船を処分して船隊整備を推進します。ホテル関連事業と不動産賃貸業では、費用の適正化を計画的に継続し、安定した収益の確保を図ります。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1911年の創業以来の船主業の蓄積をもとに、タンカー、自動車専用船、バルカー、LNG船、LPG船、コンテナ船と多様な船種を、パナマ共和国、シンガポール、オランダ王国の海外子会社を含むグループで保有し、船舶の運航管理もグループ内で担っています。海運に加えてホテル関連事業と不動産賃貸業を併営し、事業の分散を図っている点が特徴です。",
+        "basis": "事業の内容におけるグループの事業構成と、主要な設備の状況における海外子会社ごとの保有船舶の内訳に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高61,271百万円の内訳は、外航海運業が50,489百万円、ホテル関連事業が10,129百万円、不動産賃貸業が652百万円です。売上高は日本、パナマ共和国、シンガポール、オランダ王国の4か国で計上され、オランダ王国が最も大きくなっています。主要な顧客として、SEARIVER MARITIME LLC、日本郵船株式会社、METHANE SERVICES LIMITEDの3社が開示されています。",
+        "basis": "セグメント情報における報告セグメントごとの売上高、地域ごとの情報及び主要な顧客ごとの情報に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,130 @@
   "name": "ミニストップ",
   "officialName": "ミニストップ株式会社",
   "nameEn": "MINISTOP  CO.,  LTD.",
-  "description": null,
+  "shortNameEn": "MINISTOP CO., LTD.",
+  "description": "イオンの子会社として、加盟店と直営店によるコンビニエンスストアを国内とベトナムで展開する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "domestic",
+      "name": "国内事業",
+      "description": "当社がフランチャイズチェーン方式の加盟店と直営店によるコンビニエンスストア事業を営み、連結子会社のネットワークサービス株式会社が国内のミニストップ店舗への物流業務を行う事業です。2026年2月期の外部顧客に対する営業総収入は82,347百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "domestic-convenience-store",
+          "name": "コンビニエンスストア事業（国内）",
+          "description": "当社がフランチャイズチェーン方式の加盟店と直営店でコンビニエンスストアを運営する事業です。2026年2月末時点で国内の店舗数は1,793店で、うち直営店は355店です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "domestic-logistics",
+          "name": "物流事業",
+          "description": "連結子会社のネットワークサービス株式会社が、国内のミニストップ店舗への商品配送などの物流業務を行う事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "overseas",
+      "name": "海外事業",
+      "description": "海外子会社2社がベトナムでコンビニエンスストア事業を展開する事業です。2026年2月期の外部顧客に対する営業総収入は9,441百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "vietnam-convenience-store",
+          "name": "コンビニエンスストア事業（ベトナム）",
+          "description": "連結子会社のMINISTOP VIETNAM COMPANY LIMITEDが、フランチャイズチェーン方式の加盟店と直営店でコンビニエンスストアを運営する事業です。2026年2月末時点でベトナムの店舗数は179店です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "vietnam-holding",
+          "name": "持株会社（ベトナム）",
+          "description": "連結子会社のVINH KHANH CONSULTANCY CORPORATIONが、持株会社としてMINISTOP VIETNAM COMPANY LIMITEDへの出資を通じてベトナム事業に関与する事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "フランチャイズチェーン方式の加盟店と直営店でコンビニエンスストアを運営し、店内加工のファストフードを組み合わせたコンボストアを展開する事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "コンビニエンスストア商品（おにぎり、惣菜、調理パン、菓子パンなどの日配品）",
+      "店内加工ファストフード（ソフトクリーム、ホットスナック、コールドスイーツなど）",
+      "イオングループのプライベートブランド「トップバリュ」の商品",
+      "無人コンビニ「MINISTOP POCKET」などの職域向けサービス"
+    ],
+    "customers": [
+      "フランチャイズ加盟店のオーナー",
+      "店舗を利用する一般消費者",
+      "オフィスなどの職域拠点"
+    ],
+    "revenueSources": [
+      "加盟店からのロイヤルティ等の収入と加盟店への商品の販売",
+      "直営店における物品の販売",
+      "エリアフランチャイザーから受け取るロイヤルティ収入や、商品ベンダー等の取引先から受け取る手数料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ミニストップグループ",
+        "description": "当社と連結子会社3社で構成され、国内事業と海外事業を営んでいます。2026年2月末時点の連結従業員数は1,492人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "コンビニエンスストアと店内加工ファストフード",
+        "description": "加盟店と直営店の店舗を通じて、コンビニエンスストア商品と、ソフトクリームなどの店内加工ファストフードを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "加盟店オーナーと来店客",
+        "description": "加盟店オーナーはフランチャイズ契約に基づいて店舗を運営し、来店客が店舗で商品を購入します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業総収入",
+        "description": "2026年2月期の営業総収入は91,788百万円で、前期比4.9％増となりました。加盟店からの収益と直営店での物品の販売が中心です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失",
+        "description": "2026年2月期の親会社株主に帰属する当期純損失は5,630百万円となりました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,7 +142,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 28487000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1645,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +162,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 40610000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1167,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第44期（2023年2月期）の期首から適用しており、第44期以降に係る主要な経営指標等は、当該会計基準等を適用した後の指標となっています。第43期（2022年2月期）の営業総収入は適用前の表示であり、第44期以降とは表示の基準が異なります。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -67,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 40681000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1443,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32781000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1527,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27163000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1492,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +231,328 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1980,
+      "title": "ジャスコ（現イオン）の子会社として設立",
+      "description": "1980年5月、ジャスコ株式会社（現イオン株式会社）の100％子会社として設立し、本店を東京都千代田区におきました。",
+      "significance": "当社の創業です。設立時の資本金の金額は書いていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "第1号店を開店",
+      "description": "1980年7月、第1号店の大倉山店を神奈川県横浜市に開店しました。",
+      "significance": "店舗展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "フランチャイズ事業を開始",
+      "description": "1981年6月、直営店だった新小岩店を加盟店に転換し、フランチャイズ事業を開始しました。",
+      "significance": "現在の事業モデルの起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "ネットワークサービス株式会社を設立",
+      "description": "1988年4月、物流業務の強化のため、当社の100％出資によりネットワークサービス株式会社を千葉県習志野市に設立しました。",
+      "significance": "店舗への物流を担う連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "韓国企業と技術援助契約を締結",
+      "description": "1990年6月、韓国の味元通商株式会社（韓国ミニストップ株式会社）と、コンビニエンスストア事業展開に関する技術援助契約を締結しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1993年7月、東京証券取引所市場第二部に上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "店舗数が500店となる",
+      "description": "1994年2月、店舗数が500店となりました（加盟店455店、直営店45店）。",
+      "significance": "店舗網の拡大を示す節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "東京証券取引所の市場第一部銘柄に指定",
+      "description": "1996年8月、東京証券取引所の市場第一部銘柄に指定されました。",
+      "significance": "上場市場を変更しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "店舗数が1,000店となる",
+      "description": "1998年2月、店舗数が1,000店となりました（加盟店914店、直営店86店）。",
+      "significance": "店舗網の拡大を示す節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "フィリピン企業とカントリーフランチャイズ契約を締結",
+      "description": "2000年3月、フィリピンのロビンソンズ・コンビニエンス・ストアーズ・インクとカントリーフランチャイズ契約を締結しました。",
+      "significance": "東南アジア展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "韓国ミニストップの株式を取得",
+      "description": "2003年6月、韓国での店舗展開の拡大を目的として、大象流通株式会社（韓国ミニストップ株式会社）の発行済株式総数の55.3％を大象株式会社より取得しました。",
+      "significance": "韓国事業を傘下に取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "店舗数が1,500店となる",
+      "description": "2004年2月、店舗数が1,500店となりました（加盟店1,364店、直営店136店）。",
+      "significance": "店舗網の拡大を示す節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "青島ミニストップ有限公司を設立",
+      "description": "2009年1月、青島イオン有限公司との合弁契約に基づき、中国山東省に青島ミニストップ有限公司を設立し、同年2月に同社とエリアフランチャイズ契約を締結しました。",
+      "significance": "中国進出の拠点でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "株式会社れこっずを設立",
+      "description": "2010年8月、株式会社CFSコーポレーション及びタキヤ株式会社との合弁契約に基づき、株式会社れこっずを千葉市美浜区に設立し、同年9月に同社とエリアフランチャイズ契約を締結しました。",
+      "significance": "国内のエリアフランチャイズの受け皿でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "ベトナムでエリアフランチャイズ契約を締結",
+      "description": "2011年2月、ベトナムのG7-MINISTOPサービスアンドトレーディング株式会社とエリアフランチャイズ契約を締結しました。この契約は2015年2月にMINISTOP VIETNAM COMPANY LIMITEDへ契約上の地位が承継されました。",
+      "significance": "現在のベトナム事業につながる契約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "店舗数が2,000店となる",
+      "description": "2011年10月、店舗数が2,000店となりました（加盟店1,899店、直営店101店）。",
+      "significance": "店舗網の拡大を示す節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "カザフスタンに合弁会社を設立",
+      "description": "2012年5月、カザフスタンでのコンビニエンスストア事業の展開を目的として、RTS-ミニストップ・リミテッド・ライアビリティ・パートナーシップを設立し、同年6月に同社とエリアフランチャイズ契約を締結しました。",
+      "significance": "中央アジアへの展開でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "インドネシア企業とエリアフランチャイズ契約を締結",
+      "description": "2012年8月、インドネシアのバハギア・ニアガ・レスタリ社とエリアフランチャイズ契約を締結しました。",
+      "significance": "東南アジア展開の一環でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "株式会社れこっずを完全子会社化し吸収合併",
+      "description": "2014年6月、株式交換により株式会社れこっずを完全子会社とし、同年9月に同社を吸収合併しました。",
+      "significance": "国内事業の体制を簡素化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "カザフスタンの合弁会社を除外",
+      "description": "2014年10月、保有する全出資持分の売却により、RTS-ミニストップ・リミテッド・ライアビリティ・パートナーシップを関連会社から除外しました。",
+      "significance": "カザフスタンから撤退しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "ベトナムの2社を子会社化",
+      "description": "2015年4月、VINH KHANH CONSULTANCY CORPORATIONの株式取得を実施し、MINISTOP VIETNAM COMPANY LIMITEDを子会社としました。",
+      "significance": "現在の海外事業の中核です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "本店を千葉市美浜区に移転",
+      "description": "2015年11月、本店を東京都千代田区から千葉県千葉市美浜区に移転しました。",
+      "significance": "現在の本店所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "インドネシアのエリアフランチャイズ契約を終了",
+      "description": "2016年6月、インドネシアのバハギア・ニアガ・レスタリ社とのエリアフランチャイズ契約を終了しました。",
+      "significance": "インドネシアから撤退しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "青島フレッシュ食品有限公司を連結子会社化",
+      "description": "2019年1月、青島チルディ食品有限公司（青島フレッシュ食品有限公司）の出資金を追加取得し、連結子会社としました。",
+      "significance": "中国の食品事業を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "青島フレッシュ食品有限公司を売却",
+      "description": "2021年11月、青島フレッシュ食品有限公司の全出資持分の売却により、同社を連結子会社から除外しました。",
+      "significance": "中国事業の縮小の一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "韓国ミニストップ株式会社を譲渡",
+      "description": "2022年1月、韓国ミニストップ株式会社の全株式の譲渡契約をLOTTE Corporationと締結し、同年3月に株式譲渡の手続きが完了して、同社を連結子会社から除外しました。",
+      "significance": "韓国から撤退しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "フィリピンの関連会社を除外",
+      "description": "2022年2月、ロビンソンズ・コンビニエンス・ストアーズ・インクの全保有株式の売却により、同社を関連会社から除外しました。",
+      "significance": "フィリピンから撤退しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "青島ミニストップ有限公司の清算が完了",
+      "description": "2022年4月、青島ミニストップ有限公司の清算手続きが完了しました。",
+      "significance": "中国の店舗事業から撤退しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "Newコンボストアのフラッグシップ店を開店",
+      "description": "2024年5月、ニューコンボストアのフラッグシップ店である「ミニストップ神田錦町1丁目店」を開店しました。",
+      "significance": "新フォーマット展開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "cox",
+      "relationship": "major-shareholder",
+      "description": "2026年2月28日現在、当社の発行済株式の2.36％を所有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "fuji-8278",
+      "relationship": "major-shareholder",
+      "description": "2026年2月28日現在、当社の発行済株式の1.35％を所有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +560,47 @@
       "publisher": "ミニストップ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y4UH.pdf",
       "publishedAt": "2026-05-20",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y4UH",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期的な経営戦略として、構造改革の完遂と成長戦略の推進を掲げています。国内事業では、新フォーマット「Newコンボストアモデル」の確立と既存店の転換を進め、手づくりおにぎり等の表示不正を受けた再発防止策の徹底と衛生管理体制の強化により「食の安全・安心No.1」の実現に取り組みます。成長戦略では、職域事業とベトナム事業を新たな事業の柱として育て、各加盟店の収益向上を最優先の経営目標としています。",
+        "asOf": "2026-05-20",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "店内加工のファストフードとコンビニエンスストア商品を組み合わせた「コンボストア」という店舗形態が特徴です。看板商品のソフトクリームは、2025年4月に創業以来初めて「北海道ミルクソフト」へリニューアルされ、売上を牽引したと説明されています。また、イオングループのプライベートブランド「トップバリュ」の品揃えを拡充し、価格を抑えた商品も提供しています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の、コンボストアの構成要素である「コンビニエント」と「ファストフード」の取り組み、ソフトクリームのリニューアル、トップバリュの品揃え拡充の説明に基づきます。",
+        "asOf": "2026-05-20",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは国内事業と海外事業の2つです。2026年2月期の外部顧客に対する営業総収入は、国内事業が82,347百万円、海外事業が9,441百万円で、国内事業が大半を占めます。地域ごとの営業総収入も日本が82,347百万円、ベトナムが9,441百万円です。店舗数は2026年2月末時点で国内1,793店、ベトナム179店です。営業総収入の10％以上を占める主要な顧客は存在しません。",
+        "basis": "【セグメント情報】の報告セグメントごとの外部顧客に対する営業総収入、【関連情報】の地域ごとの情報と主要な顧客ごとの情報、および【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の地域別店舗数に基づきます。",
+        "asOf": "2026-05-20",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",
