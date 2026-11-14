@@ -4,15 +4,123 @@
   "name": "オーウエル",
   "officialName": "オーウエル株式会社",
   "nameEn": "O－WELL　CORPORATION",
-  "description": null,
+  "shortNameEn": "O-WELL CORPORATION",
+  "description": "塗料・表面処理剤や化成品、塗装・計測機器を販売し塗装工事も請け負うコーティング事業と、ホールIC等の電子部品を販売する専門商社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "o-well-group",
+      "name": "オーウエルグループの事業",
+      "description": "当社と連結子会社15社、非連結子会社1社、持分法適用関連会社4社の計21社で構成され、コーティング関連事業とエレクトロニクス関連事業の2つの事業を営んでいます（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "coating",
+          "name": "コーティング関連事業",
+          "description": "塗料・表面処理剤、化成品・物資、塗装・計測機器の販売のほか、塗装ラインに関連する工事や建物の内外装リフォーム工事の請負、塗装請負、塗料の調色加工を行っています。神奈川事業所の技術センターでは塗膜形成技術の開発も行っています。2026年3月期の外部顧客への売上高は47,861百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "electronics",
+          "name": "エレクトロニクス関連事業",
+          "description": "磁気センサーであるホールICの販売を中心に、車載向けソフトウエアやLED照明製品の販売を行っています。ホールICでは専業的な代理店として、国内外の複数拠点で在庫を保有し、安定して供給できる体制を整えています。2026年3月期の外部顧客への売上高は20,407百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "塗料メーカー等の仕入先から塗料・化成品・電子部品を仕入れ、自動車メーカーをはじめとする製造業の顧客に販売し、塗装ライン工事や塗装請負まで担う事業モデルです。",
+    "products": [
+      "工業用塗料・汎用塗料などの塗料・表面処理剤",
+      "防音材・プラスチックシート・接着剤・合成樹脂製品などの化成品・物資",
+      "塗装機器・計測機器",
+      "塗装ライン関連工事、内外装リフォーム関連工事、塗装請負",
+      "ホールIC（磁気センサー）",
+      "車載向けソフトウエア",
+      "LED照明製品"
+    ],
+    "customers": [
+      "自動車メーカー、鉄鋼・建設機械メーカー等の製造業の顧客",
+      "塗装ラインの設備・工事を発注する製造業の顧客",
+      "車載向けセンサーやソフトウエアを購入するエレクトロニクス関連の顧客"
+    ],
+    "revenueSources": [
+      "塗料・表面処理剤、化成品・物資、塗装・計測機器の販売代金",
+      "塗装ライン関連工事・リフォーム工事・塗装請負の請負代金",
+      "ホールIC、ソフトウエア、LED照明製品の販売代金"
+    ],
+    "suppliers": [
+      {
+        "name": "塗料メーカー等の仕入先",
+        "description": "塗料・表面処理剤、化成品・物資、塗装・計測機器などを仕入れる仕入先です。塗料については日本特約店取引契約を結ぶ塗料メーカーから仕入れています。",
+        "businessIds": [
+          "o-well-group"
+        ]
+      },
+      {
+        "name": "半導体メーカー等の仕入先",
+        "description": "ホールICなどの電子部品やソフトウエアを仕入れる仕入先です。ホールICについては非独占的代理店・販売店契約を結ぶメーカーから仕入れています。",
+        "businessIds": [
+          "o-well-group"
+        ]
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "オーウエルとグループ会社",
+        "description": "オーウエル株式会社は大阪市西淀川区に本店を置き、連結子会社15社、非連結子会社1社、持分法適用関連会社4社とグループを構成しています。連結の従業員数は618人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "コーティングとエレクトロニクスの2事業",
+        "description": "コーティング関連事業では塗料・表面処理剤、化成品・物資、塗装・計測機器を販売し、塗装ライン工事や塗装請負、塗料の調色加工も行っています。エレクトロニクス関連事業ではホールICや車載向けソフトウエア、LED照明製品を販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "製造業の顧客へ販売・請負",
+        "description": "塗料や化成品は自動車メーカーをはじめとする製造業の顧客へ販売し、塗装ラインの設備・工事や建物のリフォーム工事も請け負っています。ホールICは車載向けを中心に、センサーを必要とする顧客へ販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は68,268百万円",
+        "description": "2026年3月期の連結売上高は68,268百万円（前期比1.7％減）でした。セグメント別の外部顧客への売上高は、コーティング関連事業が47,861百万円、エレクトロニクス関連事業が20,407百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は1,798百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,798百万円（前期比1.0％増）でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +135,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18091000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 646,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +155,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19318000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 624,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +175,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21002000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 637,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +195,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21539000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 619,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +215,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22824000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 618,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +223,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第84期(2025/04/01－2026/03/31)",
-      "publisher": "オーウエル株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFWA.pdf",
-      "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +234,231 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1943,
+      "title": "近江屋興業株式会社を設立",
+      "description": "3人の事業主がそれぞれ行っていた塗料販売事業を承継し、各種塗料・工業薬品等の販売と塗装工事の請負を目的として、近江屋興業株式会社を大阪市北区中之島に設立しました。",
+      "significance": "現在のオーウエルの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "エレクトロニクス関連事業を開始",
+      "description": "ITT社半導体部門の日本代理店であった東導株式会社を買収して子会社とし、商号をユニ電子株式会社と改めて、エレクトロニクス関連事業を開始しました。",
+      "significance": "塗料販売に加えて電子部品へ事業を広げた転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "技術センターを開設",
+      "description": "相模営業所（現：神奈川営業所）の構内に技術センターを開設し、塗料と塗装設備・機器・装置等とのトータルプランニングの研究を開始しました。",
+      "significance": "塗膜形成技術を核とする提案力の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "商号をオーウエル株式会社に変更",
+      "description": "商号を近江屋興業株式会社からオーウエル株式会社に変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "工事・塗装請負の子会社を設立",
+      "description": "オーウエルスーパービルド株式会社を設立して土木工事、とび・土工工事等の請負を開始し、オー・エー・シー株式会社を設立して塗装請負を開始しました。",
+      "significance": "商品の販売から工事・請負へ事業を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "中国に子会社を設立",
+      "description": "中国に子会社、奥唯（大連）貿易有限公司を設立しました。",
+      "significance": "海外展開の本格化の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "韓国に子会社を設立",
+      "description": "韓国に子会社O-WELL KOREA CORPORATIONを設立しました。",
+      "significance": "エレクトロニクス関連事業の海外拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "サンマルコ株式会社を子会社化",
+      "description": "サンマルコ株式会社を子会社とし、ガラスフィルム・内装フィルムの施工を開始しました。",
+      "significance": "建物の内外装リフォーム関連工事への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "インドに子会社を設立",
+      "description": "インドに子会社O-WELL INDIA COATINGS & ELECTRONICS PRIVATE LIMITEDを設立しました。一方で、ドイツの子会社O-WELL GERMANY GmbHは株式会社ミックウェアへ譲渡しました。",
+      "significance": "グローバル拠点の再編と成長市場への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "明豊商事株式会社を子会社化",
+      "description": "塗料販売業を営む明豊商事株式会社の全株式を取得し、子会社化しました（非連結子会社）。",
+      "significance": "コーティング関連事業の販売体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kansai-paint",
+      "relationship": "supplier",
+      "description": "関西ペイント株式会社とは日本特約店取引契約を締結しており、塗料類及びその他物品を仕入れる取引関係にあります（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "dai-nippon-toryo",
+      "relationship": "supplier",
+      "description": "大日本塗料株式会社とは日本特約店取引契約を締結しており、塗料類及びその他物品を仕入れる取引関係にあります（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "nihon-tokushu-toryo",
+      "relationship": "supplier",
+      "description": "日本特殊塗料株式会社とは日本特約店取引契約を締結しており、塗料類及びその他物品を仕入れる取引関係にあります（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "shinto-paint",
+      "relationship": "supplier",
+      "description": "神東塗料株式会社とは日本特約店取引契約を締結しており、塗料類及びその他物品を仕入れる取引関係にあります（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "nippon-paint-holdings",
+      "relationship": "supplier",
+      "description": "日本ペイントホールディングス株式会社の子会社である日本ペイント・インダストリアルコーティングス株式会社及び日本ペイント・オートモーティブコーティングス株式会社とは、それぞれ日本特約店取引契約を締結しており、塗料類及びその他物品を仕入れる取引関係にあります（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "tdk",
+      "relationship": "supplier",
+      "description": "TDK株式会社の子会社であるTDK-Micronas GmbH（ドイツ）とは非独占的代理店・販売店契約を締結しており、半導体（ホールIC）を仕入れる取引関係にあります（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第84期(2025/04/01－2026/03/31)",
+      "publisher": "オーウエル株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFWA.pdf",
+      "publishedAt": "2026-06-22",
+      "docId": "S100YFWA",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「MAP24-26」（2024年度から2026年度まで）を掲げ、10年後の目指す姿を「グローバルブランドO-Wellの樹立」としています。中期経営方針「提供価値を革新し、創造する」のもと、「商材提供」型から「ワンストップソリューション提供」型へ提供価値を強化するとしています。コーティング関連事業では重点方針「コーティングの未来を創る」のもと塗膜形成力を核とした機能拡大を図り、エレクトロニクス関連事業では重点方針「提供価値を拡大する」のもと発揮する機能の付与・拡大に取り組むとしています。計画の目標数値は将来に関する事項のため、ここには転記していません。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "自動車業界で培った塗膜形成技術を基盤として、神奈川事業所の技術センターで塗料と塗装設備・機器・装置とのトータルプランニングや新材料・新工法の開発を行っていると説明しています。塗装請負や塗料の調色加工までグループで担い、塗料の選定から塗装仕様、塗装工法、塗装環境まで、顧客の課題解決に寄与する商品・サービスを提供するとしています。ホールICについては専業的な代理店として品質、技術、グローバル物流、外観検査まで担い、国内外の複数拠点で在庫を保有して安定供給できる体制を整えていると説明しています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の連結売上高68,268百万円の内訳は、セグメント別の外部顧客への売上高でコーティング関連事業が47,861百万円、エレクトロニクス関連事業が20,407百万円です。地域別の売上高は日本が58,183百万円、アジアが8,898百万円、北米・中米が1,088百万円、その他が97百万円で、日本向けが中心です。連結売上高の10％以上を占める主要な顧客はありません。経営成績の分析では、主たる顧客である自動車メーカーの国内自動車生産台数の減少などがコーティング関連事業の売上減少の要因として挙げられています。",
+        "basis": "セグメント情報の外部顧客への売上高、関連情報の地域ごとの情報と主要な顧客ごとの情報、経営成績等の分析に基づきます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

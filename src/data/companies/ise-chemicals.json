@@ -4,15 +4,156 @@
   "name": "伊勢化学工業",
   "officialName": "伊勢化学工業株式会社",
   "nameEn": "ISE CHEMICALS CORPORATION",
-  "description": null,
+  "shortNameEn": "ISE CHEMICALS CORPORATION",
+  "description": "地下かん水からヨウ素と天然ガスを生産し、金属化合物も製造販売するＡＧＣ株式会社の連結子会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "iodine-and-natural-gas",
+      "name": "ヨウ素及び天然ガス事業",
+      "description": "地下かん水を主原料としてヨウ素をブローイングアウト法で生産し、ヨウ素化合物と天然ガスも扱う主力事業です。2025年12月期の外部顧客への売上高は34,656百万円です。",
+      "customers": [
+        "国内並びに北米、欧州及びアジアの需要家",
+        "千葉県外房地区及び宮崎県佐土原地区並びに米国内のガス販売会社等"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "iodine",
+          "name": "ヨウ素",
+          "description": "地下かん水を主原料とし、ブローイングアウト法で生産する主力製品です。日本国内並びに北米、欧州及びアジアに販売しています。",
+          "customers": [
+            "国内並びに北米、欧州及びアジアの需要家"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "iodine-compounds",
+          "name": "ヨウ素化合物",
+          "description": "ヨウ素を原料として当社においてのみ製造販売を行っている製品です。",
+          "customers": [
+            "国内並びに北米、欧州及びアジアの需要家"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "natural-gas",
+          "name": "天然ガス",
+          "description": "ヨウ素の主原料である地下かん水から採取し、ガスパイプラインを通して採取地に近い地域などへ販売しています。",
+          "customers": [
+            "千葉県外房地区及び宮崎県佐土原地区並びに米国内のガス販売会社等"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "metallic-compounds",
+      "name": "金属化合物事業",
+      "description": "塩化ニッケル等の金属化合物を当社においてのみ製造販売する事業です。抽出剤を使用して不純物を取り除き、高品位の金属化合物を生産しています。2025年12月期の外部顧客への売上高は4,601百万円です。",
+      "customers": [
+        "積層セラミックコンデンサ向けなどの需要家"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "nickel-chloride",
+          "name": "塩化ニッケル等",
+          "description": "主な製品は塩化ニッケル等の化合物です。塩化ニッケルは積層セラミックコンデンサ（ＭＬＣＣ）向けの素材として使用されています。",
+          "customers": [
+            "積層セラミックコンデンサ向けなどの需要家"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "地下かん水を主原料にヨウ素と天然ガスを生産し、ヨウ素化合物と塩化ニッケル等の金属化合物を製造販売する事業モデルです。",
+    "products": [
+      "ヨウ素",
+      "ヨウ素化合物",
+      "天然ガス",
+      "塩化ニッケル等の金属化合物"
+    ],
+    "customers": [
+      "国内並びに北米、欧州及びアジアの需要家",
+      "千葉県外房地区及び宮崎県佐土原地区並びに米国内のガス販売会社等",
+      "積層セラミックコンデンサ向けなどの需要家"
+    ],
+    "revenueSources": [
+      "ヨウ素及び天然ガス事業の製品販売による収益",
+      "金属化合物事業の製品販売による収益"
+    ],
+    "suppliers": [
+      {
+        "name": "原料の仕入先",
+        "description": "親会社のＡＧＣ株式会社や主要取引先の三菱商事株式会社などから、ヨウ素の原料であるかん水等の仕入れを行っています。",
+        "businessIds": [
+          "iodine-and-natural-gas"
+        ]
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "伊勢化学工業と連結子会社1社のグループ",
+        "description": "伊勢化学工業は親会社をＡＧＣ株式会社とし、連結子会社ウッドワード・アイオダイン・コーポレーション1社とともにグループを構成しています。連結の従業員数は327人です（2025年12月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "ヨウ素・天然ガスと金属化合物の製造販売",
+        "description": "地下かん水を主原料としてヨウ素をブローイングアウト法で生産し、ヨウ素化合物と天然ガスも扱っています。あわせて塩化ニッケル等の金属化合物を製造販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外の需要家と地域のガス販売先に販売",
+        "description": "ヨウ素は日本国内並びに北米、欧州及びアジアに販売し、天然ガスは採取地に近い地域などへ販売しています。主要な顧客としてＡＧＣ株式会社と三菱商事株式会社が開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は39,258百万円",
+        "description": "2025年12月期の連結売上高は39,258百万円でした。セグメント別の外部顧客への売上高は、ヨウ素及び天然ガス事業が34,656百万円、金属化合物事業が4,601百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は6,498百万円",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は6,498百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +168,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 27130000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 316,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +188,13 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 29220000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 319,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年3月31日）等を第102期の期首から適用しており、第102期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっている旨が、連結経営指標等の注記に印字されている。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +209,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 31892000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 325,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +229,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 35569000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 323,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +249,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 40070000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 327,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +257,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第105期(2025/01/01－2025/12/31)",
-      "publisher": "伊勢化学工業株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XT8H.pdf",
-      "publishedAt": "2026-03-27",
-      "accessedAt": "2026-09-29"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-29",
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",
@@ -142,5 +268,215 @@
       "yuho-2025"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1927,
+      "title": "伊勢沃度工場として創業",
+      "description": "三重県伊勢市に伊勢沃度工場として創業し、海藻ヨウ素、塩化カリウム等の製造販売を開始しました。",
+      "significance": "現在の会社の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "伊勢化学工業株式会社を設立",
+      "description": "法人組織とし、伊勢化学工業株式会社を設立しました。翌年に本店を東京都中央区に移転しました。",
+      "significance": "現在の商号と会社組織の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "天然ガスかん水からのヨウ素生産を開始",
+      "description": "千葉県に八積工場の建設を完了し、天然ガスかん水からのヨウ素生産（活性炭法）を開始しました。",
+      "significance": "地下かん水を原料とする現在の生産の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "旭硝子株式会社の系列会社となる",
+      "description": "旭硝子株式会社（現ＡＧＣ株式会社）の資本参加を受け、同社の系列会社となりました。",
+      "significance": "現在の親会社との関係の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "ブローイングアウト法を確立",
+      "description": "新ヨウ素製造技術であるブローイングアウト法を確立し、千葉県に白子工場の建設を完了して同法によるヨウ素の生産を開始しました。以後、各工場は逐次同製造法に転換しました。",
+      "significance": "現在のヨウ素の生産方法の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "ヨウ素生産量が世界第1位となる",
+      "description": "全工場のブローイングアウト法への転換が完了し、ヨウ素生産量が世界第1位となりました。",
+      "significance": "ヨウ素メーカーとしての地位の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "金属化合物の生産を開始",
+      "description": "一宮工場にてニッケル、コバルト化合物の生産を開始しました。同じ年に宮崎県に宮崎工場の建設を完了し、天然ガスとヨウ素の生産を開始しました。",
+      "significance": "金属化合物事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "米国に子会社を設立",
+      "description": "米国オクラホマ州に子会社ウッドワード・アイオダイン・コーポレーションを設立し、ヨウ素生産販売会社を買収しました。",
+      "significance": "海外生産の始まりで、同社は現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "千葉工場が完成",
+      "description": "千葉県市原市五井海岸に千葉工場が完成しました。",
+      "significance": "ヨウ素化合物の生産拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "agc",
+      "relationship": "parent",
+      "description": "親会社です。ガラス建材、電子部品、化学品及びセラミックス製品等の製造販売を行い、2025年12月31日現在、当社の議決権の53.5％を保有しています。当社は同社にヨウ素及び天然ガスを販売する一方、同社よりヨウ素の原料であるかん水等を仕入れており、役員の兼任等があります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "mitsubishi-corporation",
+      "relationship": "customer",
+      "description": "主要取引先である顧客です。当社とはヨウ素の販売及び原料の仕入等の取引関係があります。2025年12月31日現在、当社の株式372,604株（発行済株式（自己株式を除く。）の総数に対する割合7.31％）を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2025",
+      "title": "有価証券報告書－第105期(2025/01/01－2025/12/31)",
+      "publisher": "伊勢化学工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XT8H.pdf",
+      "publishedAt": "2026-03-27",
+      "docId": "S100XT8H",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-11"
+    }
+  ],
+  "status": {
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 株式分割：2026年1月1日付けで普通株式1株につき10株の割合で株式分割を行った（2025年10月31日開催の取締役会決議に基づき、重要な後発事象として印字）。株式数に関する指標は2024年12月期の期首に当該分割が行われたと仮定して算定されている旨が、連結経営指標等の注記に印字されている。登録は当期有報の印字どおりの数値に基づく。"
+    ]
+  },
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2027年に創立100周年を迎えるにあたり、「かがくでつなぐ、地球の資源。」を掲げ、「持続可能な開発」「技術フロンティアへの挑戦」「安全と信頼」を次の100年に向けた「ありたい姿」としています。ヨウ素及び天然ガス事業では安全安定操業を最優先に設備の維持・更新と新規坑井の開発を続け、金属化合物事業では積層セラミックコンデンサ向けの需要拡大に沿って生産体制を確保するとしています。また、新用途・新商品開発と新規事業の創出のため、産学連携や外部機関・企業との提携を進めるとしています。",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "戦略の柱は、既存のヨウ素資源の供給能力を坑井開発と設備更新で長期的に維持しながら、用途開発と外部連携で需要の裾野を広げる構成になっています。財務目標については、キャッシュ・フローを重視した指標と資本効率の指標を掲げる方針が示されています。",
+        "basis": "経営方針における「ありたい姿」と対処すべき課題の記載、経営目標の記載",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、地下かん水からヨウ素を生産するブローイングアウト法の技術と、国内の工場群に米国の連結子会社を加えた生産体制にあります。ヨウ素の原料の賦存地域は世界的に偏在し、主要な産出国はチリ、日本、米国とされています。金属化合物では、抽出剤を使って不純物を取り除き、高品位の製品を生産する技術が特徴とされています。",
+        "basis": "事業の内容におけるヨウ素の生産方法と産出国の記載、金属化合物事業の技術的特徴の記載、関係会社の状況における連結子会社の記載",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の中心はヨウ素及び天然ガス事業で、2025年12月期の外部顧客への売上高は34,656百万円です。金属化合物事業は4,601百万円です。ヨウ素は国内並びに北米、欧州及びアジアへ販売され、塩化ニッケルは積層セラミックコンデンサ向け素材として、車載用途や通信用途の拡大による需要の成長が期待される分野に位置づけられています。",
+        "basis": "セグメント情報におけるセグメント別外部売上高の記載、経営方針における経営環境の記載、事業の内容における販売地域の記載",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
+  "segmentRevenue": {
+    "fiscalYear": "2025年12月期",
+    "periodEnd": "2025-12-31",
+    "label": "外部顧客への売上高",
+    "items": [
+      {
+        "businessId": "iodine-and-natural-gas",
+        "amount": 34656000000
+      },
+      {
+        "businessId": "metallic-compounds",
+        "amount": 4601000000
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【セグメント情報】"
   }
 }

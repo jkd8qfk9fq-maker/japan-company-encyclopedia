@@ -4,15 +4,120 @@
   "name": "GMOフィナンシャルホールディングス",
   "officialName": "GMOフィナンシャルホールディングス株式会社",
   "nameEn": "GMO Financial Holdings, Inc.",
-  "description": null,
+  "shortNameEn": "GMO Financial Holdings, Inc.",
+  "description": "証券・FXと暗号資産の取引サービスを提供する、GMOインターネットグループのインターネット金融持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "gmo-financial-holdings",
+      "name": "インターネット金融事業",
+      "description": "当社と連結子会社16社でグループを構成し、証券、FX等の金融商品取引を提供する証券・FX事業と、暗号資産取引を提供する暗号資産事業を展開しています。当社はGMOインターネットグループ株式会社の子会社で、同グループのインターネット金融事業と暗号資産交換事業を担っています。2025年12月期の連結営業収益は49,518百万円、連結従業員数は476人です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "securities-fx",
+          "name": "証券・FX事業",
+          "description": "GMOクリック証券株式会社、GMO外貨株式会社などが、インターネット証券取引やFX取引等の金融商品取引サービスを提供しています。店頭FXとCFDが収益の柱です。2025年12月期の外部顧客への営業収益は40,125百万円です。",
+          "customers": [
+            "個人投資家"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "crypto-assets",
+          "name": "暗号資産事業",
+          "description": "GMOコイン株式会社が、暗号資産の売買や証拠金取引等の暗号資産関連取引サービスを提供しています。ステーキングサービスや「つみたて暗号資産」などのストック型商品も展開しています。2025年12月期の外部顧客への営業収益は6,666百万円です。",
+          "customers": [
+            "個人投資家"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other",
+          "name": "その他",
+          "description": "報告セグメントに含まれない事業として、NFT事業、バーチャルオフィス事業、医療プラットフォーム事業などを行っています。2025年12月期の外部顧客への営業収益は2,726百万円です。",
+          "customers": [
+            "医療機関",
+            "企業・個人事業主"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "連結子会社を通じて、インターネット証券取引やFX取引等の金融商品取引サービスと、暗号資産の売買等の取引サービスを提供しています。",
+    "products": [
+      "インターネット証券取引（株式・投資信託等）",
+      "店頭FX取引",
+      "CFD取引",
+      "暗号資産の売買・証拠金取引",
+      "ステーキングサービス",
+      "つみたて暗号資産"
+    ],
+    "customers": [
+      "個人投資家",
+      "法人顧客"
+    ],
+    "revenueSources": [
+      "トレーディング損益",
+      "受入手数料",
+      "金融収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "GMOフィナンシャルホールディングス",
+        "description": "東京都渋谷区に本店を置く金融持株会社で、連結子会社16社とグループを構成しています。親会社はGMOインターネットグループ株式会社です。2025年12月期の連結従業員数は476人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "証券・FXと暗号資産の取引サービス",
+        "description": "証券・FX事業ではインターネット証券取引や店頭FX、CFDなどの金融商品取引サービスを、暗号資産事業では暗号資産の売買や証拠金取引などのサービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "個人投資家などの顧客",
+        "description": "個人投資家を中心とする顧客が、オンラインで証券、FX、暗号資産などの取引を行います。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益",
+        "description": "2025年12月期の営業収益は49,518百万円で、証券・FX事業が40,125百万円、暗号資産事業が6,666百万円、その他が2,726百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は10,448百万円で、前期比120.2％増でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +132,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 42830000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 514,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +152,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 41330000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 485,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第12期の期首から適用しており、第12期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっている。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 46440000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 422,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +193,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 48442000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 492,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号）等を第15期の期首から適用しており、第14期に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっている。"
     },
     {
       "fiscalYear": "2025年12月期",
@@ -107,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 53017000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 476,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +222,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第15期(2025/01/01－2025/12/31)",
-      "publisher": "GMOフィナンシャルホールディングス株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XSFM.pdf",
-      "publishedAt": "2026-03-23",
-      "accessedAt": "2026-09-29"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-29",
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",
@@ -142,5 +233,173 @@
       "yuho-2025"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 2012,
+      "title": "GMOクリック証券の単独株式移転により設立",
+      "description": "2012年1月、GMOクリック証券株式会社が単独株式移転により当社を設立しました。",
+      "significance": "当社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "FXプライム（現GMOコイン）を連結子会社化",
+      "description": "2012年9月、公開買付けによりFXプライム株式会社（現GMOコイン株式会社）を連結子会社化しました。",
+      "significance": "暗号資産事業の起源となる会社がグループに入りました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東京証券取引所JASDAQ（スタンダード）へ上場",
+      "description": "2015年4月、株式会社FXプライムbyGMO（現GMOコイン株式会社）を株式交換により完全子会社化するとともに、当社普通株式を東京証券取引所JASDAQ（スタンダード）へ上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "GMOコインを連結子会社化",
+      "description": "2017年9月、第三者割当による新株式発行の引き受けによりGMOコイン株式会社を連結子会社化しました。",
+      "significance": "暗号資産交換事業を連結の中核に据えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "商号をGMOフィナンシャルホールディングスに変更",
+      "description": "2017年10月、商号をGMOフィナンシャルホールディングス株式会社に変更しました。",
+      "significance": "金融持株会社としての位置付けを明確にしました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "ワイジェイFX（現GMO外貨）を連結子会社化",
+      "description": "2021年9月、株式取得によりワイジェイFX株式会社（現GMO外貨株式会社）を連結子会社化しました。",
+      "significance": "FX事業の基盤を拡充しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "GMOコインを完全子会社化",
+      "description": "2023年4月、株式交換によりGMOコイン株式会社を完全子会社化しました。同年9月にはGMOコイン株式会社が株式会社FXプライムbyGMOを吸収合併しました。",
+      "significance": "暗号資産事業の体制を集約しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "GMO One Account株式会社を設立",
+      "description": "2025年6月、複数のサービスをシームレスに利用できる共通ID「1アカウント」の提供に向け、GMO One Account株式会社を設立しました。",
+      "significance": "ID統合プラットフォーム事業の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "gmo-internet-group",
+      "relationship": "parent",
+      "description": "関係会社の状況に親会社として印字され、当社の議決権の65.85％を保有しています。当社は、同社を中核とするGMOインターネットグループにおいて、インターネット金融事業と暗号資産交換事業を担っています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "daiwa-securities-group",
+      "relationship": "business-partner",
+      "description": "沿革に、2016年4月に株式会社大和証券グループ本社及び大和証券株式会社と業務提携に関する基本合意書を締結したことが印字されています。大和証券グループ本社とは業務提携等の関係にあります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2025",
+      "title": "訂正有価証券報告書－第15期(2025/01/01－2025/12/31)",
+      "publisher": "GMOフィナンシャルホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHX6.pdf",
+      "publishedAt": "2026-06-24",
+      "docId": "S100YHX6",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念として「金融サービスをもっとリーズナブルに もっと楽しく自由に」を掲げ、すべての人にとって本当に価値ある金融サービスを提供する「インターネット総合金融グループ」を目指すとしています。中長期的な経営戦略は「強いものをより強くする」の方針のもと、収益の柱である店頭FX・CFDの収益力強化を通じて成長原資を確保し、成長事業や新規事業に投資することで、事業基盤の強化と収益源の多様化を進めるとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2025年12月期の営業収益は、証券・FX事業が40,125百万円、暗号資産事業が6,666百万円、その他が2,726百万円であり、収益の柱は証券・FX事業です。経営方針が掲げる収益源の多様化は、暗号資産事業の顧客基盤拡大や、バーチャルオフィス事業、医療プラットフォーム事業などの非金融領域の新規事業を通じて進められています。",
+        "basis": "セグメント情報の外部顧客への営業収益、経営方針、経営環境及び対処すべき課題等、MD&Aのセグメント別の状況",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "金融システムを自ら開発できる技術力を強みとし、店頭FXではグループ3社合計で国内取引高シェア20％超を維持しています。2025年9月にはGMOクリック証券株式会社が投資信託・株式の取引手数料を完全無料化し、顧客基盤の拡大を図りました。暗号資産事業ではGMOコイン株式会社の口座数が77.5万口座を突破しています。",
+        "basis": "MD&Aの経営成績等の状況の概要、経営方針、経営環境及び対処すべき課題等（組織力の強化）",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "国内の店頭FX取引金額は4年連続で1京円を超え、国内暗号資産取引高は前連結会計年度比で50％増加する市場環境にあります。その中で当社グループは、店頭FXの国内取引高シェアがグループ3社合計で20％超と高水準を維持し、取引人数シェアも上昇傾向にあります。",
+        "basis": "MD&Aの経営成績等の状況の概要（市場環境とセグメント別の状況）",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
   }
 }

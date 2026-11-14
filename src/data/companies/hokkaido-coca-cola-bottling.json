@@ -4,7 +4,8 @@
   "name": "北海道コカ・コーラボトリング",
   "officialName": "北海道コカ・コーラボトリング株式会社",
   "nameEn": "HOKKAIDO COCA-COLA BOTTLING CO.,LTD.",
-  "description": null,
+  "shortNameEn": "HOKKAIDO COCA-COLA BOTTLING",
+  "description": "北海道を販売地域とするコカ・コーラのボトラーとして、清涼飲料の製造・販売と自動販売機の運営を行っています。",
   "listings": [
     {
       "exchange": "tse",
@@ -14,8 +15,109 @@
       "exchange": "sse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "beverage-manufacturing-and-sales",
+      "name": "飲料の製造・販売事業",
+      "description": "当社と連結子会社5社で構成されるグループで、北海道を主な販売地域とする飲料の製造・販売並びにこれらに付帯する事業を営んでいます。当社が販売するほか、子会社が製造、運送、自動販売機のオペレーションなどの付帯業務を行っており、飲料の製造・販売事業の単一セグメントです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "sales-and-vending-operation",
+          "name": "販売・自動販売機オペレーション",
+          "description": "当社、北海道コカ・コーラリテール＆ベンディング株式会社、北海道ベンディング株式会社が、飲料の販売事業と自動販売機のオペレーション事業を行っています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "beverage-manufacturing",
+          "name": "飲料の製造",
+          "description": "北海道コカ・コーラプロダクツ株式会社が、当社からの業務委託により飲料の製造を行っています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "transport-and-cargo-handling",
+          "name": "運送・荷役",
+          "description": "幸楽輸送株式会社が、当社商品の運送、工場内の荷役作業及び保管を行っています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "support-services",
+          "name": "事務処理・リース・自動販売機修理等",
+          "description": "北海道サービス株式会社が、一般事務処理業務や事務機器のリースのほか、自動販売機の修理・保守等を行っています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "ザ コカ・コーラカンパニー及び日本コカ・コーラとのボトラー契約に基づき、北海道で清涼飲料を製造・販売し、子会社が製造・運送・自販機運営等の付帯業務を担う事業モデルです。",
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "コカ・コーラをはじめとする清涼飲料（綾鷹、ミニッツメイド、檸檬堂等）",
+      "自動販売機による飲料の販売"
+    ],
+    "customers": [
+      "スーパーマーケット等の量販店",
+      "飲食店・宿泊施設",
+      "自動販売機の設置先である企業・施設",
+      "Web販売の購入者"
+    ],
+    "revenueSources": [
+      "清涼飲料の販売による売上高",
+      "自動販売機による飲料販売の売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "北海道コカ・コーラグループ",
+        "description": "当社と連結子会社5社で構成され、親会社は大日本印刷株式会社です。連結従業員数は1,173人（2025年12月31日現在）で、北海道全域を事業範囲としています。"
+      },
+      {
+        "kind": "offering",
+        "title": "清涼飲料の製造・販売と自販機運営",
+        "description": "ボトラー契約に基づきコカ・コーラ製品等の清涼飲料を製造・販売するほか自動販売機の運営を行い、子会社が製造、運送、自動販売機の修理・保守などの付帯業務を担っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "量販店・飲食店・自販機設置先など",
+        "description": "スーパーマーケット等の量販店、飲食店や宿泊施設、自動販売機の設置先、Web販売の購入者が顧客です。売上高の10％以上を占める特定の相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年12月期の売上高は59,086百万円で、前期比3.9％増でした。全額が飲料水等の販売によるものです。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は1,670百万円で、前期比8.1％増でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -30,7 +132,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 40433000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1255,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,12 +152,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 39834000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1235,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第61期の期首から適用しており、第61期以降の主要な経営指標等は当該会計基準等を適用した後の数値である旨が、主要な経営指標等の注記に印字されている。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -70,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 40853000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1203,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 42116000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1185,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 43368000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1173,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,8 +221,99 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1963,
+      "title": "北海道飲料として設立し、北海道コカ・コーラボトリングに改称",
+      "description": "清涼飲料水の製造販売を目的として北海道飲料株式会社を設立し、仕入商品の販売を開始しました。同年、商号を北海道コカ・コーラボトリング株式会社と改称し、本社工場を新設して製品第１号を出荷しました。",
+      "significance": "北海道におけるコカ・コーラのボトラーとしての出発点となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "幸楽輸送を設立",
+      "description": "貨物自動車運送、運送取扱い、工場荷役及び倉庫業を目的として幸楽輸送株式会社を設立しました。",
+      "significance": "商品の運送・荷役を担うグループ会社が加わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "東京証券取引所市場第二部と札幌証券取引所に上場",
+      "description": "株式額面変更のため東北満俺株式会社と合併しましたが、事実上の存続会社は当社であり、同年、東京証券取引所市場第二部及び札幌証券取引所に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "エフ・ヴィ・コーポレーションの北海道地区の自販機オペレーション業務を引き継ぐ",
+      "description": "株式会社エフ・ヴィ・コーポレーションの北海道地区における自動販売機オペレーション業務を引き継ぎ、同社が会社分割により設立した株式会社エフ・ヴィ北海道の全株式を取得しました。",
+      "significance": "自動販売機オペレーション事業の基盤を広げました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "北海道コカ・コーラプロダクツを設立",
+      "description": "コカ・コーラ社製品の製造を目的として北海道コカ・コーラプロダクツ株式会社を設立しました。",
+      "significance": "飲料の製造を担う専門子会社が発足しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "グループ再編でベンディング事業と製造事業を集約",
+      "description": "北海道ベンディング株式会社と北海道ビバレッジサービス株式会社が合併して北海道ベンディング株式会社となり、北海道マシンメンテナンス株式会社と北海道コカ・コーラプロダクツ株式会社が合併して北海道コカ・コーラプロダクツ株式会社となりました。",
+      "significance": "販売・オペレーションと製造の体制が現在の形に近づきました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、スタンダード市場へ移行しました。",
+      "significance": "現在の上場市場へ移行しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "北海道コカ・コーラリテール＆ベンディングを新設分割で設立",
+      "description": "北海道ベンディング株式会社が、自動販売機オペレーション事業等を北海道コカ・コーラリテール＆ベンディング株式会社に承継させる新設分割を行いました。",
+      "significance": "販売と自動販売機オペレーションを担う現行の子会社体制となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "dai-nippon-printing",
+      "relationship": "parent",
+      "description": "当社の親会社であり、【関係会社の状況】に議決権の被所有割合57.0％が印字されています。当社は同社から広告用資材等を購入しております。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -127,13 +321,50 @@
       "publisher": "北海道コカ・コーラボトリング株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XRTE.pdf",
       "publishedAt": "2026-03-26",
-      "accessedAt": "2026-09-28"
+      "docId": "S100XRTE",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 株式分割：2023年７月１日付で普通株式１株につき２株の割合で株式分割を行った。株式数に関する指標は、第60期の期首に当該分割が行われたと仮定して算定されている。"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画（2024年～2026年）では『積極投資による「飲料事業の継続成長」と「第２の柱の創出」』を基本方針とし、飲料関連事業戦略として飲料ビジネスの安定基盤構築、グループビジネス事業戦略として第２の柱の創出を推進しています。最終年の2026年度は、将来の事業成長を見据えた製造基盤増強のためのライン投資や販売機材の更新を積極的に実施するとしています。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "ザ コカ・コーラカンパニー及び日本コカ・コーラ株式会社とのボトラー契約により北海道を販売地域とし、製造、販売、運送、自動販売機のオペレーション、修理・保守までをグループ各社で担う一貫体制を持ちます。基幹商品である「コカ・コーラ」の販売拡大を最重要営業戦略に据え、量販店でのフードクロス陳列や自動販売機の温度施策など、地域に密着した販売施策を展開しています。",
+        "basis": "【事業の内容】の各社の位置付け、【重要な契約等】のボトラー契約、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の活動内容に基づきます。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "飲料の製造・販売事業の単一セグメントで、販売地域は北海道です。2025年12月期の売上高59,086百万円は全額が飲料水等の販売実績であり、本邦以外の外部顧客への売上高はありません。生産実績は製造原価ベースで31,749百万円でした。売上高の10％以上を占める主要な顧客はいません。",
+        "basis": "セグメント情報（単一セグメントの旨と関連情報）及び【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の生産・販売実績に基づきます。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

@@ -1,18 +1,164 @@
 {
   "id": "hs-holdings",
   "code": "8699",
-  "name": "HSホールディングス",
+  "name": "ＨＳホールディングス",
   "officialName": "HSホールディングス株式会社",
   "nameEn": "HS Holdings Co., Ltd.",
-  "description": null,
+  "shortNameEn": "HS Holdings",
+  "description": "モンゴル・キルギス・ロシアの銀行事業と国内のリユース事業を中核とする、金融コングロマリット型の持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    },
+    {
+      "industryId": "retail",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "reuse",
+      "name": "リユース事業",
+      "description": "リユース品の買取卸売・小売を行う事業です。株式会社STAYGOLDが、ブランド品等の買取・販売を行うBRING、卸販売のBRAND REVALUE、株式会社PRICING DATAから承継したオークション販売を展開します。2026年３月期の外部顧客に対する営業収益は55,249百万円で、報告セグメントの中で最も大きい事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "brand-revalue",
+          "name": "BRAND REVALUE（卸販売）",
+          "description": "宝石・貴金属、時計、バッグ、衣料などのリユース品の卸販売です。貴金属相場の動向が取引に影響します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "bring",
+          "name": "BRING（小売販売）",
+          "description": "店舗とECによるリユース品の小売販売です。今期はBRING屋号を中心に５店舗を新規出店しました。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "経営成績等の状況の概要"
+        },
+        {
+          "id": "auction",
+          "name": "オークション販売・手数料",
+          "description": "株式会社PRICING DATAとの合併で承継したオークション販売と、オークション運営に伴う手数料収入です。持分法適用関連会社の株式会社日本オークション協会、World Watch Auction Limitedもオークション関連事業を担います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "banking",
+      "name": "銀行関連事業",
+      "description": "預金業務、貸付業務等を行う事業です。モンゴルのハーン銀行とロシアのソリッド銀行は持分法適用関連会社であり、その業績は持分法により当社の業績に反映されます。キルギスコメルツ銀行は連結子会社です。2026年３月期の外部顧客に対する営業収益は2,615百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "khan-bank",
+          "name": "ハーン銀行（Khan Bank LLC）",
+          "description": "モンゴル国ウランバートルに本店を置く、モンゴル最大級の商業銀行です。持分法適用関連会社で、議決権の49.8％（うち間接8.8％）を所有します。法人向け・個人向け融資とデジタルバンキングサービスを展開します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "kyrgyzkommertsbank",
+          "name": "キルギスコメルツ銀行（OJSC Kyrgyzkommertsbank）",
+          "description": "キルギス共和国ビシュケクに本店を置く銀行です。連結子会社（特定子会社）で、議決権の52.9％を所有します。中小企業および個人顧客向けの融資、預金、カード事業を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "solid-bank",
+          "name": "ソリッド銀行（JSC Solid Bank）",
+          "description": "ロシア連邦ウラジオストクに本店を置く銀行です。持分法適用関連会社で、議決権の46.8％を所有します。預金・融資のほか外為取引等の非金利業務を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他事業",
+      "description": "当社（持株会社）、H.S. International (Asia) Limited、HS FINANCIAL Pte. Ltd.による投資業務、Ｍ＆Ａ仲介・コンサルティング業務等です。当社単体の営業収益は主に関係会社からの配当金で構成され、連結上は消去されます。2026年３月期の外部顧客に対する営業収益は14百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "海外の銀行事業への投資と国内リユース事業の運営を両輪とし、営業収益を得る事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "モンゴル・キルギス・ロシアの銀行における預金・貸付等の銀行サービス",
+      "ブランド品等のリユース品の買取・卸売・小売（BRING、BRAND REVALUE）",
+      "リユース品のオークション運営と価格データの提供",
+      "投資業務、Ｍ＆Ａ仲介・コンサルティング業務"
+    ],
+    "customers": [
+      "モンゴル・キルギス・ロシアの個人・法人顧客",
+      "リユース品の購入者である小売顧客と卸先事業者",
+      "オークションの出品者と落札者"
+    ],
+    "revenueSources": [
+      "リユース事業におけるリユース品の販売による営業収益",
+      "キルギスコメルツ銀行の預金・貸付業務による営業収益",
+      "投資業務、Ｍ＆Ａ仲介・コンサルティング業務等による営業収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ＨＳホールディングスグループ",
+        "description": "当社と連結子会社５社、持分法適用関連会社４社で構成されるグループで、連結従業員数は706人です。本社は東京都港区にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "銀行サービスとリユース品の買取・販売",
+        "description": "モンゴル・キルギス・ロシアの銀行による預金・貸付等のサービスと、宝石・貴金属、時計、バッグ、衣料などのリユース品の買取・卸売・小売、オークション運営を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "海外銀行の顧客とリユース品の購入者",
+        "description": "各国の個人・法人の銀行顧客、リユース品を購入する小売顧客と卸先事業者、オークション利用者にサービスを提供します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益",
+        "description": "2026年３月期の営業収益は57,879百万円でした。セグメント別では、リユース事業が55,249百万円、銀行関連事業が2,615百万円、その他事業が14百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は14,688百万円でした。持分法適用関連会社のハーン銀行とソリッド銀行の業績は、持分法により当社の業績に反映されます。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 74427000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5148,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 81411000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5372,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 72416000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 530,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +233,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 86701000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 588,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +253,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 100635000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 706,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +261,160 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1958,
+      "title": "協立証券株式会社を設立",
+      "description": "協立証券株式会社を設立しました。",
+      "significance": "現在のＨＳホールディングスの源流となる創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "澤田秀雄氏が大株主となる",
+      "description": "株式会社エイチ・アイ・エスの代表取締役社長であった澤田秀雄氏が、当社発行済株式総数の70％を超す大株主となりました。あわせて社名をエイチ・アイ・エス協立証券株式会社に変更しました。",
+      "significance": "経営の主導権が移り、その後の事業転換の起点となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "モンゴルの銀行の株式を取得",
+      "description": "子会社がAGRICULTURAL BANK OF MONGOLIA（現・ハーン銀行（Khan Bank LLC））の株式を取得しました。",
+      "significance": "現在の銀行関連事業の中核であるハーン銀行への投資が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "大阪証券取引所ヘラクレスに上場",
+      "description": "大阪証券取引所ヘラクレス（現・東京証券取引所スタンダード市場）に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "持株会社体制へ移行",
+      "description": "会社分割により証券業等を新設の子会社に承継し、商号を澤田ホールディングス株式会社に変更して持株会社体制に移行しました。",
+      "significance": "証券会社から持株会社へ転換しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "ソリッド銀行を持分法適用関連会社とする",
+      "description": "ロシアのソリッド銀行（Solid Bank CJSC、現JSC Solid Bank）を持分法適用関連会社としました。",
+      "significance": "ロシアの銀行事業がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "キルギスコメルツ銀行を連結子会社とする",
+      "description": "キルギス共和国のキルギスコメルツ銀行（OJSC Kyrgyzkommertsbank）の株式を取得し、連結子会社としました。",
+      "significance": "中央アジアの銀行が連結子会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "ＨＳホールディングスに商号変更し証券子会社を売却",
+      "description": "商号を澤田ホールディングス株式会社からHSホールディングス株式会社に変更しました。また、エイチ・エス証券株式会社の株式の全部を売却し、同社は連結子会社から除外されました。",
+      "significance": "創業事業である証券事業から撤退し、海外銀行と投資を軸とする体制となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ハーン銀行がモンゴル証券取引所に上場",
+      "description": "ハーン銀行（Khan Bank LLC）が新株発行によりモンゴル証券取引所へ新規上場したことにより、同社は連結子会社から持分法適用関連会社へ異動しました。また、株式会社STAYGOLDの株式を追加取得し完全子会社としました。",
+      "significance": "ハーン銀行は持分法適用関連会社となり、リユース事業のSTAYGOLDが完全子会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "PRICING DATAを取得しSTAYGOLDが吸収合併",
+      "description": "株式会社PRICING DATAの全株式を取得して連結子会社とし、同年８月１日を効力発生日として株式会社STAYGOLDが同社を吸収合併しました。",
+      "significance": "リユース事業にオークション販売が加わり、グループ一体の在庫管理体制となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第69期(2025/04/01－2026/03/31)",
-      "publisher": "HSホールディングス株式会社",
+      "publisher": "ＨＳホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJQ6.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJQ6",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessStructure: [object Object]"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "独自の金融コングロマリット構想の下、特長ある各種金融サービス事業の拡充、成長性の高い事業分野の強化、徹底した業務の効率化により更なる発展を目指すとしています。グループ各社間の業務展開により、各事業分野でナンバー・ワンあるいはオンリー・ワンとなるサービスを育成し、顧客の拡大とグループ企業価値の最大化に取り組むとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "ハーン銀行はモンゴル最大級の商業銀行で、支店取引の８割程度がデジタルバンキングでの取引となるなど個人向けデジタルバンキングを積極展開しています。リユース事業では、STAYGOLDの小売部門の強化と、PRICING DATAとの合併によるグループ一体の在庫情報の可視化・モニタリング体制の構築により、オークション販売の収益性が向上したとされています。",
+        "basis": "MD&Aのセグメント別分析（銀行関連事業のハーン銀行の状況、リユース事業のSTAYGOLDの取り組み）に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "３つの報告セグメントで事業を展開しています。2026年３月期の外部顧客に対する営業収益は、リユース事業が55,249百万円、銀行関連事業が2,615百万円、その他事業が14百万円でした。地域別では日本が55,263百万円、キルギス共和国が2,615百万円です。売上高の10％以上を占める特定の顧客はありません。リユース市場については、2024年の市場規模が３兆2,628億円で、2030年には４兆円に到達すると見込まれていると有報に記載されています。なお、銀行関連事業の業績は、持分法適用関連会社２行の業績の取り込みが大きな部分を占めます。",
+        "basis": "セグメント情報（報告セグメント別の外部顧客に対する営業収益）と関連情報（地域ごとの情報、主要な顧客ごとの情報）、MD&Aのリユース市場の記述に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,7 +4,8 @@
   "name": "南陽",
   "officialName": "株式会社南陽",
   "nameEn": "NANYO  CORPORATION",
-  "description": null,
+  "shortNameEn": "NANYO CORPORATION",
+  "description": "建設機械と産業機器の販売・レンタルに、産業機器と砕石の製造販売を組み合わせる総合機械商社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -14,8 +15,119 @@
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "nanyo",
+      "name": "株式会社南陽",
+      "description": "福岡市博多区に本社を置く総合機械商社で、当社と子会社12社、関連会社1社でグループを構成しています。報告セグメントは産業機器事業、建設機械事業、砕石事業の3つで、2026年3月期の連結従業員数は521人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "industrial-machinery",
+          "name": "産業機器事業",
+          "description": "電子機器・油空圧機器等の製造及び販売を行う事業です。2026年3月期の外部顧客への売上高は21,988百万円です。当社が産業機器の販売を行うほか、共栄通信工業株式会社が販売を、株式会社戸髙製作所、株式会社エイ・エス・エイ・ピイ、株式会社AQUAPASS、アプリオリ株式会社、株式会社浜村が製造・販売を行い、南央国際貿易（上海）有限公司などが国外で仕入・販売と販売の仲介を行っています。アプリオリ株式会社は2026年3月に株式を取得し、新たに連結子会社となりました。",
+          "customers": [
+            "製造業の事業者",
+            "生産設備を使う事業者",
+            "海外の販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "construction-machinery",
+          "name": "建設機械事業",
+          "description": "一般土木機械・産業用車輌等の販売及びレンタル等を行う事業です。2026年3月期の外部顧客への売上高は14,390百万円です。当社が建設機械及び産業用車輌等の販売と建設機械のレンタルを行うほか、株式会社南陽レンテックが国内で建設機械のレンタルを行い、株式会社南陽重車輌が当社と中古の産業用車輌の仕入・販売を行っています。",
+          "customers": [
+            "建設会社などの工事施工業者",
+            "建設機械のレンタル利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "crushed-stone",
+          "name": "砕石事業",
+          "description": "砕石等の製造及び販売を行う事業です。2026年3月期の外部顧客への売上高は436百万円です。株式会社共立砕石所が、当社より主に建設機械を購入し、砕石の製造・販売を行っています。",
+          "customers": [
+            "公共工事・民間工事の施工業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "建設機械や電子機器・油空圧機器などの産業機器を仕入れて販売・レンタルし、一部をグループで製造して、その販売・レンタル対価を得る事業モデルです。",
+    "products": [
+      "建設機械・産業用車輌",
+      "電子機器・油空圧機器などの産業機器",
+      "流体制御機器・流体制御システム",
+      "砕石"
+    ],
+    "customers": [
+      "建設会社などの工事施工業者",
+      "製造業などの設備を使う事業者",
+      "建設機械のレンタル利用者"
+    ],
+    "revenueSources": [
+      "産業機器事業の販売による売上高",
+      "建設機械事業の販売及びレンタルによる売上高",
+      "砕石事業の販売による売上高"
+    ],
+    "suppliers": [
+      {
+        "name": "取扱商品の仕入先",
+        "description": "建設機械事業と産業機器事業では取扱商品を仕入れて販売しています。産業機器事業では、仕入先の供給状況等を考慮し、安定供給と適正在庫の維持に努めています。"
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社南陽",
+        "description": "福岡市博多区に本社を置き、子会社12社・関連会社1社とグループを構成する総合機械商社です。2026年3月期の連結従業員数は521人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "建設機械・産業機器・砕石",
+        "description": "建設機械・産業用車輌の販売とレンタル、電子機器・油空圧機器などの産業機器の製造・販売、砕石の製造・販売を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "工事施工業者・製造業などの顧客",
+        "description": "建設・土木工事の施工業者や製造業などの顧客に、商品の販売やレンタルを行い、製造した機器や砕石を届けます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は36,815百万円",
+        "description": "2026年3月期の売上高は36,815百万円でした。産業機器事業が21,988百万円、建設機械事業が14,390百万円、砕石事業が436百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は2,356百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は2,356百万円でした。前連結会計年度は2,038百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -30,7 +142,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20880000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 450,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,7 +162,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22723000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 475,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -70,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24692000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 508,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,7 +202,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25663000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 504,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,7 +222,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27492000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 521,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,22 +230,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第72期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社南陽",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCGG.pdf",
-      "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -145,5 +241,184 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1953,
+      "title": "西日本ベアリング株式会社を設立",
+      "description": "1953年8月、福岡市薬院大通2丁目54番地に西日本ベアリング株式会社を設立しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "南陽機材株式会社に商号変更",
+      "description": "1954年3月、商号を南陽機材株式会社に変更しました。",
+      "significance": "南陽の名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "株式会社共立砕石所を設立",
+      "description": "1974年8月、福岡県宮若市に株式会社共立砕石所を設立しました（現・連結子会社）。",
+      "significance": "砕石事業を行う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "福岡建設機械株式会社を買収",
+      "description": "1989年9月、福岡市博多区の福岡建設機械株式会社（現・株式会社南陽レンテック）を買収しました（現・連結子会社）。",
+      "significance": "建設機械レンタルを行う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "株式会社南陽に商号変更",
+      "description": "1992年1月、商号を株式会社南陽に変更しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "福岡証券取引所に株式上場",
+      "description": "1994年11月、福岡証券取引所に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "南央国際貿易（上海）有限公司を設立",
+      "description": "2003年9月、中国上海市に南央国際貿易（上海）有限公司を設立しました（現・連結子会社）。",
+      "significance": "海外事業の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "本社を博多駅前に移転",
+      "description": "2011年10月、本社を福岡市博多区博多駅前3丁目19番8号に移転しました。",
+      "significance": "現在の本社所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "共栄通信工業株式会社を買収",
+      "description": "2013年4月、東京都渋谷区の共栄通信工業株式会社を買収しました（現・連結子会社）。",
+      "significance": "産業機器事業の販売を行う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "東京証券取引所市場第二部に株式上場",
+      "description": "2017年12月、東京証券取引所市場第二部に株式を上場し、2018年12月に市場第一部銘柄に指定されました。",
+      "significance": "東京証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場へ移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "アプリオリ株式会社を買収",
+      "description": "2026年3月、東京都千代田区のアプリオリ株式会社の株式を取得し、連結子会社としました。同社は流体制御機器の販売、輸入販売及び流体制御システムの製造及び販売を行っています。",
+      "significance": "産業機器事業の製造・販売を行う子会社の追加です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第72期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社南陽",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCGG.pdf",
+      "publishedAt": "2026-06-19",
+      "docId": "S100YCGG",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-11"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中長期的な経営戦略として、既存事業の成長、M&Aによる事業領域の拡大と組織力強化、持続的成長を可能にするサステナビリティ経営の推進を掲げています。建設機械事業では営業体制の再構築による営業活動の強化や新市場・新商品の開拓を、産業機器事業では成長分野における製商品への取り組み強化やASEAN地域を中心とした海外事業の強化を進めるとしています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高は36,815百万円で、前期比0.8％増でした。建設機械事業の売上高は14,390百万円（前期比5.2％増）で、MD&Aではインフラの補修に関連する商品の販売強化や、レンタル部門での民間工事需要の取り込みが説明されています。産業機器事業の売上高は21,988百万円（前期比1.4％減）で、設備投資抑制の影響を受け設備機械の販売が減少したと説明されています。",
+        "basis": "MD&A（経営成績等の状況の概要）、セグメント情報（外部顧客への売上高）",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "当社グループは、建設機械と産業機器の販売に、建設機械のレンタルと産業機器・砕石の製造を組み合わせています。産業機器事業では、販売を行う当社と共栄通信工業株式会社に加え、製造・販売を行う子会社を複数持ち、上海、マレーシア、ベトナム、台湾の関係会社が国外で仕入・販売や販売の仲介を行っています。",
+        "basis": "事業の内容、関係会社の状況",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは産業機器事業（外部顧客への売上高21,988百万円）、建設機械事業（同14,390百万円）、砕石事業（同436百万円）の3つで、産業機器事業が最も大きいです。地域ごとの情報では、本邦の外部顧客への売上高が全体の90％を超えるため内訳の記載が省略されています。主要な顧客ごとの情報では、売上高の10％以上を占める相手先はないとされています。",
+        "basis": "セグメント情報（報告セグメントの概要、報告セグメントごとの金額に関する情報、関連情報）",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }
