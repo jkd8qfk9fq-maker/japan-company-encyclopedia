@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { interimView } from "../src/lib/interim";
+import { interimLabel, interimView } from "../src/lib/interim";
 import type { Company } from "../src/types/company";
 
 const half = (end: string, revenue: number | null, profit: number | null, netIncome: number | null) => ({
@@ -42,5 +42,16 @@ describe("interimView", () => {
     expect(v.prior).toBeNull();
     expect(v.lines.map((l) => l.key)).toEqual(["revenue", "netIncome"]);
     expect(v.lines[0]!.change).toBeNull();
+  });
+});
+
+describe("interimLabel", () => {
+  it("reads the full-year taxonomy label as a half-year one, without the loss suffix", () => {
+    expect(interimLabel("親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）")).toBe("親会社株主に帰属する中間純利益");
+    expect(interimLabel("当期利益又は当期損失（△）：親会社の所有者に帰属（IFRS）")).toBe("中間利益（親会社の所有者に帰属）");
+    expect(interimLabel("経常利益又は経常損失（△）")).toBe("経常利益");
+    expect(interimLabel("税引前利益又は税引前損失（△）（IFRS）")).toBe("税引前利益");
+    expect(interimLabel("売上収益（IFRS）")).toBe("売上収益");
+    expect(interimLabel("売上高")).toBe("売上高");
   });
 });

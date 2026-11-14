@@ -241,7 +241,12 @@ export async function refreshInterim(id, { apply, newest, today, root = process.
   const base = { id, name: entry.name };
   const filing = newest.get(entry.code);
   if (!filing) return { ...base, result: "none", detail: "半期報告書が索引にない" };
-  if (filing.periodEnd && filing.periodEnd <= latestHalf(entry) && filing.docTypeCode !== "170") return { ...base, result: "current", detail: `${latestHalf(entry)} まで登録済み` };
+  // Up to date only when the newest half AND the same half a year earlier are both held: a half registered without
+  // its previous year (as the first import of 2026-11-14 did) is read again until the pair is complete.
+  const held = latestHalf(entry);
+  const yearBefore = held ? `${Number(held.slice(0, 4)) - 1}${held.slice(4)}` : "";
+  const paired = held !== "" && (entry.interimFinancials ?? []).some((/** @type {any} */ h) => h.periodEnd === yearBefore);
+  if (paired && filing.periodEnd && filing.periodEnd <= held && filing.docTypeCode !== "170") return { ...base, result: "current", detail: `${held} まで登録済み` };
   let extracted;
   let rows = [];
   try {

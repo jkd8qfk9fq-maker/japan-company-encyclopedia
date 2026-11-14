@@ -27,6 +27,21 @@ export type InterimView = {
   halves: InterimRecord[];
 };
 
+/**
+ * The line's name as a reader of a half-year report expects it. The XBRL label of a summary element is the
+ * taxonomy's own, written for the full year (「親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）」);
+ * the 半期報告書 prints the same line as 中間. Only the period word and the loss suffix change — never the figure.
+ */
+export function interimLabel(label: string): string {
+  return label
+    .replace(/又は[^、]*?損失（△）/g, "")
+    .replace(/（△は損失）/g, "")
+    .replace(/[（(]IFRS[)）]/g, "")
+    .replace(/[：:]親会社の所有者に帰属/g, "（親会社の所有者に帰属）")
+    .replace(/当期/g, "中間")
+    .trim();
+}
+
 export function interimView(company: Company): InterimView | null {
   const halves = [...(company.interimFinancials ?? [])].sort((a, b) => a.periodEnd.localeCompare(b.periodEnd));
   const current = halves.at(-1);
@@ -54,9 +69,9 @@ export function interimView(company: Company): InterimView | null {
     prior,
     lastFullYear: annual ? { fiscalYear: annual.fiscalYear } : null,
     lines: [
-      line("revenue", current.revenueLabel, (r) => r.revenue),
-      ...(current.profit !== null && current.profitLabel ? [line("profit", current.profitLabel, (r) => r.profit)] : []),
-      line("netIncome", current.netIncomeLabel, (r) => r.netIncome),
+      line("revenue", interimLabel(current.revenueLabel), (r) => r.revenue),
+      ...(current.profit !== null && current.profitLabel ? [line("profit", interimLabel(current.profitLabel), (r) => r.profit)] : []),
+      line("netIncome", interimLabel(current.netIncomeLabel), (r) => r.netIncome),
     ],
     halves,
   };
