@@ -4,15 +4,140 @@
   "name": "ノーリツ鋼機",
   "officialName": "ノーリツ鋼機株式会社",
   "nameEn": "Noritsu Koki Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Noritsu Koki",
+  "description": "写真処理機器メーカーから転換し、DJ機器などの音響機器とペン先・金属部材のものづくり事業を傘下に持つ持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    },
+    {
+      "industryId": "machinery",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "audio-equipment",
+      "name": "ものづくり（音響機器関連）",
+      "description": "音響機器の研究開発・設計・販売とサービスの提供を行う事業です。AlphaTheta株式会社が「Pioneer DJ」ブランドのDJ機器を、PEAG, LLC dba JLabがパーソナルオーディオ製品を手がけています。2025年12月期の外部顧客への売上収益は107,478百万円でした。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "dj-equipment",
+          "name": "DJ機器",
+          "description": "AlphaTheta株式会社が「Pioneer DJ」ブランドで展開する、プロ向けからエントリー向けまでのDJ機器です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【沿革】"
+        },
+        {
+          "id": "personal-audio",
+          "name": "パーソナルオーディオ",
+          "description": "PEAG, LLC dba JLabが展開するヘッドホン・イヤホンなどのパーソナルオーディオ製品です。米国外での販路拡大や製品カテゴリの拡充が進んでいます。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "parts-materials",
+      "name": "ものづくり（部品・材料）",
+      "description": "ペン先部材・コスメ部材・金属部材等の研究開発・生産・販売を行う事業です。テイボー株式会社、浜松メタルワークス株式会社、株式会社soliton corporationが担っています。2025年12月期の外部顧客への売上収益は11,744百万円でした。なお、2026年2月2日に建材機器のセンクシア株式会社が連結子会社となり、本事業を担います（決算日後の異動）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "pen-nibs",
+          "name": "ペン先部材",
+          "description": "筆記具向けのペン先部材です。テイボー株式会社が担い、国内顧客の生産調整の影響を受けています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "cosmetic-parts",
+          "name": "コスメ部材",
+          "description": "化粧品向けの部材です。主に中国の需要の停滞の影響を受けています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "metal-parts",
+          "name": "金属部材",
+          "description": "MIM製品などの金属部材です。2025年4月にテイボー株式会社のMIM事業を分社化した浜松メタルワークス株式会社が担い、輸送機器部品が伸長しています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "ノーリツ鋼機は、グローバルに通用する高い技術を活用した「ものづくり」事業をコアとする企業グループの持株会社で、音響機器関連事業と部品・材料事業を営む事業会社を傘下に持ち、各事業の成長を推進しています。",
+    "products": [
+      "DJ機器（「Pioneer DJ」ブランド）",
+      "ヘッドホン・イヤホンなどのパーソナルオーディオ製品",
+      "ペン先部材・コスメ部材",
+      "MIM製品などの金属部材"
+    ],
+    "customers": [
+      "世界各国のDJや音楽愛好家などの消費者",
+      "ペン先部材などの納入先である筆記具メーカー等の企業"
+    ],
+    "revenueSources": [
+      "音響機器の販売代金",
+      "部品・材料の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "持株会社と事業会社のグループ",
+        "description": "当社と連結子会社17社、持分法適用会社1社で構成されています。本社は東京都港区にあり、連結の従業員数は1,344人です（2025年12月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "音響機器と部品・材料のものづくり",
+        "description": "AlphaTheta株式会社がDJ機器、PEAG, LLC dba JLabがパーソナルオーディオ製品を手がけ、テイボー株式会社などがペン先部材・コスメ部材・金属部材を製造・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "顧客は世界各国の消費者と部材の納入先",
+        "description": "音響機器は米国やヨーロッパを中心に世界各国で販売され、売上収益の9割超が海外の顧客向けです。単一の外部顧客との取引が売上収益の10％以上を占めるものはありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上収益は119,223百万円",
+        "description": "2025年12月期の連結売上収益は119,223百万円で、前期に比べ11.9％増えました。内訳はものづくり（音響機器関連）が107,478百万円、ものづくり（部品・材料）が11,744百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社の所有者に帰属する当期利益は15,639百万円",
+        "description": "2025年12月期の親会社の所有者に帰属する当期利益は15,639百万円で、前期に比べ3.0％減りました。前期には株式会社プリメディカの株式譲渡に伴う非継続事業からの当期利益が含まれていました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +152,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 111024000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 2076,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -47,12 +172,13 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 192544000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 1184,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "株式会社ＪＭＤＣの一部株式譲渡により医療情報に関する事業を非継続事業に分類したため、2021年12月期の関連する数値は修正再表示されています。また、企業結合に係る暫定的な会計処理の確定の内容が、2021年12月期の関連する数値に反映されています。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,12 +193,13 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 205374000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 1246,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "IAS第12号「法人所得税」（2021年5月改訂）を適用したため、2022年12月期の関連する数値は遡及修正後の数値が記載されています。"
     },
     {
       "fiscalYear": "2024年12月期",
@@ -87,12 +214,13 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 222246000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 1239,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "株式会社プリメディカの株式譲渡により、予防医療事業における研究開発・販売に関する事業を非継続事業に分類したため、2023年12月期の関連する数値は修正再表示されています。"
     },
     {
       "fiscalYear": "2025年12月期",
@@ -107,15 +235,267 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 228473000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 1344,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "IFRS第18号「財務諸表における表示及び開示」及びその適用に伴うIAS第７号「キャッシュ・フロー計算書」の改正を早期適用したため、2024年12月期の関連する数値は遡及修正後の数値が記載されています。"
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1943,
+      "title": "報国写真館を創業",
+      "description": "創業者の西本貫一が報国写真館（個人経営）を創業し、写真機器の販売と写真撮影の経営に当たりました。",
+      "significance": "ノーリツ鋼機の創業の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "有限会社ノーリツ光機製作所を設立",
+      "description": "「写真印画紙自動水洗機」の開発を機に、有限会社ノーリツ光機製作所を設立しました。",
+      "significance": "当社の前身です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "ノーリツ鋼機株式会社を設立",
+      "description": "有限会社ノーリツ光機製作所より組織変更し、和歌山市中島にノーリツ鋼機株式会社を設立しました。",
+      "significance": "現在の会社組織の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "QSS-1型を開発",
+      "description": "フィルム現像からカラープリント仕上げまで45分で行えるQSS-1型を開発しました。",
+      "significance": "QSS・ミニラボの原点であり、世界への飛躍の原動力となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "北米市場へ進出",
+      "description": "販売会社としてNAC Corporation（1981年にNORITSU AMERICA CORPORATIONへ名称変更）を設立し、北米市場へ進出しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "ヨーロッパ市場へ進出",
+      "description": "販売会社としてNORITSU (UK) LIMITEDを設立し、ヨーロッパ市場へ進出しました。",
+      "significance": "欧州展開の足がかりとなりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "本社工場が完成し本社を移転",
+      "description": "本社工場が完成し、本社を和歌山市梅原に移転しました。",
+      "significance": "生産と本社の拠点が整いました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場企業としての出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "1997年9月に大阪証券取引所市場第一部に指定され、同年11月に東京証券取引所市場第一部に上場しました。",
+      "significance": "全国市場での上場を果たしました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "NKリレーションズ株式会社を設立",
+      "description": "NKリレーションズ株式会社を設立し、新規事業への進出を強化しました（2018年9月に当社へ吸収合併）。",
+      "significance": "写真処理機器以外の新規事業領域の開拓を本格化させた転機です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "株式会社ドクターネットを買収",
+      "description": "株式会社ドクターネットを買収し、医療支援事業に進出しました（同社は2018年4月に株式会社日本医療データセンターへ譲渡）。",
+      "significance": "医療分野への進出の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "持株会社体制へ移行",
+      "description": "新設分割によりNKワークス株式会社（現ノーリツプレシジョン株式会社）を設立し、主要事業を承継させ、持株会社体制へ移行しました。",
+      "significance": "現在のグループ経営体制の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "株式会社日本医療データセンターなどを買収",
+      "description": "株式会社日本医療データセンター（現株式会社JMDC）、フィード株式会社、株式会社アイメディック等を買収し、医療分野の事業を強化・拡大しました。",
+      "significance": "医療分野が一時、事業の柱の一つとなりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "テイボー株式会社を買収",
+      "description": "テイボー株式会社を買収し、ものづくり事業を強化・拡大しました。",
+      "significance": "現在の部品・材料事業の中核の参画です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "本店所在地を東京都港区へ移転",
+      "description": "すべての本社機能を集約し、本店所在地を東京都港区に移転しました。",
+      "significance": "本社機能の集約です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "写真処理機器事業を譲渡",
+      "description": "創業の事業である写真処理機器事業を営むNKワークス株式会社（現ノーリツプレシジョン株式会社）を譲渡しました。",
+      "significance": "祖業からの転換を完了した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "株式会社JMDCが上場",
+      "description": "株式会社JMDCが東京証券取引所マザーズ市場に上場しました。",
+      "significance": "医療情報事業の成長を示す出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "AlphaTheta株式会社を買収",
+      "description": "「Pioneer DJ」などのDJ機器を展開するAlphaTheta株式会社を買収しました。",
+      "significance": "現在の主力である音響機器関連事業の参画です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "PEAG, LLC dba JLabを買収",
+      "description": "パーソナルオーディオ関連機器を展開する米国企業PEAG, LLC dba JLab Audio（現PEAG, LLC dba JLab）を買収しました。",
+      "significance": "音響機器関連事業の海外での広がりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "株式会社JMDCの一部株式を譲渡",
+      "description": "株式会社JMDCの一部株式をグループ外へ譲渡し、コア事業を「ものづくり」と再定義しました。",
+      "significance": "事業ポートフォリオをものづくりへ集中させる転機です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現行の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "中期経営計画FY30を発表",
+      "description": "中期経営計画FY25の前倒し達成を受け、中期経営計画FY30を発表しました。",
+      "significance": "2030年度までの経営の指針です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "浜松メタルワークス株式会社が営業開始",
+      "description": "テイボー株式会社のMIM事業を分社化し、浜松メタルワークス株式会社として営業を開始しました。",
+      "significance": "部品・材料事業の体制強化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "AlphaTheta Technology Vietnamの製造会社が竣工",
+      "description": "AlphaTheta Technology Vietnam CO.,Ltd.の製造会社が竣工しました。",
+      "significance": "音響機器関連事業の自社生産体制の構築です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "センクシア株式会社を買収",
+      "description": "センクシア株式会社の全株式を取得し、連結子会社としました。",
+      "significance": "決算日後の異動で、部品・材料事業を担う新領域のグループ参画です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +504,51 @@
       "publisher": "ノーリツ鋼機株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XS3C.pdf",
       "publishedAt": "2026-03-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XS3C",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2025年7月1日に、普通株式1株を3株とする株式分割を実施しました。株式数に基づく指標は、2024年12月期の期首に当該株式分割が行われたと仮定して算定されています。",
+      "businessModel: 決算日後の2026年2月2日に、建材機器の製造・販売及び関連工事を営むセンクシア株式会社の全株式を取得し、連結子会社としました（取得資金として、同日に当座貸越契約による50,000百万円の資金調達を実施しています）。本登録の内容は2025年12月31日現在のグループ構成に基づいており、センクシアは関係会社の一覧やセグメントの数値には含まれていません。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念を「お客様に信頼され支持される商品とサービスの提供」、ミッションを「社会と人々に豊かさを」、ビジョンを「No.１/Only１を創造し続ける事業グループ」と定めています。2025年2月に公表した中期経営計画FY30では、既存事業のオーガニック成長の極大化に加え、周辺事業に関連するM&Aや新領域への投資、安定的な供給体制の確保に向けたサプライチェーンの強化に取り組む方針です。",
+        "asOf": "2026-03-19",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "グループ事業のそれぞれが特定の市場でのトップ・リーダー企業であることを強みとし、グローバルに通用する高い技術を活用したものづくりを展開しています。音響機器関連では「Pioneer DJ」や「JLab」のブランドと世界各国の販売体制を持ち、部品・材料ではペン先やMIMなどの部材技術を持っています。また、収益力と成長分野への投資の実効性を測る指標として事業EBITDAを重要な管理指標としています。",
+        "asOf": "2026-03-19",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年12月期の連結売上収益119,223百万円の内訳は、ものづくり（音響機器関連）が107,478百万円と約9割を占め、ものづくり（部品・材料）が11,744百万円です。地域別では米国が48,955百万円、ヨーロッパが38,431百万円と大きく、日本は10,075百万円で、売上収益の9割超が海外の顧客向けです。単一の外部顧客が売上収益の10％以上を占める取引はありません。筆頭株主の西本興産株式会社が議決権の41.88％を保有しています。",
+        "basis": "【セグメント情報等】の報告セグメントごとの情報、地域ごとの情報、主要な顧客ごとの情報、および【関係会社の状況】によります。",
+        "asOf": "2026-03-19",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

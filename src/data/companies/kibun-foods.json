@@ -4,15 +4,113 @@
   "name": "紀文食品",
   "officialName": "株式会社紀文食品",
   "nameEn": "KIBUN FOODS INC.",
-  "description": null,
+  "shortNameEn": "KIBUN FOODS",
+  "description": "スリミ製品を中心に食品の製造・販売とチルド食品の物流を手がける食品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "domestic-food",
+      "name": "国内食品事業",
+      "description": "日本国内でスリミ製品・惣菜・水産珍味などの食品の製造・販売を行い、すり身などの水産品や水産加工品、農畜産品の輸出入と国内仕入販売も行っています。2026年3月期の外部顧客への売上高は78,167百万円でした。製造・販売は当社と関連会社の海洋食品株式会社が、輸出入・仕入販売は子会社の株式会社紀文産業が行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "food-related",
+      "name": "食品関連事業",
+      "description": "チルド食品のロジスティクスを中心に、情報サービス、広告宣伝・販売促進、オフィスサービス、フードサービス、食品衛生検査分析の受託を行っています。2026年3月期の外部顧客への売上高は21,401百万円でした。物流事業は子会社の株式会社紀文フレッシュシステムが、食品衛生検査は子会社の株式会社紀文安全食品センターが行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "overseas-food",
+      "name": "海外食品事業",
+      "description": "海外でスリミ製品などの食品の製造・販売を行い、スリミ製品やすり身などの農畜水産品の輸出入及び仕入販売も行っています。2026年3月期の外部顧客への売上高は11,468百万円でした。製造・販売は子会社のKIBUN (THAILAND) CO.,LTD.と関連会社のYILIN KIBUN CORPORATIONが、輸出入・仕入販売は子会社のKIBUN FOODS (U.S.A.),INC.が行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "国内食品事業、海外食品事業、食品関連事業の3つのセグメントで事業を展開しています。",
+    "products": [
+      "スリミ製品",
+      "カニカマ",
+      "竹輪",
+      "はんぺん",
+      "玉子加工品",
+      "惣菜",
+      "水産珍味",
+      "すり身"
+    ],
+    "customers": [
+      "小売店",
+      "スーパーマーケット",
+      "食品メーカー",
+      "外食産業",
+      "海外の販売先"
+    ],
+    "revenueSources": [
+      "国内食品事業の食品の販売による収入",
+      "海外食品事業の食品の販売による収入",
+      "食品関連事業の物流・サービスによる収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "スリミ製品を中心とする食品メーカー",
+        "description": "紀文食品株式会社は、スリミ製品を中心とする食品メーカーで、当社、連結子会社12社、非連結子会社1社、持分法適用関連会社2社でグループを構成しています。連結従業員数は2,457人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "スリミ製品と食品関連サービス",
+        "description": "スリミ製品や惣菜、水産珍味などの食品を製造・販売し、すり身などの水産品や農畜産品の輸出入と仕入販売も行います。チルド食品の物流や食品衛生検査などのサービスも提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "小売店や食品メーカー、外食産業が主な顧客",
+        "description": "主な顧客は小売店やスーパーマーケット、食品メーカー、外食産業です。連結売上高の10％以上を占める顧客はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は111,037百万円（前期比2.0％増）でした。セグメント別では国内食品事業が78,167百万円、食品関連事業が21,401百万円、海外食品事業が11,468百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,099百万円（前期比57.5％減）でした。"
+      }
+    ],
+    "suppliers": [
+      {
+        "name": "水産品・農畜産品の仕入先",
+        "description": "スリミ製品の主原料となるすり身などの水産品や、鶏卵・野菜などの副原料、資材を仕入れています。",
+        "businessIds": [
+          "domestic-food"
+        ]
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +125,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14182065000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2686,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +145,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13839090000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2581,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +165,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19201341000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2554,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +185,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21268223000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2545,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "在外子会社等の収益及び費用の円貨への換算を、各社の決算日の直物為替相場による方法から期中平均為替相場による方法に変更し、遡及適用しています。第84期から第86期は遡及適用後の数値です。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +206,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26440013000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2457,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +214,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第88期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社紀文食品",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGHF.pdf",
-      "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-28"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-28",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +225,587 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1938,
+      "title": "山形屋米店の創業",
+      "description": "1938年6月、保芦邦人が東京の八丁堀に「山形屋米店」を個人創業にて開店しました。",
+      "significance": "当社の前身の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "スリミ製品の製造の始まり",
+      "description": "1947年に、戦後の再建支援を目的として、山久蒲鉾株式会社へ出資し、スリミ製品の製造を始めました。",
+      "significance": "スリミ製品の製造への第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "株式会社紀文商店の設立",
+      "description": "1948年5月、水産物類の製造・加工及び販売を目的として、株式会社紀文商店を東京都中央区に設立しました。",
+      "significance": "会社としての設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "松坂屋銀座店への出店",
+      "description": "1952年2月、松坂屋銀座店（名店街）に出店しました。",
+      "significance": "小売への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "株式会社紀文の設立",
+      "description": "1957年11月、釜文蒲鉾株式会社と新設合併し、株式会社紀文を東京都中央区に設立しました。",
+      "significance": "製販一体の事業展開が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "大阪出張所の開設",
+      "description": "1959年3月、大阪市西区に大阪出張所を開設しました。現在の関西支社です。",
+      "significance": "関西への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "名古屋出張所の開設",
+      "description": "1961年11月、名古屋市中村区に名古屋出張所を開設しました。現在の中部支社です。",
+      "significance": "中部への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "本社の移転",
+      "description": "1962年12月、本社を東京都中央区東都水ビルに移転しました。",
+      "significance": "本社の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "横浜工場の建設",
+      "description": "1963年10月、横浜市戸塚区に横浜工場を建設しました。",
+      "significance": "生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "仙台駐在所の開設",
+      "description": "1968年2月、宮城県仙台市に仙台駐在所を開設しました。現在の東北支社です。",
+      "significance": "東北への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "静岡工場の建設",
+      "description": "1970年6月、静岡県島田市に静岡工場を建設しました。",
+      "significance": "生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "株式会社札幌紀文の設立",
+      "description": "1970年6月、北海道札幌市に株式会社札幌紀文を設立しました。現在の北海道支社です。",
+      "significance": "北海道への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "九州支店の開設",
+      "description": "1970年10月、福岡県福岡市に九州支店を開設しました。現在の中四国・九州支社です。",
+      "significance": "九州への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "札幌工場の建設",
+      "description": "1970年11月、北海道札幌市に札幌工場を建設しました。",
+      "significance": "生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "吸収合併の実施",
+      "description": "1977年9月、旧株式会社紀文の株式の額面変更を目的に、新株式会社紀文を存続会社とした吸収合併を実施しました。",
+      "significance": "会社体制の整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "豆乳の発売と飲料事業への参入",
+      "description": "1977年11月、豆乳を発売し、飲料事業に参入しました。",
+      "significance": "飲料事業への参入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "船橋工場の建設",
+      "description": "1978年10月、千葉県船橋市に船橋工場を建設しました。",
+      "significance": "生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "HOSHO AMERICA,INC.の設立",
+      "description": "1978年11月、北米におけるスリミ製品の販売を目的として、アメリカにHOSHO AMERICA,INC.（現 KIBUN FOODS (U.S.A.),INC.）を設立しました。現在の連結子会社です。",
+      "significance": "北米への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "本社の移転",
+      "description": "1982年3月、本社を東京都中央区日交銀座ビルに移転しました。",
+      "significance": "本社の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "KIBUN HONG KONG COMPANY LIMITEDの設立",
+      "description": "1982年3月、アジア圏でのスリミ製品の販売を目的として、香港にKIBUN HONG KONG COMPANY LIMITEDを設立しました。現在の連結子会社です。",
+      "significance": "香港への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "KIBUN FOODS SINGAPORE PTE.,LTD.の設立",
+      "description": "1982年6月、アジア圏でのスリミ製品の販売を目的として、シンガポールにKIBUN FOODS SINGAPORE PTE.,LTD.を設立しました。現在の連結子会社です。",
+      "significance": "シンガポールへの進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "HOSHO BANGKOK CO.,LTD.の設立",
+      "description": "1982年6月、海外における生産の拠点として、タイにHOSHO BANGKOK CO.,LTD.（現 KIBUN (THAILAND) CO.,LTD.）を設立しました。現在の連結子会社です。",
+      "significance": "海外生産拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "佐賀工場の建設",
+      "description": "1982年9月、佐賀県鳥栖市に佐賀工場を建設しました。",
+      "significance": "生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "大阪工場の建設",
+      "description": "1982年12月、大阪府泉佐野市に大阪工場を建設しました。",
+      "significance": "生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "コーポレート・アイデンティティの導入",
+      "description": "1985年1月、コーポレート・アイデンティティ（CI）を導入し、ハートフラワーマークを採用しました。",
+      "significance": "ブランドの確立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "株式会社紀文食品への商号変更",
+      "description": "1992年4月、株式会社紀文食品に商号変更しました。",
+      "significance": "現在の商号になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "株式会社紀文フレッシュシステムの設立",
+      "description": "1993年1月、物流と情報処理インフラの複合ロジスティクス業務を目的として、東京都大田区に株式会社紀文フレッシュシステムを設立しました。現在の連結子会社です。",
+      "significance": "物流事業の体制整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "タイへの生産工場建設",
+      "description": "1993年4月、タイに、東南アジア、アメリカ、ヨーロッパ向けの生産工場を建設しました。",
+      "significance": "海外生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "株式会社豊珠興産の設立",
+      "description": "1993年12月、グループ内の飲食事業、リース事業等を集約し、東京都中央区に株式会社豊珠興産（現 株式会社紀文ビジネスクリエイト）を設立しました。現在の連結子会社です。",
+      "significance": "グループ内サービスの集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "恵庭工場の建設",
+      "description": "1995年3月、札幌工場を閉鎖し、北海道恵庭市に恵庭工場を建設しました。",
+      "significance": "北海道の生産拠点の更新です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "株式会社北食の買収",
+      "description": "1997年1月、珍味事業進出を目的として、株式会社北食を買収し子会社化しました。",
+      "significance": "珍味事業への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "東京工場の建設",
+      "description": "1997年8月、千葉県印旛郡栄町に東京工場を建設しました。",
+      "significance": "生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "株式会社紀文産業の設立",
+      "description": "2005年1月、農畜水産物の販売及び輸出入等を目的として、東京都中央区に株式会社紀文産業を設立し、食品の卸売事業を開始しました。現在の連結子会社です。",
+      "significance": "食品卸売事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "岡山総社工場の建設",
+      "description": "2007年4月、大阪工場及び佐賀工場を集約して、岡山県総社市に岡山総社工場を建設しました。",
+      "significance": "西日本の生産拠点の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "本店と本社事務所ビルの移転",
+      "description": "2007年7月、本店を東京都中央区南海東京ビルディングに移転すると共に、本社事務所ビルを日の出オフィスとして東京都港区住友不動産竹芝ビルに移転しました。現在の本社事務所ビルは野村不動産海岸ビルです。",
+      "significance": "本店と本社事務所の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "株式会社豊珠保険サービスの設立",
+      "description": "2012年2月、株式会社豊珠興産から保険事業部門を分離し、東京都港区に株式会社豊珠保険サービス（現 株式会社紀文BC保険サービス）を設立しました。現在の連結子会社です。",
+      "significance": "保険事業の分離独立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "KIBUN KOREA INC.の設立",
+      "description": "2012年12月、韓国でのスリミ製品の製造販売を目的として、韓国にKIBUN KOREA INC.を設立しました。現在の連結子会社です。",
+      "significance": "韓国への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "キッコーマンデイリー株式会社への出資",
+      "description": "2013年7月、豆乳を中心とするチルド飲料拡売を目的として、キッコーマンデイリー株式会社に出資し、当社チルド飲料販売機能を同社に移管しました。2015年11月にキッコーマン飲料株式会社に株式を譲渡しました。",
+      "significance": "チルド飲料事業の体制変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "株式会社紀文西日本の設立",
+      "description": "2015年11月、西日本地域におけるスリミ製品、惣菜の製造・販売を目的として、大阪市西区に株式会社紀文西日本を設立し、2016年4月に当社の会社分割により、西日本地域での食品の製造・販売事業を継承しました。",
+      "significance": "西日本事業の分社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "株式会社紀文安全食品センターの設立",
+      "description": "2016年8月、食品の安全衛生検査事業を目的として、千葉県船橋市に株式会社紀文安全食品センターを設立しました。現在の連結子会社です。",
+      "significance": "食品衛生検査事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "KIBUN EUROPE B.V.の設立",
+      "description": "2018年2月、欧州におけるスリミ製品の販売を目的として、オランダにKIBUN EUROPE B.V.を設立しました。現在の連結子会社です。",
+      "significance": "欧州への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "KIBUN CHINA CO.,LTD.の設立",
+      "description": "2019年6月、中国におけるスリミ製品の販売を目的として、中国にKIBUN CHINA CO.,LTD.を設立しました。現在の連結子会社です。",
+      "significance": "中国への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "東京証券取引所市場第一部への上場",
+      "description": "2021年4月、東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "株式の上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場への移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、東京証券取引所市場第一部からプライム市場に移行しました。",
+      "significance": "上場市場の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "マルハニチロ株式会社との資本業務提携契約の締結",
+      "description": "2024年3月、国内市場及び海外市場での協業による成長を目的として、マルハニチロ株式会社と資本業務提携契約を締結しました。同社は2026年3月1日付でUmios株式会社に商号を変更しました。",
+      "significance": "大手水産会社との提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ビジョン・ミッション・バリューの定義とブランドメッセージの策定",
+      "description": "2024年5月、創業100周年に向け、当社グループのビジョン・ミッション・バリューを定義するとともに、コーポレートブランドメッセージ「すこやかなおいしさ、日本から」を策定しました。",
+      "significance": "企業ブランドの再定義です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社北食の吸収合併",
+      "description": "2025年1月、国内事業再編のため、当社を存続会社として株式会社北食を吸収合併しました。",
+      "significance": "国内事業の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社紀文西日本の吸収合併",
+      "description": "2025年4月、国内事業再編のため、当社を存続会社として株式会社紀文西日本を吸収合併しました。",
+      "significance": "国内事業の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "umios",
+      "relationship": "business-partner",
+      "description": "2024年3月25日に資本業務提携契約を締結し、国内及び海外事業における製品の開発・製造・販売等での協業を目的としています。2026年3月31日現在、発行済株式総数の9.90％に当たる2,261,200株を保有し、当社の取締役候補者1名を推薦できる権利を有しています。2026年3月1日付でマルハニチロ株式会社から商号を変更しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "kikkoman",
+      "relationship": "business-partner",
+      "description": "食品事業全般における戦略的な取引関係を維持強化し、取引の拡大を図ることを目的とした資本・業務提携先です。2026年3月31日現在、発行済株式（自己株式を除く。）の総数の2.49％に当たる568千株を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "pronexus",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式（自己株式を除く。）の総数の1.36％に当たる310千株を保有する大株主です。研究会を通じた相互の取組みによる企業価値向上を目的として当社株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第88期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社紀文食品",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGHF.pdf",
+      "publishedAt": "2026-06-23",
+      "docId": "S100YGHF",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年4月から開始した「中期経営計画2026」では、収益性向上と財務体質改善による持続的に成長できる強固な企業体質の構築を軸に、成長戦略の推進と新たな価値創造、資本効率の改善、経営基盤の整備に取り組んでいます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "スリミ製品市場における高いシェア、流通企業との直接取引による全国販売網とチルド配送システム、物流の高度化を強みとしています。原材料調達から製造段階までの一貫した競争優位性の追求と研究開発にも取り組んでいます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の外部顧客への売上高は、国内食品事業が78,167百万円、食品関連事業が21,401百万円、海外食品事業が11,468百万円で、国内食品事業が売上高の大半を占めています。地域別の売上高は日本が99,394百万円、海外が11,642百万円です。連結売上高の10％以上を占める顧客はいません。",
+        "basis": "セグメント情報の外部顧客への売上高（国内食品事業78,167百万円・食品関連事業21,401百万円・海外食品事業11,468百万円）、関連情報の地域ごとの情報（日本99,394百万円・海外11,642百万円）及び主要な顧客ごとの情報（10％以上を占める相手先なし）による。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
+  "segmentRevenue": {
+    "fiscalYear": "2026年3月期",
+    "periodEnd": "2026-03-31",
+    "label": "外部顧客への売上高",
+    "items": [
+      {
+        "businessId": "domestic-food",
+        "amount": 78167680000
+      },
+      {
+        "businessId": "overseas-food",
+        "amount": 11468472000
+      },
+      {
+        "businessId": "food-related",
+        "amount": 21401365000
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【セグメント情報】"
   }
 }

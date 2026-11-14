@@ -4,7 +4,8 @@
   "name": "日本トランスシティ",
   "officialName": "日本トランスシティ株式会社",
   "nameEn": "Japan Transcity Corporation",
-  "description": null,
+  "shortNameEn": "Japan Transcity",
+  "description": "四日市港を地盤に、倉庫・港湾運送・陸上運送・国際複合輸送を一体で手がける総合物流会社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,8 +16,131 @@
       "market": "プレミア"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "integrated-logistics",
+      "name": "総合物流事業",
+      "description": "倉庫業、港湾運送業、陸上運送業、国際複合輸送業を一体で営む、当社の報告セグメントです。四日市港を中心とする拠点と海外の現地法人網で、保管から国際輸送までを担います。2026年3月期の外部顧客への売上高は123,442百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "warehousing",
+          "name": "倉庫業",
+          "description": "寄託を受けた物品を倉庫に保管し、保管料を得る当社の主体業務です。保管に加えて寄託貨物の入出庫や配送、軽易な加工も行い、荷役料や配送料などを得ています。2026年3月期の外部顧客への売上高は54,174百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "international-freight",
+          "name": "国際複合輸送業",
+          "description": "輸出入貨物を荷送人の指定場所から荷受人の指定場所まで、一貫した運送責任を持って最適な輸送手段で運ぶ事業と、国際間の航空貨物運送の代理店業です。米国・アジア・欧州などの現地法人が担います。2026年3月期の外部顧客への売上高は25,522百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "port-transport",
+          "name": "港湾運送業",
+          "description": "港湾で海上輸送と陸上輸送をつなぐ事業で、貨物の船積み・陸揚げや荷捌き、通関などを行います。四日市港を中心に、名古屋港、鹿島港、水島港、横浜港、大阪港などで営んでいます。2026年3月期の外部顧客への売上高は22,004百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "land-transport",
+          "name": "陸上運送業",
+          "description": "貨物自動車運送と、鉄道などを利用する貨物利用運送を行う事業です。三重県、愛知県、岐阜県、滋賀県、大阪府、兵庫県、岡山県、福岡県、茨城県および首都圏で営んでいます。2026年3月期の外部顧客への売上高は20,015百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "logistics-other",
+          "name": "その他",
+          "description": "取引先工場内の作業の請負などを行う区分です。2026年3月期の外部顧客への売上高は1,725百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        }
+      ]
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他の事業",
+      "description": "報告セグメントに含まれない事業で、不動産業、建設業、損害保険代理店業、自動車整備業、ゴルフ場経営、情報システムの企画・開発・保守および運用管理、水素供給事業などを営んでいます。2026年3月期の外部顧客への売上高は2,075百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "日本トランスシティは、倉庫業を主体に、港湾運送・陸上運送・国際複合輸送を組み合わせた総合物流事業を営み、不動産やゴルフ場経営なども手がける会社です。",
+    "products": [
+      "倉庫保管と、寄託貨物の入出庫・配送・物流加工",
+      "港湾運送（船内荷役・沿岸荷役・荷捌き・通関）",
+      "貨物自動車運送と鉄道利用運送",
+      "国際複合輸送（一貫運送）と航空貨物運送代理店",
+      "不動産業、自動車整備、ゴルフ場経営、損害保険代理店など"
+    ],
+    "customers": [
+      "製造業をはじめとする荷主企業",
+      "住友電装株式会社（最大の顧客）",
+      "輸出入を行う国内外の企業"
+    ],
+    "revenueSources": [
+      "保管料、荷役料、配送料などの倉庫・物流加工の対価",
+      "船内荷役料、沿岸荷役料、上屋保管料、通関料",
+      "トラック輸送・鉄道利用運送の運送収入",
+      "国際複合輸送の運賃と航空貨物運送の代理店手数料",
+      "不動産の賃貸料やゴルフ場の利用料など"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と子会社45社・関連会社15社のグループ",
+        "description": "当社グループは、当社と子会社45社、関連会社15社で構成され、本社は三重県四日市市にあります。従業員数は2,442名（2026年3月31日現在）です。"
+      },
+      {
+        "kind": "offering",
+        "title": "保管から国際輸送までを一括で担う",
+        "description": "倉庫での保管と入出庫・配送、港湾での荷役や通関、トラックや鉄道による輸送、輸出入貨物の一貫輸送を組み合わせ、荷主の物流をまとめて引き受けます。"
+      },
+      {
+        "kind": "customer",
+        "title": "荷主企業が顧客、最大は住友電装",
+        "description": "顧客は製造業をはじめとする荷主企業です。最大の顧客は住友電装株式会社で、2026年3月期の売上高は15,983百万円と全体の12.7％を占めます。売上高の地域別では、日本が108,905百万円、その他が16,612百万円です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "総合物流事業が売上の大半",
+        "description": "2026年3月期の売上高は125,517百万円で、前期比0.6％増となりました。総合物流事業が123,442百万円（倉庫業54,174百万円、国際複合輸送業25,522百万円、港湾運送業22,004百万円、陸上運送業20,015百万円、その他1,725百万円）で、その他の事業が2,075百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "港湾貨物の取扱増加などが寄与",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は6,595百万円で、前期比9.2％増となりました。港湾貨物の取扱増加や、効率的なオペレーションによる生産性向上、料金の適正化などが寄与したと説明しています。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +155,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 72778000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2334,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +175,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 79742000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2436,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,12 +195,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 89205000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2492,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "国際会計基準IAS第12号「法人所得税」（2021年5月改訂）を第110期（2024年3月期）の期首から適用しており、第109期（2023年3月期）に係る主要な経営指標等は、当該会計基準を遡って適用した後の指標等となっています。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -91,7 +216,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 95574000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2472,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +236,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 105978000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2442,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,22 +244,584 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1942,
+      "title": "四日市港運株式会社として設立",
+      "description": "港湾運送業等統制令に基づき、四日市港運株式会社として設立されました。",
+      "significance": "現在の日本トランスシティの発祥です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "四日市港湾荷役株式会社を設立",
+      "description": "四日市港湾荷役株式会社（現在の四日市海運株式会社）を設立しました。",
+      "significance": "港湾荷役を担うグループ会社が発足しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1945,
+      "title": "旧四日市倉庫株式会社を合併し商号変更",
+      "description": "旧四日市倉庫株式会社（1895年7月設立）を合併し、商号を四日市港運倉庫株式会社に変更しました。",
+      "significance": "倉庫業が事業に加わり、のちの創業年数の起点となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "冷凍倉庫部門を分離し極東冷蔵を設立",
+      "description": "冷凍倉庫部門を分離し、極東冷蔵株式会社を設立しました。",
+      "significance": "冷蔵倉庫事業が独立した会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "四日市倉庫株式会社に商号変更",
+      "description": "商号を四日市倉庫株式会社に変更しました。",
+      "significance": "倉庫業を主体とする社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "名古屋証券取引所に上場",
+      "description": "名古屋証券取引所へ株式を上場しました。",
+      "significance": "株式上場の第一歩となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "通運事業と貸切貨物自動車運送事業を開始",
+      "description": "通運事業および一般貸切貨物自動車運送事業を開始しました。",
+      "significance": "陸上運送へ事業が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部へ株式を上場しました。",
+      "significance": "全国市場での上場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "セントラル自動車整備株式会社を設立",
+      "description": "セントラル自動車整備株式会社を設立しました。",
+      "significance": "自動車整備事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "朝日海運株式会社へ資本参加",
+      "description": "朝日海運株式会社へ資本参加しました。",
+      "significance": "港湾運送の体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "四倉不動産株式会社を設立",
+      "description": "四倉不動産株式会社（現在のヨンソー開発株式会社）を設立しました。",
+      "significance": "不動産事業の担い手が発足しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "住友商事との合弁で中部コールセンターを設立",
+      "description": "住友商事株式会社との合弁で、中部コールセンター株式会社を設立しました。",
+      "significance": "石炭の保管などを担う合弁事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "米国ロサンゼルスに現地法人を設立",
+      "description": "Yokkaichi America Corporation（現在のTrancy Logistics America Corporation）を米国ロサンゼルスに設立しました。",
+      "significance": "海外展開の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "タイ・バンコクに現地法人を設立",
+      "description": "Yokkaichi(Thailand)Co.,Ltd.（現在のTrancy Logistics(Thailand)Co.,Ltd.）をタイのバンコクに設立しました。",
+      "significance": "アジアの拠点網が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "シンガポールに現地法人を設立",
+      "description": "Trancy Logistics(Singapore)Pte.Ltd.をシンガポールに設立しました。",
+      "significance": "東南アジアの拠点が増えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "日本トランスシティ株式会社に社名変更",
+      "description": "日本トランスシティ株式会社に社名を変更しました。",
+      "significance": "現在の社名となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "創業100周年",
+      "description": "旧四日市倉庫株式会社の設立から数えて創業100周年を迎えました。",
+      "significance": "長い歴史を持つ会社であることを示す節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "香港に現地法人を設立",
+      "description": "Trancy Logistics(H.K.)Ltd.を香港に設立しました。",
+      "significance": "中国向け物流の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "四日市港国際物流センターが稼働",
+      "description": "四日市港国際物流センター株式会社（1994年4月設立）の施設が稼働しました。",
+      "significance": "四日市港の物流機能が強化されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "東京支店東松山物流センターが完成",
+      "description": "東京支店の東松山物流センターが完成しました。",
+      "significance": "関東の拠点が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "輸出貨物部がISO9002の認証を取得",
+      "description": "輸出貨物部（現在の国際物流部）がISO9002の認証を取得しました。",
+      "significance": "品質管理の取り組みが進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "大阪支店枚方物流センターが完成",
+      "description": "大阪支店の枚方物流センターが完成しました。",
+      "significance": "関西の拠点が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "フィリピン・マニラに現地法人を設立",
+      "description": "Trancy Logistics Philippines,Inc.をフィリピンのマニラに設立しました。",
+      "significance": "アジアの拠点網がさらに広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "マレーシアに現地法人を設立",
+      "description": "Trancy Logistics(Malaysia)Sdn.Bhd.をマレーシアのペタリングジャヤに設立しました。",
+      "significance": "アジアの拠点網がさらに広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "インドネシア・ジャカルタに現地法人を設立",
+      "description": "PT.Naditama-Trancy Logistics Indonesiaをインドネシアのジャカルタに設立しました。",
+      "significance": "アジアの拠点網がさらに広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "株式会社東西荷扱所へ資本参加",
+      "description": "株式会社東西荷扱所へ資本参加しました。",
+      "significance": "横浜での港湾荷役体制が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "ドイツ・デュッセルドルフに現地法人を設立",
+      "description": "Trancy Logistics(Europe)GmbHをドイツのデュッセルドルフに設立しました。",
+      "significance": "欧州の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "トランスシティロジスティクス中部を設立",
+      "description": "消費財専用物流センターの運営のため、連結子会社トランスシティロジスティクス中部株式会社を設立しました。",
+      "significance": "消費財物流の専門会社が発足しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "ISO14001の認証を取得",
+      "description": "ISO14001の認証を取得しました。",
+      "significance": "環境管理の取り組みが進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "消費財専用物流センター「イオン中部RDC」が稼働",
+      "description": "消費財専用物流センター「イオン中部RDC」が稼働しました。",
+      "significance": "消費財の大規模な物流拠点が動き始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "タイで自動車部品専用物流センターが稼働",
+      "description": "タイにおいて自動車部品専用物流センターが稼働しました。",
+      "significance": "海外で自動車部品物流が本格化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "メキシコに現地法人を設立",
+      "description": "Trancy Logistics Mexico S.A.de C.V.をメキシコのアグアスカリエンテスに設立しました。",
+      "significance": "北米の拠点が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "中国・上海に現地法人を設立",
+      "description": "Trancy Logistics(Shanghai)Co.,Ltd.を中国の上海に設立しました。",
+      "significance": "中国の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "ベトナム・ハノイに現地法人を設立",
+      "description": "Trancy Logistics(Vietnam)Co.,Ltd.（現在の連結子会社）をベトナムのハノイに設立しました。",
+      "significance": "ベトナム事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "カンボジア・プノンペンに現地法人を設立",
+      "description": "Trancy Logistics(Cambodia)Co.,Ltd.をカンボジアのプノンペンに設立しました。",
+      "significance": "アジアの拠点網がさらに広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "シンガポール現地法人を清算",
+      "description": "Trancy Logistics(Singapore)Pte.,Ltd.を清算しました。",
+      "significance": "海外拠点の見直しが行われました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "JSR物流へ資本参加しジェイトランスに社名変更",
+      "description": "JSR物流株式会社へ資本参加し、社名をジェイトランス株式会社に変更しました。",
+      "significance": "化学品物流などの担い手がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "霞北埠頭流通センター株式会社を設立",
+      "description": "霞北埠頭流通センター株式会社を設立しました。",
+      "significance": "四日市港の倉庫拠点が増えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "ベトナムに配送子会社を設立",
+      "description": "Trancy Distribution(Vietnam)Co.,Ltd.をベトナムのハノイに設立しました。",
+      "significance": "ベトナムでの配送体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "霞北埠頭流通センターが稼働",
+      "description": "霞北埠頭流通センターが稼働しました。",
+      "significance": "四日市港の保管能力が増えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "東京支店幸手物流センターが稼働",
+      "description": "東京支店の幸手物流センターが稼働しました。",
+      "significance": "関東の拠点が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "タイに配送子会社を設立",
+      "description": "Trancy Distribution(Thailand)Co.,Ltd.をタイのバンコクに設立しました。",
+      "significance": "タイでの配送体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "霞バイオマスセンターが稼働",
+      "description": "霞バイオマスセンターが稼働しました。",
+      "significance": "バイオマス燃料の保管・取扱いが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "ベトナムで保税倉庫が稼働",
+      "description": "ベトナムにおいて保税倉庫が稼働しました。",
+      "significance": "ベトナムの倉庫機能が強化されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "新しい市場区分での上場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "名古屋証券取引所プレミア市場へ変更",
+      "description": "名古屋証券取引所における上場制度の整備により、市場第一部からプレミア市場に変更となりました。",
+      "significance": "地元市場でも新しい区分となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "STコネクトロジスティクスを共同設立",
+      "description": "住友電装株式会社および伊勢湾倉庫株式会社と共同で、STコネクトロジスティクス株式会社を設立しました。",
+      "significance": "顧客企業との共同事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "百五銀行と共同でLocal Design Mieを設立",
+      "description": "株式会社百五銀行と共同で、Local Design Mie株式会社を設立しました。",
+      "significance": "地域連携の新しい事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "三重朝日物流センターが稼働",
+      "description": "自動車部品専用物流センター「三重朝日物流センター」が稼働しました。",
+      "significance": "自動車部品物流の拠点が強化されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sumitomo-corporation",
+      "relationship": "business-partner",
+      "description": "1981年6月に住友商事株式会社との合弁で中部コールセンター株式会社を設立しました。同社は持分法適用関連会社で、2026年3月31日現在の議決権所有割合は45.0％であり、当社に石炭の保管スペースを提供しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "the-hyakugo-bank",
+      "relationship": "business-partner",
+      "description": "2022年10月に株式会社百五銀行と共同でLocal Design Mie株式会社を設立しました。なお、同行は2026年3月31日現在、当社の発行済株式（自己株式を除く）の4.34％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "seino-holdings",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の発行済株式（自己株式を除く）の2.38％を保有する大株主の事業会社です。特定投資株式の保有目的には、同社グループが総合物流事業において当社と協業関係にあることが記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "techno-ryowa",
+      "relationship": "supplier",
+      "description": "株式会社テクノ菱和のグループは、当社の事業における主要施設や電気設備等の工事を行っています。当社は取引関係の維持・強化のため同社株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第112期(2025/04/01－2026/03/31)",
+      "title": "有価証券報告書（2025/04/01－2026/03/31）",
       "publisher": "日本トランスシティ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGL7.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YGL7",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年度を初年度とする中期経営計画を策定し、スローガン『基礎を鍛え、価値を磨き、そして前へ』を掲げています。基本方針は、経営基盤の強化、業態のベストミックスの追求による収益性の向上、資本最適化とIRの統合的推進、サステナビリティ経営の推進の4つです。経営基盤の強化では、北海道石狩市における共配センターの安定稼働や三重県桑名郡木曽岬町における危険品物流拠点の整備、四日市港のコンテナ専用耐震岸壁の供用開始に向けた集荷活動の強化、海外市場での収益拡大などを掲げています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "倉庫業を主体業務とし、四日市港において一般港湾運送事業などを営むほか、米国、タイ、中国、ベトナムなどに現地法人を置き、保管から港湾荷役、陸上輸送、国際一貫輸送までをグループで担う体制を整えています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高125,517百万円のうち、総合物流事業が123,442百万円と大半を占め、製品・サービス別では倉庫業が54,174百万円で最大です。地域別では日本が108,905百万円、その他が16,612百万円です。最大の顧客は住友電装株式会社で、売上高は15,983百万円と全体の12.7％を占めています。",
+        "basis": "【セグメント情報】の報告セグメントおよび関連情報（製品及びサービスごとの情報、地域ごとの情報、主要な顧客ごとの情報）と、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の販売実績によります。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

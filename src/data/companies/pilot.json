@@ -4,15 +4,136 @@
   "name": "パイロットコーポレーション",
   "officialName": "株式会社パイロットコーポレーション",
   "nameEn": "PILOT CORPORATION",
-  "description": null,
+  "shortNameEn": "PILOT",
+  "description": "筆記具を中心とするステイショナリー用品や玩具などを、世界各地の子会社を通じて製造・販売するメーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "americas",
+      "name": "米州",
+      "description": "Pilot Corporation of AmericaやPilot Pen do Brasil S/A.などが筆記具等の製造及び販売を行うセグメントです。2025年12月期の外部顧客への売上高は38,080百万円で、4つの報告セグメントの中で最も大きい事業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "japan",
+      "name": "日本",
+      "description": "当社とパイロットインキ株式会社が筆記具等のステイショナリー用品、玩具、リング等の貴金属アクセサリー、セラミックス部品等を製造し、当社が国内販売並びに海外販売を統括するセグメントです。2025年12月期の外部顧客への売上高は37,456百万円です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "stationery",
+          "name": "ステイショナリー用品",
+          "description": "筆記具をはじめとしたステイショナリー用品の事業です。2025年12月期の売上高は29,896百万円で、このうち筆記具が261億73百万円、文具・その他が37億23百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "toys",
+          "name": "玩具",
+          "description": "「メルちゃん」シリーズなどの玩具の事業です。2025年12月期の売上高は40億9百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "industrial-materials-and-others",
+          "name": "産業資材・その他",
+          "description": "セラミックス製品を主力とする産業資材などの事業です。2025年12月期の売上高は35億50百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "europe",
+      "name": "欧州",
+      "description": "Pilot Corporation of Europe S.A.S.やPilot Pen (Deutschland) GmbHなどが筆記具等の製造及び販売を行うセグメントです。2025年12月期の外部顧客への売上高は27,431百万円です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "asia",
+      "name": "アジア",
+      "description": "Pilot Pen (Shenzhen) Co., Ltd.やThe Pilot Pen (Taiwan) Co., Ltd.、PILOT PEN & STATIONERY COMPANY (INDIA) PRIVATE LIMITEDなどが筆記具等の製造及び販売を行うセグメントです。2025年12月期の外部顧客への売上高は23,422百万円です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "当社と連結子会社が、筆記具などのステイショナリー用品や玩具、産業資材を、日本・米州・欧州・アジアの4地域で製造・販売する事業モデルです。",
+    "products": [
+      "筆記具（ゲルインキボールペン「ジュースアップ」「ジュース」、「G-2」、ボールペン「フリクションボール」シリーズ、万年筆など）",
+      "文具・その他のステイショナリー用品（蛍光ペン「KIRE-NA（キレーナ）」、ボードマーカーなど）",
+      "玩具（「メルちゃん」シリーズ）",
+      "リング等の貴金属アクセサリー",
+      "セラミックス部品等の産業資材"
+    ],
+    "customers": [
+      "世界各地の文具・玩具の購入者",
+      "販売店・量販店・通販チャネル",
+      "OEM向け筆記具等の企業顧客"
+    ],
+    "revenueSources": [
+      "筆記具等のステイショナリー用品、玩具、宝飾、産業資材の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と世界各地の連結子会社",
+        "description": "1918年に創業した当社が国内販売並びに海外販売を統括し、パイロットインキ株式会社などの国内子会社と、米州・欧州・アジアの現地法人が各地で製造と販売を担います。2025年12月31日現在の連結従業員数は3,175人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "筆記具を中心とした製品の製造・販売",
+        "description": "ゲルインキボールペン「ジュースアップ」や「フリクションボール」などの筆記具やステイショナリー用品を製造・販売するほか、日本では玩具「メルちゃん」シリーズやセラミックス部品などの産業資材も扱います。"
+      },
+      {
+        "kind": "customer",
+        "title": "世界各地の文具・玩具の顧客",
+        "description": "各地域の現地法人が、販売店や通販チャネルを通じて世界各地の顧客に製品を届けます。外部顧客への売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高126,391百万円",
+        "description": "2025年12月期の連結売上高は126,391百万円で、前期に比べて0.2％増加しました。地域別では米州が38,080百万円と最も大きく、日本が37,456百万円、欧州が27,431百万円、アジアが23,422百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益12,064百万円",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は12,064百万円で、前期に比べて20.5％減少しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +148,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 102348000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 2629,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +168,13 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 117989000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 2707,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第21期（2022年12月期）の期首から適用しており、連結経営指標等の数値は第21期以降、当該会計基準等を適用した後のものとなっています。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +189,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 132345000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 2831,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +209,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 141579000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 2965,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +229,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 146079000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 3175,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +237,355 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1918,
+      "title": "株式会社並木製作所を設立",
+      "description": "株式会社並木製作所を設立し、万年筆の製造と販売を始めました。",
+      "significance": "会社の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1926,
+      "title": "インキの製造・販売を開始",
+      "description": "インキの製造と販売を始めました。",
+      "significance": "筆記具に欠かせないインキを自社で手がけるようになりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1927,
+      "title": "シャープペンシルの製造・販売を開始",
+      "description": "シャープペンシルの製造と販売を始めました。",
+      "significance": "万年筆以外の筆記具にも広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1935,
+      "title": "志村工場を開設",
+      "description": "志村工場を開設しました。この工場は1966年5月に東京工場と改称されています。",
+      "significance": "生産拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1938,
+      "title": "パイロット萬年筆株式会社に改称",
+      "description": "株式会社並木製作所を「パイロット萬年筆株式会社」と改称しました。",
+      "significance": "「パイロット」の商号が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "平塚工場を開設",
+      "description": "パイロット萬年筆株式会社平塚工場を開設しました。",
+      "significance": "現在の主要工場につながる拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "パイロットインキ株式会社を設立",
+      "description": "パイロットインキ株式会社を設立しました。現在の連結子会社です。",
+      "significance": "インキ製造を担う子会社ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "パイロット機工株式会社を設立",
+      "description": "パイロット機工株式会社を設立しました。",
+      "significance": "生産設備・部品を担う子会社ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "ボールペンの製造・販売を開始",
+      "description": "ボールペンの製造と販売を始めました。",
+      "significance": "現在の主力製品であるボールペンの事業が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "パイロット萬年筆株式会社が東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "市場第一部に指定替え・大阪証券取引所に上場",
+      "description": "パイロット萬年筆株式会社が東京証券取引所市場第一部銘柄に指定替えされ、大阪証券取引所市場第一部に新規上場しました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "コンピュータリボンの製造・販売を開始",
+      "description": "コンピュータリボンの製造と販売を始めました。",
+      "significance": "筆記具以外の製品にも取り組みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "Pilot Corporation of Americaを設立",
+      "description": "米国にPilot Corporation of Americaを設立しました。現在の連結子会社です。",
+      "significance": "米州の製造・販売拠点ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "貴金属・宝飾品類の製造・販売を開始",
+      "description": "貴金属・宝飾品類の製造と販売を始めました。",
+      "significance": "宝飾事業への進出です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "パイロットプレシジョン株式会社に改称",
+      "description": "パイロット機工株式会社を「パイロットプレシジョン株式会社」と改称しました。",
+      "significance": "生産子会社の体制が変わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "伊勢崎工場・東松山工場を開設",
+      "description": "伊勢崎工場と東松山工場を開設し、東京工場から移転しました。東松山工場は1988年1月に東松山事業所と改称されています。",
+      "significance": "生産拠点が現在の形に近づきました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "株式会社パイロットに改称",
+      "description": "パイロット萬年筆株式会社を「株式会社パイロット」と改称しました。",
+      "significance": "万年筆以外の製品の広がりを映した商号になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "Pilot Industry Europe S.A.を設立",
+      "description": "欧州にPilot Industry Europe S.A.を設立しました。現在の連結子会社で、現在の商号はPilot Corporation of Europe S.A.S.です。",
+      "significance": "欧州の製造・販売拠点ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "伊勢崎第二工場を開設",
+      "description": "株式会社パイロット伊勢崎第二工場を開設しました。",
+      "significance": "国内生産能力の増強です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "株式移転により上場廃止",
+      "description": "株式移転により、株式会社パイロットは東京証券取引所市場第一部と大阪証券取引所市場第一部の上場を廃止しました。",
+      "significance": "持株会社体制への移行の手続きです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "株式会社パイロットグループホールディングスを設立",
+      "description": "株式会社パイロット、パイロットインキ株式会社及びパイロットプレシジョン株式会社が株式移転により株式会社パイロットグループホールディングスを設立し、同社が東京証券取引所市場第一部と大阪証券取引所市場第一部に新規上場しました。",
+      "significance": "持株会社体制になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "株式会社パイロットコーポレーションに改称",
+      "description": "株式会社パイロットグループホールディングスが株式会社パイロットを吸収合併し、社名を「株式会社パイロットコーポレーション」と改称しました。",
+      "significance": "現在の会社名と事業会社の形になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "パイロットプレシジョン株式会社を吸収合併",
+      "description": "パイロットプレシジョン株式会社を吸収合併しました。",
+      "significance": "生産子会社を本体に統合しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "平塚工場を建替え",
+      "description": "国内生産体制の強化を図るため、平塚工場を建て替えました。",
+      "significance": "主力工場の刷新です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "湘南開発センターを開設",
+      "description": "湘南開発センターを開設し、全開発部門を集結しました。",
+      "significance": "開発体制を一か所に集約しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "パイロットロジテムの社屋・物流倉庫を建替え",
+      "description": "物流設備の増強と合理化のため、株式会社パイロットロジテムの社屋と物流倉庫を建て替えました。",
+      "significance": "物流体制の強化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "本社ビルを建替え",
+      "description": "業容拡大に対応した職場環境の整備と防災への取組みを強化すること等を目的として、本社ビルを建て替えました。",
+      "significance": "本社機能の刷新です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "パイロットインキの玩具事業を承継",
+      "description": "パイロットインキ株式会社の玩具事業を、会社分割により承継しました。",
+      "significance": "玩具事業が当社の事業になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社マークスグループ・ホールディングスを連結子会社化",
+      "description": "株式会社マークスグループ・ホールディングス（2025年7月に株式会社マークスを吸収合併し、株式会社マークスに改称）の株式を取得し、同社及びその子会社の株式会社マークスを連結子会社化しました。",
+      "significance": "ステイショナリー用品の販売会社がグループに入りました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kabuki-za",
+      "relationship": "customer",
+      "description": "当社製品の販売における取引関係の維持・強化のため、当社が同社株式79,000株を保有していることが特定投資株式に記載されています（2025年12月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "lihit-lab",
+      "relationship": "supplier",
+      "description": "商品の仕入れ等における取引関係の維持・強化のため、当社が同社株式43,800株を保有していることが特定投資株式に記載されています（2025年12月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nagase-and-co",
+      "relationship": "supplier",
+      "description": "原材料の仕入れにおける取引関係の維持・強化のため、当社が同社株式13,000株を保有していることが特定投資株式に記載されています（2025年12月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-kinzoku",
+      "relationship": "supplier",
+      "description": "原材料の仕入れにおける取引関係の維持・強化のため、当社が同社株式39,200株を保有していることが特定投資株式に記載されています（2025年12月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shochiku",
+      "relationship": "major-shareholder",
+      "description": "2025年12月31日現在、発行済株式（自己株式を除く）の2.60％（972,000株）を保有する大株主の事業会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +593,50 @@
       "publisher": "株式会社パイロットコーポレーション",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XU5I.pdf",
       "publishedAt": "2026-03-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XU5I",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年2月13日に、普通株式1株につき3株の割合で株式分割を行うことを決定したことが重要な後発事象として開示されています。基準日は2026年6月30日、効力発生日は2026年7月1日の予定であり、本登録の株式数に係る記載は分割前の2025年12月期時点のものです。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2022年にグループパーパス「人と創造力をつなぐ。」を策定し、2030年ビジョンとして「世界中の書く、を支えながら、書く、以外の領域でも人と社会・文化の支えとなる」を掲げています。2025年から2027年までの中期経営計画では、主力事業である筆記具事業の海外展開強化と新たな事業の創出に取り組み、「変化に適応するグループ経営基盤の強化」を進めるフェーズとして「絶え間なき進化」を図るとしています。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "米国市場では主力製品のゲルインキボールペン「G-2」が市場でトップシェアを維持し、中国市場ではゲルインキボールペン「ジュース」シリーズが好調に推移しています。欧州では再生プラスチックを使用した「フリクションボール」シリーズが販売本数を伸ばし、国内では蛍光ペン「KIRE-NA（キレーナ）」が年間出荷計画を大幅に上回る人気を集めたとしています。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年12月期の製品・サービス別の外部顧客への売上高は、ステイショナリー用品事業が118,820百万円と連結売上高126,391百万円の9割以上を占め、玩具事業及びその他事業は7,570百万円です。顧客の所在地別の売上高では米国が30,165百万円、中国が13,239百万円と大きく、国内市場における売上高293億53百万円に対して海外市場における売上高は970億37百万円と、海外の割合が高い構成です。",
+        "basis": "MD&Aに印字された事業別の外部顧客への売上高（ステイショナリー用品事業118,820百万円・玩具事業及びその他事業7,570百万円）と国内外別の売上高（国内293億53百万円・海外970億37百万円）、【関連情報】の地域ごとの売上高（米国30,165百万円・中国13,239百万円）の比較による。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

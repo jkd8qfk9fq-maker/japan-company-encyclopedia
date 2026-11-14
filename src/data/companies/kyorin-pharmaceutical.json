@@ -4,15 +4,109 @@
   "name": "杏林製薬",
   "officialName": "杏林製薬株式会社",
   "nameEn": "KYORIN Pharmaceutical Co., Ltd.",
-  "description": null,
+  "description": "新医薬品と後発医薬品を開発・製造・販売する製薬会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "pharmaceuticals",
+      "name": "医薬品事業",
+      "description": "医薬品の開発・製造・販売を行う単一セグメントの事業で、2026年3月期の外部顧客への売上高は126,257百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "new-drugs-domestic",
+          "name": "新医薬品等（国内）",
+          "description": "過活動膀胱治療剤「ベオーバ」やアレルギー性疾患治療剤「デザレックス」などの新医薬品と長期収載品の国内販売で、2026年3月期の売上高は87,113百万円（前期比3.5％増）でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "generic-drugs",
+          "name": "後発医薬品",
+          "description": "オーソライズド・ジェネリックや追補収載品などの後発医薬品の販売で、2026年3月期の売上高は38,451百万円（前期比3.7％増）でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "new-drugs-overseas",
+          "name": "新医薬品（海外）",
+          "description": "自社創製化合物の海外への導出に伴う収入などで、2026年3月期の売上高は693百万円（前期比92.2％減）でした。前期に自社創製化合物「KRP-M223」のノバルティス社への導出に伴う契約一時金収入を計上した反動減によるものです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "当社と連結子会社2社、持分法適用関連会社1社で構成されるグループで、医薬品の開発・製造・販売を行っています。",
+    "products": [
+      "過活動膀胱治療剤「ベオーバ」",
+      "アレルギー性疾患治療剤「デザレックス」",
+      "気道粘液調整・粘膜正常化剤「ムコダイン」",
+      "気管支喘息・アレルギー性鼻炎治療剤「キプレス」",
+      "後発医薬品（オーソライズド・ジェネリックなど）",
+      "自社創製化合物の海外への導出（ライセンス供与）"
+    ],
+    "customers": [
+      "医薬品卸売会社（アルフレッサ ホールディングス、メディパルホールディングス、スズケン、東邦薬品など）",
+      "医療機関",
+      "海外の製薬会社（ライセンス供与先）"
+    ],
+    "revenueSources": [
+      "医薬品の販売代金",
+      "自社創製化合物の導出に伴う契約一時金収入など"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と子会社などで構成されるグループ",
+        "description": "杏林製薬株式会社と連結子会社2社、持分法適用関連会社1社の計4社で構成され、医薬品事業を営んでいます。"
+      },
+      {
+        "kind": "offering",
+        "title": "新医薬品と後発医薬品を開発・製造・販売",
+        "description": "新医薬品と後発医薬品を開発・製造・販売しています。主力製品は過活動膀胱治療剤「ベオーバ」、アレルギー性疾患治療剤「デザレックス」、気道粘液調整・粘膜正常化剤「ムコダイン」、気管支喘息・アレルギー性鼻炎治療剤「キプレス」などです。"
+      },
+      {
+        "kind": "customer",
+        "title": "医薬品卸売会社を通じて医療機関へ届ける",
+        "description": "医薬品卸売会社を通じて医療機関へ製品を届けています。2026年3月期の主要な顧客はアルフレッサ ホールディングス22,413百万円、メディパルホールディングス21,196百万円、スズケン17,588百万円、東邦薬品13,826百万円です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "医薬品の販売で売上を得る",
+        "description": "2026年3月期の連結売上高は126,257百万円で、前期比2.9％減でした。新医薬品等（国内）が87,113百万円、後発医薬品が38,451百万円、新医薬品（海外）が693百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は前期比62.0％減",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は3,448百万円で、前期比62.0％減でした。前期に自社創製化合物「KRP-M223」のノバルティス社への導出に伴う契約一時金収入を計上した反動減が主な理由です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +121,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 124507000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2222,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +141,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 125461000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2138,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +161,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 130735000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2042,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +181,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 136285000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1998,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第67期より会計方針の変更を行っており、第66期に係る各数値については遡及修正後の数値を記載しております。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +202,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 142425000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1982,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +210,557 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1923,
+      "title": "東洋新薬社を創立",
+      "description": "荻原廣が東京市大森区（現東京都大田区）に東洋新薬社を創立し、医薬品の製造販売を開始しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1931,
+      "title": "合資会社杏林化学研究所を設立",
+      "description": "東京市神田区（現東京都千代田区）に合資会社杏林化学研究所を設立しました。",
+      "significance": "杏林の名を冠する会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1940,
+      "title": "杏林製薬株式会社に改組",
+      "description": "株式会社に改組し、商号を杏林製薬株式会社とすると共に販売部門を分離・独立し、杏林薬品株式会社を設立しました。",
+      "significance": "杏林製薬株式会社の誕生です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "本店を日本橋に移転",
+      "description": "杏林製薬株式会社が東京都中央区日本橋に本店を移転しました。",
+      "significance": "本店の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "山川商事株式会社を設立",
+      "description": "山川商事株式会社（現当社）を東京都中央区に設立しました。",
+      "significance": "現在の会社の前身の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "株式会社杏文堂を設立",
+      "description": "株式会社杏文堂を設立しました。",
+      "significance": "子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "本社を神田駿河台に新築移転",
+      "description": "杏林製薬株式会社が東京都千代田区神田駿河台に本社を新築移転しました。",
+      "significance": "本社の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "台湾杏林製薬に事業参加",
+      "description": "杏林製薬株式会社が台湾杏林製薬股份有限公司に事業参加しました。",
+      "significance": "海外事業への参加です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "杏林薬品株式会社と合併",
+      "description": "杏林製薬株式会社が杏林薬品株式会社と合併しました。",
+      "significance": "販売部門の再統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "杏文堂の株式を100％取得",
+      "description": "杏林製薬株式会社が株式会社杏文堂の株式を100％取得しました。",
+      "significance": "子会社の完全子会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "杏栄ビルと合併",
+      "description": "杏林製薬株式会社が株式会社杏栄ビルと合併しました。",
+      "significance": "グループ内の合併です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "株式会社アプリコットに改称",
+      "description": "山川商事株式会社が株式会社アプリコットに改称しました（現当社）。",
+      "significance": "現在の会社の商号変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "日清製薬へ資本参加",
+      "description": "杏林製薬株式会社が、日清製粉株式会社、日清製薬株式会社との合弁事業契約に基づき、日清製薬株式会社へ資本参加を行い、日清製薬株式会社の社名を日清キョーリン製薬株式会社へ変更しました。",
+      "significance": "合弁事業への参加です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "「ミルトン」を譲受",
+      "description": "杏林製薬株式会社がＰ＆Ｇグループより、日本における哺乳ビン・乳首の消毒薬「ミルトン」の商標権・営業権、製造設備及び販売権を譲受しました。",
+      "significance": "製品の譲受けです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "台湾杏林製薬への事業参加を解消",
+      "description": "杏林製薬株式会社が台湾杏林製薬股份有限公司への事業参加を解消し、ライセンスベースへ移行しました。",
+      "significance": "海外事業形態の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "杏林製薬株式会社が東京証券取引所市場第二部に上場しました。",
+      "significance": "株式の上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "杏林製薬株式会社が東京証券取引所市場第一部に指定されました。",
+      "significance": "市場第一部への指定です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "株式会社ビストナーを設立",
+      "description": "株式会社ビストナーを設立しました。",
+      "significance": "子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "Kyorin USA,Inc.を設立",
+      "description": "米国にKyorin USA,Inc.を設立しました。",
+      "significance": "米国子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "Kyorin Europe GmbHを設立",
+      "description": "ドイツにKyorin Europe GmbHを設立しました。",
+      "significance": "欧州子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ActivX Biosciences,Inc.を子会社化",
+      "description": "杏林製薬株式会社が米国においてActivX Biosciences,Inc.を子会社化しました。",
+      "significance": "米国での子会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "株式会社ＡＰＲＩに改称",
+      "description": "株式会社アプリコットが株式会社ＡＰＲＩに改称しました（現当社）。",
+      "significance": "現在の会社の商号変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "東洋ファルマー株式会社の株式71.7％を取得",
+      "description": "杏林製薬株式会社が東洋ファルマー株式会社の株式を71.7％取得しました。",
+      "significance": "後発医薬品会社への出資です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "ドクタープログラム株式会社を100％子会社化",
+      "description": "杏林製薬株式会社がドクタープログラム株式会社を100％子会社化しました。",
+      "significance": "子会社の完全子会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "東洋ファルマー株式会社の株式を追加取得",
+      "description": "杏林製薬株式会社が東洋ファルマー株式会社の株式を追加取得し、84.3％取得しました。",
+      "significance": "出資比率の引上げです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "本店を千代田区に移転",
+      "description": "東京都千代田区に本店を移転しました。",
+      "significance": "本店の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "株式会社キョーリンに改称",
+      "description": "株式会社ＡＰＲＩが株式会社キョーリンに改称しました（現当社）。",
+      "significance": "現在の会社の商号変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "杏林製薬株式会社と株式交換",
+      "description": "株式会社キョーリン（現当社）が杏林製薬株式会社と株式交換を行いました。",
+      "significance": "持株会社体制への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "杏林製薬株式会社が東京証券取引所市場第一部上場廃止となり、当社が東京証券取引所市場第一部に上場しました。",
+      "significance": "上場会社の交代です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "能代工場に新製剤棟を新設",
+      "description": "杏林製薬株式会社が秋田県能代市の能代工場に新製剤棟を新設しました。",
+      "significance": "生産設備の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "会社分割により営業を承継",
+      "description": "会社分割により杏林製薬株式会社の子会社の支配及び管理にかかる営業を承継しました。",
+      "significance": "持株会社体制の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東洋ファルマー株式会社を完全子会社化",
+      "description": "東洋ファルマー株式会社を株式交換により完全子会社化しました。",
+      "significance": "子会社の完全子会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "東洋ファルマーをキョーリン リメディオに改称",
+      "description": "東洋ファルマー株式会社をキョーリン リメディオ株式会社に改称しました。",
+      "significance": "子会社の商号変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "日清キョーリン製薬株式会社を吸収合併",
+      "description": "杏林製薬株式会社が日清キョーリン製薬株式会社を吸収合併しました。",
+      "significance": "合弁会社の吸収合併です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "キョーリン製薬ホールディングス株式会社に改称",
+      "description": "株式会社キョーリンがキョーリン製薬ホールディングス株式会社に改称しました（現当社）。",
+      "significance": "持株会社の商号変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "杏文堂をキョーリンメディカルサプライに改称",
+      "description": "株式会社杏文堂をキョーリンメディカルサプライ株式会社に改称しました。",
+      "significance": "子会社の商号変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "キョーリン製薬グループ工場株式会社を設立",
+      "description": "キョーリン製薬グループ工場株式会社（滋賀県甲賀市）を設立しました。",
+      "significance": "生産子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "キョーリン製薬グループ工場株式会社を設立",
+      "description": "キョーリン製薬グループ工場株式会社（東京都千代田区）を設立しました。",
+      "significance": "生産子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "生産機能を吸収分割により承継",
+      "description": "キョーリン製薬グループ工場株式会社（東京都千代田区）が杏林製薬株式会社の能代工場及びキョーリン リメディオ株式会社の生産本部を吸収分割により承継し、キョーリン製薬グループ工場株式会社（滋賀県甲賀市）を吸収合併しました。",
+      "significance": "生産機能の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "キョーリンメディカルサプライを吸収合併",
+      "description": "キョーリン製薬グループ工場株式会社がキョーリンメディカルサプライ株式会社を吸収合併しました。",
+      "significance": "子会社間の合併です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所プライム市場へ移行しました。",
+      "significance": "プライム市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "杏林製薬株式会社を吸収合併し商号変更",
+      "description": "当社が杏林製薬株式会社を吸収合併し、杏林製薬株式会社に改称しました。",
+      "significance": "持株会社体制の解消と事業会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "創立100周年を迎える",
+      "description": "創立100周年を迎えました。",
+      "significance": "創立100周年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "alfresa-holdings",
+      "relationship": "customer",
+      "description": "2026年3月期の同社向け売上高は22,413百万円で、連結売上高の17.8％を占める主要な顧客です。当社は同社株式319,272株を保有し、保有目的は医薬品の安定供給を図るため、同社の充実した販売網を経常的に活用するためと印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "medipal-holdings",
+      "relationship": "customer",
+      "description": "2026年3月期の同社向け売上高は21,196百万円で、連結売上高の16.8％を占める主要な顧客です。当社は同社株式431,280株を保有し、保有目的は医薬品の安定供給を図るため、同社の充実した販売網を経常的に活用するためと印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "suzuken",
+      "relationship": "customer",
+      "description": "2026年3月期の同社向け売上高は17,588百万円で、連結売上高の13.9％を占める主要な顧客です。当社は同社株式58,731株を保有し、保有目的は医薬品の安定供給を図るため、同社の充実した販売網を経常的に活用するためと印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "toho-holdings",
+      "relationship": "business-partner",
+      "description": "当社は同社株式374,980株を保有し、保有目的は医薬品の安定供給を図るため、同社の充実した販売網を経常的に活用するためと印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ain-holdings",
+      "relationship": "business-partner",
+      "description": "当社は同社株式400,000株を保有し、保有目的は医薬品の安定供給を図るため、同社の充実した販売網を経常的に活用するためと印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hokuyaku-takeyama-holdings",
+      "relationship": "business-partner",
+      "description": "当社は同社株式123,800株を保有し、保有目的は医薬品の安定供給を図るため、同社の充実した販売網を経常的に活用するためと印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kaken-pharmaceutical",
+      "relationship": "business-partner",
+      "description": "アレルギー性疾患治療剤「デザレックス」のコ・プロモーション権を許諾した相手です（契約年2017年、契約期間2026年6月30日まで）。当社は同社株式852,500株を保有し、同社は2026年3月31日現在で当社の発行済株式（自己株式を除く）の2.75％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "eisai",
+      "relationship": "business-partner",
+      "description": "自社創製のイミダフェナシン（契約年2009年）及びビベグロン（契約年2021年）の技術導出先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "kissei-pharmaceutical",
+      "relationship": "business-partner",
+      "description": "過活動膀胱治療剤「ベオーバ」の技術導出先です（契約年2016年）。当社は同社株式454,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "ono-pharmaceutical",
+      "relationship": "business-partner",
+      "description": "ステーブラの技術導出先です（契約年2000年）。当社は同社株式1,812,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "ube",
+      "relationship": "business-partner",
+      "description": "2026年3月に新規治療薬候補化合物に関するライセンス契約を締結した技術導入の相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "daito-pharmaceutical",
+      "relationship": "business-partner",
+      "description": "2026年4月24日に後発医薬品事業の承継に向けた基本合意書を締結した相手です。承継先はダイトを筆頭とし、ダイト以外の共同出資者2者が共同出資予定の株式会社医薬品共創機構（仮）で、承継実行日は2027年4月1日（予定）です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "susmed",
+      "relationship": "business-partner",
+      "description": "耳鳴治療用アプリ「KRP-DT123」の共同開発の相手です（契約年2022年）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +768,50 @@
       "publisher": "杏林製薬株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDHG.pdf",
       "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YDHG",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年4月24日付で、後発医薬品事業を営む連結子会社キョーリン リメディオ株式会社並びに連結子会社キョーリン製薬グループ工場株式会社が保有する高岡工場及び井波工場を、ダイト株式会社を筆頭とし、ダイト以外の共同出資者2者が共同出資予定の株式会社医薬品共創機構（仮）に承継することについて、具体的な協議を進める旨の基本合意書をダイト株式会社と共同出資者2者との間で締結しました。最終契約締結日は2026年9月末（予定）、承継実行日は2027年4月1日（予定）です。本登録は承継前の2026年3月期の事業構成に基づく旨を明記します。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念は「キョーリンは生命を慈しむ心を貫き、人々の健康に貢献する社会的使命を遂行します。」です。長期ビジョン「Vision 110（2023年度～2032年度）」では、目指す姿を「医療ニーズに応える価値の高い新薬を継続的に提供する新医薬品事業を中核に据え、健康関連事業を複合的に展開し、人々の健康に幅広く貢献する企業」としています。中期経営計画「Vision 110－Stage2－（2026年度～2029年度）」では、ステートメントを「持続成長に向けた積極的な投資」とし、中長期的な成長エンジンとなる導入品等の獲得を最優先事項と位置付けています。事業戦略は、積極的な導入投資による開発パイプラインの拡充、新薬の創出力強化、新薬の普及最大化、新医薬品事業と相乗効果のある健康関連事業の推進、持続可能な企業基盤の構築の5つです。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "自社のコア技術である低分子創薬と、疼痛、自己免疫疾患、神経筋疾患を注力領域とする領域を軸にした研究体制を強みとしています。中期経営計画「Vision 110－Stage1－」では、導入による開発パイプライン拡充で目標6件を上回る7件の獲得を達成し、新薬比率は55.4％（目標50％以上）となりました。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "医薬品事業のみの単一セグメントで、2026年3月期の連結売上高は126,257百万円です。本邦の外部顧客への売上高が連結売上高の90％を超え、国内の医療用医薬品が中心です。国内医療用医薬品業界は、薬価改定をはじめとする継続的な医療費抑制策の推進によって厳しい事業環境にあります。主要な顧客は医薬品卸売会社のアルフレッサ ホールディングス22,413百万円、メディパルホールディングス21,196百万円、スズケン17,588百万円、東邦薬品13,826百万円です。自社創製化合物「KRP-M223」をノバルティス社へ導出するなど、海外への導出も行っています。",
+        "basis": "【セグメント情報】の主要な顧客ごとの情報及び【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

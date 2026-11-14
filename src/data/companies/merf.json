@@ -1,18 +1,121 @@
 {
   "id": "merf",
   "code": "3168",
-  "name": "MERF（旧会社名黒谷）",
+  "name": "MERF（旧会社名　黒谷）",
   "officialName": "株式会社MERF（旧会社名　黒谷株式会社）",
   "nameEn": "MERF Inc.（旧英訳名　Kurotani Corporation）",
-  "description": null,
+  "shortNameEn": "MERF Inc.",
+  "description": "銅を中心とした非鉄金属のリサイクル原料を集荷・加工し、銅合金インゴットや美術工芸品を製造・販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "nonferrous-metals",
+      "name": "非鉄金属事業",
+      "description": "銅を中心とした非鉄金属関連の事業です。インゴットの製造・販売とリサイクル原料の加工・販売を2本柱としています。2025年8月期の外部顧客への売上高は819億5百万円でした。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "recycled-materials",
+          "name": "リサイクル原料",
+          "description": "国内外の仕入先から集荷した約150品種の非鉄金属リサイクル原料を選別・プレス等で加工し、電線メーカーや銅製錬メーカーなどに販売する事業です。自社のインゴット製造のための溶解用材料としても利用しています。2025年8月期の外部顧客への売上高は461億25百万円でした。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "ingots",
+          "name": "インゴット",
+          "description": "国内外から集荷した銅及び銅合金のリサイクル原料を配合・溶解し、得意先のニーズや用途に合わせた形状・重量の製品約50品種を生産する事業です。船舶のスクリュー原材料に用いられるアルミ青銅や、水栓金具など住宅産業向けの青銅・鉛レス青銅・黄銅が中心品種です。2025年8月期の外部顧客への売上高は355億48百万円でした。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other-trading",
+          "name": "その他",
+          "description": "伸銅品等の商品を仕入れて販売する事業です。2025年8月期の外部顧客への売上高は2億30百万円でした。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "art-and-crafts",
+      "name": "美術工芸事業",
+      "description": "貴金属製の置物や仏像・仏具などの美術工芸品を製造販売する事業です。高度な鋳造技術と精緻な仕上げで、付加価値の高い製品を創り出しています。2025年8月期の外部顧客への売上高は5億58百万円でした。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "国内外から集荷した銅などのリサイクル原料を選別・加工して販売し、それを原材料に銅合金インゴットを製造して、造船や住宅設備などのメーカーに販売しています。",
+    "products": [
+      "非鉄金属リサイクル原料（ピカ線・赤ナゲット・銅屑・真中粉など約150品種）",
+      "銅合金インゴット（アルミ青銅・青銅・鉛レス青銅・黄銅など約50品種）",
+      "伸銅品等の商品",
+      "美術工芸品（貴金属製の置物・仏像・仏具）"
+    ],
+    "customers": [
+      "電線メーカー・銅製錬メーカー・アルミメーカー・ステンレスメーカーなど（リサイクル原料）",
+      "造船メーカー・住宅設備メーカーなど（インゴット）",
+      "美術工芸品の購入者"
+    ],
+    "revenueSources": [
+      "リサイクル原料の販売代金",
+      "インゴットの販売代金",
+      "美術工芸品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "富山県射水市に本社を置く非鉄金属リサイクルのグループ",
+        "description": "当社は富山県射水市に本社を置き、連結子会社3社と持分法適用関連会社1社でグループを構成しています。連結従業員数は154人です（2025年8月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "リサイクル原料とインゴットの2本柱",
+        "description": "非鉄金属事業では、集荷したリサイクル原料を選別・加工して販売する事業と、リサイクル原料を配合・溶解してインゴットを製造・販売する事業を2本柱とし、あわせて美術工芸事業で美術工芸品の製造販売を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "製錬メーカーや造船・住宅設備メーカーが買い手",
+        "description": "リサイクル原料は電線メーカーや銅製錬メーカー、アルミメーカーなどに、インゴットは造船メーカーや住宅設備メーカーなどに販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は824億63百万円",
+        "description": "2025年8月期の売上高は824億63百万円でした（前期比0.5％増）。非鉄金属事業が819億5百万円、美術工芸事業が5億58百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失は2億3百万円",
+        "description": "2025年8月期の親会社株主に帰属する当期純損失は2億3百万円でした（前期は親会社株主に帰属する当期純利益5億32百万円）。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年8月期",
@@ -27,7 +130,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8681269000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 128,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +150,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9218635000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 129,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第37期（2022年8月期）の期首から適用しており、第37期以降の主要な経営指標等は、当該会計基準等を適用した後の数値となっている。"
     },
     {
       "fiscalYear": "2023年8月期",
@@ -67,7 +171,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9096936000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 117,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +191,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9482631000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 126,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,30 +211,252 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9218102000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 154,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（2022年改正会計基準）等を当連結会計年度の期首から適用した。連結会社間における子会社株式等の売却に伴う税務上の繰延べに関する取扱いの見直しに係る改正については遡及適用され、前連結会計年度の数値は遡及適用後の数値となっている。なお、これによる前連結会計年度の連結財務諸表に与える影響はない。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1870,
+      "title": "創業",
+      "description": "1870年、現代表取締役会長である黒谷純久の高祖父、黒谷津次郎が個人で美術銅器、銅地金及び唐金の販売を開始しました。",
+      "significance": "美術銅器と金属素材の販売が事業の起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "当社の事業を開始",
+      "description": "1985年11月、黒谷俊雄が同年9月に設立された新日本美術株式会社（現当社）の全株式を取得し、美術鋳物の製作販売、非鉄金属の精錬及び加工並びに販売の拡大を図るため、同社にて事業を開始しました。",
+      "significance": "現在の当社につながる事業の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "商号を株式会社クロタニコーポレーションに変更",
+      "description": "1986年3月、商号を株式会社クロタニコーポレーションに変更しました。同年10月には、本社及び本社工場を富山県新湊市（現射水市）に新築移転しました。",
+      "significance": "本社工場の移転とあわせて、事業拡大の基盤を整えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "子会社2社を合併",
+      "description": "1995年2月、経営の効率化のため、新日本商事株式会社及び株式会社アート・アンド・クラフトを合併しました。",
+      "significance": "グループの経営効率化を進めました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "2011年6月、東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式の上場により公開会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "米国に初の海外拠点KUROTANI NORTH AMERICA INC.を設立",
+      "description": "2012年7月、アメリカ合衆国オレゴン州に当社100％出資の現地法人KUROTANI NORTH AMERICA INC.を設立しました。",
+      "significance": "当社初の海外拠点であり、海外展開の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "タイに合弁会社THAI KUROTANI CO.,LTD.を設立",
+      "description": "2014年8月、タイ王国に合弁会社THAI KUROTANI CO.,LTD.を出資設立しました。",
+      "significance": "東南アジアの拠点であり、現在は持分法適用関連会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "商号を黒谷株式会社に変更",
+      "description": "2015年1月、商号を黒谷株式会社に変更しました。",
+      "significance": "創業以来の「黒谷」の名を社名としました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "2018年7月、東京証券取引所市場第一部に指定されました。",
+      "significance": "市場第一部への指定替えです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場に移行しました。",
+      "significance": "市場再編に伴う移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "CMX Metalsを設立",
+      "description": "2024年9月、アメリカ合衆国オレゴン州に、KUROTANI NORTH AMERICA INC.の100％出資の現地法人CMX Metalsを設立しました（2025年1月に同国カリフォルニア州へ移転）。",
+      "significance": "米国でのインゴット製造の受け皿となる連結子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "商号を株式会社MERFに変更",
+      "description": "2025年1月、商号を株式会社MERFに変更しました。",
+      "significance": "現在の社名への変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "CMX MetalsがCalifornia Metal-Xの事業を譲り受け",
+      "description": "2025年1月、CMX Metalsがアメリカ合衆国カリフォルニア州において主に銅インゴットを製造するCalifornia Metal-Xの事業を、CMX（assignment for the benefit of creditors）, LLCを介して譲り受けました。",
+      "significance": "米国でのインゴット事業の拡大につながりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社MERFロジスティクスを設立",
+      "description": "2025年6月、当社100％出資の株式会社MERFロジスティクスを設立しました。",
+      "significance": "非鉄金属の運送を担う連結子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sumitomo-metal-mining",
+      "relationship": "customer",
+      "description": "非鉄金属事業における主要な販売先です。2024年8月期には、販売実績が総販売実績の10.0％を占めました。2025年8月期は割合が10％未満となり、金額の記載は省略されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "ck-san-etsu",
+      "relationship": "customer",
+      "description": "非鉄金属事業における販売先です。有報には、当社が同社に対し非鉄金属事業における販売取引を行っていると印字されています。当社は2025年8月31日現在、同社の株式29,300株を、取引関係の安定化や維持・強化などを目的として保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "furukawa-electric",
+      "relationship": "customer",
+      "description": "非鉄金属事業における販売先です。有報には、当社が同社に対し非鉄金属事業における販売取引を行っていると印字されています。当社は2025年8月31日現在、同社の株式19,500株を、取引関係の安定化や維持・強化などを目的として保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sanei",
+      "relationship": "customer",
+      "description": "非鉄金属事業における販売先です。有報には、当社が同社に対し非鉄金属事業における販売取引を行っていると印字されています。当社は2025年8月31日現在、同社の株式10,000株を、取引関係の安定化や維持・強化などを目的として保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-materials",
+      "relationship": "customer",
+      "description": "非鉄金属事業における販売先です。有報には、当社が同社に対し非鉄金属事業における販売取引を行っていると印字されています。当社は2025年8月31日現在、同社の株式1,120株を、取引関係の安定化や維持・強化などを目的として保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
-      "title": "有価証券報告書－第40期(2024/09/01－2025/08/31)",
-      "publisher": "株式会社MERF（旧会社名　黒谷株式会社）",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X5OB.pdf",
-      "publishedAt": "2025-11-20",
-      "accessedAt": "2026-09-29"
+      "title": "訂正有価証券報告書－第40期(2024/09/01－2025/08/31)",
+      "publisher": "株式会社MERF",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YQFO.pdf",
+      "publishedAt": "2026-07-14",
+      "docId": "S100YQFO",
+      "asOf": "2025-08-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "創業以来の経営方針として「天然資源の少ない日本で資源の有効利用を透明性の高い所で行う」を掲げ、金属のリサイクルを通じて低炭素化社会・循環型社会の実現に向け、社会的責任を果たせる企業グループを目指すとしています。非鉄金属事業では、非鉄金属のリサイクルをコアビジネスとし、その競争力を高めるための施策に取り組むとしています。海外については、米国とタイの拠点に続き、さらなる海外での業容拡大を目指すとしています。",
+        "asOf": "2026-07-14",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "インゴットとリサイクル原料を同時に取り扱っているため、雑多な非鉄金属を一括して買い受けることができます。各リサイクル原料を分析できる技術と環境を有しており、国内外の規格や取引先が指定する独自の規格に適合するインゴットを製造しています。",
+        "asOf": "2026-07-14",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年8月期の売上高は非鉄金属事業が819億5百万円と大半を占め、美術工芸事業は5億58百万円です。品目別ではリサイクル原料が461億25百万円、インゴットが355億48百万円です。最大の顧客はナカシマプロペラ株式会社で、2025年8月期の販売実績の10.8％を占めています。販売先の地域は日本が中心で、韓国・中国・北米など海外向けの販売もあります。",
+        "basis": "セグメント情報の外部顧客への売上高、関連情報の製品及びサービスごとの情報・地域ごとの情報・主要な顧客ごとの情報に基づく。",
+        "asOf": "2026-07-14",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年8月期",
     "asOf": "2025-08-31",
