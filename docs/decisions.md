@@ -765,3 +765,29 @@ unconfirmed, so they are not read (see `docs/proposals/2026-11-12-interim-report
 - **Page**: 「半期の動き」 at the top of the premium block — each line's half figure, its 前年同期比 and its share of the
   last full year, with the previous half beside it as a grey bar. Computed on the page, formulas printed, nothing
   annualised or forecast.
+
+### JCE-046 · 2026-11-14 · Accepted (operator) — DISCOVER: a feed for meeting companies, with マイ企業図鑑
+
+The operator proposed turning the encyclopedia from a place to look things up into one where readers keep meeting
+companies ("企業を調べる必要がなくても、次々と日本企業を知りたくなる"), and asked for it to be built and launched.
+
+- **/discover**: one company per screen, swiped vertically with CSS scroll snapping (no gesture library). The day's
+  order is a shuffle seeded by the date in Japan, so 今日の3社 is the same for everyone and changes at midnight JST;
+  companies already in the reader's collection go to the back. Filters by the company's primary industry.
+- **What a card says** (`src/lib/discover.ts`, served as the static `/discover-feed.json`): the entry's own sourced
+  words, shortened, never rephrased — the first sentence of the description, and one "hook": an overseas share of
+  50% or more (computed by `companyMetrics`, labelled 計算値 with its formula, JCE-038), else the first sentence of the
+  strength the filing itself states (`perspectives.competitiveAdvantage.disclosed`), else an overseas share of 20% or
+  more, else the oldest event of the 沿革. No "意外な事実" is written for the feed; a 世界シェア appears only where an
+  entry's sourced text already says it. Revenue is printed as filed. Released companies with a description only.
+- **Following**: a card offers up to four related companies, trade and competition first, capital relations last;
+  tapping one puts it next in the feed with a line saying where it came from. Every card leads to the full entry.
+- **マイ企業図鑑** (`/discover/collection`): a company that fills the screen for about a second is recorded in
+  `localStorage` (`discovered-companies`, through `src/lib/storage/`), never sent anywhere (invariant 7). The page
+  shows, by industry, how many companies the reader has met out of how many.
+- **The two diagnoses**: after every ninth company a card leads to 最初の一社 or 企業タイプ診断 on
+  shindan.kigyo-hyakka.com, in their own words. They are YUGENQ services, linked as on the rest of the site; nothing
+  is recommended (invariant 4), and the intro card says the feed is not a recommendation or investment material.
+- **Photographs**: the industry's photograph (JCE-031), never the company's own.
+- Not built yet: a quiz, a daily quiz. They need questions whose answers are the entry's own data, designed so that a
+  wrong option is never a false statement about a real company.

@@ -18,6 +18,8 @@ export const STORAGE_KEYS = {
   settings: "user-settings",
   /** The YUGENQ premium plan as this browser knows it (JCE-043): a purchase code and the dates it was checked with. */
   plan: "premium-plan",
+  /** マイ企業図鑑 (JCE-046): companies this reader has met in the discovery feed. */
+  discovered: "discovered-companies",
 } as const;
 
 export type StorageKey = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];

@@ -140,6 +140,20 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* DISCOVER (JCE-046): for the reader with nothing to look up yet. */}
+      <section aria-labelledby="home-discover" className="bg-neutral-950 text-white">
+        <Link href="/discover" className="group mx-auto flex max-w-7xl items-center gap-5 px-5 py-6 md:px-8">
+          <div className="min-w-0 flex-1">
+            <p className="text-[0.6875rem] font-semibold tracking-[0.2em] text-amber-300">DISCOVER</p>
+            <h2 id="home-discover" className="mt-1 font-serif text-[1.25rem] leading-snug font-semibold">
+              調べたい会社がなくても。スワイプで、知らなかった会社に出会う。
+            </h2>
+            <p className="mt-1 text-xs text-white/60">今日の3社・つながる会社をたどる・マイ企業図鑑</p>
+          </div>
+          <ArrowRight className="size-6 shrink-0 text-amber-300 transition-transform group-hover:translate-x-1" aria-hidden />
+        </Link>
+      </section>
+
       <ReaderTrail companies={summaries} />
 
       {/* WHERE: head offices on the map. Every prefecture is a link; the list beside it is the same data in words. */}

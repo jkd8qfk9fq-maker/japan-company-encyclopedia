@@ -123,3 +123,15 @@ export const planStore = createStore<StoredPlan | null>(STORAGE_KEYS.plan, null,
   if (typeof v.code !== "string" || !CODE_PATTERN.test(v.code) || typeof v.paidUntil !== "number" || typeof v.checkAfter !== "number") return null;
   return { code: v.code, paidUntil: v.paidUntil, checkAfter: v.checkAfter };
 });
+
+// ---------------------------------------------------------------------------
+// マイ企業図鑑 (JCE-046) — every company the reader has met in the discovery feed, oldest first so the
+// collection reads as the order they were found. Ids only, like favorites; it never leaves the browser.
+
+export const discoveredStore = createStore<string[]>(STORAGE_KEYS.discovered, [], parseIdList);
+
+export function recordDiscovered(companyId: string): void {
+  const current = discoveredStore.get();
+  if (current.includes(companyId)) return;
+  discoveredStore.set([...current, companyId]);
+}
