@@ -4,15 +4,141 @@
   "name": "はるやまホールディングス",
   "officialName": "株式会社はるやまホールディングス",
   "nameEn": "Haruyama Holdings Inc.",
-  "description": null,
+  "shortNameEn": "HARUYAMA HOLDINGS",
+  "description": "紳士服を中心とする衣料品を全国の店舗で販売し、広告代理店も営む持株会社グループです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "clothing-sales",
+      "name": "衣料品販売事業",
+      "description": "スーツなどの衣料品及びその関連洋品を販売する事業です。はるやま商事株式会社、株式会社モリワン、株式会社マンチェスなどが行っており、2026年3月期の売上高は35,212百万円でした。",
+      "products": [
+        "スーツ・礼服・コートなどの重衣料",
+        "ジャケット・スラックスなどの中衣料",
+        "ワイシャツ・ネクタイ・カジュアル・小物などの軽衣料",
+        "補修加工"
+      ],
+      "customers": [
+        "国内の一般消費者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "heavy-clothing",
+          "name": "重衣料",
+          "description": "スーツ・礼服・コートの販売です。2026年3月期の売上高は15,047百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "medium-clothing",
+          "name": "中衣料",
+          "description": "ジャケット・スラックスの販売です。2026年3月期の売上高は3,453百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "light-clothing",
+          "name": "軽衣料",
+          "description": "ワイシャツ・ネクタイ・カジュアル・小物・その他の販売です。2026年3月期の売上高は15,795百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "alteration",
+          "name": "補修加工賃収入",
+          "description": "衣料品の補修加工による収入です。2026年3月期の売上高は915百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "株式会社ミックが広告の代理店を営む事業です。売上高は独立して開示されていません。",
+      "products": [
+        "広告代理業"
+      ],
+      "customers": [
+        "グループ会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "はるやま商事などの子会社を通じてスーツなどの衣料品と関連洋品を販売し、その販売対価を得る事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "スーツ・礼服・コートなどの重衣料",
+      "ジャケット・スラックスなどの中衣料",
+      "ワイシャツ・ネクタイ・カジュアル・小物などの軽衣料",
+      "疲労回復ウェア「YOKUNERU」などの健康衣料"
+    ],
+    "customers": [
+      "国内の店舗やオンラインショップを利用する顧客"
+    ],
+    "revenueSources": [
+      "衣料品及びその関連洋品の販売による収入",
+      "補修加工による収入"
+    ],
+    "suppliers": [],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社グループ",
+        "description": "株式会社はるやまホールディングスと子会社5社で構成されるグループです。2026年3月31日現在の総店舗数は363店舗です。"
+      },
+      {
+        "kind": "offering",
+        "title": "衣料品の販売",
+        "description": "スーツなどの重衣料、ジャケットなどの中衣料、ワイシャツなどの軽衣料を販売し、機能性オフィスカジュアル商品やレディス向け商品の拡充にも取り組んでいます。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内の顧客",
+        "description": "国内の店舗やオンラインショップを利用する顧客に衣料品を販売しています。本邦の外部顧客への売上高が連結売上高の90％を超えています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は35,212百万円で、前年同期比2.6％減でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失",
+        "description": "2026年3月期の親会社株主に帰属する当期純損失は1,094百万円でした。前期は親会社株主に帰属する当期純利益670百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +153,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23487682000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1286,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23752152000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1223,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23944223000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1119,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24165992000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1097,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,30 +233,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22675177000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1089,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "不動産賃貸借契約に伴う原状回復義務として計上していた資産除去債務について、原状回復費用の新たな情報の入手に伴い、原状回復費用の見積りの変更を行いました。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第52期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社はるやまホールディングス",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YLJD.pdf",
-      "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +253,206 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1974,
+      "title": "はるやまチェーンの設立",
+      "description": "岡山県岡山市中山下において「株式会社関西地区はるやまチェーン」を設立しました。",
+      "significance": "はるやまグループの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "郊外型紳士服専門店の1号店の開設",
+      "description": "岡山県倉敷市白楽町に、郊外立地の紳士服専門店の1号店として「倉敷店」を開設しました。",
+      "significance": "郊外型店舗展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "岡山青江本店の開設",
+      "description": "岡山県岡山市青江に、シンボル店舗として「岡山青江本店」を開設しました。",
+      "significance": "シンボル店舗の開設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "合併とはるやま商事への商号変更",
+      "description": "東京紳士服株式会社と旧はるやま商事株式会社を吸収合併し、商号を「はるやま商事株式会社」に変更しました。総店舗数は138店舗となりました。",
+      "significance": "販売と仕入れの体制を統合しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "大阪梅田店の開設",
+      "description": "大阪市北区梅田に、大都市都心型店舗として「大阪梅田店」を開設しました。",
+      "significance": "大都市都心型店舗の展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "大阪証券取引所市場第二部への上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "東京証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "Perfect Suit FActory赤坂店の開設",
+      "description": "東京都港区に、首都圏を中心とした都市型店舗として「Perfect Suit FActory　赤坂店」を開設しました。",
+      "significance": "都市型店舗の新しい業態です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "市場第一部銘柄への指定",
+      "description": "東京証券取引所及び大阪証券取引所の市場第一部銘柄に指定されました。",
+      "significance": "上場市場の格上げです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "株式会社マツヤからの事業譲受けの体制整備",
+      "description": "株式会社Ｈ・Ｍを設立し、同社が紳士服販売事業を株式会社マツヤより譲り受けました。",
+      "significance": "紳士服販売事業の譲受けです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "株式会社モリワンの子会社化",
+      "description": "株式会社モリワンを買収し、子会社化しました。",
+      "significance": "グループの店舗網の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "持株会社体制への移行",
+      "description": "持株会社体制へ移行し、商号を「株式会社はるやまホールディングス」に変更しました。新たに設立した「はるやま商事株式会社」に衣料品販売事業を承継しました。",
+      "significance": "現在の持株会社体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場に移行しました。",
+      "significance": "上場市場の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "マンチェスによるミッド・インターナショナルの吸収合併",
+      "description": "株式会社マンチェスが株式会社ミッド・インターナショナルを吸収合併しました。",
+      "significance": "グループ内の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "本社の移転",
+      "description": "本社を岡山県岡山市表町一丁目から、岡山県岡山市北区青江一丁目へ移転しました。",
+      "significance": "本社所在地の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第52期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社はるやまホールディングス",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YLJD.pdf",
+      "publishedAt": "2026-06-26",
+      "docId": "S100YLJD",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-11"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「お客様第一主義」を経営の基本方針とし、創業理念である「より良いものをより安く」の実現に向けて高機能・高品質の商品の企画に努めています。「地域に必要とされる店に」なることを経営ビジョンとし、商品・サービスの品質向上、集客力の強化、生産性の向上を基本戦略としています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "2026年3月31日現在で363店舗を展開し、郊外型店舗と都市型店舗の両形態でチェーン展開を行っています。機能性オフィスカジュアル商品やレディス向け商品の拡充に加え、疲労回復ウェア「YOKUNERU」の発売や、健康衣料を中心とした店舗「DRUG WEAR」のオープンなど、新しい商品と店舗にも取り組んでいます。",
+        "basis": "事業の内容、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の概要、事業等のリスクの店舗展開の記載",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは衣料品販売事業のみです。単一の製品・サービスの区分の外部顧客への売上高が連結売上高の90％を超え、本邦の外部顧客への売上高も連結売上高の90％を超えています。外部顧客への売上高のうち、連結売上高の10％以上を占める顧客はありません。",
+        "basis": "セグメント情報等の関連情報、販売実績の記載",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }
