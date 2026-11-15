@@ -69,6 +69,7 @@ export const recentlyViewedStore = createStore<string[]>(
 );
 
 export function recordView(companyId: string): void {
+  recordActivity();
   const current = recentlyViewedStore.get();
   if (current[0] === companyId) return; // avoid a write (and a re-render) on every revisit
   const next = [companyId, ...current.filter((id) => id !== companyId)].slice(
@@ -131,6 +132,7 @@ export const planStore = createStore<StoredPlan | null>(STORAGE_KEYS.plan, null,
 export const discoveredStore = createStore<string[]>(STORAGE_KEYS.discovered, [], parseIdList);
 
 export function recordDiscovered(companyId: string): void {
+  recordActivity();
   const current = discoveredStore.get();
   if (current.includes(companyId)) return;
   discoveredStore.set([...current, companyId]);
@@ -147,4 +149,54 @@ export function toggleFollowedIndustry(industryId: string): boolean {
   const next = current.includes(industryId) ? current.filter((id) => id !== industryId) : [...current, industryId];
   followedIndustriesStore.set(next);
   return next.includes(industryId);
+}
+
+// ---------------------------------------------------------------------------------------------------------------
+// Engagement (JCE-052). All of it stays in this browser: no account, no server, nothing about the reader sent.
+
+const DAY = /^\d{4}-\d{2}-\d{2}$/;
+
+/** Today in Japan, the day boundary every reader shares. */
+export const jstToday = (now: Date = new Date()) => new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Tokyo" }).format(now);
+
+/** The days this reader explored something, oldest first, the last 400 kept. */
+export const activityStore = createStore<string[]>(STORAGE_KEYS.activityDays, [], (value) =>
+  isStringArray(value) ? value.filter((d) => DAY.test(d)).slice(-400) : null,
+);
+
+export function recordActivity(day: string = jstToday()): void {
+  const current = activityStore.get();
+  if (current.at(-1) === day || current.includes(day)) return;
+  activityStore.set([...current, day].sort().slice(-400));
+}
+
+export type QuizAnswer = { id: string; choice: string; correct: boolean };
+export const quizStore = createStore<Record<string, QuizAnswer>>(STORAGE_KEYS.quizAnswers, {}, (value) => {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  const out: Record<string, QuizAnswer> = {};
+  for (const [day, a] of Object.entries(value as Record<string, unknown>)) {
+    const x = a as Partial<QuizAnswer>;
+    if (DAY.test(day) && typeof x?.id === "string" && typeof x.choice === "string" && typeof x.correct === "boolean") out[day] = { id: x.id, choice: x.choice, correct: x.correct };
+  }
+  return out;
+});
+
+export function recordQuizAnswer(day: string, answer: QuizAnswer): void {
+  const current = quizStore.get();
+  if (current[day]) return; // one answer a day: the first one counts
+  quizStore.set({ ...current, [day]: answer });
+  recordActivity(day);
+}
+
+export const notificationsSeenStore = createStore<string>(STORAGE_KEYS.notificationsSeen, "", (value) =>
+  typeof value === "string" && (value === "" || DAY.test(value)) ? value : null,
+);
+
+export const exploreStepsStore = createStore<number>(STORAGE_KEYS.exploreSteps, 0, (value) =>
+  typeof value === "number" && Number.isFinite(value) && value >= 0 ? Math.floor(value) : null,
+);
+
+export function recordExploreStep(): void {
+  exploreStepsStore.set(exploreStepsStore.get() + 1);
+  recordActivity();
 }

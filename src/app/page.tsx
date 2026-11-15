@@ -176,6 +176,26 @@ export default async function HomePage() {
         </a>
       </section>
 
+      {/* JCE-052: two short daily habits beside DISCOVER. Links, not widgets: the home page stays light. */}
+      <section aria-label="毎日の楽しみ" className="border-b border-border">
+        <div className="mx-auto grid max-w-7xl gap-px bg-border sm:grid-cols-2">
+          <Link href="/quiz" className="group flex items-center gap-4 bg-background px-5 py-5 md:px-8">
+            <span className="min-w-0 flex-1">
+              <span className="block text-[0.6875rem] font-semibold tracking-[0.2em] text-seal">今日の1問</span>
+              <span className="mt-1 block font-serif text-lg font-semibold">売上が大きいのはどっち？ 毎日1問、30秒。</span>
+            </span>
+            <ArrowRight className="size-5 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden />
+          </Link>
+          <Link href="/explore" className="group flex items-center gap-4 bg-background px-5 py-5 md:px-8">
+            <span className="min-w-0 flex-1">
+              <span className="block text-[0.6875rem] font-semibold tracking-[0.2em] text-seal">つながりをたどる</span>
+              <span className="mt-1 block font-serif text-lg font-semibold">取引先、競合、親会社。1社ずつ移って出会う。</span>
+            </span>
+            <ArrowRight className="size-5 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden />
+          </Link>
+        </div>
+      </section>
+
       <ReaderTrail companies={summaries} />
 
       {/* WHERE: head offices on the map. Every prefecture is a link; the list beside it is the same data in words. */}

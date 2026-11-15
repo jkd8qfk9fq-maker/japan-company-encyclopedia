@@ -20,7 +20,7 @@ export function ReaderTrail({ companies }: { companies: CompanySummary[] }) {
   const byId = new Map(companies.map((c) => [c.id, c]));
 
   const groups = [
-    { title: "保存した企業", ids: favorites },
+    { title: "フォロー中の企業", ids: favorites },
     { title: "最近見た企業", ids: recent },
   ]
     .map((g) => ({ ...g, items: g.ids.map((id) => byId.get(id)).filter((c): c is CompanySummary => !!c) }))
