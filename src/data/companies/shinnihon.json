@@ -4,15 +4,136 @@
   "name": "新日本建設",
   "officialName": "新日本建設株式会社",
   "nameEn": "SHINNIHON CORPORATION",
-  "description": null,
+  "shortNameEn": "SHINNIHON",
+  "description": "千葉県を地盤に、建築・土木工事の請負と自社ブランドマンションの開発・分譲を手がける総合建設会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "construction",
+      "name": "建設事業",
+      "description": "建築・土木工事を請け負い、企画、設計及び施工を行う事業です。子会社の建研はプレキャスト及びプレストレストコンクリート部材を主材とする建築・土木工事とアウトフレーム工法による耐震補強工事を、新日本コミュニティーはマンションの大規模修繕工事等を手がけています。2026年3月期の外部顧客への売上高は83,620百万円で、2つの報告セグメントのうち最大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "architecture",
+          "name": "建築工事",
+          "description": "マンション、工場、倉庫、学校などの建築工事の請負です。金額はセグメント単位でのみ開示され、工種別の独立した開示はありません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "civil-engineering",
+          "name": "土木工事",
+          "description": "土木工事の請負です。金額はセグメント単位でのみ開示され、工種別の独立した開示はありません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "development",
+      "name": "開発事業等",
+      "description": "土地を取得して建物を建設し、分譲又は一括譲渡する不動産開発と、オフィスビル等の保有・賃貸を行う事業です。自社ブランドマンション「EXCELLENT CITY」シリーズを展開し、子会社の新日本コミュニティーがマンション・ビル管理及び賃貸管理を、新日本不動産が本社社屋の保有と賃貸を担います。2026年3月期の外部顧客への売上高は54,807百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "condominium-development",
+          "name": "分譲マンション等の開発・販売",
+          "description": "用地取得から企画・設計・施工・分譲までをグループで行う自社製販一貫体制による分譲マンション「EXCELLENT CITY」シリーズの開発・販売と、建物の一括譲渡です。金額はセグメント単位でのみ開示され、区分別の独立した開示はありません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "management-leasing",
+          "name": "建物の管理・賃貸",
+          "description": "保有するオフィスビル等の賃貸と、販売・建築した物件のマンション・ビル管理及び賃貸管理の受託です。金額はセグメント単位でのみ開示され、区分別の独立した開示はありません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "建築・土木工事を請け負う建設事業と、用地取得から分譲・管理までをグループで担う開発事業等を併せ持ち、工事の請負代金とマンション等の販売代金で収益を得る事業モデルです。",
+    "products": [
+      "建築工事（マンション、工場、倉庫、学校など）",
+      "土木工事",
+      "分譲マンション「EXCELLENT CITY」シリーズ",
+      "マンション・ビル管理と大規模修繕工事",
+      "オフィスビル等の不動産賃貸"
+    ],
+    "customers": [
+      "工場・倉庫・商業施設などの民間発注者",
+      "官公庁・地方自治体",
+      "分譲マンションの購入者",
+      "保有物件の賃借人"
+    ],
+    "revenueSources": [
+      "工事の請負代金",
+      "分譲マンション等の販売代金",
+      "賃貸料と管理の受託料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "千葉を地盤とする総合建設会社のグループ",
+        "description": "当社、連結子会社3社、非連結子会社2社及び関連会社3社の計9社で構成されています。2026年3月期の連結従業員数は689人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "建設工事の請負と不動産開発の二本柱",
+        "description": "建設事業では建築・土木工事の企画、設計及び施工を請け負い、開発事業等では分譲マンションの開発・販売、保有物件の賃貸、建物の管理を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "民間発注者・官公庁とマンション購入者",
+        "description": "建設事業の顧客は工場・倉庫・商業施設などの民間発注者や官公庁、開発事業等の顧客は分譲マンションの購入者や賃借人です。売上高の10％以上を占める相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高138,428百万円",
+        "description": "2026年3月期の連結売上高は138,428百万円で、前連結会計年度と比べて5.1％増えました。建設事業が83,620百万円、開発事業等が54,807百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益15,224百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は15,224百万円で、前連結会計年度と比べて18.8％増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +148,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 91613000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 593,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +168,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 102428000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 614,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 113095000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 627,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +208,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 122313000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 660,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +228,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 134547000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 689,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +236,279 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1923,
+      "title": "金綱工務店として創業",
+      "description": "現会長の祖父である金綱秀蔵が、東京都新宿区神楽坂で「金綱工務店」を看板に、神社仏閣や料亭等の数奇屋造りを請け負う建築業を始めました。",
+      "significance": "同社の事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "二代目が家業を継承し千葉へ拠点を移す",
+      "description": "現会長の父である金綱徳太郎が二代目として家業を引き継ぎ、千葉県に営業拠点を移しました。",
+      "significance": "千葉を地盤とする現在の事業基盤の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "有限会社金綱工務店を設立",
+      "description": "千葉県千葉市中央区椿森にて金綱一男が事業を継承し、有限会社金綱工務店を設立して、主に住宅建築の業務を開始しました。",
+      "significance": "現経営者による事業継承と会社組織としての出発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "一級建築士事務所免許を取得",
+      "description": "建設業法による一級建築士事務所免許を千葉県知事より取得しました。",
+      "significance": "設計機能を持つ建設会社としての体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "株式会社に改組",
+      "description": "株式会社に改組しました。",
+      "significance": "株式会社としての組織体制に移行しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "本店を千葉市中央区都町に移転",
+      "description": "本店を千葉県千葉市中央区都町に移転しました。",
+      "significance": "千葉市内での事業拡大に伴う移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "新日本建設株式会社に商号変更",
+      "description": "商号を新日本建設株式会社に変更し、宅地建物取引業法による宅地建物取引業者免許を千葉県知事より取得しました。",
+      "significance": "現在の社名となり、不動産取引の免許も得て開発事業への展開の素地ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "特定建設業の許可を取得",
+      "description": "建設業法による特定建設業の許可のうち建築工事業・土木工事業を千葉県知事より取得しました。",
+      "significance": "建築と土木の両分野で大規模工事を請け負える体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "本店を都町（旧本店の隣接地）に移転",
+      "description": "本店を千葉県千葉市中央区都町（旧本店の隣接地）に移転しました。",
+      "significance": "事業拡大に合わせた本店の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "株式会社建設保全サービス協会を設立",
+      "description": "建物の保守及び維持管理を目的とする株式会社建設保全サービス協会（現・株式会社新日本コミュニティー）を設立しました。",
+      "significance": "現在の連結子会社で、建物の管理や大規模修繕工事を担う会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "建設大臣より特定建設業等の許可を取得",
+      "description": "建設業法による特定建設業の許可のうち建築工事業、一般建設業の許可のうち土木工事業、とび・土工工事業の許可を建設大臣（現国土交通大臣）より取得しました。",
+      "significance": "全国規模の工事に対応できる許可体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "不動産販売部を設置し開発販売を拡張",
+      "description": "営業本部内に不動産販売部を設置し、自社開発の分譲住宅、マンションの販売から不動産の仲介まで業務を拡張しました。",
+      "significance": "開発事業等の本格化の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "店頭売買銘柄として登録",
+      "description": "日本証券業協会に店頭売買銘柄として登録されました。",
+      "significance": "株式公開への第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "土木工事業等の特定建設業許可を取得",
+      "description": "建設業法による特定建設業の許可のうち土木工事業、とび・土工工事業の許可を建設大臣（現国土交通大臣）より取得しました。",
+      "significance": "土木分野の許可体制が強化されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "取引所への上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "新日本不動産株式会社を設立",
+      "description": "不動産事業の拡充発展を図るため、新日本不動産株式会社を設立しました。",
+      "significance": "現在の連結子会社で、本社社屋の保有と賃貸を担う会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "ISO 9001認証を取得",
+      "description": "「ISO 9001」認証を取得しました（登録範囲は建築・土木構造物の設計、施工及び付帯サービス）。",
+      "significance": "品質マネジメントの体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "東京証券取引所市場第一部に上場し本店を美浜区へ移転",
+      "description": "東京証券取引所市場第一部に上場し、本店を千葉県千葉市美浜区ひび野に移転しました。",
+      "significance": "市場第一部への上場と、現在の本社所在地への移転が重なった年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ISO 14001認証を取得",
+      "description": "「ISO 14001」環境マネジメントシステム認証を取得しました。",
+      "significance": "環境マネジメントの体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "株式会社建研の全株式を取得し中国へ進出",
+      "description": "フェニックス・キャピタル株式会社より株式会社建研の全株式を取得しました。また、中国不動産市場へ進出するため、中国遼寧省瀋陽市に新日興進（瀋陽）房地産有限公司を設立し、開発プロジェクトに参画しました。",
+      "significance": "プレキャストコンクリート工法を持つ建研の子会社化と、海外開発への進出が重なった年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "中国瀋陽市の共同事業を解消",
+      "description": "中国瀋陽市における開発プロジェクトの共同事業解消に伴い、新日興進（瀋陽）房地産有限公司が保有する現地開発会社の全出資持分を譲渡しました。",
+      "significance": "中国の共同開発事業からの撤退です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "中国瀋陽市の開発プロジェクトを精算",
+      "description": "中国瀋陽市における開発プロジェクトを精算するため、新日興進（瀋陽）房地産有限公司の全出資持分を譲渡しました。",
+      "significance": "中国事業の精算が完了しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ISO 45001認証を取得",
+      "description": "「ISO 45001」労働安全衛生マネジメントシステム認証を取得しました。",
+      "significance": "労働安全衛生のマネジメント体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "ZEHデベロッパーに登録",
+      "description": "ZEHデベロッパー（ネット・ゼロ・エネルギー・ハウス支援事業）に登録されました。",
+      "significance": "環境配慮型住宅への取り組みの表れです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "会社設立60年",
+      "description": "会社設立60年を迎えました。",
+      "significance": "1964年の設立から60年の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "oriental-land",
+      "relationship": "customer",
+      "description": "工事の受注先です。特定投資株式の保有目的に、同社が工事の受注先であり、取引関係の維持・強化を目的として同社の株式を保有している旨が銘柄固有に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +516,47 @@
       "publisher": "新日本建設株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHI2.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YHI2",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念として「建設を通じ社会に貢献することを崇高な使命とする」を掲げ、従来の建設受注産業から建設販売産業への転換を目指しています。対処すべき課題として、企画提案型営業による特命受注の強化、工場・倉庫・商業施設・宿泊施設などの非住宅案件の取組強化、自社ブランドマンションにおけるZEH-Mや太陽光発電設備の標準化、高齢者向け住宅の開発によるシニア市場への参入などを挙げています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "建設事業と開発事業を併せ持つ一貫体制を独自のビジネスモデルとしており、開発事業等では用地取得から企画・設計・施工・分譲・管理・アフターサービスまでをグループで行う自社製販一貫体制により、自社ブランドマンション「EXCELLENT CITY」シリーズを展開しています。建物の付加価値向上を基にした企画提案型営業で特命受注を強化しています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の外部顧客への売上高は建設事業が83,620百万円で連結売上高の約60％、開発事業等が54,807百万円で約40％を占めます。本邦の外部顧客への売上高が連結売上高の90％を超えており、売上高の10％以上を占める相手先はありません。",
+        "basis": "セグメント情報及び関連情報（地域ごとの情報、主要な顧客ごとの情報）の印字に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,130 @@
   "name": "山形銀行",
   "officialName": "株式会社山形銀行",
   "nameEn": "The Yamagata Bank, Ltd.",
-  "description": null,
+  "shortNameEn": "Yamagata Bank",
+  "description": "山形県山形市に本店を置く地方銀行で、銀行業を中心に、リースや信用保証などの金融サービスに係る事業を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "banking",
+      "name": "銀行業",
+      "description": "当行本体が本店（山形県山形市）のほか84か店（うち出張所１か店）の店舗網で営む銀行業務で、預金業務、貸出業務、有価証券投資業務および為替業務等を行っており、当行グループの中核業務です。2026年３月期の外部顧客に対する経常収益は55,168百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "lending",
+          "name": "貸出業務",
+          "description": "地域のお客さまへの貸出を行う業務で、2026年３月期のサービスごとの外部顧客に対する経常収益は26,452百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "securities-investment",
+          "name": "有価証券投資業務",
+          "description": "有価証券への投資・運用を行う業務で、2026年３月期のサービスごとの外部顧客に対する経常収益は19,731百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    },
+    {
+      "id": "leasing",
+      "name": "リース業",
+      "description": "連結子会社の山銀リース株式会社が営むリース業務等です。2026年３月期の外部顧客に対する経常収益は6,490百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "credit-guarantee",
+      "name": "信用保証業",
+      "description": "連結子会社の山銀保証サービス株式会社が営む信用保証業務等です。2026年３月期の外部顧客に対する経常収益は212百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業で、連結子会社がデータ処理、クレジットカード、地域商社及びベンチャーキャピタル業等を行っています。2026年３月期の外部顧客に対する経常収益は1,465百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "預金で集めた資金を貸出金や有価証券で運用し、為替などの役務取引の手数料や、リース・信用保証などのグループ会社の収益もあわせて得る、地域密着型の金融機関の事業モデルです。",
+    "products": [
+      "預金",
+      "貸出金",
+      "有価証券投資",
+      "内国為替・外国為替",
+      "リース",
+      "信用保証"
+    ],
+    "customers": [
+      "山形県を中心とする個人のお客さま",
+      "中小企業などの法人のお客さま",
+      "国・地方公共団体"
+    ],
+    "revenueSources": [
+      "貸出業務から得る収益",
+      "有価証券の投資・運用から得る収益",
+      "為替業務などの役務取引から得る収益",
+      "リース業務・信用保証業務から得る収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当行と連結子会社７社のグループ",
+        "description": "当行と連結子会社７社でグループを構成し、連結の従業員数は1,178人です（2026年３月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "銀行業を中心にリース・信用保証なども展開",
+        "description": "当行本体が本店のほか84か店の店舗網で預金、貸出、有価証券投資、為替などの銀行業務を行い、連結子会社がリース業務、信用保証業務、データ処理やクレジットカードなどの業務を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "山形県を地盤とする個人と法人がお客さま",
+        "description": "山形県を主な営業基盤とし、個人のお客さまと中小企業などの法人のお客さま、国・地方公共団体に金融サービスを提供しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "連結経常収益は63,330百万円",
+        "description": "2026年３月期の連結経常収益は63,330百万円で、前連結会計年度の52,861百万円から増加しました。銀行業の外部顧客に対する経常収益は55,168百万円、リース業は6,490百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は6,528百万円",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は6,528百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +142,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 155628000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1257,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +162,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 133729000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1215,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +182,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 143805000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1175,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +202,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 136002000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1175,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +222,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 150626000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1178,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +230,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第214期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社山形銀行",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE2M.pdf",
-      "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +241,328 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1896,
+      "title": "両羽銀行の設立",
+      "description": "1896年４月、両羽銀行が設立されました。",
+      "significance": "現在の山形銀行の源流となる創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1897,
+      "title": "第八十一国立銀行の業務を継承",
+      "description": "1897年６月、第八十一国立銀行の業務を継承しました。",
+      "significance": "国立銀行の業務を引き継ぎ、地域の金融機関としての基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "山形商業銀行を合併",
+      "description": "1943年３月、山形商業銀行を合併しました。",
+      "significance": "戦時下の金融機関の統合のなかで規模を拡大しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "山形貯蓄銀行を合併",
+      "description": "1944年３月、山形貯蓄銀行を合併しました。",
+      "significance": "貯蓄銀行の合併により、預金業務の基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "「山形銀行」に行名を変更",
+      "description": "1965年４月、行名を「山形銀行」に改称しました。",
+      "significance": "現在の行名となった節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1973年10月、東京証券取引所市場第二部に上場し、1975年３月に市場第一部に上場しました。",
+      "significance": "上場会社となり、株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "山形保証サービス株式会社の設立",
+      "description": "1974年11月、山形保証サービス株式会社（現在の山銀保証サービス株式会社）が設立されました。",
+      "significance": "現在の信用保証業を担うグループ会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "山銀リース株式会社の設立",
+      "description": "1976年４月、山銀リース株式会社が設立されました。",
+      "significance": "現在のリース業を担うグループ会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "「じゅうだん会」共同版システムの稼働",
+      "description": "2005年１月、「じゅうだん会」の共同版システムが稼働しました。",
+      "significance": "地方銀行間の基幹系システム共同利用の枠組みに参加しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "監査等委員会設置会社へ移行",
+      "description": "2016年６月、監査等委員会設置会社へ移行しました。",
+      "significance": "コーポレート・ガバナンス体制を変更しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "山銀ビジネスサービス株式会社を吸収合併",
+      "description": "2018年７月、山銀ビジネスサービス株式会社を当行に吸収合併しました。",
+      "significance": "グループ内の事務業務を当行に集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "TRYパートナーズ株式会社の設立",
+      "description": "2019年12月、TRYパートナーズ株式会社が設立されました。",
+      "significance": "地域商社事業を担うグループ会社が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "やまがた協創パートナーズ株式会社の設立",
+      "description": "2022年１月、やまがた協創パートナーズ株式会社が設立されました。",
+      "significance": "ベンチャーキャピタル事業を担うグループ会社が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "2022年４月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "新しい市場区分のもとでの上場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "木の実管財株式会社を解散",
+      "description": "2024年12月、木の実管財株式会社を解散し、2025年３月に清算結了しました。",
+      "significance": "グループ会社の整理が完了した出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "やまぎんキャピタル株式会社を解散",
+      "description": "2026年３月、連結子会社のやまぎんキャピタル株式会社を解散し、現在清算中です。",
+      "significance": "期末直前の解散であり、清算中の連結子会社として開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "the-bank-of-iwate",
+      "relationship": "business-partner",
+      "description": "株式会社岩手銀行とは、東北地方の同業種として、観光振興事業への支援に関する業務協定を締結するなど、業務提携等の関係があります。当行は2026年３月31日現在、同社の株式540,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "procrea-holdings",
+      "relationship": "business-partner",
+      "description": "株式会社プロクレアホールディングスとは、東北地方の同業種として、観光振興事業への支援に関する業務協定を締結するなど、業務提携等の関係があります。当行は2026年３月31日現在、同社の株式114,052株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-awa-bank",
+      "relationship": "business-partner",
+      "description": "株式会社阿波銀行とは、基幹系システム等を共同利用している「じゅうだん会」の連携行として、業務提携等の関係があります。当行は2026年３月31日現在、同社の株式101,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hachijuni-nagano-bank",
+      "relationship": "business-partner",
+      "description": "株式会社八十二長野銀行とは、基幹系システム等を共同利用している「じゅうだん会」の連携行として、業務提携等の関係があります。当行は2026年３月31日現在、同社の株式145,000株を保有しています。なお、同社は2026年１月１日付で株式会社八十二銀行から商号を変更しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "bank-of-the-ryukyus",
+      "relationship": "business-partner",
+      "description": "株式会社琉球銀行とは、基幹系システム等を共同利用している「じゅうだん会」の連携行として、業務提携等の関係があります。当行は2026年３月31日現在、同社の株式39,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-77-bank",
+      "relationship": "business-partner",
+      "description": "株式会社七十七銀行とは、東北地方の同業種として、「南東北元気プロジェクト」において地域課題の解決に向けた連携協定を締結するなど、業務提携等の関係があります。当行は2026年３月31日現在、同社の株式55,440株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "jimoto-holdings",
+      "relationship": "business-partner",
+      "description": "株式会社じもとホールディングスとは、山形県内の同業種として、ＡＴＭの相互利用など、業務提携等の関係があります。当行は2026年３月31日現在、同社の株式10,855株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-ufj-financial-group",
+      "relationship": "business-partner",
+      "description": "株式会社三菱ＵＦＪフィナンシャル・グループとは、同社グループ等が提供する地域金融機関向けのシステム共同プラットフォームを採用するなど、金融関連業務における業務提携等の関係があります。当行は2026年３月31日現在、同社の株式195,899株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokio-marine-holdings",
+      "relationship": "business-partner",
+      "description": "東京海上ホールディングス株式会社とは、ＳＤＧｓ経営支援サービスで連携するなど、金融関連業務における業務提携等の関係があります。当行は2026年３月31日現在、同社の株式76,975株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-mitsui-financial-group",
+      "relationship": "business-partner",
+      "description": "株式会社三井住友フィナンシャルグループとは、サステナビリティ経営に係る業務連携を行うなど、金融関連業務等における業務提携等の関係があります。当行は2026年３月31日現在、同社の株式91,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sompo-holdings",
+      "relationship": "business-partner",
+      "description": "ＳＯＭＰＯホールディングス株式会社とは、サステナビリティ経営に係る業務連携を行うなど、金融関連業務等における業務提携等の関係があります。当行は2026年３月31日現在、同社の株式29,350株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-realty-and-development",
+      "relationship": "major-shareholder",
+      "description": "住友不動産株式会社は、2026年３月31日現在、当行の株式605千株（発行済株式（自己株式を除く。）の総数に対する所有株式数の割合1.92％）を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第214期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社山形銀行",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE2M.pdf",
+      "publishedAt": "2026-06-18",
+      "docId": "S100YE2M",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 連結子会社のやまぎんキャピタル株式会社は、2026年３月30日付で解散し、現在清算中です（関係会社の状況・主要な設備の状況に印字）。本登録は、2026年３月31日現在の連結子会社７社（清算中のやまぎんキャピタルを含みます）の構造によります。"
+    ]
+  },
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念として「地域とともに成長発展し　すべてのお客さまにご満足をいただき　行員に安定と機会を与える」を掲げ、2030年度に向けた長期ビジョンとして「お客さまの価値を共に創造し、地域ポテンシャルを最大化する金融・産業参画型ハイブリッドカンパニー」になることを目指しています。2024年４月から2027年３月までの第21次長期経営計画「Pro-Act」では、Trust・Growth・Well-beingの３つの価値観を定め、コンサルティング営業の実践やサステナビリティ経営の強化に取り組むとしています。計画の目標数値は将来に関する事項のため、ここには転記していません。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "本店のある山形県を主な営業基盤とし、本店のほか84か店の店舗網を持っています。経営成績の分析では、貸出金は事業性貸出、個人向け貸出、国・地方公共団体向け貸出がともに増加し、預金等（譲渡性預金を含みます。）も法人預金や個人預金の増加で残高を伸ばしたと説明しています。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年３月期の連結経常収益63,330百万円の内訳は、外部顧客に対する経常収益で銀行業が55,168百万円、リース業が6,490百万円、信用保証業が212百万円、報告セグメントに含まれないその他が1,465百万円です。サービスごとでは貸出業務が26,452百万円、有価証券投資業務が19,731百万円となっています。本邦の外部顧客に対する経常収益が全体の90％を超えるため地域ごとの情報は省略されており、経常収益の10％以上を占める主要な顧客もありません。",
+        "basis": "セグメント情報等の報告セグメントごとの外部顧客に対する経常収益と、関連情報のサービスごとの情報、地域ごとの情報、主要な顧客ごとの情報に基づきます。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }
