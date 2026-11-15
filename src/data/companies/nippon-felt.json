@@ -4,15 +4,120 @@
   "name": "日本フエルト",
   "officialName": "日本フエルト株式会社",
   "nameEn": "NIPPON FELT CO.,LTD.",
-  "description": null,
+  "shortNameEn": "NIPPON FELT CO.,LTD.",
+  "description": "抄紙用フェルトと工業用フェルトを製造・販売し、本社ビルなどの不動産賃貸も行う会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "felt",
+      "name": "フェルト事業",
+      "description": "紙・パルプ用フェルトと工業用フェルト等の製造・販売を行う事業です。当社と連結子会社の東山フエルト株式会社、ニップ縫整株式会社、台湾惠爾得股份有限公司、日惠得造紙器材（上海）貿易有限公司が担っており、2026年３月期の外部顧客への売上高は8,773百万円でした。",
+      "customers": [
+        "製紙会社",
+        "産業資材の需要家"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "paper-pulp-felt",
+          "name": "紙・パルプ用フェルト",
+          "description": "新聞紙・上質紙・印刷用紙や家庭紙などを生産する抄紙機に使われるフェルトです。2026年３月期の売上高は7,379百万円で、このうち国外売上高は1,812百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "industrial-felt",
+          "name": "工業用その他の製品",
+          "description": "防塵マスク用フィルターや一般・耐熱・高耐熱フィルターなどの工業用製品です。2026年３月期の売上高は1,393百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸事業",
+      "description": "当社が所有する本社ビルの一部をテナントへ貸し出すほか、所有する土地・建物を介護施設事業者や不動産事業者等へ貸し出す事業です。2026年３月期の外部顧客への売上高は625百万円でした。",
+      "customers": [
+        "テナント企業",
+        "介護施設事業者",
+        "不動産事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "紙・パルプ用フェルトと工業用フェルトを製紙会社などに販売し、本社ビル等の賃貸でも収益を得ています。",
+    "products": [
+      "紙・パルプ用フェルト",
+      "工業用フェルト（フィルター等）"
+    ],
+    "customers": [
+      "製紙会社",
+      "産業資材の需要家",
+      "賃貸物件のテナント・事業者"
+    ],
+    "revenueSources": [
+      "フェルト製品の販売",
+      "不動産の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日本フエルト",
+        "description": "日本フエルトは東京都北区に本社を置く会社で、子会社５社とグループを構成しています。2026年３月31日現在の連結従業員数は541人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "フェルト製品",
+        "description": "抄紙機に使う紙・パルプ用フェルトと、フィルターなどの工業用フェルト等を製造しています。国内では埼玉工場・栃木工場、台湾では子会社が生産を担っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "製紙会社",
+        "description": "主要な販売先は製紙会社で、日本製紙株式会社などが含まれ、台湾や中国などのアジア向けの販売も行っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高9,398百万円",
+        "description": "2026年３月期の売上高は9,398百万円でした。フェルト事業が8,773百万円、不動産賃貸事業が625百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益560百万円",
+        "description": "2026年３月期は、親会社株主に帰属する当期純利益560百万円を計上しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +132,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17394374000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 586,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +152,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18213910000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 566,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +172,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20366521000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 570,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +192,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20719943000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 557,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +212,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22903332000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 541,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +220,197 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1917,
+      "title": "日本フエルト株式会社を設立",
+      "description": "王子製紙、三菱製紙その他製紙会社や紙業関係者の提唱により日本フエルト株式会社を設立し、抄紙用フェルトの製造を開始しました。",
+      "significance": "製紙会社の出資で生まれた抄紙用フェルト専業メーカーとして始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1919,
+      "title": "王子工場を設置",
+      "description": "東京府北豊島郡王子町（現・東京都北区豊島）に王子工場を設置しました。",
+      "significance": "最初の生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1942,
+      "title": "東京毛布株式会社を合併",
+      "description": "東京毛布株式会社を合併し、市川工場を取得しました。",
+      "significance": "合併により生産拠点を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "東京証券取引所に上場",
+      "description": "東京証券取引所に株式を上場しました。",
+      "significance": "株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "台湾惠爾得股份有限公司を設立",
+      "description": "日台合弁で台湾・桃園県（現・桃園市）に台湾惠爾得股份有限公司を設立しました。",
+      "significance": "海外生産拠点の始まりで、現在も連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "埼玉フエルト株式会社を吸収合併",
+      "description": "1961年に設立した埼玉フエルト株式会社を吸収合併し、当社の埼玉工場として発足しました。",
+      "significance": "埼玉工場は現在の主力工場の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "ニップ縫整株式会社を設立",
+      "description": "ニップ縫整株式会社を設立しました。",
+      "significance": "縫製工程を担う現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "東山フエルト株式会社を設立",
+      "description": "東山フエルト株式会社を設立しました。",
+      "significance": "加工を担う現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "王子工場を閉鎖",
+      "description": "王子工場を閉鎖しました。",
+      "significance": "生産体制を埼玉・栃木の工場へ集約する流れの一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "黒羽フエルト株式会社を解散し栃木工場が発足",
+      "description": "1988年に設立した黒羽フエルト株式会社を解散し、当社の栃木工場として発足しました。",
+      "significance": "栃木工場は現在の主力工場の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "本社を東京都北区赤羽へ移転",
+      "description": "東京都北区赤羽に業務棟を取得し、東京都千代田区丸の内から本社を移転しました。",
+      "significance": "現在の本社所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "エヌ・エフ・ファイナンス株式会社を吸収合併",
+      "description": "1987年に設立したエヌ・エフ・ファイナンス株式会社を吸収合併しました。",
+      "significance": "金融子会社を本体に統合しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "日本フエルト商事株式会社を吸収合併",
+      "description": "販売代理店の子会社をルーツとする日本フエルト商事株式会社を吸収合併しました。",
+      "significance": "販売機能を本体に統合しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "日惠得造紙器材（上海）貿易有限公司を設立",
+      "description": "中国・上海市に日惠得造紙器材（上海）貿易有限公司を設立しました。",
+      "significance": "中国での販売・技術サービスの拠点で、現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "ＮＦノンウーブン株式会社を設立",
+      "description": "ＮＦノンウーブン株式会社を設立しました。",
+      "significance": "現在の非連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しに伴い、スタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nippon-paper-industries",
+      "relationship": "customer",
+      "description": "日本製紙株式会社は、紙・パルプ用フェルトの主要な販売先です。2026年３月期の同社向け売上高は連結売上高の11.3％を占めています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "oji-holdings",
+      "relationship": "major-shareholder",
+      "description": "王子ホールディングス株式会社は、2026年３月31日現在で当社の発行済株式（自己株式を除く）の9.66％を保有する大株主の事業会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "nippon-filcon",
+      "relationship": "business-partner",
+      "description": "日本フイルコン株式会社とは、生産設備に災害が起こった場合に生産を相互に支援し合う災害時相互協力協定を締結しており、提携関係にあります。当社の事業活動の維持に寄与するため、同社株式300,000株を2026年３月31日現在保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +418,47 @@
       "publisher": "日本フエルト株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIXB.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YIXB",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念「『伝統の継承』と『新たな挑戦』の融合で豊かな未来を創造します」と10年長期ビジョン「業界の先駆者として磨き上げた独自の価値・技術を活かし、永く広く社会の発展に寄与し続ける企業へ」を掲げ、2026年度から2028年度までの中期経営計画では、フェルト事業の収益力の改善と収益基盤の強化に取り組んでいます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "紙・パルプ用フェルトで国内の高いシェアを維持しており、台湾惠爾得は台湾で唯一の抄紙用フェルト生産拠点として、アジア市場への供給の足場を持っています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、紙・パルプ用フェルトについて国内は高シェアを維持したことが印字され、【経営方針、経営環境及び対処すべき課題等】に、台湾惠爾得股份有限公司が台湾唯一の抄紙用フェルト生産拠点であることが印字されています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "国内では新聞紙・印刷用紙の生産縮小で市場が縮小するなか、板紙・家庭紙分野へのシェア拡大とアジア市場の開拓で収益基盤の維持・拡大を図る位置づけにあります。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、国内の情報用紙分野が縮小するなか板紙・家庭紙分野のシェア拡大を掲げることが印字され、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、新聞紙や印刷・情報用紙の生産が縮小していることが印字されています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -1,18 +1,113 @@
 {
   "id": "prism-biolab",
   "code": "206A",
-  "name": "PRISMBioLab",
+  "name": "PRISM BioLab",
   "officialName": "株式会社PRISM BioLab",
   "nameEn": "PRISM BioLab Co.,LTD",
-  "description": null,
+  "shortNameEn": "PRISM BioLab Co.,LTD",
+  "description": "独自の創薬基盤技術「PepMetics技術」で、これまで創薬が困難とされてきた標的に対する新薬を研究開発し、製薬会社への導出と共同開発で収入を得る創薬会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "drug-discovery",
+      "name": "創薬事業",
+      "description": "独自の創薬基盤技術「PepMetics技術」を用いて、これまで創薬が困難とされてきた細胞内のタンパク質間相互作用を制御する低分子医薬品の研究開発を行う単一セグメントの事業です。2025年９月期の売上高は677百万円でした。",
+      "customers": [
+        "導出先の製薬会社",
+        "共同開発の提携先である製薬会社"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "inhouse-development",
+          "name": "自社開発事業",
+          "description": "自社で創薬標的を選定し、ヒット化合物の創出から臨床候補化合物への最適化と非臨床試験を行い、開発パートナーとなる製薬会社へ導出する事業です。導出したプログラムには、エーザイ株式会社が第Ⅱ相臨床試験を実施しているE7386と、大原薬品工業株式会社が臨床試験を進めているPRI-724があり、2025年９月30日時点で自社プログラムを４つ実施しています。",
+          "customers": [
+            "導出先の製薬会社"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "joint-development",
+          "name": "共同開発事業",
+          "description": "大手製薬会社の創薬標的にPepMetics技術を利用してヒット化合物やリード化合物を探索する事業です。Merck KGaA、Boehringer Ingelheim International GmbH、F. Hoffmann-La Roche Ltd.、Genentech, Inc.、小野薬品工業株式会社等との提携があり、契約一時金、共同研究収入、開発の進捗に応じたマイルストン及び販売後のロイヤリティを受け取ります。",
+          "customers": [
+            "共同開発の提携先である国内外の製薬会社"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "PepMetics技術を用いた医薬品の研究開発を行い、自社で創出した化合物の製薬会社への導出と、製薬会社の標的に対する共同開発によって収入を得ています。",
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "products": [
+      "PepMetics技術を用いて創出した創薬プログラム（臨床候補化合物）",
+      "CBP／β-カテニン相互作用阻害剤E7386（エーザイ株式会社へ導出）",
+      "CBP／β-カテニン相互作用阻害剤PRI-724（大原薬品工業株式会社へ導出）",
+      "PepMetics化合物ライブラリーを用いたヒット化合物・リード化合物の探索"
+    ],
+    "customers": [
+      "導出先の製薬会社",
+      "共同開発の提携先である国内外の製薬会社"
+    ],
+    "revenueSources": [
+      "導出契約及び共同研究契約に基づく契約一時金",
+      "開発の進捗に応じたマイルストン収入",
+      "共同研究収入",
+      "上市後の販売額に対するロイヤリティ"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社PRISM BioLab",
+        "description": "前身は2006年に設立され、現在の会社は2012年に新設分割により設立された創薬会社です。2025年９月30日現在の従業員数は35人で、本社は神奈川県藤沢市にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "PepMetics技術による創薬",
+        "description": "ヘリックス構造を模倣した低分子化合物で細胞内のタンパク質間相互作用を制御するPepMetics技術を使い、自社で創薬プログラムを創出する自社開発事業と、製薬会社の標的に対してヒット化合物等を探索する共同開発事業を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "製薬会社",
+        "description": "自社開発事業ではエーザイ株式会社や大原薬品工業株式会社へプログラムを導出し、共同開発事業では国内外の大手製薬会社と提携して創薬標的ごとに研究を行っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年９月期の売上高は677百万円で、前年同期比121.6％増となりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失",
+        "description": "2025年９月期は、創薬事業の基盤構築のための研究開発への先行投資により、当期純損失833百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年9月期",
@@ -27,14 +122,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1092912000,
       "netAssetsLabel": "――純資産額",
-      "employees": null,
+      "employees": 7,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "第10期（2021年９月期）の数値については、「会社計算規則」（平成18年法務省令第13号）の規定に基づき算出しており、金融商品取引法第193条の２第１項の規定に基づく監査証明を受けておりません。"
     },
     {
       "fiscalYear": "2022年9月期",
@@ -49,14 +145,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1674930000,
       "netAssetsLabel": "――純資産額",
-      "employees": null,
+      "employees": 12,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第11期（2022年９月期）の期首から適用しており、第11期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標となっております。"
     },
     {
       "fiscalYear": "2023年9月期",
@@ -71,11 +168,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1148015000,
       "netAssetsLabel": "――純資産額",
-      "employees": null,
+      "employees": 17,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -93,11 +190,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3502901000,
       "netAssetsLabel": "――純資産額",
-      "employees": null,
+      "employees": 27,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -115,18 +212,158 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2708830000,
       "netAssetsLabel": "――純資産額",
-      "employees": null,
+      "employees": 35,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2006,
+      "title": "前身のPRISM BioLab株式会社を設立",
+      "description": "ペプチド模倣低分子化合物を用いて新薬を開発することを目指し、当社の前身であるPRISM BioLab株式会社（旧 株式会社PRISM Pharma）が設立されました。",
+      "significance": "現在の会社の起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "エーザイとPRI-724の導出契約を締結",
+      "description": "エーザイ株式会社とPRI-724のガン分野における導出契約を締結しました。",
+      "significance": "大手製薬会社への初の導出です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "新設分割により株式会社PRISM BioLabを設立",
+      "description": "前身会社が株式会社PRISM Pharmaへ社名を変更すると共に、自社開発事業を中心に展開するため、新設分割により、現在の株式会社PRISM BioLabが設立されました。",
+      "significance": "現在の会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "E7386を創出しエーザイへ導出",
+      "description": "エーザイ株式会社との共同研究で経口剤となるE7386を創出し、当社の研究成果をエーザイ株式会社に導出しました。なお、E7386に資源を集中するため、PRI-724のガン分野の契約は2015年に解消されています。",
+      "significance": "主力プログラムE7386の導出です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "共同開発事業を本格的に開始",
+      "description": "製薬会社の創薬ターゲットに対してヒット化合物を創出する共同開発事業を本格的に開始しました。",
+      "significance": "第二の収益モデルが本格化しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "大原薬品工業へPRI-724を導出",
+      "description": "大原薬品工業株式会社に、PRI-724のガン以外の分野における導出契約を締結しました。また、同年に株式会社PRISM Pharmaを吸収合併しました。",
+      "significance": "PRI-724の開発分野を広げた導出です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "本社を湘南ヘルスイノベーションパークへ移転",
+      "description": "本社を神奈川県藤沢市の湘南ヘルスイノベーションパーク内へ移転しました。同年にBoehringer Ingelheim International GmbH及びMerck KGaAとの間で、研究及び導出契約を締結しました。",
+      "significance": "研究拠点の移転と海外大手との提携拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "E7386が臨床におけるPOCを達成",
+      "description": "エーザイ株式会社と共同で創製したCBP／β-カテニン阻害剤E7386について、臨床におけるPOC（Proof of Concept：創薬概念の検証）を達成しました。同年にLES LABORATOIRES SERVIERとの間で業務提携契約を、F. Hoffmann-La Roche Ltd.及びGenentech, Inc.との間で研究及び導出契約を締結しました。",
+      "significance": "技術の有用性を臨床で示した節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "PRI-724が臨床におけるPOCを達成",
+      "description": "大原薬品工業株式会社に導出したPRI-724について、臨床におけるPOCを達成しました。",
+      "significance": "二つ目のプログラムの進捗です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "Eli Lilly and Companyと共同研究及び導出契約を締結",
+      "description": "Eli Lilly and Companyとの間で、複数の創薬ターゲットに関する共同研究及び導出契約を締結しました。同年に、大原薬品工業株式会社と導出契約に基づく第Ⅱ相臨床試験の開始によるマイルストンを達成しました。",
+      "significance": "海外大手との提携が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "東京証券取引所グロース市場に上場",
+      "description": "小野薬品工業株式会社との間でガン領域における創薬に関する導出契約を締結し、東京証券取引所グロース市場に上場しました。同年に東京都中央区に東京オフィスを開設しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "小野薬品工業との導出契約でマイルストンを達成",
+      "description": "小野薬品工業株式会社と導出契約に基づく創薬研究段階でのマイルストンを達成しました。",
+      "significance": "共同開発の成果が収益化した例です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "eisai",
+      "relationship": "business-partner",
+      "description": "エーザイ株式会社とは、共同研究で創製したCBP／β-カテニン相互作用阻害剤E7386について研究協力・導出契約を締結している業務提携等の関係にあります。当社は開発の進捗に応じたマイルストン及びロイヤリティを受け取ることになっており、E7386はエーザイ株式会社が第Ⅱ相臨床試験を実施しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "companyId": "ono-pharmaceutical",
+      "relationship": "customer",
+      "description": "小野薬品工業株式会社とは、2024年４月にガン領域における創薬に関する導出契約を締結し、共同研究を行っている販売先です。2025年９月期の主な相手先別の販売実績にも、相手先として記載されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -134,13 +371,60 @@
       "publisher": "株式会社PRISM BioLab",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XCIN.pdf",
       "publishedAt": "2025-12-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100XCIN",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 当社は2024年５月９日付で普通株式１株につき200株の割合で株式分割を行っており、主要な経営指標等の推移の注記にその旨と、第11期の期首に当該株式分割が行われたと仮定して各期の指標が算定されている旨が記載されています。",
+      "businessStructure: 当社は2024年５月９日付で普通株式１株につき200株の割合で株式分割を行っており、主要な経営指標等の推移の注記にその旨と、第11期の期首に当該株式分割が行われたと仮定して各期の指標が算定されている旨が記載されています。",
+      "history: 当社は2024年５月９日付で普通株式１株につき200株の割合で株式分割を行っており、主要な経営指標等の推移の注記にその旨と、第11期の期首に当該株式分割が行われたと仮定して各期の指標が算定されている旨が記載されています。"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "当社は、PepMetics技術によって「創薬不可能」だった標的を「創薬可能」にし、治療法のなかった病気を治療することを使命に掲げています。この技術の有用性を証明すると共に、この技術において業界をリードし、競争力を維持し続けることが重要な経営課題であるとしています。事業は、自社でプログラムを創出して導出する自社開発事業と、製薬会社の標的に対して共同開発を行う共同開発事業を組み合わせ、共同開発事業では年に２件程度の新規契約を目標としています。",
+        "asOf": "2025-12-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2025年９月期の売上高は677百万円で、前期比121.6％増加しました。当社は、Eli Lilly and Companyとの共同研究契約が2025年９月に終了し、残存する履行義務がなくなったことから、契約負債の残額を売上高として計上したと説明しています。自社開発事業では当事業年度にマイルストン収入は得られなかったものの、導出先企業によって臨床開発が進められています。",
+        "basis": "MD&Aの経営成績等の状況の概要（経営成績の状況及び財政状態の状況）に基づきます。",
+        "asOf": "2025-12-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "PepMetics化合物は、天然物に近い立体的な構造を持ちながら通常の低分子化合物のように合成できる化合物群であり、当社はこれまでに３万以上のPepMetics化合物を合成した実績と、成功例・失敗例を含む反応実績のデータベースを蓄積しています。自社内でハイスループットスクリーニングや計算化学、X線結晶構造解析までを行う体制を構築していることや、PepMetics化合物に特化したADMETのAI予測モデルを構築・実用化していることも強みであると当社は説明しています。",
+        "basis": "【事業の内容】の当社の技術及び当社の優位性の記載に基づきます。",
+        "asOf": "2025-12-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "細胞内のタンパク質間相互作用を阻害する低分子医薬は、これまでに世界で３つしか承認されていない新しい創薬分野です。当社のE7386は、エーザイ株式会社が第Ⅱ相臨床試験を実施しています。2025年９月期の主な相手先別の販売実績では、Eli Lilly and Companyが販売高の77.3％、小野薬品工業株式会社が16.2％を占めました。",
+        "basis": "【事業の内容】の当社の事業の可能性の記載、MD&Aの販売実績（主な相手先別の販売実績）に基づきます。",
+        "asOf": "2025-12-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-30",

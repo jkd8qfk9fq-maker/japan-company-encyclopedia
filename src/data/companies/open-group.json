@@ -4,15 +4,143 @@
   "name": "オープングループ",
   "officialName": "オープングループ株式会社",
   "nameEn": "OPEN Group, Inc.",
-  "description": null,
+  "shortNameEn": "OPEN Group, Inc.",
+  "description": "RPAツールや成果報酬型広告など、業務の自動化を軸としたサービスを展開する事業会社を傘下に持つ純粋持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    },
+    {
+      "industryId": "media",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "intelligent-automation",
+      "name": "インテリジェントオートメーション事業",
+      "description": "デジタルレイバーを提供する事業です。各社固有の業務の自動化には、オンプレミス環境向けのRPAツール「BizRobo!」とクラウド環境向けの「AUTORO」を、経理・人事・法務・IT等の汎用業務の自動化にはクラウドサービス「RoboRobo」（取引先の属性確認を自動化するコンプライアンス、採用業務を自動化するリクルーティング、給与計算業務を自動化するペイロール等）を提供しています。オープン株式会社とオートロ株式会社が担っています。2026年2月期の外部顧客への売上高は5,638百万円です。",
+      "customers": [
+        "RPAツールやクラウドサービスを導入する企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "ad-automation",
+      "name": "アドオートメーション事業",
+      "description": "成果報酬型広告サービス「PRESCO」を展開する事業です。広告掲載メディアのウェブサイト上に広告を掲載し、閲覧者の申込みや購入等が広告主に承認された場合に成果報酬を受領する仕組みです。あわせて、RPA等を活用し、広告代理店やオンラインメディア運営企業などオンライン広告業界を対象に、検索キーワードや検索順位データ等のマーケティングデータの収集・集計・レポーティング業務を行っています。オープン株式会社が担っています。2026年2月期の外部顧客への売上高は1,317百万円です。",
+      "customers": [
+        "広告主企業",
+        "広告代理店やオンラインメディア運営企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業セグメントの区分です。セールスアウトソーシング事業、マッチングプラットフォーム事業、メディカルオートメーション事業を含んでいます。2026年2月期の外部顧客への売上高は1,192百万円です。",
+      "customers": [],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】",
+      "children": [
+        {
+          "id": "sales-outsourcing",
+          "name": "セールスアウトソーシング事業",
+          "description": "リーグル株式会社が営む、主にIT企業を対象とした法人向けのセールスアウトソーシング事業です。個別の売上高は開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "matching-platform",
+          "name": "マッチングプラットフォーム事業",
+          "description": "ご近所ワーク株式会社が営む、スキマ時間に働きたい個人と短時間業務の働き手を募集する企業を結び付けるマッチングプラットフォーム事業です。個別の売上高は開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "medical-automation",
+          "name": "メディカルオートメーション事業",
+          "description": "OASIS INNOVATION株式会社が営む、在宅医療系クリニックや訪問看護業界に対して、診療報酬明細書の発行業務やその他のバックオフィス業務のBPOサービスを構築・提供する事業です。個別の売上高は開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "RPAツール「BizRobo!」等のライセンス提供やクラウドサービス、成果報酬型広告の運営を通じて収益を得る仕組みです。",
+    "products": [
+      "RPAツール「BizRobo!」",
+      "クラウド型RPAサービス「AUTORO」",
+      "クラウドサービス「RoboRobo」",
+      "成果報酬型広告サービス「PRESCO」",
+      "マッチングプラットフォーム「ご近所ワーク」"
+    ],
+    "customers": [
+      "業務の自動化を進める企業",
+      "広告主やオンライン広告業界の企業",
+      "短時間の働き手を求める企業とスキマ時間に働きたい個人",
+      "在宅医療系クリニックや訪問看護事業者"
+    ],
+    "revenueSources": [
+      "RPAツールのライセンス収入",
+      "クラウドサービスの利用料",
+      "成果報酬型広告の成果報酬",
+      "セールスアウトソーシングやBPOサービスの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "オープングループ",
+        "description": "2000年4月に東京都渋谷区で設立され、東京証券取引所プライム市場に上場しています。2026年2月28日現在の連結従業員数は241人で、事業を担う連結子会社13社でグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "RPAツールと成果報酬型広告など",
+        "description": "RPAツール「BizRobo!」とクラウド型の「AUTORO」、汎用業務を自動化するクラウドサービス「RoboRobo」、成果報酬型広告サービス「PRESCO」を中心に、業務の自動化に関わるサービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動化を進める企業や広告主",
+        "description": "RPAツールやクラウドサービスを導入する企業と、成果報酬型広告の広告主が主な顧客です。そのほか、IT企業向けの営業代行の依頼先、短時間の働き手を求める企業、在宅医療分野の事業者にもサービスを提供しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高8,148百万円",
+        "description": "2026年2月期の売上高は8,148百万円で、インテリジェントオートメーション事業が5,638百万円、アドオートメーション事業が1,317百万円、その他が1,192百万円です。前期に比べて12.8％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益639百万円",
+        "description": "2026年2月期の親会社株主に帰属する当期純利益は639百万円で、前期に比べて46.8％増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,7 +155,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11600485000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 126,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +175,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11514940000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 135,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +195,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11667796000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 154,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +215,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11982772000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 212,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +235,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10640162000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 241,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +243,179 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2000,
+      "title": "デジタルリパブリック株式会社として設立",
+      "description": "Webサービス企画を目的として、デジタルリパブリック株式会社を東京都渋谷区に設立しました。",
+      "significance": "会社の創立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "オープンアソシエイツ株式会社に商号変更",
+      "description": "オープンアソシエイツ株式会社に商号を変更しました。",
+      "significance": "創業期の商号変更です。資本金の金額は書いていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "「BizRobo!」の提供を開始",
+      "description": "ビジネスロボットソリューションを企画し、RPAツール「BizRobo!」の提供を開始しました。",
+      "significance": "現在のインテリジェントオートメーション事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "リーグル株式会社を設立",
+      "description": "セールスアウトソーシング事業を行うリーグル株式会社を子会社として設立しました。",
+      "significance": "現在のセールスアウトソーシング事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "株式会社セグメントにおいて「PRESCO事業」を開始",
+      "description": "株式会社セグメントにおいて、成果報酬型広告の「PRESCO事業」を開始しました。",
+      "significance": "現在のアドオートメーション事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "ビズロボジャパン株式会社（現オープン株式会社）を設立",
+      "description": "ロボットアウトソーシング事業を行うビズロボジャパン株式会社を子会社として設立しました。",
+      "significance": "現在の中核事業会社であるオープン株式会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "純粋持株会社体制へ移行",
+      "description": "当社を純粋持株会社へ移行し、グループ全体の経営と個別事業の執行を分離しました。",
+      "significance": "現在の持株会社体制の成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "ソフトバンク株式会社と業務提携",
+      "description": "RPA分野の事業展開を共同で行い、さらなる市場拡大を目指すため、ソフトバンク株式会社と業務提携しました。",
+      "significance": "RPA分野における大手企業との提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東京証券取引所マザーズ市場に上場",
+      "description": "東京証券取引所マザーズ市場に株式を上場しました。",
+      "significance": "株式上場の出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "上場市場の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "RPA BANK事業をアイティメディア株式会社へ事業譲渡",
+      "description": "RPA BANK事業をアイティメディア株式会社へ事業譲渡しました。",
+      "significance": "事業ポートフォリオの入れ替えです。相手先は候補にありますが、一度限りの完了した譲渡であり継続的な関係の印字がないため relatedCompanies には結んでいません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社ビースタイルギグワークス（現ご近所ワーク株式会社）の株式取得",
+      "description": "株式会社ビースタイルギグワークスの株式を取得しました。",
+      "significance": "現在のマッチングプラットフォーム事業の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "オープングループ株式会社に商号変更",
+      "description": "オープングループ株式会社に商号を変更しました。",
+      "significance": "現在の商号への変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "オートロ株式会社の株式取得",
+      "description": "クラウド型RPAサービス「AUTORO」を提供するオートロ株式会社の株式を取得しました。",
+      "significance": "インテリジェントオートメーション事業の製品ラインの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "OASIS INNOVATION株式会社の株式取得",
+      "description": "OASIS INNOVATION株式会社の株式を取得しました。",
+      "significance": "現在のメディカルオートメーション事業の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社中小企業サポートセンターの株式取得",
+      "description": "株式会社中小企業サポートセンターの株式を取得しました。",
+      "significance": "当連結会計年度の新しい連結子会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "softbank",
+      "relationship": "business-partner",
+      "description": "ソフトバンク株式会社は、RPA分野の事業展開を共同で行い市場拡大を目指すため、2017年7月に当社と業務提携を締結した相手先です。2026年2月28日現在、発行済株式（自己株式を除く）の総数に対する所有株式数の割合は4.13％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +423,47 @@
       "publisher": "オープングループ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y69Y.pdf",
       "publishedAt": "2026-05-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100Y69Y",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "顧客企業に対してRPA、AI等のサービスを提供する事業と、RPA、AI等の技術を活用した事業を行うことによって、グループ各事業のさらなる成長と収益力の強化を図る方針です。インテリジェントオートメーション事業では、中堅中小企業をメインターゲットに「BizRobo!」「AUTORO」のユーザー数の拡大や適用業務領域の拡大により、収益基盤であるストック収入の拡大を図り、「RoboRobo」では無料ユーザーの拡大と有料ユーザーへの転換を進めます。アドオートメーション事業では、国内アフィリエイト広告市場において取扱高と取扱シェアの拡大を図ります。",
+        "asOf": "2026-05-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "インテリジェントオートメーション事業は、オンプレミス向けの「BizRobo!」とクラウド向けの「AUTORO」をそろえ、導入企業の拡大に伴ってストック型のライセンス収入が伸長する収益構造を持っています。アドオートメーション事業では、RPA等を活用したマーケティングデータの収集・集計・レポーティング業務の自動化が競争優位性とされています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、RPA市場は普及期に入り引き続き成長していく見通しであること、中堅中小企業をメインターゲットにユーザー数の拡大によりストック収入の拡大を図ることが印字され、アドオートメーション事業についてオートメーション化による競争優位性を武器に取扱高、取扱シェアの拡大を図る方針が印字されています。",
+        "asOf": "2026-05-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年2月期の売上高8,148百万円のうち、インテリジェントオートメーション事業が5,638百万円と約7割を占め、アドオートメーション事業が1,317百万円、その他が1,192百万円と続いています。",
+        "basis": "【セグメント情報等】の当連結会計年度における外部顧客への売上高に、インテリジェントオートメーション事業5,638,487千円、アドオートメーション事業1,317,024千円、その他1,192,577千円、合計8,148,088千円が印字されています。",
+        "asOf": "2026-05-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",

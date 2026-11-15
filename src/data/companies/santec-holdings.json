@@ -1,18 +1,146 @@
 {
   "id": "santec-holdings",
   "code": "6777",
-  "name": "santecHoldings",
+  "name": "ｓａｎｔｅｃ　Ｈｏｌｄｉｎｇｓ",
   "officialName": "santec　Holdings株式会社",
   "nameEn": "santec Holdings Corporation",
-  "description": null,
+  "description": "光通信向けの光部品と、光測定器・眼科用医療機器を開発、製造、販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "optical-measurement",
+      "name": "光測定器関連事業",
+      "description": "光伝送装置や光部品の評価・検査用測定器、OCT（光干渉断層画像計）システムとOCT光源、眼科用医療機器である光学式眼内寸法測定装置を開発、製造、販売する事業です。2026年3月期の外部顧客への売上高は22,368百万円でした。",
+      "customers": [
+        "光通信機器メーカー",
+        "大学・研究機関",
+        "医療機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "optical-measurement-telecom",
+          "name": "光通信用光測定器",
+          "description": "波長可変光源や高速スキャニングレーザーなどの光インスツルメンツを、光伝送装置や光部品の評価・検査用に開発、製造、販売します。santec LIS株式会社とsantec OIS株式会社、海外子会社が開発・製造を担います。",
+          "customers": [
+            "光通信機器メーカー",
+            "大学・研究機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "optical-measurement-medical",
+          "name": "医療用光測定器",
+          "description": "OCTシステムやOCT光源、眼科用医療機器の光学式眼内寸法測定装置（製品名：ARGOS）を開発、製造、販売します。医療ブランドMOVUを掲げ、movu inc.などの子会社を通じて販売します。",
+          "customers": [
+            "眼科医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "optical-components",
+      "name": "光部品関連事業",
+      "description": "光伝送装置用の光部品を開発、製造、販売する事業です。主な製品は光パワーモニタ、光減衰器、光スイッチ、光フィルタ、空間光変調器（SLM）で、santec AOC株式会社が開発・製造を担います。2026年3月期の外部顧客への売上高は6,356百万円でした。",
+      "customers": [
+        "光伝送機器メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": []
+    },
+    {
+      "id": "system-solution",
+      "name": "システム・ソリューション事業",
+      "description": "報告セグメントに含まれない事業で、ソフトウェア・通信システムの販売を行います。2026年3月期の外部顧客への売上高は2,782百万円でした。",
+      "customers": [
+        "国内企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": []
+    }
+  ],
+  "businessModel": {
+    "description": "光部品と光測定器の開発・製造を事業子会社が担い、国内外の販売子会社を通じて光伝送機器メーカーや研究機関、医療機関へ販売して売上を得ています。",
+    "products": [
+      "光パワーモニタ",
+      "光減衰器",
+      "光スイッチ",
+      "光フィルタ",
+      "空間光変調器（SLM）",
+      "波長可変光源",
+      "高速スキャニングレーザー",
+      "OCT（光干渉断層画像計）",
+      "光学式眼内寸法測定装置"
+    ],
+    "customers": [
+      "光伝送機器メーカー",
+      "光通信機器メーカー",
+      "大学・研究機関",
+      "医療機関"
+    ],
+    "revenueSources": [
+      "光測定器関連事業の製品販売",
+      "光部品関連事業の製品販売",
+      "システム・ソリューション事業のソフトウェア・通信システム販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "santec Holdingsグループ",
+        "description": "持株会社である当社と子会社16社でグループを構成し、光部品と光測定器の事業を行っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "光部品と光測定器の開発・製造",
+        "description": "事業子会社が、光伝送装置用の光部品と、評価・検査用光測定器、OCTシステム、眼科用医療機器を開発・製造します。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外の顧客への販売",
+        "description": "国内外の販売子会社を通じて、光伝送機器メーカーや企業、大学・研究機関、医療機関へ製品を販売します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品販売による売上高",
+        "description": "2026年3月期の売上高は31,507百万円で、北米における光モニタ及び光通信用光測定器の販売が好調に推移し、前期から増収となりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は7,667百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +155,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11872879000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 273,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +175,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14334361000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 293,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +195,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17735761000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 310,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +215,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21428211000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 350,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +235,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27835259000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 427,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +243,169 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1979,
+      "title": "協同商事を設立",
+      "description": "名古屋市中区に協同商事株式会社を設立し、ファインセラミック・マテリアルの開発及び輸入を主業務として創業しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "サンテックに商号変更し光通信事業へ転換",
+      "description": "サンテック株式会社に商号変更し、電子部品事業から光通信事業への事業転換を図りました。",
+      "significance": "現在の光技術事業の原点となる転換です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "光ファイバ全自動検査システム「FTS-2000」が完成",
+      "description": "光ファイバ全自動検査システム「FTS-2000」が完成しました。当社の光通信事業の第1号製品です。",
+      "significance": "光測定器事業につながる最初の製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "偏波無依存型可変光フィルタを開発",
+      "description": "偏波無依存型可変光フィルタを開発し、これを契機に光通信部品事業へ本格進出しました。",
+      "significance": "光部品事業への本格進出の契機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "大阪証券取引所ナスダック・ジャパン市場に株式公開",
+      "description": "株式会社大阪証券取引所ナスダック・ジャパン市場（現、株式会社東京証券取引所スタンダード市場）に株式を公開しました。同年、本社を愛知県小牧市大草に移転し、中国・上海に販売子会社を設立しました。",
+      "significance": "上場と本社移転、海外販売網の拡充が重なった年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "波長走査型OCT方式診断装置向け光源の供給を開始",
+      "description": "世界初の「波長走査型OCT方式診断装置」向けに光源装置HSL-200の供給を開始しました。",
+      "significance": "医療用光測定器事業の起点となった製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "医療ブランドMOVUを発表",
+      "description": "医療ブランドMOVUを発表しました。同年、医療機器の品質マネジメントシステムISO13485の認証を取得しています。",
+      "significance": "医療分野への展開を明確にした年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "カナダと米国の光測定器会社を子会社化",
+      "description": "JGR Optics inc.（カナダ・オンタリオ州）の株式を取得して連結子会社化し、SANTEC U.S.A. CORPORATIONを通じてOptoTest Corp.（米国カリフォルニア州）の株式を取得して連結子会社化しました。",
+      "significance": "北米の光測定器事業基盤を買収で広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "持株会社体制へ移行しsantec Holdingsに商号変更",
+      "description": "会社分割（簡易吸収分割）により持株会社体制へ移行し、santec Holdings株式会社に商号変更しました。事業はsantec AOC株式会社、santec LIS株式会社、santec OIS株式会社、santec Japan株式会社が担います。",
+      "significance": "現在のグループ体制の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "米国movu inc.と豪州MOG LABORATORIESを子会社化",
+      "description": "movu inc.（米国・カリフォルニア州）の株式を取得して連結子会社化しました。また、連結子会社santec LIS株式会社がMOG LABORATORIES PTY LTD（オーストラリア・メルボルン）の全株式を取得し、連結孫会社化しました。あわせて、吸収分割によりsantec OIS株式会社のOCT事業をsantec LIS株式会社に分割しました。",
+      "significance": "医療用光測定器とOCT事業の体制を再編・拡大した年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第47期(2025/04/01－2026/03/31)",
-      "publisher": "santec　Holdings株式会社",
+      "publisher": "ｓａｎｔｅｃ　Ｈｏｌｄｉｎｇｓ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YH8U.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YH8U",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年4月1日（決算期後）に、完全子会社であるAqumen Capital株式会社を承継会社とする吸収分割により、当社の資産管理事業の一部を同社へ承継しました（重要な後発事象に記載）。登録は2026年3月31日現在の体制で行っています。",
+      "businessModel: 連結子会社MOG LABORATORIES PTY LTDは、2026年5月（決算期後）にSANTEC AUSTRALIA PTY LTDへ商号変更しました（事業の内容・関係会社の状況に記載）。登録は2026年3月31日現在の商号で行っています。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営ビジョンに「Creating OPTOPIA（光の理想郷の創造）」を掲げ、基本方針を「Photonics Pioneer（光の先駆者）」と定めています。2027年3月期の基本課題として「コア技術（中核技術）とグループシナジーを通じた新たな顧客価値の創造」を目標に掲げています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期は基本方針を「高付加価値の新製品開発と市場牽引」とし、北米における光モニタ及び光通信用光測定器の販売好調により、売上高は前期比31.1%増の31,507百万円となりました。",
+        "basis": "MD&Aの経営成績の概要、セグメント情報の外部顧客への売上高、関連情報の地域ごとの売上高と主要な顧客ごとの情報に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "2008年に世界初の波長走査型OCT方式診断装置向け光源装置の供給を始めるなど、独自の光技術の開発実績があります。開発・製造を担う事業子会社と地域ごとの販売子会社を組み合わせ、北米・欧州・アジアで販売する体制を持っています。",
+        "basis": "沿革、事業の内容、関係会社の状況に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "主要な顧客は眼科医療機器のAlcon, Inc.で、2026年3月期の売上高5,572百万円は連結売上高の17.7%を占めます。地域別では米国向けの売上高が10,387百万円と最も大きく、北米市場への依存度が高い構成です。",
+        "basis": "関連情報の主要な顧客ごとの情報と地域ごとの売上高に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

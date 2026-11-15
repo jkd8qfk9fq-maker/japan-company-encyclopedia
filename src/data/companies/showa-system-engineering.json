@@ -4,15 +4,123 @@
   "name": "昭和システムエンジニアリング",
   "officialName": "株式会社 昭和システムエンジニアリング",
   "nameEn": "SHOWA SYSTEM ENGINEERING CORPORATION",
-  "description": null,
+  "shortNameEn": "SHOWA SYSTEM ENGINEERING CORPORATION",
+  "description": "企業のコンピュータシステムの設計・開発・保守などを担うソフトウエア開発と、事務代行などのBPOサービスを行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "software-development",
+      "name": "ソフトウエア開発事業",
+      "description": "企業のコンピュータシステムについて、システムインテグレーション、コンサルティング、ソフトウエアの設計・開発・保守など、基盤領域を含むソフトウエア開発の全領域に対応した総合的なサービスを行う事業です。2026年3月期の外部顧客への売上高は8,651百万円でした。大阪支社もこの事業を担っています。",
+      "customers": [
+        "企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "se-service",
+          "name": "SEサービス",
+          "description": "システムエンジニアリングの技術者が顧客のシステム開発や運用を支援するサービスです。2026年3月期の外部顧客への売上高は8,048百万円でした。",
+          "customers": [
+            "企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        },
+        {
+          "id": "custom-production",
+          "name": "受注制作",
+          "description": "顧客の注文に応じてソフトウエアを制作する事業です。2026年3月期の外部顧客への売上高は602百万円でした。",
+          "customers": [
+            "企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        }
+      ]
+    },
+    {
+      "id": "bpo",
+      "name": "ＢＰＯ事業",
+      "description": "金融機関向け事務代行、健康診断予約代行、スキャニングサービスなど、業種を問わず様々な業務支援を行う事業です。2026年3月期の外部顧客への売上高は79百万円でした。",
+      "customers": [
+        "金融機関",
+        "企業など"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": []
+    }
+  ],
+  "businessModel": {
+    "description": "企業の情報システムについて、コンサルティングから設計・開発・保守までを一貫して受託し、その対価を得る事業モデルです。",
+    "products": [
+      "システムインテグレーション",
+      "コンサルティング",
+      "ソフトウエアの設計・開発・保守",
+      "金融機関向け事務代行",
+      "健康診断予約代行",
+      "スキャニングサービス"
+    ],
+    "customers": [
+      "企業",
+      "金融機関"
+    ],
+    "revenueSources": [
+      "ソフトウエア開発の受託対価",
+      "BPO業務の受託対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "昭和システムエンジニアリング",
+        "description": "1966年にコンピュータの入力データ作成や計算業務の受託を目的とする株式会社昭和計算センターとして東京都中央区に設立されました。本社は東京都中央区日本橋小伝馬町にあり、2026年3月31日現在の従業員数は489人です。連結子会社や関連会社はありません。"
+      },
+      {
+        "kind": "offering",
+        "title": "ソフトウエア開発とBPO",
+        "description": "ソフトウエア開発事業では、システムインテグレーション、コンサルティング、ソフトウエアの設計・開発・保守など開発の全領域に対応したサービスを行っています。BPO事業では、金融機関向け事務代行、健康診断予約代行、スキャニングサービスなど様々な業務支援を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "企業や金融機関",
+        "description": "企業のコンピュータシステムを使う事業者や金融機関が顧客です。主要な顧客として、日興システムソリューションズ株式会社とBIPROGY株式会社が開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "受託対価が収益",
+        "description": "収益は、ソフトウエア開発やBPO業務の受託対価から得ています。2026年3月期の売上高は8,730百万円で、このうちソフトウエア開発事業が8,651百万円、BPO事業が79百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は768百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +135,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4013914000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 451,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +157,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4412225000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 450,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +179,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4931044000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 455,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +201,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5342674000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 474,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +223,119 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5904983000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 489,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1966,
+      "title": "株式会社昭和計算センターを設立",
+      "description": "コンピュータの入力データ作成業務及びコンピュータによる計算業務の受託を目的として、株式会社昭和計算センターを東京都中央区日本橋茅場町に設立しました。",
+      "significance": "当社の創業であり、現在のBPO事業につながる受託業務の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "昭和ソフトウエアエンジニアリング株式会社を設立",
+      "description": "日本ユニバック株式会社（現BIPROGY株式会社）向けの各種ソフトウエア開発を目的として、同社と共同出資により昭和ソフトウエアエンジニアリング株式会社を設立しました。",
+      "significance": "ソフトウエア開発業務へ本格参入する転機になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "商号を昭和システムエンジニアリングに変更",
+      "description": "本格的な総合情報サービス企業を目指し、商号を株式会社昭和システムエンジニアリングに変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "昭和ソフトウエアエンジニアリング株式会社を合併",
+      "description": "昭和ソフトウエアエンジニアリング株式会社を合併しました。",
+      "significance": "ソフトウエア開発体制を一本化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "通産省の「システムインテグレータ」登録企業となる",
+      "description": "通商産業省（現経済産業省）の「システムインテグレータ」登録企業となりました。2001年3月には認定企業となっています。",
+      "significance": "情報サービス企業としての公的な位置づけを得ました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "東京証券取引所への現物市場統合に伴い、東京証券取引所JASDAQ（スタンダード）に株式を上場しました。",
+      "significance": "東京証券取引所の市場へ移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に上場",
+      "description": "東京証券取引所の市場区分再編に伴い、東京証券取引所（スタンダード市場）に株式を上場しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "biprogy",
+      "relationship": "customer",
+      "description": "当社の主要な顧客です。セグメント情報の主要な顧客ごとの情報に、ソフトウエア開発事業の顧客として印字されています。1982年には前身の日本ユニバック株式会社と共同出資で昭和ソフトウエアエンジニアリング株式会社を設立した経緯があり、2026年3月31日現在、発行済株式（自己株式を除く。）の3.50％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等、財務諸表】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +343,63 @@
       "publisher": "株式会社 昭和システムエンジニアリング",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE2I.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YE2I",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「顧客満足度向上の追究」「魅力ある人間の育成」「社会への貢献」を経営理念とし、長年培った知識をもとに最適かつ高度なITソリューションを提供するKnowledge Integratorとして、ITを通じて顧客と社会のインフラを支えることを基本方針としています。2025年4月からの3か年の中期経営計画「+transform into Values」では、戦略的人材確保、既存ビジネス領域の維持・拡大、DXビジネス領域の維持・拡大、社内業務基盤におけるデジタル技術の拡大の4つを基本方針に掲げています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "中期経営計画の基本方針の筆頭に人材確保が掲げられており、エンジニア不足が続く環境のもとで、人材を確保し育てられるかが事業の広がりを左右する構造になっています。",
+        "basis": "当社が属する情報サービス産業ではシステムエンジニアの不足が常態化しており、IT人材の育成が急務であること、中期経営計画の4つの基本方針の第一に戦略的人材確保が掲げられていることが記載されています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "経営の基本方針として、長年にわたって培ってきたナレッジ（知識）を基に、最適かつ高度なITソリューションを提供するKnowledge Integratorを目指すとしています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "1966年の創業以来、受託計算からソフトウエア開発へ事業を広げてきた長い実務の蓄積があり、大手顧客との取引が継続しています。",
+        "basis": "沿革に、1966年に受託計算業務を目的に設立され、1982年にソフトウエア開発への参入、2026年3月期も主要な顧客として日興システムソリューションズ株式会社とBIPROGY株式会社が開示されていることが記載されています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高のほぼ全てをソフトウエア開発事業が占める、ソフトウエア開発に特化した情報サービス会社です。主要な顧客2社への売上が全体の3割を超えており、顧客構成の集中が見られます。",
+        "basis": "セグメント情報に、2026年3月期の売上高8,730百万円のうちソフトウエア開発事業が8,651百万円を占めること、主要な顧客ごとの情報に日興システムソリューションズ株式会社とBIPROGY株式会社への売上高が開示されていることが記載されています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

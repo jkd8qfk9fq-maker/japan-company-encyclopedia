@@ -1,18 +1,145 @@
 {
   "id": "taoka-chemical",
   "code": "4113",
-  "name": "田岡化学工業",
+  "name": "田岡化学",
   "officialName": "田岡化学工業株式会社",
   "nameEn": "TAOKA CHEMICAL COMPANY, LIMITED",
-  "description": null,
+  "shortNameEn": "TAOKA CHEMICAL COMPANY, LIMITED",
+  "description": "住友化学グループの化学メーカーで、農薬中間体や樹脂原料などの精密化学品を中心に、化学分析の受託まで手がけています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "taoka-chemical",
+      "name": "田岡化学工業株式会社",
+      "description": "大阪市淀川区に本社を置く化学メーカーで、当社と関係会社7社でグループを構成しています。化学工業と化学分析受託事業の2つを報告セグメントとしています。2026年3月期の連結従業員数は482人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "chemical-industry",
+          "name": "化学工業",
+          "description": "精密化学品、機能材、樹脂添加剤の製造販売を行う報告セグメントです。当社が国内の工場で製造販売し、インドと上海の子会社も製造販売に加わります。2026年3月期の外部顧客への売上高は32,632百万円です。",
+          "customers": [
+            "化学メーカーなど"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】",
+          "children": [
+            {
+              "id": "fine-chemicals",
+              "name": "精密化学品事業",
+              "description": "農薬中間体、電子材料、樹脂原料などを当社が製造販売しています。2026年3月期の売上高は、MD&Aの販売実績で16,535百万円です。",
+              "customers": [
+                "化学メーカーなど"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "resin-additives",
+              "name": "樹脂添加剤事業",
+              "description": "加工樹脂、ワニス、可塑剤、その他工業薬品を当社が製造販売し、上海の子会社も販売に加わります。2026年3月期の売上高は、MD&Aの販売実績で12,676百万円です。",
+              "customers": [
+                "化学メーカーなど"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "functional-materials",
+              "name": "機能材事業",
+              "description": "接着剤を当社が、ゴム薬品を当社とインド・上海の子会社が製造販売しています。2026年3月期の売上高は、MD&Aの販売実績で3,422百万円です。",
+              "customers": [
+                "化学メーカーなど"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            }
+          ]
+        },
+        {
+          "id": "chemical-analysis",
+          "name": "化学分析受託事業",
+          "description": "環境分析と材料分析などの各種化学分析の受託を行う報告セグメントで、子会社の株式会社田岡化学分析センターが担います。2026年3月期の外部顧客への売上高は560百万円です。",
+          "customers": [
+            "分析を委託する企業など"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "農薬中間体・電子材料・樹脂原料などの精密化学品、接着剤・ゴム薬品などの機能材、可塑剤などの樹脂添加剤を製造販売し、化学分析の受託サービスとあわせて対価を得る事業モデルです。",
+    "products": [
+      "農薬中間体、電子材料、樹脂原料などの精密化学品",
+      "接着剤、ゴム薬品などの機能材",
+      "加工樹脂、ワニス、可塑剤などの樹脂添加剤",
+      "環境分析・材料分析などの化学分析受託サービス"
+    ],
+    "customers": [
+      "三菱瓦斯化学株式会社、住友化学株式会社をはじめとする化学メーカーなど",
+      "化学分析を委託する企業など"
+    ],
+    "revenueSources": [
+      "化学工業品の販売による売上高",
+      "化学分析受託事業による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "田岡化学工業株式会社",
+        "description": "大阪市淀川区に本社を置き、当社と関係会社7社でグループを構成しています。2026年3月期の連結従業員数は482人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "精密化学品・機能材・樹脂添加剤と化学分析",
+        "description": "農薬中間体や樹脂原料などの精密化学品、接着剤やゴム薬品などの機能材、可塑剤などの樹脂添加剤を淀川工場や播磨工場などで製造し、子会社が環境分析・材料分析などの化学分析を受託しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "化学メーカーなどの顧客",
+        "description": "製品は三菱瓦斯化学株式会社や親会社の住友化学株式会社をはじめとする化学メーカーなどに販売しています。主要な顧客ごとの情報では、三菱瓦斯化学株式会社と住友化学株式会社が挙げられています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は33,192百万円",
+        "description": "2026年3月期の売上高は33,192百万円でした。セグメント別では化学工業が32,632百万円、化学分析受託事業が560百万円です。前連結会計年度の売上高は29,930百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は1,533百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,533百万円でした。前連結会計年度は1,478百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +154,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16749000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 444,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +174,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16571000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 458,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17211000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 458,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18499000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 467,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +234,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19550000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 482,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +242,245 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1919,
+      "title": "田岡商店を創業",
+      "description": "田岡商店を創業しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1922,
+      "title": "合成染料の製造に着手",
+      "description": "合成染料の製造に着手しました。",
+      "significance": "現在の化学事業につながる有機合成の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1934,
+      "title": "田岡染料製造株式会社を設立",
+      "description": "田岡染料製造株式会社を設立しました。",
+      "significance": "法人としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "大阪証券取引所に株式を上場",
+      "description": "大阪証券取引所に株式を上場しました。",
+      "significance": "上場会社としての始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "住友化学工業が資本参加",
+      "description": "住友化学工業株式会社（現：住友化学株式会社）が資本参加しました。",
+      "significance": "現在の親会社との資本関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "合成ゴム用増粘剤の製造を開始",
+      "description": "合成ゴム用増粘剤（ゴム用粘着剤）の製造を開始しました。",
+      "significance": "現在の機能材事業につながる製品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "瞬間接着剤の製造を開始",
+      "description": "瞬間接着剤の製造を開始しました。",
+      "significance": "機能材事業の代表製品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "田岡化学工業株式会社に商号を変更",
+      "description": "田岡化学工業株式会社に商号を変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "三建化工株式会社と合併",
+      "description": "三建化工株式会社と合併し、播磨工場と愛媛工場（現：播磨工場の各地区）を設置しました。",
+      "significance": "生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "インドに合弁会社を設立",
+      "description": "インド共和国に合弁会社アナボンド タオカ インド プライベート リミテッド（現：タオカ ケミカル インド プライベート リミテッド）を設立しました。",
+      "significance": "海外生産の開始で、2006年10月に100％子会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "田岡化工材料(上海)有限公司を設立",
+      "description": "中華人民共和国に田岡化工材料(上海)有限公司を設立しました。",
+      "significance": "中国での販売・製造拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "本社を大阪市淀川区新高に移転",
+      "description": "営業本部および本社部門を大阪市淀川区新高に移転し、本社としました。",
+      "significance": "現在の本社体制です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "合弁会社MTオプティクス株式会社を設立",
+      "description": "合弁会社MTオプティクス株式会社を設立しました。",
+      "significance": "樹脂原料の製造受委託と販売を行う関連会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sumitomo-chemical",
+      "relationship": "parent",
+      "description": "親会社で、当社の議決権の50.62％を直接保有し、0.29％を間接保有しています。当社は同社に製品を販売し、同社から原材料を購入しており、役員の兼任があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "mitsubishi-gas-chemical",
+      "relationship": "customer",
+      "description": "セグメント情報の「主要な顧客ごとの情報」に最大の販売先として挙げられている顧客で、化学工業と化学分析受託事業の両セグメントに関連する顧客として記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "sumitomo-pharma",
+      "relationship": "customer",
+      "description": "同一の親会社を持つ会社で、当社は同社に当社製品を販売しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連当事者情報】"
+    },
+    {
+      "companyId": "riken-technos",
+      "relationship": "customer",
+      "description": "当社が株式32,000株を保有する販売先で、特定投資株式の保有目的に「主に可塑剤の販売などの事業上の取引があり、良好な取引関係の維持を目的として保有しています」と個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第126期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第126期(2025/04/01－2026/03/31)",
       "publisher": "田岡化学工業株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCNV.pdf",
-      "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YY8G.pdf",
+      "publishedAt": "2026-08-27",
+      "docId": "S100YY8G",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 株式分割：2021年10月1日付で普通株式1株につき5株の割合で株式分割を行った。株式関連の指標は、第122期（2022年3月期）の期首に当該株式分割が行われたと仮定して算定されている。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年度を初年度とする中期経営計画「TCG as one 2027」を策定し、コンプライアンスの徹底と安全・安定操業の継続を最優先に、収益力の向上、生産体制の拡充、研究開発の強化、DX推進、従業員エンゲージメントの向上、サステナビリティ製品の開発を基本戦略としています。長年培ってきた有機合成技術を基に、暮らしと環境のイノベーションに貢献することを使命としています。",
+        "asOf": "2026-08-27",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "計画の軸は、既存事業の深耕と新規開発品の早期上市で事業規模の拡大を図りながら、プラント再編や工場自動化で生産体制を作り替えることにあります。研究開発とDXをその土台に置く構成です。",
+        "basis": "経営方針、経営環境及び対処すべき課題等（中期経営計画、対処すべき課題）、セグメント情報（報告セグメントごとの売上高）、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-08-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1922年に合成染料の製造に着手して以来の有機合成技術の蓄積が土台にあります。多目的合成工場や新多目的プラントなど、少量多品種の精密化学品に対応する生産設備を持ち、農薬中間体から電子材料まで幅広い製品を手がけています。",
+        "basis": "沿革、事業の内容、経営方針、経営環境及び対処すべき課題等（中期経営計画）、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-08-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の98％超を化学工業セグメントが占めています。主要な顧客ごとの情報では三菱瓦斯化学株式会社が最大の販売先で、親会社の住友化学株式会社も主要な販売先です。地域別の売上高は日本が28,925百万円、中国が3,035百万円で、インドと上海の子会社を通じた海外供給も行っています。",
+        "basis": "セグメント情報（報告セグメントごとの売上高、関連情報の地域ごとの情報・主要な顧客ごとの情報）、関係会社の状況、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-08-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

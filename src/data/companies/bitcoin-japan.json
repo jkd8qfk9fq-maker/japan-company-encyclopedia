@@ -1,18 +1,153 @@
 {
   "id": "bitcoin-japan",
   "code": "8105",
-  "name": "BitcoinJapan（旧会社名堀田丸正）",
+  "name": "Bitcoin Japan",
   "officialName": "Bitcoin Japan株式会社（旧会社名　堀田丸正株式会社）",
   "nameEn": "Bitcoin Japan Corporation（旧英訳名　MARUSHOHOTTA CO.,LTD.）",
-  "description": null,
+  "shortNameEn": "Bitcoin Japan Corporation",
+  "description": "和装品や婦人服、意匠撚糸の卸売を中核とし、AIインフラやデジタル資産への投資事業も始めた会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "kimono",
+      "name": "きもの事業",
+      "description": "留袖、訪問着、振袖、袋帯等の和装品、指輪・ネックレス等の宝飾品、帯揚げ・帯〆・半衿・草履等の和装小物品を卸売販売する事業です。当社が企画及び販売を行っています。2026年３月期の外部顧客への売上高は642百万円でした。",
+      "customers": [
+        "和装品を取り扱う専門店",
+        "百貨店"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "lifestyle",
+      "name": "ライフスタイル事業",
+      "description": "マットレスを中心としたヘルスケア商品を卸売販売する事業です。当社が企画及び販売を行っています。2026年３月期の外部顧客への売上高は36百万円でした。",
+      "customers": [
+        "ヘルスケア商品を取り扱う販売店"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "fashion",
+      "name": "ファッション事業",
+      "description": "布帛・ニットを中心とした婦人服及びホームファッション等の卸売、百貨店等での婦人服販売、ニット製品の企画販売及びD2C事業を行う事業です。当社が企画・製造・販売を行っています。2026年３月期の外部顧客への売上高は1,441百万円でした。",
+      "customers": [
+        "婦人服を取り扱う小売店",
+        "百貨店",
+        "一般消費者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "material",
+      "name": "マテリアル事業",
+      "description": "意匠撚糸（ファンシーヤーン）の企画開発、製造及び卸売販売を行う事業です。当社が製造・販売するほか、連結子会社の堀田（上海）貿易有限公司が製造・卸売販売を行っています。2026年３月期の外部顧客への売上高は827百万円でした。",
+      "customers": [
+        "アパレルメーカー",
+        "ニット製品の製造事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "investment-related",
+      "name": "投資関連事業",
+      "description": "国内外のAIインフラ、データセンター、デジタルインフラやデジタル資産等の成長分野へ投資を行い、投資先からの配当や売却益の獲得を目指す事業です。当連結会計年度に設立したBTCJPN US LLC、BTC JPN Ltd.及びBTCJPN JP INVESTMENT IN ENTERPRISES & MANAGEMENT - FZCOの３社（非連結子会社）が各地域で投資・運用活動を展開しています。当連結会計年度の報告セグメントには含まれておらず、売上高の開示はありません。",
+      "customers": [
+        "投資対象となる企業・ファンド等"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない不動産賃貸事業です。2026年３月期の外部顧客への売上高は10百万円でした。",
+      "customers": [
+        "事務所兼倉庫の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "きもの・宝飾品等の和装品、婦人服、意匠撚糸などを卸売し、海外子会社を通じてAIインフラやデジタル資産等への投資を行う会社です。",
+    "products": [
+      "和装品・宝飾品・和装小物品",
+      "マットレス等のヘルスケア商品",
+      "婦人服・ホームファッション",
+      "意匠撚糸（ファンシーヤーン）"
+    ],
+    "customers": [
+      "和装品を取り扱う専門店及び百貨店",
+      "婦人服等を取り扱う小売店及び百貨店",
+      "ニット製品等を製造するアパレルメーカー"
+    ],
+    "revenueSources": [
+      "和装品・宝飾品等の卸売販売代金",
+      "ヘルスケア商品の卸売販売代金",
+      "婦人服等の卸売販売及び店舗販売代金",
+      "意匠撚糸の製造・卸売販売代金",
+      "不動産賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "Bitcoin Japan株式会社",
+        "description": "当社と連結子会社１社、非連結子会社３社の計５社でグループを構成しています。2026年３月31日現在の連結の従業員数は80人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "和装品・婦人服・意匠撚糸の卸売と投資事業",
+        "description": "きもの事業（和装品・宝飾品・和装小物品の卸売）、ライフスタイル事業（マットレス等のヘルスケア商品の卸売）、ファッション事業（婦人服等の卸売・販売）、マテリアル事業（意匠撚糸の製造・卸売）の４つの報告セグメントと不動産賃貸事業を行い、当連結会計年度からAIインフラやデジタル資産等への投資を行う投資関連事業も始めています。"
+      },
+      {
+        "kind": "customer",
+        "title": "専門店・百貨店・アパレルメーカー",
+        "description": "卸売の顧客は、和装品を取り扱う専門店や百貨店、婦人服等を取り扱う小売店、ニット製品等を製造するアパレルメーカーなどです。売上高の10％以上を占める主要な顧客はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高2,959百万円",
+        "description": "2026年３月期の売上高は2,959百万円でした。ファッション事業が1,441百万円、マテリアル事業が827百万円、きもの事業が642百万円、ライフスタイル事業が36百万円、その他（不動産賃貸事業）が10百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純損失537百万円",
+        "description": "2026年３月期の親会社株主に帰属する当期純損失は537百万円でした。前連結会計年度は当期純損失407百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +162,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3090307000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 104,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3026777000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 93,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +202,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3062982000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 92,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +222,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2675391000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 85,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +242,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4001067000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 80,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +250,201 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1894,
+      "title": "呉服問屋を開業",
+      "description": "東京・日本橋大伝馬町において呉服問屋を開業しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1928,
+      "title": "合資会社丸正商店を設立",
+      "description": "合資会社丸正商店を設立しました。",
+      "significance": "法人としての設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1933,
+      "title": "株式会社へ改組し織物問屋として拡大",
+      "description": "合資会社を改め株式会社とし、東京・日本橋通油町に本社を移転し、織物問屋として業容を拡大しました。",
+      "significance": "株式会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "株式会社丸正へ商号変更",
+      "description": "株式会社金松商店、株式会社小梅、株式会社藤安商店並びに株式会社正和を吸収合併し、商号を株式会社丸正に変更しました。",
+      "significance": "合併による商号の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "株式公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "ヤマノグループの傘下に入る",
+      "description": "第三者割当増資により、ヤマノグループの傘下に入りました。",
+      "significance": "資本関係の転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "堀田丸正株式会社へ商号変更",
+      "description": "堀田産業株式会社を吸収合併し、商号を堀田丸正株式会社に変更しました。合併により堀田（上海）貿易有限公司等が子会社となりました。",
+      "significance": "現在のマテリアル事業の基盤となる合併です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "RIZAPグループの子会社となる",
+      "description": "第三者割当増資により、RIZAPグループ株式会社の子会社となりました。",
+      "significance": "資本関係の転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "Bakkt Opco Holdings, LLCが筆頭株主となる",
+      "description": "Bakkt Opco Holdings, LLC（米国）が、RIZAPグループ株式会社より当社株式を取得し、当社の筆頭株主となりました。",
+      "significance": "資本関係の転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "Bitcoin Japan株式会社へ商号変更",
+      "description": "臨時株主総会の決議により、堀田丸正株式会社からBitcoin Japan株式会社へ商号を変更しました。あわせてRIZAPグループ株式会社との資本業務提携を解消しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "海外子会社３社を設立",
+      "description": "BTC JPN Ltd.、BTCJPN JP INVESTMENT IN ENTERPRISES & MANAGEMENT -FZCO、BTCJPN US LLCの海外子会社３社を設立しました。",
+      "significance": "投資関連事業の実施体制の構築です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "rizap-group",
+      "relationship": "other-affiliated-company",
+      "description": "2017年６月の第三者割当増資により当社の親会社となり、資本業務提携を結んでいたその他の関係会社です。2025年８月に同社が保有する当社株式の一部がBakkt Opco Holdings, LLCへ譲渡され、当社は同社の連結子会社から外れました。2025年11月11日に資本業務提携契約は解消され、同社が保有する当社株式については段階的な売却が進められています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第122期(2025/04/01－2026/03/31)",
-      "publisher": "Bitcoin Japan株式会社（旧会社名　堀田丸正株式会社）",
+      "publisher": "Bitcoin Japan株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YM8W.pdf",
       "publishedAt": "2026-06-29",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YM8W",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 継続企業の前提に関する重要事象等が記載されています。当連結会計年度まで８期連続で営業損失及び経常損失を計上し、継続企業の前提に重要な疑義を生じさせるような事象又は状況が存在しているものと認識されていますが、新規事業への取り組みや既存事業の収益改善施策の推進、新株予約権の行使による資金調達等により、現時点において継続企業の前提に関する重要な不確実性は認められないと判断されています。継続企業の前提に関する取扱いには人の確認が必要です。",
+      "businessModel: 決算日後の2026年５月27日、子会社のBTCJPN US LLCが新規事業としてAIインフラ投資事業を開始し、同子会社を通じてViva-SX LLC Series Hへの出資を実行しています。本登録は2026年３月31日現在の事業構成に基づいています。",
+      "businessModel: 決算日後の2026年６月26日、子会社のBTCJPN US LLCを通じて、Figure AI Inc.への投資を目的として設立されたファンド（特別目的会社）への出資を行うことを決定し、同日付で出資契約を締結し出資を実行しています。本登録は2026年３月31日現在の事業構成に基づいています。",
+      "businessStructure: 継続企業の前提に関する重要事象等が記載されています。当連結会計年度まで８期連続で営業損失及び経常損失を計上し、継続企業の前提に重要な疑義を生じさせるような事象又は状況が存在しているものと認識されていますが、新規事業への取り組みや既存事業の収益改善施策の推進、新株予約権の行使による資金調達等により、現時点において継続企業の前提に関する重要な不確実性は認められないと判断されています。継続企業の前提に関する取扱いには人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念「伝統を探り、新しきを創造し、心豊かな社会の発展に貢献する」のもと、ファッション、きもの、マテリアル等の既存事業の競争力強化を図るとともに、新たな成長分野への投資を推進することで、中長期的な企業価値の向上を目指すとしています。既存事業では収益性重視の経営を徹底し、企画提案力の強化、ブランド価値の向上、販売チャネルの多様化及び構造改革を推進するとし、AI、デジタルインフラ、データセンター、エネルギー、デジタル資産その他今後成長が見込まれる分野への投資を新たな成長戦略として位置付けています。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年３月期は、筆頭株主の異動と商号変更を経て、既存の卸売事業に加えてAIインフラやデジタル資産への投資事業を開始しました。既存事業ではファッション事業が連結売上高の約半分を占め、きもの事業とマテリアル事業が続く構成です。新規の投資事業は海外子会社３社を設立して始めた段階であり、当連結会計年度の報告セグメントには含まれていません。",
+        "basis": "事業の内容、セグメント情報、経営方針、経営環境及び対処すべき課題等、沿革による。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1894年の創業以来、和装、洋装、意匠撚糸、寝装、宝飾品など幅広い事業領域で商品の調達と製造を続けてきた実績があります。きもの事業では百貨店の単独売場化を進めるなど販売チャネルを自ら構築し、マテリアル事業では中国の連結子会社を拠点として意匠撚糸の製造・販売の一貫体制を確立しています。",
+        "basis": "事業の内容、サステナビリティに関する考え方及び取組、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析、関係会社の状況による。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "同社が関連する市場の多くでは競合各社との競争が激しく、原材料価格の高騰や国内市場の成熟化により厳しい環境が続いていると会社は認識しています。同社の2026年３月期の売上高は2,959百万円で、最大の事業はファッション事業の1,441百万円です。一方、AI関連市場やデータセンター市場は中長期的な成長が期待されるとして、同社は投資事業を新たな収益源と位置付けています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等、セグメント情報、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析による。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

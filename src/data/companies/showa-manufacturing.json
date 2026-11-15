@@ -4,14 +4,143 @@
   "name": "昭和鉄工",
   "officialName": "昭和鉄工株式会社",
   "nameEn": "Showa Manufacturing Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Showa Manufacturing Co.,Ltd.",
+  "description": "空調機器や熱源機器、鋳物製品の製造販売と、空調設備等の工事・保守を手がけるメーカーです。",
   "listings": [
     {
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "construction",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "equipment",
+      "name": "機器装置事業",
+      "description": "ファンコイルユニットやエアハンドリングユニット等の空調機器、業務用エコキュート、ボイラー、ヒーター、バーナー、オユシス等の熱源機器、循環温浴器、空気清浄機等の環境機器、液晶パネル製造用熱処理炉の製造販売を行う事業です。2026年3月期の外部顧客への売上高は8,146百万円でした。連結子会社の昭和トータルサービス株式会社は、当社グループにおける不動産の賃貸・管理を行っています。",
+      "customers": [
+        "空調・熱源機器の販売先・設備関連事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "hvac-heat-products",
+          "name": "熱源・空調・環境製品",
+          "description": "空調機器、熱源機器、環境機器の製造販売です。2026年3月期の外部顧客への売上高は6,993百万円でした。",
+          "customers": [
+            "空調・熱源機器の販売先・設備関連事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        },
+        {
+          "id": "thermo-device",
+          "name": "サーモデバイス製品",
+          "description": "液晶パネル製造用熱処理炉など、産業用熱処理装置の製造販売です。2026年3月期の外部顧客への売上高は1,152百万円でした。",
+          "customers": [
+            "液晶パネルメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        }
+      ]
+    },
+    {
+      "id": "materials",
+      "name": "素形材加工事業",
+      "description": "橋の欄干、防護柵等の景観製品、ダクタイル鋳鉄、合金特殊鋳造製品の製造販売を行う事業です。2026年3月期の外部顧客への売上高は2,399百万円でした。",
+      "customers": [
+        "建設事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": []
+    },
+    {
+      "id": "service-engineering",
+      "name": "サービスエンジニアリング事業",
+      "description": "空調設備、給排水衛生設備等の請負工事を行うほか、販売及びメンテナンス、取替工事等を行う事業です。2026年3月期の外部顧客への売上高は4,525百万円でした。",
+      "customers": [
+        "設備工事の発注者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": []
+    }
+  ],
+  "businessModel": {
+    "description": "空調機器・熱源機器・環境機器や鋳造製品を製造販売し、設備工事とメンテナンスまで担うことで対価を得る事業モデルです。",
+    "products": [
+      "ファンコイルユニット",
+      "エアハンドリングユニット",
+      "業務用エコキュート",
+      "ボイラー",
+      "ヒーター",
+      "バーナー",
+      "液晶パネル製造用熱処理炉",
+      "橋の欄干・防護柵などの景観製品",
+      "ダクタイル鋳鉄製品",
+      "合金特殊鋳造製品"
+    ],
+    "customers": [
+      "東テク株式会社などの販売先",
+      "設備工事の発注者"
+    ],
+    "revenueSources": [
+      "機器・製品の販売対価",
+      "工事請負の対価",
+      "メンテナンス・取替工事の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "昭和鉄工",
+        "description": "1883年に福岡市で医療器械の製造販売を目的とする斎藤製作所として開業しました。本社は福岡県糟屋郡宇美町にあり、2026年3月31日現在の従業員数は396人です。連結子会社は昭和トータルサービス株式会社の1社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "機器の製造販売と設備工事・保守",
+        "description": "機器装置事業では空調機器・熱源機器・環境機器と液晶パネル製造用熱処理炉を、素形材加工事業では橋の欄干などの景観製品や鋳造製品を製造販売し、サービスエンジニアリング事業では空調設備等の請負工事とメンテナンスを行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "販売先と設備工事の発注者",
+        "description": "機器・製品の販売先や、空調設備・給排水衛生設備の工事発注者が顧客です。主要な顧客として東テク株式会社が開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "販売・工事・保守の対価が収益",
+        "description": "収益は、機器・製品の販売、工事請負、メンテナンス等の対価から得ています。2026年3月期の売上高は15,071百万円で、機器装置事業が8,146百万円、素形材加工事業が2,399百万円、サービスエンジニアリング事業が4,525百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,097百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -26,7 +155,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5025000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 377,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -46,7 +175,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5634000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 381,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -66,7 +195,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8779000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 373,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -86,7 +215,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9311000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 384,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -106,7 +235,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12195000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 396,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -114,8 +243,119 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1883,
+      "title": "斎藤製作所を開業",
+      "description": "斎藤一が福岡市極楽寺町に、医療器械の製造販売を目的に斎藤製作所を開業しました。",
+      "significance": "当社の起源です。この後、1890年より蒸気暖房装置の製造販売を開始し、ボイラーメーカーとしての基礎を築きました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1933,
+      "title": "株式会社斎藤製作所を設立",
+      "description": "個人営業の時代を経て、株式会社斎藤製作所を設立しました。",
+      "significance": "法人化の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1934,
+      "title": "昭和鉄工株式会社に改称",
+      "description": "社名を昭和鉄工株式会社に変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "宇美工場を新設し空調機器の製造を開始",
+      "description": "福岡県糟屋郡宇美町に宇美工場を新設し、ファンコイルユニット、エアハンドリングユニット等の空調機器の製造を開始しました。",
+      "significance": "現在の主力である空調機器の生産拠点であり、現在の本社所在地でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "橋梁用「SK高欄」の製造販売を開始",
+      "description": "ダクタイル（球状黒鉛）鋳鉄の製造技術を生かして、橋梁用「SK高欄」の製造販売を開始しました。",
+      "significance": "素形材加工事業の景観製品の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "古賀工場を新設",
+      "description": "福岡県糟屋郡古賀町（現・古賀市）に古賀工場を新設し、鋳造品の製造を開始しました。",
+      "significance": "鋳造製品の生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "福岡証券取引所に上場",
+      "description": "福岡証券取引所へ株式を上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "サーモデバイス事業部を発足",
+      "description": "サーモデバイス事業部を発足し、産業用熱処理炉の製造販売を開始しました。",
+      "significance": "液晶パネル製造用熱処理炉などサーモデバイス製品の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "昭和トータルサービス株式会社が営業開始",
+      "description": "物流部門を独立し、昭和トータルサービス株式会社が営業を開始しました。",
+      "significance": "現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "サービスエンジニアリング事業部を発足",
+      "description": "サービスエンジニアリング事業部を発足しました。",
+      "significance": "設備工事・保守を担う事業の事業部としての発足です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "totech",
+      "relationship": "customer",
+      "description": "当社の主要な顧客です。セグメント情報の主要な顧客ごとの情報に、機器装置事業及びサービスエンジニアリング事業の顧客として印字され、MD&Aの相手先別販売実績でも主要な相手先として開示されています。特定投資株式として1,134,000株を保有し、保有目的には両セグメントにおける安定的な取引関係の維持・強化を目的とすることが記載されています。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等、財務諸表】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -123,13 +363,63 @@
       "publisher": "昭和鉄工株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE8F.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YE8F",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年度から2028年度までの新中期経営計画「責任ある未来に向けて、地球環境・社会・経済・文化の調和に貢献」を策定し、ミッション「情熱技術で、ミライをカタチに。」のもと、データドリブン経営の推進、DXと働き方改革の加速、志ある自律人財の育成、ライフサイクル型事業の加速、サステナブル製品・事業の探索を重点課題に掲げています。社是は「誠実を造り、誠実を売り、誠実をサービスする」です。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "3つの事業はいずれも熱技術を起点としており、機器の製造販売から工事・保守までを自社グループで担うことで、顧客の設備のライフサイクル全体に継続的に関わる構造になっています。",
+        "basis": "事業の内容に機器装置事業・素形材加工事業・サービスエンジニアリング事業の3事業が記載され、経営方針の重点課題にライフサイクル型事業の加速が掲げられていることが記載されています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "経営の基本方針として、140年以上にわたり育んできた熱技術とモノづくりを活かし、様々な技術を付加した製品・サービスを展開して、未来へと繋がる地球環境と快適な生活環境の創造に取り組むとしています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "1883年の創業以来、蒸気暖房装置に始まる熱技術を蓄積し、空調機器、鋳造、熱処理炉へと応用範囲を広げてきた長い実績が土台になっています。",
+        "basis": "沿革に、1883年に斎藤製作所として開業し1890年より蒸気暖房装置の製造販売を開始したこと、1978年にダクタイル鋳鉄の製造技術を生かして橋梁用「SK高欄」の製造販売を開始したこと、1998年にサーモデバイス事業部を発足し産業用熱処理炉の製造販売を開始したことが記載されています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の過半を機器装置事業が占める熱関連機器のメーカーで、設備工事・保守と鋳造製品がこれに続く構成です。",
+        "basis": "セグメント情報に、2026年3月期の売上高15,071百万円のうち機器装置事業が8,146百万円、素形材加工事業が2,399百万円、サービスエンジニアリング事業が4,525百万円であることが記載されています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

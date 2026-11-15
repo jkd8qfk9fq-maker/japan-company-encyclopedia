@@ -4,19 +4,115 @@
   "name": "ソトー",
   "officialName": "株式会社ソトー",
   "nameEn": "SOTOH CO.,LTD.",
-  "description": null,
+  "shortNameEn": "SOTOH CO.,LTD.",
+  "description": "愛知県一宮市に本店を置く染色加工会社で、繊維製品の染色加工と製造・販売、不動産賃貸の３事業を行っています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "プレミア"
+      "market": "プレミア市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "dyeing-processing",
+      "name": "染色加工事業",
+      "description": "ウール及び複合素材を中心とした高級ファッション衣料や高級メンズ衣料、フォーマル、オフィスユニフォーム向けの素材の染色加工を行う事業です。起毛加工や光沢加工等の表面加工、撥水加工やウォッシャブル加工等の機能加工により素材の付加価値を高めています。2026年３月期の売上高は5,690百万円で、織物が32億１百万円、ニットが24億８千９百万円でした。",
+      "customers": [
+        "染色加工を委託する繊維製品メーカー等"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "product-sales",
+      "name": "製品販売事業",
+      "description": "当社及び連結子会社４社が独立して繊維製品の製造、販売を行う事業です。高級ファッション衣料やオフィスユニフォーム等の素材及び製品の企画、製造及び販売が中心で、染色加工事業との連携により付加価値を高めています。2026年３月期の売上高は4,534百万円でした。",
+      "customers": [
+        "衣料品の素材・製品の買い手"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "量販店等に対する店舗並びに土地の賃貸等を行う事業です。2026年３月期の売上高は489百万円でした。",
+      "customers": [
+        "量販店等の賃貸先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "繊維製品の染色加工を行い、自社グループでも素材や製品を企画・製造・販売して、保有する店舗・土地の賃貸収入も得る事業です。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "products": [
+      "ウール・複合素材等の染色加工サービス",
+      "高級ファッション衣料・オフィスユニフォーム向けの素材",
+      "衣料製品（アパレル製品）",
+      "賃貸用の店舗・土地"
+    ],
+    "customers": [
+      "染色加工を委託する繊維製品メーカー等",
+      "衣料品の素材・製品の買い手",
+      "量販店等の不動産賃貸先"
+    ],
+    "revenueSources": [
+      "染色加工の対価",
+      "繊維製品の販売代金",
+      "不動産の賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ソトー",
+        "description": "愛知県一宮市に本店を置く染色加工会社で、2026年３月31日現在の連結従業員数は575人です。連結子会社６社とグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "染色加工・製品販売・不動産の３事業",
+        "description": "ウール及び複合素材を中心とした素材の染色加工を行い、当社と連結子会社が繊維製品の製造・販売を行い、量販店等に店舗や土地を賃貸しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "繊維製品メーカー・衣料品の買い手・量販店",
+        "description": "染色加工の委託元である繊維製品メーカー等、素材や製品の買い手、店舗・土地の賃貸先である量販店等が顧客です。売上高の10％以上を占める特定の相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高10,715百万円",
+        "description": "2026年３月期の売上高は10,715百万円（前連結会計年度比6.7％増）でした。事業別では染色加工事業が5,690百万円、製品販売事業が4,534百万円、不動産事業が489百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益515百万円",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は515百万円（前連結会計年度比26.7％増）でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +127,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11283270000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 556,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +147,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10568022000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 557,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +167,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14266139000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 547,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +187,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14826925000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 586,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14910527000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 575,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,22 +215,184 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1923,
+      "title": "一宮整理株式会社を創立",
+      "description": "尾西地区の毛織物業者が三井物産株式会社名古屋支店を中心に発足させた「工毛会」が、一宮整理株式会社を創立しました。",
+      "significance": "現在の会社の創立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1924,
+      "title": "蘇東興業株式会社に商号を変更",
+      "description": "本社を現在地（愛知県一宮市）に設置し、商号を蘇東興業株式会社に変更しました。",
+      "significance": "一宮市に本拠を置く体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "名古屋証券取引所に上場",
+      "description": "名古屋証券取引所に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "東京の市場にも上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "蘇東商事株式会社を設立",
+      "description": "蘇東商事株式会社（現・連結子会社のソトー商事株式会社）を設立しました。",
+      "significance": "現在の連結子会社であるソトー商事の設立です。グループの材料等の購入を担っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "株式会社ソトーに商号を変更",
+      "description": "商号を株式会社ソトーに変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "市場第一部へ市場変更",
+      "description": "東京証券取引所市場第一部及び名古屋証券取引所市場第一部へ市場変更しました。",
+      "significance": "両取引所の第一部に移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場・プレミア市場へ移行",
+      "description": "東京証券取引所及び名古屋証券取引所の市場区分の見直しにより、東京証券取引所スタンダード市場と名古屋証券取引所プレミア市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "日本化繊株式会社を吸収合併",
+      "description": "日本化繊株式会社を吸収合併しました。あわせて事業部制を廃止し、染色加工事業部を新設しました。",
+      "significance": "染色加工の体制を当社に集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社ジェノ等を子会社化",
+      "description": "株式会社ジェノ及びＧ―ＳＴＡＧＥ・ＪＡＰＡＮ株式会社を株式取得により子会社化しました。同年10月には株式会社ジェノがＧ―ＳＴＡＧＥ・ＪＡＰＡＮ株式会社を吸収合併しています。",
+      "significance": "アパレル製品販売の拡大につながり、製品販売事業の売上増に寄与しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "the-japan-wool-textile",
+      "relationship": "major-shareholder",
+      "description": "日本毛織株式会社は、2026年３月31日現在、当社株式の9.5％を保有する大株主です。当社も同社の株式1,288,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "daidoh",
+      "relationship": "major-shareholder",
+      "description": "株式会社ダイドーリミテッドは、2026年３月31日現在、当社株式の7.3％を保有する大株主です。当社も同社の株式1,195,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "toabo",
+      "relationship": "major-shareholder",
+      "description": "株式会社トーア紡コーポレーションは、2026年３月31日現在、当社株式の5.6％を保有する大株主です。当社も同社の株式548,300株を保有しています。同社の関係会社である東亜紡織株式会社とは、織編物の染色加工に関して業務提携契約を締結しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "takihyo",
+      "relationship": "major-shareholder",
+      "description": "タキヒヨー株式会社は、2026年３月31日現在、当社株式の2.0％を保有する大株主です。当社も同社の株式99,808株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第155期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第155期(2025/04/01－2026/03/31)",
       "publisher": "株式会社ソトー",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGQR.pdf",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIBK.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YIBK",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念として「感性技術で未来を拓く」を掲げ、優れた感性と技術で新しい「価値」を創造し、事業領域と輸出の拡大を図って安定的・持続的な成長の実現を目指すとしています。中長期的な経営戦略では、既存事業における安定的な収益基盤の確立を基本方針とし、染色加工事業における安定的収益基盤の構築と、染色加工事業と製品販売事業との連携による自社販売の強化を進めるとしています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "愛知県一宮市に第一工場・一宮工場・日化工場の染色加工拠点を持ち、ウール及び複合素材の染色に起毛・光沢等の表面加工や撥水・ウォッシャブル等の機能加工を組み合わせて素材の付加価値を高めています。染色加工と製品販売をグループ内で連携させ、素材から最終製品に至る領域を担う体制です。",
+        "basis": "【事業の内容】に印字された染色加工の内容と両事業の連携の記載、【主要な設備の状況】に印字された一宮市の３工場のセグメント欄（いずれも染色加工事業）に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

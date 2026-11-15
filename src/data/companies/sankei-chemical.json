@@ -4,14 +4,163 @@
   "name": "サンケイ化学",
   "officialName": "サンケイ化学株式会社",
   "nameEn": "SANKEI CHEMICAL CO.,LTD.",
-  "description": null,
+  "shortNameEn": "SANKEI CHEMICAL CO.,LTD.",
+  "description": "鹿児島に本店を置き、農薬の製造販売と病害虫・雑草の防除事業を行う、福岡証券取引所に上場する農薬メーカーです。",
   "listings": [
     {
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "agrochemicals",
+      "name": "農薬及びその関連する事業",
+      "description": "農薬の製造販売と、農薬に関連した病害虫及び雑草の防除事業を行う事業です。当社は製造した製品と、関係会社等を通じて仕入れた商品を、全国農業協同組合連合会（全農）を通じて経済連・農協へ、また商社及び特約店等を通じて販売しています。連結子会社の富士グリーン株式会社と株式会社サンケイグリーンも農薬の販売と防除事業を行い、持分法適用関連会社の琉球産経株式会社は農薬その他化学工業品の製造及び販売を行っています。",
+      "customers": [
+        "経済連・農協（全国農業協同組合連合会を通じて販売）",
+        "商社及び特約店等"
+      ],
+      "children": [
+        {
+          "id": "insecticides",
+          "name": "殺虫剤",
+          "description": "水稲用殺虫剤「スクミノン」や園芸用殺虫剤「サンケイ コテツベイト」などの殺虫剤です。",
+          "customers": [
+            "経済連・農協",
+            "商社及び特約店等"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "fungicides",
+          "name": "殺菌剤",
+          "description": "食用作物用や緑化用の殺菌剤です。",
+          "customers": [
+            "経済連・農協",
+            "商社及び特約店等"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "insecticide-fungicides",
+          "name": "殺虫殺菌剤",
+          "description": "殺虫と殺菌の両方の働きを持つ農薬です。",
+          "customers": [
+            "経済連・農協",
+            "商社及び特約店等"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "herbicides",
+          "name": "除草剤",
+          "description": "雑草の防除に用いる除草剤です。",
+          "customers": [
+            "経済連・農協",
+            "商社及び特約店等"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-agrochemicals",
+          "name": "その他の農薬",
+          "description": "食品由来物質を用いた「サンクリスタル乳剤」や「ハッパ乳剤」、樹幹注入剤「ウッドスター」などの独自開発品を含む、その他の農薬です。",
+          "customers": [
+            "経済連・農協",
+            "商社及び特約店等"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "non-agrochemicals",
+          "name": "農薬以外",
+          "description": "農薬以外の製品・商品の販売です。",
+          "customers": [
+            "経済連・農協",
+            "商社及び特約店等"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社工場で製造した農薬と仕入れた商品を、全農を通じて農協等へ、また商社や特約店を通じて販売し、防除事業とあわせて収益を得る仕組みです。",
+    "products": [
+      "水稲用殺虫剤「スクミノン」や園芸用殺虫剤などの殺虫剤",
+      "殺菌剤",
+      "殺虫殺菌剤",
+      "除草剤",
+      "「サンクリスタル乳剤」「ハッパ乳剤」や樹幹注入剤「ウッドスター」などの独自開発品"
+    ],
+    "customers": [
+      "経済連・農協（全国農業協同組合連合会を通じて販売）",
+      "商社及び特約店等"
+    ],
+    "revenueSources": [
+      "農薬の製品・商品の販売",
+      "病害虫及び雑草の防除事業"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "サンケイ化学",
+        "description": "前身は1918年に創立された鹿児島化学研究所で、1962年に現在の社名となり福岡証券取引所に上場しました。鹿児島市に本店を置き、2025年11月30日現在の連結従業員数は129人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "農薬の製造販売と防除事業",
+        "description": "鹿児島工場と深谷工場で農薬を製造し、水稲用や園芸用の殺虫剤をはじめとする自社開発品を販売するほか、関係会社を通じて仕入れた商品の販売や、病害虫及び雑草の防除事業も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "全農を通じた農協等への販売",
+        "description": "製品・商品は、全国農業協同組合連合会（全農）を通じて経済連・農協へ、他は商社及び特約店等を通じて販売しています。当期の主要な顧客として全国農業協同組合連合会が開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高6,444百万円",
+        "description": "2025年11月期の売上高は6,444百万円で、前連結会計年度に比べ392百万円（6.5％）増えました。用途別では殺虫剤が最も大きな区分です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益181百万円",
+        "description": "2025年11月期の親会社株主に帰属する当期純利益は181百万円で、前連結会計年度に比べ36.6％増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年11月期",
@@ -26,7 +175,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2995842000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 117,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -46,12 +195,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3206269000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 119,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第98期の期首から適用しており、第99期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年11月期",
@@ -66,7 +216,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3219680000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 127,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -86,7 +236,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3239180000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 128,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -106,7 +256,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3413969000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 129,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -114,8 +264,138 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1918,
+      "title": "株式会社鹿児島化学研究所として創立",
+      "description": "被合併会社である鹿児島化学工業株式会社の前身として、株式会社鹿児島化学研究所が創立されました。",
+      "significance": "現在の農薬事業につながる創業の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1927,
+      "title": "ハエトリ紙と防疫剤の製造に着手",
+      "description": "ハエトリ紙の製造を開始し、防疫剤製造の端緒となりました。以降、農薬の総合生産体制が整備されていきました。",
+      "significance": "農薬の総合メーカーへ進む出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1940,
+      "title": "三啓商事株式会社を設立",
+      "description": "三啓商事株式会社が設立されました。現在の連結子会社である株式会社サンケイグリーンの前身です。",
+      "significance": "現在の販売子会社の源流です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "鹿児島化学工業を合併して農薬製造を継承",
+      "description": "泉熱化学工業株式会社が鹿児島化学工業株式会社を合併して農薬製造を継承し、鹿児島化学工業株式会社と改称しました。",
+      "significance": "農薬製造が現在の会社に引き継がれた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "琉球産経株式会社を設立",
+      "description": "沖縄に合弁会社として琉球産経株式会社が設立されました。現在の持分法適用関連会社です。",
+      "significance": "沖縄での製造・販売体制の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "サンケイ化学株式会社に改称し福岡証券取引所に上場",
+      "description": "社名をサンケイ化学株式会社と改称し、同年、株式を福岡証券取引所に上場しました。",
+      "significance": "現在の社名と上場の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "富士グリーン株式会社を設立",
+      "description": "富士グリーン株式会社が設立されました。現在の連結子会社です。",
+      "significance": "関東での販売・防除体制の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "鹿児島工場が操業開始",
+      "description": "郡元工場を移転し、鹿児島工場が操業を開始しました。",
+      "significance": "現在の主力生産拠点の成立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "本社を鹿児島市南栄二丁目へ移転",
+      "description": "本社を鹿児島市南栄二丁目９番地へ移転しました。現在の本店所在地です。",
+      "significance": "現在の本店所在地が定まった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "鹿児島工場がISO9001の認証を取得",
+      "description": "鹿児島工場が品質マネジメントの国際規格ISO9001の認証を取得しました。深谷工場は2012年に取得しています。",
+      "significance": "品質管理体制の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "創立100周年",
+      "description": "創立100周年を迎えました。",
+      "significance": "創立から１世紀の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sumitomo-chemical",
+      "relationship": "major-shareholder",
+      "description": "主要株主です。2025年11月30日現在、当社の発行済株式（自己株式を除く。）の13.1％を保有しています。当社は同社から原料・商品を購入し、同社へ商品を販売する取引を行っています。当社も同社の株式を、原料・商品購買等の取引関係の維持・強化を目的として保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関連当事者情報】"
+    },
+    {
+      "companyId": "kumiai-chemical-industry",
+      "relationship": "major-shareholder",
+      "description": "主要株主です。2025年11月30日現在、当社の発行済株式（自己株式を除く。）の5.8％を保有しています。当社は同社の株式を保有しており、その保有目的には、製品販売、原料・商品購買等の取引を行っており中長期的な取引関係の維持・強化を目的とすることが印字されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -123,13 +403,47 @@
       "publisher": "サンケイ化学株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XNCR.pdf",
       "publishedAt": "2026-02-26",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XNCR",
+      "asOf": "2025-11-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "生産から販売まで一貫した連携・合理化を図って収益基盤を強固にし、収益性の高い自社製品の販売比率を高めることを掲げています。消費者が求める「食の安全・安心」に対応した環境に優しい製品や、地域の特性を活かした製品の開発に努め、地域に密着した営業戦略を推進するとしています。",
+        "asOf": "2026-02-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "大手にはできない地域密着の普及・営業活動と、水稲用殺虫剤「スクミノン」や樹幹注入剤「ウッドスター」などの独自開発品を持ちます。鹿児島と深谷の自社工場で製造し、生産から販売まで一貫した体制をとっていることも特徴です。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、大手にできない独自性・優位性を発揮できる製品や技術の開発に注力し、生産から販売まで一貫した連携・合理化を図ることが印字され、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、独自開発品として「スクミノン」「ウッドスター」等への注力が印字されています。",
+        "asOf": "2026-02-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "農薬の国内市場は縮小傾向にあり、大手企業との厳しい競争が続く環境にあります。その中で、地域のニーズの動向を把握して迅速に対応する地域密着の営業で、販売の拡大に努める方針です。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、国内市場は市場規模の縮小傾向の中で大手企業との厳しい競争が今後も展開されると予想され、地域に密着したキメ細かな普及・営業活動を徹底して競争力を強化することが印字されています。",
+        "asOf": "2026-02-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年11月期",
     "asOf": "2025-11-30",

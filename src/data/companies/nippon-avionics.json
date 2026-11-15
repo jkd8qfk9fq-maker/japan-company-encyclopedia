@@ -4,15 +4,147 @@
   "name": "日本アビオニクス",
   "officialName": "日本アビオニクス株式会社",
   "nameEn": "Nippon Avionics Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Nippon Avionics",
+  "description": "防衛用システム製品や宇宙用電子部品を手がける情報システムと、接合機器・赤外線機器の電子機器を製造・販売する電機メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "information-systems",
+      "name": "情報システム",
+      "description": "防衛用システム製品、宇宙用電子部品、産業用電子機器を扱う報告セグメントです。2026年3月期の外部顧客への売上高は23,858百万円で、全体の8割超を占めます。当社と連結子会社の福島アビオニクスが製造を担い、横浜事業所が生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "日本電気や富士通などの大手電機メーカー",
+        "住商エアロシステムなどの防衛関連の商社"
+      ],
+      "children": [
+        {
+          "id": "defense-systems",
+          "name": "防衛用システム製品",
+          "description": "防衛用途のシステム製品です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "space-electronic-components",
+          "name": "宇宙用電子部品",
+          "description": "宇宙用途の電子部品です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "industrial-electronic-equipment",
+          "name": "産業用電子機器",
+          "description": "産業用途の電子機器です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "electronic-devices",
+      "name": "電子機器",
+      "description": "接合機器と赤外線機器を扱う報告セグメントです。2026年3月期の外部顧客への売上高は5,335百万円です。本社・新横浜事業所が拠点で、赤外線技術で熱を可視化するセンシングの用途開拓が進められています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "電子機器や自動車の製造現場",
+        "設備の保守点検や監視を行う事業者"
+      ],
+      "children": [
+        {
+          "id": "joining-equipment",
+          "name": "接合機器",
+          "description": "抵抗溶接、パルスヒート、超音波、レーザの接合工法を用いる装置や、水晶デバイス封止装置などです。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営方針、経営環境及び対処すべき課題等】"
+        },
+        {
+          "id": "infrared-equipment",
+          "name": "赤外線機器",
+          "description": "赤外線技術を用いた計測・監視向けの機器やソリューションです。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "防衛装備品や産業用電子機器を大手電機メーカーや防衛関連の顧客に向けて製造・販売し、連結子会社の福島アビオニクスとともに生産を担う事業モデルです。",
+    "products": [
+      "防衛用システム製品",
+      "宇宙用電子部品",
+      "産業用電子機器",
+      "接合機器",
+      "赤外線機器"
+    ],
+    "customers": [
+      "日本電気や富士通などの大手電機メーカー",
+      "住商エアロシステムなどの防衛関連の商社",
+      "電子機器や自動車の製造現場、設備の保守点検・監視を行う事業者"
+    ],
+    "revenueSources": [
+      "情報システム製品の販売による売上高",
+      "電子機器（接合機器・赤外線機器）の販売による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "横浜を拠点とするグループ",
+        "description": "日本アビオニクスは神奈川県横浜市に拠点を置き、連結子会社1社（福島アビオニクス）とともに事業を行っています。親会社はNAJホールディングスで、2026年3月31日現在の議決権の所有割合は52.61％です。2026年3月期の連結従業員数は763人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "情報システムと電子機器の2事業",
+        "description": "事業は情報システムと電子機器の2つの報告セグメントで、2026年3月期の外部顧客への売上高は、情報システムが23,858百万円、電子機器が5,335百万円です。"
+      },
+      {
+        "kind": "customer",
+        "title": "大手電機メーカーなどが主要な顧客",
+        "description": "主要な顧客は日本電気、住商エアロシステム、富士通で、2026年3月期の販売実績に対する割合は、日本電気が34.5％、住商エアロシステムが16.8％、富士通が15.7％です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は前期比45.1％増",
+        "description": "2026年3月期の売上高は29,194百万円で、前期比45.1％増となりました。高水準の防衛予算を背景に、情報システムの売上高が大きく伸びました。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は3,820百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は3,820百万円で、前期の1,964百万円から増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +159,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 10765000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 659,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +179,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 12170000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 657,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +199,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 14305000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 657,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +219,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 13958000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 701,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +239,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 16104000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 763,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +247,147 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1960,
+      "title": "日本電気とヒューズ・エアクラフトの合弁で設立",
+      "description": "1960年4月、日本電気株式会社と米国ヒューズ・エアクラフト・カンパニーの合弁会社として、日本アビオトロニクス株式会社の商号で設立されました。防衛用及び一般産業用電子機器とその部品の製造、販売、保守、修理等を営業目的としました。",
+      "significance": "現在の事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "社名を日本アビオニクス株式会社に変更",
+      "description": "1980年4月、創立20周年にあわせて、社名を日本アビオニクス株式会社に変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1988年2月、株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "福島アビオニクス株式会社を設立",
+      "description": "1989年9月、当社の全額出資により福島アビオニクス株式会社を設立しました。",
+      "significance": "現在の唯一の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "日本電気からNEC三栄の全株式を譲受",
+      "description": "2006年6月、日本電気株式会社からNEC三栄株式会社の全株式を譲り受けました。",
+      "significance": "赤外線事業の基盤が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "NEC Avio赤外線テクノロジーを吸収合併",
+      "description": "2012年10月、NEC Avio赤外線テクノロジー株式会社（NEC三栄株式会社が商号変更した会社）を吸収合併しました。",
+      "significance": "赤外線事業を自社に取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "日本ヒューチャアの全株式を取得",
+      "description": "2013年4月、日本ヒューチャア株式会社の全株式を取得しました。",
+      "significance": "グループの事業領域が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "日本ヒューチャアを吸収合併",
+      "description": "2015年4月、日本ヒューチャア株式会社を吸収合併しました。",
+      "significance": "取得した事業を自社に統合しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "山梨アビオニクスを吸収合併",
+      "description": "2018年10月、山梨アビオニクス株式会社を吸収合併しました。",
+      "significance": "子会社の体制が整理されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "NAJホールディングスが親会社となる",
+      "description": "2020年1月、公開買付けの結果、NAJホールディングス株式会社が議決権の50％超を保有することとなり、当社の親会社となりました。",
+      "significance": "現在の親会社体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nec",
+      "relationship": "customer",
+      "description": "日本アビオニクスの主要な顧客で、2026年3月期の販売実績の34.5％を占めています。関連するセグメントは情報システム等です。1960年の設立時には日本電気が合弁相手の一方でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "fujitsu",
+      "relationship": "customer",
+      "description": "日本アビオニクスの主要な顧客で、2026年3月期の販売実績の15.7％を占めています。関連するセグメントは情報システムです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "nihon-denkei",
+      "relationship": "business-partner",
+      "description": "日本アビオニクスの電子機器製品の主要取引先です。日本アビオニクスは、関係の維持・強化を目的として同社の株式4,176株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +395,58 @@
       "publisher": "日本アビオニクス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDXW.pdf",
       "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YDXW",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 当社は2024年10月1日付で普通株式1株につき5株の割合で株式分割を行いました（経営指標等の注記に記載）。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "顧客価値経営を推進し、情報システムではエレクトロニクス技術とシステム技術を活かして耐環境性と信頼性の高い防衛装備品を提供し日本の防衛に貢献すること、電子機器では接合の4工法や赤外線技術を活かしたソリューションの提供と海外展開の強化により受注・売上の拡大をはかることを掲げています。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "情報システムは積み上がった受注に基づく生産計画の遂行を掲げ、実際に2026年3月期の情報システムの売上高は前期から大きく伸びています。電子機器でも、データサーバー等の需要増加や監視による未然防止への関心の高まりを背景に設備需要が増え、売上高が伸びています。",
+        "basis": "セグメント情報に記載された報告セグメントごとの外部顧客への売上高と関連情報の主要な顧客ごとの情報、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析に記載されたセグメント別の状況と売上高の増減による。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、防衛装備品に求められる耐環境性と信頼性を支えるエレクトロニクス技術とシステム技術、接合機器のマイクロ接合技術とメカトロニクス技術、熱を可視化する赤外線技術を核とする画像処理技術や波長制御技術です。",
+        "basis": "経営方針、経営環境及び対処すべき課題等に記載された各事業の強みと技術、事業の内容に記載された製品の構成による。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "情報システムの需要の背景には高水準で推移する防衛予算があります。地域別の売上高は日本が25,674百万円と大半を占め、アジアやその他の地域向けも販売しています。主要な顧客は日本電気、住商エアロシステム、富士通の大手3先です。",
+        "basis": "セグメント情報の関連情報に記載された地域ごとの売上高と主要な顧客ごとの情報、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析に記載された経営環境による。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

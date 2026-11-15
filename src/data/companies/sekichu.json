@@ -4,15 +4,109 @@
   "name": "セキチュー",
   "officialName": "株式会社　セキチュー",
   "nameEn": "SEKICHU CO.,LTD.",
-  "description": null,
+  "shortNameEn": "SEKICHU CO.,LTD.",
+  "description": "群馬県高崎市に本社を置き、ホームセンター店舗の運営と不動産賃貸を手がける小売企業です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "sekichu",
+      "name": "株式会社セキチュー",
+      "description": "群馬県高崎市に本社を置く単体の小売企業で、子会社及び関連会社は有していません。事業はホームセンター事業と不動産賃貸事業の2つの報告セグメントからなります。2026年2月期の従業員数は310人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "home-center",
+          "name": "ホームセンター事業",
+          "description": "DIY用品、家庭用品、カー用品、自転車、レジャー用品等生活関連用品全般を扱うホームセンター店舗（高崎店他24店舗）と、カー用品専門店オートウェイ、自転車専門店サイクルワールド、工具買取販売店ツールボックスを経営する事業です。商品部門はDIY用品、家庭用品、カー用品・自転車・レジャー用品、その他からなります。2026年2月期の外部顧客への売上高は31,018百万円です。",
+          "customers": [
+            "店舗を利用する地域の個人客",
+            "法人向け請負工事の発注者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "real-estate-leasing",
+          "name": "不動産賃貸事業",
+          "description": "当社が保有・管理する不動産の賃貸と、商業施設の企画・建設および運営管理を行う事業です。2026年2月期の外部顧客への営業収入は848百万円です。",
+          "customers": [
+            "賃貸物件を利用するテナント事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "ホームセンター店舗での生活関連用品の販売と、保有不動産の賃貸・運営管理で対価を得る事業モデルです。",
+    "products": [
+      "DIY用品、家庭用品、カー用品、自転車、レジャー用品等の生活関連用品",
+      "カー用品専門店、自転車専門店、工具買取販売店の運営",
+      "保有・管理する不動産の賃貸と商業施設の企画・建設・運営管理"
+    ],
+    "customers": [
+      "店舗を利用する地域の個人客",
+      "法人向け請負工事の発注者",
+      "賃貸物件を利用するテナント事業者"
+    ],
+    "revenueSources": [
+      "ホームセンター店舗での商品販売による売上高",
+      "不動産賃貸事業による営業収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社セキチュー",
+        "description": "群馬県高崎市に本社を置く単体の小売企業で、子会社及び関連会社は有していません。2026年2月期の従業員数は310人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ホームセンター店舗と不動産賃貸",
+        "description": "ホームセンター店舗（高崎店他24店舗）とカー用品専門店オートウェイ、自転車専門店サイクルワールド、工具買取販売店ツールボックスを運営し、あわせて保有不動産の賃貸と商業施設の運営管理を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域の個人客とテナント事業者",
+        "description": "地域の個人客が店舗で生活関連用品を購入し、テナント事業者が賃貸物件を利用しています。外部顧客への売上高のうち、売上高の10％を占める相手先はないと開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益は31,867百万円",
+        "description": "2026年2月期の営業収益は31,867百万円（前期比1.2％増）でした。セグメント別では、ホームセンター事業が31,018百万円、不動産賃貸事業が848百万円です。前事業年度の営業収益は31,479百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は400百万円",
+        "description": "2026年2月期の当期純利益は400百万円（前期比19.0％減）でした。前事業年度は494百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,11 +121,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10297775000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 312,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,14 +143,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10648136000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 303,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第72期（2023年2月期）の期首から適用しており、第72期以降の営業収益は当該会計基準等を適用した後の金額です。第71期（2022年2月期）の営業収益は適用前の金額です。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -71,11 +166,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11072581000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 305,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +188,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11532331000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 312,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +210,179 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11851893000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 310,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1952,
+      "title": "木材業の個人経営を法人化し関口木材株式会社を設立",
+      "description": "文化3年（1806年）より木材業を営んでいた個人経営から法人組織に改組し、関口木材株式会社を設立しました。",
+      "significance": "現在のセキチューの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "新建材の販売を開始",
+      "description": "新建材の販売を開始しました。",
+      "significance": "木材業から建材販売へ扱いを広げた転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "建売住宅の販売を開始",
+      "description": "建売住宅の販売を開始しました。",
+      "significance": "住宅分野へ進出した出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "ホームセンター1号店を開店",
+      "description": "DIY産業に着目し、ホームセンター1号店を群馬県山田郡大間々町（現群馬県みどり市）に開店しました。",
+      "significance": "現在の主力事業であるホームセンター事業の起点です。2025年にホームセンター事業への参入から50周年を迎えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "社名を株式会社セキチューに変更し事業をホームセンターに一本化",
+      "description": "社名を関口木材株式会社から株式会社セキチューに商号変更し、事業をホームセンターに一本化しました。",
+      "significance": "現在の社名と事業構成の基礎ができた転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "本社を群馬県高崎市飯塚町に新築移転",
+      "description": "業務拡大のため本社を群馬県高崎市飯塚町に新築移転しました。",
+      "significance": "事業拡大に伴う本社移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "園芸専門店の子会社を設立しカー用品専門店の第1号店を開店",
+      "description": "園芸専門店の株式会社グリーンナンバー・ワンを設立し、園芸専門店1店舗の営業資産を譲渡しました。また、カー用品専門店の第1号店オートウェイを群馬県高崎市に開店しました。",
+      "significance": "専門店業態への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "日本証券業協会に株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "自転車専門店の1号店サイクルワールドを開店",
+      "description": "自転車専門店の1号店サイクルワールドを東京都葛飾区に開店しました。",
+      "significance": "自転車専門店業態の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に株式を上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所（現東京証券取引所）に株式を上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "株式会社グリーンナンバー・ワンを吸収合併",
+      "description": "経営の効率化を図ることを目的に、株式会社グリーンナンバー・ワンを吸収合併しました。",
+      "significance": "グループの簡素化が進んだ出来事で、現在は子会社を有していません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "「セキチューポイントカード」サービス開始",
+      "description": "「セキチューポイントカード」のサービスを開始しました。",
+      "significance": "顧客向け会員サービスの開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）市場からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "「セキチューアプリ」をリリース",
+      "description": "お客様の利便性向上を目的に「セキチューアプリ」をリリースしました。",
+      "significance": "デジタル面での顧客サービス拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "工具買取販売店の1号店ツールボックスを開店",
+      "description": "工具買取販売店の1号店ツールボックスを埼玉県春日部市に開店しました。",
+      "significance": "リユース分野の専門店業態の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "shimamura",
+      "relationship": "major-shareholder",
+      "description": "【大株主の状況】に載る事業会社で、2026年2月20日現在、発行済株式（自己株式を除く）の4.96％にあたる275千株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +390,55 @@
       "publisher": "株式会社　セキチュー",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y3VC.pdf",
       "publishedAt": "2026-05-14",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y3VC",
+      "asOf": "2026-02-20",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "業態を越えた激しい競争の中、地域のお客様に支持される品揃え・品質・価格とサービスを提供できる「地域一番店」を目指すとしています。店舗改装による品揃えや設備の見直し、計画的な新規出店に向けた出店用地の確保、テナントへの賃貸も含めた店舗施設の有効活用、店舗作業の軽減や物流の効率化などの業務改善、人材の育成を進める方針です。",
+        "asOf": "2026-05-14",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "営業収益の大部分をホームセンター事業が占め、不動産賃貸事業が保有店舗資産を活かした賃貸収入で補完する構成です。当事業年度は、複数店舗の改装と既存店舗へのテナント誘致が営業収益の伸びを支えました。",
+        "basis": "セグメント情報の外部顧客への売上高、販売実績、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の概要",
+        "asOf": "2026-05-14",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "群馬県を地盤にホームセンター店舗と専門店を展開し、本社と物流センターも群馬県内に置く地域密着の体制です。ホームセンターにカー用品、自転車、工具買取販売の専門店を組み合わせ、生活関連用品を幅広く扱っています。",
+        "basis": "事業の内容、主要な設備の状況、販売実績の商品部門別内訳",
+        "asOf": "2026-05-14",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "ホームセンター業界は競争が激しく、寡占化の進行による淘汰・再編が予想されると同社は認識しています。売上高の10％を占める主要な顧客はなく、地域の個人客を中心とする分散した顧客構成です。",
+        "basis": "経営方針、経営環境及び対処すべき課題等、セグメント情報の関連情報（主要な顧客ごとの情報）",
+        "asOf": "2026-05-14",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-20",

@@ -4,15 +4,111 @@
   "name": "大成ラミックグループ",
   "officialName": "大成ラミックグループ株式会社",
   "nameEn": "Taisei Lamick Group Head Quarter & Innovation Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Taisei Lamick Group Head Quarter & Innovation Co., Ltd.",
+  "description": "液体調味料などを包む包装フィルムと、その内容物を充填する機械「DANGAN」を一体で開発・製造・販売する持株会社グループです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "machinery",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "packaging-business",
+      "name": "包装フィルム・包装機械事業",
+      "description": "食品業界を中心に、包装フィルムの開発・製造・販売と、液体充填機の開発・製造・販売・保守を一体で手がける単一セグメントの事業です。当社と子会社6社でグループを構成し、2026年3月期の売上高は32,484百万円でした。",
+      "customers": [
+        "食品メーカー等"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "packaging-film",
+          "name": "包装フィルム",
+          "description": "即席麺の液体スープやドレッシング、タレ類、わさび、醤油などを包む液体充填用フィルムと、粉末・乾燥物用やトイレタリー・コスメティック関連製品用のラミネート汎用品を開発・製造・販売しています。2026年3月期の外部顧客への売上高は28,381百万円でした。",
+          "customers": [
+            "食品メーカー等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "packaging-machinery",
+          "name": "包装機械",
+          "description": "液体充填用フィルムに内容物を充填する液体充填機「DANGAN」シリーズ（G3、AⅢ、M）を開発・製造し、フィルムと併せて販売しています。稼働状況の遠隔把握や生産状況の可視化ができるクラウドサービス「H.U.G.Home」や、保守・研修などの支援も提供しています。2026年3月期の外部顧客への売上高は4,102百万円でした。",
+          "customers": [
+            "食品メーカー等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "内容物や用途に合わせた高機能な包装フィルムと、フィルムに液体・粘体の調味料などを充填する液体充填機「DANGAN」を併せて販売し、食品メーカー等の包装工程を支援します。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "products": [
+      "液体充填用フィルム（即席麺の液体スープ、ドレッシング、タレ類、わさび、醤油などの包装用ラミネートフィルム）",
+      "ラミネート汎用品（粉末・乾燥物用、トイレタリー・コスメティック関連製品用）",
+      "液体充填機「DANGAN」シリーズ（ハイエンドモデルG3、ミドルレンジモデルAⅢ、エントリーモデルM）",
+      "クラウドサービス「H.U.G.Home」と保守・研修などのオペレーションサポート"
+    ],
+    "customers": [
+      "食品メーカー等の工場",
+      "トイレタリー・コスメティック関連製品のメーカー"
+    ],
+    "revenueSources": [
+      "包装フィルムの販売対価",
+      "液体充填機の販売対価と保守サービスの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "大成ラミックグループ",
+        "description": "1966年に大成包材株式会社として設立され、2025年4月に持株会社体制へ移行した埼玉県白岡市の会社です。2026年3月31日現在の連結従業員数は631人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "包装フィルムと液体充填機の一体提供",
+        "description": "液漏れ防止や保存性、開封のしやすさなど顧客の要望に合わせた高機能フィルムと、そのフィルムに内容物を充填する液体充填機「DANGAN」を組み合わせて提供し、包装のリスクに対する総合的な解決策を提案しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "食品メーカー等",
+        "description": "顧客は食品メーカーをはじめとする製造事業者です。売上高の10％以上を占める特定の相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は32,484百万円でした。製品区分別の外部顧客への売上高は、包装フィルム28,381百万円、包装機械4,102百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,554百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +123,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22838170000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 767,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +143,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23357266000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 652,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23954865000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 645,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25157659000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 648,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25968345000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 631,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +211,138 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1966,
+      "title": "大成包材株式会社を設立",
+      "description": "東京都足立区に大成包材株式会社が設立され、足立工場でセロファン及びポリエチレンの加工販売を開始しました。",
+      "significance": "実質上の存続会社として、現在の当社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "液体充填用フィルムの販売を開始",
+      "description": "現在の主力製品である液体充填用フィルムの販売を開始しました。",
+      "significance": "液体包装分野への本格的な進出の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "大成ラミック株式会社に商号変更",
+      "description": "大成包材株式会社から大成ラミック株式会社へ商号を変更しました。",
+      "significance": "現在の社名の基礎となった変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "液体充填機「NT-DANGAN」を販売開始",
+      "description": "日本精機株式会社と共同開発した液体充填機「NT-DANGAN」の販売を開始しました。",
+      "significance": "フィルムと充填機を併せて提供する現在の事業形態の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "液体充填機「DANGAN」の権利を譲受",
+      "description": "液体充填機「DANGAN」の共同開発会社である日本精機株式会社から、開発成果などすべての権利を譲り受けました。",
+      "significance": "充填機の開発・製造を自社で完結できる体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "米国の販売子会社を設立",
+      "description": "アメリカ合衆国イリノイ州に販売子会社Taisei Lamick USA, Inc.を設立しました。",
+      "significance": "海外販売体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "マレーシアの軟包装資材会社を子会社化",
+      "description": "マレーシアの軟包装資材製造販売会社Malaysia Packaging Industry Berhad（現 Scientex Packaging (Kajang) Sdn. Bhd.）を株式の取得により子会社化しました。",
+      "significance": "海外の製造拠点を持つ展開でしたが、2022年に株式の大半を譲渡しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行し、マレーシア販売子会社を設立",
+      "description": "東京証券取引所の市場区分の見直しにより市場第一部からスタンダード市場へ移行しました。また、マレーシアの製造子会社の株式80.2％を譲渡し、マレーシア・セランゴール州に販売子会社Taisei Lamick Asia (Malaysia) Sdn. Bhd.を設立しました。",
+      "significance": "現在の市場区分と海外販売体制の形になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "持株会社体制へ移行し、現社名に変更",
+      "description": "吸収分割により持株会社体制へ移行し、大成ラミックグループ株式会社に商号を変更しました。販売・機械事業は大成ラミック株式会社が、フィルムの開発・製造事業はDANGANフィルム株式会社が承継しました。",
+      "significance": "現在のグループ体制の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "タイの販売子会社を設立",
+      "description": "タイ王国パトゥムターニーに販売子会社Taisei Lamick (Thailand) Co., Ltd.を設立しました。",
+      "significance": "東南アジアの販売体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "toyobo",
+      "relationship": "supplier",
+      "description": "包装フィルムの原材料の調達先です。原材料の安定的調達の維持・強化を図るため、当社は2026年3月31日現在、同社の株式17,503株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "dainichiseika-color-and-chemicals-mfg",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式（自己株式を除く）の3.10％を保有する大株主です。原材料の調達先でもあり、当社は原材料の安定的調達の維持・強化を図るため、同社の株式200株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +350,37 @@
       "publisher": "大成ラミックグループ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YG2P.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YG2P",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "国内の既存事業では液体小袋包装分野を軸に、付加価値の高い製品やサービスの提供、販売価格の最適化と徹底したコストダウンに取り組み、海外では既存の展開地域に資源を集中して事業基盤の拡大を進めます。あわせて、液体包装に関わる新しいサービスの創出や包装の新分野の研究、環境負荷の低減にも取り組む方針です。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "液体包装フィルムと液体充填機の双方を提供する唯一の企業として、新素材による環境対応フィルムの開発と充填機械との親和性を課題とし、環境負荷の低減と生産性・機能性を両立するソリューションの開発を進めています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
