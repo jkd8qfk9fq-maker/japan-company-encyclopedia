@@ -4,15 +4,124 @@
   "name": "東京會舘",
   "officialName": "株式会社東京會舘",
   "nameEn": "Tokyo Kaikan Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Tokyo Kaikan Co., Ltd.",
+  "description": "丸の内の本舘を中心に宴会場・結婚式場・レストランを運営し、洋菓子等の販売も行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "entertainment",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "restaurant-banquet",
+      "name": "レストラン・宴会事業",
+      "description": "宴会場・結婚式場・レストランの経営と洋菓子等の販売を行う単一セグメントの事業です。丸の内の本舘を中心に、受託運営を含む各営業所で宴会・婚礼・食堂のサービスを提供しています。2026年3月期の売上高は16,259百万円で、部門別では宴会が11,561百万円、食堂が3,548百万円、売店・その他が1,150百万円でした。",
+      "customers": [
+        "宴会・会合を主催する法人・団体",
+        "婚礼を行う個人",
+        "レストラン・売店の利用客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "banquet",
+          "name": "宴会部門",
+          "description": "本舘を中心に、一般宴会と婚礼を提供する部門です。2026年3月期の販売高は11,561百万円でした。",
+          "customers": [
+            "法人・団体の宴会主催者",
+            "婚礼を行う個人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "restaurant",
+          "name": "食堂部門",
+          "description": "本舘のレストランと各営業所の食堂を運営する部門です。2026年3月期の販売高は3,548百万円でした。",
+          "customers": [
+            "レストランの利用客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "shop-food",
+          "name": "売店・その他部門",
+          "description": "本舘売店での商品販売や、伝統の焼菓子・半生菓子を中心とする食品の販売を行う部門です。2026年3月期の販売高は1,150百万円でした。",
+          "customers": [
+            "売店の利用客",
+            "菓子の購入者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "宴会・婚礼の会場と料理、レストランの食事、売店での菓子等の販売を通じて、人生の特別な場面に上質な味とサービスを提供する事業です。",
+    "products": [
+      "宴会・婚礼の会場と料理の提供",
+      "レストラン・食堂での食事の提供",
+      "洋菓子・焼菓子等の製造・販売"
+    ],
+    "customers": [
+      "宴会・会合を主催する法人・団体",
+      "婚礼を行う個人",
+      "レストラン・売店の利用客"
+    ],
+    "revenueSources": [
+      "宴会部門の販売高",
+      "食堂部門の販売高",
+      "売店・その他部門の販売高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "1922年創業の国際社交場",
+        "description": "東京會舘は1920年に設立され、1922年に丸の内で本舘を開業しました。2026年3月31日現在の従業員数は480人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "宴会・婚礼・レストランと菓子の販売",
+        "description": "本舘を中心に宴会場・結婚式場・レストランを運営し、売店では洋菓子等を販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "法人・団体の宴会から個人の婚礼まで",
+        "description": "大型宴会や各種会合を主催する法人・団体、婚礼を行う個人、レストランの利用客が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "部門別の販売で売上を立てる",
+        "description": "2026年3月期の売上高は16,259百万円で、宴会部門が11,561百万円、食堂部門が3,548百万円、売店・その他部門が1,150百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は989百万円",
+        "description": "2026年3月期の当期純利益は989百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +136,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7122579000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 491,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +158,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7532351000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 463,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +180,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9597945000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 448,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +202,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10957493000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 451,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +224,204 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13131140000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 480,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1920,
+      "title": "有馬パラダイス土地株式会社として設立",
+      "description": "有馬パラダイス土地株式会社として設立されました。",
+      "significance": "株式会社東京會舘の前身が誕生した年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1922,
+      "title": "東京會舘本舘が竣工し開業",
+      "description": "東京會舘本舘が竣工し、営業を開始しました。",
+      "significance": "会社が創業年とする年であり、丸の内の社交場としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "商号を株式会社東京會舘に変更",
+      "description": "大正土地建物株式会社から、商号を株式会社東京會舘に変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京証券取引所に上場",
+      "description": "東京証券取引所に株式を上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "接収解除により本舘の営業を再開",
+      "description": "1945年以来連合軍総司令部の接収を受けていた本舘の建物と附属設備の接収が解除され、本舘の営業を再開しました。",
+      "significance": "戦後の本舘営業の再出発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "株式会社パレスホテルが分離独立",
+      "description": "株式会社パレスホテルが当社から分離独立しました。",
+      "significance": "ホテル部門が独立した出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "株式会社霞が関東京會舘を合併",
+      "description": "株式会社霞が関東京會舘を合併し、霞が関ビルで営業を開始しました。",
+      "significance": "営業拠点の拡大につながった合併です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "改築した本舘が竣工し営業を再開",
+      "description": "改築のため休館していた本舘が竣工し、営業を再開しました。",
+      "significance": "本舘の姿が一新された年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "如水会館の営業を開始",
+      "description": "社団法人如水会から委託を受け、「如水会館」の営業を開始しました。",
+      "significance": "他者の施設を受託運営する形の営業所の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "建替えのため本舘が休館",
+      "description": "本舘の建替えのため、本舘を休館しました。",
+      "significance": "現在の本舘への建替えに向けた区切りです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "建替えを終えた本舘が営業を再開",
+      "description": "建替えを終えた本舘が営業を再開しました。",
+      "significance": "現在の本舘による営業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "日比谷プロムナードビル営業所「Drape」を開店",
+      "description": "東京都千代田区有楽町の東宝日比谷プロムナードビルに、日比谷プロムナードビル営業所「Drape」を開店しました。",
+      "significance": "直近の新規営業所の開店です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "dai-dan",
+      "relationship": "business-partner",
+      "description": "設備工事業界の大手であり、取引関係の維持・強化が見込まれる先として、当社が株式を保有しています。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toho-9602",
+      "relationship": "business-partner",
+      "description": "店舗建物の賃借やイベント等に係る取引がある他、長年にわたる友好関係および取引関係の維持・強化が見込まれる先として、当社が株式を保有しています。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "isetan-mitsukoshi-holdings",
+      "relationship": "business-partner",
+      "description": "当社のレストラン・売店の出店先であり、取引関係の維持・強化が見込まれる先として、当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-estate",
+      "relationship": "business-partner",
+      "description": "当社の丸の内本舘の建替えならびに丸の内二重橋ビル運営の共同事業者であり、取引関係の維持・強化も見込まれる先として、当社が株式を保有しています。同社は2026年3月31日現在、当社の株式の3.98%を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hankyu-hanshin-holdings",
+      "relationship": "business-partner",
+      "description": "同社のグループ会社とのイベント等に係る取引がある他、長年にわたる友好関係および取引関係の維持・強化が見込まれる先として、当社が株式を保有しています。同社も当社の株式を保有しており、2026年3月31日現在、当社の株式の3.03%を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "noritake",
+      "relationship": "supplier",
+      "description": "食器の主要調達先であり、長年にわたる友好関係および取引関係の維持・強化が見込まれる先として、当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +429,45 @@
       "publisher": "株式会社東京會舘",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFQM.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YFQM",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年度から2028年度までの新しい中期経営計画では、組織基盤の強化に取り組み、人的資本や設備への戦略的な投資を実行し、ブランド力の向上を目指すとしています。高付加価値戦略に基づく適正な価格体系の構築による企業価値の最大化や、AI等の技術革新の活用による生産性・効率性の向上も課題に挙げています。長期ビジョンは「『次の100年』も愛される人生の特別な場所であり続ける」としています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "建替えを終えた本舘という自社保有の旗艦施設を中心に、如水会館や大手町営業所など他者が所有する施設の受託運営を組み合わせる構成で事業を行っています。",
+        "basis": "主要な設備の状況に記載された事業所の構成（丸の内の本舘と受託運営を含む各営業所）",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "ブランドを支える競争優位性の一つとして、創業以来培った調理技術・レシピや、上質な空間にふさわしい接遇・サービスを、現場が自律的に磨き上げ、継承・発展させてきた企業文化を挙げています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【人材戦略に関する基本方針等】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

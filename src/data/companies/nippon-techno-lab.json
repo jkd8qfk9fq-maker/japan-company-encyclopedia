@@ -4,15 +4,157 @@
   "name": "日本テクノ・ラボ",
   "officialName": "日本テクノ・ラボ株式会社",
   "nameEn": "NIPPON TECHNO LAB INC.",
-  "description": null,
+  "shortNameEn": "NIPPON TECHNO LAB INC.",
+  "description": "特殊・産業用プリンタの制御ソフトと、情報漏洩防止や遠隔監視などのセキュリティソフトを開発・販売する会社です。",
   "listings": [
     {
       "exchange": "sse",
-      "market": "アンビシャス"
+      "market": "アンビシャス市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "security",
+      "name": "セキュリティ事業",
+      "description": "情報漏洩を抑止するソフトウェアやソリューションと、各メーカー製IP監視カメラに対応した遠隔監視ソフトウェアを開発・販売する報告セグメントです。2026年3月期の売上高は613百万円でした。",
+      "customers": [
+        "官公庁・自治体",
+        "企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "security-print",
+          "name": "セキュリティプリントシステム事業",
+          "description": "インク・トナーの削減機能や、プリンター・複写機に出力されるドキュメントの収集・検閲・監査機能を統合したセキュアプリントソリューション「SPSE」や、クライアントPC上のプリンターを制御できる「TCCM」、PC端末の利用制限とデータの暗号化を行う「PC GUARD」、ソフトウェアの不正使用・不正コピーを防止する「COPY GUARD」を提供する分野です。",
+          "customers": [
+            "官公庁・自治体",
+            "企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "video-surveillance",
+          "name": "統合監視映像システム事業",
+          "description": "各メーカー製IPカメラに対応したネットワーク遠隔監視ソフトウェア「FIREDIPPER」の開発・販売と、システム導入構築のインテグレーション開発を行う分野です。AI技術を用いた画像解析や、モジュール型組込みコンピューターを活用した画像変換サーバーの開発・販売も行っています。",
+          "customers": [
+            "企業",
+            "医療現場・医療研究部署"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "imaging-printer-controller",
+      "name": "イメージング＆プリンタコントローラ事業",
+      "description": "特殊・産業用向けのプリンタを供給するプリンタメーカー向けに、プリンタの制御システムソフトウェア「Mistral」の開発・販売と、Mistralを組み込んだプリンタ制御装置の販売、保守やカスタマーサポートを行う報告セグメントです。2026年3月期の売上高は243百万円でした。",
+      "customers": [
+        "プリンタメーカー",
+        "塗装工程や印刷工程を要する工場をもつ企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "storage-solution",
+      "name": "ストレージソリューション事業",
+      "description": "複数巻のLTOテープメディアを使い、データを長期保存できるライブラリシステム「MnemosNEXT」の導入に向けた営業活動を行う報告セグメントです。2026年3月期の売上高は8百万円でした。",
+      "customers": [
+        "医療現場・医療研究部署",
+        "国家プロジェクト・先端研究分野の機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他事業",
+      "description": "報告セグメントに含まれない事業セグメントで、受託開発などを行う区分です。東京大学から量子計測・放射線計測研究に使用する専用ボードの開発を受託しました。2026年3月期の売上高は44百万円でした。",
+      "customers": [
+        "大学などの研究機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "プリンタ制御ソフト「Mistral」やセキュリティソフトを開発・販売し、ライセンスや保守、システム構築で収益を得る事業です。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "products": [
+      "プリンタ制御システムソフトウェア「Mistral」",
+      "高速印刷データ処理装置「Mistral MULTI」",
+      "大容量データ長期保存ライブラリシステム「MnemosNEXT」",
+      "セキュアプリントソリューション「SPSE」",
+      "プリンター制御製品「TCCM」",
+      "PC端末保護製品「PC GUARD」",
+      "不正コピー防止製品「COPY GUARD」",
+      "ネットワーク遠隔監視ソフトウェア「FIREDIPPER」"
+    ],
+    "customers": [
+      "プリンタメーカー",
+      "官公庁・自治体",
+      "企業",
+      "医療現場・医療研究部署"
+    ],
+    "revenueSources": [
+      "ソフトウェアの開発・販売の対価",
+      "プリンタ制御装置などのハードウェアの販売代金",
+      "保守及びカスタマーサポートの対価",
+      "システム導入構築のインテグレーション開発の対価",
+      "受託開発の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日本テクノ・ラボ",
+        "description": "東京都千代田区に本社を置く、1989年に設立された会社です。2026年3月31日現在の従業員数は30人で、連結財務諸表は作成していません。"
+      },
+      {
+        "kind": "offering",
+        "title": "プリンタ制御ソフトとセキュリティソフト",
+        "description": "特殊・産業用プリンタ向けの制御システムソフトウェア「Mistral」や、情報漏洩を抑止する「SPSE」、IPカメラ対応の遠隔監視ソフトウェア「FIREDIPPER」などを開発・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "プリンタメーカー・官公庁・企業",
+        "description": "プリンタメーカーが制御ソフトや制御装置を導入し、官公庁や自治体、企業などがセキュリティ製品や監視システムを導入して利用します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高910百万円",
+        "description": "2026年3月期の売上高は910百万円で、前期より42.8％増えました。セキュリティ事業、イメージング＆プリンタコントローラ事業、その他事業の増収によるものです。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益100百万円",
+        "description": "2026年3月期の当期純利益は100百万円で、前期より1,579.7％増えました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +169,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1059733000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 28,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +191,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1136873000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 28,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +213,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1197287000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 34,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +235,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1177712000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 32,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +257,129 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1268822000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 30,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1989,
+      "title": "日本テクノ・ラボ株式会社を設立",
+      "description": "東京都品川区五反田に、各種ソフトウェアの開発を目的として日本テクノ・ラボ株式会社を設立しました。科学技術用システムインテグレーションとコンピュータ周辺機器用制御ソフトウェアの開発事業を開始しました。",
+      "significance": "現在の会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "プリントサーバ事業とファイルストレージソリューション事業を開始",
+      "description": "プリントサーバ事業（現在のイメージング＆プリンタコントローラ事業）と、ファイルストレージソリューション事業（現在のストレージソリューション事業）を開始しました。",
+      "significance": "現在の主力事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "セキュリティ（情報セキュリティ）事業を開始",
+      "description": "情報セキュリティの事業を開始しました。",
+      "significance": "現在のセキュリティ事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "セキュリティ（映像セキュリティ）事業を開始",
+      "description": "映像セキュリティの事業を開始しました。同年に福岡事業所を開設しました。",
+      "significance": "統合監視映像システムへつながる事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "札幌証券取引所アンビシャス市場に上場",
+      "description": "札幌証券取引所アンビシャス市場に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "「FIREDIPPER」と「SPSE」の販売を開始",
+      "description": "統合監視映像システム「FIREDIPPER」と、セキュリティプリントシステム「SPSE」の販売を開始しました。",
+      "significance": "セキュリティ事業の主力製品の投入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "ナルテック株式会社と資本・業務提携を開始",
+      "description": "ナルテック株式会社と資本・業務提携を開始しました。",
+      "significance": "他社との提携による事業展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "ラインヘッド・インクジェット・プリンタコントローラの出荷を開始",
+      "description": "ラインヘッド・インクジェット・プリンタコントローラの出荷を開始しました。同年にISO27001認証を取得しました。",
+      "significance": "産業用プリンタ向け制御技術の展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "株式会社シンク・ラボラトリーと資本・業務提携を開始",
+      "description": "株式会社シンク・ラボラトリーと資本・業務提携を開始しました。",
+      "significance": "他社との提携による事業展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "本社を東京都千代田区に移転",
+      "description": "本社を神奈川県横浜市西区みなとみらいから東京都千代田区に移転しました。",
+      "significance": "現在の本社所在地の確定です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "central-security-patrols",
+      "relationship": "customer",
+      "description": "【主要な顧客ごとの情報】に、セキュリティ事業に関連する主要な顧客として印字されている会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主要な顧客ごとの情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +387,47 @@
       "publisher": "日本テクノ・ラボ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJVO.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YJVO",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "対処すべき課題として、技術力を生かせるニッチな市場でシェアを獲得し、保守による収益を広げるとともに、既存製品の機能向上や新製品の開発で新規顧客を獲得して収益構造の安定化を図ること、開発当初から出荷までの一貫した品質管理体制で顧客満足度を高めること、次世代のビジネスモデルや次世代製品を創出することなどを挙げています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "特殊・産業用プリンタ向けに、コンピュータ接続制御やイメージ展開、画像処理、カラー合成、インクジェット吐出制御など、制御システムソフトウェアの構成要素技術のすべてを顧客に提供できることが強みとして説明されています。セキュリティ分野でも、プリントの検閲・監査やIPカメラの遠隔監視など、用途に特化した製品群を持っています。",
+        "basis": "【事業の内容】における制御システムソフトウェアの構成要素技術の記載に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の最も大きい事業はセキュリティ事業で、2026年3月期の売上高613百万円のうち、主要な顧客としてセントラル警備保障株式会社が【主要な顧客ごとの情報】に印字されています。イメージング＆プリンタコントローラ事業では株式会社小森マシナリーが主要な顧客として印字されています。",
+        "basis": "セグメント情報等の外部顧客への売上高と【主要な顧客ごとの情報】の記載に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,133 @@
   "name": "日建工学",
   "officialName": "日建工学株式会社",
   "nameEn": "NIKKEN KOGAKU CO., LTD.",
-  "description": null,
+  "shortNameEn": "NIKKEN KOGAKU CO., LTD.",
+  "description": "消波根固ブロック用の鋼製型枠の貸与と、護岸ブロック等のコンクリート二次製品や土木シート製品の販売を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "formwork-rental",
+      "name": "型枠貸与事業",
+      "description": "消波根固ブロックの製造に用いる鋼製型枠の貸与を行う事業です。連結子会社の三省水工株式会社と東洋水研株式会社も型枠の賃貸を手掛けています。2026年3月期の外部顧客への売上高は1,527百万円でした。",
+      "customers": [
+        "消波根固ブロックの製造を行う事業者",
+        "港湾・海岸等の公共工事に携わる建設会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "product-sales",
+      "name": "製品販売事業",
+      "description": "協力工場で製造した護岸ブロック等のコンクリート二次製品、連結した自然石製品、吸出防止・洗掘防止・遮水等の土木シート製品等を販売する事業です。当社グループは自社工場を持たず、製作・製造委託会社に商品の製造を委託しています。2026年3月期の外部顧客への売上高は4,684百万円でした。",
+      "customers": [
+        "港湾・海岸・河川等の公共土木工事に携わる建設会社",
+        "土木工事の施工事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "concrete-products",
+          "name": "コンクリート二次製品",
+          "description": "協力工場で製造した護岸ブロック等のコンクリート二次製品を販売しています。",
+          "customers": [
+            "河川・海岸等の護岸工事に携わる建設会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "natural-stone-products",
+          "name": "自然石製品",
+          "description": "連結した自然石製品を販売しています。景観に配慮した護岸工法に用いられます。",
+          "customers": [
+            "護岸工事に携わる建設会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "civil-sheets",
+          "name": "土木シート製品",
+          "description": "吸出防止、洗掘防止、遮水等の機能を持つ土木シート製品を販売しています。",
+          "customers": [
+            "土木工事の施工事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "港湾・海岸・河川などの防災・減災工事に用いる消波根固ブロックの製造用鋼製型枠を貸し出し、協力工場で製造した護岸ブロックや土木シート製品を販売する事業です。",
+    "products": [
+      "消波根固ブロック製造用鋼製型枠の貸与",
+      "護岸ブロック等のコンクリート二次製品",
+      "連結した自然石製品",
+      "吸出防止・洗掘防止・遮水等の土木シート製品"
+    ],
+    "customers": [
+      "消波根固ブロックの製造を行う事業者",
+      "港湾・海岸・河川等の公共土木工事に携わる建設会社"
+    ],
+    "revenueSources": [
+      "型枠貸与事業の売上高",
+      "製品販売事業の売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "1964年創立の土木資材メーカー",
+        "description": "日建工学は1964年に消波根固用ブロック「３連ブロック」を事業化して設立されました。2026年3月31日現在の従業員数は132人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "型枠の貸与と土木製品の販売",
+        "description": "消波根固ブロック製造用の鋼製型枠を貸与し、護岸ブロック等のコンクリート二次製品、自然石製品、土木シート製品を販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "公共土木工事に携わる建設会社",
+        "description": "港湾、漁港、海岸、河川、砂防分野の防災・減災対策事業に携わる建設会社や、消波根固ブロックの製造事業者が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品販売が売上の中心",
+        "description": "2026年3月期の売上高は6,211百万円で、製品販売事業が4,684百万円、型枠貸与事業が1,527百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は281百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は281百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +145,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3821556000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 145,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +165,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4076111000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 140,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +185,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4397306000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 147,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +205,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4599706000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 136,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +225,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4937639000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 132,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +233,152 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1964,
+      "title": "日建工学株式会社を設立",
+      "description": "消波根固用ブロック「３連ブロック」を開発し、これを事業化して東京都新宿区四谷四丁目に日建工学株式会社を設立しました。",
+      "significance": "会社の創立であり、消波根固ブロック工法を中核とする事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "ステラシート事業を開始",
+      "description": "土砂吸出防止、洗掘防止、水質汚濁公害防止、軟弱地盤対策用の「ステラシート」を開発し、ステラシート事業を開始しました。",
+      "significance": "土木シート製品へ事業領域を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "株式を東京店頭市場に公開",
+      "description": "株式を東京店頭市場に公開しました。同年にはニッケン・エンジニアリング株式会社と日建製造工業株式会社を吸収合併しています。",
+      "significance": "株式公開企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "取引所上場を果たした年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "東洋水研株式会社を子会社化",
+      "description": "東洋水研株式会社の株式の90.0％を取得し、子会社化しました。",
+      "significance": "グループ体制の拡充につながった買収です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "三省水工株式会社を子会社化し、ＮＫ関西工建株式会社を設立",
+      "description": "三省水工株式会社の株式を取得して子会社化し、ＮＫ関西工建株式会社を100％出資で設立して子会社化しました。",
+      "significance": "現在の連結子会社3社の体制が整った年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "giken-holdings",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の株式の16.78%を保有する筆頭株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "nagawa",
+      "relationship": "business-partner",
+      "description": "当社と共通する事業分野の会社であり、安定的かつ良好な関係の維持による取引の円滑化が見込まれる先として、当社が株式を保有しています（相互保有あり）。同社は2026年3月31日現在、当社の株式の5.92%を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "jdc",
+      "relationship": "customer",
+      "description": "資材販売に係る取引先であり、安定的かつ良好な関係の維持による取引の円滑化が見込まれる先として、当社が株式を保有しています（相互保有あり）。同社は2026年3月31日現在、当社の株式の3.31%を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "freesia-macross",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の株式の2.77%を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "nichia-steel-works",
+      "relationship": "supplier",
+      "description": "資材購入に係る取引先であり、安定的かつ良好な関係の維持による取引の円滑化が見込まれる先として、当社が株式を保有しています（相互保有あり）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "torq",
+      "relationship": "supplier",
+      "description": "資材購入に係る取引先であり、安定的かつ良好な関係の維持による取引の円滑化が見込まれる先として、当社が株式を保有しています（相互保有あり）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokai-tokyo-financial-holdings",
+      "relationship": "business-partner",
+      "description": "当社の幹事証券会社として取引を行っており、安定的かつ良好な関係の維持による取引の円滑化が見込まれる先として、当社が株式を保有しています（相互保有あり）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "scala",
+      "relationship": "business-partner",
+      "description": "DX活用による当社の業務効率化の推進に向けて、安定的かつ良好な関係の維持が見込まれる先として、当事業年度に株式を取得しました（相互保有あり）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +386,71 @@
       "publisher": "日建工学株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJLW.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJLW",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "さまざまな自然災害に対する国土の防災と豊かな自然環境の保全を目指し、新技術・新工法の開発と普及に取り組み、快適な未来社会の創造に貢献することを使命としています。消波根固ブロック工法の技術を核に、型枠貸与事業と製品販売事業で既存事業の収益拡大を図り、付加価値のある新事業・新製品の開発、既存事業製品の選択と集中、協力会社ネットワークの維持強化と新たな協力・提携関係の構築を課題に挙げています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "自社工場を持たず協力工場に製造を委託する製品販売と、自社で保有する鋼製型枠を貸し出す型枠貸与を組み合わせ、防災・減災という公共需要に特化した事業を展開しています。",
+        "basis": "主要な設備の状況に記載された鋼製型枠の保有と、経営者による分析に記載された製造委託の形態",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "創立以来一貫して培ってきた消波根固ブロック工法の技術を核とすることを経営戦略に掲げています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "1964年の「３連ブロック」以来、護岸・河川・海岸向けの工法と製品を長年にわたり自社開発してきた実績が、製品群の厚みにつながっています。",
+        "basis": "沿革に記載された1964年以降の製品・工法開発の積み重ね",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "disclosed": {
+        "text": "型枠貸与事業の市場規模は社会基盤整備の進捗によりピーク時の約３分の１となり停滞してきましたが、防災・減災に対する機能の強化と強靭化への社会的要求の高まりから、中長期的には事業機会が再び漸増していくと想定しています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "港湾、漁港、海岸、河川、砂防分野における国の防災・減災対策事業へ製品と工法を提供する、土木資材分野の専門メーカーとして位置付けられます。",
+        "basis": "経営者による分析に記載された事業の基本姿勢（対象分野と提供内容）",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

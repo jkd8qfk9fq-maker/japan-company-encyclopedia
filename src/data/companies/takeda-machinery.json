@@ -4,15 +4,145 @@
   "name": "タケダ機械",
   "officialName": "タケダ機械株式会社",
   "nameEn": "TAKEDA MACHINERY CO., LTD.",
-  "description": null,
+  "shortNameEn": "TAKEDA MACHINERY CO., LTD.",
+  "description": "形鋼加工機や丸鋸切断機、金型を製造販売し、部品加工や組立の受託生産も手がける金属加工機械メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "metal-processing-machinery",
+      "name": "金属加工機械事業",
+      "description": "鍛圧機械、工作機械、器具及び金型の製造販売と、機械の受託生産を行う単一セグメントの事業です。2026年5月期の外部顧客への売上高は5,079百万円です。",
+      "customers": [
+        "建築鉄骨業界の企業",
+        "製缶板金業界の企業",
+        "自動車関連業界・鋼材加工業界の企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "structural-steel-processing-machines",
+          "name": "形鋼加工機",
+          "description": "小型形鋼加工マシン、平板ドリルマシン、Ｈ形鋼ドリルマシン、板金加工マシンからなる主力の製品群です。2026年5月期の外部顧客への売上高は3,471百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "parts",
+          "name": "部品",
+          "description": "自社製品向けの交換部品などです。2026年5月期の外部顧客への売上高は583百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "dies",
+          "name": "金型",
+          "description": "自社製品専用のプレス金型と、汎用品のプレス金型です。2026年5月期の外部顧客への売上高は445百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "circular-saw-cutting-machines",
+          "name": "丸鋸切断機",
+          "description": "形鋼切断マシンと無垢材切断マシンからなる製品群です。2026年5月期の外部顧客への売上高は249百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "contract-production",
+          "name": "受託生産・その他",
+          "description": "他社製品の部品加工や組立を請け負う受託生産などです。連結子会社のタケダ精機が当社の製品及び部品の製造を担っています。2026年5月期の外部顧客への売上高は211百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "service",
+          "name": "サービス",
+          "description": "自社製品の保守サービスです。2026年5月期の外部顧客への売上高は118百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "建築鉄骨や製缶板金、自動車関連などの業界に向け、鋼材へ穴あけ・切断加工を施す機械と金型を製造販売し、保守サービスや受託生産も行う仕組みです。",
+    "products": [
+      "形鋼加工機シリーズ（小型形鋼加工マシン、平板ドリルマシン、Ｈ形鋼ドリルマシン、板金加工マシン）",
+      "丸鋸切断機シリーズ（形鋼切断マシン、無垢材切断マシン）",
+      "金型（自社製品専用のプレス金型、汎用品のプレス金型）",
+      "交換部品",
+      "保守サービス"
+    ],
+    "customers": [
+      "建築鉄骨業界の企業",
+      "製缶板金業界の企業",
+      "自動車関連業界・鋼材加工業界の企業"
+    ],
+    "revenueSources": [
+      "金属加工機械の販売代金",
+      "金型の販売代金",
+      "部品の販売代金",
+      "保守サービスの対価",
+      "受託生産の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "タケダ機械",
+        "description": "1971年に石川県で設立され、東京証券取引所スタンダード市場に上場しています。連結子会社のタケダ精機とグループを構成し、2026年5月31日現在の従業員数は175人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "形鋼加工機・丸鋸切断機・金型の製造販売と受託生産",
+        "description": "各種鋼材に穴あけ・切断加工を施す形鋼加工機や丸鋸切断機、自社製品専用と汎用品のプレス金型を製造販売するほか、他社製品の部品加工や組立を請け負う受託生産を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "建築鉄骨・製缶板金・自動車関連などの業界",
+        "description": "国内は代理店・販売店を介したルート販売と直接販売、海外は現地の販売店などを通じて販売しています。主要な販売先には[[company:yamazen|株式会社山善]]や[[company:amada|株式会社アマダ]]があります。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高5,079百万円",
+        "description": "2026年5月期の売上高は5,079百万円で、形鋼加工機が3,471百万円、部品が583百万円、金型が445百万円、丸鋸切断機が249百万円などとなっています。前期に比べて3.9％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益298百万円",
+        "description": "2026年5月期の親会社株主に帰属する当期純利益は298百万円で、前期は293百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年5月期",
@@ -27,7 +157,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4318523000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 178,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +177,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4592678000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 176,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +197,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4999421000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 182,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +217,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5216019000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 175,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +237,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5463358000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 175,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +245,128 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1971,
+      "title": "株式会社竹田機械製作所として設立",
+      "description": "鉄筋加工機・鉄骨加工機の製造販売を目的に、石川県能美郡寺井町（現 石川県能美市）で株式会社竹田機械製作所として設立されました。",
+      "significance": "現在のタケダ機械の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "形鋼オートドリルシリーズの製造販売を開始",
+      "description": "形鋼オートドリルシリーズの製造販売を開始しました。",
+      "significance": "現在の主力製品である形鋼加工機につながる製品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "竹田機械販売株式会社を吸収合併し、タケダ機械株式会社に商号変更",
+      "description": "竹田機械販売株式会社を吸収合併し、同時に商号をタケダ機械株式会社に変更しました。",
+      "significance": "現在の社名になり、製造と販売を一体とする体制になった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "日本証券業協会に店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "本社及び工場を現在地に移転",
+      "description": "本社及び工場を、現在の石川県能美市の所在地に移転しました。",
+      "significance": "現在の生産拠点の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "丸鋸切断機シリーズの製造販売を開始",
+      "description": "丸鋸切断機シリーズの製造販売を開始しました。",
+      "significance": "現在の製品群の一つである丸鋸切断機が加わった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "株式会社ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "株式会社アマダマシナリーと業務提携",
+      "description": "株式会社アマダカッティング（現 株式会社アマダマシナリー）と業務提携を行いました。",
+      "significance": "大手工作機械メーカーのグループ会社との提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "タケダ精機株式会社を子会社化",
+      "description": "タケダ精機株式会社を子会社化しました。",
+      "significance": "現在の連結子会社がグループに加わった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しに伴い、東京証券取引所スタンダード市場に株式を上場しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "yamazen",
+      "relationship": "customer",
+      "description": "主要な顧客ごとの情報に主要な顧客として印字され、販売実績の主な相手先としても2025年5月期と2026年5月期の2期連続で印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "amada",
+      "relationship": "customer",
+      "description": "2025年5月期は主要な顧客ごとの情報に主要な顧客として印字され、2026年5月期も販売実績の主な相手先として印字されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +374,47 @@
       "publisher": "タケダ機械株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YZ4M.pdf",
       "publishedAt": "2026-08-28",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YZ4M",
+      "asOf": "2026-05-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「お客様視点のものづくり」を基本原点に、建築鉄骨業界・製缶板金業界へ形鋼加工機を、自動車関連業界・鋼材加工業界へ丸鋸切断機を主力製品として展開し、省人化・省段取りに係る新製品開発や提案営業、保守サービスの充実を進めるとしています。あわせて、ERPとSFAを導入する新基幹システムを2027年6月頃の稼働を目指して更新しています。",
+        "asOf": "2026-08-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "形鋼加工機は2026年5月期の売上高3,471百万円と全体の約7割を占める主力製品で、自社製品に使う金型や交換部品、保守サービスまで自社グループで担い、本機の販売と一体で提供できる体制を持っています。",
+        "basis": "【事業の内容】の品目区分と、【セグメント情報等】の製品及びサービスごとの情報に印字された外部顧客への売上高に基づきます。",
+        "asOf": "2026-08-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "金属加工機械事業の単一セグメントで、主力の形鋼加工機の需要は鋼構造物や物流倉庫・データセンターなどの建設需要と結びついています。加工した鋼材はビルの柱や梁などの部材や、自動車・機械関係の部品の素材に使われています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の中長期的な会社の経営戦略と、経営成績の分析に印字された事業環境の記述に基づきます。",
+        "asOf": "2026-08-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年5月期",
     "asOf": "2026-05-31",

@@ -1,18 +1,153 @@
 {
   "id": "thermae-yu-holdings",
   "code": "3521",
-  "name": "テルマー湯ホールディングス（旧会社名エコナックホールディングス）",
+  "name": "テルマー湯ホールディングス",
   "officialName": "テルマー湯ホールディングス株式会社（旧会社名　エコナックホールディングス株式会社）",
   "nameEn": "THERMAE-YU HOLDINGS CO.,LTD.（旧英訳名　ECONACH HOLDINGS CO.,LTD.）（注）2025年6月27日開催の第145回定時株主総会の決議により、2025年10月1日から会社名及び英訳名を上記のとおり変更いたしました。",
-  "description": null,
+  "shortNameEn": "THERMAE-YU HOLDINGS CO.,LTD.",
+  "description": "温浴施設「テルマー湯」の運営を中核に、不動産の賃貸と食品の企画開発・卸売を行う事業持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "entertainment",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    },
+    {
+      "industryId": "food",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "onyoku",
+      "name": "温浴",
+      "description": "連結子会社の株式会社テルマー湯と株式会社エレナが温浴施設を運営する、当社グループの中核事業です。温浴施設では温浴サービス、飲食サービス、マッサージサービスを提供し、西麻布店では宿泊施設で宿泊サービスも提供しています。2026年３月期の売上高は2,000百万円です。",
+      "customers": [
+        "温浴施設の来館者",
+        "宿泊施設の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "facility-fees",
+          "name": "温浴　施設利用料等",
+          "description": "温浴施設の入館・施設利用による売上です。新宿店（東京都新宿区歌舞伎町）は株式会社テルマー湯が、西麻布店（東京都港区）は株式会社エレナが運営しています。2026年３月期の売上高は1,403百万円です。",
+          "customers": [
+            "温浴施設の来館者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other-services",
+          "name": "温浴　その他のサービス等",
+          "description": "温浴施設内の飲食、マッサージ等による売上です。2026年３月期の売上高は596百万円です。",
+          "customers": [
+            "温浴施設の来館者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産",
+      "description": "当社がテナントビル及び住居の賃貸、不動産の売買・仲介を行う事業です。東京都港区西麻布のエコナック西麻布ビルの住居部分の賃貸が中心です。2026年３月期の売上高は46百万円です。",
+      "customers": [
+        "賃貸不動産の入居者・テナント",
+        "不動産の買い手"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "food",
+      "name": "食品",
+      "description": "2025年７月に連結子会社となった青柳食品販売株式会社が、食品、食材、健康食品の企画開発、ＯＥＭ製品の受託、卸売等を行う事業です。コンビニエンスストア・スーパー向けのおにぎりや調理麺等の具材の販売のほか、ペット用レトルト食品の製造も行っています。2026年３月期の売上高は647百万円です。",
+      "customers": [
+        "食品の販売先（コンビニエンスストア・スーパーなど）",
+        "ペットフードの購入者（ＥＣサイト）"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "子会社が温浴施設の運営で施設利用料や飲食・マッサージの対価を得て、親会社が保有不動産の賃料収入、食品子会社が食品の卸売で収益を上げる事業です。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "products": [
+      "温浴施設「テルマー湯」の施設利用サービス",
+      "温浴施設内の飲食・マッサージ等のサービス",
+      "宿泊サービス（テルマー湯 西麻布店）",
+      "賃貸不動産（エコナック西麻布ビル）",
+      "食品・食材・健康食品とOEM製品",
+      "ペット用レトルト食品・「Ｃｈｉｌｌわんシリーズ」"
+    ],
+    "customers": [
+      "温浴施設の来館者",
+      "宿泊施設の利用者",
+      "賃貸不動産の入居者・テナント",
+      "食品の販売先（コンビニエンスストア・スーパーなど）",
+      "ペットフードの購入者（ＥＣサイト）"
+    ],
+    "revenueSources": [
+      "温浴施設の施設利用料",
+      "飲食・マッサージ等のサービス対価",
+      "宿泊料",
+      "不動産の賃料収入",
+      "食品・ＯＥＭ製品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "テルマー湯ホールディングス",
+        "description": "東京都港区南青山に本店を置く事業持株会社で、2026年３月31日現在の連結従業員数は32人です。2025年10月１日にエコナックホールディングス株式会社から商号を変更しました。"
+      },
+      {
+        "kind": "offering",
+        "title": "温浴・不動産・食品の３事業",
+        "description": "連結子会社が温浴施設「テルマー湯」の新宿店と西麻布店を運営し、親会社が不動産の売買・賃貸を行い、食品子会社が食品の企画開発、ＯＥＭ製品の受託、卸売を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "来館者・入居者・食品の販売先",
+        "description": "温浴施設の来館者と宿泊客、賃貸不動産の入居者、コンビニエンスストアやスーパーなどの食品の販売先が顧客です。新宿店の入館者数は当期32万２千百人でした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高2,694百万円",
+        "description": "2026年３月期の売上高は2,694百万円でした。事業別では温浴が2,000百万円、食品が647百万円、不動産が46百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益160百万円",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は160百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +162,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4582816000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 16,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4632711000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 24,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +202,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4728389000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 30,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +222,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4924907000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 31,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +242,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4967762000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 32,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +250,170 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1926,
+      "title": "日本レース株式会社を設立",
+      "description": "岩井盛次が京都市中京区において日本レース株式会社を設立し、刺繍レースの生産を開始しました。",
+      "significance": "現在の会社の起源です。当時は繊維事業の会社でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京証券取引所に上場",
+      "description": "東京証券取引所に株式を上場しました（あわせて京都証券取引所にも上場）。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "エコナック株式会社に社名を変更",
+      "description": "社名をエコナック株式会社に変更し、本店登記を東京都中央区に移転しました。",
+      "significance": "繊維事業の会社からの転換が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "不動産事業を開始",
+      "description": "不動産事業部を設置し、不動産事業を開始しました。",
+      "significance": "現在の不動産事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "エコナックホールディングス株式会社に社名を変更",
+      "description": "社名をエコナックホールディングス株式会社に変更しました。",
+      "significance": "持株会社としての体制を明確にしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "株式会社テルマー湯が温浴事業を開始",
+      "description": "連結子会社の株式会社テルマー湯（旧ネスティー株式会社）が温浴事業を開始しました。",
+      "significance": "現在の主力である温浴事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "化粧品事業から撤退",
+      "description": "日本レース株式会社の株式を譲渡し、化粧品事業から撤退しました。",
+      "significance": "旧来事業からの撤退が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "繊維事業を廃止",
+      "description": "創業以来の繊維事業を廃止しました。",
+      "significance": "創業事業からの撤退が完了しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社エレナが温浴事業を開始",
+      "description": "連結子会社の株式会社エレナが温浴事業を開始し、温浴施設と宿泊施設が一体となったテルマー湯 西麻布店が加わりました。",
+      "significance": "温浴施設が２店舗体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の再選択により、プライム市場からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "青柳食品販売株式会社を連結子会社化し食品事業を開始",
+      "description": "青柳食品販売株式会社の株式を取得し連結子会社化しました。",
+      "significance": "食品事業が新たな報告セグメントとして加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "テルマー湯ホールディングス株式会社に社名を変更",
+      "description": "エコナックホールディングス株式会社からテルマー湯ホールディングス株式会社に商号を変更しました。",
+      "significance": "主力事業の名称を社名としました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第146期(2025/04/01－2026/03/31)",
-      "publisher": "テルマー湯ホールディングス株式会社（旧会社名　エコナックホールディングス株式会社）",
+      "publisher": "テルマー湯ホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YMXL.pdf",
       "publishedAt": "2026-06-29",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YMXL",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 当社は、2023年10月１日付で普通株式２株につき１株の割合で株式併合を実施しています。主要な経営指標等の株式関連の指標は、当該株式併合が第142期の期首に行われたと仮定して算定して印字されています（主要な経営指標等の推移の注記に記載）。本登録はこの算定後の数値に基づいています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営方針として、温浴事業を柱として経営の効率化を図り、不動産事業、食品事業と併せて売上及び利益の拡大を目指すとしています。更なる事業の多角化やＭ＆Ａを視野に入れ、新たな収益源の開拓に努めるとしています。2025年７月１日付で「新・中期経営計画2028」を開示しています。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "新宿・歌舞伎町と西麻布という都心の立地に温浴施設を２店舗持ち、西麻布店は温浴施設と宿泊施設が一体となった施設です。新宿店ではアウフグースのイベントや施設のリニューアルを重ねてリピーターの維持と新規顧客の取り込みを図っています。親会社が温浴施設の建物や土地を保有し、運営子会社に賃借する体制で、施設資産をグループ内に持っています。",
+        "basis": "【事業の内容】に印字された温浴施設２店舗の運営体制と西麻布店の宿泊施設、【関係会社の状況】に印字された運営子会社が当社から建物・機械装置・土地等を賃借している関係、MD&Aに印字された新宿店のイベント・リニューアルによる集客の取組に基づきます。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

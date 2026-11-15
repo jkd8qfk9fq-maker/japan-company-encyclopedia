@@ -4,18 +4,141 @@
   "name": "鳥越製粉",
   "officialName": "鳥越製粉株式会社",
   "nameEn": "THE TORIGOE CO.,LTD.",
-  "description": null,
+  "shortNameEn": "THE TORIGOE CO.,LTD.",
+  "description": "福岡県を地盤に、小麦粉やプレミックス、精麦などを製造販売する製粉会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "flour-milling",
+      "name": "製粉",
+      "description": "当社が小麦粉、ライ麦粉、ふすま（副産物）の製造を行い、当社が直接もしくは株式会社カネニをはじめとする卸売業者等を通じて販売しています。2025年12月期の外部顧客への売上高は11,632百万円で、区分の中で最大でした。",
+      "customers": [
+        "食品メーカーなどの得意先",
+        "卸売業者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "id": "food-products",
+      "name": "食品",
+      "description": "当社が家庭用・業務用プレミックス、イノベイトシリーズ（品質改良剤、日持向上剤）、その他加工食品の製造を行い、乾麺類やCSM社（ウルマ・シュパッツ）との業務提携による商品等の仕入れも行っています。連結子会社の株式会社大田ベーカリーがパン・菓子等の製造・販売を、久留米製麺株式会社が生麺類の製造・販売を行っています。2025年12月期の外部顧客への売上高は6,845百万円でした。",
+      "customers": [
+        "食品メーカーなどの得意先",
+        "卸売業者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "id": "barley-milling",
+      "name": "精麦",
+      "description": "連結子会社の鳥越精麦株式会社、石橋工業株式会社及び中島精麦工業株式会社が丸麦、押麦、もち麦、麦糠（副産物）の製造を行い、主食用商品の仕入れも行っています。2025年12月期の外部顧客への売上高は6,400百万円でした。",
+      "customers": [
+        "食品メーカーなどの得意先",
+        "卸売業者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "id": "feed",
+      "name": "飼料",
+      "description": "連結子会社の石橋工業株式会社及び中島精麦工業株式会社が飼料の製造販売を行い、株式会社カネニが飼料用商品の仕入販売を行っています。2025年12月期の外部顧客への売上高は1,314百万円でした。",
+      "customers": [
+        "飼料の需要家",
+        "卸売業者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "id": "storage",
+      "name": "その他",
+      "description": "当社及び石橋工業株式会社が農産物の保管業務を行っています。2025年12月期の外部顧客への売上高は56百万円でした。",
+      "customers": [
+        "農産物の保管を委託する事業者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関連情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "小麦粉やライ麦粉の製粉、プレミックスなどの食品、丸麦や押麦などの精麦を製造し、当社が直接または卸売業者等を通じて販売して対価を得る事業モデルです。",
+    "products": [
+      "小麦粉、ライ麦粉、ふすま",
+      "家庭用・業務用プレミックス、品質改良剤、日持向上剤、その他加工食品",
+      "丸麦、押麦、もち麦、麦糠",
+      "飼料",
+      "パン・菓子、生麺類"
+    ],
+    "customers": [
+      "食品メーカーなどの得意先",
+      "卸売業者を通じた販売先",
+      "飼料の需要家"
+    ],
+    "revenueSources": [
+      "製粉製品の販売対価",
+      "食品・プレミックス製品の販売対価",
+      "精麦製品の販売対価",
+      "飼料の販売対価",
+      "農産物の保管料・荷役料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "鳥越製粉",
+        "description": "福岡県うきは市に本店を置き、当社と子会社7社の計8社でグループを構成します。2025年12月期の連結従業員数は354人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "製粉・食品・精麦・飼料",
+        "description": "小麦粉やライ麦粉の製粉、プレミックスや品質改良剤などの食品、丸麦や押麦などの精麦、飼料を製造します。子会社ではパン・菓子や生麺類も製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "卸売業者等を通じた販売",
+        "description": "当社が直接、もしくは連結子会社の株式会社カネニをはじめとする卸売業者等を通じて、食品メーカーなどの得意先へ販売します。売上高の10％以上を占める相手先はなく、本邦の外部顧客への売上高が90％を超えています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年12月期の売上高は26,250百万円で、前期比0.3％増でした。区分別では製粉11,632百万円、食品6,845百万円、精麦6,400百万円、飼料1,314百万円、その他56百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は1,132百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -30,7 +153,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 31908433000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 382,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,12 +173,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 33543730000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 369,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第88期の期首から適用しており、第88期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -70,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 34482961000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 360,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 35936260000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 354,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,7 +234,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 36794097000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 354,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,8 +242,250 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1935,
+      "title": "株式会社鳥越商店を設立",
+      "description": "米、雑穀の売買及び問屋業、精米業などを目的として、福岡県吉井町（現・福岡県うきは市）に株式会社鳥越商店を設立しました。",
+      "significance": "現在の当社の創業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1940,
+      "title": "製粉・精麦業に転換",
+      "description": "米穀配給統制令の施行に伴い、製粉・精麦業に転換しました。",
+      "significance": "現在の製粉・精麦事業の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "鳥越製粉株式会社に商号を変更",
+      "description": "商号を鳥越製粉株式会社に変更しました。",
+      "significance": "現在の商号の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第二部と福岡証券取引所に上場",
+      "description": "株式を東京証券取引所市場第二部及び福岡証券取引所に上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "ドーン・フード・プロダクツ社と技術提携",
+      "description": "アメリカのドーン・フード・プロダクツ社と技術提携しました。",
+      "significance": "海外企業との提携の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "ウルマ・シュパッツ社と業務提携",
+      "description": "ドイツのウルマ・シュパッツ社（現・ドイツのＣＳＭ社）と独占輸入販売に関する業務提携をしました。",
+      "significance": "現在のCSM社との提携関係の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "株式が東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "ファイバースター社と業務提携",
+      "description": "アメリカのファイバースター社と独占輸入販売に関する業務提携をしました。",
+      "significance": "機能性食品素材の仕入販売の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "株式会社カネニを子会社化",
+      "description": "福岡県の株式会社カネニを子会社化しました。",
+      "significance": "卸売機能を持つ子会社の取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "寺彦製粉株式会社を吸収合併",
+      "description": "連結子会社の寺彦製粉株式会社を吸収合併し、静岡工場としました。",
+      "significance": "製粉拠点の再編です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "中島精麦工業株式会社を子会社化",
+      "description": "福岡県の中島精麦工業株式会社を子会社化しました。",
+      "significance": "精麦事業の拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "石橋工業株式会社を設立",
+      "description": "100％出資の子会社として石橋工業株式会社を設立しました。",
+      "significance": "精麦・飼料事業の再編の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "鳥越精麦株式会社を設立",
+      "description": "100％出資の子会社として鳥越精麦株式会社を設立しました。",
+      "significance": "精麦事業の受け皿会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "鳥越グレインホールディングス株式会社を設立",
+      "description": "鳥越精麦株式会社、石橋工業株式会社、中島精麦工業株式会社及び株式会社カネニの4社が実施する共同株式移転の方法により、中間持株会社の鳥越グレインホールディングス株式会社を設立しました。あわせて、当社の精麦・飼料事業を鳥越精麦株式会社へ吸収分割の方法により承継しました。",
+      "significance": "現在の精麦・飼料事業のグループ体制の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所の市場第一部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "calbee",
+      "relationship": "customer",
+      "description": "当社事業における得意先であり、取引関係の維持・強化及び今後の事業発展を目的として、同社株式1,936,000株を保有しております。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "parker",
+      "relationship": "supplier",
+      "description": "当社事業における仕入先であり、取引関係の維持・強化及び今後の事業発展を目的として、同社株式105,000株を保有しております。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "business-partner",
+      "description": "当社事業における仕入・販売先であり、取引関係の維持・強化及び今後の事業発展を目的として、同社株式20,000株を保有しております。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "chikaranomoto-holdings",
+      "relationship": "customer",
+      "description": "当該会社の子会社は当社事業における得意先であり、取引関係の維持・強化及び今後の事業発展を目的として、同社株式300,000株を保有しております。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kyushu-railway",
+      "relationship": "customer",
+      "description": "当該会社の子会社は当社事業における得意先であり、取引関係の維持・強化及び今後の事業発展を目的として、同社株式94,900株を保有しております。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "saibu-gas-holdings",
+      "relationship": "customer",
+      "description": "当該会社の関連会社は当社事業における得意先であり、取引関係の維持・強化及び今後の事業発展を目的として、同社株式120,800株を保有しております。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sagami-holdings",
+      "relationship": "customer",
+      "description": "当該会社の子会社は当社事業における得意先であり、取引関係の維持・強化及び今後の事業発展を目的として、同社株式130,815株を保有しております。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "higashimaru",
+      "relationship": "customer",
+      "description": "当社事業における得意先であり、取引関係の維持・強化及び今後の事業発展を目的として、同社株式49,000株を保有しております。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "royal-holdings",
+      "relationship": "customer",
+      "description": "当該会社の子会社は当社事業における得意先であり、取引関係の維持・強化及び今後の事業発展を目的として、同社株式11,880株を保有しております。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yoshinoya-holdings",
+      "relationship": "customer",
+      "description": "当該会社の子会社は当社事業における得意先であり、取引関係の維持・強化及び今後の事業発展を目的として、同社株式2,602株を保有しております。株式数は取引先持株会における定期買付により増加しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -127,13 +493,47 @@
       "publisher": "鳥越製粉株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XTAP.pdf",
       "publishedAt": "2026-03-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XTAP",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年12月期を初年度とする3カ年の中期経営計画「TTC150 Stage３」を策定し、その最終年度に当たる2026年12月期に向けて、製粉事業では顧客に選ばれる製品の創出と生産性や品質の向上につながる設備投資、食品事業では顧客ニーズを捉えたスピード重視の製品開発、精麦・飼料事業では原料と品質にこだわり鳥越グレインホールディングス株式会社傘下の精麦・飼料事業4社の強みを活かした体制の構築、デジタル技術を使った企業革新、IR強化と株主還元に取り組んでいます。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "製粉と精麦の両方を手がけ、精麦・飼料事業は鳥越グレインホールディングス株式会社を中間持株会社とする4社体制で運営しています。食品では、ドイツのCSM社（ウルマ・シュパッツ）との業務提携による商品の仕入れ販売など、海外企業との提携による商品調達も行っています。",
+        "basis": "【関連情報】の製品及びサービスごとの情報、【事業の内容】の区分別の事業内容、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】における区分別の状況の記載に基づきます。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "単一セグメントの中で製粉が最大の区分であり、2025年12月期は業務用小麦粉の出荷数量が増加した一方、輸入小麦の政府売渡価格の引き下げに伴う製品価格の値下げで減収となりました。精麦は販売価格の上昇と食料用大麦の出荷数量の増加により増収となっています。",
+        "basis": "【関連情報】の製品及びサービスごとの情報と、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】における区分別の状況の記載に基づきます。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

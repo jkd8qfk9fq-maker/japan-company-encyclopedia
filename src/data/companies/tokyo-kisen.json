@@ -1,18 +1,113 @@
 {
   "id": "tokyo-kisen",
   "code": "9193",
-  "name": "東京汽船",
+  "name": "tokyo-kisen",
   "officialName": "東京汽船株式会社",
   "nameEn": "Tokyo Kisen Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Tokyo Kisen Co.,Ltd.",
+  "description": "東京湾を中心に曳船事業を中核とし、海事関連事業と旅客船事業を営む海運会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "tugboat",
+      "name": "曳船事業",
+      "description": "東京湾の各港で、大型船の離着桟を補助するハーバータグや、浦賀水道などの航路で船舶を護衛するエスコートタグなどの曳船サービスを提供する事業です。東京湾口の水先艇（パイロットボート）の運航や、危険物積載船などに付き添う警戒船業務も行っています。当社と連結子会社の東港サービス株式会社、東亜汽船株式会社が担っています。",
+      "customers": [
+        "東京湾の各港に入出港する船舶の運航会社",
+        "水先艇を利用する船舶の運航会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "maritime-services",
+      "name": "海事関連事業",
+      "description": "洋上風力発電の作業員を沖合の発電設備まで運ぶ交通船（CTV）の運航を中心に、港内の交通船事業、保有船舶の貸船サービス、海上防災事業などを行う事業です。当社と連結子会社の株式会社ポートサービスが担っています。",
+      "customers": [
+        "洋上風力発電事業者",
+        "交通船を利用する港湾関係者",
+        "貸船を利用する海運会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "passenger-ship",
+      "name": "旅客船事業",
+      "description": "連結子会社の東京湾フェリー株式会社が神奈川県の久里浜港と千葉県の金谷港を結ぶカーフェリーを運航する事業です。フェリーターミナルでの売店・食堂事業も含みます。横浜港の観光船事業は、2025年5月から持分法適用関連会社のYCruise株式会社が担っています。",
+      "customers": [
+        "カーフェリーの旅客",
+        "売店・食堂の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "曳船サービスを中核に、洋上風力発電向け交通船の運航などの海事関連事業とカーフェリー等の旅客船事業を営み、運航サービスの料金や旅客運賃で収益を得る事業モデルです。",
+    "products": [
+      "曳船サービス（ハーバータグ、エスコートタグ、湾口水先艇、警戒船業務）",
+      "洋上風力発電交通船（CTV）の運航、交通船事業、貸船サービス、海上防災事業",
+      "カーフェリー事業（久里浜～金谷航路）、売店・食堂事業"
+    ],
+    "customers": [
+      "東京湾の各港に入出港する船舶の運航会社",
+      "洋上風力発電事業者",
+      "カーフェリーの旅客"
+    ],
+    "revenueSources": [
+      "曳船サービスの作業料",
+      "交通船の運航料金と船舶の貸船料",
+      "カーフェリーの運賃と売店・食堂の売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京湾の海上安全を支える海運会社",
+        "description": "東京汽船は1947年に創立し、横浜市に本店を置く海運会社で、「海上安全のサポート」を社是としています。当社と連結子会社5社など、持分法適用会社を含むグループで事業を行い、連結の従業員数は446人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "曳船・海事関連・旅客船の3事業を提供",
+        "description": "曳船事業では大型船の離接岸を補助する曳船サービスや水先艇の運航、海事関連事業では洋上風力発電向け交通船（CTV）の運航や貸船、旅客船事業では久里浜と金谷を結ぶカーフェリーの運航を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "船舶運航会社や洋上風力発電事業者が主な顧客",
+        "description": "主な顧客は、東京湾に入出港する船舶の運航会社や、洋上風力発電の建設・保守を行う事業者、カーフェリーを利用する旅客です。顧客別の開示では、東京湾海事事業協同組合が主要な顧客として挙げられています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は13,144百万円",
+        "description": "2026年3月期の売上高は13,144百万円で、内訳は曳船事業が9,517百万円、海事関連事業が1,956百万円、旅客船事業が1,670百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は5,046百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は5,046百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +122,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21061620000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 468,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +142,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21652686000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 466,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +162,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22601977000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 483,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24794980000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 488,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +202,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 29344752000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 446,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -116,7 +211,62 @@
     }
   ],
   "history": [],
-  "relatedCompanies": [],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsui-o-s-k-lines",
+      "relationship": "major-shareholder",
+      "description": "株式会社商船三井は、2026年3月31日現在、当社の発行済株式（自己株式を除く）の11.18％を保有する大株主です。当社は、商船三井が曳船事業における顧客であることから、取引関係の強化・維持を図るため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "keikyu",
+      "relationship": "business-partner",
+      "description": "京浜急行電鉄株式会社は旅客船事業の提携先であり、当社は、グループ会社における集客等の営業推進を図るため同社の株式を保有しています。同社は、2026年3月31日現在、当社の発行済株式（自己株式を除く）の5.02％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokai-kisen",
+      "relationship": "business-partner",
+      "description": "東海汽船株式会社とは営業取引関係があり、当社は、情報共有し協働して当社グループの旅客船事業会社の収益力向上を図るため同社の株式を保有しています。同社は、2026年3月31日現在、当社の発行済株式（自己株式を除く）の3.28％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fuji-kyuko",
+      "relationship": "business-partner",
+      "description": "富士急行株式会社は旅客船事業の提携先であり、当社は、グループ会社における集客等の営業推進を図るため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hotel-newgrand",
+      "relationship": "business-partner",
+      "description": "株式会社ホテル、ニューグランドは横浜の地元企業であり、当社は、地元企業との連携及び旅客船事業におけるグループ会社の集客等の営業推進を図るため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toyo-wharf-and-warehouse",
+      "relationship": "customer",
+      "description": "東洋埠頭株式会社は曳船事業における顧客であり、当社は、取引関係の強化・維持と川崎港での事業推進のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +274,47 @@
       "publisher": "東京汽船株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEHQ.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YEHQ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "主力の曳船事業では、増加するコストに見合う曳船料率の改定を2025年5月に実施し、今後は運航定員の削減や船隊規模の最適化、AIを使った配船支援システムの導入による効率化を進めるとしています。環境面では、2023年に就航したハイブリッド型電気推進曳船の運航で得た知見を生かし、2030年を目途に純バッテリー曳船の投入を目指すとしています。洋上風力発電向け事業は本業のひとつとして成長させる方針で、交通船（CTV）に加えてSOV等の事業開発や船員の教育訓練に取り組むとしています。旅客船事業では、東京湾フェリーが2027年秋から新造船の裸用船による船舶の代替を行う計画です。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "当社グループの曳船は、浦賀水道・中ノ瀬航路における船舶のエスコート業務、東京湾各港における船舶の離着桟補助業務、LNGバース等での警戒船業務、防災業務、緊急出動・海難救助に従事し、東京湾全域にわたって船舶の安全航行をサポートする体制を特徴としています。洋上風力発電向けでは、2013年から交通船（CTV）を手がけてきた実績があります。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高13,144百万円の内訳は、曳船事業が9,517百万円（約72.4％）、海事関連事業が1,956百万円（約14.9％）、旅客船事業が1,670百万円（約12.7％）であり、曳船事業が大半を占めています。顧客別では、東京湾海事事業協同組合向けが売上高の11.08％と印字されています。",
+        "basis": "セグメント情報等の外部顧客への売上高及び関連情報の主要な顧客ごとの情報に印字された金額と割合に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

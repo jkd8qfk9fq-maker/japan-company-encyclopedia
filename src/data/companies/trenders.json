@@ -4,15 +4,136 @@
   "name": "トレンダーズ",
   "officialName": "トレンダーズ株式会社",
   "nameEn": "Trenders, Inc.",
-  "description": null,
+  "shortNameEn": "Trenders, Inc.",
+  "description": "SNSを通じたマーケティング支援と美容メディアの運営、イベントやECの支援を手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "media",
+      "primary": true
+    },
+    {
+      "industryId": "entertainment",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "marketing",
+      "name": "マーケティング事業",
+      "description": "SNSを軸とした統合型のプランニングで企業のマーケティングを支援するマーケティング領域と、自由診療クリニックのマーケティングを支援するメディカル領域からなる事業です。2026年3月期の外部顧客への売上高は7,690百万円です。",
+      "customers": [
+        "マーケティング支援を求める企業",
+        "自由診療クリニック"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "marketing-planning",
+          "name": "マーケティング領域",
+          "description": "SNSファーストな統合型プランニングによるマーケティング支援を行う領域です。トレンダーズのほか、株式会社Mimi Beauty、株式会社zenplus、CARAFUL株式会社が担い、美容メディア「MimiTV」の運営も含みます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "medical",
+          "name": "メディカル領域",
+          "description": "自由診療クリニックのマーケティング支援を行う領域です。トレンダーズのほか、美容クリニック専売品の開発等を行う株式会社クレマンスラボラトリーと一般社団法人涼香会が担っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "ec-consulting",
+      "name": "ECコンサルティング事業",
+      "description": "ECモールに特化した戦略コンサルティングと運用代行のサービスを提供する事業です。しるし株式会社とECのしるし株式会社が担っています。2026年3月期の外部顧客への売上高は456百万円です。",
+      "customers": [
+        "ECモールへの出店企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "investment",
+      "name": "インベストメント事業",
+      "description": "社債や成長企業の株式の取得などによる投資運用を行う事業です。トレンダーズが担っています。2026年3月期の外部顧客への売上高は131百万円です。",
+      "customers": [
+        "投資対象となる成長企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "女性向けのマーケティング支援を中核に、SNSを軸とした統合型プランニングや自由診療クリニックの支援、美容メディアの運営を行い、イベント事業やECコンサルティングへ広げる仕組みです。",
+    "products": [
+      "SNSファーストな統合型プランニングによるマーケティング支援",
+      "美容メディア「MimiTV」",
+      "自由診療クリニック向けマーケティング支援",
+      "イベント総合プロデュース",
+      "ECモール向け戦略コンサルティング・運用代行",
+      "社債や成長企業株式への投資運用"
+    ],
+    "customers": [
+      "マーケティング支援を求める企業",
+      "自由診療クリニック",
+      "ECモールへの出店企業"
+    ],
+    "revenueSources": [
+      "マーケティング支援サービスの対価",
+      "メディア運営や広告による収入",
+      "コンサルティング・運用代行の対価",
+      "社債の利息など投資運用による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "トレンダーズ",
+        "description": "2000年に東京都渋谷区で設立され、東京証券取引所グロース市場に上場しています。連結子会社7社とグループを構成し、2026年3月31日現在の従業員数は277人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "マーケティング支援とメディア、EC支援、投資運用",
+        "description": "SNSファーストな統合型プランニングによるマーケティング支援と自由診療クリニックの支援を行い、美容メディアの運営、イベントのプロデュース、ECモール向けのコンサルティング、社債や成長企業株式への投資運用も手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "企業と自由診療クリニック",
+        "description": "企業のマーケティング部門やECモールへの出店企業、自由診療クリニックなどが顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高8,278百万円",
+        "description": "2026年3月期の売上高は8,278百万円で、マーケティング事業が7,690百万円、ECコンサルティング事業が456百万円、インベストメント事業が131百万円です。前期に比べて33.7％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益216百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は216百万円で、前期は600百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +148,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2792212000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 138,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +168,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3377943000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 162,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4137040000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 215,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +208,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4363476000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 243,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +228,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4286644000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 277,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +236,138 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2000,
+      "title": "会社を設立し、女性に特化したマーケティングを開始",
+      "description": "東京都渋谷区桜丘町にトレンダーズを設立し、流行に敏感な女性を組織化して母集団に対してマーケティング調査を行う「女性に特化したマーケティング」サービスを開始しました。",
+      "significance": "現在のマーケティング事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "サイバーエージェントの連結子会社に",
+      "description": "株式会社サイバーエージェントの連結子会社となりました。",
+      "significance": "大手インターネット企業のグループに入った出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "サイバーエージェントの持分法適用会社に移行",
+      "description": "株式会社サイバーエージェントから当社役員等への株式譲渡により、同社の持分法適用会社となりました。",
+      "significance": "資本関係が一段緩やかになった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "サイバーエージェントの持分法適用会社から除外",
+      "description": "株式会社サイバーエージェントから当社役員等への株式譲渡により、同社の持分法適用会社から除外されました。",
+      "significance": "サイバーエージェントとの資本関係が解消された出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "株式会社クラリティ・アソシエイツを吸収合併",
+      "description": "株式会社クラリティ・アソシエイツを吸収合併しました。",
+      "significance": "事業を取り込んだ出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズ市場に株式を上場しました。",
+      "significance": "株式上場の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "株式会社H&BCを子会社化",
+      "description": "化粧品の製造販売を行う株式会社H&BCの全株式を取得し、連結子会社化しました。",
+      "significance": "美容領域の事業を取り込んだ出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "株式会社Smarpriseを設立",
+      "description": "スマートデバイスに特化したマーケティング戦略会社として株式会社Smarpriseを設立しました。",
+      "significance": "モバイル領域の体制づくりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、マザーズ市場からグロース市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社zenplusを子会社化",
+      "description": "イベント総合プロデュースを手がける株式会社zenplusを子会社化しました。",
+      "significance": "イベント事業を取り込み、SNSとリアルイベントを連動させる体制の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "しるし株式会社を子会社化",
+      "description": "ECモールに特化した戦略コンサルティング・運用代行サービスを手がけるしるし株式会社の全株式を取得し、同社とECのしるし株式会社を連結子会社化しました。",
+      "significance": "ECコンサルティング事業が新設される契機となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "istyle",
+      "relationship": "other-affiliated-company",
+      "description": "その他の関係会社であり、2026年3月31日現在でトレンダーズの議決権の31.6％を保有しています。資本業務提携契約を締結しており、役員の派遣を受け、メディアへの出稿の取引があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "kao",
+      "relationship": "customer",
+      "description": "マーケティング事業の主要な顧客であり、2025年3月期と2026年3月期のいずれも主要な顧客として開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +375,47 @@
       "publisher": "トレンダーズ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YNGH.pdf",
       "publishedAt": "2026-06-30",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YNGH",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "事業ドメインを従来の「SNSマーケティング」から「SNS×リテールマーケティング」に発展させ、美容カテゴリだけでなくより幅広いカテゴリの顧客企業に、より付加価値の高いサービスを提供するとしています。SNSマーケティングと、連結子会社の株式会社zenplusが展開するイベント事業、しるし株式会社が展開するECコンサルティング事業を掛け合わせ、商品を「知る」「体験する」「購入する」をつなぐリテールマーケティング企業としての成長を目指すとしています。",
+        "asOf": "2026-06-30",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "流行に敏感な女性を組織化した生活者の母集団をもとにマーケティング調査を行うサービスから出発した経緯があり、美容領域の知見と、美容メディア「MimiTV」の運営、自由診療クリニック向けの支援といった美容に特化した体制が強みです。",
+        "basis": "【沿革】に、流行に敏感な女性を組織化し母集団に対してマーケティング調査を行う「女性に特化したマーケティング」サービスを開始したことが印字され、【事業の内容】に美容メディア「MimiTV」を含むマーケティング領域と、自由診療クリニックを支援するメディカル領域の体制が印字されています。",
+        "asOf": "2026-06-30",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "拡大を続けるインターネット広告市場の中で、SNSを軸としたマーケティング支援を行う事業者です。主要な顧客である花王株式会社への販売実績は、2026年3月期の総販売実績の12.8％を占めています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】にインターネット広告市場の規模と成長が印字され、セグメント情報の【関連情報】（主要な顧客ごとの情報）と販売実績に、花王株式会社への販売実績と総販売実績に対する割合12.8％が印字されています。",
+        "asOf": "2026-06-30",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

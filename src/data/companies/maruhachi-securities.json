@@ -4,15 +4,124 @@
   "name": "丸八証券",
   "officialName": "丸八証券株式会社",
   "nameEn": "Maruhachi Securities Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Maruhachi Securities",
+  "description": "名古屋市に本店を置く証券会社で、金融商品取引業を中核に、株式や投資信託などの売買の取次ぎや引受けを通じて顧客の資産運用を支援しています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "investment-financial-services",
+      "name": "投資・金融サービス業",
+      "description": "金融商品取引業を中核とする単一の報告セグメントで、顧客に対して資産運用の幅広いサービスを提供しています。名古屋市中区の本店と愛知県内の支店4か店（西尾・蒲郡・安城・庄内）の店舗網で営業しています。",
+      "customers": [
+        "愛知県を中心とする個人の投資家",
+        "地域の企業やその役職員など"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "brokerage",
+          "name": "有価証券の売買の媒介・取次ぎ等",
+          "description": "顧客の委託を受けて有価証券の売買を執行することを中心とする業務で、株式の売買委託による委託手数料が受入手数料の中心です。",
+          "customers": [
+            "愛知県を中心とする個人の投資家",
+            "地域の企業など"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "trading",
+          "name": "有価証券の売買（自己売買）",
+          "description": "自己の計算により有価証券の売買を行う業務で、トレーディング業務を含みます。",
+          "customers": [
+            "証券市場の参加者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "underwriting-offering",
+          "name": "引受け・売出しと募集の取扱い",
+          "description": "有価証券の発行に際して引受けや売出しを行う業務と、発行者等の委託を受けて新たに発行される有価証券の募集や既発行有価証券の売出しを取り扱う業務です。投資信託の販売もこの業務に含まれます。",
+          "customers": [
+            "有価証券の発行者",
+            "投資信託などを購入する個人の投資家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "顧客の委託による株式売買の委託手数料や投資信託の販売に伴う手数料、自己の計算による有価証券の売買などから収益を得る事業モデルです。",
+    "products": [
+      "有価証券の売買（トレーディング業務を含む）",
+      "有価証券の売買の媒介・取次ぎ・代理",
+      "有価証券の引受け・売出し",
+      "投資信託などの募集・売出しの取扱い"
+    ],
+    "customers": [
+      "愛知県を中心とする個人の投資家",
+      "地域の企業やその役職員など"
+    ],
+    "revenueSources": [
+      "株式の売買委託などによる受入手数料",
+      "投資信託の販売手数料や信託報酬",
+      "自己の計算による有価証券の売買による収益",
+      "信用取引などによる金融収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "名古屋に本店を置く証券会社",
+        "description": "丸八証券株式会社は名古屋市中区に本店を置く証券会社です。1944年に赤座株式店を改組して設立されました。従業員数は138人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "証券業務を通じた資産運用サービスを提供",
+        "description": "金融商品取引業を中核とする「投資・金融サービス業」を単一のセグメントとし、有価証券の売買や売買の媒介・取次ぎ・代理、引受け・売出し、募集・売出しの取扱いなど、資産運用の幅広いサービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域の個人投資家などが主な顧客",
+        "description": "地域に密着した対面による提案営業を柱とし、本店と愛知県内の支店4か店を通じて個人の顧客を中心にサービスを提供しています。外部顧客からの純営業収益のうち10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益は3,576百万円",
+        "description": "2026年3月期の営業収益は3,576百万円で、そのうち受入手数料が2,718百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は684百万円",
+        "description": "2026年3月期の当期純利益は684百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +136,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7449000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 145,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +158,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7354000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 143,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +180,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7832000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 139,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +202,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7593000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 139,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +224,138 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8208000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 138,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1944,
+      "title": "丸八証券の設立",
+      "description": "1944年3月に、企業整備法に基づき赤座株式店（1936年2月創業）を改組し、丸八証券株式会社が設立されました。",
+      "significance": "同社の設立です。創業は1936年の赤座株式店に遡ります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "証券業者として登録",
+      "description": "1948年9月に、証券取引法に基づく証券業者として登録を受けました。",
+      "significance": "戦後の証券業の再出発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "名古屋証券取引所の正会員に",
+      "description": "1949年4月に、名古屋証券取引所の設立に伴い、その正会員となりました。",
+      "significance": "地元名古屋の市場との結びつきの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "免許制への移行と営業権の譲受け",
+      "description": "1966年から1968年にかけて旧一色証券・旧都築証券・旧幡豆証券から営業権を譲り受け、1968年4月には免許制への移行に伴い証券取引法に基づく免許を取得しました。",
+      "significance": "愛知県内の営業基盤の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "東京証券取引所の正会員に",
+      "description": "1988年5月に東京証券取引所の正会員となりました。",
+      "significance": "全国市場との結びつきの強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "2004年11月に日本証券業協会に株式を店頭登録し、同年12月に店頭登録を取り消してジャスダック証券取引所に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "エース証券と業務提携",
+      "description": "2008年11月にエース証券株式会社と業務提携契約を締結しました。",
+      "significance": "後の資本関係につながる提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "エース証券の子会社に",
+      "description": "2011年にエース証券株式会社の子会社となりました。",
+      "significance": "経営体制の転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "東海東京フィナンシャル・ホールディングスの子会社に",
+      "description": "2021年4月に、エース証券株式会社の株式を東海東京フィナンシャル・ホールディングス株式会社が公開買付けで取得したことにより同社の子会社となり、同年11月に同社が保有する当社の株式を取得したことにより、親会社は同社の1社のみとなりました。",
+      "significance": "現在の親会社の傘下に入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "2022年4月に、東京証券取引所の市場区分見直しによりスタンダード市場に株式を移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tokai-tokyo-financial-holdings",
+      "relationship": "parent",
+      "description": "親会社で、持株会社として当社の議決権の43.6％を保有しています。議決権の所有割合は50％以下ですが、実質支配力基準に基づく親会社に該当すると印字されており、役員の受入れがあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "nomura-holdings",
+      "relationship": "business-partner",
+      "description": "特定投資株式として保有する銘柄で、保有目的には「当社の取引先として長期にわたり親密な取引関係を有している」と個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +363,47 @@
       "publisher": "丸八証券株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEDZ.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YEDZ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年度から2027年度までの3ヵ年を対象とする中期経営計画に取り組んでいます。経営戦略として「営業基盤の拡大」「推進体制の強化」「収益構造の安定」の実現を引き続き目指し、重点施策として資産運用の高度化、資産形成支援の強化、世代間の円滑な資産承継を掲げています。地域に密着した対面営業を通じて、資産性格を鑑みた適切な助言、的確な金融商品の提案、適時な投資情報の提供を行い、顧客の資産形成・資産運用を支援するとしています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "地域に密着した対面による提案営業をビジネスの柱とし、国内外の株式、投資信託および債券など、顧客のニーズに合わせた商品ラインナップの拡充を図っています。地元企業や自治体の役職員を対象としたセミナーを通じて金融リテラシーの向上を後押しし、高齢社会に対応する「家族サポート証券口座」の取扱いを開始するなど、地域に根差した顧客本位の業務運営を行っています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の営業収益3,576百万円のうち受入手数料は2,718百万円で、その内訳は委託手数料が1,777百万円、募集・売出し等の取扱手数料が596百万円、その他の受入手数料が344百万円です。外部顧客への純営業収益は本邦が90％を超えており、純営業収益の10％以上を占める特定の顧客はありません。",
+        "basis": "主要な経営指標等の推移に印字された受入手数料と、経営成績の分析に印字された受入手数料の内訳、セグメント情報等の関連情報に基づきます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,108 @@
   "name": "トマト銀行",
   "officialName": "株式会社トマト銀行",
   "nameEn": "TOMATO BANK, LTD．",
-  "description": null,
+  "shortNameEn": "TOMATO BANK",
+  "description": "岡山県に本店を置く地方銀行で、銀行業務を中核に、子会社を通じてリース業務とクレジットカード業務を営んでいます。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "banking",
+      "name": "銀行業",
+      "description": "当社の本店ほか営業店において、預金業務、貸出業務、内国為替業務、外国為替業務、商品有価証券業務、有価証券投資業務などを行う基幹事業です。2026年3月期の外部顧客への経常収益は20,349百万円で、連結経常収益の76.6％を占めます。連結子会社のトマトビジネス株式会社が銀行事務に係る関連業務を行っています。",
+      "customers": [
+        "岡山県内を中心とする法人の顧客",
+        "岡山県内を中心とする個人の顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "leasing",
+      "name": "リース業",
+      "description": "連結子会社のトマトリース株式会社が産業機械等のリース業務を行う事業です。2026年3月期の外部顧客への経常収益は5,964百万円でした。",
+      "customers": [
+        "法人の顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "credit-card",
+      "name": "クレジットカード業",
+      "description": "連結子会社のトマトカード株式会社がクレジットカードの取扱いに関する業務を行う事業です。重要性が乏しいため、セグメント情報では「その他」に区分されており、2026年3月期の外部顧客への経常収益は263百万円でした。",
+      "customers": [
+        "クレジットカードの会員"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "預金・貸出・為替などの銀行業務を中核とし、連結子会社を通じてリース業務とクレジットカード業務を営み、地域の法人・個人に金融サービスを提供しています。",
+    "products": [
+      "預金・貸出・為替・有価証券投資などの銀行業務",
+      "リース業務（産業機械等）",
+      "クレジットカード業務"
+    ],
+    "customers": [
+      "岡山県内を中心とする法人の顧客",
+      "岡山県内を中心とする個人の顧客"
+    ],
+    "revenueSources": [
+      "資金運用収益（貸出金利息等）",
+      "役務取引等収益（為替業務・預金・貸出業務の手数料等）",
+      "リース業務の収益",
+      "クレジットカード業務の収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "トマト銀行グループ",
+        "description": "トマト銀行グループは当社と連結子会社3社で構成され、2026年3月31日現在の連結従業員数は746人です。本店を岡山市北区に置き、本支店61店を展開しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "銀行業務を中核とする金融サービス",
+        "description": "当社は預金業務、貸出業務、内国為替業務、外国為替業務、商品有価証券業務、有価証券投資業務などを行い、子会社のトマトリース株式会社がリース業務、トマトカード株式会社がクレジットカード業務、トマトビジネス株式会社が銀行事務の関連業務を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域の法人・個人の顧客",
+        "description": "主な営業基盤は岡山県内であり、法人・個人の顧客に金融サービスを提供しています。特定の顧客に対する経常収益で連結経常収益の10％以上を占めるものはありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "経常収益",
+        "description": "2026年3月期の連結経常収益は26,577百万円でした。事業別では銀行業が20,349百万円、リース業が5,964百万円、その他（クレジットカード業）が263百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,970百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +120,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 54751000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 773,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +140,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 54204000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 767,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +160,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 56828000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 768,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +180,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 55860000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 756,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +200,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 57427000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 746,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +208,157 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1931,
+      "title": "倉敷無尽株式会社を設立",
+      "description": "倉敷市において倉敷無尽株式会社を設立しました。",
+      "significance": "当社の創業です。相互銀行を経て現在の地方銀行に至る歩みの起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "相互銀行に転換",
+      "description": "相互銀行に転換し、商号を株式会社三和相互銀行に変更しました。",
+      "significance": "無尽会社から銀行への転換です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "山陽リース株式会社を設立",
+      "description": "山陽リース株式会社（現・トマトリース株式会社）を設立しました。",
+      "significance": "現在のリース業の子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "大阪証券取引所市場第二部等に上場",
+      "description": "株式を大阪証券取引所市場第二部及び広島証券取引所に上場しました。",
+      "significance": "株式公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "普通銀行に転換しトマト銀行に商号変更",
+      "description": "普通銀行に転換し、商号を株式会社トマト銀行に変更しました。",
+      "significance": "現在の商号と普通銀行としての体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "トマトカード株式会社を設立",
+      "description": "トマトカード株式会社を設立しました。",
+      "significance": "クレジットカード業務の子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "トマトビジネス株式会社を設立",
+      "description": "トマトビジネス株式会社を設立しました。",
+      "significance": "銀行事務の関連業務を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "岡山県信用組合の事業を譲受け",
+      "description": "岡山県信用組合の事業を譲り受けました。",
+      "significance": "県内の信用組合の事業を引き継いだ出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "インターネット専用支店を開設",
+      "description": "インターネット専用支店「ももたろう支店」を開設しました。",
+      "significance": "店舗を持たないインターネット専用支店の開設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "トマトカード株式会社を完全子会社化",
+      "description": "トマトカード株式会社を完全子会社化しました。",
+      "significance": "グループ体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "トマトリース株式会社を完全子会社化",
+      "description": "トマトリース株式会社を完全子会社化しました。",
+      "significance": "リース子会社も完全子会社となり、現在のグループ体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の新市場区分に従い、同取引所スタンダード市場に移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "chugin-financial-group",
+      "relationship": "business-partner",
+      "description": "株式会社ちゅうぎんフィナンシャルグループとは、営業基盤が重なる岡山県の同業種として、「おかやま共創パートナーシップ連携協定」に基づく業務提携等の関係にあり、ATMの相互開放などの協力を行っています。当社は同社の株式520,885株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sompo-holdings",
+      "relationship": "business-partner",
+      "description": "SOMPOホールディングス株式会社とは、同社グループとの間で損害保険の窓口販売などの業務協力関係にあります。当社は同社の株式52,500株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokyo-century",
+      "relationship": "business-partner",
+      "description": "東京センチュリー株式会社とは、当社グループ会社とのリース関連業務における協力関係や人的交流があります。当社は同社の株式117,200株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +366,55 @@
       "publisher": "株式会社トマト銀行",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ7V.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJ7V",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "パーパス「夢をかなえ、地域の未来を創造する」と、10年後の目指す姿であるビジョン「いつも会って話せる あなたのメインバンク」を掲げています。中期経営計画「第4次 みらい創生プラン」（2024年4月～2027年3月）では、ビジネスモデルである本業支援・最適提案活動の実践によりお客さまの課題解決に真摯に取り組み、地域経済・産業の成長・発展に貢献することで、持続的な成長を目指しています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "中期経営計画の期間は2027年3月までで、当連結会計年度はその2年目にあたります。連結経常収益と親会社株主に帰属する当期純利益はいずれも前連結会計年度を上回りました。",
+        "basis": "セグメント情報の外部顧客への経常収益、主要な経営指標等の推移、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "岡山県内に本支店61店を構え、「いつも会って話せる」という対面（FACE TO FACE）のビジネススタイルを掲げる身近さが特徴です。銀行業務にリース業務とクレジットカード業務の子会社を組み合わせ、法人・個人の多様なニーズにグループで対応しています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等、事業の内容、主要な設備の状況",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "銀行業が連結経常収益の76.6％を占める中核事業です。サービス別では貸出業務の経常収益が13,903百万円と最大で、有価証券投資業務が2,165百万円、リース業が5,957百万円でした。本邦の外部顧客に対する経常収益が連結経常収益の90％を超えています。",
+        "basis": "セグメント情報の外部顧客への経常収益と関連情報（サービスごとの情報、地域ごとの情報）",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

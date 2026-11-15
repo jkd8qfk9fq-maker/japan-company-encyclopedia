@@ -4,15 +4,137 @@
   "name": "スパークス・グループ",
   "officialName": "スパークス・グループ株式会社",
   "nameEn": "SPARX Group Co., Ltd.",
-  "description": null,
+  "shortNameEn": "SPARX Group Co., Ltd.",
+  "description": "独立系の資産運用グループで、日本株式・OneAsia・実物資産・プライベート・エクイティの４つの投資戦略を柱に投信投資顧問業を営む会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "sparx-group",
+      "name": "スパークス・グループ株式会社",
+      "description": "東京都港区に本社を置く持株会社で、資産運用業（投資顧問業・投資信託委託業）を中核業務とする企業集団の持株会社です。連結子会社11社及び持分法適用関連会社２社を有し、2026年３月期の連結従業員数は187人です。東京証券取引所プライム市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "japanese-equities",
+          "name": "日本株式運用",
+          "description": "スパークス・アセット・マネジメント株式会社が、日本株式を投資対象として調査・運用を行う事業です。企業訪問によるボトムアップ・アプローチを軸に、中小型株への投資に専門性を持ち、ロング・ショート運用や集中投資型ファンド、年金基金の運用等を行っています。",
+          "customers": [
+            "年金基金等の機関投資家",
+            "投資信託の受益者",
+            "海外の機関投資家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "oneasia",
+          "name": "OneAsia運用",
+          "description": "SPARX Asset Management Korea Co., Ltd.が韓国株式を、SPARX Asia Capital Management Limitedの子会社であるSPARX Asia Investment Advisors Limitedが香港を主要拠点としてアジア株式を、それぞれ投資対象として調査・運用を行う事業です。インド株式市場への取り組みも進めています。",
+          "customers": [
+            "海外の機関投資家",
+            "アジア株式に投資する投資家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-assets",
+          "name": "実物資産運用",
+          "description": "スパークス・アセット・マネジメント株式会社が再生可能エネルギー発電事業の開発段階から運転開始までのフェーズへの投資を、スパークス・アセット・トラスト＆マネジメント株式会社が不動産及び運転開始後の再生可能エネルギー発電事業への投資を、それぞれ投資対象として調査・運用を行う事業です。蓄電所事業への投資も拡大しています。",
+          "customers": [
+            "機関投資家",
+            "実物資産ファンドの投資家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "private-equity",
+          "name": "プライベート・エクイティ運用",
+          "description": "スパークス・インベストメント株式会社等が投資事業組合財産の運用及び管理を行う事業です。未公開株式への投資のほか、トヨタ自動車株式会社及び株式会社三井住友銀行と設立した未来創生ファンド、宇宙フロンティアファンド、日本モノづくり未来ファンド等を通じてベンチャー企業や国内モノづくり企業への投資を行っています。",
+          "customers": [
+            "機関投資家",
+            "プライベート・エクイティファンドの投資家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "投資家から運用を委託された資産を株式・実物資産等に投資運用し、運用資産残高に応じた残高報酬と運用成果に応じた成功報酬を得る事業モデルです。",
+    "products": [
+      "投資顧問業務（投資助言・投資一任）",
+      "投資信託委託業務",
+      "日本株式運用",
+      "OneAsia運用（韓国株式・アジア株式）",
+      "実物資産運用（再生可能エネルギー・不動産）",
+      "プライベート・エクイティ運用（未来創生ファンド等）"
+    ],
+    "customers": [
+      "機関投資家",
+      "投資信託を通じて投資する個人投資家",
+      "海外の機関投資家"
+    ],
+    "revenueSources": [
+      "運用資産残高に応じた残高報酬",
+      "運用成果等に応じた成功報酬",
+      "その他の報酬・対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "スパークス・グループ",
+        "description": "東京都港区に本社を置く持株会社で、日本及び海外の子会社を通じて資産運用業を営む独立系の資産運用グループです。2026年３月期の連結従業員数は187人で、東京証券取引所プライム市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "投信投資顧問業",
+        "description": "子会社のスパークス・アセット・マネジメント等が、日本株式、再生可能エネルギー発電事業、未公開株式、不動産などを投資対象として調査・運用を行い、投資顧問業務と投資信託委託業務を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "投資家",
+        "description": "顧客は、投資顧問契約や投資一任契約を結ぶ機関投資家、投資信託の受益者、海外の機関投資家です。主要な顧客ごとの情報では、自社グループの投資信託であるスパークス・新・国際優良日本株ファンドが開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年３月期の営業収益は19,578百万円",
+        "description": "2026年３月期の営業収益は19,578百万円（前期比9.0％増）で、その内訳は残高報酬16,467百万円、成功報酬2,986百万円、その他124百万円と開示されています。事業は投信投資顧問業の単一セグメントです。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は6,384百万円",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は6,384百万円（前期比21.6％増）でした。前期の親会社株主に帰属する当期純利益は5,252百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +149,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24324000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 173,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +169,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26047000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 173,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +189,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 31419000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 186,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +209,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 33507000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 193,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +229,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 39204000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 187,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +237,186 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1988,
+      "title": "虎ノ門投資顧問株式会社として設立",
+      "description": "東京都港区に虎ノ門投資顧問株式会社として設立し、投資顧問業者として登録しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "スパークス投資顧問へ商号を変更し業務を開始",
+      "description": "商号をスパークス投資顧問株式会社に変更し、投資顧問業務を開始しました。",
+      "significance": "独立系投資顧問会社としての事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "投資信託委託業の認可を取得",
+      "description": "証券投資信託委託業の認可を取得し、スパークス・アセット・マネジメント投信株式会社へ商号を変更しました。",
+      "significance": "投資信託委託業への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "日本証券業協会に店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "韓国のCosmo Investment Managementの過半数を取得",
+      "description": "韓国の資産運用会社Cosmo Investment Management Co., Ltd.（現SPARX Asset Management Korea Co., Ltd.）の株式の過半数を取得しました。",
+      "significance": "韓国株式の調査・運用拠点の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "PMA Capital Managementの全株式を取得",
+      "description": "SPARX International Ltd.を通じて、PMA Capital Management Limited（現SPARX Asia Capital Management Limited）の全株式を取得しました。",
+      "significance": "アジア全域を対象とした投資プラットフォームの構築です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "持株会社体制へ移行しスパークス・グループへ商号変更",
+      "description": "会社分割により持株会社体制に移行し、社名をスパークス・グループ株式会社に変更するとともに、子会社のスパークス・アセット・マネジメント株式会社が資産運用業務を継承しました。",
+      "significance": "現在のグループ体制の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "再生可能エネルギー事業へ参入",
+      "description": "東京都の官民連携インフラファンドの運営事業者に選定され、再生可能エネルギーにおける発電事業及びそのコンサルティング業務を行うスパークス・グリーンエナジー＆テクノロジー株式会社を設立しました。",
+      "significance": "実物資産投資の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "スパークス・アセット・トラスト＆マネジメントの全株式を取得",
+      "description": "ジャパンアセットトラスト株式会社の全株式を取得し、商号をスパークス・アセット・トラスト＆マネジメント株式会社へ変更しました。",
+      "significance": "不動産・ブラウンフィールド投資の基盤取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "未来創生ファンドを設立",
+      "description": "トヨタ自動車株式会社及び株式会社三井住友銀行と未来創生ファンドを設立し、国内外のベンチャー企業への投資を開始しました。",
+      "significance": "プライベート・エクイティ戦略の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "上場市場の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "野村スパークス・インベストメントを設立",
+      "description": "野村ホールディングス株式会社と、非上場企業へ投資する上場投資法人を運用する野村スパークス・インベストメント株式会社を設立しました。",
+      "significance": "合弁による新たな運用会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "toyota",
+      "relationship": "business-partner",
+      "description": "2015年11月に、トヨタ自動車株式会社及び株式会社三井住友銀行と共同で未来創生ファンドを設立しており、国内外のベンチャー企業への投資を行うファンドの共同設立者として、業務提携等の関係にあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "companyId": "nomura-holdings",
+      "relationship": "business-partner",
+      "description": "2021年４月に野村ホールディングス株式会社と共同で、非上場企業へ投資する上場投資法人を運用する野村スパークス・インベストメント株式会社を設立しており、同社は当社の持分法適用関連会社です。合弁会社の共同設立を通じた業務提携等の関係にあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "mizuho-financial-group",
+      "relationship": "business-partner",
+      "description": "成長するインド株式市場を中心に、株式会社みずほフィナンシャルグループ及びアセットマネジメントOne株式会社と協業を進めることとなった旨が開示されており、インド株式分野における知見の共有と新たなファンドの組成に向けた協業を通じた業務提携等の関係にあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "for-startups",
+      "relationship": "business-partner",
+      "description": "当社の特定投資株式として198,000株を保有しています。当社グループ運用ファンド（プライベート・エクイティ投資戦略）の投資先企業に対する企業価値向上施策の強化のため、経営人材を中心とする人材紹介を通じたバリューアップ支援及びExit支援に係る連携について当事業年度に業務提携を行っている旨が印字されており、業務提携等の関係にあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +424,59 @@
       "publisher": "スパークス・グループ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y7MV.pdf",
       "publishedAt": "2026-05-29",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y7MV",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 連結経営指標等の注記に、2022年10月１日付で普通株式５株につき１株の割合で株式併合を行った旨が印字されています。",
+      "businessStructure: 連結経営指標等の注記に、2022年10月１日付で普通株式５株につき１株の割合で株式併合を行った旨が印字されています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「世界で最も信頼、尊敬されるインベストメント・カンパニー」になることで「世界を豊かに、健やかに、そして幸せにする」というミッションの実現を目指す、独立系の資産運用グループであります。創業以来の投資哲学「マクロはミクロの集積である。」に基づくボトムアップ・アプローチを基軸とし、日本株式、OneAsia、実物資産、プライベート・エクイティの４つの投資戦略を柱として、投資家のニーズに応える多様な運用商品を提供するとしています。",
+        "asOf": "2026-05-29",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "市場に影響されにくい安定的な投資戦略と、収益性の高い投資戦略を組み合わせたハイブリッドのビジネスモデルを強化・拡大して成長を目指す方針で、４つの投資戦略を柱に収益源の多様化と安定化を図り、バランスの取れた事業構造の確立を目指しています。",
+        "basis": "事業の内容（投資戦略の変遷と４つの投資戦略の柱）、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（MD&A）の運用資産残高の実績と分析・検討内容に基づく。",
+        "asOf": "2026-05-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1989年の業務開始以来、投資対象企業への直接訪問による企業調査を中心としたボトムアップ・アプローチを一貫して採用し、企業実態から見た株式価値と市場での評価の乖離（バリュー・ギャップ）を投資機会として捉える運用手法に専門性を持ちます。韓国・香港の子会社を通じたアジアの運用プラットフォームをグループ内に持ち、日本株式で培った調査手法をアジア株式や実物資産・プライベート・エクイティにも展開しています。",
+        "basis": "事業の内容（ボトムアップ・アプローチの説明と投資戦略の変遷、韓国・香港子会社による運用体制）に基づく。",
+        "asOf": "2026-05-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "資産運用サービスを中核事業とする企業グループとして日本で初の公開・上場会社であり、独立系の投信投資顧問会社として営業収益19,578百万円を計上しています。地域別の営業収益は日本が大半を占める一方、韓国・香港の子会社を通じたOneAsia戦略の運用資産残高が前期から大きく増加したと開示されています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等、セグメント情報等の関連情報（地域ごとの情報・主要な顧客ごとの情報）、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（MD&A）の概要と分析・検討内容に基づく。",
+        "asOf": "2026-05-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

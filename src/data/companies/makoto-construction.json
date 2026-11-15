@@ -1,22 +1,149 @@
 {
   "id": "makoto-construction",
   "code": "8995",
-  "name": "誠建設工業",
+  "name": "makoto-construction",
   "officialName": "株式会社誠建設工業",
   "nameEn": "Makoto Construction CO,Ltd",
-  "description": null,
+  "shortNameEn": "Makoto Construction CO,Ltd",
+  "description": "大阪府堺市を地盤に、建売住宅を中心とする戸建分譲住宅事業と不動産仲介・不動産賃貸事業を展開する住宅会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "detached-housing",
+      "name": "戸建分譲住宅事業",
+      "description": "大阪府堺市を中心に近隣市町村を主要エリアとして、建売住宅、請負住宅、注文住宅の企画・設計・施工・販売を行う事業です。用地の情報収集、事業利益計画の立案、土地利用計画、建物の企画設計、土地仕入、開発申請、設計業務、材料仕入及び外注工事の発注、工程・施工管理、アフターサービスに基づく補修施工までの一貫した業務を行っています。当社が担当し、連結子会社の株式会社誠design工房が設計業務を担当しています。",
+      "customers": [
+        "住宅購入者",
+        "注文住宅を発注する一般顧客",
+        "請負住宅を発注する不動産業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "spec-housing",
+          "name": "建売住宅事業",
+          "description": "主に堺市を中心として、土地と建物をセットで売る建売住宅の販売を行っています。良質な土地、品質重視の住宅に流行の建築デザインを施す基本方針で取り組む、当社グループの中核事業です。",
+          "customers": [
+            "住宅購入者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "contract-housing",
+          "name": "請負住宅事業",
+          "description": "不動産業者からの「請負住宅」と、一般顧客からの「注文住宅・リフォーム」を行う事業です。堺市の住宅展示場（住まい館）2店舗を販売促進にも活用しています。",
+          "customers": [
+            "不動産業者",
+            "注文住宅を発注する一般顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-brokerage",
+      "name": "不動産仲介事業",
+      "description": "連結子会社の株式会社誠ホームサービスと株式会社誠コーポレーションの2社が担当し、主として親会社である当社の分譲住宅を仲介する事業です。開発現場の割振りで販売を委託し、顧客への直接的な販売活動を行っています。",
+      "customers": [
+        "住宅購入者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸事業",
+      "description": "当社グループが所有するオフィスビル、賃貸マンションの賃貸及び管理を行う事業です。当社と連結子会社の株式会社誠エステートが担当しています。",
+      "customers": [
+        "賃貸物件の入居者・テナント"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "堺市を中心とした南大阪地区で、土地の仕入から設計・施工・販売までを一貫して行い、建売住宅などの販売で収益を得る事業モデルです。",
+    "products": [
+      "建売住宅",
+      "注文住宅・請負住宅、リフォーム",
+      "不動産仲介サービス",
+      "オフィスビル・賃貸マンションの賃貸及び管理"
+    ],
+    "customers": [
+      "一次取得者を中心とする住宅購入者",
+      "注文住宅を発注する一般顧客",
+      "請負住宅を発注する不動産業者",
+      "賃貸物件の入居者・テナント"
+    ],
+    "revenueSources": [
+      "建売住宅の販売による収益",
+      "請負住宅・注文住宅による収益",
+      "不動産仲介による収益",
+      "賃貸による収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "堺市を地盤とする住宅会社",
+        "description": "株式会社誠建設工業は大阪府堺市中区に本店を置く会社です。1991年に設立され、当社及び連結子会社4社の5社でグループを構成しています。従業員数は26人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "戸建分譲・仲介・賃貸の3事業を提供",
+        "description": "戸建分譲住宅事業（建売住宅事業と請負住宅事業）、不動産仲介事業、不動産賃貸事業の3つを事業とし、建売住宅、請負住宅、注文住宅の企画・設計・施工・販売、分譲住宅の販売仲介、オフィスビルや賃貸マンションの賃貸及び管理を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "住宅購入者と不動産業者が顧客",
+        "description": "戸建分譲住宅事業では、堺市を中心とした南大阪地区の住宅購入者が顧客で、基盤となる中核業務は第一次取得者に対する分譲住宅の施工、販売業務です。請負住宅事業では不動産業者と一般顧客から受注し、不動産賃貸事業では賃貸物件の入居者・テナントが顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は3,130百万円",
+        "description": "2026年3月期の売上高は3,130百万円で、その内訳は戸建分譲住宅事業が3,093百万円、不動産仲介事業が10百万円、不動産賃貸事業が26百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は25百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は25百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +158,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3597128000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 27,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +178,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3791124000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 28,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +198,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3962953000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 23,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +218,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3983860000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 29,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +238,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4122602000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 26,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -128,13 +255,47 @@
       "publisher": "株式会社誠建設工業",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI2H.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YI2H",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念である建築の技術者集団として「より良い家をより安く提供する」を基本方針とし、新しい価値を創造するトータルハウジングを目指すとしています。中長期的な経営戦略では、堺市を中心とした南大阪地区を地盤とする地元密着路線を貫き、品質重視、安全性に重点を置いた住宅創りに専念するとしています。建売住宅事業の分譲用地の仕入では、利益率並びに立地等を考慮して、中型開発物件のみならず小型開発物件の情報収集にも注力し、請負住宅事業が建売住宅事業と合わせて当社グループの2本柱となるべく事業拡大を図るとしています。不動産仲介部門では、自社物件のみならず他社物件の仲介にも注力するとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "堺市を中心とした南大阪地区を地盤に事業を展開し、土地の仕入、設備の調達、設計、施工、販売までを完結する一貫体制をとり、そこから生まれる「品質の良さ」と「価格の安さ」の住宅を提供する顧客第一主義に徹しているとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高3,130百万円の内訳は、戸建分譲住宅事業が3,093百万円（建売住宅事業3,053百万円、請負住宅事業39百万円）、不動産仲介事業が10百万円、不動産賃貸事業が26百万円であり、建売住宅事業が全体の97.6％を占めています。",
+        "basis": "セグメント情報等の外部顧客への売上高に印字された金額に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

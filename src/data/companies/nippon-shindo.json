@@ -4,15 +4,117 @@
   "name": "日本伸銅",
   "officialName": "日本伸銅株式会社",
   "nameEn": "NIPPON　SHINDO　CO．，LTD.",
-  "description": null,
+  "shortNameEn": "NIPPON SHINDO CO.,LTD.",
+  "description": "銅と亜鉛などを原料とする黄銅棒・線などの伸銅品を製造し、メーカーや商社に販売する非鉄金属メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "nippon-shindo",
+      "name": "日本伸銅株式会社",
+      "description": "大阪府堺市に本社を置く伸銅品メーカーで、株式会社ＣＫサンエツの連結子会社です。連結財務諸表は作成しておらず、事業は伸銅品関連事業の単一セグメントです。堺市の本社工場で黄銅棒等を生産し、大阪市東成区の大阪黄銅カンパニーに物流倉庫等を置いています。2026年3月期の従業員数は92人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "copper-alloy-products",
+          "name": "伸銅品",
+          "description": "主力製品である黄銅棒・黄銅線などの伸銅品の製造・販売です。2026年3月期の販売数量は2万419トン、売上高は26,506百万円でした。兄弟会社のサンエツ金属株式会社とは生産品種の棲み分けにより分業体制を構築しています。",
+          "customers": [
+            "金属商社などの販売先",
+            "製品販売先のメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-metal-materials",
+          "name": "その他の金属材料",
+          "description": "伸銅品原材料の転売を主とする金属材料の販売です。2026年3月期の売上高は1,997百万円でした。",
+          "customers": [
+            "伸銅品原材料を必要とする事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "processed-copper-alloy-products",
+          "name": "伸銅加工品",
+          "description": "伸銅品を加工した製品の製造・販売です。2026年3月期の売上高は1,640百万円で、前期比31.4％増加しました。",
+          "customers": [
+            "部品メーカーなど"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "地金の銅や亜鉛などを溶解・加工して黄銅棒・線を中心とする伸銅品を製造し、部品メーカーや金属商社などに販売する事業モデルです。",
+    "products": [
+      "黄銅棒・黄銅線などの伸銅品",
+      "伸銅加工品",
+      "その他の金属材料（伸銅品原材料など）"
+    ],
+    "customers": [
+      "市原金属産業株式会社をはじめとする販売先",
+      "伸銅品を部品材料に使うメーカー（製品販売先）"
+    ],
+    "revenueSources": [
+      "伸銅品の販売による売上高",
+      "伸銅加工品の販売による売上高",
+      "その他の金属材料の販売による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日本伸銅株式会社",
+        "description": "大阪府堺市に本社と本社工場を置き、株式会社ＣＫサンエツの連結子会社です。連結財務諸表は作成しておらず、2026年3月期の従業員数は92人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "黄銅棒・線などの伸銅品",
+        "description": "銅や亜鉛などを主要原材料として、黄銅棒・黄銅線を中心とする伸銅品と伸銅加工品を製造しています。兄弟会社のサンエツ金属株式会社とは生産品種の棲み分けにより分業体制を構築しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "メーカーや商社などの販売先",
+        "description": "市原金属産業株式会社が最大の販売先で、売上高の13.2％を占めています。川崎重工業株式会社や株式会社ハマイも伸銅品の製品販売先です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は30,145百万円",
+        "description": "2026年3月期の売上高は30,145百万円（前期比15.4％増）でした。部門別では伸銅品が26,506百万円、その他の金属材料が1,997百万円、伸銅加工品が1,640百万円です。前期の売上高は26,122百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は742百万円",
+        "description": "2026年3月期の当期純利益は742百万円（前期比23.1％減）でした。前期は964百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +129,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9457000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 98,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +151,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10359000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 96,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +173,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10927000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 97,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +195,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11909000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 94,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +217,227 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12711000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 92,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1938,
+      "title": "大阪黄銅株式会社を設立",
+      "description": "創業者吉田久博の構想に基づき、伸銅品の生産販売を目的として大阪黄銅株式会社を設立しました。",
+      "significance": "会社の創業です。伸銅品の生産販売が現在の事業の原点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "大阪軽合金工業株式会社に社名変更",
+      "description": "社名を大阪軽合金工業株式会社と変更し、ジュラルミンの生産を開始しました。",
+      "significance": "戦時下で軽合金の生産に乗り出した転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1945,
+      "title": "新日本産業株式会社に社名変更",
+      "description": "社名を新日本産業株式会社と変更しました。",
+      "significance": "戦後の再出発に伴う社名変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "大阪黄銅株式会社を設立",
+      "description": "大阪黄銅株式会社を設立しました。",
+      "significance": "伸銅品事業の受け皿として旧社名の会社を改めて設立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "日本伸銅株式会社に社名変更",
+      "description": "社名を日本伸銅株式会社と変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "大阪証券取引所と名古屋証券取引所に上場",
+      "description": "大阪証券取引所に上場し、続いて名古屋証券取引所にも上場しました。",
+      "significance": "株式公開の実現です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "日伸地金株式会社を設立",
+      "description": "日伸地金株式会社を設立しました。",
+      "significance": "非鉄金属原材料を扱う関係会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所に上場",
+      "description": "東京証券取引所に上場しました。",
+      "significance": "東証への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "日伸精器株式会社を設立",
+      "description": "日伸精器株式会社を設立しました。",
+      "significance": "精密機器分野の関係会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "東京ニッシン株式会社を設立",
+      "description": "東京ニッシン株式会社を設立しました。",
+      "significance": "関係会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "日伸精器株式会社を清算",
+      "description": "日伸精器株式会社を清算しました。",
+      "significance": "関係会社の整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "名古屋証券取引所の上場を廃止",
+      "description": "名古屋証券取引所上場を廃止しました。",
+      "significance": "上場市場が大阪・東京に集約されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "東京ニッシン株式会社を売却",
+      "description": "東京ニッシン株式会社を売却しました。",
+      "significance": "関係会社の整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "日伸地金株式会社を大阪黄銅株式会社に吸収合併",
+      "description": "日伸地金株式会社を大阪黄銅株式会社に吸収合併しました。",
+      "significance": "グループ内再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "本社を堺市堺区匠町に移転",
+      "description": "本社を大阪府堺市堺区南島町から大阪府堺市堺区匠町に移転しました。",
+      "significance": "現在の本社所在地への移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "株式会社ＣＫサンエツの連結子会社となる",
+      "description": "株式会社ＣＫサンエツの連結子会社となりました。",
+      "significance": "ＣＫサンエツグループの一員となった転機です。現在の親子上場の体制はここから始まります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "大阪黄銅株式会社を吸収合併",
+      "description": "大阪黄銅株式会社を吸収合併しました。",
+      "significance": "創業時の社名を持つ会社の統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、同取引所の市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "ck-san-etsu",
+      "relationship": "major-shareholder",
+      "description": "親会社です。2026年3月31日現在、議決権の55.5％を保有され、経営のサポートを受け、役員の兼任があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "kawasaki-heavy-industries",
+      "relationship": "customer",
+      "description": "伸銅品関連事業の製品販売先です。2026年3月31日現在、特定投資株式として同社株式93,278株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hamai-industries",
+      "relationship": "customer",
+      "description": "伸銅品関連事業の製品販売先です。2026年3月31日現在、特定投資株式として同社株式171,399株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +445,63 @@
       "publisher": "日本伸銅株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEXB.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YEXB",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "株式会社ＣＫサンエツの連結子会社であるサンエツ金属株式会社及び三谷伸銅株式会社との間で、製品の相互ＯＥＭ供給、原料の共同購買、人材交流等に取り組むことで、シナジーを追求するとしています。経営理念として『地味だけど凄い価値の創造』を目指すことを掲げています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "市場が成熟したり縮小したりしている分野では、Ｍ＆Ａなどによる業容の維持拡大と、新製品の開発による市場開拓に努める方針です。コストアップ分を適切に製品価格へ転嫁すると同時に、新製品の開発と新市場の開拓に注力するとしています。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（戦略的現状と見通し、経営者の問題認識と今後の方針について）、経営方針、経営環境及び対処すべき課題等",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "伸銅品の製造では、兄弟会社であるサンエツ金属株式会社と生産品種の棲み分けにより最適分業体制を構築していると開示しています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      },
+      "analysis": {
+        "text": "堺市の本社工場に黄銅棒等の生産設備を持ち、大阪市東成区の大阪黄銅カンパニーに物流倉庫等を置く体制です。ＣＫサンエツグループの伸銅各社との間で製品の相互ＯＥＭ供給や原料の共同購買を行う枠組みがあり、単独では持ちにくい品種の幅と原料調達をグループで補い合う構造になっています。",
+        "basis": "事業の内容、経営方針、経営環境及び対処すべき課題等、主要な設備の状況、関係会社の状況",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "同社の事業領域である伸銅事業の国内市場は、今後長期的に縮小均衡を模索するものと思われ、業界再編が避けられない状況にあります。売上は本邦の外部顧客向けが9割を超え、主要な顧客は市原金属産業株式会社（売上高の13.2％）です。主要原材料である銅や亜鉛は国際相場商品であり、相場の変動が経営成績に影響する構造です。",
+        "basis": "経営方針、経営環境及び対処すべき課題等、セグメント情報の関連情報（主要な顧客ごとの情報、地域ごとの情報）、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の概要",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

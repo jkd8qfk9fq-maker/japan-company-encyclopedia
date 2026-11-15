@@ -4,15 +4,109 @@
   "name": "ネクセラファーマ",
   "officialName": "ネクセラファーマ株式会社",
   "nameEn": "Nxera Pharma Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Nxera Pharma Co., Ltd.",
+  "description": "GPCRを標的とする創薬プラットフォームを持つバイオ医薬品企業で、自社開発品の販売と提携先への導出で収益を得ています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "nxera-pharma",
+      "name": "ネクセラファーマ株式会社",
+      "description": "東京都港区赤坂に本社を置き、医薬品等の研究開発・輸出入・製造受託及び販売と、グループ経営戦略の企画立案、子会社の管理を行っています。事業セグメントは医薬品事業の単一セグメントで、連結子会社は9社、2025年12月期の連結従業員数は382人です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "marketed-products",
+          "name": "上市済製品",
+          "description": "日本で自社販売する脳血管攣縮治療薬ピヴラッツ®と、[[company:shionogi-and-co|塩野義製薬]]が日本で販売する不眠症治療薬クービビック®（販売に応じたロイヤリティと製品供給による収益）、ノバルティス社の呼吸器疾患製品シーブリ®、ウルティブロ®、エナジア®の販売に応じたロイヤリティが含まれます。日本及び韓国における臨床開発・販売はネクセラファーマジャパン株式会社とNxera Pharma Korea Co., Ltd.が担っています。2025年12月期の外部顧客への売上収益は20,136百万円でした。",
+          "customers": [
+            "医療機関",
+            "医薬品卸売業者",
+            "塩野義製薬株式会社"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "research-development",
+          "name": "研究・開発",
+          "description": "英国の100％子会社Nxera Pharma UK Limitedが、GPCRの構造解析、初期のリード化合物の創出、独自開発のNxStaR™技術による候補品探索と、前臨床及び初期臨床開発を担っています。自社開発の候補化合物や、提携先が選定したターゲットに対する候補化合物の創薬・開発を世界のバイオ医薬品企業との提携で進め、契約一時金や開発マイルストンを受け取ります。2025年12月期の外部顧客への売上収益は9,479百万円でした。",
+          "customers": [
+            "提携先の製薬企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "英国子会社がGPCRの構造解析に基づく創薬と初期開発を担い、日本の子会社が日本と韓国での開発と販売を行い、上市品の販売とロイヤリティ、契約一時金、マイルストンで収益を得る事業モデルです。",
+    "products": [
+      "ピヴラッツ®（脳血管攣縮治療薬）",
+      "クービビック®（不眠症治療薬）",
+      "GPCRを標的とする創薬候補品（自社開発プログラムと提携プログラム）"
+    ],
+    "customers": [
+      "医療機関",
+      "医薬品卸売業者",
+      "提携先の製薬企業（ライセンス・共同開発の相手先）"
+    ],
+    "revenueSources": [
+      "上市済製品の販売収益",
+      "ロイヤリティ収入（クービビック®、呼吸器疾患製品）",
+      "契約一時金収入",
+      "マイルストン収入",
+      "前受収益取崩額"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ネクセラファーマ株式会社",
+        "description": "東京都港区赤坂に本社を置くバイオ医薬品企業で、連結子会社は9社です。2025年12月期の連結従業員数は382人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "創薬から販売までを手掛ける",
+        "description": "英国子会社のNxera Pharma UK LimitedがGPCRの構造解析と初期開発を担い、ネクセラファーマジャパン株式会社が日本での開発と販売を行います。主力製品は脳血管攣縮治療薬ピヴラッツ®と不眠症治療薬クービビック®です。"
+      },
+      {
+        "kind": "customer",
+        "title": "医療機関と提携先の製薬企業",
+        "description": "自社販売品は医薬品卸を通じて医療機関に届けられ、クービビック®は塩野義製薬が日本で販売しています。創薬プログラムは世界の製薬企業へ導出し、共同開発も行っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上収益は29,615百万円",
+        "description": "2025年12月期の売上収益は29,615百万円（前期比2.7％増）でした。内訳は上市済製品20,136百万円と研究・開発9,479百万円で、研究・開発には契約一時金収入1,571百万円とマイルストン収入5,227百万円が含まれます。前期の売上収益は28,835百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期損失は12,530百万円",
+        "description": "2025年12月期の親会社の所有者に帰属する当期損益は12,530百万円の損失でした。前期は4,838百万円の損失でした。社債の条件変更に伴う一時的な費用や、企業結合による条件付対価の公正価値の増加に伴う評価損などが影響したと説明されています。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +121,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 57468000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 198,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -47,7 +141,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 57936000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 202,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -67,7 +161,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 66810000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 350,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -87,7 +181,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 68518000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 374,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -107,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 60997000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 382,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -115,8 +209,149 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1990,
+      "title": "株式会社そーせいを設立",
+      "description": "バイオ医薬品の研究開発と技術移転事業を目的として、東京都文京区に株式会社そーせいを設立しました。創設者は、ジェネンテックの日本法人の社長を務めた田村眞一氏です。",
+      "significance": "現在のネクセラファーマの創業です。",
+      "sourceIds": [
+        "yuho-2025",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "東京証券取引所マザーズ市場に上場",
+      "description": "東京証券取引所マザーズ市場に株式を上場しました。",
+      "significance": "創薬ベンチャーとしての資金調達基盤を整えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "Heptares Therapeutics Ltd.を100％子会社化",
+      "description": "英国のHeptares Therapeutics Ltd.（現Nxera Pharma UK Limited）を100％子会社化しました。",
+      "significance": "GPCRの構造解析に基づく創薬基盤を取り込み、現在の創薬プラットフォームの原型ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "Pfizer Inc.と戦略的提携契約を締結",
+      "description": "Pfizer Inc.と最大10種のGPCRターゲットに関する新規医薬品の戦略的提携契約を締結しました。",
+      "significance": "大手製薬企業との提携で創薬技術を外部に展開する形が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "Neurocrine Biosciences, Inc.とライセンス契約を締結",
+      "description": "Neurocrine Biosciences, Inc.と、統合失調症及びその他の精神神経疾患を対象とした新規ムスカリン受容体作動薬のライセンス契約を締結しました。",
+      "significance": "現在も開発が進展している大型提携で、研究・開発収益の柱の一つになっています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "Eli Lilly and Companyと創薬提携契約を締結",
+      "description": "Eli Lilly and Companyと、糖尿病及び代謝性疾患における研究開発・商業化に関する新規創薬提携契約を締結しました。",
+      "significance": "代謝性疾患領域への提携の広がりを示す契約です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "AbbVie Inc.と神経疾患の研究開発契約を締結",
+      "description": "AbbVie Inc.と、神経疾患における複数のターゲットを対象にした研究開発及び製品化に関する新規契約を締結しました。",
+      "significance": "2020年のライセンスオプション契約に続く提携で、その後もマイルストンの達成が続いています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所プライム市場へ上場市場を変更",
+      "description": "東京証券取引所の市場区分見直しに伴いグロース市場へ移行した後、プライム市場への上場市場変更を行いました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "イドルシアの日本・韓国子会社を100％子会社化",
+      "description": "イドルシアファーマシューティカルズジャパン株式会社（現ネクセラファーマジャパン株式会社）及びIdorsia Pharmaceuticals Korea Co., Ltd.（現Nxera Pharma Korea Co., Ltd.）を100％子会社化し、ピヴラッツ®及びクービビック®の日本及びAPACにおける販売権等を取得しました。",
+      "significance": "日本での臨床開発・販売基盤を持ち、上市済製品の収益が拡大する転機となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "商号をネクセラファーマ株式会社に変更",
+      "description": "商号をそーせいグループ株式会社からネクセラファーマ株式会社に変更し、本社を東京都港区赤坂に移転しました。",
+      "significance": "現在の社名と体制になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "塩野義製薬とクービビック®の提携契約を締結",
+      "description": "[[company:shionogi-and-co|塩野義製薬株式会社]]と、不眠症治療薬クービビック®錠の日本における流通と販売に関する提携契約を締結しました。クービビック®は同年に日本で製造販売承認を取得し、販売が始まっています。",
+      "significance": "上市済製品の収益を押し上げる提携です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "サンセラとvamoroloneのライセンス契約を締結",
+      "description": "サンセラ・ファーマシューティカルズ・ホールディングと、日本及びアジア太平洋地域におけるデュシェンヌ型筋ジストロフィー（DMD）治療薬vamorolone（AGAMREE®）のライセンス契約を締結しました。",
+      "significance": "決算期後（2026年1月）の締結で、重要な後発事象として開示されています。日本・APAC事業の品ぞろえを広げる導入契約です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "medipal-holdings",
+      "relationship": "customer",
+      "description": "医薬品卸売業者で、当社グループの製品販売の主要な販売先です。主要な顧客に関する情報では、同社グループ向けの売上収益が連結売上収益の10％以上を占める相手先として開示されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業セグメント】"
+    },
+    {
+      "companyId": "shionogi-and-co",
+      "relationship": "customer",
+      "description": "不眠症治療薬クービビック®について、2024年9月17日にライセンス・供給・商業化契約を締結し、同社が日本でクービビック®の流通と販売を担っています。当社グループは販売に応じたロイヤリティと製品供給による収益を得ており、同社は主要な顧客の一社として開示されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +359,65 @@
       "publisher": "ネクセラファーマ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XTYN.pdf",
       "publishedAt": "2026-03-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XTYN",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-12"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「ネクセラファーマ」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%8D%E3%82%AF%E3%82%BB%E3%83%A5%E3%83%A9%E3%83%BC%E3%83%9E",
+      "accessedAt": "2026-11-16"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 連結子会社のHeptares Therapeutics Zurich AGは、提出日現在で清算手続き中です（事業の内容に記載）。登録は2025年12月31日現在の体制（連結子会社9社）で行っています。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「日本から世界にイノベーションを届け、日本発の国際的なリーディングバイオ医薬品企業となる」ことを目指し、戦略の柱として、①日本およびAPACの患者さまに革新的な医薬品をお届けすること、②「NxWave™」プラットフォーム技術で精密にデザインされた幅広い新薬プログラムを推進すること、の2つを掲げています。",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "日本ではピヴラッツ®とクービビック®の販売基盤を持ち、日本とAPAC以外では創薬から初期臨床開発までを自社で行い、その後の権利を提携先へ導出する分業が進んでいます。売上収益の内訳では上市済製品の収益が研究・開発の収益を上回る一方、研究・開発の収益は提携先の開発進捗に左右される構成です。",
+        "basis": "事業の内容、事業セグメントに関する情報（収益区分・主要な顧客に関する情報）、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "GPCRの構造解析に基づく独自の創薬プラットフォーム「NxWave™」を持ち、30品目を超えるパイプラインを自社開発と提携で進めています。提携先が選定したターゲットに対する候補化合物の創薬も担っており、技術基盤そのものが新たな提携を呼び込む構造になっています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等、事業の内容、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "医薬品開発は、国際的な巨大企業を含む国内外の数多くの企業や研究機関が競う分野で、開発には多額の先行投資と長期の期間が必要であり、成功確率は高くないと説明されています。その中で同社は、GPCRをターゲットとする新薬の設計における世界的リーダーを目指す位置付けを示しています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等（経営環境）",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

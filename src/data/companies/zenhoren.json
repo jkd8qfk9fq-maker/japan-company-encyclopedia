@@ -4,15 +4,118 @@
   "name": "全保連",
   "officialName": "全保連株式会社",
   "nameEn": "ZENHOREN CO.,LTD.",
-  "description": null,
+  "shortNameEn": "Zenhoren",
+  "description": "賃貸物件の賃借人の家賃等の支払いを保証し、滞納時には賃借人に代わって賃貸人へ代位弁済する家賃債務保証の会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "rent-debt-guarantee",
+      "name": "家賃債務保証事業",
+      "description": "賃貸物件の賃借人の家賃等の支払いを賃貸人に保証する事業で、当社の単一セグメントです。賃借人と賃貸借保証委託契約、賃貸人と賃貸借保証契約を締結し、賃借人の家賃等の支払いが滞った場合には、連帯保証人として賃借人に代わって賃貸人へ代位弁済し、代位弁済した金額は後日賃借人に求償して回収します。契約の事務を担う不動産管理会社・不動産仲介会社等の協定会社は、2026年3月末時点で累計58,524拠点にのぼります。2026年3月期の売上高は26,188百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "賃貸物件の賃借人",
+        "賃貸人",
+        "不動産管理会社・不動産仲介会社等の協定会社"
+      ],
+      "children": [
+        {
+          "id": "initial-guarantee-fee",
+          "name": "初回保証委託料",
+          "description": "賃貸借保証委託契約の締結時に賃借人から受け取る保証委託料で、2026年3月期の収入は12,034百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "annual-guarantee-fee",
+          "name": "年間保証委託料",
+          "description": "保証契約の継続に応じて賃借人から受け取る保証委託料で、2026年3月期の収入は8,709百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-income",
+          "name": "その他収入",
+          "description": "保証事務手数料収入や収納代行手数料収入などで、2026年3月期の収入は5,444百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "賃借人と賃貸借保証委託契約、賃貸人と賃貸借保証契約を結び、保証委託料を受けて家賃等の支払いを保証し、代位弁済後は賃借人へ求償して回収する事業モデルです。",
+    "products": [
+      "家賃債務保証サービス",
+      "概算払方式",
+      "見守りサービス「Z-Support Premium」",
+      "電子申込システム「Z-WEB2.0」",
+      "賃借人向けマイページ「YUIPASS」",
+      "家賃のカード払い商品「三菱UFJカードプラン」",
+      "事業用保証サービス「Z-Business NEO」"
+    ],
+    "customers": [
+      "賃貸物件の賃借人",
+      "賃貸人",
+      "不動産管理会社・不動産仲介会社等の協定会社"
+    ],
+    "revenueSources": [
+      "初回保証委託料収入",
+      "年間保証委託料収入",
+      "保証事務手数料収入・収納代行手数料収入等のその他収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "沖縄発の家賃債務保証の会社",
+        "description": "全保連は2001年に沖縄県那覇市で設立され、沖縄本社と東京の本社を中心に全国19拠点で営業しています。2025年4月に三菱UFJフィナンシャル・グループの連結子会社となり、2026年3月期の従業員数は575人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "家賃債務保証サービス",
+        "description": "賃借人と賃貸借保証委託契約、賃貸人と賃貸借保証契約を締結し、賃借人が家賃等を滞納した場合には連帯保証人として賃貸人へ代位弁済する家賃債務保証サービスを提供します。2026年3月期の売上高の内訳は、初回保証委託料収入12,034百万円、年間保証委託料収入8,709百万円、その他収入5,444百万円です。"
+      },
+      {
+        "kind": "customer",
+        "title": "顧客は賃借人・賃貸人と協定会社",
+        "description": "顧客は賃貸物件の賃借人と賃貸人です。賃貸物件の管理や仲介、契約事務を担う不動産管理会社・不動産仲介会社等の協定会社との協力関係が事業の基盤で、協定会社は2026年3月末時点で累計58,524拠点にのぼります。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は過去最高を更新",
+        "description": "2026年3月期の売上高は26,188百万円で、前期比2.1％増となり過去最高を更新しました。累積保証契約件数の増加に伴う年間保証料収入の増加などが要因です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益も過去最高",
+        "description": "2026年3月期の当期純利益は1,728百万円で、前期比6.6％増となり過去最高を更新しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +130,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2980000000,
       "netAssetsLabel": "－－－－純資産額",
-      "employees": null,
+      "employees": 669,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +152,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1453000000,
       "netAssetsLabel": "－－－－純資産額",
-      "employees": null,
+      "employees": 624,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +174,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4759000000,
       "netAssetsLabel": "－－－－純資産額",
-      "employees": null,
+      "employees": 608,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +196,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7193000000,
       "netAssetsLabel": "－－－－純資産額",
-      "employees": null,
+      "employees": 595,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +218,139 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8096000000,
       "netAssetsLabel": "－－－－純資産額",
-      "employees": null,
+      "employees": 575,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2001,
+      "title": "全保連株式会社を設立",
+      "description": "家賃債務保証業を営むことを主目的に、沖縄県那覇市久米にて全保連株式会社を設立しました。",
+      "significance": "現在の事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "東京本社を開設し2本社制へ移行",
+      "description": "東京本社を開設し、沖縄と東京の2本社制へ移行しました。",
+      "significance": "全国展開の体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "賃貸借保証委託契約の累計契約件数が100万件を達成",
+      "description": "家賃債務保証委託契約の累計契約件数が100万件を達成しました。",
+      "significance": "事業規模の拡大を示す節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "「概算払方式」の提供を開始",
+      "description": "家賃等の支払いに係る「概算払方式」を開発し、提供を開始しました。",
+      "significance": "商品開発の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "累計契約件数が200万件を達成",
+      "description": "家賃債務保証委託契約の累計契約件数が200万件を達成しました。",
+      "significance": "事業規模の拡大を示す節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "民法改正に対応し連帯保証人を不要とする対応を開始",
+      "description": "2020年4月施行の改正民法に対応し、個人向けサービスについて連帯保証人を不要とする対応を開始しました。",
+      "significance": "制度改正への対応を示す節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "累計契約件数が300万件を達成",
+      "description": "家賃債務保証委託契約の累計契約件数が300万件を達成しました。",
+      "significance": "事業規模の拡大を示す節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場に上場",
+      "description": "東京証券取引所スタンダード市場に上場しました。",
+      "significance": "上場企業としての節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "累計契約件数が400万件を達成",
+      "description": "家賃債務保証委託契約の累計契約件数が400万件を達成しました。",
+      "significance": "事業規模の拡大を示す節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "三菱UFJフィナンシャル・グループの連結子会社となる",
+      "description": "三菱UFJニコス株式会社による当社株式の公開買付けの結果、株式会社三菱UFJフィナンシャル・グループの連結子会社となりました。",
+      "significance": "資本関係の大きな転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "「三菱UFJカードプラン」の提供を開始",
+      "description": "家賃のカード払いが可能な新商品「三菱UFJカードプラン」の提供を開始しました。",
+      "significance": "MUFGグループとの連携による新商品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-ufj-financial-group",
+      "relationship": "parent",
+      "description": "親会社です。2025年4月に三菱UFJニコス株式会社による当社株式の公開買付けが成立し、当社は三菱UFJニコスの親会社である三菱UFJフィナンシャル・グループの連結子会社となりました。当社は三菱UFJニコス株式会社及び株式会社三菱UFJ銀行と資本業務提携契約を締結しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営方針、経営環境及び対処すべき課題等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +358,55 @@
       "publisher": "全保連株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEH1.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YEH1",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期経営計画（2027年3月期－2030年3月期）では、MUFGグループと連携して新商品を開発・投入するMUFG戦略、地方銀行の営業基盤を活用する地銀戦略、高齢者向けの保証内容の拡充等を進める高齢者戦略、事業用家賃債務保証の需要喚起を図る事業用戦略を掲げています。また、電子申込システム「Z-WEB2.0」や賃借人向けマイページ「YUIPASS」などの顧客向けDXと、AI審査の活用による審査・回収の高度化で信用コストの低減に取り組むとしています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の内訳は初回保証委託料収入12,034百万円、年間保証委託料収入8,709百万円、その他収入5,444百万円で、契約の累積が収益に積み上がる構成です。主要な指標として重視される累計保証契約件数は2026年3月期に4,502千件、協定会社拠点数は58,524拠点まで増えています。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の販売実績と主要な指標等、事業の内容による。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "全国の主要都市に配置した拠点を通じた協定会社のネットワークは2026年3月末時点で累計58,524拠点にのぼります。信用コストの管理では、AIの活用により審査を高度化し、早期入金控除後30日期間代位弁済率は0.45％、代位弁済回収率は96.4％と印字されています。",
+        "basis": "事業の内容と、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の経営成績等の状況の概要による。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "家賃債務保証業界では競争が激化し、賃借人・賃貸人・不動産会社による保証事業者の選別が進むと見られています。その中で当社は2025年4月に三菱UFJフィナンシャル・グループの連結子会社となり、グループの信用力を背景に事業を展開しています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等の経営環境と、事業の内容による。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

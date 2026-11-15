@@ -4,19 +4,140 @@
   "name": "東陽倉庫",
   "officialName": "東陽倉庫株式会社",
   "nameEn": "Toyo Logistics Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Toyo Logistics Co., Ltd.",
+  "description": "名古屋を本拠に倉庫・港湾運送・陸上運送・国際輸送を手がける総合物流会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "プレミア"
+      "market": "プレミア市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "logistics",
+      "name": "物流事業",
+      "description": "貨物の保管、荷役、運送、通関、国際複合輸送などを手がける事業です。2026年3月期の外部顧客への営業収益は29,545百万円と、連結営業収益の大半を占める主力事業です。当社のほか、連結子会社の東陽物流株式会社が名古屋港地区での荷役・運送を担い、中国、タイ、米国の現地法人が国際輸送を担っています。",
+      "customers": [
+        "製造業・流通業等の荷主企業",
+        "ユニリーバ・ジャパン株式会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "land-transport",
+          "name": "陸上運送業",
+          "description": "トラックによる貨物の陸上運送を行う部門です。2026年3月期の営業収益は11,654百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "warehouse",
+          "name": "倉庫業",
+          "description": "倉庫での貨物の保管と荷役を行う部門です。2026年3月期の営業収益は7,320百万円でした。名古屋地区を中心に、小牧、市川、相模原、宇都宮などに物流施設を構えています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-logistics",
+          "name": "その他の物流業務",
+          "description": "流通加工、配送センター運営、国際輸送、通関などの業務です。2026年3月期の営業収益は7,442百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "port-transport",
+          "name": "港湾運送業",
+          "description": "名古屋港などでの港湾荷役を行う部門です。2026年3月期の営業収益は3,127百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "所有する建物、土地等の賃貸を行う事業です。2026年3月期の外部顧客への営業収益は615百万円でした。名古屋地区のテナントビル賃貸などを行っています。",
+      "customers": [
+        "不動産の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "倉庫での保管・荷役、陸上運送、港湾運送、通関、国際複合輸送などの物流サービスと、保有不動産の賃貸を行う会社です。",
+    "products": [
+      "物流施設での保管・荷役サービス",
+      "陸上運送サービス",
+      "港湾運送サービス",
+      "通関・国際複合輸送サービス",
+      "流通加工・配送センターサービス",
+      "トランクルーム・書類保管サービス",
+      "不動産賃貸"
+    ],
+    "customers": [
+      "製造業・流通業等の荷主企業",
+      "ユニリーバ・ジャパン株式会社"
+    ],
+    "revenueSources": [
+      "物流サービス（保管料・荷役料・運送料等）による収入",
+      "保有不動産の賃貸料収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東陽倉庫",
+        "description": "東陽倉庫は当社と子会社6社、関連会社2社で構成され、2026年3月31日現在の連結従業員数は721人です。本社は名古屋市にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "物流サービスと不動産賃貸",
+        "description": "倉庫での保管・荷役、陸上運送、港湾運送、通関、国際複合輸送、流通加工などの物流サービスと、保有する建物・土地の賃貸を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "荷主企業",
+        "description": "顧客は製造業・流通業などの荷主企業です。ユニリーバ・ジャパン株式会社向けの営業収益は3,384百万円で、連結営業収益の11.2％を占めます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益",
+        "description": "2026年3月期の連結営業収益は30,161百万円（前連結会計年度比3.3％増）でした。物流事業が29,545百万円と大半を占め、不動産事業が615百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,662百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +152,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22173194000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 748,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +172,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23239013000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 733,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +192,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25197432000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 729,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +212,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26645842000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 724,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +232,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 29116262000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 721,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +240,245 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1926,
+      "title": "東陽倉庫株式会社を設立",
+      "description": "旧名古屋倉庫株式会社（1893年創業）と旧東海倉庫株式会社（1906年創業）とが合併し、東陽倉庫株式会社を設立しました。本店を名古屋市に置きました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "名古屋証券取引所に上場",
+      "description": "名古屋証券取引所に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "東陽荷役株式会社を設立",
+      "description": "名古屋港地区の作業部門を分離し、東陽荷役株式会社を設立しました。",
+      "significance": "現在の連結子会社・東陽物流株式会社の前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所に上場",
+      "description": "東京証券取引所に株式を上場しました。",
+      "significance": "全国市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "米国の現地企業を完全子会社化",
+      "description": "米国の現地企業TKK-TOYO USA, INC.を完全子会社化しました（2004年1月にTOYO LOGISTICS AMERICA, INC.に社名変更）。",
+      "significance": "北米拠点の子会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "連結子会社2社を合併し東陽物流株式会社に",
+      "description": "連結子会社2社を合併し、東陽物流株式会社としました。",
+      "significance": "荷役・運送部門の統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "中国・上海に現地法人を設立",
+      "description": "中華人民共和国に現地法人・東誉（上海）国際貨運代理有限公司を設立し、営業を開始しました。",
+      "significance": "中国での現地法人展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "タイ・バンコクに現地法人を設立",
+      "description": "タイ王国バンコク市に現地法人TOYO LOGISTICS (THAILAND) CO., LTD.を設立し、営業を開始しました。",
+      "significance": "東南アジア展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "太平シッピング株式会社を設立",
+      "description": "名古屋市に子会社・太平シッピング株式会社を設立し、営業を開始しました。",
+      "significance": "海運分野の子会社新設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式併合を実施",
+      "description": "普通株式5株につき1株とする株式併合を実施しました。",
+      "significance": "株式併合の実施です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "japan-transcity",
+      "relationship": "business-partner",
+      "description": "同業種企業として、物流事業全般における機能補完等の取引・協力関係（業務提携等の関係）を維持するため、同社株式599,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "meiko-trans",
+      "relationship": "business-partner",
+      "description": "同業種企業として、物流事業全般における機能補完等の取引・協力関係（業務提携等の関係）を維持するため、同社株式178,700株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-keihin",
+      "relationship": "business-partner",
+      "description": "同業種企業として、物流事業全般における機能補完等の取引・協力関係（業務提携等の関係）を強化するため、同社株式32,700株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamanaka",
+      "relationship": "customer",
+      "description": "物流事業のうち、主に倉庫業務に係る取引関係があり、その取引規模の維持・拡大を図るため、同社株式148,491株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aica-kogyo",
+      "relationship": "customer",
+      "description": "物流事業のうち、主に倉庫業務に係る取引関係があり、その取引規模の維持・拡大を図るため、同社株式144,232株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "meito",
+      "relationship": "customer",
+      "description": "物流事業のうち、主に倉庫業務に係る取引関係があり、その取引規模の維持・拡大を図るため、同社株式112,970株を保有しています（2026年3月31日現在）。株式会社meitoは2025年9月1日付で名糖産業株式会社より商号変更しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokai-senko",
+      "relationship": "customer",
+      "description": "物流事業のうち、主に倉庫業務に係る取引関係があり、その取引規模の維持・拡大を図るため、同社株式97,400株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toho-gas",
+      "relationship": "customer",
+      "description": "物流事業のうち、主に倉庫業務に係る取引関係があり、その取引規模の維持・拡大を図るため、同社株式70,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "riken-vitamin",
+      "relationship": "customer",
+      "description": "物流事業のうち、主に倉庫業務に係る取引関係があり、その取引規模の維持・拡大を図るため、同社株式66,100株を保有しています（2026年3月31日現在）。当事業年度において一部株式を売却しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takihyo",
+      "relationship": "customer",
+      "description": "物流事業のうち、主に倉庫業務に係る取引関係があり、その取引規模の維持・拡大を図るため、同社株式51,708株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-chemical",
+      "relationship": "customer",
+      "description": "物流事業のうち、主に倉庫業務に係る取引関係があり、その取引規模の維持・拡大を図るため、同社株式51,500株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okaya-and-co",
+      "relationship": "customer",
+      "description": "物流事業のうち、主に倉庫業務に係る取引関係があり、その取引規模の維持・拡大を図るため、同社株式20,800株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippn",
+      "relationship": "customer",
+      "description": "物流事業のうち、主に倉庫業務に係る取引関係があり、その取引規模の維持・拡大を図るため、同社株式15,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "s-and-b-foods",
+      "relationship": "customer",
+      "description": "物流事業のうち、主に倉庫業務に係る取引関係があり、その取引規模の維持・拡大を図るため、同社株式8,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "bourbon",
+      "relationship": "customer",
+      "description": "物流事業のうち、主に倉庫業務に係る取引関係があり、その取引規模の維持・拡大を図るため、同社株式916株を保有しています（2026年3月31日現在）。株式は取引先持株会を通じて取得しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -128,13 +486,51 @@
       "publisher": "東陽倉庫株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y9SP.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y9SP",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 主要な経営指標等の注記に、2023年10月１日付で普通株式５株につき１株の割合で株式併合を行った旨が印字されています。",
+      "businessStructure: 主要な経営指標等の注記に、2023年10月１日付で普通株式５株につき１株の割合で株式併合を行った旨が印字されています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中長期的な経営戦略として、物流テクノロジーを駆使した3PL物流の推進、海外ネットワークの拡充とグローバルな業務の強化、所有不動産等の活用による不動産関連事業の拡大を掲げています。具体策として、情報収集力とDX化の強化による提案型の営業力向上、教育研修の充実による社員の成長と能力の底上げ、災害やサイバー攻撃への予防体制と対応力を高める経営体制の強化に取り組んでいます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "名古屋港地区をはじめとする倉庫・物流施設を自社保有し、荷役・運送を担う連結子会社と一体で、保管から港湾荷役、陸上運送、通関、国際輸送までを一貫して提供できる体制を持ちます。中国・タイ・米国の現地法人が海外ネットワークを形成し、認定通関業者や特定保税承認者の認定、トランクルームや書類保管センターなどの専門サービスも備えています。",
+        "basis": "【事業の内容】の事業区分と事業の系統図、【沿革】の海外展開と子会社の変遷、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】のセグメント別概況に基づく",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "連結営業収益30,161百万円の内訳は、物流事業29,545百万円、不動産事業615百万円です。物流事業の内訳は陸上運送業11,654百万円、倉庫業7,320百万円、港湾運送業3,127百万円、その他7,442百万円で、主要顧客のユニリーバ・ジャパン株式会社向けが3,384百万円と全体の11.2％を占めます。",
+        "basis": "セグメント情報の外部顧客への営業収益と【関連情報】の主要な顧客ごとの情報、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】のセグメント毎の営業収益内訳に基づく",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

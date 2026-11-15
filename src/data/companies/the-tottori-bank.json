@@ -4,15 +4,110 @@
   "name": "鳥取銀行",
   "officialName": "株式会社鳥取銀行",
   "nameEn": "THE TOTTORI BANK, LTD.",
-  "description": null,
+  "shortNameEn": "The Tottori Bank",
+  "description": "鳥取県鳥取市に本店を置く地方銀行で、銀行業務を中心にクレジットカードやリースなどの金融サービスをグループで提供しています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "tottori-bank-group",
+      "name": "鳥取銀行グループの事業",
+      "description": "当行と子会社6社、関連会社2社でグループを構成し、銀行業務を中心に、クレジットカード業務、リース業務、ベンチャーキャピタル業務、ファンド運営業務、コンサルティング業務などの金融サービスに係る事業を行っています。「とりぎん」の愛称で親しまれています。",
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "banking",
+          "name": "銀行業",
+          "description": "当行が本店ほか支店53、出張所12において、預金業務、貸出業務、商品有価証券売買業務、有価証券投資業務、内国為替業務、外国為替業務などを行い、地域に密着した営業活動を展開する、グループの唯一の報告セグメントです。2026年3月期のサービスごとの外部顧客に対する経常収益は、貸出業務が11,455百万円、有価証券投資業務が2,562百万円、その他が4,973百万円で、合計18,991百万円です。",
+          "customers": [
+            "鳥取県を中心とする地域の企業や個人事業主",
+            "個人の預金者や借入者",
+            "地方公共団体など"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-financial-services",
+          "name": "その他（グループ会社の金融サービス）",
+          "description": "当行の子会社・関連会社が、クレジットカード業務、リース業務、ベンチャーキャピタル業務、ファンド運営業務、コンサルティング業務、投資運用業務などを行っています。報告セグメントは銀行業のみで、「その他」は重要性が乏しいため金額は独立して開示されていません。このほか投資事業有限責任組合（非連結子会社）が3組合あります。",
+          "customers": [
+            "グループの金融サービスを利用する地域の企業や個人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "預金で調達した資金を貸出や有価証券で運用する銀行業務を中核に、子会社・関連会社がクレジットカード、リース、ベンチャーキャピタルなどの金融サービスを担う事業モデルです。",
+    "products": [
+      "預金・貸出・内国為替・外国為替などの銀行業務",
+      "有価証券投資業務と商品有価証券売買業務",
+      "国債等公共債・証券投資信託・保険商品の窓口販売",
+      "子会社・関連会社によるクレジットカード業務やリース業務",
+      "ベンチャーキャピタル業務、ファンド運営業務、コンサルティング業務"
+    ],
+    "customers": [
+      "鳥取県を中心とする地域の企業や個人事業主",
+      "個人の顧客",
+      "地方公共団体など"
+    ],
+    "revenueSources": [
+      "貸出金利息などの資金運用収益",
+      "為替や窓口販売などの手数料による役務取引等収益",
+      "有価証券の運用収益や子会社・関連会社の収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当行と子会社6社・関連会社2社のグループ",
+        "description": "株式会社鳥取銀行は鳥取県鳥取市に本店を置き、子会社6社と関連会社2社とともにグループを構成しています。連結の従業員数は638人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "銀行業務とグループの金融サービスを提供",
+        "description": "本店ほか支店53、出張所12で預金、貸出、商品有価証券売買、有価証券投資、内国為替、外国為替などの銀行業務を行い、子会社・関連会社がクレジットカード、リース、ベンチャーキャピタル、ファンド運営、コンサルティングなどの金融サービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "鳥取県を中心とする地域の企業・個人が主な顧客",
+        "description": "鳥取県を中心に、企業向け貸出や個人向け貸出、地方公共団体向けの取引などを行っています。経常収益の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "経常収益は18,991百万円",
+        "description": "2026年3月期の連結経常収益は18,991百万円でした。サービスごとの外部顧客に対する経常収益は、貸出業務が11,455百万円、有価証券投資業務が2,562百万円、その他が4,973百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は1,583百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,583百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +122,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 48768000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 651,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +142,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 47879000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 637,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +162,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 50023000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 634,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +182,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 48115000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 639,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +202,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 50950000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 638,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +210,232 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1921,
+      "title": "鳥取貯蓄銀行として設立",
+      "description": "1921年12月15日に株式会社鳥取貯蓄銀行として設立し、本店を鳥取市に置いて貯蓄銀行業務を開始しました。",
+      "significance": "同行の創立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "普通銀行へ転換し因伯銀行に改称",
+      "description": "普通銀行に目的を変更（貯蓄銀行業務兼営）し、商号を株式会社因伯銀行に変更しました。",
+      "significance": "普通銀行としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "鳥取銀行に改称",
+      "description": "鳥取信用組合の営業の全部を譲り受け、商号を株式会社鳥取銀行に変更しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "外国為替業務を開始",
+      "description": "外国為替業務の認可を受け、外国為替に関する業務を開始しました。",
+      "significance": "取扱業務の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "鳥取県信用組合を合併",
+      "description": "鳥取県信用組合を合併しました。",
+      "significance": "県内の営業基盤の統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "とりぎんリースを設立",
+      "description": "とりぎんリース株式会社を設立し、リース業務を開始しました。",
+      "significance": "現在の関連会社で、グループのリース事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "とりぎんカードサービスを設立",
+      "description": "株式会社とりぎんカードサービスを設立し、クレジットカード業務を開始しました。",
+      "significance": "現在の子会社で、カード事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "新本店へ移転",
+      "description": "新本店が竣工し、現在地の鳥取市永楽温泉町171番地に移転しました。",
+      "significance": "現在の本店所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "大阪証券取引所などに上場",
+      "description": "大阪証券取引所市場第二部及び広島証券取引所に株式を上場しました。",
+      "significance": "株式上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "とっとりキャピタルを設立",
+      "description": "とっとりキャピタル株式会社を設立し、ベンチャーキャピタル業務を開始しました。",
+      "significance": "現在の関連会社で、ベンチャーキャピタル事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に上場しました。",
+      "significance": "東証への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "泉州銀行との共同化システムが稼動",
+      "description": "株式会社泉州銀行（現・株式会社池田泉州銀行）との共同化システムが稼動しました。",
+      "significance": "他行とのシステム共同化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "基幹系システムを地銀共同センターへ移行",
+      "description": "基幹系システムを地銀共同センターへ移行し、稼動しました。",
+      "significance": "地方銀行の共同センターへの移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所スタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sompo-holdings",
+      "relationship": "business-partner",
+      "description": "SOMPOホールディングス株式会社とは、損害保険業務を中心とした業務上の連携による業務提携等の関係があり、当行は同社の株式190,000株を保有しています（2026年3月31日現在）。同社自体は当行の株式を保有していませんが、子会社の損害保険ジャパン株式会社は当行の大株主です（同日現在2.28％）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "orix",
+      "relationship": "business-partner",
+      "description": "オリックス株式会社とは、リース業務を中心とした金融関連サービスや業務上の連携による業務提携等の関係があり、当行は同社の株式222,000株を保有しています（2026年3月31日現在）。同社も当行の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tomato-bank",
+      "relationship": "business-partner",
+      "description": "株式会社トマト銀行とは、近隣地域金融機関として金融関連サービスや業務上の連携による業務提携等の関係があり、当行は同社の株式36,500株を保有しています（2026年3月31日現在）。同社も当行の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第162期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第162期(2025/04/01－2026/03/31)",
       "publisher": "株式会社鳥取銀行",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDT2.pdf",
-      "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z1D3.pdf",
+      "publishedAt": "2026-09-11",
+      "docId": "S100Z1D3",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「鳥取銀行」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E9%B3%A5%E5%8F%96%E9%8A%80%E8%A1%8C",
+      "accessedAt": "2026-11-16"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年4月にパーパス「地域社会の未来を「創る」「守る」「支える」」を制定し、2024年度から2026年度を計画期間とする中期経営計画「for the FUTURE ～未来に向けて～」に取り組んでいます。「新たな地域価値の創造」「コンサルティング深化」「経営基盤の強化」「人的資本経営の実践」の4つの重点テーマに取り組み、「地域社会の発展を力強くリードするコンサルティングバンク」を目指しています。",
+        "asOf": "2026-09-11",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "鳥取県鳥取市に本店を置き、本店ほか支店53、出張所12の店舗網で地域に密着した営業活動を展開しています。銀行業務に加え、グループでクレジットカード、リース、ベンチャーキャピタル、ファンド運営、コンサルティングまで金融サービスを提供できる体制を持っています。",
+        "asOf": "2026-09-11",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の連結経常収益18,991百万円のサービスごとの内訳は、貸出業務が11,455百万円、有価証券投資業務が2,562百万円、その他が4,973百万円です。本邦の外部顧客に対する経常収益が連結経常収益の90％を超え、経常収益の10％以上を占める特定の顧客はありません。報告セグメントは銀行業のみです。",
+        "basis": "セグメント情報の関連情報（サービスごとの情報、地域ごとの情報、主要な顧客ごとの情報）と、経営成績等の状況の概要に基づきます。",
+        "asOf": "2026-09-11",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

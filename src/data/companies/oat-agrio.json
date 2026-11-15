@@ -2,17 +2,114 @@
   "id": "oat-agrio",
   "code": "4979",
   "name": "ＯＡＴアグリオ",
-  "officialName": "ＯＡＴアグリオ株式会社",
+  "officialName": "OATアグリオ株式会社",
   "nameEn": "OAT Agrio Co., Ltd.",
-  "description": null,
+  "shortNameEn": "OAT Agrio Co., Ltd.",
+  "description": "ＯＡＴアグリオは、農薬と肥料、バイオスティミュラントを自社で研究開発・製造し、世界各地の農業生産者へ販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "agritech",
+      "name": "アグリテクノ事業",
+      "description": "当社グループの唯一の報告セグメントで、農薬・肥料・バイオスティミュラントの研究開発、製造、販売を行います。2025年12月期の売上高は31,950百万円でした。当社と連結子会社29社（旭化学工業、Blue Wave Holding B.V.、LIDA Plant Research, S.L.、OAT&IIL India Laboratories Private Limited、株式会社インプランタイノベーションズなど）、非連結子会社１社、関連会社２社で構成され、連結従業員数は596人です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "fertilizer-biostimulant",
+          "name": "肥料・バイオスティミュラント",
+          "description": "施肥灌水技術として化成肥料、有機肥料、液体肥料などを製造・販売し、養液土耕栽培システムも提供します。バイオスティミュラントでは植物が本来持つ免疫力を高める資材を展開し、切り花の品質保持剤も扱います。2025年12月期の売上高は20,163百万円でした。",
+          "customers": [
+            "全国農業協同組合連合会（全農）・商系の代理店",
+            "施設園芸農家などの農業生産者",
+            "切り花小売店",
+            "一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "pesticides",
+          "name": "農薬",
+          "description": "防除技術として殺虫剤、殺菌剤、除草剤などの農薬を自社で研究開発し、製造・販売します。オンコル、オリオン、ダニサラバなどの製品があります。2025年12月期の売上高は11,786百万円でした。",
+          "customers": [
+            "全国農業協同組合連合会（全農）",
+            "商社・メーカー",
+            "農業生産者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【関連情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社開発の農薬、肥料、バイオスティミュラントと養液土耕栽培システムを、全農や商社、海外の販売網を通じて農業生産者へ販売して収益を得る会社です。",
+    "products": [
+      "農薬（殺虫剤・殺菌剤・除草剤など）",
+      "肥料（化成肥料・有機肥料・液体肥料など）",
+      "バイオスティミュラント（植物成長調整剤・活力剤など）",
+      "養液土耕栽培システム",
+      "切り花品質保持剤"
+    ],
+    "customers": [
+      "農業生産者",
+      "全国農業協同組合連合会（全農）",
+      "商社・代理店",
+      "一般消費者"
+    ],
+    "revenueSources": [
+      "農薬の販売による売上高",
+      "肥料・バイオスティミュラントの販売による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ＯＡＴアグリオ",
+        "description": "東京都千代田区に本社を置き、連結子会社29社とグループを構成します。2025年12月期の連結従業員数は596人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "農薬・肥料・バイオスティミュラント",
+        "description": "徳島県鳴門市の研究所などで自社開発した農薬、肥料、バイオスティミュラントや、養液土耕栽培システムを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "農業生産者など",
+        "description": "全農や商社・代理店を通じて国内外の農業生産者へ販売し、ウェブ直販で一般消費者にも提供します。主要な顧客は丸善薬品産業で、2025年12月期の売上高の16.2％を占めます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年12月期の売上高は31,950百万円で、肥料・バイオスティミュラントが20,163百万円、農薬が11,786百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は2,327百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,12 +124,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9096000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 556,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第13期（2022年12月期）の期首から適用しており、第12期（2021年12月期）の主要な経営指標等は当該会計基準等を遡って適用した後の数値です。"
     },
     {
       "fiscalYear": "2022年12月期",
@@ -47,7 +145,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11949000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 576,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +165,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14872000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 585,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +185,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17104000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 601,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +205,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19956000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 596,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +213,166 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2010,
+      "title": "大塚アグリテクノ株式会社を設立",
+      "description": "大塚化学株式会社のアグリテクノ事業部を会社分割（新設分割）し、大塚アグリテクノ株式会社を設立しました。",
+      "significance": "現在の当社の創業で、大塚化学グループからの独立の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "旭化学工業株式会社を完全子会社化",
+      "description": "旭化学工業株式会社の全株式を取得し、完全子会社化しました。",
+      "significance": "生産・開発体制の基盤となる子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "インドに共同研究所を設立",
+      "description": "Insecticides (India) Limited との共同研究所として、OAT&IIL India Laboratories Private Limited をインドに設立しました。",
+      "significance": "海外の研究開発拠点の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "ＯＡＴアグリオ株式会社に商号変更",
+      "description": "商号をＯＡＴアグリオ株式会社に変更し、本店を東京都千代田区へ移転しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "東京証券取引所市場第二部から市場第一部銘柄に指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "中国とインドネシアに子会社を設立",
+      "description": "PT. OAT MITOKU AGRIO（インドネシア）と潤禾（舟山）植物科技有限公司（中国）を設立しました。",
+      "significance": "アジアでの製造・販売体制の拡充です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "欧州の２社を子会社化",
+      "description": "LIDA Plant Research, S.L.（スペイン）と Blue Wave Holding B.V.（オランダ）の株式を取得し、子会社化しました。",
+      "significance": "バイオスティミュラントと切り花事業を取り込む欧州展開の転機です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "丸善薬品産業株式会社と業務提携",
+      "description": "丸善薬品産業株式会社と製品販売に関する業務提携契約を締結しました。",
+      "significance": "現在の主要な販売パートナーとの提携です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、プライム市場へ移行しました。",
+      "significance": "新市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所プライム市場からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "OAT Pakistan Private Limited を子会社から除外",
+      "description": "2013年に子会社化した OAT Pakistan Private Limited の全株式を譲渡し、子会社から除外しました。",
+      "significance": "海外子会社の再編です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "hokko-chemical-industry",
+      "relationship": "business-partner",
+      "description": "北興化学工業株式会社とは、特定投資株式の保有目的に農薬分野での技術交流先であり、中長期的な取引関係を維持するためと印字されています。2025年12月31日現在、同社の株式270,000株を保有しています。同社も当社株式を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "berg-earth",
+      "relationship": "business-partner",
+      "description": "ベルグアース株式会社とは、特定投資株式の保有目的に種苗分野での技術交流先であり、中長期的な取引関係を維持するためと印字されています。2025年12月31日現在、同社の株式50,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kaneko-seeds",
+      "relationship": "business-partner",
+      "description": "カネコ種苗株式会社とは、特定投資株式の保有目的に当社各種製品販売における協力関係を維持するためと印字されています。2025年12月31日現在、同社の株式15,618株を保有しています。同社も当社株式を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toagosei",
+      "relationship": "business-partner",
+      "description": "東亞合成株式会社とは、特定投資株式の保有目的に農薬原料調達面における協力関係を維持するためと印字されています。2025年12月31日現在、同社の株式2,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +380,51 @@
       "publisher": "ＯＡＴアグリオ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XSHI.pdf",
       "publishedAt": "2026-03-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XSHI",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 主要な経営指標等の注記に、2022年３月１日付で普通株式１株につき２株の割合で株式分割を行った旨が印字されています。",
+      "businessStructure: 主要な経営指標等の注記に、2022年３月１日付で普通株式１株につき２株の割合で株式分割を行った旨が印字されています。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "新中期経営計画（2024-2026年）「さらなる挑戦への積極投資」では、研究開発への集中投資を行い、人や環境に優しいグリーンプロダクツとバイオスティミュラント事業の普及拡大、施設園芸分野でのスマート農業（栽培トータルソリューションサービス『アグリオいちごマスター』）の推進、グループ各社の製品を相互の販路で展開するグローバル製品展開に注力するとしています。経営理念は「食糧増産技術（アグリテクノロジー）と真心で、世界の人々に貢献します。」です。",
+        "asOf": "2026-03-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "徳島県鳴門市の研究所・工場に加え、インド（OAT&IIL India Laboratories）とスペイン（LIDA Plant Research）に研究開発拠点を持ち、原体の創製から製剤開発まで自社で行う体制があります。防除技術、施肥灌水技術、バイオスティミュラントの３つの技術を併せ持ち、養液土耕栽培システムは開発から25年以上が経過し、累計販売台数は約3,000台に達しています。有機JAS適合のグリーンプロダクツなど、安全性の高い防除資材の開発にも注力しています。",
+        "basis": "【事業の内容】の研究開発体制と３つの技術サービスの記載、セグメント情報の【関連情報】における製品及びサービスごとの情報、経営成績等の状況の概要に基づきます。",
+        "asOf": "2026-03-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントはアグリテクノ事業のみの単一セグメントで、2025年12月期の売上高は31,950百万円（前年同期比7.3％増）でした。地域別では日本が8,838百万円で、海外が過半を占めます。主要な顧客は丸善薬品産業で、売上高の16.2％を占めます。国内の農薬市場は農業就業人口の減少などで縮小傾向にある一方、世界人口の増加に伴う食料増産のニーズが高まる環境にあるとされています。",
+        "basis": "セグメント情報の【関連情報】（製品及びサービスごとの情報、地域ごとの情報、主要な顧客ごとの情報）と経営成績等の状況の概要、【経営方針、経営環境及び対処すべき課題等】の経営環境の記載に基づきます。",
+        "asOf": "2026-03-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

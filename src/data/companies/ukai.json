@@ -4,15 +4,134 @@
   "name": "うかい",
   "officialName": "株式会社うかい",
   "nameEn": "UKAI CO.,LTD.",
-  "description": null,
+  "shortNameEn": "UKAI CO.,LTD.",
+  "description": "東京都八王子市に本社を置き、和食・洋食のディナーレストランと洋菓子店「アトリエうかい」を運営する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "restaurant",
+      "name": "レストラン事業部",
+      "description": "和食料理店5店舗と洋食料理店8店舗のディナーレストランを運営する事業です。和食は「うかい鳥山」のいろり炭火焼料理、「とうふ屋うかい」のとうふ料理、「kappou ukai」の割烹料理、洋食は「うかい亭」の鉄板料理などを展開しています。2026年3月期の売上高は11,022百万円です。",
+      "customers": [
+        "一般消費者"
+      ],
+      "children": [
+        {
+          "id": "japanese-restaurants",
+          "name": "和食料理店",
+          "description": "「うかい鳥山」（いろり炭火焼料理）、「とうふ屋うかい 大和田店・鷺沼店」（とうふ料理）、「銀座 kappou ukai 肉匠」「六本木 kappou ukai」（割烹料理）の5店舗を運営しています。「東京 芝 とうふ屋うかい」は2026年3月31日に契約期間満了により閉店しました。",
+          "customers": [
+            "一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "western-restaurants",
+          "name": "洋食料理店",
+          "description": "「八王子うかい亭」「横浜うかい亭」「銀座うかい亭」「あざみ野うかい亭」「表参道うかい亭」「六本木うかい亭」の鉄板料理、「グリルうかい 丸の内店」のグリル料理、「ル・プーレ ブラッスリーうかい」のブラッスリーの8店舗を運営しています。",
+          "customers": [
+            "一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "merchandising",
+      "name": "物販事業部",
+      "description": "洋菓子店「アトリエうかい」の5店舗で洋菓子の開発・製造・販売を行う事業です。製菓工房を併設するトリエ京王調布のほか、エキュート品川、髙島屋京都店・髙島屋大阪店、グランスタ東京に出店し、EC販売や百貨店での催事出店も行っています。2026年3月期の売上高は1,994百万円です。",
+      "customers": [
+        "一般消費者"
+      ],
+      "children": [
+        {
+          "id": "atelier-ukai",
+          "name": "アトリエうかい",
+          "description": "洋菓子の製造・販売を行う店舗ブランドです。製菓工房を併設する店舗と百貨店・駅ビル内の店舗を展開し、百貨店での長期催事やEC販売も行っています。",
+          "customers": [
+            "一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "和食・洋食のディナーレストラン13店舗と洋菓子店5店舗を運営し、飲食と洋菓子の販売で収益を得ています。",
+    "products": [
+      "和食・洋食のディナーレストランでの料理の提供",
+      "洋菓子店「アトリエうかい」での洋菓子の製造・販売",
+      "ECでの洋菓子の販売"
+    ],
+    "customers": [
+      "レストランを利用する一般消費者",
+      "洋菓子を購入する一般消費者"
+    ],
+    "revenueSources": [
+      "レストランでの飲食販売収入",
+      "洋菓子などの商品販売収入",
+      "文化事業の入場料等収入（2025年10月の事業承継まで）"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社うかい",
+        "description": "1964年に東京都八王子市でうかい鳥山が創業し、1968年に株式会社うかい鳥山として設立された会社です。連結財務諸表は作成しておらず、東京証券取引所スタンダード市場に上場しています。2026年3月31日現在の従業員数は589人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "レストラン事業と物販事業",
+        "description": "レストラン事業部は和食料理店5店舗と洋食料理店8店舗のディナーレストランを運営し、物販事業部は洋菓子店「アトリエうかい」5店舗で洋菓子の開発・製造・販売を行っています。文化事業部は2025年10月に事業を承継し、事業年度末時点では営んでいません。"
+      },
+      {
+        "kind": "customer",
+        "title": "一般消費者",
+        "description": "レストランや洋菓子店を訪れる一般消費者が、料理や洋菓子を購入します。店舗は東京都と神奈川県を中心に展開し、洋菓子店は百貨店や駅ビル内にも出店しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高13,570百万円",
+        "description": "2026年3月期の売上高は13,570百万円で、前期比0.8％増となりました。内訳はレストラン事業部11,022百万円、物販事業部1,994百万円、文化事業部552百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益295百万円",
+        "description": "2026年3月期の当期純利益は295百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +146,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2984500000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 668,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +168,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3900051000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 639,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +190,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4699767000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 638,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +212,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4769015000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 658,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,17 +234,158 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5016432000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 589,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1964,
+      "title": "うかい鳥山を創業",
+      "description": "東京都八王子市にうかい鳥山を創業しました。",
+      "significance": "当社の事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "株式会社うかい鳥山を設立",
+      "description": "東京都八王子市に株式会社うかい鳥山を設立しました。",
+      "significance": "実質上の存続会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "八王子うかい亭を開店",
+      "description": "東京都八王子市に八王子うかい亭を開店しました。",
+      "significance": "「うかい亭」ブランドの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "株式会社うかいに商号変更",
+      "description": "株式会社うかい鳥山を株式会社うかいに商号変更しました。",
+      "significance": "現在の社名の由来です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "株式会社うかい・株式会社横浜うかいを合併",
+      "description": "形式上の存続会社であるうかい商事株式会社が、株式会社うかいと株式会社横浜うかいを吸収合併し、株式会社うかいに商号を変更しました。",
+      "significance": "現在の法人の形が成立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "箱根ガラスの森を開設",
+      "description": "神奈川県足柄下郡箱根町に箱根ガラスの森を開設しました。",
+      "significance": "文化事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "アトリエうかい たまプラーザを開店",
+      "description": "神奈川県横浜市青葉区にアトリエうかい たまプラーザを開店しました。",
+      "significance": "洋菓子店「アトリエうかい」の出店です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "台湾・高雄に「うかい亭高雄」を開店",
+      "description": "御盟晶英酒店股份有限公司と業務提携し、台湾・高雄市にうかい亭高雄（カオシュン）を開店しました。",
+      "significance": "海外展開の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、スタンダード市場へ移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社UKAIzm corporationを設立",
+      "description": "東京都八王子市に株式会社UKAIzm corporationを設立しました。",
+      "significance": "新規事業創出のための子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "文化事業を会社分割により承継",
+      "description": "簡易吸収分割により、箱根ガラスの森（文化事業）を株式会社箱根ガラスの森リゾートへ承継しました。",
+      "significance": "事業ポートフォリオ再構築の一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "東京 芝 とうふ屋うかいを閉店",
+      "description": "東京 芝 とうふ屋うかいを契約期間満了により閉店しました。",
+      "significance": "店舗ポートフォリオの見直しです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -134,13 +394,45 @@
       "publisher": "株式会社うかい",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YL71.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YL71",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念として基本理念「利は人の喜びの陰にあり」と店舗理念「100年続く店づくり」を掲げています。長期経営構想2035では「多様な食の業態に携わり、永続企業・ブランドを築き、すべての人に笑顔や感動、幸せな時間をプロデュースする」を目指す姿とし、重点施策に「収益力の向上」と「人材力の強化・現場環境の充実」を定めています。中期経営計画2030では、2025年4月に設立した子会社の株式会社UKAIzm corporationによる新規事業の創出と物販事業を成長の柱と位置づけています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高は前期比0.8％増の13,570百万円、当期純利益は295百万円でした。文化事業を2025年10月に承継先へ移管して事業ポートフォリオの再構築を進め、レストラン事業部と物販事業部はいずれも増収となっています。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析に、売上高と当期純利益の金額と前期比増減率、事業別の売上高、文化事業の事業承継の事実が印字されていることに基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "庭園を備えた大型店でいろり炭火焼料理を提供する「うかい鳥山」や、客席の前で調理する鉄板料理の「うかい亭」など、空間と接客を含む体験を提供する店舗づくりが特徴です。洋菓子の「アトリエうかい」は製菓工房を併設する店舗を持ち、百貨店や駅ビルへの出店とEC販売を展開しています。",
+        "basis": "【事業の内容】に各店舗の業態と店舗数が、【沿革】に「うかい鳥山」の創業と各店舗の開店が印字されていることに基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

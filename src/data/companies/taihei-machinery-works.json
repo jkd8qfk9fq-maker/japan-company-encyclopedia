@@ -4,19 +4,182 @@
   "name": "太平製作所",
   "officialName": "株式会社太平製作所",
   "nameEn": "Taihei Machinery Works, Limited",
-  "description": null,
+  "shortNameEn": "Taihei Machinery Works, Limited",
+  "description": "合板機械と木工機械、住宅用建材を製造販売する、愛知県小牧市の機械メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "plywood-machinery",
+      "name": "合板機械事業",
+      "description": "ナイフ研磨機、ドライヤー、ホットプレスなどの合板機械を本社工場で製造し、得意先に販売する事業です。米国の連結子会社TAIHEI MACHINERY US Inc.は、当社製品を主に北米を中心に販売しています。2026年3月期の外部顧客への売上高は3,212百万円です。",
+      "customers": [
+        "合板メーカーなどの得意先",
+        "北米の得意先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "knife-grinder",
+          "name": "ナイフ研磨機",
+          "description": "合板の製造に使うナイフ研磨機です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "dryer",
+          "name": "ドライヤー",
+          "description": "合板の製造に使うドライヤーです。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "hot-press",
+          "name": "ホットプレス",
+          "description": "合板の製造に使うホットプレスです。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    },
+    {
+      "id": "woodworking-machinery",
+      "name": "木工機械事業",
+      "description": "チッパー、フィンガージョインター、スキャナー装置などの木工機械を大阪工場で製造し、得意先に販売する事業です。2026年3月期の外部顧客への売上高は2,201百万円です。",
+      "customers": [
+        "木材加工メーカーなどの得意先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "chipper",
+          "name": "チッパー",
+          "description": "木材をチップ化する機械です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "finger-jointer",
+          "name": "フィンガージョインター",
+          "description": "木材を接合する機械です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "scanner",
+          "name": "スキャナー装置",
+          "description": "木材を計測・検査するスキャナー装置です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    },
+    {
+      "id": "housing-materials",
+      "name": "住宅建材事業",
+      "description": "連結子会社の太平ハウジング株式会社が、ツーバイフォー工法住宅用建設資材（木質パネル）などを可児工場で製造し、販売する事業です。2026年3月期の外部顧客への売上高は945百万円です。",
+      "customers": [
+        "住宅会社などの得意先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "wood-panel",
+          "name": "木質パネル",
+          "description": "ツーバイフォー工法住宅用の木質パネルです。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "本社工場で合板機械を、大阪工場で木工機械を製造し、子会社の太平ハウジングが住宅用建材を製造販売する仕組みです。",
+    "products": [
+      "合板機械（ナイフ研磨機、ドライヤー、ホットプレスなど）",
+      "木工機械（チッパー、フィンガージョインター、スキャナー装置など）",
+      "住宅用建材（ツーバイフォー工法住宅用建設資材など）"
+    ],
+    "customers": [
+      "合板メーカーなどの得意先",
+      "木材加工メーカーなどの得意先",
+      "住宅会社などの得意先",
+      "北米の得意先"
+    ],
+    "revenueSources": [
+      "合板機械の製造販売代金",
+      "木工機械の製造販売代金",
+      "住宅用建材の製造販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "太平製作所",
+        "description": "1925年に名古屋市で創立し、愛知県小牧市に本社を置いています。東京証券取引所スタンダード市場と名古屋証券取引所メイン市場に上場し、2026年3月31日現在の従業員数は158人で、連結子会社は2社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "合板機械・木工機械・住宅建材",
+        "description": "合板機械事業ではナイフ研磨機やドライヤー、ホットプレスなどを本社工場で製造し、木工機械事業ではチッパーやフィンガージョインター、スキャナー装置などを大阪工場で製造します。住宅建材事業では、連結子会社の太平ハウジング株式会社がツーバイフォー工法住宅用の木質パネルなどを製造します。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外の得意先",
+        "description": "製品は国内の合板メーカーや木材加工メーカーなどの得意先に販売し、米国では連結子会社のTAIHEI MACHINERY US Inc.が当社製品を主に北米を中心に販売しています。2026年3月期の輸出比率は15.3％です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高6,359百万円",
+        "description": "2026年3月期の売上高は6,359百万円で、合板機械事業が3,212百万円、木工機械事業が2,201百万円、住宅建材事業が945百万円です。前期に比べて19.0％減りました。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益438百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は438百万円で、前期は576百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,12 +194,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5251729000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 160,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第135期の期首から適用しており、第135期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年3月期",
@@ -51,7 +215,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5844863000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 157,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +235,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6853283000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 156,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +255,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6895502000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 164,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +275,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7241449000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 158,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +283,139 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1925,
+      "title": "株式会社太平製作所を創立",
+      "description": "名古屋市中区流町の合名会社太平製作所を買収し、株式会社太平製作所を創立しました。製材、木工機械の製造販売を始めました。",
+      "significance": "会社の創立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1927,
+      "title": "合板機械の製造販売を開始",
+      "description": "合板機械の製造販売を始めました。",
+      "significance": "現在の主力事業である合板機械事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1946,
+      "title": "笠寺工場に本社と全工場設備を集結",
+      "description": "名古屋市南区の笠寺工場に本社及び全工場設備を集結しました。",
+      "significance": "生産体制の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "大阪工場を新設",
+      "description": "大阪工場を新設し、木工機及び各種チッパーの製造工場としました。",
+      "significance": "木工機械事業の製造拠点の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "名古屋証券取引所市場第二部に上場",
+      "description": "名古屋証券取引所市場第二部に株式を上場しました。",
+      "significance": "資本市場への初参加です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "小牧工場を新設",
+      "description": "愛知県小牧市に小牧工場を新設しました。",
+      "significance": "現在の本社工場につながる拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "本社と工場を小牧工場へ全面移転",
+      "description": "笠寺の本社及び工場を小牧工場に全面移転しました。",
+      "significance": "現在の本社所在地への移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "決算期を3月31日に変更",
+      "description": "決算期を4月30日から3月31日に変更しました。",
+      "significance": "現在の3月決算の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "太平ハウジング株式会社を設立",
+      "description": "全額出資により太平ハウジング株式会社を設立し、東海ハウジングマテリアル株式会社より営業を譲り受け、2004年4月より営業を開始しました。",
+      "significance": "住宅建材事業のグループ化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所と大阪証券取引所の統合に伴い、東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "東証への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証スタンダード市場と名証メイン市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより市場第二部からスタンダード市場に移行し、名古屋証券取引所の市場区分の見直しにより市場第二部からメイン市場に移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "TAIHEI MACHINERY US Inc.を設立",
+      "description": "全額出資により、米国にTAIHEI MACHINERY US Inc.を設立しました。",
+      "significance": "北米販売拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "wood-one",
+      "relationship": "business-partner",
+      "description": "株式会社ウッドワンは、政策保有株式の保有目的として、良好な取引関係の維持発展を目的に持株会に加入し、取引先企業相互間の情報共有を行う相手として印字されています。2026年3月31日現在の保有株式数は7,898株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -128,13 +423,47 @@
       "publisher": "株式会社太平製作所",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIVE.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YIVE",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営方針として“木材を活かす”を掲げ、独自の技術で木材を有効利用し、社会に必要とされる会社を目指しています。対処方針では、既存主力機の受注・PR活動に努めるとともに各テーマに沿った新たな技術の開発に注力し、北米圏を中心とした販路拡大に向けてTAIHEI MACHINERY US Inc.の機能強化に取り組むほか、中・高層建築物向けの新たな木質建材であるCLPやLVLを効率的に生産できる技術の開発、木質のフレーム構造を持つ農業向けビニールハウスなど木質材を活用する製品の展開に注力するとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "創業から一貫して樹木と向き合い、樹木から価値ある木材を生み出す技術を磨いてきた会社で、木工機械ではスキャナー装置の進化版であるT-Scanner Wが日本木工機械展2025で技術優秀賞を受賞するなど、独自の技術開発を続けています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、創業から一貫して樹木と向き合い、樹木から価値ある木材を生み出す技術を磨いてきたことが印字されています。MD&Aに、既存のScannerシリーズの進化版であるT-Scanner Wが日本木工機械展2025において技術優秀賞を受賞したことが印字されています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の地域別の売上高は、日本5,384百万円、北米749百万円、東南アジア147百万円、その他77百万円で、国内向けが中心です。主要な顧客では、林ベニヤ産業株式会社向けが売上高の22.4％を占めています。",
+        "basis": "【セグメント情報等】の関連情報に、2026年3月期の地域ごとの売上高として日本5,384,354千円、東南アジア147,907千円、北米749,103千円、その他77,752千円と印字され、主要な顧客ごとの情報に林ベニヤ産業株式会社の売上高1,422,568千円と印字されています。MD&Aの相手先別販売実績に、同社の割合が22.4％と印字されています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

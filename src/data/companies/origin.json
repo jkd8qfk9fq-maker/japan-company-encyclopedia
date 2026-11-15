@@ -4,15 +4,152 @@
   "name": "オリジン",
   "officialName": "株式会社オリジン",
   "nameEn": "Origin Company, Limited",
-  "description": null,
+  "shortNameEn": "Origin Company, Limited",
+  "description": "電源機器や合成樹脂塗料、精密機構部品、パワー半導体などを製造販売する電機・化学メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "electronics",
+      "primary": false
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "chemitronics",
+      "name": "ケミトロニクス事業",
+      "description": "プラスチック用塗料や非鉄金属用塗料などの合成樹脂塗料を製造販売する事業です。当社と東邦化研工業株式会社、中国・タイ・インドネシアの子会社が製造・販売を担います。2026年3月期の外部顧客への売上高は10,359百万円で、5事業の中で最大でした。",
+      "customers": [
+        "モビリティ関連メーカー",
+        "化粧品関連メーカー",
+        "非鉄金属製品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "components",
+      "name": "コンポーネント事業",
+      "description": "ミニチュアベアリング、ワンウェイクラッチ、トルクリミッタなどの精密機構部品を製造販売する事業です。当社と中国の子会社が製造・販売し、一部の製造は北海道オリジン株式会社などに委託しています。2026年3月期の外部顧客への売上高は7,813百万円でした。",
+      "customers": [
+        "事務機器メーカー",
+        "モビリティ関連メーカー",
+        "金融機器メーカー",
+        "レジャー関連メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "electronics",
+      "name": "エレクトロニクス事業",
+      "description": "医療、半導体製造装置、通信向けなどの電源機器を製造販売する事業です。当社が製造・販売し、一部の製造は埼玉オリジン株式会社と関連会社の北富士オリジン株式会社に委託しています。2026年3月期の外部顧客への売上高は6,722百万円でした。",
+      "customers": [
+        "医療機器メーカー",
+        "半導体製造装置メーカー",
+        "通信機器メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "semiconductor-devices",
+      "name": "その他（半導体デバイス事業）",
+      "description": "ダイオードやサージ防護素子などのパワー半導体を製造販売する事業です。当社が製造・販売し、一部の製造は北海道オリジン株式会社に委託しています。2026年3月期の外部顧客への売上高は1,243百万円でした。",
+      "customers": [
+        "産業機器メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "mechatronics",
+      "name": "メカトロニクス事業",
+      "description": "ギ酸還元真空リフロー炉、コンデンサ式抵抗溶接機、貼合装置などのシステム機器を製造販売する事業です。製造と販売はすべて当社が行います。2026年3月期の外部顧客への売上高は739百万円でした。",
+      "customers": [
+        "電子部品メーカー",
+        "半導体関連メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "電源機器、システム機器、合成樹脂塗料、精密機構部品、パワー半導体を、自社と国内外の子会社で製造し、医療・通信・モビリティ分野などの顧客へ販売して収益を得る事業モデルです。",
+    "products": [
+      "電源機器（医療・半導体製造装置・通信向け）",
+      "システム機器（ギ酸還元真空リフロー炉、抵抗溶接機、貼合装置など）",
+      "合成樹脂塗料（プラスチック用塗料、非鉄金属用塗料など）",
+      "精密機構部品（ミニチュアベアリング、ワンウェイクラッチ、トルクリミッタなど）",
+      "パワー半導体（ダイオード、サージ防護素子など）"
+    ],
+    "customers": [
+      "医療機器メーカー",
+      "半導体製造装置メーカー",
+      "通信機器メーカー",
+      "モビリティ関連メーカー",
+      "事務機器メーカー"
+    ],
+    "revenueSources": [
+      "電源機器の販売",
+      "システム機器の販売",
+      "合成樹脂塗料の販売",
+      "精密機構部品の販売",
+      "パワー半導体の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "オリジン",
+        "description": "埼玉県さいたま市に本社を置き、当社と子会社14社、関連会社2社でグループを構成します。2026年3月期の連結従業員数は1,066人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "5つの事業の製品",
+        "description": "電源機器、システム機器、合成樹脂塗料、精密機構部品、パワー半導体を製造販売します。製造は当社のほか、中国・タイ・インドネシアなどの子会社も担います。"
+      },
+      {
+        "kind": "customer",
+        "title": "医療・通信・モビリティなどの顧客",
+        "description": "医療、半導体製造装置、通信向けの電源機器や、モビリティ関連向けの塗料と精密機構部品などを、国内外のメーカーへ販売します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は26,877百万円で、前期比6.7％減でした。事業別ではケミトロニクス事業10,359百万円、コンポーネント事業7,813百万円、エレクトロニクス事業6,722百万円が中心です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失",
+        "description": "2026年3月期の親会社株主に帰属する当期純損失は2,220百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +164,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26399636000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1101,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26653037000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1060,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26347864000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1043,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25892133000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1036,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +244,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25265547000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1066,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +252,167 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1938,
+      "title": "富士電炉工業株式会社を創立",
+      "description": "富士電炉工業株式会社を創立し、電気炉や亜酸化銅整流器などの製造を開始しました。",
+      "significance": "現在の当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "社名をオリジン電気株式会社へ変更",
+      "description": "社名をオリジン電気株式会社へ変更しました。",
+      "significance": "現在の商号につながる「オリジン」の名称の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "合成樹脂塗料の製造を開始",
+      "description": "東京都板橋区蓮根町に志村工場を新設し、合成樹脂塗料の製造を開始しました。",
+      "significance": "現在のケミトロニクス事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "ミニチュアベアリングの製造を開始",
+      "description": "栃木県間々田町（現・小山市）の間々田工場を増築し、ミニチュアベアリングの製造を開始しました。",
+      "significance": "現在のコンポーネント事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "株式を東京証券取引所市場第一部に上場しました。",
+      "significance": "市場第一部への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "北海道オリジン株式会社を設立",
+      "description": "当社子会社として北海道オリジン株式会社を設立しました。",
+      "significance": "現在の精密機構部品とパワー半導体の製造を担う連結子会社の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "上海欧利生東邦塗料有限公司を設立",
+      "description": "中国上海市に当社子会社上海欧利生東邦塗料有限公司を設立しました。",
+      "significance": "塗料事業の中国展開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "東邦化研工業株式会社を子会社化",
+      "description": "東邦化研工業株式会社の全株式を取得し、子会社化しました。",
+      "significance": "ケミトロニクス事業の国内基盤の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "オリジン・ドラケミ・インドネシア株式会社を子会社化",
+      "description": "オリジン・ドラケミ・インドネシア株式会社の株式取得手続きを完了し、子会社化しました。",
+      "significance": "塗料事業の東南アジア展開の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "社名を株式会社オリジンへ変更",
+      "description": "社名を株式会社オリジンへ変更しました。",
+      "significance": "現在の社名への変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "オリジン・コリア株式会社の清算結了",
+      "description": "韓国ソウル市の当社子会社オリジン・コリア株式会社は、2026年3月に清算が結了しました。",
+      "significance": "当期中に完了した子会社の清算であり、期末の体制に反映されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sun-wa-technos",
+      "relationship": "customer",
+      "description": "サンワテクノス株式会社は、主に当社のその他（半導体デバイス事業）の製品の販売先であり、当社は同社株式498,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sanyo-denki",
+      "relationship": "supplier",
+      "description": "山洋電気株式会社は、当社エレクトロニクス事業における電源機器部品の仕入先であり、当社は同社株式102,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "furukawa",
+      "relationship": "customer",
+      "description": "古河機械金属株式会社は、当社エレクトロニクス事業における電源機器の販売先であり、当社は同社株式2,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +420,47 @@
       "publisher": "株式会社オリジン",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJF6.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YJF6",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "3期連続の赤字を受けて「緊急経営改革2026」を開始し、2027年3月期の黒字化を最優先の目標に掲げています。市場別・製品別ポートフォリオの強化とスピード感を重視した顧客対応、聖域なきコスト改革、立案計画の精査と厳格な実行並びにガバナンス体制と人的資本の強化を3つの基本戦略とし、収益構造の抜本的な改革を推進します。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "電源機器、塗料、精密機構部品、半導体デバイスという異なる技術領域の事業を併せ持ち、最大のケミトロニクス事業では、国内市場でのシェア拡大と海外拠点・化粧品関連の伸長により増収を確保しました。",
+        "basis": "【セグメント情報】の事業別売上高と【関連情報】の地域別情報、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】における事業別の業績の記載に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高は日本向けが中心で、中国向けがこれに次ぎます。塗料と精密機構部品では中国の子会社が製造・販売を担い、タイとインドネシアにも塗料の生産拠点を持つなど、アジアを中心に海外展開しています。",
+        "basis": "【関連情報】の地域ごとの売上高と、【主要な設備の状況】及び【関係会社の状況】における国内外子会社の記載に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

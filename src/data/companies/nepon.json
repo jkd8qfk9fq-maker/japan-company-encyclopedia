@@ -4,18 +4,141 @@
   "name": "ネポン",
   "officialName": "ネポン株式会社",
   "nameEn": "NEPON Inc.",
-  "description": null,
+  "shortNameEn": "NEPON Inc.",
+  "description": "施設園芸用温風暖房機などの熱機器と、泡洗式簡易水洗便器などの衛生機器を製造販売し、付帯工事やアフターサービスも行うメーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
-      "exchange": "fse"
+      "exchange": "fse",
+      "market": "本則市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "thermal-equipment",
+      "name": "熱機器事業",
+      "description": "施設園芸用温風暖房機やヒートポンプ、ビル・工場用温風暖房機、業務用温水ボイラ等の熱機器を製造販売し、これらに伴う付帯工事の設計施工とアフターサービスを行う事業です。2026年3月期の外部顧客への売上高は6,949百万円でした。",
+      "customers": [
+        "施設園芸農家・農業法人",
+        "ビル・工場等の事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "agricultural-equipment",
+          "name": "農用機器",
+          "description": "施設園芸用温風暖房機「ハウスカオンキ」、施設園芸用ヒートポンプ「ネポングリーンパッケージ」、光合成促進機、施設園芸用複合環境制御装置、農業ICTクラウドサービス等の製品群です。",
+          "customers": [
+            "施設園芸農家・農業法人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "general-equipment",
+          "name": "汎用機器",
+          "description": "ビル・工場用温風暖房機（熱風炉）、業務用温水ボイラ、無圧式温水発生機、融雪・給湯・暖房用ボイラ、コインシャワー装置等の製品群です。",
+          "customers": [
+            "ビル・工場等の事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "sanitary-equipment",
+      "name": "衛生機器事業",
+      "description": "泡洗式簡易水洗便器「パールトイレ」、水洗式簡易水洗便器、温水洗浄便座等の衛生機器を製造販売し、衛生工事とアフターサービスを行う事業です。2026年3月期の外部顧客への売上高は466百万円でした。",
+      "customers": [
+        "簡易水洗便器等を設置する事業者や公共機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他事業",
+      "description": "報告セグメントに含まれない搬送機器サービス等の事業です。2026年3月期の外部顧客への売上高は1百万円でした。",
+      "customers": [
+        "搬送機器サービスを利用する企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "施設園芸用温風暖房機やヒートポンプなどの熱機器と簡易水洗便器などの衛生機器を製造販売し、設置に伴う工事の設計施工とアフターサービスからも対価を得る事業モデルです。",
+    "products": [
+      "施設園芸用温風暖房機（ハウスカオンキ）",
+      "施設園芸用ヒートポンプ（ネポングリーンパッケージ）",
+      "ビル・工場用温風暖房機",
+      "業務用温水ボイラ",
+      "泡洗式簡易水洗便器（パールトイレ）",
+      "温水洗浄便座（プリティシャワー）",
+      "農業ICTクラウドサービス（Chabu-Dai）"
+    ],
+    "customers": [
+      "施設園芸農家・農業法人",
+      "ビル・工場等の事業者",
+      "簡易水洗便器等を設置する事業者や公共機関"
+    ],
+    "revenueSources": [
+      "熱機器の製造・販売の対価",
+      "衛生機器の製造・販売の対価",
+      "付帯工事の設計施工とアフターサービスの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ネポン",
+        "description": "1948年に熱ポンプ工業株式会社として設立され、本店は神奈川県厚木市にあります。2026年3月31日現在の連結従業員数は247人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "熱機器と衛生機器",
+        "description": "施設園芸用温風暖房機やヒートポンプ等の熱機器事業と、簡易水洗便器等の衛生機器事業を中心に、機器の製造販売と付帯工事、アフターサービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "園芸生産者や事業者",
+        "description": "施設園芸農家・農業法人、ビル・工場等の事業者が主な顧客です。主要な販売先として佐藤商事があります。"
+      },
+      {
+        "kind": "revenue",
+        "title": "機器の販売と工事・サービスが収益",
+        "description": "収益は、熱機器と衛生機器の製造・販売の対価が中心で、付帯工事の設計施工とアフターサービスの対価も含まれます。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の業績",
+        "description": "2026年3月期の売上高は7,417百万円、親会社株主に帰属する当期純利益は37百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -30,7 +153,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2356365000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 252,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2609193000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 251,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -70,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2627131000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 247,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,12 +213,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2377042000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 259,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2025年3月期の数値は、誤謬の訂正を反映した数値を記載しております。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -110,7 +234,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2443424000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 247,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,8 +242,149 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1948,
+      "title": "熱ポンプ工業株式会社を設立",
+      "description": "熱ポンプ工業株式会社を設立し、熱ポンプ設備を完成させました。",
+      "significance": "当社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "熱風炉を完成",
+      "description": "熱風炉（油焚温風暖房機）を他に先がけて完成させました。",
+      "significance": "現在の主力である熱機器事業の技術的な起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "農業用暖房機「ハウスカオンキ」を発売",
+      "description": "農業用暖房機としてハウスカオンキを発売しました。",
+      "significance": "施設園芸向け熱機器への本格展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "現社名に改称",
+      "description": "社名をネポン株式会社に改称しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "泡洗式簡易水洗便器「パールトイレ」を発売",
+      "description": "パールトイレ（泡洗式簡易水洗便器）を開発し、発売しました。",
+      "significance": "衛生機器事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "施設園芸用ヒートポンプを発売",
+      "description": "施設園芸用ヒートポンプ「ネポングリーンパッケージ」及びハイブリッド環境システムを開発し、発売しました。",
+      "significance": "電気を使う熱源への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "佐藤商事が筆頭株主となる",
+      "description": "佐藤商事株式会社が当社の筆頭株主となり、その他の関係会社となりました。",
+      "significance": "主要な販売先との資本関係が生まれた転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "農業ICTクラウドサービスの展開を本格化",
+      "description": "農業ICTクラウドサービス事業の展開を本格化させました。",
+      "significance": "機器の製造販売にICTサービスを組み合わせる現在の方向性の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "タイに連結子会社を設立",
+      "description": "NEPON (Thailand) Co.,Ltd.を設立しました。",
+      "significance": "現在唯一の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "佐藤商事がその他の関係会社に該当しなくなる",
+      "description": "佐藤商事株式会社が、資本提携の一部解消により、その他の関係会社に該当しなくなりました。",
+      "significance": "資本関係は解消方向となり、主要な販売先としての取引関係が中心となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "福岡証券取引所本則市場へ上場",
+      "description": "福岡証券取引所本則市場へ上場しました（重複上場）。",
+      "significance": "東京証券取引所との重複上場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sato-sho-ji",
+      "relationship": "customer",
+      "description": "主要な販売先です。主要な顧客ごとの情報に販売先として記載されており、2026年3月31日現在、当社の発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は12.53％で、大株主でもあります。2009年9月に当社の筆頭株主となりその他の関係会社となりましたが、2021年11月の資本提携の一部解消により、その他の関係会社には該当しなくなりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -127,13 +392,53 @@
       "publisher": "ネポン株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YN9E.pdf",
       "publishedAt": "2026-06-30",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YN9E",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「お客様の声を起点に農と住の明日を創造する会社を目指します」を事業骨子とし、施設園芸向けの農業ICTクラウド「アグリネットアドバンス」、暖房機の遠隔監視・操作を可能にする「ちょこっとリモコン」、データ連携基盤「Chabu-Dai」の3つを軸に、栽培現場の省力化と高度化を進めるとしています。あわせて、脱炭素社会への対応として、電気を利用したヒートポンプの提供や、よりCO2排出量の少ない燃料・熱源・次世代エネルギーを活用した暖房機の開発にも取り組むとしています。",
+        "asOf": "2026-06-30",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "主力の施設園芸分野では大規模化と高度なシステム化が進んでおり、暖房機そのものに加えて、環境データの見える化や遠隔操作といったICTサービスを組み合わせる方向です。化石燃料を使う温風暖房機から他の熱源への転換が求められる環境に対し、ヒートポンプ等の製品開発で対応しようとしています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等に、施設園芸の大規模化及び高度なシステム化が進んでいること、ICTクラウド・遠隔監視アプリ・データ連携基盤の3つを軸にサービスを高度化すること、ヒートポンプや次世代エネルギーを活用した暖房機の開発に取り組むことが記載されている事実に基づきます。",
+        "asOf": "2026-06-30",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "創業以来培ってきた熱及び流体制御技術を基盤として、施設園芸向け農業用暖房機の提供を通じ、確固たる事業基盤を構築してきたと説明しています。",
+        "asOf": "2026-06-30",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "温風暖房機やヒートポンプ等の機器の製造販売に加え、付帯工事の設計施工とアフターサービスまでをグループで行う体制があり、機器の導入から運用の支援までを一貫して担える点が特徴です。",
+        "basis": "事業の内容に、当社グループが熱機器及び衛生機器等の製造販売並びにこれらに伴う付帯工事の設計施工を行うとともに、アフターサービス業務を行うことが記載されている事実に基づきます。",
+        "asOf": "2026-06-30",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

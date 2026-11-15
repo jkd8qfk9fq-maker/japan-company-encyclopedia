@@ -4,15 +4,130 @@
   "name": "エムティジェネックス",
   "officialName": "エムティジェネックス株式会社",
   "nameEn": "MT GENEX CORPORATION",
-  "description": null,
+  "shortNameEn": "MT GENEX CORPORATION",
+  "description": "森トラストグループの一員として、ビルや住宅のリニューアル工事、駐車場の運営、施設の保守管理、保険代理を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    },
+    {
+      "industryId": "finance",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "renewal",
+      "name": "リニューアル事業",
+      "description": "森トラスト株式会社が所有するビルや住宅等の内装工事、リニューアル工事を請け負う事業です。同社が所有する不動産の外構工事等の請負及び設計施工監理も行っています。2026年3月期の外部顧客への売上高は2,000百万円でした。",
+      "customers": [
+        "森トラスト株式会社をはじめとするビルや住宅の所有者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "parking",
+      "name": "駐車場事業",
+      "description": "森トラスト株式会社が所有する駐車場の運営管理等を受託する事業です。同社から駐車場を賃借して運営するものもあり、時間貸及び月極駐車場の運営管理を行っています。2026年3月期の外部顧客への売上高は1,592百万円でした。",
+      "customers": [
+        "森トラスト株式会社",
+        "駐車場の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "facility-management",
+      "name": "施設等保守管理事業",
+      "description": "森トラスト株式会社が所有する不動産の運営管理等を受託する事業です。賃貸ビル管理事業と設備保守管理等を行っており、連結子会社の株式会社チヨダＭＥサービスは電気設備システムの保守・保全業務を、エムティアイテック株式会社は電気設備工事・電気通信工事を担っています。2026年3月期の外部顧客への売上高は1,056百万円でした。",
+      "customers": [
+        "森トラスト株式会社をはじめとする不動産の所有者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "insurance-agency",
+      "name": "保険代理事業",
+      "description": "連結子会社の森トラスト保険サービス株式会社が担う事業です。森トラスト株式会社に対して、各種損害保険などの総合的なリスクマネジメントプランを企画・提案しており、保険会社との委託契約に基づく保険代理業務を行っています。2026年3月期の外部顧客への売上高は65百万円でした。",
+      "customers": [
+        "森トラスト株式会社",
+        "保険契約者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "親会社の森トラスト株式会社が所有するビルや住宅の内装工事・リニューアル工事を請け負い、駐車場の運営管理、建物の運営管理や設備の保守管理、損害保険の代理業務を行う事業です。",
+    "products": [
+      "ビルや住宅の内装工事・リニューアル工事",
+      "時間貸・月極駐車場の運営管理",
+      "賃貸ビルの運営管理と設備保守管理",
+      "損害保険等の保険代理業務"
+    ],
+    "customers": [
+      "森トラスト株式会社をはじめとする不動産の所有者",
+      "駐車場の利用者",
+      "保険契約者"
+    ],
+    "revenueSources": [
+      "リニューアル事業の売上高",
+      "駐車場事業の売上高",
+      "施設等保守管理事業の売上高",
+      "保険代理事業の売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "1945年創業の森トラストグループの会社",
+        "description": "エムティジェネックスは1945年に金網卸売業として創業し、現在は森トラストグループの一員です。2026年3月31日現在の従業員数は151人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "工事・運営管理・保守管理・保険代理",
+        "description": "ビルや住宅の内装工事・リニューアル工事の請負、駐車場の運営管理、建物の運営管理や設備の保守管理、損害保険の代理業務を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "親会社をはじめとする不動産の所有者",
+        "description": "親会社の森トラスト株式会社が所有するビルや住宅、駐車場、不動産が主な対象で、同社が主要な顧客です。ほかに駐車場の利用者や保険契約者がいます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "リニューアルが売上の中心",
+        "description": "2026年3月期の売上高は4,714百万円で、リニューアル事業が2,000百万円、駐車場事業が1,592百万円、施設等保守管理事業が1,056百万円、保険代理事業が65百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は314百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は314百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +142,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3475737000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 109,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +162,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3675098000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 114,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3909355000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 134,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +202,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4128465000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 134,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +222,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4400015000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 151,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +230,129 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1945,
+      "title": "金網卸売業の古暮商店を創業",
+      "description": "古暮卓次が個人商店として、金網卸売業の古暮商店を創業しました。",
+      "significance": "会社の起源であり、金網の卸売から始まった事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "古暮金網有限会社を設立",
+      "description": "群馬県太田市に古暮金網有限会社を設立しました。",
+      "significance": "法人としての設立であり、現在の会社の組織的な起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "店頭売買銘柄として登録",
+      "description": "社団法人日本証券業協会へ店頭売買銘柄として登録しました。",
+      "significance": "株式公開の第一歩となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "森トラスト株式会社のグループ会社に",
+      "description": "森トラスト株式会社への第三者割当増資を行い、同社との業務提携を締結しました。",
+      "significance": "森トラストグループの一員となり、現在の事業の基盤が形づくられた転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "商号をエムティジェネックス株式会社に変更",
+      "description": "商号を株式会社コグレからエムティジェネックス株式会社に変更しました。",
+      "significance": "現在の社名となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場を果たした年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "戸田建設株式会社と業務提携しリニューアル事業を開始",
+      "description": "戸田建設株式会社と業務提携契約を締結し、リニューアル事業を開始しました。",
+      "significance": "現在の主力であるリニューアル事業の開始となった提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "森トラスト保険サービス株式会社を設立",
+      "description": "森トラスト保険サービス株式会社を設立しました。",
+      "significance": "保険代理事業を担う連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "株式会社チヨダＭＥサービスを子会社化",
+      "description": "株式会社チヨダＭＥサービスの株式の全部を取得し、100％子会社化しました。",
+      "significance": "電気設備システムの保守・保全を取り込み、施設等保守管理事業を拡充した買収です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、ＪＡＳＤＡＱ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "エムティアイテック株式会社を子会社化",
+      "description": "エムティアイテック株式会社の株式の全部を取得し、100％子会社化しました。",
+      "significance": "電気設備工事・電気通信工事を取り込み、施設等保守管理事業をさらに広げた買収です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "toda",
+      "relationship": "business-partner",
+      "description": "2007年5月に業務提携契約を締結した提携先です。この提携により、当社はリニューアル事業を開始しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +360,47 @@
       "publisher": "エムティジェネックス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFVP.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YFVP",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "ビル管理業務により培ってきた技術、ノウハウを活かし、時代のニーズに応じた快適な都市環境・オフィス空間の提供を通じて、持続的な社会の実現に貢献することを経営の基本方針としています。当面の課題として、安定的な収益基盤の維持と、蓄積された内部留保資金を用いた成長投資と配当による株主還元のバランスをとりながら企業価値の向上を図ることを挙げ、Ｍ＆Ａについては対象会社の企業価値測定、シナジー効果、減損リスク等を十分に検討し慎重な姿勢で検討を継続するとしています。事業規模の拡大、グループ外顧客獲得のための営業強化、サービス品質と技術力の向上、人財育成にも注力するとしています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "親会社の森トラスト株式会社が所有するビルや住宅、駐車場、不動産について、内装・リニューアル工事の請負、駐車場や不動産の運営管理の受託、損害保険のリスクマネジメントの企画・提案までをグループ内で継続的に担う位置付けにあり、工事から運営管理、保守、保険までを一貫して引き受ける体制を持っています。",
+        "basis": "【事業の内容】に記載された、森トラスト株式会社の所有不動産に対する工事請負・運営管理受託・保険代理の関係",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "森トラストグループの不動産に関わる工事・運営管理を担うグループ内企業として位置付けられ、主要な顧客は親会社の森トラスト株式会社です。2020年に電気設備システムの保守・保全を行う株式会社チヨダＭＥサービスを、2024年に電気設備工事・電気通信工事を行うエムティアイテック株式会社をそれぞれ完全子会社化し、施設等保守管理の担い手をグループ内に広げています。",
+        "basis": "【関係会社の状況】の親会社・連結子会社の記載と【沿革】の子会社化の記録",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
