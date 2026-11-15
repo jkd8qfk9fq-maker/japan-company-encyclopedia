@@ -4,15 +4,108 @@
   "name": "サンケン電気",
   "officialName": "サンケン電気株式会社",
   "nameEn": "Sanken　Electric　Co.,　Ltd.",
-  "description": null,
+  "shortNameEn": "Sanken Electric",
+  "description": "パワーモジュールやパワーデバイスなどの半導体デバイスを製造・販売する半導体メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "semiconductors",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "semiconductor-devices",
+      "name": "半導体デバイス事業",
+      "description": "半導体デバイスの製造・販売と、これらに付随するサービスを行う事業です。報告セグメントはこの事業の単一セグメントで、2026年3月期の売上高は80,175百万円でした。製造は石川サンケン、山形サンケン、福島サンケン、新潟サンケンの国内子会社と、中国の大連三墾電気有限公司、韓国のEK Co., Ltd.が担い、販売は当社と国内外の販売子会社を通じて行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "power-module",
+          "name": "パワーモジュール",
+          "description": "インテリジェントパワーモジュールなどのパワーモジュール製品です。2026年3月期の外部顧客への売上高は40,554百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "power-device",
+          "name": "パワーデバイス",
+          "description": "電力の制御や変換に用いるパワーデバイス製品です。2026年3月期の外部顧客への売上高は38,056百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other-products",
+          "name": "その他",
+          "description": "持分法適用関連会社Allegro MicroSystems, Inc.の製品（アレグロ製品）の売上高と、製品販売を終了したスイッチング電源製品（旧ユニット製品）事業の売上高を含む区分です。2026年3月期の外部顧客への売上高は1,564百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "国内と中国・韓国の子会社工場で半導体デバイスを製造し、当社と国内外の販売子会社を通じて自動車・白物家電・産業機器のメーカーに販売しています。",
+    "products": [
+      "パワーモジュール",
+      "パワーデバイス",
+      "アレグロ製品（持分法適用関連会社Allegro MicroSystems, Inc.の製品）"
+    ],
+    "customers": [
+      "自動車メーカーや自動車部品メーカー",
+      "白物家電メーカー",
+      "産業機器メーカー"
+    ],
+    "revenueSources": [
+      "パワーモジュールの販売代金",
+      "パワーデバイスの販売代金",
+      "アレグロ製品などの販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "半導体デバイス専業のグループ",
+        "description": "当社、連結子会社16社及び持分法適用関連会社1社で構成され、半導体デバイスの製造・販売を単一セグメントとして展開しています。2026年3月31日現在の連結従業員数は2,683人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "グループ工場でパワー半導体を製造",
+        "description": "石川サンケン、山形サンケン、福島サンケン、新潟サンケンの国内子会社と、中国の大連三墾電気有限公司、韓国のEK Co., Ltd.などの子会社が、パワーモジュールやパワーデバイスを製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "世界の販売網でメーカーに販売",
+        "description": "当社のほか、韓国、中国、香港、タイ、米国、欧州の販売子会社を通じて、自動車や白物家電、産業機器のメーカーに製品を販売し、技術支援も行っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の連結売上高は80,175百万円でした（前期比34.1%減）。内訳はパワーモジュール40,554百万円、パワーデバイス38,056百万円、その他1,564百万円です。減収の主な要因は、Allegro MicroSystems, Inc.が2024年8月に持分法適用関連会社となり、連結対象から外れたことです。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失",
+        "description": "2026年3月期の親会社株主に帰属する当期純損失は9,798百万円でした。前期は50,934百万円の当期純利益でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +120,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 137404000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8101,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +140,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 173195000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8707,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,12 +160,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 198619000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8534,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号、2022年改正会計基準）等を第108期の期首から適用したため、第107期（2024年3月期）の主要な経営指標等は、当該会計基準等を遡って適用した後の数値となっている。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -87,7 +181,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 147928000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3312,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 119965000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2683,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +209,188 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1937,
+      "title": "前身の研究所を設立",
+      "description": "松永安左ヱ門氏により財団法人東邦産業研究所が設立され、堤研究室においてセレン整流器の試作研究が始まりました。",
+      "significance": "半導体デバイス事業の技術的な起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1946,
+      "title": "東邦産研電気株式会社を設立",
+      "description": "東邦産業研究所の解散に伴い、堤研究室で完成された半導体の製造法、設備及び研究員を継承し、埼玉県志紀町（現 志木市）に東邦産研電気株式会社が設立されました。",
+      "significance": "現在のサンケン電気の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "本社・工場を新座市へ移転",
+      "description": "埼玉県大和田町（現 新座市）に本社・工場を移転しました。",
+      "significance": "現在の本社所在地の基盤となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "株式を公開し東証二部に上場",
+      "description": "株式の店頭公開を開始し、東京証券取引所市場第二部に上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "サンケン電気株式会社に商号変更",
+      "description": "商号をサンケン電気株式会社と変更しました。",
+      "significance": "現在の社名となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "東証一部に上場",
+      "description": "東京証券取引所市場第一部に上場しました。",
+      "significance": "上場市場を移しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "石川サンケン株式会社を設立",
+      "description": "石川県下の関係会社5社を合併し、石川サンケン株式会社を設立しました。",
+      "significance": "主力の製造子会社の一つとなりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "山形サンケン株式会社を設立",
+      "description": "山形サンケン株式会社を設立しました。",
+      "significance": "製造子会社の一つとなりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "福島サンケン株式会社を設立",
+      "description": "福島サンケン株式会社を設立しました。",
+      "significance": "製造・販売を担う子会社の一つとなりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "Allegro MicroSystemsを設立",
+      "description": "米国のスプレーグ テクノロジーズ インクの半導体部門を買収し、Allegro MicroSystems, Inc.（現 Allegro MicroSystems, LLC）を設立しました。",
+      "significance": "米国における半導体事業の拠点となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "ポーラー セミコンダクターを設立",
+      "description": "米国のポーラー ファブ エルエルシーを買収し、ポーラー セミコンダクター インク（現 ポーラー セミコンダクター エルエルシー）を設立しました。",
+      "significance": "米国の製造拠点となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "サンケン電設の株式をGSユアサに譲渡",
+      "description": "社会システム事業を吸収分割によりサンケン電設株式会社へ承継した後、同社の発行済株式の全てを株式会社GSユアサに譲渡しました。",
+      "significance": "半導体デバイス事業への集中を進める事業再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証プライム市場へ移行",
+      "description": "東京証券取引所プライム市場へ移行しました。",
+      "significance": "市場再編に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "新潟サンケン株式会社を設立",
+      "description": "新潟サンケン株式会社を設立しました。",
+      "significance": "新しい製造子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "EK Co., Ltd.を子会社化",
+      "description": "韓国のEK Co., Ltd.の全株式を取得し、子会社としました。",
+      "significance": "韓国の製造拠点を拡充しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "Allegro MicroSystemsを持分法適用関連会社化",
+      "description": "Allegro MicroSystems, Inc.の公募増資及び株式の一部売却の結果、同社が持分法適用関連会社となりました。",
+      "significance": "連結対象から外れたことで、売上高と従業員数が大きく減少しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ポーラー セミコンダクターを連結除外",
+      "description": "ポーラー セミコンダクター エルエルシーの第三者割当増資により、当社からの出資形態が直接出資からLP出資に切り替わり、同社が連結対象から除外されました。",
+      "significance": "グループ構成の見直しの一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社パウデックを買収し吸収合併",
+      "description": "株式会社パウデックを買収し、同年10月に当社を存続会社とする吸収合併を行いました。",
+      "significance": "GaNパワーデバイスの開発強化に向けた動きです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +399,66 @@
       "publisher": "サンケン電気株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI8X.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YI8X",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 重要な後発事象（連結子会社における希望退職者の募集）: 連結子会社の山形サンケン株式会社は、2026年5月7日開催の臨時取締役会において、希望退職者の募集を行うことを決議しました。対象者は2026年4月1日時点で45歳以上の社員（再雇用者を含む）、募集人数は65名程度、募集期間は2026年6月8日から6月26日まで、退職予定日は2026年9月30日で、通常の退職金に加えて割増退職金が支給されます。これに伴い発生する費用は約7億円と見込まれています。登録は2026年3月31日現在の構成（山形サンケン株式会社を連結子会社とする）で行います。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年中期経営計画（24中計）では、製品戦略としてSPP-プラットフォーム製品とカスタム製品の両輪で成長すること、拡販戦略として自動車・白物・産機の各市場へ取り組むこと、新製品比率の向上や既存製品の収益改善、原価改善を掲げています。対処すべき課題として、自動車市場ではハイブリッドを含むエンジン車の需要の取り込みと自動車空調向けパワーモジュールの拡販、白物市場では新製品への切り替え提案による韓国顧客でのシェア拡大と中国でのシェア維持、インド市場をはじめ新たな顧客への拡販を挙げています。また、車載及び産機領域を狙うモビリティ戦略室と、アジア全体の売上拡大と製品企画力の強化を図るアジア戦略室を新設しています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高は80,175百万円と前期比34.1%減少しました。主な要因はAllegro MicroSystems, Inc.の連結除外で、同社の製品は現在も「その他」区分で販売されています。外部リソース活用の動きとして、2025年4月にGaNパワーデバイスを手がける株式会社パウデックを買収し、2026年1月にはミネベアパワーデバイス株式会社と、パワーモジュール市場における後工程の生産協業及び製品の共同開発に関する技術提携で合意しています。",
+        "basis": "MD&Aの経営成績の状況と経営方針の記載に基づく。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "半導体素子プロセスの前工程から実装・パッケージ技術の後工程までをプラットフォーム化するSPP（Sanken Power-electronics Platform）を進め、設計改革と開発スピードの向上を図っています。研究開発部門は連結子会社にも置かれ、グループを挙げて研究開発に取り組んでいます。当連結会計年度には、PSJ構造を用いたGaNデバイスの試作・評価で、耐圧と電流コラプス特性の優位性を示唆するデータが得られました。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【研究開発活動】"
+      },
+      "analysis": {
+        "text": "製造は国内4社の子会社工場と中国・韓国の子会社が担い、開発は当社のほか台湾と韓国の子会社も担う体制で、素子プロセスから実装・パッケージまでをグループ内で手がけています。",
+        "basis": "事業の内容と関係会社の状況、研究開発活動の記載に基づく。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは半導体デバイス事業の単一セグメントです。2026年3月期の製品別売上高はパワーモジュール40,554百万円、パワーデバイス38,056百万円、その他1,564百万円で、地域別ではアジア44,498百万円（うち中国24,041百万円、韓国15,561百万円）、日本31,419百万円、欧米2,692百万円、その他1,564百万円でした。売上高の10%以上を占める顧客はありません。Allegro MicroSystems, Inc.は持分法適用関連会社（議決権所有割合32.2%）としてグループに残り、その製品の売上高は「その他」に含まれています。",
+        "basis": "セグメント情報の関連情報（製品及びサービスごとの情報、地域ごとの情報、主要な顧客ごとの情報）と関係会社の状況の記載に基づく。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

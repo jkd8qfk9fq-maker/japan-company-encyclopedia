@@ -4,15 +4,128 @@
   "name": "新日本製薬",
   "officialName": "新日本製薬株式会社",
   "nameEn": "Shinnihonseiyaku Co., Ltd.",
-  "description": null,
+  "shortNameEn": "SHINNIHONSEIYAKU",
+  "description": "化粧品とヘルスケア商品を開発し、通信販売を中心に卸販売や海外販売も行う会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "mail-order",
+      "name": "通信販売",
+      "description": "化粧品とヘルスケア商品を、テレビや新聞、雑誌などの広告や自社オンラインショップ、外部ECモールを通じて国内の個人のお客さまへ販売する主力の販売チャネルです。コールセンターで注文を受け、定期購入などの「お買いものサービス」も提案しています。2025年9月期の販売実績は37,138百万円でした。",
+      "customers": [
+        "国内の個人のお客さま"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "cosmetics",
+          "name": "化粧品",
+          "description": "スキンケアブランド「PERFECT ONE」と、20代から30代の毛穴悩みに向けた「PERFECT ONE FOCUS」を展開しています。主力商品は、化粧水など最大で7つの役割を1品で果たすオールインワン美容液ジェルシリーズです。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "healthcare",
+          "name": "ヘルスケア商品",
+          "description": "ブランド「Fun and Health」で、機能性表示食品の「Wの健康青汁」や「Slimore Coffee」などの健康食品と、ヨクイニンエキス錠などの医薬品を販売しています。グループ会社の株式会社フラット・クラフトは「Wellness Food」ブランドでMCTオイルやアマニ油などを製造・販売しています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "wholesale",
+      "name": "卸販売",
+      "description": "化粧品とヘルスケア商品を、ドラッグストアやGMS、バラエティショップなどの取扱店や販売代理店へ卸販売するチャネルです。免税店や都市部を中心とした大型家電量販店などでのインバウンド向けのテスト販売も進めています。2025年9月期の販売実績は4,063百万円でした。",
+      "customers": [
+        "ドラッグストアやGMS、バラエティショップなどの取扱店",
+        "販売代理店"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "overseas",
+      "name": "海外販売",
+      "description": "米国子会社のPERFECT ONE US Co.,Ltd.を通じて米国でテストマーケティングを続け、アジアでは台湾やマレーシアでECを中心にテスト販売を行うチャネルです。2025年9月期の販売実績は△62百万円でした。",
+      "customers": [
+        "米国やアジアの海外のお客さま"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "新日本製薬は、化粧品ブランド「PERFECT ONE」などの化粧品と、健康食品や医薬品などのヘルスケア商品を開発し、通信販売を中心に販売する会社です。",
+    "products": [
+      "化粧品ブランド「PERFECT ONE」のオールインワン美容液ジェルシリーズなどのスキンケア商品",
+      "化粧品ブランド「PERFECT ONE FOCUS」のクレンジングバームなどの毛穴ケア商品",
+      "ヘルスケアブランド「Fun and Health」の機能性表示食品「Wの健康青汁」や「Slimore Coffee」などの健康食品と医薬品",
+      "ウェルネスフードブランド「Wellness Food」のMCTオイルやアマニ油などの食用油"
+    ],
+    "customers": [
+      "通信販売で購入する国内の個人のお客さま",
+      "ドラッグストアやGMS、バラエティショップなどの取扱店と販売代理店",
+      "米国やアジアの海外のお客さま"
+    ],
+    "revenueSources": [
+      "通信販売による化粧品・ヘルスケア商品の販売代金",
+      "卸販売による商品の販売代金",
+      "海外販売による商品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と連結子会社2社で事業を行う",
+        "description": "新日本製薬は、連結子会社の株式会社フラット・クラフトとPERFECT ONE US Co.,Ltd.の2社とともにグループを構成しています（2025年9月30日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "化粧品とヘルスケア商品を開発する",
+        "description": "スキンケアブランド「PERFECT ONE」などの化粧品と、機能性表示食品などの健康食品や医薬品のヘルスケア商品を開発し、販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "個人客と取扱店、海外へ届ける",
+        "description": "通信販売では国内の個人のお客さまへ直接届け、卸販売ではドラッグストアなどの取扱店を通じて販売し、海外では米国やアジアでテスト販売を行っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は41,140百万円",
+        "description": "2025年9月期の売上高は41,140百万円で、前期比2.7％増となりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は2,554百万円",
+        "description": "2025年9月期の親会社株主に帰属する当期純利益は2,554百万円で、前期比8.6％減となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年9月期",
@@ -27,12 +140,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16180000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 309,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "第34期において企業結合に係る暫定的な会計処理の確定が行われ、第33期（2021年9月期）の主要な経営指標等には、その確定の内容が反映されています。"
     },
     {
       "fiscalYear": "2022年9月期",
@@ -47,12 +161,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17918000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 302,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」等を第34期（2022年9月期）の期首から適用しており、第34期以降の主要な経営指標等は、当該会計基準等を適用した後の指標となっています。"
     },
     {
       "fiscalYear": "2023年9月期",
@@ -67,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19661000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 307,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +202,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21792000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 316,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」等に含まれる、連結会社間における子会社株式等の売却に関する取扱いの見直しは遡及適用されており、第36期（2024年9月期）の主要な経営指標等は、遡って適用した後の指標となっています。"
     },
     {
       "fiscalYear": "2025年9月期",
@@ -107,16 +223,168 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22809000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 316,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」等を第37期（2025年9月期）の期首から適用しています。法人税等の計上区分に関する改正については経過的な取扱いを適用しており、この変更による連結財務諸表への影響はないとされています。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1992,
+      "title": "株式会社新日本リビングを設立",
+      "description": "福岡県大野城市に、生活用品の企画・販売会社として株式会社新日本リビングを設立しました。",
+      "significance": "新日本製薬の前身となる会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "健康食品の通信販売を開始",
+      "description": "健康食品の通信販売を開始しました。",
+      "significance": "通信販売事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "基礎化粧品の通信販売を開始",
+      "description": "基礎化粧品の通信販売を開始しました。",
+      "significance": "現在の主力である化粧品の販売が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "新日本製薬株式会社に商号変更",
+      "description": "株式会社新日本リビングから新日本製薬株式会社に商号を変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "化粧品ブランド「ラフィネシリーズ」を発売",
+      "description": "化粧品ブランド「RAffINE（ラフィネ）シリーズ」を発売しました。",
+      "significance": "化粧品ブランドの展開が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "ラフィネ パーフェクトワンを発売",
+      "description": "「ラフィネ パーフェクトワン」を発売しました。",
+      "significance": "現在の主力ブランド「PERFECT ONE」につながる商品です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "医薬品の通信販売を開始",
+      "description": "医薬品の通信販売を開始しました。",
+      "significance": "ヘルスケア商品の扱いが広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "ブランド名を「PERFECT ONE」に変更",
+      "description": "化粧品ブランド名を「PERFECT ONE（パーフェクトワン）」へ変更しました。",
+      "significance": "現在の主力ブランド名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "株式会社新日本ホールディングスを吸収合併",
+      "description": "当社が株式会社新日本ホールディングスを吸収合併しました。",
+      "significance": "グループ再編が行われました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社フラット・クラフトを子会社化",
+      "description": "株式会社フラット・クラフトの株式を取得し、連結子会社としました。",
+      "significance": "ウェルネスフードブランドを扱う会社がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "米国に子会社を設立",
+      "description": "米国にPERFECT ONE US Co.,Ltd.を設立しました。",
+      "significance": "海外販売の拠点ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社フラット・クラフトを吸収合併",
+      "description": "2025年10月1日を効力発生日として、連結子会社だった株式会社フラット・クラフトを吸収合併しました。",
+      "significance": "ヘルスケア事業の子会社が当社に統合されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "toa-6809",
+      "relationship": "supplier",
+      "description": "当社の主力商品の製造委託先です。2004年3月20日に製造委託契約を締結し、契約は1年ごとに自動更新されることとされています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +392,58 @@
       "publisher": "新日本製薬株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XA5Q.pdf",
       "publishedAt": "2025-12-16",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XA5Q",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 構造: 重要な後発事象として、2025年10月1日を効力発生日として、当社を存続会社、連結子会社の株式会社フラット・クラフトを消滅会社とする吸収合併を行った旨が印字されている。登録は2025年9月30日現在の連結子会社2社（株式会社フラット・クラフト、PERFECT ONE US Co.,Ltd.）の構成で行う。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年11月に策定した中期経営計画「Growth Next 2027」に基づき、2025年度から2027年度をグローバル展開の基盤固めの期間と位置づけています。市場トレンドとお客さまの声、独自価値を掛け合わせ、スピーディーな商品開発からデータベースマーケティングでシェアの拡大をめざす全社戦略のもと、PERFECT ONEの対象世代の拡大、データベースマーケティングの強化、米国を中心としたグローバル成長戦略、新商品・新サービスの強化の4つの重点活動に取り組んでいます。",
+        "asOf": "2025-12-16",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "重点活動は、主力ブランドの対象世代の拡大と、蓄積した顧客データベースを使った新商品・新規事業の提案、米国を起点とした海外展開の3つを軸にしています。2025年9月期は、通信販売でミドル世代の新規獲得が進み、卸販売ではドラッグストアへの展開店舗数が広がりました。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の重点活動と、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の当期の取組に関する記載に基づきます。",
+        "asOf": "2025-12-16",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "主力商品の「パーフェクトワン オールインワン美容液ジェルシリーズ」は、顔用保湿ジェル市場売上世界No.1としてギネス世界記録に認定されています。化粧水など最大で7つの役割を1品で果たす多機能な商品で、「落とす」「満たす」「魅せる」の3つのステップで完結するシンプルなスキンケアを提案しています。",
+        "asOf": "2025-12-16",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年9月期の販売実績は、通信販売が37,138百万円と大半を占め、卸販売が4,063百万円、海外販売が△62百万円でした。本邦の外部顧客への売上高が連結売上高の90％を超え、売上高の10％以上を占める主要な顧客はいません。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の販売実績と、【関連情報】の地域ごとの情報・主要な顧客ごとの情報に基づきます。",
+        "asOf": "2025-12-16",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-30",

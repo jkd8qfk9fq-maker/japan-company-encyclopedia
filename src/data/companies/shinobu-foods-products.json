@@ -4,15 +4,128 @@
   "name": "シノブフーズ",
   "officialName": "シノブフーズ株式会社",
   "nameEn": "SHINOBU FOODS PRODUCTS CO., LTD.",
-  "description": null,
+  "shortNameEn": "SHINOBU FOODS",
+  "description": "弁当やおにぎり、調理パン、寿司、惣菜、冷凍食品を製造し、コンビニエンスストアやスーパーマーケットなどへ卸販売する食品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "food-manufacturing-wholesale",
+      "name": "食品製造卸販売事業",
+      "description": "当社グループの唯一の報告セグメントで、弁当、おにぎり、調理パン、寿司、惣菜、冷凍食品等の製造卸販売を行う事業です。コンビニエンスストア、スーパーマーケット、ドラッグストア等へ向けて、大阪工場、関西工場、京滋工場、名古屋工場、千葉工場、岡山工場、広島工場、四国工場の8工場で製造しています。連結子会社は不動産賃貸を行う株式会社エス・エフ・ディーと、原材料の仕入・販売を行うマイツベーカリー株式会社の2社です。2026年3月期の売上高は連結売上高と同じ61,974百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "bento",
+          "name": "弁当類",
+          "description": "弁当類の製造販売です。「真菜ごころ弁当」などのチルド弁当に加え、冷凍弁当ブランド「KOKORO」も展開しています。2026年3月期の販売実績は21,291百万円で、品目別で最大でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "onigiri",
+          "name": "おにぎり類",
+          "description": "おにぎり類の製造販売です。「おにぎりQ」「ふんわりおむすび」などの商品があり、冷凍おにぎりは香港でも販売しています。2026年3月期の販売実績は18,873百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "bread",
+          "name": "調理パン類",
+          "description": "調理パンやサンドイッチの製造販売です。サンドイッチ「epi mou」などの商品があります。2026年3月期の販売実績は9,838百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "sushi",
+          "name": "寿司類",
+          "description": "パック寿司や手巻寿司などの寿司類の製造販売です。創業以来の主力品目の一つです。2026年3月期の販売実績は3,934百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-products",
+          "name": "その他",
+          "description": "惣菜などのその他の製品と、仕入商品等の販売です。2026年3月期の販売実績は、製品のその他が7,155百万円、仕入商品等が881百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "受注に応じて自社工場で弁当やおにぎりなどの米飯製品を製造し、コンビニエンスストア、スーパーマーケット、ドラッグストアなどへ卸販売して対価を得る事業モデルです。",
+    "products": [
+      "弁当類（真菜ごころ弁当、冷凍弁当ブランド「KOKORO」など）",
+      "おにぎり類（おにぎりQ、ふんわりおむすび、冷凍おにぎりなど）",
+      "調理パン類（サンドイッチ「epi mou」など）",
+      "寿司類（パック寿司、手巻寿司など）",
+      "惣菜、冷凍食品、その他仕入商品"
+    ],
+    "customers": [
+      "コンビニエンスストア",
+      "スーパーマーケット",
+      "ドラッグストア",
+      "カフェチェーン、生協、福祉施設、アミューズメント施設など"
+    ],
+    "revenueSources": [
+      "製造した弁当、おにぎり、調理パン、寿司、惣菜、冷凍食品等の販売代金",
+      "仕入商品等の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と連結子会社2社のグループ",
+        "description": "当社グループは、当社と連結子会社2社（株式会社エス・エフ・ディー、マイツベーカリー株式会社）で構成されています。連結従業員数は571人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "弁当・おにぎり等の製造卸販売",
+        "description": "弁当、おにぎり、調理パン、寿司、惣菜、冷凍食品等を、定温・チルド・冷凍の3温度帯の製品ラインナップで製造しています。受注生産を行い、受注当日から翌日に製造・出荷しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "コンビニやスーパーが主な販売先",
+        "description": "主な販売先はコンビニエンスストア、スーパーマーケット、ドラッグストア等で、株式会社ファミリーマートへの販売が2026年3月期の販売実績の47.4％を占めています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は61,974百万円",
+        "description": "2026年3月期の連結売上高は61,974百万円（前期比7.5％増）でした。品目別の販売実績は、弁当類21,291百万円、おにぎり類18,873百万円、調理パン類9,838百万円、寿司類3,934百万円、その他7,155百万円、仕入商品等881百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は1,698百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,698百万円でした。前期は996百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +140,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14190000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 521,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +160,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14031000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 528,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +180,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14959000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 543,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +200,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15136000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 555,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +220,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15173000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 571,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +228,128 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1971,
+      "title": "株式会社志のぶ寿司を設立",
+      "description": "株式会社志のぶ寿司を設立し、パック寿司の製造販売を開始しました。",
+      "significance": "現在のシノブフーズの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "おにぎりQを新発売",
+      "description": "おにぎり商品「おにぎりQ」を新発売しました。",
+      "significance": "おにぎりが事業の柱の一つになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "シノブフーズ株式会社に商号変更",
+      "description": "社名をシノブフーズ株式会社に変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "大阪証券取引所に上場",
+      "description": "株式を大阪証券取引所に上場しました。",
+      "significance": "株式上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "ビッグフーズ株式会社と合併し本社を現在地へ移転",
+      "description": "ビッグフーズ株式会社と合併し、本社を現在地の大阪市西淀川区に移転しました。",
+      "significance": "現在の本社体制の基礎ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "シノブデリカ株式会社を吸収合併",
+      "description": "2001年に設立したシノブデリカ株式会社を吸収合併しました。",
+      "significance": "グループの製造体制を当社に集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "マイツベーカリー株式会社を設立",
+      "description": "大阪市西淀川区に巽パン株式会社（現マイツベーカリー株式会社）を当社70％出資で設立しました。",
+      "significance": "原材料の仕入・販売を担う子会社ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所に上場",
+      "description": "大阪証券取引所と東京証券取引所の現物株市場の統合に伴い、東京証券取引所に上場しました。",
+      "significance": "上場市場が東京証券取引所に移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "冷凍食品事業を開始",
+      "description": "冷凍食品事業を開始しました。",
+      "significance": "冷凍の温度帯の製品展開が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場再編により、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "香港で冷凍おにぎりの販売を開始",
+      "description": "香港で冷凍おにぎりの販売を開始しました。",
+      "significance": "海外への販売の取り組みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "冷凍弁当ブランド「KOKORO」を新発売",
+      "description": "冷凍弁当ブランド「KOKORO」を新発売しました。",
+      "significance": "冷凍事業のブランド展開が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +358,47 @@
       "publisher": "シノブフーズ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE21.pdf",
       "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YE21",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「良品づくり」を基礎とした新たな価値・市場への挑戦をテーマとする中期経営計画（2026年3月期から2030年3月期）を策定し、販売戦略、コスト戦略、サステナビリティ戦略、財務戦略の4つを基本戦略としています。販売戦略では、冷凍事業の拡大や生協向けの宅配弁当、カフェチェーン向け商品など販売領域の拡大と新規市場の開拓を進めます。コスト戦略では、主要食材の調達方法の見直しや機械化・省人化、DXの推進による原価低減に取り組みます。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "定温・チルド・冷凍の3温度帯にわたる幅広い製品ラインナップを強みとし、「手作り感」「出来立て感」を重視した商品づくりと、食材や製法にこだわった商品リニューアル、内製化の推進による差別化を進めています。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の連結売上高61,974百万円は、すべて国内の販売によるものです。品目別では弁当類が21,291百万円で最も大きく、おにぎり類が18,873百万円で続きます。主な相手先である株式会社ファミリーマートへの販売が全体の47.4％を占めており、一つの相手先への販売の比重が大きい構成です。",
+        "basis": "セグメント情報等における単一セグメントの開示、関連情報の地域ごとの情報、及び経営成績等の状況の概要に記載された販売実績と主な相手先別の販売実績の割合に基づきます。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

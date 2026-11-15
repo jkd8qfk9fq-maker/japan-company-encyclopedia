@@ -4,15 +4,112 @@
   "name": "三協フロンテア",
   "officialName": "三協フロンテア株式会社",
   "nameEn": "SANKYO FRONTIER CO.,LTD.",
-  "description": null,
+  "shortNameEn": "SANKYO FRONTIER CO.,LTD.",
+  "description": "千葉県柏市に本社を置き、ユニットハウスの製造・販売・レンタルを中核とするメーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "sankyo-frontier",
+      "name": "三協フロンテア株式会社",
+      "description": "千葉県柏市に本社を置き、当社と連結子会社6社でグループを構成しています。ユニットハウス事業を単一の報告セグメントとし、2026年3月期の連結従業員数は1,207人です。親会社は不動産賃貸業を営む有限会社和幸興産です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "unit-house-business",
+          "name": "ユニットハウス事業",
+          "description": "ユニットハウス等の製造・販売・レンタル、ユニットハウス等の出荷整備及び配送・建方・解体工事、トランクルーム（収納庫）を利用したレンタル、レンタルスペースの運営を行っています。2026年3月期の売上高は53,907百万円です。主な関係会社は広州番禺三協豪施有限公司（中国でユニットハウスの原材料の製造・販売）、SANKYO FRONTIER MYANMAR COMPANY LIMITED、SANKYO FRONTIER MALAYSIA SDN. BHD.、SANKYO FRONTIER TECHNOLOGIES MYANMAR COMPANY LIMITED、SANKYO FRONTIER USA INC.、SANKYO FRONTIER SINGAPORE PTE.LTD.です。",
+          "customers": [
+            "建設現場等の事業者",
+            "トランクルームの利用者",
+            "展示場を訪れる顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-business",
+          "name": "その他",
+          "description": "立体駐車装置の製造・販売・レンタル、宿泊施設の経営、植物工場の製造・販売・レンタルを行っています。2026年3月期の売上高は368百万円です。",
+          "customers": [
+            "事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "ユニットハウスを自社工場で製造し、事業者へ販売・レンタルするとともに、出荷整備・配送・工事やトランクルーム運営でも対価を得る事業モデルです。",
+    "products": [
+      "ユニットハウス",
+      "トランクルーム（収納庫）",
+      "レンタルスペース",
+      "立体駐車装置",
+      "宿泊施設",
+      "植物工場"
+    ],
+    "customers": [
+      "建設現場等の事業者",
+      "工場・倉庫を必要とする事業者",
+      "トランクルームの利用者",
+      "展示場を訪れる顧客"
+    ],
+    "revenueSources": [
+      "ユニットハウスの販売代金",
+      "ユニットハウスのレンタル料",
+      "出荷整備・配送・建方・解体工事の対価",
+      "トランクルーム・レンタルスペースの利用料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "三協フロンテア株式会社",
+        "description": "千葉県柏市に本社を置き、当社と連結子会社6社でグループを構成しています。2026年3月期の連結従業員数は1,207人で、東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "ユニットハウスと関連サービスを提供",
+        "description": "ユニットハウス等の製造・販売・レンタル、出荷整備及び配送・建方・解体工事、トランクルーム（収納庫）を利用したレンタルとレンタルスペースの運営を行い、その他に立体駐車装置、宿泊施設、植物工場も手掛けています。"
+      },
+      {
+        "kind": "customer",
+        "title": "事業者と利用者に提供",
+        "description": "建設現場をはじめとする事業者や展示場を訪れる顧客にユニットハウスを提供し、トランクルームは収納を必要とする利用者に提供します。連結売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は54,275百万円",
+        "description": "2026年3月期の売上高は54,275百万円で、前年同期比3.2％減となりました。セグメント別ではユニットハウス事業53,907百万円、その他368百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は5,563百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は5,563百万円でした。前連結会計年度は5,502百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,12 +124,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 38632000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1115,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第53期の関連する主要な経営指標等については、誤謬の訂正による遡及処理の内容を反映させた数値を記載している。また、過年度の決算訂正を行い、2023年6月27日に有価証券報告書の訂正報告書を提出している。"
     },
     {
       "fiscalYear": "2023年3月期",
@@ -47,7 +145,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 41307000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1119,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +165,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 44870000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1119,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +185,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 48797000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1192,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +205,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 52520000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1207,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +213,128 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1969,
+      "title": "三協フロンテア株式会社を設立",
+      "description": "建設用設備器材の製造・販売を目的として、千葉県柏市に三協フロンテア株式会社を設立しました。",
+      "significance": "当社グループの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "ユニットハウス「コスモＣＴ」の製造・販売を開始",
+      "description": "ユニットハウス「コスモＣＴ」の製造・販売を開始しました。",
+      "significance": "現在の主力事業であるユニットハウス事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "ユニットハウスのレンタル業務を開始",
+      "description": "ユニットハウス「コスモＣＴ」のレンタル業務を開始しました。",
+      "significance": "販売とレンタルの両輪体制の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "株式を店頭登録し、フロンテア流通を設立",
+      "description": "日本証券業協会に株式を店頭登録し、ユニットハウス等の配送及び建方・解体工事を目的として有限会社フロンテア流通（現フロンテア流通株式会社）を設立しました。",
+      "significance": "株式公開と物流・工事体制の整備の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "中国に原材料の製造・販売会社を設立",
+      "description": "ユニットハウスの原材料等の製造・販売を目的として、中国広東省に関連会社番禺三協豪施有限公司（現連結子会社の広州番禺三協豪施有限公司）を設立しました。",
+      "significance": "海外生産拠点の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "ミャンマーに現地法人を設立",
+      "description": "ミャンマーに現地法人SANKYO FRONTIER MYANMAR COMPANY LIMITEDを設立しました。",
+      "significance": "海外でのレンタル事業展開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "マレーシアに現地法人を設立",
+      "description": "マレーシアに現地法人SANKYO FRONTIER MALAYSIA SDN. BHD.を設立しました。",
+      "significance": "東南アジア展開の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "ミャンマーに図面作成等の現地法人を設立",
+      "description": "ミャンマーに現地法人SANKYO FRONTIER TECHNOLOGIES MYANMAR COMPANY LIMITEDを設立しました。",
+      "significance": "海外体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所ＪＡＳＤＡＱ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "アメリカに現地法人を設立",
+      "description": "アメリカに現地法人SANKYO FRONTIER USA INC.を設立しました。",
+      "significance": "北米展開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "シンガポールに現地法人を設立",
+      "description": "シンガポールに現地法人SANKYO FRONTIER SINGAPORE PTE.LTD.を設立しました。",
+      "significance": "海外展開の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +343,58 @@
       "publisher": "三協フロンテア株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YF0N.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YF0N",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2024年10月1日付で普通株式1株につき2株の割合で株式分割を行った。株式数に関する指標は第53期の期首に当該分割が行われたと仮定して算定されている。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期のビジョンとして「VISION2050」・「Mobile Spaceを世界の常識にし、ハピネスあふれる社会の実現に貢献する」を設定しています。サーキュラーエコノミーを実現できるモバイルスペースを世界中に提供すること、全国に200カ所を超える展示場とデジタルマーケティングを組み合わせた提案力のある営業体制の構築、トランクルームの店舗網の拡充とサービス開発に取り組んでいます。拡大するデータセンター需要に対応するコンテナ型データセンターなどの新製品の提供や、生産物流拠点の拡大による供給体制の強化も進めています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "成長の軸は、ユニットハウスの販売にレンタルやトランクルームなどの継続収益を積み上げることと、コンテナ型データセンターのような新しい用途の開拓です。展示場網とデジタルマーケティングを組み合わせた集客が需要の取り込みを支えています。",
+        "basis": "経営方針の長期ビジョンと経営戦略等、MD&Aの経営成績の概況における店舗網拡充と新製品開発の記載、セグメント情報の事業構成",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "自社工場での生産から出荷整備・配送・建方・解体工事までをグループで担う一貫体制と、全国の工場・物流センター・展示場のネットワークが強みです。自社生産の一部をレンタル資産に振り替えて積み上げる方式で、販売とレンタルの双方に対応しています。",
+        "basis": "事業の内容のグループ各社の役割、主要な設備の状況の工場・物流センター・展示販売場の記載、MD&Aの生産実績とレンタル資産増加実績",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高54,275百万円のうちユニットハウス事業が53,907百万円を占める単一セグメントの構成で、外部顧客への売上高は国内が90％を超えます。中国に原材料の製造子会社を持ち、ミャンマー、マレーシア、アメリカ、シンガポールに現地法人を置いて海外展開を進めています。",
+        "basis": "セグメント情報（単一セグメントの旨）と関連情報（地域・主要顧客の省略基準）、MD&Aの販売実績、事業の内容の海外子会社の記載",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

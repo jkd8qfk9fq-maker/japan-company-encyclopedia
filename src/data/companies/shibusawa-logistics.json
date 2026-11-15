@@ -4,15 +4,141 @@
   "name": "澁澤倉庫",
   "officialName": "澁澤倉庫株式会社",
   "nameEn": "Shibusawa Logistics Corporation",
-  "description": null,
+  "shortNameEn": "Shibusawa Logistics",
+  "description": "倉庫・港湾運送・陸上運送・国際輸送の物流事業と、オフィスビル等の開発・賃貸・管理を行う不動産事業を営む総合物流会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "logistics",
+      "name": "物流事業",
+      "description": "倉庫業務、港湾運送業務、陸上運送業務、国際輸送業務とその他の物流業務を行う報告セグメントです。2026年3月期の外部顧客への営業収益は73,960百万円でした。実作業・実運送は澁澤陸運株式会社、大宮通運株式会社、門司港運株式会社などの子会社が担い、海外では澁澤(香港)有限公司、Shibusawa Logistics Vietnam Co., Ltd.、澁澤物流(上海)有限公司などが国際輸送を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "land-transport",
+          "name": "陸上運送業務",
+          "description": "貨物自動車運送および引越等のサービスを行う業務で、実運送および実作業は澁澤陸運株式会社等が行っています。2026年3月期の営業収益は36,462百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "warehousing",
+          "name": "倉庫業務",
+          "description": "寄託を受けた貨物の倉庫における保管・入出庫業務およびこれらに伴う流通加工等の荷役を行う業務で、当社および大宮通運株式会社等が行っています。2026年3月期の営業収益は19,772百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "international-transport",
+          "name": "国際輸送業務",
+          "description": "国際一貫輸送業務、国際航空貨物運送業務およびこれらに伴う荷捌を行う業務で、海外子会社等が行っています。2026年3月期の営業収益は7,978百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "port-transport",
+          "name": "港湾運送業務",
+          "description": "港湾における船内荷役、沿岸荷役、はしけ運送、上屋保管およびこれらに伴う荷捌を行う業務で、当社および門司港運株式会社等が行っています。2026年3月期の営業収益は6,550百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-logistics",
+          "name": "その他の物流業務",
+          "description": "物流施設賃貸業務および通運業務等で、当社および大宮通運株式会社等が行っています。2026年3月期の営業収益は3,203百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "オフィスビル、物流施設等の開発・賃貸・管理を行う報告セグメントです。2026年3月期の外部顧客への営業収益は5,780百万円でした。施設の設備管理、各種工事請負等は澁澤ファシリティーズ株式会社が行っています。賃貸収入等が中心で、顧客との契約から生じる収益は814百万円と印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "荷主から寄託された貨物の保管・荷役、港湾や陸上での運送、国際一貫輸送をグループで担い、併せてオフィスビルや物流施設の賃貸・管理を行っています。",
+    "products": [
+      "倉庫保管・荷役サービス",
+      "港湾運送サービス",
+      "陸上運送サービス",
+      "国際輸送サービス",
+      "オフィスビル・物流施設の賃貸・管理"
+    ],
+    "customers": [
+      "飲料・食品メーカーなどの荷主企業",
+      "輸出入貨物を扱う製造業などの企業",
+      "オフィスビル・物流施設のテナント企業"
+    ],
+    "revenueSources": [
+      "倉庫保管・荷役の対価",
+      "港湾運送・陸上運送・国際輸送の運賃・取扱料",
+      "オフィスビル・物流施設の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "物流と不動産の2事業を中核とするグループ",
+        "description": "当社、子会社15社および関連会社8社で構成され、物流事業および不動産事業を中核として事業運営を行っています。2026年3月31日現在の連結従業員数は1,320人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "保管から国際輸送までを一貫して提供",
+        "description": "倉庫での保管・入出庫と流通加工、港湾での船内・沿岸荷役、貨物自動車による陸上運送、国際一貫輸送と国際航空貨物運送を提供し、オフィスビルや物流施設の開発・賃貸・管理も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "荷主企業とテナント企業が顧客",
+        "description": "飲料・食品をはじめとする荷主企業が物流サービスの顧客で、最大の顧客はサントリーロジスティクス株式会社です。不動産事業ではオフィスビル等のテナント企業が顧客となります。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益",
+        "description": "2026年3月期の連結営業収益は79,740百万円でした（前期比1.4%増）。内訳は物流事業73,960百万円、不動産事業5,780百万円です。陸上運送業務が堅調な荷動きを背景に好調に推移し、国際輸送業務も底堅く推移しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は6,333百万円でした。前期は4,908百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +153,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 53655000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1196,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 57872000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1320,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 62627000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1289,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 65328000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1287,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +233,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 68441000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1320,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +241,587 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1897,
+      "title": "澁澤倉庫部を創業",
+      "description": "澁澤榮一を営業主とし、東京深川に澁澤倉庫部を創業しました。",
+      "significance": "現在の澁澤倉庫の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1909,
+      "title": "澁澤倉庫株式会社を設立",
+      "description": "倉庫部を改組し、澁澤倉庫株式会社を設立しました。",
+      "significance": "現在の会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1915,
+      "title": "小樽出張所を開設",
+      "description": "小樽出張所（現：北海澁澤物流株式会社）を開設しました。",
+      "significance": "北海道への拠点展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1922,
+      "title": "門司支店を開設",
+      "description": "門司支店（現：中国・九州支店）を開設しました。",
+      "significance": "九州への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1923,
+      "title": "本店を東京・茅場町へ移転",
+      "description": "東京茅場町に本店事務所を移転しました。",
+      "significance": "本店移転の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1933,
+      "title": "浪華倉庫を合併し六大港に拠点を保有",
+      "description": "浪華倉庫株式会社を合併し、横浜、大阪に支店を開設して、六大港に倉庫、港湾施設を保有する体制となりました。",
+      "significance": "港湾物流の全国体制の基盤となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1937,
+      "title": "神戸出張所を開設",
+      "description": "神戸出張所（現：神戸支店）を開設しました。",
+      "significance": "関西の港湾拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "東京証券取引所に上場",
+      "description": "東京証券取引所に株式を上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "澁澤不動産を合弁設立",
+      "description": "澁澤不動産株式会社を株式会社第一銀行と合弁で設立しました。",
+      "significance": "不動産事業の起点の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "澁澤陸運を設立",
+      "description": "澁澤陸運株式会社（現：連結子会社）を設立しました。",
+      "significance": "陸上運送体制の基盤となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "国際航空貨物運送取扱業務を開始",
+      "description": "国際航空貨物運送取扱業務を開始しました。",
+      "significance": "国際輸送への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "香港に現地法人を設立",
+      "description": "香港に現地法人澁澤倉庫(香港)有限公司（現：澁澤(香港)有限公司、連結子会社）を設立しました。",
+      "significance": "初の海外現地法人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "総合物流体制を開始",
+      "description": "IATA（国際航空運送協会）公認代理店の資格を取得して航空貨物取扱業務を拡充し、倉庫、海運、陸運の営業一体化による新しい総合物流体制を開始しました。",
+      "significance": "総合物流会社への転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "澁澤ビルが竣工",
+      "description": "東京都中央区に賃貸用オフィスビル（澁澤ビル）が竣工しました。",
+      "significance": "不動産賃貸事業の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "大宮通運の株式を取得",
+      "description": "大宮通運株式会社（現：連結子会社）の株式を取得しました。",
+      "significance": "陸上運送・倉庫のグループ拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "澁澤シティプレイスが竣工",
+      "description": "東京都中央区に賃貸用オフィスビル（澁澤シティプレイス）が竣工しました。",
+      "significance": "不動産賃貸事業の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "日正運輸の株式を取得",
+      "description": "日正運輸株式会社（現：連結子会社）の株式を取得しました。",
+      "significance": "陸上運送のグループ拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "上海に駐在員事務所を開設",
+      "description": "上海に駐在員事務所を開設しました。",
+      "significance": "中国展開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "ホーチミンに駐在員事務所を開設",
+      "description": "ホーチミンに駐在員事務所を開設しました。",
+      "significance": "ベトナム展開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "澁澤物流(上海)を設立",
+      "description": "上海に現地法人澁澤物流(上海)有限公司（現：連結子会社）を設立しました。",
+      "significance": "中国の現地法人体制の確立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "澁澤シティプレイス永代が竣工",
+      "description": "東京都江東区に賃貸用オフィスビル（澁澤シティプレイス永代）が竣工しました。",
+      "significance": "不動産賃貸事業の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "広州に駐在員事務所を開設",
+      "description": "広州に駐在員事務所を開設しました。",
+      "significance": "中国拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "港島倉庫が竣工し本店を江東区へ移転",
+      "description": "神戸市中央区で港島倉庫が竣工し、東京都江東区の創業の地に本店を移転しました。東京都中央区には賃貸用オフィスビル（澁澤シティプレイス蛎殻町）も竣工しました。",
+      "significance": "現在の本店所在地への移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "ベトナムに現地法人を設立",
+      "description": "ホーチミンに現地法人Shibusawa Logistics Vietnam Co., Ltd.（現：連結子会社）を設立し、2011年にはハノイに同社の支店を開設しました。",
+      "significance": "ベトナムの現地法人体制の確立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "AEO認定通関業者の認定を取得",
+      "description": "AEO認定通関業者の認定を取得しました。",
+      "significance": "通関体制の公的な裏付けです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "広州に分公司、 マニラに駐在員事務所を開設",
+      "description": "広州に澁澤物流(上海)有限公司の分公司を開設し、マニラに駐在員事務所を開設しました。",
+      "significance": "アジア拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "AEO特定保税承認者の承認を取得",
+      "description": "AEO特定保税承認者の承認を取得しました。また、大阪府茨木市に茨木倉庫A棟、横浜市神奈川区に澁澤ABCビルディング1号館が竣工しました。",
+      "significance": "保税体制の強化と施設の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "茨木倉庫B棟が竣工",
+      "description": "大阪府茨木市に茨木倉庫B棟が竣工しました。",
+      "significance": "関西の倉庫施設の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "武漢に分公司を開設",
+      "description": "武漢に澁澤物流(上海)有限公司の分公司を開設しました。",
+      "significance": "中国内陸部への拠点拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "ダイドー・シブサワ・グループロジスティクスを合弁設立",
+      "description": "ダイドー・シブサワ・グループロジスティクス株式会社をダイドードリンコ株式会社と合弁で設立しました。",
+      "significance": "飲料物流の合弁事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "データ・キーピング・サービスの株式を取得",
+      "description": "株式会社データ・キーピング・サービス（現：持分法適用関連会社）の株式を取得しました。",
+      "significance": "文書保管事業への関与です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "澁澤ABCビルディング2号館が竣工",
+      "description": "横浜市神奈川区に澁澤ABCビルディング2号館が竣工しました。また、Shibusawa Logistics Vietnam Co., Ltd.の出資比率を51%から90%に引き上げました。",
+      "significance": "施設拡充とベトナム子会社の支配強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "マニラに現地法人を設立",
+      "description": "マニラに現地法人TDG-Shibusawa Logistics, Inc.を設立し営業を開始しました。また、平和みらい株式会社（現：連結子会社）の株式を追加取得しました。",
+      "significance": "フィリピン進出とグループ拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "本牧ふ頭倉庫が竣工",
+      "description": "横浜市中区に本牧ふ頭倉庫が竣工しました。",
+      "significance": "港湾地区の倉庫施設の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "英文商号を変更し監査等委員会設置会社へ移行",
+      "description": "商号の英文表示をShibusawa Logistics Corporationに変更し、バンコクに駐在員事務所を開設、監査等委員会設置会社に移行しました。",
+      "significance": "ガバナンス体制の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "大宮通運と平和みらいを完全子会社化",
+      "description": "大宮通運株式会社、平和みらい株式会社を完全子会社化しました。",
+      "significance": "期中のグループ再編で、期末の構成に反映されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "名鉄ワールドトランスポートの全株式を取得",
+      "description": "名鉄ワールドトランスポート株式会社の全株式を取得し、澁澤ワールドトランスポート株式会社と改称しました。",
+      "significance": "期後の取得で、登録は2026年3月31日現在の構成で行います。needsReviewにも記録しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "zeon",
+      "relationship": "customer",
+      "description": "物流関係の取引を行っている荷主で、当社は2026年3月31日現在、同社の株式675,000株を特定投資株式として保有しています。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kanto-denka-kogyo",
+      "relationship": "business-partner",
+      "description": "取引先で、当社は2026年3月31日現在、同社の株式598,000株を特定投資株式として保有しています。有報の保有目的は同社との安定的な取引の維持・強化と印字されており、取引の方向は印字されていません。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "japan-tobacco",
+      "relationship": "customer",
+      "description": "物流関係の取引を行っている荷主で、当社は2026年3月31日現在、同社の株式140,000株を特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "seino-holdings",
+      "relationship": "business-partner",
+      "description": "物流事業を中心とした相互の業務の発展を促進することを目的に、戦略的な業務提携を行っている会社で、当社は2026年3月31日現在、同社の株式140,000株を特定投資株式として保有しています。物流関係の取引も行っており、同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "furukawa-electric",
+      "relationship": "customer",
+      "description": "物流関係の取引を行っている荷主で、当社は2026年3月31日現在、同社の株式33,276株を特定投資株式として保有しています。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toyota-tsusho",
+      "relationship": "business-partner",
+      "description": "物流関係の取引を行っている取引先で、当社は2026年3月31日現在、同社の株式58,500株を特定投資株式として保有しています。取引の方向は有報に印字されていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "furukawa",
+      "relationship": "customer",
+      "description": "物流関係の取引を行っている荷主で、当社は2026年3月31日現在、同社の株式60,193株を特定投資株式として保有しています。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kawasaki-kisen-kaisha",
+      "relationship": "customer",
+      "description": "物流関係の取引を行っている荷主で、当社は2026年3月31日現在、同社の株式94,500株を特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "rinnai",
+      "relationship": "customer",
+      "description": "物流関係の取引を行っている荷主で、当社は2026年3月31日現在、同社の株式48,321株を特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "suntory-beverage-and-food",
+      "relationship": "customer",
+      "description": "物流関係の取引を行っている荷主で、当社は2026年3月31日現在、同社の株式28,100株を特定投資株式として保有しています。同社は2026年4月1日付でサントリービバレッジ＆フード株式会社に商号変更しています（2026年3月31日現在の名称はサントリー食品インターナショナル株式会社）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsuboshi-belting",
+      "relationship": "customer",
+      "description": "物流関係の取引を行っている荷主で、当社は2026年3月31日現在、同社の株式30,250株を特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "uacj",
+      "relationship": "customer",
+      "description": "物流関係の取引を行っている荷主で、当社は2026年3月31日現在、同社の株式20,166株を特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "maruichi-steel-tube",
+      "relationship": "customer",
+      "description": "物流関係の取引を行っている荷主で、当社は2026年3月31日現在、同社の株式21,000株を特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sanyei",
+      "relationship": "customer",
+      "description": "物流関係の取引を行っている荷主で、当社は2026年3月31日現在、同社の株式9,631株を特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shindengen-electric-manufacturing",
+      "relationship": "business-partner",
+      "description": "取引先で、当社は2026年3月31日現在、同社の株式95,400株を特定投資株式として保有しています。有報の保有目的は同社との安定的な取引の維持・強化と印字されており、取引の方向は印字されていません。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sharp",
+      "relationship": "customer",
+      "description": "物流関係の取引を行っている荷主で、当社は2026年3月31日現在、同社の株式896株を特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shimizu",
+      "relationship": "supplier",
+      "description": "オフィスビルおよび物流施設等の建設・改修等の取引先で、当社は2026年3月31日現在、同社の株式1,000,683株を特定投資株式として保有しています。同社は当社の株式も保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "taikisha",
+      "relationship": "supplier",
+      "description": "建物設備関係および物流関係の取引を行っている取引先で、当社は2026年3月31日現在、同社の株式549,000株を特定投資株式として保有しています。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hazama-ando",
+      "relationship": "supplier",
+      "description": "物流施設の建設・改修等の取引先で、当社は2026年3月31日現在、同社の株式270,300株を特定投資株式として保有しています。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kajima",
+      "relationship": "supplier",
+      "description": "物流施設の建設・改修等の取引先で、当社は2026年3月31日現在、同社の株式33,827株を特定投資株式として保有しています。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "computer-engineering-and-consulting",
+      "relationship": "supplier",
+      "description": "社内システムのデータ処理等の取引先で、当社は2026年3月31日現在、同社の株式20,000株を特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "iino-kaiun-kaisha",
+      "relationship": "business-partner",
+      "description": "物流事業における取引先で、当社は2026年3月31日現在、同社の株式241,000株を特定投資株式として保有しています。有報の保有目的は同社との安定的な取引関係の維持・強化と印字されており、取引の方向は印字されていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "inui-global-logistics",
+      "relationship": "business-partner",
+      "description": "物流関係の取引を行っている同業の取引先で、当社は2026年3月31日現在、同社の株式300,000株を特定投資株式として保有しています。取引の方向は有報に印字されていません。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +829,67 @@
       "publisher": "澁澤倉庫株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI5J.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YI5J",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 株式分割: 当社は、2025年10月1日付で普通株式1株につき4株の割合による株式分割を実施しました。株式数に関する指標は第175期（2022年3月期）の期首に当該株式分割が行われたと仮定して算定されている旨が印字されています。登録は有報の印字どおり行います。",
+      "businessModel: 重要な後発事象（取得による企業結合）: 当社は、2026年5月11日開催の取締役会において、名鉄ワールドトランスポート株式会社の全株式を取得することを決議し、2026年5月29日に取得しました。同社は澁澤ワールドトランスポート株式会社へ改称されています。登録は2026年3月31日現在の構成（同社を含まない）で行います。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "グループミッション「物流を越えた、新たな価値創造により、持続可能で豊かな社会の実現を支えること」のもと、「Shibusawa 2030 ビジョン」で「お客さまの事業活動に新たな価値を生み出す Value Partner」の実現を目指しています。ビジョンの実現に向けた施策として、強みを深化させたカテゴリーNO.1の物流サービスの確立、物流の枠を超えたアウトソーシングサービスを事業の柱に育てること、スマートで強靭な不動産ポートフォリオの確立などを掲げています。中期経営計画「澁澤倉庫グループ中期経営計画2026」では、物流事業の収益力強化、国内／海外における物流ネットワークの拡充、物流の枠を超えた業域の拡大、不動産ポートフォリオの拡充、ESGへの取組み強化を課題としています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "中期経営計画2026の2年目にあたる2026年3月期は、テクノロジー活用によるオペレーションの高度化や拠点ネットワークの拡充、物流の枠を超えた業域の拡大を進めたと印字されています。不動産事業では、保有資産のバリューアップを通じた賃貸収益の強化や、不動産証券化事業への参画による収益基盤の多角化、物流事業とのシナジーを活かした複合提案（クロスセル）を推進しています。",
+        "basis": "MD&Aの経営成績の状況と経営方針の記載に基づく。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "1897年に澁澤榮一を営業主として創業した倉庫業を起点とし、1933年には六大港に倉庫・港湾施設を保有する体制を築きました。倉庫、港湾運送、陸上運送、国際輸送をグループ内で一貫して担う総合物流体制を1972年に開始し、2012年にはAEO認定通関業者の認定、2014年にはAEO特定保税承認者の承認を取得しています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【沿革】"
+      },
+      "analysis": {
+        "text": "国内では主要港湾と各地の倉庫拠点を持ち、海外では香港、中国、ベトナム等の現地法人が国際輸送を担う体制で、保管から国際輸送までを一貫して提供できることが基盤となっています。不動産事業の賃貸施設と物流サービスを組み合わせた提案も行っています。",
+        "basis": "事業の内容と沿革、関係会社の状況の記載に基づく。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは物流事業と不動産事業の2つです。2026年3月期の外部顧客への営業収益は物流事業73,960百万円、不動産事業5,780百万円でした。物流事業の業務別では陸上運送業務36,462百万円、倉庫業務19,772百万円、国際輸送業務7,978百万円、港湾運送業務6,550百万円、その他の物流業務3,203百万円です。最大の顧客はサントリーロジスティクス株式会社で、営業収益は9,128百万円、連結営業収益合計に対する割合は11.4%でした。地域ごとの情報は、本邦の外部顧客への売上高が連結の90%を超えるため記載が省略されています。",
+        "basis": "セグメント情報（報告セグメントごとの営業収益、関連情報の主要な顧客ごとの情報、地域ごとの情報）とMD&Aのセグメントごとの主要業務の営業収益内訳の記載に基づく。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

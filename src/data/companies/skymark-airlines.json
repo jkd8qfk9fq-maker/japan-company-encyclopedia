@@ -4,15 +4,114 @@
   "name": "スカイマーク",
   "officialName": "スカイマーク株式会社",
   "nameEn": "Skymark Airlines Inc.",
-  "description": null,
+  "shortNameEn": "Skymark Airlines",
+  "description": "ボーイング737型機の単一機材で国内線を運航する航空会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "グロース"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "air-transport",
+      "name": "航空運送事業",
+      "description": "定期航空運送事業と不定期航空運送事業（チャーター便）及び貨物運送を行っています。2026年3月31日現在、12空港・23路線で1日158便を運航し、ボーイング737-800型機29機（自社所有6機、オペレーティング・リース23機）を使用しています。2026年3月期の航空運送事業収入は107,249百万円で、うち旅客収入107,218百万円、貨物収入31百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "ancillary",
+      "name": "附帯事業",
+      "description": "旅客運送に附帯する予約のキャンセル・変更サービス、手荷物受託サービス、ペット受託サービス、機内誌・機内サービスを活用した広告枠の販売、他の航空会社への模擬操縦訓練装置及び航空機地上作業車両等の貸し出し、機内グッズの販売を行っています。2026年3月期の附帯事業収入は3,192百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "国内12空港・23路線で定期航空運送事業を営み、附帯事業をあわせて提供しています。",
+    "products": [
+      "定期航空運送",
+      "不定期航空運送（チャーター便）",
+      "旅客運送附帯サービス",
+      "機内誌・機内サービスを活用した広告",
+      "訓練設備等の賃貸",
+      "機内グッズ販売"
+    ],
+    "customers": [
+      "レジャーや知人・家族訪問の旅客",
+      "ビジネス旅客",
+      "訪日外国人旅客",
+      "旅行会社"
+    ],
+    "revenueSources": [
+      "航空運送事業収入（旅客収入・貨物収入）",
+      "附帯事業収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ボーイング737型機で国内線を運航する航空会社",
+        "description": "スカイマーク株式会社は、ボーイング737-800型機29機（自社所有6機、オペレーティング・リース23機）で国内線を運航する航空会社で、従業員数は2,738人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "定期航空運送と附帯サービス",
+        "description": "12空港・23路線で1日158便を運航し、旅客運送と貨物運送、予約変更や手荷物受託などの附帯サービスを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "レジャーや知人・家族訪問の旅客が中心",
+        "description": "主な顧客はレジャーや知人・家族訪問などの非ビジネス目的の旅客で、訪日外国人旅客や、大手旅行会社のビジネストラベルマネジメントシステムを通じた出張需要も取り込んでいます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "事業収益",
+        "description": "2026年3月期の事業収益は110,441百万円（前期比1.4％増）で、過去最高となりました。航空運送事業収入は107,249百万円、附帯事業収入は3,192百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は1,638百万円（前期比23.7％減）でした。"
+      }
+    ],
+    "suppliers": [
+      {
+        "name": "航空機・エンジン",
+        "description": "ボーイング737-8型機及びボーイング737-10型機をボーイング社から購入し、エンジンをCFM International社から購入しています。",
+        "businessIds": [
+          "air-transport"
+        ]
+      },
+      {
+        "name": "航空機整備",
+        "description": "航空機整備を全日本空輸株式会社、日本航空株式会社、MRO Japan株式会社などに委託しています。",
+        "businessIds": [
+          "air-transport"
+        ]
+      },
+      {
+        "name": "空港関連業務",
+        "description": "空港関連業務をその他の関係会社である鈴与ホールディングス株式会社（非上場）に委託しています。",
+        "businessIds": [
+          "air-transport"
+        ]
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +126,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9299000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2463,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +148,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23917000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2393,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +170,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27857000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2470,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +192,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27119000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2661,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,32 +214,16 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 33944000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2738,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第30期(2025/04/01－2026/03/31)",
-      "publisher": "スカイマーク株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJR8.pdf",
-      "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -152,5 +235,413 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1996,
+      "title": "スカイマークエアラインズ株式会社を設立",
+      "description": "1996年11月、東京都新宿区にスカイマークエアラインズ株式会社を設立しました。",
+      "significance": "国内航空市場への新規参入の起点となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "定期航空運送事業免許を申請",
+      "description": "1998年2月、運輸省へ定期航空運送事業免許を申請しました。",
+      "significance": "定期航空運送事業の開始に向けた手続きです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "本社を東京都港区へ移転",
+      "description": "1998年5月、本社を東京都港区へ移転しました。",
+      "significance": "就航に向けた体制整備の一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "定期航空運送事業免許を取得",
+      "description": "1998年7月、定期航空運送事業免許を取得しました。",
+      "significance": "定期便の運航が可能になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "羽田－福岡線第1便が就航",
+      "description": "1998年9月19日、羽田－福岡線第1便が就航しました。ボーイング767-300型機1機での運航でした。",
+      "significance": "当社の定期航空運送事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "2000年5月、東京証券取引所マザーズに上場しました。",
+      "significance": "株式市場への上場により資金調達の道を開きました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "本社を世界貿易センタービルへ移転",
+      "description": "2000年7月、本社を東京都港区の世界貿易センタービルへ移転しました。",
+      "significance": "本社機能の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "国際航空運送事業許可証を取得",
+      "description": "2002年7月、国際航空運送事業許可証を取得しました。",
+      "significance": "国際線の運航が可能になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "羽田－ソウル間国際チャーター便が就航",
+      "description": "2002年8月、羽田－ソウル間国際チャーター便が就航しました。",
+      "significance": "国際線への第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "本社を浜松町スクエアへ移転",
+      "description": "2004年10月、本社を東京都港区の浜松町スクエアへ移転しました。",
+      "significance": "本社機能の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ゼロ株式会社と合併",
+      "description": "2004年11月1日、ゼロ株式会社と合併しました。",
+      "significance": "事業基盤の統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "株式分割と決算期の変更",
+      "description": "2005年3月1日、普通株式1株を200株に株式分割し、単元株制度の導入により1単元の株式数を100株に変更しました。決算期を10月期から3月期へ変更しました。",
+      "significance": "株式の流動性向上と決算期の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "スカイマーク株式会社に商号変更",
+      "description": "2006年10月1日、スカイマーク株式会社に商号変更しました。",
+      "significance": "現在の商号となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "本社事務所を羽田空港整備場地区に設置し移転",
+      "description": "2008年12月、本社事務所を羽田空港整備場地区に設置し移転しました。",
+      "significance": "運航拠点への本社機能の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "本店所在地を東京都大田区へ移転",
+      "description": "2009年6月、本店所在地を東京都大田区へ移転しました。",
+      "significance": "本店の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "使用機材をボーイング737-800型に統一",
+      "description": "2009年10月、使用機材をボーイング737-800型に統一しました。",
+      "significance": "単一機材による低コスト運航の基盤となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "エアバス社とA380型機導入の基本合意書を締結",
+      "description": "2010年11月、エアバス社とA380型機導入に関する基本合意書を締結しました。",
+      "significance": "大型機導入の検討の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "エアバス社とA380型機の購入契約を締結",
+      "description": "2011年2月、エアバス社とA380型機の購入契約を締結しました。",
+      "significance": "大型機の導入計画が具体化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "公募及び第三者割当増資を実施",
+      "description": "2011年6月、公募及び第三者割当増資を実施しました。",
+      "significance": "資金調達により財務基盤を強化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "本社事務所を羽田空港新整備場地区へ移転",
+      "description": "2012年6月、本社事務所を羽田空港新整備場地区へ移転しました。",
+      "significance": "本社機能の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第一部へ市場変更",
+      "description": "2013年11月、東京証券取引所市場第一部へ市場変更しました。",
+      "significance": "上場市場の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "民事再生手続開始の申立て",
+      "description": "2015年1月、東京地方裁判所に民事再生手続開始の申立てを行いました。",
+      "significance": "経営再建に向けた手続きの開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東京証券取引所第一部上場廃止",
+      "description": "2015年3月、東京証券取引所第一部上場廃止となりました。",
+      "significance": "民事再生手続きに伴う上場廃止です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "再生計画認可決定が確定",
+      "description": "2015年9月、再生計画認可決定が確定し、資本金の全額減資と再生増資を実施しました。",
+      "significance": "再生計画に基づく資本の再構築です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "民事再生手続が終結",
+      "description": "2016年3月、民事再生手続が終結しました。",
+      "significance": "経営再建手続きの完了です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "本社を東京都大田区羽田空港三丁目へ移転",
+      "description": "2016年11月、本社を東京都大田区羽田空港三丁目5番10号に移転しました。",
+      "significance": "現在の本社所在地となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "成田－サイパン線国際定期便が就航",
+      "description": "2019年11月、成田－サイパン線国際定期便が就航しました。",
+      "significance": "国際定期便への再参入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "普通株式1株を25株に株式分割",
+      "description": "2020年2月、普通株式1株を25株に分割しました。",
+      "significance": "株式の流動性向上のための分割です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "成田－サイパン線の運航を休止",
+      "description": "2020年3月、成田－サイパン線の運航を休止しました。",
+      "significance": "国際定期便の運航休止です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "資本金の減少を実施",
+      "description": "2020年12月、資本金の減少を実施しました。",
+      "significance": "資本構成の見直しです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "増資と同時に減資を実施",
+      "description": "2021年9月、増資と同時に減資を実施しました。",
+      "significance": "資本構成の見直しです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場に上場",
+      "description": "2022年12月、東京証券取引所グロース市場に上場しました。",
+      "significance": "株式市場への再上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "ana-holdings",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式の12.97％を保有する大株主です。2021年9月28日付の有償第三者割当増資の割当先でもあります。グループ会社の全日本空輸株式会社とは航空機整備基本契約を結んでいます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "japan-airlines",
+      "relationship": "supplier",
+      "description": "航空機整備基本契約を結び、航空機整備を委託している相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "airtrip",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式の5.03％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "sojitz",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式の5.00％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "訂正有価証券報告書－第30期(2025/04/01－2026/03/31)",
+      "publisher": "スカイマーク株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YRPF.pdf",
+      "publishedAt": "2026-07-22",
+      "docId": "S100YRPF",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "羽田空港発着路線を中心に、高水準の運航品質と心のこもったサービスを身近な価格で提供し、収益の安定的な確保を図ります。ボーイング737シリーズによる機材の単一化と高効率な多頻度運航を維持し、継続的なコスト削減を進めます。2026年5月からボーイング737-8型機の運航を開始し、2027年にはボーイング737-10型機を羽田空港国内路線に導入します。2026年度から2030年度の中期経営目標を定めています。",
+        "asOf": "2026-07-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "羽田空港を主要拠点とし、旅客単価が高く収益性に優れる羽田空港国内路線に戦略的に集中しています。ボーイング737-800型機の単一機材による低コスト運航と、飲み物の無料提供や一定重量までの手荷物無料受託などの付加価値、高い定時運航率と低い欠航率を強みとしています。",
+        "asOf": "2026-07-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の事業収益は110,441百万円で、航空運送事業収入が107,249百万円、附帯事業収入が3,192百万円です。旅客収入は107,218百万円で事業収益の97.0％を占めています。有償旅客数は7,995,697名、有償座席利用率は80.1％です。売上高の10％以上を占める相手先はありません。羽田空港国内路線は旅客収入の約56％、旅客数の約52％、運航便数の約49％を占めています。",
+        "basis": "営業実績の区分別売上高（航空運送事業収入107,249百万円・附帯事業収入3,192百万円）、輸送実績（有償旅客数7,995,697名・有償座席利用率80.1％）及び主要な顧客ごとの情報（10％以上を占める相手先なし）による。",
+        "asOf": "2026-07-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

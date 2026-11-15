@@ -1,18 +1,158 @@
 {
   "id": "sky-perfect-jsat",
   "code": "9412",
-  "name": "スカパーJSAT(旧会社名スカパーJSATホールディングス)",
+  "name": "スカパーJSAT",
   "officialName": "スカパーJSAT株式会社 (旧会社名　株式会社スカパーJSATホールディングス)",
   "nameEn": "SKY Perfect JSAT Corporation (旧英訳名　SKY Perfect JSAT Holdings Inc.)",
-  "description": null,
+  "description": "通信衛星と光ファイバー回線を使い、衛星通信と有料多チャンネル放送のプラットフォームを提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "telecommunications",
+      "primary": true
+    },
+    {
+      "industryId": "media",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "space-business",
+      "name": "宇宙事業",
+      "description": "通信衛星を利用し、政府機関、公共団体、国内外企業、移動体向けにデータ通信や移動体通信等の衛星通信サービスを提供するとともに、有料多チャンネル放送の各チャンネルを運営する放送事業者に衛星回線を提供する事業です。2026年3月期の外部顧客への営業収益は66,039百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "satellite-communications",
+          "name": "衛星通信サービス",
+          "description": "静止軌道上の通信衛星を利用し、広域性、柔軟性、耐災害性といった衛星の優位点を活かして、政府機関、公共団体、国内外企業、移動体向けに通信サービスを提供するとともに、放送事業者に衛星回線を提供しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "space-intelligence",
+          "name": "スペースインテリジェンス事業",
+          "description": "低軌道衛星から得られる画像や位置情報等の様々なデータを解析・活用し、社会課題の解決や産業の高度化に資する情報・ソリューションを提供しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "media-business",
+      "name": "メディア事業",
+      "description": "各チャンネルを運営する放送事業者に、顧客管理業務等のプラットフォームサービスを提供するとともに、通信衛星や光ファイバー等の回線を利用して放送や配信を行う事業です。2026年3月期の外部顧客への営業収益は61,544百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "skyperfectv",
+          "name": "「スカパー！」",
+          "description": "東経110度で運用中の衛星を利用し、デジタルテレビですぐに楽しめる約70チャンネルを提供しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "skyperfectv-premium",
+          "name": "「スカパー！プレミアムサービス」",
+          "description": "東経124度及び128度で運用中の衛星を利用し、より多くの約140チャンネルを提供しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "optical-alliance",
+          "name": "光アライアンス事業",
+          "description": "NTTグループの光ファイバー網を利用した地上波、BS、110度CS放送の再送信サービス等を提供しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "media-solution",
+          "name": "メディアソリューションサービス",
+          "description": "東京メディアセンター（TMC）を中核拠点とし、法人向けに映像関連サービスを提供しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "当社と子会社20社及び関連会社28社で、衛星通信サービスと有料多チャンネル放送のプラットフォームを提供しています。",
+    "products": [
+      "衛星通信サービス",
+      "スペースインテリジェンス事業の情報・ソリューション",
+      "「スカパー！」",
+      "「スカパー！プレミアムサービス」",
+      "光再送信サービス",
+      "メディアソリューションサービス"
+    ],
+    "customers": [
+      "政府機関",
+      "公共団体",
+      "国内外の企業",
+      "航空機や船舶などの移動体",
+      "有料多チャンネル放送の各チャンネルを運営する放送事業者"
+    ],
+    "revenueSources": [
+      "衛星通信サービスの利用料",
+      "放送事業者への衛星回線の提供料",
+      "視聴料・業務手数料・基本料収入",
+      "光再送信サービスの利用料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と子会社20社及び関連会社28社で構成されるグループ",
+        "description": "スカパーJSAT株式会社と子会社20社及び関連会社28社により構成されており、政府・公共団体や企業に衛星通信サービスを提供するとともに、有料多チャンネル放送のプラットフォームを提供する事業を行っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "通信衛星と光ファイバー回線による通信と放送のサービス",
+        "description": "通信衛星を利用したデータ通信や移動体通信等の衛星通信サービスと、放送事業者に衛星回線や顧客管理業務等のプラットフォームサービスを提供するとともに、通信衛星や光ファイバー等の回線を利用して放送や配信を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "政府・公共団体や企業、放送事業者に提供",
+        "description": "政府機関、公共団体、国内外企業、移動体向けに通信サービスを提供し、有料多チャンネル放送の各チャンネルを運営する放送事業者に衛星回線やプラットフォームサービスを提供しています。放送サービスの累計加入件数は2026年3月末時点で2,454千件です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の連結営業収益は127,584百万円",
+        "description": "2026年3月期の連結営業収益は127,584百万円で、前期比3.1％増でした。宇宙事業が66,039百万円、メディア事業が61,544百万円でした。宇宙事業における国内衛星通信分野の増収やスペースインテリジェンス事業の増収が主な理由です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は前期比22.0％増",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は23,311百万円で、前期比22.0％増でした。宇宙事業の増収に伴う売上原価の増加があった一方で、メディア事業における放送事業のオペレーション最適化が奏功し、営業費用は減少しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +167,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 243077000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 841,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +187,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 256815000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 848,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 271982000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 848,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 284174000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 819,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +247,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 307035000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 769,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +255,325 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2006,
+      "title": "スカパーJSAT㈱の設立に基本合意",
+      "description": "㈱スカイパーフェクト・コミュニケーションズ及びジェイサット㈱が、株式移転により両社の完全親会社となるスカパーJSAT㈱を設立し、経営統合を行うことについて基本合意書を締結し、発表しました。",
+      "significance": "経営統合に向けた第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "株式移転による当社の設立を承認",
+      "description": "両社の臨時株主総会において、両社が共同で株式移転の方法により当社を設立し、両社がその完全子会社となることについて承認決議しました。",
+      "significance": "当社設立の承認です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "株式移転により当社を設立し上場",
+      "description": "両社が共同して株式移転により当社を設立し、当社の普通株式を東京証券取引所市場第一部に上場しました。",
+      "significance": "当社の設立と上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "本社機能を統合し港区赤坂に移転",
+      "description": "当社及び両社が本社機能を統合し、港区赤坂に移転しました。",
+      "significance": "本社機能の統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "宇宙通信㈱を子会社化",
+      "description": "株式取得により宇宙通信㈱を子会社化しました。",
+      "significance": "宇宙事業の体制強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "商号をスカパーJSATホールディングスに変更",
+      "description": "当社の商号を㈱スカパーJSATホールディングスに変更しました。",
+      "significance": "持株会社としての商号の明確化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "本店所在地を東京都港区に変更",
+      "description": "当社の本店所在地を東京都千代田区から東京都港区に変更しました。",
+      "significance": "本店の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "3社合併によりスカパーJSAT㈱が発足",
+      "description": "連結子会社である㈱スカイパーフェクト・コミュニケーションズを存続会社として、同社、ジェイサット㈱及び宇宙通信㈱の3社が合併し、同社の商号をスカパーJSAT㈱に変更しました。",
+      "significance": "事業会社3社の統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "㈱ケーブルテレビ足立の全株式を売却",
+      "description": "連結子会社であった㈱ケーブルテレビ足立の全株式を売却しました。",
+      "significance": "連結範囲の見直しです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "㈱データネットワークセンターを完全子会社化",
+      "description": "㈱データネットワークセンター（現 ㈱スカパー・カスタマーリレーションズ）を完全子会社化しました。",
+      "significance": "顧客管理体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "㈱ディー・エス・エヌを設立",
+      "description": "㈱ディー・エス・エヌを設立しました。",
+      "significance": "宇宙事業の体制拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "㈱オプティキャストを吸収合併",
+      "description": "スカパーJSAT㈱が、連結子会社であった㈱オプティキャストを吸収合併しました。",
+      "significance": "グループ内の事業統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "WAKUWAKU JAPAN㈱を設立",
+      "description": "WAKUWAKU JAPAN㈱を設立しました。",
+      "significance": "海外向け放送事業への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "衛星一般放送業務を吸収分割により承継",
+      "description": "東経124/128度CS放送において行う衛星一般放送業務の事業を㈱スカパー・ブロードキャスティングから㈱スカパー・エンターテイメントへ吸収分割により承継しました。",
+      "significance": "放送事業の体制整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "WAKUWAKU JAPAN㈱を吸収合併",
+      "description": "スカパーJSAT㈱が、連結子会社であったWAKUWAKU JAPAN㈱を吸収合併しました。",
+      "significance": "グループ内の事業統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "㈱衛星ネットワークを吸収合併",
+      "description": "スカパーJSAT㈱が、連結子会社であった㈱衛星ネットワークを吸収合併しました。",
+      "significance": "グループ内の事業統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより市場第一部からプライム市場へ移行しました。",
+      "significance": "市場区分の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "㈱スカパー・ピクチャーズを設立",
+      "description": "㈱スカパー・ピクチャーズを設立しました。",
+      "significance": "アニメコンテンツIP領域への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "㈱スカパー・カスタマーリレーションズを持分法適用関連会社化",
+      "description": "連結子会社であった㈱スカパー・カスタマーリレーションズの株式の一部を売却し、持分法適用の関連会社としました。",
+      "significance": "連結範囲の見直しです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "JSAT Beyond Innovation LLCを設立",
+      "description": "JSAT Beyond Innovation LLCを設立しました。",
+      "significance": "宇宙事業の新規領域への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "スカパーJSAT㈱を吸収合併し商号を変更",
+      "description": "連結子会社であったスカパーJSAT㈱を吸収合併し、当社の商号をスカパーJSAT㈱に変更しました。",
+      "significance": "持株会社体制の解消と事業会社への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "itochu",
+      "relationship": "other-affiliated-company",
+      "description": "当社のその他の関係会社です。2026年3月31日現在、伊藤忠・フジ・パートナーズ㈱を通じて当社の議決権の27.0％を間接的に保有されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "business-partner",
+      "description": "2025年12月に防衛省の「衛星コンステレーションの整備・運営等事業」を共同で落札し、2026年1月には三菱電機と共同で特別目的会社である㈱トライサット・コンステレーションを設立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "mitsubishi-electric",
+      "relationship": "business-partner",
+      "description": "2025年12月に防衛省の「衛星コンステレーションの整備・運営等事業」を共同で落札し、2026年1月には三井物産と共同で特別目的会社である㈱トライサット・コンステレーションを設立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "synspective",
+      "relationship": "business-partner",
+      "description": "防衛省の「衛星コンステレーションの整備・運営等事業」について、2025年12月に三菱電機、三井物産、QPS研究所、アクセルスペース、三井物産エアロスペースとともに共同で落札した事業提携の相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "qps-holdings",
+      "relationship": "business-partner",
+      "description": "小型SAR衛星画像データサービスに関する業務提携契約を締結しており、2026年3月に同社が実施した第三者割当増資を引き受けました。これにより、当社グループの同社に対する持分比率は約5.9％から約13.2％に上昇しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tbs-holdings",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の発行済株式（自己株式を除く）の6.50％にあたる18,434,000株を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第19期(2025/04/01－2026/03/31)",
-      "publisher": "スカパーJSAT株式会社 (旧会社名　株式会社スカパーJSATホールディングス)",
+      "publisher": "スカパーJSAT株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBNS.pdf",
       "publishedAt": "2026-06-16",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YBNS",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年4月1日に連結子会社であったスカパーJSAT㈱を吸収合併し、当社の商号をスカパーJSAT㈱に変更しました。本登録は、合併前の2026年3月期の持株会社体制に基づく旨を明記しています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "当社グループは、2030年の目指す姿や社会へもたらす価値の実現に向けた成長の道程を示す価値創造ストーリーを策定しております。経営戦略として、事業に関わる「収益基盤強化」「事業の進化」「新規領域の開拓」の3つの戦略と、それらの基盤となる「人的資本強化」「経営基盤拡充」の2つの戦略を掲げております。宇宙事業では「Multi-Orbit戦略」のもと、スペースインテリジェンス事業を成長ドライバーとして事業領域を拡大し、メディア事業では「Multi-Alliance戦略」を通じて、放送・配信事業及び光アライアンス事業による収益の維持・拡大を図ってまいります。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "宇宙事業では、40年にわたり培ってきた宇宙・衛星サービス分野での経験を活かし、静止軌道から非静止軌道へ事業領域を拡大するとともに、衛星オペレーターから宇宙ソリューションプロバイダーへの転換を進めております。メディア事業では、衛星放送における30年の運用実績と、蓄積されたノウハウや資産を活かしております。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の外部顧客への営業収益では、宇宙事業が66,039百万円、メディア事業が61,544百万円でした。地域別では国内が114,902百万円、海外が12,682百万円で、連結営業収益の10％以上を占める顧客はいません。光アライアンス事業の再送信サービスは、2026年3月末時点で提供エリアが37都道府県、契約世帯数が297万世帯です。衛星画像データサービスでは、Planet Labs PBCとのパートナーシップ契約及び低軌道衛星コンステレーション構築に向けた協業を進めています。",
+        "basis": "【セグメント情報】の報告セグメントごとの営業収益、【関連情報】の地域ごとの営業収益及び主要な顧客ごとの情報、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】のメディア事業の概況、並びに【株式の保有状況】の特定投資株式の保有目的",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

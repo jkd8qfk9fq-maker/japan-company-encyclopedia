@@ -4,15 +4,112 @@
   "name": "三晃金属工業",
   "officialName": "三晃金属工業株式会社",
   "nameEn": "SANKO METAL INDUSTRIAL CO., LTD.",
-  "description": null,
+  "description": "工場や倉庫などの金属屋根工事と、住宅用成型品の販売を手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "sanko-metal-industrial-group",
+      "name": "三晃金属工業グループの事業",
+      "description": "当社（三晃金属工業株式会社）と非連結子会社4社、その他の関係会社1社で構成されるグループです。屋根事業と建材事業を主な事業とし、太陽光発電による売電事業も行っています。本社は東京都港区にあります。提出会社の従業員数は520人です（2026年3月31日現在）。2026年3月期の売上高は47,058百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "roofing",
+          "name": "屋根事業",
+          "description": "長尺屋根工事、Ｒ－Ｔ工事、ハイタフ工事、ソーラー工事、塗装工事及び長尺成型品販売を行う事業です。屋根材等の加工作業の相当部分を非連結子会社の株式会社深谷三晃、株式会社福知山三晃、光三晃株式会社に外注しています。2026年3月期の外部顧客への売上高は43,728百万円で、グループ最大の事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "building-materials",
+          "name": "建材事業",
+          "description": "住宅成型品販売を行う事業です。屋根材等の加工作業の相当部分を非連結子会社の株式会社深谷三晃、株式会社福知山三晃、有限会社江別三晃工作に外注しています。2026年3月期の外部顧客への売上高は3,252百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "solar-power-sales",
+          "name": "その他",
+          "description": "報告セグメントに含まれない区分で、太陽光により発電した電力を電力会社に卸売りする事業です。2026年3月期の外部顧客への売上高は76百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "日本製鉄の鋼板を材料に、長尺屋根などの屋根工事と長尺成型品・住宅成型品の販売を行い、工事代金と製品の販売代金で売上を得る事業モデルです。",
+    "products": [
+      "長尺屋根工事",
+      "Ｒ－Ｔ工事",
+      "ハイタフ工事",
+      "ソーラー工事",
+      "塗装工事",
+      "長尺成型品",
+      "住宅成型品",
+      "太陽光発電による電力の卸売り"
+    ],
+    "customers": [
+      "工場・倉庫などの建物の工事発注者",
+      "住宅成型品の購入先",
+      "電力会社（売電事業）"
+    ],
+    "revenueSources": [
+      "屋根工事の完成工事高",
+      "長尺成型品・住宅成型品の製品売上高",
+      "売電収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と非連結子会社4社のグループ",
+        "description": "三晃金属工業株式会社は山口県光市で設立され、本社は東京都港区にあります。その他の関係会社1社を含むグループで事業を行い、提出会社の従業員数は520人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "屋根工事と成型品販売、売電事業",
+        "description": "屋根事業では長尺屋根工事、Ｒ－Ｔ工事、ハイタフ工事、ソーラー工事、塗装工事と長尺成型品販売を、建材事業では住宅成型品販売を行い、太陽光発電による電力の卸売りも行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "建物の工事発注者などが顧客",
+        "description": "工場・倉庫などの建物の工事発注者や成型品の購入先が顧客です。外部顧客への売上高のうち、売上高の10％以上を占める相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は47,058百万円",
+        "description": "2026年3月期の売上高は47,058百万円です。事業別では屋根事業が43,728百万円、建材事業が3,252百万円、その他（売電事業）が76百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は2,645百万円",
+        "description": "2026年3月期の当期純利益は2,645百万円となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +124,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21119000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 492,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +146,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22990000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 499,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +168,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24963000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 502,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +190,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27103000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 502,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,32 +212,17 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27628000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 520,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2025年10月1日付けで普通株式1株につき5株の割合で株式分割を行いました。これに伴い、発行済株式総数は前期の3,960千株から19,800千株となりました。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第77期(2025/04/01－2026/03/31)",
-      "publisher": "三晃金属工業株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCWL.pdf",
-      "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-28"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-28",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -152,5 +234,166 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1949,
+      "title": "三晃金属工業株式会社を設立",
+      "description": "1949年6月に山口県光市に三晃金属工業株式会社を設立しました。",
+      "significance": "三晃金属工業の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "日本製鉄の前身などが資本参加",
+      "description": "1954年6月に八幡製鐵株式會社（現 [[company:nippon-steel|日本製鉄株式会社]]）と日本鐵板（現 ＮＳ建材薄板株式会社）が資本参加しました。",
+      "significance": "現在のその他の関係会社である日本製鉄との資本関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1962年9月に東京証券取引所市場第二部に上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "深谷製作所を新設",
+      "description": "1964年12月に埼玉県深谷市に深谷製作所を新設しました。",
+      "significance": "現在の主力生産拠点の一つにつながる新設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "東京・大阪証券取引所市場第一部銘柄に指定",
+      "description": "1971年10月に東京・大阪証券取引所市場第一部銘柄に指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "太陽光発電による売電事業を開始",
+      "description": "2014年6月に太陽光発電による売電事業を開始しました。",
+      "significance": "現在の「その他」区分の売電事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "水上金属工業を吸収合併し光三晃を設立",
+      "description": "2017年4月に連結子会社の水上金属工業株式会社を吸収合併し、子会社の光三晃株式会社（現 非連結子会社）を設立しました。",
+      "significance": "グループ再編の出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "2022年4月に東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "滋賀製作所を閉鎖",
+      "description": "2024年3月に滋賀県東近江市の滋賀製作所を閉鎖しました。",
+      "significance": "生産拠点の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "本社を東京都港区芝に移転",
+      "description": "2026年1月に本社を東京都港区芝（ミタマチテラス）に移転しました。",
+      "significance": "直近の本社移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nippon-steel",
+      "relationship": "other-affiliated-company",
+      "description": "日本製鉄株式会社は、当社のその他の関係会社です。2026年3月31日現在、同社は当社の発行済株式（自己株式を除く。）の32.31％を保有する筆頭株主であり、役員の兼任があります。屋根事業と建材事業で使う材料は、同社の製品を同社の子会社で表面処理加工し、別の子会社を通じて仕入れています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第77期(2025/04/01－2026/03/31)",
+      "publisher": "三晃金属工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCWL.pdf",
+      "publishedAt": "2026-06-22",
+      "docId": "S100YCWL",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "営業面では技術提案を中心にした設計織込み営業の強化に注力し、競争力のある商品と工法を市場に投入して受注の拡大を目指しています。工事面では高水準の受注残高を背景に工事施工を確実に実行し、資材・労務・物流・設備等のコストアップの価格転嫁と一層のコスト低減に取り組みます。中長期的には、2026年4月に品質管理部を新設して「施工品質」と「製造品質」の向上を図り、現場生産性の向上を進めることで、「業界最高レベルの商品力・営業力と工事力」による好循環を創出することを掲げています。中期経営方針（2024-2026）の取り組みも進めています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "屋根事業と建材事業で使う材料は、日本製鉄の製品をその子会社で表面処理加工し、別の子会社を通じて仕入れる調達経路が事業の内容に明記されており、材料の調達先がグループの関係会社にそろっています。屋根材等の加工作業の相当部分は非連結子会社3社に外注しており、製作所と子会社で加工を分担する体制を持ちます。",
+        "basis": "事業の内容における材料の仕入経路と加工作業の外注先の記載、関係会社の状況に基づく。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高47,058百万円のうち、屋根事業が43,728百万円と大半を占め、建材事業が3,252百万円、その他（売電事業）が76百万円です。売上高は本邦の外部顧客へのものが90％を超え、売上高の10％以上を占める主要な顧客はありません。",
+        "basis": "セグメント情報等の外部顧客への売上高、関連情報（地域ごとの情報、主要な顧客ごとの情報）及び経営成績等の状況の分析に基づく。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

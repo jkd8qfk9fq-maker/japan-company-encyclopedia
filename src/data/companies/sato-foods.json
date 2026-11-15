@@ -4,15 +4,115 @@
   "name": "サトウ食品",
   "officialName": "サトウ食品株式会社",
   "nameEn": "SATO FOODS CO., LTD.",
-  "description": null,
+  "shortNameEn": "SATO FOODS CO., LTD.",
+  "description": "新潟県新潟市に本社を置き、無菌化包装米飯「サトウのごはん」と包装餅「サトウの切り餅」を製造販売する食品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "food-business",
+      "name": "食品事業",
+      "description": "食品事業の単一セグメントです。外部顧客への売上高は51,775百万円で、包装米飯製品と包装餅製品の製造販売を行っています。連結従業員数は717人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "packaged-rice-products",
+          "name": "包装米飯製品",
+          "description": "外部顧客への売上高は32,871百万円です。無菌化包装米飯「サトウのごはん」などを製造販売しています。",
+          "customers": [
+            "食品卸売業者や商社などの販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "packaged-mochi-products",
+          "name": "包装餅製品",
+          "description": "外部顧客への売上高は18,882百万円です。切り餅や鏡餅などの包装餅製品を製造販売しています。連結子会社の株式会社うさぎもちも包装餅製品等の製造販売を行っています。",
+          "customers": [
+            "食品卸売業者や商社などの販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other-products",
+          "name": "その他製品",
+          "description": "外部顧客への売上高は21百万円です。その他の食品製品を取り扱っています。",
+          "customers": [
+            "食品卸売業者や商社などの販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "国内で収穫された米を原料に、無菌化包装技術で包装米飯製品と包装餅製品を製造し、食品卸売業者や商社を通じて全国の消費者へ販売しています。",
+    "products": [
+      "包装米飯製品（無菌化包装米飯「サトウのごはん」など）",
+      "包装餅製品（切り餅・鏡餅など）",
+      "その他製品"
+    ],
+    "customers": [
+      "食品卸売業者や商社などの販売先企業"
+    ],
+    "revenueSources": [
+      "包装米飯製品の販売代金",
+      "包装餅製品の販売代金",
+      "その他製品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "サトウ食品株式会社",
+        "description": "1950年に新潟市で創業した食品メーカーで、連結子会社1社（株式会社うさぎもち）とともに、国内で包装米飯製品と包装餅製品の製造販売を行っています。連結従業員数は717人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "包装米飯と包装餅を提供",
+        "description": "無菌化包装技術を用いた包装米飯製品「サトウのごはん」と、切り餅や鏡餅などの包装餅製品を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "食品卸売業者・商社が顧客",
+        "description": "主な顧客は食品卸売業者や商社で、主要な顧客ごとの情報には加藤産業株式会社、三菱食品株式会社、三井物産株式会社、伊藤忠商事株式会社が印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は51,775百万円",
+        "description": "2026年4月期の売上高は51,775百万円（前年同期比11.4％増）となりました。製品別では包装米飯製品が32,871百万円、包装餅製品が18,882百万円、その他製品が21百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は2,800百万円",
+        "description": "2026年4月期の親会社株主に帰属する当期純利益は2,800百万円（前年同期比43.7％増）となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年4月期",
@@ -27,7 +127,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16475041000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 597,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +147,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18260675000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 605,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,12 +167,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20586489000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 631,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号 2022年10月28日）等を第65期の期首から適用しており、第64期（2024年4月期）に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2025年4月期",
@@ -87,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22475845000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 663,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +208,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24860184000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 717,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +216,203 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1950,
+      "title": "佐藤勘作商店として創業",
+      "description": "創業者の佐藤勘作が、新潟市において白玉粉の製造販売を目的とする佐藤勘作商店を創業しました。",
+      "significance": "サトウ食品の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "包装餅事業への進出",
+      "description": "包装餅事業へ進出しました。",
+      "significance": "現在の主力事業の一つである包装餅事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "有限会社佐藤食品工業所の設立",
+      "description": "創業者佐藤勘作が有限会社佐藤食品工業所を設立しました。同年、新潟県新潟市に新潟工場を設立し、本社を移転しました。",
+      "significance": "法人としてのサトウ食品の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "株式会社への改組",
+      "description": "株式会社佐藤食品工業所に改組しました。",
+      "significance": "株式会社体制への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "佐藤食品工業株式会社への商号変更",
+      "description": "創業30周年を記念し、商号を佐藤食品工業株式会社に変更しました。",
+      "significance": "旧社名となった商号変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "無菌化個包装切り餅の製造開始",
+      "description": "新発田工場において無菌化個包装切り餅の製造を開始しました。",
+      "significance": "無菌化包装技術を用いた製品展開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "無菌化包装米飯「サトウのごはん」の製造開始",
+      "description": "新潟工場において無菌化包装米飯「サトウのごはん」の製造を開始しました。",
+      "significance": "現在の主力ブランド「サトウのごはん」の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "東港工場の新設",
+      "description": "新潟県北蒲原郡に無菌化包装米飯の専用工場である東港工場を新設しました。",
+      "significance": "包装米飯の生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "株式上場を果たした転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "株式会社うさぎもちの連結子会社化",
+      "description": "宝町食品株式会社を設立し、株式会社きむら食品から食品事業を譲り受け、株式会社きむら食品（現・株式会社うさぎもち）を連結子会社としました。",
+      "significance": "現在の唯一の連結子会社のグループ入りです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "聖籠ファクトリーの新設",
+      "description": "新潟県北蒲原郡に聖籠ファクトリーを新設しました。",
+      "significance": "包装米飯の主力生産拠点の新設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "サトウ食品株式会社への商号変更",
+      "description": "商号をサトウ食品株式会社に変更しました。",
+      "significance": "現在の社名となった変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の市場区分となった転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kato-sangyo",
+      "relationship": "customer",
+      "description": "主要な顧客ごとの情報に最大の販売先として印字されている食品卸売業者です。特定投資株式の保有目的にも、当社の製品の販売先であり営業取引関係の維持及び強化を目的とすることが印字されています。当社は同社の株式36,336株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "itochu",
+      "relationship": "customer",
+      "description": "主要な顧客ごとの情報に販売先として印字されている商社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "customer",
+      "description": "主要な顧客ごとの情報に販売先として印字されている商社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "toyo-seikan-group-holdings",
+      "relationship": "business-partner",
+      "description": "当社の製品の原材料である包材の仕入先であり、包材品質や新技術の提案、長期安定的な販売の拡大等を目的として業務提携を締結している提携先です。株式の持合い関係にあり、2026年4月30日現在、当社株式の4.8％を保有する大株主でもあります。当社は同社の株式320,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "oji-holdings",
+      "relationship": "supplier",
+      "description": "特定投資株式の保有目的に、当社の製品の原材料の仕入先であり、取引関係の維持及び強化を目的として継続して保有することが印字されている原材料の仕入先です。当社は同社の株式7,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "bsn-media-holdings",
+      "relationship": "supplier",
+      "description": "特定投資株式の保有目的に、広告宣伝関連等の取引関係の維持及び強化を目的として継続して保有することが印字されている、広告宣伝関連の取引先です。当社は同社の株式136,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ichimasa-kamaboko",
+      "relationship": "major-shareholder",
+      "description": "2026年4月30日現在の大株主の状況に、所有株式数の割合3.2％で印字されている事業会社です。当社も同社の株式516,800株を保有しており、株式の保有状況には地元企業との関係維持を目的として継続保有することが印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +420,55 @@
       "publisher": "サトウ食品株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YR44.pdf",
       "publishedAt": "2026-07-21",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YR44",
+      "asOf": "2026-04-30",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "日本の食文化を大切にし、国内で収穫された良質の米を原料として、昔ながらの製法を独自の技術で再現した本物の「ごはん」と「餅」を製造し、全国の消費者に提供することを経営の基本方針としています。中長期的には、「サトウのごはん」「サトウの切り餅」「うさぎもち」の3ブランドを柱として、高付加価値化と、品質・味・生産量向上のための成長投資に取り組むとしています。",
+        "asOf": "2026-07-21",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "戦略の軸は、包装米飯の販売拡大と包装餅の通年需要の喚起により、年末に需要が集中する包装餅の季節変動を小さくすることにあります。包装米飯では、2026年2月に新商品「サトウのごはん新定番」を発売し、聖籠ファクトリー第二工場が2026年4月に建屋を完成させて2026年12月の生産開始を予定するなど、生産能力の増強と新商品の投入が進められています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における目標とする経営指標と中長期的な経営戦略の記載、セグメント情報の関連情報における製品及びサービスごとの情報、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における製品分類別の販売動向",
+        "asOf": "2026-07-21",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "優位性は、日本で初めて開発した無菌包装米飯の技術と、パックごはん市場で確固たるブランドを確立した「サトウのごはん」、包装餅のトップブランドである「サトウの切り餅」にあります。独自の厚釜炊き製法など、昔ながらの製法を独自の技術で再現するものづくりへのこだわりが商品の差別化につながっています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における会社の経営の基本方針と事業概況の記載、事業の内容における製品の記載",
+        "asOf": "2026-07-21",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "国内のコメ消費量が年々減少する中でもパックごはん市場は成長を続けており、災害時の非常食としての評価も高まっています。当社グループの売上高51,775百万円のうち包装米飯製品が32,871百万円、包装餅製品が18,882百万円を占め、販売は国内のみです。主要な顧客は食品卸売業者や商社で、主要な顧客ごとの情報には4社が印字されています。",
+        "basis": "セグメント情報の関連情報における製品及びサービスごとの情報、地域ごとの情報、主要な顧客ごとの情報、経営方針、経営環境及び対処すべき課題等における経営環境と事業概況の記載",
+        "asOf": "2026-07-21",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年4月期",
     "asOf": "2026-04-30",

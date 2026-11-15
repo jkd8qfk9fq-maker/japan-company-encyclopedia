@@ -4,15 +4,139 @@
   "name": "SMK",
   "officialName": "SMK株式会社",
   "nameEn": "SMK Corporation",
-  "description": null,
+  "shortNameEn": "SMK Corporation",
+  "description": "コネクタやリモコン、カメラモジュールなどの電子部品を製造販売する、創立100年を超える電子部品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "smk",
+      "name": "ＳＭＫ株式会社",
+      "description": "東京都品川区に本社を置く電子部品メーカーです。当社、子会社23社及び関連会社1社でグループを構成し、2026年3月期の連結従業員数は3,626人です。東京証券取引所プライム市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "sci",
+          "name": "ＳＣＩ事業部",
+          "description": "センシング、コミュニケーション＆インターフェースを担う事業部で、リモコン、カメラモジュール、センサー/センシング製品、ユニットの製造販売を行う報告セグメントです。2026年3月期の外部顧客への売上高は25,621百万円で、家電市場向けリモコンや車載市場向けユニット・スイッチなどが中心です。",
+          "customers": [
+            "電機メーカー",
+            "自動車メーカー",
+            "家電メーカー",
+            "産業機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "cs",
+          "name": "ＣＳ事業部",
+          "description": "コネクション・システムを担う事業部で、コネクタ（同軸、基板対基板、ＦＰＣ）、ジャックの製造販売を行う報告セグメントです。2026年3月期の外部顧客への売上高は22,520百万円で、車載市場向けのカメラ関連・電装関連や家電市場向けなどが中心です。",
+          "customers": [
+            "電機メーカー",
+            "自動車メーカー",
+            "家電メーカー",
+            "産業機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "innovation-center",
+          "name": "イノベーションセンター",
+          "description": "音声による分析技術、筋電センサーの開発・販売を行う報告セグメントです。2026年3月期の外部顧客への売上高は62百万円です。2025年6月に通信モジュール事業をＳＣＩ事業部へ移管し、「音声によるあたまの健康度分析技術」と「筋電センサー」の2事業にリソースを集中しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other",
+          "name": "その他",
+          "description": "報告セグメントに含まれない不動産賃貸事業及び労働者派遣事業です。2026年3月期の外部顧客への売上高はセグメント表で「－」と表示され、金額は印字されていません。",
+          "customers": [
+            "不動産の賃借人",
+            "労働者派遣の派遣先企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "当社と子会社23社・関連会社1社が、コネクタやジャック、リモコン、カメラモジュール、センサー製品などの電子部品を製造し、国内外の電機メーカーなどへ販売する事業モデルです。",
+    "products": [
+      "コネクタ（同軸、基板対基板、ＦＰＣ）",
+      "ジャック",
+      "リモコン",
+      "カメラモジュール",
+      "センサー/センシング製品",
+      "ユニット",
+      "筋電センサー"
+    ],
+    "customers": [
+      "電機メーカー",
+      "自動車メーカー",
+      "家電メーカー",
+      "産業機器メーカー",
+      "通信機器メーカー"
+    ],
+    "revenueSources": [
+      "電子部品の販売代金",
+      "不動産の賃貸料収入",
+      "労働者派遣の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ＳＭＫグループ",
+        "description": "1925年に創立し、東京都品川区に本社を置きます。当社、子会社23社及び関連会社1社でグループを構成し、2026年3月期の連結従業員数は3,626人です。東京証券取引所プライム市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "電子部品の製造",
+        "description": "ＣＳ事業部がコネクタやジャックを、ＳＣＩ事業部がリモコン、カメラモジュール、センサー/センシング製品、ユニットを製造しています。イノベーションセンターでは音声による分析技術と筋電センサーを開発・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "電機メーカーなどへの販売",
+        "description": "車載、家電、情報通信、産機の各市場に向け、国内外の電機メーカーなどに販売しています。地域別の売上高では日本が最大で、中国、アメリカ、その他アジア、欧州にも販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は48,204百万円",
+        "description": "2026年3月期の売上高は48,204百万円（前期比0.3％増）で、ＳＣＩ事業部が25,621百万円、ＣＳ事業部が22,520百万円、イノベーションセンターが62百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は56百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は56百万円でした。前期は親会社株主に帰属する当期純損失1,884百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +151,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 30643000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4963,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +171,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32274000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4607,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +191,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32143000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4104,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +211,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 29221000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3985,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +231,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 31156000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3626,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +239,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第104期(2025/04/01－2026/03/31)",
-      "publisher": "SMK株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFRH.pdf",
-      "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +250,246 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1925,
+      "title": "池田無線電機製作所を創立",
+      "description": "初代社長池田平四郎が東京府荏原郡（現東京都品川区豊町）に池田無線電機製作所を創立し、放送無線受信機器等の製造販売を開始しました。",
+      "significance": "当社グループの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1929,
+      "title": "昭和無線工業株式会社に改称",
+      "description": "法人組織に改組し、昭和無線工業株式会社に改称しました。漁業無線機器およびラジオ受信機ならびに部品の製造販売を開始しました。",
+      "significance": "現在の当社法人の起源です。沿革に印字された当時の資本金の金額は、金額記載を避けるため本文に転記していません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1946,
+      "title": "電子機器機構部品の製造販売を開始",
+      "description": "電子機器機構部品の製造販売を開始しました。",
+      "significance": "現在の電子部品事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "株式上場の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "富山工場（現富山事業所）を開設",
+      "description": "富山工場（現富山事業所）を開設しました。",
+      "significance": "国内生産体制の拡充の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "米国に現地法人を設立",
+      "description": "米国駐在員事務所を現地法人化し、SMK Electronics Corporation of America（現 SMK Electronics Corporation, U.S.A.）を設立しました。",
+      "significance": "海外展開の起点で、同社は現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に上場しました（指定替）。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "ＳＭＫ株式会社に社名変更",
+      "description": "昭和無線工業株式会社からＳＭＫ株式会社に社名変更しました。",
+      "significance": "現在の社名の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "中国・東莞で委託加工を開始",
+      "description": "中国広東省東莞市に東莞高廠昭和電子廠を直接委託加工方式で運営開始しました。同工場は2011年1月にSMK Electronics (Dongguan) Co., Ltd.へ転換しました。",
+      "significance": "中国生産の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "dai-nippon-printing",
+      "relationship": "business-partner",
+      "description": "同社のエレクトロニクス部門との営業取引を行っており、業務提携等の関係にあります。取引関係の強化を目的として、当社が同社の株式1,026,850株を保有しています（2026年3月31日現在）。同社は当社株式の5.04％を所有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "casio-computer",
+      "relationship": "customer",
+      "description": "当社製品の販売先です。取引関係の維持・強化を目的として、当社が同社の株式40,100株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sharp",
+      "relationship": "customer",
+      "description": "当社製品の販売先です。取引関係の維持・強化を目的として、当社が同社の株式11,200株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "jvckenwood",
+      "relationship": "customer",
+      "description": "当社製品の販売先です。取引関係の維持・強化を目的として、当社が同社の株式1,904株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamaha",
+      "relationship": "customer",
+      "description": "当社製品の販売先です。取引関係の維持・強化を目的として、当社が同社の株式300株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "koito-manufacturing",
+      "relationship": "customer",
+      "description": "当社製品の販売先です。特定投資株式の保有目的は「同上」と印字され、販売先である旨の目的が及んでいます。当社が同社の株式200株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ryoyo-ryosan-holdings",
+      "relationship": "customer",
+      "description": "当社の販売代理店です。取引関係の維持・強化を目的として、当社が同社の株式429株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kaga-electronics",
+      "relationship": "customer",
+      "description": "当社の販売代理店です。取引関係の維持・強化を目的として、当社が同社の株式200株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nagase-and-co",
+      "relationship": "supplier",
+      "description": "当社の仕入先です。取引関係の維持・強化を目的として、当社が同社の株式300株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第104期(2025/04/01－2026/03/31)",
+      "publisher": "ＳＭＫ株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFRH.pdf",
+      "publishedAt": "2026-06-22",
+      "docId": "S100YFRH",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念「可能性の追求を通して、総合的な高度技術により、情報社会の発展に寄与する」とSMK's Vision「CREATIVE CONNECTIVITY」のもと、2035年長期ビジョン「あらゆるニーズを実現する“ものづくり力”で、次の100年に貢献する」の実現を目指しています。2025年3月期から2027年3月期を対象期間とする中期経営計画「SMK Next100」を「持続的成長に向けた構造改革を加速させる期間」と位置づけ、2025年3月25日に公表した「構造改革プログラム」に基づき、不採算事業の撤退・縮小や成長性・採算性の高い分野へのリソースの集中、コスト構造改革を推進しています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高はＳＣＩ事業部とＣＳ事業部の電子部品2事業部に集中しており、イノベーションセンターは通信モジュール事業をＳＣＩ事業部へ移管して2事業への集中を進めるなど、事業の選択と集中が進行中です。2026年3月期の売上高は、情報通信市場が前年を下回った一方、車載、家電、産機市場が好調で、前期比0.3％増の48,204百万円となりました。",
+        "basis": "セグメント情報の外部顧客への売上高、MD&Aのセグメント別業績と経営成績の分析、経営方針の中長期的な経営戦略",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1925年の創業以来「良い部品は良いセットを作る」という創業の精神のもとで電子部品を手がけ、コネクタからリモコン、カメラモジュール、センサーまで幅広い製品群を持ちます。中国（東莞・シンセン）、マレーシア、フィリピン、メキシコの生産拠点と、米国・欧州・アジアの販売拠点を持つグローバルな製販体制も特徴です。",
+        "basis": "沿革、関係会社の状況の子会社一覧、主要な設備の状況の事業所一覧、経営方針の中長期的な経営戦略",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "電気通信及び電子機器等用部品のメーカーです。売上高の地域別では日本が17,119百万円で最大であり、中国、アメリカ、その他アジア、欧州の順に海外販売が広がっています。外部顧客への売上高の10％以上を占める主要な顧客はありません。",
+        "basis": "セグメント関連情報の地域ごとの情報と主要な顧客ごとの情報、MD&Aの市場別動向の分析",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }
