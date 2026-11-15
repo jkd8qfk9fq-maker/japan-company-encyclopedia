@@ -165,6 +165,8 @@ async function api(path) {
   const res = await fetch(`${API}${path}`, { headers: key ? { "X-API-Key": key } : {} });
   const left = Number(res.headers.get("x-ratelimit-remaining"));
   if (Number.isFinite(left)) remaining = left;
+  // The day's allowance is spent (the key is shared with anyone checking by hand): ask nothing more today.
+  if (res.status === 429) remaining = 0;
   if (!res.ok) throw new Error(`${res.status} ${path}: ${(await res.text()).slice(0, 160)}`);
   return res.json();
 }
@@ -300,18 +302,25 @@ if (process.argv[1]?.endsWith("quarterly-earnings.mjs")) {
 
   let queue = args.filter((a, i) => !a.startsWith("--") && !skip.has(i)).map((id) => ({ id, edinetCode: edinetCodeOf(id), why: "指定" }));
   let dueCount = 0;
+  let calendarError = null;
   if (flag("due")) {
-    const calendar = await calendarWindow(Number(value("days") ?? 21), today);
-    const due = dueFromCalendar(calendar, byCode, held);
-    dueCount = due.size;
-    queue.push(...[...due.entries()].map(([id, d]) => ({ id, edinetCode: d.edinetCode ?? edinetCodeOf(id), why: `${d.announced} 発表` })));
+    try {
+      const calendar = await calendarWindow(Number(value("days") ?? 21), today);
+      const due = dueFromCalendar(calendar, byCode, held);
+      dueCount = due.size;
+      queue.push(...[...due.entries()].map(([id, d]) => ({ id, edinetCode: d.edinetCode ?? edinetCodeOf(id), why: `${d.announced} 発表` })));
+    } catch (error) {
+      // A refused calendar (the day's allowance spent, 2026-11-15) is reported, not thrown: the rest of the run goes on.
+      calendarError = String(error?.message ?? error).slice(0, 200);
+      console.log(`calendar unavailable: ${calendarError}`);
+    }
   }
   const checked = readChecked();
   if (flag("plan-only")) {
     // The calendar alone: who announced a quarter we lack, and (with --backfill) how many were never checked.
     const backfill = flag("backfill") ? targets.filter((e) => !checked[e.id]).length : 0;
     console.log(`due ${dueCount} / never checked ${backfill}`);
-    finish(queue.map((q) => ({ id: q.id, result: "would-update", detail: q.why })), { due: dueCount, backfill });
+    finish(queue.map((q) => ({ id: q.id, result: "would-update", detail: q.why })), { due: dueCount, backfill, ...(calendarError ? { calendarError } : {}) });
     process.exit(0);
   }
   if (flag("backfill")) {
@@ -327,10 +336,11 @@ if (process.argv[1]?.endsWith("quarterly-earnings.mjs")) {
     if (spent >= budget || remaining <= 5) break;
     const outcome = await refreshQuarterly(item.id, item.edinetCode, { apply: flag("apply"), today });
     if (item.edinetCode) spent++;
-    checked[item.id] = today;
+    // Only a company actually read is remembered; one refused (rate limit, network) is tried again on a later day.
+    if (outcome.result !== "failed") checked[item.id] = today;
     outcomes.push(outcome);
     console.log(`${outcome.id}: ${outcome.result} — ${outcome.detail}`);
   }
   if (flag("apply")) writeChecked(checked);
-  finish(outcomes, { due: dueCount, queued: queue.length, spent });
+  finish(outcomes, { due: dueCount, queued: queue.length, spent, ...(calendarError ? { calendarError } : {}) });
 }
