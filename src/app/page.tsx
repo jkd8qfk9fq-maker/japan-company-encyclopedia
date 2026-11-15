@@ -16,6 +16,9 @@ import { companyRepository, featureRepository, industryRepository, termRepositor
 import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
 import { INDUSTRY_IDS } from "@/types/company";
 
+/** 企業タイプ診断, a separate YUGENQ service (the DISCOVER feed links to it too). */
+const SHINDAN_URL = "https://shindan.kigyo-hyakka.com/";
+
 export const metadata = {
   title: { absolute: `${SITE_NAME}｜何をしている会社かがわかる` },
   description: SITE_DESCRIPTION,
@@ -152,6 +155,25 @@ export default async function HomePage() {
           </div>
           <ArrowRight className="size-6 shrink-0 text-amber-300 transition-transform group-hover:translate-x-1" aria-hidden />
         </Link>
+      </section>
+
+      {/* 企業タイプ診断: the YUGENQ diagnosis on its own site, in its own words. The answers stay in the reader's browser. */}
+      <section aria-labelledby="home-shindan" className="border-b border-border bg-paper">
+        <a href={SHINDAN_URL} className="group mx-auto flex max-w-7xl items-center gap-5 px-5 py-6 md:px-8">
+          <div className="min-w-0 flex-1">
+            <p className="text-[0.6875rem] font-semibold tracking-[0.2em] text-muted-foreground">企業タイプ診断</p>
+            <h2 id="home-shindan" className="mt-1 font-serif text-[1.25rem] leading-snug font-semibold">
+              あなたに近いのは、どんなタイプの会社？
+            </h2>
+            <p className="mt-1 text-xs text-muted-foreground">
+              60の産業 × 16の性格。質問に答えると、自分に近い産業と企業がわかります。回答はブラウザの外に送られません。
+            </p>
+          </div>
+          <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition-transform group-hover:translate-x-0.5">
+            診断する
+            <ArrowRight className="size-4" aria-hidden />
+          </span>
+        </a>
       </section>
 
       <ReaderTrail companies={summaries} />
