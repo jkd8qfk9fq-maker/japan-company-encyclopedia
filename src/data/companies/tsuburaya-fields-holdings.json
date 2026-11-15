@@ -4,15 +4,175 @@
   "name": "円谷フィールズホールディングス",
   "officialName": "円谷フィールズホールディングス株式会社",
   "nameEn": "TSUBURAYA FIELDS HOLDINGS INC.",
-  "description": null,
+  "shortNameEn": "TSUBURAYA FIELDS HOLDINGS",
+  "description": "「ウルトラマン」などのIPを活かし、遊技機と映像・ライセンスの事業を手掛ける会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "entertainment",
+      "primary": true
+    },
+    {
+      "industryId": "media",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "amusement-equipment",
+      "name": "アミューズメント機器事業",
+      "description": "フィールズ株式会社を中核に、取得・保有するIPを基に提携メーカーへ企画・開発提案し、商品化された遊技機を全国のパーラーに販売するとともに、プライベートブランド遊技機の製造販売も行います。2026年3月期の外部顧客への売上高は158,899百万円です。",
+      "products": [
+        "パチンコ遊技機",
+        "パチスロ遊技機",
+        "プライベートブランド遊技機",
+        "パーラー向け周辺設備機器"
+      ],
+      "customers": [
+        "全国のパーラー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "pachinko-pachislot",
+          "name": "遊技機",
+          "description": "IPを活用したパチンコ遊技機とパチスロ遊技機の企画・開発・製造・販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "parlor-equipment",
+          "name": "周辺設備機器",
+          "description": "パーラー向け周辺設備機器の販売・工事を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "content-digital",
+      "name": "コンテンツ＆デジタル事業",
+      "description": "「ウルトラマン」などのIPを保有する円谷プロダクションと、国内最大規模のCG・VFX映像制作を手掛けるデジタル・フロンティアを中心に、映像作品の企画・製作・配給や商品化・広告ライセンシングを行います。2026年3月期の外部顧客への売上高は13,468百万円です。",
+      "products": [
+        "映像作品",
+        "ライセンス",
+        "キャラクター商品",
+        "CG・VFX映像制作"
+      ],
+      "customers": [
+        "ライセンシー",
+        "映像・イベントの観客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "video-production",
+          "name": "映像作品の企画・製作・配給",
+          "description": "映像作品の企画・製作・配給を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "licensing",
+          "name": "商品化・広告ライセンシング",
+          "description": "IPの商品化や広告ライセンシングを行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "フィットネス事業等を行います。報告セグメントに含まれない区分です。2026年3月期の外部顧客への売上高は1,773百万円です。",
+      "products": [
+        "フィットネスサービス"
+      ],
+      "customers": [
+        "フィットネスクラブの利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "「ウルトラマン」などのIPを活かし、遊技機と映像・ライセンスの事業を手掛ける会社です。",
+    "products": [
+      "パチンコ遊技機",
+      "パチスロ遊技機",
+      "プライベートブランド遊技機",
+      "パーラー向け周辺設備機器",
+      "映像作品",
+      "ライセンス",
+      "キャラクター商品",
+      "CG・VFX映像制作",
+      "フィットネスサービス"
+    ],
+    "customers": [
+      "全国のパーラー",
+      "ライセンシー",
+      "映像・イベントの観客"
+    ],
+    "revenueSources": [
+      "遊技機の販売",
+      "周辺設備機器の販売・工事",
+      "ライセンス収入",
+      "映像・イベント収入",
+      "商品化収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "「ウルトラマン」などのIPと遊技機を軸とする持株会社",
+        "description": "円谷フィールズホールディングスは、「ウルトラマン」などのIPと遊技機を軸とする持株会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "IPを活かした遊技機と映像・ライセンス",
+        "description": "IPを活かした遊技機、映像作品、ライセンス、キャラクター商品を提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "全国のパーラーと国内外のライセンシー、映像・イベントの観客",
+        "description": "全国のパーラーや、国内外のライセンシー、映像・イベントの観客に届けます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "遊技機の販売とライセンス収入などによる売上高",
+        "description": "遊技機の販売とライセンス収入などから売上を得ます。2026年3月期の売上高は174,142百万円で、前期比23.9％増です。"
+      },
+      {
+        "kind": "profit",
+        "title": "IPの多元展開と遊技機の販売拡大",
+        "description": "IPの多元展開と遊技機の販売拡大により、事業を続けられる収益を確保します。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +187,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 31551000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1193,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 41817000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1259,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 55993000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1423,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +247,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 56247000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1664,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +267,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 66187000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1774,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +275,169 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1988,
+      "title": "株式会社東洋商事の設立",
+      "description": "愛知県名古屋市緑区に、遊技機の販売および製鉄原料の販売を目的として株式会社東洋商事を設立しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "フィールズ株式会社への商号変更",
+      "description": "会社分割により製鉄原料部門等を新設会社に移管し、商号をフィールズ株式会社に変更するとともに、本社を東京都港区に移転しました。",
+      "significance": "遊技機事業に専念する体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "フィールズジュニアの子会社化",
+      "description": "有限会社セリオ（現、フィールズジュニア株式会社）を株式取得により子会社化しました。",
+      "significance": "遊技機のメンテナンス体制を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "JASDAQ市場への上場",
+      "description": "JASDAQ市場に上場しました。",
+      "significance": "資本市場への上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "デジタルロードの設立",
+      "description": "株式会社デジタルロード（現、株式会社ルーセント）を子会社として設立しました。",
+      "significance": "グループの事業領域を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "遊技機「エヴァンゲリオン」シリーズの販売開始",
+      "description": "遊技機「エヴァンゲリオン」シリーズの販売を開始しました。",
+      "significance": "人気IPを活用した遊技機の販売の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "京楽産業グループとの共同事業の開始",
+      "description": "京楽産業グループとの共同事業を開始しました。",
+      "significance": "他社との連携による遊技機事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "円谷プロダクションの子会社化",
+      "description": "株式会社円谷プロダクションを株式取得により子会社化しました。",
+      "significance": "「ウルトラマン」などのIPをグループに加えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "デジタル・フロンティアの子会社化",
+      "description": "株式会社デジタル・フロンティアを株式取得により子会社化しました。",
+      "significance": "CG・VFX映像制作の力をグループに加えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "ディ・ライトとの業務提携",
+      "description": "Daiichiグループの株式会社ディ・ライトと業務提携契約を締結しました。",
+      "significance": "遊技機事業における他社との提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東京証券取引所市場第一部への上場市場変更",
+      "description": "東京証券取引所市場第一部へ上場市場を変更しました。",
+      "significance": "上場市場の格上げです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "ぱちんこパチスロ情報ステーションの設立",
+      "description": "株式会社アミューズメントプレスジャパン、株式会社アド・サークルおよび当社の3社によりジャパン・プレミアム・ブロードキャスト株式会社（現、ぱちんこパチスロ情報ステーション株式会社）を子会社として設立しました。",
+      "significance": "遊技機の情報配信サービスに進出しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "プライム市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "持株会社体制への移行と商号変更",
+      "description": "持株会社体制へ移行し、円谷フィールズホールディングス株式会社に商号変更しました。遊技機事業は新設分割したフィールズ株式会社へ承継しました。",
+      "significance": "持株会社体制への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ソフィアの子会社化",
+      "description": "株式会社ソフィアの株式取得により、同社および株式会社エース電研等を子会社化しました。",
+      "significance": "遊技機の開発・製造とホール設備の力をグループに加えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sankyo",
+      "relationship": "business-partner",
+      "description": "連結子会社のフィールズ株式会社は、SANKYOグループの株式会社ビスティが製造・販売する遊技機を独占的に販売する遊技機販売取引基本契約と販売委託契約を結んでいます。契約期間は2013年10月1日からで、1年毎の自動更新です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +445,47 @@
       "publisher": "円谷フィールズホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBQC.pdf",
       "publishedAt": "2026-06-16",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YBQC",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念「すべての人に最高の余暇を」のもと、IPを取得・保有・創出し、その多元展開でコンテンツを育成します。2027年3月期を初年度とする3ヵ年のグループ中期経営計画では、国内コンテンツ市場の開拓と新たなビジネスモデルの構築、中国市場における事業基盤の盤石化と収益の維持拡大、「IP成長プラットフォーマー」としての確立、アミューズメント機器事業におけるファン層拡大と開発加速に取り組みます。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "「ウルトラマン」のアジア圏における強固なファン基盤と、円谷プロダクションを中心とするIPの保有・創出、国内最大規模のCG・VFX映像制作を手掛けるデジタル・フロンティア、遊技機の企画・開発・流通を担うフィールズをグループに持ちます。2026年3月期の遊技機販売台数は約27.4万台です。",
+        "basis": "有報の経営方針、事業の内容、経営者による分析に印字されたファン基盤、グループ各社の役割、遊技機販売台数です。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は174,142百万円、親会社株主に帰属する当期純利益は13,050百万円で、従業員数は1,774人です。東京証券取引所プライム市場に上場しています。アミューズメント機器事業が売上高の大半を占めます。",
+        "basis": "有報の連結経営指標等に印字された2026年3月期の数値、セグメント情報、表紙の上場市場です。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,121 @@
   "name": "トリニティ工業",
   "officialName": "トリニティ工業株式会社",
   "nameEn": "TRINITY INDUSTRIAL CORPORATION",
-  "description": null,
+  "shortNameEn": "TRINITY INDUSTRIAL CORPORATION",
+  "description": "塗装プラントなどの設備と自動車内外装部品を製造販売する、トヨタ自動車をその他の関係会社とする会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "automotive",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "trinity-industrial",
+      "name": "トリニティ工業株式会社",
+      "description": "愛知県豊田市に本社を置き、トヨタ自動車株式会社をその他の関係会社とし、子会社10社及び関連会社4社とグループを構成する会社です。設備と自動車部品の製造、販売を主な業務としています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "equipment",
+          "name": "設備部門",
+          "description": "塗装プラント、塗装機器及び産業機械の設計、製造及び販売を行う事業です。主要製品は前処理装置、電着塗装装置、塗装ブース、空調装置、乾燥炉、熱処理炉、塗装機・塗装システム等です。2026年3月期の外部顧客への売上高は293億7千1百万円でした。",
+          "customers": [
+            "自動車メーカー",
+            "建設機械メーカー",
+            "豊田通商株式会社",
+            "株式会社豊通マシナリー",
+            "トヨタ自動車株式会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "automobile-parts",
+          "name": "自動車部品部門",
+          "description": "自動車内外装部品の製造及び販売を行う事業です。主要製品はセンタークラスターパネル、コンソールパネル、ドアスイッチベース、ステアリングホイール、ロッカーモール等です。2026年3月期の外部顧客への売上高は95億8千8百万円でした。",
+          "customers": [
+            "自動車メーカー",
+            "豊田通商株式会社",
+            "トヨタ自動車株式会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "塗装プラント・塗装機器・産業機械の設計、製造及び販売と、自動車内外装部品の製造及び販売を行い、その販売対価を得る事業モデルです。",
+    "products": [
+      "前処理装置、電着塗装装置、塗装ブース、空調装置、乾燥炉、熱処理炉、塗装機・塗装システム等",
+      "センタークラスターパネル、コンソールパネル、ドアスイッチベース、ステアリングホイール、ロッカーモール等の自動車内外装部品"
+    ],
+    "customers": [
+      "自動車メーカー",
+      "建設機械メーカー",
+      "豊田通商株式会社",
+      "株式会社豊通マシナリー",
+      "トヨタ自動車株式会社"
+    ],
+    "revenueSources": [
+      "設備部門の製品販売による売上高",
+      "自動車部品部門の製品販売による売上高"
+    ],
+    "suppliers": [
+      {
+        "name": "仕入先",
+        "description": "自動車部品部門では、お客様や仕入先との連携を強化し、より環境負荷の少ない技術開発・モノづくりに取り組んでいます。"
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "トリニティ工業株式会社",
+        "description": "愛知県豊田市に本社を置き、子会社10社及び関連会社4社とグループを構成しています。2026年3月期の連結従業員数は957人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "塗装設備と自動車内外装部品",
+        "description": "設備部門で塗装プラント、塗装機器及び産業機械を設計、製造及び販売し、自動車部品部門で自動車内外装部品を製造及び販売します。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車メーカー等の顧客",
+        "description": "自動車メーカーや建設機械メーカーなどに設備を届け、自動車メーカー等に内外装部品を届けます。主要な顧客として豊田通商株式会社、株式会社豊通マシナリー、トヨタ自動車株式会社が印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は389億6千万円",
+        "description": "2026年3月期の売上高は389億6千万円でした。設備部門が293億7千1百万円、自動車部品部門が95億8千8百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は26億8千8百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は26億8千8百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +133,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27557125000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 964,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +153,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27959004000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 962,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 31017581000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 957,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32879777000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 952,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 35236206000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 957,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +221,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第92期(2025/04/01－2026/03/31)",
-      "publisher": "トリニティ工業株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE9T.pdf",
-      "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +232,223 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1946,
+      "title": "日本工芸工業株式会社として設立",
+      "description": "1946年10月2日、日本工芸工業株式会社として東京都千代田区に設立されました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "東京証券取引所市場第二部に株式上場",
+      "description": "1963年4月に東京証券取引所市場第二部に株式上場しました。同月に神奈川県横浜市に技術センターを開設しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "トヨタ自動車が資本参加し関連会社に",
+      "description": "1977年9月、トヨタ自動車工業株式会社（現 トヨタ自動車株式会社）が当社に資本参加し、その後同社の関連会社となりました。",
+      "significance": "現在の資本関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "トリニティ工業株式会社に改称",
+      "description": "1980年4月にマトコ工業株式会社及び同和工業株式会社の2社を吸収合併し、本社を愛知県名古屋市に移転しました。同年7月に会社名をトリニティ工業株式会社と改称しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "本社を豊田市に移転し自動車部品の製造を開始",
+      "description": "1983年4月に本社を愛知県豊田市柿本町に移転しました。同年9月に愛知県豊田市下市場町で自動車部品の製造を開始しました。",
+      "significance": "現在の本社所在地と自動車部品事業の製造の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "本社工場を建設",
+      "description": "1986年7月、愛知県豊田市桂野町に本社工場を建設し、本社の設備製造部門及び下市場町の自動車部品製造部門を移転しました。",
+      "significance": "製造体制の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "マレーシアに子会社を設立",
+      "description": "1992年8月、マレーシアに子会社「T&T Venture Sdn. Bhd.」を設立しました。",
+      "significance": "海外子会社展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "タイに子会社を設立",
+      "description": "1994年8月、タイに子会社「Thai Trinity Co., Ltd.」を設立しました。",
+      "significance": "東南アジアでの事業展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "インドネシアに子会社を設立",
+      "description": "1996年9月、インドネシアに子会社「PT. Trinity Engineering Indonesia」を設立しました。",
+      "significance": "東南アジアでの事業展開の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "インドに子会社を設立",
+      "description": "1998年4月、インドに子会社「Trinity Coating Systems Ltd.」を設立しました。",
+      "significance": "南アジアでの事業展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "中国に子会社を設立",
+      "description": "2005年1月、中国に子会社「得立鼎塗装設備（上海）有限公司」を設立しました。",
+      "significance": "中国での事業展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "三好工場を建設",
+      "description": "2007年5月、愛知県西加茂郡三好町（現 みよし市）に三好工場を建設し、自動車外装部品の製造を開始しました。",
+      "significance": "自動車部品の製造基盤の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "台湾の関連会社を子会社化",
+      "description": "2018年1月、台湾の関連会社「台湾得立鼎股份有限公司」を子会社化しました。",
+      "significance": "台湾での事業体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "Trinity Technical Solution Centerを開所",
+      "description": "2025年10月、本社隣接地にTrinity Technical Solution Centerを開所しました。",
+      "significance": "技術開発と共創の拠点の開所です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "toyota",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】でその他の関係会社とされる会社です。自動車および同部品等の製造・販売を行い、2026年3月31日現在、当社の議決権の36.6％を保有しています。主要な顧客ごとの情報でも、設備部門及び自動車部品部門に関連する顧客として印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "toyota-tsusho",
+      "relationship": "customer",
+      "description": "主要な顧客ごとの情報に、設備部門及び自動車部品部門に関連する顧客として印字される販売先です。2026年3月31日現在の大株主の状況にも載る会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第92期(2025/04/01－2026/03/31)",
+      "publisher": "トリニティ工業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE9T.pdf",
+      "publishedAt": "2026-06-18",
+      "docId": "S100YE9T",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-11"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "社是「信頼と創造」のもと、「熱・水・空気」の総合エンジニアリング会社として、技術力とモノづくりの力を競争力の源泉とし、「テクノロジーで地球にやさしい未来へ」を掲げています。対処すべき課題として、持続可能な社会への更なる貢献、たゆまぬ技術革新、持続的成長に向けた基盤強化を挙げ、2026年4月に公表した中期経営計画の達成に向けて取り組むとしています。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "設備部門では既受注プロジェクトの着実な遂行、塗装機器の収益拡大、非自動車産業への販売拡大、新製品の開発に取り組み、自動車部品部門では大型成形品の生産拡大や異業種を含む新たな領域への拡大、変種変量に強い柔軟な生産体制の構築に取り組んだとMD&Aに印字されています。両部門とも顧客のカーボンニュートラルとサーキュラーエコノミーの実現への貢献を掲げています。",
+        "basis": "MD&Aの経営成績等の状況の概要、経営方針・対処すべき課題、セグメント情報の外部顧客への売上高",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "「熱・水・空気」の総合エンジニアリング会社として、技術力とモノづくりの力を競争力の源泉と位置付けています。設備部門ではCO2削減・水資源保全に貢献する環境技術に加え、IoT・AIを活用した設備モニタリングシステムや火災予防ソリューションなどデジタル技術を取り入れた製品を開発・提供し、自動車メーカーのみならず建設機械メーカーなど幅広い顧客から評価を得ていると印字されています。2025年10月に開所したTrinity Technical Solution Centerを、顧客や社外パートナーとの共創を通じ新たな価値を創出する拠点としています。",
+        "basis": "経営方針・対処すべき課題、研究開発活動、沿革",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは設備部門と自動車部品部門の2つで、2026年3月期の外部顧客への売上高は設備部門が293億7千1百万円、自動車部品部門が95億8千8百万円と、設備部門が大半を占めます。主要な顧客ごとの情報では、豊田通商株式会社が設備部門及び自動車部品部門、株式会社豊通マシナリーが設備部門、トヨタ自動車株式会社が設備部門及び自動車部品部門の顧客として印字されています。その他の関係会社であるトヨタ自動車株式会社は、当社の議決権の36.6％を保有しています。",
+        "basis": "セグメント情報（外部顧客への売上高、主要な顧客ごとの情報）、関係会社の状況、事業の内容",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

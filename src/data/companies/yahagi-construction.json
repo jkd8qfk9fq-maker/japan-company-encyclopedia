@@ -4,7 +4,8 @@
   "name": "矢作建設工業",
   "officialName": "矢作建設工業株式会社",
   "nameEn": "YAHAGI CONSTRUCTION CO.,LTD.",
-  "description": null,
+  "shortNameEn": "YAHAGI CONSTRUCTION",
+  "description": "建築工事や土木工事の請負と不動産事業を手がける、名古屋市に本社を置く総合建設会社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,8 +16,220 @@
       "market": "プレミア"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "building",
+      "name": "建築セグメント",
+      "description": "建築工事の請負や耐震補強サービス、建設用資材の販売を手がけます。2026年3月期の外部顧客への売上高は112,494百万円です。",
+      "products": [
+        "建築工事",
+        "耐震補強サービス",
+        "建設用資材"
+      ],
+      "customers": [
+        "野村不動産株式会社",
+        "民間企業",
+        "官公庁"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "building-construction",
+          "name": "建築工事",
+          "description": "大型物流施設やマンションなどの建築工事を請負います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "building-seismic",
+          "name": "耐震補強サービス",
+          "description": "外付耐震補強工法による耐震診断やコンサルティング、調査、設計、施工を手がけます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "building-materials",
+          "name": "建設用資材の販売",
+          "description": "建設用資材の販売を手がけます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "civil",
+      "name": "土木セグメント",
+      "description": "土木工事や鉄道工事の請負、道路舗装、緑化工事、ゴルフ場の経営を手がけます。2026年3月期の外部顧客への売上高は38,481百万円です。",
+      "products": [
+        "土木工事",
+        "鉄道工事",
+        "道路舗装",
+        "緑化工事",
+        "ゴルフ場の経営"
+      ],
+      "customers": [
+        "官公庁",
+        "名古屋鉄道株式会社",
+        "民間企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "civil-works",
+          "name": "土木・鉄道工事",
+          "description": "土木工事や鉄道工事を請負います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "civil-road-green",
+          "name": "道路舗装・緑化工事",
+          "description": "道路舗装工事や緑化工事、ゴルフ場の維持管理を手がけます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "civil-golf",
+          "name": "ゴルフ場の経営",
+          "description": "高森カントリークラブを所有し、ゴルフ場を経営します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産セグメント",
+      "description": "分譲マンションの開発・販売や不動産の売買、賃貸、ビル・マンション管理を手がけます。2026年3月期の外部顧客への売上高は18,424百万円です。",
+      "products": [
+        "分譲マンション",
+        "不動産賃貸",
+        "不動産開発",
+        "ビル・マンション管理"
+      ],
+      "customers": [
+        "分譲マンションの購入者",
+        "賃貸物件の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "real-estate-condo",
+          "name": "分譲マンション",
+          "description": "分譲マンションの開発や販売を手がけます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-estate-rental",
+          "name": "不動産賃貸・開発",
+          "description": "不動産の売買や賃貸、不動産開発を手がけます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-estate-management",
+          "name": "ビル・マンション管理",
+          "description": "ビルやマンションの管理、カスタマーサービスを手がけます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "建築工事や土木工事の請負と不動産事業を手がける、名古屋市に本社を置く総合建設会社です。",
+    "products": [
+      "建築工事",
+      "土木工事",
+      "鉄道工事",
+      "分譲マンション",
+      "不動産賃貸",
+      "不動産開発",
+      "耐震補強サービス",
+      "建設用資材",
+      "ゴルフ場の経営"
+    ],
+    "customers": [
+      "野村不動産株式会社",
+      "名古屋鉄道株式会社",
+      "官公庁",
+      "民間企業",
+      "分譲マンションの購入者"
+    ],
+    "revenueSources": [
+      "建築セグメントの工事請負による収入",
+      "土木セグメントの工事請負による収入",
+      "不動産セグメントの不動産事業による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "建築、土木、不動産を手がけるグループ",
+        "description": "矢作建設工業は、建築、土木、不動産の三つの事業を手がけるグループです。子会社は8社で、従業員数は2026年3月31日現在1,491人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "建築工事と土木工事、不動産事業の提供",
+        "description": "建築工事や土木・鉄道工事を請負い、分譲マンションの開発・販売や不動産の賃貸、ビル・マンション管理を手がけます。"
+      },
+      {
+        "kind": "customer",
+        "title": "民間企業や官公庁、マンション購入者など",
+        "description": "野村不動産をはじめとする民間企業や官公庁、名古屋鉄道に工事を提供し、分譲マンションの購入者や賃貸物件の利用者に不動産を提供します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "工事の請負と不動産事業による売上高",
+        "description": "建築セグメントと土木セグメントの工事請負、不動産セグメントの不動産事業が売上高につながります。2026年3月期の売上高は169,399百万円で、前期比20.4％増です。"
+      },
+      {
+        "kind": "profit",
+        "title": "売上高から費用を差し引いた当期純利益",
+        "description": "売上高から費用を差し引いた残りが当期純利益となります。2026年3月期の親会社株主に帰属する当期純利益は8,468百万円で、前期比50.0％増です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +244,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 57532000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1174,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +264,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 60431000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1288,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +284,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 66538000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1324,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +304,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 68835000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1392,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +324,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 76010000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1491,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +332,169 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1949,
+      "title": "矢作建設工業の設立",
+      "description": "山田勝男が愛知県西加茂郡挙母町に矢作建設工業株式会社を設立し、建設事業を開始しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "名鉄建設との合併",
+      "description": "名鉄建設株式会社と合併しました。",
+      "significance": "合併により事業の基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "名古屋証券取引所市場第二部への上場",
+      "description": "名古屋証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "名古屋証券取引所市場第一部への上場",
+      "description": "名古屋証券取引所市場第一部に株式を上場しました。",
+      "significance": "上場市場が第一部になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "東京証券取引所市場第一部への上場",
+      "description": "東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "東京証券取引所にも上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "テクノサポートの設立",
+      "description": "株式会社テクノサポートを設立しました。",
+      "significance": "建設用資材の販売などを担う子会社を持ちました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "ヤハギ道路の設立",
+      "description": "ヤハギ道路株式会社を設立しました。",
+      "significance": "道路舗装などを担う子会社を持ちました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "地震工学技術研究所の設立",
+      "description": "地震工学技術研究所を設立しました。",
+      "significance": "耐震技術の研究開発の拠点を持ちました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "鉄道技術研修センターの設立",
+      "description": "鉄道技術研修センターを設立しました。",
+      "significance": "鉄道工事の技術研修の拠点を設けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "スタイルリンクの子会社化",
+      "description": "スタイルリンク株式会社を子会社化しました。",
+      "significance": "グループの事業を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場と名古屋証券取引所プレミア市場への移行",
+      "description": "東京証券取引所プライム市場と名古屋証券取引所プレミア市場へ移行しました。",
+      "significance": "上場市場がプライムとプレミアになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "北和建設の子会社化",
+      "description": "北和建設株式会社を子会社化しました。",
+      "significance": "建築事業の施工体制を強めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "海昌の子会社化",
+      "description": "株式会社海昌の完全親会社である株式会社アクエリアスインベスコの全株式を取得し、両社を連結子会社化しました。",
+      "significance": "法面工事の技術力と事業基盤を拡充しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "分譲マンション開発・販売事業の譲渡",
+      "description": "矢作地所株式会社が営む分譲マンション開発・販売事業を、会社分割により名鉄都市開発株式会社へ譲渡しました。",
+      "significance": "経営資源の選択と集中を進めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "分譲マンション管理事業の譲渡",
+      "description": "矢作ビル＆ライフ株式会社が営む分譲マンション管理事業を、会社分割により名鉄コミュニティライフ株式会社へ譲渡しました。",
+      "significance": "経営資源の選択と集中を進めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nagoya-railroad",
+      "relationship": "other-affiliated-company",
+      "description": "名古屋鉄道株式会社は、2026年3月31日現在で当社株式の19.1％を保有するその他の関係会社で、駅舎建築工事や鉄道工事を継続的に発注しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -128,13 +502,51 @@
       "publisher": "矢作建設工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEMP.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YEMP",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年4月1日付で、矢作地所株式会社の分譲マンション開発・販売事業を名鉄都市開発株式会社へ、矢作ビル＆ライフ株式会社の分譲マンション管理事業を名鉄コミュニティライフ株式会社へ、それぞれ会社分割により譲渡しました。2026年3月31日現在の事業構成には両事業が含まれています。",
+      "businessModel: 2026年4月1日付で、株式会社アクエリアスインベスコの発行済株式の全てを取得し、同社と株式会社海昌を連結子会社化しました。2026年3月31日現在の事業構成には両社は含まれていません。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2030年度の目指す姿を「課題解決＆価値創造型企業」と定め、2026年度から2030年度までの中期経営計画を策定しました。基本方針は、多様なステークホルダーへの価値提供を通じた企業価値向上と持続的成長の循環サイクルを実現することです。コア事業における稼ぐ力の追求と価値創出の最大化、成長領域への挑戦と未来に向けた事業変革の加速、積極投資による人財価値の最大化と組織風土改革による生産性向上、企業価値を持続的に向上させる経営基盤の強化の四つを経営戦略に掲げています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "建築セグメントの外部顧客への売上高は112,494百万円で、土木セグメントの38,481百万円と不動産セグメントの18,424百万円を上回ります。大型物流施設工事や大型マンション工事の受注が増えています。独自の外付耐震補強工法による耐震診断やコンサルティング、調査、設計、施工の一連の耐震補強サービスと、補強土工法「パンウォール」を手がけています。名古屋鉄道から駅舎建築工事や鉄道工事を継続的に受注しています。",
+        "basis": "2026年3月期の事業の内容と経営者による分析の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "1949年に愛知県で設立された総合建設会社で、名古屋市に本社を置きます。建築、土木、不動産の三つの報告セグメントを持ち、2026年3月期の売上高は169,399百万円です。国内のみで事業を営み、本邦以外への売上はありません。名古屋鉄道が2026年3月31日現在で株式の19.1％を保有するその他の関係会社です。",
+        "basis": "2026年3月期のセグメント情報と沿革の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
