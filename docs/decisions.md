@@ -899,3 +899,22 @@ facts only from the entries.
 - **つながりをたどる (`/explore`).** `/connections.json` holds the `relatedCompanies` edges between published entries,
   read in both directions with the reverse label (supplier ↔ customer, parent ↔ subsidiary…), grouped as 取引・同業・資本.
   A breadcrumb keeps the path. Only edges a filing states; none are inferred.
+
+### JCE-053 · 2026-11-15 · Accepted (operator) — A 3D company network (`/network`)
+
+The operator asked for an interactive 3D map of companies and their suppliers, customers and partners: rotate, zoom,
+drag, tap a company to read it and its relations.
+
+- **Data: nothing new.** The map draws `/connections.json` (JCE-052) — only `relatedCompanies` edges between published
+  entries, each stated with a source. One company sits in the middle, with everything one relation away and, while
+  there is room, the best-connected companies one step further (56 at most; `src/lib/network-layout.ts`). No relation
+  is inferred, and a test checks every line drawn is one the entries state.
+- **No 3D library.** A few dozen points do not need one (CLAUDE.md, Ponytail): a small force layout in three
+  dimensions, a perspective projection and the browser's canvas. The layout is seeded by the company id, so a company
+  always draws the same map.
+- **Use.** Drag turns it, pinch or wheel zooms, a tap selects; the panel below names the company, how it is tied to
+  the middle (read from the correct end, JCE-052's labels) and its relations as buttons, and 「この会社を中心にする」
+  moves the map there (counted as a step in つながり, added to the collection). Lines: 取引 vermilion, 資本 ivory,
+  競合・同業 dashed grey. It turns slowly on its own unless the reader prefers reduced motion or pauses it.
+- **Accessible equivalent.** The canvas is labelled as an image and the panel lists the same relations as text
+  buttons; `/explore` remains the text-first walk. Linked from company pages, 発見, つながりをたどる and the home page.

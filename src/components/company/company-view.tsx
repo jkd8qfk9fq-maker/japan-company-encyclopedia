@@ -165,6 +165,17 @@ export async function CompanyView({ company }: { company: Company }) {
               </div>
             </div>
             <div id="related-companies-list" className="scroll-mt-40">
+              {/* JCE-053: the same relations as a 3D map centred on this company. */}
+              <Link
+                href={`/network?from=${company.id}`}
+                className="mb-3 flex items-center justify-between gap-3 rounded-md bg-[#161616] px-4 py-3 text-sm text-[#f6f4ef] hover:bg-black"
+              >
+                <span>
+                  <span className="block font-medium">立体のネットワークで見る</span>
+                  <span className="block text-xs text-white/60">この会社を真ん中に、取引先・資本・競合のつながりを回して眺める</span>
+                </span>
+                <span aria-hidden>→</span>
+              </Link>
               {/* JCE-052: from the map to the walk — the same relations, one company at a time. */}
               <Link
                 href={`/explore?from=${company.id}`}
