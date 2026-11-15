@@ -853,3 +853,13 @@ the one exception to invariant 3's "other aggregator sites are not sources", and
   in the EDINET cache (never committed) so a held company can be re-examined without a request.
 - **Key**: `EDINETDB_API_KEY`, a repository secret used only by refresh-financials (tests/single-detector.test.ts),
   never by the site.
+
+### JCE-050 · 2026-11-15 · Accepted (operator) — The premium gate stays a view switch, with its two known holes
+
+A check on 2026-11-15 found two ways to read the premium blocks (業界比較, 財務の深掘り) without the plan: their content
+is in every company page's HTML (the static export carries the children of `PremiumGate` in its payload), and a
+made-up plan record in localStorage with a far `checkAfter` opens them without a request. The operator was offered a
+server-side lock (the data moved out of the page and served by the Worker after it checks the code) and chose to keep
+the current design: the plan sells the convenience of seeing these readings on the page, as JCE-043 and the 診断
+site's CTS-013 say. The 診断 site closed its forged-record hole the same day (CTS-025); this site did not, by the same
+choice. Revisit if premium content becomes something that must not be read without paying.
