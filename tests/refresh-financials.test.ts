@@ -221,6 +221,10 @@ describe("message", () => {
     process.env.EDINET_API_KEY = "secret-key-123";
     try {
       expect(message(new Error("GET https://api.edinet-fsa.go.jp/x?Subscription-Key=secret-key-123 failed"))).not.toContain("secret-key-123");
+      // A checker that fails prints its passing checks to stdout and the mismatches to stderr: both reach the report.
+      const failed = Object.assign(new Error("Command failed"), { stdout: "x: 10 件の数値を有報XBRLと照合\n前期有報との比較: 24 行一致", stderr: "\n不一致 1 件:\n  - 2026年6月期 revenue: 有報 100 / 登録 99" });
+      expect(message(failed)).toContain("不一致 1 件");
+      expect(message(failed)).toContain("2026年6月期 revenue");
     } finally {
       delete process.env.EDINET_API_KEY;
     }

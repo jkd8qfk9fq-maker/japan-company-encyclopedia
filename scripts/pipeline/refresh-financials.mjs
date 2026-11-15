@@ -318,7 +318,10 @@ const run = (/** @type {string[]} */ args, env = {}) => execFileSync(process.exe
 
 /** An error as one line, with the API key scrubbed — the key travels in EDINET URLs and must never reach a log. */
 export function message(/** @type {any} */ error) {
-  return scrubSecrets(String(error?.stdout ?? error?.message ?? error).trim().split("\n").slice(-6).join(" / ").slice(0, 600));
+  // stdout, then stderr: verify-financials prints its checks to stdout and the mismatches that failed it
+  // (「不一致 N 件」) to stderr. With stdout alone, 14 failures on 2026-11-15 read as all-passing checks.
+  const text = [error?.stdout, error?.stderr].map((s) => String(s ?? "").trim()).filter(Boolean).join("\n") || String(error?.message ?? error);
+  return scrubSecrets(text.split("\n").filter((l) => l.trim()).slice(-8).join(" / ").slice(0, 900));
 }
 
 /**
