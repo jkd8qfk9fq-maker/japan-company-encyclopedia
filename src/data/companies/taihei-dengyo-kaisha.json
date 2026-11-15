@@ -4,15 +4,147 @@
   "name": "太平電業",
   "officialName": "太平電業株式会社",
   "nameEn": "TAIHEI DENGYO KAISHA,LTD.",
-  "description": null,
+  "shortNameEn": "TAIHEI DENGYO",
+  "description": "1947年創業のプラント工事会社で、発電設備などの建設工事と補修・メンテナンス工事を手がけ、自社の発電事業も営んでいます。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "maintenance",
+      "name": "補修工事部門",
+      "description": "発電設備をはじめとする各種プラント設備の定期点検、日常保守、修繕・維持を行う部門で、発電事業も含みます。2026年3月期の外部顧客への売上高は97,125百万円で、グループ最大の部門です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "periodic-inspection-and-maintenance",
+          "name": "定期点検・日常保守",
+          "description": "各種プラント設備の定期点検や日常保守です。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "repair-and-upkeep",
+          "name": "修繕・維持工事",
+          "description": "各種プラント設備の修繕や維持のための工事です。子会社の豊楽興産が部品・機器の販売も行います。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "power-generation",
+          "name": "発電事業",
+          "description": "太陽光発電所やバイオマス発電所による発電事業です。補修工事部門に含めて報告されています。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "construction",
+      "name": "建設工事部門",
+      "description": "火力・原子力発電設備や製鉄関係、環境保全、化学プラント等の設備の据え付けや改造工事と、これらに付帯する工事、設備の解体・廃止措置を行う部門です。2026年3月期の外部顧客への売上高は44,531百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "plant-construction",
+          "name": "設備の据付・改造工事",
+          "description": "発電設備や各種プラント設備の据え付けや改造の工事です。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "electrical-instrumentation-and-insulation",
+          "name": "電気計装・保温・塗装工事",
+          "description": "設備に付帯する電気計装工事、保温・保冷工事、塗装工事です。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "demolition-and-decommissioning",
+          "name": "解体・廃止措置",
+          "description": "各種プラント設備の解体や廃止措置の事業です。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "発電設備や各種プラント設備の建設工事と補修・維持工事を当社とグループ会社が電力会社やメーカーから受注して施工し、工事の対価と発電事業による電力の販売で売上を得る事業モデルです。",
+    "products": [
+      "発電設備・プラント設備の建設工事",
+      "プラント設備の定期点検・日常保守・修繕工事",
+      "電気計装・保温・保冷・塗装工事",
+      "プラント設備の解体・廃止措置",
+      "太陽光・バイオマスによる発電"
+    ],
+    "customers": [
+      "電力会社",
+      "発電・プラント設備を持つメーカー"
+    ],
+    "revenueSources": [
+      "工事契約の対価",
+      "発電した電力の販売収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "子会社9社・関連会社1社とグループを構成する",
+        "description": "太平電業は、当社と連結子会社9社、関連会社1社でグループを構成します。2026年3月期の連結従業員数は1,878人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "建設工事と補修工事の2部門を営む",
+        "description": "火力・原子力発電設備や製鉄・環境保全・化学プラント等の設備の建設工事と、その定期点検・保守・修繕を行う補修工事の2部門を営み、補修工事部門には発電事業も含まれます。"
+      },
+      {
+        "kind": "customer",
+        "title": "電力会社やメーカーの設備工事を担う",
+        "description": "主な顧客は電力会社やプラント設備を持つメーカーで、最大の顧客である三菱重工業への売上高は27,194百万円と全体の約19％を占めます。売上高の90％超は国内です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "工事の施工で売上を得る",
+        "description": "2026年3月期の売上高は141,657百万円で、補修工事部門が97,125百万円、建設工事部門が44,531百万円です。売上高は前期比12.7％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "補修工事部門がグループの収益の柱",
+        "description": "補修工事部門が売上高の約69％を占める収益の柱です。2026年3月期の親会社株主に帰属する当期純利益は11,902百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +159,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 80423000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1970,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 89533000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1899,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 100592000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1878,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 115057000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1903,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +239,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 127939000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1878,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +247,290 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1947,
+      "title": "太平電業を設立",
+      "description": "東京都千代田区において、屋内外線の電気工事会社として設立されました。",
+      "significance": "太平電業の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "火力発電所の補修工事の受注を開始",
+      "description": "火力発電所の補修工事の受注を開始し、大阪支店と九州支店を開設しました。",
+      "significance": "現在の主力である補修工事の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "建設大臣登録を受ける",
+      "description": "建設業法に基づく建設大臣登録（イ）第940号を受けました。",
+      "significance": "建設業者としての基盤が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "火力発電所の建設工事の受注を開始",
+      "description": "火力発電所の建設工事の受注を開始し、札幌市に北海道支店を開設しました。",
+      "significance": "建設工事へ事業が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "豊楽興産を設立",
+      "description": "豊楽興産株式会社を設立しました。現在の連結子会社で、発電設備に付帯するバルブ・継手等の製造販売を行います。",
+      "significance": "グループ会社の第1号です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "東京・大阪両証券取引所の市場第一部に指定替上場",
+      "description": "株式を東京証券取引所と大阪証券取引所の市場第一部に指定替え上場しました。",
+      "significance": "一部上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "フィリピンに子会社を設立",
+      "description": "フィリピンに各種プラントの建設工事のためTAIHEI ALLTECH CONSTRUCTION (PHIL.),INC.を設立しました。現在の連結子会社です。",
+      "significance": "海外事業の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "富士アイテックを関連会社とする",
+      "description": "富士アイテック株式会社を関連会社としました。現在の連結子会社で、保温・保冷や塗装の工事を行います。",
+      "significance": "グループの施工体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "技能訓練センターを新設",
+      "description": "千葉県木更津市に技能訓練センターを新設しました。",
+      "significance": "技術者の育成拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "古田工業所を子会社とする",
+      "description": "株式会社古田工業所を子会社としました。発電設備等の溶接工事の一部を担います。",
+      "significance": "溶接工事の体制が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "大阪証券取引所の上場を廃止",
+      "description": "大阪証券取引所市場第一部における株式の上場を廃止しました。",
+      "significance": "上場市場が東京証券取引所に一本化されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "インドネシアに子会社を設立",
+      "description": "インドネシアに各種プラントの建設・補修工事のためPT.Taihei Dengyo Indonesiaを設立しました。現在の連結子会社です。",
+      "significance": "東南アジアの拠点が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "鎌ケ谷太陽光発電所を新設",
+      "description": "千葉県鎌ケ谷市に鎌ケ谷太陽光発電所を新設しました。",
+      "significance": "自社の発電事業の設備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "日本機械製作所を子会社とする",
+      "description": "株式会社日本機械製作所を子会社としました。発電設備等の機器の据付工事の一部を担います。",
+      "significance": "機器据付の体制が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "不二機工が富士アイテックに吸収合併され消滅",
+      "description": "不二機工株式会社が富士アイテック株式会社を存続会社とする吸収合併により消滅しました。",
+      "significance": "グループの再編が行われました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "西風新都バイオマス発電所を開設",
+      "description": "広島市安佐南区に西風新都バイオマス発電所を開設しました。",
+      "significance": "バイオマス発電の設備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "株式を東京証券取引所の市場再編に伴いプライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ウッドチップ会社2社を設立",
+      "description": "東京都千代田区に、新規事業展開のため筑西ウッドチップ合同会社と村上ウッドチップ合同会社を設立しました。いずれも現在の連結子会社です。",
+      "significance": "バイオマス燃料の事業展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "村上グリーンパワーを設立",
+      "description": "東京都千代田区に、新規事業展開のため村上グリーンパワー合同会社を設立しました。現在の連結子会社です。",
+      "significance": "発電の新規事業展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-heavy-industries",
+      "relationship": "customer",
+      "description": "最大の顧客で、2026年3月期の同社への売上高は27,194百万円と連結売上高の約19％を占めます。当社は取引関係の維持・強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "nishikawa-keisoku",
+      "relationship": "business-partner",
+      "description": "2026年7月（予定）に西華産業とともに合弁で六ヶ所プラントエンジニアリング株式会社を設立する共同出資先です（同社の出資比率10％、当社80％）。青森県内のエネルギー関連施設の維持管理を担う新会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な後発事象】"
+    },
+    {
+      "companyId": "seika",
+      "relationship": "business-partner",
+      "description": "2026年7月（予定）に西川計測とともに合弁で六ヶ所プラントエンジニアリング株式会社を設立する共同出資先です（同社の出資比率10％、当社80％）。青森県内のエネルギー関連施設の維持管理を担う新会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な後発事象】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第86期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第86期(2025/04/01－2026/03/31)",
       "publisher": "太平電業株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJVV.pdf",
-      "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-28"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YPZ0.pdf",
+      "publishedAt": "2026-07-10",
+      "docId": "S100YPZ0",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2025年10月1日付で普通株式1株につき3株の割合で株式分割を行いました。経営指標等の注記に、第82期の期首に当該株式分割が行われたと仮定して過年度の指標を算定し直した旨が印字されています。",
+      "businessModel: 重要な後発事象として、東栄技工株式会社の全株式を2026年4月17日に取得し完全子会社化したことが開示されています（2026年3月6日の取締役会決議、取得の対価は現金1,250百万円）。決算日後の企業結合のため、人の確認を求めます。",
+      "businessModel: 重要な後発事象として、西川計測株式会社および西華産業株式会社とともに六ヶ所プラントエンジニアリング株式会社を2026年7月（予定）に設立することが2026年4月10日の取締役会で決定されています（出資比率は当社80％）。有報提出時点では設立前のため、完了扱いにはしていません。"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "新たに策定した中期経営計画（2026年度～2028年度）では、「激動期の成長を盤石とし、加速させる企業基盤の強化」「時代の変化に応じた事業領域の成長・拡大」「社会課題解決への挑戦を通じた企業価値向上」を骨子とし、2028年度の連結売上高1,800億円以上の達成を目指します。人材確保・育成やDX推進による基盤強化、原子力・脱炭素・半導体・データセンター等の事業領域の拡大とM＆A等の積極的な事業投資、自社発電所を中心に地域循環型社会の実現を目指す「グリーンプロジェクト」などを推進します。",
+        "asOf": "2026-07-10",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "1947年の創業以来、国内外の火力・原子力発電所をはじめ各種プラント・環境設備等の建設工事とメンテナンス工事を手がけてきた実績があり、「安全・品質」を経営の最優先事項の一つと位置づけて施工体制の強化に取り組んでいます。",
+        "asOf": "2026-07-10",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の構成は、補修工事部門が約69％、建設工事部門が約31％で、補修・メンテナンスが中心の構成です。最大の顧客である三菱重工業への売上高が全体の約19％を占めます。",
+        "basis": "セグメント情報の外部顧客への売上高（2026年3月期：補修工事部門97,125百万円、建設工事部門44,531百万円）と、主要な顧客ごとの情報（三菱重工業27,194百万円）",
+        "asOf": "2026-07-10",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

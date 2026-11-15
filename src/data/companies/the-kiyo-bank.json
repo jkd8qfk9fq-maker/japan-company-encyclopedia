@@ -4,15 +4,198 @@
   "name": "紀陽銀行",
   "officialName": "株式会社紀陽銀行",
   "nameEn": "The Kiyo Bank, Ltd.",
-  "description": null,
+  "shortNameEn": "The Kiyo Bank",
+  "description": "和歌山県和歌山市に本店を置く地方銀行で、銀行業務を中心に、リースやクレジットカード、信用保証などの金融サービスをグループで提供しています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "banking",
+      "name": "銀行業",
+      "description": "当行の本店及び支店107店、出張所７店において、預金業務、貸出業務、内国為替業務及び外国為替業務などを行っています。2026年３月期の外部顧客に対する経常収益は101,979百万円で、グループの中心となる報告セグメントです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "deposits",
+          "name": "預金業務",
+          "description": "個人や法人のお客さまから預金を預かる業務です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "lending",
+          "name": "貸出業務",
+          "description": "企業や個人のお客さまへの貸出を行う業務です。中小企業向けの貸出が中心です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "exchange",
+          "name": "為替業務",
+          "description": "内国為替業務及び外国為替業務を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "securities-investment",
+          "name": "有価証券投資業務",
+          "description": "国債や地方債、社債、株式などの有価証券への投資を行う業務です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業区分です。連結子会社８社が、事務代行業務、職業紹介業務、信用保証業務、リース業務、投資業務、クレジットカード業務、プログラム作成・販売、計算受託業務を行っています。2026年３月期の外部顧客に対する経常収益は12,890百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "back-office",
+          "name": "事務代行業務",
+          "description": "紀陽ビジネスサービス株式会社が、事務の代行を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "staffing",
+          "name": "職業紹介業務",
+          "description": "紀陽パートナーズ株式会社が、職業紹介を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "guarantee",
+          "name": "信用保証業務",
+          "description": "阪和信用保証株式会社が、信用保証を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "leasing",
+          "name": "リース業務",
+          "description": "紀陽リース株式会社が、リースを行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "investment",
+          "name": "投資業務",
+          "description": "紀陽キャピタルマネジメント株式会社が、投資業務を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "card",
+          "name": "クレジットカード業務",
+          "description": "株式会社紀陽カードと株式会社紀陽カードディーシーが、クレジットカード業務を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "systems",
+          "name": "プログラム作成・販売、計算受託業務",
+          "description": "紀陽情報システム株式会社が、プログラムの作成・販売と計算受託を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "和歌山県と大阪府を主な営業基盤とし、預金で集めた資金を中小企業向けを中心とする貸出や有価証券投資で運用し、利息や手数料で収益を得る事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "預金",
+      "貸出",
+      "内国為替",
+      "外国為替",
+      "有価証券投資",
+      "リース",
+      "クレジットカード",
+      "信用保証",
+      "投資業務"
+    ],
+    "customers": [
+      "和歌山県・大阪府を中心とする地域の中小企業",
+      "地域の法人のお客さま",
+      "個人のお客さま"
+    ],
+    "revenueSources": [
+      "貸出金の利息",
+      "有価証券の利息配当金",
+      "役務取引等の手数料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "紀陽銀行グループ",
+        "description": "和歌山市に本店を置く銀行で、当行と連結子会社８社でグループを構成しています。2026年３月期の連結の従業員数は2,473人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "銀行業務を中心とした金融サービス",
+        "description": "預金や貸出、為替などの銀行業務を中心に、リースやクレジットカード、信用保証、投資業務などの金融サービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "和歌山県・大阪府を中心とする地域のお客さま",
+        "description": "和歌山県と大阪府を主な営業基盤として、本支店107店と出張所７店の店舗網を通じ、中小企業や個人のお客さまに利用されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "利息と手数料による経常収益",
+        "description": "貸出金の利息や有価証券の利息配当金などの資金運用収益と、手数料などの役務取引等収益が主な収入です。2026年３月期の連結経常収益は114,870百万円で、貸出金利息や有価証券利息配当金、役務取引等収益が増加したことなどにより、前連結会計年度に比べて161億50百万円増加しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益の確保",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は21,819百万円で、前連結会計年度に比べて4,201百万円増加しました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +210,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 242850000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2391,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +230,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 223792000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2310,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +250,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 238113000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2352,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +270,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 236178000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2390,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +290,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 248566000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2473,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +298,266 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1895,
+      "title": "紀陽貯蓄銀行の設立",
+      "description": "和歌山市に株式会社紀陽貯蓄銀行が設立されました。",
+      "significance": "紀陽銀行の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1921,
+      "title": "和歌山無尽の設立",
+      "description": "和歌山無尽株式会社が設立されました。",
+      "significance": "後の和歌山銀行の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1922,
+      "title": "普通銀行への転換と紀陽銀行への改称",
+      "description": "紀陽貯蓄銀行が普通銀行に転換し、商号を株式会社紀陽銀行に変更しました。",
+      "significance": "普通銀行としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1945,
+      "title": "紀伊貯蓄銀行の合併",
+      "description": "株式会社紀陽銀行が紀伊貯蓄銀行を合併しました。",
+      "significance": "和歌山県内の基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "和歌山相互銀行への商号変更",
+      "description": "和歌山無尽株式会社が、相互銀行法の施行にともない、商号を株式会社和歌山相互銀行に変更しました。",
+      "significance": "相互銀行としての歩みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "外国為替業務の開始",
+      "description": "株式会社紀陽銀行が外国為替業務の取扱いを開始しました。",
+      "significance": "業務の幅が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "株式の上場",
+      "description": "株式会社紀陽銀行が、大阪証券取引所及び東京証券取引所の市場第二部に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "市場第一部への上場",
+      "description": "株式会社紀陽銀行が、大阪証券取引所及び東京証券取引所の市場第一部に上場しました。",
+      "significance": "主要市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "阪和信用保証の設立",
+      "description": "阪和信用保証株式会社が設立されました。",
+      "significance": "信用保証業務を行う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "紀陽ビジネスサービスの設立",
+      "description": "紀陽ビジネスサービス株式会社が設立されました。",
+      "significance": "事務代行業務を行う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "和歌山銀行への転換と改称",
+      "description": "株式会社和歌山相互銀行が普通銀行へ転換し、商号を株式会社和歌山銀行に変更しました。",
+      "significance": "和歌山銀行としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "紀陽カード各社の設立",
+      "description": "株式会社紀陽カードサービス、株式会社紀陽カードジェーシービー、株式会社紀陽カードディーシーが設立されました。",
+      "significance": "カード事業の体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "紀陽リースの設立",
+      "description": "紀陽リース株式会社が設立されました。",
+      "significance": "リース業務を行う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "和歌山県商工信用組合の事業譲受け",
+      "description": "株式会社紀陽銀行が、和歌山県商工信用組合の事業を譲り受けました。",
+      "significance": "県内の営業基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "紀陽ホールディングスの設立",
+      "description": "株式会社紀陽銀行と株式会社和歌山銀行が、共同株式移転方式により、持株会社「株式会社紀陽ホールディングス」を設立しました。",
+      "significance": "持株会社の傘下でグループ経営を行う体制となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "紀陽銀行と和歌山銀行の合併",
+      "description": "株式会社紀陽銀行と株式会社和歌山銀行が合併し、存続会社は株式会社紀陽銀行となりました。",
+      "significance": "和歌山県内の二つの銀行が一体となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "新基幹系システム「BankVision」の稼動",
+      "description": "新基幹系システム「BankVision」が稼動しました。",
+      "significance": "システム基盤の刷新です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "持株会社との合併と上場",
+      "description": "株式会社紀陽銀行が株式会社紀陽ホールディングスと合併し、東京証券取引所市場第一部に上場しました。",
+      "significance": "持株会社体制を解消し、銀行自体が上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "紀陽パートナーズへの商号変更",
+      "description": "紀陽ビジネスサービス株式会社が紀陽パートナーズ株式会社へ商号変更し、新設分割により紀陽ビジネスサービス株式会社を設立しました。",
+      "significance": "職業紹介業務と事務代行業務を担う体制を再編しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "紀陽キャピタルマネジメントの設立",
+      "description": "紀陽キャピタルマネジメント株式会社が設立されました。",
+      "significance": "投資業務を行う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "紀陽リースへの商号変更",
+      "description": "紀陽リース・キャピタル株式会社が紀陽リース株式会社へ商号変更しました。",
+      "significance": "リース事業の体制の整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kohnan-shoji",
+      "relationship": "business-partner",
+      "description": "政策保有株式として株式を保有しています。保有目的には、次期基幹系システム構築プロジェクトへのITコンサルティングによる関与や、人事制度の再構築への人事コンサルティングによる関与など、金融面以外の取引も深耕していることが銘柄個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fuji-8860",
+      "relationship": "business-partner",
+      "description": "政策保有株式として株式を保有しています。保有目的には、全体最適化を目指したシステム構築へのITコンサルティングによる関与など、金融面以外の取引も深耕していることが銘柄個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takadakiko-steel-construction",
+      "relationship": "business-partner",
+      "description": "政策保有株式として株式を保有しています。保有目的には、事業計画策定支援や、システム構築へのITコンサルティングによる関与、人事制度の再構築への人事コンサルティングによる関与など、金融面以外の取引も深耕していることが銘柄個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shima-seiki-mfg",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に載る事業会社で、2026年３月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は1.15％です。当行も政策保有株式として同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +565,58 @@
       "publisher": "株式会社紀陽銀行",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE5S.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YE5S",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「紀陽銀行」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E7%B4%80%E9%99%BD%E9%8A%80%E8%A1%8C",
+      "accessedAt": "2026-11-15"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年５月14日開催の取締役会において、2026年９月30日を基準日、2026年10月１日を効力発生日として、普通株式１株につき３株の割合で株式分割を行うことが決議されました。本登録は2026年３月31日現在の構成に基づきます。",
+      "businessStructure: 連結子会社の株式会社紀陽カード（存続会社）と株式会社紀陽カードディーシー（消滅会社）の吸収合併が、2026年６月22日開催の取締役会で決議され、同日付で合併契約が締結されました。効力発生日は2027年４月１日の予定です。本登録は2026年３月31日現在の構成に基づき、両社を別々に記載しています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "目指す銀行像「銀行をこえる銀行へ」のもと、2024年４月から2027年３月までの「第７次中期経営計画 KX～Kiyo transformation～」に取り組んでいます。基本方針を「地域の金融リーディンググループとしての機能発揮による地元地域との価値共創」と定め、営業体制の最適化、成長分野への戦略的投資、地域DXの推進、サステナビリティ経営の高度化などを主要戦略とし、中小企業分野における本業支援活動の充実を掲げています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "和歌山県と大阪府を主要な営業エリアとし、本支店107店・出張所７店の店舗網を持ちます。グループ内にリース、クレジットカード、信用保証、投資業務、情報システムなどを担う連結子会社を抱え、銀行業務以外の金融サービスも一体で提供できる体制です。",
+        "basis": "【事業の内容】の店舗数と連結子会社の業務内容、【経営方針、経営環境及び対処すべき課題等】の主要営業エリアの記載に基づきます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは銀行業のみで、2026年３月期の外部顧客に対する経常収益は、銀行業が101,979百万円、報告セグメントに含まれない「その他」が12,890百万円です。サービス別では貸出業務が61,058百万円、有価証券投資業務が21,977百万円、その他が31,834百万円です。本邦の外部顧客に対する経常収益が全体の90％を超えるため地域別の内訳は開示されておらず、経常収益の10％以上を占める主要な顧客もありません。政策保有先のＢＩＰＲＯＧＹは、基幹系システム「Bank Vision」の導入や、関連会社である紀陽情報システムとの人的交流を通じて取引があります。",
+        "basis": "セグメント情報の外部顧客に対する経常収益、関連情報のサービスごとの情報・地域ごとの情報・主要な顧客ごとの情報、特定投資株式の保有目的の記載に基づきます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

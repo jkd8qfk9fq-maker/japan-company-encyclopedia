@@ -4,15 +4,131 @@
   "name": "田中商事",
   "officialName": "田中商事株式会社",
   "nameEn": "TANAKA CO.,LTD.",
-  "description": null,
+  "shortNameEn": "TANAKA",
+  "description": "国内主要メーカーから電気設備資材を仕入れ、全国の営業所網を通じて電気・設備業者などへ販売する独立系の卸売商社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "electrical-materials-wholesale",
+      "name": "電設資材卸売事業",
+      "description": "電気設備資材の卸売を主とする単一の事業です。当社が電気設備資材の卸売を行い、連結子会社の株式会社カワツウが弱電・防災設備等の施工を行います。2026年3月期の売上高は44,048百万円でした。",
+      "customers": [
+        "電気・設備業者をはじめとする得意先",
+        "弱電・防災設備工事の発注者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "wires",
+          "name": "電線類",
+          "description": "照明器具・配線器具等へ電気を供給するための電線と、その保護用のパイプ類、セキュリティ・ＯＡ対応の電線類です。2026年3月期の売上高は14,771百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営方針、経営環境及び対処すべき課題等】"
+        },
+        {
+          "id": "switchboards",
+          "name": "配・分電盤類",
+          "description": "電気供給に使う配電盤・分電盤類と、大容量の電気を必要とするビル・マンション・工場などで使う受電設備機器類です。2026年3月期の売上高は9,953百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営方針、経営環境及び対処すべき課題等】"
+        },
+        {
+          "id": "home-appliances",
+          "name": "家電品類",
+          "description": "一般家庭・店舗・事務所などで使うエアコン類をはじめとする家電品類です。2026年3月期の売上高は7,618百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営方針、経営環境及び対処すべき課題等】"
+        },
+        {
+          "id": "lighting",
+          "name": "照明器具類",
+          "description": "公園・道路・ビル・マンション・工場・戸建住宅などで使う照明器具類です。2026年3月期の売上高は7,061百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営方針、経営環境及び対処すべき課題等】"
+        },
+        {
+          "id": "other-products",
+          "name": "その他",
+          "description": "電気・設備業者に必要な工具類全般などと、連結子会社の株式会社カワツウによる弱電・防災設備等の施工を含みます。2026年3月期の売上高は4,643百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営方針、経営環境及び対処すべき課題等】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "特定のメーカー系列に属さない独立系商社として、国内主要メーカーから照明器具類や電線類などの電気設備資材を仕入れ、得意先へ販売します。",
+    "products": [
+      "照明器具類",
+      "電線類（セキュリティ・ＯＡ対応の電線類を含む）",
+      "配・分電盤類と受電設備機器類",
+      "家電品類（エアコン類を含む）",
+      "工具類などのその他の品目",
+      "弱電・防災設備等の施工（連結子会社の株式会社カワツウ）"
+    ],
+    "customers": [
+      "電気・設備業者をはじめとする得意先",
+      "弱電・防災設備工事の発注者"
+    ],
+    "revenueSources": [
+      "照明器具類、電線類、配・分電盤類、家電品類などの電気設備資材の販売代金",
+      "弱電・防災設備等の施工の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と主な子会社２社のグループ",
+        "description": "当社と主な子会社２社で構成され、2026年3月31日現在の連結従業員数は455人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "電気設備資材の卸売と弱電・防災設備工事",
+        "description": "国内主要メーカーから照明器具類、電線類、配・分電盤類、家電品類などの電気設備資材を仕入れ、連結子会社の株式会社カワツウが弱電・防災設備等の施工を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "電気・設備業者などの得意先への販売",
+        "description": "電気・設備業者などの得意先が、公共施設やビル・マンション・工場・住宅などの新設やリフォームに使う資材として購入します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高44,048百万円",
+        "description": "2026年3月期の売上高は44,048百万円で、品種分類別では電線類が14,771百万円、配・分電盤類が9,953百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益934百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は934百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +143,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12742039000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 432,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13559008000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 437,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14188682000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 442,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14890286000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 441,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15644694000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 455,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +231,148 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1950,
+      "title": "田中商店の創業",
+      "description": "河合日出雄氏が静岡県静岡市人宿町２丁目で、電設資材の卸売を目的に個人経営の田中商店を創業しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "田中商事株式会社の設立",
+      "description": "業容の一層の拡大を図るため、静岡県静岡市吉野町５番10号に田中商事株式会社を設立しました。",
+      "significance": "現在の会社の法人としての始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "合資会社田中商店の吸収合併",
+      "description": "合資会社田中商店を吸収合併し、業務の一切を引き継ぎました。",
+      "significance": "創業以来の事業を会社が引き継ぎました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "本社の東京都品川区への移転",
+      "description": "東京都品川区南大井三丁目２番２号に本社を新築移転し、旧本社を静岡営業所としました。",
+      "significance": "現在の本社所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "デンザイセンターの営業譲受け",
+      "description": "株式会社デンザイセンターより営業の全部を譲り受け、当社の大宮営業所に統合しました。",
+      "significance": "首都圏での営業基盤の拡大につながる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "株式の店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "取引所への上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "東京証券取引所市場第一部への指定替え",
+      "description": "当社株式が東京証券取引所市場第一部に指定替えとなりました。",
+      "significance": "上場市場が第一部になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "木村電気工業の株式取得",
+      "description": "株式会社木村電気工業の株式を取得しました。",
+      "significance": "2023年に清算が結了しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "八汐電気の株式取得",
+      "description": "八汐電気株式会社の株式を取得しました。",
+      "significance": "2023年に全株式を売却しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "カワツウの株式取得",
+      "description": "株式会社カワツウの株式を取得しました。",
+      "significance": "2026年3月31日現在で唯一の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場への移行",
+      "description": "東京証券取引所の市場再編に伴い、スタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "三永興産の株式取得",
+      "description": "株式会社三永興産の株式を取得しました。",
+      "significance": "2026年3月31日現在の主要な非連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "木村電気工業の清算結了と八汐電気の売却",
+      "description": "株式会社木村電気工業の清算が結了し、八汐電気株式会社の全株式を売却しました。",
+      "significance": "株式を取得していた２社がグループから外れました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +381,55 @@
       "publisher": "田中商事株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDHJ.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YDHJ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "営業ネットワーク網の拡充と新規開拓による市場占有率の向上を掲げ、原則毎年１～３ヵ所の営業所新設を検討し、現在の空白エリアをターゲットに進める方針です。あわせて、連結子会社の株式会社カワツウとの営業連携を強化し、弱電工事も含めた新たな受注獲得で相乗効果を高めるとしています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "48ヵ所の営業所網を持ち、首都圏を中心にネットワークの拡充を進めてきた同社の戦略は、品種分類別では電線類を最大とする電気設備資材の卸売という事業構成と整合しています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における経営戦略の記載、事業等のリスクにおける営業所数の記載、収益認識関係における品種分類別の売上高",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "特定のメーカー系列に属さず、専業メーカーをはじめとする国内主要メーカーから幅広い商品を仕入れる独立系の仕組みに加え、倉庫を併設した自社保有の営業所が48ヵ所中46ヵ所を占め、自社便による配送と営業所間を結ぶオンラインシステムによる在庫把握で、必要な物を必要な時に現場へ届ける体制を持ちます。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における経営方針と特徴（ポリシー）の記載、事業等のリスクにおける営業所の自社所有の記載",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "電設資材卸売業以外の重要性が乏しいとしてセグメント情報の記載が省略された単一の事業構成で、本邦の外部顧客への売上高が90％を超え、売上高の10％以上を占める主要な顧客はありません。品種分類別では電線類が最大の14,771百万円です。",
+        "basis": "セグメント情報等におけるセグメント情報と関連情報（製品及びサービスごとの情報、地域ごとの情報、主要な顧客ごとの情報）、収益認識関係における品種分類別の売上高",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

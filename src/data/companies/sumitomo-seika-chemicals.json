@@ -4,15 +4,138 @@
   "name": "住友精化",
   "officialName": "住友精化株式会社",
   "nameEn": "Sumitomo Seika Chemicals Company, Limited.",
-  "description": null,
+  "shortNameEn": "Sumitomo Seika",
+  "description": "紙おむつなどに使われる吸水性樹脂と、水溶性ポリマーやエレクトロニクスガスを製造・販売する化学メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "superabsorbent-polymers",
+      "name": "吸水性樹脂事業",
+      "description": "紙おむつや生理用品などの衛生材料、ペットシート、ケーブル用止水材などの工業用材料に使われる吸水性樹脂を製造・販売する主力事業です。2026年3月期の外部顧客への売上高は116,121百万円でした。日本、シンガポール、ベルギー、韓国に製造・販売の拠点があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "sap-hygiene-materials",
+          "name": "衛生材料向け吸水性樹脂",
+          "description": "紙おむつや生理用品などの衛生材料向けの吸水性樹脂です。金額は用途ごとに開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "sap-industrial-materials",
+          "name": "工業用材料向け吸水性樹脂",
+          "description": "ペットシートやケーブル用止水材などの工業用材料向けの吸水性樹脂です。金額は用途ごとに開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "functional-materials",
+      "name": "機能マテリアル事業",
+      "description": "水溶性ポリマーなどの化学品と、エレクトロニクスガスをはじめとするガス製品を製造・販売する事業です。2026年3月期の外部顧客への売上高は31,939百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "polymers-and-fine-products",
+          "name": "水溶性ポリマー・医薬製品等",
+          "description": "水溶性ポリマー、エマルジョン、微粒子ポリマー、医薬製品、機能製品などを製造・販売しています。金額は製品ごとに開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "gases-and-equipment",
+          "name": "ガス製品・ガス発生装置",
+          "description": "エレクトロニクスガス、標準ガス、工業薬品、医療用ガス、ケミカルガスの製造・販売と、酸素・窒素・水素などのガス発生装置（PSA方式）の設計・製作・販売を行っています。金額は製品ごとに開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他事業",
+      "description": "化学品の製造受託事業等を行う事業です。2026年3月期の外部顧客への売上高は293百万円でした。セイカテクノサービスやセイカリサーチなどが担っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "住友精化は、紙おむつなどの衛生材料に使われる吸水性樹脂を主力とする化学メーカーで、水溶性ポリマーなどの化学品やエレクトロニクスガスも製造・販売しています。",
+    "products": [
+      "吸水性樹脂（紙おむつ・生理用品などの衛生材料、ペットシート、ケーブル用止水材）",
+      "水溶性ポリマー、エマルジョン、微粒子ポリマー、医薬製品、機能製品",
+      "エレクトロニクスガス、標準ガス、工業薬品、医療用ガス、ケミカルガス",
+      "酸素・窒素・水素などのガス発生装置（PSA方式）"
+    ],
+    "customers": [
+      "紙おむつなどの衛生材料メーカー",
+      "半導体などのエレクトロニクス産業の企業",
+      "産業ガス・医療用ガスの需要家"
+    ],
+    "revenueSources": [
+      "吸水性樹脂の販売代金",
+      "ポリマーやガスなどの機能マテリアル製品の販売代金",
+      "化学品の製造受託の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と子会社11社のグループ",
+        "description": "当社グループは、当社と子会社11社で構成されています。国内には別府、姫路、千葉の3工場があり、海外ではシンガポール、ベルギー、韓国、中国、台湾に子会社があります。"
+      },
+      {
+        "kind": "offering",
+        "title": "吸水性樹脂と機能マテリアルを提供する",
+        "description": "主力の吸水性樹脂は紙おむつや生理用品などの衛生材料に使われます。機能マテリアルでは、水溶性ポリマーなどの化学品と、エレクトロニクスガスや医療用ガスなどのガス製品、PSA方式のガス発生装置を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "衛生材料メーカーやエレクトロニクス産業に販売する",
+        "description": "販売は国内外に広がっています。2026年3月期の地域別の売上高は、中国が45,065百万円、日本が40,280百万円などでした。売上高の10％以上を占める主要な顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売で売上を得る",
+        "description": "売上は製品の販売によるものです。2026年3月期の売上高は148,354百万円で、吸水性樹脂の販売数量が中国市場などで増えた一方、原燃料市況の低下を販売価格に反映したことなどにより、前期比0.5％の増加にとどまりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "価格転嫁と合理化で収益の向上を図る",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は7,677百万円でした。過剰請求に関連する費用や、機能マテリアル事業の一部製品に関わる減損損失の計上がありましたが、原燃料価格が低下したことなどにより、前期を上回りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +150,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 81905000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1384,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +170,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 86661000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1412,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +190,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 95051000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1402,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 94312000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1413,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 103621000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1438,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +238,279 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1944,
+      "title": "住友多木化学工業として設立",
+      "description": "住友化学工業株式会社（現・[[company:sumitomo-chemical|住友化学株式会社]]）と株式会社多木製肥所（現・多木化学株式会社）の共同出資により、住友多木化学工業株式会社として設立されました。",
+      "significance": "肥料の製造・販売から始まった、現在の住友精化の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1946,
+      "title": "社名を別府化学工業に変更",
+      "description": "社名を別府化学工業株式会社と変更しました。",
+      "significance": "戦後の再出発の区切りです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "大阪・神戸両証券取引所に上場",
+      "description": "大阪・神戸両証券取引所に株式を上場しました。",
+      "significance": "株式上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "東京証券取引所に上場",
+      "description": "東京証券取引所に株式を上場しました。",
+      "significance": "全国市場での取引が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "製鉄化学工業を設立し姫路工場を建設",
+      "description": "富士製鐵株式会社と住友化学工業株式会社の折半出資により（旧）製鉄化学工業株式会社を設立し、姫路工場を建設しました。",
+      "significance": "現在の主力工場の一つである姫路工場の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "合併し製鉄化学工業に社名変更",
+      "description": "（旧）製鉄化学工業株式会社を合併し、社名を製鉄化学工業株式会社と変更しました。",
+      "significance": "事業の軸足が工業薬品へ移る転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "プラスチック事業とスペシャルティガス事業を開始",
+      "description": "プラスチック事業を開始し、続いてスペシャルティガス事業を開始しました。",
+      "significance": "現在の機能マテリアル事業につながるガス事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "千葉工場を建設",
+      "description": "千葉工場を建設しました。",
+      "significance": "関東の製造拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "姫路工場に吸水性樹脂の製造設備を新設",
+      "description": "姫路工場に吸水性樹脂製造設備を新設しました。",
+      "significance": "現在の主力製品である吸水性樹脂の製造の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "社名を住友精化に変更",
+      "description": "社名を住友精化株式会社と変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "シンガポールに子会社を設立",
+      "description": "スミトモ セイカ シンガポール プライベート リミテッドを設立しました。",
+      "significance": "海外製造拠点の展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "シンガポールで吸水性樹脂事業を開始",
+      "description": "シンガポールで吸水性樹脂事業を開始しました。",
+      "significance": "主力事業の海外生産が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "台湾に子会社を設立",
+      "description": "台湾住精科技（股）有限公司を設立しました。",
+      "significance": "台湾に拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "海外に販売会社を設立",
+      "description": "シンガポール、アメリカ、ベルギーに販売会社を設立しました。アメリカの販売会社は2025年3月期に清算を終えています。",
+      "significance": "欧米を含む販売網の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "フランスのアルケマ社から吸水性樹脂事業を買収",
+      "description": "フランスのアルケマ社から吸水性樹脂事業を買収しました。",
+      "significance": "欧州での吸水性樹脂事業の基盤を得ました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "韓国に住精ケミカルを設立",
+      "description": "韓国において、エレクトロニクスガスの製造・販売会社である住精ケミカル株式会社を設立しました。",
+      "significance": "ガス事業の海外製造が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "韓国にスミトモ セイカ ポリマーズ コリアを設立",
+      "description": "韓国においてスミトモ セイカ ポリマーズ コリア カンパニー リミテッドを設立しました。",
+      "significance": "韓国での吸水性樹脂の体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "韓国で吸水性樹脂事業を開始",
+      "description": "韓国で吸水性樹脂事業を開始しました。",
+      "significance": "アジアでの主力事業の生産が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "セイカエンジニアリングを吸収合併",
+      "description": "セイカエンジニアリング株式会社を吸収合併しました。",
+      "significance": "化工機器の製作部門を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "セイカリサーチを設立",
+      "description": "セイカリサーチ株式会社を設立しました。",
+      "significance": "研究開発を担う子会社が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sumitomo-chemical",
+      "relationship": "other-affiliated-company",
+      "description": "その他の関係会社です。2026年3月31日現在、当社の議決権の33.4％を保有する筆頭株主であり、当社は同社の持分法適用関連会社です。一部原料の購入や製品の販売などの取引を行っています。また、1944年に当社を共同出資で設立した親会社の一つでもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第113期(2025/04/01－2026/03/31)",
+      "title": "有価証券報告書－第113期（2025/04/01－2026/03/31）",
       "publisher": "住友精化株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKNS.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YKNS",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 連結子会社において、お取引先様に販売する製品の原材料の調達先を無断で変更し、製品代金を過剰に請求していた事案が2025年に判明しました。前連結会計年度には、顧客と交渉を進めている返納金について将来の支出見込額を引当計上し、当連結会計年度は、取引先のもとで生じた逸失利益の賠償金を特別損失として追加計上しています。有報には、品質確保を最重要課題として教育の強化や品質・取引の再点検などに取り組んだ旨が記載されていますが、不正行為に関わる事案のため人手の確認対象とします。",
+      "businessModel: 2026年3月31日を基準日、2026年4月1日を効力発生日として、普通株式1株につき5株の割合で株式分割を行いました（重要な後発事象）。過年度の数値は、当該株式分割が行われたものとして算定されています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2023年度から2025年度までの中期経営計画では、「事業構造の強靭化」、「研究開発の結実」、「徹底した合理化」、「サステナビリティへの取り組み深化」を重点施策として取り組んできました。吸水性樹脂事業ではシンガポール子会社に新しい製造設備を建設し、機能マテリアル事業では不採算事業からの撤退を含めた事業ポートフォリオの見直しを進めています。次期中期経営計画は策定を進めており、2026年秋の公表を予定しています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "吸水性樹脂では、日本、シンガポール、韓国、欧州に製造拠点を持ち、アジア市場を中心に続く需要の増加に対応しています。使用済み紙おむつから分離した吸水性樹脂の水平ケミカルリサイクル技術の開発に取り組み、姫路地区でパイロット設備を建設しています。機能マテリアルでは次世代半導体材料などの開発を進め、別府地区で新研究棟を建設し、2026年6月に竣工しました。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高148,354百万円のうち、吸水性樹脂事業が116,121百万円と約8割を占めています。機能マテリアル事業は31,939百万円でした。",
+        "basis": "セグメント注記の外部顧客への売上高に基づきます。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

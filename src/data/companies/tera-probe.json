@@ -4,15 +4,100 @@
   "name": "テラプローブ",
   "officialName": "株式会社テラプローブ",
   "nameEn": "Tera Probe, Inc.",
-  "description": null,
+  "shortNameEn": "Tera Probe, Inc.",
+  "description": "半導体メーカーなどからウエハテストとファイナルテストを受託する、半導体テスト専門の受託会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "semiconductors",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "semiconductor-test",
+      "name": "半導体テスト事業",
+      "description": "半導体製造工程におけるウエハテスト及びファイナルテストの受託を主たる業務とする、単一セグメントの事業です。九州事業所及び連結子会社TeraPower Technology Inc.が担っています。2025年12月期の売上高は41,746百万円でした。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "wafer-test",
+          "name": "ウエハテスト",
+          "description": "ダイシング前のウエハ状態で、ウエハ上に作り込まれた半導体チップの電気特性を検査し、良品・不良品の判別を行う工程の受託です。プログラム開発やプローブカード設計の受託、デバイスの評価から量産までの一貫サポートも行っています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "final-test",
+          "name": "ファイナルテスト",
+          "description": "組立終了後のパッケージ状態で、半導体製品が設計どおりに機能するかどうかの検査や、最終製品の外観異常の有無を検査するパッケージ外観検査などを行う工程の受託です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "国内外の半導体メーカーなどから半導体製品のウエハテストとファイナルテストを受託し、検査などの対価で収益を得る事業モデルです。",
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "ウエハテスト（ロジック、マイコン、イメージセンサ、アナログ、メモリなどの半導体製品）",
+      "ファイナルテスト",
+      "プログラム開発やプローブカード設計の受託",
+      "デバイスの評価から量産までの一貫サポート"
+    ],
+    "customers": [
+      "国内外の半導体メーカー",
+      "ファブレス企業"
+    ],
+    "revenueSources": [
+      "ウエハテスト受託の対価",
+      "ファイナルテスト受託の対価",
+      "プログラム開発やプローブカード設計などの受託の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "テラプローブグループ",
+        "description": "株式会社テラプローブと海外連結子会社TeraPower Technology Inc.で構成され、Powertech Technology Inc.グループの一員です。2025年12月期の連結従業員数は1,127人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ウエハテストとファイナルテストの受託",
+        "description": "ウエハ状態で半導体チップの電気特性を検査するウエハテストと、パッケージ状態で機能などを検査するファイナルテストを受託し、プログラム開発やプローブカード設計、一貫サポートも提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "半導体メーカーなどの顧客",
+        "description": "国内外の半導体メーカーやファブレスなどから受託しています。主要な顧客にはルネサスエレクトロニクス、Annapurna Labs (U.S.) Inc.、ソシオネクストがいます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年12月期の連結売上高は41,746百万円です。製品別ではロジック製品が38,617百万円、メモリ製品が3,129百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は3,367百万円です。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +112,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 36560243000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1014,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +132,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 42206703000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1008,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第18期の期首から適用しており、第18期以降の主要な経営指標等は当該会計基準等を適用した後の指標となっています。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +153,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 49006331000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1010,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 53924051000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1042,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,16 +193,157 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 59928689000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1127,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」等を当連結会計年度の期首から適用しています。一部は遡及適用されていますが、前連結会計年度の連結財務諸表への影響はありません。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2005,
+      "title": "テラプローブを設立しウエハテスト事業を開始",
+      "description": "東京都中央区に株式会社テラプローブを設立しました。広島事業所でDRAMのウエハテスト事業を開始し、開発センターでテスト技術等の開発受託事業を開始しました。",
+      "significance": "現在の事業の起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "九州事業所を開設",
+      "description": "熊本県葦北郡芦北町に九州事業所を開設し、ロジック製品のファイナルテスト事業とウエハテスト事業を開始しました。",
+      "significance": "国内のテスト拠点が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "本社・開発センターを横浜市に移転",
+      "description": "神奈川県横浜市港北区に本社・開発センターを移転しました。吸収分割により広島のウエハテスト事業に関する設備・装置等を承継しました。",
+      "significance": "現在の本社所在地となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "台湾に連結子会社を設立",
+      "description": "台湾における事業拡大を目的として、Powertech Technology Inc.との合弁で、台湾新竹縣に連結子会社TeraPower Technology Inc.を設立しました。",
+      "significance": "台湾拠点の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "株式上場の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "テラミクロスを連結子会社化",
+      "description": "カシオ計算機株式会社から株式会社テラミクロスの全株式を取得して連結子会社とし、ウエハレベルパッケージの受託を開始しました。",
+      "significance": "受託サービスの幅が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "Powertech Technology Inc.の連結子会社となる",
+      "description": "公開買付けにより、Powertech Technology Inc.の連結子会社となりました。",
+      "significance": "現在の親会社との関係が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "広島事業所を九州事業所に統合",
+      "description": "広島事業所を九州事業所に統合しました。マイクロンメモリ ジャパン株式会社向け半導体テストサービス事業はマイクロンジャパン株式会社へ譲渡しました。",
+      "significance": "国内拠点の集約です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "東京証券取引所市場第二部へ市場変更",
+      "description": "東京証券取引所マザーズから同取引所市場第二部へ市場変更しました。",
+      "significance": "上場市場の変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。株式会社テラプローブ会津を吸収合併しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "TeraPower Technology Inc.第３工場が竣工",
+      "description": "連結子会社TeraPower Technology Inc.の第３工場が竣工しました。",
+      "significance": "台湾の生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "九州事業所に新事務棟が竣工",
+      "description": "九州事業所に新事務棟が竣工しました。",
+      "significance": "国内拠点の整備です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "renesas-electronics",
+      "relationship": "customer",
+      "description": "当社グループが半導体テストを受託している主要な顧客です。主要な顧客ごとの情報に、2025年12月期の主要な顧客として記載されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "socionext",
+      "relationship": "customer",
+      "description": "当社グループが半導体テストを受託している主要な顧客です。主要な顧客ごとの情報に、2025年12月期の主要な顧客として記載されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +351,58 @@
       "publisher": "株式会社テラプローブ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XTOJ.pdf",
       "publishedAt": "2026-03-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XTOJ",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 連結子会社TeraPower Technology Inc.は、2026年１月27日に台湾で新工場建設のための固定資産（土地及び建物）の取得を実施しました（重要な後発事象に印字）。設備の稼働開始時期は2027年１月の予定とされています。本登録は、取得前の2025年12月31日現在の拠点構成によります。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念の下、最先端テクノロジーを取り込み、半導体テスト技術の高度化と生産性向上を追求して付加価値の向上を図る方針です。ビジョンとして、日本と台湾から世界中へテストソリューションを届けることを掲げ、AI及び先端デバイスを中心とする成長分野への積極投資や日台両拠点における生産体制の最適化、スマートファクトリー化の推進といった重点施策に取り組むとしています。優先的に対処すべき課題として、業績の向上、生産性・品質の向上、人材の確保・育成、ESGへの取り組みを挙げています。",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "重点施策は、九州事業所と台湾の連結子会社という日台両拠点の生産体制を前提にしています。沿革ではTeraPower Technology Inc.の第３工場が2024年に竣工し、九州事業所の新事務棟が2025年に竣工しており、両拠点の整備が続いています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の重点施策と、【沿革】及び【主要な設備の状況】の日台両拠点の記載に基づきます。",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "前工程のウエハテストと後工程のファイナルテストの双方を受託でき、蓄積したノウハウを利用したプログラム開発やプローブカード設計の受託、デバイスの評価から量産までの一貫サポート、テスト効率向上の提案まで行える点が特徴です。Powertech Technology Inc.やその他OSAT企業との連携により、後工程まで含めたターンキーサービスによるソリューションも提供しています。",
+        "basis": "【事業の内容】のウエハテスト・ファイナルテスト双方の受託、プログラム開発やプローブカード設計、一貫サポート及びOSAT企業との連携によるターンキーサービスの記載に基づきます。",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "半導体テスト事業の単一セグメントで、製品別ではロジック製品が38,617百万円、メモリ製品が3,129百万円と、ロジック製品が大半を占めています。事業は九州事業所と台湾の連結子会社TeraPower Technology Inc.で行われ、日本と台湾の両拠点から受託しています。",
+        "basis": "MD&Aの製品別売上高内訳と、【事業の内容】の事業を行う拠点の記載、セグメント情報の単一セグメントの記載に基づきます。",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

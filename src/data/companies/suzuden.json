@@ -4,15 +4,150 @@
   "name": "スズデン",
   "officialName": "スズデン株式会社",
   "nameEn": "SUZUDEN CORPORATION",
-  "description": null,
+  "shortNameEn": "SUZUDEN",
+  "description": "国内メーカーからFA機器や電設資材などを仕入れ国内企業に販売し、半導体製造装置向け部品の組立も行う商社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "electric-electronic-parts-sales",
+      "name": "電機・電子部品販売事業",
+      "description": "国内有力メーカーよりFA機器、情報・通信機器、電子・デバイス機器、電設資材等を仕入れ、国内の有力企業への販売を行います。2026年3月期の外部顧客への売上高は45,454百万円でした。",
+      "customers": [
+        "国内の電気機器・電子部品・産業機械業界の企業",
+        "半導体製造装置関連の顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "fa-equipment",
+          "name": "FA機器",
+          "description": "RFIDやグラフィック操作パネル、センサー、制御盤などのFA機器を販売します。2026年3月期の売上高は25,078百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "electrical-materials",
+          "name": "電設資材",
+          "description": "受変電設備やボックス、端子台、電線ケーブルなどの電設資材を販売します。2026年3月期の売上高は10,666百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "electronic-device-equipment",
+          "name": "電子・デバイス機器",
+          "description": "コネクターや電池関連商品、基板、スイッチング電源などの電子・デバイス機器を販売します。2026年3月期の売上高は5,389百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "information-communication-equipment",
+          "name": "情報・通信機器",
+          "description": "ネットワーク機器やシステムラック、産業用パソコン、OAアクセサリーなどの情報・通信機器を販売します。2026年3月期の売上高は4,320百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "manufacturing",
+      "name": "製造事業",
+      "description": "大和工場（宮城県黒川郡）において、半導体製造装置向けアルミフレームの組立等を行います。2026年3月期の外部顧客への売上高は448百万円でした。",
+      "customers": [
+        "半導体製造装置関連の顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "aluminum-frame-assembly",
+          "name": "半導体製造装置向けアルミフレームの組立等",
+          "description": "もの造り機能の強化と顧客要求事項への対応のため、大和工場で半導体製造装置向けアルミフレームの組立等を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "国内有力メーカーからFA機器、情報・通信機器、電子・デバイス機器、電設資材を仕入れ、国内の有力企業へ販売する事業を中核とします。",
+    "products": [
+      "FA機器（RFID、グラフィック操作パネル、センサー、制御盤等）",
+      "情報・通信機器（ネットワーク機器、産業用パソコン、システムラック等）",
+      "電子・デバイス機器（コネクター、電池関連商品等）",
+      "電設資材（受変電設備、端子台、電線ケーブル等）",
+      "半導体製造装置向けアルミフレームの組立等の製造品",
+      "オリジナルブランド「Ubon（ユーボン）」の配線アクセサリーや盤内パーツ等"
+    ],
+    "customers": [
+      "国内の電気機器・電子部品・産業機械業界の企業",
+      "半導体・液晶製造装置関連の顧客",
+      "医療機器関連市場や医療・介護関連市場の顧客"
+    ],
+    "revenueSources": [
+      "FA機器、情報・通信機器、電子・デバイス機器、電設資材の販売代金",
+      "半導体製造装置向けアルミフレームの組立等の製造品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と子会社1社のグループ",
+        "description": "当社と連結子会社1社で構成され、2026年3月31日現在の連結従業員数は336人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "電機・電子部品の販売とアルミフレームの組立",
+        "description": "国内有力メーカーからFA機器、情報・通信機器、電子・デバイス機器、電設資材等を仕入れ、大和工場では半導体製造装置向けアルミフレームの組立等を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内の有力企業への販売",
+        "description": "国内の有力企業へ販売しており、東京エレクトロン宮城株式会社が主要な顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高45,902百万円",
+        "description": "2026年3月期の売上高は45,902百万円で、電機・電子部品販売事業が45,454百万円、製造事業が448百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益1,722百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,722百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +162,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17627179000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 359,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18610823000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 358,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +202,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18467297000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 342,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +222,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18694339000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 345,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +242,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16758552000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 336,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +250,177 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1952,
+      "title": "鈴木電業株式会社の設立",
+      "description": "重電機器・電気工事材料等の販売を目的として、東京都千代田区に鈴木電業株式会社を設立しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "日東工業との代理店契約",
+      "description": "日東工業株式会社と代理店契約を締結しました。",
+      "significance": "現在も毎年度更新されている主な代理店契約の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "オムロンとの特約店契約",
+      "description": "立石電機株式会社（現・オムロン株式会社）と特約店契約を締結しました。",
+      "significance": "主要仕入先であるオムロンとの取引の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "鈴木電興株式会社の設立",
+      "description": "制御機器販売部門を分離し、鈴木電興株式会社を設立しました。",
+      "significance": "制御機器の販売体制を独立させました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "合併とスズデン株式会社への商号変更",
+      "description": "鈴木電興株式会社、多摩鈴電株式会社、茨城鈴電株式会社、横浜鈴電株式会社を合併し、商号をスズデン株式会社としました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "株式の店頭登録",
+      "description": "当社株式を日本証券業協会に店頭売買銘柄として登録しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "インターネット通信販売の開始",
+      "description": "インターネットショッピングサイト「幕の内アキバ街」（現：FA Ubon）をオープンし、インターネットによる通信販売を開始しました。",
+      "significance": "現在の通販サイトにつながる取組です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "当社株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "取引所への上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "スズデンビジネスサポート株式会社の設立",
+      "description": "スズデンビジネスサポート株式会社（連結子会社）を設立しました。",
+      "significance": "2026年3月31日現在で唯一の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "東京証券取引所市場第一部銘柄への指定",
+      "description": "当社株式が東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "上場市場が第一部になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "愛知電機株式会社の子会社化",
+      "description": "愛知電機株式会社（長野県上田市）の全株式を取得し、連結子会社化しました。",
+      "significance": "2022年7月に当社へ吸収合併されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場への移行",
+      "description": "東京証券取引所の市場再編に伴い、スタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ベル株式会社の完全子会社化",
+      "description": "ベル株式会社（東京都千代田区）の全株式を取得し、完全子会社化しました。",
+      "significance": "創業家の資産管理会社を取得した取引です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "ベル株式会社の吸収合併",
+      "description": "完全子会社であるベル株式会社を吸収合併しました。",
+      "significance": "期中に完了し、2026年3月31日現在の連結子会社はスズデンビジネスサポート株式会社のみとなっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "omron",
+      "relationship": "supplier",
+      "description": "主要仕入先の一つです。オムロン株式会社インダストリアルオートメーションビジネスカンパニーと販売店契約を結び、PLC・スイッチ・センサ・リレー等の販売を行っており、契約は毎年度更新されています。1957年に立石電機株式会社（現・オムロン株式会社）と特約店契約を締結したことに始まります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "nitto-kogyo",
+      "relationship": "supplier",
+      "description": "1954年に代理店契約を締結した仕入先です。受変電設備機器・分電盤・配電盤・ボックス・システムラックを主要取扱品目とする代理店契約を結んでおり、契約は毎年度更新されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "tokyo-electron",
+      "relationship": "customer",
+      "description": "東京エレクトロン株式会社のグループ会社である東京エレクトロン宮城株式会社が主要な顧客であり、電機・電子部品販売事業と製造事業の双方に関連する取引があります。当社グループは東京エレクトロンテクノロジーソリューションズ株式会社、東京エレクトロン九州株式会社とも取引を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +428,55 @@
       "publisher": "スズデン株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YG54.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YG54",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「もの造りサポーティングカンパニー」として、もの造りの現場への設備・機器・部品・サービス等の供給とサポートを行い、成長市場と成長分野への経営資源の選択と集中や、通販サイト「FA Ubon」の機能拡充と取扱商品の拡大を進める方針です。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の大部分を占める電機・電子部品販売事業を中核に、半導体製造装置関連の顧客への経営資源の集中やメディカル市場での提案を掲げており、開示された事業構成と整合しています。",
+        "basis": "セグメント情報の外部顧客への売上高、中長期的な会社の経営戦略の記載",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "国内有力メーカーとの代理店・販売店契約に基づく仕入の基盤に加え、大和工場と松本ユーボン工場のもの造り拠点を持ち、オリジナルブランド「Ubon」の商品も展開しています。",
+        "basis": "重要な契約等の主な代理店契約、事業の内容、経営方針における商圏・商材の拡大の記載",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "電機・電子部品販売事業が売上高の大部分を占め、製造事業は半導体製造装置向けアルミフレームの組立等を行う小さな事業です。本邦の外部顧客への売上高が90％を超え、主要な顧客は東京エレクトロン宮城株式会社です。",
+        "basis": "セグメント情報の外部顧客への売上高、関連情報の地域ごとの情報と主要な顧客ごとの情報",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,131 @@
   "name": "たけびし",
   "officialName": "株式会社たけびし",
   "nameEn": "TAKEBISHI CORPORATION",
-  "description": null,
+  "shortNameEn": "TAKEBISHI",
+  "description": "三菱電機製品をはじめとする産業機器や半導体・デバイス、社会インフラ、情報通信を販売する技術商社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "fa-devices",
+      "name": "ＦＡ・デバイス事業",
+      "description": "産業機器システム、半導体・デバイスの販売とソフト開発を主な事業とし、関連する物流及び保守・サービス、工事等の事業も展開しています。2026年3月期の外部顧客への売上高は77,634百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "fa-devices-industrial-systems",
+          "name": "産業機器システム",
+          "description": "当社と竹菱(上海)電子貿易有限公司、TAKEBISHI（THAILAND）CO.,LTD.が、産業機器システムの販売とソフト開発を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "fa-devices-semiconductor-devices",
+          "name": "半導体・デバイス",
+          "description": "当社と竹菱香港有限公司、竹菱(上海)電子貿易有限公司、Le Champ（South East Asia）Pte Ltd、竹菱興産㈱、梅沢無線電機㈱が、半導体・デバイスの販売とソフト開発を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "social-ict",
+      "name": "社会・情報通信事業",
+      "description": "社会インフラ（冷熱住設機器、ビル設備、重電、電子医療機器）、情報通信（情報システム、携帯電話等）の販売とソフト開発を主な事業とし、関連する物流及び保守・サービス、工事等の事業も展開しています。2026年3月期の外部顧客への売上高は32,228百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "social-ict-infrastructure",
+          "name": "社会インフラ",
+          "description": "当社と㈱ＴＳエンジニアリングが、冷熱住設機器、ビル設備、重電、電子医療機器などの社会インフラの販売とソフト開発を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "social-ict-telecom",
+          "name": "情報通信",
+          "description": "当社と㈱フジテレコムズ、㈱ファーストブレインが、情報システム、携帯電話等の情報通信の販売とソフト開発を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "メーカーから仕入れた産業機器システムや半導体・デバイス、社会インフラ、情報通信の製品を顧客に販売し、ソフト開発や保守・工事も手がけて収益を得る事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "産業機器システム",
+      "半導体・デバイス",
+      "冷熱住設機器、ビル設備、重電、電子医療機器などの社会インフラ",
+      "情報システム、携帯電話等の情報通信",
+      "ソフト開発",
+      "関連する物流及び保守・サービス、工事等"
+    ],
+    "customers": [
+      "製造業をはじめとする産業機器システムや半導体・デバイスの需要家",
+      "医療機関など社会インフラの整備主体",
+      "情報システムや携帯電話の顧客"
+    ],
+    "revenueSources": [
+      "製品の販売",
+      "ソフト開発、物流及び保守・サービス、工事等の提供"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "たけびしのグループ",
+        "description": "当社と子会社15社で構成されています。2026年3月期の連結従業員数は858人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "産業機器・半導体・社会インフラ・情報通信の販売",
+        "description": "産業機器システム、半導体・デバイス、社会インフラ（冷熱住設機器、ビル設備、重電、電子医療機器）、情報通信（情報システム、携帯電話等）の販売とソフト開発を行い、関連する物流及び保守・サービス、工事等も展開しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "製造業を中心とする顧客",
+        "description": "主な顧客は製造業をはじめとする企業や医療機関などです。売上高の10％以上を占める顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売などによる売上高",
+        "description": "製品の販売やソフト開発、保守・工事などの提供で収入を得ています。2026年3月期の連結売上高は109,862百万円で、前期比8.8％増となりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は2,957百万円で、前期比11.2％増となりました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +143,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 33178000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 794,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 35608000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 797,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 39081000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 813,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +203,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 40846000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 824,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号 2022年10月28日）等を第136期の期首から適用しており、第135期（2024年3月期）に係る主要な経営指標等は、当該会計基準等を遡って適用した後の指標等となっている。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 44240000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 858,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +232,670 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1926,
+      "title": "九笹商業を設立",
+      "description": "1926年4月、大阪市北区に、電気機械器具材料の製造販売等を目的として「九笹商業株式会社」を設立しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1926,
+      "title": "三菱電機製品の京都地区元扱店契約を締結",
+      "description": "1926年5月、三菱商事㈱大阪支店と三菱電機㈱製品の京都地区元扱店契約を締結し、京都市上京区に京都出張所を開設しました。",
+      "significance": "三菱電機製品の取扱いの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1930,
+      "title": "本社を京都市下京区に移設",
+      "description": "1930年2月、京都市下京区に本社を移設し、京都出張所を本社に併合しました。",
+      "significance": "本社機能を京都に集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1931,
+      "title": "竹菱電機商会に商号変更",
+      "description": "1931年3月、商号を「株式会社竹菱電機商会」に変更しました。",
+      "significance": "「竹菱」の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "竹菱電機に商号変更",
+      "description": "1943年11月、商号を「竹菱電機株式会社」に変更しました。",
+      "significance": "現在の商号につながる改称です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "三菱電機と特約店契約を締結",
+      "description": "1944年8月、三菱電機㈱と特約店（現在の代理店）契約を締結しました。",
+      "significance": "三菱電機との代理店関係の基礎です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "福知山出張所を開設",
+      "description": "1958年6月、京都府福知山市に福知山出張所（現在の畿北支店）を開設しました。",
+      "significance": "京都府北部への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "滋賀営業所を開設",
+      "description": "1959年2月、滋賀県近江八幡市に滋賀営業所（現在の滋賀支店、滋賀県彦根市）を開設しました。",
+      "significance": "滋賀県への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "オムロンと特約店契約を締結",
+      "description": "1961年11月、オムロン㈱と特約店契約を締結しました。",
+      "significance": "取扱メーカーの拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "本社を京都市右京区に新築移転",
+      "description": "1963年11月、京都市右京区に本社を新築移転しました。",
+      "significance": "本社を現在の右京区に移しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "大阪営業所を開設",
+      "description": "1969年6月、大阪市南区に大阪営業所（現在の大阪支店、大阪市北区）を開設しました。",
+      "significance": "大阪への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "竹菱テクノスを設立",
+      "description": "1969年8月、㈱竹菱テクノス（現在の㈱ＴＳエンジニアリング、連結子会社）を設立しました。",
+      "significance": "空調設備・機器の設計・工事・保守を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "彦根出張所を開設",
+      "description": "1970年7月、滋賀県彦根市に彦根出張所（現在の滋賀支店）を開設しました。",
+      "significance": "滋賀支店の前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "小倉出張所を開設",
+      "description": "1970年8月、北九州市小倉区に小倉出張所（現在の九州支店、福岡市博多区）を開設しました。",
+      "significance": "九州への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "滋賀支店栗東営業所を開設",
+      "description": "1983年4月、滋賀県栗東市に滋賀支店栗東営業所（現在の栗東支店）を開設しました。",
+      "significance": "滋賀県内の拠点拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "犬山営業所を開設",
+      "description": "1983年4月、愛知県犬山市に犬山営業所（現在の名古屋支店、名古屋市中村区）を開設しました。",
+      "significance": "中部地区への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "東京営業所を開設",
+      "description": "1984年2月、東京都千代田区に東京営業所（現在の東京支店）を開設しました。",
+      "significance": "首都圏への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "本社を現住所に移設",
+      "description": "1991年7月、京都市右京区の現住所に本社を移設しました。",
+      "significance": "現在の本社所在地への移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "竹菱興産を設立",
+      "description": "1992年4月、竹菱興産㈱（現 連結子会社）を設立しました。",
+      "significance": "倉庫業を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "竹菱香港有限公司を設立",
+      "description": "1996年5月、香港に竹菱香港有限公司（現 連結子会社）を設立しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "株式を上場",
+      "description": "1996年9月、株式を大阪証券取引所（現在の東京証券取引所）第二部及び京都証券取引所に上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "新和工業に資本参加",
+      "description": "1999年1月、新和工業㈱の第三者割当増資を引き受け資本参加しました（現在の㈱ＴＳエンジニアリング、連結子会社）。",
+      "significance": "工事・保守体制の強化につながる資本参加です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "フジテレコムズに資本参加",
+      "description": "1999年4月、㈱フジテレコムズに資本参加しました（現 連結子会社）。",
+      "significance": "携帯電話の卸売・販売の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "ISO14001の認証を取得",
+      "description": "2001年8月、環境マネジメントの国際規格ISO14001（BVJC）の認証を全事業所（計9事業所）で一斉取得しました。",
+      "significance": "環境マネジメントの体制整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "東京営業所を横浜市に移転",
+      "description": "2002年9月、東京営業所を横浜市港北区に移転しました（現在の東京支店は東京都千代田区です）。",
+      "significance": "営業所の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "ISO9001の認証を取得",
+      "description": "2003年9月、品質マネジメントの国際規格ISO9001（2000年度版）（BVJC）の認証を全社で一斉取得しました。",
+      "significance": "品質マネジメントの体制整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "バリアンメディカルシステムズと代理店契約を締結",
+      "description": "2006年1月、㈱バリアンメディカルシステムズと代理店契約を締結しました。",
+      "significance": "社会インフラ分野の医療機器の取扱いにつながる契約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "竹菱(上海)電子貿易有限公司を設立",
+      "description": "2006年2月、上海（中国）に竹菱（上海）電子貿易有限公司（現 連結子会社、竹菱香港有限公司の100％出資）を設立しました。",
+      "significance": "中国への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "携帯電話事業をフジテレコムズに統合",
+      "description": "2006年4月、携帯電話事業を㈱フジテレコムズ（現 連結子会社）に統合しました。",
+      "significance": "情報通信事業の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "執行役員制度を導入",
+      "description": "2006年6月、執行役員制度を導入しました。",
+      "significance": "経営体制の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "株式会社たけびしに商号変更",
+      "description": "2006年10月、商号を「株式会社たけびし」に変更しました。",
+      "significance": "現在の商号への変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "本社社屋を増築",
+      "description": "2007年2月、京都市右京区の現住所に本社社屋を増築しました。",
+      "significance": "本社機能の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "名古屋支店を移転",
+      "description": "2007年4月、名古屋支店を名古屋市中村区に移転しました。",
+      "significance": "支店の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "ISO27001の認証を取得",
+      "description": "2012年1月、情報セキュリティマネジメントの国際規格ISO27001（BVJC）の認証を取得しました。",
+      "significance": "情報セキュリティの体制整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所第二部に上場",
+      "description": "2013年7月、㈱大阪証券取引所と㈱東京証券取引所の統合により、東京証券取引所第二部に上場しました。",
+      "significance": "市場の統合に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "TAKEBISHI（THAILAND）を設立",
+      "description": "2014年1月、バンコク（タイ）にTAKEBISHI（THAILAND）CO.,LTD.（現 連結子会社）を設立しました。",
+      "significance": "東南アジアへの拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "東京証券取引所第一部に上場",
+      "description": "2014年12月、東京証券取引所第一部に上場しました。",
+      "significance": "第一部への市場変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "監査等委員会設置会社に移行",
+      "description": "2017年6月、監査等委員会設置会社に移行しました。",
+      "significance": "ガバナンス体制の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "深圳連絡事務所を開設",
+      "description": "2018年8月、深圳（中国）に竹菱香港有限公司深圳連絡事務所を開設しました。",
+      "significance": "中国拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ファーストブレインに資本参加",
+      "description": "2019年10月、㈱ファーストブレインに資本参加しました（現 連結子会社、㈱フジテレコムズの100％出資）。",
+      "significance": "情報通信事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "東京支店を千代田区に移転",
+      "description": "2020年3月、東京支店を東京都千代田区に移転しました。",
+      "significance": "支店の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "梅沢無線電機に資本参加",
+      "description": "2020年4月、梅沢無線電機㈱に資本参加しました（現 連結子会社）。",
+      "significance": "半導体、電子部品の販売を担う子会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "Le Champに資本参加",
+      "description": "2021年6月、Le Champ（South East Asia）Pte Ltd（本社 シンガポール）に資本参加しました（現 連結子会社）。",
+      "significance": "連結売上高の10％を超える売上高を持つ海外子会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場に移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "市場区分の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "TAKEBISHI VIETNAMを設立",
+      "description": "2024年9月、ホーチミン（ベトナム）にTAKEBISHI VIETNAM CO.,LTD.（現 連結子会社）を設立しました。",
+      "significance": "ベトナムへの拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "アーバンエココンサルティングに資本参加",
+      "description": "2025年1月、アーバンエココンサルティング㈱に資本参加しました（現 連結子会社、㈱フジテレコムズの100％出資）。",
+      "significance": "環境分析関連ビジネスの拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ベトナム駐在員事務所を開設",
+      "description": "2025年10月、ホーチミン（ベトナム）に竹菱香港有限公司ベトナム駐在員事務所を開設しました。",
+      "significance": "ベトナム拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ファーストブレインがアーバンエココンサルティングを吸収合併",
+      "description": "2025年10月、㈱ファーストブレインがアーバンエココンサルティング㈱を吸収合併しました（現 連結子会社、㈱フジテレコムズの100％出資）。",
+      "significance": "グループ内再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-electric",
+      "relationship": "supplier",
+      "description": "主要な仕入先です。1926年に三菱商事大阪支店と三菱電機製品の京都地区元扱店契約を締結し、1944年に三菱電機と特約店（現在の代理店）契約を締結しました。現在も回転機、配電・制御、駆動制御、コントローラ、レーザー加工機・放電加工機・産業用ロボットなどの販売代理店契約・販売特約店契約を結んでいます。また、同社は2026年3月31日現在、当社の発行済株式の14.60％を保有する筆頭株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "omron",
+      "relationship": "supplier",
+      "description": "主要な仕入先です。1961年に特約店契約を締結し、現在も電子部品の販売店契約を結んでいます。特定投資株式の保有目的にも、同社は当社の主要取引先であり販売店契約を締結している旨が印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tachibana-eletech",
+      "relationship": "business-partner",
+      "description": "当社の主要取引先であり、2026年3月31日現在、当社の発行済株式の6.61％を保有する大株主でもあります。取引の向きが印字されていないため、種類は business-partner としました。当社は同社の株式459,740株を、取引関係の維持及び強化を目的として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "chuo-warehouse",
+      "relationship": "supplier",
+      "description": "商品の保管を委託している倉庫会社です。特定投資株式の保有目的に、同社は当社商品の保管を依頼しているメインの倉庫会社である旨が印字されています。当社は同社の株式379,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kddi",
+      "relationship": "business-partner",
+      "description": "連結子会社の㈱フジテレコムズが、移動電話サービス加入に関する業務委託並びに移動電話端末機及びその関連商品の売買の契約を、2001年4月から結んでいる相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "juki",
+      "relationship": "supplier",
+      "description": "連結子会社のLe Champ（South East Asia）Pte Ltdが、産業装置の販売店契約を2016年7月から結んでいる仕入先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "kyoto-financial-group",
+      "relationship": "major-shareholder",
+      "description": "当社の大株主です。特定投資株式の保有目的に、同社は当社の大株主である旨が印字されています。同社の完全子会社である㈱京都銀行が、2026年3月31日現在、当社の発行済株式の2.67％を保有しています。当社は同社の株式49,600株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-shiga-bank",
+      "relationship": "major-shareholder",
+      "description": "当社の大株主です。2026年3月31日現在、当社の発行済株式の1.48％を保有しており、特定投資株式の保有目的にも、同行は当社の大株主である旨が印字されています。当社は同行の株式9,050株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "screen-holdings",
+      "relationship": "business-partner",
+      "description": "当社の主要取引先です。取引の向きが印字されていないため、種類は business-partner としました。2026年3月31日現在、同社の株式45,096株を、取引関係の維持及び強化を目的として保有している旨が、特定投資株式に銘柄ごとに印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-shinyaku",
+      "relationship": "business-partner",
+      "description": "当社の主要取引先です。取引の向きが印字されていないため、種類は business-partner としました。2026年3月31日現在、同社の株式156,000株を、取引関係の維持及び強化を目的として保有している旨が、特定投資株式に銘柄ごとに印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-heavy-industries",
+      "relationship": "business-partner",
+      "description": "当社の主要取引先です。取引の向きが印字されていないため、種類は business-partner としました。2026年3月31日現在、同社の株式145,123株を、取引関係の維持及び強化を目的として保有している旨が、特定投資株式に銘柄ごとに印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nidec",
+      "relationship": "business-partner",
+      "description": "当社の主要取引先です。取引の向きが印字されていないため、種類は business-partner としました。2026年3月31日現在、同社の株式236,752株を、取引関係の維持及び強化を目的として保有している旨が、特定投資株式に銘柄ごとに印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shimadzu",
+      "relationship": "business-partner",
+      "description": "当社の主要取引先です。取引の向きが印字されていないため、種類は business-partner としました。2026年3月31日現在、同社の株式79,487株を、取引関係の維持及び強化を目的として保有している旨が、特定投資株式に銘柄ごとに印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-electric-industries",
+      "relationship": "business-partner",
+      "description": "当社の主要取引先です。取引の向きが印字されていないため、種類は business-partner としました。2026年3月31日現在、同社の株式14,121株を、取引関係の維持及び強化を目的として保有している旨が、特定投資株式に銘柄ごとに印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-electric-glass",
+      "relationship": "business-partner",
+      "description": "当社の主要取引先です。取引の向きが印字されていないため、種類は business-partner としました。2026年3月31日現在、同社の株式16,814株を、取引関係の維持及び強化を目的として保有している旨が、特定投資株式に銘柄ごとに印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-motors",
+      "relationship": "business-partner",
+      "description": "当社の主要取引先です。取引の向きが印字されていないため、種類は business-partner としました。2026年3月31日現在、同社の株式140,979株を、取引関係の維持及び強化を目的として保有している旨が、特定投資株式に銘柄ごとに印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "rohm",
+      "relationship": "business-partner",
+      "description": "当社の主要取引先です。取引の向きが印字されていないため、種類は business-partner としました。2026年3月31日現在、同社の株式8,364株を、取引関係の維持及び強化を目的として保有している旨が、特定投資株式に銘柄ごとに印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nittoseiko",
+      "relationship": "business-partner",
+      "description": "当社の主要取引先です。取引の向きが印字されていないため、種類は business-partner としました。2026年3月31日現在、同社の株式26,361株を、取引関係の維持及び強化を目的として保有している旨が、特定投資株式に銘柄ごとに印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shizuki-electric",
+      "relationship": "business-partner",
+      "description": "当社の主要取引先です。取引の向きが印字されていないため、種類は business-partner としました。2026年3月31日現在、同社の株式21,358株を、取引関係の維持及び強化を目的として保有している旨が、特定投資株式に銘柄ごとに印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "zuiko",
+      "relationship": "business-partner",
+      "description": "当社の主要取引先です。取引の向きが印字されていないため、種類は business-partner としました。2026年3月31日現在、同社の株式12,800株を、取引関係の維持及び強化を目的として保有している旨が、特定投資株式に銘柄ごとに印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +903,47 @@
       "publisher": "株式会社たけびし",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHGY.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YHGY",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念として「人と人、技術と技術を信頼で結び、輝く未来を創造する」を掲げ、進化する技術と最良の品質を提供する「トータルソリューション技術商社」を目指しています。2026年度を最終年度とする4ヵ年の中期経営計画『Ｔ-Ｌｉｎｋ１３６９』では、ＦＡ機器等の基幹ビジネスの更なる拡大に加え、「グローバル」「メディカル」「オートメーション」「オリジナル」の4つの成長戦略の更なる進化や、「モビリティ」「マテリアル」「エネルギーソリューション」「ＤＸ推進」等のビジネス領域拡大にも注力し、「ＮＥＷビジネスの創造」に取り組むとしています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "三菱電機の販売代理店として、1926年の元扱店契約以来続く取引基盤を持ち、回転機、配電・制御、駆動制御、コントローラ、レーザー加工機・放電加工機・産業用ロボットなど幅広い製品の販売代理店契約・販売特約店契約を結んでいます。汎用的な商品の仕入販売にとどまらず、設置工事・現地調整やシステム連携作業などの据付工事等を伴う販売取引が連結売上高の2割程度を占め、機器と工事・サービスを一体で提供する体制を持っています。海外では、シンガポールのLe Champ（South East Asia）Pte Ltdの売上高が連結売上高の10％を超えるなど、アジアを中心に販売拠点を展開しています。",
+        "basis": "【重要な契約等】の三菱電機との販売代理店契約等、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の据付工事等を伴う販売取引の検討内容、【関係会社の状況】のLe Champ（South East Asia）Pte Ltdに関する記載によります。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の外部顧客への売上高は、ＦＡ・デバイス事業が77,634百万円と連結売上高の約7割を占め、社会・情報通信事業が32,228百万円です。分野別では産業機器システムが39,578百万円、半導体・デバイスが38,056百万円、社会インフラが22,942百万円、情報通信が9,285百万円です。地域別では日本が86,828百万円、シンガポールが17,628百万円、その他アジアが5,327百万円、その他が79百万円です。売上高の10％以上を占める顧客はありません。",
+        "basis": "セグメント注記の外部顧客への売上高、経営者による分析の販売実績、関連情報の地域ごとの情報、主要な顧客ごとの情報",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

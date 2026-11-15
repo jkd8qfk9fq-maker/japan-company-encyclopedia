@@ -4,15 +4,169 @@
   "name": "鈴木",
   "officialName": "株式会社鈴木",
   "nameEn": "SUZUKI CO.,LTD.",
-  "description": null,
+  "shortNameEn": "SUZUKI CO., LTD.",
+  "description": "精密金型を基盤に、コネクタ部品や自動車電装部品、車載・半導体関連装置などを製造・販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    },
+    {
+      "industryId": "machinery"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "parts",
+      "name": "部品事業",
+      "description": "コネクタコンタクト、コネクタハウジング、自動車電装部品を製造・販売する事業です。当社と子会社のS&Sコンポーネンツ株式会社、鈴木東新電子（中山）有限公司、PT.SUGINDO INTERNATIONALが製造・販売し、鈴木東新電子（香港）有限公司が販売しています。2026年6月期の外部顧客への売上高は319億5百万円です。",
+      "products": [
+        "コネクタコンタクト",
+        "コネクタハウジング",
+        "自動車電装部品"
+      ],
+      "customers": [
+        "電子機器メーカー",
+        "自動車電装メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "machinery-appliances",
+      "name": "機械器具事業",
+      "description": "車載関連装置、半導体関連装置、専用機の製造・販売と、医療器具の組立を行う事業です。当社と子会社のS&Sアドバンストテクノロジーズ株式会社、エスメディカル株式会社が製造・販売しています。2026年6月期の外部顧客への売上高は70億4千9百万円です。",
+      "products": [
+        "車載関連装置",
+        "半導体関連装置",
+        "専用機",
+        "医療器具"
+      ],
+      "customers": [
+        "自動車関連メーカー",
+        "半導体関連メーカー",
+        "医療機器メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "dies-and-molds",
+      "name": "金型事業",
+      "description": "精密プレス金型と精密モールド金型を製造・販売する事業です。当社が製造・販売するほか、鈴木東新電子（中山）有限公司が製造・販売し、鈴木東新電子（香港）有限公司が販売しています。2026年6月期の外部顧客への売上高は14億8千2百万円です。",
+      "products": [
+        "精密プレス金型",
+        "精密モールド金型"
+      ],
+      "customers": [
+        "電子機器メーカー",
+        "自動車電装メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "rental",
+      "name": "賃貸事業",
+      "description": "当社が行う賃貸事業と売電事業です。2026年6月期の外部顧客への売上高は7百万円です。",
+      "products": [
+        "賃貸物件",
+        "電力"
+      ],
+      "customers": [
+        "賃貸物件の借り手",
+        "電力の購入者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社で金型をつくり、その技術でコネクタ部品などを量産し、専用装置や医療器具の組立まで手がける事業モデルです。",
+    "products": [
+      "精密プレス金型",
+      "精密モールド金型",
+      "コネクタコンタクト",
+      "コネクタハウジング",
+      "自動車電装部品",
+      "車載関連装置",
+      "半導体関連装置",
+      "専用機",
+      "医療器具"
+    ],
+    "customers": [
+      "電子機器メーカー",
+      "自動車電装メーカー",
+      "自動車関連メーカー",
+      "医療機器メーカー"
+    ],
+    "revenueSources": [
+      "部品の販売による売上高",
+      "機械器具の販売による売上高",
+      "金型の販売による売上高",
+      "賃貸・売電による売上高"
+    ],
+    "suppliers": [
+      {
+        "name": "伸銅製品等の原材料の仕入先",
+        "description": "部品事業の主な原材料である伸銅製品をはじめ、原材料及び仕入部材を仕入れています。",
+        "businessIds": [
+          "parts"
+        ]
+      },
+      {
+        "name": "めっき加工の委託先",
+        "description": "電子部品のめっき加工を委託しています。",
+        "businessIds": [
+          "parts"
+        ]
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "長野県須坂市に本社を置く鈴木と子会社6社",
+        "description": "株式会社鈴木は長野県須坂市に本店を置き、子会社6社とグループを構成しています。連結の従業員数は1,127人です（2026年6月30日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "金型から部品、装置までの一貫したものづくり",
+        "description": "精密プレス金型や精密モールド金型をつくり、その技術でコネクタコンタクトなどの部品を量産し、車載関連装置や半導体関連装置、専用機、医療器具の組立まで手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "電子機器や自動車、医療などの顧客",
+        "description": "製品は電子機器向けや自動車電装向けを中心に使われ、主要な顧客には住友電装株式会社やテルモ株式会社などがあります。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は404億4千5百万円",
+        "description": "2026年6月期の連結売上高は404億4千5百万円で、前期比21.4％増となりました。部品が319億5百万円、機械器具が70億4千9百万円、金型が14億8千2百万円、賃貸が7百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は37億4千9百万円",
+        "description": "2026年6月期の親会社株主に帰属する当期純利益は37億4千9百万円で、前期比35.8％増となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,7 +181,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21714864000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1086,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23552026000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1073,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +221,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26064677000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1085,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +241,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27901814000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1091,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +261,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 33165766000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1127,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +269,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第57期(2025/07/01－2026/06/30)",
-      "publisher": "株式会社鈴木",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z35F.pdf",
-      "publishedAt": "2026-09-24",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",
@@ -142,5 +280,461 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1933,
+      "title": "鈴木製作所の創業",
+      "description": "鈴木和夫が独立して鈴木製作所を創業し、鉱石ラジオの部品用金型を主体に製作を開始しました。",
+      "significance": "実質上の存続会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1945,
+      "title": "合資会社鈴木製作所への組織変更",
+      "description": "富士通須坂工場の設立に伴い長野県飯山市へ戦争疎開し、合資会社鈴木製作所に組織変更しました。",
+      "significance": "合資会社としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "コネクタコンタクトの順送型への着手",
+      "description": "コネクタコンタクトの順送型に着手しました。",
+      "significance": "主力となるコネクタ部品づくりの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "本社工場の新築移転",
+      "description": "長野県須坂市旭ヶ丘工業団地に本社工場を新築し、移転しました。",
+      "significance": "須坂市を拠点とする体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "プレス加工専門工場の稼働",
+      "description": "旭ヶ丘工業団地にプレス加工工場を建設し、プレス加工専門工場として加工を開始しました。",
+      "significance": "プレス加工の専門工場が動き出しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "台湾に合弁会社を設立",
+      "description": "台湾に合弁会社金利精密工業股份有限公司を設立しました。",
+      "significance": "初の海外合弁会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "株式会社スズキ精機の設立",
+      "description": "株式会社スズキ精機を設立し、金型用パンチの専用研削機や各種自動連続圧着機の製造を開始しました。",
+      "significance": "形式上の存続会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "合併と株式会社鈴木への商号変更",
+      "description": "経営の効率化のため、株式会社スズキ精機が合資会社鈴木製作所を吸収合併し、同日付で商号を株式会社鈴木に変更しました。",
+      "significance": "現在の商号になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "円筒研削盤PMG-3の販売開始",
+      "description": "金型用パンチの専用研削機として、円筒研削盤PMG-3の販売を開始しました。",
+      "significance": "金型用機械の製品化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "全自動圧着機の製造販売開始",
+      "description": "全自動圧着機の製造販売を開始しました。",
+      "significance": "自動機器事業の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "リードフレーム加工用金型の製作",
+      "description": "当社として最初のリードフレーム加工用の金型として、DIPタイプ16ピンの金型を製作しました。",
+      "significance": "半導体関連の金型への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "電子部品装着装置SMT-85の販売開始",
+      "description": "電子部品の装着装置であるSMT-85が完成し、販売を開始しました。",
+      "significance": "電子部品向け装置の製品化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "ディプレスカットマシンの製造販売開始",
+      "description": "リードフレームの後加工用機械であるディプレスカットマシンの製造販売を開始しました。",
+      "significance": "リードフレーム後加工機械への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "精密モールド金型の製造販売開始",
+      "description": "新分野への進出として、精密モールド金型の製造販売を開始しました。",
+      "significance": "金型事業がモールド金型へ広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "高速接着剤塗布機SS-ADの製造販売開始",
+      "description": "電子基板の指定位置に接着剤を塗布する高速接着剤塗布機SS-ADの製造販売を開始しました。",
+      "significance": "電子基板向け装置の製品化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "第1期本社新工場の完成",
+      "description": "金型製作及び自動機器の組立工場として、長野県須坂市に第1期本社新工場が完成しました。",
+      "significance": "本社工場の拡張です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "コネクタ工場のISO9002認証取得",
+      "description": "コネクタ工場がISO9002の認証を取得しました。",
+      "significance": "品質マネジメントの認証取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "第2期本社新工場の完成",
+      "description": "金型製作及びプレス加工工場として、長野県須坂市に第2期本社新工場が完成しました。",
+      "significance": "本社工場のさらなる拡張です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "株式の店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所への上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "日滝原工場の完成",
+      "description": "プレス加工工場として、長野県須坂市に日滝原工場が完成しました。",
+      "significance": "須坂市の主要生産拠点の新設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "S&Sコンポーネンツ株式会社の設立",
+      "description": "長野県須坂市の日滝原工場内に、住友電装株式会社との合弁会社S&Sコンポーネンツ株式会社を設立しました。",
+      "significance": "自動車電装部品を担う合弁子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "鈴木東新電子（香港）有限公司の設立",
+      "description": "香港に、東新工業株式会社との合弁会社鈴木東新電子（香港）有限公司を設立しました。",
+      "significance": "中国での販売拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "鈴木東新電子（中山）有限公司の設立",
+      "description": "中国広東省中山市に、東新工業株式会社との合弁会社鈴木東新電子（中山）有限公司を設立しました。",
+      "significance": "中国での製造・販売拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "大阪証券取引所JASDAQへの上場",
+      "description": "ジャスダック証券取引所と大阪証券取引所の合併に伴い、大阪証券取引所JASDAQに上場しました。",
+      "significance": "取引所合併に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "東証への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "医療機器組立工場の増築",
+      "description": "長野県須坂市に医療機器組立工場を増築しました。",
+      "significance": "医療器具の組立体制の拡張です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "PT.SUGINDO INTERNATIONALの設立",
+      "description": "インドネシア西ジャワ州に、PT.SUGINDO INTERNATIONALを設立しました。",
+      "significance": "インドネシアでの製造・販売拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "東京証券取引所市場第一部への上場",
+      "description": "東京証券取引所市場第一部に上場しました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "PT.GLOBAL TEKNINDO BERKATAMAの子会社化",
+      "description": "インドネシアのPT.GLOBAL TEKNINDO BERKATAMAを子会社化しました。同社は2022年にPT.SUGINDO INTERNATIONALへ吸収合併されています。",
+      "significance": "インドネシア事業の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "S&Sアドバンストテクノロジーズ株式会社の設立",
+      "description": "長野県須坂市の生産システム工場内に、住友電装株式会社との合弁会社S&Sアドバンストテクノロジーズ株式会社を設立しました。",
+      "significance": "機械器具を担う合弁子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "日滝原第二工場の増設",
+      "description": "日滝原工場に日滝原第二工場を増設しました。",
+      "significance": "部品生産体制の拡張です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "エスメディカル株式会社の設立",
+      "description": "子会社エスメディカル株式会社を設立し、医療器具組立事業を譲渡しました。",
+      "significance": "医療器具組立事業の分社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "須坂インター工場の新設",
+      "description": "長野県須坂市に須坂インター工場を新設しました。",
+      "significance": "半導体関連装置の生産拠点の新設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "IATF16949の認証取得",
+      "description": "IATF16949の認証を取得しました。",
+      "significance": "自動車関連の品質体制に関する認証の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "terumo",
+      "relationship": "customer",
+      "description": "テルモ株式会社は、当社グループの主要な顧客です。部品と機械器具の各セグメントに関連する顧客として、主要な顧客ごとの情報に載っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第57期(2025/07/01－2026/06/30)",
+      "publisher": "株式会社鈴木",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z35F.pdf",
+      "publishedAt": "2026-09-24",
+      "docId": "S100Z35F",
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念に「不への挑戦」を掲げ、長年の経験で培った金型技術を基盤に、徹底した精度の追求と高い技術力に基づく製品の提供に取り組んでいます。中長期の戦略では、独自の技術融合と革新的な生産合理化の提案による成長や新製品の事業化、市況の影響が少ない事業への参入などを掲げ、具体的な成長戦略として自動車部品事業の拡大、医療組立事業の拡大、自動機器事業の拡大を重点としています。",
+        "asOf": "2026-09-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年6月期は、部品でスマートフォン関連部品や半導体関連部品の需要が増え、産業機器向けも回復基調となったことなどから、連結売上高は404億4千5百万円と前期比21.4％増えました。機械器具も計画どおりに推移したとされています。",
+        "basis": "MD&Aの経営成績の概要とセグメントごとの業績の記述に基づく。",
+        "asOf": "2026-09-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、精密金型の技術を基盤に、部品の量産技術と専用装置づくりをグループ内で組み合わせられる点にあります。金型、部品、機械器具の3事業を持ち、一貫生産体制が強みと位置づけられています。研究開発では、金型の高機能絞り部品や微細ピン部品の技術、部品のめっき加工技術、機械器具のディスペンサー装置やロボットの開発に取り組んでいます。",
+        "basis": "経営方針の金型技術に関する記述、事業の内容の事業構成、サステナビリティに関する考え方及び取組の一貫生産体制の記述、研究開発活動に基づく。",
+        "asOf": "2026-09-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "外部顧客への売上高は、部品が319億5百万円と最も大きく、機械器具が70億4千9百万円、金型が14億8千2百万円、賃貸が7百万円です。地域別では日本が26,578百万円、中国が8,509百万円、タイが4,111百万円、その他が1,246百万円です。主要な顧客は住友電装株式会社、Fujikura Conec (THAILAND)LTD.、テルモ株式会社で、住友電装株式会社への売上高は総売上高の23.99％を占めています。",
+        "basis": "セグメント情報の外部顧客への売上高、関連情報の地域ごとの情報と主要な顧客ごとの情報、MD&Aの相手先別販売実績に基づく。",
+        "asOf": "2026-09-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
+  "segmentRevenue": {
+    "fiscalYear": "2026年6月期",
+    "periodEnd": "2026-06-30",
+    "label": "外部顧客への売上高",
+    "items": [
+      {
+        "businessId": "dies-and-molds",
+        "amount": 1482168000
+      },
+      {
+        "businessId": "parts",
+        "amount": 31905941000
+      },
+      {
+        "businessId": "machinery-appliances",
+        "amount": 7049708000
+      },
+      {
+        "businessId": "rental",
+        "amount": 7958000
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【セグメント情報】"
   }
 }

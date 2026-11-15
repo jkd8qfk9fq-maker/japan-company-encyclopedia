@@ -4,15 +4,120 @@
   "name": "愛媛銀行",
   "officialName": "株式会社愛媛銀行",
   "nameEn": "The Ehime Bank, Ltd.",
-  "description": null,
+  "shortNameEn": "Ehime Bank",
+  "description": "愛媛県松山市に本店を置く地方銀行で、銀行業を中心に、リース業務などの金融サービスに係る事業を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "banking",
+      "name": "銀行業",
+      "description": "当行本体が本店ほか支店98店、出張所12店で営む銀行業務で、預金業務、貸出業務、内国為替業務、外国為替業務などを行っており、ひめぎんグループの中核業務と位置づけられています。2026年3月期の外部顧客に対する経常収益は62,764百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "lending",
+          "name": "貸出業務",
+          "description": "地域のお客さまへの貸出を行う業務で、2026年3月期のサービスごとの外部顧客に対する経常収益は32,303百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "securities-investment",
+          "name": "有価証券投資業務",
+          "description": "有価証券への投資・運用を行う業務で、2026年3月期のサービスごとの外部顧客に対する経常収益は22,238百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    },
+    {
+      "id": "leasing",
+      "name": "リース業",
+      "description": "連結子会社のひめぎんリース株式会社が営むリース業務等です。2026年3月期の外部顧客に対する経常収益は3,678百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-financial-services",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業で、連結子会社がコンピュータ関連業務、クレジットカード業務、保証業務、シップファイナンスの高度化支援業務を行っています。2026年3月期の外部顧客に対する経常収益は2,075百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "預金で集めた資金を貸出金や有価証券で運用し、為替などの手数料収益やリースなどのグループ会社の収益もあわせて得る、地域密着型の金融機関の事業モデルです。",
+    "products": [
+      "預金",
+      "貸出金",
+      "内国為替・外国為替",
+      "クレジットカード",
+      "リース"
+    ],
+    "customers": [
+      "愛媛県を中心とする個人のお客さま",
+      "中小企業などの法人のお客さま",
+      "地方公共団体"
+    ],
+    "revenueSources": [
+      "貸出業務から得る収益",
+      "有価証券の投資・運用から得る収益",
+      "リース業務から得る収益",
+      "為替業務などの役務取引から得る収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当行と連結子会社５社のグループ",
+        "description": "当行、連結子会社５社、持分法適用の非連結子会社７社でグループを構成し、連結の従業員数は1,350人です（2026年３月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "銀行業を中心にリースなども展開",
+        "description": "当行本体が本店ほか支店98店、出張所12店で預金、貸出、内国為替、外国為替などの銀行業務を行い、連結子会社がリース業務やクレジットカード業務、保証業務、コンピュータ関連業務を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "愛媛県を地盤とする個人と法人がお客さま",
+        "description": "愛媛県を主な営業基盤とし、個人のお客さまと中小企業などの法人のお客さまに金融サービスを提供しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "連結経常収益は68,517百万円",
+        "description": "2026年３月期の連結経常収益は68,517百万円で、前連結会計年度の66,146百万円から増加しました。銀行業の外部顧客に対する経常収益は62,764百万円、リース業は3,678百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は7,212百万円",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は7,212百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +132,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 134907000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1374,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +152,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 127779000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1346,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +172,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 137420000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1342,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +192,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 135716000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1340,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +212,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 144419000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1350,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +220,156 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1915,
+      "title": "無尽会社として創業",
+      "description": "1915年、東豫無尽蓄積株式会社が設立されました。",
+      "significance": "現在の当行の源流となる創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "愛媛県内の無尽会社５社が合併し愛媛無尽株式会社を設立",
+      "description": "1943年３月、愛媛県内の無尽会社５社が合併し、愛媛無尽株式会社が設立されました。",
+      "significance": "県内の無尽会社が一つにまとまり、地域金融機関としての土台ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "相互銀行に転換し愛媛相互銀行となる",
+      "description": "1951年10月、相互銀行に転換し、株式会社愛媛相互銀行に商号を変更しました。",
+      "significance": "庶民金融を担う相互銀行としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "大阪証券取引所市場第２部に上場",
+      "description": "1971年４月、株式を大阪証券取引所市場第２部に上場しました。",
+      "significance": "上場会社となり、株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "外国為替公認銀行の認可を取得",
+      "description": "1975年３月、外国為替公認銀行の認可を取得しました。",
+      "significance": "国際業務への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "東京証券取引所市場第１部に上場",
+      "description": "1985年12月、株式を東京証券取引所市場第１部に上場しました。",
+      "significance": "東京証券取引所にも上場し、全国的な金融機関としての基盤を固めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "普通銀行に転換し愛媛銀行となる",
+      "description": "1989年２月、普通銀行に転換し、株式会社愛媛銀行に商号を変更しました。",
+      "significance": "現在の社名と普通銀行としての体制がここから始まります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "北温信用組合と合併",
+      "description": "2000年10月、北温信用組合と合併しました。",
+      "significance": "愛媛県内の地域金融機関としての営業基盤が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "山口フィナンシャルグループと業務提携を締結",
+      "description": "2020年１月、株式会社山口フィナンシャルグループとの業務提携（名称：西瀬戸パートナーシップ協定）を締結しました。",
+      "significance": "瀬戸内地域の金融グループ同士の提携が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "2022年４月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の市場区分での上場が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "個人向けデジタルブランチ「HandyBank支店」を開設",
+      "description": "2025年３月、個人向けデジタルブランチ「HandyBank支店」を開設しました。",
+      "significance": "店舗を持たないデジタルチャネルでの個人向けサービスを広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "yamaguchi-financial-group",
+      "relationship": "business-partner",
+      "description": "株式会社山口フィナンシャルグループとは、2020年１月に業務提携（名称：西瀬戸パートナーシップ協定）を締結しており、業務提携等の関係があります。当行は2026年３月31日現在、同社の株式825,440株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nec",
+      "relationship": "supplier",
+      "description": "日本電気株式会社は、当行の基幹システムを含む各種システムの開発・運用を委託している仕入先です。当行は2026年３月31日現在、同社の株式335,275株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "seki",
+      "relationship": "business-partner",
+      "description": "セキ株式会社とは、共同出資により地域商社を設立しており、業務提携等の関係があります。当行は2026年３月31日現在、同社の株式164,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daio-paper",
+      "relationship": "major-shareholder",
+      "description": "大王製紙株式会社は、2026年３月31日現在、当行の株式750千株（発行済株式（自己株式を除く。）の総数に対する所有株式数の割合1.91％）を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +377,47 @@
       "publisher": "株式会社愛媛銀行",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YENS.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YENS",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念として「ふるさとの発展に役立つ銀行」「たくましく発展する銀行」「働きがいのある銀行」を掲げ、2024年４月から３年間の第18次中期経営計画「変革への挑戦3rd stage」を進めています。基本方針は、「金融プラス１」収益力の強化、強固な経営基盤の確立、サステナビリティ経営の実践の３つで、「お客さまに寄り添い 地域の発展に貢献する」ことを目指すとしています。計画の目標数値は将来に関する事項のため、ここには転記していません。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "本店のある愛媛県内に支店98店と出張所12店の店舗網を持ち、中小企業向け貸出を中心に積極的な貸出に努めていると説明しています。預金・譲渡性預金と貸出金はいずれも前連結会計年度末から残高を伸ばしています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年３月期の連結経常収益68,517百万円の内訳は、外部顧客に対する経常収益で銀行業が62,764百万円、リース業が3,678百万円、報告セグメントに含まれないその他が2,075百万円です。サービスごとでは貸出業務が32,303百万円、有価証券投資業務が22,238百万円、その他が13,975百万円となっています。本邦の外部顧客に対する経常収益が全体の90％を超えるため地域ごとの情報は省略されており、経常収益の10％以上を占める主要な顧客もありません。",
+        "basis": "セグメント情報等の報告セグメントごとの外部顧客に対する経常収益と、関連情報のサービスごとの情報、地域ごとの情報、主要な顧客ごとの情報に基づきます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

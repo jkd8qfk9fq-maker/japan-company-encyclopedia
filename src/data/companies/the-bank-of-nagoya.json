@@ -4,7 +4,8 @@
   "name": "名古屋銀行",
   "officialName": "株式会社　名古屋銀行",
   "nameEn": "The Bank of Nagoya, Ltd.",
-  "description": null,
+  "shortNameEn": "The Bank of Nagoya",
+  "description": "愛知県名古屋市に本店を置く地方銀行で、預金や貸出などの銀行業務を中心に、リースやクレジットカードなどの金融サービスをグループで提供しています。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,8 +16,126 @@
       "market": "プレミア"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "banking",
+      "name": "銀行業務",
+      "description": "当行の本店ほか支店等（本支店112店、出張所１店、海外支店１店）において、預金業務、貸出業務、内国為替業務、外国為替業務、有価証券投資業務、商品有価証券売買業務、社債受託及び登録業務、信託業務などを行っています。2026年３月期の外部顧客に対する経常収益は96,049百万円で、グループの中心となる事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "lending",
+          "name": "貸出業務",
+          "description": "企業や個人のお客さまへの貸出を行う業務です。2026年３月期の外部顧客に対する経常収益は45,021百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "securities-investment",
+          "name": "有価証券投資業務",
+          "description": "国債や地方債、社債、株式などの有価証券への投資から収益を得る業務です。2026年３月期の外部顧客に対する経常収益は29,997百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "leasing",
+      "name": "リース業務",
+      "description": "連結子会社の株式会社名古屋リースが、総合ファイナンスリース業を行っています。2026年３月期の外部顧客に対する経常収益は22,935百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "card",
+      "name": "カード業務",
+      "description": "連結子会社の株式会社名古屋カードがクレジットカード業と信用保証業務を、株式会社名古屋エム・シーカードがクレジットカード業を行っています。2026年３月期の外部顧客に対する経常収益は2,268百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他業務",
+      "description": "報告セグメントに含まれない事業区分です。名古屋ビジネスサービス株式会社が伝票類の保管業務や事務受託を、株式会社名古屋キャピタルパートナーズが投資事業有限責任組合の組成・管理業務を、株式会社ナイスが医療システム事業とＩＣＴ支援事業を行っています。2026年３月期の外部顧客に対する経常収益は3,253百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "愛知県を地盤に、銀行業務を中心としてリース業務やカード業務などをグループで営み、預金で集めた資金を貸出や有価証券投資で運用する事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "預金",
+      "貸出",
+      "内国為替",
+      "外国為替",
+      "有価証券投資",
+      "信託",
+      "リース",
+      "クレジットカード",
+      "信用保証"
+    ],
+    "customers": [
+      "愛知県を中心とする地域の法人のお客さま",
+      "地域の中小企業",
+      "個人のお客さま"
+    ],
+    "revenueSources": [
+      "貸出金の利息",
+      "有価証券の利息配当金",
+      "役務取引等の手数料",
+      "リース料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "名古屋銀行グループ",
+        "description": "名古屋市中区に本店を置く銀行で、当行と連結子会社６社でグループを構成しています。2026年３月期の連結の従業員数は1,926人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "銀行業務を中心とした金融サービス",
+        "description": "預金や貸出、為替、有価証券投資、信託などの銀行業務を中心に、リースやクレジットカード、投資事業有限責任組合の組成・管理などの金融サービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "愛知県を中心とする地域のお客さま",
+        "description": "愛知県を主な営業地盤として、本支店112店と出張所１店、中国・南通市の海外支店１店の店舗網を通じ、法人のお客さまと個人のお客さまに利用されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "利息と手数料による経常収益",
+        "description": "貸出金の利息や有価証券の利息配当金などの資金運用収益と、手数料などの役務取引等収益が主な収入です。2026年３月期の連結経常収益は124,456百万円で、貸出金利息及び有価証券利息配当金等が増加したことなどにより、前連結会計年度に比べて21,668百万円増加しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益の確保",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は20,269百万円で、前連結会計年度に比べて5,538百万円増加しました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +150,7 @@
       "totalAssetsLabel": "連結総資産",
       "netAssets": 257697000000,
       "netAssetsLabel": "連結純資産",
-      "employees": null,
+      "employees": 2027,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +170,7 @@
       "totalAssetsLabel": "連結総資産",
       "netAssets": 245329000000,
       "netAssetsLabel": "連結純資産",
-      "employees": null,
+      "employees": 1996,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +190,7 @@
       "totalAssetsLabel": "連結総資産",
       "netAssets": 303349000000,
       "netAssetsLabel": "連結純資産",
-      "employees": null,
+      "employees": 1940,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +210,7 @@
       "totalAssetsLabel": "連結総資産",
       "netAssets": 276531000000,
       "netAssetsLabel": "連結純資産",
-      "employees": null,
+      "employees": 1924,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +230,7 @@
       "totalAssetsLabel": "連結総資産",
       "netAssets": 313890000000,
       "netAssetsLabel": "連結純資産",
-      "employees": null,
+      "employees": 1926,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +238,247 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1949,
+      "title": "共和殖産株式会社の設立",
+      "description": "岡崎市に共和殖産株式会社が設立されました。",
+      "significance": "名古屋銀行の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "無尽会社への転換",
+      "description": "本店を名古屋市へ移し、商号を名古屋殖産無尽株式会社に変更して無尽業を始めました。",
+      "significance": "金融業としての歩みの本格化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "相互銀行への転換",
+      "description": "相互銀行の営業免許を受け、株式会社名古屋相互銀行に商号を変更しました。",
+      "significance": "相互銀行として地域の中小企業金融を担う形になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "名古屋証券取引所への上場",
+      "description": "当行株式が名古屋証券取引所市場第二部に上場しました。1963年８月には市場第一部に上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "信用組合との合併",
+      "description": "中央信用組合と合併しました。その後も1970年に豊橋市民信用組合、1971年に尾北商工信用組合、1972年に大野町信用組合と合併しました。",
+      "significance": "地域の信用組合を統合して営業基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "預金全店オンラインシステムの完成",
+      "description": "預金の全店オンラインシステムが完成しました。",
+      "significance": "営業店事務のオンライン化の転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "外国為替業務の取扱開始",
+      "description": "外国為替業務の取扱いを開始しました。",
+      "significance": "国際業務への取組みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "東京証券取引所への上場",
+      "description": "当行株式が東京証券取引所市場第一部に上場しました。",
+      "significance": "全国市場での株式公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "普通銀行への転換と名古屋銀行への商号変更",
+      "description": "普通銀行に転換し、商号を株式会社名古屋銀行に変更しました。",
+      "significance": "現在の社名と銀行の形態になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "信託代理店業務の開始",
+      "description": "信託代理店業務を開始しました。",
+      "significance": "信託分野への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "上海駐在員事務所の開設",
+      "description": "中国・上海市に上海駐在員事務所を開設しました。なお、同事務所は2023年10月に廃止しました。",
+      "significance": "中国への拠点設置です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "証券投資信託の窓口販売開始",
+      "description": "証券投資信託の窓口販売業務を開始しました。その後、2001年に損害保険、2002年に生命保険の窓口販売も始めました。",
+      "significance": "窓口販売による取扱商品の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "十六銀行との店舗の譲渡・譲受",
+      "description": "十六銀行へ岐阜県内３か店の営業を譲渡し、同行から愛知県内４か店の営業を譲り受けました。",
+      "significance": "愛知県への店舗網の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "名銀コンピューター・サービスの吸収合併",
+      "description": "株式会社名銀コンピューター・サービスを吸収合併しました。",
+      "significance": "システム子会社の統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "富山第一銀行名古屋支店の事業譲受け",
+      "description": "富山第一銀行の名古屋支店の事業を譲り受けました。",
+      "significance": "名古屋市内での営業基盤の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "中国・南通支店の開設",
+      "description": "中国・南通市に南通支店を開設しました。",
+      "significance": "海外支店の設置です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "名銀不動産調査の吸収合併",
+      "description": "名銀不動産調査株式会社を吸収合併しました。",
+      "significance": "グループ会社の整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "名古屋キャピタルパートナーズの設立",
+      "description": "株式会社名古屋キャピタルパートナーズを設立しました。",
+      "significance": "投資事業有限責任組合の組成・管理を行う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "信託業務の開始",
+      "description": "信託業務を開始しました。あわせて、株式会社ナイスの全株式を取得し、連結子会社にしました。",
+      "significance": "自行での信託業務の開始と、医療システム・ＩＣＴ支援事業の取り込みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場・プレミア市場への移行",
+      "description": "東京証券取引所プライム市場と名古屋証券取引所プレミア市場に移行しました。",
+      "significance": "取引所の市場再編への対応です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "しずおかフィナンシャルグループとの経営統合に向けた基本合意",
+      "description": "株式会社しずおかフィナンシャルグループと、経営統合に向けて誠実かつ独占的に協議、検討を進めることについて基本合意書を締結しました。",
+      "significance": "統合の方式や時期は今後の協議で決まります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "shizuoka-financial-group",
+      "relationship": "business-partner",
+      "description": "包括業務提携「静岡・名古屋アライアンス」を通じて協力関係にあり、2026年３月27日には、経営統合に向けて誠実かつ独占的に協議、検討を進めていくことについて基本合意書を締結しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "aichi-financial-group",
+      "relationship": "business-partner",
+      "description": "現金自動設備の相互利用による現金自動引出し・入金のサービスなど、総合的な取引を通じて協力関係にあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toho-gas",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に載る事業会社で、2026年３月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は1.96％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -128,13 +486,58 @@
       "publisher": "株式会社　名古屋銀行",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCZ0.pdf",
       "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YCZ0",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「名古屋銀行」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E5%90%8D%E5%8F%A4%E5%B1%8B%E9%8A%80%E8%A1%8C",
+      "accessedAt": "2026-11-15"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2025年９月30日を基準日、10月１日を効力発生日として、普通株式１株につき３株の割合で株式分割を実施しました。過年度の株式関連の指標は、当該株式分割が2021年度の期首に行われたものと仮定して算定されています。",
+      "businessStructure: 2026年３月27日に株式会社しずおかフィナンシャルグループと経営統合に向けた基本合意書を締結しました。統合の方式や時期は今後の協議で決まるため未確定であり、本登録は統合前の体制で記載しています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "パーパスを「未来創造業」と位置づけ、2023年４月から８年間の第22次経営計画「未来創造業の真価の発揮」と2030年ビジョン「お客さまとともに成長する地域No.1金融グループ」を掲げ、社是である「地域社会の繁栄に奉仕する」に基づき、地域金融機関として企業価値の向上に取り組んでいます。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "グループ内にリース、クレジットカード、投資事業有限責任組合の運営、医療システム・ＩＣＴ支援などを担う連結子会社を持ち、銀行業務以外のサービスも一体で提供できる体制です。",
+        "basis": "【事業の内容】と【関係会社の状況】",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "愛知県名古屋市に本店を置く地域金融機関で、2026年３月期の連結経常収益124,456百万円のうち、銀行業務の外部顧客に対する経常収益が96,049百万円と大半を占めています。本邦の外部顧客に対する経常収益は、連結経常収益の90％を超えています。",
+        "basis": "【セグメント情報】",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

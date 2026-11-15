@@ -4,15 +4,159 @@
   "name": "近畿車輛",
   "officialName": "近畿車輛株式会社",
   "nameEn": "THE KINKI SHARYO CO．，LTD．",
-  "description": null,
+  "shortNameEn": "THE KINKI SHARYO CO., LTD.",
+  "description": "国内や海外の鉄道事業者向けに鉄道車両を製造・販売し、不動産賃貸も営む会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "railway-vehicles",
+      "name": "鉄道車両関連事業",
+      "description": "鉄道車両の製造・販売を行う事業です。JR向け電車、公民鉄向け各種電車、海外向け電車、車両保守部品を扱っています。2026年3月期の外部顧客への売上高は36,252百万円です。",
+      "customers": [
+        "鉄道事業者",
+        "海外の交通局"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "ks-technos",
+          "name": "株式会社ケーエステクノス",
+          "description": "車両製造に関わる補助業務を担う子会社です。",
+          "customers": [
+            "近畿車輛"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "kinkisharyo-international-llc",
+          "name": "KINKISHARYO International, L.L.C.",
+          "description": "米国及びカナダを中心とした海外案件獲得の拠点である連結子会社です。当社から受注車両の構体などの納入を受けています。議決権の所有割合は100.0％です（2026年3月31日現在）。",
+          "customers": [
+            "海外の交通局"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "ki-piscataway-llc",
+          "name": "KI-PISCATAWAY LLC",
+          "description": "鉄道車両関連事業を行う連結子会社です。2025年11月に米国現地法人として設立されました。議決権の所有割合は100.0％です（2026年3月31日現在）。",
+          "customers": [
+            "海外の交通局"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "kinkisharyo-international-canada",
+          "name": "KINKISHARYO INTERNATIONAL CANADA INC.",
+          "description": "米国及びカナダを中心とした海外案件獲得の拠点である子会社です。当社から受注車両の構体などの納入を受けています。",
+          "customers": [
+            "海外の交通局"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "rail-transit-consultants",
+          "name": "RAIL TRANSIT CONSULTANTS, INC.",
+          "description": "当社及びその子会社の技術エンジニアリング業務を行う子会社です。",
+          "customers": [
+            "近畿車輛"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸事業",
+      "description": "不動産の賃貸を行う事業です。東大阪商業施設及び所沢商業施設を中心に展開しています。2026年3月期の外部顧客への売上高は847百万円です。",
+      "customers": [
+        "商業施設の入居者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "当社グループは、鉄道車両の製造・販売を行う鉄道車両関連事業と、商業施設の賃貸を行う不動産賃貸事業を展開しています。",
+    "products": [
+      "JR向け電車",
+      "公民鉄向け各種電車",
+      "海外向け電車",
+      "車両保守部品",
+      "商業施設の賃貸"
+    ],
+    "customers": [
+      "国内の鉄道事業者",
+      "海外の交通局",
+      "商業施設の入居者"
+    ],
+    "revenueSources": [
+      "鉄道車両の販売の対価",
+      "車両保守部品の販売の対価",
+      "不動産の賃料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "近畿車輛グループ",
+        "description": "当社と子会社5社及びその他の関係会社で構成されるグループです。連結従業員数は1,163人です。東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "鉄道車両と不動産賃貸",
+        "description": "JR向け電車、公民鉄向け各種電車、海外向け電車、車両保守部品の製造・販売と、東大阪商業施設及び所沢商業施設を中心とした不動産賃貸を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "鉄道事業者と交通局が主な顧客",
+        "description": "顧客は、国内の鉄道事業者や海外の交通局です。2026年3月期の主要な顧客は西日本旅客鉄道株式会社と近畿日本鉄道株式会社です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は37,100百万円",
+        "description": "2026年3月期の連結売上高は37,100百万円でした。セグメント別では、鉄道車両関連事業が36,252百万円、不動産賃貸事業が847百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は1,570百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,570百万円となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +171,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24474000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1160,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +191,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27294000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1221,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +211,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32501000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1229,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +231,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 33611000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1225,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +251,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 35955000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1163,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +259,137 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1920,
+      "title": "田中車輛工場の創設",
+      "description": "尼崎市に田中車輛工場を創設し、鉄道車両の製造を開始しました。",
+      "significance": "当社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1945,
+      "title": "近畿日本鉄道への株式譲渡と近畿車輛株式会社への商号変更",
+      "description": "田中車輛株式会社の全株式が近畿日本鉄道株式会社（現近鉄グループホールディングス株式会社）に譲渡され、商号を近畿車輛株式会社に変更しました。",
+      "significance": "近鉄グループの経営に移り、現在の商号となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "大阪証券取引所への上場",
+      "description": "株式を大阪証券取引所に上場しました。",
+      "significance": "上場企業となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第一部への上場",
+      "description": "株式を東京証券取引所市場第一部に上場しました。",
+      "significance": "上場市場が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "米国現地法人の設立",
+      "description": "米国現地法人KINKISHARYO (USA) INC.（現KINKISHARYO International, L.L.C.）を設立しました。",
+      "significance": "海外案件獲得の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "建材事業の廃止",
+      "description": "建材事業を廃止しました。",
+      "significance": "事業が鉄道車両関連事業と不動産賃貸事業に絞られました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "西日本旅客鉄道との業務提携契約の締結",
+      "description": "西日本旅客鉄道株式会社との間で業務提携契約を締結しました。",
+      "significance": "主要な顧客との提携関係ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "創業100周年",
+      "description": "創業100周年を迎えました。",
+      "significance": "創業から100年が経ちました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "KI-PISCATAWAY LLCの設立",
+      "description": "米国現地法人KI-PISCATAWAY LLC（現連結子会社）を設立しました。",
+      "significance": "米国の製造拠点体制が拡充しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "west-japan-railway",
+      "relationship": "customer",
+      "description": "2026年3月期の主要な顧客であり、当社が電車を販売しています。2012年5月に業務提携契約を締結しており、車両の開発、設計、製造、保守、改造に至る業務及び技術の連携を行う業務提携等の関係にあります。同社は2026年3月31日現在、当社株式の5.02％を保有しています。保有株式数は3,454百株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "kintetsu-group-holdings",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】でその他の関係会社とされている会社です。2026年3月31日現在、当社の議決権の44.6％を所有しています。グループ経営に関する事業を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "mitsubishi-heavy-industries",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社株式の1.12％を保有する大株主である事業会社です。保有株式数は770百株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +397,55 @@
       "publisher": "近畿車輛株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI50.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YI50",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-11"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "DXや製造設備改良によるものづくりの変革により生産性を高め、製造における再生可能エネルギー電力の使用などにより持続可能な企業活動を推進します。国内案件はもとより、カイロ地下鉄向け電車やロサンゼルス郡都市交通局向け電車の最終組立工事などの受注済案件を着実に遂行し、デザイン力や製造技術力を活かして環境面も考慮した最適仕様の車両を提案し、案件獲得に努めます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "受注済みの大型海外案件を着実に遂行しながら、生産性の向上と最適仕様の車両提案による案件獲得を進める方針です。国内の車両新造需要と、納入実績のある海外の鉄道事業者で動き出した車両新造計画の両方を対象としています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における対処すべき課題の記載、セグメント情報における報告セグメント別の外部顧客への売上高と関連情報（地域ごとの情報）の記載",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "優位性は、鉄道車両製造の専業メーカーとして、JR向け電車から公民鉄向け各種電車、海外向け電車、車両保守部品までを手がける製造技術力とデザイン力にあります。米国に連結子会社を持ち、海外案件の獲得拠点と現地の工場を通じて海外向け車両の納入に対応できる体制も備えています。",
+        "basis": "セグメント情報における報告セグメントの概要の記載、事業の内容における子会社の役割の記載、主要な設備の状況における国内外の工場の記載",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "国内市場では、省エネルギー化やCO2削減に向けたGX対応要請や旅客サービス向上を背景に、鉄道事業者による車両新造の需要があります。海外市場では納入実績のある鉄道事業者で車両新造の計画が動き出しています。当社グループの2026年3月期の売上高は、地域別では日本が27,230百万円、米国が7,459百万円、その他が2,410百万円であり、主要な顧客は西日本旅客鉄道株式会社と近畿日本鉄道株式会社です。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における経営環境の記載、セグメント情報における関連情報（地域ごとの情報、主要な顧客ごとの情報）の記載",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
