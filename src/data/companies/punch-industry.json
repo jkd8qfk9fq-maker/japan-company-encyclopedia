@@ -4,15 +4,110 @@
   "name": "パンチ工業",
   "officialName": "パンチ工業株式会社",
   "nameEn": "PUNCH INDUSTRY CO., LTD.",
-  "description": null,
+  "shortNameEn": "PUNCH INDUSTRY",
+  "description": "プラスチック金型やプレス金型の部品を製造・販売し、ＦＡ機器も手がける金型部品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "mold-parts",
+      "name": "金型部品事業",
+      "description": "プラスチック金型部品とプレス金型部品の製造・販売を行う単一セグメントの事業です。国内事業と海外事業を展開しています。2026年3月期の地域別の売上高は、中国が24,903百万円、日本が11,016百万円、その他が6,180百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "plastic-mold-parts",
+          "name": "プラスチック金型部品",
+          "description": "射出成型でプラスチック製品を作るための金型の部品です。スプルーブシュ、ゲートブシュ、エジェクタピンなどの標準製品と、顧客仕様の特注品があります。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "press-mold-parts",
+          "name": "プレス金型部品",
+          "description": "プレス機に装着する金型の部品です。ダイセットガイド、パンチ、ストリッパガイドなどの標準製品と、顧客仕様の特注品があります。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "fa-equipment",
+          "name": "FA機器",
+          "description": "連結子会社の株式会社ＡＳＣｅが、食品加工・自動車部品・電子デバイス・医療関連など向けのＦＡ機器を設計・製造し、独自の開発機器を国内外へ販売しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "プラスチック金型部品とプレス金型部品の標準製品・特注品を国内外で製造・販売し、その販売対価を売上高とする事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "プラスチック金型部品（スプルーブシュ、ゲートブシュ、エジェクタピンなど）",
+      "プレス金型部品（ダイセットガイド、パンチ、ストリッパガイドなど）",
+      "ＦＡ機器（株式会社ＡＳＣｅが設計・製造する自社開発機器）"
+    ],
+    "customers": [
+      "自動車関連の顧客",
+      "電子部品・半導体関連の顧客",
+      "家電・精密機器関連の顧客",
+      "食品加工・医療関連などのＦＡ機器の顧客"
+    ],
+    "revenueSources": [
+      "プラスチック金型部品の販売による売上高",
+      "プレス金型部品の販売による売上高",
+      "ＦＡ機器の販売による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "パンチ工業グループ",
+        "description": "当社と関係会社14社で構成されるグループで、2026年3月31日現在の連結従業員数は3,480人です。国内3工場と中国、マレーシア、ベトナムなどの工場で製造しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "金型部品とＦＡ機器の製造・販売",
+        "description": "プラスチック金型部品とプレス金型部品について、カタログに載る標準製品と顧客仕様の特注品を製造・販売しています。子会社の株式会社ＡＳＣｅはＦＡ機器を設計・製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "幅広い業種の顧客への販売",
+        "description": "国内では約6千社の顧客と取引し、中国では約8千社の顧客と取引しています。顧客の業種は自動車、家電をはじめ多方面にわたり、特定の顧客に過度に依存しない体制としています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売による売上高",
+        "description": "2026年3月期の売上高は42,100百万円で、前期比3.1％増でした。地域別では中国が24,903百万円、日本が11,016百万円、その他が6,180百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は851百万円で、前期比1.9％減でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +122,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16307000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3979,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +142,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19052000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3923,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +162,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18750000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3575,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22038000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3463,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,16 +202,188 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23079000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3480,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "当社と株式会社ＡＳＣｅ、インドの子会社を除くグループ各社の決算期は12月であり、2025年1月から12月の業績が当連結会計年度の業績となっている。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1975,
+      "title": "神庭商会株式会社を設立",
+      "description": "東京都品川区において神庭商会株式会社を設立し、プリント基板用穴あけピンの製造を始めました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "商号をパンチ工業株式会社に変更",
+      "description": "商号をパンチ工業株式会社に変更し、現在の事業を開始しました。",
+      "significance": "現在の社名となった変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "ハイスエジェクタピンの量産化に成功",
+      "description": "プラスチック金型用ハイス（高速度工具鋼）エジェクタピンの量産化に成功しました。",
+      "significance": "プラスチック金型部品の製品づくりが進んだ出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "北上工場を設置し全国販売を開始",
+      "description": "岩手県北上市に北上工場を設置し、金型部品の全国販売を開始しました。",
+      "significance": "国内の生産拠点と全国への販売体制ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "中国大連に子会社を設立",
+      "description": "中国遼寧省大連市に盤起工業（大連）有限公司を設立しました。",
+      "significance": "海外事業の起点となる中国への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "中国に瓦房店と無錫の子会社を設立",
+      "description": "中国遼寧省大連瓦房店市の工場を分離独立して盤起工業（瓦房店）有限公司を設立し、中国江蘇省無錫市に盤起工業（無錫）有限公司を設立しました。",
+      "significance": "中国の生産拠点が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "インドに子会社を設立",
+      "description": "インドのチェンナイにPUNCH INDUSTRY INDIA PVT. LTD.を設立しました。",
+      "significance": "インドへの販売進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "東証市場第二部に上場",
+      "description": "マレーシアのPANTHER PRECISION TOOLS SDN. BHD.と資本・業務提携をし、東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "東南アジアへの展開と株式の公開が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "マレーシアの提携先を完全子会社化",
+      "description": "マレーシアのPANTHER PRECISION TOOLS SDN. BHD.を完全子会社化しました。同社は2014年1月にPUNCH INDUSTRY MALAYSIA SDN. BHD.に社名を変更しています。",
+      "significance": "東南アジアの統括拠点が連結子会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "東証市場第一部銘柄に指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "上場市場の区分が変更されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "ベトナムに製造子会社を設立",
+      "description": "ベトナムのビンズン省にPUNCH INDUSTRY MANUFACTURING VIETNAM CO. LTD.を設立しました。",
+      "significance": "ベトナムでの生産拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "米国に子会社を設立",
+      "description": "米国イリノイ州にPUNCH INDUSTRY USA INC.を設立し、本社を東京都品川区に移転しました。",
+      "significance": "米国での販売子会社と現在の本社所在地が定まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "株式会社ＡＳＣｅを子会社化",
+      "description": "東京証券取引所プライム市場に移行し、株式会社ＡＳＣｅの全株式を取得して子会社化しました。",
+      "significance": "ＦＡ機器を手がける会社がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東証スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の再選択により、東京証券取引所スタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "パーパスを策定",
+      "description": "「パーパス」を策定しました。",
+      "significance": "経営方針の中心となる目的が定められました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "長期ビジョンを策定しマレーシア販売会社を取得",
+      "description": "長期ビジョン「Vision60」を策定し、マレーシアのBRIGHT MACHINE TOOLS SDN. BHD.の株式を取得しました。同社は2026年1月にPUNCH INDUSTRY SALES MALAYSIA SDN. BHD.に社名を変更し、連結子会社となっています。",
+      "significance": "東南アジアでの販売体制の拡大と長期ビジョンの策定があった年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "misumi-group",
+      "relationship": "business-partner",
+      "description": "2024年10月に資本業務提携契約を締結した業務提携等の関係にある相手です。両社の得意分野の商品の相互供給や物流面での連携強化を進めています。2026年3月31日現在、株式会社ミスミグループ本社は当社の株式3,000,000株（10.89％）を保有する大株主であり、当社は同社の株式506,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +391,63 @@
       "publisher": "パンチ工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE8P.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YE8P",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "パーパスとして「ものづくりによる信頼、真摯な技術、自由な創造力で、次世代の豊かな未来をカタチづくる」を掲げています。2025年5月に策定した長期ビジョン「Vision60」では「脱・金型部品依存」を掲げ、2026年5月に策定した中期経営計画「ＶＣ28」では、収益性の改善と次の成長に向けた基盤構築に集中し、金型部品事業での特注品特化と生産性向上、ＦＡ事業の育成・拡大などに取り組むとしています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "中期経営計画は、基盤である金型部品事業で特注品への特化を進めながら、ＦＡ事業を第２の収益柱として育てる構成になっています。国内事業と海外事業の両方で特注品に対応する方針は、標準製品と特注品を併せて扱う現在の事業内容とつながっています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の経営戦略等の記載と、【事業の内容】の国内事業及び海外事業の記載に基づきます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "熱処理技術や研削加工技術を活かした社内生産と、約300社の協力工場による社外生産を両輪とする製造活動を行っています。全国10ヵ所の販売拠点を配置し、顧客密着型の受注活動を基本に製造直販を行っており、充実した生産設備を持つ製造部門と販売部門が一体となった製販一体型の事業を行っているとしています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      },
+      "analysis": {
+        "text": "標準製品に加えて多様な特注品に対応できる生産体制と、国内と中国を中心とする生産・販売の拠点網が、幅広い業種の顧客への対応を支えています。中国では34ヵ所の販売拠点を展開しています。",
+        "basis": "【事業の内容】の国内事業における製造と販売の記載、海外事業における生産拠点と販売拠点の記載に基づきます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "金型部品事業の単一セグメントで事業を行っています。2026年3月期の地域別の売上高は中国が24,903百万円と最も大きく、日本が11,016百万円、その他が6,180百万円でした。顧客は自動車関連、電子部品・半導体関連、家電・精密機器関連などに広がり、売上高の10％以上を占める特定の顧客はありません。",
+        "basis": "セグメント情報の関連情報における地域ごとの売上高と主要な顧客ごとの情報、【経営方針、経営環境及び対処すべき課題等】の顧客動向の記載に基づきます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

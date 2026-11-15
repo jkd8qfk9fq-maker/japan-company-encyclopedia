@@ -4,15 +4,108 @@
   "name": "ヱスビー食品",
   "officialName": "ヱスビー食品株式会社",
   "nameEn": "S＆B　FOODS　INC．",
-  "description": null,
+  "shortNameEn": "S&B Foods",
+  "description": "カレールウやスパイス、チューブ製品、レトルトカレーなどを製造・販売する、1923年創業の食品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "domestic",
+      "name": "国内事業",
+      "description": "2026年3月期の外部顧客への売上高は115,395百万円です。各種香辛料、即席カレー、チューブ製品、レトルトカレー等の製造・販売のほか、関連する原材料の調達を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "manufacturing",
+          "name": "商品の製造",
+          "description": "エスビーガーリック食品株式会社、ヱスビースパイス工業株式会社、株式会社ヱスビーサンキョーフーズ、株式会社大伸が商品の製造を担当し、当社に納入しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "raw-material-procurement",
+          "name": "原材料の調達",
+          "description": "株式会社ヱスビー興産と峯栄興業株式会社が、輸入原料および国内原材料等の調達を担当しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "overseas",
+      "name": "海外事業",
+      "description": "2026年3月期の外部顧客への売上高は13,626百万円です。各種香辛料、即席カレー、チューブ製品、レトルトカレー等の販売を行っています。米州ではS&B INTERNATIONAL CORPORATION、東南アジア・オセアニア地域ではS&B FOODS SINGAPORE PTE.LTD.、カナダではS&B SPICE CANADA INC.が、当社より供給した商品を販売しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "当社と連結子会社が、香辛料や即席カレー、チューブ製品、レトルトカレーなどの製造・販売と原材料の調達を行い、海外の子会社が米州や東南アジアなどで販売する事業モデルです。",
+    "products": [
+      "各種香辛料（スパイス＆ハーブ）",
+      "即席カレー（カレールウ）",
+      "チューブ製品",
+      "レトルトカレー",
+      "香辛調味料（「李錦記」ブランド製品、ラー油関連製品など）"
+    ],
+    "customers": [
+      "国内の食品卸売業者などの販売先",
+      "米州・東南アジア・オセアニア・カナダなどの海外の販売先"
+    ],
+    "revenueSources": [
+      "香辛料やカレー製品などの販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と連結子会社のグループ",
+        "description": "当社と連結子会社でグループを構成しています。商品の製造を担う子会社、原材料の調達を担う子会社、海外で販売を担う子会社があり、2026年3月31日現在の連結従業員数は2,082人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "スパイスを原料とする食料品の製造・販売",
+        "description": "各種香辛料、即席カレー、チューブ製品、レトルトカレー、香辛調味料などを製造・販売しています。国内では当社と子会社が製造・販売を行い、海外では子会社が当社から供給を受けた商品を販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "食品卸売業者などの販売先",
+        "description": "販売先は食品卸売業者などが中心です。2026年3月期の主要な顧客として、三菱食品株式会社向けの売上高38,101百万円、三井物産株式会社向け32,030百万円、国分グループ本社株式会社向け27,793百万円が開示されています（いずれも出荷価格ベースで、国内事業の販売先です）。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高129,022百万円",
+        "description": "2026年3月期の連結売上高は129,022百万円で、前期に比べて4.5％増加しました。国内事業が115,395百万円、海外事業が13,626百万円で、スパイス＆ハーブや香辛調味料の製品群が順調に推移しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益8,409百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は8,409百万円で、前期に比べて11.2％増加しました。原材料価格の上昇や広告宣伝費、人件費の増加があったものの、国内・海外の両事業で売上高が増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +120,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 59903000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2122,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +140,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 62925000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2152,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +160,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 72692000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2138,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +180,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 80267000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2058,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,16 +200,207 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 94250000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2082,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "報告セグメントを変更し、従来の「食料品事業」の単一区分から、「国内事業」と「海外事業」の2区分とした。海外事業について経営の意思決定上の重要性が増したためで、前連結会計年度のセグメント情報も変更後の区分により作成されている。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1923,
+      "title": "日賀志屋を創業",
+      "description": "初代社長の山崎峯次郎がカレーの調合に成功し、浅草に日賀志屋を興しました。",
+      "significance": "会社の源流で、わが国スパイス産業の草分けとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1930,
+      "title": "「ヒドリ印」カレーを発売",
+      "description": "「ヒドリ印」カレーを発売しました。",
+      "significance": "初期の主力製品の発売です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1940,
+      "title": "株式会社日賀志屋に改組",
+      "description": "株式会社日賀志屋に改組し、本店を東京都板橋区に置きました。",
+      "significance": "会社組織としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "ヱスビー食品株式会社に商号変更",
+      "description": "商号をヱスビー食品株式会社に変更しました。あわせて本店を東京都中央区日本橋兜町に移転しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "株式を公開",
+      "description": "東京店頭売買銘柄の承認を受け、株式を公開しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "ヱスビースパイス工業を設立",
+      "description": "ヱスビースパイス工業株式会社を設立しました。現在の連結子会社です。",
+      "significance": "生産を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "東松山工場を新築竣工",
+      "description": "埼玉県に東松山工場を新築竣工しました。",
+      "significance": "現在の主力生産拠点の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "ヱスビー興産を設立",
+      "description": "株式会社ヱスビー興産を設立しました。現在の連結子会社で、原材料の調達を担当しています。",
+      "significance": "原材料調達を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "ヱスビーサンキョーフーズを設立",
+      "description": "株式会社ヱスビーサンキョーフーズを設立しました。現在の連結子会社で、商品の製造を担当しています。",
+      "significance": "生産を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "S&B INTERNATIONAL CORPORATIONを設立",
+      "description": "米国にS&B INTERNATIONAL CORPORATIONを設立しました。現在の連結子会社で、米州で当社製品を販売しています。",
+      "significance": "海外販売拠点の展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "エスビーガーリック食品に商号変更",
+      "description": "ヱスビーガーリック工業株式会社とヒドリ食品株式会社が合併し、エスビーガーリック食品株式会社に商号変更しました。現在の連結子会社です。",
+      "significance": "生産子会社の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "S&B FOODS SINGAPOREを設立",
+      "description": "シンガポールにS&B FOODS SINGAPORE PTE.LTD.を設立しました。現在の連結子会社で、東南アジア・オセアニア地域で当社製品を販売しています。",
+      "significance": "東南アジアへの販売展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "峯栄興業を子会社化",
+      "description": "峯栄興業株式会社を子会社化しました。現在の連結子会社で、原材料の調達を担当しています。",
+      "significance": "原材料調達体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、スタンダード市場へ移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "S&B SPICE CANADAを設立",
+      "description": "カナダにS&B SPICE CANADA INC.を設立しました。",
+      "significance": "北米での販売展開の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "S&B Foods (Thailand) を設立",
+      "description": "タイにS&B Foods（Thailand）Co., Ltd.を設立しました。",
+      "significance": "東南アジアでの展開の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "customer",
+      "description": "主要な顧客の1社です。2026年3月期の同社向け売上高は32,030百万円（国内事業、出荷価格ベース）でした。当社は同社の株式も保有しており、保有目的には食料品事業における原料仕入および製品販売の重要な取引先と印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "companyId": "dai-nippon-printing",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の発行済株式（自己株式を除く）の2.48％を保有する大株主の事業会社です。当社も同社の株式を保有しており、保有目的には食料品事業における資材等の仕入の重要な取引先と印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +408,58 @@
       "publisher": "ヱスビー食品株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGTZ.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YGTZ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2025年4月1日を効力発生日として、普通株式1株につき2株の割合で株式分割を実施した。連結経営指標等の数値は、第109期の期首に当該株式分割が行われたと仮定して算定されている。"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期の経営戦略として「経営戦略2033」を掲げ、テーマを「スパイス＆ハーブの価値で食の世界を変える」としています。その実行計画である第4次中期経営計画（2027年3月期～2029年3月期）は「価値を創造し続けるための体制構築」をテーマとし、「強みを伸ばす」「成長を支える」「効率を高める」「基盤を固める」の4つの重点戦略のもとで事業の質を高める期間と位置づけています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "100年以上にわたり培ってきた、スパイスやハーブ、カレーに関する独自の知見と技術を当社グループの強みとしています。創業理念は「美味求真」、企業理念は「食卓に、自然としあわせを。」で、ビジョンとして「『地の恵み スパイス＆ハーブ』の可能性を追求し、おいしく、健やかで、明るい未来をカタチにします」を掲げています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "disclosed": {
+        "text": "当社は、創業者の山崎峯次郎が1923年にカレーの調合に成功して始めた日賀志屋を母体とし、わが国スパイス産業の草分けとされています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【沿革】"
+      },
+      "analysis": {
+        "text": "2026年3月期の外部顧客への売上高は、国内事業が115,395百万円と全体の約9割を占め、海外事業は13,626百万円です。販売先は食品卸売業者などが中心で、主要な顧客3社向けの売上高が出荷価格ベースの販売実績の5割を超えています。",
+        "basis": "セグメント情報の外部顧客への売上高（国内事業115,395百万円・海外事業13,626百万円）と、主要な顧客ごとの情報に印字された割合（22.9％・19.3％・16.7％）の比較による。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,167 @@
   "name": "日本リーテック",
   "officialName": "日本リーテック株式会社",
   "nameEn": "NIPPON RIETEC CO.,LTD.",
-  "description": null,
+  "shortNameEn": "NIPPON RIETEC",
+  "description": "鉄道電気設備工事を主力とする総合電気工事会社で、道路設備・屋内外電気設備・送電線設備工事のほか、標識等の兼業事業と不動産賃貸を営む。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "electrical-construction",
+      "name": "電気設備工事業",
+      "description": "鉄道・道路・屋内外・送電線の電気設備工事を施工する主力事業。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／2 事業の内容】",
+      "children": [
+        {
+          "id": "railway-electrical-works",
+          "name": "鉄道電気設備工事",
+          "description": "信号、電車線、発変電、電灯電力、情報通信等の鉄道電気設備工事を施工する。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【第一部 企業情報／第1 企業の概況／2 事業の内容】"
+        },
+        {
+          "id": "transmission-line-works",
+          "name": "送電線設備工事",
+          "description": "送電線設備の建設・保守等の工事を施工する。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【第一部 企業情報／第1 企業の概況／2 事業の内容】"
+        },
+        {
+          "id": "road-facilities-works",
+          "name": "道路設備工事",
+          "description": "交通信号機、道路情報制御システム、標識・標示、遮音壁等の道路設備工事を施工する。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【第一部 企業情報／第1 企業の概況／2 事業の内容】"
+        },
+        {
+          "id": "building-electrical-works",
+          "name": "屋内外電気設備工事",
+          "description": "建築物の屋内外電気設備工事を施工し、太陽光発電設備工事も手がける。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【第一部 企業情報／第1 企業の概況／2 事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "sideline-business",
+      "name": "兼業事業",
+      "description": "標識・交通安全用品の製造販売、機械工具・工事用資材の販売、保守管理・事務代行を行う事業。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／2 事業の内容】",
+      "children": [
+        {
+          "id": "signage-products",
+          "name": "標識・交通安全用品",
+          "description": "道路標識や交通安全用品の製造・販売を行う。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【第一部 企業情報／第1 企業の概況／2 事業の内容】"
+        },
+        {
+          "id": "materials-sales",
+          "name": "機械工具・工事用資材",
+          "description": "機械工具や工事用資材の販売を行う。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【第一部 企業情報／第1 企業の概況／2 事業の内容】"
+        },
+        {
+          "id": "management-services",
+          "name": "保守管理・事務代行",
+          "description": "設備の保守管理や事務代行サービスを提供する。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【第一部 企業情報／第1 企業の概況／2 事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸事業",
+      "description": "土地・建物の賃貸を行う事業。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／2 事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道事業者等から電気設備工事を受注し、グループ会社と連携して施工することで完成工事高を得る事業モデルである。",
+    "products": [
+      "鉄道電気設備工事",
+      "道路設備工事",
+      "屋内外電気設備工事",
+      "送電線設備工事",
+      "標識・交通安全用品",
+      "不動産賃貸"
+    ],
+    "customers": [
+      "東日本旅客鉄道をはじめとする鉄道事業者",
+      "道路管理者等の公共機関",
+      "民間企業"
+    ],
+    "revenueSources": [
+      "完成工事高",
+      "兼業事業売上高",
+      "不動産賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日本リーテック",
+        "description": "鉄道の技術から発展した総合電気工事会社として、連結子会社と連携して電気設備工事を施工する。"
+      },
+      {
+        "kind": "offering",
+        "title": "電気設備工事の施工",
+        "description": "鉄道電気設備、道路設備、屋内外電気設備、送電線設備の工事と、標識・交通安全用品の製造販売を提供する。"
+      },
+      {
+        "kind": "customer",
+        "title": "鉄道事業者等",
+        "description": "東日本旅客鉄道をはじめとする鉄道事業者や公共機関、民間企業から工事を受注する。"
+      },
+      {
+        "kind": "revenue",
+        "title": "完成工事高",
+        "description": "2026年3月期の売上高は740億4千4百万円となり、過去最高を更新した。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は55億5千1百万円となった。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 55504345000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1570,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 56783621000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1553,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 59775898000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1551,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +239,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 63728897000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1518,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +259,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 69269613000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1434,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +267,268 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1942,
+      "title": "鉄道保安工業株式会社の設立",
+      "description": "前身の一つである鉄道保安工業株式会社が設立され、鉄道保安装置の設置を事業目的とした。",
+      "significance": "鉄道の安全を担う事業が発足した。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "千代田工事株式会社の設立",
+      "description": "もう一つの前身である千代田工事株式会社が東京都台東区に設立され、電気設備の設計施工や電気機器・材料の製作販売を事業目的とした。",
+      "significance": "電気設備工事を担う前身会社が発足した。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "旧保安工業の東京証券取引所市場第二部への上場",
+      "description": "旧保安工業の前身である鉄道保安工業株式会社が東京証券取引所市場第二部に株式を上場した。",
+      "significance": "前身会社として初めて株式を上場した。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "千歳電気工業による千代田工事の吸収合併",
+      "description": "千歳電気工業株式会社が千代田工事株式会社を吸収合併した（実質的な存続会社は千代田工事株式会社）。",
+      "significance": "現在の当社につながる事業基盤が形成された。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "千歳電気工業の東京証券取引所市場第二部への上場",
+      "description": "千歳電気工業株式会社が東京証券取引所市場第二部に株式を上場した。",
+      "significance": "上場会社としての体制が整った。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "日本リーテック株式会社への商号変更",
+      "description": "千歳電気工業株式会社が保安工業株式会社と合併し、事業及び一切の権利義務を承継するとともに、日本リーテック株式会社に商号を変更した。",
+      "significance": "2つの前身会社が統合され、現在の社名となった。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "NRシェアードサービス株式会社の設立",
+      "description": "グループの管理業務を集約するため、NRシェアードサービス株式会社を設立した。",
+      "significance": "グループ経営の効率化を進めた。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "交通安全施設株式会社の子会社化",
+      "description": "交通安全施設株式会社の株式を取得し、子会社化した。",
+      "significance": "道路設備関連事業の体制を拡充した。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "総合研修センターの開設",
+      "description": "人財育成の拠点として、総合研修センター『ゆめみ野学園』を開設した。",
+      "significance": "技術者の育成体制を強化した。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "東京証券取引所市場第一部への市場変更",
+      "description": "東京証券取引所市場第一部へ市場変更した。",
+      "significance": "上場市場を第一部へ移した。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行",
+      "description": "東京証券取引所の市場再編に伴い、プライム市場へ移行した。同年、サステナビリティ推進本部を設置した。",
+      "significance": "新市場区分のもとで持続可能性への取り組みを強化した。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "NR電気システム株式会社の発足",
+      "description": "連結子会社のNR信号システム株式会社がNR電車線テクノ株式会社を吸収合併し、NR電気システム株式会社に商号を変更した。",
+      "significance": "鉄道電気設備工事のグループ体制を再編した。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／3 沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "east-japan-railway",
+      "relationship": "other-affiliated-company",
+      "description": "関係会社の状況で『その他の関係会社』として記載され、当社の議決権の19.6％を保有する。鉄道電気設備工事の主要な発注者であり、当社の最大の顧客でもある。当社役員1名が同社の役員を兼任している。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第1 企業の概況／4 関係会社の状況】"
+    },
+    {
+      "companyId": "nippon-densetsu-kogyo",
+      "relationship": "business-partner",
+      "description": "電気設備工事の大型工事等で協業する関係にあり、円滑な協業の継続のため当社が同社株式704,648株を保有する。同社も当社株式を保有する持合い関係にある。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第4 提出会社の状況／3 株式の保有状況】"
+    },
+    {
+      "companyId": "totetsu-kogyo",
+      "relationship": "business-partner",
+      "description": "鉄道電気設備工事の大型工事等で協業する関係にあり、円滑な協業の継続のため当社が同社株式35,339株を保有する。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第4 提出会社の状況／3 株式の保有状況】"
+    },
+    {
+      "companyId": "the-nippon-signal",
+      "relationship": "supplier",
+      "description": "鉄道電気設備工事に必要不可欠な資材の調達先であり、安定調達のため当社が同社株式380,750株を保有する。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第4 提出会社の状況／3 株式の保有状況】"
+    },
+    {
+      "companyId": "daido-signal",
+      "relationship": "supplier",
+      "description": "鉄道電気設備工事に必要不可欠な資材の調達先であり、安定調達のため当社が同社株式655,859株を保有する。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第4 提出会社の状況／3 株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-electric-industries",
+      "relationship": "supplier",
+      "description": "鉄道電気設備工事に必要不可欠な資材の調達先であり、安定調達のため当社が同社株式52,700株を保有する。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第4 提出会社の状況／3 株式の保有状況】"
+    },
+    {
+      "companyId": "kyosan-electric-manufacturing",
+      "relationship": "supplier",
+      "description": "鉄道電気設備工事に必要不可欠な資材の調達先であり、安定調達のため当社が同社株式225,225株を保有する。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第4 提出会社の状況／3 株式の保有状況】"
+    },
+    {
+      "companyId": "nagoya-electric-works",
+      "relationship": "supplier",
+      "description": "道路設備工事に必要不可欠な資材の調達先であり、安定調達のため当社が同社株式10,000株を保有する。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第4 提出会社の状況／3 株式の保有状況】"
+    },
+    {
+      "companyId": "keisei-electric-railway",
+      "relationship": "customer",
+      "description": "有力な鉄道会社であり、安定した鉄道電気設備受注確保のため当社が同社株式111,300株を保有する。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第4 提出会社の状況／3 株式の保有状況】"
+    },
+    {
+      "companyId": "west-japan-railway",
+      "relationship": "customer",
+      "description": "有力な鉄道会社であり、安定した鉄道電気設備受注確保のため当社が同社株式110,000株を保有する。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【第一部 企業情報／第4 提出会社の状況／3 株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第17期(2025/04/01－2026/03/31)",
+      "title": "有価証券報告書－第17期（2025/04/01－2026/03/31)",
       "publisher": "日本リーテック株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI6M.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YI6M",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期ビジョン『NR Vision 2035』を10年後の目指す姿とし、その第1ステップとして2025年度を初年度とする3年間の『中期経営計画2027』を推進している。グループパーパス『卓越した技術と誠実な施工でインフラを支え、安全・安心な社会と豊かな暮らしを未来につなぐ』のもと、安全第一、意識改革による会社・社会の発展、社員の働きがいを基本方針に掲げる。事業戦略では既存事業の収益力向上・深度化、多角化、グループ会社戦略を進め、DXや技術開発による生産性向上、環境戦略『REACH』による2050年カーボンニュートラルの達成への貢献にも取り組む。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【第一部 企業情報／第2 事業の状況／1 経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "鉄道の技術から発展した総合電気工事会社として、鉄道、道路、送電線、各種施設の電気・通信工事に専門性の高いコア技術とノウハウを蓄積している。東日本旅客鉄道をはじめとする主要顧客との強固な関係を基盤に、安全を経営の根幹として品質の維持・向上と技術の研鑽を続け、総合研修センターでの人財育成にも取り組む。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【第一部 企業情報／第2 事業の状況／1 経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期のセグメント別の外部顧客への売上高は、電気設備工事業70,482百万円、兼業事業3,164百万円、不動産賃貸事業397百万円で、連結売上高74,044百万円の大部分を電気設備工事業が占める。電気設備工事業の内訳は鉄道電気設備工事が最大で、送電線設備工事、道路設備工事、屋内外電気設備工事が続く。主要な顧客は東日本旅客鉄道で、売上高33,510百万円と連結売上高の45.3％を占める。海外売上高はない。",
+        "basis": "セグメント情報等のセグメント売上高と主要な顧客に関する情報、関連情報（所在地別情報・製品及びサービス別情報）、経営成績等の状況における部門別の完成工事高に基づく分析",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

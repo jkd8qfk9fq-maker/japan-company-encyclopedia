@@ -4,15 +4,155 @@
   "name": "ライト工業",
   "officialName": "ライト工業株式会社",
   "nameEn": "RAITO KOGYO CO., LTD.",
-  "description": null,
+  "shortNameEn": "RAITO KOGYO",
+  "description": "法面保護や地盤改良などの特殊土木を中核とする建設会社で、国内の支社網と米国・ベトナムの拠点が工事を請け負っています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "construction",
+      "name": "建設事業",
+      "description": "法面保護工事、地盤改良工事を主体とした土木工事と建築工事を行う、当社グループ唯一の報告セグメントです。斜面・法面対策、基礎・地盤改良、補修・補強、環境修復、一般土木、建築の各工事を、国内の支社・連結子会社と米国・ベトナムの現地法人が手がけています。2026年3月期の外部顧客への売上高は139,027百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "ground-improvement",
+          "name": "基礎・地盤改良工事",
+          "description": "地盤改良を中心とする工事です。2026年3月期の売上高は62,689百万円で、工種別では最大です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "slope-protection",
+          "name": "斜面・法面対策工事",
+          "description": "斜面・法面の保護や崩落防止などの工事です。2026年3月期の売上高は39,348百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "building",
+          "name": "建築工事",
+          "description": "マンションなどの建築工事です。2026年3月期の売上高は20,954百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "repair-reinforcement",
+          "name": "補修・補強工事",
+          "description": "橋梁やトンネルなどの補修・補強工事です。2026年3月期の売上高は8,589百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "general-civil",
+          "name": "一般土木工事",
+          "description": "連結子会社が中心に手がける一般土木工事です。2026年3月期の売上高は3,352百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "environmental-restoration",
+          "name": "環境修復工事",
+          "description": "土壌汚染対策などの環境修復工事です。2026年3月期の売上高は2,322百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-works",
+          "name": "その他工事",
+          "description": "上記のいずれにも分類されない工事です。2026年3月期の売上高は1,770百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業セグメントで、商品資材販売事業、リース事業、訪問介護事業などを含んでいます。2026年3月期の外部顧客への売上高は189百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "官公庁や高速道路会社、ゼネコンなどの発注者から土木・建築工事を受注し、自社の支社網とグループ会社が施工して、完成工事の対価を収益とする事業モデルです。",
+    "products": [
+      "基礎・地盤改良工事",
+      "斜面・法面対策工事",
+      "建築工事",
+      "補修・補強工事",
+      "環境修復工事"
+    ],
+    "customers": [
+      "官公庁",
+      "高速道路会社",
+      "ゼネコン（元請事業者）",
+      "民間企業"
+    ],
+    "revenueSources": [
+      "工事の請負代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "特殊土木を中核とする企業グループ",
+        "description": "当社と連結子会社12社、持分法適用関連会社1社、非連結子会社4社で構成されています。2026年3月期の連結従業員数は1,399人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "建設事業の1セグメントを展開",
+        "description": "報告セグメントは建設事業のみで、工種別では基礎・地盤改良工事と斜面・法面対策工事が中核です。その他として商品資材販売やリース、訪問介護も営んでいます。"
+      },
+      {
+        "kind": "customer",
+        "title": "官公庁から民間企業まで",
+        "description": "国や地方自治体などの官公庁、高速道路会社、元請となるゼネコン、民間企業が発注者です。外部顧客への売上高の10％以上を占める相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高139,216百万円",
+        "description": "2026年3月期の連結売上高は139,216百万円で、建設事業が139,027百万円、その他が189百万円です。売上高は前連結会計年度比で14.6％増え、過去最高を更新しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益12,487百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は12,487百万円で、前連結会計年度比で25.9％増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +167,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 80817000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1290,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +187,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 85437000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1364,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 91094000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1374,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 88674000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1385,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +247,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 90886000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1399,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +255,118 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1948,
+      "title": "株式会社ライト防水工業所を設立",
+      "description": "宮城県仙台市に株式会社ライト防水工業所を設立しました。",
+      "significance": "防水工事を起源とする創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "ライト工業株式会社に商号変更し本店を東京へ移転",
+      "description": "ライト工業株式会社に商号を変更し、本店を東京都千代田区に移転しました。",
+      "significance": "現在の社名と東京本店体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第2部に上場",
+      "description": "当社株式を東京証券取引所市場第2部に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "東京証券取引所市場第1部に上場",
+      "description": "当社株式を東京証券取引所市場第1部に上場しました。",
+      "significance": "東証一部銘柄となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "米国に現地法人RAITO, INC.を設立",
+      "description": "米国に現地法人RAITO, INC.を設立しました（現・連結子会社）。",
+      "significance": "海外事業の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "株式会社小野良組の株式を取得",
+      "description": "株式会社小野良組の株式を取得しました（現・連結子会社）。",
+      "significance": "建築・土木工事の施工体制を拡充しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "ベトナムに合弁会社を設立",
+      "description": "ベトナムに合弁会社RAITO FECON INNOVATIVE GEOTECHNICAL ENGINEERING JSCを設立しました。",
+      "significance": "ベトナムでの地盤改良事業に進出しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "R&Dセンターを開設",
+      "description": "R&Dセンターを開設しました。",
+      "significance": "技術開発の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "プライム市場上場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ベトナムの合弁会社の株式を取得し連結子会社化",
+      "description": "Fecon Raito Underground Construction Joint Stock Companyの株式を取得し、連結子会社としました。",
+      "significance": "ベトナム事業を連結体制に取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ベトナムに合弁会社FECON RAITO HOANG MAIを設立",
+      "description": "ベトナムに合弁会社FECON RAITO HOANG MAI COMPANY LIMITEDを設立しました（現・非連結子会社）。",
+      "significance": "ベトナムでの資材の製造販売の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +375,47 @@
       "publisher": "ライト工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIK2.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YIK2",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「Raito2027」を掲げ、「技術×信頼×人財で、次世代の成長へ」を基本方針としています。防災・減災分野におけるブランド力の確立と社会課題の解決、特殊土木分野における国内外でのプレゼンス拡大、成長分野および人財への積極的な投資、成長投資と株主還元の4つを重点テーマとし、最終年度である2027年度の連結売上高1,350億円を目標としています。創業100周年を見据えた中長期ビジョンは「サステナブルな社会実現に向けて、人と技術の力で世界に貢献する」です。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "経営理念「新たな価値に挑戦し、創造し続ける」のもと、常に時代の最先端技術に挑戦し、建設業にあって特殊土木という独自の企業分野を創造してきたとしています。2018年にはR&Dセンターを開設し、技術開発を続けています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の連結売上高の99.9％を建設事業が占めます。工種別では基礎・地盤改良工事が約45％、斜面・法面対策工事が約28％、建築工事が約15％です。地域別では日本が123,181百万円と約88％を占め、北米が11,358百万円、その他が4,676百万円です。",
+        "basis": "セグメント情報の外部顧客への売上高、MD&Aの売上実績（工種別）と関連情報の地域ごとの売上高の印字に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

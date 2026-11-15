@@ -4,15 +4,141 @@
   "name": "ローツェ",
   "officialName": "ローツェ株式会社",
   "nameEn": "RORZE CORPORATION",
-  "description": null,
+  "description": "半導体製造装置の無塵搬送ロボットやシステム、細胞培養装置を開発・製造・販売するメーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "semiconductors",
+      "primary": true
+    },
+    {
+      "industryId": "machinery",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "semiconductor-fpd-equipment",
+      "name": "半導体・ＦＰＤ関連装置事業",
+      "description": "半導体業界や液晶業界における無塵化対応搬送装置の開発・製造・販売を行う事業で、2026年2月期の外部顧客への売上高は127,593百万円と、2つの報告セグメントの中で最も大きくなっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "semiconductor-equipment",
+          "name": "半導体関連装置",
+          "description": "大気用ウエハ搬送装置（EFEM、ウエハソータ、N2パージ対応ウエハストッカ）や真空用ウエハ搬送装置、ウエハ搬送ユニット（ロボット、アライナ、ロードポート）を開発・製造・販売しています。2026年2月期の外部顧客への売上高は106,345百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "analysis-equipment",
+          "name": "分析装置",
+          "description": "半導体製造過程における金属汚染管理のため、Siウエハ中の金属不純物を自動分析するための前処理装置（全自動気相分解装置）を開発・製造・販売しています。2026年2月期の外部顧客への売上高は3,554百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "fpd-equipment",
+          "name": "ＦＰＤ関連装置",
+          "description": "テレビやパソコン、スマートフォンやタブレットなどのディスプレイに使用される大型ガラス基板を製造工程中で搬送する装置や、ガラスカッティングマシンなどを開発・製造・販売しています。2026年2月期の外部顧客への売上高は6,298百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "parts-repair-others",
+          "name": "部品・修理他",
+          "description": "半導体・ＦＰＤ関連装置事業の部品や修理などを扱っています。2026年2月期の外部顧客への売上高は11,395百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "life-science",
+      "name": "ライフサイエンス事業",
+      "description": "創薬業界などにおける細胞培養装置の開発・製造・販売を行う事業で、2026年2月期の外部顧客への売上高は1,201百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "life-science-equipment",
+          "name": "ライフサイエンス関連装置",
+          "description": "創薬のための研究開発や、iPS細胞をはじめとする細胞培養に携わる研究者が手作業で行っている細胞培養処理を自動で行うインキュベータ（細胞培養装置）やソフトウェアパッケージなどを開発・製造・販売しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "当社と連結子会社14社などで、半導体・ＦＰＤ関連装置とライフサイエンス関連装置を開発・製造・販売しています。",
+    "products": [
+      "大気用ウエハ搬送装置（EFEM、ウエハソータ、N2パージ対応ウエハストッカ）",
+      "真空用ウエハ搬送装置",
+      "ウエハ搬送ユニット（ロボット、アライナ、ロードポート）",
+      "全自動気相分解（VPD）装置などの分析装置",
+      "大型ガラス基板搬送装置、ガラスカッティングマシンなどのFPD関連装置",
+      "インキュベータ（細胞培養装置）などのライフサイエンス関連装置"
+    ],
+    "customers": [
+      "半導体メーカーや半導体製造装置メーカー",
+      "フラットパネルディスプレイのメーカー",
+      "創薬の研究開発や細胞培養に携わる研究者"
+    ],
+    "revenueSources": [
+      "半導体関連装置やFPD関連装置、ライフサイエンス関連装置などの製品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と子会社などで構成されるグループ",
+        "description": "ローツェ株式会社と連結子会社14社、非連結子会社1社及び関連会社1社で構成され、半導体関連装置及びFPD関連装置と、ライフサイエンス関連装置の開発、製造、販売を主とした事業活動を行っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "無塵搬送ロボットやシステム、細胞培養装置を開発・製造・販売",
+        "description": "半導体製造工程の前工程で使用される無塵搬送ロボットや、EFEM、ウエハソータ、N2パージ対応ウエハストッカなどの無塵搬送装置（システム）、分析装置、FPD関連装置、細胞培養装置（インキュベータ）を開発・製造・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "半導体メーカーや装置メーカー、FPDメーカー、創薬研究者へ販売",
+        "description": "半導体メーカーや半導体製造装置メーカー、フラットパネルディスプレイのメーカー、創薬の研究開発や細胞培養に携わる研究者へ製品を届けています。2026年2月期の売上高のうち、Applied Materials,Inc.が22,009百万円、Taiwan Semiconductor Manufacturing Company, Ltd.が19,522百万円を占めています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売で売上を得る",
+        "description": "2026年2月期の連結売上高は128,794百万円で、前期比3.5％増でした。半導体・ＦＰＤ関連装置事業が127,593百万円、ライフサイエンス事業が1,201百万円でした。台湾顧客向けの需要が増加したことが主な理由です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は前期比19.4％減",
+        "description": "2026年2月期の親会社株主に帰属する当期純利益は19,048百万円で、前期比19.4％減でした。訴訟に備えた引当金の計上が主な理由です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,7 +153,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 50222000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3670,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +173,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 74795000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4372,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」等を第38期の期首から適用しており、第38期以降の主要な経営指標等は当該会計基準等を適用した後の指標等となっています。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -67,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 99550000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3997,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +214,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 128717000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4402,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "従来「半導体・ＦＰＤ関連装置事業」に記載していた「モータ制御機器」について、金額的重要性が乏しいため、「部品・修理他」に含めて記載する方法に変更しました。"
     },
     {
       "fiscalYear": "2026年2月期",
@@ -107,15 +235,477 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 139961000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4435,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "製品別売上高の集計範囲を見直し、「部品・修理他」の金額の一部を「分析装置」へ含めて記載する方法に変更しました。"
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1985,
+      "title": "ローツェ株式会社を設立",
+      "description": "広島県福山市にローツェ株式会社として設立し、モータ制御機器の開発を開始しました。",
+      "significance": "会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "ステッピングモータドライバの製造・販売を開始",
+      "description": "ステッピングモータドライバの製造・販売を開始しました。",
+      "significance": "モータ制御機器の事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "超小型コントローラの製造・販売を開始",
+      "description": "超小型コントローラの製造・販売を開始しました。",
+      "significance": "制御機器の事業の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "クリーンロボットの製造・販売を開始",
+      "description": "クリーンロボットの製造・販売を開始しました。",
+      "significance": "半導体向け搬送装置の事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "真空用クリーンロボットの製造・販売を開始",
+      "description": "真空用クリーンロボットの製造・販売を開始しました。",
+      "significance": "真空搬送分野への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "デュアルアームクリーンロボットの製造・販売を開始",
+      "description": "デュアルアームクリーンロボットの製造・販売を開始しました。",
+      "significance": "搬送ロボットの製品拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "大型ガラス基板クリーン搬送ロボットの製造・販売を開始",
+      "description": "大型ガラス基板クリーン搬送ロボットの製造・販売を開始しました。",
+      "significance": "FPD分野への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "大型ガラス基板クリーン搬送デュアルアームロボットの製造・販売を開始",
+      "description": "大型ガラス基板クリーン搬送デュアルアームロボットの製造・販売を開始しました。",
+      "significance": "FPD向け搬送装置の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "液晶ガラス基板搬送ロボット・装置製造用工場を新設",
+      "description": "広島県深安郡（現 福山市）神辺町道上に、液晶ガラス基板搬送ロボット・装置製造用工場を新設しました。",
+      "significance": "FPD向けの生産体制の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "シンガポールに子会社を設立",
+      "description": "シンガポールに子会社RORZE INTERNATIONAL PTE.LTD.を設立しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "台湾に関連会社を設立",
+      "description": "台湾の新竹科学工業園区に関連会社RORZE TECHNOLOGY,INC.を設立しました（現 連結子会社）。",
+      "significance": "台湾への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "九州ＦＡセンターを開設",
+      "description": "熊本県菊池郡大津町に九州ＦＡセンターを開設しました。",
+      "significance": "国内拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "神奈川ＦＡセンターを開設",
+      "description": "神奈川県海老名市に神奈川ＦＡセンターを開設しました。",
+      "significance": "国内拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "本社を神辺町道上に移転",
+      "description": "本社を広島県深安郡（現 福山市）神辺町道上に移転しました。",
+      "significance": "本社の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "ベトナムに子会社を設立",
+      "description": "ベトナムのハイフォン市に子会社RORZE ROBOTECH INC.（現 RORZE ROBOTECH CO.,LTD.）を設立しました。",
+      "significance": "ベトナムへの進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "米国に子会社を設立",
+      "description": "米国のカリフォルニア州ミルピタス市に子会社RORZE AUTOMATION,INC.を設立しました。",
+      "significance": "米国への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "ブーメランアームロボットの製造・販売を開始",
+      "description": "ブーメランアームロボットの製造・販売を開始しました。",
+      "significance": "搬送ロボットの製品拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "韓国に子会社を設立",
+      "description": "韓国の京畿道に子会社RORZE SYSTEMS CORPORATIONを設立しました。",
+      "significance": "韓国への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "株式を店頭銘柄として登録",
+      "description": "株式を日本証券業協会に店頭銘柄として登録しました。",
+      "significance": "株式の公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "コントローラ「RC-400シリーズ」を発表",
+      "description": "多軸同期補間制御が可能なコントローラ「RC-400シリーズ」を発表しました。",
+      "significance": "制御技術の製品化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "300㎜ウエハ対応キャリアストックステーションを開発",
+      "description": "300㎜ウエハ対応キャリアストックステーションを開発しました。",
+      "significance": "300㎜ウエハ対応への進展です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "九州工場を新設",
+      "description": "熊本県菊池郡合志町（現 合志市）に九州工場を新設し、九州ＦＡセンターを移転統合しました。",
+      "significance": "国内生産体制の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "ISO9001品質規格を取得",
+      "description": "ISO9001品質規格を取得しました。",
+      "significance": "品質管理体制の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "シンガポールに子会社を設立",
+      "description": "シンガポールに子会社RORZE TECHNOLOGY SINGAPORE PTE.LTD.を設立しました。",
+      "significance": "シンガポールでの体制拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "韓国子会社がKOSDAQに上場",
+      "description": "子会社RORZE SYSTEMS CORPORATIONが韓国店頭株式市場（KOSDAQ）に上場しました。",
+      "significance": "韓国子会社の株式公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "ジャスダック証券取引所に上場しました。",
+      "significance": "株式の上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "正方形搬送チャンバを発表",
+      "description": "正方形搬送チャンバを発表しました。",
+      "significance": "搬送装置の製品拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "ISO14001環境規格を取得",
+      "description": "ISO14001環境規格を取得しました。",
+      "significance": "環境管理体制の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "中国・上海に子会社を設立",
+      "description": "中国上海市に子会社RORZE TECHNOLOGY TRADING CO.,LTD.（現 RORZE CREATECH CO.,LTD.）を設立しました。",
+      "significance": "中国への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "真空プラットフォーム及び単軸ロボットを発表",
+      "description": "真空プラットフォーム及び単軸ロボットを発表しました。",
+      "significance": "真空搬送分野の製品拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "新型コントローラドライバ「RMDシリーズ」を発表",
+      "description": "ステッピングサーボ用制御システム「新型コントローラドライバRMDシリーズ」及びこれを使用したロボット、ロードポート、アライナ、ウエハ搬送システムを発表しました。",
+      "significance": "制御技術と搬送システムの製品拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "細胞培養装置「CellKeeper」を発表",
+      "description": "自動培地交換機能を搭載した細胞培養装置「CellKeeper」を発表しました。",
+      "significance": "ライフサイエンス分野への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "東京証券取引所市場第二部へ市場変更",
+      "description": "東京証券取引所市場第二部へ市場変更しました。",
+      "significance": "上場市場の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "上場市場の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "メカトロCO2インキュベータ「SCALE48」を発表",
+      "description": "細胞の自動培養を実現するメカトロCO2インキュベータ「SCALE48」を発表しました。",
+      "significance": "ライフサイエンス製品の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "アイエス・テクノロジー・ジャパンを完全子会社化",
+      "description": "茨城県つくば市の関連会社アイエス・テクノロジー・ジャパン株式会社を完全子会社化し、ローツェライフサイエンス株式会社に社名変更しました。",
+      "significance": "ライフサイエンス事業の体制整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "ベトナムに子会社を設立",
+      "description": "ベトナムのバクニン省に子会社RORZE SYSTEMS VINA CO.,LTD.を設立しました。",
+      "significance": "ベトナムでの体制拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ドイツに子会社を設立",
+      "description": "ドイツのザクセン州に子会社RORZE ENGINEERING GmbHを設立しました。",
+      "significance": "欧州への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "神奈川ＦＡセンターを横浜市に移転",
+      "description": "神奈川ＦＡセンターを横浜市に移転し、横浜事業所に名称変更しました。",
+      "significance": "国内拠点の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "韓国子会社が新工場を建設",
+      "description": "韓国子会社RORZE SYSTEMS CORPORATIONが京畿道龍仁市に新工場を建設しました。",
+      "significance": "韓国での生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "中国・上海に子会社を設立",
+      "description": "中国上海市に子会社RORZE CREATECH SEMICONDUCTOR EQUIPMENT CO.,LTD.を設立しました。",
+      "significance": "中国での体制拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所の市場第一部からプライム市場に移行しました。",
+      "significance": "上場市場の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社イアスを完全子会社化",
+      "description": "東京都日野市の株式会社イアス（2025年3月1日でローツェイアス株式会社に社名変更）の全株式を取得し、完全子会社化しました。",
+      "significance": "分析装置事業の体制整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "Nanoverse Technologies, Ltd.を連結子会社化",
+      "description": "米国のNanoverse Technologies, Ltd.を第三者割当増資により連結子会社化しました。",
+      "significance": "米国での事業の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ジェノスタッフ株式会社を完全子会社化",
+      "description": "ローツェライフサイエンス株式会社が東京都文京区のジェノスタッフ株式会社の全株式を取得し、完全子会社化しました。",
+      "significance": "ライフサイエンス事業の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "フランス・パリに非連結子会社を設立",
+      "description": "フランスのパリに非連結子会社RORZE ENGINEERING France（旧社名：IAS EUROPE S.A.R.L）を設立しました。",
+      "significance": "フランスへの進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +714,52 @@
       "publisher": "ローツェ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y5GM.pdf",
       "publishedAt": "2026-05-22",
-      "accessedAt": "2026-09-29"
+      "docId": "S100Y5GM",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2024年9月1日付で普通株式1株につき10株の割合で株式分割を行いました。過去の年度の株式に関する数値は、分割が行われたものとして算定しています。",
+      "businessModel: 当連結会計年度に訴訟に備えた引当金7,429百万円を計上したことにより、親会社株主に帰属する当期純利益は19,048百万円（前期比19.4％減）となりました。引当金の対象となった訴訟の相手方や内容は、有報の要約箇所からは特定できません。",
+      "businessModel: 2026年4月17日開催の取締役会において、連結子会社であるNanoverse Technologies, Ltd.の借入金に係る債務保証について、保証限度額を13百万米ドルから29.7百万米ドルに増額することを決議しました。本登録は2026年2月期の事業構成に基づく旨を明記します。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営方針は「世の中にないものをつくる」を合言葉に、独自の技術と経験をもとに最先端技術への貢献を続けることです。半導体業界を中心に、技術力強化、グローバルサポート体制の強化、生産体制の強化の3つの重点項目を念頭に、強固な成長基盤の構築に努めています。目標とする経営指標は売上高の成長としています。",
+        "asOf": "2026-05-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "半導体製造工程の前工程で使われる無塵搬送ロボットや装置を独自技術で開発・製造し、EFEM、ウエハソータ、N2パージ対応ウエハストッカなどの製品群と、半導体工場がある地域の大部分に置いた拠点による迅速なサポートを強みとしています。積極的な特許の取得により、製品技術における他社との差別化をはかっています。",
+        "asOf": "2026-05-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年2月期の外部顧客への売上高では、半導体・ＦＰＤ関連装置事業が127,593百万円、ライフサイエンス事業が1,201百万円です。地域別では中国が35,767百万円、米国が32,874百万円、台湾が31,845百万円、日本が9,951百万円、韓国が6,657百万円、その他が11,697百万円です。主要な顧客はApplied Materials,Inc.が22,009百万円、Taiwan Semiconductor Manufacturing Company, Ltd.が19,522百万円です。",
+        "basis": "【セグメント情報】の報告セグメントごとの売上高及び地域ごとの売上高、主要な顧客ごとの情報",
+        "asOf": "2026-05-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",

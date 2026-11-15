@@ -4,7 +4,8 @@
   "name": "大阪製鐵",
   "officialName": "大阪製鐵株式会社",
   "nameEn": "OSAKA STEEL CO., LTD.",
-  "description": null,
+  "shortNameEn": "OSAKA STEEL",
+  "description": "日本製鉄の子会社である普通鋼電炉メーカーで、鉄スクラップを主原料に形鋼や棒鋼などの鋼材を製造販売しています。",
   "listings": [
     {
       "exchange": "tse",
@@ -14,8 +15,110 @@
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "steel",
+      "name": "鉄鋼業",
+      "description": "鉄スクラップを主原料とする普通鋼電炉メーカーとして、形鋼、棒鋼、平鋼等の鋼材及び鋼片並びに鉄鋼加工品の製造販売を行う単一セグメントの事業です。2026年3月期の売上高は95,096百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "steel-products",
+          "name": "鋼材・鋼片の製造販売（当社）",
+          "description": "当社は、大阪事業所（恩加島工場・堺工場）、西日本熊本工場、岸和田工場を拠点に、形鋼、棒鋼、平鋼等の鋼材及び鋼片並びに鉄鋼加工品を製造販売しています。2026年2月には堺工場で省エネ・省CO2型電気炉の稼働を開始しました。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "tokyo-kotetsu",
+          "name": "東京鋼鐵（連結子会社）",
+          "description": "連結子会社の東京鋼鐵株式会社（栃木県小山市、議決権の所有割合90.0％、特定子会社）は、形鋼及び鋼片並びに鉄鋼加工品の製造販売を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "krakatau-osaka-steel",
+          "name": "PT.KRAKATAU OSAKA STEEL（連結子会社）",
+          "description": "連結子会社のPT.KRAKATAU OSAKA STEEL（インドネシア共和国バンテン州、議決権の所有割合80.0％、特定子会社）は、鋼材の製造販売を行っています。インドネシア事業の低迷を受け、2026年1月に事業の停止が決定され、解散の方針が取締役会で決議されています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "steel-logistics",
+          "name": "鋼材等の運送（連結子会社）",
+          "description": "連結子会社の大阪新運輸株式会社と西鋼物流株式会社（いずれも議決権の所有割合100.0％）は、鋼材等の運送及び構内作業を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "鉄スクラップを電気炉で溶かし、形鋼や棒鋼などの鋼材に加工して、建設分野をはじめとする需要家へ販売し、売上高を得る事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "形鋼",
+      "棒鋼",
+      "平鋼",
+      "鋼片",
+      "鉄鋼加工品"
+    ],
+    "customers": [
+      "建設分野をはじめとする需要家",
+      "商社・建材メーカーなどの販売先"
+    ],
+    "revenueSources": [
+      "鋼材（形鋼・棒鋼・平鋼等）の販売収入",
+      "鋼片・鉄鋼加工品の販売収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "大阪製鐵グループ",
+        "description": "当社と連結子会社4社からなるグループで、連結従業員数は1,074人（2026年3月31日現在）です。親会社は日本製鉄株式会社で、当社は同社の製鉄事業分野における電炉中核子会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "電炉による鋼材の製造販売",
+        "description": "鉄スクラップを主原料として電気炉で溶かし、形鋼、棒鋼、平鋼等の鋼材及び鋼片並びに鉄鋼加工品を製造販売しています。大阪事業所、西日本熊本工場、岸和田工場と連結子会社の工場で生産し、連結子会社が鋼材等の運送及び構内作業も担います。"
+      },
+      {
+        "kind": "customer",
+        "title": "建設分野を中心とする顧客",
+        "description": "主要な需要分野は建設分野です。日鉄物産株式会社やエムエム建材株式会社などの販売先を通じて鋼材を供給するほか、海外ではインドネシアの販売会社向けなどにも販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は950億9千6百万円",
+        "description": "2026年3月期の売上高は950億9千6百万円で、前連結会計年度に比べ18.3％減少しました。地域別の売上高は、日本が66,812百万円、海外が28,284百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失は209億3千6百万円",
+        "description": "2026年3月期は、親会社株主に帰属する当期純損失209億3千6百万円を計上しました（前期は親会社株主に帰属する当期純利益32億2千7百万円）。国内の建設向け鋼材需要の低迷や、主原料であるスクラップ価格の上昇など、厳しい事業環境が続きました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -30,7 +133,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 151028000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1024,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,7 +153,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 153103000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1028,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -70,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 154389000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1058,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 158211000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1065,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,16 +213,373 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 113522000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1074,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2026年3月期の親会社株主に帰属する当期純損失には、インドネシア事業からの撤退方針に基づく連結子会社PT.KRAKATAU OSAKA STEELの事業停止に伴う損失が含まれている。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1978,
+      "title": "大阪製鐵の設立",
+      "description": "1978年5月、大鐵工業株式会社並びに大和製鋼株式会社の合併母体として大阪製鐵株式会社を設立しました。",
+      "significance": "両社の合併に向けた受け皿会社が発足しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "両社の吸収合併と営業開始",
+      "description": "1978年10月、大鐵工業株式会社と大和製鋼株式会社を吸収合併し、営業を開始しました。",
+      "significance": "合併により一体の事業体制で操業を始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "日鐵鋼機の吸収合併",
+      "description": "1980年10月、日鐵鋼機株式会社を吸収合併し、同社工場を津守工場へ移転して加工製品工場としました。",
+      "significance": "鉄鋼加工品の生産体制を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "大阪物産の設立",
+      "description": "1980年11月、子会社大阪物産株式会社を設立しました。",
+      "significance": "グループの販売面の体制づくりが進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "大阪新運輸の設立",
+      "description": "1981年2月、子会社大阪新運輸株式会社を設立しました。",
+      "significance": "鋼材等の運送を担う子会社が発足しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "日本スチールの設立",
+      "description": "1987年9月、子会社日本スチール株式会社を設立しました。",
+      "significance": "子会社による事業展開が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "西日本製鋼の経営権取得",
+      "description": "1989年3月、西日本製鋼株式会社の経営権を取得しました。",
+      "significance": "西日本地域の生産拠点を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "新日本製鐵の子会社化",
+      "description": "1990年3月、第三者割当増資により新日本製鐵株式会社（現 日本製鉄株式会社）の子会社となりました。",
+      "significance": "日本製鉄グループの一員となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "大阪証券取引所市場第二部への上場",
+      "description": "1994年12月、大阪証券取引所市場第二部へ株式を上場しました。",
+      "significance": "株式を公開し、上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "西日本製鋼の吸収合併",
+      "description": "1995年6月、西日本製鋼株式会社を吸収合併し、同社工場を西日本製鋼所（現 西日本熊本工場）としました。あわせて西鋼物流株式会社が子会社となりました。",
+      "significance": "熊本の生産拠点と物流子会社を一体の体制に取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "1996年11月、東京証券取引所市場第二部へ株式を上場しました。",
+      "significance": "東京証券取引所にも上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "市場第一部への指定替え",
+      "description": "1997年9月、東京証券取引所・大阪証券取引所の市場第一部へ指定替えとなりました。",
+      "significance": "両取引所の第一部銘柄となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "堺圧延工場の営業運転開始",
+      "description": "1998年10月、津守圧延工場と第二圧延工場を集約した堺圧延工場が営業運転を開始しました。",
+      "significance": "圧延工程の集約による生産体制の効率化が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "新北海鋼業の設立",
+      "description": "1999年3月、子会社新北海鋼業株式会社を設立しました。",
+      "significance": "北海道における事業体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "関西ビレットセンターの吸収合併",
+      "description": "1999年10月、関西ビレットセンター株式会社を吸収合併し、同社工場を堺製鋼工場としました。",
+      "significance": "堺地区の製鋼体制を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "ISO9001認証の取得",
+      "description": "2002年3月、恩加島工場（現 大阪事業所恩加島工場）と堺工場（現 大阪事業所堺工場）でISO9001の認証を取得しました。",
+      "significance": "品質マネジメントの認証取得が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "西日本製鋼所のISO9001認証取得",
+      "description": "2003年4月、西日本製鋼所（現 西日本熊本工場）でISO9001の認証を取得しました。",
+      "significance": "熊本の拠点でも品質マネジメントの認証を取得しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "ISO14001認証の取得",
+      "description": "2003年11月、ISO14001の認証を取得しました。",
+      "significance": "環境マネジメントの認証を取得しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "日本スチールの完全子会社化",
+      "description": "2005年1月、日本スチール株式会社を完全子会社化しました。",
+      "significance": "グループ体制の統制を強めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "インドネシア合弁会社KOSの設立",
+      "description": "2012年12月、インドネシア国営製鉄会社PT.KRAKATAU STEEL（PERSERO）Tbk（クラカタウ社）と合弁会社PT.KRAKATAU OSAKA STEEL（KOS）をインドネシア共和国バンテン州チレゴンに設立しました。",
+      "significance": "海外初の生産拠点として合弁事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "新北海鋼業の解散",
+      "description": "2014年3月、子会社新北海鋼業株式会社を解散しました。",
+      "significance": "グループ体制の見直しが進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "インドネシア合弁事業の最終契約締結",
+      "description": "2014年9月、クラカタウ社との間で、インドネシアにおける中小形形鋼・鉄筋棒鋼及び平鋼の製造販売合弁事業の最終契約を締結しました。",
+      "significance": "合弁事業の実施枠組みが確定しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "東京鋼鐵の子会社化と恩加島工場の製鋼工程休止",
+      "description": "2016年3月、東京鋼鐵株式会社を株式公開買付けにより子会社化しました。また、大阪恩加島工場（現 大阪事業所恩加島工場）の製鋼工程を休止しました。",
+      "significance": "東日本の生産拠点を取り込む一方、大阪の製鋼工程の集約が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "KOSの営業生産開始",
+      "description": "2017年1月、PT.KRAKATAU OSAKA STEEL（KOS）が営業生産を開始しました。",
+      "significance": "インドネシアでの鋼材生産が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "大阪事業所の新設",
+      "description": "2017年4月、大阪恩加島工場及び堺工場を統括する大阪事業所を新設しました。",
+      "significance": "大阪地区の両工場を統括する体制となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "日本スチールの吸収合併",
+      "description": "2021年8月、子会社日本スチール株式会社を吸収合併し、同社工場を岸和田工場としました。",
+      "significance": "岸和田の圧延拠点を自社工場として取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場への移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場へ移行しました。",
+      "significance": "新しい市場区分ではスタンダード市場の上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "恩加島工場の圧延工程休止",
+      "description": "2022年9月、大阪事業所恩加島工場の圧延工程を休止し、大阪事業所堺工場へ生産を移管・集約しました。",
+      "significance": "大阪地区の生産は堺工場への集約が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "大阪物産の解散",
+      "description": "2022年12月、子会社大阪物産株式会社を解散しました。",
+      "significance": "グループ体制の見直しが進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "福岡証券取引所への重複上場",
+      "description": "2025年3月、福岡証券取引所本則市場へ重複上場しました。",
+      "significance": "福岡証券取引所にも上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nippon-steel",
+      "relationship": "parent",
+      "description": "日本製鉄株式会社は当社の親会社です。2026年3月31日現在、当社株式の議決権の56.1％（間接所有分0.5％を含む）を保有しています。当社は同社の製鉄事業分野における電炉中核子会社として、電炉・形鋼に関する製造設備や操業技術面での連携、建築・土木・造船分野における営業面での連携を図っており、電力の購入、資金の貸付、資金の預託などの関係があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "onoken",
+      "relationship": "customer",
+      "description": "小野建株式会社は当社の主要な顧客であり、当社は取引協力関係の維持・構築を目的として同社株式157,300株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "hanwa",
+      "relationship": "customer",
+      "description": "阪和興業株式会社は当社の主要な顧客であり、副原料等の購入先でもあります。当社は取引協力関係の維持・構築を目的として同社株式20,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "okaya-and-co",
+      "relationship": "customer",
+      "description": "岡谷鋼機株式会社は当社の主要な顧客であり、当社は取引協力関係の維持・構築を目的として同社株式12,800株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "seiwa-chuo-holdings",
+      "relationship": "customer",
+      "description": "清和中央ホールディングス株式会社は当社の主要な顧客であり、当社は取引協力関係の維持・構築を目的として同社株式40,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "yamax",
+      "relationship": "customer",
+      "description": "株式会社ヤマックスは当社の鉄筋棒鋼における主要な顧客であり、当社は取引協力関係の維持・構築を目的として同社株式20,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -127,13 +587,50 @@
       "publisher": "大阪製鐵株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHWP.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YHWP",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessStructure: 連結子会社のPT.KRAKATAU OSAKA STEELについては、インドネシア事業からの撤退方針に基づき2026年1月に事業の停止が決定され、2026年5月12日開催の取締役会において解散する方針が決議されたことが、重要な後発事象として印刷されている。同社における解散決議は2026年12月（予定）とされ、清算結了の具体的な日程は未定である。本登録は2026年3月31日現在の構成（同社は連結子会社）に基づく。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年1月に策定した「大阪製鐵グループ中期経営計画」に取り組んでいます。収益基盤の確立・強化を最優先課題として、商品競争力・納期対応力の発揮、国内4拠点の有機的な連携、2026年2月に稼働を開始した堺工場の省エネ・省CO2型電気炉を軸とする製鋼から圧延・出荷までの一貫した体質強化などの収益改善策と、資本効率化対策を進めています。インドネシア子会社の解散方針を決議した後も、この中期経営計画は見直しを行っていません。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "親会社の日本製鉄とは、電炉・形鋼に関する製造設備や操業技術面、建築・土木・造船分野における営業面、人材や情報セキュリティ等に関わる面で連携を図っており、日本製鉄グループの電炉中核子会社として事業を行っています。製品面では、高品質（寸法精度・直進性）を強みとする商品競争力と納期対応力を掲げ、主力の堺工場では省エネ・省CO2型電気炉の稼働を開始し、製鋼から圧延・出荷までの一貫体制の強化を進めています。",
+        "basis": "事業の内容、経営方針、経営環境及び対処すべき課題等に基づく。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "単一セグメントの鉄鋼業を営み、販売実績は鋼材が中心です。2026年3月期の地域別の売上高は日本が66,812百万円、海外が28,284百万円で、海外の中心はインドネシア向けです。主要な販売先は、日鉄物産株式会社、PT.KRAKATAU WAJATAMA OSAKA STEEL MARKETING、エムエム建材株式会社です。インドネシア事業については、合弁会社の事業停止と解散の方針が決まっています。",
+        "basis": "セグメント情報における地域ごとの情報と主要な顧客ごとの情報、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における販売の実績に基づく。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

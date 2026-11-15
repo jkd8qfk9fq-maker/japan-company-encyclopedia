@@ -4,15 +4,224 @@
   "name": "日新商事",
   "officialName": "日新商事株式会社",
   "nameEn": "NISSIN SHOJI CO.,LTD.",
-  "description": null,
+  "shortNameEn": "NISSIN SHOJI CO.,LTD.",
+  "description": "ENEOSから石油製品の供給を受けて販売する石油関連事業を中核に、再生可能エネルギー関連事業と不動産賃貸を営む会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "energy",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "petroleum",
+      "name": "石油関連事業",
+      "description": "ENEOS株式会社より石油製品の供給を受け、石油関連製品の製造、販売、卸売等を行う基幹事業です。2026年3月期の外部顧客への売上高は35,619百万円です。",
+      "customers": [
+        "需要家",
+        "系列販売店（小売店）",
+        "同業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "petroleum-products-sales",
+          "name": "石油製品の販売",
+          "description": "当社が需要家、系列販売店（小売店）への販売及び直営ＳＳの運営を行い、竹鶴石油株式会社が需要家への販売と海上輸送を、NISTRADE(M)SDN.BHD.とNISSIN SHOJI VIETNAM CO.,LTD.が需要家への販売を行っています。ガソリン、灯油、軽油、重油等の燃料油及び潤滑油、ＳＳを主とする作業、自動車関連製品の販売も含みます。",
+          "customers": [
+            "需要家",
+            "系列販売店（小売店）"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "petrochemical-products",
+          "name": "石油化学製品の製造、販売",
+          "description": "当社が需要家及び同業者への販売を行い、NISTRADE(M)SDN.BHD.とNISSIN SHOJI (THAILAND) CO.,LTD.が需要家への販売を行っています。NISSIN SHOJI (THAILAND) CO.,LTD.は2023年４月に解散を決議し、清算手続き中です。",
+          "customers": [
+            "需要家",
+            "同業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "lpg-sales",
+          "name": "液化石油ガスの販売",
+          "description": "当社が系列販売店（小売店）への液化石油ガスの販売を行っています。",
+          "customers": [
+            "系列販売店（小売店）"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "renewable-energy",
+      "name": "再生可能エネルギー関連事業",
+      "description": "太陽光発電関連商材の販売、売電事業、バイオマス発電燃料の販売を行う事業です。2026年3月期の外部顧客への売上高は3,163百万円です。",
+      "customers": [
+        "需要家",
+        "発電事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "solar-power",
+          "name": "太陽光発電関連商材の販売、売電事業",
+          "description": "当社が太陽光発電関連商材の販売と売電事業を行い、ＮＳＭ諏訪ソーラーエナジー合同会社が売電事業を行っています。",
+          "customers": [
+            "需要家",
+            "電力の購入者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "biomass-fuel",
+          "name": "バイオマス発電燃料の販売",
+          "description": "当社がバイオマス発電燃料の販売を行い、NISSIN BIO ENERGY SDN.BHD.とJJ FUEL SUPPLY SDN.BHD.がバイオマス発電燃料の販売を、NISSIN BIO PRODUCTS SDN.BHD.がバイオマス発電燃料の生産及び販売を行っています。",
+          "customers": [
+            "発電事業者",
+            "需要家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "不動産の賃貸を行う事業です。2026年3月期の外部顧客への売上高は642百万円です。",
+      "customers": [
+        "オフィスビル、店舗、マンション等を賃借する顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "real-estate-leasing",
+          "name": "不動産の賃貸",
+          "description": "当社がオフィスビル、店舗、マンション等不動産賃貸事業の運営を行っています。「EDIAN（エディアン）」シリーズをはじめとする賃貸マンションの稼働が堅調に推移しました。",
+          "customers": [
+            "オフィスビル、店舗、マンション等を賃借する顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない区分で、持分法適用関連会社の日新興産株式会社が食料品の販売及び損害保険契約の代理業を行っています。外部顧客への売上高は報告セグメントとしては開示されていません。",
+      "customers": [
+        "食料品を購入する顧客",
+        "損害保険契約を締結する顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "food-and-insurance-agency",
+          "name": "食料品の販売、保険の代理業",
+          "description": "日新興産株式会社が食料品の販売及び損害保険契約の代理業を行っています。",
+          "customers": [
+            "食料品を購入する顧客",
+            "損害保険契約を締結する顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "主にENEOS株式会社より石油製品の供給を受け、石油関連製品の製造、販売、卸売等を行い、再生可能エネルギー関連商材や不動産賃貸も手がけて対価を得ています。",
+    "products": [
+      "ガソリン、灯油、軽油、重油等の燃料油、潤滑油、石油化学製品、液化石油ガス",
+      "太陽光発電関連商材とバイオマス発電燃料",
+      "賃貸するオフィスビル、店舗、マンション等"
+    ],
+    "customers": [
+      "需要家",
+      "系列販売店（小売店）",
+      "同業者",
+      "不動産を賃借する顧客"
+    ],
+    "revenueSources": [
+      "石油関連製品の販売の対価",
+      "太陽光発電関連商材とバイオマス発電燃料の販売の対価と売電の対価",
+      "不動産の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と連結子会社８社のグループ",
+        "description": "日新商事株式会社は東京都港区に本店を置き、連結子会社８社及び関連会社１社とグループを構成しています。連結の従業員数は366人です（2026年３月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "石油、再生可能エネルギー、不動産の事業",
+        "description": "石油関連事業では石油製品の販売、石油化学製品の製造、販売、液化石油ガスの販売を、再生可能エネルギー関連事業では太陽光発電関連商材の販売、売電事業、バイオマス発電燃料の販売を、不動産事業では不動産の賃貸を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "需要家、系列販売店、同業者など",
+        "description": "石油製品は需要家と系列販売店（小売店）が、石油化学製品は需要家と同業者が購入し、不動産はオフィスビル、店舗、マンション等を賃借する顧客が利用しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は39,425百万円",
+        "description": "2026年３月期の連結売上高は39,425百万円で、前期比1.0％増えました。事業別では石油関連事業が35,619百万円、再生可能エネルギー関連事業が3,163百万円、不動産事業が642百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は3,661百万円",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は3,661百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +236,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19588728000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 436,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +256,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20057760000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 404,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,12 +276,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21915903000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 374,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」等を第81期の期首から適用しており、第80期に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -87,7 +297,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23595445000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 379,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +317,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26708446000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 366,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +325,167 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1950,
+      "title": "商号を日新商事株式会社に変更し石油製品販売を主事業とした",
+      "description": "商号を日新商事株式会社に変更し、事業の目的を一般石油製品及び副製品の販売に変更しました。登記上は1947年に横浜起業株式会社として設立されましたが、会社は現在の石油製品販売が主事業目的となった1950年２月を会社設立と考えています。",
+      "significance": "現在の社名と石油関連事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "液化石油ガスの販売を開始",
+      "description": "液化瓦斯部を設け、液化石油ガス並びにその附属品の販売を開始しました。",
+      "significance": "石油関連事業の取扱商品が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "石油化学製品の販売を開始",
+      "description": "石油化学製品の販売を開始しました。同じ年に大阪府岸和田市の弓場商事株式会社の全株式を取得し、子会社としました。",
+      "significance": "現在の石油化学製品の製造、販売につながる事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "自社ビルを竣工し不動産賃貸業に進出",
+      "description": "横浜市神奈川区に自社ビル「ベイフロント横浜」を竣工し、不動産賃貸業に進出しました。",
+      "significance": "現在の不動産事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "株式公開の起点となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "日新諏訪太陽光発電所の売電を開始",
+      "description": "日新諏訪太陽光発電所の売電を開始しました。",
+      "significance": "再生可能エネルギー関連事業の売電事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "ＮＳＭ諏訪ソーラーエナジー合同会社を設立",
+      "description": "子会社としてＮＳＭ諏訪ソーラーエナジー合同会社を設立しました。",
+      "significance": "売電事業を担う連結子会社がグループに入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "竹鶴石油株式会社を子会社化",
+      "description": "竹鶴石油株式会社の株式の過半数を取得し、子会社としました。",
+      "significance": "石油製品の販売と海上輸送を担う会社がグループに入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "海外子会社を設立",
+      "description": "子会社NISSIN SHOJI VIETNAM CO., LTD.をベトナムに、NISSIN BIO ENERGY SDN.BHD.をマレーシアに設立しました。同じ年に、JX ANCI株式会社（現ENEOSテクノマテリアル株式会社）と当社の出資によりJリーフ株式会社が設立されました。",
+      "significance": "石油関連事業と再生可能エネルギー関連事業の海外展開が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "JJ FUEL SUPPLY SDN.BHD.の株式50％を取得",
+      "description": "マレーシアのJJ FUEL SUPPLY SDN.BHD.の株式50％を取得しました。同じ年に当社瓦斯部川崎充填所を廃止しました。",
+      "significance": "バイオマス発電燃料の販売を担う会社がグループに入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所スタンダード市場へ移行しました。",
+      "significance": "現在の上場市場の区分となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "NISSIN BIO PRODUCTS SDN.BHD.を設立",
+      "description": "子会社NISSIN BIO PRODUCTS SDN.BHD.をマレーシアに設立しました。",
+      "significance": "バイオマス発電燃料の生産及び販売を担う会社がグループに入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "Jリーフ株式会社の株式を全て譲渡",
+      "description": "持分法適用関連会社であったJリーフ株式会社の全株式を譲渡し、持分法適用の範囲から除外しました。",
+      "significance": "当連結会計年度末のグループ構成が変わった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "eneos-holdings",
+      "relationship": "other-affiliated-company",
+      "description": "ENEOSホールディングス株式会社は、2026年３月31日現在、当社の議決権の17.1％を所有するその他の関係会社です。同社は、当社が仕入れる石油製品を精製販売する子会社の経営管理を行っています。当社は同社の子会社であるENEOS株式会社と特約店契約を締結し、主に同社より石油製品の供給を受けて販売する業務提携等の関係にあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "yushiro",
+      "relationship": "major-shareholder",
+      "description": "株式会社ユシロは、2026年３月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合が1.7％である当社の大株主の事業会社です。当社は同社の株式190,381株を保有しており、相互に株式を保有する関係にあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "nippon-fine-chemical",
+      "relationship": "major-shareholder",
+      "description": "日本精化株式会社は、2026年３月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合が1.5％である当社の大株主の事業会社です。当社は同社の株式286,000株を保有しており、相互に株式を保有する関係にあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +493,58 @@
       "publisher": "日新商事株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKC9.pdf",
       "publishedAt": "2026-06-29",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YKC9",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 重要な後発事象（親会社及び主要株主である筆頭株主の異動）: 2026年５月11日開催の取締役会で、株式会社EDIANDによる当社株式に対する公開買付け（マネジメント・バイアウトの一環、公開買付期間は2026年５月12日から６月22日まで）に賛同し、株主に応募を推奨する旨を決議した。公開買付けは成立し、2026年６月29日の決済の開始日付で公開買付者は当社の親会社及び主要株主である筆頭株主に該当することとなった。本文の構造は2026年３月31日現在のもの（親会社はなく、その他の関係会社はENEOSホールディングス株式会社、議決権の被所有割合17.1％）を基準とし、この後発の異動は本文の構造には反映していない。公開買付けの成立後の手続きにより当社株式が上場廃止となる予定である旨も印字されている。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期ビジョン「nissin Vision 2030」ではエネルギー企業としての強固な地位の確立を掲げ、事業構造改革の次なるステージ移行や石油関連事業への依存からの脱却、グローバル展開強化等を定めています。そのフェーズIIにあたる2025年３月期からの３ヵ年の中期経営計画では、企業価値向上経営の進展とサステナビリティ経営の推進を基本戦略とし、再生可能エネルギー関連事業の成長、コア事業の強化、モビリティ事業の進化を重点目標としています。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の大部分を占める石油関連事業を基盤にしながら、再生可能エネルギー関連事業を主要ビジネスへ育てることで、石油製品需要の減退が続く環境でも事業を続けられる構成へ移す進め方です。不動産事業の物件ポートフォリオを機動的に入れ替える方針も、基盤事業を支える位置づけで示されています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における長期ビジョンと中期経営計画の重点目標の記載と、セグメント情報の外部顧客に対する売上高に基づく。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "石油製品はENEOS株式会社との特約店契約に基づく供給を受け、直営ＳＳは2026年３月期末で53ＳＳを運営しています。直営部門ではピュアセルフ店舗の導入やアプリによる集客、カーメンテナンスの強化に取り組み、法人向けには給油カードを通じた燃料油の拡販や潤滑油の販売を行っています。",
+        "basis": "重要な契約等におけるENEOS株式会社との特約店契約の記載と、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における直営部門と直需部門の取組みと直営ＳＳ数の記載に基づく。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "国内の石油製品需要は減退傾向で推移したとされる環境の中で、石油関連事業が売上高の大部分を占め、再生可能エネルギー関連事業と不動産事業がこれに続く構成です。再生可能エネルギーでは脱炭素化の流れが続くことが見込まれる一方、バイオマス発電燃料事業ではPKS事業の一部撤退を決定するなど、事業の見直しも進めています。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における石油製品販売業界と再生可能エネルギー業界の環境の記載と、セグメント情報の外部顧客に対する売上高に基づく。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

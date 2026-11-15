@@ -4,15 +4,139 @@
   "name": "菱友システムズ",
   "officialName": "株式会社菱友システムズ",
   "nameEn": "Ryoyu Systems Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Ryoyu Systems",
+  "description": "情報通信システムの設計・開発・運用・保守や機器販売、工業製品の設計・解析などを手がける情報サービス企業です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "information-services",
+      "name": "情報サービス",
+      "description": "当社と連結子会社3社が情報サービスの提供を主な事業とする、報告セグメントが情報サービスの単一セグメントで構成される事業です。2026年3月期の売上高は43,229百万円です。",
+      "customers": [
+        "三菱重工業株式会社をはじめとする顧客企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "system-development-operation",
+          "name": "情報通信システムの設計、開発、運用及び保守",
+          "description": "情報通信システムの設計と開発を行い、導入後の運用と保守までを手がけるサービスです。",
+          "customers": [
+            "情報通信システムを利用する顧客企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "equipment-sales",
+          "name": "情報通信システム関連機器の販売",
+          "description": "情報通信システムに関連する機器を販売する事業です。連結子会社もシステム機器の販売と保守サービスを手がけています。",
+          "customers": [
+            "情報通信システムを利用する顧客企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "design-analysis",
+          "name": "工業製品等の設計、解析・シミュレーション",
+          "description": "工業製品等を対象に、設計と解析・シミュレーションを行うサービスです。流体解析や構造解析が得意分野として挙げられています。",
+          "customers": [
+            "工業製品を開発する顧客企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "information-processing",
+          "name": "情報通信システムを利用した各種情報処理サービス",
+          "description": "情報通信システムを利用して、各種の情報処理サービスを提供する事業です。",
+          "customers": [
+            "情報処理を委託する顧客企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "顧客の情報通信システムの設計・開発から運用・保守、関連機器の販売、工業製品等の設計・解析、情報処理サービスまでを提供し、その対価を得る事業モデルです。",
+    "products": [
+      "情報通信システムの設計・開発・運用・保守",
+      "情報通信システム関連機器",
+      "工業製品等の設計・解析・シミュレーション",
+      "情報処理サービス"
+    ],
+    "customers": [
+      "三菱重工業株式会社をはじめとする顧客企業",
+      "情報通信システムを利用する企業"
+    ],
+    "revenueSources": [
+      "システムの設計・開発・運用・保守の対価",
+      "情報通信システム関連機器の販売代金",
+      "設計・解析・シミュレーションの対価",
+      "情報処理サービスの対価"
+    ],
+    "suppliers": [
+      {
+        "name": "パートナー企業",
+        "description": "業務運営体制の強化の中で、関係強化による外部リソースの確保先として挙げられている協力先です。"
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "菱友システムズ",
+        "description": "1968年にシンコー計算サービス株式会社として設立され、東京都港区芝浦に本店を置く情報サービス企業です。"
+      },
+      {
+        "kind": "offering",
+        "title": "情報サービス",
+        "description": "情報通信システムの設計・開発・運用・保守、関連機器の販売、工業製品等の設計・解析・シミュレーション、情報処理サービスを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "顧客企業",
+        "description": "主要な顧客である三菱重工業株式会社をはじめ、情報通信システムを利用する顧客企業にサービスを届けます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は43,229百万円で、情報サービスの単一セグメントで構成されています。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は3,910百万円となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +151,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14379000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2026,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +171,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15823000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2018,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +191,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18160000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2012,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +211,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20704000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2017,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,30 +231,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23968000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2006,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2025年10月1日付で普通株式1株につき2株の割合で株式分割を行いました。株式数に関する指標は、2022年3月期の期首に当該分割が行われたと仮定して算定されています。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第58期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社菱友システムズ",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YH80.pdf",
-      "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-29",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +251,225 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1968,
+      "title": "シンコー計算サービス株式会社を設立",
+      "description": "東京都港区芝西久保巴町（現虎ノ門）に、電子計算機による計算業務の受託や穿検孔作業の受託、派遣業務を主たる目的としてシンコー計算サービス株式会社を設立しました。",
+      "significance": "現在の菱友システムズの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "菱友計算株式会社に商号変更し事業を譲り受ける",
+      "description": "本社を東京都港区西新橋に移転し、菱友計算株式会社に商号を変更しました。同時に第一計算株式会社からコンピュータ運用管理やシステムプログラム作成などの事業を譲り受けました。",
+      "significance": "現在の社名につながる商号変更と事業基盤の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "OA機器の販売を開始",
+      "description": "OA機器の販売を開始しました。",
+      "significance": "機器販売へ事業を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "データエントリ事業を譲り受ける",
+      "description": "株式会社サンデータサービスからデータエントリ事業を譲り受けました。",
+      "significance": "情報処理サービスの幅を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "株式会社菱友システム技術を設立",
+      "description": "東京都港区に、技術計算・エンジニアリングサービスを主たる目的として株式会社菱友システム技術を設立しました。",
+      "significance": "現在の連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "システム開発事業などを譲り受ける",
+      "description": "株式会社第一ソフテックからシステム開発事業を、株式会社新生社ソフテックからデータエントリ事業を譲り受けました。",
+      "significance": "システム開発へ事業を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "株式会社菱友システムビジネスを設立",
+      "description": "東京都港区に、中小型コンピュータなどの情報機器の販売と保守サービスを主たる目的として株式会社菱友システムビジネスを設立しました。同年、本社を東京都港区芝公園に移転しました。",
+      "significance": "現在の連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "株式会社菱友システムサービスを設立",
+      "description": "東京都港区に、データエントリ業務を主たる目的として株式会社菱友システムサービスを設立しました。同年、本社を東京都港区高輪に移転しました。",
+      "significance": "現在の連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "株式会社菱友システムズに商号変更しジャスダックに上場",
+      "description": "商号を株式会社菱友システムズに変更しました。同年、店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "現在の商号の始まりと取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "大阪証券取引所の現物市場が東京証券取引所に統合されたことに伴い、東京証券取引所JASDAQ（スタンダード）に上場しました。2010年には合併に伴い大阪証券取引所JASDAQに上場しています。",
+      "significance": "上場市場が東京証券取引所へ移った出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "監査等委員会設置会社に移行",
+      "description": "監査等委員会設置会社に移行しました。",
+      "significance": "ガバナンス体制の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "本社を芝浦に移転",
+      "description": "本社を東京都港区芝浦に移転しました。",
+      "significance": "現在の本店所在地への移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "株式会社網屋と資本業務提携契約を締結",
+      "description": "株式会社網屋と資本業務提携契約を締結しました。",
+      "significance": "セキュリティ分野での提携の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-heavy-industries",
+      "relationship": "other-affiliated-company",
+      "description": "その他の関係会社であり、2026年3月31日現在の議決権等の被所有割合は31.23％（間接所有0.88％を含みます）です。当社は同社の持分法適用会社であり、主要な顧客である同社に情報サービスを提供しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "amiya",
+      "relationship": "business-partner",
+      "description": "2026年2月12日に資本業務提携契約を締結した、業務提携等の関係にある会社です。セキュリティ製品の共同開発を行う資本業務提携であり、当社は同社の株式270,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第58期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社菱友システムズ",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YH80.pdf",
+      "publishedAt": "2026-06-23",
+      "docId": "S100YH80",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年度を初年度とする3か年の中期経営計画「顧客と並走する菱友」を推進し、新ビジネスの立ち上げ、既存顧客の深耕・接点の拡大、“人”の価値向上、業務運営体制の強化、菱友グループ強化・最適化を注力項目としています。新ビジネスではAIの業務適用や情報セキュリティの新サービスの提供を開始し、外部企業との業務提携も実施しました。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "解析・設計の分野では、得意とする流体解析と構造解析に加えて新たな解析分野への拡大に取り組んでおり、情報セキュリティやAIなどの新しい分野でもサービスの提供を始めています。システム開発から運用・保守、機器販売、情報処理までをグループで担える事業構成が土台になっています。",
+        "basis": "事業の内容に印字された事業構成と、経営方針、経営環境及び対処すべき課題等に印字された解析・設計分野の取り組みに基づく分析",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "情報サービスの単一セグメントで事業を行い、2026年3月期の売上高は43,229百万円です。主要な顧客である三菱重工業株式会社への売上高は26,432百万円と印字されています。連結従業員数は2,006人で、連結子会社3社とともに事業を行っています。",
+        "basis": "セグメント情報等の主要な顧客ごとの情報、販売実績の相手先別内訳、関係会社の状況、従業員の状況に基づく分析",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

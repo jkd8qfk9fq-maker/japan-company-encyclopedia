@@ -4,15 +4,105 @@
   "name": "大本組",
   "officialName": "株式会社大本組",
   "nameEn": "OHMOTO GUMI CO., LTD.",
-  "description": null,
+  "shortNameEn": "OHMOTO GUMI CO., LTD.",
+  "description": "岡山に本店を置き、建築工事と土木工事を全国で手がける総合建設会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "ohmoto-group",
+      "name": "大本組の事業",
+      "description": "株式会社大本組（本店・岡山市北区、東京本社・東京都港区）は、非連結子会社3社、関連会社1社及びその他の関係会社1社と当社グループを構成し、建築事業と土木事業を主な事業としています（2026年3月31日現在）。当社は連結決算を行っておらず、数値はいずれも単体のものです。その他の関係会社である株式会社OHMOTOホールディングスは当社の議決権の32.2％を保有しており、当社は同社より建物を賃借しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "building",
+          "name": "建築事業",
+          "description": "当社が建築工事全般を行う事業です。商業施設や庁舎、工場などの建築工事を手がけ、建築本部が主体となって事業活動を展開しています。2026年3月期の外部顧客への売上高は44,508百万円で、最大の事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "civil-engineering",
+          "name": "土木事業",
+          "description": "当社が土木工事全般を行う事業です。道路や橋梁、港湾、下水道などの社会インフラ工事を手がけ、土木本部が主体となって事業活動を展開しています。2026年3月期の外部顧客への売上高は42,940百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other",
+          "name": "その他",
+          "description": "非連結子会社のテクノアシスト株式会社が環境整備事業を、関連会社のクイント企画株式会社が保険代理業等を行う区分です。報告セグメントには含まれておらず、金額の開示はありません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "国や自治体などの官公庁と民間企業から建築・土木工事を請け負い、完成工事高で収益を得る事業モデルです。",
+    "products": [
+      "建築工事（商業施設、庁舎、工場、物流施設など）",
+      "土木工事（道路・橋梁、港湾、下水道、土地区画整理など）"
+    ],
+    "customers": [
+      "国土交通省をはじめとする官公庁",
+      "メーカー、小売、鉄道、電力などの民間企業"
+    ],
+    "revenueSources": [
+      "建築事業の完成工事高",
+      "土木事業の完成工事高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "大本組",
+        "description": "株式会社大本組は岡山県岡山市に本店、東京都港区に東京本社を置く総合建設会社です。従業員数は823人です（2026年3月31日現在）。非連結子会社3社や関連会社1社などとグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "建築工事と土木工事を請け負う",
+        "description": "建築事業では商業施設や庁舎、工場などの建築工事全般を、土木事業では道路や橋梁、港湾、下水道などの土木工事全般を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "官公庁と民間企業が発注者",
+        "description": "発注者は国土交通省をはじめとする官公庁と、メーカーや小売、鉄道、電力などの民間企業です。完成工事高の発注者別の内訳は、民間が54,775百万円、官公庁が32,673百万円です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は87,448百万円",
+        "description": "2026年3月期の売上高は87,448百万円で、前期から24.8％増加しました。事業別の外部顧客への売上高は、建築事業が44,508百万円、土木事業が42,940百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は1,813百万円",
+        "description": "2026年3月期の当期純利益は1,813百万円で、前期から1.4％増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +117,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 66934000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 821,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +139,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 65623000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 810,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +161,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 67260000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 787,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +183,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 64862000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 792,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +205,373 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 68700000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 823,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1937,
+      "title": "株式会社大本組を設立",
+      "description": "1937年12月、岡山県岡山市に株式会社大本組を設立しました。",
+      "significance": "創業の地である岡山に本店を置く総合建設会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "建設大臣登録を完了",
+      "description": "1949年10月、建設業法による建設大臣登録（い）第61号の登録を完了しました。",
+      "significance": "建設業者としての公的登録の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "大阪・東京の出張所を支店に昇格",
+      "description": "1963年9月、大阪出張所と東京出張所を支店に昇格しました。",
+      "significance": "関西と首都圏への展開の足がかりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "名古屋営業所を支店に昇格",
+      "description": "1965年1月、名古屋営業所を支店に昇格しました。",
+      "significance": "中部圏の拠点体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "広島・福岡の営業所を支店に昇格",
+      "description": "1967年5月、広島営業所と福岡営業所を支店に昇格しました。",
+      "significance": "中国・九州地方への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "事業目的に不動産事業と住宅事業を追加",
+      "description": "1971年2月、定款を一部変更し、事業目的として不動産事業及び住宅事業を追加しました。",
+      "significance": "建設以外の事業領域への広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "東京本社を設置",
+      "description": "1971年8月、東京本社を設置しました。",
+      "significance": "岡山の本店と東京本社の体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "仙台営業所を支店に昇格",
+      "description": "1974年4月、仙台営業所を支店に昇格しました。",
+      "significance": "東北地方の拠点を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "宅地建物取引業の免許を取得",
+      "description": "1977年6月、宅地建物取引業法による建設大臣免許を取得しました。",
+      "significance": "不動産取引への対応体制です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "岡山支店を設置",
+      "description": "1978年12月、岡山支店を設置しました。",
+      "significance": "創業地・岡山の営業体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "高松支店を四国支店に名称変更",
+      "description": "1983年11月、高松支店を四国支店に名称変更しました。",
+      "significance": "四国全域を管轄する体制への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "横浜営業所を支店に昇格",
+      "description": "1985年4月、横浜営業所を支店に昇格しました。",
+      "significance": "首都圏の拠点を厚くしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "仙台支店を東北支店、福岡支店を九州支店に名称変更",
+      "description": "1991年4月、仙台支店を東北支店に、福岡支店を九州支店に名称変更しました。",
+      "significance": "広域を管轄する支店体制への再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "株式を店頭登録",
+      "description": "1994年12月、当社株式を日本証券業協会の店頭登録銘柄として登録しました。",
+      "significance": "資本市場への第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "ISO9001認証を取得",
+      "description": "1998年4月、ISO9001認証を全社4部門で取得完了しました。",
+      "significance": "品質マネジメントの体制整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "ISO14001認証を取得",
+      "description": "2000年4月、ISO14001認証を全社2部門で取得完了しました。",
+      "significance": "環境マネジメントの体制整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "2004年12月、日本証券業協会の株式会社ジャスダック証券取引所への移行に伴い、当社株式について日本証券業協会における登録を取消し、株式会社ジャスダック証券取引所に上場しました。",
+      "significance": "取引所上場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "大阪証券取引所JASDAQ（スタンダード）に上場",
+      "description": "2010年10月、大阪証券取引所の各市場の統合に伴い、大阪証券取引所JASDAQ（スタンダード）に株式を上場しました。",
+      "significance": "市場統合に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "2013年7月、東京証券取引所及び大阪証券取引所の市場統合に伴い、東京証券取引所JASDAQ（スタンダード）に株式を上場しました。",
+      "significance": "東京証券取引所への一本化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場へ移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "ihi",
+      "relationship": "customer",
+      "description": "株式会社IHIの株式1,349,950株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "meiji-holdings",
+      "relationship": "customer",
+      "description": "明治ホールディングス株式会社の株式234,000株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "west-japan-railway",
+      "relationship": "customer",
+      "description": "西日本旅客鉄道株式会社の株式200,000株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "central-japan-railway",
+      "relationship": "customer",
+      "description": "東海旅客鉄道株式会社の株式150,000株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "medipal-holdings",
+      "relationship": "customer",
+      "description": "株式会社メディパルホールディングスの株式133,280株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "eneos-holdings",
+      "relationship": "customer",
+      "description": "ENEOSホールディングス株式会社の株式224,700株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "nankai",
+      "relationship": "customer",
+      "description": "株式会社NANKAIの株式100,000株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。同社の記載名は旧会社名の南海電気鉄道株式会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "the-chugoku-electric-power",
+      "relationship": "customer",
+      "description": "中国電力株式会社の株式247,982株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "gunze",
+      "relationship": "customer",
+      "description": "グンゼ株式会社の株式64,320株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "jfe-holdings",
+      "relationship": "customer",
+      "description": "JFEホールディングス株式会社の株式90,897株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "amano",
+      "relationship": "customer",
+      "description": "アマノ株式会社の株式22,000株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "wesco-holdings",
+      "relationship": "customer",
+      "description": "株式会社ウエスコホールディングスの株式62,500株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "mitsubishi-chemical-group",
+      "relationship": "customer",
+      "description": "三菱ケミカルグループ株式会社の株式56,800株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "okayamaken-freight-transportation",
+      "relationship": "customer",
+      "description": "岡山県貨物運送株式会社の株式12,000株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "chudenko",
+      "relationship": "customer",
+      "description": "株式会社中電工の株式4,430株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "toho-holdings",
+      "relationship": "customer",
+      "description": "東邦ホールディングス株式会社の株式2,700株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "tenmaya-store",
+      "relationship": "customer",
+      "description": "株式会社天満屋ストアの株式1,100株を保有しています。主要発注者として同社より工事を受注しており、保有目的は取引関係の維持・強化のためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +579,50 @@
       "publisher": "株式会社大本組",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI8J.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YI8J",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2023年10月1日を効力発生日として普通株式1株につき3株の割合で、2025年3月1日を効力発生日として普通株式1株につき2株の割合で株式分割を実施しました。株式数に基づく経営指標は、当該分割が第86期（2023年3月期）及び第87期（2024年3月期）の期首に行われたと仮定して算定されています。"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "会社設立100年となる2036年に向けた「長期ビジョン2036」を掲げ、「想いを築き、幸せを創造する」企業であり続けることを目指しています。そのフェーズ1として3ヵ年中期経営計画（2024～2026年度）を進めており、受注基盤の強化や工事採算性の改善、生産性向上や人的資本への投資などの施策を推進しています。中期経営計画の期間中は、財務安全性を維持しつつ資本効率を意識した株主還元として、累進配当を基本とする配当方針を定めています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1937年の創業以来、岡山の本店と東京本社を軸に全国の支店網で事業を展開してきました。建築と土木の両事業をほぼ同じ規模で営み、国土強靭化政策や防災・減災関連の公共投資と、民間設備投資の双方を取り込める事業構成が特徴です。建築工事では特命による受注の比率が高く、継続的な取引関係を持つ発注者基盤がうかがえます。",
+        "basis": "【沿革】の創業と支店網の拡大、【事業の内容】の事業構成、セグメント情報の事業別売上高、完成工事高の受注方法別比率の記載に基づく。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "外部顧客への売上高では建築事業が44,508百万円、土木事業が42,940百万円と拮抗しています。地域ごとの情報では、本邦以外の外部顧客への売上高はないとされています。主要な顧客ごとの情報では、国土交通省への売上高が16,111百万円（土木事業）と開示されています。完成工事高の発注者別では民間が54,775百万円、官公庁が32,673百万円です。",
+        "basis": "セグメント情報における事業別の外部顧客への売上高、関連情報における主要な顧客ごとの情報と地域ごとの情報、完成工事高の発注者別内訳の記載に基づく。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
