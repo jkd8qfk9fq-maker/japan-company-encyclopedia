@@ -4,15 +4,122 @@
   "name": "ツムラ",
   "officialName": "株式会社ツムラ",
   "nameEn": "TSUMURA & CO.",
-  "description": null,
+  "shortNameEn": "TSUMURA & CO.",
+  "description": "漢方製剤を中心とする医薬品を製造し、医療機関や一般消費者に販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "pharmaceutical-business",
+      "name": "医薬品事業",
+      "description": "漢方製剤を中心とする医薬品の製造と販売を行う事業です。医療用漢方製剤129処方を医療機関向けに販売し、一般用漢方製剤などのヘルスケア製品も扱っています。原料生薬の栽培と調達から製造、販売までを一貫して行っています。",
+      "products": [
+        "医療用漢方製剤",
+        "一般用漢方製剤",
+        "ヘルスケア製品",
+        "中薬飲片"
+      ],
+      "customers": [
+        "医療機関",
+        "医薬品卸売会社",
+        "一般消費者"
+      ],
+      "children": [
+        {
+          "id": "japan",
+          "name": "日本",
+          "description": "顧客の所在地が日本である売上高は162,015百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "china",
+          "name": "中国",
+          "description": "顧客の所在地が中国である売上高は26,997百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other-regions",
+          "name": "その他",
+          "description": "顧客の所在地が日本と中国以外である売上高は3,602百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "医療用漢方製剤129処方を中心とする医薬品を製造し、医薬品卸売会社を通じて医療機関に販売しています。",
+    "products": [
+      "医療用漢方製剤",
+      "一般用漢方製剤",
+      "ヘルスケア製品",
+      "中薬飲片",
+      "漢方エキス粉末"
+    ],
+    "customers": [
+      "医療機関",
+      "医薬品卸売会社",
+      "一般消費者",
+      "中国の医薬品企業"
+    ],
+    "revenueSources": [
+      "医療用漢方製剤の販売",
+      "ヘルスケア製品の販売",
+      "中国事業における原料生薬と飲片の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "会社",
+        "description": "東京都港区に本社を置き、静岡工場と茨城工場で医薬品を製造しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "商品",
+        "description": "医療用漢方製剤129処方を中心に、一般用漢方製剤やヘルスケア製品を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "お客様",
+        "description": "医薬品卸売会社を通じて医療機関に販売し、ヘルスケア製品は一般消費者に販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は192,615百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は28,117百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +134,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 258109000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3921,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +154,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 272246000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4032,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +174,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 295364000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4138,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 330110000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4272,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 371603000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4923,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +222,205 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1893,
+      "title": "中将湯本舗 津村順天堂を創立",
+      "description": "個人経営の中将湯本舗津村順天堂を創立しました。",
+      "significance": "ツムラの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1936,
+      "title": "株式会社津村順天堂を設立",
+      "description": "東京都中央区に株式会社津村順天堂を設立し、個人経営の業務を引き継ぎました。婦人薬中将湯や浴用剤バスクリンなどの製造販売を開始しました。",
+      "significance": "法人としての出発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "静岡工場を建設",
+      "description": "静岡工場を建設し、目黒工場から移転しました。",
+      "significance": "生産拠点を静岡に移しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "医療用漢方製剤が健康保険に採用",
+      "description": "医療用漢方製剤が健康保険に採用され、薬価収載されて発売されました。",
+      "significance": "医療用漢方製剤の事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "上場市場が第一部になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "株式会社ツムラに商号を変更",
+      "description": "商号を株式会社ツムラに変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "深セン津村薬業有限公司を設立",
+      "description": "深セン津村薬業有限公司を設立しました。",
+      "significance": "中国での原料生薬の事業を始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "上海津村製薬有限公司を設立",
+      "description": "上海津村製薬有限公司を設立しました。",
+      "significance": "中国での漢方エキス粉末の製造を始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "日本生薬株式会社を吸収合併",
+      "description": "連結子会社であった日本生薬株式会社を吸収合併しました。",
+      "significance": "生薬の事業を一体化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "家庭用品事業を売却",
+      "description": "家庭用品事業を売却しました。",
+      "significance": "医薬品事業に経営資源を集中しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "津村（中国）有限公司を設立",
+      "description": "津村（中国）有限公司を設立しました。",
+      "significance": "中国における地域統括の拠点を設けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "平安津村有限公司を設立",
+      "description": "平安津村有限公司を設立しました。",
+      "significance": "中国での事業統括の体制を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "上場市場がプライム市場になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "上海虹橋中薬飲片有限公司の持分を取得",
+      "description": "上海虹橋中薬飲片有限公司の持分を取得し、連結子会社としました。",
+      "significance": "中国での中薬飲片の事業を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "alfresa-holdings",
+      "relationship": "customer",
+      "description": "医薬品の主要な販売先で、2026年3月期の売上高は42,720百万円です。特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "medipal-holdings",
+      "relationship": "customer",
+      "description": "医薬品の主要な販売先で、2026年3月期の売上高は37,131百万円です。特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "suzuken",
+      "relationship": "customer",
+      "description": "医薬品の主要な販売先で、2026年3月期の売上高は25,696百万円です。特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "toho-holdings",
+      "relationship": "customer",
+      "description": "医薬品の主要な販売先で、2026年3月期の売上高は19,615百万円です。特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "ohki-healthcare-holdings",
+      "relationship": "customer",
+      "description": "医薬品販売等の取引関係があり、特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +428,52 @@
       "publisher": "株式会社ツムラ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFC1.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YFC1",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 平安津村薬業有限公司の持分20％の追加取得（完全子会社化）は、企業結合日が2026年6月30日（予定）で、有報の提出日（2026年6月23日）時点では完了していない予定事項です。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "パーパスは「一人ひとりの、生きるに、活きる。」、経営理念は「自然と健康を科学する」、企業使命は「漢方医学と西洋医学の融合により、世界で類のない最高の医療提供に貢献します」です。長期経営ビジョン「TSUMURA VISION “Cho-WA” 2031」と第2期中期経営計画（2025年度－2027年度）を掲げ、2027年度の売上高2,340億円を目標としています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "原料生薬の栽培と調達から製造、販売までを一貫して行う漢方バリューチェーンを持ち、医療用漢方製剤129処方をそろえています。中国にも原料生薬の調達と中薬の製造販売の拠点を広げています。",
+        "basis": "漢方バリューチェーンを通じて事業を行い、医療用漢方製剤129処方を販売していることが有報に記載されています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "医薬品事業の単一セグメントで、2026年3月期の売上高は192,615百万円です。地域別では日本の売上高が162,015百万円、中国が26,997百万円で、医薬品卸売会社4社への販売が売上高の約65％を占めています。",
+        "basis": "単一セグメントであることと、地域別および主要な顧客ごとの売上高が有報に記載されています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【セグメント情報】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

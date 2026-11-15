@@ -4,15 +4,181 @@
   "name": "東邦銀行",
   "officialName": "株式会社東邦銀行",
   "nameEn": "The Toho Bank, Ltd.",
-  "description": null,
+  "shortNameEn": "THE TOHO BANK",
+  "description": "福島県を地盤とする地方銀行で、銀行業務を中核に、リース・信用保証・コンサルティングなど地域の企業と個人の幅広い金融ニーズにグループで応えています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "banking",
+      "name": "銀行業",
+      "description": "株式会社東邦銀行が預金・貸出・有価証券投資・役務取引などの銀行業務を行う、グループの中核事業です。2026年3月期の外部顧客に対する経常収益は81,013百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "toho-bank-banking",
+          "name": "東邦銀行の銀行業務",
+          "description": "株式会社東邦銀行が、福島県福島市の本店を含む123か店の店舗網で、預金業務、貸出業務、商品有価証券売買業務、有価証券投資業務、内国為替業務、外国為替業務、社債受託・登録業務及び付帯業務を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "leasing",
+      "name": "リース業",
+      "description": "連結子会社が機械・器具備品等のリース取引を行う事業です。2026年3月期の外部顧客に対する経常収益は8,925百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "toho-lease",
+          "name": "東邦リースのリース業務",
+          "description": "連結子会社の東邦リース株式会社が、機械・器具備品等のリース取引を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "credit-guarantee",
+      "name": "信用保証業",
+      "description": "連結子会社が信用保証業務を行う事業です。2026年3月期の外部顧客に対する経常収益は982百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "toho-credit-guarantee",
+          "name": "東邦信用保証の信用保証業務",
+          "description": "連結子会社の東邦信用保証株式会社が、信用保証業務を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業セグメントで、クレジットカード業、情報システムサービス、コンサルティング業などを含みます。2026年3月期の外部顧客に対する経常収益は1,698百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "credit-card",
+          "name": "クレジットカード業",
+          "description": "連結子会社の株式会社東邦カードが、クレジットカード業務等を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "information-systems",
+          "name": "情報システムサービス",
+          "description": "連結子会社の東邦情報システム株式会社が、銀行の基幹系システムや情報系システムの開発・運用・保守などを行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "consulting",
+          "name": "コンサルティング業",
+          "description": "連結子会社の株式会社東邦コンサルティングパートナーズが事業承継・Ｍ＆Ａ等のコンサルティングを行い、株式会社東邦ＩＴヒューマンソリューションズがＩＴコンサルティング・システム導入支援・人材関連ソリューション事業を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "smile-services",
+          "name": "印刷・製本等のサービス業務",
+          "description": "連結子会社の株式会社とうほうスマイルが、印刷・製本業務等を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "福島県内の企業や個人から預金を集めて貸出や有価証券投資で運用し、リースや信用保証、コンサルティングなどのグループサービスと合わせて経常収益を得る事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "預金・貸出・為替などの銀行サービス",
+      "有価証券投資",
+      "リース",
+      "クレジットカード",
+      "信用保証",
+      "コンサルティング（事業承継・Ｍ＆Ａ、ＩＴ・人材）"
+    ],
+    "customers": [
+      "福島県を中心とする地域の個人",
+      "法人・事業者",
+      "地方公共団体"
+    ],
+    "revenueSources": [
+      "貸出金利息や有価証券利息配当金などの資金運用収益",
+      "金融商品仲介やコンサルティングなどの役務取引等収益",
+      "リース業務の収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東邦銀行グループ",
+        "description": "株式会社東邦銀行と連結子会社７社からなるグループで、連結従業員数は2,037人（2026年3月31日現在）です。本店を福島県福島市に置き、123か店の店舗網を展開しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "銀行業務とグループの金融サービス",
+        "description": "東邦銀行が預金、貸出、商品有価証券売買、有価証券投資、内国為替、外国為替、社債受託などの銀行業務を行い、グループ各社がリース、クレジットカード、信用保証、情報システム、コンサルティングなどのサービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "福島県を中心とする地域のお客さま",
+        "description": "福島県を営業基盤とし、個人、法人・事業者、地方公共団体など地域のお客さまに金融サービスを提供しています。経常収益の90％超は本邦の外部顧客に対するものです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "連結経常収益は924億65百万円",
+        "description": "2026年3月期の連結経常収益は92,465百万円でした。外部顧客に対する経常収益の内訳は、銀行業81,013百万円、リース業8,925百万円、信用保証業982百万円、その他1,698百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は123億53百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は12,353百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +193,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 192740000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1973,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +213,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 191012000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1975,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +233,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 206179000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 1958,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +253,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 197234000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2018,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +273,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 217747000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2037,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +281,462 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1941,
+      "title": "三行の合併により設立",
+      "description": "郡山商業銀行、会津銀行及び白河瀬谷銀行の合併により設立され、本店を郡山市に置きました。",
+      "significance": "福島県内の三行の合併によって、地域を地盤とする銀行が誕生しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1942,
+      "title": "伊達銀行を合併",
+      "description": "株式会社伊達銀行を合併しました。",
+      "significance": "県内の銀行再編の中で営業基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "会津貯蓄銀行の事業を譲受",
+      "description": "会津貯蓄銀行の事業の譲受けを行いました。",
+      "significance": "貯蓄銀行の事業を取り込み、預金基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "二本松銀行を合併",
+      "description": "株式会社二本松銀行を合併しました。",
+      "significance": "戦時下の統合の中で県内の店舗網をさらに広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "福島銀行（旧）の営業を譲受",
+      "description": "福島銀行株式会社（旧）の営業の譲受けを行いました。",
+      "significance": "県内中核行としての地位を固めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1946,
+      "title": "本店を福島市に移転",
+      "description": "本店所在地を福島市に変更しました。",
+      "significance": "県庁所在地への本店移転で、現在の営業体制の基礎ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "福島県金庫事務の取扱い開始",
+      "description": "福島県金庫事務の取扱いを開始しました。",
+      "significance": "福島県の公金事務を担う立場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "本店新社屋が完成",
+      "description": "福島市大町３番25号の現在地に本店新社屋が完成しました。",
+      "significance": "現在の本店所在地での営業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "外国為替業務の取扱い開始",
+      "description": "外国為替業務の取扱いを開始しました。",
+      "significance": "国際業務への対応が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場会社となり、資本市場へのアクセスを得ました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "市場第一部に指定替え",
+      "description": "東京証券取引所市場第一部銘柄に指定替えとなりました。",
+      "significance": "上場市場での位置付けが高まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "東邦ビジネスサービス株式会社を設立",
+      "description": "東邦ビジネスサービス株式会社を設立しました。",
+      "significance": "グループによる周辺業務の体制づくりが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "国債等公共債の窓口販売を開始",
+      "description": "証券業務として国債等公共債の窓口販売の取扱いを開始しました。",
+      "significance": "証券分野の取扱いが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "東邦コンピューターサービス株式会社を設立",
+      "description": "東邦コンピューターサービス株式会社を設立しました。",
+      "significance": "システム関連業務を担う子会社が発足しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "東邦リース株式会社と東邦信用保証株式会社を設立",
+      "description": "東邦リース株式会社及び東邦信用保証株式会社を設立しました。",
+      "significance": "リースと信用保証の専門子会社がそろい、グループの金融サービスが広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "株式会社東邦カードを設立",
+      "description": "株式会社東邦カードを設立しました。",
+      "significance": "カード分野の子会社が発足しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "債券ディーリング業務の取扱い開始",
+      "description": "債券ディーリング業務の取扱いを開始しました。",
+      "significance": "市場業務の幅が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "海外コルレス業務の取扱い開始",
+      "description": "海外コルレス業務の取扱いを開始しました。",
+      "significance": "海外金融機関との取引体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "東邦クレジットサービス株式会社を設立",
+      "description": "東邦クレジットサービス株式会社を設立しました。",
+      "significance": "クレジット分野の体制が厚くなりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "東邦不動産サービス株式会社と東邦スタッフサービス株式会社を設立",
+      "description": "東邦不動産サービス株式会社及び東邦スタッフサービス株式会社を設立しました。",
+      "significance": "不動産や人材の周辺サービスを担う子会社が発足しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "東邦情報システム株式会社を設立",
+      "description": "東邦情報システム株式会社を設立しました。",
+      "significance": "情報システムを担う子会社が発足しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "信託代理業務の取扱い開始",
+      "description": "信託代理業務の取扱いを開始しました。",
+      "significance": "信託分野への取組みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "信託業務の取扱い開始",
+      "description": "信託業務の取扱いを開始しました。",
+      "significance": "信託業務を自ら手がけるようになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "事務センター社屋が完成",
+      "description": "事務センター社屋が完成しました。",
+      "significance": "事務集中の拠点が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "投資信託の窓口販売を開始",
+      "description": "投資信託の窓口販売業務の取扱いを開始しました。",
+      "significance": "資産運用商品の窓口販売が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "損害保険の窓口販売を開始",
+      "description": "損害保険の窓口販売業務の取扱いを開始しました。",
+      "significance": "保険商品の取扱いが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "生命保険の窓口販売を開始",
+      "description": "生命保険の窓口販売業務の取扱いを開始しました。",
+      "significance": "個人向けの相談業務の幅が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "証券仲介業務の取扱い開始",
+      "description": "証券仲介業務の取扱いを開始しました。",
+      "significance": "証券会社との仲介による資産運用サービスの体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "当行発行クレジットカード業務の取扱い開始",
+      "description": "当行発行クレジットカード業務の取扱いを開始しました。",
+      "significance": "自ら発行するカードの取扱いが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "サービス子会社３社を解散",
+      "description": "東邦ビジネスサービス株式会社、東邦不動産サービス株式会社及び東邦スタッフサービス株式会社のサービス子会社３社を解散しました。",
+      "significance": "グループの周辺業務体制が見直されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "株式会社とうほうスマイルを設立",
+      "description": "株式会社とうほうスマイルを設立しました。",
+      "significance": "印刷・製本などのサービス業務を担う子会社が発足しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "東邦情報システム株式会社への商号変更",
+      "description": "東邦コンピューターサービス株式会社が東邦情報システム株式会社を吸収合併し、商号を東邦情報システム株式会社に変更しました。",
+      "significance": "システム子会社が一本化されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "とうほう証券株式会社を設立",
+      "description": "とうほう証券株式会社を設立しました。",
+      "significance": "証券業務を担う子会社が発足しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行",
+      "description": "東京証券取引所の市場再編に伴い、プライム市場へ移行しました。",
+      "significance": "新市場区分でも最上位の市場に位置付けられました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "株式会社東邦コンサルティングパートナーズを設立",
+      "description": "株式会社東邦コンサルティングパートナーズを設立しました。",
+      "significance": "事業承継・Ｍ＆Ａなどのコンサルティング体制が子会社として独立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "東邦カードが東邦クレジットサービスを吸収合併",
+      "description": "株式会社東邦カードが東邦クレジットサービス株式会社を吸収合併しました。",
+      "significance": "カード・クレジット分野の子会社が一本化されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社東邦ＩＴヒューマンソリューションズを設立",
+      "description": "2025年７月に株式会社東邦ＩＴヒューマンソリューションズを設立し、同年10月に事業を開始しました。",
+      "significance": "ＩＴコンサルティングや人材関連ソリューションを担う子会社が発足しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "とうほう証券株式会社を解散",
+      "description": "野村證券株式会社との包括的業務提携に伴い、2025年７月にとうほう証券株式会社を解散し、2026年１月に清算が結了しました。",
+      "significance": "証券業務は提携先を通じた体制へ移行しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "the-chiba-bank",
+      "relationship": "business-partner",
+      "description": "ＴＳＵＢＡＳＡアライアンスの加盟行として、収益力の強化・コスト削減を図る連携関係にあり、共同事務センターの設立をはじめとする事務・システム分野の共同化を進める業務提携等の関係にあります。同行株式2,044,000株を保有し、同行も当行の株式を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "daishi-hokuetsu-financial-group",
+      "relationship": "business-partner",
+      "description": "ＴＳＵＢＡＳＡアライアンスの加盟行として、収益力の強化・コスト削減を図る連携関係にあり、共同事務センターの設立をはじめとする事務・システム分野の共同化を進める業務提携等の関係にあります。同行株式1,139,640株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "the-musashino-bank",
+      "relationship": "business-partner",
+      "description": "ＴＳＵＢＡＳＡアライアンスの加盟行として、収益力の強化・コスト削減を図る連携関係にあり、共同事務センターの設立をはじめとする事務・システム分野の共同化を進める業務提携等の関係にあります。同行株式172,400株を保有し、同行も当行の株式を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "the-fukushima-bank",
+      "relationship": "business-partner",
+      "description": "福島県内の地域金融機関として、メールカーの共同運行や相続手続きの共同化など、コスト削減と利便性向上に向けた連携を行う業務提携等の関係にあります。同行株式206,340株を保有し、同行も当行の株式を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "procrea-holdings",
+      "relationship": "business-partner",
+      "description": "東北地方における地域金融システムの安定及び金融関連業務での連携関係にあり、事業戦略上の協力関係の展開・強化を図るため、同社株式102,014株を保有する業務提携等の関係にあります（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "the-daito-bank",
+      "relationship": "business-partner",
+      "description": "当行と同じく福島県を主たる営業基盤とする地域銀行として、地域の持続可能性を高めるため、お互いの強みを活かして連携する業務提携等の関係にあります。当行は2025年12月に同行株式を追加取得し、2,478,095株を保有しており、同行も当行の株式を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "the-77-bank",
+      "relationship": "business-partner",
+      "description": "当行及び株式会社山形銀行と2026年３月に連携協定『南東北元気プロジェクト』を締結し、事業承継・Ｍ＆Ａ支援の実効性向上や販路開拓、海外ビジネス、観光商品の造成などで協力する業務提携等の関係にあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "the-yamagata-bank",
+      "relationship": "business-partner",
+      "description": "当行及び株式会社七十七銀行と2026年３月に連携協定『南東北元気プロジェクト』を締結し、事業承継・Ｍ＆Ａ支援の実効性向上や販路開拓、海外ビジネス、観光商品の造成などで協力する業務提携等の関係にあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +744,47 @@
       "publisher": "株式会社東邦銀行",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y9W6.pdf",
       "publishedAt": "2026-06-15",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y9W6",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期経営計画『ＴＯＨＯ ＴＲＡＮＳＦＯＲＭＡＴＩＯＮ（Ｘ） ＰＬＡＮ ２０３０』（計画期間は2024年４月から2030年３月まで）に取り組んでいます。パーパス『すべてを地域のために』のもと、『お客さま１社１社の事業価値向上』と『お客さま一人ひとりのゆたかな暮らしづくり』の２つをゴールに掲げ、基本方針Ⅰ『地域・お客さまとの価値共創』として10の重点分野（10 TARGETS）に取り組み、基本方針Ⅱ『当行グループの成長戦略』として成長投資・人的資本投資の拡大やアライアンスへの取組み強化を進めています。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "本店のある福島市をはじめ福島県内に店舗網を持ち、銀行本体に加えてリース、信用保証、クレジットカード、情報システム、事業承継・Ｍ＆ＡやＩＴ・人材のコンサルティングを担う子会社を擁し、地域の企業と個人の課題にグループで対応できる体制が強みです。野村證券株式会社との包括的業務提携によるコンサルティングプラザなど、外部との提携も活用しています。",
+        "basis": "事業の内容、関係会社の状況、主要な設備の状況に基づく。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "連結経常収益の８割超を銀行業が占める地域金融グループです。サービス別では貸出業務が41,509百万円と最も大きく、有価証券投資業務15,669百万円、役務取引等業務15,658百万円、その他19,626百万円が続きます。経常収益の９割超は本邦の外部顧客に対するもので、特定の顧客への依存もなく、福島県を中心とする地域に根ざした事業構成となっています。",
+        "basis": "セグメント情報における外部顧客に対する経常収益、関連情報のサービスごとの情報に基づく（地域ごとの情報及び主要な顧客ごとの情報は、有報で開示が省略されている）。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

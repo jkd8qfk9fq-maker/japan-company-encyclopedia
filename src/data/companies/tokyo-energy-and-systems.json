@@ -4,15 +4,128 @@
   "name": "東京エネシス",
   "officialName": "株式会社東京エネシス",
   "nameEn": "TOKYO ENERGY & SYSTEMS INC.",
-  "description": null,
+  "shortNameEn": "TOKYO ENERGY & SYSTEMS",
+  "description": "発電設備や変電設備などの電力関連設備工事の設計・施工を主力とし、発電事業や不動産事業なども手がける建設会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "energy",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "facility-construction",
+      "name": "設備工事業",
+      "description": "火力、原子力、水力、コージェネレーション、太陽光及びバイオマス発電設備の建設・保守、並びに変電、一般電気、情報通信及び空調設備工事の設計・施工を行う報告セグメントです。2026年3月期の外部顧客への売上高は772億97百万円でした。電力関連設備工事の主要部分は、その他の関係会社である東京電力ホールディングスを含む東京電力グループから受注しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "green-energy",
+          "name": "グリーンエネルギー事業部門",
+          "description": "太陽光・蓄電池やバイオマス、水力など、再生可能エネルギー関連の発電設備工事を担う部門です。脱炭素関連分野への設備投資が進むなかで受注が伸びています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "energy",
+          "name": "エネルギー部門",
+          "description": "火力発電設備や変電設備など、電力供給インフラの設備工事を担う部門です。部門別の売上高では最も大きな部門です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "nuclear",
+          "name": "原子力部門",
+          "description": "原子力発電設備の建設・保守や再稼働に向けた安全対策工事、福島第一原子力発電所の廃止措置関連業務などを担う部門です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他の事業",
+      "description": "報告セグメントに含まれない事業セグメントで、発電事業、不動産事業、リース・レンタル事業、保険代理業、製造・販売事業及び卸売業を含みます。2026年3月期の外部顧客への売上高は61億10百万円でした。国内では太陽光・バイオマス発電による電力の販売などを行い、タイの子会社が発電機械設備の製造・販売を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "火力・原子力・水力・太陽光・バイオマスなどの発電設備の建設・保守と、変電・一般電気・情報通信・空調設備工事の設計・施工を行い、電力会社や産業施設の発注者から工事を受注しています。",
+    "products": [
+      "発電設備（火力・原子力・水力・コージェネレーション・太陽光・バイオマス）の建設・保守工事",
+      "変電設備工事",
+      "一般電気設備工事",
+      "情報通信設備工事",
+      "空調設備工事",
+      "太陽光・バイオマス発電による電力の販売",
+      "不動産の賃貸・管理",
+      "工具・備品・車両等のリース・レンタル",
+      "保険代理業"
+    ],
+    "customers": [
+      "東京電力グループをはじめとする電力会社",
+      "製油所・化学工場・製鉄所・清掃工場などの一般産業の事業者",
+      "自治体などの公共機関"
+    ],
+    "revenueSources": [
+      "設備工事の請負代金",
+      "発電事業による電力の販売代金",
+      "不動産の賃貸・管理料",
+      "リース・レンタル料と保険代理手数料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京電力グループを主要な発注者とする設備工事会社",
+        "description": "東京エネシスは東京都中央区日本橋茅場町に本社を置き、当社と子会社10社・関連会社4社でグループを構成しています。連結従業員数は1,687人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "発電・変電設備工事の設計・施工",
+        "description": "火力、原子力、水力、コージェネレーション、太陽光及びバイオマス発電設備の建設・保守と、変電、一般電気、情報通信及び空調設備工事の設計・施工を行っています。あわせて発電事業、不動産事業、リース・レンタル事業、保険代理業なども手掛けています。"
+      },
+      {
+        "kind": "customer",
+        "title": "電力会社や産業施設の発注者から受注",
+        "description": "電力関連設備工事の主要部分は、東京電力ホールディングスを含む東京電力グループから受注しています。一般産業や公共インフラの分野でも、製油所、化学工場、製鉄所、清掃工場などのお客さま構内での工事や公共施設の電気設備工事を受注しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "工事の完成に応じて売上を得る",
+        "description": "2026年3月期の売上高は830億83百万円でした（前期比22.7％増）。設備工事業の外部顧客への売上高は772億97百万円、その他の事業は61億10百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は42億87百万円でした（前期比47.9％増）。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +140,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 64472000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1618,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +160,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 65938000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1558,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +180,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 68548000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1563,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +200,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 68427000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1628,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +220,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 72452000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1687,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +228,173 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1947,
+      "title": "株式会社東京電氣工務所を設立",
+      "description": "1947年8月、東京都港区新堀町に株式会社東京電氣工務所が設立されました。",
+      "significance": "東京エネシスの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1961年11月、東京証券取引所市場第二部に上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "東京証券取引所市場第一部に指定替え",
+      "description": "1981年10月、東京証券取引所市場第一部に指定替えとなりました。",
+      "significance": "上場市場の格上げです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "商号を株式会社東京エネシスに改称",
+      "description": "2001年4月、商号を株式会社東京電氣工務所から株式会社東京エネシスに改称しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "登米ソーラーパークを設置",
+      "description": "2015年3月、宮城県登米市に太陽光発電所の登米ソーラーパークを設置しました。",
+      "significance": "自ら発電事業を手掛ける展開の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "福島総合支社を福島県双葉郡大熊町に移転",
+      "description": "2016年9月、福島総合支社を福島県双葉郡大熊町に移転しました。",
+      "significance": "福島第一原子力発電所の廃止措置関連業務などに取り組む拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "日立プラントコンストラクションの火力発電事業の一部を承継",
+      "description": "2021年7月、株式会社日立プラントコンストラクションの火力発電事業の一部を会社分割により承継しました。",
+      "significance": "火力分野の事業基盤の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "市場再編に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "境港バイオマス発電所が営業運転を開始",
+      "description": "2022年10月、合同会社境港エネルギーパワーが境港バイオマス発電所の営業運転を開始しました。",
+      "significance": "バイオマス発電事業の本格化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "Tokyo Enesys Vietnam Co., Ltd.を設立",
+      "description": "2024年5月、ベトナム社会主義共和国にTokyo Enesys Vietnam Co., Ltd.を設立しました。",
+      "significance": "海外事業の拠点の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "taihei-dengyo-kaisha",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社株式の2.48％を保有する株主です。当社グループとは主に発電プラント設備の工事で取引があり、当社も同社株式1,612,500株を政策保有株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "tokyo-sangyo",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社株式の2.40％を保有する株主です。当社グループとは主に発電プラント設備の工事で取引があり、当社も同社株式961,000株を政策保有株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "shin-nippon-air-technologies",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社株式の1.81％を保有する株主です。当社グループとは主に空調設備工事で取引があり、当社も同社株式743,600株を政策保有株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "japan-insulation",
+      "relationship": "business-partner",
+      "description": "当社グループとは主に発電プラント設備の工事で取引がある相手で、当社は同社株式152,669株を政策保有株式として保有しています。2026年3月期には、関係強化及び相互協力を図るため同社株式を追加取得しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shimizu",
+      "relationship": "business-partner",
+      "description": "当社グループとは主に一般産業設備の工事で取引がある相手で、当社は同社株式25,000株を政策保有株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-heavy-industries",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負う顧客です。2025年3月期の主な工事として、長府バイオマス発電所新設工事（機械）の発注者となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "east-japan-railway",
+      "relationship": "customer",
+      "description": "当社が設備工事を請け負う顧客です。2026年3月期の主な工事として、JR川崎の複合発電設備の点検修繕工事の発注者となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +402,63 @@
       "publisher": "株式会社東京エネシス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJBK.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJBK",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年度中期経営計画（2024～2026年度）で、基本方針に『人』を真ん中にした強くてしなやかなQ'dづくりを掲げ、重点課題として人材への投資による人的資本の強化、お客さまに選ばれるための「Q'd」の磨きこみ、当社に関わるすべての人・組織とのつながり強化に取り組んでいます。2030年度のありたい姿として、エネルギービジネスにおけるバリューチェーン全体を手掛ける総合エンジニアリング力を発揮し、社会インフラ構築事業を強固なものにしていくことを掲げています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期は、原子力発電所の再稼働に向けた安全対策工事や脱炭素関連分野への設備投資、データセンターの新設等による電力需要増加に対応した設備投資が進む環境のもとで受注を伸ばし、次期繰越工事高は過去最高となりました。",
+        "basis": "経営方針の事業環境の記載と、MD&Aの経営成績の分析（受注の伸びと次期繰越工事高が過去最高となった事実）に基づく。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "原子力分野では豊富な工事実績を強みに活動の場を拡げること、変電分野では特別高圧変電所工事で培った技術を強みにシェア拡大を図ることを掲げています。火力分野では、脱炭素化に向けた既設火力発電所の改造工事やLNG火力発電所の新設工事に、これまでに蓄積した技術力を発揮するとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "1947年の創業以来、発電・変電設備の工事を手掛けてきた実績があり、東京電力グループとの継続的な取引関係のもとで、原子力発電所の再稼働に向けた安全対策工事や保修工事、福島第一原子力発電所の廃止措置関連業務など、高度な技術を要する工事を担っています。",
+        "basis": "沿革、【事業の内容】の東京電力グループからの受注の記載、MD&Aの売上高の進捗要因の記載に基づく。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは設備工事業のみで、2026年3月期の外部顧客への売上高は772億97百万円、報告セグメントに含まれないその他の事業は61億10百万円でした。最大の顧客は東京電力ホールディングスで、売上高は110億44百万円と全体の13.3％を占めます。売上高の9割超は国内の顧客向けです。",
+        "basis": "セグメント情報の外部顧客への売上高、【関連情報】の主要な顧客ごとの情報と地域ごとの情報の記載に基づく。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

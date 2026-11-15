@@ -4,15 +4,178 @@
   "name": "東テク",
   "officialName": "東テク株式会社",
   "nameEn": "TOTECH CORPORATION",
-  "description": null,
+  "shortNameEn": "TOTECH",
+  "description": "空調機器や制御機器を販売し、計装工事や管工事を手がける設備機器の専門商社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "construction",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "product-sales",
+      "name": "商品販売事業",
+      "description": "空調機器、制御機器、省エネ機器を販売し、納入した機器の保守点検やメンテナンスを行っています。2026年3月期の外部顧客への売上高は93,786百万円です。",
+      "products": [
+        "空調機器",
+        "制御機器",
+        "省エネ機器",
+        "発電機",
+        "アフターサービス"
+      ],
+      "customers": [
+        "設備工事業者",
+        "ビルの所有者",
+        "建設会社"
+      ],
+      "children": [
+        {
+          "id": "product-sales-equipment",
+          "name": "機器販売",
+          "description": "空調機器、制御機器、設備機器、発電機などを販売します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "product-sales-maintenance",
+          "name": "保守・メンテナンス",
+          "description": "納入した機器の保守点検やメンテナンスを行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "construction",
+      "name": "工事事業",
+      "description": "計装工事、管工事、電気設備工事、機械器具設置工事の設計・施工と、施工した工事の保守点検やメンテナンスを行っています。2026年3月期の外部顧客への売上高は76,193百万円です。",
+      "products": [
+        "計装工事",
+        "管工事",
+        "電気設備工事",
+        "機械器具設置工事"
+      ],
+      "customers": [
+        "ビルの所有者",
+        "建設会社",
+        "工場などの施設の所有者"
+      ],
+      "children": [
+        {
+          "id": "construction-work",
+          "name": "工事施工",
+          "description": "計装工事、管工事、電気設備工事の設計・施工を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "construction-maintenance",
+          "name": "保守・メンテナンス",
+          "description": "施工した計装工事、管工事、電気設備工事の保守点検やメンテナンスを行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "保有する太陽光発電施設を利用して電力会社へ売電を行っています。報告セグメントに含まれない事業で、2026年3月期の外部顧客への売上高は33百万円です。",
+      "products": [
+        "太陽光発電による電力"
+      ],
+      "customers": [
+        "電力会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "空調機器や制御機器を販売し、計装工事や管工事を手がける設備機器の専門商社です。",
+    "products": [
+      "空調機器",
+      "制御機器",
+      "省エネ機器",
+      "発電機",
+      "計装工事",
+      "管工事",
+      "電気設備工事",
+      "機械器具設置工事",
+      "保守・メンテナンス",
+      "太陽光発電による電力"
+    ],
+    "customers": [
+      "設備工事業者",
+      "ビルの所有者",
+      "建設会社"
+    ],
+    "revenueSources": [
+      "機器の販売による収入",
+      "工事の請負による収入",
+      "保守・メンテナンスによる収入",
+      "太陽光発電の売電による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "空調機器の販売と工事を手がけるグループ",
+        "description": "東テクは、空調機器などの販売と工事を手がけるグループです。子会社は15社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "機器の販売と工事の設計・施工、保守",
+        "description": "空調機器や制御機器を販売し、計装工事や管工事の設計・施工と保守を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "設備工事業者やビルの所有者",
+        "description": "設備工事業者やビルの所有者などに、機器と工事を提供します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "機器販売と工事請負による売上高",
+        "description": "機器の販売と工事の請負、保守・メンテナンスが売上高につながります。2026年3月期の売上高は170,013百万円で、前期比9.0％増です。"
+      },
+      {
+        "kind": "profit",
+        "title": "売上高から費用を差し引いた当期純利益",
+        "description": "売上高から費用を差し引いた残りが当期純利益となります。2026年3月期の親会社株主に帰属する当期純利益は13,133百万円で、前期比17.3％増です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +190,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 41669000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2419,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 45492000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2505,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 53437000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2614,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +250,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 61229000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2679,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +270,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 73670000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2855,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +278,322 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1955,
+      "title": "東京機工株式会社の設立",
+      "description": "冷暖房機器の販売及びサービスを目的として、東京都港区に東京機工株式会社を設立しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "昭和鉄工との販売代理店契約",
+      "description": "[[company:showa-manufacturing|昭和鉄工]]と販売代理店契約を締結し、ボイラ等暖房機の販売を開始しました。",
+      "significance": "暖房機器の販売を始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "ダイキン工業との販売代理店契約",
+      "description": "[[company:daikin-industries|ダイキン工業]]と販売代理店契約を締結し、エアコンの販売を開始しました。",
+      "significance": "空調機器の販売を始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "アズビルとの特約店契約",
+      "description": "山武ハネウエル計器株式会社（現社名[[company:azbil|アズビル]]）と特約店契約を締結し、自動制御機器の販売及び施工を開始しました。",
+      "significance": "自動制御機器の取り扱いを始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "中央エンジニアリングの設立",
+      "description": "東京都中央区に中央エンジニアリング株式会社（現社名日本ビルコン株式会社）を設立しました。",
+      "significance": "保守・メンテナンスの体制を整え始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "朝日物産の吸収合併",
+      "description": "朝日物産株式会社を吸収合併しました。",
+      "significance": "事業の基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "東テク株式会社への商号変更",
+      "description": "商号を東テク株式会社に変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "株式の店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダックへの上場",
+      "description": "ジャスダック証券取引所に株式を上場しました。",
+      "significance": "上場市場を移しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "東京証券取引所市場第二部への市場変更",
+      "description": "東京証券取引所市場第二部へ市場変更しました。",
+      "significance": "東京証券取引所への上場に移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "東京証券取引所市場第一部への市場変更",
+      "description": "東京証券取引所市場第一部へ市場変更しました。",
+      "significance": "上場市場を移しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "アイ・ビー・テクノスの取得",
+      "description": "アイ・ビー・テクノス株式会社及びその子会社2社を取得しました。",
+      "significance": "計装工事の体制を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "Quantum Automationの取得",
+      "description": "Quantum Automation Pte.Ltd.及びその子会社4社を取得しました。",
+      "significance": "東南アジアでの工事事業に進出しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "プライム市場に上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "三王機工の取得",
+      "description": "三王機工株式会社を取得しました。",
+      "significance": "計装工事の体制を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "daikin-industries",
+      "relationship": "supplier",
+      "description": "ダイキン工業株式会社は、パッケージエアコンなどの冷凍空調機器の取引基本契約に基づく販売代理店です。2026年3月期の同社からの仕入金額は、仕入金額全体の23.4％を占めています。2026年3月31日現在、同社は当社の株式3,000千株、7.29％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "azbil",
+      "relationship": "supplier",
+      "description": "アズビル株式会社は、自動制御機器や中央監視装置の特約店契約に基づく仕入先です。工事セグメントにおける主要仕入メーカーです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "showa-manufacturing",
+      "relationship": "supplier",
+      "description": "昭和鉄工株式会社は、ボイラーやヒーターなどの売買基本契約に基づく仕入先です。商品販売セグメントにおける主要仕入メーカーです。2026年3月31日現在、同社は当社の株式1,134千株、2.76％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "tokyo-gas",
+      "relationship": "supplier",
+      "description": "東京ガス株式会社は、ガスヒートポンプの特約店契約に基づく仕入先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "topre",
+      "relationship": "supplier",
+      "description": "東プレ株式会社は、商品販売セグメントにおける主要仕入メーカーで、販売代理店契約を結んでいます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kitz",
+      "relationship": "supplier",
+      "description": "株式会社キッツは、工事セグメントにおける主要仕入メーカーで、販売代理店契約を結んでいます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hisaka-works",
+      "relationship": "supplier",
+      "description": "株式会社日阪製作所は、商品販売セグメントにおける主要仕入メーカーで、販売代理店契約を結んでいます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takasago-thermal-engineering",
+      "relationship": "customer",
+      "description": "高砂熱学工業株式会社は、商品販売事業と工事事業における主要販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "dai-dan",
+      "relationship": "customer",
+      "description": "ダイダン株式会社は、商品販売事業と工事事業における主要販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shin-nippon-air-technologies",
+      "relationship": "customer",
+      "description": "新日本空調株式会社は、商品販売事業と工事事業における主要販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "techno-ryowa",
+      "relationship": "customer",
+      "description": "株式会社テクノ菱和は、商品販売事業と工事事業における主要販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "asahi-kogyosha",
+      "relationship": "customer",
+      "description": "株式会社朝日工業社は、商品販売事業と工事事業における主要販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sanki-engineering",
+      "relationship": "customer",
+      "description": "三機工業株式会社は、商品販売事業と工事事業における主要販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hibiya-engineering",
+      "relationship": "customer",
+      "description": "日比谷総合設備株式会社は、商品販売事業と工事事業における主要販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "taisei-oncho",
+      "relationship": "customer",
+      "description": "大成温調株式会社は、商品販売事業と工事事業における主要販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hulic",
+      "relationship": "customer",
+      "description": "ヒューリック株式会社は、商品販売事業と工事事業における販売のキーとなる施主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-realty-and-development",
+      "relationship": "customer",
+      "description": "住友不動産株式会社は、商品販売事業と工事事業における販売のキーとなる施主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-corporation",
+      "relationship": "major-shareholder",
+      "description": "住友商事株式会社は、2026年3月31日現在、当社の株式946千株、発行済株式の2.30％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +601,47 @@
       "publisher": "東テク株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGTS.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YGTS",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "存在意義「東テクグループはこころ豊かな快適環境を創造します。」のもと、長期ビジョン「ここちよいを、その先へ。」を掲げ、第二次中期経営計画（2031年3月期最終年度）では、人的資本経営の強化を軸に、高収益体質への転換と経営基盤の整備を基本方針としています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "商品販売事業の売上高は93,786百万円、工事事業は76,193百万円で、販売と工事、保守を一体で手がけています。2026年3月期のダイキン工業からの仕入金額は仕入金額全体の23.4％を占め、主要仕入先との販売代理店・特約店契約を結んでいます。",
+        "basis": "2026年3月期のセグメント情報と重要な契約等の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は170,013百万円で、従業員数は2,855人です。データセンターや再開発案件などの需要を取り込み、商品販売事業は前期比4.0％増、工事事業は前期比16.8％増となりました。",
+        "basis": "2026年3月期の経営成績の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

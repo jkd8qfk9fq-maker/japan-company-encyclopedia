@@ -1,18 +1,124 @@
 {
   "id": "towa",
   "code": "6315",
-  "name": "TOWA",
+  "name": "ＴＯＷＡ",
   "officialName": "TOWA株式会社",
   "nameEn": "TOWA CORPORATION",
-  "description": null,
+  "shortNameEn": "TOWA",
+  "description": "半導体製造用精密金型と、樹脂封止や個片化を行う半導体製造装置を主力とするメーカーで、医療機器とレーザ加工装置も手がけます。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "semiconductors",
+      "primary": true
+    },
+    {
+      "industryId": "machinery",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "semiconductor-equipment",
+      "name": "半導体製造装置事業",
+      "description": "半導体製造用精密金型、半導体後工程の樹脂封止に使うモールディング装置、個片化を行うシンギュレーション装置等の製造販売とアフターサービスを行う事業です。2026年3月期の外部顧客への売上高は49,870百万円で、連結売上高の大半を占めます。当社と連結子会社18社が担います。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "半導体メーカー"
+      ]
+    },
+    {
+      "id": "medical-devices",
+      "name": "メディカルデバイス事業",
+      "description": "医療機器等の製造販売を行う事業です。連結子会社の株式会社バンディックが担い、医療分野向けのプラスチック成形品や組立品の需要が底堅く推移しています。2026年3月期の外部顧客への売上高は2,487百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "医療機器メーカー"
+      ]
+    },
+    {
+      "id": "laser-processing-equipment",
+      "name": "レーザ加工装置事業",
+      "description": "レーザ加工装置の製造販売とアフターサービスを行う事業です。連結子会社のＴＯＷＡレーザーフロント株式会社が担い、主力製品はレーザトリマ装置です。2026年3月期の外部顧客への売上高は2,007百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "電子部品メーカー"
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "半導体製造用精密金型やモールディング装置などを自社で開発・製造し、世界の半導体メーカーに販売して、アフターサービスも行う事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "半導体製造用精密金型",
+      "モールディング装置",
+      "シンギュレーション装置",
+      "医療機器",
+      "レーザ加工装置"
+    ],
+    "customers": [
+      "半導体メーカー",
+      "医療機器メーカー",
+      "電子部品メーカー"
+    ],
+    "revenueSources": [
+      "装置・金型の販売による売上高",
+      "アフターサービスによる売上高"
+    ],
+    "suppliers": [
+      {
+        "name": "部品メーカー",
+        "description": "装置や金型の製造に使う部品の調達先です。",
+        "businessIds": [
+          "semiconductor-equipment"
+        ]
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ＴＯＷＡグループ",
+        "description": "当社と子会社20社、孫会社1社の合計22社で構成されるグループです。連結従業員数は2,211人（2026年3月31日現在）で、本社は京都市南区にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "精密金型と半導体製造装置",
+        "description": "半導体製造用精密金型、樹脂封止を行うモールディング装置、個片化を行うシンギュレーション装置などの半導体製造装置を製造販売し、製品のアフターサービスも行います。あわせて医療機器とレーザ加工装置も製造販売しています。製品はすべて受注生産です。"
+      },
+      {
+        "kind": "customer",
+        "title": "半導体メーカー",
+        "description": "主な顧客は半導体メーカーです。2026年3月期の地域別の売上高は、中国が22,227百万円、台湾が7,233百万円、日本が6,913百万円で、海外の顧客向けが中心です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は54,365百万円で、前期比1.7％増となり過去最高を更新しました。事業別では半導体製造装置事業が49,870百万円、メディカルデバイス事業が2,487百万円、レーザ加工装置事業が2,007百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は4,593百万円で、前期比43.4％減でした。製品ミックスの変動や初回納入に伴う一時的な追加コストが影響しました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +133,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 41121326000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1817,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +153,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 47623254000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1876,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 58435903000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1985,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 61386368000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2099,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,30 +213,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 70611835000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2211,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2024年10月1日付で普通株式1株につき3株の株式分割を行っており、主要な経営指標等の株式数に関する指標は第44期の期首に当該分割が行われたと仮定して算定されている。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第48期(2025/04/01－2026/03/31)",
-      "publisher": "TOWA株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YERT.pdf",
-      "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +233,176 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1979,
+      "title": "東和精密工業株式会社を設立",
+      "description": "1979年4月、坂東和彦が30名の社員とともに「超精密金型」及び「半導体製造装置」の製造販売を主な事業目的として、東和精密工業株式会社を設立しました。京都府八幡市に仮設工場を設けて操業を開始し、同時に東京営業所を開設しました。",
+      "significance": "当社の創業です。超精密金型と半導体製造装置を事業の出発点としました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "全自動マルチプランジャ方式の半導体樹脂封止装置の試作に成功",
+      "description": "1980年2月、全自動マルチプランジャ方式による半導体樹脂封止装置の試作に成功しました。",
+      "significance": "半導体樹脂封止の高品質量産化技術確立の端緒を開いた出来事であり、現在のモールディング装置事業の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "商号をＴＯＷＡ株式会社に変更",
+      "description": "1988年12月、本社を京都府宇治市に移転し、商号をＴＯＷＡ株式会社に変更しました。同年7月にはTOWA Singapore Mfg.Pte.Ltd.を設立しています。",
+      "significance": "現在の社名となった変更です。海外生産拠点の展開も始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式会社バンディックを子会社化",
+      "description": "1991年3月、株式会社バンディックを子会社化しました。同年、Micro Component Technology Malaysia Sdn.Bhd.（現 TOWAM Sdn.Bhd.）も子会社化しています。",
+      "significance": "バンディックは現在のメディカルデバイス事業を担う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "ファインプラスチック成形品事業の製造をバンディックへ承継",
+      "description": "1993年1月、ファインプラスチック成形品事業（現 メディカルデバイス事業）の製造を分離し、株式会社バンディックに承継しました。",
+      "significance": "現在のメディカルデバイス事業の形ができた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "大阪証券取引所市場第二部及び京都証券取引所に株式を上場",
+      "description": "1996年9月、大阪証券取引所市場第二部及び京都証券取引所に株式を上場しました。",
+      "significance": "株式上場の起点です。その後2000年に大阪証券取引所市場第一部と東京証券取引所市場第一部に上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "本社・工場が完成し移転",
+      "description": "1998年3月、京都市南区上鳥羽上調子町5番地に本社・工場が完成し、移転しました。現在の本店所在地です。",
+      "significance": "現在の本社体制が整った出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "株式会社サークを設立",
+      "description": "1999年4月、大日本スクリーン製造株式会社（現 株式会社ＳＣＲＥＥＮホールディングス）、株式会社堀場製作所との共同出資により株式会社サーク（現 株式会社ＳＣＲＥＥＮ ＳＰＥ テック）を設立しました。",
+      "significance": "同業他社との共同出資による会社設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "韓国ＴＯＷＡの全株式を譲渡し合弁関係を解消",
+      "description": "2011年7月、SECRON Co.,Ltd（旧 韓国ＴＯＷＡ株式会社）の当社保有の全株式をSamsung Electronics Co.,Ltd（三星電子株式会社）に譲渡し、合弁関係を解消しました。",
+      "significance": "韓国での合弁事業を整理した出来事です。その後2013年にＴＯＷＡ韓国株式会社を設立しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "ＴＯＷＡレーザーフロントを子会社化",
+      "description": "2018年8月、オムロンレーザーフロント株式会社（現 ＴＯＷＡレーザーフロント株式会社）の株式を取得し子会社化しました。",
+      "significance": "現在のレーザ加工装置事業を担う子会社がグループに入った出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより、東京証券取引所の市場第一部からプライム市場に移行しました。同年1月にはFine International Co.,Ltd.（現 ＴＯＷＡファイン株式会社）を子会社化しています。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "海外子会社3社を設立",
+      "description": "2025年4月にマレーシアのクアラルンプールにTOWA MALAYSIA SALES & SERVICES SDN.BHD.を、インドのグルガオンにTOWA SEMICONDUCTOR INDIA PRIVATE LIMITEDを設立し、同年8月には中国の広東省に孫会社の和創半導体設備（深圳）有限公司を設立しました。",
+      "significance": "販売・サービス体制と生産体制の海外展開が続いていることを示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第48期(2025/04/01－2026/03/31)",
+      "publisher": "ＴＯＷＡ株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YERT.pdf",
+      "publishedAt": "2026-06-19",
+      "docId": "S100YERT",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期ビジョン「ＴＯＷＡビジョン2032」では「変革で世界の頂へ」をテーマに、パッケージングプロセスの提案により顧客価値を創出し続ける世界のリーディングカンパニーを目指す姿として掲げています。第二次中期経営計画は「新たな課題への挑戦と飛躍」を掲げ、テーマを「TOWA イズムで次世代をリードする人財を創出」とし、2028年3月期の売上高目標710億円を掲げています。事業戦略では、半導体製造装置事業でプロセスイノベーションにより顧客ニーズに応えること、DXとAIの活用で世界のコストリーダーを目指すこと、グローバルな開発体制でオンリーワン製品を世界に届けることを挙げています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、半導体製造用精密金型からモールディング装置、シンギュレーション装置までを自社で手がける一貫した技術基盤にあります。創業者が考案したマルチプランジャ方式の成形技術が現在の主力事業の土台になっており、汎用メモリ向けのモールディング装置では高い採用実績を持ちます。日本、マレーシア、中国、韓国に生産拠点を置き、世界の半導体メーカーの近くで製造とサービスを行える体制も特徴です。",
+        "basis": "【沿革】に印字されたマルチプランジャ方式の開発経緯、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に印字されたメモリ分野での採用実績の記述、【主要な設備の状況】に印字された国内外の生産拠点の構成に基づきます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の9割超を半導体製造装置事業が占め、その販売先は中国、台湾をはじめとするアジアの半導体メーカーが中心です。生成AIの普及を背景としたデータセンター向け投資や高帯域幅メモリ（HBM）向けの需要が市場を牽引する一方、車載向けや産業機器向けは在庫調整が続くなど、用途によって需要の動きが分かれています。当社グループの製品はすべて受注生産であり、受注の動向が業績に直結する構造です。",
+        "basis": "セグメント注記の外部顧客への売上高（事業別・地域別）と収益認識注記の地域別分解、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に印字された市場環境と受注生産の記述に基づきます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

@@ -4,15 +4,192 @@
   "name": "南都銀行",
   "officialName": "株式会社南都銀行",
   "nameEn": "The Nanto Bank，Ltd.",
-  "description": null,
+  "shortNameEn": "Nanto Bank",
+  "description": "奈良県を中心に預金や貸出などの銀行業務とリース業務を提供する地方銀行です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "banking",
+      "name": "銀行業務",
+      "description": "預金、貸出、外国為替、信託などの銀行業務を行う事業です。奈良県を中心に店舗を展開しています。2026年3月期の外部顧客への経常収益は99,936百万円で、連結経常収益の86.4％を占める最大の事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "leasing",
+      "name": "リース業務",
+      "description": "連結子会社の南都リース株式会社が、奈良県内及び大阪府地域を中心にリース業務を行う事業です。2026年3月期の外部顧客への経常収益は11,897百万円で、連結経常収益の10.3％を占めています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "nanto-lease",
+          "name": "南都リース株式会社",
+          "description": "リース業務を行う連結子会社です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれていない事業の区分です。信用保証業務、不動産賃貸・管理業務、ソフトウエア開発等業務、クレジットカード業務及び証券業務等を行っています。2026年3月期の外部顧客への経常収益は3,701百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "nanto-management-service",
+          "name": "南都マネジメントサービス株式会社",
+          "description": "子会社管理業務や不動産賃貸・管理業務などを行う連結子会社で、中間持株会社です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "nanto-credit-guarantee",
+          "name": "南都信用保証株式会社",
+          "description": "信用保証業務を行う連結子会社です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "nanto-computer-service",
+          "name": "南都コンピュータサービス株式会社",
+          "description": "ソフトウエア開発等業務を行う連結子会社です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "nanto-dc-card",
+          "name": "南都ディーシーカード株式会社",
+          "description": "クレジットカード業務や信用保証業務を行う連結子会社です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "nanto-card-service",
+          "name": "南都カードサービス株式会社",
+          "description": "クレジットカード業務や信用保証業務を行う連結子会社です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "nanto-consulting",
+          "name": "南都コンサルティング株式会社",
+          "description": "コンサルティング業務を行う連結子会社です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "nanto-challenged",
+          "name": "なんとチャレンジド株式会社",
+          "description": "銀行の事務代行等業務を行う連結子会社です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "nanto-mahoroba-securities",
+          "name": "南都まほろば証券株式会社",
+          "description": "金融商品取引業務を行う連結子会社です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "nanto-capital-partners",
+          "name": "南都キャピタルパートナーズ株式会社",
+          "description": "投資業を行う連結子会社です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "奈良県を中心に、預金や貸出、リースなどを通じて地域のお客さまに金融サービスを提供しています。",
+    "products": [
+      "預金、貸出、内国為替、外国為替、信託などの銀行業務",
+      "リース業務",
+      "信用保証業務やクレジットカード業務、証券業務、コンサルティング業務などの金融サービス"
+    ],
+    "customers": [
+      "奈良県を中心とする地域の個人のお客さま",
+      "地域の法人のお客さま",
+      "地方公共団体"
+    ],
+    "revenueSources": [
+      "貸出金利息や有価証券利息配当金などの資金運用収益",
+      "役務取引等収益などの手数料収益",
+      "リース売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "南都銀行",
+        "description": "1934年に4行の合併により設立された地方銀行です。本店は奈良市大宮町にあり、2026年3月31日現在の連結従業員数は2,352人です。奈良県を中心に大阪府や京都府などにも店舗を展開しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "銀行業務とリース業務",
+        "description": "預金や貸出、外国為替、信託などの銀行業務と、リース業務を提供しています。信用保証やクレジットカード、証券、コンサルティングのサービスも提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域のお客さま",
+        "description": "奈良県を中心とする地域の個人や法人のお客さまと、地方公共団体にサービスを提供しています。貸出金では個人向けや中小企業向けが増えています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "経常収益",
+        "description": "2026年3月期の連結経常収益は115,665百万円で、前期より12,579百万円増加しました。貸出金利息や役務取引等収益の増加が主な理由です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は17,062百万円で、前期より3,551百万円増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +204,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 286473000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2424,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +224,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 262798000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2368,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +244,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 298631000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2336,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +264,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 277795000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2338,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +284,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 300119000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 2352,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +292,497 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1934,
+      "title": "南都銀行の設立",
+      "description": "1934年6月1日、株式会社六十八銀行、株式会社吉野銀行、株式会社八木銀行及び株式会社御所銀行が合併して、株式会社南都銀行が設立されました。",
+      "significance": "奈良県を代表する地方銀行としての出発点です。行名の「南都」は奈良の古名です。",
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "貯蓄銀行業務の開始",
+      "description": "1943年8月2日、貯蓄銀行業務を開始しました。",
+      "significance": "個人のお客さま向けの貯蓄業務へ事業を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "大和貯蓄銀行の合併",
+      "description": "1944年2月10日、株式会社大和貯蓄銀行を合併しました。",
+      "significance": "県内の貯蓄銀行を統合し、規模を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "南都地所の設立",
+      "description": "1969年11月8日、南都地所株式会社（現在の南都マネジメントサービス株式会社）を設立しました。",
+      "significance": "不動産関連の子会社を持ち、グループ経営の基盤を作りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "電子計算機の導入",
+      "description": "1970年10月12日、電子計算機を導入しました。",
+      "significance": "業務の機械化を進めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "大阪支店の開設",
+      "description": "1971年3月12日、大阪支店を開設しました。",
+      "significance": "奈良県外への店舗展開を始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "大阪証券取引所第二部への上場",
+      "description": "1974年4月13日、当行株式が大阪証券取引所市場第二部へ上場しました。",
+      "significance": "株式を公開し、資金調達の道を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "外国為替業務の開始",
+      "description": "1974年6月1日、外国為替業務を開始しました。",
+      "significance": "国際的な取引にも対応できるようになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "大阪証券取引所第一部銘柄への指定",
+      "description": "1975年9月1日、当行株式が大阪証券取引所市場第一部銘柄に指定されました。",
+      "significance": "上場市場での位置づけが高まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "東京支店の開設",
+      "description": "1981年11月4日、東京支店（現在の東京営業部）を開設しました。",
+      "significance": "首都圏への拠点を持ちました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "事務センターの竣工",
+      "description": "1981年12月8日、事務センターが竣工しました。",
+      "significance": "事務処理を集約する拠点を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "公共債の窓口販売の開始",
+      "description": "1983年4月1日、公共債の窓口販売を開始しました。",
+      "significance": "証券関連のサービスを広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "外国為替コルレス業務の開始",
+      "description": "1983年6月1日、外国為替コルレス業務を開始しました。",
+      "significance": "海外の銀行との取引網を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "南都信用保証の設立",
+      "description": "1984年10月9日、南都信用保証株式会社（現在の連結子会社）を設立しました。",
+      "significance": "信用保証業務をグループ内に持ちました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "南都リースの設立",
+      "description": "1984年12月22日、南都リース株式会社（現在の連結子会社）を設立しました。",
+      "significance": "リース業務をグループ内に持ちました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "公共債ディーリング業務の開始",
+      "description": "1985年6月1日、公共債のディーリング業務を開始しました。",
+      "significance": "債券の売買業務へ広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "京都支店の開設",
+      "description": "1986年3月25日、京都支店を開設しました。",
+      "significance": "京都府への店舗展開を進めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "南都コンピュータサービスの設立",
+      "description": "1986年7月1日、南都コンピュータサービス株式会社（現在の連結子会社）を設立しました。",
+      "significance": "システム開発の体制をグループ内に整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "東京証券取引所第一部への上場",
+      "description": "1987年12月1日、当行株式が東京証券取引所市場第一部へ上場しました。",
+      "significance": "全国的な市場への上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "担保附社債信託法による営業免許の取得",
+      "description": "1988年6月9日、担保附社債信託法による営業免許を取得しました。",
+      "significance": "社債の信託業務を扱えるようになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "南都ディーシーカードの設立",
+      "description": "1990年10月12日、南都ディーシーカード株式会社（現在の連結子会社）を設立しました。",
+      "significance": "クレジットカード業務をグループ内に持ちました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "南都カードサービスの設立",
+      "description": "1990年12月10日、南都カードサービス株式会社（現在の連結子会社）を設立しました。",
+      "significance": "カード業務の体制を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "南都スタッフサービスの設立",
+      "description": "1991年3月18日、南都スタッフサービス株式会社（現在の南都コンサルティング株式会社、2026年4月1日に南都リサーチ＆コンサルティング株式会社へ商号変更）を設立しました。",
+      "significance": "人材関連の子会社を持ちました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "信託代理店業務の取扱開始",
+      "description": "1993年7月1日、信託代理店業務の取扱いを開始しました。",
+      "significance": "信託関連のサービスを広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "日本証券業協会への加入",
+      "description": "1994年4月1日、日本証券業協会へ加入しました。",
+      "significance": "証券業務の基盤を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "証券投資信託の窓口販売の開始",
+      "description": "1998年12月1日、証券投資信託の窓口販売を開始しました。",
+      "significance": "資産運用の商品を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "奈良県信用組合の事業譲受",
+      "description": "1999年1月18日、奈良県信用組合の事業を譲り受けました。",
+      "significance": "県内の信用組合の事業を引き継ぎました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "保険の窓口販売の開始",
+      "description": "2001年4月2日、保険の窓口販売を開始しました。",
+      "significance": "保険商品の取扱いを広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "確定拠出年金業務の開始",
+      "description": "2001年12月12日、確定拠出年金業務を開始しました。",
+      "significance": "年金関連のサービスを広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "証券仲介業務の開始",
+      "description": "2004年12月1日、証券仲介業務を開始しました。",
+      "significance": "証券の仲介サービスを始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "地銀共同化システムの稼動",
+      "description": "2008年5月7日、地銀共同化システムが稼動しました。",
+      "significance": "他の地方銀行と共同でシステムを運用し始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "大阪中央営業部の開設",
+      "description": "2008年6月30日、大阪中央営業部を開設しました。",
+      "significance": "大阪での営業体制を強めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "尼崎支店の開設",
+      "description": "2009年9月14日、尼崎支店を開設しました。",
+      "significance": "兵庫県への店舗展開を進めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "信託業務の取扱開始",
+      "description": "2017年4月17日、信託業務の取扱いを開始しました。",
+      "significance": "信託業務を自ら扱えるようになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "なんとチャレンジドの設立",
+      "description": "2018年8月24日、なんとチャレンジド株式会社（現在の連結子会社）を設立しました。",
+      "significance": "銀行の事務代行を担う子会社を設けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "奈良証券の子会社化",
+      "description": "2018年10月1日、奈良証券株式会社の株式を取得し、子会社化しました。",
+      "significance": "証券子会社をグループに迎えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "まほろば支店の開設",
+      "description": "2019年1月17日、インターネット支店「まほろば支店」を開設しました。",
+      "significance": "対面によらない店舗を設けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "南都まほろば証券の営業開始",
+      "description": "2019年3月18日、奈良証券株式会社を南都まほろば証券株式会社へ商号変更し、営業を開始しました。",
+      "significance": "証券子会社が新しい名前で営業を始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "コンサルティング業務の開始",
+      "description": "2019年7月1日、南都コンサルティング株式会社（南都スタッフサービス株式会社を商号変更、2026年4月1日に南都リサーチ＆コンサルティング株式会社へ商号変更）がコンサルティング業務を開始しました。",
+      "significance": "法人向けの助言業務をグループ内に持ちました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "南都マネジメントサービスの中間持株会社化",
+      "description": "2019年9月2日、南都地所株式会社を南都マネジメントサービス株式会社へ商号変更し、中間持株会社として子会社管理業務を開始しました。",
+      "significance": "グループの子会社管理を集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "南都キャピタルパートナーズの設立",
+      "description": "2020年10月1日、南都キャピタルパートナーズ株式会社（現在の連結子会社）を設立しました。",
+      "significance": "投資業務を担う子会社を設けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "奈良みらいデザインの設立",
+      "description": "2021年4月1日、奈良みらいデザイン株式会社（現在の持分法適用関連会社）を設立しました。",
+      "significance": "地域活性化の事業を担う会社を設けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "奈良古民家まちづくりパートナーズ株式の取得",
+      "description": "2022年1月20日、奈良みらいデザイン株式会社が奈良古民家まちづくりパートナーズ株式会社（現在の持分法適用関連会社）の株式を取得しました。",
+      "significance": "古民家を活かしたまちづくりの事業へ広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "フロンティア南都インベストメントの設立",
+      "description": "2022年5月16日、フロンティア南都インベストメント合同会社（現在の持分法適用関連会社）を設立しました。",
+      "significance": "投資業務の体制を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "本店の移転",
+      "description": "2025年2月10日、本店を奈良市大宮町へ移転しました。",
+      "significance": "本店を新しい場所へ移しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "daiwa-house-industry",
+      "relationship": "business-partner",
+      "description": "同社グループとの「遊休不動産活用等の不動産におけるビジネス支援の提携」など、不動産分野における協力関係を有しています。特定投資株式の保有目的として、2026年3月31日現在の有報に個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-realty-and-development",
+      "relationship": "business-partner",
+      "description": "同社グループとの「遊休不動産活用等の不動産におけるビジネス支援の提携」など、不動産分野における協力関係を有しています。特定投資株式の保有目的として、2026年3月31日現在の有報に個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kintetsu-department-store",
+      "relationship": "business-partner",
+      "description": "同社との「地域商社事業に関する提携」を通じて、地域産品の販路拡大に取り組んでいます。特定投資株式の保有目的として、2026年3月31日現在の有報に個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "west-japan-railway",
+      "relationship": "business-partner",
+      "description": "同社との「地方創生に関する連携協定」に基づき、観光振興および地域産品の販路拡大で提携しています。特定投資株式の保有目的として、2026年3月31日現在の有報に個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +790,58 @@
       "publisher": "株式会社南都銀行",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEBM.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YEBM",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「南都銀行」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E5%8D%97%E9%83%BD%E9%8A%80%E8%A1%8C",
+      "accessedAt": "2026-11-15"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年4月1日を効力発生日として、普通株式1株につき5株の割合で株式分割を行いました（2025年11月10日の取締役会で決議、基準日2026年3月31日）。登録は2026年3月31日現在の構成に基づきます。",
+      "businessModel: 連結子会社の南都コンサルティング株式会社は、2026年4月1日に南都リサーチ＆コンサルティング株式会社へ商号変更しました。登録は2026年3月31日現在の構成に基づきます。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営ビジョンは「活力創造銀行」です。「頼され親しまれる、魅力的な銀行」を目指し、2020年度から2029年度までを計画期間とする経営計画「なんとミッションと10年後に目指すゴール」を策定しています。2025年度からは中期経営計画「人財の力で地域の活力を創造する」に取り組み、「自ら考え行動し、地域の課題を解決する人財の創出」と「地域を支え続けられる健全な経営」を軸としています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "奈良県を地盤とする地方銀行で、県内に本店をはじめとする多くの店舗を構えています。2008年から地銀共同化システムを稼動させ、2019年にはインターネット支店「まほろば支店」を開設しました。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは銀行業務とリース業務の2つで、信用保証業務や証券業務などは「その他」に含まれます。2026年3月期の外部顧客への経常収益は、銀行業務が99,936百万円（連結経常収益の86.4％）、リース業務が11,897百万円（10.3％）、その他が3,701百万円（3.2％）です。サービス別では、貸出業務が56,143百万円、有価証券投資業務が26,416百万円、リース業務が11,897百万円、その他が21,209百万円です。本邦の外部顧客に対する経常収益が連結経常収益の90％を超え、経常収益の10％以上を占める特定の顧客はありません。",
+        "basis": "セグメント情報の報告セグメントごとの外部顧客に対する経常収益と、関連情報のサービスごとの情報・地域ごとの情報・主要な顧客ごとの情報によります。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

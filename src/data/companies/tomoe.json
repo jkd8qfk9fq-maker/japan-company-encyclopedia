@@ -4,7 +4,8 @@
   "name": "巴コーポレーション",
   "officialName": "株式会社巴コーポレーション",
   "nameEn": "TOMOE　CORPORATION",
-  "description": null,
+  "shortNameEn": "TOMOE",
+  "description": "立体構造物や橋梁、鉄骨、鉄塔の設計・製作・施工と総合建設工事を行い、不動産事業も営む建設会社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -14,8 +15,151 @@
       "exchange": "sse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "steel-construction",
+      "name": "鉄構建設事業",
+      "description": "立体構造物・橋梁・鉄骨・鉄塔の設計、製作、施工と、総合建設工事の企画、設計、施工を行う事業です。当社が担い、関係会社にその一部を発注しています。連結子会社の株式会社札幌巴コーポレーション、株式会社東北巴コーポレーション、株式会社巴技研、令和建設株式会社もこの事業に関わっています。2026年3月期の外部顧客への売上高は27,938百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "官公庁",
+        "民間の企業等"
+      ],
+      "children": [
+        {
+          "id": "spatial-structures",
+          "name": "立体構造物",
+          "description": "立体構造物の設計、製作、施工です。大空間ドーム建築や競技場の大屋根など、難易度の高い立体架構も研究開発の対象としています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "bridges",
+          "name": "橋梁",
+          "description": "橋梁の設計、製作、施工です。鋼コンクリート合成床版などの橋梁技術の研究も行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "steel-frames-towers",
+          "name": "鉄骨・鉄塔",
+          "description": "鉄骨と鉄塔の設計、製作、施工です。送電線鉄塔の構造の合理化や既存鉄塔の補強、延命化の研究も行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "general-construction",
+          "name": "総合建設工事",
+          "description": "総合建設工事の企画、設計、施工です。工場や物流施設などの建築工事も含まれます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "不動産の売買、管理及び賃貸借と、これらの仲介を行う事業です。当社が担い、業務の一部を関係会社に委託しています。連結子会社の株式会社泉興産は不動産賃貸を行っています。2026年3月期の外部顧客への売上高は7,013百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "不動産の購入者",
+        "不動産の賃貸借・管理の利用者"
+      ],
+      "children": [
+        {
+          "id": "real-estate-sales",
+          "name": "不動産の売買",
+          "description": "不動産の売買とその仲介です。2026年3月期には、提出会社単体の不動産事業で不動産販売がありました。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-estate-rental",
+          "name": "不動産の管理・賃貸借",
+          "description": "不動産の管理及び賃貸借とその仲介です。賃貸用のオフィスビル等を東京都その他の地域に有しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "立体構造物・橋梁・鉄骨・鉄塔の設計、製作、施工と総合建設工事の企画、設計、施工を行い、不動産の売買、管理、賃貸借と仲介も行う事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "立体構造物・橋梁・鉄骨・鉄塔の設計、製作、施工",
+      "総合建設工事の企画、設計、施工",
+      "不動産の売買、管理及び賃貸借と仲介"
+    ],
+    "customers": [
+      "官公庁",
+      "民間の企業等",
+      "不動産の購入者や賃貸借の利用者"
+    ],
+    "revenueSources": [
+      "鉄構建設工事の請負代金",
+      "総合建設工事の請負代金",
+      "不動産の販売代金と賃貸料等"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "巴コーポレーション",
+        "description": "当社と子会社5社、関連会社1社でグループを構成する建設会社です。2026年3月31日現在の連結従業員数は518人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "鉄構建設と不動産の事業",
+        "description": "立体構造物・橋梁・鉄骨・鉄塔の設計、製作、施工と総合建設工事の企画、設計、施工を行い、不動産の売買、管理及び賃貸借と仲介も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "官公庁と民間への提供",
+        "description": "鉄構建設事業は官公庁と民間の双方へ提供し、不動産事業は不動産の購入者や賃貸借の利用者を顧客としています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は34,951百万円で、前期比0.8％増でした。事業別では鉄構建設事業が27,938百万円、不動産事業が7,013百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は6,227百万円でした。前期は14,849百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -30,7 +174,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 37659000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 440,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 41924000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 450,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -70,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 51395000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 466,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,12 +234,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 72962000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 531,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "株式会社巴技研及び株式会社泉興産を連結子会社化したことに伴い、段階取得に係る差益と負ののれん発生益等が計上され、2025年3月期の親会社株主に帰属する当期純利益が大幅に増加しました。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -110,7 +255,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 74185000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 518,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,8 +263,157 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1917,
+      "title": "巴組鐵工所を創立",
+      "description": "1917年10月、東京・芝区琴平町に野澤一郎が巴組鐵工所を創立し、京橋区月島に工場を開設しました。",
+      "significance": "創業です。鉄構事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1923,
+      "title": "巴組鐵工所を合資会社に改組",
+      "description": "1923年8月、巴組鐵工所を合資会社に改組しました。",
+      "significance": "法人化の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1934,
+      "title": "株式会社巴組鐵工所に改組",
+      "description": "1934年6月、合資会社を株式会社巴組鐵工所に改組しました。",
+      "significance": "株式会社としての体制が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1963年10月、東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "株式会社泉興産を設立",
+      "description": "1964年8月、株式会社泉興産を設立しました。",
+      "significance": "現在の連結子会社で、不動産事業を担う会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "札幌証券取引所に上場",
+      "description": "1971年9月、札幌証券取引所に株式を上場しました。",
+      "significance": "札幌証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "1972年2月、東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "決算期を3月31日に変更",
+      "description": "1989年3月、決算期を9月30日から3月31日に変更しました。",
+      "significance": "現在の3月決算の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "株式会社巴コーポレーションに商号変更",
+      "description": "1992年10月、商号を株式会社巴コーポレーションに変更し、英文名をＴＯＭＯＥ ＣＯＲＰＯＲＡＴＩＯＮとしました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "創業100周年",
+      "description": "2017年10月、創業100周年を迎えました。",
+      "significance": "創業から100年の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しによりスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社巴技研と株式会社泉興産を連結子会社化",
+      "description": "2024年7月、株式会社巴技研の株式を追加取得して連結子会社化し、これに伴い株式会社泉興産も連結子会社化しました。あわせて、令和建設株式会社を株式取得により連結子会社化しました（みなし取得日は2024年9月30日）。",
+      "significance": "グループ構成が大きく変わり、現在の子会社5社の体制につながりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "chubu-steel-plate",
+      "relationship": "supplier",
+      "description": "鉄構建設事業における鋼材仕入先であり、取引関係の維持・強化のため株式を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tdk",
+      "relationship": "customer",
+      "description": "電子部品製造工場等の総合建設工事の取引関係があり、2026年3月31日現在の次期繰越工事にも同社の施設の工事が含まれています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "business-partner",
+      "description": "鉄塔の営業情報収集等の協力関係の維持・向上のため株式を保有する、業務提携等の関係にある取引先です（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -127,13 +421,47 @@
       "publisher": "株式会社巴コーポレーション",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YLBY.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YLBY",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-11"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「技術の巴」として、技術的に特色のある製品及び工法を創り出し、品質第一、低コストで提供することで社会に貢献し、顧客の信頼と満足を得ることを目指しています。基本戦略は、技術立社を堅持しつつ、企業体質の改善・強化、事業領域の拡大と新規事業の創出、グループ総力の結集を進め、企業価値の向上を図ることです。これに事業継続性の確保と変革への挑戦を加え、第3期中期経営計画の達成に向けてグループ一体で取り組んでいます。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "鉄構を祖業とし、立体構造物・橋梁・鉄骨・鉄塔から総合建設工事までを設計、製作、施工まで担う技術基盤を持っています。研究開発では、座屈拘束ブレースや摩擦ダンパーなどの耐震関連製品、防災関連技術、立体構造技術、送電線鉄塔技術などに取り組み、技術開発を企業戦略の重要な柱と位置付けています。",
+        "basis": "【事業の内容】の事業内容、【研究開発活動】の主な研究開発状況、【経営方針、経営環境及び対処すべき課題等】の経営方針の記載に基づきます。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは鉄構建設事業と不動産事業の2つで、2026年3月期の外部顧客への売上高は鉄構建設事業27,938百万円、不動産事業7,013百万円です。売上はすべて国内で、本邦以外の外部顧客への売上高はありません。当期は、外部顧客への売上高の10％以上を占める主要な顧客はありませんでした。",
+        "basis": "セグメント情報の外部顧客への売上高と、関連情報（地域ごとの情報、主要な顧客ごとの情報）の記載に基づきます。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

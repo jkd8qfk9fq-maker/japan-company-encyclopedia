@@ -4,15 +4,110 @@
   "name": "東洋埠頭",
   "officialName": "東洋埠頭株式会社",
   "nameEn": "TOYO WHARF & WAREHOUSE CO.,LTD.",
-  "description": null,
+  "shortNameEn": "TOYO WHARF & WAREHOUSE CO.,LTD.",
+  "description": "国内で倉庫・港湾運送・自動車運送を、海外で国際輸送や倉庫・通関を手がける総合物流会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "toyo-wharf-and-warehouse",
+      "name": "東洋埠頭株式会社",
+      "description": "東京都中央区晴海に本店を置く総合物流会社で、連結子会社8社と持分法適用会社5社とグループを構成しています。報告セグメントは国内総合物流事業と国際物流事業の2つで、2026年3月31日現在の連結従業員数は848人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "domestic-logistics",
+          "name": "国内総合物流事業",
+          "description": "倉庫業、港湾運送業、自動車運送業と、その他の業務を行う事業です。2026年3月期の外部顧客への営業収益は32,676百万円で、業務別では倉庫業11,680百万円、港湾運送業8,597百万円、自動車運送業5,690百万円です。その他の業務は海上運送や通関、施設賃貸、工場構内作業です。倉庫業では普通倉庫やサイロ、青果物倉庫、冷蔵倉庫、危険品倉庫などで貨物の保管と入出庫作業を行い、港湾運送業では本船荷役作業やターミナルでのコンテナ取扱作業を行います。",
+          "customers": [
+            "貨物の保管や入出庫を委託する荷主企業",
+            "港湾での荷役やコンテナ取扱いを委託する荷主企業",
+            "貨物の輸配送を委託する荷主企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "international-logistics",
+          "name": "国際物流事業",
+          "description": "株式会社東洋トランスと海外の子会社などによる国際輸送、倉庫、通関を主とする事業です。2026年3月期の外部顧客への営業収益は5,402百万円で、中央アジア向け輸送が増加しました。",
+          "customers": [
+            "国際輸送を委託する荷主企業",
+            "海外での倉庫や通関を委託する荷主企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "倉庫での保管や港湾での荷役、貨物自動車による輸配送と、海外での国際輸送・倉庫・通関を行い、その役務の対価を得る事業モデルです。",
+    "products": [
+      "倉庫業（普通倉庫、サイロ、青果物倉庫、冷蔵倉庫、危険品倉庫などでの貨物の保管と入出庫作業）",
+      "港湾運送業（本船荷役作業やターミナルでのコンテナ取扱作業、ばら貨物の海陸一貫作業）",
+      "自動車運送業（貨物自動車などによる輸配送）",
+      "その他の業務（海上運送、通関、施設賃貸、工場構内作業）",
+      "国際物流事業（国際輸送、海外での倉庫、通関）"
+    ],
+    "customers": [
+      "貨物の保管や荷役を委託する荷主企業",
+      "港湾での荷役やコンテナ取扱いを委託する荷主企業",
+      "貨物の輸配送を委託する荷主企業",
+      "国際輸送や海外での倉庫・通関を委託する荷主企業"
+    ],
+    "revenueSources": [
+      "国内総合物流事業の役務提供による営業収益",
+      "国際物流事業の役務提供による営業収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東洋埠頭株式会社",
+        "description": "東京都中央区晴海に本店を置き、連結子会社8社と持分法適用会社5社とグループを構成する総合物流会社です。2026年3月31日現在の連結従業員数は848人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "倉庫・港湾運送・自動車運送と国際物流",
+        "description": "国内では倉庫での貨物の保管と入出庫作業、港湾での本船荷役やコンテナ取扱作業、貨物自動車による輸配送を行い、海外では国際輸送や倉庫、通関を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "荷主企業",
+        "description": "農産品や合成樹脂、穀物、飲料など多様な貨物の荷主企業に、保管から港湾荷役、輸配送、国際輸送までを担う物流サービスを提供します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益は38,079百万円",
+        "description": "2026年3月期の営業収益は38,079百万円でした。国内総合物流事業が32,676百万円、国際物流事業が5,402百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は1,466百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,466百万円でした。前連結会計年度は1,124百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +122,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22870000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 864,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +142,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23885000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 852,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +162,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26551000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 835,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27530000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 847,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +202,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 30850000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 848,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +210,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第115期(2025/04/01－2026/03/31)",
-      "publisher": "東洋埠頭株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YELE.pdf",
-      "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +221,177 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1929,
+      "title": "前身の日満倉庫株式会社が設立",
+      "description": "1929年5月に当社の前身である日満倉庫株式会社が設立されました。",
+      "significance": "当社の前身の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1940,
+      "title": "東洋埠頭株式会社の前身会社が設立",
+      "description": "1940年1月に株式会社大東園として当社が設立され、その後、東洋埠頭商事株式会社と改称しました。",
+      "significance": "現在の会社組織の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "社名を東洋埠頭株式会社と改称",
+      "description": "1947年5月に社名を東洋埠頭株式会社と改称しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "日満倉庫の全資産を包括譲渡で取得",
+      "description": "1948年7月に閉鎖機関整理委員会の譲渡承認により、日満倉庫株式会社の全資産が当社に包括譲渡されました。同時に大阪、新潟、博多に支店を開設しました。",
+      "significance": "事業基盤を引き継いだ出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京証券取引所に株式を上場",
+      "description": "1949年5月に東京証券取引所に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "常盤運送の株式を取得し子会社化",
+      "description": "1983年6月に常盤運送株式会社の株式を取得して子会社とし、同社は1985年に志布志東洋埠頭株式会社に社名変更しました。",
+      "significance": "鹿児島県志布志での事業基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "ジューロ航空の株式を取得し子会社化",
+      "description": "1993年7月にジューロ航空株式会社の株式を取得して子会社とし、同社は1994年に株式会社東洋トランスに社名変更しました。",
+      "significance": "国際物流事業の担い手の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "モスクワに現地法人を設立",
+      "description": "2003年1月にロシアのモスクワにＯＯＯ東洋トランスを設立しました。",
+      "significance": "海外拠点の展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "2022年4月に東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "市場区分の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "カザフスタンに現地法人を設立",
+      "description": "2023年8月にカザフスタンのアルマティに東洋トランスセントラルアジア有限責任会社を設立しました。",
+      "significance": "中央アジアでの事業基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "2023年10月に東京証券取引所のプライム市場からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第115期(2025/04/01－2026/03/31)",
+      "publisher": "東洋埠頭株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YELE.pdf",
+      "publishedAt": "2026-06-22",
+      "docId": "S100YELE",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-11"
+    }
+  ],
+  "status": {
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 川崎支店の火災について、当社を被告として、株式会社京浜バイオマスパワーと出光興産株式会社から2022年3月28日付で損害賠償請求訴訟が提起され、係属しています。2024年6月10日付で請求金額を変更する拡張申立書が提出されています。今後の推移によっては将来金銭的負担が生じる可能性がありますが、現時点では連結財務諸表に与える影響を合理的に見積もることは困難とされ、財務諸表には反映されていません（偶発債務に印字）。"
+    ]
+  },
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2028年度を最終年度とする経営三カ年計画「Fly to the Next 2028」を策定し、新規業務の稼働と新規事業の開始に向けた準備の加速、独自性を発揮した事業の継続と深化、国際物流事業のネットワークの拡大などに取り組んでいます。先進的CCS事業の液化二酸化炭素の港湾出荷基地の整備と稼働に向けた準備も進めています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の営業収益は前期比8.5％増の38,079百万円でした。MD&Aでは、国内総合物流事業で倉庫業や港湾運送業などの取扱いが増加し、国際物流事業では中央アジア向け輸送の増加が収益に大きく寄与したと説明されています。",
+        "basis": "セグメント情報の外部顧客への営業収益と、MD&Aの経営成績の概要",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "川崎支店のプライベートバース（自社埠頭）を持ち、危険品や青果物、穀物サイロ、野積みなどの独自性のある倉庫の業務を行っています。国内の各支店と連結子会社を営業活動の拠点として、保管、港湾荷役、輸配送を一体で担える体制です。",
+        "basis": "経営方針の経営戦略等と、事業の内容、セグメントの概要",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "営業収益の大部分は国内総合物流事業が占め、本邦の外部顧客への営業収益が全体の90％を超えるため地域ごとの情報の記載は省略されています。国際物流事業は欧米や東南アジア、中央アジアを中心にネットワークの拡大が進められています。",
+        "basis": "セグメント情報の外部顧客への営業収益と地域ごとの情報、経営方針の経営戦略等",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

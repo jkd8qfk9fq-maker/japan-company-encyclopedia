@@ -4,15 +4,217 @@
   "name": "テレビ東京ホールディングス",
   "officialName": "株式会社テレビ東京ホールディングス",
   "nameEn": "TV TOKYO Holdings Corporation",
-  "description": null,
+  "shortNameEn": "TV TOKYO Holdings",
+  "description": "テレビ番組を作って放送し、広告枠の販売やアニメ・配信の権利利用、テレビ通販で収入を得ています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "media",
+      "primary": true
+    },
+    {
+      "industryId": "entertainment",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "terrestrial-bs-broadcasting",
+      "name": "地上波・ＢＳ放送事業",
+      "description": "テレビ東京による地上波放送とBSテレビ東京による衛星放送を中心に、番組販売や番組制作などの放送事業です。2026年3月期の外部顧客への売上高は100,721百万円です。",
+      "products": [
+        "地上波放送",
+        "BS放送",
+        "番組販売",
+        "番組制作"
+      ],
+      "children": [
+        {
+          "id": "terrestrial-broadcasting",
+          "name": "地上波放送事業",
+          "description": "テレビ東京が教育、教養、娯楽、報道の番組を企画編成し、広告枠を販売します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "bs-broadcasting",
+          "name": "ＢＳ放送事業",
+          "description": "BSテレビ東京が衛星放送で番組を編成し、広告枠を販売します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "domestic-program-sales",
+          "name": "国内番組販売",
+          "description": "テレビ東京メディアネットがグループ制作の番組を他の放送局向けに販売します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "program-production",
+          "name": "番組制作・放送補完事業",
+          "description": "テレビ東京制作が番組を制作し、テレビ東京アートやテクノマックスが美術や技術を担います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "anime-streaming",
+      "name": "アニメ・配信事業",
+      "description": "放送番組の周辺権利を利用するライツ事業や、アニメのCS放送、音楽、動画配信などの事業です。2026年3月期の外部顧客への売上高は50,546百万円です。",
+      "products": [
+        "アニメ番組",
+        "配信コンテンツ",
+        "音楽",
+        "イベント"
+      ],
+      "children": [
+        {
+          "id": "rights-business",
+          "name": "ライツ事業",
+          "description": "放送番組やオリジナルコンテンツの配信、ビデオグラム化、出版化、ゲーム化、商品化などの権利を利用します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "cs-broadcasting",
+          "name": "ＣＳ放送事業",
+          "description": "エー・ティー・エックスがアニメ専門チャンネル「AT-X」へ番組を提供します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "music-business",
+          "name": "音楽関連ビジネス事業",
+          "description": "テレビ東京ミュージックが番組の主題歌などの著作権を管理し、音楽番組やコンサートを企画します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "digital-media",
+          "name": "動画配信・デジタル媒体事業",
+          "description": "テレビ東京コミュニケーションズが動画配信やクロスメディア広告、EC、デジタル課金などを展開します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "shopping-others",
+      "name": "ショッピング・その他事業",
+      "description": "テレビ通販やeコマース、グループ全体のサポートを行う事業です。2026年3月期の外部顧客への売上高は13,647百万円です。",
+      "products": [
+        "テレビ通販",
+        "インターネット通販",
+        "グループ内サービス"
+      ],
+      "children": [
+        {
+          "id": "tv-shopping",
+          "name": "テレビ通販・ＥＣ事業",
+          "description": "テレビ東京ダイレクトがテレビ通販とインターネット通販を運営します。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "group-support",
+          "name": "グループ内サービス事業",
+          "description": "テレビ東京システムやテレビ東京ビジネスサービスがシステム管理や施設管理などを担います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "テレビ番組を作って放送し、広告枠の販売やアニメ・配信の権利利用、テレビ通販で収入を得ています。",
+    "products": [
+      "地上波テレビ番組",
+      "BSテレビ番組",
+      "アニメ番組",
+      "配信コンテンツ",
+      "テレビ通販商品"
+    ],
+    "customers": [
+      "テレビ番組を見る視聴者",
+      "広告を出す企業",
+      "配信プラットフォーム",
+      "テレビ通販を利用するお客様"
+    ],
+    "revenueSources": [
+      "広告枠の販売による収入",
+      "アニメや配信などの権利利用による収入",
+      "テレビ通販やeコマースによる収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "放送と配信、通販を手がける認定放送持株会社",
+        "description": "テレビ東京ホールディングスは、テレビ東京とBSテレビ東京を中心とするグループの認定放送持株会社です。連結子会社は15社、関連会社は5社で、従業員数は2026年3月31日現在1,672人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "テレビ番組とアニメ、配信コンテンツ、通販商品",
+        "description": "教育、教養、娯楽、報道のテレビ番組やアニメ番組、配信コンテンツを提供し、テレビ通販の商品も販売します。"
+      },
+      {
+        "kind": "customer",
+        "title": "視聴者と広告主、配信プラットフォーム",
+        "description": "番組は視聴者に届け、広告枠は広告主に販売します。アニメやドラマなどのコンテンツは配信プラットフォームにも供給します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "広告枠の販売と権利利用、通販による売上高",
+        "description": "広告枠の販売とアニメや配信の権利利用、テレビ通販が売上高につながります。2026年3月期の売上高は164,915百万円で、前期比5.8％増です。"
+      },
+      {
+        "kind": "profit",
+        "title": "売上高から費用を差し引いた当期純利益",
+        "description": "売上高から番組制作費などの費用を差し引いた残りが当期純利益となります。2026年3月期の親会社株主に帰属する当期純利益は7,700百万円で、前期比27.6％増です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +229,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 89836000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1634,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +249,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 93351000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1691,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +269,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 99268000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1646,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +289,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 101900000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1651,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +309,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 107554000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1672,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +317,277 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1964,
+      "title": "東京12チャンネルとして教育専門局を開局",
+      "description": "日本科学技術振興財団テレビ局として、東京都港区芝公園で教育専門局を開局しました。テレビ東京の前身です。",
+      "significance": "テレビ東京の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "東京十二チャンネルに商号変更し一般総合局へ移行",
+      "description": "日本科学技術振興財団からテレビ事業を譲り受け、東京十二チャンネルに商号を変更して一般総合局へ移行しました。",
+      "significance": "教育専門局から総合局へ変わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "テレビ東京に商号変更",
+      "description": "東京十二チャンネルからテレビ東京に商号を変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "TXN6局ネットワークが完成",
+      "description": "TVQ九州放送の開局により、テレビ東京をキー局とする全国主要都市をカバーするTXN6局ネットワークが完成しました。",
+      "significance": "全国への放送網が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "テレビ東京が東京証券取引所市場第一部に上場",
+      "description": "テレビ東京が東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "上場会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "認定放送持株会社テレビ東京ホールディングスを設立",
+      "description": "テレビ東京、BSジャパン、テレビ東京ブロードバンドの3社が株式移転により経営統合し、認定放送持株会社としてテレビ東京ホールディングスを設立して東京証券取引所市場第一部に上場しました。",
+      "significance": "持株会社体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "地上アナログ放送を終了",
+      "description": "テレビ東京が地上アナログ12チャンネルの放送を終了し、完全デジタル化しました。",
+      "significance": "放送がデジタルへ移行しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "テレビ送信所を東京スカイツリーへ移転",
+      "description": "テレビ送信所を東京タワーから東京スカイツリーへ移転しました。",
+      "significance": "送信設備を更新しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "BSジャパンをBSテレビ東京に商号変更",
+      "description": "BSジャパンの商号をBSテレビ東京に変更しました。",
+      "significance": "BS放送のブランドを統一しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "エー・ティー・エックスを完全子会社化",
+      "description": "エー・ティー・エックスの株式を取得し、完全子会社化しました。",
+      "significance": "アニメのCS放送事業をグループに取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場再編により、市場第一部からプライム市場へ移行しました。",
+      "significance": "プライム市場に移行しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "新たな企業理念「パーパス、ミッション、バリュー」を策定",
+      "description": "新たな企業理念としてパーパス、ミッション、バリューを策定しました。",
+      "significance": "グループの理念を新たにしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "テレビ東京が開局60周年",
+      "description": "テレビ東京が開局60周年を迎えました。",
+      "significance": "開局60年の節目を迎えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "長期ビジョン「テレ東VISION2035」を策定",
+      "description": "2035年に目指す姿として長期ビジョン「テレ東VISION2035」を策定しました。",
+      "significance": "長期の方向性を示しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "Q-nineを完全子会社化",
+      "description": "2026年1月にQ-nineを完全子会社化しました。",
+      "significance": "eスポーツ領域のイベント事業を強化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "dentsu-group",
+      "relationship": "customer",
+      "description": "株式会社電通グループは、2026年3月期の販売実績で42,075百万円、連結売上高の25.5％を占める取引先です。テレビ放送事業等における戦略的パートナーとして、株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "hakuhodo-dy-holdings",
+      "relationship": "customer",
+      "description": "株式会社博報堂DYホールディングスは、2026年3月期の販売実績で17,889百万円、連結売上高の10.8％を占める取引先です。テレビ放送事業等における戦略的パートナーとして、株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "major-shareholder",
+      "description": "三井物産株式会社は、2026年3月31日現在、当社の株式11,002千株、3.76％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "toei",
+      "relationship": "business-partner",
+      "description": "東映株式会社は、コンテンツ制作・映画事業等の業務における戦略的パートナーであり、当社は株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shochiku",
+      "relationship": "business-partner",
+      "description": "松竹株式会社は、コンテンツ制作・映画事業等の業務における戦略的パートナーであり、当社は株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "bic-camera",
+      "relationship": "business-partner",
+      "description": "株式会社ビックカメラは、放送事業等における重要な取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ana-holdings",
+      "relationship": "business-partner",
+      "description": "ANAホールディングス株式会社は、放送事業等における重要な取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yakult-honsha",
+      "relationship": "business-partner",
+      "description": "株式会社ヤクルト本社は、放送事業等における重要な取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-bs-broadcasting",
+      "relationship": "business-partner",
+      "description": "日本BS放送株式会社は、コンテンツ制作協力等における重要な取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "u-next-holdings",
+      "relationship": "business-partner",
+      "description": "株式会社U-NEXT HOLDINGSは、コンテンツ制作・配信事業等における重要な取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "creek-and-river",
+      "relationship": "business-partner",
+      "description": "株式会社クリーク・アンド・リバー社は、コンテンツ制作の業務における協力関係があり、専門的人材の派遣を受けています。当社は株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kabuki-za",
+      "relationship": "business-partner",
+      "description": "株式会社歌舞伎座は、松竹の関連会社であり、コンテンツ制作の業務における戦略的パートナーです。当社は株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-realty-and-development",
+      "relationship": "business-partner",
+      "description": "住友不動産株式会社は、本社オフィス・スタジオ等放送運行拠点の貸主であり、放送業務等における戦略的パートナーです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +595,47 @@
       "publisher": "株式会社テレビ東京ホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCRR.pdf",
       "publishedAt": "2026-06-17",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YCRR",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "パーパス「心を温かく、時に熱く。一人ひとりに深く届け、ちょっといい明日へ。」とミッション「『あたりまえ』に挑み、まだ見ぬ『おもしろい』を共に創る。」を掲げ、長期ビジョン「テレ東VISION2035」のもと、コンテンツ・IPを起点に放送や配信などへ広く展開する「グローバルIPメディア」を目指しています。2025-27中期経営計画に基づき、成長投資枠を活用して新規事業開発や投資・M&A、DX投資などを進めています。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "2026年3月期の売上高は164,915百万円で、アニメ・配信事業の売上高は50,546百万円です。アニメ「NARUTO」や「BORUTO」の海外展開や商品化、配信ビジネスの伸びが売上高を支えています。",
+        "basis": "2026年3月期のセグメント情報と経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析に基づきます。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は164,915百万円で前期比5.8％増となり、地上波・BS放送事業の売上高は100,721百万円、アニメ・配信事業の売上高は50,546百万円です。放送を中核に、アニメや配信の二次利用で収益源を広げています。",
+        "basis": "2026年3月期のセグメント情報と経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析に基づきます。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

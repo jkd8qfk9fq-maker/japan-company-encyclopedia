@@ -4,15 +4,103 @@
   "name": "東洋合成工業",
   "officialName": "東洋合成工業株式会社",
   "nameEn": "Toyo Gosei Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "TOYO GOSEI",
+  "description": "半導体向け感光性材料と医薬・香料などの化成品を製造販売し、液体化学品の保管も行う会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "photosensitive-materials",
+      "name": "感光性材料事業",
+      "description": "半導体用感光性材料、液晶表示装置用感光性材料ならびに電気二重層材料などを生産する事業です。千葉工場と市川工場で感光性材料を製造し、感光材研究所で研究開発を行います。2026年3月期の外部顧客への売上高は26,417百万円でした。",
+      "customers": [
+        "半導体メーカーをはじめとする電子材料分野の顧客",
+        "液晶表示装置などの分野の顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "chemical-products",
+      "name": "化成品事業",
+      "description": "医薬・香料・塗装・溶剤などの中間体の生産ならびに化成品の保管を行う事業です。高純度溶剤や香料材料などを製造販売し、高浜油槽所では液体化学品のタンク保管業務を行います。2026年3月期の外部顧客への売上高は15,538百万円でした。",
+      "customers": [
+        "医薬・香料・塗装・溶剤などの分野の顧客",
+        "液体化学品の保管を必要とする顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "感光性材料と化成品を製造販売し、液体化学品の保管業務と合わせて、製品と保管サービスの対価を売上高とする事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "半導体用感光性材料",
+      "液晶表示装置用感光性材料",
+      "電気二重層材料",
+      "医薬・香料・塗装・溶剤などの中間体（高純度溶剤、香料材料など）",
+      "液体化学品のタンク保管サービス"
+    ],
+    "customers": [
+      "半導体メーカーをはじめとする電子材料分野の顧客",
+      "医薬・香料・塗装・溶剤などの分野の顧客",
+      "液体化学品の保管を必要とする顧客"
+    ],
+    "revenueSources": [
+      "感光性材料の販売による売上高",
+      "化成品の販売による売上高",
+      "液体化学品の保管業務による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東洋合成工業",
+        "description": "東洋合成工業は連結子会社のない単体の会社です。2026年3月31日現在の従業員数は972人で、千葉県と兵庫県に工場を持ちます。"
+      },
+      {
+        "kind": "offering",
+        "title": "感光性材料と化成品の製造販売と保管",
+        "description": "半導体用や液晶表示装置用の感光性材料と、医薬・香料・塗装・溶剤などの中間体を製造販売し、液体化学品のタンク保管も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "電子材料分野などの顧客への販売",
+        "description": "感光性材料は半導体や液晶表示装置の分野の顧客に、化成品は医薬・香料などの分野の顧客に販売し、保管サービスは液体化学品の保管を必要とする顧客に提供します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品と保管サービスの販売による売上高",
+        "description": "2026年3月期の売上高は41,956百万円で、前期比8.5％増でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は2,692百万円で、前期比17.9％減でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +115,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16061000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 790,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +137,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19641000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 849,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +159,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21825000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 887,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +181,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24831000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 928,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +203,177 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27452000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 972,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1954,
+      "title": "日本アセチレン化学工業を設立",
+      "description": "麻酔薬などの医薬品用化学製品の製造ならびに精製を目的として、日本アセチレン化学工業株式会社を設立しました。本社及び工場を東京都江戸川区に設置しました。",
+      "significance": "現在の東洋合成工業の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東洋合成工業に商号を変更",
+      "description": "商号を東洋合成工業株式会社に変更しました。",
+      "significance": "現在の社名になった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "市川工場へ移転し酢酸エステルの製造を開始",
+      "description": "千葉県市川市に新工場が竣工し、工場を移転して、酢酸エステルの製造を開始しました。",
+      "significance": "千葉県市川市が生産拠点となった起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "高浜油槽所を開設しタンク保管業務を開始",
+      "description": "千葉県市川市にタンクヤードを建設して高浜油槽所を開設し、化成品のタンク保管業務を開始しました。",
+      "significance": "化成品事業の保管業務の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "感光性材料の製造を開始",
+      "description": "本社工場内に感光性材料の製造施設が完成し、感光性材料の製造を開始しました。",
+      "significance": "現在の主力である感光性材料事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "千葉工場が完成",
+      "description": "千葉県香取郡東庄町に設立した千葉東洋合成株式会社の感光性材料製造工場（現在の千葉工場）が完成しました。",
+      "significance": "感光性材料の主力生産拠点の完成です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "千葉東洋合成などを合併",
+      "description": "千葉東洋合成株式会社及び東正産業株式会社を合併しました。",
+      "significance": "感光性材料の生産体制を当社に集約した出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "淡路工場が竣工",
+      "description": "兵庫県淡路市生穂新島に淡路工場が竣工しました。",
+      "significance": "化成品事業の生産拠点の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "千葉工場に第4感光材工場が竣工",
+      "description": "千葉工場に第4感光材工場が竣工しました。",
+      "significance": "先端分野向け感光性材料の供給能力の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、ジャスダック（スタンダード）からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "千葉工場の開発分析棟と第4感光材工場の増強が竣工",
+      "description": "千葉工場に開発分析棟が竣工し、第4感光材工場の第2期工事も竣工しました。",
+      "significance": "感光性材料の開発・分析体制と供給能力の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "shin-etsu-chemical",
+      "relationship": "customer",
+      "description": "主要な顧客ごとの情報に、感光性材料事業および化成品事業に関連する顧客として載る取引先です。半導体・電子材料分野における製品開発、製品供給、原材料調達等について取引関係の維持・強化のため、当社は同社の株式40,400株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "zeon",
+      "relationship": "business-partner",
+      "description": "当社の化成品事業の取引先であり、取引関係の維持・強化のため、当社は同社の株式13,478株を保有しており、業務提携等の関係にあります（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokyo-ohka-kogyo",
+      "relationship": "business-partner",
+      "description": "半導体・電子材料分野における製品開発、製品供給等について取引関係の維持・強化のため、当社は同社の株式34,800株を保有しており、業務提携等の関係にあります（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +381,63 @@
       "publisher": "東洋合成工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGHH.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YGHH",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2023年3月期から5ヵ年の中期経営計画「Beyond500」に取り組んでいます。電子材料分野で高純度合成、精製技術に磨きをかけ、顧客品質を満たす安定供給体制を強化し、最終年度の売上高500億円以上の実現に向けて取り組むとしています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "戦略は、感光性材料と高純度溶剤という半導体向け製品を軸に置く構成になっています。第4感光材工場や開発分析棟など能力増強を行った設備を活用し、先端半導体向け材料の供給を強化する方針が、現在の感光性材料事業の生産体制とつながっています。",
+        "basis": "セグメント情報における外部顧客への売上高、【経営方針、経営環境及び対処すべき課題等】の中期経営計画と分野別課題、【研究開発活動】の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "顧客企業と研究開発段階から技術的な摺り合せを行い、顧客との協業関係を築いていること、長年にわたり蓄積された高い生産技術力、成長事業と基盤事業を組み合わせた事業の組み合わせ、各事業が密接に結び付くことによる相乗効果を、事業の特徴として挙げています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【会社の支配に関する基本方針】"
+      },
+      "analysis": {
+        "text": "感光性材料の研究開発から製品化までを工場に隣接した環境で一貫して短い期間で行う体制と、高純度合成、精製技術を感光性材料と高純度溶剤の両事業で使う体制により、顧客の品質の求めに応じた材料を供給する仕組みを持ちます。",
+        "basis": "【研究開発活動】の感光性材料と化成品の研究開発の記載、セグメント情報における製品及びサービスごとの情報、【経営方針、経営環境及び対処すべき課題等】の技術戦略の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは感光性材料事業と化成品事業の2つです。2026年3月期の外部顧客への売上高は、感光性材料事業が26,417百万円と最も大きく、次いで化成品事業が15,538百万円でした。主要な顧客として信越化学工業株式会社が、両事業に関連する顧客として挙げられています。",
+        "basis": "セグメント情報における外部顧客への売上高と、関連情報の地域ごとの情報、主要な顧客ごとの情報に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
