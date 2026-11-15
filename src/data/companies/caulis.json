@@ -4,15 +4,117 @@
   "name": "カウリス",
   "officialName": "株式会社カウリス",
   "nameEn": "Caulis Inc.",
-  "description": null,
+  "shortNameEn": "Caulis Inc.",
+  "description": "法人向けクラウド型不正アクセス検知サービス「Fraud Alert」を提供し、金融機関などの不正利用対策を支える会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "aml-cybersecurity",
+      "name": "マネー・ローンダリング及びサイバーセキュリティ対策事業",
+      "description": "当社の唯一の報告セグメントです。法人向けクラウド型不正アクセス検知サービス「Fraud Alert」と、金融機関等向け電力契約情報を活用したKYCサービス「Grid Data KYC」を提供します。2025年12月期の売上高は1,400百万円でした。本社は東京都千代田区にあります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "銀行・証券会社等の資金移動業者",
+        "クレジットカード事業者・暗号資産交換業者",
+        "通信キャリア・ガス等のインフラ事業者"
+      ],
+      "children": [
+        {
+          "id": "fraud-alert-login",
+          "name": "Fraud Alertログイン検知サービス",
+          "description": "エンドユーザーのアクセス環境から端末情報など250以上のパラメータを取得し、独自の検知アルゴリズムで「本人らしさ」を判定して不正アクセスのリスクを検知するサービスです。リスクがある場合にだけ顧客側から追加認証を発動させるリスクベース認証により、エンドユーザーに負荷をかけずに不正ログインを防ぎます。",
+          "sourceIds": [
+            "yuho-2025"
+          ]
+        },
+        {
+          "id": "fraud-alert-payment",
+          "name": "Fraud Alert入出金検知サービス",
+          "description": "主に国内の金融機関を顧客として、振込ルールや各種パラメータを組み合わせたルールベースで不正な入出金のモニタリングを行い、危険度が高いと判定された場合にリアルタイムで振込中止や追加認証の制限をかけるサービスです。2024年12月から提供しています。",
+          "sourceIds": [
+            "yuho-2025"
+          ]
+        },
+        {
+          "id": "fraud-alert-account",
+          "name": "Fraud Alert新規口座開設検知サービス",
+          "description": "主に国内の金融機関を顧客として、口座開設申請等に対し、不正アクセス検知技術に電力会社が保有する電力設備情報の一部を組み合わせ、なりすましの可能性に関するリスク情報を提供するサービスです。",
+          "sourceIds": [
+            "yuho-2025"
+          ]
+        },
+        {
+          "id": "grid-data-kyc",
+          "name": "Grid Data KYC",
+          "description": "全国10社の送配電事業者と連携し、電力契約情報を活用して不正口座開設の防止と継続的顧客管理の高度化、管理コストの低減を同時に実現する、金融機関等向けのKYCサービスです。2025年９月から提供しています。",
+          "sourceIds": [
+            "yuho-2025"
+          ]
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "端末情報など250以上のパラメータからログインの「本人らしさ」を判定するクラウド型不正アクセス検知サービス「Fraud Alert」を法人顧客に提供する会社です。",
+    "products": [
+      "クラウド型不正アクセス検知サービス「Fraud Alert」（ログイン検知・入出金検知・新規口座開設検知）",
+      "金融機関等向け電力契約情報を活用したKYCサービス「Grid Data KYC」",
+      "モニタリング運用支援のコンサルティングサービス"
+    ],
+    "customers": [
+      "銀行・証券会社等の資金移動業者",
+      "クレジットカード事業者・暗号資産交換業者",
+      "通信キャリア・ガス等のインフラ事業者"
+    ],
+    "revenueSources": [
+      "利用者のインプレッション数・ユニークユーザー数に基づいて決まる「Fraud Alert」の契約金額",
+      "コンサルティング契約に基づく対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "カウリス",
+        "description": "東京都千代田区に本社を置き、東京証券取引所グロース市場に上場する会社です。2025年12月31日現在の従業員数は53人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "不正アクセス検知とKYCのサービス",
+        "description": "クラウド型不正アクセス検知サービス「Fraud Alert」と、電力契約情報を活用したKYCサービス「Grid Data KYC」を提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "金融機関などの法人顧客",
+        "description": "銀行や証券会社等の資金移動業者、クレジットカード事業者、暗号資産交換業者、通信キャリアやガス等のインフラ事業者などが顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "契約金額",
+        "description": "利用者のインプレッション数やユニークユーザー数を基に決まる契約金額を顧客から受け取ります。2025年12月期の売上高は1,400百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年12月期の当期純利益は276百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -22,16 +124,16 @@
       "profit": 13753000,
       "profitLabel": "経常利益",
       "netIncome": 13463000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 481510000,
       "totalAssetsLabel": "総資産額",
       "netAssets": -56925000,
-      "netAssetsLabel": "純資産額",
-      "employees": null,
+      "netAssetsLabel": "－－－純資産額",
+      "employees": 31,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -44,19 +146,20 @@
       "profit": 219854000,
       "profitLabel": "経常利益",
       "netIncome": 249960000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 718300000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 191285000,
-      "netAssetsLabel": "純資産額",
-      "employees": null,
+      "netAssetsLabel": "－－－純資産額",
+      "employees": 31,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第８期（2022年12月期）の期首から適用しており、第８期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標となっております。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -66,16 +169,16 @@
       "profit": 293868000,
       "profitLabel": "経常利益",
       "netIncome": 260372000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 1178698000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 451657000,
-      "netAssetsLabel": "純資産額",
-      "employees": null,
+      "netAssetsLabel": "－－－純資産額",
+      "employees": 43,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -88,16 +191,16 @@
       "profit": 388328000,
       "profitLabel": "経常利益",
       "netIncome": 276298000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 2024057000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 1315537000,
-      "netAssetsLabel": "純資産額",
-      "employees": null,
+      "netAssetsLabel": "－－－純資産額",
+      "employees": 42,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -110,23 +213,123 @@
       "profit": 409921000,
       "profitLabel": "経常利益",
       "netIncome": 276442000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 2182217000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 1656542000,
-      "netAssetsLabel": "純資産額",
-      "employees": null,
+      "netAssetsLabel": "－－－純資産額",
+      "employees": 53,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2015,
+      "title": "株式会社カウリスの設立",
+      "description": "東京都新宿区に株式会社カウリスを設立しました。",
+      "significance": "当社の事業の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "「Fraud Alert」の提供開始",
+      "description": "法人向けクラウド型不正アクセス検知サービス「Fraud Alert（フロードアラート）」の提供を開始しました。",
+      "significance": "現在の主力サービスの開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "本社の移転と第三者割当増資",
+      "description": "本社を東京都千代田区に移転しました。同年、ソニー株式会社（現ソニーグループ株式会社）及び株式会社電通国際情報サービス（現株式会社電通総研）を引受人として第三者割当増資を実施し、翌年にかけて株式会社セブン銀行及び株式会社リヴァンプを引受人に加えた第三者割当増資も実施しました。",
+      "significance": "事業拡大に向けた資本基盤の形成と本社機能の移転です。資本金の金額は沿革には記載していません。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "規制のサンドボックス認証と関西電力との提携",
+      "description": "関西電力株式会社（現関西電力送配電株式会社）と共同で、金融と電力データを活用した分野で第一号となる新技術等実証制度（規制のサンドボックス制度）の認証を取得し、同社と業務提携契約を締結しました。同年、Salesforce Ventures LLCを引受人として第三者割当増資を実施しました。",
+      "significance": "電力データを活用する現在の事業展開の起点となった提携です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "送配電事業者との業務提携の拡大",
+      "description": "関西電力株式会社（現関西電力送配電株式会社）、北海道電力ネットワーク株式会社、中部電力パワーグリッド株式会社、中国電力ネットワーク株式会社と業務提携契約を締結しました。また、一般社団法人キャッシュレス推進協議会が推進する不正利用関連情報確認データベース（CLUE）の構築に技術協力しました。",
+      "significance": "電力契約情報を活用するサービス基盤が全国へ広がる起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "優先株式の取得・消却と株式分割",
+      "description": "定款に基づく株式取得請求権に応じ、Ａ種・Ｂ種・Ｃ種のすべての優先株式を自己株式として取得し、対価として普通株式を交付したうえで、取得した優先株式をすべて消却し、種類株式を発行する旨の定款の定めを廃止しました。また、普通株式１株につき100株の割合で株式分割を実施しました。",
+      "significance": "上場に向けた資本構成の整理です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "東京証券取引所グロース市場に上場",
+      "description": "東京証券取引所グロース市場に株式を上場しました。同年12月には、入出金のモニタリングを行う「Fraud Alert入出金検知」の提供を開始しました。",
+      "significance": "上場会社としての出発点と、サービス領域の拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "「Grid Data KYC」の提供開始",
+      "description": "北海道電力ネットワーク株式会社、東北電力ネットワーク株式会社、東京電力パワーグリッド株式会社、中部電力パワーグリッド株式会社、北陸電力送配電株式会社、関西電力送配電株式会社、中国電力ネットワーク株式会社、四国電力送配電株式会社、九州電力送配電株式会社、沖縄電力株式会社の送配電事業者10社と業務提携契約を締結し、金融機関等向け電力契約情報を活用したKYCサービス「Grid Data KYC」の提供を開始しました。",
+      "significance": "電力契約情報を本格的に事業化した新規事業の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "gmo-internet-group",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に印字された事業会社です。2025年12月31日現在、所有株式数は284,600株で、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は4.35％です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "the-okinawa-electric-power",
+      "relationship": "business-partner",
+      "description": "2025年９月に送配電事業者10社の１社として当社と業務提携契約を締結した提携先です（業務提携等の関係）。電力契約情報を活用したKYCサービス「Grid Data KYC」の連携先となっています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -134,13 +337,52 @@
       "publisher": "株式会社カウリス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XV0K.pdf",
       "publishedAt": "2026-03-30",
-      "accessedAt": "2026-09-28"
+      "docId": "S100XV0K",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 当社は2023年11月25日付で普通株式１株につき100株の割合で株式分割を実施しており、主要な経営指標等の注記にその旨が記載されています（分割は第７期の期首に行われたものとして指標が算定されています）。",
+      "businessStructure: 当社は2023年11月25日付で普通株式１株につき100株の割合で株式分割を実施しており、主要な経営指標等の注記にその旨が記載されています（分割は第７期の期首に行われたものとして指標が算定されています）。",
+      "history: 当社は2023年11月25日付で普通株式１株につき100株の割合で株式分割を実施しており、主要な経営指標等の注記にその旨が記載されています（分割は第７期の期首に行われたものとして指標が算定されています）。"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "成長戦略として、「Fraud Alert」でモニタリングを行うチャネル（インターネット及びアプリ上の個人口座・法人口座）の拡大と、ログインページ・送金ページ・口座開設画面などの設置面の増加により、月次経常収益（MRR）を拡大するとしています。2025年９月に開始した「Grid Data KYC」では、全国10社の送配電事業者との連携により、電力契約情報を活用した不正口座開設の防止と継続的顧客管理の高度化を進めるとしています。",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "不正利用と特定された端末情報を顧客間で共有するブラックリストのデータベースを蓄積しており、個社単独では検知しにくいマネー・ローンダリングや他社で不正利用された端末を顧客横断で捕捉できる構造です。リスクがある場合にだけ追加認証を発動させるリスクベース認証のため、エンドユーザーに負荷をかけずに導入でき、JavaScriptのコード埋め込み型では１ヶ月程度と導入期間が短く、サーバー設置などの導入コストも抑えられます。金融庁のガイドラインへの対応や不正利用者の端末傾向の分析に基づく検知ルールのチューニングで、顧客企業のモニタリングの負担を軽減しています。",
+        "basis": "【事業の内容】のサービスの構成と特徴、【経営方針、経営環境及び対処すべき課題等】の提供価値に基づきます。",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "マネー・ローンダリング及びサイバーセキュリティ対策事業の単一セグメントで、2025年12月期の売上高は1,400百万円でした。2025年12月期には月間約6.0億件のログインをモニタリングし、そのうち約3.64％のアクセスを本人らしさが低いものとして検知しています。当期末の契約社数は48社で、当事業年度は金融機関４行とその他金融機関２社の新規導入と５社の解約があり、導入社数は純増１社でした。",
+        "basis": "セグメント情報等、財務諸表のセグメント情報、【事業の内容】の利用実績、MD&Aの経営成績等の状況の概要に基づきます。",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

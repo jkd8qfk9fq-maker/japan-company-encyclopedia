@@ -2,17 +2,122 @@
   "id": "arent",
   "code": "5254",
   "name": "Ａｒｅｎｔ",
-  "officialName": "株式会社Ａｒｅｎｔ",
-  "nameEn": "Ａｒｅｎｔ　Ｉｎｃ．",
-  "description": null,
+  "officialName": "株式会社Arent",
+  "nameEn": "Arent　Inc．",
+  "shortNameEn": "Arent Inc.",
+  "description": "建設業界の大手企業にDXのコンサルティングとシステム開発を行い、建設業界向けのソフトウエア製品も販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "dx",
+      "name": "DX事業",
+      "description": "建設業界及びプラントエンジニアリング業界の大手企業に対し、DXによる業務効率化・生産性向上のためのコンサルティング及びシステム開発（主に準委任契約）を行う事業です。コンサルティングで課題を把握して試作品を作り、本開発を経て、リリース後も継続開発を続ける形で、長期間クライアント企業と協同します。2026年6月期の外部顧客への売上高は3,810百万円です。連結子会社の株式会社Arent AI、Arent Vietnam, Co., Ltd.が含まれ、主要な顧客は[[company:takasago-thermal-engineering|高砂熱学工業株式会社]]です。",
+      "customers": [
+        "建設業界及びプラントエンジニアリング業界の大手企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "product",
+      "name": "プロダクト事業",
+      "description": "自社開発やM&Aによって拡充した、建設業界に特化したソフトウエアのライセンス販売等を行う事業です。空間自動設計システム「PlantStream®」や、Autodesk社のBIMツール「Revit」のアドイン「LightningBIM」シリーズなどを販売し、利用期間に応じた継続的な収益を目指します。2026年6月期の外部顧客への売上高は2,018百万円です。連結子会社の株式会社構造ソフト、株式会社スタッグ、株式会社建設ドットウェブ、アサクラソフト株式会社、株式会社レッツの製品も含まれます。",
+      "customers": [
+        "建設業界の企業"
+      ],
+      "children": [
+        {
+          "id": "own-products",
+          "name": "自社開発プロダクト",
+          "description": "空間自動設計システム「PlantStream®」や「LightningBIM」シリーズなど、当社グループが自社で開発したソフトウエアです。金額は独立して開示されていません。",
+          "customers": [
+            "建設業界の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "acquired-products",
+          "name": "M&Aで取得した子会社のプロダクト",
+          "description": "株式会社構造ソフト、株式会社スタッグ、株式会社建設ドットウェブ、アサクラソフト株式会社、株式会社レッツなど、M&Aでグループに入った子会社が保有する建設業界向けソフトウエアです。金額は独立して開示されていません。",
+          "customers": [
+            "建設業界の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "クライアント企業と課題の発見から共同でシステムを開発して対価を得るDX事業と、自社開発やM&Aで取得した子会社のソフトウエアをライセンス販売するプロダクト事業で収益を得る仕組みです。",
+    "products": [
+      "DXのコンサルティング及びシステム開発（準委任契約が中心）",
+      "空間自動設計システム「PlantStream®」",
+      "Autodesk Revitアドイン「LightningBIM」シリーズ",
+      "法人向け生成AIツール「BizGenie」",
+      "M&Aで取得した子会社各社の建設業界向けソフトウエア"
+    ],
+    "customers": [
+      "建設業界及びプラントエンジニアリング業界の大手企業"
+    ],
+    "revenueSources": [
+      "コンサルティング・システム開発の対価（準委任契約が中心）",
+      "ソフトウエアのライセンス販売等による対価（利用期間に応じた継続的な収益）"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "Ａｒｅｎｔ",
+        "description": "2012年に静岡県浜松市で設立され、東京都港区に本社を置きます。2023年3月に東京証券取引所グロース市場に上場しました。2026年6月30日現在、連結子会社は9社で、従業員数は440人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "DXの共創開発と建設向けプロダクト",
+        "description": "建設業界の大手企業に対し、課題発見のコンサルティングから試作品の作成、本開発、リリース後の継続開発までを一貫して支援します。あわせて、空間自動設計システム「PlantStream®」やBIM関連の自社プロダクト、M&Aで取得した子会社のソフトウエアを販売します。"
+      },
+      {
+        "kind": "customer",
+        "title": "建設・プラント業界の大手企業",
+        "description": "主な顧客は建設業界及びプラントエンジニアリング業界の大手企業です。主要な顧客である[[company:takasago-thermal-engineering|高砂熱学工業株式会社]]とは、継続開発の段階に入った安定的な取引を継続しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高5,828百万円",
+        "description": "2026年6月期の売上高は5,828百万円で、前期から44.7％増えました。DX事業における受注の増加や、プロダクト事業における連結子会社の増加が主な理由として印字されています。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益1,512百万円",
+        "description": "2026年6月期の親会社株主に帰属する当期純利益は1,512百万円で、前期の633百万円から増えました。株式会社PlantStreamとの吸収合併に伴い引き継いだ税務上の繰越欠損金等について繰延税金資産を計上したことが、増加の要因として印字されています。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,11 +132,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1990807000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 42,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -47,12 +152,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3466661000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 61,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
-      ]
+        "yuho-2026"
+      ],
+      "note": "2022年11月18日付で普通株式１株につき40株の割合で株式分割を行っております。"
     },
     {
       "fiscalYear": "2024年6月期",
@@ -67,11 +173,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4125235000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 153,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -87,11 +193,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4801829000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 247,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -112,35 +218,234 @@
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第14期の親会社株主に帰属する当期純利益は、株式会社PlantStreamとの吸収合併に伴い引き継いだ税務上の繰越欠損金等について繰延税金資産を計上したことにより増加しております。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
+  "history": [
     {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第13期(2024/07/01－2025/06/30)",
-      "publisher": "株式会社Ａｒｅｎｔ",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WRNQ.pdf",
-      "publishedAt": "2025-09-26",
-      "accessedAt": "2026-09-29"
+      "year": 2012,
+      "title": "株式会社CFlatを設立",
+      "description": "静岡県浜松市に、各種ソフトウエアの受託開発及びスマートフォンアプリケーションの開発を目的として、株式会社CFlat（現 株式会社Arent）を設立しました。",
+      "significance": "現在のArentの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
     },
+    {
+      "year": 2019,
+      "title": "株式会社ASTROTECH SOFTWARE DESIGN STUDIOSを吸収合併",
+      "description": "新規事業立案及び企画を得意としていた株式会社ASTROTECH SOFTWARE DESIGN STUDIOSを吸収合併し、本店を東京都中央区に移転しました。",
+      "significance": "事業企画（コンサルティング）からシステム開発までを一気通貫で支援する、現在のビジネスモデルの根幹となった統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "商号を株式会社Arentに変更",
+      "description": "商号を株式会社CFlatから株式会社Arentに変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "千代田化工建設株式会社と合弁会社を設立",
+      "description": "千代田化工建設株式会社と折半出資で、プラントの空間自動設計システムを提案するVTP株式会社（後の株式会社PlantStream）を設立しました。",
+      "significance": "プロダクト事業の中核製品「PlantStream®」を手がける会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社VestOne（現 株式会社Arent AI）を設立",
+      "description": "日清紡ホールディングス株式会社との共同出資により、Web3.0に関するDX事業を推進する株式会社VestOne（現 株式会社Arent AI）を設立しました。",
+      "significance": "後に生成AIに特化する連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "「LightningBIM 自動配筋」をリリース",
+      "description": "建築物の配筋検討プロセスの各工程を自動化・高速化するAutodesk Revitアドイン「LightningBIM 自動配筋」をリリースしました。",
+      "significance": "自社プロダクト「LightningBIM」シリーズの代表作です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所グロース市場に上場",
+      "description": "東京証券取引所グロース市場に株式を上場しました。",
+      "significance": "株式公開会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "高砂熱学工業株式会社とSaaS群『PLANETS』を共同開発",
+      "description": "[[company:takasago-thermal-engineering|高砂熱学工業株式会社]]と、BIMを中核とした9つのSaaS群『PLANETS -開発コードネーム-』を共同開発しました。",
+      "significance": "主要な顧客との共創開発の代表的な事例です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "Arent Vietnam, Co., Ltd.を設立",
+      "description": "ベトナムに開発子会社Arent Vietnam, Co., Ltd.を設立しました。",
+      "significance": "海外の開発体制の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社構造ソフトを完全子会社化",
+      "description": "株式会社構造ソフトの全株式を取得し、完全子会社化しました。",
+      "significance": "M&Aによる建設業界向けプロダクト拡充の本格化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社PlantStreamを完全子会社化",
+      "description": "株式会社PlantStreamの株式を追加取得し、完全子会社化しました。",
+      "significance": "合弁会社だったPlantStreamをグループに取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社スタッグを完全子会社化",
+      "description": "株式会社スタッグの全株式を取得し、完全子会社化しました。",
+      "significance": "プロダクト群の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社PlantStreamを吸収合併",
+      "description": "連結子会社の株式会社PlantStreamを吸収合併しました。",
+      "significance": "空間自動設計システム「PlantStream®」の事業を当社本体に取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社建設ドットウェブとアサクラソフト株式会社を完全子会社化",
+      "description": "株式会社建設ドットウェブとアサクラソフト株式会社の全株式を取得し、それぞれ完全子会社化しました。",
+      "significance": "建設業界向けソフトウエアの製品群が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "株式会社レッツを完全子会社化",
+      "description": "株式会社レッツの全株式を取得し、完全子会社化しました。",
+      "significance": "プロダクト事業の製品群の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "takasago-thermal-engineering",
+      "relationship": "customer",
+      "description": "DX事業の主要な顧客です。顧客ごとの情報に直近2期とも印字され、事業の内容では継続開発の段階に移行した安定的な取引の事例として印字されています。2024年3月にはBIMを中核としたSaaS群『PLANETS』を共同開発しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "companyId": "obayashi",
+      "relationship": "business-partner",
+      "description": "AIを実装した現場支援型スマート工程ソフト「PROCOLLA」を共同で開発した相手です。「PROCOLLA」は2025年8月に当社がリリースした、プロダクト事業の現行製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
+  "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第14期(2025/07/01－2026/06/30)",
-      "publisher": "株式会社Arent",
+      "publisher": "株式会社Ａｒｅｎｔ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z4WQ.pdf",
       "publishedAt": "2026-09-29",
-      "accessedAt": "2026-10-19",
       "docId": "S100Z4WQ",
-      "asOf": "2026-06-30"
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 主要な経営指標等の推移の注記に、2022年11月18日付で普通株式１株につき40株の割合で株式分割を行った旨が記載されています。自社の株式分割の取扱いには人の確認が必要です。",
+      "businessStructure: 主要な経営指標等の推移の注記に、2022年11月18日付で普通株式１株につき40株の割合で株式分割を行った旨が記載されています。自社の株式分割の取扱いには人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-10-19",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "DX事業の安定的な成長に加え、自社開発及びM&Aによる「プロダクト群戦略」「コンサルティング直営業戦略」「AIブースト戦略」によりプロダクト事業を拡大していくことで、より加速度的な成長を目指すとしています。",
+        "asOf": "2026-09-29",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "3Dを核としたシステム開発の技術力と、建設業に特化した開発実績により蓄積した知識、課題発見からプロダクト開発・事業化までの全工程を一貫して手がける力が強みになっています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、3つの強みとして「3Dを核としたシステム開発の技術力」「建設業に特化した開発実績により蓄積したナレッジ」「課題発見～プロダクト開発～事業化までの全工程をハンズオンで実施する事業創出力」が印字されています。",
+        "asOf": "2026-09-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "建設業界の中でも、SaaS化が進んでいないニッチな領域に狙いを定め、非効率な旧来のシステムを置き換えるプロダクトで高いシェアの獲得を目指す位置づけです。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、建設市場は国内だけで約81兆円の規模を持ちながら、SaaS化されている領域は施工管理等のごく一部に限られ、非効率なレガシーシステムによる課題を抱えた数多くのニッチ領域が存在すると印字されています。",
+        "asOf": "2026-09-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",

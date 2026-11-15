@@ -4,15 +4,140 @@
   "name": "アステリア",
   "officialName": "アステリア株式会社",
   "nameEn": "ASTERIA Corporation",
-  "description": null,
+  "shortNameEn": "ASTERIA Corporation",
+  "description": "企業や機器を「つなぐ」ソフトウェアを自社で開発・販売し、子会社ファンドを通じた投資も行う会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "software",
+      "name": "ソフトウェア事業",
+      "description": "企業情報システム、クラウドサービス、デジタル機器などを「つなぐ」ためのソフトウェアを自ら企画・開発し、不特定多数の顧客にパッケージソフトウェアやクラウドサービスとして提供する事業です。受託開発は行いません。2026年3月期の外部顧客への売上収益は3,388百万円でした。",
+      "customers": [
+        "企業",
+        "団体"
+      ],
+      "children": [
+        {
+          "id": "support",
+          "name": "サポート",
+          "description": "「ASTERIA Warp」などの自社製品に対する保守・サポートによる売上です。2026年3月期の売上は1,412百万円でした。",
+          "customers": [
+            "企業",
+            "団体"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "service",
+          "name": "サービス",
+          "description": "「Handbook X」「Platio」「Gravio」などのサブスクリプション型サービスや、生成AI導入支援コンサルティングなどのサービスによる売上です。2026年3月期の売上は1,222百万円でした。",
+          "customers": [
+            "企業",
+            "団体"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "license",
+          "name": "ライセンス",
+          "description": "「ASTERIA Warp」をはじめとする自社ソフトウェア製品のライセンス販売による売上です。2026年3月期の売上は753百万円でした。",
+          "customers": [
+            "企業",
+            "団体"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "investment",
+      "name": "投資事業",
+      "description": "米国に拠点を置く100％子会社のAsteria Vision Fund Inc.が管理し、ファンドのAsteria Vision Fund I, L.P.を通じて行う投資事業です。投資対象は、ソフトウェア事業の研究開発対象である「４D」（Data、Device、Decentralized、Design）の領域に絞られています。外部顧客への売上収益は開示されていません（セグメント情報では「－」と表示されています）。",
+      "customers": [],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "データ連携ミドルウェア「ASTERIA Warp」などの自社製品を、ライセンス販売とサブスクリプション、保守サポートで企業に提供して売上を得ています。",
+    "products": [
+      "データ連携ミドルウェア「ASTERIA Warp」シリーズ",
+      "デジタルコンテンツプラットフォーム「Handbook X」",
+      "モバイルアプリ作成ツール「Platio」シリーズ",
+      "ノーコードアプリ開発ツール「Click」",
+      "AI搭載IoT統合エッジウェア「Gravio」",
+      "ロボット開発環境シミュレーション・プラットフォーム「Artefacts」",
+      "ステーブルコイン決済ゲートウェイ「JPYC Gateway」",
+      "生成AI導入支援コンサルティング「AI活用変革センター」"
+    ],
+    "customers": [
+      "企業",
+      "団体"
+    ],
+    "revenueSources": [
+      "ソフトウェアライセンスの販売料",
+      "サブスクリプションの利用料",
+      "保守・サポートの対価",
+      "コンサルティング・トレーニングの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "アステリアグループ",
+        "description": "アステリアは東京都渋谷区に本社を置く会社です。連結子会社７社と持分法適用関連会社２社とともに事業を行い、2026年３月31日現在の連結従業員数は145人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "「つなぐ」自社製品の開発と販売",
+        "description": "受託開発は行わず、自ら企画したパッケージソフトウェアやクラウドサービスを提供しています。主力はデータ連携ミドルウェア「ASTERIA Warp」で、「Handbook X」「Platio」「Gravio」などの製品も提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "企業・団体の顧客",
+        "description": "国内外の企業や団体が顧客です。主要な顧客としてSCSK株式会社とパナソニックインフォメーションシステムズ株式会社が印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上収益3,388百万円",
+        "description": "2026年３月期の売上収益は3,388百万円で、前期比6.9％増でした。売上収益は全てソフトウェア事業によるもので、投資事業の外部収益は開示されていません。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期利益798百万円",
+        "description": "2026年３月期は、親会社の所有者に帰属する当期利益798百万円を計上しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +152,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 8356539000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 132,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -47,12 +172,13 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 7133522000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 145,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "IAS第12号「法人所得税」（2021年５月改訂）の適用に伴い、第25期（2023年３月期）及び第26期（2024年３月期）について遡及適用後の数値を記載しています。"
     },
     {
       "fiscalYear": "2024年3月期",
@@ -67,12 +193,13 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 5582064000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 128,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第26期（2024年３月期）において、ソフトウェア事業セグメントにおけるデザイン事業を非継続事業に分類しています。これにより、第25期（2023年３月期）及び第26期の売上収益は非継続事業を除いた継続事業の金額を表示し、親会社の所有者に帰属する当期利益（損失）は継続事業と非継続事業の合算を表示しています。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -87,7 +214,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 6104985000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 139,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -107,7 +234,7 @@
       "totalAssetsLabel": "資産合計",
       "netAssets": 7795625000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 145,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -115,8 +242,189 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1998,
+      "title": "平野洋一郎と北原淑行が当社を設立",
+      "description": "創業者の平野洋一郎と北原淑行が、XMLの普及を見込んで、XML専業のソフトウェア開発企業として当社を設立しました。",
+      "significance": "現在のソフトウェア事業の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "世界初の商用XMLエンジン「iPEX」を発売",
+      "description": "世界初の商用XMLエンジン「iPEX」を発売しました。",
+      "significance": "創業直後の最初の製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "データ連携ツール「ASTERIA Warp」を発売",
+      "description": "ノーコードのデータ連携ツール「ASTERIA Warp」を発売しました。",
+      "significance": "現在の主力製品の発売です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "モバイル情報共有ツール「Handbook」を発売",
+      "description": "モバイル情報共有ツール「Handbook」を発売しました。",
+      "significance": "現在のデジタルコンテンツプラットフォーム事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "中国と米国に子会社を設立・買収し海外展開を進める",
+      "description": "中国浙江省杭州市と上海市に100％子会社を設立し、米国のExtentech社を買収して100％子会社化しました。",
+      "significance": "海外拠点網の形成が進んだ年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "モバイルアプリ作成ツール「Platio」を提供開始",
+      "description": "ノーコードでモバイルアプリを作成できるツール「Platio」の提供を開始しました。",
+      "significance": "現在の主力製品の一つが加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "英国のThis Place Limitedを子会社化",
+      "description": "英国のThis Place Limitedの株式を取得し、100％子会社化しました。",
+      "significance": "デザイン領域を取り込んだ買収です（同社は2024年に全株式を売却）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "AI搭載IoT統合エッジウェア「Gravio」を提供開始",
+      "description": "AIを搭載したIoT統合エッジウェア「Gravio」の提供を開始しました。",
+      "significance": "IoT・フィジカル領域の製品が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東京証券取引所市場第一部へ市場変更し、アステリア株式会社へ商号変更",
+      "description": "東京証券取引所市場第一部へ市場変更し、インフォテリア株式会社からアステリア株式会社へ商号を変更しました。",
+      "significance": "現在の社名と市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "米国に投資専門子会社を設立し投資事業を開始",
+      "description": "米国に投資専門子会社のAsteria Vision Fund Inc.を設立し、企業投資事業を開始しました。",
+      "significance": "現在の投資事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "商談支援アプリ「Handbook X」の提供を開始",
+      "description": "「Handbook」の次世代版である商談支援アプリ「Handbook X」の提供を開始しました。",
+      "significance": "デジタルコンテンツプラットフォームの世代交代です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東証の市場区分の見直しにより、東京証券取引所プライム市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "「ASTERIA Warp」の導入企業数が10,000社を突破",
+      "description": "「ASTERIA Warp」の導入企業数が10,000社を突破しました。",
+      "significance": "主力製品の普及の広がりを示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "英国のThis Place Limitedの株式を全て売却",
+      "description": "英国のThis Place Limitedの株式を全て売却しました。",
+      "significance": "海外子会社の整理が行われました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "継続的シミュレーション・プラットフォーム「Artefacts」を提供開始",
+      "description": "ロボットアプリケーション向けの継続的シミュレーション・プラットフォーム「Artefacts」の提供を開始しました。",
+      "significance": "フィジカルAI領域の新製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "MikoSea株式会社を子会社化",
+      "description": "MikoSea株式会社の株式を取得し100％子会社化しました。同社はその後、アステリアキャンバス株式会社に商号を変更しています。",
+      "significance": "ノーコードアプリ開発を担う子会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "miroku-jyoho-service",
+      "relationship": "major-shareholder",
+      "description": "株式会社ミロク情報サービスは【大株主の状況】に載る事業会社で、2026年３月31日現在、当社株式の1.49％を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +432,47 @@
       "publisher": "アステリア株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGH9.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YGH9",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「世界で通用するソフトウェアを開発し提供する」ことを使命とし、「『つなぐ』エキスパート」として社会的な価値を生み出すことを目指しています。受託開発ではなく自ら企画した製品を提供する形態を基本とし、投資と研究開発の重点領域を「４D」（Data、Device、Decentralized、Design）に置いています。製品のAIネイティブ化、フィジカルAIやデジタル通貨などの成長領域への展開、海外展開の強化、人材基盤の強化に取り組む方針です。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "受託開発を行わず自社製品の開発に集中する事業形態と、ノーコードで使える製品づくりが強みです。主力の「ASTERIA Warp」は国内のEAI/ESB市場で長く首位を維持し、導入実績を積み重ねています。売上の中心はサブスクリプションとサポートによる継続的な収入です。",
+        "basis": "【事業の内容】に、受託開発ではなく不特定多数向けのパッケージソフトウェアやクラウドサービスを提供する「製品開発」を行うこと、「ASTERIA Warp」が国内EAI/ESB市場で19年連続シェアNo.１を獲得し累計導入企業数が10,000社を超えていることが印字されています。経営成績の分析には、サブスクリプション売上とサポート売上を合わせたストック売上が売上の約７割を超えることが印字されています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "データ連携ミドルウェアの国内市場で首位の地位にあります。売上収益は全てソフトウェア事業によるもので、販売のほとんどは日本国内向けです。投資事業は売上収益ではなく投資先の評価を通じて業績に寄与する位置づけです。",
+        "basis": "セグメント情報で、外部顧客への売上収益はソフトウェア事業のみに印字され（投資事業は「－」）、地域別情報では売上収益の大部分が日本に区分されています。【事業の内容】には「ASTERIA Warp」の国内EAI/ESB市場における19年連続シェアNo.１が印字されています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,165 @@
   "name": "アビスト",
   "officialName": "株式会社アビスト",
   "nameEn": "ABIST Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "ABIST Co.,Ltd.",
+  "description": "3次元CADによる機械設計開発の技術者派遣と請負を主力に、水素水の製造販売と不動産賃貸を手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "human-resources",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "design-development-outsourcing",
+      "name": "設計開発アウトソーシング事業",
+      "description": "ハイエンド3次元CADをツールとして、機械・機械部品の設計開発とソフトウエア開発を行う事業です。2025年9月期の外部顧客への売上高は10,517百万円です。",
+      "customers": [
+        "自動車メーカーとその部品メーカー",
+        "家電メーカー",
+        "精密機器メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "dispatch",
+          "name": "派遣業務",
+          "description": "当社が常用雇用する技術者を、自動車メーカーやその部品メーカーなどの顧客企業に派遣し、顧客企業の指揮命令のもとで労働に従事させる業務です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "contract",
+          "name": "請負業務",
+          "description": "顧客企業から設計・開発を請け負い、成果物を納入する業務です。当社の事業所内で行う受託型と、取引先に設計開発チームが常駐する常駐型があります。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-services",
+          "name": "その他業務",
+          "description": "技術者が講師となって取引先や大学に向けて行う3D-CAD教育業務、試作品等の3D出力を行う3Dプリント業務、ソフトウエアを利用した解析業務です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸事業",
+      "description": "当社が所有する賃貸ビル（三鷹市の1フロア）を顧客企業に賃貸する事業です。2025年9月期の外部顧客への売上高は60百万円です。",
+      "customers": [
+        "賃貸ビルの入居企業"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "beauty-health-products",
+      "name": "美容・健康商品製造販売事業",
+      "description": "熊本県菊池市のH&F熊本工場で、飲料用水素水「浸みわたる水素水」を製造し、一般消費者向けの通信販売を行う事業です。2025年9月期の外部顧客への売上高は49百万円です。",
+      "customers": [
+        "一般消費者",
+        "飲料の受託製造を委託する企業"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "hydrogen-water",
+          "name": "水素水の製造・通信販売",
+          "description": "飲料用水素水「浸みわたる水素水」を製造し、一般消費者向けに通信販売する業務です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "oem-beverages",
+          "name": "飲料のOEM受託製造",
+          "description": "OEMによる飲料の受託製造を行う業務です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自動車メーカーなどに技術者を派遣し、設計開発を請け負うアウトソーシングを収益の柱として、水素水の製造販売とビルの賃貸も行う仕組みです。",
+    "products": [
+      "機械・機械部品の設計開発（派遣・請負）",
+      "ソフトウエア開発",
+      "3D-CAD教育・解析業務",
+      "飲料用水素水「浸みわたる水素水」",
+      "飲料のOEM受託製造",
+      "賃貸ビルの賃貸"
+    ],
+    "customers": [
+      "自動車メーカーとその部品メーカー",
+      "家電メーカー",
+      "精密機器メーカー",
+      "一般消費者",
+      "賃貸ビルの入居企業"
+    ],
+    "revenueSources": [
+      "技術者派遣の対価",
+      "設計開発の請負代金",
+      "水素水等の製品販売と飲料受託製造の対価",
+      "不動産の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "アビスト",
+        "description": "2006年に設立され、東京都三鷹市に本店を置き、東京証券取引所スタンダード市場に上場しています。2025年9月30日現在の従業員数は1,352人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "設計開発アウトソーシングと水素水、不動産賃貸",
+        "description": "ハイエンド3次元CADをツールとした機械・機械部品の設計開発とソフトウエア開発を、派遣と請負の形態で行っています。水素水の製造販売と、所有する賃貸ビルの賃貸も手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車メーカーを中心とする製造業",
+        "description": "国内の自動車メーカーとその部品メーカー、家電メーカー、精密機器メーカーが主な顧客で、最大の顧客は[[company:toyota|トヨタ自動車株式会社]]です。水素水は一般消費者向けに通信販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高10,627百万円",
+        "description": "2025年9月期の売上高は10,627百万円で、設計開発アウトソーシング事業が10,517百万円、不動産賃貸事業が60百万円、美容・健康商品製造販売事業が49百万円です。前期に比べて6.2％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益649百万円",
+        "description": "2025年9月期の当期純利益は649百万円で、前期は611百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年9月期",
@@ -27,7 +177,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6147902000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1280,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -49,14 +199,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5956866000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1269,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第17期の期首から適用しており、第17期以降の主要な経営指標等は当該会計基準等を適用した後の指標となっています。"
     },
     {
       "fiscalYear": "2023年9月期",
@@ -71,7 +222,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6535828000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1271,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -93,7 +244,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6859379000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1294,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -115,7 +266,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7405345000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1352,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -125,8 +276,149 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2006,
+      "title": "JBSエンジニアリングとして設立し、エンジニアリング事業を譲受",
+      "description": "旧日本ビジネス開発株式会社のエンジニアリング事業本部を母体に、JBSエンジニアリング株式会社として設立され、同事業本部を事業譲受しました。あわせて派遣業務を開始しました。",
+      "significance": "現在の設計開発アウトソーシング事業の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "株式会社アビストに商号を変更",
+      "description": "商号を株式会社アビストに変更しました。",
+      "significance": "現在の社名になった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "CADデータ変換サービス事業を開始",
+      "description": "CADデータ変換サービス事業を開始しました。",
+      "significance": "設計周辺サービスの広がりを示す出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "株式会社アビストH&Fを設立",
+      "description": "子会社として株式会社アビストH&Fを設立しました。",
+      "significance": "後の美容・健康商品製造販売事業の母体です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "東京証券取引所JASDAQ（スタンダード）に株式を上場しました。",
+      "significance": "株式上場の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "3Dプリント事業を開始",
+      "description": "3Dプリント事業を神奈川県海老名市で開始しました。",
+      "significance": "設計開発に隣接する新しい事業への進出です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "AIソリューション事業を開始",
+      "description": "AIソリューション事業を開始しました。",
+      "significance": "ソフトウェア・デジタル領域への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ベトナムのRikkeisoft社と業務提携",
+      "description": "ベトナム法人Rikkeisoft Company社と業務提携しました。",
+      "significance": "海外企業との提携の出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場再編により、プライム市場へ移行しました。",
+      "significance": "市場区分の移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社アビストH&Fを吸収合併",
+      "description": "株式会社アビストH&Fを吸収合併しました。",
+      "significance": "水素水の製造販売事業を本体に取り込んだ出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所スタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "3Dプリント事業を廃止",
+      "description": "3Dプリント事業を廃止しました。",
+      "significance": "事業の選択と集中の出来事で、報告セグメントからも外れました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ベトナムにVIETNAM ABIST CO., LTD.を設立",
+      "description": "ベトナム・ハノイに海外子会社VIETNAM ABIST CO., LTD.を設立し、事業を開始しました。",
+      "significance": "初の海外子会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "toyota",
+      "relationship": "customer",
+      "description": "設計開発アウトソーシング事業の主要な顧客であり、主要な顧客ごとの情報に開示されています。2024年9月期と2025年9月期のいずれも主要な顧客として印字されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報等、財務諸表】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -134,13 +426,47 @@
       "publisher": "株式会社アビスト",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XARO.pdf",
       "publishedAt": "2025-12-18",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XARO",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-10-02",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "売上高の拡大を事業展開上必須の事柄とし、得意分野である自動車ランプ・内装・ボデー設計などのコア業務領域を拡大して強みをさらに強化するとしています。ソフトウェア分野の展開、デジタル解析ソリューション、顧客向けDXソリューションといった新事業領域の拡大も目指し、付加価値の高い請負業務の比率を高める方針を掲げています。",
+        "asOf": "2025-12-18",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "ハイエンド3次元CADを使いこなす設計技術者の集団であることが強みです。第20期末の技術者数は1,200名で、自動車ランプ・内装・ボデー設計などの自動車分野の設計に強みを持ち、設計開発アウトソーシング事業の販売実績では自動車関連が約6割を占めています。",
+        "basis": "【事業の内容】に3次元CADをツールとした設計開発が印字され、【経営方針、経営環境及び対処すべき課題等】に得意分野が自動車ランプ・内装・ボデー設計等であることが印字されています。【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】には期末技術者数（第20期末1,200名）と、取引先業種別の販売実績で自動車関連が設計開発アウトソーシング事業の59.6％を占めることが印字されています。",
+        "asOf": "2025-12-18",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "自動車産業の生産上流工程である設計開発のアウトソーシングを担う事業者です。主力事業はメーカーの工場稼働停止や減産の影響を直接受けにくい位置にあり、最大の顧客であるトヨタ自動車株式会社への販売が総販売実績の24.8％を占めています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、主力事業は生産の上流工程であるため自動車メーカーの工場稼働停止や減産が直接契約解除等に影響する可能性は低いとみていることが印字されています。販売実績の主な相手先別の内訳とセグメント情報の【関連情報】（主要な顧客ごとの情報）に、トヨタ自動車株式会社への販売高と総販売実績に対する割合24.8％が印字されています。",
+        "asOf": "2025-12-18",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-30",

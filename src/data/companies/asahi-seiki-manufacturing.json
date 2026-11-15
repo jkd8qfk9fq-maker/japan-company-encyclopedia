@@ -4,15 +4,174 @@
   "name": "旭精機工業",
   "officialName": "旭精機工業株式会社",
   "nameEn": "ASAHI-SEIKI MANUFACTURING CO.,LTD.",
-  "description": null,
+  "shortNameEn": "ASAHI-SEIKI MANUFACTURING CO.,LTD.",
+  "description": "小口径銃弾と精密金属加工品、プレス機械やばね機械などの工作機械を製造販売する会社です。",
   "listings": [
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "precision-processing",
+      "name": "精密加工事業部",
+      "description": "精密金属加工品及び小口径銃弾の製造及び販売を行う事業部です。2026年3月期の外部顧客への売上高は8,774百万円です。",
+      "customers": [
+        "防衛省などの官公庁",
+        "自動車部品メーカーをはじめとする製造業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等、財務諸表】",
+      "children": [
+        {
+          "id": "small-caliber-ammunition",
+          "name": "小口径銃弾",
+          "description": "政府の予算執行を受けて納入する小口径銃弾の製造及び販売です。2026年3月期の外部顧客への売上高は4,665百万円です。",
+          "customers": [
+            "防衛省"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        },
+        {
+          "id": "precision-metal-parts",
+          "name": "精密金属加工品",
+          "description": "自動車部品を中心とする精密金属加工品の製造及び販売です。2026年3月から生産を開始した次世代自動車部品（xEV部品）を含みます。2026年3月期の外部顧客への売上高は4,108百万円です。",
+          "customers": [
+            "自動車部品メーカーをはじめとする製造業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        }
+      ]
+    },
+    {
+      "id": "machinery",
+      "name": "機械事業部",
+      "description": "プレス機械、ばね機械、自動機・専用機等の製造及び販売を行う事業部です。2026年3月期の外部顧客への売上高は4,619百万円です。",
+      "customers": [
+        "電池メーカーや自動車メーカーをはじめとする製造業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等、財務諸表】",
+      "children": [
+        {
+          "id": "press-machines",
+          "name": "プレス機械",
+          "description": "電気自動車（EV）向け電池缶製造用の大型機種などを中心とするプレス機械の製造及び販売です。2026年3月期の外部顧客への売上高は3,142百万円です。",
+          "customers": [
+            "電池メーカーをはじめとする製造業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        },
+        {
+          "id": "spring-machines",
+          "name": "ばね機械",
+          "description": "ばね製造用の機械の製造及び販売です。北米ユーザー向けの販売等は非連結子会社のAsahi Seiki USA Corp.に委託しています。2026年3月期の外部顧客への売上高は727百万円です。",
+          "customers": [
+            "ばねメーカーをはじめとする製造業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        },
+        {
+          "id": "automatic-machines",
+          "name": "自動機・専用機",
+          "description": "自動車向けの大型機種などを中心とする自動機・専用機の製造及び販売です。2026年3月期の外部顧客への売上高は712百万円です。",
+          "customers": [
+            "自動車メーカーをはじめとする製造業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        },
+        {
+          "id": "machinery-other",
+          "name": "その他",
+          "description": "機械事業部のその他の製品及びサービスです。2026年3月期の外部顧客への売上高は37百万円です。",
+          "customers": [
+            "製造業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "防衛省向けの小口径銃弾と自動車部品などの精密金属加工品の販売に、電池缶製造用プレス機械をはじめとする工作機械の販売を組み合わせて収益を得る仕組みです。",
+    "products": [
+      "小口径銃弾",
+      "精密金属加工品（自動車部品等）",
+      "プレス機械",
+      "ばね機械",
+      "自動機・専用機"
+    ],
+    "customers": [
+      "防衛省",
+      "自動車部品メーカー",
+      "電池メーカーをはじめとする製造業"
+    ],
+    "revenueSources": [
+      "小口径銃弾の販売代金",
+      "精密金属加工品の販売代金",
+      "プレス機械・ばね機械・自動機・専用機の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "旭精機工業",
+        "description": "1953年に設立され、愛知県尾張旭市に本店を置き、名古屋証券取引所メイン市場に上場しています。2026年3月31日現在の従業員数は456人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "銃弾・精密部品と工作機械",
+        "description": "精密加工事業部で小口径銃弾と精密金属加工品を、機械事業部でプレス機械、ばね機械、自動機・専用機を製造販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "防衛省と製造業",
+        "description": "小口径銃弾の主な顧客は防衛省で、精密金属加工品は自動車部品メーカー、工作機械は電池メーカーをはじめとする製造業が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高13,393百万円",
+        "description": "2026年3月期の売上高は13,393百万円で、精密加工事業部が8,774百万円、機械事業部が4,619百万円です。前期に比べて13.8％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益803百万円",
+        "description": "2026年3月期の当期純利益は803百万円で、前期は287百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +186,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13560537000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 502,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +208,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13617580000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 497,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +230,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14173163000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 481,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +252,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14170769000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 477,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +274,231 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14114508000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 456,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1953,
+      "title": "旭大隈工業株式会社として設立し、銃弾類の製造を開始",
+      "description": "旭大隈工業株式会社として設立し、各種銃弾類の製造を開始しました。",
+      "significance": "現在の精密加工事業部の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "本社を現所在地の尾張旭市へ移転",
+      "description": "本社を名古屋市北区の大隈鐵工所から、現在の本社所在地である尾張旭市旭前町へ移転しました。",
+      "significance": "現在の本社・本社工場の立地が定まった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "自動連続プレスの製造を開始",
+      "description": "自動連続プレス（マルチフォーミングマシン）の製造を開始しました。",
+      "significance": "機械事業部の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "銃弾の営業権を譲り受け、国内唯一の小口径銃弾メーカーに",
+      "description": "東洋精機株式会社から銃弾の製造販売に関する営業権を譲り受け、以後わが国唯一の小口径銃弾メーカーとなりました。",
+      "significance": "小口径銃弾における現在の地位が確立した出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "社名を旭精機工業株式会社に変更",
+      "description": "社名を旭精機工業株式会社に変更しました。",
+      "significance": "現在の社名になった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "名古屋証券取引所市場第二部へ上場",
+      "description": "名古屋証券取引所市場第二部へ上場しました。",
+      "significance": "上場企業としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "ばね機械の製造を開始",
+      "description": "ばね機械の製造を開始しました。",
+      "significance": "機械事業部の製品領域が広がった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "自動機・専用機の製造を開始",
+      "description": "自動機・専用機の製造を開始しました。",
+      "significance": "機械事業部の製品領域がさらに広がった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "精密金属加工品の製造を開始",
+      "description": "精密金属加工品の製造を開始しました。",
+      "significance": "精密加工事業部の現在の主力製品の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "ばね機械のCNC化に成功",
+      "description": "ばね機械のCNC化に成功しました。",
+      "significance": "ばね機械の技術開発における節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "株式会社アステックスを設立",
+      "description": "株式会社アステックス（現 非連結子会社）を設立しました。",
+      "significance": "金型の製造や業務の委託を担うグループ会社ができた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "名古屋証券取引所メイン市場へ移行",
+      "description": "名古屋証券取引所の市場区分見直しにより、市場第二部からメイン市場に移行しました。",
+      "significance": "現在の上場市場になった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "米国にAsahi Seiki USA Corp.を設立",
+      "description": "米国にAsahi Seiki USA Corp.（現 非連結子会社）を設立し、プレス機械及びばね機械等の北米ユーザー向けの販売等を委託しています。",
+      "significance": "北米市場開拓の拠点ができた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "furukawa-electric",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に筆頭株主として印字されている事業会社で、2026年3月31日現在の所有割合は18.53％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "okaya-and-co",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に印字されている事業会社で、2026年3月31日現在の所有割合は7.18％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "asahi-kasei",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に印字されている事業会社で、2026年3月31日現在の所有割合は6.49％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "okuma",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に印字されている事業会社で、2026年3月31日現在の所有割合は5.23％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "niterra",
+      "relationship": "business-partner",
+      "description": "政策保有株式として当社が株式を保有する相手先で、保有目的には精密加工事業部に関わる安定的な営業取引の維持・強化と個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daido-metal",
+      "relationship": "business-partner",
+      "description": "政策保有株式として当社が株式を保有する相手先で、保有目的には機械事業部に関わる安定的な営業取引の維持・強化と個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daishinku",
+      "relationship": "business-partner",
+      "description": "政策保有株式として当社が株式を保有する相手先で、保有目的には精密加工事業部に関わる安定的な営業取引の維持・強化と個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nitto-kogyo",
+      "relationship": "business-partner",
+      "description": "政策保有株式として当社が株式を保有する相手先で、保有目的には精密加工事業部に関わる安定的な営業取引の維持・強化と個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "pilot",
+      "relationship": "business-partner",
+      "description": "政策保有株式として当社が株式を保有する相手先で、保有目的には精密加工事業部に関わる安定的な営業取引の維持・強化と個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +506,47 @@
       "publisher": "旭精機工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHGQ.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YHGQ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念「確かなモノづくりを通して、社会に貢献し、企業のたゆみない発展をめざす。」のもと、市場ニーズを的確に捉えて高品質で付加価値の高い製品を提供し、研究開発体制を強化して新技術・新製品の開発に取り組むとしています。精密金属加工品では「Ｄｏ Ｎｏｗ！改革活動」による生産性向上や、EVをはじめとした自動車部品の新製品の獲得を進め、小口径銃弾では高性能・高品質な製造と安全保障環境の変化に対応する生産体制の確立を目指しています。機械事業部では、電池缶向けなどのプレス機械の開発・販売に加え、米国に設立した現地法人を通じて北米市場の開拓に取り組むとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1961年に銃弾の製造販売に関する営業権を譲り受けて以来、わが国唯一の小口径銃弾メーカーであることが最大の特徴です。加えて、ばね機械のCNC化をはじめとする塑性加工と成形機械の技術蓄積があり、銃弾、精密部品、工作機械の3領域を一社で手がけています。",
+        "basis": "【沿革】に、1961年１月に東洋精機株式会社から銃弾の製造販売に関する営業権を譲り受け、以後わが国唯一の小口径銃弾メーカーとなったことと、1979年６月にばね機械のＣＮＣ化に成功したことが印字されています。【事業の内容】には精密加工事業部と機械事業部の製品構成が印字されています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "小口径銃弾では国内唯一のメーカーとして防衛省を主な顧客とし、精密金属加工品では自動車部品、工作機械では電池缶製造用プレス機械など、それぞれ異なる市場の需要を取り込む事業構成です。最大の顧客である防衛省への販売は総販売実績の34.2％を占めています。",
+        "basis": "【沿革】にわが国唯一の小口径銃弾メーカーであることが印字され、セグメント情報の【関連情報】（主要な顧客ごとの情報）には当事業年度の主要な顧客として防衛省が印字されています。販売実績の主な相手先別の内訳には、防衛省への販売実績と総販売実績に対する割合34.2％が印字されています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

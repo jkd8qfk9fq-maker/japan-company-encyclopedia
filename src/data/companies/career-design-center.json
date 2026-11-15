@@ -4,15 +4,147 @@
   "name": "キャリアデザインセンター",
   "officialName": "株式会社キャリアデザインセンター",
   "nameEn": "CAREER DESIGN CENTER CO.,LTD.",
-  "description": null,
+  "shortNameEn": "Career Design Center",
+  "description": "エンジニア・営業・女性を主な対象に、転職サイトや人材紹介、ITエンジニアの派遣などを手がける人材サービス会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "human-resources",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "human-resources-services",
+      "name": "人材サービス事業",
+      "description": "人材サービス事業の単一セグメントで、メディア情報事業、人材紹介事業、新卒メディア事業、新卒紹介事業、IT派遣事業の5事業を運営しています。「いい仕事。いい人生。」を企業理念に、キャリア志向の高い「エンジニア」「営業」「女性」を主な対象としています。2025年9月期の売上高は18,646百万円です。関係会社はなく、単体で事業を行っています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "it-dispatch",
+          "name": "IT派遣事業",
+          "description": "『typeIT派遣』の名称で、一般労働者派遣事業を展開しています。登録したITエンジニアの中から求人企業のニーズに合う人材を派遣し、有期雇用派遣と無期雇用派遣の2形態で運営しています。2025年9月期の売上高は8,609百万円で、5事業の中で最も大きい事業です。",
+          "customers": [
+            "ITエンジニアを必要とする求人企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "media-information",
+          "name": "メディア情報事業",
+          "description": "中途採用向けに、Webサイト『type』『女の転職type』などの運営と、合同会社説明会「適職フェア」の開催を行っています。2025年9月期の売上高は5,910百万円です。",
+          "customers": [
+            "中途採用を行う求人企業",
+            "転職を考える求職者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "placement",
+          "name": "人材紹介事業",
+          "description": "『type転職エージェント』の名称で有料職業紹介事業を展開する、登録型の人材紹介です。幅広い業種・職種を対象とする一般領域と、専門職や管理職を対象とするミドル領域に分かれて運営しています。2025年9月期の売上高は3,138百万円です。",
+          "customers": [
+            "中途採用を行う求人企業",
+            "転職を考える求職者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "graduate-media",
+          "name": "新卒メディア事業",
+          "description": "新卒者向けに、就職情報誌『type就活』の発行と就活イベント『type就活』の開催を行っています。2025年9月期の売上高は787百万円です。",
+          "customers": [
+            "新卒採用を行う求人企業",
+            "就職活動をする学生"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "graduate-placement",
+          "name": "新卒紹介事業",
+          "description": "『type就活エージェント』の名称で、登録した学生に新卒採用案件を紹介する登録型の新卒紹介事業です。2025年9月期の売上高は199百万円です。",
+          "customers": [
+            "新卒採用を行う求人企業",
+            "就職活動をする学生"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "求職者には転職サイトや適職フェア、人材紹介を通じて仕事を紹介し、求人企業から広告掲載料や紹介手数料、派遣料を受け取る事業モデルです。",
+    "products": [
+      "転職サイト『type』『女の転職type』と適職フェア（メディア情報事業）",
+      "登録型人材紹介『type転職エージェント』",
+      "新卒向け情報誌・イベント『type就活』（新卒メディア事業）",
+      "新卒紹介『type就活エージェント』",
+      "ITエンジニアの派遣『typeIT派遣』"
+    ],
+    "customers": [
+      "エンジニア・営業職・女性などの求職者",
+      "就職活動をする新卒の学生",
+      "人材を採用する求人企業"
+    ],
+    "revenueSources": [
+      "求人広告の掲載料や適職フェアへの出展料",
+      "人材紹介が成約したときの紹介手数料",
+      "派遣先企業からの派遣料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京都港区赤坂に本社を置く人材サービス会社",
+        "description": "株式会社キャリアデザインセンターは東京都港区赤坂に本社を置き、関係会社を持たず単体で人材サービス事業を行っています。従業員数は768人です（2025年9月30日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "メディア・紹介・派遣の5事業を運営",
+        "description": "転職サイトなどのメディア情報事業、人材紹介事業、新卒メディア事業、新卒紹介事業、ITエンジニアを派遣するIT派遣事業の5事業を運営し、求職者と求人企業の双方にサービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "求職者・学生と求人企業が顧客",
+        "description": "キャリア志向の高いエンジニア・営業・女性の求職者や新卒の学生と、人材を採用したい求人企業が顧客です。売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は18,646百万円",
+        "description": "2025年9月期の売上高は18,646百万円でした。事業別では、IT派遣事業が8,609百万円、メディア情報事業が5,910百万円、人材紹介事業が3,138百万円、新卒メディア事業が787百万円、新卒紹介事業が199百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は1,100百万円",
+        "description": "2025年9月期の当期純利益は1,100百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年9月期",
@@ -22,16 +154,16 @@
       "profit": 155284000,
       "profitLabel": "経常利益",
       "netIncome": 927694000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 5858531000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 3948237000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 662,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -44,19 +176,20 @@
       "profit": 1101094000,
       "profitLabel": "経常利益",
       "netIncome": 793589000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 6717734000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 2960555000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 695,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第31期（2022年9月期）の期首から適用しており、第31期以降の主要な経営指標等は、当該会計基準等を適用した後の数値となっています。"
     },
     {
       "fiscalYear": "2023年9月期",
@@ -66,16 +199,16 @@
       "profit": 1577294000,
       "profitLabel": "経常利益",
       "netIncome": 1163262000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 7999366000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 3933406000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 783,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -88,16 +221,16 @@
       "profit": 1438164000,
       "profitLabel": "経常利益",
       "netIncome": 984351000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 6506412000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 3939452000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 835,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -110,22 +243,164 @@
       "profit": 1604321000,
       "profitLabel": "経常利益",
       "netIncome": 1100768000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 7733520000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 4628417000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 768,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1993,
+      "title": "キャリアデザインセンターを設立",
+      "description": "東京都港区六本木に、求人情報を掲載する情報誌の出版を主要な事業内容として、株式会社キャリアデザインセンターを設立しました。創業者は、リクルートで求人情報誌の編集に携わった多田弘實です。",
+      "significance": "同社の創業です。",
+      "sourceIds": [
+        "yuho-2025",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "求人情報誌『type』を創刊",
+      "description": "キャリア志向の高いビジネスパーソンのための求人情報誌として『type』を創刊しました。",
+      "significance": "現在の主力ブランド『type』の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "Webサイト『＠type』の運営を開始",
+      "description": "「キャリアアップ転職の専門情報サイト」として、Webサイト『＠type』の運営を開始しました。",
+      "significance": "紙媒体からWebメディアへの展開です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "キャリアデザインコンサルティングを吸収合併",
+      "description": "有料職業紹介事業を行う子会社の株式会社キャリアデザインコンサルティングを吸収合併しました。",
+      "significance": "人材紹介事業を本体に取り込んだ統合です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "大阪証券取引所ヘラクレスに上場",
+      "description": "大阪証券取引所ニッポン・ニューマーケット－「ヘラクレス」に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "東証への上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "就職情報誌『就活type』を創刊",
+      "description": "大学新卒者向けの就職情報誌として『就活type』を創刊しました。",
+      "significance": "新卒メディア事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "ITエンジニア派遣を本格開始",
+      "description": "ITエンジニアに特化した有期雇用型派遣事業として『typeのIT派遣』を本格的に事業開始しました。",
+      "significance": "現在の最大事業であるIT派遣事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "東証一部への市場変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "キャリアデザインITパートナーズを設立",
+      "description": "労働者派遣事業を行う目的で、株式会社キャリアデザインITパートナーズを設立しました。",
+      "significance": "派遣事業の分社化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "派遣事業をITパートナーズへ会社分割で承継",
+      "description": "労働者派遣事業を会社分割の方法により株式会社キャリアデザインITパートナーズへ承継し、同社で事業を開始しました。",
+      "significance": "派遣事業を子会社へ移した再編です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "キャリアデザインITパートナーズを吸収合併",
+      "description": "株式会社キャリアデザインITパートナーズを吸収合併しました。",
+      "significance": "派遣事業を本体に戻した再編です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ市場変更",
+      "description": "東京証券取引所プライム市場へ市場変更しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "無期雇用型のITエンジニア派遣を本格開始",
+      "description": "ITエンジニアに特化した無期雇用型派遣事業を本格的に事業開始しました。",
+      "significance": "IT派遣事業の雇用形態の拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -134,13 +409,54 @@
       "publisher": "株式会社キャリアデザインセンター",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XBEJ.pdf",
       "publishedAt": "2025-12-18",
-      "accessedAt": "2026-09-28"
+      "docId": "S100XBEJ",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-13"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「キャリアデザインセンター」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E3%82%AD%E3%83%A3%E3%83%AA%E3%82%A2%E3%83%87%E3%82%A6%E3%82%A4%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC",
+      "accessedAt": "2026-11-15"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2021年11月に中期経営計画を策定し、『type』ブランドによる「ひとつ上のキャリア転職マーケット」の確立を目指しています。メディア情報事業・人材紹介事業・新卒メディア事業・新卒紹介事業・IT派遣事業の各商品・サービスをメディアミックス展開し、『type』ブランドの相乗効果を高める方針です。",
+        "asOf": "2025-12-18",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "キャリア志向の高いエンジニア・営業・女性を主軸にした事業展開で、他社との差別化を図っています。メディア、人材紹介、新卒向けサービス、IT派遣までを自社でそろえ、各商品・サービス間の相互機能を強化することで、求職者と求人企業の双方の採用課題に対応できる体制を持っています。",
+        "asOf": "2025-12-18",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年9月期の売上高18,646百万円の事業別内訳は、IT派遣事業が8,609百万円で最大であり、メディア情報事業が5,910百万円、人材紹介事業が3,138百万円、新卒メディア事業が787百万円、新卒紹介事業が199百万円です。人材サービス事業の単一セグメントで、売上高の10％以上を占める特定の顧客はありません。",
+        "basis": "MD&Aの事業の種類別の業績と販売実績、セグメント情報等（単一セグメントの注記）、主要な顧客ごとの情報に基づきます。",
+        "asOf": "2025-12-18",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-30",
