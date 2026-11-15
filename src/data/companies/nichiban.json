@@ -4,15 +4,128 @@
   "name": "ニチバン",
   "officialName": "ニチバン株式会社",
   "nameEn": "NICHIBAN CO., LTD.",
-  "description": null,
+  "shortNameEn": "NICHIBAN CO., LTD.",
+  "description": "粘着技術を基盤に、絆創膏などのメディカル製品とセロテープ®をはじめとする粘着テープを製造販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "pharmaceuticals",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "nichiban",
+      "name": "ニチバン株式会社",
+      "description": "東京都千代田区麹町に本社を置く粘着製品メーカーで、連結子会社5社・持分法適用関連会社3社及びその他の関係会社1社とグループを構成しています。報告セグメントはテープ事業とメディカル事業の2つで、2026年3月期の連結従業員数は1,271人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "tape",
+          "name": "テープ事業",
+          "description": "家庭用・事務用の粘着テープ・粘着シート及びそれらの機器等、産業用の粘着テープ・粘着シート及びそれらの機器等の製造及び販売を行う事業です。2026年3月期の外部顧客への売上高は25,534百万円で、フィールド別では工業品フィールド13,864百万円、ステーショナリーフィールド4,842百万円、ECフィールド4,203百万円、グローバルフィールド2,623百万円です。製造は当社のほか、ニチバンプリント株式会社とニチバンテクノ株式会社に委託しています。",
+          "customers": [
+            "製造業などの産業用ユーザー",
+            "文具・事務用品の販売店",
+            "ホームセンター等の小売店",
+            "オンライン購買の利用者",
+            "海外の販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "medical",
+          "name": "メディカル事業",
+          "description": "医薬品、医療機器、医療補助テープ、テーピングテープ等の製造及び販売を行う事業です。2026年3月期の外部顧客への売上高は24,936百万円で、フィールド別ではヘルスケアフィールド15,308百万円、医療材フィールド5,675百万円、グローバルフィールド2,796百万円、ECフィールド1,155百万円です。製造は当社のほか、ニチバンメディカル株式会社とニチバンテクノ株式会社に委託しています。",
+          "customers": [
+            "ドラッグストア等の小売店",
+            "医療機関",
+            "オンライン購買の利用者",
+            "海外の販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "粘着技術を基盤とする高分子技術で医薬品・医療機器などのメディカル製品と家庭用・産業用の粘着テープを製造販売し、その販売対価を得る事業モデルです。",
+    "products": [
+      "絆創膏・鎮痛消炎剤などの医薬品",
+      "医療機器・医療補助テープ・テーピングテープ",
+      "家庭用・事務用の粘着テープ・粘着シート（セロテープ®等）",
+      "産業用の粘着テープ・粘着シート及びそれらの機器"
+    ],
+    "customers": [
+      "ドラッグストア等の小売店と医薬品卸",
+      "医療機関",
+      "文具・事務用品の販売店とホームセンター",
+      "製造業などの産業用ユーザー",
+      "海外の販売代理店"
+    ],
+    "revenueSources": [
+      "メディカル事業の製品販売による売上高",
+      "テープ事業の製品販売による売上高"
+    ],
+    "suppliers": [
+      {
+        "name": "グループの製造会社",
+        "description": "連結子会社と持分法適用関連会社に、粘着テープ・医薬品等の製造を委託しています。"
+      },
+      {
+        "name": "半製品・商品・フィルム製品の仕入先",
+        "description": "その他の関係会社の子会社を通じて半製品を仕入れ、関連会社から商品や各種フィルム製品を仕入れています。"
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ニチバン株式会社",
+        "description": "東京都千代田区に本社を置き、連結子会社5社・持分法適用関連会社3社とグループを構成する粘着製品メーカーです。2026年3月期の連結従業員数は1,271人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "メディカル製品と粘着テープ",
+        "description": "粘着技術を基盤に高分子技術を駆使して、絆創膏や鎮痛消炎剤などの医薬品・医療機器と、セロテープ®をはじめ家庭用・事務用・産業用の粘着テープを製造販売します。"
+      },
+      {
+        "kind": "customer",
+        "title": "医療機関・小売店・産業用ユーザー",
+        "description": "ドラッグストアや医療機関、文具事務用品店、製造業など幅広い販売先に製品を届け、東南アジア・南アジア・中東地域と欧州地域では販売子会社を通じて販売します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は50,470百万円",
+        "description": "2026年3月期の売上高は50,470百万円でした。テープ事業が25,534百万円、メディカル事業が24,936百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は1,652百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,652百万円でした。前連結会計年度は1,959百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +140,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 38961000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 1255,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +160,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 40603000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 1268,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,12 +180,13 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 41703000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 1270,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号 2022年10月28日）等を第121期の期首から適用しており、第120期（2024年3月期）に係る主要な経営指標等は、当該会計基準等を遡って適用した後の指標等となっています。なお、経過的な取扱いを適用しています。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -87,7 +201,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 43187000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 1271,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +221,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 44325000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 1271,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +229,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第122期(2025/04/01－2026/03/31)",
-      "publisher": "ニチバン株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGTG.pdf",
-      "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-29",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +240,287 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1918,
+      "title": "歌橋製薬所を創業",
+      "description": "1918年1月、東京府荏原郡品川町において歌橋憲一が歌橋製薬所を創業し、絆創膏類の製造を開始しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1934,
+      "title": "株式会社歌橋製薬所に改組",
+      "description": "1934年12月に歌橋製薬所を株式会社歌橋製薬所に改組しました。",
+      "significance": "法人組織への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "全国の絆創膏製造業者を統合し日絆工業株式会社に",
+      "description": "1944年9月、企業整備により株式会社歌橋製薬所が統合会社となり全国25の絆創膏製造業者を統合し、商号を日絆工業株式会社とすると共に、東京・大阪両工場を設置しました。",
+      "significance": "全国規模の事業基盤ができた年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "セロハン粘着テープの製造を開始",
+      "description": "1947年9月にセロハン粘着テープの製造を開始しました。",
+      "significance": "テープ事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "ニチバン株式会社に商号変更し東京証券取引所市場第二部に上場",
+      "description": "1961年1月に商号をニチバン株式会社に変更し、同年10月に東京証券取引所市場第二部に上場しました。",
+      "significance": "現在の商号の始まりと株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "ニチバンプリント株式会社を設立",
+      "description": "1965年10月、埼玉県北足立郡鳩ケ谷町（現在は埼玉県日高市）にニチバンプリント株式会社を設立しました（現・連結子会社）。",
+      "significance": "製造子会社の展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "東京・大阪両証券取引所の市場第一部に上場",
+      "description": "1968年4月に東京・大阪両証券取引所の市場第一部に上場しました。同月に愛知県安城市にニチバンテクノ株式会社を設立しました（現・連結子会社）。",
+      "significance": "市場第一部への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "ニチバンメディカル株式会社を設立",
+      "description": "1989年7月、福岡県朝倉郡筑前町にニチバンメディカル株式会社を設立しました（現・連結子会社）。",
+      "significance": "メディカル事業の製造基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "タイに販売子会社を設立",
+      "description": "2017年7月、タイ・バンコクにNICHIBAN（THAILAND）CO.,LTD.を設立しました（現・連結子会社）。",
+      "significance": "東南アジア・南アジア・中東地域への販売体制の構築です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "ドイツに販売子会社を設立",
+      "description": "2020年10月、ドイツのデュッセルドルフに販売子会社NICHIBAN EUROPE GmbHを設立しました（現・連結子会社）。",
+      "significance": "欧州地域への販売体制の構築です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより市場第一部からプライム市場へ移行しました。",
+      "significance": "市場区分の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "本社を千代田区麹町に移転",
+      "description": "2025年11月に本社を東京都千代田区麹町に移転しました。",
+      "significance": "現在の本社所在地への移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "medipal-holdings",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式に記載される会社です。メディカル事業における販売先であり、同社株式85,404株を保有しております。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "alfresa-holdings",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式に記載される会社です。メディカル事業における販売先であり、同社株式14,620株を保有しております。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "king-jim",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式に記載される会社です。テープ事業における販売先であり、同社株式125,400株を保有しております。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-pack",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式に記載される会社です。テープ事業における販売先であり、同社株式28,323株を保有しております。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "cosmos-pharmaceutical",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式に記載される会社です。メディカル事業における販売先であり、同社株式400株を保有しております。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "zeon",
+      "relationship": "supplier",
+      "description": "【株式の保有状況】の特定投資株式に記載される会社です。主要原材料等の仕入先であり、同社株式103,900株を保有しております。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toyota-tsusho",
+      "relationship": "supplier",
+      "description": "【株式の保有状況】の特定投資株式に記載される会社です。主要原材料等の仕入先であり、同社株式7,800株を保有しております。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "inabata-and-co",
+      "relationship": "supplier",
+      "description": "【株式の保有状況】の特定投資株式に記載される会社です。主要原材料等の仕入先であり、同社株式10,000株を保有しております。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fujitsu",
+      "relationship": "supplier",
+      "description": "【株式の保有状況】の特定投資株式に記載される会社です。システム関連の仕入先であり、同社株式5,000株を保有しております。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toppan-holdings",
+      "relationship": "supplier",
+      "description": "【株式の保有状況】の特定投資株式に記載される会社です。主要原材料等の仕入先であり、同社株式1,050株を保有しております。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takashima-and-co",
+      "relationship": "supplier",
+      "description": "【株式の保有状況】の特定投資株式に記載される会社です。テープ製品の原材料等仕入先であり、同社株式5,000株を保有しております。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第122期(2025/04/01－2026/03/31)",
+      "publisher": "ニチバン株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGTG.pdf",
+      "publishedAt": "2026-06-23",
+      "docId": "S100YGTG",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 当社は、2026年４月10日開催の取締役会において、中期経営計画「CREATION 2026」に基づくグループ全体での最適生産体制構築及び生産分担再編を目的として、埼玉工場及び安城工場における生産設備の撤去を決議しました。撤去は2026年４月以降に行われ、2028年３月期及び2029年３月期においても継続する予定です（重要な後発事象に印字）。本登録は2026年３月31日時点の体制で行います。"
+    ]
+  },
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念「粘着の分野を原点として新たな価値を創造する技術で快適な生活に貢献し続ける」ことで「当社グループにかかわるすべての人々の幸せを実現する」のもと、2024年度よりスタートした中期経営計画「CREATION 2026」を推進し、重点テーマである「事業ポートフォリオの再構築」「グローバル企業化」「人的資本経営」を実行しています。中長期ビジョン「NICHIBAN GROUP 2030 VISION」の目標「快適な生活を支える価値を創出し続けグローバルに貢献する企業へ！」と、2030年度のグローバル比率30％の達成に向けて取り組んでいます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高は前期比2.0％増の50,470百万円でした。MD&Aでは、グローバルフィールドにおける「ロイヒつぼ膏」コインプラスターの韓国での上市や、工業品フィールドにおける「たばねらテープ」の価格改定が寄与したと説明されています。",
+        "basis": "MD&Aの経営成績の概要、セグメント情報（報告セグメントごとの売上高の分解情報）",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1918年の創業以来培ってきた粘着技術を基盤に、高分子技術を駆使して布・紙・セロファン・プラスチックをベースとした製品を展開しています。MD&Aでは、主要製品のセロテープ®について、長年培った高い品質と信頼性を基盤に、天然素材を使用した環境配慮型製品であることを訴求していると説明されています。",
+        "basis": "事業の内容、MD&Aのセグメントごとの業績（テープ事業）",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントはテープ事業（外部顧客への売上高25,534百万円）とメディカル事業（同24,936百万円）の2つで、ほぼ半々です。地域ごとの情報では日本が45,454百万円と大半を占め、アジア3,317百万円、欧州1,384百万円、その他314百万円です。主要な顧客はピップ株式会社で、売上高8,419百万円（メディカル事業）が印字されています。その他の関係会社である大鵬薬品工業株式会社は当社株式の33.5％を保有し、当社は同社の子会社を通じて半製品の仕入を行っています。",
+        "basis": "セグメント情報（報告セグメントの金額、関連情報の地域ごとの情報・主要な顧客ごとの情報）、関係会社の状況、事業の内容",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

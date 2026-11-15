@@ -4,15 +4,129 @@
   "name": "南海辰村建設",
   "officialName": "南海辰村建設株式会社",
   "nameEn": "Nankai Tatsumura Construction Co., Ltd.",
-  "description": null,
+  "description": "大阪を拠点に建築・土木・電気工事を請け負い、不動産の売買・賃貸も手がける建設会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "construction",
+      "name": "建設事業",
+      "description": "建築・土木・電気その他建設工事全般に関連する事業です。親会社からも建設工事を受注し、施工の一部を連結子会社2社に発注しています。2026年3月期の外部顧客への売上高は45,612百万円で、事業の中で最大でした。",
+      "customers": [
+        "民間企業",
+        "官公庁"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "construction-building",
+          "name": "建築工事",
+          "description": "建築工事を請け負う事業です。当事業年度の完成工事の例として、物流施設や学校、病院などの新築工事があります。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "construction-civil",
+          "name": "土木工事",
+          "description": "土木工事を請け負う事業です。下水道整備工事などの社会インフラに関わる工事も手がけています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "construction-electrical",
+          "name": "電気工事",
+          "description": "電気工事を請け負う事業です。建設工事全般に関連する事業の一部として行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "不動産の販売、賃貸その他不動産に関連する事業です。2026年3月期の外部顧客への売上高は184百万円でした。",
+      "customers": [
+        "不動産の購入者・賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "親会社からも工事を受注する建設事業を中心に不動産事業を営み、連結子会社2社と事業を展開しています。",
+    "products": [
+      "建築工事",
+      "土木工事",
+      "電気工事",
+      "不動産の販売",
+      "不動産の賃貸"
+    ],
+    "customers": [
+      "民間企業",
+      "官公庁",
+      "不動産の購入者・賃借人"
+    ],
+    "revenueSources": [
+      "建設工事の請負代金",
+      "不動産の販売代金",
+      "不動産の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "南海辰村建設と連結子会社2社のグループ",
+        "description": "当社グループは、当社と連結子会社2社で構成され、大阪市浪速区に本社を置いています。親会社は南海電気鉄道株式会社で、2026年4月1日付で株式会社ＮＡＮＫＡＩに社名変更しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "建設工事と不動産事業を提供",
+        "description": "建築・土木・電気その他建設工事全般に関連する建設事業と、不動産の販売、賃貸その他不動産に関連する不動産事業を提供しています。施工にあたっては、建設用仮設資材の一部を連結子会社から調達し、施工の一部を連結子会社2社に発注しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "民間企業や官公庁などが顧客",
+        "description": "建設事業の顧客は民間企業や官公庁などで、親会社からも建設工事の一部を受注しています。不動産事業では不動産の購入者や賃借人が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "工事の請負代金などで収益を得る",
+        "description": "2026年3月期の売上高は45,797百万円で、前期比13.5％減りました。外部顧客への売上高の内訳は、建設事業が45,612百万円、不動産事業が184百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益を計上する",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は2,093百万円で、前期比22.1％増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +141,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12670000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 516,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +161,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14453000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 500,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +181,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15773000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 484,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17290000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 502,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +221,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19703000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 511,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +229,186 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1923,
+      "title": "土木建築請負業を創業",
+      "description": "西田勝三郎が個人事業として、土木建築請負業を創業しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "土木建築岸和田工業株式会社を設立",
+      "description": "大阪府岸和田市において土木建築岸和田工業株式会社を設立しました。",
+      "significance": "法人としての設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "株式会社西田工務店に商号変更",
+      "description": "商号を株式会社西田工務店に変更しました。",
+      "significance": "社名の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "西広建設株式会社を設立",
+      "description": "西広建設株式会社（現南海建設興業株式会社）を設立しました。現連結子会社です。",
+      "significance": "現在の連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "株式を大阪証券取引所市場第二部に上場しました。",
+      "significance": "株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "南海建設株式会社と合併し商号変更",
+      "description": "南海建設株式会社と合併し、同時に商号を南海建設株式会社に変更しました。本社を岸和田市から大阪市浪速区へ移転しました。",
+      "significance": "合併による社名変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "甲容工業株式会社を買収し子会社化",
+      "description": "甲容工業株式会社（南海電設株式会社）を買収し、子会社としました。",
+      "significance": "子会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "株式会社辰村組と合併し南海辰村建設に商号変更",
+      "description": "株式会社辰村組と合併し、同時に商号を南海辰村建設株式会社に変更しました。東京支店を東京本店に改め、大阪本店を開設しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "南海電気鉄道株式会社が親会社となった",
+      "description": "第三者割当増資の実施により、南海電気鉄道株式会社（現株式会社ＮＡＮＫＡＩ）が当社の親会社となりました。",
+      "significance": "現在の親会社との関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "日本ケーモー工事株式会社を買収し子会社化",
+      "description": "日本ケーモー工事株式会社を買収し、子会社としました。現連結子会社です。",
+      "significance": "現在の連結子会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "大阪証券取引所と東京証券取引所の市場統合に伴い、東京証券取引所市場第二部に上場しました。",
+      "significance": "上場市場の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "連結子会社間の吸収合併を実施",
+      "description": "南海建設興業株式会社を存続会社、南海電設株式会社を消滅会社とする連結子会社間の吸収合併を実施しました。",
+      "significance": "グループ再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に上場",
+      "description": "東京証券取引所の市場区分見直しに伴い、スタンダード市場に上場しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "創業100周年",
+      "description": "創業100周年を迎えました。",
+      "significance": "創業からの節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nankai",
+      "relationship": "parent",
+      "description": "親会社です。2026年3月31日現在、議決権の被所有割合は62.19％（間接所有割合4.46％を含みます。）です。当社は同社から建設工事の一部を受注しており、同社は当社の主要な顧客でもあります。同社は2026年4月1日付で鉄道事業を分社化し、株式会社ＮＡＮＫＡＩに社名変更しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "okumura",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合が2.78％（800千株）である当社の大株主の事業会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "obayashi",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合が1.91％（552千株）である当社の大株主の事業会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "meiho-enterprise",
+      "relationship": "business-partner",
+      "description": "外断熱工法に関する業務提携等の関係が継続している提携先です。当社は2026年3月31日現在、同社の株式40,000株を保有し、同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +416,58 @@
       "publisher": "南海辰村建設株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y9NL.pdf",
       "publishedAt": "2026-06-15",
-      "accessedAt": "2026-09-28"
+      "docId": "S100Y9NL",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "relatedCompanies: 親会社の南海電気鉄道株式会社は、2026年4月1日付で鉄道事業を分社化し、株式会社ＮＡＮＫＡＩに社名変更しています（決算日後の事象）。本稿の親会社の記載は2026年3月31日現在の構造に基づくもので、社名変更後のグループ構造は反映していません。"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「３カ年経営計画（２０２５～２０２７）」を掲げ、スローガンを「変革」と「成長」の３年間とし、事業規模の拡大、人財力と組織力の向上、環境・社会への貢献とガバナンスの強化、持続的な企業価値の向上を基本方針としています。事業戦略では受注ポートフォリオの変革や生産性向上・技術力向上のための体制整備に取り組むとしています。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の外部顧客への売上高は建設事業が45,612百万円、不動産事業が184百万円で、売上は建設事業に集中しています。計画が掲げる受注ポートフォリオの変革や人財の確保・育成は、この建設事業の受注と施工を担う体制に関わる取組みとして読めます。",
+        "basis": "セグメント情報の外部顧客への売上高と、経営方針に印字された３カ年経営計画の基本方針・主要テーマに基づきます。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "建設事業における最優先かつ最重要課題である人財の確保・育成の取組みを強化するため、全社を挙げた戦略的採用活動を推し進め、人財育成体制「ＮＴアカデミー」の実効性向上に取り組むとともに、ＤＸ推進による生産性の向上や、受注から竣工までのオペレーション改革を実施することで、建設事業における競争優位性を強化するとしています。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高45,797百万円のうち建設事業が45,612百万円を占め、不動産事業は184百万円です。主要な顧客である親会社向けの売上高は14,602百万円で、建設事業に関連するものとして開示されています。売上は本邦のみで、本邦以外の外部顧客への売上高はないと開示されています。",
+        "basis": "セグメント情報の外部顧客への売上高と、関連情報の主要な顧客ごとの情報、地域ごとの情報に基づきます。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

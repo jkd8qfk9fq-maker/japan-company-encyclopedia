@@ -4,15 +4,169 @@
   "name": "横浜冷凍",
   "officialName": "横浜冷凍株式会社",
   "nameEn": "YOKOREI CO.,LTD.",
-  "description": null,
+  "shortNameEn": "YOKOREI",
+  "description": "水産品や畜産品などの食品を販売し、物流センターで冷蔵・冷凍保管も手がける食品流通の会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "transportation"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "food-sales",
+      "name": "食品販売事業",
+      "description": "水産品・畜産品・農産品などの卸売や加工処理などを行う事業です。2025年9月期の外部顧客への売上高は87,807百万円で、3つの報告セグメントの中で最も大きい事業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "seafood",
+          "name": "水産品",
+          "description": "イワシやサバ、ホタテ、鮭鱒類などを扱います。2025年9月期の販売実績は70,157百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "livestock",
+          "name": "畜産品",
+          "description": "チキンやポーク、ビーフなどを扱います。2025年9月期の販売実績は16,083百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "agricultural-and-others",
+          "name": "農産品・他",
+          "description": "イモ類やネギ、キャベツなどの農産品を扱います。2025年9月期の販売実績は1,566百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "cold-storage",
+      "name": "冷蔵倉庫事業",
+      "description": "水産品・畜産品などの冷蔵・冷凍保管と、それに付帯する事業です。2025年9月期の外部顧客への売上高は37,724百万円です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "storage",
+          "name": "保管",
+          "description": "食品の冷蔵・冷凍保管です。2025年9月期の販売実績は18,712百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "cargo-handling",
+          "name": "荷役",
+          "description": "倉庫への入庫・出庫に伴う荷役です。2025年9月期の販売実績は7,542百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "transport-and-others",
+          "name": "運送取扱・他",
+          "description": "運送の取扱いなどです。2025年9月期の販売実績は11,469百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "others",
+      "name": "その他",
+      "description": "不動産賃貸などの事業です。2025年9月期の外部顧客への売上高は31百万円です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "customs-clearance",
+      "name": "通関事業",
+      "description": "当社が営む通関事業です。報告セグメントには含まれておらず、売上高は独立して開示されていません。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "国内外の生産者などから水産品や畜産品などを仕入れて販売し、冷蔵倉庫で食品の冷蔵・冷凍保管や荷役、運送取扱も行う事業モデルです。",
+    "products": [
+      "水産品（イワシ・サバ・ホタテ・鮭鱒類・サンマ・マグロなど）",
+      "畜産品（チキン・ポーク・ビーフなど）",
+      "農産品（イモ類・ネギ・キャベツなど）",
+      "冷蔵・冷凍保管、荷役、運送取扱のサービス",
+      "通関サービス",
+      "不動産賃貸"
+    ],
+    "customers": [
+      "食品販売の取引先である事業者",
+      "冷蔵・冷凍保管を利用する食品事業者"
+    ],
+    "revenueSources": [
+      "水産品・畜産品・農産品などの販売代金",
+      "保管料・荷役料などの冷蔵倉庫の利用料",
+      "不動産の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "横浜に本店を置く食品流通グループ",
+        "description": "1948年に横浜で設立した当社と、連結子会社4社を含む関係会社9社でグループを構成しています。2025年9月30日現在の連結従業員数は1,804人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "食品の販売と冷蔵・冷凍保管",
+        "description": "水産品・畜産品・農産品などの食品を加工・販売し、輸出入も行います。あわせて、冷蔵倉庫で食品の冷蔵・冷凍保管や荷役、運送取扱を行い、通関事業も営んでいます。"
+      },
+      {
+        "kind": "customer",
+        "title": "食品を扱う事業者へ",
+        "description": "食品販売では国内外の生産者とのネットワークから仕入れた食品を取引先へ届け、冷蔵倉庫では食品を預ける顧客の保管や荷役を担います。外部顧客への売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高125,563百万円",
+        "description": "2025年9月期の連結売上高は125,563百万円で、前期に比べて2.7％増加しました。事業別では食品販売事業が87,807百万円、冷蔵倉庫事業が37,724百万円、その他が31百万円です。地域別では日本が118,466百万円と大半を占めます。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益1,978百万円",
+        "description": "食品の仕入れや冷蔵倉庫の運営などにかかる費用を差し引いた残りが手元に残ります。2025年9月期の親会社株主に帰属する当期純利益は1,978百万円で、前期に比べて49.7％減少しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年9月期",
@@ -27,7 +181,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 83021000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1652,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +201,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 84768000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1639,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第75期（2022年9月期）の期首から適用しており、第75期以降の主要な経営指標等は当該会計基準等を適用した後の数値となっています。"
     },
     {
       "fiscalYear": "2023年9月期",
@@ -67,7 +222,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 73340000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1658,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +242,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 79871000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1736,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,15 +262,618 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 82417000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1804,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "連結経営指標等の第74期から第76期の数値は、誤謬の訂正による遡及処理後の数値です。第77期の投資活動によるキャッシュ・フローと現金及び現金同等物の期末残高の数値も、誤謬の訂正による遡及処理後の数値となっています。"
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1948,
+      "title": "横浜冷凍企業株式会社を設立",
+      "description": "冷凍水産物の販売・輸出と冷凍食料品の冷蔵保管業務を主な目的として、横浜冷凍企業株式会社として設立しました。",
+      "significance": "会社の出発点です。「ヨコレイ」の通称で知られています。",
+      "sourceIds": [
+        "yuho-2025",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "社名を横浜冷凍株式会社に変更",
+      "description": "社名を横浜冷凍株式会社と変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第2部に上場",
+      "description": "東京証券取引所市場第2部に上場しました。",
+      "significance": "上場企業となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "名古屋工場が完成",
+      "description": "名古屋工場が完成し、同時に名古屋営業所を開設しました。",
+      "significance": "中部地区に拠点を広げました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "東京工場が完成",
+      "description": "東京工場が完成しました。",
+      "significance": "首都圏の保管体制を整えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "鹿児島工場が完成",
+      "description": "鹿児島工場が完成し、同時に鹿児島営業所を開設しました。",
+      "significance": "九州に拠点を広げました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "鳥栖工場が完成",
+      "description": "鳥栖工場が完成しました。",
+      "significance": "九州の拠点が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "大井川工場が完成",
+      "description": "超低温室と加工場を併設した大井川工場が完成しました。",
+      "significance": "超低温の保管と加工を一体で行える工場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "八戸工場が完成",
+      "description": "八戸工場が完成しました。",
+      "significance": "東北に拠点を広げました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "THAI YOKOREI CO.,LTD.を設立",
+      "description": "タイにTHAI YOKOREI CO.,LTD.（現・連結子会社）を設立しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "東京証券取引所市場第1部に指定",
+      "description": "東京証券取引所市場第1部に指定されました。",
+      "significance": "市場第一部の会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "子会社の東部横冷を吸収合併",
+      "description": "箱崎工場（福岡市）を有する子会社東部横冷株式会社を吸収合併しました。",
+      "significance": "グループの再編です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "バンパコン物流センターが完成",
+      "description": "タイのTHAI YOKOREI CO.,LTD.のバンパコン物流センターが完成しました。",
+      "significance": "タイの物流拠点が動き出しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "福岡物流センターと石狩物流センターが完成",
+      "description": "福岡物流センターと石狩物流センターが完成しました。",
+      "significance": "福岡と北海道に物流拠点ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "東京第二工場が完成",
+      "description": "東京第二工場が完成しました。",
+      "significance": "首都圏の保管能力が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "大阪舞洲工場が完成",
+      "description": "大阪舞洲工場が完成しました。",
+      "significance": "関西の拠点が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "鶴ヶ島物流センターが完成",
+      "description": "鶴ヶ島物流センターが完成しました。",
+      "significance": "物流センター網の拡充が続いています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "伊勢原物流センターが完成",
+      "description": "伊勢原物流センターが完成しました。",
+      "significance": "神奈川県内の拠点が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "横浜物流センターが完成",
+      "description": "横浜物流センターが完成しました。",
+      "significance": "本社のある横浜の拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "加須第二物流センターが完成",
+      "description": "加須第二物流センターが完成しました。",
+      "significance": "埼玉県内の拠点が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "鳥栖第二物流センターが完成",
+      "description": "鳥栖第二物流センターが完成しました。",
+      "significance": "九州の物流体制が厚くなりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "セイワフードの株式を取得",
+      "description": "株式会社セイワフード（株式会社クローバートレーディング）の株式を取得しました。",
+      "significance": "食品販売の体制を広げました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "アライアンスシーフーズを設立",
+      "description": "株式会社アライアンスシーフーズを設立しました。",
+      "significance": "水産品の販売会社を設けました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "北港物流センターが完成",
+      "description": "北港物流センターが完成しました。",
+      "significance": "大阪の拠点が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "鹿児島物流センターが完成",
+      "description": "鹿児島物流センターが完成しました。",
+      "significance": "鹿児島の物流拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "ワンノイ物流センターが完成",
+      "description": "タイのTHAI YOKOREI CO.,LTD.のワンノイ物流センターが完成しました。",
+      "significance": "タイの拠点が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "BEST COLD CHAIN CO.,LTD.を設立",
+      "description": "タイにBEST COLD CHAIN CO.,LTD.（現・連結子会社）を設立しました。",
+      "significance": "タイで冷蔵倉庫と運送を行う会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "喜茂別物流センターが完成",
+      "description": "喜茂別物流センターが完成しました。",
+      "significance": "北海道の拠点が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "YOKOREI CO.,LTD.を設立",
+      "description": "タイにYOKOREI CO.,LTD.（現YOKOREI(THAILAND)CO.,LTD.）を設立しました。",
+      "significance": "タイの体制を広げました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "ワンノイ物流センター2号棟が完成",
+      "description": "タイのTHAI YOKOREI CO.,LTD.のワンノイ物流センター2号棟が完成しました。",
+      "significance": "タイの保管能力が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "石狩第二物流センターが完成",
+      "description": "石狩第二物流センターが完成しました。",
+      "significance": "北海道の保管能力が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "都城第二物流センターが完成",
+      "description": "都城第二物流センターが完成しました。",
+      "significance": "宮崎県の拠点が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "バンパコン第2物流センターが完成",
+      "description": "タイのTHAI YOKOREI CO.,LTD.のバンパコン第2物流センターが完成しました。",
+      "significance": "タイの物流網が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "パックス冷蔵の株式を取得",
+      "description": "パックス冷蔵株式会社（現・連結子会社）の株式を取得しました。",
+      "significance": "東京の冷蔵倉庫会社をグループに迎えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "Syvde Eiendom ASの株式を取得",
+      "description": "ノルウェーのSyvde Eiendom AS（現Hofseth Property AS）の株式を取得しました。",
+      "significance": "ノルウェーの水産事業への関与が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "HIYR ASを設立",
+      "description": "ノルウェーにHIYR ASを設立しました。",
+      "significance": "ノルウェーの体制づくりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "Fjordlaks Aqua ASの株式を取得",
+      "description": "ノルウェーのFjordlaks Aqua AS（現Hofseth Aqua AS）の株式を取得しました。",
+      "significance": "サーモンの養殖事業に関わる取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "十勝第三物流センターが完成",
+      "description": "十勝第三物流センターが完成しました。",
+      "significance": "北海道十勝の拠点が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "ヨコレイ十勝ソーティングスポットが完成",
+      "description": "ヨコレイ十勝ソーティングスポットが完成しました。",
+      "significance": "農産品の選別・仕分けの拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "Aqua Shipping ASを設立",
+      "description": "ノルウェーにAqua Shipping ASを設立しました。なお、同社は2019年11月にHofseth Aqua ASを存続会社とする吸収合併により消滅しました。",
+      "significance": "ノルウェーの海上輸送の会社でした。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "幸手物流センターが完成",
+      "description": "幸手物流センターが完成しました。",
+      "significance": "埼玉県内の拠点が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東京羽田物流センターが完成",
+      "description": "東京羽田物流センターが完成しました。",
+      "significance": "羽田に近い物流拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "Aspoy ASの株式を取得",
+      "description": "ノルウェーのAspoy ASの株式を取得しました。",
+      "significance": "ノルウェーの水産事業を広げました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "名港物流センターが完成",
+      "description": "名港物流センターが完成しました。",
+      "significance": "名古屋港の拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "アライアンスシーフーズとクローバートレーディングを吸収合併",
+      "description": "株式会社アライアンスシーフーズ及び株式会社クローバートレーディングを吸収合併しました。",
+      "significance": "食品販売の体制を一つにまとめました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "つくば物流センターが完成",
+      "description": "つくば物流センターが完成しました。",
+      "significance": "茨城県の拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "福岡ISLAND CITY物流センターが完成",
+      "description": "福岡ISLAND CITY物流センターが完成しました。",
+      "significance": "福岡の新しい物流拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "Syvde Eiendom ASを連結子会社から除外",
+      "description": "株式譲渡によりSyvde Eiendom AS（現Hofseth Property AS）を連結子会社から除外しました。",
+      "significance": "ノルウェー子会社の整理が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "気仙沼ソーティングスポットIIが完成",
+      "description": "気仙沼ソーティングスポットIIが完成しました。",
+      "significance": "水産品の選別・仕分けの拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "平戸アイスファクトリーが完成",
+      "description": "平戸アイスファクトリーが完成しました。",
+      "significance": "製氷の拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "HIYR AS、Hofseth Aqua AS、Aspoy ASを連結子会社から除外",
+      "description": "株式譲渡によりHIYR AS、Hofseth Aqua AS及びAspoy ASを連結子会社から除外しました。",
+      "significance": "ノルウェーの子会社の整理が進みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ちばリサーチパーク物流センターが完成",
+      "description": "ちばリサーチパーク物流センターが完成しました。",
+      "significance": "千葉県の拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "VIETNAM YOKOREI CO.,LTD.を設立",
+      "description": "ベトナムにVIETNAM YOKOREI CO.,LTD.（現・連結子会社）を設立しました。",
+      "significance": "ベトナムへの展開です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "恵庭スマート物流センターが完成",
+      "description": "恵庭スマート物流センターが完成しました。",
+      "significance": "北海道の新しい物流拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "夢洲第二物流センターが完成",
+      "description": "夢洲第二物流センターが完成しました。",
+      "significance": "大阪の拠点が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "箱崎FACILITY物流センターが完成",
+      "description": "箱崎FACILITY物流センターが完成しました。",
+      "significance": "福岡の拠点が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ベンルック物流センターが完成",
+      "description": "ベトナムのVIETNAM YOKOREI CO.,LTD.のベンルック物流センターが完成しました。",
+      "significance": "ベトナムの物流拠点が動き出しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "十勝フードバレー物流センターが完成",
+      "description": "十勝フードバレー物流センターが完成しました。",
+      "significance": "十勝の食品物流の拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "岡山CONNECT物流センターが完成",
+      "description": "岡山CONNECT物流センターが完成しました。",
+      "significance": "岡山県の拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +882,57 @@
       "publisher": "横浜冷凍株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XBSF.pdf",
       "publishedAt": "2025-12-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XBSF",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-09"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「横浜冷凍」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E6%A8%AA%E6%B5%9C%E5%87%8D",
+      "accessedAt": "2026-11-15"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 過年度の誤謬の訂正について：連結経営指標等の注記に、第74期から第76期の数値は誤謬の訂正による遡及処理後の数値であること、第77期の投資活動によるキャッシュ・フローと現金及び現金同等物の期末残高の数値も同様に訂正されていることが記載されています。第74期から第77期の訂正有価証券報告書は2025年12月19日（当期の有価証券報告書と同日）に提出されています。本登録の数値は当期の有価証券報告書の印字どおりですが、訂正の経緯を含め、人の確認を要します。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2030年に向けた中長期的方向性として「ヨコレイ事業ビジョン2030」と「ヨコレイサステナビリティビジョン2030」を掲げ、その実現に向けた第2ステージとして、2026年9月期を最終年度とする新・中期経営計画（第II期）「繋ぐ力」を定め、重点施策に取り組んでいます。冷蔵倉庫事業では積み重ねてきた高品質な物流で国内外の課題を解消し、顧客へスマートコールドサービスを提供すること、食品販売事業では国内外の生産者とのネットワークを活かし、目利き力により旬や美味しさを顧客へ届けることを方針としています。",
+        "asOf": "2025-12-19",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "「人」「もの」「地球」に優しい食品流通のエキスパートとして、冷蔵倉庫事業と食品販売事業を行っています。冷蔵倉庫事業で積み重ねてきた高品質な物流と、食品販売事業における国内外の生産者とのネットワークと目利き力を強みとしています。",
+        "asOf": "2025-12-19",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年9月期の外部顧客への売上高は食品販売事業が87,807百万円と連結売上高125,563百万円の約7割を占め、冷蔵倉庫事業が37,724百万円、その他が31百万円です。地域別では日本が118,466百万円と大半を占め、アジアが6,416百万円、北米が470百万円、欧州が193百万円、その他が17百万円です。外部顧客への売上高の10％以上を占める顧客はありません。",
+        "basis": "セグメント情報と関連情報（地域ごとの情報）の印字に基づきます。",
+        "asOf": "2025-12-19",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-30",

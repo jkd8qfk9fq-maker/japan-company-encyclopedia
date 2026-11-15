@@ -1,18 +1,119 @@
 {
   "id": "wdb-holdings",
   "code": "2475",
-  "name": "WDBホールディングス",
+  "name": "ＷＤＢホールディングス",
   "officialName": "WDBホールディングス株式会社",
   "nameEn": "WDB HOLDINGS CO., LTD.",
-  "description": null,
+  "shortNameEn": "WDB HOLDINGS CO., LTD.",
+  "description": "研究職人材の派遣・紹介を中心とする人材サービスと、医薬品等の開発受託（CRO）を展開する純粋持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "human-resources",
+      "primary": true
+    },
+    {
+      "industryId": "pharmaceuticals",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "wdb-holdings",
+      "name": "ＷＤＢホールディングス株式会社",
+      "description": "神戸市中央区に本社を置く純粋持株会社で、連結子会社14社とグループを構成しています。報告セグメントは人材サービス事業とCRO事業の2つで、2026年3月期の連結従業員数は5,489人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "human-resource-services",
+          "name": "人材サービス事業",
+          "description": "当社グループが雇用する社員を顧客に派遣する人材派遣（登録型派遣と常用雇用型派遣）と、当社グループに登録する求職者を顧客に紹介する人材紹介の事業です。2026年3月期の外部顧客への売上高は43,547百万円で、理学系研究職、工学系技術職、一般事務職の3分野を扱います。主にＷＤＢ株式会社（理学系研究職の派遣・紹介）とＷＤＢ工学株式会社（工学系技術職の常用雇用型派遣）が担います。",
+          "customers": [
+            "製薬・食品・化学等の製造業の研究開発部門・品質管理部門",
+            "公的機関・大学の研究室",
+            "電気・電子・精密機械等の製造業の設計・開発部門",
+            "様々な業種の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "cro",
+          "name": "ＣＲＯ事業",
+          "description": "医薬品・医薬部外品・化粧品・医療機器等の開発業務の代行・支援を行う事業です。2026年3月期の外部顧客への売上高は6,757百万円で、国内では安全性情報管理の分野を中心に、海外では開発業務全般を扱います。ＷＤＢココ株式会社、Oy Medfiles Ltd.、株式会社コーブリッジ等が担います。",
+          "customers": [
+            "医薬品メーカー",
+            "医療機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "当社グループが雇用する研究職・技術職の人材を製薬・化学等の製造業や研究機関に派遣・紹介し、医薬品等の開発業務を受託・支援することで対価を得る事業モデルです。",
+    "products": [
+      "理学系研究職（バイオ・化学分野）の人材派遣・人材紹介",
+      "工学系技術職の常用雇用型人材派遣・人材紹介",
+      "一般事務職の人材派遣・人材紹介",
+      "医薬品・医薬部外品・化粧品・医療機器等の開発業務の代行・支援（CRO）",
+      "人材派遣一元管理プラットフォーム「ドコ１」"
+    ],
+    "customers": [
+      "製薬・食品・化学等の製造業の研究開発部門・品質管理部門",
+      "公的機関・大学の研究室",
+      "電気・電子・精密機械等の製造業の設計・開発部門",
+      "医薬品メーカー・医療機器メーカー",
+      "様々な業種の企業（一般事務職の派遣先）"
+    ],
+    "revenueSources": [
+      "人材派遣・人材紹介等の人材サービス事業による売上高",
+      "CRO事業（開発業務の代行・支援）による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ＷＤＢホールディングス株式会社",
+        "description": "神戸市中央区に本社を置く純粋持株会社で、連結子会社14社とグループを構成しています。2026年3月期の連結従業員数は5,489人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "研究職人材サービスとCRO",
+        "description": "バイオ・化学分野の理学系研究職や工学系技術職の人材を派遣・紹介し、医薬品等の開発業務の代行・支援（CRO）も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "製造業の研究開発部門と医薬品メーカー",
+        "description": "製薬・食品・化学等の製造業の研究開発部門・品質管理部門、公的機関・大学の研究室、医薬品メーカー等にサービスを提供します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は50,304百万円",
+        "description": "2026年3月期の売上高は50,304百万円でした。人材サービス事業が43,547百万円、CRO事業が6,757百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は2,755百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は2,755百万円でした。前連結会計年度は3,051百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +128,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25796427000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5069,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +148,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 28463963000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5291,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +168,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 31150978000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5391,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 33241048000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5452,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +208,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 34306039000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5489,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +216,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第41期(2025/04/01－2026/03/31)",
-      "publisher": "WDBホールディングス株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDOC.pdf",
-      "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +227,157 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1985,
+      "title": "株式会社ワークデーターバンクを設立",
+      "description": "1985年7月、兵庫県姫路市において株式会社ワークデーターバンク（現 当社）を設立し、事務処理サービスを開始しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "人材派遣業を開始",
+      "description": "1987年9月に労働者派遣事業許可を取得し、人材派遣業を開始しました。",
+      "significance": "現在の主力事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "2006年3月にジャスダック証券取引所に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "純粋持株会社へ移行しＷＤＢホールディングス株式会社に商号変更",
+      "description": "2011年11月、人材サービス事業を新設分割により設立したＷＤＢ株式会社に承継させ、純粋持株会社へ移行しました。商号を、ＷＤＢホールディングス株式会社に変更しました。",
+      "significance": "現在の持株会社体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "2013年12月に東京証券取引所市場第一部（現 プライム市場）に指定されました。",
+      "significance": "市場第一部への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ＷＤＢココ株式会社が上場",
+      "description": "2019年12月、連結子会社のＷＤＢココ株式会社が、東京証券取引所マザーズ（現 グロース市場）に上場しました。",
+      "significance": "子会社の上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ドコ１株式会社を設立",
+      "description": "2023年11月、プラットフォームサービスの提供を目的に、ドコ１株式会社を設立しました。",
+      "significance": "プラットフォーム事業の展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "本社を神戸市中央区に移転",
+      "description": "2025年10月に本社を神戸市中央区に移転しました。",
+      "significance": "現在の本社所在地への移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nichirin",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式に記載される会社です。人材派遣サービスの取引先であり、同社株式14,300株を保有しております。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第41期(2025/04/01－2026/03/31)",
+      "publisher": "WDBホールディングス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDOC.pdf",
+      "publishedAt": "2026-06-18",
+      "docId": "S100YDOC",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: ＷＤＢ工学株式会社は、2026年４月１日にＷＤＢ株式会社を存続会社とする吸収合併により解散しております（事業の内容・関係会社の状況に印字）。本登録は2026年３月31日時点のグループ構成（当社、連結子会社14社）で行います。"
+    ]
+  },
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念「新たなスタンダードを創出し、社会を変える」のもと、人材サービスとCROサービスをプラットフォームを通じて提供し、より利便性の高いサービスをより低いコストで提供することに挑戦しています。人材戦略では「人材派遣会社としての価値最大化」「プラットフォーム運営会社への転身」「AIと共存するCROモデルの確立」を掲げ、プラットフォームによる仲介業務の自動化と、削減した販管費の派遣スタッフへの還元を進めています。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高は前期比1.6％減の50,304百万円でした。MD&Aでは、理学系派遣・工学系派遣に対する需要は引き続き底堅い一方で、需要に応えるための求職者確保が課題であり、2022年4月以降の派遣スタッフの待遇改善の継続に加え、営業体制の強化、シニア層やパートタイムを希望するスタッフの提案活動、地域限定の正社員型派遣スタッフの採用を行った結果、受注率と退職率がいずれも改善したと説明されています。",
+        "basis": "MD&Aの経営成績の概要、セグメント情報（報告セグメントごとの売上高）",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "経営方針では、理学系研究職派遣で働く人の3人に1人が当社グループより就業するまでになったと印字されており、バイオ・化学分野の研究職人材に特化した事業基盤を持ちます。MD&Aでは、2025年5月に公開した派遣サービスプラットフォーム「ドコ１」の契約数が順調に増加し、さらなる事業展開のために新しいプラットフォームの開発も複数進めていると説明されています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等、MD&Aの経営成績の概要",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは人材サービス事業（外部顧客への売上高43,547百万円）とCRO事業（同6,757百万円）の2つで、人材サービス事業が連結売上高の86.6％を占めます。人材サービス事業の販売実績は理学系研究職34,305百万円、一般事務職5,066百万円、工学系技術職3,246百万円の順です。地域ごとの情報は本邦の外部顧客への売上高が90％を超えるため省略され、売上高の10％以上を占める主要な顧客はいないと印字されています。",
+        "basis": "セグメント情報（報告セグメントごとの売上高、関連情報の地域ごとの情報・主要な顧客ごとの情報）、MD&Aの販売実績",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

@@ -4,15 +4,187 @@
   "name": "ユニバーサルエンターテインメント",
   "officialName": "株式会社ユニバーサルエンターテインメント",
   "nameEn": "Universal Entertainment Corporation",
-  "description": null,
+  "shortNameEn": "Universal Entertainment",
+  "description": "パチスロ・パチンコ機の製造販売と、フィリピンの統合型リゾート「オカダ・マニラ」の運営を営む会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "entertainment",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "integrated-resort",
+      "name": "統合型リゾート(IR)事業",
+      "description": "フィリピンにおいて、ゲーミング、ホテル、飲食、リテイル＆リーシング、エンターテインメント及び不動産開発等の事業を展開しています。2025年12月期の外部顧客への売上高は65,409百万円です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "ir-gaming",
+          "name": "ゲーミング",
+          "description": "オカダ・マニラにおいてカジノのゲーミング事業を営みます。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ir-hotel",
+          "name": "ホテル",
+          "description": "オカダ・マニラにおいてホテル事業を営みます。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ir-food-beverage",
+          "name": "飲食",
+          "description": "オカダ・マニラにおいて飲食事業を営みます。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ir-retail-leasing",
+          "name": "リテイル＆リーシング",
+          "description": "オカダ・マニラにおいて小売店の運営や施設の賃貸などの事業を営みます。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ir-entertainment",
+          "name": "エンターテインメント",
+          "description": "オカダ・マニラにおいてエンターテインメント事業を営みます。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ir-real-estate",
+          "name": "不動産開発",
+          "description": "オカダ・マニラにおいて不動産開発等の事業を営みます。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "amusement-equipment",
+      "name": "遊技機事業",
+      "description": "パチスロ、パチンコ及び周辺機器等の研究、開発、製造、販売をしています。2025年12月期の外部顧客への売上高は56,708百万円です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "pachislot-pachinko",
+          "name": "パチスロ・パチンコ機",
+          "description": "パチスロ機及びパチンコ機の研究、開発、製造、販売を行います。製造は㈱メーシー、㈱エレコ、㈱ミズホ、㈱アクロス、㈱ユニバーサルブロスが行います。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "peripheral-equipment",
+          "name": "周辺機器・部材ユニット",
+          "description": "パチスロ・パチンコ機の周辺機器等の研究、開発、製造、販売と、部材ユニットの調達を行います。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業セグメントで、メディアコンテンツ事業等を含みます。2025年12月期の外部顧客への売上高は534百万円です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "media-content",
+          "name": "メディアコンテンツ事業",
+          "description": "シミュレーターアプリやソーシャルカジノゲームなどのメディアコンテンツ事業を営みます。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "パチスロ・パチンコ機及び周辺機器の研究・開発・製造・販売と、フィリピンにおける統合型リゾート事業、メディアコンテンツ事業を展開しています。",
+    "products": [
+      "パチスロ機",
+      "パチンコ機",
+      "遊技機の周辺機器",
+      "統合型リゾート施設の運営サービス",
+      "メディアコンテンツ"
+    ],
+    "customers": [
+      "パチンコホール",
+      "統合型リゾートの来訪者",
+      "メディアコンテンツの利用者"
+    ],
+    "revenueSources": [
+      "遊技機の販売代金",
+      "統合型リゾートにおけるゲーミング収益",
+      "ホテル・飲食・リテイルなどのリゾート収益",
+      "メディアコンテンツの利用料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "子会社19社と関連会社3社からなる企業集団を統括",
+        "description": "ユニバーサルエンターテインメントは、当社、子会社19社及び関連会社3社からなる企業集団を統括します。従業員数は7,004名（2025年12月31日現在）です。"
+      },
+      {
+        "kind": "offering",
+        "title": "遊技機と統合型リゾート、メディアコンテンツ",
+        "description": "遊技機事業ではパチスロ・パチンコ機及び周辺機器を研究・開発・製造・販売し、統合型リゾート(IR)事業ではフィリピンでオカダ・マニラを運営します。メディアコンテンツ事業も営みます。"
+      },
+      {
+        "kind": "customer",
+        "title": "パチンコホールやリゾートの来訪者が利用",
+        "description": "遊技機はパチンコホールなどに販売し、統合型リゾートはフィリピンの来訪者に利用されます。売上高の10％以上を占める販売先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は122,827百万円",
+        "description": "2025年12月期の売上高は122,827百万円で、前期比2.8％減となりました。統合型リゾート(IR)事業が65,409百万円、遊技機事業が56,708百万円、その他が534百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純損失は231,425百万円",
+        "description": "統合型リゾート(IR)事業における減損損失224,776百万円の計上などにより、親会社株主に帰属する当期純損失は231,425百万円となりました。前年同期の当期純損失は15,569百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 338919000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6408,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 349315000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6689,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +239,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 388388000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 6983,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +259,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 369731000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7437,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,15 +279,707 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 129687000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7004,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "前連結会計年度の「為替換算調整勘定」に含めていた「持分法適用会社に対する持分相当額」を当連結会計年度より独立掲記することとし、前連結会計年度の連結財務諸表の組替えを行っています（為替換算調整勘定に表示していた3,073百万円を、為替換算調整勘定3,288百万円と持分法適用会社に対する持分相当額△215百万円として組替え）。"
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1969,
+      "title": "ユニバーサルリースを設立",
+      "description": "ジュークボックスのリース業を目的として栃木県小山市にユニバーサルリース㈱を設立しました。",
+      "significance": "会社の起源となる出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "遊戯機械の製造を開始",
+      "description": "遊戯機械の製造を目的として栃木県小山市に工場を建設し、製造を開始しました。",
+      "significance": "製造業としての始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "商号をユニバーサルに変更",
+      "description": "商号を㈱ユニバーサルに変更しました。",
+      "significance": "現在の社名につながる商号変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "工場を新設",
+      "description": "工場隣接地に土地を購入し、工場を新設しました。",
+      "significance": "生産体制を拡充した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "ユニバーサル技研を設立",
+      "description": "㈱ユニバーサルの販売部門を分離独立させ、ユニバーサル技研㈱を設立し、業務を開始しました。",
+      "significance": "販売部門を分離独立させた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "本社を移転し商号をユニバーサル販売に変更",
+      "description": "東京都台東区上野にユニバーサル技研㈱の本社を移転し、商号をユニバーサル販売㈱に変更しました。",
+      "significance": "販売会社としての体制を整えた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "大阪営業所を開設",
+      "description": "大阪府吹田市に大阪営業所を開設しました。",
+      "significance": "販売拠点を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "小山に新工場を建設",
+      "description": "栃木県小山市に新工場を建設し、以後ここを拠点として本格的に各種のゲームマシンの製造を開始しました。",
+      "significance": "ゲームマシンの本格的な製造拠点ができた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "名古屋営業所を開設",
+      "description": "愛知県名古屋市に名古屋営業所を開設しました。",
+      "significance": "販売拠点を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "ユニバーサルビルを建設し本社を移転",
+      "description": "東京都中央区日本橋堀留町にユニバーサルビルを建設し、ユニバーサル販売㈱の本社を移転しました。",
+      "significance": "本社を自社ビルに移した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "ユニバーサルテクノスを設立",
+      "description": "㈱ユニバーサルの開発部門を分離独立させ、ユニバーサルテクノス㈱を設立し、業務を開始しました。",
+      "significance": "開発部門を分離独立させた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "小山第二工場を建設し回胴式マシンへ進出",
+      "description": "栃木県小山市第三工業団地内に新工場（小山第二工場）を建設、移転し、ゲームマシンの製造から風俗営業業界の回胴式マシンへ進出しました。",
+      "significance": "回胴式マシンへの進出を果たした出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "福岡営業所を開設",
+      "description": "福岡県福岡市に福岡営業所を開設しました（現九州営業所）。",
+      "significance": "販売拠点を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "北海道営業所を開設",
+      "description": "北海道札幌市に北海道営業所を開設しました。",
+      "significance": "販売拠点を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "仙台営業所と鹿児島営業所を開設",
+      "description": "宮城県仙台市に仙台営業所を、鹿児島県鹿児島市に鹿児島営業所を開設しました（現南九州営業所）。",
+      "significance": "販売拠点を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "新潟営業所を開設",
+      "description": "新潟県新潟市に新潟営業所を開設しました。",
+      "significance": "販売拠点を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "四国営業所と神戸営業所を開設",
+      "description": "香川県高松市に四国営業所を、兵庫県神戸市に神戸営業所を開設しました。",
+      "significance": "販売拠点を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "広島営業所と岡山出張所を開設",
+      "description": "広島県広島市に広島営業所を、岡山県岡山市に岡山出張所を開設しました（現岡山営業所）。",
+      "significance": "販売拠点を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "北関東営業所を開設",
+      "description": "栃木県宇都宮市に北関東営業所を開設しました。",
+      "significance": "販売拠点を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "ユニバーサルテクノス本社ビルを取得・移転",
+      "description": "東京都中央区日本橋浜町にユニバーサルテクノス㈱本社ビルを取得し、移転しました。",
+      "significance": "開発会社の本社を移した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "高輪に本社ビルを建設",
+      "description": "東京都港区高輪にユニバーサル販売㈱本社ビルを建設しました。",
+      "significance": "本社ビルを建設した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "米子工場を取得しアミューズメント機の生産を開始",
+      "description": "鳥取県米子市に新たな生産拠点として米子工場を取得し、アミューズメント機の生産を開始しました。",
+      "significance": "新たな生産拠点を得た出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "静岡営業所を開設",
+      "description": "静岡県静岡市に静岡営業所を開設しました。",
+      "significance": "販売拠点を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "金沢出張所を開設",
+      "description": "石川県金沢市に金沢出張所を開設しました（現金沢営業所）。",
+      "significance": "販売拠点を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "埼玉営業所と神奈川営業所を開設",
+      "description": "埼玉県大宮市に埼玉営業所を、神奈川県横浜市に神奈川営業所を開設しました（現横浜営業所）。",
+      "significance": "販売拠点を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "ユニバーサル販売がユニバーサルを吸収合併",
+      "description": "ユニバーサル販売㈱が㈱ユニバーサルを吸収合併し、㈱ユニバーサルは消滅しました。",
+      "significance": "グループ内の会社を統合した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "本社を高輪のユニバーサル本社ビルに移転",
+      "description": "東京都港区高輪のユニバーサル本社ビルに本社を移転しました。",
+      "significance": "本社を移した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "盛岡出張所を開設",
+      "description": "岩手県盛岡市に盛岡出張所を開設しました（現盛岡営業所）。",
+      "significance": "販売拠点を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "アルゼに商号変更し有明に本社を移転",
+      "description": "ユニバーサルテクノス㈱はユニバーサル販売㈱を吸収合併の上、商号をアルゼ㈱に変更し、東京都江東区有明に本社を移転しました。",
+      "significance": "アルゼとして新たな体制となった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式の公開を果たした出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "四街道市に新工場を建設",
+      "description": "千葉県四街道市に新工場を建設しました（現パチスロ・パチンコ遊技機製造工場）。",
+      "significance": "遊技機の製造拠点を拡充した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "Aruze USAの株式を取得",
+      "description": "Aruze USA, Inc.（現連結子会社）の株式を取得しました。",
+      "significance": "米国での事業基盤を得た出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "四街道テクノセンターを新設",
+      "description": "千葉県四街道市に四街道テクノセンターを新設しました。",
+      "significance": "技術拠点を拡充した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "ノーチラスの株式を取得",
+      "description": "ノーチラス㈱（アルゼグローバルトレーディング㈱へ商号変更）の株式を取得しました。",
+      "significance": "海外展開の体制を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ネバダ州のゲーミング機器製造者ライセンスを取得",
+      "description": "米国ネバダ州にてゲーミング機器製造者ライセンスを取得し、Universal Distributing of Nevada, Inc.（現Aruze Gaming America, Inc.）の株式取得について承認を受けました。",
+      "significance": "米国でのゲーミング機器事業への参入を果たした出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダックに上場",
+      "description": "日本証券業協会への店頭登録を取消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "上場市場を移した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ミシシッピ州のゲーミング機器製造者ライセンスを取得",
+      "description": "米国ミシシッピ州にてゲーミング機器製造者ライセンスを取得し、Universal Distributing of Nevada, Inc.の株式取得について承認を受けました。",
+      "significance": "米国での事業基盤を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "豪州・南アフリカ子会社を連結子会社化",
+      "description": "豪州子会社及び南アフリカ子会社を有するUniversal Distributing of Nevada, Inc.の株式を取得し、この3社を連結子会社としました。",
+      "significance": "海外子会社を連結した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "アルゼ分割準備を設立",
+      "description": "アルゼ分割準備㈱を設立しました。",
+      "significance": "事業再編の準備を始めた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "ネバダ州のゲーミング機器製造者ライセンスを取得",
+      "description": "米国ネバダ州にてゲーミング機器製造者ライセンスを取得しました（無期限更新可能）。",
+      "significance": "米国でのライセンスを拡充した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "海外カジノ向けゲーミング機器事業を事業譲渡",
+      "description": "海外カジノ向けゲーミング機器事業をAruze Gaming America, Inc.に事業譲渡しました。",
+      "significance": "海外カジノ向け事業を分離した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "アルゼメディアネットを新設",
+      "description": "携帯サイト運営事業を会社分割し、アルゼメディアネット㈱を新設しました。",
+      "significance": "携帯サイト運営事業を分離した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "ジャパン・レンタルサービスの株式を取得",
+      "description": "㈱ジャパン・レンタルサービス（アルゼレンタルサービス㈱へ商号変更）の株式を取得しました。",
+      "significance": "レンタルサービス事業を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "遊技機事業の販売・開発部門を会社分割により承継",
+      "description": "パチスロ・パチンコ事業の販売部門をアルゼマーケティングジャパン㈱（旧㈱システムスタッフ）に、同事業の開発部門を㈱セブンワークス（旧アルゼ分割準備㈱）に会社分割により承継しました。",
+      "significance": "遊技機事業の体制を再編した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "ARUZE Investmentを設立",
+      "description": "ARUZE Investment Co., Ltd.（現連結子会社）を設立しました。",
+      "significance": "海外投資の拠点を設けた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "委員会設置会社へ移行",
+      "description": "委員会設置会社へ移行しました。",
+      "significance": "ガバナンス体制を変えた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "フィリピンでカジノリゾートのプロビジョナルライセンスを取得",
+      "description": "フィリピンにおいてカジノリゾートを運営するためのプロビジョナルライセンスを取得しました。",
+      "significance": "フィリピンでのカジノリゾート事業への第一歩です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "Aruze Gaming Americaが第三者割当増資を実施",
+      "description": "Aruze Gaming America, Inc.が第三者割当増資を実施しました。また、当社所有の同社株式の一部を譲渡しました。",
+      "significance": "米国子会社の資本構成を変えた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "アルゼマーケティングジャパンを存続会社として3社を吸収合併",
+      "description": "アルゼマーケティングジャパン㈱を存続会社としてアルゼグローバルトレーディング㈱、アルゼレンタルサービス㈱、㈱セブンワークスを吸収合併しました。",
+      "significance": "グループ内の会社を統合した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "Aruze Gaming Americaの全株式を譲渡",
+      "description": "当社所有のAruze Gaming America, Inc.全株式を譲渡しました。",
+      "significance": "米国子会社を手放した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "アルゼマーケティングジャパンを吸収合併",
+      "description": "当社を存続会社として、アルゼマーケティングジャパン㈱を吸収合併しました。",
+      "significance": "販売子会社を本体に統合した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "商号をユニバーサルエンターテインメントに変更",
+      "description": "商号を㈱ユニバーサルエンターテインメントへと変更しました。",
+      "significance": "現在の社名となった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "マニラベイリゾーツが経済特区認定を受けカジノ事業の外資規制が解除",
+      "description": "フィリピンにおいて、当社グループのカジノプロジェクト（マニラベイリゾーツ）が経済特区認定を受けるとともに、カジノ事業の外資規制が解除されました。",
+      "significance": "フィリピンでのカジノ事業の前提が整った出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "大阪証券取引所ＪＡＳＤＡＱに上場",
+      "description": "ジャスダック証券取引所と大阪証券取引所の合併に伴い、大阪証券取引所ＪＡＳＤＡＱに上場しました。",
+      "significance": "上場市場が変わった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "監査役会設置会社へ移行",
+      "description": "監査役会設置会社へ移行しました。",
+      "significance": "ガバナンス体制を変えた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "アルゼメディアネットを吸収合併",
+      "description": "当社を存続会社として、アルゼメディアネット㈱を吸収合併しました。",
+      "significance": "メディア子会社を本体に統合した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "マニラベイリゾーツプロジェクトの着工式を開催",
+      "description": "マニラベイリゾーツプロジェクト着工式を開催しました。",
+      "significance": "カジノリゾートの建設が始まった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所ＪＡＳＤＡＱ（スタンダード）に上場",
+      "description": "東京証券取引所と大阪証券取引所の統合に伴い、東京証券取引所ＪＡＳＤＡＱ（スタンダード）に上場しました。",
+      "significance": "上場市場が東京証券取引所に移った出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "岡田美術館を開設",
+      "description": "神奈川県足柄下郡箱根町に岡田美術館を開設しました。",
+      "significance": "美術館を開設した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "サミーと合弁会社ジーグを設立",
+      "description": "サミー株式会社と合弁会社「株式会社ジーグ」を設立しました（現ジーグ合同会社）。",
+      "significance": "遊技機器の合弁事業を始めた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "カジノリゾートプロジェクトの正式名称をOKADA MANILAに決定",
+      "description": "フィリピンにおけるカジノリゾートプロジェクトの正式名称を「OKADA MANILA」に決定しました。",
+      "significance": "オカダ・マニラの名称が決まった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "オカダ・マニラのカジノ運営許可証を取得し運営を開始",
+      "description": "フィリピンにおけるカジノリゾート施設「オカダ・マニラ」のカジノ運営許可証を取得し、カジノ運営を開始しました。",
+      "significance": "オカダ・マニラのカジノ運営が始まった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "マルチカラー噴水「The Fountain」が完成",
+      "description": "オカダ・マニラに世界最大級のマルチカラー噴水「The Fountain」が完成しました。",
+      "significance": "オカダ・マニラの象徴的な施設ができた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "ガラスドーム施設「Cove Manila」がオープン",
+      "description": "オカダ・マニラに巨大ガラスドーム施設「Cove Manila」がオープンしました。",
+      "significance": "オカダ・マニラの施設が広がった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "オカダ・マニラのタワーAが完成",
+      "description": "オカダ・マニラのタワーAが完成しました（PEARL WING）。",
+      "significance": "オカダ・マニラの客室棟が増えた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "カジノ関連機器の新システムをリリース",
+      "description": "カジノ関連機器による自動為替交換システム「Multi Currency System」およびカジノスロットマシン専用顧客優遇システム「Slot Program Play System」をリリースしました。",
+      "significance": "カジノ向けの新システムを出した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "オカダ・マニラのタワーBが完成",
+      "description": "オカダ・マニラのタワーBが完成しました（CORAL WING）。",
+      "significance": "オカダ・マニラの客室棟がさらに増えた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しに伴い、東京証券取引所ＪＡＳＤＡＱ（スタンダード）から東京証券取引所スタンダード市場へ移行しました。",
+      "significance": "上場市場区分が変わった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "監査等委員会設置会社へ移行",
+      "description": "監査等委員会設置会社へ移行しました。",
+      "significance": "ガバナンス体制を変えた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +988,48 @@
       "publisher": "株式会社ユニバーサルエンターテインメント",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XVDD.pdf",
       "publishedAt": "2026-03-30",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XVDD",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "グローバルエンターテインメント企業として「楽しさ」を創造し、「夢のある社会」創りに貢献することを経営の基本方針としています。パチスロ・パチンコ機の研究・開発・製造・販売でユーザーに「楽しい！」を提供し、フィリピン・マニラの統合型リゾート施設「オカダ・マニラ」で総合的なエンターテインメントを提供します。",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "スマートパチスロの普及が進み、パチスロ機の新機種の大半がスマートパチスロとして市場投入される中、コンテンツの強みや高い技術力を活かした魅力ある製品開発と、技術開発・製造の効率化によるコスト削減を進めます。オカダ・マニラはフィリピンで唯一のフォーブス・トラベルガイド5つ星の統合型リゾートです。",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年12月期の売上高は、統合型リゾート(IR)事業が65,409百万円、遊技機事業が56,708百万円、その他が534百万円で、統合型リゾート(IR)事業が最も大きな割合を占めます。地域別では日本が57,429百万円、フィリピンが65,398百万円です。",
+        "basis": "セグメント情報の報告セグメントごとの売上高と関連情報の地域ごとの売上高によります。",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【セグメント情報】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

@@ -4,15 +4,151 @@
   "name": "日本金属",
   "officialName": "日本金属株式会社",
   "nameEn": "NIPPON KINZOKU CO., LTD.",
-  "description": null,
+  "shortNameEn": "NIPPON KINZOKU CO., LTD.",
+  "description": "冷間圧延ステンレス鋼帯とみがき特殊帯鋼、加工品を製造販売する鉄鋼メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "polished-strip-steel",
+      "name": "みがき帯鋼事業",
+      "description": "当社が冷間圧延ステンレス鋼帯とみがき特殊帯鋼を製造し、主として連結子会社を通じて販売する事業です。2026年3月期の外部顧客への売上高は41,128百万円です。",
+      "customers": [
+        "自動車関連産業をはじめとする製造業",
+        "鋼材の販売業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "cold-rolled-stainless-strip",
+          "name": "冷間圧延ステンレス鋼帯",
+          "description": "当社が板橋工場などで製造し、主として連結子会社日金スチール株式会社が販売しています。タイ、マレーシア、上海の連結子会社も一部販売し、製造工程の一部は連結子会社日金精整テクニックス株式会社に加工を依頼しています。",
+          "customers": [
+            "自動車関連産業をはじめとする製造業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "polished-special-strip",
+          "name": "みがき特殊帯鋼",
+          "description": "当社が王子工場などで製造し、連結子会社日金スチール株式会社などが販売しています。",
+          "customers": [
+            "自動車関連産業をはじめとする製造業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "processed-products",
+      "name": "加工品事業",
+      "description": "当社で製造した型鋼製品等の販売と、電磁製品の販売を行う事業です。2026年3月期の外部顧客への売上高は8,491百万円です。",
+      "customers": [
+        "建築関連の需要家",
+        "産業機器・エネルギー関連の需要家",
+        "自動車・文具関連の製造業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "shaped-steel-products",
+          "name": "型鋼製品等",
+          "description": "当社が福島工場で高精度異形鋼建築部材などを、岐阜工場でステンレス精密管などを製造し、連結子会社株式会社セフを経由して一部販売しています。",
+          "customers": [
+            "建築関連の需要家",
+            "産業機器・エネルギー関連の需要家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "electromagnetic-products",
+          "name": "電磁製品",
+          "description": "連結子会社日金電磁工業株式会社から仕入れて販売しており、一部の製品は日金電磁工業株式会社が関連会社播磨電子株式会社に製造を委託しています。",
+          "customers": [
+            "電気機器関連の製造業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社工場で冷間圧延ステンレス鋼帯・みがき特殊帯鋼と型鋼等の加工品を製造し、連結子会社を通じて自動車関連をはじめとする製造業に販売する事業モデルです。",
+    "products": [
+      "冷間圧延ステンレス鋼帯",
+      "みがき特殊帯鋼",
+      "型鋼製品・ステンレス精密管等の加工品",
+      "電磁製品"
+    ],
+    "customers": [
+      "自動車関連産業をはじめとする製造業",
+      "電子部品・医療関連の製造業",
+      "建築関連の需要家",
+      "鋼材の販売業者"
+    ],
+    "revenueSources": [
+      "みがき帯鋼事業の製品販売による収益",
+      "加工品事業の製品販売による収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と子会社8社・関連会社1社のグループ",
+        "description": "日本金属株式会社は東京都板橋区に登記上の本店を、港区に本社事務所を置き、子会社8社及び関連会社1社と企業集団を構成しています。連結の従業員数は787人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "帯鋼と加工品の製造",
+        "description": "板橋工場などで冷間圧延ステンレス鋼帯とみがき特殊帯鋼を製造し、福島・岐阜の両工場で型鋼製品やステンレス精密管などの加工品を製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "製造業を中心とする需要家に販売",
+        "description": "製品は主として連結子会社の日金スチール株式会社を通じて、自動車関連をはじめとする製造業に販売しています。最大の販売先は田島スチール株式会社で、売上高は4,769百万円（全体の9.6％）です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は49,619百万円",
+        "description": "2026年3月期の連結売上高は49,619百万円でした。セグメント別の外部顧客への売上高は、みがき帯鋼事業が41,128百万円、加工品事業が8,491百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は213百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は213百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23314000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 884,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24449000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 873,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26863000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 855,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27856000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 828,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +243,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 29194000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 787,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +251,297 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1930,
+      "title": "東京伸鐵所として創立",
+      "description": "東京府北豊島郡岩淵町（現在の東京都北区神谷）にて「東京伸鐵所」（後の王子工場）として創立され、わが国ではじめてみがき帯鋼の製造に着手しました。",
+      "significance": "日本初のみがき帯鋼製造という当社の原点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1937,
+      "title": "特殊鋼の帯鋼製造を開始",
+      "description": "従来輸入にのみ依存していた特殊鋼の帯鋼製造を開始しました。",
+      "significance": "輸入依存だった特殊帯鋼の国産化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1939,
+      "title": "株式会社に改組",
+      "description": "日本特殊鋼材工業株式会社として株式会社に改組されました。",
+      "significance": "法人としての体制の確立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1945,
+      "title": "日本金属産業株式会社に商号変更",
+      "description": "商号を日本金属産業株式会社と変更しました。",
+      "significance": "戦後の新体制の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京・大阪両証券取引所に上場",
+      "description": "東京・大阪両証券取引所（現 東京証券取引所）に上場しました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "日本金属株式会社に商号変更しステンレス量産に着手",
+      "description": "商号を日本金属株式会社と変更し、板橋工場にステンレス工場を新設して、センジミア冷間圧延機を中心として冷間圧延ステンレス鋼帯の量産に着手しました。",
+      "significance": "現在の商号と主力事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "和光鋼帯株式会社を設立",
+      "description": "和光鋼帯株式会社（現 日金スチール株式会社、連結子会社）を設立しました。",
+      "significance": "販売子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "埼玉工場を新設",
+      "description": "埼玉工場（埼玉製造部）を新設し、自転車用ステンレスリム、特殊ぜんまいの生産に従事しました。",
+      "significance": "加工品生産の拠点拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "岐阜工場を新設",
+      "description": "岐阜工場を新設し、ステンレス精密管の生産を開始しました。",
+      "significance": "加工品事業の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "福島工場を新設",
+      "description": "福島工場を新設し、自転車用ステンレスリムの生産に従事しました。",
+      "significance": "加工品事業の拠点拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "タイに子会社を設立",
+      "description": "タイに NIPPON KINZOKU (THAILAND) CO.,LTD.（現 連結子会社）を設立しました。",
+      "significance": "海外販売拠点の展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "マグネシウム合金の広幅・大型コイル一貫製造体制を確立",
+      "description": "わが国において、初めてマグネシウム合金の広幅・大型コイル一貫製造体制を確立しました。",
+      "significance": "圧延技術の差別化の実績です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "マレーシアに子会社を設立",
+      "description": "マレーシアに NIPPON KINZOKU (MALAYSIA) SDN.BHD.（現 連結子会社）を設立しました。",
+      "significance": "アジア販売体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "上海に子会社を設立",
+      "description": "日旌鋼鉄貿易（上海）有限公司（現 連結子会社）を設立しました。",
+      "significance": "中国販売体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "市場再編への対応です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所のプライム市場からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "本社事務所を移転",
+      "description": "本社事務所を東京都港区に移転しました。",
+      "significance": "本社機能の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "itochu",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、販売及び購買取引先として事業上の関係を維持・強化するために保有している旨が個別に印字されており、販売と購買の双方の取引先です。保有株式数は500,000株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "zojirushi",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、販売取引先として事業上の関係を維持・強化するために保有している旨が個別に印字されており、製品の販売先です。保有株式数は66,000株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "piolax",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、販売取引先として事業上の関係を維持・強化するために保有している旨が個別に印字されており、製品の販売先です。保有株式数は49,500株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okaya-and-co",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、販売取引先として事業上の関係を維持・強化するために保有している旨が個別に印字されており、製品の販売先です。保有株式数は4,000株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "advanex",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、販売取引先として事業上の関係を維持・強化するために保有している旨が個別に印字されており、製品の販売先です。保有株式数は22,648株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "rinnai",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、販売取引先として事業上の関係を維持・強化するために保有している旨が個別に印字されており、製品の販売先です。保有株式数は4,389株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toyota-tsusho",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、販売取引先として事業上の関係を維持・強化するために保有している旨が個別に印字されており、製品の販売先です。保有株式数は2,556株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toso",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、販売取引先として事業上の関係を維持・強化するために保有している旨が個別に印字されており、製品の販売先です。保有株式数は16,900株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "morita-holdings",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、販売取引先として事業上の関係を維持・強化するために保有している旨が個別に印字されており、製品の販売先です。保有株式数は1,996株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sanko",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、販売取引先として事業上の関係を維持・強化するために保有している旨が個別に印字されており、製品の販売先です。保有株式数は5,000株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nachi-fujikoshi",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、販売取引先として事業上の関係を維持・強化するために保有している旨が個別に印字されており、製品の販売先です。保有株式数は500株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-yakin-kogyo",
+      "relationship": "supplier",
+      "description": "特定投資株式の保有目的に、購買取引先として事業上の関係を維持・強化するために保有している旨が個別に印字されており、原材料等の購買先です。保有株式数は46,000株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-steel",
+      "relationship": "supplier",
+      "description": "特定投資株式の保有目的に、購買取引先として事業上の関係を維持・強化するために保有している旨が個別に印字されており、原材料等の購買先です。保有株式数は82,005株です。大株主（6.68％）としても印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +549,55 @@
       "publisher": "日本金属株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJG2.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YJG2",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営方針として、社会との共生と地球環境の保護、付加価値の高い製品による社会貢献、技術の向上と革新の継続、社員の個性を尊重する活力ある会社づくりを掲げています。第11次経営計画「NIPPON KINZOKU 2030」（10カ年計画）では、『人と地球にやさしい新たな価値を共創するMulti & Hybrid Material企業』をビジョンに掲げ、「マルチ＆ハイブリッドマテリアル」「ニアネットシェイプ」「ニアネットパフォーマンス」をキーワードに、圧延技術と加工技術を極め、新技術・新製品を主力に事業構造を変革するとしています。基本方針は、リレーションシップの深化、製造力の強化、次世代成長製品の事業化、独自技術による将来を見据えた商品開発、活力ある職場づくりと人材強化の5つです。",
+        "asOf": "2026-03-31",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "対処すべき課題として、高収益製品へのシフト、原材料などの諸コスト上昇を反映させた販売価格の是正、徹底したコストダウン、品質向上と生産効率の改善など、全社的な収益改善活動の継続が示されています。第11次経営計画は第3フェーズ（2025年度～2029年度）に入り、「ターゲットアイテム拡大・事業化」と「高収益体質の実現」をコンセプトとしています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等の記載、MD&Aにおける経営成績の状況の概要の記載",
+        "asOf": "2026-03-31",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、わが国で初めてみがき帯鋼の製造に着手した圧延技術の蓄積と、冷間圧延から切断加工・販売までをグループで担う体制にあります。自動車の外装モール用材として採用が拡大する黒加飾ステンレス鋼「ファインブラック」などの独自製品を持ち、原材料価格等の変動要因を販売価格へ反映させるサーチャージ制の導入など価格改定のルール化も進めています。",
+        "basis": "沿革における創業と技術の記載、MD&Aにおけるセグメントごとの経営成績の記載、主要な設備の状況における製造設備の記載",
+        "asOf": "2026-03-31",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上構成はみがき帯鋼事業が41,128百万円、加工品事業が8,491百万円で、地域別では日本が38,722百万円、アジアが10,119百万円、その他が777百万円です。主要な市場である自動車関連産業では、日本車の販売不振の影響などにより需要が低迷し、厳しい事業環境が続いているとされています。最大の顧客は田島スチール株式会社で、売上高4,769百万円（全体の9.6％）です。",
+        "basis": "セグメント情報等におけるセグメント別外部売上高と関連情報（地域ごとの情報・主要な顧客ごとの情報）の記載、MD&Aにおける経営成績の状況の概要の記載",
+        "asOf": "2026-03-31",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

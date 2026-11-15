@@ -4,15 +4,138 @@
   "name": "安永",
   "officialName": "株式会社　安　永",
   "nameEn": "YASUNAGA CORPORATION",
-  "description": null,
+  "shortNameEn": "YASUNAGA CORPORATION",
+  "description": "自動車用エンジン部品を主力に、工作機械やワイヤソーなどの機械装置と、エアーポンプなどの環境機器を製造販売する三重県伊賀市のメーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    },
+    {
+      "industryId": "machinery",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "yasunaga",
+      "name": "株式会社安永",
+      "description": "三重県伊賀市に本社を置くメーカーで、当社と連結子会社9社でグループを構成しています。エンジン部品、機械装置、環境機器の3つを報告セグメントとし、運輸・サービス事業も営んでいます。2026年3月期の連結従業員数は1,706人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "engine-parts",
+          "name": "エンジン部品事業",
+          "description": "コネクティングロッド、シリンダーヘッド、シリンダーブロック、カムシャフト、クランクシャフトなどの自動車エンジン部品と、スマートフォン向けベイパーチャンバー用ウィックシートなどの微細形状加工製品を製造販売しています。当社が国内で製造販売し、インドネシア・タイ・メキシコの子会社が製造販売、アメリカの子会社が販売を担います。2026年3月期の外部顧客への売上高は25,721百万円です。",
+          "customers": [
+            "自動車メーカー等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "environmental-equipment",
+          "name": "環境機器事業",
+          "description": "浄化槽用・医療健康機器用・燃料電池用・活魚輸送用・観賞魚用などの各種エアーポンプと、ディスポーザシステムを製造販売しています。子会社の安永エアポンプが製造販売し、安永クリーンテックがディスポーザシステムの設計・施工・サービスを行います。2026年3月期の外部顧客への売上高は5,173百万円です。",
+          "customers": [
+            "浄化槽・医療健康機器等のメーカー",
+            "マンション開発事業者等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "machinery-equipment",
+          "name": "機械装置事業",
+          "description": "トランスファーマシンやNC工作機械などの工作機械、ワイヤソー、マイクロフィニッシャー、リークテスト機などの検査測定装置を製造販売しています。中国の子会社がワイヤソーと検査測定装置の販売・サービスを行います。2026年3月期の外部顧客への売上高は2,791百万円です。",
+          "customers": [
+            "自動車メーカーをはじめとする製造業各社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other-businesses",
+          "name": "その他（運輸・サービス事業）",
+          "description": "報告セグメントに含まれない事業で、エンジン部品等の輸送・梱包を行う運輸事業と、ビルメンテナンス・工場清掃・社員給食などのサービス事業を行っています。2026年3月期の外部顧客への売上高は265百万円です。",
+          "customers": [
+            "当社グループ各社等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "コネクティングロッドなどのエンジン部品、工作機械・ワイヤソーなどの機械装置、エアーポンプなどの環境機器を製造し、自動車メーカーをはじめとする顧客に販売して対価を得る事業モデルです。",
+    "products": [
+      "コネクティングロッド、シリンダーヘッド、シリンダーブロック、カムシャフト、クランクシャフトなどのエンジン部品",
+      "スマートフォン向けベイパーチャンバー用ウィックシートなどの微細形状加工製品",
+      "トランスファーマシン、NC工作機械などの工作機械",
+      "ワイヤソー、リークテスト機、外観検査装置などの検査測定装置",
+      "浄化槽用・医療健康機器用・燃料電池用などのエアーポンプ",
+      "ディスポーザシステム"
+    ],
+    "customers": [
+      "トヨタ自動車をはじめとする自動車メーカー",
+      "電子部品メーカーなどの製造業各社",
+      "マンション開発事業者など"
+    ],
+    "revenueSources": [
+      "エンジン部品の販売による売上高",
+      "機械装置の販売による売上高",
+      "環境機器の販売による売上高",
+      "運輸・サービス事業による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社安永",
+        "description": "三重県伊賀市に本社を置き、当社と連結子会社9社でグループを構成しています。2026年3月期の連結従業員数は1,706人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "エンジン部品・機械装置・環境機器",
+        "description": "コネクティングロッドなどの自動車エンジン部品、工作機械やワイヤソーなどの機械装置、エアーポンプなどの環境機器を、国内の工場とインドネシア・タイ・メキシコなどの海外子会社で製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車メーカーなどの顧客",
+        "description": "製品はトヨタ自動車をはじめとする自動車メーカーや製造業各社、マンション開発事業者などに販売しています。主要な顧客ごとの情報では、エンジン部品の顧客としてToyota Motor Asiaとトヨタ自動車が挙げられています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は33,951百万円",
+        "description": "2026年3月期の売上高は33,951百万円でした。セグメント別ではエンジン部品が25,721百万円、環境機器が5,173百万円、機械装置が2,791百万円、その他が265百万円です。前連結会計年度の売上高は31,470百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は1,871百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,871百万円でした。前連結会計年度は742百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +150,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8206000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1835,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +170,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10164000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1762,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +190,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10917000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1714,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11388000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1703,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14687000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1706,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +238,273 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1949,
+      "title": "株式会社安永鉄工所を設立",
+      "description": "三重県上野市（現：伊賀市）に株式会社安永鉄工所を設立し、家庭用ミシンアームベッドの生産を始めました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "自動車部品の生産を開始",
+      "description": "農業用機械エンジン部品及び自動車部品の生産を開始しました。",
+      "significance": "現在の主力であるエンジン部品事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "自動車エンジン部品の本格生産を開始",
+      "description": "自動車エンジン部品の本格生産を開始し、三重県名張市に名張工場を建設しました。",
+      "significance": "エンジン部品を事業の柱に据えた転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "エアーポンプの生産を開始",
+      "description": "エアーポンプの生産を開始しました。",
+      "significance": "現在の環境機器事業につながる製品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "ワイヤソーの本格生産を開始",
+      "description": "前年に発表したワイヤソーの本格生産を開始しました。",
+      "significance": "機械装置事業の代表製品が生まれました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "株式会社安永に商号変更",
+      "description": "株式会社安永鉄工所から株式会社安永に商号を変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "大阪証券取引所市場第二部へ上場",
+      "description": "大阪証券取引所市場第二部へ上場しました。同年、インドネシアに安永インドネシア株式会社を設立しました。",
+      "significance": "上場と海外生産の開始が重なった年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "上海安永精密切割機有限公司を設立",
+      "description": "中国上海市に上海安永精密切割機有限公司を設立しました。",
+      "significance": "中国でワイヤソーと検査測定装置の販売・サービスを行う拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "環境機器事業を安永エアポンプ株式会社に承継",
+      "description": "会社分割により、環境機器事業を新設子会社の安永エアポンプ株式会社に承継しました。",
+      "significance": "環境機器事業の専門子会社体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "子会社2社を吸収合併",
+      "description": "ヤスナガワイヤソーシステムズ株式会社とYASUNAGA S&I株式会社を吸収合併しました。",
+      "significance": "分社化していたワイヤソー事業と検査測定装置事業を本体に戻しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "安永タイ株式会社を設立",
+      "description": "タイに安永タイ株式会社を設立しました。",
+      "significance": "東南アジアの生産拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "安永メキシコ株式会社を設立",
+      "description": "メキシコに安永メキシコ株式会社を設立しました。",
+      "significance": "北米の現地生産体制の構築です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "市場再編への対応です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所のプライム市場からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "山東安永精密機械有限公司を清算",
+      "description": "山東安永精密機械有限公司を清算し、連結の範囲から除外しました。",
+      "significance": "中国拠点の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ウィックシートの量産を開始",
+      "description": "スマートフォン向けベイパーチャンバー用ウィックシートの量産を開始しました。",
+      "significance": "微細形状加工技術による新製品の本格展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "鋳造事業の終了を決議",
+      "description": "鋳造事業の終了を決議しました。",
+      "significance": "創業以来続いてきた鋳造事業から撤退する事業再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "toyota",
+      "relationship": "customer",
+      "description": "エンジン部品セグメントの主要な顧客で、セグメント情報の「主要な顧客ごとの情報」に2026年3月期の顧客として挙げられています。当社グループは同社向けにエンジン部品を販売しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "yushiro",
+      "relationship": "supplier",
+      "description": "資材の安定調達と協力関係の維持・強化を目的として当社が株式50,000株を保有する仕入先で、特定投資株式に保有目的が個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "asahi-diamond-industrial",
+      "relationship": "supplier",
+      "description": "資材の安定調達と協力関係の維持・強化を目的として当社が株式72,000株を保有する仕入先で、特定投資株式に保有目的が個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第80期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社　安　永",
+      "publisher": "株式会社安永",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFR1.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YFR1",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年5月に発表した第8次中期経営計画（2026年度から2028年度までの3年間）では、「グローバルニッチNo.1」の柱を太くすることを掲げ、経営基盤の強化、「グローバルニッチNo.1」製品のさらなる拡大と充実、安永ならではの価値の提供による新事業の創造を重点施策としています。グローバルニッチNo.1製品数のさらなる拡大と、新事業による新たな収益源の育成を目指すとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "計画の軸は、コンロッドなどの既存製品で国内外のシェア拡大と生産能力増強を進めながら、微細形状加工技術を生かした新事業を育てることにあります。既存事業の競争力強化と新事業の創造を同時に進める構成です。",
+        "basis": "経営方針、経営環境及び対処すべき課題等（中長期的な会社の経営戦略、対処すべき課題）、セグメント情報（報告セグメントごとの売上高）、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "微細形状加工技術を「微匠」と名付け、スマートフォン向けベイパーチャンバー用ウィックシートの量産を開始するなど、独自の加工技術を新製品に展開しています。ワイヤソーやマイクロフィニッシャーのように、特定の用途に特化した製品を長く手がけてきた蓄積があります。",
+        "basis": "経営方針、経営環境及び対処すべき課題等（対処すべき課題）、事業の内容、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の約4分の3をエンジン部品が占め、その主要な顧客はトヨタ自動車とToyota Motor Asiaです。地域別の売上高は日本が20,308百万円、タイが4,988百万円、米国が3,885百万円、インドネシアが2,888百万円で、海外子会社を通じた供給体制を持っています。",
+        "basis": "セグメント情報（報告セグメントごとの売上高、関連情報の地域ごとの情報・主要な顧客ごとの情報）、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

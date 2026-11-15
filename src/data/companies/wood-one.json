@@ -4,15 +4,137 @@
   "name": "ウッドワン",
   "officialName": "株式会社ウッドワン",
   "nameEn": "WOOD ONE CO.,LTD.",
-  "description": null,
+  "shortNameEn": "WOOD ONE CO.,LTD.",
+  "description": "広島県廿日市市に本社を置き、ニュージーランドの自社林から木材加工までの一貫生産体制で木質建材と住宅設備機器を製造販売するメーカーです。",
   "listings": [
     {
-      "exchange": "tse",
-      "market": "スタンダード"
+      "exchange": "tse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "energy"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "housing-materials-and-equipment",
+      "name": "住宅建材設備事業",
+      "description": "植林を含む山林経営から、床材・造作材などの総合木質建材や厨房機器などの住宅設備機器の製造及び販売を行う中核事業です。2026年3月期の外部顧客への売上高は64,945百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "interior-woodwork",
+          "name": "造作材",
+          "description": "階段、収納、室内ドアなどの造作材です。2026年3月期の売上高は35,076百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "other-building-materials",
+          "name": "その他建材",
+          "description": "構造材などの建材です。2026年3月期の売上高は19,074百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "flooring",
+          "name": "床材",
+          "description": "フローリングなどの床材です。2026年3月期の売上高は6,804百万円でした。国産材桧を基材に用いた無垢フローリング「コンビットⓇソリッドJ」などを販売しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "housing-equipment",
+          "name": "住宅設備機器",
+          "description": "キッチンや洗面化粧台などの住宅設備機器です。2026年3月期の売上高は3,990百万円でした。連結子会社の株式会社ベルキッチンが製造を担います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    },
+    {
+      "id": "power-generation",
+      "name": "発電事業",
+      "description": "本社敷地内に設置した木質バイオマス発電設備で、間伐材等由来の木質バイオマスなどを燃料に発電し、電気事業者にFIT固定価格で全量を売電しています。2026年3月期の外部顧客への売上高は1,054百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": []
+    }
+  ],
+  "businessModel": {
+    "description": "ニュージーランドの植林事業で育てた木材を国内外の工場で加工し、造作材・床材などの木質建材やキッチンなどの住宅設備機器として、住宅メーカーや建材商社などに販売する事業モデルです。",
+    "products": [
+      "造作材（階段・収納・室内ドア等）",
+      "床材（フローリング）",
+      "その他建材（構造材等）",
+      "住宅設備機器（キッチン・洗面化粧台等）"
+    ],
+    "customers": [
+      "住宅メーカー・工務店などの住宅事業者",
+      "建材商社などの流通事業者"
+    ],
+    "revenueSources": [
+      "木質建材及び住宅設備機器の販売代金",
+      "バイオマス発電による売電収入"
+    ],
+    "suppliers": [
+      {
+        "name": "グループの海外生産拠点",
+        "description": "基材及び構造材は、ニュージーランドのJuken New Zealand Ltd.やフィリピンのJuken Sangyo（Phils.）Corp.などグループの生産拠点が製造を担い、国内工場で製品に加工する国際分業体制をとっています。",
+        "businessIds": [
+          "housing-materials-and-equipment"
+        ]
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ウッドワンとグループ会社",
+        "description": "株式会社ウッドワンは広島県廿日市市に本社を置き、子会社8社とともにグループを構成しています。連結の従業員数は2,173人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "自社林の木材を一貫生産で製品化",
+        "description": "ニュージーランドの自社林で植林・育林した木材を基材とし、国内外の工場で造作材・床材などの木質建材やキッチンなどの住宅設備機器に加工して提供しています。本社敷地内では木質バイオマス発電も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "住宅メーカーや建材商社などの顧客",
+        "description": "販売先は住宅メーカーや建材商社などです。主要な顧客は住友林業株式会社（連結売上高に対する割合12.1％）とSMB建材株式会社（同11.0％）です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は66,000百万円",
+        "description": "2026年3月期の連結売上高は66,000百万円（前期比1.3％増）でした。住宅建材設備事業が64,945百万円、発電事業が1,054百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失は1,456百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純損失は1,456百万円（前期は1,777百万円の当期純利益）でした。ニュージーランド子会社における工場の抜本的な見直しに伴う事業再編損の計上が主因です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -72,7 +194,8 @@
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（2022年改正会計基準）等を第73期の期首から適用しており、第72期（2024年3月期）に係る主要な経営指標等は、当該会計基準等を遡って適用した後の指標となっています。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -115,22 +238,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第74期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社ウッドワン",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI45.pdf",
-      "publishedAt": "2026-06-24",
-      "accessedAt": "2026-10-02"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-10-02",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +249,278 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1935,
+      "title": "木材業を開始",
+      "description": "元取締役会長の中本勇が、広島県佐伯郡吉和村（現・廿日市市）に個人による木材業を開始しました。",
+      "significance": "事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "有限会社中本林業を設立",
+      "description": "中本勇が発起人となり有限会社中本林業を設立し、代表取締役社長に就任しました。",
+      "significance": "法人としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "フローリングの生産を開始",
+      "description": "床板（フローリング・ボード）工場を新設し、内地ブナ材によるフローリングの生産を開始しました。",
+      "significance": "建材メーカーへの第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "長尺合板の製造販売を開始",
+      "description": "合板工場を新設し、わが国初の4ｍ超大型合板プラントによる長尺合板縁甲板（フロング）の製造販売を開始しました。",
+      "significance": "大型合板の先駆けです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "株式会社住建産業として再発足",
+      "description": "株式額面を500円から50円に変更することを目的として、休眠会社であった岩根林業株式会社が株式会社住建産業（旧）など5社を吸収合併し、同時に商号を株式会社住建産業と変更して再発足しました。",
+      "significance": "現在の会社の存続形態の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "株式を上場",
+      "description": "大阪証券取引所市場第二部及び広島証券取引所に株式を上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "東京・大阪両証券取引所の市場第一部に指定替え",
+      "description": "東京証券取引所及び大阪証券取引所の市場第一部に指定替えとなりました。",
+      "significance": "上場市場における節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "ニュージーランドに合弁子会社を設立",
+      "description": "日商岩井株式会社（現・双日株式会社）とのニュージーランド現地合弁子会社としてJuken Nissho Ltd.（現・Juken New Zealand Ltd.）を設立しました。",
+      "significance": "海外での植林と生産体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "フィリピン子会社を設立",
+      "description": "フィリピン子会社Juken Sangyo（Phils.）Corp.を設立しました。",
+      "significance": "アジアの生産拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "株式会社ウッドワンに商号変更",
+      "description": "株式会社住建産業から株式会社ウッドワンに商号を変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "バイオマス発電所を稼働",
+      "description": "本社にてバイオマス発電所を稼働しました。",
+      "significance": "発電事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "中国子会社を清算",
+      "description": "中国子会社の上海倍楽厨業有限公司は清算が結了し、連結範囲から除外しました。",
+      "significance": "海外子会社の整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sumitomo-forestry",
+      "relationship": "customer",
+      "description": "住友林業株式会社は当社の主要な販売先で、2026年3月期の連結売上高に対する同社向け売上高の割合は12.1％です。当社も同社の株式を保有し、その保有目的は販売先及び仕入先として中・長期的な取引の拡大など同社との良好な取引関係の維持、強化を図るためとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ochi-holdings",
+      "relationship": "customer",
+      "description": "OCHIホールディングス株式会社は当社の販売先であり、当社は中・長期的な取引の拡大など同社との良好な取引関係の維持、強化を図るため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "jk-holdings",
+      "relationship": "customer",
+      "description": "JKホールディングス株式会社は当社の販売先であり、当社は中・長期的な取引の拡大など同社との良好な取引関係の維持、強化を図るため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "starts",
+      "relationship": "customer",
+      "description": "スターツコーポレーション株式会社は当社の販売先であり、社宅管理代行の委託先でもあります。当社は販売拡大や賃借物件に関する優良な情報提供など同社との良好な取引関係の維持、強化を図るため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tsuchiya-holdings",
+      "relationship": "customer",
+      "description": "株式会社土屋ホールディングスは当社の販売先であり、当社は中・長期的な取引の拡大など同社との良好な取引関係の維持、強化を図るため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "taihei-machinery-works",
+      "relationship": "supplier",
+      "description": "株式会社太平製作所は当社の製造機械・部品の購入先であり、当社は安定した取引関係の維持、強化を図るため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kanefusa",
+      "relationship": "supplier",
+      "description": "兼房株式会社は当社の製造部品の購入先であり、当社は安定した取引関係の維持、強化を図るため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sojitz",
+      "relationship": "business-partner",
+      "description": "双日株式会社は、1990年に当社と日商岩井株式会社（現・双日株式会社）がニュージーランド現地合弁子会社Juken Nissho Ltd.（現・Juken New Zealand Ltd.）を設立した際の合弁相手であり、同社は現在も当社の連結子会社として木製品等の基材及び構造材の製造・販売と植林を含む山林経営を行っています。当社と同社は合弁事業を通じた業務提携等の関係にあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第74期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社ウッドワン",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI45.pdf",
+      "publishedAt": "2026-06-24",
+      "docId": "S100YI45",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念として「業界一流のメーカーとして、本業を極め、本業に徹し、一流の商品をお客様にご提供することを通じて、社会の発展に貢献する」を掲げています。経営戦略等では、ニュージーランドの育林事業による安定した品質と量の原材料確保、木材加工技術の更なる向上、アジア市場や国内のリフォーム・非住宅・商環境市場といった新成長市場で「勝てる市場×勝てる仕掛け」を創造すること、国内外の製造ネットワークの整備と効率的な運営・コスト低減、認証材を活用した国内外のニーズへの対応などを実践するとしています。また、企業価値の向上と財務体質の強化に向け、収益性の改善や自己資本比率の維持・向上に取り組むとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "強みとして、ニュージーランドで産出される木材を、一貫生産体制・国際分業体制をもって競争力のある製品として作り上げる体制を挙げ、研究開発や知的財産投資も進めるとしています。同国の自社林の森林経営では法正林施業（植林、育林、間伐、伐採）を採用し、二酸化炭素を吸収する森林面積を減らすことなく、一定の周期で毎年一定の木材を永続的に収穫することを基本方針として、資源循環型の環境経営を目指すとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは住宅建材設備事業と発電事業の2つで、2026年3月期の外部顧客への売上高は住宅建材設備事業が64,945百万円、発電事業が1,054百万円です。住宅建材設備事業の収益の内訳は造作材35,076百万円、その他建材19,074百万円、床材6,804百万円、住宅設備機器3,990百万円です。地域別の売上高は日本47,560百万円、ニュージーランド11,441百万円、米国3,253百万円、その他の地域3,744百万円です。主要な顧客は住友林業株式会社（8,001百万円、連結売上高に対する割合12.1％）とSMB建材株式会社（7,268百万円、同11.0％）で、いずれも住宅建材設備事業の販売先です。",
+        "basis": "セグメント情報（報告セグメントごとの売上高と収益の分解情報）、関連情報の地域ごとの情報と主要な顧客ごとの情報に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
+  "segmentRevenue": {
+    "fiscalYear": "2026年3月期",
+    "periodEnd": "2026-03-31",
+    "label": "外部顧客への売上高",
+    "items": [
+      {
+        "businessId": "housing-materials-and-equipment",
+        "amount": 64945000000
+      },
+      {
+        "businessId": "power-generation",
+        "amount": 1054000000
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【セグメント情報】"
   }
 }

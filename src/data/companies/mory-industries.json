@@ -4,15 +4,155 @@
   "name": "モリ工業",
   "officialName": "モリ工業株式会社",
   "nameEn": "MORY INDUSTRIES INC.",
-  "description": null,
+  "shortNameEn": "MORY INDUSTRIES INC.",
+  "description": "ステンレス管やステンレス条鋼などを製造・販売する、大阪のステンレス関連メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "japan",
+      "name": "日本",
+      "description": "当社と連結子会社のモリ金属株式会社、関東モリ工業株式会社が、ステンレス管、ステンレス条鋼、ステンレス加工品、鋼管と、パイプ切断機等の機械を製造・販売する地域セグメントです。2026年3月期の外部顧客への売上高は41,483百万円です。",
+      "customers": [
+        "自動車・二輪車業界のメーカー",
+        "配管用・装飾管用をはじめとするステンレス管の需要家"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "stainless-tubes-japan",
+          "name": "ステンレス管",
+          "description": "日本セグメントの主力製品部門です。自動車用をはじめ、配管用や装飾管用に使われます。日本セグメントにおける2026年3月期の売上高は24,521百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "stainless-bars-japan",
+          "name": "ステンレス条鋼",
+          "description": "日本セグメントの製品部門の一つです。関東モリ工業株式会社の茨城工場ではステンレス条鋼の生産設備を持ちます。日本セグメントにおける2026年3月期の売上高は9,829百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "steel-pipes-japan",
+          "name": "鋼管",
+          "description": "日本セグメントの製品部門の一つです。建設仮設材用を中心に販売されます。日本セグメントにおける2026年3月期の売上高は5,508百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "stainless-products-japan",
+          "name": "ステンレス加工品",
+          "description": "日本セグメントの製品部門の一つです。給湯器用フレキ管などの加工品を含みます。日本セグメントにおける2026年3月期の売上高は963百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "machinery-japan",
+          "name": "機械",
+          "description": "パイプ加工の省力化用として、パイプ切断機等の機械を製造・販売する日本セグメントの製品部門です。日本セグメントにおける2026年3月期の売上高は661百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "indonesia",
+      "name": "インドネシア",
+      "description": "連結子会社のPT. MORY INDUSTRIES INDONESIAが、インドネシアでステンレス管の製造から販売までを行う地域セグメントです。二輪車・四輪車向けに販売されます。2026年3月期の外部顧客への売上高は1,804百万円です。",
+      "customers": [
+        "インドネシアの二輪車・四輪車メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "stainless-tubes-indonesia",
+          "name": "ステンレス管",
+          "description": "PT. MORY INDUSTRIES INDONESIAがインドネシアの西ジャワ州で製造・販売するステンレス管です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "ステンレス管、ステンレス条鋼、ステンレス加工品、鋼管とパイプ切断機等の機械を製造・販売するステンレス関連メーカーです。",
+    "products": [
+      "ステンレス管",
+      "ステンレス条鋼",
+      "ステンレス加工品",
+      "鋼管",
+      "パイプ切断機等の機械"
+    ],
+    "customers": [
+      "自動車・二輪車業界のメーカー",
+      "配管用・装飾管用をはじめとするステンレス管の需要家",
+      "インドネシアの二輪車・四輪車メーカー"
+    ],
+    "revenueSources": [
+      "ステンレス管、ステンレス条鋼、ステンレス加工品、鋼管の販売対価",
+      "パイプ切断機等の機械の販売対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日本とインドネシアの生産体制",
+        "description": "当社と連結子会社３社、持分法適用会社１社でグループを構成します。2026年3月31日現在の連結従業員数は695名です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ステンレス製品を製造する",
+        "description": "ステンレス管、ステンレス条鋼、ステンレス加工品、鋼管を製造し、併せてパイプ加工の省力化用のパイプ切断機等の機械も製造します。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車・二輪車や配管などの需要家に届ける",
+        "description": "日本では自動車用や配管用、装飾管用などに、インドネシアでは二輪車・四輪車メーカー向けに販売します。売上高の10％以上を占める特定の販売先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売で売上を得る",
+        "description": "2026年3月期の連結売上高は43,288百万円で、日本セグメントが41,483百万円、インドネシアセグメントが1,804百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "ステンレス関連事業から当期純利益を生む",
+        "description": "売上の中心はステンレス管です。2026年3月期の親会社株主に帰属する当期純利益は3,358百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +167,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 46311000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 680,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +187,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 50732000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 667,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 54605000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 689,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 55572000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 680,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +247,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 58554000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 695,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +255,129 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1929,
+      "title": "森製作所を設立",
+      "description": "創業者の森明長が、大阪府堺市で自転車部品の製造を目的として、個人経営の森製作所を設立しました。",
+      "significance": "モリ工業の創業です。事業の出発点は自転車部品でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "日本輪業株式会社を設立",
+      "description": "株式会社に組織変更し、商号を日本輪業株式会社としました。",
+      "significance": "法人としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "モリ工業株式会社に商号を変更",
+      "description": "商号をモリ工業株式会社に変更し、大阪府河内長野市に河内長野工場を新設しました。",
+      "significance": "現在の社名と、主力工場の所在地である河内長野市での生産体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第２部に株式を上場しました。",
+      "significance": "上場会社としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "東京・大阪両証券取引所市場第一部に上場",
+      "description": "1980年に東京証券取引所市場第２部に上場した後、東京・大阪両証券取引所の市場第１部に株式を上場しました。",
+      "significance": "全国市場での取引の段階に入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "モリ金属株式会社を設立",
+      "description": "在阪の子会社４社を合併させ、モリ金属株式会社を設立しました。",
+      "significance": "モリ金属は現在も連結子会社として、当社が販売する一部製品の加工を担っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "株式会社エスアール・サンツアーを吸収合併",
+      "description": "自転車部品に関わる子会社の株式会社エスアール・サンツアーを吸収合併しました。",
+      "significance": "創業以来の自転車部品に関わる事業を当社本体に取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "タイのAuto Metal Company Limitedに資本参加",
+      "description": "タイのAuto Metal Company Limitedに資本参加しました。",
+      "significance": "同社は現在、持分法適用関連会社として、タイとその周辺地域で二輪車・自動車業界向けステンレス管の製造販売を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "インドネシアにPT. MORY INDUSTRIES INDONESIAを設立",
+      "description": "インドネシア共和国の西ジャワ州にPT. MORY INDUSTRIES INDONESIAを設立しました。",
+      "significance": "同社は現在のインドネシアセグメントを担う連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "泉大津工場を新設",
+      "description": "大阪府泉大津市に泉大津工場を新設しました。",
+      "significance": "国内の生産拠点の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "hanwa",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式（自己株式を除く）の総数に対する割合で3.05％（1,166千株）を保有する大株主です。当社も同社の株式48,500株を保有しており、当社商・製品の販売先である発行会社との取引関係の維持・強化を図るためと印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +385,50 @@
       "publisher": "モリ工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEUF.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YEUF",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2025年4月1日付で普通株式1株につき5株の割合で株式分割を行いました。株式数に関する指標は2022年3月期の期首に当該分割が行われたと仮定して算定されています。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「ステンレスで創るきらきらの未来」をテーマに長期ビジョンを掲げ、2024年度から2026年度までを対象とした中期経営計画「MORY－PLAN26」を進めています。基本方針として、主力のステンレス管の高付加価値製品の開発・拡販と製造原価の低減、生産設備のリニューアルと計画中の新工場の建設による工場の集約、インドネシアでの競争優位の確保、新規事業領域への進出、高度人材の育成と組織体制の強化に取り組みます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "得意とする配管の小径管については、最新の製造設備の導入により品質及びコスト競争力の向上に努めています。また、グループ内で使用する造管機等の専用設備の大半を自社で設計製作しており、それらの修理や調整、老朽化への対応を自社内で実施することで、設備の長期使用を可能とする強みがあります。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上は日本セグメントが中心で、2026年3月期の外部顧客への売上高は日本41,483百万円に対しインドネシア1,804百万円です。製品別ではステンレス管が最も大きく、日本とインドネシアを合わせた売上高は26,325百万円です。属するステンレス業界は、建設業界における人手不足を背景とした需要の低迷や、安価な輸入材の流入による市況悪化の影響を受けています。",
+        "basis": "セグメント情報の外部顧客への売上高と製品別の売上高、MD&Aの経営成績の状況の概要（ステンレス業界の事業環境とセグメントの状況）",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

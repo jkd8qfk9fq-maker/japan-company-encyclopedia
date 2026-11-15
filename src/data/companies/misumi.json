@@ -4,14 +4,154 @@
   "name": "Misumi",
   "officialName": "株式会社Misumi",
   "nameEn": "MISUMI CO., LTD.",
-  "description": null,
+  "shortNameEn": "MISUMI CO., LTD.",
+  "description": "鹿児島を地盤に石油・ＬＰガス、書籍や自動車、外食を営む地域密着型の複合事業会社です。",
   "listings": [
     {
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "energy",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "energy",
+      "name": "エネルギー",
+      "description": "石油・ガス関連商品の販売を行う事業です。ガソリン、軽油、灯油、重油、潤滑油等の石油関連商品とＬＰガス及び器具等を取り扱います。2026年3月期の外部顧客への売上高は44,930百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "energy-wholesale",
+          "name": "卸売部門",
+          "description": "ガソリン、軽油、灯油、重油、潤滑油等の石油関連商品、ＬＰガス及び器具等の卸売を行います。当社と連結子会社の北薩ガス株式会社が担います。金額は個別に開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "energy-retail",
+          "name": "小売部門",
+          "description": "石油関連商品、ＬＰガス及び器具等の小売を行います。当社と連結子会社の株式会社石井商店、株式会社エスジー宮崎が担います。金額は個別に開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "energy-delivery",
+          "name": "配送部門",
+          "description": "ＬＰガスの配送及び充填を行います。連結子会社の南日本ガス配送センター株式会社、八代協同ガス配送センター株式会社、北薩ガス配送株式会社が担います。金額は個別に開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "gas-facilities",
+          "name": "ガス設備部門",
+          "description": "高圧ガス設備の工事・検査を行います。連結子会社のガスシステム工業株式会社が担います。金額は個別に開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "lifestyle",
+      "name": "ライフスタイル",
+      "description": "書籍・ＣＤ・テレビゲーム・パソコン・携帯電話等の販売とＤＶＤ・ＣＤのレンタル、自動車の販売・整備・車検、自動車用タイヤの販売、住宅の販売、複合商業施設の運営等を行う事業です。複合商業施設として鹿児島市のオプシアミスミを運営し、自動車用タイヤの販売は連結子会社の南九州トーヨータイヤ株式会社が担います。2026年3月期の外部顧客への売上高は7,606百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "food-and-beverage",
+      "name": "フード＆ビバレッジ",
+      "description": "ケンタッキーフライドチキン等の外食店舗の運営と野菜の生産販売を行う事業です。外食は日本ケンタッキー・フライド・チキン株式会社とのフランチャイズ契約に基づき九州に出店しており、新業態として「韓丼」への参入も行いました。2026年3月期の外部顧客への売上高は7,500百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "restaurant",
+          "name": "外食",
+          "description": "ケンタッキーフライドチキン等の販売を行います。当社が店舗を運営します。金額は個別に開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "vegetable-production",
+          "name": "生産販売部門",
+          "description": "野菜の生産販売を行います。鹿児島県姶良市蒲生町にミスミ野菜工場姶良を置きます。金額は個別に開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "石油製品・ＬＰガスの卸売・小売を中核に、書籍・自動車・住宅等の販売とケンタッキーフライドチキン等の外食を行い、顧客から販売代金を得る事業モデルです。",
+    "products": [
+      "石油関連商品（ガソリン、軽油、灯油、重油、潤滑油等）、ＬＰガス及び器具",
+      "書籍・ＣＤ・テレビゲーム・パソコン・携帯電話、自動車・タイヤ、住宅",
+      "ケンタッキーフライドチキン等の外食、野菜"
+    ],
+    "customers": [
+      "九州地域の法人及び個人の燃料油・ＬＰガス需要家",
+      "書籍・レンタル、自動車、住宅等の店舗・施設の利用客",
+      "外食店舗の来店客"
+    ],
+    "revenueSources": [
+      "石油・ガス関連商品の卸売及び小売による売上高",
+      "書籍・自動車・住宅等の販売、レンタル及び複合商業施設の運営による売上高",
+      "外食店舗の運営及び野菜の生産販売による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社Ｍｉｓｕｍｉグループ",
+        "description": "当社、連結子会社8社、関連会社1社及びその他の関係会社1社で構成されるグループです。従業員数は662人（2026年3月31日現在）です。"
+      },
+      {
+        "kind": "offering",
+        "title": "エネルギー、ライフスタイル、フード＆ビバレッジの3事業",
+        "description": "エネルギーは石油・ガス関連商品の販売、ライフスタイルは書籍、自動車、タイヤ、住宅の販売及び複合商業施設の運営等、フード＆ビバレッジはケンタッキーフライドチキンの販売等を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "九州地域の顧客へ提供",
+        "description": "販売は国内のみで、本邦以外の外部顧客への売上高はありません。売上高の10％以上を占める主要な顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は60,036百万円",
+        "description": "2026年3月期の売上高は60,036百万円でした。エネルギーは44,930百万円、ライフスタイルは7,606百万円、フード＆ビバレッジは7,500百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は839百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は839百万円でした（前期は1,037百万円）。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -26,7 +166,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17429000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 652,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -46,7 +186,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18006000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 645,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -66,7 +206,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19417000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 648,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -86,7 +226,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19992000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 648,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -106,7 +246,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21654000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 662,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -114,22 +254,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第70期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社Misumi",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHK6.pdf",
-      "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -141,5 +265,189 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1959,
+      "title": "三角石油瓦斯株式会社を設立しＬＰガス販売を開始",
+      "description": "液化石油ガス（ＬＰガス）の販売を目的として、鹿児島市に三角石油瓦斯株式会社（現・株式会社Ｍｉｓｕｍｉ）を設立し、日本石油瓦斯株式会社（現・ＥＮＥＯＳグローブ株式会社）と特約販売契約を締結しました。",
+      "significance": "創業であり、現在のエネルギー事業の原点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "石油製品の販売を開始",
+      "description": "（名）三角商店から石油販売部門（給油所7ヵ所）の営業を譲り受け、石油製品の販売を開始し、日本石油株式会社（現・ＥＮＥＯＳ株式会社）と特約販売契約を締結しました。",
+      "significance": "エネルギー事業が石油とガスの両輪となった節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "鹿児島日東タイヤ株式会社を設立",
+      "description": "鹿児島市に鹿児島日東タイヤ株式会社（現・南九州トーヨータイヤ株式会社）を設立しました。",
+      "significance": "現在のライフスタイル事業のタイヤ販売の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "外食事業に進出",
+      "description": "日本ケンタッキー・フライド・チキン株式会社とフランチャイズ契約を締結し外食事業に進出し、1号店として鹿児島市にＫＦＣ与次郎ケ浜店を設置しました。",
+      "significance": "現在のフード＆ビバレッジ事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "カルチャー事業に進出",
+      "description": "日本出版販売株式会社と取引約定契約を締結しカルチャー事業に進出し、1号店として鹿児島市にブックスミスミ南港店を設置しました。",
+      "significance": "現在のライフスタイル事業の書籍・レンタル事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "株式会社ミスミへ社名変更",
+      "description": "株式会社ミスミへ社名を変更しました。",
+      "significance": "社名が三角からミスミとなった節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "商号を株式会社Ｍｉｓｕｍｉに変更",
+      "description": "商号を株式会社Ｍｉｓｕｍｉに変更しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "福岡証券取引所に上場",
+      "description": "福岡証券取引所に株式を上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "複合商業施設オプシアミスミを設置",
+      "description": "鹿児島市に複合商業施設のオプシアミスミを設置しました。",
+      "significance": "ライフスタイル事業の商業施設運営の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "ミスミ野菜工場姶良を設置",
+      "description": "鹿児島県姶良市蒲生町にミスミ野菜工場姶良を設置しました。",
+      "significance": "フード＆ビバレッジ事業の野菜生産販売の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "eneos-holdings",
+      "relationship": "major-shareholder",
+      "description": "当社の発行済株式（自己株式を除く。）の13.71％を保有する大株主です。当社もエネルギー事業の取引拡大及び関係強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第70期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社Ｍｉｓｕｍｉ",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHK6.pdf",
+      "publishedAt": "2026-06-23",
+      "docId": "S100YHK6",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「お客様第一主義」・「時代のニーズを的確に捉えた経営」をモットーに、生活関連商品の販売とサービスの提供を通じて地域に根ざした経営を行うことを基本方針としています。経営戦略は「既存事業の強化」と「新規事業の開拓」を両輪とし、既存事業では主力のエネルギー事業で法人顧客の新規開拓や販売強化を進め、新規事業では「駿河屋」「韓丼」「業務レンタカー」への参入等、多様な消費者ニーズに対応した店づくりを進めます。あわせて、販売網の再編、コスト競争力の強化、キャッシュ・フロー重視の経営、人材の確保・育成に取り組みます。健全性の高い経営と収益性の向上を経営目標とし、資本の健全性と収益性に関する指標を最も重視する経営指標に掲げています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "1959年のＬＰガス販売の開始以来、ＥＮＥＯＳ株式会社との石油関連商品の特約販売契約（1964年の営業譲受時に第1回を締結）とＥＮＥＯＳグローブ株式会社とのガス関連商品の特約販売契約（1959年に第1回を締結）を継続し、エネルギー供給会社としての視点とノウハウを蓄積しています。鹿児島、種子島、八代、宮崎にＬＰガス海上受入基地を置く供給体制を持ちます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【重要な契約等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントはエネルギー、ライフスタイル、フード＆ビバレッジの3つです。2026年3月期の外部顧客への売上高は、エネルギーが44,930百万円、ライフスタイルが7,606百万円、フード＆ビバレッジが7,500百万円でした。エネルギーが連結売上高の約4分の3を占めます。地域ごとの情報では本邦以外の外部顧客への売上高はなく、主要な顧客ごとの情報では売上高の10％以上を占める相手先はありません。",
+        "basis": "注記事項（セグメント情報等）の報告セグメントごとの売上高と関連情報（地域ごとの情報、主要な顧客ごとの情報）、【事業の内容】の事業区分に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
+  "segmentRevenue": {
+    "fiscalYear": "2026年3月期",
+    "periodEnd": "2026-03-31",
+    "label": "外部顧客への売上高",
+    "items": [
+      {
+        "businessId": "energy",
+        "amount": 44930000000
+      },
+      {
+        "businessId": "lifestyle",
+        "amount": 7606000000
+      },
+      {
+        "businessId": "food-and-beverage",
+        "amount": 7500000000
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【セグメント情報】"
   }
 }

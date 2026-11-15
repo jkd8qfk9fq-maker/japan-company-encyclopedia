@@ -4,15 +4,189 @@
   "name": "日本精線",
   "officialName": "日本精線株式会社",
   "nameEn": "Nippon Seisen Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Nippon Seisen Co.,Ltd.",
+  "description": "ステンレス鋼線と金属繊維（ナスロン）を製造販売する、大同特殊鋼株式会社の連結子会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "japan",
+      "name": "日本",
+      "description": "当社と連結子会社の日精テクノ株式会社が、ステンレス鋼線と金属繊維（ナスロン）の製造販売を行う最も大きなセグメントです。2026年3月期の外部顧客への売上高は41,325百万円です。",
+      "customers": [
+        "製造業などの需要家",
+        "半導体製造装置メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "japan-stainless-wire",
+          "name": "ステンレス鋼線（日本）",
+          "description": "当社がステンレス鋼線を製造販売し、日精テクノ株式会社が主に直線切断加工と磨引伸線加工の一部を行っています。ダイヤモンド工具も当社が製造販売しています。",
+          "customers": [
+            "製造業などの需要家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "japan-metal-fiber",
+          "name": "金属繊維（ナスロン）（日本）",
+          "description": "当社が金属繊維（ナスロン）を製造販売しています。超精密ガスフィルターは半導体製造装置などに組み込まれています。",
+          "customers": [
+            "半導体製造装置メーカー",
+            "フィルム・樹脂などの製造業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "thailand",
+      "name": "タイ",
+      "description": "連結子会社のTHAI SEISEN CO.,LTD.がステンレス鋼線とダイヤモンド工具を製造販売するセグメントです。2026年3月期の外部顧客への売上高は3,933百万円です。同社の製品は主に当社が仕入れ、その材料は当社が同社に販売しています。",
+      "customers": [
+        "製造業などの需要家"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "thailand-stainless-wire",
+          "name": "ステンレス鋼線（タイ）",
+          "description": "THAI SEISEN CO.,LTD.がステンレス鋼線を製造販売しています。",
+          "customers": [
+            "製造業などの需要家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "china-korea",
+      "name": "中国・韓国",
+      "description": "中国の連結子会社がステンレス鋼線と金属繊維を製造販売し、韓国の連結子会社が金属繊維の販売支援を行うセグメントです。2026年3月期の外部顧客への売上高は1,342百万円です。",
+      "customers": [
+        "製造業などの需要家"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "dalian-stainless-wire",
+          "name": "ステンレス鋼線（中国）",
+          "description": "大同不銹鋼(大連)有限公司がステンレス鋼線を製造販売しています。同社は2025年11月に解散を決議し、清算手続き中です。",
+          "customers": [
+            "製造業などの需要家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "changshu-metal-fiber",
+          "name": "金属繊維（中国）",
+          "description": "耐素龍精密濾機(常熟)有限公司が金属繊維（ナスロン）を製造販売しています。材料の一部は当社が販売し、製品の一部は当社が仕入れています。",
+          "customers": [
+            "フィルム・樹脂などの製造業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "korea-naslon-sales-support",
+          "name": "金属繊維の販売支援（韓国）",
+          "description": "韓国ナスロン株式会社が、主に当社が韓国で販売活動をする際の販売支援を行っています。",
+          "customers": [
+            "韓国における当社の販売活動"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "親会社を主要な供給元として原材料を受け入れ、ステンレス鋼線と金属繊維を製造して国内外の需要家に販売する事業モデルです。",
+    "products": [
+      "ステンレス鋼線（ばね用材、極細線など）",
+      "金属繊維（ナスロン®）、ナスロン®フィルター、超精密ガスフィルター（NASclean®）",
+      "ダイヤモンド工具"
+    ],
+    "customers": [
+      "製造業などの需要家",
+      "半導体製造装置メーカー",
+      "フィルム・樹脂などの製造業者"
+    ],
+    "revenueSources": [
+      "ステンレス鋼線の販売による収益",
+      "金属繊維（ナスロン）の販売による収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社、親会社と子会社5社のグループ",
+        "description": "日本精線は大阪市中央区に本社を置き、親会社と連結子会社5社とともにグループを構成しています。連結の従業員数は815人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "ステンレス鋼線と金属繊維の製造販売",
+        "description": "ステンレス鋼線と、独自技術で開発したステンレス鋼繊維である金属繊維（ナスロン®）を製造販売し、ダイヤモンド工具も扱っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外の需要家に販売",
+        "description": "製品は国内外の製造業などの需要家に販売しています。主要な顧客として大同興業株式会社が開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は46,601百万円",
+        "description": "2026年3月期の連結売上高は46,601百万円でした。地域別の外部顧客への売上高は日本が41,325百万円、タイが3,933百万円、中国・韓国が1,342百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は2,147百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は2,147百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 35452000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 882,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +221,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 37605000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 893,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +241,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 39489000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 870,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +261,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 41904000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 846,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号　2022年10月28日）等を第95期の期首から適用しており、第94期に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっている。なお、経過的な取扱いを適用している旨もあわせて印字されている。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +282,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 43480000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 815,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +290,176 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1951,
+      "title": "三信特殊線工業株式会社を設立",
+      "description": "ステンレス鋼線の製造を目的として、大阪市旭区森小路に三信特殊線工業株式会社を設立しました。",
+      "significance": "現在の会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "日本冶金工業株式会社の系列に入る",
+      "description": "日本冶金工業株式会社の資本参加を得て、同社の系列に入りました。",
+      "significance": "初期の資本関係の形成です。なお、同社との現在の関係は印字されていないため、関連企業には結んでいません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "日本精線株式会社に商号変更",
+      "description": "本社を大阪市北区に移転し、商号を日本精線株式会社と改称しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京・大阪両証券取引所市場第二部に上場",
+      "description": "東京・大阪両証券取引所市場第二部に株式を上場しました。あわせて大阪府枚方市に枚方工場を完成し、操業を開始しました。",
+      "significance": "株式公開と、現在の主力工場である枚方工場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "ナスロン・フィルター工場が完成",
+      "description": "枚方工場内にナスロン・フィルター工場が完成しました。翌年には硬質線工場も完成しました。",
+      "significance": "金属繊維（ナスロン）事業の生産基盤の形成です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "THAI SEISEN CO.,LTD.を設立",
+      "description": "タイ国に海外現地法人THAI SEISEN CO.,LTD.を設立しました。",
+      "significance": "海外生産の始まりで、同社は現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "東京・大阪両証券取引所市場第一部銘柄に指定",
+      "description": "東京・大阪両証券取引所市場第一部銘柄に指定されました。",
+      "significance": "上場市場における位置づけの節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "大同特殊鋼株式会社が筆頭株主となる",
+      "description": "大同特殊鋼株式会社が当社の筆頭株主となり、同社のグループに入りました。",
+      "significance": "現在の親会社との関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "耐素龍精密濾機(常熟)有限公司を設立",
+      "description": "中国江蘇省に耐素龍精密濾機（常熟）有限公司を設立しました。",
+      "significance": "金属繊維の中国生産拠点で、同社は現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "大同ステンレス株式会社を吸収合併",
+      "description": "大同ステンレス株式会社を吸収合併しました。",
+      "significance": "大同特殊鋼グループ内での事業の取り込みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "韓国ナスロン株式会社を設立",
+      "description": "韓国ソウル市に韓国ナスロン株式会社を設立しました。",
+      "significance": "金属繊維の韓国での販売支援拠点で、同社は現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "日精テクノ株式会社を設立",
+      "description": "大阪府枚方市に日精テクノ株式会社を設立しました。",
+      "significance": "ステンレス鋼線の加工を担う現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "daido-steel",
+      "relationship": "parent",
+      "description": "親会社です。特殊鋼鋼材等の製造・販売を行い、2026年3月31日現在、当社の議決権の50.63％を保有しています。当社と連結子会社への原材料の主要供給元でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "nhk-spring",
+      "relationship": "customer",
+      "description": "自動車、船舶関連等の事業向けに当社のステンレス鋼線の販売を行っている顧客です。同社のグループ会社とも取引を行っており、当社は継続的取引関係の維持・強化のため同社の株式9,500株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okaya-and-co",
+      "relationship": "customer",
+      "description": "鉄鋼等を中心に事業展開している商社で、当社のステンレス鋼線等の販売取引を行っている顧客です。当社は継続的関係の維持・強化のため同社の株式1,600株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nadex",
+      "relationship": "customer",
+      "description": "溶接機器に関わる事業向けに当社のステンレス鋼線の販売を行っている顧客です。当社は継続的取引関係の維持・強化のため同社の株式12,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +467,59 @@
       "publisher": "日本精線株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDZS.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YDZS",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 株式分割：2024年4月1日付で普通株式1株につき5株の割合で株式分割を行った。株式数に関する指標は、第92期（2022年3月期）の期首に当該分割が行われたと仮定して算定されている旨が、連結経営指標等の注記に印字されている。登録は当期有報の印字どおりの数値に基づく。",
+      "businessModel: 連結子会社の大同不銹鋼(大連)有限公司は、2025年11月に解散を決議し、2025年11月19日付で解散しており、現在は清算手続き中です（事業の内容・関係会社の状況に印字）。本登録は2026年3月31日現在のグループ構成（当社、親会社、連結子会社5社。同社を含む）で行います。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年4月から最終年度を2027年3月期とする中期経営計画（ＮＳＧ２６）を進め、「サステナビリティ成長分野へ高機能・独自製品の開発・拡販と企業価値向上により持続的成長を図る」をスローガンに掲げています。基本方針は、サステナビリティ成長分野に向けた高機能・独自製品の開発深化、生産基盤強化と生産性向上、水素回収技術の深化、ＥＳＧ経営の4つです。高機能・独自製品として、極細線や超精密ガスフィルターの開発深化などを挙げています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "計画の柱は、既存のステンレス鋼線と金属繊維で独自技術による高機能製品を深めながら、生産基盤の自動化や海外拠点の機能拡大と、水素回収技術のような将来分野の開発を並行して進める構成になっています。",
+        "basis": "経営方針における中期経営計画（ＮＳＧ２６）の基本方針と進捗状況の記載、MD&Aにおける事業部門別の売上状況の記載",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、より細く、より強く、より精密な方向に応える伸線加工と金属繊維のコア技術にあります。線径100μｍ未満の極細線や、ステンレス鋼繊維であるナスロン®、それをもとにした超精密ガスフィルター（NASclean®）のように、独自技術で実現した製品群を持ち、日本・タイ・中国・韓国の拠点で製造と販売支援を行っています。",
+        "basis": "経営方針における高機能・独自製品の説明、事業の内容における地域別セグメントと製品の位置づけの記載",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上構成は地域別では日本が41,325百万円と大半を占め、タイが3,933百万円、中国・韓国が1,342百万円です。製品別ではステンレス鋼線が37,719百万円、金属繊維が8,881百万円です。2026年3月期は金属繊維が堅調に推移した一方、太陽光発電パネルの製造プロセスで使われるステンレス極細線の需要が低迷したとされています。主要な顧客として大同興業株式会社が開示されています。",
+        "basis": "セグメント情報等におけるセグメント別外部売上高、関連情報（製品及びサービスごとの情報、主要な顧客ごとの情報）の記載、MD&Aにおける経営成績の概要の記載",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,131 @@
   "name": "サイゼリヤ",
   "officialName": "株式会社サイゼリヤ",
   "nameEn": "SAIZERIYA CO.,LTD.",
-  "description": null,
+  "shortNameEn": "SAIZERIYA",
+  "description": "イタリアンレストラン『サイゼリヤ』を日本とアジアで運営し、店舗で使う食材を自社工場で製造する外食チェーンです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "japan",
+      "name": "日本",
+      "description": "イタリアンワイン＆カフェレストラン『サイゼリヤ』を全国に1,053店舗運営する事業です（2025年8月31日現在）。国内の5工場では、店舗で使用する食材の製造と物流を行っています。2025年8月期の外部顧客への売上高は172,908百万円で、報告セグメントのうち最大でした。",
+      "products": [
+        "イタリアの家庭料理（レストラン料理）"
+      ],
+      "customers": [
+        "日本の一般消費者"
+      ],
+      "children": [
+        {
+          "id": "japan-restaurants",
+          "name": "レストラン運営",
+          "description": "『サイゼリヤ』の店舗を運営し、イタリアの家庭料理を提供します。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "japan-food-production",
+          "name": "食材の製造・物流",
+          "description": "吉川・神奈川・福島・兵庫・千葉の国内5工場で、店舗で使用する食材の製造と物流を行います。金額は区分ごとに独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "asia",
+      "name": "アジア",
+      "description": "中国・台湾・香港・シンガポール・ベトナムでレストラン『サイゼリヤ』を運営する事業です。2025年8月末現在の店舗数は、上海207店舗、広州225店舗、北京81店舗、香港71店舗、台北24店舗、シンガポール38店舗、ベトナム1店舗です。広州ではグループで使用する食材の製造も行っています。2025年8月期の外部顧客への売上高は83,802百万円でした。",
+      "products": [
+        "イタリアの家庭料理（レストラン料理）"
+      ],
+      "customers": [
+        "アジア各地の一般消費者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "australia",
+      "name": "豪州",
+      "description": "オーストラリアの子会社SAIZERIYA AUSTRALIA PTY.LTD.が、肉製品・ソース類など、グループの店舗で使用する食材を製造する事業です。主にグループ向けの製造で、外部顧客への売上高はごくわずかです。2025年6月には、オーストラリアでレストランを開くための子会社も設立されました。",
+      "products": [
+        "肉製品・ソース類などの食材"
+      ],
+      "customers": [
+        "グループの店舗"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "レストラン『サイゼリヤ』でイタリアの家庭料理を手頃な価格で提供し、食材の製造から物流、店舗運営までをグループで一貫して行い、料理の代金を受け取っています。",
+    "products": [
+      "イタリアの家庭料理（レストラン料理）",
+      "店舗向け食材（肉製品・ソース類など）"
+    ],
+    "customers": [
+      "レストランを利用する一般消費者"
+    ],
+    "revenueSources": [
+      "レストランでの料理・飲料の販売による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "サイゼリヤグループ",
+        "description": "当社と子会社12社で構成されています（2025年8月31日現在）。連結の従業員数は4,868人で、本社は埼玉県吉川市にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "レストラン運営と食材の製造",
+        "description": "イタリアの家庭料理を提供するレストラン『サイゼリヤ』を運営しています。店舗で使用する食材は、国内の5工場とオーストラリア・広州の工場で製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "店舗を利用する一般消費者",
+        "description": "顧客はレストランを利用する一般消費者です。日本に1,053店舗、アジア各地にも店舗を持ち、売上高の10％以上を占める特定の販売先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "料理の販売で得る収入",
+        "description": "収入源はレストランでの料理などの販売です。2025年8月期の売上高は256,714百万円で、前期に比べ14.3％増えました。地域別では日本が172,908百万円、アジアが83,802百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益の確保",
+        "description": "収入から、食材の仕入や製造、店舗の運営などの費用を差し引いた残りが利益になります。2025年8月期の親会社株主に帰属する当期純利益は11,164百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年8月期",
@@ -27,7 +143,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 83569000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4134,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +163,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 94523000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3939,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第50期（2022年8月期）の期首から適用しており、第50期以降の主要な経営指標等は当該会計基準等を適用した後の数値です。"
     },
     {
       "fiscalYear": "2023年8月期",
@@ -67,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 99031000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3980,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 110803000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4504,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 117157000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4868,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +232,158 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1967,
+      "title": "個人店舗「レストラン サイゼリヤ」を創業",
+      "description": "創業者の正垣泰彦が、個人店舗「レストラン サイゼリヤ」の経営を始めました。",
+      "significance": "サイゼリヤの起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "株式会社マリアーヌ商会を設立",
+      "description": "将来の多店舗化を視野に入れ、千葉県市川市で株式会社マリアーヌ商会を設立して組織を法人化し、イタリアンレストラン「サイゼリヤ」の経営を開始しました。",
+      "significance": "会社としての出発点です。資本金の金額は文章規則により書いていません。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "商号を株式会社マリアーノに変更",
+      "description": "商号を株式会社マリアーノに変更しました。この年には駅ビル第1号店も開店しています。",
+      "significance": "現在の社名に至る途中の商号変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "商号を株式会社サイゼリヤに変更",
+      "description": "商号を株式会社サイゼリヤに変更しました。この年には50店舗目も開店しています。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "吉川工場を建設し本社を移転",
+      "description": "埼玉県吉川市に吉川工場を建設し、本社を同地に移転しました。",
+      "significance": "食材製造と本社機能の拠点が吉川市に定まりました。現在の本店所在地です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "東京証券取引所市場第2部に上場",
+      "description": "東京証券取引所市場第2部へ上場しました。",
+      "significance": "取引所への上場を果たしました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東証第1部に指定、豪州に製造子会社を設立",
+      "description": "東京証券取引所市場第1部に指定されました。また、オーストラリアに製造子会社SAIZERIYA AUSTRALIA PTY.LTD.を設立しました。",
+      "significance": "海外の食材製造拠点を持つようになりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "上海に子会社を設立し中国に進出",
+      "description": "上海に上海薩莉亜餐飲有限公司を設立しました。",
+      "significance": "海外でのレストラン展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "台湾・香港・シンガポールに子会社を設立",
+      "description": "台湾に台湾薩莉亜餐飲股份有限公司、香港にMARIANO CO.,LIMITED（現、HONG KONG SAIZERIYA CO.LIMITED）、シンガポールにSINGAPORE SAIZERIYA PTE.LTD.を設立しました。",
+      "significance": "アジアでの店舗網が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "国内1,000店舗目を開店",
+      "description": "大阪府大阪市に1,000店舗目となる「フォレオ大阪ドームシティ店」を開店しました。",
+      "significance": "国内店舗数が1,000店規模に達しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "国内外の店舗数が1,500店舗に到達",
+      "description": "国内外の店舗数が1,500店舗に達しました。",
+      "significance": "国内外を合わせた店舗網の規模を示す節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "海外店舗数が500店舗を達成",
+      "description": "海外の店舗数が500店舗に達しました。",
+      "significance": "海外展開が500店規模になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ベトナムに進出",
+      "description": "ベトナムにVIETNAM SAIZERIYA CO., LTD.を設立し、1号店を開店しました。同じ年には、オーストラリアのレストラン子会社、武漢と広東省の子会社も設立されています。",
+      "significance": "東南アジアでの新しい進出国が加わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +392,47 @@
       "publisher": "株式会社サイゼリヤ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X5Z0.pdf",
       "publishedAt": "2025-11-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100X5Z0",
+      "asOf": "2025-08-31",
+      "accessedAt": "2026-11-08"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「世界中の人々においしくて健康的なイタリアの家庭料理を、店舗で便利に楽しく食べられるようにすること」をロマン（目指す姿）とし、「世の中の人にとってなくてはならない店舗を10,000店つくること」をビジョン（目標）に掲げています。対処すべき課題として、生産・物流・購買のグローバルな再構築、コミッサリー機能による店舗作業の削減、DXの推進、マレーシアやオーストラリアに続く海外の新規進出国の調査などを挙げています。",
+        "asOf": "2025-11-25",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "国内の5工場に加え、オーストラリアと広州にも食材の製造拠点を持ち、原料の調達から輸送、倉庫、店舗までを一貫して管理する体制を取っていることが、手頃な価格と品質の両立を支える基盤になっています。",
+        "basis": "【事業の内容】に国内5工場での食材製造と物流、豪州・広州の子会社での食材製造が印字され、【経営方針、経営環境及び対処すべき課題等】の対処すべき課題に「原料調達から、発注・輸送・受入・品質管理・倉庫・店舗までを一貫して管理し、安定供給と原価管理ができる体制づくり」と印字されている。",
+        "asOf": "2025-11-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の中心は日本で、アジアがこれに続きます。中国を中心にアジアの店舗数が増え、2025年にはベトナムにも進出するなど、海外の店舗網を広げています。",
+        "basis": "セグメント注記に2025年8月期の外部顧客への売上高（日本172,908百万円、アジア83,802百万円、連結売上高256,714百万円）が印字され、【事業の内容】にアジア各地の店舗数が印字されている。",
+        "asOf": "2025-11-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年8月期",
     "asOf": "2025-08-31",

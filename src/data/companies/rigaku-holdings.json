@@ -4,15 +4,116 @@
   "name": "リガク・ホールディングス",
   "officialName": "リガク・ホールディングス株式会社",
   "nameEn": "Rigaku Holdings Corporation",
-  "description": null,
+  "shortNameEn": "Rigaku Holdings",
+  "description": "Ｘ線技術を中心とした分析・計測機器を手がける理科学機器メーカーグループの持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "scientific-instruments",
+      "name": "理科学機器の製造・販売",
+      "description": "Ｘ線技術を中心とした分析・計測機器の開発、製造、販売、サービスを行う単一セグメントの事業です。当社と連結子会社18社でグループを構成し、中核の事業会社は株式会社リガクです。2025年12月期の売上収益は94,193百万円でした。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "multipurpose-analytical",
+          "name": "多目的分析機器",
+          "description": "Ｘ線回折装置、蛍光Ｘ線分析装置、Ｘ線イメージング機器（Ｘ線CT）等を開発・販売し、材料の研究開発や生産プロセスにおける品質管理、医薬品の研究開発等に使われています。2025年12月期の外部顧客への売上収益は40,413百万円でした。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "semiconductor-process-control",
+          "name": "半導体プロセス・コントロール機器",
+          "description": "蛍光Ｘ線、Ｘ線反射率、Ｘ線回折等の手法を組み合わせ、半導体ウェーハの汚染検査、薄膜評価、膜厚・密度測定等を行う半導体計測（メトロロジー）機器を開発・販売しています。2025年12月期の外部顧客への売上収益は27,834百万円でした。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "components-service",
+          "name": "部品・サービス",
+          "description": "販売した製品への消耗品・交換部品の供給、修理・点検、予防保守契約等のアフター・サービスと、Ｘ線発生装置、光学素子、Ｘ線検出器等の要素部品の外販、熱分析装置等のその他の分析機器の販売を行っています。2025年12月期の外部顧客への売上収益は25,945百万円でした。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "Ｘ線発生装置や検出器等の要素部品を自社で開発・生産し、それらを搭載した分析・計測機器を大学・研究機関や半導体メーカー等へ販売するとともに、保守等のサービスを継続的に提供しています。",
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "全自動多目的Ｘ線回折装置 SmartLab",
+      "蛍光Ｘ線分析装置 ZSX Primus IV",
+      "工業用Ｘ線CT CT Lab HX",
+      "半導体プロセス・コントロール機器 XTRAIAシリーズ",
+      "熱分析装置 TG-DTA 8122",
+      "要素部品（Ｘ線発生装置・光学素子・Ｘ線検出器・EUV多層膜ミラー等）"
+    ],
+    "customers": [
+      "大学・研究機関等のアカデミア",
+      "企業の研究開発・品質管理・製造部門",
+      "半導体メーカー・半導体製造装置メーカー"
+    ],
+    "revenueSources": [
+      "分析・計測機器の販売",
+      "アフター・サービス（消耗品・交換部品の供給、修理・点検、予防保守契約等）",
+      "要素部品の外販"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "リガクグループ",
+        "description": "持株会社の当社と連結子会社18社で構成され、連結従業員数は1,971人（2025年12月31日現在）です。中核の事業会社は株式会社リガクです。"
+      },
+      {
+        "kind": "offering",
+        "title": "Ｘ線分析・計測機器の開発・製造",
+        "description": "Ｘ線発生装置、光学素子、Ｘ線検出器、解析ソフトウェア等の要素技術を自社で研究開発し、要素部品として生産したうえで、Ｘ線回折装置や半導体計測機器等の分析・計測機器を製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "研究機関・産業分野への販売",
+        "description": "大学や研究機関、企業の研究開発・品質管理・製造部門、半導体メーカー等に、地域に応じて直接または代理店を通じて販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "機器販売とサービスによる売上収益",
+        "description": "2025年12月期の売上収益は94,193百万円で、多目的分析機器40,413百万円、半導体プロセス・コントロール機器27,834百万円、部品・サービス25,945百万円の3つの製品カテゴリーから構成されています。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期利益",
+        "description": "2025年12月期の親会社の所有者に帰属する当期利益は11,401百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年12月期",
@@ -27,7 +128,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 53049000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 1575,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -47,12 +148,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 65349000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 1738,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "第3期（2023年12月期）よりIFRS会計基準による連結財務諸表を作成している。第2期（2022年12月期）の連結経営指標等も、IFRS会計基準に基づいてあわせて記載されている。"
     },
     {
       "fiscalYear": "2024年12月期",
@@ -67,7 +169,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 81769000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 1867,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -87,7 +189,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 88396000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 1971,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -95,7 +197,568 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1951,
+      "title": "理学電機の設立",
+      "description": "1951年12月、東京都千代田区有楽町に、国産のＸ線装置の製造・販売を事業目的とした理学電機株式会社（現・株式会社リガク）を設立しました。",
+      "significance": "グループの事業の起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "回転対陰極型Ｘ線発生装置の開発",
+      "description": "1952年、回転対陰極型Ｘ線発生装置を開発しました。",
+      "significance": "創業初期からＸ線発生装置の技術開発に取り組んできました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "自動記録式Ｘ線回折装置の開発",
+      "description": "1954年、自動記録式Ｘ線回折装置を開発しました。",
+      "significance": "主力となるＸ線回折技術の製品化が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "自動記録式熱分析装置の開発",
+      "description": "1957年、自動記録式熱分析装置を開発しました。",
+      "significance": "熱分析分野への展開が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "拝島工場の新設",
+      "description": "1960年2月、東京都昭島市松原町に拝島工場を新設しました。",
+      "significance": "現在の本社所在地である昭島市に生産拠点を置きました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "理学電機工業の設立",
+      "description": "1961年5月、大阪府高槻市赤大路町に理学電機工業株式会社（現・株式会社リガク）を設立しました。",
+      "significance": "関西に製造拠点を設けました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "米国営業所の設立",
+      "description": "1971年10月、米国マサチューセッツ州に理学電機株式会社の営業所であるRigaku USA（現・Rigaku Americas Holding, Inc.）を設立しました。",
+      "significance": "海外展開の起点となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "Rigaku USAの支店化",
+      "description": "1972年3月、Rigaku USAを支店化しました。",
+      "significance": "米国での事業体制を整えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "Rigaku USAの法人化",
+      "description": "1972年7月、Rigaku USAをRigaku USA, Inc.（現・Rigaku Americas Holding, Inc.）として法人化しました。",
+      "significance": "米国事業を現地法人として運営する体制になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "理学流通サービスセンターの設立",
+      "description": "1975年7月、東京都西多摩郡羽村町に株式会社理学流通サービスセンター（現・理学ロジスティクス株式会社）を設立しました。",
+      "significance": "精密機器の梱包・運送を担う子会社が発足しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "日本インスツルメンツの設立",
+      "description": "1978年6月、東京都文京区本郷に日本インスツルメンツ株式会社を設立しました。",
+      "significance": "水銀分析計の事業会社がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "超強力Ｘ線発生装置の開発",
+      "description": "1978年、超強力Ｘ線発生装置（RU-1500）を開発しました。",
+      "significance": "Ｘ線発生装置の高出力化を進めました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "理学瑞穂製作所の設立",
+      "description": "1980年5月、東京都西多摩郡瑞穂町に株式会社理学瑞穂製作所（現・株式会社リガク）を設立しました。",
+      "significance": "製造を担う子会社を設けました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "理学サービスの設立",
+      "description": "1983年7月、大阪府高槻市赤大路町に理学サービス株式会社（現・株式会社リガク）を設立しました。",
+      "significance": "サービス体制を担う会社が発足しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "理学瑞穂製作所の移転",
+      "description": "1985年4月、株式会社理学瑞穂製作所（現・株式会社リガク）を東京都武蔵村山市伊奈平に移転しました。",
+      "significance": "製造拠点の移転を行いました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "株式会社リガク（旧リガク）の設立",
+      "description": "1986年9月、東京都昭島市松原町に株式会社リガク（旧・リガク、現・株式会社リガク）を設立しました。",
+      "significance": "昭島市に新たな事業会社を設けました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "理学メカトロニクスの設立",
+      "description": "1989年2月、東京都昭島市松原町に理学メカトロニクス株式会社（現・株式会社リガク）を設立しました。",
+      "significance": "昭島市の拠点に製造・技術の会社が加わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "須玉工場の新設",
+      "description": "1990年10月、山梨県北杜市須玉町に須玉工場を新設しました。",
+      "significance": "後の山梨工場につながる生産拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "Ｘ線研究所の新設",
+      "description": "1992年4月、東京都昭島市松原町に株式会社リガクＸ線研究所を新設しました。",
+      "significance": "Ｘ線技術の研究開発拠点を設けました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "Molecular Structure Corporationの買収",
+      "description": "1996年4月、米国テキサス州のMolecular Structure Corporationを買収しました。",
+      "significance": "単結晶構造解析の事業を米国で取り込みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "Osmicの買収",
+      "description": "2000年3月、Osmic, Inc.（現・Rigaku Americas Holding, Inc.）を買収しました。",
+      "significance": "Ｘ線光学系の技術を持つ会社を取り込みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "Rigaku/MSCへの名称変更",
+      "description": "2001年3月、Rigaku USA Inc.がMolecular Structure Corporationを統合し、Rigaku/MSC, Inc.（現・Rigaku Americas Holding, Inc.）に名称変更しました。",
+      "significance": "米国の事業会社を統合しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "株式会社リガクへの統合",
+      "description": "2004年4月、理学電機株式会社（現・株式会社リガク）が株式会社リガク（旧・リガク）を統合し、株式会社リガクへ名称変更しました。",
+      "significance": "事業会社が株式会社リガクに一本化されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "Osmicの名称変更",
+      "description": "2006年3月、Osmic, Inc.がRigaku Innovative Technologies, Inc.（現・Rigaku Americas Holding, Inc.）へ名称変更しました。",
+      "significance": "買収した会社の名称を改めました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "Rigaku Innovative Technologies Europeの設立",
+      "description": "2008年5月、チェコ共和国プラハ市にRigaku Innovative Technologies Europe s.r.o.を設立しました。",
+      "significance": "欧州に先端技術の開発・製造拠点を設けました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "理学電機工業の統合",
+      "description": "2008年10月、株式会社リガクが理学電機工業株式会社を統合しました。",
+      "significance": "国内の事業会社の統合が進みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "理学電企儀器（北京）の設立",
+      "description": "2009年3月、中国北京市に理学電企儀器（北京）有限公司を設立しました。",
+      "significance": "中国での販売・サービスの拠点が発足しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "Applied Rigaku Technologiesの設立",
+      "description": "2009年4月、米国テキサス州にApplied Rigaku Technologies, Inc.（現・Rigaku Americas Holding, Inc.）を設立しました。",
+      "significance": "米国に新たな事業会社を設けました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "リガク山梨への移転・名称変更",
+      "description": "2009年4月、株式会社理学瑞穂製作所（現・株式会社リガク）が株式会社リガク山梨工場内に移転し、株式会社リガク山梨に名称変更しました。",
+      "significance": "山梨の生産拠点への集約が進みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "Newton Scientificの買収",
+      "description": "2010年2月、米国のNewton Scientific Inc.（現・Rigaku Americas Holding, Inc.）を買収しました。",
+      "significance": "米国の技術会社を取り込みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "Rigaku Asia and Pacificの設立",
+      "description": "2010年3月、中国香港にRigaku Asia and Pacific, Ltd.（現・Rigaku Portable Devices Asia Limited）を設立しました。",
+      "significance": "アジア太平洋地域の拠点が発足しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "Rigaku Europe SEの設立",
+      "description": "2010年5月、ドイツ・ベルリンにRigaku Europe SEを設立しました。",
+      "significance": "欧州の販売・サービスの拠点が発足しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "Rigaku Raman Technologiesの設立",
+      "description": "2011年10月、米国カリフォルニア州にRigaku Raman Technologies, Inc.（現・Rigaku Americas Holding, Inc.）を設立しました。",
+      "significance": "携帯型ラマン分光分析の事業を取り込みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "Rigaku Latin Americaの設立",
+      "description": "2013年6月、ブラジル共和国サンパウロ市にRigaku Latin America Ltda.を設立しました。",
+      "significance": "中南米に販売拠点を設けました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "Rigaku Americas Holdings Companyの設立",
+      "description": "2014年1月、米国テキサス州にRigaku Americas Holdings Company, Inc.（現・Rigaku Americas Holding, Inc.）を設立しました。",
+      "significance": "米州の統括会社が発足しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "Rigaku Polskaの設立",
+      "description": "2015年4月、ポーランド共和国ヴロツワフ市にRigaku Polska Sp. z o.o.を設立しました。",
+      "significance": "単結晶Ｘ線構造解析装置の製造・販売拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "Rigaku Asia Pacificの設立",
+      "description": "2016年6月、シンガポールにRigaku Asia Pacific PTE Ltd.を設立しました。",
+      "significance": "アジア太平洋地域の統括・管理の拠点が発足しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "XwinSysの買収",
+      "description": "2019年7月、イスラエルのXwinSys Technology Development Ltd.（現・Rigaku Semiconductor Instruments Ltd.）を買収しました。",
+      "significance": "半導体Ｘ線計測の事業を取り込みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "当社の設立",
+      "description": "2020年12月、Atom Investment, L.P.が東京都千代田区丸の内にアトム・ホールディングス株式会社（現・当社）を設立しました。",
+      "significance": "株式会社リガクの買収を目的とする持株会社として発足しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "リガク・ホールディングスへの名称変更",
+      "description": "2021年3月、アトム・ホールディングス株式会社（現・当社）が株式会社リガクの株式の過半を取得し、リガク・ホールディングス株式会社へ名称変更しました。",
+      "significance": "持株会社体制への移行が進みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社リガクの完全子会社化",
+      "description": "2021年4月、株式交換により、当社が株式会社リガクを完全子会社化しました。",
+      "significance": "現在のグループ体制が成立しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "本社の移転",
+      "description": "2021年6月、本社を東京都昭島市松原町に移転しました。",
+      "significance": "本社を事業会社と同じ昭島市に置きました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "MILabsの買収",
+      "description": "2021年8月、株式会社リガクがオランダのMILabs B.V.を買収しました。",
+      "significance": "前臨床イメージング装置の事業を取り込みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "理学メカトロニクスと理学サービスの統合",
+      "description": "2022年1月、株式会社リガクが理学メカトロニクス株式会社（現・株式会社リガク）と理学サービス株式会社（現・株式会社リガク）を統合しました。",
+      "significance": "国内子会社の統合が進みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "Rigaku UKの設立",
+      "description": "2022年4月、Rigaku Europe SEが英国マーシーサイド州にRigaku UK, Ltd.を設立しました。",
+      "significance": "英国での販売・サービスの拠点が発足しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "リガク山梨の統合",
+      "description": "2022年7月、株式会社リガクが株式会社リガク山梨（現・株式会社リガク）を統合しました。",
+      "significance": "山梨の製造子会社を事業会社に統合しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "Rigaku Franceの設立",
+      "description": "2023年1月、Rigaku Europe SEが仏国ストラスブール市にRigaku France S.A.R.Lを設立しました。",
+      "significance": "フランスでの販売・サービスの拠点が発足しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "Rigaku Latin Americaの閉鎖",
+      "description": "2023年4月、Rigaku Latin America Ltda.を閉鎖しました。",
+      "significance": "中南米の営業体制を見直しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "理学電企（上海）の設立",
+      "description": "2023年8月、理学電企儀器（北京）有限公司が中国上海市に理学電企（上海）儀器有限公司を設立しました。",
+      "significance": "中国の販売・サービス拠点が増えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "Rigaku do Brasilの設立",
+      "description": "2023年9月、Rigaku Americas Corporation（現・Rigaku Americas Holding, Inc.）がブラジル連邦共和国サンパウロ市にRigaku do Brasil Ltda.を設立しました。",
+      "significance": "中南米の営業を担う会社が発足しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "Rigaku Indiaの設立",
+      "description": "2023年9月、Rigaku Asia Pacific PTE Ltd.がインド共和国ムンバイ市にRigaku India Private Ltd.を設立しました。",
+      "significance": "インドでの営業・サービスの拠点が発足しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "米国子会社の吸収合併",
+      "description": "2023年12月、Rigaku Americas Corporation、Rigaku Innovative Technologies, Inc.、Applied Rigaku Technologies, Inc.、Newton Scientific, Inc.及びRigaku Analytical Devices, Inc.がRigaku Americas Holding, Inc.に吸収合併されました。",
+      "significance": "米州の事業会社が1社に集約されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "理学科技台灣分公司の設立",
+      "description": "2024年1月、株式会社リガクが台湾に支店として理学科技台灣分公司を設立しました。",
+      "significance": "台湾での事業基盤を設けました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "Rigaku do Brasilへの中南米営業部門の移管",
+      "description": "2024年3月、Rigaku Americas Holding, Inc.がRigaku do Brasil Ltda.への出資を完了し、中南米営業部門を移管しました。",
+      "significance": "中南米の営業体制が整いました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "東京証券取引所プライム市場への上場",
+      "description": "2024年10月、東京証券取引所プライム市場に株式を上場しました。",
+      "significance": "上場企業としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "理学股分有限公司の設立",
+      "description": "2025年5月、台湾新竹県に理学股分有限公司を設立しました。",
+      "significance": "台湾での販売・サービスの現地法人です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -104,13 +767,50 @@
       "publisher": "リガク・ホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XTB1.pdf",
       "publishedAt": "2026-03-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100XTB1",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessStructure: 2024年7月11日付で、普通株式1株につき200株の割合で株式分割を実施した。株式数に関する経営指標は、第2期（2022年12月期）の期首に当該株式分割が行われたと仮定して算定されている。本登録は2025年12月31日現在の構成と数値に基づく。"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念『科学技術の進歩を通して人類社会の発展に貢献する』のもと、2022年に制定したMission, Vision and Valuesに則り、『視るチカラで、世界を変える』の実践と、目指す姿『A One-of-a-Kind Global Technology Company』の実現を掲げています。中核の成長戦略は『Lab to Fab 戦略』で、大学・研究機関や産業分野の研究開発部門（Lab）との協働から生まれた分析技術・手法を、生産プロセス（Fab）の標準技術として導入し展開します。事業ポートフォリオは多目的分析機器、半導体プロセス・コントロール機器、部品・サービスの3カテゴリーに経営資源を集中し、海外市場での成長の加速と、山梨工場の生産能力を2022年比で倍増させる増強投資（2025年5月に製造棟が竣工）等の基盤増強に取り組んでいます。",
+        "asOf": "2026-03-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、Ｘ線発生装置、光学素子、Ｘ線検出器、解析ソフトウェアといった、Ｘ線分析・計測機器の能力を左右する要素技術を自社で研究開発し、要素部品として自社生産する内製力です。グループ内にはPhD学位保持者を含む約300名のＸ線技術者がおり、世界各国の著名な研究機関ともパートナーシップを構築しています。要素部品は自社製品への搭載に加えて外販もしており、先端多層膜ミラーは半導体製造のためのEUVマスク検査機器に不可欠な技術パーツとして半導体製造機器メーカーに供給されています。多目的分析機器では、国内外に1万を超える製品ユーザーの顧客基盤を築いています。",
+        "basis": "【事業の内容】の要素技術と事業の説明、【経営方針、経営環境及び対処すべき課題等】の当社グループの強みに基づく。",
+        "asOf": "2026-03-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "事業は『理科学機器の製造・販売』の単一セグメントで、製品カテゴリー別の外部顧客への売上収益（2025年12月期）は、多目的分析機器40,413百万円、半導体プロセス・コントロール機器27,834百万円、部品・サービス25,945百万円です。地域別（グループ会社の所在地を基礎とした区分）では日本59,726百万円、米国21,343百万円、欧州11,294百万円、アジア1,828百万円です。主力のＸ線回折機器（XRD）では、2024年に国内で76％の第1位の市場シェア、グローバルで26％の第2位のシェアを持ち、半導体Ｘ線計測機器では2024年にグローバルで38％のシェアを持つマーケット・リーダーです。売上収益の10％以上を占める主要な顧客はいません。",
+        "basis": "セグメント情報の製品及びサービスに関する情報と地域に関する情報、主要な顧客に関する情報、【経営方針、経営環境及び対処すべき課題等】における市場における地位の記載に基づく。",
+        "asOf": "2026-03-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

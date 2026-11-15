@@ -4,15 +4,113 @@
   "name": "若築建設",
   "officialName": "若築建設株式会社",
   "nameEn": "WAKACHIKU CONSTRUCTION CO.,LTD.",
-  "description": null,
+  "shortNameEn": "WAKACHIKU CONSTRUCTION",
+  "description": "海上土木に強みを持つ総合建設会社で、陸上土木・建築工事のほか不動産事業も手がけています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "wakachiku-construction-group",
+      "name": "若築建設グループの事業",
+      "description": "当社と子会社9社、関連会社1社で構成されるグループです。海上土木・陸上土木・建築の建設事業を中核とし、不動産事業も営んでいます。登記上の本店は北九州市若松区にあり、本社機能は東京都目黒区にあります。連結の従業員数は900人です（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "construction",
+          "name": "建設事業",
+          "description": "主に国内で海上土木工事、陸上土木工事、建築工事を行う事業です。連結子会社の新総建設株式会社、大丸防音株式会社と他4社が施工協力を行い、当社は工事の一部を受注、発注しています。2026年3月期の外部顧客への売上高は102,853百万円で、グループ最大の事業です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-estate",
+          "name": "不動産事業",
+          "description": "国内で不動産の販売及び賃貸を行う事業です。連結子会社の株式会社都市空間も不動産事業を営み、当社は同社に不動産の一部の管理を委託しています。2026年3月期の外部顧客への売上高は479百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other",
+          "name": "その他",
+          "description": "報告セグメントに含まれない事業セグメントで、主な内容は船舶監理業務です。2026年3月期の外部顧客への売上高は1,415百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "建設事業で海上土木・陸上土木・建築工事を請け負い、不動産事業で不動産の販売と賃貸を行う事業モデルです。",
+    "products": [
+      "海上土木工事（港湾・護岸・浚渫など）",
+      "陸上土木工事",
+      "建築工事",
+      "不動産の販売・賃貸"
+    ],
+    "customers": [
+      "国土交通省や防衛省などの官公庁",
+      "民間の事業会社などの工事発注者",
+      "不動産の購入者・賃借人"
+    ],
+    "revenueSources": [
+      "建設工事の請負による売上高",
+      "不動産の販売・賃貸による売上高",
+      "船舶監理業務による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "若築建設と子会社9社・関連会社1社のグループ",
+        "description": "若築建設株式会社は、北九州市若松区に登記上の本店を置き、本社機能を東京都目黒区に置く総合建設会社です。1890年に若松築港会社として設立され、2026年3月に株式会社麻生が親会社となりました。連結の従業員数は900人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "海上土木・陸上土木・建築工事と不動産事業を展開",
+        "description": "建設事業では、港湾の護岸や浚渫などの海上土木工事、陸上土木工事、建築工事を行っています。不動産事業では、国内で不動産の販売と賃貸を行っています。船舶監理業務も手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "顧客は官公庁と民間の工事発注者",
+        "description": "建設工事は、国土交通省や防衛省をはじめとする官公庁と、民間の事業会社などから受注しています。不動産は、購入者への販売と賃借人への賃貸を行っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は104,748百万円",
+        "description": "2026年3月期の連結売上高は104,748百万円で、前期から21.1％増えました。セグメント別の外部顧客への売上高は、建設事業が102,853百万円、不動産事業が479百万円、その他（船舶監理業務）が1,415百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は4,367百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は4,367百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +125,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 38355000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 839,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +145,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 42694000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 854,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +165,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 47384000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 873,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +185,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 49858000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 854,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +205,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 54759000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 900,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +213,407 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1890,
+      "title": "若松築港会社を設立",
+      "description": "北九州若松港の築造及び経営を目的として、若松築港会社として設立されました。入出港船から港銭を徴収することを認められた私営港として、若松港の経営と整備拡充を担いました。",
+      "significance": "同社の創業です。麻生グループの創業者である麻生太吉氏は、同社の発起人でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1893,
+      "title": "若松築港株式会社に改組",
+      "description": "旧商法の施行に伴い改組し、社名を若松築港株式会社に改めました。",
+      "significance": "株式会社としての出発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1902,
+      "title": "洞海北湾埋渫合資会社を合併",
+      "description": "事業目的を同じくする洞海北湾埋渫合資会社を合併しました。洞海湾沿岸に250万坪にのぼる埋立地を造成するなど、洞海湾の総合開発と北九州工業地帯の基盤づくりに力を入れました。",
+      "significance": "洞海湾開発の担い手となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1938,
+      "title": "港湾土木請負業へ転換",
+      "description": "若松港が官営港として福岡県に移管されることとなり、これを契機に港湾土木請負業に転じ、主として西日本を中心に営業を展開していきました。",
+      "significance": "港湾経営から建設業への転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "建設大臣登録を完了",
+      "description": "建設業法による建設大臣登録（イ）第2055号の登録が完了しました。",
+      "significance": "建設業者としての登録です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "東京支店を設置",
+      "description": "東京支店を設置しました。",
+      "significance": "首都圏への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "若築不動産株式会社を設立",
+      "description": "若築不動産株式会社を設立しました。2001年9月に株式会社都市空間へ商号変更し、現在の連結子会社です。",
+      "significance": "不動産事業の子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "名古屋支店を設置",
+      "description": "名古屋支店を設置しました。",
+      "significance": "中部への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "大阪支店を設置",
+      "description": "大阪支店を設置しました。",
+      "significance": "関西への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "株式を東京店頭市場に公開",
+      "description": "当社株式を東京店頭市場に公開しました。",
+      "significance": "株式公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "東京本部を設置",
+      "description": "東京本部を設置しました。",
+      "significance": "東京の統括拠点の設置です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所第二部に上場",
+      "description": "当社株式が東京証券取引所第二部に上場しました。",
+      "significance": "東証二部への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所第一部に上場",
+      "description": "当社株式が東京証券取引所第一部に上場しました。",
+      "significance": "東証一部への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "九州支店を設置",
+      "description": "北九州支店と南九州支店を統合して九州支店を設置しました。",
+      "significance": "九州の拠点統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "若築建設株式会社に商号変更",
+      "description": "社名を若築建設株式会社に改めました。",
+      "significance": "現在の社名への変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "東北支店及び千葉支店を設置",
+      "description": "東北支店及び千葉支店を設置しました。",
+      "significance": "拠点網の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "宅地建物取引業の免許を取得",
+      "description": "宅地建物取引業法による建設大臣免許（1）第456号を取得しました。以後、有効期間満了ごとに更新しています。",
+      "significance": "不動産業の免許取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "北陸支店を設置",
+      "description": "北陸支店を設置しました。",
+      "significance": "北陸への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "川田工業株式会社を吸収合併",
+      "description": "川田工業株式会社を吸収合併しました。",
+      "significance": "合併による事業拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "中国支店を設置",
+      "description": "中国支店を設置しました。",
+      "significance": "中国地方への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "建設大臣許可を受ける",
+      "description": "建設業法の改正により、建設大臣許可（特－48）第3650号の許可を受けました。以後、有効期間満了ごとに更新しています。",
+      "significance": "特定建設業の許可取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "築洋建設株式会社を設立",
+      "description": "築洋建設株式会社を設立しました。1979年1月に新総建設株式会社へ商号変更し、現在の連結子会社です。",
+      "significance": "建設事業の子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "昭和ドレッジング株式会社を吸収合併",
+      "description": "昭和ドレッジング株式会社を吸収合併しました。",
+      "significance": "浚渫事業の統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "海外へ進出",
+      "description": "スエズ運河浚渫工事を受注し、海外へ進出しました。",
+      "significance": "初の海外事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "北海道支店を設置",
+      "description": "北海道支店を設置しました。",
+      "significance": "北海道への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "横浜支店を設置",
+      "description": "横浜支店を設置しました。",
+      "significance": "拠点網の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "株式会社ヘルスエンタープライズを設立",
+      "description": "株式会社ヘルスエンタープライズを設立しました（2004年10月に清算）。",
+      "significance": "関連事業の子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "四国支店を設置",
+      "description": "四国支店を設置しました。",
+      "significance": "四国への拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "株式会社九創を分社",
+      "description": "株式会社九創を新総建設株式会社より分社しました。",
+      "significance": "グループ再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "大丸防音株式会社の経営権を取得",
+      "description": "大丸防音株式会社の経営権を取得しました。現在の連結子会社です。",
+      "significance": "防音工事の子会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "佐藤工業株式会社に資本参加",
+      "description": "佐藤工業株式会社に資本参加しました。",
+      "significance": "同業他社への資本参加です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "株式会社ヘルスエンタープライズを清算",
+      "description": "株式会社ヘルスエンタープライズを清算しました。",
+      "significance": "関連事業の整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "新総建設株式会社が株式会社九創を吸収合併",
+      "description": "新総建設株式会社が株式会社九創を吸収合併しました。",
+      "significance": "グループ再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "福岡支店を設置",
+      "description": "福岡支店を設置しました。",
+      "significance": "九州の拠点拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "佐藤工業株式会社の株式の一部を売却",
+      "description": "佐藤工業株式会社の株式の一部を売却しました。",
+      "significance": "資本参加の見直しです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "市場区分の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "株式会社麻生が親会社となる",
+      "description": "2026年2月12日に、株式会社麻生及びACVEホールディングス合同会社との間で資本業務提携契約を締結しました。ACVEホールディングス合同会社による公開買付け（2026年2月13日から3月13日まで）が成立し、2026年3月23日付で株式会社麻生が親会社となりました。議決権の被所有割合は、直接保有分とACVEホールディングス合同会社を通じた間接保有分を合わせて50.67％です。",
+      "significance": "麻生グループの一員となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "taihei-dengyo-kaisha",
+      "relationship": "major-shareholder",
+      "description": "太平電業株式会社は、当社の主要な株主です。2026年3月31日現在、同社は当社の発行済株式（自己株式を除く）の2.26％を保有しています。当社も同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "tomoe",
+      "relationship": "major-shareholder",
+      "description": "株式会社巴コーポレーションは、当社の主要な株主です。2026年3月31日現在、同社は当社の発行済株式（自己株式を除く）の1.57％を保有しています。当社は同社の株式を保有しており、同社グループとは再生可能エネルギー分野において特殊工法を共同開発しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "erex",
+      "relationship": "major-shareholder",
+      "description": "イーレックス株式会社は、当社の主要な株主です。2026年3月31日現在、同社は当社の発行済株式（自己株式を除く）の1.35％を保有しています。当社も同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +621,47 @@
       "publisher": "若築建設株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHAB.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YHAB",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "創業140周年にあたる2030年に向けた長期ビジョン『すべてのステークホルダーの期待に応えられる企業』に基づき、10年計画の第二期となる中期経営計画（2024年度-2026年度）を推進しています。基本方針は『ステークホルダーとの連携強化による持続可能性の追求』で、市場・組織・社会の3つの持続可能性を追求し、案件の大規模化・高収益化や新エネルギー分野への事業展開、生産性向上、人的資本経営、カーボンニュートラルの推進などに取り組んでいます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "北九州市若松港での創業以来130年以上にわたり、全国各地の港湾整備事業で実績を積み重ねてきました。護岸工事や浚渫工事などの海上における防災・減災分野を主力としており、株式会社麻生との資本業務提携では、法面工事や地盤改良工事など陸上における防災・減災分野に強みを持つ麻生グループ各社との間で、施工技術や工事需要の知見を共有する連携を掲げています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【重要な契約等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の連結売上高104,748百万円の内訳は、セグメント別の外部顧客への売上高で建設事業102,853百万円、不動産事業479百万円、その他（船舶監理業務）1,415百万円です。本邦の外部顧客への売上高が連結売上高の90％を超えており、事業は国内が中心です。主要な顧客は国土交通省（21,453百万円、連結売上高の20.5％）と防衛省（12,400百万円、同11.8％）で、いずれも建設事業の発注者です。連結の従業員数は900人です。",
+        "basis": "セグメント情報の外部顧客への売上高、関連情報の地域ごとの情報と主要な顧客ごとの情報、主要な経営指標等の従業員数に基づく。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,184 @@
   "name": "ヨロズ",
   "officialName": "株式会社ヨロズ",
   "nameEn": "YOROZU CORPORATION",
-  "description": null,
+  "shortNameEn": "YOROZU",
+  "description": "自動車用サスペンション部品や車体部品などをつくり、世界の自動車メーカーに届ける会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "americas",
+      "name": "米州事業",
+      "description": "米国、メキシコ、ブラジルで自動車用サスペンション部品などを製造販売しています。2026年3月期の外部顧客への売上高は87,298百万円です。",
+      "products": [
+        "サスペンション部品",
+        "ボディーメタル部品",
+        "エンジン部品",
+        "金型・設備"
+      ],
+      "customers": [
+        "日産グループをはじめとする自動車メーカー"
+      ],
+      "children": [
+        {
+          "id": "americas-auto-parts",
+          "name": "自動車部品",
+          "description": "自動車用サスペンション部品、ボディーメタル部品、エンジン部品の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "americas-molds-equipment",
+          "name": "金型・設備",
+          "description": "金型・設備の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "japan",
+      "name": "日本事業",
+      "description": "国内で自動車用サスペンション部品などを製造販売し、金型・設備も手がけています。2026年3月期の外部顧客への売上高は54,479百万円です。",
+      "products": [
+        "サスペンション部品",
+        "ボディーメタル部品",
+        "エンジン部品",
+        "金型・設備"
+      ],
+      "customers": [
+        "日産グループをはじめとする自動車メーカー"
+      ],
+      "children": [
+        {
+          "id": "japan-auto-parts",
+          "name": "自動車部品",
+          "description": "自動車用サスペンション部品、ボディーメタル部品、エンジン部品の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "japan-molds-equipment",
+          "name": "金型・設備",
+          "description": "金型・設備の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "asia",
+      "name": "アジア事業",
+      "description": "タイ、中国、インド、インドネシアで自動車用サスペンション部品などを製造販売しています。2026年3月期の外部顧客への売上高は34,551百万円です。",
+      "products": [
+        "サスペンション部品",
+        "ボディーメタル部品",
+        "エンジン部品",
+        "金型・設備"
+      ],
+      "customers": [
+        "日産グループをはじめとする自動車メーカー"
+      ],
+      "children": [
+        {
+          "id": "asia-auto-parts",
+          "name": "自動車部品",
+          "description": "自動車用サスペンション部品、ボディーメタル部品、エンジン部品の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "asia-molds-equipment",
+          "name": "金型・設備",
+          "description": "金型・設備の製造販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "自動車用サスペンション部品や車体部品などをつくり、世界の自動車メーカーに届ける会社です。",
+    "products": [
+      "サスペンション部品",
+      "ボディーメタル部品",
+      "エンジン部品",
+      "金型・設備"
+    ],
+    "customers": [
+      "日産グループ",
+      "トヨタグループ",
+      "ホンダグループ"
+    ],
+    "revenueSources": [
+      "自動車部品の販売",
+      "金型・設備の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "自動車部品の会社",
+        "description": "ヨロズは、自動車用サスペンション部品や車体部品、エンジン部品を手がける自動車部品メーカーです。"
+      },
+      {
+        "kind": "offering",
+        "title": "サスペンション部品などと金型・設備",
+        "description": "サスペンション部品、ボディーメタル部品、エンジン部品や、金型・設備を提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "世界の自動車メーカー",
+        "description": "部品は、日産グループ、トヨタグループ、ホンダグループをはじめとする自動車メーカーに届けられます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "部品と金型・設備の販売",
+        "description": "自動車部品と金型・設備の販売が売上高につながります。2026年3月期の売上高は176,330百万円で、前期比1.2％減です。"
+      },
+      {
+        "kind": "profit",
+        "title": "合理化と品質改善による収益の改善",
+        "description": "合理化活動「Success 25V」や品質改善に取り組み、収益の改善を目指します。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -115,8 +284,259 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1948,
+      "title": "萬自動車工業株式会社の設立",
+      "description": "横浜市鶴見区に、自動車整備を事業目的とする萬自動車工業株式会社を設立しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "日産重工業との取引開始",
+      "description": "ニッサン180型トラック用エキゾーストチューブの生産納入を機会に、日産重工業株式会社（現・日産自動車株式会社）と取引を開始しました。",
+      "significance": "日産グループとの取引の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "横浜市港北区への工場新設",
+      "description": "横浜市港北区に工場を新設し、操業を開始しました。翌年に本社を同地へ移転しました。",
+      "significance": "現在の本社の地に拠点を構えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "日産自動車の資本参加",
+      "description": "日産自動車株式会社が出資比率25％で資本参加しました。",
+      "significance": "日産自動車との資本関係が生まれました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "米国テネシー州への進出",
+      "description": "米国・テネシー州に日本ラヂヱーター株式会社などとの合弁会社カルソニック・ヨロズ・コーポレーションを設立しました。現・ヨロズオートモーティブテネシー社です。",
+      "significance": "海外生産の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "株式会社ヨロズへの商号変更",
+      "description": "商号を萬自動車工業株式会社から株式会社ヨロズに変更しました。",
+      "significance": "現在の社名となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "メキシコへの進出",
+      "description": "メキシコ・アグアスカリエンテス州に日産メヒカーナ社などとの合弁会社ヨロズメヒカーナ社を設立しました。",
+      "significance": "メキシコでの生産の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "株式市場への上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "東京証券取引所市場第一部銘柄への指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "上場市場が第一部となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "タイへの進出",
+      "description": "タイ・バンコク市にヨロズタイランド社を全額出資で設立しました。",
+      "significance": "タイでの生産の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "インドへの進出",
+      "description": "インド・タミル・ナドゥ州に、JBMオートシステム社との合弁会社ヨロズJBMオートモーティブタミルナドゥ社を設立しました。",
+      "significance": "インドでの生産の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "インドネシア・メキシコ・ブラジルへの進出",
+      "description": "インドネシアにヨロズオートモーティブインドネシア社、メキシコにヨロズオートモーティブグアナファト デ メヒコ社、ブラジルにヨロズオートモーティバ ド ブラジル社を設立しました。",
+      "significance": "3か国での生産体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "岐阜県への新工場の完成",
+      "description": "岐阜県輪之内町に、生産工程の100％脱炭素化を目標にした新工場が完成しました。",
+      "significance": "脱炭素化を目指す新工場が稼働しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "国内子会社5社の吸収合併",
+      "description": "株式会社庄内ヨロズ、株式会社ヨロズエンジニアリング、株式会社ヨロズ栃木、株式会社ヨロズサステナブルマニュファクチャリングセンター及び株式会社ヨロズ大分の5社を吸収合併しました。",
+      "significance": "国内の生産子会社を本体に統合しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nissan",
+      "relationship": "customer",
+      "description": "日産自動車株式会社は長年にわたる得意先です。2026年3月期の日産グループ向けの売上高は112,443百万円で、主要な顧客であるメキシコ日産自動車会社への売上高は28,170百万円、北米日産会社への売上高は22,234百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "suzuki",
+      "relationship": "customer",
+      "description": "スズキ株式会社は主要な得意先です。2026年3月31日現在、当社の株式800千株（3.88％）を所有する大株主でもあります。スズキ「エブリィ」のリアビームを市場投入しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kubota",
+      "relationship": "customer",
+      "description": "株式会社クボタは長年にわたる得意先です。1974年2月に取引を開始しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "nissan-shatai",
+      "relationship": "customer",
+      "description": "日産車体株式会社は長年にわたる得意先です。1951年4月に取引を開始しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "business-partner",
+      "description": "三井物産株式会社は、中国の合弁会社である广州萬宝井汽車部件有限公司と武漢萬宝井汽車部件有限公司を共同で設立したパートナーです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "companyId": "sumitomo-corporation",
+      "relationship": "business-partner",
+      "description": "住友商事株式会社は、米国事業展開にあたってのパートナーです。2016年9月には同社などから株式会社庄内ヨロズの株式を譲り受け、同社を100％子会社化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sojitz",
+      "relationship": "business-partner",
+      "description": "双日株式会社は、メキシコ事業の展開で提携するパートナーです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "jfe-holdings",
+      "relationship": "supplier",
+      "description": "ＪＦＥホールディングス株式会社は、素材の供給側と利用側という関係にあり、品質の向上や新素材の開発を共同で行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aida-engineering",
+      "relationship": "supplier",
+      "description": "アイダエンジニアリング株式会社は、プレス設備の供給側と利用側という関係にあり、新素材・新技術・新工法の開発を共同で行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tachi-s",
+      "relationship": "business-partner",
+      "description": "株式会社タチエスは、同じ自動車部品業界にあって得意先や海外展開地域が共通し、物流その他の面で提携しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ohashi-technica",
+      "relationship": "business-partner",
+      "description": "株式会社オーハシテクニカは、同じ自動車部品業界にあり、取引先でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +544,47 @@
       "publisher": "株式会社ヨロズ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGY8.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-10-02"
+      "docId": "S100YGY8",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-10-02",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画『Yorozu Sustainability Plan 2026（YSP2026）』（計画年度2024～2026年度）では、電動化時代を支える存在となり、全てのステークホルダーから「選ばれる会社」になることを経営方針とし、6つの主要方策を柱に事業基盤と経営基盤の強化に取り組みます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "自動車用サスペンション部品などを日本、米州、アジアの3地域で生産・販売しています。2026年3月期の外部顧客への売上高は米州が87,298百万円、日本が54,479百万円、アジアが34,551百万円です。日産グループ向けの売上高は112,443百万円です。",
+        "basis": "2026年3月期のセグメント情報と得意先別売上高",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は176,330百万円で、親会社株主に帰属する当期純利益は2,075百万円です。従業員数は5,405人です。",
+        "basis": "2026年3月期の連結経営指標",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
