@@ -186,10 +186,10 @@ export default async function HomePage() {
             </span>
             <ArrowRight className="size-5 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden />
           </Link>
-          <Link href="/explore" className="group flex items-center gap-4 bg-background px-5 py-5 md:px-8">
+          <Link href="/network" className="group flex items-center gap-4 bg-background px-5 py-5 md:px-8">
             <span className="min-w-0 flex-1">
-              <span className="block text-[0.6875rem] font-semibold tracking-[0.2em] text-seal">つながりをたどる</span>
-              <span className="mt-1 block font-serif text-lg font-semibold">取引先、競合、親会社。1社ずつ移って出会う。</span>
+              <span className="block text-[0.6875rem] font-semibold tracking-[0.2em] text-seal">企業ネットワーク</span>
+              <span className="mt-1 block font-serif text-lg font-semibold">取引先、競合、親会社。立体の地図で回して、たどる。</span>
             </span>
             <ArrowRight className="size-5 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden />
           </Link>

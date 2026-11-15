@@ -417,8 +417,8 @@ function CompanyCard({
             くわしく見る
           </Link>
           {card.related.length > 0 && (
-            <Link href={`/explore?from=${card.id}`} className="text-xs text-white/70 underline underline-offset-2 hover:text-white">
-              つながりをたどる
+            <Link href={`/network?from=${card.id}`} className="text-xs text-white/70 underline underline-offset-2 hover:text-white">
+              ネットワークで見る
             </Link>
           )}
           <span className={`text-xs ${inCollection ? "text-amber-300" : "text-white/40"}`}>{inCollection ? "図鑑に記録済み" : "図鑑に記録中…"}</span>

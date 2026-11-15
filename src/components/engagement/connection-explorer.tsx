@@ -150,6 +150,9 @@ export function ConnectionExplorer() {
             くわしく見る
           </Link>
           <FavoriteButton companyId={center.id} companyName={center.name} />
+          <Link href={`/network?from=${center.id}`} className="inline-flex min-h-11 items-center rounded-full border border-border px-4 text-sm hover:border-foreground">
+            立体で見る
+          </Link>
           {trail.length > 1 && (
             <button type="button" onClick={() => go(trail[trail.length - 2], trail.length - 2)} className="inline-flex min-h-11 items-center gap-1.5 rounded-full border border-border px-4 text-sm hover:border-foreground">
               <ArrowLeft className="size-4" aria-hidden />
