@@ -863,3 +863,12 @@ server-side lock (the data moved out of the page and served by the Worker after 
 the current design: the plan sells the convenience of seeing these readings on the page, as JCE-043 and the 診断
 site's CTS-013 say. The 診断 site closed its forged-record hole the same day (CTS-025); this site did not, by the same
 choice. Revisit if premium content becomes something that must not be read without paying.
+
+### JCE-051 · 2026-11-15 · Accepted (operator) — 業界の数字 moves to the premium plan
+
+The operator asked that the industry figures — the industries hub's 「数字で見る」 tab (JCE-041/042/047) and each
+industry page's 「数字」 tab — belong to the premium plan. Both are wrapped in the same `PremiumGate` as the company
+page's 業界比較 (JCE-043), with a description of what they hold; after paying, the reader returns to `#figures`. The
+gate is the view switch of JCE-050 (the figures stay in the page's payload, by that decision). What stays free: the
+industries list, each industry's 仕組み, 企業 and つながり tabs, the 産業マップ, and on company pages the latest
+year's figures, 四半期の動き and the five-year charts.

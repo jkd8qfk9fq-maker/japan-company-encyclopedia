@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { CompanyCard } from "@/components/company/company-card";
 import { CompanySection } from "@/components/company/company-section";
+import { PremiumGate } from "@/components/company/premium-gate";
 import { SectionTabs, type SectionLink } from "@/components/navigation/section-tabs";
 import { INDUSTRY_IMAGES } from "@/assets/industries";
 import { IndustryFiguresBlock } from "@/components/industry/industry-figures";
@@ -151,7 +152,14 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
             lead={`掲載企業${figures.companies}社の有価証券報告書の数値を足し合わせたものです。推定はしていません。`}
             tone="paper"
           >
-            <IndustryFiguresBlock figures={figures} reference={reference} index={index} all={indexAll} assetsIndex={assetsIndex} employeesIndex={employeesIndex} />
+            {/* Premium since JCE-051 (operator, 2026-11-15). */}
+            <PremiumGate
+              title={`${figures.name}業界の数字`}
+              returnAnchor="figures"
+              teaser={`${figures.name}業界の掲載企業${figures.companies}社について、売上高・純利益・総資産・従業員数の合計と、純利益率・自己資本比率・1人あたり売上高などの全業界との比較、会社ごと・規模別・国内外の構成（円グラフ）、5期の推移（指数）、売上高・従業員数・総資産の大きい順を読めます。`}
+            >
+              <IndustryFiguresBlock figures={figures} reference={reference} index={index} all={indexAll} assetsIndex={assetsIndex} employeesIndex={employeesIndex} />
+            </PremiumGate>
           </CompanySection>
         )}
 

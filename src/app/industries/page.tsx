@@ -5,6 +5,7 @@ import { HUB_IMAGES, INDUSTRY_IMAGES } from "@/assets/industries";
 import { IndustryHero } from "@/components/industry/industry-hero";
 import { ArrowRight } from "lucide-react";
 import { CompanySection } from "@/components/company/company-section";
+import { PremiumGate } from "@/components/company/premium-gate";
 import { IndustryFiguresOverview } from "@/components/industry/industry-figures";
 import { IndustryFlowMap } from "@/components/industry/industry-flow-map";
 import { SectionTabs, type SectionLink } from "@/components/navigation/section-tabs";
@@ -129,7 +130,14 @@ export default async function IndustriesPage() {
             </>
           }
         >
-          <IndustryFiguresOverview data={figures} />
+          {/* Premium since JCE-051 (operator, 2026-11-15). */}
+          <PremiumGate
+            title="業界の数字"
+            returnAnchor="figures"
+            teaser="全業界の売上高・純利益・総資産・従業員数の合計と、その業界別の構成（円グラフ）、純利益率・5期の伸び・自己資本比率・従業員1人あたり売上高・赤字の会社の割合・平均年間給与の中央値の業界別比較、5期の推移（指数）を、掲載企業の有価証券報告書の数値から読めます。"
+          >
+            <IndustryFiguresOverview data={figures} />
+          </PremiumGate>
         </CompanySection>
       </div>
 

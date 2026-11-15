@@ -10,7 +10,18 @@ import { applyPlan, checkPlan, isValidCode, PLAN_PAGE, startCheckout, usePlan } 
  * everything behind it is computed from public filings, and the plan pays for the convenience of seeing it
  * here (the same rule the 診断 site applies to its own paid parts).
  */
-export function PremiumGate({ title, teaser, children }: { title: string; teaser: string; children: React.ReactNode }) {
+export function PremiumGate({
+  title,
+  teaser,
+  returnAnchor = "financials",
+  children,
+}: {
+  title: string;
+  teaser: string;
+  /** Where on this page the buyer lands after paying: the company page's 財務, or an industry's 数字 (JCE-051). */
+  returnAnchor?: string;
+  children: React.ReactNode;
+}) {
   const plan = usePlan();
   const [code, setCode] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "inactive" | "error">("idle");
@@ -42,7 +53,7 @@ export function PremiumGate({ title, teaser, children }: { title: string; teaser
           onClick={async () => {
             setBuying("sending");
             try {
-              await startCheckout(`${window.location.origin}${window.location.pathname}#financials`);
+              await startCheckout(`${window.location.origin}${window.location.pathname}#${returnAnchor}`);
             } catch {
               setBuying("error");
             }
