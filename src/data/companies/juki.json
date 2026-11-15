@@ -4,15 +4,111 @@
   "name": "JUKI",
   "officialName": "JUKI株式会社",
   "nameEn": "JUKI CORPORATION",
-  "description": null,
+  "shortNameEn": "JUKI",
+  "description": "工業用ミシンを中心とする縫製事業と、マウンタなどの産機事業を展開する機械メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "juki-group",
+      "name": "JUKIグループ",
+      "description": "当社グループは当社と子会社24社、関連会社3社で構成され、縫製事業、産機事業及びその他の事業を行っています。2025年12月期の連結売上高は88,761百万円で、報告セグメントは縫製事業と産機事業の2つです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "sewing-business",
+          "name": "縫製事業",
+          "description": "工業用ミシン、家庭用ミシン及びIoT関連システム等の製造販売を行っています。国内ではJUKI販売株式会社やJUKI松江株式会社、海外ではJUKI AMERICA, INC.、JUKI SINGAPORE PTE. LTD.、重機(中国)投資有限公司、JUKI INDIA PVT. LTD.などの子会社が製造・販売を担っています。2025年12月期の外部顧客への売上高は66,616百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "industrial-business",
+          "name": "産機事業",
+          "description": "産業装置事業としてマウンタ、周辺機器及びIoT関連システム等を、受託事業として受託加工製品・部品を製造販売しています。JUKI AUTOMATION SYSTEMS GMBH、JUKI産機テクノロジー株式会社、JUKI会津株式会社、JUKI広島株式会社などの子会社が担っています。2025年12月期の外部顧客への売上高は21,847百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "other-business",
+          "name": "その他",
+          "description": "JUKIプロサーブ株式会社による不動産管理及びその他サービスを行っています。2025年12月期の外部顧客への売上高は297百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "当社と子会社24社・関連会社3社で構成するグループが、工業用ミシンやマウンタなどを製造し、国内外の販売子会社を通じて縫製工場や電子部品メーカーなどに販売して、その販売代金で収益を得る事業モデルです。",
+    "products": [
+      "工業用ミシン",
+      "家庭用ミシン",
+      "マウンタ・周辺機器",
+      "IoT関連システム",
+      "受託加工製品・部品"
+    ],
+    "customers": [
+      "国内外のアパレルメーカーをはじめとする縫製工場",
+      "自動車関連などの製造会社",
+      "基板実装を行う電子部品メーカー"
+    ],
+    "revenueSources": [
+      "工業用ミシン・家庭用ミシンの販売代金",
+      "マウンタ・周辺機器の販売代金",
+      "受託加工製品・部品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と子会社24社・関連会社3社のグループ",
+        "description": "当社は東京都多摩市に本社を置き、子会社24社と関連会社3社でグループを構成しています。2025年12月31日現在の連結従業員数は3,828人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "工業用ミシンと産業装置の製造",
+        "description": "工業用ミシンや家庭用ミシンは大田原工場や国内外の子会社で、マウンタなどの産業装置や受託加工製品・部品は秋田・福島・広島などの子会社やベトナム・中国の子会社で製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外の販売子会社を通じた販売",
+        "description": "製品は米国・欧州・アジア・中国・インドなどの販売子会社を通じて、各国のアパレルメーカーや電子部品メーカーなどに販売されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高88,761百万円",
+        "description": "2025年12月期の連結売上高は88,761百万円で、前連結会計年度と比べて6.7％減りました。セグメント別では縫製事業が66,616百万円、産機事業が21,847百万円、その他が297百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益1,399百万円",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は1,399百万円で、前連結会計年度は3,235百万円の当期純損失でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +123,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 35672000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5255,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +143,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 37482000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 5230,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年3月31日）等を第108期（2022年12月期）の期首から適用しており、第108期以降の主要な経営指標等は当該会計基準等を適用した後の数値です。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +164,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32370000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4713,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32234000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 4621,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32687000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3828,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +212,298 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1938,
+      "title": "東京重機製造工業組合として発足",
+      "description": "1938年12月、東京都調布市国領町において、東京都の機械業者約900名の出資により結成された東京重機製造工業組合として発足しました。",
+      "significance": "当社の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "株式会社に改組し東京重機工業株式会社に改称",
+      "description": "1943年9月、株式会社に改組し、名称を東京重機工業株式会社に改称しました。",
+      "significance": "組合から株式会社へ移行した出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "家庭用ミシンの製造販売を開始",
+      "description": "1947年4月、家庭用ミシンの製造販売を開始しました。",
+      "significance": "ミシン事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "工業用ミシンの製造販売を開始",
+      "description": "1953年3月、工業用ミシンの製造販売を開始しました。",
+      "significance": "現在の主力事業である工業用ミシン事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "電子計算機周辺機器の製造販売を開始",
+      "description": "1961年2月、電子計算機周辺機器の製造販売を開始しました。",
+      "significance": "産機事業につながる機器事業への展開です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1961年10月、東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "1962年9月、大阪証券取引所市場第二部に上場しました。",
+      "significance": "大阪市場にも上場しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "株式会社ジューキ広島製作所を設立",
+      "description": "1963年7月、広島県安佐郡（現広島市）に株式会社ジューキ広島製作所（現 JUKI広島株式会社）を設立しました。",
+      "significance": "国内の生産拠点の展開です。現在の所在地は広島県三次市です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "東京証券取引所・大阪証券取引所の市場第一部に指定",
+      "description": "1964年8月、東京証券取引所並びに大阪証券取引所市場第一部に指定されました。",
+      "significance": "両市場で第一部銘柄となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "株式会社中島製作所の株式の過半数を取得",
+      "description": "1966年7月、株式会社中島製作所（現 JUKI松江株式会社）の株式の過半数を取得しました。",
+      "significance": "生産子会社の拡充です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "香港にJUKI (HONG KONG) LTD.を設立",
+      "description": "1970年7月、香港に現地法人JUKI (HONG KONG) LTD.を設立しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "大田原工場を竣工",
+      "description": "1971年4月、栃木県大田原市に工業用ミシンの主力工場である大田原工場を竣工しました。",
+      "significance": "工業用ミシンの主力生産拠点が整いました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "ジューキ電子工業株式会社を設立",
+      "description": "1973年9月、秋田県平鹿郡（現 横手市）にジューキ電子工業株式会社（現 JUKI産機テクノロジー株式会社）を設立しました。",
+      "significance": "産機事業の生産拠点の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "米国にJUKI AMERICA, INC.を設立",
+      "description": "1974年3月、米国ニューヨークに現地法人JUKI AMERICA, INC.を設立しました。",
+      "significance": "米州の販売拠点の始まりです。現在の所在地はフロリダです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "工業用ミシン本部がデミング賞を受賞",
+      "description": "1981年10月、工業用ミシン本部がデミング賞を受賞しました。",
+      "significance": "品質管理の取り組みが評価されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "産業装置（チップマウンタ）の製造販売を開始",
+      "description": "1987年7月、産業装置（チップマウンタ）の製造販売を開始しました。",
+      "significance": "産機事業の産業装置事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "社名をJUKI株式会社に変更",
+      "description": "1988年4月、社名をJUKI株式会社（登記商号 ジューキ株式会社）に変更しました。",
+      "significance": "現在の社名の由来です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "シンガポールにJUKI SINGAPORE PTE. LTD.を設立",
+      "description": "1995年3月、シンガポールに現地法人JUKI SINGAPORE PTE. LTD.を設立しました。",
+      "significance": "アジアの販売拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "中国に新興重機工業有限公司を合弁で設立",
+      "description": "1995年9月、中国河北省に中国新興（集団）総公司と合弁で新興重機工業有限公司（現 重機（廊坊）工業有限公司）を設立しました。",
+      "significance": "中国の生産拠点の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "重機（上海）工業有限公司を設立",
+      "description": "2000年10月、中国上海市に全額出資の重機（上海）工業有限公司を設立しました。",
+      "significance": "中国の生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "重機（中国）投資有限公司を設立",
+      "description": "2001年1月、中国上海市に全額出資の重機（中国）投資有限公司を設立しました。",
+      "significance": "中国事業の統括拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "大阪証券取引所市場第一部の上場を廃止",
+      "description": "2003年12月、大阪証券取引所市場第一部上場を廃止しました。",
+      "significance": "上場市場を東京証券取引所に一本化しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "登記商号をJUKI株式会社に変更",
+      "description": "2005年7月、登記商号をジューキ株式会社よりJUKI株式会社に変更しました。",
+      "significance": "登記商号もJUKIに統一されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "本社を東京都多摩市に移転",
+      "description": "2009年12月、本社を東京都多摩市に移転しました。",
+      "significance": "現在の本社所在地です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "産業装置事業部門を会社分割しJUKIオートメーションシステムズ株式会社を設立",
+      "description": "2013年8月、産業装置事業部門を会社分割し、東京都多摩市にJUKIオートメーションシステムズ株式会社を設立しました。",
+      "significance": "産業装置事業の分社化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "JUKIオートメーションシステムズが実装機器事業を承継",
+      "description": "2014年3月、JUKIオートメーションシステムズ株式会社は、ソニー株式会社及びその子会社であるソニーイーエムシーエス株式会社（現 ソニーグローバルマニュファクチャリング＆オペレーションズ株式会社）の実装機器及びその関連事業を会社分割（吸収分割）により承継しました。",
+      "significance": "産業装置事業の基盤を広げました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分の見直しにより東京証券取引所市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "JUKIテクノソリューションズ株式会社の株式80％を取得",
+      "description": "2022年7月、三菱電機株式会社の子会社である名菱テクニカ株式会社が会社分割により工業用ミシン事業を取り扱う会社JUKIテクノソリューションズ株式会社を設立し、その80％の株式を取得しました。",
+      "significance": "工業用ミシン事業の取り込みです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "子会社2社を吸収合併",
+      "description": "2025年12月、JUKIオートメーションシステムズ株式会社及びJUKIテクノソリューションズ株式会社を当社へ吸収合併しました。",
+      "significance": "グループ再編により両社を本体に統合しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +512,55 @@
       "publisher": "JUKI株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XSJU.pdf",
       "publishedAt": "2026-03-23",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XSJU",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-10"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「JUKI」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/JUKI",
+      "accessedAt": "2026-11-15"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年から2029年までの5か年中期経営計画「Building Sustainable JUKI」を推進しています。基本方針は、2大事業を軸とした成長、コスト競争力と財務基盤の強化、ESG経営の実践の3つです。縫製事業ではIoTの融合によるソリューション提案でハイエンド顧客の囲い込みを加速し、家庭用ミシンの拡大も進めます。産機事業では産業装置事業が重点領域・地域を絞ったグローバルニッチ戦略に転換し、受託事業では当社の技術力を活かして第3の柱の探索を強化しています。中期経営計画は毎年見直す方針です。",
+        "asOf": "2026-03-23",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "1938年の創業以来、工業用ミシンを中心に縫製技術を培ってきました。大田原工場を主力工場とし、中国・ベトナムなどの海外生産拠点と、米国・欧州・アジア・中国・インドなどの販売子会社によるグローバルな生産・販売体制を持ちます。工業用ミシンへのIoTの融合によるソリューション提案力と、産業装置事業の実装技術という、縫製と産機の2事業の技術基盤を強みとしています。",
+        "asOf": "2026-03-23",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは縫製事業と産機事業の2つで、2025年12月期の外部顧客への売上高は縫製事業が66,616百万円、産機事業が21,847百万円、その他が297百万円です。地域別では日本が15,175百万円、アジアが19,789百万円、中国が18,577百万円、米州が2,689百万円、アメリカが11,290百万円、インドが9,647百万円、欧州が10,124百万円、その他が1,466百万円です。主要な顧客ごとの情報に該当事項はありません。Wikipediaでは、同社の工業用ミシンのシェアは世界1位とされています。",
+        "basis": "セグメント情報（報告セグメントごとの外部顧客への売上高、地域ごとの情報、主要な顧客ごとの情報）の印字と、Wikipediaの補足に基づきます。",
+        "asOf": "2026-03-23",
+        "sourceIds": [
+          "yuho-2025",
+          "wikipedia"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

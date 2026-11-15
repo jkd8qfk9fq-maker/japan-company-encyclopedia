@@ -4,15 +4,111 @@
   "name": "日和産業",
   "officialName": "日和産業株式会社",
   "nameEn": "NICHIWA SANGYO CO., LTD.",
-  "description": null,
+  "shortNameEn": "NICHIWA SANGYO CO., LTD.",
+  "description": "穀物を主原料に養鶏用などの配合飼料を製造販売し、畜産物の生産販売も行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "nichiwa-sangyo",
+      "name": "日和産業株式会社",
+      "description": "神戸市東灘区に本店を置く配合飼料メーカーで、当社及び連結子会社1社並びに関連会社1社でグループを構成しています。報告セグメントは飼料事業と畜産事業の2つで、2026年3月期の連結従業員数は179人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "feed",
+          "name": "飼料事業",
+          "description": "穀物を主原料として養鶏用、養豚用、養牛用、養魚用等の配合飼料を製造販売する事業です。得意先が生産した畜産物の売買も行っています。2026年3月期の外部顧客への売上高は43,669百万円です。神戸工場、三原工場、鹿児島工場、八戸工場、坂出工場で飼料を製造し、養牛用配合飼料の一部は関連会社みちのく飼料株式会社に製造を委託しています。",
+          "customers": [
+            "畜産事業者",
+            "水産事業者",
+            "連結子会社である東和畜産株式会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "livestock",
+          "name": "畜産事業",
+          "description": "連結子会社である東和畜産株式会社において、畜産物の生産及び販売を行う事業です。2026年3月期の外部顧客への売上高は1,910百万円です。東和畜産株式会社は長崎県島原市他の農場で養鶏・養豚設備等を有しています。",
+          "customers": [
+            "畜産物の購入者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "穀物を主原料とする配合飼料の製造販売と、連結子会社による畜産物の生産販売で、その販売対価を得る事業モデルです。",
+    "products": [
+      "養鶏用、養豚用、養牛用、養魚用等の配合飼料",
+      "畜産物"
+    ],
+    "customers": [
+      "畜産事業者",
+      "水産事業者",
+      "畜産物の購入者"
+    ],
+    "revenueSources": [
+      "飼料事業の配合飼料等の販売による売上高",
+      "畜産事業の畜産物の販売による売上高"
+    ],
+    "suppliers": [
+      {
+        "name": "飼料事業における主要な仕入先",
+        "description": "豊田通商株式会社と兼松株式会社は飼料事業における主要な仕入先であり、当社は継続的な取引関係の維持のため両社の株式を保有しています。"
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日和産業株式会社",
+        "description": "神戸市東灘区に本店を置き、連結子会社1社と関連会社1社とグループを構成する配合飼料メーカーです。2026年3月期の連結従業員数は179人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "配合飼料と畜産物",
+        "description": "穀物を主原料として養鶏用、養豚用、養牛用、養魚用等の配合飼料を製造販売し、連結子会社では畜産物の生産及び販売を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "畜水産事業者などの得意先",
+        "description": "配合飼料を畜産事業者や水産事業者などの得意先に販売し、得意先が生産した畜産物の売買も行います。売上高の10％以上を占める相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は45,579百万円",
+        "description": "2026年3月期の売上高は45,579百万円でした。飼料事業が43,669百万円、畜産事業が1,910百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は378百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は378百万円でした。前連結会計年度は310百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +123,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17409000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 179,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +143,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17435000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 183,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18164000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 187,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18237000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 178,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19039000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 179,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +211,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第122期(2025/04/01－2026/03/31)",
-      "publisher": "日和産業株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIEA.pdf",
-      "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-28"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-28",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +222,223 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1924,
+      "title": "日本家畜飼料株式会社を設立",
+      "description": "1924年8月に神戸市に日本家畜飼料株式会社を設立しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "日和産業株式会社に商号変更",
+      "description": "1948年7月に日和産業株式会社に商号を変更しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "兵庫製油株式会社を吸収合併",
+      "description": "1951年7月に兵庫製油株式会社を吸収合併しました。",
+      "significance": "事業基盤の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "1961年10月に大阪証券取引所市場第二部開設と同時に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "三原工場を建設",
+      "description": "1963年6月に広島県三原市に三原工場を建設しました。",
+      "significance": "飼料の製造拠点の展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "神戸工場を建設し本社を現在地へ移転",
+      "description": "1968年4月に神戸市東部埋立第二工区に神戸工場を建設し、本社を大阪市より現在地へ移転しました。",
+      "significance": "現在の本社と主力工場の体制です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "鹿児島工場を建設",
+      "description": "1974年1月に鹿児島市に鹿児島工場を建設しました。",
+      "significance": "九州の製造拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "東和畜産株式会社を設立",
+      "description": "1975年11月に東和畜産株式会社を設立しました（連結子会社）。",
+      "significance": "畜産事業を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "八戸工場を建設",
+      "description": "1983年5月に青森県八戸市に八戸工場を建設しました。",
+      "significance": "東北の製造拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "坂出工場を開設",
+      "description": "1995年6月に香川県坂出市に坂出工場を開設しました。",
+      "significance": "四国の製造拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "みちのく飼料株式会社を関連会社として設立",
+      "description": "2003年12月に青森県八戸市に牛専用飼料工場「みちのく飼料株式会社」を関連会社として設立しました。",
+      "significance": "養牛用配合飼料の製造委託体制です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "2013年7月に東京証券取引所と大阪証券取引所の統合に伴い、東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "取引所統合に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "輝北農場及び雲仙農場を東和畜産株式会社に譲渡",
+      "description": "2018年4月に輝北農場及び雲仙農場を連結子会社である東和畜産株式会社に譲渡しました。",
+      "significance": "畜産事業の農場体制の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場に移行",
+      "description": "2022年4月に東京証券取引所の市場区分見直しに伴い、スタンダード市場に移行しました。",
+      "significance": "市場区分の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "toyota-tsusho",
+      "relationship": "supplier",
+      "description": "特定投資株式に記載される会社です。飼料事業における主要な仕入先としての継続的な取引関係の維持のため、同社株式172,779株を保有しております。同社は2026年3月31日現在、当社株式の7.52％を所有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kanematsu",
+      "relationship": "supplier",
+      "description": "特定投資株式に記載される会社です。飼料事業における主要な仕入先としての継続的な取引関係の維持のため、同社株式3,600株を保有しております。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第122期(2025/04/01－2026/03/31)",
+      "publisher": "日和産業株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIEA.pdf",
+      "publishedAt": "2026-06-25",
+      "docId": "S100YIEA",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "お客様第一主義を掲げ、安全で良品質な配合飼料を安定的にお客様に供給することにより、飼料畜産業界の発展に寄与することを経営方針としています。飼料事業並びに畜産事業において持続的な成長と企業価値の向上のため、販売の強化に加え、設備の更新等による固定費や生産コストの削減に注力するとしています。対処すべき課題として、生産コスト削減への注力や多様な人材確保及び育成、家畜疾病の予防を挙げています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高は前年同期比6.2％減の45,579百万円でした。配合飼料価格について、2025年4月、7月、10月の3度にわたり値下げを行いましたが、2026年1月には値上げを行ったと説明されています。",
+        "basis": "MD&Aの経営成績の概要、セグメント情報（報告セグメントごとの外部顧客への売上高）",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "全国5工場において顧客と密な情報交換や勉強会、技術指導を通して交流を深め、国内外の最新情報を収集・検討する研究開発体制をとっています。新規開発飼料については、グループの農場等で試験分析を行い、顧客ニーズに応じた研究・開発に取り組んでいます。",
+        "basis": "研究開発活動、事業の内容、主要な設備の状況",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは飼料事業（外部顧客への売上高43,669百万円）と畜産事業（同1,910百万円）の2つで、売上の大半を飼料事業が占めています。本邦以外の外部顧客への売上高はなく、本邦以外に所在する有形固定資産もありません。外部顧客への売上高のうち売上高の10％以上を占める相手先はありません。",
+        "basis": "セグメント情報（報告セグメントの金額、関連情報の地域ごとの情報・主要な顧客ごとの情報）、事業の内容",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

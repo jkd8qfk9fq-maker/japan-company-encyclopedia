@@ -4,7 +4,8 @@
   "name": "日邦産業",
   "officialName": "日邦産業株式会社",
   "nameEn": "NIPPO LTD.",
-  "description": null,
+  "shortNameEn": "NIPPO LTD.",
+  "description": "産業資材の販売とプラスチック成形品の製造販売を、電子・自動車・医療分野のメーカー向けに行う会社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,8 +16,122 @@
       "market": "メイン"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "electronics",
+      "primary": false
+    },
+    {
+      "industryId": "automotive",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "electronics",
+      "name": "エレクトロニクス",
+      "description": "電子部品及び住宅設備の関連メーカーに対して、専門商社として、またファブレスメーカーとして、高機能材料、加工部品、治工具及び機器等を国内外で販売する事業です。2026年3月期の外部顧客への売上高は21,451百万円です。",
+      "customers": [
+        "電子部品メーカー",
+        "住宅設備の関連メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "mobility",
+      "name": "モビリティ",
+      "description": "自動車メーカー及び自動車部品メーカーに対して、樹脂成形品及び同組立品を核とした様々な自動車関連部品を国内外で製造・販売する事業です。2026年3月期の外部顧客への売上高は17,646百万円です。",
+      "customers": [
+        "自動車メーカー",
+        "自動車部品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "medical-precision",
+      "name": "医療・精密機器",
+      "description": "医療機器メーカー、プリンターメーカー等に対して、樹脂成形品及び同組立品等を国内外で製造・販売する事業です。2026年3月期の外部顧客への売上高は7,305百万円です。",
+      "customers": [
+        "医療機器メーカー",
+        "プリンターメーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業セグメントであり、タイの国際地域統括本部におけるマネジメント業務等で構成されています。外部顧客への売上高はセグメント情報に印字されていません。",
+      "customers": [
+        "当社グループの関係会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "専門商社とファブレスメーカー、樹脂成形品メーカーの両面を持ち、メーカー各社に材料・部品と成形品を供給する事業モデルです。",
+    "products": [
+      "高機能材料、加工部品、治工具及び機器（エレクトロニクス向け）",
+      "樹脂成形品及び同組立品を核とした自動車関連部品",
+      "樹脂成形品及び同組立品（医療・精密機器向け）"
+    ],
+    "customers": [
+      "電子部品及び住宅設備の関連メーカー",
+      "自動車メーカー及び自動車部品メーカー",
+      "医療機器メーカー、プリンターメーカー等",
+      "株式会社デンソー（モビリティの主要な顧客）",
+      "株式会社愛工機器製作所（エレクトロニクスの主要な顧客）"
+    ],
+    "revenueSources": [
+      "商品の販売による収益",
+      "自社で製造する製品の販売による収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と連結子会社14社のグループ",
+        "description": "日邦産業は愛知県名古屋市中区に本店を置き、連結子会社14社（国内3社、海外11社）とグループを構成しています。連結の従業員数は2,765人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "材料・部品の販売と樹脂成形品の製造販売",
+        "description": "エレクトロニクスでは高機能材料、加工部品、治工具及び機器等を販売し、モビリティと医療・精密機器では樹脂成形品及び同組立品を製造・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "電子・自動車・医療分野のメーカーに販売",
+        "description": "電子部品及び住宅設備の関連メーカー、自動車メーカー及び自動車部品メーカー、医療機器メーカーやプリンターメーカー等に販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は46,403百万円",
+        "description": "2026年3月期の連結売上高は46,403百万円でした。外部顧客への売上高はエレクトロニクスが21,451百万円、モビリティが17,646百万円、医療・精密機器が7,305百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は1,441百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,441百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +146,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10364000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 3075,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +166,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12530000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2928,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +186,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14792000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2830,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +206,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16530000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2833,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +226,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17992000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2765,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +234,193 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1952,
+      "title": "日邦産業株式会社を設立",
+      "description": "東邦カーボン製造所（後の株式会社レイホー製作所）の販売部門を母体として日邦産業株式会社を設立し、株式会社日立製作所化学製品の特約店となり、各種炭素製品の販売を開始しました。",
+      "significance": "現在の会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "日立化成工業の特約店となり、プラスチック分野に着手",
+      "description": "株式会社日立製作所の化学製品事業部が分離独立して日立化成工業株式会社（現、株式会社レゾナック）となったことに伴い、同社の特約店となりました。あわせてプラスチック電材・機械部品の研究開発を行い、ジュラコン・機械部品の販売を開始しました。",
+      "significance": "現在のエレクトロニクス事業につながる取扱分野の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "プラスチック成形工場を一宮市に開設",
+      "description": "プラスチック成形工場を愛知県一宮市に開設しました。",
+      "significance": "自社で成形品をつくる製造への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "タイ・バンコクに海外生産拠点を設立",
+      "description": "ユーザーの海外シフトとニーズに対応し、海外生産拠点として、バンコクに現地法人（現、NIPPO MECHATRONICS(THAILAND)CO.,LTD.）を設立しました。",
+      "significance": "海外生産の始まりで、同社は現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "株式会社ジャスダック証券取引所に株式を上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "株式会社岸田製作所などを取得し、製造機能を強化",
+      "description": "半導体製造関連治具の製作販売を推進するため、株式会社岸田製作所（現、日邦メタルテック株式会社）の全株式を取得し、子会社としました。金属加工部品の内製化を推進するため、株式会社京都映工社も子会社としました。",
+      "significance": "製造・加工機能の取り込みです。取得した会社は現在の連結子会社につながります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "タイに地域統括会社を設立",
+      "description": "当社の海外連結子会社に対する事務、営業及び開発支援サービスの提供を目的として、タイ・バンコクに地域統括会社NIPPO GLOBAL MANAGEMENT CO.,LTD.を設立しました。",
+      "significance": "現在のその他区分のマネジメント業務の担い手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "メキシコに合弁会社を設立",
+      "description": "メキシコに株式会社富士プレスとの合弁会社FNA MECHATRONICS MEXICO S.A. de C.V.を設立しました。",
+      "significance": "北米での生産体制の構築です。同社はその後100％出資子会社となり、現在は清算手続き中です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "本社を名古屋市に移転",
+      "description": "愛知県名古屋市に本社を移転するとともに、名古屋支店を開設しました。",
+      "significance": "現在の本店所在地の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "名古屋証券取引所市場第二部に上場",
+      "description": "名古屋証券取引所市場第二部に株式を上場しました。",
+      "significance": "地元市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "新市場区分へ移行",
+      "description": "東京証券取引所のスタンダード市場と名古屋証券取引所のメイン市場の新市場区分に移行しました。",
+      "significance": "現在の上場市場の区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "稲沢事業所内に研究開発センターを開設",
+      "description": "稲沢事業所内に研究開発センターを開設しました。中国・深圳には邦産(深圳)国際貿易有限公司も設立しました。",
+      "significance": "研究開発体制の整備と中国での販売体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "denso",
+      "relationship": "customer",
+      "description": "モビリティ事業の主要な顧客です。2026年3月期の主要な顧客ごとの情報に、関連するセグメント名をモビリティとして挙げられています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "companyId": "fujimi",
+      "relationship": "business-partner",
+      "description": "資本業務提携等の関係にあります。同社のウエハ研磨用スラリーなどの強みと、当社のウエハ研磨用キャリア製造技術や高機能接着材開発などの強みを組み合わせることを目的に、資本業務提携を締結しています。当社は同社の株式118,200株を保有し、同社は2026年3月31日現在、当社の株式337千株（3.71％）を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "muromachi-chemicals",
+      "relationship": "business-partner",
+      "description": "資本業務提携等の関係にあります。同社の機能材料の受託生産機能と当社の高機能接着材開発などの強みを組み合わせた新規接着剤の開発や、水精製ユニットの共同開発を目的に、資本業務提携を締結しています。当社は同社の株式131,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tachikawa",
+      "relationship": "customer",
+      "description": "エレクトロニクス事業の顧客です。主力製品である組立ユニット製品の取引拡大を目的として、当社は同社の株式30,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "murata-manufacturing",
+      "relationship": "customer",
+      "description": "エレクトロニクス事業の顧客です。主力製品である機能性部材の取引拡大を目的として、当社は同社の株式19,200株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "france-bed-holdings",
+      "relationship": "customer",
+      "description": "医療・精密機器事業の顧客です。主力製品である組立ユニット製品の取引拡大を目的として、当社は同社の株式2,900株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "freesia-macross",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の株式1,796千株（発行済株式（自己株式を除く）の総数に対する割合19.73％）を保有する、最も大きな大株主の事業会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -128,13 +428,58 @@
       "publisher": "日邦産業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFGN.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YFGN",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 連結子会社のFNA MECHATRONICS MEXICO S.A. de C.V.は、2024年12月31日付で解散決議を行い、清算手続き中です（関係会社の状況の注記に印字）。本登録は2026年3月31日現在のグループ構成（当社と連結子会社14社。同社を含む）で行います。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "お客様のものづくりを支えるテクニカルイノベーターとして、「異色ある価値を提供し、世界をリードするお客様のモノづくりを支えること」を存在目的としています。2024年11月に示した長期経営目標2031では、目指す姿を「異色ある価値の創造で、お客様のものづくりの進化と持続可能な社会の実現を支えるエッセンシャル・カンパニー」とし、メーカー事業の売上高構成比の拡大、新たな事業セグメントであるEcoプロダクツ事業を第4の事業の柱に成長させることなどを掲げています。中期経営計画2025は2026年3月期が最終年度で、次の中期経営計画2028は策定を進めているとされています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "戦略の軸は、商社とファブレスの機能を持つエレクトロニクスを中心としながら、自社製造であるメーカー事業の比重を高め、既存の3セグメントに加わる新しい事業を育てる構成になっています。",
+        "basis": "経営方針における存在目的と長期経営目標2031の記載、事業の内容における報告セグメントの説明",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、専門商社として材料や部品を仕入れて売る機能と、ファブレスメーカーとしての機能、樹脂成形品を自社グループの工場でつくる機能を一つのグループで併せ持つ点にあります。タイ、ベトナム、マレーシア、インドネシア、フィリピン、中国などに生産・販売の拠点を持ち、顧客の海外展開に合わせて供給できます。",
+        "basis": "事業の内容における報告セグメントの説明、関係会社の状況における国内外の連結子会社の記載、主要な設備の状況における在外子会社の設備の記載",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上構成はエレクトロニクスが21,451百万円と最も大きく、モビリティが17,646百万円、医療・精密機器が7,305百万円です。地域別では日本が25,466百万円と最も大きく、タイが8,234百万円、ベトナムが5,389百万円と続きます。主要な顧客として、モビリティの株式会社デンソーとエレクトロニクスの株式会社愛工機器製作所が開示されています。",
+        "basis": "セグメント情報等におけるセグメント別外部顧客への売上高、関連情報（地域ごとの情報、主要な顧客ごとの情報）の記載",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,108 @@
   "name": "名工建設",
   "officialName": "名工建設株式会社",
   "nameEn": "MEIKO CONSTRUCTION CO.,LTD.",
-  "description": null,
+  "shortNameEn": "Meiko Construction",
+  "description": "鉄道工事に強みを持つ総合建設会社で、土木・建築工事の請負と不動産の売買・賃貸を行います。",
   "listings": [
     {
       "exchange": "nse",
       "market": "メイン"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "construction",
+      "name": "建設事業",
+      "description": "総合建設業として土木工事と建築工事を営む事業です。道路・鉄道・上下水道の建設や、学校・病院・工場・事務所・マンションの建築を行い、施工する工事の一部は建設業を営む子会社などに発注しています。2026年3月期の外部顧客への売上高は95,744百万円で、連結売上高の大半を占めます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "civil-engineering",
+          "name": "土木工事",
+          "description": "道路・鉄道・上下水道などの社会基盤を造る工事です。鉄道関連工事を基軸とし、新幹線の安全対策や大規模改修、中央新幹線の建設工事、既存インフラの維持修繕などを行います。2026年3月期の完成工事高は63,251百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "building-construction",
+          "name": "建築工事",
+          "description": "学校・病院・工場・事務所・マンションなどの建物を造る工事です。鉄道関連の建物や官公庁・民間の建物を受注し、耐震補強工事のSMIC工法事業も手がけています。2026年3月期の完成工事高は32,492百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業等",
+      "description": "土地・建物の売買と、貸事務所などの賃貸を行う事業です。日本郵便株式会社との共同事業であるオフィスビル「JPタワー名古屋」などから安定した賃貸収入があります。連結子会社の名工商事株式会社は、各事業に関連して発生する損害保険の代理店業務などを営んでいます。2026年3月期の外部顧客への売上高は1,209百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "発注者から土木工事と建築工事を請け負って施工し、完成した工事の引き渡しにより請負代金を受け取る事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "土木工事（道路・鉄道・上下水道など）",
+      "建築工事（学校・病院・工場・事務所・マンションなど）",
+      "不動産の売買・賃貸"
+    ],
+    "customers": [
+      "東海旅客鉄道などの鉄道事業者",
+      "官公庁",
+      "民間企業"
+    ],
+    "revenueSources": [
+      "建設工事の請負代金",
+      "不動産の売買代金と賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "名工建設グループ",
+        "description": "名工建設株式会社と連結子会社4社（株式会社大軌、株式会社ビルメン、名工商事株式会社、株式会社静軌建設）からなるグループで、連結従業員数は1,235人（2026年3月31日現在）です。本店は名古屋市中村区名駅のJRセントラルタワーズにあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "土木・建築工事の請負と不動産事業",
+        "description": "総合建設業として、道路・鉄道・上下水道などの土木工事と、学校・病院・工場・事務所・マンションなどの建築工事を請け負い、施工する工事の一部は建設業を営む子会社などに発注しています。あわせて土地・建物の売買と貸事務所などの賃貸も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "鉄道事業者・官公庁・民間企業",
+        "description": "主な発注者は東海旅客鉄道株式会社で、2026年3月期の同社向け売上高は51,886百万円でした。そのほか官公庁や民間企業から土木工事と建築工事を受注しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の連結売上高は96,953百万円で、前期比4.1％増でした。内訳は建設事業が95,744百万円、不動産事業等が1,209百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は5,969百万円で、前期比15.1％増でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +120,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 59704000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1255,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +140,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 64440000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1246,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +160,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 71640000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1248,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +180,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 73998000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1248,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +200,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 85941000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1235,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +208,494 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1941,
+      "title": "名鐵工業株式会社を設立",
+      "description": "1941年6月、名古屋鉄道局管内の土木、建築工事の請負を目的として、名鐵工業株式会社を名古屋市西区に設立し、名古屋・静岡・甲府・金沢・敦賀に支社を置き営業を開始しました。",
+      "significance": "戦時中に鉄道省の輸送力確保の要請を受け、同局管内の指定請負人127社が集まって設立した鉄道工事専門会社が始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "一般官公庁・民間企業の請負を開始",
+      "description": "1948年9月、事業目的を改め、国鉄以外の一般官公庁、民間企業の請負を開始しました。",
+      "significance": "鉄道工事専門から総合的な請負へ広げる転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "建設大臣登録を完了",
+      "description": "1949年9月、建設業法により建設大臣登録(イ)第25号の登録を完了しました。",
+      "significance": "建設業法に基づく登録を受けた初期の建設会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "名工建設株式会社に商号変更",
+      "description": "1956年2月、商号を名工建設株式会社と改称しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "不動産の売買・賃貸を事業目的に追加",
+      "description": "1961年8月、事業目的に不動産の売買及び賃貸を追加し、不動産の売買及び賃貸が行えることとしました。",
+      "significance": "現在の不動産事業等の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "工事用資材の製造販売を事業目的に追加",
+      "description": "1964年7月、事業目的に工事用資材の製造販売を追加しました。",
+      "significance": "事業の幅を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "東京営業所を東京支店に改称",
+      "description": "1969年10月、東京営業所を東京支店に改称しました。",
+      "significance": "首都圏の体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "長野支店を開設",
+      "description": "1970年4月、長野支店を開設しました。",
+      "significance": "営業エリアを広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "建設大臣許可を取得",
+      "description": "1973年9月、建設業法の改正に伴い、建設大臣許可（特－48）第1768号を受けました。",
+      "significance": "改正法のもとで特定建設業の許可を受けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "宅地建物取引業者の免許を取得",
+      "description": "1979年11月、宅地建物取引業法による宅地建物取引業者として愛知県知事免許(1)第10543号を受けました。",
+      "significance": "不動産取引の免許を取得しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "名古屋証券取引所市場第2部に上場",
+      "description": "1982年1月、当社株式を名古屋証券取引所市場第2部に上場しました。",
+      "significance": "株式を上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "大阪営業所を大阪支店に改称",
+      "description": "1982年9月、大阪営業所を大阪支店に改称しました。",
+      "significance": "関西の体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "決算期を3月31日に変更",
+      "description": "1987年8月、決算期を5月31日から3月31日に変更しました。",
+      "significance": "現在の3月決算になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "宅地建物取引業者の建設大臣免許を取得",
+      "description": "1988年8月、宅地建物取引業法による宅地建物取引業者として建設大臣免許(1)第3787号を受けました。",
+      "significance": "不動産取引の免許を国からも取得しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "金沢支店を北陸支店に名称変更",
+      "description": "1990年11月、金沢支店を北陸支店に名称変更しました。",
+      "significance": "北陸エリアの拠点を再編しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "敦賀支店を北陸支店に統合",
+      "description": "1991年4月、敦賀支店を北陸支店に統合し敦賀営業所としました。",
+      "significance": "北陸の体制を集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "関東支社を開設",
+      "description": "1993年4月、東京、静岡、甲府、長野の4支店を管轄する関東支社を開設しました。",
+      "significance": "関東エリアの統轄体制を作りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "子会社2社を吸収合併",
+      "description": "1996年4月、子会社である金沢駅西開発株式会社及び中部建物株式会社を吸収合併しました。",
+      "significance": "グループを再編しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "関東支社を廃止",
+      "description": "1998年6月、4支店を管轄する関東支社を廃止しました。",
+      "significance": "組織を簡素化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "株式会社大軌を設立",
+      "description": "1998年8月、株式会社大軌を設立しました。",
+      "significance": "現在の連結子会社で、建設事業で施工協力しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "本店を名古屋市中村区に移転",
+      "description": "2000年3月、本店を名古屋市中村区に移転しました。",
+      "significance": "現在の本店所在地の地域に移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "株式会社ビルメンの株式を取得",
+      "description": "2001年6月、株式会社ビルメンの株式を取得しました。",
+      "significance": "現在の連結子会社で、建設事業で施工協力しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "長野支店を廃止",
+      "description": "2003年4月、長野支店を廃止しました。",
+      "significance": "拠点を集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "株式会社静軌建設を設立",
+      "description": "2009年11月、株式会社静軌建設を設立しました。",
+      "significance": "現在の連結子会社で、建設事業で施工協力しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "名古屋支店を愛知県清須市に移転",
+      "description": "2009年12月、名古屋支店を愛知県清須市に移転しました。",
+      "significance": "名古屋エリアの拠点を移しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "中部土地調査株式会社を連結子会社化",
+      "description": "2011年12月、中部土地調査株式会社を連結子会社としました。",
+      "significance": "一時的にグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "名工商事株式会社を完全子会社化",
+      "description": "2012年3月、名工商事株式会社を完全子会社化しました。",
+      "significance": "現在の連結子会社で、損害保険の代理店業務などを営んでいます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "名古屋支店を本店へ統合",
+      "description": "2012年4月、名古屋支店を本店へ統合し、名古屋施工本部としました。",
+      "significance": "本店の施工体制を集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "中部土地調査株式会社を完全子会社化",
+      "description": "2012年9月、中部土地調査株式会社を完全子会社化しました。",
+      "significance": "連結子会社化に続いて完全子会社化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "宅地建物取引業者の愛知県知事免許を更新",
+      "description": "2013年12月、宅地建物取引業法による宅地建物取引業者として愛知県知事免許(1)第22603号を受けました。",
+      "significance": "不動産取引の免許を新たな番号で受けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "大阪支店を大阪市淀川区へ移転",
+      "description": "2014年4月、大阪支店を大阪市淀川区へ移転しました。",
+      "significance": "関西の拠点を移しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "名古屋支店を再設置",
+      "description": "2016年6月、名古屋施工本部を本店から分離し、名古屋支店としました。",
+      "significance": "名古屋支店を再び独立した拠点としました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "中部土地調査株式会社の株式を全て譲渡",
+      "description": "2017年7月、中部土地調査株式会社の株式を全て譲渡し、子会社でなくなりました。",
+      "significance": "グループから離れました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "名古屋証券取引所メイン市場に移行",
+      "description": "2022年4月、名古屋証券取引所の市場区分の見直しにより、名古屋証券取引所市場第2部からメイン市場に移行しました。",
+      "significance": "現在の上場市場に移行しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "central-japan-railway",
+      "relationship": "customer",
+      "description": "建設事業の主要な顧客で、2026年3月期の同社向け売上高は51,886百万円です。同社は2026年3月31日現在、当社の発行済株式（自己株式を除く）の8.47％を保有する大株主でもあります。当社は同社の株式2,750,000株を保有し、建設工事の受注や人材交流、各種情報交換を通して同社との関係と信頼関係の維持強化を図っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "totetsu-kogyo",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の発行済株式（自己株式を除く）の2.07％を保有する大株主です。当社と同じ鉄道工事を得意とする会社であり、当社は同社の株式464,815株を保有し、技術等の情報交換を通して自社の技術力向上を図っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "okaya-and-co",
+      "relationship": "business-partner",
+      "description": "工事受注実績がある取引先で、各種情報交換を通し受注機会の増加を目的に業務提携等の関係の維持強化を図っており、当社は同社の株式146,700株を保有しています（2026年3月31日現在）。同社は2026年3月31日現在、当社の発行済株式（自己株式を除く）の2.71％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toho-gas",
+      "relationship": "business-partner",
+      "description": "工事受注実績がある取引先で、各種情報交換を通し受注機会の増加を目的に業務提携等の関係の維持強化を図っており、当社は同社の株式145,000株を保有しています（2026年3月31日現在）。同社は2026年3月31日現在、当社の発行済株式（自己株式を除く）の1.98％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daiichi-kensetsu",
+      "relationship": "business-partner",
+      "description": "当社と同じ鉄道工事を得意とする会社で、技術等の情報交換を通して自社の技術力向上を図る業務提携等の関係にあり、当社は同社の株式437,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "raito-kogyo",
+      "relationship": "business-partner",
+      "description": "特殊工事の施工における当社の協力会社であり、業務提携等の関係にあります。当社は同社の株式269,300株を保有し、各種情報交換を通して関係の維持強化を図っています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nitto-kogyo",
+      "relationship": "business-partner",
+      "description": "工事受注実績がある取引先で、今後も各種情報交換を通して建設工事の受注機会の増加を目的に業務提携等の関係の維持強化を図っており、当社は同社の株式186,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fujimi",
+      "relationship": "business-partner",
+      "description": "工事受注実績がある取引先で、各種情報交換を通して建設工事の受注機会の増加を目的に業務提携等の関係の維持強化を図っており、当社は同社の株式251,500株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kanamoto",
+      "relationship": "business-partner",
+      "description": "工事受注実績がある取引先で、各種情報交換を通して建設工事の受注機会の増加を目的に業務提携等の関係の維持強化を図っており、当社は同社の株式152,900株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "meito",
+      "relationship": "business-partner",
+      "description": "工事受注実績がある取引先で、各種情報交換を通し受注機会の増加を目的に業務提携等の関係の維持強化を図っており、当社は同社の株式62,000株を保有しています（2026年3月31日現在）。旧会社名は名糖産業で、本社ビル新築工事の発注者でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toa-road",
+      "relationship": "business-partner",
+      "description": "工事施工における当社の協力会社であり、業務提携等の関係にあります。当社は同社の株式317,000株を保有し、各種情報交換を通して関係の維持強化を図っています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "comsys-holdings",
+      "relationship": "business-partner",
+      "description": "当社への情報通信設備機器の提供を行う取引先であり、工事施工における当社の協力会社でもある業務提携等の関係にあります。当社は同社の株式97,704株を保有し、各種情報交換を通して関係の維持強化を図っています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sangetsu",
+      "relationship": "business-partner",
+      "description": "工事施工における当社の協力会社であり、業務提携等の関係にあります。当社は同社の株式139,040株を保有し、貸株対応等各種情報交換を通して関係の維持強化を図っています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nagawa",
+      "relationship": "business-partner",
+      "description": "工事施工における当社の協力会社であり、業務提携等の関係にあります。当社は同社の株式63,300株を保有し、各種情報交換を通して関係の維持強化を図っています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-takigami-steel-construction",
+      "relationship": "business-partner",
+      "description": "工事施工における当社の協力会社であり、業務提携等の関係にあります。当社は同社の株式34,500株を保有し、各種情報交換を通して関係の維持強化を図っています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mino-ceramic",
+      "relationship": "business-partner",
+      "description": "同社の関連会社が工事施工における当社の協力会社であり、業務提携等の関係にあります。当社は同社の株式144,300株を保有し、各種情報交換を通して関係の維持強化を図っています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +703,47 @@
       "publisher": "名工建設株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YK2R.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YK2R",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年度から第19次経営計画（2024年度～2026年度）を進め、スローガン「挑戦、未来へ　4つのC」のもとで経営目標「信頼」「競争力」「実行力」「挑戦」を掲げ、「安全と技術の名工」「社員が誇れる企業」を目指しています。安全を最優先に行動する文化の醸成、品質管理能力の向上、DXによる業務執行方法の変革、研修施設建設計画の推進、人的資本投資と活躍支援、売上拡大に向けた戦略的な受注の取組などを進めています。社訓は「誠実」ならびに「和して同ぜず」です。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "鉄道工事専門会社として設立された経緯を持ち、新幹線の安全対策や大規模改修、中央新幹線の建設工事、鉄道の維持修繕で培った施工技術と、発注者との信頼関係が基盤になっています。土木・建築・軌道の分野で施工技術の改良と新技術の開発に取り組み、耐震補強工事のSMIC工法や制振装置「クランク型鋼製履歴ダンパー」の開発も進めています。",
+        "basis": "沿革における設立の経緯、研究開発活動の記述、経営者による分析における土木部門・建築部門の取組の記述に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高の構成は、建設事業が95,744百万円、不動産事業等が1,209百万円で、建設事業が連結売上高の大部分を占めています。主要な顧客である東海旅客鉄道株式会社向けの売上高は51,886百万円と建設事業の過半を占めており、本邦以外の外部顧客への売上高はありません。",
+        "basis": "セグメント情報の外部顧客への売上高、関連情報（主要な顧客ごとの情報・地域ごとの情報）に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

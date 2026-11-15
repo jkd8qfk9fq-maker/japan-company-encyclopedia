@@ -4,15 +4,175 @@
   "name": "日本精化",
   "officialName": "日本精化株式会社",
   "nameEn": "Nippon Fine Chemical Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Nippon Fine Chemical Co., Ltd.",
+  "description": "化粧品・医薬品向けのリン脂質やウールグリース誘導体などの機能性製品と、業務用洗剤などの環境衛生製品を製造販売する化学メーカーのグループです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "functional-products",
+      "name": "機能性製品",
+      "description": "化粧品用原料、ウールグリース誘導体、リン脂質、機能性コーティング剤、樹脂添加剤、植物性油脂、合成樹脂製品などの製造販売及び仕入販売と、薬理・安全性試験の受託を行う、当社グループ最大の事業です。ビューティケア、ヘルスケア、ファインケミカル、トレーディングの分野で構成されます。2026年3月期の外部顧客への売上高は26,351百万円です。当社が製造販売し、日精バイリス株式会社が当社製品の一部販売と原材料の調達、薬理・安全性試験の受託を、日精プラステック株式会社が合成樹脂製品及び住宅資材販売を、四川日普精化有限公司が輸出用脂肪酸アマイド及び機能性コーティング剤の製造販売を、日隆精化國際股份有限公司が機能性コーティング剤の販売を担います。",
+      "customers": [
+        "化粧品メーカー",
+        "医薬品メーカー",
+        "株式会社マツモト交商や稲畑産業株式会社などの販売先"
+      ],
+      "children": [
+        {
+          "id": "beauty-care",
+          "name": "ビューティケア",
+          "description": "化粧品用リン脂質素材、化粧品用機能性油剤、生理活性物質などをグローバルに展開する分野です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営方針、経営環境及び対処すべき課題等】"
+        },
+        {
+          "id": "health-care",
+          "name": "ヘルスケア",
+          "description": "医薬品用リン脂質、医薬品中間体などを扱い、高純度リン脂質を用いたリポソーム製剤等の受託研究・受託開発製造の技術サービスも提供する分野です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営方針、経営環境及び対処すべき課題等】"
+        },
+        {
+          "id": "fine-chemical",
+          "name": "ファインケミカル",
+          "description": "工業用ウールグリース誘導体、機能性コーティング剤、ペロブスカイト型太陽電池用素材などを扱う分野です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営方針、経営環境及び対処すべき課題等】"
+        },
+        {
+          "id": "trading",
+          "name": "トレーディング",
+          "description": "商事子会社を通じた仕入販売を行う分野です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営方針、経営環境及び対処すべき課題等】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "hygiene-products",
+      "name": "環境衛生製品",
+      "description": "業務用洗剤、薬用石けん液、除菌・殺菌剤などの製造販売を行う事業です。連結子会社の株式会社アルボースが製造販売を担い、フードビジネス及び医療介護分野向けの製品を展開しています。2026年3月期の外部顧客への売上高は7,212百万円です。",
+      "customers": [
+        "食品工場",
+        "医療介護施設"
+      ],
+      "children": [
+        {
+          "id": "hygiene",
+          "name": "ハイジーン",
+          "description": "感染症対策商品や業務用洗浄剤、医療用衛生用品などを扱う分野です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営方針、経営環境及び対処すべき課題等】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業で、不動産の賃貸を行っています。日精バイリス株式会社が不動産業を営み、当社は同社に不動産の管理業務を委託しています。2026年3月期の外部顧客への売上高は233百万円です。",
+      "customers": [
+        "不動産の賃借人"
+      ],
+      "children": [
+        {
+          "id": "real-estate-leasing",
+          "name": "不動産賃貸",
+          "description": "不動産の賃貸及び管理業務を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "機能性製品と環境衛生製品の2つの事業で、化粧品用原料・医薬品用リン脂質・機能性コーティング剤や業務用洗剤・除菌剤などを製造販売し、その対価を得る事業モデルです。",
+    "products": [
+      "化粧品用原料（リン脂質素材・機能性油剤・生理活性物質）",
+      "医薬品用リン脂質・医薬品中間体",
+      "ウールグリース誘導体",
+      "機能性コーティング剤・樹脂添加剤",
+      "合成樹脂製品",
+      "業務用洗剤・薬用石けん液・除菌・殺菌剤"
+    ],
+    "customers": [
+      "化粧品メーカー",
+      "医薬品メーカー",
+      "食品工場・医療介護施設",
+      "販売先である商社など"
+    ],
+    "revenueSources": [
+      "機能性製品の販売対価",
+      "環境衛生製品の販売対価",
+      "薬理・安全性試験の受託料",
+      "不動産の賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日本精化と連結子会社5社のグループ",
+        "description": "2026年3月31日現在、当社と連結子会社5社でグループを構成し、連結従業員数は713人です。機能性製品と環境衛生製品の製造販売を主な事業としています。"
+      },
+      {
+        "kind": "offering",
+        "title": "機能性製品と環境衛生製品の製造販売",
+        "description": "機能性製品では化粧品用原料、ウールグリース誘導体、リン脂質、機能性コーティング剤、樹脂添加剤などを製造販売し、環境衛生製品では業務用洗剤、薬用石けん液、除菌・殺菌剤などを製造販売します。"
+      },
+      {
+        "kind": "customer",
+        "title": "化粧品・医薬品メーカーなどが主な顧客",
+        "description": "主な販売先は化粧品・医薬品メーカーなどです。2026年3月期は、株式会社マツモト交商への売上高が5,285百万円（連結売上高の15.6％）、稲畑産業株式会社への売上高が3,551百万円（同10.5％）でした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売対価として売上高を得る",
+        "description": "2026年3月期の売上高は33,796百万円（前期比5.2％減）です。機能性製品が26,351百万円、環境衛生製品が7,212百万円、その他が233百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は4,428百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は4,428百万円です（前期は3,870百万円）。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +187,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 44560000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 684,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 46101000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 717,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 47559000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 719,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +247,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 49069000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 719,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +267,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 52390000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 713,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +275,256 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1918,
+      "title": "日本樟脳株式会社として発足",
+      "description": "粉末樟脳及び型物樟脳の製造を目的として日本樟脳株式会社と称し発足し、本社及び工場を神戸市に設置しました。",
+      "significance": "会社の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "神戸工場を新設し脂肪酸の製造を開始",
+      "description": "神戸工場を新設し、塗料用脂肪酸、単体脂肪酸の製造を開始しました。",
+      "significance": "樟脳から脂肪酸化学へ事業が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "脂肪酸モノアミド「ニュートロン」の製造開始",
+      "description": "ポリオレフィンフィルム用滑剤「脂肪酸モノアミド（ニュートロン）」の製造を開始しました。",
+      "significance": "機能性製品の基礎となる製品が生まれました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "商号を日本精化株式会社に変更",
+      "description": "商号を日本精化株式会社に変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "アルボース薬粧株式会社を買収",
+      "description": "アルボース薬粧株式会社を買収しました（1991年に株式会社アルボースに商号変更）。",
+      "significance": "環境衛生製品事業の基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "大阪証券取引所市場第一部に指定",
+      "description": "大阪証券取引所市場第一部に指定されました。",
+      "significance": "第一部銘柄となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "中国に四川日普精化有限公司を設立",
+      "description": "中国に合弁会社四川日普精化有限公司を設立しました。",
+      "significance": "海外生産拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に上場しました。",
+      "significance": "東京証券取引所に上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "台湾に日隆精化國際股份有限公司を設立",
+      "description": "台湾に合弁会社日隆精化國際股份有限公司を設立しました。",
+      "significance": "海外販売拠点が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所市場第一部からプライム市場に移行しました。",
+      "significance": "市場再編に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "日精バイリスが日精興産を吸収合併",
+      "description": "日精バイリス株式会社が日精興産株式会社を吸収合併しました。",
+      "significance": "グループの再編が行われました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "inabata-and-co",
+      "relationship": "customer",
+      "description": "主要な顧客ごとの情報で、2026年3月期に3,551百万円（連結売上高の10.5％）の売上高が開示された顧客です。当社は同社株式249,000株を、機能性製品セグメントにおける取引先として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "nof",
+      "relationship": "business-partner",
+      "description": "機能性製品セグメントにおける取引先であり、業務提携等の関係の維持・強化を目的として、当社は同社株式1,821,525株を保有しています。同社は当社株式の4.79％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nichirin",
+      "relationship": "business-partner",
+      "description": "環境衛生製品セグメントにおける取引先であり、業務提携等の関係の維持・強化を目的として、当社は同社株式286,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shiseido",
+      "relationship": "business-partner",
+      "description": "機能性製品セグメントにおける取引先であり、業務提携等の関係の維持・強化を目的として、当社は同社株式359,995株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nagase-and-co",
+      "relationship": "business-partner",
+      "description": "機能性製品セグメントにおける取引先であり、業務提携等の関係の維持・強化を目的として、当社は同社株式234,342株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "matsumoto-yushi-seiyaku",
+      "relationship": "business-partner",
+      "description": "機能性製品セグメントにおける取引先であり、業務提携等の関係の維持・強化を目的として、当社は同社株式25,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ono-pharmaceutical",
+      "relationship": "business-partner",
+      "description": "機能性製品セグメントにおける取引先であり、業務提携等の関係の維持・強化を目的として、当社は同社株式195,000株を保有しています。同社は当社株式の1.82％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nihon-kagaku-sangyo",
+      "relationship": "business-partner",
+      "description": "機能性製品セグメントにおける取引先であり、業務提携等の関係の維持・強化を目的として、当社は同社株式200,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yushiro",
+      "relationship": "business-partner",
+      "description": "環境衛生製品セグメントにおける取引先であり、業務提携等の関係の維持・強化を目的として、当社は同社株式101,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daito-chemix",
+      "relationship": "business-partner",
+      "description": "機能性製品セグメントにおける取引先であり、業務提携等の関係の維持・強化を目的として、当社は同社株式603,600株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sojitz",
+      "relationship": "business-partner",
+      "description": "機能性製品セグメントにおける取引先であり、業務提携等の関係の維持・強化を目的として、当社は同社株式20,966株を保有しています。同社は当社株式の2.49％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nissin-shoji",
+      "relationship": "business-partner",
+      "description": "機能性製品セグメントにおける取引先であり、業務提携等の関係の維持・強化を目的として、当社は同社株式99,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fuso-pharmaceutical-industries",
+      "relationship": "business-partner",
+      "description": "機能性製品セグメントにおける取引先であり、業務提携等の関係の維持・強化を目的として、当社は同社株式26,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shoei-yakuhin",
+      "relationship": "business-partner",
+      "description": "機能性製品セグメントにおける取引先であり、業務提携等の関係の維持・強化を目的として、当社は同社株式15,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +532,55 @@
       "publisher": "日本精化株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCCG.pdf",
       "publishedAt": "2026-06-17",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YCCG",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "第14次中期経営計画（2023－2026年度）の達成に取り組むとともに、長期ビジョン「NFC VISION 2030」で描く2030年度のありたい姿に向け、2026年度は「成長基盤強化」「サステナビリティ」「ガバナンス強化」の3つを事業活動の基本方針としています。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "ヘルスケア分野では医薬品用高純度リン脂質やリポソーム、リピッドナノパーティクルなどの製剤化技術での差別化で顧客獲得を図り、ファインケミカル分野ではペロブスカイト型太陽電池用素材の量産化技術の確立に注力しています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等に記載された第14次中期経営計画4年目の事業活動の方針（ヘルスケア分野の製剤化技術での差別化、ファインケミカル分野のペロブスカイト型太陽電池用素材の量産化）による。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "化粧品・医薬品向けの高純度リン脂質やウールグリース誘導体を手がけ、加古川東工場と高砂工場に化粧品用・医薬品用のリン脂質や医薬品原料の製造プラントを備え、リポソーム製剤などの受託研究・受託開発製造の技術サービスも提供しています。",
+        "basis": "事業の内容、沿革及び研究開発活動に記載された製品構成と製造プラント（加古川東工場の化粧品用リン脂質製造プラント、高砂工場の医薬品用リン脂質製造プラント及びリポソーム専用プラント）、受託技術サービスによる。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は、機能性製品が26,351百万円と全体の約8割を占め、環境衛生製品が7,212百万円、その他が233百万円です。地域別では日本が22,447百万円、中国が4,081百万円、その他が7,267百万円で、主要な顧客は株式会社マツモト交商（5,285百万円）と稲畑産業株式会社（3,551百万円）です。",
+        "basis": "セグメント情報に記載された報告セグメントごとの外部顧客への売上高、地域ごとの情報及び主要な顧客ごとの情報による。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

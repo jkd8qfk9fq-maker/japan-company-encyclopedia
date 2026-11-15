@@ -4,15 +4,161 @@
   "name": "名港海運",
   "officialName": "名港海運株式会社",
   "nameEn": "MEIKO TRANS CO.,LTD.",
-  "description": null,
+  "shortNameEn": "MEIKO TRANS",
+  "description": "名古屋港を拠点に、港湾運送や倉庫保管、陸上・航空輸送を組み合わせた総合物流サービスを提供する会社です。",
   "listings": [
     {
       "exchange": "nse",
       "market": "メイン"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "port-transportation-and-related",
+      "name": "港湾運送およびその関連",
+      "description": "港湾運送を中核に、倉庫保管や陸上運送、航空貨物・国際複合輸送まで手がける報告セグメントです。2026年3月期の外部顧客への売上高は812億83百万円でした。名古屋港を中心に、国内および海外の拠点とのネットワークでサービスを提供しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "port-transportation",
+          "name": "港湾運送事業",
+          "description": "港湾で船内荷役や沿岸荷役などの荷役作業を行う事業です。当社のほか、名海運輸作業株式会社なども営業し、当社事業の一部を下請しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "warehousing",
+          "name": "倉庫保管事業",
+          "description": "倉庫で貨物を保管する事業です。当社のほか、大源海運株式会社や海外の現地法人も営業しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "land-transportation",
+          "name": "陸上運送事業",
+          "description": "トラックなどによる陸上輸送の事業です。当社は自動車運送利用業を営み、名海運輸作業株式会社、名港陸運株式会社、海外の現地法人などが自動車運送を営業しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "freight-forwarding",
+          "name": "貨物利用運送事業",
+          "description": "他の運送事業者の輸送手段を利用して貨物を運ぶ事業です。当社のほか、ナゴヤシッピング株式会社も営業しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "shipping-agency",
+          "name": "海運代理店業",
+          "description": "船会社に代わって船舶の入出港に関する手続きなどを行う事業です。名古屋船舶株式会社、セントラルシッピング株式会社が営業しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "air-cargo-and-intermodal",
+          "name": "航空貨物・国際複合輸送事業",
+          "description": "航空貨物の取扱いと、海・陸・空を組み合わせた国際複合一貫輸送を行う事業です。当社のほか、海外の現地法人も営業しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "leasing",
+      "name": "賃貸",
+      "description": "土地・建物を有効活用した不動産賃貸を行う報告セグメントです。2026年3月期の外部顧客への売上高は15億26百万円でした。当社のほか、名郵不動産株式会社、株式会社知多共同輸送センターなどが営業しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業セグメントで、保険代理店業を含みます。2026年3月期の外部顧客への売上高は50百万円でした。保険代理店業は名港海運興産株式会社が営んでおり、同社は当連結会計年度から連結子会社となっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "港湾運送を中核に、倉庫保管や陸上運送、航空貨物・国際複合輸送まで、海・陸・空の物流サービスを国内外の拠点で提供しています。",
+    "products": [
+      "港湾運送（船内荷役・沿岸荷役など）",
+      "倉庫保管",
+      "陸上運送",
+      "貨物利用運送",
+      "海運代理店業",
+      "航空貨物・国際複合輸送",
+      "不動産賃貸",
+      "保険代理店業"
+    ],
+    "customers": [
+      "名古屋港などを経由する輸出入貨物の荷主",
+      "船会社（海運代理店業）"
+    ],
+    "revenueSources": [
+      "港湾運送・倉庫保管・陸上運送などの物流サービスの対価",
+      "不動産の賃貸料",
+      "保険代理手数料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "名古屋港を拠点とする総合物流グループ",
+        "description": "名港海運は名古屋市港区に本社を置き、当社と子会社29社・関連会社5社でグループを構成しています。連結従業員数は1,890人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "海・陸・空の総合物流サービス",
+        "description": "港湾運送を中核に、倉庫保管、陸上運送、貨物利用運送、海運代理店、航空貨物・国際複合輸送を提供し、あわせて不動産賃貸や保険代理店業も手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "荷主や船会社から仕事を受託",
+        "description": "名古屋港を中心とする輸出入貨物の荷主などから、港湾荷役や保管、輸送の仕事を受託しています。海運代理店業では船会社の代理店として船舶の入出港に関する業務を行っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "物流サービスの対価が売上に",
+        "description": "2026年3月期の売上高は828億61百万円でした（前期比1.7％増）。港湾運送およびその関連が812億83百万円、賃貸が15億26百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は59億11百万円でした（前期比9.9％増）。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 102721576000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1829,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 108935110000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1858,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 121792162000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1892,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +233,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 126337575000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1895,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +253,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 142019512000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1890,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +261,186 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1949,
+      "title": "名港海運株式会社を設立",
+      "description": "1949年1月、戦時中に発足した名古屋港運株式会社が閉鎖機関として指定を受けたことを受け、当時の役員・従業員の有志により名港海運株式会社が設立され、同年4月に営業を開始しました。",
+      "significance": "名古屋港の港湾運送を担う会社としての創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "倉庫業の営業を開始",
+      "description": "1950年9月、倉庫業の営業を開始しました。",
+      "significance": "現在の倉庫保管事業につながる事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "港湾運送事業法により事業登録",
+      "description": "1951年9月、港湾運送事業法の施行により、第1種（一般港湾運送事業）、第2種（船内荷役事業）、第3種（はしけ運送事業）、第4種（沿岸荷役事業）の登録を受けました。",
+      "significance": "港湾運送事業者としての事業基盤が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "名古屋証券取引所市場第二部に上場",
+      "description": "1962年9月、名古屋証券取引所市場第二部（現・メイン市場）に上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "米国に現地法人を設立",
+      "description": "1970年9月、米国に現地法人SAN MODE FREIGHT SERVICE, INC.（現・連結子会社）を設立しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "ベルギーにMEIKO EUROPE N.V.を設立",
+      "description": "1978年2月、ベルギーに現地法人MEIKO EUROPE N.V.（現・連結子会社）を設立しました。",
+      "significance": "欧州拠点の開設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "航空貨物運送業務を開始",
+      "description": "1979年4月、航空貨物運送業務を開始しました。",
+      "significance": "海と陸に空の輸送が加わり、総合物流への展開が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "IATA公認航空貨物代理店の資格を取得",
+      "description": "1982年3月、IATA（国際航空運送協会）公認航空貨物代理店の資格を取得しました。",
+      "significance": "航空貨物事業の体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "タイに現地法人を設立",
+      "description": "1996年10月、タイに現地法人MEIKO TRANS (THAILAND) CO.,LTD.（現・連結子会社）を設立しました。",
+      "significance": "アジア拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "中部国際空港営業所を開設",
+      "description": "2005年2月、中部国際空港営業所（シーガルセントレアターミナル）を開設しました。",
+      "significance": "中部国際空港で航空貨物を取り扱う拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "中国に上海名港国際貨運有限公司を設立",
+      "description": "2005年6月、中国に現地法人上海名港国際貨運有限公司（現・連結子会社）を設立しました。",
+      "significance": "中国拠点の開設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "AEO制度に基づく特定保税承認者の承認を取得",
+      "description": "2008年2月、名古屋税関長より、AEO制度に基づく「特定保税承認者」の承認を受けました。",
+      "significance": "保税業務の体制が認められた節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "AEO制度に基づく認定通関業者の認定を取得",
+      "description": "2009年8月、名古屋税関長より、AEO制度に基づく「認定通関業者」の認定を受けました。",
+      "significance": "通関業務の体制が認められた節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ベトナムに現地法人を設立",
+      "description": "2019年3月、ベトナムに現地法人MEIKO TRANS (VIETNAM) CO.,LTD.を設立しました。",
+      "significance": "海外ネットワークの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsui-o-s-k-lines",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社株式の4.98％を保有する大株主です。当社も同社株式102,300株を保有し、物流関連取引を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "ngk",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社株式の3.48％を保有する大株主です。当社も同社株式773,000株を保有し、物流関連取引を行っています。同社は2026年4月1日付で日本碍子株式会社からNGK株式会社に商号変更しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "noritake",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社株式の3.22％を保有する大株主です。当社も同社株式196,400株を保有し、物流関連取引を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "taisei",
+      "relationship": "supplier",
+      "description": "当社が物流事業の運営のために建築および施設修繕等の発注を行っている取引先です。当社は同社株式70,800株を保有し、同社も2026年3月31日現在、当社株式の2.71％を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +448,55 @@
       "publisher": "名港海運株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YL49.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YL49",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年度から2029年度の5年間を計画期間とする中期経営計画「MX2029」を策定し、「国内事業の拡大」「海外事業の成長」「物流DXの推進」の3つの基本戦略に基づき、事業の成長と収益性の向上を両立させ、資本効率を意識した経営を推進するとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "名古屋港を中心に71万㎡を超える倉庫群を擁し、重量物対応倉庫や危険物倉庫、燻蒸庫、医薬品倉庫、定温庫など多彩な機能を持つ倉庫を備えています。国内では東京支店をはじめ北海道から九州まで営業網を結び、海外では米国、メキシコ、ベルギー、ドイツ、ポーランド、タイ、ベトナム、中国、インドの各地に拠点を置いて、倉庫、フォワーディング、陸上輸送、通関業務を営んでいます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "名古屋税関からAEO制度に基づく「特定保税承認者」の承認と「認定通関業者」の認定を受けており、保税・通関の体制が整っています。主要な物流センターは飛島村や弥富市など名古屋港の周辺に集まっており、港湾運送と倉庫保管を一体で担う体制です。",
+        "basis": "沿革のAEO承認・認定の記載と、【主要な設備の状況】の物流センターの所在地の記載に基づく。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高のうち、港湾運送およびその関連が812億83百万円と大半を占め、賃貸が15億26百万円、その他（保険代理店業等）が50百万円でした。港湾運送およびその関連の部門別の売上高は、港湾運送部門49,791百万円、陸上運送部門12,820百万円、倉庫保管部門9,920百万円、航空貨物運送部門4,241百万円、その他の部門4,509百万円です。地域別の売上高は日本が大半を占め、北米、ヨーロッパ、その他の地域でも売上があります。売上高の10％以上を占める主要な顧客はありません。",
+        "basis": "セグメント情報の外部顧客への売上高、MD&Aの部門別売上高、【関連情報】の地域ごとの情報と主要な顧客ごとの情報の記載に基づく。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

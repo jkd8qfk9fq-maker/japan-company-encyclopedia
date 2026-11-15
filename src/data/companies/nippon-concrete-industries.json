@@ -4,15 +4,188 @@
   "name": "日本コンクリート工業",
   "officialName": "日本コンクリート工業株式会社",
   "nameEn": "NIPPON CONCRETE INDUSTRIES CO., LTD.",
-  "description": null,
+  "shortNameEn": "NIPPON CONCRETE INDUSTRIES CO., LTD.",
+  "description": "コンクリートパイルやポール等のコンクリート二次製品を製造・販売し、基礎工事や地盤改良工事も手がけるメーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "concrete-secondary-products",
+      "name": "コンクリート二次製品事業",
+      "description": "ポール、土木製品等のコンクリート二次製品の製造・販売、受託試験研究収入及びポール・土木製品の施工等を行う事業です。2026年3月期の外部顧客への売上高は26,906百万円です。",
+      "customers": [
+        "建設会社",
+        "電力会社・通信事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "pole-products",
+          "name": "ポール製品",
+          "description": "コンクリートポールの製造・販売を行う分野です。MD&Aによれば、ポール関連事業の売上高は147億59百万円で、携帯電話基地局向けポールの出荷も徐々に再開しはじめています。",
+          "customers": [
+            "電力会社・通信事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "civil-engineering-products",
+          "name": "土木製品等",
+          "description": "ＰＣ－壁体やＲＣセグメント等の土木製品の製造・販売と施工を行う分野です。MD&Aによれば、土木製品事業の売上高は121億47百万円です。",
+          "customers": [
+            "建設会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "foundation",
+      "name": "基礎事業",
+      "description": "パイルの製造・販売、杭打工事及び地盤改良工事を行う事業です。2026年3月期の外部顧客への売上高は22,013百万円です。",
+      "customers": [
+        "建設会社",
+        "販売代理店"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "pile-products",
+          "name": "パイル製品",
+          "description": "コンクリートパイルの製造・販売を行う分野です。ＮＣＳ－ＰＣパイルや高強度ＯＮＡパイル等の製品を手がけています。",
+          "customers": [
+            "建設会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "foundation-works",
+          "name": "工事売上",
+          "description": "パイルを用いた杭打工事や地盤改良工事の請負を行う分野です。ＮＡＫＳ工法やＨｙｐｅｒ－ＭＥＧＡ工法等の独自工法を用います。",
+          "customers": [
+            "建設会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-solar",
+      "name": "不動産・太陽光発電事業",
+      "description": "不動産賃貸及び太陽光発電を行う事業です。2026年3月期の外部顧客への売上高は313百万円です。",
+      "customers": [
+        "不動産の賃借人",
+        "電力会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "real-estate-leasing",
+          "name": "不動産賃貸",
+          "description": "有料老人ホーム等の不動産賃貸を行う分野です。鎌倉と曙（東京）の寮跡地に有料老人ホームを建設し賃貸しています。",
+          "customers": [
+            "不動産の賃借人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "solar-power",
+          "name": "太陽光発電",
+          "description": "太陽光発電と売電を行う分野です。",
+          "customers": [
+            "電力会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "当社グループは、パイルの製造・販売と杭打工事・地盤改良工事を行う基礎事業、ポールや土木製品等の製造・販売と施工を行うコンクリート二次製品事業を両軸に、不動産賃貸と太陽光発電も営んでいます。",
+    "products": [
+      "コンクリートパイル",
+      "コンクリートポール",
+      "土木製品（ＰＣ－壁体・ＲＣセグメント等）",
+      "プレキャストコンクリート製品"
+    ],
+    "customers": [
+      "建設会社",
+      "電力会社・通信事業者",
+      "販売代理店"
+    ],
+    "revenueSources": [
+      "パイル製品の販売と基礎工事の請負による収益",
+      "ポール・土木製品等の販売と施工による収益",
+      "不動産賃貸と太陽光発電の売電による収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と子会社27社・関連会社4社のグループ",
+        "description": "日本コンクリート工業株式会社は東京都港区に本店を置き、当社と子会社27社及び関連会社4社で企業集団を構成しています。連結の従業員数は1,351人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "パイル・ポール・土木製品の製造",
+        "description": "グループの工場でコンクリートパイル、コンクリートポール、ＰＣ－壁体やＲＣセグメント等の土木製品を製造し、杭打工事や地盤改良工事、製品の輸送までを手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "建設会社や電力会社等へ販売",
+        "description": "製品は建設会社や電力会社などに販売され、基礎工事等の請負も行っています。売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は49,233百万円",
+        "description": "2026年3月期の連結売上高は49,233百万円でした。事業別ではコンクリート二次製品事業が26,906百万円、基礎事業が22,013百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は684百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は684百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +200,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 38672793000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1428,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +220,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 37658927000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1351,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,12 +240,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 40395955000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1346,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号、2022年改正基準）等を第94期の期首から適用しており、第93期の経営指標等は当該会計基準等を遡及適用した後の数値で表示されている。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -87,7 +261,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 39985779000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1353,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +281,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 48447404000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1351,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +289,179 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1948,
+      "title": "日本コンクリート工業を設立",
+      "description": "鉄道電気工業株式会社（現・日本電設工業株式会社）の川島工作所から分離独立し、埋設ケーブル防護用コンクリートトラフの製造販売を主目的として設立されました。",
+      "significance": "コンクリート製品メーカーとしての創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "ＮＣ式鋼線コンクリートポールを発明",
+      "description": "「ＮＣ式」鋼線コンクリートポールを発明しました。",
+      "significance": "主力製品であるコンクリートポールの技術的な起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に上場しました。",
+      "significance": "上場市場での地位の確立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "ＮＣ工基を連結子会社化",
+      "description": "ＮＣ工基株式会社（旧株式会社工基）の株式を取得し、連結子会社としました。",
+      "significance": "基礎工事の施工体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "ＮＣマネジメントサービス等を設立",
+      "description": "ＮＣマネジメントサービス株式会社、ＮＣ西日本パイル製造株式会社及びＮＣ九州パイル製造株式会社を設立し、連結子会社としました。",
+      "significance": "グループの製造・管理体制の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "中国の建華パイル社と業務提携",
+      "description": "中国、建華パイル社と業務提携を行いました。",
+      "significance": "海外企業との提携の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "アジアパイルホールディングスから事業を譲受",
+      "description": "アジアパイルホールディングス株式会社（旧ジャパンパイル株式会社）より、防音建材ポアセル事業を譲り受けました。",
+      "significance": "事業領域の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "ミャンマーに合弁会社を設立",
+      "description": "ミャンマーのMAGA Manufacturing Co.,Ltd.との合弁企業NIPPON CONCRETE (Myanmar) Co., Ltd.を設立しました。",
+      "significance": "東南アジアへの生産展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "タイに合弁会社を設立",
+      "description": "タイのGENERAL ENGINEERING PUBLIC COMPANY LIMITEDとの合弁企業GENERAL NIPPON CONCRETE INDUSTRIES LIMITEDを設立しました。",
+      "significance": "東南アジア展開の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "フリー工業と北海道コンクリート工業を連結子会社化",
+      "description": "フリー工業株式会社の株式を取得し連結子会社とし、持分法適用関連会社であった北海道コンクリート工業株式会社の株式を追加取得し連結子会社としました。",
+      "significance": "グループの製造基盤の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "テノックスと業務・資本提携",
+      "description": "株式会社テノックスと業務・資本提携を行いました。",
+      "significance": "基礎工事分野での提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "東北ポールを連結子会社化",
+      "description": "東北ポール株式会社の株式を追加取得し、連結子会社としました。",
+      "significance": "東北地区の製造基盤の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分再編に伴い、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社小松製作所を設立",
+      "description": "株式会社小松（旧株式会社小松製作所）より型枠製造事業を譲り受け、株式会社小松製作所を設立しました。",
+      "significance": "型枠製造への事業展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "有料老人ホームを建設し賃貸",
+      "description": "曙寮跡地に有料老人ホームを建設し、賃貸しています。",
+      "significance": "不動産賃貸事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tenox",
+      "relationship": "business-partner",
+      "description": "2021年１月に業務・資本提携を行っており、業務提携等の関係にあります。当社は同社株式110,000株を保有しています（2026年３月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +469,55 @@
       "publisher": "日本コンクリート工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI1J.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YI1J",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年中期経営計画において、中長期ビジョンを「未来の社会生活基盤と地球環境を護る」とし、中期経営方針を「グループの変革と持続的成長により新たな価値を創出し、持続可能な社会に貢献する」と定め、「コア事業の収益力向上」と「付加価値創造に向けた経営基盤強化」の両輪で既存事業の強化と成長分野の伸長を目指すとしています。",
+        "asOf": "2026-03-31",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期は、2024年中期経営計画で定めた重点課題である販路拡大や研究開発に取り組みつつ、一部の工場の休止や製造ライン集約、より需要のある事業への転換等の生産体制の再整備を開始し、政策保有株式の縮減にも取り組んだと開示されています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における中期経営計画の記載、MD&Aにおける経営成績等の状況の概要の記載",
+        "asOf": "2026-03-31",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、コンクリート二次製品事業（26,906百万円）と基礎事業（22,013百万円）の2事業を軸に、パイル・ポール・土木製品の製造から杭打工事・地盤改良工事、製品の輸送までをグループで担える体制にあります。ＮＣ式コンクリートポールやＨｙｐｅｒ－ＭＥＧＡ工法など、独自工法の許容支持力について国土交通大臣認定を重ねてきた技術基盤も有しています。",
+        "basis": "事業の内容における事業区分と構成会社の記載、セグメント情報における外部顧客への売上高の記載、沿革における工法認定の記載",
+        "asOf": "2026-03-31",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "地域別の売上高は本邦の外部顧客への売上高が90％を超えるため開示が省略されており、国内中心の構成です。コンクリートパイルの全国需要は低調であった前年同期と概ね横這いで推移し、コンクリートポールの全国出荷量は減少が続くなど、厳しい市場環境が継続していると開示されています。売上高の10％以上を占める顧客はありません。",
+        "basis": "セグメント情報等の関連情報（地域ごとの情報・主要な顧客ごとの情報）の記載、MD&Aにおける経営成績等の状況の概要の記載",
+        "asOf": "2026-03-31",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

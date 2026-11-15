@@ -4,15 +4,125 @@
   "name": "カンロ",
   "officialName": "カンロ株式会社",
   "nameEn": "Kanro Inc.",
-  "description": null,
+  "shortNameEn": "Kanro Inc.",
+  "description": "飴とグミを中心とした菓子を製造販売するメーカーで、「ピュレグミ」や「健康のど飴」などのブランドを持ちます。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "kanro",
+      "name": "カンロ株式会社",
+      "description": "東京都新宿区に本社を置く菓子のメーカーです。当社と連結子会社1社（Kanro America Inc.）でグループを構成し、2025年12月期の連結従業員数は705人です。東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "candy",
+          "name": "飴カテゴリー",
+          "description": "のど飴やグルメ系の飴のカテゴリーです。2025年12月期の売上高は170億99百万円で、「健康のど飴」シリーズや「ノンシュガーのど飴」シリーズ、「じゅるる」シリーズが好調に推移しました。",
+          "customers": [
+            "菓子の卸売業者",
+            "小売業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "gummy",
+          "name": "グミカテゴリー",
+          "description": "グミのカテゴリーです。2025年12月期の売上高は168億60百万円で、主力ブランド「ピュレグミ」シリーズが販売を伸ばしました。直営店舗ヒトツブカンロやデジタルプラットフォーム「Kanro POCKeT」で販売する「グミッツェル」も好調で、米国子会社のKanro America Inc.でもピュレグミを販売しています。",
+          "customers": [
+            "菓子の卸売業者",
+            "小売業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "ingredients-candy",
+          "name": "素材菓子カテゴリー",
+          "description": "素材を活かした菓子のカテゴリーです。2025年12月期の売上高は7億99百万円で、「サクポリ納豆」が好調でした。",
+          "customers": [
+            "菓子の卸売業者",
+            "小売業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "当社と米国子会社Kanro America Inc.が、飴・グミ・素材菓子を国内の工場で製造し、販売総代理店の三菱商事を通じて小売店などに販売する事業モデルです。",
+    "products": [
+      "飴（健康のど飴、ノンシュガーのど飴、じゅるる）",
+      "グミ（ピュレグミ、グミッツェル）",
+      "素材菓子（サクポリ納豆）"
+    ],
+    "customers": [
+      "三菱商事（販売総代理店）",
+      "コンビニエンスストア・スーパーマーケットなどの小売店",
+      "一般消費者"
+    ],
+    "revenueSources": [
+      "菓子の販売代金"
+    ],
+    "suppliers": [
+      {
+        "name": "原材料の仕入先",
+        "description": "主原料などの原材料を仕入れており、三菱商事も原材料の購入先の一つです。"
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "カンログループ",
+        "description": "東京都新宿区に本社を置き、当社と米国子会社Kanro America Inc.でグループを構成しています。2025年12月期の連結従業員数は705人で、東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "飴とグミの製造",
+        "description": "山口県光市のひかり工場、長野県松本市の松本工場、長野県朝日村の朝日工場で、飴・グミ・素材菓子を製造しています。2025年12月期の売上高は、飴カテゴリーが170億99百万円、グミカテゴリーが168億60百万円、素材菓子カテゴリーが7億99百万円でした。"
+      },
+      {
+        "kind": "customer",
+        "title": "販売総代理店を通じた販売",
+        "description": "製品は、1973年から販売総代理店契約を結ぶ三菱商事を通じて、コンビニエンスストアやスーパーマーケットなどの小売店に販売されます。直営店舗「ヒトツブカンロ」やデジタルプラットフォーム「Kanro POCKeT」でも高価値商品を販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2025年12月期の売上高は34,771百万円",
+        "description": "2025年12月期の売上高は34,771百万円でした。当期から連結財務諸表を作成しているため、前期との比較は記載されていません。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は3,378百万円",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は3,378百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2025年12月期",
@@ -27,30 +137,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18984919000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 705,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "第76期より連結財務諸表を作成しているため、それ以前の期間については連結経営指標を記載していない。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第76期(2025/01/01－2025/12/31)",
-      "publisher": "カンロ株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XTWS.pdf",
-      "publishedAt": "2026-03-26",
-      "accessedAt": "2026-09-28"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-28",
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",
@@ -62,5 +157,203 @@
       "yuho-2025"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1912,
+      "title": "宮本政一が山口県光市で製菓業を創始",
+      "description": "初代会長故宮本政一が個人にて、山口県光市に製菓業を創始しました。",
+      "significance": "当社グループの創業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "宮本製菓株式会社を設立",
+      "description": "組織を株式会社に改め、宮本製菓株式会社を設立しました。",
+      "significance": "株式会社としての設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "社名をカンロ株式会社に改称",
+      "description": "社名をカンロ株式会社に改称しました。",
+      "significance": "現在の社名への改称です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "三菱商事と業務提携し販売総代理店契約を締結",
+      "description": "三菱商事株式会社と業務提携し、販売総代理店契約を締結しました。",
+      "significance": "現在まで続く販売体制の基盤です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "長野県朝日村に朝日工場を新設",
+      "description": "長野県朝日村に朝日工場を新設しました。",
+      "significance": "国内の生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "連結子会社のひかり製菓株式会社を吸収合併",
+      "description": "連結子会社のひかり製菓株式会社を吸収合併しました。",
+      "significance": "連結子会社の整理です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "松本工場で新グミラインが稼働",
+      "description": "松本工場において新グミラインが稼働しました。",
+      "significance": "グミの生産体制の増強です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所スタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "米国に連結子会社Kanro America Inc.を設立",
+      "description": "米国に連結子会社「Kanro America Inc.」を設立しました。",
+      "significance": "海外事業の本格展開の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-corporation",
+      "relationship": "other-affiliated-company",
+      "description": "当社のその他の関係会社です。2025年12月31日現在、当社の議決権の29.59％を保有しています。1973年5月に業務提携し販売総代理店契約を締結しており、当社製品の販売総代理店であるとともに、原材料の購入先でもあります。当社の主要な顧客でもあります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "seven-and-i-holdings",
+      "relationship": "customer",
+      "description": "コンビニエンスストア及びスーパーの販売チャネルにおける重要取引先です。安定的な営業関係取引の維持強化のため、当社が同社の株式9,491株を保有しています（2025年12月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "maruichi",
+      "relationship": "customer",
+      "description": "長野県のスーパーの販売チャネルに強固な営業基盤を持つ販売先です。当該地域の販売を強化していく方針のため、当社が同社の株式を保有しています（2025年12月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2025",
+      "title": "有価証券報告書－第76期(2025/01/01－2025/12/31)",
+      "publisher": "カンロ株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XTWS.pdf",
+      "publishedAt": "2026-03-26",
+      "docId": "S100XTWS",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-12"
+    }
+  ],
+  "status": {
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 株式分割：2025年7月1日付で普通株式1株につき3株の割合で株式分割を実施した。株式関連の指標は、第76期の期首に当該株式分割が行われたと仮定して算定されている。"
+    ]
+  },
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年2月に企業パーパス「Sweeten the Future 心がひとつぶ、大きくなる。」の下で「Kanro Vision 2.0」を定め、2025年12月期から2030年12月期までの「中期経営計画2030」をスタートしました。ブランド基軸経営の深化、コア事業（国内飴・グミ事業）の基盤変革、米国や中華圏を中心としたグローバル事業の展開を進めています。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "単一セグメントの菓子食品事業の中で、グミカテゴリーが成長を牽引しています。2025年5月に設立した米国子会社Kanro America Inc.がカリフォルニア州を中心にピュレグミの販売を始めており、直営店舗とデジタルプラットフォームを通じた高価値商品の販売も伸ばしています。",
+        "basis": "MD&Aの経営成績の状況及び分析（カテゴリー別売上高）、関係会社の状況、経営方針の中期経営計画2030",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "糖にこだわり、素材と機能性を追求する研究開発力を強みとし、「ピュレグミ」「健康のど飴」などのブランドを持ちます。国内3工場はいずれも食品安全規格FSSC22000を取得し、松本工場ではグミラインの拡張を進めています。",
+        "basis": "経営方針の対処すべき課題（研究開発力の説明）、沿革と主要な設備の状況（工場と認証の記録）、MD&Aの経営成績の分析",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "disclosed": {
+        "text": "国内のキャンディ市場においてトップシェアを引き続き維持していると述べています（インテージSRI＋ キャンディ市場 2025年 小売販売金額シェアに基づく）。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "菓子食品事業の単一セグメントで、本邦の外部顧客への売上高が連結売上高の90％を超える国内中心の構成です。主要な顧客は三菱商事で、2025年12月期の販売実績の91.9％を占めています。",
+        "basis": "セグメント情報の地域ごとの情報と主要な顧客ごとの情報、MD&Aの主な相手先別の販売実績",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
   }
 }

@@ -4,15 +4,109 @@
   "name": "松井建設",
   "officialName": "松井建設株式会社",
   "nameEn": "MATSUI CONSTRUCTION CO., LTD.",
-  "description": null,
+  "shortNameEn": "MATSUI CONSTRUCTION",
+  "description": "建築・土木工事の請負を中核とする総合建設会社で、不動産の売買・賃貸や建設工事の設計・監理も手がけています。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "construction",
+      "name": "建設事業",
+      "description": "建築・土木その他建設工事全般に関する事業で、当社と連結子会社の松井リフォーム株式会社が営んでいます。当社は松井リフォーム株式会社に建築工事の一部を発注し、連結子会社の松友商事株式会社から工事を受注しています。2026年3月期の外部顧客への売上高は94,470百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "building-works",
+          "name": "建築工事",
+          "description": "提出会社の事業区分です。2026年3月期の提出会社の売上高は91,515百万円で、官公庁向けが16,143百万円、民間向けが75,371百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "civil-works",
+          "name": "土木工事",
+          "description": "提出会社の事業区分です。2026年3月期の提出会社の売上高は1,487百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-and-others",
+      "name": "不動産事業等",
+      "description": "不動産の売買・賃貸その他不動産全般に関する事業と、建設工事全般の設計・監理に関する事業等です。当社と連結子会社の松友商事株式会社が土地・建物の売買や賃貸住宅・貸事務所等の事業を営んでいます。2026年3月期の外部顧客への売上高は1,567百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "官公庁や民間企業から建築・土木工事を受注して施工し、その完成工事高を収益とするほか、不動産の売買・賃貸と設計・監理からも収益を得る事業モデルです。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "products": [
+      "建築工事",
+      "土木工事",
+      "不動産の売買・賃貸",
+      "建設工事の設計・監理"
+    ],
+    "customers": [
+      "官公庁",
+      "民間企業",
+      "賃貸住宅・貸事務所の利用者"
+    ],
+    "revenueSources": [
+      "完成工事高",
+      "不動産の売買・賃貸等による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "松井建設グループ",
+        "description": "松井建設株式会社と連結子会社2社（松友商事株式会社、松井リフォーム株式会社）、関連会社1社からなるグループで、連結従業員数は771人（2026年3月31日現在）です。本店は東京都中央区新川にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "建設工事の請負と不動産事業等",
+        "description": "建築・土木その他建設工事全般の請負を行う建設事業と、土地・建物の売買、賃貸住宅・貸事務所などの不動産事業、建設工事全般の設計・監理を行う不動産事業等を営んでいます。"
+      },
+      {
+        "kind": "customer",
+        "title": "官公庁と民間企業",
+        "description": "官公庁や民間企業から工事を受注しています。2026年3月期は、売上高の10％以上を占める特定の顧客はありませんでした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の連結売上高は96,037百万円で、前期比3.2％減でした。内訳は建設事業が94,470百万円、不動産事業等が1,567百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は4,350百万円で、前期比59.6％増でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +121,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 42879000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 773,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +141,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 44172000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 766,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +161,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 47619000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 767,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +181,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 50616000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 762,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 57028000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 771,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +209,249 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1586,
+      "title": "創業の起源",
+      "description": "初代松井角右衛門が、加賀藩第二代藩主前田利長公の命を受け、越中守山城（現在の富山県高岡市）の普請に従事しました。その後は藩に仕えて各種の造営を担当し、井波郷を本拠に、代々神社・仏閣の造営を専業としてきました。",
+      "significance": "400年を超える社寺建築の伝統がこの会社の出発点です。社寺建築に強く、「社寺の松井」とも呼ばれています。",
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1922,
+      "title": "一般建築への拡張",
+      "description": "15代松井角平が家業を継承し、業種を神社・仏閣の造営から広く一般建築へ広げました。",
+      "significance": "専業だった社寺建築から総合的な建築へ踏み出した転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1923,
+      "title": "本拠を東京へ移転",
+      "description": "本拠を東京に移しました。",
+      "significance": "現在の東京本店体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1939,
+      "title": "株式会社松井組を設立",
+      "description": "1939年1月に株式会社松井組を設立しました。",
+      "significance": "個人事業から株式会社へ組織を改めた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "松井建設株式会社に改称",
+      "description": "1948年9月に社名を松井建設株式会社と改称しました。",
+      "significance": "現在の社名はこのときから続いています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "建設大臣登録を完了",
+      "description": "1949年10月に建設業法による建設大臣登録（イ）第481号の登録を完了しました。",
+      "significance": "戦後の建設業制度のもとで事業を続ける基盤が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "大阪支店・名古屋支店を開設",
+      "description": "1955年8月に大阪支店と名古屋支店を開設しました。",
+      "significance": "関西・中部への拠点展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "北陸支店を開設",
+      "description": "1960年5月に北陸支店を開設しました。",
+      "significance": "創業の地である北陸に拠点を置きました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1961年10月に東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "東京証券取引所市場第一部に指定替",
+      "description": "1966年8月に東京証券取引所市場第一部へ指定替えとなりました。",
+      "significance": "上場市場での位置づけが高まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "松友商事株式会社を設立",
+      "description": "1970年4月に松友商事株式会社を設立しました。現在の連結子会社です。",
+      "significance": "不動産事業を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "東北支店・九州支店を開設",
+      "description": "1972年4月に東北支店と九州支店を開設しました。",
+      "significance": "全国主要地域に支店網がそろいました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "本店を現在地へ移転",
+      "description": "1972年8月に本店を東京都港区から現在地の東京都中央区新川へ移転しました。",
+      "significance": "現在の本店所在地はこのときから続いています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "建設大臣許可を受けた",
+      "description": "1974年3月に建設業法の改正により建設大臣許可（特－48）第3354号の許可を受けました。",
+      "significance": "新しい許可制度へ移行しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "宅地建物取引業者の免許を取得",
+      "description": "1975年12月に宅地建物取引業法により宅地建物取引業者として建設大臣免許（1）第2198号を取得しました。",
+      "significance": "不動産取引の免許を得て事業の幅が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "東京支店を開設",
+      "description": "1980年4月に東京支店を本社から分離して開設しました。",
+      "significance": "首都圏の営業体制を独立させました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "事業目的にレジャー施設の経営・管理を追加",
+      "description": "1985年6月に定款を変更し、事業目的にスポーツ、観光、レジャー施設の経営および管理を追加しました。",
+      "significance": "建設以外の事業分野への広がりを示す変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "事業目的に不動産の賃貸・仲介を追加",
+      "description": "1986年6月に定款を変更し、事業目的に不動産の賃貸ならびに仲介を追加しました。",
+      "significance": "不動産事業の位置づけを定款上も明確にしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "建設業許可を更新",
+      "description": "1995年3月に建設業法の改正により建設大臣許可（特－６）第3354号の許可を受けました。以後は5年ごとに許可を更新しています。",
+      "significance": "許可の更新周期が5年になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "宅地建物取引業者の免許を更新",
+      "description": "1997年5月に宅地建物取引業者として建設大臣免許（1）第5639号を取得しました。以後は5年ごとに免許を更新しています。",
+      "significance": "不動産取引の免許も5年更新になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "松井リフォーム株式会社を設立",
+      "description": "1998年3月に松井リフォーム株式会社を設立しました。現在の連結子会社です。",
+      "significance": "リフォーム分野の専門子会社が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "事業目的に発電事業・電気の売買を追加",
+      "description": "2013年6月に定款を変更し、事業目的に発電事業および電気の売買を追加しました。",
+      "significance": "エネルギー分野への事業目的の追加です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "2022年4月に東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "新市場区分への対応です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "2023年10月に東京証券取引所のプライム市場からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場はスタンダード市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +460,54 @@
       "publisher": "松井建設株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHYW.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YHYW",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「松井建設」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E6%9D%BE%E4%BA%95%E5%BB%BA%E8%A8%AD",
+      "accessedAt": "2026-11-15"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念として「人・仕事・会社を磨き続け、建設事業を通じて、社会に貢献する。」を掲げ、2025年度（2026年3月期）を初年度とする中期経営計画〈2025-2027〉を策定しています。経営の基本方針は『身の丈経営　質的成長』で、創業450年に向けて「規模の拡大」ではなく身の丈経営を徹底し質的成長を遂げること、変化に身を任せず自らの力で事業基盤の強化に取り組むことを掲げています。優先的に対処すべき課題として、基幹システムの再構築、時間外労働規制への対応強化、選別受注へのシフト、次世代経営職階の育成、工事請負代金支払条件の改善、温室効果ガス関連の情報開示要求への対応、自然災害リスクへの対応を挙げています。中期経営計画の数値目標は本文には書いていません。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1586年の創業以来受け継がれてきた社寺建築の技術と、長い歴史によって築き上げた信用が土台です。会社が挙げる内部環境には、社寺建築の技術のほか、質素・堅実・地道の社風や健全な財務体質があります。支店は本社のほか東京・東北・北陸・名古屋・大阪・九州にあり、全国で工事を請け負う体制をとっています。",
+        "basis": "経営方針の節に記載された経営環境（内部環境）と沿革、主要な設備の状況の事業所一覧に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "建設事業が売上の中心です。2026年3月期の外部顧客への売上高は、建設事業が94,470百万円、不動産事業等が1,567百万円で、MD&Aでは売上高の98.4％を建設事業が占めるとされています。従業員数（2026年3月31日現在）も建設事業が726人と大半を占め、不動産事業等は10人、全社共通は35人です。売上はすべて国内で、海外の外部顧客への売上高はありません。",
+        "basis": "セグメント情報の外部顧客への売上高と関連情報、MD&Aの売上構成、従業員の状況に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

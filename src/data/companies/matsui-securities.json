@@ -1,18 +1,144 @@
 {
   "id": "matsui-securities",
   "code": "8628",
-  "name": "松井証券",
+  "name": "松井証券株式会社",
   "officialName": "松井証券株式会社",
   "nameEn": "MATSUI SECURITIES CO., LTD.",
-  "description": null,
+  "shortNameEn": "MATSUI SECURITIES CO., LTD.",
+  "description": "個人投資家向けにオンライン証券取引サービスを提供する、連結財務諸表を作成していない単体の証券会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "online-securities",
+      "name": "オンライン証券取引サービス",
+      "description": "個人投資家を対象とした株式ブローキング事業を主たる事業とする単一セグメントです。株式及び先物・オプションの委託売買業務、引受け並びに募集及び売出しの取扱、投資信託の販売、FX等のサービスを提供しています。セグメント情報の関連情報は、単一の製品・サービスの外部顧客への営業収益が90％を超えるため記載が省略されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "stock-brokerage",
+          "name": "株式等の委託売買",
+          "description": "個人投資家から株式等の売買注文を取り次ぐ委託売買業務です。受入手数料は25,963百万円で、そのうち委託手数料は24,805百万円であり、株式等委託売買代金の増加が主たる要因です。",
+          "customers": [
+            "個人投資家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "margin-trading",
+          "name": "信用取引",
+          "description": "信用取引の提供に伴い、顧客への貸付等から金融収益が生じます。金融収益から金融費用を差し引いた金融収支は17,306百万円で、預託金の収益分配金の増加等が要因です。無期限信用取引や一日信用取引、短期信用取引などの独自サービスも提供しています。",
+          "customers": [
+            "個人投資家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "fx-derivatives",
+          "name": "先物・オプション及びFX",
+          "description": "先物・オプションの委託売買と、FX（外国為替証拠金取引）サービスを提供しています。トレーディングによる収益は主としてFX取引によるものです。",
+          "customers": [
+            "個人投資家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "investment-trusts",
+          "name": "投資信託の販売",
+          "description": "投資信託の販売を行い、ポートフォリオ提案サービス「投信工房」や、信託報酬の一部を現金還元するサービスを提供しています。販売手数料は完全無料化しています。",
+          "customers": [
+            "個人投資家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【沿革】"
+        },
+        {
+          "id": "us-stocks-and-bank",
+          "name": "米国株式サービス・MATSUI Bank",
+          "description": "2022年2月に米国株式サービスの提供を開始し、2023年10月に「MATSUI Bank」のサービスを開始しました。商品ラインアップの充実の一環です。",
+          "customers": [
+            "個人投資家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【沿革】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "個人投資家を対象とする株式ブローキングを主事業とし、株式・信用取引、先物・オプション、FX、投資信託、米国株式などのオンライン取引サービスを提供しています。",
+    "products": [
+      "株式等の委託売買（現物取引・信用取引）",
+      "先物・オプション取引",
+      "FX（外国為替証拠金取引）",
+      "投資信託の販売",
+      "米国株式サービス"
+    ],
+    "customers": [
+      "個人投資家"
+    ],
+    "revenueSources": [
+      "受入手数料（委託手数料）",
+      "金融収支（信用取引に起因する金融収益等）",
+      "トレーディング収益（FX取引等）"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "松井証券株式会社",
+        "description": "1918年に東京・日本橋で創業した証券会社で、連結財務諸表を作成しておらず、従業員数は227人です。東京証券取引所プライム市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "オンライン証券取引サービスを提供",
+        "description": "株式及び先物・オプションの委託売買、信用取引、投資信託の販売、FX、米国株式サービスなどを、インターネットを通じた単一セグメントで提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "個人投資家が主たる顧客層",
+        "description": "当社の主たる顧客層は個人投資家であり、株式等委託売買代金は個人の取引拡大を背景に増加しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益は52,660百万円",
+        "description": "受入手数料25,963百万円（うち委託手数料24,805百万円）、金融収支17,306百万円を中心に、営業収益は52,660百万円となりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は15,480百万円",
+        "description": "当事業年度の当期純利益は15,480百万円となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +153,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 78719000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 168,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +175,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 76353000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 180,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +197,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 76326000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 203,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +219,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 76600000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 217,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +241,158 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 82347000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 227,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1918,
+      "title": "松井房吉商店の創業",
+      "description": "東京・日本橋において松井房吉商店が創業され、東京株式取引所の一般会員となりました。",
+      "significance": "今日の松井証券の起点であり、証券業への参入の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1931,
+      "title": "株式会社松井商店の設立",
+      "description": "法人組織に改組し、株式会社松井商店として設立されました。",
+      "significance": "個人商店から株式会社への転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "松井證券株式会社への商号変更",
+      "description": "松井證券株式会社に商号を変更しました。",
+      "significance": "証券会社としての商号が定まった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "インターネット取引「ネットストック」の開始",
+      "description": "国内初の本格的インターネット取引「ネットストック」を開始し、インターネットによる信用取引も開始しました。",
+      "significance": "オンラインベースのビジネスモデルへの転換を示す転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "松井証券株式会社への商号変更",
+      "description": "松井証券株式会社に商号を変更しました。",
+      "significance": "現在の商号となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "東京証券取引所市場第一部への上場とFXサービスの開始",
+      "description": "当社株式を東京証券取引所市場第一部に上場し、FX（外国為替証拠金取引）サービスを開始しました。",
+      "significance": "上場と取扱商品の拡大が重なった年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "無期限信用取引の開始",
+      "description": "無期限信用取引を開始しました。",
+      "significance": "信用取引の独自サービス拡充の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "一日信用取引の導入",
+      "description": "信用取引の規制緩和にあわせて、デイトレード限定の信用取引「一日信用取引」を導入しました。",
+      "significance": "デイトレーダー向けサービスの特色を形づくった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "投資信託の取扱開始",
+      "description": "投資信託の取扱を開始し、ポートフォリオ提案サービス「投信工房」の提供を開始しました。",
+      "significance": "株式以外の商品へのラインアップ拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "米国株式サービスの提供開始",
+      "description": "米国株式サービスの提供を開始し、同年には投資情報ツール「マーケットラボ」の提供も開始しました。",
+      "significance": "海外株式への取扱拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "MATSUI Bankのサービス開始",
+      "description": "「MATSUI Bank」のサービスを開始し、米国株式サービスにおける信用取引も導入しました。",
+      "significance": "証券以外の金融サービスへの展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "エージェントIGホールディングスとの資本業務提携",
+      "description": "株式会社エージェントIGホールディングスとの資本業務提携契約を締結しました。",
+      "significance": "保険領域への事業多角化の具体策です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "agent-ig-holdings",
+      "relationship": "business-partner",
+      "description": "2025年11月に資本業務提携契約を締結しました。保険領域において、同社グループが有する専門性の高いファイナンシャル・プランニング・サービスと連携し、顧客のライフプランに基づいた保険商品の提案を行う業務提携等の関係にあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営方針、経営環境及び対処すべき課題等】"
+    },
+    {
+      "companyId": "trade-works",
+      "relationship": "supplier",
+      "description": "取引システム等の開発及び運用の外部委託先であり、システムの安定性向上を目的として同社株式1,800,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +400,55 @@
       "publisher": "松井証券株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFPS.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YFPS",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念として「お客様の豊かな人生をサポートする。」を、企業目標として「個人投資家にとって価値のある金融商品・サービスを提供する。」を掲げています。経営戦略として「ラインアップの充実」、「特色のあるサービスの提供」、「サービスクオリティの向上」を位置付け、経営資源をオンラインベースの事業に集中する方針を堅持するとしています。また、中長期的な企業価値向上に向けて新規事業領域の探索と事業の多角化に取り組むとしています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "成長の軸は、株式等委託売買の拡大に伴う委託手数料の増加、信用取引に起因する金融収支の拡大、FX取引の拡大です。当事業年度は株式等委託売買代金の増加を背景に受入手数料と金融収支がともに伸びました。商品ラインアップでは米国株式や投資信託の拡充に加え、保険領域での資本業務提携による事業の多角化も進めています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等の基本方針と対処すべき課題、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における経営成績の状況と収益・費用の主な項目",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "優位性は、オンラインベースの事業に経営資源を集中した効率的な運営体制と、1998年に国内初の本格的インターネット取引を開始した先行性、独自の取引サービスにあります。従業員数227人の少人数体制で運営し、一日信用取引や一日先物取引など特色のあるサービスを提供してきました。",
+        "basis": "事業の内容の単一セグメントの記載、経営方針、経営環境及び対処すべき課題等の提供価値の記載、沿革におけるインターネット取引開始と独自サービスの導入の記録、従業員の状況",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "個人の株式等委託売買代金に占めるオンライン証券会社顧客の比率は9割を超える一方、個人の株式保有額に占めるオンライン証券会社顧客の割合は3割程度に留まっており、対面型証券会社からオンライン証券会社への株式資産の流入が続いています。当社は個人投資家向けオンライン取引に特化する証券会社として、この市場で事業を展開しています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等の経営環境の記載、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における市場環境と当社の株式等委託売買代金の記載",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,120 @@
   "name": "なとり",
   "officialName": "株式会社なとり",
   "nameEn": "NATORI CO., LTD.",
-  "description": null,
+  "shortNameEn": "NATORI CO., LTD.",
+  "description": "チーズ鱈®などのおつまみ食品を製造販売し、不動産賃貸も行う食品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "natori",
+      "name": "株式会社なとり",
+      "description": "東京都北区に本社を置くおつまみ食品のメーカーです。当社及び連結子会社5社でグループを構成し、2026年3月期の連結従業員数は815人です。東京証券取引所プライム市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "food-manufacturing",
+          "name": "食品製造販売事業",
+          "description": "当社及び連結子会社が、水産加工製品、畜肉加工製品、酪農加工製品、農産加工製品、ポケット菓子製品、チルド製品及びその他製品を製造販売する報告セグメントです。2026年3月期の外部顧客への売上高は48,154百万円で、製品群別では水産加工製品19,428百万円、酪農加工製品9,488百万円、畜肉加工製品8,808百万円が中心です。",
+          "customers": [
+            "食品卸売業者",
+            "小売業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "real-estate-leasing",
+          "name": "不動産賃貸事業",
+          "description": "東京都内等において賃貸用住宅などの不動産の賃貸を行う報告セグメントです。2026年3月期の外部顧客への売上高は430百万円です。",
+          "customers": [
+            "不動産の賃借人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "当社と連結子会社5社が、水産・畜肉・酪農・農産加工製品、ポケット菓子製品、チルド製品などのおつまみ食品を製造し、食品卸売業者や小売業者に販売するとともに不動産賃貸を行う事業モデルです。",
+    "products": [
+      "水産加工製品",
+      "畜肉加工製品",
+      "酪農加工製品",
+      "農産加工製品",
+      "ポケット菓子製品",
+      "チルド製品",
+      "チーズ鱈®",
+      "チータラ®"
+    ],
+    "customers": [
+      "食品卸売業者",
+      "小売業者",
+      "不動産の賃借人"
+    ],
+    "revenueSources": [
+      "おつまみ食品の販売代金",
+      "不動産の賃貸料収入"
+    ],
+    "suppliers": [
+      {
+        "name": "住友商事株式会社",
+        "description": "当社の食品製造販売事業における原材料の購買関係取引を行っている仕入先です。"
+      }
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "なとりグループ",
+        "description": "東京都北区に本社を置き、当社と連結子会社5社でグループを構成しています。2026年3月期の連結従業員数は815人で、東京証券取引所プライム市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "おつまみ食品の製造",
+        "description": "水産加工製品、畜肉加工製品、酪農加工製品、農産加工製品、ポケット菓子製品、チルド製品などを製造しています。主力商品は1982年に発売したチーズ鱈®です。"
+      },
+      {
+        "kind": "customer",
+        "title": "食品卸売業者と小売業者への販売",
+        "description": "食品卸売業者や全国の小売業者を通じて、一般消費者におつまみ食品を届けています。あわせて賃貸用住宅などの不動産賃貸も行っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は48,584百万円",
+        "description": "2026年3月期の売上高は48,584百万円（前期比0.6％減）で、食品製造販売事業が48,154百万円、不動産賃貸事業が430百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は1,342百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,342百万円でした。前期は1,352百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +132,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23406023000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 877,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +152,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23581698000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 863,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +172,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25074555000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 826,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +192,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 26212712000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 812,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号 2022年10月28日）等を第77期（2025年3月期）の期首から適用しており、第76期（2024年3月期）に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27677620000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 815,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +221,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第78期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社なとり",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ2U.pdf",
-      "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-28"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-28",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +232,358 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1937,
+      "title": "「名取精米店」として創業",
+      "description": "創業者名取光男が1937年12月12日に「名取精米店」として創業しました。",
+      "significance": "当社グループの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "株式会社名取商会を設立",
+      "description": "東京都北区東十条に加工水産物の製造を目的に株式会社名取商会を設立し、同年、いかあられの製造を開始しました。",
+      "significance": "現在の当社法人の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "豊島工場を設置",
+      "description": "東京都北区豊島に豊島工場を設置し、操業を開始しました。",
+      "significance": "生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "「おつまみコンセプト」を掲げる",
+      "description": "コーポレート・アイデンティティ（CI）作業に取り組み、「おつまみコンセプト」を掲げて、商品ラインアップを珍味中心からおつまみ全般に拡大しました。",
+      "significance": "事業の方向性を珍味からおつまみ全般へ広げた転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "チーズ鱈®の製造を開始",
+      "description": "「おつまみコンセプト」による商品第1号として、チーズ鱈®の製造を開始しました。",
+      "significance": "現在まで続く主力商品の発売です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "埼玉工場を建設",
+      "description": "埼玉県久喜市に埼玉工場を建設し、畜肉加工及びチーズ鱈®の加工・包装ラインが稼働しました。",
+      "significance": "主力工場の稼働開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式会社なとりに商号変更",
+      "description": "株式会社なとりに商号を変更しました。",
+      "significance": "現在の商号への変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "株式を店頭上場",
+      "description": "株式を店頭上場し、公開しました。",
+      "significance": "株式公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "東京証券取引所市場第一部へ指定替え",
+      "description": "株式を東京証券取引所市場第一部へ指定替えしました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "食品総合ラボラトリーが完成",
+      "description": "東京都北区豊島に食品総合ラボラトリー（R&Dセンター）が完成しました。",
+      "significance": "研究開発拠点の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "埼玉第二工場が完成",
+      "description": "酪農加工製品専用の埼玉第二工場（埼玉県久喜市）が完成し、稼働を開始しました。",
+      "significance": "酪農加工製品の生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行し第6次中期経営計画を開始",
+      "description": "東京証券取引所の市場区分の見直しにより市場第一部からプライム市場に移行し、第6次中期経営計画「Next Value up for 80」を新たにスタートしました。",
+      "significance": "現在の市場区分と中期経営計画の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "「ジャッキーカルパス®」が発売40周年",
+      "description": "「ジャッキーカルパス®」がお客様の根強い人気に支えられて発売40周年を迎えました。",
+      "significance": "ロングセラー商品の継続です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mammy-mart-holding",
+      "relationship": "customer",
+      "description": "関東エリアの販売網を有する同社とは、当社の食品製造販売事業（おつまみ）の営業関係取引を行っている販売先です。当社が同社の株式438,979株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "seven-and-i-holdings",
+      "relationship": "customer",
+      "description": "全国エリアの販売網を有する同社とは、当社の食品製造販売事業（おつまみ）の営業関係取引を行っている販売先です。当社が同社の株式238,928株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aeon",
+      "relationship": "customer",
+      "description": "全国エリアの販売網を有する同社とは、当社の食品製造販売事業（おつまみ）の営業関係取引を行っている販売先です。当社が同社の株式94,534株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ryohin-keikaku",
+      "relationship": "customer",
+      "description": "全国エリアの販売網を有する同社とは、当社の食品製造販売事業（おつまみ）の営業関係取引を行っている販売先です。当社が同社の株式50,004株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "life",
+      "relationship": "customer",
+      "description": "首都圏・近畿圏エリアの販売網を有する同社とは、当社の食品製造販売事業（おつまみ）の営業関係取引を行っている販売先です。当社が同社の株式36,563株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "arcs",
+      "relationship": "customer",
+      "description": "北海道・東北・北関東エリアの販売網を有する同社とは、当社の食品製造販売事業（おつまみ）の営業関係取引を行っている販売先です。当社が同社の株式12,490株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "h2o-retailing",
+      "relationship": "customer",
+      "description": "近畿圏エリアの販売網を有する同社とは、当社の食品製造販売事業（おつまみ）の営業関係取引を行っている販売先です。当社が同社の株式18,800株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamanaka",
+      "relationship": "customer",
+      "description": "愛知県の販売網を有する同社とは、当社の食品製造販売事業（おつまみ）の営業関係取引を行っている販売先です。当社が同社の株式67,725株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sugi-holdings",
+      "relationship": "customer",
+      "description": "関西・中部・関東・北陸エリアの販売網を有する同社とは、当社の食品製造販売事業（おつまみ）の営業関係取引を行っている販売先です。当社が同社の株式9,672株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamae-group-holdings",
+      "relationship": "customer",
+      "description": "九州エリアの販売網を有する同社とは、当社の食品製造販売事業（おつまみ）の営業関係取引を行っている販売先です。当社が同社の株式11,549株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "albis",
+      "relationship": "customer",
+      "description": "北陸エリアの販売網を有する同社とは、当社の食品製造販売事業（おつまみ）の営業関係取引を行っている販売先です。当社が同社の株式6,899株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "belc",
+      "relationship": "customer",
+      "description": "関東エリアの販売網を有する同社とは、当社の食品製造販売事業（おつまみ）の営業関係取引を行っている販売先です。当社が同社の株式2,200株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "maruichi",
+      "relationship": "customer",
+      "description": "中部・関東エリアの販売網を有する同社とは、当社の食品製造販売事業（おつまみ）の営業関係取引を行っている販売先です。当社が同社の株式4,239株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "eco-s",
+      "relationship": "customer",
+      "description": "関東エリアの販売網を有する同社とは、当社の食品製造販売事業（おつまみ）の営業関係取引を行っている販売先です。当社が同社の株式1,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hitomile",
+      "relationship": "customer",
+      "description": "関東エリアの販売網を有する同社とは、当社の食品製造販売事業（おつまみ）の営業関係取引を行っている販売先です。当社が同社の株式3,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-corporation",
+      "relationship": "supplier",
+      "description": "当社の食品製造販売事業における原材料の購買関係取引を行っている仕入先です。当社が同社の株式39,100株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hagoromo-foods",
+      "relationship": "business-partner",
+      "description": "食品業界の情報収集及び当社の食品製造販売事業におけるコラボ商品開発など共同検討を行う業務提携等の関係にある提携先です。当社と同社は株式を相互に保有しており、当社は同社の株式1,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第78期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社なとり",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ2U.pdf",
+      "publishedAt": "2026-06-25",
+      "docId": "S100YJ2U",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-14",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念として「自由闊達にして公正で節度ある企業活動により、食文化の創造と発展を通して、顧客満足・株主還元・社会貢献の実現を図る」を掲げ、企業メッセージは「ひとつまみの幸せ。」です。2023年3月期から2028年3月期までを対象期間とする第6次中期経営計画「Next Value up for 80」のもと、第80期ビジョン「“もっと”おいしく、楽しく、ワクワクするおつまみをお届けする会社」を目指し、新しい楽しさをもったおつまみの提供によるなとりファンの拡大、すべての人材が活躍でき働きがいのある職場づくり、SDGsへの取り組みとガバナンスの強化の3つの重点戦略に取り組んでいます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の99％超を食品製造販売事業が占め、成長の軸はおつまみ食品にあります。2026年3月期は、おやつ需要にも適した新製品の導入等で酪農加工製品が前期比6.7％増、農産加工製品が同11.6％増と伸長した一方、水産加工製品は価格改定後の販売数量の一時的な落ち込みで同3.8％減となりました。",
+        "basis": "セグメント情報の外部顧客への売上高、MD&Aのセグメント別販売実績と経営成績の分析、経営方針の中期的な経営戦略",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1982年の発売以来ロングセラーとなっているチーズ鱈®をはじめとするおつまみ専門の商品群と、埼玉工場・埼玉第二工場や連結子会社の工場群による生産体制を持ちます。食品総合ラボラトリーを中心とする研究開発体制と、HACCPやFSSC22000等の食品安全に関する認証取得による品質管理も特徴です。",
+        "basis": "沿革の商品と工場の記録、主要な設備の状況の事業所一覧、研究開発活動の体制の記述",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "おつまみを中心とする食品メーカーです。主要な顧客は食品卸売業者で、2026年3月期の販売実績はコンフェックス株式会社が16.2％、三菱食品株式会社が14.3％、株式会社山星屋が10.9％を占めます。本邦以外の外部顧客への売上高はありません。",
+        "basis": "セグメント関連情報の主要な顧客ごとの情報と地域ごとの情報、MD&Aの主な相手先別の販売実績",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

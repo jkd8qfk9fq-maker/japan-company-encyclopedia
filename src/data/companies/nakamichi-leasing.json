@@ -4,14 +4,123 @@
   "name": "中道リース",
   "officialName": "中道リース株式会社",
   "nameEn": "Nakamichi Leasing Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Nakamichi Leasing Co., Ltd.",
+  "description": "北海道を地盤にリース・割賦・営業貸付と不動産賃貸を手がける総合リース会社で、医療・介護分野の子会社2社を持ちます。",
   "listings": [
     {
       "exchange": "sse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "nakamichi-leasing",
+      "name": "中道リース株式会社",
+      "description": "札幌市に本社を置く総合リース会社で、札幌証券取引所に上場しています。連結財務諸表を作成しておらず、当社及び子会社2社（メッドネクスト株式会社、エムシーネット株式会社）でグループを構成します。第54期の従業員数は180人です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "lease-installment-lending",
+          "name": "リース・割賦・営業貸付",
+          "description": "機械設備等各種物品の賃貸業務、商業設備、土木建設機械、輸送用機器等の割賦販売業務及び金銭の貸付業務等を行います。第54期の外部顧客に対する売上高は46,823百万円です。",
+          "customers": [
+            "機械設備等を導入する企業",
+            "輸送用機器等を導入する企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "real-estate-leasing",
+          "name": "不動産賃貸",
+          "description": "商業施設等を対象とした不動産賃貸業務等を行います。土地所有者から建物を一括借り上げて顧客に賃貸する転賃貸方式など、スペースシステム契約の4種類の契約形態があります。第54期の外部顧客に対する売上高は4,336百万円です。",
+          "customers": [
+            "商業施設等のテナント事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "other",
+          "name": "その他",
+          "description": "ヘルスケアサポート事業等を行います。子会社のメッドネクスト株式会社は医療用の器具・備品・消耗品等の販売や病院の建物・設備等の警備・保安・管理・清掃業務を、エムシーネット株式会社は医科用レセプトコンピュータシステム等の販売、訪問介護事業、介護タクシー事業等を営みます。第54期の外部顧客に対する売上高は73百万円です。",
+          "customers": [
+            "医療機関",
+            "介護事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "機械設備や輸送用機器などを顧客に賃貸・割賦販売し、リース料・割賦料や金銭貸付の利息、商業施設の賃貸料などを受け取る事業モデルです。",
+    "products": [
+      "ファイナンス・リース（機械設備・商業設備・土木建設機械・輸送用機器等）",
+      "オペレーティング・リース",
+      "割賦販売",
+      "営業貸付（金銭の貸付）",
+      "不動産賃貸（スペースシステム契約）",
+      "ヘルスケアサポート事業"
+    ],
+    "customers": [
+      "機械設備等を導入する企業",
+      "商業施設等のテナント事業者",
+      "医療・介護分野の事業者"
+    ],
+    "revenueSources": [
+      "リース料収入",
+      "割賦販売の売上",
+      "営業貸付の利息",
+      "不動産賃貸料収入"
+    ],
+    "suppliers": [],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "中道リース株式会社",
+        "description": "札幌市に本社を置く総合リース会社で、札幌証券取引所に上場しています。連結財務諸表は作成しておらず、子会社2社（メッドネクスト株式会社、エムシーネット株式会社）を持つ単体決算の会社です。第54期の従業員数は180人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "リース・割賦・営業貸付と不動産賃貸",
+        "description": "機械設備、商業設備、土木建設機械、輸送用機器等のリースと割賦販売、金銭の貸付を行うほか、商業施設等を対象とした不動産賃貸（スペースシステム契約）などを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "設備を導入する企業やテナント事業者",
+        "description": "顧客はサプライヤーと物件の機種、仕様、価格等を交渉して決め、当社が信用調査のうえ契約を締結します。物件はサプライヤーから顧客へ直接納入されます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は51,233百万円",
+        "description": "第54期の売上高は51,233百万円で、内訳はリース・割賦・営業貸付が46,823百万円、不動産賃貸が4,336百万円、その他が73百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は1,108百万円",
+        "description": "第54期の当期純利益は1,108百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -26,11 +135,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8803701000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 168,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -48,14 +157,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9878144000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 169,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第51期（2022年12月期）の期首から適用しており、第51期以降の主要な経営指標等は、当該会計基準等を適用した後の指標となっている。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -70,11 +180,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10749991000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 172,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -92,11 +202,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12032840000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 175,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -114,32 +224,16 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13205540000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 180,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第54期(2025/01/01－2025/12/31)",
-      "publisher": "中道リース株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XSCO.pdf",
-      "publishedAt": "2026-03-23",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",
@@ -151,5 +245,170 @@
       "yuho-2025"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1972,
+      "title": "中道リース株式会社を設立",
+      "description": "中道機械株式会社を筆頭株主として設立し、本社を札幌市中央区北１条東３丁目に設置して、リース及びレンタル会社として発足しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "レンタル部門を分離しリース専業に",
+      "description": "レンタル部門を分離して中道レンタル株式会社を設立し、リース専業となりました。",
+      "significance": "事業の専業化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "株式額面金額変更のため合併",
+      "description": "株式の額面金額（額面500円）の変更のため、札幌市西区所在の中道リース株式会社（額面50円）と合併しました。法律上消滅した同社が実質上の存続会社であり、沿革は同社について記載されています。",
+      "significance": "現在の会社の法的な成り立ちです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "札幌証券取引所に上場",
+      "description": "札幌証券取引所に株式を上場しました。",
+      "significance": "株式公開です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "子会社メッドネクスト株式会社を設立",
+      "description": "医療分野の事業を担う子会社として、メッドネクスト株式会社を設立しました。",
+      "significance": "ヘルスケア分野への展開です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "エムシーネットの全株式を取得",
+      "description": "有限会社エム・シー・ネット函館（現エムシーネット株式会社）の全株式を取得し、子会社化しました。",
+      "significance": "医療・介護分野の子会社の追加です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "fuyo-general-lease",
+      "relationship": "business-partner",
+      "description": "特定投資株式の保有目的に、モビリティビジネス関連における業務提携や営業連携の維持・強化のためと印字されており、業務提携等の関係にあります。同社は当社の発行済株式の11.52％を保有する大株主でもあり、当社は同社の株式40,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "arcs",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、リース契約先として安定的かつ良好な関係を維持するためと印字されているリースの顧客です。当社は同社の株式72,524株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hokuyaku-takeyama-holdings",
+      "relationship": "supplier",
+      "description": "特定投資株式の保有目的に、商品仕入先として安定的かつ良好な関係を維持するためと印字されている商品の仕入先です。当社は同社の株式80,375株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hokuyu-lucky",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、リース契約先として安定的かつ良好な関係を維持するためと印字されているリースの顧客です。当社は同社の株式11,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sd-entertainment",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、リース契約先として安定的かつ良好な関係を維持するためと印字されているリースの顧客です。当社は同社の株式74,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2025",
+      "title": "有価証券報告書－第54期(2025/01/01－2025/12/31)",
+      "publisher": "中道リース株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XSCO.pdf",
+      "publishedAt": "2026-03-23",
+      "docId": "S100XSCO",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画2026-2028「次なるステージへ深化～挑戦が未来を創る～」を掲げ、リース・割賦事業の車両・建機以外の領域拡大や、東京エリアへの注力などの有望エリアへの経営資源集中、リース事業領域の拡大、人と組織の成長を支える経営基盤の強化、新事業への挑戦を戦略の骨子としています。経営の基本方針では「堅実経営」を目指し、営業資産の健全化と総合的なリスク管理の充実を図る方針です。",
+        "asOf": "2026-03-23",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "第54期の売上高は、割賦契約の増加等により前事業年度比3.4％増の51,233百万円となりました。セグメント別ではリース・割賦・営業貸付が46,823百万円（同3.5％増）、不動産賃貸が4,336百万円（同2.6％増）と主力の2事業が伸び、その他は73百万円（同16.1％減）でした。",
+        "basis": "MD&Aの経営成績の概要、セグメント情報（営業実績の外部顧客に対する売上高）",
+        "asOf": "2026-03-23",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1972年の創業以来50年超にわたり北海道を地盤に営業基盤を築き、札幌本社のほか道内・東北・関東に支店網を持ちます。不動産賃貸では、土地所有者から建物を一括借り上げて顧客に賃貸する転賃貸方式など、スペースシステム契約の4種類の契約形態を持ち、子会社を通じて医療・介護分野にも事業を広げています。",
+        "basis": "沿革、事業の内容（スペースシステム契約の契約形態）、経営方針（中長期的な会社の経営戦略）",
+        "asOf": "2026-03-23",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の構成はリース・割賦・営業貸付が46,823百万円と全体の9割超を占め、不動産賃貸が4,336百万円、その他（ヘルスケアサポート事業等）が73百万円です。営業資産残高は合計126,845百万円で、うちファイナンス・リースが81,784百万円、割賦販売事業が25,802百万円、不動産賃貸事業が17,429百万円となっています。",
+        "basis": "セグメント情報（営業実績の売上高、営業資産残高）、MD&Aの経営成績の概要",
+        "asOf": "2026-03-23",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
   }
 }
