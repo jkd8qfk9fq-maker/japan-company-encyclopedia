@@ -4,30 +4,164 @@
   "name": "ハマイ",
   "officialName": "株式会社ハマイ",
   "nameEn": "HAMAI INDUSTRIES LTD.",
-  "description": null,
+  "shortNameEn": "HAMAI INDUSTRIES LTD.",
+  "description": "ＬＰＧ容器用バルブや高圧ガス容器用バルブ、配管用バルブを製造販売し、店舗用ビル等の不動産賃貸も行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "valve",
+      "name": "バルブ事業",
+      "description": "ＬＰＧ容器用バルブ・高圧ガス容器用バルブ及び設備弁・配管用バルブの製造販売を行う事業です。府中工場と大多喜工場で生産し、連結子会社の株式会社ハマイコリアが韓国で高圧ガス容器用バルブを製造販売するほか、関連会社の北陸ハマイ株式会社が北陸地区の代理店として当社の製品を販売しています。2025年12月期の外部顧客への売上高は12,137百万円です。",
+      "customers": [
+        "ガス容器・ガス関連設備の需要家",
+        "配管設備の需要家"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "lpg-valve",
+          "name": "ＬＰＧ容器用バルブ",
+          "description": "ＬＰＧ容器に取り付けるバルブです。2025年12月期の外部顧客への売上高は5,504百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "high-pressure-gas-valve",
+          "name": "高圧ガスバルブ及びガス関連設備機器",
+          "description": "高圧ガス容器用バルブとガス関連の設備機器です。2025年12月期の外部顧客への売上高は2,671百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "piping-valve",
+          "name": "配管用バルブ",
+          "description": "配管に用いるバルブです。2025年12月期の外部顧客への売上高は2,153百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "brass-scrap",
+          "name": "黄銅削り粉",
+          "description": "バルブの加工工程で生じる黄銅の削り粉の販売です。2025年12月期の外部顧客への売上高は1,781百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "merchandise",
+          "name": "商品",
+          "description": "仕入れた商品の販売です。2025年12月期の外部顧客への売上高は26百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸事業",
+      "description": "店舗用ビルや老人ホーム施設等の不動産を賃貸する事業です。2025年12月期の外部顧客への売上高は577百万円です。",
+      "customers": [
+        "店舗用ビル・老人ホーム施設の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "バルブ事業ではＬＰＧ容器用・高圧ガス容器用・配管用バルブの製造販売代金が、不動産賃貸事業では店舗用ビルや老人ホーム施設の賃貸料が収入となる仕組みです。",
+    "products": [
+      "ＬＰＧ容器用バルブ",
+      "高圧ガス容器用バルブ",
+      "設備弁",
+      "配管用バルブ",
+      "黄銅削り粉"
+    ],
+    "customers": [
+      "ガス容器・ガス関連設備の需要家",
+      "配管設備の需要家",
+      "店舗用ビル・老人ホーム施設の賃借人"
+    ],
+    "revenueSources": [
+      "バルブ製品の製造販売代金",
+      "黄銅削り粉の販売代金",
+      "不動産の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ハマイ",
+        "description": "1927年に浜井製作所として創立された会社です。本社は東京都品川区にあり、東京証券取引所スタンダード市場に上場しています。2025年12月31日現在の従業員数は297人で、連結子会社1社があります。"
+      },
+      {
+        "kind": "offering",
+        "title": "バルブと不動産賃貸",
+        "description": "バルブ事業ではＬＰＧ容器用バルブ・高圧ガス容器用バルブ及び設備弁・配管用バルブを製造販売し、不動産賃貸事業では店舗用ビルや老人ホーム施設等を賃貸しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "ガス関連の需要家と賃借人",
+        "description": "バルブの主な販売先はガス容器やガス関連設備の需要家で、主要な顧客である新日本ブラス株式会社への販売は2025年12月期の売上高の11.7％を占めています。不動産賃貸の相手方は店舗用ビルや老人ホーム施設の賃借人です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高12,715百万円",
+        "description": "2025年12月期の売上高は12,715百万円で、内訳はバルブ事業12,137百万円、不動産賃貸事業577百万円です。前期の売上高は12,092百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益830百万円",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は830百万円で、前期は513百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
       "periodEnd": "2021-12-31",
       "revenue": 9458226000,
       "revenueLabel": "売上高",
-      "profit": 583064000,
+      "profit": 497461000,
       "profitLabel": "経常利益",
-      "netIncome": 433468000,
+      "netIncome": 353078000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益",
-      "totalAssets": 18315139000,
+      "totalAssets": 17821528000,
       "totalAssetsLabel": "総資産額",
-      "netAssets": 13680035000,
+      "netAssets": 13205491000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 250,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -39,35 +173,36 @@
       "periodEnd": "2022-12-31",
       "revenue": 11195267000,
       "revenueLabel": "売上高",
-      "profit": 1241492000,
+      "profit": 1179891000,
       "profitLabel": "経常利益",
-      "netIncome": 949226000,
+      "netIncome": 885921000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益",
-      "totalAssets": 19788749000,
+      "totalAssets": 19242320000,
       "totalAssetsLabel": "総資産額",
-      "netAssets": 14289305000,
+      "netAssets": 13756965000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 263,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年３月31日）等を2022年12月期の期首から適用しており、2022年12月期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年12月期",
       "periodEnd": "2023-12-31",
       "revenue": 11132042000,
       "revenueLabel": "売上高",
-      "profit": 1141455000,
+      "profit": 1120982000,
       "profitLabel": "経常利益",
-      "netIncome": 909253000,
+      "netIncome": 836828000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益",
-      "totalAssets": 21098197000,
+      "totalAssets": 20451857000,
       "totalAssetsLabel": "総資産額",
-      "netAssets": 15635827000,
+      "netAssets": 15032855000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 276,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -79,15 +214,15 @@
       "periodEnd": "2024-12-31",
       "revenue": 12092902000,
       "revenueLabel": "売上高",
-      "profit": 1205993000,
+      "profit": 1326707000,
       "profitLabel": "経常利益",
-      "netIncome": 396769000,
+      "netIncome": 513819000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益",
-      "totalAssets": 21646381000,
+      "totalAssets": 21110361000,
       "totalAssetsLabel": "総資産額",
-      "netAssets": 16057323000,
+      "netAssets": 15576245000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 288,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -99,38 +234,194 @@
       "periodEnd": "2025-12-31",
       "revenue": 12715003000,
       "revenueLabel": "売上高",
-      "profit": 1353739000,
+      "profit": 1225880000,
       "profitLabel": "経常利益",
-      "netIncome": 969459000,
+      "netIncome": 830723000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益",
-      "totalAssets": 22301958000,
+      "totalAssets": 21634075000,
       "totalAssetsLabel": "総資産額",
-      "netAssets": 17096976000,
+      "netAssets": 16493251000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 297,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "第94期の有価証券報告書については、2026年９月14日に訂正報告書が提出され、当期および過年度の主要な経営指標等が訂正されております。数値は訂正後の決算数値を記載しております。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1927,
+      "title": "浜井製作所を創立",
+      "description": "故会長浜井栄が、ガス溶断器の製造を目的に浜井製作所を創立しました。",
+      "significance": "会社の創立です。現在のバルブ事業の起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "プロパンガス容器用バルブの製造を開始",
+      "description": "プロパンガス容器用バルブの製造を開始しました。",
+      "significance": "現在の主力製品であるＬＰＧ容器用バルブにつながる製品の製造開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "株式会社に改組し、ガス溶断器から撤退",
+      "description": "株式会社に改組しました。あわせてガス溶断器の製造を縮小撤退しています。",
+      "significance": "創業事業から撤退し、バルブ事業への集中が進んだ転機です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "府中工場を新設",
+      "description": "東京都府中市に府中工場を新設しました。",
+      "significance": "現在もバルブ事業の生産拠点である府中工場の新設です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "大多喜工場を新設し、配管用バルブの製造を開始",
+      "description": "千葉県夷隅郡大多喜町に大多喜工場を新設し、配管用バルブの製造を開始しました。",
+      "significance": "配管用バルブの製造開始と、現在の主力生産拠点の新設です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "社名を株式会社ハマイに変更",
+      "description": "社名を株式会社ハマイと変更しました。",
+      "significance": "現在の社名になった変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "店舗建物の賃貸を開始",
+      "description": "府中工場の余剰地に建設した店舗建物の賃貸を開始しました。",
+      "significance": "不動産賃貸事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "株式会社ジャスダック証券取引所に株式を上場しました。",
+      "significance": "株式上場の出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "韓国に株式会社ハマイコリアを設立",
+      "description": "韓国に株式会社ハマイコリアを設立しました。",
+      "significance": "現在の連結子会社で、韓国市場における製造販売拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "介護付有料老人ホームの賃貸を開始",
+      "description": "旧本社跡地に建設した介護付有料老人ホームの賃貸を開始しました。",
+      "significance": "不動産賃貸事業の賃貸対象の拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所スタンダード市場に株式を上場しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsuuroko-group-holdings",
+      "relationship": "major-shareholder",
+      "description": "株式会社ミツウロコグループホールディングスは、2025年12月31日現在の大株主であり、発行済株式（自己株式を除く）の総数に対して2.62％を保有しています。当社も取引関係の維持・発展等のため同社の株式を保有しており、相互に株式を保有する関係です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
-      "title": "有価証券報告書－第94期(2025/01/01－2025/12/31)",
+      "title": "訂正有価証券報告書－第94期(2025/01/01－2025/12/31)",
       "publisher": "株式会社ハマイ",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XUXN.pdf",
-      "publishedAt": "2026-03-27",
-      "accessedAt": "2026-09-29"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z20X.pdf",
+      "publishedAt": "2026-09-14",
+      "docId": "S100Z20X",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "一貫した基本方針として、確かな品質管理体制を維持して顧客の信頼に応えることを念頭に置き、高圧ガス関連機器の用途開発の多岐にわたる発展を目標に、バルブを通じて社会に貢献することを目指しています。「ビジョン2030」を達成するための基本となる戦略を設定した５カ年計画「2026中期経営計画」の最終年度にあたる2025年12月期は、既存事業戦略、クリーンエネルギー戦略、新規海外事業戦略、未来に向けた体制への展開の４つを重点課題として取り組んでいます。2024年６月に公正取引委員会から独占禁止法違反として排除措置命令及び課徴金納付命令を受けたことを踏まえ、コンプライアンス推進室の新設などの組織改革と意識改革を推進しています。",
+        "asOf": "2026-09-14",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1953年から続くＬＰＧ容器用バルブの製造実績を基盤に、水素関連のバルブ開発を進めている点に特徴があります。燃料電池自動車用の減圧弁付き水素ガス容器用弁を国内自動車メーカーと共同で開発を継続し、水素充填ノズルの技術改良にも取り組んでいます。",
+        "basis": "【沿革】に1953年８月にプロパンガス容器用バルブの製造を開始したことが印字され、【研究開発活動】に、燃料電池自動車用減圧弁付き水素ガス容器用弁の開発を国内自動車メーカーと共同で継続してきたことと、水素充填ノズルの技術改良に取り組んでいることが印字されています。",
+        "asOf": "2026-09-14",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年12月期のセグメント別の外部顧客への売上高では、バルブ事業が12,137百万円と全体の95％以上を占める中核事業であり、不動産賃貸事業が577百万円と続いています。バルブ事業の中ではＬＰＧ容器用バルブが5,504百万円で最も大きくなっています。",
+        "basis": "【セグメント情報等】に、2025年12月期の報告セグメントごとの外部顧客への売上高として、バルブ事業12,137,866千円、不動産賃貸事業577,137千円、合計12,715,003千円と印字され、バルブ事業の内訳としてＬＰＧ容器用バルブ5,504,847千円と印字されています。",
+        "asOf": "2026-09-14",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

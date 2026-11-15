@@ -4,15 +4,140 @@
   "name": "ロイヤルホテル",
   "officialName": "株式会社ロイヤルホテル",
   "nameEn": "THE ROYAL HOTEL, LIMITED",
-  "description": null,
+  "shortNameEn": "THE ROYAL HOTEL, LIMITED",
+  "description": "大阪市北区中之島に本店を置き、リーガロイヤルブランドのホテルを大阪・京都・東京・広島・小倉などで経営するホテル運営会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "entertainment",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "hotel",
+      "name": "ホテル事業",
+      "description": "当社及び連結子会社７社で構成されるグループの中核事業です。当社（リーガグラン京都、リーガプレイス京都 四条烏丸）及び株式会社リーガロイヤルホテル広島、株式会社リーガロイヤルホテル小倉、株式会社リーガロイヤルホテル東京、株式会社東京ロイヤルホテル、株式会社リーガプレイス肥後橋、株式会社芝パークホテルの７社で９ホテルを経営し、リーガロイヤルホテル（大阪）の運営を受託しています。ホテルブランドの『リーガ』は、Royal International Hotel Group & Associatesの頭文字に由来します。2026年３月期の売上高は29,273百万円でした。",
+      "customers": [
+        "国内外の宿泊客",
+        "宴会・婚礼の利用者",
+        "レストラン・バーの利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "rooms",
+          "name": "客室部門",
+          "description": "ホテルの客室の宿泊販売です。2026年３月期の売上高は13,156百万円でした。",
+          "customers": [
+            "国内外の宿泊客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "banquet",
+          "name": "宴会部門",
+          "description": "宴会場・貸席での宴会や婚礼などの提供です。2026年３月期の売上高は5,534百万円でした。",
+          "customers": [
+            "宴会・婚礼の利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "restaurant",
+          "name": "食堂部門",
+          "description": "ホテル内のレストラン・バー等での料理飲食の提供です。2026年３月期の売上高は4,010百万円でした。",
+          "customers": [
+            "レストラン・バーの利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-departments",
+          "name": "その他部門",
+          "description": "客室・宴会・食堂以外の部門です。ロイヤルホスピタリティサービス株式会社がホテルに附帯する各種事業を経営し、茨木カンツリー倶楽部食堂、住友クラブ食堂、住友ビル食堂等のホテル外の６ヵ店の営業も行っています。2026年３月期の売上高は6,571百万円でした。",
+          "customers": [
+            "ホテル利用者",
+            "食堂の利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "連結子会社７社とともにホテルを経営し、宿泊・宴会・料理飲食などのサービスを提供するほか、リーガロイヤルホテル（大阪）の運営受託とホテル附帯事業を営む会社です。",
+    "products": [
+      "宿泊（客室）サービス",
+      "宴会・貸席サービス",
+      "レストラン・バー等の料理飲食サービス",
+      "ホテル運営受託",
+      "ホテル附帯事業",
+      "ホテル外の食堂営業"
+    ],
+    "customers": [
+      "国内外の宿泊客",
+      "宴会・婚礼の利用者",
+      "レストラン・バーの利用者"
+    ],
+    "revenueSources": [
+      "客室部門の売上高",
+      "宴会部門の売上高",
+      "食堂部門の売上高",
+      "その他部門の売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ロイヤルホテル",
+        "description": "大阪市北区中之島に本店を置くホテル運営会社で、連結子会社７社とグループを構成します。2026年３月期の連結従業員数は2,032人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ホテルサービス",
+        "description": "宿泊・料理飲食・貸席等を中心とするホテルサービスを提供します。当社と連結子会社６社の７社で９ホテルを経営し、リーガロイヤルホテル（大阪）の運営も受託しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外のお客様",
+        "description": "国内外の宿泊客をはじめ、宴会・婚礼の利用者やレストラン・バーの利用者など、多様なお客様にサービスを提供します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年３月期の売上高は29,273百万円で、部門別では客室13,156百万円、宴会5,534百万円、食堂4,010百万円、その他6,571百万円でした。前年同期比では16.3％の増収です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は1,169百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +152,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16088000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1832,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +172,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18942000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1678,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +192,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19877000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1726,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +212,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23035000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1985,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +232,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23851000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2032,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +240,129 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1932,
+      "title": "株式会社新大阪ホテルを創立",
+      "description": "大阪でホテル事業を行う株式会社新大阪ホテルを創立しました。",
+      "significance": "現在の当社の創立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1935,
+      "title": "新大阪ホテル開業",
+      "description": "新大阪ホテルを開業しました（1973年８月に閉鎖しています）。",
+      "significance": "ホテル経営の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "大阪証券取引所第二部に上場",
+      "description": "大阪証券取引所第二部に株式を上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "大阪ロイヤルホテル開業",
+      "description": "大阪ロイヤルホテルを開業しました。1997年４月にリーガロイヤルホテルに改称しています。",
+      "significance": "現在のリーガロイヤルホテル（大阪）の前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "社名を株式会社ロイヤルホテルに変更",
+      "description": "株式会社新大阪ホテルから、現社名の株式会社ロイヤルホテルに社名を変更しました。",
+      "significance": "現在の社名の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "森トラストと資本業務提携契約を締結",
+      "description": "森トラスト株式会社と資本業務提携契約を締結しました。",
+      "significance": "人材交流及び営業面での協力関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "リーガグラン京都開業",
+      "description": "リーガグラン京都を開業しました。",
+      "significance": "京都におけるホテル展開の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しに伴い、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ベントール・グリーンオーク・グループと資本業務提携し、大阪ホテルの信託受益権等を譲渡",
+      "description": "ベントール・グリーンオーク・グループと資本業務提携契約を締結し、リーガロイヤルホテル（大阪）の土地、建物の信託受益権等を譲渡しました。",
+      "significance": "アセットライトなビジネスモデルへの転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社芝パークホテルを連結子会社化",
+      "description": "株式会社芝パークホテルの株式を取得して連結子会社化し、資本業務提携契約を締結しました。",
+      "significance": "東京におけるホテル展開の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "沖縄 北谷と大阪なんばで新ホテルを開業",
+      "description": "リーガロイヤルリゾート沖縄 北谷（2026年４月１日）とアンカード・バイ・リーガ 大阪なんば（2026年４月３日）を開業しました。",
+      "significance": "決算日後の新規開業であり、新規出店パイプラインの実現の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "osaka-gas",
+      "relationship": "major-shareholder",
+      "description": "大阪瓦斯株式会社は、2026年３月31日現在、当社株式292千株（発行済株式（自己株式を除く。）の総数に対する所有株式数の割合1.90％）を保有する大株主の事業会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +370,54 @@
       "publisher": "株式会社ロイヤルホテル",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHWF.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YHWF",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「リーガロイヤルホテル」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%AA%E3%83%BC%E3%82%AC%E3%83%AD%E3%82%A4%E3%83%A4%E3%83%AB%E3%83%9B%E3%83%86%E3%83%AB",
+      "accessedAt": "2026-11-16"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画2026『ReRISE』では、『ホテルブランドカテゴリーの再編成・新規展開』『ホテル事業のバリューアップ』『新規出店パイプラインの拡大』を基本戦略に掲げています。ホテル開業100周年を迎える2035年に目指す姿として『RIHGA VISION 2035』を策定し、パーパス『人を、地域を、日本を、世界を、あたたかい心で満たしていこう。』のもと、2035年までにリーガロイヤルホテルズとして35ホテルへの拡大を目標に成長戦略を推し進めるとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "主要ホテルはフルサービス型のシティホテルで、宿泊、宴会、レストラン部門などバランスのとれた売上構成を持ち、永年の歴史に裏打ちされた顧客基盤を有しています。リーガロイヤルホテル（大阪）はIHGホテルズ＆リゾーツのコレクションブランド『ヴィニェット コレクション』に加盟してリニューアルオープンし、会員組織『リーガメンバーズ』の会員数は2026年３月に55万人を突破しました。株式会社芝パークホテルは宿泊客のインバウンド比率が95％と、北米・欧州・豪州からの訪日客に強みを持ち、グループの海外セールスを補完しています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】における競合他社の状況の記載と、MD&Aの経営成績の概要（部門別売上実績、ヴィニェット コレクションへの加盟とリニューアル、リーガメンバーズの会員数、芝パークホテルのインバウンド比率）に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "事業セグメントはホテル事業の単一セグメントです。2026年３月期の売上高29,273百万円の部門別内訳は、客室13,156百万円、宴会5,534百万円、食堂4,010百万円、その他6,571百万円です。当社と連結子会社６社の７社で９ホテルを経営するほか、リーガロイヤルホテル（大阪）の運営を受託し、ロイヤルホスピタリティサービス株式会社がホテル附帯事業を、グループでホテル外の食堂６ヵ店も営業しています。",
+        "basis": "セグメント情報における単一セグメントの注記、MD&Aの部門別売上実績、【事業の内容】及び【関係会社の状況】の記載に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

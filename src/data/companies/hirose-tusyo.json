@@ -4,15 +4,131 @@
   "name": "ヒロセ通商",
   "officialName": "ヒロセ通商株式会社",
   "nameEn": "Hirose Tusyo Inc.",
-  "description": null,
+  "shortNameEn": "HIROSE TUSYO INC.",
+  "description": "インターネットを通じて外国為替証拠金取引（FX）を中心に金融商品取引サービスを提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "financial-instruments",
+      "name": "金融商品取引事業",
+      "description": "当社と連結子会社8社が、インターネットを通じて投資家向けに外国為替証拠金取引を提供する事業です。2026年3月期の営業収益は10,490百万円で、他の事業の重要性が乏しいためセグメント情報の記載は省略されています。連結子会社のJFX株式会社も同じ事業を行い、英国・マレーシア・アンティグア・バーブーダの子会社が海外の顧客向けに展開しています。",
+      "customers": [
+        "外国為替証拠金取引等を行う個人投資家をはじめとする投資家",
+        "ホワイトラベルサービスを利用する金融商品取引業者"
+      ],
+      "children": [
+        {
+          "id": "fx-margin",
+          "name": "外国為替証拠金取引",
+          "description": "取引システム「LION FX」で、1,000通貨単位から手数料なしで取引できる外国為替証拠金取引を提供しています。顧客の注文は原則としてカバー先へつなぎ、自社で為替変動のリスクを抱え込まない運営をしています。この区分の金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "securities-cfd",
+          "name": "店頭証券CFD取引",
+          "description": "「LION CFD」で、主要国の株式指数（日本N225、米国D30等）やETFを対象とした店頭証券CFD取引を提供しています。この区分の金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "commodity-cfd",
+          "name": "店頭商品CFD取引",
+          "description": "「LION CFD（商品）」で、金・銀・原油・天然ガスを対象とした店頭商品CFD取引を提供しています。2024年5月に商品先物取引業者の許可を取得しました。この区分の金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "white-label",
+          "name": "ホワイトラベルサービス",
+          "description": "外国為替証拠金取引システム「LION FX」を他の金融商品取引業者向けにカスタマイズして提供するサービスです。当社が提供先のカウンターパーティとなり、提供先の注文も受けています。この区分の金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "overseas",
+          "name": "海外事業",
+          "description": "英国のHIROSE FINANCIAL UK LTD.、マレーシア連邦領ラブアンのHirose Financial MY Limited、アンティグア・バーブーダのHirose Solutions Limitedが、海外の顧客を対象に外国為替証拠金取引等を展開しています。この区分の金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "個人投資家向けにFX取引システム「LION FX」を提供し、顧客の注文をカバー先につなぐカバー取引や社内の売買相殺による差額、スワップポイントの差額などを収益としています。",
+    "products": [
+      "外国為替証拠金取引「LION FX」",
+      "店頭証券CFD取引「LION CFD」",
+      "店頭商品CFD取引「LION CFD（商品）」",
+      "ホワイトラベルサービス"
+    ],
+    "customers": [
+      "個人投資家をはじめとする投資家",
+      "ホワイトラベルサービスを利用する金融商品取引業者"
+    ],
+    "revenueSources": [
+      "カバー取引による収益（顧客の約定価格とカバー先の約定価格の差額）",
+      "為替マリー（社内の売買相殺）による収益（売りレートと買いレートの差額）",
+      "スワップポイントの差額による収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ヒロセ通商",
+        "description": "大阪市西区に本店を置く金融商品取引業者で、連結子会社8社とグループを構成しています。東京証券取引所スタンダード市場に上場し、2026年3月31日現在の従業員数は93人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "FX取引システムとCFD・ホワイトラベル",
+        "description": "インターネットを通じた外国為替証拠金取引「LION FX」を中心に、店頭証券CFD取引・店頭商品CFD取引と、他の金融商品取引業者向けのホワイトラベルサービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "個人投資家と同業者",
+        "description": "1,000通貨単位から手数料なしで取引できる環境を個人投資家をはじめとする幅広い投資家に提供し、金融商品取引業者には自社の取引システムを提供しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益10,490百万円",
+        "description": "2026年3月期の営業収益は10,490百万円です。顧客との外国為替証拠金取引等から生じる収益がその大部分を占めています。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益2,060百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は2,060百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +143,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14030020000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 90,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15217884000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 88,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17506060000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 87,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19766605000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 87,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21722227000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 93,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +231,139 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2004,
+      "title": "ヒロセ通商株式会社を設立",
+      "description": "大阪市西区に、外国為替証拠金取引を事業目的としたヒロセ通商株式会社を設立し、同年4月に外国為替証拠金取引「超為替」の受託業務を開始しました。",
+      "significance": "現在の事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "金融先物取引業の登録を完了",
+      "description": "金融先物取引業の登録を完了し、金融先物取引業協会に加入しました。同年には1,000通貨からの取引が可能な「Hirose-FX2ミニ」の提供も開始しています。",
+      "significance": "少額取引の路線が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "第一種金融商品取引業の登録を完了",
+      "description": "金融商品取引法の施行に伴い、第一種金融商品取引業の登録を完了しました。",
+      "significance": "現在の業登録の基礎です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "「LION FX」の提供を開始",
+      "description": "1,000通貨からの取引が可能で手数料無料の取引システム「LION FX」の提供を開始しました。",
+      "significance": "現在の主力取引システムの成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "JFX株式会社を子会社化",
+      "description": "外国為替証拠金取引業者のJFX株式会社を子会社化し、その後、株式交換により全株式を取得して完全子会社としました。",
+      "significance": "グループ体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "英国に子会社を設立",
+      "description": "海外進出を目的として、英国ロンドンにHIROSE FINANCIAL UK LTD.を設立しました。JFX株式会社へのホワイトラベルサービスの提供もこの年に開始しています。",
+      "significance": "海外展開とホワイトラベル事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "マレーシアに子会社を設立",
+      "description": "東南アジア市場の顧客獲得を目的として、マレーシア連邦領ラブアンにHirose Financial MY Limitedを設立しました。",
+      "significance": "東南アジアへの展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "東京証券取引所JASDAQ（スタンダード）に株式を上場しました。",
+      "significance": "上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "「LION CFD」の提供を開始",
+      "description": "店頭証券CFD取引「LION CFD」の提供を開始しました。",
+      "significance": "FX以外の商品への広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ベトナムとアンティグア・バーブーダに子会社を設立",
+      "description": "市場調査を目的としてベトナムにHIROSE CONSULTING VIETNAM COMPANY LIMITEDを、海外の外国為替証拠金取引事業の拡大を目的としてアンティグア・バーブーダにHirose Solutions Limitedを設立しました。",
+      "significance": "海外拠点の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "商品先物取引業者の許可を取得",
+      "description": "商品先物取引法に基づく商品先物取引業者の許可を取得し、店頭商品CFD取引「LION CFD（商品）」の提供を開始しました。",
+      "significance": "商品CFDへの展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "internet-initiative-japan",
+      "relationship": "supplier",
+      "description": "【重要な契約等】に、ヒロセ通商と連結子会社のJFX株式会社が株式会社インターネットイニシアティブと「IIJ Raptorサービス利用契約」（外国為替証拠金取引システムの利用、保守メンテナンスに関する契約）を結んでいることが印字されています。2013年5月26日に始まり、別段の通知がない限り1年ごとに同一条件で更新される継続的な契約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +371,37 @@
       "publisher": "ヒロセ通商株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJPR.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YJPR",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「金融商品取引を通じて世界中の人々に平等な投資のチャンスを提供する」ため、低価格戦略とフルラインアップ戦略をともに採用し、マーケットリーダーを目指すことを基本方針としています。中長期的には、顧客ニーズの素早い把握と実現、取引システムの安定稼働、ブランディング力の強化、ホワイトラベルの提供などによる収益源の多様化により、安定した収益の確保を図るとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1,000通貨単位からの少額取引を手数料なしで提供する低コストの取引環境、国内外の銀行等金融機関20社以上の中から最良のレートを顧客へ配信する仕組み、外部委託ではなく自社の従業員が担う24時間の顧客サポートが特徴です。",
+        "basis": "【事業の内容】に、1,000通貨単位を主とした取引を手数料なしで提供していること、国内外の実績ある銀行等金融機関20社以上と取引を行い最良のレートを顧客へ配信できること、24時間対応の顧客サポートを外部委託ではなく当社従業員にて実施していることが書かれています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

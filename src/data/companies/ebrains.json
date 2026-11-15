@@ -4,15 +4,130 @@
   "name": "エブレン",
   "officialName": "エブレン株式会社",
   "nameEn": "EBRAINS,INC.",
-  "description": null,
+  "shortNameEn": "EBRAINS,INC.",
+  "description": "産業用コンピュータ向けのバックプレーンやボードコンピュータを設計・製造・販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "industrial-computer",
+      "name": "産業用コンピュータ事業",
+      "description": "社会インフラや産業インフラに組み込まれる産業用コンピュータ向けに、バックプレーン、ラック、ボードコンピュータなどの設計・製造・販売を行う事業です。単一セグメントであり、2026年3月期の売上高は3,993百万円です。顧客独自の仕様に合わせたカスタム製品の販売が中心で、ラックに電源ユニットやファン等を取り付け、コンピュータ本体として完成した製品も販売しています。",
+      "customers": [
+        "大手システムメーカー（産業用電子機器メーカーや機械装置メーカー等）",
+        "株式会社アバールデータなどの電子機器メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "communications-broadcast",
+          "name": "通信・放送",
+          "description": "基地局通信装置や放送映像装置、電力関連装置などに使われる製品の分野です。2026年3月期の売上高は277百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "electronic-applications",
+          "name": "電子応用",
+          "description": "医療機器やHPC（スーパーコンピュータ）、サーバーなどに使われる製品の分野です。2026年3月期の売上高は323百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "measurement-control",
+          "name": "計測・制御",
+          "description": "半導体製造装置や半導体・IC測定器、FA機器、ロボットなどに使われる製品の分野で、最も大きな分野です。2026年3月期の売上高は2,289百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "transportation",
+          "name": "交通関連",
+          "description": "高度道路交通システム関連装置や列車搭載装置、航空管制装置などに使われる製品の分野です。2026年3月期の売上高は759百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "defense-other",
+          "name": "防衛・その他",
+          "description": "軍用車両・船舶・航空機等搭載装置や監視カメラシステム、組立機械・装置などに使われる製品の分野です。2026年3月期の売上高は343百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "顧客仕様に合わせたバックプレーンやラック、ボードコンピュータを設計・製造し、電子機器メーカー等へ販売する仕組みです。",
+    "products": [
+      "バックプレーン",
+      "バスラック、システムラック、コンピュータシャーシ",
+      "ボードコンピュータ（CPUボードやI/Oボード等）",
+      "電源ユニットやファン等を組み込んだコンピュータ・プラットフォーム"
+    ],
+    "customers": [
+      "大手システムメーカー（産業用電子機器メーカーや機械装置メーカー等）",
+      "半導体製造装置や医療機器、交通関連装置などのメーカー"
+    ],
+    "revenueSources": [
+      "カスタム製品と標準製品の販売代金",
+      "ラックに組み込みコンピュータ本体として完成した製品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "エブレン",
+        "description": "1973年に設立され、東京都八王子市に本店を置き、東京証券取引所スタンダード市場に上場しています。2026年3月31日現在の従業員数は106人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "バックプレーンとボードコンピュータ",
+        "description": "各種規格に準拠した標準製品と、顧客独自の仕様に合わせて設計したカスタム製品を提供しています。自社で設計・開発した自動組立装置と検査装置を生産に使っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "電子機器メーカーや機械装置メーカー",
+        "description": "通信・医療・交通・半導体製造装置・FA機器・計測装置などのシステムメーカーが顧客で、主要な顧客は[[company:aval-data|株式会社アバールデータ]]です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高3,993百万円",
+        "description": "2026年3月期の売上高は3,993百万円で、前期の4,025百万円に比べて0.8％減りました。計測・制御分野が2,289百万円と最も大きな分野です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益364百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は364百万円で、前期は313百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +142,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3791647000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 116,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +162,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4197025000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 111,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4502328000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 116,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +202,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4786041000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 111,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +222,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5104048000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 106,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +230,208 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1973,
+      "title": "エブレンを設立",
+      "description": "産業用コンピュータ機器の設計・製造を目的として、東京都中野区東中野にて当社を設立しました。",
+      "significance": "会社の創立です。現在の産業用コンピュータ事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "八王子事業所を開設",
+      "description": "東京都八王子市小宮町に八王子事業所を開設しました。",
+      "significance": "現在の本社所在地である八王子への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "入間事業所を開設",
+      "description": "埼玉県入間市寺竹に入間事業所を開設しました。",
+      "significance": "国内の生産拠点の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "VME規格のバックプレーン、バスラックの販売を開始",
+      "description": "VME規格のバックプレーン、バスラックを開発し、販売を開始しました。",
+      "significance": "主力製品であるバックプレーンの事業化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "バックボードテスターEBC802を開発",
+      "description": "バックボードテスターEBC802を開発し、運用を開始しました。",
+      "significance": "自社製の検査装置を生産に使う体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "プレスフィットマシンEPM566を開発",
+      "description": "バックプレーン組立時にコネクタを自動で圧着するプレスフィットマシンEPM566を開発し、運用を開始しました。",
+      "significance": "現在の生産を支える自社製の自動組立装置の開発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "大阪事業所を開設",
+      "description": "大阪府吹田市東御旅町に大阪事業所を開設しました。",
+      "significance": "関西の拠点の開設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "中国・蘇州に子会社を設立",
+      "description": "事業拡大のため、中華人民共和国江蘇省蘇州市に現地法人子会社の蘇州惠普聯電子有限公司を設立し、操業を開始しました。",
+      "significance": "現在の唯一の連結子会社の設立です。製造・販売と部材調達の海外拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "本社及び八王子事業所を石川町に移転",
+      "description": "本社及び八王子事業所を東京都八王子市石川町に移転しました。",
+      "significance": "現在の本店所在地への移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "株式会社タンバックを連結子会社化",
+      "description": "事業拡大のため、株式会社タンバックを連結子会社としました。",
+      "significance": "システムソリューション事業の基盤となった子会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "スーパーコンピュータ用プロセッサの周辺回路設計を開始",
+      "description": "スーパーコンピュータ用メニーコアプロセッサの周辺回路設計を開始しました。",
+      "significance": "ボードコンピュータの開発設計への広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "株式会社タンバックを吸収合併",
+      "description": "事業効率化のため、株式会社タンバックを吸収合併し、システムソリューション事業部（上野事業所）としました。",
+      "significance": "現在の上野事業所の成り立ちです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "IoT用CPUボードを開発",
+      "description": "IoT用CPUボードを開発し、販売を開始しました。",
+      "significance": "IoT分野向けのボードコンピュータの開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "ZYNQ SoMボードを開発",
+      "description": "ZYNQ SoMボードを開発し、販売を開始しました。",
+      "significance": "ボードコンピュータの品ぞろえの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "東京証券取引所JASDAQ（スタンダード）に株式を上場しました。",
+      "significance": "株式上場の出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "Raspberry Pi Edge Computerを開発",
+      "description": "Raspberry Pi Edge Comuputerを開発し、販売を開始しました。",
+      "significance": "エッジコンピューティング分野向け製品の開発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場再編に伴い、東京証券取引所JASDAQ（スタンダード）からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "R&Dセンターを設置",
+      "description": "大阪府大阪市淀川区に研究所「R&Dセンター」を設置しました。",
+      "significance": "研究拠点の新設です。2026年3月期の決算期末後の2026年4月の出来事として沿革に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "aval-data",
+      "relationship": "customer",
+      "description": "株式会社アバールデータは主要な顧客です。2026年3月期の販売実績の総販売実績に対する割合は18.6％で、セグメント情報の主要な顧客ごとの情報にも同社への販売が印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "kikusui-holdings",
+      "relationship": "major-shareholder",
+      "description": "菊水ホールディングス株式会社は、2026年3月31日現在、発行済株式（自己株式を除く）の総数に対する所有株式数の割合が1.99％の大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +439,47 @@
       "publisher": "エブレン株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI0V.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YI0V",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "バックプレーンをコアに、ボードコンピュータや周辺デバイスを含めたユニット供給を中心に受託範囲を拡げ、事業ドメインの拡大を目指すとしています。新製品の開発とバリエーションの拡充、コストダウン、DX・5G・IoT等への対応、放熱技術の研究、中国子会社の活用、既存顧客との関係強化と新規顧客の開拓を掲げています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "バックプレーンの専業メーカーとして、顧客仕様に合わせたカスタム設計と、自社で設計・開発したプレスフィットマシンや検査装置を使う生産体制が強みです。新規格に準拠したバックプレーンの商品化を早期に進め、高品質なバックプレーンを短納期で提供してきたことが評価につながっていると会社は判断しています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、新規格に準拠したバックプレーンの商品化の早期推進と自社製プレスフィットマシンによる短納期の提供が印字されています。【事業の内容】に、カスタム製品の販売が中心であることと、自動組立装置と検査装置を自社で設計・開発して生産に使用していることが印字されています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "社会インフラや産業インフラの装置に組み込まれる産業用コンピュータの基幹部品を担う事業者です。応用分野別では半導体製造装置などを含む計測・制御分野が売上高の57.3％を占め、主要な顧客である株式会社アバールデータへの販売が売上高の18.6％を占めています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の応用分野別の販売実績に、計測・制御分野の売上構成比率57.3％が印字されています。【セグメント情報等】の主要な顧客ごとの情報と販売実績の相手先別内訳に、株式会社アバールデータへの販売と割合18.6％が印字されています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

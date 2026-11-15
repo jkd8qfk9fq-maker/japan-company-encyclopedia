@@ -4,15 +4,125 @@
   "name": "デイトナ",
   "officialName": "株式会社デイトナ",
   "nameEn": "DAYTONA CORPORATION",
-  "description": null,
+  "shortNameEn": "DAYTONA CORPORATION",
+  "description": "二輪車部品・用品を企画・開発し、国内外の販売店への卸売と、店舗・通信販売での小売を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    },
+    {
+      "industryId": "retail",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "domestic-wholesale",
+      "name": "国内拠点卸売事業",
+      "description": "当社及び連結子会社株式会社ダートフリークの国内部門が担う事業です。二輪車部品・用品の企画・開発を行い、仲卸店を中心とした卸販売を行っており、海外部門において北米・欧州を中心に輸出販売も行っています。2025年12月期の外部顧客への売上高は10,385百万円です。",
+      "customers": [
+        "仲卸店を中心とする国内の二輪車用品販売店",
+        "北米・欧州などの海外の販売店"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "asia-wholesale",
+      "name": "アジア拠点卸売事業",
+      "description": "インドネシアのPT. DAYTONA AZIA及びフィリピンのDAYTONA Motorcycles Philippinesが担う事業です。二輪車部品・用品及びOEM商品の企画・開発を行い、主として東南アジア地域の販売店へ卸売販売を行っています。2025年12月期の外部顧客への売上高は1,554百万円です。",
+      "customers": [
+        "東南アジア地域の販売店"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "retail",
+      "name": "小売事業",
+      "description": "連結子会社株式会社ライダーズ・サポート・カンパニーが株式会社コシダテックのフランチャイジーとして千葉県・埼玉県の2店舗で、連結子会社株式会社ダートフリークが直営店・小規模店舗「ダートバイクプラス」及びインターネットによる通信販売で、二輪車部品・用品をエンドユーザーに販売する事業です。2025年12月期の外部顧客への売上高は2,141百万円です。",
+      "customers": [
+        "エンドユーザー（二輪車ユーザー）"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業で、太陽光発電の売電事業及び中古二輪車部品・用品のリユース販売事業を行っています。2025年12月期の外部顧客への売上高は296百万円です。",
+      "customers": [
+        "電力会社",
+        "中古部品・用品を求める顧客"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社に生産設備を持たず商品特性に合ったベンダーへ生産を委託する多品種小ロットの企画・開発を軸に、国内・アジアの卸売拠点と小売店舗から収益を得ています。",
+    "products": [
+      "二輪車用アフターパーツ・用品（ライディングウェア・ヘルメット等のライディングギア、バッテリー・充電器等の補修消耗品など）",
+      "OEM商品",
+      "モーターサイクルウエア「MaxFritz」"
+    ],
+    "customers": [
+      "国内の二輪車用品販売店・仲卸店",
+      "北米・欧州・アジアの販売店",
+      "店舗・通信販売を利用するエンドユーザー"
+    ],
+    "revenueSources": [
+      "二輪車部品・用品の卸売販売による収益",
+      "店舗・通信販売による小売販売の収益",
+      "太陽光発電の売電による収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "デイトナ",
+        "description": "静岡県周智郡森町に本社を置き、連結子会社4社とグループを構成しています。東京証券取引所スタンダード市場に上場し、2025年12月31日現在の従業員数は206人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "二輪車部品・用品の企画・開発",
+        "description": "自動二輪アフターパーツ・用品を企画・開発し、自社では生産設備を持たず、それぞれの商品の特性に合わせた最適なベンダーに生産を委託しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "販売店とエンドユーザー",
+        "description": "国内では仲卸店を中心とする販売店へ卸売し、北米・欧州へ輸出、アジアでは現地子会社を通じて販売店へ卸売するほか、小売店舗と通信販売ではエンドユーザーに直接販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高14,376百万円",
+        "description": "2025年12月期の売上高は14,376百万円です。国内拠点卸売事業が10,385百万円、アジア拠点卸売事業が1,554百万円、小売事業が2,141百万円、その他が296百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益1,148百万円",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は1,148百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +137,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5444709000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 200,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +157,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6737647000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 201,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第51期の期首から適用しており、第51期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +178,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7656731000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 204,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +198,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8632675000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 200,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,15 +218,147 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9441946000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 206,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "インドネシア子会社PT. DAYTONA AZIAが決算期を変更したため、当連結会計年度に連結の対象となる同子会社の期間は9か月間となっています。"
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1972,
+      "title": "阿部商事株式会社を設立",
+      "description": "二輪車用品の輸出入を事業目的として、大阪市東住吉区に阿部商事株式会社を設立しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "ブランド名「デイトナ」の使用を開始",
+      "description": "ブランド名「デイトナ」の使用を開始しました。",
+      "significance": "現在の主力ブランドの始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "商号を株式会社デイトナに変更",
+      "description": "商号を株式会社デイトナに変更し、本社を静岡県磐田市に移転しました。",
+      "significance": "現在の社名の成立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "小売事業を目的とする子会社を設立",
+      "description": "二輪車用品の小売事業を目的として、子会社株式会社ライコを千葉県に設立しました。",
+      "significance": "小売事業の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "オートバックスセブンと資本・業務提携",
+      "description": "株式会社オートバックスセブンと資本・業務提携契約を締結しました。",
+      "significance": "大手自動車用品小売チェーンとの提携です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "小売子会社がライダーズ・サポート・カンパニーに",
+      "description": "連結子会社株式会社アール・エス・シーと連結子会社株式会社ライコが合併し、株式会社ライダーズ・サポート・カンパニーとなりました。",
+      "significance": "現在の小売事業の担い手の成立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "インドネシアに子会社を設立",
+      "description": "ASEAN地域の二輪車部品・用品の企画・開発・販売を目的として、インドネシアに連結子会社PT DAYTONA AZIAを設立し、営業を開始しました。",
+      "significance": "アジア拠点卸売事業の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "JASDAQ（スタンダード）に上場",
+      "description": "証券取引所の合併・市場統合に伴い、大阪証券取引所JASDAQ（スタンダード）に株式を上場しました。",
+      "significance": "現在の上場市場への系譜です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "太陽光発電売電事業を開始",
+      "description": "太陽光発電の売電事業を開始しました。",
+      "significance": "その他事業の柱の一つです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "ダートフリーク及びプラスを完全子会社化",
+      "description": "株式会社ダートフリーク及び株式会社プラスの全株式を取得し、完全子会社化しました。",
+      "significance": "国内の卸売・小売体制の強化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "フィリピンに子会社を設立",
+      "description": "二輪車部品・用品の企画・開発・販売を目的として、フィリピンのラグナ州サンタローサ市に連結子会社DAYTONA Motorcycles Philippinesを設立しました。",
+      "significance": "アジア拠点の拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +367,37 @@
       "publisher": "株式会社デイトナ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XSX2.pdf",
       "publishedAt": "2026-03-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XSX2",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営方針として「変革と成長」を掲げ、支持率No.1ブランドの獲得に向けて、収益構造の見直しとともに商品力・ブランド力の強化を図り、主に新商品の企画・開発及び既存製品のリニューアル開発に注力するとしています。",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "少人数で構成する開発グループ制により多様なニーズを収集し、自社では生産設備を持たず商品特性に合わせた最適なベンダーに生産を委託する仕組みで、多品種小ロットの商品提供と毎年の多数の新商品投入を実現している点が特徴です。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、お客様のニーズに的確に対応するため少人数で構成する開発グループ制を採用していること、自社では生産設備を持たずそれぞれ商品の特性に合わせた最適なベンダーに生産を委託していること、この仕組みにより多くの新商品投入を実現し既存商品の販売逓減をカバーしていることが書かれています。",
+        "asOf": "2026-03-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

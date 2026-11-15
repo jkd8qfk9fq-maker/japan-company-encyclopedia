@@ -4,15 +4,110 @@
   "name": "サインド",
   "officialName": "株式会社サインド",
   "nameEn": "CYND Co., Ltd.",
-  "description": null,
+  "shortNameEn": "CYND Co., Ltd.",
+  "description": "理美容店舗向けに、クラウド型予約管理システム「BeautyMerit」と予約一元管理システム「かんざし」を提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "グロース"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "beauty-salon-solutions",
+      "name": "理美容ソリューション事業",
+      "description": "理美容店舗に対して、店舗と顧客のつながりをサポートするクラウドサービスを提供する事業です。当社グループはこの事業の単一セグメントで、2026年3月期の売上高は2,542百万円でした。本社は東京都品川区にあり、この事業に結びついています。",
+      "customers": [
+        "理美容店舗（ヘアサロン・ネイルサロン・エステサロン・リラクゼーションサロンなど）"
+      ],
+      "children": [
+        {
+          "id": "beauty-merit",
+          "name": "BeautyMerit（ビューティーメリット）",
+          "description": "理美容店舗向けのクラウド型予約管理システムです。店舗公式のスマートフォンアプリの作成、Web予約、複数の集客サイトの予約管理を自動化する一元管理（サイトコントローラー）、決済機能「BeautyMerit Pay」、EC機能、データ分析機能などを提供しています。2026年3月末時点で9,400店舗以上に利用されています。金額は独立して開示されていません。",
+          "customers": [
+            "理美容店舗（ヘアサロン・ネイルサロン・エステサロン・リラクゼーションサロンなど）"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "kanzashi",
+          "name": "かんざし",
+          "description": "連結子会社のパシフィックポーター株式会社が提供する予約一元管理システムです。複数の集客サイトと自社予約エンジンの在庫・料金などを一元管理でき、POSシステムとも連動しています。2026年3月末時点で14,000店舗以上に利用されています。金額は独立して開示されていません。",
+          "customers": [
+            "理美容店舗（ヘアサロン・ネイルサロン・エステサロン・リラクゼーションサロンなど）"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "理美容店舗に対して、集客・予約・施術・会計・アフターフォローまでを支援するクラウドサービスを月額課金のサブスクリプションモデルで提供し、利用料や決済手数料を受け取る会社です。",
+    "products": [
+      "クラウド型予約管理システム「BeautyMerit（ビューティーメリット）」",
+      "予約一元管理システム「かんざし」",
+      "決済機能「BeautyMerit Pay」",
+      "リテールメディア「BM Smart Mirror（ビーエムスマートミラー）」",
+      "キャッシュレス決済サービス「BeautyPay（ビューティーペイ）」"
+    ],
+    "customers": [
+      "理美容店舗（ヘアサロン・ネイルサロン・エステサロン・リラクゼーションサロンなど）"
+    ],
+    "revenueSources": [
+      "月額利用料（サブスクリプション）",
+      "初期費用",
+      "オプション費用",
+      "決済手数料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "サインド",
+        "description": "サインドは東京都品川区に本社を置く会社です。連結子会社1社を持ち、2026年3月31日現在の連結従業員数は127人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "2つの予約システム",
+        "description": "理美容店舗向けに、クラウド型予約管理システム「BeautyMerit」と、連結子会社のパシフィックポーター株式会社が運営する予約一元管理システム「かんざし」を提供しています。決済サービス「BeautyPay」やリテールメディア「BM Smart Mirror」の提供も始めています。"
+      },
+      {
+        "kind": "customer",
+        "title": "理美容店舗",
+        "description": "顧客はヘアサロン、ネイルサロン、エステサロン、リラクゼーションサロンなどの理美容店舗です。2026年3月末時点で、「BeautyMerit」は9,400店舗以上、「かんざし」は14,000店舗以上に利用されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は2,542百万円でした。売上高の92.4％が、月額利用料などのサブスクリプション売上高です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期は、親会社株主に帰属する当期純利益172百万円を計上しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2023年3月期",
@@ -27,12 +122,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3157712000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 103,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第12期連結会計年度より連結財務諸表を作成しているため、それ以前については連結経営指標等を記載しておりません。"
     },
     {
       "fiscalYear": "2024年3月期",
@@ -47,12 +143,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3196005000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 104,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第13期において、企業結合に係る暫定的な会計処理の確定を行っており、第12期に係る各数値については、暫定的な会計処理の確定の内容を反映させております。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -67,7 +164,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3315228000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 116,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3488343000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 127,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -95,7 +192,98 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2011,
+      "title": "株式会社サインドを設立",
+      "description": "東京都品川区東五反田に株式会社サインドを設立しました。",
+      "significance": "理美容業界向けにクラウド型予約管理システムを提供することを目的とする、現在のサインドの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "「BeautyMerit」の提供を開始",
+      "description": "美容室向けに公式iOSアプリ・Androidアプリが作成できる「BeautyMerit（ビューティーメリット）」の提供を開始しました。",
+      "significance": "現在の主力サービスの開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "一元管理（サイトコントローラー）機能をリリース",
+      "description": "「BeautyMerit」に、複数の集客サイトの予約管理を自動化する一元管理（サイトコントローラー）機能をリリースしました。",
+      "significance": "理美容業界に先駆けて提供した機能で、現在の事業の中核機能の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "「レコサロ」を事業譲受",
+      "description": "株式会社ケイアートファクトリーから「レコサロ」の事業譲受を受けました。",
+      "significance": "事業譲受による事業基盤の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "株式の上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "グロース市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、マザーズからグロース市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "パシフィックポーター株式会社の株式を取得",
+      "description": "予約一元管理システム「かんざし」を運営するパシフィックポーター株式会社の株式を取得し、連結子会社としました。",
+      "significance": "「かんざし」が当社グループのサービスに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "「BM Smart Mirror」の提供を開始",
+      "description": "理美容店舗向けの「BM Smart Mirror（ビーエムスマートミラー）」の提供を開始しました。",
+      "significance": "予約・顧客データを活用した新しいサービスです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "「BeautyPay」の提供を開始",
+      "description": "美容業界向けのキャッシュレス決済サービス「BeautyPay（ビューティーペイ）」の提供を開始しました。",
+      "significance": "美容業界に特化した決済サービスへの展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -104,13 +292,47 @@
       "publisher": "株式会社サインド",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJVR.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YJVR",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "サブスクリプション（月額課金）モデルの事業を中心に展開し、「ARR」の拡大を経営上の目標としています。継続的な顧客の獲得に加え、顧客の解約率の減少や、サービスの機能拡張のために必要な投資を積極的に行っていくことを経営戦略としています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "複数の集客サイトの予約管理を自動化する一元管理（サイトコントローラー）を理美容業界に先駆けて提供してきたことと、集客サイト・POSシステム・理美容ディーラーなどとのパートナーネットワークにより、店舗が導入済みのシステムを変えずに利用できることが強みです。",
+        "basis": "【事業の内容】に、一元管理（サイトコントローラー）を理美容業界に先駆けて提供したリーディング企業であること、集客サイト・POSシステム・理美容ディーラーをはじめとする様々な企業との外部連携に対応し強力なパートナーネットワークを構築していること、2026年3月期のカスタマーチャーンレートが0.65％であることが印字されています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "理美容サービスのネット予約市場は拡大が続いており、経済産業省の調査では2024年に7,302億円まで広がっています。多くの理美容店舗が小規模な人数で運営され人手不足も深刻化するなか、予約や顧客対応をまとめて管理するシステムへの需要は今後も拡大していくものと会社はみています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、経済産業省「令和６年度 電子商取引に関する市場調査 報告書」による理美容サービスのネット予約市場が2015年の2,420億円から2024年には7,302億円となったこと、理美容業界では店舗間の競争激化と慢性的な人材不足が深刻化し、店舗経営の情報システム化が加速していることが印字されています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

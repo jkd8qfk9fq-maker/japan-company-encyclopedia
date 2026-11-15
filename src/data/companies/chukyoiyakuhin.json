@@ -4,15 +4,129 @@
   "name": "中京医薬品",
   "officialName": "株式会社中京医薬品",
   "nameEn": "CHUKYOIYAKUHIN CO.,LTD.",
-  "description": null,
+  "shortNameEn": "Chukyoiyakuhin Co., Ltd.",
+  "description": "一般家庭への配置販売を中心に、医薬品や健康関連商品の販売とミネラルウォーターの製造販売を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    },
+    {
+      "industryId": "food",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "retail",
+      "name": "小売部門",
+      "description": "営業員が一般家庭を訪問し、家庭に配置した常備配置薬や保健品などの配置販売と小売販売を行う、家庭医薬品等販売事業の部門です。2026年3月期の外部顧客への売上高は3,898百万円でした。",
+      "customers": [
+        "一般家庭"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "wholesale",
+      "name": "卸売部門",
+      "description": "フランチャイズ加盟店を中心とする同業他社や一般流通市場へ、常備配置薬や生活関連商品などを卸販売する、家庭医薬品等販売事業の部門です。2026年3月期の外部顧客への売上高は1,909百万円でした。",
+      "customers": [
+        "フランチャイズ加盟店などの同業他社",
+        "一般流通市場"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "water",
+      "name": "売水事業部門",
+      "description": "ミネラルウォーターを自社工場で製造し、ウォーターサーバーとあわせて一般家庭などへ販売する部門です。2026年3月期の外部顧客への売上高は759百万円でした。",
+      "customers": [
+        "一般家庭",
+        "事業所"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない区分で、保険商品の販売などを行っています。2026年3月期の外部顧客への売上高は1百万円でした。",
+      "customers": [
+        "一般家庭"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "家庭に配置した医薬品などの使われた分を販売する配置販売と、同業他社への卸売、ミネラルウォーターの宅配販売で収益を得ています。",
+    "products": [
+      "常備配置薬",
+      "保健品",
+      "ドリンク",
+      "医療品",
+      "日用雑貨",
+      "ミネラルウォーター",
+      "保険商品"
+    ],
+    "customers": [
+      "一般家庭",
+      "フランチャイズ加盟店",
+      "同業他社",
+      "一般流通市場"
+    ],
+    "revenueSources": [
+      "配置販売・小売販売による商品の売上",
+      "同業他社や一般流通市場への卸販売による商品の売上",
+      "ミネラルウォーターの販売による売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "中京医薬品",
+        "description": "中京医薬品は愛知県半田市に本社を置く会社です。連結子会社はなく、2026年3月31日現在の従業員数は298人です。取扱商品のほとんどは自社ブランドで、自社規格に基づいて生産を外部に委託しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "医薬品・生活関連商品とミネラルウォーター",
+        "description": "常備配置薬・保健品・ドリンク・医療品・日用雑貨などの商品を販売し、あわせてミネラルウォーターを製造販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "一般家庭と同業他社",
+        "description": "顧客は、配置販売と小売販売の相手である一般家庭と、卸販売の相手であるフランチャイズ加盟店を中心とする同業他社や一般流通市場です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は6,569百万円で、前期から4.2％増えました。小売部門が3,898百万円、卸売部門が1,909百万円、売水事業部門が759百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は83百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +141,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2618587000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 361,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +163,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2583425000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 339,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +185,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2522834000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 322,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +207,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2526109000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 310,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +229,158 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2578045000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 298,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1978,
+      "title": "株式会社中京医薬品を設立",
+      "description": "配置医薬品の販売を目的として、愛知県半田市に株式会社中京医薬品を設立しました。",
+      "significance": "現在の配置販売事業の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "生活関連商品の販売を開始",
+      "description": "医薬品、化粧品、健康食品、日用品などの生活関連商品の販売を開始しました。",
+      "significance": "配置薬以外の商品へ取扱範囲を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "フランチャイズ事業を開始",
+      "description": "配置医薬品販売のフランチャイズ事業を開始しました。",
+      "significance": "加盟店を通じた販売網拡大の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "保険代理店事業を開始",
+      "description": "生命保険の募集と損害保険の代理店事業を開始しました。",
+      "significance": "現在も「その他」の区分に残る保険事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "販売子会社2社を吸収合併",
+      "description": "中京医薬品販売株式会社と三重中京医薬品株式会社を吸収合併しました。",
+      "significance": "販売会社の統合による体制の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "店頭上場",
+      "description": "日本証券業協会の店頭市場に株式を店頭上場しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "売水事業を開始",
+      "description": "ミネラルウォーターの製造販売を行う売水事業を開始しました。",
+      "significance": "現在の売水事業部門の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "大阪証券取引所JASDAQに上場",
+      "description": "ジャスダック証券取引所と大阪証券取引所の合併に伴い、大阪証券取引所JASDAQに上場しました。",
+      "significance": "取引所の合併に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "東京証券取引所と大阪証券取引所の統合に伴い、東京証券取引所JASDAQ（スタンダード）に上場しました。",
+      "significance": "取引所の統合に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "電力媒介事業を開始",
+      "description": "電力媒介事業「ふれあいでんき」を開始しました。",
+      "significance": "生活関連サービスへの展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "dcm-holdings",
+      "relationship": "customer",
+      "description": "販売先です。2026年3月31日現在、売掛金の相手先として開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主な資産及び負債の内容】"
+    },
+    {
+      "companyId": "takano",
+      "relationship": "supplier",
+      "description": "仕入先です。2026年3月31日現在、電子記録債務の相手先として開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主な資産及び負債の内容】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +388,47 @@
       "publisher": "株式会社中京医薬品",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJGX.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YJGX",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念「健康づくり、幸福づくり、人づくり」を基に、長期ビジョン「より愛され、より親しまれる企業を目指して」を掲げ、お客さまの健康と豊かな生活を支えるための商品や情報・サービスを多角的・多面的に推進する「トータルライフ・ケア」を目指す方針です。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "営業員が家庭を定期的に訪問する配置販売の仕組みと、自社ブランド商品の企画力が土台です。",
+        "basis": "事業の内容に、一般家庭への配置販売並びに小売販売を中心とし、取扱商品のほとんどを自社ブランドとして自社規格に基づいて外部に生産委託している旨が印字されていることと、事業等のリスクに、家庭に救急箱を配置し後日社員が定期的に顧客を訪問して使用された医薬品等だけを売上とする方法である旨が印字されていることによります。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "小売部門が売上高の59.3％を占める、配置販売を中核とする医薬品販売会社です。",
+        "basis": "事業等のリスクに、当社の売上高に占める小売部門のセグメント売上高の割合は59.3％である旨が印字されていることによります。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

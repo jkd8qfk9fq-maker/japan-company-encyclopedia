@@ -1,24 +1,175 @@
 {
   "id": "fantasista",
   "code": "1783",
-  "name": "fantasista",
+  "name": "株式会社ｆａｎｔａｓｉｓｔａ",
   "officialName": "株式会社fantasista",
   "nameEn": "Fantasista Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Fantasista Co., Ltd.",
+  "description": "不動産の売買や保有不動産の活用を主力とし、ホテル運営、健康関連商品の販売、系統用蓄電所の建設運営も手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "real-estate",
+      "primary": true
+    },
+    {
+      "industryId": "energy"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "real-estate",
+      "name": "リアルエステート事業",
+      "description": "不動産売買、不動産売買に関する権利調整業務、自己保有不動産の活用並びに収益の見込める物件への投資を行う主力事業です。2025年９月期の外部顧客への売上高は9,048百万円でした。",
+      "customers": [
+        "不動産の購入者（大和ハウス工業株式会社など）",
+        "ホテル・民泊の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "nc-max-world",
+          "name": "ＮＣ ＭＡＸ ＷＯＲＬＤ株式会社",
+          "description": "リアルエステート事業を担う連結子会社（議決権の所有割合100％）で、売上高が連結売上高の１割を超えています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "space-hostel",
+          "name": "株式会社ＳＰＡＣＥ ＨＯＳＴＥＬ",
+          "description": "ホテル・民泊事業（UNDER RAILWAY HOTEL AKIHABARA等）を営む連結子会社（議決権の所有割合100％）で、その事業はリアルエステート事業に含まれています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    },
+    {
+      "id": "healthcare",
+      "name": "ヘルスケア事業",
+      "description": "５-ＡＬＡ（５-アミノレブリン酸）を含む商品の流通と販売を行う事業です。紅麹関連の問題の影響で業績が低迷し、2025年９月期は事業再生に向けた基盤整備の期間と位置づけられました。2025年９月期の外部顧客への売上高は137百万円でした。",
+      "customers": [
+        "５-ＡＬＡ含有商品の購入者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "hundred-years",
+          "name": "株式会社ハンドレッドイヤーズ",
+          "description": "ヘルスケア事業を開始した連結子会社（議決権の所有割合100％）です。2025年９月末時点で債務超過となっています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "fairy-forest",
+          "name": "株式会社ＦＡＩＲＹ ＦＯＲＥＳＴ",
+          "description": "ヘルスケア事業を営む連結子会社（議決権の所有割合100％）です。2025年９月末時点で債務超過となっています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    },
+    {
+      "id": "clean-energy",
+      "name": "クリーンエネルギー事業",
+      "description": "系統用蓄電所の建設運営を行い、電力需給調整市場へ参画する事業です。2025年６月30日に系統用蓄電池事業「fantasista gunma PSS（群馬太田蓄電所）」が運転を開始しました。2025年９月期の外部顧客への売上高は235百万円でした。",
+      "customers": [
+        "電力需給調整市場の参加者",
+        "蓄電所用地の購入者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "fantasista-battery1",
+          "name": "合同会社ｆａｎｔａｓｉｓｔａ ｂａｔｔｅｒｙ１",
+          "description": "クリーンエネルギー事業を行うために設立された連結子会社（議決権の所有割合100％）です。2025年９月末時点で債務超過となっています。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "不動産を仕入れて販売し、保有不動産の活用やホテル・民泊の運営でも収益を得るほか、５-ＡＬＡ含有商品の販売と系統用蓄電所の建設運営を行う会社です。",
+    "products": [
+      "不動産の売買（販売用不動産）",
+      "自己保有不動産の活用とホテル・民泊の運営",
+      "５-ＡＬＡ（５-アミノレブリン酸）を含む商品",
+      "系統用蓄電所の建設・運営と電力需給調整市場への電力供給"
+    ],
+    "customers": [
+      "不動産の購入者（事業会社など）",
+      "ホテル・民泊の利用者",
+      "５-ＡＬＡ含有商品の購入者",
+      "電力需給調整市場の参加者"
+    ],
+    "revenueSources": [
+      "不動産の販売による売上高",
+      "保有不動産の活用とホテル・民泊運営による売上高",
+      "５-ＡＬＡ含有商品の販売による売上高",
+      "蓄電所の用地売買と電力供給による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社ｆａｎｔａｓｉｓｔａ",
+        "description": "東京都港区赤坂に本社を置き、連結子会社８社とグループを構成する会社です。2025年９月30日現在の連結従業員数は28人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "不動産売買・ホテル運営・健康商品・蓄電事業",
+        "description": "不動産の売買や権利調整、保有不動産の活用とホテル・民泊の運営を主力とし、５-ＡＬＡを含む商品の流通と販売、系統用蓄電所の建設運営を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "不動産の購入者など",
+        "description": "不動産の購入者やホテル・民泊の利用者、健康関連商品の購入者が顧客です。2025年９月期の最大の販売先は大和ハウス工業株式会社でした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高9,422百万円",
+        "description": "2025年９月期の売上高は9,422百万円でした。事業別ではリアルエステート事業9,048百万円、クリーンエネルギー事業235百万円、ヘルスケア事業137百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失239百万円",
+        "description": "2025年９月期の親会社株主に帰属する当期純損益は239百万円の損失でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年9月期",
       "periodEnd": "2021-09-30",
       "revenue": 6894583000,
-      "revenueLabel": "期売上高",
+      "revenueLabel": "売上高",
       "profit": 217227000,
       "profitLabel": "経常損益(△は損失)",
       "netIncome": -977219000,
@@ -27,7 +178,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3376708000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 35,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -38,7 +189,7 @@
       "fiscalYear": "2022年9月期",
       "periodEnd": "2022-09-30",
       "revenue": 5027291000,
-      "revenueLabel": "期売上高",
+      "revenueLabel": "売上高",
       "profit": 50951000,
       "profitLabel": "経常損益(△は損失)",
       "netIncome": -803640000,
@@ -47,18 +198,19 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5227670000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 27,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第77期の期首から適用しており、第77期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年9月期",
       "periodEnd": "2023-09-30",
       "revenue": 10586030000,
-      "revenueLabel": "期売上高",
+      "revenueLabel": "売上高",
       "profit": 1477189000,
       "profitLabel": "経常損益(△は損失)",
       "netIncome": 1053156000,
@@ -67,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6401948000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 21,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -78,7 +230,7 @@
       "fiscalYear": "2024年9月期",
       "periodEnd": "2024-09-30",
       "revenue": 8806039000,
-      "revenueLabel": "期売上高",
+      "revenueLabel": "売上高",
       "profit": 664308000,
       "profitLabel": "経常損益(△は損失)",
       "netIncome": 290559000,
@@ -87,7 +239,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6616182000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 29,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -98,7 +250,7 @@
       "fiscalYear": "2025年9月期",
       "periodEnd": "2025-09-30",
       "revenue": 9422342000,
-      "revenueLabel": "期売上高",
+      "revenueLabel": "売上高",
       "profit": -8331000,
       "profitLabel": "経常損益(△は損失)",
       "netIncome": -239599000,
@@ -107,7 +259,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6376921000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 28,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +267,225 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1950,
+      "title": "南野建設株式会社を設立",
+      "description": "大阪府大阪市城東区に南野建設株式会社を設立し、建設業として事業を開始しました。",
+      "significance": "現在の会社の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました（コード番号1783）。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "持株会社体制へ移行",
+      "description": "分社型新設分割により持株会社体制へ移行し、株式会社Ａ．Ｃホールディングスに商号変更しました。建設関連部門は新設した南野建設株式会社を連結子会社としました。",
+      "significance": "建設事業を持株会社の傘下に置く体制への転換です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "ホテル事業の子会社を取得",
+      "description": "株式会社宇田川の株式を取得し、株式会社ＳＰＡＣＥ ＨＯＳＴＥＬ（現連結子会社）に商号変更しました。",
+      "significance": "ホテル・民泊事業への参入です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "株式会社アジアゲートホールディングスに商号変更",
+      "description": "本店を東京都港区赤坂五丁目３番１号に移転し、株式会社アジアゲートホ－ルディングスに商号変更しました。",
+      "significance": "社名と本店所在地の転換点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "UNDER RAILWAY HOTEL AKIHABARAを開業",
+      "description": "株式会社ＳＰＡＣＥ ＨＯＳＴＥＬで「UNDER RAILWAY HOTEL AKIHABARA」を開業しました。",
+      "significance": "ホテル事業の具体的な展開です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "南野建設株式会社を売却",
+      "description": "創業以来の建設事業を担ってきた南野建設株式会社を売却しました。",
+      "significance": "建設事業からの撤退です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "不動産コンサルティング事業を開始",
+      "description": "株式会社ＮＳアセットマネジメント（現連結子会社）を設立し、不動産コンサルティング事業を開始しました。",
+      "significance": "不動産周辺事業の拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "ＮＣ ＭＡＸ ＷＯＲＬＤの株式を取得",
+      "description": "ＮＣ ＭＡＸ ＷＯＲＬＤ株式会社（現連結子会社）の株式49％を取得しました。",
+      "significance": "現在の主力子会社の取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "ヘルスケア事業を開始",
+      "description": "「ヘルスケア事業」を株式会社ハンドレッドイヤーズ（新設連結子会社）で開始しました。",
+      "significance": "不動産以外の事業への本格参入です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "ＮＣ ＭＡＸ ＷＯＲＬＤを完全子会社化",
+      "description": "ＮＣ ＭＡＸ ＷＯＲＬＤ株式会社の全株式を取得し、完全子会社化しました。また、株式会社ＦＡＩＲＹ ＦＯＲＥＳＴの株式を取得しました。",
+      "significance": "主力子会社の完全子会社化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "市場の再編に伴い、東京証券取引所スタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "クリーンエネルギー事業を開始",
+      "description": "合同会社ｆａｎｔａｓｉｓｔａ ｂａｔｔｅｒｙ１（現連結子会社）を設立し、「クリーンエネルギー事業」を開始しました。",
+      "significance": "系統用蓄電事業への参入です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社ｆａｎｔａｓｉｓｔａに商号変更",
+      "description": "株式会社ｆａｎｔａｓｉｓｔａに商号変更しました。また、不動産コンサルティング事業の廃止を決定しました。",
+      "significance": "現在の社名への変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "daiwa-house-industry",
+      "relationship": "customer",
+      "description": "2025年９月期における最大の販売先です。セグメント情報の主要な顧客ごとの情報ではリアルエステート事業の顧客として、経営成績の分析では主な相手先別の販売実績に、正式名称で印字されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
       "title": "有価証券報告書－第80期(2024/10/01－2025/09/30)",
-      "publisher": "株式会社fantasista",
+      "publisher": "株式会社ｆａｎｔａｓｉｓｔａ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XC79.pdf",
       "publishedAt": "2025-12-22",
-      "accessedAt": "2026-09-28"
+      "docId": "S100XC79",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念『多様化する世界に驚きと感動を与え続けるためにたゆまぬ努力で挑戦し続ける。』に基づき、当社グループの柱であるリアルエステート事業の収益力のさらなる強化と、新たな柱となる事業の育成の取組みを進めるとしています。",
+        "asOf": "2025-12-22",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "主力のリアルエステート事業が売上高の大半を占め、大型案件の有無により年度業績が変動する構造にあります。そのため、系統用蓄電所を手がけるクリーンエネルギー事業などの新規事業を第二の収益の柱として育成し、収益の安定化を図る方針です。",
+        "basis": "セグメント情報等の外部顧客への売上高、主要な顧客ごとの情報、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（経営者の視点による分析）による。",
+        "asOf": "2025-12-22",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "不動産の売買に加え、売買に伴う権利調整業務や自己保有不動産の活用、ホテル・民泊の運営まで、不動産の周辺領域を幅広く手がけています。主力子会社のＮＣ ＭＡＸ ＷＯＲＬＤ株式会社は、売上高が連結売上高の１割を超える規模で不動産事業を担っています。",
+        "basis": "事業の内容（セグメント別事業内容）、関係会社の状況による。",
+        "asOf": "2025-12-22",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年９月期は、大和ハウス工業株式会社向けの販売が販売実績の半分以上を占める最大の販売先となりました。販売用不動産の消化が進展したほか、沖縄の不動産開発事業の売上寄与とホテル事業の堅調が増収につながっています。",
+        "basis": "セグメント情報等の主要な顧客ごとの情報、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（経営成績の概要、販売実績）による。",
+        "asOf": "2025-12-22",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-30",

@@ -4,15 +4,113 @@
   "name": "天昇電気工業",
   "officialName": "天昇電気工業株式会社",
   "nameEn": "Tensho Electric Industries Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Tensho Electric Industries Co., Ltd.",
+  "description": "自動車部品や物流産業資材などのプラスチック成形品と金型を日本と中国で製造販売し、建物の賃貸も行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "japan-molding",
+      "name": "日本成形関連事業",
+      "description": "当社と連結子会社の竜舞プラスチック株式会社が、自動車部品、物流産業資材、機構品部品、金型の製造販売を行う事業です。2026年3月期の外部顧客への売上高は21,041百万円で、連結売上高の大部分を占めています。主要な販売先として、株式会社ＳＵＢＡＲＵ、トヨタ紡織株式会社、三甲株式会社がセグメント注記に印字されています。",
+      "customers": [
+        "自動車メーカー",
+        "自動車部品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "china-molding",
+      "name": "中国成形関連事業",
+      "description": "連結子会社の天昇塑料（常州）有限公司が、中国で物流産業資材、機構品部品、金型の製造販売を行う事業です。2026年3月期の外部顧客への売上高は551百万円でした。",
+      "customers": [
+        "物流関連事業者",
+        "製造業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産関連事業",
+      "description": "当社が神奈川県相模原市所在の土地・建物を株式会社アイリスプラザに賃貸するほか、福島県二本松市所在の土地の賃貸を行う事業です。2026年3月期の外部顧客への売上高は284百万円でした。",
+      "customers": [
+        "賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "日本と中国の拠点で自動車部品、物流産業資材、機構品部品などのプラスチック成形品と金型を製造し、自動車関連のメーカーなどに販売する会社です。",
+    "products": [
+      "自動車部品",
+      "物流産業資材",
+      "機構品部品",
+      "金型"
+    ],
+    "customers": [
+      "自動車メーカー",
+      "自動車部品メーカー",
+      "物流関連事業者"
+    ],
+    "revenueSources": [
+      "成形品の販売",
+      "金型の販売",
+      "不動産賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "天昇電気工業",
+        "description": "東京都世田谷区に本店を置き、国内の工場と連結子会社2社で事業を行う会社です。2026年3月31日現在の連結従業員数は468人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "プラスチック成形品と金型の製造",
+        "description": "日本と中国の拠点で、自動車部品、物流産業資材、機構品部品などのプラスチック成形品と金型を製造します。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車関連メーカーなど",
+        "description": "主要な販売先は株式会社ＳＵＢＡＲＵ、トヨタ紡織株式会社、三甲株式会社です。成形品や金型を自動車関連のメーカーなどに販売します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は21,877百万円でした。事業別では日本成形関連事業が21,041百万円、中国成形関連事業が551百万円、不動産関連事業が284百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は504百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +125,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8089000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 691,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +145,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9521000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 698,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +165,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10930000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 720,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +185,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10624000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 727,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +205,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11013000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 468,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +213,127 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1936,
+      "title": "昇商会を創業",
+      "description": "元取締役会長菊地五郎が、合成樹脂成形加工および絶縁材料の製造販売を目的として、東京都品川区において昇商会の名称で創業しました。",
+      "significance": "現在の当社の起点です。合成樹脂の成形加工から始まったことが、現在の成形事業の土台になっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1940,
+      "title": "天昇電気工業株式会社に改組",
+      "description": "昇商会を天昇電気工業株式会社に改組しました。",
+      "significance": "法人としての当社が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式を公開し、上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "決算期を3月31日に変更",
+      "description": "決算期を2月20日から3月31日に変更しました。",
+      "significance": "現在の3月決算の形になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "三王技研工業株式会社を吸収合併",
+      "description": "2001年10月に全株式を取得した三王技研工業株式会社を吸収合併しました。同社の拠点は埼玉工場となっています。",
+      "significance": "国内の生産体制を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "中国子会社天昇塑料（常州）有限公司を設立",
+      "description": "子会社天昇塑料（常州）有限公司を中華人民共和国江蘇省常州市に設立しました。",
+      "significance": "中国での生産・販売体制が始まり、現在の中国成形関連事業の拠点となっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "第一化研株式会社を吸収合併",
+      "description": "2005年10月に全株式を取得した第一化研株式会社を吸収合併しました。",
+      "significance": "国内事業の統合を進めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "竜舞プラスチック株式会社を連結子会社化",
+      "description": "竜舞プラスチック株式会社の株式100％を取得し、連結子会社化しました。",
+      "significance": "日本成形関連事業の生産体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "三甲アメリカコーポレーションを持分法適用会社化",
+      "description": "三甲アメリカコーポレーションが実施した第三者割当増資により、同社は持分法適用会社に移行し、当社の連結範囲から外れました。",
+      "significance": "アメリカ成形関連事業が報告セグメントから外れ、グループ構成が変わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "toyota-boshoku",
+      "relationship": "customer",
+      "description": "セグメント注記の主要な顧客ごとの情報に日本成形関連事業の販売先として印字されており、2026年3月期の売上高に占める割合は11.2％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在の大株主の状況に、発行済株式（自己株式を除く。）の総数の13.82％を所有する株主として印字されています。2004年7月には第三者割当による新株式発行の引受先にもなっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "mitsui-chemicals",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在の大株主の状況に、発行済株式（自己株式を除く。）の総数の1.46％を所有する株主として印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +341,55 @@
       "publisher": "天昇電気工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIYI.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YIYI",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念「ものづくりを通じて豊かな社会を創造しよう」のもと、品質・価格・納期により顧客満足を提供し、ステークホルダーとの信頼構築に努めることを経営方針としています。今後とも自動車部品、機構品部品、物流産業資材等の自社製品の成形分野を中心として企業活動を推進してまいります。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期は、三甲アメリカコーポレーションが連結範囲から外れたことで売上高が前期から大きく減りました。一方で日本成形関連事業は自動車業界における生産調整の影響の解消に伴い回復基調となり、売上高の大部分を国内の成形事業が占める構成になっています。",
+        "basis": "セグメント注記の外部顧客への売上高（日本成形関連事業21,041百万円、中国成形関連事業551百万円、不動産関連事業284百万円）と、MD&Aの経営成績の概要にアメリカ成形関連事業の除外と日本成形関連事業の回復基調が述べられていることを根拠としています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "技術部門がお客様の開発部門と緊密な連携・協力関係を保ち、製品設計の段階から積極的な提案活動を行っていることや、最新の成形技術・塗装技術等の取得に向けて情報収集を続けていることが、受注活動を支えています。",
+        "basis": "【研究開発活動】に、技術部門とお客様の開発部門との連携・協力関係、製品設計段階からの提案活動、成形技術・塗装技術等の取得に向けた情報収集が印字されていることを根拠としています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高の大部分は日本成形関連事業によるもので、主要な顧客ごとの情報には株式会社ＳＵＢＡＲＵやトヨタ紡織株式会社が販売先として印字されています。自動車業界の生産計画の変更により受注が大きく動く可能性があることが、対処すべき事項として述べられています。",
+        "basis": "セグメント注記の外部顧客への売上高と主要な顧客ごとの情報、MD&Aの経営成績に重要な影響を与える要因についての記述を根拠としています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

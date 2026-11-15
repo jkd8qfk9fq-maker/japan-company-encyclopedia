@@ -4,15 +4,161 @@
   "name": "フジオーゼックス",
   "officialName": "フジオーゼックス株式会社",
   "nameEn": "FUJI OOZX Inc.",
-  "description": null,
+  "shortNameEn": "FUJI OOZX",
+  "description": "自動車のエンジンに使われるバルブなどの自動車部品を製造・販売する、大同特殊鋼グループの自動車部品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    },
+    {
+      "industryId": "machinery",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "automotive-parts",
+      "name": "自動車部品製造事業",
+      "description": "エンジンバルブ、バルブシート、コッタ、ローテータ、リテーナ、機械等の製造、販売を行う報告セグメントです。2026年3月期の外部顧客への売上高は27,946百万円で、全体の大半を占めます。当社と富士气門（広東）有限公司、PT. FUJI OOZX INDONESIA、FUJI OOZX MEXICO, S.A. DE C.V.が製造と販売を担い、オーゼックステクノ株式会社が金型等の製造と生産工程に付帯する業務を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "トヨタ自動車や日産自動車、スズキなどの自動車メーカー"
+      ],
+      "children": [
+        {
+          "id": "engine-valves",
+          "name": "エンジンバルブ",
+          "description": "内燃機関用のエンジンバルブです。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "valve-seats",
+          "name": "バルブシート",
+          "description": "エンジンのバルブシートです。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "valve-components",
+          "name": "コッタ、ローテータ、リテーナ",
+          "description": "バルブまわりの部品であるコッタ、ローテータ、リテーナです。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "machinery",
+          "name": "機械等",
+          "description": "機械等の製造、販売です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "金属製品と精密部品を製造、販売する報告セグメントです。2026年3月期の外部顧客への売上高は1,146百万円です。株式会社マルヨシ製作所がリチウムイオン電池等に使用されるセパレータフィルムの製造装置に組み込まれる金属ロール、シャフト等を製造し、株式会社ピーアンドエムがファクトリーオートメーション機器等の精密部品を製造・販売しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "セパレータフィルム製造装置メーカー",
+        "半導体やEVバッテリー製造で使われる空気圧機器のメーカー"
+      ],
+      "children": [
+        {
+          "id": "metal-products",
+          "name": "金属ロール、シャフト等の金属製品",
+          "description": "セパレータフィルムの製造装置に組み込まれる金属ロール、シャフト等の金属製品です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "precision-parts",
+          "name": "精密部品",
+          "description": "ファクトリーオートメーション機器等の精密部品です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "エンジンバルブをはじめとする自動車部品を国内外の自動車メーカー向けに製造・販売し、中国・インドネシア・メキシコの子会社でも生産する事業モデルです。",
+    "products": [
+      "エンジンバルブ",
+      "バルブシート",
+      "コッタ",
+      "ローテータ",
+      "リテーナ",
+      "金属ロール、シャフト等の金属製品",
+      "ファクトリーオートメーション機器等の精密部品"
+    ],
+    "customers": [
+      "トヨタ自動車や日産自動車、スズキなどの自動車メーカー",
+      "セパレータフィルム製造装置メーカー",
+      "空気圧機器メーカー"
+    ],
+    "revenueSources": [
+      "自動車部品の販売による売上高",
+      "金属製品・精密部品の販売による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "大同特殊鋼グループの自動車部品メーカー",
+        "description": "フジオーゼックスは静岡県菊川市に本社を置き、連結子会社8社とともに事業を行っています。親会社の大同特殊鋼は、2026年3月31日現在、議決権の54.3％（間接所有6.3％を含みます）を所有しています。2026年3月期の連結従業員数は1,261人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "自動車部品製造事業とその他の2事業",
+        "description": "事業は自動車部品製造事業とその他の2つの報告セグメントで、2026年3月期の外部顧客への売上高は、自動車部品製造事業が27,946百万円、その他が1,146百万円です。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車メーカーが主要な顧客",
+        "description": "主要な顧客はトヨタ モーター ノース アメリカと日産自動車で、2026年3月期の売上高に占める割合はそれぞれ12.8％と12.0％です。このほか、トヨタ自動車、スズキ、SUBARUなどにも販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は前期比13.9％増",
+        "description": "2026年3月期の売上高は29,092百万円で、前期比13.9％増となりました。北米向け販売が大幅に増加し、2024年7月に連結子会社化した株式会社ピーアンドエムの売上も寄与しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は2,144百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は2,144百万円で、前期の1,546百万円から増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,12 +173,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27361502000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1112,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第94期（2022年3月期）は、決算日が12月31日であった在外連結子会社4社について決算日を3月31日へ変更したことに伴い、当該子会社について2021年1月1日から2022年3月31日までの15か月間を連結した指標となっています。"
     },
     {
       "fiscalYear": "2023年3月期",
@@ -47,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27865002000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1104,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 30135863000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1161,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +234,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 30971944000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1246,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +254,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32566761000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1261,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +262,266 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1951,
+      "title": "園池バルブ株式会社を設立",
+      "description": "1951年12月、エンジンバルブの製造、販売を目的として東京都品川区に園池バルブ株式会社を設立しました。",
+      "significance": "現在の事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "商号を富士バルブ株式会社に変更",
+      "description": "1952年6月、商号を富士バルブ株式会社に変更し、東京都大田区に工場を完成して操業を開始しました。",
+      "significance": "社名の基礎ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "大同製鋼（現・大同特殊鋼）が資本参加",
+      "description": "1953年7月、大同製鋼株式会社（現・大同特殊鋼株式会社）が資本参加しました。",
+      "significance": "現在の親会社との関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "米国TRW社と技術提携",
+      "description": "1960年1月、米国TRW社とエンジンバルブについて技術提携しました。",
+      "significance": "エンジンバルブの技術基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "本社工場を藤沢に移転・集約",
+      "description": "1970年9月、本社工場の藤沢移転・集約を行いました。",
+      "significance": "生産体制を集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "有限会社富士バルブ興業（現・株式会社テトス）を設立",
+      "description": "1985年11月、有限会社富士バルブ興業（現・株式会社テトス）を当社の全額出資により設立しました。",
+      "significance": "福利厚生を担う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "湘南物流株式会社（現・株式会社ジャトス）を設立",
+      "description": "1989年6月、物流を専門に行う湘南物流株式会社（現・株式会社ジャトス）を当社の全額出資で設立しました。",
+      "significance": "物流を担う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "商号をフジオーゼックス株式会社に変更",
+      "description": "1992年12月、富士バルブ株式会社からフジオーゼックス株式会社に商号を変更しました。本店は同年6月に神奈川県藤沢市へ移転しています。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "1994年12月、株式を東京証券取引所市場第二部（現スタンダード市場）へ上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "株式会社フジテクノ（現・オーゼックステクノ）を設立",
+      "description": "1998年10月、株式会社フジテクノ（現・オーゼックステクノ株式会社）を当社の全額出資により設立しました。",
+      "significance": "金型等の製造を担う子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "本店を静岡県菊川市へ移転",
+      "description": "2003年7月、本店の所在地を現在の静岡県菊川市に移転しました。",
+      "significance": "現在の本社所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "富士气門（広東）有限公司を中国に設立",
+      "description": "2010年8月、TRW社（米国）、新韓バルブ工業（韓国）との合弁会社である富士气門（広東）有限公司を中国（広東省）に設立しました。",
+      "significance": "中国での生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "PT. FUJI OOZX INDONESIAを設立",
+      "description": "2013年9月、PT. Prospect Motor（インドネシア）との合弁会社PT. FUJI OOZX INDONESIAをインドネシア共和国に設立しました。",
+      "significance": "インドネシアでの生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "FUJI OOZX MEXICOをメキシコに設立",
+      "description": "2014年8月、大同興業株式会社との合弁会社FUJI OOZX MEXICO, S.A. DE C.V.をメキシコ合衆国に設立しました。",
+      "significance": "メキシコでの生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "TRW社との技術提携を解消し、富士气門（広東）を完全子会社化",
+      "description": "2015年7月、TRW社（米国）との技術提携解消により合弁会社の全株式を売却し、富士气門（広東）有限公司の全株式を取得して完全子会社化しました。あわせて、販売会社FUJI OOZX AMERICA Inc.をアメリカ合衆国に設立しました。",
+      "significance": "海外体制を自社主導に切り替えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "三菱重工工作機械との業務提携で中空バルブ事業を継承",
+      "description": "2016年5月、三菱重工工作機械株式会社と業務提携を行い、フジホローバルブ株式会社において両社の中空バルブ事業における中空製造工程の製造事業を吸収分割により継承しました。",
+      "significance": "中空バルブの技術を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "フジホローバルブ株式会社を吸収合併",
+      "description": "2021年7月、フジホローバルブ株式会社（連結子会社）を吸収合併しました。同年3月に三菱重工工作機械株式会社との事業提携を解消し、同社の全株式を取得して完全子会社化していました。",
+      "significance": "中空バルブ事業を自社に取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分見直しに伴い、東京証券取引所スタンダード市場へ移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社マルヨシ製作所を連結子会社化",
+      "description": "2023年7月、セパレータフィルム製造用の金属ロール、シャフト等の金属部品を製造・販売する株式会社マルヨシ製作所の全株式を取得し、連結子会社化しました。",
+      "significance": "「その他」事業の核の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社ピーアンドエムを連結子会社化",
+      "description": "2024年7月、ファクトリーオートメーション機器等の精密部品を製造・販売する株式会社ピーアンドエムの全株式を取得し、連結子会社化しました。",
+      "significance": "「その他」事業が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "FUJI OOZX AMERICA Inc.を清算",
+      "description": "2025年3月、FUJI OOZX AMERICA Inc.（連結子会社）を清算しました。",
+      "significance": "海外販売体制を見直しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "欧州駐在事務所を閉鎖",
+      "description": "2026年1月、FUJI OOZX Inc., Europe Representative Officeを閉鎖しました。",
+      "significance": "海外拠点を見直しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "daido-steel",
+      "relationship": "parent",
+      "description": "フジオーゼックスの親会社で、2026年3月31日現在、議決権の54.3％（間接所有6.3％を含みます）を所有しています。フジオーゼックスは大同特殊鋼の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "nissan",
+      "relationship": "customer",
+      "description": "フジオーゼックスの主要な顧客で、2026年3月期の売上高の12.0％を占めています。関連するセグメントは自動車部品製造事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "toyota",
+      "relationship": "customer",
+      "description": "フジオーゼックスの顧客です。販売実績には、トヨタ自動車への販売が2026年3月期の売上高の6.5％、トヨタ モーター ノース アメリカへの販売が同12.8％と、それぞれ印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "suzuki",
+      "relationship": "customer",
+      "description": "フジオーゼックスの顧客で、販売実績に2026年3月期の売上高の5.6％を占める主な相手先として印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +529,60 @@
       "publisher": "フジオーゼックス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCH0.pdf",
       "publishedAt": "2026-06-17",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YCH0",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 連結子会社の株式会社ジャトスは、2026年4月1日を効力発生日として、連結子会社の株式会社テトスを吸収合併しました。登録は2026年3月31日現在の体制（連結子会社8社）で行っています。",
+      "businessModel: 連結子会社の株式会社マルヨシ製作所は、2026年2月に解散・清算が決定され、2026年9月に解散決議を行う予定です。登録は2026年3月31日現在の体制で行っています。",
+      "businessModel: 当社は2024年4月1日付で普通株式1株につき5株の割合で株式分割を行いました（経営指標等の注記に記載）。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026中期経営計画では、自動車部品事業の安定収益確保、新規事業領域の育成および拡大、効率経営推進による社会貢献を基本方針に掲げ、既存事業である自動車部品事業の強化と新規事業の拡大を両輪に、持続的な企業価値向上に向けた基盤構築を図ることを掲げています。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "その他事業の売上高は、株式会社ピーアンドエムを連結の範囲に含めたことにより前期比36.1％増えており、中期経営計画が掲げる新規事業領域の拡大が、自動車部品製造事業が大半を占める事業構成のなかで具体化しています。",
+        "basis": "セグメント情報に記載された報告セグメントごとの外部顧客への売上高と、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析に記載されたセグメント別の売上高の増減による。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、1951年の創業以来積み重ねてきたエンジンバルブの製造技術と、中国・インドネシア・メキシコを含む海外生産体制です。中空バルブの製造工程を継承するなど、内燃機関用動弁系部品の技術の幅も広げています。",
+        "basis": "沿革に記載された技術提携と子会社の設立・吸収合併の経緯と、事業の内容に記載された関係会社の役割による。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "エンジンバルブを中心とする動弁系部品のメーカーです。地域別の売上高は日本が19,212百万円、アメリカが6,166百万円、中国が1,644百万円、メキシコが1,475百万円で、主要な顧客であるトヨタ モーター ノース アメリカと日産自動車が売上高の1割超をそれぞれ占めています。",
+        "basis": "セグメント情報の関連情報に記載された地域ごとの売上高と主要な顧客ごとの情報による。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

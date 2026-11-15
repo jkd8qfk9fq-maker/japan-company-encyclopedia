@@ -4,15 +4,128 @@
   "name": "インスペック",
   "officialName": "インスペック株式会社",
   "nameEn": "inspec Inc.",
-  "description": null,
+  "shortNameEn": "inspec Inc.",
+  "description": "半導体パッケージ基板や精密プリント基板の外観検査装置を開発・製造・販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "substrate-inspection-equipment",
+      "name": "基板検査装置関連事業",
+      "description": "半導体パッケージ基板や精密プリント基板の外観検査装置を開発・製造・販売し、保守サービスを行う単一セグメントの事業です。2026年4月期の売上高は2,478百万円です。生成AIの普及によるデータセンター向けのCPU・GPUに使われる半導体パッケージ基板向けを中心に、前期に獲得した大型受注案件の遂行が進みました。",
+      "customers": [
+        "半導体パッケージ基板メーカー",
+        "精密プリント基板メーカー",
+        "フレキシブル基板（FPC）メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "flatbed-inspection",
+          "name": "フラットベッド型検査装置",
+          "description": "半導体パッケージ基板などを一枚ごとに検査するフラットベッド型の外観検査装置（SXシリーズ）です。2026年4月期の販売実績は1,422百万円で、売上高の57.4％を占める主力品目です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営成績等の状況の概要】"
+        },
+        {
+          "id": "roll-to-roll-inspection",
+          "name": "ロールtoロール型検査装置",
+          "description": "フレキシブル基板などをロール状のまま連続して検査するロールtoロール型の検査装置（RAシリーズ）です。2026年4月期の販売実績は385百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営成績等の状況の概要】"
+        },
+        {
+          "id": "inline-inspection",
+          "name": "インライン検査装置",
+          "description": "生産ラインに組み込んで検査するインライン型の検査装置です。2026年4月期の販売実績は127百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営成績等の状況の概要】"
+        },
+        {
+          "id": "other-products-services",
+          "name": "その他（リペア装置・保守サービス等）",
+          "description": "配線パターンの欠陥を修復するリペア装置（LXシリーズ）の販売と、検査装置の保守・サービスなどです。2026年4月期の販売実績は543百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営成績等の状況の概要】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社開発の画像処理専用コンピュータを核とする基板外観検査装置を基板メーカーに販売し、保守サービスでも収益を得る仕組みです。",
+    "products": [
+      "フラットベッド型検査装置（SXシリーズ）",
+      "ロールtoロール型検査装置（RAシリーズ）",
+      "インライン検査装置",
+      "配線パターンの欠陥を修復するリペア装置（LXシリーズ）",
+      "保守・サービス"
+    ],
+    "customers": [
+      "半導体パッケージ基板メーカー",
+      "精密プリント基板メーカー",
+      "フレキシブル基板（FPC）メーカー"
+    ],
+    "revenueSources": [
+      "基板検査装置の販売代金",
+      "保守・サービスの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "インスペック",
+        "description": "1984年に電子部品組立の太洋製作所として創業し、2001年に現在の社名になりました。秋田県仙北市に本社を置き、東京証券取引所スタンダード市場に上場しています。2026年4月30日現在の従業員数は85人で、連結の対象ではない台湾の子会社1社とともに事業を行っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "基板の外観検査装置",
+        "description": "半導体パッケージ基板や精密プリント基板の外観を検査する装置を提供しています。自社開発の画像処理専用コンピュータを核とし、フラットベッド型、ロールtoロール型、インライン型の検査装置と、配線パターンの欠陥を修復するリペア装置を揃え、保守サービスも行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "基板メーカー",
+        "description": "データセンター向けのCPU・GPUに使われる半導体パッケージ基板や、スマートフォンなどのデジタル機器に使われる精密プリント基板を作る、国内外の基板メーカーが顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高2,478百万円",
+        "description": "2026年4月期の売上高は2,478百万円で、前期の2,237百万円に比べて10.8％増え、過去最高を更新しました。品目別ではフラットベッド型検査装置が1,422百万円、ロールtoロール型検査装置が385百万円、インライン検査装置が127百万円、その他が543百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益76百万円",
+        "description": "2026年4月期の当期純利益は76百万円で、前期は142百万円の当期純損失でした。一部の最先端のパッケージ基板検査装置の案件で想定を上回るコストが発生しましたが、売上高の増加により黒字となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年4月期",
@@ -27,11 +140,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1087642000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 72,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +162,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1407446000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 84,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +184,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1079166000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 85,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +206,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 958564000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 85,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +228,198 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1037085000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 85,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1984,
+      "title": "太洋製作所を創業",
+      "description": "エレクトロニクス分野における電子部品組立を事業目的として、太洋製作所を創業しました。",
+      "significance": "会社の起源です。現在の基板検査装置事業の母体となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "有限会社太洋製作所を設立",
+      "description": "秋田県仙北郡（現仙北市）角館町西長野に有限会社太洋製作所を設立しました。",
+      "significance": "法人としての設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式会社に組織変更し、本社を移転",
+      "description": "株式会社太洋製作所に組織変更し、秋田県仙北郡（現仙北市）角館町雲然に本社を移転して新社屋を建設しました。",
+      "significance": "株式会社としての体制と、現在まで続く本社所在地の基礎が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "リードフレーム検査装置の販売を開始",
+      "description": "リードフレーム検査装置（MV7000シリーズ）の販売を開始しました。",
+      "significance": "検査装置事業への本格的な進出であり、現在の主力事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "インスペック株式会社に商号変更",
+      "description": "社名をインスペック株式会社に変更しました。",
+      "significance": "現在の社名となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "画像処理専用コンピュータを開発し、BGA検査装置の販売を開始",
+      "description": "BGA検査装置及びテープ検査装置用の画像処理専用コンピュータ「inspecⅡ」の開発を完了し、これを搭載したBGA検査装置（BF2000シリーズ）とTABテープ検査装置（TR2000シリーズ）の販売を開始しました。",
+      "significance": "現在の製品群の中核技術である画像処理システムが形になった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東京証券取引所マザーズ市場に上場",
+      "description": "株式会社東京証券取引所マザーズ市場に株式を上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "基板AOI SX5000シリーズを販売開始",
+      "description": "世界最高性能の基板AOI（パターン検査装置）SX5000シリーズの販売を開始しました。",
+      "significance": "現在のフラットベッド型検査装置（SXシリーズ）の系譜の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "世界市場向け戦略製品SX3300シリーズを販売開始",
+      "description": "基板AOIの世界市場向け戦略製品SX3300シリーズの販売を開始しました。",
+      "significance": "海外市場を本格的に狙う製品展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "台湾に現地法人を設立",
+      "description": "台湾に現地法人「台湾英視股份有限公司」（英文名：Inspec Taiwan Inc.）を設立しました。",
+      "significance": "海外展開の拠点であり、現在もグループを構成する唯一の子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "ロールtoロール型高性能検査装置RAシリーズを販売開始",
+      "description": "ロールtoロール型高性能検査装置RAシリーズの販売を開始しました。",
+      "significance": "現在のもう一つの主力製品群であるロールtoロール型検査装置の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "東京証券取引所市場第二部へ市場変更",
+      "description": "東京証券取引所マザーズ市場から同証券取引所市場第二部へ市場変更しました。",
+      "significance": "上場市場が第二部に移った出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "車載用FPC基板向けロールtoロール型検査装置RA7400を販売開始",
+      "description": "車載用FPC基板向けロールtoロール型検査装置RA7400の販売を開始しました。",
+      "significance": "自動車向けフレキシブル基板の検査需要を取り込む製品展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所市場第二部から同証券取引所スタンダード市場へ移行しました。",
+      "significance": "現在の上場市場となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "RA7000シリーズがものづくり日本大賞経済産業大臣賞を受賞",
+      "description": "ロールtoロール型検査装置RA7000シリーズが、第9回ものづくり日本大賞経済産業大臣賞を受賞しました。",
+      "significance": "主力製品の技術力が公的に評価された出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "滋賀サポートセンターと秋田開発センターを開設",
+      "description": "滋賀県草津市に滋賀サポートセンターを、秋田県秋田市に秋田開発センターを開設しました。",
+      "significance": "顧客サポートと開発の拠点を拡充した出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "murata-manufacturing",
+      "relationship": "customer",
+      "description": "株式会社村田製作所は当社の主要な顧客で、2026年4月期の総販売実績に対する割合は12.6％です。前期も14.9％を占める主要な顧客でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主要な顧客ごとの情報】"
+    },
+    {
+      "companyId": "sumitomo-electric-industries",
+      "relationship": "customer",
+      "description": "住友電気工業株式会社は当社の主要な顧客で、2026年4月期の総販売実績に対する割合は11.8％です。前期は8.4％でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主要な顧客ごとの情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +427,47 @@
       "publisher": "インスペック株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YR8L.pdf",
       "publishedAt": "2026-07-17",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YR8L",
+      "asOf": "2026-04-30",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年4月期に露光装置関連事業から撤退したことを受けて中期経営計画を見直し、2028年4月期をゴールとする中期経営計画を2025年6月に策定しました。最先端パッケージ基板に対応する検査装置と配線パターンの欠陥修復装置の開発、適正な価格転嫁と原価低減による収益体質の強化、東アジアを中心とする海外市場向け販売の強化に取り組むとしています。",
+        "asOf": "2026-07-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "自社開発の画像処理専用コンピュータを核とする画像処理システムが強みです。配線の幅と間隔が1.5μmまでの微細なパターンに対応する検査装置を2025年7月に発売し、検査装置と欠陥修復装置を組み合わせて、検査から修復までを一体化したソリューションを提供しています。",
+        "basis": "【事業等のリスク】に、当社の検査装置は自社で開発したコア技術が競争力の原点であり、自社で開発した画像処理専用コンピューターをコアとした画像処理システムを特徴とすると印字されています。【経営方針、経営環境及び対処すべき課題等】の課題には、2025年7月にL/S＝1.5/1.5μmまで対応可能な新製品「SX7000」シリーズとリペア装置「LX7000」をリリースし、検査から修復までを一体化したソリューションを提供すると印字されています。",
+        "asOf": "2026-07-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "当期の販売は基板メーカーに集中しています。主要な顧客ごとの情報では、シンガポールの基板メーカーが売上高の29.6％を占め、新光電気工業が13.0％、村田製作所が12.6％、住友電気工業が11.8％を占めています。地域別では日本が62.4％、アジアが37.6％です。",
+        "basis": "【経営成績等の状況の概要】の相手先別販売実績に、各相手先の当期の割合（29.6％、13.0％、12.6％、11.8％）が印字され、【セグメント情報等】の主要な顧客ごとの情報にも同じ顧客名が印字されています。地域ごとの情報には、日本とアジアの売上高が印字されています（割合は売上高から算出）。",
+        "asOf": "2026-07-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年4月期",
     "asOf": "2026-04-30",

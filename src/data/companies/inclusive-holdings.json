@@ -1,18 +1,185 @@
 {
   "id": "inclusive-holdings",
   "code": "7078",
-  "name": "INCLUSIVEHoldings2025年10月1日付で商号の登記上の表記を「INCLUSIVE」から「INCLUSIVEHoldings」に変更いたしました。",
+  "name": "INCLUSIVE Holdings",
   "officialName": "INCLUSIVE Holdings株式会社2025年10月1日付で商号の登記上の表記を「INCLUSIVE株式会社」から「INCLUSIVE Holdings株式会社」に変更いたしました。",
   "nameEn": "INCLUSIVE Holdings Inc.",
-  "description": null,
+  "shortNameEn": "INCLUSIVE Holdings Inc.",
+  "description": "1856年創業の料亭「下鴨茶寮」を基盤とする食関連事業と、地域創生を軸とするブランドコンサルティング事業を展開する持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    },
+    {
+      "industryId": "media",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "food",
+      "name": "食関連事業",
+      "description": "安政三年（1856年）創業の料亭「下鴨茶寮」のブランドを基盤に、連結子会社の株式会社下鴨茶寮が京都・東京の店舗運営、百貨店のデパ地下店舗運営、EC事業など食に関連するサービスを提供する事業です。2026年3月期の外部顧客への売上高は2,211百万円です。",
+      "customers": [
+        "料亭や百貨店の店舗の購買客",
+        "EC事業の利用者"
+      ],
+      "children": [
+        {
+          "id": "restaurant-stores",
+          "name": "店舗運営",
+          "description": "京都・東京の料亭店舗の運営と、料亭ブランドを基軸にした百貨店のデパ地下店舗の運営を行うサービスです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "food-ec",
+          "name": "EC事業",
+          "description": "自社製造体制を活用し、ふるさと納税を含むEC事業を通して食品を販売するサービスです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "brand-consulting",
+      "name": "ブランドコンサルティング事業",
+      "description": "事業会社及び団体向けのブランディング支援、デジタルマーケティング、空間デザイン・施工サービスの提供、デジタルメディアのマネタイズ支援などを行う事業です。地域観光拠点のリブランディングや施設整備など、地域創生を軸とした取り組みを進めています。2026年3月期の外部顧客への売上高は2,209百万円です。",
+      "customers": [
+        "事業会社及び団体",
+        "地方自治体"
+      ],
+      "children": [
+        {
+          "id": "consulting-division",
+          "name": "コンサルティング部門",
+          "description": "地域観光拠点のリブランディングや施設整備、観光地経営の高度化に向けた支援、各種イベントの空間デザイン・ブランディング企画などを行う部門です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "media-division",
+          "name": "メディア関連部門",
+          "description": "オウンドメディアのマネタイズ化やSNS運用支援、デジタルマーケティングを行う部門です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "investment",
+      "name": "投資事業",
+      "description": "当社が保有する営業投資有価証券の管理・運用に加え、将来の成長が見込まれる企業への新規投資や、投資先企業の企業価値向上に向けた支援活動を行う事業です。2026年3月期の外部顧客への売上高は109百万円です。",
+      "customers": [
+        "投資先企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "space",
+      "name": "宇宙関連事業",
+      "description": "連結子会社のLAND INSIGHT株式会社が、地方自治体向けに農業・林業・防災・固定資産調査などの分野で衛星データコンサルティングを行う事業です。中心となるサービスは、農業行政における現地調査支援サービス「圃場DX」です。2026年3月期の外部顧客への売上高は30百万円です。",
+      "customers": [
+        "地方自治体"
+      ],
+      "children": [
+        {
+          "id": "hojo-dx",
+          "name": "圃場DX",
+          "description": "転作確認業務など自治体の農業行政における現地調査を支援するサービスで、令和7年度には130市町村に導入されています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "料亭ブランドを活かした店舗運営や食品の通信販売と、事業会社や自治体向けのブランディング支援やデジタルマーケティングの提供で対価を得る仕組みです。",
+    "products": [
+      "下鴨茶寮の店舗運営（京都・東京）",
+      "デパ地下店舗での食品販売",
+      "EC事業（ふるさと納税を含む）",
+      "ブランディング支援・プロデュース企画",
+      "デジタルマーケティング・SNS運用支援",
+      "空間デザイン・施工サービス",
+      "衛星データコンサルティング「圃場DX」",
+      "営業投資有価証券の管理・運用"
+    ],
+    "customers": [
+      "料亭や百貨店の購買客とECの利用者",
+      "事業会社及び団体",
+      "地方自治体"
+    ],
+    "revenueSources": [
+      "店舗運営や食品販売による売上",
+      "コンサルティングやマーケティング支援の提供料",
+      "衛星データコンサルティングの提供料",
+      "営業投資有価証券の運用による収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "INCLUSIVE Holdings",
+        "description": "2007年に東京都港区でターゲッティング株式会社として設立され、2025年10月に持株会社体制へ移行して現在の商号になりました。本店は東京都港区虎ノ門にあり、東京証券取引所グロース市場に上場しています。2026年3月31日現在の連結従業員数は161人、連結子会社は9社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "食とブランドコンサルティングを軸とする4事業",
+        "description": "料亭「下鴨茶寮」を基盤とする食関連事業、ブランディング支援やデジタルマーケティングを行うブランドコンサルティング事業、衛星データコンサルティングの宇宙関連事業、営業投資有価証券の管理・運用を行う投資事業の4事業を展開します。"
+      },
+      {
+        "kind": "customer",
+        "title": "購買客・事業会社・地方自治体",
+        "description": "食関連事業の顧客は料亭や百貨店の購買客とECの利用者、ブランドコンサルティング事業の顧客は事業会社及び団体や地方自治体、宇宙関連事業の顧客は地方自治体です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高4,560百万円",
+        "description": "2026年3月期の売上高は4,560百万円で、前期比6.9％減りました。事業別の外部顧客への売上高は、食関連事業が2,211百万円、ブランドコンサルティング事業が2,209百万円、投資事業が109百万円、宇宙関連事業が30百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失174百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純損失は174百万円で、前期の当期純損失1,073百万円から赤字の幅が縮小しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,12 +194,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1947986000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 116,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第15期及び第16期において、企業結合に係る暫定的な会計処理の確定を行っており、第15期の関連する主要な経営指標等については、暫定的な会計処理の確定による取得原価の当初配分額の重要な見直しが反映された後の金額によっております。"
     },
     {
       "fiscalYear": "2023年3月期",
@@ -47,7 +215,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3071855000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 267,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +235,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3407407000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 210,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +255,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2129225000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 190,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +275,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1836014000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 161,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +283,201 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2007,
+      "title": "ターゲッティング株式会社を設立",
+      "description": "東京都港区において、インターネットサービスの運営・収益化事業を展開するため、ターゲッティング株式会社を設立しました。",
+      "significance": "現在のINCLUSIVE Holdingsの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "パシフィック・メディアパートナーズ株式会社を設立",
+      "description": "アドテクノロジーサービスを中心とした収益化を目的として、子会社パシフィック・メディアパートナーズ株式会社を設立しました。",
+      "significance": "広告技術を軸とする子会社展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "INCLUSIVE株式会社へ社名変更",
+      "description": "ターゲッティング株式会社からINCLUSIVE株式会社へ社名を変更しました。",
+      "significance": "後の持株会社化まで続く社名の成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "株式会社グルコースを子会社化",
+      "description": "開発から運営まで一貫したソリューションの提供拡大を目的に、株式会社グルコースを株式交換により子会社化しました。",
+      "significance": "SaaSやAI領域のノウハウ確保を狙った買収です（2023年に全株式を譲渡）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "株式会社morondoを子会社化",
+      "description": "地域メディア『枚方つーしん』を運営する株式会社morondoの株式を取得し、子会社化しました。",
+      "significance": "地域メディア展開の推進が目的でした（2024年に株式を譲渡）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "SNSメールマガジン株式会社を子会社化",
+      "description": "個人の情報発信・課金領域の強化のため、メールマガジン事業のSNSメールマガジン株式会社（後にNewsletter Asia株式会社へ商号変更）の株式を取得し、子会社化しました。",
+      "significance": "個人課金ビジネス領域への展開です（2024年に当社と合併）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社OGSを子会社化",
+      "description": "ゴルフクラブフィッティングサービス「大蔵ゴルフスタジオ」を展開する株式会社OGS及びOGS PLUS,INC.の全株式を取得し、子会社化しました。",
+      "significance": "サービス領域の拡大を狙った買収です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "株式会社ナンバーナインを子会社化",
+      "description": "株式会社ナンバーナインを子会社とし、電子コミック領域への展開とクリエイターエージェンシーサービスを開始しました。",
+      "significance": "コンテンツ領域への展開です（2023年に一部株式を譲渡）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "株式会社オレンジを子会社化し、宇宙関連事業を開始",
+      "description": "ブランディングや料亭運営などを傘下に持つ株式会社オレンジの株式を取得し子会社化するとともに、衛星データを活用するINCLUSIVE SPACE CONSULTING株式会社（現LAND INSIGHT株式会社）を設立しました。",
+      "significance": "現在の食関連事業と宇宙関連事業の基盤ができた年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東証マザーズから東証グロース市場へ移行しました。",
+      "significance": "市場再編に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社グルコースの全株式を譲渡",
+      "description": "経営資源の選択と集中の観点から、株式会社グルコースの全株式を譲渡しました。",
+      "significance": "事業ポートフォリオの見直しの一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "連結子会社2社を吸収合併",
+      "description": "連結子会社のData Tailor株式会社及びNewsletter Asia株式会社を吸収合併しました。",
+      "significance": "経営効率化を目的とするグループ再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "TRIPLE WIN STRATEGIES株式会社を吸収合併",
+      "description": "連結子会社のTRIPLE WIN STRATEGIES株式会社を吸収合併しました。",
+      "significance": "持株会社化に向けたグループ再編の一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "持株会社体制へ移行し、INCLUSIVE Holdings株式会社へ商号変更",
+      "description": "持株会社体制へ移行し、商号をINCLUSIVE Holdings株式会社に変更しました。",
+      "significance": "地域創生を基軸とする事業転換の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第19期(2025/04/01－2026/03/31)",
-      "publisher": "INCLUSIVE Holdings株式会社2025年10月1日付で商号の登記上の表記を「INCLUSIVE株式会社」から「INCLUSIVE Holdings株式会社」に変更いたしました。",
+      "publisher": "INCLUSIVE Holdings株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YMA3.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YMA3",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2021年4月13日付で普通株式1株につき3株の割合で株式分割を行っています（主要な経営指標等の注記に記載）。",
+      "businessStructure: 2026年3月31日の決算日後の2026年6月1日付で、連結子会社の株式会社ジョージクリエイティブカンパニーは、同じく連結子会社の株式会社オレンジ・アンド・パートナーズを存続会社とする吸収合併により消滅しています。本登録は2026年3月31日現在のグループ構成に基づいています。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業ビジョンは「ヒトを変え、事業を変え、そして社会を変える。」です。2025年10月1日に持株会社体制へ移行し、創業からの基軸であったメディア事業から、地域観光資源の開発や地域レガシー産業のDX・高付加価値化などの地域創生事業へ事業の主軸を移す転換を進めています。各事業会社がそれぞれの領域で柔軟かつ迅速な経営判断のもと事業を展開し、グループ全体の企業価値向上を目指すとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "食関連事業は、1856年創業の料亭ブランド「下鴨茶寮」を基盤に、自社製造体制を持ち、店舗・百貨店・ECの複数の販売経路で商品を展開できる点に特徴があります。ブランドコンサルティング事業は、企画から空間デザイン、運営までを一貫して担うプロデュース体制を持ち、大阪・関西万博のシグネチャーパビリオンなどの大型案件を手がけています。宇宙関連事業の「圃場DX」は、令和7年度に前年度の約6倍となる130市町村へ導入が広がっています。",
+        "basis": "【事業の内容】に、下鴨茶寮は安政三年（1856年）創業のブランドであり、自社製造体制を活用して料亭・百貨店・ECで商品を展開すると書かれています。経営方針には、企画から空間デザイン、運営まで一気通貫のプロデュース体制や、「圃場DX」が130市町村に導入されたことが書かれています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

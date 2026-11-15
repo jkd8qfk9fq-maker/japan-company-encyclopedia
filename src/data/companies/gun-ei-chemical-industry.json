@@ -4,15 +4,141 @@
   "name": "群栄化学工業",
   "officialName": "群栄化学工業株式会社",
   "nameEn": "Gun Ei Chemical Industry Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Gun Ei Chemical Industry Co.,Ltd.",
+  "description": "工業用フェノール樹脂や高機能繊維などの化学品と、異性化糖などの澱粉糖類を製造販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "food",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "chemicals",
+      "name": "化学品事業",
+      "description": "工業用フェノール樹脂や高機能繊維等を製造販売する事業です。2026年3月期の外部顧客への売上高は26,496百万円と、連結売上高の約85％を占める主力事業です。当社のほか、Thai GCI Resitop Company Limited、India GCI Resitop Private Limited、東北ユーロイド工業株式会社、American GCI Resitop, Inc.が製造販売を行っています。",
+      "customers": [
+        "自動車関連メーカー",
+        "電子材料関連メーカー",
+        "鋳物関連メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "synthetic-resin",
+          "name": "合成樹脂",
+          "description": "工業用フェノール樹脂（レヂトップ）、特殊フェノール樹脂（ミレックス）、鋳物用粘結剤（αsystem・βsystem・NFURAN）、電子材料用樹脂、真球状樹脂、ビスフェノールFを製造販売する部門です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "high-function-fiber",
+          "name": "高機能繊維",
+          "description": "高機能繊維「カイノール」を製造販売する部門です。環境関連向けでは溶剤回収用途等に使われています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "food",
+      "name": "食品事業",
+      "description": "異性化糖及び穀物糖化液等を製造販売する事業です。2026年3月期の外部顧客への売上高は4,564百万円でした。異性化糖（スリーシュガー）、ブドウ糖（コーソグル群栄）、水あめ（マルトフレッシュ）、オリゴ糖（グンエイオリゴ）、ピュアトース、穀物糖化液、化粧品原料を取り扱い、当社が製造販売を行っています。",
+      "customers": [
+        "食品メーカー",
+        "飲料メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産活用業",
+      "description": "当社の保有する土地や建物等不動産の賃貸を行う事業です。2026年3月期の外部顧客への売上高は247百万円でした。",
+      "customers": [
+        "不動産の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "工業用フェノール樹脂、鋳物用粘結剤、高機能繊維などの化学品と、異性化糖やブドウ糖などの澱粉糖類を製造販売し、保有不動産の賃貸も行う会社です。",
+    "products": [
+      "工業用フェノール樹脂（レヂトップ）",
+      "特殊フェノール樹脂（ミレックス）",
+      "鋳物用粘結剤",
+      "電子材料用樹脂",
+      "高機能繊維（カイノール）",
+      "異性化糖（スリーシュガー）",
+      "ブドウ糖",
+      "水あめ",
+      "オリゴ糖"
+    ],
+    "customers": [
+      "自動車関連メーカー",
+      "電子材料関連メーカー",
+      "鋳物関連メーカー",
+      "食品・飲料メーカー"
+    ],
+    "revenueSources": [
+      "化学品（合成樹脂・高機能繊維）の販売による収入",
+      "食品（澱粉糖類）の販売による収入",
+      "保有不動産の賃貸による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "群栄化学工業",
+        "description": "群栄化学工業は当社と子会社6社、関連会社1社で構成され、2026年3月31日現在の連結従業員数は541人です。本社は群馬県高崎市にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "化学品と澱粉糖類の製造販売",
+        "description": "工業用フェノール樹脂、鋳物用粘結剤、電子材料用樹脂、高機能繊維などの化学品と、異性化糖、ブドウ糖、水あめ、オリゴ糖などの澱粉糖類を製造販売し、保有する不動産の賃貸も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "製造業と食品メーカー",
+        "description": "顧客は自動車関連や電子材料関連の製造業、鋳物メーカー、食品・飲料メーカーなどです。売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品販売による売上高",
+        "description": "2026年3月期の連結売上高は31,307百万円（前連結会計年度比2.5％増）でした。化学品事業が26,496百万円と最も大きく、食品事業が4,564百万円、不動産活用業が247百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,973百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +153,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 44899000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 505,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 46107000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 526,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 50281000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 543,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 51731000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 537,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +233,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 56853000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 541,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +241,175 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1946,
+      "title": "群馬栄養薬品株式会社を設立",
+      "description": "ぶどう糖の生産を開始する会社として設立されました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "工業用フェノール樹脂の生産開始",
+      "description": "工業用フェノール樹脂の生産を始めました。",
+      "significance": "現在の主力である化学品事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "商号を群栄化学工業株式会社に変更",
+      "description": "商号を群栄化学工業株式会社に変更しました。",
+      "significance": "現在の社名になった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "株式を東京証券取引所市場第一部に上場しました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "高機能繊維「カイノール」の生産開始",
+      "description": "高崎工場内にカイノール工場を新設し、高機能繊維「カイノール」の生産を始めました。",
+      "significance": "高機能繊維事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "タイにThai GCI Resitop Company Limitedを設立",
+      "description": "日商岩井株式会社（現・双日株式会社）及びタイ王国のブライトン社他との合弁出資により、フェノール樹脂の製造販売を目的として設立しました。",
+      "significance": "海外生産展開の起点であり、現在は連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "群栄商事等3社を吸収合併",
+      "description": "群栄商事株式会社、群栄ボーデン株式会社及び日本カイノール株式会社を吸収合併しました。",
+      "significance": "グループ再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "インドにIndia GCI Resitop Private Limitedを設立",
+      "description": "株式会社三栄シリカとの合弁出資により、レジンコーテッドサンドの製造販売を目的として設立しました。",
+      "significance": "インド進出であり、現在は連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "東北ユーロイド工業株式会社の株式を取得",
+      "description": "東北ユーロイド工業株式会社の株式を取得しました。",
+      "significance": "現在は連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "米国にAmerican GCI Resitop, Inc.を設立",
+      "description": "合成樹脂の販売を目的として設立しました。",
+      "significance": "米国販売拠点であり、現在は連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tokyo-ohka-kogyo",
+      "relationship": "customer",
+      "description": "化学品事業において当社の重要な製品販売先であり、中長期的に良好な関係の維持・強化を図るため、同社株式580,200株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "oiles",
+      "relationship": "customer",
+      "description": "化学品事業において、同社及び同社子会社が当社の重要な製品販売先であり、中長期的に良好な関係の維持・強化を図るため、同社株式528,960株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsui-chemicals",
+      "relationship": "supplier",
+      "description": "化学品事業において当社の重要な原料調達先及び製品販売先であり、中長期的に良好な関係の維持・強化を図るため、同社株式377,200株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-gas-chemical",
+      "relationship": "supplier",
+      "description": "化学品事業において当社の重要な原料調達先及び製品販売先であり、中長期的に良好な関係の維持・強化を図るため、同社株式119,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sojitz",
+      "relationship": "supplier",
+      "description": "化学品事業及び食品事業において当社の重要な原料調達先及び製品販売先であり、中長期的に良好な関係の維持・強化を図るため、同社株式1,260株を保有しています（2026年3月31日現在）。また、1990年には同社の前身である日商岩井株式会社等との合弁でタイ子会社を設立しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +417,47 @@
       "publisher": "群栄化学工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD30.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YD30",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年度から始動した「GCIグループ中期経営方針2030」では、ありたい姿を、化学の力でグローバルにソリューションを提供し、社会の持続的成長に貢献する『Green Chemical Industry（GCI）』とし、基本方針として事業ポートフォリオの再構築、マーケティングによる事業領域の拡大、生産性向上と収益力強化、持続的成長を支える人材の育成とエンゲージメント向上を掲げています。目指す方向性として、電子材料分野を中心とする「高純度・先端材料」、Green分野としての「環境対応ケミカル」、「新事業創出（高機能糖ケミカル）」と「経営基盤強化」を挙げています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "フェノール樹脂では工業用樹脂「レヂトップ」、特殊フェノール樹脂「ミレックス」、鋳物用粘結剤、高機能繊維「カイノール」など用途別の製品群を持ち、タイ、インド、米国の子会社が現地で製造販売する体制を備えています。食品事業では異性化糖、ブドウ糖、水あめ、オリゴ糖から化粧品原料まで澱粉糖類の製品群を持ち、化学品と食品の2事業で収益源を分けています。",
+        "basis": "【事業の内容】の主要製品等の記載、【関係会社の状況】の海外子会社の記載、セグメント情報の外部顧客への売上高に基づく",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "連結売上高31,307百万円の内訳は、化学品事業26,496百万円、食品事業4,564百万円、不動産活用業247百万円です。地域別では日本20,704百万円、タイ3,922百万円、台湾3,226百万円、その他アジア2,826百万円、その他627百万円で、海外向けが約3割を占めます。売上高の10％以上を占める特定の顧客はありません。",
+        "basis": "セグメント情報の外部顧客への売上高と【関連情報】の地域ごとの情報・主要な顧客ごとの情報、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】のセグメント別概況に基づく",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
