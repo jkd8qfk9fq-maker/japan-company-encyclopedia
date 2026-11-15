@@ -5,6 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useLocalStore } from "@/hooks/use-local-store";
 import type { DiscoverCard } from "@/lib/discover";
 import { discoveredStore } from "@/lib/storage/stores";
+import { ProgressPanel } from "@/components/engagement/progress-panel";
 import { loadDiscoverFeed } from "./discover-data";
 
 /** マイ企業図鑑 (JCE-046): the reader's met companies, grouped by industry, with how much of each is still unmet. */
@@ -39,6 +40,9 @@ export function DiscoverCollection() {
 
   return (
     <div>
+      <div className="mb-10">
+        <ProgressPanel met={metCount} industriesMet={started} industriesTotal={groups.length} />
+      </div>
       <dl className="grid grid-cols-2 gap-4 rounded-xl border border-border bg-card p-5">
         <div>
           <dt className="text-xs font-semibold text-muted-foreground">出会った会社</dt>

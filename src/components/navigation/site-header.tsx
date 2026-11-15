@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Settings } from "lucide-react";
+import { NotificationBell } from "@/components/engagement/notification-bell";
 import { SearchSuggest } from "@/components/search/search-suggest";
 import { featureRepository, termRepository } from "@/lib/repositories";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
@@ -39,8 +40,12 @@ export async function SiteHeader() {
           ))}
         </nav>
 
+        {/* On phones the bell is the header's only control: お知らせ has no place in the bottom bar. */}
+        <NotificationBell className="-mr-3 md:hidden" />
+
         <div className="hidden items-center gap-2 md:flex">
           <SearchSuggest id="header-search" variant="header" />
+          <NotificationBell />
           <NavLink
             href="/settings"
             className="flex size-11 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"

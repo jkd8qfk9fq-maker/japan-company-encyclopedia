@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useSyncExternalStore } from "react";
 import { useLocalStore } from "@/hooks/use-local-store";
-import { favoritesStore, recentlyViewedStore } from "@/lib/storage/stores";
+import { activityStore, discoveredStore, exploreStepsStore, favoritesStore, quizStore, recentlyViewedStore } from "@/lib/storage/stores";
 
 type InstallPromptEvent = Event & { prompt: () => Promise<void>; userChoice: Promise<{ outcome: string }> };
 
@@ -15,6 +15,9 @@ const subscribeNothing = () => () => {};
  */
 export function ApplicationSettings() {
   const favorites = useLocalStore(favoritesStore);
+  const discovered = useLocalStore(discoveredStore);
+  const days = useLocalStore(activityStore);
+  const quiz = useLocalStore(quizStore);
   const recent = useLocalStore(recentlyViewedStore);
   const [installEvent, setInstallEvent] = useState<InstallPromptEvent | null>(null);
   const standalone = useSyncExternalStore(
@@ -83,14 +86,36 @@ export function ApplicationSettings() {
 
       <div className="flex flex-wrap items-center justify-between gap-4 py-5">
         <div>
-          <p className="font-medium">保存した企業</p>
+          <p className="font-medium">フォロー中の企業</p>
           <p className="figures mt-1 text-sm text-muted-foreground">この端末に{favorites.length}件保存されています。</p>
         </div>
         <button
           type="button"
           disabled={favorites.length === 0}
           onClick={() => {
-            if (window.confirm("保存した企業をすべて消去しますか？")) favoritesStore.clear();
+            if (window.confirm("フォロー中の企業をすべて消去しますか？")) favoritesStore.clear();
+          }}
+          className="inline-flex min-h-11 items-center rounded-full border border-border px-5 text-sm hover:border-foreground disabled:opacity-40"
+        >
+          すべて消去
+        </button>
+      </div>
+
+      <div className="flex flex-wrap items-center justify-between gap-4 py-5">
+        <div>
+          <p className="font-medium">マイ企業図鑑と記録</p>
+          <p className="figures mt-1 text-sm text-muted-foreground">出会った企業{discovered.length}社・会社を知った日{days.length}日・今日の1問の答え{Object.keys(quiz).length}件。</p>
+        </div>
+        <button
+          type="button"
+          disabled={discovered.length + days.length + Object.keys(quiz).length === 0}
+          onClick={() => {
+            if (window.confirm("マイ企業図鑑、連続日数、今日の1問の答え、つながりの記録をすべて消去しますか？")) {
+              discoveredStore.clear();
+              activityStore.clear();
+              quizStore.clear();
+              exploreStepsStore.clear();
+            }
           }}
           className="inline-flex min-h-11 items-center rounded-full border border-border px-5 text-sm hover:border-foreground disabled:opacity-40"
         >

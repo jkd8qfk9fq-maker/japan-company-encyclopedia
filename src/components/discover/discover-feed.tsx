@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useLocalStore } from "@/hooks/use-local-store";
 import type { DiscoverCard } from "@/lib/discover";
-import { discoveredStore, followedIndustriesStore, recordDiscovered, toggleFollowedIndustry } from "@/lib/storage/stores";
+import { computeStreak } from "@/lib/streak";
+import { activityStore, discoveredStore, followedIndustriesStore, jstToday, recordDiscovered, toggleFollowedIndustry } from "@/lib/storage/stores";
 import { formatYen } from "@/lib/utils/format";
 import { feedOrder, loadDiscoverFeed, todayInJapan } from "./discover-data";
 
@@ -17,7 +18,24 @@ const MEET_AFTER_MS = 900;
 type Slot =
   | { kind: "intro" }
   | { kind: "company"; id: string; via?: { from: string; label: string } }
-  | { kind: "promo"; n: number };
+  | { kind: "promo"; n: number }
+  | { kind: "pause"; met: number };
+
+/** A pause after this many companies (JCE-052): the feed has a natural end to each sitting. */
+const PAUSE_EVERY = 20;
+
+/**
+ * Companies handed over by another page, e.g. the 企業タイプ診断 result (`#companies=a,b,c&from=shindan`). Read without
+ * useSearchParams so the static page needs no Suspense boundary.
+ */
+// Read from the fragment, not the query: the diagnosis links here with the companies closest to a person's answers,
+// and a fragment never leaves the browser — no request to this site carries anything derived from a result.
+function seededFromQuery(): { ids: string[]; from: string | null } {
+  if (typeof window === "undefined") return { ids: [], from: null };
+  const q = new URLSearchParams(window.location.hash.slice(1));
+  const ids = (q.get("companies") ?? "").split(",").filter((id) => /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)).slice(0, 30);
+  return { ids, from: q.get("from") };
+}
 
 /**
  * The discovery feed (JCE-046): one company per screen, swiped vertically with CSS scroll snapping — no gesture
@@ -73,9 +91,15 @@ export function DiscoverFeed() {
   useEffect(() => {
     if (!cards) return;
     const next: Slot[] = [{ kind: "intro" }];
-    ordered.forEach((c, i) => {
-      next.push({ kind: "company", id: c.id });
+    // Handed-over companies first (the 診断's closest companies), only on the unfiltered feed and only those released.
+    const seed = industry === "all" ? seededFromQuery() : { ids: [], from: null };
+    const seeded = seed.ids.filter((id) => cards.some((c) => c.id === id));
+    const via = seed.from === "shindan" ? { from: "企業タイプ診断", label: "近い会社" } : { from: "あなたが選んだ会社", label: "続き" };
+    const rest = ordered.filter((c) => !seeded.includes(c.id));
+    [...seeded.map((id) => ({ id, seeded: true })), ...rest.map((c) => ({ id: c.id, seeded: false }))].forEach((c, i) => {
+      next.push({ kind: "company", id: c.id, ...(c.seeded ? { via } : {}) });
       if ((i + 1) % 9 === 0) next.push({ kind: "promo", n: (i + 1) / 9 });
+      if ((i + 1) % PAUSE_EVERY === 0) next.push({ kind: "pause", met: i + 1 });
     });
     // Rebuilding the slot list is the reaction to a new filter or the feed arriving, not derived render state:
     // followed companies are spliced into it afterwards and must survive until the filter changes.
@@ -83,7 +107,7 @@ export function DiscoverFeed() {
     setSlots(next);
     setShown(PAGE);
     scroller.current?.scrollTo({ top: 0 });
-  }, [ordered, cards]);
+  }, [ordered, cards, industry]);
 
   const follow = useCallback((at: number, from: DiscoverCard, to: { id: string; label: string }) => {
     setSlots((current) => {
@@ -196,6 +220,7 @@ export function DiscoverFeed() {
               );
             }
             if (slot.kind === "promo") return <PromoCard key={`promo-${slot.n}`} index={index} n={slot.n} />;
+            if (slot.kind === "pause") return <PauseCard key={`pause-${slot.met}`} index={index} met={slot.met} />;
             const card = byId.get(slot.id);
             if (!card) return null;
             return (
@@ -284,11 +309,14 @@ function IntroCard({
           <span className="ml-auto shrink-0 text-xs text-amber-300">{following.length > 0 ? "変更" : "選ぶ"}</span>
         </button>
       </div>
-      <div className="mt-4 flex items-center gap-4 text-sm [@media(max-height:700px)]:mt-3">
-        <Link href="/discover/collection" className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-4 py-2 hover:bg-white/10">
+      {/* One row even at 320–375px: a wrapped second row pushes the intro past the SE's screen. */}
+      <div className="mt-4 flex items-center gap-1.5 text-sm whitespace-nowrap [@media(max-height:700px)]:mt-3 [@media(max-width:380px)]:text-xs">
+        <Link href="/discover/collection" className="inline-flex items-center gap-1.5 rounded-full border border-white/20 px-3 py-2 hover:bg-white/10">
           <BookMarked className="size-4" aria-hidden />
-          マイ企業図鑑 <span className="figures">{met}</span>/<span className="figures">{total}</span>
+          <span className="[@media(max-width:380px)]:hidden">マイ企業</span>図鑑 <span className="figures">{met}</span>/<span className="figures">{total}</span>
         </Link>
+        <Link href="/quiz" className="rounded-full border border-white/20 px-3 py-2 hover:bg-white/10 [@media(max-width:380px)]:px-2.5">今日の1問</Link>
+        <Link href="/explore" className="rounded-full border border-white/20 px-3 py-2 hover:bg-white/10 [@media(max-width:380px)]:px-2.5">つながり</Link>
       </div>
       <p className="mt-6 max-w-sm text-[0.6875rem] leading-relaxed text-white/45 [@media(max-height:700px)]:hidden">
         カードの内容は各社の有価証券報告書をもとにした百科事典の記載です。良い会社のおすすめや投資の判断材料ではありません。
@@ -388,6 +416,11 @@ function CompanyCard({
             <Compass className="size-4" aria-hidden />
             くわしく見る
           </Link>
+          {card.related.length > 0 && (
+            <Link href={`/explore?from=${card.id}`} className="text-xs text-white/70 underline underline-offset-2 hover:text-white">
+              つながりをたどる
+            </Link>
+          )}
           <span className={`text-xs ${inCollection ? "text-amber-300" : "text-white/40"}`}>{inCollection ? "図鑑に記録済み" : "図鑑に記録中…"}</span>
         </div>
       </div>
@@ -510,5 +543,31 @@ function FollowChooser({
         {following.length > 0 ? `${following.length}業界を先頭にしてフィードへ` : "フィードへ戻る"}
       </button>
     </div>
+  );
+}
+
+/**
+ * A pause every twenty companies (JCE-052): what this sitting added up to, and other ways to keep learning. The feed
+ * goes on for whoever wants more; it simply stops presenting itself as endless.
+ */
+function PauseCard({ index, met }: { index: number; met: number }) {
+  const days = useLocalStore(activityStore);
+  const streak = computeStreak(days, jstToday());
+  return (
+    <Screen index={index} className="justify-center-safe bg-[radial-gradient(120%_80%_at_50%_0%,#1f3326_0%,#0a0f0c_60%)] px-6 pt-16 pb-10 text-white">
+      <p className="text-xs font-semibold tracking-[0.2em] text-amber-300">ひと区切り</p>
+      <h2 className="mt-3 font-serif text-[1.875rem] leading-tight font-semibold">
+        今日は{met}社の
+        <br />
+        会社に出会いました。
+      </h2>
+      {streak.current > 0 && <p className="mt-3 text-sm text-white/75">{streak.current}日続けて、日本の会社を知っています。</p>}
+      <ul className="mt-6 grid max-w-sm gap-2 text-sm">
+        <li><Link href="/quiz" className="flex items-center justify-between rounded-xl border border-white/15 bg-white/5 px-4 py-3 hover:bg-white/10">今日の1問に答える<ArrowRight className="size-4" aria-hidden /></Link></li>
+        <li><Link href="/explore" className="flex items-center justify-between rounded-xl border border-white/15 bg-white/5 px-4 py-3 hover:bg-white/10">気になった会社のつながりをたどる<ArrowRight className="size-4" aria-hidden /></Link></li>
+        <li><Link href="/discover/collection" className="flex items-center justify-between rounded-xl border border-white/15 bg-white/5 px-4 py-3 hover:bg-white/10">マイ企業図鑑と記録を見る<ArrowRight className="size-4" aria-hidden /></Link></li>
+      </ul>
+      <p className="mt-6 text-xs text-white/50">まだ続けるなら、上にスワイプ。</p>
+    </Screen>
   );
 }

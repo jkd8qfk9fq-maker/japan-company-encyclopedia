@@ -3,7 +3,7 @@ import { DiscoverCollection } from "@/components/discover/discover-collection";
 
 export const metadata: Metadata = {
   title: "マイ企業図鑑",
-  description: "DISCOVER で出会った会社の記録。業界ごとに、いくつの会社に出会ったかがわかります。記録はこのブラウザの中だけに残ります。",
+  description: "DISCOVER で出会った会社と、続けて開いた日数・実績の記録。記録はこのブラウザの中だけに残ります。",
   alternates: { canonical: "/discover/collection" },
   robots: { index: false },
 };

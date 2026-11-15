@@ -22,6 +22,14 @@ export const STORAGE_KEYS = {
   discovered: "discovered-companies",
   /** Industries the reader follows in DISCOVER (JCE-048): their companies come first in the feed. */
   followedIndustries: "followed-industries",
+  /** JCE-052: the days (JST) this reader explored something — for the streak and the achievements. */
+  activityDays: "activity-days",
+  /** JCE-052: the daily quiz's answers, by day. */
+  quizAnswers: "quiz-answers",
+  /** JCE-052: the newest filing date the reader has seen in お知らせ. */
+  notificationsSeen: "notifications-seen",
+  /** JCE-052: how many steps the reader has taken in the connection explorer. */
+  exploreSteps: "explore-steps",
 } as const;
 
 export type StorageKey = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];

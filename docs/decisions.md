@@ -872,3 +872,30 @@ page's 業界比較 (JCE-043), with a description of what they hold; after payin
 gate is the view switch of JCE-050 (the figures stay in the page's payload, by that decision). What stays free: the
 industries list, each industry's 仕組み, 企業 and つながり tabs, the 産業マップ, and on company pages the latest
 year's figures, 四半期の動き and the five-year charts.
+
+### JCE-052 · 2026-11-15 · Accepted (operator) — Five engagement features, all in the reader's browser
+
+The operator asked for five features that bring readers back without manipulative mechanics: notifications for
+companies they follow, a daily company quiz, streaks and achievements, the 発見 feed (JCE-046), and exploring
+relationships. All five follow the same rules as the rest of the site: no account, nothing about a reader on a server,
+facts only from the entries.
+
+- **Follow and notifications.** The existing お気に入り becomes 「フォロー」 (same store). `/updates.json` is built from the
+  entries: the publication date of each 有価証券報告書・半期報告書 source, the `disclosedAt` of each 第1・第3四半期
+  (JCE-049) and each correction revision, from the last 120 days. The bell in the header and `/notifications` match it
+  against the followed companies **in the browser**; nothing is sent. No push notifications: a closed browser cannot be
+  reached without storing a subscription on a server, which is a separate decision (phase 2).
+- **今日の1問 (`/quiz`).** One question a day, the same for everyone, from `/quiz.json`, built from the entries: which of
+  two companies in an industry has the larger printed revenue (at least 1.3× apart), which has the higher 海外売上高比率
+  (a JCE-038 ratio, labelled 計算値 with its formula), or which company a description belongs to (its own names hidden).
+  Every answer explains itself and links to the entries. One answer per day, kept in the browser. No timer, no lives.
+- **連続日数と実績.** A day counts when a reader opens a company, meets one in 発見, answers the quiz or takes a step in
+  つながり. One missed day in any seven does not break a streak, and today is not lost until it is over: the streak should
+  reward curiosity, not punish a day off. Achievements are milestones of what the reader did (companies met, industries
+  covered, quiz answers, streak, follows, steps), each showing only the next tier, never a ranking against others.
+- **発見.** A pause card every 20 companies shows the streak and points to the quiz, つながり and the collection — a
+  natural stopping point rather than an endless feed. The 企業タイプ診断 can hand over the companies a person is shown
+  (`#companies=…&from=shindan`, CTS-027); it is a fragment, so it never reaches a server.
+- **つながりをたどる (`/explore`).** `/connections.json` holds the `relatedCompanies` edges between published entries,
+  read in both directions with the reverse label (supplier ↔ customer, parent ↔ subsidiary…), grouped as 取引・同業・資本.
+  A breadcrumb keeps the path. Only edges a filing states; none are inferred.

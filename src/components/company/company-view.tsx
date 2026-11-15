@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { AdSlot } from "@/components/ads/ad-slot";
 import type { Company } from "@/types/company";
 import { companyRepository, headquartersRepository } from "@/lib/repositories";
@@ -164,6 +165,17 @@ export async function CompanyView({ company }: { company: Company }) {
               </div>
             </div>
             <div id="related-companies-list" className="scroll-mt-40">
+              {/* JCE-052: from the map to the walk — the same relations, one company at a time. */}
+              <Link
+                href={`/explore?from=${company.id}`}
+                className="mb-6 flex items-center justify-between gap-3 rounded-md border border-foreground/20 bg-card px-4 py-3 text-sm hover:border-foreground"
+              >
+                <span>
+                  <span className="block font-medium">つながりをたどる</span>
+                  <span className="block text-xs text-muted-foreground">取引先・競合・親子会社を1社ずつ移りながら、知らない会社に出会う</span>
+                </span>
+                <span aria-hidden>→</span>
+              </Link>
               <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">関係の一覧</h3>
               <div className="mt-3">
                 <RelatedCompanies relations={relations} inbound={inbound} sources={company.sources} />
