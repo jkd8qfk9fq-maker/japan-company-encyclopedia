@@ -4,18 +4,140 @@
   "name": "井筒屋",
   "officialName": "株式会社井筒屋",
   "nameEn": "IZUTSUYA CO., LTD.",
-  "description": null,
+  "shortNameEn": "IZUTSUYA CO., LTD.",
+  "description": "北九州市小倉の本店を中心に百貨店業を営み、友の会事業も展開する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "department-store",
+      "name": "百貨店業",
+      "description": "当社グループの主たる事業です。当社と連結子会社の株式会社山口井筒屋が店舗を運営し、衣料品、身回品、雑貨、家庭用品及び食料品の販売並びに食堂・喫茶の経営を行っており、2026年2月期の外部顧客への売上高は21,247百万円です。当社は株式会社山口井筒屋へ商品の供給を行うほか、商品券の共通使用等の営業上の提携を行っています。",
+      "customers": [
+        "北九州・山口地域の来店客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "store-sales",
+          "name": "店舗での商品販売",
+          "description": "本店（北九州市小倉北区）と山口店等で、衣料品、身回品、雑貨、家庭用品及び食料品を販売しています。",
+          "customers": [
+            "北九州・山口地域の来店客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "restaurant",
+          "name": "食堂・喫茶の経営",
+          "description": "連結子会社の株式会社レストラン井筒屋が、当社の店舗内のレストラン部門の経営を行っています。",
+          "customers": [
+            "店舗の来店客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "tomonokai",
+      "name": "友の会事業",
+      "description": "連結子会社の株式会社井筒屋友の会が、百貨店各社に対し前払式の商品販売の取次を行っており、2026年2月期の外部顧客への売上高は35百万円です。",
+      "customers": [
+        "百貨店各社",
+        "友の会の会員"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他（情報サービス事業）",
+      "description": "報告セグメントに含まれない区分です。持分法適用関連会社の株式会社ニシコン（議決権の所有割合37.3％）が情報処理サービス業を行っており、外部顧客への売上高は独立して開示されていません。",
+      "customers": [
+        "情報処理サービスの利用企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "百貨店の店舗で衣料品や食料品などを販売し、食堂・喫茶の経営や友の会の取次から収益を得る事業モデルです。",
+    "products": [
+      "衣料品",
+      "身回品",
+      "雑貨",
+      "家庭用品",
+      "食料品",
+      "食堂・喫茶",
+      "友の会の前払式商品販売の取次"
+    ],
+    "customers": [
+      "北九州・山口地域の来店客",
+      "友の会の会員",
+      "百貨店各社"
+    ],
+    "revenueSources": [
+      "店舗での商品販売の対価",
+      "食堂・喫茶の対価",
+      "友の会の前払式商品販売の取次手数料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "井筒屋",
+        "description": "福岡県北九州市小倉北区に本店を置く会社です。当社と連結子会社4社、持分法適用関連会社1社でグループを構成し、2026年2月期の連結従業員数は651人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "百貨店での商品販売と友の会事業",
+        "description": "本店と山口店等の店舗で衣料品、身回品、雑貨、家庭用品、食料品を販売し、食堂・喫茶の経営も行っています。あわせて友の会事業として、前払式の商品販売の取次を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域の来店客と百貨店各社",
+        "description": "主な顧客は北九州・山口地域の来店客で、友の会事業では前払式の商品販売の取次先である百貨店各社も取引先です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年2月期の売上高は21,283百万円",
+        "description": "2026年2月期の売上高は21,283百万円で、前期比96.1％となりました。百貨店業が21,247百万円と大半を占め、友の会事業が35百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年2月期の親会社株主に帰属する当期純利益は491百万円",
+        "description": "2026年2月期の親会社株主に帰属する当期純利益は491百万円で、前期比49.2％となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -30,7 +152,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9029000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 754,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,12 +172,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10111000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 727,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第128期の期首より「収益認識に関する会計基準」（企業会計基準第29号 2020年３月31日）等を適用しており、第128期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標となっております。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -70,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10966000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 696,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11921000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 669,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,7 +233,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12207000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 651,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,8 +241,108 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1935,
+      "title": "株式会社井筒屋百貨店を設立",
+      "description": "株式会社井筒屋百貨店を設立しました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1936,
+      "title": "井筒屋（現本店）を開店",
+      "description": "小倉に井筒屋（現在の本店）を開店しました。",
+      "significance": "現在の本店の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "株式会社井筒屋に商号変更",
+      "description": "商号を株式会社井筒屋に変更しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "福岡証券取引所に上場",
+      "description": "福岡証券取引所に上場しました。",
+      "significance": "上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "東京証券取引所第一部に指定替え",
+      "description": "1972年に東京証券取引所第二部に上場し、1973年に第一部へ指定替えとなりました。",
+      "significance": "東証第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "株式会社山口井筒屋が山口店を開店",
+      "description": "株式会社山口井筒屋（現連結子会社）が山口店を開店しました。",
+      "significance": "山口県への店舗展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "黒崎店を閉店",
+      "description": "黒崎店を閉店しました。",
+      "significance": "北九州市内の店舗体制の転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場再編に伴いスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "flier",
+      "relationship": "business-partner",
+      "description": "株式会社スターフライヤーとはポイント交換サービスの業務提携等の関係にあり、当社が同社の株式4,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nishi-nippon-railroad",
+      "relationship": "major-shareholder",
+      "description": "西日本鉄道株式会社は、2026年2月28日現在で当社の株式1,052,041株（発行済株式の9.3％）を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -127,13 +350,47 @@
       "publisher": "株式会社井筒屋",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y6HY.pdf",
       "publishedAt": "2026-05-27",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y6HY",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "地域唯一の百貨店として、地域経済・社会の発展に貢献することを中長期的に目指す姿と定め、資産価値向上に取り組む「井筒屋グループ 中期３ヵ年経営計画(2025年度～2027年度)」を策定し、推進しています。収益基盤の多様化に向けた「地域商社」構想にも取り組み、北九州市および北九州商工会議所との３者間で基本合意を締結し、第一弾となる商品の開発・販売を開始しました。",
+        "asOf": "2026-05-27",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1936年に開店した小倉の本店を拠点に、北九州市で百貨店を営む唯一の事業者として地域に根ざした営業を続けており、山口店とあわせて北九州・山口地域に店舗網を持ちます。友の会の積立会員の基盤を持ち、店舗内のレストラン部門や慶弔ギフトの販売をグループ会社が担う体制です。",
+        "basis": "セグメント情報（報告セグメントごとの外部顧客への売上高）、事業の内容、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（業績等の概要）に基づきます。",
+        "asOf": "2026-05-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "百貨店業が売上高の大半を占め、2026年2月期の外部顧客への売上高は21,247百万円です。百貨店業界は、国内のオケージョン需要や富裕層の消費が堅調な一方、インバウンド需要の減速や高額品需要の勢いの鈍化など厳しい商況が続いているとされています。10％以上を占める主要な顧客はないと印字されています。",
+        "basis": "セグメント情報（報告セグメントごとの外部顧客への売上高）と関連情報（主要な顧客ごとの情報）、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析に基づきます。",
+        "asOf": "2026-05-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",

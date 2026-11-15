@@ -4,15 +4,98 @@
   "name": "川岸工業",
   "officialName": "川岸工業株式会社",
   "nameEn": "Kawagishi Bridge Works Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Kawagishi Bridge Works",
+  "description": "橋梁や建築物向けの鉄骨など、鋼構造物の設計・製作・現場施工を手がける建設会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "construction",
+      "name": "建設事業",
+      "description": "鉄骨など鋼構造物の設計、製作及び現場施工を行う単一の事業です。当社は建設業以外の事業を営んでおらず、セグメント情報は記載していません。2025年9月期の完成工事高は24,219百万円です。設計・積算業務は子会社の川岸プランニング株式会社が担っています。千葉第一工場・千葉第三工場（千葉県柏市）、大阪工場（大阪府羽曳野市）、岡山工場（岡山県笠岡市）、山口工場（山口県下松市）で鋼構造物を生産しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "鹿島建設、清水建設、大成建設、戸田建設などのゼネラルコントラクターをはじめとする工事の発注者"
+      ],
+      "children": [
+        {
+          "id": "steel-frame",
+          "name": "鉄骨",
+          "description": "建築物向け鉄骨など鋼構造物の設計、製作及び現場施工です。2025年9月期の売上高は22,717百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "precast-concrete",
+          "name": "プレキャストコンクリート",
+          "description": "建築用プレキャストコンクリート製品の製造、販売及び取付工事です。茨城県下妻市の筑波工場で生産しています。2025年9月期の売上高は1,502百万円です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "ゼネラルコントラクターなどの発注者から鋼構造物の工事を受注し、自社工場で鉄骨などを製作して現場で施工し、完成工事高を得る事業モデルです。",
+    "products": [
+      "鉄骨などの鋼構造物",
+      "建築用プレキャストコンクリート製品"
+    ],
+    "customers": [
+      "鹿島建設、清水建設、大成建設、戸田建設などのゼネラルコントラクターをはじめとする工事の発注者"
+    ],
+    "revenueSources": [
+      "完成工事高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "1906年創業の鋼構造物メーカー",
+        "description": "1906年に大阪市で創立し、現在は東京都港区に本社を置きます。2025年9月期の従業員数は273人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "鉄骨の設計・製作・施工とプレキャストコンクリート製品",
+        "description": "鉄骨など鋼構造物の設計、製作及び現場施工を行い、建築用プレキャストコンクリート製品の製造、販売及び取付工事も営んでいます。2025年9月期の完成工事高は24,219百万円で、内訳は鉄骨22,717百万円、プレキャストコンクリート1,502百万円です。"
+      },
+      {
+        "kind": "customer",
+        "title": "顧客は大手ゼネラルコントラクターなどの発注者",
+        "description": "大手ゼネラルコントラクターなどの発注者から工事を受注しています。2025年9月期の販売実績では、鹿島建設、清水建設、大成建設、戸田建設が主な相手先として印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "完成工事高は前期比12.1％減",
+        "description": "2025年9月期の完成工事高は24,219百万円で、前期比12.1％減となりました。予算不足による計画の先送りや工程の遅れにより、工場加工及び現場作業の稼働率が低下した影響を受けたと説明されています。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は1,447百万円",
+        "description": "2025年9月期の当期純利益は1,447百万円で、前期比1.5％減となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年9月期",
@@ -27,11 +110,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24961000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 313,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -49,14 +132,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25718000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 327,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年３月31日）等を第76期の期首から適用しており、第76期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標となっております。"
     },
     {
       "fiscalYear": "2023年9月期",
@@ -71,11 +155,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27260000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 357,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -93,11 +177,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 28203000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 292,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -115,18 +199,212 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 28956000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 273,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1906,
+      "title": "川岸工業所を創立",
+      "description": "川岸太一郎が大阪市に川岸工業所を創立しました。",
+      "significance": "現在の事業の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "川岸工業株式会社を設立",
+      "description": "大阪府大阪市に川岸工業株式会社を設立しました。",
+      "significance": "法人としての事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第二部と福岡証券取引所に上場",
+      "description": "東京証券取引所市場第二部及び福岡証券取引所市場に上場し、本社を東京都中央区に移転しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "千葉第一工場を新設",
+      "description": "千葉県柏市に千葉第一工場を新設しました。現在も主力の鋼構造物生産拠点です。",
+      "significance": "関東の生産拠点の確立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "岡山工場を新設",
+      "description": "岡山県笠岡市に岡山工場を新設しました。",
+      "significance": "西日本側の生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "筑波工場を新設",
+      "description": "茨城県結城郡千代川村（現下妻市）に筑波工場を新設しました。現在のプレキャストコンクリート生産拠点です。",
+      "significance": "プレキャストコンクリート事業の生産拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "山口工場を新設し徳山工場を閉鎖",
+      "description": "山口県下松市に山口工場を新設し、徳山工場を閉鎖しました。",
+      "significance": "生産拠点の集約と更新です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "川岸プランニング株式会社を設立",
+      "description": "千葉県柏市に川岸プランニング株式会社を設立しました。設計・積算業務を担う子会社です。",
+      "significance": "設計・積算体制の分社化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "株式会社サクラダと資本・業務提携",
+      "description": "株式会社サクラダと資本・業務提携を行いました。",
+      "significance": "同業との提携の記録です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "福岡証券取引所の上場を廃止",
+      "description": "福岡証券取引所の上場を廃止しました。",
+      "significance": "上場市場が東京証券取引所に一本化されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "株式会社サクラダとの提携契約を解除",
+      "description": "株式会社サクラダとの資本・業務提携契約を解除しました。",
+      "significance": "2002年の提携の終了です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行し川岸工事を吸収合併",
+      "description": "東京証券取引所の市場区分見直しによりスタンダード市場に移行しました。川岸工事株式会社を吸収合併しました。",
+      "significance": "現在の市場区分と体制への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kajima",
+      "relationship": "customer",
+      "description": "2025年9月期の販売実績で最大の相手先として印字されている大手ゼネラルコントラクターで、当社の鋼構造物の工事の発注者です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "shimizu",
+      "relationship": "customer",
+      "description": "2025年9月期の販売実績の主な相手先として印字されている大手ゼネラルコントラクターで、当社の鋼構造物の工事の発注者です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "taisei",
+      "relationship": "customer",
+      "description": "2025年9月期の販売実績の主な相手先として印字されている大手ゼネラルコントラクターで、当社の鋼構造物の工事の発注者です。特定投資株式として50,200株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "toda",
+      "relationship": "customer",
+      "description": "2025年9月期の販売実績の主な相手先として印字されている大手ゼネラルコントラクターで、当社の鋼構造物の工事の発注者です。特定投資株式として29,031株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "mitsubishi-corporation",
+      "relationship": "supplier",
+      "description": "鋼材の購入及び加工等の取引を長年続けている仕入先です。特定投資株式として195,300株を保有しています（2025年９月30日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "marubeni",
+      "relationship": "supplier",
+      "description": "鋼材の購入及び加工等の取引を長年続けている仕入先です。特定投資株式として25,238株を保有しています（2025年９月30日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kobe-steel",
+      "relationship": "supplier",
+      "description": "鋼材の購入及び加工等の取引を長年続けている仕入先です。特定投資株式として2,000株を保有し、同社は当社株式も保有しています（2025年９月30日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shinsho",
+      "relationship": "major-shareholder",
+      "description": "2025年９月30日現在で発行済株式（自己株式を除く）の5.16％を保有する大株主の鋼材商社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -134,13 +412,55 @@
       "publisher": "川岸工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XBJH.pdf",
       "publishedAt": "2025-12-22",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XBJH",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念（ビジョン）として「鉄骨で日本を支える」を掲げ、「第１次中期経営計画（2024年９月期～2026年９月期）」で目指すべき姿を「100年先も建築鉄骨で日本を支えるトップ企業」と定めています。優先課題として、成長とコア事業の収益力強化（営業起点の案件管理、生産拠点の見直しと再編、ＩＣＴ＆ＤＸ化の推進）、財務戦略・資本戦略の強化、ステークホルダーとの共創・共生、経営基盤の強化に取り組む方針です。",
+        "asOf": "2025-12-22",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "中期経営計画の期間中も事業は鉄骨を中心とする鋼構造物に集中しており、計画の柱は案件管理と生産拠点の再編、ＤＸ化による省力化に置かれています。担い手不足への対応として人財の確保と育成、働き方改革を必須の課題と位置づけています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等の経営方針と経営環境及び優先的に対処すべき課題、事業の内容による。",
+        "asOf": "2025-12-22",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "千葉県柏市の千葉第一工場・千葉第三工場、茨城県下妻市の筑波工場、大阪府羽曳野市の大阪工場、岡山県笠岡市の岡山工場、山口県下松市の山口工場と、関東から西日本まで自社工場を持ち、設計・積算は子会社の川岸プランニング株式会社が担う体制です。設計から製作、現場施工までを自社グループで一貫して行えます。",
+        "basis": "事業の内容と主要な設備の状況による。",
+        "asOf": "2025-12-22",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "業界全体の鉄骨需要は２年連続で400万トンを下回る低水準で推移しており、首都圏を中心とした大型案件の需要は底堅い一方、資材価格の高止まりや人手不足の影響を受けています。当社の販売先は大手ゼネラルコントラクターが中心で、2025年9月期は鹿島建設、清水建設、大成建設、戸田建設が主な相手先として印字されています。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の経営成績等の状況の概要と販売実績、経営方針、経営環境及び対処すべき課題等の経営環境による。",
+        "asOf": "2025-12-22",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-30",

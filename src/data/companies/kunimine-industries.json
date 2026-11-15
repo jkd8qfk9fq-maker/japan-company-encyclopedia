@@ -4,15 +4,144 @@
   "name": "クニミネ工業",
   "officialName": "クニミネ工業株式会社",
   "nameEn": "KUNIMINE INDUSTRIES CO.,LTD.",
-  "description": null,
+  "shortNameEn": "Kunimine Industries Co., Ltd.",
+  "description": "ベントナイト原鉱石の採掘から、鋳物用・土木建築用・ペット用トイレ砂などの製品や農薬加工までを手がける粘土鉱物の会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "bentonite",
+      "name": "ベントナイト事業",
+      "description": "ベントナイト原鉱石の採掘から、鋳物用（素形材用）、土木建築用、ペット用トイレ砂などのベントナイト製品の製造販売までを行う主力事業です。2026年3月期の外部顧客への売上高は11,842百万円で、連結売上高の約7割を占めます。原鉱石の採掘はクニマイン株式会社、川崎鉱業株式会社、関ベン鉱業株式会社が担い、当社が製造販売のほか調泥剤の仕入販売や各種研究・分析を行います。クニミネマーケティング株式会社は主に物流センターの運営を行い、KUNIMINE(THAILAND)CO.,LTD.は素形材用のベントナイトの仕入販売を行っています。",
+      "customers": [
+        "鋳物などの製造業",
+        "土木・建設分野の事業者",
+        "ペット用品の販売事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "foundry-materials",
+          "name": "素形材",
+          "description": "鋳物用のベントナイトです。2026年3月期の外部顧客への売上高は7,185百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "environment-construction",
+          "name": "環境建設",
+          "description": "土木建築用のベントナイトや止水材です。2026年3月期の外部顧客への売上高は3,800百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "pet",
+          "name": "ペット",
+          "description": "ペット用トイレ砂などです。2026年3月期の外部顧客への売上高は855百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "agri",
+      "name": "アグリ事業",
+      "description": "農薬の加工受託に、農薬基剤や農薬加工用原材料、農業資材、土壌改良剤、農薬用途向け精製ベントナイトの製造・加工・販売と運送取扱いを行う事業です。当社が担っており、2026年3月期の外部顧客への売上高は3,444百万円でした。",
+      "customers": [
+        "農薬メーカーなどの事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "clay-science",
+      "name": "クレイサイエンス事業",
+      "description": "精製ベントナイトや環境保全処理剤、環境改良剤、飼料添加物などを製造販売する事業です。当社が担っており、精製ベントナイトは化粧品・日用品用途や一般工業用途に使われます。2026年3月期の外部顧客への売上高は1,788百万円でした。",
+      "customers": [
+        "化粧品・日用品メーカー",
+        "飼料メーカーなどの事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社グループで採掘するベントナイト原鉱石を原料に、鋳物用や土木建築用、ペット用トイレ砂などの製品を製造販売し、農薬の加工も行う会社です。",
+    "products": [
+      "ベントナイト（鋳物用・土木建築用）",
+      "ペット用トイレ砂",
+      "調泥剤",
+      "精製ベントナイト",
+      "環境保全処理剤",
+      "飼料添加物",
+      "農薬基剤"
+    ],
+    "customers": [
+      "鋳物などの製造業",
+      "土木・建設分野の事業者",
+      "化粧品・日用品メーカー",
+      "農薬メーカー"
+    ],
+    "revenueSources": [
+      "ベントナイト製品の販売による収入",
+      "農薬加工・農薬基剤の販売による収入",
+      "精製ベントナイトや環境保全処理剤の販売による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "クニミネ工業",
+        "description": "クニミネ工業は当社と子会社6社のグループで、2026年3月31日現在の連結従業員数は277人です。本社は東京都千代田区にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "ベントナイト製品の製造販売と農薬加工",
+        "description": "子会社がベントナイト原鉱石を採掘し、当社が鋳物用・土木建築用・ペット用トイレ砂などのベントナイト製品や精製ベントナイトを製造販売するほか、農薬の加工や農薬基剤の製造販売を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "産業分野の事業者や農薬メーカー",
+        "description": "鋳物や土木・建設などの産業分野の事業者、化粧品・日用品メーカー、農薬メーカーなどが顧客です。連結売上高の10％以上を占める特定の顧客はないとされています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "ベントナイト事業を中心とする売上",
+        "description": "ベントナイト事業を中心に、2026年3月期に売上高17,075百万円（前年同期比8.7％増）を計上しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,340百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +156,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20978441000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 285,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +176,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21349173000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 295,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +196,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21867726000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 293,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +216,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22351609000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 299,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +236,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23143865000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 277,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +244,215 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1943,
+      "title": "國峯鉱業として設立",
+      "description": "國峯鉱業株式会社として設立しました。",
+      "significance": "当社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "ベントナイトの採掘・製造を開始",
+      "description": "月布川鉱業株式会社を吸収合併して左沢工場と月布鉱業所を取得し、ベントナイト鉱石の採掘と同製品の製造を開始しました。",
+      "significance": "現在の主力であるベントナイト事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "農薬製剤の加工を開始",
+      "description": "左沢工場で農薬製剤の加工を開始しました。",
+      "significance": "現在のアグリ事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "精製ベントナイト「クニピア」を商品化",
+      "description": "左沢工場内に粘土鉱物の研究開発のため研究室を設置し、月布鉱業所の原鉱石を利用した精製ベントナイトの商品化（クニピア）に成功しました。",
+      "significance": "現在のクレイサイエンス事業につながる高付加価値製品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "クニミネ工業に商号変更",
+      "description": "クニミネ工業株式会社に商号を変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "株式を店頭登録",
+      "description": "当社の株式が社団法人日本証券業協会東京地区協会へ登録されました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "米国にTRANS WORLD PROSPECT CORPORATIONを設立",
+      "description": "米国テキサス州にTRANS WORLD PROSPECT CORPORATIONを設立しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "鉱山部門を独立させクニマインを設立",
+      "description": "鉱山部門を独立させ、クニマイン株式会社を設立しました。",
+      "significance": "原鉱石の採掘を担う現在のグループ体制の基礎です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "BASFジャパンから郡山工場を取得",
+      "description": "BASFジャパン株式会社より郡山工場を取得しました。",
+      "significance": "アグリ事業の農薬加工の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "タイにKUNIMINE(THAILAND)CO.,LTD.を設立",
+      "description": "タイにKUNIMINE(THAILAND)CO.,LTD.を設立しました。",
+      "significance": "東南アジアでのベントナイト販売の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分見直しに伴い、東京証券取引所スタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nippon-kayaku",
+      "relationship": "major-shareholder",
+      "description": "【大株主の状況】に載る事業会社で、2026年3月31日現在、発行済株式（自己株式を除く）の総数に対する所有株式数の割合は2.73％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "kumiai-chemical-industry",
+      "relationship": "major-shareholder",
+      "description": "【大株主の状況】に載る事業会社で、2026年3月31日現在、発行済株式（自己株式を除く）の総数に対する所有株式数の割合は2.71％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "echo-trading",
+      "relationship": "business-partner",
+      "description": "当社の連結子会社であるクニミネマーケティング株式会社のペット事業の譲渡先であり、事業譲渡を通じた取引関係があります。当社は同社株式を23,245株保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第92期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第92期(2025/04/01－2026/03/31)",
       "publisher": "クニミネ工業株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YLG9.pdf",
-      "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-29"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YOPN.pdf",
+      "publishedAt": "2026-07-03",
+      "docId": "S100YOPN",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年度を初年度とする3ヵ年中期経営計画を策定し、ベントナイト本来の性能を最大限に活かした高付加価値製品の開発、生産販売の省人化、DXの推進を通じて高収益な事業構造の構築を目指すとしています。脱炭素関連や国土強靭化関連の成長分野への注力、新規事業領域の拡大、海外市場展開、国内の新鉱区開発によるベントナイト原鉱の安定確保を具体的な戦略に掲げています。",
+        "asOf": "2026-07-03",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "ベントナイト原鉱石の採掘から製品の製造販売までを自社グループで一貫して行う体制を持ち、精製ベントナイト「クニピア」のような高付加価値製品の開発にも取り組んでいます。",
+        "basis": "【事業の内容】における子会社による原鉱石の採掘と当社による製造販売の分担の記載、【沿革】における精製ベントナイトの商品化の記載、【研究開発活動】の記載に基づく",
+        "asOf": "2026-07-03",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "ベントナイト事業が2026年3月期の連結売上高17,075百万円のうち11,842百万円を占める主力事業で、次いでアグリ事業が3,444百万円、クレイサイエンス事業が1,788百万円です。本邦の外部顧客への売上高が連結売上高の90％を超えており、販売は国内が中心です。",
+        "basis": "セグメント情報（報告セグメントごとの外部顧客への売上高、関連情報の地域ごとの情報の省略理由）の記載に基づく",
+        "asOf": "2026-07-03",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

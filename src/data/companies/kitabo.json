@@ -1,18 +1,215 @@
 {
   "id": "kitabo",
   "code": "3409",
-  "name": "北紡(旧会社名北日本紡績)",
+  "name": "北紡",
   "officialName": "株式会社北紡(旧会社名　北日本紡績株式会社)",
   "nameEn": "KITABO CO.,LTD(旧英訳名　KITANIHON　SPINNING CO.,LTD)",
-  "description": null,
+  "shortNameEn": "KITABO CO.,LTD",
+  "description": "合繊紡績糸の製造販売と中東向け民族衣装用生地の販売を中心に、衛生用品や旅客運送まで手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "textile",
+      "name": "テキスタイル事業",
+      "description": "主に中東向けの民族衣装用生地を販売する事業です。東南アジア向けの商品も扱っています。2026年3月期の売上高は687百万円で、事業の中で最も大きい割合を占めています。大阪事務所が営業拠点です。",
+      "customers": [
+        "中東や東南アジアの民族衣装用生地の買い手"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "spinning",
+      "name": "紡績事業",
+      "description": "主に合繊紡績糸を製造し販売する事業です。松任工場で生産しています。製造した紡績糸の主要な販売先は帝人株式会社です。2026年3月期の売上高は323百万円です。",
+      "customers": [
+        "紡績糸を仕入れる繊維メーカーなどの販売先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "aramid",
+          "name": "アラミド",
+          "description": "アラミド繊維の紡績糸で、防護衣料用途や産業資材用途に使われます。2026年3月期の販売実績は244百万円です。",
+          "customers": [
+            "防護衣料や産業資材のメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "polyteron",
+          "name": "ポリテロン",
+          "description": "ポリテロンと呼ばれる紡績糸です。2026年3月期の販売実績は55百万円です。",
+          "customers": [
+            "紡績糸の販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other-spinning",
+          "name": "その他紡績",
+          "description": "アラミドとポリテロン以外の紡績糸です。高級インナー向けの需要が堅調に推移しました。2026年3月期の販売実績は23百万円です。",
+          "customers": [
+            "紡績糸の販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "healthcare",
+      "name": "ヘルスケア事業",
+      "description": "セキュリティーシステムの販売や衛生用品の製造、栄養機能食品等の企画販売を行う事業です。連結子会社の中部薬品工業が衛生用品や化粧品の製造販売を行っています。2026年3月期の売上高は321百万円です。",
+      "customers": [
+        "衛生用品や栄養機能食品の利用者",
+        "セキュリティーシステムの導入先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "security-equipment",
+          "name": "セキュリティ機器販売",
+          "description": "防犯防災セキュリティー管理システムの仕入販売です。北陸および新潟地区を中心に販売が推移しました。2026年3月期の販売実績は184百万円です。",
+          "customers": [
+            "セキュリティーシステムの導入先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "hygiene-products",
+          "name": "その他衛生関連製品",
+          "description": "衛生用品の製造や栄養機能食品等の企画販売です。中部薬品工業の「中薬たんきりのど飴」などの商品があります。2026年3月期の販売実績は137百万円です。",
+          "customers": [
+            "衛生用品や栄養機能食品の利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "recycle",
+      "name": "リサイクル事業",
+      "description": "主にプラスチック廃材を加工製造し、プラスチック資材として販売する事業です。掛川工場と、連結子会社の金井産業が生産を行っています。2026年3月期の売上高は252百万円です。",
+      "customers": [
+        "プラスチック資材の買い手"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "crypto-management",
+      "name": "クリプトマネジメント事業",
+      "description": "主に暗号資産の管理・運用に関する事業です。長期的な資産形成およびトレジャリー運用の一環としてビットコインの取得を行っています。2026年3月期の売上高は、暗号資産の評価損を含み△78百万円でした。",
+      "customers": [],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "mobility",
+      "name": "モビリティ事業",
+      "description": "主にハイヤー・タクシー等による一般乗用旅客自動車運送事業です。2026年3月に連結子会社化した株式会社Ｖリムジンと株式会社NEO TOKYOが営んでいます。両社とも期末日をみなし取得日としているため、2026年3月期の売上高は印字されておらず、セグメント資産のみが記載されています。",
+      "customers": [
+        "ハイヤー・タクシーの利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "紡績糸と生地の販売を収益の中心とし、衛生用品や栄養機能食品の販売、プラスチックリサイクル、暗号資産の運用、タクシー事業も行う事業です。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "products": [
+      "合繊紡績糸（アラミド、ポリテロン等）",
+      "中東向け民族衣装用生地",
+      "衛生用品・栄養機能食品",
+      "防犯防災セキュリティー管理システム",
+      "プラスチックリサイクル資材"
+    ],
+    "customers": [
+      "紡績糸の販売先である繊維メーカー",
+      "中東・東南アジアの生地の買い手",
+      "衛生用品やセキュリティーシステムの利用者",
+      "プラスチック資材の買い手",
+      "ハイヤー・タクシーの利用者"
+    ],
+    "revenueSources": [
+      "紡績糸の販売代金",
+      "民族衣装用生地の販売代金",
+      "衛生用品・栄養機能食品・セキュリティーシステムの販売代金",
+      "プラスチックリサイクル資材の販売代金",
+      "暗号資産の管理・運用に係る収益",
+      "旅客運送の運賃"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "北紡",
+        "description": "石川県白山市に本社を置く連結の会社で、2026年3月31日現在の従業員数は148人です。1948年に北日本紡績株式会社として設立し、2025年7月に株式会社北紡へ商号を変更しました。連結子会社は4社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "紡績・生地から運送までの事業",
+        "description": "合繊紡績糸の製造販売、中東向け民族衣装用生地の販売、衛生用品の製造や栄養機能食品の企画販売、防犯防災セキュリティー管理システムの販売、プラスチック廃材のリサイクル、暗号資産の管理・運用、ハイヤー・タクシー等による旅客運送を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "繊維メーカーや生地の買い手など",
+        "description": "製造した紡績糸の主要な販売先は帝人株式会社で、民族衣装用生地は中東や東南アジアの買い手に販売しています。衛生用品やセキュリティーシステム、リサイクル資材は国内の利用者や買い手が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品・サービスの販売代金",
+        "description": "製品やサービスの販売代金などが収益です。2026年3月期の売上高は1,506百万円でした。事業別では、テキスタイル事業が687百万円、紡績事業が323百万円、ヘルスケア事業が321百万円、リサイクル事業が252百万円、クリプトマネジメント事業が暗号資産の評価損を含み△78百万円で、モビリティ事業は売上高が印字されていません。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純損失",
+        "description": "2026年3月期の親会社株主に帰属する当期純損失は135百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1080371000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 74,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +244,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 959936000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 82,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +264,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 899016000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 81,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +284,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1189668000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 83,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +304,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1630810000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 148,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +312,159 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1948,
+      "title": "北日本紡績株式会社を設立",
+      "description": "北陸地方の有志によって、各種繊維の紡績及び加工を主たる目的とし、北日本紡績株式会社の商号で石川県金沢市に本社及び金沢工場を設置し設立しました。",
+      "significance": "現在の会社の起点であり、紡績事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "大阪証券取引所市場第２部に上場",
+      "description": "当社株式を大阪証券取引所市場第２部に上場しました。その後1954年には東京証券取引所市場第２部にも上場しました。",
+      "significance": "株式上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "仮撚工場を新設し加工糸の生産を開始",
+      "description": "金沢工場敷地内に仮撚工場を新設し、長繊維ウーリー加工糸の生産・販売を開始しました。",
+      "significance": "紡績糸に加えて加工糸へ広げた転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "東京証券取引所から上場廃止",
+      "description": "東京証券取引所から上場廃止となりました。",
+      "significance": "その後の再上場までの経緯の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第２部に上場",
+      "description": "大阪証券取引所及び東京証券取引所の現物市場の統合に伴い、当社株式は東京証券取引所市場第２部に上場しました。",
+      "significance": "現在の上場市場につながる再上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社中部薬品工業を完全子会社化",
+      "description": "株式交換により株式会社中部薬品工業を完全子会社化しました。",
+      "significance": "現在のヘルスケア事業の中核子会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "金井産業株式会社を完全子会社化",
+      "description": "株式取得により金井産業株式会社を完全子会社化しました。同年には事業譲受により静岡県掛川市に生産拠点（掛川工場）も取得しています。",
+      "significance": "現在のリサイクル事業の基盤の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "商号を株式会社北紡へ変更",
+      "description": "商号を北日本紡績株式会社から株式会社北紡へ変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "株式会社Ｖリムジン及び株式会社NEO TOKYOを子会社化",
+      "description": "株式交付及び株式取得により株式会社Ｖリムジン及び株式会社NEO TOKYOを子会社化しました。",
+      "significance": "モビリティ事業の開始であり、事業の多角化の一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "teijin",
+      "relationship": "customer",
+      "description": "帝人株式会社は繊維メーカーで、主要な顧客ごとの情報に、紡績事業における製造した紡績糸の主要販売先として印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "komatsu-matere",
+      "relationship": "supplier",
+      "description": "小松マテーレ株式会社は繊維メーカーで、株式の保有状況に、テキスタイル事業で販売する民族衣装用生地の委託加工先として印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第103期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社北紡(旧会社名　北日本紡績株式会社)",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKBG.pdf",
-      "publishedAt": "2026-06-29",
-      "accessedAt": "2026-09-29"
+      "title": "訂正有価証券報告書－第103期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社北紡",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YXKX.pdf",
+      "publishedAt": "2026-08-19",
+      "docId": "S100YXKX",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 継続企業の前提に関する重要な疑義を生じさせるような事象又は状況が存在すると印字されていますが、対応策を進めていくことにより、当連結会計年度末において継続企業の前提に関する重要な不確実性は認められないものと判断されています。なお、連結財務諸表注記の「継続企業の前提に関する事項」は「該当事項はありません」と印字されています。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "継続的かつ安定的な収益基盤を確立して企業価値を高めることを目標とし、紡績事業の生産性向上、テキスタイル事業の更なる販売強化、ヘルスケア事業の防犯カメラを中心とした製品の拡販、リサイクル事業の収益基盤の維持および更なる拡大に取り組み、黒字化に向けた体制を構築するとしています。クリプトマネジメント事業については市場環境を踏まえたビットコインの追加取得を検討し、中長期的な保有を基本方針としています。モビリティ事業では既存事業とのシナジー創出および収益基盤の拡大を図るとしています。",
+        "asOf": "2026-08-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

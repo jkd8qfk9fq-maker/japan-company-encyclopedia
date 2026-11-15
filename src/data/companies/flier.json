@@ -4,15 +4,153 @@
   "name": "フライヤー",
   "officialName": "株式会社フライヤー",
   "nameEn": "Flier Inc.",
-  "description": null,
+  "shortNameEn": "Flier Inc.",
+  "description": "本の要約サービス「flier」を法人と個人に提供し、オンラインスクールも運営する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "enterprise",
+      "name": "エンタープライズ事業",
+      "description": "企業における人材育成や福利厚生等を目的として、従業員向けに法人向けサービス「flier business」を提供する事業です。施設向けサービスや法人向け研修、「flier成長組織ナビ」も展開しています。2026年2月期の外部顧客への売上高は714百万円です。",
+      "customers": [
+        "人材育成や福利厚生を目的とする企業",
+        "インターネットカフェや公共図書館等の施設"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "flier-business",
+          "name": "flier business",
+          "description": "「本の要約サービス flier」を活用した法人向けの人材育成サービスです。提供アカウント数に応じた月額固定費のSaaS型サブスクリプションモデルで、利用促進や利用状況確認のための管理者機能も合わせて提供しています。",
+          "customers": [
+            "人材育成に取り組む企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "enterprise-facility-training",
+          "name": "施設向け事業・法人向け研修事業・flier成長組織ナビ",
+          "description": "施設のWi-Fi接続や書店の2次元コードで要約を閲覧できる施設向けサービス、本を主題とする越境型学習などの法人向け研修、組織の人材投資に対する成果を見える化するスコアリングサービス「flier成長組織ナビ」を提供しています。金額が独立して開示されていないため、金額は書いていません。",
+          "customers": [
+            "シェアオフィスやインターネットカフェ、公共図書館等の施設",
+            "書店",
+            "研修を利用する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "consumer",
+      "name": "コンシューマ事業",
+      "description": "自己研鑽を目的とした個人向けに「本の要約サービス flier」を提供する事業です。オンライン読書コミュニティや動画チャンネル、子会社によるオンラインスクールも運営しています。2026年2月期の外部顧客への売上高は354百万円です。",
+      "customers": [
+        "自己研鑽に取り組む個人",
+        "オンラインスクールの受講者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "flier-personal",
+          "name": "本の要約サービス flier（個人向け）",
+          "description": "話題のビジネス書や名著・ベストセラーを1冊約10分の要約で楽しめる個人向けの自己研鑽サービスです。月額課金のサブスクリプションモデルで、要約の9割以上は音声でも聞くことができます。オンライン読書コミュニティ「flier book labo」や短期講座「flier book camp」、「flier公式チャンネル」も運営しています。",
+          "customers": [
+            "個人の利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "consumer-school",
+          "name": "スクール事業",
+          "description": "子会社の株式会社AIStepが生成AI等のオンラインスクール「AIStep」を、子会社の株式会社Zealoxが未経験の女性に特化したWebデザインスクール「Find me !」を運営しています。金額が独立して開示されていないため、金額は書いていません。",
+          "customers": [
+            "副業やフリーランスを目指す受講者",
+            "Webデザインを学ぶ女性"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "本の要約サービス「flier」の月額課金と、法人向け研修やオンラインスクールの受講料などを得る事業です。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "products": [
+      "本の要約サービス「flier」",
+      "法人向けサービス「flier business」",
+      "flier成長組織ナビ",
+      "オンラインスクール「AIStep」",
+      "Webデザインスクール「Find me !」"
+    ],
+    "customers": [
+      "人材育成に取り組む企業の従業員",
+      "自己研鑽に取り組む個人",
+      "オンラインスクールの受講者"
+    ],
+    "revenueSources": [
+      "「flier business」などの月額固定費",
+      "個人向けサービスの月額課金",
+      "法人向け研修の実施料金とオンラインスクールの受講料等"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "フライヤー",
+        "description": "東京都千代田区に本社を置く連結の会社で、2026年2月28日現在の従業員数は57人です。親会社は株式会社メディアドゥで、2025年2月に東京証券取引所グロース市場に上場しました。"
+      },
+      {
+        "kind": "offering",
+        "title": "本の要約サービスとスクール",
+        "description": "年間6,000冊以上発刊されるビジネス書から厳選した本の要約コンテンツや動画、特集記事等を提供し、子会社を通じて生成AI等のオンラインスクールとWebデザインスクールも運営しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "企業と個人",
+        "description": "法人向けには企業の従業員の人材育成や福利厚生を目的として提供し、個人向けにはビジネスパーソンを中心とした自己研鑽のために提供しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "月額課金と受講料",
+        "description": "法人と個人からの月額課金を中心とするサブスクリプションモデルが収益です。2026年2月期の売上高は1,068百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年2月期の親会社株主に帰属する当期純利益は13百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2026年2月期",
@@ -27,16 +165,136 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 306806000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 57,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第13期より連結財務諸表を作成しているため、それ以前については記載しておりません。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2013,
+      "title": "株式会社フライヤーを設立",
+      "description": "東京都渋谷区において、株式会社フライヤーを設立しました。",
+      "significance": "現在の会社の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "本の要約サービス「flier」の提供を開始",
+      "description": "本の要約サービス「flier」のWebサイトを開設し、サービスを提供開始しました。",
+      "significance": "現在の主力サービスの提供開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "株式会社メディアドゥが当社を子会社化",
+      "description": "電子書籍の取次を主な事業とする株式会社メディアドゥが、テキストの電子書籍の販売機会拡大のシナジーを目的として当社を子会社化し、メディアドゥグループに参画しました。",
+      "significance": "現在の親会社との関係の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "オンライン読書コミュニティ「flier book labo」を開始",
+      "description": "オンライン読書コミュニティ「flier book labo」を提供開始しました。",
+      "significance": "コンシューマ事業のコミュニティ展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "法人向けサービスを「flier business」にリニューアル",
+      "description": "法人向けサービス「flier 法人版」を「flier business」としてリニューアルしました。",
+      "significance": "法人向け主力サービスの現在の名称への変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "「flier 成長組織ナビ」を提供開始",
+      "description": "組織の人材投資に対する成果を見える化する「flier 成長組織ナビ」を提供開始しました。",
+      "significance": "エンタープライズ事業の新規サービスです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "東京証券取引所グロース市場に上場",
+      "description": "東京証券取引所グロース市場に株式を上場しました。",
+      "significance": "上場企業となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社AIStepを完全子会社化",
+      "description": "株式会社AIStepを完全子会社化しました。",
+      "significance": "生成AI等のオンラインスクール事業への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "株式会社Zealoxを子会社化",
+      "description": "株式会社Zealoxを子会社化しました。",
+      "significance": "Webデザインスクール事業への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "media-do",
+      "relationship": "parent",
+      "description": "株式会社メディアドゥは親会社で、電子書籍流通事業を行っています。【関係会社の状況】に議決権の被所有割合56.33％、関係内容は営業上の取引と印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "gmo-payment-gateway",
+      "relationship": "customer",
+      "description": "GMOペイメントゲートウェイ株式会社は、セグメント情報の主要な顧客ごとの情報にコンシューマ事業に関連する顧客として印字されている会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "insource",
+      "relationship": "major-shareholder",
+      "description": "株式会社インソースは研修等を行う事業会社で、大株主の状況に38,840株、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合1.13％と印字されている大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -44,13 +302,47 @@
       "publisher": "株式会社フライヤー",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y68H.pdf",
       "publishedAt": "2026-05-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y68H",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "AI時代に求められる能力を獲得するためのサービスとして「flier business」を継続強化し、生成AI活用支援・組織開発支援を通じて統合的な人材育成プラットフォームを目指すとしています。生成AI等の活用支援事業を新たな成長の柱に据え、M&A等を積極活用する形で事業領域の拡大を進める方針です。",
+        "asOf": "2026-05-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "全ての要約コンテンツは出版社や著者等の許諾を得て作成し、作成した原稿も出版社等に確認してもらっています。累計会員数130万人（2026年2月末時点）や提携出版社数190社超、4,200冊超の要約コンテンツといった資産が相互に作用して蓄積されることが強みとされています。エンタープライズ事業の解約率の指標は2024年3月から2025年2月までの平均で1.45％と低く抑えられています。",
+        "basis": "【事業の内容】の要約作成の流れと強みの記載に基づきます。",
+        "asOf": "2026-05-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "企業のDX推進や人的資本経営への関心の高まりと生成AI技術の進化・普及を背景に、SaaS市場およびAI関連市場の成長が継続している環境にあります。リスキリング需要の高まりにより、デジタル人材支援サービス市場は2026年度に約1.7兆円規模への拡大が予測されるとされています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の経営環境の記載に基づきます。",
+        "asOf": "2026-05-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",

@@ -4,15 +4,128 @@
   "name": "マサル",
   "officialName": "株式会社マサル",
   "nameEn": "MASARU CORPORATION",
-  "description": null,
+  "shortNameEn": "MASARU CORPORATION",
+  "description": "建物の新築防水工事や改修工事を主力とし、空調・冷暖房・給排水等の設備工事も手がける総合専門工事会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "construction-works",
+      "name": "建設工事業",
+      "description": "当社及び株式会社イノベイトが建物の新築防水工事、改修工事、直接受注工事の施工並びに建築材料販売、機材のレンタル等を行う主力事業です。2025年９月期の外部顧客への売上高は9,165百万円でした。",
+      "customers": [
+        "鹿島建設、大成建設などのゼネコンをはじめとする建設会社",
+        "建物の所有者・管理組合などの直接発注者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "innovate",
+          "name": "株式会社イノベイト",
+          "description": "建設工事業を担う連結子会社で、2024年１月に東京都江東区に設立されました。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "facilities-works",
+      "name": "設備工事業",
+      "description": "株式会社マサルファシリティーズが空調・冷暖房・給排水等の設備工事の施工を行い、空気設備工業株式会社が排気装置を主体とした乾燥・塗装装置、集塵装置等の産業用機械の組立・設置・メンテナンスを行う事業です。2025年９月期の外部顧客への売上高は1,482百万円でした。",
+      "customers": [
+        "設備工事の発注者",
+        "乾燥・塗装装置、集塵装置等の産業用機械の設置・メンテナンスを必要とする事業者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "masaru-facilities",
+          "name": "株式会社マサルファシリティーズ",
+          "description": "空調・冷暖房・給排水等の設備工事を行う連結子会社（議決権の所有割合100.0％）で、特定子会社に該当し、売上高が連結売上高の１割を超えています。東京都大田区に所在します。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "kuki-setsubi-kogyo",
+          "name": "空気設備工業株式会社",
+          "description": "排気装置を主体とした乾燥・塗装装置、集塵装置等の産業用機械の組立・設置・メンテナンスを行う連結子会社（議決権の所有割合100.0％、間接所有）で、2024年４月に株式会社マサルファシリティーズが子会社化しました。大阪府大阪市に所在します。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "ゼネコンなどの発注者から建物の新築防水工事、改修工事、直接受注工事や空調・冷暖房・給排水等の設備工事を請け負い、工事の売上によって収益を得る会社です。",
+    "products": [
+      "新築防水工事、改修工事、直接受注工事、建築材料販売、機材のレンタル（建設工事業）",
+      "空調・冷暖房・給排水等の設備工事（設備工事業）",
+      "乾燥・塗装装置、集塵装置等の産業用機械の組立・設置・メンテナンス（設備工事業）"
+    ],
+    "customers": [
+      "鹿島建設、大成建設などのゼネコンをはじめとする建設会社",
+      "建物の所有者・管理組合などの直接発注者",
+      "設備工事の発注者"
+    ],
+    "revenueSources": [
+      "工事の請負による売上高",
+      "建築材料の販売による売上高",
+      "機材のレンタルによる売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社マサル",
+        "description": "東京都江東区に本社を置く総合専門工事会社で、連結子会社３社とともに事業を行っています。2025年９月30日現在の連結従業員数は171人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "防水工事と設備工事",
+        "description": "建物の新築防水工事、改修工事、直接受注工事の施工と建築材料販売、機材のレンタルを行い、グループで空調・冷暖房・給排水等の設備工事や産業用機械の組立・設置・メンテナンスも行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "ゼネコンと直接発注者",
+        "description": "鹿島建設や大成建設などのゼネコンが主要な顧客で、建物の所有者や管理組合などから直接受注する工事もあります。受注はすべて民間からのものです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高10,647百万円",
+        "description": "2025年９月期の売上高は10,647百万円でした。事業別では建設工事業が9,165百万円、設備工事業が1,482百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益405百万円",
+        "description": "2025年９月期の親会社株主に帰属する当期純利益は405百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年9月期",
@@ -27,7 +140,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4372407000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 145,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +160,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4453227000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 148,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第67期の期首から適用しており、第67期以降の連結会計年度に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年9月期",
@@ -67,7 +181,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4754099000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 154,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4940143000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 165,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +221,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5277444000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 171,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +229,208 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1957,
+      "title": "マサル工業を設立",
+      "description": "建物防水工事を目的として、マサル工業株式会社を東京都江東区森下に設立しました。",
+      "significance": "現在の会社の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "三井霞が関ビルのシーリング防水工事を施工",
+      "description": "わが国初の超高層ビルである三井霞が関ビルのシーリング防水工事を施工し、他社に先がけて建物シーリング防水工事のノウハウを取得しました。",
+      "significance": "防水工事の専門技術の基盤となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "マサルエンジニアリングを設立",
+      "description": "株式会社マサルエンジニアリングを東京都中央区に設立し、リニューアル工事を開始しました。",
+      "significance": "改修分野への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "マサルソービを設立",
+      "description": "株式会社マサルソービを東京都江東区に設立し、材料・資材の一元管理を開始しました。",
+      "significance": "資材管理の体制が整いました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "商号を株式会社マサルに変更",
+      "description": "商号をマサル工業株式会社から株式会社マサルへ変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "マサルエンジニアリングと合併",
+      "description": "株式会社マサルエンジニアリングと合併しました。同年に株式会社マサルソービは解散により清算しました。",
+      "significance": "グループの再編が行われました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "日本証券業協会に店頭登録",
+      "description": "日本証券業協会に店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "その他の防水工事等を開始",
+      "description": "地下防水工事、塗膜防水工事、屋上防水工事等のその他の防水工事等を開始しました。",
+      "significance": "防水工事の工種が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "テクマを子会社化しグラフィック事業を開始",
+      "description": "株式会社テクマを子会社とし、グラフィック事業を開始しました。",
+      "significance": "一時的に手がけた事業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "テクマを吸収合併",
+      "description": "株式会社テクマよりグラフィック事業を譲り受けた後、株式会社テクマを吸収合併しました。",
+      "significance": "グラフィック事業を本体に取り込みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "塩谷商会を子会社化",
+      "description": "株式会社塩谷商会を子会社化しました。",
+      "significance": "後の設備工事業の中核会社の取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "決算期を変更",
+      "description": "決算期を変更し、決算日を３月31日から９月30日としました。",
+      "significance": "現在の９月決算になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "本社屋を建替",
+      "description": "東京都江東区佐賀に本社屋を建て替えました。",
+      "significance": "現在の本社体制になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "塩谷商会をマサルファシリティーズに商号変更",
+      "description": "株式会社塩谷商会を株式会社マサルファシリティーズに商号変更しました。",
+      "significance": "設備工事子会社の現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、ＪＡＳＤＡＱ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "イノベイトを設立",
+      "description": "株式会社イノベイトを東京都江東区に設立しました。",
+      "significance": "建設工事業の新しい子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "マサルファシリティーズが空気設備工業を子会社化",
+      "description": "株式会社マサルファシリティーズが空気設備工業株式会社を子会社化しました。",
+      "significance": "設備工事業の領域が産業用機械へ広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kajima",
+      "relationship": "customer",
+      "description": "建設工事業の主要な顧客です。セグメント情報の関連情報（主要な顧客ごとの情報）において、当連結会計年度の主要な顧客として開示されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "taisei",
+      "relationship": "customer",
+      "description": "建設工事業の主要な顧客です。セグメント情報の関連情報（主要な顧客ごとの情報）において、当連結会計年度の主要な顧客として開示されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +438,55 @@
       "publisher": "株式会社マサル",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XCIB.pdf",
       "publishedAt": "2025-12-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100XCIB",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2021年10月から2030年９月までの９ヵ年に及ぶ長期経営計画『～100年選ばれ続ける会社を目指す！～』のもと、急激に変容していく経営環境の中でも永続的な成長ができる総合専門工事会社となることを目指しています。テーマとして「ゼネコン上位10社でのシェアNo.1」と「成長性分野開拓」を最終年度の達成目標として掲げています。",
+        "asOf": "2025-12-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2025年９月期の売上高は前連結会計年度比19.0％増の10,647百万円となりました。設備工事業の外部顧客への売上高は1,482百万円と前連結会計年度の892百万円から大きく伸び、建設工事業も9,165百万円と増収となり、全体の伸びを支えました。",
+        "basis": "セグメント情報等の外部顧客への売上高、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（経営成績等の状況の概要）による。",
+        "asOf": "2025-12-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1957年の設立以来、建物の防水工事を専門としてきました。1968年にはわが国初の超高層ビルである三井霞が関ビルのシーリング防水工事を施工し、他社に先がけて建物シーリング防水工事のノウハウを取得したと有報に記載されています。新築防水工事、改修工事、直接受注工事に加え、設備工事まで当社グループとして受注する仕組みを整えている点も特徴です。",
+        "basis": "沿革、事業の内容による。",
+        "asOf": "2025-12-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の約86％を建設工事業が占めています。主要な顧客ごとの情報では鹿島建設と大成建設の大手ゼネコン２社が主要な顧客として開示されており、この２社で売上高の約28％を占めています。",
+        "basis": "セグメント情報等の外部顧客への売上高、関連情報（主要な顧客ごとの情報）による。",
+        "asOf": "2025-12-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-30",

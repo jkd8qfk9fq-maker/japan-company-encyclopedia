@@ -4,15 +4,106 @@
   "name": "北沢産業",
   "officialName": "北沢産業株式会社",
   "nameEn": "KITAZAWA SANGYO CO.,LTD.",
-  "description": null,
+  "shortNameEn": "KITAZAWA SANGYO CO.,LTD.",
+  "description": "業務用厨房機器や家具の販売を中心に、厨房機械の製造、修理・保守サービス、家庭用キッチンの販売と不動産賃貸を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "machinery",
+      "primary": false
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "commercial-kitchen",
+      "name": "業務用厨房関連事業",
+      "description": "業務用厨房機器・家具の販売と家庭用キッチンの販売、業務用厨房機器の修理・保守サービスを行う事業です。連結子会社のエース工業株式会社が業務用厨房機械器具を、サンベイク株式会社が製菓・製パン機械器具を製造しています。2026年3月期の外部顧客への売上高は13,697百万円でした。",
+      "customers": [
+        "外食産業をはじめとする飲食事業者",
+        "家庭用キッチンの購入者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸事業",
+      "description": "当社が保有する不動産を賃貸する事業です。2026年3月期の外部顧客への売上高は333百万円でした。",
+      "customers": [
+        "賃貸物件の入居者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "飲食店などに業務用厨房機器・家具を販売し、子会社が厨房機械器具や製菓・製パン機械器具を製造するほか、修理・保守サービス、家庭用キッチンの販売、不動産の賃貸を行います。",
+    "products": [
+      "業務用厨房機器・家具",
+      "業務用厨房機械器具（連結子会社が製造）",
+      "製菓・製パン機械器具（連結子会社が製造）",
+      "家庭用キッチン",
+      "業務用厨房機器の修理・保守サービス",
+      "賃貸用不動産"
+    ],
+    "customers": [
+      "外食産業をはじめとする飲食事業者",
+      "食品工場やスーパーマーケットなどの食品事業者",
+      "家庭用キッチンの購入者",
+      "賃貸物件の入居者"
+    ],
+    "revenueSources": [
+      "業務用厨房関連事業の売上高",
+      "不動産賃貸事業の売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "1951年に前身が設立された厨房機器の総合販売会社",
+        "description": "北沢産業は1951年に設立された日本黒耀石工業を前身とし、業務用厨房機器の販売と製造を手がけています。2026年3月31日現在の連結従業員数は382人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "厨房機器の販売・製造と保守サービス",
+        "description": "業務用厨房機器・家具や家庭用キッチンを販売し、連結子会社が業務用厨房機械器具と製菓・製パン機械器具を製造しています。厨房機器の修理・保守サービスと不動産の賃貸も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "外食産業などの厨房の利用者",
+        "description": "主な顧客は外食産業をはじめとする飲食事業者で、全国に15支店30営業所、6出張所の販売拠点を持ち、食品工場やスーパーマーケットなど中食分野への営業も進めています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "業務用厨房関連事業が売上の中心",
+        "description": "2026年3月期の売上高は14,031百万円で、業務用厨房関連事業が13,697百万円、不動産賃貸事業が333百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は220百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は220百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,12 +118,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8904254000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 459,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年３月31日）等を第75期の期首から適用しており、第75期以降の主要な経営指標等は当該会計基準等を適用した後の数値です。"
     },
     {
       "fiscalYear": "2023年3月期",
@@ -47,7 +139,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9360370000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 440,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +159,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10335642000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 419,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10783335000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 400,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11355566000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 382,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +207,167 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1951,
+      "title": "日本黒耀石工業株式会社を設立",
+      "description": "日本黒耀石工業株式会社を設立しました。",
+      "significance": "現在の会社の前身であり、事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "北沢産業株式会社を設立",
+      "description": "北沢産業株式会社を設立しました。",
+      "significance": "現在の商号を持つ会社が発足しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "川越工場を新設し、厨房機器の製造販売体制を確立",
+      "description": "埼玉県入間郡大井町に川越工場を新設し、「フライヤー」の増産体制に入るとともに、業務用の食品調理機器ならびに厨房機器の製造販売体制を確立しました。",
+      "significance": "販売に加えて自社製造を本格化させた転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "合併により再編し、株式を公開",
+      "description": "株式額面変更のため、同商号の別会社である北沢産業株式会社（旧・日本黒耀石工業株式会社）に合併し、本社を東京都渋谷区に設置しました。同年、株式を公開し、東京店頭銘柄に登録しました。",
+      "significance": "前身会社と統合して現在の北沢産業の体制が整い、株式公開を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "松下電器産業との共同開発による大型冷蔵庫の販売を開始",
+      "description": "松下電器産業株式会社との共同開発により、ユニット式業務用大型冷蔵庫の販売に入りました。",
+      "significance": "大手電機メーカーとの共同開発による商品展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "アメリカのホバート社と代理店契約を締結",
+      "description": "アメリカのホバート社との代理店契約を締結し、ホバート業務用厨房機器の販売に入りました。",
+      "significance": "海外メーカーの業務用厨房機器の取り扱いを広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "証券取引所への上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "サンベイクとエース工業を子会社化",
+      "description": "サンベイク株式会社とエース工業株式会社の株式を取得し、子会社化しました。",
+      "significance": "現在の製造子会社2社がグループに入り、厨房機械と製菓・製パン機械の製造体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "東証第一部銘柄となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "IHI回転機械から食器洗浄器などの事業を引き継ぐ",
+      "description": "株式会社IHI回転機械より、食器洗浄器及び回転棚の製造・販売・アフターサービスに関する事業譲渡を受けました。",
+      "significance": "食器洗浄器の製造から保守までを自社で担う体制を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場へ移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "連結子会社の北沢キープサービスを吸収合併",
+      "description": "連結子会社の株式会社北沢キープサービスを吸収合併しました。",
+      "significance": "グループの組織を簡素化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "本社を渋谷区代官山町へ移転",
+      "description": "本社ビル建替のため、東京都渋谷区代官山町６丁目６番に本社を移転しました。",
+      "significance": "現在の本社所在地への移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "galilei",
+      "relationship": "supplier",
+      "description": "当社の冷凍冷蔵庫等の仕入先です。良好な取引関係の維持・強化のため、当社は同社の株式を保有し、同社も当社の株式を保有しています。同社は2026年3月31日現在、当社の発行済株式（自己株式を除く）の5.80％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aeon",
+      "relationship": "customer",
+      "description": "当社の業務用厨房機器の販売先です。良好な取引関係の維持・強化のため、当社は同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mammy-mart-holding",
+      "relationship": "customer",
+      "description": "当社の業務用厨房機器の販売先です。良好な取引関係の維持・強化のため、当社は同社の株式を保有しています。同社は2025年10月１日付で株式会社マミーマートから商号変更しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +375,47 @@
       "publisher": "北沢産業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKDH.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YKDH",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "食品加工機器・厨房機器の総合販売商社として、自社ブランドの商品と世界の優れた商品の提供に加え、キッチンコーディネイト、厨房設備の設計施工、新商品開発、メンテナンスサービス、ファニチャー販売までを一体で提供するトータルサポートを経営方針としています。重点課題として、提案営業の推進とアフターサービス体制の充実による既存事業の収益性の向上と事業基盤の強化、食品加工場やスーパーマーケットを中心とした中食分野など新たな需要分野への取り組み強化、人材の確保と育成、省エネルギー型・省資源型製品の開発と販売を通じた持続可能な社会の実現への取り組みを挙げています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "業務用厨房機器の販売に、連結子会社による厨房機械器具と製菓・製パン機械器具の製造、修理・保守サービスを組み合わせ、厨房の企画や設備の設計施工から納入後の保守までをグループで担える体制を持っています。全国に15支店30営業所、6出張所の販売拠点を配し、24時間365日対応のサービス体制の充実を掲げています。",
+        "basis": "【事業の内容】の事業構成と、【経営方針、経営環境及び対処すべき課題等】のトータルサポートとサービス体制の記載、【沿革】の販売拠点数の記載",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "業務用厨房機器の総合販売会社として、連結子会社2社による製造機能を持ち、売上高のほとんどを業務用厨房関連事業が占めています。主要な取引先である外食産業の経営環境が厳しいなか、2026年3月期の売上高は14,031百万円と前期を下回りましたが、中食分野など新たな需要分野への営業展開を進めています。",
+        "basis": "【セグメント情報】の外部顧客への売上高と、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の主要取引先と売上高の記載",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

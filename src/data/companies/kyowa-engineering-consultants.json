@@ -4,15 +4,172 @@
   "name": "協和コンサルタンツ",
   "officialName": "株式会社協和コンサルタンツ",
   "nameEn": "KYOWA ENGINEERING CONSULTANTS Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Kyowa Engineering Consultants Co., Ltd.",
+  "description": "都市や港湾、空港などのインフラ整備に向けた調査・設計・施工管理を手がける建設コンサルタント会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "it",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "construction-consulting",
+      "name": "建設コンサルタント事業",
+      "description": "当社グループの主力事業です。当社が、都市、港湾、空港など建設事業全般における事業計画、企画、設計、測量、調査、施工計画、管理を担います。2025年11月期の外部顧客への売上高は7,011百万円で、グループ全体の大部分を占めます。海外業務を担う連結子会社の株式会社ケーイーシー・インターナショナルは清算手続中です。",
+      "customers": [
+        "国や地方自治体などの官公庁",
+        "防衛省",
+        "西日本高速道路株式会社"
+      ],
+      "children": [
+        {
+          "id": "domestic",
+          "name": "国内",
+          "description": "国内における土木・建築に関する調査・設計及び施工管理業務等です。2025年11月期の外部顧客への売上高は6,959百万円です。",
+          "customers": [
+            "国や地方自治体などの官公庁",
+            "インフラ事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "overseas",
+          "name": "海外",
+          "description": "海外における土木・建築に関する調査・設計及び施工管理業務等です。2025年11月期の外部顧客への売上高は51百万円です。",
+          "customers": [
+            "海外の発注者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "information-processing",
+      "name": "情報処理事業",
+      "description": "連結子会社の株式会社ケー・デー・シー（議決権の53.59％を保有）が営む事業です。情報処理サービス業務、人材派遣業務、情報処理機器の販売及びソフトウエアの開発・販売等を行います。2025年11月期の外部顧客への売上高は1,426百万円です。",
+      "customers": [
+        "官公庁",
+        "民間企業"
+      ],
+      "children": [
+        {
+          "id": "it-services",
+          "name": "情報処理サービス",
+          "description": "情報処理サービス業務と、情報処理機器の販売及びソフトウエアの開発・販売等です。2025年11月期の外部顧客への売上高は、情報処理サービスが339百万円、その他の収益が38百万円です。",
+          "customers": [
+            "官公庁",
+            "民間企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "staffing",
+          "name": "人材派遣等のサービス",
+          "description": "人材派遣業務を中心とするサービスです。2025年11月期の外部顧客への売上高は1,049百万円です。",
+          "customers": [
+            "官公庁",
+            "民間企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸・管理事業",
+      "description": "連結子会社の株式会社ケーイーシー商事が営む、不動産の賃貸・管理業務等を行う事業です。主に連結グループ内企業に対してサービスを提供しており、2025年11月期の外部顧客への売上高は3百万円です。",
+      "customers": [
+        "連結グループ内企業",
+        "賃貸物件のテナント"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "官公庁などを顧客に、建設事業の計画や企画、設計、測量、調査、施工管理を請け負い、業務の対価を得る事業モデルです。",
+    "products": [
+      "建設コンサルタント業務（事業計画・企画・設計・測量・調査・施工計画・管理）",
+      "情報処理サービス",
+      "人材派遣サービス",
+      "ソフトウエアの開発・販売と情報処理機器の販売",
+      "不動産の賃貸・管理"
+    ],
+    "customers": [
+      "国や地方自治体などの官公庁",
+      "高速道路会社などのインフラ事業者",
+      "民間企業"
+    ],
+    "revenueSources": [
+      "調査・設計・施工管理などの業務の対価",
+      "情報処理サービスの対価と人材派遣の料金",
+      "ソフトウエア・情報処理機器の販売代金",
+      "不動産の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "1961年に東京で設立された建設コンサルタントのグループ",
+        "description": "協和コンサルタンツは1961年に東京都練馬区で設立され、当社と連結子会社3社でグループを構成しています。2025年11月30日現在の連結従業員数は206人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "建設コンサルタントを中心に情報処理と不動産賃貸も提供",
+        "description": "建設事業全般における事業計画、企画、設計、測量、調査、施工計画と管理を行う建設コンサルタント事業を中心に、情報処理事業と不動産賃貸・管理事業を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "主な顧客は官公庁",
+        "description": "主な顧客は官公庁です。セグメント情報では、防衛省と西日本高速道路株式会社が主要な顧客として開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は8,441百万円",
+        "description": "2025年11月期の売上高は8,441百万円で、前連結会計年度に比べ4.7％増えました。事業別の売上高は、建設コンサルタント事業が7,011百万円、情報処理事業が1,426百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は610百万円",
+        "description": "2025年11月期の親会社株主に帰属する当期純利益は610百万円でした。前連結会計年度は512百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年11月期",
@@ -27,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2549838000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 220,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +204,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3094098000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 212,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第62期の期首から適用しており、第62期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年11月期",
@@ -67,7 +225,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3486049000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 214,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +245,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3997658000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 212,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +265,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4592821000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 206,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +273,99 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1961,
+      "title": "株式会社協和コンサルタンツを設立",
+      "description": "東京都練馬区に株式会社協和コンサルタンツを設立し、土木・建築に関する測量・設計の営業を開始しました。",
+      "significance": "建設コンサルタント事業を祖業とする当社の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "建設コンサルタント登録を受ける",
+      "description": "建設コンサルタント登録規程による建設コンサルタント登録を建設大臣より受けました。",
+      "significance": "主力事業である建設コンサルタント業務の公的な登録を受けた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "株式会社ケーイーシー商事を設立",
+      "description": "株式会社ケーイーシー商事（現連結子会社）を設立しました。",
+      "significance": "現在の不動産賃貸・管理事業を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "測量業者登録と地質調査業者登録を受ける",
+      "description": "測量業法による測量業者登録と、地質調査業者登録規程による地質調査業者登録を建設大臣より受けました。",
+      "significance": "測量・地質調査まで業務領域を広げ、総合的な建設コンサルタントとしての基盤を固めた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "株式会社ケーイーシー・インターナショナルを設立",
+      "description": "株式会社ケーイーシー・インターナショナル（現連結子会社）を設立しました。",
+      "significance": "海外における調査・設計及び施工管理業務を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "株式を店頭売買有価証券として登録",
+      "description": "当社株式を日本証券業協会の店頭売買有価証券として登録しました（現在の東京証券取引所スタンダード市場上場につながります）。",
+      "significance": "株式公開の節目となる出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "株式会社ケー・デー・シーを設立",
+      "description": "株式会社ケー・デー・シー（現連結子会社）を設立しました。",
+      "significance": "現在の情報処理事業を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所ＪＡＳＤＡＱ（スタンダード）市場からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "freesia-macross",
+      "relationship": "other-affiliated-company",
+      "description": "フリージア・マクロス株式会社は当社のその他の関係会社です。2025年11月30日現在、当社の議決権の47.60％を保有しており、当社役員との兼任があります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +373,40 @@
       "publisher": "株式会社協和コンサルタンツ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XMZO.pdf",
       "publishedAt": "2026-02-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XMZO",
+      "asOf": "2025-11-30",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 連結子会社の株式会社ケーイーシー・インターナショナルは清算手続中であります（事業の内容に記載）。本登録は2025年11月30日現在の構造で登録しています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "専門技術者集団として、防災・減災、国土強靭化や防衛施設整備などの需要を背景に、技術提案営業による受注量の確保、生成AI等のツール活用による生産性の向上と生産原価の低減、ISO9001の確実な運用による品質管理の徹底、若手を含む技術者の積極採用と人材育成による体制強化を、対処すべき課題として掲げています。",
+        "asOf": "2026-02-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "建設コンサルタント事業が売上高の大部分を占め、顧客の中心は官公庁です。最大の顧客は防衛省として開示されており、公共インフラや防衛施設整備の需要に業績が連動する構成です。",
+        "basis": "セグメント情報に印字された外部顧客への売上高の事業別内訳と主要な顧客ごとの情報（2025年11月期）",
+        "asOf": "2026-02-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年11月期",
     "asOf": "2025-11-30",

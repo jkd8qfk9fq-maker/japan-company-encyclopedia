@@ -4,15 +4,139 @@
   "name": "京阪神ビルディング",
   "officialName": "京阪神ビルディング株式会社",
   "nameEn": "Keihanshin Building Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Keihanshin Building Co., Ltd.",
+  "description": "競馬場の賃貸から始まり、オフィスビルやデータセンタービル、ウインズビル等の営業用建物を賃貸する不動産賃貸事業者です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "real-estate",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "land-building-leasing",
+      "name": "土地建物賃貸事業",
+      "description": "当社グループの唯一の報告セグメントです。当社、連結子会社２社及び持分法適用関連会社３社で構成され、オフィスビル、データセンタービル、ウインズビル（場外勝馬投票券発売所）、商業施設等の営業用建物を直接賃貸するほか、建物所有者から賃借した建物の転貸も行い、建物・機械設備の維持管理、清掃等のビル管理も含めています。2026年３月期の売上高は20,255百万円です。",
+      "customers": [
+        "日本中央競馬会",
+        "エクイニクス・ジャパン株式会社",
+        "ソフトバンク株式会社",
+        "オフィスビル等のテナント企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "data-center-buildings",
+          "name": "データセンタービル",
+          "description": "大阪都心部に計８棟を保有・賃貸しています。免震構造等の高い防災性能、大型非常用発電機による安定的な電力供給、先進のセキュリティシステムにより信頼性を確保し、30年以上にわたる賃貸実績に基づく保守管理サービスを行っています。2026年３月期の売上高は11,012百万円で、当社グループ最大のアセットタイプです。",
+          "customers": [
+            "エクイニクス・ジャパン株式会社",
+            "データセンターを利用するテナント企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "office-buildings",
+          "name": "オフィスビル",
+          "description": "大阪・東京のビジネス地区を中心に計８棟を保有・賃貸しています。2026年３月期の売上高は4,661百万円です。",
+          "customers": [
+            "オフィスビル等のテナント企業",
+            "ソフトバンク株式会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "wins-buildings",
+          "name": "ウインズビル",
+          "description": "日本中央競馬会（JRA）が主催するレースの投票券を場外で発売する施設で、京都・大阪・神戸の都心部に計５棟を保有し、日本中央競馬会に賃貸しています。創業時にさかのぼる歴史を持ち、固定賃料で賃貸しています。2026年３月期の売上高は3,351百万円です。",
+          "customers": [
+            "日本中央競馬会"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "commercial-logistics",
+          "name": "商業施設・物流倉庫等",
+          "description": "首都圏・関西圏を中心に全国で７棟の商業施設・物流倉庫等を保有・賃貸しています。2026年３月期の売上高は1,229百万円です。",
+          "customers": [
+            "商業施設・物流倉庫等のテナント企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "保有する営業用建物をテナントに賃貸して賃料収入を得ており、建物の維持管理や清掃等のビル管理もあわせて行う事業モデルです。",
+    "products": [
+      "オフィスビルの賃貸",
+      "データセンタービルの賃貸",
+      "ウインズビル（場外勝馬投票券発売所）の賃貸",
+      "商業施設・物流倉庫等の賃貸",
+      "ビル管理（建物・機械設備の維持管理、清掃等）"
+    ],
+    "customers": [
+      "日本中央競馬会",
+      "エクイニクス・ジャパン株式会社",
+      "ソフトバンク株式会社",
+      "オフィスビル等のテナント企業"
+    ],
+    "revenueSources": [
+      "建物の賃貸料収入",
+      "ビル管理の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "京阪神ビルディング",
+        "description": "大阪市中央区に本店を置く会社です。当社と連結子会社２社、持分法適用関連会社３社でグループを構成し、2026年３月期の連結従業員数は66人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "営業用建物の賃貸とビル管理",
+        "description": "オフィスビル、データセンタービル、ウインズビル、商業施設等の営業用建物を直接賃貸するほか、賃借した建物の転貸も行い、建物・機械設備の維持管理や清掃等のビル管理も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "テナント企業と日本中央競馬会",
+        "description": "日本中央競馬会やエクイニクス・ジャパン、ソフトバンクをはじめとするテナント企業・団体が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年３月期の売上高は20,255百万円",
+        "description": "2026年３月期の売上高は20,255百万円で、前期比103.4％となりました。データセンタービルが11,012百万円、オフィスビルが4,661百万円を占めます。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年３月期の親会社株主に帰属する当期純利益は4,675百万円",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は4,675百万円で、前期比106.5％となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +151,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 70510000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 51,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +171,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 70870000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 53,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +191,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 74874000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 60,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +211,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 76323000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 64,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +231,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 81397000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 66,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +239,262 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1948,
+      "title": "京阪神競馬株式会社を設立",
+      "description": "競馬事業を目的として、京阪神競馬株式会社を設立しました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "場外馬券発売所と阪神競馬場の賃貸を開始",
+      "description": "梅田・難波両場外馬券発売所（現・ウインズ梅田Ｂ館、ウインズ難波）が竣工して賃貸を始め、阪神競馬場が竣工して農林省に賃貸しました。",
+      "significance": "現在のウインズビル事業と建物賃貸の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "阪神競馬場を日本中央競馬会へ譲渡",
+      "description": "阪神競馬場を日本中央競馬会へ譲渡し、代替取得した兵庫県宝塚市の土地を造成して宅地分譲を行いました。",
+      "significance": "競馬事業から不動産事業への転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "京阪神不動産株式会社に社名変更",
+      "description": "社名を京阪神不動産株式会社に変更しました。",
+      "significance": "不動産事業者としての出発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "瓦町ビルが竣工",
+      "description": "大阪市中央区の「瓦町ビル」が竣工し、賃貸を始めました。",
+      "significance": "現在の本店所在地のビルです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所（市場第一部）に上場しました。",
+      "significance": "東京証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "京阪神ビルディング株式会社に社名変更",
+      "description": "社名を京阪神ビルディング株式会社に変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "米国子会社 Keihanshin Building America を設立",
+      "description": "子会社 Keihanshin Building America Co., Ltd.を設立しました。",
+      "significance": "海外投資の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "小牧物流センターを取得",
+      "description": "愛知県小牧市の「小牧物流センター」を購入し、賃貸を始めました。",
+      "significance": "物流倉庫への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "softbank",
+      "relationship": "customer",
+      "description": "ソフトバンク株式会社は、主要な顧客ごとの情報に載る主要な顧客で、2026年３月期の売上高に対する割合は11.8％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "companyId": "kinden",
+      "relationship": "supplier",
+      "description": "株式会社きんでんは、当社グループが保有・管理するビルにおいて建築及び設備面での取引実績がある取引先で、当社は同社株式380,000株を保有しています。同社は2026年３月31日現在、当社株式の2.92％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sansei-technologies",
+      "relationship": "supplier",
+      "description": "三精テクノロジーズ株式会社は、当社グループが保有・管理するビルにおいて建築及び設備面での取引実績がある取引先で、当社は同社株式828,500株を保有しています。同社は2026年３月31日現在、当社株式の1.81％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "meidensha",
+      "relationship": "supplier",
+      "description": "株式会社明電舎は、当社グループが保有・管理するビルにおいて建築及び設備面での取引実績があり、当社が保有する瓦町ビルにテナントとして入居している取引先で、当社は同社株式175,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daikin-industries",
+      "relationship": "supplier",
+      "description": "ダイキン工業株式会社は、当社グループが保有・管理するビルにおいて建築及び設備面での取引実績がある取引先で、当社は同社株式50,900株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kajima",
+      "relationship": "supplier",
+      "description": "鹿島建設株式会社は、当社グループが保有・管理するビルにおいて建築及び設備面での取引実績がある取引先で、当社は同社株式143,000株を保有しています。同社は2026年３月31日現在、当社株式の2.89％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "maruichi-steel-tube",
+      "relationship": "supplier",
+      "description": "丸一鋼管株式会社は、当社グループが保有・管理するビルにおいて建築及び設備面での取引実績がある取引先で、当社は同社株式465,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nohmi-bosai",
+      "relationship": "supplier",
+      "description": "能美防災株式会社は、当社グループが保有・管理するビルにおいて建築及び設備面での取引実績がある取引先で、当社は同社株式96,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daiwa-house-industry",
+      "relationship": "supplier",
+      "description": "大和ハウス工業株式会社は、当社グループが保有・管理するビルにおいて建築及び設備面での取引実績がある取引先で、当社は同社株式75,600株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sanoyas-holdings",
+      "relationship": "supplier",
+      "description": "サノヤスホールディングス株式会社は、当社グループが保有・管理するビルにおいて建築及び設備面での取引実績がある取引先で、当社は同社株式311,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nankai",
+      "relationship": "business-partner",
+      "description": "南海電気鉄道株式会社とは、当社が日本中央競馬会に賃貸しているウインズ難波において共同事業を展開しており、当社は同社株式48,440株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumiseki-holdings",
+      "relationship": "customer",
+      "description": "住石ホールディングス株式会社は、当社が保有する虎ノ門ビルにテナントとして入居しており、当社は同社株式20,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-hyakujushi-bank",
+      "relationship": "customer",
+      "description": "株式会社百十四銀行は、当社の取引銀行であり、当社が保有する御堂筋ビルにテナントとして入居しています。当社は同行株式62,625株を保有し、同行は2026年３月31日現在、当社株式の1.87％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-mitsui-financial-group",
+      "relationship": "business-partner",
+      "description": "株式会社三井住友フィナンシャルグループは、子会社の株式会社三井住友銀行が当社の主要取引銀行であり、三井住友銀行ほかのグループ会社が当社の御堂筋ビル等にテナントとして入居しています。当社は同社株式424,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-mitsui-trust-group",
+      "relationship": "business-partner",
+      "description": "三井住友トラストグループ株式会社は、子会社の三井住友信託銀行株式会社が当社の取引銀行であり、安定的・継続的な資金調達を図る関係にあります。当社は同社株式142,208株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "san-ju-san-financial-group",
+      "relationship": "business-partner",
+      "description": "株式会社三十三フィナンシャルグループは、子会社の株式会社三十三銀行が当社の取引銀行であり、同行が当社の淀屋橋ビルにテナントとして入居しています。当社は同社株式126,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aichi-financial-group",
+      "relationship": "business-partner",
+      "description": "株式会社あいちフィナンシャルグループは、子会社の株式会社あいち銀行が当社の取引銀行であり、安定的・継続的な資金調達を図る関係にあります。当社は同社株式139,860株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mebuki-financial-group",
+      "relationship": "business-partner",
+      "description": "株式会社めぶきフィナンシャルグループは、子会社の株式会社足利銀行及び株式会社常陽銀行が当社の取引銀行であり、安定的・継続的な資金調達を図る関係にあります。当社は同社株式81,900株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +502,51 @@
       "publisher": "京阪神ビルディング株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC9O.pdf",
       "publishedAt": "2026-06-17",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YC9O",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 重要な後発事象として、2026年５月13日開催の取締役会において、2026年６月30日を基準日として2026年７月１日付で普通株式１株につき２株の割合で株式分割を行うことを決議した旨が注記されています。本登録は2026年３月31日現在の体制に基づいています。",
+      "businessStructure: 重要な後発事象として、2026年５月13日開催の取締役会において、2026年６月30日を基準日として2026年７月１日付で普通株式１株につき２株の割合で株式分割を行うことを決議した旨が注記されています。本登録は2026年３月31日現在の体制に基づいています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2023年５月に策定し2024年９月に一部を見直した長期経営計画（2024年３月期から2033年３月期）の下、創立100周年（2048年）を見据えた成長基盤の確立を目指し、長期保有資産の積み上げを継続するとともに、資産回転型事業による資産の拡充と組み換え、エクイティ投資・海外投資、一段と多様なアセットタイプへの投資に取り組み、ストック事業とフロー事業のバランスのとれた収益構造への転換を図る方針です。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "データセンタービルは大阪都心部に８棟を保有し、30年以上にわたる賃貸実績に基づく保守管理サービスが高く評価されています。ウインズビルは固定賃料で賃貸しているため、場外発売の売上変動の影響を受けにくい安定した収益を生んでいます。当期末時点の空室率は0.39％と低い水準に留まり、高い稼働率を維持しています。",
+        "basis": "事業の内容（土地建物賃貸事業の内容）と経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（アセットタイプ別の状況と空室率）に基づきます。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の内訳はデータセンタービルが11,012百万円で最も大きく、オフィスビルが4,661百万円、ウインズビルが3,351百万円、商業施設・物流倉庫等が1,229百万円です。主要な顧客はエクイニクス・ジャパン（売上高の17.9％）、日本中央競馬会（同16.4％）、ソフトバンク（同11.8％）で、３先で売上の約半分を占めています。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（アセットタイプ別の売上高）とセグメント関連情報（主要な顧客ごとの情報）に基づきます。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

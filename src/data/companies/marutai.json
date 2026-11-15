@@ -4,14 +4,157 @@
   "name": "マルタイ",
   "officialName": "株式会社マルタイ",
   "nameEn": "MARUTAI CO.,LTD.",
-  "description": null,
+  "shortNameEn": "MARUTAI CO.,LTD.",
+  "description": "棒ラーメンや長崎皿うどん、カップめんなどの即席めんを製造販売する、福岡市に本社を置く食品会社です。",
   "listings": [
     {
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "food-manufacturing",
+      "name": "食品製造事業",
+      "description": "即席の棒ラーメン、皿うどん、カップめん、袋めんなどを製造販売する、単一セグメントの事業です。2026年3月期の売上高は9,552百万円でした。福岡工場、佐賀工場、北波多工場の3工場で即席棒ラーメンや皿うどんなどを製造し、カップめんはサンヨー食品株式会社とエースコック株式会社へ、袋めんはサンヨー食品株式会社へ製造を委託しています。販売は福岡、広島、大阪、名古屋、東京の5営業所と国内事業部、海外事業部が担い、特約店（一次問屋）や卸売店を経て量販店やコンビニエンスストアなどへ販売しています。",
+      "customers": [
+        "量販店",
+        "コンビニエンスストア",
+        "問屋・卸売店"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "bo-ramen",
+          "name": "棒ラーメン",
+          "description": "マルタイラーメンや屋台九州味棒ラーメン、九州ご当地シリーズ（博多、熊本、長崎、鹿児島、宮崎、佐賀、大分、久留米）などの即席棒ラーメンです。2026年3月期の販売実績は3,675百万円でした。",
+          "customers": [
+            "量販店",
+            "コンビニエンスストア",
+            "問屋・卸売店"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "cup-men",
+          "name": "カップめん",
+          "description": "長崎ちゃんぽんや高菜ラーメンなどのカップめんです。製造はサンヨー食品株式会社とエースコック株式会社へ委託しています。2026年3月期の販売実績は3,101百万円でした。",
+          "customers": [
+            "量販店",
+            "コンビニエンスストア",
+            "問屋・卸売店"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "sara-udon",
+          "name": "皿うどん",
+          "description": "長崎皿うどんなどの皿うどんです。2026年3月期の販売実績は2,420百万円でした。",
+          "customers": [
+            "量販店",
+            "コンビニエンスストア",
+            "問屋・卸売店"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "fukuro-men",
+          "name": "袋めん",
+          "description": "屋台ラーメンとんこつ味や長崎ちゃんぽん麺などの袋めんです。製造はサンヨー食品株式会社へ委託しています。2026年3月期の販売実績は329百万円でした。",
+          "customers": [
+            "量販店",
+            "コンビニエンスストア",
+            "問屋・卸売店"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-products",
+          "name": "その他",
+          "description": "カップしるこなどのその他の製品です。2026年3月期の販売実績は26百万円でした。",
+          "customers": [
+            "量販店",
+            "コンビニエンスストア",
+            "問屋・卸売店"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "即席の棒ラーメン、皿うどん、カップめん、袋めんを自社工場と製造委託でつくり、問屋や卸売店を経て量販店などへ販売する会社です。",
+    "products": [
+      "棒ラーメン（マルタイラーメン、九州ご当地シリーズなど）",
+      "長崎皿うどん",
+      "カップめん（長崎ちゃんぽん、高菜ラーメンなど）",
+      "袋めん（屋台ラーメンとんこつ味、長崎ちゃんぽん麺）",
+      "カップしるこ"
+    ],
+    "customers": [
+      "量販店",
+      "コンビニエンスストア",
+      "問屋・卸売店",
+      "通信販売の利用者"
+    ],
+    "revenueSources": [
+      "棒ラーメン、皿うどん、カップめん、袋めんなどの製品販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "マルタイ",
+        "description": "マルタイは福岡市西区に本社を置く食品会社で、連結財務諸表は作成していません。2026年3月31日現在の従業員数は179人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "即席めんの製造販売",
+        "description": "福岡工場、佐賀工場、北波多工場の3工場で棒ラーメンや皿うどんなどを製造し、カップめんと袋めんは他の食品会社へ製造を委託して、即席めん製品をそろえています。"
+      },
+      {
+        "kind": "customer",
+        "title": "問屋・卸売店を経て量販店などへ",
+        "description": "福岡、広島、大阪、名古屋、東京の5営業所と国内事業部、海外事業部が、特約店（一次問屋）や卸売店を経て量販店やコンビニエンスストアなどへ販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高9,552百万円",
+        "description": "2026年3月期の売上高は9,552百万円で、前期から0.5％減りました。内訳は、棒ラーメンが3,675百万円、カップめんが3,101百万円、皿うどんが2,420百万円、袋めんが329百万円、その他が26百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益424百万円",
+        "description": "2026年3月期の当期純利益は424百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -26,11 +169,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9021770000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 184,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -48,11 +191,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9162141000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 181,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -70,11 +213,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9529193000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 179,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -92,11 +235,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9892345000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 176,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -114,18 +257,208 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10379361000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 179,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1960,
+      "title": "株式会社泰明堂を設立",
+      "description": "即席めんの製造販売を目的として、実質上の存続会社である株式会社泰明堂を福岡市に設立し、同年に福岡工場を設置して即席ラーメンの製造を開始しました。",
+      "significance": "現在のマルタイの実質的な起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "販売部門を分離し株式会社マルタイを設立",
+      "description": "販売部門を分離し、形式上の存続会社である株式会社マルタイを設立しました。",
+      "significance": "現在の法人格の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "株式会社佐賀泰明堂を設立",
+      "description": "株式会社佐賀泰明堂を設立し、佐賀県に工場（現在の北波多工場）を置きました。",
+      "significance": "九州での生産拠点が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "袋めん「屋台ラーメン」を発売",
+      "description": "袋めん「屋台ラーメン」を発売しました。",
+      "significance": "現在も続く袋めん製品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "株式会社泰明堂を吸収合併",
+      "description": "株式会社マルタイが株式会社泰明堂を吸収合併し、商号をマルタイ泰明堂株式会社としました。",
+      "significance": "実質上の存続会社と形式上の存続会社が一体になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "カップめん「長崎ちゃんぽん」を発売",
+      "description": "カップめん「長崎ちゃんぽん」を発売しました。",
+      "significance": "現在のカップめん事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "「長崎皿うどん」を発売",
+      "description": "油揚げ焼きそば「長崎皿うどん」を発売しました。",
+      "significance": "現在の主力製品の一つである皿うどんの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "商号を株式会社マルタイに変更",
+      "description": "商号を現在の株式会社マルタイに変更し、CIマークを設定しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "福岡証券取引所に株式上場",
+      "description": "福岡証券取引所に株式を上場しました。",
+      "significance": "上場会社としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "通信販売を開始",
+      "description": "通信販売を開始しました。",
+      "significance": "直販チャネルの開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "サンヨー食品と資本・業務提携の基本合意を締結",
+      "description": "サンヨー食品株式会社と資本・業務提携に関する基本合意書を締結しました。",
+      "significance": "現在の製造委託と資本関係につながる提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "袋めんの製造委託を開始",
+      "description": "サンヨー食品株式会社へ袋めん（長崎皿うどんを除く）の製造を委託しました。",
+      "significance": "製造委託の体制が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "カップめんの製造委託を開始し本店を移転",
+      "description": "サンヨー食品株式会社へカップめんの製造を委託し、本店を福岡市西区今宿青木へ移転しました。",
+      "significance": "現在の本店所在地と製造委託体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "福岡工場を移転",
+      "description": "福岡工場を福岡市西区今宿青木へ移転しました。",
+      "significance": "本社と福岡工場が同じ所在地に集まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "ISO9001を取得",
+      "description": "本社・福岡工場において、品質マネジメントシステム規格ISO9001：2008を取得しました。",
+      "significance": "品質管理体制の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "佐賀工場が竣工",
+      "description": "佐賀県唐津市石志に佐賀工場が竣工し、日本農林規格（JAS）の認証を取得しました。本社・福岡工場は食品安全マネジメントシステムFSSC22000を取得しました。",
+      "significance": "棒ラーメンの主力生産拠点が新設されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "佐賀工場がFSSC22000を取得",
+      "description": "佐賀工場が食品安全マネジメントシステムFSSC22000を取得しました。",
+      "significance": "全工場での食品安全体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "saibu-gas-holdings",
+      "relationship": "other-affiliated-company",
+      "description": "西部ガスホールディングス株式会社は、その他の関係会社として、2026年3月31日現在、当社の議決権の33.58％を保有しています。関係内容として、同社の子会社による役員の兼任等があることが印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "kato-sangyo",
+      "relationship": "customer",
+      "description": "加藤産業株式会社は、主要な顧客ごとの情報に当社の主要な販売先として印字されている食品卸売会社です。当社は同社へ製品を販売しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -133,13 +466,47 @@
       "publisher": "株式会社マルタイ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YG8L.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YG8L",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2022年3月に竣工した佐賀工場の費用負担に対応するため、収益の改善を最優先とし、生産効率の向上や運搬費をはじめとする諸経費の削減を推進するとともに、ブランド価値の高い棒ラーメン、皿うどんの販売拡大を基本戦略に据えています。販売面では新製品の研究・開発による新規需要の開拓、海外向けや業務用の販売拡大、販売シェアが低い関東地区でのブランド力と認知度の向上に取り組むとしています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "発売から60年以上支持されてきた棒ラーメンを中心に、長崎皿うどんや長崎ちゃんぽんなど地域に根ざした製品群を持ち、3工場での自社製造と、カップめんや袋めんの製造委託を組み合わせた生産体制が、提供価値の土台になっています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、主力製品の棒ラーメンが発売から60年以上支持されてきたことが印字され、【事業の内容】に、3工場での製造とカップめん・袋めんの製造委託の体制が印字されています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "福岡証券取引所に単独で上場する即席めんの製造販売会社で、九州のご当地の味をうたうシリーズ製品を展開し、特約店や卸売店を経て全国の量販店やコンビニエンスストアなどへ販売しています。",
+        "basis": "【事業の内容】に、九州ご当地シリーズの製品と、特約店（一次問屋）や卸売店を経て量販店、コンビニエンスストア等へ販売する体制が印字され、表紙に上場取引所が福岡証券取引所であることが印字されています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

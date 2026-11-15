@@ -4,15 +4,96 @@
   "name": "福留ハム",
   "officialName": "福留ハム株式会社",
   "nameEn": "FUKUTOME MEAT PACKERS,LTD.",
-  "description": null,
+  "shortNameEn": "FUKUTOME MEAT PACKERS, LTD.",
+  "description": "広島県を地盤に、ハム・ソーセージ等の加工食品と食肉の製造・販売を行う食肉加工メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "processed-foods",
+      "name": "加工食品事業",
+      "description": "ハム、プレスハム、ソーセージ、惣菜等を製造及び仕入・販売する事業です。2026年3月期の外部顧客への売上高は10,326百万円です。広島工場、熊本工場、岡山工場が生産拠点です。",
+      "customers": [
+        "量販店・スーパーマーケット等の小売事業者",
+        "食品卸売業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "meat",
+      "name": "食肉事業",
+      "description": "食肉及び食肉包装加工製品を製造及び仕入・販売する事業です。2026年3月期の外部顧客への売上高は13,430百万円で、連結売上高の中心です。原料供給を目的とする連結子会社の株式会社福留と佐賀県枝肉出荷株式会社が食肉の仕入を担っています。",
+      "customers": [
+        "量販店・スーパーマーケット等の小売事業者",
+        "食品卸売業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "ハム・ソーセージ・惣菜等の加工食品と、食肉及び食肉包装加工製品を製造し、仕入・販売も行っています。",
+    "products": [
+      "ハム・プレスハム・ソーセージ",
+      "惣菜等の加工食品",
+      "食肉（牛肉・豚肉等）",
+      "食肉包装加工製品"
+    ],
+    "customers": [
+      "量販店・スーパーマーケット等の小売事業者",
+      "食品卸売業者",
+      "外食事業者"
+    ],
+    "revenueSources": [
+      "加工食品の販売代金",
+      "食肉・食肉包装加工製品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "福留ハムグループ",
+        "description": "当社と連結子会社2社の計3社で構成されるグループです。2026年3月31日現在の連結従業員数は325人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "加工食品と食肉",
+        "description": "ハム・ソーセージ・惣菜などの加工食品と、食肉や食肉包装加工製品を製造し、仕入・販売も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "小売事業者と卸売業者",
+        "description": "量販店などの小売事業者や食品卸売業者などが顧客です。売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は23,756百万円で、前連結会計年度と比べて3.5％減少しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は317百万円でした。前連結会計年度は親会社株主に帰属する当期純損失640百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +108,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3451000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 362,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +128,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2227000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 361,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +148,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2369000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 349,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +168,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1847000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 351,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2489000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 325,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +196,202 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1948,
+      "title": "福留ハム製造所を創設",
+      "description": "初代取締役社長の中島治が、広島市福島町において食肉加工品の製造販売を目的として、個人経営で福留ハム製造所を創設しました。",
+      "significance": "現在の福留ハムの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "福留ハム株式会社を設立",
+      "description": "福留ハム製造所を株式会社に改組し、福留ハム株式会社を設立しました。本店を広島市福島町に置き、食肉及び食肉加工品の製造販売を開始しました。",
+      "significance": "株式会社としての始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "吸収合併により商号を福留ハム株式会社に変更",
+      "description": "株式の額面金額を500円から50円に変更するため、福留食品工業株式会社に吸収合併され、商号を福留ハム株式会社に変更しました。",
+      "significance": "現在の商号の由来です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "広島工場を新設",
+      "description": "広島県安佐郡可部町に広島工場を新設しました。",
+      "significance": "現在の主力生産拠点の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "熊本工場を新設",
+      "description": "熊本県鹿本郡植木町に熊本工場を新設しました。",
+      "significance": "九州の生産拠点の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "広島証券取引所に上場",
+      "description": "広島証券取引所に株式を上場しました。同年、広島市西区草津港に本社ビルを新築し、本店及び本社事務所を移転しています。",
+      "significance": "株式上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式会社福留を設立",
+      "description": "広島市安佐北区に、原料仕入担当の子会社として株式会社福留を設立しました。",
+      "significance": "現在の連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所と広島証券取引所との合併により、東京証券取引所市場第二部に上場しました。",
+      "significance": "東京証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "佐賀県枝肉出荷株式会社を子会社化",
+      "description": "佐賀県枝肉出荷株式会社の株式を取得し、子会社化しました。",
+      "significance": "現在の連結子会社の編入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "トリゼンフーズ株式会社及び双日食料株式会社と業務提携契約を締結",
+      "description": "2025年10月に、トリゼンフーズ株式会社及び双日食料株式会社との業務提携契約を締結しました。",
+      "significance": "事業再構築計画と一体の提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "本店及び本社事務所を広島市安佐北区三入に移転",
+      "description": "2026年3月に、本店及び本社事務所を広島市安佐北区三入に移転しました。本社機能は同年2月に広島工場へ移転・集約されています。",
+      "significance": "現在の本店所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "aeon",
+      "relationship": "customer",
+      "description": "商品の販売先で販路の維持・強化のため株式を保有しており、加工食品事業・食肉事業で取引を行っています。2026年3月31日現在、当社が株式29,772株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fuji-8278",
+      "relationship": "customer",
+      "description": "商品の販売先で販路の維持・強化のため株式を保有しており、加工食品事業・食肉事業で取引を行っています。2026年3月31日現在、当社が株式218,056株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "om2-network",
+      "relationship": "customer",
+      "description": "商品の販売先で販路の維持・強化のため株式を保有しており、加工食品事業・食肉事業で取引を行っています。2026年3月31日現在、当社が株式214,355株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "retail-partners",
+      "relationship": "customer",
+      "description": "商品の販売先で販路の維持・強化のため株式を保有しており、加工食品事業・食肉事業で取引を行っています。2026年3月31日現在、当社が株式65,674株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "halows",
+      "relationship": "customer",
+      "description": "商品の販売先で販路の維持・強化のため株式を保有しており、加工食品事業・食肉事業で取引を行っています。2026年3月31日現在、当社が株式11,523株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toho",
+      "relationship": "customer",
+      "description": "商品の販売先で販路の維持・強化のため株式を保有しており、加工食品事業・食肉事業で取引を行っています。2026年3月31日現在、当社が株式4,536株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "maruyoshi-center",
+      "relationship": "customer",
+      "description": "商品の販売先で販路の維持・強化のため株式を保有しており、加工食品事業・食肉事業で取引を行っています。2026年3月31日現在、当社が株式300株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hayashikane-sangyo",
+      "relationship": "business-partner",
+      "description": "業務上の提携をしており、加工食品事業・食肉事業で取引があることから、業務提携等の関係にあります。2026年3月31日現在、当社が株式20,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +399,58 @@
       "publisher": "福留ハム株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHU1.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YHU1",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 当社グループは、2026年3月期において8期連続で営業損失を計上し、営業活動によるキャッシュ・フローが4期連続でマイナスとなったことから、継続企業の前提に重要な疑義を生じさせるような事象又は状況が存在しています。有報は、現金及び預金、短期間に資金化可能な投資有価証券、取引金融機関との当座貸越契約の未実行残高等の資金余力を理由に、継続企業の前提に関する重要な不確実性は認められないと判断しています。"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念「お客様第一」のもと、「安心・安全・美味しさ・お役立ち」を追求し、高付加価値の製品の提供に取り組んでいます。2025年10月にトリゼンフーズ株式会社及び双日食料株式会社と業務提携を締結し、同時に2026年3月期から2029年3月期の4カ年における「事業再構築計画」を策定して、新商品の投入、既存事業の採算改善、機能集約、基幹システム刷新、人材活性化、業務提携を通じたクロスセルと製造受託の7つの施策を進めています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "成長戦略は、原材料価格や諸コストの上昇と価格競争の激化が続く環境のもとで、業務提携による販路・製造面の相互活用と、機能集約や基幹システム刷新による固定費の削減を組み合わせ、収益体質の再構築を図ることに重点が置かれています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の経営方針・事業再構築計画の記述と、セグメント情報のセグメントごとの外部顧客への売上高、MD&Aの経営成績等の概要に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "無塩せきの新商品「ＭＩＲＡＩ」シリーズが健康志向の消費者に受け入れられ、生産重量・販売額ともに計画以上に伸びています。広島・熊本・岡山の生産拠点と、原料供給を担う連結子会社による仕入体制を持ち、加工食品と食肉の両事業を展開していることが特徴です。",
+        "basis": "【事業の内容】の事業概要と、MD&Aのセグメントごとの経営成績、研究開発活動の記述に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上は国内のみで、本邦以外の外部顧客への売上高はありません。単一の顧客への集中はなく、2026年3月期の事業別売上高は食肉事業13,430百万円、加工食品事業10,326百万円です。連結従業員数は325人の中規模の食肉加工メーカーです。",
+        "basis": "セグメント情報の関連情報（地域ごとの情報、主要な顧客ごとの情報）と、セグメントごとの外部顧客への売上高、主要な経営指標等の従業員数に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

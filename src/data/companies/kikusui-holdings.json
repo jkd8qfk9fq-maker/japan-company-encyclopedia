@@ -4,15 +4,133 @@
   "name": "菊水ホールディングス",
   "officialName": "菊水ホールディングス株式会社",
   "nameEn": "KIKUSUI HOLDINGS CORPORATION",
-  "description": null,
+  "shortNameEn": "KIKUSUI HOLDINGS CORPORATION",
+  "description": "電子計測器と電源機器の開発・製造・販売を行う菊水電子工業グループの持株会社で、修理・校正サービスも手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "electronic-measurement-equipment",
+      "name": "電気計測器事業",
+      "description": "電気計測器等の製造、販売を行う単一セグメントの事業です。2026年3月期の売上高は14,687百万円です。連結子会社の菊水電子工業株式会社が研究開発、販売並びに修理を、菊水エムズ株式会社が製造を担い、中国、米国、ドイツ、インドの販売子会社を通じて海外でも販売と修理を行っています。",
+      "customers": [
+        "自動車関連メーカー",
+        "電池関連メーカー",
+        "半導体関連メーカー",
+        "データセンター関連事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "power-equipment",
+          "name": "電源機器",
+          "description": "直流電源、交流電源、電子負荷装置などの電源機器です。車載関連市場、エネルギー関連市場、半導体関連市場、データセンター関連市場、宇宙産業市場などへの評価試験や製造設備用として販売されています。2026年3月期の外部顧客への売上高は10,762百万円です。",
+          "customers": [
+            "自動車関連メーカー",
+            "半導体関連メーカー",
+            "データセンター関連事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "electronic-measurement-instruments",
+          "name": "電子計測器",
+          "description": "安全関連試験機器や航空用電子機器の測定器などの電子計測器です。安全関連試験機器はEV用バッテリの耐電圧・絶縁抵抗試験用として電池関連市場向けに販売されています。2026年3月期の外部顧客への売上高は3,369百万円です。",
+          "customers": [
+            "電池関連メーカー",
+            "航空・防衛関連事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "repair-calibration-services",
+          "name": "修理・校正サービス等",
+          "description": "販売した電気計測器等の修理と校正を行うサービスです。国内のほか、中国、米国、ヨーロッパ、インドの販売子会社でも修理を行っています。2026年3月期の外部顧客への売上高は555百万円です。",
+          "customers": [
+            "自動車関連メーカー",
+            "電池関連メーカー",
+            "半導体関連メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "持株会社としてグループを統括し、子会社が電源機器や電子計測器を開発・製造して、自動車やエネルギー、半導体などの市場へ販売し、修理・校正でも収益を得る仕組みです。",
+    "products": [
+      "直流電源",
+      "交流電源",
+      "電子負荷装置",
+      "安全関連試験機器",
+      "航空用電子機器の測定器"
+    ],
+    "customers": [
+      "自動車関連メーカー",
+      "電池関連メーカー",
+      "半導体関連メーカー",
+      "データセンター関連事業者",
+      "航空・防衛関連事業者"
+    ],
+    "revenueSources": [
+      "電源機器の販売代金",
+      "電子計測器の販売代金",
+      "修理・校正サービスの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "菊水ホールディングス",
+        "description": "1949年に創業した菊水電波研究所を前身とし、2022年10月に持株会社体制へ移行した会社です。本社は神奈川県横浜市都筑区にあり、東京証券取引所スタンダード市場に上場しています。2026年3月31日現在の連結従業員数は345人で、連結子会社は7社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "電源機器と電子計測器",
+        "description": "直流電源、交流電源、電子負荷装置などの電源機器と、安全関連試験機器をはじめとする電子計測器を提供し、修理・校正サービスも行っています。研究開発、販売並びに修理は菊水電子工業株式会社が、製造は菊水エムズ株式会社が担っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車、エネルギー、半導体などの市場",
+        "description": "eモビリティ、次世代エネルギー、パワー半導体、データセンターの4市場を重点市場とし、車載関連や電池関連、半導体関連のメーカーなどに販売しています。日本電計株式会社などの販売代理店を通じた販売と直接販売があり、中国、米国、ドイツ、インドの販売子会社が海外を担っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高14,687百万円",
+        "description": "2026年3月期の売上高は14,687百万円で、前期の13,429百万円から9.4％増えました。電源機器が10,762百万円、電子計測器が3,369百万円、修理・校正サービス等が555百万円で、車載関連市場、エネルギー関連市場、半導体関連市場、データセンター関連市場などの設備投資需要を取り込みました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益1,609百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,609百万円で、前期の1,439百万円から11.8％増えました。売上高の増加が利益の伸びを支えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +145,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10917275000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 317,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +165,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12072176000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 322,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +185,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13285799000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 320,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +205,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14062391000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 334,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号 2022年10月28日）等を第74期の期首から適用しています。なお、連結財務諸表に与える影響はありません。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +226,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15693750000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 345,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +234,185 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1949,
+      "title": "菊水電波研究所を創業",
+      "description": "東京都品川区中延町において小林鉦が個人経営の菊水電波研究所を創業し、ラジオ部品、通信機部品の製造販売を開始しました。",
+      "significance": "現在の菊水ホールディングスの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "株式会社菊水電波を設立",
+      "description": "東京都大田区に移転し、株式会社に改組して株式会社菊水電波を設立しました。",
+      "significance": "法人としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "電子計測器の開発に成功",
+      "description": "電子計測器の開発に成功しました。",
+      "significance": "現在の主力である電子計測器事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "オシロスコープの生産、販売を開始",
+      "description": "オシロスコープの生産、販売を開始しました。",
+      "significance": "計測器の製品展開が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "直流安定化電源装置の生産、販売を開始",
+      "description": "直流安定化電源装置の生産、販売を開始しました。",
+      "significance": "現在の売上の中心である電源機器の源流です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "菊水電子工業株式会社に商号変更",
+      "description": "商号を菊水電子工業株式会社に変更しました。",
+      "significance": "電子計測器メーカーとしての社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "フジテック株式会社を設立",
+      "description": "山梨県南都留郡勝山村（現富士河口湖町）に、物流業務及び製品の組立、配線等を行うフジテック株式会社を設立しました。",
+      "significance": "製造を支えるグループ体制の一角ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式を店頭登録",
+      "description": "社団法人日本証券業協会に店頭登録銘柄として株式を登録しました。",
+      "significance": "資本市場への初登場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "米国に販売子会社を設立",
+      "description": "米国カリフォルニア州にKIKUSUI AMERICA,INC.を設立しました。",
+      "significance": "海外販売拠点の展開が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "中国に販売子会社を設立",
+      "description": "中国上海市に菊水貿易(上海)有限公司を設立しました。",
+      "significance": "中国での販売と修理の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "持株会社体制へ移行し、菊水ホールディングス株式会社に商号変更",
+      "description": "吸収分割により持株会社体制へ移行し、商号を菊水ホールディングス株式会社に変更しました。製品の販売、開発事業は菊水電子工業株式会社へ、生産は菊水エムズ株式会社へ承継しました。",
+      "significance": "現在のグループ経営体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ドイツに販売子会社を設立",
+      "description": "ドイツのデュッセルドルフ市にKikusui Electronics Europe GmbHを設立しました。",
+      "significance": "ヨーロッパでの販売と修理の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "インドに販売子会社を設立",
+      "description": "インドのベンガルール市にKIKUSUI ELECTRONICS INDIA PRIVATE LIMITEDを設立しました。",
+      "significance": "インドでの販売と修理の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nihon-denkei",
+      "relationship": "customer",
+      "description": "主要な顧客であり、販売代理店です。セグメント情報の主要な顧客ごとの情報に載っており、2026年3月期の売上高は連結売上高の16.4％を占めています。特定投資株式の保有目的にも、当社グループの主要な販売代理店の1社と書かれています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "espec",
+      "relationship": "customer",
+      "description": "主要な顧客です。特定投資株式の保有目的に、当社グループの主要な顧客の1社であり、安定的・長期的な取引関係の維持・強化を目的として保有していると書かれています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nishikawa-keisoku",
+      "relationship": "customer",
+      "description": "販売代理店です。特定投資株式の保有目的に、当社グループの主要な販売代理店の1社であり、安定的・長期的な取引関係の維持・強化を目的として保有していると書かれています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nkk-switches",
+      "relationship": "supplier",
+      "description": "主要な仕入先です。特定投資株式の保有目的に、当社グループの主要な仕入先の1社であり、安定的・長期的な取引関係の維持・強化を目的として保有していると書かれています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kel",
+      "relationship": "major-shareholder",
+      "description": "大株主の事業会社です。【大株主の状況】に、2026年3月31日現在で発行済株式（自己株式を除く）の総数に対する所有株式数の割合2.64％と載っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +420,37 @@
       "publisher": "菊水ホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIEI.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YIEI",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「私たち菊水は自由で豊かな発想と行動力で“創発”し社会と共に進化します」という経営ビジョンを掲げ、「パワーエレクトロニクス分野の評価及び測定ソリューション」をテーマとする経営計画に沿って事業を進めるとしています。営業活動では、eモビリティ、次世代エネルギー、パワー半導体、データセンターの4つの市場を重点市場として、国内外の顧客ニーズに合わせたソリューションビジネスの積極的展開やWebマーケティングの活用によるブランドプレゼンスの向上を進めるとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1953年の電子計測器の開発成功以来、評価と測定の技術を長く積み重ねてきたことが強みです。電源機器と計測器の両方を自社で開発・製造し、販売から修理・校正までをグループで担う体制により、顧客の評価試験や製造設備のニーズに一貫して対応できます。",
+        "basis": "【沿革】に1953年の電子計測器の開発成功と1960年の直流安定化電源装置の生産、販売開始が書かれています。【事業の内容】に、菊水電子工業株式会社が研究開発、販売並びに修理を、菊水エムズ株式会社が製造を行い、海外の販売子会社が販売並びに修理を行うことが書かれています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

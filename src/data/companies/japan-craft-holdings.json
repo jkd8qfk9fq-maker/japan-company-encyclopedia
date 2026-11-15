@@ -4,19 +4,133 @@
   "name": "ジャパンクラフトホールディングス",
   "officialName": "ジャパンクラフトホールディングス株式会社",
   "nameEn": "JAPAN CRAFT HOLDINGS CO., LTD.",
-  "description": null,
+  "shortNameEn": "JAPAN CRAFT HOLDINGS CO., LTD.",
+  "description": "手芸専門店「クラフトハートトーカイ」の小売事業と、手芸関連書籍の出版・教育事業を傘下に持つ持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "プレミア"
+      "market": "プレミア市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    },
+    {
+      "industryId": "media",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "retail",
+      "name": "小売事業",
+      "description": "連結子会社の藤久が、手芸専門店「クラフトハートトーカイ」を中心とする店舗と、ECモールサイトで、手芸用品や生活雑貨等を販売しています。2026年6月期の外部顧客への売上高は10,985百万円で、2026年6月30日現在の店舗数は211店舗です。",
+      "customers": [
+        "手芸用品や生活雑貨を求める個人顧客"
+      ],
+      "children": [
+        {
+          "id": "craft-heart-tokai",
+          "name": "クラフトハートトーカイ",
+          "description": "藤久が展開する手芸専門店です。2026年6月30日現在、全国に211店舗あります。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ec-mall-sales",
+          "name": "ECモールサイトでの販売",
+          "description": "ECモールサイトでも手芸用品・生活雑貨等を販売しています。この区分の金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "publishing-education",
+      "name": "出版・教育事業",
+      "description": "連結子会社の日本ヴォーグ社が、手芸関連書籍の出版を行っています。2026年6月期の外部顧客への売上高は3,055百万円です。手芸教室「ヴォーグ学園」の運営も行っていましたが、2026年5月1日にヴォーグ学園の全株式を譲渡し、連結の範囲から除外しました。",
+      "customers": [
+        "手芸関連書籍の読者",
+        "書店等の販売先"
+      ],
+      "children": [
+        {
+          "id": "nihon-vogue-publishing",
+          "name": "手芸関連書籍の出版",
+          "description": "日本ヴォーグ社が手芸関連書籍の出版を行い、自社ECサイト「手づくりタウン」でも販売しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "傘下の藤久が手芸用品等の店舗販売とEC販売を行い、日本ヴォーグ社が手芸関連書籍を出版することで、商品と書籍の販売代金を得る仕組みです。",
+    "products": [
+      "手芸用品",
+      "生活雑貨",
+      "手芸関連書籍"
+    ],
+    "customers": [
+      "手芸を楽しむ個人顧客",
+      "手芸関連書籍の読者"
+    ],
+    "revenueSources": [
+      "店舗・ECモールサイトでの手芸用品・生活雑貨等の販売代金",
+      "手芸関連書籍の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ジャパンクラフトホールディングス",
+        "description": "2022年1月に藤久株式会社の単独株式移転で設立された持株会社で、グループ会社の経営管理を行っています。東京証券取引所スタンダード市場と名古屋証券取引所プレミア市場に上場し、2026年6月30日現在の従業員数は223人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "手芸用品の小売と手芸書籍の出版",
+        "description": "藤久が手芸専門店「クラフトハートトーカイ」211店舗とECモールサイトで手芸用品・生活雑貨等を販売し、日本ヴォーグ社が手芸関連書籍を出版しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "手芸愛好者などの個人顧客",
+        "description": "店舗やECで手芸用品を買う個人顧客と、手芸関連書籍の読者が主な顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高14,041百万円",
+        "description": "2026年6月期の売上高は14,041百万円で、小売事業が10,985百万円、出版・教育事業が3,055百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益431百万円",
+        "description": "2026年6月期の親会社株主に帰属する当期純利益は431百万円で、前期の当期純損失から黒字に転じました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -31,7 +145,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6230081000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 298,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,12 +165,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5026976000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 377,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2022年7月1日付の株式交換による日本ヴォーグ社及びヴォーグ学園の子会社化に伴う変更を含んでいます。"
     },
     {
       "fiscalYear": "2024年6月期",
@@ -71,7 +186,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2966796000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 277,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +206,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3694391000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 247,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,15 +226,107 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3956989000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 223,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2026年5月1日付のヴォーグ学園の全株式の譲渡に伴う変更を含んでいます。"
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1961,
+      "title": "藤久株式会社を設立",
+      "description": "絹糸類の加工及び販売を目的とする藤久株式会社を名古屋市に設立しました。",
+      "significance": "グループの母体となった会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "手芸専門店のチェーン展開を開始",
+      "description": "「手芸のすずらん」直営1号店を愛知県安城市に開店し、手芸専門店のチェーン展開を始めました。",
+      "significance": "現在の小売事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "店舗ブランドを「クラフトハートトーカイ」に刷新",
+      "description": "「手芸センタートーカイ」のショップブランドを「クラフトハートトーカイ」に刷新し、新規開設店舗から展開を始めました。",
+      "significance": "現在の主力ブランドの成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "藤久が東証・名証の市場第二部に上場",
+      "description": "藤久株式会社が東京証券取引所市場第二部及び名古屋証券取引所市場第二部に株式を上場しました。",
+      "significance": "グループの上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "持株会社を設立し上場",
+      "description": "藤久株式会社の単独株式移転により当社を設立し、東京証券取引所市場第一部及び名古屋証券取引所市場第一部に株式を上場しました。藤久は持株会社体制への移行に伴い2021年12月に上場廃止となっていました。",
+      "significance": "現在の持株会社体制の成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "日本ヴォーグ社とヴォーグ学園を子会社化",
+      "description": "株式交換により、株式会社日本ヴォーグ社及び株式会社ヴォーグ学園を子会社化しました。",
+      "significance": "出版・教育事業がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "社名をジャパンクラフトホールディングスに変更",
+      "description": "社名を「ジャパンクラフトホールディングス」に変更しました。",
+      "significance": "現在の社名の成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場へ市場変更",
+      "description": "東京証券取引所のプライム市場からスタンダード市場へ市場変更しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "ヴォーグ学園の全株式を譲渡",
+      "description": "株式会社ヴォーグ学園の全株式を株式会社ハルメクに譲渡し、連結子会社から除外しました。",
+      "significance": "教育事業から撤退し、グループは小売と出版の2事業になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -128,11 +335,38 @@
       "publisher": "ジャパンクラフトホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z3BG.pdf",
       "publishedAt": "2026-09-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100Z3BG",
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2023年7月1日付で普通株式1株につき2株の割合で株式分割を行っています（主要な経営指標等の注記に記載）。"
+    ]
   },
-  "updatedAt": "2026-09-29"
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年6月期を初年度とする中期経営計画（2028年6月期まで）では、手芸の裾野拡大、収益性の向上、グループシナジーの深化の3つを骨子に据え、ライトユーザーの取り込み強化、グループ各社の強みを生かした商品開発による他社との差別化、グループ各社の仕入・マーケティングの機能一元化に取り組むとしています。",
+        "asOf": "2026-09-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "手芸専門店のチェーンと手芸書籍の出版を同じグループに持ち、店舗でのワークショップや講習会と、書籍やECサイトでの情報発信を組み合わせられる構成です。",
+        "basis": "【事業の内容】に、藤久が手芸専門店「クラフトハートトーカイ」を中心とする店舗とECモールサイトで手芸用品・生活雑貨等を販売していること、日本ヴォーグ社が手芸関連書籍の出版事業を行っていることが書かれています。【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】には、店舗で編み物初心者向けのワークショップを開催していること、日本ヴォーグ社が自社ECサイト「手づくりタウン」をメディア型ECサイトへ転換を進めたことが書かれています。",
+        "asOf": "2026-09-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

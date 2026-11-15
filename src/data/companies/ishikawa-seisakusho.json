@@ -4,15 +4,132 @@
   "name": "石川製作所",
   "officialName": "株式会社石川製作所",
   "nameEn": "Ishikawa Seisakusho, Ltd.",
-  "description": null,
+  "shortNameEn": "Ishikawa Seisakusho",
+  "description": "機雷などの防衛機器と段ボール製函印刷機械を製造販売する、石川県白山市の機械メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "ishikawa-seisakusho-group",
+      "name": "石川製作所グループの事業",
+      "description": "当社と連結子会社3社（関東航空計器株式会社、株式会社イッセイ、株式会社イシメックス）の計4社でグループを構成し、防衛機器、紙工機械、受託生産、その他の製造販売を行っています。その他の関係会社としてレンゴー株式会社があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "defense-equipment",
+          "name": "防衛機器",
+          "description": "当社と関東航空計器株式会社が、機雷や航空機用電子機器などを製造販売する最大のセグメントです。株式会社イッセイが機械加工部品の製造の一部を、株式会社イシメックスが制御盤など電装関係部品の製造を担っています。2026年3月期の外部顧客への売上高は14,190百万円です。",
+          "customers": [
+            "防衛省",
+            "三菱重工業株式会社などの航空機・防衛関連メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "paper-machinery",
+          "name": "紙工機械",
+          "description": "当社が段ボール製函印刷機械などを製造販売するセグメントです。株式会社イッセイが機械加工部品の製造の一部を、株式会社イシメックスが制御盤など電装関係部品の製造を担っています。2026年3月期の外部顧客への売上高は2,694百万円です。",
+          "customers": [
+            "レンゴー株式会社などの段ボールメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "contract-production",
+          "name": "受託生産",
+          "description": "当社が他社から各種機械の生産を受託するセグメントです。株式会社イッセイが機械加工部品の製造の一部を、株式会社イシメックスが制御盤など電装関係部品の製造を担っています。2026年3月期の外部顧客への売上高は1,112百万円です。",
+          "customers": [
+            "島精機製作所などの機械メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-businesses",
+          "name": "その他",
+          "description": "当社と関東航空計器株式会社が、電子機器や繊維機械などを製造販売する、報告セグメントに含まれない区分です。2026年3月期の外部顧客への売上高は474百万円です。",
+          "customers": [
+            "電子機器・繊維機械の需要家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "防衛省向けの防衛機器と段ボールメーカー向けの製函印刷機械を製造販売し、他社製品の部品などの生産も受託する事業モデルです。",
+    "products": [
+      "機雷や航空機用電子機器などの防衛機器",
+      "段ボール製函印刷機械などの紙工機械",
+      "他社から受託する各種機械の生産（受託生産）",
+      "電子機器や繊維機械など"
+    ],
+    "customers": [
+      "防衛省",
+      "三菱重工業株式会社などの防衛関連メーカー",
+      "レンゴー株式会社などの段ボールメーカー",
+      "生産を委託する機械メーカー"
+    ],
+    "revenueSources": [
+      "防衛機器の製造販売による売上",
+      "紙工機械の製造販売による売上",
+      "受託生産による売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "石川県白山市に本社を置く機械メーカー",
+        "description": "株式会社石川製作所は石川県白山市に本社を置き、連結子会社3社（関東航空計器株式会社、株式会社イッセイ、株式会社イシメックス）とグループを構成しています。従業員数は538人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "防衛機器・紙工機械・受託生産を手がける",
+        "description": "機雷や航空機用電子機器などの防衛機器、段ボール製函印刷機械などの紙工機械を製造販売し、他社から各種機械の生産を受託する受託生産も行っています。その他として電子機器や繊維機械などの製造販売も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "防衛省と段ボールメーカーなどが顧客",
+        "description": "防衛機器の主な顧客は防衛省と三菱重工業株式会社で、紙工機械はレンゴー株式会社など段ボールメーカーが販売先です。受託生産では機械メーカーから部品などの製造を受託しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は18,473百万円",
+        "description": "2026年3月期の売上高は18,473百万円でした。セグメント別では防衛機器が14,190百万円、紙工機械が2,694百万円、受託生産が1,112百万円、その他が474百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は637百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は637百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +144,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4162000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 517,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +164,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4365000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 510,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4903000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 511,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5385000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 526,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6125000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 538,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +232,176 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1921,
+      "title": "石井鉄工所を創立",
+      "description": "創業者の直山与二が金沢市に石井鉄工所を創立し、繊維機械の部品製作をはじめました。",
+      "significance": "同社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1938,
+      "title": "株式会社石川製作所に社名変更",
+      "description": "1937年に株式会社組織に改め森本工場を建設し、1938年に株式会社石川製作所へ社名を変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "金沢投資金融（現・イッセイ）を設立",
+      "description": "金沢投資金融株式会社（現・株式会社イッセイ、連結子会社）を設立しました。",
+      "significance": "現在の連結子会社の前身の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "大阪証券取引所市場第一部に上場",
+      "description": "大阪証券取引所市場第一部に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "防衛機器の製造許可を受け事業を開始",
+      "description": "防衛機器製造の事業許可を受け、東京研究所を設置しました。",
+      "significance": "現在の主力である防衛機器事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に、同年10月には名古屋証券取引所市場第一部に株式を上場しました。",
+      "significance": "東証への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "紙工機械の生産を開始",
+      "description": "米国のS&S社と段ボール製函印刷機械の業務提携を締結し、紙工機械の生産を開始しました。",
+      "significance": "紙工機械事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "レピア織機の生産を開始",
+      "description": "米国のドレーパー社とシャットルレス織機の技術提携を結び、レピア織機の生産を開始しました。",
+      "significance": "繊維機械の主力製品の生産開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "イシメックスを設立",
+      "description": "株式会社イシメックス（現・連結子会社）を設立しました。",
+      "significance": "電装関係部品を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "欠損を填補し株式併合を実施",
+      "description": "資本金や資本準備金などの額の減少並びに剰余金の処分により欠損を填補し、普通株式10株につき1株の割合で株式を併合しました。",
+      "significance": "資本構成の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "関東航空計器を連結子会社化",
+      "description": "関東航空計器株式会社（神奈川県藤沢市）の全株式を取得し、連結子会社としました。",
+      "significance": "防衛機器事業の体制強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しに伴い、スタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "野口俊和が社長に就任",
+      "description": "小長谷育教が相談役に退き、野口俊和が社長に就任しました。",
+      "significance": "経営体制の交代です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "rengo",
+      "relationship": "other-affiliated-company",
+      "description": "レンゴー株式会社は、その他の関係会社として当社の議決権の20.1％を保有しています（2026年3月31日現在）。当社の紙工機械の主要な販売先であり、役員の兼任があります。当社も同社株式1,000株を保有し、紙工機械部門の取引関係の強化を目的としています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "mitsubishi-heavy-industries",
+      "relationship": "customer",
+      "description": "三菱重工業株式会社は防衛機器の主要な顧客で、2026年3月期の同社への売上高は総販売実績の16.6％を占めています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "companyId": "itochu",
+      "relationship": "customer",
+      "description": "伊藤忠商事株式会社とは長年にわたって同社グループとの取引があり、当社製品の販路拡大などの取引関係強化の目的で、同社株式904,175株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shima-seiki-mfg",
+      "relationship": "customer",
+      "description": "株式会社島精機製作所の製品の部品の一部について製造を受託しており、受託生産業務の取引関係の強化のため、同社株式1,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +409,47 @@
       "publisher": "株式会社石川製作所",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDE9.pdf",
       "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YDE9",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "収益力の強化を課題とし、顧客のニーズに対応する製品開発を通じた受注の拡大、経営の効率化による原価低減の徹底、技術の研鑽と継承による品質向上に努める方針です。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "防衛機器では、防衛省と緊密な連携のもとで研究開発を行い、機雷や航空機用電子機器を製造販売しています。紙工機械では、1964年に生産を始めて以来、段ボール製函印刷機械を自社で開発してきました。",
+        "basis": "事業の内容、研究開発活動、沿革に基づきます。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高18,473百万円のうち、防衛機器が14,190百万円と大半を占め、紙工機械が2,694百万円、受託生産が1,112百万円、その他が474百万円です。主要な顧客は防衛省（総販売実績の52.2％）と三菱重工業株式会社（16.6％）で、いずれも防衛機器の顧客です。",
+        "basis": "セグメント情報等の報告セグメントごとの売上高、関連情報の主要な顧客ごとの情報、MD&Aの販売実績に基づきます。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

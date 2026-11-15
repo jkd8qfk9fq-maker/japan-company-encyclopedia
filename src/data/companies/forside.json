@@ -4,15 +4,229 @@
   "name": "フォーサイド",
   "officialName": "株式会社フォーサイド",
   "nameEn": "Forside Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Forside Co.,Ltd.",
+  "description": "クレーンゲーム用景品の販売やAI関連事業、総合人材サービス事業などを展開する持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "entertainment",
+      "primary": true
+    },
+    {
+      "industryId": "it",
+      "primary": false
+    },
+    {
+      "industryId": "human-resources",
+      "primary": false
+    },
+    {
+      "industryId": "media",
+      "primary": false
+    },
+    {
+      "industryId": "transportation",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "prize",
+      "name": "プライズ事業",
+      "description": "クレーンゲーム機等のプライズゲーム用景品の企画・製作・販売を行う報告セグメントです。連結子会社の株式会社ブレイクが担っており、2025年12月期の外部顧客への売上高は3,463百万円でした。",
+      "customers": [
+        "アミューズメント施設の運営事業者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "ai",
+      "name": "AI関連事業",
+      "description": "AIを活用した事業効率化ツールの開発や、AI開発支援向けGPUサーバーの販売・販売代理を行う報告セグメントです。連結子会社の株式会社AI Tech Solutionsが担っており、2025年12月期の外部顧客への売上高は3,097百万円でした。",
+      "customers": [
+        "GPUサーバーを導入する事業者",
+        "業務効率化ツールを導入する事業者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "ai-dx-tools",
+          "name": "AI事業効率化ツールの開発",
+          "description": "AIを活用した事業効率化ツールの開発等です。第３四半期連結会計期間には、生成AIを活用した「退院サマリーシステム」のローンチが完了しています。",
+          "customers": [
+            "業務効率化ツールを導入する事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "gpu-server",
+          "name": "GPUサーバーの販売・販売代理",
+          "description": "AI開発支援向けGPUサーバーの販売及び販売代理です。当連結会計年度は販売促進策により多額の案件を複数獲得しましたが、同業他社の参入により第３四半期連結会計期間より受注が減少し、第４四半期連結会計期間は新規受注がゼロ件となっています。",
+          "customers": [
+            "GPUサーバーを導入する事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "hr-services",
+      "name": "総合人材サービス事業",
+      "description": "一般労働者派遣及び作業請負業務等を行う報告セグメントです。2025年３月31日に全株式を取得した連結子会社の株式会社antzが担っており、当連結会計年度から新たに開始した事業です。2025年12月期の外部顧客への売上高は1,427百万円でした。",
+      "customers": [
+        "人材派遣・作業請負を利用する企業"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "staffing",
+          "name": "一般労働者派遣",
+          "description": "一般労働者派遣業務です。株式会社antzが担っています。",
+          "customers": [
+            "人材派遣を利用する企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "contracting",
+          "name": "作業請負業務",
+          "description": "作業請負業務等です。ITソリューション事業で規模の大きい作業請負業務を当連結会計年度に完了しています。",
+          "customers": [
+            "作業請負を利用する企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "logistics",
+      "name": "物流関連事業",
+      "description": "一般貨物自動車運送事業及び貨物利用運送事業を行う報告セグメントです。連結子会社の株式会社antzと株式会社エムが担っており、2025年12月期の外部顧客への売上高は316百万円でした。株式会社antzは2025年７月１日に物流関連事業を立ち上げています。",
+      "customers": [
+        "貨物運送を利用する企業"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "event",
+      "name": "イベント事業",
+      "description": "各地の大型商業施設の催事場にて著名なコンテンツの展示・販売を行う報告セグメントです。連結子会社の株式会社ブレイクが担っており、2025年12月期の外部顧客への売上高は206百万円でした。当連結会計年度は「PSYCHOVISION hide MUSEUM Since 2000」FINAL企画展の大型イベントを開催しています。",
+      "customers": [
+        "展示販売の来場者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "master-rights",
+      "name": "マスターライツ事業",
+      "description": "出版事業を行う報告セグメントです。連結子会社の株式会社ポップティーンが雑誌「Popteen」や女子小中学生向け雑誌「Cuugal」の出版を行っており、2025年12月期の外部顧客への売上高は154百万円でした。",
+      "customers": [
+        "雑誌の読者",
+        "タイアップ案件を出稿する企業"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "content",
+      "name": "コンテンツ事業",
+      "description": "電子書籍配信サイト「モビぶっく」の運営等を行う報告セグメントです。連結子会社の株式会社ポップティーンが担っており、2025年12月期の外部顧客への売上高は81百万円でした。",
+      "customers": [
+        "電子書籍配信サイトの利用者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "連結子会社を通じて、プライズ事業、AI関連事業、総合人材サービス事業、物流関連事業、出版・電子書籍事業などを展開する持株会社です。",
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "products": [
+      "クレーンゲーム機等のプライズゲーム用景品",
+      "電子書籍配信サイト「モビぶっく」",
+      "雑誌「Popteen」「Cuugal」",
+      "AIを活用した事業効率化ツール",
+      "AI開発支援向けGPUサーバー"
+    ],
+    "customers": [
+      "アミューズメント施設の運営事業者",
+      "電子書籍配信サイトの利用者",
+      "人材派遣・作業請負を利用する企業",
+      "貨物運送を利用する企業"
+    ],
+    "revenueSources": [
+      "プライズゲーム用景品の販売による営業収益",
+      "GPUサーバーの販売やAIツールの開発による営業収益",
+      "一般労働者派遣・作業請負業務による営業収益",
+      "一般貨物自動車運送・貨物利用運送による営業収益",
+      "出版・電子書籍配信による営業収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社フォーサイド",
+        "description": "2000年に携帯電話向けコンテンツプロバイダーとして設立された会社で、当社と連結子会社７社でグループを構成し、2025年12月31日現在の連結従業員数は180人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "プライズ景品・AI・人材サービスなど多角的な事業",
+        "description": "クレーンゲーム用景品の企画・製作・販売、AI関連事業、総合人材サービス事業、物流関連事業に加え、出版事業や電子書籍配信サイトの運営を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "アミューズメント施設や人材サービスを利用する企業など",
+        "description": "主な顧客はアミューズメント施設の運営事業者、電子書籍の利用者、人材派遣・作業請負や貨物運送を利用する企業であり、売上高の10％以上を占める主要な顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益",
+        "description": "2025年12月期の営業収益は8,748百万円で、前期比63.8％増でした。セグメント別ではプライズ事業が3,463百万円、AI関連事業が3,097百万円、総合人材サービス事業が1,427百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は440百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +241,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1166936000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 91,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +261,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1055690000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 90,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年３月31日）等を第23期の期首から適用しており、第23期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +282,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1575326000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 90,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +302,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2499989000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 55,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +322,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3077986000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 180,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +330,118 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2000,
+      "title": "株式会社フォーサイド・ドット・コムを設立",
+      "description": "東京都渋谷区に株式会社フォーサイド・ドット・コムを設立し、携帯電話向けコンテンツプロバイダー事業を開始しました。同年、NTTドコモのｉモードでコンテンツ配信サービスを開始しています。",
+      "significance": "現在の会社の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "ジャスダック市場に上場",
+      "description": "ジャスダック市場に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "株式会社SmartEbook.comに商号変更",
+      "description": "株式会社フォーサイド・ドット・コムから株式会社SmartEbook.comに商号を変更し、本社機能を東京都新宿区から福岡県福岡市に移転しました。",
+      "significance": "電子書籍事業を軸とした時期の商号変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "持株会社体制へ移行",
+      "description": "株式会社フォーサイドブックを新設分割し、持株会社体制へ移行しました。",
+      "significance": "現在の持株会社体制の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "株式会社フォーサイドに商号変更",
+      "description": "株式会社SmartEbook.comから株式会社フォーサイドに商号を変更し、本店所在地を福岡県福岡市から東京都中央区に変更しました。",
+      "significance": "現在の商号への変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "株式会社ブレイクを子会社化",
+      "description": "株式会社ブレイクの株式を取得し子会社化しました。同社は現在のプライズ事業とイベント事業を担っています。",
+      "significance": "現在の主力事業の取り込みです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "日本賃貸住宅保証機構株式会社を子会社化",
+      "description": "日本賃貸住宅保証機構株式会社の株式を取得し子会社化しました。2019年には同社の株式を追加取得し完全子会社化しています。",
+      "significance": "不動産関連事業への参入です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所のJASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "市場移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社AI Tech Solutionsを設立",
+      "description": "株式会社AI Tech Solutionsを設立しました。同社はAI関連事業を担っています。",
+      "significance": "AI関連事業の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "日本賃貸住宅保証機構株式会社の株式を売却",
+      "description": "日本賃貸住宅保証機構株式会社の全株式を売却し、連結の範囲から除外しました。",
+      "significance": "不動産関連事業からの撤退です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社antzを子会社化し総合人材サービス事業を開始",
+      "description": "株式会社antzの全株式を取得し子会社化しました。これに伴い、総合人材サービス事業を当連結会計年度より新たに開始し、報告セグメントに追加しています。",
+      "significance": "現在の事業構成の拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +450,55 @@
       "publisher": "株式会社フォーサイド",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XTKS.pdf",
       "publishedAt": "2026-03-26",
-      "accessedAt": "2026-09-28"
+      "docId": "S100XTKS",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "当社グループは中長期的な経営戦略として、柱となるプライズ事業、AI関連事業、物流関連事業、総合人材サービス事業の事業収益の強化を図ることを掲げています。AI関連事業ではGPUサーバー販売に代わる事業として新たなDXツールの開発体制の構築を目指し、優先的に対処すべき課題として主力事業に続く新たな事業の創出も挙げています。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2025年12月期の営業収益は前期比63.8％増の8,748百万円となりました。会社は、株式会社antzの子会社化で新たに開始した総合人材サービス事業に加え、既存のプライズ事業、AI関連事業、物流関連事業が堅調に推移したことが増収の要因であると説明しています。親会社株主に帰属する当期純利益は440百万円で、主要な経営指標等の５年間の推移では最大となっています。",
+        "basis": "MD&Aの経営成績等の状況の概要とセグメント情報の外部顧客への売上高、主要な経営指標等の推移に基づきます。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "プライズ事業ではキャラクターグッズや雑貨系商材を中心に受注件数が堅調に推移し、継続した原価低減策や事務所移転等による固定費の削減に取り組んでいます。AI関連事業ではGPUサーバーの販売促進策により多額の案件を複数獲得し、生成AIを活用した「退院サマリーシステム」のローンチを完了しました。一方でAI関連事業は同業他社の参入により第３四半期連結会計期間より受注が減少し、第４四半期連結会計期間は新規受注がゼロ件となるなど、競争環境は厳しくなっています。",
+        "basis": "【事業の内容】のセグメントの説明とMD&Aのセグメント別の経営成績の記載に基づきます。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントの外部顧客への売上高は、プライズ事業が3,463百万円、AI関連事業が3,097百万円、総合人材サービス事業が1,427百万円、物流関連事業が316百万円、イベント事業が206百万円、マスターライツ事業が154百万円、コンテンツ事業が81百万円です。地域別の情報では本邦の外部顧客への売上高が連結売上高の90％を超えており、売上高の10％以上を占める主要な顧客はありません。MD&Aでは、我が国におけるAIシステム市場規模（支出額）が2024年に１兆3,412億円（前年比56.5％増）となったことが引用されています。",
+        "basis": "セグメント情報の外部顧客への売上高と関連情報の地域ごとの情報、主要な顧客ごとの情報、MD&Aの経営環境の記載に基づきます。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

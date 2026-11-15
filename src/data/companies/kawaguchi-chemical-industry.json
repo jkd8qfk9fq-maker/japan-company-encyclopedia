@@ -4,19 +4,157 @@
   "name": "川口化学工業",
   "officialName": "川口化学工業株式会社",
   "nameEn": "Kawaguchi Chemical Industry Co., Ltd",
-  "description": null,
+  "shortNameEn": "Kawaguchi Chemical Industry Co., Ltd",
+  "description": "ゴム薬品や樹脂薬品、中間体などの化学工業薬品を製造販売する化学メーカーで、不動産賃貸も行っています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "chemical-products",
+      "name": "化学工業薬品事業",
+      "description": "ゴム薬品、樹脂薬品、中間体、その他の関連工業薬品を製造販売する事業です。埼玉県川口市の工場・研究所で生産し、連結子会社の開溪愛(上海)貿易有限公司が原材料の仕入れと当社製品の販売を担っています。2025年11月期の売上高は8,776百万円でした。",
+      "customers": [
+        "タイヤメーカー",
+        "ゴム製品メーカー",
+        "樹脂メーカー",
+        "化学メーカー",
+        "山田化成株式会社"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "rubber-chemicals",
+          "name": "ゴム薬品",
+          "description": "加硫促進剤、加硫剤、老化防止剤、加工助剤、しゃく解剤などのゴム用薬品です。タイヤ向けや工業用品・医療用ゴム製品向けに販売され、2025年11月期の売上高は4,948百万円でした。",
+          "customers": [
+            "タイヤメーカー",
+            "ゴム製品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-chemicals",
+          "name": "その他",
+          "description": "機能性化学品、潤滑油添加剤、防錆剤、金属除去剤、その他工業薬品です。有機合成技術を活用した電子材料向け製品などの販売が伸び、2025年11月期の売上高は2,043百万円でした。",
+          "customers": [
+            "化学メーカー",
+            "電子材料メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "resin-chemicals",
+          "name": "樹脂薬品",
+          "description": "酸化防止剤、重合防止剤・調整剤などの樹脂用薬品です。アクリル酸・アクリル酸エステル向けの汎用製品や電子材料関連の特殊受託合成製品があり、2025年11月期の売上高は930百万円でした。",
+          "customers": [
+            "樹脂メーカー",
+            "化学メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "intermediates",
+          "name": "中間体",
+          "description": "染料・顔料中間体、医薬・農薬中間体などの中間体です。界面活性剤中間体も扱い、2025年11月期の売上高は852百万円でした。",
+          "customers": [
+            "化学メーカー",
+            "医薬品メーカー",
+            "農薬メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸事業",
+      "description": "埼玉県川口市の土地など、不動産の賃貸管理を行う事業です。2025年11月期の売上高は38百万円でした。",
+      "customers": [],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "タイヤやゴム製品、樹脂などに使う化学薬品を自社工場で製造し、ゴム製品メーカーや化学メーカーなどに販売して収益を得ています。",
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "products": [
+      "加硫促進剤・加硫剤・老化防止剤などのゴム薬品",
+      "酸化防止剤・重合防止剤・調整剤などの樹脂薬品",
+      "染料・顔料中間体、医薬・農薬中間体",
+      "機能性化学品・潤滑油添加剤・防錆剤などの工業薬品",
+      "不動産賃貸"
+    ],
+    "customers": [
+      "タイヤメーカー・ゴム製品メーカー",
+      "樹脂メーカー",
+      "化学メーカー",
+      "山田化成株式会社"
+    ],
+    "revenueSources": [
+      "化学工業薬品の製品販売収入",
+      "不動産賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "川口化学工業",
+        "description": "1935年に川口化学研究所として設立され、埼玉県川口市に本社事務所・工場・研究所を置きます。連結子会社1社を含むグループで構成され、2025年11月30日現在の従業員数は160人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "化学工業薬品の製造販売と不動産賃貸",
+        "description": "ゴム薬品、樹脂薬品、中間体、その他の関連工業薬品の製造販売を行う化学工業薬品事業と、不動産賃貸事業を行っています。長年培った有機合成技術を活かし、高付加価値製品の開発を強化しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "ゴム製品メーカー・化学メーカーなど",
+        "description": "タイヤや自動車部品などのゴム製品メーカー、樹脂メーカー、医薬・農薬などの化学メーカーに販売しています。主要な顧客は山田化成株式会社です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高8,814百万円",
+        "description": "2025年11月期の売上高は8,814百万円で、前期から1.2％減少しました。ゴム薬品と中間体の販売が前期を下回った一方、樹脂薬品とその他の薬品の販売は前期を上回りました。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益298百万円",
+        "description": "2025年11月期の親会社株主に帰属する当期純利益は298百万円で、前期から11.3％減少しました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年11月期",
@@ -31,7 +169,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2252575000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 165,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,12 +189,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2411347000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 171,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第121期の期首から適用しており、第121期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年11月期",
@@ -71,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2638424000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 166,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2882396000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 171,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +250,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3133512000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 160,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +258,99 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1935,
+      "title": "写真薬品の製造のため川口化学研究所を設立",
+      "description": "写真薬品ハイポの製造の企業化のため、川口化学研究所を設立しました。",
+      "significance": "川口化学工業の起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1937,
+      "title": "川口化学工業株式会社に組織変更",
+      "description": "川口化学工業株式会社に組織を変更しました。",
+      "significance": "株式会社としての出発です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第2部に上場",
+      "description": "東京証券取引所市場第2部に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "鹿島工場を開設",
+      "description": "鹿島工場を開設しました。",
+      "significance": "生産拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "鹿島工場を閉鎖",
+      "description": "鹿島工場を閉鎖しました。",
+      "significance": "生産体制の見直しです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "上海に開溪愛(上海)貿易有限公司を設立",
+      "description": "中国上海市に開溪愛(上海)貿易有限公司を設立しました。現在の連結子会社で、ゴム薬品及び化学薬品の仕入と販売を担っています。",
+      "significance": "海外拠点の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第2部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "名古屋証券取引所メイン市場に上場",
+      "description": "名古屋証券取引所メイン市場に株式を上場しました。",
+      "significance": "2市場目の上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsui-chemicals",
+      "relationship": "major-shareholder",
+      "description": "【大株主の状況】に載る事業会社の大株主で、2025年11月30日現在の所有割合は2.1％です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -128,13 +358,47 @@
       "publisher": "川口化学工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XLSD.pdf",
       "publishedAt": "2026-02-20",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XLSD",
+      "asOf": "2025-11-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2022年を起点とする5ヵ年の中期経営計画「ACCEL2026」を推進し、新製品開発の推進、市場拡大への挑戦、設備投資による環境負荷の低減、経営資源活用の最大化、システムの効率利用の5つを事業戦略の柱としています。最終年となる2026年11月期は、2025年6月に稼働を開始した増強設備の活用と新製品の市場投入の加速、人材戦略・組織力の向上、リスク管理・品質・環境マネジメントの強化に重点的に取り組みます。",
+        "asOf": "2026-02-20",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "長年培った有機合成技術を基盤に、ゴム薬品から樹脂薬品、中間体まで幅広い有機化学工業薬品を自社工場で製造し、顧客の要望にきめ細かく対応できる体制を持つ点が強みです。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、長年培った有機合成技術を活かし高付加価値製品の開発を強化することと、お客様の要望にきめ細かく対応できる体制を確立することが印字されています。",
+        "asOf": "2026-02-20",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "自動車産業と関係が深い事業構造で、2025年11月期は国内の自動車生産の回復の遅れなどの影響を受け売上高が前期から1.2％減少しました。一方で、半導体材料や医薬品用途向けなどの有機化合物の需要に対応を進めています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、当社グループと関係の深い自動車産業の国内生産の動向と、成長市場である半導体材料、医薬品用途向け等の有機化合物の需要に対応していることが印字されています。",
+        "asOf": "2026-02-20",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年11月期",
     "asOf": "2025-11-30",

@@ -4,15 +4,139 @@
   "name": "ココペリ",
   "officialName": "株式会社ココペリ",
   "nameEn": "Kokopelli Inc.",
-  "description": null,
+  "shortNameEn": "Kokopelli Inc.",
+  "description": "地域金融機関と連携し、その取引先である中小企業に経営支援プラットフォーム「Big Advance」を提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "グロース"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "business-platform",
+      "name": "ビジネスプラットフォーム事業",
+      "description": "当社と連結子会社２社（株式会社ココペリ経営サポート、キー・ポイント株式会社）、持分法適用関連会社１社（SIAM KOKOPELLI Co., Ltd.）で構成される単一セグメントの事業です。中小企業の成長を支援するBtoB・SaaSモデルのプラットフォームを展開し、主力は地域金融機関と連携してその取引先の中小企業へ提供する経営支援プラットフォーム「Big Advance」です。2026年３月期の売上高は1,758百万円でした。",
+      "customers": [
+        "地域金融機関",
+        "地域金融機関の取引先である中小企業"
+      ],
+      "children": [
+        {
+          "id": "big-advance",
+          "name": "中小企業向け経営支援プラットフォーム「Big Advance」",
+          "description": "地域金融機関と連携し、各金融機関の名称を冠して、その取引先である中小企業へ提供する経営支援プラットフォームです。ビジネスマッチング、金融機関との連絡チャット、補助金・助成金の情報提供、ホームページの自動作成、福利厚生クーポンサイト「FUKURI」などの機能を、月額3,000円（税抜）のワンパッケージで提供しています。2026年３月31日時点で導入金融機関は76社、会員企業数は53,895社でした。サービス別の金額は独立して開示されていません。",
+          "customers": [
+            "地域金融機関",
+            "中小企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "dx-solutions",
+          "name": "DX Solutions",
+          "description": "金融機関向けに、業務規定や手引書などをAIに学習させFAQに自動回答する専門性AI FAQサービス「SAF（サフ）」や、セキュリティを確保したファイル送受信・共有サービス「WebFile」などを提供し、金融機関のDXやセキュリティ強化を支援するサービスです。中小企業向けには補助金活用コンサルティングサービスを提供しています。サービス別の金額は独立して開示されていません。",
+          "customers": [
+            "地域金融機関",
+            "中小企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "big-advance-global",
+          "name": "海外ビジネスマッチングプラットフォーム「BIG ADVANCE GLOBAL」",
+          "description": "中堅・中小企業の海外展開を支援するビジネスマッチングプラットフォームです。2025年６月にリリースされ、2026年３月に日本とタイの両国で開始しました。タイでは合弁会社SIAM KOKOPELLI Co., Ltd.（持分法適用関連会社）を通じて展開しています。サービス別の金額は独立して開示されていません。",
+          "customers": [
+            "海外展開を目指す中堅・中小企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "bm-portal",
+          "name": "金融機関向けビジネスマッチング管理サービス「BMポータル」",
+          "description": "金融機関のビジネスマッチング業務を管理するためのサービスです。2025年５月にリリースされました。サービス別の金額は独立して開示されていません。",
+          "customers": [
+            "地域金融機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "地域金融機関へSaaS形式で「Big Advance」を提供し、初期導入費用と月額の運用・保守費、会員企業の月額利用料に対するレベニューシェアで収益を得る会社です。",
+    "products": [
+      "中小企業向け経営支援プラットフォーム「Big Advance」",
+      "海外ビジネスマッチングプラットフォーム「BIG ADVANCE GLOBAL」",
+      "金融機関向けビジネスマッチング管理サービス「BMポータル」",
+      "専門性AI FAQサービス「SAF」",
+      "ファイル送受信・共有サービス「WebFile」",
+      "補助金活用コンサルティングサービス"
+    ],
+    "customers": [
+      "地域金融機関（2026年３月31日時点で76社が「Big Advance」を導入）",
+      "地域金融機関の取引先である中小企業（会員企業数53,895社、2026年３月31日時点）"
+    ],
+    "revenueSources": [
+      "「Big Advance」導入時の初期導入費用",
+      "金融機関から月額固定形式で受領する運用・保守費",
+      "金融機関が会員企業から受領する月額利用料に対するレベニューシェア",
+      "DXソリューション各サービスの提供対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ココペリ",
+        "description": "ココペリは東京都千代田区に本店を置く会社です。連結子会社２社と持分法適用関連会社１社を持ち、2026年３月31日現在の連結従業員数は118人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ビジネスプラットフォーム事業",
+        "description": "ビジネスプラットフォーム事業として、中小企業向け経営支援プラットフォーム「Big Advance」を主力に、海外ビジネスマッチングプラットフォーム「BIG ADVANCE GLOBAL」、金融機関向けの「BMポータル」や専門性AI FAQサービス「SAF」などを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域金融機関とその取引先の中小企業",
+        "description": "顧客は、サービスを導入する地域金融機関と、その取引先である中小企業です。2026年３月31日時点で「Big Advance」の導入金融機関は76社、会員企業数は53,895社でした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年３月期の売上高は1,758百万円で、前期比12.4％減でした。補助金活用コンサルティングで、前期にあった大規模な補助金採択報酬が当期はなかったことなどが影響しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失",
+        "description": "2026年３月期は親会社株主に帰属する当期純損失414百万円を計上しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2023年3月期",
@@ -27,12 +151,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1820268000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 88,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第16期より連結財務諸表を作成しているため、それ以前の期間については連結の数値を記載しておりません。"
     },
     {
       "fiscalYear": "2024年3月期",
@@ -47,7 +172,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1767430000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 109,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +192,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1905372000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 118,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +212,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1514207000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 118,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -95,7 +220,138 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2007,
+      "title": "株式会社ココペリを設立",
+      "description": "東京都練馬区に株式会社ココペリを設立し、中小企業向けにバックオフィス業務のアウトソーシングを受けるITサポートサービスの提供を開始しました。",
+      "significance": "現在のココペリの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "株式会社ココペリインキュベートに社名変更",
+      "description": "株式会社ココペリインキュベートに社名を変更しました。",
+      "significance": "社名の変遷の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "専門家相談プラットフォーム「SHARES」をリリース",
+      "description": "中小企業向け専門家相談プラットフォーム「SHARES（シェアーズ）」をリリースしました。",
+      "significance": "中小企業向けプラットフォーム事業への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "株式会社ココペリに社名変更",
+      "description": "株式会社ココペリに社名を変更し、本社を東京都千代田区二番町に移転しました。",
+      "significance": "現在の社名となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "経営支援プラットフォーム「Big Advance」をリリース",
+      "description": "中小企業向け経営支援プラットフォーム「Big Advance（ビッグアドバンス）」をリリースしました。",
+      "significance": "現在の主力サービスの開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "日本ユニシス株式会社と業務提携し「CoreBAE」をリリース",
+      "description": "日本ユニシス株式会社と業務提携契約を締結し、AIを活用した企業評価アルゴリズム「FAI（ファイ）」による中小企業の資金ニーズ予測等を実装したサービス「CoreBAE（コアベイ）」をリリースしました。",
+      "significance": "金融機関向けサービスの広がりを示す提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "東京証券取引所マザーズ市場に上場",
+      "description": "東京証券取引所マザーズ市場に株式を上場しました。",
+      "significance": "初めての株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "市場区分をグロース市場へ移行",
+      "description": "東京証券取引所の市場再編に伴い、市場区分をマザーズ市場からグロース市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "株式会社ココペリ経営サポートを子会社化",
+      "description": "株式会社市岡経営支援事務所（現・株式会社ココペリ経営サポート）の株式を取得し、子会社化しました。",
+      "significance": "地域に根差した伴走型コンサルティング領域への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "キー・ポイント株式会社を子会社化",
+      "description": "キー・ポイント株式会社の株式を取得し、子会社化しました。",
+      "significance": "グループ拡大の出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "専門性AI FAQサービス「SAF」をリリース",
+      "description": "専門性AI FAQサービス「SAF（サフ）」をリリースしました。",
+      "significance": "金融機関向けDXサービスの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "海外ビジネスマッチングプラットフォーム「BIG ADVANCE GLOBAL」をリリース",
+      "description": "海外ビジネスマッチングプラットフォーム「BIG ADVANCE GLOBAL（ビッグアドバンスグローバル）」をリリースしました。",
+      "significance": "中小企業の海外展開支援への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "タイにSIAM KOKOPELLI Co., Ltd.を設立",
+      "description": "タイ王国に、合弁によりSIAM KOKOPELLI Co., Ltd.を設立し、持分法適用関連会社としました。",
+      "significance": "タイでの事業展開の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -104,13 +360,47 @@
       "publisher": "株式会社ココペリ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKE7.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YKE7",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "ミッション「企業価値の中に、未来を見つける。」とビジョン「中小企業にテクノロジーを届けよう。」を掲げています。中長期的な経営戦略として、既存事業の磨き込みでは「AIエージェント構想」を掲げ、複数のAI技術を組み合わせて自律的に意思決定や行動を支援するAIエージェントの実装を進めること、新規事業の拡大では「BIG ADVANCE GLOBAL」の海外展開と成功報酬などトランザクションに応じた収益構造への転換、金融機関向けサービスの拡販による金融DXの推進を挙げ、さらに「地域密着ネットワーク」領域を中心としたM&Aによる非連続な成長も目指すとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "全国の地域金融機関とパートナーシップを結び、金融機関自身のサービスとして中小企業へ届ける仕組みにより、５万社を超える中小企業のネットワークを構築していることが強みです。ビジネスマッチングではAIによるレコメンドと、面談の設定を金融機関が担う「Face to Face」の進め方を両立させ、蓄積したデータと生成AIを活用した機能の高度化も進めています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、地域金融機関と協業したビジネスモデル、テクノロジーとFace to Faceの融合、５万社以上の中小企業のネットワークと生成AIを活用したデータ分析が強みとして印字され、【事業の内容】に2026年３月31日時点の導入金融機関76社・会員企業数53,895社が印字されています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "中小企業向け経営支援プラットフォームを地域金融機関経由で全国に展開する事業者です。「Big Advance」の会員企業数は60,172社（2025年３月末）から53,895社（2026年３月末）へ、導入金融機関数は78社から76社へいずれも減少しています。一方で、会員企業の解約率は2025年４月から2026年３月までの平均で1.53％と、同社が目標とする２％以内で推移しています。",
+        "basis": "【事業の内容】の推移表に導入金融機関数と会員企業数の四半期推移が、経営成績の分析に解約率1.53％（2025年４月～2026年３月の平均）と目標２％以内であることが印字されています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

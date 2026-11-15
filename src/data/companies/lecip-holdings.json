@@ -4,19 +4,184 @@
   "name": "レシップホールディングス",
   "officialName": "レシップホールディングス株式会社",
   "nameEn": "LECIP HOLDINGS CORPORATION",
-  "description": null,
+  "shortNameEn": "LECIP HOLDINGS CORPORATION",
+  "description": "バス・鉄道向けの運賃収受システムや車載用照明機器、フォークリフト用充電装置などを製造・販売する持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "プレミア"
+      "market": "プレミア市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "transport-equipment",
+      "name": "輸送機器事業",
+      "description": "バス・鉄道・自動車向けの電装機器を製造・販売する事業です。2026年3月期の外部顧客への売上高は20,034百万円で、連結売上高の中心です。子会社のレシップ株式会社が製造・販売の中核を担い、LECIP INC.（米国）、LECIP ARCONTIA AB（スウェーデン）、LECIP (SINGAPORE) PTE LTD（シンガポール）が海外で販売等を行っています。",
+      "customers": [
+        "路線バス事業者",
+        "鉄道事業者",
+        "自動車メーカー・トラックメーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "bus-market",
+          "name": "バス市場",
+          "description": "バス用運賃箱、運賃箱周辺機器、非接触ICカードシステム、LED式行先表示器、車載用液晶表示器（OBC-VISION）、運行支援ユニット（LIVU）、マルチ決済端末などを販売しています。2026年3月期の販売実績は15,010百万円です。",
+          "customers": [
+            "路線バス事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "railway-market",
+          "name": "鉄道市場",
+          "description": "列車用ワンマン機器や列車用照明灯具などを販売しています。2026年3月期の販売実績は3,974百万円です。",
+          "customers": [
+            "鉄道事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "automobile-market",
+          "name": "自動車市場",
+          "description": "車載用照明灯具などを販売しています。2026年3月期の販売実績は1,049百万円です。",
+          "customers": [
+            "自動車メーカー・トラックメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "industrial-equipment",
+      "name": "産業機器事業（エネルギーマネジメントシステム事業）",
+      "description": "電源ソリューションとEMSの2市場で構成される事業です。2026年3月期の外部顧客への売上高は3,825百万円です。電源ソリューションではバッテリー式フォークリフト用充電器を国内の大手フォークリフトメーカーに供給し、屋外用無停電電源装置をケーブルテレビや通信基地局向けに販売しています。EMSでは子会社のレシップ電子株式会社がプリント基板の実装を行っています。",
+      "customers": [
+        "フォークリフトメーカー",
+        "ケーブルテレビ事業者・通信事業者",
+        "自動車部品メーカーなどの電子機器メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "power-solution",
+          "name": "電源ソリューション市場",
+          "description": "バッテリー式フォークリフト用充電器や屋外用無停電電源装置などを販売しています。2026年3月期の売上高は24億99百万円です。",
+          "customers": [
+            "フォークリフトメーカー",
+            "ケーブルテレビ事業者・通信事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "ems",
+          "name": "EMS市場",
+          "description": "子会社のレシップ電子株式会社が、自動車用電装品を中心にプリント基板の実装を受託しています。2026年3月期の売上高は13億26百万円です。",
+          "customers": [
+            "自動車部品メーカーなどの電子機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "当社（持株会社）自身が行う不動産賃貸事業です。2026年3月期の外部顧客への売上高は37百万円です。",
+      "customers": [
+        "不動産の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "バス・鉄道・自動車向けの輸送機器と、充電器・無停電電源装置などの電源機器の製造・販売、プリント基板実装の受託を手がけます。",
+    "products": [
+      "バス用運賃箱・ICカードシステムなどの運賃収受機器",
+      "LED式行先表示器・車載用液晶表示器などの表示機器",
+      "バス・鉄道・自動車用の照明灯具",
+      "バッテリー式フォークリフト用充電器・屋外用無停電電源装置",
+      "プリント基板実装（EMS）"
+    ],
+    "customers": [
+      "路線バス事業者・鉄道事業者",
+      "自動車メーカー・トラックメーカー",
+      "フォークリフトメーカー",
+      "ケーブルテレビ事業者・通信事業者",
+      "自動車部品メーカーなどの電子機器メーカー"
+    ],
+    "revenueSources": [
+      "輸送機器の販売代金",
+      "電源ソリューション製品の販売代金",
+      "EMS（プリント基板実装）の受託代金",
+      "不動産賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "レシップグループ",
+        "description": "当社と連結子会社7社、非連結子会社1社の計9社で構成されるグループです。2026年3月31日現在の連結従業員数は721人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "輸送機器と産業機器",
+        "description": "バス・鉄道・自動車向けの運賃収受機器や表示器・照明灯具などの輸送機器と、充電器・無停電電源装置などの電源機器、プリント基板実装（EMS）を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "交通事業者とメーカー",
+        "description": "路線バス事業者や鉄道事業者、自動車メーカー、フォークリフトメーカーなどが顧客です。単一の顧客への販売が総販売実績の10％以上を占める顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は23,898百万円で、前連結会計年度と比べて7.8％減少しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,177百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +196,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 4775296000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 600,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +216,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 4688968000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 590,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +236,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 6881457000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 600,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +256,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 10100344000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 633,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,16 +276,221 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 10977490000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 721,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第74期（2026年3月期）より従業員数の集計方法を変更し、従来は臨時従業員数に含めていた地域職種限定社員（無期雇用社員）を従業員数に含めているため、従業員数が前連結会計年度末と比べて88人増加し、臨時従業員の年間平均雇用人員が64人減少しています。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1953,
+      "title": "株式会社三陽電機製作所を設立",
+      "description": "岐阜県岐阜市に、小型変圧器及びバス用蛍光灯の製造販売を目的として、株式会社三陽電機製作所を設立しました。",
+      "significance": "現在のレシップホールディングスの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "産業機器事業を開始",
+      "description": "商号を三陽電機工業株式会社に変更し、産業用インバータ電源の製造販売を開始して産業機器事業の取扱いを始めました。",
+      "significance": "現在の産業機器事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "バス用運賃箱を開発",
+      "description": "バス用運賃箱を開発しました。",
+      "significance": "現在の輸送機器事業の中核製品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "バッテリー式フォークリフト用充電器を開発",
+      "description": "バッテリー式フォークリフト用充電器を開発しました。同年、磁気式バスカードシステムも開発しています。",
+      "significance": "電源ソリューション事業の基盤となった製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "バス用非接触ICカードシステムを開発",
+      "description": "バス用非接触ICカードシステムを開発しました。",
+      "significance": "運賃収受のキャッシュレス化を担う製品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "商号をレシップ株式会社に変更",
+      "description": "商号を三陽電機工業株式会社からレシップ株式会社に変更しました。",
+      "significance": "現在の社名の由来です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "ジャスダック証券取引所に株式を上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "東京証券取引所市場第二部・名古屋証券取引所市場第二部に上場",
+      "description": "ジャスダック証券取引所への上場を取り消し、東京証券取引所市場第二部及び名古屋証券取引所市場第二部に株式を上場しました。",
+      "significance": "現在の二市場上場体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "持株会社体制へ移行し、レシップホールディングス株式会社に商号変更",
+      "description": "会社分割により事業をレシップ株式会社が承継し、当社は持株会社へ移行して、商号をレシップホールディングス株式会社に変更しました。",
+      "significance": "現在の持株会社体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "スウェーデンのArcontia International ABを買収",
+      "description": "スウェーデンのArcontia International AB（現LECIP ARCONTIA AB）の全株式を取得し、子会社化しました。",
+      "significance": "海外事業拡大の一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場・名古屋証券取引所プレミア市場へ移行",
+      "description": "市場再編に伴い、東京証券取引所プライム市場及び名古屋証券取引所プレミア市場へ移行しました。",
+      "significance": "市場再編への対応です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所スタンダード市場への市場区分変更が承認され、同市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "連結子会社のLECIP THAI CO., LTD.を解散",
+      "description": "タイの連結子会社LECIP THAI CO., LTD.は2025年7月に解散し、清算手続き中です。",
+      "significance": "海外子会社の整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "komatsu",
+      "relationship": "customer",
+      "description": "産業機器事業（電源ソリューション事業）の重要な販売先です。2026年3月31日現在、当社が株式33,429株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nishi-nippon-railroad",
+      "relationship": "customer",
+      "description": "輸送機器事業（バス事業）の重要な販売先です。2026年3月31日現在、当社が株式35,453株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "keikyu",
+      "relationship": "customer",
+      "description": "輸送機器事業（バス事業）の重要な販売先です。2026年3月31日現在、当社が株式10,689株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kanagawa-chuo-kotsu",
+      "relationship": "customer",
+      "description": "輸送機器事業（バス事業）の重要な販売先であり、複数事業者と共同で構築したキャッシュレス決済システムの納入・稼働先です。2026年3月31日現在、当社が株式2,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "niigata-kotsu",
+      "relationship": "customer",
+      "description": "輸送機器事業（バス事業）において取引を行っている顧客です。2026年3月31日現在、当社が株式1,150株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daiichi-koutsu-sangyo",
+      "relationship": "customer",
+      "description": "輸送機器事業において取引を行っている顧客です。2026年3月31日現在、当社が株式44,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "densan-system-holdings",
+      "relationship": "business-partner",
+      "description": "輸送機器事業（バス・鉄道事業）において取引を行っており、システム開発の協力者として業務提携等の関係にあります。2026年3月31日現在、当社が株式20,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sun-messe",
+      "relationship": "supplier",
+      "description": "印刷関連の事業において取引を行っている仕入先です。2026年3月31日現在、当社が株式50,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -128,13 +498,58 @@
       "publisher": "レシップホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCPI.pdf",
       "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YCPI",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 連結子会社のLECIP THAI CO., LTD.は2025年7月に解散し、2026年3月31日時点で清算手続き中ですが、連結の範囲に含まれています。本登録は2026年3月31日現在の体制（同社を含む連結子会社7社の体制）に基づきます。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期ビジョン「VISION2030」の実現に向けて、モノ（モノづくり）＋コト（サービス）への事業構造の変革、エネルギーマネジメントシステム事業の育成、北米・ASEANを中心とする海外市場における事業拡大の3つの経営戦略に取り組んでいます。中期経営計画「RT2026（Reach our Target 2026）」では、海外事業の確立、新規領域の拡大などを基本戦略としています。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "成長戦略は、国内バス市場の更新需要が一巡する中で海外市場の拡大を図ることと、エネルギーマネジメントシステム事業を輸送機器事業に次ぐ柱に育てることに重点が置かれています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の経営戦略・基本戦略の記述と、セグメント情報のセグメントごとの外部顧客への売上高、MD&Aの経営成績の分析に基づきます。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "バス用運賃箱やワンマン機器、車載用照明灯具、バッテリー式フォークリフト用充電器など、ニッチな市場でトップシェアを持つ製品を多く持ち、インバータ技術を基盤とする電力変換技術と、バス用電装機器のトータルサプライヤーとしての総合力が特徴です。",
+        "basis": "【事業の内容】の事業概要と【経営方針、経営環境及び対処すべき課題等】の経営環境の記述、セグメント情報の関連情報（製品及びサービスごとの情報）に基づきます。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "国内ではバス・鉄道向け電装機器のニッチ市場で高いシェアを持ち、海外では米国向けの販売が地域別売上高の中心です。2026年3月期の地域別の売上高は日本が20,370百万円、米国が2,993百万円で、単一の顧客への集中はありません。",
+        "basis": "セグメント情報の関連情報（地域に関する情報、主要な顧客に関する情報）と、MD&Aの経営成績の分析に基づきます。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

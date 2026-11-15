@@ -4,15 +4,156 @@
   "name": "京写",
   "officialName": "株式会社京写",
   "nameEn": "KYOSHA CO., LTD.",
-  "description": null,
+  "shortNameEn": "KYOSHA CO., LTD.",
+  "description": "日本・中国・インドネシア・ベトナム・メキシコの生産拠点でプリント配線板を製造し、自動車や家電などのメーカーに販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "china",
+      "name": "中国",
+      "description": "中国地域のプリント配線板、金型、回路設計の生産・販売を担う報告セグメントです。Kyosha Hong Kong Company Limitedを中心に、広州の製造会社・販売会社と、北米・タイ・マレーシアの販売会社が含まれます。2026年3月期の外部顧客への売上高は11,237百万円です。",
+      "customers": [
+        "自動車関連メーカー",
+        "家電製品メーカー",
+        "事務機メーカー",
+        "電子部品・電子機器メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "japan",
+      "name": "日本",
+      "description": "国内のプリント配線板、金型、回路設計と、子会社の三和電子による電子部品の実装・実装関連製品を担う報告セグメントです。本社・京都工場、九州工場、新潟工場を生産拠点とします。2026年3月期の外部顧客への売上高は9,935百万円です。",
+      "customers": [
+        "自動車関連メーカー",
+        "家電製品メーカー",
+        "電子部品・電子機器メーカー",
+        "産業機器メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "mounting",
+          "name": "実装関連事業（三和電子）",
+          "description": "子会社の三和電子株式会社が、プリント配線板への電子部品の実装と同品質検査を行い、当社の実装搬送治具事業の一部も担います。",
+          "customers": [
+            "産業機器メーカー",
+            "航空機関連メーカー",
+            "通信機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "indonesia",
+      "name": "インドネシア",
+      "description": "PT. Kyosha Indonesiaがプリント配線板、金型、回路設計の製造・販売を担う報告セグメントです。2026年3月期の外部顧客への売上高は2,457百万円です。",
+      "customers": [
+        "自動車関連メーカー",
+        "家電製品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "vietnam",
+      "name": "ベトナム",
+      "description": "Kyosha Vietnam Co.,Ltd.がプリント配線板、金型、回路設計の製造・販売を担う報告セグメントです。2026年3月期の外部顧客への売上高は1,011百万円です。",
+      "customers": [
+        "自動車関連メーカー",
+        "家電製品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "mexico",
+      "name": "メキシコ",
+      "description": "Kyosha de Mexico, S.A. de C.V.がプリント配線板や実装関連製品の製造・販売と販売支援を担う報告セグメントです。2026年3月期の外部顧客への売上高は56百万円です。",
+      "customers": [
+        "自動車関連メーカー",
+        "家電製品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "プリント配線板や金型、回路設計、電子部品の実装などを手がけ、国内外の生産拠点から自動車・家電・事務機などのメーカーに販売して、販売代金を得る事業モデルです。",
+    "products": [
+      "プリント配線板（片面・両面・金属基板など）",
+      "金型",
+      "回路設計",
+      "電子部品の実装、実装関連製品（実装搬送治具など）"
+    ],
+    "customers": [
+      "自動車関連メーカー",
+      "家電製品メーカー",
+      "事務機メーカー",
+      "電子部品・電子機器メーカー",
+      "産業機器メーカー"
+    ],
+    "revenueSources": [
+      "プリント配線板等の製品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "京写",
+        "description": "京都府久世郡久御山町に本社を置く会社です。当社と子会社10社でグループを構成し、2026年3月31日現在の連結従業員数は1,191人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "プリント配線板と実装関連製品の製造・販売",
+        "description": "プリント配線板、金型、回路設計を手がけ、国内では子会社の三和電子が電子部品の実装と実装関連製品を担います。日本、中国、インドネシア、メキシコ、ベトナムの地域別の生産・販売体制を築いています。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車・家電などのメーカー",
+        "description": "自動車関連や家電製品、事務機、電子部品・電子機器など幅広い分野の顧客に販売しています。実装関連事業は国内を中心に産業機器や航空機、通信機器向けに販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は24,697百万円",
+        "description": "2026年3月期の売上高は24,697百万円で、前年同期比5.8％減となりました。セグメント別（外部顧客への売上高）では、中国が11,237百万円、日本が9,935百万円、インドネシアが2,457百万円、ベトナムが1,011百万円、メキシコが56百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の親会社株主に帰属する当期純利益は78百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は78百万円で、前年同期比87.3％減となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +168,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7395000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1352,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7446000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1282,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +208,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8461000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1244,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +228,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10100000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1223,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +248,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10137000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1191,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +256,158 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1959,
+      "title": "株式会社京都写真型を設立",
+      "description": "京染捺染用スクリーン型の生産・販売を目的として、京都市伏見区に株式会社京都写真型（現・株式会社京写）を設立しました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "プリント配線板の開発に着手",
+      "description": "工場を京都府久世郡久御山町へ移転し、プリント配線板の開発に着手しました。",
+      "significance": "現在の主力事業であるプリント配線板事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "九州工場が完成",
+      "description": "熊本県玉名市にプリント配線板専用の工場（現・九州工場）が完成しました。",
+      "significance": "国内の生産拠点の一つとして、現在もプリント配線板の生産設備が置かれています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "スルーホールプリント配線板の本格生産を開始",
+      "description": "京都工場にスルーホールプリント配線板専用設備を設置し、スルーホールプリント配線板の本格的な社内生産体制に入りました。",
+      "significance": "両面プリント配線板の量産体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "香港に合弁会社を設立",
+      "description": "香港・中国での片面プリント配線板の生産・販売を目的に、香港に合弁会社Kyosha IDT(Holdings)Company Limited（現・Kyosha Hong Kong Company Limited）を設立しました。",
+      "significance": "海外展開の始まりで、現在の中国セグメントの中核会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "中国とインドネシアに生産子会社を設立",
+      "description": "香港の会社の生産子会社として中国にPanyu Kyosha IDT Circuit Technology Co., Ltd.（現・Guangzhou Kyosha Circuit Technology Co.,Ltd.）を設立し、東南アジアでの生産・販売を目的にインドネシアに合弁会社PT. Lippo Kyosha Indonesia（現・PT. Kyosha Indonesia）を設立しました。",
+      "significance": "アジアの生産体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "株式を店頭登録",
+      "description": "社団法人日本証券業協会に株式を店頭登録銘柄として登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "インドネシアの基板メーカーを子会社化",
+      "description": "PT. Hitachi Chemical Electronic Products Indonesia（現・PT. Kyosha Indonesia）を子会社化しました。",
+      "significance": "インドネシア事業の基盤が固まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "三和電子を子会社化",
+      "description": "三和電子株式会社を子会社化しました。",
+      "significance": "電子部品の実装事業を取り込み、実装関連事業の担い手となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "新潟工場を開設",
+      "description": "新潟市に両面プリント配線板製造の新潟工場を開設しました。",
+      "significance": "国内の両面プリント配線板の生産拠点となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "大阪証券取引所の現物市場の東京証券取引所への統合に伴い、東京証券取引所JASDAQ（スタンダード）に株式を上場しました。",
+      "significance": "現在の上場市場への移行の経緯です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "メキシコに子会社を設立",
+      "description": "米国・メキシコでの事業展開のため、メキシコのバハ・カリフォルニア州ティファナ市に子会社KS Circuit Mexico S.A. de C.V.（現・Kyosha de Mexico, S.A. de C.V.）を設立しました。",
+      "significance": "現在のメキシコセグメントの担い手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ベトナムに子会社を設立",
+      "description": "ベトナム社会主義共和国に子会社Kyosha Vietnam Co.,Ltd.を設立しました。",
+      "significance": "最も新しい海外生産拠点で、ベトナムセグメントの担い手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ市場からスタンダード市場へ移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "監査等委員会設置会社に移行",
+      "description": "監査役会設置会社から監査等委員会設置会社に移行しました。",
+      "significance": "ガバナンス体制の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +416,47 @@
       "publisher": "株式会社京写",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHX8.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YHX8",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期ビジョン2036として「印刷技術と熱対策技術を強みにお客様の製品開発から深く関わり新しい価値を生み出す挑戦企業であり続ける」を掲げ、その実行計画として2026年4月から3年間の中期経営計画2029をスタートしました。経営ビジョンは「収益力強化　新規分野への挑戦で更なる成長に向けた事業基盤の確立」で、既存事業の基盤強化と構造改革に取り組むとともに、金属基板・厚銅基板分野とインド、欧州の新市場開拓に挑戦する計画です。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "片面プリント配線板の分野で世界最大の生産能力を持ち、日本、中国、インドネシア、ベトナムの各生産拠点から日本と同品質の製品を世界中へ供給できる体制が強みです。自社の印刷技術と熱対策技術を活かし、金属基板や厚銅基板など放熱が求められる分野の製品開発も進めています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等（各生産拠点から日本と同品質の製品を供給できること、片面プリント配線板の分野で世界最大の生産能力があることの記載）と、事業の内容（地域別の生産・販売体制の記載）に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "プリント配線板業界に属し、主力の片面・両面プリント配線板を自動車関連や家電製品、事務機、電子部品・電子機器など幅広い分野に販売しています。報告セグメント別の売上高では中国が最も大きく、日本、インドネシア、ベトナム、メキシコが続きます。",
+        "basis": "経営方針、経営環境及び対処すべき課題等（主力製品の販売分野の記載）と、セグメント情報（報告セグメントごとの外部顧客への売上高の記載）に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
