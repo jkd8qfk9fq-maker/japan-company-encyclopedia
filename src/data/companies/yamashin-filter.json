@@ -4,15 +4,139 @@
   "name": "ヤマシンフィルタ",
   "officialName": "ヤマシンフィルタ株式会社",
   "nameEn": "YAMASHIN-FILTER CORP.",
-  "description": null,
+  "shortNameEn": "YAMASHIN-FILTER CORP.",
+  "description": "建設機械向けの油圧フィルタを主力に、産業用・プロセス用フィルタとエアフィルタを開発・製造・販売するフィルタ専門メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "construction-machinery-filters",
+      "name": "建機用フィルタ事業",
+      "description": "建機用フィルタ、産業用フィルタ、プロセス用フィルタの開発・製造・販売を行う報告セグメントです。当社とYAMASHIN CEBU FILTER MANUFACTURING CORP.、YAMASHIN VIETNAM CO., LTDが製造を行い、国内の販売は当社が、海外の販売は米国・欧州・東南アジア・インド・中国の販売子会社が行っています。2026年３月期の外部顧客への売上高は18,654百万円です。",
+      "customers": [
+        "建設機械メーカー",
+        "産業機械メーカー",
+        "電子部品・精密部品メーカー等"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "hydraulic-filters",
+          "name": "建機用フィルタ",
+          "description": "建設機械の油圧回路の作動油や燃料、エンジンオイルのろ過に用いられるフィルタです。作動油用フィルタ（リターンフィルタ、サクションストレーナ、ラインフィルタ等）、燃料用フィルタ、エンジンオイル用フィルタなどがあります。2026年３月期の販売実績は17,210百万円です。",
+          "customers": [
+            "建設機械メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "industrial-filters",
+          "name": "産業用フィルタ",
+          "description": "工作機械、冷凍用圧縮機、農業機械、船舶、鉄道車両、航空機等の産業機械の油圧ユニットの作動油や潤滑油のろ過に用いられるフィルタです。2026年３月期の販売実績は772百万円です。",
+          "customers": [
+            "工作機械メーカー",
+            "圧縮機メーカー",
+            "農業機械メーカー等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "process-filters",
+          "name": "プロセス用フィルタ",
+          "description": "電子部品、精密部品、液晶ディスプレイや食品等の業界で、製造工程のろ過・分離に用いられるフィルタです。糸巻フィルタ、不織布フィルタ、メンブレンフィルタがあります。2026年３月期の販売実績は670百万円です。",
+          "customers": [
+            "電子部品・精密部品メーカー等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "air-filters",
+      "name": "エアフィルタ事業",
+      "description": "エアフィルタの開発・製造・販売を行う報告セグメントです。連結子会社の株式会社アクシーが製造を行い、同社及びその代理店が国内で販売しています。プレフィルタ、中高性能フィルタ、HEPAフィルタ、オイルミストフィルタ、防虫フィルタなどを取り揃えています。2026年３月期の外部顧客への売上高は2,286百万円です。",
+      "customers": [
+        "ビル・建物や各種工場の設備需要家",
+        "半導体工場・病院等の清浄空間向け需要家"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "ガラス繊維や不織布などの「ろ材」を内製し、建設機械メーカー等に建機用フィルタを販売するとともに、海外の販売子会社を通じて世界各地に供給する事業モデルです。",
+    "products": [
+      "建機用フィルタ（作動油用フィルタ、燃料用フィルタ、エンジンオイル用フィルタ等）",
+      "産業用フィルタ（工作機械・圧縮機・農業機械等の油圧ユニット向け）",
+      "プロセス用フィルタ（電子部品・精密部品等の製造工程向け）",
+      "エアフィルタ（ビル・工場・クリーンルーム向け）"
+    ],
+    "customers": [
+      "建設機械メーカー",
+      "産業機械メーカー（工作機械・圧縮機・農業機械等）",
+      "電子部品・精密部品メーカー等",
+      "ビル・工場等の設備向け需要家"
+    ],
+    "revenueSources": [
+      "建機用フィルタの販売代金",
+      "産業用フィルタ・プロセス用フィルタの販売代金",
+      "エアフィルタの販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ヤマシンフィルタ",
+        "description": "神奈川県横浜市中区に本社を置くフィルタ専門メーカーです。1956年に山信工業株式会社として設立され、連結子会社７社を擁し、2026年３月期の従業員数は757人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ろ材を内製するフィルタ製品",
+        "description": "フィルタの核である「ろ材」の開発から製品設計・製造までをグループ内で一貫して行い、建機用フィルタ、産業用フィルタ、プロセス用フィルタ、エアフィルタを製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "建設機械メーカー等への販売",
+        "description": "国内は当社が建設機械メーカーや産業機械メーカー等に販売し、海外は米国・欧州・タイ・中国の販売子会社が各地の顧客に販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年３月期の売上高は20,941百万円",
+        "description": "2026年３月期の売上高は20,941百万円で、前期比4.2％増加しました。建機用フィルタ事業が18,654百万円、エアフィルタ事業が2,286百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年３月期の親会社株主に帰属する当期純利益は1,718百万円",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は1,718百万円で、前期比0.3％減少しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +151,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20571385000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 769,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +171,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20977758000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 788,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +191,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21299253000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 755,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +211,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22619539000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 751,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +231,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22823374000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 757,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +239,108 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1956,
+      "title": "山信工業株式会社を設立",
+      "description": "フィルタの製造販売会社として、東京都大田区東蒲田に山信工業株式会社を設立しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "佐賀工場でガラス繊維「ろ材」の本格生産を開始",
+      "description": "佐賀工場にてガラス繊維「ろ材」の本格生産を開始しました。",
+      "significance": "ろ材内製化の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "フィリピン・セブに製造子会社を設立",
+      "description": "フィリピンのセブ島に現地法人YAMASHIN CEBU FILTER MANUFACTURING CORP.を設立しました。",
+      "significance": "海外生産の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "北米に販売子会社を設立",
+      "description": "北米市場の拡販を目的として、アメリカ・シカゴに現地法人YAMASHIN AMERICA INC.を設立しました。",
+      "significance": "北米販売の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "ヤマシンフィルタ株式会社に社名変更",
+      "description": "社名を山信工業株式会社からヤマシンフィルタ株式会社に変更しました。",
+      "significance": "現在の商号の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "東京証券取引所市場第二部から同市場第一部銘柄に指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "株式会社アクシーを完全子会社化",
+      "description": "株式会社アクシーを完全子会社化しました。",
+      "significance": "エアフィルタ事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "ベトナムに製造子会社を設立",
+      "description": "ベトナム・ヴィンフック省に現地法人YAMASHIN VIETNAM CO., LTDを設立しました。",
+      "significance": "生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場再編に伴い、プライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +349,59 @@
       "publisher": "ヤマシンフィルタ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD4Z.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YD4Z",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2025年12月に公表した新たなエクイティストーリー『YAMASHIN FILTER VISION 2030』に記載のとおり、2027年３月期より新規事業として機能素材事業を立ち上げる旨が事業の内容に印字されています。本登録は2026年３月期の報告セグメント（建機用フィルタ事業及びエアフィルタ事業）に基づいています。",
+      "businessStructure: 2025年12月に公表した新たなエクイティストーリー『YAMASHIN FILTER VISION 2030』に記載のとおり、2027年３月期より新規事業として機能素材事業を立ち上げる旨が事業の内容に印字されています。本登録は2026年３月期の報告セグメント（建機用フィルタ事業及びエアフィルタ事業）に基づいています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画“Fly to the next stage!”（2025年３月期から2028年３月期）において、①新たな価値創造の取り組み、②資本コストを意識した経営の強化、③ESG経営の推進に取り組むとしています。新たな価値創造では、建機用フィルタ事業で北米市場におけるシェア拡大や、ナノファイバーを用いた製品の採用拡大を進めるとしています。2025年12月に公表した新たなエクイティストーリー「YAMASHIN FILTER VISION 2030」では、YAMASHIN Nano FilterTMの素材の可能性を活かした参入市場の選定と新規事業ポートフォリオの確立に取り組み、2027年３月期より機能素材事業を立ち上げるとしています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年３月期は、建機用フィルタ事業で新車需要が大幅に増加し交換需要も堅調に推移したことから増収となり、北米市場におけるシェア拡大とナノファイバー製品の採用拡大が進展しました。一方、エアフィルタ事業は基幹システムの入れ替えに伴う生産及び出荷遅延により減収となり、翌期以降のオペレーションの安定化と供給体制の改善による回復を課題としています。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の経営成績等の状況の概要と、セグメント情報の報告セグメントごとの売上高、地域ごとの情報に基づく",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "フィルタのキーパーツである「ろ材」の主な材料であるガラス繊維や不織布を内製し、ろ材の開発及び製品設計から製造までをグループ内で一貫して行うことで、顧客の様々な仕様に対応した「ろ材」及び「ろ材構造」を独自に開発できます。油圧ショベルが国産化された同時期からフィルタ製品の開発・生産を手掛けてきた回路の知識とノウハウが差別化に貢献しています。近年は、耐久性や濾過効果に優れ環境負荷の低減に貢献する次世代の「ろ材」として、ナノファイバーの量産化技術の確立に成功し、主要な取引先への供給が開始されています。",
+        "basis": "事業の内容の当社グループの概要と取扱製品、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析に基づく",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "1956年の創業以来一貫してフィルタの専門メーカーとして事業を続けており、主力の建機用フィルタはあらゆる建設機械に搭載されています。2026年３月期の地域別の売上高は、日本が9,314百万円、米国が4,901百万円、アジアが4,574百万円、その他が2,150百万円です。主要な顧客ごとの情報ではCATERPILLAR INC.が開示されており、同社向けが売上高の11.4％を占めています。",
+        "basis": "事業の内容と、セグメント情報の地域ごとの情報及び主要な顧客ごとの情報に基づく",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

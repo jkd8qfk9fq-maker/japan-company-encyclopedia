@@ -4,15 +4,135 @@
   "name": "ウェザーニューズ",
   "officialName": "株式会社ウェザーニューズ",
   "nameEn": "WEATHERNEWS INC.",
-  "description": null,
+  "shortNameEn": "WEATHERNEWS INC.",
+  "description": "気象・海象などのデータと予測をもとに、法人向けの対応策コンテンツと個人向けの気象アプリを提供する気象情報会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "weathernews",
+      "name": "株式会社ウェザーニューズ",
+      "description": "千葉市美浜区に本社を置く気象情報会社で、連結子会社10社とグループを構成しています。2026年5月期の従業員数は1,105人で、東京証券取引所プライム市場に上場しています。気象情報を中心とした総合的なコンテンツ提供サービスの単一セグメントで、海運向けのSea、航空向けのSky、道路・鉄道・エネルギー等の法人向けのLand、個人向けアプリ等のInternetの4つの事業領域で展開しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "japan",
+          "name": "日本",
+          "description": "国内の法人顧客への対応策コンテンツ提供と、アプリ「ウェザーニュース」や動画番組を通じた個人向け気象サービスが中心の地域です。2026年5月期の売上高は184億4千3百万円です。",
+          "customers": [
+            "道路・鉄道・電力等のインフラ企業をはじめとする国内の法人顧客",
+            "アプリやメディアを通じて利用する個人のお客様"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "asia",
+          "name": "アジア",
+          "description": "韓国・中国・台湾・香港・シンガポール・タイ等の販売拠点を通じて、航空会社や海運会社などに気象コンテンツを提供する地域です。2026年5月期の売上高は32億7千2百万円です。",
+          "customers": [
+            "アジアの航空会社・海運会社等の法人顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "europe",
+          "name": "欧州",
+          "description": "イギリス・オランダ・フランス等の販売拠点と欧州販売本部を通じて、外航船向けの最適航路推薦サービスなどを展開する地域です。2026年5月期の売上高は25億1千2百万円です。",
+          "customers": [
+            "欧州の海運会社等の法人顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "americas",
+          "name": "米州",
+          "description": "アメリカの子会社とオクラホマのサービスセンターを通じて気象コンテンツの販売・運営を行う地域です。2026年5月期の売上高は2億5千万円です。",
+          "customers": [
+            "米州の法人顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "気象データの収集と予測から対応策コンテンツを作り、陸・海・空の法人顧客とアプリを使う個人に継続して提供し、対価を得る事業モデルです。",
+    "products": [
+      "外航船向けの最適航路推薦サービス（OSR）などの海運向け気象コンテンツ",
+      "航空機・ヘリコプターの運航を支援する航空気象コンテンツ",
+      "道路・鉄道・エネルギー分野向けの気象コンテンツ",
+      "放送局向けの気象コンテンツと災害情報の速報システム",
+      "アプリ「ウェザーニュース」と動画番組「ウェザーニュースLiVE」による個人向け気象情報",
+      "気象データAPI「WxTech」"
+    ],
+    "customers": [
+      "外航船を運航する海運会社",
+      "航空会社とドクターヘリ等の運航者",
+      "道路・鉄道・電力等のインフラ企業",
+      "放送局",
+      "アプリやメディアを通じて利用する個人のお客様"
+    ],
+    "revenueSources": [
+      "法人向け気象コンテンツ・サービスの継続提供による売上",
+      "個人向けアプリのサブスクリプション売上と広告収入",
+      "一時的な調査やシステム販売による売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社ウェザーニューズ",
+        "description": "千葉市美浜区に本社を置く気象情報会社で、連結子会社10社とグループを構成しています。2026年5月期の従業員数は1,105人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "気象データの収集・予測と対応策コンテンツ",
+        "description": "各国機関の気象データや、企業・個人の参加者から集まる観測・感測の情報を独自データベースに集積し、予報センターの予測モデルで予測値を作り、各市場の気象リスクに合わせた対応策コンテンツを作成しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "陸・海・空の法人顧客と個人のお客様",
+        "description": "法人向けには海運・航空・道路・鉄道・エネルギー等の企業に、個人向けにはアプリやメディアを通じて一般のお客様にサービスを提供しています。売上高の10％以上を占める主要な顧客はないと印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年5月期の売上高は244億7千9百万円",
+        "description": "2026年5月期の売上高は244億7千9百万円で、前連結会計年度比4.1％増となりました。地域別では日本が184億4千3百万円、アジアが32億7千2百万円、欧州が25億1千2百万円、米州が2億5千万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年5月期の親会社株主に帰属する当期純利益は38億6百万円",
+        "description": "2026年5月期の親会社株主に帰属する当期純利益は38億6百万円で、前連結会計年度比22.2％増となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年5月期",
@@ -27,7 +147,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16843930000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1120,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +167,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18400224000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1138,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +187,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19788308000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1152,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21545584000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1120,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23893431000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1105,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +235,78 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1986,
+      "title": "株式会社ウェザーニュースを設立",
+      "description": "株式会社ウェザーニュースを設立し、同年９月に商号を株式会社ウェザーニューズに変更しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "OCEANROUTES INC.の全株式を取得",
+      "description": "米国の気象会社OCEANROUTES INC.の全株式を取得しました。",
+      "significance": "海運向け気象サービスの基盤を得た出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "ナスダック・ジャパン市場に上場",
+      "description": "ナスダック・ジャパン市場（スタンダード）に株式を上場しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "東京証券取引所市場第一部への指定替え",
+      "description": "東京証券取引所市場第二部に上場し、同年11月に市場第一部への指定替えを受けました。",
+      "significance": "東証一部上場会社となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "フランスの気象会社Metnext SASを子会社化",
+      "description": "フランスの気象会社Metnext SASを子会社化しました（現・Weathernews France SAS）。",
+      "significance": "欧州事業の拡大の転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "タイに子会社を設立",
+      "description": "タイにWEATHERNEWS (THAILAND) CO., LTD.を設立しました。",
+      "significance": "アジア展開の新しい拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +315,59 @@
       "publisher": "株式会社ウェザーニューズ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YXMM.pdf",
       "publishedAt": "2026-08-20",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YXMM",
+      "asOf": "2026-05-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2024年12月１日付で普通株式１株につき２株の割合で、2026年３月１日付で普通株式１株につき２株の割合で株式分割を実施したと経営指標等の注記に印字されています。本登録は分割後の株式数に基づく指標で登録しています。",
+      "businessStructure: 2024年12月１日付で普通株式１株につき２株の割合で、2026年３月１日付で普通株式１株につき２株の割合で株式分割を実施したと経営指標等の注記に印字されています。本登録は分割後の株式数に基づく指標で登録しています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年７月に策定した「中期ビジョン2026」では、AI技術との融合による全社変革、創業以来培ってきた強みの有機的な結合によるグローバル成長モデル、これらを実現するための資本戦略の３つを柱に掲げ、気象情報を「第５の公共インフラ」として事業規模の拡大を進めるとしています。",
+        "asOf": "2026-08-20",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "前期までの中期経営計画では、SaaSモデルによる新たな顧客層の開拓と、AI活用による運営モデルの確立を重点施策とし、サービスを継続提供するストック型の売上を積み上げる構成になっています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（経営成績等の状況の概要）、セグメント情報等の関連情報（地域ごとの情報）に基づく",
+        "asOf": "2026-08-20",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "顧客や個人の参加者が観測・予測・コンテンツ展開の各過程に参加する価値共創型の仕組み（Join & Share型サービス）を持ち、参加者が増えるほどサービスの価値が高まる構成になっています。運営は日本のグローバルセンターと欧州・米州のサービスセンターによる世界３極体制で、24時間365日の提供を支えています。",
+        "basis": "事業の内容、経営方針、経営環境及び対処すべき課題等に基づく",
+        "asOf": "2026-08-20",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年5月期の地域別売上高は日本が184億4千3百万円で全体の約４分の３を占め、アジア、欧州、米州でもサービスを提供しています。個人向けでは、アプリが４年連続で予報精度の評価で首位となり、利用者数の評価でも首位を獲得したと印字されています。",
+        "basis": "セグメント情報等の関連情報（地域ごとの情報）、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（経営成績等の状況の概要）に基づく",
+        "asOf": "2026-08-20",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年5月期",
     "asOf": "2026-05-31",

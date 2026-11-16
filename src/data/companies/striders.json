@@ -4,15 +4,237 @@
   "name": "ストライダーズ",
   "officialName": "株式会社ストライダーズ",
   "nameEn": "Striders Corporation",
-  "description": null,
+  "shortNameEn": "Striders Corporation",
+  "description": "東京都中央区に本社を置き、不動産事業、ホテル事業、投資事業を子会社を通じて展開する持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "real-estate",
+      "primary": true
+    },
+    {
+      "industryId": "entertainment",
+      "primary": false
+    },
+    {
+      "industryId": "finance",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "連結子会社の株式会社トラストアドバイザーズがマンションの賃貸管理や建物管理、不動産売買を行い、株式会社東京アパートメント保証が家賃保証を行い、株式会社日本橋TAKUMIが内装事業を行う事業です。2026年3月期の外部顧客への売上高は6,839百万円で、連結売上高の大部分を占めています。",
+      "customers": [
+        "マンションオーナー等の不動産所有者",
+        "賃貸住宅の入居者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "residence",
+          "name": "レジデンス事業",
+          "description": "マンションオーナー向けのリーシング及び賃貸管理と、マンション建物の受託管理を行う事業です。売上高は区分ごとに開示されていません。",
+          "customers": [
+            "マンションオーナー等の不動産所有者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-estate-trading",
+          "name": "不動産売買事業",
+          "description": "マンションオーナーの購入・売却のニーズに対応する不動産売買を行う事業です。売上高は区分ごとに開示されていません。",
+          "customers": [
+            "マンションオーナー等の不動産所有者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "rent-guarantee",
+          "name": "家賃保証事業",
+          "description": "株式会社東京アパートメント保証が行う、賃貸住宅の家賃保証の事業です。売上高は区分ごとに開示されていません。",
+          "customers": [
+            "賃貸住宅の入居者",
+            "不動産管理会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "interior",
+          "name": "内装事業",
+          "description": "2025年12月に設立された株式会社日本橋TAKUMIが行う内装の事業です。売上高は区分ごとに開示されていません。",
+          "customers": [
+            "マンションオーナー等の不動産所有者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "hotel",
+      "name": "ホテル事業",
+      "description": "成田ゲートウェイホテル株式会社が成田空港エリアで、株式会社倉敷ロイヤルアートホテルが倉敷美観地区エリアでホテルを運営する事業です。2026年3月期の外部顧客への売上高は1,310百万円でした。",
+      "customers": [
+        "ホテルの宿泊客",
+        "宴会・レストランの利用客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "narita-gateway-hotel",
+          "name": "成田ゲートウェイホテル",
+          "description": "千葉県成田市で運営するホテルです。訪日外国人旅行者の増加などインバウンド需要を取り込んでいます。売上高はホテルごとに開示されていません。",
+          "customers": [
+            "ホテルの宿泊客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "kurashiki-royal-art-hotel",
+          "name": "倉敷ロイヤルアートホテル",
+          "description": "岡山県倉敷市の美観地区エリアで運営する、アートや文化をテーマとしたホテルです。売上高はホテルごとに開示されていません。",
+          "customers": [
+            "ホテルの宿泊客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "investment",
+      "name": "投資事業",
+      "description": "Ｍ＆Ａグローバル・パートナーズ株式会社が国内で、STRIDERS GLOBAL INVESTMENT PTE. LTD.が南・東南アジアを中心とする海外で投資を行う事業です。2026年3月期の外部顧客への売上高は61百万円でした。",
+      "customers": [
+        "投資先の企業・スタートアップ"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "domestic-investment",
+          "name": "国内投資事業",
+          "description": "Ｍ＆Ａグローバル・パートナーズ株式会社が行う国内の投資事業です。売上高は区分ごとに開示されていません。",
+          "customers": [
+            "投資先の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "overseas-investment",
+          "name": "海外投資事業",
+          "description": "シンガポールのSTRIDERS GLOBAL INVESTMENT PTE. LTD.が行う、南・東南アジアを中心とした海外の投資事業です。売上高は区分ごとに開示されていません。",
+          "customers": [
+            "投資先のスタートアップ"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業で、持分法適用関連会社の株式会社みらい知的財産技術研究所が行う特許の先行技術調査などを含みます。2026年3月期の外部顧客への売上高は2百万円でした。",
+      "customers": [
+        "特許の調査を依頼する企業等"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "子会社がマンションの賃貸管理や不動産売買、ホテルの運営を行い、アジアを中心とした投資も行って、管理料や賃料、宿泊料、投資収益などで収益を得る事業モデルです。",
+    "products": [
+      "マンションの賃貸管理・建物管理の受託",
+      "不動産売買・賃貸仲介",
+      "家賃保証",
+      "ホテルの運営（成田・倉敷）",
+      "国内及びアジア圏への投資"
+    ],
+    "customers": [
+      "マンションオーナー等の不動産所有者",
+      "賃貸住宅の入居者",
+      "ホテルの宿泊客・宴会利用客",
+      "投資先の企業・スタートアップ"
+    ],
+    "revenueSources": [
+      "賃貸収入・管理受託料",
+      "不動産売買の対価",
+      "家賃保証料",
+      "宿泊料・宴会料",
+      "投資収益"
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ストライダーズ",
+        "description": "東京都中央区に本社を置き、東京証券取引所スタンダード市場に上場しています。2026年3月31日現在の連結子会社は7社、持分法適用関連会社は2社で、連結の従業員数は115人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "不動産・ホテル・投資の3事業",
+        "description": "子会社を通じて、マンションの賃貸管理や不動産売買、家賃保証を行う不動産事業、成田と倉敷でホテルを運営するホテル事業、国内とアジア圏で投資を行う投資事業を展開しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "不動産オーナー・宿泊客・投資先",
+        "description": "顧客は、マンションオーナー等の不動産所有者や賃貸住宅の入居者、ホテルの宿泊客、投資先の企業やスタートアップです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高8,213百万円",
+        "description": "2026年3月期の売上高は8,213百万円（前期比5.5％増）でした。セグメント別の外部顧客への売上高は、不動産事業が6,839百万円、ホテル事業が1,310百万円、投資事業が61百万円、その他が2百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益205百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は205百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +249,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2450699000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 141,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +269,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2517524000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 135,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +289,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2540850000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 128,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +309,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2463786000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 115,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +329,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2814335000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 115,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +337,199 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1965,
+      "title": "リース事務機会社として設立",
+      "description": "リース事務機の会社として設立されました。",
+      "significance": "現在のストライダーズの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式を店頭登録",
+      "description": "株式を店頭登録しました。",
+      "significance": "資本市場への参加の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "商号を株式会社バーテックスリンクに変更",
+      "description": "商号を株式会社バーテックスリンクに変更しました。",
+      "significance": "後のストライダーズへの商号変更まで続いた社名です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "ジャスダック証券取引所に上場しました。",
+      "significance": "取引所市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "株式会社トラストアドバイザーズを子会社化",
+      "description": "株式会社エスグラント・アドバイザーズを子会社化し、株式会社トラストアドバイザーズに商号変更しました。",
+      "significance": "現在の不動産事業の中核子会社の成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "商号を株式会社ストライダーズに変更",
+      "description": "商号を株式会社ストライダーズに変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "成田のホテルを取得しホテル事業へ進出",
+      "description": "株式会社グローバルホールディングスが成田ポートホテル（現・成田ゲートウェイホテル）を取得し、その運営会社を連結子会社化して成田ゲートウェイホテル株式会社に商号変更しました。",
+      "significance": "ホテル事業への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "株式会社倉敷ロイヤルアートホテルを子会社化",
+      "description": "ホテル日航倉敷を所有・運営するロテルド倉敷株式会社を子会社化し、株式会社倉敷ロイヤルアートホテルに商号変更しました。同年、株式会社東京アパートメント保証を設立しました。",
+      "significance": "ホテル事業の2拠点目と家賃保証事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "株式会社みらい知的財産技術研究所を持分法適用関連会社化",
+      "description": "株式会社みらい知的財産技術研究所の株式の一部を取得し、持分法適用関連会社としました。",
+      "significance": "特許の先行技術調査を行う関連会社の取り込みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場再編に伴い、スタンダード市場に上場しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社グローバルホールディングスを吸収合併",
+      "description": "株式会社グローバルホールディングスを吸収合併し、同社は解散しました。",
+      "significance": "グループ再編の一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社日本橋TAKUMIを設立",
+      "description": "内装事業を行う株式会社日本橋TAKUMIを設立しました。",
+      "significance": "不動産事業の周辺サービスの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "OMUSUBI CAPITAL VCCを持分法適用関連会社化",
+      "description": "子会社のSTRIDERS GLOBAL INVESTMENT PTE. LTD.がOMUSUBI CAPITAL VCCの経営権の一部を取得し、持分法適用関連会社としました。",
+      "significance": "海外投資事業における関連会社の追加です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第62期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第62期(2025/04/01－2026/03/31)",
       "publisher": "株式会社ストライダーズ",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDYC.pdf",
-      "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z0JB.pdf",
+      "publishedAt": "2026-09-04",
+      "docId": "S100Z0JB",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年2月27日開催の取締役会で、連結子会社の株式会社倉敷ロイヤルアートホテルが所有するホテル不動産の譲渡とホテル事業の事業譲渡を決議し、2026年5月1日付で譲渡しています（重要な後発事象）。同社は譲渡後も連結子会社として存続します。本登録は2026年3月31日現在の構造で登録しています。",
+      "businessModel: 2026年5月1日付で、連結子会社の株式会社倉敷ロイヤルアートホテルが、株式会社ホテル・アローレが所有するホテル不動産（石川県加賀市）を取得しています（重要な後発事象）。本登録は2026年3月31日現在の構造で登録しています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念として「挑戦する個人・企業を応援し、すべてのステークホルダーと感動体験を共有し、より良い世界を創造する」ことを掲げ、コーポレートスローガンに「Stride with Challengers（挑戦者達と共に闊歩する）」を掲げています。不動産事業は「豊かな居住空間の実現」、ホテル事業は「地域創生・地域活性化」、投資事業は「アジアの投資家・スタートアップとの連携」を重要テーマとし、当社が日本とアジアをつなぐゲートウェイとしての役割を担うとしています。前期に実施した事業ポートフォリオの見直しを経て、不動産、ホテル、投資の3事業を中核とする事業会社体制へ移行し、各事業の収益基盤の強化とグループ全体としての戦略的な連携を推進するとしています。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期は、価格体系の見直しや業務の効率化に加え、人材投資およびAI活用の推進を通じて収益力の強化を図ったとしています。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における記載に基づく",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "不動産事業の中核子会社である株式会社トラストアドバイザーズは、売上高が連結売上高の10％を超える主要な連結子会社であり、賃貸管理と建物管理、不動産売買を一体で手がけています。ホテル事業は、成田空港エリアと倉敷美観地区という観光資源のある立地でホテルを運営しています。",
+        "basis": "関係会社の状況及び経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における記載に基づく",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の外部顧客への売上高では、不動産事業が6,839百万円と連結売上高8,213百万円の8割超を占め、ホテル事業が1,310百万円、投資事業が61百万円となっています。",
+        "basis": "セグメント情報の外部顧客への売上高に基づく",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

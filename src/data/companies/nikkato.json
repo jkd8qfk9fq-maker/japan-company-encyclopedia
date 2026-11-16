@@ -3,16 +3,181 @@
   "code": "5367",
   "name": "ニッカトー",
   "officialName": "株式会社ニッカトー",
-  "nameEn": "ＮＩＫＫＡＴＯ ＣＯＲＰＯＲＡＴＩＯＮ",
-  "description": null,
+  "nameEn": "NIKKATO CORPORATION",
+  "shortNameEn": "NIKKATO CORPORATION",
+  "description": "工業用セラミックス製品を自社工場で製造して販売し、加熱装置や計測機器の仕入販売も行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "ceramics",
+      "name": "セラミックス事業",
+      "description": "セラミックス製品を堺工場と東山工場で製造し販売する事業です。製品のほとんどは、電子部品、食品、薬品、塗料などのメーカーの生産工程で使われるセラミックス製の道具類、備品、機械部品などの消耗品です。2026年３月期の外部顧客への売上高は8,215百万円です。",
+      "customers": [
+        "電子部品メーカー",
+        "食品メーカー",
+        "薬品メーカー",
+        "塗料メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "functional-ceramics",
+          "name": "機能性セラミックス",
+          "description": "ケラマックス発熱体、酸素センサ、セラミックスフィルターなどの製品群です。2026年３月期の売上高は558百万円です。",
+          "customers": [
+            "電子部品メーカー等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "wear-resistant-ceramics",
+          "name": "耐摩耗セラミックス",
+          "description": "粉砕用ボールやボールミルなどの製品群で、電子部品原料・材料の粉砕や塗料、顔料の分散などに使われます。2026年３月期の売上高は5,457百万円です。",
+          "customers": [
+            "電子部品メーカー",
+            "塗料メーカー等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "heat-resistant-ceramics",
+          "name": "耐熱セラミックス",
+          "description": "熱電対用保護管、絶縁管、炉心管、搬送用ローラ、熱処理容器・道具類などの製品群です。2026年３月期の売上高は2,007百万円です。",
+          "customers": [
+            "電子部品メーカー等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "physicochemical-pottery",
+          "name": "理化学用陶磁器その他",
+          "description": "蒸発皿、るつぼ、燃焼用ボートなどの実験用陶磁器や、特殊耐火るつぼ・容器、耐熱セメントなどの製品群です。2026年３月期の売上高は191百万円です。",
+          "customers": [
+            "研究機関等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "engineering",
+      "name": "エンジニアリング事業",
+      "description": "製造工場を持たず、加熱装置や計測機器などを商品として仕入れて販売する事業です。2026年３月期の外部顧客への売上高は3,125百万円です。",
+      "customers": [
+        "自動車・重機関係の企業",
+        "半導体部品等のメーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "heating-equipment",
+          "name": "加熱装置",
+          "description": "各種電気炉、ケラマックス電気炉、真空炉、熱処理装置などの商品群で、主に超伝導用テープ線材、ＩＴ関連用部材、半導体部品などの生産炉として使われます。2026年３月期の売上高は641百万円です。",
+          "customers": [
+            "半導体部品等のメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "measurement-instruments",
+          "name": "計測機器その他",
+          "description": "温度センサ、応力測定装置、計測機器、計測制御装置などの商品群です。2026年３月期の売上高は2,483百万円です。",
+          "customers": [
+            "自動車・重機関係の企業等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "堺工場と東山工場でセラミックス製の道具類や機械部品を製造して電子部品メーカーなどに販売し、加熱装置や計測機器の仕入販売でも収益を得る事業モデルです。",
+    "products": [
+      "ケラマックス発熱体や酸素センサなどの機能性セラミックス",
+      "粉砕用ボールやボールミルなどの耐摩耗セラミックス",
+      "熱電対用保護管や炉心管などの耐熱セラミックス",
+      "蒸発皿やるつぼなどの理化学用陶磁器",
+      "電気炉などの加熱装置",
+      "温度センサなどの計測機器"
+    ],
+    "customers": [
+      "電子部品メーカー",
+      "食品メーカー",
+      "薬品メーカー",
+      "塗料メーカー",
+      "自動車・重機関係の企業"
+    ],
+    "revenueSources": [
+      "セラミックス製品の販売による対価",
+      "加熱装置や計測機器の販売による対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "大阪府堺市に本社と２つの工場を置く",
+        "description": "同社は大阪府堺市堺区に本社と堺工場を置き、同じ堺市内に東山工場も有しています。2026年３月31日現在の従業員数は279人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "セラミックス製品の製造販売と機器の仕入販売を行う",
+        "description": "セラミックス事業では機能性・耐摩耗・耐熱セラミックスと理化学用陶磁器を製造して販売し、エンジニアリング事業では加熱装置や計測機器を仕入れて販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "各業界のメーカーが顧客",
+        "description": "顧客は電子部品、食品、薬品、塗料などのメーカーで、セラミックス製品の多くは各メーカーの生産工程で使われる消耗品です。売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年３月期の売上高は11,340百万円",
+        "description": "2026年３月期の売上高は11,340百万円で、前期比12.5％増となりました。電子部品業界の市況が回復傾向にあったことや、自動車・重機関係を中心に設備投資が好調に推移したことによるものです。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年３月期の当期純利益は775百万円",
+        "description": "2026年３月期の当期純利益は775百万円となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +192,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11786460000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 295,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +214,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12393613000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 288,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +236,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13072807000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 286,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +258,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13113360000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 288,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +280,204 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14136950000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 279,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1913,
+      "title": "西村化学陶業試験場を創設",
+      "description": "化学陶器の国産化のための研究を1910年に始め、1913年に大阪市浪速区に西村化学陶業試験場を創設しました。",
+      "significance": "現在のニッカトーの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1921,
+      "title": "西村工業株式会社を創立",
+      "description": "西村工業株式会社を創立しました。",
+      "significance": "法人としての出発点です。設立時の資本金額は歴史に書かない規則のため記載していません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1937,
+      "title": "堺工場を新設し、Oxide Ceramicの工業化に成功",
+      "description": "堺工場を新設し、我が国で初めてOxide Ceramicの工業化に成功しました。",
+      "significance": "現在の主力であるセラミックス製造の基盤が築かれました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "日本化学陶業株式会社に商号変更",
+      "description": "日本化学陶業株式会社に商号を変更しました。",
+      "significance": "戦後の再出発における社名の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "アイソスタテイックプレス法による加圧成形技術の企業化に成功",
+      "description": "新技術開発事業団からの開発委託テーマであった、アイソスタテイックプレス法による粉体の加圧成形技術の企業化に成功しました。",
+      "significance": "粉体成形の基盤技術が事業として確立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "半導体製造用などのセラミックス製品を量産化",
+      "description": "半導体製造用の拡散炉用均熱管やキルン用セラミックローラーなどを量産化し、省エネルギー用焼成炉も増強しました。",
+      "significance": "電子部品産業向けの製品供給が本格化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "ジルコニアセラミックス「ＹＴＺ」の販売開始",
+      "description": "高強度・高靭性ジルコニアセラミックス「ＹＴＺ」の販売を開始しました。",
+      "significance": "現在の主力製品群である耐摩耗セラミックスにつながる製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式会社ニッカトーに商号変更",
+      "description": "西村工業株式会社と合併し、株式会社ニッカトーに商号を変更しました。",
+      "significance": "現在の社名になりました。なお、合併相手の西村工業株式会社は1921年創立の同名会社とは別の会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に株式を上場",
+      "description": "ジャスダック証券取引所に株式を上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "東京証券取引所市場第二部に株式を上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "東証への上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "市場再編に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場へ市場変更",
+      "description": "東京証券取引所スタンダード市場へ市場変更しました。",
+      "significance": "現在の上場市場になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tosoh",
+      "relationship": "supplier",
+      "description": "東ソー株式会社は、セラミックス事業の原料の安定仕入先であり、製品の販売先でもあります。セラミックス事業の原料仕入金額のうち74.2％を同社から仕入れており、ジルコニアの仕入の96.9％を同社に依存しています。主力製品のＹＴＺボールの欧米向け販売も全面的に同社に依頼しています。当社は同社の株式を保有し、同社も当社の株式を保有しています（2026年３月31日現在、同社の当社株式の保有割合は5.0％）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業等のリスク】"
+    },
+    {
+      "companyId": "chino",
+      "relationship": "supplier",
+      "description": "株式会社チノーは、商品の安定仕入先として当社が株式を保有する相手です。同社も当社の株式を保有しています（2026年３月31日現在、同社の当社株式の保有割合は4.7％）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kyowa-electronic-instruments",
+      "relationship": "supplier",
+      "description": "株式会社共和電業は、商品の安定仕入先として当社が株式を保有する相手です。同社も当社の株式を保有しています（2026年３月31日現在、同社の当社株式の保有割合は3.3％）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kubota",
+      "relationship": "customer",
+      "description": "株式会社クボタは、製品の安定販売先として当社が株式を保有する相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "noritake",
+      "relationship": "customer",
+      "description": "ノリタケ株式会社は、製品の販売先であり設備の仕入先でもある相手で、当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mino-ceramic",
+      "relationship": "business-partner",
+      "description": "美濃窯業株式会社は、取引関係の強化及び今後の協力関係構築を目的として当社が株式を保有する相手です。同社も当社の株式を保有しています（2026年３月31日現在、同社の当社株式の保有割合は2.5％）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +485,55 @@
       "publisher": "株式会社ニッカトー",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y9NY.pdf",
       "publishedAt": "2026-06-15",
-      "accessedAt": "2026-09-29"
+      "docId": "S100Y9NY",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「CONNECT30」では「稼ぎ続ける力」「新たな投資」「持続的な成長」を重点戦略とし、スローガン「まずやってみる、未来のために。」を掲げています。2030年に向けて、セラミックス事業単体で売上高100億円、エンジニアリング事業で売上高30億円とする目標を掲げています。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の約７割を占めるセラミックス事業を基盤に、エンジニアリング事業の拡大で２事業の構成を保ちながら成長を目指す形です。",
+        "basis": "セラミックス事業の外部顧客への売上高8,215百万円が全体の約７割を占め、エンジニアリング事業の売上高が前期比17.0％増となった事実に基づきます。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "100年以上にわたり培ってきた「ものづくり」に対する真摯な姿勢と「社会に貢献する」高い意識が大きな強みであり、永年培われてきた「基盤技術」と「コア技術」を継承し進化させていくことを戦略のベースとしています。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "同社のセラミックス製品は、スマートフォンや自動車のEV化、自動運転などに関わる電子部品の製造に使われる製品として、広く電子部品メーカーに使用されています。",
+        "basis": "企業理念の説明で、同社の製品が電子部品の製造に使われ広く電子部品メーカーに使用されている旨が述べられている事実に基づきます。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
