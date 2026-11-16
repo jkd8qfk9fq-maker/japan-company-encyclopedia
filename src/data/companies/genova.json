@@ -1,18 +1,159 @@
 {
   "id": "genova",
   "code": "9341",
-  "name": "GENOVA",
+  "name": "株式会社GENOVA",
   "officialName": "株式会社GENOVA",
   "nameEn": "GENOVA, Inc.",
-  "description": null,
+  "shortNameEn": "GENOVA, Inc.",
+  "description": "医療メディアの運営や医療機関向けの業務効率化サービス、歯科医療用機器・材料の販売など、医療現場を支える事業を展開する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "media",
+      "primary": true
+    },
+    {
+      "industryId": "it",
+      "primary": false
+    },
+    {
+      "industryId": "trading",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "genova",
+      "name": "株式会社GENOVA",
+      "description": "東京都渋谷区に本社を置き、医療メディアの運営と医療機関向けサービスの提供を行う会社です。当社と連結子会社3社でグループを構成し、2026年3月31日現在の従業員数は529人です。東京証券取引所プライム市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "medical-platform",
+          "name": "メディカルプラットフォーム事業",
+          "description": "医療メディア「Medical DOC」を運営し、医師監修の医療情報記事の配信や医療機関の紹介記事の制作を行う事業です。2026年3月期の外部顧客への売上高は5,034百万円です。",
+          "customers": [
+            "医療機関",
+            "医療情報の利用者（患者）"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "smart-clinic",
+          "name": "スマートクリニック事業",
+          "description": "医療機関向けにスマート簡易自動精算機・再来受付機「NOMOCa-Stand」やセルフ精算レジ「NOMOCa-Regi」を販売し、LINEを活用した「CLINIC BOT」やAIチャットボット「NOMOCa AI chat」を提供する事業です。2026年3月期の外部顧客への売上高は3,347百万円です。",
+          "customers": [
+            "医療機関（診療所）"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "dental-distribution",
+          "name": "歯科流通事業",
+          "description": "連結子会社の株式会社ASANOが、歯科医療用機器・器材・材料・薬品等の開発・販売を行う事業です。2026年3月期の外部顧客への売上高は2,391百万円です。",
+          "customers": [
+            "歯科医院"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "dx",
+          "name": "DX事業",
+          "description": "医療機関向けにクラウド型のカルテサービス「カルテクラウド」や、LINEと連携する予約管理サービス「クリニッククラウドGR」などのDXソリューションを提供する事業です。2026年3月期の外部顧客への売上高は311百万円です。",
+          "customers": [
+            "医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other",
+          "name": "その他事業",
+          "description": "医療機関向けのWebサイト制作や、制作したWebサイトの運用保守、予防医療等に関するサービスを提供する事業です。株式会社GENOVA DESiGNと智樹（大連）技術開発有限公司が担っています。2026年3月期の外部顧客への売上高は480百万円です。",
+          "customers": [
+            "医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "医療メディアへの有料記事制作や自動精算機・AIチャットボット等の医療機関向けサービス、子会社を通じた歯科医療用機器・材料の販売で収益を得る事業モデルです。",
+    "products": [
+      "医療メディア「Medical DOC」",
+      "スマート簡易自動精算機・再来受付機「NOMOCa-Stand」",
+      "医療機関・診療所専用セルフ精算レジ「NOMOCa-Regi」",
+      "LINEを活用したCRMサービス「CLINIC BOT」",
+      "AIチャットボット自動応答システム「NOMOCa AI chat」",
+      "歯科医療用機器・器材・材料・薬品",
+      "クラウド型カルテサービス「カルテクラウド」"
+    ],
+    "customers": [
+      "医療機関（病院・診療所）",
+      "歯科医院",
+      "医療情報の利用者（患者）"
+    ],
+    "revenueSources": [
+      "医療機関の紹介記事の制作・掲載に係る収入",
+      "自動精算機・再来受付機の販売収入",
+      "ソフトウェアサービスの契約料・利用料",
+      "歯科医療用機器・材料・薬品の販売収入",
+      "Webサイト制作・運用保守の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社GENOVA",
+        "description": "「ヒトと医療をつないで健康な社会を創る」をミッションに掲げ、当社と連結子会社3社でグループを構成します。2026年3月31日現在の従業員数は529人で、東京証券取引所プライム市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "医療メディアと医療機関向けサービス、歯科流通",
+        "description": "医師監修の医療情報を配信するメディア「Medical DOC」の運営と医療機関の紹介記事の制作、自動精算機「NOMOCa」シリーズや「CLINIC BOT」「NOMOCa AI chat」などの業務効率化サービス、子会社を通じた歯科医療用機器・材料の販売と医療機関向けDXソリューションを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "医療機関と歯科医院、医療情報の利用者",
+        "description": "顧客は全国の医療機関（病院・診療所）と歯科医院です。医療情報の利用者（患者）はメディアを無料で利用し、医療機関を探します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は11,565百万円",
+        "description": "2026年3月期の売上高は11,565百万円でした。セグメント別の外部顧客への売上高は、メディカルプラットフォーム事業が5,034百万円、スマートクリニック事業が3,347百万円、歯科流通事業が2,391百万円、DX事業が311百万円、その他事業が480百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の親会社株主に帰属する当期純利益は275百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は275百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +168,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1492338000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 242,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4046873000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 294,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,12 +208,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6037288000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 352,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号）等を第20期の期首から適用しており、第19期に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっております。なお、経過的な取扱いを適用しております。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -87,7 +229,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6998656000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 408,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +249,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6898593000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 529,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +257,118 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2005,
+      "title": "東京都港区六本木にインターネットウェブコンテンツ開発会社として設立",
+      "description": "東京都港区六本木において、インターネットウェブコンテンツ開発会社として当社を設立しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "中国・大連にオフショア開発拠点の子会社を設立",
+      "description": "ウェブサイトのコーディング業務を担う日本向けオフショア開発拠点として、中国・大連に智樹（大連）技術開発有限公司を設立しました。",
+      "significance": "現在のその他事業につながる開発体制の構築です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "CMSサービス「plimo」の提供を開始",
+      "description": "レスポンシブ対応のGENOVA CMSである「plimo」のサービス提供を開始しました。",
+      "significance": "Webサイト制作・運用のサービス化の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "医療情報サイト「Medical DOC」の提供を開始",
+      "description": "医療情報サイト「Medical DOC」のサービス提供を開始しました。",
+      "significance": "現在の主力事業であるメディカルプラットフォーム事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "「NOMOCa-Stand」「NOMOCa-Regi」の提供を開始",
+      "description": "スマート簡易自動精算機・再来受付機「NOMOCa-Stand」と、医療機関・診療所専用セルフ精算レジ「NOMOCa-Regi」のサービス提供を開始しました。",
+      "significance": "スマートクリニック事業の主力商品の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "株式会社GENOVA DESiGNを設立",
+      "description": "ウェブサイト制作サービスの収益性の改善を図るため、ウェブサイトを中心としたwebマーケティング業務を移管し、株式会社GENOVA DESiGNを設立しました。",
+      "significance": "Web制作・運用保守を担う子会社の分社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "「CLINIC BOT」の提供を開始",
+      "description": "LINEを活用したチャットボットシステム「CLINIC BOT」のサービス提供を開始しました。",
+      "significance": "ソフトウェアサービスへの展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場に上場",
+      "description": "東京証券取引所グロース市場に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "「NOMOCa AI chat」の提供を開始",
+      "description": "AIチャットボットによる自動応答システム「NOMOCa AI chat」のサービス提供を開始しました。",
+      "significance": "AIを活用した主力ソフトウェアサービスです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "東京証券取引所プライム市場へ市場区分を変更",
+      "description": "東京証券取引所プライム市場への市場区分変更を行いました。",
+      "significance": "プライム市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社ASANOを設立し、歯科関連事業を開始",
+      "description": "株式会社ADI.Gの歯科関連事業の継承に伴い、100％子会社として株式会社ASANOを設立しました。同社は2025年7月から歯科流通事業および関連サービス事業を開始しました。",
+      "significance": "歯科流通事業とDX事業への事業拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +377,60 @@
       "publisher": "株式会社GENOVA",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFQH.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YFQH",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2021年６月10日付で普通株式１株につき10株の割合で、2022年８月19日付で普通株式１株につき200株の割合で株式分割を行っています。主要な経営指標等の注記に、当該株式分割が第17期の期首に行われたと仮定して指標が算出されている旨が記載されています。本登録は株式分割後の株式数に基づく指標で登録しています。",
+      "businessStructure: 2026年２月13日開催の取締役会決議により、2026年４月１日付で当社を存続会社、完全子会社である株式会社GENOVA DESiGNを消滅会社とする吸収合併を行いました。本登録は2026年３月31日現在の構造（連結子会社３社を含むグループ）で登録しています。",
+      "businessStructure: 2026年４月１日開催の取締役会において、有限会社アカサカ歯材社の全持分を取得し子会社化することを決議し、2026年４月21日に取得を完了しました。本登録は2026年３月31日現在の構造で登録しています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "ミッション「ヒトと医療をつないで健康な社会を創る」のもと、経営戦略として、クライアント基盤の更なる拡大、契約件数の拡大、人材の採用・育成、新サービス・新事業の創出の4項目に注力するとしています。あわせて、対処すべき課題として既存事業の継続的な成長、組織体制の強化、人的資本経営の推進と営業組織のエンゲージメント向上、情報管理体制の強化、コーポレート・ガバナンス及び内部管理体制の強化を掲げています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "従来の医療メディアとクリニック向けITサービスの2事業に、株式会社ASANOによる歯科流通事業とDX事業を加えたことで、医療機関向けの情報提供と業務支援に歯科領域の物販・流通が重なる構成になっています。",
+        "basis": "【事業の内容】と【経営方針、経営環境及び対処すべき課題等】の記載に基づきます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "メディカルプラットフォーム事業は、医療機関に長年サービスを提供することで培った全国の医療機関との営業接点や、自社メディアの医療広告規制に準拠した記事制作ノウハウ及び品質管理体制に強みがあるとしています。「Medical DOC」は2026年3月末時点で医療情報に関する記事数19,184件、月間PV数は約1,674万PVに達し、スマートクリニック事業では2026年3月末時点で累計導入台数2,911台、グループ全体で累計既存顧客数約17,000件の営業接点があるとしています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "対象市場は医療業界における広告市場、医療システム市場および歯科流通市場であり、医療機関全体で28.6万事業所を市場全体のターゲット、そのうち医科・歯科の診療所17.3万医院を現在のサービスで提供可能な範囲と捉え、開拓余地が大きい市場に位置しています。超高齢化と医療・健康関連テクノロジーの変革により、医療・健康産業の市場規模は今後も拡大が見込まれるとされています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の記載に基づきます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

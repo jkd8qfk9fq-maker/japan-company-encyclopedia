@@ -4,15 +4,174 @@
   "name": "ホウライ",
   "officialName": "ホウライ株式会社",
   "nameEn": "HORAI Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "HORAI Co.,Ltd.",
+  "description": "栃木県那須の千本松牧場での乳製品の製造・販売と観光施設の運営を中心に、不動産賃貸、保険代理店、ゴルフ場運営を営む会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    },
+    {
+      "industryId": "entertainment",
+      "primary": false
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    },
+    {
+      "industryId": "finance",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "horai",
+      "name": "ホウライ株式会社",
+      "description": "東京都中央区に本社を置き、栃木県那須の千本松牧場を中心に、保険、不動産、ゴルフ場の4事業を営む会社です。2025年9月30日現在の従業員数は155人で、東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "senbonmatsu-farm",
+          "name": "千本松牧場",
+          "description": "栃木県那須塩原市の千本松牧場で、原乳の生産から乳製品の製造・販売までを一貫して行い、レストランやアミューズメント施設、温泉などの観光施設も運営する事業です。2025年9月期の外部顧客への営業収益は2,798百万円です。",
+          "customers": [
+            "乳製品の購入者",
+            "牧場の来場者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】",
+          "children": [
+            {
+              "id": "dairy",
+              "name": "酪農・乳製品",
+              "description": "乳牛の飼育と搾乳を行い、生乳から牛乳やソフトクリームなどの乳製品を製造して、牧場内の店舗や外部の量販店などで販売しています。牛乳の製造は外部でのOEM製造に移行しています。",
+              "customers": [
+                "乳製品の購入者",
+                "量販店"
+              ],
+              "sourceIds": [
+                "yuho-2025"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "tourism-facilities",
+              "name": "観光施設",
+              "description": "観光牧場として、ファームレストランやファームショップ（売店）、アミューズメント施設、温泉施設などを運営しています。2025年4月にリニューアルが完了してグランドオープンしました。",
+              "customers": [
+                "牧場の来場者"
+              ],
+              "sourceIds": [
+                "yuho-2025"
+              ],
+              "locator": "【事業の内容】"
+            }
+          ]
+        },
+        {
+          "id": "real-estate",
+          "name": "不動産事業",
+          "description": "自社所有のビルやマンションを中心とした不動産の賃貸と、不動産の売買・仲介を行う事業です。千本松地区では太陽光発電事業者に対する土地の賃貸も行っています。2025年9月期の外部顧客への営業収益は1,292百万円です。",
+          "customers": [
+            "賃貸物件のテナント・入居者",
+            "不動産の買主・売主"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "insurance",
+          "name": "保険事業",
+          "description": "自動車保険や火災保険などの損害保険の代理店業務と、終身・定期・がん保険を中心とした生命保険の募集業務を行う事業です。2025年9月期の外部顧客への営業収益は1,173百万円です。",
+          "customers": [
+            "保険契約者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "golf",
+          "name": "ゴルフ事業",
+          "description": "栃木県那須塩原市のホウライカントリー倶楽部と西那須野カントリー倶楽部の、2つのゴルフ場を運営する事業です。2025年9月期の外部顧客への営業収益は846百万円です。",
+          "customers": [
+            "ゴルフ場の会員・来場者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "千本松牧場の乳製品の販売と観光施設の利用料、賃貸不動産の賃料、保険代理店の手数料、ゴルフ場の利用料などで収益を得ています。",
+    "products": [
+      "乳製品（牛乳・ソフトクリームなど）",
+      "レストランやアミューズメント施設などの観光施設",
+      "賃貸ビル・賃貸マンション",
+      "損害保険・生命保険の代理店サービス",
+      "ゴルフ場（ホウライカントリー倶楽部・西那須野カントリー倶楽部）"
+    ],
+    "customers": [
+      "乳製品の購入者と牧場の来場者",
+      "賃貸物件のテナント・入居者",
+      "保険契約者",
+      "ゴルフ場の会員・来場者"
+    ],
+    "revenueSources": [
+      "乳製品の販売代金と観光施設の利用料・飲食代金",
+      "不動産の賃料収入と売買・仲介手数料",
+      "保険代理店手数料",
+      "ゴルフ場のプレー料など"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "会社",
+        "description": "ホウライは1928年に蓬莱殖産株式会社として設立され、栃木県那須の千本松牧場と東京都内の賃貸不動産を基盤に、保険、不動産、千本松牧場、ゴルフの4事業を営んでいます。"
+      },
+      {
+        "kind": "offering",
+        "title": "提供するもの",
+        "description": "千本松牧場の乳製品と観光牧場の体験、賃貸ビル・マンションの空間、損害保険・生命保険の代理店サービス、2つのゴルフ場を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "顧客",
+        "description": "顧客は、乳製品の購入者や牧場の来場者、賃貸物件のテナント・入居者、保険契約者、ゴルフ場の会員・来場者などです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "収益",
+        "description": "2025年9月期の営業収益は6,111百万円で、内訳は千本松牧場2,798百万円、不動産事業1,292百万円、保険事業1,173百万円、ゴルフ事業846百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年9月期の当期純利益は497百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年9月期",
@@ -27,11 +186,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8122991000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 190,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -49,14 +208,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8596631000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 179,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第139期の期首から適用しており、第139期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年9月期",
@@ -71,11 +231,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9104624000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 160,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -93,11 +253,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9379855000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 157,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -115,18 +275,149 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9865029000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 155,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1928,
+      "title": "蓬莱殖産株式会社を設立",
+      "description": "旧株式会社十五銀行所有の不動産を買い受けて蓬莱殖産株式会社を設立し、栃木県西那須野町千本松地区で農牧場や林業を営むかたわら、不動産・有価証券の売買、金融貸付、不動産の賃貸を開始しました。",
+      "significance": "現在の千本松牧場と不動産事業の基盤ができた、会社の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "損害保険代理店業務を開始",
+      "description": "損害保険の代理店業務を開始しました。",
+      "significance": "現在の保険事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "蓬莱観光株式会社を設立し観光事業を開始",
+      "description": "蓬莱観光株式会社を設立し、レストハウスを新築して食堂、売店、遊園地などの観光事業を開始しました。",
+      "significance": "千本松牧場での観光施設運営の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "蓬莱建物を合併しホウライ株式会社に社名変更",
+      "description": "蓬莱建物株式会社を合併し、社名をホウライ株式会社に変更しました。",
+      "significance": "現在の社名となり、賃貸ビル事業の体制が整いました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "ホウライ乳業など3社を吸収合併",
+      "description": "ホウライ乳業株式会社、ホウライ観光株式会社、西那須興業株式会社の3社を吸収合併しました。",
+      "significance": "乳業や観光などの事業を自社に集約し、現在の事業体制の土台ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "ホウライカントリー倶楽部が営業開始",
+      "description": "ホウライカントリー倶楽部が営業を開始しました。",
+      "significance": "ゴルフ事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "西那須野カントリー倶楽部が営業開始",
+      "description": "西那須野カントリー倶楽部が営業を開始しました。",
+      "significance": "ゴルフ場が2か所体制になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "千本松牧場本部を新設",
+      "description": "乳業事業本部と観光事業本部を統合し、千本松牧場本部を新設しました。",
+      "significance": "酪農・乳製品と観光を一体で運営する、現在の千本松牧場の体制になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "牛乳製造をOEM製造に移行",
+      "description": "牛乳の製造を外部でのOEM製造に移行しました。",
+      "significance": "乳製品の製造体制が見直されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "千本松牧場がグランドオープン",
+      "description": "千本松牧場のレストラン・売店のリニューアルが完了し、新しい施設とともにグランドオープンを迎えました。",
+      "significance": "千本松牧場のブランド発信の拠点として再出発しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nippon-parking-development",
+      "relationship": "major-shareholder",
+      "description": "日本駐車場開発株式会社は、2025年9月30日現在、当社の発行済株式（自己株式を除く。）の3.32％を保有する大株主の事業会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -134,13 +425,58 @@
       "publisher": "ホウライ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XAG9.pdf",
       "publishedAt": "2025-12-16",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XAG9",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2025年４月１日付で普通株式１株につき３株の割合で株式分割を行っています（経営指標等の推移の注記に記載）。本登録は2025年９月30日現在の構造で登録しています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2023年10月に策定した中期経営計画2026（2024年9月期から2026年9月期まで）では、成長モデルへの転換のための基盤整備を進める方針です。2028年1月の設立100周年に向けて、ブランド力向上のための施設リニューアルや新商品開発などの先行投資と、人的資本への戦略的投資を行うとしています。",
+        "asOf": "2025-12-16",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "千本松牧場では2024年10月にファームショップとファームレストランをリニューアルオープンし、2025年4月にグランドオープンを迎えました。来場者数が大幅に増えたことで、千本松牧場は4事業の中で最も大きな収益源になっています。",
+        "basis": "経営成績等の分析における千本松牧場の営業収益の推移と来場者数の記載に基づく",
+        "asOf": "2025-12-16",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "千本松牧場は、1893年に松方正義が開いた千本松農場の流れをくむ広大な土地を基盤としており、原乳の生産から乳製品の製造・販売、観光施設の運営までを一つの牧場で一貫して手がけています。",
+        "basis": "サステナビリティに関する考え方及び取組における千本松農場の由来と、事業の内容における千本松牧場の事業形態に基づく",
+        "asOf": "2025-12-16",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "保険事業では、三井住友海上火災保険株式会社が主要な相手先として2期連続で記載されており、損害保険代理店として大手損害保険会社との取引基盤を持っています。不動産事業では賃貸不動産の入居率がほぼ満室で安定して推移しています。",
+        "basis": "経営成績等の分析における相手先別の販売実績と、不動産事業の入居率の記載に基づく",
+        "asOf": "2025-12-16",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-30",

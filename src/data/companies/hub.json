@@ -4,15 +4,106 @@
   "name": "ハブ",
   "officialName": "株式会社ハブ",
   "nameEn": "HUB CO. , LTD．",
-  "description": null,
+  "shortNameEn": "HUB CO.,LTD.",
+  "description": "英国風パブ「ＨＵＢ」と「82」を全国110店舗で運営し、ビールを中心とするドリンクと英国風フードを提供する飲食チェーンです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "british-pub",
+      "name": "英国風ＰＵＢ事業",
+      "description": "英国風パブを運営する当社唯一のセグメントです。北海道、東北、関東、中部、近畿、九州の6地域で110店舗（2026年2月28日現在）を展開し、駅前の繁華街やオフィス街、商業施設を中心に出店しています。20代から30代の比較的若い層を対象とする「ＨＵＢ」ブランドと、30代から50代の大人の世代を対象とする「82（エイティトゥ）」ブランドの2つがあります。ビールを中心にカクテル、ワイン、ウイスキーをそろえ、英国の代表的な料理であるフィッシュ＆チップスなどのフードを提供しています。前払い会計で原則セルフサービスの「キャッシュ・オン・デリバリーシステム」を導入しています。",
+      "customers": [
+        "店舗を利用する一般消費者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "east-japan",
+          "name": "東日本",
+          "description": "北海道、東北、関東、中部の店舗です。91店舗があり、2026年2月期の売上高は9,244百万円でした。",
+          "customers": [
+            "店舗を利用する一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "west-japan",
+          "name": "西日本",
+          "description": "近畿、九州の店舗です。19店舗があり、2026年2月期の売上高は2,091百万円でした。",
+          "customers": [
+            "店舗を利用する一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "駅前の繁華街やオフィス街、商業施設を中心に英国風パブを出店し、前払い制でドリンクとフードを手頃な価格で提供する事業モデルです。",
+    "products": [
+      "ビール（国産生ビール、ＨＵＢオリジナルエール、ギネスなど）",
+      "カクテル、ワイン、ウイスキー",
+      "フィッシュ＆チップスなどの英国風フード"
+    ],
+    "customers": [
+      "店舗を利用する一般消費者"
+    ],
+    "revenueSources": [
+      "ドリンクの販売代金",
+      "フードの販売代金"
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ハブ",
+        "description": "東京都千代田区外神田に本店を置き、英国風ＰＵＢ事業を営んでいます。2026年2月28日現在の従業員数は312人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "英国風パブの運営",
+        "description": "「ＨＵＢ」と「82（エイティトゥ）」の2ブランドで、ビールを中心とするドリンクとフィッシュ＆チップスなどのフードを提供しています。会計は前払いで、原則セルフサービスのキャッシュ・オン・デリバリーシステムを導入しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "一般消費者",
+        "description": "駅前の繁華街やオフィス街、商業施設の店舗で、一般消費者に直接販売しています。特定の販売先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年2月期の売上高は11,335百万円",
+        "description": "2026年2月期の売上高は11,335百万円で、前期比6.6％増でした。地域別では東日本が9,244百万円、西日本が2,091百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年2月期の当期純利益は609百万円",
+        "description": "2026年2月期の当期純利益は609百万円で、前期比36.7％増でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,11 +118,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2573684000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 294,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,14 +140,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2246140000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 289,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年３月31日）等を第25期の期首から適用しており、第25期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標となっております。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -71,11 +163,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2516748000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 282,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +185,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2894707000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 306,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +207,148 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3407606000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 312,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1980,
+      "title": "前身の株式会社ハブが設立される",
+      "description": "神戸市において、英国風ＰＵＢ「ＨＵＢ」のチェーン展開を目的とする会社として、現在の当社の前身である株式会社ハブが設立されました。",
+      "significance": "当社の起源となる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "株式会社ハブ（現）が設立される",
+      "description": "株式会社ダイエーホールディングコーポレーションが全株式を所有する子会社として、株式会社ハブ（現）が設立されました。",
+      "significance": "現在の当社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "英国風ＰＵＢ「ＨＵＢ」15店舗の営業を譲り受ける",
+      "description": "株式会社りきしゃまんより、英国風ＰＵＢ「ＨＵＢ」15店舗の営業を譲り受けました。",
+      "significance": "現在の店舗事業の土台ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "株式会社加ト吉の連結子会社となる",
+      "description": "株式会社ダイエーが所有していた当社株式が加藤義和株式会社と株式会社村さ来本社に譲渡され、当社は株式会社加ト吉の連結子会社となりました。あわせて、２１ＬＡＤＹ株式会社の持分法適用関連会社となりました。",
+      "significance": "親会社がダイエーグループから加ト吉グループに移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "大阪証券取引所ヘラクレス市場に上場",
+      "description": "大阪証券取引所のニッポン・ニュー・マーケット－「ヘラクレス」市場に株式を上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "ロイヤルホールディングスの持分法適用関連会社となる",
+      "description": "テーブルマーク株式会社（旧社名・株式会社加ト吉）とフードインクルーヴ株式会社（旧社名・株式会社村さ来本社）が所有していた当社株式をロイヤルホールディングス株式会社に譲渡し、当社は同社の持分法適用関連会社となりました。",
+      "significance": "資本関係の大きな転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "東京証券取引所市場第一部銘柄に指定される",
+      "description": "東京証券取引所市場第二部への市場変更を経て、同取引所市場第一部銘柄に指定されました。",
+      "significance": "市場区分が第一部に上がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社ミクシィの持分法適用関連会社となる",
+      "description": "Tech Growth Capital有限責任事業組合への第三者割当増資と、同組合へのロイヤルホールディングス保有株式の一部譲渡により、同組合の議決権比率が20.02％となり、当社はその親会社である株式会社ミクシィ（現・株式会社MIXI）の持分法適用関連会社となりました。",
+      "significance": "現在のMIXIとの資本関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "市場区分見直しへの対応です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の再選択により、プライム市場からスタンダード市場へ移行しました。",
+      "significance": "現在の市場区分になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社MIXIが筆頭株主・その他の関係会社となる",
+      "description": "Tech Growth Capital有限責任事業組合の解散に伴い、その保有する当社株式は株式会社MIXIに引き継がれ、同社が当社の主要株主である筆頭株主及びその他の関係会社となりました。",
+      "significance": "現在の資本関係が確定しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mixi",
+      "relationship": "other-affiliated-company",
+      "description": "関係会社の状況で「その他の関係会社」に区分される会社で、2026年2月28日現在の議決権の被所有割合は20.0％です。同社のグループのサービス・コンテンツと連携し、新たな時代に即した企画開発などを行うことで、新規顧客層の取り込みを目指すとしています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "royal-holdings",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に載る事業会社で、2026年2月28日現在の所有株式数の割合は14.83％です。2010年に当社の株式が譲渡されて同社の持分法適用関連会社となった経緯があり、2021年に同社が保有株式の一部を譲渡しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +356,47 @@
       "publisher": "株式会社ハブ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y764.pdf",
       "publishedAt": "2026-05-28",
-      "accessedAt": "2026-09-28"
+      "docId": "S100Y764",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「挑戦」をテーマとする中期経営計画（2025-2027）を進めています。日本全国の人流拠点を対象とする出店戦略「SmasH47」を軸に全国への出店を進めるほか、メンバーズシステムを基軸に新規客の獲得と既存客のリピート促進に取り組み、処遇改善による人財の確保と定着を図るとしています。静岡駅周辺と大分駅周辺への新規出店も決定しています。",
+        "asOf": "2026-05-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "本場英国のパブの雰囲気を、週刊誌を買うような手頃な価格で提供することを創業時からの方針とし、前払い会計と原則セルフサービスの仕組みで気軽に立ち寄れる場づくりをしています。スポーツ観戦や音楽イベントの開催、メンバーズカードアプリやSNSによる販促も特徴です。",
+        "basis": "事業の内容に基づく",
+        "asOf": "2026-05-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "英国風パブの単一セグメントで110店舗を運営し、売上高の81.6％を東日本が占める構成です。東京都内に61店舗と最も多く、2026年2月期は宮崎県と富山県へ初めて出店しました。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析に基づく",
+        "asOf": "2026-05-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",

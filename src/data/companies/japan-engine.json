@@ -4,15 +4,110 @@
   "name": "ジャパンエンジンコーポレーション",
   "officialName": "株式会社ジャパンエンジンコーポレーション",
   "nameEn": "Japan Engine Corporation",
-  "description": null,
+  "shortNameEn": "Japan Engine Corporation",
+  "description": "船舶の主機関となる大型ディーゼル機関を製造する会社で、部品や修理のアフターサービスとライセンス事業も手がけています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "japan-engine",
+      "name": "株式会社ジャパンエンジンコーポレーション",
+      "description": "兵庫県明石市に本社工場を置き、舶用内燃機関（主機関）の製造販売と、これに付随する部品販売・修理等の事業を行う会社です。当社と子会社1社（傑洋極発動機（上海）有限公司）および関連会社1社（HyEng株式会社）でグループを構成し、連結財務諸表は作成していません。2026年3月期の従業員数は394人です。東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "repair-parts",
+          "name": "修理・部品等",
+          "description": "就航した船舶向けの部品販売や修理などのアフターサービスと、海外ライセンシー向けの部品供給やロイヤリティー収入などのライセンス関連からなる区分です。2026年3月期の売上高は15,536百万円で、前期比28.6％増となりました。",
+          "customers": [
+            "船舶の運航会社",
+            "造船所",
+            "海外のライセンシー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "marine-engines",
+          "name": "舶用内燃機関",
+          "description": "船舶の主機関となる大型ディーゼル機関「UEエンジン」を開発・製造・販売する区分です。省エネ型のLSHシリーズが中心で、2026年3月期の売上高は14,170百万円で、前期比15.6％減となりました。",
+          "customers": [
+            "造船所",
+            "海外のライセンシー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社開発のUEエンジンを造船所に販売し、海外ライセンシーへの技術供与と、就航した船舶向けの部品供給・修理で収益を得る事業モデルです。",
+    "products": [
+      "舶用主機関「UEエンジン」（LSHシリーズ等）",
+      "主機関用の部品（電子制御部品・燃焼室関連部品等）",
+      "アンモニア燃料エンジン",
+      "水素燃料エンジン",
+      "修理・メンテナンスサービス"
+    ],
+    "customers": [
+      "造船所",
+      "海外のライセンシー",
+      "船舶の運航会社"
+    ],
+    "revenueSources": [
+      "主機関の販売代金",
+      "部品販売と修理の対価",
+      "ライセンスのロイヤリティー収入とライセンシー向け部品供給"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ジャパンエンジンコーポレーション",
+        "description": "兵庫県明石市に本社工場を置き、当社と子会社1社および関連会社1社でグループを構成しています。2026年3月期の従業員数は394人で、東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "主機関の製造とアフターサービス、ライセンス",
+        "description": "船舶の主機関となるUEエンジンを開発・製造するほか、就航船向けの部品供給・修理と、海外ライセンシーへの技術供与を行っています。次世代燃料のアンモニア燃料エンジンと水素燃料エンジンの開発・製造も進めています。"
+      },
+      {
+        "kind": "customer",
+        "title": "造船所とライセンシー、運航会社",
+        "description": "主機関は造船所に販売し、技術供与先の海外ライセンシーや、就航した船舶を運航する会社にも部品やサービスを提供しています。主要な顧客としてGuangzhou Diesel Engine Factory Co., Ltd.と株式会社大島造船所が印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は29,707百万円",
+        "description": "2026年3月期の売上高は29,707百万円で、前期比2.9％増となりました。事業区分別では修理・部品等が15,536百万円、舶用内燃機関が14,170百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の当期純利益は4,758百万円",
+        "description": "2026年3月期の当期純利益は4,758百万円で、前期比10.0％増となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +122,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6553707000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 333,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -49,7 +144,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7343760000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 355,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -71,7 +166,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9749695000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 367,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -93,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13880775000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 382,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -115,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18389583000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 394,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -125,8 +220,157 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1910,
+      "title": "神戸発動機製造所を創立",
+      "description": "神戸市兵庫区東出町に神戸発動機製造所が創立され、ボリンダー型石油発動機の製造が始まりました。",
+      "significance": "当社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1925,
+      "title": "無注水式重油発動機の製造を開始",
+      "description": "無注水式重油発動機の製造を開始し、深紅の塗装色は「神戸赤」の愛称を生みました。",
+      "significance": "初期の製品開発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "神戸発動機に商号を変更",
+      "description": "商号を神戸発動機株式会社に改めました。",
+      "significance": "旧社名での出発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "三菱重工業と技術提携",
+      "description": "三菱重工業株式会社と技術提携を結び、純国産ディーゼル機関である三菱UEディーゼル機関の製造販売権を獲得しました。",
+      "significance": "現在の主力事業の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "大阪証券取引所に上場",
+      "description": "大阪証券取引所に株式を上場しました。",
+      "significance": "株式公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "来島どっくグループに入る",
+      "description": "株式会社来島どっくグループに入りました。",
+      "significance": "資本関係の転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "UEディーゼル機関の生産1,000万馬力を達成",
+      "description": "UEディーゼル機関の生産1,000万馬力を達成しました。",
+      "significance": "主力製品の生産実績です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "ジャパンエンジンコーポレーションに商号を変更",
+      "description": "三菱重工マリンマシナリ株式会社から吸収分割によりディーゼルエンジン事業を承継し、同時に商号を株式会社ジャパンエンジンコーポレーションに改めました。",
+      "significance": "現在の社名と事業体制の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "シンパツサンライズを吸収合併",
+      "description": "シンパツサンライズ株式会社を吸収合併しました。",
+      "significance": "グループ再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "上場市場の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "UEディーゼル機関の生産4,000万馬力を達成",
+      "description": "UEディーゼル機関の生産4,000万馬力を達成しました。",
+      "significance": "主力製品の生産実績です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "中国・上海に子会社を設立",
+      "description": "中国上海市に傑洋極発動機（上海）有限公司を設立しました。現在は非連結子会社です。",
+      "significance": "海外拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-heavy-industries",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の株式の14.83％を保有する最大の株主である事業会社です。研究開発等の技術面や人員の面で協力を得ており、1957年には同社と技術提携を結び、三菱UEディーゼル機関の製造販売権を得た経緯があります。当社も同社の株式125,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "namura-shipbuilding",
+      "relationship": "customer",
+      "description": "当社製主機関の重要な販売先です。2025年3月期には主要な顧客として印字され、売上高の28.8％を占めました。2026年3月31日現在、当社の株式の10.01％を保有する株主でもあり、当社も同社の株式152,740株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "akasaka-diesels",
+      "relationship": "supplier",
+      "description": "当社が開発するUEエンジンのライセンシーであるとともに、当社の仕入先です。当社も同社の株式41,250株を保有し、同社は2026年3月31日現在、当社の株式の2.68％を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +378,58 @@
       "publisher": "株式会社ジャパンエンジンコーポレーション",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YH5Z.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YH5Z",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 当社は2024年10月1日付で普通株式1株につき3株の割合で株式分割を行いました（経営指標等の注記に記載）。"
+    ]
   },
-  "updatedAt": "2026-10-02",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年度からの3か年を対象とする「第2次中期事業計画」を策定し、次世代脱炭素（アンモニア・水素）燃料エンジンの開発・製造・社会実装を世界に先駆けて進めること、中国を主軸とするライセンスビジネスでUEエンジンの世界シェアをさらに拡大すること、成長投資の継続などにより企業価値を持続的に向上させることを掲げています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高では修理・部品等が舶用内燃機関を上回っており、会社が伸長を掲げるアフターサービスとライセンス関連が売上の過半を占める構成になっています。",
+        "basis": "MD&Aの経営成績の概要と販売実績、関連情報の主要な顧客ごとの情報に基づく",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "開発から設計、製造、販売、アフターサービスまでの一貫体制を持つグローバルライセンサーであり、海外ライセンシー製エンジンのアフターサービス需要も取り込んでいます。アンモニア燃料エンジンの初号機を完成させて2025年10月に納入し、水素燃料エンジンも2026年3月から水素燃料を使った検証運転を開始するなど、次世代燃料エンジンの実用化で先行しています。",
+        "basis": "事業の内容、MD&Aの経営成績の概要に基づく",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の主要な顧客は、Guangzhou Diesel Engine Factory Co., Ltd.（売上高の14.5％）と株式会社大島造船所（同14.0％）で、中国のライセンシーを含む造船業界との取引が事業の基盤になっています。中国・上海の現地法人と連携し、海外ライセンシー製主機関のアフターサービス需要の取り込みも進めています。",
+        "basis": "関連情報の主要な顧客ごとの情報、MD&Aの経営成績の概要に基づく",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,134 @@
   "name": "エニグモ",
   "officialName": "株式会社エニグモ",
   "nameEn": "Enigmo Inc.",
-  "description": null,
+  "shortNameEn": "Enigmo Inc.",
+  "description": "世界中のファッションアイテムを購入できるマーケットプレイス「BUYMA」と、海外旅行の体験を提供する「BUYMA TRAVEL」を運営する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "fashion-platform",
+      "name": "Fashion Platform事業",
+      "description": "「BUYMA」は、世界185ヵ国に在住する24万人超のパーソナルショッパー（出品者）から、世界中のファッションアイテムを購入できるCtoC型のマーケットプレイスです。出品者は注文が入ってから買い付けができるため在庫リスクを持たず、購入者は現地の最先端のアイテムや、日本で買うより安いアイテムに出会うことができます。2026年1月現在の会員数は約1,201万人で、2026年1月期の売上高は5,373百万円です。提出会社の本社（東京都港区）がこの事業の拠点です。",
+      "customers": [
+        "ファッションアイテムの購入者",
+        "出品するパーソナルショッパー（個人）と法人ショップ"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "travel-platform",
+      "name": "Travel Platform事業",
+      "description": "海外在住の日本人ガイドと旅行者をつなぐ旅行プラットフォーム「BUYMA TRAVEL」と、グアムとハワイでの現地アクティビティサービスからなる事業です。2026年1月期の売上高は906百万円です。",
+      "customers": [
+        "海外旅行者",
+        "現地ガイドとしてプランを出品する海外在住の日本人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "buyma-travel",
+          "name": "BUYMA TRAVEL",
+          "description": "海外旅行者に対して、海外在住の日本人が現地でのプライベートツアーを提供するCtoC型のサービスです。ガイドがそれぞれの得意分野を生かしたプランを出品し、旅行者はガイドと相談しながらオーダーメイドの旅行プランを作ることもできます。連結子会社の株式会社BUYMA TRAVEL（東京都千代田区）が運営しています。売上高はこの区分ごとには開示されていません。",
+          "customers": [
+            "海外旅行者",
+            "現地ガイドとしてプランを出品する海外在住の日本人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "local-activity",
+          "name": "現地アクティビティサービス",
+          "description": "連結孫会社のMMS Guam Corporationがグアムで、MMS Activity Corporationがハワイで、マリンスポーツの企画から実施までを行うサービスです。パラセーリングやシュノーケリング、ダイビングなどを、在住の日本人を含むスタッフがサポートします。売上高はこの区分ごとには開示されていません。",
+          "customers": [
+            "グアム・ハワイへの旅行者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業セグメントで、新規開発事業等を含む区分です。連結子会社の株式会社ゲツラク（東京都渋谷区）を含み、2026年1月期の売上高は15百万円です。",
+      "customers": [
+        "顧客の内訳は開示されていません"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "海外在住のパーソナルショッパーが出品するファッションアイテムや、現地ガイドが提供する旅行プランの取引に応じて、手数料を受け取る事業モデルです。",
+    "products": [
+      "ファッションアイテムの売買プラットフォーム「BUYMA」",
+      "現地ガイドのプライベートツアーを提供する旅行プラットフォーム「BUYMA TRAVEL」",
+      "グアムとハワイでのマリンスポーツなどの現地アクティビティサービス"
+    ],
+    "customers": [
+      "ファッションアイテムや旅行プランの購入者",
+      "出品するパーソナルショッパーや現地ガイド"
+    ],
+    "revenueSources": [
+      "購入者からの決済システム利用料とあんしんプラス加入料",
+      "パーソナルショッパーやパーソナルガイドからの成約手数料",
+      "現地アクティビティサービスの利用料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社エニグモ",
+        "description": "東京都港区に本社を置き、東京証券取引所プライム市場に上場する会社です。2026年1月期の連結従業員数は157人で、連結子会社は6社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ファッションと旅行のマーケットプレイス",
+        "description": "世界185ヵ国に在住するパーソナルショッパーがファッションアイテムを出品する「BUYMA」と、海外在住の日本人ガイドがプライベートツアーを提供する「BUYMA TRAVEL」を運営し、グアムとハワイでは現地アクティビティサービスも提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "購入者と出品者",
+        "description": "顧客は、ファッションアイテムや旅行プランを購入する消費者と、アイテムを出品するパーソナルショッパー、ツアーを出品する現地ガイドです。「BUYMA」の会員数は2026年1月現在で約1,201万人です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年1月期の売上高は6,295百万円",
+        "description": "2026年1月期の売上高は6,295百万円でした。内訳は、Fashion Platform事業が5,373百万円、Travel Platform事業が906百万円、その他が15百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年1月期の親会社株主に帰属する当期純利益は326百万円",
+        "description": "2026年1月期の親会社株主に帰属する当期純利益は326百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2025年1月期",
@@ -27,12 +146,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11439667000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 149,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第21期（2025年1月期）より連結財務諸表を作成しているため、それ以前の期間については連結経営指標等を記載していない。"
     },
     {
       "fiscalYear": "2026年1月期",
@@ -47,16 +167,147 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11771947000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 157,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号 2022年10月28日）等を第22期の期首から適用しており、第21期及び第22期に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっている。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2004,
+      "title": "株式会社エニグモを設立",
+      "description": "ショッピング・コミュニティサイトの運営を事業目的として、東京都港区南青山において株式会社エニグモを設立しました。",
+      "significance": "会社の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "「BUYMA」のサービスを開始",
+      "description": "グローバル・ショッピング・コミュニティ「BuyMa（バイマ）」のサービスを開始しました。",
+      "significance": "現在の中核事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "広告事業から撤退",
+      "description": "「BUYMA」関連事業への経営資源の集中に伴い、広告事業から撤退しました。",
+      "significance": "BUYMAへの事業集中を示す転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "東京証券取引所マザーズ市場に上場",
+      "description": "東京証券取引所マザーズ市場に株式を上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "GLOBAL版「BUYMA」をリリース",
+      "description": "GLOBAL版「BUYMA（グローバルバイマ）」をリリースしました。",
+      "significance": "海外の購入者に向けた展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "「BUYMA TRAVEL」をリリース",
+      "description": "旅行サービスの「BUYMA TRAVEL（バイマトラベル）」をリリースしました。",
+      "significance": "現在のTravel Platform事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "東京証券取引所市場第一部へ市場変更",
+      "description": "東京証券取引所市場第一部へ市場変更しました。",
+      "significance": "市場のステップアップです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社BUYMA TRAVELを連結子会社化し、事業を承継",
+      "description": "株式会社BUYMA TRAVELの株式を取得して同社とその子会社・孫会社を連結子会社化し、会社分割（簡易吸収分割）によりBUYMA TRAVEL事業を同社に承継しました。",
+      "significance": "Travel Platform事業のグループ体制が固まった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "Formal Trans LLCを連結子会社化",
+      "description": "連結子会社の株式会社BUYMA TRAVELが、ハワイで送迎サービスを行うFormal Trans LLCの持分のすべてを取得し、連結子会社化しました。",
+      "significance": "Travel Platform事業の現地サービス拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社ゲツラクを連結子会社化",
+      "description": "株式会社ゲツラクの株式を追加取得し、連結子会社化しました。",
+      "significance": "「その他」の区分に加わった連結子会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sony-group",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】で「その他の関係会社」に区分されている会社で、2026年1月31日現在の議決権の被所有割合は25.2％であり、役員の兼任が1名あります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "ai-robotics",
+      "relationship": "business-partner",
+      "description": "特定投資株式として1,729,200株を保有しており、AIを活用したD2Cブランド事業を展開する同社について、新規事業分野における提携や情報交換を目的として保有していることが印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -64,13 +315,37 @@
       "publisher": "株式会社エニグモ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y0WP.pdf",
       "publishedAt": "2026-04-27",
-      "accessedAt": "2026-09-29"
+      "docId": "S100Y0WP",
+      "asOf": "2026-01-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "ミッション「世界を変える、新しい流れを。」のもと、“Specialty” Marketplaceである「BUYMA」と「BUYMA TRAVEL」を中心に、消費者が求める『真の価値』を強固な信頼基盤のもとで提供することにより、持続的な成長基盤の強化に努めています。あわせて、新規事業の創出やM&Aによる中長期的な新しい収益の創出を進めています。",
+        "asOf": "2026-04-27",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "世界185ヵ国に在住する24万人超のパーソナルショッパーが、注文を受けてから買い付けを行うため在庫リスクを持たずに出品でき、店舗や中間業者を介さない品揃えと価格を実現していることが土台になっています。2026年1月現在の会員数は約1,201万人です。",
+        "basis": "【事業の内容】にパーソナルショッパーの国数・人数、出品の仕組みと会員数が印字されていること",
+        "asOf": "2026-04-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年1月期",
     "asOf": "2026-01-31",

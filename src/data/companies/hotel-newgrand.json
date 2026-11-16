@@ -4,15 +4,158 @@
   "name": "ホテル、ニューグランド",
   "officialName": "株式会社ホテル、ニューグランド",
   "nameEn": "HOTEL NEWGRAND CO.,LTD.",
-  "description": null,
+  "shortNameEn": "HOTEL NEWGRAND CO.,LTD.",
+  "description": "横浜市のホテルニューグランドを運営し、宿泊・婚礼宴会・レストランと不動産賃貸を手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "entertainment",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "hotel",
+      "name": "ホテル事業",
+      "description": "横浜市中区のホテルニューグランドにおける宿泊及び料飲（婚礼・宴会を含みます）の施設を運営する事業です。髙島屋横浜店及びそごう横浜店の店内でもレストランを営み、直営ショップ「S.Weil by HOTEL NEW GRAND」での外販も行っています。2025年11月期の外部顧客への売上高は6,481百万円でした。",
+      "customers": [
+        "宿泊客",
+        "婚礼・宴会の利用客",
+        "レストランの利用客",
+        "外販商品の購入客"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "banquet",
+          "name": "宴会部門",
+          "description": "ホテルニューグランドで婚礼や宴会を行う部門です。2025年11月期の売上高は2,314百万円でした。",
+          "customers": [
+            "婚礼・宴会の利用客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "lodging",
+          "name": "宿泊部門",
+          "description": "ホテルニューグランドの客室で宿泊サービスを提供する部門です。2025年11月期の売上高は2,058百万円でした。",
+          "customers": [
+            "宿泊客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "restaurant",
+          "name": "レストラン部門",
+          "description": "ホテルニューグランド内や髙島屋横浜店、そごう横浜店の店内でレストランやバーを運営する部門です。2025年11月期の売上高は1,455百万円でした。",
+          "customers": [
+            "レストランの利用客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "hotel-other",
+          "name": "その他のホテル事業",
+          "description": "外販商品の販売など、宿泊・宴会・レストラン以外のホテル事業です。2025年11月期の売上高は652百万円でした。",
+          "customers": [
+            "外販商品の購入客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸事業",
+      "description": "オフィスビル等の賃貸管理業務を営む事業です。横浜市中区の店舗・事務所賃貸ビル「グランドアネックス水町」などを賃貸しています。2025年11月期の外部顧客への売上高は48百万円でした。",
+      "customers": [
+        "オフィスビル等の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "ホテル施設で宿泊や婚礼宴会、料飲のサービスを提供して利用料を得るほか、外販商品の販売やオフィスビル等の賃貸を行う事業モデルです。",
+    "products": [
+      "ホテルニューグランドでの宿泊サービス",
+      "婚礼・宴会サービス",
+      "レストラン・バーの運営",
+      "外販商品「S.Weil by HOTEL NEW GRAND」の販売",
+      "オフィスビル等の賃貸管理"
+    ],
+    "customers": [
+      "宿泊客",
+      "婚礼・宴会の利用客",
+      "レストランの利用客",
+      "外販商品の購入客",
+      "オフィスビル等の賃借人"
+    ],
+    "revenueSources": [
+      "宿泊料",
+      "婚礼・宴会の対価",
+      "レストラン・バーの飲食料",
+      "外販商品の販売代金",
+      "不動産の賃貸料"
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】",
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ホテル、ニューグランド",
+        "description": "横浜市中区に本店を置き、東京証券取引所スタンダード市場に上場しています。連結子会社はなく連結財務諸表を作成しておらず、2025年11月30日現在の従業員数は232人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ホテルと賃貸ビルを運営",
+        "description": "ホテルニューグランドで宿泊・婚礼宴会・レストランを提供し、髙島屋横浜店やそごう横浜店の店内でもレストランを営んでいます。あわせて外販商品の直営ショップと、オフィスビル等の賃貸管理も手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "ホテルの利用客が中心",
+        "description": "顧客は、宿泊客や婚礼・宴会・レストランの利用客が中心です。売上高の10％以上を占める特定の顧客はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高6,529百万円",
+        "description": "2025年11月期の売上高は6,529百万円（前期比11.5％増）でした。セグメント情報における外部顧客への売上高の内訳は、ホテル事業が6,481百万円、不動産賃貸事業が48百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益201百万円",
+        "description": "2025年11月期の当期純利益は201百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年11月期",
@@ -27,11 +170,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3195698000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 216,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -49,14 +192,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2852659000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 201,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第145期の期首から適用しており、第145期以降の指標は適用後の指標となっています。"
     },
     {
       "fiscalYear": "2023年11月期",
@@ -71,11 +215,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3253046000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 208,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -93,11 +237,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3535152000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 214,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -115,18 +259,149 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3721878000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 232,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1926,
+      "title": "株式会社ホテル、ニューグランドを設立",
+      "description": "株式会社ホテル、ニューグランドを設立しました。",
+      "significance": "現在の会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1927,
+      "title": "ホテル営業を開始",
+      "description": "ホテルニューグランドの営業を開始しました。",
+      "significance": "中核事業であるホテル事業の開始であり、2027年に開業100周年を迎えます。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1945,
+      "title": "駐留米軍により全館が接収される",
+      "description": "駐留米軍によりホテルの全館が接収され、米軍将校宿舎となりました。",
+      "significance": "長く続いた接収の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "接収が解除され自由営業を再開",
+      "description": "駐留米軍による全館の接収が解除され、自由営業を再開しました。",
+      "significance": "ホテルとしての営業の再出発です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "東京証券業協会に店頭登録",
+      "description": "当社株式が東京証券業協会に店頭登録されました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "新館タワーが完成し営業を開始",
+      "description": "新館タワーが完成して営業を開始し、本館の改修工事に着工しました。",
+      "significance": "現在の本館とタワー館からなる施設構成の基礎です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "グランドアネックス水町が完成",
+      "description": "店舗・事務所賃貸ビル「グランドアネックス水町」が完成しました。",
+      "significance": "現在の不動産賃貸事業の主な施設です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "そごう横浜店にバーを出店",
+      "description": "そごう横浜店にバー「シーガーディアンIII」を出店しました。",
+      "significance": "百貨店内での料飲施設展開の一つです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "東京証券取引所と大阪証券取引所の証券市場統合に伴い、東京証券取引所JASDAQ（スタンダード）に上場しました。",
+      "significance": "現在の東京証券取引所への上場につながる移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "直営ショップ「S.Weil by HOTEL NEW GRAND」を出店",
+      "description": "ホテル隣接地に直営ショップ「S.Weil by HOTEL NEW GRAND」を出店し、横浜髙島屋にも同店を出店しました。",
+      "significance": "外販部門の直営ショップ展開です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "takashimaya",
+      "relationship": "business-partner",
+      "description": "株式会社髙島屋は、当社が髙島屋横浜店の店内に出店しレストランを運営する取引関係にある出店先です。当社は同店で「ホテルニューグランド ザ・カフェ」を出店した後、「ル グラン」を営業しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -134,13 +409,53 @@
       "publisher": "株式会社ホテル、ニューグランド",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XMSL.pdf",
       "publishedAt": "2026-02-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XMSL",
+      "asOf": "2025-11-30",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "人事戦略、ブランド戦略、成長戦略の3つの基本戦略を柱に、収益性向上と持続的成長により経営基盤の確立を目指しています。人事戦略では賃上げや人事制度の改善、業務のデジタル化を進め、ブランド戦略では付加価値の高い商品・サービスの提供によるブランド確立と顧客拡大を図り、成長戦略では本館客室の改修や外販事業「エスワイル」への投資拡大と、2027年の開業100周年に向けた足場固めを進める方針です。",
+        "asOf": "2026-02-25",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2025年11月期の売上高は前期比11.5％増の6,529百万円となり、ホテル事業の宿泊・宴会・レストランの主要3部門はいずれも前期を上回りました。",
+        "basis": "経営成績の分析における記載に基づく",
+        "asOf": "2026-02-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "開業以来地域に根差した企業として発展し、クラシックホテルならではの競争優位性と差別化によりブランド価値の向上に努めてきたとし、伝統や歴史に敬意を払いながら、付加価値の高い商品・サービスの提供によりブランド確立と普及を進める方針を示しています。",
+        "asOf": "2026-02-25",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "1927年に営業を開始したホテルニューグランドを中核に、横浜市内で百貨店内レストランや直営ショップ、外販ブランドも展開しているため、歴史あるホテルの認知を飲食や商品販売にも広げられる事業の形になっています。",
+        "basis": "事業の内容及び沿革の記載に基づく",
+        "asOf": "2026-02-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年11月期",
     "asOf": "2025-11-30",
