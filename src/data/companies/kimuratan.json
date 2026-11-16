@@ -4,15 +4,127 @@
   "name": "キムラタン",
   "officialName": "株式会社キムラタン",
   "nameEn": "KIMURATAN　CORPORATION",
-  "description": null,
+  "shortNameEn": "KIMURATAN CORPORATION",
+  "description": "不動産の賃貸とリノベーション再販を主力に、ベビー・子供服の販売と園児見守りサービスを手がける神戸市の会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "real-estate",
+      "primary": true
+    },
+    {
+      "industryId": "retail",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "kimuratan",
+      "name": "株式会社キムラタン",
+      "description": "神戸市中央区に本店を置き、不動産事業、アパレル事業、ウェアラブル事業の3事業を営む会社です。連結子会社は9社で、2026年3月期の売上高は2,533百万円、2026年3月31日現在の従業員数は34人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "kimuratan-real-estate",
+          "name": "不動産事業",
+          "description": "不動産の賃貸・管理と、リノベーションで付加価値を高めた中古物件の販売を行う事業です。株式会社キムラタンエステート、株式会社キムラタンプロパティ、イストグループ、有限会社九建機材、SwanStyle株式会社などが担い、不動産特定共同事業も行います。2026年3月期の外部顧客への売上高は2,200百万円でした。",
+          "customers": [
+            "賃貸物件の入居者",
+            "中古住宅の購入者",
+            "不動産小口化商品の投資家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "kimuratan-apparel",
+          "name": "アパレル事業",
+          "description": "ベビー・子供服や衣料雑貨を自社で企画・設計し、販売する事業です。国内ではネット通販による消費者への直接販売を中心に、一部の百貨店でインショップも運営します。2026年3月期の外部顧客への売上高は293百万円でした。",
+          "customers": [
+            "子供服の購入者",
+            "百貨店"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "kimuratan-wearable",
+          "name": "ウェアラブル事業",
+          "description": "ウェアラブルIoT技術を使い、園児の午睡の見守りや体調変化のチェックを行う園児見守りサービスを全国の保育施設に提供する事業です。熱中症対策商品の販売も手がけます。2026年3月期の外部顧客への売上高は38百万円でした。",
+          "customers": [
+            "保育施設"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "不動産の賃貸・管理とリノベーション再販、ベビー・子供服の企画・販売、ウェアラブルIoTによる見守りサービスを行い、それぞれの対価を得る事業です。",
+    "products": [
+      "不動産の賃貸・管理",
+      "リノベーションした中古物件",
+      "ベビー・子供服",
+      "園児見守りサービス",
+      "熱中症対策商品"
+    ],
+    "customers": [
+      "賃貸物件の入居者",
+      "中古住宅の購入者",
+      "子供服の購入者",
+      "保育施設"
+    ],
+    "revenueSources": [
+      "不動産事業売上高",
+      "アパレル事業売上高",
+      "ウェアラブル事業売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "キムラタン",
+        "description": "神戸市中央区に本店を置きます。1925年にベビー衣料品の製造販売で創業しました。2026年3月31日現在の連結子会社は9社、従業員数は34人です。東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "不動産・アパレル・見守りの3事業",
+        "description": "不動産の賃貸・管理とリノベーション再販、ベビー・子供服の企画・販売、ウェアラブルIoT技術を用いた園児見守りサービスと熱中症対策商品を提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "入居者・住宅購入者・保育施設など",
+        "description": "賃貸物件の入居者や中古住宅の購入者、ネット通販などで子供服を買う消費者、全国の保育施設に販売・提供します。売上高の10％以上を占める特定の相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "セグメント別売上高による売上高2,533百万円",
+        "description": "2026年3月期の売上高は2,533百万円です。セグメント別の外部顧客への売上高は、不動産事業が2,200百万円、アパレル事業が293百万円、ウェアラブル事業が38百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純損失98百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純損失は98百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +139,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 119722000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 100,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +159,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 168396000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 34,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 921341000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 20,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1132598000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 30,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1646646000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 34,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +227,138 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1925,
+      "title": "ベビー衣料品の製造販売を開始",
+      "description": "創業者の木村坦が神戸市で木村坦商店の商号をもって、ベビー衣料品の製造販売を開始しました。",
+      "significance": "会社の始まりです。社名は創業者の名に由来します。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "株式会社木村坦商店を設立",
+      "description": "株式会社木村坦商店を設立しました。",
+      "significance": "法人としての設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "木村坦株式会社を設立",
+      "description": "木村坦株式会社を設立し、株式会社木村坦商店の業務を引き継ぎました。",
+      "significance": "現在の会社の直接の前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "株式会社キムラタンに商号変更",
+      "description": "株式の額面変更のため興生産業株式会社に吸収合併されたうえで、存続会社の商号を株式会社キムラタンに変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "大阪証券取引所市場第2部に上場",
+      "description": "大阪証券取引所市場第2部に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "大阪証券取引所市場第1部に指定替え",
+      "description": "大阪証券取引所市場第1部に指定替えとなりました。",
+      "significance": "上場市場の格上げです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "IT関連事業に参入",
+      "description": "新たにIT関連事業に参入するため、E&E事業部を設立しました。",
+      "significance": "アパレル以外の事業への最初の本格展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "IT関連事業からの撤退を決議",
+      "description": "IT関連事業の撤退を決議しました。",
+      "significance": "IT関連事業は4年で撤退しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "企業主導型保育園事業に参入",
+      "description": "企業主導型保育園事業に参入することを決め、100％出資子会社の株式会社キムラタンフロンティアを設立しました。",
+      "significance": "保育分野への展開で、後のウェアラブル事業につながります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "不動産事業への参入を決定",
+      "description": "不動産事業への参入を決定しました。",
+      "significance": "現在の主力事業への転換の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "事業ポートフォリオの転換を決定",
+      "description": "アパレル事業を大幅に縮小し、不動産事業を拡大する事業ポートフォリオの転換を決定しました。あわせて東京証券取引所スタンダード市場へ移行し、株式会社キムラタンエステートを完全子会社化しました。",
+      "significance": "不動産を主力とする現在の事業構造が固まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "イストグループを完全子会社化",
+      "description": "株式会社イスト、株式会社ライブ、コネクト株式会社のイストグループ3社の株式を100％取得し、完全子会社化しました。",
+      "significance": "リノベーション再販事業の基盤を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "SwanStyle株式会社を完全子会社化",
+      "description": "不動産特定共同事業を営むSwanStyle株式会社の発行済株式の全部を取得し、完全子会社化しました。",
+      "significance": "不動産小口化商品への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +367,55 @@
       "publisher": "株式会社キムラタン",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YER7.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YER7",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年4月の創業100年を機に、「衣・健・住」を軸とした戦略的ビジネスモデルを推進する方針です。衣では子ども服のブランド価値の再構築と差別化、健では園児見守りに加えて高齢者向けの室内見守りへの拡大、住では賃貸、空き家の再生・再販売、不動産小口化商品、マッチングプラットフォームの4つの収益モデルで事業基盤を築くとしています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高は2,533百万円で前期比44.1％増となりました。子会社の取得による収益の増加に加え、不動産事業の再販事業が大きく伸びたことが主な増収要因です。一方、アパレル事業の売上高は店舗閉鎖や既存店・ネット通販の低調で減少しました。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に基づく",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "不動産事業では、イストグループが持つリノベーションで中古物件の付加価値を高める進め方を強みとし、再販事業に注力しています。アパレル事業では、自社企画・設計による独自性と品質にこだわった製品づくりを掲げています。",
+        "basis": "【事業の内容】と【経営方針、経営環境及び対処すべき課題等】に基づく",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "アパレル事業が向き合う子供服は少子化の影響を受ける分野です。会社はウェアラブル事業でも国内出生数の減少を構造的な課題と捉え、応用領域を高齢者福祉・介護分野へ広げる方向を示しています。不動産事業では中古住宅の再生・再販売を通じた空き家問題への対応を掲げています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に基づく",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

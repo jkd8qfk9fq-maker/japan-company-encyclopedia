@@ -4,15 +4,146 @@
   "name": "まんだらけ",
   "officialName": "株式会社まんだらけ",
   "nameEn": "MANDARAKE INC.",
-  "description": null,
+  "shortNameEn": "MANDARAKE INC.",
+  "description": "まんがやアニメ関連の中古品を買い取り、全国の店舗と通信販売、オークションで販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "used-goods-retail",
+      "name": "中古品販売事業",
+      "description": "日本のまんが関連古書、グッズ、アニメ関連商品等の中古品を仕入れ、販売する単一の事業です。中古品販売の単一セグメントであり、2025年9月期の売上高は15,183百万円でした。販売は全国の店舗のほか、千葉県香取市の物流倉庫「SAHRA（サーラ）」を拠点とするWeb通信販売と、年6回の「大オークション大会」や通年のオークションサイト「毎日オークション」でも行っています。",
+      "customers": [
+        "まんがやアニメ関連商品のコレクターをはじめとする個人客",
+        "訪日外国人客を含む国内外の個人客"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "toy",
+          "name": "TOY",
+          "description": "フィギュア等の玩具類です。2025年9月期の販売実績は8,528百万円で、品目別の販売実績の中で最も大きい区分です。",
+          "customers": [
+            "まんがやアニメ関連商品のコレクターをはじめとする個人客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-goods",
+          "name": "その他",
+          "description": "本、同人誌、TOY、出版物以外の商品です。2025年9月期の販売実績は3,426百万円でした。",
+          "customers": [
+            "まんがやアニメ関連商品のコレクターをはじめとする個人客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "books",
+          "name": "本",
+          "description": "まんが関連の古書等です。2025年9月期の販売実績は1,627百万円でした。",
+          "customers": [
+            "まんが関連古書のコレクターをはじめとする個人客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "doujinshi",
+          "name": "同人誌",
+          "description": "同人誌です。2001年からは新刊同人誌の取扱も行っており、2025年9月期の販売実績は1,533百万円でした。",
+          "customers": [
+            "同人誌のコレクターをはじめとする個人客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "publications",
+          "name": "出版物",
+          "description": "自社が発行するカタログ誌「まんだらけZENBU」等の出版物です。2025年9月期の販売実績は66百万円でした。",
+          "customers": [
+            "まんがやアニメ関連商品のコレクターをはじめとする個人客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "個人からの買取などで仕入れたまんが古書や同人誌、TOYなどの中古品を、自社開発のPOSシステムで価値を見極めながら店舗・通販・オークションで販売し、販売価格と仕入価格の差額を得る事業モデルです。",
+    "products": [
+      "まんが関連古書",
+      "同人誌",
+      "TOY（フィギュア等の玩具）",
+      "アニメ関連グッズ",
+      "自社出版物「まんだらけZENBU」"
+    ],
+    "customers": [
+      "まんがやアニメ関連商品のコレクターをはじめとする個人客",
+      "訪日外国人客を含む海外の個人客"
+    ],
+    "revenueSources": [
+      "店舗での中古品販売による収入",
+      "Web通信販売による収入",
+      "オークション（大オークション大会・毎日オークション）による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "まんだらけ",
+        "description": "東京証券取引所スタンダード市場に上場する中古品販売の会社で、東京都中野区に本店を置きます。2025年9月30日現在の従業員数は420人で、関係会社はありません。"
+      },
+      {
+        "kind": "offering",
+        "title": "中古品の買取と販売",
+        "description": "まんが関連古書や同人誌、TOY、アニメ関連グッズなど、コレクターアイテムとなり得る中古品を仕入れ、店舗とWeb通信販売、オークションで販売しています。自社開発のPOSシステムで、全店舗の仕入・販売・在庫の状況を同時に把握しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "コレクターを中心とする個人客",
+        "description": "顧客は、まんがやアニメ関連商品のコレクターをはじめとする個人客です。訪日外国人客や、Web通信販売を利用する海外の顧客もいます。売上高の10％以上を占める特定の顧客はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2025年9月期の売上高は15,183百万円",
+        "description": "2025年9月期の売上高は15,183百万円で、前期の14,455百万円から5.0％増加しました。新店舗の開店や訪日外国人客向けの取り組み、通信販売の強化が寄与しました。品目別の販売実績ではTOYが8,528百万円、本が1,627百万円、同人誌が1,533百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "2025年9月期の当期純利益は1,121百万円",
+        "description": "2025年9月期の当期純利益は1,121百万円で、前期の1,376百万円から18.5％減少しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年9月期",
@@ -27,11 +158,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7793413000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 364,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -49,14 +180,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8374338000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 381,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "第36期（2022年9月期）の期首から「収益認識に関する会計基準」（企業会計基準第29号 2020年3月31日）等を適用しており、2022年9月期以降の主要な経営指標等は、当該会計基準等を適用した後の指標となっています。"
     },
     {
       "fiscalYear": "2023年9月期",
@@ -71,11 +203,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9616385000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 395,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -93,11 +225,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10864899000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 411,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -115,18 +247,209 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11822655000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 420,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1987,
+      "title": "株式会社まんだらけを設立",
+      "description": "1980年より営業していたまんが古書店「まんだらけ」の発展を期して、東京都中野区中野の中野ブロードウェイ内に株式会社まんだらけを設立しました。",
+      "significance": "現在の会社の起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "カタログ誌「まんだらけ」を発刊",
+      "description": "まんが古書のカタログ誌「まんだらけ」を発刊しました。",
+      "significance": "通信販売とオークションの基盤となる商品目録の発行が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "渋谷店を開店",
+      "description": "東京都渋谷区道玄坂に渋谷店を開店しました。",
+      "significance": "中野以外への店舗展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "大阪店（現うめだ店）を開店",
+      "description": "大阪市北区堂山町に大阪店（現うめだ店）を開店しました。",
+      "significance": "関西への出店です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "カタログ誌を「まんだらけZENBU」に改称",
+      "description": "まんが古書のカタログ誌を「まんだらけZENBU」に改称して新創刊しました。",
+      "significance": "現在のオークション目録につながる誌名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "福岡店・名古屋店を開店",
+      "description": "福岡市中央区天神に福岡店を、名古屋市中区錦に名古屋店を開店しました。",
+      "significance": "九州と中部への出店です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "新刊同人誌の取扱を開始",
+      "description": "新刊同人誌の取扱を開始しました。",
+      "significance": "取扱商品の幅が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "秋葉原店を開店",
+      "description": "東京都千代田区外神田に秋葉原店を開店しました。",
+      "significance": "現在の主力店「コンプレックス」につながる出店です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "札幌店を開店",
+      "description": "札幌市中央区に札幌店を開店しました。",
+      "significance": "北海道への出店です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "秋葉原店を「コンプレックス」として開店",
+      "description": "秋葉原店を移転し、近隣に自社ビルを建築のうえ、名称を「コンプレックス」として開店しました。また、なんば店を移転し、名称を「グランドカオス」として開店しました。",
+      "significance": "主力店舗の大型化と改称が行われました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "市場第二部へ市場変更し、SAHRAを開設",
+      "description": "東京証券取引所市場第二部へ市場変更しました。また、千葉県香取市佐原に物流拠点「まんだらけSAHRA」を開設しました。",
+      "significance": "通信販売の物流基盤が整いました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "流通センターを移転し「都内倉庫」と改称",
+      "description": "まんだらけ流通センターを板橋区加賀に移転し、名称を「都内倉庫」として開設しました。",
+      "significance": "物流拠点の体制が変わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "「まんだらけCoCoo」と「まんだらけ那由多」を開店",
+      "description": "東京都千代田区神田に「まんだらけCoCoo」を、東京都豊島区東池袋に「まんだらけ那由多」を開店しました。",
+      "significance": "専門店形式の出店が進みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "京都店を開店",
+      "description": "京都府京都市下京区に京都店を開店しました。",
+      "significance": "関西の店舗網が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "「まんだらけPUCK１」を開店",
+      "description": "兵庫県神戸市中央区に「まんだらけPUCK１」を開店しました。",
+      "significance": "兵庫県への出店です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "「コンプレックス２」を開店",
+      "description": "東京都千代田区外神田に、既存店舗「コンプレックス」に隣接する「コンプレックス２」を開店しました。",
+      "significance": "秋葉原の店舗体制が拡充されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mercari",
+      "relationship": "business-partner",
+      "description": "2025年9月期に、販売チャネルの拡大策として「メルカリShops」での販売を開始した取引先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -134,13 +457,58 @@
       "publisher": "株式会社まんだらけ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XD0Z.pdf",
       "publishedAt": "2025-12-25",
-      "accessedAt": "2026-09-28"
+      "docId": "S100XD0Z",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 財務: 株式分割。2024年5月1日付で普通株式1株につき5株の割合で株式分割を行っており、主要な経営指標等の数値は、当該株式分割が第35期の期首に行われたと仮定して算定されている。"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "まんが、アニメーション関連の商品をはじめとするコレクターアイテムに特化し、最新の一般的な商品からマニアックな希少品まで幅広く取り扱うとともに、新たな商材の掘り起こしと市場の開拓・定着を図り、業界内で先行して優位性を確立する戦略です。推進の柱として、人材の確保と育成、自社開発POSシステムの機能向上と安定稼働、大都市圏への新規出店と通信販売の強化・拡充を掲げています。",
+        "asOf": "2025-12-25",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2025年9月期は、「コンプレックス２」と「まんだらけPUCK１」の開店、「メルカリShops」での販売開始など、開示された方針にある店舗展開と販売チャネルの拡大が実際に実行されています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等と、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の記載に基づく",
+        "asOf": "2025-12-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1980年からまんが古書店を営んできた商品知識と情報の蓄積を基に、一般に価値の認識が定まっていないコレクターアイテムの適正な価値を判断し、全店舗で仕入・販売・在庫を一元把握する自社開発のPOSシステムで買取と販売を行っている点が強みです。",
+        "basis": "沿革、事業の内容、経営方針、経営環境及び対処すべき課題等の記載に基づく",
+        "asOf": "2025-12-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "中古品業界の中で、まんがやアニメ関連のコレクターアイテムに特化した専門店として、全国の主要都市の店舗網と、オークションや多言語対応のWeb通信販売の販路を併せ持つ位置づけにあります。",
+        "basis": "経営方針、経営環境及び対処すべき課題等、沿革、主要な設備の状況の記載に基づく",
+        "asOf": "2025-12-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-30",

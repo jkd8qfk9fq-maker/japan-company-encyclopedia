@@ -4,15 +4,131 @@
   "name": "京都ホテル",
   "officialName": "株式会社京都ホテル",
   "nameEn": "THE KYOTO HOTEL, LTD.",
-  "description": null,
+  "shortNameEn": "THE KYOTO HOTEL, LTD.",
+  "description": "京都市で「ホテルオークラ京都」と「からすま京都ホテル」を運営する、1888年創業のホテル会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "entertainment",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "the-kyoto-hotel",
+      "name": "株式会社京都ホテル",
+      "description": "京都市中京区に本社を置き、連結子会社を持たず単体でホテルを運営する会社です。2026年3月31日現在の従業員数は364人で、東京証券取引所スタンダード市場に上場しています。その他の関係会社である株式会社ホテルオークラが議決権の35.3％を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "hotel-business",
+          "name": "ホテル事業",
+          "description": "ホテル経営及びホテル付随業務の単一セグメントで、京都市内の2ホテルを運営する事業です。2026年3月期の売上高は9,772百万円で、部門別では宿泊部門4,249百万円、宴会部門2,890百万円、レストラン部門2,103百万円、その他部門528百万円です。",
+          "customers": [
+            "宿泊客",
+            "宴会・婚礼の主催者",
+            "レストラン・バーの利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "children": [
+            {
+              "id": "hotel-okura-kyoto",
+              "name": "ホテルオークラ京都",
+              "description": "京都市中京区の旗艦ホテルで、客室320室、宴会室13室、レストラン7店舗を備えています。株式会社ホテルオークラと業務提携し、同社の子会社との業務提携契約並びに販売提携契約に基づいて「オークラニッコーホテルズ」の一員として運営しています。",
+              "customers": [
+                "宿泊客",
+                "宴会・婚礼の主催者",
+                "レストラン・バーの利用者",
+                "会員プログラム「One Harmony」の会員"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【主要な設備の状況】"
+            },
+            {
+              "id": "karasuma-kyoto-hotel",
+              "name": "からすま京都ホテル",
+              "description": "京都市下京区のホテルで、客室231室、宴会室4室、レストラン2店舗を備えています。建物は伊吹株式会社から賃借しており、修学旅行や企業などの団体旅行の利用が多いホテルです。",
+              "customers": [
+                "宿泊客",
+                "団体旅行の利用者",
+                "レストラン・バーの利用者"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【主要な設備の状況】"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "宿泊、宴会・婚礼、レストランの各部門で施設とサービスを提供し、利用者から宿泊料や飲食料などの料金を得る事業モデルです。",
+    "products": [
+      "客室の提供（宿泊）",
+      "宴会場・婚礼の提供",
+      "レストラン・バーの運営",
+      "フィットネスクラブ・駐車場の運営"
+    ],
+    "customers": [
+      "国内の宿泊客",
+      "訪日外国人旅行者",
+      "宴会・婚礼の主催者",
+      "レストラン・バーの利用者",
+      "会員プログラム「One Harmony」の会員"
+    ],
+    "revenueSources": [
+      "宿泊料",
+      "宴会・婚礼の料金",
+      "レストラン・バーの飲食料",
+      "駐車場料金・フィットネスクラブ会費",
+      "テナントからの賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社京都ホテル",
+        "description": "京都市中京区に本社を置き、連結子会社を持たず単体で事業を展開しています。2026年3月31日現在の従業員数は364人で、東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "2ホテルの運営",
+        "description": "旗艦の「ホテルオークラ京都」（客室320室）と「からすま京都ホテル」（客室231室）を運営し、宿泊、宴会・婚礼、レストラン・バーのサービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "宿泊客と宴会・飲食の利用者が顧客",
+        "description": "顧客は、国内の宿泊客や訪日外国人旅行者、MICEを含む団体旅行の参加者、宴会・婚礼の主催者、レストランの利用者などです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は9,772百万円",
+        "description": "2026年3月期の売上高は9,772百万円で、前期比4.4％増でした。部門別では宿泊部門が4,249百万円、宴会部門が2,890百万円、レストラン部門が2,103百万円、その他部門が528百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の当期純利益は874百万円",
+        "description": "2026年3月期の当期純利益は874百万円で、前期比13.3％増でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +143,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1052316000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 435,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +165,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1094455000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 391,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +187,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1989088000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 367,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +209,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2660305000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 355,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +231,118 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3458215000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 364,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1888,
+      "title": "前身「京都常盤」を創業",
+      "description": "前田又吉が、京都ホテルの前身である「京都常盤」を創業しました。",
+      "significance": "現在の京都ホテルの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1890,
+      "title": "京都ホテル（常盤ホテル）を開業",
+      "description": "京都ホテル（当時通称・常盤ホテル）を開業しました。翌1891年にはロシア皇太子ニコライ殿下（後の皇帝ニコライ2世）が投宿しています。",
+      "significance": "国際観光都市・京都のホテルとしての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1927,
+      "title": "株式会社京都ホテルを設立",
+      "description": "「株式会社京都ホテル」を設立し、翌1928年にルネッサンス様式の鉄筋コンクリート7階建洋館を新築して営業を開始しました。",
+      "significance": "法人としての経営体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "京都証券取引所に上場",
+      "description": "株式を京都証券取引所に上場しました。同年には北館を増築し、客室数は合計517室となりました。",
+      "significance": "上場会社としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "「からすま京都ホテル」を開業",
+      "description": "「からすま京都ホテル」を開業しました。客室数は258室で、改装等により現在は231室です。",
+      "significance": "京都市内2ホテル体制の基礎ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "「京都ホテル」が新装開業",
+      "description": "全面建替え計画のため休業していた「京都ホテル」が、客室数322室（改装等により現在は320室）で開業しました。",
+      "significance": "現在の旗艦ホテルの姿が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "株式会社ホテルオークラと業務提携契約を締結",
+      "description": "株式会社ホテルオークラと業務提携契約を締結し、翌2002年にホテルの名称を「京都ホテルオークラ」に改称しました。",
+      "significance": "オークラブランドとの提携が現在の事業基盤につながっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "「ホテルオークラ京都」に改称し、スタンダード市場へ移行",
+      "description": "「京都ホテルオークラ」の名称を「ホテルオークラ京都」に改称しました。同年、市場の見直しにより東京証券取引所スタンダード市場へ移行しました。",
+      "significance": "現在のホテル名称と上場市場がそろいました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nichirei",
+      "relationship": "major-shareholder",
+      "description": "株式会社ニチレイは、【大株主の状況】に記載される事業会社で、2026年3月31日現在、発行済株式（自己株式を除く）の16.64％を所有する第2位の大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "keihan-holdings",
+      "relationship": "major-shareholder",
+      "description": "京阪ホールディングス株式会社は、【大株主の状況】に記載される事業会社で、2026年3月31日現在、発行済株式（自己株式を除く）の3.02％を所有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +350,55 @@
       "publisher": "株式会社京都ホテル",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIC1.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YIC1",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年3月期から2028年3月期までの第3次中期経営計画で、全てのステークホルダーにとっての「WIN-WIN HOTEL」を目指すビジョンを掲げ、収益力強化と協働力強化、人材確保・定着、財務基盤強化を重点施策としています。ホテルオークラ京都の客室全般の改装は、資材の調達環境が極めて不安定なことから当面の間延期し、調達環境の動向を踏まえて再開時期を検討するとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "旗艦ホテルの宴会・MICE需要と宿泊需要を伸ばし、内部留保による純資産の改善で財務基盤を固めながら、改装による施設競争力の維持強化につなげる構成になっています。",
+        "basis": "中期経営戦略の重点施策と、部門別の売上高の動向（宴会部門の伸び）の記載に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1888年創業の歴史を持つ京都を代表するホテルであり、オークラニッコーホテルズのブランドと会員プログラム「One Harmony」による安定した需要基盤を持ち、市内中心部に2ホテルを構える点が特徴です。",
+        "basis": "沿革における創業とホテルオークラとの業務提携の記載、及びMD&Aにおける会員プログラムによる需要の記載に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "京都市内に2ホテルを集中させる地域密着型のホテル専業事業者で、拡大するインバウンド需要と大型宴会・MICE需要の取り込みが売上の中心になっています。",
+        "basis": "事業の内容とMD&Aにおける訪日外国人旅行者数と部門別概況の記載に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

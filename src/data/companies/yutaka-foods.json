@@ -4,19 +4,159 @@
   "name": "ユタカフーズ",
   "officialName": "ユタカフーズ株式会社",
   "nameEn": "YUTAKA FOODS CORPORATION",
-  "description": null,
+  "shortNameEn": "YUTAKA FOODS CORPORATION",
+  "description": "液体・粉体の調味料などを自社で製造販売し、親会社の東洋水産から即席麺やチルド食品などの製造も受託する食品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "powder",
+      "name": "粉体",
+      "description": "粉末スープや顆粒製品、機能性食品などを生産する部門で、2026年3月期の外部顧客への売上高は5,227百万円でした。自社製品の製造販売と、親会社である東洋水産株式会社からの受託製造を行っており、鳥取工場に事業を集約した製販一体の体制をとっています。",
+      "products": [
+        "粉末スープ",
+        "顆粒製品",
+        "機能性食品"
+      ],
+      "customers": [
+        "東洋水産株式会社（親会社、受託製造）",
+        "食品メーカーなどの取引先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "liquid",
+      "name": "液体",
+      "description": "うなぎのたれや液体スープなどを生産する部門で、2026年3月期の外部顧客への売上高は5,021百万円でした。1952年以来の醸造のノウハウを生かした「うなぎのたれ」「つゆ」「白だし」「味だし」などの自社製品を製造販売するほか、親会社の東洋水産株式会社からの受託製造も行っています。",
+      "products": [
+        "うなぎのたれ",
+        "つゆ、白だし、味だしなどの液体調味料",
+        "液体スープ"
+      ],
+      "customers": [
+        "東洋水産株式会社（親会社、受託製造）",
+        "国内外の生産者や食品メーカーなどの取引先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "instant-noodles",
+      "name": "即席麺",
+      "description": "袋麺やカップ麺などの即席麺を生産する部門で、2026年3月期の外部顧客への売上高は1,936百万円でした。主に親会社の東洋水産株式会社からの受託製造を行っています。",
+      "products": [
+        "袋麺",
+        "カップ麺"
+      ],
+      "customers": [
+        "東洋水産株式会社（親会社、受託製造）"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "chilled-foods",
+      "name": "チルド食品",
+      "description": "焼そばや生ラーメンなどのチルド食品を生産する部門で、2026年3月期の外部顧客への売上高は1,918百万円でした。主に親会社の東洋水産株式会社からの受託製造を行っており、2025年11月に新工場が完成して稼働を開始しています。",
+      "products": [
+        "焼そば",
+        "生ラーメン"
+      ],
+      "customers": [
+        "東洋水産株式会社（親会社、受託製造）"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-products",
+      "name": "その他（商品）",
+      "description": "報告セグメントに含まれない商品（冷凍魚ほか）の販売で、2026年3月期の外部顧客への売上高は884百万円でした。",
+      "products": [
+        "冷凍魚などの商品"
+      ],
+      "customers": [
+        "商品の販売先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "醸造のノウハウを生かした液体・粉体の自社製品を製造販売するとともに、東洋水産向けに即席麺やチルド食品などの受託製造を行っています。",
+    "products": [
+      "うなぎのたれ、つゆ、白だし、味だしなどの液体調味料",
+      "粉末スープ、顆粒製品、機能性食品などの粉体製品",
+      "焼そば、生ラーメンなどのチルド食品",
+      "袋麺、カップ麺などの即席麺",
+      "冷凍魚などの商品"
+    ],
+    "customers": [
+      "東洋水産株式会社（親会社、受託製造の委託元）",
+      "国内外の生産者や食品メーカーなどの取引先"
+    ],
+    "revenueSources": [
+      "自社製品の販売対価",
+      "受託製造の対価",
+      "商品の販売対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東洋水産グループの食品メーカー",
+        "description": "1919年に木箱の製造で創業し、1952年に醸造業へ転換した食品メーカーで、従業員数は271人です（2026年3月31日現在）。親会社は東洋水産株式会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "自社製品の製造販売と受託製造",
+        "description": "うなぎのたれや粉末スープなどの自社製品を製造販売し、即席麺やチルド食品は東洋水産からの受託製造を中心に行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "親会社と食品の取引先",
+        "description": "親会社の東洋水産が最大の取引先で、液体・粉体では自社製品を生産者や食品メーカーなどの取引先にも販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は14,988百万円で、前期から3.7％増えました。受託数の増加などで、液体や粉体を中心に各部門の売上が伸びました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は204百万円で、前期から63.1％減りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,11 +171,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21185000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 359,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -53,11 +193,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21652000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 307,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -75,11 +215,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22157000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 296,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -97,11 +237,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22504000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 278,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -119,18 +259,204 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23019000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 271,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1919,
+      "title": "山二製材工場として創業",
+      "description": "坂野信四郎が、現在の本社工場のある場所に山二製材工場と称して創業し、包装用木箱や建築用材料の製造を始めました。",
+      "significance": "現在のユタカフーズの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "法人化し航空機部品の製作に転換",
+      "description": "法人組織に改め、株式会社山二航空機製作所と称し、航空機部品の製作に転換しました。",
+      "significance": "法人としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1945,
+      "title": "山二産業に商号変更し木製品工場に復元",
+      "description": "山二産業株式会社に商号を変更し、木製品工場に復元しました。",
+      "significance": "戦後の事業再建の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "味噌・醤油の醸造業に転換",
+      "description": "豊産業株式会社に商号を変更し、主要な製品を味噌・醤油の醸造業に転換しました。同年、豊醸造株式会社を吸収合併しました。",
+      "significance": "現在の食品事業と醸造ノウハウの土台です。資本金の金額は沿革に書かれていますが、ここには記録していません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "豊醤油株式会社に商号変更",
+      "description": "豊醤油株式会社に商号を変更しました。",
+      "significance": "醸造業としての体制が固まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "名古屋証券取引所に株式を上場",
+      "description": "名古屋証券取引所（市場第二部）に株式を上場しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "東洋水産の経営参加と受託製造の開始",
+      "description": "東洋水産株式会社の経営参加を得て、だしの素の受託製造を開始しました。同年、生麺の受託製造も開始しました。",
+      "significance": "現在の親会社との関係と受託製造事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "即席麺の受託製造を開始",
+      "description": "即席麺工場を新築し、即席麺の受託製造を開始しました。",
+      "significance": "現在の即席麺部門の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "ユタカフーズ株式会社に商号変更",
+      "description": "ユタカフーズ株式会社に商号を変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所に株式を上場",
+      "description": "東京証券取引所（市場第二部）に株式を上場しました。",
+      "significance": "2市場での上場体制となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "鳥取工場が稼働開始",
+      "description": "東洋水産株式会社から山陰東洋株式会社の営業の全部を譲り受け、鳥取工場として稼働を開始しました。",
+      "significance": "現在の粉体事業の生産拠点の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証スタンダード市場・名証メイン市場へ移行",
+      "description": "証券取引所の市場区分の見直しにより、東京証券取引所の市場第二部からスタンダード市場へ、名古屋証券取引所の市場第二部からメイン市場へ移行しました。",
+      "significance": "現在の上場市場の区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "チルド新工場を建築",
+      "description": "チルド新工場を建築し、稼働を開始しました。",
+      "significance": "チルド食品部門の生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "toyo-suisan-kaisha",
+      "relationship": "parent",
+      "description": "親会社で、2026年3月31日現在、当社の議決権の50.9％を保有しています。当社は同社の即席食品等の製品を受託製造しており、同社は当社の最大の取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "semba-tohka-industries",
+      "relationship": "business-partner",
+      "description": "特定投資株式として1,000,000株を保有しています。営業・購買における協力関係の維持・強化を目的とし、製品の取引や副原料の購入取引を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yuasa-funashoku",
+      "relationship": "business-partner",
+      "description": "特定投資株式として280,000株を保有しています。営業における協力関係の維持・強化を目的とし、主に調味料の取引を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "dynapac",
+      "relationship": "supplier",
+      "description": "特定投資株式として2,200株を保有しています。購買における協力関係の維持・強化を目的とし、包材の購入取引を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "k-r-s",
+      "relationship": "supplier",
+      "description": "特定投資株式として2,000株を保有しています。主に製品の保管・配送業務を委託しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "maruichi",
+      "relationship": "business-partner",
+      "description": "特定投資株式として1,000株を保有しています。営業における協力関係の維持・強化を目的とし、調味料の取引を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -138,13 +464,47 @@
       "publisher": "ユタカフーズ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHEX.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YHEX",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "即席麺とチルド食品の麺類は、今後も安定した経営基盤として、東洋水産株式会社に協力しながら、チルド新工場の稼働によって受託量の拡大を図ります。製品開発の主体を持っている液体と粉体は今後発展の戦略分野と考え、研究開発の強化と製品開発のスピードアップに取り組み、自社開発製品の売上高に占める比率を上げながら、バランスのとれた売上構成を目指します。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "液体部門は1952年以来の醸造のノウハウを持ち、「うなぎのたれ」は業界トップクラスの生産量を誇ります。粉体部門は、粉末・顆粒といった形状や多様な充填形態に対応でき、2019年に鳥取工場へ事業を集約して製販一体の体制とし、対応のスピードアップを目指しています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における液体部門と粉体部門の記述に基づく。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "調味料や即席麺などを製造する食品メーカーで、売上の中心は親会社の東洋水産向けの受託製造です。食品業界では原材料価格の高騰が続く一方で低価格志向による価格競争が激化する厳しい環境にあり、同社は品質第一の姿勢を貫き、品質管理を徹底することを基本としています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における食品業界の環境の記述と、事業の内容における親会社との関係の記述に基づく。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

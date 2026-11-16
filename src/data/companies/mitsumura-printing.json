@@ -4,15 +4,176 @@
   "name": "光村印刷",
   "officialName": "光村印刷株式会社",
   "nameEn": "MITSUMURA PRINTING CO., LTD.",
-  "description": null,
+  "shortNameEn": "MITSUMURA PRINTING CO., LTD.",
+  "description": "出版物や新聞の印刷を主力に、産業資材・電子部品の製造と不動産賃貸も手がける東京都品川区の総合印刷会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "media",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "printing",
+      "name": "印刷",
+      "description": "出版印刷物、宣伝用印刷物、業務用印刷物、伝票類、証券類、包装・パッケージ、新聞、映像制作物などを、当社と連結子会社７社が製造・販売する事業です。2026年3月期の外部顧客への売上高は13,278百万円でした。",
+      "customers": [
+        "新聞社",
+        "出版社・一般企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】",
+      "children": [
+        {
+          "id": "general-printing",
+          "name": "一般印刷・情報",
+          "description": "出版印刷物、宣伝用印刷物、業務用印刷物、伝票類、証券類、連続伝票、包装・パッケージ、ショッピングバッグ類、映像制作物などの印刷・制作です。医薬・OTC向けの包装資材・パッケージは連結子会社の新村印刷株式会社が扱っています。",
+          "customers": [
+            "出版社・一般企業",
+            "製薬会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "newspaper-printing",
+          "name": "新聞印刷",
+          "description": "新聞の印刷です。2026年１月に、当社で行っていた新聞印刷の生産機能を連結子会社の光村高速オフセット株式会社へ移管しました。",
+          "customers": [
+            "新聞社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産賃貸等",
+      "description": "東京都内におけるオフィスビルや倉庫跡の土地等の賃貸と、那須工場の敷地の一部を利用した太陽光発電を行う事業です。2026年3月期の外部顧客への売上高は482百万円でした。",
+      "customers": [
+        "不動産の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】",
+      "children": [
+        {
+          "id": "solar-power",
+          "name": "太陽光発電",
+          "description": "那須工場（栃木県大田原市）の敷地の一部を利用した太陽光発電事業です。",
+          "customers": [
+            "電力会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "industrial-materials",
+      "name": "産業資材・電子部品製造",
+      "description": "スクリーン印刷製品とエッチング精密製品を当社が製造・販売する事業です。2026年3月期の外部顧客への売上高は372百万円でした。",
+      "customers": [
+        "電子部品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】",
+      "children": [
+        {
+          "id": "etching",
+          "name": "エッチング精密製品",
+          "description": "水晶振動子や電子部品向けの治具などに使われるエッチング精密製品の製造・販売です。",
+          "customers": [
+            "電子部品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "screen-printing",
+          "name": "スクリーン印刷製品",
+          "description": "半導体加工テープなどの産業資材をスクリーン印刷の技術で製造・販売する製品群です。那須工場で2025年１月に製造を開始しました。",
+          "customers": [
+            "電子部品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "印刷事業で出版印刷物や新聞などを製造・販売し、産業資材・電子部品製造と不動産賃貸等でも収益を得る事業モデルです。",
+    "products": [
+      "出版印刷物・宣伝用印刷物・業務用印刷物",
+      "新聞",
+      "包装・パッケージ",
+      "エッチング精密製品",
+      "スクリーン印刷製品（半導体加工テープ等）",
+      "映像制作物"
+    ],
+    "customers": [
+      "新聞社",
+      "出版社・一般企業",
+      "電子部品メーカー"
+    ],
+    "revenueSources": [
+      "売上高（2026年3月期 14,133百万円）"
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "flow": [
+      {
+        "kind": "company",
+        "title": "光村印刷",
+        "description": "東京都品川区に本社を置く総合印刷会社で、東京証券取引所スタンダード市場に上場しています。当社と連結子会社７社でグループを構成し、2026年3月期の従業員数は614人でした。"
+      },
+      {
+        "kind": "offering",
+        "title": "印刷物と産業資材・電子部品、不動産賃貸",
+        "description": "出版印刷物や新聞などの印刷物を製造・販売するほか、エッチング精密製品やスクリーン印刷製品の製造・販売、オフィスビル等の賃貸と太陽光発電を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "新聞社・出版社・電子部品メーカー",
+        "description": "印刷の主要な顧客として、株式会社読売新聞東京本社とヤマト運輸株式会社が関連情報に印字されています。産業資材・電子部品は電子部品メーカー等が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高 14,133百万円",
+        "description": "2026年3月期の売上高は14,133百万円でした。内訳は印刷13,278百万円、産業資材・電子部品製造372百万円、不動産賃貸等482百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益 353百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は353百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17186833000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 705,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +208,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17540976000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 677,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +228,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19165438000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 661,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +248,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17770462000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 638,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +268,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18527194000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 614,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +276,261 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1901,
+      "title": "関西写真製版印刷合資会社を設立",
+      "description": "創業者光村利藻が神戸に関西写真製版印刷合資会社を設立しました。",
+      "significance": "現在の光村印刷の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1936,
+      "title": "株式会社光村原色版印刷所を設立",
+      "description": "株式会社組織に改め、株式会社光村原色版印刷所を設立しました。",
+      "significance": "色の再現を強みとする原色版印刷を社名に掲げた法人化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "三光プロセス株式会社を設立",
+      "description": "三光プロセス株式会社（現・株式会社光村プロセス、現・連結子会社）を設立しました。",
+      "significance": "現在の連結子会社につながるグループ化の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "株式を公開",
+      "description": "東京店頭売買承認銘柄として株式を公開しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第２部に上場",
+      "description": "東京証券取引所市場第２部に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "読売新聞日曜版のカラー印刷を開始",
+      "description": "川越の事業所に新聞用オフセット輪転機を導入し、読売新聞日曜版のカラー印刷を開始しました。",
+      "significance": "新聞印刷事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "読売新聞日刊紙の印刷を開始",
+      "description": "川越の事業所で読売新聞日刊紙の印刷を開始しました。",
+      "significance": "新聞印刷の対象が日刊紙へ広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "精密印刷工場を設立",
+      "description": "本社工場内に精密印刷工場を設立しました。",
+      "significance": "後の産業資材・電子部品製造事業につながる精密印刷への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "那須工場を設立",
+      "description": "栃木県大田原市に、フラットパネルディスプレイ製品の製造工場として那須工場を設立しました。",
+      "significance": "電子部品分野の生産拠点の新設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "光村印刷株式会社に商号変更",
+      "description": "商号を光村印刷株式会社に変更しました。",
+      "significance": "現在の商号になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "東京証券取引所市場第１部に上場",
+      "description": "東京証券取引所市場第１部に株式を上場しました。",
+      "significance": "市場第１部への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "群馬高速オフセット株式会社を子会社化",
+      "description": "1996年に設立した群馬高速オフセット株式会社（現・光村高速オフセット株式会社）の株式を追加取得し、子会社化しました。",
+      "significance": "新聞印刷の主要な担い手の子会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "株式会社大洲を子会社化",
+      "description": "株式会社大洲の株式を取得し、子会社化しました。",
+      "significance": "印刷事業のグループ拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "新村印刷株式会社を子会社化",
+      "description": "新村印刷株式会社の株式を取得し、子会社化しました。",
+      "significance": "医薬・OTC向けの包装資材・パッケージ分野を持つ会社の子会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第１部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "那須工場で産業資材製造事業を開始",
+      "description": "生産を停止していた那須工場において、半導体加工テープなどの産業資材製造事業を開始しました。",
+      "significance": "産業資材分野の本格的な展開の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "新聞印刷の生産機能を光村高速オフセットへ移管",
+      "description": "当社で行っていた新聞印刷の生産機能を、連結子会社の光村高速オフセット株式会社へ移管しました。",
+      "significance": "新聞印刷のアセットライトな協業体制への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-paper-mills",
+      "relationship": "supplier",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、印刷事業における原材料等の仕入先であり、取引・協力関係の維持強化のため株式を保有すると印字されています。また、三菱製紙は2026年３月31日現在、当社の議決権の16.70％を保有する筆頭株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "dic",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、印刷事業における製品の販売先及び原材料等の仕入先であり、取引・協力関係の維持強化のため株式を保有すると印字されています。また、ＤＩＣは2026年３月31日現在、当社の議決権の14.91％を保有する大株主であり、関連当事者であるＤＩＣグラフィックス株式会社からも原材料の仕入れを行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamato-holdings",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、印刷事業における製品の販売先であり、取引・協力関係の維持強化のため株式を保有すると印字されています。なお、セグメント情報の主要な顧客としては、子会社のヤマト運輸株式会社が印刷セグメントの主要な顧客として印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "isetan-mitsukoshi-holdings",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、印刷事業における製品の販売先であり、取引・協力関係の維持強化のため株式を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "superbag",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、印刷事業における製品の販売先であり、取引・協力関係の維持強化のため株式を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-kiyo-bank",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、印刷事業における製品の販売先であり、取引・協力関係の維持強化のため株式を保有すると印字されています。保有目的に資金調達に関する記載はありません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "screen-holdings",
+      "relationship": "supplier",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、印刷事業における機械等の仕入先であり、取引・協力関係の維持強化のため株式を保有すると印字されています。また、ＳＣＲＥＥＮホールディングスは2026年３月31日現在、当社の議決権の3.26％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kpp-group-holdings",
+      "relationship": "supplier",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、印刷事業における原材料等の仕入先であり、取引・協力関係の維持強化のため株式を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kyodo-paper-holdings",
+      "relationship": "supplier",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、印刷事業における原材料等の仕入先であり、取引・協力関係の維持強化のため株式を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +538,55 @@
       "publisher": "光村印刷株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YL1G.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YL1G",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念「ともにつくり、ともに伝える。」のもと、「事業の再構築」と「収益力の向上」に取り組み、収益力の抜本的な強化と継続的な黒字基盤の定着に向けたV字回復を描いています。印刷事業では得意先への価格適正化交渉の継続と不採算取引の見直し、狭山工場への拠点集約による内製化比率の引き上げ、企画・制作段階から参画する高付加価値商材の拡販を進め、連結子会社の新村印刷株式会社が扱う医薬・OTC向け包装資材・パッケージ分野を成長領域として経営資源を投入するとしています。産業資材・電子部品製造事業では医療・ヘルスケアや産業用センサーへの応用領域の拡大、新聞印刷ではアセットライトな協業体制への移行、紙製軟包装の拡販や不動産賃貸等事業の見直しも進めるとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の９割超を印刷事業が占めるため、業績の回復は印刷事業の再構築の成否に大きく依存する構成です。そのため、医薬・OTC向けパッケージや産業資材など成長領域と位置づける分野の売上構成が今後高まるかどうかが注目されます。",
+        "basis": "【セグメント情報等】における印刷セグメントの外部顧客への売上高の構成と、【経営方針、経営環境及び対処すべき課題等】における事業再構築と成長領域の記載に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "原色版印刷を起源とする色再現や品質の技術を持ち、読売新聞の日曜版カラー印刷を1969年に始めて以来の新聞印刷の実績があります。また、参入障壁が高いとされる医薬・OTC向けの包装資材・パッケージ分野を連結子会社が担っています。",
+        "basis": "【沿革】における原色版印刷所の設立と読売新聞の印刷開始の記載と、【経営方針、経営環境及び対処すべき課題等】における医薬・OTC向けパッケージ分野の位置づけの記載に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "印刷業界では、デジタル化の加速による紙媒体の需要減少と原材料価格の高騰が続く厳しい環境にあります。その中で同社は、新聞印刷や自治体の刊行物を含む幅広い印刷物を扱う総合印刷会社として、印刷技術を活用した新たな分野への進出による市場機会の拡大を図っています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】及び【財政状態、経営成績及びキャッシュ・フローの状況の分析】における印刷業界の環境認識の記載に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

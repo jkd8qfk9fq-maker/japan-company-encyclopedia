@@ -4,15 +4,117 @@
   "name": "魚喜",
   "officialName": "株式会社魚喜",
   "nameEn": "UOKI CO.,LTD.",
-  "description": null,
+  "shortNameEn": "UOKI CO.,LTD.",
+  "description": "鮮魚、寿司、惣菜の小売販売を主力に、回転寿司店の経営とスーパーマーケットの賃貸管理を手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    },
+    {
+      "industryId": "food",
+      "primary": false
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "fresh-fish",
+      "name": "鮮魚事業",
+      "description": "当社が鮮魚、寿司及び惣菜を小売販売する事業です。2026年2月28日現在で38店舗を展開しており、2026年2月期の外部顧客への売上高は8,199百万円と、グループの売上の大半を占めています。",
+      "customers": [
+        "鮮魚、寿司、惣菜を購入する一般消費者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "restaurants",
+      "name": "飲食事業",
+      "description": "当社が回転寿司店等を経営する事業です。回転寿司の「うおや亭」「回転寿司UOKI」などを展開し、2026年2月28日現在で8店舗を有しています。2026年2月期の外部顧客への売上高は890百万円でした。",
+      "customers": [
+        "回転寿司店等を利用する一般消費者"
+      ],
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "連結子会社の株式会社ビッグパワーが、スーパーマーケットを管理運営し、テナントに賃貸等をする事業です。2026年2月28日現在で2店舗を有しており、2026年2月期の外部顧客への売上高は402百万円でした。",
+      "customers": [
+        "スーパーマーケットに出店するテナント事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社店舗で鮮魚、寿司、惣菜を販売し、回転寿司店を運営するほか、連結子会社がスーパーマーケットを管理運営してテナントに賃貸することで収益を得る事業モデルです。",
+    "products": [
+      "鮮魚",
+      "寿司",
+      "惣菜",
+      "回転寿司店等での飲食の提供",
+      "スーパーマーケットの管理運営とテナントへの賃貸"
+    ],
+    "customers": [
+      "鮮魚、寿司、惣菜を購入する一般消費者",
+      "回転寿司店等を利用する一般消費者",
+      "スーパーマーケットに出店するテナント事業者"
+    ],
+    "revenueSources": [
+      "鮮魚、寿司、惣菜の小売販売による収入",
+      "回転寿司店等の飲食店経営による収入",
+      "スーパーマーケットの管理運営とテナント賃貸による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "魚喜",
+        "description": "魚喜は、神奈川県藤沢市に本店を置き、東京証券取引所スタンダード市場に上場する水産小売会社です。2026年2月28日現在の連結従業員数は290人で、連結子会社は株式会社ビッグパワー1社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "鮮魚の小売、回転寿司店、商業施設の賃貸管理",
+        "description": "鮮魚事業では鮮魚、寿司、惣菜を38店舗で小売販売し、飲食事業では回転寿司店等8店舗を経営しています。不動産事業では、連結子会社の株式会社ビッグパワーがスーパーマーケット2店舗を管理運営し、テナントに賃貸しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "一般消費者とテナント事業者",
+        "description": "鮮魚事業と飲食事業の顧客は店舗を訪れる一般消費者で、不動産事業の顧客はスーパーマーケットに出店するテナント事業者です。売上高の10％以上を占める特定の顧客はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年2月期の売上高は9,492百万円",
+        "description": "2026年2月期の売上高は9,492百万円で、前期の9,934百万円から4.4％減少しました。外部顧客への売上高は、鮮魚事業が8,199百万円、飲食事業が890百万円、不動産事業が402百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年2月期の純利益は30百万円",
+        "description": "2026年2月期の親会社株主に帰属する当期純利益は30百万円で、前期の31百万円から1.8％減少しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,7 +129,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 834266000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 346,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +149,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 823282000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 325,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年3月31日）等を第38期の期首から適用しており、第38期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -67,7 +170,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 857693000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 322,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +190,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 871646000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 318,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 903049000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 290,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +218,108 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1971,
+      "title": "個人鮮魚店として創業",
+      "description": "横浜市南区において、個人鮮魚店として創業しました。",
+      "significance": "現在の魚喜の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "有限会社魚喜水産を設立",
+      "description": "有限会社魚喜水産を設立し、個人経営から法人化しました。",
+      "significance": "事業の法人化の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "株式会社魚喜へ商号変更",
+      "description": "有限会社魚喜水産から株式会社魚喜水産へ組織変更し、株式会社魚喜へ商号変更しました。",
+      "significance": "現在の商号になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "株式会社ビッグパワーに出資",
+      "description": "スーパーマーケットの管理運営事業を行う目的で、株式会社ビッグパワーに出資しました。",
+      "significance": "不動産事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "株式会社ビッグパワーの全株を取得",
+      "description": "株式会社ビッグパワーの株式の全株を取得しました。",
+      "significance": "ビッグパワーが完全子会社になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "株式会社魚喜を吸収合併",
+      "description": "株式の額面金額を変更する目的で、形式上の存続会社である株式会社ロッキー（旧商号）が、実質上の存続会社である株式会社魚喜を吸収合併し、現在の株式会社魚喜となりました。",
+      "significance": "現在の法人の形ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "取引所への上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "全国農業協同組合連合会と業務提携",
+      "description": "全国Ａコープ協同機構加盟店舗へのテナント出店等を目的として、全国農業協同組合連合会と業務提携契約を締結しました。",
+      "significance": "Ａコープ店舗への出店の道が開けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +328,62 @@
       "publisher": "株式会社魚喜",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y5OG.pdf",
       "publishedAt": "2026-05-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y5OG",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-13"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「UOGroup」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/UOGroup",
+      "accessedAt": "2026-11-17"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "第42期（2027年2月期）は、既存店の強化と収益拡大、プライベートブランド商品の開発強化と他の小売業会社等への卸しやWeb販売による新たな収益基盤の拡大、堅実な店舗展開、人財の確保と育成、衛生管理体制の徹底の5点を重点課題とし、新規デベロッパー開拓を積極的に進める方針です。",
+        "asOf": "2026-05-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2023年度から2025年度までの中期経営計画「魚喜ビジョン2025」の最終年度にあたる2026年2月期は、既存店の強化と、EC事業・卸事業の販路拡大に取り組んだことが述べられています。次期の重点課題にも、他の小売業会社等への卸しとWebによる販売チャネルの追加が掲げられています。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析と、経営方針、経営環境及び対処すべき課題等の記載に基づく",
+        "asOf": "2026-05-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "鮮魚専門店として「鮮度・技術」に関して妥協せず、店舗ごとに顧客に合わせた品揃え、商品規格、価格、質を追及して競合との差別化を図る方針を掲げています。食の安全のため専門部署の食品衛生部を設置し、HACCPに沿った衛生管理と店舗への巡回指導を行っています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等の記載に基づく",
+        "asOf": "2026-05-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年2月期の売上高9,492百万円のうち、鮮魚事業が8,199百万円と大半を占めています。同社が事業の主体を置く水産小売業界では、海外での水産物需要の増加や原料相場の上昇、配送費の増加などにより、厳しい経営環境が続いているとされています。",
+        "basis": "セグメント情報と、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の記載に基づく",
+        "asOf": "2026-05-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",

@@ -4,15 +4,125 @@
   "name": "共同紙販ホールディングス",
   "officialName": "株式会社共同紙販ホールディングス",
   "nameEn": "KYODO PAPER HOLDINGS",
-  "description": null,
+  "shortNameEn": "KYODO PAPER HOLDINGS",
+  "description": "洋紙や板紙を印刷会社・出版会社などに卸売りする紙の専門商社グループで、不動産賃貸や物流も手がけています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    },
+    {
+      "industryId": "transportation",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "kyodo-paper-holdings",
+      "name": "株式会社共同紙販ホールディングス",
+      "description": "東京都台東区北上野に本社を置く紙の卸売グループの持株会社で、連結子会社2社とともに洋紙の卸売を中心に事業を行っています。2026年3月31日現在の従業員数は137人（連結）で、東京証券取引所スタンダード市場に上場しています。その他の関係会社である日本製紙株式会社が議決権の30.5％を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "paper-wholesale",
+          "name": "洋紙卸売事業",
+          "description": "当社が洋紙および板紙を印刷会社や出版会社などへ販売する事業で、連結子会社のファイビストオフィス株式会社を通じて特殊紙などを仕入れています。2026年3月期の外部顧客への売上高は16,352百万円です。",
+          "customers": [
+            "印刷会社",
+            "出版会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "logistics",
+          "name": "物流事業",
+          "description": "連結子会社の関東流通株式会社が、当社を含む顧客の商品の保管・加工・配送を行う事業です。2026年3月期の外部顧客への売上高は79百万円です。",
+          "customers": [
+            "商品の保管・加工・配送を委託する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "real-estate-rental",
+          "name": "不動産賃貸事業",
+          "description": "当社が不動産の賃貸を行う事業で、連結子会社への倉庫などの賃貸も行っています。2026年3月期の外部顧客への売上高は14百万円です。",
+          "customers": [
+            "賃貸不動産の入居者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "製紙メーカーなどから仕入れた洋紙・板紙を全国の拠点から印刷会社や出版会社などへ販売し、その販売代金を得る事業モデルです。",
+    "products": [
+      "洋紙",
+      "板紙",
+      "特殊紙"
+    ],
+    "customers": [
+      "印刷会社",
+      "出版会社"
+    ],
+    "revenueSources": [
+      "洋紙・板紙の販売代金",
+      "不動産の賃料収入",
+      "保管・加工・配送の受託料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "共同紙販ホールディングス",
+        "description": "東京都台東区北上野に本社を置く紙の卸売グループの持株会社で、連結子会社2社とともに洋紙の卸売を中心に事業を行っています。2026年3月31日現在の従業員数は137人（連結）で、東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "洋紙・板紙の卸売と物流・不動産賃貸",
+        "description": "洋紙卸売事業では洋紙や板紙を印刷会社・出版会社などへ販売し、物流事業では連結子会社が商品の保管・加工・配送を担い、不動産賃貸事業では不動産の賃貸を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "印刷会社や出版会社などが顧客",
+        "description": "顧客は印刷会社や出版会社をはじめとする紙を使う事業者で、売上高の10％以上を占める特定の顧客はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は16,446百万円",
+        "description": "2026年3月期の売上高は16,446百万円で、前期比2.6％減でした。事業別では洋紙卸売事業が16,352百万円、物流事業が79百万円、不動産賃貸事業が14百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の親会社株主に帰属する当期純利益は37百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は37百万円で、前期比34.9％増でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +137,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3691464000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 160,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +157,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3833658000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 158,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +177,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3982445000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 157,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +197,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3899075000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 141,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +217,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3974064000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 137,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +225,248 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1947,
+      "title": "林紙業社を創業",
+      "description": "東京都豊島区西巣鴨にて林紙業社を創業し、各種和洋紙の販売を開始しました。",
+      "significance": "現在の共同紙販ホールディングスの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "株式会社に改組",
+      "description": "株式会社に改組し、商号を株式会社河内屋に変更しました。",
+      "significance": "法人としての事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "河内屋紙株式会社に商号変更",
+      "description": "商号を河内屋紙株式会社に変更しました。",
+      "significance": "紙の卸売を担う会社としての社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "日本証券業協会に店頭登録",
+      "description": "当社株式を社団法人日本証券業協会に店頭登録しました。",
+      "significance": "株式公開の第一歩となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "会社分割により関東流通株式会社を設立",
+      "description": "会社分割により物流部門を分離し、関東流通株式会社を埼玉県戸田市に設立しました。",
+      "significance": "現在の物流事業の担い手となる子会社が独立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、株式会社ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "株式会社共同紙販ホールディングスに社名変更",
+      "description": "会社分割により洋紙販売部門を河内屋紙株式会社として分離し、社名を株式会社共同紙販ホールディングスに変更しました。",
+      "significance": "持株会社体制となり、現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "株式会社はが紙販ホールディングスと合併",
+      "description": "株式会社はが紙販ホールディングスと合併しました。",
+      "significance": "同業の持株会社との統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "連結子会社2社を吸収合併",
+      "description": "河内屋紙株式会社及びはが紙販株式会社を吸収合併しました。",
+      "significance": "分離していた洋紙販売事業を本体に集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "監査等委員会設置会社へ移行",
+      "description": "監査等委員会設置会社へ移行しました。",
+      "significance": "ガバナンス体制を変更しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "わかば紙商事株式会社の全株式を取得",
+      "description": "わかば紙商事株式会社の全株式を取得し、子会社化しました。",
+      "significance": "同業の取り込みによる事業拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "わかば紙商事株式会社を吸収合併",
+      "description": "完全子会社であるわかば紙商事株式会社を吸収合併しました。",
+      "significance": "子会社化した同業を本体に統合しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所スタンダード市場へ移行しました。",
+      "significance": "現在の上場市場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nippon-paper-industries",
+      "relationship": "other-affiliated-company",
+      "description": "その他の関係会社で、2026年3月31日現在、当社の議決権の30.5％（うち間接所有11.7％）を保有しています。当社は同社の製品を販売代理店から購入しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "japan-pulp-and-paper",
+      "relationship": "supplier",
+      "description": "当社の洋紙卸売事業における仕入先であり、2026年3月31日現在、当社の発行済株式の10.58％を保有する主要株主でもあります。当社は取引関係の維持・強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hokuetsu",
+      "relationship": "supplier",
+      "description": "当社の洋紙卸売事業における取扱商品のメーカーで、当社は仕入先を通じて同社製品を仕入れています。当社は取引関係の維持・強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "chuetsu-pulp-and-paper",
+      "relationship": "supplier",
+      "description": "当社の洋紙卸売事業における取扱商品のメーカーで、当社は仕入先を通じて同社製品を仕入れています。当社は取引関係の維持・強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kpp-group-holdings",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の発行済株式の6.53％を保有する主要株主です。当社の洋紙卸売事業における仕入先でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "kyodo-printing",
+      "relationship": "customer",
+      "description": "当社の洋紙卸売事業における顧客の1社です。当社は取引関係の維持・強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nozaki-insatsu-shigyo",
+      "relationship": "customer",
+      "description": "当社の洋紙卸売事業における顧客の1社です。当社は取引関係の維持・強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsumura-printing",
+      "relationship": "customer",
+      "description": "当社の洋紙卸売事業における顧客の1社です。当社は取引関係の維持・強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "imura-and-co",
+      "relationship": "customer",
+      "description": "当社の洋紙卸売事業における顧客の1社です。当社は取引関係の維持・強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sun-messe",
+      "relationship": "customer",
+      "description": "当社の洋紙卸売事業における顧客の1社です。当社は取引関係の維持・強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toppan-holdings",
+      "relationship": "customer",
+      "description": "当社の洋紙卸売事業における顧客の1社です。当社は取引関係の維持・強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nakabayashi",
+      "relationship": "customer",
+      "description": "当社の洋紙卸売事業における顧客の1社です。当社は取引関係の維持・強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +474,58 @@
       "publisher": "株式会社共同紙販ホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YM2W.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YM2W",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年6月26日開催の取締役会で、東京労働局から受給した雇用調整助成金を自主返還することを決定しています。東京労働局からの調査依頼を受けて社内調査を行ったところ、誤認により不適正な申請内容が一部確認されたための措置で、自主返還金額が確定した場合、翌連結会計年度の財政状態及び経営成績に重要な影響を及ぼす可能性があるとされています（重要な後発事象に記載）。本登録は2026年3月31日現在の構造で登録しています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営の基本理念として、教育と文化に「紙」媒体を通じて貢献することを掲げています。全国に網羅した拠点から原紙をタイムリーに配送し、生活必需品である紙を常に安定供給するとともに、取扱商品の多角化に取り組み、安定供給と適正価格販売に努めるとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高のほぼ全てを洋紙卸売事業が占める構成で、その他の関係会社である日本製紙との関係を持つ仕入体制と、物流子会社による保管・加工・配送までをグループ内で担う体制を組み合わせています。",
+        "basis": "事業の内容、関係会社の状況、セグメント情報の記載に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "その他の関係会社である日本製紙の製品を販売代理店から仕入れる調達関係と、連結子会社の関東流通による保管・加工・配送までをグループ内で担える体制が特徴です。",
+        "basis": "関係会社の状況と事業の内容の記載に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "国内の紙流通業界では、デジタル化の推進や企業・官公庁のコスト削減の影響で紙需要全体が減少する厳しい環境が続いています。その中で当社グループは、安定供給と適正価格を維持した販売に努める紙の専門商社として事業を行っています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等と、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の記載に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
