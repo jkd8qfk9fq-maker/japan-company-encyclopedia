@@ -4,7 +4,7 @@ import { CompanyView } from "@/components/company/company-view";
 import { RecordView } from "@/components/company/record-view";
 import { companyRepository } from "@/lib/repositories";
 import { toPlainText } from "@/lib/rich-text";
-import { SITE_NAME, siteUrl } from "@/lib/site";
+import { OG_IMAGES, SITE_NAME, siteUrl } from "@/lib/site";
 
 /*
  * Every published company is prerendered, and any other id is a real 404 —
@@ -37,6 +37,7 @@ export async function generateMetadata({ params }: PageProps<"/companies/[compan
     description,
     alternates: { canonical: path },
     openGraph: {
+      images: OG_IMAGES,
       title: `${company.name}とは？｜${SITE_NAME}`,
       description,
       url: path,

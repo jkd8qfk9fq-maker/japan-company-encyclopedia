@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useLocalStore } from "@/hooks/use-local-store";
-import type { CompanySummary } from "@/lib/company-summary";
 import { favoritesStore, recentlyViewedStore } from "@/lib/storage/stores";
 
 /**
@@ -10,11 +9,14 @@ import { favoritesStore, recentlyViewedStore } from "@/lib/storage/stores";
  * nothing until there is something to show — an empty "最近見た企業" block on
  * a first visit is noise.
  *
- * Receives summaries for every company because the ids live in localStorage
- * and the server cannot know which ones to send. Ids that no longer resolve
- * (a removed entry, a tampered value) are silently skipped.
+ * Receives every company's id and name because the ids live in localStorage
+ * and the server cannot know which ones to send — only those two fields: the
+ * full summaries made the home page about 1 MB heavier (JCE-054). Ids that no
+ * longer resolve (a removed entry, a tampered value) are silently skipped.
  */
-export function ReaderTrail({ companies }: { companies: CompanySummary[] }) {
+type TrailCompany = { id: string; name: string };
+
+export function ReaderTrail({ companies }: { companies: TrailCompany[] }) {
   const recent = useLocalStore(recentlyViewedStore);
   const favorites = useLocalStore(favoritesStore);
   const byId = new Map(companies.map((c) => [c.id, c]));
@@ -23,7 +25,7 @@ export function ReaderTrail({ companies }: { companies: CompanySummary[] }) {
     { title: "フォロー中の企業", ids: favorites },
     { title: "最近見た企業", ids: recent },
   ]
-    .map((g) => ({ ...g, items: g.ids.map((id) => byId.get(id)).filter((c): c is CompanySummary => !!c) }))
+    .map((g) => ({ ...g, items: g.ids.map((id) => byId.get(id)).filter((c): c is TrailCompany => !!c) }))
     .filter((g) => g.items.length > 0);
 
   if (groups.length === 0) return null;

@@ -196,7 +196,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <ReaderTrail companies={summaries} />
+      <ReaderTrail companies={summaries.map(({ id, name }) => ({ id, name }))} />
 
       {/* WHERE: head offices on the map. Every prefecture is a link; the list beside it is the same data in words. */}
       <section aria-labelledby="home-map" className="border-b border-border">

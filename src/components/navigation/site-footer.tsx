@@ -42,7 +42,9 @@ export async function SiteFooter() {
           <p className="eyebrow">Support</p>
           <ul className="mt-4 text-sm">
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/about">このサービスについて</Link></li>
-            <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/report">情報の誤りを報告</Link></li>
+            <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/help">使い方・よくある質問</Link></li>
+            <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/contact">お問い合わせ・誤りの報告</Link></li>
+            <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/terms-of-use">利用規約</Link></li>
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/privacy">プライバシーポリシー</Link></li>
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/settings">設定</Link></li>
           </ul>

@@ -72,7 +72,7 @@ export function ConnectionExplorer() {
     const hubs = [...adjacency.entries()].sort((a, b) => b[1].length - a[1].length).slice(0, 9).map(([id]) => byId.get(id)!).filter(Boolean);
     const matches = query.trim() ? data.nodes.filter((n) => n.name.includes(query.trim())).slice(0, 12) : [];
     return (
-      <div className="grid gap-8">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-8">
         <label className="flex items-center gap-2 rounded-md border border-border bg-card px-3">
           <Search className="size-4 text-muted-foreground" aria-hidden />
           <span className="sr-only">会社名で探す</span>
@@ -97,7 +97,7 @@ export function ConnectionExplorer() {
         )}
         <div>
           <p className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">つながりの多い会社から始める</p>
-          <ul className="mt-3 grid gap-2 sm:grid-cols-3">
+          <ul className="mt-3 grid grid-cols-[minmax(0,1fr)] gap-2 sm:grid-cols-3">
             {hubs.map((n) => (
               <li key={n.id}>
                 <button type="button" onClick={() => go(n.id)} className="flex w-full items-center justify-between gap-2 rounded-md border border-border bg-card px-3 py-2.5 text-left hover:border-foreground">
@@ -120,7 +120,7 @@ export function ConnectionExplorer() {
   const flows = center.industry ? data.industryFlows.filter((f) => f.from === center.industry || f.to === center.industry).slice(0, 6) : [];
 
   return (
-    <div className="grid gap-8">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-8">
       <nav aria-label="たどった道" className="flex flex-wrap items-center gap-1 text-xs text-muted-foreground">
         <button type="button" onClick={() => setTrail([])} className="rounded-full px-2 py-1 hover:text-foreground">はじめから</button>
         {trail.map((id, i) => (
@@ -168,7 +168,7 @@ export function ConnectionExplorer() {
         return (
           <section key={group} aria-label={GROUP_LABEL[group]}>
             <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">{GROUP_LABEL[group]}</h3>
-            <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+            <ul className="mt-3 grid grid-cols-[minmax(0,1fr)] gap-2 sm:grid-cols-2">
               {items.map((n) => {
                 const node = byId.get(n.id)!;
                 const visited = trail.includes(n.id);

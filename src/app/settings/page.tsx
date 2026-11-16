@@ -37,7 +37,7 @@ export default function SettingsPage() {
         <Section eyebrow="Support" title="サポート">
           <ul className="divide-y divide-border border-y border-border">
             {[
-              { href: "/report", label: "情報の誤りを報告", note: "掲載内容の誤りや古い情報をお知らせください" },
+              { href: "/contact", label: "お問い合わせ・誤りの報告", note: "掲載内容の誤りや古い情報をお知らせください" },
               { href: "/about", label: "このサービスについて", note: "情報の出典と作り方" },
             ].map((item) => (
               <li key={item.href}>

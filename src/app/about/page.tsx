@@ -94,7 +94,7 @@ export default function AboutPage() {
       </section>
 
       <p className="mt-16 text-muted-foreground">
-        誤りを見つけた場合は、<Link href="/report" className="link-ink">情報の誤りを報告</Link>からお知らせください。
+        誤りを見つけた場合は、<Link href="/contact" className="link-ink">お問い合わせ・誤りの報告</Link>からお知らせください。
         個人情報の扱いは<Link href="/privacy" className="link-ink">プライバシーポリシー</Link>をご覧ください。
       </p>
     </div>

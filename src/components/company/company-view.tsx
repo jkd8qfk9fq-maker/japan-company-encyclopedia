@@ -245,7 +245,9 @@ export async function CompanyView({ company }: { company: Company }) {
 
       </div>
 
-      <AdSlot placement="company-bottom" />
+      {/* No ad on a figures-only entry (JCE-054): Google's publisher policies forbid ads on screens with little
+          publisher content, and such a page is figures without an explanation yet. */}
+      {company.status.state !== "figures-only" && <AdSlot placement="company-bottom" />}
 
       <footer className="mx-auto max-w-6xl px-5 md:px-8">
         <div className="border-t border-border pt-8 text-xs leading-6 text-muted-foreground">

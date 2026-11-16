@@ -133,7 +133,7 @@ export function ValueChain({ industry, companies }: { industry: Industry; compan
   const stageCols = { 1: "lg:grid-cols-1", 2: "lg:grid-cols-2", 3: "lg:grid-cols-3", 4: "lg:grid-cols-4" }[Math.min(stages.length, 4)] ?? "lg:grid-cols-4";
 
   return (
-    <div className={cn("grid gap-6", inputs.length > 0 && "lg:grid-cols-[minmax(0,1fr)_minmax(0,3.2fr)]")}>
+    <div className={cn("grid grid-cols-[minmax(0,1fr)] gap-6", inputs.length > 0 && "lg:grid-cols-[minmax(0,1fr)_minmax(0,3.2fr)]")}>
       {inputs.length > 0 && (
         <section aria-label="工程を支える産業" className="order-2 lg:order-1">
           <Zone label="支える産業" sub="工程で使われる装置・材料" tone="light" />
