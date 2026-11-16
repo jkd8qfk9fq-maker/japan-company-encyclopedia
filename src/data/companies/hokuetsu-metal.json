@@ -4,15 +4,105 @@
   "name": "北越メタル",
   "officialName": "北越メタル株式会社",
   "nameEn": "HOKUETSU METAL Co., Ltd.",
-  "description": null,
+  "shortNameEn": "HOKUETSU METAL Co., Ltd.",
+  "description": "新潟県長岡市に本社を置く電気炉メーカーで、鉄スクラップを主原料として棒鋼・線材・形鋼と土木・建築向け加工製品を製造・販売しています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "steel",
+      "name": "鉄鋼事業",
+      "description": "鉄スクラップを主原料に電気炉で製鋼し、棒鋼・線材・形鋼等の素材製品と、土木・建築向けの加工製品を製造・販売する単一セグメントの事業です。長岡工場・三条工場・雲出工場・見附工場・喜多方工場を生産拠点とし、連結子会社の株式会社コーテックスが加工・販売、株式会社メタルトランスポートが運搬を担います。2026年3月期の売上高は23,598百万円で、主要な顧客は伊藤忠丸紅住商テクノスチール株式会社と阪和興業株式会社です。海外への売上高は売上高の10％未満です。",
+      "customers": [
+        "伊藤忠丸紅住商テクノスチール株式会社、阪和興業株式会社等の鉄鋼商社",
+        "建設会社やプレキャスト工場等の需要家"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "steel-materials",
+          "name": "素材製品",
+          "description": "電気炉で鉄スクラップを溶解して製造する棒鋼、線材、形鋼等の鉄鋼素材製品です。製品区分ごとの売上高は開示されていません。",
+          "customers": [
+            "伊藤忠丸紅住商テクノスチール株式会社、阪和興業株式会社等の鉄鋼商社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "processed-products",
+          "name": "土木・建築向け加工製品",
+          "description": "UHYフープ、ファブデッキ、メッシュ、ロックボルト、ターンバックル、THピース、UNボルト、異形ボルト、UND自穿孔ボルト、スプリングチェーン等の加工製品です。建設現場の省人化に対応するプレキャスト工場向け製品の拡販が進められています。製品区分ごとの売上高は開示されていません。",
+          "customers": [
+            "建設会社やプレキャスト工場等の需要家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "長岡工場や三条工場等で鉄スクラップを電気炉で溶かして棒鋼・線材・形鋼を製造し、土木・建築向け加工製品への加工も自社で手掛けて、鉄鋼商社等を通じて販売しています。",
+    "products": [
+      "棒鋼、線材、形鋼等の鉄鋼素材製品",
+      "UHYフープ、ファブデッキ、メッシュ、ロックボルト、ターンバックル、THピース、UNボルト、異形ボルト、UND自穿孔ボルト、スプリングチェーン等の土木・建築向け加工製品"
+    ],
+    "customers": [
+      "伊藤忠丸紅住商テクノスチール株式会社、阪和興業株式会社等の鉄鋼商社",
+      "建設会社やプレキャスト工場等の需要家"
+    ],
+    "revenueSources": [
+      "鉄鋼製品の販売対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "北越メタルグループ",
+        "description": "当社と連結子会社3社、非連結子会社1社で構成され、本社は新潟県長岡市にあります。2026年3月31日現在の連結従業員数は483人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "電気炉による製鋼と加工",
+        "description": "長岡工場・三条工場等で鉄スクラップを電気炉で溶かして棒鋼・線材・形鋼を製造し、UHYフープやファブデッキ、ロックボルト等の土木・建築向け加工製品も自社工場で手掛けています。"
+      },
+      {
+        "kind": "customer",
+        "title": "鉄鋼商社等を通じた販売",
+        "description": "伊藤忠丸紅住商テクノスチール株式会社や阪和興業株式会社等の鉄鋼商社を通じて、建設分野の需要家に販売しています。海外への売上高は売上高の10％未満です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "鉄鋼製品の販売による売上高",
+        "description": "2026年3月期の売上高は23,598百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純損失",
+        "description": "2026年3月期は親会社株主に帰属する当期純損失339百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +117,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15365911000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 478,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +137,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16417476000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 487,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +157,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16969177000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 493,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +177,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17793250000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 492,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +197,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17913410000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 483,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +205,224 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1942,
+      "title": "北越電化工業として設立",
+      "description": "1905年に創立した北越水力電気株式会社の化学工業部門を継承し、北越電化工業株式会社を設立しました。",
+      "significance": "グループの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "新潟証券取引所に上場",
+      "description": "新潟証券取引所に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "東都製鋼グループの系列下へ",
+      "description": "東都製鋼株式会社（現・トピー工業株式会社）グループの系列下に入りました。",
+      "significance": "現在のその他の関係会社であるトピー工業との資本関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "鋼塊の製造を開始",
+      "description": "製鋼用8t電気炉1基を新設し、鋼塊の製造を開始しました。",
+      "significance": "製鋼事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "3社合併により北越メタルに改称",
+      "description": "北越電化工業株式会社、東邦製鋼株式会社、株式会社新潟製鋼所の3社が合併し、社名を北越メタル株式会社に改称しました。",
+      "significance": "現在の社名と体制の成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "小形棒鋼の製造を開始",
+      "description": "長岡工場に圧延工場を新設し、小形棒鋼の製造を開始しました。",
+      "significance": "圧延事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "形鋼の製造を開始",
+      "description": "三条工場に形鋼圧延設備を新設し、形鋼の製造を開始しました。",
+      "significance": "製品の幅が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "長岡工場に50t電気炉と連続鋳造設備を新設",
+      "description": "長岡工場に製鋼用50t電気炉及び連続鋳造設備を新設し、旧来の電気炉を廃止しました。",
+      "significance": "製鋼体制の近代化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所第二部に上場",
+      "description": "東京証券取引所第二部に上場しました。あわせて株式会社アールディメタルを吸収合併しました。",
+      "significance": "東京証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "北越興業と北越タンバックルを吸収合併",
+      "description": "子会社の北越興業株式会社及び株式会社北越タンバックルを吸収合併しました。",
+      "significance": "グループの再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "コーテックスとコーテックス工業を子会社化",
+      "description": "株式取得により、株式会社コーテックス及び株式会社コーテックス工業を連結子会社化しました。",
+      "significance": "加工・販売体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "共和コンクリート工業と合弁会社イノヴァスを設立",
+      "description": "共和コンクリート工業株式会社との業務提携、及び共同出資により合弁会社株式会社イノヴァスを設立しました。",
+      "significance": "プレキャスト分野での協業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分見直しにより、市場第二部からスタンダード市場に移行しました。東京事務所（現・東京加工品営業所）を開設しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "topy-industries",
+      "relationship": "other-affiliated-company",
+      "description": "関係会社の状況で「その他の関係会社」に区分され、2026年3月31日現在で当社の議決権の35.1％を保有し、当社製品を販売していることが印字されています。1957年には当社が同社の前身である東都製鋼株式会社のグループの系列下に入った経緯があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "hanwa",
+      "relationship": "customer",
+      "description": "セグメント情報の主要な顧客ごとの情報に、2026年3月期の主要な顧客として印字されています。販売実績の主な相手先としても継続して印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "fukuda",
+      "relationship": "customer",
+      "description": "株式の保有状況の特定投資株式に、商社を介して当社の鉄鋼製品が主に地域の建設工事に使用されており、取引協力関係の維持、強化のため2,244株を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tomoe",
+      "relationship": "customer",
+      "description": "株式の保有状況の特定投資株式に、他社を介して当社の鉄鋼製品を販売しており、営業上の取引関係の維持、強化のために1,100株を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第110期(2025/04/01－2026/03/31)",
+      "title": "有価証券報告書－第110期（2025年4月1日－2026年3月31日）",
       "publisher": "北越メタル株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YG3Z.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YG3Z",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年6月に策定した中期経営計画2027（2025年度から2027年度までの3年間）では、素材事業の強化としてビジネスパートナーとの連携強化と新規顧客の開拓、操業改善によるコスト競争力の向上を、加工品事業の拡大としてプレキャスト工場向け製品の拡販とインフラメンテナンス・国土強靭化需要の取り込み、東京加工品営業所の人員拡充を、さらに固定費のコントロールと情報化推進を掲げ、鉄鋼素材から土木・建築向け加工製品までの一貫体制の中で高付加価値製品の開発・拡充により他社との差別化を図るとしています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "鉄スクラップを電気炉で溶かす製鋼から、圧延による素材製品の製造、土木・建築向け加工製品への加工までを自社工場で一貫して手掛ける体制を持ちます。長岡・三条・雲出・見附・喜多方の各工場に加え、連結子会社が加工・販売と運搬を担い、素材と加工品の両方を供給できます。",
+        "basis": "事業の内容における製品と関係会社の役割の記載、主要な設備の状況における工場ごとの設備の内容の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "鉄鋼事業の単一セグメントで、2026年3月期の売上高は23,598百万円でした。建設向け鋼材需要の低迷により販売数量が大きく減少したと会社は分析しています。主要な顧客として伊藤忠丸紅住商テクノスチール株式会社と阪和興業株式会社が印字され、海外への売上高は売上高の10％未満です。",
+        "basis": "セグメント情報の主要な顧客ごとの情報と地域ごとの情報の記載、経営者による分析における売上高の分析の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

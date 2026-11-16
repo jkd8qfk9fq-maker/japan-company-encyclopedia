@@ -4,15 +4,126 @@
   "name": "フーディソン",
   "officialName": "株式会社フーディソン",
   "nameEn": "Foodison, Inc.",
-  "description": null,
+  "shortNameEn": "Foodison, Inc.",
+  "description": "飲食店向けに生鮮食品を販売するEコマース「魚ポチ」を中心に、生鮮流通プラットフォーム事業を展開する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    },
+    {
+      "industryId": "retail",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "fresh-food-platform",
+      "name": "生鮮流通プラットフォーム事業",
+      "description": "生鮮食品の流通を扱う単一セグメントの事業で、BtoBコマースサービス、BtoCコマースサービス、HRサービスの３サービスで構成されます。2026年３月期の外部顧客への売上高は、BtoBコマースサービス6,348百万円、BtoCコマースサービス1,135百万円、HRサービス336百万円で、構成比はそれぞれ81.2％、14.5％、4.3％です。連結子会社の株式会社フーディソン大田は東京都中央卸売市場大田市場の仲卸業者として商品の販売と仕入を担い、当社も豊洲市場の買参権を持っています。",
+      "customers": [
+        "飲食店などの食品事業者",
+        "一般消費者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "btob-commerce",
+          "name": "BtoBコマースサービス",
+          "description": "生産者・卸業者・メーカー等から仕入れた食品を自社ウェブサイト「魚ポチ」のウェブカタログに掲載し、主に飲食店等のユーザーに直接販売するサービスです。掲載商品は8,000種類以上で、注文した商品は地域に応じて翌日から３日以内に店頭に届きます。2026年３月期の外部顧客への売上高は6,348百万円で、全国46都道府県（沖縄県、一部離島除く）で展開しています。",
+          "customers": [
+            "飲食店などの食品事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "btoc-commerce",
+          "name": "BtoCコマースサービス",
+          "description": "一般のスーパーマーケットではあまり販売していない魚種や産地仕入れにこだわった水産品等を中心に販売する鮮魚セレクトショップ「sakana bacca」を展開するサービスです。2026年３月末現在、首都圏で９店舗を運営しています。2026年３月期の外部顧客への売上高は1,135百万円です。",
+          "customers": [
+            "一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "hr-service",
+          "name": "HRサービス",
+          "description": "食品事業者向けに人材を紹介する「フード人材バンク」を運営するサービスです。主に飲食店やスーパーマーケットに正社員候補者を紹介しています。2026年３月期の外部顧客への売上高は336百万円です。",
+          "customers": [
+            "飲食店やスーパーマーケットなどの食品事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "生産者や卸業者などから仕入れた生鮮食品を、自社サイト「魚ポチ」で飲食店に販売し、鮮魚店と人材紹介も手がける事業モデルです。",
+    "products": [
+      "魚ポチ（飲食店向け食品Eコマース）",
+      "sakana bacca（鮮魚セレクトショップ）",
+      "フード人材バンク（食品事業者向け人材紹介）"
+    ],
+    "customers": [
+      "飲食店などの食品事業者",
+      "一般消費者",
+      "食品を取り扱う人材を求める事業者"
+    ],
+    "revenueSources": [
+      "魚ポチでの食品の販売代金",
+      "sakana baccaの店舗での販売代金",
+      "人材紹介の手数料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "フーディソン",
+        "description": "東京都中央区に本社を置き、連結子会社１社（株式会社フーディソン大田）とグループを構成します。2026年３月31日現在の連結従業員数は103人です。2013年に設立されました。"
+      },
+      {
+        "kind": "offering",
+        "title": "生鮮流通プラットフォーム",
+        "description": "飲食店向け食品Eコマース「魚ポチ」、鮮魚セレクトショップ「sakana bacca」、食品事業者向け人材紹介「フード人材バンク」の３サービスを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "飲食店・一般消費者・食品事業者",
+        "description": "魚ポチは主に飲食店が利用し、全国46都道府県に展開しています。sakana baccaは2026年３月末現在、首都圏で９店舗を運営し、フード人材バンクは飲食店やスーパーマーケットに人材を紹介します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年３月期の売上高は7,820百万円で、前期比13.9％増でした。サービス別ではBtoBコマースサービス6,348百万円、BtoCコマースサービス1,135百万円、HRサービス336百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は146百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,12 +138,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 389337000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 106,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第９期（2022年３月期）の期首から適用しており、第９期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっている。"
     },
     {
       "fiscalYear": "2023年3月期",
@@ -47,7 +159,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1943629000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 101,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2196961000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 102,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2292302000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 110,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2358786000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 103,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +227,99 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2013,
+      "title": "株式会社フーディソンを設立",
+      "description": "東京都港区芝公園において株式会社フーディソンが設立されました。",
+      "significance": "当社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "飲食店向け食品Eコマース「魚ポチ」を開始",
+      "description": "飲食店向けの食品Eコマースサービス「魚ポチ（うおぽち）」を開始しました。",
+      "significance": "現在の主力サービスであるBtoBコマースサービスの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "鮮魚セレクトショップ「sakana bacca」を開店",
+      "description": "個人向け鮮魚セレクトショップ「sakana bacca 中目黒」を東京都目黒区上目黒にオープンしました。",
+      "significance": "BtoCコマースサービスの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "株式会社フーディソン大田を設立",
+      "description": "東京都大田区東海に完全子会社の株式会社フーディソン大田を設立しました。",
+      "significance": "現在の唯一の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "フーディソン大田が大田市場の仲卸営業許可を取得",
+      "description": "株式会社フーディソン大田が東京都中央卸売市場大田市場水産物部の仲卸営業許可を取得しました。",
+      "significance": "中央卸売市場を活用した商品調達体制の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "食品事業者向け人材紹介サービスを開始",
+      "description": "食品事業者向け人材紹介サービス「さかな人材バンク（現フード人材バンク）」を開始しました。",
+      "significance": "HRサービスの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "豊洲市場の買参権を取得",
+      "description": "東京都中央卸売市場豊洲市場水産部の買参権を取得しました。",
+      "significance": "大田市場と合わせた中央卸売市場での調達体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場に上場",
+      "description": "東京証券取引所グロース市場に株式を上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "miroku-jyoho-service",
+      "relationship": "major-shareholder",
+      "description": "2026年３月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合1.53％を保有する大株主の事業会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +327,63 @@
       "publisher": "株式会社フーディソン",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJIB.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YJIB",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "主力のBtoBコマースサービスを軸として、ARPU・アクティブユーザー・顧客深耕の同時拡大を進めることで持続的な成長を目指すとしています。あわせて、段階的に３サービスのシナジーを強化し、統合プラットフォーム化していくことで、食産業における中核的なポジションを確立することを目指す方針です。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年３月期は、BtoBコマースサービスの売上高が前期比16.0％増の6,348百万円となり、全体の増収をけん引しました。BtoCコマースサービスも前期比13.0％増えた一方、HRサービスは前期比13.8％減りました。",
+        "basis": "MD&Aの経営成績の概要と【関連情報】の製品およびサービスごとの情報に依拠します。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "会社は競争優位として、食品分野のEコマース化率が低くとどまる未踏市場の捕捉、大田市場の仲卸営業許可と豊洲市場の買参権を持つことによる参入障壁、生鮮食品のEコマースに対応した独自のITシステム、既存ユーザーの売上構成比が高いストック型ビジネスモデルを挙げています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "BtoBコマースサービスの売上高に占める既存コホート（前会計年度以前に登録したユーザー）の売上高割合は2026年３月期で92％と印字されており、利用が継続する構造が数値でも示されています。調達は大田市場・豊洲市場の中央卸売市場と、独自に開拓した全国の産地ネットワークを併用しています。",
+        "basis": "【事業の内容】のBtoBコマースサービスの記述に依拠します。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "サービス別の売上高構成はBtoBコマースサービス81.2％、BtoCコマースサービス14.5％、HRサービス4.3％で、BtoBコマースサービスが中心です。2026年３月期は売上高の10％以上を占める特定の顧客がなかったため、主要な顧客ごとの情報の記載が省略されています。市場における順位やシェアは印字されていません。",
+        "basis": "【事業の内容】のサービス別構成比と【関連情報】の製品およびサービスごとの情報・主要な顧客ごとの情報に依拠します。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

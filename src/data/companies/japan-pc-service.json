@@ -4,15 +4,110 @@
   "name": "日本PCサービス",
   "officialName": "日本PCサービス株式会社",
   "nameEn": "Japan PC Service Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Japan PC Service Co.,Ltd.",
+  "description": "パソコンやスマートフォンなどのトラブルに、訪問や電話で対応するスマートライフサポート事業を営む会社です。",
   "listings": [
     {
       "exchange": "nse",
-      "market": "ネクスト"
+      "market": "ネクスト市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "smart-life-support",
+      "name": "スマートライフサポート事業",
+      "description": "パソコンやスマートフォン・タブレット端末、ゲーム機、デジタル家電等のネットワーク対応機器について、設定設置やトラブルの対応・解決を行う単一セグメントの事業です。連結子会社には、修理店「スマホスピタル」を運営する株式会社スマホスピタルや、コールセンターを運営するミナソル株式会社などがあります。2025年8月期の売上高は6,828百万円でした。",
+      "children": [
+        {
+          "id": "field-support",
+          "name": "フィールドサポート事業",
+          "description": "パソコンやスマートフォン・タブレット、IoT機器等のトラブルを、全国対応・年中無休で訪問や持込みにより解決する事業です。直営店舗を主要都市に展開し、その他の地域は加盟店やフランチャイズ店を通じて対応します。トラブルの解決から設定設置、データの移行や復旧、廃棄まで対応する「駆けつけサポート」と、提携企業からの依頼に基づきその顧客に設定を代行する「代行設定サポート」があります。2025年8月期の販売高は5,426百万円でした。",
+          "customers": [
+            "パソコンやスマートフォン等の利用者",
+            "委託契約を結んだ提携企業とその顧客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "member-support-center",
+          "name": "会員サポートセンター事業",
+          "description": "当社会員や、委託契約を結んだ提携企業の会員に対し、コールセンターから電話やリモート（遠隔操作）で、パソコンをはじめとするネットワーク対応機器の設定・故障対応等を行う事業です。現地での対応が必要な顧客には訪問サポートを案内します。2025年8月期の販売高は1,401百万円でした。",
+          "customers": [
+            "当社会員",
+            "委託契約を結んだ提携企業の会員"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "customers": [
+        "パソコンやスマートフォン等の利用者",
+        "提携企業とその顧客・会員"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "パソコンやスマートフォン、IoT機器の設定やトラブル対応を、直営店や加盟店による訪問サポートと、コールセンターの電話・リモートサポートで提供し、対価を得る事業モデルです。",
+    "products": [
+      "駆けつけサポート（訪問による設定設置・トラブル対応）",
+      "代行設定サポート（提携企業の顧客向けの設定代行）",
+      "電話・リモートによる会員サポート",
+      "スマートフォン・タブレットの修理サービス"
+    ],
+    "customers": [
+      "パソコンやスマートフォン等の利用者",
+      "提携企業とその顧客・会員"
+    ],
+    "revenueSources": [
+      "サポートサービスの対価",
+      "パソコン等の商品販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日本PCサービス",
+        "description": "2001年に大阪府吹田市で設立され、名古屋証券取引所ネクスト市場に上場する会社です。2025年8月31日現在の連結従業員数は380人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "スマートライフサポート事業",
+        "description": "パソコンやスマートフォン、IoT機器などの設定設置やトラブルに対し、訪問や持込みで対応するフィールドサポート事業と、電話やリモートで対応する会員サポートセンター事業を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "個人の利用者と提携企業",
+        "description": "パソコンやスマートフォンなどの機器を使う個人の利用者と、委託契約を結んだ提携企業およびその顧客・会員が主な相手です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "サポートの対価",
+        "description": "2025年8月期の売上高は6,828百万円でした。事業区分別ではフィールドサポート事業が5,426百万円、会員サポートセンター事業が1,401百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年8月期の親会社株主に帰属する当期純利益は22百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年8月期",
@@ -27,7 +122,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 528801000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 391,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +142,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 195431000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 370,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +162,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 145299000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 346,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 265389000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 365,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +202,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 276217000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 380,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +210,191 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2001,
+      "title": "有限会社マネージメントクリエイティブの設立",
+      "description": "大阪府吹田市江坂町に有限会社マネージメントクリエイティブを設立しました。",
+      "significance": "現在の会社の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "株式会社への改組と事業内容の転換",
+      "description": "株式会社に改組するとともに、事業目的をパソコンの修理、販売等に変更しました。",
+      "significance": "パソコン関連事業に軸足を移した転機です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "パソコン総合サービスの開始",
+      "description": "パソコンに係る解決等（パソコン総合サービス、現在のフィールドサポート事業）を開始しました。",
+      "significance": "現在の主力事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "加盟店の募集開始",
+      "description": "パソコン総合サービスに対応する加盟店の募集を開始しました。",
+      "significance": "加盟店網による全国展開の仕組みが始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャパンベストレスキューシステムとの業務提携",
+      "description": "ジャパンベストレスキューシステム株式会社とパソコン総合サービスに係る業務提携を締結しました。",
+      "significance": "他社との提携によるサービス提供の広がりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東芝との業務提携",
+      "description": "株式会社東芝とパソコン総合サービスに係る業務提携を締結しました。",
+      "significance": "大手メーカーとの提携が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "本社の移転と東京本部の開設",
+      "description": "本社を大阪府吹田市広芝町に移転し、東京都新宿区に東京本部を開設しました。",
+      "significance": "現在の本社所在地への移転です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "商号を日本PCサービス株式会社に変更",
+      "description": "商号を日本PCサービス株式会社に変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "コールセンターの開設",
+      "description": "本社にコールセンターを開設し、現在の会員サポートセンター事業を開始しました。",
+      "significance": "電話・リモート対応の事業が加わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "『アフターサービス保証』の開始",
+      "description": "会員制の電話／リモートサポートや無償保証期間の延長等を行う『アフターサービス保証』を開始しました。",
+      "significance": "会員制サービスの展開が進みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "名古屋証券取引所セントレックスへの上場",
+      "description": "名古屋証券取引所セントレックス（現在のネクスト市場）に株式を上場しました。",
+      "significance": "上場会社になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "V SYSTEM PTE. LTD.の株式取得",
+      "description": "シンガポールのV SYSTEM PTE. LTD.の株式を取得しました。",
+      "significance": "海外子会社の取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "gig-works",
+      "relationship": "major-shareholder",
+      "description": "ギグワークス株式会社は、2025年8月31日現在で当社株式の3.10％を保有する事業会社です。当社も、取引関係の強化を目的として同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
-      "title": "有価証券報告書－第24期(2024/09/01－2025/08/31)",
-      "publisher": "日本PCサービス株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X6F1.pdf",
-      "publishedAt": "2025-11-25",
-      "accessedAt": "2026-09-29"
+      "title": "訂正有価証券報告書－第24期(2024/09/01－2025/08/31)",
+      "publisher": "日本ＰＣサービス株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XDM9.pdf",
+      "publishedAt": "2025-12-26",
+      "docId": "S100XDM9",
+      "asOf": "2025-08-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: [object Object]",
+      "businessStructure: [object Object]"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「デジタルホスピタル」戦略による個人向けサポートの事業成長、法人DXサポート領域のシェア拡大、新規事業「IoTリフォーム」の拡大に注力してきました。今後も、認知向上への成長投資、個人向けサポートの事業基盤強化、法人DXサポートの領域拡大と継続収益化を進めるとしています。",
+        "asOf": "2025-11-25",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "全国対応・年中無休で訪問サポートを提供し、主要都市の直営店舗とその他の地域の加盟店・フランチャイズ店を組み合わせて全国をカバーしています。コールセンターが即日訪問を基本に日程調整と作業手配を行い、現地対応が不要な相談は電話やリモートで受ける体制です。",
+        "basis": "【事業の内容】に、全国対応・年中無休の提供、主要都市への直営店舗の展開と加盟店・フランチャイズ店を通じた全国展開、コールセンターでの即日訪問を基本とした日程調整と作業手配が印字されている。",
+        "asOf": "2025-11-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "DX化の進展に伴いデジタルデバイドなど新たな課題が生まれ、情報通信ネットワークや関連機器の設定・修理・メンテナンスの必要性が高まっていると会社が見ている業界で事業を行っています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、DX社会ならではのデジタルデバイドなど新たな課題が発生しており、情報通信ネットワーク及びそれらの修理・メンテナンスの社会的必要性が高まっていることが印字されている。",
+        "asOf": "2025-11-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年8月期",
     "asOf": "2025-08-31",

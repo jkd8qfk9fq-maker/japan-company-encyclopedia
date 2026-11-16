@@ -4,15 +4,134 @@
   "name": "ジィ・シィ企画",
   "officialName": "株式会社ジィ・シィ企画",
   "nameEn": "Global Communication Planning Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Global Communication Planning Co., Ltd.",
+  "description": "カード会社加盟店向けにキャッシュレス決済のシステム開発と決済ASPサービスを提供し、導入から保守運用までを担う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "payment-integration",
+      "name": "ペイメントインテグレーション事業",
+      "description": "プロセシング業務を顧客自身が運用する場合に必要な決済処理システムを提供するフロービジネスです。決済パッケージソフトウェア「CARD CREW」シリーズのライセンス提供や決済システムの設計・開発・導入、決済端末アプリケーションの開発、決済端末やシステム機器の販売を行っています。2026年6月期の売上高は1,220百万円です。",
+      "customers": [
+        "カード会社加盟店（中堅から大手の流通事業者）",
+        "大手システムインテグレータを通して契約するカード会社加盟店"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "payment-service",
+      "name": "ペイメントサービス事業",
+      "description": "決済ASPサービスや保守運用サービスなどを継続的に提供するストックビジネスです。2026年6月期の売上高は1,031百万円です。",
+      "customers": [
+        "カード会社加盟店（中堅から大手の流通事業者）"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "payment-asp",
+          "name": "決済ASPサービス",
+          "description": "当社がプロセシングに必要なソフトウェア、通信専用回線、サーバー、保守・運用までを用意し、顧客が自社にシステムを設置せずに決済処理を利用できるクラウド型のサービスです。当社専用のデータセンターで運用しています。金額は独立して開示されていません。",
+          "customers": [
+            "カード会社加盟店（中堅から大手の流通事業者）"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "maintenance-operation",
+          "name": "保守運用サービス",
+          "description": "当社がオンプレミス型で提供したシステムの保守と運用を行うサービスです。24時間365日対応のヘルプデスクを自社で備え、緊急時には開発者も交えて決済システムを監視・サポートしています。金額は独立して開示されていません。",
+          "customers": [
+            "カード会社加盟店（中堅から大手の流通事業者）"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "terminal-subscription",
+          "name": "決済端末のサブスク型販売",
+          "description": "決済端末を売り切りではなく月額で利用できるようにするサブスクリプションサービスです。2023年2月にマルチ決済端末サブスクリプションサービス「サクラ」の提供を開始しました。金額は独立して開示されていません。",
+          "customers": [
+            "カード会社加盟店"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "カード会社加盟店向けに決済処理システムと決済端末を開発・販売し、クラウド型の決済ASPサービスと保守運用サービスで継続的な収益を得ています。",
+    "products": [
+      "決済パッケージソフトウェア「CARD CREW」シリーズ",
+      "決済端末と決済端末アプリケーション",
+      "決済処理システムの設計・開発・導入",
+      "決済ASPサービス（クラウド型）",
+      "保守運用サービス",
+      "マルチ決済端末サブスクリプションサービス「サクラ」"
+    ],
+    "customers": [
+      "中堅から大手の流通事業者を中心とするカード会社加盟店",
+      "大手システムインテグレータを通して契約するカード会社加盟店"
+    ],
+    "revenueSources": [
+      "決済システムの開発・導入と決済端末の販売などによるフロー収益",
+      "決済ASPサービスと保守運用サービスの利用料などによるストック収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ジィ・シィ企画",
+        "description": "1995年に千葉県佐倉市で創業し、創業時からキャッシュレス決済の仕組みを提供しています。2026年6月30日現在の従業員数は113人で、連結子会社はありません。"
+      },
+      {
+        "kind": "offering",
+        "title": "決済システムと決済ASPサービス",
+        "description": "決済パッケージソフトウェア「CARD CREW」シリーズや決済端末を提供するほか、クラウド型の決済ASPサービスと24時間365日対応の保守運用サービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "カード会社加盟店",
+        "description": "中堅から大手の流通事業者を中心とするカード会社加盟店が主な顧客です。大手システムインテグレータを通して契約するカード会社加盟店も顧客に含まれます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高2,252百万円",
+        "description": "2026年6月期の売上高は2,252百万円です。ペイメントインテグレーション事業が1,220百万円、ペイメントサービス事業が1,031百万円で、端末販売が好調だったことなどから前事業年度に比べて22.1％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益70百万円",
+        "description": "2026年6月期の当期純利益は70百万円です。前事業年度の当期純損失から黒字に転じました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,11 +146,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1138504000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 113,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +168,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 340279000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 113,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +190,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 415451000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 112,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +212,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 270015000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 117,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +234,128 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 354781000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 113,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1995,
+      "title": "有限会社ジィ・シィ企画を設立",
+      "description": "カード会社加盟店のPOSシステムと連動できるカード決済パッケージシステムを開発し販売する事業を目的に、千葉県佐倉市に有限会社ジィ・シィ企画を設立しました。創業者は金子哲司です。",
+      "significance": "現在の会社の創業であり、創業時からキャッシュレス決済の仕組みを提供してきた起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "第1世代カード決済システムパッケージ「CASS4.51」の販売を開始",
+      "description": "第1世代のカード決済システムパッケージ「CASS4.51」の販売を開始しました。",
+      "significance": "決済パッケージ製品の第1世代であり、製品事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "第2世代カード決済システムパッケージ「CARD CREW」の販売を開始",
+      "description": "第2世代のカード決済システムパッケージ「CARD CREW」の販売を開始しました。",
+      "significance": "現在の主力製品「CARD CREW」シリーズの起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "データセンターを開設し、決済ASPサービスの提供を開始",
+      "description": "決済システムのデータセンター（ジィ・シィ企画データセンター）を神奈川県横浜市に開設し、クレジット・デビットカード決済ASPサービスの提供を開始しました。",
+      "significance": "現在のストックビジネスであるペイメントサービス事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "第3世代カード決済システムパッケージ「CARD CREW PLUS」の販売を開始",
+      "description": "第3世代のカード決済システムパッケージ「CARD CREW PLUS」の販売を開始しました。以後も機能向上を続けています。",
+      "significance": "現在の主力パッケージソフトウェアへの世代交代です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "東京証券取引所マザーズに株式を上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、マザーズからグロース市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社トランザクション・メディア・ネットワークスと資本業務提携契約を締結",
+      "description": "株式会社トランザクション・メディア・ネットワークスと資本業務提携契約を締結しました。同社は従前より当社の開発パートナーでした。",
+      "significance": "現在の資本関係と事業連携の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社トランザクション・メディア・ネットワークスがその他の関係会社となる",
+      "description": "株式会社トランザクション・メディア・ネットワークスとの資本業務提携が深化し、同社が当社株式の20%以上を保有することとなった結果、同社は当社のその他の関係会社となりました。",
+      "significance": "現在のグループ関係の確定です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "transaction-media-networks",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】にその他の関係会社として印字されています。2024年2月に資本業務提携契約を締結し、2026年6月30日現在で当社の議決権の24.76％を保有しています。当社は同社から開発取引を受託しているほか、役員の兼任と資金の借入があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "pan-pacific-international-holdings",
+      "relationship": "customer",
+      "description": "主要な顧客として印字されており、2026年6月期の売上高の21.5％を占める最大の顧客です。ペイメントインテグレーション事業とペイメントサービス事業の双方に関連する顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +363,47 @@
       "publisher": "株式会社ジィ・シィ企画",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z2TG.pdf",
       "publishedAt": "2026-09-18",
-      "accessedAt": "2026-09-29"
+      "docId": "S100Z2TG",
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "多店舗展開を行う小売事業者を主なターゲット顧客とし、導入が容易で低コストなクラウド型の決済ASPサービスの拡充に努めるとしています。自社で決済システムを管理・運用している既存顧客については、リプレースの際に決済ASPサービスへ誘導し、ストックビジネスであるペイメントサービス事業の売上を伸長する戦略です。決済端末については売り切り型に加えてサブスク型販売を拡大し、その他の関係会社である株式会社トランザクション・メディア・ネットワークスとの資本業務提携では、両社のサービス・機能を組み合わせて顧客への提案力を強化するとしています。",
+        "asOf": "2026-09-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "創業以来キャッシュレス決済システムの開発を続けてきた技術力・開発力と、設計・開発からヘルプデスク・保守・運用までを自社内で担うワンストップ体制が強みです。決済パッケージは国内の決済ネットワークであるCAFISとCARDNETに製品登録されており、ISO/IEC 27001とPCI DSSの認証・準拠によるセキュリティ体制も備えています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の「当社の強み」に、技術力・開発力について業界内で一定の評価を得ていること、開発から保守までのワンストップサービス、CAFIS・CARDNETへのパッケージ製品登録、ISO/IEC 27001とPCI DSSの取得・準拠が印字されていること。",
+        "asOf": "2026-09-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "キャッシュレス決済の普及が進む市場で事業を行っています。2026年6月期の売上高の構成は、フロー型のペイメントインテグレーション事業が54.2％、ストック型のペイメントサービス事業が45.8％です。最大の顧客である株式会社パン・パシフィック・インターナショナルホールディングスが売上高の21.5％を占めています。",
+        "basis": "MD&Aに経済産業省の発表として2025年のキャッシュレス決済比率の上昇が印字され、【事業の内容】に第31期の収益構成（フロー収益54.2％、ストック収益45.8％）が、MD&Aの相手先別販売実績に株式会社パン・パシフィック・インターナショナルホールディングスが21.5％であることが印字されていること。",
+        "asOf": "2026-09-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",

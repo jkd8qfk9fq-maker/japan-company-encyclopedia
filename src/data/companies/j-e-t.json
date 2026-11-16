@@ -4,15 +4,133 @@
   "name": "ジェイ・イー・ティ",
   "officialName": "株式会社ジェイ・イー・ティ",
   "nameEn": "J.E.T. Co., LTD.",
-  "description": null,
+  "description": "半導体製造の前工程で使うバッチ式・枚葉式の洗浄装置を開発・製造・販売し、装置の改造や部品販売、保守サービスも行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "semiconductors",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "semiconductor",
+      "name": "半導体事業",
+      "description": "半導体製造の前工程で使用される半導体洗浄装置の開発、設計、製造、販売を行う唯一の報告セグメントです。2025年12月期の販売高は14,631百万円です。",
+      "customers": [
+        "韓国・中国・台湾などの半導体メーカー",
+        "日本・米国の半導体メーカー"
+      ],
+      "children": [
+        {
+          "id": "batch-cleaning",
+          "name": "バッチ式洗浄装置",
+          "description": "多数のウエハを同時に処理するバッチ式洗浄装置です。300mmウエハ対応のBW3700、BW3000、200mmウエハ対応のBW2000があり、2024年７月にはBW3000の後継機種であるBW3500の販売を開始しました。顧客の要求仕様に合わせて洗浄槽の構成や設置数を変更でき、装置の前面に搬入機器、後面に搬出機器を配置するF-Typeにも対応します。",
+          "customers": [
+            "韓国・中国・台湾などの半導体メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "single-wafer-cleaning",
+          "name": "枚葉式洗浄装置",
+          "description": "ウエハを１枚ずつ処理する枚葉式洗浄装置HTS-300です。ヒーターにてウエハ上の薬液を高温にする特殊な機能を搭載し、最高240℃での高温処理を可能としています。",
+          "customers": [
+            "韓国・中国・台湾などの半導体メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "field-service",
+          "name": "フィールドサービス",
+          "description": "半導体洗浄装置に関連する、装置の改造、部品の販売、顧客の工場における保守サービスです。当社のほか、台湾と上海の連結子会社及び親会社ZEUS Co., Ltd.も部品販売及び保守サービスを行っています。",
+          "customers": [
+            "装置を導入した半導体メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-agri",
+      "name": "その他の事業",
+      "description": "株式会社ＯＳＭＩＣがＦＣ展開していたオスミック農産物生産事業を採用した、農産物の生産・販売等を行う事業です。連結子会社の株式会社ジェイ・イー・ティ・アグリが担い、2025年12月期の販売高は30百万円です。報告セグメントには含まれない区分です。",
+      "customers": [
+        "農産物の国内顧客"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "顧客の要求仕様に合わせて洗浄槽の構成を変えられるバッチ式洗浄装置などを韓国・中国・台湾などの半導体メーカーへ販売し、装置代金や部品・保守の対価を得る事業モデルです。",
+    "products": [
+      "バッチ式洗浄装置（BW3700・BW3000・BW2000・BW3500）",
+      "枚葉式洗浄装置（HTS-300）",
+      "装置の改造・部品販売・保守サービス",
+      "農産物（オスミック農産物生産事業）"
+    ],
+    "customers": [
+      "韓国・中国・台湾などの半導体メーカー",
+      "日本・米国の半導体メーカー",
+      "農産物の国内顧客"
+    ],
+    "revenueSources": [
+      "洗浄装置の販売代金",
+      "部品販売・保守サービスの対価",
+      "農産物の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ジェイ・イー・ティ",
+        "description": "2009年に韓国のZEUS Co., Ltd.が全額出資して岡山県浅口郡里庄町に設立した会社です。2025年12月31日現在の従業員数は275人で、連結子会社5社と持分法適用会社1社でグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "半導体洗浄装置とフィールドサービス",
+        "description": "半導体製造の前工程で使うバッチ式洗浄装置と枚葉式洗浄装置を提供し、装置の改造、部品販売、顧客の工場における保守サービスも行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "韓国・中国・台湾などの半導体メーカー",
+        "description": "韓国、中国、台湾などの半導体メーカーが主な顧客で、2024年1月からは日本と米国でも営業活動を行っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "装置の販売代金",
+        "description": "2025年12月期の売上高は14,662百万円でした。販売実績では半導体事業が14,631百万円、その他が30百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失",
+        "description": "2025年12月期の親会社株主に帰属する当期純損失は2,336百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +145,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7308000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 278,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +165,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8274000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 293,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第14期の期首から適用しており、第14期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,12 +186,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11823000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 289,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "売上高及び親会社株主に帰属する当期純利益は、売上計上時期に関する特別調査委員会の調査を踏まえて行われた過年度決算の訂正により、前期の有価証券報告書に記載された数値から修正された後の数値です。"
     },
     {
       "fiscalYear": "2024年12月期",
@@ -87,12 +207,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12103000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 293,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "売上高及び親会社株主に帰属する当期純利益は、売上計上時期に関する特別調査委員会の調査を踏まえて行われた過年度決算の訂正により、前期の有価証券報告書に記載された数値から修正された後の数値です。"
     },
     {
       "fiscalYear": "2025年12月期",
@@ -107,7 +228,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9720000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 275,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +236,151 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2009,
+      "title": "ジェイ・イー・ティの設立",
+      "description": "韓国のZEUS Co., Ltd.が全額出資し、岡山県浅口郡里庄町において当社を設立しました。",
+      "significance": "当社の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "エス・イー・エスの半導体事業の譲受",
+      "description": "破産手続きに移行したエス・イー・エス株式会社の半導体事業部門である岡山グリーンテクノ工場（現本社工場）を事業譲渡により取得し、同社が保有していた台湾・中国・韓国の現地法人の全株式も取得して子会社化しました。",
+      "significance": "現在の洗浄装置事業と海外拠点の原型を引き継ぎました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "J.E.T. Koreaの設立",
+      "description": "韓国に連結子会社J.E.T. Korea Co., Ltd.を設立し、装置の製造を開始しました。",
+      "significance": "韓国国内での装置製造体制が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "アグリ事業への進出",
+      "description": "株式会社ＯＳＭＩＣがＦＣ展開するオスミック農産物生産事業に進出しました。",
+      "significance": "半導体事業以外の事業が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "TOKYO PRO Marketへの上場",
+      "description": "東京証券取引所TOKYO PRO Marketに株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "ジェイ・イー・ティ・アグリの設立",
+      "description": "連結子会社として株式会社ジェイ・イー・ティ・アグリを設立しました。",
+      "significance": "アグリ事業を独立した法人で担う体制になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "スタンダード市場への上場",
+      "description": "東京証券取引所スタンダード市場に株式を上場しました。",
+      "significance": "現在の市場区分になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "JET AMERICAの設立",
+      "description": "米国に連結子会社JET AMERICA INC.を設立し、北米の顧客向けに当社で製作した装置の販売を開始しました。",
+      "significance": "北米での販売体制が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "南通の装置メーカーへの出資",
+      "description": "新必思半導体科技（南通）有限公司へ持分比率24.0％の出資を行い、持分法適用関連会社としました。",
+      "significance": "中国国産装置の製造・販売に向けた布石です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2025",
-      "title": "有価証券報告書－第17期(2025/01/01－2025/12/31)",
+      "title": "訂正有価証券報告書－第17期(2025/01/01－2025/12/31)",
       "publisher": "株式会社ジェイ・イー・ティ",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y7JM.pdf",
-      "publishedAt": "2026-05-29",
-      "accessedAt": "2026-09-29"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJGG.pdf",
+      "publishedAt": "2026-06-24",
+      "docId": "S100YJGG",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2023年１月１日付で普通株式１株につき２株の割合で株式分割を行い、2024年４月１日付で普通株式１株につき３株の割合で株式分割を行ったことが、主要な経営指標等の推移の注記に記載されています。自社の株式分割の取扱いには人の確認が必要です。",
+      "businessModel: 重要な後発事象として、連結子会社J.E.T. Korea Co., Ltd.の事業の全てを2026年１月１日付で当社の韓国支社に譲渡したこと、及び2026年１月20日の取締役会において同社に対する債権放棄と清算手続きの開始を決議したことが記載されています。登録は2025年12月31日現在のグループ構造（J.E.T. Korea Co., Ltd.を連結子会社とする構造）で行っており、期間後のグループ構造の変更の反映には人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「Innovation 2027」を見直し、2026年は新製品の種まきと新組織の足固めを行う期間と位置づけています。主力市場の韓国及び中国に加え、台湾市場では新製品であるBW3500の拡販を進め、2024年から取り組みを開始した日本及び北米市場では事業展開を迅速に推進します。次世代の戦略商品として、新型枚葉式洗浄装置の開発に注力し、装置設計の見直し、装置仕様の最適化、装置製作の内製化等による原価低減にも取り組みます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "洗浄槽の構成や設置数を顧客の要求仕様に合わせて変更できるカスタマイズ性を持ち、装置の前面に搬入機器、後面に搬出機器を配置してウエハの流れを1方向にするF-Typeでは、処理時間の長い洗浄槽を複数並べて単位時間あたりのウエハ処理枚数を増やせることが強みです。",
+        "basis": "【事業の内容】及び【経営方針、経営環境及び対処すべき課題等】に、洗浄槽の構成・設置数を変更できるカスタマイズ可能な装置であること、F-Typeの搬入・搬出の配置が印字され、Samsung Electronicsにおいて特異な工程で当社洗浄装置が指名採用され、前身のエス・イー・エス株式会社の実績を含め400台を超える台数を納入している旨が印字されている。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "当社推計では、2024年度の全世界の半導体バッチ式洗浄装置市場において約8.8％の市場シェアを占めています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、当社推計として2024年度の全世界の半導体バッチ式洗浄装置市場における市場シェア約8.8％が印字されている。また【事業の内容】に、バッチ式洗浄装置が2024年度においても世界の洗浄装置市場全体の約16.5％の構成比を堅持している旨が印字されている。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

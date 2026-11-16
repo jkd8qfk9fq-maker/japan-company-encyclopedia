@@ -1,18 +1,165 @@
 {
   "id": "house-of-rose",
   "code": "7506",
-  "name": "ハウスオブローゼ",
+  "name": "ハウス オブ ローゼ",
   "officialName": "株式会社ハウス　オブ　ローゼ",
   "nameEn": "HOUSE OF ROSE Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "HOUSE OF ROSE Co.,Ltd.",
+  "description": "自社ブランドの化粧品や浴用剤を直営店と自社通販で販売し、リラクゼーションサロンや女性専用フィットネスも運営する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "direct-store-sales",
+      "name": "直営店商品販売事業",
+      "description": "直営店舗における化粧品販売を中心とする事業で、当社グループの主力事業です。2026年3月期の外部顧客への売上高は8,957百万円でした。当社グループは当社と子会社４社及びその他の関係会社１社で構成されており、2026年3月31日現在の従業員数は752人です。",
+      "customers": [
+        "直営店舗・自社ネット通販を利用する一般消費者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】",
+      "children": [
+        {
+          "id": "direct-stores",
+          "name": "直営店舗",
+          "description": "ハウス オブ ローゼ直営店において、「ハンドウォッシュ」を通じた「ふれる（触れる）接客」で自社ブランドのスキンケア化粧品等を販売しています。",
+          "customers": [
+            "一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "ec",
+          "name": "ＥＣ事業",
+          "description": "自社運営サイトによるネット通販と、Amazonモール等の外部モールでの商品販売を行っています。",
+          "customers": [
+            "一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "wholesale",
+      "name": "卸販売事業",
+      "description": "化粧品の卸売事業です。2026年3月期の外部顧客への売上高は1,376百万円でした。個人オーナー店舗向け卸、大手量販店向け卸、中国越境ＥＣを含む一般卸からなります。",
+      "customers": [
+        "個人オーナー店舗",
+        "大手量販店",
+        "一般卸の取引先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "id": "direct-store-services",
+      "name": "直営店サービス事業",
+      "description": "リラクゼーションサロン事業及び女性専用フィットネス「カーブス」事業のサービス事業です。2026年3月期の外部顧客への売上高は1,208百万円でした。",
+      "customers": [
+        "サロン・フィットネスの利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】",
+      "children": [
+        {
+          "id": "relaxation-salon",
+          "name": "リラクゼーションサロン事業",
+          "description": "英国式リフレクソロジーサロン等の運営を行っています。",
+          "customers": [
+            "サロン利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "curves",
+          "name": "カーブス事業",
+          "description": "女性専用フィットネスチェーン「カーブス」にフランチャイズ加盟し、店舗を運営しています。",
+          "customers": [
+            "フィットネス利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社ブランド商品を中心とする化粧品・浴用剤・雑貨品を直営店舗と自社ネット通販で販売し、小売店への卸販売やリラクゼーションサロン、カーブスの運営でも売上を得る事業モデルです。",
+    "products": [
+      "スキンケア化粧品（ミルキュアシリーズ、エクセラージュ等）",
+      "ボディケア商品（Oh!Baby ボディ スムーザー等）",
+      "浴用剤",
+      "雑貨品",
+      "「MAMA BUTTER」（ママバター）ブランドの化粧品"
+    ],
+    "customers": [
+      "直営店舗・自社ネット通販を利用する一般消費者",
+      "卸販売先の小売店・量販店",
+      "リラクゼーションサロンやカーブスの利用者"
+    ],
+    "revenueSources": [
+      "直営店舗及び自社ネット通販での商品販売による売上高",
+      "卸販売による売上高",
+      "リラクゼーションサロン及びカーブスのサービスによる売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ハウス オブ ローゼグループ",
+        "description": "当社と子会社4社及びその他の関係会社1社で構成され、2026年3月31日現在の従業員数は752人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "化粧品の販売とサービス事業",
+        "description": "自社ブランド商品を中心とする化粧品・浴用剤・雑貨品を直営店舗と自社ネット通販で販売し、卸販売、リラクゼーションサロンと女性専用フィットネス「カーブス」の運営も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "一般消費者と卸販売先",
+        "description": "直営店舗と自社ネット通販を通じて一般消費者に商品を販売し、個人オーナー店舗や大手量販店などの卸販売先にも商品を供給しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は11,541百万円で、このうち直営店商品販売事業は8,957百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は1百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +174,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5325262000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 883,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +196,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5741785000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 857,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +218,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5730377000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 800,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,14 +240,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5644640000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 751,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第45期における会計方針の変更に伴い、第44期（2025年3月期）の主要な経営指標等は遡及適用後の指標となっております。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -115,18 +263,148 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5476833000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 752,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1982,
+      "title": "株式会社ハウス オブ ローゼを設立",
+      "description": "化粧品のプライベートブランド（ＰＢ）商品の開発及び出店の拡大を目的として、東京都港区南青山に株式会社ハウス オブ ローゼが設立されました。",
+      "significance": "当社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "日本証券業協会に株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "英国式リフレクソロジーサロン１号店を開店",
+      "description": "東京都新宿区に英国式リフレクソロジーサロン１号店を開店し、サービス事業を開始しました。",
+      "significance": "現在の直営店サービス事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "株式会社ワコールと資本業務提携",
+      "description": "株式会社ワコールと資本業務提携を行いました。",
+      "significance": "ワコールグループとの資本関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "「カーブス」にフランチャイズ加盟し１号店を開店",
+      "description": "女性専用フィットネスチェーン「カーブス」にフランチャイズ加盟し、東京都世田谷区に１号店を開店しました。",
+      "significance": "フィットネス事業への参入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "取引所市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に上場しました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "自社ネット通販による販売を開始",
+      "description": "自社ネット通販による販売を開始しました。",
+      "significance": "ＥＣ事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "株式会社アイスタイルと資本業務提携",
+      "description": "株式会社アイスタイルと資本業務提携を行いました。",
+      "significance": "化粧品流通の他社との資本提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に上場",
+      "description": "東京証券取引所の市場区分の見直しにより、スタンダード市場に移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "「MAMA BUTTER」ブランド事業を譲受",
+      "description": "株式会社ビーバイ・イーから「MAMA BUTTER」（ママバター）ブランドを対象とする事業を譲り受けました。",
+      "significance": "ブランドの拡充による事業拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "wacoal-holdings",
+      "relationship": "other-affiliated-company",
+      "description": "株式会社ワコールホールディングスは、【関係会社の状況】にその他の関係会社として印字され、2026年3月31日現在、当社の議決権の21.2％を保有する筆頭株主であり、当社は同社の持分法適用関連会社と位置づけられています。当社は2004年２月に株式会社ワコールと資本業務提携を行っており、特定店舗ではワコールグループの中核企業である株式会社ワコールから一部商品を仕入れています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "istyle",
+      "relationship": "business-partner",
+      "description": "株式会社アイスタイルは、2019年３月に当社と資本業務提携を行った提携先であり、2026年3月31日現在、当社の株式の5.52％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +412,53 @@
       "publisher": "株式会社ハウス　オブ　ローゼ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHK9.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YHK9",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念「美しさと健康と快適な生活を願われる人々のために、優れた商品と真心のこもったサービスを提供する」の下、直営店商品販売事業及び卸販売事業においては、多くのお客さまに支持される店舗及び商品開発に注力し、新規顧客との接点を拡大して安定的な売上増を目指し、直営店サービス事業においても、「健康」志向のライフスタイルと「ふれあい」の場を提供する方針です。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "第45期を始期とする３ヶ年中期経営計画では、「素肌みがき」を軸としたブランド価値向上、収益基盤の強化、デジタル化を通じたサービス品質の向上及び経営効率の改善を基本方針とし、直営店舗とEC事業のメンバーズシステム統合も視野に入れた顧客基盤の強化を進める構成です。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】における中期経営計画の基本方針と、MD&Aにおける１ID化（店舗での商品購入ポイントの共通化）に関する記載に基づく",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "ハウス オブ ローゼ直営店は、洗顔料等を使用しお客様の手に触れながら洗顔方法をお伝えする販売手法「ハンドウォッシュ」を通じ、お客様一人ひとりに対する「ふれる（触れる）接客」を当社の強みとして更に強化し、スキンケア化粧品の売上増加を通じた業績向上に取り組んでいる旨を述べています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      },
+      "analysis": {
+        "text": "自社ブランド（ＰＢ）商品の開発を目的に設立された会社であり、商品開発と直営店舗・自社通販での販売、接客を通じた顧客関係の深化を一体で運営していることが、商品と販売の両面の支えになっています。",
+        "basis": "【沿革】におけるＰＢ商品の開発及び出店の拡大を目的とする設立の記載と、【事業の内容】における事業構成の記載に基づく",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

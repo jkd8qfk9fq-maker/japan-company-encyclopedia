@@ -4,15 +4,146 @@
   "name": "木村工機",
   "officialName": "木村工機株式会社",
   "nameEn": "KIMURA KOHKI Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "KIMURA KOHKI Co.,Ltd.",
+  "description": "業務用空調機を個別受注生産し、総合建設業者や設備工事業者を通じてビルや工場などに納める空調機器メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "air-conditioning-equipment",
+      "name": "空調機器製造販売事業",
+      "description": "空調関連機器の製造、販売及び関連工事等を行う単一セグメントの事業です。個別受注生産を基本とし、八尾製作所、八尾製作所高井田工場、河芸製作所で生産します。2026年3月期の売上高は17,922百万円です。",
+      "customers": [
+        "総合建設業者（ゼネコン）や設備工事業者（サブコン）などの専門事業者",
+        "各種建築物の施主・オーナー企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "heat-pump-air-conditioners",
+          "name": "空冷ヒートポンプ式空調機＆外調機",
+          "description": "冷媒ガスを熱媒体として空気の冷却・加熱を行う空調機と、換気、除塵、除加湿などの空気質の改善を主な目的とする外調機です。室内機と室外機を一体化した「ルーフトップ」シリーズが主力製品で、2026年3月期の売上高は8,832百万円です。",
+          "customers": [
+            "オフィスビル、商業施設、工場などの施主・オーナー（ゼネコン・サブコン経由）"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "air-handling-units",
+          "name": "冷温水式エアハンドリングユニット",
+          "description": "熱源装置を別途設け、水を熱媒体として空気の冷却・加熱を行う装置です。2026年3月期の売上高は3,462百万円です。",
+          "customers": [
+            "ビルや工場などの施主・オーナー（ゼネコン・サブコン経由）"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "other-products",
+          "name": "その他の製品",
+          "description": "主要製品以外の空調関連機器等で、2026年3月期の売上高は2,483百万円です。",
+          "customers": [
+            "各種建築物の施主・オーナー（ゼネコン・サブコン経由）"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "factory-zone-air-conditioners",
+          "name": "工場用ゾーン空調機",
+          "description": "工場、ホールなどの比較的大空間をゾーン単位で冷暖房する機器で、除湿を重視した空調が可能です。冷温水式と空冷ヒートポンプ式があり、2026年3月期の売上高は1,886百万円です。",
+          "customers": [
+            "工場などの施主・オーナー（ゼネコン・サブコン経由）"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "fan-coil-units",
+          "name": "冷温水式ファンコイルユニット",
+          "description": "冷水・温水・蒸気などを用いて冷暖房を行う装置で、主に室内側に設置され、個別空調が必要とされる建物の熱負荷処理に用いられます。2026年3月期の売上高は1,257百万円です。",
+          "customers": [
+            "ビルやホテルなどの施主・オーナー（ゼネコン・サブコン経由）"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "空調システム機器の開発・製造・販売と関連工事を手がけ、ヒートポンプ式外調機「ルーフトップ」を主力に、用途に応じた最適な空調を提供しています。",
+    "products": [
+      "空冷ヒートポンプ式空調機＆外調機（「ルーフトップ」シリーズなど）",
+      "冷温水式エアハンドリングユニット（AHU）",
+      "冷温水式ファンコイルユニット（FCU）",
+      "冷温水式＆空冷ヒートポンプ式工場用ゾーン空調機",
+      "空調用制御システム"
+    ],
+    "customers": [
+      "総合建設業者（ゼネコン）",
+      "設備工事業者（サブコン）",
+      "オフィスビル、商業施設、工場、学校、病院などの施主・オーナー企業"
+    ],
+    "revenueSources": [
+      "空調システム機器の販売対価",
+      "空調機器の関連工事等の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "木村工機",
+        "description": "本店は大阪市中央区にあり、生産拠点は大阪府八尾市の八尾製作所と三重県津市の河芸製作所です。2026年3月期の従業員数は386人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "外調機を主力とする空調システム機器",
+        "description": "空冷ヒートポンプ式の外調機「ルーフトップ」シリーズを主力に、エアハンドリングユニット、ファンコイルユニット、工場用ゾーン空調機などを個別受注生産します。"
+      },
+      {
+        "kind": "customer",
+        "title": "ゼネコン・サブコンと施主・オーナー",
+        "description": "製品は総合建設業者（ゼネコン）や設備工事業者（サブコン）を通じて、オフィスビル、商業施設、工場、学校、病院などの施主・オーナーの建築物に設置されます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "空調システム機器の販売による売上高",
+        "description": "2026年3月期の売上高は17,922百万円で、空冷ヒートポンプ式空調機＆外調機が8,832百万円、冷温水式エアハンドリングユニットが3,462百万円、その他が2,483百万円、工場用ゾーン空調機が1,886百万円、冷温水式ファンコイルユニットが1,257百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は3,278百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +158,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6973395000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 350,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +180,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7754588000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 364,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +202,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9650023000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 367,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +224,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11763903000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 365,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,32 +246,215 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14067055000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 386,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1945,
+      "title": "木村工機営業所を開所",
+      "description": "創業者である木村悦造が、大阪市東区上町（現 大阪市中央区上町）において、伸銅品と機械工具類の販売を業とする木村工機営業所を開所しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "木村工機株式会社を設立",
+      "description": "木村工機株式会社を設立し、伸銅品・機械工具販売事業を開始しました。大阪営業所（現 大阪営業本部）も開設しました。",
+      "significance": "法人としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "プレートフィンヒーター・クーラーの製法を確立",
+      "description": "アルミプレートに銅管を取り付けた熱交換器について、銅管を内部から円周上に広げる拡管の製造工法で銅管とアルミプレートを密着させる製法を確立しました。",
+      "significance": "空調機器メーカーへ転じる契機となった基盤技術です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "空調事業に本格参入",
+      "description": "熱交換器と暖房機器（ベースボードヒーター、コンベクター等）の製作を開始し、空調事業に本格参入しました。",
+      "significance": "空調機器の製造の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "八尾工場を稼働しエアハンドリングユニットの製作を開始",
+      "description": "大阪府八尾市に新工場（現 八尾製作所）を稼働し、エアハンドリングユニット（エアハン）の製作を開始しました。",
+      "significance": "主力工場の稼働と主要製品の生産開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "河芸工場を稼働",
+      "description": "三重県河芸町（現 津市）に新工場（現 河芸製作所）を稼働しました。",
+      "significance": "第2の生産拠点の確立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "楕円管熱交換器オーバルコイルを開発",
+      "description": "銅管の形状を円形ではなく楕円管にした楕円管熱交換器オーバルコイルを開発し、製品に組み込んで販売を開始しました。",
+      "significance": "当社製品全般における最大の特徴とされる独自技術です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "空冷ヒートポンプ式 立形ルーフトップ外調機を開発",
+      "description": "空冷ヒートポンプ式の立形ルーフトップ外調機を開発しました。",
+      "significance": "現在の主力製品であるルーフトップシリーズにつながる開発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "空冷ヒートポンプ式 工場用ゾーン空調機を開発",
+      "description": "空冷ヒートポンプ式の工場用ゾーン空調機を開発しました。",
+      "significance": "工場の大空間空調という現在の成長分野の製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。大阪市中央区内で本社も移転しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場再編に伴いスタンダード市場に移行しました。大阪府東大阪市に八尾製作所高井田工場も稼働しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "八尾技術研究センターを開所",
+      "description": "大阪府八尾市に八尾技術研究センターを開所しました。",
+      "significance": "研究開発体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-electric",
+      "relationship": "major-shareholder",
+      "description": "三菱電機株式会社は、2026年3月31日現在、発行済株式（自己株式を除く）の総数に対する所有株式数の割合が2.84％の大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "yamato",
+      "relationship": "customer",
+      "description": "株式会社ヤマトは、親密な販売先として安定的な取引関係を維持するため当社が株式を保有している相手であり（保有株式数2,200株）、当社の製品の販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shinsho",
+      "relationship": "supplier",
+      "description": "神鋼商事株式会社は、主要な仕入先として安定的な取引関係を維持するため当社が株式を保有している相手であり（保有株式数900株）、当社への仕入先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第79期(2025/04/01－2026/03/31)",
+      "title": "有価証券報告書－第79期（2025年４月１日－2026年３月31日）",
       "publisher": "木村工機株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCHD.pdf",
       "publishedAt": "2026-06-16",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YCHD",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "産業分野、商業分野、保健分野の3つに類別して「分野別最適空調」を推進し、「空調機器メーカー」という従来の枠を超え、空調全体をシステムで提案できる「空調システムメーカー」として確固たる地位を築くことを重点課題に掲げています。新領域への挑戦として、農・畜産陽圧空調の実用化に向けた準備も進めています。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "楕円管熱交換器「オーバルコイル」など特許に裏付けられた独自技術を持ち、お客様の利用環境に合わせた制御システムを内製できることが強みです。個別受注生産を基本とし、主要な営業拠点に営業技術部門を配置して、迅速な技術的サポートまで担います。",
+        "basis": "事業の内容における技術力・生産力・営業力の特徴の記載、沿革における楕円管熱交換器オーバルコイルの開発の記載、経営成績の分析における制御機能、省エネ性能に優れた独自製品が高く評価された旨の記載に基づきます。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "空調システム機器の開発・製造・販売の単一セグメントで、本邦以外の外部顧客への売上高はなく、事業の中心は国内にあります。製品別では空冷ヒートポンプ式空調機＆外調機が売上高の約半分を占めます。2026年3月期の売上高は前事業年度比11.7％増と伸長しました。",
+        "basis": "セグメント情報等における単一セグメントの記載と地域ごとの情報の記載、収益認識関係における製品の種類別、品目別の売上高の記載、経営成績の分析における売上高の増減とその理由の記載に基づきます。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

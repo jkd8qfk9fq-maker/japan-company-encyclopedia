@@ -4,15 +4,136 @@
   "name": "ケル",
   "officialName": "ケル株式会社",
   "nameEn": "KEL CORPORATION",
-  "description": null,
+  "shortNameEn": "KEL CORPORATION",
+  "description": "東京都多摩市に本社を置き、産業用機器向けのコネクタやラック、ハーネスを製造・販売する電子部品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "connectors-racks",
+      "name": "コネクタ・ラック事業",
+      "description": "コネクタ、ラック、ハーネスの製造・販売を行う単一セグメントの事業です。国内の山梨、南アルプス、長野の各事業所と、台湾や中国・珠海の連結子会社で生産し、日本のほか中国、アジア、欧州、北中米へ販売しています。2026年3月期の売上高は12,857百万円でした。",
+      "customers": [
+        "工業機器メーカー",
+        "車載機器メーカー",
+        "医療機器メーカー",
+        "画像機器メーカー",
+        "通信機器メーカー",
+        "遊技機器メーカー"
+      ],
+      "children": [
+        {
+          "id": "connectors",
+          "name": "コネクタ",
+          "description": "工業機器・画像機器などの電子・電気機器において、実装されたプリント基板間や機器内、機器間の電気的接続と切り離しのためのコネクタです。車載機器向けのフローティングコネクタや医療機器向けの極細同軸ケーブル用コネクタなどがあります。2026年3月期の売上高は11,293百万円でした。",
+          "customers": [
+            "工業機器メーカー",
+            "車載機器メーカー",
+            "医療機器メーカー",
+            "画像機器メーカー",
+            "通信機器メーカー",
+            "遊技機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "racks",
+          "name": "ラック",
+          "description": "制御基板や周辺機器の収納をシステム化したラックです。電力や車両関連（鉄道）向けの特注ラックなどがあります。2026年3月期の売上高は1,376百万円でした。",
+          "customers": [
+            "電力関連の顧客",
+            "鉄道車両関連の顧客",
+            "医療機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "harness",
+          "name": "ハーネス",
+          "description": "コネクタとケーブルを接続したハーネスです。ハーネス単独の売上高は開示されていません。",
+          "customers": [
+            "電子・電気機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "コネクタの専門メーカーとして、プリント基板や機器をつなぐコネクタと、制御基板などを収納するラック、コネクタ付きケーブルのハーネスを製造・販売する事業モデルです。",
+    "products": [
+      "コネクタ",
+      "ラック",
+      "ハーネス"
+    ],
+    "customers": [
+      "工業機器メーカー",
+      "車載機器メーカー",
+      "医療機器メーカー",
+      "画像機器メーカー",
+      "通信機器メーカー",
+      "遊技機器メーカー",
+      "販売代理店"
+    ],
+    "revenueSources": [
+      "コネクタの販売収入",
+      "ラックの販売収入",
+      "ハーネスの販売収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ケル",
+        "description": "1962年に東京都渋谷区で創立され、現在は東京都多摩市に本社を置く会社です。2026年3月31日現在の従業員数は334人で、子会社7社とグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "コネクタとラック、ハーネス",
+        "description": "工業機器や車載機器、画像機器などの電子・電気機器に使われるコネクタと、制御基板や周辺機器を収納するラック、コネクタとケーブルを接続したハーネスを製造・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "機器メーカーと販売代理店",
+        "description": "工業機器や遊技機器、医療機器、画像機器、車載機器、通信機器などのメーカーに製品を供給し、販売代理店を通じた販売も行っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は12,857百万円で、前期比8.3％増加しました。コネクタが11,293百万円、ラックが1,376百万円、その他が186百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は210百万円でした。原材料価格の高騰によるコスト増などが響き、前期比47.6％の減少となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +148,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13854174000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 301,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +168,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15040961000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 306,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15390700000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 318,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +208,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15224531000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 315,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +228,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15304149000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 334,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +236,148 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1962,
+      "title": "ケル株式会社を創立",
+      "description": "東京都渋谷区にケル株式会社を創立しました。",
+      "significance": "現在のケルの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "山梨事業所を建設し操業開始",
+      "description": "山梨県中巨摩郡甲西町（現・南アルプス市）に山梨事業所（現・南アルプス事業所）を建設し、操業を開始しました。",
+      "significance": "国内の生産拠点を拡充しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "株式を店頭登録",
+      "description": "社団法人日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "長野事業所を建設し操業開始",
+      "description": "長野県北安曇郡池田町に長野事業所を建設し、操業を開始しました。",
+      "significance": "コネクタの生産拠点を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "台湾に現地法人を設立",
+      "description": "台湾に現地法人「旺昌電子股份有限公司」を設立しました。連結子会社です。",
+      "significance": "海外生産の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "中国・上海に現地法人を設立",
+      "description": "中国・上海市に現地法人「科陸電子貿易（上海）有限公司」を設立しました。連結子会社です。",
+      "significance": "中国での販売体制を築きました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "山梨事業所（市川三郷町）を建設し操業開始",
+      "description": "山梨県西八代郡市川三郷町に山梨事業所を建設し、操業を開始しました。",
+      "significance": "主力の生産拠点を新設しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "ドイツに現地法人を設立",
+      "description": "ドイツに現地法人「KEL Europe GmbH」を設立しました。連結子会社です。",
+      "significance": "欧州での販売・販売支援の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "アメリカに現地法人を設立",
+      "description": "アメリカ・カリフォルニア州に現地法人「KEL USA,Inc.」を設立しました。非連結子会社です。",
+      "significance": "北中米での販売体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "中国・珠海に現地法人を設立",
+      "description": "中国・珠海市に現地法人「開陸連接器（珠海）有限公司」を設立しました。連結子会社です。",
+      "significance": "中国での現地生産を始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "シンガポールに現地法人を設立",
+      "description": "シンガポールに現地法人「KEL Electronics Singapore Pte. Ltd.」を設立しました。非連結子会社です。",
+      "significance": "東南アジアでの販売体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sun-wa-technos",
+      "relationship": "customer",
+      "description": "主要な顧客で、2026年3月期の売上高の13.8％を占める販売先です。販売代理店として取引関係の維持・強化のため、同社の株式も保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "kikusui-holdings",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在の筆頭株主で、発行済株式（自己株式を除く）の7.04％を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +385,45 @@
       "publisher": "ケル株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJK1.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YJK1",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "創業以来、高品質の小型コネクタをエレクトロニクス市場に提供することを基本とし、海外売上拡大に向けて開発力・供給力・販売力のグローバル体制を強化し、新製品開発と注力市場の開拓を進めるとしています。2030年を目標とする長期経営計画「KEL VISION 2030」も掲げています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高は日本が7,584百万円、中国が2,608百万円、その他アジアが1,353百万円、欧州が1,026百万円、北中米が285百万円で、海外向けが全体の約4割を占めることが読み取れます。",
+        "basis": "セグメント情報の地域ごとの情報に、2026年3月期の売上高として日本7,584百万円、中国2,608百万円、その他アジア1,353百万円、欧州1,026百万円、北中米285百万円が印字されていること。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "コネクタの専門メーカーとして、常に最先端の接続技術（コネクション・テクノロジー）を追い求め、高密度・高速化する産業用機器に対応し、市場ニーズを先取りした製品を開発し、市場に供給し続けることを掲げています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

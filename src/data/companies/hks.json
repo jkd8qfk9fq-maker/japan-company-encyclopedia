@@ -4,15 +4,136 @@
   "name": "エッチ・ケー・エス",
   "officialName": "株式会社エッチ・ケー・エス",
   "nameEn": "HKS CO., LTD.",
-  "description": null,
+  "shortNameEn": "HKS CO., LTD.",
+  "description": "自動車用アフターパーツの製造・販売を主力とし、軽量小型飛行機用エンジン部品も販売する自動車部品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "automotive-related-parts",
+      "name": "自動車等の関連部品事業",
+      "description": "当社グループの報告セグメントは自動車等の関連部品事業のみであり、その他の事業の重要性が乏しいためセグメント情報の記載は省略されています。2025年8月期の連結売上高は8,976百万円で、2025年8月31日現在の従業員数は383人、連結子会社は6社です。",
+      "customers": [
+        "自動車用品の販売店・量販店",
+        "海外の自動車部品販売業者",
+        "自動車メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "after-parts",
+          "name": "アフターパーツ売上",
+          "description": "マフラー、ターボチャージャー、サスペンション、電子制御製品、冷熱製品、エンジン部品等の自動車用アフターパーツの販売です。当社およびタイの連結子会社が製造し、国内は主として当社と連結子会社のテクニカルファクトリーが、海外は当社と英国・タイ・中国の販売子会社が販売しています。2025年8月期の売上高は7,373百万円です。",
+          "customers": [
+            "自動車用品の販売店・量販店",
+            "海外の自動車部品販売業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "contract-manufacturing",
+          "name": "受託売上",
+          "description": "自動車メーカー等の部品の加工などの製造受託による売上です。連結子会社の日生工業株式会社が自動車メーカーの部品の加工を行っています。2025年8月期の売上高は1,602百万円です。",
+          "customers": [
+            "自動車メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "other-sales",
+          "name": "その他売上",
+          "description": "アフターパーツ売上と受託売上に含まれない売上で、2025年8月期の売上高は1百万円です。",
+          "customers": [],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "aircraft-engine-parts",
+          "name": "軽量小型飛行機用エンジン部品",
+          "description": "報告セグメントに含まれないその他の事業として、軽量小型飛行機用エンジン部品を当社が販売しています。金額は個別に開示されていません。",
+          "customers": [
+            "軽量小型飛行機のメーカー・利用者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "マフラーやターボチャージャー、サスペンション等の自動車用アフターパーツを自社ブランドで製造し、国内の販売店や海外の販売子会社を通じて販売する事業モデルです。",
+    "products": [
+      "マフラー",
+      "ターボチャージャー",
+      "サスペンション",
+      "電子制御製品",
+      "冷熱製品",
+      "エンジン部品",
+      "軽量小型飛行機用エンジン部品"
+    ],
+    "customers": [
+      "自動車用品の販売店・量販店",
+      "海外の自動車部品販売業者",
+      "自動車メーカー"
+    ],
+    "revenueSources": [
+      "アフターパーツの販売収入",
+      "製造受託による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "エッチ・ケー・エス",
+        "description": "1973年にレース用エンジンの開発・製造・販売を目的として設立された自動車部品メーカーで、2025年8月31日現在の従業員数は383人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "自動車用アフターパーツ",
+        "description": "マフラー、ターボチャージャー、サスペンション、電子制御製品、冷熱製品、エンジン部品等の自動車等の関連部品と、軽量小型飛行機用エンジン部品を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "販売店と自動車メーカー",
+        "description": "国内の自動車用品の販売店・量販店、海外の自動車部品販売業者、部品加工の委託元である自動車メーカーが顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年8月期の売上高は8,976百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2025年8月期の親会社株主に帰属する当期純利益は361百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年8月期",
@@ -27,7 +148,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8978019000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 356,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +168,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9520156000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 367,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第49期（2022年8月期）の期首から適用しており、第49期以降の主要な経営指標等は当該会計基準等を適用した後の数値です。"
     },
     {
       "fiscalYear": "2023年8月期",
@@ -67,7 +189,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9990268000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 383,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +209,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10318315000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 384,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +229,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10650925000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 383,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +237,213 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1973,
+      "title": "株式会社エッチ・ケー・エスを設立",
+      "description": "レース用エンジン、エンジンパーツの開発、製造および販売を目的として、静岡県に株式会社エッチ・ケー・エスを設立しました。",
+      "significance": "現在のエッチ・ケー・エスの起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "ターボチャージャーを発売",
+      "description": "ターボチャージャーの販売を開始しました。",
+      "significance": "現在の主力製品の一つである過給機事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "北山工場でマフラーの製造を開始",
+      "description": "静岡県富士宮市北山に北山工場を設置し、マフラーの製造を開始しました。",
+      "significance": "主力製品であるマフラーの自社製造の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "英国にHKS EUROPE LIMITEDを設立",
+      "description": "欧州の販売拠点として、英国にHKS EUROPE LIMITEDを設立しました。",
+      "significance": "海外販売拠点の展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "日生工業株式会社の株式を取得",
+      "description": "日生工業株式会社の株式を取得し、子会社としました。",
+      "significance": "自動車メーカー向け部品加工の受託体制を取り込みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "タイに販売拠点を設立",
+      "description": "東南アジアの販売拠点として、タイにHKS(Thailand)Co.,Ltd.を設立しました。",
+      "significance": "アジアでの販売・生産体制の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "テクニカルファクトリーを設立",
+      "description": "埼玉県戸田市に株式会社エッチ・ケー・エス テクニカルファクトリーを設立しました。",
+      "significance": "国内販売体制を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "中国・上海に販売拠点を設立",
+      "description": "中国の販売拠点として、上海に艾馳楷时(上海)貿易有限公司（現 艾馳楷时(上海)汽車科技有限公司）を設立しました。",
+      "significance": "中国市場への本格展開です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "米国にHKS USA, INC.を設立",
+      "description": "米国にHKS USA, INC.を設立しました。",
+      "significance": "北米での広報・マーケティング体制の整備です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "カスタマイズ車両の販売プロジェクト「THE HKS」を開始",
+      "description": "自社製カスタマイズ車両の販売を手掛けるプロジェクト「THE HKS」を開始しました。",
+      "significance": "部品販売から完成車のカスタマイズ販売への広がりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "タイ子会社の社名を変更",
+      "description": "HKS-IT Co.,Ltd.をHKS(THAILAND)CO.,LTD.に社名変更しました（2024年7月のタイ子会社同士の吸収合併を経たものです）。",
+      "significance": "タイの生産・販売子会社の体制が現在の形になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "yellow-hat",
+      "relationship": "customer",
+      "description": "当社製品の販売先であり、営業取引上の関係維持・強化のため、当社は同社株式57,637株を保有しています（2025年8月31日現在）。同社は当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "autobacs-seven",
+      "relationship": "customer",
+      "description": "当社製品の販売先であり、営業取引上の関係維持・強化のため、当社は同社株式21,417株を保有しています（2025年8月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "weds",
+      "relationship": "customer",
+      "description": "当社製品の販売先であり、営業取引上の関係維持・強化のため、当社は同社株式40,000株を保有しています（2025年8月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-motors",
+      "relationship": "business-partner",
+      "description": "当社は同社のレース活動のサポートを請け負っており、取引上の関係維持・強化のため、当社は同社株式200株を保有しています（2025年8月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-yamanashi-chuo-bank",
+      "relationship": "business-partner",
+      "description": "当社の主要取引銀行であり、安定的な取引関係の維持のため、当社は同行株式45,200株を保有しています（2025年8月31日現在）。同行は当社の大株主でもあり、発行済株式（自己株式を除く）の1.84％を所有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shizuoka-financial-group",
+      "relationship": "business-partner",
+      "description": "同社の関係会社は当社の主要取引銀行であり、安定的な取引関係の維持のため、当社は同社株式21,829株を保有しています（2025年8月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "unisol-holdings",
+      "relationship": "supplier",
+      "description": "同社の関係会社は当社の設備関連の仕入先であり、事業上の関係を勘案し良好な関係の維持・強化を図るため、当社は同社株式6,450株を保有しています（2025年8月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +451,53 @@
       "publisher": "株式会社エッチ・ケー・エス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X6JZ.pdf",
       "publishedAt": "2025-11-26",
-      "accessedAt": "2026-09-29"
+      "docId": "S100X6JZ",
+      "asOf": "2025-08-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "ブランド力の強化に努め、スポーツタイプ車両向け新商材の開発スピードを高めて市場投入のタイミングを最適化するとともに、新たなグローバル市場の開拓と新規販路の開拓を進める方針です。",
+        "asOf": "2025-11-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "米国関税の影響が大きい環境のなかで、主力のアフターマーケット向け新製品の投入を早め、海外の販路を広げることで、特定の市場や受託事業の需要変動を補う方向性が示されています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等に記載された市場環境の認識と、優先的に対処すべき課題への対応に基づく",
+        "asOf": "2025-11-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "レース用エンジンの開発を起源として、エンジン部品やターボチャージャー等の開発から製造までを自社で手がけ、日本・英国・タイ・中国・米国に販売・生産・開発の拠点を置いています。",
+        "asOf": "2025-11-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【事業の内容】"
+      },
+      "analysis": {
+        "text": "自社設計のボールベアリングターボのような独自技術の製品を持ち、タイ工場等の海外生産拠点と組み合わせて供給している点が特徴です。",
+        "basis": "事業の内容および沿革に記載された製品開発の経緯と、関係会社の状況に記載された生産・販売体制に基づく",
+        "asOf": "2025-11-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年8月期",
     "asOf": "2025-08-31",

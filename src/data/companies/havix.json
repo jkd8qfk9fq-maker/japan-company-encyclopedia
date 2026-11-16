@@ -4,15 +4,138 @@
   "name": "ハビックス",
   "officialName": "ハビックス株式会社",
   "nameEn": "HAVIX CORPORATION",
-  "description": null,
+  "shortNameEn": "HAVIX CORPORATION",
+  "description": "不織布と衛生用紙を製造・販売し、紙おむつやペットシーツ、外食産業向けの素材を供給する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "nonwoven",
+      "name": "不織布関連事業",
+      "description": "パルプ不織布と化合繊不織布を製造・販売する事業です。中間素材として販売するほか、自社の加工ラインでクッキングペーパーに加工して販売しています。2026年３月期の外部顧客への売上高は6,773百万円です。",
+      "customers": [
+        "紙おむつ・ペットシーツ等の衛生用品メーカー",
+        "外食産業向け製品の取扱事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "pulp-nonwoven",
+          "name": "パルプ不織布",
+          "description": "フレッシュパルプを主原料とし、空気流で繊維を積層して接着剤で結合させるエアレイド製法の不織布です。クッキングペーパー、おしぼり、肉や魚のドリップ吸収シート等に使われ、中間素材として、またはクッキングペーパーに加工して販売しています。金額は独立して開示されていません。",
+          "customers": [
+            "紙おむつ・ペットシーツ等の衛生用品メーカー",
+            "外食産業向け製品の取扱事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "chemical-fiber-nonwoven",
+          "name": "化合繊不織布",
+          "description": "化学繊維を原料とし、熱で溶融する繊維を積層して熱接着で結合させるサーマルボンド製法の不織布です。主に紙おむつ、ペットシーツの表面材として使われ、中間素材として販売しています。金額は独立して開示されていません。",
+          "customers": [
+            "紙おむつ・ペットシーツ等の衛生用品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "paper",
+      "name": "紙関連事業",
+      "description": "フレッシュパルプを主原料とした衛生用紙を製造・販売する事業です。主に紙おむつ・ペットシーツの吸収体の包合紙、おしぼり、テーブルナプキン等に使われ、中間素材として販売しています。2026年３月期の外部顧客への売上高は5,336百万円です。",
+      "customers": [
+        "紙おむつ・ペットシーツ等の衛生用品メーカー",
+        "外食産業向け製品の取扱事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "sanitary-paper",
+          "name": "衛生用紙",
+          "description": "フレッシュパルプを主原料とした衛生用紙です。紙おむつ・ペットシーツの吸収体の包合紙、おしぼり、テーブルナプキン等に使われ、中間素材として販売しています。",
+          "customers": [
+            "紙おむつ・ペットシーツ等の衛生用品メーカー",
+            "外食産業向け製品の取扱事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "フレッシュパルプを主原料とするパルプ不織布・化合繊不織布と衛生用紙を製造し、衛生材料や外食産業向けの中間素材として販売する事業です。",
+    "products": [
+      "パルプ不織布（クッキングペーパー・おしぼり・ドリップ吸収シート向け）",
+      "化合繊不織布（紙おむつ・ペットシーツの表面材向け）",
+      "衛生用紙（吸収体の包合紙・おしぼり・テーブルナプキン向け）",
+      "医療・介護向け衛生用品ブランド「Kireine（キレイネ）」"
+    ],
+    "customers": [
+      "紙おむつ・ペットシーツ等の衛生用品メーカー",
+      "外食産業向け製品の取扱事業者"
+    ],
+    "revenueSources": [
+      "不織布の中間素材の販売",
+      "クッキングペーパー等の加工品の販売",
+      "衛生用紙の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ハビックス",
+        "description": "岐阜県岐阜市に本社を置き、不織布と紙の製造・加工および販売を行う会社です。2026年３月31日現在の従業員数は205人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "不織布と衛生用紙の製造・販売",
+        "description": "エアレイド製法のパルプ不織布、サーマルボンド製法の化合繊不織布、フレッシュパルプを主原料とする衛生用紙を製造し、中間素材として販売するほか、クッキングペーパー等の加工品も販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "衛生材料市場と外食産業市場の事業者",
+        "description": "主な顧客は、紙おむつ・ペットシーツ等の衛生材料市場と、外食産業市場の事業者です。主な相手先別の販売実績には、ユニ・チャームプロダクツ株式会社が印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高12,110百万円",
+        "description": "2026年３月期の売上高は12,110百万円で、前事業年度比9.0％減となりました。不織布関連事業が6,773百万円、紙関連事業が5,336百万円で、いずれもセグメント情報の外部顧客への売上高です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益547百万円",
+        "description": "2026年３月期の当期純利益は547百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +150,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6142817000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 217,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -49,7 +172,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6089487000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 193,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -71,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6700791000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 190,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -93,14 +216,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7230475000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 207,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号　2022年10月28日）等を第75期の期首から適用しており、第75期に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -115,18 +239,159 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7714111000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 205,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第75期まで連結財務諸表を作成しておりましたが、連結子会社であったHAVIX TRADING(Thailand) Co.,Ltd.について解散が決議され事業活動が停止し、同社の金額および質的観点からの重要性は乏しく、他に子会社が存在しないことから、2026年３月期の期首より非連結決算へ移行し、個別財務諸表のみを作成しております。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1950,
+      "title": "株式会社大黒屋を設立",
+      "description": "岐阜県関市で、味噌・たまり醸造業の株式会社大黒屋を設立しました。",
+      "significance": "創業です。現在の製紙・不織布事業とは異なる食品事業から始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "福村製紙株式会社に改称し、製紙を開始",
+      "description": "福村製紙株式会社に改称して本社を岐阜市加納に移転し、古紙を使用したトイレ紙「黒ちり紙」の製造を開始しました。",
+      "significance": "製紙事業への転換であり、現在の事業の原点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "ナプキン原紙の製造を開始",
+      "description": "「ナプキン原紙」の製造を開始しました。",
+      "significance": "衛生用紙分野への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "紙オムツ吸収体用途の衛生用紙の製造を開始",
+      "description": "「衛生用紙（紙オムツ吸収体用途）」の製造を開始しました。",
+      "significance": "現在の紙関連事業の主力用途への参入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "化合繊不織布の製造を開始",
+      "description": "伊自良工場を新設し、サーマルボンド製法による「化合繊不織布」の製造を開始しました。",
+      "significance": "不織布事業への参入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "ハビックス株式会社に改称",
+      "description": "「ハビックス株式会社」に改称しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "パルプ不織布の製造とクッキングペーパーの加工を開始",
+      "description": "伊自良工場にて「パルプ不織布」の製造と「クッキングペーパー」の加工を開始しました。",
+      "significance": "現在の不織布関連事業の主力製品の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "ジャスダック証券取引所に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "タイに子会社を設立",
+      "description": "タイ王国に「HAVIX TRADING(Thailand) Co., Ltd.」を設立しました。",
+      "significance": "海外拠点の設立です。後に閉鎖され、非連結決算への移行につながりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、スタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ジェイソフト株式会社を吸収合併",
+      "description": "不織布販売会社の「ジェイソフト株式会社」を吸収合併し、東京事務所を設置しました。",
+      "significance": "販売体制の統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "タイ子会社を閉鎖",
+      "description": "「HAVIX TRADING(Thailand) Co., Ltd.」を閉鎖しました。",
+      "significance": "海外子会社からの撤退であり、2026年３月期からの非連結決算への移行の前提となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "marubeni",
+      "relationship": "major-shareholder",
+      "description": "【大株主の状況】に、2026年３月31日現在で発行済株式（自己株式を除く）の総数に対する所有株式数の割合4.33％の大株主として印字されている商社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "densan-system-holdings",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】の特定投資株式に、情報システム関連における業務取引先であり、業務委託等幅広い領域での関係の維持・強化のため株式を保有している旨が印字されている会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +399,47 @@
       "publisher": "ハビックス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE3K.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YE3K",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-10-02",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念「創和」のもと、「衛生・安心・快適」という価値を提供する「ビューティフルライフ創造企業」を目指し、2023年度から2030年度を対象とする「長期経営ビジョン2030」と「第１次中期経営計画」を進める方針です。素材メーカーから「衛生用品メーカー」への進化を掲げ、医療・介護向け衛生用品の自社ブランド「Kireine（キレイネ）」の拡大と、顧客ブランドのＯＥＭ生産による加工事業の強化に取り組むとしています。ユニ・チャームプロダクツ株式会社との共同事業として、ペットケア商品のＯＥＭ事業を2027年春に開始する予定です。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "パルプ不織布、化合繊不織布、衛生用紙という衛生用品に採用される３つの素材を自社で生産し、素材の販売に加えてクッキングペーパー等の加工品や自社ブランド製品まで一貫して手がける体制を持っています。",
+        "basis": "【事業の内容】に３素材の製造が印字され、【経営方針、経営環境及び対処すべき課題等】の対処すべき課題に「衛生用品に採用される３つの素材を生産しており、これら素材を活かした加工事業を強化することで、素材メーカーから『衛生用品メーカー』へと進化してまいります」と印字されていること。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高は不織布関連事業が6,773百万円、紙関連事業が5,336百万円で、衛生材料市場と外食産業市場に製品を提供しています。衛生材料市場では大人用紙おむつの需要の拡大が続く一方、ベビー用紙おむつは少子化の影響と安価な素材への切替が進み、外食産業市場では安価な中国製製品への切替が進行していると説明されています。",
+        "basis": "セグメント情報に各事業の外部顧客への売上高が印字され、【経営方針、経営環境及び対処すべき課題等】の経営環境に両市場の動向が印字されていること。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
