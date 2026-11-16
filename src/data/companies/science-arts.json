@@ -4,15 +4,136 @@
   "name": "サイエンスアーツ",
   "officialName": "株式会社サイエンスアーツ",
   "nameEn": "Science Arts, Inc.",
-  "description": null,
+  "shortNameEn": "Science Arts, Inc.",
+  "description": "店舗や交通インフラなどの現場で働く人をつなげるクラウドサービス「Buddycom」を提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "buddycom",
+      "name": "Buddycom事業",
+      "description": "店舗や交通インフラなどの現場で働くフロントラインワーカーをつなげるライブコミュニケーションプラットフォーム「Buddycom」の開発・販売と、イヤホンマイク等のアクセサリーの販売を行う事業で、唯一の報告セグメントです。2025年８月期の外部顧客への売上高は1,653百万円です。",
+      "products": [
+        "Buddycom",
+        "イヤホンマイク・ヘッドセット・ウェアラブルカメラ等のアクセサリー"
+      ],
+      "customers": [
+        "小売店舗、鉄道・航空などの交通インフラ、介護施設、工場、自治体などの現場部門"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "buddycom-subscription",
+          "name": "Buddycom利用料",
+          "description": "「Buddycom」の利用料をID単位で課金するサブスクリプション型のサービスです。2025年８月期の売上高は908百万円です。",
+          "products": [
+            "Buddycom"
+          ],
+          "customers": [
+            "Buddycomを契約する企業・自治体"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "accessories",
+          "name": "アクセサリー販売",
+          "description": "Buddycomと一緒に使うイヤホンマイクやヘッドセット、ウェアラブルカメラなどのアクセサリーの販売です。2025年８月期の売上高は744百万円です。",
+          "products": [
+            "イヤホンマイク",
+            "ヘッドセット",
+            "スピーカーマイク",
+            "ウェアラブルカメラ"
+          ],
+          "customers": [
+            "Buddycomを契約する企業・自治体"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "altibase",
+      "name": "その他（ALTIBASE事業）",
+      "description": "報告セグメントに含まれない事業で、ハイブリッド型データベース「ALTIBASE」のライセンスを利用中の顧客へのサポートを継続しています。新規顧客へのライセンス販売は終了しています。2025年８月期の外部顧客への売上高は１百万円です。",
+      "products": [
+        "ALTIBASE"
+      ],
+      "customers": [
+        "ALTIBASEを利用中の顧客"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "クラウドサービス「Buddycom」の利用料をサブスクリプションで得るほか、利用者が使うイヤホンマイクなどのアクセサリーの販売で収益を得ています。",
+    "products": [
+      "Buddycom（ライブコミュニケーションプラットフォーム）",
+      "イヤホンマイク・ヘッドセット・ウェアラブルカメラ等のアクセサリー",
+      "ALTIBASE（ハイブリッド型データベース）"
+    ],
+    "customers": [
+      "小売店舗、鉄道・航空などの交通インフラ、介護施設、工場、商業施設、自治体などの現場部門",
+      "販売代理店（セールスパートナー）経由の顧客"
+    ],
+    "revenueSources": [
+      "Buddycomの利用料（ID単位のサブスクリプション課金）",
+      "アクセサリーの販売代金",
+      "ALTIBASEのサポート料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "単体のITサービス会社",
+        "description": "連結財務諸表を作成していない単体の会社で、東京都渋谷区に本社を置きます。従業員数は58人です（2025年８月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "現場をつなげるクラウドサービスと周辺機器",
+        "description": "スマートフォンやタブレットでトランシーバーのように一斉に音声通信ができるクラウドサービス「Buddycom」と、イヤホンマイクなどのアクセサリーを提供しています。旧来のデータベース「ALTIBASE」は利用中の顧客へのサポートを継続しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "現場部門を持つ企業・自治体",
+        "description": "店舗や交通インフラ、介護施設、工場など、机の前に座らないフロントラインワーカーの現場が主な対象です。2025年８月期末の契約社数は1,562社で、売上高の10％以上を占める顧客はソフトバンクです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年８月期の売上高は1,654百万円で、前期から39.7％増加しました。契約社数と利用ユーザー数の増加により、Buddycom利用料売上とアクセサリー売上が伸びたことが背景です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年８月期は当期純利益112百万円を計上しました。前期は当期純損失31百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年8月期",
@@ -27,14 +148,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 233462000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 22,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "2021年８月11日付で普通株式１株につき100株の割合で株式分割を、2022年12月１日付で普通株式１株につき２株の割合で株式分割を行っており、第18期の期首に当該株式分割が行われたと仮定して株式関連の指標を算定しております"
     },
     {
       "fiscalYear": "2022年8月期",
@@ -49,14 +171,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 570609000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 29,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第19期の期首から適用しており、第19期以降の指標は当該会計基準等を適用した後の数値となっております"
     },
     {
       "fiscalYear": "2023年8月期",
@@ -71,11 +194,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 508414000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 38,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -93,11 +216,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 476565000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 46,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -115,18 +238,136 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1393972000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 58,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2003,
+      "title": "株式会社シアンス・アールを設立",
+      "description": "東京都港区虎ノ門に設立し、ITコンサルティング事業を開始しました。",
+      "significance": "現在の会社の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "データベース管理システム「ALTIBASE」の販売を開始",
+      "description": "大容量データに対応するディスク型と高速アクセスに対応するメモリ型を併せ持つハイブリッド型データベース「ALTIBASE」の販売を開始しました。",
+      "significance": "その後のBuddycom事業に先立つ、初期の主力事業の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "スマートフォンIP無線サービス「Aldio」の開発・販売を開始",
+      "description": "スマートフォン向けIP無線サービス「Aldio（アルディオ）」の開発・販売を開始しました。",
+      "significance": "現在の「Buddycom」の前身となるサービスです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "社名を株式会社サイエンスアーツに変更し、サービス名を「Buddycom」に変更",
+      "description": "「株式会社シアンス・アール」から「株式会社サイエンスアーツ」へ社名を変更し、サービス名も「Aldio」から「Buddycom（バディコム）」へ変更しました。",
+      "significance": "現在の社名とサービス名がそろった転機です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "東京証券取引所マザーズ市場に上場",
+      "description": "東京証券取引所マザーズ市場に株式を上場しました。",
+      "significance": "上場会社となった転機です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、マザーズ市場からグロース市場に移行しました。",
+      "significance": "現在の上場市場となった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "本社を東京都渋谷区に移転",
+      "description": "本社を東京都渋谷区渋谷に移転しました。",
+      "significance": "現在の本社所在地となった移転です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "楽天グループ・ＪＶＣケンウッドと資本業務提携",
+      "description": "楽天グループ株式会社及び株式会社ＪＶＣケンウッドを引受先とする第三者割当増資を実施し、両社と資本業務提携契約を結びました。",
+      "significance": "大手企業との資本業務提携が始まった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "softbank",
+      "relationship": "customer",
+      "description": "販売代理店契約を結ぶ相手であり、主要な顧客ごとの情報では最大の販売先として印字されています（2025年８月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報等、財務諸表】"
+    },
+    {
+      "companyId": "ricoh",
+      "relationship": "customer",
+      "description": "販売実績において主要な販売先の一つとして印字されています（2025年８月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "rakuten-group",
+      "relationship": "major-shareholder",
+      "description": "2024年10月に資本業務提携契約を結び、第三者割当増資の引受先となりました。2025年８月31日現在、発行済株式（自己株式を除く）の10.12％を保有する大株主であり、楽天のAI技術・ソリューションとBuddycomの連携が進められています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "jvckenwood",
+      "relationship": "major-shareholder",
+      "description": "2024年10月に資本業務提携契約を結び、第三者割当増資の引受先となりました。IP無線機に関する共同開発を行っています。2025年８月31日現在、発行済株式（自己株式を除く）の8.09％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -134,13 +375,51 @@
       "publisher": "株式会社サイエンスアーツ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X6RV.pdf",
       "publishedAt": "2025-11-27",
-      "accessedAt": "2026-09-29"
+      "docId": "S100X6RV",
+      "asOf": "2025-08-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2021年８月11日付で普通株式１株につき100株の割合で株式分割を、2022年12月１日付で普通株式１株につき２株の割合で株式分割を行っており、主要な経営指標等の推移の注記に、当該株式分割が第18期の期首に行われたと仮定して株式関連の指標を算定している旨が記載されています。分割に伴う指標の取扱いには人の確認が必要です。",
+      "businessStructure: 2021年８月11日付で普通株式１株につき100株の割合で株式分割を、2022年12月１日付で普通株式１株につき２株の割合で株式分割を行っており、主要な経営指標等の推移の注記に、当該株式分割が第18期の期首に行われたと仮定して株式関連の指標を算定している旨が記載されています。分割に伴う指標の取扱いには人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「フロントラインワーカーに未来のDXを提供し、明るく笑顔で働ける社会の力となる」というミッションのもと、Buddycomの開発を内製化して機能の拡充を続け、セールスパートナーを活用した販売網で全国の顧客に届けるとしています。人材の確保と育成、技術力・製品力の向上、営業力の強化、内部管理体制の強化を課題に挙げています。",
+        "asOf": "2025-11-27",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "音声通話を主体に常時接続された状態で使える設計と、音声テキスト化や同時翻訳、映像配信などの機能の豊富さで差別化し、2025年８月期の解約率は0.42％、既存顧客の売上継続率（NRR）は118.0％と、契約が積み上がるサブスクリプション型の収益構造を持っています。",
+        "basis": "事業の内容における音声主体・常時接続の設計と機能の印字、2025年８月期の解約率0.42％とNRR118.0％の印字に基づく。",
+        "asOf": "2025-11-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "鉄道会社や航空会社、総合スーパー、介護施設、工場、商業施設、自治体など幅広い業種で使われるホリゾンタルなサービスとして展開し、契約社数は前期末の1,077社から2025年８月期末には1,562社へ増えています。",
+        "basis": "経営方針における利用業種の印字と、MD&Aにおける契約社数（2024年８月期末1,077社、2025年８月期末1,562社）の印字に基づく。",
+        "asOf": "2025-11-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年8月期",
     "asOf": "2025-08-31",

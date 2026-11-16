@@ -4,15 +4,115 @@
   "name": "セーフィー",
   "officialName": "セーフィー株式会社",
   "nameEn": "Safie Inc.",
-  "description": null,
+  "shortNameEn": "Safie",
+  "description": "カメラの映像をクラウドに録画し、スマートフォンやパソコンでいつでも確認できる映像プラットフォーム「Safie」を提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "video-platform",
+      "name": "映像プラットフォーム事業",
+      "description": "クラウド録画型映像プラットフォーム「Safie」を開発・提供する事業です。自社開発のソフトウエアを組み込んだカメラの映像をクラウドに録画し、スマートフォンやパソコンで確認できるようにしています。2025年12月期の売上高は19,029百万円でした。",
+      "products": [
+        "屋内向けクラウドカメラ「Safie PRO」",
+        "屋外向けクラウドカメラ「Safie GO」",
+        "ウェアラブルクラウドカメラ「Safie Pocket」",
+        "映像分析・連携サービス（来訪者分析、入退管理など）",
+        "AI開発・運用プラットフォーム「Safie AI Studio」"
+      ],
+      "customers": [
+        "小売・飲食・サービス業の事業者",
+        "建設・物流・製造業の事業者",
+        "インフラ・公共・医療などの事業者",
+        "個人の顧客"
+      ],
+      "children": [
+        {
+          "id": "recurring-revenue",
+          "name": "リカーリング収益",
+          "description": "クラウド録画サービス、一部のカメラのレンタルサービス、LTE通信費、画像解析サービスなど、継続的に得られる収益です。2025年12月期は13,114百万円でした。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "spot-revenue",
+          "name": "スポット収益",
+          "description": "カメラ等の機器販売や設置作業費など、一時的に得られる収益です。2025年12月期は5,914百万円でした。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社開発のソフトウエアを組み込んだクラウドカメラと、録画・映像分析などのサービスを、直販と販売パートナーを通じて法人・個人にサブスクリプション型で提供しています。",
+    "products": [
+      "屋内向けクラウドカメラ「Safie PRO」",
+      "屋外向けクラウドカメラ「Safie GO」",
+      "ウェアラブルクラウドカメラ「Safie Pocket」",
+      "顔認証を使う来訪者分析「Safie Visitors」や入退管理「Safie Entrance」などの映像分析・連携サービス",
+      "AI開発・運用プラットフォーム「Safie AI Studio」"
+    ],
+    "customers": [
+      "小売・飲食・サービス業の事業者",
+      "建設・物流・製造業の事業者",
+      "インフラ・公共・医療などの事業者",
+      "販売パートナー経由の法人・個人の顧客"
+    ],
+    "revenueSources": [
+      "クラウド録画サービスや画像解析サービスなどの利用料（リカーリング収益）",
+      "カメラなどの機器販売代金や設置作業費（スポット収益）"
+    ],
+    "flow": [
+      {
+        "title": "映像プラットフォームを運営",
+        "description": "セーフィーは、クラウド録画型映像プラットフォーム「Safie」を開発・提供し、連結子会社7社とともに事業を行っています。",
+        "kind": "company"
+      },
+      {
+        "title": "クラウドカメラと映像サービス",
+        "description": "自社開発のソフトウエアを組み込んだクラウドカメラと、クラウドへの録画、映像分析や連携サービスを提供しています。",
+        "kind": "offering"
+      },
+      {
+        "title": "幅広い業界の現場へ",
+        "description": "小売・飲食・建設・物流・製造・インフラ・公共・医療など幅広い業界の法人と個人に、直販と販売パートナーを通じて届けています。",
+        "kind": "customer"
+      },
+      {
+        "title": "売上高",
+        "description": "2025年12月期の売上高は19,029百万円でした。",
+        "kind": "revenue"
+      },
+      {
+        "title": "当期純利益",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は437百万円でした。",
+        "kind": "profit"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年12月期",
@@ -27,12 +127,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11241467000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 337,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年3月31日）等を第9期の期首から適用しており、第9期以降の主要な経営指標等は、当該会計基準等を適用した後の指標となっている。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -47,7 +148,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10016941000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 428,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +168,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8569167000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 470,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9224521000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 548,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -95,8 +196,155 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2014,
+      "title": "セーフィーを設立",
+      "description": "創業者3名が在籍していたモーションポートレート株式会社から関連事業と資産の譲渡を受け、東京都品川区西五反田にセーフィー株式会社を設立しました。",
+      "significance": "現在の映像プラットフォーム事業の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "ソニーネットワークコミュニケーションズへの第三者割当増資を実施",
+      "description": "ソニーネットワークコミュニケーションズ株式会社への第三者割当増資を実施しました。",
+      "significance": "設立初期の資本基盤の形成です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "家庭向けサービス「Safie HOME」を開始",
+      "description": "個人向けのクラウド録画型防犯カメラサービス「Safie HOME」をリリースしました。",
+      "significance": "クラウド録画サービスの開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "法人向け「Safie PRO」を開始",
+      "description": "法人向けのクラウド録画型防犯カメラ「Safie PRO」をリリースしました。",
+      "significance": "現在の主力サービスの始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、マザーズ市場からグロース市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "セーフィーベンチャーズを設立",
+      "description": "スタートアップ企業を中心に先進的なIT・サービス企業への投資を行うセーフィーベンチャーズ株式会社を設立し、連結子会社としました。",
+      "significance": "投資を行う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "「Safie One」を発売し、MUSVIを持分法適用関連会社化",
+      "description": "エッジAI搭載カメラ「Safie One」をリリースし、MUSVI株式会社の株式を取得して持分法適用関連会社としました。",
+      "significance": "エッジAI製品の投入と提携先の関連会社化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "KixとSAFIE VIETNAMを設立",
+      "description": "システム開発やDXコンサルティングを行うKix株式会社と、ベトナムで販売活動を行うSAFIE VIETNAM CO., LTD.を設立し、連結子会社としました。",
+      "significance": "開発体制と海外販売の基盤づくりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "セーフィーセキュリティを設立",
+      "description": "遠隔見守りサービスの開発・運営を行うセーフィーセキュリティ株式会社を2025年1月6日に設立し、連結子会社としました。",
+      "significance": "AI警備・セキュリティ領域の専門子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "セーフィーフィールドワークスとSAFIE (THAILAND)を設立",
+      "description": "保守・施工の専門子会社セーフィーフィールドワークス株式会社を2025年11月4日に、タイで販売活動を行うSAFIE (THAILAND) CO., LTD.を2025年12月26日に設立し、連結子会社としました。",
+      "significance": "施工・保守体制と東南アジア展開の基盤づくりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "canon-marketing-japan",
+      "relationship": "business-partner",
+      "description": "キヤノンマーケティングジャパン株式会社とは資本・業務提携等の関係にあり、法人向けクラウドカメラ「Safie PRO」を同社のブランドでOEM提供しています。同社は2025年12月31日現在、発行済株式（自己株式を除く。）の4.67％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "secom",
+      "relationship": "business-partner",
+      "description": "セコム株式会社とは資本・業務提携等の関係にあり、法人向けクラウドカメラ「Safie PRO」を同社のブランドでOEM提供しています（セコム画像クラウドサービス）。第三者割当増資の引受けによる資本関係もあります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "nec",
+      "relationship": "technology",
+      "description": "日本電気株式会社が提供する「NECモバイルPOS」とのAPI連携サービスを行っています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "orix",
+      "relationship": "major-shareholder",
+      "description": "オリックス株式会社は2017年の第三者割当増資を引き受けた大株主で、2025年12月31日現在、発行済株式（自己株式を除く。）の4.67％（2,600千株）を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "the-kansai-electric-power",
+      "relationship": "major-shareholder",
+      "description": "関西電力株式会社は2017年の第三者割当増資を引き受けた大株主で、2025年12月31日現在、発行済株式（自己株式を除く。）の3.45％（1,920千株）を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -104,13 +352,55 @@
       "publisher": "セーフィー株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XUXF.pdf",
       "publishedAt": "2026-03-27",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XUXF",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "ビジョン「映像から未来をつくる」のもと、映像・クラウド・AI技術とAPIを通じたオープンプラットフォームの構築で現場DXを支援すること、中・大規模の施設でのシェア拡大に向けて既設カメラのクラウド移行を進めること、AI開発・運用プラットフォーム「Safie AI Studio」で業界特化型のAIソリューションを量産し現場AXを推進すること、専門子会社の設立で成長基盤を強化することを掲げています。",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2025年12月期は、エンタープライズ顧客への課金カメラの導入が大きく増え、スポット収益とリカーリング収益の双方が伸びました。2026年2月にはAI開発・運用プラットフォーム「Safie AI Studio」の提供を開始し、既設カメラのクラウド移行に対応する「Safie Trail Station」を投入しています。",
+        "basis": "MD&Aの経営成績の概況における売上高の増減説明と新規サービスの投入に関する記述、セグメント情報（単一セグメントの印字）に基づく。",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "自社開発のソフトウエアをカメラに組み込み、デバイスの制御やデバイス上での画像処理までをクラウドと連携させる仕組みを持ちます。2025年12月末時点で課金カメラ台数は35.4万台に達し、2024年のクラウドモニタリング・録画サービス市場では稼働台数ベースで約55.3％のシェアを得ています。",
+        "basis": "事業の内容における製品・技術と市場シェアの記述、経営方針、経営環境及び対処すべき課題等における強みの記述、MD&Aの経営成績の概況における課金カメラ台数の記述に基づく。",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "映像プラットフォーム事業の単一セグメントで、売上高の10％以上を占める主要な顧客はありません。連結子会社7社（ベトナムとタイの販売子会社を含む）と持分法適用関連会社1社を持ち、従業員数は548人です。",
+        "basis": "セグメント情報と関連情報（主要な顧客ごとの情報は該当事項なし、地域ごとの情報は本邦の割合が高いため省略している旨の印字）、関係会社の状況、経営指標等の従業員数に基づく。",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

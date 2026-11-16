@@ -4,15 +4,156 @@
   "name": "山喜",
   "officialName": "山喜株式会社",
   "nameEn": "YAMAKI CO.,LTD.",
-  "description": null,
+  "shortNameEn": "YAMAKI",
+  "description": "紳士用ドレスシャツなどのアパレル製品を自社グループで製造し、百貨店や量販店、自社店舗などで販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "domestic-sales",
+      "name": "国内販売事業",
+      "description": "日本国内でアパレル商品の卸売・小売を行う事業で、付随する物流事業と不動産賃貸事業を含みます。当社と山喜アソシエ株式会社が販売を担い、山喜ロジテック株式会社が物流を担っています。2026年3月期の外部顧客への売上高は8,380百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "百貨店",
+        "量販店",
+        "メンズ専門店などの小売店",
+        "自社店舗・オンラインショップを利用する消費者"
+      ],
+      "children": [
+        {
+          "id": "apparel-sales",
+          "name": "販売事業",
+          "description": "当社と山喜アソシエ株式会社が、ドレスシャツやオーダーシャツなどのアパレル商品の卸売・小売を行っています。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "百貨店",
+            "量販店",
+            "メンズ専門店などの小売店",
+            "自社店舗・オンラインショップを利用する消費者"
+          ]
+        },
+        {
+          "id": "logistics",
+          "name": "物流事業",
+          "description": "山喜ロジテック株式会社が、アパレル商品の保管・配送などの物流業務を行っています。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "当社グループの販売部門"
+          ]
+        },
+        {
+          "id": "real-estate-leasing",
+          "name": "不動産賃貸事業",
+          "description": "当社、山喜ロジテック株式会社、山喜ソーイング株式会社が所有する不動産を賃貸しています。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "不動産の賃借人"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "manufacturing",
+      "name": "製造事業",
+      "description": "国内と海外でアパレル製品を製造する事業です。山喜ソーイング株式会社と株式会社フェールムラカミが国内の工場で、ラオヤマキ カンパニー リミテッドがラオスの工場でシャツなどを製造しています。2026年3月期の外部顧客への売上高は1,242百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "当社グループの販売会社",
+        "外部のアパレル事業者"
+      ]
+    },
+    {
+      "id": "overseas-sales",
+      "name": "海外販売事業",
+      "description": "海外でアパレル商品を販売する事業です。上海山喜商貿有限公司が中国で、タイヤマキ カンパニー リミテッドがタイで販売を行っています。2026年3月期の外部顧客への売上高は282百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "中国・タイなどの海外の顧客"
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社とグループ会社が国内外の工場でシャツなどを製造し、百貨店・量販店向けの卸売と直営店・オンラインショップでの直販で販売代金を得る事業モデルです。",
+    "products": [
+      "ドレスシャツ",
+      "オーダーシャツ",
+      "カジュアルシャツ",
+      "レディースシャツ",
+      "制服・スクールシャツなどのユニフォーム"
+    ],
+    "customers": [
+      "百貨店",
+      "量販店",
+      "メンズ専門店",
+      "カジュアル専門店",
+      "レディース専門店",
+      "オンラインショップを利用する消費者"
+    ],
+    "revenueSources": [
+      "アパレル商品の販売代金",
+      "不動産の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "大阪市に本社を置くシャツメーカー",
+        "description": "山喜は大阪市中央区に本社を置くアパレルメーカーで、当社と子会社7社でグループを構成しています。2026年3月31日現在の連結従業員数は594人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "自社ブランドのシャツを製販一体で届ける",
+        "description": "「CHOYA」をはじめとする自社ブランドのドレスシャツやオーダーシャツなどを、企画から製造、販売までグループで一貫して手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "百貨店・量販店と直販チャネルで消費者へ",
+        "description": "百貨店や量販店、専門店への卸売に加え、直営のコンセ店舗や自社オンラインショップを通じて、消費者へ直接販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "商品の販売代金が収益の柱",
+        "description": "収益はアパレル商品の販売代金が中心です。2026年3月期の連結売上高は99億6百万円で、前期から8.1％減少しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失10億17百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純損失は10億17百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +168,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3596664000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 761,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3890810000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 768,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +208,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4211033000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 749,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +228,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4257487000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 678,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +248,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3246330000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 594,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +256,168 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1946,
+      "title": "大阪市でシャツの製造販売を開始",
+      "description": "創業者の宮本武雄が大阪市天王寺区船橋町においてシャツの製造販売を開始しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "株式会社山喜商店を設立",
+      "description": "大阪府南河内郡美陵町に、法人組織として株式会社山喜商店を設立しました。",
+      "significance": "法人としての起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "商号を山喜株式会社に変更",
+      "description": "株式会社山喜本社から、山喜株式会社へ商号を変更しました。",
+      "significance": "現在の社名の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "タイヤマキ カンパニー リミテッドを設立",
+      "description": "タイ王国のナコーンパトム県にタイヤマキ カンパニー リミテッドを設立しました。現在も連結子会社です。",
+      "significance": "海外拠点の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "上海山喜服装有限公司を設立",
+      "description": "中華人民共和国の上海市に上海山喜服装有限公司を設立しました。",
+      "significance": "中国での生産・販売拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "山喜ロジテック株式会社を設立",
+      "description": "大阪市中央区に山喜ロジテック株式会社を設立しました。現在も連結子会社で、国内販売事業の物流を担っています。",
+      "significance": "グループの物流体制の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "ラオヤマキ カンパニー リミテッドを設立",
+      "description": "ラオス人民民主共和国のビエンチャン市にラオヤマキ カンパニー リミテッドを設立しました。現在も連結子会社で、製造事業を担っています。",
+      "significance": "海外生産拠点の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "上海久満多服装商貿有限公司を設立",
+      "description": "中華人民共和国の上海市に上海久満多服装商貿有限公司を設立しました。2024年に上海山喜商貿有限公司へ社名を変更しています。",
+      "significance": "海外販売事業の子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "上海山喜服装有限公司の株式を全部譲渡",
+      "description": "当社の100％子会社であった上海山喜服装有限公司の株式を上海源禾銘企業管理有限公司へ全部譲渡し、同社の子会社であった塩城山喜服装有限公司も当社グループから離脱しました。",
+      "significance": "中国拠点の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "上海久満多服装商貿有限公司を上海山喜商貿有限公司に社名変更",
+      "description": "上海久満多服装商貿有限公司を、上海山喜商貿有限公司に社名変更しました。",
+      "significance": "海外販売事業の子会社の改称です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社フェールムラカミの株式を取得",
+      "description": "株式会社フェールムラカミの株式を取得しました。現在は連結子会社として、新潟県村上市の工場で製造事業を担っています。",
+      "significance": "国内の生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "山喜アソシエ株式会社を設立",
+      "description": "大阪市中央区に山喜アソシエ株式会社を設立しました。国内販売事業で当社製品の販売を担う連結子会社です。",
+      "significance": "国内販売体制の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "山喜ソーイング株式会社の信州工場を閉鎖",
+      "description": "生産体制の集約のため、山喜ソーイング株式会社の信州工場を閉鎖しました。",
+      "significance": "国内生産拠点の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "marubeni",
+      "relationship": "supplier",
+      "description": "当社の仕入先として、安定的な関係の維持、強化を図るため同社株式を保有していると印字されています。丸紅は2026年3月31日現在、当社の発行済株式（自己株式を除く。）の総数に対する所有株式数の割合が2.72％の大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nisshinbo-holdings",
+      "relationship": "supplier",
+      "description": "当社の仕入先として、安定的な関係の維持、強化を図るため同社株式を保有していると印字されています。日清紡ホールディングスは2026年3月31日現在、当社の発行済株式（自己株式を除く。）の総数に対する所有株式数の割合が4.96％の大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +425,37 @@
       "publisher": "山喜株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI4G.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YI4G",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "社是『最大の企業たらんより最良の企業たれ』を基本理念とし、2026年度を初年度とする「新・中期経営計画」では『抜本的な構造改革による経営体質の転換』と『企画・製造・販売を一体化した製販一体型ビジネスモデルの構築』を二つの基本方針に掲げ、『オンリー1シャツメーカー』に挑戦するとしています。事業展開領域をビジネスウェアに絞り、生産拠点の集約や在庫水準の適正化を進めるとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "百貨店チャネルでは、カスタムオーダーの提供体制が差別化要因となり、オーダーシャツのシェアは82％に達しています。既製ドレスシャツのシェアも74％と高く、百貨店のシャツ売場で強い地位を持っています。国内と海外に製造子会社の工場を持ち、企画から製造、販売までをグループで一貫して手がけられることも強みです。",
+        "basis": "MD&Aの百貨店チャネルに関する記述（2026年3月期の既製ドレスシャツのシェア74％、オーダーシャツのシェア82％）と、事業の内容における製造・販売のグループ体制の記述による。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -1,18 +1,145 @@
 {
   "id": "shinwa-wise-holdings",
   "code": "2437",
-  "name": "ShinwaWiseHoldings",
+  "name": "Shinwa Wise Holdings",
   "officialName": "Shinwa Wise Holdings株式会社",
   "nameEn": "SHINWA WISE HOLDINGS CO.,LTD.",
-  "description": null,
+  "shortNameEn": "Shinwa Wise Holdings Co., Ltd.",
+  "description": "美術品のオークションと相対取引を中心に、太陽光発電による売電も行う持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "entertainment",
+      "primary": true
+    },
+    {
+      "industryId": "energy",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "art-related",
+      "name": "アート関連事業",
+      "description": "オークション事業とプライベートセール・その他事業で構成される報告セグメントです。Shinwa Auction株式会社がオークションの企画・運営を行い、Shinwa Prive株式会社が美術品の相対取引、Shinwa ARTEX株式会社が資産防衛ダイヤモンドの販売などを担い、アイアート株式会社もオークションを行っています。2026年5月期の外部顧客への売上高は1,554百万円でした。",
+      "products": [
+        "近代美術オークション",
+        "近代陶芸オークション",
+        "近代美術PartⅡオークション",
+        "コンテンポラリーアート・西洋美術・ワイン・リカー・MANGA・ブランド雑貨・時計・宝飾品等のオークション",
+        "資産防衛ダイヤモンドの販売",
+        "美術品の相対取引（プライベートセール）",
+        "NFTアートの販売"
+      ],
+      "customers": [
+        "美術品の出品者",
+        "オークションの参加者・落札者",
+        "美術品を購入する富裕層などの個人・法人"
+      ],
+      "children": [
+        {
+          "id": "auction",
+          "name": "オークション事業",
+          "description": "近代美術オークション、近代陶芸オークション、近代美術PartⅡオークションを定期的に開催し、コンテンポラリーアート、西洋美術、ワイン・リカー、MANGA、ブランド雑貨、時計、宝飾品等のオークションも随時開催しています。出品者から作品を預かり、競売で落札者に販売します。2026年5月期の売上高は976百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "private-sale",
+          "name": "プライベートセール・その他事業",
+          "description": "資産防衛ダイヤモンドの販売や、オークション以外での相対取引である絵画の売買を中心に行っています。低価格作品の美術業者間交換会での販売委託取引や、NFTアートの販売・マネジメントも含みます。2026年5月期の売上高は577百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他事業",
+      "description": "自社所有の50kW級低圧型太陽光発電施設や高圧型太陽光発電施設による売電事業と、連結子会社（孫会社）のシンワメディコ株式会社による医療機関向け支援事業を行っています。2026年5月期の外部顧客への売上高は23百万円でした。",
+      "products": [
+        "太陽光発電による売電",
+        "医療機関向け支援サービス"
+      ],
+      "customers": [
+        "電力事業者",
+        "医療機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "子会社を通じて近代美術などのオークションを定期開催し、出品者からの委託作品の競売や在庫作品の販売で収益を得るほか、資産防衛ダイヤモンドなどの相対取引による販売を行っています。",
+    "products": [
+      "近代美術オークション",
+      "近代陶芸オークション",
+      "近代美術PartⅡオークション",
+      "コンテンポラリーアート・西洋美術・ワイン・リカー・MANGA・ブランド雑貨・時計・宝飾品等のオークション",
+      "資産防衛ダイヤモンドの販売",
+      "美術品の相対取引（プライベートセール）",
+      "NFTアートの販売",
+      "太陽光発電による売電"
+    ],
+    "customers": [
+      "美術品の出品者",
+      "オークションの参加者・落札者",
+      "美術品を購入する富裕層などの個人・法人"
+    ],
+    "revenueSources": [
+      "オークションの落札価額に対する手数料収入",
+      "在庫商品である美術品等の販売による商品売上高",
+      "カタログ収入・年会費",
+      "資産防衛ダイヤモンド等の相対取引による販売収入",
+      "太陽光発電による売電収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "持株会社と連結子会社6社でグループを形成",
+        "description": "Shinwa Wise Holdings株式会社を持株会社として、オークション事業を行うShinwa Auction株式会社とアイアート株式会社、美術品の相対取引を行うShinwa Prive株式会社、資産防衛ダイヤモンドの販売などを行うShinwa ARTEX株式会社、デジタルアートを扱うShinwa Digital Arts株式会社、医療機関向け支援を行うシンワメディコ株式会社の連結子会社6社（孫会社1社を含む）でグループを形成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "美術品オークションとプライベートセールを提供",
+        "description": "近代美術、近代陶芸などのオークションを定期的に開催して出品者から預かった作品を競売にかけ、資産防衛ダイヤモンドの販売や絵画の相対取引（プライベートセール）も行っています。その他事業として、太陽光発電施設による売電も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "出品者と富裕層などの購入者が顧客",
+        "description": "作品を手放したい出品者から出品を受け付け、富裕層を中心とするオークションの参加者や、美術品の購入を希望する個人・法人に作品を販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年5月期の売上高は1,577百万円で、前期から23.7％減少しました。アートオークション市場で良品の出し渋り傾向が続いたことや、プライベートセールの取扱いが減少したことが要因として挙げられています。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失",
+        "description": "2026年5月期の親会社株主に帰属する当期純損失は237百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年5月期",
@@ -27,7 +154,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2768024000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 46,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +174,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3230845000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 42,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2405153000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 47,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2347834000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 40,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +234,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2110557000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 36,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +242,168 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1987,
+      "title": "美術品の業者交換会『親和会』が発足",
+      "description": "美術品の業者交換会である親和会が発足しました。",
+      "significance": "現在の事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "株式会社親和会を設立",
+      "description": "東京都中央区銀座に株式会社親和会を設立しました。",
+      "significance": "法人としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "第1回シンワアートオークションを開催",
+      "description": "第1回シンワアートオークション近代日本絵画オークション（現・近代美術オークション）を開催しました。同年に古物商の許可も取得しています。",
+      "significance": "現在の主力であるオークション事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "シンワアートオークション株式会社に商号変更",
+      "description": "商号をシンワアートオークション株式会社に変更しました。",
+      "significance": "オークション事業を前面に出した社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "交換会事業から撤退",
+      "description": "発足以来の事業だった美術品の業者交換会事業から撤退しました。",
+      "significance": "オークション事業への集中を示す転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "大阪証券取引所ヘラクレスに上場",
+      "description": "大阪証券取引所ヘラクレス（現・東京証券取引所スタンダード市場）に株式を上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "医療子会社を設立しエーペックの株式を取得",
+      "description": "シンワメディカル株式会社（現・シンワメディコ株式会社）を設立し、エーペック株式会社（現・Shinwa ARTEX株式会社）の株式を取得しました。",
+      "significance": "事業の多角化と現在の子会社体制の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "ミャンマーに子会社を設立",
+      "description": "SHINWA MYANMAR COMPANY LIMITEDを設立しました。",
+      "significance": "海外展開の動きです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "持株会社へ移行しShinwa Wise Holdings株式会社に商号変更",
+      "description": "会社分割（吸収分割）により持株会社へ移行し、商号をShinwa Wise Holdings株式会社に変更しました。同年にはShinwa Auction株式会社とShinwa Prive株式会社を設立し、事業を子会社で運営する体制に移行しています。",
+      "significance": "現在の持株会社体制の成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ミャンマーのマイクロファイナンス会社の全株式を売却",
+      "description": "SHINWA MICROFINANCE COMPANY LIMITEDの全保有株式を売却しました。",
+      "significance": "海外金融事業からの撤退です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式交換によりアイアート株式会社を完全子会社化",
+      "description": "株式交換によりアイアート株式会社の全株式を取得しました。",
+      "significance": "オークション事業の規模拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "Edoverse株式会社（現・Shinwa Digital Arts株式会社）を設立",
+      "description": "Edoverse株式会社（現・Shinwa Digital Arts株式会社）を設立し、デジタルアートやNFTアートのマネジメントに進出しました。",
+      "significance": "デジタル分野への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "本社を東京都千代田区丸の内に移転",
+      "description": "本社を東京都千代田区丸の内二丁目3番2号に移転しました。",
+      "significance": "現在の本社所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "マレーシア子会社の全株式を譲渡",
+      "description": "SHINWA APEC MALAYSIA SDN. BHD.の全株式を譲渡しました。",
+      "significance": "海外子会社の整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "MAGO CREATION株式会社と業務提携の基本合意を締結",
+      "description": "MAGO CREATION株式会社と業務提携に関する基本合意書を締結しました。",
+      "significance": "アート分野での提携の動きです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "Catalyst Art Investments株式会社がその他の関係会社に",
+      "description": "Catalyst Art Investments株式会社が当社のその他の関係会社となりました。",
+      "significance": "資本関係の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +412,58 @@
       "publisher": "Shinwa Wise Holdings株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YZC3.pdf",
       "publishedAt": "2026-08-28",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YZC3",
+      "asOf": "2026-05-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 連結子会社（孫会社）のシンワメディコ株式会社は、2026年6月17日開催の同社株主総会において解散を決議し、本書提出日現在、清算手続中である旨が印字されています（決算日後の事象）。本登録は2026年5月31日現在のグループ構造に基づいています。"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年7月15日に公表した中期経営Vision FY2027－FY2029で、既存事業（オークション及びプライベートセール）の立て直しとコレクティブ分野への横展開、美術品等を担保とする動産担保ローン事業（アート×金融）の立ち上げ、グローバル展開並びにAI査定及び真贋証明等のテクノロジーの実装の3点を柱として掲げ、2027年5月期を構造改革の完了年度、2028年5月期以降を成長フェーズと位置付けています。また、ガバナンス・内部統制等の管理体制の強化、アート関連事業への成長投資、丸の内エリア再開発に伴う事務所の移転に取り組むとしています。",
+        "asOf": "2026-08-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      },
+      "analysis": {
+        "text": "当連結会計年度は、プライベートセールの売上高が前期から半減する一方、オークション事業の取扱高は前期を上回っており、グループの収益の中心がオークションにより移っています。過年度に生じた会計処理に係る事案を受けて、取引審査、会計判定及び開示に係るプロセスの整備を進め、信頼の回復を経営の起点と位置付けていることも読み取れます。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（経営成績の概要と認識及び分析・検討内容）の記述に基づく。",
+        "asOf": "2026-08-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "近代美術オークションでは、出品点数と落札点数が前期を下回る中でも、落札価額の合計がエスティメイト（落札予想価格）の下限合計を大きく上回る水準で推移しており、高額な美術品の出品を受けて価格を形成してきた実績が示されています。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析のオークション事業の記述に基づく。",
+        "asOf": "2026-08-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "disclosed": {
+        "text": "アートオークション市場については、価格の上昇をにらんだ良品の出し渋り傾向が引き続きみられ、以前に比べ低調に推移しているとしています。一方で、インフレによる現金資産の実質的な目減りが意識されやすい状況のもと、実物資産への需要は引き続き一定レベルを保っていると認識しています。",
+        "asOf": "2026-08-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年5月期",
     "asOf": "2026-05-31",

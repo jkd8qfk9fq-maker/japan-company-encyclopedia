@@ -4,15 +4,147 @@
   "name": "オキサイド",
   "officialName": "株式会社オキサイド",
   "nameEn": "OXIDE Corporation",
-  "description": null,
+  "shortNameEn": "OXIDE Corporation",
+  "description": "単結晶やレーザ光源などの光学製品を開発・製造する会社で、半導体ウエハ検査装置向けとPET検査装置向けが収益の柱です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "optics",
+      "name": "光学事業",
+      "description": "単結晶、光部品（光デバイス）、レーザ光源、光計測装置などの光学関連製品を開発・製造・販売する単一セグメントの事業です。山梨県北杜市の本社・工場群と神奈川県横浜市の横浜事業所を拠点とし、連結子会社の株式会社オキサイドパワークリスタルとともに事業を行っています。2026年2月期の売上高は10,040百万円です。",
+      "products": [
+        "単結晶",
+        "光部品（光デバイス）",
+        "レーザ光源",
+        "光計測装置"
+      ],
+      "customers": [
+        "光を使った計測分野の装置メーカー",
+        "光学製品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "semiconductor",
+          "name": "半導体事業",
+          "description": "半導体ウエハの検査装置メーカー向けに、単結晶とレーザ光源を開発・製造・販売する事業です。波長変換による短波長化（266nm）と高出力化に特徴があり、納入した単結晶や光学ユニットの交換といったメンテナンス需要が当事業売上の20％程度を占めています。2026年2月期の売上高は5,002百万円です。",
+          "products": [
+            "ウエハ検査装置向け単結晶",
+            "ウエハ検査装置向けレーザ光源"
+          ],
+          "customers": [
+            "半導体ウエハ検査装置メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "new-fields",
+          "name": "新領域事業",
+          "description": "国内外の光計測機器・光学製品メーカーや大学等の研究機関向けに、単結晶、光部品、レーザ光源、光学測定装置を開発・製造・販売する事業です。単結晶技術や光学技術を使った新用途・新製品の育成も担っており、データセンター向けのファラデー回転子などが商品化されています。2026年2月期の売上高は3,040百万円です。",
+          "products": [
+            "単結晶・波長変換部品",
+            "レーザ光源（真空紫外レーザ・深紫外CWレーザ・フェムト秒レーザ）",
+            "光学的ノイズ（スペックルノイズ）測定器",
+            "量子もつれ光子対発生モジュール"
+          ],
+          "customers": [
+            "光計測機器・光学製品メーカー",
+            "大学等の研究機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "healthcare",
+          "name": "ヘルスケア事業",
+          "description": "がんの診断に使うPET検査装置に搭載されるシンチレータ単結晶を開発・製造・販売する事業です。単結晶を加工したPET用素子を、国内外のPET検査装置メーカーに販売しています。2026年2月期の売上高は1,997百万円です。",
+          "products": [
+            "シンチレータ単結晶（PET用素子）"
+          ],
+          "customers": [
+            "PET検査装置メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "単結晶の育成技術を核に、光部品やレーザ光源、光計測装置までを装置メーカーや研究機関に販売して収益を得る事業モデルです。",
+    "products": [
+      "単結晶（シンチレータ単結晶・波長変換用単結晶など）",
+      "光部品（光デバイス）",
+      "レーザ光源",
+      "光計測装置"
+    ],
+    "customers": [
+      "半導体ウエハ検査装置メーカー",
+      "PET検査装置メーカー",
+      "光計測機器・光学製品メーカー",
+      "大学等の研究機関"
+    ],
+    "revenueSources": [
+      "単結晶・光部品の販売による収益",
+      "レーザ光源・光計測装置の販売による収益",
+      "単結晶・光学ユニットのメンテナンスによる収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "山梨県北杜市に本社を置く光学製品メーカー",
+        "description": "オキサイドは山梨県北杜市に本社を置く光学製品メーカーで、東京証券取引所グロース市場に上場しています。2026年2月28日現在の従業員数は312人で、連結子会社は株式会社オキサイドパワークリスタルの1社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "単結晶からレーザ光源までを提供",
+        "description": "単結晶の開発・製造から、その技術を生かした光部品、レーザ光源、光計測装置まで、光学分野の川上から川下の製品を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "装置メーカーと研究機関が顧客",
+        "description": "顧客は半導体ウエハ検査装置やPET検査装置のメーカー、光計測機器メーカー、大学等の研究機関です。主要な販売相手先はSkyverse Technology Co., Ltd.で、2026年2月期の販売実績の31.0％を占めています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年2月期の売上高は10,040百万円で、前期から19.6％増えました。半導体事業が5,002百万円、新領域事業が3,040百万円、ヘルスケア事業が1,997百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純損失",
+        "description": "2026年2月期は、親会社株主に帰属する当期純損失538百万円でした。前期の当期純損失2,703百万円からは損失が縮小しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2024年2月期",
@@ -27,12 +159,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7610426000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 395,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第24期より連結財務諸表を作成しているため、それ以前については記載しておりません。"
     },
     {
       "fiscalYear": "2025年2月期",
@@ -47,7 +180,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5412882000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 402,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +200,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4694989000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 312,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -75,8 +208,168 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2000,
+      "title": "株式会社オキサイドを設立",
+      "description": "創業者の研究成果を世の中に還元することを目的として、山梨県北巨摩郡小淵沢町（現・北杜市小淵沢町）に株式会社オキサイドを設立しました。",
+      "significance": "現在の会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "東芝セラミックス（現・クアーズテック）と資本・業務提携",
+      "description": "東芝セラミックス株式会社（現・クアーズテック株式会社）と資本・業務提携を結びました。",
+      "significance": "大手企業との資本・業務提携の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "本社と第1工場を北杜市武川町へ移転",
+      "description": "本社及び第1工場を山梨県北杜市武川町（現所在地）に移転しました。",
+      "significance": "現在の本社・生産拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "三菱電線工業から光デバイス事業を買収",
+      "description": "三菱電線工業株式会社より光デバイス事業を買い受けました。",
+      "significance": "事業買収で製品群を広げる展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "株式会社ニコンと資本・業務提携",
+      "description": "株式会社ニコンと資本・業務提携を結びました。",
+      "significance": "ニコンは2026年2月28日現在も大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "第2工場が竣工",
+      "description": "山梨県北杜市に第2工場が竣工しました。",
+      "significance": "単結晶の生産能力を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "マグネスケールからレーザ事業を買収",
+      "description": "株式会社マグネスケールよりレーザ事業を買い受けました。",
+      "significance": "現在の半導体事業のレーザ光源の量産につながりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "日立化成（現・レゾナック）からシンチレータ単結晶事業を買収",
+      "description": "日立化成株式会社（現・株式会社レゾナック）よりシンチレータ単結晶事業を買い受け、山梨県北杜市に第3工場を取得しました。",
+      "significance": "現在のヘルスケア事業の基盤になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "米国Lumeras LLCから真空紫外レーザ事業を買収",
+      "description": "米国Lumeras LLCから真空紫外レーザ事業を買い受けました。",
+      "significance": "海外からの事業買収でレーザ製品を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "グロース市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、同取引所グロース市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "Raicol Crystals Ltd.を子会社化",
+      "description": "Raicol Crystals Ltd.（イスラエル）を子会社化しました。",
+      "significance": "海外子会社を持つ体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社オキサイドパワークリスタルを設立",
+      "description": "株式会社オキサイドパワークリスタルを設立しました。2024年12月には、パワー半導体向け材料などの事業を同社へ吸収分割しました。",
+      "significance": "現在の唯一の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "Raicol Crystals Ltd.の全株式を譲渡",
+      "description": "Raicol Crystals Ltd.の全株式及び貸付債権をIsrael Special Material Platform LPへ譲渡し、同社を連結の範囲から外しました。",
+      "significance": "地政学リスクの低減と財務改善を目的とした譲渡です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nikon",
+      "relationship": "major-shareholder",
+      "description": "株式会社ニコンは当社の大株主で、2026年2月28日現在、発行済株式（自己株式を除く）の総数に対する所有株式数の割合は2.16％です。当社は2006年に同社と資本・業務提携を結びました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "lasertec",
+      "relationship": "major-shareholder",
+      "description": "レーザーテック株式会社は当社の大株主で、2026年2月28日現在、発行済株式（自己株式を除く）の総数に対する所有株式数の割合は2.16％です。当社は2008年に同社と資本提携を結びました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -84,13 +377,37 @@
       "publisher": "株式会社オキサイド",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y5QW.pdf",
       "publishedAt": "2026-05-22",
-      "accessedAt": "2026-09-29"
+      "docId": "S100Y5QW",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "光学分野の次世代製品開発や、レーザ加工、レーザセンシングといった新領域の新製品開発とともに、コア技術である単結晶の高品質化開発といった基盤技術の研究開発を推進するとしています。あわせて、パワー半導体向けSiCウエハの超高品質化と大口径化の開発や、家電パワーデバイス用途の低コストβ-Ga2O3基板の開発に注力するとしています。",
+        "asOf": "2026-05-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "FZ法、CZ法、VB法、TSSG法、DCCZ法、KY法、EFG法、フラックス法など、多くの単結晶育成技術と装置を保有しているとしています。また、2014年には経済産業省の「グローバルニッチトップ100選」に選定されています。",
+        "asOf": "2026-05-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",

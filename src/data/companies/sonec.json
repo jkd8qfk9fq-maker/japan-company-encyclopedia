@@ -4,15 +4,163 @@
   "name": "ソネック",
   "officialName": "株式会社ソネック",
   "nameEn": "SONEC CORPORATION",
-  "description": null,
+  "shortNameEn": "Sonec Corporation",
+  "description": "兵庫県高砂市に本店を置き、建築・土木の建設事業と、子会社による化学品輸送の運輸事業を営む会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "transportation",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "sonec",
+      "name": "株式会社ソネック",
+      "description": "兵庫県高砂市に本店を置く建設会社です。連結子会社2社と非連結子会社1社を持ち、2026年3月31日現在の連結従業員数は133人です。東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "construction",
+          "name": "建設事業",
+          "description": "当社と連結子会社の株式会社SUKOYAKAが営む主力事業です。2026年3月期の外部顧客への売上高は22,486百万円です。建築・土木の工事全般と、兼業の不動産事業を行っています。",
+          "customers": [
+            "民間の発注者",
+            "官公庁"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】",
+          "children": [
+            {
+              "id": "construction-building",
+              "name": "建築部門",
+              "description": "新築・増改築を問わず、会社・工場、病院・福祉施設など幅広い業種の民間工事を行っています。基盤的技術の習得と多能型技術社員の育成により品質を安定させ、小回りのきく展開を図っています。",
+              "customers": [
+                "会社・工場、病院・福祉施設、サービス業・製造業の事業者や個人"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "construction-civil",
+              "name": "土木部門",
+              "description": "河川、遮音壁、道路、下水道、土地造成などの工事を行っており、工事の大半が公共工事です。",
+              "customers": [
+                "中央官庁や外郭団体、兵庫県及び兵庫県下の市・町などの官公庁"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "construction-real-estate",
+              "name": "不動産部門",
+              "description": "兼業として不動産事業を営み、不動産の販売及び不動産の賃貸を行っています。",
+              "customers": [
+                "不動産の購入者・賃借人"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            }
+          ]
+        },
+        {
+          "id": "transport",
+          "name": "運輸事業",
+          "description": "連結子会社のケミカル運輸株式会社が営む一般貨物自動車運送事業及び貨物運送取扱事業です。2026年3月期の外部顧客への売上高は267百万円です。本社のほか山口県に山口営業所を構えています。",
+          "customers": [
+            "化学品メーカー等の荷主"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】",
+          "children": [
+            {
+              "id": "transport-chemical",
+              "name": "化学品等の運送",
+              "description": "二硫化炭素、液体硫黄、燃料添加剤、水処理薬剤をタンクローリー車で運搬し、粉体化成品、ドラム缶製品等を一般トラック車で輸送しています。",
+              "customers": [
+                "化学品メーカー等の荷主"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "建築・土木工事の請負を主力に、不動産事業を兼業し、連結子会社が化学品などの貨物運送を手がけています。",
+    "products": [
+      "建築工事（新築・増改築）",
+      "土木工事（河川・遮音壁・道路・下水道・土地造成など）",
+      "不動産の販売及び賃貸",
+      "貨物運送（タンクローリー車による化学品輸送、一般トラック車による輸送）"
+    ],
+    "customers": [
+      "会社・工場、病院・福祉施設など民間の発注者",
+      "中央官庁から兵庫県下の市・町までの官公庁",
+      "化学品メーカーなどの荷主"
+    ],
+    "revenueSources": [
+      "工事請負代金",
+      "不動産の販売代金及び賃貸収入",
+      "運送収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社ソネック",
+        "description": "兵庫県高砂市に本店を置く建設会社です。連結子会社2社と非連結子会社1社を持ち、2026年3月31日現在の連結従業員数は133人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "建設工事の請負と貨物運送",
+        "description": "建築・土木の工事全般を請け負い、兼業で不動産の販売・賃貸を行っています。連結子会社が化学品などの貨物運送も手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "民間の発注者と官公庁",
+        "description": "建築部門は幅広い業種の民間の顧客、土木部門は官公庁を主な顧客とし、運輸事業は化学品メーカーなどの荷主に輸送サービスを提供しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "工事請負代金など",
+        "description": "2026年3月期の売上高は22,753百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,366百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +175,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 8113475000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 124,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +195,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 8649385000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 127,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +215,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 8709619000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 128,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +235,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 9059125000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 130,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +255,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 10397901000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 133,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +263,165 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1944,
+      "title": "株式会社曽根組を設立",
+      "description": "沿岸荷役業を営む商運社、松大組、松野組が企業統合し、株式会社曽根組を設立しました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "建設請負業を開始",
+      "description": "建設請負業を開始しました。",
+      "significance": "現在の主力事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "海運事業を開始",
+      "description": "丸和運輸株式会社を吸収合併し、海運事業を開始しました。",
+      "significance": "運送分野への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "株式会社ソネックに商号変更",
+      "description": "商号を株式会社ソネックに変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "海運事業から撤退",
+      "description": "海運事業から撤退しました。",
+      "significance": "事業の絞り込みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "ケミカル運輸株式会社を設立",
+      "description": "子会社ケミカル運輸株式会社を設立し、運輸事業を同社に営業譲渡しました。",
+      "significance": "現在の運輸事業の体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "東京証券取引所市場第一部に指定替え",
+      "description": "東京証券取引所市場第一部に指定替えとなりました。",
+      "significance": "上場市場の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "株式会社SUKOYAKAを設立",
+      "description": "子会社株式会社SUKOYAKAを設立しました。",
+      "significance": "現在の建設事業を担う連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ベトナム現地法人を設立",
+      "description": "ベトナムに現地法人SONEC VIETNAM CO., LTD.を設立しました。",
+      "significance": "海外拠点の開設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kaneka",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に建設事業の継続的得意先であると印字され、当事業年度の完成工事高が計上されている、建設事業の顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kobe-steel",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に建設事業の継続的得意先であると印字され、当事業年度の完成工事高が計上されている、建設事業の顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "harima-chemicals-group",
+      "relationship": "customer",
+      "description": "特定投資株式として保有され、当事業年度の完成工事高が計上されている、建設事業の発注者です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ichinen-holdings",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、運輸事業で連結子会社ケミカル運輸株式会社の継続的得意先であると印字されている顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "taki-chemical",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に、主として運輸事業で連結子会社ケミカル運輸株式会社の継続的取引先であると印字されている顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +429,47 @@
       "publisher": "株式会社ソネック",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEJU.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YEJU",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "成長期待分野を推進充実して経営基盤の安定を図り、優れた工事実績により顧客の信用を高めることを掲げています。新技術・新工法を研究して施工技術の向上を図り、県内における建設技術のトップリーダーを目指すとし、人材採用と人材教育を重要施策としています。主力の建設事業では、営業エリアの拡大と既存顧客・見込客への深耕営業、成長期待分野への参画を強化するとしています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "建築部門では、基盤的技術の習得と多能型技術社員の育成により品質面を安定させ、小回りのきく展開を図っています。土木部門では、中央官庁やその他の外郭団体から兵庫県及び兵庫県下の市・町に至るまで官公庁取引の窓口が広いことが特徴です。",
+        "basis": "事業の内容の建築部門・土木部門の記載と、セグメント情報の外部顧客への売上高に基づく",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の大部分は建設事業が占め、2026年3月期の外部顧客への売上高は建設事業22,486百万円、運輸事業267百万円でした。売上は国内のみであり、主要な顧客としてサムティ株式会社と兵庫県多可郡多可町が開示されています。",
+        "basis": "セグメント情報の外部顧客への売上高、関連情報の地域ごとの情報と主要な顧客ごとの情報、MD&Aの経営成績の概要に基づく",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

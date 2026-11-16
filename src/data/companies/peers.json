@@ -4,15 +4,152 @@
   "name": "ピアズ",
   "officialName": "株式会社ピアズ",
   "nameEn": "Peers Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Peers Co.,Ltd.",
+  "description": "通信業界を中心に、販売現場の支援やオンライン接客、AIを使った人材育成などのコンサルティングを行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "human-resources",
+      "primary": true
+    },
+    {
+      "industryId": "it",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "consulting",
+      "name": "コンサルティング事業",
+      "description": "コンサルティング事業の単一セグメントです。通信業界を中心とした販売チャネルの支援を行う「セールスプロモーション」、店舗運営の省人化・無人化を支援する「オンライン接客／セールス」、AI技術を使った人材育成支援「AIボーディング」の3つのサービスを提供しています。2025年9月期の売上高は6,103百万円です。サービス別の売上高は独立して開示されていません。",
+      "products": [
+        "セールスプロモーション",
+        "オンライン接客／セールス",
+        "AIボーディング",
+        "mimik",
+        "bellFace"
+      ],
+      "customers": [
+        "電気通信事業者（通信キャリア）",
+        "キャリアショップや家電量販店等の販売店",
+        "移動体通信端末メーカー"
+      ],
+      "children": [
+        {
+          "id": "sales-promotion",
+          "name": "セールスプロモーション",
+          "description": "キャリアショップや家電量販店に対し、販売を委託する通信キャリアに代わり、業界知見や販売経験を持つコンサルタントが店舗運営や販売の課題への解決策を提案し、販売チャネルを総合的に支援するサービスです。オンラインでの販売支援イベントにも対応しています。",
+          "products": [
+            "販売支援コンサルティング",
+            "販売支援イベント"
+          ],
+          "customers": [
+            "電気通信事業者（通信キャリア）",
+            "キャリアショップ",
+            "家電量販店"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "online-customer-service",
+          "name": "オンライン接客／セールス",
+          "description": "店舗運営の接客ノウハウを活かし、店舗の省人化・無人化に向けたデジタル・トランスフォーメーションを支援するサービスです。オンライン接客システムの提供やオンライン接客センターの運営を行い、接客時のデータの収集・分析による応対品質の可視化や、発信型の営業の仕組みの導入も支援しています。2025年8月に取得した電話面談システム「bellFace」の事業もこのサービスに含まれます。",
+          "products": [
+            "オンライン接客システム",
+            "オンライン接客センターの運営",
+            "bellFace"
+          ],
+          "customers": [
+            "店舗を運営する企業",
+            "銀行・証券等の金融業界の企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ai-boarding",
+          "name": "AIボーディング",
+          "description": "移動体通信業界の販売現場で培った経験とノウハウにAI技術を融合し、販売領域の人材育成を支援するサービスです。トレーニングやリスキリングを通じて販売成績の向上を目指すプログラムを開発・提供し、AIを活用したロープレ研修システム「mimik」などで新人の早期戦力化を支援しています。",
+          "products": [
+            "mimik",
+            "人材育成プログラム"
+          ],
+          "customers": [
+            "販売現場を持つ企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "通信キャリアや販売店に対し、販売支援のコンサルティングやオンライン接客システム、AI研修ソリューションを提供し、対価を得る事業モデルです。",
+    "products": [
+      "セールスプロモーション（販売チャネルのコンサルティング・販売支援）",
+      "オンライン接客システムとオンライン接客センターの運営",
+      "AIロープレ研修システム「mimik」",
+      "電話面談システム「bellFace」",
+      "人材育成プログラム"
+    ],
+    "customers": [
+      "電気通信事業者（通信キャリア）",
+      "キャリアショップや家電量販店等の販売店",
+      "移動体通信端末メーカー",
+      "銀行・証券等の金融業界の企業"
+    ],
+    "revenueSources": [
+      "コンサルティング・販売支援の対価",
+      "オンライン接客システム・運営受託の対価",
+      "人材育成プログラム・研修ソリューションの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ピアズ",
+        "description": "ピアズは東京都港区に本社を置き、連結子会社3社とともにグループを構成しています。2025年9月30日現在の連結の従業員数は413人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "コンサルティング事業",
+        "description": "コンサルティング事業の単一セグメントで、セールスプロモーション、オンライン接客／セールス、AIボーディングの3つのサービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "通信業界が中心の顧客",
+        "description": "顧客は通信キャリアやキャリアショップ・家電量販店等の販売店、移動体通信端末メーカーが中心で、金融業界などにも広げています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年9月期の売上高は6,103百万円で、前期から1.7％減りました。主要な顧客は株式会社NTTドコモで、売上高は3,884百万円、割合は63.6％です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2025年9月期の親会社株主に帰属する当期純利益は432百万円で、前期から26.1％減りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年9月期",
@@ -27,7 +164,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2186148000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 89,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +184,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1921267000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 476,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "第21期に行った企業結合に係る暫定的な会計処理が第22期に確定したことに伴い、第21期（2022年9月期）の関連する主要な経営指標等については、暫定的な会計処理の確定の内容を反映させています。"
     },
     {
       "fiscalYear": "2023年9月期",
@@ -67,7 +205,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2355238000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 445,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +225,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2873149000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 537,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +245,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2759007000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 413,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +253,88 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2005,
+      "title": "有限会社ピアズとして事業を開始",
+      "description": "休眠会社であった有限会社ディ・エス・アカデミーを有限会社ピアズに商号変更し、愛知県名古屋市中区で事業を開始しました。",
+      "significance": "現在のピアズの事業の起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "株式会社ピアズに改組",
+      "description": "有限会社ピアズを株式会社ピアズに改組しました。あわせて一般労働者派遣事業の許可を取得しています。",
+      "significance": "株式会社としての事業展開の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "AIロープレ研修システム「mimik」の提供を開始",
+      "description": "株式会社Qualiagramを設立し、AIロープレ研修システム「mimik」の提供を開始しました。",
+      "significance": "現在のAIボーディングサービスにつながる取り組みです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "NTTドコモのオンライン窓口の運営受託を開始",
+      "description": "「ドコモ光オンラインヘルパーセンター」の運営受託を開始し、株式会社NTTドコモから「dサービスオンラインカウンター」の運営受託も開始しました。",
+      "significance": "オンライン接客／セールス事業の広がりを示す出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、マザーズ市場からグロース市場に移行しました。",
+      "significance": "現在の上場市場の区分です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "IT人材派遣・SES事業等を譲受",
+      "description": "株式会社ワイヤードパッケージから、IT人材派遣・SES事業と、IT人材育成のためのワークスクール事業を譲り受けました。",
+      "significance": "開発体制の内製化に使われる人材の基盤となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ベルフェイスシステム株式会社を子会社化",
+      "description": "ベルフェイス株式会社から、オンライン商談システム「bellFace」事業を運営するベルフェイスシステム株式会社の全株式を取得し、完全子会社化しました。",
+      "significance": "オンライン接客で発信型の営業手法を取り込み、金融業界など新たな顧客基盤の獲得を目指す取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +343,50 @@
       "publisher": "株式会社ピアズ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XD95.pdf",
       "publishedAt": "2025-12-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XD95",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2021年10月14日付で普通株式1株を2株に分割し、2023年7月21日付で普通株式1株を2株に分割しています。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「いつかの未来を、いつもの日々に～New Normal Acceleration」をパーパスに掲げ、顧客接点を持つ企業に対し、実用性の高い技術を使い販売現場の生産性を高めるコンサルティングを展開する方針です。優先的に対処すべき課題として、持続的な成長のための収益力強化と継続的な事業投資、新規事業による収益源の多様化、組織体制の強化を挙げています。",
+        "asOf": "2025-12-25",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "通信業界の販売現場で培った接客ノウハウを持ち、接客データの収集・分析による応対品質の可視化や、AIを活用した研修システム「mimik」など、現場の知見と技術を組み合わせたサービスを提供できることが特徴です。",
+        "basis": "事業の内容に、通信業界の販売現場の支援から事業を開始したこと、接客時のデータの収集・分析で応対品質を可視化するシステム開発、AIを活用した「mimik」などのソリューション提供が印字されていること",
+        "asOf": "2025-12-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "コンサルティング事業の単一セグメントで、2025年9月期の売上高は6,103百万円です。主要な顧客の株式会社NTTドコモへの売上高は3,884百万円で、全体の63.6％を占めています。",
+        "basis": "セグメント情報等の主要な顧客ごとの情報に、株式会社NTTドコモへの売上高3,884,441千円が印字され、経営者による分析の相手先別販売実績に割合63.6％が印字されていること",
+        "asOf": "2025-12-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-30",

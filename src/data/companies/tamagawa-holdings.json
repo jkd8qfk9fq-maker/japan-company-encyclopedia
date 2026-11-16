@@ -4,50 +4,240 @@
   "name": "多摩川ホールディングス",
   "officialName": "株式会社多摩川ホールディングス",
   "nameEn": "TAMAGAWA HOLDINGS CO.,LTD.",
-  "description": null,
+  "shortNameEn": "Tamagawa Holdings Co., Ltd.",
+  "description": "高周波電子部品と光関連・電子応用機器を作る電子・通信用機器事業と、太陽光・風力発電の売電を行う再生可能エネルギー事業を営む持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    },
+    {
+      "industryId": "energy",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "electronic-communications-equipment",
+      "name": "電子・通信用機器事業",
+      "description": "高周波の技術を核に、高周波電子部品と光関連・電子応用機器を開発、製造、販売する事業です。中核の子会社である多摩川電子が神奈川県綾瀬市の本社工場とベトナムの工場で生産し、官公庁や公共機関、通信事業者、放送事業者、民間企業に販売しています。2025年10月期の外部顧客への売上高は5,029百万円です。",
+      "products": [
+        "高周波電子部品",
+        "光伝送装置",
+        "周波数コンバータ",
+        "デジタル信号処理装置",
+        "映像監視システム",
+        "各種試験装置"
+      ],
+      "customers": [
+        "官公庁・公共機関",
+        "通信事業者",
+        "放送事業者",
+        "民間企業"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "rf-components",
+          "name": "高周波電子部品",
+          "description": "アッテネータ、スプリッタ、カプラ、スイッチ、フィルタなどの高周波回路素子です。多摩川電子が開発、製造、販売しています。金額は区分ごとに開示されていません。",
+          "products": [
+            "アッテネータ",
+            "スプリッタ",
+            "カプラ",
+            "スイッチ",
+            "フィルタ"
+          ],
+          "customers": [
+            "官公庁・公共機関",
+            "通信事業者",
+            "放送事業者",
+            "民間企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "optical-electronic-applied-equipment",
+          "name": "光関連・電子応用機器",
+          "description": "光伝送装置、周波数コンバータ、アンプ、周波数シンセサイザ、デジタル信号処理装置、映像監視システム、各種試験装置などの機器です。顧客の仕様に合わせた特注品の開発、製造、販売や、ミリ波帯の製品開発も行っています。金額は区分ごとに開示されていません。",
+          "products": [
+            "光伝送装置",
+            "周波数コンバータ",
+            "アンプ",
+            "周波数シンセサイザ",
+            "デジタル信号処理装置",
+            "映像監視システム",
+            "各種試験装置"
+          ],
+          "customers": [
+            "官公庁・公共機関",
+            "通信事業者",
+            "放送事業者",
+            "民間企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "renewable-energy",
+      "name": "再生可能エネルギー事業",
+      "description": "子会社が太陽光発電所や小形風力発電所を開発、運営し、発電した電力を電力会社へ販売する事業です。保有する発電所の譲渡や、系統用蓄電所の開発も行っています。2025年10月期の外部顧客への売上高は558百万円です。",
+      "products": [
+        "太陽光発電所で発電した電力",
+        "小形風力発電所で発電した電力",
+        "再生可能エネルギー発電所"
+      ],
+      "customers": [
+        "電力会社"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "power-sales",
+          "name": "売電",
+          "description": "太陽光発電所と、北海道を中心に開発した小形風力発電所30基などで発電した電力を電力会社へ販売しています。金額は区分ごとに開示されていません。",
+          "products": [
+            "太陽光発電所で発電した電力",
+            "小形風力発電所で発電した電力"
+          ],
+          "customers": [
+            "電力会社"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "plant-sales-and-development",
+          "name": "発電所の開発と譲渡",
+          "description": "再生可能エネルギー発電所を開発し、顧客の要望に応じて保有する発電所を譲渡する事業です。系統用蓄電所の用地と権利の取得も進めています。金額は区分ごとに開示されていません。",
+          "products": [
+            "再生可能エネルギー発電所",
+            "系統用蓄電所"
+          ],
+          "customers": [
+            "電力会社",
+            "民間企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "子会社の多摩川電子が官公庁や通信事業者向けに高周波電子部品と光関連・電子応用機器を開発、製造、販売し、別の子会社が再生可能エネルギー発電所の電力と発電所を販売して収益を得る事業モデルです。",
+    "products": [
+      "高周波電子部品（アッテネータ、スプリッタ、カプラ、スイッチ、フィルタ）",
+      "光伝送装置",
+      "周波数コンバータ",
+      "デジタル信号処理装置",
+      "映像監視システム",
+      "各種試験装置",
+      "太陽光・風力発電所で発電した電力",
+      "再生可能エネルギー発電所"
+    ],
+    "customers": [
+      "官公庁・公共機関",
+      "通信事業者",
+      "放送事業者",
+      "民間企業",
+      "電力会社"
+    ],
+    "revenueSources": [
+      "電子・通信用機器の販売代金",
+      "発電した電力の販売代金",
+      "保有する発電所の譲渡代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京都港区に本社を置く持株会社",
+        "description": "多摩川ホールディングスは東京都港区に本社を置く持株会社で、連結子会社18社とグループを構成しています。2025年10月31日現在の従業員数は278人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "電子・通信用機器と再生可能エネルギーの2事業を提供",
+        "description": "高周波電子部品と光関連・電子応用機器を開発、製造、販売する電子・通信用機器事業と、太陽光・風力発電所の電力を販売する再生可能エネルギー事業の2つの事業を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "官公庁や通信事業者、電力会社が主な顧客",
+        "description": "電子・通信用機器事業の主な顧客は官公庁や公共機関、通信事業者、放送事業者、民間企業で、再生可能エネルギー事業では発電した電力を電力会社へ販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年10月期の売上高は5,587百万円でした。内訳は電子・通信用機器事業が5,029百万円、再生可能エネルギー事業が558百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年10月期の親会社株主に帰属する当期純利益は268百万円で、2024年10月期の当期純損失113百万円から改善しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
-      "fiscalYear": "2021年10月期",
-      "periodEnd": "2021-10-31",
+      "fiscalYear": "2022年3月期",
+      "periodEnd": "2022-03-31",
       "revenue": 6236197000,
       "revenueLabel": "売上高",
       "profit": 331550000,
-      "profitLabel": "経常利益",
+      "profitLabel": "経常利益又は経常損失(△)",
       "netIncome": 148697000,
-      "netIncomeLabel": "親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）",
+      "netIncomeLabel": "親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失(△)",
       "totalAssets": 8359398000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 5442513000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 251,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第54期（2022年3月期）の期首から適用しています。"
     },
     {
-      "fiscalYear": "2022年10月期",
-      "periodEnd": "2022-10-31",
+      "fiscalYear": "2023年3月期",
+      "periodEnd": "2023-03-31",
       "revenue": 3294497000,
       "revenueLabel": "売上高",
       "profit": -514890000,
-      "profitLabel": "経常利益",
+      "profitLabel": "経常利益又は経常損失(△)",
       "netIncome": -482787000,
-      "netIncomeLabel": "親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）",
+      "netIncomeLabel": "親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失(△)",
       "totalAssets": 8636293000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 5002146000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 250,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -55,19 +245,19 @@
       ]
     },
     {
-      "fiscalYear": "2023年10月期",
-      "periodEnd": "2023-10-31",
+      "fiscalYear": "2024年3月期",
+      "periodEnd": "2024-03-31",
       "revenue": 4153982000,
       "revenueLabel": "売上高",
       "profit": -215476000,
-      "profitLabel": "経常利益",
+      "profitLabel": "経常利益又は経常損失(△)",
       "netIncome": -443350000,
-      "netIncomeLabel": "親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）",
+      "netIncomeLabel": "親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失(△)",
       "totalAssets": 9574075000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 4888534000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 246,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -80,19 +270,20 @@
       "revenue": 2356418000,
       "revenueLabel": "売上高",
       "profit": -51994000,
-      "profitLabel": "経常利益",
+      "profitLabel": "経常利益又は経常損失(△)",
       "netIncome": -113693000,
-      "netIncomeLabel": "親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）",
+      "netIncomeLabel": "親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失(△)",
       "totalAssets": 9842562000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 4684756000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 263,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "決算期を3月31日から10月31日に変更したため、第57期（2024年10月期）は2024年4月1日から10月31日までの7か月間の変則決算です。"
     },
     {
       "fiscalYear": "2025年10月期",
@@ -100,14 +291,14 @@
       "revenue": 5587974000,
       "revenueLabel": "売上高",
       "profit": 231315000,
-      "profitLabel": "経常利益",
+      "profitLabel": "経常利益又は経常損失(△)",
       "netIncome": 268648000,
-      "netIncomeLabel": "親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）",
+      "netIncomeLabel": "親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失(△)",
       "totalAssets": 11276172000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 5471326000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 278,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +306,199 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1968,
+      "title": "有限会社多摩川電子を創業",
+      "description": "東京都大田区で、高周波回路素子の設計と製造を行う有限会社多摩川電子が創業しました。",
+      "significance": "現在のグループの出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "株式会社多摩川電子を設立し横浜市へ移転",
+      "description": "株式会社多摩川電子が設立され、本社と工場が横浜市に移転しました。",
+      "significance": "法人としての事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "本社と工場を綾瀬市へ移転",
+      "description": "本社と工場が神奈川県綾瀬市に移転しました。",
+      "significance": "現在の主力工場の地です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "綾瀬市に新工場を建設",
+      "description": "綾瀬市に新工場が建設され、測定器関連製品の生産が始まりました。",
+      "significance": "製品分野の広がりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "綾瀬市に本社工場の新社屋が竣工",
+      "description": "綾瀬市に本社工場の新社屋が竣工しました。",
+      "significance": "生産と開発の拠点の整備です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "日本証券業協会に店頭登録",
+      "description": "株式が日本証券業協会に店頭登録されました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "株式がジャスダック証券取引所に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "会社分割で持株会社へ移行",
+      "description": "会社分割により株式会社多摩川ホールディングスに商号が変更され、株式会社多摩川電子が子会社となりました。",
+      "significance": "現在の持株会社体制の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "大阪証券取引所ジャスダック市場に上場",
+      "description": "取引所の統合により、大阪証券取引所ジャスダック市場への上場となりました。",
+      "significance": "上場市場の移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "株式会社GPエナジーを設立",
+      "description": "太陽光発電所の運営管理を行う株式会社GPエナジーが宮城県仙台市に設立されました。",
+      "significance": "再生可能エネルギー事業への進出です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "多摩川ソーラーシステムズを設立し本社を港区へ移転",
+      "description": "太陽光発電所の開発と売電を行う多摩川ソーラーシステムズ株式会社が設立され、本社が東京都港区に移転しました。",
+      "significance": "再生可能エネルギー事業の体制づくりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "ベトナム子会社を設立",
+      "description": "TAMAGAWA ELECTRONICS VIETNAM CO.,LTD.がベトナムに設立され、多摩川ソーラーシステムズ株式会社が株式会社多摩川エナジーに商号変更しました。",
+      "significance": "海外生産の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "THEG PTE. LTD.を設立",
+      "description": "シンガポールにTHEG PTE. LTD.が設立されました。",
+      "significance": "海外事業の広がりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ホーチミンに駐在員事務所を開設",
+      "description": "ベトナムのホーチミンに駐在員事務所が開設されました。",
+      "significance": "ベトナム事業の体制強化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "TMY Technology Inc.へ出資",
+      "description": "台湾のTMY Technology Inc.へ出資しました。",
+      "significance": "海外企業との資本関係の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社多摩川インシュアランスを設立",
+      "description": "保険代理店業を行う株式会社多摩川インシュアランスが設立されました。",
+      "significance": "グループ事業の広がりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "決算期を10月31日に変更",
+      "description": "決算期が3月31日から10月31日に変更されました。",
+      "significance": "決算期の変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ベトナム子会社が新工場へ移転",
+      "description": "TAMAGAWA ELECTRONICS VIETNAM CO.,LTD.がフンイエン省に新工場を建設し、移転しました。",
+      "significance": "海外生産能力の拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nec",
+      "relationship": "customer",
+      "description": "主要な顧客です。セグメント情報の主要な顧客ごとの情報に電子・通信用機器事業の顧客として載っており、2025年10月期の売上高に占める割合は23.8％です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +506,41 @@
       "publisher": "株式会社多摩川ホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XHR9.pdf",
       "publishedAt": "2026-01-28",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XHR9",
+      "asOf": "2025-10-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 決算期変更と変則決算：2024年10月21日の臨時株主総会の決議により決算期を3月31日から10月31日に変更し、第57期（2024年10月期）は2024年4月1日から10月31日までの7か月間の変則決算となりました。登録は第58期（2025年10月期）の期末時点の構造で行っています。",
+      "財務: 変則決算。2024-10 の期は 7 か月。他の年と期間の長さが違うので、businessModel の data.financialNotes にその旨を書くこと"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "社会インフラの整備に貢献する企業を目指し、5GやIoTの時代に必要な高周波技術とデジタル技術を融合した製品開発と、再生可能エネルギー事業の開発を進めるとしています。電子・通信用機器事業では5G関連市場、官公庁、公共プロジェクト関連市場を中心に販売を広げ、ベトナム工場の生産能力を2倍に拡大して量産に対応するとし、再生可能エネルギー事業では小形風力発電所や太陽光発電所の開発に加え、系統用蓄電所の開発を進めるとしています。",
+        "asOf": "2026-01-28",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "アナログ高周波技術とデジタル信号処理技術を融合させた開発力を核に、顧客の仕様に合わせた特注品やミリ波帯の製品開発まで手がけています。電子・通信用機器事業の売上高の半分を超える官公庁関連の製品が需要の土台となり、神奈川県綾瀬市の本社工場と生産能力を拡大したベトナム工場の2拠点で量産に対応しています。",
+        "basis": "経営方針に、コア技術である「アナログ高周波技術」と「デジタル信号処理技術」を融合させたソリューションの提案と、ベトナム工場の移転による生産キャパシティの2倍への拡大が印字され、経営成績の分析に、電子・通信用機器事業の売上高の半分は官公庁関連製品であることと、ベトナム工場での量産化と高品質な生産が印字されていること",
+        "asOf": "2026-01-28",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年10月期",
     "asOf": "2025-10-31",

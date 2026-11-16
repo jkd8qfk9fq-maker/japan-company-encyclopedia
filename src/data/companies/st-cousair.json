@@ -4,15 +4,151 @@
   "name": "サンクゼール",
   "officialName": "株式会社サンクゼール",
   "nameEn": "St．Cousair　CO.,LTD.",
-  "description": null,
+  "shortNameEn": "St. Cousair",
+  "description": "ジャムやワイン、和食材などを自社で企画・製造し、全国の自社店舗やEC、海外で販売する食品製造販売の会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "food-manufacturing-sales",
+      "name": "食品製造販売事業",
+      "description": "ジャムやワイン、和食材などの食品を企画・開発から製造、販売まで一貫して手がける単一セグメントの事業です。「サンクゼール」「久世福商店」「KUZE FUKU ＆ SONS」「Portlandia」「Bonnie's Jams」「KELLY’S JELLY」の6ブランドを展開し、2026年3月31日現在の店舗数は177店舗（直営56店舗、FC121店舗）です。2026年3月期の売上高は20,600百万円でした。",
+      "products": [
+        "ジャム",
+        "ワイン・シードル",
+        "パスタソース",
+        "ドレッシング",
+        "ごはんのお供",
+        "だし・味噌・醤油などの和食材",
+        "ケチャップ・マスタードなどの加工食品",
+        "ペッパーゼリー・フルーツスプレッド"
+      ],
+      "customers": [
+        "自社店舗に来店する消費者",
+        "ECサイトで購入する消費者",
+        "大手食品卸企業・小売企業",
+        "米国を中心とする海外の顧客"
+      ],
+      "children": [
+        {
+          "id": "fc-stores",
+          "name": "FC店舗",
+          "description": "FC加盟企業がパートナーシップ契約に基づき運営する店舗で、2026年3月31日現在121店舗あります。当社グループはブランド使用権と本部サービスの対価としてロイヤリティ収入を受けます。2026年3月期の外部顧客への売上高は7,226百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "direct-stores",
+          "name": "直営店舗",
+          "description": "当社グループが店舗設備投資を行い運営する店舗で、2026年3月31日現在56店舗（サンクゼール3店舗、久世福商店53店舗）あります。店舗運営業務のみを外部に委託するOFC形態の店舗も含みます。2026年3月期の外部顧客への売上高は6,291百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "wholesale",
+          "name": "ホールセール",
+          "description": "自社製造商品を大手食品卸企業や小売企業へ販売するほか、他社のPB商品のOEMも行うチャネルです。2026年3月期の外部顧客への売上高は3,245百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "global",
+          "name": "グローバル",
+          "description": "米国子会社St. Cousair,Inc.を拠点に、米国内での販売とアジア・オセアニア地域の顧客への営業を行うチャネルです。2025年9月には韓国現地法人を設立しました。2026年3月期の外部顧客への売上高は2,669百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "ec",
+          "name": "EC",
+          "description": "「サンクゼール」と「久世福商店」の2ブランドの商品を自社公式ECサイトと楽天市場サイトで販売するチャネルです。2026年3月末時点で売上高の65％以上がギフト商品で構成されています。2026年3月期の外部顧客への売上高は1,168百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "商品の企画・開発から製造、店舗設計、販売までを一貫して手がける食のSPAモデルで、6つのブランドの食品を店舗・EC・卸・海外の各チャネルで販売し、対価を得ています。",
+    "products": [
+      "ジャム",
+      "ワイン・シードル",
+      "パスタソース",
+      "ドレッシング",
+      "ごはんのお供",
+      "だし・味噌・醤油などの和食材",
+      "ケチャップ・マスタードなどの加工食品",
+      "ペッパーゼリー・フルーツスプレッド"
+    ],
+    "customers": [
+      "自社店舗に来店する消費者",
+      "ECサイトで購入する消費者",
+      "大手食品卸企業・小売企業",
+      "米国を中心とする海外の顧客"
+    ],
+    "revenueSources": [
+      "店舗での商品販売代金",
+      "FC加盟企業からのロイヤリティ収入",
+      "ECでの商品販売代金",
+      "卸売・OEMの販売代金",
+      "海外での商品販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "企画から販売まで一貫して手がける",
+        "description": "サンクゼールは、マーケティング、商品の企画・開発、調達・製造、店舗設計、販売までの全てのプロセスを一気通貫で手がけます。"
+      },
+      {
+        "kind": "offering",
+        "title": "6ブランドの食品",
+        "description": "商品の約90％を自社の開発部門が企画・開発し、長野県と米国オレゴン州の自社工場や全国500社を超える仕入先メーカーとともに6ブランドの食品を作ります。"
+      },
+      {
+        "kind": "customer",
+        "title": "店舗・EC・卸・海外の顧客",
+        "description": "全国177店舗の来店客やECの利用者、大手食品卸企業や小売企業、米国を中心とする海外の顧客に商品を届けます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は20,600百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は618百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1355782000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 252,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4226011000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 255,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4742077000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 265,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4961173000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 285,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +243,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5191410000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 307,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +251,148 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1982,
+      "title": "株式会社斑尾高原農場として設立",
+      "description": "長野県で株式会社斑尾高原農場として設立しました。",
+      "significance": "現在のサンクゼールの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "サンクゼールブランドの立ち上げ",
+      "description": "サンクゼールブランドを立ち上げました。創業者がペンションを営んでいた頃に朝食のために作っていた手作りジャムがブランドの原点です。",
+      "significance": "主力ブランドの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "果実酒製造免許の取得",
+      "description": "果実酒製造免許を取得し、ワインの製造を本格化させました。",
+      "significance": "自社ワイナリーによるワイン製造の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "商号を株式会社サンクゼールに変更",
+      "description": "商号を株式会社サンクゼールに変更しました。",
+      "significance": "現在の社名の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "久世福商店ブランドの立ち上げ",
+      "description": "久世福商店のブランドを立ち上げ、久世福商店1号店としてイオンモール幕張新都心店を開店しました。",
+      "significance": "現在の店舗網の中心となるブランドの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "米国オレゴン州の食品加工工場を取得",
+      "description": "米国オレゴン州の食品加工工場を買収し、St. Cousair Oregon Orchards, Inc.（現St. Cousair,Inc.）を設立しました。",
+      "significance": "海外製造拠点とグローバル事業の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "KUZE FUKU ＆ SONSブランドの立ち上げ",
+      "description": "米国子会社で作った商品をグローバルに展開するブランド「KUZE FUKU ＆ SONS」を立ち上げました。",
+      "significance": "海外向けブランドの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場に上場",
+      "description": "東京証券取引所グロース市場に株式を上場しました。",
+      "significance": "上場企業としての節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "Portlandiaの事業譲受",
+      "description": "米国子会社がPortlandia Foods, Inc.と事業譲渡契約を締結し、オーガニック認証のケチャップやマスタード等の加工食品ブランド「Portlandia」を取得しました。",
+      "significance": "米国でのブランド取得の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "Bonnie's Jamsの事業譲受",
+      "description": "米国子会社がBonnie's Enterprises, LLCと事業譲渡契約を締結し、フルーツジャムやゼリー等のブランド「Bonnie's Jams」を取得しました。",
+      "significance": "米国ブランドの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "KELLY'S JELLYの事業譲受",
+      "description": "米国子会社がKELLY'S JELLY, INC.と事業譲渡契約を締結し、ペッパーゼリーやフルーツスプレッドのブランド「KELLY’S JELLY」を取得しました。",
+      "significance": "米国で3つ目となる取得ブランドです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "長野市の食品製造工場を取得",
+      "description": "自社製造商品の供給量拡大とラインナップ拡充を目的として、長野県長野市の食品製造工場を新たに取得しました。2026年6月より稼働を開始しています。",
+      "significance": "国内の生産基盤の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "韓国現地法人の設立",
+      "description": "アジア地域の営業活動の強化を図るため、韓国現地法人St. Cousair Korea Co., Ltd.を設立し、連結子会社としました。",
+      "significance": "アジア展開の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "有限会社長生堂の全株式を取得",
+      "description": "有限会社長生堂の全株式を取得し、連結子会社としました。同社は業務委託契約に基づき製品の開発を行っています。",
+      "significance": "当期中に完了し、期末の体制に反映された取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +401,55 @@
       "publisher": "株式会社サンクゼール",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD6O.pdf",
       "publishedAt": "2026-06-17",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YD6O",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「愛と喜びのある食卓をいつまでも」をコーポレート・スローガンに掲げ、食のSPA企業として、国内では売り場改革による来店価値の創出、購買データを活用したCRMの強化、デジタルサプライチェーンの高度化と商品内製化の拡大、M&Aによる食のSPAモデルの強化に取り組んでいます。グローバルでは、プレミアム日本食ブランドとしての独自のポジションの確立と、M&Aによるブランドポートフォリオの構築を目指しています。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期は、ホールセールとグローバルの売上が大きく伸びた一方で、店舗とECの売上は前年を下回りました。会社も、従来の店舗依存型の収益構造から複数チャネルによる成長モデルへの移行が進んでいると説明しており、今後はホールセールとグローバルを中核に成長を加速しつつ、店舗とECの顧客接点の再構築を進める方針です。",
+        "basis": "セグメント関連情報の製品及びサービスごとの情報（チャネル別外部顧客への売上高）と、MD&Aの経営成績の概況におけるチャネル別の売上高の増減説明に基づく。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "企画・開発から製造、店舗設計、販売までを一貫して手がける食のSPAモデルにより、6ブランドそれぞれに必要な要素を共通の世界観で構築できます。商品の約90％を自社開発し、各店舗で600から1,200を超えるアイテムを扱う多品種少量生産の供給体制や、全国500社を超える食品メーカーとのネットワークが、他社の参入を困難にする強みとされています。米国工場ではUSDAオーガニック認証やSQF認証などを取得しています。",
+        "basis": "事業の内容における食のSPAモデル、商品開発力、販売チャネルの特徴と、米国工場の認証に関する記述に基づく。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月31日現在、全国に177店舗（直営56店舗、FC121店舗）を展開しています。2026年3月期の地域別の売上高は日本が17,931百万円、米国が1,790百万円、その他が879百万円です。主要な顧客はCostco Wholesale Corporation（売上高の19.0％）と株式会社イートスタイル（同10.8％）です。",
+        "basis": "セグメント関連情報の地域ごとの情報と主要な顧客ごとの情報、事業の内容の店舗数に基づく。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
