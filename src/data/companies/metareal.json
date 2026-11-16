@@ -4,15 +4,163 @@
   "name": "メタリアル",
   "officialName": "株式会社メタリアル",
   "nameEn": "MetaReal Corporation",
-  "description": null,
+  "description": "AI翻訳などの業種特化型AIサービスと人による翻訳受託、メタバース関連事業を展開する持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "ai-business",
+      "name": "AI事業",
+      "description": "連結子会社の株式会社ロゼッタを中心に、AI翻訳をはじめとする業種分野特化のAIソリューションを提供する事業です。2026年2月期の売上高は2,822百万円です。",
+      "customers": [
+        "専門分野の翻訳や文書作成を必要とする企業",
+        "生成AIの活用を進める企業"
+      ],
+      "children": [
+        {
+          "id": "machine-translation",
+          "name": "機械翻訳",
+          "description": "顧客企業別に作り込むテーラーメイド型の自動翻訳システム『T-4OO』や自動翻訳『熟考』など、AI型の機械翻訳サービスを提供しています。2026年2月期の売上高は2,420百万円です。",
+          "customers": [
+            "専門分野の翻訳を必要とする企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "contract-development",
+          "name": "受託開発",
+          "description": "生成AIの活用などに関する受託開発を行っています。2026年2月期の売上高は360百万円です。",
+          "customers": [
+            "AIの導入や開発を委託する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "human-translation-ai",
+          "name": "人間翻訳",
+          "description": "AI事業の中でも、人間による翻訳サービスを取り扱っています。2026年2月期の売上高は41百万円です。",
+          "customers": [
+            "人間による翻訳を必要とする企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "ai-mv-marketing-business",
+      "name": "AI/MV Marketing事業",
+      "description": "連結子会社の株式会社STUDIO55（VR事業を除く）が担い、AIやメタバースの先端技術を活用できる専門技術領域の企業に対しM&Aを行い、その顧客基盤や事業ノウハウを活かしながら事業の拡大を目指す事業です。建築デザインのBIM分野の開発などを行っています。2026年2月期の売上高は843百万円です。",
+      "customers": [
+        "建築デザイン関連のサービスを必要とする企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "ht-business",
+      "name": "HT事業",
+      "description": "連結子会社の株式会社グローヴァが、人間による翻訳・通訳・語学教育等の業務受託サービスを提供する事業です。2026年2月期の売上高は708百万円です。",
+      "customers": [
+        "翻訳や通訳を必要とする企業",
+        "語学研修を行う企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "metaverse-business",
+      "name": "メタバース事業",
+      "description": "連結子会社の株式会社MATRIXと株式会社STUDIO55のVR事業が担い、建築デザインのVR・CG・BIM分野のサービスなどを提供する事業です。10年先を見据えた長期成長戦略として位置付けられています。2026年2月期の売上高は112百万円です。",
+      "customers": [
+        "建築デザインのVR・CG・BIMを必要とする企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "AI翻訳や業種特化のAIエージェントの提供、人による翻訳・通訳の業務受託、M&Aで取り込んだ専門技術企業の受託開発などで収入を得る事業モデルです。",
+    "products": [
+      "テーラーメイド型自動翻訳システム『T-4OO』",
+      "自動翻訳『熟考』",
+      "製薬業界向けドキュメント作成支援AI『ラクヤクAI』",
+      "人間による翻訳・通訳サービス",
+      "語学教育サービス",
+      "建築デザイン向けVR・CG・BIMサービス",
+      "受託開発サービス"
+    ],
+    "customers": [
+      "製薬会社",
+      "建築・建設会社",
+      "翻訳や通訳を必要とする企業",
+      "語学研修を行う企業"
+    ],
+    "revenueSources": [
+      "AI翻訳サービスの提供収入",
+      "受託開発の対価",
+      "翻訳・通訳・語学教育の受託収入",
+      "VR・CG・BIM関連サービスの提供収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "メタリアル",
+        "description": "2004年にAI型の機械翻訳の研究開発事業として創業し、2021年9月に持株会社となった会社です。2026年2月28日現在の従業員数は172人で、連結子会社7社と持分法適用関連会社1社でグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "AI・翻訳・メタバースの4事業",
+        "description": "AI翻訳などのAIソリューション、人による翻訳・通訳・語学教育の業務受託、建築デザインのVR・CG・BIMなどのメタバース関連サービス、M&Aで取り込んだ専門技術企業の受託開発を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "専門分野の企業",
+        "description": "製薬や建築など専門分野の企業や、翻訳・通訳・語学研修を必要とする企業が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "サービス提供と受託開発",
+        "description": "2026年2月期の売上高は4,487百万円でした。事業別ではAI事業が2,822百万円、AI/MV Marketing事業が843百万円、HT事業が708百万円、メタバース事業が112百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年2月期の親会社株主に帰属する当期純利益は48百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,7 +175,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1098666000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 178,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +195,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1133318000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 169,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第19期の期首から適用しており、第19期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -67,7 +216,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1681470000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 157,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +236,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1956295000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 229,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +256,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2007969000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 172,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +264,98 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2000,
+      "title": "グローヴァの設立",
+      "description": "株式会社ノヴァの社内ベンチャーとして、翻訳・通訳業務の受託サービスを提供する株式会社グローヴァが設立されました。",
+      "significance": "当社グループの起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "機械翻訳事業の創業",
+      "description": "有限会社Pearly Gatesの持分を取得してAI型の機械翻訳の研究開発事業を創業し、同年に株式会社ロゼッタへ商号を変更しました。",
+      "significance": "現在のAI事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "自動翻訳『熟考』のリリース",
+      "description": "言語のビッグデータを統計解析することを原理としたAI型の自動翻訳サービス『熟考』をリリースしました。",
+      "significance": "機械翻訳サービスの製品化の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東京証券取引所マザーズへの上場",
+      "description": "東京証券取引所マザーズ（現東京証券取引所グロース市場）に株式を上場しました。",
+      "significance": "上場会社としての起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "エニドアの完全子会社化",
+      "description": "株式会社エニドア（現Xtra株式会社）を株式交換により完全子会社化し、クラウドソーシング事業を追加しました。",
+      "significance": "翻訳のクラウドソーシングを取り込んだ出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "GMOスピード翻訳の完全子会社化",
+      "description": "GMOスピード翻訳株式会社を株式取得により完全子会社化しました。",
+      "significance": "翻訳事業の規模を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "持株会社化とメタリアルへの商号変更",
+      "description": "MT事業を株式会社ロゼッタMT（現株式会社ロゼッタ）に、xR事業を株式会社シグナンスに承継させる吸収分割を行い、持株会社となって商号を株式会社メタリアルに変更しました。",
+      "significance": "現在の持株会社体制への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "MT事業をAI事業へ変更",
+      "description": "MT事業の名称をAI事業に変更しました。",
+      "significance": "主力事業の呼称が現在の形になった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "STUDIO55の子会社化",
+      "description": "株式会社STUDIO55の株式の55.0％を取得し、子会社化しました。",
+      "significance": "メタバース事業とAI/MV Marketing事業の拡大の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +364,47 @@
       "publisher": "株式会社メタリアル",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y6W8.pdf",
       "publishedAt": "2026-05-27",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y6W8",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "HT事業をキャッシュカウ、AI事業を短中期の成長戦略、メタバース事業を5～10年後を見据えた長期成長戦略、AI/MV Marketing事業を持続的成長を支える成長戦略と位置付け、成長可能性の高い4つの戦略領域である翻訳特化・製薬特化・建築特化・事業創出のエージェンティックAIへの選択と集中を進める方針です。",
+        "asOf": "2026-05-27",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "業種分野に特化した垂直統合型のAIサービスを掲げ、翻訳では顧客企業別に作り込むテーラーメイド型の自動翻訳システムを提供していることが強みです。",
+        "basis": "【事業の内容】に、AI事業は「業種分野特化×垂直統合型AIエージェント×日本企業のグローバル対応」にポジショニングしたAIサービスを提供している旨が印字され、【沿革】に顧客企業別のテーラーメイド自動翻訳システム『T-4OO』をリリースした旨が印字されている。",
+        "asOf": "2026-05-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "連結売上高の過半を機械翻訳が占める、AI翻訳を中核とする事業構成です。2004年の創業以来、機械翻訳の研究開発を続けています。",
+        "basis": "【セグメント情報等】の財又はサービスの種類別内訳で、機械翻訳の売上高2,420,625千円が連結売上高4,487,157千円の過半を占めること、【沿革】に2004年2月にAI型の機械翻訳研究開発事業を創業した旨が印字されている。",
+        "asOf": "2026-05-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",

@@ -4,15 +4,225 @@
   "name": "マルサンアイ",
   "officialName": "マルサンアイ株式会社",
   "nameEn": "MARUSAN-AI CO.,LTD.",
-  "description": null,
+  "shortNameEn": "MARUSAN-AI CO., LTD.",
+  "description": "大豆を原料とする豆乳・飲料とみそを製造・販売する食品メーカーです。",
   "listings": [
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "soy-milk-beverages",
+      "name": "豆乳飲料事業",
+      "description": "豆乳、飲料及び水の開発、製造、販売を行う事業です。当社、株式会社匠美、マルサンアイ鳥取株式会社などが担っています。2025年9月期の外部顧客への売上高は28,136百万円と、報告セグメントの中で最も大きくなっています。",
+      "customers": [
+        "食品卸・量販店などの販売先",
+        "伊藤忠商事株式会社などの大口取引先"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "soy-milk",
+          "name": "豆乳",
+          "description": "無調整豆乳や機能性を訴求した豆乳などで、OEMを含みます。2025年9月期の売上高は246億77百万円です。",
+          "customers": [
+            "食品卸・量販店などの販売先"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "beverages",
+          "name": "飲料",
+          "description": "アーモンド飲料などの飲料で、受託製造（OEM）を含みます。2025年9月期の売上高は3,459百万円です。",
+          "customers": [
+            "食品卸・量販店などの販売先",
+            "受託製造を委託する事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "water",
+          "name": "水",
+          "description": "水の販売です。金額は独立して開示されていません。",
+          "customers": [
+            "食品卸・量販店などの販売先"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other-foods",
+      "name": "その他食品事業",
+      "description": "豆乳飲料及びみそ以外の食品の開発、製造、販売を行う事業です。当社、株式会社匠美などが担っています。2025年9月期の外部顧客への売上高は2,705百万円です。「豆乳グルト」シリーズが好調に推移しました。",
+      "customers": [
+        "食品卸・量販店などの販売先"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "nabe-soup",
+          "name": "鍋スープ",
+          "description": "鍋スープの開発、製造、販売です。金額は独立して開示されていません。",
+          "customers": [
+            "食品卸・量販店などの販売先"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "chilled-foods",
+          "name": "チルド食品",
+          "description": "「豆乳グルト」シリーズなどのチルド食品です。金額は独立して開示されていません。",
+          "customers": [
+            "食品卸・量販店などの販売先"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-food-items",
+          "name": "その他食品・他社商品",
+          "description": "その他の食品と他社商品の販売です。金額は独立して開示されていません。",
+          "customers": [
+            "食品卸・量販店などの販売先"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "miso",
+      "name": "みそ事業",
+      "description": "みそ及びみそ関連製品の開発、製造、販売を行う事業です。当社、株式会社玉井味噌などが担っています。2025年9月期の外部顧客への売上高は2,030百万円です。2025年3月に本社みそ工場で製造していたみその製造を株式会社玉井味噌及び海寧市裕豊醸造有限公司へ移管し、事業を子会社等へ集約しました。",
+      "customers": [
+        "食品卸・量販店などの販売先"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "raw-miso",
+          "name": "生みそ",
+          "description": "生みその開発、製造、販売です。金額は独立して開示されていません。",
+          "customers": [
+            "食品卸・量販店などの販売先"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "prepared-miso",
+          "name": "調理みそ",
+          "description": "調理みそ、即席みそ及び液状みその開発、製造、販売です。金額は独立して開示されていません。",
+          "customers": [
+            "食品卸・量販店などの販売先"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    },
+    {
+      "id": "technical-guidance",
+      "name": "技術指導料その他",
+      "description": "海外の提携先への技術指導、技術供与を行う区分です。報告セグメントに含まれない事業セグメントであり、受取ロイヤリティーを含んでいます。2025年9月期の売上高は受取ロイヤリティーとして0百万円が計上されています。",
+      "customers": [
+        "タイ王国のサハチョール社などの技術提携先"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "豆乳・飲料、みそ、その他食品を製造・販売し、製品の販売代金と技術指導・ライセンスの対価で収益を得る会社です。",
+    "products": [
+      "豆乳（OEMを含む）",
+      "飲料（アーモンド飲料など、OEMを含む）",
+      "水",
+      "生みそ・調理みそ・即席みそ・液状みそ",
+      "鍋スープ・チルド食品・その他食品"
+    ],
+    "customers": [
+      "食品卸・量販店などの販売先",
+      "伊藤忠商事株式会社などの大口取引先",
+      "豪州などの海外の販売・製造提携先"
+    ],
+    "revenueSources": [
+      "豆乳・飲料の販売代金",
+      "みそ・みそ関連製品の販売代金",
+      "その他食品の販売代金",
+      "技術指導料・ライセンス料（受取ロイヤリティー）"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "マルサンアイ",
+        "description": "当社と連結子会社6社、持分法適用関連会社1社でグループを構成し、2025年9月期の連結従業員数は439人です。本社は愛知県岡崎市にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "豆乳・飲料とみそ",
+        "description": "豆乳やアーモンド飲料などの飲料、水、生みそ・調理みそなどのみそ製品、鍋スープやチルド食品などを開発・製造・販売します。海外の提携先には豆乳製造の技術指導や商標ライセンスも供与します。"
+      },
+      {
+        "kind": "customer",
+        "title": "食品流通と大口取引先",
+        "description": "製品は食品卸や量販店などを通じて販売されます。主要な顧客ごとの情報では、伊藤忠商事株式会社が2025年9月期の売上高の40.7％を占める最大の販売先です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "豆乳飲料事業が中心の売上高",
+        "description": "2025年9月期の売上高は32,872百万円で、前期比0.9％減となりました。内訳は豆乳飲料事業28,136百万円、その他食品事業2,705百万円、みそ事業2,030百万円で、豆乳飲料事業が最も大きくなっています。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年9月期の親会社株主に帰属する当期純利益は712百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年9月期",
@@ -27,7 +237,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6531487000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 444,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +257,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6634328000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 453,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第71期の期首から適用しており、第71期以降の経営指標は当該会計基準等を適用した後の数値です。"
     },
     {
       "fiscalYear": "2023年9月期",
@@ -67,7 +278,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5670629000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 452,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +298,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6480897000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 444,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号）等を第74期の期首から適用し、第73期の経営指標は当該会計基準等を遡及適用した後の数値です。"
     },
     {
       "fiscalYear": "2025年9月期",
@@ -107,7 +319,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7017500000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 439,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +327,227 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1952,
+      "title": "岡崎醸造株式会社を設立",
+      "description": "愛知県岡崎市柱町にて岡崎醸造株式会社を設立しました。",
+      "significance": "会社の起源です。みそメーカーとして出発しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "岡崎マルサン株式会社に商号変更",
+      "description": "岡崎醸造株式会社を岡崎マルサン株式会社に商号変更しました。",
+      "significance": "マルサンの名を冠した社名の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "豆乳飲料の製造を開始",
+      "description": "マルサン食品株式会社に豆乳飲料工場を設置し、豆乳飲料の製造を開始しました。",
+      "significance": "現在の主力である豆乳飲料事業の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "マルサンアイ株式会社に商号変更",
+      "description": "岡崎マルサン株式会社をマルサンアイ株式会社に商号変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "株式会社匠美を100％子会社化",
+      "description": "富山県の株式会社匠美を100％子会社化しました。",
+      "significance": "水・豆乳・飲料の生産委託先としてグループの中核子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "マルサン食品株式会社と合併",
+      "description": "マルサンアイ株式会社とマルサン食品株式会社が合併しました。",
+      "significance": "豆乳事業を本体に統合しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "名古屋証券取引所市場第二部に上場",
+      "description": "名古屋証券取引所市場第二部に上場しました。",
+      "significance": "株式公開を果たしました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "株式会社玉井味噌に資本参加",
+      "description": "長野県の株式会社玉井味噌の株式を取得し資本参加しました。",
+      "significance": "みそ事業の生産拠点として現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "丸三愛食品商貿（上海）有限公司を設立",
+      "description": "中国上海市に丸三愛食品商貿（上海）有限公司を設立しました。",
+      "significance": "中国での販売拠点で、現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "タイのサハチョール社と技術指導・ライセンス契約を締結",
+      "description": "タイ王国のサハチョール社と豆乳の製造に係る技術指導契約及び当社商標の豆乳の製造・販売に係るライセンス契約を締結しました。",
+      "significance": "技術指導料その他の収益の基盤です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "マルサンアイ鳥取株式会社を設立",
+      "description": "鳥取県鳥取市にマルサンアイ鳥取株式会社を設立しました。",
+      "significance": "豆乳・飲料の生産拠点で、現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "海寧市裕豊醸造有限公司に資本参加",
+      "description": "中国海寧市の海寧市裕豊醸造有限公司の持分を取得し資本参加しました。",
+      "significance": "中国でのみその製造委託先で、現在の持分法適用関連会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "マルサンアイ（タイランド）株式会社を設立",
+      "description": "タイ王国バンコクにマルサンアイ（タイランド）株式会社を設立しました。",
+      "significance": "タイでの販売子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "名古屋証券取引所メイン市場へ移行",
+      "description": "名古屋証券取引所の市場区分の見直しにより、市場第二部からメイン市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "Alinova Canada Inc.を設立",
+      "description": "カナダ オンタリオ州にAlinova Canada Inc.を設立しました。",
+      "significance": "北米進出の拠点で、豆乳パウダーの製造・販売を予定しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "みその製造を子会社等へ移管",
+      "description": "本社みそ工場で製造していたみその製造を、株式会社玉井味噌及び海寧市裕豊醸造有限公司へ移管しました。",
+      "significance": "みそ事業を子会社等へ集約する事業再編の一環です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "itochu",
+      "relationship": "customer",
+      "description": "主要な顧客ごとの情報に最大の販売先として印字されている会社です。2025年9月期の売上高の40.7％を占め、豆乳飲料事業・みそ事業・その他食品事業の製品を販売しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関連情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
-      "title": "有価証券報告書－第74期(2024/09/21－2025/09/20)",
+      "title": "有価証券報告書－第74期（2024年９月21日－2025年９月20日）",
       "publisher": "マルサンアイ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X978.pdf",
       "publishedAt": "2025-12-10",
-      "accessedAt": "2026-09-28"
+      "docId": "S100X978",
+      "asOf": "2025-09-20",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2030年に向けた長期経営計画のもと、第四次中期事業計画では事業内構造改革を進めています。みそ事業は新たな価値創造のために事業再構築を進め、豆乳飲料事業はブランド価値の向上を図ります。あわせて、生産拠点・物流戦略の明確化と海外事業の拡大、健康な未来につながる商品開発、DXによる組織の効率化と人財育成を掲げています。",
+        "asOf": "2025-12-10",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、1980年に製造を始めた豆乳の長い実績とブランド、岡崎・関東・鳥取など複数拠点の生産体制です。本社工場や子会社の工場はFSSC22000などの食品安全認証を取得しています。みその製造を玉井味噌や海寧市裕豊醸造へ移管するなど、グループ内で生産を集約する体制も進めています。",
+        "basis": "事業の内容におけるグループの事業体制の記載、沿革における豆乳製造開始と認証取得の記載、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析におけるセグメント別の経営成績の記載に基づきます。",
+        "asOf": "2025-12-10",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の中心は豆乳飲料事業で、2025年9月期は豆乳が246億77百万円と事業の大半を占めています。国内では伊藤忠商事株式会社が売上高の40.7％を占める主要な販売先です。地域別では豪州向けの売上が大きく、豪州のSPIRAL FOODS Pty.LTD.が売上高の10.2％を占めています。",
+        "basis": "セグメント情報等における報告セグメントごとの売上高と関連情報（地域ごとの情報・主要な顧客ごとの情報）の記載、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における販売実績の記載に基づきます。",
+        "asOf": "2025-12-10",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-20",

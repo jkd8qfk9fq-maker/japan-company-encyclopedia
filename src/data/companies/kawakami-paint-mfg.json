@@ -4,19 +4,111 @@
   "name": "川上塗料",
   "officialName": "川上塗料株式会社",
   "nameEn": "KAWAKAMI PAINT MFG.CO.,LTD.",
-  "description": null,
+  "shortNameEn": "KAWAKAMI PAINT MFG.CO.,LTD.",
+  "description": "兵庫県尼崎市に本社を置き、合成樹脂塗料類を中心とする塗料の製造・販売を行う塗料メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "paint-manufacturing-and-sales",
+      "name": "塗料の製造・販売事業",
+      "description": "塗料の製造・販売を手がける単一セグメントの事業です。当社が本社工場（兵庫県尼崎市）・東京工場・千葉工場などで塗料を製造・調色加工し、一部は直接需要家へ、主として特約店を通じて販売しています。連結子会社のダイヤス化成株式会社と持分法適用関連会社の株式会社友進商会も当社製品の販売を担います。2025年11月期の売上高は5,932百万円で、連結売上高の全額を占めます。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "特約店",
+        "国内の製造業企業などの需要家"
+      ],
+      "children": [
+        {
+          "id": "synthetic-resin-paints",
+          "name": "合成樹脂塗料類",
+          "description": "主力の製品区分です。2025年11月期の販売実績は5,466百万円です。",
+          "customers": [
+            "特約店",
+            "国内の製造業企業などの需要家"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-paints",
+          "name": "その他塗料類 他",
+          "description": "合成樹脂塗料類以外の塗料類などの製品区分です。2025年11月期の販売実績は466百万円です。",
+          "customers": [
+            "特約店",
+            "国内の製造業企業などの需要家"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "本社工場・東京工場・千葉工場で塗料を製造・調色加工し、一部は直接、主として特約店を通じて国内の需要家へ販売して収益を得るモデルです。",
+    "products": [
+      "合成樹脂塗料類",
+      "その他塗料類 他"
+    ],
+    "customers": [
+      "特約店を通じて塗料を購入する国内の製造業企業などの需要家",
+      "直接販売先の需要家"
+    ],
+    "revenueSources": [
+      "塗料の製品販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "川上塗料",
+        "description": "兵庫県尼崎市に本社を置く塗料メーカーです。2025年11月30日現在の連結従業員数は132人で、連結子会社1社と持分法適用関連会社1社があります。"
+      },
+      {
+        "kind": "offering",
+        "title": "塗料の製造・調色加工",
+        "description": "本社工場・東京工場・千葉工場などで、合成樹脂塗料類を中心とする塗料を製造・調色加工しています。低温焼付型塗料や粉体塗料など、環境に配慮した製品の開発にも取り組んでいます。"
+      },
+      {
+        "kind": "customer",
+        "title": "特約店と国内の需要家",
+        "description": "製品の一部は直接需要家へ販売し、主として特約店を通じて国内の製造業企業などへ届けています。連結子会社のダイヤス化成株式会社と関連会社の株式会社友進商会も当社製品の販売を担います。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2025年11月期の売上高は5,932百万円",
+        "description": "2025年11月期の売上高は5,932百万円で、前期から0.3％増えました。主要な取引先の生産減により販売数量は伸びませんでしたが、一部で販売価格の是正が進みました。"
+      },
+      {
+        "kind": "profit",
+        "title": "2025年11月期の親会社株主に帰属する当期純利益は72百万円",
+        "description": "2025年11月期の親会社株主に帰属する当期純利益は72百万円で、前期から57.6％減りました。原材料価格の高止まりや物流費・人件費など諸経費の増加を、生産性の向上や販売価格への転嫁で補いきれませんでした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年11月期",
@@ -31,7 +123,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2529548000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 138,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,12 +143,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2718106000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 141,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第108期の期首から適用しており、第108期以降の主要な経営指標等は、当該会計基準等を適用した後の指標等となっています。"
     },
     {
       "fiscalYear": "2023年11月期",
@@ -71,7 +164,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3055414000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 141,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3217593000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 137,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3334764000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 132,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +212,159 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1901,
+      "title": "創設者が国産初のエナメル・ワニス製造に着手",
+      "description": "創設者の川上保太郎が、国産初とされるエナメル・ワニスの製造に着手しました。",
+      "significance": "現在の川上塗料の起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1909,
+      "title": "大阪市西成区に工場が竣工",
+      "description": "大阪市西成区今池町に工場が竣工しました。",
+      "significance": "自社工場での生産体制が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1931,
+      "title": "合名会社川上塗料製造所に改組",
+      "description": "合名会社川上塗料製造所に改組しました。",
+      "significance": "会社組織としての製造事業の形が整いました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1936,
+      "title": "尼崎市塚口に塗料総合工場を完成し移転",
+      "description": "尼崎市塚口（現在の本店所在地）に塗料総合工場を完成し、移転しました。",
+      "significance": "現在まで続く本社・本社工場の拠点ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1945,
+      "title": "川上塗料株式会社に改組",
+      "description": "川上塗料株式会社に改組しました。",
+      "significance": "現在の株式会社の形になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京工場を建設",
+      "description": "東京工場を建設しました。",
+      "significance": "関東にも生産拠点を持ちました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "大阪証券取引所に上場",
+      "description": "大阪証券取引所に上場しました。",
+      "significance": "上場企業としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "鳥印塗料販売株式会社を設立",
+      "description": "鳥印塗料販売株式会社を設立しました。",
+      "significance": "販売を担うグループ会社を持つ体制の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "大阪証券取引所市場第二部に指定替え",
+      "description": "大阪証券取引所市場第二部銘柄に指定替えとなりました。",
+      "significance": "市場区分が第二部に移りました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "千葉工場を建設",
+      "description": "千葉工場を建設しました。",
+      "significance": "関東の生産能力が増強されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "鳥印塗料販売がダイヤス化成株式会社に社名変更",
+      "description": "鳥印塗料販売株式会社がダイヤス化成株式会社（現在の連結子会社）と社名変更しました。",
+      "significance": "現在の連結子会社の名称が定まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第二部に統合",
+      "description": "東京証券取引所と大阪証券取引所の市場統合に伴い、大阪証券取引所市場第二部は東京証券取引所市場第二部に統合されました。",
+      "significance": "上場市場が東京証券取引所に一本化されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の東京証券取引所の市場区分になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "名古屋証券取引所メイン市場に上場",
+      "description": "名古屋証券取引所メイン市場に上場しました。",
+      "significance": "東京証券取引所と名古屋証券取引所の2市場上場となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "business-partner",
+      "description": "同社の子会社である三井物産ケミカル株式会社は当社の重要な取引先であり、2025年11月30日現在、当社株式の7.32％を保有しています。当社は、取引関係の維持・強化のため三井物産の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -128,13 +372,47 @@
       "publisher": "川上塗料株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XMOI.pdf",
       "publishedAt": "2026-02-20",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XMOI",
+      "asOf": "2025-11-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年1月に公表した中期経営計画では、計画期間の3年間を「投資を強化し体質を改善する期間」と位置づけています。コア顧客との協業深化による製品の開発と顧客基盤の拡大、ビジネスモデルの聖域なき見直しによる収益基盤の強化、生産性向上と生産能力増強、技術力強化、投資強化を重点施策とし、環境配慮型塗料や高機能・高付加価値製品の開発強化を図る方針です。",
+        "asOf": "2026-02-20",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1901年に国産初のエナメル・ワニス製造に着手して以来の塗料製造の実績と、自社で製造・調色加工を行い、子会社・関連会社を含む販売体制で特約店を通じて需要家に届ける一貫した体制が強みです。",
+        "basis": "【沿革】に1901年に創設者が国産初のエナメル・ワニス製造に着手したことが、【事業の内容】に当社が製造・調色加工を行い、主として特約店を通じて販売し、子会社のダイヤス化成株式会社と関連会社の株式会社友進商会も販売を担うことが印字されていることに基づきます。",
+        "asOf": "2026-02-20",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "販売先は主として国内の製造業企業であり、取引先の生産計画や国内外の景気動向が販売に反映される事業構造です。単一セグメントの塗料専業として、機械・金属関連などの主要取引先の需要動向の影響を受けます。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、販売先は主として国内の製造業企業であり、国内外の景気の動向が各社の生産計画に影響し当社の販売状況にも反映されることが、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に機械・金属関連といった主要な取引先の生産減が需要の減退につながったことが印字されていることに基づきます。",
+        "asOf": "2026-02-20",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年11月期",
     "asOf": "2025-11-30",

@@ -4,15 +4,127 @@
   "name": "Kudan",
   "officialName": "Kudan株式会社",
   "nameEn": "Kudan Inc.",
-  "description": null,
+  "shortNameEn": "Kudan Inc.",
+  "description": "SLAMを中核とする空間知覚技術を、デジタルツインやロボット向けのソフトウェアとして提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "ap",
+      "name": "AP事業",
+      "description": "SLAMを中核とする空間知覚技術を基盤に、デジタルツイン及びロボティクス向けのソフトウェア、ソリューション及び関連ハードウェアパッケージを提供する事業です。セグメント情報は、この事業が主要な事業で他の事業セグメントの重要性が乏しいため省略されており、製品・サービスごとの売上高の金額も独立して開示されていません。2026年３月期の売上高は1,196百万円です。2026年３月31日現在の連結従業員数は30人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "株式会社神戸清光",
+        "株式会社アクティブリテック",
+        "国立研究開発法人新エネルギー・産業技術総合開発機構"
+      ],
+      "children": [
+        {
+          "id": "sw-algorithm",
+          "name": "SWアルゴリズム",
+          "description": "SLAM、自己位置推定、環境地図生成、ロボットナビゲーション、セマンティック3D認識、フォトリアル3D表現等の数理処理プログラムです。ロボット、センサ、半導体、デジタルツイン関連システム等に組み込まれる基盤技術として、ソフトウェアライセンス及び開発支援の形で提供されています。金額は独立して開示されていません。",
+          "customers": [
+            "ロボットやセンサ、デジタルツイン関連システムの開発者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "sw-solution",
+          "name": "SWソリューション",
+          "description": "基盤技術を業務用途に適したアプリケーションとして統合したものです。代表的な取り組みとして、現実空間を3Dデータ化し設備・構造物の認識や現場情報の可視化を通じて現場管理DXを支援する、設備点検・管理向けソリューション「Kudan PRISM」があります。金額は独立して開示されていません。",
+          "customers": [
+            "設備管理やインフラ点検等の現場を持つ事業会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "hw-package",
+          "name": "HWパッケージ",
+          "description": "ソフトウェアの利用を補完し顧客の導入を促進するための、3Dスキャナー、センサ、コンピュータ、ロボット等の関連機器です。ソフトウェアと組み合わせて提供することで、空間データの取得、システム導入、実証実験、商用展開を円滑に進めることを可能にします。金額は独立して開示されていません。",
+          "customers": [
+            "空間データの取得や実証実験を行う事業会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "空間知覚技術のソフトウェアライセンスや開発支援、業務用ソリューション、関連ハードウェアを組み合わせて提供し、その対価を得るビジネスモデルです。",
+    "products": [
+      "SWアルゴリズム",
+      "Kudan PRISM",
+      "Kudan MMDK",
+      "Kudan VMDK",
+      "Kudan VANTAGE",
+      "HWパッケージ"
+    ],
+    "customers": [
+      "ロボットメーカー",
+      "センサーメーカー",
+      "半導体メーカー",
+      "設備管理やインフラ、建設、製造、物流等の現場を持つ事業会社",
+      "研究機関"
+    ],
+    "revenueSources": [
+      "ソフトウェアライセンス及び開発支援の対価",
+      "ソリューション提供の対価",
+      "ハードウェアパッケージの販売対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "Ｋｕｄａｎ",
+        "description": "東京都渋谷区に本社を置く会社です。英国、米国、ドイツに連結子会社を持ち、2026年３月31日現在の連結従業員数は30人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "空間知覚技術のソフトウェアとハードウェア",
+        "description": "SLAM、自己位置推定、環境地図生成等のSWアルゴリズム、設備点検・管理向けの「Kudan PRISM」等のSWソリューション、3Dスキャナー等のHWパッケージを組み合わせて提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "ロボットやデジタルツインの開発者と事業会社",
+        "description": "顧客は、ロボット、センサ、半導体、デジタルツイン関連システムの開発者や、建設・土木、設備管理、インフラ、製造、物流等の現場を持つ事業会社です。主要な顧客として、株式会社神戸清光、株式会社アクティブリテック、国立研究開発法人新エネルギー・産業技術総合開発機構が印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年３月期の売上高は1,196百万円",
+        "description": "2026年３月期の売上高は1,196百万円で、前期から131.3％増加しました。フィジカルAI市場の本格化を背景に、デジタルツイン向け及びロボット向けに多角的に売上が伸長したとされています。事業はAP事業の単一区分のため、内訳の金額は開示されていません。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年３月期の親会社株主に帰属する当期純損失は188百万円",
+        "description": "2026年３月期の親会社株主に帰属する当期純損失は188百万円で、前期の801百万円の純損失から損失額が縮小しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +139,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 637985000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 43,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +159,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 759781000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 36,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2090813000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 38,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +199,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3131104000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 41,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号）等を第11期の期首から適用しており、第10期に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +220,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2642449000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 30,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +228,177 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2011,
+      "title": "英国にKudan Limitedを設立",
+      "description": "代表取締役の大野智弘が、英国ブリストルにKudan Limitedを設立し、空間知覚技術の基礎となるSLAM技術の独自の研究開発を行っていました。",
+      "significance": "現在の当社グループの起源となる研究開発の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "Ｋｕｄａｎ株式会社を設立",
+      "description": "更なる研究開発を進める一方で、業容拡大による管理部門の拡張を目的として、Ｋｕｄａｎ株式会社を東京都千代田区に設立しました。",
+      "significance": "日本における事業と管理の拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "Kudan Limitedを完全子会社化",
+      "description": "英国のKudan Limitedを完全子会社化し、グループ体制としました。",
+      "significance": "研究開発の中核会社をグループに取り込んだ転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "Visual SLAMアルゴリズムの提供を開始",
+      "description": "Visual SLAMアルゴリズムの提供を開始しました。",
+      "significance": "基盤技術の外部提供の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "上場による事業拡大の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "Kudan USA LLCを設立",
+      "description": "米カリフォルニアにKudan USA LLCを設立しました。",
+      "significance": "北米拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "LiDAR SLAMアルゴリズムの提供を開始",
+      "description": "LiDAR SLAMアルゴリズムの提供を開始しました。",
+      "significance": "対応するセンサの幅を広げた技術拡張です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "Artisense Corporationを完全子会社化",
+      "description": "段階的な株式取得を経て、独ミュンヘン工科大学発のArtisense Corporationの全株式を取得し、完全子会社化しました。",
+      "significance": "直接法SLAMの技術を取り込んだ買収です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所グロース市場に移行しました。あわせてソリューション事業を開始し、マッピング用開発キット「Kudan MMDK」の提供も開始しました。",
+      "significance": "市場移行と、ソリューション展開への事業拡張が重なった年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ロボット用開発キット「Kudan VMDK」の提供を開始",
+      "description": "ロボット用開発キット「Kudan VMDK」の提供を開始しました。",
+      "significance": "ロボット向け提供形態の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "デジタルツインソリューション「Kudan PRISM」の提供を開始",
+      "description": "デジタルツインソリューション「Kudan PRISM」の提供を開始しました。",
+      "significance": "デジタルツイン領域のソリューション展開の本格化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ロボットカメラ向けソフトウェア「Kudan VANTAGE」の提供を開始",
+      "description": "ロボットカメラ向けソフトウェア「Kudan VANTAGE」の提供を開始しました。",
+      "significance": "ロボット向けソフトウェアの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第12期(2025/04/01－2026/03/31)",
-      "publisher": "Kudan株式会社",
+      "publisher": "Ｋｕｄａｎ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIKS.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YIKS",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "コアソフトウェアを「空間知覚プラットフォーム」へ拡張し、デジタルツイン、ロボット、データ技術を統合したプラットフォームの展開を進めるとともに、高粗利ソフトウェアへの集中を通じて収益性の向上を図るとしています。フィジカルAI市場の拡大に合わせて、空間知覚を中核としたソフトウェア及びソリューションの提供を拡大し、中長期的な事業成長を目指すとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "SLAMを中核技術とし、自社の間接法SLAMとArtisense Corporationの直接法SLAMとのハイブリッド化に成功して基本性能を向上させたこと、技術を組み込んだ顧客製品の商用化が進み、Intel社のロボット開発プラットフォームへの本格採用が大手半導体メーカー向けの商用SLAM採用として重要な節目になったことが印字されています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、直接法と間接法のハイブリッド化に成功した旨と、Intel社のロボット開発プラットフォームへの本格採用が世界初の大手半導体メーカー向け商用SLAM採用として重要なマイルストーンとなった旨が印字されていることに基づきます。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "フィジカルAIの基盤技術である空間知覚に特化した研究開発型の会社です。連結従業員数は30人と小規模ながら、2026年３月期の売上高は前期から131.3％増の1,196百万円となりました。",
+        "basis": "連結従業員数が2026年３月31日現在で30人である旨と、2026年３月期の売上高が1,196,972千円で前期比131.3％増である旨が印字されていることに基づきます。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

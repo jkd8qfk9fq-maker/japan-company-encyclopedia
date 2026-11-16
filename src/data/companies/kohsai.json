@@ -4,19 +4,116 @@
   "name": "光・彩",
   "officialName": "株式会社　光・彩",
   "nameEn": "Kohsai Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Kohsai Co.,Ltd.",
+  "description": "山梨県甲斐市に本社を置き、金・プラチナ・宝石を原材料とする貴金属装身具の製造加工販売を行う企業です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "jewelry",
+      "name": "ジュエリー事業",
+      "description": "金・プラチナ・宝石等を主要な原材料とした貴金属装身具の製造加工販売を行う単一セグメントの事業です。ジュエリーアクセサリー工程と半製品工程の2つの事業部から構成されます。2026年1月期の売上高は4,241百万円で、品目別ではジュエリーパーツが3,038百万円、ジュエリーが1,156百万円、商品が47百万円でした。",
+      "customers": [
+        "宝飾品メーカー",
+        "宝飾品小売店",
+        "海外の宝飾品事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "jewelry-products",
+          "name": "ジュエリー",
+          "description": "リング・ペンダント等のジュエリーアクセサリーを取り扱う工程です。鍛造技術に特化したブライダル商品などを製造販売しており、2026年1月期の販売実績は1,156百万円でした。",
+          "customers": [
+            "宝飾品メーカー",
+            "宝飾品小売店"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "jewelry-parts",
+          "name": "ジュエリーパーツ",
+          "description": "イヤリングパーツ・クラスプ等の半製品を取り扱う工程です。ピアスパーツ等の特許商品を中心に製造販売しており、2026年1月期の販売実績は3,038百万円でした。",
+          "customers": [
+            "宝飾品メーカー",
+            "海外の宝飾品事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "貴金属装身具を自社工場で製造加工し、ジュエリー製品とイヤリングパーツ等の半製品を宝飾品メーカーや小売店などへ販売する事業モデルです。",
+    "products": [
+      "貴金属装身具（リング・ペンダント等）",
+      "ジュエリーパーツ（イヤリングパーツ・クラスプ等の半製品）",
+      "宝飾品（商品）"
+    ],
+    "customers": [
+      "宝飾品メーカー",
+      "宝飾品小売店",
+      "海外の宝飾品事業者"
+    ],
+    "revenueSources": [
+      "ジュエリー製品の販売代金",
+      "ジュエリーパーツ製品の販売代金",
+      "商品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "光・彩",
+        "description": "当社は山梨県甲斐市に本社・工場を置く貴金属装身具のメーカーで、親会社は健康食品販売を行う株式会社エスティオです。2026年1月31日現在の従業員数は97人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ジュエリー事業（単一セグメント）",
+        "description": "リング・ペンダント等のジュエリーアクセサリー工程と、イヤリングパーツ・クラスプ等の半製品工程の2つの事業部からなるジュエリー事業を単一セグメントとして展開しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "全方位の得意先",
+        "description": "製品・商品は全方位の得意先に提供しており、主要な顧客として鍛造指輪株式会社があります。海外への販売も行っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年1月期の売上高は4,241百万円",
+        "description": "2026年1月期の売上高は4,241百万円で、前期比7.9％増でした。品目別ではジュエリーパーツが3,038百万円、ジュエリーが1,156百万円、商品が47百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年1月期の当期純利益は110百万円",
+        "description": "2026年1月期の当期純利益は110百万円で、前期比24.8％増でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年1月期",
@@ -31,11 +128,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1280189000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 69,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -53,14 +150,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1299960000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 73,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第56期の期首から適用しており、第56期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2024年1月期",
@@ -75,11 +173,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1391809000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 82,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -97,11 +195,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1455416000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 89,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -119,32 +217,169 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1547055000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 97,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1967,
+      "title": "株式会社光彩工芸を設立",
+      "description": "貴金属装身具の製造及び販売を目的として、山梨県甲府市に株式会社光彩工芸を設立しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "双葉工場を新設し本格的な操業を開始",
+      "description": "山梨県北巨摩郡双葉町（現・山梨県甲斐市）に双葉工場を新設し、生産設備を新設して本格的な操業を開始しました。",
+      "significance": "現在の本社・双葉工場につながる生産拠点の確立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "貴金属材料の加工を内製化",
+      "description": "貴金属材料の伸線、圧延加工の内製化を目的に機械設備を増設し、100％内製化を実現しました。",
+      "significance": "材料加工から製品までの一貫生産体制を確立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "2代目社長に深沢栄二が就任",
+      "description": "経営基盤強化と将来の営業戦略展開に向け、2代目社長に深沢栄二が就任し、創業者である深沢信夫は会長に就任しました。",
+      "significance": "現在の経営体制の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "社名を株式会社光・彩に改称",
+      "description": "社名を株式会社光彩工芸から株式会社光・彩に改称しました。",
+      "significance": "現在の社名への変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所JASDAQ（スタンダード）から東京証券取引所スタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "名古屋証券取引所メイン市場へ重複上場",
+      "description": "名古屋証券取引所メイン市場へ重複上場しました。",
+      "significance": "重複上場による投資家層の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第59期(2025/02/01－2026/01/31)",
-      "publisher": "株式会社　光・彩",
+      "publisher": "株式会社光・彩",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y03W.pdf",
       "publishedAt": "2026-04-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y03W",
+      "asOf": "2026-01-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2023年11月１日付で普通株式１株につき２株の割合で株式分割を行っています（主要な経営指標等の注記に記載）。",
+      "businessModel: 2024年11月１日付で普通株式１株につき２株の割合で株式分割を行っています（主要な経営指標等の注記に記載）。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "技術とテクノロジーを融合し、サステナブルな製品づくりを通じて付加価値を高め、「ジュエリー創りを通じてより良き世界を創る」という経営目的の達成を目指すとしています。ジュエリーパーツ製品については特許商品を中心に全てのファッションジュエリーの標準パーツとなることを、ジュエリー製品については鍛造技術に特化したブライダル商品で世界で認められるブランドとなることを目指すとしています。",
+        "asOf": "2026-04-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年1月期は、独自技術を活かした高付加価値商品の開発や、女性の活躍を支援する機能性商品、アレルギーに配慮した製品の開発を進めるとともに、設備投資と各工程の自動化による生産性向上と製造原価の見直しに取り組みました。海外では現地展示会等を通じた営業活動の強化により海外受注が回復基調となりました。",
+        "basis": "MD&Aにおける当事業年度の取り組みの記載に基づく",
+        "asOf": "2026-04-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "貴金属材料の伸線・圧延加工の内製化により材料加工から製品までを一貫して手がける体制と、職人の技術に最先端の機械加工を掛け合わせた独自技術が強みです。ジュエリーパーツでは国内で50％、特にイヤリングの金具では70％のシェアを獲得しているとしています。",
+        "basis": "沿革における内製化の記載と、対処すべき課題における独自技術及びシェアの記載に基づく",
+        "asOf": "2026-04-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "ジュエリー業界は原材料及びエネルギー価格の高止まりが継続し、消費者の購買意欲にも慎重さがみられる厳しい環境にあります。その中で当社は、ジュエリーパーツの国内シェア50％、イヤリングの金具のシェア70％を獲得していると位置付けています。",
+        "basis": "MD&Aにおける業界環境の記載と、対処すべき課題におけるシェアの記載に基づく",
+        "asOf": "2026-04-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年1月期",
     "asOf": "2026-01-31",

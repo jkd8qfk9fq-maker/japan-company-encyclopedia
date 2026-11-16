@@ -4,15 +4,151 @@
   "name": "日本エム・ディ・エム",
   "officialName": "株式会社日本エム・ディ・エム",
   "nameEn": "Japan Medical Dynamic Marketing, INC.",
-  "description": null,
+  "shortNameEn": "Japan Medical Dynamic Marketing, INC.",
+  "description": "整形外科分野を中心に、人工関節や骨接合材料などの医療機器を日米で開発・製造し、医療機関へ販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "japan",
+      "name": "日本",
+      "description": "当社が整形外科分野の人工関節、骨接合材料、脊椎固定器具等の製商品を、米国子会社Ortho Development Corporation（ODEV社）や販売提携契約等に基づく国内外メーカーから仕入れ、日本国内で販売する事業です。2026年3月期の外部顧客への売上高は13,109百万円で、当社グループ最大の事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "japan-artificial-joints",
+          "name": "人工関節（日本）",
+          "description": "人工股関節置換術（THA）や人工骨頭挿入術（BHA）等に使う人工関節を日本国内で販売します。2026年3月期の日本における販売実績は4,904百万円です。",
+          "customers": [
+            "日本国内の医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "japan-osteosynthesis",
+          "name": "骨接合材料（日本）",
+          "description": "大腿骨頚部骨折治療材料Prima Hip Screwや大腿骨転子部骨折治療材料ASULOCK等の骨接合材料を日本国内で販売します。2026年3月期の日本における販売実績は4,444百万円です。",
+          "customers": [
+            "日本国内の医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "japan-spinal",
+          "name": "脊椎固定器具（日本）",
+          "description": "KMC KyphoplastyシステムやPedicle Screw等の脊椎固定器具を日本国内で販売します。2026年3月期の日本における販売実績は3,493百万円です。",
+          "customers": [
+            "日本国内の医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "united-states",
+      "name": "米国",
+      "description": "米国子会社ODEV社が人工関節、骨接合材料、脊椎固定器具等の開発製造を行い、当社へ製品を供給するとともに、米国市場を中心に人工関節、脊椎固定器具等の販売を行う事業です。2026年3月期の外部顧客への売上高は10,807百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "us-artificial-joints",
+          "name": "人工関節（米国）",
+          "description": "人工膝関節置換術（TKA）や人工股関節置換術（THA）等に使う人工関節を米国を中心に販売します。新製品Trivicta Hip Stemの全米展開が進められています。2026年3月期の米国における販売実績は10,774百万円です。",
+          "customers": [
+            "米国を中心とする医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "us-spinal",
+          "name": "脊椎固定器具（米国）",
+          "description": "脊椎固定器具を米国で販売します。2026年3月期の米国における販売実績は32百万円です。",
+          "customers": [
+            "米国の医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "米国子会社が開発・製造する自社製品と国内外メーカーからの仕入れ品を、日本と米国で医療機関へ販売する事業モデルです。",
+    "products": [
+      "人工関節（人工股関節・人工膝関節等）",
+      "骨接合材料",
+      "脊椎固定器具",
+      "自社製品（セラミックヘッド「JMDM BIOCERAM AZUL」等）"
+    ],
+    "customers": [
+      "日本国内の医療機関",
+      "米国を中心とする海外の医療機関"
+    ],
+    "revenueSources": [
+      "自社製品の販売による売上高",
+      "国内外メーカーからの仕入商品の販売による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日本エム・ディ・エム",
+        "description": "当社と海外子会社1社等でグループを構成します。2026年3月期の連結従業員数は539人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "整形外科分野の医療機器",
+        "description": "人工関節、骨接合材料、脊椎固定器具等の医療機器を、米国子会社による開発・製造と、販売提携等に基づく国内外メーカーからの仕入れでそろえます。"
+      },
+      {
+        "kind": "customer",
+        "title": "日本と米国の医療機関",
+        "description": "日本では当社が、米国では子会社ODEV社が、それぞれの市場で医療機関へ製品を販売します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品販売による売上高",
+        "description": "2026年3月期の売上高は23,917百万円で、日本が13,109百万円、米国が10,807百万円です。自社製品の売上高の割合は79.2％でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の親会社株主に帰属する当期純利益は263百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は263百万円です。前期は親会社株主に帰属する当期純損失461百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21491121000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 474,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23292095000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 488,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25603802000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 511,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +223,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24741493000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 538,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "米国子会社の競合事業者の元従業員による顧客奪取行為に関する訴訟について、和解関連費用を計上した年度です。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +244,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25427513000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 539,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +252,129 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1973,
+      "title": "医療関連商品の販売を目的に設立",
+      "description": "医療関連商品の販売を目的として、株式会社ホスピタルサービスを設立しました。",
+      "significance": "当社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "日本エム・ディ・エムに社名変更し、骨接合材料の販売を開始",
+      "description": "株式会社日本エム・ディ・エムに社名を変更しました。同年、Ace Medical Company（米国）の日本総販売代理店として骨接合材料の販売を開始しました。",
+      "significance": "現在の社名と、整形外科分野の製品販売の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "米国のOrtho Development Corporationを買収",
+      "description": "米国子会社となるOrtho Development Corporation（ODEV社）を買収しました。",
+      "significance": "日米共同開発と米国事業の基盤となる買収です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "株式を店頭登録し、株式公開",
+      "description": "株式を日本証券業協会に店頭売買有価証券として登録し、株式を公開しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "株式を東京証券取引所市場第二部に上場しました。翌2001年には市場第一部に指定替えとなっています。",
+      "significance": "取引所上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "伊藤忠商事と資本・業務提携契約を締結",
+      "description": "伊藤忠商事株式会社との間で資本・業務提携に関する契約を締結しました。この提携は2016年5月に終了しています。",
+      "significance": "大手商社との提携の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "自社開発の骨接合材料製品を国内で販売開始",
+      "description": "自社開発の骨接合材料製品を日本国内で販売開始しました。同年、ジョンソン・エンド・ジョンソン株式会社メディカルカンパニーとの日本市場における骨接合材料の販売契約は終了しています。",
+      "significance": "自社製品への移行を示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "日本特殊陶業と資本及び業務提携契約を締結",
+      "description": "日本特殊陶業株式会社との間で資本及び業務提携に関する契約を締結しました。この提携は2022年1月に終了しています。",
+      "significance": "提携先の切り替えです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "三井化学と資本及び業務提携契約を締結",
+      "description": "三井化学株式会社との間で資本及び業務提携に関する契約を締結しました。",
+      "significance": "現在のその他の関係会社との提携の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "京セラと開発委託したセラミックヘッドを販売開始",
+      "description": "京セラ株式会社と開発委託契約を締結した「JMDM BIOCERAM AZUL セラミックヘッド」の販売を開始しました。",
+      "significance": "新しい自社製品の投入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsui-chemicals",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】で「その他の関係会社」に区分される会社です。2022年1月に資本及び業務提携に関する契約を締結しており、2026年3月31日現在、発行済株式（自己株式を除く）の総数に対する所有割合は30.01％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +382,55 @@
       "publisher": "株式会社日本エム・ディ・エム",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCSL.pdf",
       "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YCSL",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "患者様のQOL向上に資する経営を行うべく、「最先端の優れた医療機器の開発と販売を通じて医療に貢献する」という経営理念のもと、日米共同開発を基軸に、整形外科分野の医療機器の開発・製造・輸入・販売を通じて、世界の医療マーケットに真に価値ある医療機器を提供していく方針です。事業環境の変化と一連の報道事案を踏まえ、成長機会の取り込み、収益性の改善、ガバナンスの強化を重要課題とし、日本では高齢化に対応した新製品の継続的導入、米国では製品供給体制の強化とSAICOプロジェクトによる収益性の改善、コンプライアンスとガバナンス体制の強化に取り組むとしています。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高は日本13,109百万円、米国10,807百万円と、日米の両市場に販売基盤を持ちます。日本では新製品の継続的導入による獲得症例数の増加が、米国では供給制約の解消による販売機会の確保が、それぞれの市場の課題として示されています。",
+        "basis": "セグメント情報の外部顧客への売上高、関連情報（製品及びサービスごとの情報・地域ごとの情報・主要な顧客ごとの情報）、MD&Aの経営成績等の状況の概要に基づく",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "米国子会社ODEV社が人工関節や脊椎固定器具等の開発製造を担い、当社が日本で販売する日米共同開発の体制を持ちます。連結売上高に占める自社製品の割合は2026年3月期で79.2％であり、開発から販売までをグループで担う形です。日本では薬事・開発本部が工具の改良や新機能の開発に取り組み、米国ではODEV社の開発部門が製品開発に取り組んでいます。",
+        "basis": "事業の内容、セグメント情報の外部顧客への売上高、研究開発活動、MD&Aの経営成績等の状況の概要に基づく",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "事業の種類は医療機器事業の単一セグメントで、整形外科分野の医療機器類の取り扱いが大半を占めます。報告セグメントは日本と米国の地域別で、主要な顧客ごとの情報では、外部顧客への売上高の10％以上を占める相手先はないとされています。",
+        "basis": "セグメント情報の外部顧客への売上高、関連情報（主要な顧客ごとの情報）、事業の内容に基づく",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

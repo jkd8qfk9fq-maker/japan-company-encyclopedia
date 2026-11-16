@@ -4,19 +4,111 @@
   "name": "キクカワエンタープライズ",
   "officialName": "キクカワエンタープライズ株式会社",
   "nameEn": "KIKUKAWA ENTERPRISE, INC.",
-  "description": null,
+  "shortNameEn": "KIKUKAWA ENTERPRISE, INC.",
+  "description": "製材・木工機械と工作機械を製造販売する、1897年創業の機械メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "machinery-manufacturing-sales",
+      "name": "機械の製造並びに販売事業",
+      "description": "製材・木工機械と工作機械の製造販売を行う単一セグメントの事業です。2026年3月期の売上高は3,859百万円で、前期に比べ30.3％減りました。三重県伊勢市の本社工場で生産し、東京・大阪・名古屋・九州の各営業所で販売しています。",
+      "customers": [
+        "製材・木材加工を行う事業者",
+        "金属加工などを行う製造業の企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "woodworking-machinery",
+          "name": "木工機械",
+          "description": "丸太を建築用・木工用などの角材、板材、小割材に加工する製材機械と、角材、板材、小割材、合板、繊維板、合成樹脂などを製品に二次加工する木工機械です。2026年3月期の外部顧客への売上高は2,139百万円で、売上高全体の55.4％を占める主力分野です。",
+          "customers": [
+            "製材業者・木材加工業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "machine-tools",
+          "name": "工作機械",
+          "description": "鉄、非鉄金属、その他新素材などを加工する機械です。研削機械については、米国タイムセーバーズ・インコーポレーテッドとの技術援助契約に基づく製品も含まれます。2026年3月期の外部顧客への売上高は1,719百万円で、売上高全体の44.6％を占めました。",
+          "customers": [
+            "金属加工などを行う製造業の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "丸太を角材や板材に加工する製材・木工機械と、金属などを加工する工作機械を自社工場で製造し、製材業者や製造業の企業に販売して対価を得るモデルです。",
+    "products": [
+      "製材・木工機械",
+      "工作機械"
+    ],
+    "customers": [
+      "製材・木材加工を行う事業者",
+      "金属加工などを行う製造業の企業"
+    ],
+    "revenueSources": [
+      "木工機械の販売代金",
+      "工作機械の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "キクカワエンタープライズ",
+        "description": "1897年に創業した機械メーカーで、関連会社はなく単体で事業を行っています。2026年3月期の従業員数は189人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "製材・木工機械と工作機械",
+        "description": "丸太を角材・板材・小割材に加工する製材機械や二次加工用の木工機械と、鉄・非鉄金属や新素材を加工する工作機械を製造販売します。"
+      },
+      {
+        "kind": "customer",
+        "title": "製材業者や製造業の企業",
+        "description": "顧客は、製材・木材加工を行う事業者や、金属加工などを行う製造業の企業で、製品は海外にも販売されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "機械の販売代金",
+        "description": "収入は木工機械と工作機械の販売代金です。2026年3月期の売上高は3,859百万円で、木工機械のプラント受注の減少などにより前期に比べ30.3％減りました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は326百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,11 +123,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10778404000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 183,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -53,11 +145,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11029185000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 185,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -75,11 +167,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11726996000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 187,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -97,11 +189,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12286443000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 184,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -119,17 +211,148 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12900333000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 189,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1897,
+      "title": "合名会社菊川鉄工所を設立",
+      "description": "合名会社菊川鉄工所が設立され、国産第１号の製材機械とされるマサツ自動送り丸鋸盤の製造を始めました。",
+      "significance": "現在の会社の起源で、製材機械づくりの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1929,
+      "title": "国産初の自動四面鉋盤を開発",
+      "description": "わが国で初めて自動四面鉋盤を開発し、製造を始めました。",
+      "significance": "木工機械の技術開発力を示す初期の成果です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1932,
+      "title": "工作機械の製造を開始",
+      "description": "本業である製材・木工機械のほかに、工作機械の製造を始めました。",
+      "significance": "現在の二つ目の柱である工作機械事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "株式会社に組織変更",
+      "description": "組織を株式会社に改め、商号を株式会社菊川鉄工所に変更しました。",
+      "significance": "現在の法人形態の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "株式の額面変更のため吸収合併",
+      "description": "株式の額面を変更するため、形式的に菊川鉄工株式会社に吸収合併され、商号を株式会社菊川鉄工所に戻しました。実質的には従来の会社がそのまま継続しています。",
+      "significance": "法人の形が変わっても事業の実体が継続してきたことを示します。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "大阪・名古屋証券取引所市場第二部に上場",
+      "description": "株式を大阪証券取引所と名古屋証券取引所の市場第二部に上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "米国タイムセーバーズ社と技術提携",
+      "description": "米国のタイムセーバーズ・インコーポレーテッドと技術提携し、ワイドベルトサンダの製造に着手しました。",
+      "significance": "研削機械の技術を取り入れ、工作機械の幅を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "伊勢市朝熊町に新工場を建設",
+      "description": "三重県伊勢市朝熊町に新工場を建設しました。現在の本社工場です。",
+      "significance": "生産拠点を伊勢市内の高台に移す移転の中心となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "商号をキクカワエンタープライズ株式会社に変更",
+      "description": "商号を株式会社菊川鉄工所からキクカワエンタープライズ株式会社に変更しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "本社を伊勢市朝熊町に移転",
+      "description": "本社を三重県伊勢市朝熊町に移転しました。",
+      "significance": "本社機能と工場が同じ地区に集約されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "本社工場を増設",
+      "description": "三重県伊勢市朝熊町の本社工場を増設しました。",
+      "significance": "生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証スタンダード市場と名証メイン市場に移行",
+      "description": "市場区分の見直しに伴い、東京証券取引所は市場第二部からスタンダード市場に、名古屋証券取引所は市場第二部からメイン市場に移行しました。",
+      "significance": "現在の上場市場の区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "研究棟を建設",
+      "description": "三重県伊勢市朝熊町に研究棟を建設しました。",
+      "significance": "新規技術の開発を強化する拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -138,13 +361,55 @@
       "publisher": "キクカワエンタープライズ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHXC.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YHXC",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「稼ぐ力」を養うための適切な投資を行い、ものづくり企業としての「ブランド」価値を創造することを基本方針としています。木工機械では、デジタル化や省人化など顧客のニーズの変化に対応した技術開発や、国産材の利用拡大に関わる研究を進め、工作機械では、自動化・省人化への設備投資需要や、ＡＩをはじめとした先端技術分野での活用可能性を追求するとしています。新型設備の導入やデジタル投資、海外販売市場の開拓にも取り組むとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期は、工作機械の販売が増えた一方で、木工機械のプラント受注が減り、全体の売上高は前期を下回りました。開示された課題である顧客ニーズの変化への対応が、工作機械の伸びという形で一部に表れています。",
+        "basis": "経営成績の分析に、プラント受注の減少が売上高の減少となった旨と、機種別の販売実績で工作機械が前期に比べて増えた旨が記載されていることによるものです。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1897年の創業以来、製材・木工機械をつくり続けており、国産第１号の製材機械や国内で初めて開発した自動四面鉋盤など、草創期からの開発実績があります。1967年に締結した米国タイムセーバーズ・インコーポレーテッドとの技術援助契約は現在も続いており、研削機械の技術を取り入れています。",
+        "basis": "沿革に、国産第１号の製材機械の製造開始と自動四面鉋盤の国内初の開発が、重要な契約等にタイムセーバーズ・インコーポレーテッドとの技術援助契約が記載されていることによるものです。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "木工機械が売上高の過半を占める主力分野であり、国内の住宅着工の動向に影響を受けやすい事業構成です。",
+        "basis": "事業の内容に、木工機械の販売高比率が2026年3月期に55.4％と印字され、経営成績の分析で、木工機械が新設住宅着工戸数の動向と関連の深い分野である旨が述べられていることによるものです。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

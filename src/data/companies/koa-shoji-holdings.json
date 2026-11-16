@@ -4,15 +4,143 @@
   "name": "コーア商事ホールディングス",
   "officialName": "コーア商事ホールディングス株式会社",
   "nameEn": "KOA SHOJI HOLDINGS CO.,LTD.",
-  "description": null,
+  "shortNameEn": "KOA SHOJI HOLDINGS CO.,LTD.",
+  "description": "ジェネリック医薬品の原料となる原薬の輸入販売と、注射剤を中心とする医薬品の製造販売を行うグループの持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "api-sales",
+      "name": "原薬販売事業",
+      "description": "連結子会社のコーア商事株式会社が担う事業で、医薬品の原料である原薬を海外から輸入し、ジェネリック医薬品メーカーを中心とする製薬会社へ販売します。自社で分析機能を持ち、品質の確認や新規開発品目の提案・支援も行います。2026年6月期の外部顧客への売上高は15,717百万円で、当社グループ最大の事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "api-import-sales",
+          "name": "原薬の輸入販売",
+          "description": "医薬品原料である原薬を輸入し、ジェネリック医薬品メーカーを中心に供給します。高品質で安価な原薬を安定して供給することを主眼としています。",
+          "customers": [
+            "ジェネリック医薬品メーカーを中心とする製薬会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "api-analysis-support",
+          "name": "分析・技術支援",
+          "description": "医薬分析センターで輸入原薬の品質分析を行うほか、顧客の研究開発段階からの提案・支援や、原薬メーカーへの品質改善の提案・新規製法の技術提供を行います。",
+          "customers": [
+            "ジェネリック医薬品メーカーを中心とする製薬会社",
+            "原薬メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "pharmaceutical-manufacturing",
+      "name": "医薬品製造販売事業",
+      "description": "連結子会社のコーアイセイ株式会社とコーアバイオテックベイ株式会社が、医療用医薬品と一般用医薬品の製造販売・仕入販売を行い、製剤の受託製造も行う事業です。高度な技術と投資が必要な高薬理活性注射剤の生産設備を保有しています。2026年6月期の外部顧客への売上高は8,961百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "drug-manufacturing-sales",
+          "name": "医薬品の製造販売・仕入販売",
+          "description": "ジェネリック医薬品を中心に、医療用医薬品と一般用医薬品の製造販売と仕入販売を行います。自社開発品の製造・販売も積極的に行っています。",
+          "customers": [
+            "医療機関",
+            "薬局・ドラッグストア"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "contract-manufacturing",
+          "name": "製剤の受託製造",
+          "description": "国内大手メーカー等から製剤の製造を受託します。高薬理活性注射剤の生産設備を生かした受託製造も行います。",
+          "customers": [
+            "国内大手メーカー等の製薬会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "海外から輸入した原薬を製薬会社へ販売するとともに、自社工場でジェネリック医薬品を製造販売し、他社からの受託製造も行って対価を得る事業モデルです。",
+    "products": [
+      "医薬品の原料である原薬（輸入品）",
+      "医療用医薬品（ジェネリック医薬品を中心とする注射剤・錠剤など）",
+      "一般用医薬品（OTC医薬品）",
+      "製剤の受託製造"
+    ],
+    "customers": [
+      "ジェネリック医薬品メーカーを中心とする製薬会社",
+      "医薬品の製造を委託する国内大手メーカー等",
+      "医療機関・薬局"
+    ],
+    "revenueSources": [
+      "原薬の販売対価",
+      "医薬品（製剤）の販売対価",
+      "受託製造の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "コーア商事ホールディングス",
+        "description": "純粋持株会社で、連結子会社3社（コーア商事株式会社、コーアイセイ株式会社、コーアバイオテックベイ株式会社）を通じて事業を行います。2026年6月期の連結従業員数は318人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "原薬の輸入販売と医薬品の製造販売",
+        "description": "コーア商事株式会社が原薬の輸入販売を行い、コーアイセイ株式会社とコーアバイオテックベイ株式会社が医療用医薬品・一般用医薬品の製造販売、仕入販売と製剤の受託製造を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "製薬会社と医療機関・薬局",
+        "description": "原薬はジェネリック医薬品メーカーを中心とする製薬会社へ販売し、製剤は医療機関や薬局へ供給します。受託製造は国内大手メーカー等から受けます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "販売対価と受託製造の対価",
+        "description": "2026年6月期の売上高は24,678百万円で、原薬販売事業が15,717百万円、医薬品製造販売事業が8,961百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年6月期の親会社株主に帰属する当期純利益は3,748百万円",
+        "description": "2026年6月期の親会社株主に帰属する当期純利益は3,748百万円で、前期の3,637百万円から増加しました。売上高は24,678百万円と前期から増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,7 +155,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18665832000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 303,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +175,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20923488000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 297,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +195,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25051674000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 289,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +215,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 28120664000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 304,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +235,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 31180369000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 318,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +243,138 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1991,
+      "title": "コーア商事株式会社を設立",
+      "description": "ジェネリック医薬品原料及び製剤の輸入販売を目的として、横浜市港北区にコーア商事株式会社を設立しました。",
+      "significance": "当社グループの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "バイオテックベイ株式会社を設立",
+      "description": "医療用医薬品の製造販売のため、バイオテックベイ株式会社を設立しました。",
+      "significance": "医薬品製造販売事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "株式会社イセイを子会社化",
+      "description": "コーア商事株式会社が株式会社イセイの株式を過半数取得し、ジェネリック注射剤、経口剤、外用剤の開発・製造・販売事業に進出しました。",
+      "significance": "注射剤を中心とする製造販売体制の基盤になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "興亜製薬株式会社を子会社化",
+      "description": "コーア商事株式会社が興亜製薬株式会社の株式を過半数取得し、OTC医薬品の製造・販売事業に進出しました。",
+      "significance": "一般用医薬品分野への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "共同株式移転により持株会社を設立",
+      "description": "コーア商事株式会社、株式会社イセイ、バイオテックベイ株式会社、興亜製薬株式会社の完全親会社として、共同株式移転によりコーア商事ホールディングス株式会社を設立しました。",
+      "significance": "現在の純粋持株会社体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "蔵王新工場を新設",
+      "description": "コーアイセイ株式会社が、高薬理活性注射剤の製造に特化した蔵王新工場を新設しました。",
+      "significance": "高薬理活性注射剤の生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "当社株式が東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "当社株式が東京証券取引所市場第一部の銘柄に指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "コーア製薬株式会社を吸収合併",
+      "description": "コーアバイオテックベイ株式会社を存続会社、コーア製薬株式会社を消滅会社とする吸収合併を実施しました。",
+      "significance": "グループ内の製造販売体制を集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "蔵王第二工場が竣工",
+      "description": "コーアイセイ株式会社が、安定供給体制を向上させるため蔵王工場の敷地内に蔵王第二工場を竣工しました。稼働は2027年3月の予定です。",
+      "significance": "主力製品の増産と新規受託案件の獲得に向けた生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "fuso-pharmaceutical-industries",
+      "relationship": "customer",
+      "description": "セグメント情報の主要な顧客として開示されている販売先で、原薬販売事業と医薬品製造販売事業の両事業で取引があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "towa-pharmaceutical",
+      "relationship": "customer",
+      "description": "セグメント情報の主要な顧客として開示されている販売先で、原薬販売事業で取引があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +382,55 @@
       "publisher": "コーア商事ホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z2Z6.pdf",
       "publishedAt": "2026-09-18",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Z2Z6",
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2030年に向けての10カ年長期事業計画で、原薬販売事業は「原薬輸入商社から、医薬品専門商社へ」、医薬品製造販売事業は「注射剤を主としたジェネリック医薬品メーカーから、特長のある注射剤国内トップメーカーへ」を掲げています。原薬販売では海外で生産された医薬品の輸入販売の事業化やライセンスイン活動を推進し、製造販売では蔵王工場の生産能力強化と安定供給体制の推進に取り組みます。",
+        "asOf": "2026-09-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2つの事業テーマは、原薬の輸入販売という商社機能と、注射剤の製造販売というメーカー機能の双方を伸ばす方向でそろえられています。蔵王第二工場は2026年6月に竣工し、2027年3月の稼働に向けて準備が進められています。",
+        "basis": "経営方針（中長期的な会社の経営戦略）、沿革、MD&Aの経営成績等の状況の概要に基づく",
+        "asOf": "2026-09-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "原薬の輸入販売を行う商社でありながら自社で分析機能を持ち、既存商品の安定提供に加えて顧客の研究開発段階からの提案・支援や、原薬メーカーへの品質改善の提案・新規製法の技術提供を行っています。原薬から製剤までの一貫した製造が可能な体制を持つことも特徴です。医薬品製造販売事業では、高度な技術と投資が必要な高薬理活性注射剤の生産設備を保有しています。",
+        "basis": "事業の内容（事業の特徴・事業の体制）とセグメント情報の外部顧客への売上高に基づく",
+        "asOf": "2026-09-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "ジェネリック医薬品向けの原薬供給を中心に、国内外の医薬品メーカーと幅広く取引しています。セグメント情報では主要な顧客として扶桑薬品工業株式会社と東和薬品株式会社が開示されており、いずれも原薬販売事業の販売先です。",
+        "basis": "セグメント情報の主要な顧客ごとの情報、関連情報（製品及びサービスごとの情報）、事業の内容（医薬品業界における位置づけ）に基づく",
+        "asOf": "2026-09-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",

@@ -4,15 +4,144 @@
   "name": "神島化学工業",
   "officialName": "神島化学工業株式会社",
   "nameEn": "Konoshima　Chemical　Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Konoshima Chemical Co.,Ltd.",
+  "description": "大阪市に本社を置き、住宅・ビル用不燃建材と、酸化マグネシウム等のマグネシウム製品やセラミックス製品を製造販売する無機化学メーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "chemicals",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "building-materials",
+      "name": "建材事業",
+      "description": "住宅及び非住宅、ビル用不燃建材として、住宅及び非住宅窯業サイディング、軒天、破風板、耐火パネル等を製造販売する事業です。2026年4月期の外部顧客への売上高は15,356百万円で、売上高の過半を占めます。詫間工場と石岡工場で製造しています。当社が担います。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "住宅分野の需要先",
+        "非住宅・ビル分野の需要先"
+      ],
+      "children": [
+        {
+          "id": "residential-materials",
+          "name": "住宅向け建材",
+          "description": "住宅向けの不燃建材を製造販売する事業です。顧客との契約から生じる収益の分解情報では、2026年4月期の売上高は13,132百万円です。けい酸カルシウム板「プライケイカル」や高級軒天ボード、サイディングが含まれます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        },
+        {
+          "id": "non-residential-materials",
+          "name": "非住宅向け建材",
+          "description": "ビルや商業施設等の非住宅向けの不燃建材を製造販売する事業です。顧客との契約から生じる収益の分解情報では、2026年4月期の売上高は2,223百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        }
+      ]
+    },
+    {
+      "id": "chemical-products",
+      "name": "化成品事業",
+      "description": "酸化マグネシウム、難燃水酸化マグネシウム、炭酸マグネシウム、セラミックス製品等を製造販売する事業です。2026年4月期の外部顧客への売上高は12,652百万円です。詫間工場で製造しています。当社が担います。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "サプリメント・工業用途の需要先",
+        "蛍光体等のセラミックス製品の需要先"
+      ],
+      "children": [
+        {
+          "id": "magnesium",
+          "name": "マグネシウム製品",
+          "description": "酸化マグネシウム、難燃水酸化マグネシウム、炭酸マグネシウム等のマグネシウム製品を製造販売する事業です。顧客との契約から生じる収益の分解情報では、2026年4月期の売上高は10,868百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        },
+        {
+          "id": "ceramics",
+          "name": "セラミックス製品",
+          "description": "セラミックス製品を製造販売する事業です。顧客との契約から生じる収益の分解情報では、2026年4月期の売上高は1,783百万円です。蛍光体等の用途があります。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "神島化学工業は、けい酸カルシウム板や窯業サイディング等の不燃建材を製造販売する建材事業と、酸化マグネシウムやセラミックス製品等を製造販売する化成品事業の2事業を展開する会社です。",
+    "products": [
+      "けい酸カルシウム板",
+      "窯業サイディング・軒天・破風板・耐火パネル",
+      "酸化マグネシウム",
+      "難燃水酸化マグネシウム",
+      "炭酸マグネシウム",
+      "セラミックス製品"
+    ],
+    "customers": [
+      "住宅分野の建材需要先",
+      "非住宅・ビル分野の建材需要先",
+      "マグネシウム製品の産業用途・サプリメント用途の需要先",
+      "セラミックス製品の需要先"
+    ],
+    "revenueSources": [
+      "建材製品の販売収入",
+      "化成品製品の販売収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "関係会社を持たない単独の会社",
+        "description": "本社を大阪府大阪市中央区今橋に置き、関係会社はなく単独で事業を行っています。2026年4月30日現在の従業員数は681人で、詫間工場（香川県三豊市）と石岡工場（茨城県石岡市）の東西2製造拠点を有します。"
+      },
+      {
+        "kind": "offering",
+        "title": "建材事業と化成品事業",
+        "description": "建材事業では住宅及び非住宅、ビル用不燃建材として窯業サイディング、軒天、破風板、耐火パネル等を、化成品事業では酸化マグネシウム、難燃水酸化マグネシウム、炭酸マグネシウム、セラミックス製品等を製造販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "住宅・非住宅分野と産業用途の需要先",
+        "description": "主な顧客は、住宅及び非住宅、ビル分野の建材需要先と、マグネシウム製品やセラミックス製品の産業用途の需要先です。売上高の10％以上を占める主要な顧客はなく、顧客の所在地別では日本を中心にアジア、米国、欧州等にも販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年4月期の売上高は28,008百万円",
+        "description": "2026年4月期の売上高は28,008百万円で、前期比2.2％増でした。建材事業が15,356百万円、化成品事業が12,652百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は1,850百万円",
+        "description": "2026年4月期の当期純利益は1,850百万円で、前期比29.1％増でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年4月期",
@@ -27,11 +156,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9365000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 620,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +178,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10558000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 629,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +200,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11909000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 657,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +222,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12964000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 672,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +244,149 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14710000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 681,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1917,
+      "title": "神島硫酸製造所を創業",
+      "description": "神島硫酸製造所を創業し、硫酸の製造を開始しました。",
+      "significance": "創業です。現在の化成品事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1919,
+      "title": "神島人造肥料株式会社に商号変更",
+      "description": "神島人造肥料株式会社に商号を変更し、過燐酸石灰の製造を開始しました。",
+      "significance": "肥料事業への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1946,
+      "title": "神島化学工業株式会社を設立",
+      "description": "神島人造肥料株式会社と旧神島化学工業株式会社が合併解散し、新たに神島化学工業株式会社を設立しました。",
+      "significance": "現在の会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京・大阪両証券取引所に上場",
+      "description": "東京、大阪両証券取引所に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "詫間工場を開設しマグネシウム製品の製造を開始",
+      "description": "詫間工場を開設し（関係会社日新産業株式会社を吸収合併）、炭酸マグネシウム、酸化マグネシウム等の製造を開始しました。",
+      "significance": "現在の主力工場とマグネシウム製品の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "けい酸カルシウム板の製造を開始",
+      "description": "けい酸カルシウム板（不燃建材）の製造を開始しました。",
+      "significance": "建材事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "上場廃止",
+      "description": "株式の上場を廃止し、社団法人日本証券業協会の店頭管理銘柄に指定されました。",
+      "significance": "上場廃止です。その後、店頭売買銘柄への登録を経て再上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "大阪証券取引所市場第二部に株式上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "再上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "昭和電工建材株式会社より非住宅事業（ラムダ事業）を譲受",
+      "description": "昭和電工建材株式会社より非住宅事業（ラムダ事業）の譲渡を受けました。",
+      "significance": "非住宅分野の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "創業100周年",
+      "description": "創業100周年を迎えました。",
+      "significance": "創業100周年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "セラミックス新工場が完成",
+      "description": "セラミックス新工場が完成しました。",
+      "significance": "セラミックス製品の生産体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場再編に伴い、スタンダード市場に移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "dowa-holdings",
+      "relationship": "major-shareholder",
+      "description": "当社株式の9.28％を保有する筆頭株主です。当社の社外監査役には、同社の執行役員を兼務する者が含まれています。当社も同社株式を特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +394,55 @@
       "publisher": "神島化学工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YQCW.pdf",
       "publishedAt": "2026-07-14",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YQCW",
+      "asOf": "2026-04-30",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年4月期から2028年4月期の3ヶ年の中期経営計画を公表しており、基本方針として、環境対策等の社会課題へ対応することによって持続的成長モデルを構築し社会貢献との両立を図ることと、資本コストを意識した経営の実現に向けた対応を掲げています。活動内容として、2030年ゼロCO2の実現に向けた排ガスCO2を回収・利用した商品の積極展開とCO2リサイクル技術の幅広い分野への展開、セラミックスに代表されるコア技術の独創性を武器としたハイエンド市場の需要創造、AIを中心としたICT技術やKIP活動を深化させた生産性向上や省人化を挙げています。",
+        "asOf": "2026-07-14",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "建材事業が売上高の過半を占め、住宅市場の動向が業績を左右する構造です。2026年4月期は新設住宅着工戸数が前期比12.9％減少するなか、高付加価値製品である高級軒天ボードやサイディングの拡販により建材事業が増収となり、化成品事業もサプリメント用途や工業用途の酸化マグネシウムの拡販で増収となりました。",
+        "basis": "セグメント情報（事業別の外部顧客への売上高の記載）、MD&Aの経営成績等の状況の概要（セグメントごとの経営成績の記載）",
+        "asOf": "2026-07-14",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1917年の創業以来蓄積した無機化学の技術を基盤に、不燃建材とマグネシウム製品・セラミックス製品という複合的な製品ポートフォリオを持ちます。日本国内に東西2製造拠点を有して製造リスクの分散を図り、排ガスCO2リサイクル設備の新設など環境対応の設備投資を進めています。",
+        "basis": "【沿革】（創業とマグネシウム製品・建材製造開始の記載）、【事業の内容】（2事業の製品の記載）、【設備の新設、除却等の計画】（排ガスCO2リサイクル設備の記載）",
+        "asOf": "2026-07-14",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年4月期の売上高28,008百万円のうち建材事業が15,356百万円、化成品事業が12,652百万円です。顧客の所在地別の売上高は日本が20,445百万円、アジアが4,855百万円、米国が1,419百万円、欧州が848百万円、その他が438百万円で、海外への販売も行っています。売上高の10％以上を占める主要な顧客はなく、顧客は分散しています。",
+        "basis": "セグメント情報（事業別の外部顧客への売上高の記載）、【関連情報】の地域ごとの情報・主要な顧客ごとの情報、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-07-14",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年4月期",
     "asOf": "2026-04-30",

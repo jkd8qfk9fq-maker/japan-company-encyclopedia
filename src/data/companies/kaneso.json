@@ -4,15 +4,134 @@
   "name": "カネソウ",
   "officialName": "カネソウ株式会社",
   "nameEn": "KANESO Co.,LTD.",
-  "description": null,
+  "shortNameEn": "KANESO Co.,LTD.",
+  "description": "鋳鉄器材やスチール機材、製作金物などの金属製の建築建材を製造・販売するメーカーです。",
   "listings": [
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "metal-building-materials",
+      "name": "金属製建築建材事業",
+      "description": "鋳鉄器材、スチール機材、製作金物などの金属製の建築建材と産業用鋳物を製造・販売する単一セグメントの事業です。2026年3月期の売上高は8,373百万円でした。販売子会社のマイウエア株式会社を通じた販売も行っています。",
+      "customers": [
+        "国内の建設関連ユーザー",
+        "金属商社などの販売先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "fabricated-metal-products",
+          "name": "製作金物",
+          "description": "外構・街路関連製品や建築工事関連製品、防災工事関連製品など、金属を加工して作る金物製品です。2026年3月期の販売高は4,292百万円でした。",
+          "customers": [
+            "国内の建設関連ユーザー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "cast-iron-products",
+          "name": "鋳鉄器材",
+          "description": "マンホール蓋や溝蓋などの雨水排水・防水関連製品、外構関連製品、設備工事関連製品などの鋳鉄製品です。2026年3月期の販売高は2,323百万円でした。",
+          "customers": [
+            "国内の建設関連ユーザー"
+          ],
+          "sourceIds": [
+            "yuho-2026",
+            "wikipedia"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "steel-products",
+          "name": "スチール機材",
+          "description": "外構工事関連製品や設備工事関連製品などの鋼製の機材です。2026年3月期の販売高は1,173百万円でした。",
+          "customers": [
+            "国内の建設関連ユーザー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-casting-products",
+          "name": "その他鋳造製品",
+          "description": "土木向けの受託鋳造や、建設機械・機械向けの鋳造製品などです。2026年3月期の販売高は583百万円でした。",
+          "customers": [
+            "建設機械メーカー",
+            "産業機械メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "鋳造技術を起点に、鋳鉄やスチール、ステンレス、アルミなど多様な素材を使った建築建材を自社工場で製造し、国内の建設関連の顧客に販売するモデルです。",
+    "products": [
+      "製作金物",
+      "鋳鉄器材",
+      "スチール機材",
+      "産業用鋳物"
+    ],
+    "customers": [
+      "国内の建設関連ユーザー",
+      "金属商社などの販売先"
+    ],
+    "revenueSources": [
+      "金属製建築建材の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "カネソウ",
+        "description": "1922年に三重県桑名市で創業した建築建材メーカーです。本社・工場は三重県三重郡朝日町にあり、販売子会社1社を持ち、2026年3月期の従業員数は246人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "金属製の建築建材",
+        "description": "鋳鉄器材、スチール機材、製作金物などの金属製建築建材と産業用鋳物を製造・販売しています。鋳造技術を起点に、ステンレスやアルミ、樹脂など多様な素材を取り入れた製品開発を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内の建設関連ユーザーなど",
+        "description": "国内の建設関連ユーザーが主な顧客で、販売実績ではヒルカワ金属株式会社が販売高の16.8％を占めています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は8,373百万円で、前期比3.4％減りました。製品分類別では製作金物が4,292百万円と最も大きくなっています。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は624百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +146,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13497023000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 248,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +168,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14007625000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 248,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +190,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14726813000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 249,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +212,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15242536000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 248,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +234,129 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15591224000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 246,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1922,
+      "title": "桑名市で創業",
+      "description": "三重県桑名市において、小林惣太郎により創業しました。",
+      "significance": "現在のカネソウの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "有限会社小林鋳造所を設立",
+      "description": "有限会社小林鋳造所を設立し、建設用鋳鉄製品の製造・販売を手がけました。",
+      "significance": "鋳造を起点とする現在の事業の土台です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "カネソウ株式会社を設立",
+      "description": "三重県桑名市にカネソウ株式会社を設立し、小林鋳造株式会社から販売部門を譲り受けました。",
+      "significance": "現在の会社組織の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "建設用金属製品の総合メーカーとなる",
+      "description": "小林鋳造株式会社より製作金物の製造部門と鋳鉄製品の製造部門を譲り受け、建設用金属製品の総合メーカーとなりました。",
+      "significance": "現在の製品分野の広がりができた転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "小林鋳造株式会社と合併",
+      "description": "小林鋳造株式会社と合併し、旧小林鋳造株式会社はカネソウ株式会社川越工場としました。",
+      "significance": "製造と販売が一つの会社にまとまりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "名古屋証券取引所市場第二部に上場",
+      "description": "名古屋証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "マイウエア株式会社を設立",
+      "description": "販売子会社のマイウエア株式会社を設立しました。",
+      "significance": "現在のグループを構成する唯一の子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "川越工場を朝日工場に集約",
+      "description": "川越工場を朝日工場に集約しました。",
+      "significance": "現在の本社・朝日工場への生産集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "創業100周年を迎え、名古屋証券取引所メイン市場へ移行",
+      "description": "創業100周年を迎え、名古屋証券取引所の市場区分の見直しにより市場第二部からメイン市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "小型鋳物を製造する新工場が完成",
+      "description": "小型鋳物を製造する新工場が完成しました。",
+      "significance": "鋳造の生産能力を広げる設備投資です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "okaya-and-co",
+      "relationship": "supplier",
+      "description": "原材料の安定的な調達のため当社が株式を保有する仕入先で、岡谷鋼機も当社の株式を保有しています。2026年3月31日現在の政策保有株式の保有目的に、取引関係の維持、強化と原材料の安定的な調達が印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +364,62 @@
       "publisher": "カネソウ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGWS.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YGWS",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「カネソウ」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%8D%E3%82%A6",
+      "accessedAt": "2026-11-16"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "建築・防災・都市景観整備・環境・福祉・緑化関連製品と産業用鋳物のメーカーとして、「想いを、カタチに」という理念のもと、主要製品である建築・土木用製品の市場シェア拡大と新製品開発や迅速な製品化を進め、営業拠点の充実や生産性向上を通じて変化に対応できる経営体質を築くとしています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "主要製品の市場シェア拡大と新製品開発を軸に、営業力の増強と生産性向上で事業基盤を固める戦略です。",
+        "basis": "中長期的な会社の経営戦略に、主要製品である建築・土木用製品の市場シェア拡大と、防災、都市景観整備、環境、福祉、緑化関連製品、産業用鋳物の新製品開発や迅速な製品化を進めること、営業力増強のため営業拠点の充実、生産性向上や技術開発を通じて変化に対応できる経営体質を築くことが記載されていることによるものです。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "鋳造技術を起点に多種の素材を取り入れた製品開発ができることと、自社ブランド製品で直接ユーザーと接し、ニーズに即応できることが強みです。",
+        "basis": "会社の経営の基本方針に、鋳造技術を起点にスチール、ステンレス、アルミの他、樹脂、ゴム、木材などの多種素材を取り入れた生産開発を行っていること、自社ブランド製品を提供することで直接ユーザーと接し、ニーズに即応する独自の製品開発を行っていることが記載されていることによるものです。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "金属製の建築建材に特化した単一セグメントのメーカーで、製品分類別では製作金物が売上高の半分あまりを占めています。",
+        "basis": "セグメント情報等に単一セグメントであることが、経営成績等の分析の販売実績に、2026年3月期の製品分類別の販売高は製作金物が4,292百万円、鋳鉄器材が2,323百万円、スチール機材が1,173百万円、その他が583百万円、合計が8,373百万円と記載されていることによるものです。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
