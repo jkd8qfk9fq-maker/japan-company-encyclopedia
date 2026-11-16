@@ -4,15 +4,161 @@
   "name": "オートウェーブ",
   "officialName": "株式会社オートウェーブ",
   "nameEn": "AUTOWAVE CO.,LTD.",
-  "description": null,
+  "shortNameEn": "AUTOWAVE",
+  "description": "千葉県を地盤に、車の販売・車検・整備などの車関連事業と、食品スーパー「業務スーパー」を営む小売企業です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "car-related",
+      "name": "車関連事業",
+      "description": "車の販売・買取、車検・整備、車関連用品等の販売を行う事業です。千葉県内にオートウェーブの店舗6店舗を展開しています。2026年3月期の外部顧客への売上高は6,649百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "車の購入・整備を必要とする地域の個人客"
+      ],
+      "children": [
+        {
+          "id": "car-sales",
+          "name": "車の販売・買取",
+          "description": "新車・中古車の販売と、車の買取を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "新車・中古車の購入希望者"
+          ]
+        },
+        {
+          "id": "inspection-maintenance",
+          "name": "車検・整備",
+          "description": "車検や整備、タイヤ・オイル交換などのメンテナンスを行っています。公式アプリ「myCARカルテ」でメンテナンス履歴の確認や作業の予約ができるようにしています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】",
+          "customers": [
+            "車の保有者"
+          ]
+        },
+        {
+          "id": "car-goods",
+          "name": "車関連用品等の販売",
+          "description": "タイヤやカー用品・部品の販売と取付を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "車の保有者"
+          ]
+        },
+        {
+          "id": "life-services",
+          "name": "暮らし関連サービス（コインランドリー・自転車販売など）",
+          "description": "オートウェーブの店舗の敷地や店内に、コインランドリー「ウォッシュウェーブ」、自転車販売・修理専門店「サイクルウェーブ」、シミュレーションゴルフ練習場「ゴルフウェーブ」を併設しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【沿革】",
+          "customers": [
+            "地域の住民"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gyomu-super",
+      "name": "業務スーパー事業",
+      "description": "冷凍食品・加工食品を販売する「業務スーパー」の店舗を運営する事業です。千葉県内に8店舗を展開しています。2026年3月期の外部顧客への売上高は3,186百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "地域の個人客"
+      ],
+      "children": [
+        {
+          "id": "gyomu-super-stores",
+          "name": "業務スーパーの店舗運営",
+          "description": "「エブリデイロープライス（毎日がお買得）」のコンセプトのもと、冷凍食品・加工食品を販売しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】",
+          "customers": [
+            "地域の個人客"
+          ]
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "車の販売・買取、車検・整備、車関連用品の販売を行う店舗と、冷凍食品・加工食品を販売する業務スーパーの店舗を展開し、商品の販売とサービスの対価を得る事業モデルです。",
+    "products": [
+      "新車・中古車の販売と買取",
+      "車検・整備",
+      "タイヤ・オイルなどの車関連用品の販売",
+      "冷凍食品・加工食品の販売（業務スーパー）",
+      "コインランドリー、自転車販売・修理などの生活関連サービス"
+    ],
+    "customers": [
+      "千葉県を中心とする地域の個人客",
+      "車の購入・整備を必要とする地域の顧客",
+      "業務スーパーの来店客"
+    ],
+    "revenueSources": [
+      "車両・車関連用品の販売による売上",
+      "車検・整備などのサービスによる売上",
+      "冷凍食品・加工食品の販売による売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "千葉県地盤の小売企業",
+        "description": "株式会社オートウェーブは、千葉市稲毛区に本社を置き、車関連の店舗と業務スーパーの店舗を展開する小売企業で、2026年3月31日現在の従業員数は183人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "車のトータルサービスと食品スーパーを提供",
+        "description": "車の販売・買取、車検・整備、車関連用品の販売を行うオートウェーブの店舗と、冷凍食品・加工食品を販売する業務スーパーの店舗を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域の個人客が相手",
+        "description": "千葉県を中心とする地域の個人客が、車の購入や整備、日常の食品の買い物に店舗を利用しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "店舗での販売とサービスで収益を得る",
+        "description": "車両や用品の販売、車検・整備のサービス、食品の販売から収益を得ています。2026年3月期の売上高は9,835百万円で、前期比10.9％増となりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益441百万円",
+        "description": "2026年3月期の当期純利益は441百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3449098000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 200,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -49,14 +195,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3679770000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 192,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第33期（2022年3月期）まで連結財務諸表を作成していたが、第34期（2023年3月期）以降は連結財務諸表を作成していない。"
     },
     {
       "fiscalYear": "2024年3月期",
@@ -71,7 +218,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3914003000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 187,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -93,7 +240,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4139399000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 184,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -115,7 +262,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4537612000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 183,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -125,8 +272,129 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1990,
+      "title": "自動車用品・部品の販売を目的に設立",
+      "description": "自動車用品・部品の販売を目的として、株式会社オートウェーブを設立しました。",
+      "significance": "現在の事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "第1号店「オートウェーブ宮野木店」を開店",
+      "description": "千葉市（現・千葉市稲毛区）に「オートウェーブ宮野木店」を開店し、営業を開始しました。",
+      "significance": "店舗展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "株式会社ピットライヴを吸収合併",
+      "description": "自動車用品・部品の取付整備を行っていた株式会社ピットライヴを吸収合併しました。",
+      "significance": "取付整備の機能を自社に取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "日本証券業協会に店頭登録",
+      "description": "日本証券業協会の店頭売買有価証券に株式を登録しました。",
+      "significance": "株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "証券取引所への上場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "子会社2社を吸収合併",
+      "description": "100％子会社の株式会社シーエムサウンドと株式会社ばるクルを吸収合併しました。",
+      "significance": "グループの体制を集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "業務スーパー事業を開始",
+      "description": "千葉市稲毛区のオートウェーブ宮野木店の店内に「業務スーパー宮野木店」を開業し、食品スーパーの事業を開始しました。",
+      "significance": "車関連以外の事業として、その後の成長事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "株式会社ベルガレージを吸収合併",
+      "description": "100％子会社の株式会社ベルガレージを吸収合併しました。",
+      "significance": "車検整備の機能を自社に集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "コインランドリーを併設開始",
+      "description": "オートウェーブ宮野木店の敷地内にコインランドリー「ウォッシュウェーブ宮野木店」を開業しました。",
+      "significance": "異業種を併設する店舗展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "自転車販売・修理専門店を開業",
+      "description": "オートウェーブ宮野木店の店内に自転車販売・修理専門店「サイクルウェーブ宮野木店」を開業しました。",
+      "significance": "併設する異業種の広がりを示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場に移行しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kobe-bussan",
+      "relationship": "business-partner",
+      "description": "同社が展開する「業務スーパー」の店舗を当社が運営しており、経営方針では同社および関係取引先と緊密に連携し、出店候補物件の調査・選定を継続するとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営方針、経営環境及び対処すべき課題等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +402,55 @@
       "publisher": "株式会社オートウェーブ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YLV8.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YLV8",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-10-02",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "主たる事業領域をカー用品の小売販売から、車検や整備を中心とした顧客獲得へとシフトし、車両状態に応じた乗り換え提案を行うことで、新車・中古車販売の強化を進めるとしています。成長部門である業務スーパー事業は積極的な出店を視野に成長エンジンとしてさらなる強化を図り、自転車販売やコインランドリー等の異業種との融合も進めるとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "車検を起点とした顧客接点の創出によりタイヤなどの用品販売へとつなげ、カーライフ全体にわたる生涯顧客化を推進する方針です。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における事業領域のシフトと生涯顧客化の記述による。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "車関連の店舗の敷地や店内に業務スーパー、コインランドリー、自転車販売などを併設し、車での来店機会と日常の買い物需要の双方を取り込む店舗展開を行っています。",
+        "basis": "沿革における併設店の開業の履歴と、経営方針、経営環境及び対処すべき課題等における異業種との融合の記述による。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "消費節約志向や若年層のクルマ離れを背景に市場の縮小傾向が続くと見込まれる中で、車検・整備を軸とする総合カーディーラーへの転換と、業務スーパー事業の成長による対応を進めています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における市場環境の認識と、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における事業別の記述による。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

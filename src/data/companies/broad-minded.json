@@ -4,15 +4,138 @@
   "name": "ブロードマインド",
   "officialName": "ブロードマインド株式会社",
   "nameEn": "Broad-Minded Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Broad-Minded Co.,Ltd.",
+  "description": "保険・証券・住宅ローンなどをライフプランニングに基づいてワンストップで提案するフィナンシャルパートナー事業と、不動産販売事業を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "financial-partner",
+      "name": "フィナンシャルパートナー事業",
+      "description": "ライフプランニングを土台に、個人のお客様の資産形成や資金計画の相談に応じ、生命保険・損害保険・証券・住宅ローンなどの金融商品と不動産を販売・仲介する事業です。法人のお客様の財務や事業リスク対策の相談にも対応します。生命保険契約に係る代理店手数料がグループ売上高の71.6％を占め、2026年3月期の外部顧客への売上高は4,810百万円でした。",
+      "customers": [
+        "保険や資産形成を相談する20代から40代のファミリー層を中心とした個人のお客様",
+        "財務や事業リスクの対策を相談する法人のお客様"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "life-insurance-agency",
+          "name": "生命保険の代理店事業",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "description": "提携する生命保険会社の商品の募集の媒介を行い、代理店手数料を得る事業です。同社グループの取引は多くの場合、生命保険の相談から始まります。"
+        },
+        {
+          "id": "nonlife-insurance-agency",
+          "name": "損害保険の代理店事業",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "description": "提携する損害保険会社の商品の募集の代理などを行い、代理店手数料を得る事業です。"
+        },
+        {
+          "id": "financial-products-intermediary",
+          "name": "金融商品仲介事業",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "description": "証券会社などと業務委託契約を結び、株式・債券・投資信託などの金融商品の売買の媒介を行う事業です。"
+        },
+        {
+          "id": "housing-loan-bank-agency",
+          "name": "住宅ローンの代理・銀行代理事業",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "description": "住宅ローンの媒介を行う貸金業と、銀行業務に係る契約の締結の媒介を行う銀行代理業です。"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-sales",
+      "name": "不動産販売事業",
+      "description": "新築一棟RCマンションの企画・開発・販売と、不動産コンサルティングを行う事業です。連結子会社のMIRAI株式会社が担います。2026年3月期の外部顧客への売上高は478百万円でした。",
+      "customers": [
+        "新築一棟マンションを購入するお客様",
+        "不動産コンサルティングを利用するお客様"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "業務提携による見込み客の獲得を軸に、ライフプランニングに基づく相談を通じて保険・金融商品・住宅ローンなどを販売し、提携金融機関からの手数料と不動産販売で収益を得る事業モデルです。",
+    "products": [
+      "生命保険・損害保険の代理店サービス",
+      "金融商品仲介サービス",
+      "住宅ローンの代理・銀行代理サービス",
+      "不動産の販売・仲介",
+      "金融教育スクールの運営"
+    ],
+    "customers": [
+      "20代から40代のファミリー層を中心とした個人のお客様",
+      "財務や事業リスクの対策を行う法人のお客様"
+    ],
+    "revenueSources": [
+      "提携金融機関から受け取る代理店手数料（初年度手数料と継続手数料）",
+      "不動産の販売代金と仲介手数料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "フィナンシャルパートナー事業と不動産販売事業の2事業",
+        "description": "当社と連結子会社3社、関連会社1社の計5社でグループを構成し、本社は東京都渋谷区にあります。従業員数は2026年3月31日現在312人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ライフプランニングに基づくワンストップの相談と金融商品の販売・仲介",
+        "description": "個人のお客様にはライフプランニングを土台とした資産形成や資金計画の相談を行い、生命保険・損害保険・証券・住宅ローンなどの金融商品と不動産を販売・仲介します。法人のお客様には財務や事業リスク対策の相談に応じます。"
+      },
+      {
+        "kind": "customer",
+        "title": "20代から40代のファミリー層と法人",
+        "description": "主な顧客は20代から40代のファミリー層で、生命保険の相談をきっかけに取引が始まることが多く、ライフステージに応じて住宅ローンや資産形成の商品へ広がります。見込み客は主に他事業会社との業務提携によって獲得します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "代理店手数料と不動産販売が収益の中心",
+        "description": "金融機関との代理店業務委託契約に基づき、商品の販売に応じて手数料を受け取ります。2026年3月期の売上高は5,289百万円で、フィナンシャルパートナー事業が4,810百万円、不動産販売事業が478百万円でした。前期からは11.3％の減少です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は394百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は394百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +150,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3113090000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 238,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +170,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3552217000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 243,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,12 +190,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3911682000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 331,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第24期において企業結合に係る暫定的な会計処理の確定を行っており、第23期の主要な経営指標等はその確定の内容を反映させた数値で記載されています。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -87,12 +211,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3887665000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 349,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第25期より収益認識基準を変更しており、第24期の主要な経営指標等は遡及処理の内容を反映させた数値で記載されています。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +232,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4046048000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 312,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +240,139 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2002,
+      "title": "ブロードマインド株式会社を設立",
+      "description": "ブロードマインド株式会社を設立し、生命保険会社及び損害保険会社11社の乗合代理店として事業を開始しました。",
+      "significance": "当社の創業です。保険代理店業が出自です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "金融商品仲介業者の登録を取得",
+      "description": "関東財務局長より金融商品仲介業者の登録を取得し、株式・債券・投資信託などの金融商品の取扱いを開始しました。",
+      "significance": "保険以外の金融商品へ取扱いを広げた節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "貸金業者登録を行い住宅ローンの取扱いを開始",
+      "description": "関東財務局長に対し貸金業者登録を行い、住宅ローンの取扱いを開始しました。",
+      "significance": "住宅分野への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "宅地建物取引業の免許を取得し不動産の取扱いを開始",
+      "description": "東京都知事より宅地建物取引業の免許を取得し、不動産の取扱いを開始しました。",
+      "significance": "現在の不動産販売事業につながる展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "銀行代理業の許可を取得",
+      "description": "関東財務局長より銀行代理業の許可を取得しました。",
+      "significance": "保険代理店・金融商品仲介・貸金に銀行代理が加わり、ワンストップで提供するための登録・認可がそろいました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "MIRAI株式会社を設立",
+      "description": "国内不動産の取扱い強化のため、MIRAI株式会社を設立しました。",
+      "significance": "現在の不動産販売事業の中核子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "グロース市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所マザーズからグロース市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "株式会社クレディセゾンと資本業務提携契約を締結",
+      "description": "株式会社クレディセゾンと資本業務提携契約を締結しました。",
+      "significance": "クレディセゾンは現在もその他の関係会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社イノセントを子会社化",
+      "description": "株式会社イノセントと業務提携を行うとともに、同社の発行する普通株式の67％を取得し、子会社化しました。",
+      "significance": "連結子会社の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "「セブン保険ショップ」の事業を譲り受け",
+      "description": "株式会社セブン・フィナンシャルサービスが運営する「セブン保険ショップ」の事業を譲り受け、店舗ブランド名「マネプロ」にて首都圏12店舗で営業を開始しました。",
+      "significance": "来店型店舗への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "Money With株式会社を設立",
+      "description": "株式会社We＆との合弁により、金融教育スクールの運営を主力事業とするMoney With株式会社を設立しました。",
+      "significance": "金融教育分野への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "irrc",
+      "relationship": "business-partner",
+      "description": "来店型保険ショップ「マネプロショップ」11店舗の運営に係る一切の事業について、2025年7月1日付で同社との間で事業譲渡の取引を行いました。店舗事業の収益性の確保が難しくなる中、オンライン相談を中心としたサービス提供に経営資源を集中するための譲渡です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【企業結合等関係】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +380,45 @@
       "publisher": "ブロードマインド株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKOR.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YKOR",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "パーパスとして「金融の力を解き放つ」を、ミッションとして「金融に倫理を、人生に自由を」を掲げ、自らを「フィナンシャルパートナー」と位置づけ、一つの業態にとらわれずに金融サービスを開発し、ライフプランを実現するためのコンサルティングプロセスの品質と、お客様の金融リテラシー向上に資する金融知識や情報の提供を価値提供の源泉として、お客様にとって最適なサービスを提供するとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の約91％をフィナンシャルパートナー事業が占め、その中でも生命保険契約に係る代理店手数料がグループ売上高の71.6％を占める構成のため、事業の中心は生命保険を入口とした個人向けのコンサルティングにあります。",
+        "basis": "セグメント情報等に印字された2026年3月期の外部顧客への売上高（フィナンシャルパートナー事業4,810百万円、不動産販売事業478百万円）と、事業の内容に印字された生命保険契約に係る代理店手数料の売上高構成比71.6％から読み取れます。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "保険代理店業を出自としながら、金融商品仲介業、貸金業、銀行代理業の各業の登録又は認可を取得し、顧客のライフプランに応じたソリューションを業横断的にワンストップで提供できることを掲げています。また、他事業会社との業務提携と自社コールセンターにより見込み客を安定的に獲得できる仕組み（見込み客提供の実績がある提携先は2026年3月期で30社以上）と、ファイナンシャルプランナーを育成する独自の教育プログラムを特徴として挙げています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

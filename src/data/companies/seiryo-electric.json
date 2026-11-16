@@ -4,15 +4,180 @@
   "name": "西菱電機",
   "officialName": "西菱電機株式会社",
   "nameEn": "SEIRYO ELECTRIC CORPORATION",
-  "description": null,
+  "shortNameEn": "SEIRYO ELECTRIC CORPORATION",
+  "description": "三菱電機の関連会社として、携帯電話の販売・修理と官公庁・企業向け情報通信システムの製作・販売・保守を手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "telecommunications",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "ict-systems",
+      "name": "情報通信システム事業",
+      "description": "官公庁や民間会社に向けて、情報通信機器及びシステムの製作・販売と、据付・保守・修理・運用などの技術サービス、無線通信機器や制御盤の開発・設計・製作・販売を行う事業です。2026年3月期の外部顧客への売上高は11,782百万円で、グループの売上の過半を占めます。官公庁向けでは[[company:mitsubishi-electric|三菱電機]]の販売支援も行っています。",
+      "customers": [
+        "官公庁",
+        "民間会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "public-sector-systems",
+          "name": "官公庁向け情報通信機器及びシステムの販売並びに販売支援",
+          "description": "官公庁向けに情報通信機器及びシステムを販売するほか、官公庁向けの機器・システムに関する三菱電機の販売支援業務を行います。",
+          "customers": [
+            "官公庁",
+            "三菱電機株式会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "private-sector-systems",
+          "name": "民間会社向け情報通信機器及びシステムの販売",
+          "description": "民間会社向けに情報通信機器及びシステムの販売を行います。",
+          "customers": [
+            "民間会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "technical-services",
+          "name": "情報通信機器及びシステムの技術サービス",
+          "description": "当社や三菱電機などが納入する情報通信機器及びシステムについて、調査、設計、検査、試験、据付、運用、保守、修理などの技術サービスの支援業務と受託業務を行います。連結子会社の西菱電機フィールディング株式会社も担います。",
+          "customers": [
+            "官公庁",
+            "民間会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "wireless-devices",
+          "name": "無線通信機器及び制御盤等の開発・設計・製作並びに販売",
+          "description": "民間会社向けの無線通信機器や制御盤の開発、設計、製作並びに販売を行います。連結子会社の西菱電機エンジニアリング株式会社と鳥取西菱電機株式会社が担います。",
+          "customers": [
+            "民間会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "mobile-terminals",
+      "name": "情報通信端末事業",
+      "description": "携帯情報通信端末の販売と修理再生を行う事業です。2026年3月期の外部顧客への売上高は8,893百万円です。直営店は2026年3月31日現在12店舗（ドコモショップ6店舗、auショップ5店舗、UQショップ1店舗）で、ドコモ、au、ソフトバンク、UQモバイルの機種を取り扱います。",
+      "customers": [
+        "携帯電話の利用者",
+        "電気通信事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "handset-sales",
+          "name": "携帯情報通信端末の販売",
+          "description": "電気通信事業者の指定店舗（専売店）で、ドコモ、au、ソフトバンク、UQモバイルの携帯情報通信端末を直接店頭販売します。当社と連結子会社のコムテックサービス株式会社が担います。",
+          "customers": [
+            "携帯電話の利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "handset-repair",
+          "name": "携帯情報通信端末の修理再生",
+          "description": "市場に出回った携帯情報通信端末の不具合品について、修理再生の受託業務を行います。",
+          "customers": [
+            "電気通信事業者等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "携帯情報通信端末の販売・修理再生と、情報通信機器・システムの製作・販売から据付・保守・運用までを担う事業モデルです。",
+    "products": [
+      "携帯情報通信端末（ドコモ、au、ソフトバンク、UQモバイル）",
+      "情報通信機器及びシステム",
+      "無線通信機器及び制御盤",
+      "端末の修理再生サービス",
+      "システムの据付・保守・運用サービス"
+    ],
+    "customers": [
+      "携帯電話の利用者",
+      "官公庁",
+      "民間会社",
+      "電気通信事業者"
+    ],
+    "revenueSources": [
+      "携帯情報通信端末の販売代金",
+      "端末の修理再生の受託料",
+      "情報通信機器及びシステムの販売代金",
+      "据付・保守・修理・運用の技術サービスの対価",
+      "無線通信機器及び制御盤の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "西菱電機グループ",
+        "description": "西菱電機と連結子会社4社でグループを構成し、兵庫県伊丹市に本店を置きます。2026年3月31日現在の連結従業員数は606人です。三菱電機株式会社から20.7％の出資を受ける同社の関連会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "端末の販売・修理と情報通信システム",
+        "description": "携帯情報通信端末の販売と修理再生、情報通信機器及びシステムの製作・販売・保守・運用、無線通信機器や制御盤の開発・設計・製作・販売を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "携帯電話の利用者、官公庁、民間会社",
+        "description": "直営店の来店客のほか、官公庁や民間会社に機器・システムを納入します。主要な顧客ごとの情報では、兼松コミュニケーションズ株式会社、三菱電機株式会社、KDDI株式会社が主要な顧客として挙げられています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は20,675百万円で、前年同期比7.1％増でした。情報通信システム事業が11,782百万円、情報通信端末事業が8,893百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は244百万円でした。前期は81百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +192,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5560000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 642,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +212,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5157000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 639,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +232,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5476000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 622,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +252,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5434000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 598,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +272,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5528000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 606,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +280,147 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1966,
+      "title": "西菱電機株式会社を設立",
+      "description": "大阪市淀川区において西菱電機株式会社が設立されました。",
+      "significance": "当社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "三菱電機の電子機器サービスデポに指定",
+      "description": "三菱電機株式会社の電子機器サービスデポに指定されました。",
+      "significance": "三菱電機との関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "三菱電機の電子機器特約店となる",
+      "description": "三菱電機株式会社の電子機器特約店となりました。",
+      "significance": "三菱電機製品の取扱いを本格化させた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "西菱電機販売株式会社を設立",
+      "description": "西菱電機販売株式会社を設立し、営業部門を独立させました。",
+      "significance": "販売体制を分離した出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "携帯電話代理店となる",
+      "description": "株式会社ダイヤモンドテレコム（現 兼松コミュニケーションズ株式会社）の携帯電話代理店となりました。",
+      "significance": "携帯情報通信端末事業への参入の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "三菱電機の代理店となる",
+      "description": "西菱電機販売株式会社の営業権を譲り受け、三菱電機株式会社の代理店となりました。",
+      "significance": "三菱電機との取引関係を強めた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "コムテックサービスを子会社化",
+      "description": "コムテックサービス株式会社を株式取得により100％子会社化しました。",
+      "significance": "携帯端末の販売を担う子会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "株式会社大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "西菱電機フィールディングを子会社化",
+      "description": "株式会社スズキエンジニアリング（現 西菱電機フィールディング株式会社）を株式取得により100％子会社化しました。",
+      "significance": "技術サービスを担う子会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "西菱電機エンジニアリングの設立と鳥取西菱電機の子会社化",
+      "description": "コーナン電子株式会社（現 西菱電機エンジニアリング株式会社）を設立し、鳥取ケーイーシー株式会社（現 鳥取西菱電機株式会社）を株式取得により100％子会社化しました。同年、大阪証券取引所と東京証券取引所の現物市場統合に伴い、東京証券取引所市場第二部に移行しました。",
+      "significance": "無線通信機器の開発・製作を担う体制が整った出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-electric",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】で「その他の関係会社」とされる会社で、2026年3月31日現在、当社の議決権の20.7％を保有しています。当社は同社の関連会社であり、同社製品の販売・据付・修理・保守点検や業務の受託を行うとともに、同社製品の購入や据付・修理の委託も行っています。官公庁向け情報通信機器及びシステムに関する同社の販売支援も行い、主要な顧客ごとの情報でも主要な顧客として挙げられています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "kddi",
+      "relationship": "customer",
+      "description": "情報通信端末事業の主要な顧客です。完全子会社のコムテックサービス株式会社がKDDIと代理店契約を締結しており、auショップを運営しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主要な顧客ごとの情報】"
+    },
+    {
+      "companyId": "softbank",
+      "relationship": "business-partner",
+      "description": "当社と、継続的な取引に関する基本的事項を定めた取引基本契約を締結している取引先です。当社は電気通信事業者の指定店舗として、ソフトバンクの携帯情報通信端末も取り扱っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +428,55 @@
       "publisher": "西菱電機株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFFX.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YFFX",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「One Seiryo」をスローガンとし、「事業規模拡大」「事業基盤確立」「人財育成」「企業体質強化」の4つの基本戦略を軸に企業価値の拡大に取り組むとしています。中期経営計画では徹底ソリューションを基軸に、安定した収益を確保できる経営基盤を構築する期間と位置付け、既存事業の深化や新規事業開拓、ストックビジネスの拡大、人財育成に取り組む方針です。情報通信システム事業では防災・減災需要の取り込みや水管理システムの拡販、保守などのストックビジネスの確保に取り組み、情報通信端末事業ではお客様に選ばれる店舗創りの継続と端末のアフターサービスの向上を図るとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期は、官公庁向けの大口案件の増加や携帯端末販売における販売台数の増加、西菱電機エンジニアリングの受注増により、両事業とも売上高が増えました。",
+        "basis": "MD&Aの経営成績の概要、セグメント情報の外部顧客への売上高、関連情報の主要な顧客ごとの情報に依拠します。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "三菱電機の関連会社として、同社製品の販売・据付・修理・保守点検や業務の受託、同社向けの販売支援を行う関係を持ちます。あわせて、携帯端末の店頭販売から修理再生、システムの調査・設計・据付・保守・運用までをグループ内で担える体制を持っています。",
+        "basis": "【事業の内容】の事業の内容とグループの位置付け、【関係会社の状況】の三菱電機との関係内容、セグメント情報の外部顧客への売上高に依拠します。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の内訳は情報通信システム事業11,782百万円、情報通信端末事業8,893百万円で、官公庁や民間会社向けのシステム事業が過半を占めます。主要な顧客ごとの情報では、兼松コミュニケーションズ、三菱電機、KDDIの3社が主要な顧客として挙げられています。市場での順位やシェアは印字されていません。",
+        "basis": "セグメント情報の外部顧客への売上高、関連情報の主要な顧客ごとの情報、MD&Aの経営成績の概要に依拠します。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

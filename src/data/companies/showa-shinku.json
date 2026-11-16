@@ -4,15 +4,173 @@
   "name": "昭和真空",
   "officialName": "株式会社昭和真空",
   "nameEn": "SHOWA SHINKU CO., LTD.",
-  "description": null,
+  "shortNameEn": "SHOWA SHINKU CO., LTD.",
+  "description": "真空蒸着装置やスパッタリング装置などの真空技術応用装置と、その部品販売や修理サービスを提供するメーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "vacuum-equipment",
+      "name": "真空技術応用装置事業",
+      "description": "真空中で特定の基板に薄膜を形成させる真空蒸着装置やスパッタリング装置などを製造・販売する事業です。2026年3月期の外部顧客への売上高は7,046百万円で、前期に比べ22.6％増えました。当社のほか、子会社の昭和真空機械（上海）有限公司が製造・販売を担っています。",
+      "customers": [
+        "水晶デバイスメーカー",
+        "光学デバイスメーカー",
+        "電子部品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "crystal-device-equipment",
+          "name": "水晶デバイス装置",
+          "description": "水晶デバイスの製造に使う真空蒸着装置や周波数調整装置などです。2026年3月期の売上高は3,150百万円でした。",
+          "customers": [
+            "水晶デバイスメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "optical-equipment",
+          "name": "光学装置",
+          "description": "光学デバイスの製造に使う真空蒸着装置などです。2026年3月期の売上高は2,327百万円でした。",
+          "customers": [
+            "光学デバイスメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "electronic-components-equipment",
+          "name": "電子部品・その他装置",
+          "description": "電子部品の製造に使うエッチング装置やスパッタリング装置などです。2026年3月期の売上高は1,568百万円でした。",
+          "customers": [
+            "電子部品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "service",
+      "name": "サービス事業",
+      "description": "真空技術応用装置の構成部品・付属品の販売、改造工事及び修理を行う事業です。2026年3月期の外部顧客への売上高は2,278百万円で、前期に比べ16.7％減りました。当社のほか、子会社の昭和真空機械貿易（上海）有限公司と株式会社エフ・イー・シーが販売を担っています。",
+      "customers": [
+        "真空技術応用装置を導入した企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "parts-sales",
+          "name": "部品販売",
+          "description": "真空技術応用装置の構成部品・付属品の販売です。2026年3月期の売上高は1,062百万円でした。",
+          "customers": [
+            "真空技術応用装置を導入した企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "modification-works",
+          "name": "改造工事",
+          "description": "導入済みの真空技術応用装置の改造工事です。2026年3月期の売上高は644百万円でした。",
+          "customers": [
+            "真空技術応用装置を導入した企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "repair-and-other",
+          "name": "修理・その他",
+          "description": "真空技術応用装置の修理などです。2026年3月期の売上高は571百万円でした。",
+          "customers": [
+            "真空技術応用装置を導入した企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "水晶デバイス、光学デバイス、電子部品のメーカー向けに、基板に薄膜を形成する真空技術応用装置を製造・販売し、構成部品の販売や改造工事、修理でも対価を得るモデルです。",
+    "products": [
+      "真空蒸着装置",
+      "スパッタリング装置",
+      "エッチング装置",
+      "真空技術応用装置の構成部品・付属品"
+    ],
+    "customers": [
+      "水晶デバイスメーカー",
+      "光学デバイスメーカー",
+      "電子部品メーカー"
+    ],
+    "revenueSources": [
+      "真空技術応用装置の販売代金",
+      "構成部品・付属品の販売代金",
+      "改造工事・修理の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "昭和真空",
+        "description": "昭和真空と連結子会社3社でグループを構成します。2026年3月期の従業員数は215人です。その他の関係会社である株式会社アルバックが、2026年3月31日現在で議決権の21.36％を保有しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "真空技術応用装置とサービス",
+        "description": "真空中で基板に薄膜を形成する真空蒸着装置やスパッタリング装置などの真空技術応用装置を製造・販売し、構成部品・付属品の販売、改造工事、修理も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "デバイスメーカー",
+        "description": "主な顧客は水晶デバイス、光学デバイス、電子部品のメーカーです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "装置とサービスの販売",
+        "description": "2026年3月期の売上高は9,324百万円で、真空技術応用装置事業が7,046百万円、サービス事業が2,278百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は867百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +185,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11057050000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 244,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +205,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11519231000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 240,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +225,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11397978000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 243,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +245,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11590245000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 236,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +265,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12174165000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 215,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +273,158 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1958,
+      "title": "昭和眞空機械株式会社を設立",
+      "description": "真空ポンプ及び真空装置の製造及び販売を目的として、神奈川県川崎市に昭和眞空機械株式会社を設立しました。",
+      "significance": "現在の会社の起源です。真空技術を軸とする事業はここから始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "水晶振動子用真空蒸着装置の第1号機を完成",
+      "description": "水晶振動子用真空蒸着装置の第1号機を完成しました。",
+      "significance": "現在の主力分野である水晶デバイス装置につながる最初の製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "光学用真空蒸着装置の第1号機を完成",
+      "description": "光学用真空蒸着装置の第1号機を完成しました。",
+      "significance": "光学装置分野への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "日本真空技術と業務提携契約を締結",
+      "description": "日本真空技術株式会社（現株式会社アルバック）と、技術提携を主とした業務提携契約を結びました。",
+      "significance": "現在のその他の関係会社であるアルバックとの関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "株式会社昭和眞空に社名を変更",
+      "description": "営業会社であった株式会社昭和眞空を吸収合併し、社名を昭和眞空機械株式会社から株式会社昭和眞空に変更しました。",
+      "significance": "製造と販売を一体とした現在の体制の基礎です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "日本真空技術から資本参加を受ける",
+      "description": "日本真空技術株式会社（現株式会社アルバック）から資本参加を受けました。",
+      "significance": "アルバックとの資本関係が始まり、現在のグループ関係につながりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "株式会社昭和真空に社名を変更",
+      "description": "社名を株式会社昭和眞空から株式会社昭和真空に変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "アルバックと商標使用及び業務の相互協力に関する覚書を締結",
+      "description": "株式会社アルバックと既存の業務契約を解除し、新たに商標使用及び業務の相互協力に関する覚書を締結しました。",
+      "significance": "現在も続くアルバックとの協力関係の基礎となる取り決めです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "日本証券業協会に株式を店頭上場",
+      "description": "日本証券業協会に株式を店頭上場しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "中国に昭和真空機械（上海）有限公司を設立",
+      "description": "中国に昭和真空機械（上海）有限公司を設立しました。",
+      "significance": "海外生産拠点の始まりで、現在も真空技術応用装置の製造・販売を担っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に株式を上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所（現東京証券取引所スタンダード市場）に株式を上場しました。",
+      "significance": "現在のスタンダード市場への上場につながる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "株式会社エフ・イー・シーを子会社化",
+      "description": "株式会社エフ・イー・シーの全株式を取得し、子会社化しました。",
+      "significance": "サービス事業を担う国内子会社がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、ＪＡＳＤＡＱ（スタンダード）からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "ulvac",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】でその他の関係会社とされています。2026年3月31日現在、議決権の21.36％を保有されています。当社は同社から、真空技術応用装置の部品として使用される真空ポンプや真空計などを仕入れており、同社が商標権を有する「ＵＬＶＡＣ ＧＲＯＵＰ」を当社製品に使用する商標使用契約も締結しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "daishinku",
+      "relationship": "customer",
+      "description": "真空技術応用装置事業の主要な顧客です。2026年3月期の販売実績は総販売実績の16.4％を占めています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +432,55 @@
       "publisher": "株式会社昭和真空",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKGJ.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YKGJ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "真空技術をキーテクノロジーとして、成長するニッチ市場へフォーカスし、技術力による差別化と独自性を発揮することを経営方針としています。水晶・光学デバイス分野に加えて成長分野へ次期戦略装置を提供するため、市場別戦略の明確化と受注体制の高度化、品質を基軸とした設計生産体制の強化、次世代人材の育成に取り組むとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "戦略の軸は、既存の水晶・光学デバイス向け装置に加え、AI・データセンターや航空宇宙などの成長分野で使われる電子部品向けに、真空技術の応用範囲を広げることです。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の経営環境と対処すべき課題、セグメント情報の外部顧客への売上高",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "顧客のニーズに合わせて仕様を調整するカスタムメイドの真空装置を自社で開発・製造し、装置を納めた後も部品販売、改造工事、修理のサービスで顧客と取引を続ける体制を持つことが強みです。",
+        "basis": "【事業の内容】の事業内容、【経営方針、経営環境及び対処すべき課題等】の経営方針、セグメント情報の外部顧客への売上高",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "アルバックグループの真空機器事業に位置づけられ、水晶デバイス、光学デバイス、電子部品向けの薄膜形成装置を担っています。グループの中心である株式会社アルバックとは電子部品メーカー向けの分野が一部重なりますが、取り扱う装置の中心や納入先、価格帯が異なると説明されています。",
+        "basis": "【事業の内容】の株式会社アルバック及び同社を中心とする企業集団との関係についての記述",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

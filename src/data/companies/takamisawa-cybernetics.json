@@ -4,15 +4,122 @@
   "name": "高見沢サイバネティックス",
   "officialName": "株式会社高見沢サイバネティックス",
   "nameEn": "TAKAMISAWA CYBERNETICS COMPANY,LTD.",
-  "description": null,
+  "shortNameEn": "TAKAMISAWA CYBERNETICS COMPANY,LTD.",
+  "description": "自動券売機やホームドアなどの交通システム機器をはじめとする電子制御機器を、設計から製造、販売、設置、保守まで手がけるメーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "electronic-control-equipment",
+      "name": "電子制御機器",
+      "description": "電子制御機器の設計、製造、販売、設置、保守を行う事業です。当社グループは電子制御機器の製造販売及びこれら付随業務の単一セグメントで、2026年3月期の売上高は12,897百万円でした。交通システム機器、メカトロ機器、特機システム機器の3分野で事業を行っています。",
+      "customers": [
+        "鉄道事業者",
+        "装置メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "traffic-systems",
+          "name": "交通システム機器",
+          "description": "自動券売機をはじめとした出改札機器やホームドアシステムなどを当社が設計、製造し、鉄道事業者を中心に販売する分野です。各種機器の設置・調整及び保守サービスは、子会社の株式会社高見沢サービスに委託しています。",
+          "customers": [
+            "鉄道事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "mechatronics",
+          "name": "メカトロ機器",
+          "description": "各種ユニットを当社が設計、製造し、装置メーカーに販売する分野です。一部製品の製造は子会社の株式会社高見沢メックスに委託しており、富士電機株式会社とは一部製品の相互供給を行っています。",
+          "customers": [
+            "装置メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "special-systems",
+          "name": "特機システム機器",
+          "description": "セキュリティシステム、防災計測システム、パーキングシステムを当社が設計、製造、販売する分野です。子会社の株式会社高見沢サービスには、各種機器の設置・保守のほか、入場券発売機等の販売や駐輪場の運営管理業務を委託しています。",
+          "customers": [
+            "防災計測システム等を導入する官公庁・事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道事業者向けの出改札機器やホームドアシステム、装置メーカー向けの各種ユニット、防災計測システムなどを製造・販売し、設置や保守でも対価を得るモデルです。",
+    "products": [
+      "自動券売機・出改札機器",
+      "ホームドアシステム",
+      "各種ユニット（メカトロ機器）",
+      "セキュリティシステム",
+      "防災計測システム",
+      "パーキングシステム"
+    ],
+    "customers": [
+      "鉄道事業者",
+      "装置メーカー"
+    ],
+    "revenueSources": [
+      "電子制御機器の販売代金",
+      "設置・保守サービスの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "高見沢サイバネティックスグループ",
+        "description": "高見沢サイバネティックスと子会社3社でグループを構成します。2026年3月期の従業員数は566人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "電子制御機器",
+        "description": "交通システム機器、メカトロ機器、特機システム機器の3分野で、電子制御機器を設計、製造します。"
+      },
+      {
+        "kind": "customer",
+        "title": "鉄道事業者・装置メーカー",
+        "description": "鉄道事業者を中心に、装置メーカーなどに販売します。機器の設置・調整や保守は子会社が担います。"
+      },
+      {
+        "kind": "revenue",
+        "title": "機器の販売とサービス",
+        "description": "2026年3月期の売上高は12,897百万円でした。前年度に自動券売機などの新規・更新案件や、新紙幣発行に伴う紙幣処理装置の需要があった反動で、前期に比べ16.2％減りました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は496百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +134,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3818284000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 579,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +154,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4277578000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 559,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +174,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5073281000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 555,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +194,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6038794000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 556,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第56期の期首から「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号）等を適用しており、第55期に係る主要な経営指標等は、当該会計基準等を遡って適用した後の指標となっています。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +215,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6619330000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 566,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +223,220 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1969,
+      "title": "高見沢サイバネティックスを設立",
+      "description": "株式会社髙見澤電機製作所の自販機事業部の一部が独立し、株式会社高見沢サイバネティックスを設立しました。大阪営業所を開設し、自動券売機等の販売を開始しました。",
+      "significance": "現在の会社の起源です。自動券売機などの駅務機器を扱う事業はここから始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "自販機の製造部門を譲り受け、製造販売会社となる",
+      "description": "株式会社髙見澤電機製作所より自販機の製造部門から販売までの一切を譲り受け、製造販売会社となりました。あわせて同社のアフターサービス部門を当社の100％子会社とし、高見沢サイバネティックスサービス株式会社（現・株式会社高見沢サービス）に社名を変更しました。",
+      "significance": "製造・販売とアフターサービスを一体で担う、現在のグループ体制の土台ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "長野第一工場を設置",
+      "description": "長野県南佐久郡臼田町（現・長野県佐久市）に長野第一工場を設置しました。",
+      "significance": "長野県佐久市に生産拠点を構えた始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "長野第三工場を設置",
+      "description": "長野県南佐久郡臼田町（現・長野県佐久市）に長野第三工場を設置しました。",
+      "significance": "生産能力を広げた拠点で、後に技術棟や新棟を備える生産・開発の中心となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "浅間エレクラフト（現・高見沢メックス）に資本参加",
+      "description": "電子機器製造・販売の浅間エレクラフト株式会社（現・株式会社高見沢メックス）の設立に伴い、60％の資本参加を行いました。",
+      "significance": "現在のグループ会社である高見沢メックスとの関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "本社を東京都中野区中央へ移転",
+      "description": "本社を東京都中野区中央へ移転しました。",
+      "significance": "現在の本社所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "高見沢メックスを100％子会社とする",
+      "description": "株式会社高見沢メックスを100％子会社としました。",
+      "significance": "メカトロ機器の一部製品や防災計測システムの一部の製造・設計を担う体制が固まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "高見沢ソリューションズを設立",
+      "description": "多様化する製品の開発プロセス管理体制を充実させるため、100％子会社である株式会社高見沢ソリューションズを設立しました。",
+      "significance": "システム設計や開発プロセスの管理を担う子会社が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に上場",
+      "description": "東京証券取引所スタンダード市場に上場しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "佐久ロジスティックスセンターを開設",
+      "description": "長野第二工場敷地内の建屋の一部を建て替え、新たな物流拠点として「佐久ロジスティックスセンター」を開設しました。",
+      "significance": "長野の生産拠点に物流の機能が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "fuji-electric",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式（自己株式を除く）の14.06％を保有する筆頭株主です。メカトロ機器の分野では、同社と一部製品の相互供給を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "fujitsu",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式（自己株式を除く）の7.15％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "odakyu-electric-railway",
+      "relationship": "customer",
+      "description": "電子制御機器の主要な顧客です。2026年3月期の販売実績は、総販売実績の13.7％を占めています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "companyId": "tomoe",
+      "relationship": "business-partner",
+      "description": "主に特機システム機器の分野において協業を推進するため、当社が株式を保有している相手です。同社は2026年3月31日現在、当社の発行済株式（自己株式を除く）の2.27％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nishikawa-keisoku",
+      "relationship": "business-partner",
+      "description": "主に特機機器の分野において協業を推進するため、当社が株式を保有している相手です。同社は2026年3月31日現在、当社の発行済株式（自己株式を除く）の4.09％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "lecip-holdings",
+      "relationship": "business-partner",
+      "description": "主に交通システム機器の分野で良好な取引関係を継続しているため、当社が株式を保有している相手です。同社は2026年3月31日現在、当社の発行済株式（自己株式を除く）の2.27％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "keisei-electric-railway",
+      "relationship": "customer",
+      "description": "当社製品を採用している顧客です。同社の取引先持株会に加入し、関係の維持のため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokyu",
+      "relationship": "customer",
+      "description": "当社製品を採用している顧客です。関係の維持のため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "keihan-holdings",
+      "relationship": "customer",
+      "description": "当社製品を採用している顧客です。同社の取引先持株会に加入し、関係の維持のため株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "west-japan-railway",
+      "relationship": "customer",
+      "description": "同社グループに駅務機器等の販売を行っている顧客です。営業戦略上、株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +444,48 @@
       "publisher": "株式会社高見沢サイバネティックス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEQL.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YEQL",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 期間後の出来事として、2026年4月16日開催の取締役会において、富士通フロンテック株式会社が営むエアラインプリンタ事業を簡易吸収分割の方法により承継することを決議し、同日、同社との間で吸収分割契約を締結しています（承継の時期は2026年8月1日の予定）。登録は2026年3月31日現在の事業構成で行っており、事業承継の反映には人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年度より「安全」「決済」「メカトロ・EM」をキーワードに事業分野の見直しを行い、既存事業の強化と新規ビジネスの展開に取り組んでいます。その中でも「安全」の分野を成長戦略の要と位置づけ、より一層注力していくとしています。経営の基本方針は、「世の中に必要不可欠な製品及びサービスを提供する」ことです。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "戦略の軸は、防災計測システムなどの「安全」分野を伸ばすことと、エアラインプリンタ事業の承継により航空業界の取引先を取り込み、既存製品の販売先を広げることです。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の事業展開の記述と、重要な後発事象における事業承継の目的の記述",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "永年培ってきたコア技術を交通システム機器、メカトロ機器、特機システム機器の3分野に応用し、機器の設計・製造から設置、保守までをグループで担えることが強みです。",
+        "basis": "【事業の内容】の事業内容とグループ各社の役割分担、経営成績等の分析におけるコア技術の記述",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

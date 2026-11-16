@@ -4,15 +4,164 @@
   "name": "タカチホ",
   "officialName": "株式会社　タカチホ",
   "nameEn": "Takachiho Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Takachiho Co.,Ltd.",
+  "description": "長野県長野市に本社を置き、観光みやげ品の卸売を中心に、小売や菓子の製造、温浴施設の運営などを手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
+    },
+    {
+      "exchange": "nse",
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "souvenir-wholesale",
+      "name": "みやげ卸売事業",
+      "description": "観光みやげ品を、ホテル等の宿泊施設や、JR駅、高速道路サービスエリアのみやげ販売店等に卸売する事業です。当社と株式会社越後銘販をはじめとする連結子会社が各地で販売しており、2026年3月期の売上高は7,994百万円でした。",
+      "customers": [
+        "ホテル等の宿泊施設",
+        "JR駅や高速道路サービスエリアのみやげ販売店"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "souvenir-retail",
+      "name": "みやげ小売事業",
+      "description": "複合商業施設や各観光地にある当社グループの直営店で、みやげ品を販売する事業です。2026年3月期の売上高は683百万円でした。",
+      "customers": [
+        "直営店を利用する観光客などの個人客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "bath-facility",
+      "name": "温浴施設事業",
+      "description": "長野市でスーパー銭湯「まめじま湯ったり苑」を運営する事業です。運営は連結子会社の有限会社タカチホ・サービスが担っており、2026年3月期の売上高は331百万円でした。",
+      "customers": [
+        "温浴施設を利用する個人客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "souvenir-manufacturing",
+      "name": "みやげ製造事業",
+      "description": "みやげ用食品、主にクッキー類を当社内で製造する事業です。2026年3月期の売上高は266百万円でした。",
+      "customers": [
+        "当社グループの卸売・小売部門を通じた販売先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "outdoor-goods",
+      "name": "アウトドア用品事業",
+      "description": "長野県下の直営店「バンバン」で、釣具やアウトドア用品を販売する事業です。2026年3月期の売上高は222百万円でした。",
+      "customers": [
+        "直営店を利用する個人客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸事業",
+      "description": "長野市で商業施設「ショッピングタウンあおぞら」を運営する事業です。2026年3月期の売上高は147百万円でした。",
+      "customers": [
+        "商業施設に入居するテナント"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "飲食店等を運営する事業です。報告セグメントには含まれておらず、2026年3月期の売上高は45百万円でした。",
+      "customers": [
+        "飲食店を利用する個人客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "観光みやげ品を宿泊施設や駅・サービスエリアの販売店へ卸売し、直営店での小売や菓子製造、温浴施設と商業施設の運営も行う事業モデルです。",
+    "products": [
+      "観光みやげ品（地域の特産品・名産品など）",
+      "みやげ用食品（クッキー類など）",
+      "釣具・アウトドア用品"
+    ],
+    "customers": [
+      "ホテル等の宿泊施設",
+      "JR駅や高速道路サービスエリアのみやげ販売店",
+      "直営店や温浴施設、商業施設を利用する個人客・テナント"
+    ],
+    "revenueSources": [
+      "みやげ品の卸売・小売による販売代金",
+      "みやげ用食品の販売代金",
+      "温浴施設の利用料",
+      "商業施設の賃料収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "タカチホ",
+        "description": "タカチホは1949年に長野県長野市で設立され、連結子会社13社とともに観光みやげ品を中心とする事業を展開しています。2026年3月31日現在の連結従業員数は218人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "みやげ品の卸売・小売と施設運営",
+        "description": "観光みやげ品の卸売を中心に、直営店での小売、クッキー類などのみやげ用食品の製造、スーパー銭湯と商業施設の運営、釣具・アウトドア用品の販売を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "宿泊施設・駅の売店と個人客",
+        "description": "卸売の販売先はホテル等の宿泊施設や、JR駅、高速道路サービスエリアのみやげ販売店です。小売や温浴施設では、観光客をはじめとする個人客が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は9,691百万円",
+        "description": "2026年3月期の売上高は9,691百万円で、前期比13.5％増でした。みやげ卸売事業が7,994百万円、みやげ小売事業が683百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の親会社株主に帰属する当期純利益は328百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は328百万円でした。前期は308百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +176,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 910201000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 227,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +196,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1374140000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 207,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +216,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1820367000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 198,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +236,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2253911000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 212,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +256,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2579548000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 218,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +264,139 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1949,
+      "title": "株式会社高千穂ストアーを設立",
+      "description": "ラジオ、玩具、金物、衣料品、食料品等の販売を目的として、長野県長野市新田町に「株式会社高千穂ストアー」を設立しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "みやげ品の卸売を開始",
+      "description": "長野市内の善光寺及び周辺の観光地を対象として、みやげ品の風呂敷、のれん、手拭の卸を開始しました。",
+      "significance": "現在の主力である観光みやげ品事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "株式会社タカチホに商号を変更",
+      "description": "電化製品の販売を廃止して観光みやげ品の総合卸商社とし、商号を「株式会社タカチホ」に変更しました。",
+      "significance": "現在の社名と事業の形が定まった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "「長野青空市場」を開設",
+      "description": "長野県長野市に「長野青空市場」（現ショッピングタウンあおぞら）を開設しました。",
+      "significance": "現在の不動産賃貸事業の拠点の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "アウトドア用品の小売を開始",
+      "description": "長野県長野市に、釣具等レジャー関連用品小売の「アウトドアステーションバンバン」を開店しました。",
+      "significance": "アウトドア用品事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式を公開した転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "スーパー銭湯「まめじま湯ったり苑」を開設",
+      "description": "長野県長野市にスーパー銭湯「まめじま湯ったり苑」を開設しました。",
+      "significance": "温浴施設事業の始まりであり、現在も同事業の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "事業の一部を子会社11社に吸収分割",
+      "description": "長野県以外における事業の一部を、各地の子会社11社にそれぞれ吸収分割しました。あわせて新潟営業所の事業を株式会社越後銘販に吸収分割しました。",
+      "significance": "地域密着のグループ体制を築いた再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "長野県外の温浴5施設の事業を譲渡",
+      "description": "「まめじま湯ったり苑」を除く長野県外の5施設について、事業譲渡を行いました。",
+      "significance": "温浴施設事業を長野市の1施設に絞った再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所のJASDAQスタンダードからスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "名古屋証券取引所メイン市場に重複上場",
+      "description": "名古屋証券取引所メイン市場へ重複上場しました。",
+      "significance": "東京証券取引所との2市場への重複上場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "japan-asia-investment",
+      "relationship": "business-partner",
+      "description": "2025年３月４日に資本業務提携契約を締結した相手方です。お土産品業界のロールアップに特化したファンド組成や、投資先のバリューアップ、国内外におけるお土産品のブランディング等で協業することとしています。同社が運営に携わる投資事業有限責任組合JAICスペシャルティファンドは、2026年３月31日現在、発行済株式（自己株式を除く。）の総数に対する所有割合8.57％の大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +404,55 @@
       "publisher": "株式会社　タカチホ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJCQ.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJCQ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "レジャー産業を基軸にした総合商社として、環境の変化に対応しながら新たな需要の創造と機能性の向上を目指すことを基本方針としています。中期ビジョンとして「新たな商品開発スキーム×ブランディング発信×成長投資による持続的成長基盤の構築」を掲げ、販路とサービスの拡大、商品企画とブランディングによる商品力の強化、人材育成と体制整備、成長に向けた投資に取り組むとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期は、大阪・関西万博における会場内外への商品供給が、みやげ卸売事業とみやげ製造事業の売上を押し上げました。一方で、みやげ小売事業とアウトドア用品事業では、一部店舗の賃借契約満了による閉店が売上の減少要因となりました。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の記載に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "2012年に各地の事業を子会社化して以降、地域ごとの販売会社が地元の観光地に密着して営業する体制をとっています。各地の食品製造会社や地域団体と協働し、特産品や名産品を原料とした加工品づくりを通じて、地産地消の推進に取り組んでいます。",
+        "basis": "経営方針、経営環境及び対処すべき課題等の記載に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "観光みやげ品の卸売を主力とし、宿泊施設や駅・サービスエリアの売店といった、観光客の動線上にある販売チャネルへ商品を供給する位置にあります。卸売に加えて直営店での小売と菓子の製造も自社グループで行っています。",
+        "basis": "事業の内容及び経営方針、経営環境及び対処すべき課題等の記載に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -1,18 +1,191 @@
 {
   "id": "cgs-holdings",
   "code": "6633",
-  "name": "CGSホールディングス(旧会社名C＆Gシステムズ)",
+  "name": "ＣＧＳホールディングス",
   "officialName": "株式会社CGSホールディングス(旧会社名　株式会社C＆Gシステムズ)",
   "nameEn": "CGS HOLDINGS INC.(旧英訳名　C&G SYSTEMS INC.)（注）2025年3月26日開催の第18回定時株主総会の決議により、2025年4月1日から会社名を上記のとおり変更いたしました。",
-  "description": null,
+  "shortNameEn": "CGS HOLDINGS INC.",
+  "description": "金型づくりを支えるCAD/CAMシステムの開発・販売と保守サービス、金型の製造請負を行う純粋持株会社体制のグループです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    },
+    {
+      "industryId": "machinery",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "cad-cam-systems",
+      "name": "CAD/CAMシステム等事業",
+      "description": "金型・部品メーカー向けのCAD/CAMシステムを開発・販売し、保守サービスやサブスクリプション契約、ソフトウェアを導入するためのPC等のハードウェア販売、受託開発を行う事業です。株式会社Ｃ＆Ｇシステムズと株式会社ＮＤＥＳのほか、カナダとタイの販売子会社が担っています。2025年12月期の外部顧客への売上高は4,132百万円でした。",
+      "customers": [
+        "金型・部品メーカーを中心とする製造業"
+      ],
+      "children": [
+        {
+          "id": "software",
+          "name": "ソフトウェア",
+          "description": "CAD/CAMシステムのソフトウェア販売です。2025年12月期の売上高は983百万円でした。",
+          "customers": [
+            "金型・部品メーカーを中心とする製造業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "hardware",
+          "name": "ハードウェア",
+          "description": "CAD/CAMソフトウェアを導入するためのPC等のハードウェア販売です。2025年12月期の売上高は264百万円でした。",
+          "customers": [
+            "金型・部品メーカーを中心とする製造業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "first-year-maintenance",
+          "name": "初年度保守",
+          "description": "ソフトウェア導入初年度の保守サービスです。2025年12月期の売上高は233百万円でした。",
+          "customers": [
+            "金型・部品メーカーを中心とする製造業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "renewal-maintenance",
+          "name": "更新保守",
+          "description": "既存顧客との保守契約の更新による継続的な保守サービスです。2025年12月期の売上高は2,090百万円で、この事業の収益の中心です。",
+          "customers": [
+            "金型・部品メーカーを中心とする製造業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "subscription",
+          "name": "サブスクリプション契約",
+          "description": "定額制の契約によるソフトウェアの提供です。2025年12月期の売上高は108百万円でした。",
+          "customers": [
+            "金型・部品メーカーを中心とする製造業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other-services",
+          "name": "その他サービス",
+          "description": "上記以外の付帯サービスです。2025年12月期の売上高は323百万円でした。",
+          "customers": [
+            "金型・部品メーカーを中心とする製造業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "contract-development",
+          "name": "受託開発",
+          "description": "顧客からの委託によるソフトウェア開発です。2025年12月期の売上高は128百万円でした。",
+          "customers": [
+            "金型・部品メーカーを中心とする製造業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "mold-manufacturing",
+      "name": "金型製造事業",
+      "description": "米国の子会社Tritech International,LLCが、自動車部品用金型を海外から調達して販売する、工場を持たないファブレス方式の金型製造請負を行う事業です。2025年12月期の外部顧客への売上高は849百万円でした。",
+      "customers": [
+        "北米の自動車部品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "金型・部品メーカー向けにCAD/CAMソフトウェアを販売し、保守契約とサブスクリプションで継続的な収益を得るほか、米国子会社が自動車部品用金型の製造を請け負う事業モデルです。",
+    "products": [
+      "CAD/CAMシステム「EXCESSシリーズ」",
+      "金型用CAMシステム「CAM-TOOL」",
+      "金型生産管理システム「AIQ」",
+      "保守サービス",
+      "PC等のハードウェア",
+      "自動車部品用金型（製造請負）"
+    ],
+    "customers": [
+      "金型・部品メーカーを中心とする製造業",
+      "北米の自動車部品メーカー"
+    ],
+    "revenueSources": [
+      "ソフトウェアとハードウェアの販売対価",
+      "保守契約料（初年度・更新）",
+      "サブスクリプション契約料",
+      "受託開発の対価",
+      "金型製造請負の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "2社の統合で生まれ、2025年に純粋持株会社体制へ移行した会社",
+        "description": "2007年にコンピュータエンジニアリングと株式会社グラフィックプロダクツの株式移転で設立され、2025年4月1日に純粋持株会社体制へ移行して株式会社ＣＧＳホールディングスに商号を変更しました。当社と連結子会社8社で構成され、2025年12月31日現在の連結従業員数は299人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "CAD/CAMシステムと保守サービス、金型の製造請負を提供する",
+        "description": "金型・部品メーカー向けにCAD/CAMシステムを開発・販売し、保守サービスやサブスクリプション契約、受託開発を提供するほか、米国の子会社が自動車部品用金型を海外調達して販売するファブレス方式の製造請負を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "金型・部品メーカーなどの製造業が顧客になる",
+        "description": "主な顧客は自動車向けを中心とする金型・部品メーカーなどの製造業です。国内のほか、カナダとタイの販売子会社を通じて北米やアジアでも販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "ソフトウェア販売と保守契約、金型請負の対価が収入になる",
+        "description": "2025年12月期の売上高は4,982百万円で、前期から26.9％増えました。事業別では、CAD/CAMシステム等事業が4,132百万円、金型製造事業が849百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は263百万円",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は263百万円でした。前期は121百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +200,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2861262000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 239,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +220,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3140827000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 241,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年３月31日）等を第16期の期首から適用しており、第16期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +241,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3126279000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 250,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +261,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3231659000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 245,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +281,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3510660000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 299,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +289,227 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1978,
+      "title": "株式会社西部周防を設立",
+      "description": "福岡県北九州市八幡西区に、事務用パッケージソフトの製造販売を目的として株式会社西部周防を設立し、CAD/CAMの受託開発と販売を始めました。",
+      "significance": "現在の株式会社Ｃ＆Ｇシステムズにつながるコンピュータエンジニアリングの源流です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "株式会社グラフィックプロダクツを設立",
+      "description": "東京都目黒区に、図形・画像処理に関連するコンピューターシステムの開発、製造および販売を目的として株式会社グラフィックプロダクツを設立しました。",
+      "significance": "もう一つの源流となる会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "金型製造業向け2次元CAD/CAMシステム「ACE I」の販売を開始",
+      "description": "大手順送プレス金型製造業向けの2次元CAD/CAMシステム「ACE I」の販売を開始しました。",
+      "significance": "金型づくり向けシステムへの特化の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "2次元CAD/CAM一体型システム「EXCESSシリーズ」の販売を開始",
+      "description": "2次元CAD/CAM一体型システム「EXCESSシリーズ」の販売を開始しました。",
+      "significance": "現在の主力製品シリーズの原点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "金型用CAMシステム「CAM-TOOL」の販売を開始",
+      "description": "グラフィックプロダクツが金型用CAMシステム「CAM-TOOL」の販売を開始しました。",
+      "significance": "現在の主力製品の一つが始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "グラフィックプロダクツが株式を店頭登録",
+      "description": "グラフィックプロダクツが日本証券業協会に株式を店頭登録しました。",
+      "significance": "グループの株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "金型生産管理システム「AIQ」の販売を開始",
+      "description": "コンピュータエンジニアリングが金型生産管理システム「AIQ」の販売を開始しました。",
+      "significance": "設計・加工支援から生産管理へ製品領域が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "米国にTritech International,LLCを設立",
+      "description": "グラフィックプロダクツが米国に現地法人Tritech International,LLCを設立しました。",
+      "significance": "現在の金型製造事業を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "株式移転によりアルファホールディングス株式会社を設立し上場",
+      "description": "コンピュータエンジニアリングと株式会社グラフィックプロダクツの株式移転により完全親会社のアルファホールディングス株式会社を設立し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "2社の統合と、現在の持株会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "「EXCESS-HYBRID」の販売を開始",
+      "description": "2次元・3次元融合型CAD/CAMシステム「EXCESS-HYBRID」の販売を開始しました。",
+      "significance": "2次元と3次元を融合させた主力製品の投入です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "株式会社Ｃ＆Ｇシステムズに商号変更",
+      "description": "コンピュータエンジニアリングと株式会社グラフィックプロダクツを吸収合併し、株式会社Ｃ＆Ｇシステムズに商号を変更しました。",
+      "significance": "事業会社どうしが一つの会社に統合されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "東京証券取引所市場第二部へ市場変更",
+      "description": "上場市場を東京証券取引所市場第二部へ変更しました。",
+      "significance": "市場変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "純粋持株会社体制へ移行し株式会社ＣＧＳホールディングスに商号変更",
+      "description": "「株式会社ＣＧＳホールディングス」として純粋持株会社体制に移行し、東証スタンダード市場への上場を継続しました。CAD/CAM事業は新設分割した事業子会社の株式会社Ｃ＆Ｇシステムズが継続しています。",
+      "significance": "現在の持株会社体制の成立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "中間事業持株会社「株式会社ＣＧＳ」を設立",
+      "description": "事業子会社の株式会社Ｃ＆Ｇシステムズの単独株式移転により、中間事業持株会社の株式会社ＣＧＳを設立しました。",
+      "significance": "持株会社体制の完成です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社ＮＤＥＳの株式の51％を取得",
+      "description": "株式会社NTTデータエンジニアリングシステムズの新設子会社である株式会社ＮＤＥＳの株式の51％を取得し、ＣＧＳグループに加えました。",
+      "significance": "M&AによるCAD/CAM事業の拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "rhythm",
+      "relationship": "major-shareholder",
+      "description": "リズム株式会社は、2025年12月31日現在の大株主の状況に所有割合3.31％で印字されている事業会社です。当社も同社の株式を保有しており、保有目的として当社ソフトウェアの評価ならびにアセアン地域における情報交換のためと印字し、当事業年度に株式数を増やしています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
       "title": "有価証券報告書－第19期(2025/01/01－2025/12/31)",
-      "publisher": "株式会社CGSホールディングス(旧会社名　株式会社C＆Gシステムズ)",
+      "publisher": "株式会社ＣＧＳホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XRYC.pdf",
       "publishedAt": "2026-03-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XRYC",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念「生産性の限界に挑戦する」とグループビジョン「グローバル・ニッチ・トップ」を掲げ、2025年4月に純粋持株会社体制へ移行しました。中期的な経営戦略として、既存ソリューションの開発・営業力の強化と適応分野の拡大、生産管理システムを核とするスマートファクトリー領域の拡大、ものづくりDXプラットフォームによる既存システムのクラウド化とSaaS/PaaSの展開、他社との協業やM&Aによる事業の推進を挙げ、CAD/CAMメーカーとしての技術革新を中核に「製造業DXインテグレーター」へ進化することを目指しています。",
+        "asOf": "2026-03-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "金型向けCAD/CAMで長い歴史を持つ2社が統合した事業基盤に、2025年には株式会社ＮＤＥＳが加わり、会社はCAD/CAM業界トップシェアの企業グループになったと述べています。収益面では、既存顧客との保守契約の更新による収益が売上高の中心で、ソフトウェアの販売後も継続的に収益が積み上がる構造になっています。",
+        "basis": "経営方針に、組織再編により「CAD/CAM業界トップシェアの企業グループとなりました」と印字されていること。セグメント情報の収益分解で、更新保守が2,090百万円と最大の行であり、既存顧客への地域密着型のサポート体制が保守収益に貢献したと経営成績の分析に印字されていること。",
+        "asOf": "2026-03-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "disclosed": {
+        "text": "2025年の組織再編により、CAD/CAM業界トップシェアの企業グループになったとしています。",
+        "asOf": "2026-03-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

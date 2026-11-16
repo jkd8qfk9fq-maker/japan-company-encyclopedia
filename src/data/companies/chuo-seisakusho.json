@@ -4,15 +4,130 @@
   "name": "中央製作所",
   "officialName": "株式会社中央製作所",
   "nameEn": "Chuo Seisakusho, Ltd.",
-  "description": null,
+  "shortNameEn": "CHUO SEISAKUSHO",
+  "description": "名古屋市に本社を置き、産業用電源・表面処理装置・電気溶接機・電解加工機などを製造・販売する電気機器メーカーです。",
   "listings": [
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    },
+    {
+      "industryId": "machinery",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "surface-treatment-equipment",
+      "name": "表面処理装置",
+      "description": "めっきをはじめ、アルマイト（陽極酸化）や化成処理のための全自動表面処理装置を、お客様のニーズに対応して提供する事業です。2026年3月期の外部顧客への売上高は1,541百万円でした。",
+      "customers": [
+        "自動車関連業界の企業",
+        "半導体関連業界の企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "power-supply-equipment",
+      "name": "電源機器",
+      "description": "当社が独自で製造販売する機器で、電気化学工業や表面処理などの産業用電源をはじめ、学術用など多様な分野で採用されています。2026年3月期の外部顧客への売上高は1,508百万円でした。",
+      "customers": [
+        "電池業界の企業",
+        "電子部品業界の企業",
+        "自動車関連業界の企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "electric-welders",
+      "name": "電気溶接機",
+      "description": "電気抵抗溶接機をはじめ、タイマ（溶接制御装置）や溶接電流計など電気抵抗溶接に関連する製品を販売する事業です。2026年3月期の外部顧客への売上高は573百万円でした。",
+      "customers": [
+        "自動車関連業界の企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other-equipment",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業で、電解加工機、試験機、計測器等を販売しています。2026年3月期の外部顧客への売上高は392百万円でした。",
+      "customers": [
+        "製造業の企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "電気・電子技術を主軸に、産業用電源、めっきなどの表面処理装置、電気抵抗溶接機、電解加工機などを自社で製造し、自動車・電池・電子部品・半導体などの製造業の顧客へ販売する事業モデルです。",
+    "products": [
+      "産業用電源",
+      "全自動表面処理装置（めっき・アルマイト・化成処理）",
+      "電気抵抗溶接機・溶接制御装置",
+      "電解加工機",
+      "試験機・計測器"
+    ],
+    "customers": [
+      "自動車関連業界の企業",
+      "電池業界の企業",
+      "電子部品業界の企業",
+      "半導体関連業界の企業"
+    ],
+    "revenueSources": [
+      "電源機器の販売対価",
+      "表面処理装置の販売対価",
+      "電気溶接機の販売対価",
+      "電解加工機・試験機・計測器の販売対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "名古屋市に本社を置く電気機器メーカー",
+        "description": "名古屋市瑞穂区に本社・本社工場を置く単体の電気機器メーカーで、関連会社1社を有しています。2026年3月31日現在の従業員数は196人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "電源・表面処理装置・溶接機などの産業用機器",
+        "description": "産業用電源、全自動表面処理装置、電気抵抗溶接機を主力に、電解加工機、試験機、計測器などを製造・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車・電池・電子部品・半導体などの製造業",
+        "description": "顧客は製造業の企業で、電源機器は電池・電子部品・自動車関連業界、表面処理装置は自動車・半導体関連業界、電気溶接機は自動車関連業界が中心です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売対価",
+        "description": "製品の販売対価が売上となります。2026年3月期の売上高は4,016百万円で、表面処理装置が1,541百万円、電源機器が1,508百万円、電気溶接機が573百万円、その他が392百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は201百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +142,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2239000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 206,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -49,7 +164,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1950000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 197,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -71,7 +186,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2200000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 196,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -93,7 +208,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2356000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 197,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -115,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2549000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 196,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -125,8 +240,232 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1936,
+      "title": "株式会社中央製作所を設立",
+      "description": "特許ベルトーロ整流器を製作する目的で、名古屋市中村区米野町に株式会社中央製作所を設立しました。",
+      "significance": "現在の中央製作所の出発点で、整流器（電源機器）の製造から事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1936,
+      "title": "本社及び本社工場を名古屋市瑞穂区内浜町へ移転",
+      "description": "設立の年に、本社及び本社工場を名古屋市瑞穂区内浜町へ移転しました。",
+      "significance": "現在の本社所在地への移転で、以来の生産・経営の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1945,
+      "title": "戦災により本社工場・東京工場が焼失",
+      "description": "戦災により本社工場、東京両工場が焼失し、東京支店を閉鎖しました。翌1946年に本社工場の復旧工事が完了し、操業を開始しました。",
+      "significance": "戦争による壊滅的な打撃からの再建の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "自動めっき装置の製作を開始",
+      "description": "自動めっき装置の製作を開始しました。",
+      "significance": "現在の表面処理装置事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "セレン整流器・シリコン整流器の製作を開始",
+      "description": "セレン整流器・シリコン整流器の製作を開始しました。",
+      "significance": "整流器の技術が半導体素子へ移る転換期の対応で、電源機器の技術基盤を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "名古屋証券取引所市場第二部に株式を上場",
+      "description": "名古屋証券取引所市場第二部（現・メイン市場）に株式を上場しました。",
+      "significance": "上場企業としての歩みの始まりで、現在も名古屋証券取引所メイン市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "東洋ウェルダーを吸収合併し、電気溶接機の製作を開始",
+      "description": "1957年に電気溶接機を製作する目的で設立した子会社の東洋ウェルダー株式会社を吸収合併し、電気溶接機・自動研磨装置の製作を開始しました。",
+      "significance": "現在の電気溶接機事業が当社本体の事業となった年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "三好工場の第一期工事が完成",
+      "description": "愛知県に三好工場の第一期工事が完成し、めっき装置・自動研磨装置の製作を本社工場から移管しました。",
+      "significance": "表面処理装置の生産拠点の拡張です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "公害防止機器・省力機器の製作を開始",
+      "description": "公害防止機器・省力機器の製作を開始しました。",
+      "significance": "環境・省力化の需要に応える製品分野への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "電解加工機の製作を開始",
+      "description": "電解加工機の製作を開始しました。",
+      "significance": "現在の「その他」事業に含まれる電解加工機の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "株式会社エミックを設立",
+      "description": "東京都田無市（現・東京都西東京市）に株式会社エミックを設立しました。",
+      "significance": "現在、同社は当社の持分法適用関連会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "ISO9001認証を取得",
+      "description": "ISO9001の認証を取得しました。",
+      "significance": "品質マネジメント体制の整備を示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "中国現地法人を設立",
+      "description": "100％出資の中国現地法人「秋欧機械設備（上海）有限公司」を設立しました。",
+      "significance": "海外生産・販売拠点の展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "中国現地法人を解散し清算結了",
+      "description": "中国現地法人「秋欧機械設備（上海）有限公司」を解散し、清算が結了しました。",
+      "significance": "海外子会社の撤退で、現在の単体中心の体制となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "本社南工場が完成",
+      "description": "本社南工場が完成しました。",
+      "significance": "電源機器・電気溶接機の製造動線の改善と生産性向上を目的とした直近の設備投資です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "daido-metal",
+      "relationship": "customer",
+      "description": "【株式の保有状況】に、主に電源機器・表面処理装置における取引関係の維持、強化のため株式を保有する重要な取引先と印字されています。電子記録債権及び契約負債の相手先としても印字された主要な顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aichi-tokei-denki",
+      "relationship": "supplier",
+      "description": "【株式の保有状況】に、カーボンニュートラルへ向けた製品の開発を実現するために重要な部材となる可能性を秘めた製品の供給元であり、関係強化のため株式を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "makita",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】に、電解加工機における取引関係の維持、強化のため株式を保有する取引先と印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nihon-denkei",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】に、計測器における取引関係の維持、強化のため株式を保有する重要な取引先と印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamazen",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】に、電気溶接機における取引関係の維持、強化のため株式を保有する重要な取引先と印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okaya-and-co",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】に、電解加工機における取引関係の維持、強化のため株式を保有する取引先と印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nichicon",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】に、電源機器における取引関係の維持、強化のため株式を保有する重要な取引先と印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nf-holdings",
+      "relationship": "major-shareholder",
+      "description": "【大株主の状況】に、2026年3月31日現在で30,600株（発行済株式（自己株式を除く。）の総数に対する所有株式数の割合3.96％）を保有する事業会社として印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +473,47 @@
       "publisher": "株式会社中央製作所",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJMI.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YJMI",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-10-02",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2027年3月期を最終年度とする中期の経営方針で「体質改善を進め、成長する力強い企業を構築する」をスローガンに掲げ、景気変動に左右されない安定した収益を確保できる企業体質の構築に努めるとしています。魅力ある製品を提供する「製品力強化」、一人一人がプロフェッショナルとなり互いの力を引き出す「組織力強化」、社員が安心して働ける労働環境の整備「健康経営」を3つの柱として企業価値の向上を図るとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "永年培ってきた電気・電子の技術を主軸とし、機械・化学等の要素技術を複合して新しい分野を切り拓くことを経営の理念としており、産業用電源、表面処理装置、電気溶接機、電解加工機までを自社で製造・販売しています。表面処理装置向けのIoT予防保全システムCCCS-Mや、新機能を搭載した溶接制御装置CK5など、製品の改良・開発を継続しています。",
+        "basis": "経営方針に、電気・電子の技術を主軸とし機械・化学等の要素技術を複合することが経営の理念として印字され、事業の内容と研究開発活動に、産業用電源・表面処理装置・電気溶接機・電解加工機の製造・販売と、CCCS-MやCK5などの開発・市場投入が印字されているため。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "1936年創業、1961年に名古屋証券取引所へ上場した産業用機器メーカーで、製造業の設備投資需要に応える電源・表面処理装置・溶接機などを供給しています。顧客は自動車、電池、電子部品、半導体など幅広い製造業に分散しています。",
+        "basis": "沿革に1936年の設立と1961年の名古屋証券取引所市場第二部への上場が印字され、MD&Aに電源機器は電池・電子部品・自動車関連業界、表面処理装置は自動車・半導体関連業界、電気溶接機は自動車関連業界が中心と印字されているため。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

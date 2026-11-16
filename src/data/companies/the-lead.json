@@ -4,18 +4,123 @@
   "name": "リード",
   "officialName": "株式会社リード",
   "nameEn": "The Lead Co., Inc.",
-  "description": null,
+  "shortNameEn": "The Lead Co., Inc.",
+  "description": "埼玉県熊谷市に本社を置き、自動車用外装部品などの受注製品と、駐輪ラックなどの自社製品をつくるメーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
-      "exchange": "fse"
+      "exchange": "fse",
+      "market": "本則市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "automotive-parts",
+      "name": "自動車用部品",
+      "description": "自動車メーカーから受注する受注製品の事業です。板金・塗装と樹脂成形加工を主体に、バンパーやスポイラーなどの外装部品とハンドブレーキレバーシステムを製造・販売しています。埼玉県熊谷市の西野工場と下奈良工場がこの事業の生産設備です。2026年3月期の売上高は4,619百万円でした。",
+      "customers": [
+        "自動車メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "own-products",
+      "name": "自社製品",
+      "description": "自社ブランドの駐輪製品の事業です。駐輪ラックなどの駐輪製品について、企画開発から設計、製造、販売・設置、保守メンテナンス、駐輪場経営までを手掛けています。東京都台東区の東京営業所がこの事業の設備です。2026年3月期の売上高は494百万円でした。",
+      "customers": [
+        "官公庁",
+        "駅前施設等の駐輪場運営者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-electronics",
+      "name": "その他（電子機器事業）",
+      "description": "報告セグメントに含まれない電子機器事業です。情報通信機ラックや汎用電子機器ケース、シャーシを扱っていましたが、2025年6月末で事業を撤退しました。2026年3月期の売上高は28百万円でした。",
+      "customers": [
+        "電子機器メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "賃貸不動産",
+      "description": "店舗などを賃貸する事業です。賃貸収益は営業外収益に計上されるため、この事業の売上高の金額は開示されていません。",
+      "customers": [
+        "店舗等の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自動車メーカーから受注するバンパーなどの樹脂成形・板金・塗装部品と、駐輪ラックを中心とした自社製品の製造・販売を行う事業モデルです。",
+    "products": [
+      "バンパー、スポイラー等の自動車用外装部品",
+      "ハンドブレーキレバーシステム",
+      "駐輪ラック等の駐輪製品"
+    ],
+    "customers": [
+      "自動車メーカー",
+      "官公庁",
+      "駅前施設等の駐輪場運営者"
+    ],
+    "revenueSources": [
+      "自動車用部品の販売収入",
+      "駐輪製品の販売・設置・保守メンテナンス収入",
+      "駐輪場経営収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "リード",
+        "description": "1945年に埼玉県妻沼町（現在の熊谷市）で鈑金業として創業し、現在は埼玉県熊谷市に本社を置く会社です。2026年3月31日現在の従業員数は172人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "自動車用部品と駐輪製品",
+        "description": "板金・塗装と樹脂成形加工を主体に、バンパーやスポイラーなどの自動車用外装部品とハンドブレーキレバーシステムを製造し、自社製品として駐輪ラックなどの駐輪製品の企画開発から販売・設置、保守メンテナンス、駐輪場経営までを手掛けています。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車メーカーと官公庁など",
+        "description": "自動車用部品は自動車メーカーに供給し、2026年3月期は株式会社SUBARUが売上高の63.2％を占める主要な取引先でした。駐輪製品は官公庁や駅前施設などに販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は5,141百万円で、前期比22.8％増加しました。自動車用部品が4,619百万円、自社製品が494百万円、その他が28百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失",
+        "description": "2026年3月期の当期純損失は69百万円でした。前期の当期純損失104百万円からは損失が縮小しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -30,11 +135,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2395977000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 179,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -52,11 +157,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2599834000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 177,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -74,11 +179,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2881392000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 174,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -96,11 +201,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2600030000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 178,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -118,18 +223,167 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2545473000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 172,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1945,
+      "title": "鈑金業を開業",
+      "description": "埼玉県大里郡妻沼町（現在の熊谷市）において、岩崎亥之吉氏が鈑金業を開業しました。",
+      "significance": "現在のリードの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "岩崎鈑金工業株式会社を設立",
+      "description": "埼玉県大里郡妻沼町に岩崎鈑金工業株式会社を設立し、合資会社岩崎鈑金製作所の営業権を継承しました。",
+      "significance": "法人としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "岩崎電機産業株式会社に改称",
+      "description": "商号を岩崎電機産業株式会社と改称しました。",
+      "significance": "電機産業の名を掲げた時期の社名です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "自動車用部品の製作を開始",
+      "description": "富士重工業株式会社（現在の株式会社SUBARU）との業務提携により、自動車用部品の製作を始めました。",
+      "significance": "現在の主力事業である自動車用部品事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "株式会社リードに改称",
+      "description": "商号を株式会社リードと改称しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "樹脂成形加工を開始",
+      "description": "第三工場の西側に樹脂工場を竣工し、樹脂成形加工を始めました。",
+      "significance": "現在の強みである樹脂成形の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "樹脂バンパーの生産を開始",
+      "description": "樹脂成形機2,000トンを導入し、樹脂バンパーの生産を始めました。",
+      "significance": "主力製品である樹脂バンパーの生産が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "賃貸店舗を竣工",
+      "description": "埼玉県熊谷市拾六間の熊谷事業部跡地に賃貸店舗を竣工しました。",
+      "significance": "賃貸不動産事業につながる店舗賃貸の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "駐輪事業を譲受",
+      "description": "日鉄日新ビジネスサービス株式会社より駐輪事業を譲り受け、東京都台東区に東京営業所を開設しました。",
+      "significance": "自社製品部門の中心である駐輪事業を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "福岡証券取引所本則市場に上場",
+      "description": "福岡証券取引所本則市場に株式を上場しました。",
+      "significance": "二つ目の上場市場を持ちました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "電子機器部門を事業撤退",
+      "description": "LB事業部のうち電子機器部門を事業撤退しました。",
+      "significance": "事業の選択と集中を進めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "subaru",
+      "relationship": "customer",
+      "description": "1959年5月の業務提携以来の主要な取引先で、2026年3月期の売上高の63.2％を占めています。取引関係の維持拡大のため、同社の株式も保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "saibo",
+      "relationship": "business-partner",
+      "description": "自社製品部門の主要な取引先で、総合的な関係の維持・強化の観点から同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sato-sho-ji",
+      "relationship": "supplier",
+      "description": "材料調達先で、当社の共栄会のメンバーです。取引の深耕のため、同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -137,13 +391,45 @@
       "publisher": "株式会社リード",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGCM.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YGCM",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "自動車部品部門では、主要取引先からの量産品のティア1受注の増加を目指して開発・設計部門の拡充に注力し、強みである自動車用外装部品の樹脂成形と樹脂塗装部品を中心に受注拡大を図るとしています。自社製品部門では、駐輪事業で企画開発から設計、製造、販売・設置、メンテナンスまでを一貫して手掛ける体制を生かし、販売エリアとチャネルの拡大により事業の拡大を図るとしています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高は自動車用部品が4,619百万円と全体の約9割を占め、自社製品は494百万円で、自動車用部品への集中が高い売上構成であることが読み取れます。",
+        "basis": "セグメント情報に、2026年3月期の外部顧客への売上高として自動車用部品4,619,081千円、自社製品494,553千円、その他28,111千円、合計5,141,745千円が印字されていること。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "自動車用外装部品の樹脂成形と樹脂塗装を強みとし、2022年9月に特許を取得したアニールレス技術など、自動車の軽量化に向けた技術や新材料、特殊塗装の新技法の研究開発に投資を拡大するとしています。駐輪事業では、40年の歴史と駐輪ラック60万台の設置実績を持つ「シンワ型駐輪システム」を引き継ぎ、自社設計開発を強みとしています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -1,18 +1,162 @@
 {
   "id": "terra-drone",
   "code": "278A",
-  "name": "TerraDrone",
+  "name": "Terra Drone",
   "officialName": "Terra Drone株式会社",
   "nameEn": "Terra Drone Corporation",
-  "description": null,
+  "shortNameEn": "Terra Drone Corporation",
+  "description": "産業用ドローンによる測量・点検・農業のサービスと、ドローンの運航管理システムを提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "it",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "drone-solution",
+      "name": "ドローンソリューション",
+      "description": "産業用ドローンのハード・ソフト・サービスを組み合わせ、測量・点検・農業の現場の課題を解決する事業です。2026年1月期の外部顧客への売上高は4,162百万円でした。当社と日本・インドネシア・オランダ・マレーシア・サウジアラビアの子会社が各地域で事業を行っています。",
+      "customers": [
+        "建設会社・測量会社",
+        "電力会社",
+        "石油・ガス・化学プラントの事業者",
+        "農業事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "surveying",
+          "name": "測量事業",
+          "description": "自社開発のUAVレーザスキャナ「Terra Lidar」シリーズやハンディ型3Dスキャナの販売と、ドローンによる3次元計測から図面作成、画像処理までを一貫して提供する事業です。インドネシアやサウジアラビアでも地形調査や森林測量を行っています。",
+          "customers": [
+            "建設コンサルタント・測量会社",
+            "政府機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "inspection",
+          "name": "点検事業",
+          "description": "超音波で板厚を測れるドローン「Terra UTドローン」や屋内点検用ドローン「Terra Xross 1」を用いて、プラントやタンク、工場の天井などの点検サービスと機体の販売を行う事業です。オランダの子会社は石油・化学プラント向けの点検を提供しています。",
+          "customers": [
+            "石油・ガス・化学プラントの事業者",
+            "工場・インフラの事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "agriculture",
+          "name": "農業事業",
+          "description": "インドネシアとマレーシアで、ドローンによるパーム油農園向けの農薬散布や肥料散布のサービスを提供する事業です。散布する農地面積に応じた対価を受け取ります。",
+          "customers": [
+            "パーム油農園を営む農業事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "operations-management",
+      "name": "運航管理",
+      "description": "ドローンの運航管理システム（UTM）を開発・構築し、ドローンの安全で効率的な運航を支える事業です。2026年1月期の外部顧客への売上高は619百万円でした。ベルギーの子会社Unifly NVが、欧州を中心に各国の航空管制機関などへUTMを提供しています。",
+      "customers": [
+        "政府機関・航空管制機関",
+        "ドローン運航事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "utm",
+          "name": "UTM事業",
+          "description": "無人航空機運航管理システム（UTM）の導入と、年間ライセンスや飛行回数に応じた従量課金などによる継続的な提供を行う事業です。空飛ぶクルマ向けの運航管理システムの開発にも取り組んでいます。",
+          "customers": [
+            "政府機関・航空管制機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社開発のドローンや計測機器の販売、測量・点検・農業サービスの提供、運航管理システムのライセンスや導入支援の対価で収益を得ています。",
+    "products": [
+      "自社開発のUAVレーザスキャナ「Terra Lidar」シリーズ",
+      "屋内点検用ドローン「Terra Xross 1」",
+      "超音波板厚点検ドローン「Terra UTドローン」",
+      "測量支援クラウドサービス「Terra Cloud」",
+      "ドローン運航管理システム（UTM）"
+    ],
+    "customers": [
+      "建設会社・測量会社",
+      "石油・ガス・化学プラントの事業者",
+      "農業事業者",
+      "政府機関・航空管制機関"
+    ],
+    "revenueSources": [
+      "ドローンや計測機器の販売と測量・点検・農業サービスの提供の対価",
+      "ソフトウェアのライセンス販売・クラウドサービスの利用料と、UTMの導入料・年間ライセンス・飛行回数に応じた従量課金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "Terra Drone",
+        "description": "2016年に設立され、東京証券取引所グロース市場に上場する会社です。本社は東京都渋谷区にあり、2026年1月31日現在で連結子会社10社と持分法適用会社1社を擁し、連結の従業員数は551名です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ドローンソリューションと運航管理システム",
+        "description": "産業用ドローンのハード・ソフト・サービスを組み合わせた測量・点検・農業のソリューションと、ドローンの運航管理システム（UTM）を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "産業事業者と政府・航空管制機関",
+        "description": "建設や電力、石油・化学、農業などの事業者が現場の効率化と安全のためにドローンソリューションを利用し、政府機関や航空管制機関が安全なドローン運航のためにUTMを利用します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年1月期の売上高は4,782百万円で、前期と比べて7.8％増加しました。ドローンソリューションの売上高が前期を上回ったことによります。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失",
+        "description": "2026年1月期の親会社株主に帰属する当期純損失は2,497百万円でした。前期は当期純損失474百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2023年1月期",
@@ -27,7 +171,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4516362000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 186,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +191,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5045016000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 548,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +211,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7144980000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 618,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +231,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5008622000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 551,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -95,22 +239,200 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2016,
+      "title": "Terra Drone株式会社を設立",
+      "description": "代表取締役社長の德重徹により、ドローンや空飛ぶクルマといった新しい産業領域で世界をリードできる存在になることを目的に、東京都渋谷区神宮前に設立されました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "ベルギーのUnifly NVに出資し持分法適用会社とする",
+      "description": "UTM（無人航空機運航管理システム）の開発技術を持つベルギーのUnifly NVへの第1回目の出資を行い、持分法適用会社としました。",
+      "significance": "運航管理事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ドローン搭載型レーザ「Terra Lidar」の販売を開始",
+      "description": "写真測量に代わるレーザ測量が可能なドローン搭載型レーザ「Terra Lidar」の販売を開始しました。あわせて、超音波によるドローン点検サービスも開始しました。",
+      "significance": "自社開発ハードウェアの第1号です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "インドネシアのUAVサービス企業に出資",
+      "description": "インドネシアのUAVサービス企業PT AeroGeoSurveyへの第1回目の出資を行い、社名をPT. Terra Drone Indonesiaとして持分法適用会社としました。",
+      "significance": "海外展開の本格化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "オランダの非破壊検査企業に出資",
+      "description": "オランダのUAV非破壊検査の技術を持つRoNik Inspectioneering B.V.への第1回目の出資を行い、社名をTerra Inspectioneering B.V.として持分法適用会社としました。",
+      "significance": "点検事業の技術基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "PT. Terra Drone Indonesiaを連結子会社化",
+      "description": "PT. Terra Drone Indonesiaへの第2回目の出資を行い、連結子会社としました。",
+      "significance": "東南アジア事業の中核の連結化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "Terra Inspectioneering B.V.を連結子会社化",
+      "description": "Terra Inspectioneering B.V.への第2回目の出資を行い、連結子会社としました。",
+      "significance": "点検事業のグローバル展開の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "Terra Global株式会社を設立",
+      "description": "株式会社海外交通・都市開発事業支援機構と合弁契約を締結し、Unifly NV株式の購入を目的としてTerra Global株式会社を連結子会社として設立しました。",
+      "significance": "Unifly NVの連結子会社化に向けた布石です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "サウジアラビアに子会社を設立",
+      "description": "サウジアラビアにTerra Drone Arabia for Dronesを設立し、連結子会社としました。また、サウジアラムコ系のベンチャーキャピタルからJ-KISS型の資金調達を行いました。",
+      "significance": "中東展開の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "Unifly NVを連結子会社化し農業事業に参入",
+      "description": "Unifly NVへの第5回目の出資を行い、連結子会社としました。また、PT. Terra Drone IndonesiaがAvirtech Solutions Pte.Ltd.のドローン農薬散布事業を譲り受け、マレーシアにTerra Drone Agri SDN. BHD.を設立しました。",
+      "significance": "運航管理と農業の両事業がグループの中核になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "東京証券取引所グロース市場に上場",
+      "description": "東京証券取引所グロース市場へ新規上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "屋内点検用ドローン「Terra Xross 1」の販売を開始",
+      "description": "自社開発の屋内点検用ドローン「Terra Xross 1」の販売を日米で同時に開始しました。",
+      "significance": "点検用ハードウェアの主力製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "modec",
+      "relationship": "business-partner",
+      "description": "三井海洋開発株式会社とは、同社がブラジルでオペレーションを行うFPSO（浮体式海洋石油・ガス生産貯蔵積出設備）において、ドローンによる原油貯蔵タンク内の船体板厚計測を共同で実施し、船級協会ABSの承認を取得しています。2024年７月には、海洋プラットフォーム向け検査ドローンの共同研究開発契約を締結しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "companyId": "first-brothers",
+      "relationship": "major-shareholder",
+      "description": "2026年１月31日現在、発行済株式の1.14％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第10期(2025/02/01－2026/01/31)",
+      "title": "訂正有価証券報告書－第10期(2025/02/01－2026/01/31)",
       "publisher": "Terra Drone株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XY8O.pdf",
-      "publishedAt": "2026-04-30",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z0VE.pdf",
+      "publishedAt": "2026-09-07",
+      "docId": "S100Z0VE",
+      "asOf": "2026-01-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 当社は2024年７月25日付で普通株式１株につき100株の割合で株式分割を行っています。主要な経営指標等の株式関連の指標は、当該分割が第７期の期首に行われたと仮定して算定して印字されています（主要な経営指標等の推移の注記に記載）。本登録はこの算定後の数値に基づいています。",
+      "businessModel: 2026年２月に、連結子会社のTerra Global株式会社は当社との吸収合併により消滅し、持分法適用関連会社のAloft Technologies, Inc.は当社の全保有株式の第三者への譲渡により持分法適用関連会社から除外されています（【事業の内容】及び【関係会社の状況】に印字）。本登録は2026年１月31日現在のグループ構成に基づいています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "ドローンソリューションと運航管理の2つのセグメントを通じて、ドローンによる産業課題の解決と、UTMの社会実装による低空域経済圏の構築を中長期的な事業構想としています。段階出資でリスクを抑えながらM&Aで世界のドローン関連企業を取り込む「テラ群戦略」を進め、欧州や中東へのUTMの提供地域の拡大と、空飛ぶクルマ向け運航管理システムの開発に取り組むとしています。",
+        "asOf": "2026-09-07",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "ベルギーの子会社Unifly NVのUTMは欧州のU-space規制に準拠した実装実績を持ち、各国の航空管制機関への提供が進んでいます。自社開発の超音波板厚点検ドローンは特許を取得し、石油メジャーの製油所などでの点検実績を重ねています。",
+        "basis": "【事業の内容】に、Unifly NVが欧州を中心とした各国の航空管制機関（ANSP）へのUTM提供実績を持つこと、Terra UTドローンが特許取得済みでありシェルの製油所やBASFでの点検を提供していることが印字されていること。",
+        "asOf": "2026-09-07",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "ドローンサービス企業として2024年に世界1位を獲得しており、日本のほか東南アジア、欧州、中東、北米に子会社を置くグローバルな事業展開を行っています。",
+        "basis": "【事業の内容】に、ドローンサービス企業として2024年は世界1位を獲得したことが印字され、【関係会社の状況】にインドネシア、オランダ、ベルギー、マレーシア、サウジアラビア、アメリカ、イタリアの子会社・関連会社が印字されていること。",
+        "asOf": "2026-09-07",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年1月期",
     "asOf": "2026-01-31",

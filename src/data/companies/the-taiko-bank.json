@@ -4,15 +4,124 @@
   "name": "大光銀行",
   "officialName": "株式会社大光銀行",
   "nameEn": "THE TAIKO BANK,LTD.",
-  "description": null,
+  "shortNameEn": "THE TAIKO BANK,LTD.",
+  "description": "新潟県長岡市に本店を置く地方銀行で、預金・貸出を中心とした銀行業務と、クレジットカードやリースなどのグループ金融サービスを提供しています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "the-taiko-bank",
+      "name": "株式会社大光銀行",
+      "description": "新潟県長岡市に本店を置く地方銀行で、当行、連結子会社のたいこうカード株式会社と大光キャピタル＆コンサルティング株式会社、持分法適用関連会社の大光リース株式会社で構成され、銀行業務を中心に金融サービスに係る事業を行っています。報告セグメントは銀行業の単一セグメントです。2026年3月31日現在の連結従業員数は883人で、東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "lending",
+          "name": "貸出業務",
+          "description": "当行が新潟県内の法人や個人、地方公共団体などに対して行う貸出業務です。外部顧客に対する経常収益は15,528百万円で、サービス別では最も大きい区分です。",
+          "customers": [
+            "新潟県内を中心とする事業者",
+            "個人顧客",
+            "地方公共団体"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "securities-investment",
+          "name": "有価証券投資業務",
+          "description": "当行が預金等で調達した資金を有価証券で運用する業務です。外部顧客に対する経常収益は8,762百万円です。",
+          "customers": [
+            "資金運用の相手先となる発行体・市場参加者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "other-services",
+          "name": "その他",
+          "description": "クレジットカード業務等を含む区分で、外部顧客に対する経常収益は5,054百万円です。連結子会社のたいこうカード株式会社がクレジットカード業務と信用保証業務を、大光キャピタル＆コンサルティング株式会社がＭ＆Ａの仲介・支援業務、経営コンサルティング業務、ファンドの運営・管理業務を、持分法適用関連会社の大光リース株式会社が総合リース業務を行っています。",
+          "customers": [
+            "クレジットカード会員",
+            "経営支援や資金調達を必要とする事業者",
+            "リースを利用する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "預金などで調達した資金を貸出金や有価証券で運用する銀行業務を中核に、連結子会社がクレジットカードやファンドの運営・管理、持分法適用関連会社がリースを担う事業モデルです。",
+    "products": [
+      "預金・貸出・内国為替・外国為替などの銀行業務",
+      "国債等公共債・証券投資信託・保険商品の窓口販売",
+      "経営課題の解決に向けたコンサルティング",
+      "連結子会社によるクレジットカード業務と信用保証業務",
+      "連結子会社によるファンドの運営・管理とＭ＆Ａ仲介・経営コンサルティング",
+      "持分法適用関連会社によるリース業務"
+    ],
+    "customers": [
+      "新潟県を中心とする中小企業などの事業者",
+      "個人顧客",
+      "地方公共団体"
+    ],
+    "revenueSources": [
+      "貸出金利息などの資金運用収益",
+      "為替手数料や口座維持手数料などの役務取引等収益",
+      "有価証券投資業務やクレジットカード業務などその他業務の収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社大光銀行",
+        "description": "新潟県長岡市に本店を置く地方銀行で、当行と連結子会社2社及び持分法適用関連会社1社で構成されています。2026年3月31日現在の連結従業員数は883人で、東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "銀行業務を中心とする金融サービス",
+        "description": "本店ほか支店等において預金業務、貸出業務、有価証券投資業務、内国為替業務、外国為替業務などを行うほか、国債等公共債及び証券投資信託の窓口販売や保険商品の販売、経営コンサルティングを行い、グループではクレジットカード、信用保証、ファンドの運営・管理、リースも手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "新潟県を中心とする事業者や個人",
+        "description": "新潟県を主たる営業基盤とし、県内に62か店を展開して、中小企業を中心とする事業者や個人、地方公共団体などのお客さまに金融サービスを提供しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の連結経常収益は29,344百万円",
+        "description": "2026年3月期の連結経常収益は29,344百万円で、サービス別では貸出業務が15,528百万円、有価証券投資業務が8,762百万円、その他が5,054百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の当期純利益は2,799百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は2,799百万円で、前連結会計年度の2,495百万円から増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +136,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 77446000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 838,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +156,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 73601000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 813,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +176,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 78165000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 793,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +196,13 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 75522000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 891,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "従業員数が2024年3月期の793人から2025年3月期は891人へ増加しています。人事制度改正により2024年4月1日付けで事務嘱託113人が正行員に転換したことによるものです。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +217,7 @@
       "totalAssetsLabel": "連結総資産額",
       "netAssets": 81364000000,
       "netAssetsLabel": "連結純資産額",
-      "employees": null,
+      "employees": 883,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +225,233 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1942,
+      "title": "大光無尽株式会社を設立",
+      "description": "新潟県長岡市において、北越産業無尽株式会社と株式会社国民無尽商会が合併し、大光無尽株式会社を設立しました。",
+      "significance": "現在の大光銀行の法的な起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "株式会社大光相互銀行に商号変更",
+      "description": "相互銀行法の施行に伴い、商号を株式会社大光相互銀行に変更しました。",
+      "significance": "無尽会社から相互銀行への転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "新潟証券取引所に上場",
+      "description": "新潟証券取引所に株式を上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "全国市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "株式会社大光銀行に商号変更",
+      "description": "普通銀行への転換に伴い、商号を株式会社大光銀行に変更しました。",
+      "significance": "現在の銀行としての体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "新潟中央銀行の営業を一部譲受",
+      "description": "株式会社新潟中央銀行の営業を一部譲り受けました。",
+      "significance": "地域金融の受け皿となった再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "たいこうカード株式会社が発足",
+      "description": "株式会社大光ミリオンカードと株式会社大光ジェーシービーが合併し、商号をたいこうカード株式会社に変更しました。",
+      "significance": "現在のカード子会社の体制です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "東京証券取引所市場第一部の指定を受ける",
+      "description": "東京証券取引所市場第一部銘柄の指定を受けました。",
+      "significance": "市場第一部への昇格です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "基幹系システムを「NEXTBASE」へ移行",
+      "description": "基幹系システムを、株式会社日立製作所の共同利用サービス「NEXTBASE」へ移行しました。",
+      "significance": "現在の基幹系システムの基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "新本店が完成",
+      "description": "長岡市の本店所在地に新本店が完成しました。",
+      "significance": "本店機能の更新です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しに伴い、スタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "ＳＢＩホールディングスと戦略的資本業務提携に合意",
+      "description": "ＳＢＩホールディングス株式会社と戦略的資本業務提携に関する合意書を締結しました。",
+      "significance": "現在の資本業務提携の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "大光キャピタル＆コンサルティング株式会社を設立",
+      "description": "大光キャピタル＆コンサルティング株式会社を設立しました。",
+      "significance": "Ｍ＆Ａ仲介やファンド運営を担う子会社の新設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sbi-holdings",
+      "relationship": "business-partner",
+      "description": "2022年5月12日に戦略的資本業務提携に関する合意書を締結した業務提携等の関係にある相手です。ＳＢＩグループ各社との商品・サービスの業務提携を通じて協力関係を構築することとしており、当行は同社の株式210,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daishi-hokuetsu-financial-group",
+      "relationship": "business-partner",
+      "description": "営業基盤を同じくする地方銀行グループであり、地方創生の推進等における協調体制を構築する協力関係にある相手です。子会社の株式会社第四北越銀行は当行株式の2.35％を保有する大株主であり、当行も同社の株式1,119,420株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-tochigi-bank",
+      "relationship": "business-partner",
+      "description": "当行と同じ基幹系システム「NEXTBASE」の加盟行であり、共同案件やシステム面での協力関係にある相手です。当行は同社の株式300,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tomato-bank",
+      "relationship": "business-partner",
+      "description": "当行と同じ基幹系システム「NEXTBASE」の加盟行であり、共同案件やシステム面での協力関係にある相手です。当行は同社の株式131,200株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-daito-bank",
+      "relationship": "business-partner",
+      "description": "当行と同じ基幹系システム「NEXTBASE」の加盟行であり、共同案件やシステム面での協力関係にある相手です。当行は同社の株式115,100株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第124期(2025/04/01－2026/03/31)",
+      "title": "有価証券報告書－第124期（2025年４月１日－2026年３月31日）",
       "publisher": "株式会社大光銀行",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC1U.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YC1U",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "第13次中期経営計画「Value Up～ワクワクする未来へ～」（2024年度～2026年度）の最終年度として、経営理念「地域社会の発展に貢献する」「お客さまに信頼され親しまれる」「たゆまざる成長をめざす」のもと、基本戦略である、お客さまへの提供価値の向上、業務改革、人的資本の価値向上、サステナビリティ経営の実践、株主価値の向上を推進する方針です。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "当行自身が強みとして認識する「親しみやすさ」を特色とし、定期的な訪問機会を通じてお客さまと同じ目線に立ったコンサルティング営業を行う店舗運営を行っています。本店を置く新潟県内に62か店を展開し、地域の事業者や個人に密着した営業基盤を持っています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における経営環境に関する認識と、事業の内容に記載された店舗体制に基づく",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の連結経常収益29,344百万円のサービス別内訳は、貸出業務が15,528百万円、有価証券投資業務が8,762百万円、その他が5,054百万円で、貸出業務が最大の構成要素です。国内の外部顧客に対する経常収益が全体の90％超を占め、経常収益の10％以上を占める特定の相手先はありません。",
+        "basis": "セグメント情報等の関連情報（サービスごとの情報、地域ごとの情報、主要な顧客ごとの情報）と、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の概況に基づく",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,144 @@
   "name": "ダブルエー",
   "officialName": "株式会社ダブルエー",
   "nameEn": "WA，Inc．",
-  "description": null,
+  "shortNameEn": "WA",
+  "description": "ダブルエーは、婦人靴ブランド「ORiental TRaffic」や婦人服ブランド「MISCH MASCH」を企画し、直営店舗とECで販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "womens-shoes",
+      "name": "婦人靴の企画・販売事業",
+      "description": "婦人靴を自社で企画・開発し、パートナー工場に生産を委託して、直営店舗とECで販売する事業です。2026年1月期の外部顧客への売上高は20,347百万円でした。主力ブランドは「ORiental TRaffic」で、「WA ORiental TRaffic」「ORTR」「NICAL」も展開します。当社グループは当社と連結子会社4社で構成され、香港のCAPITAL SEA SHOES COMPANY LIMITED、中国の江蘇京海服装貿易有限公司、マカオのCAPITAL SEA SHOES LIMITED、株式会社卑弥呼がすべて100％子会社です。店舗は国内実店舗182店舗・国内EC店舗35店舗・海外実店舗34店舗・海外EC店舗5店舗を運営しています。",
+      "customers": [
+        "婦人靴を購入する女性客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "oriental-traffic",
+          "name": "ORiental TRaffic等の自社ブランド",
+          "description": "「ORiental TRaffic」「WA ORiental TRaffic」「ORTR」「NICAL」などの自社ブランドの婦人靴を企画・販売します。",
+          "customers": [
+            "婦人靴を購入する女性客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "himiko",
+          "name": "卑弥呼ブランド",
+          "description": "連結子会社の株式会社卑弥呼が、「ヒミコ」ブランドの婦人靴の企画・販売を行います。2024年8月には「NICAL」ブランドも同社へ移管されました。",
+          "customers": [
+            "婦人靴を購入する女性客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "womens-apparel",
+      "name": "婦人服の企画・販売事業",
+      "description": "婦人服を自社で企画・開発し、直営店舗とECで販売する事業です。2026年1月期の外部顧客への売上高は2,979百万円でした。ブランドは「MISCH MASCH」と、2025年4月1日にヒロタ株式会社から事業譲受した「31 Sons de mode（トランテアン ソン ドゥ モード）」です。",
+      "customers": [
+        "婦人服を購入する女性客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "misch-masch",
+          "name": "MISCH MASCH",
+          "description": "婦人服ブランド「MISCH MASCH」を企画・販売します。2023年3月に株式会社ミッシュマッシュを吸収合併し、アパレル事業へ本格参入しました。",
+          "customers": [
+            "婦人服を購入する女性客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "31-sons-de-mode",
+          "name": "31 Sons de mode",
+          "description": "婦人服ブランド「31 Sons de mode（トランテアン ソン ドゥ モード）」を企画・販売します。2025年4月1日にヒロタ株式会社から事業譲受しました。",
+          "customers": [
+            "婦人服を購入する女性客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社で企画・開発した婦人靴と婦人服をパートナー工場に生産を委託して仕入れ、国内の直営店舗とEC、海外店舗で女性客に販売し、販売代金を得る事業です。",
+    "products": [
+      "婦人靴（ORiental TRaffic、WA ORiental TRaffic、ORTR、NICAL、ヒミコ）",
+      "婦人服（MISCH MASCH、31 Sons de mode）"
+    ],
+    "customers": [
+      "直営店舗・ECで購入する女性客",
+      "他社ブランド店舗の顧客（委託販売）"
+    ],
+    "revenueSources": [
+      "婦人靴の販売代金",
+      "婦人服の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ダブルエー",
+        "description": "2002年に設立され、東京都渋谷区恵比寿に本社を置きます。連結子会社4社と当社グループを構成し、2026年1月31日現在の連結従業員数は566人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "婦人靴と婦人服の企画・販売",
+        "description": "婦人靴ブランド「ORiental TRaffic」「ヒミコ」や婦人服ブランド「MISCH MASCH」などを自社で企画・開発し、生産はパートナー工場へ委託します。子会社の江蘇京海服装貿易有限公司が生産管理・品質管理を担います。"
+      },
+      {
+        "kind": "customer",
+        "title": "女性客",
+        "description": "国内の実店舗182店舗とEC店舗35店舗、海外の実店舗34店舗とEC店舗5店舗で女性客に販売します。駅ビルや大型ショッピングセンター、百貨店に出店し、自社ECやZOZOTOWN等のECモールでも販売します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年1月期の売上高は23,327百万円でした。婦人靴の企画・販売事業が20,347百万円、婦人服の企画・販売事業が2,979百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年1月期の親会社株主に帰属する当期純利益は688百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年1月期",
@@ -27,7 +156,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8113313000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 473,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +176,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8760072000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 432,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第22期の期首から適用しており、第22期以降の主要な経営指標等は当該会計基準等を適用した後の数値です。"
     },
     {
       "fiscalYear": "2024年1月期",
@@ -67,7 +197,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9938610000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 483,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +217,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10749692000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 512,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（2022年改正会計基準）等を第25期の期首から適用しており、第24期の主要な経営指標等は当該会計基準等を遡及適用した後の数値です。"
     },
     {
       "fiscalYear": "2026年1月期",
@@ -107,7 +238,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11063972000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 566,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +246,148 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2002,
+      "title": "直通企画有限会社を設立",
+      "description": "東京都世田谷区に直通企画有限会社を設立しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "「ORiental TRaffic」1号店を出店",
+      "description": "東京都世田谷区下北沢に「ORiental TRaffic」1号店を出店しました。",
+      "significance": "主力ブランドの店舗展開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "直通企画株式会社に組織変更",
+      "description": "有限会社から株式会社へ組織変更しました。",
+      "significance": "株式会社組織への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "株式会社ダブルエーに社名変更",
+      "description": "社名を株式会社ダブルエーに変更し、本社を東京都渋谷区恵比寿へ移転しました。",
+      "significance": "現在の社名の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "自社EC店舗を開設",
+      "description": "自社EC店舗「ORiental TRaffic ONLINE STORE」を出店し、オンライン販売を開始しました。",
+      "significance": "EC展開の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "台湾・香港へ進出し新ブランドを展開",
+      "description": "台湾と香港へ初めて出店し、新ブランド「WA ORiental TRaffic」を展開しました。",
+      "significance": "海外展開の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "新ブランド「NICAL」を展開",
+      "description": "新ブランド「NICAL」と「OR KIDS」を展開しました。",
+      "significance": "ブランド拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "香港子会社を子会社化し中国に子会社を設立",
+      "description": "海外販路拡大のため香港のCAPITAL SEA SHOES COMPANY LIMITEDの株式を取得して子会社化し、生産管理・品質管理のため中国の江蘇京海服装貿易有限公司を設立しました。",
+      "significance": "海外販売と生産管理の体制整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "東京証券取引所マザーズ市場に上場",
+      "description": "東京証券取引所マザーズ市場に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "株式会社卑弥呼を子会社化",
+      "description": "高価格帯ブランド拡充のため、株式会社卑弥呼の株式を取得して子会社化しました。",
+      "significance": "高価格帯ブランドの取り込みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、マザーズ市場からグロース市場へ移行しました。",
+      "significance": "市場区分の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社ミッシュマッシュを吸収合併",
+      "description": "事業拡大のため、株式会社ミッシュマッシュを吸収合併しました。",
+      "significance": "アパレル事業への本格参入の契機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所グロース市場からプライム市場へ移行しました。あわせて「NICAL」ブランドを株式会社卑弥呼へ移管しました。",
+      "significance": "プライム市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "「31 Sons de mode」事業を譲受",
+      "description": "事業拡大のため、ヒロタ株式会社から「31 Sons de mode（トランテアン ソン ドゥ モード）」事業を譲り受けました。",
+      "significance": "婦人服事業のブランド拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +396,50 @@
       "publisher": "株式会社ダブルエー",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y159.pdf",
       "publishedAt": "2026-04-27",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y159",
+      "asOf": "2026-01-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2023年8月1日付で普通株式1株につき2株の割合で、2024年9月1日付で普通株式1株につき2株の割合で、それぞれ株式分割を実施しています。主要な経営指標等の推移の数値は、これらの株式分割が第21期の期首に行われたと仮定して算定されています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "主力ブランド「ORiental TRaffic」「卑弥呼」における顧客層の拡大を基本戦略とし、「MISCH MASCH」の吸収合併を契機としたアパレル事業への本格参入と2025年4月の「31 Sons de mode」の事業譲受でブランドポートフォリオを拡充しました。今後は各販売チャネルの特性に合わせたブランドポートフォリオの最適化、地域・ブランドに最適化した店舗フォーマットの戦略的店舗展開、オンライン販売の拡大に取り組む方針です。",
+        "asOf": "2026-04-27",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "商品企画担当者が販売員として店頭に立ち顧客の声を直接商品開発に反映させ、同じ担当者が生産工場を巡回して検品・品質管理と指導を行う体制で、企画開発から生産、品質管理、販売までを一気通貫で担う点が特徴です。既存のサプライチェーンの見直しで中間マージンの低減にも努めています。",
+        "basis": "セグメント注記の外部顧客への売上高、【事業の内容】の企画開発・検査検品業務の記載、【経営方針、経営環境及び対処すべき課題等】の経営戦略等、MD&Aの経営成績等の状況の概要に基づきます。",
+        "asOf": "2026-04-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "靴業界全体の市場規模は減少傾向にある一方、スニーカーを中心としたカジュアル志向の靴や履き心地などの機能性を重視した靴は需要が拡大し、フォーマルシーンのオケージョン需要も回復傾向にあります。その中で当社グループの2026年1月期の売上高は23,327百万円で、婦人靴の企画・販売事業が20,347百万円と大半を占めます。",
+        "basis": "セグメント注記の外部顧客への売上高、MD&Aの経営成績等の状況の概要と経営環境の記載に基づきます。",
+        "asOf": "2026-04-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年1月期",
     "asOf": "2026-01-31",

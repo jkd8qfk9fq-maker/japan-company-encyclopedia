@@ -4,15 +4,110 @@
   "name": "阪神内燃機工業",
   "officialName": "阪神内燃機工業株式会社",
   "nameEn": "The Hanshin Diesel Works,Ltd.",
-  "description": null,
+  "shortNameEn": "The Hanshin Diesel Works,Ltd.",
+  "description": "船舶用ディーゼル機関とその部分品・修理工事を手がける舶用機関メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "marine-engines",
+      "name": "舶用機関関連事業",
+      "description": "船舶用ディーゼル機関等の製造販売と、当該製品に伴う部分品の販売・修理工事等を行う単一セグメントの事業です。2026年3月期の売上高は14,028百万円でした。",
+      "customers": [
+        "造船所・海運会社などの船舶関係先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "main-engines",
+          "name": "主機関",
+          "description": "船舶用ディーゼル機関が主要な製品で、可変ピッチプロペラ、サイドスラスタ、潤滑油・燃料油清浄装置、遠隔機関監視システム等も扱っています。2026年3月期の外部顧客への売上高は8,435百万円でした。",
+          "customers": [
+            "造船所・海運会社などの船舶関係先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "parts-repair",
+          "name": "部分品・修理工事",
+          "description": "部分品の販売、修理工事、保守管理、機械加工等を行う区分で、鋳造・金属機械加工のＣＭＲも含みます。2026年3月期の外部顧客への売上高は5,592百万円でした。",
+          "customers": [
+            "造船所・海運会社などの船舶関係先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "低速４サイクルディーゼル機関を主力に舶用機器を製造・販売し、部分品の供給や修理工事、保守管理まで一貫して提供するモデルです。",
+    "products": [
+      "船舶用ディーゼル機関",
+      "可変ピッチプロペラ",
+      "サイドスラスタ",
+      "潤滑油・燃料油清浄装置",
+      "遠隔機関監視システム",
+      "部分品・修理工事"
+    ],
+    "customers": [
+      "内航海運の船主・造船所",
+      "海外の海運会社・造船所"
+    ],
+    "revenueSources": [
+      "主機関の販売",
+      "部分品の販売・修理工事"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "阪神内燃機工業",
+        "description": "1918年に神戸で創業した舶用機関メーカーです。本社は神戸市にあり、明石・玉津・播磨の工場で生産し、2026年3月期の従業員数は302人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "主機関と部分品・修理工事",
+        "description": "低速４サイクルディーゼル機関を主力とする主機関と、部分品・修理工事を提供しています。メタノール燃料エンジンやガスエンジンなど新燃料対応の開発も進めています。"
+      },
+      {
+        "kind": "customer",
+        "title": "内航海運の船主・造船所など",
+        "description": "内航海運の船主や造船所が主な顧客で、韓国など東アジアや東南アジアへの輸出も行っています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は14,028百万円で、前期比5.2％増えました。主機関が8,435百万円、部分品・修理工事が5,592百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は736百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +122,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13465746000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 277,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +144,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13853264000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 278,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +166,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14415949000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 276,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +188,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14796530000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 288,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +210,209 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15633109000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 302,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1918,
+      "title": "阪神鐵工所を設立",
+      "description": "神戸市長田区において株式会社阪神鐵工所を設立し、石油発動機の製造・販売を開始しました。旧小曽根財閥系の企業として始まりました。",
+      "significance": "現在の阪神内燃機工業の創業です。",
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1929,
+      "title": "初のディーゼル機関を完成",
+      "description": "当社初のディーゼル機関を完成しました。",
+      "significance": "石油発動機からディーゼル機関へ軸足を移す転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1937,
+      "title": "オリジナル第一号機を完成",
+      "description": "当社のオリジナル第一号機を完成しました。",
+      "significance": "自社設計の機関づくりの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "商号を阪神内燃機工業に変更",
+      "description": "商号を現在の阪神内燃機工業株式会社に変更しました。",
+      "significance": "現在の社名の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "大阪証券取引所に上場",
+      "description": "大阪証券取引所に株式を上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "可変ピッチプロペラの製造・販売を開始",
+      "description": "可変ピッチプロペラの製造・販売を開始しました。",
+      "significance": "主機関以外の舶用機器へ製品分野が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "川崎重工業と業務提携",
+      "description": "川崎重工業株式会社と業務提携し、川崎―ＭＡＮ Ｂ＆Ｗの２サイクル機関の製造受託を開始しました。",
+      "significance": "大型２サイクル機関の製造受託と、川崎重工業との提携関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "船舶運航支援システム「ＨＡＮＡＳＹＳ」を開発",
+      "description": "総合的な内航船の運行管理を可能にした船舶運航支援システム「ＨＡＮＡＳＹＳ」を開発しました。",
+      "significance": "機関本体だけでなく運航支援のソフト面へ事業が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "ディーゼル機関の累計出荷1,000万馬力を達成",
+      "description": "ディーゼル機関の累計出荷1,000万馬力を達成しました。",
+      "significance": "生産・出荷実績の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "世界初の電子制御機関を完成",
+      "description": "船舶用低速４サイクル機関として世界初の電子制御機関を完成しました。",
+      "significance": "電子制御技術で業界に先行した出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "低速２サイクル電子制御機関を完成",
+      "description": "低速２サイクル電子制御機関（阪神―川崎―ＭＡＮ Ｂ＆Ｗ）を完成しました。",
+      "significance": "２サイクル機関でも電子制御化を進めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "創立100周年",
+      "description": "創立100周年を迎えました。",
+      "significance": "創業から100年の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "世界初のガスエンジンを完成",
+      "description": "船舶用低速４サイクル機関として世界初のガスエンジンを完成しました。",
+      "significance": "ガス燃料対応の技術開発の成果です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "機関モニタリングシステム「ＨＡＮＡＳＹＳ ５」の販売を開始",
+      "description": "機関モニタリングシステム「ＨＡＮＡＳＹＳ ５」の販売を開始しました。",
+      "significance": "モニタリングによる保守・サービス面の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ディーゼル機関の累計生産12,000台を達成",
+      "description": "ディーゼル機関の累計生産12,000台を達成しました。",
+      "significance": "生産実績の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "世界初の船舶用メタノール燃料エンジンを完成",
+      "description": "現行の低速４サイクル機関をメタノール燃料化した、世界初の船舶用メタノール燃料エンジンを完成しました。",
+      "significance": "新燃料対応で業界に先行した出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kawasaki-heavy-industries",
+      "relationship": "technology",
+      "description": "重要な契約等に、船舶用サイドスラスタの製造権及び販売権の許諾と、ＭＡＮ Ｂ＆Ｗ型小口径ディーゼル機関の製造及び販売に関する再実施権の技術導入契約が印字されています。1986年には業務提携し、川崎―ＭＡＮ Ｂ＆Ｗの２サイクル機関の製造受託を開始しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "nozawa",
+      "relationship": "customer",
+      "description": "株式の保有状況に、ＣＭＲ事業の販売先として、取引関係の維持及び今後の取引拡大のため当社が株式を保有すると印字されています。株式会社ノザワは、2026年3月31日現在、当社の発行済株式（自己株式を除く。）の2.87％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +420,78 @@
       "publisher": "阪神内燃機工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJVP.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJVP",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「阪神内燃機工業」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E9%98%AA%E7%A5%9E%E5%86%85%E7%87%83%E6%A9%9F%E5%B7%A5%E6%A5%AD",
+      "accessedAt": "2026-11-16"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "３ヵ年の中期経営計画「Ｇｏ ｆｏｒ ｉｔ！ やってみなはれ！！」のもと、ＧＨＧフリーの技術開発、ＣＭＲ（鋳物・金属機械加工）事業の拡大、新規事業の研究開発などを進めるとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "内航市場で主機関のトップシェアを堅持しながら、海外市場の開拓とＣＭＲ事業の育成によって内航依存の低減を図る戦略です。",
+        "basis": "経営方針等に、内航船分野における主機関のトップシェアを堅持すること、国内内航船市場への依存リスクを低減するため進出市場の拡大を進めること、ＣＭＲ事業をエンジン事業に続く第２の事業の柱と位置付けることが記載されていることによるものです。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "低速４サイクル機関は、ロングストローク化と低い機関回転数により高い熱効率と主要部品の耐久性を持ち、メンテナンスコストを含めた生涯コストが低いと説明しています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業等のリスク】"
+      },
+      "analysis": {
+        "text": "低速４サイクル機関の熱効率と信頼性が内航海運の用途で評価され、高いシェアにつながっています。",
+        "basis": "事業等のリスクに、低速４サイクルディーゼルエンジンの特長として高い熱効率やシステムの信頼性が挙げられ、この特長が内航海運用途で評価され高いシェアを誇ると記載されていることによるものです。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "disclosed": {
+        "text": "国内の舶用４サイクルエンジンメーカーは５社が存在し受注競争が激化していると説明しています。そのなかで内航船分野の主機関でトップシェアを堅持する方針を示しています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業等のリスク】"
+      },
+      "analysis": {
+        "text": "世界初の電子制御機関やガスエンジン、メタノール燃料エンジンを完成させるなど、新燃料・電子制御の技術開発で先行する位置にあります。",
+        "basis": "沿革に、船舶用低速４サイクル機関として世界初の電子制御機関とガスエンジン、世界初の船舶用メタノール燃料エンジンを完成したと記載されていることによるものです。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

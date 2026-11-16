@@ -4,15 +4,113 @@
   "name": "ソノコム",
   "officialName": "株式会社ソノコム",
   "nameEn": "SONOCOM CO.,LTD.",
-  "description": null,
+  "shortNameEn": "SONOCOM CO.,LTD.",
+  "description": "電子部品やプリント基板の生産に使うスクリーン印刷用のマスクを製造販売する、東京都目黒区に本社を置く企業です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "screen-mask",
+      "name": "スクリーン印刷用マスク事業",
+      "description": "電子部品の生産、プリント回路板の表面実装、液晶デバイスの生産などに使われるスクリーン印刷用のスクリーンマスク及びフォトマスクを製造販売する単一セグメントの事業です。印刷機、スキージ等のスクリーン印刷用資材の仕入販売も行っています。製造は松戸工場と玉川工場に集約されています。2026年3月期の売上高は2,712百万円で、品目別ではスクリーンマスクが2,314百万円、スクリーン印刷用資機材が398百万円でした。",
+      "customers": [
+        "電子部品メーカー",
+        "プリント基板メーカー",
+        "液晶デバイスメーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "screen-mask-products",
+          "name": "スクリーンマスク・フォトマスク",
+          "description": "プリント基板用スクリーン印刷の写真製版に始まり、厚膜集積回路製造用の高精度製版、部品実装用のメタルマスクなどを手がける製品群です。2026年3月期の販売実績は2,314百万円でした。",
+          "customers": [
+            "電子部品メーカー",
+            "プリント基板メーカー",
+            "液晶デバイスメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "screen-printing-materials",
+          "name": "スクリーン印刷用資機材",
+          "description": "自社開発の印刷機をはじめ、印刷機、スキージ等のスクリーン印刷用資材を仕入れて販売する商品群です。2026年3月期の販売実績は398百万円でした。",
+          "customers": [
+            "電子部品メーカー",
+            "プリント基板メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "スクリーンマスクやフォトマスクを松戸工場と玉川工場で製造し、電子部品メーカーなどへ販売するほか、印刷機やスキージなどの資機材の仕入販売も行う事業モデルです。",
+    "products": [
+      "スクリーンマスク",
+      "フォトマスク",
+      "メタルマスク",
+      "スクリーン印刷用資機材（印刷機・スキージ等）"
+    ],
+    "customers": [
+      "電子部品メーカー",
+      "プリント基板メーカー",
+      "液晶デバイスメーカー"
+    ],
+    "revenueSources": [
+      "スクリーンマスク等の製品販売代金",
+      "スクリーン印刷用資機材の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ソノコム",
+        "description": "当社は東京都目黒区に本社を置き、千葉県松戸市と神奈川県川崎市に工場を持つスクリーン印刷用マスクのメーカーです。2026年3月31日現在の従業員数は113人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "スクリーン印刷用マスク事業（単一セグメント）",
+        "description": "電子部品の生産、プリント回路板の表面実装、液晶デバイスの生産などに使われるスクリーンマスクとフォトマスクを製造販売する単一セグメントの事業です。印刷機やスキージ等の資機材の仕入販売も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "電子部品業界のメーカー",
+        "description": "主な販売先は電子部品業界のメーカーで、太陽誘電株式会社が主要な顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は2,712百万円",
+        "description": "2026年3月期の売上高は2,712百万円で、前期比12.0％増でした。品目別ではスクリーンマスクが2,314百万円、スクリーン印刷用資機材が398百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の当期純利益は304百万円",
+        "description": "2026年3月期の当期純利益は304百万円で、前期比44.5％増でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +125,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8419247000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 106,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +147,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8479631000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 108,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +169,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8779697000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 109,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +191,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8910745000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 113,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +213,149 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9344315000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 113,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1962,
+      "title": "岨野工業株式会社を設立",
+      "description": "東京都足立区に岨野工業株式会社を設立し、漆塗料及び印刷用資材の製造販売を開始しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "プリント基板用スクリーン印刷の写真製版を開始",
+      "description": "プリント基板用スクリーン印刷の写真製版の製造販売を開始しました。",
+      "significance": "現在の主力事業である製版事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "漆製造部門を廃止",
+      "description": "創業時の漆製造部門を廃止しました。",
+      "significance": "創業事業から製版事業への集中を示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "厚膜集積回路製造用の高精度の製版を開始",
+      "description": "厚膜集積回路製造用の高精度の製版を開始しました。",
+      "significance": "高精度製版への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "部品実装用のコンビネーションメタルマスクの製造を開始",
+      "description": "部品実装用のコンビネーションメタルマスクの製造を開始しました。",
+      "significance": "メタルマスク事業への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "商号を株式会社ソノコムに変更",
+      "description": "商号を岨野工業株式会社から株式会社ソノコムに変更しました。",
+      "significance": "現在の社名の由来です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "自社開発の印刷機（ＳＣ１５０）の販売を開始",
+      "description": "当社独自開発による印刷機（ＳＣ１５０）の販売を開始しました。",
+      "significance": "資機材販売の広がりを示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "日本証券業協会に株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "ＰＤＰ用大型フォトマスク等の製造販売を強化",
+      "description": "プラズマ・ディスプレイ・パネル（ＰＤＰ）用大型フォトマスク及び大型スクリーンマスクの製造販売を強化しました。",
+      "significance": "大型マスクへの展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "松戸事業本部（現松戸工場）を設置",
+      "description": "千葉県松戸市に松戸事業本部（現松戸工場）を設置しました。",
+      "significance": "現在の主力工場の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に株式を上場",
+      "description": "日本証券業協会への店頭登録を取消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、ＪＡＳＤＡＱ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "taiyo-yuden",
+      "relationship": "customer",
+      "description": "主要な顧客ごとの情報に、前事業年度・当事業年度の2期連続で主要な顧客として記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +363,58 @@
       "publisher": "株式会社ソノコム",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJAF.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJAF",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年３月27日開催の取締役会において、マクセル株式会社が営むＥＦ２（Electro-Fine-Forming）事業を吸収分割により継承する新設会社「株式会社ノア」（2026年４月17日設立）の全株式を取得し、子会社化することを決議し、同日付けで株式譲渡契約を締結しています。企業結合予定日は2026年７月１日で、結合後企業の名称は九州ソノコム株式会社となる予定です。本登録は2026年３月期（決算日時点）の構造で登録しています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「ユーザーのニーズに高品質と短納期で応える技術のソノコム」をモットーに、技術革新に努め、より高品質な製品の安定供給を目指し、顧客満足の実現のため積極的な提案営業を行うとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "対処すべき課題として、外勤営業を工場に集めて営業同士の情報連絡を密にし、技術・製造と一体となって顧客ニーズに迅速に対応すること、生産設備を有効利用して高精度製品の安定供給を行うこと、新しい技術に積極的に挑戦して差別化できる製品を開発することを挙げています。",
+        "basis": "経営方針における優先的に対処すべき事業上及び財務上の課題の記載に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1963年の写真製版開始以来蓄積した製版技術と、フォトマスクからメタルマスクまで自社工場で手がける体制が強みです。半導体パッケージ・電子部品関連や高密度化するＳＭＴ関連分野を中心に研究開発に取り組み、小型化・微細化する顧客の要望に技術力で対応しています。",
+        "basis": "沿革、事業の内容及び研究開発活動の記載に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "スクリーン印刷用製版業界に属しています。主要顧客である電子部品業界において、ＡＩサーバーやデータセンター向けの部品やスマートフォンなどの情報通信関連向けの部品の需要が堅調に推移いたしましたが、ＥＶ等自動車関連向けの各種電子部品の需要は低位で推移しています。",
+        "basis": "経営方針における経営環境と、MD&Aにおける業界動向の記載に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

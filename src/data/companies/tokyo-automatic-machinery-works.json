@@ -4,15 +4,201 @@
   "name": "東京自働機械製作所",
   "officialName": "株式会社東京自働機械製作所",
   "nameEn": "TOKYO AUTOMATIC MACHINERY WORKS, LTD.",
-  "description": null,
+  "shortNameEn": "Tokyo Automatic Machinery Works, Ltd.",
+  "description": "たばこ関連機械の製作から出発し、包装機械と生産機械の製造・販売を行う機械メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "packaging-machinery",
+      "name": "包装機械事業",
+      "description": "各種上包機・製袋充填機・箱詰機・各種ラインシステム・各種圧縮梱包機・たばこ関連機械等の製造・販売を行う事業です。2026年3月期の売上高は6,541百万円です。当社が製造・販売するほか、関連会社の東京施設工業株式会社が包装機械の製造を行っています。",
+      "children": [
+        {
+          "id": "overwrapping-machines",
+          "name": "上包機",
+          "description": "製品をフィルム等で包む上包機の製造・販売を行っています。",
+          "customers": [
+            "食品メーカー",
+            "菓子メーカー",
+            "たばこメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "bag-making-filling-machines",
+          "name": "製袋充填機",
+          "description": "袋を作りながら内容物を充填する製袋充填機の製造・販売を行っています。",
+          "customers": [
+            "食品メーカー",
+            "菓子メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "cartoning-and-lines",
+          "name": "箱詰機・ラインシステム",
+          "description": "箱詰機や各種ラインシステムの製造・販売を行っています。",
+          "customers": [
+            "食品メーカー",
+            "製造業全般"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "compression-baling-machines",
+          "name": "圧縮梱包機",
+          "description": "各種圧縮梱包機の製造・販売を行っています。",
+          "customers": [
+            "製造業全般",
+            "リサイクル事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "tobacco-machinery",
+          "name": "たばこ関連機械",
+          "description": "たばこ関連機械の製造・販売を行っています。創業以来の事業領域です。",
+          "customers": [
+            "たばこメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "production-machinery",
+      "name": "生産機械事業",
+      "description": "各種生産ライン・組立機械・各種検査装置等の製造・販売を行う事業です。2026年3月期の売上高は3,151百万円です。海外の特定顧客向けの大型プロジェクトが事業量を左右します。",
+      "children": [
+        {
+          "id": "production-lines",
+          "name": "生産ライン",
+          "description": "顧客の生産現場向けの各種生産ラインの製造・販売を行っています。",
+          "customers": [
+            "製造業全般",
+            "医療機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "assembly-machines",
+          "name": "組立機械",
+          "description": "製品の組立に用いる機械の製造・販売を行っています。",
+          "customers": [
+            "製造業全般"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "inspection-equipment",
+          "name": "検査装置",
+          "description": "各種検査装置の製造・販売を行っています。",
+          "customers": [
+            "製造業全般",
+            "医療機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "上包機や製袋充填機などの包装機械と、生産ラインや検査装置などの生産機械を製造・販売し、機械の販売収入で収益を得る事業モデルです。",
+    "products": [
+      "上包機",
+      "製袋充填機",
+      "箱詰機",
+      "圧縮梱包機",
+      "たばこ関連機械",
+      "生産ライン",
+      "組立機械",
+      "検査装置"
+    ],
+    "customers": [
+      "菓子・食品メーカー",
+      "たばこメーカー",
+      "医療機器メーカー",
+      "製造業全般"
+    ],
+    "revenueSources": [
+      "包装機械の販売収入",
+      "生産機械の販売収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京自働機械製作所",
+        "description": "1908年に島根安之助が島根工業所を創業した機械メーカーで、本社は東京都千代田区にあります。2026年3月31日現在の従業員数は278人で、子会社1社と関連会社1社とグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "包装機械・生産機械",
+        "description": "包装機械事業では上包機、製袋充填機、箱詰機、各種ラインシステム、圧縮梱包機、たばこ関連機械などを、生産機械事業では各種生産ライン、組立機械、各種検査装置などを製造・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "菓子・食品業界など製造業",
+        "description": "主な顧客は、菓子・食品業界をはじめとする製造業です。生産機械事業では、JOHNSON & JOHNSON VISIONが主要な顧客として開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "機械の製造・販売",
+        "description": "2026年3月期の売上高は9,692百万円でした。事業別では包装機械が6,541百万円、生産機械が3,151百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は808百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +213,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5718878000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 256,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +235,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6679336000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 256,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +257,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8074550000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 266,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +279,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9439525000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 275,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,17 +301,158 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10161923000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 278,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1908,
+      "title": "島根工業所の創業",
+      "description": "島根安之助が東京都足立区に当社の前身である島根工業所を個人創業し、大蔵省専売局のたばこ製造用機械の製作および工場施設請負に着手しました。",
+      "significance": "現在の会社の起点であり、たばこ関連機械が創業事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "島根工業株式会社に改組",
+      "description": "島根工業株式会社に組織変更を行いました。",
+      "significance": "個人事業から会社組織になった節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "商号を東京自働機械製作所に変更",
+      "description": "商号を現在の株式会社東京自働機械製作所と改称しました。",
+      "significance": "現在の社名になった節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "東京施設工業株式会社を設立",
+      "description": "東京都足立区に東京施設工業株式会社を設立しました。",
+      "significance": "現在の関連会社であり、包装機械の製造を担うグループ会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "ハイライト型たばこ包装機械の開発に成功",
+      "description": "ハイライト型たばこ包装機械の開発に成功しました。",
+      "significance": "包装機械の製品開発の早期の成果です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "東京証券取引所市場第2部に上場",
+      "description": "東京証券取引所市場第2部に株式を上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "高速たばこ包装ラインの開発に成功",
+      "description": "高速たばこ包装ラインの開発に成功しました。",
+      "significance": "たばこ包装機械の高速化を進めた成果です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "廃棄物処理システム分野に進出",
+      "description": "廃棄物処理システム分野に進出しました。",
+      "significance": "事業領域を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "本社を東京都千代田区に移転",
+      "description": "現本社社屋が完成し、本社を東京都千代田区に移転しました。",
+      "significance": "現在の本社所在地への移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "有限会社東祐を設立",
+      "description": "東京都千代田区に有限会社東祐を設立しました。",
+      "significance": "現在の非連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "大型プロジェクト事業を開始",
+      "description": "大型プロジェクト事業を開始しました。",
+      "significance": "生産機械事業につながる大型案件への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "生産機械を包装機械と並ぶ事業領域に",
+      "description": "生産機械の製造受託事業を、包装機械と並ぶ事業領域としました。",
+      "significance": "現在の2事業体制の基礎が定まった節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "東京施設工業が関連会社となる",
+      "description": "東京施設工業株式会社が、有限会社東祐の保有株式売却により子会社から関連会社となりました。",
+      "significance": "グループ構成の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -134,13 +461,37 @@
       "publisher": "株式会社東京自働機械製作所",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHZL.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YHZL",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年度をスタートとする第7次中期経営計画では、社会に新たな価値を提供する「価値創造企業」を目指し、包装機械事業の売上高拡大と海外比率アップ、生産機械事業量の安定的確保と利益確保、サステナビリティ経営の実践を基本方針としています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "包装機械は当社が製造・販売するほか、関連会社の東京施設工業が製造を担う分業体制を持っています。人手不足を背景とした自動化需要の継続を見込み、市場要求に合った商品開発と顧客提案で包装機械事業の拡大を図る方針です。",
+        "basis": "【事業の内容】に、包装機械は当社が製造販売するほか関連会社東京施設工業株式会社が製造を行うと印字され、【経営方針、経営環境及び対処すべき課題等】に、人手不足や合理化・自動化によるコスト削減は今後も継続するものと見られ、自動化需要など変化する市場要求を捉えた商品開発・顧客提案で包装機械事業の売上拡大を図ることが課題と印字されている。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

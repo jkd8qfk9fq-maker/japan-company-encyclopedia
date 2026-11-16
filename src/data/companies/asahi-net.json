@@ -4,15 +4,117 @@
   "name": "朝日ネット",
   "officialName": "株式会社朝日ネット",
   "nameEn": "Asahi Net, Inc.",
-  "description": null,
+  "shortNameEn": "Asahi Net",
+  "description": "個人や法人にインターネット接続サービス「ASAHIネット」を提供し、教育支援サービス「manaba」も手がける独立系のインターネット・サービス・プロバイダです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "telecommunications",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "isp",
+      "name": "ISP事業",
+      "description": "個人または法人向けにインターネット接続サービス及びインターネット関連サービスを提供する事業です。セグメント情報はISP事業の単一セグメントで報告されており、2026年3月期の売上高は13,517百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "個人のインターネット利用者",
+        "法人のインターネット利用者",
+        "大学などの教育機関"
+      ],
+      "children": [
+        {
+          "id": "internet-connection",
+          "name": "インターネット接続サービス",
+          "description": "顧客にインターネット接続環境を提供するサービスです。自社技術で運用するバックボーン回線と提携電気通信事業者のアクセス回線を組み合わせ、FTTH接続の「AsahiNet 光」やモバイル接続などを提供しています。2026年3月期の売上高は12,202百万円で、このうち会員向けISP「ASAHIネット」が9,786百万円、電気通信事業者へIPv6接続を卸提供するVNE「v6 コネクト」が2,415百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "個人のインターネット利用者",
+            "法人のインターネット利用者",
+            "提携する電気通信事業者"
+          ]
+        },
+        {
+          "id": "internet-related",
+          "name": "インターネット関連サービス",
+          "description": "インターネット接続サービスに加えて提供するサービスです。メールやセキュリティなどの接続付加価値サービスと、自社開発のクラウド型教育支援サービス「manaba」があります。2026年3月期の売上高は1,315百万円で、このうち「manaba」が560百万円、メール・セキュリティなどのその他が754百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "個人のインターネット利用者",
+            "大学などの教育機関"
+          ]
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社で運用するバックボーン回線と提携事業者のアクセス回線を組み合わせてインターネット接続を月額制で提供し、接続に付随するサービスや教育支援サービスでも収益を得る事業モデルです。",
+    "products": [
+      "インターネット接続サービス「ASAHIネット」（FTTH・モバイル接続）",
+      "VNEサービス「v6 コネクト」",
+      "教育支援サービス「manaba」",
+      "メール・セキュリティなどの接続付加価値サービス"
+    ],
+    "customers": [
+      "個人のインターネット利用者",
+      "法人のインターネット利用者",
+      "提携する電気通信事業者",
+      "大学などの教育機関"
+    ],
+    "revenueSources": [
+      "インターネット接続サービスの月額利用料",
+      "「v6 コネクト」の基本料とトラフィックに応じた従量課金",
+      "教育支援サービス「manaba」の利用料",
+      "接続付加価値サービスの利用料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京都中央区に本店を置く独立系ISP",
+        "description": "朝日ネットは東京都中央区銀座に本店を置く独立系のインターネット・サービス・プロバイダです。連結財務諸表は作成しておらず、2026年3月31日現在の従業員数は220人です。1990年に株式会社朝日新聞社などの出資で設立され、2000年に役員・社員が全株式を取得して独立系となりました。"
+      },
+      {
+        "kind": "offering",
+        "title": "インターネット接続と関連サービス",
+        "description": "ISP事業として、FTTHやモバイル回線によるインターネット接続サービスと、メールやセキュリティなどの接続付加価値サービスを提供しています。加えて、クラウド型教育支援サービス「manaba」を大学などの教育機関に提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "個人・法人と教育機関",
+        "description": "顧客は「ASAHIネット」の会員である個人や法人、IPv6接続サービス「v6 コネクト」を利用する電気通信事業者、「manaba」を導入する大学などの教育機関です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "インターネット接続サービスが売上の中心",
+        "description": "収益は接続サービスの月額利用料が中心です。2026年3月期の売上高は13,517百万円で、前期から3.4％増えました。内訳はインターネット接続サービスが12,202百万円、インターネット関連サービスが1,315百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益1,293百万円",
+        "description": "2026年3月期の当期純利益は1,293百万円で、前期から26.2％減りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +129,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11281000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 193,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +151,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11961000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 192,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +173,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12506000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 200,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +195,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13091000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 214,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +217,159 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13108000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 220,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1990,
+      "title": "株式会社アトソンとして設立",
+      "description": "株式会社朝日新聞社とトランスコスモス株式会社の共同出資により株式会社アトソン（現在の株式会社朝日ネット）が設立され、パソコン通信サービス「ASAHIパソコンネット」のシステムと運営を継承しました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "インターネット接続サービスを開始",
+      "description": "インターネット接続サービスを開始しました。",
+      "significance": "現在の主力事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "役員・社員が全株式を取得し独立系に",
+      "description": "全株式を役員・社員が取得し、独立系通信事業者になりました。",
+      "significance": "朝日新聞社などの出資から離れ、独立系ISPとなりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "吸収合併し社名を株式会社朝日ネットに変更",
+      "description": "株式会社エースネットと朝日ネット株式会社の2社を吸収合併し、社名を「株式会社朝日ネット」に変更しました。",
+      "significance": "現在の商号になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式を上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "教育支援サービス「manaba」を開発",
+      "description": "教育支援サービス「manaba」を開発しました。",
+      "significance": "接続事業に並ぶ柱となる教育支援サービスが生まれました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "株式会社朝日新聞社と資本業務提携契約を締結",
+      "description": "株式会社朝日新聞社と資本業務提携契約を締結しました。",
+      "significance": "創業時の出資者である朝日新聞社との資本業務提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "「AsahiNet 光」を開始",
+      "description": "NTT東日本・NTT西日本による光コラボレーションモデルを活用した光アクセスサービス「AsahiNet 光」を開始しました。",
+      "significance": "FTTH接続の中核サービスが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "「v6 コネクト」の提供を開始",
+      "description": "IPv6接続サービスをサービス化し「v6 コネクト」として電気通信事業者へ提供を開始しました。",
+      "significance": "電気通信事業者向けの卸提供事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "IP電話サービス「AsahiNet 光電話」を開始",
+      "description": "「AsahiNet 光」契約者を対象にIP電話サービス「AsahiNet 光電話」を開始しました。",
+      "significance": "接続サービスへの付加サービスが広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "「AsahiNet 光クロス」を開始",
+      "description": "NTT東日本・NTT西日本と提携した最大通信速度10GbpsのFTTH接続サービス「AsahiNet 光クロス」を開始しました。",
+      "significance": "超高速の光接続ラインナップが加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場再編に伴い、プライム市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "「ASAHIネット WiMAX +5G」を開始",
+      "description": "UQコミュニケーションズ株式会社と提携した高速モバイル接続サービス「ASAHIネット WiMAX +5G」を開始しました。",
+      "significance": "モバイル接続の主力サービスです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kddi",
+      "relationship": "supplier",
+      "description": "【重要な契約等】に、2006年12月からFTTHサービスの提供に関する契約を結んでいることが印字されています（1年ごとの自動更新）。同社の回線を使ったFTTH接続サービス「ASAHIネット auひかり」を会員に提供しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +377,47 @@
       "publisher": "株式会社朝日ネット",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEHW.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YEHW",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営の基本方針は、社会基盤として重要な役割を担う先進的で高品質なインターネット接続サービスを適切な価格で安定的に提供することです。「ISP」「VNE」「manaba」の3事業を中核に据えた成長戦略を加速させ、FTTH接続サービスやモバイル接続サービスの契約数増加、「AsahiNet 光」の個人・法人向け施策の強化、25Gbps等の超高速通信ラインナップの拡充を進めるとしています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "バックボーン回線を自社の技術で運用して回線の安定性や速度といった品質を保ちながら通信費を適切な範囲に抑えていることと、会員の平均退会率が2026年3月期に0.61％まで下がっていることが特徴です。",
+        "basis": "【事業の内容】に、バックボーン回線を自社の技術で運用することにより回線の安定性・速度で高い品質を維持しながら通信費を適切な範囲で維持する旨が印字されている。MD&Aに平均退会率の推移（2026年3月期0.61％）が印字されている。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "ISP事業の単一セグメントで、インターネット接続サービスが売上高の約9割を占めます。FTTH接続サービスの契約数は2026年3月末に514千IDとなり、第三者による顧客満足度調査ではプロバイダ部門の総合1位を12年連続で獲得しています。",
+        "basis": "MD&Aの販売実績（インターネット接続サービス12,202百万円、合計13,517百万円）、FTTH接続サービス契約数514千ID、RBB TODAY ブロードバンドアワード2025でプロバイダ部門総合第1位を12年連続で獲得した旨の印字に基づく。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,19 +4,152 @@
   "name": "宇野澤組鐵工所",
   "officialName": "株式会社宇野澤組鐵工所",
   "nameEn": "Unozawa-gumi Iron Works, Limited",
-  "description": null,
+  "shortNameEn": "Unozawa-gumi Iron Works, Limited",
+  "description": "真空ポンプや送風機・圧縮機などの風水力機械を製造販売し、賃貸ビルの賃貸も行う、1899年創業のメーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "manufacturing",
+      "name": "製造事業",
+      "description": "真空ポンプ、送風機・圧縮機、輸送装置などの風水力機械を製造販売する事業です。原材料等を購入し、東京都大田区の本社・玉川工場で加工から組立て、検査までを行い、直接販売しています。2026年3月期の外部顧客への売上高は4,279百万円で、前期に比べ0.6％減りました。",
+      "customers": [
+        "石油化学・医薬品・食品・半導体などの製造業の企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "vacuum-pumps",
+          "name": "真空ポンプ",
+          "description": "真空ポンプの製造販売です。現在の主力製品はドライ真空ポンプです。2026年3月期の外部顧客への売上高は1,418百万円で、前期に比べ26.6％減りました。",
+          "customers": [
+            "製造業の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "blowers-and-compressors",
+          "name": "送風機・圧縮機",
+          "description": "送風機と圧縮機の製造販売です。ルーツ式ロータリブロワなどが含まれます。2026年3月期の外部顧客への売上高は1,323百万円で、前期に比べ29.5％増えました。",
+          "customers": [
+            "製造業の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "parts",
+          "name": "部品",
+          "description": "真空ポンプや送風機・圧縮機などの部品の販売です。2026年3月期の外部顧客への売上高は908百万円でした。",
+          "customers": [
+            "納入先の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "repair",
+          "name": "修理",
+          "description": "納入した真空ポンプや送風機・圧縮機などの修理です。メーカー品質と短納期を掲げています。2026年3月期の外部顧客への売上高は629百万円でした。",
+          "customers": [
+            "納入先の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "ビル並びに駐車場の賃貸及び管理を行う事業です。東京都渋谷区の賃貸ビルなどを保有しています。2026年3月期の外部顧客への売上高は637百万円で、前期に比べ1.5％減りました。",
+      "customers": [
+        "賃貸オフィスビルの入居者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "真空ポンプ、送風機・圧縮機などを自社工場で製造し、製造業の顧客に販売するほか、賃貸ビルを貸して賃料収入を得るビジネスモデルです。",
+    "products": [
+      "真空ポンプ",
+      "送風機・圧縮機",
+      "輸送装置"
+    ],
+    "customers": [
+      "石油化学・医薬品・食品・半導体などの製造業の企業",
+      "賃貸オフィスビルの入居者"
+    ],
+    "revenueSources": [
+      "機械製品の販売代金",
+      "部品の販売代金と修理の対価",
+      "賃貸ビルの賃料収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "宇野澤組鐵工所",
+        "description": "1899年（明治32年）に創業した風水力機械のメーカーで、連結財務諸表は作成せず単体で事業を行っています。2026年3月期の従業員数は162人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "真空ポンプや送風機・圧縮機などと賃貸ビル",
+        "description": "真空ポンプ、送風機・圧縮機、輸送装置などを製造販売するほか、東京都渋谷区の賃貸ビルなどで不動産の賃貸と管理を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "製造業の企業と賃貸ビルの入居者",
+        "description": "顧客は、石油化学、医薬品、食品、半導体などの産業で生産設備にポンプや送風機を使う製造業の企業と、賃貸オフィスビルの入居者です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売代金と賃料収入",
+        "description": "収入は機械製品の販売代金、部品や修理の対価と、賃貸ビルの賃料収入です。2026年3月期の売上高は4,917百万円で、前期に比べ0.7％減りました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は433百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,11 +164,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2207945000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 180,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -53,11 +186,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2533806000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 177,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -75,11 +208,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3075334000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 170,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -97,11 +230,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3357234000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 169,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -119,18 +252,138 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3798926000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 162,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1899,
+      "title": "宇野澤組が創業",
+      "description": "東京都港区麻布新堀町において創業し、ウォシントン型ポンプの製造から始まりました。",
+      "significance": "現在の会社の起源であり、ポンプ専門メーカーとしての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1933,
+      "title": "株式会社宇野澤組鐵工所を設立",
+      "description": "組織を変更し、株式会社宇野澤組鐵工所を設立しました。",
+      "significance": "現在の法人形態の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1937,
+      "title": "玉川工場が竣工",
+      "description": "東京都大田区に玉川工場が竣工しました。",
+      "significance": "現在の生産拠点である本社・玉川工場の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "不動産事業を開始",
+      "description": "渋谷工場跡地に、東急不動産株式会社と共同でウノサワ東急ビルを建設し、不動産事業を開始しました。",
+      "significance": "現在の二つ目の柱である不動産事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "ISO9001の認証を取得",
+      "description": "ISO9001の認証を取得しました。",
+      "significance": "品質マネジメントの体制を整えた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "恵比寿ビジネスタワーを建設",
+      "description": "渋谷区恵比寿の社有地の一部を譲渡し、近隣地権者と共同で賃貸オフィスビルである恵比寿ビジネスタワーを建設しました。",
+      "significance": "不動産事業の賃貸資産に関わる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "恒温室工場を増設",
+      "description": "玉川工場内の老朽化した工場を取り壊し、部品加工及び製品組立ての精度向上のため恒温室工場を増設しました。",
+      "significance": "生産設備の精度向上への投資です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場の区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "名古屋証券取引所メイン市場へ重複上場",
+      "description": "名古屋証券取引所メイン市場へ重複上場しました。",
+      "significance": "上場市場が二つになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tokyu-fudosan-holdings",
+      "relationship": "business-partner",
+      "description": "特定投資株式として311,000株を保有しています。恵比寿で賃貸オフィスビル事業を共同で行っており、不動産事業において安定的な賃料収入確保に大きく貢献している旨が、保有効果として印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "air-water",
+      "relationship": "customer",
+      "description": "特定投資株式として保有しています。製造事業において安定的な受注獲得に貢献している旨が保有効果として印字されており、株式数は取引先持株会を通じた継続的な取得により703株となっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -138,13 +391,55 @@
       "publisher": "株式会社宇野澤組鐵工所",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YF8O.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YF8O",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "重点課題として「新たな営業戦略の推進」と「生産能力の増強」を掲げています。営業面では、付加価値の高いブロワ、真空ポンプ及び修理の拡販を推進し、長年の経験で培った技術力による特種仕様の大型ブロワの拡販や、顧客の使用プロセスに応じたソリューションの提供に取り組むとしています。生産面では、生産計画の高度化による生産リードタイムの短縮、大型加工設備の改修、多能工化を進め、2027年新機械加工棟、2028年新組立棟の竣工を計画的に進めるとしています。また、ビジョンとして、真空ポンプのプロフェッショナルとしてお客様信頼度No.1の企業を目指すとしています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期は、主力の真空ポンプの売上が減った一方で、拡販を掲げる送風機・圧縮機、部品、修理の売上がそろって増え、製造事業の売上を下支えしました。",
+        "basis": "経営成績の分析に、真空ポンプの売上が前期に比べ減少したものの、送風機・圧縮機、部品、修理の売上が増加した旨が記載されていることによるものです。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1899年の創業以来のポンプ専門メーカーとして、時代ごとに求められるポンプやブロワを自社で開発してきた蓄積があり、現在の主力製品はドライ真空ポンプです。修理ではメーカー品質と短納期を掲げています。",
+        "basis": "沿革に、創業当初はウォシントン型ポンプの製造から始まり、暖房用真空給水ポンプ、タービンポンプ、真空ポンプ、ルーツ式ロータリブロワなどを経て、現在の主力製品であるドライ真空ポンプに至った旨が、経営方針に修理はメーカー品質と短納期により拡販を推進する旨が記載されていることによるものです。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "製造事業が売上高の大半を占める主力事業であり、不動産事業は賃貸ビルからの安定した賃料収入を担う二つ目の柱として位置づけられます。",
+        "basis": "セグメント情報に、2026年3月期の外部顧客への売上高が製造事業4,279百万円、不動産事業637百万円と記載され、株式の保有状況の保有効果に、不動産事業において安定的な賃料収入確保に大きく貢献している旨が記載されていることによるものです。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

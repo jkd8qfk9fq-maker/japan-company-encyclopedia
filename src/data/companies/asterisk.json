@@ -4,15 +4,164 @@
   "name": "アスタリスク",
   "officialName": "株式会社アスタリスク",
   "nameEn": "Asterisk Inc.",
-  "description": null,
+  "shortNameEn": "Asterisk",
+  "description": "スマートフォンに取り付けて使うバーコード・RFIDリーダー「AsReader」の開発・販売と、システム開発を手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "asreader",
+      "name": "AsReader事業",
+      "description": "スマートフォンやタブレットに取り付けて使うバーコード・RFIDリーダーなどのハードウエア製品と、独自の画像認識技術やAI技術を用いたソフトウエア製品・サービスを開発・販売する事業です。自社で製造工場を持たないファブレス方式で、製品の量産は協力会社に委託しています。2025年8月期の外部顧客への売上高は1,384百万円です。本社兼研究所には金型や検査機器があり、連結子会社の株式会社自動レジ研究所がセルフレジの実証店舗を運営しています。",
+      "customers": [
+        "製造業、物流業、小売業、自動販売機業界、医療業界、アパレル業界などの事業者",
+        "アメリカをはじめとする海外の事業者"
+      ],
+      "children": [
+        {
+          "id": "readers",
+          "name": "リーダー",
+          "description": "1次元・2次元バーコードリーダー、RFIDリーダー／ライター、赤外線通信リーダーなど、スマートフォンやタブレットに接続して使う読み取り機器です。自動販売機業界向けや物流業界向けのハンディターミナルも含みます。",
+          "customers": [
+            "製造業、物流業、小売業、自動販売機業界、医療業界などの事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "image-recognition",
+          "name": "画像認識",
+          "description": "人検出・動体追跡や顔認証などの画像認識技術を用いた製品で、セミセルフレジ、侵入禁止区域監視システム、顔認証システムがあります。",
+          "customers": [
+            "小売業などの事業者",
+            "医療機関などの施設運営者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "maintenance",
+          "name": "保守",
+          "description": "リーダー類の保守サービスです。",
+          "customers": [
+            "AsReader製品を導入した事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "apps",
+          "name": "アプリ",
+          "description": "アプリケーションソフトの利用料によるサービスです。賞味・消費期限管理アプリ「SdcO」など、月額課金型のストック型商材を含みます。",
+          "customers": [
+            "小売業などの事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "system-integration",
+      "name": "システムインテグレーション事業",
+      "description": "AsReaderの導入などに関わるシステムアプリケーションやソフトウェアの受託開発と保守サービスを行う事業です。東京事業所が拠点になっています。2025年8月期の外部顧客への売上高は269百万円です。",
+      "customers": [
+        "物流業、小売業、医療業界、不動産業界などの事業者"
+      ],
+      "children": [],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "rental",
+      "name": "賃貸事業",
+      "description": "本社兼研究所（AsTech Osaka Building）の7階から9階の3フロアを賃貸する事業です。2025年8月期末の入居率は100％で、2025年8月期の外部顧客への売上高は12百万円です。",
+      "customers": [
+        "入居する事業者"
+      ],
+      "children": [],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社開発のバーコード・RFIDリーダーと画像認識のソフトウエアを組み合わせ、製造・物流・小売・医療などの現場の効率化を支援する事業モデルです。",
+    "products": [
+      "バーコードリーダー（1次元・2次元）「AsReader」",
+      "RFIDリーダー／ライター「AsReader」",
+      "赤外線通信リーダー、自動販売機・物流向けハンディターミナル",
+      "セミセルフレジ、顔認証システム、侵入禁止区域監視システム",
+      "賞味・消費期限管理アプリ「SdcO」などのアプリケーション",
+      "システムアプリケーション、ソフトウェアの受託開発"
+    ],
+    "customers": [
+      "製造業、物流業、小売業、自動販売機業界、医療業界、アパレル業界などの事業者",
+      "アメリカをはじめとする海外の事業者"
+    ],
+    "revenueSources": [
+      "リーダーなどの製品の販売代金",
+      "保守サービスやアプリケーションソフト利用料などの継続収入",
+      "受託開発と保守サービスの対価",
+      "本社兼研究所の一部のフロアの賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "2006年設立、大阪に本社兼研究所を置く",
+        "description": "2006年に滋賀県大津市で設立され、現在は大阪市淀川区に本社兼研究所を置いています。国内子会社1社と海外子会社2社の連結子会社があり、2025年8月31日現在の連結従業員数は75人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "リーダー製品とシステム開発を提供する",
+        "description": "主力のAsReader事業では、スマートフォンに取り付けて使う各種リーダーと、画像認識技術を用いたセミセルフレジや顔認証システムなどを開発・販売しています。システムインテグレーション事業では、AsReaderの導入などに関わるソフトウェアの受託開発と保守を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "製造・物流・小売など幅広い業界が顧客",
+        "description": "顧客は製造業界、物流業界、小売業界、自動販売機業界、医療業界、アパレル業界など幅広い業界の事業者で、アメリカにも販売拠点があります。2025年8月期は、ソフトバンク株式会社が主要な顧客として開示され、総販売実績の21.7％を占めました。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2025年8月期の売上高は1,666百万円",
+        "description": "2025年8月期の売上高は1,666百万円で、前期から5.6％増えました。AsReader事業が1,384百万円、システムインテグレーション事業が269百万円、賃貸事業が12百万円で、保守サービスやアプリケーション利用料などの継続型の販売は連結売上高の約11.3％でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "2025年8月期の純損失は182百万円",
+        "description": "2025年8月期の親会社株主に帰属する当期純損失は182百万円でした。前期の純損失389百万円からは縮小しています。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年8月期",
@@ -27,7 +176,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 472917000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 83,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +196,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2072219000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 89,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第16期の期首から適用しており、第16期以降の主要な経営指標等は当該会計基準等を適用した後の指標となっております。"
     },
     {
       "fiscalYear": "2023年8月期",
@@ -67,7 +217,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1934904000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 88,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +237,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1539297000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 79,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +257,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1729225000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 75,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +265,181 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2006,
+      "title": "株式会社アスタリスクを設立",
+      "description": "滋賀県大津市に株式会社アスタリスクを設立し、システムの受託開発を主な事業として開始しました。",
+      "significance": "会社の出発点です。受託開発から始まり、のちに自社製品のAsReader事業へ転換しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "モバイルPOSシステムSalaseeを発表",
+      "description": "iPhoneなどを活用したモバイルPOSシステムSalaseeを発表しました。",
+      "significance": "現在の主要事業であるAsReader事業への転換のきっかけになりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "中国・大連に子会社を設立",
+      "description": "モバイル端末用のシステム開発を目的として、中国遼寧省大連市に100％出資の子会社、大連明日星科技有限公司を設立しました。",
+      "significance": "海外の開発拠点の始まりで、現在も連結子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "AsReaderの販売を開始",
+      "description": "iPod touchに接続するバーコードリーダーの販売を開始しました。",
+      "significance": "現在の主力製品ブランド「AsReader」が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "RFIDリーダーの販売を開始",
+      "description": "iPhoneやiPod touchに接続するRFIDリーダー／ライターの販売を開始しました。",
+      "significance": "製品ラインアップがバーコードからRFIDへ広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "米国にAsReader, Inc.を設立",
+      "description": "欧米でのAsReader販売を目的として、米国カリフォルニア州トーランス市に100％出資の子会社AsReader, Inc.を設立しました。",
+      "significance": "アメリカを中心とする海外販売の拠点で、現在も連結子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "オランダにAsReader Europe B.V.を設立",
+      "description": "欧州でのAsReader販売の拠点として、オランダのロッテルダム市に100％出資の子会社AsReader Europe B.V.を設立しました。",
+      "significance": "欧州への販売展開の拠点でしたが、2023年に清算しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "東京証券取引所マザーズ市場に上場",
+      "description": "東京証券取引所マザーズ市場に株式を上場しました。",
+      "significance": "株式上場を果たし、資本市場から資金を調達する体制になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、マザーズ市場からグロース市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社自動レジ研究所を設立",
+      "description": "大阪市淀川区に100％出資の子会社、株式会社自動レジ研究所を設立しました。",
+      "significance": "自動レジの研究のための店舗運営を行う連結子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "AsReader Europe B.V.を清算",
+      "description": "オランダの100％出資子会社AsReader Europe B.V.を清算しました。",
+      "significance": "欧州の販売子会社を閉じ、海外拠点はアメリカと中国に絞られました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "本店を移転し本社兼研究所に改称",
+      "description": "本店を大阪市淀川区内で移転し、研究所兼大阪事業所を本店として本社兼研究所に改称しました。",
+      "significance": "現在の本社体制になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "softbank",
+      "relationship": "customer",
+      "description": "AsReader事業の主要な販売先です。主要な顧客として2024年8月期と2025年8月期の2期連続で開示されており、2025年8月期の総販売実績に占める割合は21.7％でした。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関連情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
-      "title": "有価証券報告書－第19期(2024/09/01－2025/08/31)",
+      "title": "訂正有価証券報告書－第19期(2024/09/01－2025/08/31)",
       "publisher": "株式会社アスタリスク",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X66T.pdf",
-      "publishedAt": "2025-11-27",
-      "accessedAt": "2026-09-29"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJXS.pdf",
+      "publishedAt": "2026-06-26",
+      "docId": "S100YJXS",
+      "asOf": "2025-08-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 継続企業の前提に関する重要事象等が開示されています。米国子会社のAsReader, Inc.が3期連続で営業損失を計上するなど、継続企業の前提に重要な疑義を生じさせる事象が存在しますが、営業体制の再編やストック型商材の拡充、手元資金の確保などの対応策を実行しており、会社は現時点において重要な不確実性は認められないと判断しています。",
+      "businessModel: 2021年11月26日付で、普通株式1株につき4株の割合で株式分割を実施しています（主要な経営指標等の注記に記載）。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "モバイルによるソリューションを徹底的に追求し、ハードウエアと長年培ったソフトウエア技術の融合による新たなサービスを創造することを経営方針としています。主力製品のAsReaderシリーズについては、企業向けのスマートフォン販売促進を行う国内の携帯通信キャリアやスマートフォンメーカーとの協業を進め、売上高の拡大を目指すとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "自社で製造工場を持たないファブレス方式を取りながら、各種リーダーと人検出・動体追跡技術、端末処理技術を自社で開発しています。汎用性の高いスマートフォンに取り付けて使う製品のため、製造・物流・小売・自動販売機・医療・アパレルと幅広い業界で導入が進んでいます。",
+        "basis": "事業の内容に、ファブレス企業であること、独自開発の各種リーダーと人検出・動体追跡技術・端末処理技術を活用していること、提供するソリューション領域として6つの業界が挙げられているため。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年8月期",
     "asOf": "2025-08-31",

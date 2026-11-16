@@ -1,18 +1,128 @@
 {
   "id": "smile-holdings",
   "code": "7084",
-  "name": "SmileHoldings",
+  "name": "Smile Holdings",
   "officialName": "株式会社Smile Holdings",
   "nameEn": "Smile Holdings Inc.",
-  "description": null,
+  "shortNameEn": "Smile Holdings Inc.",
+  "description": "首都圏を中心に認可保育所やプレスクール一体型保育所などを運営し、保育と幼児教育のサービスを提供するグループの持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "early-childhood-education",
+      "name": "幼児教育事業",
+      "description": "保育と幼児教育の単一セグメントです。純粋持株会社の当社と、保育施設を運営する連結子会社１社（株式会社Smile Project）で構成されています。2026年3月31日現在、認可保育所70園、認可外保育施設７施設、幼児教室２施設、スイミングスクール１施設、グローバルスクール３施設の合計83施設を首都圏を中心に運営し、在籍園児数は5,498人です。独自の幼児教育プログラム「KID'S PREP. PROGRAM」や、モンテッソーリ、レッジョ・エミリア・アプローチなど世界の教育プログラムを取り入れ、子どもの非認知能力の育成に取り組んでいます。2026年3月期の売上高は14,517百万円でした。",
+      "customers": [
+        "保育・幼児教育サービスを利用する乳幼児とその保護者",
+        "施設型給付費などを負担する自治体"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "licensed-nursery",
+          "name": "認可保育所",
+          "description": "児童福祉法に基づき都道府県知事等の認可を受けた保育施設で、「キッズガーデン」と「キッズスマイル」のブランドで運営しています。2026年3月31日現在で70園（東京都63園、神奈川県５園、愛知県２園。小規模保育所３園を含む）があり、在籍園児数は4,100人です。費用は、自治体が徴収して施設型給付費として支払う保育料と、利用者から直接受け取る延長料金などからなります。",
+          "customers": [
+            "保育サービスを利用する乳幼児とその保護者",
+            "施設型給付費を負担する自治体"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "premium-education",
+          "name": "プレスクール一体型保育所・幼児教室等（プレミアム教育グループ）",
+          "description": "認可外保育施設のプレスクール一体型保育所「KIDS GARDEN PREP SCHOOL」７施設と、幼児教室「キッズガーデンクラスルーム」２施設、就学児向けの学童・アフタースクール、スイミングスクール１施設を運営しています。幼児教育プログラムに加え、英語や体操、受験対策などの教育サービスを提供し、利用料は保護者から直接受け取ります。在籍園児数などは認可外保育施設等として1,398人です。",
+          "customers": [
+            "幼児教育サービスを利用する幼児・児童とその保護者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "global-school",
+          "name": "グローバルスクール",
+          "description": "バイリンガル教育を行うグローバルスクールを、錦糸町、吉祥寺、センター北の３施設で運営しています。2024年からは海外留学支援も開始し、英国・スイス・ハワイ（米国）などで実施しています。",
+          "customers": [
+            "バイリンガル教育や海外留学を希望する子どもとその保護者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "認可保育所では自治体から施設型給付費を受け取り、認可外保育施設では保護者から利用料を受け取ることで収益を得ています。",
+    "products": [
+      "認可保育所「キッズガーデン」「キッズスマイル」",
+      "プレスクール一体型保育所「KIDS GARDEN PREP SCHOOL」",
+      "幼児教室「キッズガーデンクラスルーム」",
+      "学童・アフタースクール",
+      "スイミングスクール",
+      "グローバルスクール",
+      "幼児教育プログラム「KID'S PREP. PROGRAM」"
+    ],
+    "customers": [
+      "保育・幼児教育サービスを利用する乳幼児とその保護者",
+      "施設型給付費・地域型保育給付を負担する自治体"
+    ],
+    "revenueSources": [
+      "自治体からの施設型給付費・地域型保育給付",
+      "保護者からの保育料・利用料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "Smile Holdingsグループ",
+        "description": "純粋持株会社の当社と、保育施設を運営する連結子会社１社（株式会社Smile Project）で構成されるグループで、本社は東京都品川区にあります。2026年3月期の従業員数は1,316人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "保育と幼児教育の施設運営",
+        "description": "認可保育所70園のほか、プレスクール一体型保育所や幼児教室、グローバルスクールなど合計83施設を運営し、非認知能力の育成を軸とした幼児教育プログラムを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "子育て家庭と自治体",
+        "description": "顧客は、首都圏を中心とする子育て家庭です。2026年3月31日現在の在籍園児数は5,498人で、認可保育所の費用は保護者の保育料と自治体の給付費でまかなわれます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高14,517百万円",
+        "description": "2026年3月期の売上高は14,517百万円で、前期比6.3％増でした。収益は、自治体からの施設型給付費や地域型保育給付と、保護者からの保育料・利用料です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益220百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は220百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +137,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6009658000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1103,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +157,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6196256000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1165,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +177,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6321687000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1241,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +197,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6497494000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1279,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +217,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6149656000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1316,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +225,88 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2008,
+      "title": "株式会社Kids Smile Project（現・株式会社Smile Project）を設立",
+      "description": "東京都世田谷区深沢に、託児所、保育所その他保育施設の経営を事業目的として設立されました。",
+      "significance": "現在の事業の中核である保育施設運営の起点となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "初のプレスクール一体型保育所を開園",
+      "description": "東京都世田谷区に、当社初となるプレスクール一体型保育所を１園開園しました。",
+      "significance": "認可外保育施設の運営が始まり、現在のプレミアム教育グループにつながりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "初の認可保育所を開園",
+      "description": "東京都文京区に当社初となる認可保育所を１園、東京都目黒区に小規模保育所を１園開園しました。",
+      "significance": "自治体からの給付費を受ける認可保育所の運営が始まり、現在の主力事業の基盤となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "株式移転により当社を設立",
+      "description": "株式移転により当社が設立され、株式会社Kids Smile Project（現・株式会社Smile Project）を完全子会社化しました。",
+      "significance": "現在の純粋持株会社体制が成立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "東京証券取引所マザーズ市場に上場",
+      "description": "東京証券取引所マザーズ市場に株式を上場しました。",
+      "significance": "上場会社となり、施設の拡大を支える基盤を得ました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "グロース市場へ移行し、スイミングスクールを開校",
+      "description": "東京証券取引所の市場区分の見直しによりマザーズ市場からグロース市場へ移行し、東京都港区にスイミングスクールを１施設開校しました。",
+      "significance": "就学児向けの運動教育へ事業の幅が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "グローバルスクールを開校",
+      "description": "東京都墨田区にグローバルスクールを１施設開校しました。",
+      "significance": "バイリンガル教育を行う国際教育領域の施設展開が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "Smile Holdings／Smile Projectへ商号変更",
+      "description": "当社を株式会社Smile Holdingsに、連結子会社の株式会社Kids Smile Projectを株式会社Smile Projectに商号変更しました。",
+      "significance": "グループの名称が現在の形に統一されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +315,57 @@
       "publisher": "株式会社Smile Holdings",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YL46.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YL46",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessStructure: 2026年3月31日の決算日後に、株式会社WITHホールディングスの全株式を取得し、2026年5月8日に完全子会社化が完了しています（2026年3月23日の取締役会決議及び同日付の株式譲渡契約に基づくもの）。同社の子会社である株式会社WITH、株式会社アンジェリカ、株式会社Nプランニングも当社グループとなり、保育関連施設96施設と介護施設4施設が加わります。本登録は2026年3月31日現在の事業構成（連結子会社1社）に基づいています。",
+      "businessStructure: 2026年3月31日の決算日後の2026年6月22日に、産後ケア領域の第一号施設として産後ケアホテルVilla Mom（ヴィラマム）東京・有明が開業しています。本登録は2026年3月31日現在の事業構成に基づいています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "幼児教育サービスの会社から総合パーソナルケアサービスの会社へ生まれ変わる取り組みを続け、国内教育領域、国際教育領域、産後ケア領域、ファミリーサポート領域の４つの事業領域を編成しています。国内教育領域では、少子化が進む市場環境を踏まえ、新園の開設に重きを置かず、既存施設の充足率向上に努めるとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "運営施設数は2022年3月末の73施設から2026年3月末の83施設へ増え、在籍園児数も4,330人から5,498人へ増え続けています。経営方針が新規開設よりも既存施設の充足率向上を優先するとしていることと合わせると、拡大の進め方が施設の新設から既存施設の運営の充実へ移っていることが読み取れます。",
+        "basis": "事業の内容における運営保育施設数と在籍園児数の推移表の記載と、経営方針における既存施設の充足率向上の方針の記載",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "独自の幼児教育プログラム「KID'S PREP. PROGRAM」を認可保育所の全園で提供するとともに、モンテッソーリやレッジョ・エミリア・アプローチなど世界の様々な教育プログラムを取り入れ、「自立」「自主性」「想像力」の心を育む非認知能力の育成に取り組んでいるとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      },
+      "analysis": {
+        "text": "認可保育所は国の設置基準を満たして都道府県知事等の認可を受ける必要がある施設であり、同社は首都圏に70園の認可保育所を運営しています。給付費で運営する認可保育所と、利用料で運営するプレスクール一体型保育所などの認可外施設の両方を持ち、価格帯の異なる保育・教育サービスを併せて提供できる構成です。",
+        "basis": "事業の内容における認可保育所の制度の説明、運営施設数の記載と、認可保育所・認可外保育施設の事業モデル（収受形態）の記載",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

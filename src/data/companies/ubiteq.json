@@ -4,15 +4,154 @@
   "name": "ユビテック",
   "officialName": "株式会社ユビテック",
   "nameEn": "Ubiteq, INC.",
-  "description": null,
+  "shortNameEn": "Ubiteq, INC.",
+  "description": "車両や労働者の安全を支援するクラウドサービスと車載機などのハードウェアを提供し、ソフトウェアの受託開発や機器の受託生産も行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    },
+    {
+      "industryId": "electronics",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "iot",
+      "name": "IoT事業",
+      "description": "クラウドサービス（安全運転支援サービス「D-Drive」、安全見守りサービス「Work Mate」等）、通信機能搭載ハードウェア製品（D-Drive車載機、カーシェアリング車載機等）、Webアプリケーション開発及びIoTインフラの構築・保守運用サービスなど、ハードウェア、ソフトウェア及びネットワークを融合したソリューションを提供する事業です。2026年6月期の売上高は1,024百万円で、3つの事業の中で最大です。",
+      "customers": [
+        "車両を運行する企業",
+        "労働者の安全確保に取り組む企業",
+        "カーシェアリング事業者"
+      ],
+      "children": [
+        {
+          "id": "cloud-services",
+          "name": "クラウドサービス",
+          "description": "安全運転支援サービス「D-Drive」や安全見守りサービス「Work Mate」などを提供するサービスです。金額は独立して開示されていません。",
+          "customers": [
+            "車両を運行する企業",
+            "労働者の安全確保に取り組む企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "hardware-products",
+          "name": "通信機能搭載ハードウェア製品",
+          "description": "D-Drive車載機やカーシェアリング車載機などの、通信機能を搭載したハードウェア製品です。金額は独立して開示されていません。",
+          "customers": [
+            "車両を運行する企業",
+            "カーシェアリング事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "web-and-iot-infrastructure",
+          "name": "Webアプリケーション開発・IoTインフラ構築",
+          "description": "Webアプリケーションの開発と、IoTインフラの構築・保守運用サービスです。金額は独立して開示されていません。",
+          "customers": [
+            "IoTを活用する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "development-contracting",
+      "name": "開発受託事業",
+      "description": "組込み型ソフトウェア及び保険分野向けシステムの受託開発を行う事業で、連結子会社のユビテックソリューションズが担っています。2026年6月期の売上高は168百万円です。",
+      "customers": [
+        "保険分野の企業など、システムの開発を委託する企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "manufacturing-contracting",
+      "name": "製造受託事業",
+      "description": "咬合力計測機器用回路基板及び通信アミューズメント機器の開発・生産を行う事業です。2026年6月期の売上高は110百万円です。",
+      "customers": [
+        "咬合力計測機器や通信アミューズメント機器の開発・生産を委託する企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "安全運転支援サービス「D-Drive」や安全見守りサービス「Work Mate」などの自社サービスと車載機を提供し、組込みソフトウェアの受託開発や回路基板などの受託生産で対価を得る事業モデルです。",
+    "products": [
+      "安全運転支援サービス「D-Drive」",
+      "安全見守りサービス「Work Mate」",
+      "D-Drive車載機、カーシェアリング車載機などの通信機能搭載ハードウェア製品",
+      "咬合力計測機器用回路基板、通信アミューズメント機器"
+    ],
+    "customers": [
+      "車両を運行する企業",
+      "労働者の安全確保に取り組む企業",
+      "保険分野の企業",
+      "機器メーカー"
+    ],
+    "revenueSources": [
+      "クラウドサービスの利用料",
+      "ハードウェア製品の販売対価",
+      "受託開発・受託生産の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ユビテック",
+        "description": "1977年にタウ技研として設立され、2007年にユビテックへ社名を変更しました。本社は東京都港区にあり、オリックス株式会社の子会社で、2026年6月30日現在の従業員数は78人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "安全支援サービスと車載機、受託開発・受託生産",
+        "description": "安全運転支援サービス「D-Drive」や安全見守りサービス「Work Mate」などのクラウドサービスと車載機などのハードウェアを提供し、組込みソフトウェアの受託開発や回路基板などの受託生産も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "車両運行企業・安全に取り組む企業・機器メーカー",
+        "description": "顧客は、車両を運行する企業や労働者の安全確保に取り組む企業、保険分野の企業、機器メーカーなどです。主要な顧客には積水ハウスやオリックス自動車などがあります。"
+      },
+      {
+        "kind": "revenue",
+        "title": "サービス利用料と製品・受託の対価",
+        "description": "2026年6月期の売上高は1,304百万円で、前期と比べて5.5％増えました。事業別ではIoT事業が1,024百万円、開発受託事業が168百万円、製造受託事業が110百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年6月期の親会社株主に帰属する当期純利益は49百万円で、前期の当期純損失493百万円から黒字に転じました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,7 +166,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2656308000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 80,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +186,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2352662000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 76,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +206,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2008946000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 76,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +226,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1515008000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 81,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +246,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1564244000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 78,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +254,228 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1977,
+      "title": "会社の設立",
+      "description": "オフィスコンピューターの開発を行うため、タウ技研を東京都豊島区に設立しました。",
+      "significance": "創業です。前身はオフィスコンピューターの開発会社です。資本金の金額は書いていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "新日本製鐵の子会社化",
+      "description": "新日本製鐵（現 日本製鉄）の子会社となりました。",
+      "significance": "大手メーカーのグループに入った時期です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "液晶プロジェクター用映像エンジンの開発",
+      "description": "液晶プロジェクター用映像エンジンを開発しました。",
+      "significance": "映像エンジンの開発分野への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "ATM機器・両替機用検知ユニットの開発",
+      "description": "ATM機器、両替機用検知ユニットを開発しました。",
+      "significance": "金融機器向けの検知ユニットの開発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "液晶テレビ用映像エンジンの開発",
+      "description": "液晶テレビ用映像エンジンを開発しました。",
+      "significance": "映像エンジンの用途をテレビへ広げた開発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "インターネット総合研究所の子会社化",
+      "description": "インターネット総合研究所の子会社となりました。",
+      "significance": "親会社が新日本製鐵からインターネット総合研究所へ替わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "決算期の変更",
+      "description": "決算期を6月に変更しました。",
+      "significance": "現在の6月決算の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "株式交換による完全子会社化",
+      "description": "株式交換により、インターネット総合研究所の完全子会社となりました。",
+      "significance": "完全子会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "社名をIRIユビテックに変更",
+      "description": "タウ技研からIRIユビテックへ社名を変更しました。また、インターネット総合研究所からユビキタス研究所に関する営業を会社分割により承継しました。",
+      "significance": "ユビキタス分野の営業を引き継ぎ、社名にユビテックの名を取り入れました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "ヘラクレス市場への上場",
+      "description": "大阪証券取引所ニッポン・ニュー・マーケット「ヘラクレス」市場に上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "日本エンジニアリングシステムの子会社化",
+      "description": "日本エンジニアリングシステム（現 ユビテックソリューションズ）を子会社化しました。",
+      "significance": "現在の連結子会社で、開発受託事業を担います。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "オリックスグループ入りと社名変更",
+      "description": "オリックスのグループ会社となり、IRIユビテックからユビテックへ社名を変更しました。また、松下電工（現 パナソニック）との資本提携を実施しました。",
+      "significance": "現在の社名と、オリックスグループとしての位置づけの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "オリックスカーシェア用車載システムの開発",
+      "description": "オリックス自動車のカーシェアリングサービス「オリックスカーシェア」用車載システムを開発しました。",
+      "significance": "車載システムの開発実績であり、現在のIoT事業につながる分野です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "オリックスの子会社化",
+      "description": "オリックスの子会社となりました。",
+      "significance": "グループ会社から子会社へ関係が深まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "省エネソリューションの提供開始",
+      "description": "SaaS型省エネソリューション「Ubiteq Green Service」の提供を開始しました。",
+      "significance": "SaaS型サービスの提供の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "クラウド型ビデオ会議サービスの発売",
+      "description": "クラウド型ビデオ会議サービス「CanSee Powered by Vidyo」を発売しました。",
+      "significance": "クラウドサービスの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "Be Safeシリーズの開発",
+      "description": "車両運行管理・ドライバー支援サービス「Be Safe」シリーズを開発しました。",
+      "significance": "車両向けサービスの展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "Work Mateの発売",
+      "description": "安全衛生見守りサービス「Work Mate」を発売しました。",
+      "significance": "現在の主力サービスの一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "D-Driveの発売とスタンダード市場への移行",
+      "description": "安全運転支援サービス「D-Drive」を発売し、東京証券取引所スタンダード市場へ移行しました。",
+      "significance": "現在の主力サービスD-Driveの発売と、現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "熱中症予兆検知技術の特許取得",
+      "description": "Work Mateにおける熱中症予兆検知機能搭載技術の特許を取得しました。",
+      "significance": "Work Mateの機能面の裏付けとなる特許です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "orix",
+      "relationship": "parent",
+      "description": "親会社です。2026年6月30日現在で議決権の57.6％を保有されています。金融・リース・レンタル・不動産を手がける会社として関係会社の状況に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "sekisui-house",
+      "relationship": "customer",
+      "description": "IoT事業の主要な顧客です。販売実績では2026年6月期の総販売実績に対する割合が29.2％と印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +483,45 @@
       "publisher": "株式会社ユビテック",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z42X.pdf",
       "publishedAt": "2026-09-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Z42X",
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年6月期から2028年6月期までを対象とする「ユビテック新３か年計画」を策定し、この３か年を自社SaaSサービスの成長期と位置づけています。基本方針として、インターロックシステムの早期拡販によるD-Driveの基幹事業への成長、社会ニーズに即したWork Mateの安定成長、自社サービス蓄積データの活用による第３軸の創出などを掲げています。",
+        "asOf": "2026-09-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "重点事業と位置づけるD-DriveとWork MateはいずれもIoT事業に属し、IoT事業は2026年6月期の売上高の約8割を占める最大の事業であるため、経営方針は現在の売上構成の中心と重なっています。D-Driveの販売拡大に向けては、パートナー企業であるオリックス自動車との協業体制の深化を課題に挙げています。",
+        "basis": "経営方針に新３か年計画の基本方針と、対処すべき課題としてオリックス自動車との協業体制の深化が印字されていることと、セグメント情報でIoT事業の外部顧客への売上高が1,024百万円と3事業の中で最大であること。",
+        "asOf": "2026-09-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "車載機などのハードウェアとクラウドサービスを一体で提供できる体制を持ち、D-DriveとWork Mateを通じて蓄積したデータを新たなサービスに活用する取り組みを進めています。Work Mateの熱中症予兆検知機能については特許を取得しており、機能面の裏付けがあります。",
+        "basis": "セグメント情報にハードウェア、ソフトウェア及びネットワークを融合したソリューションの提供と印字されていることと、沿革に2025年の熱中症予兆検知機能搭載技術の特許取得が印字されていること。",
+        "asOf": "2026-09-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",

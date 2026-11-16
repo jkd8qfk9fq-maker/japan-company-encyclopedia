@@ -4,15 +4,148 @@
   "name": "昭和化学工業",
   "officialName": "昭和化学工業株式会社",
   "nameEn": "Showa Chemical Industry Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Showa Chemical Industry Co.,Ltd.",
+  "description": "珪藻土とパーライトを原料に、飲料や食品の濾過に使う濾過助剤や建材、水処理用の化成品などを製造・販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "diatomite-perlite",
+      "name": "珪藻土・パーライト事業",
+      "description": "当社グループの唯一の報告セグメントで、珪藻土とパーライトを原料とする製品の製造・販売を行う事業です。連結子会社３社と持分法適用会社２社を含むグループで事業を行っており、2026年３月期の外部顧客への売上高は9,272百万円でした。",
+      "customers": [
+        "食品・飲料メーカー",
+        "製薬会社",
+        "化学メーカー",
+        "住宅建材メーカー",
+        "プール・温浴施設の運営者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "filtration-aids",
+          "name": "濾過助剤",
+          "description": "ビール類・清涼飲料水・甘味料・調味料などの食品工業、抗生物質などの製薬工業、油脂・合成樹脂などの化学工業や、ごみ焼却場で使われる主力商品群です。自社で製造販売するほか、製造の一部を連結子会社の白山工業株式会社に委託しています。2026年３月期の外部顧客への売上高は5,718百万円でした。",
+          "customers": [
+            "食品・飲料メーカー",
+            "製薬会社",
+            "化学メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "chemical-products",
+          "name": "化成品",
+          "description": "プールや温浴施設、浄化槽向けの塩素系消毒剤や、産業排水向けの高活性微生物剤などの水処理関連商品群です。当社が製品を仕入れて販売しています。2026年３月期の外部顧客への売上高は1,501百万円でした。",
+          "customers": [
+            "プール・温浴施設の運営者",
+            "浄化槽の管理者",
+            "産業排水を処理する事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "building-filling-materials",
+          "name": "建材・充填材",
+          "description": "住宅用建材や土木資材、シリコーンゴムなどに使われる商品群です。自社で製造販売するほか、製造の一部を連結子会社の白山工業株式会社に委託し、連結子会社の日昭株式会社が当社工場において請負契約により製造を行っています。2026年３月期の外部顧客への売上高は1,496百万円でした。",
+          "customers": [
+            "住宅建材メーカー",
+            "土木資材メーカー",
+            "ゴム製品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-products",
+          "name": "その他商品等",
+          "description": "珪藻土粒状品やデオドラント商品などの生活関連用品や、スポットで発生する商品群です。自社で製造販売するほか、商品を仕入れて販売しています。2026年３月期の外部顧客への売上高は555百万円でした。",
+          "customers": [
+            "生活関連用品の販売先",
+            "化学品の需要家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "珪藻土・パーライトを加工した濾過助剤や建材・充填材を自社工場で製造して産業用に販売し、塩素系消毒剤などの化成品は仕入れて販売するモデルです。",
+    "products": [
+      "濾過助剤（珪藻土・パーライト製品）",
+      "建材・充填材",
+      "化成品（塩素系消毒剤・高活性微生物剤など）",
+      "珪藻土粒状品・デオドラント商品などの生活関連用品"
+    ],
+    "customers": [
+      "ビール・清涼飲料水などの食品・飲料メーカー",
+      "製薬会社",
+      "油脂・合成樹脂などの化学メーカー",
+      "住宅建材・土木資材のメーカー",
+      "プール・温浴施設や浄化槽の運営者"
+    ],
+    "revenueSources": [
+      "濾過助剤の販売",
+      "建材・充填材の販売",
+      "化成品の販売",
+      "その他商品等の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "昭和化学工業",
+        "description": "1933年に設立された会社で、本店は東京都港区にあります。連結子会社３社と持分法適用会社２社でグループを構成し、2026年３月31日現在の従業員数は216人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "珪藻土・パーライト製品と化成品",
+        "description": "珪藻土とパーライトを原料とする濾過助剤を主力に、建材・充填材や、水処理に使う塩素系消毒剤などの化成品、珪藻土粒状品などの生活関連用品を扱っています。濾過助剤と建材・充填材は自社で製造し、化成品は仕入れて販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "食品・飲料メーカーなど産業の需要家",
+        "description": "濾過助剤はビールや清涼飲料水、調味料などの食品・飲料メーカー、製薬会社、化学メーカーに、建材・充填材は住宅建材や土木資材のメーカーに、化成品はプールや温浴施設、浄化槽の運営者などに販売しています。売上高の10％以上を占める販売先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売収入",
+        "description": "2026年３月期の売上高は9,272百万円で、前期比0.4％増でした。製品別では濾過助剤が5,718百万円、化成品が1,501百万円、建材・充填材が1,496百万円、その他商品等が555百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は624百万円で、前期比51.7％増でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +160,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6123508000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 219,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +180,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6758254000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 222,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +200,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7598954000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 220,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +220,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8119682000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 218,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +240,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9387682000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 216,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +248,214 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1930,
+      "title": "東亜商会を設立し濾過助剤の製造に着手",
+      "description": "大阪市港区の喜田善蔵商店に事務所を置いて東亜商会を設立し、岡山県真庭郡八束村に工場を建設して濾過助剤の製造に着手しました。",
+      "significance": "昭和化学工業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1933,
+      "title": "昭和化学工業株式会社を設立",
+      "description": "喜田商店鉱業部を改組して昭和化学工業株式会社を設立し、製品名「ラヂオライト」を商標登録しました。",
+      "significance": "会社の創立であり、主力製品のブランドが定まった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1934,
+      "title": "岡山工場で焼成品の製造を開始",
+      "description": "岡山工場にトンネルキルンを建設し、焼成品の製造を開始しました。",
+      "significance": "現在の主力である焼成した濾過助剤の生産の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1940,
+      "title": "白山工業株式会社を設立",
+      "description": "白山工業株式会社を設立しました。",
+      "significance": "現在も珪藻土製品の製造を担う連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "秋田工場を新設",
+      "description": "秋田県北秋田郡鷹巣町に秋田工場を新設しました。",
+      "significance": "珪藻土の産地に近い生産拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "日昭輸送株式会社を設立",
+      "description": "日昭輸送株式会社（現在の日昭株式会社）を設立しました。",
+      "significance": "現在はパーライト製品の請負製造を担う連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "日本トーライト株式会社と合併",
+      "description": "日本トーライト株式会社と合併し、大分工場を開設しました。",
+      "significance": "合併による事業規模と生産拠点の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "名古屋証券取引所市場第二部に上場",
+      "description": "名古屋証券取引所市場第二部に株式を上場しました。なお、この上場は2014年11月に廃止しています。",
+      "significance": "重複上場とその後の集約の経緯を示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "秋田第二工場を新設",
+      "description": "珪藻土製品の製造工場を買収し、秋田第二工場を新設しました。",
+      "significance": "買収による生産能力の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "北京瑞来特貿易有限公司を設立",
+      "description": "中国・北京市に北京瑞来特貿易有限公司を設立しました。",
+      "significance": "海外販売を担う連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "東興パーライト工業株式会社を吸収合併",
+      "description": "東興パーライト工業株式会社を吸収合併しました。",
+      "significance": "1965年に資本参加していたパーライト事業会社の完全な取り込みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "シンガポールに子会社を設立",
+      "description": "Showa Chemical Industry (Singapore) Pte. Ltd.を設立しました。",
+      "significance": "東南アジアへの展開の拠点づくりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分見直しに伴い、東京証券取引所スタンダード市場に移行しました。",
+      "significance": "現在の上場市場の区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "北京瑞来特貿易有限公司が大連に子会社を設立",
+      "description": "連結子会社の北京瑞来特貿易有限公司が、瑞来特（大連）工程技術有限公司を設立しました。",
+      "significance": "中国事業の体制拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "aubex",
+      "relationship": "affiliate",
+      "description": "【関係会社の状況】で持分法適用関連会社とされている会社で、2026年３月31日現在の議決権の所有割合は15.5％です。サインペンのペン先や医療機器の製造販売を行っており、当社との事業上の取引関係はないとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "shikoku-kasei-holdings",
+      "relationship": "supplier",
+      "description": "化成品の主要な仕入先であり、安定的な取引関係の維持・強化のための政策投資として、当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "gun-ei-chemical-industry",
+      "relationship": "customer",
+      "description": "濾過助剤商品の販売先であり、安定的な取引関係の維持・強化のための政策投資として、当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "o-will",
+      "relationship": "customer",
+      "description": "濾過助剤商品の販売先であり、安定的な取引関係の維持・強化のための政策投資として、当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ohba",
+      "relationship": "business-partner",
+      "description": "採掘鉱区の利活用に関してのコンサルティングの委託先であり、安定的な取引関係の維持・強化を目的とする政策投資として、当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kitazawa-sangyo",
+      "relationship": "major-shareholder",
+      "description": "2026年３月31日現在、当社の株式の2.32％を保有する大株主の事業会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +463,47 @@
       "publisher": "昭和化学工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJME.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YJME",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2033年の創立100周年に向けた中期経営計画『Growth, Reborn towards 2033』を掲げ、2026年度から2030年度を次の100年に向けた基盤整備期間と位置づけています。重点テーマは新領域への行動強化、既存事業の収益性強化、組織力の強化の３つで、社外パートナーとの協創やデジタル技術の活用による新事業機会の創出、濾過システムや受託加工など問題解決型サービスの拡充、アジア市場を中心とした海外展開の推進に取り組むとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1933年の創立以来、珪藻土とパーライトを中心とした濾過助剤を基盤事業としており、独自の生産技術と研究分析センターを活用した技術提案力、国内外の生産供給ネットワークを強みとしています。濾過助剤はグループ全体の売上の61.7％を占める主力商品群です。",
+        "basis": "経営戦略等の記載に、当社グループの強みとして独自の生産技術、研究分析センターを活用した技術提案力、国内外の生産供給ネットワークが印字され、経営成績の分析に濾過助剤が売上全体の61.7％であることが印字されていること",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "珪藻土・パーライト製品の専門メーカーで、売上は日本が7,567百万円、その他の地域が1,705百万円と国内外に広がっています。製品別では濾過助剤が売上の６割強を占め、食品・飲料の濾過工程を支える分野で事業を展開しています。",
+        "basis": "関連情報に、地域別の売上高として日本7,567,454千円・その他1,705,434千円が、製品及びサービスごとの情報に外部顧客への売上高として濾過助剤5,718,922千円が印字されていること",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

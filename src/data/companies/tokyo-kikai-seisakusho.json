@@ -4,15 +4,113 @@
   "name": "東京機械製作所",
   "officialName": "株式会社東京機械製作所",
   "nameEn": "TOKYO KIKAI SEISAKUSHO,LTD.",
-  "description": null,
+  "shortNameEn": "TOKYO KIKAI SEISAKUSHO,LTD.",
+  "description": "新聞輪転機を中心とする印刷機械と制御システム、付属機を製造販売し、保守サービスを行う機械メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "printing-machinery",
+      "name": "印刷機械関連事業",
+      "description": "印刷機械とこれを制御するプレスコントロールシステムの製造販売を主な内容とし、各事業に関連するサービスを行う事業です。2026年3月期の売上高は8,456百万円で、前期に比べ14.2％増えました。当社と連結子会社の株式会社KKSの2社で担っています。",
+      "customers": [
+        "新聞社",
+        "新聞印刷受託会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "printing-press",
+          "name": "印刷機械の製造販売と保守サービス",
+          "description": "当社が主に印刷機械の製造販売とその保守サービスを担う区分です。次世代型標準輪転機「COLOR TOP ECOWIDE Ⅲ」などの新聞輪転機を含みます。売上高は独立して開示されていません。",
+          "customers": [
+            "新聞社",
+            "新聞印刷受託会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "peripheral-machinery",
+          "name": "印刷機械付属機の製造販売",
+          "description": "連結子会社の株式会社KKSが主に新聞発送システムをはじめとする印刷機械の周辺機械の製造販売を担う区分です。売上高は独立して開示されていません。",
+          "customers": [
+            "新聞社",
+            "新聞印刷受託会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "新聞社などからの受注に応じて新聞輪転機や付属機を製造販売し、納入後の保守サービスと合わせて対価を得るモデルです。",
+    "products": [
+      "新聞用オフセット輪転機",
+      "次世代型標準輪転機「COLOR TOP ECOWIDE Ⅲ」",
+      "プレスコントロールシステム",
+      "新聞発送システム等の印刷機械付属機",
+      "保守サービス"
+    ],
+    "customers": [
+      "新聞社",
+      "新聞印刷受託会社"
+    ],
+    "revenueSources": [
+      "印刷機械の販売代金",
+      "印刷機械付属機の販売代金",
+      "保守サービスの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京機械製作所",
+        "description": "当社と連結子会社1社でグループを構成します。2026年3月期の従業員数は303人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "印刷機械と付属機、保守サービス",
+        "description": "新聞輪転機などの印刷機械とプレスコントロールシステム、新聞発送システムなどの付属機を製造販売し、保守サービスを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "新聞社など",
+        "description": "顧客は、国内外の新聞社を中核とする相手先と新聞印刷受託会社です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "機械の販売代金と保守の対価",
+        "description": "主な収入は、印刷機械と付属機の販売代金と保守サービスの対価です。2026年3月期の売上高は8,456百万円で、前期に比べ14.2％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,057百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +125,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8000000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 305,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +145,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8527000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 290,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,12 +165,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9111000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 293,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第167期（2024年3月期）の主要な経営指標等は、「法人税、住民税及び事業税等に関する会計基準」等を第168期の期首から適用したことに伴い、当該会計基準等を遡って適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -87,7 +186,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9270000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 286,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +206,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10519000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 303,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +214,128 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1888,
+      "title": "内務省の工場の払下げを受けて東京機械製造株式会社と改称",
+      "description": "内務省より勧農局三田製作所の払下げを受け、東京機械製造株式会社と改称しました。",
+      "significance": "現在の会社の起源です。1874年創立の農機具工場を引き継ぎました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1906,
+      "title": "国産新聞輪転印刷機の第1号機を完成",
+      "description": "わが国における国産新聞輪転印刷機第1号機を完成しました。",
+      "significance": "新聞輪転機を主力とする歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1911,
+      "title": "商号を東京機械製作所に改称",
+      "description": "商号を東京機械製作所と改称しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1916,
+      "title": "株式会社東京機械製作所の設立登記を完了",
+      "description": "株式会社東京機械製作所の設立登記を完了しました。",
+      "significance": "株式会社としての体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京証券取引所に上場",
+      "description": "東京証券取引所に上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "かずさテクノセンターを完成し玉川製造所を閉鎖",
+      "description": "千葉県木更津市にかずさテクノセンターを完成して稼働させ、玉川製造所を閉鎖しました。",
+      "significance": "生産拠点の移転と集約の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "かずさテクノセンターに印刷機械の生産拠点を集約",
+      "description": "かずさテクノセンターに印刷機械の生産拠点を集約し、株式会社伊賀マシナリーを解散しました。",
+      "significance": "現在の生産体制の基礎です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "本社を東京都港区三田に移転",
+      "description": "東京都港区三田に本社を移転しました。",
+      "significance": "現在の本社所在地の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場の区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社東機システムサービスを吸収合併し羽田テクノセンターを開設",
+      "description": "当社を存続会社として株式会社東機システムサービスを吸収合併し、東京都大田区に羽田テクノセンターを開設しました。",
+      "significance": "グループ体制と保守サービス拠点の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "監査等委員会設置会社へ移行",
+      "description": "監査等委員会設置会社へ移行しました。",
+      "significance": "ガバナンス体制の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "羽田テクノセンターを羽田事業所に改称",
+      "description": "羽田テクノセンターを羽田事業所へ改称しました。",
+      "significance": "現在の事業所名称です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +344,55 @@
       "publisher": "株式会社東京機械製作所",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI7P.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YI7P",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2022年1月に策定したTKSグループ中期経営計画では、「顧客の課題に向き合い、柔軟なカスタマイズ力により新たな価値を創造し、課題解決をサポートする」を目指す姿として掲げ、輪転機事業の生産体制の最適化と、FA事業や加工組立事業などの新規事業の育成、財務面と組織面の取り組みを課題として進めるとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "主力の輪転機事業を支えながら、新聞輪転機製造で培った技術を生かすFA事業と加工組立事業を新しい柱として育てる構成になっています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等に、輪転機事業の生産体制の最適化と新規事業の育成に取り組む旨と、新規事業としてFA事業や加工組立事業の展開に取り組む旨が記載されていることによるものです。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "新聞社と連携して現場の要望を反映しながら開発したCOLOR TOP ECOWIDE Ⅲのように、顧客ごとの運用条件や課題に応じて仕様を調整できるカスタマイズ力が強みです。長く新聞輪転機の製造で培った設計・加工・組立の技術も基盤になっています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等に、COLOR TOP ECOWIDE Ⅲは新聞社と連携し現場のニーズを反映して開発した旨と、カスタマイズ力が当社ならではの強みである旨が記載され、人材戦略に関する基本方針等に設計・加工・組立技術を競争優位の源泉と位置づける旨が記載されていることによるものです。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "新聞業界では紙の新聞需要の減少が続き、新聞社は設備投資に慎重な姿勢を維持する中で事業を行っています。その中で、読売新聞東京本社がその他の関係会社であり主要な顧客でもある関係を持っています。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析に、紙の新聞需要の減少と新聞社の設備投資への慎重な姿勢が記載され、関係会社の状況に株式会社読売新聞東京本社がその他の関係会社として記載されていることによるものです。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

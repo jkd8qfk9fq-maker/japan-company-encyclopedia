@@ -4,15 +4,203 @@
   "name": "秩父鉄道",
   "officialName": "秩父鉄道株式会社",
   "nameEn": "Chichibu Railway Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Chichibu Railway Co., Ltd.",
+  "description": "埼玉県の羽生から三峰口までを結ぶ鉄道を運行し、沿線で不動産・観光・卸売小売も営む鉄道会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "entertainment",
+      "primary": false
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "railway",
+      "name": "鉄道事業",
+      "description": "羽生駅から三峰口駅までの75.4キロメートルで旅客及び貨物輸送を行う、当社の中核事業です。2026年3月期の外部顧客への売上高は3,633百万円でした。",
+      "customers": [
+        "鉄道の旅客",
+        "貨物輸送の荷主"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "passenger",
+          "name": "旅客輸送",
+          "description": "定期・定期外の旅客輸送を行っており、2026年3月期の旅客人員は729万人でした。SL列車の運行や記念乗車券の発売などの営業施策も行っています。",
+          "customers": [
+            "通勤・通学の利用者",
+            "観光客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "freight",
+          "name": "貨物輸送",
+          "description": "太平洋セメントの原料輸送などを担う貨物輸送です。主要な顧客は太平洋セメント株式会社です。",
+          "customers": [
+            "太平洋セメントなどの荷主"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "wholesale-retail",
+      "name": "卸売・小売業",
+      "description": "連結子会社の株式会社秩鉄商事が、駅売店やコンビニエンスストアの運営、卸販売などを行う事業です。2026年3月期の外部顧客への売上高は628百万円でした。",
+      "customers": [
+        "駅利用者",
+        "卸販売先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "tourism",
+      "name": "観光事業",
+      "description": "宝登山ロープウェイや長瀞ラインくだり、動物園の運営、飲食・土産品販売を行う事業です。2026年3月期の外部顧客への売上高は593百万円でした。",
+      "customers": [
+        "観光客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "連結子会社が営むバス事業と建設・電気工事業です。2026年3月期の外部顧客への売上高は452百万円でした。",
+      "customers": [
+        "バス利用者",
+        "工事の発注者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "bus",
+          "name": "バス事業",
+          "description": "連結子会社の秩父鉄道観光バス株式会社が、当社沿線で貸切、乗合及び特定バス事業を行っています。",
+          "customers": [
+            "バス利用者",
+            "団体旅行の主催者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "construction",
+          "name": "建設・電気工事業",
+          "description": "連結子会社の株式会社秩父建設が、当社の線路施設や電気施設の保守を含む建設・電気工事を行っています。",
+          "customers": [
+            "工事の発注者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "建物の賃貸、土地及び建物の販売、請負などを行う事業です。2026年3月期の外部顧客への売上高は330百万円でした。",
+      "customers": [
+        "賃借人",
+        "土地・建物の購入者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道の旅客・貨物輸送を柱に、沿線の不動産賃貸、観光施設の運営、駅売店などの卸売・小売で収益を得る事業モデルです。",
+    "products": [
+      "鉄道による旅客輸送・貨物輸送",
+      "建物の賃貸、土地・建物の販売",
+      "宝登山ロープウェイ、長瀞ラインくだり、動物園などの観光施設の運営",
+      "駅売店やコンビニエンスストアなどの卸売・小売",
+      "バス事業、建設・電気工事業（子会社）"
+    ],
+    "customers": [
+      "鉄道の旅客",
+      "貨物輸送の荷主",
+      "賃貸物件の入居者、土地・建物の購入者",
+      "観光施設の利用者",
+      "駅売店などの利用者"
+    ],
+    "revenueSources": [
+      "旅客運輸収入と貨物運賃収入",
+      "不動産の賃貸収入と販売収入",
+      "観光施設の利用料や飲食・土産品の販売収入",
+      "卸売・小売の売上",
+      "バス運賃や工事の完成工事高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京証券取引所スタンダード市場に上場する鉄道会社",
+        "description": "秩父鉄道は埼玉県熊谷市に本店を置き、当社と子会社5社で企業集団を構成しています（うち3社が連結子会社）。2026年3月31日現在の連結従業員数は377人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "鉄道輸送を中心に不動産・観光・卸売小売を営む",
+        "description": "羽生から三峰口までの75.4キロメートルで旅客・貨物輸送を行う鉄道事業を中心に、建物の賃貸などを行う不動産事業、宝登山ロープウェイや長瀞ラインくだりなどを運営する観光事業、駅売店などの卸売・小売業、その他としてバス事業と建設・電気工事業を営んでいます。"
+      },
+      {
+        "kind": "customer",
+        "title": "沿線の旅客と貨物荷主、観光客が顧客",
+        "description": "鉄道の旅客は定期・定期外を合わせて年間729万人です。貨物では太平洋セメントが主要な顧客で、同社とは原料の輸送を通じて継続的な取引があります。観光事業では長瀞や宝登山を訪れる観光客が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の営業収益は5,637百万円",
+        "description": "2026年3月期の営業収益は5,637百万円で、前期の5,276百万円から増えました。鉄道事業が3,633百万円、不動産事業が330百万円、観光事業が593百万円、卸売・小売業が628百万円、その他が452百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は383百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は383百万円で、前期は115百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +215,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10033986000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 419,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +235,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5030305000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 417,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +255,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4929428000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 409,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +275,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5003559000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 395,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +295,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5519943000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 377,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +303,159 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1899,
+      "title": "上武鉄道株式会社を設立",
+      "description": "前身の上武鉄道株式会社が設立されました。",
+      "significance": "創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1901,
+      "title": "熊谷＝寄居間が開業",
+      "description": "熊谷と寄居の間で鉄道営業を開始しました。",
+      "significance": "鉄道事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1916,
+      "title": "秩父鉄道株式会社と改称",
+      "description": "商号を秩父鉄道株式会社に変更しました。",
+      "significance": "現在の商号の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1922,
+      "title": "熊谷＝影森間の電化が完成し、北武鉄道株式会社を合併",
+      "description": "熊谷から影森までの電化が完成し、羽生線を営む北武鉄道株式会社を合併しました。",
+      "significance": "現在の路線網の骨格ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1930,
+      "title": "影森＝三峰口間が開業",
+      "description": "影森から三峰口までの区間が開業しました。",
+      "significance": "現在の三峰口までの路線がつながりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "株式会社秩鉄商事を設立",
+      "description": "現在の連結子会社である株式会社秩鉄商事を設立しました。",
+      "significance": "卸売・小売業の担い手の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "日本証券業協会の店頭市場へ登録",
+      "description": "日本証券業協会の店頭市場に株式を登録しました。",
+      "significance": "株式公開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "不動産業の営業を開始",
+      "description": "不動産業の営業を開始しました。",
+      "significance": "不動産事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "秩父鉄道観光バス株式会社を設立",
+      "description": "現在の連結子会社である秩父鉄道観光バス株式会社を設立しました。",
+      "significance": "バス事業の担い手の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "旅客自動車運送事業を秩父鉄道観光バス株式会社へ譲渡",
+      "description": "旅客自動車運送事業を秩父鉄道観光バス株式会社に譲渡しました。",
+      "significance": "バス事業の子会社への集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "店頭登録を取り消し、ジャスダック証券取引所（現在の東京証券取引所スタンダード市場）に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "三ヶ尻線の一部を廃止",
+      "description": "三ヶ尻線の一部（三ヶ尻＝熊谷貨物ターミナル間及び熊谷貨物ターミナル駅）を廃止しました。",
+      "significance": "貨物線の縮小です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "宝登興業株式会社を吸収合併",
+      "description": "連結子会社であった宝登興業株式会社を吸収合併しました。",
+      "significance": "グループ再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "taiheiyo-cement",
+      "relationship": "other-affiliated-company",
+      "description": "有価証券報告書の関係会社の状況に「その他の関係会社」として記載されている会社で、議決権の被所有割合は直接33.9％、間接15.6％です。同社の原料の輸送及び設備等の保守を当社が担い、同社から役員の受入れもあり、セグメント情報の関連情報でも鉄道事業の主要な顧客として記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +463,47 @@
       "publisher": "秩父鉄道株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIV6.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YIV6",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "グループ全社が一丸となり、事業基盤の保持・強化を図りつつ新たな事業構造の構築に向け、中期経営計画を策定して具体的な対策を計画・推進するとしています。公共交通機関として輸送の安全、無事故無災害の達成を最優先課題に掲げ、安全面の設備投資や従業員教育を強化するほか、改正地域交通法の枠組みを活用して関係自治体と連携した持続可能性の高い地域公共交通への再構築を検討し、長瀞への誘客促進や駅前不動産の有効活用、人財への投資を進めるとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "羽生から三峰口までの沿線で唯一の鉄道路線を運営し、太平洋セメントの原料輸送という継続的な貨物需要と、長瀞・宝登山の観光資源を併せ持っている点が特徴です。",
+        "basis": "事業の内容、セグメント情報及び関連情報における路線、主要な顧客並びに観光事業の記載に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "埼玉県北西部を走る地域鉄道で、旅客人員は年間729万人です。沿線の居住人口が減少する中、通勤・通学輸送と観光輸送の双方を担う地域密着型の中小私鉄です。",
+        "basis": "事業の内容及び経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における輸送実績の記載に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
