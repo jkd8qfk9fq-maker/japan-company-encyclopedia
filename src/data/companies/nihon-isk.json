@@ -4,15 +4,145 @@
   "name": "日本アイ・エス・ケイ",
   "officialName": "日本アイ・エス・ケイ株式会社",
   "nameEn": "NIHON　ISK　CO.,LTD.",
-  "description": null,
+  "shortNameEn": "NIHON ISK CO.,LTD.",
+  "description": "耐火金庫等の鋼製品、歯科医療機器、書庫ロッカーの製造販売と建物賃貸を行うメーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "pharmaceuticals",
+      "primary": false
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "dental",
+      "name": "デンタル関連事業",
+      "description": "歯科医療に関する設備・機器類を扱う事業で、主に歯科ユニットの製造・販売を行っています。歯科部品の一部は連結子会社の株式会社ビアンエアージャパンから仕入れています。2025年12月期の外部顧客への売上高は2,065百万円で、報告セグメントの中で最も大きくなっています。",
+      "customers": [
+        "歯科医院などの歯科医療機関"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "storage-lockers",
+      "name": "書庫ロッカー関連事業",
+      "description": "コインロッカーなどの金属性多目的収納庫の製造販売を行う事業です。札幌工場と川島工場が生産拠点です。2025年12月期の外部顧客への売上高は1,961百万円です。",
+      "customers": [
+        "駅や商業施設などの事業者",
+        "オフィスなどの事業者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "steel-products",
+      "name": "鋼製品関連事業",
+      "description": "企業から一般家庭まで幅広い分野に対応した耐火金庫等の製造販売と、手提金庫の仕入販売を行う事業です。中之条工場が耐火金庫の生産拠点です。2025年12月期の外部顧客への売上高は1,722百万円です。",
+      "customers": [
+        "企業",
+        "一般家庭"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産賃貸関連事業",
+      "description": "建物等の賃貸を行う事業です。2025年12月期の外部顧客への売上高は178百万円です。",
+      "customers": [
+        "建物の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業で、工具の仕入販売等を行っています。2025年12月期の外部顧客への売上高は136百万円です。",
+      "customers": [
+        "工具の購入者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社工場で耐火金庫、歯科ユニット、コインロッカー等の金属製品を製造して販売し、子会社から歯科部品を仕入れるほか、建物の賃貸も行う事業モデルです。",
+    "products": [
+      "耐火金庫や手提金庫などの鋼製品",
+      "歯科ユニットなどの歯科医療機器",
+      "コインロッカーなどの金属性多目的収納庫",
+      "建物の賃貸",
+      "工具などの商品"
+    ],
+    "customers": [
+      "企業や一般家庭",
+      "歯科医院などの歯科医療機関",
+      "駅や商業施設、オフィスなどの事業者",
+      "建物の賃借人"
+    ],
+    "revenueSources": [
+      "鋼製品の販売収入",
+      "歯科医療機器の販売収入",
+      "書庫ロッカー等の販売収入",
+      "建物賃貸による収入",
+      "工具等の販売収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と連結子会社１社のグループ",
+        "description": "当社と連結子会社１社（株式会社ビアンエアージャパン）でグループを構成しています。2025年12月31日現在の従業員数は283人で、本社は東京都台東区にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "鋼製品・デンタル・書庫ロッカーの３事業が核",
+        "description": "耐火金庫等の鋼製品関連事業、歯科ユニット等のデンタル関連事業、コインロッカー等の書庫ロッカー関連事業を核に、不動産賃貸関連事業と工具販売等のその他事業を展開しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "企業・家庭、歯科医療機関、施設事業者",
+        "description": "鋼製品は企業から一般家庭まで幅広い分野に、歯科医療機器は歯科医療機関に、書庫ロッカーは駅や商業施設等に提供しています。主な相手先として、販売実績でコクヨ株式会社が開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2025年12月期の売上高は6,064百万円",
+        "description": "2025年12月期の売上高は6,064百万円（前連結会計年度比2.8％増）でした。セグメント別ではデンタル関連事業が2,065百万円、書庫ロッカー関連事業が1,961百万円、鋼製品関連事業が1,722百万円、不動産賃貸関連事業が178百万円、その他が136百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2025年12月期の親会社株主に帰属する当期純利益は418百万円",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は418百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +157,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3635709000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 270,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +177,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3715250000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 265,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第76期の期首から適用しており、第76期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +198,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4006546000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 274,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +218,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4353340000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 281,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +238,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4708691000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 283,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +246,99 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1916,
+      "title": "個人商店「日進社」を創立",
+      "description": "東京都台東区において初代社長が個人商店日進社を創立し、手提金庫、ポンプ、消火器の製造販売を開始しました。",
+      "significance": "当社の創業の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1918,
+      "title": "日進社からキング商会に商号変更",
+      "description": "日進社からキング商会に商号を変更しました。",
+      "significance": "後の「キング工業」の社名につながる改称です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "キング工業株式会社を設立",
+      "description": "東京都台東区にキング工業株式会社を設立し、手提金庫、金銭登録機、スチール家具の製造販売を目的として発足しました。",
+      "significance": "法人としての設立であり、長く使われた社名の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "日本証券業協会登録銘柄として公開",
+      "description": "日本証券業協会登録銘柄として株式を公開しました。",
+      "significance": "株式公開の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "株式会社帝国デンタル製作所を吸収合併",
+      "description": "株式会社帝国デンタル製作所を吸収合併し、歯科医療機器の生産を開始しました。",
+      "significance": "現在のデンタル関連事業につながる事業参入です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "株式会社ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "日本アイ・エス・ケイ株式会社に商号変更",
+      "description": "キング工業株式会社から日本アイ・エス・ケイ株式会社に商号を変更しました。",
+      "significance": "現在の社名への変更です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、ＪＡＳＤＡＱ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kokuyo",
+      "relationship": "customer",
+      "description": "当社の販売先です。主要な相手先別の販売実績に、2025年12月期の販売高550百万円（総販売実績に対する割合9.0％）が印字されています。特定投資株式としても保有していますが、その保有目的は各銘柄共通の定型文であるため、結び付けの根拠はこの販売先としての開示です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +346,55 @@
       "publisher": "日本アイ・エス・ケイ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XV0H.pdf",
       "publishedAt": "2026-03-27",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XV0H",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "鋼製品事業、デンタル事業、書庫ロッカー事業を核として多様化する顧客ニーズに対応し、満足いただける質の高い製品・サービス提供を通じて、より快適なくらしの創造をめざすことを基本方針としています。経営戦略としては、技術開発と品質管理の更なる向上を追求して「ものづくり」と「商品提供」に取り組み、営業活動の強化、新製品の開発、管理部門の効率化、財務体質の向上など経営全般にわたる改善と効率化を推進するとしています。",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "３つの中核事業の規模が拮抗しており、特定の事業への依存度は高くありません。対処すべき課題として、多様化する顧客ニーズに応える高品質商品の提供、新製品の開発、低コスト生産体制の確立、営業活動の強化、管理部門の効率化を挙げています。",
+        "basis": "セグメント情報に報告セグメントごとの外部顧客への売上高が印字され、経営方針の課題の記載があることから読み取れます。",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "耐火金庫では指紋・静脈認証に加え、虹彩・顔認証の生体認証モデルなど高付加価値製品を展開しており、認証技術を組み合わせたセキュリティ製品の品揃えが特徴です。",
+        "basis": "経営成績の分析に、耐火金庫の生体認証製品の拡販に努めた旨が印字されていることから読み取れます。",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高はデンタル関連事業2,065百万円、書庫ロッカー関連事業1,961百万円、鋼製品関連事業1,722百万円と３事業が拮抗する構成で、不動産賃貸関連事業178百万円とその他136百万円がこれに続きます。",
+        "basis": "セグメント情報に報告セグメントごとの外部顧客への売上高が印字されていることから読み取れます。",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

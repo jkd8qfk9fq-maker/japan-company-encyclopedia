@@ -4,15 +4,152 @@
   "name": "エヌジェイホールディングス",
   "officialName": "株式会社エヌジェイホールディングス",
   "nameEn": "NJ Holdings Inc.",
-  "description": null,
+  "shortNameEn": "NJ Holdings Inc.",
+  "description": "ゲームの企画・開発・運営と携帯電話販売店の運営を2つの柱とする持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "entertainment",
+      "primary": true
+    },
+    {
+      "industryId": "telecommunications",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "game",
+      "name": "ゲーム事業",
+      "description": "連結子会社のゲームスタジオ、トライエース、ウィットワン、テックフラッグが、ゲームの企画・開発及び運営を行う事業です。2026年6月期の外部顧客への売上高は6,969百万円でした。",
+      "customers": [
+        "ゲームパブリッシャー等のゲーム会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "game-development",
+          "name": "ゲーム企画開発",
+          "description": "モバイルゲームやコンソールゲーム等の受託開発と自社開発を行う分野です。2026年6月期の売上高は3,292百万円でした。",
+          "customers": [
+            "ゲームパブリッシャー等のゲーム会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "game-operation",
+          "name": "ゲーム運営",
+          "description": "ゲームの運営受託と、翻訳等の海外対応業務を含む運営サポートを行う分野です。2026年6月期の売上高は2,723百万円でした。",
+          "customers": [
+            "ゲームパブリッシャー等のゲーム会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "mobile",
+      "name": "モバイル事業",
+      "description": "連結子会社のネプロクリエイトが、auショップ等のキャリアショップと、複数の通信事業者の端末・サービスを取り扱う販売店PiPoParkを運営する事業です。2026年6月期の外部顧客への売上高は2,925百万円でした。",
+      "customers": [
+        "携帯電話を購入・契約する個人顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "carrier-shop",
+          "name": "キャリアショップ",
+          "description": "特定の移動体通信事業者の端末・サービスを取り扱うauショップ等の店舗を運営しています。",
+          "customers": [
+            "携帯電話を購入・契約する個人顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "pipopark",
+          "name": "販売店PiPoPark",
+          "description": "複数の通信事業者の端末・サービスを取り扱う販売店PiPoPark（ピポパーク）を運営しています。",
+          "customers": [
+            "携帯電話を購入・契約する個人顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "ゲーム会社からの開発・運営の受託と、キャリアショップ等での端末・サービスの販売で対価を得る事業モデルです。",
+    "products": [
+      "ゲームの企画・開発（受託開発・自社開発）",
+      "ゲームの運営受託・運営サポート（翻訳等の海外対応業務を含む）",
+      "キャリアショップ（auショップ）における端末・サービスの販売",
+      "複数キャリアを取り扱う販売店PiPoParkにおける端末・サービスの販売",
+      "クレジット決済サービス"
+    ],
+    "customers": [
+      "ゲームパブリッシャー等のゲーム会社",
+      "携帯電話を購入・契約する個人顧客"
+    ],
+    "revenueSources": [
+      "ゲームの開発・運営の受託対価",
+      "端末の販売対価及び通信事業者からの手数料",
+      "クレジット決済の手数料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京都港区に本社を置く持株会社",
+        "description": "エヌジェイホールディングスは東京都港区に本社を置く持株会社で、連結子会社5社とともにグループを構成し、2026年6月期の従業員数は868人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ゲームの開発・運営と携帯電話販売店を提供",
+        "description": "ゲーム事業では連結子会社がゲームの企画・開発と運営を行い、モバイル事業では連結子会社がキャリアショップと複数キャリアを取り扱う販売店PiPoParkを運営しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "ゲーム会社と携帯電話の利用者が顧客",
+        "description": "ゲーム事業の主な顧客はバンダイナムコエンターテインメント、SNK、ガンホー・オンライン・エンターテイメント、任天堂等のゲーム会社で、モバイル事業の顧客は店舗で端末を購入しサービスを契約する個人です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2事業とその他で収益を得る",
+        "description": "2026年6月期の売上高は9,949百万円で、内訳はゲーム事業6,969百万円、モバイル事業2,925百万円、その他54百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純損失119百万円",
+        "description": "2026年6月期は119百万円の親会社株主に帰属する当期純損失でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,7 +164,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1892475000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 884,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1383919000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 922,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1669696000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 887,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1713548000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 866,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +244,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1595557000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 868,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +252,177 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1991,
+      "title": "土地活用コンサルティング会社として創業",
+      "description": "京都市中京区において、土地活用に関する総合コンサルティングを事業目的として、株式会社新都市科学研究所を設立しました。",
+      "significance": "現在のエヌジェイホールディングスの前身であり、コンサルティング会社として出発した出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "移動体通信事業に着手",
+      "description": "ディーディーアイ関西ポケット電話（現ソフトバンク）と一次代理店契約を締結し、携帯電話の販売代理店事業に着手しました。",
+      "significance": "現在のモバイル事業の起点となった事業への参入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "商号をネプロジャパンに変更",
+      "description": "事業目的を携帯電話販売代理店の運営に改め、商号を株式会社ネプロジャパンに変更しました。",
+      "significance": "携帯電話販売代理店への事業転換を明確にした出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "当社株式をジャスダック証券取引所に上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "ゲームスタジオを完全子会社化",
+      "description": "株式会社ゲームスタジオ（旧株式会社モバイル＆ゲームスタジオ）を完全子会社化し、ゲーム事業への参入を本格化させました。",
+      "significance": "現在の主力であるゲーム事業の基盤となった子会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "持株会社体制へ移行",
+      "description": "移動体通信事業を新設会社4社（ネプロモバイル関東、ネプロモバイル東海、ネプロモバイル関西、ネプロクリエイト）に新設分割し、持株会社体制へ移行しました。",
+      "significance": "現在のグループ経営体制の起点となった再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "ネプロモバイル3社の株式を売却",
+      "description": "ネプロモバイル関東、ネプロモバイル東海、ネプロモバイル関西の全株式を株式会社ラネットへ売却しました。",
+      "significance": "持株会社化の直後に携帯電話販売の地域子会社を切り離し、事業ポートフォリオを組み替えた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "トライエースを連結子会社化",
+      "description": "ゲーム開発会社の株式会社トライエースの株式を取得し、連結子会社化しました。",
+      "significance": "コンソールゲーム開発の実績を持つ開発会社を取り込み、ゲーム事業の開発力を拡充した出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "商号をエヌジェイホールディングスに変更",
+      "description": "商号を株式会社エヌジェイホールディングスに変更し、本店所在地を東京都港区へ変更しました。",
+      "significance": "現在の社名となった変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "ウィットワンを設立",
+      "description": "ゲーム運営サポート事業を行う株式会社ウィットワンを設立しました。",
+      "significance": "現在のゲーム運営・海外対応業務の中核子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "ウィットワンがISAOのゲーム運営サポート事業を取得",
+      "description": "連結子会社のウィットワンが、会社分割による事業承継により株式会社ISAOのゲーム運営サポート事業を取得しました。",
+      "significance": "運営サポート分野の規模を拡大した事業取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "決算期を6月に変更",
+      "description": "当社及び連結子会社の決算期を3月から6月へ変更しました。",
+      "significance": "現在の6月決算の体制となった変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所JASDAQ（スタンダード）からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ウィットワン沖縄を吸収合併",
+      "description": "連結子会社のウィットワンを存続会社として、ウィットワン沖縄を吸収合併しました。",
+      "significance": "ゲーム運営サポートの拠点体制を集約した期中の再編であり、期末現在の連結子会社は5社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "gungho-online-entertainment",
+      "relationship": "customer",
+      "description": "セグメント情報の主要な顧客ごとの情報に、ゲーム事業の主要な顧客として前連結会計年度・当連結会計年度のいずれも記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "nintendo",
+      "relationship": "customer",
+      "description": "セグメント情報の主要な顧客ごとの情報に、ゲーム事業の主要な顧客として前連結会計年度・当連結会計年度のいずれも記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "kddi",
+      "relationship": "business-partner",
+      "description": "連結子会社のネプロクリエイトがauショップを運営するモバイル事業の通信事業者であり、移動体通信事業では前身事業者との一次代理店契約に始まる取引関係があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +430,55 @@
       "publisher": "株式会社エヌジェイホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z2S2.pdf",
       "publishedAt": "2026-09-18",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Z2S2",
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念に「超悦」を掲げ、人と技術をつなぎ、満足を超える感動と悦びを与える商品・サービスの提供を目指しています。中長期の戦略として、ゲーム事業では企画・開発に加えて、クリエイターが開発に集中し国内外へ配信できる体制をサポートする分野へ領域を広げ、モバイル事業では店頭サポートによる安心感の訴求と来店体験の提供で店舗の収益力を高めるとともに、店舗運営で培ったノウハウと人材を活かした新たな店舗運営ビジネスの拡大機会を追求しています。中期経営計画（2025年6月期から2027年6月期まで）では、事業収益力の強化と投下資本に対する収益率の向上を中長期的な経営課題としています。",
+        "asOf": "2026-09-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2事業のポートフォリオは、受託開発・運営の基盤を持つゲーム事業と店舗網を持つモバイル事業の組み合わせです。ゲーム事業では運営サポートの海外対応業務が拡大し、モバイル事業では新規出店が寄与しており、両事業とも既存基盤の横展開で成長を図る開示内容になっています。",
+        "basis": "経営方針の中長期的な経営戦略の記載と、経営成績の分析における両事業の取組みと業績要因の記載に基づく分析。",
+        "asOf": "2026-09-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "ゲーム事業は、企画・開発を担う複数の開発子会社と、運営・海外対応を担うウィットワンを擁し、開発から運営・ローカライズまでをグループ内で担える体制を持ちます。主要な顧客には大手ゲーム会社が複数含まれており、受託実績の蓄積が強みです。",
+        "basis": "事業の内容とセグメント情報における子会社の役割分担の記載と、主要な顧客ごとの情報の記載に基づく分析。",
+        "asOf": "2026-09-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "ゲーム業界では長期運営タイトルが安定した収益を確保する一方で新規タイトルの競争が激しく、受託開発では予算規模の拡大とタイトルの厳選が進んでいます。当社は中堅の受託開発・運営グループとして、大型化する開発案件に対応できる人材とチームの組成力が問われる位置にあります。モバイル事業は端末価格の高騰と買い替え需要の一巡で市場が成熟する中、実店舗の体験価値で差別化を図る販売代理店の位置付けです。",
+        "basis": "経営方針における経営環境の記載と、会社の対処すべき課題の記載に基づく分析。",
+        "asOf": "2026-09-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",

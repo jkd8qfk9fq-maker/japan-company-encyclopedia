@@ -4,15 +4,125 @@
   "name": "松尾電機",
   "officialName": "松尾電機株式会社",
   "nameEn": "MATSUO ELECTRIC CO.,LTD.",
-  "description": null,
+  "shortNameEn": "MATSUO ELECTRIC CO.,LTD.",
+  "description": "タンタルコンデンサと、マイクロヒューズなどの回路保護素子を製造販売する電子部品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "tantalum-capacitors",
+      "name": "タンタルコンデンサ事業",
+      "description": "タンタル電解コンデンサの製造販売を行う報告セグメントです。カーエレクトロニクス向けと医療用機器向けの需要が増え、導電性高分子タンタルコンデンサの売上高も増えました。2026年3月期の外部顧客への売上高は3,171百万円です。",
+      "products": [
+        "タンタル電解コンデンサ",
+        "導電性高分子タンタルコンデンサ"
+      ],
+      "customers": [
+        "株式会社デンソー",
+        "カーエレクトロニクス分野のメーカー",
+        "医療用機器メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "circuit-protection-devices",
+      "name": "回路保護素子事業",
+      "description": "マイクロヒューズやサージアブソーバなどの回路保護素子の製造販売を行う報告セグメントです。カーエレクトロニクス向けとリチウムイオン電池向けの需要が増えました。2026年3月期の外部顧客への売上高は1,776百万円です。",
+      "products": [
+        "マイクロヒューズ",
+        "サージアブソーバ"
+      ],
+      "customers": [
+        "株式会社デンソー",
+        "カーエレクトロニクス分野のメーカー",
+        "リチウムイオン電池関連のメーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "film-capacitors",
+      "name": "その他",
+      "description": "報告セグメントに含まれない区分で、フィルムコンデンサの製造販売を行っています。2026年3月期の外部顧客への売上高は194百万円です。",
+      "products": [
+        "フィルムコンデンサ"
+      ],
+      "customers": [
+        "株式会社デンソー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "自動車や医療用機器などのメーカーにコンデンサと回路保護素子を販売し、製品の販売で収益を得る事業モデルです。",
+    "products": [
+      "タンタル電解コンデンサ",
+      "導電性高分子タンタルコンデンサ",
+      "マイクロヒューズ",
+      "サージアブソーバ",
+      "フィルムコンデンサ"
+    ],
+    "customers": [
+      "株式会社デンソー",
+      "釜屋電機株式会社",
+      "カーエレクトロニクス分野のメーカー",
+      "医療用機器メーカー",
+      "リチウムイオン電池関連のメーカー"
+    ],
+    "revenueSources": [
+      "タンタルコンデンサの販売の対価",
+      "回路保護素子の販売の対価",
+      "フィルムコンデンサの販売の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "松尾電機",
+        "description": "松尾電機は大阪府豊中市に本社を置き、福知山工場と島根工場を生産拠点としています。2026年3月31日現在の従業員数は227人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "コンデンサと回路保護素子",
+        "description": "タンタル電解コンデンサを中心とするコンデンサと、マイクロヒューズやサージアブソーバなどの回路保護素子を製造販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車・医療などのメーカーが顧客",
+        "description": "主な販売先は株式会社デンソーで、カーエレクトロニクスや医療用機器、リチウムイオン電池などの分野のメーカーに製品を提供しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は5,141百万円で、前期から13.1％増えました。内訳はタンタルコンデンサ事業が3,171百万円、回路保護素子事業が1,776百万円、その他が194百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は372百万円で、前期の449百万円から減りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +137,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1974142000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 241,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +159,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2280629000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 239,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +181,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2309357000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 229,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +203,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2759278000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 227,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +225,149 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3131576000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 227,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1949,
+      "title": "会社設立、ペーパーコンデンサの製造販売を開始",
+      "description": "会社を設立し、主としてチューブラ形ペーパーコンデンサの製造販売を開始しました。",
+      "significance": "現在の松尾電機の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "プラスチックフィルムコンデンサの製造販売を開始",
+      "description": "プラスチックフィルムコンデンサの製造販売を開始しました。",
+      "significance": "コンデンサの製品分野を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "タンタル電解コンデンサの製造販売を開始",
+      "description": "タンタル電解コンデンサの製造販売を開始しました。",
+      "significance": "現在の主力事業であるタンタルコンデンサ事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "島根工場を建設",
+      "description": "島根県平田市（現出雲市）に島根工場を建設しました。",
+      "significance": "生産拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "島根松尾電子を設立",
+      "description": "島根工場を分離独立させ、島根松尾電子株式会社を設立しました。",
+      "significance": "島根工場を別会社として運営する体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1974,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に上場しました。",
+      "significance": "株式公開の出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "福知山工場を建設",
+      "description": "京都府福知山市に福知山工場を建設しました。",
+      "significance": "現在の主要な生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "回路保護素子の製造販売を開始",
+      "description": "回路保護素子の製造販売を開始しました。",
+      "significance": "現在の第二の事業である回路保護素子事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "大阪証券取引所と東京証券取引所の市場統合に伴い、東京証券取引所市場第二部に上場しました。",
+      "significance": "取引所の統合に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "島根松尾電子を吸収合併",
+      "description": "島根松尾電子株式会社を吸収合併しました。",
+      "significance": "分離していた島根工場の運営会社を本体に戻しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "釜屋電機に第三者割当増資を実施",
+      "description": "釜屋電機株式会社を割当先とする第三者割当増資を実施しました。",
+      "significance": "釜屋電機がその他の関係会社となる資本関係の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場再編に伴い、スタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "denso",
+      "relationship": "customer",
+      "description": "主要な顧客で、2026年3月期の売上高の37.0％を占めています。タンタルコンデンサ事業、回路保護素子事業、その他のいずれの区分でも取引があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主要な顧客ごとの情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +375,40 @@
       "publisher": "松尾電機株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD97.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YD97",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 提出後の2026年4月14日に、釜屋電機株式会社を割当先とする第三者割当増資（普通株式627,000株）の払込が完了しています。登録内容は2026年3月31日現在の発行済株式総数と株主構成に基づきます。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年3月期から2027年3月期までの中期経営計画で「更なる成長の追求」をテーマに掲げ、回路保護素子事業では自動車の電子化に伴う需要の拡大に応じて車載用製品の販売網を拡大すること、タンタルコンデンサ事業では導電性高分子タンタルコンデンサの新製品開発などにより車載用と海外市場の民生用の売上高を確保することを基本方針としています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "回路保護素子事業の売上高は前期から25.5％増えて1,776百万円となり、売上高全体に占める割合も34.5％に高まりました。タンタルコンデンサ事業に次ぐ売上高の柱が育ち、事業の構成が二つの柱に近づいています。",
+        "basis": "セグメント情報に回路保護素子事業の外部顧客への売上高1,776百万円が印字され、経営者による分析に前期比25.5％増と総売上高に占める比率34.5％が印字されていること",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

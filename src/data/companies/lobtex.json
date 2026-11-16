@@ -4,15 +4,145 @@
   "name": "ロブテックス",
   "officialName": "株式会社ロブテックス",
   "nameEn": "LOBTEX CO., LTD.",
-  "description": null,
+  "shortNameEn": "LOBTEX CO., LTD.",
+  "description": "作業工具やファスナーなどの金属製品の製造販売と、ゴルフ練習場の運営を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "entertainment",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "metal-products",
+      "name": "金属製品事業",
+      "description": "作業工具・ファスニングツール・工業用ファスナー・建築用ファスナー・電設工具・切削工具等の製造販売を行う事業です。2026年3月期の外部顧客への売上高は5,467百万円で、グループの売上の大半を占めています。製品の製造は連結子会社の鳥取ロブスターツールが行い、一部の製品は連結子会社のロブテックスファスニングシステムを通じて販売しています。",
+      "products": [
+        "モンキレンチ・プライヤ類などの作業工具",
+        "ファスニングツール",
+        "工業用ファスナー・建築用ファスナー",
+        "電設工具・切削工具"
+      ],
+      "customers": [
+        "トラスコ中山株式会社や株式会社山善などの販売会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "hand-tools",
+          "name": "ハンドツール",
+          "description": "モンキレンチやプライヤ類、電設工具などの作業工具を扱う区分です。金額は独立して開示されていません。",
+          "products": [
+            "モンキレンチ",
+            "プライヤ類",
+            "電設工具",
+            "切削工具"
+          ],
+          "customers": [
+            "トラスコ中山株式会社や株式会社山善などの販売会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "fastening",
+          "name": "ファスニング",
+          "description": "ファスニングツールや工業用ファスナー、建築用ファスナーを扱う区分です。接合作業の自動化装置なども手がけています。金額は独立して開示されていません。",
+          "products": [
+            "ファスニングツール",
+            "工業用ファスナー",
+            "建築用ファスナー",
+            "リベッティング自動機"
+          ],
+          "customers": [
+            "トラスコ中山株式会社や株式会社山善などの販売会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "leisure",
+      "name": "レジャー事業",
+      "description": "ゴルフ練習場の運営を行う事業です。2026年3月期の外部顧客への売上高は243百万円です。連結子会社のロブエースが、提出会社から土地とゴルフ練習場設備を賃借して運営しています。",
+      "products": [
+        "ゴルフ練習場の運営"
+      ],
+      "customers": [
+        "ゴルフ練習場の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "モンキレンチなどの作業工具、ファスニングツールや工業用ファスナーなどの金属製品を製造して販売し、ゴルフ練習場の運営でも収益を得る事業モデルです。",
+    "products": [
+      "モンキレンチ・プライヤ類などの作業工具",
+      "ファスニングツール",
+      "工業用ファスナー・建築用ファスナー",
+      "電設工具・切削工具",
+      "ゴルフ練習場の運営"
+    ],
+    "customers": [
+      "トラスコ中山株式会社や株式会社山善などの販売会社",
+      "ゴルフ練習場の利用者"
+    ],
+    "revenueSources": [
+      "金属製品の販売による対価",
+      "ゴルフ練習場の利用料などの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "大阪府東大阪市に本社を置く金属製品メーカー",
+        "description": "ロブテックスは大阪府東大阪市に本社を置き、連結子会社3社とグループを構成しています。2026年3月31日現在の従業員数は186人で、東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "金属製品の製造販売とゴルフ練習場の運営を提供",
+        "description": "モンキレンチなどの作業工具、ファスニングツール、工業用ファスナーや建築用ファスナー、電設工具、切削工具などの金属製品の製造販売を行い、ゴルフ練習場の運営も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "販売会社と練習場の利用者が顧客",
+        "description": "金属製品の顧客は、工具やファスナーを仕入れる販売会社などで、主要な販売先としてトラスコ中山株式会社や株式会社山善があります。レジャー事業ではゴルフ練習場の利用者が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は5,711百万円です。事業別では金属製品事業が5,467百万円、レジャー事業が243百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は122百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +157,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4467139000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 191,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +177,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4750890000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 192,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +197,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5096094000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 190,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +217,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4841987000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 186,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +237,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4961758000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 186,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +245,138 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1923,
+      "title": "日本理器を設立",
+      "description": "大阪府東大阪市で日本理器株式会社を設立し、理髪器具や打刃物、利器の製造に着手しました。",
+      "significance": "会社の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1928,
+      "title": "作業工具の製造を開始",
+      "description": "ドロップフォージング（型打鍛造）により作業工具の製造を開始しました。",
+      "significance": "現在の主力である作業工具事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "大阪農工具製作所を吸収合併",
+      "description": "株式会社大阪農工具製作所を吸収合併しました。",
+      "significance": "事業規模を広げた合併です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "ロブスター販売と合併",
+      "description": "営業部門を担っていたロブスター販売株式会社と合併しました。",
+      "significance": "販売機能を自社に取り込んだ再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "鍛造工場を鳥取県へ移転し、ゴルフ練習場事業を開始",
+      "description": "鍛造工場を鳥取県西伯郡大山町に移転し、鳥取ロブスターツールに鍛造品の製造業務を移管しました。同じ年に、鍛造工場跡地で子会社のロブエースがゴルフ練習場事業を開始しました。",
+      "significance": "生産の移管とレジャー事業の開始が重なった転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "ロブテックスに商号変更",
+      "description": "商号を株式会社ロブテックスに変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "本社工場をファブレス工場に転換",
+      "description": "本社工場の生産部門を鳥取ロブスターツールに全面移管し、本社工場を開発と品質保証に特化したファブレス工場に転換しました。",
+      "significance": "生産を子会社に集約した体制変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所と大阪証券取引所の統合に伴い、東京証券取引所市場第二部に上場しました。",
+      "significance": "市場の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ロブテックスファスニングシステムを完全子会社化",
+      "description": "連結子会社の株式会社ロブテックスファスニングシステムを完全子会社化しました。",
+      "significance": "ファスニング分野のグループ体制を固めた資本政策です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "trusco-nakayama",
+      "relationship": "customer",
+      "description": "金属製品事業の主要な販売先です。セグメント情報の主要な顧客ごとの情報に、2025年3月期と2026年3月期のいずれも金属製品事業の販売先として印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "yamazen",
+      "relationship": "customer",
+      "description": "金属製品事業の主要な販売先です。セグメント情報の主要な顧客ごとの情報に、2025年3月期と2026年3月期のいずれも金属製品事業の販売先として印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +384,58 @@
       "publisher": "株式会社ロブテックス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGO7.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YGO7",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 主要な経営指標等の推移の注記に、2023年１月１日付で普通株式１株につき２株の割合で株式分割を行った旨が記載されています。自社の株式分割の取扱いには人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営ビジョン「モノづくりのプロに応え、モノづくりの愉しさを育む」の発信と浸透を進め、経営課題である「業務の整流化を徹底し、利益体質の強化を図る」ことに取り組んでいます。新規開発事業部、ハンドツール事業部、ファスニング事業部の3事業部で事業収支の改善を徹底するとしています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      },
+      "analysis": {
+        "text": "3つの事業部ごとに収支改善を進め、生産拠点である鳥取ロブスターツールとの連携や、ファスニング分野で需要が増えている接合作業の自動化装置の伸長を図る方針が読み取れます。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、3事業部での事業収支改善の徹底、鳥取ロブスターツールとの連携による収益力の強化、リベッティングの自動機やシステム物件の案件増加が印字されていることによる。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1929年から使い続けるロブスターブランドの長い歴史と、製造を担う子会社を持つグループ体制が特徴です。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、モンキレンチに1929年（昭和4年）より使用し始めた「ロブスターブランド」は100年近くもの歴史を持つ強みであると印字され、【事業の内容】に製造子会社の鳥取ロブスターツールより製品を仕入れる体制が印字されていることによる。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上の大半を金属製品事業が占め、販売はトラスコ中山や山善などの大手の販売会社を通じて行う構造です。",
+        "basis": "【セグメント情報等】に、金属製品事業の外部顧客への売上高5,467百万円（連結売上高5,711百万円）と、主要な顧客としてトラスコ中山株式会社と株式会社山善が印字されていることによる。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

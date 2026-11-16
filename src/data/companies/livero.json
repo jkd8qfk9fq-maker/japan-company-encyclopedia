@@ -4,15 +4,129 @@
   "name": "リベロ",
   "officialName": "株式会社リベロ",
   "nameEn": "Livero Inc.",
-  "description": null,
+  "shortNameEn": "Livero Inc.",
+  "description": "転居する個人と法人企業・不動産会社・引越会社をつなぎ、部屋探しから引越しやライフラインの手配までを支える新生活サービスプラットフォームを運営する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "グロース"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "real-estate",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "relocation-support",
+      "name": "移転者サポート事業",
+      "description": "お部屋探しやお引越しの手配、でんき・ガス・水道・インターネット等のライフラインの取り次ぎ、転勤業務のサポートや社宅制度の導入支援など、新生活に関わる手続きを「新生活サービスプラットフォーム」を通じて支える単一セグメントの事業です。2025年12月期の売上高は4,364百万円でした。",
+      "customers": [
+        "転居する個人",
+        "法人企業の総務人事担当者",
+        "不動産会社",
+        "引越事業者"
+      ],
+      "children": [
+        {
+          "id": "for-real-estate",
+          "name": "不動産会社向けサービス",
+          "description": "賃貸物件を仲介する不動産会社が依頼者となり、物件を契約した転居者に対して引越しの相見積りやライフライン契約のサポートを行う「新生活ラクっとNAVI」です。2025年12月期の販売実績は2,160百万円で、2025年12月31日現在の登録不動産事業者等は1,491社です。",
+          "customers": [
+            "不動産会社",
+            "賃貸物件を契約して転居する個人"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "for-corporate",
+          "name": "法人企業向けサービス",
+          "description": "転勤者の部屋探しや引越し、社宅管理を法人企業に代わって支えるクラウドサービス「社宅ラクっとNAVI」です。社宅管理をアウトソースする「ワンコイン転勤社宅」、福利厚生として社宅制度を導入する「ベネフィット社宅」、家賃割引の転貸サービス「ヘヤワリ」などを含みます。2025年12月期の販売実績は1,877百万円で、2025年12月31日現在の登録法人企業等は4,016社です。",
+          "customers": [
+            "法人企業の総務人事担当者",
+            "転勤する従業員"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "for-movers",
+          "name": "引越会社向けサービス",
+          "description": "引越事業者同士の案件や空きトラック、人材のマッチングを行うプラットフォーム「HAKOPLA（ハコプラ）」と、個人向けの「引越しラクっとNAVI」です。引越専用業務基幹システム「HAKO-Tec」や段ボール広告「HAKO-Ad」も提供しています。2025年12月期の販売実績は325百万円で、2025年12月31日現在の参加引越事業者は158社、案件マッチング数は64,946件です。",
+          "customers": [
+            "引越事業者",
+            "転居する個人"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "不動産会社や法人企業からの依頼を受けて転居者へ引越しやライフラインの取次ぎを行い、取次ぎや成約に対する報酬、社宅管理の受託料などを受け取る事業モデルです。",
+    "products": [
+      "新生活ラクっとNAVI（不動産会社向けサービス）",
+      "社宅ラクっとNAVI（法人企業向けサービス）",
+      "HAKOPLA（引越会社向けプラットフォーム）",
+      "引越しラクっとNAVI（個人向けサービス）"
+    ],
+    "customers": [
+      "賃貸物件を契約して転居する個人",
+      "転勤や社宅を管理する法人企業の総務人事担当者",
+      "賃貸物件を仲介する不動産会社",
+      "引越事業者"
+    ],
+    "revenueSources": [
+      "引越事業者やライフライン事業者への取次ぎや成約に対する報酬",
+      "社宅管理のアウトソーシング受託料",
+      "賃貸住宅の転貸による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京都港区に本社を置く移転者サポートの会社",
+        "description": "リベロは東京都港区に本社を置き、2025年12月31日現在の従業員数は147人で、連結子会社2社とともに移転者サポート事業を営んでいます。"
+      },
+      {
+        "kind": "offering",
+        "title": "新生活サービスプラットフォームの提供",
+        "description": "部屋探し、引越し、でんき・ガス・インターネット回線などのライフラインの手配をワンストップで支える「新生活ラクっとNAVI」「社宅ラクっとNAVI」と、引越事業者同士を結ぶ「HAKOPLA」を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "不動産会社・法人企業・引越会社と転居者",
+        "description": "2025年12月31日現在、不動産事業者等1,491社と法人企業等4,016社が登録しており、転居する個人や転勤者がプラットフォームを通じてサービスを利用しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "取次ぎ報酬と社宅管理の受託料が収益源",
+        "description": "2025年12月期の売上高は4,364百万円で、不動産会社向けサービスが2,160百万円、法人企業向けサービスが1,877百万円、引越会社向けサービスが325百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は531百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +141,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1835865000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 107,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +161,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1892517000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 135,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第14期の期首から適用しており、第14期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1894432000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 141,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +202,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2251333000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 153,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +222,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2658990000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 147,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +230,224 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2009,
+      "title": "株式会社インクストゥエンターの子会社として設立",
+      "description": "東京都世田谷区に、株式会社インクストゥエンターの子会社として設立されました。",
+      "significance": "現在の事業の母体となる会社が、親会社の子会社として出発した起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "移転者サポート事業の事業譲渡を受ける",
+      "description": "親会社の株式会社インクストゥエンターから、移転者サポート事業の事業譲渡を受けました。",
+      "significance": "設立直後に事業そのものを引き継ぎ、移転者サポートを自社の事業とした出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "株式譲渡により親会社から独立",
+      "description": "親会社から当時の経営陣への株式譲渡により、株式会社インクストゥエンターから独立しました。",
+      "significance": "資本的に独立し、自社の判断で事業を展開する体制になった転機です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "法人向けサービス「転勤ラクっとNAVI」を開始",
+      "description": "法人企業の転勤業務を支援する「転勤ラクっとNAVI」のサービスを開始しました。",
+      "significance": "現在の法人企業向けサービス「社宅ラクっとNAVI」の原型が始まった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "個人向けサービス「引越しラクっとNAVI」を開始",
+      "description": "個人の転居を支援する「引越しラクっとNAVI」のサービスを開始しました。",
+      "significance": "法人向けに加えて個人向けの支援が始まり、利用者の幅が広がった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "株式会社リベロビジネスサポートを設立",
+      "description": "東京都渋谷区に、100％子会社として株式会社リベロビジネスサポートを設立しました。",
+      "significance": "業務を担う子会社を持つグループ体制になった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "引越しプラットフォーム「HAKOPLA」を開始",
+      "description": "引越事業者同士のマッチングを行う引越しプラットフォーム「HAKOPLA（ハコプラ）」を開始しました。",
+      "significance": "引越会社向けサービスの中核となるプラットフォームが始まった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "社宅管理サービス「ワンコイン転貸」を開始",
+      "description": "社宅管理サービス「ワンコイン転貸」を開始しました。",
+      "significance": "現在の「ワンコイン転勤社宅」につながる社宅管理のアウトソーシングが始まった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "クラウド賃貸契約サービス「ヘヤワリ」を開始",
+      "description": "入居者の家賃が割引になるクラウド賃貸契約サービス「ヘヤワリ」を開始しました。",
+      "significance": "同社が借主となって物件を借り、入居者へ転貸する仕組みを取り入れた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズ市場に株式を上場しました。",
+      "significance": "上場会社となり、開示を通じて事業を広く知られる段階に入った出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、グロース市場へ移行しました。",
+      "significance": "市場の再編に伴う移行で、現在の上場市場となった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "「ベネフィット社宅」を開始し、サービス名称を変更",
+      "description": "転勤や社宅制度がない企業でも利用できる「ベネフィット社宅」のサービスを開始し、あわせて「転勤ラクっとNAVI」から「社宅ラクっとNAVI」へサービス名称を変更しました。",
+      "significance": "法人企業向けサービスの対象が広がり、現在のサービス名にそろった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社TANTを設立",
+      "description": "東京都港区に、100％子会社として株式会社TANTを設立しました。",
+      "significance": "SNSのネットワークを活用したPR支援を行う子会社が加わった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "「外国人就労支援」を開始",
+      "description": "日本企業に向けて、外国人材の雇用の全面サポートを行う「外国人就労支援」を開始しました。",
+      "significance": "人材不足という社会課題に対応する新しい支援領域へ広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "last-one-mile",
+      "relationship": "customer",
+      "description": "セグメント情報等の主要な顧客ごとの情報に、2024年12月期と2025年12月期のいずれも主要な顧客として記載されている取引先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "softbank",
+      "relationship": "customer",
+      "description": "セグメント情報等の主要な顧客ごとの情報に、2024年12月期と2025年12月期のいずれも主要な顧客として記載されている取引先です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
-      "title": "有価証券報告書－第17期(2025/01/01－2025/12/31)",
+      "title": "訂正有価証券報告書－第17期(2025/01/01－2025/12/31)",
       "publisher": "株式会社リベロ",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XS3W.pdf",
-      "publishedAt": "2026-03-23",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YB2Z.pdf",
+      "publishedAt": "2026-06-12",
+      "docId": "S100YB2Z",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念「困った困ったを、良かった良かったに。」のもと、新生活サービスプラットフォームの構築と提供を通じて、部屋探し、引越し、ライフラインの手配や社宅管理をワンストップで提供し、新生活を迎える方、送り出す方、サービスを提供する方の課題解決と社会課題の解決を併せて目指すとしています。",
+        "asOf": "2026-06-12",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "人材不足への対応として外国人就労支援を開始したほか、生成AIやデータ活用による既存サービスの利便性向上と、CTO職の新設による技術基盤の強化を進めています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等に記載された中長期的な経営戦略の内容に基づきます。",
+        "asOf": "2026-06-12",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "不動産事業者等1,491社、法人企業等4,016社の登録基盤と、引越事業者158社が参加するHAKOPLAのマッチング基盤を併せ持ち、サービス依頼者・利用者・提供者の三者をつないでいる点が特徴です。",
+        "basis": "事業の内容と経営成績等の分析に記載された、2025年12月31日現在の登録数・参加事業者数に基づきます。",
+        "asOf": "2026-06-12",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年12月期の主要サービスのサポート件数は、新生活ラクっとNAVIが527,687件、社宅ラクっとNAVIが50,939件と開示されています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等に記載された主要サービスのサポート件数に基づきます。",
+        "asOf": "2026-06-12",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

@@ -4,15 +4,176 @@
   "name": "櫻島埠頭",
   "officialName": "櫻島埠頭株式会社",
   "nameEn": "SAKURAJIMA　FUTO　KAISHA,LTD.",
-  "description": null,
+  "shortNameEn": "SAKURAJIMA FUTO KAISHA,LTD.",
+  "description": "大阪港北部で原燃料などのばら貨物や液体化学品の荷役・保管を担い、倉庫事業も営む港湾物流の会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "bulk-cargo",
+      "name": "ばら貨物",
+      "description": "石炭・コークス・塩等の原燃料ばら貨物を中心に、大型荷役機械と各種専用倉庫・野積場を備え、受入から保管、需要家への納入までを一貫輸送体制で処理する部門です。連結子会社の浪花建設運輸が、当社が受注した輸入原材料の陸上運送を担っています。2026年3月期の外部顧客への売上高は2,312百万円でした。",
+      "customers": [
+        "石炭等の原燃料の荷主企業",
+        "電力会社などの原燃料の需要家"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "liquid-cargo",
+      "name": "液体貨物",
+      "description": "小型から大型まで約13万キロリットルの容量のタンクと、大型タンカーが接岸可能な岸壁を有し、液体化学品や石油系燃料等の入庫から出庫までの中継業務を行う部門です。2026年3月期の外部顧客への売上高は1,386百万円でした。",
+      "customers": [
+        "液体化学品の荷主企業",
+        "石油系燃料の荷主企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "logistics-warehouse",
+      "name": "物流倉庫",
+      "description": "危険物の保管・受払業務を行う化学品センターと、特定顧客と提携している冷蔵倉庫、低温物流倉庫及び食材流通加工施設からなる部門です。2026年3月期の外部顧客への売上高は541百万円でした。",
+      "customers": [
+        "化学品の荷主企業",
+        "冷凍食品等の荷主企業"
+      ],
+      "children": [
+        {
+          "id": "chemical-center",
+          "name": "化学品センター",
+          "description": "危険物の保管・受払業務を行う施設です。",
+          "customers": [
+            "化学品の荷主企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "refrigerated-warehouse",
+          "name": "冷蔵倉庫",
+          "description": "特定顧客と提携している冷蔵倉庫です。",
+          "customers": [
+            "冷凍食品等の荷主企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "low-temperature-warehouse",
+          "name": "低温物流倉庫",
+          "description": "特定顧客と提携している低温物流倉庫です。",
+          "customers": [
+            "食品等の荷主企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "food-processing-facility",
+          "name": "食材流通加工施設",
+          "description": "特定顧客と提携している食材の流通加工施設です。",
+          "customers": [
+            "食品等の荷主企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-solar",
+      "name": "その他",
+      "description": "太陽光発電による売電事業です。報告セグメントに含まれない区分であり、2026年3月期の外部顧客への売上高は20百万円でした。",
+      "customers": [
+        "電力会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "石炭・コークス・塩などのばら貨物と液体化学品・石油系燃料の荷役・保管を中核に、危険物や冷凍食品を扱う物流倉庫と太陽光発電による売電を行う事業モデルです。",
+    "products": [
+      "ばら貨物（石炭・コークス・塩等の原燃料）の荷役・保管・輸送",
+      "液体貨物（液体化学品・石油系燃料）のタンク保管と入出庫",
+      "化学品センターでの危険物の保管・受払",
+      "冷蔵倉庫・低温物流倉庫での保管",
+      "食材流通加工施設",
+      "太陽光発電による売電"
+    ],
+    "customers": [
+      "輸入原燃料の荷主企業",
+      "化学工業製品の荷主企業",
+      "冷凍食品等の荷主企業"
+    ],
+    "revenueSources": [
+      "港湾運送・荷役の役務の対価",
+      "タンク・倉庫の保管の対価",
+      "陸上運送の対価",
+      "太陽光発電の売電収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "大阪港北部の海陸の中継基地",
+        "description": "櫻島埠頭は大阪市此花区に本社を置き、連結子会社１社（浪花建設運輸）とともに、大阪港北部・大阪湾ベイエリアで事業を行っています。2026年3月31日現在の従業員数は89人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "貨物の受入から納入までを一貫して処理",
+        "description": "大型荷役機械と専用倉庫・野積場、約13万キロリットルのタンクなどを備え、ばら貨物や液体貨物の受入から保管、需要家への納入までの物流業務を一貫輸送体制で処理します。危険物や冷凍食品などを扱う物流倉庫も運営しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "京阪神を背後地とする荷主企業が顧客",
+        "description": "主な顧客は、輸入原燃料、化学工業製品、冷凍食品などの荷主である各種企業です。セグメント情報の関連情報では、ばら貨物セグメントの主要な顧客として電源開発が記載されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "3つの報告セグメントと売電で収益を得る",
+        "description": "2026年3月期の売上高は4,260百万円で、内訳はばら貨物2,312百万円、液体貨物1,386百万円、物流倉庫541百万円、その他（太陽光発電による売電）20百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益290百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は290百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4627618000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 93,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +208,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4968203000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 95,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +228,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6265411000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 95,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +248,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6970614000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 93,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +268,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8073448000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 89,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +276,149 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1948,
+      "title": "旧三井物産の埠頭施設を継承して櫻島埠頭株式会社を設立",
+      "description": "戦後の集中排除令により旧三井物産が解体されたことに伴い、同社の埠頭施設一切を継承し、櫻島埠頭株式会社を設立しました。本社は大阪市北区中之島の三井不動産ビル内に置かれました。",
+      "significance": "会社の創業であり、現在の港湾物流事業の基盤となる埠頭施設を引き継いだ起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "大阪証券取引所に上場",
+      "description": "大阪証券取引所に株式を上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "港湾運送事業法の施行により各種の登録を受ける",
+      "description": "港湾運送事業法の施行により、一般港湾運送事業、船内荷役事業、はしけ運送事業、沿岸荷役事業の登録を受けました。",
+      "significance": "港湾運送事業の法的な基盤が整った出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "本社を大阪市此花区の現在地に移転",
+      "description": "本社を大阪市此花区（現在地）に移転しました。",
+      "significance": "現在の本社所在地への移転であり、大阪港北部での事業展開の拠点が定まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "石油化学品タンクを建設し油槽所業務を開始",
+      "description": "石油化学品タンクを建設し、石油化学品類の油槽所業務を開始しました。",
+      "significance": "現在の液体貨物セグメントにつながる液体貨物の取扱いの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "第１タンクターミナルに重油タンクを建設",
+      "description": "第１タンクターミナルに重油タンクを建設し、重油類の油槽所業務を開始しました。",
+      "significance": "液体貨物の取扱いが石油系燃料にも広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "塩倉庫を新設し倉庫業の許可を受ける",
+      "description": "塩倉庫を新設し、倉庫業の許可を受けました。",
+      "significance": "現在の倉庫事業の起点となる許可の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "ペイント物流倉庫を新設（現在の化学品センター）",
+      "description": "ペイント物流倉庫を新設しました。現在の化学品センターにあたります。",
+      "significance": "現在の物流倉庫セグメントの化学品センターの前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "低温物流倉庫を新設",
+      "description": "低温物流倉庫を新設しました。",
+      "significance": "物流倉庫セグメントの低温保管の体制が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "冷蔵倉庫を新設",
+      "description": "冷蔵倉庫を新設しました。",
+      "significance": "物流倉庫セグメントの冷蔵保管の体制が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "食材流通加工施設を新設",
+      "description": "食材流通加工施設を新設しました。",
+      "significance": "物流倉庫セグメントに食材の流通加工の機能が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "太陽光発電による売電事業を開始",
+      "description": "太陽光発電による売電事業を開始しました。",
+      "significance": "報告セグメントに含まれない「その他」の事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "浪花建設運輸の全株式を取得し連結子会社化",
+      "description": "浪花建設運輸株式会社の発行済株式の全てを取得し、連結子会社化しました。",
+      "significance": "現在のグループ構成（連結子会社１社）が成立し、ばら貨物の陸上運送を担う体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "electric-power-development",
+      "relationship": "customer",
+      "description": "セグメント情報の関連情報（主要な顧客ごとの情報）に、ばら貨物セグメントの主要な顧客として記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +426,55 @@
       "publisher": "櫻島埠頭株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDSZ.pdf",
       "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YDSZ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "次世代に残せる事業構造への転換とサステナビリティ経営の推進を最重要課題とし、Visionのもとで第４次中期経営計画（2024年度～2026年度）「産業構造の変化に対応する次世代ビジネスへのStep2」を実践しています。基本方針は、中長期的視点に立った事業ポートフォリオの継続的改善と必要な投資の検討・実施、それを可能にする資本・財務政策の実施、サステナビリティ経営の一層の推進です。ばら貨物では汎用性の高いばら貨物倉庫の新設に着手し2026年度中の完工に向けて工事を進めており、液体貨物では石炭の需要縮小を見据えて野積場用地に石油化学品向けのステンレスタンクの新設を検討しています。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "戦略の軸は、石炭など従来の取扱貨物の需要変化に対応して、ばら貨物では汎用性の高い倉庫への投資で新規貨物の誘致を図り、液体貨物では石油化学品向けタンクへの転換を進めるなど、貨物構成の変化に合わせて設備と用地の使い方を組み替えていくことです。",
+        "basis": "経営方針の記載（中期経営計画の基本方針と両セグメントの進捗）に基づく",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、大阪港北部にあって内外の主要航路と内陸部への幹線道路網で結ばれ、京阪神の一大生産・消費地帯を背後に持つ立地と、高性能を誇る大型荷役機械、各種専用倉庫、約13万キロリットルのタンクと大型タンカーが接岸可能な岸壁といった設備を一体で備え、受入から保管、需要家納入までを一貫輸送体制で処理できることです。",
+        "basis": "事業の内容の記載（立地条件、荷役機械・専用倉庫・タンクの設備、一貫輸送体制）に基づく",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "大阪湾ベイエリアにおける海陸の中継基地として、エネルギー源・原材料等の地場産業の基幹物資を取り扱う位置づけにあります。取扱貨物は輸入原燃料、化学工業製品、冷凍食品など多種に及び、ばら貨物・液体貨物・物流倉庫の3つの報告セグメントで事業を行っています。",
+        "basis": "事業の内容及びサステナビリティ基本方針の記載（海陸の中継基地、地場産業基幹物資の取扱い、セグメント構成）に基づく",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

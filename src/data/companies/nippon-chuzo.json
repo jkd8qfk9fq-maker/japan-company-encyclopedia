@@ -4,15 +4,126 @@
   "name": "日本鋳造",
   "officialName": "日本鋳造株式会社",
   "nameEn": "NIPPON CHUZO K. K.",
-  "description": null,
+  "shortNameEn": "NIPPON CHUZO K. K.",
+  "description": "鋳鋼品・鋳鉄品と橋梁用支承などの鋼構造品を製造・販売する、1920年創立の鋳造メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "casting",
+      "name": "鋳造関連事業",
+      "description": "鋳鋼品・鋳鉄品と、橋梁用支承などの鋼構造品・景観加工品を製造・販売する単一セグメントの事業です。2026年3月期の売上高は12,290百万円でした。",
+      "customers": [
+        "鉄鋼メーカーや建設機械メーカーなどの製造業",
+        "橋梁・道路などのインフラ分野の事業者"
+      ],
+      "children": [
+        {
+          "id": "cast-steel-iron",
+          "name": "鋳鋼品・鋳鉄品",
+          "description": "製鋼用鋳型や鋳鋼ロール、建機部品などの鋳鋼品・鋳鉄品です。2026年3月期の外部顧客への売上高は6,763百万円でした。",
+          "customers": [
+            "鉄鋼メーカー",
+            "建設機械メーカー",
+            "半導体製造装置メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        },
+        {
+          "id": "steel-structure-landscape",
+          "name": "鋼構造品・景観加工品",
+          "description": "橋梁用支承や伸縮装置、建築物用柱脚などの鋼構造品と景観加工品です。2026年3月期の外部顧客への売上高は5,286百万円でした。",
+          "customers": [
+            "建設会社",
+            "道路事業者などのインフラ事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        },
+        {
+          "id": "other-products",
+          "name": "その他",
+          "description": "鋳鋼品・鋳鉄品と鋼構造品・景観加工品以外の製品・サービスです。2026年3月期の外部顧客への売上高は241百万円でした。",
+          "customers": [
+            "製造業やインフラ分野の事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等、財務諸表】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社の工場で鋳鋼品・鋳鉄品や橋梁用支承などの鋼構造品を製造し、鉄鋼メーカーや建設・インフラ事業者へ販売して売上を得る事業モデルです。",
+    "products": [
+      "鋳鋼品（製鋼用鋳型、鋳鋼ロール、半導体製造装置向け鋳鋼品など）",
+      "鋳鉄品（連続鋳造方式による鋳鉄素材など）",
+      "鋼構造品（橋梁用支承、伸縮装置、建築物用柱脚など）",
+      "景観加工品"
+    ],
+    "customers": [
+      "JFEスチール株式会社",
+      "日立建機株式会社",
+      "鉄鋼メーカー・建設機械メーカー",
+      "建設会社・道路事業者などのインフラ事業者"
+    ],
+    "revenueSources": [
+      "鋳鋼品・鋳鉄品の販売",
+      "鋼構造品・景観加工品の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "1920年創立の鋳造メーカー",
+        "description": "日本鋳造は1920年に初代浅野総一郎により創立され、神奈川県川崎市の本社川崎工場と広島県福山市の福山製造所を拠点に鋳造品を製造しています。連結財務諸表は作成しておらず、2026年3月31日現在の従業員数は285人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "鋳鋼品・鋳鉄品と鋼構造品・景観加工品を製造する",
+        "description": "製鋼用鋳型や鋳鋼ロールなどの鋳鋼品・鋳鉄品と、橋梁用支承や伸縮装置などの鋼構造品・景観加工品を製造・販売しています。CO2排出ゼロの鋳鋼品「グリーンキャスティングス®」の販売も開始しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "鉄鋼・建設機械メーカーやインフラ事業者が顧客になる",
+        "description": "顧客は鉄鋼メーカーや建設機械メーカー、橋梁・道路などのインフラ事業者です。2026年3月31日現在、JFEスチールは当社の議決権の36.2％を所有するその他の関係会社で、重要な販売先であるとともに、銑鉄や鋼屑などの原材料の仕入先でもあります。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は12,290百万円",
+        "description": "2026年3月期の売上高は12,290百万円で、前期比8.8％の減少でした。半導体製造装置向け鋳鋼品の販売が上期で低調だったことなどが減収の理由です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の当期純利益は154百万円",
+        "description": "2026年3月期の当期純利益は154百万円で、前期比19.8％の減少でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +138,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11153000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 269,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -49,7 +160,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11201000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 272,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -71,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11688000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 290,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -93,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11650000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 290,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -115,18 +226,179 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11685000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 285,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2025年7月1日付で連結子会社であった株式会社ダットを吸収合併したため、当期より連結財務諸表を作成しておらず、主要な経営指標等は単体の数値となっております。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1920,
+      "title": "日本鋳造株式会社として創立",
+      "description": "初代浅野総一郎により日本鋳造株式会社の商号をもって創立され、横浜市鶴見区において造船向けを主とした鋳造品の製造、販売を開始しました。",
+      "significance": "現在の当社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "新日本鋳造株式会社を設立",
+      "description": "企業再建整備法に基づき日本鋳造株式会社より分離し、新日本鋳造株式会社を設立しました。",
+      "significance": "戦後の再出発となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "商号を日本鋳造株式会社に改称",
+      "description": "商号を日本鋳造株式会社に改称しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "鋳鋼ロールの製造を開始",
+      "description": "日本鋼管株式会社よりロールの生産に関する業務を継承し、鋳鋼ロールの製造を開始しました。",
+      "significance": "鋳鋼品の主力分野の一つにつながる事業の継承です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "高炉溶銑直接鋳造方式による製鋼用鋳型の製造を開始",
+      "description": "池上工場を新設し、高炉溶銑直接鋳造方式による製鋼用鋳型の製造を開始しました。",
+      "significance": "製鋼用鋳型が主力製品の一つとなる契機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "橋梁用強化支承の製造を開始",
+      "description": "橋梁用強化支承の製造を開始しました。",
+      "significance": "現在のエンジニアリング分野（支承）の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "福山工場を新設",
+      "description": "福山工場を新設し、高炉溶銑直接鋳造方式による製鋼用鋳型の製造を開始しました。",
+      "significance": "現在の福山製造所につながる生産拠点の新設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "連続鋳造方式による鋳鉄素材の製造を開始",
+      "description": "池上工場に水平連続鋳造設備を新設し、連続鋳造方式による鋳鉄素材（商品名マイティバー）の製造を開始しました。",
+      "significance": "鋳鉄品の製造方式の基盤となった設備投資です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "新東北メタルの株式の一部を日立建機へ譲渡",
+      "description": "新東北メタル株式会社の株式の一部（51％）を日立建機株式会社へ譲渡し、持分法適用関連会社としました。",
+      "significance": "日立建機との資本関係が始まる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "日立建機株式会社と資本業務提携",
+      "description": "日立建機株式会社との資本業務提携を決議し、同社を割当先とする第三者割当による新株式の発行を受けました。",
+      "significance": "日立建機はその後も主要株主であり続けています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "新東北メタルの全株式を日立建機へ譲渡",
+      "description": "保有する新東北メタル株式会社の全株式（49％）を日立建機株式会社へ譲渡しました。",
+      "significance": "新東北メタルが持分法適用関連会社から外れました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "池上地区の操業を終了",
+      "description": "池上地区の操業を終了しました。",
+      "significance": "生産体制の集約につながる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "jfe-holdings",
+      "relationship": "other-affiliated-company",
+      "description": "完全子会社であるJFEスチール株式会社を通じて当社の議決権の36.2％を間接所有する、その他の関係会社です（2026年3月31日現在）。当社はJFEスチールへ製品を販売し、銑鉄や鋼屑などの原材料を仕入れています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "hitachi-construction-machinery",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式の14.91％を保有する主要株主です。2012年に資本業務提携を締結しており、当社は同社へ製品を販売しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +406,50 @@
       "publisher": "日本鋳造株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGG5.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YGG5",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: [object Object]"
+    ]
   },
-  "updatedAt": "2026-10-02",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "半導体製造装置向け鋳鋼品の増産への対応と半導体・エネルギー分野への取り組み強化、大型金属3Dプリンターの活用やDXを含めた生産性改善、鋼製支承・ゴム支承・伸縮装置などの拡販と保全分野への展開、清本鉄工株式会社および株式会社川金ホールディングスとの協業の推進に取り組む方針です。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "高炉の溶銑を直接使う鋳造方式や水平連続鋳造による鋳鉄素材など、長年培った鋳造技術と、CO2排出ゼロの鋳鋼品のような環境対応製品が強みです。",
+        "basis": "沿革に、1962年に高炉溶銑直接鋳造方式による製鋼用鋳型の製造を開始したことと、1968年に水平連続鋳造設備を新設し鋳鉄素材の製造を開始したことが印字され、サステナビリティに関する取組にCO2排出ゼロの鋳鋼品（グリーンキャスティングス®）の販売を開始したことが印字されているため。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "JFEスチールが議決権の36.2％を所有するJFEグループの鋳造メーカーで、1920年の創立以来、製鋼用鋳型や橋梁用支承などの分野で事業を続けています。",
+        "basis": "事業の内容に、JFEスチールが当社の議決権36.2％を所有し、その他の関係会社にあたることが印字され、沿革に1920年の創立と製鋼用鋳型・橋梁用支承の製造開始が印字されているため。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
