@@ -4,15 +4,156 @@
   "name": "サンリン",
   "officialName": "サンリン株式会社",
   "nameEn": "SANRIN CO.,LTD.",
-  "description": null,
+  "shortNameEn": "SANRIN CO.,LTD.",
+  "description": "長野県を地盤にＬＰガス・石油類の販売を中心とし、製氷・青果・不動産なども手がける地域密着型の生活関連商社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "energy",
+      "primary": true
+    },
+    {
+      "industryId": "food"
+    },
+    {
+      "industryId": "real-estate"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "sanrin",
+      "name": "サンリン株式会社",
+      "description": "長野県東筑摩郡山形村に本社を置き、ＬＰガス・石油類の販売を中心に、製氷、青果、不動産などの事業を行うグループです。当社と子会社7社、関連会社2社で構成され、2026年3月期の連結従業員数は552人です。東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "energy",
+          "name": "エネルギー関連事業",
+          "description": "ＬＰガス、石油類、住宅機器類等、一般高圧ガス、煉炭・豆炭の販売、太陽光発電による売電、損害保険代理店などを行う主力事業です。当社のほか、関連会社の新潟サンリン株式会社と軽井沢ガス株式会社がＬＰガス・石油類・住宅機器類等の仕入・販売を行い、子会社の安曇野ＲＥ株式会社がＰＰＡ事業等を行っています。ＬＰガスのバルク供給を早くから実施してきました。2026年3月期の外部顧客への売上高は26,035百万円です。",
+          "customers": [
+            "ＬＰガス・石油類の需要家（家庭・事業者）",
+            "住宅機器・リフォームの顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026",
+            "wikipedia"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "produce",
+          "name": "青果事業",
+          "description": "子会社の株式会社一実屋が青果の仕入・販売を、株式会社えのきボーヤが青果の生産・販売を行っています。2026年3月期の外部顧客への売上高は3,424百万円です。",
+          "customers": [
+            "青果の販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ice",
+          "name": "製氷事業",
+          "description": "子会社のサンリンＩ＆Ｆ株式会社が氷の製造・販売を行っています。2026年3月期の外部顧客への売上高は377百万円です。",
+          "customers": [
+            "氷の需要家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-estate",
+          "name": "不動産事業",
+          "description": "子会社のサンエネック株式会社が不動産の仕入・販売を行っています。2026年3月期の外部顧客への売上高は158百万円です。",
+          "customers": [
+            "不動産の購入者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other",
+          "name": "その他",
+          "description": "報告セグメントに含まれない事業で、子会社の三鱗運送株式会社が行う運送事業、ウロコ興業株式会社が行う建設事業、サンエネック株式会社が行うＬＰガス関連機器の管理・賃貸などを含んでいます。2026年3月期の外部顧客への売上高は533百万円です。",
+          "customers": [
+            "当社グループ各社",
+            "一般顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "ＬＰガスや石油類、住宅機器、電力などを長野県・新潟県の家庭や事業者に販売し、子会社で製氷、青果、不動産などの事業も行って収益を得ています。",
+    "products": [
+      "ＬＰガス",
+      "石油類",
+      "住宅機器・リフォーム",
+      "一般高圧ガス",
+      "煉炭・豆炭",
+      "電力",
+      "氷",
+      "青果",
+      "不動産"
+    ],
+    "customers": [
+      "ＬＰガス・石油類の需要家（家庭・事業者）",
+      "住宅機器・リフォームの顧客",
+      "青果・氷の販売先"
+    ],
+    "revenueSources": [
+      "ＬＰガス・石油類などエネルギー商品の販売代金",
+      "住宅機器の販売・リフォーム工事の収入",
+      "製氷・青果・不動産事業の売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "サンリングループ",
+        "description": "当社と子会社7社、関連会社2社で構成されるグループです。2026年3月期の連結従業員数は552人で、本社は長野県東筑摩郡山形村にあります。"
+      },
+      {
+        "kind": "offering",
+        "title": "エネルギー関連商品と生活関連事業",
+        "description": "ＬＰガス、石油類、住宅機器類、一般高圧ガス、煉炭・豆炭、電力などを販売するほか、太陽光発電による売電を行い、子会社が製氷、青果、不動産の事業を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域の需要家と事業者",
+        "description": "主な顧客は長野県・新潟県の家庭や事業者などの需要家です。2026年3月期に売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の連結売上高は30,529百万円で、青果事業は増収となったものの、エネルギー関連事業でＬＰガス及び石油類が減収となり、前期比1.0％減となりました。事業別の外部顧客への売上高は、エネルギー関連事業が26,035百万円、青果事業が3,424百万円、製氷事業が377百万円、不動産事業が158百万円、その他が533百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は503百万円で、固定資産の減損損失を計上したことなどから、前期比38.8％減となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +168,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18271000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 546,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18834000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 549,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +208,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19603000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 560,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +228,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20898000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 559,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号）等を、2025年3月期（第91期）の期首から適用しています。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +249,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21893000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 552,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +257,315 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1934,
+      "title": "信濃燃料を設立",
+      "description": "煉炭の製造及び販売を目的として、信濃燃料株式会社を設立しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "ＬＰガスの販売を開始",
+      "description": "ＬＰガスの販売を開始しました。",
+      "significance": "現在の主力であるエネルギー関連事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "石油製品の販売を開始",
+      "description": "石油製品の販売を開始しました。",
+      "significance": "エネルギー関連事業の取扱商品の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "商号をサンリンに変更",
+      "description": "商号をサンリン株式会社に変更し、本社を長野県松本市に移転しました。",
+      "significance": "現在の社名の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "新潟サンリンを設立",
+      "description": "株式会社ミツウロコと合弁で、両社の新潟県内における営業権及び従業員を分離・統合し、新潟サンリン株式会社（現・持分法適用関連会社）を設立しました。",
+      "significance": "新潟県への展開とミツウロコとの協力関係の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック市場に上場",
+      "description": "ジャスダック証券取引所の創設に伴い、ジャスダック市場へ上場しました。",
+      "significance": "取引所市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "田中製氷冷凍の株式を取得",
+      "description": "Ｍ＆Ａにより田中製氷冷凍株式会社（現・連結子会社サンリンＩ＆Ｆ株式会社）の株式の100％を取得しました。",
+      "significance": "製氷事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "一実屋の株式を取得",
+      "description": "Ｍ＆Ａにより株式会社一実屋（現・連結子会社）の株式の100％を取得しました。",
+      "significance": "青果事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "アルピコホールディングスの筆頭株主となる",
+      "description": "アルピコホールディングス株式会社の株式を取得し、その筆頭株主となりました。",
+      "significance": "同社の事業再生時に要請を受けて株式を引き受けた経緯につながる取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "電力の販売を開始",
+      "description": "小売電気事業者登録を取得し、電力の販売を開始しました。",
+      "significance": "エネルギー関連事業における電力分野への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "えのきボーヤの株式を取得",
+      "description": "Ｍ＆Ａにより株式会社えのきボーヤ（現・連結子会社）の株式の100％を取得しました。",
+      "significance": "青果事業における生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所ＪＡＳＤＡＱ（スタンダード）からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "安曇野ＲＥを設立",
+      "description": "長野県東筑摩郡山形村に安曇野ＲＥ株式会社（現・連結子会社）を設立しました。",
+      "significance": "ＰＰＡ事業等のエネルギー販売を行う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsuuroko-group-holdings",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の株式の13.86％を保有する筆頭株主です。当社は同社の株式1,218,000株を保有しており、当社グループのエネルギー関連事業において売上取引・仕入取引があると開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "rinnai",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の株式の5.88％を保有する大株主です。当社は同社の株式63,780株を保有しており、当社グループのエネルギー関連事業において仕入取引があると開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "eneos-holdings",
+      "relationship": "supplier",
+      "description": "当社グループのエネルギー関連事業における仕入先です。当社は同社の株式260,629株を保有しており、エネルギー関連事業において仕入取引があるため継続保有すると開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "air-water",
+      "relationship": "business-partner",
+      "description": "当社グループのエネルギー関連事業において売上取引・仕入取引のある取引先です。当社は同社の株式66,371株を保有しており、協力関係維持のため継続保有すると開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aeon",
+      "relationship": "customer",
+      "description": "当社グループのエネルギー関連事業における販売先です。当社は同社の株式37,535株を保有しており、エネルギー関連事業において売上取引があるため継続保有すると開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mk-seiko",
+      "relationship": "business-partner",
+      "description": "当社グループのエネルギー関連事業において売上取引・仕入取引のある取引先です。当社は同社の株式11,000株を保有しており、協力関係維持のため継続保有すると開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kissei-pharmaceutical",
+      "relationship": "customer",
+      "description": "当社グループのエネルギー関連事業における販売先です。当社は同社の株式3,896株を保有しており、エネルギー関連事業において売上取引があるため継続保有すると開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kitano-construction",
+      "relationship": "customer",
+      "description": "当社グループのエネルギー関連事業における販売先です。当社は同社の株式3,600株を保有しており、エネルギー関連事業において売上取引があるため継続保有すると開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takano",
+      "relationship": "customer",
+      "description": "当社グループのエネルギー関連事業における販売先です。当社は同社の株式2,000株を保有しており、エネルギー関連事業において売上取引があるため継続保有すると開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "moriya",
+      "relationship": "customer",
+      "description": "当社グループのエネルギー関連事業における販売先です。当社は同社の株式2,000株を保有しており、エネルギー関連事業において売上取引があるため継続保有すると開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hokuto",
+      "relationship": "customer",
+      "description": "当社グループのエネルギー関連事業における販売先です。当社は同社の株式1,000株を保有しており、エネルギー関連事業において売上取引があるため継続保有すると開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第92期(2025/04/01－2026/03/31)",
+      "title": "有価証券報告書－第92期（2025年4月1日－2026年3月31日）",
       "publisher": "サンリン株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDT8.pdf",
       "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YDT8",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「サンリン」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%B3%E3%83%AA%E3%83%B3",
+      "accessedAt": "2026-11-16"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年4月1日（決算期後）に、関連会社（持分法非適用）であった軽井沢ガス株式会社の株式を85.5％追加取得し、全株式を取得して子会社化しました（重要な後発事象に記載）。登録は2026年3月31日現在の体制（関連会社）で行っています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念に『地域密着型生活関連総合商社』として人々の暮らしや地域社会の発展に貢献することを掲げ、2025年度にスタートした中期経営計画（2025-2027）では、エネルギー関連事業の深化、食・住を軸とした事業領域の拡大、従業員のやりがい創出、収益性や効率性を高めるためのシステム投資などを柱として取り組むとしています。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上の中心はエネルギー関連事業で、2026年3月期の外部顧客への売上高の8割強を占めます。同事業ではＬＰガス・石油類の販売に加え、電力の販売、太陽光発電による売電、住宅機器・リフォームまで扱う構成になっています。",
+        "basis": "セグメント情報、事業の内容及び経営成績等の分析の記載に基づきます。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "ＬＰガス販売事業者のうち全国で2％程度に付与される『ゴールド保安認定事業者』として認定を受けており、2026年3月末時点で認定対象先は99％を超えています。Ｗｅｂ会員サービス『サンリンＭｙページ』と会員向けポイントサービスにより顧客基盤の拡充を進めています。",
+        "basis": "経営成績等の分析及び事業の内容の記載に基づきます。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "海外売上高はなく、売上は長野県・新潟県を中心とする国内に限られます。2026年3月期の連結売上高30,529百万円のうち、エネルギー関連事業が26,035百万円、青果事業が3,424百万円を占め、製氷事業が377百万円、不動産事業が158百万円、その他が533百万円です。",
+        "basis": "セグメント情報及び関連情報の記載に基づきます。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

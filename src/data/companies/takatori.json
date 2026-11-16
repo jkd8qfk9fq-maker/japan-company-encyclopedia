@@ -4,15 +4,188 @@
   "name": "タカトリ",
   "officialName": "株式会社タカトリ",
   "nameEn": "Takatori Corporation",
-  "description": null,
+  "shortNameEn": "Takatori Corporation",
+  "description": "半導体製造機器などの電子機器を主力に、繊維機器と医療機器も手がける奈良県橿原市の製造装置メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "semiconductors",
+      "primary": true
+    },
+    {
+      "industryId": "machinery",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "electronic-equipment",
+      "name": "電子機器事業",
+      "description": "半導体製造機器、新素材加工機器、ディスプレイ製造機器の製造・販売を行う事業です。2025年9月期の売上高は6,930百万円です。連結子会社の高鳥（常熟）精密機械有限公司が電子部品製造装置の製造・販売を担っていますが、同社については2025年7月25日の取締役会で解散が決議され、清算中です。",
+      "children": [
+        {
+          "id": "semiconductor-equipment",
+          "name": "半導体製造機器",
+          "description": "ウェーハ表面保護テープの貼付・剥離装置やマルチワイヤーソーなど、半導体製造に用いる機器の製造・販売を行っています。",
+          "customers": [
+            "半導体メーカー",
+            "電子部品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "new-material-processing",
+          "name": "新素材加工機器",
+          "description": "パワー半導体向けSiC材料の切断加工装置など、新素材を加工する機器の製造・販売を行っています。",
+          "customers": [
+            "パワーデバイスメーカー",
+            "新素材メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "display-equipment",
+          "name": "ディスプレイ製造機器",
+          "description": "ディスプレイ製造に用いる機器の製造・販売を行っています。",
+          "customers": [
+            "ディスプレイメーカー",
+            "電子部品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "medical-equipment",
+      "name": "医療機器事業",
+      "description": "難治性胸腹水の外来治療を可能とするモバイル型胸腹水濾過濃縮処理装置の製造・販売・開発のほか、医療機器のOEM/ODMや医療機器製造装置の製造・販売を行う事業です。2025年9月期の売上高は271百万円です。",
+      "children": [
+        {
+          "id": "m-cart",
+          "name": "モバイル型胸腹水濾過濃縮処理装置",
+          "description": "難治性胸腹水の外来治療を可能とするモバイル型胸腹水濾過濃縮処理装置「M-CART」の製造・販売を行っています。",
+          "customers": [
+            "医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "medical-oem",
+          "name": "医療機器のOEM/ODM・製造装置",
+          "description": "他の医療機器・健康機器メーカーと連携した医療機器及び健康機器の開発・供給や、医療機器製造装置の製造・販売を行っています。",
+          "customers": [
+            "医療機器メーカー",
+            "健康機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "textile-equipment",
+      "name": "繊維機器事業",
+      "description": "自動裁断機の製造・販売を行う事業です。2025年9月期の売上高は129百万円です。タカトリが繊維機械の製造・販売で創業して以来続く事業です。",
+      "children": [
+        {
+          "id": "automatic-cutting",
+          "name": "自動裁断機",
+          "description": "アパレル製品などの裁断に用いる自動裁断機の製造・販売を行っています。",
+          "customers": [
+            "アパレルメーカー",
+            "繊維製品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "半導体製造機器・新素材加工機器・ディスプレイ製造機器などの電子機器、自動裁断機、胸腹水濾過濃縮処理装置の製造・販売で収入を得る事業モデルです。",
+    "products": [
+      "半導体製造機器",
+      "新素材加工機器",
+      "ディスプレイ製造機器",
+      "自動裁断機",
+      "モバイル型胸腹水濾過濃縮処理装置"
+    ],
+    "customers": [
+      "半導体メーカー",
+      "電子部品メーカー",
+      "アパレルメーカー",
+      "医療機関"
+    ],
+    "revenueSources": [
+      "電子機器の販売収入",
+      "繊維機器の販売収入",
+      "医療機器の販売収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "タカトリ",
+        "description": "1956年に奈良県大和高田市で繊維機械メーカーとして設立され、現在は奈良県橿原市に本社を置きます。2025年9月30日現在の連結従業員数は201人で、連結子会社1社とグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "電子機器・繊維機器・医療機器",
+        "description": "電子機器事業では半導体製造機器、新素材加工機器、ディスプレイ製造機器を、繊維機器事業では自動裁断機を、医療機器事業ではモバイル型胸腹水濾過濃縮処理装置などを製造・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "半導体メーカーなど製造業と医療機関",
+        "description": "主な顧客は、半導体や電子部品のメーカー、アパレルメーカー、医療機関です。2025年9月期にはTOYO ADTEC PTE. LTD.が主要な顧客として開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "装置の製造・販売",
+        "description": "2025年9月期の売上高は7,330百万円でした。事業別では電子機器事業が6,930百万円、医療機器事業が271百万円、繊維機器事業が129百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年9月期の親会社株主に帰属する当期純利益は584百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年9月期",
@@ -27,7 +200,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5507662000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 203,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +220,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6406934000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 198,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年3月31日）等を第66期の期首から適用しており、第66期以降に係る主要な経営指標等は当該会計基準等を適用した後の指標となっています。"
     },
     {
       "fiscalYear": "2023年9月期",
@@ -67,7 +241,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8182587000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 198,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +261,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9927550000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 210,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +281,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10266595000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 201,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +289,169 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1956,
+      "title": "タカトリの設立",
+      "description": "奈良県大和高田市旭南町に株式会社髙鳥機械製作所を設立し、繊維機械の製造・販売を開始しました。",
+      "significance": "現在の会社の起点であり、繊維機器事業の起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "商号をタカトリ機械製作所に変更",
+      "description": "商号を株式会社タカトリ機械製作所に変更し、奈良県大和高田市旭南町に新社屋を竣工しました。",
+      "significance": "社名の基礎が定まった節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "橿原工場の新設",
+      "description": "奈良県橿原市新堂町に橿原工場（現・本社工場）を新設しました。あわせて、ツマ先自動縫製機トウクローザーを開発しました。",
+      "significance": "現在の本社所在地での生産体制の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "本格的な輸出の開始",
+      "description": "海外代理店と契約を行い、本格的な輸出を開始しました。あわせて、股上自動縫製機ラインクローザーを開発しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "JUKIとの技術提携とアパレル機器分野への進出",
+      "description": "東京重機工業株式会社（現・JUKI株式会社）と「ポケット口自動縫製機」の製造販売で技術提携を行い、アパレル機器分野に進出しました。この技術提携は2006年3月に解消しています。",
+      "significance": "繊維機器の応用分野を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "半導体機器分野への進出",
+      "description": "半導体機器分野に進出しました。",
+      "significance": "現在の主力である電子機器事業への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "商号をタカトリに変更",
+      "description": "商号を株式会社タカトリに変更しました。あわせて、全自動ウェーハ表面保護テープ貼り機・剥し機であるATM・ATRMを開発しました。",
+      "significance": "現在の社名になった節目であり、半導体製造機器の製品化が進んだ時期です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "マルチワイヤーソー（MWS）の開発",
+      "description": "MWS（マルチワイヤーソー）を開発しました。",
+      "significance": "新素材加工機器の中核製品の起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "関連会社2社の吸収合併",
+      "description": "株式会社タカトリハイテックと株式会社タカトリセイコーを吸収合併しました。翌1993年にはタカトリ機工株式会社と株式会社タカトリサービスセンターも吸収合併しています。",
+      "significance": "グループ体制を本体に集約した再編です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "大阪証券取引所新市場部への上場",
+      "description": "大阪証券取引所新市場部に上場しました。あわせて、台湾に子会社台湾髙鳥股份有限公司を設立しました（2003年7月に解散）。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "大阪証券取引所市場第二部への指定",
+      "description": "大阪証券取引所市場第二部に指定されました。",
+      "significance": "上場市場での位置付けが進んだ節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "上海に子会社を設立",
+      "description": "中国・上海市に上海高鳥機電科技有限公司を設立しました。同社の持分は2009年5月に全て譲渡しています。",
+      "significance": "中国での事業展開の出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "7つのコア技術の明確化",
+      "description": "戦略的コア技術として「7つのコア技術」を明確化し、技術開発スローガンを設定しました。あわせて、設立50周年を機に前年2005年に企業理念を改訂しています。",
+      "significance": "コア技術を軸とする開発方針の基礎です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "ものづくり日本大賞特別賞の受賞",
+      "description": "MWS（マルチワイヤーソー）の開発において「第4回ものづくり日本大賞」特別賞を受賞しました。あわせて、徳島研究所を開設しました。",
+      "significance": "主力製品の技術が公的に評価された出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "本社内に新工場を竣工",
+      "description": "本社内に新工場を竣工しました。",
+      "significance": "生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nichiden",
+      "relationship": "major-shareholder",
+      "description": "株式会社日伝は、2025年9月30日現在の大株主の状況に、発行済株式（自己株式を除く）の総数に対する所有株式数の割合1.52％で記載されている事業会社です。タカトリは特定投資株式として同社株式を、取引関係の円滑な維持として事業上の取り組み強化を目的に保有すると記載しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +459,50 @@
       "publisher": "株式会社タカトリ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XBFK.pdf",
       "publishedAt": "2025-12-18",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XBFK",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2025年7月25日開催の取締役会において、連結子会社である高鳥（常熟）精密機械有限公司の解散が決議され、期末時点でも清算中であることが記載されています。登録は2025年9月30日現在のグループ構造（同社を連結子会社とする構造）で行っており、清算の完了と連結範囲からの除外の反映には人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「創造と開拓」の社是と「世界に誇れる独自技術を製販一体となって構築し、最良の製品とサービスを提供し、人々の暮らしを豊かにする」の企業理念の下、ユーザーニーズを先取りした新規特徴製品の開発などを行う「開発先行型企業」を目指しています。中長期的には原価力の強化や海外調達比率の向上による高収益体質づくりを進めるとしています。",
+        "asOf": "2025-12-18",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "「貼付、真空、搬送、切断、制御、研磨、計測、剥離」の8つのコア技術を戦略的コア技術と位置付け、各技術の強化と、強い技術の他製品への水平展開を進めています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、戦略的コア技術である「8つのコア技術」（貼付、真空、搬送、切断、制御、研磨、計測、剥離）の各技術を更に強化し、「製品の独自性」や「製品の強さを極める」ことに注力する旨が印字されている。",
+        "asOf": "2025-12-18",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "新素材加工機器では、SiCウェハのサイズが6インチから8インチへ移行する中、切断加工機におけるタカトリ製品のシェアは維持されています。一方で、SiCウェハの生産量の増加には至っておらず、大型の設備投資は行われていない状況です。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の新素材加工機器の説明に、流通しているSiCウェハのサイズは6インチから8インチへ徐々に移行が進む中、切断加工機における当社製品のシェアは維持しているが、SiCウェハの生産量増加には至っておらず大型な設備投資が行われていない旨が印字されている。",
+        "asOf": "2025-12-18",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-30",

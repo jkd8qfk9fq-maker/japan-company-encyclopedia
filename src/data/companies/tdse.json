@@ -1,18 +1,108 @@
 {
   "id": "tdse",
   "code": "7046",
-  "name": "TDSE",
+  "name": "ＴＤＳＥ",
   "officialName": "TDSE株式会社",
   "nameEn": "TDSE Inc.",
-  "description": null,
+  "shortNameEn": "TDSE Inc.",
+  "description": "データサイエンティストやエンジニアが、企業のデータ分析・AIモデル構築の支援とAI製品の提供を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "big-data-ai-solutions",
+      "name": "ビッグデータ・AIソリューション事業",
+      "description": "データサイエンスの専門性を核に、データ経営を目指す企業の業務改革や新事業構築を支援する単一セグメントの事業です。2026年3月期の売上高は3,005百万円で、本社（東京都新宿区）の170人の従業員が担っています。",
+      "customers": [
+        "データ経営を目指す法人企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "consulting",
+          "name": "コンサルティングサービス",
+          "description": "データ活用のテーマ抽出からデータ分析・AIモデル構築・AIシステム実装・教育までを一貫して支援するサービスです。生成AIを活用したコンサルティングやAIエージェントの設計・構築・業務組み込みも含みます。",
+          "customers": [
+            "データ経営を目指す法人企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "product",
+          "name": "プロダクトサービス",
+          "description": "自社AI製品「ＴＤＳＥシリーズ」や、Quid、Cognigy、Dify、Databricksといった他社のAI製品を提供するサービスです。継続利用・契約に基づくストック型収益を担う領域と位置づけられています。",
+          "customers": [
+            "法人企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "データ活用のテーマ抽出から分析・AIモデル構築・システム実装・教育までを支援するコンサルティングと、自社・他社のAI製品を提供するプロダクトの2サービスで対価を得る事業モデルです。",
+    "products": [
+      "コンサルティングサービス（DX/AIアセスメント、分析・AIモデル構築、システム構築・実装、保守、教育）",
+      "自社AI製品「ＴＤＳＥシリーズ」（TDSE KAIZODE、QAジェネレーター、TDSE Eye）",
+      "他社AI製品（Quid、Cognigy、Dify、Databricks等）"
+    ],
+    "customers": [
+      "データ経営を目指す法人企業"
+    ],
+    "revenueSources": [
+      "コンサルティングサービスの対価",
+      "AI製品の販売・継続利用に応じた対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ＴＤＳＥ",
+        "description": "2013年にビッグデータ事業を行う会社として設立され、2021年にＴＤＳＥ株式会社へ商号変更しました。連結財務諸表は作成しておらず、2026年3月31日現在の従業員数は170人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "コンサルティングとプロダクトの2サービス",
+        "description": "データ活用のテーマ抽出からデータ分析・AIモデル構築・システム実装・教育までを一貫して支援するコンサルティングサービスと、自社AI製品「ＴＤＳＥシリーズ」や他社のAI製品を提供するプロダクトサービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "法人企業",
+        "description": "データ経営を目指す法人企業が顧客で、2026年3月期は株式会社ファーストリテイリングと株式会社リクルートが主要な顧客として開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は3,005百万円で、前期比11.4％増加しました。プロダクトサービスとAIエージェントサービスが順調に拡大したことが主な理由です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は174百万円で、前期比27.8％増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +117,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1708297000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 114,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +139,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1869308000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 130,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +161,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2074963000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 145,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +183,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2209042000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 159,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,32 +205,211 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2375379000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 170,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2013,
+      "title": "当社を設立",
+      "description": "ビッグデータ事業を開始するため、当社を設立しました。",
+      "significance": "現在のＴＤＳＥの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "AI製品「NetBase」の取扱いを開始",
+      "description": "NetBase Solutions, Inc.とマスターリセラー契約を締結し、グローバル規模のソーシャルデータ分析サービスを開始するため、同社のAI製品「NetBase」（現Quid Monitor）の取扱いを開始しました。",
+      "significance": "海外のAI製品を取り扱うプロダクトサービスの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "AI製品「scorobo」の販売を開始",
+      "description": "統計アルゴリズムを活用したAI製品「scorobo」の販売を開始しました。",
+      "significance": "自社・取扱製品の拡充が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "テクノスデータサイエンス・エンジニアリングに社名変更",
+      "description": "エンジニアリング事業強化のため、テクノスデータサイエンス・エンジニアリング株式会社に社名を変更しました。",
+      "significance": "データサイエンスとエンジニアリングの両輪を掲げた改称です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "NTTデータとあいおいニッセイ同和損保が資本参加",
+      "description": "株式会社エヌ・ティ・ティ・データとあいおいニッセイ同和損害保険株式会社が資本参加し、両社と業務提携しました。",
+      "significance": "大手事業会社との資本・業務提携が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズ市場（現グロース市場）に株式を上場しました。",
+      "significance": "株式上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "ＴＤＳＥに商号変更",
+      "description": "テクノスデータサイエンス・エンジニアリング株式会社から、ＴＤＳＥ株式会社へ商号を変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "グロース市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、マザーズ市場からグロース市場へ移行しました。",
+      "significance": "市場再編に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "三菱総合研究所と業務提携",
+      "description": "株式会社三菱総合研究所と、AI・ビッグデータ活用領域で業務提携しました。",
+      "significance": "コンサルティング領域での提携拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "AIエージェント本部を設立",
+      "description": "生成AI・AIエージェント技術の導入と実用化を推進するため、AIエージェント本部を設立しました。",
+      "significance": "生成AIエージェント領域への展開の布石です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ジーデップ・アドバンスと生成AI活用サービスを開始",
+      "description": "株式会社ジーデップ・アドバンスと、セキュアな生成AI活用を可能とするサービスを開始しました。",
+      "significance": "他社との協業によるサービス拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "fast-retailing",
+      "relationship": "customer",
+      "description": "主要な顧客の一つで、2026年3月期の販売実績は総販売実績の18.1％を占めています。前事業年度（2025年3月期）も主要な顧客として開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主要な顧客ごとの情報】"
+    },
+    {
+      "companyId": "mitsubishi-research-institute",
+      "relationship": "business-partner",
+      "description": "2024年10月に、AI・ビッグデータ活用領域で業務提携を締結しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "gdep-advance",
+      "relationship": "business-partner",
+      "description": "2025年6月にセキュアな生成AI活用を可能とするサービスを共同で開始し、2026年3月期には同社と協業して、生成AIプラットフォーム「Dify」を用いた開発をプライベートクラウド上で利用するサービスを提供しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第13期(2025/04/01－2026/03/31)",
-      "publisher": "TDSE株式会社",
+      "publisher": "ＴＤＳＥ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJTH.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJTH",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「データを活用した可能性に溢れた豊かな社会」をビジョンとして掲げ、データに基づいて意思決定を高度化することを使命としています。コンサルティングサービスとプロダクトサービスの相乗効果を狙い、両サービスにおいて生成AIエージェント関連の割合を継続的に高めていくことを基本的な方向性としています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高は2022年3月期の1,723百万円から2026年3月期の3,005百万円まで4期連続で増えています。コンサルティングで得た生成AIエージェント活用の知見を製品開発に反映し、製品がコンサルティングの高度化を支える循環を掲げている点が、単一セグメントの中での成長の組み立て方になっています。",
+        "basis": "主要な経営指標等の推移に印字された売上高の推移と、経営方針に記載された両サービスの相乗効果の考え方に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "社員は8割以上がデータサイエンティストとエンジニアで構成され、データサイエンティスト職の9割が理系の修士以上、その内5割が後期課程進学者・博士学位取得者で構成されているとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      },
+      "analysis": {
+        "text": "創業以来500社超の企業を支援してきたプロジェクト実績と、蓄積した技術やノウハウを知的財産として活用し、コンサルティングの高度化と技術社員の早期育成に生かす体制が、両サービスの基盤になっています。",
+        "basis": "事業の内容に記載された支援実績社数と、コアコンピタンスおよび知的財産の活用に関する記述に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,167 @@
   "name": "高松機械工業",
   "officialName": "高松機械工業株式会社",
   "nameEn": "TAKAMATSU MACHINERY CO., LTD.",
-  "description": null,
+  "shortNameEn": "Takamatsu Machinery Co., Ltd.",
+  "description": "石川県白山市に本社を置き、CNC旋盤などの工作機械の製造・販売を主力とする工作機械メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "machine-tools",
+      "name": "工作機械事業",
+      "description": "CNC旋盤等の工作機械と同周辺装置等の製造・販売、サービス・メンテナンス、部品・コレットチャック等の製造・販売を行う事業です。2026年3月期の売上高は11,215百万円です。北米・タイ・ドイツ・中国・インドネシア・ベトナム・メキシコの子会社が各地で製品販売とサービス・メンテナンスを担っています。",
+      "children": [
+        {
+          "id": "cnc-lathes",
+          "name": "CNC旋盤等の工作機械",
+          "description": "CNC旋盤等の工作機械及び同周辺装置等の製造・販売を行っています。",
+          "customers": [
+            "設備投資を行う製造業の企業",
+            "工作機械の販売店・ディーラー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "parts-collet-chucks",
+          "name": "部品・コレットチャック等",
+          "description": "工作機械の部品、コレットチャック等の製造・販売を行っています。",
+          "customers": [
+            "工作機械のユーザー企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "service-maintenance",
+          "name": "サービス・メンテナンス",
+          "description": "販売した工作機械のサービス・メンテナンスを、国内の支店・営業所と海外子会社を通じて行っています。",
+          "customers": [
+            "工作機械のユーザー企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "it-equipment",
+      "name": "IT関連製造装置事業",
+      "description": "液晶基板や半導体などに関する製造装置の製造を行う事業です。2026年3月期の売上高は1,338百万円です。",
+      "children": [
+        {
+          "id": "it-manufacturing-equipment",
+          "name": "IT関連製造装置の製造",
+          "description": "液晶基板や半導体などに関する製造装置を製造しています。開発センターが担っています。",
+          "customers": [
+            "IT関連の製造装置を導入する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "auto-parts-processing",
+      "name": "自動車部品加工事業",
+      "description": "自動車部品等の加工生産を行う事業です。2026年3月期の売上高は168百万円です。第3工場が担っており、タイのTP MACHINE PARTS CO., LTD.も同事業を行っていますが、同社は現在清算手続き中です。",
+      "children": [
+        {
+          "id": "auto-parts",
+          "name": "自動車部品の加工",
+          "description": "自動車部品等の加工生産を行っています。",
+          "customers": [
+            "自動車部品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "CNC旋盤等の工作機械と周辺装置の製造・販売と保守、IT関連製造装置の製造、自動車部品の加工で収入を得る事業モデルです。",
+    "products": [
+      "CNC旋盤等の工作機械",
+      "コレットチャック等の周辺装置・部品",
+      "サービス・メンテナンス",
+      "IT関連製造装置",
+      "自動車部品の加工"
+    ],
+    "customers": [
+      "設備投資を行う製造業の企業",
+      "工作機械の販売店・ディーラー"
+    ],
+    "revenueSources": [
+      "工作機械及び同周辺装置の販売収入",
+      "サービス・メンテナンス収入",
+      "IT関連製造装置の販売収入",
+      "自動車部品の加工収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "高松機械工業",
+        "description": "1961年に金沢市で設立された工作機械メーカーです。2026年3月31日現在の連結従業員数は524人で、子会社8社及び関連会社2社とグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "工作機械・IT関連製造装置・自動車部品加工",
+        "description": "工作機械事業、IT関連製造装置事業、自動車部品加工事業の3事業を展開しています。工作機械事業ではCNC旋盤等の製造・販売とサービス・メンテナンス、部品・コレットチャック等の製造・販売を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "製造業の設備投資需要",
+        "description": "主な顧客は、自動車関連をはじめとする製造業で設備投資を行う企業です。工作機械は販売店・ディーラーを通じても販売されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品販売と加工・保守",
+        "description": "2026年3月期の売上高は12,722百万円でした。事業別では工作機械事業が11,215百万円、IT関連製造装置事業が1,338百万円、自動車部品加工事業が168百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失",
+        "description": "2026年3月期の親会社株主に帰属する当期純損失は164百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16301000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 611,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16898000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 608,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16618000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 562,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +239,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16282000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 547,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +259,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16268000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 524,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +267,206 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1961,
+      "title": "高松機械工業の設立",
+      "description": "金沢市長田本町に高松機械工業株式会社を設立しました。",
+      "significance": "現在の会社の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "本社工場を白山市旭丘へ移転",
+      "description": "本社工場を松任市（現白山市）旭丘1丁目8番地の現在地に新設移転しました。",
+      "significance": "現在まで続く生産拠点の基礎です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "米国子会社の設立",
+      "description": "TAKAMATSU MACHINERY U.S.A., INC.を設立しました。",
+      "significance": "海外販売・サービス網の構築の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "JASDAQ市場への上場と自動車部品加工の開始",
+      "description": "日本証券業協会店頭登録市場（JASDAQ市場）に上場し、第3工場を新設して自動車部品加工を開始しました。",
+      "significance": "株式公開と事業の多角化の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "タイ子会社の設立",
+      "description": "TAKAMATSU MACHINERY (THAILAND) CO., LTD.を設立しました。",
+      "significance": "アジアでの販売・サービス体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "中国に合弁会社を設立",
+      "description": "友嘉実業股份有限公司と、工作機械の製造を行う合弁会社、杭州友嘉高松機械有限公司を中国・浙江省に設立しました。",
+      "significance": "中国での生産体制の構築です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "東京証券取引所市場第二部へ上場しました。",
+      "significance": "上場市場のステップアップです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "ドイツに欧州子会社を設立",
+      "description": "TAKAMAZ MACHINERY EUROPE GmbHを設立しました。",
+      "significance": "ヨーロッパでの販売・サービス体制の構築です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "インドネシア子会社の設立",
+      "description": "PT.TAKAMAZ INDONESIAを設立しました。",
+      "significance": "アジアの販売網のさらなる拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "タイに部品加工子会社を設立",
+      "description": "TP MACHINE PARTS CO., LTD.を設立し、自動車部品加工事業の海外拠点としました。",
+      "significance": "自動車部品加工事業の海外展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "ベトナム・メキシコ子会社の設立",
+      "description": "TAKAMATSU MACHINERY VIETNAM CO., LTDとTAKAMAZ MACHINERY MEXICO, S.A. DE C.V.を設立しました。",
+      "significance": "販売・サービス網のグローバル化の進展です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "あさひ工場の新設とスタンダード市場への移行",
+      "description": "白山市旭丘にあさひ工場を新設し、東京証券取引所の市場区分の見直しにより市場第二部からスタンダード市場へ移行しました。",
+      "significance": "生産能力の増強と現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "タカマツエマグの清算結了",
+      "description": "独エマグ社との合弁会社、株式会社タカマツエマグを清算結了しました。",
+      "significance": "合弁事業の整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "yuasa",
+      "relationship": "customer",
+      "description": "株式会社YUASA（旧ユアサ商事株式会社）は、セグメント情報の主要な顧客ごとの情報に、工作機械事業の主要な顧客として記載されています。2026年4月1日にユアサ商事株式会社から株式会社YUASAに社名変更しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "tomita",
+      "relationship": "business-partner",
+      "description": "株式会社トミタは、特定投資株式の保有目的に、長年にわたる主要なディーラの一つであり、需要の確保、ニーズの収集等、良好な取引関係の継続、強化を目的として保有すると記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第65期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第65期(2025/04/01－2026/03/31)",
       "publisher": "高松機械工業株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHHC.pdf",
-      "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YOLD.pdf",
+      "publishedAt": "2026-07-03",
+      "docId": "S100YOLD",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年3月期を初年度とする3ヵ年の中期計画2027では、「経営基盤強化と成長戦略の実行による収益性の改善」を基本方針として掲げています。長期ビジョンとして『「自動化技術×複合加工技術」で、お客様のモノづくりを支え続けるグローバル・ソリューション・カンパニーへ！』を定めています。",
+        "asOf": "2026-07-03",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "機械単体の標準機を販売するのではなく、顧客のニーズに細かく対応し、適切な加工方法などの提案も行うこと、そしてコストパフォーマンスや使い勝手に優れた自動化された製品群を提供し続けることを、企業価値の源泉と位置付けています。",
+        "basis": "【会社の支配に関する基本方針】に、企業価値の源泉は、機械単体の標準機を販売するのではなく、お客様のニーズに細かく対応し、当社からも適切な加工方法などの提案を行うこと、コストパフォーマンスや使い勝手に優れた自動化された製品群をお客様に提供し続けることである旨が印字されている。",
+        "asOf": "2026-07-03",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "主力分野である工作機械業界については、日本工作機械工業会が2026年暦年の業界受注見通しを1兆7,000億円（前年比6.0％増）としており、内需では老朽化設備の更新や生産性向上を目的とした需要が底流にあると会社は見ています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の経営環境に、日本工作機械工業会は2026年暦年業界受注見通しを1兆7,000億円（前年同期比6.0％増）としており、内需においては老朽化設備の更新や生産性向上を目的とした需要が底流としてある旨が印字されている。",
+        "asOf": "2026-07-03",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

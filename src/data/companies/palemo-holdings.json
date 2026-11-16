@@ -4,19 +4,151 @@
   "name": "パレモ・ホールディングス",
   "officialName": "パレモ・ホールディングス株式会社",
   "nameEn": "PALEMO HOLDINGS CO.,LTD.",
-  "description": null,
+  "shortNameEn": "PALEMO HOLDINGS CO.,LTD.",
+  "description": "全国のショッピングセンターでレディースアパレルと雑貨の専門店を展開する、純粋持株会社パレモ・ホールディングスを中心とする小売グループです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "retail",
+      "name": "小売事業",
+      "description": "連結子会社の株式会社パレモが担う、グループの中核事業です。レディースアパレルと雑貨の専門店を全国のショッピングセンターでチェーン展開し、2026年2月20日現在の店舗数は227店舗です。2026年2月期の販売実績は13,911百万円でした。",
+      "customers": [
+        "ショッピングセンターの来店客（女性が中心）"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "ladies-apparel",
+          "name": "レディースアパレル",
+          "description": "10代後半から40代の女性を主な顧客として、婦人服と服飾雑貨を販売しています。「PALEMO STORE」「Ludic Park」「Re-J&SUPURE」「NOÉMIE」「Hare no hi/木糸土」のブランドを展開し、このうち「Re-J&SUPURE」はプラスサイズ専門のブランドです。金額は独立して開示されていません。",
+          "customers": [
+            "10代後半から40代の女性客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "sundries",
+          "name": "雑貨",
+          "description": "幅広い年齢層の女性を主な顧客として、生活雑貨、バッグ、服飾雑貨を販売しています。300円を中心とした価格帯の「illusie300」と、バッグや小物を扱う「INCENSE」のブランドを展開しています。金額は独立して開示されていません。",
+          "customers": [
+            "幅広い年齢層の女性客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "fc-business",
+          "name": "FC事業",
+          "description": "株式会社バロックジャパンリミテッドの「Azul by moussy」ブランドについてフランチャイズ契約を結び、店舗を展開しています。金額は独立して開示されていません。",
+          "customers": [
+            "ショッピングセンターの来店客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ec-business",
+          "name": "EC事業",
+          "description": "自社ECサイト「パレモバ」で、インターネットによる商品販売を行っています。金額は独立して開示されていません。",
+          "customers": [
+            "自社ECサイトの利用客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "delivery-agency",
+      "name": "その他（納品代行業務）",
+      "description": "連結子会社の株式会社ビックスが担う、商品の納品代行業務です。報告セグメントには含まれていません。2026年2月期の販売実績は170百万円でした。",
+      "customers": [
+        "当社グループの店舗"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "連結子会社の株式会社パレモが複数のブランドで婦人服と雑貨を販売し、株式会社ビックスが商品の納品代行を担うことで、店舗での商品販売から収益を得ています。",
+    "products": [
+      "レディースアパレル（婦人服・服飾雑貨）",
+      "生活雑貨・バッグ・服飾雑貨",
+      "「Azul by moussy」ブランドのフランチャイズ店舗",
+      "自社ECサイト「パレモバ」での通信販売",
+      "商品の納品代行サービス"
+    ],
+    "customers": [
+      "10代後半から40代を中心とする女性客",
+      "幅広い年齢層の女性客",
+      "自社ECサイトの利用客"
+    ],
+    "revenueSources": [
+      "店舗での商品販売代金",
+      "ECサイトでの商品販売代金",
+      "納品代行業務の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "パレモ・ホールディングスグループ",
+        "description": "純粋持株会社の当社と連結子会社2社でグループを構成し、2026年2月20日現在の連結従業員数は118人です。当社はグループ戦略の立案や経営管理、店舗不動産・店舗設備等の賃貸を行っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "レディースアパレルと雑貨の専門店チェーン",
+        "description": "全国のショッピングセンターで、複数のブランドを使い分けて婦人服と雑貨を販売しています。2026年2月20日現在の店舗数は227店舗です。"
+      },
+      {
+        "kind": "customer",
+        "title": "女性を中心とする来店客",
+        "description": "レディースアパレルは10代後半から40代の女性を主な顧客とし、雑貨は幅広い年齢層の女性を対象としています。自社ECサイト「パレモバ」でも商品を販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "店舗とECでの商品販売",
+        "description": "2026年2月期の売上高は140億82百万円で、前年同期比6.4％減でした。売上の大半を小売事業が占めています。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年2月期は、親会社株主に帰属する当期純利益21百万円を計上しました。前年同期は47百万円の親会社株主に帰属する当期純損失でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -31,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 418479000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 154,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,12 +183,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1245509000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 135,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年３月31日）等を第38期の期首から適用しており、第38期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -71,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1642632000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 135,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1580383000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 127,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +244,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1579663000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 118,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +252,178 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1981,
+      "title": "前身「SSギャルフィット部」がユニー内に発足",
+      "description": "当社の前身は、1981年2月にユニー株式会社の運営本部内に発足した「SSギャルフィット部」です。同年6月に1号店「ギャルフィット太田川店」を開店し、営業を開始しました。",
+      "significance": "パレモの事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "株式会社パレモを設立",
+      "description": "1984年11月に、ユニー株式会社から分社化して株式会社パレモが設立されました。",
+      "significance": "独立した会社として発足しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "ユニーから「ギャルフィット事業部」の営業を譲受",
+      "description": "1985年2月にユニー株式会社から「ギャルフィット事業部」の営業を譲り受け、株式会社パレモとして営業を開始しました。",
+      "significance": "事業を自社のものとして引き継ぎました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "生活雑貨専門店を営業譲受",
+      "description": "1998年2月に株式会社シーベレットから生活雑貨専門店の営業を譲り受けました。",
+      "significance": "アパレルに加えて雑貨へ事業を広げる契機となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "株式を店頭登録",
+      "description": "2003年8月に、日本証券業協会に株式を店頭登録しました。",
+      "significance": "資本市場への第一歩となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "2004年12月に店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。同年9月には、全国47都道府県すべてに出店しました。",
+      "significance": "上場会社となり、全国展開を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "バッグ・アクセサリー専門店を営業譲受",
+      "description": "2005年8月に株式会社東京インセンスからバッグ・アクセサリー専門店の営業を譲り受けました。",
+      "significance": "バッグや小物の分野を拡充しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "中国に現地法人を設立し上海に出店",
+      "description": "2008年1月に中国に独資による現地法人を設立し、同年6月に上海に中国1号店を開店しました。",
+      "significance": "海外展開への進出でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "中国現地法人の全出資を譲渡",
+      "description": "2009年6月に、中国現地法人の全出資を譲渡しました。",
+      "significance": "海外事業から撤退しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "株式会社鈴丹を吸収合併",
+      "description": "2012年2月に株式会社鈴丹を吸収合併しました。",
+      "significance": "店舗網と事業規模を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "主要株主がエンデバー・ユナイテッド系に",
+      "description": "2016年10月に、ユニー・ファミリーマートホールディングス株式会社が保有する当社株式の全てが、エンデバー・ユナイテッド・パートナーズ・スリー投資事業組合及びエンデバー・ユナイテッド・パートナーズ・ツー株式会社に譲渡され、両者が当社の主要株主となりました。",
+      "significance": "ユニーグループを離れ、株主構成が大きく変わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "持株会社体制へ移行し商号変更",
+      "description": "2017年8月に、持株会社体制への移行に伴い、株式会社パレモからパレモ・ホールディングス株式会社へ商号を変更しました。",
+      "significance": "現在のグループ体制の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "東京証券取引所市場第二部・名古屋証券取引所市場第二部へ",
+      "description": "2019年3月に東京証券取引所市場第二部へ上場市場を変更し、名古屋証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場市場を移しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "西松屋チェーンが主要株主に",
+      "description": "2021年8月に、エンデバー・ユナイテッド・パートナーズ・スリー投資事業組合が保有する当社株式の全てが株式会社西松屋チェーンに譲渡され、同社が当社の主要株主となりました。",
+      "significance": "現在の主要株主との関係が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "市場区分の見直しでスタンダード市場・メイン市場へ移行",
+      "description": "2022年4月に、市場区分の見直しに伴い、東京証券取引所市場第二部をスタンダード市場へ、名古屋証券取引所市場第二部をメイン市場へ移行しました。",
+      "significance": "現在の上場市場となっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nishimatsuya-chain",
+      "relationship": "major-shareholder",
+      "description": "株式会社西松屋チェーンは、2026年2月20日現在で総株主の議決権の17.51％を保有する主要株主です。2021年8月に、エンデバー・ユナイテッド・パートナーズ・スリー投資事業組合が保有していた当社株式の全てを譲り受け、主要株主となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "baroque-japan",
+      "relationship": "business-partner",
+      "description": "株式会社バロックジャパンリミテッドとは、同社が有する「Azul by moussy」ブランドの商品販売についてフランチャイズ契約を結んでおり、FC事業として店舗を展開しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -128,13 +431,55 @@
       "publisher": "パレモ・ホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y39Y.pdf",
       "publishedAt": "2026-05-13",
-      "accessedAt": "2026-09-28"
+      "docId": "S100Y39Y",
+      "asOf": "2026-02-20",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "アパレルと雑貨による収益の二本柱体制の確立を最重要課題とし、アパレルでは既存店舗の活性化と気候変動に対応したMD改革を推進し、雑貨では競争力のある商品供給体制の構築と店舗特性に応じた最適な商品構成に取り組んでいます。新規出店に加えてECをはじめとする成長分野への投資を行い、Z世代向けブランドの拡充とOMO（オンラインとオフラインの融合）施策、CRMの活用、基幹システムの更新や新POSの導入も進めています。ガバナンスを強化した仕入及び在庫コントロールを継続し、物流子会社の機能を活用して店舗在庫の偏在解消にも取り組んでいます。",
+        "asOf": "2026-05-13",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高は2022年2月期から4期連続で減少しています。2026年2月期は新規出店10店舗に対して退店が27店舗と店舗網の見直しが進む一方で、既存店の活性化とECなど成長分野への投資を組み合わせる方針が示されています。",
+        "basis": "主要な経営指標等の推移における売上高の推移と、MD&Aにおける出店・退店の記載に基づく",
+        "asOf": "2026-05-13",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "レディースアパレルで、年齢層やテイストの異なる複数のブランド（PALEMO STORE、Ludic Park、Re-J&SUPURE、NOÉMIE、Hare no hi/木糸土）を複合展開し、プラスサイズ専門の「Re-J&SUPURE」のように特定の顧客層に絞ったブランドも持っています。雑貨の「illusie300」や「INCENSE」と合わせ、ショッピングセンターの中で幅広い品揃えを提供できる構成です。",
+        "basis": "事業の内容におけるブランド構成の記載に基づく",
+        "asOf": "2026-05-13",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "専門店業界では、気候変動による夏の長期化を受けて各社がシーズンMDの見直しを進めており、物価上昇に伴う消費者の節約志向の高まりが売上に影響する環境にあります。当社グループは全国のショッピングセンター内に出店し、2026年2月20日現在の店舗数は227店舗です。",
+        "basis": "MD&Aにおける業界環境と店舗数の記載に基づく",
+        "asOf": "2026-05-13",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-20",

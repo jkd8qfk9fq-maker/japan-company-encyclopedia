@@ -4,19 +4,129 @@
   "name": "システム・ロケーション",
   "officialName": "システム・ロケーション株式会社",
   "nameEn": "System Location Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "System Location Co.,Ltd.",
+  "description": "自動車の将来価値と現在価値を算出するシステムを、自動車ファイナンス事業者や自動車販売事業者に提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "system-business-support",
+      "name": "システム業務支援事業",
+      "description": "当社と連結子会社3社、持分法適用関連会社1社で構成するグループが営む単一セグメントの事業です。ファイナンステクノロジーとインフォメーションテクノロジーを融合した「ITプラットフォーム」の提供を目指す自動車関連事業者向けのクラウド型BPOサービス企業として、中古車の相場を中心とした情報をもとに構築する、中古車両の価値の評価・算定システムを自動車関連事業者に提供しています。2026年3月期の売上高は1,733百万円でした。",
+      "customers": [
+        "オートリース会社などの自動車ファイナンス事業者",
+        "自動車販売事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "vehicle-value-assessment",
+          "name": "自動車資産の価値算出システム",
+          "description": "過去の中古車販売実績で統計学的分析を行い、自動車資産の現在価値（時価算定）と将来価値（予想売却価格算定）を算出する当社グループ独自開発の自動車資産評価システム「RV Doctor」と、将来価値算出のノウハウを活かして恣意性なく現在の標準的な車両価値を算出するシステム「PV Doctor」を提供しています。",
+          "customers": [
+            "オートリース会社などの自動車ファイナンス事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "vehicle-catalog-database",
+          "name": "車種カタログデータベース",
+          "description": "メーカー／ディーラーオプションの価格、税金等の情報を含む、文字ベースの車のカタログを階層的なデータベースにした「車種カタログデータベース」を提供しています。",
+          "customers": [
+            "自動車ファイナンス事業者",
+            "自動車販売事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "business-support-systems",
+          "name": "業務支援システム・ASPサービス",
+          "description": "オートリース会社をはじめとしたオートファイナンス事業者に有用な機能をパッケージ化したASPサービス「シスろけっと」、当社ソリューションを融合して開発した新車販売会社向け販売支援システム「CA Doctor」、過去に設定した残価と現在の車両価値を照らし合わせてリスクの見える化を実現する一括算出サービス「CAV Monitor」、車両の将来価値（残価）を見込んだファイナンス見積作成をネットワーク上で提供するシステムなどを提供しています。連結子会社のInspiration株式会社は、自動車販売店向けソリューション事業を行っています。",
+          "customers": [
+            "オートリース会社などの自動車ファイナンス事業者",
+            "自動車販売会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "中古車の販売実績データを分析して自動車の残価や現在価値を算出するシステムと車種情報のデータベースをクラウドで提供し、その対価を得ています。",
+    "products": [
+      "自動車資産評価システム「RV Doctor」",
+      "現在価値算出システム「PV Doctor」",
+      "車種カタログデータベース",
+      "オートファイナンス事業者向けASPサービス「シスろけっと」",
+      "新車販売会社向け販売支援システム「CA Doctor」",
+      "リース車両価値一括算出サービス「CAV Monitor」",
+      "残価付ファイナンス見積提案システム"
+    ],
+    "customers": [
+      "オートリース会社などの自動車ファイナンス事業者",
+      "自動車販売事業者"
+    ],
+    "revenueSources": [
+      "自動車の価値算出システムや車種カタログデータベースなどの提供の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "システム・ロケーション",
+        "description": "1992年に自動車ファイナンス事業者向けの業務支援会社として東京都中央区で事業を開始しました。東京証券取引所スタンダード市場と名古屋証券取引所メイン市場に上場し、本社は東京都目黒区にあります。連結子会社3社と持分法適用関連会社1社でグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "自動車の価値算出システムとデータベース",
+        "description": "中古車の販売実績を統計学的に分析して自動車の将来価値（残価）と現在価値を算出するシステムや、車種カタログデータベース、販売支援などの業務支援システムを、クラウド型のサービスとして提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車ファイナンス事業者と自動車販売事業者",
+        "description": "オートリース会社をはじめとする自動車ファイナンス事業者や自動車販売事業者が、リース契約の残価設定や販売支援のために同社のシステムを利用しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は1,733百万円で、前期から4.0％増加しました。継続課金の性質を持つ売上が大半を占めています。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は297百万円で、前期から10.2％減少しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +141,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3051222000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 39,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +161,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3185731000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 56,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +181,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3554822000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 56,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3701024000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 57,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +221,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4044571000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 59,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +229,169 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1992,
+      "title": "事業を開始",
+      "description": "休眠会社であった株式会社パインの社名変更を経て、東京都中央区にて自動車ファイナンス事業者（オートリース会社、レンタカー会社、信販会社等）向けの業務支援会社として事業を開始しました。",
+      "significance": "当社の事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "車両再販業務支援統合システム「しろくま」を開発",
+      "description": "自動車ファイナンス事業者の車両のライフサイクルに沿って総合的な車両再販業務支援を提供する基幹システム「しろくま」を開発しました。",
+      "significance": "初期の基幹システムの開発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "残価算出システム「RV Doctor」の販売を開始",
+      "description": "入札会での車両売却データの分析から将来の売却予想価格を導き出し、自動車ファイナンス事業者が契約車両の残存価格（残価）を設定する際の指標を提供するシステム「RV Doctor」を開発し、販売を開始しました。",
+      "significance": "現在の主力商品につながる価値算出システムの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "車種カタログデータベースの販売を開始",
+      "description": "装備やオプション、価格情報など車両に関する様々な情報を階層別に組み込んだ電子データ「車種カタログデータベース」を開発し、販売を開始しました。",
+      "significance": "データベース提供の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "現在価値算出支援システム「PV Doctor」を開発",
+      "description": "中古車の現在価値を算出できるシステム「PV Doctor」を開発しました。",
+      "significance": "将来価値に加えて現在価値の算出にも広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "ジャスダック証券取引所に株式を上場しました。",
+      "significance": "株式の上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "販売支援システム「CA Doctor」の販売を開始",
+      "description": "自動車販売会社向け販売支援システム「CA Doctor」を開発し、販売を開始しました。",
+      "significance": "現在の主力商品の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "東京証券取引所と大阪証券取引所の統合に伴い、東京証券取引所JASDAQ（スタンダード）に上場しました。",
+      "significance": "取引所の統合に伴う上場市場の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "オークション事業から撤退",
+      "description": "オークション事業から撤退しました。",
+      "significance": "事業の選択と集中を進めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "韓国に子会社ValuAble Co.,Ltd.を設立",
+      "description": "韓国に合弁会社ValuAble Co.,Ltd.（出資比率80.0％）を設立しました。",
+      "significance": "海外の連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "市場区分の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "Inspiration株式会社を子会社化",
+      "description": "Inspiration株式会社の全株式を取得し、子会社化しました。",
+      "significance": "自動車販売店向けソリューション事業をグループに取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "子会社の千車科技（北京）有限公司を清算",
+      "description": "中国北京市に設立していた子会社の千車科技（北京）有限公司を清算しました。",
+      "significance": "海外拠点の整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ガレージバンク株式会社と資本業務提携",
+      "description": "ガレージバンク株式会社と資本業務提携を行いました。",
+      "significance": "資本業務提携の実施です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "名古屋証券取引所メイン市場に重複上場",
+      "description": "名古屋証券取引所メイン市場に重複上場しました。",
+      "significance": "第二の上場市場を持ちました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "hikari-tsushin",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在の大株主であり、発行済株式（自己株式を除く）の総数に対する所有株式数の割合は1.01％にあたる35,700株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -128,13 +399,55 @@
       "publisher": "システム・ロケーション株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGTA.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YGTA",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "クルマの「価値（将来価値・現在価値）」を算出し、自動車に係る企業・金融機関とユーザー、さらには潜在的ユーザーを結び、クルマの購入・売却、所有・シェアに係るプロセスに変化をもたらすシステムを提供するとしています。そして、あらゆる人や企業がクルマの価値を日常的に自然と意識できるよう、事業を構築するプラットフォーム企業を目指すとしています。短中期の経営戦略として、クルマの価値解析エンジンの一層の進化（データ解析の深化）、当該エンジンをユニット化した「RV Doctor」、「PV Doctor」及び「車種DB」を組み込んだプラットフォームの利用拡大、自動車に係る企業の業務効率を高めるプラットフォームの提供拡大を進めるとしています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "価値算出という中核機能を解析エンジンとして磨き、複数の商品やプラットフォームに組み込んで利用を広げる構造であり、算出精度の向上が商品群全体の価値に波及します。既存ドメインである自動車ファイナンス市場への新たなサービスの投入と、成長ドメインである自動車流通市場への営業強化の進み具合が、プラットフォームの利用拡大と収益の拡大を左右します。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の経営方針・経営戦略等と、優先的に対処すべき事業上及び財務上の課題の記述に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1992年の事業開始以来、入札会やオークションで蓄積した中古車の売却データをもとに、残価を算出する仕組みを磨いてきました。2000年に販売を始めた「RV Doctor」は改良を重ねて現在価値算出の「PV Doctor」や車種カタログデータベースと組み合わせて提供され、主力の「CA Doctor」も提案書機能の改善を続けています。売上高の大半が継続課金の性質を持つストック型の収益である点も、事業の安定性を支えています。",
+        "basis": "【沿革】の商品開発の歩みと【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の売上高の性質に関する記述に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "関連市場である自動車産業は、新車乗用車販売台数が前期比2.2％減と4年ぶりに前年実績を下回るなど停滞感が強い環境にあり、中古乗用車登録台数は前期比0.4％増でした。CASE関連技術の普及や中古車市場の需要変動などの構造変化が続く中、同社は連結従業員数59名の小規模な組織で、自動車の価値算出という専門領域に経営資源を集中させています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の経営環境と【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の市場動向、【経営指標等】の従業員数の記述に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,101 @@
   "name": "三京化成",
   "officialName": "三京化成株式会社",
   "nameEn": "SANKYO KASEI CORPORATION",
-  "description": null,
+  "shortNameEn": "SANKYO KASEI CORPORATION",
+  "description": "化学品を中心とする原料・資材を販売する技術指向型の専門商社で、住宅用部材や木工製品も扱います。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "science-business",
+      "name": "科学事業",
+      "description": "土木・建材資材関連、情報・輸送機器関連、日用品関連及び化学工業関連の各分野において、主として原料・資材となる商品を販売する事業です。技術指向型の営業を特長とし、2026年3月期の外部顧客への売上高は23,521百万円です。当社が販売するほか、海外子会社を通じた仕入・販売も行っています。",
+      "customers": [
+        "土木・建材関連の事業者",
+        "情報・輸送機器メーカー",
+        "日用品メーカー",
+        "化学工業の事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "building-interior-materials-business",
+      "name": "建装材事業",
+      "description": "主に住宅用部材の販売及び各種木工製品の製造販売を行う事業です。2026年3月期の外部顧客への売上高は3,678百万円です。連結子会社のキョーワ株式会社が各種木工製品の製造販売を行い、大同工業株式会社が当社からの加工委託により住宅用部材の保管・仕分梱包・出荷を行っています。",
+      "customers": [
+        "住宅関連の事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "土木・建材、情報・輸送機器、日用品、化学工業向けの原料・資材を販売し、子会社を通じて木工製品の製造販売も行う専門商社です。",
+    "products": [
+      "土木・建材資材関連の原料・資材",
+      "情報・輸送機器関連の原料・資材",
+      "日用品関連の原料・資材",
+      "化学工業関連の原料・資材",
+      "住宅用部材",
+      "木工製品"
+    ],
+    "customers": [
+      "土木・建材関連の事業者",
+      "情報・輸送機器メーカー",
+      "日用品メーカー",
+      "住宅関連の事業者"
+    ],
+    "revenueSources": [
+      "原料・資材商品の販売代金",
+      "住宅用部材の販売代金",
+      "木工製品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "三京化成",
+        "description": "当社と連結子会社6社の計7社でグループを構成し、本店は大阪市中央区にあります。2026年3月31日現在の連結従業員数は135人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "原料・資材の販売と木工製品の製造販売",
+        "description": "科学事業では土木・建材資材、情報・輸送機器、日用品、化学工業の各分野向けに原料・資材となる商品を販売し、建装材事業では住宅用部材の販売と木工製品の製造販売を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "製造業を中心とする顧客",
+        "description": "原料・資材は土木・建材、輸送機器、日用品、化学工業などの幅広い分野の顧客に販売され、住宅用部材や木工製品は住宅関連の顧客に販売されます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は27,199百万円です。科学事業が23,521百万円、建装材事業が3,678百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は752百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +113,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9010391000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 169,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +133,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9315773000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 169,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,12 +153,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10159040000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 135,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号 2022年10月28日）等を第99期の期首から適用しており、第98期に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -87,7 +174,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8712096000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 138,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9193913000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 135,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +202,386 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1946,
+      "title": "創業",
+      "description": "創業者の小川悧一が京都市で個人経営として三協商会を創業し、染料の販売を始めました。",
+      "significance": "現在の会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "会社設立と三京化成への商号変更",
+      "description": "大阪市で株式会社三協商会を設立し、同年11月に商号を三京化成株式会社に変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "大同工業を設立",
+      "description": "化学工業薬品の製造部門を分離し、大阪市東淀川区に子会社の大同工業株式会社を設立しました。",
+      "significance": "現在の連結子会社で、建装材事業の住宅用部材の保管・仕分梱包・出荷を担います。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "1982年の店頭登録を経て、大阪証券取引所の市場第二部に上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "香港に三東洋行有限公司を設立",
+      "description": "東洋紡績株式会社（現・東洋紡株式会社）との共同出資により、香港に三東洋行有限公司を設立しました。同社は2026年3月に清算を終えています。",
+      "significance": "海外現地法人展開の初期の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "シンガポールに現地法人を設立",
+      "description": "当社100％出資により、シンガポールにSANKYO KASEI SINGAPORE PTE.LTD.を設立しました。",
+      "significance": "現在の連結子会社で、海外の営業拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "上海に現地法人を設立",
+      "description": "当社100％出資により、中国上海市に産京貿易（上海）有限公司を設立しました。",
+      "significance": "現在の連結子会社で、海外の営業拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "タイに現地法人を設立",
+      "description": "当社100％出資により、タイ王国バンコク都にSANKYO KASEI (THAILAND) CO.,LTD.を設立しました。",
+      "significance": "現在の連結子会社で、海外の営業拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "中央理化工業の株式を譲渡",
+      "description": "中央理化工業株式会社（現・ジャパンコーティングレジン株式会社）の全保有株式を三菱化学株式会社に譲渡しました。",
+      "significance": "1961年から資本参加していた関係の終了です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "キョーワを子会社化",
+      "description": "キョーワ株式会社の全株式を取得し、連結子会社としました。",
+      "significance": "建装材事業にメーカー機能を取り込む取り組みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ベトナムに現地法人を設立",
+      "description": "当社100％出資により、ベトナムのホーチミン市にSANKYO KASEI VIETNAM CO.,LTD.を設立しました。",
+      "significance": "現在の連結子会社で、海外5拠点体制の一角です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "韓国に連絡事務所を開設",
+      "description": "2026年4月に大韓民国慶尚南道梁山市に連絡事務所を開設しました（有価証券報告書の沿革と経営戦略に記載）。",
+      "significance": "情報収集と現地関係先との連絡円滑化を目的とする海外拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "osaka-soda",
+      "relationship": "supplier",
+      "description": "商品の仕入先であり、当社は同社株式114,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "zeon",
+      "relationship": "supplier",
+      "description": "商品の仕入先であり、当社は同社株式10,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "torishima-pump-mfg",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式55,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nakabayashi",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式159,399株を保有しています。同社は2026年3月31日現在、当社の発行済株式（自己株式を除く。）の3.01％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nihon-tokushu-toryo",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式41,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-realty-and-development",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式14,600株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fujimi",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式23,049株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toyo-asano-foundation",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式27,000株を保有しています。同社は2026年3月31日現在、当社の発行済株式（自己株式を除く。）の2.22％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takara-standard",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式21,301株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nagawa",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式8,700株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "japan-foundation-engineering",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式65,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-electric-glass",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式4,106株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "furubayashi-shiko",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式8,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nihon-decoluxe",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式900株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-hume",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式6,300株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daiwa-house-industry",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式1,197株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nichiha",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式1,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "konoshima-chemical",
+      "relationship": "customer",
+      "description": "商品の販売先であり、当社は同社株式1,100株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kao",
+      "relationship": "business-partner",
+      "description": "商品の仕入・販売の双方がある取引先であり、当社は同社株式231,000株を保有しています。同社は2026年3月31日現在、当社の発行済株式（自己株式を除く。）の3.90％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "dainichiseika-color-and-chemicals-mfg",
+      "relationship": "business-partner",
+      "description": "商品の仕入・販売の双方がある取引先であり、当社は同社株式11,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kikusui-chemical-industries",
+      "relationship": "business-partner",
+      "description": "商品の仕入・販売の双方がある取引先であり、当社は同社株式106,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "koatsu-gas-kogyo",
+      "relationship": "business-partner",
+      "description": "商品の仕入・販売の双方がある取引先であり、当社は同社株式9,660株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第100期(2025/04/01－2026/03/31)",
+      "title": "有価証券報告書－第100期（2025年４月１日－2026年３月31日）",
       "publisher": "三京化成株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIC4.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YIC4",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営の基本方針として、お客様中心の営業活動を基本に、環境に優しい商品の提案に取り組み、お客様に喜ばれるグローバル商社を目指すことを掲げています。中期的な経営戦略は、収益の向上、海外の市場拡大、サステナビリティへの取組みと高品質体制の確立の3つです。収益の向上では、技術コンサルタントを主体とした技術指向型営業とファブレスによるものづくりで付加価値の高い商品提供を目指し、ファインケミカル（精密化学品）への指向や東南アジアへの営業基盤の拡大に取り組みます。海外の市場拡大では、東南アジアを中心に海外拠点を通じた販売と輸入品の取扱いに力を入れています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、創業以来続ける技術指向型の営業です。社内に試験室を設置するなど、技術コンサルタントを主体として、メーカーに対する顧客ニーズと技術情報の提供、新商品の開発に関するメーカーとの協業、得意先への専門的な商品情報の提供や技術サービスを行い、単なる流通にとどまらない営業活動を行っています。商社でありながらファブレスによるものづくりも行い、建装材事業では子会社のキョーワ株式会社が木工製品の製造を担っています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における基本方針と中期的な経営戦略の記載、会社の支配に関する基本方針における企業価値の源泉の記載、事業の内容における事業の位置付けの記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の構成は、科学事業23,521百万円が中心で、建装材事業は3,678百万円です。地域別の売上高は日本24,377百万円、海外2,822百万円で、シンガポール・上海・タイ・ベトナムの海外子会社を通じた販売があります。外部顧客への売上高の10％以上を占める主要な顧客はないとされています。",
+        "basis": "セグメント情報における報告セグメントごとの外部顧客への売上高と、関連情報（地域ごとの情報、主要な顧客ごとの情報）の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

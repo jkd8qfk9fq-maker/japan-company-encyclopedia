@@ -4,15 +4,132 @@
   "name": "テノックス",
   "officialName": "株式会社テノックス",
   "nameEn": "TENOX CORPORATION",
-  "description": null,
+  "shortNameEn": "TENOX",
+  "description": "テノックスは、杭工事と地盤改良工事を中心に基礎工事を専門とする建設会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "construction",
+      "name": "建設事業",
+      "description": "土木・建築などの基礎工事及び地盤改良工事全般と、建設機械のリース等の付随事業を行う当社グループの中核事業です。当社、株式会社テノックス技研、株式会社広島組、大三島物産株式会社（持分法非適用非連結子会社）が担い、海外ではベトナムのTENOX ASIA COMPANY LIMITEDが事業を行います。2026年3月期の売上高は20,477百万円でした。",
+      "customers": [
+        "総合建設会社をはじめとする工事の発注者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "pile-works",
+          "name": "杭工事",
+          "description": "既製コンクリート杭などを用いる基礎杭工事です。中掘り工法、TN-X工法、ATTコラム工法、ガンテツパイル工法、CP-X工法などの工法を用います。",
+          "customers": [
+            "総合建設会社をはじめとする工事の発注者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ground-improvement",
+          "name": "地盤改良工事",
+          "description": "地盤の強化・補強を行う工事です。テノコラム工法（深層混合処理工法）、テノキューブ工法（浅層混合処理工法）、戸建て住宅向けのピュアパイル工法などを用います。",
+          "customers": [
+            "総合建設会社をはじめとする工事の発注者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "consulting",
+      "name": "土木建築コンサルティング全般等事業",
+      "description": "連結子会社の株式会社複合技術研究所が、土木建築コンサルティング全般に関する事業及び工事物件の斡旋業務を行います。2026年3月期の売上高は592百万円でした。",
+      "customers": [
+        "土木・建築の設計・解析等を必要とする事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他の事業",
+      "description": "当社が行う不動産賃貸事業等です。神奈川県川崎市に所有する不動産の賃貸を行います。2026年3月期の売上高は23百万円でした。",
+      "customers": [
+        "賃貸不動産の入居者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "土木・建築の基礎工事である杭工事と地盤改良工事を独自工法で請け負い、土木建築コンサルティングと不動産賃貸も手がけます。",
+    "products": [
+      "基礎工事（杭工事、地盤改良工事）",
+      "土木建築コンサルティング",
+      "不動産賃貸"
+    ],
+    "customers": [
+      "大成建設株式会社をはじめとする総合建設会社",
+      "官公庁や民間の工事発注者"
+    ],
+    "revenueSources": [
+      "基礎工事の請負代金",
+      "コンサルティング業務の対価",
+      "不動産の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "テノックス",
+        "description": "1970年に設立された基礎工事専門の会社です。2026年3月31日現在、連結子会社は4社、持分法適用関連会社は1社で、連結従業員数は384人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "杭工事と地盤改良工事",
+        "description": "TN-X工法やATTコラム工法による杭工事と、テノコラム工法やテノキューブ工法による地盤改良工事を、独自開発の工法で施工します。"
+      },
+      {
+        "kind": "customer",
+        "title": "総合建設会社などの発注者",
+        "description": "工事は総合建設会社などから受注します。主要な顧客の大成建設株式会社向けは、連結売上高の13.7％を占めます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は21,093百万円で、前期比11.1％減でした。建設事業が20,477百万円、土木建築コンサルティング全般等事業が592百万円、その他の事業が23百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は939百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +144,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12300204000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 323,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +164,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12467397000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 319,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12689604000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 335,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13291330000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 369,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13936746000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 384,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +232,256 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1970,
+      "title": "株式会社テノックスを設立",
+      "description": "東京都港区にて株式会社テノックスを設立し、旭化成工業株式会社（現 旭化成株式会社）の代理店としてコンクリートパイルの販売、施工を開始しました。",
+      "significance": "当社の創業です。基礎工事の事業はここから始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "中掘り工法の特許を取得",
+      "description": "既製杭の施工法である中掘り工法の特許を取得しました。",
+      "significance": "独自工法の開発の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "CMJ工法が建設大臣認定を取得",
+      "description": "旭化成建材株式会社と共同研究開発したCMJ工法が建設大臣認定を取得しました。",
+      "significance": "共同開発工法の公的認定です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "テノコラム工法の特許を取得",
+      "description": "地盤改良工法であるテノコラム工法の特許を取得しました。",
+      "significance": "地盤改良分野の中核技術です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "TN工法が建設大臣認定を取得",
+      "description": "新日本製鐵株式会社（現 日本製鉄株式会社）と共同研究開発したTN工法が建設大臣認定を取得しました。",
+      "significance": "杭工法の共同開発の成果です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "テノックス技研を子会社化",
+      "description": "株式会社山本組を傘下に収め、同社の商号を株式会社テノックス技研と改称しました。",
+      "significance": "施工体制を担う連結子会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "ガンテツパイル工法の技術審査証明を取得",
+      "description": "新日本製鐵株式会社（現 日本製鉄株式会社）及び株式会社クボタと共同研究開発したガンテツパイル工法が、技術審査証明を取得しました。",
+      "significance": "杭工法の技術評価です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "複合技術研究所を設立",
+      "description": "地盤の強化・補強に関する工法の開発等を主目的に、共同出資により株式会社複合技術研究所を設立しました。",
+      "significance": "コンサルティング事業を担う連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "ATTコラム工法が国土交通大臣認定を取得",
+      "description": "ATTコラム工法が国土交通大臣認定を取得しました。",
+      "significance": "杭工法の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "TN-X工法が国土交通大臣認定を取得",
+      "description": "TN-X工法が国土交通大臣認定を取得しました。",
+      "significance": "主力杭工法の公的認定です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "ピュアパイル工法の建築技術性能証明を取得",
+      "description": "株式会社日本住宅保証検査機構（JIO）と共同研究開発したピュアパイル工法が建築技術性能証明を取得しました。",
+      "significance": "戸建て住宅向け地盤補強工法の実用化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "ベトナムにTENOX ASIA COMPANY LIMITEDを設立",
+      "description": "ベトナム社会主義共和国ホーチミン市にTENOX ASIA COMPANY LIMITEDを設立しました。",
+      "significance": "海外事業の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "広島組と亀竹産業を子会社化",
+      "description": "株式会社広島組及び亀竹産業株式会社を買収し子会社化しました（亀竹産業は2021年2月に株式会社広島組を存続会社として吸収合併）。",
+      "significance": "西日本の施工体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "日本ヒューム株式会社と業務資本提携",
+      "description": "日本ヒューム株式会社と業務資本提携を締結しました。",
+      "significance": "既製コンクリート杭メーカーとの連携強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "日本コンクリート工業株式会社と業務資本提携",
+      "description": "日本コンクリート工業株式会社と業務資本提携を締結しました。",
+      "significance": "基礎工事分野での連携の拡がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に市場変更",
+      "description": "東京証券取引所スタンダード市場に市場変更しました。あわせて大三島物産株式会社を買収し子会社化しました（持分法非適用非連結子会社）。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "CP-X工法の技術評定を取得",
+      "description": "日本ヒューム株式会社と共同開発したCP-X工法（既製コンクリート杭の高支持力中掘り拡大根固め工法）が基礎ぐいの許容支持力算定方法に関する技術評定を取得しました。",
+      "significance": "提携先との共同開発の成果です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "テノキューブ工法の建設技術審査証明を取得",
+      "description": "テノキューブ工法（スラリー式浅層混合処理地盤改良工法）が施工技術に関する建設技術審査証明を取得しました。",
+      "significance": "浅層地盤改良工法の実用化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ジャパンホームシールド株式会社と資本業務提携",
+      "description": "ジャパンホームシールド株式会社と資本業務提携を締結し、同社の株式を取得して持分法適用関連会社としました。",
+      "significance": "戸建住宅関連事業への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "taisei",
+      "relationship": "customer",
+      "description": "主要な顧客として開示されており、2026年3月期の同社向け売上高は連結売上高の13.7％を占めます。関連するセグメントは建設事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "nippon-hume",
+      "relationship": "business-partner",
+      "description": "2020年12月に業務資本提携を締結し、双方が培ってきた技術及び販売ノウハウ等に関する相互協力を行っています。当社が同社株式234,600株を保有しています（2026年3月31日現在）。2024年には既製コンクリート杭のCP-X工法を共同開発しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-concrete-industries",
+      "relationship": "business-partner",
+      "description": "2021年1月に業務資本提携を締結し、基礎工事での連携や、脱炭素及び産業廃棄物を利用した循環経済への参画などの環境への取り組みで協力しています。当社が同社株式301,800株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "taiyo-kisokogyo",
+      "relationship": "business-partner",
+      "description": "基礎工事の施工協力を行っており、業務関係の維持・強化を目的として当社が同社株式23,700株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +489,55 @@
       "publisher": "株式会社テノックス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJFD.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJFD",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年度からの中期経営計画「未来を拓く、新たな一歩」に基づき、事業別戦略、開発戦略、環境・デジタル戦略、経営基盤の強化、資本効率経営の推進の5つの重要戦略に取り組み、持続可能な100年企業を目指します。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上の大部分を占める建設事業では、防災・減災や国土強靭化に関わる構造技術の提案と、建築分野での複合提案を進め、ベトナムの現地法人の施工基盤の強化を掲げています。コンサルティング事業では、グループでプロジェクトと戦略を共有し、構造設計への提案力を高めるとしています。",
+        "basis": "セグメント情報の外部顧客への売上高、【事業の内容】、【経営方針、経営環境及び対処すべき課題等】、MD&Aの経営成績等の状況の概要に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "中掘り工法、TN-X工法、ATTコラム工法、ガンテツパイル工法、CP-X工法などの杭工法と、テノコラム工法、テノキューブ工法、ピュアパイル工法などの地盤改良工法を自社で開発し、特許や国土交通大臣認定、技術審査証明などの公的な裏付けを持つことが特徴です。施工管理装置の全工法への展開など、施工品質を高める開発も続けています。",
+        "basis": "【沿革】【研究開発活動】、【経営方針、経営環境及び対処すべき課題等】に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "基礎工事に特化した専門工事会社で、売上高の大部分が国内向けです。主要な顧客の大成建設株式会社向けの売上高が連結売上高の13.7％を占めます。海外ではベトナムに現地法人を持ち、現地でテノコラム工法の技術認証を取得しています。",
+        "basis": "セグメント関連情報の主要な顧客ごとの情報と地域ごとの情報、【事業の内容】、MD&Aの経営成績等の状況の概要に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
