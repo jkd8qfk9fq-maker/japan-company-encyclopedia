@@ -4,15 +4,132 @@
   "name": "エイケン工業",
   "officialName": "エイケン工業株式会社",
   "nameEn": "EIKEN INDUSTRIES CO.,LTD.",
-  "description": null,
+  "shortNameEn": "EIKEN INDUSTRIES CO.,LTD.",
+  "description": "自動車用フィルターと、厨房機器などに使うバーナ部品を製造・販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    },
+    {
+      "industryId": "machinery",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "filter",
+      "name": "フィルター部門",
+      "description": "自動車用フィルターの製造・販売を行う部門です。国内では大型車用フィルターや高性能オイルフィルター、プレス部品の拡販に取り組み、輸出では自社ブランド「VIC」を海外の日本車向けに販売しています。関連会社のフジパック株式会社が荷造包装資材の製造・販売を担います。2025年10月期の外部顧客への売上高は7,771百万円でした。",
+      "customers": [
+        "ユニオンモーター株式会社や日発販売株式会社などの国内の販売先",
+        "海外の日本車向けの販売先"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "auto-filter",
+          "name": "自動車用フィルター",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】",
+          "description": "国内の補修用を中心とする自動車用フィルターです。大型車用フィルターや高性能オイルフィルターなどを扱います。"
+        },
+        {
+          "id": "press-parts",
+          "name": "プレス部品",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】",
+          "description": "当社の設備で加工するプレス部品です。フィルター以外の部品の受注拡大に取り組んでいます。"
+        }
+      ]
+    },
+    {
+      "id": "combustion-equipment",
+      "name": "燃焼機器部門",
+      "description": "バーナ部品の製造・販売を行う部門です。厨房機器用バーナやコインランドリー用バーナ、熱交換器などを扱い、取引先から依頼を受けたバーナの開発も行っています。2025年10月期の外部顧客への売上高は326百万円でした。",
+      "customers": [
+        "厨房機器メーカーなどの機器メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない区分です。灰皿等の販売を行い、開発部を中心にガレージサウナを商品化して販売を開始しています。2025年10月期の外部顧客への売上高は2百万円でした。",
+      "customers": [
+        "一般の購入者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "静岡県御前崎市の本社工場で自動車用補修フィルターを一貫生産し、国内の販売先と自社ブランド「VIC」による海外の日本車向け市場に販売する事業モデルです。",
+    "products": [
+      "自動車用フィルター（オイルフィルターなど）",
+      "大型車用・建設機械用フィルター",
+      "プレス部品",
+      "バーナ部品",
+      "熱交換器"
+    ],
+    "customers": [
+      "自動車部品の商社や同業者などの国内の販売先",
+      "海外の日本車向け市場の販売先",
+      "厨房機器メーカーなどの機器メーカー"
+    ],
+    "revenueSources": [
+      "自動車用フィルターの販売代金",
+      "バーナ部品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "静岡県御前崎市に本社工場を置くメーカー",
+        "description": "静岡県御前崎市に本社と本社工場を置き、関連会社1社と企業集団を構成しています。2025年10月31日現在の従業員数は251人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "フィルターとバーナ部品の開発・製造",
+        "description": "自動車用フィルターと燃焼機器の2本柱で事業を営み、内燃機関用・産業機械用の特殊フィルターやバーナを開発・製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内の販売先と海外の日本車向け市場",
+        "description": "国内では商社や同業者など幅広い販路で販売し、輸出では自社ブランド「VIC」を長年、海外の日本車向けに販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "フィルターの販売代金が売上の中心",
+        "description": "自動車用フィルターなどの販売代金が売上となります。2025年10月期の売上高は8,100百万円で、フィルター部門が7,771百万円、燃焼機器部門が326百万円、その他が2百万円でした。前事業年度からは11.2％の増加です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は326百万円",
+        "description": "2025年10月期の当期純利益は326百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年10月期",
@@ -27,11 +144,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5493898000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 239,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -49,14 +166,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5647539000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 243,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第54期の期首から適用しています。"
     },
     {
       "fiscalYear": "2023年10月期",
@@ -71,11 +189,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5692370000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 252,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -93,11 +211,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5803560000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 249,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -115,18 +233,148 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6055815000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 251,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1969,
+      "title": "エーケン工業株式会社を設立",
+      "description": "神奈川県中郡伊勢原町にエーケン工業株式会社を設立し、自動車用フィルターの製造販売を開始しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "浜岡工場を新設",
+      "description": "静岡県小笠郡浜岡町に浜岡工場を新設しました。",
+      "significance": "現在の本社地域への生産拠点の展開です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "本社を浜岡町へ移転し、エイケン工業株式会社に商号変更",
+      "description": "本社を静岡県小笠郡浜岡町に移転し、商号をエイケン工業株式会社に変更しました。",
+      "significance": "現在の社名と本社体制の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "ガス機器の製造を開始",
+      "description": "ガス機器の製造を開始しました。",
+      "significance": "現在の燃焼機器部門につながる事業の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "コーシン工業株式会社を合併",
+      "description": "コーシン工業株式会社を合併し、大山工場を開設しました。",
+      "significance": "生産体制の統合と拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "日本証券業協会に株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "資本市場への参加の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "本社工場がISO9001認証を取得",
+      "description": "本社工場が品質保証システムの国際規格ISO9001の認証を取得しました。",
+      "significance": "品質保証体制の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に株式を上場",
+      "description": "日本証券業協会への店頭登録を取り消し、株式会社ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "本社・本社工場がISO14001認証を取得",
+      "description": "本社・本社工場が環境システムの国際規格ISO14001の認証を取得しました。",
+      "significance": "環境マネジメント体制の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ(スタンダード)からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "非連結子会社の株式会社ビック・イーストを清算",
+      "description": "非連結子会社の株式会社ビック・イーストを清算しました。",
+      "significance": "グループ体制の整理です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "muraki",
+      "relationship": "business-partner",
+      "description": "フィルター部門の自動車用フィルター等の取引を行っている相手です。事業上の関係を勘案し、関係維持・強化のため株式を保有しており、取引先持株会を通じて継続的に取得しています。2025年10月31日現在で52,433株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fujimak",
+      "relationship": "business-partner",
+      "description": "燃焼機器部門の厨房機器関係の部品等の取引を行っている相手です。事業上の関係を勘案し、関係維持・強化のため株式を保有しています。2025年10月31日現在で18,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -134,13 +382,45 @@
       "publisher": "エイケン工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XH0G.pdf",
       "publishedAt": "2026-01-26",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XH0G",
+      "asOf": "2025-10-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中長期の経営戦略として、輸出売上の拡大、国内のフィルター部門の売上拡大、燃焼機器事業の拡販、生産効率の向上とコスト削減、新規事業の開拓に取り組むとしています。輸出では当社ブランド「VIC」のブランド力を活かした企画立案型の営業を推し進め、国内では大型車用フィルターや建設機械用フィルターの拡販を図るとしています。",
+        "asOf": "2026-01-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の約96％をフィルター部門が占め、地域別では海外向けが売上高の半分以上を占める構成のため、戦略の中心はフィルターの輸出と国内の大型車用・建設機械用分野の拡販に置かれています。",
+        "basis": "セグメント情報等に印字された2025年10月期の外部顧客への売上高（フィルター部門7,771百万円、燃焼機器部門326百万円）と、地域別の売上高（日本3,889百万円、海外4,210百万円）から読み取れます。",
+        "asOf": "2026-01-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "国内一貫生産による製品の安定供給と、多品種小ロットに対応できる生産体制を構築していることを強みとして挙げ、その強みを活かして取引先の要望に沿うことで拡販を図るとしています。",
+        "asOf": "2026-01-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年10月期",
     "asOf": "2025-10-31",

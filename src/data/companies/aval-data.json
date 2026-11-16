@@ -4,15 +4,209 @@
   "name": "アバールデータ",
   "officialName": "株式会社アバールデータ",
   "nameEn": "AVAL　DATA　CORPORATION",
-  "description": null,
+  "shortNameEn": "AVAL DATA CORPORATION",
+  "description": "組込み・画像処理・高速通信の技術を核に、半導体製造装置向けなどの受託製品と自社ブランドの産業用電子機器を開発・製造・販売するメーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "contract-products",
+      "name": "受託製品",
+      "description": "半導体製造装置関連、産業用制御機器、計測機器の開発・製造・販売を行う報告セグメントです。自社製品で培った組込み・画像処理・通信の技術をもとに、顧客の装置向けにカスタマイズした製品を提供しています。2026年3月期の外部顧客への売上高は5,714百万円です。",
+      "products": [
+        "半導体製造装置関連機器",
+        "産業用制御機器",
+        "計測機器"
+      ],
+      "customers": [
+        "株式会社ニコン",
+        "東京エレクトロン テクノロジーソリューションズ株式会社",
+        "東京エレクトロン宮城株式会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "semiconductor-equipment",
+          "name": "半導体製造装置関連",
+          "description": "半導体製造装置の制御部を開発・製造し、装置メーカーへ提供しています。2026年3月期の売上高は4,144百万円です。",
+          "customers": [
+            "半導体製造装置メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "industrial-control",
+          "name": "産業用制御機器",
+          "description": "各種の産業用装置や社会インフラ関連の制御部の開発・製造を行い、カスタマイズ製品として提供しています。2026年3月期の売上高は1,061百万円です。",
+          "customers": [
+            "産業用装置メーカー",
+            "社会インフラ関連の事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "measuring-instruments",
+          "name": "計測機器",
+          "description": "各種計測機器のコントローラや通信機器の制御部の開発・製造を行い、カスタマイズ製品として提供しています。2026年3月期の売上高は507百万円です。",
+          "customers": [
+            "計測機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "own-products",
+      "name": "自社製品",
+      "description": "自社ブランドの組込みモジュール、画像処理モジュール、計測通信機器の開発・製造・販売と、これらに付属する周辺機器やソフトウェアなどの自社製品関連商品の販売を行う報告セグメントです。2026年3月期の外部顧客への売上高は3,115百万円です。",
+      "products": [
+        "組込みモジュール",
+        "画像処理モジュール",
+        "計測通信機器",
+        "自社製品関連商品"
+      ],
+      "customers": [
+        "半導体製造装置メーカー",
+        "医療機器メーカー",
+        "FA分野の装置メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "embedded-modules",
+          "name": "組込みモジュール",
+          "description": "半導体製造装置、医療機器関連、FA全般、電力・通信関連向けに提供する組込みモジュールです。2026年3月期の売上高は536百万円です。",
+          "customers": [
+            "半導体製造装置メーカー",
+            "医療機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "image-processing-modules",
+          "name": "画像処理モジュール",
+          "description": "FA全般、各種検査装置、液晶関連機器などに提供する画像処理モジュールです。2026年3月期の売上高は1,492百万円です。",
+          "customers": [
+            "検査装置メーカー",
+            "FA分野の装置メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "measurement-communication",
+          "name": "計測通信機器",
+          "description": "超高速シリアル通信モジュール「GiGA CHANNEL」シリーズを提供する計測通信機器です。2026年3月期の売上高は826百万円です。",
+          "customers": [
+            "検査装置メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "own-product-goods",
+          "name": "自社製品関連商品",
+          "description": "自社製品の販売促進とシステム販売による高付加価値化のため、ソフトウェアおよび付属の周辺機器を提供しています。2026年3月期の売上高は259百万円です。",
+          "customers": [
+            "自社製品の顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "顧客の装置に組み込む制御部やモジュールを、受託開発・製造と自社製品の両輪で提供し、製品の販売で収益を得る事業モデルです。",
+    "products": [
+      "受託製品（半導体製造装置関連・産業用制御機器・計測機器）",
+      "組込みモジュール",
+      "画像処理モジュール",
+      "計測通信機器",
+      "自社製品関連商品"
+    ],
+    "customers": [
+      "株式会社ニコン",
+      "東京エレクトロン テクノロジーソリューションズ株式会社",
+      "東京エレクトロン宮城株式会社",
+      "半導体製造装置メーカー",
+      "医療機器メーカー",
+      "FA分野の装置メーカー"
+    ],
+    "revenueSources": [
+      "受託製品の開発・製造・販売の対価",
+      "自社製品（組込みモジュール・画像処理モジュール・計測通信機器）の販売の対価",
+      "自社製品関連商品の販売の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "アバールデータ",
+        "description": "アバールデータは東京都町田市に本社を置き、厚木事業所、海老名オフィス、山梨R&Dセンターを拠点に事業を行っています。2026年3月31日現在の従業員数は199人です。韓国の関連会社が海外で当社製品の輸出入販売を担っています。"
+      },
+      {
+        "kind": "offering",
+        "title": "受託製品と自社製品",
+        "description": "半導体製造装置関連、産業用制御機器、計測機器の受託製品と、組込みモジュール、画像処理モジュール、計測通信機器の自社製品を開発・製造・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "装置メーカーが顧客",
+        "description": "受託製品の主要な得意先は株式会社ニコンや東京エレクトロングループの製造会社で、自社製品は半導体製造装置、医療機器、FA分野などの装置メーカーに提供しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は8,830百万円で、前期から19.6％減りました。内訳は受託製品が5,714百万円、自社製品が3,115百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は554百万円で、前期の1,137百万円から減りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +221,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18406895000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 185,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +243,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20874812000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 188,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +265,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22780187000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 204,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +287,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20059154000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 210,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +309,263 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20313838000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 199,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1959,
+      "title": "東洋通信工業を設立",
+      "description": "計測器並びに制御機器の製造・販売を目的として、東京都渋谷区に東洋通信工業株式会社を設立しました。",
+      "significance": "現在のアバールデータの出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "最初の自社製品を開発",
+      "description": "最初の自社製品である交通安全教育用の交通信号発生装置を開発し、販売を開始しました。",
+      "significance": "自社製品事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "ニコンの半導体製造装置関連機器の製作を開始",
+      "description": "株式会社ニコンの半導体製造装置関連機器の製作を開始しました。",
+      "significance": "現在の受託製品の中核である半導体製造装置関連の取引の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "開発支援装置「Pecker」シリーズを発売",
+      "description": "開発支援装置「Pecker（デバイスプログラマー）」シリーズを開発し、販売を開始しました。",
+      "significance": "自社製品の代表的なシリーズとなりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "社名をアバールコーポレーションに変更",
+      "description": "社名を株式会社アバールコーポレーションに変更し、本社を東京都新宿区へ移転しました。その後、1988年には株式会社アバールへ社名を変更しています。",
+      "significance": "アバールの社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "厚木に新工場を設置",
+      "description": "神奈川県厚木市に新工場を設置しました。現在の厚木事業所です。",
+      "significance": "現在の生産拠点の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "VME bus規格の組込みモジュールを発売",
+      "description": "VME bus規格を採用した組込みモジュールシリーズを開発し、販売を開始しました。",
+      "significance": "組込みモジュール事業の基盤となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "合併によりアバールデータに社名変更",
+      "description": "株式会社トーヨーデータと合併し、社名を株式会社アバールから株式会社アバールデータへ変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式を店頭登録",
+      "description": "社団法人日本証券業協会に店頭売買銘柄として店頭登録しました。",
+      "significance": "資本市場への参加の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "Compact PCI組込みモジュールと画像処理モジュールを開発",
+      "description": "Compact PCI bus規格を採用した組込みモジュールを国内で初めて開発し、販売を開始しました。同じ年に、PCI bus規格を採用した画像処理モジュールシリーズも開発し、販売を開始しました。",
+      "significance": "組込みと画像処理の両分野での技術力を示す製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "本社を町田市に移転",
+      "description": "本社を東京都町田市に移転しました。",
+      "significance": "現在の本社所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "高速通信モジュール「GiGA CHANNEL」を発売",
+      "description": "高速通信モジュール「GiGA CHANNEL」シリーズを開発し、販売を開始しました。",
+      "significance": "計測通信機器の主力シリーズとなりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、株式会社ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "CoaXPress規格の画像処理モジュールを世界で初めて開発",
+      "description": "高速画像インターフェイスCoaXPress規格を採用した画像処理モジュールを世界で初めて開発し、販売を開始しました。",
+      "significance": "画像処理モジュールの技術力を示す製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "医療機器製造業許可を取得",
+      "description": "医療機器製造業許可（一般区分）を取得しました。",
+      "significance": "医療機器分野への展開の基盤となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "株式会社東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場へ移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "厚木事業所の新2号館が完成",
+      "description": "厚木事業所の新2号館が完成し、事務棟を分離して生産スペースを拡充しました。",
+      "significance": "生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "山梨R&Dセンターを開設",
+      "description": "山梨県韮崎市に研究開発拠点として、山梨R&Dセンターを開設しました。",
+      "significance": "要素技術の研究開発を担う拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nikon",
+      "relationship": "customer",
+      "description": "主要な顧客で、2026年3月期の売上高の10.6％を占めています。半導体製造装置関連機器をはじめとする受託開発・製造の相手先で、同社は2026年3月31日現在、当社株式の11.12％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主要な顧客ごとの情報】"
+    },
+    {
+      "companyId": "lasertec",
+      "relationship": "business-partner",
+      "description": "当社が得意とする高速技術を同社の装置の進化に取り込むための、より強いアライアンス体制を進める提携先です。当社は同社の株式を保有し、同社も2026年3月31日現在、当社株式の1.88％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "micronics-japan",
+      "relationship": "customer",
+      "description": "同社が展開する各検査装置に対し、当社の通信・画像処理技術を用いた製品の提供や共同開発を進める取引先です。関係の維持強化のため、当社は同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "esol",
+      "relationship": "business-partner",
+      "description": "同社の組込みシステム向けメニーコアOS技術と当社の高速データ処理およびハードウエア技術を組み合わせる協業の相手先です。当社は同社の株式を保有し、同社も2026年3月31日現在、当社株式の1.83％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "axell",
+      "relationship": "business-partner",
+      "description": "同社のグラフィックス＆サウンドLSIや圧縮伸長技術と当社の画像処理・通信ネットワーク技術を融合し、新たなソリューションの提供やシステム開発を目的とする協業の相手先です。当社は同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokyo-electron-device",
+      "relationship": "business-partner",
+      "description": "2007年11月に産業用コンピュータ・ボード関連及びIC製品の販売並びに共同開発に関する技術共有を目的とした業務提携を行った相手先です。2017年7月には、当時の子会社であった株式会社アバール長崎の過半の株式を同社へ譲渡しました。当社は同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nireco",
+      "relationship": "customer",
+      "description": "同社の検査機事業における検査装置の開発に、当社の高速FPGA処理や画像処理技術により取引先として寄与している相手先です。安定的な取引関係の維持・強化のため、当社は同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +573,37 @@
       "publisher": "株式会社アバールデータ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y38P.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100Y38P",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営方針として、市場の潜在ニーズを先取りしてお客様の装置の進化に貢献すること、自社製品を核とした新分野および海外市場でのビジネス確立を通じ、安定的かつ持続的な成長の柱を構築すること、品質・納期・コスト・環境対応で業界トップの生産体制を実現することなどを掲げています。製品開発では、自社製品をベースにした提案型の受託開発で競争力と付加価値を高めるとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "組込みモジュール、画像処理モジュール、計測通信機器という3種類の自社製品群の複合技術をコア技術とし、自社製品で培った技術リソースを受託製品の提案営業にも生かすことで、顧客の装置に合わせた差別化した製品を提供できる体制を持っています。",
+        "basis": "事業等のリスクに、自社製品は組込みモジュール・画像処理モジュール・計測通信機器の3種類の製品群があり、3製品群の複合技術による製品の差別化を図ること、受託製品でも自社製品の技術リソースを利用した提案営業を進めていることが印字されていること",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,159 @@
   "name": "フライトソリューションズ",
   "officialName": "株式会社フライトソリューションズ",
   "nameEn": "FLIGHT SOLUTIONS Inc.",
-  "description": null,
+  "shortNameEn": "FLIGHT SOLUTIONS",
+  "description": "自社の決済ソリューション製品と、事業会社向けのシステム開発、B2B向けECサイト構築パッケージを手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "payment-solutions",
+      "name": "決済ソリューション事業",
+      "description": "自社製品の開発、販売及び運用保守を行う事業です。電子決済ソリューション「Incredist」シリーズ、Android端末によるタッチ決済ソリューション「Tapion」シリーズ、マイナンバーカードを用いた本人確認（公的個人認証）ソリューション「myVerifist」、無人自動精算機向けの決済ソリューションを提供しています。2026年3月期の売上高は1,915百万円でした。本社（東京都渋谷区）が、設備表でこの事業の拠点とされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "決済ソリューションを導入する事業会社など"
+      ],
+      "children": [
+        {
+          "id": "incredist",
+          "name": "電子決済ソリューション「Incredist」シリーズ",
+          "description": "自社製品の電子決済ソリューションです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "決済を導入する事業会社など"
+          ]
+        },
+        {
+          "id": "tapion",
+          "name": "タッチ決済ソリューション「Tapion」シリーズ",
+          "description": "Android端末によるタッチ決済ソリューションです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "決済を導入する事業会社など"
+          ]
+        },
+        {
+          "id": "myverifist",
+          "name": "本人確認ソリューション「myVerifist」",
+          "description": "マイナンバーカードを用いた本人確認（公的個人認証）ソリューションです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "本人確認を導入する事業会社など"
+          ]
+        },
+        {
+          "id": "unattended-payment",
+          "name": "無人自動精算機向け決済ソリューション",
+          "description": "無人自動精算機向けの決済ソリューションです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "無人自動精算機を導入する事業会社など"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "si-solutions",
+      "name": "SIソリューション事業",
+      "description": "物流系や金融系を中心とした事業会社向けのシステムコンサルティング、システム開発・保守、並びにクラウドサービスを活用したシステム開発支援等を行う事業です。2026年3月期の売上高は932百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "物流系や金融系を中心とした事業会社"
+      ]
+    },
+    {
+      "id": "ec-solutions",
+      "name": "ECソリューション事業",
+      "description": "B2B向けECサイト構築パッケージ「EC-Rider B2B Ⅱ」の販売、並びに本パッケージ導入に係るコンサルティングやシステム開発及び保守を行う事業です。2026年3月期の売上高は79百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "B2BのECサイトを構築する事業会社"
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社製品の電子決済ソリューションの開発・販売と、事業会社向けのシステムコンサルティング・開発・保守、ECサイト構築パッケージの販売で収益を得る事業モデルです。",
+    "products": [
+      "電子決済ソリューション「Incredist」シリーズ",
+      "Android端末によるタッチ決済ソリューション「Tapion」シリーズ",
+      "マイナンバーカードを用いた本人確認（公的個人認証）ソリューション「myVerifist」",
+      "無人自動精算機向けの決済ソリューション",
+      "B2B向けECサイト構築パッケージ「EC-Rider B2B Ⅱ」"
+    ],
+    "customers": [
+      "物流系や金融系を中心とした事業会社",
+      "決済ソリューションを導入する事業会社",
+      "B2BのECサイトを構築する事業会社"
+    ],
+    "revenueSources": [
+      "自社製品の決済ソリューションの販売と運用保守の対価",
+      "システムコンサルティング、システム開発・保守の対価",
+      "ECサイト構築パッケージの販売と、導入に係るコンサルティングやシステム開発及び保守の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京・渋谷に本店を置く会社",
+        "description": "フライトソリューションズは東京都渋谷区恵比寿に本店を置く会社です。2026年3月31日現在の従業員数は110人で、関係会社は重要性の乏しい非連結子会社1社のみです。"
+      },
+      {
+        "kind": "offering",
+        "title": "決済製品とシステム開発、ECパッケージ",
+        "description": "自社製品の電子決済ソリューション「Incredist」シリーズやタッチ決済ソリューション「Tapion」シリーズの開発・販売、物流系や金融系を中心とした事業会社向けのシステムコンサルティングや開発・保守、B2B向けECサイト構築パッケージ「EC-Rider B2B Ⅱ」の販売を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "主な顧客は事業会社",
+        "description": "SIソリューション事業の顧客は物流系や金融系を中心とした事業会社です。決済ソリューション事業では、主要な顧客としてソフトバンク、GMOフィナンシャルゲート、GOが印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "決済ソリューション事業が売上の中心",
+        "description": "収益は自社製品の販売やシステム開発・保守などの対価です。2026年3月期の売上高は2,927百万円で、内訳は決済ソリューション事業が1,915百万円、SIソリューション事業が932百万円、ECソリューション事業が79百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失252百万円",
+        "description": "2026年3月期は当期純損失252百万円を計上しましたが、前期の当期純損失382百万円からは損失幅が縮小しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +171,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 390684000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -49,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 509796000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 8,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -71,14 +215,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 429279000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 110,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第37期（2024年3月期）において、2023年10月１日付で連結子会社であった株式会社フライトシステムコンサルティングを吸収合併し、持株会社体制を解消した。第37期以前は連結財務諸表を作成していたが、第38期及び第39期については子会社が重要性の乏しい非連結子会社のみのため、連結財務諸表を作成していない。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -93,7 +238,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 503906000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 110,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -115,7 +260,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 672190000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 110,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -125,8 +270,146 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1988,
+      "title": "株式会社フライトを設立",
+      "description": "東京都目黒区に、画像処理のデジタル化を事業目的として株式会社フライトを設立しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "インターネットに関する事業を開始",
+      "description": "インターネットに関するコンサルティング及びシステム構築事業を開始し、各種インターネットサービス事業者に対し、データベースと連携したシステムを提供しました。",
+      "significance": "現在のシステム開発事業につながる取組の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "フューチャーソフトと合併し、フライトシステムコンサルティングに商号変更",
+      "description": "フューチャーソフト株式会社と合併し、商号を株式会社フライトシステムコンサルティングに変更しました。あわせて、仙台市青葉区にＳＩセンターを設置しました。",
+      "significance": "システムインテグレーション事業の体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "持株会社体制へ移行し、フライトホールディングスに商号変更",
+      "description": "吸収分割により事業を株式会社フライト分割準備会社（同年10月に株式会社フライトシステムコンサルティングへ商号変更）へ承継し、持株会社体制へ移行するとともに、商号を株式会社フライトホールディングスに変更しました。",
+      "significance": "持株会社体制への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "DRAGON TECHNOLOGYを連結子会社化",
+      "description": "株式会社DRAGON TECHNOLOGY（同年11月に株式会社イーシー・ライダーへ商号変更）の第三者割当増資を引き受け、同社を連結子会社化しました。",
+      "significance": "現在のECソリューション事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東京証券取引所市場第二部へ市場変更",
+      "description": "東京証券取引所市場第二部へ市場変更しました。",
+      "significance": "上場市場の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "連結子会社を吸収合併し、フライトソリューションズに商号変更",
+      "description": "連結子会社であった株式会社フライトシステムコンサルティングを吸収合併し、持株会社体制を解消するとともに、商号を株式会社フライトソリューションズに変更しました。",
+      "significance": "現在の事業会社としての姿になり、現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "監査等委員会設置会社へ移行",
+      "description": "監査等委員会設置会社へ移行しました。",
+      "significance": "ガバナンス体制の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "softbank",
+      "relationship": "customer",
+      "description": "【主要な顧客ごとの情報】に、決済ソリューション事業・SIソリューション事業の主要な顧客として印字されています（2026年3月期）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "gmo-financial-gate",
+      "relationship": "customer",
+      "description": "【主要な顧客ごとの情報】に、決済ソリューション事業の主要な顧客として印字されています（2026年3月期）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "go",
+      "relationship": "customer",
+      "description": "【主要な顧客ごとの情報】に、決済ソリューション事業の主要な顧客として印字されています（2026年3月期）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "daiichikosho",
+      "relationship": "customer",
+      "description": "【主要な顧客ごとの情報】に、前事業年度（2025年3月期）のSIソリューション事業の主要な顧客として印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +417,47 @@
       "publisher": "株式会社フライトソリューションズ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YH2V.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YH2V",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-10-02",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "存在意義（ミッション）として「私たちの技術によってデジタルメディア社会の成長を支えていきます」を掲げています。次期に向けて、SIソリューション事業では既存顧客向けのシステム開発やDX推進支援、クラウドサービスを活用したシステム開発支援に注力し、決済ソリューション事業では新モデル「Incredist Premium Ⅲ」と「Tapion」シリーズの拡販、自社運営の決済センターサービスの開発・拡販を進め、手数料収入等のストックの収入の拡大により経営の安定化を図るとしています。ECソリューション事業では「EC-Rider B2B Ⅱ」とカートASP型のB2B EC構築サービス「EC-Rider Primo」の拡販に注力するとしています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "電子決済、タッチ決済、公的個人認証といった決済分野の自社製品を自ら開発・販売し、運用保守まで手がける製品事業と、物流系や金融系の事業会社向けのシステムコンサルティング・開発・保守を行うSI事業をあわせ持っている点が特徴です。自社運営の決済センターサービスの開発も進めています。",
+        "basis": "【事業の内容】に自社製品の決済ソリューション4種の開発、販売及び運用保守と、事業会社向けのシステムコンサルティング、システム開発・保守が印字され、MD&Aにフライト決済センターの開発への注力が印字されている。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "決済ソリューション事業が売上高の約65％を占める製品中心の構成で、主要な顧客としてソフトバンク、GMOフィナンシャルゲート、GOといった大手事業会社が印字されています。2026年3月期の売上高は2,927百万円で、前期から4.4％減りました。",
+        "basis": "セグメント注記の外部顧客への売上高（決済ソリューション事業1,915,255千円）と【主要な顧客ごとの情報】の印字、MD&Aに売上高2,927百万円（前期比4.4％減）が印字されている。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,138 @@
   "name": "ドリームベッド",
   "officialName": "ドリームベッド株式会社",
   "nameEn": "DREAMBED CO.,LTD.",
-  "description": null,
+  "shortNameEn": "DREAMBED CO.,LTD.",
+  "description": "マットレスやベッドフレーム、ソファ、寝装品などを製造し、家具販売店やホテルなどに販売する寝具・家具メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "home-furnishing",
+      "name": "ホームファニシング事業",
+      "description": "マットレス、ベッドフレーム、ソファ、寝装品などのデザイン開発、製造、販売を行う単一セグメントの事業です。自社ブランド製品と海外提携ブランド製品を自社工場及び協力工場で製造しています。2026年3月期の売上高は12,174百万円でした。",
+      "customers": [
+        "家具販売店",
+        "ホテル等の宿泊施設",
+        "一般消費者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "furniture-stores",
+          "name": "家具販売店向け",
+          "description": "全国の家具販売店に対して卸販売する経路で、家具販売店ごとに商品の販売コンセプトに対応した売り場のプロデュースを含めた支援を行っています。2026年3月期の販売実績は8,503百万円でした。",
+          "customers": [
+            "全国の家具販売店"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "commercial-facilities",
+          "name": "商業施設向け",
+          "description": "ホテル等の宿泊施設に対して直接販売する経路で、ホテルや商業空間のベッド・インテリアについて企画段階から参加し、提案から施工までプロジェクト全体をプロデュースしています。2026年3月期の販売実績は1,803百万円でした。",
+          "customers": [
+            "ホテル等の宿泊施設"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "shops-showrooms",
+          "name": "ショップ／ショールーム",
+          "description": "東京都・愛知県・大阪府・福岡県に展開するリーン・ロゼショップ６店舗での一般消費者への直接販売と、広島県・東京都・大阪府・愛知県の４か所のショールームを通じた販売を行う経路です。2026年3月期の販売実績は1,702百万円でした。",
+          "customers": [
+            "一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-channels",
+          "name": "その他",
+          "description": "主にベッド製造メーカー向けのOEM商品の販売や、一般消費者向けのウォーターベッドの設置料、アフターメンテナンスなどを行う経路です。2026年3月期の販売実績は165百万円でした。",
+          "customers": [
+            "ベッド製造メーカー",
+            "一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社ブランドと海外提携ブランドのベッドやソファなどを自社工場と協力工場で製造し、家具販売店、ホテル等の商業施設、自社のショップを通じて販売する事業モデルです。",
+    "products": [
+      "マットレス",
+      "ベッドフレーム",
+      "ソファ",
+      "寝装品（枕・布団類）",
+      "ウォーターベッド"
+    ],
+    "customers": [
+      "全国の家具販売店",
+      "ホテル等の宿泊施設",
+      "ショップやショールームに来店する一般消費者"
+    ],
+    "revenueSources": [
+      "家具販売店向けの製品売上",
+      "商業施設向けの製品売上",
+      "ショップ／ショールームでの販売",
+      "OEM商品の販売やアフターメンテナンスなど"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "広島県に生産拠点を持つ単体の寝具・家具メーカー",
+        "description": "連結子会社を持たない単体の会社で、国内に４か所の工場、９か所の営業所、10か所のショップ・ショールーム、３か所の流通センターを設けています。2026年３月31日現在の従業員数は376人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "自社ブランドと海外提携ブランドの製造販売",
+        "description": "自社ブランドの「dream bed」「WATER WORLD」に加え、Serta、KING KOIL、ligne roset、rufの海外提携ブランドの製品を、自社工場及び協力工場で製造しています。提携ブランドはライセンス契約に基づき、日本の生活様式に合わせて調整した上で国内生産しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "家具販売店・ホテル・一般消費者が顧客",
+        "description": "全国の家具販売店を通じて一般消費者に届けるほか、ホテル等の宿泊施設へ直接販売し、自社のショップやショールームでも一般消費者に直接販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年３月期の売上高は12,174百万円",
+        "description": "2026年３月期の売上高は12,174百万円で、前事業年度から5.8％増加しました。販売経路別の内訳は、家具販売店向け8,503百万円、商業施設向け1,803百万円、ショップ／ショールーム1,702百万円、その他165百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は479百万円",
+        "description": "2026年３月期の当期純利益は479百万円で、前事業年度の415百万円から増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +150,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3802574000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 358,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +172,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4050466000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 371,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +194,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4221603000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 363,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +216,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4508136000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 378,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,32 +238,193 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4844657000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 376,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1950,
+      "title": "広島でベッドの修理販売を開始（創業）",
+      "description": "広島市基町（現、広島市中区基町）にて渡邊禮市夫妻が授産場経営の後、当時の特別調達庁の呉支局や岩国出張所からアメリカ駐留軍の払い下げ物品を受け、ベッドの修理販売を開始しました。",
+      "significance": "当社の創業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "ドリームベッド株式会社を設立",
+      "description": "広島市堺町（現、広島市中区堺町）で設立された株式会社広島ベッド商会の製造部門を分離して、ドリームベッド株式会社が設立されました。",
+      "significance": "現在の会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "八千代第一工場が完成し、マットレス製造を開始",
+      "description": "八千代第一工場の第１期工事が完成し、マットレスの製造を開始しました。その後、第２期・第３期工事によりスプリング製造部門と縫製部門が分離されました。",
+      "significance": "自社工場でのマットレス生産体制の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "Sertaとの独占的ライセンス契約を締結",
+      "description": "Serta,Inc.（現Serta Simmons Bedding,LLC）との間で、日本国内における同社ブランドのマットレスの製造、販売及び商標等の使用許諾に関する独占的ライセンス契約を締結しました。",
+      "significance": "現在の主力ブランドであるSerta事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "ROSETとの独占的ライセンス契約を締結",
+      "description": "ROSET S.A.（現ROSET SAS）との間で、日本国内における同社ブランドの椅子、肘掛け椅子及びソファの製造、販売及び商標等の使用許諾に関する独占的ライセンス契約を締結しました。1997年には家具全般に対象を広げる追加契約を締結しました。",
+      "significance": "ligne rosetブランド事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "千代田工場が完成",
+      "description": "千代田工場が完成し、ligne rosetの椅子・ソファの製造部門を分離して製造を開始しました。",
+      "significance": "リーン・ロゼ製品の生産拠点の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "グループ４社を合併・統合",
+      "description": "当社を合併存続会社として、ドリームファニチャ株式会社、ドリーム化工株式会社、株式会社ドリーム総合研究所、あさひ産業株式会社の４社を合併・統合し、被合併会社は解散しました。",
+      "significance": "グループ機能を当社に集約する再編の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "グループ５社を合併・統合",
+      "description": "当社を合併存続会社として、エッチビードリームベッド株式会社、ドリーム特販株式会社、ドリームリース株式会社、株式会社高須霊苑販売、株式会社三礼興産の５社を合併・統合し、被合併会社は解散しました。",
+      "significance": "グループ再編が完了し、現在の単体の事業体制となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "RUFとの独占的ライセンス契約を再締結",
+      "description": "RUF-BETT INTERNATIONAL GMBH & CO.KGとの間で、日本国内における同社ブランドのベッド、マットレス、付属品家具等の一部の製造、販売や商標の使用許諾、同社の技術面での協力関係の構築等を目的とした独占的ライセンス契約を再締結しました。両社のライセンス契約は1975年に締結され、1998年に解消された経緯があります。",
+      "significance": "rufブランドの取扱いを再開した転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場会社としての起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場再編に伴い、2022年４月４日からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "KING KOILとの独占ライセンス契約を締結",
+      "description": "KING KOIL LICENSING COMPANY, INC.との間で、日本国内における同社ブランドのマットレスの製造、販売及び商標等の使用許諾に関する独占ライセンス契約を締結し、2025年10月より販売を開始しました。",
+      "significance": "約40年ぶりの新ブランド導入であり、マルチブランド戦略の広がりを示します。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第69期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第69期(2025/04/01－2026/03/31)",
       "publisher": "ドリームベッド株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHQB.pdf",
-      "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100ZFFY.pdf",
+      "publishedAt": "2026-11-12",
+      "docId": "S100ZFFY",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2027年３月期から2029年３月期までの３か年中期経営計画「Creating Value for Dreams」を策定し、既存事業の「深化」と新領域の「探索」を両輪で推進するとしています。深化では、Sertaやligne roset、KING KOIL等の高付加価値化、家具販売店との連携やCRMの強化、大規模家電量販店チェーンに対する取り組み強化を挙げ、探索では、KING KOILに続く新ブランドの発掘、商業施設向け事業の拡充、東南アジア市場へのOEM輸出を挙げています。また、自社工場の製造優位性を活かし、高品質な「ジャパンフィット」モデルをグローバルに展開するとしています。",
+        "asOf": "2026-11-12",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "販売経路別では家具販売店向けが売上高の約７割を占める一方、商業施設向けとショップ／ショールームを合わせた、宿泊施設や消費者へ直接届ける経路が約３割を占めており、卸売を中心としながら直接販売の経路も併せ持つ構成です。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の販売実績（販売経路別）に印字された2026年３月期の経路別金額（家具販売店向け8,503百万円、商業施設向け1,803百万円、ショップ／ショールーム1,702百万円、その他165百万円、合計12,174百万円）から読み取れます。",
+        "asOf": "2026-11-12",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "当社の強みは、世界的な複数のトップブランドの独占製造販売ライセンスを保有しながら、広島県の自社工場において製品を高品質かつ短納期で生産し、高品質な商品として多様なチャネルで販売できることにあるとしています。",
+        "asOf": "2026-11-12",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "Sertaとの独占的ライセンス契約は1978年から続いており、提携ブランドを国内でライセンス生産する体制により、日本の生活様式や環境に適した製品への調整や、輸入に伴うコストの抑制が可能な状態が長期間維持されています。",
+        "basis": "【沿革】に印字された1978年のSerta,Inc.との独占的ライセンス契約の締結と、【事業の内容】に印字された、ライセンス生産により日本の生活様式や環境に適した製品へ微調整できること、国内生産により海上運賃や通関費用等の輸入コストを抑えられることの記載から読み取れます。",
+        "asOf": "2026-11-12",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

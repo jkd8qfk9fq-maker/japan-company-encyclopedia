@@ -4,15 +4,168 @@
   "name": "大運",
   "officialName": "株式会社大運",
   "nameEn": "DAIUN CO., LTD.",
-  "description": null,
+  "shortNameEn": "DAIUN CO., LTD.",
+  "description": "大阪を拠点に、港湾運送を中核として通関・倉庫・陸上輸送までを担う国際複合一貫輸送の総合物流会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "port-transport",
+      "name": "港湾運送事業",
+      "description": "港湾運送事業法による無限定業者として貨物の船積み・陸揚げのための運送及び荷捌きを一貫して引き受ける事業で、港湾運送輸出・輸入業、近海輸送業、港湾荷役業、倉庫業を含みます。2026年3月期の外部顧客への売上高は9,044百万円でした。",
+      "customers": [
+        "船会社",
+        "荷主企業",
+        "元請港運事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "general-port-transport",
+          "name": "一般港湾荷役事業",
+          "description": "港湾運送事業法による無限定業者として、貨物の船積み、陸揚げのための貨物の運送及び荷捌きを一貫引き受けして行う業務です。",
+          "customers": [
+            "荷主企業",
+            "船会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "stevedoring",
+          "name": "港湾荷役事業",
+          "description": "船会社、荷主、元請港運事業者の委託を受け、沿岸荷役（無限定）を行う業務です。",
+          "customers": [
+            "船会社",
+            "荷主企業",
+            "元請港運事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "customs-brokerage",
+          "name": "通関業",
+          "description": "通関業法に基づく輸出入貨物の通関手続業務です。",
+          "customers": [
+            "輸出入を行う荷主企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "warehousing",
+          "name": "倉庫業",
+          "description": "倉庫業法に基づく普通倉庫の保管、荷役業務です。大阪堺倉庫や六甲物流センター、大阪南港の物流施設などを運営しています。",
+          "customers": [
+            "保管を委託する荷主企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "truck-transport",
+      "name": "自動車運送事業",
+      "description": "大小各型トラックによる一般陸運貨物の現地運送並びに集配業務、長距離貨物輸送及び隔地間連絡輸送、国際海上コンテナ貨物の内陸輸送を行う事業で、海上コンテナ輸送、フェリー輸送、トラック輸送を含みます。2026年3月期の外部顧客への売上高は162百万円でした。",
+      "customers": [
+        "荷主企業",
+        "港湾運送の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない区分で、自動車、火災、傷害及び海上等の各種損害保険の代理店業務を含みます。2026年3月期の外部顧客への売上高は4百万円でした。",
+      "customers": [
+        "保険契約者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "港湾運送事業法による無限定業者として貨物の船積み・陸揚げから運送・荷捌きまでを一貫して引き受け、通関や倉庫保管、自動車運送を組み合わせる事業モデルです。",
+    "products": [
+      "港湾運送（貨物の船積み・陸揚げのための運送及び荷捌きの一貫引受け）",
+      "港湾荷役（沿岸荷役の受託）",
+      "輸出入貨物の通関手続業務",
+      "普通倉庫での貨物の保管・荷役",
+      "貨物自動車運送（国際海上コンテナ貨物の内陸輸送、フェリー輸送を含む）",
+      "損害保険の代理店業務"
+    ],
+    "customers": [
+      "船会社",
+      "荷主企業",
+      "元請港運事業者"
+    ],
+    "revenueSources": [
+      "港湾運送・荷役の役務の対価",
+      "通関手続の対価",
+      "倉庫保管・荷役の対価",
+      "自動車運送の運賃",
+      "損害保険代理の手数料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "大阪本社の総合物流会社",
+        "description": "大運は大阪市中央区に本社を置き、神戸・名古屋の支店、東京営業所、中国の上海事務所を構えています。関係会社はなく単体で事業を行い、2026年3月31日現在の従業員数は97人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "港湾運送を中核に一貫輸送を提供",
+        "description": "港湾運送事業法による無限定業者として貨物の船積み・陸揚げのための運送と荷捌きを一貫して引き受け、通関、倉庫保管、トラックやフェリーによる陸上輸送を組み合わせて国際複合一貫輸送を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "船会社と荷主企業が顧客",
+        "description": "主な顧客は船会社や荷主企業、元請港運事業者です。特定の顧客への売上高が売上高の10％以上を占めるものはありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2つの報告セグメントで収益を得る",
+        "description": "2026年3月期の売上高は9,211百万円で、内訳は港湾運送事業9,044百万円、自動車運送事業162百万円、その他（損害保険代理業等）4百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益334百万円",
+        "description": "2026年3月期の当期純利益は334百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +180,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2802312000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 112,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +202,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3052722000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 108,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +224,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3741171000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 104,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +246,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3467838000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 99,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,17 +268,88 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4077926000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 97,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1945,
+      "title": "大阪海運株式会社を設立",
+      "description": "大阪海運株式会社を設立し、港湾運送事業、貨物自動車業、通関業等を開始しました。",
+      "significance": "会社の創業であり、現在の港湾運送事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "関西運送株式会社を吸収合併",
+      "description": "関西運送株式会社を吸収合併しました。",
+      "significance": "合併により事業基盤を拡大した出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "大阪証券取引所の市場第二部に上場",
+      "description": "大阪証券取引所の市場第二部に株式を上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "商号を株式会社大運に変更",
+      "description": "商号を大阪海運株式会社から株式会社大運へ変更しました。",
+      "significance": "現在の社名となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "関西商運株式会社を吸収合併",
+      "description": "関西商運株式会社を吸収合併しました。",
+      "significance": "関西圏での事業基盤をさらに広げた合併です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所の市場第二部へ市場変更",
+      "description": "東京証券取引所の市場第二部へ市場変更しました。",
+      "significance": "上場市場が東京証券取引所へ移った出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場であるスタンダード市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -134,13 +358,55 @@
       "publisher": "株式会社大運",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YK5Y.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YK5Y",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念「常に豊かな総合物流の未来を拓く」を基本に、「創造するロジスティクス」を追求することによって社会に貢献できる企業を目指しています。中長期的な経営戦略として、多様化する荷主及び市場の変化に応え得る企業体質の確立を掲げ、営業力の強化と中長期的視点に立った施設・設備の充実、新たな輸送方法の研究・開発とそれを担う人材の育成を目指しています。重点項目は、重点対象荷主・貨種の選定、中国事務所の営業機能強化及び海外パートナーの拡大、営業力の強化、港湾運送事業を基礎に３ＰＬを視野に入れたパートナーのネットワークの強化拡大、ローコストオペレーションによる生産性の向上です。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "戦略の軸は、売上高の98％を占める港湾運送事業を基礎に、対象とする荷主と貨種を選んで集中し、中国事務所や海外パートナーとの連携で国際一貫輸送の受注を広げながら、コスト対応力の強化で収益基盤を固めることです。",
+        "basis": "経営方針の記載（中長期的な経営戦略と重点項目）に基づく",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、港湾運送事業法による無限定業者として貨物の船積み・陸揚げから運送・荷捌きまでを一貫して引き受けられる立場にあり、一般港湾荷役、港湾荷役、通関、倉庫、自動車運送の機能を自社でそろえ、大阪・神戸・名古屋・東京の主要港湾の拠点と上海事務所を持つことです。",
+        "basis": "事業の内容の記載（事業別事業内容と無限定業者の位置付け）及び主要な設備の状況に基づく",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "港湾運送事業が売上高の98.1％を占め、自動車運送事業は1.8％にとどまるため、事業構成は港湾運送への集中度が高い構造です。大阪港・神戸港を地盤とする港湾運送業者として、国際貨物の荷役から内陸輸送までを担っています。",
+        "basis": "セグメント情報の記載（報告セグメントごとの外部顧客への売上高）に基づく",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

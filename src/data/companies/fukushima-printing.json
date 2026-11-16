@@ -4,15 +4,138 @@
   "name": "福島印刷",
   "officialName": "福島印刷株式会社",
   "nameEn": "FUKUSHIMA PRINTING CO.,LTD.",
-  "description": null,
+  "shortNameEn": "FUKUSHIMA PRINTING CO.,LTD.",
+  "description": "金沢市に本社を置く印刷会社で、ダイレクトメールや請求書などのデータプリントと封入・発送の受託を主力としています。",
   "listings": [
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "media",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "printing",
+      "name": "印刷事業",
+      "description": "商業印刷で培った印刷技術を基に、各種データを組み込んだ販促関連製品や事務通信製品の製造・販売を行う単一セグメントの事業です。得意先との直接取引を基本とし、2025年8月期の売上高は7,331百万円です。",
+      "customers": [
+        "ダイレクトメールや通知物を使う企業",
+        "官公庁"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "dmdp",
+          "name": "ＤＭＤＰサービス",
+          "description": "ダイレクトメールのデータ加工と印刷、ＤＭ処理の受託、データベースを使ったオンデマンド印刷を行うサービスです。2025年8月期の売上高は4,112百万円で、全体の約56％を占めます。",
+          "customers": [
+            "販促活動を行う企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ipdp",
+          "name": "ＩＰＤＰサービス",
+          "description": "請求書等の発行処理の受託や、各種行政サービスの印字処理、各種通知案内の印字処理を受託するサービスです。2025年8月期の売上高は2,528百万円で、全体の約35％を占めます。",
+          "customers": [
+            "請求書や通知を定期的に発送する企業",
+            "官公庁"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "bf",
+          "name": "ＢＦ複合サービス",
+          "description": "コンピュータ用帳票や一般帳票、シール・ラベルなどのビジネスフォームを製造・販売するサービスです。2025年8月期の売上高は605百万円です。",
+          "customers": [
+            "帳票を使う企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "shoin",
+          "name": "企画商印サービス",
+          "description": "広告宣伝用印刷やマニュアル印刷を行うサービスです。2025年8月期の売上高は84百万円です。",
+          "customers": [
+            "広告宣伝物やマニュアルを使う企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "印刷技術とデータ処理を組み合わせ、ダイレクトメールや通知物の印刷から発送までを企業や官公庁から受託しています。",
+    "products": [
+      "ダイレクトメール",
+      "請求書等の通知物の印字・発送受託",
+      "コンピュータ用帳票・一般帳票",
+      "シール・ラベル",
+      "広告宣伝用印刷物",
+      "マニュアル"
+    ],
+    "customers": [
+      "販促活動を行う企業",
+      "請求書や通知を定期的に発送する企業",
+      "官公庁",
+      "ＩＴサービスを展開する企業"
+    ],
+    "revenueSources": [
+      "ダイレクトメール等のデータプリントサービスの対価",
+      "請求書等発行処理の受託料",
+      "帳票等の印刷物の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "金沢市の印刷会社",
+        "description": "1952年に金沢市で設立された印刷会社で、2025年8月20日現在の従業員数は428人です。名古屋証券取引所メイン市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "データプリントと印刷の4サービス",
+        "description": "ダイレクトメールのＤＭＤＰサービス、請求書や通知の印字・発送を受託するＩＰＤＰサービス、帳票のＢＦ複合サービス、広告宣伝用印刷の企画商印サービスの4つを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "企業と官公庁",
+        "description": "得意先との直接取引を基本とし、販促を行う企業や、請求書・通知を定期的に発送する企業、官公庁などが顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "サービスの対価と印刷物の販売代金",
+        "description": "2025年8月期の売上高は7,331百万円で、ＤＭＤＰサービスが4,112百万円、ＩＰＤＰサービスが2,528百万円を占めています。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年8月期の当期純利益は163百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年8月期",
@@ -27,11 +150,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5180970000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 458,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -49,14 +172,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5269812000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 459,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第70期の期首から適用しており、第70期以降の主要な経営指標等は適用後の数値となっています。"
     },
     {
       "fiscalYear": "2023年8月期",
@@ -71,11 +195,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5274367000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 448,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -93,11 +217,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5234329000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 445,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -115,17 +239,88 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5285834000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 428,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1952,
+      "title": "福島印刷株式会社を設立",
+      "description": "金沢市上百々女木町に福島印刷株式会社を設立し、事務用印刷物の製造・販売を始めました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "加越印刷株式会社を合併",
+      "description": "1961年に子会社として分離した加越印刷株式会社を合併し、その社屋を第二工場としました。",
+      "significance": "生産体制を一本化しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "名古屋証券取引所市場第二部に上場",
+      "description": "株式を名古屋証券取引所市場第二部に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "データプリントサービス設備を導入",
+      "description": "セキュリティ室を設置し、データプリントサービス（ＤＰサービス）の設備を導入しました。",
+      "significance": "現在の主力であるデータプリント事業の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "高速インクジェットプリンタ設備を導入",
+      "description": "本社・工場の第二工場２階を改装し、高速インクジェットプリンタ設備を導入しました。",
+      "significance": "データプリントの生産能力を高めました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "さいたまサテライトを開設",
+      "description": "さいたま市桜区にさいたまサテライトを開設し、高解像度の高速インクジェットプリンタ設備を導入しました。",
+      "significance": "関東圏に生産拠点を設けました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "名古屋証券取引所メイン市場へ移行",
+      "description": "名古屋証券取引所の市場区分の見直しにより、市場第二部からメイン市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -134,13 +329,55 @@
       "publisher": "福島印刷株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X17L.pdf",
       "publishedAt": "2025-11-14",
-      "accessedAt": "2026-09-30"
+      "docId": "S100X17L",
+      "asOf": "2025-08-20",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「インターネットと共存する印刷業」を目指し、主力のＩＰＤＰサービスとＤＭＤＰサービスの販売を強化するとともに、両サービスに付帯する業務のアウトソーシングの幅を広げ、ＩＴサービスを展開する顧客の深耕と新規開拓に取り組むとしています。",
+        "asOf": "2025-11-14",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2025年8月期は、発送代行サービスが伸びたＤＭＤＰサービスの売上高が大きく増え、全体の売上高も前事業年度を上回りました。",
+        "basis": "ＭＤ＆Ａに、ＤＭＤＰサービスの売上高は発送代行サービスの大幅な伸長により前事業年度比21.8％増の4,112百万円となり、売上高全体は前事業年度比9.4％増の7,331百万円となった旨が印字されていることから読み取れます。",
+        "asOf": "2025-11-14",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "顧客の個人情報を取り扱うサービスでは、安心してアウトソーシングできることの価値が高まっているとして、信頼の基となる品質保証と情報セキュリティ体制の強化を図るとしています。",
+        "asOf": "2025-11-14",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "印刷業界ではＷｅｂ化やペーパーレス化で印刷需要が減る一方、官民の人手不足を背景に、データプリント業務のアウトソーシングへの切替えを検討する顧客が増えるとみています。",
+        "basis": "経営方針に、印刷業界ではＷｅｂ化等による印刷需要の減少傾向が続く一方、慢性的な人手不足からＤＰサービス分野で内製からアウトソーシングへの切替えを検討する顧客の増加が予想される旨が印字されていることから読み取れます。",
+        "asOf": "2025-11-14",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年8月期",
     "asOf": "2025-08-20",

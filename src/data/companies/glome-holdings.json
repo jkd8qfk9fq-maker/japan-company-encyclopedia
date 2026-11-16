@@ -4,15 +4,150 @@
   "name": "グローム・ホールディングス",
   "officialName": "グローム・ホールディングス株式会社",
   "nameEn": "GLOME Holdings, Inc.",
-  "description": null,
+  "shortNameEn": "GLOME Holdings, Inc.",
+  "description": "医療機関への経営指導などの支援サービスと商業施設の賃貸を行う持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "グロース"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "medical-related",
+      "name": "医療関連事業",
+      "description": "アライアンス先医療機関に対して、経営・管理・運営の指導をはじめとするサービスを重層的に提供する事業です。ホスピス住宅の運営や医療機器等の販売、海外在住患者に対するサービスの提供も行っています。2026年3月期の外部顧客への売上高は1,869百万円でした。",
+      "customers": [
+        "アライアンス先医療機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "management-support",
+          "name": "医療機関への経営支援等（グローム・マネジメント）",
+          "description": "連結子会社のグローム・マネジメント株式会社が、アライアンス先医療機関への経営・管理・運営の指導や連携支援、医療機器・薬剤の購入支援、貸金業、ホスピス住宅の運営などを行っています。",
+          "customers": [
+            "アライアンス先医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "work-support",
+          "name": "人事・労務支援等（グローム・ワークサポート）",
+          "description": "連結子会社のグローム・ワークサポート株式会社が、人事・労務を中心とした研修や人事制度の構築支援、有料職業紹介、事務業務の請負を行っています。",
+          "customers": [
+            "アライアンス先医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "international",
+          "name": "海外在住患者向けサービス（グローム・インターナショナル）",
+          "description": "連結子会社のグローム・インターナショナル株式会社が、海外在住患者に対する国内医療機関の紹介やオンライン診療の紹介を行っています。",
+          "customers": [
+            "海外在住の患者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "medical-equipment",
+          "name": "医療機器等の販売等（福山医療器）",
+          "description": "連結子会社の福山医療器株式会社が、医療機器、介護機器、介護用品、福祉用具の販売及び修理、点検を行っています。系統用蓄電所事業も同社が担います。",
+          "customers": [
+            "医療機関等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-related",
+      "name": "不動産関連事業",
+      "description": "北海道釧路市所在の商業施設と北海道留萌市所在の商業施設の賃貸を行う事業です。事業は大幅に縮小しています。2026年3月期の外部顧客への売上高は134百万円でした。",
+      "customers": [
+        "商業施設の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "アライアンス先医療機関へ経営指導などのサービスを重層的に提供して業務委託報酬等を受け取り、商業施設の賃貸収入も得る事業モデルです。",
+    "products": [
+      "医療機関への経営・管理・運営の指導などの支援サービス",
+      "医療機器・介護機器等の販売",
+      "ホスピス住宅の運営",
+      "商業施設の賃貸"
+    ],
+    "customers": [
+      "アライアンス先医療機関",
+      "医療機器等の購入者",
+      "商業施設の賃借人"
+    ],
+    "revenueSources": [
+      "アライアンス先医療機関からの業務委託報酬等",
+      "医療機器等の販売による収入",
+      "商業施設の賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京証券取引所グロース市場に上場する持株会社",
+        "description": "グローム・ホールディングスは東京都港区に本社を置く持株会社で、連結子会社4社とともにグループを構成し、東京証券取引所グロース市場に上場しています。2026年3月31日現在の連結従業員数は73人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "医療機関への支援サービスと商業施設の賃貸",
+        "description": "連結子会社を通じて、アライアンス先医療機関への経営・管理・運営の指導や人事・労務支援、海外在住患者の紹介、医療機器等の販売、ホスピス住宅の運営を行い、北海道の商業施設2件の賃貸も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "アライアンス先医療機関が主な顧客",
+        "description": "主な顧客はアライアンス先医療機関で、2026年3月31日現在50施設、4,826床です。内訳は無床診療所6施設、有床診療所8施設、病院24施設、介護老人保健施設12施設です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は2,003百万円",
+        "description": "2026年3月期の売上高は2,003百万円で、前期の2,043百万円から減りました。医療関連事業が1,869百万円、不動産関連事業が134百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純損失は538百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純損失は538百万円で、前期は親会社株主に帰属する当期純利益70百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +162,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7656000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 62,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8006000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 61,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +202,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7768000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 72,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +222,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7838000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 99,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +242,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7273000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 73,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +250,128 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1987,
+      "title": "株式会社フォルザインターナショナルを設立",
+      "description": "前身の株式会社フォルザインターナショナルが設立されました。",
+      "significance": "創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "本荘エステート株式会社に商号変更し不動産賃貸事業を開始",
+      "description": "商号を本荘エステート株式会社に変更し、不動産賃貸事業を開始しました。",
+      "significance": "不動産事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "株式会社ロジコムに商号変更",
+      "description": "商号を株式会社ロジコムに変更しました。",
+      "significance": "商号の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "大阪証券取引所ヘラクレスに上場",
+      "description": "大阪証券取引所ヘラクレス（後の東京証券取引所JASDAQ（グロース））に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ（グロース）に上場",
+      "description": "東京証券取引所と大阪証券取引所の統合に伴い、東京証券取引所JASDAQ（グロース）に上場しました。",
+      "significance": "取引所統合に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "持株会社制へ移行しLCホールディングス株式会社に商号変更",
+      "description": "持株会社制へ移行し、商号をLCホールディングス株式会社に変更しました。",
+      "significance": "現在の持株会社体制の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "株式会社LCメディコムを設立",
+      "description": "子会社の株式会社LCメディコム（現グローム・マネジメント株式会社）を設立しました。",
+      "significance": "医療関連事業の中核子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "医療関連事業への本格的転換に着手",
+      "description": "不動産関連事業から医療関連事業への本格的転換に着手しました。",
+      "significance": "現在の事業構造への転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "グローム・ホールディングス株式会社に商号変更",
+      "description": "商号をグローム・ホールディングス株式会社に変更しました。あわせて子会社の株式会社LCメディコムもグローム・マネジメント株式会社に商号を変更しました。",
+      "significance": "現在の商号の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場に上場",
+      "description": "東京証券取引所の市場区分再編に伴い、新市場区分のグロース市場に上場しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "福山医療器株式会社を子会社化",
+      "description": "福山医療器株式会社の全株式を取得し、子会社化しました。同年にグローム・インターナショナル株式会社も設立しています。",
+      "significance": "医療機器販売と海外患者向けサービスへの展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "系統用蓄電所事業を開始",
+      "description": "2026年5月に系統用蓄電所事業を開始しました。",
+      "significance": "決算期末後の新しい事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +380,50 @@
       "publisher": "グローム・ホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJMT.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJMT",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 系統用蓄電所事業は、決算期末後の2026年5月に開始しています（沿革及び事業の内容に記載）。福山医療器株式会社の事業として系統用蓄電所事業が事業の内容に含まれていますが、本登録は2026年3月31日現在の事業構造に基づいており、期間後に開始した同事業の取扱いは人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "医療関連事業を引き続き成長の中核に据えつつ、社会インフラを支える系統用蓄電所事業と、事業の効率と質を高めるAI・デジタルを新たな成長の柱と位置づけ、三本柱から成る事業ポートフォリオの構築を通じて、持続的な成長と企業価値の向上を実現するとしています。アライアンス先医療機関への経営指導を含むサービスを重層的に提供し、その対価である業務委託報酬等を増大させていく方針です。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "医療機関に特化して重層的かつ総合的なサービスをワンストップで提供できる体制と、これまで培ってきた信頼性とノウハウにおいて、優位性を保っていると会社は認識しています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における競争環境と優位性の記載に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "国内には150万を超える病床があり、民間グループの最大手でも約22,000床規模と推察される中で、アライアンス先医療機関の開拓・拡大の余地は現在も大きいと会社は考えています。当社グループのサービス提供先は2026年3月31日現在50施設、4,826床です。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における経営環境とアライアンス先の施設数・病床数の記載に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

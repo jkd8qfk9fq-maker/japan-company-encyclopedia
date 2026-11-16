@@ -4,15 +4,146 @@
   "name": "旭松食品",
   "officialName": "旭松食品株式会社",
   "nameEn": "ASAHIMATSU FOODS CO.,LTD.",
-  "description": null,
+  "shortNameEn": "ASAHIMATSU FOODS CO.,LTD.",
+  "description": "凍豆腐や即席みそ汁、医療用食材などの食品を製造販売する食品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "food-products",
+      "name": "食料品事業",
+      "description": "凍豆腐、加工食品等の食品を製造販売する単一セグメントの事業です。2026年3月期の売上高は7,686百万円でした。当社と連結子会社の旭松フレッシュシステム株式会社で構成され、旭松フレッシュシステムは当社製品の輸送・保管や原材料の輸送・仕入を行っています。",
+      "products": [
+        "凍豆腐",
+        "即席みそ汁などの加工食品",
+        "医療用食材などのその他食料品"
+      ],
+      "customers": [
+        "三菱商事株式会社",
+        "三井物産株式会社",
+        "食品の販売先",
+        "病院・介護施設"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "frozen-tofu",
+          "name": "凍豆腐",
+          "description": "大豆を原料とする凍豆腐の部門で、2026年3月期の外部顧客への売上高は3,352百万円でした。「新あさひ豆腐」を中心に、健康機能性の広報や用途別商品の開発を行っています。",
+          "products": [
+            "凍豆腐",
+            "新あさひ豆腐"
+          ],
+          "customers": [
+            "三菱商事株式会社",
+            "三井物産株式会社",
+            "食品の販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "processed-foods",
+          "name": "加工食品（即席みそ汁等）",
+          "description": "即席みそ汁などの加工食品の部門で、2026年3月期の外部顧客への売上高は2,336百万円でした。「生みそずい」やカップ入りの商品などを製造販売しています。",
+          "products": [
+            "即席みそ汁「生みそずい」",
+            "カップ生みそずい"
+          ],
+          "customers": [
+            "三菱商事株式会社",
+            "三井物産株式会社",
+            "食品の販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-foods",
+          "name": "その他食料品",
+          "description": "医療用食材などを扱う部門で、2026年3月期の外部顧客への売上高は1,998百万円でした。医療用食材は、えん下困難者向けの調理済み・形態調整済み食品として病院・介護施設などに提供しています。",
+          "products": [
+            "医療用食材"
+          ],
+          "customers": [
+            "病院・介護施設",
+            "食品の販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "大豆を原料とした凍豆腐を中心に、即席みそ汁などの加工食品や医療用食材を製造し、商社や食品の販売先などへ販売しています。",
+    "products": [
+      "凍豆腐「新あさひ豆腐」",
+      "即席みそ汁「生みそずい」などの加工食品",
+      "医療用食材"
+    ],
+    "customers": [
+      "三菱商事株式会社",
+      "三井物産株式会社",
+      "食品の販売先",
+      "病院・介護施設"
+    ],
+    "revenueSources": [
+      "凍豆腐の販売対価",
+      "加工食品の販売対価",
+      "その他食料品の販売対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "大豆食品のメーカー",
+        "description": "1950年に長野県で凍豆腐の会社として設立された食品メーカーで、連結の従業員数は257人です（2026年3月31日現在）。連結子会社は旭松フレッシュシステム株式会社の1社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "凍豆腐と加工食品の製造販売",
+        "description": "大豆を原料とした凍豆腐を中心に、即席みそ汁などの加工食品や、えん下困難者向けの医療用食材を製造販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "商社や食品の販売先、医療・介護の現場",
+        "description": "三菱商事株式会社と三井物産株式会社が主要な顧客で、医療用食材は病院・介護施設などに提供しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は7,686百万円で、前期から4.1％減りました。価格改定の影響などで販売数量が減少しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は230百万円で、前期から3.4％減りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +158,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7551892000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 326,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +178,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7518087000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 319,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +198,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7972758000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 313,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +218,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8265795000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 310,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +238,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8397378000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 257,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +246,218 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1950,
+      "title": "旭松凍豆腐株式会社を設立",
+      "description": "長野県下伊那郡松尾村（現・飯田市）に旭松凍豆腐株式会社を設立しました。",
+      "significance": "現在の旭松食品の起源です。資本金の金額は沿革に書かれていますが、ここには記録していません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "製造販売を開始",
+      "description": "設立場所において凍豆腐の製造販売を開始しました。",
+      "significance": "事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "天竜工場を建設し本店を移転",
+      "description": "飯田市駄科に天竜第一工場（現・天竜工場）を建設し、本店を飯田市駄科に移転しました。",
+      "significance": "現在の主力生産拠点の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "信州豆腐販売株式会社を設立",
+      "description": "子会社として信州豆腐販売株式会社を設立しました。後の信州食品株式会社です。",
+      "significance": "販売体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "即席みそ汁「生みそずい」の生産を開始",
+      "description": "天竜第二工場（現・天竜工場）を開設し、即席みそ汁「生みそずい」の生産を開始して発売しました。",
+      "significance": "現在の加工食品部門の主力商品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "旭松食品株式会社に社名変更",
+      "description": "旭松食品株式会社に社名変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "納豆「なっとういち」を発売",
+      "description": "納豆「なっとういち」を発売しました。",
+      "significance": "後の高森工場での生産につながりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "ダイヤ豆腐と信州食品を吸収合併",
+      "description": "ダイヤ豆腐株式会社と信州食品株式会社を吸収合併し、伊那工場や東京支店、大阪支店などを継承しました。",
+      "significance": "事業規模と販売網の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "額面変更のため合併",
+      "description": "株式の額面金額を変更するため、旭松食品株式会社（本社・神戸市）と合併し、本店を長野県飯田市に移転しました。",
+      "significance": "現在の法人の形となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "本社機能を大阪市へ移転",
+      "description": "大阪市に本社機能を移転しました。",
+      "significance": "現在の本社機能の所在地の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "旭松フレッシュシステム株式会社を設立",
+      "description": "子会社として旭松フレッシュシステム株式会社を設立しました。現在の連結子会社です。",
+      "significance": "製品の輸送・保管を担う体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "青島旭松康大食品有限公司を設立",
+      "description": "中華人民共和国山東省膠南市（現・青島市）に青島旭松康大食品有限公司を設立しました。",
+      "significance": "海外事業の拠点でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "納豆事業から撤退",
+      "description": "埼玉工場と小野工場を閉鎖して納豆事業から撤退し、納豆事業の営業権と商標権を譲渡しました。",
+      "significance": "凍豆腐と加工食品への集中を進めた転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "市場の統合により東京証券取引所市場第二部に上場しました。",
+      "significance": "現在の上場市場の前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "FSSC22000の認証を取得",
+      "description": "国際食品安全マネジメント規格「FSSC22000」の認証を取得し、2016年には全工場で取得しました。",
+      "significance": "食品安全体制の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "原料大豆をグローバルGAP認証大豆へ全面切替",
+      "description": "凍豆腐の生産原料である大豆を、グローバルGAP認証大豆に全面的に切り替えました。",
+      "significance": "原料の品質と持続可能性への取り組みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "青島の子会社の持分を一部譲渡し連結から除外",
+      "description": "子会社の青島旭松康大食品有限公司の持分の一部を譲渡し、同社と青島旭松康大進出口有限公司が連結の範囲から除外となりました。",
+      "significance": "中国事業の経営管理を共同出資者へ移管した見直しです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-corporation",
+      "relationship": "customer",
+      "description": "主要な顧客です。セグメント情報の主要な顧客ごとの情報に、食料品事業の顧客として載っています（2026年3月期）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "customer",
+      "description": "主要な顧客です。セグメント情報の主要な顧客ごとの情報に、食料品事業の顧客として載っています（2026年3月期）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +465,47 @@
       "publisher": "旭松食品株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI4Q.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YI4Q",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "食品業界での販売競争の中で生き残るため、安心・安全を第一とした供給体制の確立と信用の醸成、商品開発の迅速化や販売力の強化、グループ全体でのコスト削減や省力化・効率化による強靭な経営体力の形成、働き方改革と人事ローテーションによる人材の確保に重点を置いて経営を進めます。凍豆腐では健康有用性の情報発信と用途別商品の開発、海外への販路開拓に取り組み、加工食品では価値訴求型の新商品で差別化を進め、医療用食材の成長の促進と新たな柱となる事業の育成を続けます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "凍豆腐の主原料である大豆はグローバルGAP認証大豆に全面的に切り替えており、全工場で食品安全マネジメント規格「FSSC22000」の認証を継続しています。凍豆腐に含まれるレジスタントプロテインの健康機能性について研究と情報発信を続け、新あさひ豆腐の製法特許も取得しています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における品質に関する事項と、沿革における認証取得と特許取得の記述に基づく。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "大豆を原料とした食品の製造販売を主体とする食品メーカーで、国内の食品市場は人口減少で長期的に縮小する傾向にあります。医療用食材は、人員不足の介護現場で完全調理済み食品の利便性が評価され、安定的に推移しています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における経営環境の記述と、経営者による分析における医療用食材の記述に基づく。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

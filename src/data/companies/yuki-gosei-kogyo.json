@@ -4,15 +4,127 @@
   "name": "有機合成薬品工業",
   "officialName": "有機合成薬品工業株式会社",
   "nameEn": "YUKI GOSEI KOGYO CO., LTD.",
-  "description": null,
+  "shortNameEn": "Yuki Gosei Kogyo Co., Ltd.",
+  "description": "アミノ酸、化成品、医薬品原料・中間体を製造販売する、ファインケミカル専業の化学メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "fine-chemical",
+      "name": "ファインケミカル事業",
+      "description": "アミノ酸関係、化成品関係、医薬品関係の製造販売を行う、同社の単一セグメントです。2026年3月期の売上高は15,448百万円です。主な生産拠点は福島県いわき市の常磐工場で、2026年3月31日現在の従業員数は296人です。非連結子会社のユーキテクノサービス株式会社は、主として当社の製造業務の請負等を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "長瀬産業株式会社",
+        "中外製薬株式会社",
+        "株式会社山口薬品商会",
+        "TRINITTI INTERNATIONAL CORP."
+      ],
+      "children": [
+        {
+          "id": "chemical-products",
+          "name": "化成品関係",
+          "description": "タイヤコード接着剤原料、農薬中間体、シリコン化合物等の製造及び販売を行っています。2026年3月期の外部顧客への売上高は5,629百万円で、製品区分の中で最も大きくなっています。",
+          "customers": [
+            "タイヤ・高分子材料メーカー等の法人",
+            "農薬メーカー等の法人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "amino-acids",
+          "name": "アミノ酸関係",
+          "description": "アミノ酸、ビタミン原料等の製造及び販売を行っています。医薬品用途や食品添加物用途に使われます。2026年3月期の外部顧客への売上高は5,156百万円です。2025年6月には常磐工場にグリシンの増産設備が新設されました。",
+          "customers": [
+            "医薬品メーカー等の法人",
+            "食品メーカー等の法人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "pharmaceutical-products",
+          "name": "医薬品関係",
+          "description": "医薬品原料・中間体等の製造及び販売を行っています。2026年3月期の外部顧客への売上高は4,661百万円です。",
+          "customers": [
+            "医薬品メーカー等の法人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "医薬・食品・化学メーカーなどにアミノ酸や化成品、医薬品の原料・中間体を製造して販売し、その販売代金が収益となるビジネスモデルです。",
+    "products": [
+      "アミノ酸、ビタミン原料",
+      "タイヤコード接着剤原料、農薬中間体、シリコン化合物などの化成品",
+      "医薬品原料・中間体（医薬原薬）"
+    ],
+    "customers": [
+      "医薬品メーカー",
+      "食品メーカー",
+      "タイヤ・高分子材料メーカー",
+      "農薬メーカー",
+      "化学品の販売会社"
+    ],
+    "revenueSources": [
+      "アミノ酸関係製品の販売代金",
+      "化成品関係製品の販売代金",
+      "医薬品関係製品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "有機合成薬品工業",
+        "description": "東京都中央区日本橋人形町に本社を置き、福島県いわき市の常磐工場を主な生産拠点とする会社です。2026年3月31日現在の従業員数は296人で、非連結子会社が1社あります。"
+      },
+      {
+        "kind": "offering",
+        "title": "アミノ酸、化成品、医薬品原料・中間体の製造販売",
+        "description": "ファインケミカル事業の単一セグメントで、アミノ酸・ビタミン原料、タイヤコード接着剤原料や農薬中間体、シリコン化合物などの化成品、医薬品原料・中間体を製造販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外の医薬品・食品・化学メーカー等",
+        "description": "顧客は国内外の医薬品メーカーや食品メーカー、タイヤ・高分子材料メーカーなどです。主要な顧客として長瀬産業株式会社、中外製薬株式会社、株式会社山口薬品商会、TRINITTI INTERNATIONAL CORP.が印字されています。海外への販売は総販売実績の51.9％を占めています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は15,448百万円",
+        "description": "2026年3月期の売上高は15,448百万円で、前期から2.1％増加し、7期連続で過去最高となりました。製品区分別では化成品関係が5,629百万円、アミノ酸関係が5,156百万円、医薬品関係が4,661百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の当期純利益は313百万円",
+        "description": "2026年3月期の当期純利益は313百万円で、前期から65.1％減少しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +139,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11004000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 296,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +161,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11478000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 295,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +183,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12430000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 290,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +205,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13106000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 296,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +227,231 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13487000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 296,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1947,
+      "title": "有機合成工業株式会社を創立",
+      "description": "たばこ香料の生産を目的として、東京都中央区日本橋兜町において有機合成工業株式会社を創立しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "前野工場の稼動を開始",
+      "description": "前野工場の稼動を開始しました。",
+      "significance": "生産体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "蓮根工場の稼動を開始",
+      "description": "蓮根工場の稼動を開始しました。現在の東京研究所にあたります。",
+      "significance": "現在の研究拠点の前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "現社名に改称",
+      "description": "有機合成薬品工業株式会社に社名を変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "常磐工場の稼動を開始",
+      "description": "福島県いわき市の常磐工場の稼動を開始しました。",
+      "significance": "現在の主力生産拠点の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "東京研究所が完成",
+      "description": "東京研究所が完成しました。",
+      "significance": "研究開発拠点の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "常磐工場に医薬原薬生産設備を新設",
+      "description": "常磐工場に医薬原薬の生産設備を新設しました。",
+      "significance": "医薬品関係の生産体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "常磐工場に医薬品原薬・中間体設備を新設",
+      "description": "常磐工場に医薬品原薬・中間体の設備を新設しました。",
+      "significance": "医薬品分野の生産能力の増強です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "FSSC 22000認証を取得",
+      "description": "食品安全マネジメントシステムの国際規格であるFSSC 22000の認証を取得しました。",
+      "significance": "食品添加物用途の製品に関わる認証の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に区分変更",
+      "description": "東京証券取引所の市場区分の見直しにより、スタンダード市場に区分が変更されました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "常磐工場にグリシン増産設備を新設",
+      "description": "常磐工場にグリシンの増産設備を新設しました。",
+      "significance": "アミノ酸関係の主力製品の増産体制の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nagase-and-co",
+      "relationship": "customer",
+      "description": "【関連情報】の主要な顧客ごとの情報に、2026年3月期の主要な顧客として印字されています。また、2026年3月31日現在、発行済株式（自己株式を除く。）の5.08％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等、財務諸表】"
+    },
+    {
+      "companyId": "chugai-pharmaceutical",
+      "relationship": "customer",
+      "description": "【関連情報】の主要な顧客ごとの情報に、2026年3月期の主要な顧客として印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等、財務諸表】"
+    },
+    {
+      "companyId": "nipro",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式（自己株式を除く。）の15.25％を保有する筆頭株主です。また、【株式の保有状況】に、医薬品関係で取引があり、業務提携及び資本提携のため当社が同社株式を保有していることが印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "hodogaya-chemical",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式（自己株式を除く。）の5.08％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "sumitomo-corporation",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】に、アミノ酸関係、化成品関係、医薬品関係で取引があり、同社との関係強化のため当社が同社株式73,000株を保有していることが印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "zeria-pharmaceutical",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】に、医薬品関係で取引があり、同社との営業上の関係強化のため当社が同社株式272,100株を保有していることが印字されています。また、同社は2026年3月31日現在、発行済株式（自己株式を除く。）の2.23％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aska-pharmaceutical-holdings",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】に、医薬品関係で取引があり、同社との関係強化のため当社が同社株式150,000株を保有していることが印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "osaka-soda",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】に、医薬品関係で取引があり、同社との営業上の関係強化のため当社が同社株式119,500株を保有していることが印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kureha",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】に、当社常磐工場における生産活動において取引があり、同社との営業上の関係強化のため当社が同社株式46,500株を保有していることが印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +459,47 @@
       "publisher": "有機合成薬品工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHPD.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YHPD",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2027年3月期を起点とする3カ年の中期経営計画では、「新たなステージへの挑戦（企業価値の向上による持続的な成長）」を基本方針とし、クオリティカルチャーとイノベーションによる成長戦略の推進、営業・開発・生産の連携による価値創出力の強化、アミノ酸分野のグローバルな供給体制強化と高付加価値化、化成品分野のポートフォリオ変革と新規事業への挑戦、医薬品分野におけるCDMOビジネスの拡大と技術革新の5点を重点施策としています。併せて、サプライチェーンの強化を含めた抜本的な収益構造改革を推進し、収益力の向上を目指すとしています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "研究開発では、アミノ酸、化成品、医薬品の3分野で高付加価値な新製品の創出に注力し、戦略物質と位置づけるピリジン・ピペリジン・キヌクリジン誘導体や有機ケイ素化合物を活用して、医薬関連、IT関連、ポリマー関連、機能性材料関連の新製品開発に挑戦しています。",
+        "basis": "【研究開発活動】に、アミノ酸、化成品、医薬品の3分野で研究開発に注力している旨と、戦略物質であるピリジン・ピペリジン・キヌクリジン誘導体及び有機ケイ素化合物を活用した新製品開発に挑戦している旨が印字されていることに基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高に占める大口取引先上位10社の比率は2026年3月期に68.8％で、大口取引先との関係が経営成績に重要な影響を与える要因として挙げられています。海外への販売は総販売実績の51.9％を占め、地域別ではアジア向けが最も大きくなっています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、売上高に占める大口取引先上位10社の売上高比率が2026年3月期に68.8％である旨が印字されていること、【関連情報】の地域ごとの情報に地域別の売上高が印字されていることに基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,126 @@
   "name": "ジオマテック",
   "officialName": "ジオマテック株式会社",
   "nameEn": "GEOMATEC CO., LTD.",
-  "description": null,
+  "shortNameEn": "GEOMATEC CO., LTD.",
+  "description": "真空成膜技術でディスプレイや半導体・電子部品向けの薄膜製品を製造・販売する、横浜市に本社を置く成膜加工メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "thin-film-processing",
+      "name": "成膜加工関連事業",
+      "description": "真空成膜技術を使い、ディスプレイや半導体・電子部品など向けの薄膜製品を製造・販売する単一セグメントの事業です。成膜関連部材の販売と成膜関連サービスの提供も行っています。2026年3月期の売上高は6,008百万円でした。主な生産拠点は宮城県栗原市の金成工場と兵庫県赤穂市の赤穂工場で、東京都大田区にR＆Dセンターがあります。",
+      "customers": [
+        "ディスプレイパネルメーカー",
+        "半導体・電子部品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "display",
+          "name": "ディスプレイ",
+          "description": "液晶ディスプレイパネル、タッチパネル、カバーパネル、その他ディスプレイ基板への薄膜製品です。2026年3月期の外部顧客への売上高は2,855百万円でした。",
+          "customers": [
+            "ディスプレイパネルメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "semiconductor-electronic-parts",
+          "name": "半導体・電子部品",
+          "description": "半導体関連製品やエネルギー関連部材、ヒーター・センサー部品、各種電子部品への薄膜製品です。2026年3月期の外部顧客への売上高は1,876百万円でした。",
+          "customers": [
+            "半導体・電子部品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "other",
+          "name": "その他",
+          "description": "g.moth®やg.slip®などのナノ構造体製品、ディスプレイや半導体・電子部品に含まれない薄膜製品、成膜加工関連部材、表面加工ソリューション取引などです。2026年3月期の外部顧客への売上高は1,277百万円でした。",
+          "customers": [
+            "製造業の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "得意先から支給または自社で調達した基板などの対象物に真空成膜で薄膜を形成し、ディスプレイや半導体・電子部品向けの薄膜製品として販売する事業モデルです。",
+    "products": [
+      "液晶ディスプレイパネル・タッチパネル・カバーパネル向け薄膜製品",
+      "半導体関連製品・エネルギー関連部材・ヒーターセンサー部品向け薄膜製品",
+      "g.moth®やg.slip®などのナノ構造体製品",
+      "成膜加工関連部材"
+    ],
+    "customers": [
+      "ディスプレイパネルメーカー",
+      "半導体・電子部品メーカー"
+    ],
+    "revenueSources": [
+      "薄膜製品の販売対価",
+      "成膜加工関連部材の販売対価",
+      "成膜関連サービスの提供対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "横浜市に本社を置く成膜加工メーカー",
+        "description": "1953年に真空成膜による光学部品メーカーとして創業し、神奈川県横浜市西区に本社を置いています。宮城県栗原市と兵庫県赤穂市に工場を持ち、2026年3月31日現在の従業員数は296人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ディスプレイ・半導体向けの薄膜製品",
+        "description": "液晶ディスプレイパネルやタッチパネル、カバーパネル向けの薄膜製品、半導体関連製品や電子部品向けの薄膜製品、g.moth®やg.slip®などのナノ構造体製品を製造・販売し、成膜関連部材の販売や成膜関連サービスも提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "ディスプレイパネル・半導体関連のメーカー",
+        "description": "主な販売先はディスプレイパネルメーカーや半導体・電子部品メーカーで、2026年3月期はジャパンディスプレイが売上高の16.9％、シャープディスプレイテクノロジーが11.9％を占めました。"
+      },
+      {
+        "kind": "revenue",
+        "title": "薄膜製品などの販売対価",
+        "description": "薄膜製品や成膜加工関連部材の販売対価、成膜関連サービスの提供対価が売上となります。2026年3月期の売上高は6,008百万円で、ディスプレイが2,855百万円、半導体・電子部品が1,876百万円、その他が1,277百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は638百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,14 +138,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10412659000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 394,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第69期（2022年3月期）までは連結財務諸表を作成していたため、第69期の数値は連結ベースであり、第70期（2023年3月期）以降の単体の数値とは集計の範囲が異なります。"
     },
     {
       "fiscalYear": "2023年3月期",
@@ -49,7 +161,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10133880000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 389,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -71,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8652571000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 371,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -93,7 +205,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9104509000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 313,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -115,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10043632000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 296,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -125,8 +237,118 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1953,
+      "title": "松﨑光学精密硝子株式会社を設立",
+      "description": "真空成膜による光学部品の製造及び販売を目的として、東京都品川区に松﨑光学精密硝子株式会社を設立しました。",
+      "significance": "真空成膜を手がける光学部品メーカーとしての出発点です。現在の薄膜事業の起源にあたります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "酸化スズによる透明導電膜の生産を開始",
+      "description": "酸化スズによる透明導電膜の生産を開始しました。",
+      "significance": "透明導電膜の量産に乗り出した、薄膜技術の基盤となる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "酸化インジウムによる透明導電膜（ITO膜）の生産を開始",
+      "description": "酸化インジウムによる透明導電膜（ITO膜）の生産を開始しました。",
+      "significance": "ITO膜は後のディスプレイ向け薄膜製品の中核技術となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "宮城県に金成第一工場を建設",
+      "description": "宮城県栗原郡金成町（現、宮城県栗原市）に金成第一工場（後の金成テクノセンター）を建設しました。",
+      "significance": "宮城県栗原市に生産拠点を築いた展開で、同地域は現在の金成工場につながっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "商号をジオマテック株式会社に変更",
+      "description": "商号をジオマテック株式会社に変更しました。",
+      "significance": "現在の社名となった変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "日本証券業協会に株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式を公開した出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "中国江蘇省無錫市に現地法人を設立",
+      "description": "中国江蘇省無錫市に吉奥馬科技（無錫）有限公司を設立しました。",
+      "significance": "海外生産拠点を設けた展開です。同社の持分は2022年にすべて譲渡されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に株式を上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。現在は東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "中国現地法人の全出資持分を譲渡",
+      "description": "吉奥馬科技（無錫）有限公司の全出資持分を譲渡しました。",
+      "significance": "中国子会社から撤退し、国内拠点中心の生産体制となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "hirakawa-hewtech",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】に、平河ヒューテックについて、当社の薄膜技術との融合により様々な用途に応じた部材の開発に期待できるため、長期的な関係強化を目的として株式を保有すると印字されています。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nkk-switches",
+      "relationship": "business-partner",
+      "description": "【株式の保有状況】に、ＮＫＫスイッチズについて、当社の薄膜技術との融合で、より広い分野への応用とより高性能な製品の開発が期待できるため、事業の相乗効果と長期的な関係強化を目的として株式を保有すると印字されています。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +356,47 @@
       "publisher": "ジオマテック株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKF2.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YKF2",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-10-02",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "マーケットインとプロダクトアウトの戦略を発展させ、「薄膜技術」に顧客ニーズに応じた生産技術の強化と経営資源の最大活用を組み合わせた「薄膜技術＋生産技術」を強みとして、顧客の利便性と当社の収益性の向上を目指すとしています。対処すべき課題として、コア事業の強化、戦略事業・新規事業の強化、人的資本の強化、経営基盤の強化を挙げています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1953年の創業以来、真空成膜技術を蓄積してきた成膜加工の専業メーカーで、1964年に酸化スズ、1972年に酸化インジウムによる透明導電膜（ITO膜）の生産を始めるなど、透明導電膜の量産技術を早い時期から持っています。成膜の対象はディスプレイ基板から半導体関連製品、ナノ構造体製品まで広がっています。",
+        "basis": "沿革に1953年の真空成膜による光学部品メーカーとしての設立、1964年の酸化スズによる透明導電膜の生産開始、1972年のITO膜の生産開始が印字され、事業の内容にディスプレイ、半導体・電子部品、その他品目向けの薄膜製品を手がけると印字されているため。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "成膜加工を専業とし、ジャパンディスプレイやシャープディスプレイテクノロジーといった大手ディスプレイパネルメーカーを主要な顧客としています。車載向けを含むディスプレイ関連の需要と、生成AI関連投資やデータセンター需要を背景とした半導体関連の需要が、事業を取り巻く環境となっています。",
+        "basis": "主要な顧客ごとの情報に、2026年3月期のジャパンディスプレイへの売上高が全体の16.9％、シャープディスプレイテクノロジーへの売上高が11.9％と印字され、経営環境の記載に自動車市場と半導体市場の動向が印字されているため。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
