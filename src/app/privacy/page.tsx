@@ -31,10 +31,11 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
   },
   {
     id: "reports",
-    title: "誤りの報告で受け取る情報",
+    title: "お問い合わせ・誤りの報告で受け取る情報",
     body: (
       <p>
-        「情報の誤りを報告」から送られた内容（対象の企業、報告の種類、本文）は、掲載内容を確かめて直すためだけに使います。報告フォームでは、お名前やメールアドレスはお聞きしていません。短時間の大量送信を防ぐため、送信元のIPアドレスから、もとに戻せない形に変換した識別子を記録します。本文に個人を特定できる情報を書かないでください。
+        <Link href="/contact" className="link-ink">お問い合わせ・誤りの報告</Link>
+        は、Google フォームで受け付けています。フォームに入力された内容（対象の企業、本文、ご記入いただいた場合は連絡先）は、掲載内容を確かめて直すこと、およびご連絡への返信のためだけに使います。フォームでの情報の扱いには、Google のプライバシーポリシーも適用されます。
       </p>
     ),
   },
@@ -108,9 +109,9 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
     body: (
       <p>
         このポリシーについてのお問い合わせは、
-        <a href="https://yugenqjp.netlify.app/contact.html" className="link-ink">
-          YUGENQ のお問い合わせフォーム
-        </a>
+        <Link href="/contact" className="link-ink">
+          お問い合わせ
+        </Link>
         からお送りください。
       </p>
     ),
@@ -124,7 +125,7 @@ export default function PrivacyPage() {
         Privacy
       </p>
       <h1 className="mt-3 font-serif text-[2rem] font-semibold md:text-[2.75rem]">プライバシーポリシー</h1>
-      <p className="mt-6 text-sm text-muted-foreground">制定日：2026年11月8日</p>
+      <p className="mt-6 text-sm text-muted-foreground">制定日：2026年11月8日 / 改定日：2026年11月16日（お問い合わせの受け付け方法）</p>
       <ol className="mt-12 border-t border-foreground">
         {SECTIONS.map((section, i) => (
           <li key={section.id} id={section.id} className="grid gap-3 border-b border-border py-8 md:grid-cols-[4rem_1fr]">

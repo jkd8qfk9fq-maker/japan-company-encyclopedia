@@ -56,7 +56,7 @@ export function NotificationsList() {
   const mine = data.events.filter(([id]) => following.includes(id));
   const quiet = following.filter((id) => !mine.some(([e]) => e === id));
   return (
-    <div className="grid gap-8">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-8">
       {mine.length === 0 ? (
         <p className="text-sm text-muted-foreground">フォロー中の会社の、この{data.days}日間の新しい決算はまだありません。</p>
       ) : (

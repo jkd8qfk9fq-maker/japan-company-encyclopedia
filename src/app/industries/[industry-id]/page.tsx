@@ -1,3 +1,4 @@
+import { OG_IMAGES } from "@/lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -59,7 +60,7 @@ export async function generateMetadata({ params }: PageProps<"/industries/[indus
     title: `${name}業界の仕組み`,
     description,
     alternates: { canonical: `/industries/${data.listing.id}` },
-    openGraph: { title: `${name}業界の仕組み`, description, url: `/industries/${data.listing.id}` },
+    openGraph: { images: OG_IMAGES, title: `${name}業界の仕組み`, description, url: `/industries/${data.listing.id}` },
   };
 }
 
@@ -91,7 +92,8 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
           </Link>{" "}
           ／ {listing.name}
         </p>
-        <p className="wordmark mt-3 text-[clamp(2.25rem,8vw,4.5rem)]" aria-hidden>
+        {/* break-words: "Telecommunications" is wider than a 320px screen at this size. */}
+        <p className="wordmark mt-3 text-[clamp(2.25rem,8vw,4.5rem)] break-words" aria-hidden>
           {listing.nameEn}
         </p>
         <h1 className="mt-2 font-serif text-[1.75rem] font-semibold md:text-[2.25rem]">{listing.name}業界</h1>

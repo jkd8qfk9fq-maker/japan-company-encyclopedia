@@ -1,3 +1,4 @@
+import { OG_IMAGES } from "@/lib/site";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { FeatureArticle } from "@/components/feature/feature-article";
@@ -19,7 +20,7 @@ export async function generateMetadata({ params }: PageProps<"/features/[feature
     title: feature.title,
     description: feature.subtitle,
     alternates: { canonical: `/features/${feature.id}` },
-    openGraph: { title: feature.title, description: feature.subtitle, type: "article", url: `/features/${feature.id}` },
+    openGraph: { images: OG_IMAGES, title: feature.title, description: feature.subtitle, type: "article", url: `/features/${feature.id}` },
   };
 }
 

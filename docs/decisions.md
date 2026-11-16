@@ -918,3 +918,26 @@ drag, tap a company to read it and its relations.
   競合・同業 dashed grey. It turns slowly on its own unless the reader prefers reduced motion or pauses it.
 - **Accessible equivalent.** The canvas is labelled as an image and the panel lists the same relations as text
   buttons; `/explore` remains the text-first walk. Linked from company pages, 発見, つながりをたどる and the home page.
+
+### JCE-054 · 2026-11-16 · Accepted (operator) — Support pages, AdSense readiness and a platform audit
+
+The operator asked for a user-journey review, AdSense readiness against Google's current requirements, customer
+support (FAQ, tutorial, contact, feedback, troubleshooting) and an audit of links, forms, mobile layout, SEO, speed
+and payment. The journey map and the AdSense checklist are kept in the supervisor repository (`docs/user-journey.md`).
+
+- **A broken support path.** 「情報の誤りを報告」 (footer, every company page, settings, about) pointed at `/report`, which
+  exists only in the server build; on the production static site it was a 404. It now points at `/contact`, which
+  sends readers to the operator's Google Form and, from a company page (`?company=`), gives the line to paste so the
+  report names its entry. The privacy policy says reports arrive through that form.
+- **New pages.** `/help` (four-step tutorial and FAQ: data, updates, storage, premium, troubleshooting; FAQPage
+  structured data), `/contact`, `/terms-of-use` (/terms is the glossary). Linked from the footer and the sitemap.
+- **No ads on figures-only entries.** Google's publisher policies forbid ads on screens with little publisher
+  content; the 1,082 entries without an explanation yet never render the ad slot, whatever ADSENSE_SLOT is.
+- **Share image.** No page had an og:image; `public/og/default.png` (ivory, charcoal, vermilion) is now the default,
+  repeated on the pages that set their own openGraph, and the Twitter card is the large-image one.
+- **Mobile.** At 320px, five layouts scrolled sideways: single-column CSS grids sized their track to the widest child
+  (company list, つながり, the network page's lists, the value chain, notifications, progress) and the industry
+  wordmark "Telecommunications". Each grid now has `grid-cols-[minmax(0,1fr)]` and the wordmark breaks. A sweep of
+  every industry page and a sample of company pages at 320px shows no sideways scroll.
+- **Speed.** The home page passed every company's full summary to the reading trail, which needs id and name only:
+  the HTML went from 1.1 MB to 350 KB (68 KB compressed).

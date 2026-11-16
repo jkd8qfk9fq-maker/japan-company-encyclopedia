@@ -117,7 +117,7 @@ export function CompanyHero({ company, headquarters }: { company: Company; headq
           <FavoriteButton companyId={company.id} companyName={company.name} />
           <ShareActions url={siteUrl(`/companies/${company.id}`)} text={`${company.name}とは？｜${SITE_NAME}`} />
           <Link
-            href={`/report?company=${company.id}`}
+            href={`/contact?company=${company.id}`}
             className="inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
             <Flag className="size-4" aria-hidden />

@@ -276,7 +276,7 @@ export function NetworkStage() {
     const hubs = [...degree.entries()].sort((a, b) => b[1] - a[1]).slice(0, 9).map(([id, n]) => ({ node: data.nodes.find((x) => x.id === id)!, n })).filter((h) => h.node);
     const matches = query.trim() ? data.nodes.filter((n) => n.name.includes(query.trim())).slice(0, 12) : [];
     return (
-      <div className="grid gap-8">
+      <div className="grid grid-cols-[minmax(0,1fr)] gap-8">
         <label className="flex items-center gap-2 rounded-md border border-border bg-card px-3">
           <Search className="size-4 text-muted-foreground" aria-hidden />
           <span className="sr-only">会社名で探す</span>
@@ -293,7 +293,7 @@ export function NetworkStage() {
         )}
         <div>
           <p className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">つながりの多い会社から始める</p>
-          <ul className="mt-3 grid gap-2 sm:grid-cols-3">
+          <ul className="mt-3 grid grid-cols-[minmax(0,1fr)] gap-2 sm:grid-cols-3">
             {hubs.map(({ node, n }) => (
               <li key={node.id}>
                 <button type="button" onClick={() => recenter(node.id)} className="w-full rounded-md border border-border bg-card px-3 py-2.5 text-left hover:border-foreground">
@@ -321,7 +321,7 @@ export function NetworkStage() {
   const groups: RelationGroup[] = ["trade", "capital", "peers"];
 
   return (
-    <div className="grid gap-6">
+    <div className="grid grid-cols-[minmax(0,1fr)] gap-6">
       <div className="relative overflow-hidden rounded-xl bg-[#161616] text-[#f6f4ef]">
         <canvas
           ref={canvasRef}

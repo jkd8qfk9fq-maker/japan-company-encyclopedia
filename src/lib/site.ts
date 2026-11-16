@@ -42,3 +42,7 @@ export const ANALYTICS_TOKEN = process.env.NEXT_PUBLIC_CF_ANALYTICS_TOKEN ?? "";
 
 /** An absolute URL on this site for a path that starts with "/". */
 export const siteUrl = (path: string) => new URL(`${BASE_PATH}${path}`, SITE_URL).toString();
+
+/** The share image every page falls back to (JCE-054). A page that sets its own openGraph must include it: Next
+ *  replaces the parent's openGraph whole, so leaving it out drops the picture. */
+export const OG_IMAGES = [{ url: `${BASE_PATH}/og/default.png`, width: 1200, height: 630, alt: SITE_NAME }];

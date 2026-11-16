@@ -36,7 +36,7 @@ export function ProgressPanel({ met, industriesMet, industriesTotal }: { met: nu
   const next = list.filter((a) => !a.earned);
 
   return (
-    <section aria-labelledby="progress" className="grid gap-6">
+    <section aria-labelledby="progress" className="grid grid-cols-[minmax(0,1fr)] gap-6">
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <h2 id="progress" className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">記録</h2>

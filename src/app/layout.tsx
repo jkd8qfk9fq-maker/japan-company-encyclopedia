@@ -5,7 +5,7 @@ import { SiteFooter } from "@/components/navigation/site-footer";
 import { SiteHeader } from "@/components/navigation/site-header";
 import { OfflineIndicator } from "@/components/pwa/offline-indicator";
 import { ServiceWorkerRegistration } from "@/components/pwa/service-worker-registration";
-import { ANALYTICS_TOKEN, BASE_PATH, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+import { ANALYTICS_TOKEN, BASE_PATH, OG_IMAGES, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import { THEME_SCRIPT } from "@/lib/storage/theme-script";
 import "./globals.css";
 
@@ -54,7 +54,10 @@ export const metadata: Metadata = {
     type: "website",
     siteName: SITE_NAME,
     locale: "ja_JP",
+    // One share image for every page (JCE-054): without it a shared link showed no picture at all.
+    images: OG_IMAGES,
   },
+  twitter: { card: "summary_large_image" },
   formatDetection: { telephone: false },
   // Google AdSense's site-ownership check (JCE-039). A claim of the site only: it loads no script and shows no ad.
   other: { "google-adsense-account": "ca-pub-6016615044830350" },
