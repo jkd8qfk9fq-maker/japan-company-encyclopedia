@@ -4,7 +4,8 @@
   "name": "ダイドーリミテッド",
   "officialName": "株式会社ダイドーリミテッド",
   "nameEn": "DAIDOH LIMITED",
-  "description": null,
+  "shortNameEn": "Daidoh Limited",
+  "description": "衣料用繊維素材と紳士・婦人衣料製品を製造販売し、ショッピングセンター等の賃貸も行う会社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,8 +16,135 @@
       "market": "プレミア"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "apparel",
+      "name": "衣料事業",
+      "description": "事業者向けの衣料用繊維素材と、消費者向けの紳士・婦人衣料製品等の製造販売を行う事業です。株式会社ダイドーフォワードがNEWYORKER等の販売を、株式会社ブルックス ブラザーズ ジャパン（議決権の所有割合80.5％）がBrooks Brothersの販売を、株式会社ジャパンブルー（同80.0％）がデニム製品の企画・製造・販売を担い、イタリアのPontetorto S.p.A.等が衣料用原料の製造販売をしています。2026年3月期の外部顧客への売上高は29,265百万円で、グループ売上の中心です。",
+      "products": [
+        "衣料用繊維素材",
+        "紳士・婦人衣料製品",
+        "デニム製品"
+      ],
+      "customers": [
+        "衣料用繊維素材を仕入れる事業者",
+        "衣料製品を購入する消費者"
+      ],
+      "children": [
+        {
+          "id": "textile-materials",
+          "name": "衣料用繊維素材",
+          "description": "イタリアのPontetorto S.p.A.や中国の子会社が、事業者向けの衣料用原料を製造販売しています。",
+          "products": [
+            "衣料用原料・繊維素材"
+          ],
+          "customers": [
+            "衣料メーカー等の事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "apparel-products",
+          "name": "紳士・婦人衣料製品",
+          "description": "株式会社ダイドーフォワードがNEWYORKER等を、株式会社ブルックス ブラザーズ ジャパンがBrooks Brothersを、株式会社ジャパンブルーがMOMOTARO JEANSやJapan Blue Jeans等のデニム製品を企画・製造・販売しています。",
+          "products": [
+            "紳士・婦人衣料製品",
+            "デニム製品"
+          ],
+          "customers": [
+            "消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸事業",
+      "description": "ショッピングセンター店舗やオフィスビル、ホテル施設等の賃貸を行う事業です。神奈川県小田原市のショッピングセンター「ダイナシティ」を株式会社ダイドーフォワードが運営しています。資本効率の改善を目指して2025年3月に東京都千代田区のホテル物件を、2025年9月に東京都文京区のオフィスビルを売却したことにより、当期は減収となりました。2026年3月期の外部顧客への売上高は3,237百万円です。",
+      "products": [
+        "ショッピングセンター店舗の賃貸",
+        "オフィスビル・ホテル施設等の賃貸"
+      ],
+      "customers": [
+        "テナント",
+        "オフィスの入居者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "事業者向けの衣料用繊維素材と消費者向けの紳士・婦人衣料製品を製造販売する衣料事業と、ショッピングセンターやオフィスビル等を賃貸する不動産賃貸事業で収益を得ています。",
+    "products": [
+      "衣料用繊維素材",
+      "紳士・婦人衣料製品（NEWYORKER、Brooks Brothers等）",
+      "デニム製品（MOMOTARO JEANS、Japan Blue Jeans）",
+      "ショッピングセンター店舗・オフィスビル等の賃貸"
+    ],
+    "customers": [
+      "衣料用繊維素材を仕入れる事業者",
+      "衣料製品を購入する消費者",
+      "ショッピングセンター・オフィスビル等の賃借人"
+    ],
+    "revenueSources": [
+      "衣料用繊維素材及び衣料製品の販売による売上高",
+      "ショッピングセンター・オフィスビル等の賃貸による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ダイドーグループ",
+        "description": "当社は純粋持株会社で、株式会社ダイドーフォワード、株式会社ブルックス ブラザーズ ジャパン、株式会社ジャパンブルー、イタリアのPontetorto S.p.A.等の連結子会社とグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "衣料素材・衣料製品と不動産賃貸",
+        "description": "衣料事業では事業者向けの衣料用繊維素材と、NEWYORKERやBrooks Brothers、MOMOTARO JEANS等のブランドの紳士・婦人衣料製品を製造販売し、不動産賃貸事業ではショッピングセンター「ダイナシティ」やオフィスビル等を賃貸しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "事業者・消費者・賃借人",
+        "description": "繊維素材は事業者に、衣料製品は百貨店等の店舗やECを通じて消費者に販売し、不動産はテナントや入居者に賃貸しています。売上高の10％以上を占める主要な顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "素材・製品の販売と賃貸の対価",
+        "description": "2026年3月期の売上高は32,502百万円（前期比13.6％増）でした。衣料事業が29,265百万円、不動産賃貸事業が3,237百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,893百万円でした。前期は2,483百万円の親会社株主に帰属する当期純損失でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +159,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7713000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 827,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14503000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 776,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14646000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 635,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12195000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 565,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +239,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11804000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 722,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +247,174 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1879,
+      "title": "製織事業を創業",
+      "description": "栗原イネが製織事業を起業しました。",
+      "significance": "毛織物から始まる会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "大同毛織株式会社に改組",
+      "description": "企業再建整備法により、大同毛織株式会社に改組し、新発足しました。",
+      "significance": "現在の会社の法的な起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "株式を上場",
+      "description": "株式を東京証券取引所と名古屋証券取引所に上場しました。高級紳士服地「ミリオンテックス」の発売もこの年です。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "株式会社ニューヨーカーを設立",
+      "description": "既製服の製造販売会社として、株式会社ニューヨーカーを設立しました。",
+      "significance": "現在の主力ブランドNEWYORKERの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "ブルックス ブラザーズ ジャパンを設立",
+      "description": "米国ブルックス ブラザーズ社との合弁で株式会社ブルックス ブラザーズ ジャパンを設立し、持分法適用関連会社としました。",
+      "significance": "Brooks Brothersブランドの日本展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "商号をダイドーリミテッドに変更",
+      "description": "商号を「大同毛織株式会社」から「株式会社ダイドーリミテッド」に変更しました。",
+      "significance": "現在の社名の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "純粋持株会社へ移行",
+      "description": "不動産賃貸事業を会社分割により分離し、純粋持株会社に移行しました。",
+      "significance": "現在の持株会社体制の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "Pontetortoを連結子会社化",
+      "description": "イタリアの衣料原料メーカーPontetorto S.p.A.及びその子会社1社の株式を取得し、連結子会社化しました。",
+      "significance": "欧州に素材の製造拠点を得た出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "ブルックス ブラザーズ ジャパンを連結子会社化",
+      "description": "持分法適用関連会社であった株式会社ブルックス ブラザーズ ジャパンの株式を追加取得し、連結子会社化しました。",
+      "significance": "Brooks Brothers事業が連結の中核に入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証スタンダード市場等へ移行",
+      "description": "株式を東京証券取引所のスタンダード市場へ移行し、名古屋証券取引所のプレミア市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社ジャパンブルーを連結子会社化",
+      "description": "デニム製品ブランド「MOMOTARO JEANS」「Japan Blue Jeans」を持つ株式会社ジャパンブルーを連結子会社化しました。",
+      "significance": "デニム事業を取り込んだM&Aです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sotoh",
+      "relationship": "business-partner",
+      "description": "衣料事業の製造工程において原材料の加工を業務委託しており、資本・業務提携関係を構築するための政策投資として、当社が同社の株式895,000株を保有しています。同社は2026年3月31日現在、当社の株式1,195千株（発行済株式の総数に対する割合4.20％）を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "isetan-mitsukoshi-holdings",
+      "relationship": "customer",
+      "description": "衣料事業の小売部門において、同社が運営する百貨店に店舗を出店している取引先です。当社は同社の株式88,689株を、事業活動の円滑化のための政策投資として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takashimaya",
+      "relationship": "customer",
+      "description": "衣料事業の小売部門において、同社が運営する百貨店に店舗を出店している取引先です。当社は同社の株式16,910株を政策投資として保有し、営業活動強化のため取引先持株会を通じて追加取得もしています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "konaka",
+      "relationship": "customer",
+      "description": "衣料事業の卸売部門における取引先です。当社は同社の株式185,400株を、事業活動の円滑化のための政策投資として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "h2o-retailing",
+      "relationship": "customer",
+      "description": "衣料事業の小売部門における取引先です。当社は同社の株式6,121株を、事業活動の円滑化のための政策投資として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ms-and-ad-insurance-group-holdings",
+      "relationship": "supplier",
+      "description": "各セグメント及び本社部門における損害保険取引の相手先です。当社は同社の株式208,200株を、損害保険取引を円滑化するための政策投資として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -128,13 +422,58 @@
       "publisher": "株式会社ダイドーリミテッド",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YMAI.pdf",
       "publishedAt": "2026-06-29",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YMAI",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessStructure: 株式会社フィルムは2026年4月に持分法適用関連会社となったことが【沿革】に記載されている。決算日（2026年3月31日）後の構造変更であるため、関係会社の状況は決算日現在の体制で登録し、同社は関連会社に含めていない。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2029年3月期に至る3ヵ年の第2次中期経営計画「進化と飛躍」において、国内を含むグローバル市場をターゲットに事業・ブランドを展開し成長させる「グローバルブランドビジネス プラットフォーマー」を目指すべきビジョンとして掲げています。事業ポートフォリオの再構築、個別事業の構造改革、グループプラットフォーム機能の強化、人材強化の4つの課題に一貫して取り組み、高成長・高収益な企業グループの実現を目指すとしています。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期は、事業ポートフォリオ再構築の一環として2025年8月に株式会社ジャパンブルーを連結子会社化し、デニム製品ブランドを取り込みました。注力事業と位置づけるブルックス ブラザーズやポンテトルトの売上拡大に取り組む一方、業績の低迷するニューヨーカーでは不採算店舗の大規模撤退を実施し、2026年3月にアウトレット店舗とECを中心とした新レーベル「Park Slope NEWYORKER」を立ち上げています。",
+        "basis": "MD&Aの経営成績等の状況の概要、セグメント注記の外部顧客への売上高",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "ジャパンブルーのアパレル事業はブランド軸経営を推進しグローバル展開を加速するとし、テキスタイル事業はコンバーター型からメーカー型へ転換し高付加価値を図るとしています。ブルックス ブラザーズはWomen's層の新規顧客獲得・育成に向けてプロモーション強化、新規出店拡大、商品カテゴリ開発を積極的に推進するとしています。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高32,502百万円のうち衣料事業が29,265百万円と9割を占め、不動産賃貸事業は3,237百万円です。地域別では日本が25,807百万円、欧州が4,835百万円、北米が767百万円、アジアが766百万円、その他が326百万円で、欧州はイタリアの子会社Pontetorto S.p.A.の衣料用原料の製造販売が中心です。外部顧客への売上高の10％以上を占める主要な顧客はありません。",
+        "basis": "セグメント注記の外部顧客への売上高、関連情報の地域ごとの情報及び主要な顧客ごとの情報",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

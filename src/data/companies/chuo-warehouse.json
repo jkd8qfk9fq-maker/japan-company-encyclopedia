@@ -4,15 +4,177 @@
   "name": "中央倉庫",
   "officialName": "株式会社中央倉庫",
   "nameEn": "Chuo Warehouse Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Chuo Warehouse Co.,Ltd.",
+  "description": "京都市下京区に本社を置き、倉庫業と運送業を中心に、梱包・通関と不動産賃貸を手がける総合物流会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "chuo-warehouse",
+      "name": "株式会社中央倉庫",
+      "description": "京都市下京区に本社を置く総合物流会社です。当社と連結子会社3社、持分法適用関連会社2社でグループを構成し、2026年3月31日現在の従業員数は707人です。東京証券取引所プライム市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "domestic-logistics",
+          "name": "国内物流事業",
+          "description": "倉庫業と運送業を行う報告セグメントです。2026年3月期の外部顧客への営業収益は22,318百万円です。",
+          "customers": [
+            "貨物を預ける荷主企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】",
+          "children": [
+            {
+              "id": "warehousing",
+              "name": "倉庫業",
+              "description": "基幹業務で、貨物の寄託を受けて倉庫に保管し、入出庫や流通加工も行います。定温・定湿保管、保税蔵置場、危険品保管、認定トランクルームなどのサービスがあります。物流施設の賃貸も行っています。主な関係会社は中央倉庫ワークス株式会社とユーシーエス株式会社です。2026年3月期の外部顧客への営業収益は7,872百万円です。",
+              "customers": [
+                "貨物を預ける荷主企業"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "transportation",
+              "name": "運送業",
+              "description": "貨物利用運送事業、貨物自動車運送事業と保険代理店業を行います。他の運送事業者の運送を利用する利用運送と、自らトラックで運ぶ貨物自動車運送の両方を手がけています。主な関係会社は中倉陸運株式会社です。2026年3月期の外部顧客への営業収益は14,446百万円です。",
+              "customers": [
+                "貨物を預ける荷主企業"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            }
+          ]
+        },
+        {
+          "id": "international-freight",
+          "name": "国際貨物事業",
+          "description": "梱包業と通関業を行う報告セグメントです。2026年3月期の外部顧客への営業収益は5,350百万円です。",
+          "customers": [
+            "輸出入を行う荷主企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】",
+          "children": [
+            {
+              "id": "customs-clearance",
+              "name": "通関業",
+              "description": "通関業法に基づく許可を受けて、荷主のために輸出入手続き等の通関業務を行います。第二種貨物利用運送事業（外航海運）の認可を受け、国際複合一貫輸送事業も行っています。主な関係会社は安田中倉国際物流（上海）有限公司です。2026年3月期の外部顧客への営業収益は3,357百万円です。",
+              "customers": [
+                "輸出入を行う荷主企業"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "packing",
+              "name": "梱包業",
+              "description": "主として精密機械類の輸出梱包を行います。強化三層ダンボールの加工及び販売を主として、梱包資材の販売も行っています。主な関係会社は株式会社テスパックです。2026年3月期の外部顧客への営業収益は1,993百万円です。",
+              "customers": [
+                "精密機械メーカー等の荷主企業"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            }
+          ]
+        },
+        {
+          "id": "real-estate-leasing",
+          "name": "不動産賃貸事業",
+          "description": "物流施設以外の不動産（建物他及び土地）の賃貸を行う報告セグメントです。京都梅小路地区の宿泊施設などの賃貸を行っています。2026年3月期の外部顧客への営業収益は360百万円です。",
+          "customers": [
+            "不動産の賃借人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "荷主から貨物の保管や運送を請け負う倉庫業と運送業を基幹に、輸出梱包や通関、不動産賃貸も行い、保管料や運送収入などを得る事業モデルです。",
+    "products": [
+      "倉庫保管サービス（定温・定湿保管、保税蔵置場、危険品保管、認定トランクルームなど）",
+      "流通加工サービス",
+      "貨物運送サービス（貨物利用運送・貨物自動車運送）",
+      "輸出梱包・梱包資材の販売",
+      "通関・国際複合一貫輸送サービス",
+      "不動産賃貸"
+    ],
+    "customers": [
+      "貨物を預ける荷主企業",
+      "輸出入を行う荷主企業",
+      "不動産の賃借人"
+    ],
+    "revenueSources": [
+      "倉庫保管料や荷役料などの倉庫業の収入",
+      "運送収入",
+      "梱包・通関などの国際貨物の収入",
+      "不動産賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "中央倉庫",
+        "description": "京都市下京区に本社を置く総合物流会社です。連結子会社3社と持分法適用関連会社2社があり、2026年3月31日現在の従業員数は707人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "保管・運送・梱包・通関と不動産賃貸",
+        "description": "倉庫での貨物の保管や流通加工、トラックなどによる貨物の運送、精密機械類の輸出梱包や輸出入手続きの通関、物流施設以外の不動産の賃貸を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外の荷主企業",
+        "description": "荷主企業が貨物の保管や運送、輸出入の手続きを委託します。外部顧客への営業収益のうち、特定の顧客への営業収益で営業収益の10％以上を占めるものはないと開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の営業収益は28,029百万円",
+        "description": "2026年3月期の営業収益は28,029百万円で、前連結会計年度比0.7％増となりました。セグメント別の外部顧客への営業収益は、国内物流事業が22,318百万円、国際貨物事業が5,350百万円、不動産賃貸事業が360百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の当期純利益は2,068百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は2,068百万円で、前連結会計年度の1,588百万円から増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +189,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 41249000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 640,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +209,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 42830000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 695,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "株式会社テスパックの子会社化に係る企業結合について暫定的な会計処理を行っていましたが、第144期にその確定を行い、第143期の経営指標等は暫定的な会計処理の確定の内容を反映した数値となっています。"
     },
     {
       "fiscalYear": "2024年3月期",
@@ -67,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 45601000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 701,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +250,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 46077000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 696,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +270,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 49089000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 707,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +278,311 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1927,
+      "title": "京都中央市場倉庫株式会社を創立",
+      "description": "京都市中央卸売市場の開設により、同構内（京都市下京区）に京都中央市場倉庫株式会社を創立しました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1937,
+      "title": "株式会社中央倉庫に商号変更",
+      "description": "商号を株式会社中央倉庫（現社名）に変更しました。",
+      "significance": "現社名の成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "中央梱包株式会社を設立",
+      "description": "中央梱包株式会社（後の連結子会社）を設立しました。",
+      "significance": "梱包事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "京都証券取引所に上場",
+      "description": "京都証券取引所（2001年3月に大阪証券取引所と合併）に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "中倉陸運株式会社を設立",
+      "description": "中倉陸運株式会社（現在の連結子会社）を設立し、同社へ運送事業の一部を譲渡しました。",
+      "significance": "運送事業の分社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場市場の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "中央梱包株式会社を吸収合併",
+      "description": "中央梱包株式会社を吸収合併しました。",
+      "significance": "グループ再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "大阪証券取引所市場第一部に上場",
+      "description": "大阪証券取引所市場第一部に株式を上場しました。",
+      "significance": "上場市場の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所と大阪証券取引所の統合に伴い、東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "中央倉庫ワークス株式会社を設立",
+      "description": "中央倉庫ワークス株式会社（現在の連結子会社）を設立しました。",
+      "significance": "荷役体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "フクワ商事株式会社を吸収合併",
+      "description": "フクワ商事株式会社を吸収合併しました。",
+      "significance": "グループ再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社テスパックを子会社化",
+      "description": "株式会社テスパックを子会社化しました。現在の連結子会社で、国際貨物事業の梱包を担います。",
+      "significance": "梱包事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "yasuda-logistics",
+      "relationship": "business-partner",
+      "description": "同業の倉庫会社で、業務提携先として災害時における事業継続相互協力協定を締結しています。2026年3月31日現在、当社の発行済株式の4.46％を保有する大株主であり、当社も取引・協力関係を強化するため同社の株式982,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業等のリスク】"
+    },
+    {
+      "companyId": "horiba",
+      "relationship": "business-partner",
+      "description": "国内物流事業における営業取引先として発行会社及び関係会社と密接な関係にあり、取引関係の維持・強化を図るため、当社が株式100,000株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "king",
+      "relationship": "business-partner",
+      "description": "国内物流事業における営業取引先として発行会社及び関係会社と密接な関係にあり、取引関係の維持・強化を図るため、当社が株式1,014,000株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "funai-soken-holdings",
+      "relationship": "business-partner",
+      "description": "国内物流事業における営業取引先として発行会社傘下の各社と密接な関係にあり、取引関係の維持・強化を図るため、当社が株式918,360株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takara-holdings",
+      "relationship": "business-partner",
+      "description": "国内物流事業における営業取引先として発行会社傘下の各社と密接な関係にあり、取引関係の維持・強化を図るため、当社が株式634,000株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "teikoku-sen-i",
+      "relationship": "business-partner",
+      "description": "国内物流事業及び国際貨物事業における営業取引先として発行会社及び関係会社と密接な関係にあり、取引関係の維持・強化を図るため、当社が株式271,000株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takebishi",
+      "relationship": "business-partner",
+      "description": "国内物流事業における営業取引先として密接な関係にあり、取引関係の維持・強化を図るため、当社が株式230,000株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "inui-global-logistics",
+      "relationship": "business-partner",
+      "description": "国際貨物事業における営業取引先として発行会社及び関係会社と密接な関係にあり、取引関係の維持・強化を図るため、当社が株式348,600株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shofu",
+      "relationship": "business-partner",
+      "description": "国内物流事業及び国際貨物事業における営業取引先として発行会社及び関係会社と密接な関係にあり、取引関係の維持・強化を図るため、当社が株式209,000株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "falco-holdings",
+      "relationship": "business-partner",
+      "description": "国内物流事業における営業取引先として発行会社傘下の各社と密接な関係にあり、取引関係の維持・強化を図るため、当社が株式77,400株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "murata-manufacturing",
+      "relationship": "business-partner",
+      "description": "国内物流事業及び国際貨物事業における営業取引先として発行会社及び関係会社と密接な関係にあり、取引関係の維持・強化を図るため、当社が株式48,870株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-kaneshita-construction",
+      "relationship": "business-partner",
+      "description": "国内物流事業における営業取引先として密接な関係にあり、取引関係の維持・強化を図るため、当社が株式45,200株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "asahi-kasei",
+      "relationship": "business-partner",
+      "description": "国内物流事業及び国際貨物事業における営業取引先として発行会社及び関係会社と密接な関係にあり、取引関係の維持・強化を図るため、当社が株式100,000株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "chori",
+      "relationship": "business-partner",
+      "description": "国内物流事業及び国際貨物事業における営業取引先として発行会社及び関係会社と密接な関係にあり、取引関係の維持・強化を図るため、当社が株式22,453株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shimadzu",
+      "relationship": "business-partner",
+      "description": "国内物流事業及び国際貨物事業における営業取引先として発行会社及び関係会社と密接な関係にあり、取引関係の維持・強化を図るため、当社が株式24,200株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "dai-nippon-printing",
+      "relationship": "business-partner",
+      "description": "国内物流事業及び国際貨物事業における営業取引先として発行会社及び関係会社と密接な関係にあり、取引関係の維持・強化を図るため、当社が株式21,000株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "omron",
+      "relationship": "business-partner",
+      "description": "国内物流事業及び国際貨物事業における営業取引先として発行会社及び関係会社と密接な関係にあり、取引関係の維持・強化を図るため、当社が株式9,000株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kyoto-tool",
+      "relationship": "business-partner",
+      "description": "国内物流事業及び国際貨物事業における営業取引先として密接な関係にあり、取引関係の維持・強化を図るため、当社が株式14,600株を保有する特定投資株式の相手先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toda",
+      "relationship": "business-partner",
+      "description": "国内物流事業及び不動産賃貸事業における営業取引先として発行会社及び関係会社と密接な関係にあり、当社が株式12,320株を保有する特定投資株式の相手先です。2026年3月31日現在、当社の発行済株式の3.04％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +590,55 @@
       "publisher": "株式会社中央倉庫",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YF4M.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YF4M",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年度から2027年度までを対象期間とする第8次中期経営計画「NEXT CS-100」を策定しています。2027年10月の創立100周年に向け、成長分野への絶え間ない挑戦による新たな収益モデルの構築、国内外物流ネットワークの更なる拡充、高い業務品質・付加価値創出による収益性の向上などを戦略基本方針としています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の外部顧客への営業収益は、国内物流事業が22,318百万円と全体の大半を占め、倉庫業の7,872百万円と運送業の14,446百万円で構成されています。国際貨物事業は5,350百万円で、通関業の取扱いが増えた一方、梱包業の取扱数量は減ったと開示されています。",
+        "basis": "セグメント情報の外部顧客への営業収益、MD&Aのセグメントごとの営業収益の内訳に基づく",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "倉庫での保管から運送、輸出梱包、通関までをグループで一貫して手がけられる体制が特徴です。倉庫業ではAEO倉庫業者（特定保税承認者）の取得、通関業ではAEO通関業者制度における認定通関業者の認定を受けており、保税貨物や輸出入手続きを扱う体制が整っています。",
+        "basis": "事業の内容、沿革に基づく",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "物流業界では貨物の荷動きが伸び悩み、トラックドライバー不足や倉庫現場の担い手不足、人件費の上昇が続く厳しい経営環境だと会社は分析しています。同社は京都市に本社を置き、京都・大阪を中心に北陸や名古屋、東京などにも営業所網を持つ体制で事業を行っています。",
+        "basis": "MD&Aの経営成績の概要、沿革に基づく",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
