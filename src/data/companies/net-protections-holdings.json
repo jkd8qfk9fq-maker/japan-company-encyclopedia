@@ -4,15 +4,122 @@
   "name": "ネットプロテクションズホールディングス",
   "officialName": "株式会社ネットプロテクションズホールディングス",
   "nameEn": "Net Protections Holdings, Inc.",
-  "description": null,
+  "shortNameEn": "Net Protections Holdings, Inc.",
+  "description": "B2C・B2Bの後払い（BNPL）決済サービスを提供し、加盟店の与信審査・請求・回収業務を担う決済ソリューションの会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "payment-solutions",
+      "name": "決済ソリューション事業",
+      "description": "当社グループの単一の報告セグメントで、BNPL（後払い）決済サービスを提供する事業です。2026年3月期の連結営業収益は25,214百万円です。純粋持株会社である当社のもと、株式会社ネットプロテクションズが日本で各サービスを提供し、恩沛科技股份有限公司（NP Taiwan, Inc.）が台湾、Net Protections Vietnam Co., Ltd.がベトナムでAFTEEを展開しています。株式会社NPファイナンスはNP掛け払いの購入企業向けにオンライン・レンディングサービスを提供しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "b2c-np-others",
+          "name": "B2Cサービス_NP後払い他",
+          "description": "B2CのEC向けBNPL決済サービス「NP後払い」、水道・ガス修理やハウスクリーニングなど訪問型役務向けの「NP後払いair」、台湾・ベトナム向けの「AFTEE」を含む区分です。2026年3月期の営業収益は16,496百万円です。",
+          "customers": [
+            "EC事業者",
+            "訪問型役務サービスを提供する事業者",
+            "台湾・ベトナムのEC事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "b2c-atone",
+          "name": "B2Cサービス_atone",
+          "description": "スマートフォンを活用した会員制のBNPL決済サービス「atone」の区分です。月締めのまとめ払いやポイント付与があり、デジタルコンテンツなど非物販商材にも対応しています。2026年3月期の営業収益は2,977百万円です。",
+          "customers": [
+            "EC事業者",
+            "実店舗"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "b2b-services",
+          "name": "B2Bサービス",
+          "description": "企業間取引における少額債権を主対象とした掛け払い決済「NP掛け払い」の区分です。購入企業向けのオンライン・レンディングサービス「NPハンディレンディング」を株式会社NPファイナンスが提供しています。2026年3月期の営業収益は5,740百万円です。",
+          "customers": [
+            "企業間取引を行う販売元企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "購入者の信用を確認したうえで売買代金を販売元に支払って債権を買い取り、後から購入者に請求・回収することで、債権の額面に対する手数料を収益とする事業モデルです。",
+    "products": [
+      "NP後払い（B2C向けBNPL決済サービス）",
+      "atone（会員制BNPL決済サービス）",
+      "NP後払いair（訪問型役務向けBNPL決済サービス）",
+      "AFTEE（台湾・ベトナム向けBNPL決済サービス）",
+      "NP掛け払い（B2B向け掛け払い決済サービス）",
+      "NPハンディレンディング（オンライン・レンディングサービス）"
+    ],
+    "customers": [
+      "EC事業者などのB2C取引の販売元（加盟店）",
+      "訪問型役務サービスを提供する事業者",
+      "企業間取引を行う販売元企業",
+      "台湾・ベトナムのEC事業者"
+    ],
+    "revenueSources": [
+      "債権の額面に所定の手数料率を掛けて算出される取引手数料等を販売元から受領することによる収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社ネットプロテクションズホールディングス",
+        "description": "東京都千代田区麹町に本店を置く純粋持株会社で、連結子会社4社とともに決済ソリューション事業を営みます。2026年3月31日現在の連結従業員数は377人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "BNPL決済サービス群",
+        "description": "NP後払い、atone、NP後払いair、AFTEE、NP掛け払いを提供し、与信審査、請求書発行、入金確認・消込、督促・回収、貸倒対応までの決済関連業務をワンストップで担います。"
+      },
+      {
+        "kind": "customer",
+        "title": "加盟店と購入者・購入企業",
+        "description": "EC事業者や訪問型役務の事業者、企業間取引の販売元などが加盟店として導入し、購入者や購入企業は商品の到着やサービスの提供を受けた後に代金を支払います。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の営業収益は25,214百万円",
+        "description": "2026年3月期の連結営業収益は25,214百万円で、前連結会計年度比9.5％増となりました。サービス区分別の営業収益は、B2Cサービス_NP後払い他が16,496百万円、B2Cサービス_atoneが2,977百万円、B2Bサービスが5,740百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の親会社の所有者に帰属する当期利益は1,732百万円",
+        "description": "2026年3月期の親会社の所有者に帰属する当期利益は1,732百万円で、前連結会計年度の1,350百万円から増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +134,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18642000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 221,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -47,7 +154,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18369000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 291,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -67,7 +174,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17704000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 333,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -87,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19169000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 336,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -107,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21019000000,
       "netAssetsLabel": "親会社の所有者に帰属する持分",
-      "employees": null,
+      "employees": 377,
       "currency": "JPY",
       "accountingStandard": "ifrs",
       "sourceIds": [
@@ -115,7 +222,138 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2000,
+      "title": "株式会社ネットプロテクションズ（旧ネットプロテクションズ）を設立",
+      "description": "EC（電子商取引）における新しい標準を創造することを目的として、株式会社ネットプロテクションズ（旧ネットプロテクションズ）を設立しました。",
+      "significance": "現在の事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "「NP後払い」の提供開始",
+      "description": "B2Cの通販事業者向けのBNPL決済サービスとして、日本で初めての信用リスク保証型のBNPL決済サービスである「NP後払い」の提供を開始しました。",
+      "significance": "現在の主力サービスの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "「NP掛け払い」の提供開始",
+      "description": "B2B取引向けのBNPL決済サービスとして、「NP掛け払い」サービスの提供を開始しました。",
+      "significance": "B2B領域への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "株式会社AP53を設立",
+      "description": "株式会社AP53（現 株式会社ネットプロテクションズ）を設立しました。",
+      "significance": "現在の事業会社の前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "旧ネットプロテクションズを子会社化",
+      "description": "株式会社AP53が旧ネットプロテクションズを子会社化しました。",
+      "significance": "事業承継の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "「atone」の提供開始",
+      "description": "B2C向けの会員制BNPL決済サービス「atone」の提供を開始しました。",
+      "significance": "会員制サービスへの展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "旧ネットプロテクションズを吸収合併",
+      "description": "旧NPホールディングス①が旧ネットプロテクションズを吸収合併し、株式会社ネットプロテクションズ（現ネットプロテクションズ）に商号変更しました。",
+      "significance": "事業の承継が完了しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "株式移転により当社を設立",
+      "description": "現ネットプロテクションズを完全子会社とする株式移転により、当社（旧NPホールディングス②）が設立され、その後株式会社ネットプロテクションズホールディングスに商号変更しました。",
+      "significance": "現在の持株会社体制の成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "台湾で「AFTEE」の提供開始",
+      "description": "B2C台湾向けBNPL決済「AFTEE」のサービス提供を開始しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社ジェーシービーを引受先とする第三者割当増資を実施",
+      "description": "株式会社ジェーシービーを引受先とする第三者割当増資を実施しました。",
+      "significance": "資本面での提携関係の形成です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "東京証券取引所に株式を上場",
+      "description": "東京証券取引所市場第一部に株式を上場し、その後、市場区分の見直しによりプライム市場に移行しました。",
+      "significance": "上場企業としての歩みの開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ベトナムで「AFTEE」の提供開始",
+      "description": "ベトナムに設立したNet Protections Vietnam Co., Ltd.で、B2C海外向けBNPL決済「AFTEE」の提供を開始しました。",
+      "significance": "海外展開の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社NPファイナンスを設立",
+      "description": "日本国内におけるレンディングサービスの事業化を目的に、株式会社NPファイナンスを設立し、オンライン・レンディングサービス「NPハンディレンディング」の提供を開始しました。",
+      "significance": "レンディング事業への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +362,55 @@
       "publisher": "株式会社ネットプロテクションズホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YM27.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YM27",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "毎年ローリング方式で3ヵ年の中期経営計画を策定し、収益基盤の拡大を最重要課題としています。NP後払いでは通販各社の自社後払い決済からのリプレイス推進、NP後払いairでは請求業務のDXニーズを背景とした加盟店獲得、AFTEEでは海外市場の開拓に注力し、atoneは成長ドライバーとしてEC非物販市場の開拓と会員基盤の拡大を進めるとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "当期はatoneとB2Bサービスの取扱高と営業収益が大きく伸び、NP後払い他の営業収益の減少を補って全社の営業収益が増加しました。加盟店は数万社にわたり特定加盟店への依存度は低く、EC・決済市場全体の動向の影響を受けやすい構造です。",
+        "basis": "セグメント情報の製品及びサービスに関する情報、地域別に関する情報、主要な顧客に関する情報、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の概要に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "2002年に日本で初めて信用リスク保証型のBNPL決済サービスを開始し、与信審査から請求書発行、入金確認、督促・回収、貸倒対応まで決済関連業務の全機能をワンストップで提供できる体制と、長年の運用で蓄積した与信・回収のノウハウを持っています。",
+        "basis": "事業の内容、関係会社の状況、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の概要に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "B2C向けではEC市場、対面店舗市場、訪問型役務サービス市場、台湾・ベトナムの海外市場、B2B向けでは企業間取引市場と、複数のサービスで幅広い市場にアプローチしています。売上収益の10％以上を占める主要な顧客はありません。",
+        "basis": "セグメント情報の製品及びサービスに関する情報、地域別に関する情報、主要な顧客に関する情報、経営方針、経営環境及び対処すべき課題等に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

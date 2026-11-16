@@ -4,15 +4,128 @@
   "name": "ニッチツ",
   "officialName": "株式会社ニッチツ",
   "nameEn": "NITCHITSU CO.,LTD.",
-  "description": null,
+  "shortNameEn": "NITCHITSU CO.,LTD.",
+  "description": "東京都港区に本社を置き、舶用機器などの機械事業、ハイシリカの資源事業、耐熱塗料などの素材事業を手掛けるメーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "chemicals",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "machinery",
+      "name": "機械関連事業",
+      "description": "舶用機器、空気予熱機ほかの一般産業機械等の設計・製作、プラント関連機器の製作、機械装置の据付、施工、監理を行う事業です。長崎県松浦市の松浦工場と佐世保市の江迎工場がこの事業の生産設備です。2026年3月期の売上高は6,492百万円でした。",
+      "customers": [
+        "造船所",
+        "製鉄・重電メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "resources",
+      "name": "資源関連事業",
+      "description": "ハイシリカ（精製珪石粉等）を製造・仕入・販売する事業です。長崎県佐世保市の鹿町工場と江迎工場がこの事業の生産設備です。2026年3月期の売上高は1,948百万円でした。",
+      "customers": [
+        "半導体封止材メーカー",
+        "ガラスメーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "materials",
+      "name": "素材関連事業",
+      "description": "耐熱塗料とライナテックス（高純度天然ゴム）を扱う事業です。耐熱塗料は連結子会社の東京熱化学工業株式会社が製造・販売し、ライナテックスは連結子会社の三扇機工株式会社が仕入・加工・販売しています。三扇機工株式会社は製缶、機械の製造・販売も行っています。2026年3月期の売上高は797百万円でした。",
+      "customers": [
+        "設備メーカー",
+        "ゴム製品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産関連事業",
+      "description": "オフィスビルを賃貸する事業です。東京都港区の賃貸ビルが設備で、管理は外部に委託しています。2026年3月期の売上高は143百万円でした。",
+      "customers": [
+        "オフィスビルの賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "舶用機器や空気予熱機などの産業機械の設計・製作を中心に、精製珪石粉ハイシリカの製造・販売、耐熱塗料や高純度天然ゴムの販売、オフィスビルの賃貸を行う事業モデルです。",
+    "products": [
+      "舶用機器、空気予熱機等の一般産業機械",
+      "ハイシリカ（精製珪石粉等）",
+      "耐熱塗料",
+      "ライナテックス（高純度天然ゴム）"
+    ],
+    "customers": [
+      "造船所",
+      "製鉄・電力等の産業機器メーカー",
+      "半導体封止材メーカー",
+      "オフィスビルの賃借人"
+    ],
+    "revenueSources": [
+      "機械関連事業の製品販売・工事収入",
+      "ハイシリカの販売収入",
+      "耐熱塗料・ライナテックスの販売収入",
+      "オフィスビルの賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ニッチツ",
+        "description": "1929年に朝鮮で創立した鉱業会社を起源とし、1950年に国内資産を引き継いで設立されました。東京都港区に本社を置き、2026年3月31日現在の連結従業員数は268人で、連結子会社3社とグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "機械と資源、素材の製品",
+        "description": "舶用機器や空気予熱機ほかの一般産業機械等の設計・製作、プラント関連機器の製作と機械装置の据付・施工・監理を行うほか、精製珪石粉のハイシリカを製造・販売し、子会社を通じて耐熱塗料と高純度天然ゴムを扱っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "造船所や産業機器メーカー",
+        "description": "造船所や製鉄・重電メーカー、半導体関連メーカーなどに製品を供給しています。2026年3月期は株式会社大島造船所が売上高の29.5％を占める主要な取引先でした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は9,381百万円で、前期比4.8％減少しました。機械関連事業が6,492百万円、資源関連事業が1,948百万円、素材関連事業が797百万円、不動産関連事業が143百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は194百万円で、前期比19.6％減少しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +140,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10860000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 327,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +160,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10280000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 286,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,12 +180,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10732000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 276,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号）等を第100期の期首から適用しており、第99期（2024年3月期）に係る主要な経営指標等は当該会計基準等を遡って適用した後の指標となっています。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -87,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11232000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 270,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +221,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12246000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 268,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +229,194 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1929,
+      "title": "朝鮮鉱業開発株式会社を創立",
+      "description": "朝鮮において朝鮮鉱業開発株式会社を創立しました。",
+      "significance": "現在のニッチツの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "日窒鉱業株式会社を設立",
+      "description": "終戦により在外資産を喪失したため、国内資産を引き継ぎ日窒鉱業株式会社を設立しました。",
+      "significance": "国内での事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "東京証券取引所に上場",
+      "description": "東京証券取引所に株式を上場しました。",
+      "significance": "株式上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "三扇工業株式会社を設立し江迎工場の操業を開始",
+      "description": "子会社の三扇工業株式会社を設立し、江迎工場の操業を開始しました。",
+      "significance": "現在の機械関連事業につながる生産拠点の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "東京熱化学工業株式会社を設立",
+      "description": "東京都中央区に東京熱化学工業株式会社を設立しました。",
+      "significance": "現在の連結子会社で、素材関連事業の耐熱塗料を担います。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "三扇機工株式会社を設立",
+      "description": "埼玉県秩父郡に三扇機工株式会社を設立しました。",
+      "significance": "現在の連結子会社で、素材関連事業のライナテックスを担います。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "三扇工業株式会社を吸収合併",
+      "description": "三扇工業株式会社を吸収合併しました。",
+      "significance": "機械部門が自社に取り込まれ、現在の機械本部につながります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "日窒工業株式会社に商号変更",
+      "description": "商号を日窒工業株式会社に変更しました。",
+      "significance": "鉱業から工業への転換を示す社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "株式会社ニッチツに商号変更",
+      "description": "日窒城陽採石株式会社及び鬼怒川資源株式会社を吸収合併するとともに、商号を株式会社ニッチツに変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "ハイシリカ工業株式会社を吸収合併",
+      "description": "ハイシリカ工業株式会社を吸収合併しました。",
+      "significance": "ハイシリカ事業が自社に取り込まれ、現在のハイシリカ事業本部につながります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場再編に伴い、スタンダード市場に移行しました。",
+      "significance": "現在の上場市場になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "結晶質石灰石事業を終了",
+      "description": "結晶質石灰石事業（珪砂の仕入・販売を含む。）を終了しました。",
+      "significance": "鉱山由来の事業の見直しが進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "資源開発本部及び建材本部を廃止",
+      "description": "資源開発本部及び建材本部を廃止しました。",
+      "significance": "鉱山・建材の本部体制に区切りをつけました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "seika",
+      "relationship": "supplier",
+      "description": "機械関連事業において空気予熱機に係る部品の供給や役務の提供を受けており、取引関係の維持・強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-electric-glass",
+      "relationship": "customer",
+      "description": "資源関連事業においてハイシリカの販売取引を行っており、取引関係の維持・強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nikon",
+      "relationship": "customer",
+      "description": "資源関連事業においてハイシリカの販売取引を行っており、取引関係の維持・強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "namura-shipbuilding",
+      "relationship": "customer",
+      "description": "機械関連事業において主に舶用機器の製作に係る取引を行っており、取引関係の維持・強化のため同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "asahi-kasei",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在の大株主で、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は4.72％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "mitsubishi-heavy-industries",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在の大株主で、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は2.94％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +424,45 @@
       "publisher": "株式会社ニッチツ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y8BD.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100Y8BD",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「シン・ニッチツ2025」では、積極投資によるレジリエンス向上（現場力強化）と新たなビジネス領域への挑戦（成長事業へのリソース投入）により経営基盤を再構築することを基本方針とし、生産設備への集中的な投資、人財への投資の加速、脱炭素・環境への取り組みなど新たなビジネス領域への挑戦を基本経営戦略としています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高は機械関連事業が6,492百万円と全体の約7割を占め、資源関連事業が1,948百万円、素材関連事業が797百万円、不動産関連事業が143百万円で、機械関連事業への集中が高い売上構成であることが読み取れます。",
+        "basis": "セグメント情報に、2026年3月期の外部顧客への売上高として機械関連事業6,492,125千円、資源関連事業1,948,269千円、素材関連事業797,722千円、不動産関連事業143,276千円、合計9,381,394千円が印字されていること。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "粉砕技術を活かした高純度の新製品の開発を推進し、自社素材をベースとした環境関連資材の開発や精製珪石粉の高純度化の研究開発を継続しているとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【研究開発活動】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

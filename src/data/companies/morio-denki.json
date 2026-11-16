@@ -4,15 +4,147 @@
   "name": "森尾電機",
   "officialName": "森尾電機株式会社",
   "nameEn": "MORIO DENKI CO., LTD.",
-  "description": null,
+  "shortNameEn": "MORIO DENKI CO., LTD.",
+  "description": "鉄道車両や船舶向けの配電盤・行先表示器などの電気機器を製造販売し、賃貸マンションの運営も行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "electrical-equipment",
+      "name": "電気機器製造販売事業",
+      "description": "鉄道・道路・船舶の交通インフラ向けに電気機器を製造販売する報告セグメントです。鉄道関連事業、自動車関連事業、船舶等関連事業の3つの営業事業部門で展開しています。2026年3月期の外部顧客への売上高は8,485百万円でした。",
+      "customers": [
+        "鉄道事業者・鉄道車両メーカー",
+        "高速道路会社・国土交通省",
+        "防衛省・造船関連事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "railway",
+          "name": "鉄道関連事業",
+          "description": "鉄道事業者や鉄道車両メーカー向けに、配電箱、配電盤、行先表示器、旅客情報表示装置、車両用モニタリングシステム、暖房器、主幹制御器、補助回路機器、LED照明器具、各種照明配線器具、各種保安機器、地上用設備機器などを製造販売しています。米国の連結子会社Morio USA Corporationも鉄道車両用電気機器の製造販売を行っています。2026年3月期の売上高は6,993百万円でした。",
+          "customers": [
+            "鉄道事業者",
+            "鉄道車両メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "automotive",
+          "name": "自動車関連事業",
+          "description": "高速道路会社各社や国土交通省など向けに、自走式標識車、各種車載標識装置、地上設備用分電盤、各種保安機器、投光器、道路用各種情報装置などを製造販売しています。2026年3月期の売上高は1,181百万円でした。",
+          "customers": [
+            "高速道路会社",
+            "国土交通省"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "marine",
+          "name": "船舶等関連事業",
+          "description": "船舶向けに、LED照明灯、各種防爆灯及び防爆器具、艦艇用照明配電器具、船用各種照明器具、船用情報案内装置、船用電気通信器具などを製造販売するほか、大型情報表示装置、各種情報ボード、セキュリティー関連機器なども製造販売しています。2026年3月期の売上高は311百万円でした。",
+          "customers": [
+            "防衛省",
+            "造船関連事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産関連事業",
+      "description": "東京都葛飾区に所有する賃貸マンション4棟と千葉県松戸市に所有する賃貸マンション1棟、計5棟の不動産賃貸事業を運営する報告セグメントです。2026年3月期の外部顧客への売上高は153百万円でした。",
+      "customers": [
+        "賃貸マンションの入居者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道・道路・船舶の交通インフラ向けに、配電盤や行先表示器、標識装置、照明器具などの電気機器を製造販売する事業が主力です。",
+    "products": [
+      "配電箱・配電盤",
+      "行先表示器・旅客情報表示装置",
+      "車両用モニタリングシステム",
+      "主幹制御器・補助回路機器",
+      "LED照明器具・各種照明配線器具",
+      "自走式標識車・各種車載標識装置",
+      "防爆灯・防爆器具・艦艇用照明配電器具",
+      "賃貸マンション（東京都葛飾区４棟、千葉県松戸市１棟）"
+    ],
+    "customers": [
+      "鉄道事業者・鉄道車両メーカー",
+      "高速道路会社・国土交通省",
+      "防衛省・造船関連事業者",
+      "賃貸マンションの入居者"
+    ],
+    "revenueSources": [
+      "電気機器の製造販売の対価",
+      "賃貸マンションの賃料収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "森尾電機",
+        "description": "森尾電機株式会社と連結子会社1社（Morio USA Corporation）のグループです。2026年3月期の従業員数は218人です。1911年の創業以来、「電気機器を通じて交通インフラの発展に寄与する」ことを使命としています。"
+      },
+      {
+        "kind": "offering",
+        "title": "交通インフラ向け電気機器と不動産賃貸",
+        "description": "鉄道車両向けの配電盤や行先表示器、道路向けの自走式標識車や標識装置、船舶向けの照明・配電器具などを製造販売し、あわせて賃貸マンション5棟の運営を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "鉄道事業者・高速道路会社・防衛省など",
+        "description": "顧客は鉄道事業者や鉄道車両メーカー、高速道路会社や国土交通省、防衛省などです。2026年3月期は、三菱電機株式会社とKawasaki Rail Car Lincoln, Inc.への販売が、それぞれ売上高の10％以上を占めました。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高8,638百万円",
+        "description": "2026年3月期の売上高は8,638百万円で、前期に比べ6.2％減りました。電気機器製造販売事業が8,485百万円、不動産関連事業が153百万円で、電気機器製造販売事業の中では鉄道関連事業が6,993百万円を占めます。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益648百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は648百万円で、前期に比べ14.0％増えました。主力の鉄道関連事業の業績が堅調に推移したことが要因として挙げられています。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +159,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4210458000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 236,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4352019000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 238,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4732810000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 232,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5158700000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 229,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +239,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6059885000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 218,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +247,197 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1911,
+      "title": "森尾商会を創業",
+      "description": "東京市芝区（現在の東京都港区）に、電気機器の製造販売を目的とする「森尾商会」を創業しました。",
+      "significance": "現在の森尾電機の起点で、電気機器の製造販売が事業の始まりになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1936,
+      "title": "株式会社森尾商会製作所を設立",
+      "description": "株式会社に改組し、商号を「株式会社森尾商会製作所」に変更しました。",
+      "significance": "株式会社としての事業体制が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1942,
+      "title": "森尾電機株式会社に商号変更し、葛飾区へ移転",
+      "description": "商号を「森尾電機株式会社」と改称するとともに、東京都葛飾区に移転しました。",
+      "significance": "現在の社名と、現在まで続く葛飾区の本拠地の基礎ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "船舶用照明配線器具の製造販売を開始",
+      "description": "船舶用照明配線器具の製造販売を開始しました。",
+      "significance": "現在の船舶等関連事業につながる船舶向け事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "防衛庁から艦艇用機器の製作指名を受ける",
+      "description": "防衛庁（現防衛省）より艦艇用照明・配線・信号機器の製作指名を受けました。",
+      "significance": "艦艇向け機器の供給実績が始まり、船舶向け事業の柱の一つになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "竜ヶ崎工場が竣工",
+      "description": "茨城県龍ケ崎市に竜ヶ崎工場が竣工し、操業を開始しました。",
+      "significance": "現在の主生産拠点である竜ヶ崎事業所の前身ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第二部へ上場",
+      "description": "東京証券取引所市場第二部へ株式を上場しました。",
+      "significance": "上場会社として開示とガバナンスの体制が求められる段階に入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "国内初の自動字幕式行先表示器の製造販売を開始",
+      "description": "国内初の自動字幕式行先表示器の製造販売を開始しました。",
+      "significance": "行先表示器の分野で国内初の製品を出し、鉄道向け表示機器の強みが形になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "自動車部門を新設",
+      "description": "自動車部門を新設し、自動車用電気部品の製造販売を開始しました。",
+      "significance": "現在の自動車関連事業の起点になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "不動産部門を新設し、不動産賃貸事業を開始",
+      "description": "不動産部門を新設し、不動産賃貸事業を開始しました。",
+      "significance": "現在の不動産関連事業の起点になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "国内初の鉄道車両用車内表示器の製造販売を開始",
+      "description": "東海道新幹線用として国内初の鉄道車両用車内表示器（列車案内情報装置）の製造販売を開始しました。",
+      "significance": "車内表示装置でも国内初の実績を重ね、旅客情報表示の分野を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "LED自走式車載標識車の製造販売を開始",
+      "description": "日本道路公団（現NEXCO各社）向けLED自走式車載標識車の製造販売を開始しました。",
+      "significance": "自動車関連事業の主力製品の一つである標識車の供給が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "鉄道車両用フルカラー表示器の製造販売を開始",
+      "description": "鉄道車両用フルカラー表示器の製造販売を開始しました。",
+      "significance": "行先表示器のフルカラー化に対応し、表示機器の製品群を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "米国にMorio USA Corporationを設立",
+      "description": "アメリカ合衆国ネブラスカ州に関係会社Morio USA Corporation（現連結子会社）を設立しました。",
+      "significance": "米国で鉄道車両用電気機器を製造販売する、現在の唯一の連結子会社ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "本社新社屋の完成に伴い、葛飾区立石に移転",
+      "description": "旧本社の再開発に伴う仮移転を経て、本社新社屋の完成に伴い葛飾区立石に再移転しました。",
+      "significance": "現在の本社所在地に拠点を戻し、再開発が完了しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "竜ヶ崎事業所に事務棟３が竣工",
+      "description": "竜ヶ崎事業所に事務棟３が竣工し、あわせて事務棟と技術棟の名称を事務棟１・事務棟２に改称しました。",
+      "significance": "主生産拠点の整備を続けていることが分かります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-electric",
+      "relationship": "customer",
+      "description": "電気機器製造販売事業の主要な顧客です。2026年3月期は販売実績の14.2％を占め、前連結会計年度も10％以上を占める主要な顧客として印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "nippon-sharyo",
+      "relationship": "major-shareholder",
+      "description": "鉄道車両メーカーで、2026年3月31日現在、発行済株式（自己株式を除く）の5.73％を保有する大株主です。当社も同社の株式を特定投資株式として保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "central-security-patrols",
+      "relationship": "supplier",
+      "description": "本社等の警備関連の取引先です。当社は同社の株式を特定投資株式として保有し、同社は2026年3月31日現在、発行済株式（自己株式を除く）の4.91％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +445,45 @@
       "publisher": "森尾電機株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJH1.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YJH1",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「電気機器を通じて交通インフラの発展に寄与する」ことを使命とし、今後も電気機器製造販売事業を主力事業とするとしています。中長期的な経営戦略として、多品種少量生産という製品の置かれた環境のもとで顧客第一主義を貫き、新技術開発にチャレンジし、高度な品質の製品を確実に提供し続けることにより、顧客に愛され信頼される企業になることを目指すとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "収益の中心は鉄道関連事業です。2026年3月期の販売実績では、電気機器製造販売事業8,485百万円のうち鉄道関連事業が6,993百万円を占め、自動車関連事業と船舶等関連事業は前期から大きく減りました。米国の連結子会社を通じた販売もあり、Kawasaki Rail Car Lincoln, Inc.向けが売上高の10％以上を占める主要な顧客になっています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の販売実績の表と【セグメント情報】の主要な顧客ごとの情報の記述",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1911年の創業以来、鉄道車両用照明配線器具の製造販売を続けてきた蓄積があります。1965年に国内初の自動字幕式行先表示器、1984年に国内初の鉄道車両用車内表示器の製造販売を開始した実績があり、1955年には防衛庁（現防衛省）から艦艇用照明・配線・信号機器の製作指名を受け、船舶向けにも長く供給を続けています。",
+        "basis": "【沿革】の創業・国内初の製品・製作指名に関する記述",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

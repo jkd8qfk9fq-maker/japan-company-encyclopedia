@@ -4,15 +4,138 @@
   "name": "日本製罐",
   "officialName": "日本製罐株式会社",
   "nameEn": "NIHON SEIKAN K.K.",
-  "description": null,
+  "shortNameEn": "NIHON SEIKAN K.K.",
+  "description": "18Ｌ缶や美術缶などの金属缶を製造販売し、自社保有の建物と土地の賃貸も行う、埼玉県さいたま市に本社を置くメーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "metal-cans",
+      "name": "金属缶製造販売事業",
+      "description": "国内で18Ｌ缶、美術缶などの金属缶を製造販売する報告セグメントです。2026年３月期の外部顧客への売上高は11,278百万円でした。関西地区に製造拠点を持つ連結子会社の新生製缶株式会社もこの事業を行っており、関東地区では当社が同社のＯＥＭ生産を行っています。",
+      "customers": [
+        "西部容器株式会社などの容器メーカー",
+        "株式会社明治などの食品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "can-18l",
+          "name": "18Ｌ缶",
+          "description": "主力製品の18Ｌ缶です。販売数量は僅かに減少しましたが、材料等の値上げの転嫁が進み、2026年３月期の売上高は8,776百万円と前連結会計年度並みでした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "bijutsu-can",
+          "name": "美術缶",
+          "description": "印刷を施した美術缶です。新規生産設備の稼働もあり、2026年３月期の売上高は2,054百万円と前連結会計年度から8.1％増加しました。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other-cans",
+          "name": "その他",
+          "description": "18Ｌ缶と美術缶以外の製品です。2026年３月期の売上高は447百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "shinsei-seikan",
+          "name": "新生製缶株式会社",
+          "description": "大阪市大正区に本社工場を持つ連結子会社で、関西地区を中心に18Ｌ缶の製造販売を行う18Ｌ缶の専業メーカーです。議決権の所有割合は51.00％です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-rental",
+      "name": "不動産賃貸事業",
+      "description": "建物及び土地を賃貸する報告セグメントです。2026年３月期の外部顧客への売上高は163百万円でした。",
+      "customers": [
+        "建物や土地の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "主たる原材料の鋼材を仕入れて金属缶を製造し、容器メーカーや食品メーカーなどに販売する事業モデルです。",
+    "products": [
+      "18Ｌ缶",
+      "美術缶",
+      "その他の金属缶",
+      "不動産賃貸"
+    ],
+    "customers": [
+      "西部容器株式会社などの容器メーカー",
+      "株式会社明治などの食品メーカー",
+      "建物や土地の賃借人"
+    ],
+    "revenueSources": [
+      "金属缶の販売による売上高",
+      "不動産の賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日本製罐",
+        "description": "埼玉県さいたま市北区に本社を置く金属缶メーカーで、連結子会社１社（新生製缶株式会社）とグループを構成しています。2026年３月31日現在の連結従業員数は189人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "金属缶の製造販売と不動産賃貸",
+        "description": "18Ｌ缶や美術缶などの金属缶を製造販売するほか、自社保有の建物や土地を賃貸しています。金属缶は当社が関東地区、新生製缶株式会社が関西地区に製造拠点を持ち、当社は関東地区で同社のＯＥＭ生産も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "容器メーカーや食品メーカーなど",
+        "description": "金属缶の主な販売先は容器メーカーや食品メーカーなどで、2026年３月期に売上高の割合が10％以上の主な顧客は、西部容器株式会社と株式会社明治でした。不動産賃貸事業では建物や土地を賃借人に貸し出しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年３月期の売上高は11,442百万円で、前連結会計年度から1.6％増加しました。金属缶製造販売事業が11,278百万円、不動産賃貸事業が163百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純損失",
+        "description": "2026年３月期の親会社株主に帰属する当期純損失は346百万円で、前連結会計年度も335百万円の親会社株主に帰属する当期純損失でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +150,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5745279000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 215,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +170,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6016340000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 219,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +190,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6153927000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 214,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5019990000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 213,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4856436000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 189,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +238,149 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1925,
+      "title": "川俣製罐所を設立",
+      "description": "東京都本所区に川俣製罐所が設立されました。日本製罐株式会社の前身です。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1942,
+      "title": "日本製罐株式会社となる",
+      "description": "1925年に設立されていた日本製罐株式会社を買収し、社名を日本製罐株式会社としました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1945,
+      "title": "大宮市に本社工場を新設",
+      "description": "戦災により全工場が焼失した後、埼玉県大宮市寿能町に本社工場を新設しました。",
+      "significance": "戦後の事業再建の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "本社工場内に印刷工場を新設",
+      "description": "本社工場内に印刷工場を新設しました。",
+      "significance": "美術缶の印刷を自社で手がける体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "本社を吉野町工場に移転",
+      "description": "本社を埼玉県大宮市の吉野町工場に移転し、旧本社を寿能工場としました。",
+      "significance": "現在の本社所在地につながる移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "太陽製罐株式会社を子会社化",
+      "description": "太陽製罐株式会社の株式所有割合を60.0％へ引き上げ、子会社としました。",
+      "significance": "関西地区の製缶会社との資本関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "本社に18Ｌ缶工場を新設",
+      "description": "本社に18Ｌ缶工場を新設し、久喜工場を閉鎖しました。",
+      "significance": "主力製品の生産集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "太陽製罐株式会社とＪＦＥ製缶株式会社が経営統合",
+      "description": "太陽製罐株式会社とＪＦＥ製缶株式会社の経営統合を行い、ＪＮＭホールディングス株式会社の100％子会社となりました。",
+      "significance": "子会社であった太陽製罐側の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "新生製缶株式会社が設立される",
+      "description": "ＪＮＭホールディングス株式会社、太陽製罐株式会社、ＪＦＥ製缶株式会社の合併により、新生製缶株式会社が設立されました。",
+      "significance": "現在の連結子会社の成り立ちです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "新生製缶株式会社を子会社化",
+      "description": "新生製缶株式会社の株式所有割合を51.0％へ引き上げ、子会社としました。",
+      "significance": "現在のグループ体制が固まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "千葉工場を閉鎖",
+      "description": "千葉県山武郡九十九里町の千葉工場を閉鎖しました。",
+      "significance": "生産拠点の集約の一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nippon-steel",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に記載された事業会社で、2026年３月31日現在の所有株式数の割合は7.76％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +388,55 @@
       "publisher": "日本製罐株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YK2J.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YK2J",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年度に創立100周年を迎えたことを契機として、次の100年に向けた持続的な成長を実現するため、収益構造改革及び事業基盤強化に取り組む方針です。品質向上、生産効率改善、高付加価値製品へのシフト、プロダクトミックスの変更による採算の改善、新規顧客開拓等を推進し、安定した収益構造の構築を図るとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2025年９月に千葉工場を閉鎖するなど、生産拠点の集約はすでに実行に移されています。主力の18Ｌ缶市場については国内需要の減少傾向が続くという見方のもとで、改革の柱は高付加価値製品への移行と新規顧客の開拓に置かれています。",
+        "basis": "沿革における2025年９月の千葉工場閉鎖の記載と、経営方針における18Ｌ缶市場の需要動向の見方および収益構造改革の取組内容の記載に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1925年の創業以来の金属缶製造の歴史を持ち、本社工場内に印刷工場を備えて美術缶の印刷まで自社で手がけています。関東地区は当社、関西地区は子会社の新生製缶株式会社が製造拠点を持ち、関東地区では当社が同社のＯＥＭ生産も行う分担体制です。",
+        "basis": "沿革における1925年の創業と1950年の印刷工場新設の記載、および事業の内容と関係会社の状況における新生製缶株式会社との役割分担の記載に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "国内の金属缶メーカーの一つで、2026年３月期の売上高11,442百万円のうち金属缶製造販売事業が11,278百万円を占め、その中心は18Ｌ缶です。連結従業員数は189人で、連結子会社は新生製缶株式会社の１社です。",
+        "basis": "セグメント情報における事業別の外部顧客への売上高（金属缶製造販売事業11,278百万円）の印字と、経営指標等における売上高11,442百万円および従業員数189人の印字に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

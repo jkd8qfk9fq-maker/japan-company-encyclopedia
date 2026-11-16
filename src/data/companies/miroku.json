@@ -4,15 +4,145 @@
   "name": "ミロク",
   "officialName": "株式会社ミロク",
   "nameEn": "Miroku Corporation",
-  "description": null,
+  "shortNameEn": "Miroku Corporation",
+  "description": "高知県南国市に本社を置く純粋持株会社で、子会社を通じて猟銃や工作機械の製造販売などを手がける企業です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "hunting-guns",
+      "name": "猟銃事業",
+      "description": "散弾銃、ライフル銃、猟銃関連商品を製造販売する事業です。子会社の株式会社ミロク製作所、株式会社南国ミロク、株式会社ミロク工芸が担い、2025年10月期の売上高は10,680百万円でした。製品の多くはブローニンググループ向けのOEM供給です。",
+      "customers": [
+        "ブローニング・アームズ・カンパニー、ブローニング・インターナショナルS.A.をはじめとする銃器メーカー・販売会社"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "shotguns",
+          "name": "散弾銃",
+          "description": "上下二連銃などの散弾銃です。",
+          "customers": [
+            "ブローニンググループをはじめとする銃器メーカー・販売会社"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "rifles",
+          "name": "ライフル銃",
+          "description": "ボルトアクションライフルなどのライフル銃です。",
+          "customers": [
+            "ブローニンググループをはじめとする銃器メーカー・販売会社"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "machine-tools",
+      "name": "工作機械事業",
+      "description": "深穴加工機や超精密研磨機、深穴加工用工具を製造販売し、穴明加工も行う事業です。子会社のミロク機械株式会社と米国のMIROKU MACHINE TOOL,INC.が担い、2025年10月期の売上高は1,773百万円でした。",
+      "customers": [
+        "自動車産業や半導体製造装置分野をはじめとする製造業の企業"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "cloud-solutions",
+      "name": "クラウドソリューション事業",
+      "description": "設備保全業務の効率化のためのクラウドシステムなどを開発販売する事業です。子会社の株式会社ミロクリエが担い、2025年10月期の売上高は17百万円でした。従来「IT/IoT/AI事業」としていた報告セグメントの名称を当期から変更したものです。",
+      "customers": [
+        "設備保全業務を行う企業"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業で、自動車用ハンドルの仕入販売や木工商品の仕入販売などを行います。2025年10月期の売上高は47百万円でした。",
+      "customers": [
+        "自動車関連をはじめとする取引先企業"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "猟銃事業の子会社が散弾銃やライフル銃を製造してブローニンググループなどへ供給し、工作機械やクラウドサービスも手がける事業モデルです。",
+    "products": [
+      "散弾銃・ライフル銃などの猟銃",
+      "深穴加工機・超精密研磨機・深穴加工用工具",
+      "設備保全向けクラウドシステム",
+      "自動車用ハンドル・木工商品"
+    ],
+    "customers": [
+      "ブローニンググループをはじめとする銃器メーカー・販売会社",
+      "自動車産業や半導体製造装置分野をはじめとする製造業の企業",
+      "設備保全業務を行う企業"
+    ],
+    "revenueSources": [
+      "猟銃の販売代金",
+      "工作機械の販売代金と加工代金",
+      "クラウドサービスの販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ミロク",
+        "description": "当社は高知県南国市に本社を置く純粋持株会社で、子会社及び関連会社を含むグループ全体の経営を統轄しています。2025年10月31日現在の連結従業員数は627人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "猟銃・工作機械・クラウドサービス",
+        "description": "子会社が散弾銃やライフル銃などの猟銃、深穴加工機などの工作機械を製造販売し、設備保全業務の効率化のためのクラウドシステムも開発販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "ブローニンググループなど",
+        "description": "猟銃事業の主な顧客はブローニング・アームズ・カンパニーとブローニング・インターナショナルS.A.で、2025年10月期の販売実績に占める割合はそれぞれ63.6％と18.4％でした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2025年10月期の売上高は12,518百万円",
+        "description": "2025年10月期の売上高は12,518百万円で、前期比14.7％増でした。猟銃事業が10,680百万円、工作機械事業が1,773百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "2025年10月期の親会社株主に帰属する当期純損失は2,525百万円",
+        "description": "2025年10月期は親会社株主に帰属する当期純損失2,525百万円でした。前期も2,294百万円の親会社株主に帰属する当期純損失でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年10月期",
@@ -27,7 +157,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14164592000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 587,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +177,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14654880000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 584,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年3月31日）等を第91期の期首から適用しており、第91期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年10月期",
@@ -67,7 +198,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15314165000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 620,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +218,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13320388000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 636,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +238,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10747786000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 627,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +246,127 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1893,
+      "title": "猟銃の製造を開始",
+      "description": "高知県香美郡野市村（現香南市野市町）において猟銃の製造を始めました。",
+      "significance": "会社の事業の起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1946,
+      "title": "株式会社ミロク工作所を設立",
+      "description": "現在の株式会社ミロクの前身である株式会社ミロク工作所を設立しました。",
+      "significance": "法人としての創業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "株式会社ミロク製作所に商号を変更",
+      "description": "辻村重工株式会社に吸収合併され、商号を株式会社ミロク製作所としました。",
+      "significance": "現在の社名につながる商号が定まった出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "大阪証券取引所市場第2部に上場",
+      "description": "大阪証券取引所市場第2部に株式を上場しました。",
+      "significance": "株式を公開した転機です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "ブローニング・アームズ・カンパニーと提携",
+      "description": "ブローニング・アームズ・カンパニーと販売並びに技術提携を結びました。",
+      "significance": "現在の主力顧客であるブローニンググループとの関係の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "ミロク機械株式会社を設立",
+      "description": "当社の技術部門から独立し、ミロク機械株式会社を設立しました。",
+      "significance": "工作機械事業の母体ができた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "持株会社へ移行し株式会社ミロクに商号を変更",
+      "description": "商号を株式会社ミロクに変更し、持株会社方式による分社型新設分割により株式会社ミロク製作所を設立して、営業の全てを承継させました。",
+      "significance": "現在の純粋持株会社体制の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "株式会社ミロクリエを設立",
+      "description": "株式会社ミロク製作所から独立し、株式会社ミロクリエを設立しました。",
+      "significance": "クラウドソリューション事業を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しに伴い、東京証券取引所スタンダード市場へ移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tokai-rika",
+      "relationship": "business-partner",
+      "description": "その他事業（自動車関連事業）の事業パートナーです。関連会社の株式会社ミロクテクノウッドとは、竹と樹脂の複合材を共同開発しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【経営方針、経営環境及び対処すべき課題等】"
+    },
+    {
+      "companyId": "torishima-pump-mfg",
+      "relationship": "major-shareholder",
+      "description": "2025年10月31日現在の大株主で、発行済株式（自己株式を除く）の総数に対する所有割合は3.85％です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "nof",
+      "relationship": "major-shareholder",
+      "description": "2025年10月31日現在の大株主で、発行済株式（自己株式を除く）の総数に対する所有割合は3.27％です。当社は、同社の子会社との取引関係の維持・強化のため、同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +374,55 @@
       "publisher": "株式会社ミロク",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XHE6.pdf",
       "publishedAt": "2026-01-27",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XHE6",
+      "asOf": "2025-10-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営の基本方針として「誠実と正直こそ信頼への近道」を掲げ、会社に関わるすべての人々に比類のない喜びと感動を与えるため、高品質な製品とサービスを世界へ提供するとしています。猟銃事業ではOEM供給先であるブローニンググループとの協調体制を強化し、工作機械事業では加工部門を成長の核として営業活動を展開するとしています。",
+        "asOf": "2026-01-27",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の8割超を猟銃事業が占め、その大半がブローニンググループ向けであるため、グループの業績は同グループからの受注動向に左右される構造になっています。工作機械事業とクラウドソリューション事業は規模が小さく、事業の柱は猟銃事業に集中しています。",
+        "basis": "セグメント情報及び主要な顧客ごとの情報の記載に基づく",
+        "asOf": "2026-01-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1893年に始まる猟銃製造の歴史を持ち、ブローニング・アームズ・カンパニーとは1966年の提携以来の長期の関係があります。散弾銃及びライフル銃の契約品目を長期間供給する契約も結んでおり、OEM供給先との関係の深さが特徴です。",
+        "basis": "沿革及び重要な契約等の記載に基づく",
+        "asOf": "2026-01-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "猟銃事業では世界的な銃ブランドであるブローニンググループのOEM供給先として、散弾銃やライフル銃を供給する位置にあります。工作機械事業では深穴加工機や深穴加工用工具などの専門分野を手がけています。",
+        "basis": "事業の内容及び経営方針の記載に基づく",
+        "asOf": "2026-01-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年10月期",
     "asOf": "2025-10-31",

@@ -4,15 +4,132 @@
   "name": "京都機械工具",
   "officialName": "京都機械工具株式会社",
   "nameEn": "KYOTO TOOL CO.,LTD.",
-  "description": null,
+  "shortNameEn": "Kyoto Tool Co., Ltd.",
+  "description": "自動車整備用工具を中心に、医療用工具や電設関連工具などを製造・販売する工具メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "tools",
+      "name": "工具事業",
+      "description": "自動車整備用工具や一般作業工具などの製造販売を行う報告セグメントです。2026年3月期の外部顧客への売上高は8,079百万円でした。",
+      "customers": [
+        "自動車メーカー",
+        "工具専門商社",
+        "自動車整備事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】",
+      "children": [
+        {
+          "id": "tools-products",
+          "name": "工具",
+          "description": "自動車整備用工具、医療用工具及び関連機器、電設関連工具、その他一般作業工具及びこれらに関連する機器の製造販売です。",
+          "customers": [
+            "自動車整備事業者",
+            "医療機関",
+            "電気工事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "precision-casting",
+          "name": "精密鋳造",
+          "description": "ロストワックス製法による工具及び精密工作機械部品・産業用機械部品などの製造販売です。",
+          "customers": [
+            "工作機械メーカー",
+            "産業機械メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "facility-management",
+      "name": "ファシリティマネジメント事業",
+      "description": "不動産の賃貸、業務用不動産の運営等と、太陽光発電による電気の販売を行う報告セグメントです。2026年3月期の外部顧客への売上高は255百万円でした。",
+      "customers": [
+        "賃貸物件の入居事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
+  "businessModel": {
+    "description": "自動車整備用工具などを自社工場で製造して販売するとともに、保有不動産の賃貸や太陽光発電による売電も行うモデルです。",
+    "products": [
+      "自動車整備用工具",
+      "医療用工具及び関連機器",
+      "電設関連工具",
+      "一般作業工具",
+      "精密鋳造品"
+    ],
+    "customers": [
+      "自動車メーカー",
+      "工具専門商社",
+      "自動車整備事業者"
+    ],
+    "revenueSources": [
+      "工具の販売",
+      "不動産の賃貸",
+      "太陽光発電による電気の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "京都機械工具",
+        "description": "1950年に設立された工具メーカーです。本社は京都府久世郡久御山町にあり、連結子会社2社を持つグループで、2026年3月期の従業員数は248人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "工具と精密鋳造品",
+        "description": "自動車整備用工具、医療用工具、電設関連工具などの工具と、ロストワックス製法による精密鋳造品を製造・販売しています。あわせて、不動産の賃貸や太陽光発電による売電も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "工具専門商社や自動車メーカーなど",
+        "description": "主要な顧客として、トラスコ中山、ヤマト自動車、トヨタ自動車が印字されており、工具専門商社や自動車メーカーなどに工具を販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は8,334百万円で、前期比7.9％減りました。工具事業が8,079百万円、ファシリティマネジメント事業が255百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は501百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +144,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10705884000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 262,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +164,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11181806000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 253,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第74期において、企業結合に係る暫定的な会計処理の確定を行っており、第73期の関連する主要な経営指標等については、暫定的な会計処理の確定による取得原価の当初配分額の重要な見直しが反映された後の金額によっております。"
     },
     {
       "fiscalYear": "2024年3月期",
@@ -67,12 +185,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12368684000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 242,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第74期における主要な経営指標等は、過年度の決算訂正を反映した指標等となっております。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -87,7 +206,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12253512000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 244,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +226,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12617906000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 248,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +234,192 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1950,
+      "title": "京都機械工具を設立し自動車搭載工具の製造を開始",
+      "description": "京都市において京都機械工具株式会社を設立し、自動車搭載工具の製造を開始しました。",
+      "significance": "現在の京都機械工具の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "国内市販用作業工具の製造を開始",
+      "description": "本社及び工場を移転し、国内市販用作業工具の製造を開始しました。",
+      "significance": "自動車搭載工具から市販用工具へ事業を広げた起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "北陸ケーティシーツールを設立",
+      "description": "石川県羽咋市に北陸ケーティシーツール株式会社を設立しました。",
+      "significance": "現在の連結子会社の一つで、工具の製品加工を担う生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "久御山工場を新設",
+      "description": "京都府久世郡久御山町に久御山工場を新設しました。",
+      "significance": "現在の本社事務所と主力工場の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "大阪証券取引所市場第二部と京都証券取引所に上場",
+      "description": "大阪証券取引所市場第二部及び京都証券取引所に上場しました。",
+      "significance": "上場企業となった節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "会社呼称をKTCに変更",
+      "description": "創立50周年を記念し、会社呼称をKTCに変更しました。",
+      "significance": "現在の略称KTCの由来です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "太陽光発電事業を開始",
+      "description": "石川県羽咋市にて太陽光発電事業を開始しました。",
+      "significance": "ファシリティマネジメント事業の売電事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "KTCけいはんなR&Dオフィスを開設",
+      "description": "関西文化学術研究都市にKTCけいはんなR&Dオフィスを開設しました。",
+      "significance": "研究開発拠点の新設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "HI-TOOLの全株式を取得し子会社化",
+      "description": "株式会社HI-TOOLの全株式を取得し、子会社化しました。",
+      "significance": "現在の連結子会社の一つが加わった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "KTCけいはんなR&Dオフィスを閉鎖",
+      "description": "KTCけいはんなR&Dオフィスを閉鎖しました。",
+      "significance": "研究開発拠点の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "toyota",
+      "relationship": "customer",
+      "description": "主要な顧客ごとの情報に、前連結会計年度と当連結会計年度のいずれにも販売先として印字されている自動車メーカーです。政策保有株式の保有目的にも、工具事業における製品販売先であることが印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "trusco-nakayama",
+      "relationship": "customer",
+      "description": "主要な顧客ごとの情報に、前連結会計年度と当連結会計年度のいずれにも販売先として印字されている工具専門商社です。当連結会計年度は最も大きな販売先でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "screen-holdings",
+      "relationship": "supplier",
+      "description": "政策保有株式の保有目的に、工具事業における仕入先であることが個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "takebishi",
+      "relationship": "supplier",
+      "description": "政策保有株式の保有目的に、工具事業における仕入先であることが個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "chuo-warehouse",
+      "relationship": "business-partner",
+      "description": "政策保有株式の保有目的に、工具事業における物流業務の委託先であることが個別に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "joshin",
+      "relationship": "customer",
+      "description": "ファシリティマネジメント事業で、旧本社の土地・建物等を貸与している相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主要な設備の状況】"
+    },
+    {
+      "companyId": "ministop",
+      "relationship": "customer",
+      "description": "ファシリティマネジメント事業で、久御山町賃貸用物件の土地・建物を貸与している相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主要な設備の状況】"
+    },
+    {
+      "companyId": "yoshinoya-holdings",
+      "relationship": "customer",
+      "description": "ファシリティマネジメント事業で、久御山町賃貸用物件の土地・建物を貸与している相手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主要な設備の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +427,59 @@
       "publisher": "京都機械工具株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJPO.pdf",
       "publishedAt": "2026-06-29",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YJPO",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年５月20日開催の取締役会において、2026年10月１日を効力発生日として、当社を存続会社、完全子会社である北陸ケーティシーツール株式会社及び株式会社HI-TOOLを消滅会社とする吸収合併を行うことを決議し、同日付で吸収合併契約を締結しました（2026年６月26日開催の第76回定時株主総会で承認済み）。登録は2026年３月31日現在のグループ構造（連結子会社２社）で行っており、期間後の吸収合併の反映には人の確認が必要です。",
+      "businessModel: 第74期（2024年３月期）における主要な経営指標等は、過年度の決算訂正を反映した指標等となっており、2026年６月26日には第71期から第75期までの訂正有価証券報告書が提出されています。登録は当期の有価証券報告書の数値で行っており、前期の有価証券報告書との照合では全ての系列に差異はありませんでしたが、過年度の決算訂正を反映した数値の取扱いには人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2022年度から2030年度を最終年度とする長期ビジョン「KTC vision 2030」を掲げ、基本方針に「社会の期待を超えたツールで、人の能力を拡張し、世の中の安全を創り出す」を置いています。2026年5月には計画を見直して新5ヵ年計画「Restart KTC vision 2030」を策定し、まずは強固な経営基盤を再構築したうえで成長を重ねるとしています。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "長期ビジョンを見直し、経営基盤の立て直しを優先しながら、製品中心の事業からサービスを含む提案型の事業へ領域を広げる戦略です。",
+        "basis": "経営方針に、長期ビジョン「KTC vision 2030」を見直して新5ヵ年計画「Restart KTC vision 2030」を策定したことと、工具事業では「もの」を主体とする製品事業から「こと」を提案するサービス事業への領域拡大を加速化することが記載されていることによるものです。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "IoT技術を搭載した工具やRFIDを搭載した工具などの開発力と、プロメカニック用工具のフラッグシップブランド「nepros」を中心としたブランド力が強みです。",
+        "basis": "経営成績等の分析に、IoT技術を搭載した工具や測定具などで構成される「TRASAS」シリーズや、RFIDを搭載した「nepros ID」シリーズの展開に注力していること、フラッグシップブランド「nepros」が2025年1月に誕生30周年を迎えたことが記載されていることによるものです。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の大部分を工具事業が占める、工具専業に近いメーカーです。",
+        "basis": "セグメント情報等に、2026年3月期の外部顧客への売上高は工具事業が8,079百万円、ファシリティマネジメント事業が255百万円、合計が8,334百万円と記載されていることによるものです。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

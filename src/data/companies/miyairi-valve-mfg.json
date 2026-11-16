@@ -4,15 +4,140 @@
   "name": "宮入バルブ製作所",
   "officialName": "株式会社宮入バルブ製作所",
   "nameEn": "MIYAIRI VALVE MFG. CO., LTD.",
-  "description": null,
+  "shortNameEn": "MIYAIRI VALVE MFG. CO., LTD.",
+  "description": "LPGやLNGなどのエネルギーガスを制御するバルブや機器類を製造・販売し、黄銅の削り屑の売却も行うメーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "gas-valves",
+      "name": "高圧ガス用バルブ及び関連機器類",
+      "description": "LPG（液化石油ガス）・LNG（液化天然ガス）等のエネルギーガスを中心に、各種ガス体を制御するバルブや機器類を製造・販売する単一セグメントの事業です。2026年3月期の売上高は7,044百万円で、前期に比べ3.8％増えました。製造は山梨県南アルプス市の甲府工場が担い、2026年3月31日現在の従業員数は151人です。",
+      "customers": [
+        "LPガス関連事業者",
+        "ガス貯蔵・輸送設備の運営者",
+        "食品加工工場"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "brass-valves",
+          "name": "黄銅弁",
+          "description": "LPG容器用弁やバルク貯槽用付属機器弁類などの黄銅製バルブです。容器用弁は一般家庭の2～50kgの容器、工業用の500kg容器、タクシー等の自動車用容器に取り付けられて使われ、バルク貯槽用付属機器弁類は集合住宅や外食産業、工業用に使われます。2026年3月期の売上高は4,317百万円でした。",
+          "customers": [
+            "LPガス容器の利用者",
+            "集合住宅・外食産業の設備関係者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "steel-valves",
+          "name": "鉄鋼弁",
+          "description": "LPガス貯蔵設備用弁類やLNG関連設備向けの鉄鋼製バルブ・機器類（液面計等）です。陸上設備、陸上・海上輸送用設備のほか、LNGを燃料とする船、医療用の酸素や空気を制御する弁類、消火設備に使用される弁類も含みます。2026年3月期の売上高は1,468百万円でした。",
+          "customers": [
+            "LPガス・LNG貯蔵設備の運営者",
+            "医療機関・消火設備関係者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "scrap-sales",
+          "name": "屑売上高",
+          "description": "黄銅製バルブの製作時に発生する黄銅材の削り屑を材料メーカーへ売却するものです。黄銅材の材料価格が一般材料に比べて高価なため、売上として計上されています。2026年3月期の売上高は1,151百万円でした。",
+          "customers": [
+            "材料メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-products",
+          "name": "その他",
+          "description": "食品加工工場向けに分解洗浄が可能なサニタリーバルブ、スマート農業向けの散水ノズル類、ワインろ過機などです。ワインろ過機は醤油や日本酒のろ過にも用途が広がっています。2026年3月期の売上高は107百万円でした。",
+          "customers": [
+            "食品加工工場",
+            "農業事業者",
+            "ワイン醸造事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "LPガス容器用弁などの黄銅弁と、LPガス・LNG貯蔵設備向けの鉄鋼弁を甲府工場で製造し、ガス関連の事業者や設備事業者に販売するモデルです。",
+    "products": [
+      "黄銅弁（容器用弁・バルク貯槽用付属機器弁類）",
+      "鉄鋼弁（LPガス・LNG貯蔵設備用弁類・液面計等）",
+      "サニタリーバルブ",
+      "散水ノズル類",
+      "ワインろ過機"
+    ],
+    "customers": [
+      "LPガス関連事業者",
+      "ガス貯蔵・輸送設備の運営者",
+      "食品加工工場",
+      "農業事業者"
+    ],
+    "revenueSources": [
+      "バルブ・機器類の販売代金",
+      "黄銅材の削り屑（作業屑）の売却代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "宮入バルブ製作所",
+        "description": "当社は連結財務諸表を作成しておらず、単体で事業を行っています。2026年3月期の従業員数は151人です。本社は東京都中央区にあり、製造は山梨県南アルプス市の甲府工場が担います。2025年9月には昌栄機工株式会社との合弁会社SOZOテック株式会社を設立し、50％を出資しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "ガス制御バルブと関連機器",
+        "description": "LPG・LNG等のエネルギーガスを中心に、各種ガス体を制御するバルブや機器類を製造・販売しています。黄銅弁、鉄鋼弁のほか、食品加工工場向けのサニタリーバルブやスマート農業向けの散水ノズル、ワインろ過機も手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "ガス関連事業者など",
+        "description": "主な販売先はサンエツ金属株式会社、矢崎エナジーシステム株式会社、昌栄機工株式会社などで、容器用弁は一般家庭や工業用、自動車用のガス容器に取り付けられて使われます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "バルブ販売と作業屑の売却",
+        "description": "2026年3月期の売上高は7,044百万円で、黄銅弁が4,317百万円、鉄鋼弁が1,468百万円、作業屑の売却が1,151百万円、その他が107百万円でした。前期に比べ3.8％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は60百万円でした。前期は当期純損失74百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +152,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3880798000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 156,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +174,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4080306000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 151,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +196,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4178241000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 155,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +218,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3975568000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 153,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +240,159 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3982141000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 151,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1949,
+      "title": "宮入敏が株式会社宮入製作所を創立",
+      "description": "東京都大田区大森において、宮入敏が株式会社宮入製作所を創立しました。",
+      "significance": "現在の会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "米国QPLの認定工場となる",
+      "description": "米国QPLの認定工場となりました。",
+      "significance": "高圧ガス用バルブの品質が米国の規格で認められた、初期の実績です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "甲府工場の落成と株式会社エムエスバルブ製作所の設立",
+      "description": "甲府工場の落成を契機に商標を登録し、株式会社エムエスバルブ製作所を設立して再発足しました。",
+      "significance": "現在の製造拠点である甲府工場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "株式を上場し、公開会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "商号を株式会社宮入バルブ製作所に変更",
+      "description": "商号を「株式会社宮入バルブ製作所」と変更しました。宮入バルブ販売株式会社を吸収合併しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "日本LPガスプラント協会の認定検査会社となる",
+      "description": "日本LPガスプラント協会の認定検査会社となりました。",
+      "significance": "LPガス設備の検査を担う体制が業界団体に認められました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "高圧ガス保安協会の認定検査会社となる",
+      "description": "高圧ガス保安協会の認定検査会社となりました。",
+      "significance": "高圧ガスの保安に関わる検査会社としての位置づけが確立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "LPガス高圧部用安全装置の販売を開始",
+      "description": "1981年後期より開発に着手していた、LPガスの高圧部に取り付ける安全装置の販売を1984年から開始しました。",
+      "significance": "安全装置という新しい製品分野への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "ISO9001の認証を取得",
+      "description": "国際規格ISO9001の認証を取得しました。",
+      "significance": "品質管理の国際規格への対応です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "株式会社バナーズが親会社となる",
+      "description": "株式会社バナーズ（東京証券取引所市場第二部）が当社の親会社となりました。",
+      "significance": "一時的に他社の子会社となった時期の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "株式会社バナーズとの親子会社関係を解消",
+      "description": "株式会社バナーズとの親子会社関係を解消しました。",
+      "significance": "独立した上場会社に戻りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "ISO14001の認証を取得",
+      "description": "国際規格ISO14001の認証を取得しました。",
+      "significance": "環境管理の国際規格への対応です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "ck-san-etsu",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式（自己株式を除く）の2.08％を保有する大株主です。当社は同社の株式を保有しており、同社との間で主要原料の仕入取引と作業屑の販売取引を継続しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +400,55 @@
       "publisher": "株式会社宮入バルブ製作所",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKBD.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YKBD",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "主力のLPガス容器用弁市場が縮小傾向にあるなか、LNG用弁、水素用弁、食品加工用サニタリー弁、一般配管用汎用弁などの新しい製品群の開発と販売拡大に力点を置き、生産性向上と原価低減により収益体質の強化に努めるとしています。成長の第2の柱として、LNG、水素、窒素、その他産業ガスにおける低温弁事業を強化・拡大しており、2025年9月には昌栄機工株式会社と製品開発に関わる合弁会社を設立しました。第3の柱には食品加工分野を位置づけ、散水ノズル類やサニタリーバルブ、ワイン醸造機器などの取り組みを進めています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の製品・商品売上高のうち、LPガス容器用弁が過半を占めており、既存分野への依存はなお大きい構成です。一方で、船舶用や鉄鋼弁のその他は前期に比べて売上が増えており、新しい分野の売上も伸びています。",
+        "basis": "経営成績の分析に印字された製品商品売上高の内訳（LPガス容器用弁3,413百万円、船舶用346百万円、鉄鋼弁のその他153百万円と、それぞれの前期比）に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1957年に米国QPLの認定工場となって以来、日本LPガスプラント協会と高圧ガス保安協会の認定検査会社として、高圧ガス用バルブの製造と検査の実績を積み重ねています。甲府工場では2018年7月に一貫生産設備の更新を完了し、すべての工程でバーコードによる出来高管理を導入しています。",
+        "basis": "沿革に印字された認定・認証の取得と、経営戦略（生産改善）に印字された一貫生産設備の更新・出来高管理の導入に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "disclosed": {
+        "text": "LPガスバルク供給システムの各種弁類については、現在のトップシェアを維持・拡大する方針を示しています。2023年度に設置のピークを迎えた製品では、設置後20年の更新需要が見込まれるため、在庫の作りこみによる短納期対応を徹底するとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

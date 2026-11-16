@@ -4,15 +4,146 @@
   "name": "ニイタカ",
   "officialName": "株式会社ニイタカ",
   "nameEn": "Niitaka Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Niitaka",
+  "description": "ニイタカは、業務用洗剤・洗浄剤や固形燃料を製造・販売するケミカル事業と、健康食品を扱うヘルスケア事業を営んでいます。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "food",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "chemical",
+      "name": "ケミカル事業",
+      "description": "業務用洗剤・洗浄剤・除菌剤・漂白剤、アルコール製剤、業務用固形燃料や仕入商品等を製造・販売する事業です。2026年5月期の外部顧客への売上高は23,267百万円でした。びわ湖工場とつくば工場が主な生産拠点で、食器洗浄機のメンテナンスや衛生サービスも提供しています。",
+      "customers": [
+        "外食チェーン",
+        "飲食店",
+        "歯科医院"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "detergents",
+          "name": "業務用洗剤・洗浄剤等",
+          "description": "食器用洗剤、食器洗浄機用洗浄剤、漂白剤、アルコール製剤、手洗い石けんなどを製造・販売しています。製品区分ごとの売上高は開示されていません。",
+          "customers": [
+            "外食チェーン",
+            "飲食店"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "solid-fuel",
+          "name": "固形燃料",
+          "description": "業務用固形燃料「カエンニューエースＥ」「カエンハイスーパー」などを製造・販売しています。製品区分ごとの売上高は開示されていません。",
+          "customers": [
+            "飲食店",
+            "宿泊施設"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "hygiene-service",
+          "name": "衛生サービス・メンテナンス",
+          "description": "食器洗浄機の定期・緊急メンテナンスや、衛生講習、細菌検査、衛生巡回サービスなどを提供しています。金額は独立して開示されていません。",
+          "customers": [
+            "飲食店",
+            "宿泊施設"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "healthcare",
+      "name": "ヘルスケア事業",
+      "description": "植物醗酵エキスサプリメント「ＯＭ-Ｘ」などの健康食品を製造・販売する事業です。2026年5月期の外部顧客への売上高は1,351百万円でした。連結子会社の株式会社バイオバンクが製造・販売を担っています。",
+      "customers": [
+        "健康食品の購入者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "当社は大阪市淀川区に本社を置き、びわ湖工場とつくば工場などで業務用洗剤や固形燃料を製造し、飲食店などへ販売して収益を得ています。",
+    "products": [
+      "業務用洗剤・洗浄剤",
+      "除菌剤・漂白剤",
+      "アルコール製剤",
+      "業務用固形燃料",
+      "植物醗酵エキスサプリメント等の健康食品"
+    ],
+    "customers": [
+      "外食チェーン",
+      "飲食店",
+      "歯科医院",
+      "健康食品の購入者"
+    ],
+    "revenueSources": [
+      "業務用洗剤・洗浄剤等の販売",
+      "固形燃料の販売",
+      "健康食品の販売",
+      "衛生サービス・食器洗浄機メンテナンス"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ニイタカ",
+        "description": "ニイタカは1963年に大阪市で設立された業務用洗剤メーカーで、2026年5月31日現在の連結従業員数は380人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "業務用洗剤と健康食品の製造販売",
+        "description": "業務用洗剤・洗浄剤、除菌剤、漂白剤、アルコール製剤、業務用固形燃料のほか、植物醗酵エキスサプリメントなどの健康食品を製造・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "外食チェーンなどの飲食店",
+        "description": "主な顧客は外食チェーンをはじめとする飲食店で、歯科などの新規チャネル開拓も進めています。売上高の10％以上を占める顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年5月期の連結売上高は24,619百万円でした。事業別ではケミカル事業が23,267百万円、ヘルスケア事業が1,351百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年5月期の親会社株主に帰属する当期純利益は1,900百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年5月期",
@@ -27,7 +158,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12524137000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 339,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +178,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12970738000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 394,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第62期において、企業結合に係る暫定的な会計処理の確定を行っており、第61期（2023年5月期）の主要な経営指標等については、暫定的な会計処理の確定による取得原価の当初配分額の重要な見直しが反映された後の金額によっております。"
     },
     {
       "fiscalYear": "2024年5月期",
@@ -67,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13385165000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 394,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14756733000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 400,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +239,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16268055000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 380,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +247,266 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1963,
+      "title": "新高化学株式会社を設立",
+      "description": "大阪市東淀川区に、界面活性剤関連製品（液体中性洗剤等）の製造販売を目的として新高化学株式会社を設立しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "業務用固形燃料を開発し発売",
+      "description": "業務用固形燃料を開発し、発売しました。",
+      "significance": "現在の主力製品の一つである固形燃料の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "びわ湖工場を新設",
+      "description": "滋賀県犬上郡多賀町にびわ湖工場（液体中性洗剤製造設備、洗浄剤製造設備、固形燃料製造設備）を新設しました。",
+      "significance": "現在の主力生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "商号を株式会社ニイタカに変更",
+      "description": "商号を新高化学工業株式会社から株式会社ニイタカに変更しました。社名は本社所在地の地名「新高」に由来します。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "株式公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "株式が東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "上場市場が第一部になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "ミッケル化学株式会社が発足",
+      "description": "スイショウ油化工業株式会社が株式会社ユーホーニイタカを吸収合併し、商号をミッケル化学株式会社に変更しました。",
+      "significance": "手洗い用水石鹸などを担う連結子会社の体制です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "市場再編への対応です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "京葉糖蜜輸送株式会社と株式会社バイオバンクを子会社化",
+      "description": "京葉糖蜜輸送株式会社（静岡県磐田市）と株式会社バイオバンク（岡山市北区）を子会社化しました。",
+      "significance": "ヘルスケア事業の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所のプライム市場からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "新高（江蘇）日用品有限公司の全持分を譲渡",
+      "description": "中国江蘇省の新高（江蘇）日用品有限公司の全持分を譲渡しました。",
+      "significance": "海外子会社の整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "連結子会社３社の吸収合併を実施",
+      "description": "株式会社バイオバンクを存続会社、株式会社オーエム・エックス及び株式会社カメリアを消滅会社とする吸収合併を行いました。",
+      "significance": "ヘルスケア事業のグループ内再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "oie-sangyo",
+      "relationship": "customer",
+      "description": "尾家産業株式会社は当社の主要顧客であり、当社は主に業務用洗剤及び固形燃料等を販売しています。当社は同社の株式55,280株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tayca",
+      "relationship": "supplier",
+      "description": "テイカ株式会社は当社の主要製品である業務用洗剤・洗浄剤の原材料購入先です。当社は同社の株式20,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "satoh-and-co",
+      "relationship": "customer",
+      "description": "株式会社サトー商会は当社の主要顧客であり、当社は主に業務用洗剤及び固形燃料等を販売しています。当社は同社の株式12,900株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ohsho-food-service",
+      "relationship": "customer",
+      "description": "株式会社王将フードサービスは当社の主要顧客であり、当社は主に業務用洗剤等を販売しています。当社は同社の株式7,454株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "falco-holdings",
+      "relationship": "supplier",
+      "description": "株式会社ファルコホールディングスは当社の衛生サービス部門の委託先です。当社は同社の株式7,540株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamanaka",
+      "relationship": "customer",
+      "description": "株式会社ヤマナカは当社の主要顧客であり、当社は主に業務用洗剤等を販売しています。当社は同社の株式24,300株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nakanishi-mfg",
+      "relationship": "customer",
+      "description": "株式会社中西製作所は当社の主要顧客であり、当社は主に業務用洗剤等を販売しています。当社は同社の株式1,455株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yoshinoya-holdings",
+      "relationship": "customer",
+      "description": "株式会社吉野家ホールディングスは当社の主要顧客であり、当社は主に業務用洗剤及び固形燃料等を販売しています。当社は同社の株式1,019株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第64期(2025/06/01－2026/05/31)",
+      "title": "訂正有価証券報告書－第64期(2025/06/01－2026/05/31)",
       "publisher": "株式会社ニイタカ",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YYMP.pdf",
-      "publishedAt": "2026-08-26",
-      "accessedAt": "2026-09-29"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z0B0.pdf",
+      "publishedAt": "2026-09-04",
+      "docId": "S100Z0B0",
+      "asOf": "2026-05-31",
+      "accessedAt": "2026-11-13"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「ニイタカ」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%8B%E3%82%A4%E3%82%BF%E3%82%AB",
+      "accessedAt": "2026-11-16"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「ＮＸ２０２８」（2026年5月期～2028年5月期）を推進し、経営理念「四者共栄」のもと長期ビジョン「世の中の“キレイ”を支える会社」を目指しています。基本戦略は、既存事業の成長と収益率の両立、新領域・海外の成長基盤構築、ヘルスケア事業の成長です。",
+        "asOf": "2026-09-04",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年5月期は中期経営計画の初年度で、外食市場の堅調を背景にケミカル事業が増収となる一方、ヘルスケア事業は国内外で減収となりました。連結子会社３社の吸収合併などグループ内再編も進めています。",
+        "basis": "セグメント情報の外部顧客への売上高、関連情報（製品及びサービスごとの情報・地域ごとの情報・主要な顧客ごとの情報）、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-09-04",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "人手不足や食中毒対策に対応した高付加価値製品（省人化・時短を実現する洗浄剤やアルコール製剤）の拡販に加え、食器洗浄機メンテナンスや衛生講習・細菌検査などの衛生サービスを組み合わせて提供している点が特徴です。",
+        "basis": "セグメント情報の外部顧客への売上高、関連情報（製品及びサービスごとの情報・地域ごとの情報・主要な顧客ごとの情報）、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-09-04",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "業務用洗剤の需要は外食市場の動向と結びついており、当社は大手外食チェーン向けの洗剤需要の増加を取り込んでいます。売上高の90％超が国内向けで、ヘルスケア事業では北米・欧州向けも展開しています。",
+        "basis": "セグメント情報の外部顧客への売上高、関連情報（製品及びサービスごとの情報・地域ごとの情報・主要な顧客ごとの情報）、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-09-04",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年5月期",
     "asOf": "2026-05-31",

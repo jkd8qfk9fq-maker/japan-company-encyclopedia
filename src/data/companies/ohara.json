@@ -1,18 +1,157 @@
 {
   "id": "ohara",
   "code": "5218",
-  "name": "オハラ",
+  "name": "ohara",
   "officialName": "株式会社オハラ",
   "nameEn": "OHARA INC.",
-  "description": null,
+  "shortNameEn": "OHARA INC.",
+  "description": "光学ガラス素材と、半導体・FPD露光装置向けの特殊ガラスや石英ガラスを製造販売するガラス素材メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "optics",
+      "name": "光事業",
+      "description": "光学ガラス素材、光学機器用レンズ材などの光学製品向けの製品群を製造及び販売する事業です。2025年10月期の外部顧客への売上高は15,310百万円です。当社が素材の生産及び販売を行い、台湾・マレーシア・中国の連結子会社が光学プレス品の製造販売を行っています。",
+      "customers": [
+        "カメラ・光学機器メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "optical-press",
+          "name": "光学プレス品",
+          "description": "レンズ交換式デジタルカメラや交換レンズなどに使われる光学ガラス素材です。2025年10月期の売上高は12,458百万円です。",
+          "customers": [
+            "カメラ・光学機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "optical-block",
+          "name": "光学ブロック品",
+          "description": "光学機器用レンズ材などの光学ガラス素材です。2025年10月期の売上高は2,851百万円です。",
+          "customers": [
+            "光学機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "electronics",
+      "name": "エレクトロニクス事業",
+      "description": "半導体露光装置向け高均質光学ガラスや極低膨張ガラスセラミックス、石英ガラスなどのエレクトロニクス製品向けの製品群を製造及び販売する事業です。2025年10月期の外部顧客への売上高は13,585百万円です。連結子会社の株式会社オーピーシーが素材の研磨加工を、株式会社オハラ・クオーツが石英ガラスの製造販売を行っています。",
+      "customers": [
+        "半導体製造装置メーカー",
+        "FPD製造装置メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "special-glass",
+          "name": "特殊ガラス",
+          "description": "半導体露光装置向けの高均質光学ガラスや、AIサーバー向けプリント基板に使われる低誘電ガラスなどです。2025年10月期の売上高は8,285百万円です。",
+          "customers": [
+            "半導体製造装置メーカー",
+            "プリント基板メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "quartz-glass",
+          "name": "石英ガラス",
+          "description": "FPD露光装置及び半導体フォトマスク向けの製品などに使われる石英ガラスです。2025年10月期の売上高は5,300百万円です。",
+          "customers": [
+            "FPD製造装置メーカー",
+            "半導体関連メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "カメラなどの光学製品向けのガラス素材と、半導体露光装置などに使う高均質光学ガラスや石英ガラスを製造し、国内外の機器メーカーに販売しています。",
+    "products": [
+      "光学プレス品（レンズなど光学製品向けのガラス素材）",
+      "光学ブロック品",
+      "半導体露光装置向け高均質光学ガラスなどの特殊ガラス",
+      "極低膨張ガラスセラミックス",
+      "石英ガラス"
+    ],
+    "customers": [
+      "カメラ・光学機器メーカー",
+      "半導体製造装置メーカー",
+      "FPD製造装置メーカー"
+    ],
+    "revenueSources": [
+      "光学ガラス素材の販売代金",
+      "特殊ガラス・石英ガラスの販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "オハラ",
+        "description": "当社と連結子会社９社、持分法適用関連会社１社でグループを構成し、本社は神奈川県相模原市にあります。2025年10月31日現在の連結従業員数は1,421人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ガラス素材の製造販売",
+        "description": "光学ガラス素材を自社で生産するほか、連結子会社が製品の加工と販売を行い、光学製品向けとエレクトロニクス製品向けのガラス素材を供給します。"
+      },
+      {
+        "kind": "customer",
+        "title": "光学機器・製造装置メーカー",
+        "description": "光学ガラス素材はカメラメーカーなどの光学機器メーカーに、特殊ガラスや石英ガラスは半導体・FPD露光装置メーカーなどに販売されます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年10月期の売上高は28,895百万円です。光事業が15,310百万円、エレクトロニクス事業が13,585百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年10月期の親会社株主に帰属する当期純利益は1,730百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年10月期",
@@ -27,7 +166,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 40111716000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1462,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +186,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 45262090000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1505,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第114期の期首から適用しており、第114期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年10月期",
@@ -67,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 47311354000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1476,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 50833647000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1454,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +247,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 52347396000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1421,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +255,165 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1935,
+      "title": "小原光学硝子製造所を創立",
+      "description": "東京都蒲田（現・大田区本羽田）にて、光学ガラスの生産を目的として小原光学硝子製造所を創立しました。",
+      "significance": "現在の会社の起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1946,
+      "title": "本社を相模原市に移転",
+      "description": "本社を神奈川県相模原市に移転しました。本社工場は現在も相模原市中央区にあります。",
+      "significance": "現在の生産拠点の基盤です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "株式会社オハラに商号変更",
+      "description": "株式会社オハラに商号を変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "台湾小原光学股份有限公司を設立",
+      "description": "台湾に、光学プレス品の製造及び販売を目的として台湾小原光学股份有限公司を設立しました。",
+      "significance": "海外生産の始まりであり、同社は現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "株式会社オハラ・クオーツの株式を取得",
+      "description": "和歌山県和歌山市の株式会社オハラ・クオーツの株式を取得しました。",
+      "significance": "石英ガラス事業の基盤であり、同社は現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "華光小原光学材料（襄陽）有限公司へ共同出資",
+      "description": "中華人民共和国において華光小原光学材料（襄陽）有限公司へ共同出資しました。",
+      "significance": "現在の持分法適用関連会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "canon",
+      "relationship": "customer",
+      "description": "当社のその他の関係会社であり、2025年10月31日現在、当社の議決権の19.3％を保有しています。また当社の主要な顧客であり、2025年10月期の同社への売上高は売上高全体の12.7％を占め、光事業とエレクトロニクス事業の双方の製品を販売しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "seiko-group",
+      "relationship": "major-shareholder",
+      "description": "当社のその他の関係会社であり、筆頭株主として2025年10月31日現在、当社の議決権の19.3％を保有しています。有報には、同社との営業取引はないと記載されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "olympus",
+      "relationship": "major-shareholder",
+      "description": "2025年10月31日現在、当社の発行済株式（自己株式を除く。）の1.6％（400千株）を保有する大株主の事業会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
-      "title": "有価証券報告書－第117期(2024/11/01－2025/10/31)",
+      "title": "有価証券報告書－第117期（2024年11月１日－2025年10月31日）",
       "publisher": "株式会社オハラ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XHTP.pdf",
       "publishedAt": "2026-01-29",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XHTP",
+      "asOf": "2025-10-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2021年度に発表した「長期ビジョン2035」のもと、『オプティクス技術への貢献』『価値協創による新ビジネス創出』『価値創造力・効率性・収益力向上』の３つの経営方針を掲げ、既存事業の構造改革や新規事業の創出による企業価値向上に取り組んでいます。第116期（2024年10月期）に開始した中期経営計画（フェーズ２）では、経営基盤の強化、新規事業の探索、既存事業の深化を基本方針として、資本収益性の向上、ESG経営、新ビジネスの立ち上げに取り組んでいるとしています。",
+        "asOf": "2026-01-29",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、1935年の創立以来続くガラス素材の生産技術と、光学ガラス素材の自社生産です。光学プレス品や光学ブロック品などの光学製品向け素材に加え、半導体露光装置向けの高均質光学ガラスや極低膨張ガラスセラミックス、石英ガラスといったエレクトロニクス向けの特殊ガラスも手がけており、二つの事業がともにガラス素材の技術を基盤としています。新規事業として、リチウムイオン伝導性ガラスセラミックス「LICGC」の製品ラインナップを持ち、電池メーカーへの採用拡大に取り組んでいます。",
+        "basis": "セグメント情報における報告セグメントごとの外部顧客への売上高と収益の分解情報、事業の内容における事業区分と製品群の記載、沿革における創立の記載、経営方針における新規事業の記載に基づきます。",
+        "asOf": "2026-01-29",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の構成は、光事業15,310百万円とエレクトロニクス事業13,585百万円の二つの事業が拮抗しています。地域別の売上高は日本が12,868百万円と最大で、中国、台湾、アジア、米国、ドイツなど海外にも販売しています。主要な顧客であるキヤノン株式会社への売上高は3,669百万円で、売上高全体の12.7％を占めています。",
+        "basis": "セグメント情報における外部顧客への売上高と関連情報（地域ごとの情報、主要な顧客ごとの情報）、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における販売実績の記載に基づきます。",
+        "asOf": "2026-01-29",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年10月期",
     "asOf": "2025-10-31",

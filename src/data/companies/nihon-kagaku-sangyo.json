@@ -4,15 +4,103 @@
   "name": "日本化学産業",
   "officialName": "日本化学産業株式会社",
   "nameEn": "NIHON KAGAKU SANGYO CO.,LTD.",
-  "description": null,
+  "shortNameEn": "NIHON KAGAKU SANGYO CO.,LTD.",
+  "description": "金属化合物などの工業薬品と、住宅用建材製品を製造販売するメーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "chemicals-business",
+      "name": "薬品事業",
+      "description": "工業薬品を製造販売する事業です。銅・錫・ニッケル・コバルト等の金属化合物、オクチル酸等の金属石鹸、電池用薬品、表面処理用光沢剤・添加剤、無電解ニッケルめっき液の製造販売と、二次電池用正極材の受託加工を行っています。2026年3月期の外部顧客への売上高は24,136百万円です。当社が製造販売を行い、連結子会社のサイアム・エヌケーエスCO.,LTD.がタイで工業薬品の製造販売を行っています。",
+      "customers": [
+        "電子機器メーカー",
+        "電池メーカー",
+        "めっき加工業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "building-materials-business",
+      "name": "建材事業",
+      "description": "住宅用建材製品などを製造販売する事業です。防火通気見切縁、シンプル庇、郵便ポスト、手摺・笠木等の住宅用建材製品と、熱交換器「クールフィン」などの建材製品を製造販売しています。2026年3月期の外部顧客への売上高は3,895百万円です。当社が製造販売を行っています。",
+      "customers": [
+        "住宅メーカー",
+        "工務店"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "銅・錫・ニッケル等の金属化合物や表面処理用薬品などの工業薬品と、住宅用建材製品を製造し、国内とタイの拠点から販売しています。",
+    "products": [
+      "金属化合物（銅・錫・ニッケル・コバルト等）",
+      "金属石鹸（オクチル酸等）",
+      "電池用薬品",
+      "表面処理用光沢剤・添加剤",
+      "無電解ニッケルめっき液",
+      "二次電池用正極材の受託加工",
+      "住宅用建材製品（防火通気見切縁、庇、郵便ポスト、手摺・笠木等）",
+      "熱交換器「クールフィン」"
+    ],
+    "customers": [
+      "電子機器メーカー",
+      "電池メーカー",
+      "めっき加工業者",
+      "住宅メーカー"
+    ],
+    "revenueSources": [
+      "工業薬品の販売代金",
+      "二次電池用正極材の受託加工代金",
+      "住宅用建材製品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日本化学産業",
+        "description": "当社と子会社2社でグループを構成し、本店は東京都台東区にあります。2026年3月31日現在の連結従業員数は454人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "工業薬品と住宅建材の製造販売",
+        "description": "薬品事業では金属化合物や表面処理用薬品などの工業薬品の製造販売と二次電池用正極材の受託加工を、建材事業では住宅用建材製品の製造販売を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "製造業と住宅関連の顧客",
+        "description": "工業薬品は電子部品や電池、表面処理などを手がける製造業の顧客に、住宅用建材製品は住宅関連の顧客に販売されます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は28,032百万円です。薬品事業が24,136百万円、建材事業が3,895百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は2,281百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +115,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 41973000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 443,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +135,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 43362000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 442,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,12 +155,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 45660000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 448,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号 2022年10月28日）等を第100期の期首から適用しており、第99期に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -87,7 +176,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 46478000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 450,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +196,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 50824000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 454,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +204,248 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1939,
+      "title": "柳澤有機化学工業所を設立",
+      "description": "東京都足立区新田に、創業者の柳澤二郎・三郎両名が柳澤有機化学工業所を設立しました。有機・無機の工業薬品の製造を目的とする創業です。",
+      "significance": "現在の会社の前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1946,
+      "title": "日本化学産業株式会社に改称",
+      "description": "日本化学産業株式会社に改称し、鍍金薬品・研磨剤・洗剤を販売しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "柳澤有機化学工業所を買収",
+      "description": "柳澤有機化学工業所を買収し、製造と販売の一元化を図りました。",
+      "significance": "製造と販売を一体とする体制の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "埼玉工場・研究所を建設",
+      "description": "埼玉県草加市に埼玉工場・研究所を建設しました。",
+      "significance": "現在の薬品事業の生産拠点の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "当社株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "建材事業を開始",
+      "description": "アルミスパンドレルの成型加工とアルミ表面処理の業務を開始し、建材分野に進出しました。",
+      "significance": "現在の建材事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "タイにサイアム・エヌケーエスCO.,LTD.を設立",
+      "description": "タイに子会社サイアム・エヌケーエスCO.,LTD.を設立しました。",
+      "significance": "現在の連結子会社であり、海外生産の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "R&Dセンターを開設",
+      "description": "総合研究所と薬品生産本部薬品生産技術センターを統合し、R&Dセンターを開設しました。",
+      "significance": "研究開発体制の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "いわきテクノロジーセンターを建設",
+      "description": "福島県いわき市に、いわきテクノロジーセンターを建設しました。沿革の注記に2026年4月の建設として記載されています。",
+      "significance": "新しい研究開発の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sumitomo-metal-mining",
+      "relationship": "customer",
+      "description": "薬品事業における正極材受託加工取引等の取引先です。当社は同社株式215,600株を保有しており、同社は2026年3月31日現在、当社の発行済株式（自己株式を除く。）の2.74％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nihon-parkerizing",
+      "relationship": "customer",
+      "description": "薬品事業における表面処理薬品等の販売取引の取引先です。当社は同社株式520,400株を保有しており、同社は2026年3月31日現在、当社の発行済株式（自己株式を除く。）の2.48％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-pigment-holdings",
+      "relationship": "customer",
+      "description": "薬品事業における無機金属薬品等の販売取引の取引先であり、当社は同社株式24,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-realty-and-development",
+      "relationship": "business-partner",
+      "description": "建材事業における住宅用換気部材、耐震補強材等の販売取引と購買取引の双方がある取引先であり、当社は同社株式415,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ishihara-chemical",
+      "relationship": "business-partner",
+      "description": "薬品事業における表面処理用薬品等の販売取引と購買取引の双方がある取引先であり、当社は同社株式275,320株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "daiichi-kigenso-kagaku-kogyo",
+      "relationship": "business-partner",
+      "description": "薬品事業における無機金属薬品の販売取引と購買取引の双方がある取引先であり、当社は同社株式149,500株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nihon-seiko",
+      "relationship": "supplier",
+      "description": "薬品事業における原材料の購買取引の仕入先であり、当社は同社株式24,400株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sanyo-industries",
+      "relationship": "supplier",
+      "description": "建材事業における住宅用部材の資材購買取引の仕入先であり、当社は同社株式10,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-keihin",
+      "relationship": "supplier",
+      "description": "薬品事業及び建材事業における物流業務等の委託先であり、当社は同社株式80,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shin-nippon-air-technologies",
+      "relationship": "supplier",
+      "description": "薬品事業及び建材事業における設備導入業務の委託先であり、当社は同社株式133,400株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第101期(2025/04/01－2026/03/31)",
+      "title": "有価証券報告書－第101期（2025年４月１日－2026年３月31日）",
       "publisher": "日本化学産業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YH9F.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YH9F",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2023年10月よりスタートした中期経営計画のもと、基本方針「金属の独自技術を磨き、新たな価値の創造を続けることで、多様なパートナーとともに、サステナブルな社会の実現に挑戦する」を掲げ、基本戦略として「事業基盤の強化と成長領域の拡大」と「社会課題の解決」に取り組んでいます。事業基盤の強化では、顧客との共創による高機能な製品の開発の加速、強みであるリサイクル技術を活用した新規事業の創出、タイ子会社（サイアム・エヌケーエス社）を中核とした海外市場への展開強化、戦略的パートナーシップの推進、成長戦略を支える積極的な投資を挙げています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "強みは、1939年の創業以来蓄積した金属の独自技術と、それに基づく開発力と薬品製造における生産技術力です。表面処理用薬品、触媒用薬品、電池・電子部品用薬品、セラミックス・ガラス用薬品など、多品種・多用途にわたる無機・有機金属薬品を手がけ、当社が世界に先駆けて開発したPFASフリー複合めっきのような独自技術の開発も進めています。海外ではタイの子会社がめっき液の製造や車載関連製品の生産を行い、海外市場への展開を担っています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における基本方針と事業の経緯の記載、事業の内容における取扱製品の記載、セグメント情報（報告セグメントの概要）における事業内容の記載、研究開発活動における独自技術の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の構成は、薬品事業24,136百万円が中心で、建材事業は3,895百万円です。地域別の売上高は日本が22,830百万円、アジア・オセアニアが5,178百万円、その他が23百万円で、タイの生産子会社を通じた海外販売があります。外部顧客への売上高の10％以上を占める主要な顧客はないとされています。",
+        "basis": "セグメント情報における報告セグメントごとの外部顧客への売上高と、関連情報（地域ごとの情報、主要な顧客ごとの情報）の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

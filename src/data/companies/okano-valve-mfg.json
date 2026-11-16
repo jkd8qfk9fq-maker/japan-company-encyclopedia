@@ -4,19 +4,111 @@
   "name": "岡野バルブ製造",
   "officialName": "岡野バルブ製造株式会社",
   "nameEn": "OKANO VALVE MFG.CO.LTD.",
-  "description": null,
+  "shortNameEn": "OKANO VALVE",
+  "description": "発電所向けの原子力弁・一般弁の製造・販売とバルブメンテナンスを行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "valve",
+      "name": "バルブ事業",
+      "description": "当社グループの主要な事業で、報告セグメントはバルブ事業のみです。バルブ製造販売部門では主に発電所向けの原子力弁・一般弁等を製造・販売し、メンテナンス部門では発電所等のバルブの安全性・健全性を維持するため、定期検査を主体としたバルブメンテナンスを行っています。2025年9月期（決算期変更に伴う10ヶ月間）の売上高は7,006百万円です。受注・販売活動は岡野商事株式会社を主な代理店として行っており、部品等の一部は岡野商事株式会社から仕入れています。",
+      "customers": [
+        "原子力・火力発電所を運営する電力会社等",
+        "代理店の岡野商事株式会社"
+      ],
+      "children": [
+        {
+          "id": "valve-manufacturing-sales",
+          "name": "バルブ製造販売部門",
+          "description": "主に発電所向けの原子力弁・一般弁等を製造・販売しています。",
+          "customers": [
+            "電力会社等の発電事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "valve-maintenance",
+          "name": "メンテナンス部門",
+          "description": "発電所等のバルブの安全性・健全性を維持するため、定期検査を主体としたバルブメンテナンスを行っています。製造工程およびメンテナンス部門における業務のうち一部については、連結子会社の岡野クラフト株式会社にアウトソーシングしています。",
+          "customers": [
+            "電力会社等の発電事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "発電所向けに原子力弁・一般弁等を製造・販売し、定期検査を主体としたバルブのメンテナンスを行って、販売代金とメンテナンスの対価を得る事業モデルです。",
+    "products": [
+      "原子力弁",
+      "一般弁",
+      "鋳鋼弁・鋳鋼部品"
+    ],
+    "customers": [
+      "原子力・火力発電所を運営する電力会社等",
+      "代理店の岡野商事株式会社"
+    ],
+    "revenueSources": [
+      "バルブの販売代金",
+      "メンテナンスの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "岡野バルブ製造",
+        "description": "1926年に岡野商会として創業し、1936年に設立されたバルブメーカーで、本社は福岡県北九州市門司区にあります。2025年9月30日現在の従業員数は324人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "バルブの製造販売とメンテナンス",
+        "description": "バルブ製造販売部門で主に発電所向けの原子力弁・一般弁等を製造・販売し、メンテナンス部門で発電所等のバルブについて定期検査を主体としたメンテナンスを行っています。鋳鋼素材から完成品までの一貫生産を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "電力会社等の発電事業者",
+        "description": "受注・販売活動はその他の関係会社である岡野商事株式会社を主な代理店として行っています。2025年9月期の販売実績では、岡野商事株式会社が売上高の39.7％、東京電力ホールディングス株式会社が13.7％を占めています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "バルブの販売代金とメンテナンスの対価",
+        "description": "2025年9月期の売上高は7,006百万円でした。第126期は決算期変更に伴う10ヶ月間の変則決算のため、前期との単純な比較はできません。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2025年9月期の親会社株主に帰属する当期純利益は825百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
-      "fiscalYear": "2021年9月期",
-      "periodEnd": "2021-09-30",
+      "fiscalYear": "2021年11月期",
+      "periodEnd": "2021-11-30",
       "revenue": 5850000000,
       "revenueLabel": "売上高",
       "profit": 445000000,
@@ -27,7 +119,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 9004000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 364,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -35,8 +127,8 @@
       ]
     },
     {
-      "fiscalYear": "2022年9月期",
-      "periodEnd": "2022-09-30",
+      "fiscalYear": "2022年11月期",
+      "periodEnd": "2022-11-30",
       "revenue": 6887000000,
       "revenueLabel": "売上高",
       "profit": 562000000,
@@ -47,16 +139,17 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 9456000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 356,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年3月31日）等を第123期の期首から適用しており、第123期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
-      "fiscalYear": "2023年9月期",
-      "periodEnd": "2023-09-30",
+      "fiscalYear": "2023年11月期",
+      "periodEnd": "2023-11-30",
       "revenue": 7407000000,
       "revenueLabel": "売上高",
       "profit": 910000000,
@@ -67,7 +160,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 10011000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 339,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -75,8 +168,8 @@
       ]
     },
     {
-      "fiscalYear": "2024年9月期",
-      "periodEnd": "2024-09-30",
+      "fiscalYear": "2024年11月期",
+      "periodEnd": "2024-11-30",
       "revenue": 8169000000,
       "revenueLabel": "売上高",
       "profit": 1283000000,
@@ -87,7 +180,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 11179000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 335,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,15 +200,207 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 12001000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 324,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "第126期は、決算期変更により2024年12月1日から2025年9月30日までの10ヶ月間となっております。"
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1926,
+      "title": "岡野商会の創設",
+      "description": "岡野満が、門司市小森江（現・北九州市門司区）に岡野商会を創設し、動力用高温高圧バルブの製作を開始しました。",
+      "significance": "岡野バルブ製造の創業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1936,
+      "title": "岡野バルブ製造株式会社の設立",
+      "description": "岡野バルブ製造株式会社を設立しました。",
+      "significance": "法人としての設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1943,
+      "title": "行橋工場の新設",
+      "description": "福岡県行橋市に行橋工場を新設し、素材から完成品までの一貫生産を確立しました。",
+      "significance": "現在まで続く一貫生産体制の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "両工場の編成替え",
+      "description": "門司工場を機械加工・組立・試験の専門工場に改編し、行橋工場を素材生産専門工場に編成替えを行いました。",
+      "significance": "両工場の役割分担が定まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "株式の上場",
+      "description": "東京証券取引所市場第2部および福岡証券取引所に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "スペロ機械工業の設立",
+      "description": "福岡県行橋市にスペロ機械工業株式会社を設立しました。",
+      "significance": "現在の持分法適用関連会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "原子力用バルブの本格生産開始",
+      "description": "BWR用バルブを日本原子力発電所敦賀1号に納入し、原子力用バルブの本格的生産を開始しました。",
+      "significance": "原子力用バルブ事業の本格化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "岡野サービスの設立",
+      "description": "福岡県北九州市に岡野サービス株式会社を設立しました。",
+      "significance": "サービス子会社の設立です。のちに岡野クラフト株式会社の一部となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "岡野メンテナンスと岡野工業の設立",
+      "description": "福岡県北九州市に岡野メンテナンス株式会社を、福岡県行橋市に岡野工業株式会社を設立しました。",
+      "significance": "メンテナンス体制と周辺事業の子会社が揃いました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "ISO9001認証の取得",
+      "description": "国際標準化機構によるISO9001認証を取得しました。",
+      "significance": "品質マネジメントの国際認証の取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "岡野サービスによる岡野工業の吸収合併",
+      "description": "子会社岡野サービス株式会社は、子会社岡野工業株式会社を吸収合併しました。",
+      "significance": "子会社の再編です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "メンテナンス技能研修センターの建設",
+      "description": "福島県双葉郡の福島第一事業所内と福岡県行橋市の行橋工場内にメンテナンス技能研修センターを建設しました。福島のセンターは2011年3月の東日本大震災の被災により閉鎖しました。",
+      "significance": "メンテナンス人材の育成拠点の整備です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "中国の原子力事業者登録の認定",
+      "description": "中華人民共和国国家核安全局より、原子力発電所用弁の製作納入に関する事業者としての登録が認定されました。",
+      "significance": "中国向け原子力用バルブの供給資格です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "ASME「Nスタンプ」の取得",
+      "description": "米国機械学会（ASME）による原子力規格認証「Nスタンプ」を取得しました。",
+      "significance": "原子力規格の国際認証の取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "岡野クラフトの発足",
+      "description": "子会社岡野メンテナンス株式会社は、子会社岡野サービス株式会社を吸収合併し、商号を岡野クラフト株式会社に変更しました。",
+      "significance": "現在の連結子会社である岡野クラフト株式会社の発足です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "平田バルブ工業との資本業務提携",
+      "description": "平田バルブ工業株式会社と資本業務提携を締結しました。",
+      "significance": "同業との資本業務提携です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "行橋工場への統合",
+      "description": "福岡県行橋市の行橋工場内に新工場を増設し、門司工場を移設・統合しました。",
+      "significance": "生産拠点の集約です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所の市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "福岡証券取引所の上場廃止",
+      "description": "福岡証券取引所の上場廃止となりました。",
+      "significance": "上場は東京証券取引所のみとなりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +409,49 @@
       "publisher": "岡野バルブ製造株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XBYD.pdf",
       "publishedAt": "2025-12-22",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XBYD",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2025年9月期は、決算期変更により2024年12月1日から2025年9月30日までの10ヶ月間の変則決算です。本登録では、財務注記（financialNotes）にその旨を記載しています。",
+      "財務: 変則決算。2025-09 の期は 10 か月。他の年と期間の長さが違うので、businessModel の data.financialNotes にその旨を書くこと"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "コア事業であるバルブの製造・保守と、ものづくりの強みを活かした新規事業の二軸を柱として、事業規模の拡大と企業価値の向上を図ることを経営方針としています。売上規模の拡大を優先課題とし、発電業界で培った信頼を礎に、ドローンやロボット技術、IoTなどのテクノロジーを駆使した設備点検・診断ソリューションの展開や製造受託の拡充など、事業領域の拡張に取り組むとしています。",
+        "asOf": "2025-12-22",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上はバルブの製造販売とメンテナンスが中心で、2025年9月期の販売先は主な代理店である岡野商事株式会社向けと大口の電力会社向けが中心です。新事業は受注販売実績の不振から全体では期初計画を下回っており、売上の柱はなおバルブ事業です。",
+        "basis": "【関連情報】の主要な顧客ごとの情報（岡野商事株式会社2,779百万円、東京電力ホールディングス株式会社962百万円、合計7,006百万円）と【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の相手先別販売実績（岡野商事株式会社39.7％、東京電力ホールディングス株式会社13.7％）および新事業全体が期初計画値を下回った旨の印字に基づく。",
+        "asOf": "2025-12-22",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "鋳鋼素材から完成品までの一貫生産体制を持ち、1968年にBWR用バルブを敦賀1号へ納入して以来、原子力用バルブの生産実績を重ねています。中華人民共和国国家核安全局の事業者登録や米国機械学会の原子力規格認証「Nスタンプ」を取得しており、原子力向けの認証と納入実績が特徴です。",
+        "basis": "【沿革】（1943年の行橋工場新設による一貫生産の確立、1968年の敦賀1号への納入、2009年の中国国家核安全局の登録認定、2010年のASME「Nスタンプ」取得）と【事業の内容】の印字に基づく。",
+        "asOf": "2025-12-22",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-30",

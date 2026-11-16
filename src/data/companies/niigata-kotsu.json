@@ -4,15 +4,175 @@
   "name": "新潟交通",
   "officialName": "新潟交通株式会社",
   "nameEn": "Niigata kotsu Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Niigata Kotsu",
+  "description": "新潟市を地盤に路線バスなどの運輸事業を基幹として、不動産や旅行、旅館など地域に密着した事業を展開する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    },
+    {
+      "industryId": "entertainment",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "transportation",
+      "name": "運輸事業",
+      "description": "旅客自動車運送業とタクシー業を行う報告セグメントです。2026年3月期の外部顧客への売上高は8,549百万円で、最大のセグメントです。当社、新潟交通観光バス株式会社、新潟交通佐渡株式会社と、関連会社の株式会社港タクシーが行っています。",
+      "customers": [
+        "バスやタクシーを利用する地域住民や来訪者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "不動産賃貸業と不動産売買業を行う報告セグメントです。2026年3月期の外部顧客への売上高は2,711百万円です。万代シテイのビルボードプレイスやバスセンタービルなどの商業施設や駐車場を賃貸しており、当社が行っています。",
+      "customers": [
+        "商業施設のテナント",
+        "駐車場の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "merchandise-sales",
+      "name": "商品販売事業",
+      "description": "食品販売業と物品販売業を行う報告セグメントです。2026年3月期の外部顧客への売上高は2,664百万円です。当社、新潟交通商事株式会社、有限会社新潟マルオカが行っており、観光土産品の卸売などが中心です。",
+      "customers": [
+        "新潟空港や新潟駅、高速サービスエリアなどの土産品販売店"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "travel",
+      "name": "旅行事業",
+      "description": "一般旅行業を行う報告セグメントです。2026年3月期の外部顧客への売上高は2,568百万円です。当社、新潟交通佐渡株式会社と、持分法適用関連会社の株式会社新潟交通サービスセンターが行っています。",
+      "customers": [
+        "募集型企画旅行の参加者",
+        "修学旅行などの団体旅行の主催者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "inn",
+      "name": "旅館事業",
+      "description": "旅館業とホテル業を行う報告セグメントです。2026年3月期の外部顧客への売上高は1,772百万円です。株式会社シルバーホテル（万代シルバーホテル）と国際佐渡観光ホテル株式会社（国際佐渡観光ホテル八幡館）が行っています。",
+      "customers": [
+        "ホテル・旅館の宿泊客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他事業",
+      "description": "報告セグメントに含まれない事業で、広告代理業と清掃・設備・環境業などを行っています。2026年3月期の外部顧客への売上高は1,266百万円です。株式会社新交企画と新潟交友事業株式会社が行っています。",
+      "customers": [
+        "広告主",
+        "清掃業務などの委託者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "aviation-agency",
+      "name": "航空代理事業",
+      "description": "航空代理業を行う報告セグメントです。2026年3月期の外部顧客への売上高は798百万円です。当社と新潟航空サービス株式会社が、航空会社との空港ハンドリング業務などを行っています。",
+      "customers": [
+        "航空会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "新潟県内で乗合バス、高速バス、貸切バスとタクシーによる旅客運送を中核に、万代シテイの商業施設等の賃貸、土産品等の販売、旅行、ホテル・旅館、航空代理業務を行っています。",
+    "products": [
+      "乗合バス・高速バス・貸切バスによる旅客運送",
+      "タクシー",
+      "商業施設・ビル・駐車場の賃貸",
+      "土産品等の商品販売",
+      "企画旅行・受注型企画旅行",
+      "ホテル・旅館の宿泊",
+      "航空会社の空港ハンドリング受託"
+    ],
+    "customers": [
+      "バスやタクシーを利用する地域住民や来訪者",
+      "商業施設のテナントや利用者",
+      "土産品の販売店",
+      "旅行の参加者",
+      "ホテル・旅館の宿泊客",
+      "航空会社"
+    ],
+    "revenueSources": [
+      "バス・タクシーの運賃収入",
+      "賃貸収入・駐車場収入",
+      "商品の販売代金",
+      "旅行代金",
+      "宿泊料",
+      "航空代理の受託手数料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "新潟交通",
+        "description": "新潟市中央区に本社を置き、連結子会社9社と関連会社2社でグループを構成します。2026年3月期の連結従業員数は1,174人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "旅客運送と地域密着のサービス",
+        "description": "新潟県内で路線バスや高速バス、貸切バス、タクシーを運行し、あわせて万代シテイの商業施設等の賃貸、土産品等の販売、旅行商品の販売、ホテル・旅館の運営、航空会社の空港地上業務の受託を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "移動する人と地域の利用者",
+        "description": "バスやタクシーを利用する地域住民や来訪者、商業施設のテナントと来街者、旅行や宿泊の利用者、航空会社などが顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "運賃や賃料などによる売上高",
+        "description": "2026年3月期の売上高は20,331百万円で、前連結会計年度と比べ1.7％増加しました。運輸事業の売上高は8,549百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,148百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +187,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16270140000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1319,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16985365000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1268,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18090733000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1239,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +247,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19030464000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1205,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +267,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20187959000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1174,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +275,234 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1943,
+      "title": "新潟電鉄と新潟合同自動車の合併で新潟交通を設立",
+      "description": "新潟電鉄株式会社と新潟合同自動車株式会社が合併して新潟交通株式会社を設立し、新潟市を中心とする電車路線と、下越・佐渡地方一帯の自動車路線の営業を開始しました。",
+      "significance": "会社の起源です。もともとは鉄道と自動車の両方を担う会社でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "新潟証券取引所へ上場",
+      "description": "新潟証券取引所へ上場しました。",
+      "significance": "上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "国際佐渡観光ホテル株式会社を設立",
+      "description": "国際佐渡観光ホテル株式会社を設立しました。",
+      "significance": "現在の連結子会社であり、旅館事業の担い手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "佐渡で定期観光バスの運行を開始",
+      "description": "佐渡で定期観光バスの運行を開始しました。",
+      "significance": "佐渡での事業展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "新潟交友事業株式会社を設立",
+      "description": "新潟交友事業株式会社を設立しました。",
+      "significance": "現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "株式会社シルバーホテルを設立",
+      "description": "株式会社シルバーホテルを設立しました。",
+      "significance": "現在の連結子会社であり、旅館事業の担い手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "万代シテイが営業を開始",
+      "description": "本社用地再開発計画（万代シテイ）として、ダイエーとテナント各店が営業を開始しました。",
+      "significance": "現在の不動産事業の中核である万代シテイの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "新潟・長岡間に高速ハイウェイバスの運行を開始",
+      "description": "新潟より長岡間に高速ハイウェイバスの運行を開始しました。",
+      "significance": "高速バス事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "新潟・東京間に高速ハイウェイバスの運行を開始",
+      "description": "新潟より東京間に高速ハイウェイバスの運行を開始しました。",
+      "significance": "都市間高速バスの展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "佐渡島内の全路線を新潟交通佐渡へ譲渡",
+      "description": "佐渡島内の全路線を新潟交通佐渡株式会社へ譲渡しました。",
+      "significance": "佐渡の事業を子会社へ集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "鉄道線を全面廃止",
+      "description": "新潟、東関屋駅より月潟駅間の鉄道線を廃止し、これにより鉄道線を全面廃止しました。",
+      "significance": "鉄道事業から撤退し、バス中心の体制となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所市場第二部へ上場",
+      "description": "新潟証券取引所の合併により、東京証券取引所市場第二部へ上場しました。",
+      "significance": "東京証券取引所への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "新潟駅新バスターミナルが供用開始",
+      "description": "新潟駅新バスターミナルが供用開始となりました。",
+      "significance": "新潟駅前のバス拠点の更新です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "ana-holdings",
+      "relationship": "business-partner",
+      "description": "当社グループの航空代理事業において取引関係があり、新潟空港における受託業務等を行っています。当社は、航空代理業における取引関係の維持・強化のため、同社株式11,016株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "bridgestone",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の発行済株式（自己株式を除く。）の総数の4.27％（163千株）を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "isuzu-motors",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の発行済株式（自己株式を除く。）の総数の4.04％（155千株）を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "shimizu",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の発行済株式（自己株式を除く。）の総数の2.60％（100千株）を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第113期(2025/04/01－2026/03/31)",
+      "title": "有価証券報告書－第113期（2025年４月１日－2026年３月31日）",
       "publisher": "新潟交通株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YI97.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YI97",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "令和八年度の経営方針として「新しい経済環境への対応」を掲げ、安定的な黒字体質の継続と、新たな収益への挑戦による高収益体質の実現、長期的視点による事業見直し、法令遵守並びに危機管理体制の徹底による「安全と信頼」の確立を挙げています。公共性の高い乗合バスをはじめとする運輸事業を基幹事業とし、不動産事業や商品販売事業、旅行事業、旅館事業、航空代理事業などを展開して、「地域社会との絆」を大切に輸送の安全をはじめ、安全・安心な社会の実現を目指すとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "新潟市を中心に下越・佐渡地方に広がるバス路線網と、バスセンターを核に商業施設や駐車場を抱える万代シテイという自社開発の商業集積を持ち、人の移動と街の集客が相互に支え合う事業構造が特徴です。運輸事業では車両や営業所などの設備を自ら保有し、不動産事業では賃貸用建物と土地を大きく保有しています。",
+        "basis": "セグメント情報における報告セグメントごとの外部顧客への売上高の記載と、主要な設備の状況における営業所・車両と賃貸用建物等の記載、経営成績等の状況の概要における事業別の動向の記載に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "運輸事業が売上高の4割強を占め、不動産事業がこれに続く、新潟県を地盤とする地域密着型のグループです。売上高はすべて国内で、地域ごとの情報では本邦以外の外部顧客への売上高はないとされています。基幹事業の運輸事業では、運転士不足や燃料費の高騰が業績に重要な影響を与える要因として挙げられています。",
+        "basis": "セグメント情報における報告セグメントごとの外部顧客への売上高と地域ごとの情報の記載と、経営成績等の状況の概要における経営成績に重要な影響を与える要因の記載に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

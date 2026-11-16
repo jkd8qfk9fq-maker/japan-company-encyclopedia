@@ -4,15 +4,125 @@
   "name": "水戸証券",
   "officialName": "水戸証券株式会社",
   "nameEn": "Mito Securities Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Mito Securities Co., Ltd.",
+  "description": "茨城県水戸市で創業し、北関東を中心とする関東一円に店舗網を持つ独立系の証券会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "securities-business",
+      "name": "金融商品取引事業",
+      "description": "有価証券の売買、売買の取次ぎ、引受・売出し・募集及び売出しの取扱い等を行う事業です。当社は投資・金融サービス業の単一セグメントであり、2026年3月期の営業収益は16,074百万円でした。",
+      "customers": [
+        "個人投資家を中心とする顧客",
+        "投資信託やファンドラップを利用する顧客",
+        "資金調達を行う発行会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "commissions",
+          "name": "受入手数料",
+          "description": "委託手数料、引受け・売出し等の手数料、募集・売出し等の取扱手数料、投資信託の代行手数料やファンドラップ報酬などのその他の受入手数料からなり、2026年3月期は12,499百万円でした。",
+          "customers": [
+            "株式等の売買を行う顧客",
+            "投資信託やファンドラップを利用する顧客",
+            "資金調達を行う発行会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "trading",
+          "name": "トレーディング損益",
+          "description": "株券等と債券・為替等のトレーディングによる損益で、2026年3月期は3,131百万円でした。",
+          "customers": [
+            "有価証券市場における取引相手"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "financial-revenue",
+          "name": "金融収益",
+          "description": "受取利息等による金融収益で、2026年3月期は418百万円でした。",
+          "customers": [
+            "信用取引等を利用する顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "顧客の株式等の売買取次ぎや投資信託・ファンドラップの提供で手数料を得て、自社のトレーディング損益や金融収益も得る事業モデルです。",
+    "products": [
+      "株式・債券等の有価証券の売買・取次ぎ",
+      "投資信託の販売",
+      "水戸ファンドラップ",
+      "有価証券の引受け・募集の取扱い"
+    ],
+    "customers": [
+      "個人投資家を中心とする顧客",
+      "投資信託やファンドラップを利用する顧客",
+      "資金調達を行う発行会社"
+    ],
+    "revenueSources": [
+      "受入手数料（委託手数料、代行手数料、ファンドラップ報酬など）",
+      "トレーディング損益",
+      "金融収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "水戸証券",
+        "description": "水戸証券は1921年に茨城県水戸市で創業した証券会社で、本店は東京都文京区にあります。2026年3月31日現在の従業員数は753人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "有価証券の売買取次ぎと資産運用サービス",
+        "description": "株式等の有価証券の売買や取次ぎ、引受・売出し・募集の取扱いに加え、投資信託や水戸ファンドラップなどの資産運用サービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "関東一円の個人投資家を中心とする顧客",
+        "description": "営業基盤である北関東を中心とした関東一円の顧客に、対面とインターネットの二つのチャネルでサービスを提供しています。インターネット取引の開設口座数は少数で、収益全体に占める割合は少額です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の営業収益は16,074百万円",
+        "description": "2026年3月期の営業収益は16,074百万円で、前期比15.0％増でした。受入手数料が12,499百万円、トレーディング損益が3,131百万円、金融収益が418百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の当期純利益は3,095百万円",
+        "description": "2026年3月期の当期純利益は3,095百万円でした。前期は2,420百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +137,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 39071000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 752,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +159,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 39024000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 737,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +181,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 42827000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 726,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +203,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 40097000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 740,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +225,138 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 42778000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 753,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1921,
+      "title": "証券業「小岸商会」を開業",
+      "description": "小林静と岸正が、茨城県水戸市馬口労町に証券業「小岸商会」を開業しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1922,
+      "title": "株式会社小岸商会に改組",
+      "description": "株式会社小岸商会に改組しました。",
+      "significance": "法人としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "丸水証券と合併し水戸証券に商号変更",
+      "description": "有価証券業整備要綱に基づき、丸水証券株式会社と合併し、水戸証券株式会社に商号を変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1956,
+      "title": "協同証券と合併し本店を東京に置く",
+      "description": "形式上の存続会社である協同証券株式会社と合併し、商号を水戸証券株式会社に変更するとともに、本店を東京都中央区日本橋兜町に置きました。",
+      "significance": "東京への本店移転と、現在の事業基盤の形成です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "総合証券となる",
+      "description": "大阪証券取引所正会員となり、総合証券となりました。",
+      "significance": "総合証券会社への転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "東京証券取引所市場第二部に株式を上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式を上場した転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "イセキ証券の営業全部を譲受",
+      "description": "イセキ証券株式会社の営業全部を譲り受けました。",
+      "significance": "営業基盤を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "市場第一部への昇格です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "金融商品取引業者として登録",
+      "description": "金融商品取引法に基づく金融商品取引業者として登録しました。",
+      "significance": "現行制度の下での登録です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。あわせて監査等委員会設置会社へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "koryojyuhan",
+      "relationship": "business-partner",
+      "description": "顧客紹介に関する協定を締結している相手方です。当社は同社の株式45,800株を政策保有株式（特定投資株式）として保有し、同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nomura-research-institute",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合9.16％の大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +364,55 @@
       "publisher": "水戸証券株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDIT.pdf",
       "publishedAt": "2026-06-18",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YDIT",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年3月期から2030年3月期までの第七次中期経営計画を進めています。「人と組織の力で、お客さまからの信頼を深め、持続的に成長する企業へ」をテーマに掲げ、お客さま一人ひとりのライフプランに応じた金融サービス（ふやす・まもる・つなぐ）の提供と、株式投資信託と水戸ファンドラップの残高拡大を通じたストック収益の拡大に取り組むとしています。",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の受入手数料12,499百万円のうち、その他の受入手数料が5,905百万円を占めました。その他の受入手数料は投資信託の代行手数料やファンドラップ報酬が中心であり、預り残高に応じて継続的に得られるストック収益が受入手数料の大きな部分を占める収益構造になっています。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の記載に基づく",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1921年の創業以来、茨城県を発祥の地として北関東を中心とする関東一円に店舗を構え、対面を重視した金融サービスの提供と地域社会との共生を掲げています。営業店では、顧客の属性やニーズを踏まえた最適な提案をチームで議論する取組みを進めています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等の記載に基づく",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "独立系の証券会社として、北関東を中心とする関東一円を営業基盤とし、対面とインターネットの二つのチャネルを展開しています。インターネット取引の開設口座数は少数であり、対面チャネルを中心とする位置にあります。",
+        "basis": "事業の内容及び経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の記載に基づく",
+        "asOf": "2026-06-18",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

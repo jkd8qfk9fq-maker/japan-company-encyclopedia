@@ -4,15 +4,158 @@
   "name": "栄電子",
   "officialName": "株式会社栄電子",
   "nameEn": "SAKAE ELECTRONICS CORPORATION",
-  "description": null,
+  "shortNameEn": "SAKAE ELECTRONICS CORPORATION",
+  "description": "産業用一般電子部品や電子機器を仕入れて製造業の顧客に販売する電子部品の専門商社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "electronics",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "electronics-trading",
+      "name": "電子部品機器販売事業",
+      "description": "産業用一般電子部品と電子機器を仕入れて販売する単一セグメントの事業です。当社と連結子会社２社（東栄電子株式会社、台榮電子股份有限公司）で構成され、2026年３月期の売上高は7,330百万円、2026年３月31日現在の連結従業員数は85人です。",
+      "customers": [
+        "半導体製造装置関連をはじめとする製造業の顧客企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "general-parts",
+          "name": "一般電子部品",
+          "description": "産業用の一般電子部品の販売で、2026年３月期の販売額は4,472百万円でした。",
+          "customers": [
+            "製造業の顧客企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "power-supplies",
+          "name": "電源",
+          "description": "スイッチング電源などの電源製品の販売で、2026年３月期の販売額は1,344百万円でした。",
+          "customers": [
+            "製造業の顧客企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "iot-devices",
+          "name": "IoT機器",
+          "description": "IoT機器の販売で、2026年３月期の販売額は289百万円でした。",
+          "customers": [
+            "製造業の顧客企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "electronic-devices",
+          "name": "電子デバイス",
+          "description": "電子デバイスの販売で、2026年３月期の販売額は215百万円でした。",
+          "customers": [
+            "製造業の顧客企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "sensors",
+          "name": "センサー",
+          "description": "センサーの販売で、2026年３月期の販売額は83百万円でした。",
+          "customers": [
+            "製造業の顧客企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-products",
+          "name": "その他",
+          "description": "上記以外の商品の販売で、2026年３月期の販売額は924百万円でした。",
+          "customers": [
+            "製造業の顧客企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "電子部品メーカーから一般電子部品や電源、電子デバイスなどを仕入れ、半導体製造装置関連をはじめとする顧客企業へ販売する事業モデルです。",
+    "products": [
+      "一般電子部品",
+      "電源（スイッチング電源等）",
+      "電子デバイス",
+      "IoT機器",
+      "センサー"
+    ],
+    "customers": [
+      "半導体製造装置関連をはじめとする製造業の顧客企業"
+    ],
+    "revenueSources": [
+      "電子部品・電子機器の販売による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社栄電子",
+        "description": "1971年に設立された電子部品の専門商社で、連結子会社２社を持ち、2026年３月31日現在の連結従業員数は85人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "電子部品・電子機器の販売",
+        "description": "産業用一般電子部品、電源、電子デバイス、IoT機器、センサーなどを、メーカーとの特約店契約等に基づいて仕入れて販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "製造業の顧客企業",
+        "description": "主な販売先は半導体製造装置関連をはじめとする製造業の顧客企業で、売上高の10％以上を占める特定の相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年３月期の売上高は7,330百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は113百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +170,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3529445000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 74,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +190,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4138916000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 76,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4561760000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 80,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4473980000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 86,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +250,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4818063000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 85,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +258,118 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1971,
+      "title": "株式会社栄電子を設立",
+      "description": "神奈川県川崎市苅宿に、電子部品・電子機器の販売を目的として株式会社栄電子が設立されました。",
+      "significance": "現在の栄電子の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "東栄電子株式会社を設立",
+      "description": "東京都千代田区に東栄電子株式会社が設立されました。現在は連結子会社として、当社と同様に産業用一般電子部品や電子デバイスの販売を行っています。",
+      "significance": "グループの中核子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "株式会社タチバナ電子の株式を取得",
+      "description": "株式会社タチバナ電子の株式を取得しました。",
+      "significance": "取扱商品・販路の拡充につながる取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "東栄電子がタチバナ電子を吸収合併",
+      "description": "連結子会社の東栄電子株式会社が株式会社タチバナ電子を吸収合併しました。",
+      "significance": "グループ内再編による子会社体制の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所ＪＡＳＤＡＱスタンダードに上場",
+      "description": "大阪証券取引所と東京証券取引所の現物市場統合に伴い、東京証券取引所（ＪＡＳＤＡＱスタンダード）に株式を上場しました。",
+      "significance": "市場統合に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、ＪＡＳＤＡＱ（スタンダード）からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "台湾に台榮電子股份有限公司を設立",
+      "description": "台湾台北市に、一般電子部品の販売を事業目的とする台榮電子股份有限公司を100％子会社として設立しました。",
+      "significance": "アジアにおける販売・調達ネットワークの拠点となる初の海外子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tdk",
+      "relationship": "supplier",
+      "description": "チップコンダクター・インダクターの特約店契約を締結している仕入先です（契約期間は2026年４月１日から2028年３月31日まで、自動更新条項あり）。同社の子会社であるTDKラムダ株式会社とも、スイッチング電源・ノイズフィルタの特約店契約を締結しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "yamaichi-electronics",
+      "relationship": "supplier",
+      "description": "ICソケット・コネクタ各種の特約店契約を締結している仕入先です（契約期間は2026年４月１日から2027年３月31日まで、自動更新条項あり）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +377,45 @@
       "publisher": "株式会社栄電子",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJKR.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJKR",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年３月期から2028年３月期を対象とする中期経営計画を策定し、基本方針として「資本コストを意識した経営により企業価値を高める」ことを掲げています。重点施策として、新規顧客および新規分野の開拓による収益基盤の拡大、社会インフラ・重電分野などへの展開による事業領域の拡充、東アジアを中心とした海外展開の推進、DX推進による業務効率化などを挙げています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年３月に設立した台湾の現地法人をアジアにおける販売・調達のネットワーク拠点と位置づけており、主力の半導体製造装置関連市場への依存による業績変動への対応として、顧客と事業領域の拡大で収益源の多様化を進める構成です。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析に記載された台湾現地法人の位置づけと、経営方針に記載された優先的に対処すべき課題に基づく",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "TDKや山一電機といった電子部品メーカーとの特約店契約や海外メーカーとの販売代理店契約に基づく仕入れの枠組みと、本社のほか国内各地の営業所網を通じて顧客に販売する体制が特徴です。",
+        "basis": "重要な契約等に記載された特約店契約・販売代理店契約と、主要な設備の状況に記載された営業所網に基づく",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

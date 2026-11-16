@@ -4,15 +4,172 @@
   "name": "相模ゴム工業",
   "officialName": "相模ゴム工業株式会社",
   "nameEn": "SAGAMI RUBBER INDUSTRIES CO., LTD.",
-  "description": null,
+  "shortNameEn": "SAGAMI RUBBER INDUSTRIES CO., LTD.",
+  "description": "コンドームや医療用ゴム製品などのヘルスケア製品と、包装用フィルムなどのプラスチック製品を製造・販売するメーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "healthcare",
+      "name": "ヘルスケア事業",
+      "description": "コンドーム、医療用ゴム製品及び生活自助具等を製造・販売する事業です。2026年3月期の外部顧客への売上高は4,675百万円で、事業の中で最大です。連結子会社の相模マニュファクチャラーズ有限公司（マレーシア）がコンドームの製造販売を、株式会社ラジアテックス（フランス）がコンドームの販売を行っており、当社製品の一部は子会社の株式会社ラジアテックスや関連当事者の相模産業株式会社を通じて販売されています。",
+      "customers": [
+        "代理店等を通じた一般市場の顧客",
+        "医療機関などの顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "condoms",
+          "name": "コンドーム",
+          "description": "ラテックス製コンドームと、ポリウレタン製コンドーム「サガミオリジナル」を製造・販売しています。金額は区分ごとに開示されていません。",
+          "customers": [
+            "代理店等を通じた一般市場の顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "medical-rubber-products",
+          "name": "医療用ゴム製品",
+          "description": "医療用カテーテルなどの医療用ゴム・ポリウレタン製品を製造・販売しています。金額は区分ごとに開示されていません。",
+          "customers": [
+            "医療機関などの顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "daily-living-aids",
+          "name": "生活自助具等",
+          "description": "生活自助具などを製造・販売しています。金額は区分ごとに開示されていません。",
+          "customers": [
+            "代理店等を通じた一般市場の顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "plastic-products",
+      "name": "プラスチック製品事業",
+      "description": "食品用包装フィルム及び事務用ファイル等を製造・販売する事業です。2026年3月期の外部顧客への売上高は1,190百万円でした。静岡工場と福岡工場が生産拠点です。",
+      "customers": [
+        "代理店等を通じた一般市場の顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "packaging-film",
+          "name": "包装用チューブ・フィルム",
+          "description": "食品用包装フィルムなどの包装用チューブ・フィルムを製造・販売しています。金額は区分ごとに開示されていません。",
+          "customers": [
+            "代理店等を通じた一般市場の顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "office-files",
+          "name": "事務用ファイル等",
+          "description": "事務用ファイルなどを製造・販売しています。金額は区分ごとに開示されていません。",
+          "customers": [
+            "代理店等を通じた一般市場の顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない区分で、巡回入浴等のサービスや日用雑貨品の製造・販売を行っています。2026年3月期の外部顧客への売上高は44百万円でした。介護サービス事業は2025年9月末をもって事業譲渡及び閉鎖しています。",
+      "customers": [
+        "介護サービスの利用者などの顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "コンドームや医療用ゴム製品、プラスチック製品を自社工場とマレーシアの子会社で製造し、代理店などを通じて国内外で販売して収益を得る事業モデルです。",
+    "products": [
+      "コンドーム（ラテックス製・ポリウレタン製「サガミオリジナル」）",
+      "医療用ゴム製品（医療用カテーテルなど）",
+      "生活自助具",
+      "食品用包装フィルム",
+      "事務用ファイル"
+    ],
+    "customers": [
+      "代理店等を通じた一般市場の顧客",
+      "医療機関などの顧客"
+    ],
+    "revenueSources": [
+      "ヘルスケア製品の販売",
+      "プラスチック製品の販売",
+      "巡回入浴等のサービスの提供"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "相模ゴム工業",
+        "description": "1934年に創立し、神奈川県厚木市に本社を置きます。連結子会社は2社で、2026年3月31日現在の連結従業員数は737人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ヘルスケア製品とプラスチック製品",
+        "description": "コンドームや医療用カテーテルなどのヘルスケア製品と、食品用包装フィルムなどのプラスチック製品を製造・販売しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "代理店を通じた一般市場と医療機関",
+        "description": "製品は代理店などを通じて一般市場に販売され、主要な顧客にはピップ株式会社があります。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品販売による収益",
+        "description": "2026年3月期の売上高は5,911百万円で、前期に比べて3.9％増えました。ラテックス製コンドームの需要の回復や、ポリウレタン製コンドームの越境ECでの販売拡大が増収につながりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は283百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8923050000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 796,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9947393000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 809,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10103357000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 854,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +244,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11117229000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 790,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +264,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11886741000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 737,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +272,128 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1934,
+      "title": "アサヒラテックス化学研究所を創立",
+      "description": "アサヒラテックス化学研究所が創立され、わが国最初のラテックス製コンドームの製品化に成功し、製造販売を開始しました。",
+      "significance": "現在の相模ゴム工業の起点であり、コンドーム事業の原点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "相模ゴム工業株式会社に改名",
+      "description": "日本ラテックスゴム工業株式会社から、相模ゴム工業株式会社に改名しました。",
+      "significance": "現在の社名となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1953,
+      "title": "相模プラスチック工業株式会社を吸収合併",
+      "description": "姉妹会社の相模プラスチック工業株式会社を吸収合併し、製品に合成樹脂部門を加えました。",
+      "significance": "現在のプラスチック製品事業につながる部門の取り込みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "株式を公開",
+      "description": "東京証券取引所市場第二部に株式を公開しました。",
+      "significance": "株式公開を果たした年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "医療用カテーテルを開発",
+      "description": "医療用カテーテルを開発し、世界各国に本格的に販売を開始しました。",
+      "significance": "医療用ゴム製品への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "フランスの株式会社ラジアテックスを買収",
+      "description": "フランスの株式会社ラジアテックス（現・連結子会社）を買収し、医療用具事業のヨーロッパでの販売拠点としました。",
+      "significance": "海外販売拠点の獲得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "マレーシアに相模マニュファクチャラーズ有限公司を設立",
+      "description": "ポリウレタン製コンドームを製造するため、マレーシアに相模マニュファクチャラーズ有限公司（現・連結子会社）を設立しました。",
+      "significance": "現在の主力生産拠点であるマレーシア子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "ポリウレタン製コンドーム「サガミオリジナル」の製造販売を開始",
+      "description": "わが国最初のポリウレタン製コンドーム・サガミオリジナルの製造販売を開始しました。",
+      "significance": "主力ブランド「サガミオリジナル」の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "「サガミオリジナル0.02」の製造販売を開始",
+      "description": "薄膜化技術の進展により、サガミオリジナル0.02（ゼロゼロツー）の製造販売を開始しました。",
+      "significance": "薄膜化技術を生かした主力製品の発売です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "「サガミオリジナル0.01」の全国発売を開始",
+      "description": "サガミオリジナル0.01（ゼロゼロワン）の全国発売を開始しました。",
+      "significance": "薄膜化技術の到達点を示す製品の発売です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "マレーシアに新工場を増設",
+      "description": "サガミオリジナルの品薄解消を目指し、マレーシアに新工場を増設しました。",
+      "significance": "主力製品の供給体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "介護サービス事業を譲渡・閉鎖",
+      "description": "介護サービス事業の事業譲渡及び閉鎖を行いました。",
+      "significance": "不採算事業からの撤退であり、事業ポートフォリオ再構築の一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +402,47 @@
       "publisher": "相模ゴム工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YL8G.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YL8G",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "創業者の掲げた理念を原点とし、コンドームメーカーの枠を超えた「Life Care Company」への進化を目指すとしています。ヘルスケア領域を中心とした事業基盤の強化、国内外でのブランド価値向上、デジタル技術の活用、新たな事業機会の創出に取り組むとともに、創業100周年を控えた現在を「第2の創業」の好機と捉え、事業ポートフォリオの最適化や成長領域への投資を推進するとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1934年にわが国で初めてラテックス製コンドームの製品化に成功し、1998年にはわが国初のポリウレタン製コンドーム「サガミオリジナル」を発売するなど、薄膜化をはじめとする製品開発の実績を長く重ねてきた点が特徴です。",
+        "basis": "【沿革】に、1934年のアサヒラテックス化学研究所の創立とわが国最初のラテックス製コンドームの製品化、1998年のわが国最初のポリウレタン製コンドーム・サガミオリジナルの製造販売開始、2005年のサガミオリジナル0.02、2014年のサガミオリジナル0.01の発売が印字されている。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "ヘルスケア事業が連結売上高の約8割を占める主力事業であり、コンドームを中心とするヘルスケア製品のメーカーとして事業を行っています。",
+        "basis": "【セグメント情報】に、2026年3月期の外部顧客への売上高はヘルスケア事業4,675,714千円、プラスチック製品事業1,190,665千円、その他44,747千円、合計5,911,127千円と印字され、【事業の内容】にヘルスケア事業はコンドーム、医療用ゴム製品及び生活自助具等を製造・販売すると印字されている。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
