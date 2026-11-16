@@ -4,15 +4,122 @@
   "name": "テセック",
   "officialName": "株式会社テセック",
   "nameEn": "TESEC Corporation",
-  "description": null,
+  "shortNameEn": "TESEC Corporation",
+  "description": "半導体デバイスの検査に使うテスタと、デバイスを搬送・分類するハンドラを製造・販売する半導体検査装置メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "semiconductors",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "semiconductor-test-equipment",
+      "name": "半導体検査装置事業",
+      "description": "半導体検査装置の製造・販売を単一の事業として行っています。2026年3月期の売上高は5,567百万円で、連結売上高の全てを占めます。当社と連結子会社4社（TESEC,INC.、TESEC(M)SDN.BHD.、泰賽国際貿易（上海）有限公司、嶺光音電機株式会社）でグループを構成し、当社はハンドラ、テスタおよびパーツ等の開発・製造・販売とアフターサービスを、海外子会社は当社製品の販売とアフターサービスを、嶺光音電機は半導体測定器の開発・製造・販売とアフターサービスを担います。主な拠点は本社（東京都東大和市）と伊那事業所（長野県上伊那郡箕輪町）です。",
+      "customers": [
+        "世界の大手半導体メーカー",
+        "半導体メーカー"
+      ],
+      "children": [
+        {
+          "id": "handler",
+          "name": "ハンドラ",
+          "description": "様々な形状の半導体デバイスを搬送し、接続されたテスタからの測定データに基づき、設定された基準に応じて自動で分類・収納する装置です。MAPハンドラやパワーデバイス用ハンドラなどがあります。2026年3月期の外部顧客への売上高は2,547百万円でした。",
+          "customers": [
+            "世界の大手半導体メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "tester",
+          "name": "テスタ",
+          "description": "半導体の電気的な特性・性能を評価する測定器です。パワー半導体向けを中心に、ディスクリートデバイス用やIC用などのテスタを開発・製造・販売しています。2026年3月期の外部顧客への売上高は1,974百万円でした。",
+          "customers": [
+            "世界の大手半導体メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "parts",
+          "name": "パーツ等",
+          "description": "ハンドラ改造用のチェンジキットを中心とするパーツ等の販売です。当社のハンドラの稼働台数を基盤とした取引で、2026年3月期の外部顧客への売上高は1,046百万円でした。",
+          "customers": [
+            "当社製品を導入した半導体メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "半導体メーカーなどにテスタとハンドラ、交換用のパーツ等を販売し、海外子会社を通じてアフターサービスまで提供する事業モデルです。",
+    "products": [
+      "テスタ（半導体の電気的な特性・性能を評価する測定器）",
+      "ハンドラ（デバイスを搬送し、測定データに基づき自動で分類・収納する装置）",
+      "パーツ等（ハンドラ改造用のチェンジキット等）",
+      "アフターサービス"
+    ],
+    "customers": [
+      "世界の大手半導体メーカー",
+      "半導体メーカー"
+    ],
+    "revenueSources": [
+      "テスタの販売代金",
+      "ハンドラの販売代金",
+      "パーツ等の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "1969年に株式会社テスとして設立",
+        "description": "1969年に東京都北多摩郡大和町で株式会社テスとして設立され、1980年に株式会社テセックへ商号を変更しました。本社は東京都東大和市、生産拠点として長野県上伊那郡箕輪町に伊那事業所があり、連結子会社4社とグループを構成しています。2026年3月31日現在の連結従業員数は211人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "テスタとハンドラ、パーツ等を提供する",
+        "description": "半導体の電気的な特性・性能を評価するテスタと、デバイスを搬送して測定データに基づき自動で分類・収納するハンドラを開発・製造・販売し、パーツ等の販売とアフターサービスも行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "世界の大手半導体メーカーが主な顧客",
+        "description": "主な顧客は世界の大手半導体メーカーです。2026年3月期の連結売上高に占める海外売上高の比率は77.0％で、マレーシア、フィリピン、中国向けの出荷が中心でした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は5,567百万円",
+        "description": "2026年3月期の売上高は5,567百万円でした。製品別ではハンドラが2,547百万円、テスタが1,974百万円、パーツ等が1,046百万円です。AI関連需要を背景にハンドラの売上が増えた一方、EV需要の減速を受けてテスタの売上が減り、前期の5,892百万円から減収となりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の純利益は463百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は463百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +134,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11300000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 213,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +154,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12907000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 209,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +174,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14477000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 212,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14165000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 214,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14200000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 211,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +222,168 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1969,
+      "title": "株式会社テスを設立",
+      "description": "半導体製造装置および検査装置の研究開発、製造・販売を目的として、東京都北多摩郡大和町大字奈良橋に株式会社テスを設立し、トランジスタハンドラとトランジスタテスタの開発、製造・販売を開始しました。",
+      "significance": "現在のテセックの創業であり、ハンドラとテスタの事業はこの時に始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "本社を東大和市に移転",
+      "description": "本社を東京都東大和市大字芋窪（現在地）に移転しました。",
+      "significance": "現在の本社の所在地がこの時に定まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "商号を株式会社テセックに変更",
+      "description": "商号を株式会社テスから株式会社テセックに変更しました。",
+      "significance": "現在の社名がこの時に定まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "マレーシアにTESEC(M)SDN.BHD.を設立",
+      "description": "マレーシアのクアラルンプール市に現地法人（子会社）TESEC(M)SDN.BHD.（現・連結子会社）を設立しました。",
+      "significance": "アジアの販売・アフターサービスの拠点を置きました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "米国にTESEC,INC.を設立",
+      "description": "米国事務所を子会社化し、TESEC,INC.（現・連結子会社）を設立しました。",
+      "significance": "米州の販売・アフターサービスの拠点を法人化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "店頭登録銘柄として登録",
+      "description": "店頭登録銘柄として日本証券業協会に登録しました。",
+      "significance": "株式を公開し、上場への第一歩となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "上海に泰賽国際貿易（上海）有限公司を設立",
+      "description": "中華人民共和国の上海市に現地法人（現・連結子会社）泰賽国際貿易（上海）有限公司を設立しました。",
+      "significance": "中国市場の販売・アフターサービスの拠点を置きました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "横河電機からICハンドラ事業を譲り受け",
+      "description": "横河電機株式会社よりICハンドラ事業を譲り受けました。",
+      "significance": "IC向けハンドラの製品分野を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "東京証券取引所と大阪証券取引所の統合に伴い、東京証券取引所JASDAQ（スタンダード）に上場しました。",
+      "significance": "市場統合に伴い、東京証券取引所の市場へ移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "株式会社東京精密とパワーデバイス測定システム「Fortia」を共同開発",
+      "description": "株式会社東京精密とパワーデバイス測定システム「Fortia」を共同開発し、製造・販売を開始しました。",
+      "significance": "他社との共同開発によるパワーデバイス向け測定システムを製品化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しに伴い、東京証券取引所スタンダード市場に株式を上場しました。",
+      "significance": "現在の上場市場であるスタンダード市場へ移行しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "嶺光音電機株式会社を子会社化",
+      "description": "嶺光音電機株式会社（横浜市）を子会社化しました。",
+      "significance": "半導体測定器を手がける会社がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "TESEC,INC.の本社をトーランスに移転",
+      "description": "TESEC,INC.の本社を米国カリフォルニア州ガーデナ市から同州トーランス市に移転しました。",
+      "significance": "米国子会社の拠点を移し、販売・アフターサービスの体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tokyo-seimitsu",
+      "relationship": "business-partner",
+      "description": "パワーデバイス測定システム「Fortia」を共同開発し、製造・販売している提携先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "rohm",
+      "relationship": "customer",
+      "description": "主要な販売先であり、営業取引の円滑化のため株式を保有していると印字された顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +391,47 @@
       "publisher": "株式会社テセック",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHSE.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YHSE",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年度から2027年度を対象期間とする中期計画「Enjoy2.1」を掲げ、基盤戦略として生産工程の標準化・効率化による供給安定性の向上、顧客満足を起点とした営業力・提案力の強化、デジタル化を通じた業務プロセス革新、人材育成と組織体制の再構築を進めるとしています。事業戦略では、テスタ分野でバリュー志向型ビジネスとトータルソリューションの構築、パートナー企業との連携、海外展開を、ハンドラ分野で既存顧客との安定取引の維持と新規市場の開拓、次世代ハンドラの市場投入を掲げています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "テスタとハンドラの両方を自社で開発・製造し、組み合わせた提案ができる点が特長です。米国、マレーシア、中国の販売子会社を通じてアフターサービスまで担い、ハンドラの稼働台数を基盤にチェンジキットなどのパーツ等を継続的に販売する取引も持っています。子会社の嶺光音電機との連携など外部リソースを活用した開発体制の強化も進めています。",
+        "basis": "事業の内容に、当社がハンドラ、テスタおよびパーツ等の開発・製造・販売とアフターサービスを行うこと、海外子会社が当社製品の販売とアフターサービスを担うこと、パーツ等がハンドラの稼働台数を基盤とした取引であることが印字され、サステナビリティの戦略に嶺光音電機との連携による開発体制の強化が印字されているため。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "半導体検査装置の専業メーカーとして、パワー半導体向けのテスタとAI関連需要で回復したハンドラを軸に事業を行っています。2026年3月期は連結売上高の77.0％が海外向けで、特定の顧客としてINFINEON TECHNOLOGIES (MALAYSIA) SDN BHDへの売上高596百万円が主要な顧客として開示されています。",
+        "basis": "事業の内容に半導体検査装置の製造・販売を単一の事業とすることが、事業等のリスクに海外売上高比率が当期77.0％であることが、セグメント情報の主要な顧客ごとの情報にINFINEON TECHNOLOGIES (MALAYSIA) SDN BHDの売上高596百万円が印字されているため。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

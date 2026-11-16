@@ -4,15 +4,119 @@
   "name": "オープンドア",
   "officialName": "株式会社オープンドア",
   "nameEn": "Open Door Inc.",
-  "description": null,
+  "shortNameEn": "Open Door Inc.",
+  "description": "旅行比較サイト「トラベルコ」を運営し、旅行会社などから掲載に伴う手数料や広告料を得る会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "travel-related",
+      "name": "旅行関連事業",
+      "description": "旅行比較サイト「トラベルコ」の運営を中心とする事業です。「トラベルコ」は、国内大手旅行会社、国内外のOTA、国内外のホテルや航空会社を含む1,500以上の予約サイト（2026年3月末現在）が販売するパッケージツアー、ホテル、航空券などの旅行商品を、オンラインで一括して検索・比較できるメタサーチサイトです。ユーザーは無料で利用し、希望の条件に合った旅行商品を見つけて予約や照会を行えます。連結子会社のホテルスキップ株式会社は、ホテル予約サイト「ホテリア」と航空券予約サイト「トラベリア」を運営し、法人顧客への旅行商品の販売も行っています。2026年3月期の売上高は2,453百万円でした。",
+      "products": [
+        "旅行比較サイト「トラベルコ」",
+        "ホテル予約サイト「ホテリア」",
+        "航空券予約サイト「トラベリア」"
+      ],
+      "customers": [
+        "旅行商品を掲載する旅行会社・OTA・ホテル・航空会社",
+        "旅行商品を検索・比較するユーザー",
+        "広告を掲載する旅行関連企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "travelko",
+          "name": "トラベルコ（旅行比較サイト）",
+          "description": "当社が運営する旅行比較サイトです。ツアー、ホテル、航空券などのジャンルごとに横断検索ができ、現地クチコミ情報や厳選したクチコミをまとめた「トラベルコまとめ」も掲載しています。収入は、掲載した旅行会社から収受する成果報酬型の従量課金収入、月額のシステム利用料などの固定課金収入、広告スペースの提供による広告収入です。",
+          "customers": [
+            "旅行商品を掲載する旅行会社・OTA",
+            "旅行商品を検索・予約するユーザー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "hotelia-travelia",
+          "name": "ホテリア・トラベリア（ホテルスキップ）",
+          "description": "連結子会社のホテルスキップ株式会社が運営する、個人顧客向けのホテル予約サイト「ホテリア」と航空券予約サイト「トラベリア」です。法人顧客への旅行商品の販売なども行っています。同子会社は当社の旅行比較サイトにも旅行商品を掲載しています。",
+          "customers": [
+            "ホテル・航空券を予約する個人顧客",
+            "旅行商品を購入する法人顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "旅行会社やOTAが「トラベルコ」に旅行商品を掲載し、成果報酬型の手数料や月額のシステム利用料、広告掲載料を支払う仕組みで収益を得ています。",
+    "products": [
+      "旅行比較サイト「トラベルコ」",
+      "ホテル予約サイト「ホテリア」",
+      "航空券予約サイト「トラベリア」"
+    ],
+    "customers": [
+      "旅行商品を掲載する旅行会社・OTA・ホテル・航空会社",
+      "トラベルコで旅行商品を検索・予約するユーザー",
+      "広告を掲載する旅行関連企業"
+    ],
+    "revenueSources": [
+      "従量課金収入（予約・クリック等の実績に応じた成果報酬型の手数料）",
+      "固定課金収入（月額のシステム利用料）",
+      "広告収入（広告スペースとメールマガジンの掲載料）",
+      "ホテル・航空券の予約サイト運営と法人向け旅行商品の販売による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "旅行情報サービスのグループ",
+        "description": "当社と連結子会社１社（ホテルスキップ株式会社）で構成されるグループです。連結従業員数は191人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "旅行比較サイト「トラベルコ」",
+        "description": "1,500以上の予約サイト（2026年3月末現在）が販売するツアー、ホテル、航空券などの旅行商品を一括で検索・比較できるサイト「トラベルコ」を運営しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "旅行会社と旅行者",
+        "description": "旅行商品を掲載する旅行会社やOTA、ホテル、航空会社と、旅行商品を探して予約するユーザーが顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は2,453百万円で、前期は2,405百万円でした。報告セグメントは旅行関連事業のみです。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純損失",
+        "description": "2026年3月期の親会社株主に帰属する当期純損失は1,131百万円でした。前期は120百万円の純損失でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +131,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5087365000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 183,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +151,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5668927000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 191,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +171,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5111675000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 186,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +191,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4344477000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 192,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +211,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3477748000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 191,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +219,127 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1997,
+      "title": "オープンドアの設立",
+      "description": "東京都港区三田に当社を設立しました。",
+      "significance": "現在の会社の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "旅行比較サイト「トラベルコちゃん」をオープン",
+      "description": "旅行比較サイト「トラベルコちゃん」をオープンし、海外ツアーと海外航空券の比較サービスを開始しました。",
+      "significance": "現在の主力サービス「トラベルコ」の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "国内宿泊比較サービスの開始",
+      "description": "トラベルコちゃん「国内宿泊比較サービス」をオープンしました。",
+      "significance": "国内旅行商品へ対象を広げた節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "ホテルスキップ株式会社の子会社化",
+      "description": "ホテルスキップ株式会社の株式を取得し、子会社化しました。",
+      "significance": "現在の連結子会社となり、ホテル・航空券の予約サイト運営がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東京証券取引所マザーズへの上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "海外向けサイトの名称を「Travelko」に変更",
+      "description": "海外向け多言語旅行比較サイト「HotelSaurus」の名称を「Travelko」に変更しました。",
+      "significance": "海外向けサービスのブランドの節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "「トラベルコちゃん」から「トラベルコ」への名称変更",
+      "description": "旅行比較サイト「トラベルコちゃん」の名称を「トラベルコ」に変更しました。",
+      "significance": "現在のサービス名が定まった節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場への移行",
+      "description": "東京証券取引所プライム市場へ移行しました。",
+      "significance": "市場の再編に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "東京証券取引所スタンダード市場への市場変更",
+      "description": "東京証券取引所スタンダード市場へ市場変更しました。",
+      "significance": "2026年3月期中の市場変更です。表紙の上場市場もスタンダード市場となっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "ly",
+      "relationship": "customer",
+      "description": "主要な顧客です。セグメント情報の主要な顧客ごとの情報と、MD&Aの主な相手先別販売実績に、両期を通じた販売先として印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "kufu-company-holdings",
+      "relationship": "major-shareholder",
+      "description": "大株主です。2026年3月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は7.00％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "veltra",
+      "relationship": "business-partner",
+      "description": "海外オプショナルツアーの予約サイトを運営する会社で、当社との取引として、その旅行商品を当社の運営する旅行比較サイト「トラベルコ」に掲載しています。当社は同社の株式5,347,300株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +347,47 @@
       "publisher": "株式会社オープンドア",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKIK.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YKIK",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念に「新たな挑戦を恐れず、たゆまぬ革新性をもって、社会の豊かさ、喜び、未来に貢献し続ける」ことを掲げ、「変化する市場ニーズに迅速に対応し、最速のスピードと最高のクオリティをもって顧客満足No.1を達成する」というミッションのもと、「トラベルコ」の運営を軸に事業を展開しています。優先課題として、生成AIをはじめとする技術革新への対応、「トラベルコ」のサービス機能の強化と新メニューの開発、ブランドの知名度向上、多言語展開によるインバウンド対応を含めた海外向け事業の強化、新サービス及び新規事業の展開を挙げています。新規事業では、「トラベルコ」へのクルーズ等の新メニュー導入やAI検索機能の実装、AI技術を活用した企業向けサービスの提供、旅行会社向けのオンライン予約システム及び業務渡航システムの導入拡大、「KOGEI JAPAN」における伝統的工芸品のECマーケットプレイス事業の開始等を推進するとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "「トラベルコ」は1,500以上の予約サイト（2026年3月末現在）の旅行商品を横断して検索・比較でき、ツアー、ホテル、航空券など旅行商品のジャンルを幅広くそろえています。現地クチコミ情報や厳選したクチコミをまとめた「トラベルコまとめ」も掲載し、旅行に関する情報を網羅する形をとっています。",
+        "basis": "【事業の内容】における掲載予約サイト数、ジャンルごとの横断検索機能とクチコミ情報の記述に基づく。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高のほぼ全てが旅行関連事業によるもので、報告セグメントはこの１つだけです。主な相手先別の販売実績では、LINEヤフー株式会社が2026年3月期の販売実績の12.0％を占める最大の相手先となっています。",
+        "basis": "セグメント情報の記載と、MD&Aにおける主な相手先別の販売実績の割合に基づく。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,19 +4,135 @@
   "name": "トーヨーアサノ",
   "officialName": "株式会社トーヨーアサノ",
   "nameEn": "Toyo　Asano　Foundation　Co．，Ltd．",
-  "description": null,
+  "shortNameEn": "Toyo Asano Foundation Co.,Ltd.",
+  "description": "コンクリートパイルなどの基礎資材を製造・販売し、付随する工事も請け負う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "foundation",
+      "name": "基礎事業",
+      "description": "コンクリートパイルの製造・販売、建材の仕入・販売、コンクリート二次製品に付随する諸工事の請負を行う事業です。連結子会社のTAパイル製造株式会社が製品の出荷及び構内作業を担い、株式会社東商がセメント資材や継手金具などの原材料の仕入れを担っています。2026年2月期の外部顧客への売上高は11,492百万円で、2つの事業の中で最大でした。主要な顧客として株式会社角藤が印字されています。",
+      "customers": [
+        "ゼネコン",
+        "設計事務所",
+        "販売会社"
+      ],
+      "children": [
+        {
+          "id": "piles",
+          "name": "パイル",
+          "description": "当社がコンクリートパイルを製造・販売し、コンクリート二次製品に付随する諸工事の請負も行う区分です。パイルの商品の仕入販売も行っています。金額は区分ごとに開示されていません。",
+          "customers": [
+            "ゼネコン",
+            "販売会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "building-materials",
+          "name": "建材",
+          "description": "当社が建材を仕入れて販売する区分です。金額は区分ごとに開示されていません。",
+          "customers": [
+            "販売会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸事業",
+      "description": "当社及び連結子会社の株式会社東商が、保有する不動産の賃貸を行う事業です。ホームセンターやショッピングセンターへの賃貸が中心で、2026年2月期の外部顧客への売上高は198百万円でした。",
+      "customers": [
+        "小売事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "コンクリートパイルの製造・販売と建材の販売、二次製品に付随する工事の請負を行い、建設会社などに販売するほか、保有不動産の賃貸も行う事業モデルです。",
+    "products": [
+      "コンクリートパイル",
+      "建材",
+      "コンクリート二次製品に付随する工事",
+      "不動産の賃貸"
+    ],
+    "customers": [
+      "ゼネコン",
+      "設計事務所",
+      "販売会社",
+      "小売事業者"
+    ],
+    "revenueSources": [
+      "コンクリートパイルなどの基礎資材の販売代金",
+      "建材の販売代金",
+      "工事の請負代金",
+      "不動産の賃料収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "静岡県沼津市に本社を置き、子会社2社を持つ基礎資材メーカー",
+        "description": "トーヨーアサノは静岡県沼津市に本社を置き、連結子会社2社と事業を行っています。2026年2月28日現在の従業員数は179人です。1997年に株式会社東洋パイルヒューム管製作所と東扇アサノポール株式会社が合併して現在の会社となりました。"
+      },
+      {
+        "kind": "offering",
+        "title": "基礎事業と不動産賃貸事業の2事業を展開する",
+        "description": "基礎事業ではコンクリートパイルの製造・販売、建材の仕入・販売、コンクリート二次製品に付随する諸工事の請負を行い、不動産賃貸事業では当社グループが保有する不動産を賃貸しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "ゼネコンや販売会社、ホームセンターなどが顧客になる",
+        "description": "基礎事業では設計事務所やゼネコン、販売会社などが顧客で、主要な顧客として株式会社角藤が印字されています。不動産賃貸事業では、ホームセンターやショッピングセンターの運営事業者に賃貸しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年2月期の売上高は11,690百万円",
+        "description": "2026年2月期の売上高は11,690百万円で、前期比18.8％の減少でした。内訳は基礎事業が11,492百万円、不動産賃貸事業が198百万円です。主力商圏の関東及び静岡県で需要が低下し競争が激化したことに加え、工事の着工が大幅に遅れたことが減収の要因です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年2月期の当期純損失は221百万円",
+        "description": "2026年2月期の親会社株主に帰属する当期純損失は221百万円でした。前期は363百万円の当期純利益でした。一部の取引先に対する債権について貸倒引当金を計上したことが、純損失となった主な要因です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -31,7 +147,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3755159000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 218,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,12 +167,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3408048000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 199,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第80期の期首から適用しており、第80期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -71,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3930567000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 197,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +208,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4197668000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 190,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +228,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3883446000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 179,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +236,156 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1951,
+      "title": "株式会社東洋パイルヒューム管製作所を設立",
+      "description": "静岡県沼津市に、コンクリートパイルとヒューム管の製造販売を目的として株式会社東洋パイルヒューム管製作所を設立しました。",
+      "significance": "現在のトーヨーアサノの二つの前身の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "日本高圧コンクリートポール株式会社を設立",
+      "description": "日本高圧コンクリートポール株式会社を設立しました。後にアサノポール株式会社への商号変更を経て、東扇アサノポール株式会社となりました。",
+      "significance": "現在のトーヨーアサノのもう一つの前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "株式を東京証券取引所第二部に上場",
+      "description": "株式会社東洋パイルヒューム管製作所が、株式を東京証券取引所第二部に上場しました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "東扇コンクリート工業株式会社と合併",
+      "description": "アサノポール株式会社が東扇コンクリート工業株式会社と合併し、東扇アサノポール株式会社と商号を変更しました。",
+      "significance": "前身会社の統合が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "合併により株式会社トーヨーアサノが発足",
+      "description": "株式会社東洋パイルヒューム管製作所と東扇アサノポール株式会社が合併し、株式会社トーヨーアサノと商号を変更しました。",
+      "significance": "現在の会社の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "日本セグメント工業株式会社を子会社化",
+      "description": "日本セグメント工業株式会社の株式を追加取得し、連結子会社化しました。",
+      "significance": "グループの事業範囲が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "沼津工場を閉鎖し、パイルの生産を東京工場に集約",
+      "description": "沼津工場を閉鎖し、コンクリートパイルの生産を東京工場に集約しました。",
+      "significance": "生産体制を一拠点に集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "沼津工場跡地に大型貸店舗を新設",
+      "description": "沼津工場の跡地に大型貸店舗を新設し、株式会社カインズのホームセンターを誘致しました。",
+      "significance": "不動産賃貸事業につながる活用の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所の市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "日本セグメント工業株式会社の株式を全て譲渡",
+      "description": "日本セグメント工業株式会社の株式の全てを譲渡し、連結子会社から除外しました。",
+      "significance": "グループ構成の見直しです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "名古屋証券取引所メイン市場に上場",
+      "description": "名古屋証券取引所メイン市場に上場しました。",
+      "significance": "重複上場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "taiheiyo-cement",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に、2026年2月28日現在で発行済株式（自己株式を除く。）の総数の13.22％を保有する事業会社として印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "sankyo-kasei",
+      "relationship": "supplier",
+      "description": "基礎事業における仕入先であり、当社は業界動向等の情報収集及び営業取引関係を維持・強化するため、同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "neturen",
+      "relationship": "supplier",
+      "description": "基礎事業における仕入先であり、当社は業界動向等の情報収集及び営業取引関係を維持・強化するため、同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "token",
+      "relationship": "customer",
+      "description": "基礎事業における販売先であり、当社は業界動向等の情報収集及び営業取引関係を維持・強化するため、同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -128,13 +393,47 @@
       "publisher": "株式会社トーヨーアサノ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y4LV.pdf",
       "publishedAt": "2026-05-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y4LV",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "第８次中期経営計画（2025年度～2027年度）では「TAFCO Reform ＆ Advance」を掲げ、利益率の改善・安定を目的としたReform戦略と、成長投資を適切に組み合わせて管理・実行していくことを目的としたAdvance戦略を柱に取り組んでいます。経営理念である「顧客第一」「合理追求」「人倫遵守」を実践し、売上高と利益の成長を志向して経営資源の拡大を目指します。",
+        "asOf": "2026-05-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "コンクリートパイルの製造・販売から付随工事の請負までをグループで担い、主力商圏の関東及び静岡県に生産拠点と営業体制を持つことが強みです。",
+        "basis": "事業の内容に、パイルの製造・販売と諸工事の請負を当社が行い、連結子会社が出荷・構内作業と原材料の仕入れを担う分担が印字され、経営成績の分析に主力商圏が関東及び静岡県であることが印字されているため。",
+        "asOf": "2026-05-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の内訳では、コンクリートパイルを中核とする基礎事業が全体の98％超を占め、不動産賃貸事業は安定的な収益を担う位置づけにあります。",
+        "basis": "セグメント情報に、2026年2月期の外部顧客への売上高として基礎事業11,492百万円、不動産賃貸事業198百万円が印字され、経営成績の分析に不動産賃貸事業が安定した業績で推移した旨が印字されているため。",
+        "asOf": "2026-05-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",

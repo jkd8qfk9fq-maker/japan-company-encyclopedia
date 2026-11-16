@@ -4,15 +4,119 @@
   "name": "田谷",
   "officialName": "株式会社　田　谷",
   "nameEn": "TAYA Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "TAYA Co.,Ltd.",
+  "description": "美容室「TAYA」「Shampoo」などを全国展開し、カットやカラーなどの美容施術とヘアケア商品の販売を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "beauty",
+      "name": "美容事業",
+      "description": "美容室の経営を行う単一セグメントの事業です。「TAYA」「Shampoo」「MICHEL DERVYN」「ano」のブランドで全国展開し、国家資格を有する美容師が施術を提供しています。2026年３月期の売上高は5,075百万円で、当事業年度末の店舗数は61店舗でした。",
+      "customers": [
+        "美容室の来店客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "beauty-services",
+          "name": "美容施術",
+          "description": "美容室で美容師がカット、パーマ、カラー等の施術を提供する取扱区分です。2026年３月期の外部顧客への売上高は4,494百万円でした。",
+          "customers": [
+            "美容室の来店客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "product-sales",
+          "name": "商品",
+          "description": "お客様に合ったヘアケア商品や化粧品を美容室で販売する取扱区分です。2026年３月期の外部顧客への売上高は471百万円でした。",
+          "customers": [
+            "美容室の来店客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "other-services",
+          "name": "その他",
+          "description": "講習、セミナー、ショー等の収入の取扱区分です。2026年３月期の外部顧客への売上高は109百万円でした。",
+          "customers": [
+            "講習・セミナー等の参加者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "直営美容室とフリーランス美容室で、来店客から施術料を受け取り、ヘアケア商品の販売でも収益を得る事業モデルです。",
+    "products": [
+      "美容施術（カット・パーマ・カラー等）",
+      "ヘアケア商品・化粧品の販売",
+      "講習・セミナー・ショー等の開催"
+    ],
+    "customers": [
+      "美容室の来店客"
+    ],
+    "revenueSources": [
+      "美容施術の施術料",
+      "ヘアケア商品・化粧品の販売代金",
+      "講習・セミナー・ショー等の収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京都渋谷区に本店を置く美容室チェーン",
+        "description": "田谷は東京都渋谷区千駄ヶ谷に本店を置き、関係会社を持たず単体で事業を行っています。2026年３月31日現在の従業員数は490人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "美容室で施術と商品販売を提供",
+        "description": "美容室「TAYA」「Shampoo」「MICHEL DERVYN」「ano」のブランドで全国展開し、国家資格を有する美容師がカット、パーマ、カラー等の施術を提供し、お客様に合ったヘアケア商品を販売しています。当事業年度末の店舗数は61店舗です。"
+      },
+      {
+        "kind": "customer",
+        "title": "美容室の来店客が顧客",
+        "description": "美容室に来店する個人のお客様が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年３月期の売上高は5,075百万円",
+        "description": "2026年３月期の売上高は5,075百万円で、前期から6.8％減りました。取扱区分別では美容施術が4,494百万円、商品が471百万円、その他が109百万円です。店舗の閉鎖や既存店への入客の低調が減収の要因です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年３月期の当期純損失は160百万円",
+        "description": "2026年３月期の当期純損失は160百万円で、前期の当期純損失62百万円から損失が拡大しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +131,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1415648000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 875,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +153,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 610738000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 719,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +175,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 451918000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 597,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +197,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 416658000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 527,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,17 +219,98 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 798943000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 490,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1975,
+      "title": "株式会社ビューティショップ田谷を設立",
+      "description": "美容室経営を目的として、株式会社ビューティショップ田谷を設立しました。",
+      "significance": "現在の田谷の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "商号を株式会社田谷に変更",
+      "description": "有限会社田谷哲哉美容室及び有限会社田谷の営業を譲り受け、商号を株式会社田谷に変更しました。あわせて神奈川県に進出し、TAYA青葉台店を開設しました。",
+      "significance": "現在の社名とチェーン展開の基礎となった年です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "日本証券業協会に株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部へ株式を上場しました。同年には愛知県に進出しています。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部へ株式を上場しました。",
+      "significance": "市場第一部への昇格です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場へ移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "創業者の田谷哲哉が逝去",
+      "description": "創業者の田谷哲哉が逝去しました。",
+      "significance": "創業者時代の終わりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "フリーランス美容室「ano」を開設",
+      "description": "神奈川県横浜市にフリーランス美容室ano たまプラーザを開設しました。",
+      "significance": "フリーランス美容師向けブランドの出店開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -134,13 +319,51 @@
       "publisher": "株式会社　田　谷",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YFEW.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YFEW",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 【事業等のリスク】の「継続企業の前提に関する重要事象等」において、継続企業の前提に重要な疑義を生じさせるような事象又は状況が存在している旨が記載されています（同社は、増資による資金調達により資金を確保し、取引金融機関からの支援を受けており、継続企業の前提に関する重要な不確実性は認められないと判断しています）。継続企業の前提に関する記載の取扱いには人の確認が必要です。",
+      "businessStructure: 【事業等のリスク】の「継続企業の前提に関する重要事象等」において、継続企業の前提に重要な疑義を生じさせるような事象又は状況が存在している旨が記載されています（同社は、増資による資金調達により資金を確保し、取引金融機関からの支援を受けており、継続企業の前提に関する重要な不確実性は認められないと判断しています）。継続企業の前提に関する記載の取扱いには人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2027年３月期以降は「ビューティブランドプラットフォームへの進化」をテーマに掲げ、美容室チェーンからビューティブランドプラットフォーム企業への進化を目指すとしています。成長戦略として人材戦略とDX戦略を進め、拡大戦略として中小美容室チェーンや特化型サロンへのプラットフォーム提供などに取り組み、当期純利益の黒字化を目指すとしています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "美容師の教育機能を自社の強みと位置づけており、技術・接客教育システムの再構築やSNSによる集客教育を通じて、指名を多く獲得できる美容師の育成を進めていることが特徴です。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、当社の強みである教育機能を活かし技術・接客教育システムの再構築を進める旨と、SNSによる集客のための教育を強化し指名を多く獲得できる美容師を育成する旨が印字されているため。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "美容業界では美容室の店舗過剰による競争の激化、人口減少による客数の減少、美容師の獲得難が続いており、同社は全国61店舗の美容室を展開しています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の経営環境に、美容室のオーバーストア状態による過当競争、人口減少社会による客数の減少、美容師の獲得難が印字され、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に当事業年度末の美容室店舗数は61店舗と印字されているため。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,180 @@
   "name": "チタン工業",
   "officialName": "チタン工業株式会社",
   "nameEn": "Titan Kogyo, Ltd.",
-  "description": null,
+  "shortNameEn": "Titan Kogyo, Ltd.",
+  "description": "酸化チタンと酸化鉄を製造・販売する化学メーカーで、化粧品向けの超微粒子酸化チタンや電池材料のチタン酸リチウムも手がけています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "titanium-oxide",
+      "name": "酸化チタン関連事業",
+      "description": "酸化チタン、超微粒子酸化チタン及びチタン酸リチウム等の製造及び販売を行う事業です。2026年3月期の外部顧客への売上高は4,981百万円でした。チタン酸リチウムは連結子会社の株式会社ＴＢＭが製造及び販売を行っています。",
+      "customers": [
+        "化粧品・塗料・トナー・電池材料等のメーカー",
+        "商社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "titanium-dioxide",
+          "name": "酸化チタン",
+          "description": "事業の中心となる製品であり、塗料や化粧品など幅広い用途に販売されています。金額は独立して開示されていません。",
+          "customers": [
+            "化粧品・塗料等のメーカー",
+            "商社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ultrafine-titanium-oxide",
+          "name": "超微粒子酸化チタン",
+          "description": "高付加価値品として位置づけられる超微粒子化した酸化チタンであり、化粧品向け製品の拡販が進められています。金額は独立して開示されていません。",
+          "customers": [
+            "化粧品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "lithium-titanate",
+          "name": "チタン酸リチウム",
+          "description": "電池材料であるチタン酸リチウムであり、連結子会社の株式会社ＴＢＭ（当社51％出資）が製造及び販売を行い、株式会社東芝との合弁事業として運営されています。金額は独立して開示されていません。",
+          "customers": [
+            "電池材料メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "iron-oxide",
+      "name": "酸化鉄関連事業",
+      "description": "酸化鉄等の製造及び販売を行う事業です。2026年3月期の外部顧客への売上高は3,156百万円でした。ブレーキパッド向け製品の新規採用や化粧品向け製品の出荷が増えた一方、トナー向け製品の出荷は減少しました。",
+      "customers": [
+        "ブレーキパッド・トナー・化粧品等のメーカー",
+        "商社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "iron-oxide-products",
+          "name": "酸化鉄",
+          "description": "事業の中心となる製品であり、ブレーキパッドや化粧品、トナーなどに使われています。金額は独立して開示されていません。",
+          "customers": [
+            "ブレーキパッド・トナー・化粧品等のメーカー",
+            "商社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "magnetic-iron-oxide",
+          "name": "磁性酸化鉄",
+          "description": "磁性を持つ酸化鉄であり、1969年から販売されています。金額は独立して開示されていません。",
+          "customers": [
+            "トナー等のメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない区分であり、副産物等の販売と、連結子会社のＴＫサービス株式会社による当社の場内物流業務等を含みます。2026年3月期の外部顧客への売上高は1百万円でした。",
+      "customers": [
+        "当社（場内物流の委託）"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "山口県宇部市の工場で酸化チタンや酸化鉄を製造し、化粧品・塗料・トナーなどのメーカーや商社に販売して対価を得る事業モデルです。",
+    "products": [
+      "酸化チタン",
+      "超微粒子酸化チタン",
+      "チタン酸リチウム",
+      "酸化鉄",
+      "磁性酸化鉄",
+      "副産物"
+    ],
+    "customers": [
+      "化粧品メーカー",
+      "塗料メーカー",
+      "トナーメーカー",
+      "電池材料メーカー",
+      "商社"
+    ],
+    "revenueSources": [
+      "酸化チタン関連製品の販売代金",
+      "酸化鉄関連製品の販売代金",
+      "副産物等の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "山口県宇部市に本拠を置く3社のグループ",
+        "description": "チタン工業は山口県宇部市に本社と工場を置き、連結子会社2社（株式会社ＴＢＭ、ＴＫサービス株式会社）とあわせた3社でグループを構成しています。2026年3月31日現在の連結従業員数は272人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "酸化チタンと酸化鉄の2事業",
+        "description": "酸化チタンや超微粒子酸化チタン、チタン酸リチウムを扱う酸化チタン関連事業と、酸化鉄や磁性酸化鉄を扱う酸化鉄関連事業を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "化粧品・トナーなどのメーカーと商社",
+        "description": "顧客は化粧品や塗料、トナー、電池材料などのメーカーで、商社を通じた販売も行っています。主要な販売先として森下産業株式会社、稲畑産業株式会社、株式会社東芝、岩瀬コスファ株式会社が公表されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は8,139百万円",
+        "description": "2026年3月期の売上高は8,139百万円で、前期比4.4％増でした。酸化チタン関連事業が4,981百万円、酸化鉄関連事業が3,156百万円を占めています。化粧品向け製品の出荷増加や販売価格の値上げが増収につながりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は202百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は202百万円で、前期比1.1％増でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +192,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6737000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 335,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +212,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7099000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 320,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +232,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5495000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 304,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +252,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5652000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 288,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +272,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5862000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 272,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +280,159 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1936,
+      "title": "酸化チタンの国産化を目的に創立",
+      "description": "酸化チタンの国産化を目的として会社が創立されました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1938,
+      "title": "宇部工場が完成",
+      "description": "山口県宇部市に宇部工場が完成しました。同年、日本硫酸株式会社を合併しました。",
+      "significance": "現在も続く宇部市の生産拠点の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1945,
+      "title": "被爆により操業を中止",
+      "description": "被爆により操業を中止しました。",
+      "significance": "事業が中断した時期の出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "宇部工場の復旧工事が完成し稼働を再開",
+      "description": "宇部工場の復旧工事が完成し、同年10月に稼働を再開しました。",
+      "significance": "生産再開の転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第二部に株式を上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場企業となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "酸化鉄工場が完成",
+      "description": "酸化鉄工場が完成しました。",
+      "significance": "現在の第2の事業である酸化鉄事業の生産基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "磁性酸化鉄の販売を開始",
+      "description": "磁性酸化鉄の販売を開始しました。",
+      "significance": "酸化鉄製品の用途を広げた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場第一部に指定されました。",
+      "significance": "市場第一部の会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "中国に合弁会社の山東三盛鈦工業有限公司を設立",
+      "description": "中国山東省に、山東東佳集団有限公司及び三井物産株式会社と合弁で山東三盛鈦工業有限公司を設立しました。",
+      "significance": "海外の関連会社を持った出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "連結子会社のＴＫサービス株式会社を設立",
+      "description": "ＴＫサービス株式会社を設立しました。同社は現在、当社の場内物流業務等を行う連結子会社です。",
+      "significance": "グループ会社の体制が整った出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "チタン酸リチウム事業を株式会社ＴＢＭに承継し東芝と合弁事業を開始",
+      "description": "株式会社ＴＢＭを設立し、会社分割によりチタン酸リチウム事業を同社に承継しました。同年、株式会社東芝とチタン酸リチウムの合弁事業を開始しました。",
+      "significance": "電池材料事業を分社化し、合弁で運営する体制にした出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "市場再編に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所のプライム市場からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "山東三盛鈦工業有限公司を持分法適用の範囲から除外",
+      "description": "山東三盛鈦工業有限公司の出資持分の一部を譲渡したことに伴い、同社を持分法適用の範囲から除外しました。",
+      "significance": "中国の関連会社との資本関係が変わった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "inabata-and-co",
+      "relationship": "customer",
+      "description": "当社の主要な代理店・販売先であり、2026年3月期の販売実績では同社向けの販売が総販売実績の17.1％を占めています。2026年3月31日現在、同社は発行済株式（自己株式を除く）の4.96％を保有する大株主でもあり、当社も取引関係の維持・強化を目的として同社株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +440,47 @@
       "publisher": "チタン工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGE8.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YGE8",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念として「顧客本位」「効率経営」「社会貢献」を掲げ、「変革」「信頼」「迅速」を行動指針としています。第７次中期経営計画（2024年度から2026年度）では、「化粧品向け製品の拡販と収益性の向上」「リスク耐性の強化」「持続可能な社会への貢献」を基本方針とし、コロナ禍で世界的に縮小した化粧品市場の中で独自の地位を確保してシェアの獲得を目指すとともに、コスト削減や経営資源の効率化に取り組む方針です。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "同社の強みは、粒子形状制御技術、微粒子化技術、複合化技術、表面処理技術、分散技術、不純物低減技術という6つのコア技術を生かした技術力と、顧客目線のきめ細かい迅速な対応力にあります。化粧品向け専用工場の供給力や、自社販売と商社との連携で築いた国内及び海外の販売網、化粧品関連をはじめとする各種法規制への対応力も強みとして挙げられています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】における「当社の強み」（技術力・販売網・生産力・品質保証力）の記載に基づく。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "同社は酸化チタン関連事業が連結売上高の約6割を占める構成です。2026年3月期の販売実績では、森下産業株式会社向けが19.8％、稲畑産業株式会社向けが17.1％、株式会社東芝向けが16.4％、岩瀬コスファ株式会社向けが10.7％を占め、上位の販売先への集中が見られます。化粧品向け製品を成長の軸とし、主戦場を日本、東アジア、北米、欧州としています。",
+        "basis": "セグメント情報の外部顧客への売上高と、販売実績における主な相手先別の割合の記載に基づく。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

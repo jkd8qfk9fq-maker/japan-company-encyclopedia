@@ -4,15 +4,163 @@
   "name": "note",
   "officialName": "note株式会社",
   "nameEn": "note inc.",
-  "description": null,
+  "shortNameEn": "note inc.",
+  "description": "クリエイターがコンテンツを投稿・販売できるCtoCメディアプラットフォーム「note」を運営する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "media",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "media-platform",
+      "name": "メディアプラットフォーム事業",
+      "description": "CtoCメディアプラットフォーム「note」の運営、法人向け情報発信メディアSaaS「note pro」の運営、企業協賛型コンテストを中心とした法人向けサービスを行う事業です。2025年11月期の売上高は4,079百万円です。2025年11月30日現在の従業員数は157人です。当社と連結子会社のnote AI creative株式会社が担い、note AI creativeはAI関連のメディアプラットフォームシステムや創作支援ツールの開発を行っています。",
+      "products": [
+        "note",
+        "note pro",
+        "法人向けサービス（企業協賛型コンテスト）"
+      ],
+      "customers": [
+        "コンテンツを投稿・販売するクリエイター",
+        "コンテンツを購読する読者",
+        "情報発信を行う企業・法人"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "note-service",
+          "name": "note",
+          "description": "クリエイターが文章やマンガ、写真、音声、動画等のコンテンツを自由に投稿・販売でき、読者はそのコンテンツを楽しんで応援・購読できるCtoCメディアプラットフォームです。ランキングや広告を置かない設計に特徴があります。2025年11月期の売上高は3,304百万円です。",
+          "products": [
+            "note",
+            "noteプレミアム",
+            "メンバーシップ",
+            "定期購読マガジン"
+          ],
+          "customers": [
+            "コンテンツを投稿・販売するクリエイター",
+            "コンテンツを購読する読者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "note-pro",
+          "name": "note pro",
+          "description": "「note」の基盤を活用し、企業が自社サイトとして情報を発信できる機能を拡充したメディアSaaSです。月額80,000円（税別）のサブスクリプションモデルで、オプション機能の月額利用料も収益源です。2025年11月期の売上高は659百万円で、2025年11月末時点の有料契約数は991社です。",
+          "products": [
+            "note pro"
+          ],
+          "customers": [
+            "情報発信を行う企業・法人"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "corporate-services",
+          "name": "法人向けサービス",
+          "description": "「note」上で企業協賛型のコンテスト（コラボコンテスト、コラボテーマ）を企画・開催し、企業から協賛金を得るサービスです。2025年11月期の売上高は88百万円です。",
+          "products": [
+            "コラボコンテスト",
+            "コラボテーマ"
+          ],
+          "customers": [
+            "コンテストを協賛する企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "ip-content-creation",
+      "name": "IP・コンテンツクリエーション事業",
+      "description": "連結子会社のTales & Co.株式会社が、クリエイターの企画や作品のエージェント、コンテンツ制作・販売、外部企業からの企画・コンテンツ制作受託を行う事業です。2025年11月期の外部顧客への売上高は61百万円です。2025年11月30日現在の従業員数は1人です。",
+      "products": [
+        "クリエイターの企画・作品のエージェント",
+        "コンテンツの制作・販売",
+        "企画・コンテンツ制作の受託"
+      ],
+      "customers": [
+        "クリエイター",
+        "メディア・コンテンツ企業",
+        "コンテンツの読者・視聴者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "CtoCメディアプラットフォーム「note」で有料コンテンツ販売のサービス利用料を得るほか、法人向けメディアSaaS「note pro」を月額課金で提供する事業モデルです。",
+    "products": [
+      "note",
+      "note pro",
+      "企業協賛型コンテスト等の法人向けサービス",
+      "IP・コンテンツクリエーション"
+    ],
+    "customers": [
+      "コンテンツを投稿・販売するクリエイター",
+      "コンテンツを読む・購読する読者",
+      "情報発信を行う企業・法人"
+    ],
+    "revenueSources": [
+      "有料コンテンツ等の販売に係るサービス利用料（事務手数料とプラットフォーム利用料）",
+      "「note pro」の月額利用料とオプション利用料",
+      "法人向けサービスの協賛金",
+      "コンテンツの販売・制作受託の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京・千代田区に本社を置くメディアプラットフォームの会社",
+        "description": "noteは東京都千代田区麹町に本社を置きます。2025年11月30日現在の連結従業員数は158人です。2022年12月に東京証券取引所グロース市場へ上場しました。"
+      },
+      {
+        "kind": "offering",
+        "title": "「note」と「note pro」を中心に提供",
+        "description": "クリエイターが文章やマンガ、写真、音声、動画等のコンテンツを投稿・販売できるCtoCメディアプラットフォーム「note」と、企業の情報発信を支援するメディアSaaS「note pro」を提供しています。連結子会社のTales & Co.では、クリエイターのエージェントやコンテンツ制作も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "クリエイターと読者、情報発信を行う企業が利用",
+        "description": "顧客は、コンテンツを投稿・販売する個人・法人のクリエイターと、その読者です。2025年11月末時点で会員登録者数は11,147千人、法人アカウントは６万件超となっています。「note pro」の有料契約数は991社です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年11月期の売上高は4,141百万円で、前期比25.0％増加しました。メディアプラットフォーム事業が4,079百万円、IP・コンテンツクリエーション事業が61百万円です。サービス別では「note」が3,304百万円、「note pro」が659百万円、法人向けサービスが88百万円、その他が27百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2025年11月期の親会社株主に帰属する当期純利益は440百万円で、前期の98百万円から増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2024年11月期",
@@ -27,12 +175,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1722164000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 151,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "第13期より連結財務諸表を作成しているため、それ以前の期間については記載しておりません。"
     },
     {
       "fiscalYear": "2025年11月期",
@@ -47,7 +196,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2878649000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 158,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -55,8 +204,237 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2011,
+      "title": "株式会社ピースオブケイクを設立",
+      "description": "東京都渋谷区渋谷において、クリエイターが創作したデジタルコンテンツを配信するプラットフォームの開発・運営を目的として、株式会社ピースオブケイクを設立しました。",
+      "significance": "会社の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "コンテンツ配信サイト「cakes」を開始",
+      "description": "クリエイターと読者をつなぐコンテンツ配信サイト「cakes」を開始しました（2022年８月にサービス終了）。",
+      "significance": "創業初期の事業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "CtoCメディアプラットフォーム「note」を開始",
+      "description": "CtoC×課金の仕組みでクリエイターをエンパワーメントする、CtoCメディアプラットフォーム「note」を開始しました。",
+      "significance": "現在の主力事業の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "「スマート新書」レーベルを開始",
+      "description": "スマートフォンサイズの新書シリーズ「スマート新書」レーベルを開始しました。",
+      "significance": "出版領域への展開です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "noteクリエイター支援プログラムを開始",
+      "description": "「note」のクリエイターをメディアパートナーに紹介する、noteクリエイター支援プログラムを開始しました。",
+      "significance": "クリエイターの活動機会を広げる仕組みです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "株式会社日本経済新聞社と資本業務提携",
+      "description": "株式会社日本経済新聞社と資本業務提携を締結しました。",
+      "significance": "メディアパートナーとの資本提携です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "メディアSaaS「note pro」を開始",
+      "description": "企業の情報発信を簡単にし、続けやすくするメディアSaaS「note pro」を開始しました。",
+      "significance": "法人向け事業の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "UUUM株式会社と資本業務提携",
+      "description": "UUUM株式会社と資本業務提携を締結しました。",
+      "significance": "クリエイター領域の提携です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "株式会社テレビ東京ホールディングスと資本業務提携",
+      "description": "株式会社テレビ東京ホールディングスと資本業務提携を締結しました。",
+      "significance": "メディアパートナーとの資本提携です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "note株式会社に社名を変更",
+      "description": "株式会社ピースオブケイクから、note株式会社に社名を変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "イベントスペース「note place」を開設",
+      "description": "東京都渋谷区神宮前にイベントスペース「note place」を開設しました。",
+      "significance": "オフラインの交流拠点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場に上場",
+      "description": "東京証券取引所グロース市場に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "本社を東京都千代田区麹町に移転",
+      "description": "本社を東京都千代田区麹町に移転しました。",
+      "significance": "現在の本社所在地です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "note AI creative株式会社を設立",
+      "description": "note AI creative株式会社を設立しました（現・連結子会社）。",
+      "significance": "AI関連の開発子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "Tales & Co.株式会社を設立",
+      "description": "Tales & Co.株式会社を設立しました（現・連結子会社）。",
+      "significance": "IP・コンテンツクリエーション事業の担い手です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "Google International LLCと資本業務提携",
+      "description": "Google International LLCと資本業務提携を締結し、同社を割当先とする第三者割当増資を実施しました。",
+      "significance": "AI領域の連携強化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "「noteマネー」を開始",
+      "description": "投資家の知恵が集まるサイト「noteマネー」を開始しました。",
+      "significance": "新しい領域のサイトです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "物語投稿サイト「TALES」を開始",
+      "description": "物語投稿サイト「TALES」を開始しました。",
+      "significance": "IP創出の場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "NAVER Corporationと資本業務提携",
+      "description": "NAVER Corporationと資本業務提携を締結しました。",
+      "significance": "グローバルなコンテンツ・IP連携の提携です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "NAVER Corporationを割当先とする第三者割当増資を実施",
+      "description": "NAVER Corporationを割当先とする第三者割当増資を2025年12月に実施しました。",
+      "significance": "資本業務提携の実行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tv-tokyo-holdings",
+      "relationship": "major-shareholder",
+      "description": "2019年８月に資本業務提携を締結したメディアパートナーで、「note」のクリエイター支援プログラムの連携先です。2025年11月30日現在、発行済株式（自己株式を除く）の1.63％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "iid",
+      "relationship": "major-shareholder",
+      "description": "大株主の１社です。2025年11月30日現在、発行済株式（自己株式を除く）の1.66％を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "coconala",
+      "relationship": "business-partner",
+      "description": "当社が特定投資株式として株式を保有する相手です。保有目的は「プラットフォームビジネスにおける情報連携」と印字されており、取引・協業関係の構築を目的とする政策保有株式として、当事業年度に2,190,000株を取得しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -64,13 +442,51 @@
       "publisher": "note株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XMWX.pdf",
       "publishedAt": "2026-02-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XMWX",
+      "asOf": "2025-11-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2025年11月５日にNAVER Corporationと資本業務提携契約を締結し、2025年12月１日（当連結会計年度終了後）に同社を割当先とする第三者割当増資の払込が完了しました（重要な後発事象に記載）。登録は2025年11月30日現在の構造で行っており、期末時点の株主構成にはNAVER Corporationは含まれていません。",
+      "businessStructure: 2025年11月５日にNAVER Corporationと資本業務提携契約を締結し、2025年12月１日（当連結会計年度終了後）に同社を割当先とする第三者割当増資の払込が完了しました（重要な後発事象に記載）。登録は2025年11月30日現在の構造で行っており、期末時点の株主構成にはNAVER Corporationは含まれていません。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「だれもが創作をはじめ、続けられるようにする」というミッションのもと、「note」を中心としたプラットフォームの拡大を続けながら、AI領域およびIP領域での事業展開を通じて、noteエコシステムの拡張と提供価値の向上を目指す方針です。2026年11月期は、多言語対応によるグローバル展開の開始や他社サービスとの連携強化を通じた「note」の拡大、「note pro」・法人向けサービスの強化、AI関連事業の拡大、自社IPの発掘・推進とグローバル展開によるIP関連事業の拡大、事業提携やM&Aの推進の５つのテーマに重点的に取り組むとしています。",
+        "asOf": "2026-02-25",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "クリエイターが価格を自由に設定してコンテンツを販売できる「CtoC×課金」のモデルに、ランキングや広告を置かない設計を組み合わせ、良質なコンテンツが集まりやすい環境を作っている点が競争力の源泉です。クリエイターが増えるとコンテンツが増え、コンテンツが増えると読者が集まり、さらにクリエイターが集まるネットワーク効果が働く構造になっています。生成AIへの対応でも、創作支援機能の提供や、クリエイターが学習利用への拒否意向を示せる仕組み、AI事業者へのコンテンツ提供に対する対価還元のプログラムを打ち出しています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】が、「CtoC×課金」のビジネスモデルによりクリエイターが創作に見合った対価を得られる環境を構築してきたこと、グロースモデルに沿った事業運営によりプラットフォームにネットワーク効果がはたらいていること、AIアシスタント機能の提供やクリエイターの権利保護・対価還元の仕組みづくりを通じて「生成AIに強いプラットフォーム」としての優位性を確立してきたことを述べている。【事業の内容】は、「note」はランキングがない・広告がないといった特徴があると述べている。",
+        "asOf": "2026-02-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "個人がインターネットを通じてコンテンツを発表・販売し収益を得るクリエイターエコノミーが国内で拡大するなか、テキストを中心とするコンテンツの投稿・販売プラットフォームとして、個人のクリエイターから著名人、法人、教育機関・行政機関まで幅広い利用者を集める位置にあります。法人向けには、情報発信を支援するメディアSaaS「note pro」も展開しています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】が、クリエイターエコノミーの国内市場規模は2兆円を超え、年平均約15%の成長を続けていると述べている。【事業の内容】は、著名人や様々な業種の法人、教育機関・行政機関による利用が進んでおり、法人アカウントは６万件超（2025年11月末時点）であると述べている。",
+        "asOf": "2026-02-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年11月期",
     "asOf": "2025-11-30",

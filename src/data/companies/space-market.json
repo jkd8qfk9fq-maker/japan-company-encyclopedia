@@ -4,15 +4,129 @@
   "name": "スペースマーケット",
   "officialName": "株式会社スペースマーケット",
   "nameEn": "Spacemarket,Inc.",
-  "description": null,
+  "shortNameEn": "Spacemarket,Inc.",
+  "description": "あらゆるスペースを時間単位で貸し借りできるマーケットプレイス「SPACEMARKET」を運営する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "space-market-business",
+      "name": "スペースマーケット事業",
+      "description": "あらゆるスペースを貸し借りできるマーケットプレイスの運営を中心とする単一セグメントの事業です。当社と連結子会社4社（株式会社スペースモール、株式会社クルトン、株式会社エミーナ、株式会社システリア）で構成され、2025年12月期の売上高は2,567百万円でした。",
+      "customers": [
+        "スペースを貸し出すホスト",
+        "スペースを利用するゲスト",
+        "スペースを保有する不動産オーナー",
+        "公共施設を管理する自治体"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "marketplace-service",
+          "name": "マーケットプレイスサービス",
+          "description": "あらゆるスペースを時間単位で貸し借りできるプラットフォーム「SPACEMARKET」を運営するサービスです。会議室やセミナー会場のほか、レストラン、スポーツ施設、住宅、映画館、廃校など全国47都道府県の多様なスペースが掲載され、スペース料金に応じた手数料を受け取ります。2025年12月期の売上高は1,751百万円でした。",
+          "customers": [
+            "スペースを貸し出すホスト",
+            "スペースを利用するゲスト"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "rental-space-total-produce",
+          "name": "レンタルスペーストータルプロデュースサービス",
+          "description": "不動産オーナー等が保有するスペースの活用を総合的に支援するサービスです。スペースの企画開発（内装整備や掲載作業の支援）と、予約対応や清掃などをオーナーに代わって行うスペース運営代行から構成され、連結子会社が担っています。2025年12月期の売上高は678百万円でした。",
+          "customers": [
+            "スペースを保有する不動産オーナー"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-services",
+          "name": "その他",
+          "description": "公共施設予約管理システム「Spacepad」の提供などを含む区分です。自治体等の施設予約や決済、鍵の受け渡しといった管理業務のデジタル化を支援します。2025年12月期の売上高は137百万円でした。",
+          "customers": [
+            "公共施設を管理する自治体"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "スペースを貸したいホストと借りたいゲストを結ぶプラットフォームを運営し、スペース料金に応じた手数料で収益を得る事業モデルです。",
+    "products": [
+      "スペース貸し借りマーケットプレイス「SPACEMARKET」",
+      "レンタルスペーストータルプロデュースサービス（スペース企画開発・運営代行）",
+      "公共施設予約管理システム「Spacepad」"
+    ],
+    "customers": [
+      "スペースを貸し出すホスト（不動産オーナーや店舗など）",
+      "スペースを利用するゲスト",
+      "公共施設を管理する自治体"
+    ],
+    "revenueSources": [
+      "スペース料金に対するホスト手数料とゲスト手数料",
+      "スペース運営代行手数料と企画開発の初期費用",
+      "公共施設予約管理システムの利用料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京都渋谷区に本社を置くグループ",
+        "description": "スペースマーケットは東京都渋谷区に本社を置き、連結子会社4社とグループを構成しています。2025年12月31日現在の従業員数は73人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "スペースの貸し借りプラットフォームを提供",
+        "description": "あらゆるスペースを時間単位で貸し借りできるマーケットプレイス「SPACEMARKET」を運営し、スペースの企画開発と運営代行、公共施設予約管理システム「Spacepad」の提供も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "ホストとゲスト、オーナーと自治体が顧客",
+        "description": "マーケットプレイスはスペースを貸すホストと借りるゲストが利用し、運営代行はスペースを保有する不動産オーナー、Spacepadは公共施設を管理する自治体が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2025年12月期の売上高は2,567百万円",
+        "description": "2025年12月期の売上高は2,567百万円で、前期から30.3％増えました。マーケットプレイスサービスが1,751百万円、レンタルスペーストータルプロデュースサービスが678百万円、その他が137百万円です。利用スペース数の拡大と、2025年4月に子会社化した3社の取り込みが増収の理由です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は214百万円",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は214百万円で、前期から17.8％増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +141,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 800714000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 69,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +161,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 698345000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 72,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年３月31日）等を第９期の期首から適用しており、第９期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 551926000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 59,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +202,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 762698000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 64,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +222,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1007538000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 73,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +230,128 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2014,
+      "title": "東京都中野区に設立",
+      "description": "東京都中野区に当社を設立しました。",
+      "significance": "創業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "「SPACEMARKET」の運営を開始",
+      "description": "遊休不動産等のスペースを貸し借りできるマーケットプレイス「SPACEMARKET」の運営を開始しました。",
+      "significance": "現在の主力事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "グッドデザイン賞を受賞",
+      "description": "「SPACEMARKET」のiOS版アプリが2015年度グッドデザイン賞を受賞しました。",
+      "significance": "サービスの使いやすさが外部から評価されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "シェアリングエコノミー協会を設立",
+      "description": "当社を含む6社共同で、シェアリングエコノミーの普及活動を目的とした一般社団法人シェアリングエコノミー協会を設立し、代表取締役社長重松大輔が共同代表理事に就任しました。",
+      "significance": "業界団体を通じた市場づくりへの関与の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "本社を東京都渋谷区に移転",
+      "description": "本社を東京都渋谷区に移転しました。",
+      "significance": "現在の本社所在地への移転です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社スペースモールを子会社化",
+      "description": "株式会社スペースモールの発行済株式を100％取得し、子会社化しました。",
+      "significance": "スペースの企画・運営代行を行う会社がグループに入りました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、マザーズ市場からグロース市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "「Spacepad」をリリース",
+      "description": "公共施設予約管理システム「Spacepad」をリリースしました。",
+      "significance": "自治体向けサービスの開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "クルトン、エミーナ、システリアを子会社化",
+      "description": "株式会社クルトン、株式会社エミーナ、株式会社システリアの発行済株式を100％取得し、子会社化しました。",
+      "significance": "レンタルスペースの企画開発と運営の機能をグループ内に取り込みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tkp",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】にその他の関係会社として記載され、2025年12月31日現在、当社の議決権の21.08％を保有されています。空間再生流通事業を営んでいます。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "tokyo-tatemono",
+      "relationship": "major-shareholder",
+      "description": "2025年12月31日現在、当社株式の1.41％を保有する大株主の事業会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +359,51 @@
       "publisher": "株式会社スペースマーケット",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XUYI.pdf",
       "publishedAt": "2026-03-27",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XUYI",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 期間後の出来事として、2026年３月26日開催の第12回定時株主総会において定款の一部変更が決議され、事業年度を毎年10月１日から翌年９月30日まで（決算期は毎年９月30日）に変更することが決まっています。決算期変更の経過期間となる第13期は2026年１月１日から2026年９月30日までの９ヵ月決算となります。登録は2025年12月31日現在の12月決算の構成で行っており、決算期変更の反映には人の確認が必要です。",
+      "businessStructure: 期間後の出来事として、2026年３月26日開催の第12回定時株主総会において定款の一部変更が決議され、事業年度を毎年10月１日から翌年９月30日まで（決算期は毎年９月30日）に変更することが決まっています。決算期変更の経過期間となる第13期は2026年１月１日から2026年９月30日までの９ヵ月決算となります。登録は2025年12月31日現在の12月決算の構成で行っており、決算期変更の反映には人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「スペースシェアをあたりまえに」をミッションに掲げ、中期的にはお客様へ届けた価値の合計である全社総取扱高の成長を実現し、その大部分を占めるGMVの成長をドライバーと位置づけています。既存のマーケットプレイスでは、スペースシェアの先行者としての掲載数とノウハウを生かし、ホストへのアプローチを強化してプラットフォームの成長を推進するとしています。",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "ホストが貸し出すスペースが蓄積するほどゲストの利用が増え、ゲストの利用が増えるほど新たなホストが集まるネットワーク外部性が働く構造を持ち、スペースシェアの先行者として業界有数の掲載数を蓄積していることが強みです。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、ホストにより貸し出されるスペース数が蓄積することによりゲストの利用が増加し、集客力の高まったプラットフォームに更に新規のホストが登録するというネットワーク外部性が働く構造が印字され、【事業の内容】に、賠償責任を補償する保険サービスや相互評価システムなど安全・安心の仕組みが印字されているため。",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "シェアリングエコノミー市場が拡大する中で、場所のシェアリングの代表的な事業者となることを目指して事業を展開し、公共施設の予約管理でも自治体の課題解決に取り組んでいます。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、シェアリングエコノミー経済規模が成長を続けている調査結果と、当社グループが場所のシェアリングの代表的な事業者となることを目指して事業を展開してきた旨、自治体の人手不足を背景にSpacepadを提供している旨が印字されているため。",
+        "asOf": "2026-03-27",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",
