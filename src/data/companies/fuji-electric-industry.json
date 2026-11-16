@@ -4,15 +4,131 @@
   "name": "不二電機工業",
   "officialName": "不二電機工業株式会社",
   "nameEn": "FUJI ELECTRIC INDUSTRY CO., LTD.",
-  "description": null,
+  "shortNameEn": "Fuji Electric Industry Co., Ltd.",
+  "description": "重電機器や鉄道車両などに使われる端子台やスイッチ、表示灯といった電気制御機器を製造し販売する専業メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "electrical-control-equipment",
+      "name": "電気制御機器の製造加工及び販売事業",
+      "description": "制御用開閉器、接続機器、表示灯・表示器及び電子応用機器など各種制御機器を製造し販売する単一の事業です。当社はグループを構成する関係会社はなく、この事業が売上高の90％超を占めるためセグメント別の記載を省略しています。2026年1月期の売上高は3,777百万円です。",
+      "customers": [
+        "重電機器メーカー、電鉄・車両メーカー、一般産業分野の機器メーカー"
+      ],
+      "children": [
+        {
+          "id": "connection-devices",
+          "name": "接続機器",
+          "description": "端子台、高耐圧端子台、断路端子台、コンデンサ内蔵端子台、コネクタ、コネクタ端子台、試験用端子、大電流接触子を扱う製品分類です。2026年1月期の売上高は1,713百万円で、製品分類の中で最大です。",
+          "customers": [
+            "重電機器メーカーなどの機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "control-switches",
+          "name": "制御用開閉器",
+          "description": "カムスイッチ、補助スイッチ、鉄道車両用スイッチ、押しボタン・車掌スイッチ、ドラムスイッチ、遮断端子台を扱う製品分類です。2026年1月期の売上高は1,032百万円です。",
+          "customers": [
+            "重電機器メーカー、電鉄・車両メーカーなどの機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "electronic-applied-devices",
+          "name": "電子応用機器",
+          "description": "アナンシェータリレー、ボルテージリレー、インターフェイスユニット、テレフォンリレーを扱う製品分類です。2026年1月期の売上高は524百万円です。",
+          "customers": [
+            "重電機器メーカーなどの機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "indicator-lights-and-displays",
+          "name": "表示灯・表示器",
+          "description": "ＬＥＤ表示灯・集合表示灯、電磁式表示器、落下式故障表示器、鉄道車両用表示灯を扱う製品分類です。2026年1月期の売上高は469百万円です。",
+          "customers": [
+            "重電機器メーカー、電鉄・車両メーカーなどの機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社の工場で制御用開閉器、接続機器、表示灯・表示器、電子応用機器を製造し、重電機器メーカーや鉄道車両メーカーなどに販売して対価を得る事業モデルです。",
+    "products": [
+      "端子台、高耐圧端子台、断路端子台、コンデンサ内蔵端子台、コネクタ、試験用端子、大電流接触子",
+      "カムスイッチ、補助スイッチ、鉄道車両用スイッチ、押しボタン・車掌スイッチ、ドラムスイッチ",
+      "アナンシェータリレー、ボルテージリレー、インターフェイスユニット、テレフォンリレー",
+      "ＬＥＤ表示灯・集合表示灯、電磁式表示器、落下式故障表示器、鉄道車両用表示灯"
+    ],
+    "customers": [
+      "重電機器メーカー",
+      "電鉄・車両メーカー",
+      "一般産業分野の機器メーカー"
+    ],
+    "revenueSources": [
+      "電気制御機器の販売対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "不二電機工業",
+        "description": "1958年に設立された電気制御機器の専業メーカーで、本社は京都市中京区にあります。2026年1月31日現在の従業員数は114人で、関係会社はありません。"
+      },
+      {
+        "kind": "offering",
+        "title": "4つの製品分類の制御機器",
+        "description": "草津製作所、新旭工場、みなみ草津工場で、制御用開閉器、接続機器、表示灯・表示器、電子応用機器の4つの製品分類の制御機器を製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "重電機器・電鉄車両・一般産業のメーカー",
+        "description": "顧客は国内の重電機器、一般産業、電鉄・車両業界のメーカーで、海外ではアジアや中東各国へも販売しています。売上高の10％以上を占める相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売対価",
+        "description": "2026年1月期の売上高は3,777百万円で、前期と比べて3.8％減りました。製品分類別では接続機器が1,713百万円、制御用開閉器が1,032百万円、電子応用機器が524百万円、表示灯・表示器が469百万円、その他が38百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年1月期の当期純利益は236百万円で、前期と比べて1.9％減りました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年1月期",
@@ -27,11 +143,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10286741000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 131,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +165,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10167593000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 120,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +187,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10446949000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 114,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +209,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10373310000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 109,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,17 +231,158 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10441219000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 114,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1958,
+      "title": "会社の設立",
+      "description": "制御機器の製造及び販売を目的として京都市左京区に設立し、工場を京都市中京区に新設しました。",
+      "significance": "電気制御機器の専業メーカーとしての創業です。資本金の金額は書いていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "集合表示灯の開発",
+      "description": "組合せ方式による集合表示灯を開発しました。",
+      "significance": "表示灯・表示器分野の自社開発製品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "草津製作所の開設",
+      "description": "滋賀県草津市に草津製作所を開設し、本社工場を統合して操業を開始しました。",
+      "significance": "現在の主力拠点である草津製作所の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "組合せ式端子台の開発",
+      "description": "変性ＰＰＥ樹脂製の組合せ式端子台を開発しました。",
+      "significance": "現在の最大の製品分類である接続機器の基礎となる開発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "電磁式ＬＥＤ表示器の開発",
+      "description": "電磁式ＬＥＤ表示器を開発しました。",
+      "significance": "表示器の電子化に対応した開発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "新旭工場の開設",
+      "description": "滋賀県高島市新旭町に新旭工場を開設して操業を開始し、鉄道車両用切替スイッチの製造、販売を開始しました。",
+      "significance": "接続機器の製造拠点の新設と、鉄道車両分野への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "株式の店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "ISO9001認証の取得",
+      "description": "草津製作所及び新旭工場においてISO9001の認証を取得しました。",
+      "significance": "品質マネジメント体制の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所への上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "東京証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "みなみ草津工場の竣工",
+      "description": "滋賀県草津市にみなみ草津工場を竣工しました。",
+      "significance": "制御用開閉器の製造拠点の新設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "米国向け製品の現地生産開始と市場第一部銘柄への指定",
+      "description": "米国向け鉄道車両用扉開閉表示灯の現地生産を開始し、東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "海外生産の開始と市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "SemiCon Switchシリーズの発売",
+      "description": "SemiCon Switchシリーズの製造、販売を開始しました。",
+      "significance": "半導体製造装置分野向けの製品展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場に移行しました。",
+      "significance": "市場区分の再編に伴う移行で、現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -134,13 +391,53 @@
       "publisher": "不二電機工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XZWO.pdf",
       "publishedAt": "2026-04-21",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XZWO",
+      "asOf": "2026-01-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期目標に向けた経営計画「新STEP50」を策定し、2027年1月期までの3カ年をそのフェーズ1として、重点市場である「重電機器市場の深耕」、「鉄道車両市場の開拓」、「海外市場の開拓」に加え、「利益拡大への取り組み強化」、「働きがいのある職場環境の整備」、「サステナブルへの取り組み推進」を重点項目としています。",
+        "asOf": "2026-04-21",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "重点市場として掲げる重電機器と鉄道車両は、製品分類別の売上でも接続機器と制御用開閉器が中心であり、経営方針と現在の売上構成が重なっています。当期はアジアや中東を重点に営業活動を行ったとされ、海外市場の開拓も既に実行段階にあることが読み取れます。",
+        "basis": "経営方針に重点市場として重電機器市場の深耕、鉄道車両市場の開拓、海外市場の開拓が印字されていることと、製品分類別の販売実績で接続機器と制御用開閉器が売上の中心であること、経営成績の分析にアジアや中東を重点に営業活動を行った旨が印字されていること。",
+        "asOf": "2026-04-21",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "電気制御機器の専業メーカーとして、自ら創意工夫して技術力を高め、ユーザーとともに切磋琢磨し、社会のトレンドやユーザーニーズに対応した最良の製品を提供する“共創共生”の関係を、時代を生き抜くキーワードと考えているとしています。研究開発では営業及び技術の緊密な連携体制により、ユーザーニーズにあった高品質の新製品をスピーディーに開発し提供する方針です。",
+        "asOf": "2026-04-21",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "1958年の設立以来、集合表示灯や組合せ式端子台など自社開発製品を積み重ね、鉄道車両用スイッチや扉開閉表示灯のように用途に特化した製品を継続して開発してきた経緯があり、専業メーカーとしての製品開発の蓄積が読み取れます。",
+        "basis": "沿革に1959年の組合せ方式による集合表示灯の開発、1969年の変性ＰＰＥ樹脂製組合せ式端子台の開発、鉄道車両用製品の継続的な開発が印字されていることと、研究開発活動に製品分類ごとの当期の開発成果が印字されていること。",
+        "asOf": "2026-04-21",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年1月期",
     "asOf": "2026-01-31",

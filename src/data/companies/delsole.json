@@ -4,15 +4,156 @@
   "name": "デルソーレ",
   "officialName": "株式会社デルソーレ",
   "nameEn": "Delsole Corporation",
-  "description": null,
+  "shortNameEn": "Delsole Corporation",
+  "description": "ピザやナンなどの「世界のパン」を製造・販売し、鯛焼きなどのテイクアウト店やレストランも運営する食品会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "food",
+      "name": "食品事業",
+      "description": "ピザおよびエスニックブレッド製品等の製造と販売を行う事業です。2026年3月期の外部顧客への売上高は11,579百万円でした。多摩工場（東京都稲城市）、千葉工場（千葉県成田市）、九州工場（福岡県古賀市）で製造しています。",
+      "customers": [
+        "食品卸売業者",
+        "食品スーパー・生活協同組合",
+        "外食事業者",
+        "惣菜メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "pizza",
+          "name": "ピザ製品",
+          "description": "冷凍ピザを中心とするピザ製品です。創業以来の主力製品で、家庭用には高級冷凍ピザ「HOKKAIDO PIZZA」や「THE PIZZA」も販売しています。金額は独立して開示されていません。",
+          "customers": [
+            "食品スーパー・生活協同組合",
+            "外食事業者",
+            "宅配ピザチェーン"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ethnic-bread",
+          "name": "エスニックブレッド製品",
+          "description": "ナン、ピタパン、フォカッチャ、トルティーヤなど世界各国のパンの製品群で、「世界のパン」と総称しています。スーパー・コンビニ向けの惣菜メーカーなどにも販売しています。金額は独立して開示されていません。",
+          "customers": [
+            "食品スーパー・生活協同組合",
+            "惣菜メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "restaurant",
+      "name": "外食事業",
+      "description": "レストラン店舗、食物販及び宅配を経営する事業です。2026年3月期の外部顧客への売上高は3,041百万円でした。2026年3月31日現在、外食店舗は42店舗です。",
+      "customers": [
+        "店舗を利用する一般消費者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "takeout",
+          "name": "テイクアウト業態",
+          "description": "高級串焼・鶏惣菜と、鯛焼きの「おめで鯛焼き本舗」のテイクアウト業態で、直営店とフランチャイズで展開しています。金額は独立して開示されていません。",
+          "customers": [
+            "店舗を利用する一般消費者",
+            "フランチャイズ加盟店"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "restaurant-stores",
+          "name": "レストラン店舗",
+          "description": "北海道八雲町の「ハーベスター八雲」などのレストラン店舗を運営しています。金額は独立して開示されていません。",
+          "customers": [
+            "店舗を利用する一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社工場で製造するピザやエスニックブレッドを食品卸やスーパー、外食事業者などに販売し、自社のレストランやテイクアウト店舗での飲食の提供でも収益を得ています。",
+    "products": [
+      "冷凍ピザ",
+      "エスニックブレッド（ナン・ピタ・トルティーヤ・フォカッチャなど）",
+      "高級冷凍ピザ「HOKKAIDO PIZZA」",
+      "鯛焼き"
+    ],
+    "customers": [
+      "食品卸売業者",
+      "食品スーパー・生活協同組合",
+      "外食事業者",
+      "惣菜メーカー",
+      "店舗を利用する一般消費者"
+    ],
+    "revenueSources": [
+      "ピザやエスニックブレッドなどの食品の販売",
+      "レストランやテイクアウト店舗での飲食・食物販の提供とフランチャイズ"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "デルソーレ",
+        "description": "1964年に創業し、東京証券取引所スタンダード市場に上場する会社です。本社は東京都江東区にあり、2026年3月31日現在で従業員数は241名です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ピザと世界のパン、テイクアウトとレストラン",
+        "description": "多摩・千葉・九州の工場でピザやナン、ピタ、トルティーヤなどの「世界のパン」を製造し、鯛焼きのテイクアウト店やレストランも運営しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "食品卸・小売と外食事業者、一般消費者",
+        "description": "食品事業では食品卸やスーパー、生協、外食事業者などが取引先で、外食事業では店舗を利用する一般消費者が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は14,620百万円で、前期と比べて5.1％減少しました。千葉工場の火災による一部製品の休売の影響によります。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は212百万円でした。前期は当期純損失422百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +168,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5966622000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 294,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +190,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6081804000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 262,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +212,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6632146000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 247,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +234,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6120096000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 250,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +256,209 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6230219000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 241,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1964,
+      "title": "会社を設立し、冷凍ピザの輸入販売を開始",
+      "description": "株式会社ジェー アンド シーカンパニーを設立し、米国より冷凍ピザを輸入して販売を開始しました。",
+      "significance": "当社の創業です。日本におけるピザのパイオニアと位置づけられています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "ピザの自社製造を開始",
+      "description": "東京都目黒区に工場を建設し、ピザの自社製造を開始しました。",
+      "significance": "輸入販売から自社製造への転換です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "九州工場を建設し、ピザの全国販売を開始",
+      "description": "福岡県粕屋郡古賀町に量産工場（現九州工場）を建設し、ピザの全国販売を開始しました。",
+      "significance": "全国展開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "商号を株式会社ジェーシー・フーズに変更",
+      "description": "商号を「株式会社ジェーシー・フーズ」に変更しました。目黒の工場は同月に閉鎖しました。",
+      "significance": "社名の変遷の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "東京工場（成田工場）を建設",
+      "description": "千葉県成田市に東京工場（成田工場）を建設し、最新の自動機械の導入によりピザの量産体制を確立しました。",
+      "significance": "量産体制の確立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "三菱商事との合弁会社ジェー・シー・シーを設立",
+      "description": "神奈川県川崎市高津区に、チーズの加工製造を目的とした三菱商事株式会社との合弁会社、株式会社ジェー・シー・シーを設立しました。あわせて、ピザの大手宅配チェーンへの食材供給を開始しました。",
+      "significance": "チーズ加工への展開と、宅配チェーン向け食材供給の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "「ハーベスター八雲」を開場",
+      "description": "北海道二海郡八雲町に「ハーベスター八雲」を開場しました。",
+      "significance": "外食事業の起点の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "千葉工場を建設し操業開始",
+      "description": "千葉県香取郡大栄町に千葉工場を建設し、操業を開始しました。",
+      "significance": "現在の主力工場の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "日本証券業協会に店頭登録",
+      "description": "日本証券業協会に店頭登録銘柄として登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "デルソーレブランドの販売を開始",
+      "description": "デルソーレブランドの販売を開始しました。",
+      "significance": "現在の社名につながるブランドの開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "多摩工場を建設",
+      "description": "東京都稲城市に多摩工場を建設し、ピザ・エスニックブレッドの大量生産が可能なライン体制を確立しました。",
+      "significance": "エスニックブレッドの量産体制の確立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "商号を株式会社ジェーシー・フーズネットに変更",
+      "description": "商号を「株式会社ジェーシー・フーズネット」に変更しました。",
+      "significance": "社名の変遷の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "コムサネットと合併し株式会社ジェーシー・コムサを設立",
+      "description": "株式会社ジェーシー・フーズネットと株式会社コムサネットが合併し、「株式会社ジェーシー・コムサ」を設立しました。本社を東京都渋谷区恵比寿に移転しました。",
+      "significance": "外食事業を取り込む経営統合です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "ジャスダック証券取引所に上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "インドネシア・ジャカルタに合弁会社を設立",
+      "description": "インドネシア・ジャカルタにPT Indofood Comsa Sukses Makmurを設立しました。",
+      "significance": "海外展開の出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "商号を株式会社デルソーレに変更",
+      "description": "ブランド名と社名を統一して商号を「株式会社デルソーレ」に変更するとともに、本社を東京都江東区有明に移転しました。",
+      "significance": "現在の社名と本社所在地になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "「八雲ピザ工房」を新設し「HOKKAIDO PIZZA」を発売",
+      "description": "北海道「ハーベスター八雲」隣接地に「八雲ピザ工房」を新設しました。創立60年を記念して、デルソーレ史上最高級の冷凍ピザ「HOKKAIDO PIZZA」4種を発売しました。",
+      "significance": "高付加価値商品の展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsuuroko-group-holdings",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式（自己株式を除く）の3.37％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +466,47 @@
       "publisher": "株式会社デルソーレ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC0N.pdf",
       "publishedAt": "2026-06-16",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YC0N",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年3月期から2027年3月期までの「中期経営計画2026」を策定し、経営理念である「食と食の文化を通じてお客様に満足と幸せを提供する」ことを一貫して追い求め、「食の安全・安心」を第一に掲げて、「“おいしい”で世界をつなぐ」をミッションに、業績の向上と財務体質の改善を図り、経営基盤の強化に取り組むとしています。優先的に対処すべき課題として、品質管理体制の充実、食品事業での生産力の活用と販路拡大、外食事業でのテイクアウト業態の強化とフランチャイズの拡大、海外事業の育成、DXとAIの活用による効率化を挙げています。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "多摩工場と千葉工場でFSSC22000、九州工場でISO22000の認証を取得し、HACCPを取り入れた食品安全管理を行っています。ピザとエスニックブレッドの多彩な生産ラインを持ち、業務用と家庭用の両方の販路に製品を供給しています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、多摩工場および千葉工場でFSSC22000、九州工場でISO22000の認証を取得し、HACCPシステムを取り入れた食品安全マネジメントを行っていることと、当社の強みである多彩な生産ラインが完全稼働していることが印字されていること。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "日本におけるピザのパイオニアとして1964年に創業し、ピザとエスニックブレッドの製造販売を中核としながら、外食・中食事業まで手がける「トータルフードサービス」へと成長してきました。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、「日本におけるピザのパイオニアとして1964年に創業しました」と印字され、ナン・ピタ・トルティーヤなど世界のパンの製造、チーズ加工、外食・中食事業を展開して「トータルフードサービス」へと成長してきたことが印字されていること。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,18 +4,142 @@
   "name": "富士ピー・エス",
   "officialName": "株式会社富士ピー・エス",
   "nameEn": "FUJI P.S CORPORATION",
-  "description": null,
+  "shortNameEn": "FUJI P.S CORPORATION",
+  "description": "福岡市に本店を置き、PC（プレストレストコンクリート）技術を用いた土木・建築工事の請負とPC製品の製造・販売を行う建設会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "fse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "fuji-p-s",
+      "name": "株式会社富士ピー・エス",
+      "description": "福岡市中央区に本店を置き、PC（プレストレストコンクリート）技術を用いた建設業を主な事業とする会社です。当社と子会社３社、その他の関係会社１社でグループを構成し、2026年３月期の連結従業員数は491人です。東京証券取引所スタンダード市場と福岡証券取引所に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "civil-engineering",
+          "name": "土木事業",
+          "description": "PC技術を用いた土木工事の請負、企画、設計、施工監理と、PC土木製品の製造・販売を行うセグメントです。2026年３月期の外部顧客への売上高は23,053百万円です。橋梁などの大型工事が中心で、連結子会社の駿河技建株式会社がコンクリート構造物の診断と補修・補強を担います。",
+          "customers": [
+            "官公庁（国土交通省・地方自治体）",
+            "高速道路会社",
+            "民間企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】",
+          "children": [
+            {
+              "id": "suruga-giken",
+              "name": "駿河技建株式会社",
+              "description": "静岡県静岡市に本社を置く連結子会社で、橋梁などのコンクリート構造物の診断と補修・補強を行います。",
+              "customers": [
+                "官公庁",
+                "高速道路会社",
+                "民間企業"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            }
+          ]
+        },
+        {
+          "id": "building",
+          "name": "建築事業",
+          "description": "PC技術を用いた建築工事の請負、企画、設計、施工監理と、PC建築製品の製造・販売を行うセグメントです。2026年３月期の外部顧客への売上高は9,084百万円です。マンション向けのプレキャスト製品や耐震補強工事などを手がけます。",
+          "customers": [
+            "民間企業",
+            "官公庁"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other",
+          "name": "その他",
+          "description": "報告セグメントに含まれない事業で、不動産の賃貸・管理、海外事業、建設資機材のリースなどを行います。2026年３月期の外部顧客への売上高は92百万円です。従来は報告セグメントだった不動産賃貸事業は、当期からこの区分に含まれています。",
+          "customers": [
+            "不動産の賃借人",
+            "建設会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "PC技術を用いた土木・建築工事の請負、企画、設計、施工監理と、工場で製造するPC製品の販売により収益を得ています。",
+    "products": [
+      "PC土木製品（橋梁用プレキャスト製品・PC床版など）",
+      "PC建築製品（プレキャスト部材）",
+      "土木工事の請負・設計・施工監理",
+      "建築工事の請負・設計・施工監理",
+      "コンクリート構造物の診断・補修・補強"
+    ],
+    "customers": [
+      "官公庁（国土交通省・地方自治体）",
+      "高速道路会社",
+      "民間企業"
+    ],
+    "revenueSources": [
+      "土木工事・建築工事の請負代金",
+      "PC製品の販売代金",
+      "不動産賃貸料・建設資機材のリース料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "富士ピー・エスグループ",
+        "description": "当社と子会社３社、その他の関係会社１社で構成される、PC技術を用いた建設業を主な事業とするグループです。2026年３月期の連結従業員数は491人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "PC技術による土木・建築事業",
+        "description": "PC技術を用いた土木・建築工事の請負、企画、設計、施工監理と、全国の自社工場でのPC製品の製造・販売を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "官公庁・高速道路会社・民間企業",
+        "description": "国土交通省などの官公庁や地方自治体、中日本高速道路株式会社・西日本高速道路株式会社などの高速道路会社、民間企業が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年３月期の連結売上高は32,230百万円で、建築事業の売上高が過去最高額だった前期の反動減により、前期比4.6％の減収となりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は993百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -30,7 +154,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9830000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 485,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,7 +174,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9928000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 500,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -70,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10407000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 484,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12308000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 493,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,30 +234,221 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13143000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 491,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "当連結会計年度より、従来報告セグメントとして開示していた「不動産賃貸事業」は、量的な重要性が低下したため、報告セグメントから除外し、「その他」に含めて開示する方法に変更した。前連結会計年度のセグメント情報は、変更後の報告セグメントの区分に基づき作成されている。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1954,
+      "title": "九州鋼弦コンクリートとして設立",
+      "description": "九州地区のPC（プレストレストコンクリート）事業の先駆けとして、福岡市に九州鋼弦コンクリート株式会社の商号で設立しました。同年、福岡県内に工場を設置し、PC製品の製造を開始しました。",
+      "significance": "当社の創業であり、PC技術を中核とする事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "富士ピー・エス・コンクリートに社名変更",
+      "description": "社名を富士ピー・エス・コンクリート株式会社に変更しました。",
+      "significance": "現在の社名につながる改称です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式会社富士ピー・エスに社名変更",
+      "description": "社名を株式会社富士ピー・エスに変更しました。",
+      "significance": "現在の商号となった改称です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "福岡証券取引所に上場",
+      "description": "福岡証券取引所に株式を上場しました。",
+      "significance": "株式公開の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所（現・東京証券取引所）市場第二部に株式を上場しました。あわせて、メンテナンス市場への参画のため株式会社富士メンテを設立しています。",
+      "significance": "全国市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "決算期日を３月31日に変更",
+      "description": "決算期日を９月30日から３月31日に変更しました。",
+      "significance": "現在の３月決算の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "ミャンマーに子会社を設立",
+      "description": "ミャンマー連邦共和国のインフラ整備事業への参入を図るため、同国に Myanmar Fuji P.S Construction Company Limited（現・非連結子会社）を設立しました。",
+      "significance": "海外事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場の第一部に指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "駿河技建の全株式を取得",
+      "description": "駿河技建株式会社の全株式を取得し、連結子会社としました。",
+      "significance": "現在の土木事業における診断・補修補強の中核子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場となった移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "九州小竹工場の大規模改修工事が完了",
+      "description": "九州小竹工場の生産体制の強化や就業環境の改善を目的として2021年に開始した大規模改修工事が完了しました。",
+      "significance": "生産設備のリニューアルの節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "taiheiyo-cement",
+      "relationship": "other-affiliated-company",
+      "description": "関係会社の状況で「その他の関係会社」に区分される会社で、2026年３月31日現在、当社の議決権の18.06％を保有しています。当社は土木事業・建築事業のいずれにおいても、同社の製品であるセメント等を購入しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "daiho",
+      "relationship": "business-partner",
+      "description": "2025年６月に、当社と主力分野の異なる同社との間で、将来的な企業価値の向上を目指す施策の一環として業務提携を行いました。経営成績等の分析では、この業務提携を具体的な収益へつなげる段階を加速させるとしています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    },
+    {
+      "companyId": "nishi-nippon-railroad",
+      "relationship": "customer",
+      "description": "当社が保有する特定投資株式の保有目的に「主にまくらぎの販売先」と印字された販売先で、取引関係の維持・発展のため、当社が同社の株式22,007株を保有しています（2026年３月31日現在）。同社は当社の株式773千株（発行済株式（自己株式を除く。）の総数に対する割合4.29％）を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sumitomo-electric-industries",
+      "relationship": "major-shareholder",
+      "description": "当社の株式2,383千株（発行済株式（自己株式を除く。）の総数に対する割合13.23％）を保有する大株主です（2026年３月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第74期(2025/04/01－2026/03/31)",
+      "title": "有価証券報告書－第74期（2025年4月1日－2026年3月31日）",
       "publisher": "株式会社富士ピー・エス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YG4M.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YG4M",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "第５次中期経営計画「VISION2030」の中間年にあたり、「新たな成長戦略に向けた経営リソース（人材、技術・生産設備、財務）の拡充」をメインテーマとして、収益性の向上や財務体質の健全化、既存工場のリニューアルによる労働環境の改善と生産性の向上、DXの推進、子会社を核としたメンテナンス事業の拡大などに取り組む方針を示しています。2025年６月に業務提携を行った大豊建設株式会社との提携については、具体的な収益へつなげる段階を加速させるとしています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      },
+      "analysis": {
+        "text": "収益の柱は土木事業で、2026年３月期の外部顧客への売上高23,053百万円は連結売上高の７割強を占めます。建築事業がこれに次ぐ規模で、不動産賃貸などを含む「その他」は92百万円と小規模です。",
+        "basis": "セグメント情報における外部顧客への売上高、関連情報（主要な顧客ごとの情報）及び経営成績等の分析における事業別の説明に基づきます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "PC（プレストレストコンクリート）技術をコア技術とし、九州・三重・滋賀・関東・東北・いわきの自社工場でPC製品を製造する体制を持ちます。連結子会社の駿河技建株式会社によるコンクリート構造物の診断・補修・補強とあわせ、新設工事から維持補修までを担える体制です。",
+        "basis": "事業の内容、主要な設備の状況及びセグメント情報に基づきます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "高速道路の大規模更新や防災・減災、国土強靱化関連の公共工事を主な市場とする、福岡を地盤とするPC専門の建設会社です。2026年３月期の主要な顧客向け売上高は、中日本高速道路株式会社向けが5,456百万円、西日本高速道路株式会社向けが3,785百万円です。",
+        "basis": "セグメント情報の関連情報（主要な顧客ごとの情報）、事業の内容及び経営成績等の分析における業界動向の説明に基づきます。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

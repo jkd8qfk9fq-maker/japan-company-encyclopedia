@@ -4,15 +4,255 @@
   "name": "エキサイトホールディングス",
   "officialName": "エキサイトホールディングス株式会社",
   "nameEn": "Excite Holdings Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Excite Holdings Co., Ltd.",
+  "description": "オンライン診療やインターネット接続、カウンセリングなどのサービスを連結子会社を通じて提供する純粋持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    },
+    {
+      "industryId": "telecommunications",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "broadband",
+      "name": "ブロードバンド事業",
+      "description": "エキサイト株式会社がインターネット接続サービス「BBエキサイト」等のISPサービスと、格安SIM「エキサイトモバイル」等のMVNOサービスを提供する事業です。提携電気通信事業者からアクセス回線の提供を受けてサービスを提供しています。2026年３月期の外部顧客への売上高は3,613百万円で、４事業の中で最大です。",
+      "children": [
+        {
+          "id": "isp",
+          "name": "ISPサービス",
+          "description": "「BBエキサイト」などのインターネット接続サービスです。10ギガ光回線の課金会員数は順調に増加していますが、既存サービスの課金会員数は伸び悩んでいます。",
+          "customers": [
+            "インターネット接続を利用する個人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "mvno",
+          "name": "MVNOサービス",
+          "description": "格安SIM「エキサイトモバイル」などのMVNOサービスです。",
+          "customers": [
+            "格安SIMを利用する個人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "customers": [
+        "インターネット接続や格安SIMを利用する個人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "platform",
+      "name": "プラットフォーム事業",
+      "description": "エキサイト株式会社が「エキサイト電話占い」や「エキサイトお悩み相談室」等のカウンセリングサービスと、「ウーマンエキサイト」や「エキサイトニュース」等のメディアサービスを提供し、M&A BASE株式会社がM&Aアドバイザリー及び仲介サービスを行う事業です。2026年３月期の外部顧客への売上高は3,396百万円です。",
+      "children": [
+        {
+          "id": "counseling",
+          "name": "カウンセリングサービス",
+          "description": "「エキサイト電話占い」や「エキサイトお悩み相談室」などのカウンセリングサービスです。当連結会計年度は堅調に推移しました。",
+          "customers": [
+            "電話占いや悩み相談を利用する個人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "media",
+          "name": "メディアサービス",
+          "description": "ポータルサイト「エキサイト」、「ウーマンエキサイト」、「エキサイトニュース」などのメディアサービスです。当連結会計年度は広告単価の下落の影響を受けました。",
+          "customers": [
+            "メディアを閲覧する個人",
+            "広告を出稿する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ma-advisory",
+          "name": "M&Aアドバイザリー・仲介サービス",
+          "description": "M&A BASE株式会社が行うM&Aアドバイザリー及び仲介サービスです。M&A BASEサーチファンド１号投資事業有限責任組合もこの事業に含まれます。",
+          "customers": [
+            "M&Aの仲介を依頼する企業や事業承継を考える経営者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "customers": [
+        "カウンセリングやメディアを利用する個人",
+        "M&Aの仲介を依頼する企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "medical",
+      "name": "メディカル事業",
+      "description": "ONE MEDICAL株式会社とエキサイト株式会社がオンライン診療サービスを提供する事業です。ONE MEDICAL株式会社のオンライン診療と、エキサイト株式会社のマウスピース歯科矯正サービス「EMININAL」が含まれます。当連結会計年度より、プラットフォーム事業に含めていたオンライン診療等のメディカルサービスを分離し、新設の報告セグメントとしました。当連結会計年度は診療科目が拡大し、2026年３月期の外部顧客への売上高は2,873百万円と大きく増えました。主要な顧客として一般社団法人徳志会が印字されています。",
+      "children": [
+        {
+          "id": "online-medical",
+          "name": "オンライン診療サービス",
+          "description": "ONE MEDICAL株式会社が提供するオンライン診療サービスです。当連結会計年度は診療科目が拡大し、積極的なプロモーションを行いました。",
+          "customers": [
+            "オンライン診療を利用する患者",
+            "一般社団法人徳志会"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "emininal",
+          "name": "EMININAL",
+          "description": "エキサイト株式会社が提供するマウスピース歯科矯正サービス「EMININAL」です。",
+          "customers": [
+            "歯科矯正を希望する個人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "customers": [
+        "オンライン診療を利用する患者",
+        "一般社団法人徳志会"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "saas-dx",
+      "name": "SaaS・DX事業",
+      "description": "エキサイト株式会社のウェビナープラットフォーム「FanGrowth」やSharely株式会社の株主総会総合支援サービス「Sharely」等のSaaS事業と、iXIT株式会社のシステム開発・運用等のDX事業からなる事業です。経営管理クラウド「KUROTEN」も含まれます。2026年３月期の外部顧客への売上高は913百万円です。",
+      "children": [
+        {
+          "id": "saas",
+          "name": "SaaS事業",
+          "description": "ウェビナープラットフォーム「FanGrowth」、株主総会総合支援サービス「Sharely」、経営管理クラウド「KUROTEN」などのSaaS事業です。当連結会計年度は順調に成長しました。",
+          "customers": [
+            "ウェビナーを開催する企業",
+            "株主総会の支援を利用する上場企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "dx",
+          "name": "DX事業",
+          "description": "iXIT株式会社が行うシステム開発・運用等のDX事業です。当連結会計年度は減収となりました。iXIT株式会社は2026年３月31日現在の連結子会社であり、2026年４月１日付でエキサイト株式会社に吸収合併され消滅しています。",
+          "customers": [
+            "システム開発・運用を委託する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "customers": [
+        "SaaSを利用する企業",
+        "システム開発・運用を委託する企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "純粋持株会社としてグループの戦略策定と経営管理を担い、連結子会社がオンライン診療、インターネット接続、カウンセリング、メディア、M&A仲介、SaaSなどのサービスを提供して収益を得る事業モデルです。",
+    "products": [
+      "オンライン診療サービス",
+      "マウスピース歯科矯正サービス「EMININAL」",
+      "インターネット接続サービス「BBエキサイト」",
+      "格安SIM「エキサイトモバイル」",
+      "カウンセリングサービス「エキサイト電話占い」「エキサイトお悩み相談室」",
+      "メディアサービス「ウーマンエキサイト」「エキサイトニュース」",
+      "M&Aアドバイザリー及び仲介サービス",
+      "ウェビナープラットフォーム「FanGrowth」",
+      "株主総会総合支援サービス「Sharely」"
+    ],
+    "customers": [
+      "オンライン診療を利用する患者",
+      "インターネット接続や格安SIMを利用する個人",
+      "カウンセリングやメディアを利用する個人",
+      "M&Aの仲介を依頼する企業",
+      "ウェビナー開催や株主総会支援を利用する企業"
+    ],
+    "revenueSources": [
+      "オンライン診療サービスの対価",
+      "インターネット接続・格安SIMの利用料",
+      "カウンセリングサービスの利用料",
+      "メディアサービスの広告収入",
+      "M&Aアドバイザリー・仲介の手数料",
+      "SaaS・DXサービスの利用料と受託の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "エキサイトホールディングス",
+        "description": "2018年７月にエキサイト株式会社の株式取得を目的としたSPCとしてXTech HP株式会社の商号で設立され、2020年10月に純粋持株会社へ移行して現在の商号に変更しました。連結子会社は７社で、2026年３月31日現在の従業員数は173人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "４つの事業",
+        "description": "メディカル事業、プラットフォーム事業、ブロードバンド事業、SaaS・DX事業の４事業を営んでいます。オンライン診療、ISP・格安SIM、カウンセリングやメディア、M&A仲介、ウェビナープラットフォームや株主総会支援などのサービスを、連結子会社を通じて提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "個人利用者と企業",
+        "description": "オンライン診療の患者、インターネット接続や格安SIMの利用者、カウンセリングやメディアの利用者などの個人と、M&Aの仲介を依頼する企業やSaaSを利用する企業が顧客です。メディカル事業では主要な顧客として一般社団法人徳志会が印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "サービス利用料と手数料",
+        "description": "2026年３月期の売上高は10,796百万円でした。ブロードバンド事業が3,613百万円、プラットフォーム事業が3,396百万円、メディカル事業が2,873百万円、SaaS・DX事業が913百万円です。メディカル事業で診療科目が拡大したことなどから、売上高は前期より18.8％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は253百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +267,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1511780000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 194,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +287,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2022710000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 174,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2022年12月９日付で普通株式１株につき10株の割合で株式分割を行っております。第４期の期首に当該株式分割が行われたと仮定して経営指標等を算定しております。"
     },
     {
       "fiscalYear": "2024年3月期",
@@ -67,7 +308,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3628460000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 177,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +328,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3635961000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 181,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第８期において、企業結合に係る暫定的な会計処理の確定を行っており、第７期に係る各数値については、暫定的な会計処理の確定の内容を反映させております。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +349,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3719418000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 173,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +357,268 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1997,
+      "title": "エキサイト株式会社の設立",
+      "description": "東京都港区にエキサイト株式会社が設立されました。",
+      "significance": "現在のグループの中核会社の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "ポータルサイト「エキサイト」の提供開始",
+      "description": "プラットフォーム事業において、ポータルサイト「エキサイト」の提供を開始しました。",
+      "significance": "グループの事業の出発点となったサービスです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "「エキサイトニュース」の提供開始",
+      "description": "プラットフォーム事業において、ニュースメディア「エキサイトニュース」の提供を開始しました。",
+      "significance": "メディアサービスの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "「ウーマンエキサイト」の提供開始",
+      "description": "プラットフォーム事業において、女性向け情報メディア「ウーマンエキサイト」の提供を開始しました。",
+      "significance": "女性向けメディアの基盤となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "「BBエキサイト」の提供開始",
+      "description": "ブロードバンド事業において、インターネット接続サービス「BBエキサイト」の提供を開始しました。",
+      "significance": "現在のブロードバンド事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "「エキサイトブログ」の提供開始",
+      "description": "プラットフォーム事業において、ブログサービス「エキサイトブログ」の提供を開始しました。",
+      "significance": "メディアサービスの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "エキサイト株式会社のジャスダック証券取引所への上場",
+      "description": "エキサイト株式会社がジャスダック証券取引所に株式を上場しました。",
+      "significance": "エキサイト株式会社が上場会社となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "「エキサイトお悩み相談室」の提供開始",
+      "description": "プラットフォーム事業において、カウンセリングサービス「エキサイトお悩み相談室」の提供を開始しました。",
+      "significance": "カウンセリングサービスの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "「エキサイト電話占い」の提供開始",
+      "description": "プラットフォーム事業において、電話占いサービス「エキサイト電話占い」の提供を開始しました。",
+      "significance": "カウンセリングサービスの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "「エキサイトモバイル」の提供開始",
+      "description": "ブロードバンド事業において、格安SIMサービス「エキサイトモバイル」の提供を開始しました。",
+      "significance": "MVNOサービスへの展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "XTech HP株式会社の設立",
+      "description": "エキサイト株式会社の株式取得を目的としたSPCとして、東京都中央区にXTech HP株式会社（当社）が設立されました。",
+      "significance": "現在の持株会社の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "エキサイト株式会社の子会社化",
+      "description": "当社がエキサイト株式会社の株式を取得し、子会社化しました。エキサイト株式会社は同年11月に上場を廃止しました。",
+      "significance": "現在のグループ体制の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "iXIT株式会社の子会社化",
+      "description": "DX事業への新規参入を目的として、エキサイト株式会社がiXIT株式会社の株式を取得し子会社化しました。",
+      "significance": "SaaS・DX事業への展開の契機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "純粋持株会社への移行と商号変更",
+      "description": "グループ経営の効率化を図る目的で、当社が純粋持株会社へ移行し、XTech HP株式会社からエキサイトホールディングス株式会社に商号変更しました。",
+      "significance": "現在の持株会社体制の成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "「KUROTEN」の提供開始",
+      "description": "SaaS・DX事業において、経営管理クラウド「KUROTEN（クロテン）」の提供を開始しました。",
+      "significance": "SaaS事業の展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "「EMININAL」の提供開始",
+      "description": "プラットフォーム事業において、マウスピース歯科矯正サービス「EMININAL（エミニナル）」の提供を開始しました。",
+      "significance": "現在のメディカル事業につながるサービスです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "「FanGrowth」の提供開始",
+      "description": "SaaS・DX事業において、ウェビナープラットフォーム「FanGrowth（ファングロース）」の提供を開始しました。",
+      "significance": "SaaS事業の主力サービスの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場への上場",
+      "description": "当社が東京証券取引所スタンダード市場に株式を上場しました。",
+      "significance": "当社自身の上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "M&A BASE株式会社の子会社化",
+      "description": "M&A仲介事業への新規参入を目的として、M&A BASE株式会社を子会社化しました。",
+      "significance": "プラットフォーム事業の領域拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "Sharely株式会社の子会社化",
+      "description": "SaaS事業のプロダクト拡充を目的として、Sharely株式会社を子会社化しました。",
+      "significance": "SaaS事業の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "M&A BASEサーチファンド１号投資事業有限責任組合の組成",
+      "description": "中小企業の事業承継の課題解決を目的として、M&A BASEサーチファンド１号投資事業有限責任組合を組成しました。",
+      "significance": "M&A関連事業の広がりを示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社NAPBIZの子会社化",
+      "description": "プラットフォーム事業において、メディアサービスの拡充を目的として、株式会社NAPBIZを子会社化しました。NAPBIZは2025年11月にエキサイト株式会社へ吸収合併されました。",
+      "significance": "メディアサービスの拡充と、その後のグループ内再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ONE MEDICAL株式会社の子会社化",
+      "description": "メディカル事業の拡大を目的として、ONE MEDICAL株式会社を子会社化しました。",
+      "significance": "メディカル事業の成長の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "エキサイト株式会社による株式会社NAPBIZの吸収合併",
+      "description": "2025年11月１日付で、エキサイト株式会社を存続会社、株式会社NAPBIZを消滅会社とする連結子会社間の吸収合併を実施しました。",
+      "significance": "グループ内再編の出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "united",
+      "relationship": "major-shareholder",
+      "description": "ユナイテッド株式会社は、2026年３月31日現在、当社の発行済株式（自己株式を除く）の9.94％を保有する大株主です。有報には同社との取引関係の記載はありません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "internet-initiative-japan",
+      "relationship": "supplier",
+      "description": "株式会社インターネットイニシアティブは、ブロードバンド事業における提携電気通信事業者の一つです。当社グループは同社とアクセス回線の提供に関する契約を締結し、アクセス回線の提供を受けています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業等のリスク】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +626,53 @@
       "publisher": "エキサイトホールディングス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YMC7.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YMC7",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: [object Object]",
+      "businessModel: [object Object]",
+      "businessStructure: [object Object]",
+      "businessStructure: [object Object]"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「デジタルネイティブ発想で心躍る未来を創る。」をミッションに掲げ、プラットフォーム事業とブロードバンド事業のユーザー数拡大による既存事業の成長、その収益基盤を活用したメディカル事業とSaaS・DX事業への積極投資による新たな事業の柱の構築、M&Aによる事業ポートフォリオの強化により、持続的な成長を目指しています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1997年に設立されたエキサイト株式会社を中核とし、ポータルサイト「エキサイト」以来のインターネットサービスの利用者基盤を持っています。ISPやカウンセリングなど継続的に利用されるサービスを複数持ち、子会社化による事業の取り込みを繰り返して事業領域を広げてきました。",
+        "basis": "【沿革】に、エキサイト株式会社が1997年８月に設立され、同年12月にポータルサイト「エキサイト」の提供を開始したことが印字されている。【事業の内容】に、ISPサービスやカウンセリングサービスなど継続利用されるサービスが複数あることが印字されている。【沿革】に、iXIT株式会社、M&A BASE株式会社、Sharely株式会社、ONE MEDICAL株式会社などを子会社化してきたことが印字されている。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の中心はブロードバンド事業とプラットフォーム事業ですが、2026年３月期はメディカル事業が診療科目の拡大により大きく成長し、売上高の約４分の１を占める規模になりました。メディカル事業では一般社団法人徳志会が主要な顧客として印字されています。",
+        "basis": "【セグメント情報等】に、2026年３月期の外部顧客への売上高としてブロードバンド事業3,613百万円、プラットフォーム事業3,396百万円、メディカル事業2,873百万円、SaaS・DX事業913百万円が印字され、主要な顧客ごとの情報に一般社団法人徳志会（メディカル事業）が印字されている。【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、メディカル事業で診療科目が拡大し大幅な増収となったことが印字されている。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

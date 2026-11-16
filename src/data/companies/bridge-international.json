@@ -1,18 +1,139 @@
 {
   "id": "bridge-international",
   "code": "7039",
-  "name": "ブリッジインターナショナルグループ(旧会社名ブリッジインターナショナル)",
+  "name": "ブリッジインターナショナルグループ",
   "officialName": "ブリッジインターナショナルグループ株式会社(旧会社名　ブリッジインターナショナル株式会社)",
   "nameEn": "BRIDGE International Group Corp.(旧英訳名　BRIDGE International Corp.) (注)2025年10月1日付で持株会社体制へ移行したことにともない、同日から会社名を上記のとおり変更いたしました。",
-  "description": null,
+  "shortNameEn": "BRIDGE International Group Corp.",
+  "description": "B2B企業の売上成長を支援する持株会社で、インサイドセールスの代行、営業の仕組みづくり、デジタル人材の育成研修の3事業を展開しています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "human-resources",
+      "primary": true
+    },
+    {
+      "industryId": "it",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "inside-sales-outsourcing",
+      "name": "インサイドセールスアウトソーシング事業",
+      "description": "電話やメール、オンライン会議ツールを使い、対面せずに見込み客へ営業活動を行うインサイドセールスを、月額定額の業務委託で代行する事業です。連結子会社のブリッジインターナショナル株式会社が、東京都世田谷区の同社本社を拠点に担い、既存顧客からの売上が年間売上の9割以上を占めます。2025年12月期の売上高は4,630百万円でした。",
+      "customers": [
+        "法人企業（IT企業、金融機関など）"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "training",
+      "name": "研修事業",
+      "description": "連結子会社の株式会社アイ・ラーニングが、企業向けにデジタル人材の育成研修を提供する事業です。ITスキルやICT活用スキル、ビジネススキルの研修を、公開講座やe-ラーニング、企業ごとの専用研修として提供し、企業の新入社員研修が売上の約4割を占めます。東京都中央区の本社と大阪事業所が拠点です。2025年12月期の売上高は2,381百万円でした。",
+      "customers": [
+        "法人企業（主にIT企業）"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "process-technology",
+      "name": "プロセス・テクノロジー事業",
+      "description": "連結子会社のブリッジプロセステクノロジー株式会社が、東京都世田谷区の本社を拠点に、AIなどの最新テクノロジーを活用して企業の営業・マーケティング活動の仕組みづくりを支援する事業です。2025年12月期の売上高は1,552百万円でした。",
+      "customers": [
+        "法人企業（営業・マーケティング部門）"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "consulting",
+          "name": "コンサルティングサービス",
+          "description": "企業のマーケティング部門や営業部門が抱える課題を整理して戦略を一緒に考えるほか、インサイドセールス導入時の体制づくりや業務設計を支援するサービスです。2025年12月期の売上高は127百万円でした。",
+          "customers": [
+            "法人企業（営業・マーケティング部門）"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "system-solution",
+          "name": "システムソリューション",
+          "description": "営業・マーケティング部門向けのSFAやCRMなどクラウドシステムの構築を支援するサービスで、Salesforceの導入支援に実績があります。営業活動の情報をデジタル化し、手作業を自動化するオペレーション支援も行います。2025年12月期の売上高は1,425百万円でした。",
+          "customers": [
+            "法人企業（営業・マーケティング部門）"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "電話やオンライン会議で見込み客に働きかけるインサイドセールスのアウトソーシングを中心に、営業・マーケティングの仕組みづくりとデジタル人材の育成研修を提供する事業モデルです。",
+    "products": [
+      "インサイドセールスアウトソーシングサービス",
+      "コンサルティングサービス",
+      "システムソリューション（SFA・CRM構築支援）",
+      "企業向け研修（IT・DX・ビジネススキル）"
+    ],
+    "customers": [
+      "法人企業（IT企業、金融機関など）",
+      "デジタル人材の育成に取り組む法人企業"
+    ],
+    "revenueSources": [
+      "インサイドセールスアウトソーシングの月額定額の業務委託料",
+      "コンサルティング・システム構築サービスの対価",
+      "研修の受講料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ブリッジインターナショナルグループ",
+        "description": "2002年に東京都世田谷区で設立され、2025年10月に持株会社体制へ移行してブリッジインターナショナルグループ株式会社に商号変更しました。2025年12月31日現在の連結従業員数は722人で、連結子会社3社とグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "営業支援と人材育成のサービス",
+        "description": "電話・メール・オンライン会議で見込み客に働きかけるインサイドセールスの代行のほか、営業・マーケティングの仕組みづくりを支援するコンサルティングとシステム構築、企業向けのデジタル人材育成研修を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "法人企業",
+        "description": "法人企業が取引先で、IT企業や金融機関などにサービスを提供しています。インサイドセールスアウトソーシング事業は既存顧客からの売上が9割以上を占め、売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年12月期の売上高は8,564百万円で、前期比0.6％減少しました。インサイドセールスアウトソーシング事業が4,630百万円、研修事業が2,381百万円、プロセス・テクノロジー事業が1,552百万円でした。減少の主な理由は、トータルサポート株式会社の株式譲渡により同社が連結の範囲から外れたことです。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は536百万円で、前期比19.0％減少しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +148,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2941977000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 558,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +168,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3539166000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 579,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第21期の期首から適用しており、第21期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっています。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +189,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4161810000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 618,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +209,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4396587000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 695,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +229,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4692986000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 722,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +237,148 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2002,
+      "title": "当社を設立",
+      "description": "東京都世田谷区駒沢において、法人営業の課題を解決する事業の運営を目的として当社を設立しました。",
+      "significance": "現在のブリッジインターナショナルグループの起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "ネットフォーラム株式会社を設立",
+      "description": "子会社としてネットフォーラム株式会社を設立しました。",
+      "significance": "グループ会社の第1号です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "ネットフォーラム株式会社を吸収合併",
+      "description": "ネットフォーラム株式会社を吸収合併しました。",
+      "significance": "事業を自社に集約しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "株式上場を果たしました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "ClieXito株式会社を設立",
+      "description": "マーケティングコンサルティングサービス等を運営する子会社として、ClieXito株式会社を設立しました。",
+      "significance": "現在のプロセス・テクノロジー事業の母体です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社アイ・ラーニングを連結子会社化",
+      "description": "法人・社会人向けの研修サービスを運営する株式会社アイ・ラーニングの全株式を取得し、連結子会社化しました。",
+      "significance": "研修事業を取り込みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "TK International Sdn.Bhd.と資本提携",
+      "description": "ITサービス事業を運営するマレーシアのTK International Sdn.Bhd.と資本提携を行い、業務提携を強化しました。",
+      "significance": "海外拠点との連携が始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場に移行",
+      "description": "東京証券取引所の市場再編に伴い、グロース市場に移行しました。",
+      "significance": "現在の上場市場になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "BRIDGE International Asia Sdn.Bhd.に商号変更",
+      "description": "TK International Sdn.Bhd.の株式を追加取得し、同社の商号をBRIDGE International Asia Sdn.Bhd.に変更して非連結子会社化しました。",
+      "significance": "海外事業の体制が整いました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "トータルサポート株式会社を連結子会社化",
+      "description": "ネットワークインフラ事業を運営するトータルサポート株式会社の株式を取得し、連結子会社化しました。",
+      "significance": "プロセス・テクノロジー事業の領域が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "2BC株式会社を吸収合併",
+      "description": "同年1月に非連結子会社化した2BC株式会社を吸収合併しました。",
+      "significance": "マーケティングコンサルティングの機能を取り込みました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ブリッジプロセステクノロジー株式会社に商号変更",
+      "description": "子会社のClieXito株式会社の商号をブリッジプロセステクノロジー株式会社に変更しました。",
+      "significance": "プロセス・テクノロジー事業を担う会社の現在の名称です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "持株会社体制へ移行し商号変更",
+      "description": "持株会社体制へ移行し、商号をブリッジインターナショナルグループ株式会社に変更しました。インサイドセールスアウトソーシング事業は、新設分割で設立したブリッジインターナショナル株式会社が承継しました。",
+      "significance": "現在のグループ体制と社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "トータルサポート株式会社の全株式を譲渡",
+      "description": "トータルサポート株式会社の当社保有全株式を譲渡し、連結子会社から除外しました。",
+      "significance": "グループの事業構成が見直されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +387,53 @@
       "publisher": "ブリッジインターナショナルグループ株式会社(旧会社名　ブリッジインターナショナル株式会社)",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XV70.pdf",
       "publishedAt": "2026-03-30",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XV70",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "B2B企業の売上成長に向けた改革を支援するEnd to Endのサービスを提供することを経営方針とし、対処すべき課題として、既存顧客との取引拡大と新規顧客の獲得による収益基盤の拡大、安定的な人材確保、ITネットワークの安全性確保、グループガバナンスの強化を挙げています。",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上構成はインサイドセールスアウトソーシング事業が4,630百万円と過半を占め、研修事業が2,381百万円、プロセス・テクノロジー事業が1,552百万円で、営業活動の代行を中核に、仕組みづくりと人材育成を組み合わせた構成であることが読み取れます。",
+        "basis": "セグメント情報に、2025年12月期の外部顧客への売上高としてインサイドセールスアウトソーシング事業4,630,487千円、研修事業2,381,638千円、プロセス・テクノロジー事業1,552,745千円、合計8,564,871千円が印字されていること。",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "2002年からインサイドセールスアウトソーシングを提供し、日本の営業慣行に合わせた標準モデルを確立してきたことや、インサイドセールスを担う人材が500名超在籍することを強みとして挙げています。",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【事業の内容】"
+      },
+      "analysis": {
+        "text": "インサイドセールスアウトソーシング事業は既存顧客からの売上が9割以上を占めると印字されており、月額定額の業務委託が数年にわたり継続する取引構造であることが読み取れます。",
+        "basis": "事業の内容に、サービスは月額定額で提供し、取引先との取引は数年にわたる継続がほとんどで、売上の9割以上は既存顧客が占める安定したストックビジネスであると印字されていること。",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

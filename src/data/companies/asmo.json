@@ -4,15 +4,260 @@
   "name": "アスモ",
   "officialName": "株式会社アスモ",
   "nameEn": "ASMO CORPORATION",
-  "description": null,
+  "shortNameEn": "ASMO CORPORATION",
+  "description": "高齢者介護施設向けの給食提供を主力に、介護サービス、食肉の輸入販売、香港での外食事業を展開する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    },
+    {
+      "industryId": "pharmaceuticals",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "food-service",
+      "name": "アスモフードサービス事業",
+      "description": "株式会社アスモフードサービスと株式会社アスモフードサービス東日本が、高齢者介護施設等における給食の提供を行う報告セグメントです。2026年3月期の外部顧客への売上高は9,181百万円で、最大のセグメントです。",
+      "customers": [
+        "高齢者介護施設等の運営事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "institutional-catering",
+          "name": "介護施設等への給食の提供",
+          "description": "高齢者介護施設等において、入居者向けの食事を提供します。",
+          "customers": [
+            "高齢者介護施設等の運営事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "care-service",
+      "name": "アスモ介護サービス事業",
+      "description": "株式会社アスモ介護サービスと株式会社アスモライフサービスが、訪問・居宅介護事業所の運営と有料老人ホームの運営を行う報告セグメントです。2026年3月期の外部顧客への売上高は5,341百万円です。当期末現在、訪問介護事業所32事業所、居宅介護支援事業所11事業所、有料老人ホーム７施設を運営しています。",
+      "customers": [
+        "訪問・居宅介護サービスの利用者",
+        "有料老人ホームの入居者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "home-care",
+          "name": "訪問・居宅介護事業所の運営",
+          "description": "訪問介護事業所と居宅介護支援事業所を運営します。",
+          "customers": [
+            "訪問・居宅介護サービスの利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "nursing-home",
+          "name": "有料老人ホームの運営",
+          "description": "有料老人ホームを運営します。",
+          "customers": [
+            "有料老人ホームの入居者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "trading",
+      "name": "アスモトレーディング事業",
+      "description": "株式会社アスモトレーディングが、食肉の輸入と食肉及び食肉加工品の販売を行う報告セグメントです。2026年3月期の外部顧客への売上高は4,097百万円です。",
+      "customers": [
+        "食肉の卸売先・小売事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "meat-import",
+          "name": "食肉の輸入",
+          "description": "海外から食肉を輸入します。",
+          "customers": [
+            "食肉の卸売先・小売事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "meat-sales",
+          "name": "食肉及び食肉加工品の販売",
+          "description": "食肉と食肉加工品を販売します。",
+          "customers": [
+            "食肉の卸売先・小売事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "catering-hk",
+      "name": "ASMO CATERING (HK) 事業",
+      "description": "ASMO CATERING (HK) COMPANY LIMITEDが、香港における外食店舗の運営と食品加工販売を行う報告セグメントです。2026年3月期の外部顧客への売上高は2,611百万円です。",
+      "customers": [
+        "香港の外食店舗の来店客",
+        "食品の販売先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "hk-restaurant",
+          "name": "香港における外食店舗の運営",
+          "description": "香港で外食店舗を運営します。",
+          "customers": [
+            "香港の外食店舗の来店客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "hk-food-processing",
+          "name": "食品加工販売",
+          "description": "香港で食品の加工販売を行います。",
+          "customers": [
+            "食品の販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "asmo-business",
+      "name": "アスモ事業",
+      "description": "当社自身が、グループ会社の統制・管理と不動産賃貸を行う報告セグメントです。2026年3月期の外部顧客への売上高は4百万円です。",
+      "customers": [
+        "不動産の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "group-management",
+          "name": "グループ会社の統制・管理",
+          "description": "グループ会社の統制・管理を行います。",
+          "customers": [
+            "グループ会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-estate-leasing",
+          "name": "不動産賃貸",
+          "description": "不動産の賃貸を行います。",
+          "customers": [
+            "不動産の賃借人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "介護施設等への給食の提供や介護事業所・有料老人ホームの運営、食肉の輸入販売、香港での外食店舗運営により収益を得ています。",
+    "products": [
+      "高齢者介護施設等における給食の提供",
+      "訪問・居宅介護事業所の運営",
+      "有料老人ホームの運営",
+      "食肉及び食肉加工品",
+      "香港における外食店舗の運営と食品加工販売"
+    ],
+    "customers": [
+      "高齢者介護施設等の運営事業者",
+      "訪問・居宅介護サービスの利用者",
+      "有料老人ホームの入居者",
+      "食肉の卸売先・小売事業者",
+      "香港の外食店舗の来店客"
+    ],
+    "revenueSources": [
+      "給食の提供に係る受託料",
+      "介護サービスの対価",
+      "有料老人ホームの利用料",
+      "食肉及び食肉加工品の販売代金",
+      "外食店舗の売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "アスモグループ",
+        "description": "当社と連結子会社6社、非連結子会社3社により構成され、本社は東京都新宿区にあります。2026年3月期の連結従業員数は1,436人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "給食・介護・食肉・外食の事業提供",
+        "description": "高齢者介護施設等における給食の提供、訪問・居宅介護事業所と有料老人ホームの運営、食肉の輸入と食肉加工品の販売、香港における外食店舗の運営を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "介護施設と介護サービスの利用者",
+        "description": "主な顧客は高齢者介護施設等の運営事業者や介護サービスの利用者であり、主要な顧客である株式会社ベストライフ及びそのグループ各社への売上高は連結売上高の34.6％を占めます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "給食受託料と介護対価等による売上高",
+        "description": "2026年3月期の売上高は21,236百万円で、アスモフードサービス事業が9,181百万円、アスモ介護サービス事業が5,341百万円、アスモトレーディング事業が4,097百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は465百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +272,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6226188000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1629,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +292,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6315806000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1564,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +312,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6653492000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1513,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +332,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6640874000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1492,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号 2022年10月28日。以下「2022年改正会計基準」という。）等を第50期の期首から適用しており、第49期（2024年3月期）に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっております。なお、2022年改正会計基準については第20ー3項ただし書きに定める経過的な取扱いを適用し、「税効果会計に係る会計基準の適用指針」（企業会計基準適用指針第28号 2022年10月28日）については第65-２項(2)ただし書きに定める経過的な取扱いを適用しております。この結果、第50期（2025年3月期）に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +353,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6990124000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1436,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +361,170 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1975,
+      "title": "食肉販売を目的として信和商事株式会社を設立",
+      "description": "大阪市平野区に、食肉販売を目的として信和商事株式会社を設立しました。",
+      "significance": "グループの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "株式会社シンワに商号変更",
+      "description": "株式会社シンワに商号を変更しました。",
+      "significance": "社名の転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "株式会社オックスと合併しシンワオックス株式会社に改称",
+      "description": "株式会社オックスと合併し、社名をシンワオックス株式会社に改称しました。外食店舗と堂島ホテルの運営を承継しました。",
+      "significance": "外食・ホテル事業への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "吸収分割により給食事業を承継",
+      "description": "株式会社Persons Bridgeを分割会社とする吸収分割により、給食事業を承継しました。",
+      "significance": "現在の主力である給食事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "株式会社アスモに商号変更し介護事業へ参入",
+      "description": "株式会社アスモに商号を変更し、大阪市住之江区に株式会社アスモ介護サービスを設立しました。",
+      "significance": "現在の社名と介護事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "卸売事業と給食事業を分割し子会社を設立",
+      "description": "卸売事業及び給食事業を分割し、株式会社アスモトレーディングと株式会社アスモフードサービスを設立しました。",
+      "significance": "現在のセグメント体制の基礎です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "本社を東京都新宿区へ移転",
+      "description": "本社を東京都新宿区に移転し、大阪市北区に大阪支社を設置しました。あわせてOX(H.K.)COMPANY LIMITEDからASMO CATERING (HK) COMPANY LIMITEDに社名を変更しました。",
+      "significance": "本社機能の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "ベストライフグループが親会社となり東証スタンダード市場へ移行",
+      "description": "株式会社ベストライフおよび株式会社ベストライフホールディングスが当社の親会社となりました。東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の資本構成と上場市場の確定です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "アスモフードサービスの子会社を統合",
+      "description": "連結子会社のアスモフードサービスの子会社４社のうち３社が、吸収合併によりアスモフードサービスに統合され、アスモフードサービス東日本が残りました。",
+      "significance": "給食事業の体制再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ASMO CATERING (TAIWAN) COMPANY LIMITEDを清算",
+      "description": "連結子会社であったASMO CATERING (TAIWAN) COMPANY LIMITEDを清算しました。当該事業は2025年８月１日を以って撤退しています。",
+      "significance": "海外事業の整理です。当期中に完了した事象です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第51期(2025/04/01－2026/03/31)",
+      "title": "有価証券報告書－第51期（2025年４月１日－2026年３月31日）",
       "publisher": "株式会社アスモ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIEY.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YIEY",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: [object Object]"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念として「食文化への貢献」「お客様第一主義の徹底」「積極経営」「活力のある企業風土の育成」を掲げ、超高齢化社会を迎える日本において多方面から必要とされる企業になれるよう各事業のストロングポイントを的確に見極め、それぞれの事業でシナジーを最大限に発揮すること、国内だけにとどまらず積極的に海外に進出し、人口減少時代を迎える日本において多角的な収益構造を構築し、安定した成長を目指すことを経営の基本方針としています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "介護施設向けの給食提供と介護サービスの運営を併せ持ち、給食の提供先である介護施設との取引基盤を持つこと、食肉の輸入販売から給食の提供まで食に関わる事業をグループ内で展開していることが強みです。主要な顧客である株式会社ベストライフ及びそのグループ各社への売上高は、連結売上高の34.6％を占めます。",
+        "basis": "事業の内容における事業構成の記載と、セグメント情報の関連情報における主要な顧客ごとの情報の記載に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "アスモフードサービス事業の外部顧客への売上高9,181百万円は連結売上高21,236百万円の4割強を占める最大のセグメントであり、次いでアスモ介護サービス事業が5,341百万円です。地域別の売上高は日本が18,625百万円、中国（香港）が2,611百万円です。",
+        "basis": "セグメント情報における報告セグメントごとの外部顧客への売上高と、関連情報における地域ごとの情報の記載に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

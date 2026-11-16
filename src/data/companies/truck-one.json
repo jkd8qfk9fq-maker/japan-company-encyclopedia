@@ -1,18 +1,139 @@
 {
   "id": "truck-one",
   "code": "3047",
-  "name": "TRUCK－ONE",
+  "name": "ＴＲＵＣＫ－ＯＮＥ",
   "officialName": "株式会社TRUCK－ONE",
   "nameEn": "TRUCK-ONE CO., LTD.",
-  "description": null,
+  "shortNameEn": "TRUCK-ONE CO., LTD.",
+  "description": "中古トラックなど事業用車両の買取・販売とレンタル・整備を行い、子会社で貨物輸送と燃料輸送も手がける会社です。",
   "listings": [
     {
       "exchange": "fse",
-      "market": "Q-Board"
+      "market": "Q-Board市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    },
+    {
+      "industryId": "transportation",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "commercial-vehicle",
+      "name": "商用車関連事業",
+      "description": "中古の事業用車両の買取・販売を中心に、冷蔵冷凍車を中心としたレンタル・リースと、指定工場での自動車整備を行う事業です。販売する車両は自社工場で点検・整備し、顧客の希望に合わせた仕様に変更することもできます。子会社のSUN AUTO株式会社は、海外を中心に中古の事業用車両や車両のパーツ等の輸出販売を行っています。2025年12月期の外部顧客への売上高は7,125百万円です。",
+      "customers": [
+        "事業用車両を購入・利用する事業者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "used-vehicle-sales",
+          "name": "中古事業用車両の買取・販売",
+          "description": "トラック、ダンプ、コンクリートミキサー車・冷凍車・タンク車などの特殊車両を買い取り、自社工場で点検・整備して全国8拠点で販売しています。子会社のSUN AUTO株式会社は海外を中心に輸出販売を行っています。金額は独立して開示されていません。",
+          "customers": [
+            "事業用車両を購入する事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "rental-lease",
+          "name": "レンタル・リース事業",
+          "description": "冷蔵冷凍車を中心に、ウイング車、車載車、塵芥車、アームロール車などのレンタルと、中長期で使用する顧客向けの車両のリースを行っています。金額は独立して開示されていません。",
+          "customers": [
+            "車両をレンタル・リースで利用する事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "vehicle-maintenance",
+          "name": "自動車整備事業",
+          "description": "指定工場の強みを活かし、販売車両のアフターフォローのほか、一般の顧客にも車検・整備・板金・塗装などのサービスを提供しています。金額は独立して開示されていません。",
+          "customers": [
+            "車検・整備を依頼する事業者や一般の顧客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "transport",
+      "name": "運送関連事業",
+      "description": "子会社の株式会社Ｔ.Ｌ.Ｇが一般貨物輸送を、丸進運油株式会社が燃料輸送を請け負う事業です。2025年12月期の外部顧客への売上高は848百万円です。",
+      "customers": [
+        "貨物輸送を委託する事業者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社工場で点検・整備した中古商用車を販売し、冷蔵冷凍車のレンタル・リースや車検・整備も行うほか、子会社が一般貨物輸送と燃料輸送を請け負う事業です。",
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "products": [
+      "中古事業用車両（トラック、ダンプ、冷凍車などの特殊車両）",
+      "車両のレンタル・リース",
+      "車検・整備・板金・塗装のサービス"
+    ],
+    "customers": [
+      "事業用車両を購入・利用する事業者",
+      "貨物輸送を委託する事業者"
+    ],
+    "revenueSources": [
+      "中古事業用車両の販売代金",
+      "車両のレンタル・リース料",
+      "整備・車検などのサービス代金",
+      "運送の請負代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ＴＲＵＣＫ－ＯＮＥ",
+        "description": "山口県下松市に本社を置く連結会社で、連結子会社3社とともに商用車関連事業と運送関連事業を営んでいます。2025年12月31日現在の連結従業員数は97人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "商用車の販売・レンタル・整備と運送",
+        "description": "中古事業用車両の買取・販売、冷蔵冷凍車を中心としたレンタル・リース、指定工場での自動車整備を行い、子会社が一般貨物輸送と燃料輸送を請け負っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "事業用車両の利用者と荷主",
+        "description": "事業用車両を購入・レンタル・整備する事業者と、貨物輸送を委託する事業者が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "販売代金とレンタル料と運送代金",
+        "description": "車両の販売代金、レンタル・リース料、整備代金、運送代金が収益です。2025年12月期の売上高は7,974百万円で、前期比21.8％増でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は366百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +148,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 754195000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 120,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +168,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 854784000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 115,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年３月31日）等を第33期の期首から適用しており、第33期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +189,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 967817000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 106,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +209,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1196020000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 105,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +229,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1550134000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 97,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +237,187 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1988,
+      "title": "「オガワ自販」を創業",
+      "description": "山口県徳山市（現在の周南市）で、中古商用車の販売を目的とする「オガワ自販」が創業されました。",
+      "significance": "現在のＴＲＵＣＫ－ＯＮＥの前身です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "有限会社オガワ自販を設立",
+      "description": "中古商用車販売を事業目的として、有限会社オガワ自販が設立されました。",
+      "significance": "法人としての出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "株式会社オガワ自販に組織変更",
+      "description": "有限会社から株式会社に組織変更されました。",
+      "significance": "株式会社としての体制になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "商用車のオークション販売を開始",
+      "description": "本社を山口県下松市へ移転し、商用車のオークション販売を開始しました。",
+      "significance": "販売方法の広がりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "整備事業を開始",
+      "description": "本社社屋と整備工場を新設し、整備事業を開始しました。",
+      "significance": "現在の自社工場での点検・整備の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "「トラック買取センター」として車両の買取を開始",
+      "description": "「トラック買取センター」の名称で商品車両の買取を開始し、東京事務所も開設しました。",
+      "significance": "買取事業の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "海外販売事業を開始",
+      "description": "海外への販売事業を開始しました。主要な市場はニュージーランドです。",
+      "significance": "現在の輸出販売につながる海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "株式会社ＴＲＵＣＫ－ＯＮＥに商号変更",
+      "description": "株式会社オガワ自販から株式会社ＴＲＵＣＫ－ＯＮＥに商号を変更しました。あわせて冷凍車に特化したレンタル事業も開始しています。",
+      "significance": "現在の社名になった節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "福岡証券取引所Ｑ－Ｂｏａｒｄ市場に上場",
+      "description": "福岡証券取引所のＱ－Ｂｏａｒｄ市場に上場しました。",
+      "significance": "上場の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "株式会社Ｔ.Ｌ.Ｇを連結子会社化",
+      "description": "株式会社Ｔ.Ｌ.Ｇの株式100％を取得しました。",
+      "significance": "運送関連事業を担う子会社の取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "丸進運油株式会社を連結子会社化",
+      "description": "丸進運油株式会社の株式100％を取得しました。",
+      "significance": "燃料輸送を担う子会社の取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "ＳＵＮ ＡＵＴＯ株式会社を連結子会社化",
+      "description": "SUN AUTO株式会社の株式100％を取得しました。",
+      "significance": "海外向け輸出販売を担う子会社の取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "大阪支店を開設",
+      "description": "大阪府堺市に大阪支店を開設しました。",
+      "significance": "全国8拠点体制への広がりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2025",
       "title": "有価証券報告書－第36期(2025/01/01－2025/12/31)",
-      "publisher": "株式会社TRUCK－ONE",
+      "publisher": "株式会社ＴＲＵＣＫ－ＯＮＥ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XRE0.pdf",
       "publishedAt": "2026-03-18",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XRE0",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「人と環境の調和」を理念に、再利用可能な車両・パーツを活用し、「働く車」のライフサイクルについて高品質なサービスを提供するトータルサポート企業を目指しています。中古車両の確保が難しくなる環境への対応としてレンタル・リース事業に注力し、レンタアップ・リースアップ車両を中古車市場へ送り出して販売機会の増加を図るほか、子会社のSUN AUTO株式会社の海外販売網を活かして輸出にも注力するとしています。",
+        "asOf": "2026-03-18",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "中古商用車の買取から、自社工場での点検・整備と顧客の希望に合わせた仕様変更、販売、レンタル・リース、販売後の整備までを自社グループで一貫して行える体制を持ち、全国8拠点で顧客を支えています。",
+        "basis": "【事業の内容】の商用車関連事業の記載（自社工場での点検・整備、仕様変更、全国8拠点）に基づきます。",
+        "asOf": "2026-03-18",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "国内では新車価格の上昇を背景に中古車市場の価格が上昇し、主力の商用車関連事業は国内販売を中心に販売台数が増加したとされています。一方で、新車の登録数の減少などが進めば良質な中古車両の確保が難しくなるおそれがあるともされています。",
+        "basis": "経営成績等の状況の概要と経営環境及び対処すべき課題等の記載に基づきます。",
+        "asOf": "2026-03-18",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

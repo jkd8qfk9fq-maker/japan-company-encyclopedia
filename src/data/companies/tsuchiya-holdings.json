@@ -4,18 +4,134 @@
   "name": "土屋ホールディングス",
   "officialName": "株式会社　土屋ホールディングス",
   "nameEn": "TSUCHIYA HOLDINGS CO., LTD.",
-  "description": null,
+  "shortNameEn": "TSUCHIYA HOLDINGS CO., LTD.",
+  "description": "土屋ホールディングスは、北海道を地盤に注文住宅の施工・販売やリフォーム、不動産の売買・仲介、賃貸を手がける持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "sse"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "housing",
+      "name": "住宅事業",
+      "description": "連結子会社の株式会社土屋ホームが、注文住宅・賃貸住宅等の工事の請負と施工監理、提案住宅の施工販売、住宅用地の販売を行います。2025年10月期の外部顧客への売上高は18,447百万円でした。",
+      "customers": [
+        "注文住宅・賃貸住宅を建てる個人やオーナー",
+        "提案住宅・分譲戸建住宅の購入者",
+        "住宅用地の購入者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "連結子会社の株式会社土屋ホーム不動産が分譲マンション、中古住宅、住宅用土地の売買と仲介業務を行い、株式会社土屋ホーム不動産販売が分譲住宅の施工販売を行います。2025年10月期の外部顧客への売上高は8,712百万円でした。",
+      "customers": [
+        "分譲マンション・中古住宅・住宅用土地の購入者",
+        "不動産の売却・購入の仲介を依頼する顧客"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "reform",
+      "name": "リフォーム事業",
+      "description": "連結子会社の株式会社土屋ホームトピアがリフォーム工事の請負を行います。2025年10月期の外部顧客への売上高は3,910百万円でした。",
+      "customers": [
+        "住宅のリフォームを行う住宅所有者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "rental",
+      "name": "賃貸事業",
+      "description": "当社が不動産の賃貸・管理を行い、再生可能エネルギーの電力会社への売電も行います。2025年10月期の外部顧客への売上高は386百万円でした。",
+      "customers": [
+        "賃貸不動産の入居者",
+        "電力会社"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "連結子会社４社を通じて注文住宅等の施工・販売、リフォーム工事の請負、不動産の売買・仲介、不動産賃貸を行い、工事代金や販売代金、賃料などから収益を得る会社です。",
+    "products": [
+      "注文住宅・提案住宅",
+      "分譲マンション・分譲戸建住宅",
+      "リフォーム工事",
+      "中古住宅・住宅用土地",
+      "賃貸不動産",
+      "再生可能エネルギーによる電力"
+    ],
+    "customers": [
+      "住宅を新築・購入する個人",
+      "リフォームを行う住宅所有者",
+      "不動産の売主・買主",
+      "賃貸不動産の入居者"
+    ],
+    "revenueSources": [
+      "住宅工事の請負代金と住宅の販売代金",
+      "リフォーム工事の請負代金",
+      "不動産の販売代金と仲介手数料",
+      "不動産の賃貸料と売電収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "土屋ホールディングス",
+        "description": "札幌市北区に本社を置く持株会社で、連結子会社４社とグループを構成します。2025年10月期の連結従業員数は679人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "住宅・リフォーム・不動産・賃貸",
+        "description": "子会社の株式会社土屋ホームが注文住宅や提案住宅の施工販売を、株式会社土屋ホームトピアがリフォーム工事を、株式会社土屋ホーム不動産などが不動産の売買・仲介を行い、当社が不動産賃貸を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "北海道を中心とする個人顧客など",
+        "description": "北海道を主要な地盤として、住宅を建てる・買う個人やリフォームを行う住宅所有者へ販売・施工し、不動産の仲介や賃貸も行います。売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年10月期の売上高は31,456百万円で、住宅事業が18,447百万円、不動産事業が8,712百万円、リフォーム事業が3,910百万円、賃貸事業が386百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失",
+        "description": "2025年10月期の親会社株主に帰属する当期純損失は93百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年10月期",
@@ -30,7 +146,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11945776000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 760,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,7 +166,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12093942000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 775,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -70,7 +186,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12339137000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 759,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,7 +206,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12926893000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 718,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,7 +226,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13041058000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 679,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,22 +234,176 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1976,
+      "title": "株式会社丸三土屋建設を設立",
+      "description": "札幌市南区において株式会社丸三土屋建設を設立しました。",
+      "significance": "現在の当社グループの創業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "株式会社土屋ホームトピアを設立",
+      "description": "株式会社土屋ホームトピア（現・連結子会社）を設立し、同年に株式会社丸三土屋建設から株式会社土屋ホームへ商号変更しました。",
+      "significance": "現在のリフォーム事業の子会社の設立と、土屋ホームの社名の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "東京証券取引所市場第二部と札幌証券取引所に上場",
+      "description": "東京証券取引所市場第二部と札幌証券取引所に株式を上場しました。",
+      "significance": "取引所上場の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "持株会社体制へ移行",
+      "description": "株式会社土屋ホームから株式会社土屋ホールディングスへ商号変更し、事業は株式会社新土屋ホームを改めた株式会社土屋ホームが担う持株会社体制へ移行しました。",
+      "significance": "現在の持株会社体制の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "メガソーラー発電事業を開始",
+      "description": "札幌市東区に当社グループ初となるメガソーラー「土屋ソーラーファクトリー札幌」の発電事業を開始しました。",
+      "significance": "賃貸事業における再生可能エネルギー売電の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "会社分割を実施",
+      "description": "株式会社土屋ホーム（株式会社土屋ホーム不動産へ商号変更）を分割会社、株式会社新土屋ホーム（株式会社土屋ホームへ商号変更）を承継会社とする会社分割を実施しました。",
+      "significance": "現在の事業会社の体制が整いました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社土屋ホーム不動産販売を設立",
+      "description": "株式会社土屋ホーム不動産の子会社として株式会社土屋ホーム不動産販売を設立しました。",
+      "significance": "不動産事業で分譲住宅の施工販売を担う子会社です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しに伴い、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "積水ハウス株式会社と資本業務提携契約を締結",
+      "description": "2025年１月に積水ハウス株式会社と共同建築事業「SI（エス・アイ）事業」において提携し、同年３月に資本業務提携契約を締結しました。",
+      "significance": "現在の経営戦略の大きな転換点と位置づけられています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sekisui-house",
+      "relationship": "major-shareholder",
+      "description": "積水ハウス株式会社は、2025年10月31日現在、当社株式の6.15％を保有する大株主です。2025年１月に共同建築事業「SI事業」において提携し、同年３月に資本業務提携契約を締結しました。研究・開発分野を中心に、互いの知見と技術力による相乗効果を目指す関係です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "kimura",
+      "relationship": "supplier",
+      "description": "株式会社キムラとは、特定投資株式の保有目的に継続的な取引により建設資材を安定的に調達するためと印字されています。2025年10月31日現在、同社の株式52,800株を保有しています。同社も当社株式を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
       "title": "有価証券報告書－第50期(2024/11/01－2025/10/31)",
-      "publisher": "株式会社　土屋ホールディングス",
+      "publisher": "株式会社土屋ホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XHBD.pdf",
       "publishedAt": "2026-01-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XHBD",
+      "asOf": "2025-10-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画（2026年10月期～2028年10月期）では、「北海道における住生活総合産業としてのNo.１復活と、仙台を中心とした東北エリアにおける第２の本拠地基盤構築」の基本方針を堅持しつつ、積水ハウス株式会社との資本業務提携を大きな転換点と捉え、戦略の再構築を推進するとしています。基礎と柱を直接緊結する「DJ構法」の本格展開を加速させ、東北エリアでは共同建築事業（SI-COLLABORATION）を仙台市から東北６県へ順次展開するとしています。",
+        "asOf": "2026-01-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "積雪寒冷地で磨いてきた断熱・気密技術を持ち、積水ハウス株式会社の耐震設計・構造躯体などの先進技術との融合によるコアテクノロジーの共創を進めています。DJ構法については構造計算、構造材のプレカット加工、施工を自社で担う体制を運用し、北広島工場の木材加工設備と、企業内職業訓練校「土屋アーキテクチュアカレッジ」による人材育成の基盤があります。",
+        "basis": "セグメント情報の外部顧客への売上高、【事業の内容】、【経営方針、経営環境及び対処すべき課題等】の中長期的な経営戦略、主要な設備の状況の記載に基づきます。",
+        "asOf": "2026-01-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "北海道を主要な地盤とする住生活のグループで、報告セグメントは住宅事業、リフォーム事業、不動産事業、賃貸事業の４つです。2025年10月期の外部顧客への売上高は、住宅事業が18,447百万円、不動産事業が8,712百万円、リフォーム事業が3,910百万円、賃貸事業が386百万円で、売上高の10％以上を占める特定の顧客はありません。",
+        "basis": "セグメント情報の外部顧客への売上高と【関連情報】の主要な顧客ごとの情報、経営成績等の状況の概要に基づきます。",
+        "asOf": "2026-01-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年10月期",
     "asOf": "2025-10-31",

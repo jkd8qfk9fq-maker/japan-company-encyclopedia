@@ -4,15 +4,151 @@
   "name": "オーベクス",
   "officialName": "オーベクス株式会社",
   "nameEn": "AuBEX CORPORATION",
-  "description": null,
+  "shortNameEn": "AuBEX CORPORATION",
+  "description": "筆記具や化粧品に使われるペン先と、薬液注入器などの医療機器を製造販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "pharmaceuticals"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "techno-products",
+      "name": "テクノ製品事業",
+      "description": "サインペン先とコスメチック用ペン先を製造販売する事業です。当社が製造・販売するほか、連結子会社のオーベクステクノロジーが精密研削加工を、中国の天津奥貝庫斯技研有限公司が精密研削加工と販売を担っています。2026年3月期の外部顧客への売上高は4,236百万円です。",
+      "customers": [
+        "筆記具メーカー",
+        "化粧品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "sign-pen-nibs",
+          "name": "サインペン先",
+          "description": "フェルトペン先、プラスチックペン先、アクリルペン先、繊維束ペン先など、筆記具に組み込まれるペン先です。金額は独立して開示されていません。",
+          "customers": [
+            "筆記具メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "cosmetic-pen-nibs",
+          "name": "コスメチック用ペン先",
+          "description": "化粧品のアプリケーターなどに使われるペン先です。金額は独立して開示されていません。",
+          "customers": [
+            "化粧品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "medical-products",
+      "name": "メディカル製品事業",
+      "description": "医療機器を製造販売する事業です。連結子会社のオーベクスメディカルが製造した薬液注入器やガイドワイヤーなどを当社が販売しています。なお、一部の製品は医療機器メーカーへ製造を委託しています。2026年3月期の外部顧客への売上高は1,779百万円です。",
+      "customers": [
+        "医療機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "vessel-fuser",
+          "name": "ベセルフューザー（薬液注入器）",
+          "description": "連結子会社のオーベクスメディカルが製造する加圧式の薬液注入器です。麻酔領域および化学療法領域向けの製品が高い評価を得ています。金額は独立して開示されていません。",
+          "customers": [
+            "医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "guidewire",
+          "name": "血管造影用ガイドワイヤー等",
+          "description": "血管造影などに使われるガイドワイヤーなどの医療機器です。金額は独立して開示されていません。",
+          "customers": [
+            "医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "微少な流量を制御する技術を基盤に、サインペン先・コスメチック用ペン先と医療機器を製造販売しています。",
+    "products": [
+      "サインペン先（フェルトペン先、プラスチックペン先、アクリルペン先、繊維束ペン先など）",
+      "コスメチック用ペン先",
+      "加圧式医薬品注入器「ベセルフューザー」",
+      "血管造影用ガイドワイヤー"
+    ],
+    "customers": [
+      "筆記具メーカー",
+      "化粧品メーカー",
+      "医療機関"
+    ],
+    "revenueSources": [
+      "ペン先の販売代金",
+      "医療機器の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "オーベクス",
+        "description": "1892年に製帽会社として創業した会社で、連結子会社3社とともに事業を営んでいます。2026年3月31日現在の連結従業員数は353人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ペン先と医療機器",
+        "description": "サインペン先とコスメチック用ペン先の製造販売、薬液注入器やガイドワイヤーなどの医療機器の製造販売を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "筆記具・化粧品メーカーと医療機関",
+        "description": "ペン先は筆記具メーカーや化粧品メーカーに、医療機器は医療機関などに販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高6,015百万円",
+        "description": "2026年3月期の売上高は6,015百万円で、前期から0.3％減りました。内訳はテクノ製品事業4,236百万円、メディカル製品事業1,779百万円です。アジア向けの筆記具用ペン先の売上が下期に減速しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益573百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は573百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5416476000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 364,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5833431000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 340,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6256646000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 343,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6707800000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 368,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +243,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7251699000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 353,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +251,136 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1892,
+      "title": "東京帽子株式会社を創立",
+      "description": "渋沢栄一、益田克徳、馬越恭平らにより、舶来山高帽子の国産化を目的とする日本最初の製帽会社である東京帽子株式会社を創立しました（設立登記は1893年に完了）。",
+      "significance": "オーベクスの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京証券取引所に株式を上場",
+      "description": "東京証券取引所に株式を上場しました。現在の上場市場はスタンダード市場です。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "マーキングペン用フェルトペン先の製造を開始",
+      "description": "本所工場でマーキングペン用のフェルトペン先の製造を始めました。",
+      "significance": "帽子製造で培った繊維の加工技術を応用した、現在の主力であるペン先事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "プラスチックペン先の製造を開始",
+      "description": "プラスチックペン先の製造を始めました。",
+      "significance": "ペン先の素材と製法の幅を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "オーベクス株式会社に商号を変更",
+      "description": "オーベクス株式会社に商号を変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "薬液注入器「ベセルフューザー」の販売を開始",
+      "description": "加圧式医薬品注入器「ベセルフューザー」の販売を始めました。",
+      "significance": "医療機器事業へ展開する起点になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "エーエムアイ研究所（現・オーベクスメディカル）を設立",
+      "description": "株式会社エーエムアイ研究所を設立しました。2016年にオーベクスメディカル株式会社に商号を変更した、現在の連結子会社です。",
+      "significance": "医療機器の製造を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "天津奥貝庫斯技研有限公司を設立",
+      "description": "中国・天津市に天津奥貝庫斯技研有限公司を設立しました。現在の連結子会社です。",
+      "significance": "ペン先の精密研削加工と販売を行う海外拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場に登録",
+      "description": "東京証券取引所の市場再編により、スタンダード市場に登録しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "showa-chemical-industry",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】で「その他の関係会社」とされる筆頭株主です。2026年3月31日現在、議決権の15.7％を当社に保有されています。同社から取締役（非常勤）1名と監査役（非常勤）1名の派遣を受けていますが、販売、技術、生産、人事などの取引関係はないとされています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "wakachiku-construction",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在の大株主で、発行済株式（自己株式を除く）の14.02％を保有しています。同社から社外取締役1名の派遣を受けており、当社は同社の株式11,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "mitsubishi-pencil",
+      "relationship": "business-partner",
+      "description": "テクノ製品事業の取引先です。相互の情報交換や技術交流を通じた新規案件の獲得や開発力の強化のため、当社は同社の株式19,010株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "pilot",
+      "relationship": "business-partner",
+      "description": "テクノ製品事業の取引先です。相互の情報交換や技術交流を通じた新規案件の獲得や開発力の強化のため、当社は同社の株式5,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +388,45 @@
       "publisher": "オーベクス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YK22.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YK22",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念として『真心をこめて、暮らしに欠かせない文化と科学を提案することにより、豊かな社会づくりに貢献できる企業を目指します』を掲げています。第9次中期経営計画（オーベクスビジョン2027）では、ESG経営を推進し新たな価値創出と持続可能な成長を追求することを基本方針とし、強固な収益基盤の構築、環境負荷低減活動の推進、成長を支える人財育成の3つを基本戦略としています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "テクノ製品事業では高付加価値製品の開発と海外拠点の拡充を、メディカル製品事業では既存市場の拡販と海外展開の準備を進める方針です。",
+        "basis": "中期経営計画における事業別の重点施策の記載に基づく",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "微少な流量を制御するコア技術を基盤とし、帽子製造で培った繊維の加工技術をフェルトペン先やプラスチックペン先へ応用し、さらに医療機器へと広げてきました。ペン先の精密研削加工は国内の連結子会社と中国・天津の連結子会社が担い、製造と加工をグループ内で分担しています。",
+        "basis": "経営方針におけるコア技術と技術の展開の記載、および事業の内容における連結子会社の役割の記載に基づく",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

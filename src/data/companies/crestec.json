@@ -4,15 +4,143 @@
   "name": "クレステック",
   "officialName": "株式会社クレステック",
   "nameEn": "CRESTEC Inc.",
-  "description": null,
+  "shortNameEn": "CRESTEC Inc.",
+  "description": "メーカーの取扱説明書などの技術文書の制作・翻訳・印刷を、世界10か国の拠点で手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "media",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "document",
+      "name": "ドキュメント事業",
+      "description": "顧客企業の新製品に添付する取扱説明書やメカニック向けの修理マニュアルについて、ライティング、イラスト作成、データ組版、翻訳、印刷までを担うテクニカルドキュメンテーションの事業です。地域別の4つの報告セグメントで展開しています。",
+      "customers": [
+        "デジタル製品・自動車・家電などの製造業の企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "document-sea",
+          "name": "東南アジア／南アジア地域",
+          "description": "インドネシア、フィリピン、タイ、マレーシア、ベトナム、インドの現地法人が、顧客の工場への部材供給（マニュアル・箱・ラベル等の印刷物、緩衝材、パレット等）や販促活動の支援を行います。2026年6月期の外部顧客への売上高は5,980百万円です。",
+          "customers": [
+            "海外に販売拠点を持つ製造業の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "document-japan",
+          "name": "日本",
+          "description": "当社と国内子会社7社が、取扱説明書や修理マニュアルの制作を開発段階から担います。2026年6月期の外部顧客への売上高は5,416百万円です。",
+          "customers": [
+            "国内の製造業の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "document-china",
+          "name": "中国地域",
+          "description": "香港、東莞、珠海、上海、蘇州の現地法人が、ドキュメントの制作や印刷、顧客の工場への部材供給を行います。2026年6月期の外部顧客への売上高は4,468百万円です。",
+          "customers": [
+            "中国に拠点を持つ製造業の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "document-eu-us",
+          "name": "欧米地域",
+          "description": "オランダと米国の現地法人が、ドキュメント制作や翻訳、顧客の工場への部材供給や販促活動の支援を行います。2026年6月期の外部顧客への売上高は2,408百万円です。",
+          "customers": [
+            "欧米に拠点を持つ製造業の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "solution",
+      "name": "ソリューション事業",
+      "description": "原稿作成支援ソフトや翻訳支援ソフト、データ管理システムなど、顧客が自身でドキュメントを開発できるソフトの開発・販売や、生成AIを活用した「ManuAI bot」「Ai-RU」などのAIサービスを行う事業です。この事業の売上高は独立して開示されていません。",
+      "customers": [
+        "ドキュメントを自社で作成する製造業の企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "顧客企業の新製品に添付する取扱説明書や修理マニュアルを、ライティングから翻訳・印刷まで一貫して制作し、その制作対価を得ています。",
+    "products": [
+      "取扱説明書・修理マニュアルなどのテクニカルドキュメント",
+      "パッケージ・梱包資材",
+      "ドキュメント作成支援ソフト",
+      "AIサービス（ManuAI bot、Ai-RU）"
+    ],
+    "customers": [
+      "デジタル製品、輸送機器、情報機器、家電、医薬品・医療機器などの製造業の企業"
+    ],
+    "revenueSources": [
+      "ドキュメント制作・翻訳・印刷の受託対価",
+      "ドキュメント作成ソフトやAIサービスの販売対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "クレステックグループ",
+        "description": "当社と国内子会社7社、海外子会社15社でグループを構成し、2026年6月30日現在の連結従業員数は1,361人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "テクニカルドキュメンテーション",
+        "description": "顧客の新製品の開発段階から関わり、取扱説明書や修理マニュアルのライティング、イラスト作成、組版、翻訳、印刷までを一貫して手がけます。"
+      },
+      {
+        "kind": "customer",
+        "title": "新製品を出すメーカー",
+        "description": "デジタル製品、輸送機器、情報機器、家電、医療機器などのメーカーが、新製品に添付するドキュメントの制作を委託します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "ドキュメント制作の対価",
+        "description": "ドキュメント制作の対価として、2026年6月期に売上高18,273百万円を計上しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年6月期の親会社株主に帰属する当期純利益は982百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,7 +155,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6836763000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1536,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +175,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7738920000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1428,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第39期（2023年6月期）より、退職給付債務の計算方法を簡便法から原則法に変更しており、主要な経営指標等には、この変更を遡及適用した数値を記載しています。"
     },
     {
       "fiscalYear": "2024年6月期",
@@ -67,7 +196,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9228159000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1383,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +216,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8931404000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1364,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +236,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10980116000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1361,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +244,179 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1984,
+      "title": "株式会社クレステックを設立",
+      "description": "輸送機器関連に添付する取扱説明書の制作や翻訳を目的として、静岡県浜松市に株式会社クレステックを設立しました。",
+      "significance": "クレステックの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "決算期を6月に変更",
+      "description": "決算期を6月に変更しました。",
+      "significance": "現在の6月決算の体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "株式会社パセイジを子会社化",
+      "description": "株式会社パセイジの全株式を取得し、子会社化しました。",
+      "significance": "M&Aによる事業拡大の歩みの一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "JASDAQ（スタンダード）に上場",
+      "description": "東京証券取引所JASDAQ（スタンダード）に上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "大野印刷（現・株式会社シープラス）を子会社化",
+      "description": "大野印刷株式会社（現・株式会社シープラス）の全株式を取得し、子会社化しました。",
+      "significance": "印刷工程の内製化を進める取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "インド・チェンナイに現地法人を設立",
+      "description": "インド・チェンナイに現地法人を設立しました。",
+      "significance": "南アジアでの拠点展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "東京証券取引所市場第二部に市場変更",
+      "description": "東京証券取引所市場第二部に市場変更しました。",
+      "significance": "市場区分を移した節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "株式会社ナビを子会社化",
+      "description": "株式会社ナビの全株式を取得し、子会社化しました。",
+      "significance": "M&Aによる事業拡大の歩みの一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社マインズを子会社化",
+      "description": "株式会社マインズの全株式を取得し、子会社化しました。",
+      "significance": "M&Aによる事業拡大の歩みの一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "本社を浜松市東三方町に移転",
+      "description": "本社を浜松市東三方町（現・浜松市中央区東三方町）に移転し、同社屋1階に浜松プリントセンターを移転しました。",
+      "significance": "現在の本社体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "中国・東莞の現地法人を完全商社化",
+      "description": "中国・東莞の現地法人を完全商社化しました。",
+      "significance": "海外拠点の体制見直しの一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "有限会社アルファ・ティーを子会社化し吸収合併",
+      "description": "有限会社アルファ・ティーの全株式を取得し子会社化したうえで、吸収合併しました。",
+      "significance": "同業の取り込みによる事業強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社ヘッププロモーションを子会社化",
+      "description": "株式会社ヘッププロモーションの全株式を取得し、子会社化しました。",
+      "significance": "新たな事業領域への展開を進める取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "株式会社ドゥルックを子会社化",
+      "description": "株式会社ドゥルックの全株式を取得し、子会社化しました。",
+      "significance": "新たな事業領域への展開を進める取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "ベトナム・ハノイにオフィスを開設",
+      "description": "ベトナム・ハノイにクレステックベトナムのオフィスを開設しました。",
+      "significance": "海外ネットワークの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "konica-minolta",
+      "relationship": "customer",
+      "description": "特定投資株式として10,541株を保有し、保有目的は取引関係の維持・強化のため、当社の商品の販売先であると印字されています（2026年6月30日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +424,55 @@
       "publisher": "株式会社クレステック",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z3BW.pdf",
       "publishedAt": "2026-09-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Z3BW",
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「CR Challenge 27」では「グローバル化に向けた新たな挑戦」を基本方針とし、グローバル／外資系企業との取引拡大、既存企業との取引拡充、新規企業との連携やM&Aの推進を事業強化戦略として進めるとしています。",
+        "asOf": "2026-09-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年6月期には、有限会社アルファ・ティー、株式会社ヘッププロモーション、株式会社ドゥルックを相次いで子会社化し、ヘッププロモーションやドゥルックを通じてインバウンド事業や保険業界など新たな事業領域への参入にも挑戦していると書かれています。",
+        "basis": "セグメント情報の外部顧客への売上高、【関係会社の状況】の子会社化の注記、MD&Aの経営成績の概要に基づく",
+        "asOf": "2026-09-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "原稿作成やデータ作成を日本国内で行い、印刷・製造を顧客の海外拠点の近くで対応することで、マニュアルの制作から印刷・製造までの全工程をグループのネットワークで一気通貫に対応できる体制を築いていると書かれています。",
+        "basis": "【事業の内容】の海外展開の記載と、MD&Aの優先的に対処すべき課題に基づく",
+        "asOf": "2026-09-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "主要な顧客は日系メーカーが中心で、主要な顧客ごとの情報にはエプソングループが開示され、同グループ向けの売上は東南アジア／南アジア地域のセグメントに計上されています。",
+        "basis": "セグメント情報の主要な顧客ごとの情報と、MD&Aの経営環境の記載に基づく",
+        "asOf": "2026-09-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",

@@ -4,15 +4,152 @@
   "name": "アビックス",
   "officialName": "アビックス株式会社",
   "nameEn": "AVIX,Inc．",
-  "description": null,
+  "shortNameEn": "AVIX,Inc.",
+  "description": "LED表示機の開発・販売とコンテンツ配信を組み合わせたデジタルサイネージ事業と、地域密着型のマーケティング事業を展開する企業です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    },
+    {
+      "industryId": "media",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "digital-signage",
+      "name": "デジタルサイネージ関連事業",
+      "description": "LED表示機（デジタルサイネージ）の製造・販売・リースと、表示機向けの映像配信やメンテナンスなどの運営サービスを行う事業です。アビックス株式会社、SS Lab.株式会社、株式会社エクスポルトが営んでおり、2026年3月期の外部顧客への売上高は5,147百万円でした。",
+      "customers": [
+        "スタジアム・アリーナ",
+        "大型商業施設",
+        "小売店舗",
+        "パチンコホール"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "equipment-lease",
+          "name": "機器リース部門",
+          "description": "デジタルサイネージのリースを行う部門です。月額利用料の契約が積み上がるサブスクリプション型のサービスです。",
+          "customers": [
+            "スタジアム・アリーナ",
+            "大型商業施設",
+            "小売店舗"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "operation",
+          "name": "運営部門",
+          "description": "デジタルサイネージ向けの映像配信サービスやメンテナンスのほか、新たな販促支援サービスを提供する部門です。映像配信サービス「DiSi cloud」が伸長しています。",
+          "customers": [
+            "スタジアム・アリーナ",
+            "大型商業施設",
+            "小売店舗"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "information-equipment",
+          "name": "情報機器部門",
+          "description": "デジタルサイネージの製造・販売を行う部門です。製造設備を持たないファブレスの形態で、外注先へ製造を委託しています。",
+          "customers": [
+            "スタジアム・アリーナ",
+            "大型商業施設",
+            "スポーツ施設",
+            "オフィス"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "value-creating",
+      "name": "Value creating事業",
+      "description": "デジタルプロモーション株式会社が運営する、地域に係るエリアファンマーケティング（地域密着型マーケティング）を行う事業です。地域での企業のPRや集客、地方自治体の魅力あるコンテンツ開発などを行っており、2026年3月期の外部顧客への売上高は258百万円でした。",
+      "customers": [
+        "地域の企業",
+        "地方自治体"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社開発のLED表示機をリース・販売し、店舗などに設置した表示機へ映像コンテンツを配信・運営するサービスと、地域企業の販促支援を行う事業モデルです。",
+    "products": [
+      "LED表示機（デジタルサイネージ）",
+      "映像配信サービス「DiSi cloud」",
+      "コンテンツ制作・運営支援サービス",
+      "ハイパーローカルメディア「タウンビジョン」"
+    ],
+    "customers": [
+      "スタジアム・アリーナ",
+      "大型商業施設",
+      "小売店舗",
+      "パチンコホール",
+      "地域の企業",
+      "地方自治体"
+    ],
+    "revenueSources": [
+      "LED表示機のリース料と販売代金",
+      "映像配信・運営サービスの月額利用料",
+      "メンテナンスの対価",
+      "マーケティング支援の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "アビックス",
+        "description": "当社は神奈川県横浜市中区に本社を置き、連結子会社2社と持分法適用関連会社1社とともに事業を行っています。2026年3月31日現在の連結従業員数は65人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "デジタルサイネージと地域マーケティングの2事業",
+        "description": "デジタルサイネージ関連事業ではLED表示機の製造・販売・リースと映像配信やメンテナンスなどの運営サービスを、Value creating事業では地域密着型のマーケティング支援を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "施設運営者と地域の企業・自治体",
+        "description": "表示機と配信サービスはスタジアムや大型商業施設、小売店舗などに提供し、マーケティング支援は地域の企業や地方自治体に提供しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は5,406百万円",
+        "description": "2026年3月期の売上高は5,406百万円で、前期比24.4％増でした。セグメント別ではデジタルサイネージ関連事業が5,147百万円、Value creating事業が258百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の親会社株主に帰属する当期純利益は233百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は233百万円で、前期比28.4％増でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +164,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1481494000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 45,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1465256000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 43,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1554281000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 49,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1737298000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 58,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +244,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1983414000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 65,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +252,179 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1989,
+      "title": "アビックス株式会社を設立",
+      "description": "デジタル映像の研究開発を目的として、愛知県一宮市にアビックス株式会社を設立しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "フルカラー表示装置「サイバービジョン」を開発",
+      "description": "フルカラー表示装置「サイバービジョン」を開発しました。",
+      "significance": "現在の主力製品群の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "渋谷QFRONTに「サイバービジョン」を設置",
+      "description": "渋谷QFRONTに「サイバービジョン」（名称「Q'sEYE」）を設置しました。",
+      "significance": "大型施設への表示機設置の実績となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "ジャスダック証券取引所に株式を上場",
+      "description": "株式会社ジャスダック証券取引所に株式を上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "投資事業有限責任組合の子会社となる",
+      "description": "ジャパン・ブレークスルー・2004投資事業有限責任組合を割当先とする資本提携により、同組合の子会社となりました。",
+      "significance": "資本構成が大きく変わった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "同組合が親会社に該当しなくなる",
+      "description": "ジャパン・ブレークスルー・2004投資事業有限責任組合が保有株式を売却したことにより、親会社に該当しなくなりました。",
+      "significance": "資本構成が再び変わった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "東京証券取引所と大阪証券取引所の統合に伴い、東京証券取引所JASDAQ（スタンダード）に上場しました。",
+      "significance": "現在の上場市場につながる移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "デジタルプロモーション株式会社を設立",
+      "description": "連結子会社として、神奈川県横浜市西区にデジタルプロモーション株式会社を設立しました。",
+      "significance": "Value creating事業を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "透過型フィルム式LEDビジョン「GLASS FILM」を発表",
+      "description": "折り曲げられる透過型フィルム式LEDビジョン「GLASS FILM（グラスフィルム）」を発表しました。",
+      "significance": "製品ラインナップの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "SS Lab.株式会社を子会社化",
+      "description": "株式の取得により、SS Lab.株式会社を子会社化しました。",
+      "significance": "デジタルサイネージ関連事業の体制強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社プロテラスのデジタルサイネージ事業を承継",
+      "description": "株式会社プロテラスのデジタルサイネージ事業に関する権利義務の全部を、吸収分割の方法により承継しました。",
+      "significance": "大口顧客への直販拡大につながった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "AIサイネージソリューションを発表",
+      "description": "AI（人工知能）とデジタルサイネージを活用したソリューションサービス「AIサイネージソリューション」を発表しました。",
+      "significance": "ソフト面のサービス拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）市場からスタンダード市場へ移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社エクスポルトの株式35％を取得",
+      "description": "株式会社フラッグスポーツマーケティング（現・株式会社エクスポルト）の株式を35％取得し、持分法適用会社としました。",
+      "significance": "スポーツ分野の事業基盤の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "本社を神奈川県横浜市中区へ移転",
+      "description": "本社を現在地の神奈川県横浜市中区へ移転しました。",
+      "significance": "現在の本社所在地への移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "「サイバービジョンMIPモデル」と「U-Natural」を発表",
+      "description": "サイバービジョンの屋外高精細モデル「サイバービジョンMIPモデル」と、室内テクスチャービジョン「U-Natural」を発表しました。",
+      "significance": "最新製品の投入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "ohsho-food-service",
+      "relationship": "customer",
+      "description": "特定投資株式として株式会社王将フードサービスの株式を保有しており、保有目的には当社製品の多店舗展開などの取引関係の維持強化と印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +432,48 @@
       "publisher": "アビックス株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YM6H.pdf",
       "publishedAt": "2026-06-29",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YM6H",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年４月に、連結子会社として神奈川県横浜市西区に合同会社ａｕａを設立しています（沿革に記載）。これは決算日（2026年３月31日）後の出来事であり、本登録は2026年３月期の構造（当社、デジタルプロモーション株式会社、SS Lab.株式会社、株式会社エクスポルトの４社）で登録しています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "安定的な収入を重視し、デジタルサイネージ関連事業の運営や機器リース、Value creating事業のように、長期にわたる契約の獲得を積極的に推進するとしています。今後は映像配信サービス「DiSi cloud」を軸に、AIサイネージソリューション等を連携したデジタルプラットフォーム「MiRAi PORT」を積極的に展開するとしています。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "機器リース部門と運営部門は月額利用料などのサブスクリプション型の契約で、契約数の積み上げが継続的な収益基盤を形成しています。2026年3月期は「DiSi cloud」の契約数と売上が大きく伸び、デジタルサイネージ関連事業の売上高は前期比23.5％増となりました。",
+        "basis": "MD&Aにおけるセグメント別の業績の記載に基づく",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "スタジアムや大型商業施設など、高い技術力と施工力、安定稼働を支える保守体制が求められ新規参入が容易ではない領域で実績を積んでおり、表示機のハードにコンテンツや運営、メンテナンスまでを組み合わせたトータルソリューションを提供できることが強みです。",
+        "basis": "経営方針における競争優位性の記載とMD&Aにおける事業の記載に基づく",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

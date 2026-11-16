@@ -3,16 +3,140 @@
   "code": "5078",
   "name": "セレコーポレーション",
   "officialName": "株式会社セレコーポレーション",
-  "nameEn": "ＣＥＬ　Ｃｏｒｐｏｒａｔｉｏｎ",
-  "description": null,
+  "nameEn": "CEL　Corporation",
+  "shortNameEn": "CEL Corporation",
+  "description": "東京圏で単身者向けアパートの企画・建築から開発・販売、管理受託までを一貫して手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "real-estate",
+      "primary": true
+    },
+    {
+      "industryId": "construction",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "rental-management",
+      "name": "賃貸経営事業",
+      "description": "当社と連結子会社の株式会社セレレントパートナーズが行う報告セグメントで、アパートの管理受託によるプロパティマネジメント業務を中心とするストック事業です。2026年2月期の外部顧客への売上高は10,522百万円で最大のセグメントであり、2026年2月28日現在の管理戸数は12,612戸です。",
+      "customers": [
+        "アパートのオーナー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "property-management",
+          "name": "管理受託・オペレーション管理",
+          "description": "一括借上や家賃集金代行による入居者の募集、入退去管理、家賃回収のほか、日常の建物点検、清掃などの維持管理業務と、リフォーム・リノベーション工事の提案・請負を行います。",
+          "customers": [
+            "アパートのオーナー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "rent-guarantee",
+          "name": "不動産賃貸保証",
+          "description": "連結子会社の株式会社セレレントパートナーズが、入居契約における不動産賃貸保証業務を行います。併せて、オーナーや入居者向けの保険代理店業務も行っています。",
+          "customers": [
+            "入居者（ゲスト）",
+            "アパートのオーナー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "rental-housing",
+      "name": "賃貸住宅事業",
+      "description": "当社が行う報告セグメントで、土地を保有するオーナーの人生設計の課題に応えるコンサルティングと、立体的な空間設計を重視したアパートの設計・自社施工による建築請負を行います。2026年2月期の外部顧客への売上高は8,358百万円です。構造部材は千葉工場で自社製造しています。",
+      "customers": [
+        "土地を保有するオーナー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "rental-development",
+      "name": "賃貸開発事業",
+      "description": "当社が行う報告セグメントで、東京の城南・城西エリアで駅近の土地を自社で仕入れ、付加価値の高いアパートを建築して、土地を保有していない富裕層に土地・建物を販売します。2026年2月期の外部顧客への売上高は1,309百万円です。",
+      "customers": [
+        "土地を保有していない富裕層"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "土地を持つオーナーへのアパート建築請負、自社で仕入れた土地でのアパート開発・販売、アパートの管理受託の3事業で収益を得ています。",
+    "products": [
+      "単身者向けアパートの企画・設計・施工（基幹ブランド「My Style vintage」）",
+      "独自工法「セレZ」による鉄骨造アパート",
+      "土地付きアパートの開発・販売（「Feel＋1」「Fwin」）",
+      "アパートの管理受託とプロパティマネジメント",
+      "不動産賃貸保証"
+    ],
+    "customers": [
+      "土地を保有するアパートのオーナー",
+      "土地を保有していない富裕層",
+      "アパートの入居者（ゲスト）"
+    ],
+    "revenueSources": [
+      "アパート建築の請負代金",
+      "土地・建物の販売代金",
+      "賃貸管理手数料や一括借上賃料などのストック収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "セレコーポレーション",
+        "description": "当社と連結子会社1社で構成され、本社は東京都中央区にあります。千葉市若葉区に構造部材を製造する千葉工場を持ち、2026年2月期の連結従業員数は198人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "アパートの企画から管理までの一貫提供",
+        "description": "土地の有効活用のコンサルティング、立体的な空間設計によるアパートの設計、自社工場で製造する鋼材を使った自社施工、完成後の管理受託までを一貫して提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "オーナーと富裕層、入居者",
+        "description": "主な顧客は、土地を保有しアパート経営を検討するオーナー、土地を保有していない富裕層、アパートの入居者（ゲスト）です。売上高の10％以上を占める主要な顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "請負・販売・管理による売上高",
+        "description": "2026年2月期の売上高は20,190百万円で、賃貸経営事業が10,522百万円、賃貸住宅事業が8,358百万円、賃貸開発事業が1,309百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年2月期の親会社株主に帰属する当期純利益は1,147百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,7 +151,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 17770783000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 147,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +171,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18789466000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 161,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +191,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19431935000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 180,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +211,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20418844000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 186,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +231,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21116453000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 198,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +239,186 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1993,
+      "title": "デトム販売として創業",
+      "description": "京都市下京区で、分譲マンションの販売を目的としてデトム販売（株）を創業しました。",
+      "significance": "グループの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "デ・リードエステートに社名変更し賃貸業務を開始",
+      "description": "社名を（株）デ・リードエステートに変更し、（株）デ・リードコミュニティを設立して不動産賃貸業務（ストック事業）を開始しました。",
+      "significance": "後の管理受託事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "セレコーポレーションに社名変更",
+      "description": "社名を（株）セレコーポレーションに変更し、本社を東京都港区芝大門に移転しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "工業化住宅の営業権を譲り受け請負事業を開始",
+      "description": "ニツセキハウス工業（株）より工業化住宅等の営業権と福岡工場を譲り受け、請負事業を開始しました。中国の子会社を通じて中国賃貸事業も開始しました。",
+      "significance": "現在の建築請負事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "共同株式移転で持株会社を設立",
+      "description": "（株）デ・リードとの共同株式移転により、子会社の管理・指導を目的とする持株会社（株）デ・リード＆セレホールディングスを設立しました。",
+      "significance": "一時的な持株会社体制への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "持株会社などを吸収合併",
+      "description": "（株）セレグループホールディングスと（株）セレプロパティーサービスを吸収合併しました。",
+      "significance": "事業会社への一本化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "セレレントパートナーズを設立",
+      "description": "不動産賃貸保証業務を目的として（株）セレレントパートナーズを設立しました。",
+      "significance": "現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "関西の子会社の全株式を譲渡",
+      "description": "経営資源を東京圏（１都３県）に特化するグループ戦略の一環として、（株）セレコーポレーション関西の全株式を第三者に譲渡しました。",
+      "significance": "東京圏特化の転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "千葉工場を設置",
+      "description": "自社一貫生産における構造部材の高品質化と品質の均一化を目的として、千葉市若葉区に千葉工場を設置しました。",
+      "significance": "自社製造体制の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "中国子会社を譲渡し中国賃貸事業を廃止",
+      "description": "中国浙江省寧波市の都市再開発に伴う要請により、中国子会社を中国国営企業に譲渡し、中国賃貸事業を廃止しました。併せて、事業別組織への変更に伴い事業の名称を変更しました。",
+      "significance": "海外事業からの撤退です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所に上場",
+      "description": "東京証券取引所市場第二部に株式を上場し、市場の見直しによりスタンダード市場へ移行しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "hanwa",
+      "relationship": "supplier",
+      "description": "当社の請負事業の主要部材である鉄骨材の最大の供給元です。原材料の安定供給など取引関係の維持・強化を目的として、同社の株式6,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-steel",
+      "relationship": "technology",
+      "description": "主要鋼材の軽量化と耐久性強化を実現した独自工法「セレZ」を共同開発した技術協力先です。同工法は現在のアパート建築にも活用されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営方針、経営環境及び対処すべき課題等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第35期(2025/03/01－2026/02/28)",
+      "title": "訂正有価証券報告書－第35期（2025年３月１日－2026年２月28日）",
       "publisher": "株式会社セレコーポレーション",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y5GZ.pdf",
-      "publishedAt": "2026-05-22",
-      "accessedAt": "2026-09-29"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEE9.pdf",
+      "publishedAt": "2026-06-19",
+      "docId": "S100YEE9",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期経営ビジョン「ビジョン2030」で、企業価値の極大化と物心両面の「しあわせ」の実現をありたい姿とし、アパート専門メーカーとしてニッチトップの実現と、本業の付加価値を高めるための本業および本業周辺ビジネスの多面的経営の展開を目指すとしています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "コンサルティングから設計、自社工場での構造部材の製造、自社施工、入居者の募集や建物の管理までをグループ内で一貫して担う体制と、平面に高さを加えた立体的な空間設計による差別化した商品の提供が強みです。主要構造材には日本製鉄株式会社と共同開発した独自工法「セレZ」を用いています。",
+        "basis": "【事業の内容】における事業の内容と、【経営方針、経営環境及び対処すべき課題等】における経営戦略等の記載に基づきます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "事業エリアを東京圏の1都3県に絞り込み、25歳から35歳を中心とした若者の単身者向けアパートに特化しています。賃貸経営事業は最大のセグメントで、2026年2月期の外部顧客への売上高は10,522百万円、2026年2月28日現在の管理戸数は12,612戸です。",
+        "basis": "セグメント情報における外部顧客への売上高と、経営成績の分析における管理戸数の記載に基づきます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",

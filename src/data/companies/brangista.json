@@ -4,15 +4,187 @@
   "name": "ブランジスタ",
   "officialName": "株式会社ブランジスタ",
   "nameEn": "Brangista Inc.",
-  "description": null,
+  "shortNameEn": "Brangista Inc.",
+  "description": "電子雑誌の発行や著名タレントを起用したプロモーション支援、EC支援サービスを提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "media",
+      "primary": true
+    },
+    {
+      "industryId": "it",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "media",
+      "name": "メディア事業",
+      "description": "無料で読める電子雑誌を制作・発行し、電子雑誌への広告掲載と電子雑誌の制作受託を提供する事業です。2025年9月期の売上高は2,060百万円でした。",
+      "customers": [
+        "宿泊施設",
+        "飲食店",
+        "地方自治体",
+        "広告掲載を行う企業"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "tabiiro",
+          "name": "電子雑誌「旅色」",
+          "description": "大人の女性の旅をナビゲートする旅行電子雑誌で、読みながらその場で予約・購入できる機能的な誌面を提供しています。金額は独立して開示されていません。",
+          "customers": [
+            "宿泊施設",
+            "飲食店",
+            "地方自治体"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "magazine-ads-production",
+          "name": "広告掲載・制作受託",
+          "description": "クライアント企業への電子雑誌への広告掲載と、電子雑誌の制作受託のサービスです。金額は独立して開示されていません。",
+          "customers": [
+            "広告掲載を行う企業",
+            "地方自治体"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "promotion-support",
+      "name": "プロモーション支援事業",
+      "description": "初期費用不要かつ月額定額制で著名タレントの写真・動画が使えるプロモーションツールと、経営者の学びと交流の場を提供するプロジェクト「アクセルジャパン」を提供する事業です。2025年9月期の売上高は2,055百万円で、前期に比べ23.3％増えました。",
+      "customers": [
+        "プロモーションを行う企業",
+        "地方自治体"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "solution",
+      "name": "ソリューション事業",
+      "description": "クライアント企業のウェブサイト制作・運営や、ECサイト一元管理ASP「まとまるEC店長」をはじめとするEC企業向けサービスを提供する事業です。2025年9月期の売上高は998百万円でした。",
+      "customers": [
+        "EC事業者",
+        "ウェブサイト制作・運営を委託する企業"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "matomaru-ec",
+          "name": "まとまるEC店長",
+          "description": "自社サービスであるECサイト一元管理ASPで、コンサルティング、ページ制作、分析、プロモーションまでをワンストップで提供しています。金額は独立して開示されていません。",
+          "customers": [
+            "EC事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "tiktok-shop-support",
+          "name": "TikTok Shop運用支援サービス",
+          "description": "「TikTok Shop」へ出店する企業の運用を支援するサービスで、公式パートナー「TikTok Shop Partner」に認定されています。金額は独立して開示されていません。",
+          "customers": [
+            "EC事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "other-overseas",
+      "name": "その他",
+      "description": "報告セグメントに含まれない区分で、台湾と香港の海外現地法人によるソリューションサービスや、株式会社ブランジスタメディアにおけるメディア事業以外の各種受託事業などです。2025年9月期の売上高は82百万円でした。",
+      "customers": [
+        "日系企業",
+        "現地企業"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "企業や自治体から広告掲載料や月額の利用料金・業務受託費用を受け取り、電子雑誌やプロモーションツール、EC支援サービスを提供するモデルです。",
+    "products": [
+      "電子雑誌「旅色」",
+      "アクセルジャパン",
+      "まとまるEC店長",
+      "ウェブサイト制作・運営",
+      "TikTok Shop運用支援サービス"
+    ],
+    "customers": [
+      "宿泊施設・飲食店",
+      "地方自治体",
+      "プロモーションを行う企業",
+      "EC事業者"
+    ],
+    "revenueSources": [
+      "電子雑誌への広告掲載料",
+      "アクセルジャパンの利用料金",
+      "EC支援・ウェブサイト制作運営の業務受託費用・利用料金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ブランジスタ",
+        "description": "当社と連結子会社6社でグループを構成し、親会社は株式会社NEXYZ.Groupです。2025年9月期の従業員数は307人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "電子雑誌・プロモーション支援・EC支援",
+        "description": "無料で読める電子雑誌の発行と広告掲載、著名タレントの写真・動画が使える「アクセルジャパン」、ECサイト一元管理ASP「まとまるEC店長」をはじめとするEC支援サービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "宿泊施設・自治体・企業",
+        "description": "顧客は、電子雑誌への広告掲載を行う宿泊施設や飲食店、地方自治体と、「アクセルジャパン」やEC支援サービスを利用する契約企業です。売上高の10％以上を占める主要な顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年9月期の売上高は5,196百万円で、前期に比べ7.8％増えました。メディア事業が2,060百万円、プロモーション支援事業が2,055百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2025年9月期の親会社株主に帰属する当期純利益は656百万円で、前期に比べ8.3％増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年9月期",
@@ -27,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2586474000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 304,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +219,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1616202000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 300,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第22期の期首から適用しており、第22期以降の主要な経営指標等は当該会計基準等を適用した後の指標となっています。"
     },
     {
       "fiscalYear": "2023年9月期",
@@ -67,7 +240,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2249999000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 314,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +260,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3637102000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 317,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +280,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6099194000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 307,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +288,148 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2000,
+      "title": "イデアキューブを設立",
+      "description": "親会社である株式会社ネクシィーズ（現、株式会社NEXYZ.Group）のメールマガジン会員の運営を目的として、東京都渋谷区桜丘町にイデアキューブ株式会社（当社）を設立しました。",
+      "significance": "現在の会社の設立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "ソリューション業務を開始",
+      "description": "販売促進支援サービスを提供するソリューション業務を開始しました。",
+      "significance": "現在のソリューション事業の起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "電子雑誌「旅色」を創刊",
+      "description": "大人の女性の旅をナビゲートするトラベルマガジンとして、電子雑誌「旅色」を創刊し、「旅色」掲載施設の広告取次業務を開始しました。",
+      "significance": "現在のメディア事業の主力媒体の創刊です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "商号をブランジスタに変更",
+      "description": "商号を「株式会社ブランジスタ」に変更しました。",
+      "significance": "現在の社名の由来です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "楽天から出資を受ける",
+      "description": "電子雑誌における業務提携強化を目的として、楽天株式会社（現、楽天グループ株式会社）から出資を受けました。",
+      "significance": "電子雑誌事業の提携強化の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "台湾に海外現地法人を設立",
+      "description": "台湾に海外現地法人である博設技股份有限公司（Brangista Taiwan Inc.）を設立しました。",
+      "significance": "海外展開の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "株式会社Dugongを子会社化",
+      "description": "国内・海外の旅行・観光スポットなどの情報発信メディア「TravelNote」を運営する株式会社Dugong（現、株式会社旅色トラベル）を子会社化しました。",
+      "significance": "旅行メディアの拡充です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "持株会社体制へ移行",
+      "description": "株式会社ブランジスタメディアを設立し、連結子会社を傘下とする持株会社体制へ移行しました。",
+      "significance": "現在のグループ体制の成立です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "「アクセルジャパン」の提供を開始",
+      "description": "株式会社ブランジスタエールを設立し、新プロジェクト「ACCEL JAPAN（アクセルジャパン）」のサービスの提供を開始しました。",
+      "significance": "現在のプロモーション支援事業の主力サービスの開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "香港に海外現地法人を設立",
+      "description": "香港に海外現地法人である博設技股份香港有限公司（Brangista Hong Kong LIMITED）を設立しました。",
+      "significance": "越境EC支援の拠点拡大です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "スタンダード市場へ市場区分を変更",
+      "description": "東京証券取引所のグロース市場からスタンダード市場へ市場区分を変更しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nexyz-group",
+      "relationship": "parent",
+      "description": "関係会社の状況に親会社として印字されています。2025年9月30日現在、議決権の53.00％を保有されています。当社グループは同社の設備導入サービスの申込獲得業務の代行や、給与計算業務の委託を受けています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "sbi-holdings",
+      "relationship": "business-partner",
+      "description": "重要な契約等に、SBIホールディングス株式会社及びSBINM合同会社との資本業務提携契約（2025年9月10日締結）が印字されています。同提携に基づき、SBINM合同会社を割当先とする第三者割当による自己株式の処分が2025年10月1日に完了しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +437,55 @@
       "publisher": "株式会社ブランジスタ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XAF9.pdf",
       "publishedAt": "2025-12-15",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XAF9",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「CONNECT with COMMUNITY」を企業理念に掲げ、電子雑誌や各種ソリューションサービスを中心としたプロモーションをワンストップで提供し、地方創生に貢献することをミッションとしています。プロモーション支援事業では地域金融機関との連携拡大と自治体への利用促進、メディア事業では自治体とのタイアップ広告の拡充と電子雑誌「旅色」への予約機能の追加、ソリューション事業では「TikTok Shop」運用支援サービスの拡大に取り組むとしています。",
+        "asOf": "2025-12-15",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "電子雑誌の媒体力と、タレント起用型のプロモーション支援、EC支援を組み合わせ、企業と自治体の双方に販促支援を提供する戦略です。",
+        "basis": "経営方針、経営環境及び対処すべき課題等に、プロモーション支援事業における地域金融機関との連携拡大、メディア事業における自治体タイアップ広告の拡充、ソリューション事業におけるTikTok Shop運用支援サービスの拡大が、優先的に対処すべき課題として記載されていることによるものです。",
+        "asOf": "2025-12-15",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "2007年の創刊以来発行を続ける電子雑誌「旅色」の媒体資産と、著名タレントの写真・動画を初期費用不要の月額定額制で使える仕組み、新規顧客の開拓からリピーター化までを一社で担うワンストップ体制が強みです。",
+        "basis": "事業の内容に、電子雑誌「旅色」をはじめとする複数の電子雑誌の発行、初期費用不要かつ月額定額制で著名タレントの写真・動画が使えるプロモーションツールの提供、新規顧客の開拓から顧客のリピーター化までを当社一社で提供することが記載されていることによるものです。",
+        "asOf": "2025-12-15",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "電子雑誌メディアと企業プロモーション支援を主力とする会社で、メディア事業とプロモーション支援事業の2事業で売上高の約8割を占めています。",
+        "basis": "セグメント情報に、メディア事業の外部顧客への売上高が2,060百万円、プロモーション支援事業が2,055百万円（連結売上高5,196百万円）であることが記載されていることによるものです。",
+        "asOf": "2025-12-15",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-30",

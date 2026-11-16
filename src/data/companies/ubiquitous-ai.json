@@ -4,15 +4,147 @@
   "name": "ユビキタスAI",
   "officialName": "株式会社ユビキタスAI",
   "nameEn": "Ubiquitous AI Corporation",
-  "description": null,
+  "shortNameEn": "Ubiquitous AI Corporation",
+  "description": "組込みソフトウェアの自社開発製品と海外ソフトウェアの輸入販売を手がけ、製造業の顧客にネットワークやセキュリティなどの技術と開発支援を提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "software",
+      "name": "ソフトウェア事業",
+      "description": "組込み機器向けのネットワーク、セキュリティ、高速起動、データベース等の自社開発ソフトウェア製品と、海外ソフトウェアの輸入販売・テクニカルサポート、組込みソフトウェア等の受託を中心とした設計・開発やデータコンテンツのライセンスを行う事業です。本社は東京都新宿区にあり、連結子会社の株式会社グレープシステムもこの事業を担います。2026年3月期の外部顧客への売上高は2,992百万円でした。",
+      "customers": [
+        "電子・電気機器メーカー",
+        "自動車関連メーカー",
+        "学術機関・政府機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "software-distribution",
+          "name": "ソフトウェアディストリビューション領域",
+          "description": "海外メーカー製ソフトウェアの輸入販売、テクニカルサポート及びカスタマイズを行う領域です。Bluetoothプロトコルスタック『Blue SDK』、BIOS『InsydeH2O』、ミドルウェア、静的解析ツール『CodeSonar』、セキュリティ検証ツールなどを取り扱います。2026年3月期の外部顧客への売上高は1,275百万円でした。",
+          "customers": [
+            "電子・電気機器メーカー",
+            "自動車関連メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "software-service",
+          "name": "ソフトウェアサービス領域",
+          "description": "組込みソフトウェア等各種ソフトウェアの設計・開発を受託するエンジニアリングサービスと、米国Gracenote社と協業して行う音楽関連データコンテンツのライセンス提供を行う領域です。2026年3月期の外部顧客への売上高は944百万円でした。",
+          "customers": [
+            "電子・電気機器メーカー",
+            "自動車関連メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "software-product",
+          "name": "ソフトウェアプロダクト領域",
+          "description": "自社開発による組込みソフトウェア製品を提供する領域です。高速起動『Ubiquitous QuickBoot』、通信ミドルウェア、セキュリティ製品、組込みデータベース『Ubiquitous DeviceSQL』、リアルタイムOSのほか、連結子会社の株式会社グレープシステムのプリンタ関連製品や音声コード『Uni-Voice』などがあります。2026年3月期の外部顧客への売上高は772百万円でした。",
+          "customers": [
+            "電子・電気機器メーカー",
+            "自動車関連メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    },
+    {
+      "id": "analysis-software",
+      "name": "アナリシスソフトウェア事業",
+      "description": "連結子会社の株式会社ライトストーンが、統計・数値データ解析ソフトウェアの輸入販売とテクニカルサポートを行う事業です。『Origin』『Stata』等の科学技術系ソフトウェアを、大学・高専などの教育機関、政府系研究機関、企業の研究開発・調査部門などに提供します。2026年3月期の外部顧客への売上高は931百万円でした。",
+      "customers": [
+        "大学・高専などの教育機関",
+        "政府系研究機関",
+        "企業の研究開発・調査部門"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社開発の組込みソフトウェア製品のライセンス販売、海外メーカー製ソフトウェアの輸入販売とサポート、受託開発やデータコンテンツのライセンスで収益を得る事業です。",
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "products": [
+      "高速起動ソフトウェア『Ubiquitous QuickBoot』",
+      "組込み機器向け通信ミドルウェア（Ubiquitous Network Framework等）",
+      "セキュリティ製品（Ubiquitous TLS、Ubiquitous Securus、Edge Trust等）",
+      "組込みデータベース『Ubiquitous DeviceSQL』",
+      "リアルタイムOS『TOPPERS-Proシリーズ』",
+      "音声コード『Uni-Voice』・プリンタ関連製品（株式会社グレープシステム）",
+      "海外製ソフトウェア（Bluetooth用『Blue SDK』、BIOS『InsydeH2O』、静的解析ツール『CodeSonar』等）",
+      "統計・数値データ解析ソフトウェア（『Origin』『Stata』等）"
+    ],
+    "customers": [
+      "電子・電気機器メーカー",
+      "自動車関連メーカー",
+      "大学・高専などの教育機関",
+      "政府系研究機関",
+      "企業の研究開発・調査部門"
+    ],
+    "revenueSources": [
+      "自社開発ソフトウェア製品のライセンス・ロイヤルティ収入",
+      "海外ソフトウェアの輸入販売代金とテクニカルサポートの対価",
+      "受託開発・エンジニアリングサービスの対価",
+      "データコンテンツのライセンス収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ユビキタスAI",
+        "description": "2001年に株式会社ユビキタスとして設立され、東京都新宿区に本社を置きます。連結子会社2社とともに事業を行い、2026年3月31日現在の連結従業員数は199人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "組込みソフトウェア製品と関連サービス",
+        "description": "組込み機器向けのネットワーク、セキュリティ、高速起動、データベースなどの自社開発ソフトウェア製品を提供し、海外メーカー製ソフトウェアの輸入販売とテクニカルサポート、受託開発、統計・数値データ解析ソフトウェアの販売も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "製造業の顧客と教育・研究機関",
+        "description": "電子・電気機器メーカーや自動車関連メーカーなどの製造業の顧客が、製品に組み込むソフトウェアとして導入します。アナリシスソフトウェア事業では、大学・高専などの教育機関、政府系研究機関、企業の研究開発・調査部門が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品ライセンス・輸入販売・受託開発",
+        "description": "2026年3月期の売上高は3,924百万円で、ソフトウェア事業が2,992百万円、アナリシスソフトウェア事業が931百万円でした。売上高は前期比5.2％減でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失518百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純損失は518百万円で、前期の当期純利益91百万円から損失に転じました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +159,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2442490000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 115,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2309915000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 110,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2333422000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 194,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2396048000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 191,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +239,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1910709000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 199,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +247,149 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2001,
+      "title": "株式会社ユビキタスを設立",
+      "description": "東京都渋谷区において、株式会社ユビキタスを設立しました。あらゆるものがネットワークにつながる時代に、面倒な操作なしにネットワークの利便性を享受できる生活の実現を目指して発足しました。",
+      "significance": "現在の会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "主力製品「Ubiquitous TCP/IP」の開発に成功",
+      "description": "主力製品となる通信ソフトウェア「Ubiquitous TCP/IP」の開発に成功しました。",
+      "significance": "現在の組込みネットワーク製品につながる起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "通信プロトコルスタックが「ニンテンドーDS」に採用",
+      "description": "任天堂株式会社との間でソフトウェア使用許諾契約を締結し、「Ubiquitous TCP/IP」と「Ubiquitous SSL」を基に開発された通信プロトコルスタックが携帯型ゲーム機「ニンテンドーDS」用の通信ライブラリに採用されました。",
+      "significance": "自社技術が民生機器に広く使われた初期の実績です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "ジャスダック証券取引所NEOに上場",
+      "description": "ジャスダック証券取引所NEOに株式を上場しました。同市場の第一号銘柄です。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "DeviceSQLを取得し組込みデータベース事業を開始",
+      "description": "エンサーク株式会社より組込みソフトウェア製品DeviceSQLを取得し、組込みデータベース事業を開始しました。",
+      "significance": "製品領域をデータベースへ広げた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "「Ubiquitous QuickBoot」を販売開始",
+      "description": "OSの高速起動を実現するソフトウェア「Ubiquitous QuickBoot」の販売を開始しました。",
+      "significance": "現在の主力製品の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "株式会社村田製作所と資本・業務提携",
+      "description": "株式会社村田製作所と資本・業務提携を行いました。",
+      "significance": "近距離無線分野での協業関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "エーアイコーポレーションとの合併と商号変更",
+      "description": "株式会社エーアイコーポレーションを吸収合併し、商号を株式会社ユビキタスAIコーポレーションに変更しました。",
+      "significance": "自社開発の技術力と海外製品の発掘力を併せ持つ体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分変更に伴い、スタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "「株式会社ユビキタスAI」へ商号変更",
+      "description": "商号を株式会社ユビキタスAIに変更し、新スローガン「Exploring Everything」を発表しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ライトストーンとグレープシステムを完全子会社化",
+      "description": "株式会社ライトストーンと株式会社グレープシステムをそれぞれ完全子会社化しました。",
+      "significance": "グループの規模拡大と基盤強化を進めた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社エイムを吸収合併",
+      "description": "連結子会社であった株式会社エイムを吸収合併しました。",
+      "significance": "グループ再編の一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "「Ubiquitous QuickBoot」の累計出荷数が1億本を突破",
+      "description": "高速起動ソフトウェア「Ubiquitous QuickBoot」の累計出荷数が1億本を突破しました。",
+      "significance": "主力製品の普及を示す節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "murata-manufacturing",
+      "relationship": "business-partner",
+      "description": "2012年12月11日に資本・業務提携に関する合意書を締結し、近距離無線関連の両社の製品及びサービスについて、相互の顧客・潜在顧客に対する共同提案・販売促進活動や、技術・市場動向等に対する共同での検討活動を行うことで合意しています。当社は同社の株式を保有しており、同社も当社の株式の1.93％を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +397,47 @@
       "publisher": "株式会社ユビキタスAI",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDYA.pdf",
       "publishedAt": "2026-06-29",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YDYA",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年6月に公表した中期経営計画（2026－2028年度）では、既存事業による成長と連続的なM&Aによる成長の両輪で成長を志向するとしています。既存事業では生産性向上、営業力強化、グループシナジーによるアップセル・クロスセルなどを重点施策とし、M&AではIoT関連、Big Data/AI関連、IT関連の領域で案件ごとに積極的に実行するとしています。あわせて、グループとしての運営効率化や品質マネジメント、ガバナンスの強化にも取り組むとしています。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "自社開発の高速起動ソフトウェア『Ubiquitous QuickBoot』は2026年2月に累計出荷数が1億本を突破しています。自社製品を開発する力と、世界中の優れたソフトウェアを発掘して国内に展開する力、受託開発の力という3つのアプローチを組み合わせ、顧客のソフトウェアニーズに幅広く対応できる体制が特徴です。",
+        "basis": "【事業の内容】における製品の記載、【沿革】における出荷実績の記載、及び人材戦略に関する基本方針における3つのアプローチの記載に基づきます。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "主要顧客である電子・電気機器を製造・開発する大手企業の企画・開発・設計部門から学術・政府機関まで、幅広く強固な顧客基盤を有すると会社は述べています。組込みソフトウェアの取扱いでは、国内での取扱い製品数でNo.1ベンダーを目指すグループブランドを2017年に立ち上げています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】における対処すべき課題の記載と【沿革】の記載に基づきます。",
+        "asOf": "2026-06-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

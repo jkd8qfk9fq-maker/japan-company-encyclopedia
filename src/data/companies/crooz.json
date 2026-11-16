@@ -4,15 +4,147 @@
   "name": "クルーズ",
   "officialName": "クルーズ株式会社",
   "nameEn": "CROOZ,Inc.",
-  "description": null,
+  "shortNameEn": "CROOZ",
+  "description": "エンジニア派遣などのITアウトソーシング事業とファッション通販のEC事業を、子会社を通じて展開する純粋持株会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    },
+    {
+      "industryId": "human-resources",
+      "primary": false
+    },
+    {
+      "industryId": "retail",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "it-outsourcing",
+      "name": "ITアウトソーシング事業",
+      "description": "システムエンジニアリングサービス事業（SES事業）を中心に、人材とITの領域で事業展開を行う報告セグメントで、連結売上高の過半を占める最大の事業です。2026年３月期の外部顧客への売上高は7,713百万円でした。496株式会社などがSES事業を行い、ケアスタッフィング株式会社が介護福祉人材サービスを行っています。",
+      "customers": [
+        "エンジニアの派遣や業務委託を求める企業",
+        "介護・福祉分野の人材を求める事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "ses",
+          "name": "システムエンジニアリングサービス事業（SES事業）",
+          "description": "IT人材業界におけるエンジニア人材の不足という市場課題に対し、自社で採用したエンジニアを顧客企業に派遣し、又は業務を受託する事業です。2026年３月期の売上高は4,193百万円で、496株式会社などが行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "care-staffing",
+          "name": "介護福祉人材サービス事業",
+          "description": "介護・福祉分野を対象とする人材サービス事業です。ケアスタッフィング株式会社が行っており、2026年３月期の売上高は1,139百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    },
+    {
+      "id": "ec",
+      "name": "EC事業",
+      "description": "主にインターネットを利用した通販サービスを提供する報告セグメントです。子会社のAda株式会社が、『ZOZOTOWN』内でオリジナル商品と他社優良ブランドの商品を厳選したファッションセレクトショップを運営しています。2026年３月期の外部顧客への売上高は3,740百万円でした。SHOPLIST事業は2025年２月に譲渡が完了しており、当連結会計年度からはAda.事業のみとなっています。",
+      "customers": [
+        "ZOZOTOWNを利用する消費者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "ada",
+          "name": "Ada.事業",
+          "description": "Ada株式会社が運営する、オリジナル商品と他社優良ブランドの商品を厳選したファッションセレクトショップです。主に『ZOZOTOWN』内で展開しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業セグメントと、報告セグメントに配分していない共通費からなる区分です。GameFi事業は2025年６月に撤退が完了し、当連結会計年度から報告セグメントから外れてこの区分に含まれています。2026年３月期の外部顧客への売上高は366百万円でした。",
+      "customers": [
+        "報告セグメントに含まれない事業の取引先・利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
+  "businessModel": {
+    "description": "連結子会社を通じて、SESを中心とするITアウトソーシング事業と、ZOZOTOWN内のファッションセレクトショップによるEC事業を展開し、サービス提供の対価と商品の販売代金を得る事業モデルです。",
+    "products": [
+      "エンジニアの派遣・業務受託（SES事業）",
+      "介護福祉分野の人材サービス",
+      "ファッションセレクトショップ「Ada.」による衣料品等の販売"
+    ],
+    "customers": [
+      "エンジニアの派遣や業務委託を求める企業",
+      "介護・福祉分野の人材を求める事業者",
+      "ZOZOTOWNを利用する消費者"
+    ],
+    "revenueSources": [
+      "エンジニア派遣・業務受託への対価",
+      "人材サービスへの対価",
+      "ファッション商品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "クルーズ",
+        "description": "東京都渋谷区恵比寿に本社を置く純粋持株会社で、連結子会社20社と持分法適用関連会社２社からなるグループを統括しています。2026年３月31日現在の連結従業員数は856人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ITアウトソーシングとEC",
+        "description": "自社で採用したエンジニアを顧客企業に派遣し又は業務を受託するSES事業を中心とするITアウトソーシング事業と、ZOZOTOWN内のファッションセレクトショップによるEC事業を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "企業と消費者",
+        "description": "ITアウトソーシング事業の顧客はエンジニアを必要とする企業や介護・福祉分野の事業者で、EC事業の顧客はZOZOTOWNを利用する消費者です。EC事業では株式会社ZOZOが主要な顧客となっています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年３月期の売上高は11,820百万円で、前連結会計年度比16.7％の減少でした。ITアウトソーシング事業が7,713百万円、EC事業が3,740百万円、その他が366百万円で、減少の主因はSHOPLIST事業の譲渡によりEC事業がAda.事業のみとなったことです。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純損失",
+        "description": "2026年３月期の親会社株主に帰属する当期純損失は470百万円で、前連結会計年度の530百万円に続き損失となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +159,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9650705000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 389,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9968966000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 490,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10808740000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 594,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9327255000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 712,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +239,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8858551000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 856,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +247,179 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2001,
+      "title": "有限会社ウェブドゥジャパンを設立",
+      "description": "東京都港区高輪にて有限会社ウェブドゥジャパンが設立され、モバイルコンテンツの受託開発事業を開始しました。",
+      "significance": "当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "IT業界に特化した人材派遣事業を開始",
+      "description": "IT業界に特化した人材派遣事業を開始しました。",
+      "significance": "現在のITアウトソーシング事業につながる人材事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "株式会社ウェブドゥジャパンへ組織変更",
+      "description": "有限会社から株式会社ウェブドゥジャパンへ組織変更しました。",
+      "significance": "株式会社としての事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "検索エンジン「CROOZ!」を開発",
+      "description": "検索エンジン「CROOZ!」を開発し、アドネットワーク事業を開始しました。",
+      "significance": "社名の由来となるサービスです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "大阪証券取引所ヘラクレスに上場",
+      "description": "大阪証券取引所ヘラクレス（現　東京証券取引所スタンダード市場）に株式を上場しました。",
+      "significance": "上場会社としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "クルーズ株式会社へ商号変更",
+      "description": "株式会社ウェブドゥジャパンからクルーズ株式会社へ商号変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "「SHOPLIST.com by CROOZ」を開始",
+      "description": "ファッション通販サイト「SHOPLIST.com by CROOZ」のサービスを開始しました。",
+      "significance": "後のEC事業の中核となったサービスです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "Studio Z株式会社を設立し、インターネットコンテンツ事業を譲渡",
+      "description": "インターネットコンテンツ事業において「エレメンタルストーリー」を運営する部門を独立させ、Studio Z株式会社を設立しました。それ以外のインターネットコンテンツ事業の譲渡を実施しました。",
+      "significance": "コンテンツ事業の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "純粋持株会社への移行を決定",
+      "description": "全ての事業を子会社化し、純粋持株会社となりグループ経営へ移行することを決定しました。",
+      "significance": "現在の持株会社体制への転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "SHOPLIST事業をCROOZ SHOPLIST株式会社へ承継",
+      "description": "SHOPLIST事業を運営する部門を独立させ、CROOZ SHOPLIST株式会社に承継させる吸収分割を実施しました。",
+      "significance": "持株会社化に伴う事業の子会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "本社を東京都品川区西品川へ移転",
+      "description": "本社を東京都品川区西品川へ移転しました。",
+      "significance": "持株会社体制下での本社の移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "本社を東京都渋谷区恵比寿へ移転",
+      "description": "本社を東京都渋谷区恵比寿へ移転しました。",
+      "significance": "現在の本社所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "SHOPLIST事業から完全撤退",
+      "description": "CROOZ SHOPLIST株式会社の全株式を譲渡し、SHOPLIST事業から完全に撤退しました。",
+      "significance": "EC事業がAda.事業のみとなりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ゲーム事業から完全撤退",
+      "description": "Studio Z株式会社の全株式を譲渡し、ゲーム事業から完全に撤退しました。",
+      "significance": "事業ポートフォリオの絞り込みが進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "ホテルコンバージョン事業を開始",
+      "description": "『国土の真価を証明し、世界に誇る観光立国へ』をビジョンに、都心のビル資産を最高の宿泊拠点へ転換する「ホテルコンバージョン事業」を開始しました。",
+      "significance": "決算期末後の2026年５月の開始で、今後の成長を牽引する新たな事業の柱と位置付けられています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "zozo",
+      "relationship": "customer",
+      "description": "株式会社ZOZOは、当社グループのEC事業の主要な顧客です。子会社のAda株式会社が運営するファッションセレクトショップは主に『ZOZOTOWN』内で展開しており、セグメント情報の主要な顧客ごとの情報に、2026年３月期及び2025年３月期のEC事業の顧客として株式会社ZOZOが記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +427,52 @@
       "publisher": "クルーズ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YL1X.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YL1X",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 重要な後発事象として、翌連結会計年度より報告セグメントを変更し、「ホテルコンバージョン事業」、「介護派遣事業」、「エンジニア派遣事業」、「コールセンター、求人、人材紹介事業」及び「EC事業（Ada.）事業」の５事業を報告セグメントとすることが記載されています。あわせて、ホテルコンバージョン事業は決算期末後の2026年５月に開始されています。本登録は2026年３月期の報告セグメントであるITアウトソーシング事業及びEC事業に基づく事業構造で登録しております。",
+      "businessStructure: 重要な後発事象として、翌連結会計年度より報告セグメントを変更し、「ホテルコンバージョン事業」、「介護派遣事業」、「エンジニア派遣事業」、「コールセンター、求人、人材紹介事業」及び「EC事業（Ada.）事業」の５事業を報告セグメントとすることが記載されています。あわせて、ホテルコンバージョン事業は決算期末後の2026年５月に開始されています。本登録は2026年３月期の報告セグメントであるITアウトソーシング事業及びEC事業に基づく事業構造で登録しております。",
+      "history: 重要な後発事象として、翌連結会計年度より報告セグメントを変更し、「ホテルコンバージョン事業」、「介護派遣事業」、「エンジニア派遣事業」、「コールセンター、求人、人材紹介事業」及び「EC事業（Ada.）事業」の５事業を報告セグメントとすることが記載されています。あわせて、ホテルコンバージョン事業は決算期末後の2026年５月に開始されています。本登録は2026年３月期の報告セグメントであるITアウトソーシング事業及びEC事業に基づく事業構造で登録しております。"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "主力のSES事業では、ITエンジニアの新規採用数と離職率を重要な指標として追求し、採用の拡大と離職防止の施策に注力する方針です。あわせて、2026年５月に開始したホテルコンバージョン事業を、今後の成長を牽引する新たな事業の柱として推進する方針です。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "自社正社員エンジニアを年間約300名以上採用する体制を確立しており、スキル獲得の機会の提供や柔軟な働き方の提案によってエンジニアの定着を図る人材基盤が、SES事業の拡大を支えています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における優先的に対処すべき課題（エンジニア人材の採用力強化と採用手法の拡充、エンジニアに選ばれ続ける待遇や柔軟な働き方の維持）の記載に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "IT人材の不足が2030年にかけて拡大すると見込まれる市場環境のもとで、ITアウトソーシング事業は2026年３月期の売上高7,713百万円と連結売上高の過半を占める中核事業に成長しています。一方、EC事業はSHOPLIST事業の譲渡により縮小し、Ada.事業のみとなっています。",
+        "basis": "セグメント情報における外部顧客への売上高と、経営成績等の分析におけるIT人材需給の見通し及び事業別の概況の記載に基づきます。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

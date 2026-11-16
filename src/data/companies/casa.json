@@ -4,15 +4,165 @@
   "name": "Casa",
   "officialName": "株式会社Casa",
   "nameEn": "Casa Inc.",
-  "description": null,
+  "shortNameEn": "Casa Inc.",
+  "description": "賃貸住宅の入居者の家賃支払いを保証する家賃債務保証を主力事業とし、集金代行や養育費保証も手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "rent-guarantee",
+      "name": "家賃債務保証事業",
+      "description": "賃貸借契約の締結に際し、入居者と保証委託契約を結び、連帯保証人として家主に対する賃料等の支払いを保証する主力事業です。報告セグメントはこの事業のみで、2026年1月期の売上高は12,753百万円でした。保証の引き受けには信用情報機関のデータと自社のデータベースを活用した与信管理を行い、滞納が発生した場合には家主や不動産会社に対して代位弁済を行い、その後、入居者に対して求償権を行使します。2026年1月31日現在の保有契約件数は683,602件です。",
+      "customers": [
+        "賃貸住宅の入居者",
+        "家主・不動産管理会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "guarantee-products",
+          "name": "家賃債務保証サービス",
+          "description": "家賃の集金代行と家賃債務保証がセットになった事前立替型保証商品「Casaダイレクト」や、賃貸人（家主）に家賃を直接送金する「家主ダイレクト」などを提供します。金額は事業単位でのみ開示されており、このサービス単独の金額は開示されていません。",
+          "customers": [
+            "賃貸住宅の入居者",
+            "家主・不動産管理会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "collection-service",
+          "name": "集金代行サービス",
+          "description": "家主及び不動産会社の家賃管理の効率化を目的として、[[company:ricoh-leasing|リコーリース株式会社]]と提携し提供している集金代行サービスです。金額は事業単位でのみ開示されており、このサービス単独の金額は開示されていません。",
+          "customers": [
+            "家主・不動産管理会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other-services",
+      "name": "その他の事業",
+      "description": "自主管理家主向けの賃貸経営支援や、養育費の支払いの保証など、家賃債務保証事業以外の事業です。事業ごとの売上高は独立して開示されていません。",
+      "customers": [
+        "自主管理家主",
+        "ひとり親世帯"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "compass-platform",
+          "name": "賃貸経営プラットフォーム事業「COMPASS」",
+          "description": "連結子会社の株式会社ＣＯＭＰＡＳＳが運営し、自主管理家主に対し、客付け、家賃管理及び退去対応等、賃貸経営全般に必要な業務をITの活用によりワンストップで提供するサービスです。2026年1月期には、Webサービスの登録オーナー数が12,167人に拡大しました。",
+          "customers": [
+            "自主管理家主"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "child-support-guarantee",
+          "name": "養育費保証事業",
+          "description": "養育費の支払いを保証する事業です。保証の提供にとどまらず、お部屋探し、仕事探し及び暮らしに関する相談対応等を通じて、ひとり親の自立を支援しています。",
+          "customers": [
+            "ひとり親世帯"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "call-center",
+          "name": "コールセンター事業",
+          "description": "連結子会社の株式会社プロフィットセンターが担う事業で、アウトバウンド及びインバウンドの電話サービスを通じて、当社グループの営業活動の強化と顧客接点の充実を支えます。",
+          "customers": [
+            "当社グループの顧客・取引先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "入居者と保証委託契約を結んで連帯保証人となり、家主への賃料の支払いを保証することで、契約時の初回保証料と毎年の継続保証料を得るストック型の事業モデルです。",
+    "products": [
+      "家賃債務保証（Casaダイレクト、家主ダイレクト）",
+      "集金代行サービス",
+      "賃貸経営プラットフォーム「COMPASS」",
+      "養育費保証サービス「養育費保証プラス」",
+      "コールセンターサービス"
+    ],
+    "customers": [
+      "賃貸住宅の入居者",
+      "家主・不動産管理会社",
+      "自主管理家主",
+      "ひとり親世帯"
+    ],
+    "revenueSources": [
+      "契約時に受領する初回保証料",
+      "契約締結後、毎年受領する継続保証料",
+      "その他のサービスの売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "Casa",
+        "description": "東京都新宿区に本社を置き、連結子会社２社とグループを構成します。2026年１月31日現在の連結従業員数は276人です。前身は2008年に設立されたレントゴー保証株式会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "家賃債務保証と関連サービス",
+        "description": "入居者の家賃支払いを保証する家賃債務保証を中心に、集金代行サービス、賃貸経営プラットフォーム「COMPASS」、養育費保証、コールセンターサービスを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "入居者・家主・不動産管理会社",
+        "description": "賃貸借契約を結ぶ入居者と保証委託契約を結び、不動産管理会社などの代理店を通じて申込みを受け付けます。2026年１月31日現在の代理店社数は15,130社です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年１月期の売上高は12,753百万円で、前期比4.9％増でした。内訳は初回保証料6,131百万円、継続保証料6,278百万円、その他売上344百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年１月期の親会社株主に帰属する当期純利益は123百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年1月期",
@@ -27,7 +177,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6983753000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 304,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +197,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6842111000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 295,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を2023年１月期の期首から適用しており、2023年１月期以降の主要な経営指標等は当該会計基準等を適用した後の数値です。"
     },
     {
       "fiscalYear": "2024年1月期",
@@ -67,7 +218,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7235209000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 291,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +238,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7517139000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 290,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +258,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6597878000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 276,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +266,223 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2008,
+      "title": "レントゴー保証株式会社を設立",
+      "description": "東京都新宿区百人町に、家賃債務保証事業を目的とするレントゴー保証株式会社が設立されました。",
+      "significance": "当社の前身であり、主力事業のはじまりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "株式会社Casaへ商号変更",
+      "description": "前身のレントゴー保証株式会社が、商号を株式会社Casaに変更しました。",
+      "significance": "現在の社名の由来です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "旧株式会社Casaの全株式を取得",
+      "description": "シー・フォー・ワン・ホールディングス株式会社が設立され、旧株式会社Casaの全株式を取得しました。",
+      "significance": "現在の当社への再編の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "吸収合併により株式会社Casaが発足",
+      "description": "当社を存続会社として旧株式会社Casaを吸収合併し、同時に商号を株式会社Casaに変更しました。",
+      "significance": "現在の当社の体制が成立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "「Casaダイレクト」の提供を開始",
+      "description": "家賃の集金代行と家賃債務保証がセットになった事前立替型保証商品「Casaダイレクト」の提供を開始しました。",
+      "significance": "集金代行と保証を組み合わせた主力商品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "「家主ダイレクト」の提供を開始",
+      "description": "賃貸人（家主）に家賃を直接送金する「家主ダイレクト」の提供を開始しました。",
+      "significance": "家主向けの送金の仕組みを広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "東京証券取引所市場第一部へ指定",
+      "description": "東京証券取引所市場第一部へ指定されました。",
+      "significance": "市場第一部の会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "株式会社ＣＯＭＰＡＳＳを設立",
+      "description": "連結子会社として株式会社ＣＯＭＰＡＳＳを設立しました。",
+      "significance": "賃貸経営プラットフォーム事業の担い手です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "養育費保証サービス「養育費保証プラス」をリリース",
+      "description": "養育費の支払いを保証するサービス「養育費保証プラス」をリリースしました。",
+      "significance": "家賃保証で培った保証の仕組みを養育費へ広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "新市場区分ではプライム市場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社ＧｏｌｄＫｅｙを子会社化",
+      "description": "株式会社ＧｏｌｄＫｅｙの株式を追加取得し、連結子会社としました。",
+      "significance": "入居者管理アプリ「Roomコネクト」の販売体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所のプライム市場からスタンダード市場へ移行しました。",
+      "significance": "現在の所属市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社プロフィットセンターを子会社化",
+      "description": "株式会社プロフィットセンターの株式を取得し、連結子会社としました。",
+      "significance": "コールセンター事業をグループに取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社ＧｏｌｄＫｅｙの全株式を売却",
+      "description": "保有していた株式会社ＧｏｌｄＫｅｙの全株式を売却し、連結の範囲から除外しました。",
+      "significance": "「Roomコネクト」事業の体制見直しに伴う、期中の構造変化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "ricoh-leasing",
+      "relationship": "business-partner",
+      "description": "家賃の集金代行サービスを提携して提供している事業提携先であり、2026年１月31日現在、発行済株式（自己株式を除く。）の15.33％を保有する筆頭株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第13期(2025/02/01－2026/01/31)",
-      "publisher": "株式会社Casa",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XZL9.pdf",
-      "publishedAt": "2026-04-23",
-      "accessedAt": "2026-09-29"
+      "title": "訂正有価証券報告書－第13期(2025/02/01－2026/01/31)",
+      "publisher": "株式会社Ｃａｓａ",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z13L.pdf",
+      "publishedAt": "2026-09-10",
+      "docId": "S100Z13L",
+      "asOf": "2026-01-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「誰もが安心して暮らせる社会」の実現を目指し、代理店網の拡大と既存取引先における利用促進により申込件数と保有契約件数を積み上げ、ストック型収益基盤の拡充を進める方針です。あわせて、審査精度の向上と信用コスト管理の高度化、AIや自動化を進める保証DXに取り組み、賃貸経営プラットフォーム「COMPASS」と養育費保証の育成も進めます。",
+        "asOf": "2026-09-10",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年１月期は、代理店における利用拡大と新規代理店の獲得により新規契約件数は137,272件、保有契約件数は前期末比5.9％増の683,602件となり、売上高は前期比4.9％増の12,753百万円に積み上がりました。一方で、審査の厳格化により新規契約件数の伸びが抑えられたうえ、信用コストが増加し、親会社株主に帰属する当期純利益は123百万円にとどまっており、積み上げた契約を利益へつなげることが課題になっています。",
+        "basis": "MD&Aの経営成績の分析における申込・契約件数と売上高の記載、および経営方針の対処すべき課題の記載に依拠します。",
+        "asOf": "2026-09-10",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "信用情報機関のデータ及び自社のデータベースを活用した与信管理体制を構築していること、滞納が発生した場合の代位弁済から求償までの仕組みを持つこと、入居者に対して支払方法の相談窓口の設置や行政のセーフティネットの案内など滞納の未然防止に取り組んでいることが、事業の基盤として示されています。",
+        "asOf": "2026-09-10",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      },
+      "analysis": {
+        "text": "保有契約件数が68万件を超える規模まで積み上がった継続保証料のストックが収益の柱であり、契約と回収の実績データを蓄積するほど、保証の引受けの精度を高めやすい構造になっています。",
+        "basis": "事業の内容の与信管理体制の記載と、MD&Aの保有契約件数及び継続保証料の推移に依拠します。",
+        "asOf": "2026-09-10",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年1月期",
     "asOf": "2026-01-31",

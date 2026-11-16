@@ -4,15 +4,233 @@
   "name": "シー・エス・ランバー",
   "officialName": "株式会社シー・エス・ランバー",
   "nameEn": "C.S. LUMBER CO., INC",
-  "description": null,
+  "shortNameEn": "C.S. LUMBER CO., INC",
+  "description": "木造住宅向け木材のプレカット加工を中心に、木造住宅の建築請負と不動産賃貸を手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "precut",
+      "name": "プレカット事業",
+      "description": "在来（木造軸組）工法とツーバイフォー工法で使う木材を工場でプレカット加工し、ツーバイフォー工法のパネル製造とあわせて販売する、グループの中核事業です。2026年5月期の外部顧客への売上高は13,242百万円でした。資材の提供に建て方工事を組み合わせた「材工一体」の取り組みも進めています。",
+      "customers": [
+        "住宅建築事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "precut-processing",
+          "name": "木材のプレカット加工・販売",
+          "description": "当社と連結子会社のシー・エス・マテリアルが、在来工法・ツーバイフォー工法向けに木材の製材とプレカット加工を行い、販売します。東金工場と山武工場が加工拠点です。",
+          "customers": [
+            "住宅建築事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "panel-manufacturing",
+          "name": "ツーバイフォー工法のパネル製造・販売",
+          "description": "ツーバイフォー工法で使う壁・床・天井・屋根のパネルを製造し、販売します。",
+          "customers": [
+            "住宅建築事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "erection-work",
+          "name": "建て方工事の請負",
+          "description": "連結子会社のシー・エス・ビルドが、現場で土台の据付から柱・梁・棟上げまで建物の主要構造材を組み立てる建て方工事を請け負います。",
+          "customers": [
+            "住宅建築事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "product-delivery",
+          "name": "プレカット製品の配送",
+          "description": "連結子会社のシー・エス・物流が、プレカット製品の配送を担います。",
+          "customers": [
+            "住宅建築事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "construction-contracting",
+      "name": "建築請負事業",
+      "description": "木造戸建住宅と木造一般建築物の建築の請負、建設工事の請負を行う事業です。2026年5月期の外部顧客への売上高は5,588百万円でした。大型木造施設の受注にも取り組んでいます。",
+      "customers": [
+        "住宅の施主",
+        "不動産会社・工務店"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "wooden-houses",
+          "name": "木造戸建住宅の建築",
+          "description": "当社と連結子会社のなのはなハウジング、シー・エス・ホーム、サンヨー建設が木造戸建住宅の建築を請け負います。",
+          "customers": [
+            "住宅の施主"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "wooden-buildings",
+          "name": "木造一般建築物・建設工事の請負",
+          "description": "シー・エス・ホームが木造一般建築物の建築を、サンヨー建設が建設工事の請負を行います。保育所やアパートなどの大型木造施設も手がけます。",
+          "customers": [
+            "不動産会社・工務店",
+            "事業会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸事業",
+      "description": "事業用・居住用不動産の賃貸と管理を行う事業です。2026年5月期の外部顧客への売上高は1,343百万円でした。保育所の施設が主力の賃貸物件で、2026年5月期は保育所23物件、その他の賃貸施設43物件から賃料収入を得ています。",
+      "customers": [
+        "保育所の運営事業者",
+        "事業会社・居住者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "nursery-leasing",
+          "name": "保育所施設の賃貸",
+          "description": "東京都特別区を中心に、地方公共団体や運営事業者と連携して保育所施設を賃貸します。2026年4月には保育所2箇所を新たに開設しました。",
+          "customers": [
+            "保育所の運営事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営方針、経営環境及び対処すべき課題等】"
+        },
+        {
+          "id": "property-leasing",
+          "name": "事業用・居住用不動産の賃貸・管理",
+          "description": "当社と連結子会社のシー・エス・不動産リースなどが、事業用・居住用不動産の賃貸と管理を行います。収益基盤の安定化のため、賃貸用不動産の取得を進めています。",
+          "customers": [
+            "事業会社・居住者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other-real-estate-sales",
+      "name": "その他事業（不動産販売事業）",
+      "description": "報告セグメントに含まれない事業で、戸建住宅の開発と分譲販売を行います。連結子会社のシー・エス・リアルエステートが担い、2026年5月期の外部顧客への売上高は207百万円でした。",
+      "customers": [
+        "住宅購入者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "木材の製材・プレカット加工から製品の配送、木造住宅の建築請負、不動産賃貸までをグループで一貫して担う事業モデルです。",
+    "products": [
+      "プレカット加工した木材（在来工法・ツーバイフォー工法）",
+      "ツーバイフォー工法用パネル",
+      "建て方工事",
+      "木造戸建住宅・木造一般建築物",
+      "賃貸用不動産（保育所・共同住宅等）",
+      "分譲住宅・分譲地"
+    ],
+    "customers": [
+      "住宅建築事業者",
+      "住宅の施主",
+      "保育所の運営事業者などの賃貸先",
+      "住宅購入者"
+    ],
+    "revenueSources": [
+      "プレカット製品の販売代金",
+      "建て方工事・建築工事の請負代金",
+      "不動産の賃料収入",
+      "住宅・土地の分譲販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "シー・エス・ランバーグループ",
+        "description": "当社と連結子会社8社でグループを構成し、千葉県千葉市花見川区に本店を置きます。2026年5月31日現在の連結従業員数は320人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "木材のプレカット加工と木造建築、不動産賃貸",
+        "description": "在来工法・ツーバイフォー工法の木材のプレカット加工とパネルの製造・販売、建て方工事の請負、木造住宅・木造一般建築物の建築請負、事業用・居住用不動産の賃貸と管理、戸建住宅の分譲販売を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "住宅建築事業者や住宅の施主",
+        "description": "プレカット製品の主要な販売先として、大東建託株式会社や、株式会社ヒノキヤグループ、株式会社東栄住宅などの住宅事業者が挙げられています。建築請負では不動産会社や工務店、住宅の施主から受注します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年5月期の売上高は20,381百万円で、前年同期比1.4％減でした。プレカット事業が13,242百万円、建築請負事業が5,588百万円、不動産賃貸事業が1,343百万円、その他事業が207百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年5月期の親会社株主に帰属する当期純利益は693百万円で、前年同期比40.1％減でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年5月期",
@@ -27,7 +245,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6885515000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 315,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +265,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8990606000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 312,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +285,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10287639000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 321,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +305,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11289272000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 328,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +325,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11883349000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 320,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +333,159 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1983,
+      "title": "株式会社千葉中井材木店を設立",
+      "description": "株式会社中井材木店の千葉支店から発展的に独立する形で、千葉県千葉市稲毛区長沼原町に株式会社千葉中井材木店（現 株式会社シー・エス・ランバー）が設立され、材木販売業を始めました。",
+      "significance": "当社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "プレカット事業を開始",
+      "description": "福島県の他社に製造を委託する形で、木材のプレカット事業を開始しました。",
+      "significance": "現在の中核事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "社名をシー・エス・ランバーに変更し受注建築を開始",
+      "description": "社名を株式会社千葉中井材木店から株式会社シー・エス・ランバーに変更しました。建設業許可を取得して建設部門を発足し、木造住宅の受注建築事業を開始しました。",
+      "significance": "社名の由来は社是「Customer Satisfaction through Lumber」です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "自社でプレカット加工を開始",
+      "description": "他社への製造委託から、自社工場でのプレカット加工に切り替えました。",
+      "significance": "プレカット事業の自社生産体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "建築部門と不動産賃貸部門を分社化",
+      "description": "建築事業部を分割して子会社の株式会社シー・エス・リモデリング（現 株式会社なのはなハウジング）に建設部門を統合し、不動産賃貸部門を分社化して株式会社ＣＬＣコーポレーションを設立しました。",
+      "significance": "グループ経営への移行を示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "ツーバイフォー工法のパネル製造を開始",
+      "description": "パネル製造シージングマシンを導入し、東金工場でツーバイフォー工法のパネル製造を開始しました。",
+      "significance": "ツーバイフォー分野への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "ベトナムにCAD子会社を設立",
+      "description": "ベトナムにCSL CAD VIETNAM COMPANY LIMITEDを設立し、プレカットCADの入力業務を開始しました。",
+      "significance": "海外拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "東京証券取引所JASDAQ（スタンダード）に株式を上場しました。",
+      "significance": "上場の出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "シー・エス・マテリアルを設立し事業を譲り受け",
+      "description": "株式会社シー・エス・マテリアルを設立し、久瀬木材株式会社から製材事業とプレカット事業を譲り受けました。",
+      "significance": "製材から加工までの一貫体制を強めた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "決算期を5月31日に変更",
+      "description": "定時株主総会の決議により、決算期を11月30日から5月31日に変更しました。",
+      "significance": "現在の5月決算の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "ＣＬＣコーポレーションを吸収合併",
+      "description": "連結子会社の株式会社ＣＬＣコーポレーションを吸収合併しました。同年、株式会社シー・エス・リアルエステートと株式会社シー・エス・不動産リースを設立しました。",
+      "significance": "不動産事業の体制を再編した出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "サンヨー建設の株式を取得",
+      "description": "サンヨー建設株式会社の株式を取得し、連結子会社としました。",
+      "significance": "建築請負事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "ベトナム子会社の全株式を売却",
+      "description": "2026年4月に、CSL CAD VIETNAM COMPANY LIMITEDの全株式を売却しました。",
+      "significance": "海外子会社の整理です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "daito-trust-construction",
+      "relationship": "customer",
+      "description": "プレカット事業における主要な販売先です。当社は同社の株式を保有しており、保有目的として、安定株主の確保と、プレカット事業における主要販売先としての取引関係の維持及び強化を挙げています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +493,55 @@
       "publisher": "株式会社シー・エス・ランバー",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YYY4.pdf",
       "publishedAt": "2026-08-27",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YYY4",
+      "asOf": "2026-05-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "創業50周年を迎える2032年に向けた将来像「シー・エス・ランバーVISION 2032」を掲げ、プレカット事業を基盤としながらもその枠にとらわれず、多様な収益源を創りながら事業の拡大・成長を続ける企業集団を目指すとしています。プレカット事業では、サイディング（外壁材）プレカット事業の提案力強化、構造材と建て方工事を組み合わせた「材工一体」の提案、プレカット加工機の刷新による省人化と歩留まりの追求を進めます。建築請負事業では大型木造施設の受注やエリア拡大、不動産賃貸事業では収益物件や分譲候補地の取得による安定した賃貸収入の確保に取り組むとしています。",
+        "asOf": "2026-08-27",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年5月期は、新設住宅着工戸数の低迷でプレカット事業の売上が減った一方、建築請負事業と不動産賃貸事業の売上が伸び、グループの売上に占める両事業の割合が高まりました。",
+        "basis": "セグメント情報の外部顧客への売上高、MD&Aの経営成績の概要、関連情報に依拠します。",
+        "asOf": "2026-08-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "製材・加工から配送、建築、不動産までをグループ内で一貫して担える体制を持ちます。不動産賃貸事業では保育所23物件を含む賃貸施設から安定した賃料収入を得ており、住宅市況の影響を受けにくい収益源を持っています。",
+        "basis": "【事業の内容】の事業の内容とグループ会社の位置付け、【経営方針、経営環境及び対処すべき課題等】の対処すべき課題、MD&Aの経営成績の概要に依拠します。",
+        "asOf": "2026-08-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "同社が属する住宅関連業界では、2025年6月から2026年5月までの累計で新設住宅着工戸数が前年同期比5.3％減となるなど、需要が伸び悩む環境が続いています。そのなかでプレカット事業の出荷棟数は5,106棟でした。",
+        "basis": "MD&Aの経営成績の概要、セグメント情報の外部顧客への売上高に依拠します。",
+        "asOf": "2026-08-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年5月期",
     "asOf": "2026-05-31",

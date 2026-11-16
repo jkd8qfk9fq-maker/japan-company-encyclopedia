@@ -4,15 +4,158 @@
   "name": "カーメイト",
   "officialName": "株式会社カーメイト",
   "nameEn": "CAR MATE MFG. CO., LTD.",
-  "description": null,
+  "shortNameEn": "CAR MATE MFG. CO., LTD.",
+  "description": "チャイルドシートやルーフキャリアなどのカー用品と、スノーボード用品を製造・販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    },
+    {
+      "industryId": "entertainment",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "car-related",
+      "name": "車関連事業",
+      "description": "車用品、運搬架台・タイヤ滑止、ケミカル類、電子・電気機器の各部門の製品を製造・販売する主力事業です。2026年3月期の外部顧客への売上高は12,854百万円で、全体の売上の約9割を占めています。米国の子会社が販売を、中国・深センの子会社が製造を担っています。",
+      "customers": [
+        "カー用品量販店などの販売先",
+        "自動車ユーザー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "car-accessories",
+          "name": "車用品部門",
+          "description": "車用小物類やチャイルドシートなどを製造・販売する部門です。金額はセグメント単位でのみ開示されており、この部門単独の金額は開示されていません。",
+          "customers": [
+            "カー用品量販店などの販売先",
+            "自動車ユーザー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "carrier-tire",
+          "name": "運搬架台・タイヤ滑止部門",
+          "description": "INNOブランドのルーフキャリアや、バイアスロンブランドの非金属タイヤチェーンなどを製造・販売する部門です。金額はセグメント単位でのみ開示されており、この部門単独の金額は開示されていません。",
+          "customers": [
+            "カー用品量販店などの販売先",
+            "自動車ユーザー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "chemicals",
+          "name": "ケミカル類部門",
+          "description": "芳香剤や消臭剤などのケミカル類を製造・販売する部門です。金額はセグメント単位でのみ開示されており、この部門単独の金額は開示されていません。",
+          "customers": [
+            "カー用品量販店などの販売先",
+            "自動車ユーザー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "electronics",
+          "name": "電子・電気機器部門",
+          "description": "ドライブレコーダーやリモコンエンジンスターターなどの電子・電気機器を製造・販売する部門です。金額はセグメント単位でのみ開示されており、この部門単独の金額は開示されていません。",
+          "customers": [
+            "カー用品量販店などの販売先",
+            "自動車ユーザー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "outdoor-leisure-sports",
+      "name": "アウトドア・レジャー・スポーツ関連事業",
+      "description": "スノーボード関係を中心としたスポーツ用品等の製造・販売と、自転車関連商品の販売を行う事業です。2026年3月期の外部顧客への売上高は1,709百万円でした。主力製品はFLUXブランドのバインディングなどのスノーボード関連用品です。",
+      "customers": [
+        "スポーツ用品の販売先",
+        "一般消費者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "カー用品を中心に自社工場で製造し、カー用品量販店などの販売先を通じて自動車ユーザーに届ける事業モデルです。",
+    "products": [
+      "チャイルドシートなどの車用品",
+      "INNOブランドのルーフキャリア",
+      "バイアスロンブランドの非金属タイヤチェーン",
+      "芳香剤・消臭剤などのケミカル類",
+      "ドライブレコーダーなどの電子・電気機器",
+      "FLUXブランドのスノーボード関連用品",
+      "自転車関連商品"
+    ],
+    "customers": [
+      "カー用品量販店などの販売先",
+      "スポーツ用品の販売先",
+      "自動車ユーザーやスポーツ愛好者"
+    ],
+    "revenueSources": [
+      "カー用品などの製品の販売代金",
+      "スノーボード関連用品などの製品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "カーメイト",
+        "description": "東京都豊島区に本社を置き、連結子会社5社とグループを構成します。2026年3月31日現在の連結従業員数は640人です。1966年に設立されました。"
+      },
+      {
+        "kind": "offering",
+        "title": "カー用品とスノーボード用品の製造販売",
+        "description": "チャイルドシートやルーフキャリア、非金属タイヤチェーン、ドライブレコーダーなどのカー用品と、スノーボード関連用品を製造・販売します。"
+      },
+      {
+        "kind": "customer",
+        "title": "量販店と自動車ユーザー",
+        "description": "カー用品量販店などの販売先を通じて、自動車ユーザーやスポーツ愛好者に製品を届けています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は14,563百万円で、前期比6.2％減でした。事業別では車関連事業が12,854百万円、アウトドア・レジャー・スポーツ関連事業が1,709百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は281百万円でした。前期は親会社株主に帰属する当期純損失332百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +170,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13996980000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 684,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +190,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14488298000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 672,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14698703000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 669,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14837097000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 659,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +250,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15203171000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 640,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +258,128 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1966,
+      "title": "株式会社カーメイトを設立",
+      "description": "東京都練馬区に、自動車用品の製造及び販売を目的として株式会社カーメイトが設立されました。",
+      "significance": "当社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "香港にCARMATE CAR ACCESSORIES CO., LTD.を設立",
+      "description": "東南アジアにおける資材の調達及び製品組立のため、香港にCARMATE CAR ACCESSORIES CO., LTD.が設立されました。",
+      "significance": "海外拠点の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "カーメイト物流株式会社を設立",
+      "description": "物流の効率化を目的として、カーメイト物流株式会社が設立されました。",
+      "significance": "グループの物流を担う連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会の承認を得て、株式が店頭登録されました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "中国・深セン市に快美特汽車精品(深セン)有限公司を設立",
+      "description": "中国・深セン市に、自動車用品等の製造販売を目的として快美特汽車精品(深セン)有限公司が設立されました。",
+      "significance": "現在の主力の製造拠点となる中国工場の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "米国にCar Mate USA, Inc.を設立",
+      "description": "米国に販売子会社Car Mate USA, Inc.が設立されました。",
+      "significance": "北米の販売拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "株式会社ジャスダック証券取引所に株式が上場されました。",
+      "significance": "証券取引所への上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "中国・上海市に烈卓(上海)貿易有限公司を設立",
+      "description": "中国・上海市に烈卓(上海)貿易有限公司が設立されました。",
+      "significance": "中国での販売体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ(スタンダード)に上場",
+      "description": "東京証券取引所と大阪証券取引所の現物市場の統合に伴い、東京証券取引所JASDAQ(スタンダード)に株式が上場されました。",
+      "significance": "現在の東証上場につながる移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所スタンダード市場へ移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "autobacs-seven",
+      "relationship": "customer",
+      "description": "セグメント情報の主要な顧客ごとの情報に、2026年3月期の車関連事業の主要な販売先として記載されています。当社は同社の株式も保有し、主要取引先であることを保有目的として開示しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "companyId": "yellow-hat",
+      "relationship": "customer",
+      "description": "セグメント情報の主要な顧客ごとの情報に、2026年3月期の車関連事業の主要な販売先として記載されています。当社は同社の株式も保有し、主要取引先であることを保有目的として開示しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +387,53 @@
       "publisher": "株式会社カーメイト",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKN6.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YKN6",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念「CREATE―創造―」を掲げ、お客様に納得・満足してもらえる、環境に配慮した「安全・安心なモノづくり」を目指す方針です。新製品・新サービスの市場導入強化、海外市場への積極的な展開による輸出の増加、新規チャネル・新規顧客の開拓、新ビジネスモデルへの取り組みを進めています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高は、主力の車関連事業でチャイルドシート類やドライブレコーダーが減収となり、前期比6.2％減の14,563百万円でした。一方、アウトドア・レジャー・スポーツ関連事業は主力のスノーボード関連製品が増収となり、売上高は前期比13.6％増の1,709百万円でした。",
+        "basis": "MD&Aの経営成績の分析と、セグメント情報の外部顧客への売上高に依拠します。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "製品開発は日本と中国の二極体制で展開し、「技術融合によるオンリーカーメイトな新製品」の開発を目指すことが示されています。11ジャンルにわたる製品開発部門と次世代製品の研究部門を併せ持ち、技術者は総勢100名超が在籍しています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【研究開発活動】"
+      },
+      "analysis": {
+        "text": "製造は茨城県の結城工場と中国・深センの連結子会社が担い、設計・開発から製造までをグループ内で行う体制です。車用品の幅広い部門（車用品、運搬架台・タイヤ滑止、ケミカル類、電子・電気機器）を一社で手がけています。",
+        "basis": "事業の内容、研究開発活動、主要な設備の状況に依拠します。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

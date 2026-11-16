@@ -4,15 +4,148 @@
   "name": "旭コンクリート工業",
   "officialName": "旭コンクリート工業株式会社",
   "nameEn": "Asahi Concrete Works Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Asahi Concrete Works Co., Ltd.",
+  "description": "ヒューム管やボックスカルバートなどのコンクリート二次製品を製造販売し、製品の敷設工事の請負と不動産賃貸を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "concrete",
+      "name": "コンクリート関連事業",
+      "description": "コンクリート二次製品の製造販売及び関連する諸工事の請負を行う事業です。コンクリート二次製品部門、工事部門、主にコンクリート二次製品に装着する資材の仕入及び販売を行っているその他部門の3部門で構成されています。2026年3月期の外部顧客への売上高は7,593百万円です。",
+      "customers": [
+        "官公庁などの公共事業の発注者",
+        "建設会社などの事業会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "precast-products",
+          "name": "コンクリート二次製品部門",
+          "description": "ヒューム管、ボックスカルバート、コネクトホール、共同溝、電線共同溝、テールアルメ、ホームガレージ、耐震性防火水槽、雨水貯溜槽等のコンクリート二次製品の製造及び販売を行う部門です。2026年3月期の販売高は4,528百万円です。",
+          "customers": [
+            "官公庁などの公共事業の発注者",
+            "建設会社などの事業会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "construction-works",
+          "name": "工事部門",
+          "description": "コンクリート製品の敷設工事等を行う部門です。2026年3月期の販売高は393百万円です。",
+          "customers": [
+            "官公庁などの公共事業の発注者",
+            "建設会社などの事業会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "materials-trading",
+          "name": "その他部門",
+          "description": "工事用資材及びコンクリート製品に装着する資材等の仕入及び販売を行う部門です。2026年3月期の販売高は2,671百万円です。",
+          "customers": [
+            "官公庁などの公共事業の発注者",
+            "建設会社などの事業会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "当社が保有するマンション等の賃貸事業です。2026年3月期の外部顧客への売上高は42百万円です。",
+      "customers": [
+        "マンション等の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "コンクリート二次製品の製造販売と製品の敷設工事の請負を行うコンクリート関連事業と、保有するマンション等の賃貸を行う不動産事業で収益を得る事業モデルです。",
+    "products": [
+      "ヒューム管",
+      "ボックスカルバート",
+      "コネクトホール",
+      "共同溝・電線共同溝向け製品",
+      "テールアルメ",
+      "ホームガレージ",
+      "耐震性防火水槽",
+      "雨水貯溜槽",
+      "コンクリート製品の敷設工事",
+      "マンション等の賃貸"
+    ],
+    "customers": [
+      "官公庁などの公共事業の発注者",
+      "建設会社などの事業会社",
+      "マンション等の賃借人"
+    ],
+    "revenueSources": [
+      "コンクリート二次製品の販売の対価",
+      "コンクリート製品の敷設工事等の請負の対価",
+      "工事用資材等の販売の対価",
+      "保有不動産の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "旭コンクリート工業",
+        "description": "1923年に創立され、本社は東京都中央区にあります。2026年3月期の従業員数は188人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "コンクリート関連事業と不動産事業",
+        "description": "ヒューム管やボックスカルバートなどのコンクリート二次製品の製造販売と敷設工事の請負などを行うコンクリート関連事業と、保有するマンション等の賃貸を行う不動産事業を展開しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "官公庁・建設会社など",
+        "description": "コンクリート関連事業の顧客は、下水道等の公共事業を発注する官公庁や建設会社などです。不動産事業ではマンション等の賃借人が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品販売と工事請負の対価",
+        "description": "2026年3月期の売上高は7,636百万円でした。コンクリート関連事業が7,593百万円と全体の大部分を占めています。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は455百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +160,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10175112000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 209,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +182,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10365732000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 199,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +204,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10853149000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 194,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +226,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12126382000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 189,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +248,105 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12712604000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 188,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1923,
+      "title": "名古屋市に創立",
+      "description": "名古屋市に創立し、名古屋工場を設置しました。",
+      "significance": "現在の事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "株式を店頭公開",
+      "description": "当社株式を店頭公開しました。",
+      "significance": "株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "当社株式を東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の市場区分になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nippon-hume",
+      "relationship": "other-affiliated-company",
+      "description": "日本ヒューム株式会社は、【関係会社の状況】にその他の関係会社として印字され、2026年3月31日現在、当社の議決権の29.6％を保有し、当社も同社の議決権の5.4％を保有しています。当社とはコンクリート関連事業への販売・仕入等を行っており、コンクリート製品の売買の関係があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "nippon-concrete-industries",
+      "relationship": "business-partner",
+      "description": "日本コンクリート工業株式会社は、コンクリート関連事業における関係先であり、当社と相互に株式を保有する取引関係があります。当社は営業関係の強化、販路拡大のために同社の株式を保有し、同社は2026年3月31日現在、当社の株式の2.28％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "taiheiyo-cement",
+      "relationship": "supplier",
+      "description": "太平洋セメント株式会社は、コンクリート関連事業における関係先であり、当社は営業関係の強化、安定した資材調達及び技術交流のために同社の株式を保有しています。同社は2026年3月31日現在、当社の株式の9.17％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "hanwa",
+      "relationship": "supplier",
+      "description": "阪和興業株式会社は、コンクリート関連事業における関係先であり、当社は営業関係の強化、安定した資材調達のために同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "neturen",
+      "relationship": "supplier",
+      "description": "高周波熱錬株式会社は、コンクリート関連事業における関係先であり、当社は営業関係の強化、安定した資材調達及び技術交流のために同社の株式を保有しています。同社は2026年3月31日現在、当社の株式の3.81％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +354,47 @@
       "publisher": "旭コンクリート工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIYA.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YIYA",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "販売・設計・生産の各部門が一体となって顧客の声に迅速かつ的確に応える体制を構築し、新製品・新工法の開発と実用化、3D技術を駆使した設計織込み活動と選別受注、現場打ちコンクリート構造物のプレキャスト化の提案を推進するとしています。また、重点工場の設備更新を順次実施し、品質向上と生産効率の向上による原価低減に取り組むとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1923年の創立以来コンクリート二次製品を手がけ、ヒューム管からボックスカルバート、耐震性防火水槽、雨水貯溜槽まで幅広い製品を持ち、全国に工場網を有する点が基盤です。技術設計開発部を中心に他社との共同研究・開発を続け、新製品・新工法の開発に取り組んでいます。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、メーカーとして『技術』へのこだわりを持ち、新製品・新工法の開発と実用化に向け、また既存の製品・工法についても更なる品質向上、更なる効率化・多用途化を図るため、研究と技術開発に取り組むことが印字されている。また【研究開発活動】に、技術設計開発部を中心として製品等の用途拡大のための他社との共同研究・開発を継続していることが印字されている。【事業の内容】にはヒューム管、ボックスカルバート、コネクトホール、共同溝、電線共同溝、テールアルメ、ホームガレージ、耐震性防火水槽、雨水貯溜槽等の製品が印字されている。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "コンクリート関連事業が売上高の99％超を占める単一事業に近い構成で、需要の中心は下水道等の公共事業です。国土強靭化計画の推進による災害対策工事が堅調な一方、官公庁の財政状況や公共事業の動向に業績が左右されやすい位置にあります。",
+        "basis": "【セグメント情報等】に、2026年3月期の外部顧客への売上高はコンクリート関連事業7,593百万円、不動産事業42百万円、合計7,636百万円と印字されている。また【事業等のリスク】に、コンクリート関連事業が官公庁の公共事業に大きく依存しており、官公庁の財政状況により業績に悪影響が及ぶ可能性があることが印字され、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、国土強靭化計画の推進により災害対策工事が堅調に推移したことが印字されている。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

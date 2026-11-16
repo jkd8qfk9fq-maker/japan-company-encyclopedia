@@ -4,15 +4,202 @@
   "name": "アクセル",
   "officialName": "株式会社アクセル",
   "nameEn": "AXELL CORPORATION",
-  "description": null,
+  "shortNameEn": "Axell Corporation",
+  "description": "パチンコ・パチスロ機向けのグラフィックスLSIを主力製品とし、AIソリューションも手がける研究開発型の半導体メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "semiconductors",
+      "primary": true
+    },
+    {
+      "industryId": "it",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "lsi-business",
+      "name": "LSI事業",
+      "description": "パチンコ・パチスロ機向けのグラフィックスLSIやメモリモジュールを中心に製品を開発し販売する事業です。連結子会社のaimRage株式会社もこの事業に含まれます。2026年3月期の売上高は13,793百万円で、売上全体の大半を占めます。",
+      "customers": [
+        "パチンコ・パチスロ機メーカー"
+      ],
+      "children": [
+        {
+          "id": "graphics-lsi",
+          "name": "グラフィックスLSI",
+          "description": "パチンコ・パチスロ機の液晶表示などに使われるグラフィックスLSIです。顧客専用製品と特定用途向け製品があります。製品分類ごとの売上高は開示されていません。",
+          "customers": [
+            "パチンコ・パチスロ機メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "memory-module",
+          "name": "メモリモジュール",
+          "description": "パチンコ・パチスロ機の画像表示用基板に搭載される、画像データを保持するLSIを組み込んだ基板製品です。製品分類ごとの売上高は開示されていません。",
+          "customers": [
+            "パチンコ・パチスロ機メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-lsi",
+          "name": "サウンドLSI・LEDドライバLSI",
+          "description": "パチンコ・パチスロ機向けのサウンドLSIや、搭載されるLEDを制御するLEDドライバLSIです。製品分類ごとの売上高は開示されていません。",
+          "customers": [
+            "パチンコ・パチスロ機メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【沿革】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "ai-business",
+      "name": "AI事業",
+      "description": "AI領域における製品の開発販売とソリューションの提供を主軸とする事業で、組み込み機器向け製品、ミドルウェア、ブロックチェーン、セキュリティの領域も含みます。連結子会社のアイリア株式会社が中心です。2026年3月期の売上高は862百万円です。",
+      "customers": [
+        "製造業などの企業",
+        "組み込み機器メーカー",
+        "ゲーム開発会社"
+      ],
+      "children": [
+        {
+          "id": "ai-solutions",
+          "name": "AI製品・ソリューション",
+          "description": "自社開発のAIフレームワーク「アイリアSDK」を中核とした製品の開発とソリューションの提供です。金額は独立して開示されていません。",
+          "customers": [
+            "製造業などの企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "embedded-products",
+          "name": "組み込み機器向け製品",
+          "description": "組み込み機器向けのグラフィックスLSI及び関連製品の開発販売です。金額は独立して開示されていません。",
+          "customers": [
+            "組み込み機器メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "middleware",
+          "name": "ミドルウェア",
+          "description": "ゲーム開発に向けたミドルウェア製品「AXIPシリーズ」の開発販売です。金額は独立して開示されていません。",
+          "customers": [
+            "ゲーム開発会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "blockchain",
+          "name": "ブロックチェーン",
+          "description": "ブロックチェーン開発支援サービスとマイニングハードウェアの開発販売です。金額は独立して開示されていません。",
+          "customers": [
+            "ブロックチェーン関連事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "security",
+          "name": "セキュリティ",
+          "description": "暗号化製品の開発販売です。金額は独立して開示されていません。",
+          "customers": [
+            "機器メーカーなど"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "パチンコ・パチスロ機メーカーなどにグラフィックスLSIやメモリモジュールを開発して販売し、AIフレームワークやミドルウェアなどの製品とソリューションも提供する事業モデルです。",
+    "products": [
+      "パチンコ・パチスロ機向けグラフィックスLSI",
+      "メモリモジュール",
+      "サウンドLSI、LEDドライバLSI",
+      "AIフレームワーク「アイリアSDK」",
+      "ミドルウェア「AXIPシリーズ」",
+      "セキュリティ製品「SHALOシリーズ」"
+    ],
+    "customers": [
+      "パチンコ・パチスロ機メーカー",
+      "組み込み機器メーカー",
+      "ゲーム開発会社"
+    ],
+    "revenueSources": [
+      "LSI製品の販売対価",
+      "AI製品の販売対価とソリューションの提供対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "アクセル",
+        "description": "1996年に設立された研究開発型の企業集団で、本社は東京都千代田区にあります。連結子会社はアイリア株式会社とaimRage株式会社の2社で、2026年3月31日現在の従業員数は132人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "LSI製品とAI製品・ソリューション",
+        "description": "パチンコ・パチスロ機向けのグラフィックスLSIやメモリモジュールを中心としたLSI製品を開発し、AIフレームワーク「アイリアSDK」を中核としたAI製品やソリューション、組み込み機器向け製品、ミドルウェア、ブロックチェーン、セキュリティ領域の製品も提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "パチンコ・パチスロ機メーカーなど",
+        "description": "主な顧客はパチンコ・パチスロ機メーカーで、販売代理店や商社を通じて販売しています。2026年3月期は緑屋電気株式会社、加賀FEI株式会社、加賀電子株式会社が主要な顧客として開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売対価",
+        "description": "2026年3月期の売上高は14,656百万円で、前期と比べて3.9％減りました。事業別ではLSI事業が13,793百万円、AI事業が862百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,230百万円で、前期と比べて25.7％増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +214,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 10629000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 116,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +234,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 11695000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 126,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +254,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 12891000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 128,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +274,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 13015000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 132,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +294,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 13732000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 132,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +302,253 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1996,
+      "title": "会社の設立",
+      "description": "高機能LSI製品の開発と販売を目的として、東京都中野区に株式会社アクセルを設立しました。",
+      "significance": "研究開発型のLSIメーカーとしての創業です。資本金の金額は書いていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "顧客専用グラフィックスLSIの開発",
+      "description": "パチンコ・パチスロ機市場へ向けた顧客専用グラフィックスLSIを開発しました。",
+      "significance": "主力市場であるパチンコ・パチスロ機市場への参入の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "緑屋電気との業務提携",
+      "description": "緑屋電気株式会社と当社製品の販売に関する業務提携をしました。2000年12月には販売代理店契約を締結しています。",
+      "significance": "現在の主要な販売先との関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "グラフィックスLSIの販売開始",
+      "description": "パチンコ・パチスロ機市場へ向けた特定用途向けLSI製品として、グラフィックスLSIの販売を開始しました。",
+      "significance": "主力製品の販売が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "サウンドLSIの販売開始",
+      "description": "パチンコ・パチスロ機市場へ向けたサウンドLSIの販売を開始しました。",
+      "significance": "製品ラインの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "株式の店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "組み込み機器市場への参入",
+      "description": "組み込み機器市場へ向けたグラフィックスLSIの販売を開始しました。",
+      "significance": "パチンコ・パチスロ機以外の市場への展開の始まりで、現在のAI事業の管理区分につながります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "LEDドライバLSIの販売開始",
+      "description": "パチンコ・パチスロ機市場へ向けたLEDドライバLSIの販売を開始しました。",
+      "significance": "主力市場向け製品の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "メモリモジュールの販売開始",
+      "description": "パチンコ・パチスロ機市場へ向けたメモリモジュールの販売を開始しました。",
+      "significance": "現在の主力製品の一つが加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "東京証券取引所市場第二部へ上場しました。これに伴い、同年12月にジャスダック証券取引所への上場を廃止しています。",
+      "significance": "東京証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "東京証券取引所市場第一部銘柄への指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "AXIPシリーズの販売開始",
+      "description": "ソフトウェアIP、ミドルウェア製品としてAXIPシリーズの販売を開始しました。",
+      "significance": "現在のAI事業に含まれるミドルウェア製品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ax株式会社の設立",
+      "description": "子会社としてax株式会社を設立しました。",
+      "significance": "AI領域の事業を担う子会社の設立で、現在のアイリア株式会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ax株式会社による株式取得",
+      "description": "ax株式会社がbitcraft株式会社とモーションポートレート株式会社の株式を取得しました。両社はその後、ax株式会社に吸収合併されています。",
+      "significance": "AI領域の技術と人材の取り込みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "aimRage株式会社の設立",
+      "description": "富士通デバイス株式会社（現NVデバイス株式会社）と共同出資により、子会社aimRage株式会社を設立しました。",
+      "significance": "LSI事業の製品開発と販売を担う連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "マイニングボード「VMINE」の販売開始",
+      "description": "アルトコイン向けマイニングボード「VMINE」の販売を開始しました。",
+      "significance": "ブロックチェーン領域への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "セキュリティ製品SHALOシリーズの販売開始",
+      "description": "セキュリティ製品SHALOシリーズの販売を開始しました。",
+      "significance": "セキュリティ領域への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "アイリア株式会社への商号変更",
+      "description": "子会社ax株式会社の商号をアイリア株式会社へ変更しました。",
+      "significance": "AI事業の中核子会社の現在の名称です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kaga-electronics",
+      "relationship": "customer",
+      "description": "主要な顧客の一つで、LSI事業の製品を販売しています。2026年3月期の主要な顧客ごとの情報に、関連するセグメント名LSI事業として開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主要な顧客ごとの情報】"
+    },
+    {
+      "companyId": "renesas-electronics",
+      "relationship": "supplier",
+      "description": "LSIの開発及びその関連製品の開発を委託する基本契約を2010年2月に締結しており、1年ごとの自動更新により継続しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    },
+    {
+      "companyId": "celsys",
+      "relationship": "business-partner",
+      "description": "資本業務提携をしており、AI事業の領域で相互の技術交流や共同開発を行っています。2026年3月31日現在、当社の株式の4.31％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "aval-data",
+      "relationship": "business-partner",
+      "description": "主に組み込み機器市場向け製品の分野で協力関係を維持し、協業につながる相互技術の模索を行うなど連携しています。2026年3月31日現在、当社の株式の2.41％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shinko-shoji",
+      "relationship": "business-partner",
+      "description": "主に当社のLSI製品において協力関係を維持しており、取引関係の維持を目的に当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okaya-and-co",
+      "relationship": "business-partner",
+      "description": "同社及び同社グループ企業とは主に当社のLSI製品において協力関係を維持しており、同社のグループ企業である岡谷エレクトロニクス株式会社は当社LSI製品の販売代理店でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nihon-enterprise",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の株式の2.10％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +556,53 @@
       "publisher": "株式会社アクセル",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YC4Y.pdf",
       "publishedAt": "2026-06-16",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YC4Y",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "LSI事業ではグラフィックスLSIとメモリモジュールを中核製品として製品の多様化と開発支援環境の整備を進め、AI事業ではハードウェア開発の知見を生かせるAIコンピューティング領域に注力して早期の収益化を目指すとしています。新規事業の確立による事業ポートフォリオの多様化を推進し、パチンコ・パチスロ機の市場環境に過度に依存しない持続安定的な企業体質を構築することを目標に掲げています。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高はLSI事業が13,793百万円、AI事業が862百万円で、売上は依然としてパチンコ・パチスロ機向け製品に大きく偏っています。AI事業の売上高は前期の440百万円から増えており、多様化は進みつつある段階にあることが読み取れます。",
+        "basis": "セグメント情報に、2026年3月期の外部顧客への売上高としてLSI事業13,793百万円、AI事業862百万円が、2025年3月期のAI事業の売上高として440百万円が印字されていること。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "パチンコ・パチスロ機市場で圧倒的な市場シェアと強固な顧客関係、継続的な開発力を有するとし、構造変化を競争優位を確立する機会と捉えています。研究開発力をコア・コンピタンスと位置付けています。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "主要な販売先である緑屋電気株式会社との販売代理店契約は2000年の締結以来自動更新で継続しており、販売面での結びつきが長く続いていることが読み取れます。",
+        "basis": "重要な契約等に、緑屋電気株式会社との日本国内における非独占的な販売代理店契約（2000年12月締結、1年ごとの自動更新）が印字されていること。",
+        "asOf": "2026-06-16",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

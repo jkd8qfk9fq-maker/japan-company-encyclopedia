@@ -4,15 +4,153 @@
   "name": "ヨータイ",
   "officialName": "株式会社ヨータイ",
   "nameEn": "YOTAI REFRACTORIES CO.,LTD.",
-  "description": null,
+  "shortNameEn": "YOTAI REFRACTORIES CO.,LTD.",
+  "description": "鉄鋼・セメント・ガラスなどの高熱工業に不可欠な耐火れんがや不定形耐火物を製造販売し、工業用窯炉の設計・施工も行う耐火物の専門メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "refractories",
+      "name": "耐火物等",
+      "description": "鉄鋼用、非鉄金属用、セメント用、ガラス用、その他窯業用及び環境装置関係炉用を主とした、塩基性れんが、高アルミナ質れんが、粘土質れんが、珪石れんが等の各種耐火れんが及び不定形耐火物等を製造販売しています。連結子会社の営口窯耐進出口有限公司もこの事業に属し、当社へ製品を販売しています。2026年３月期の外部顧客への売上高は24,177百万円でした。",
+      "customers": [
+        "鉄鋼メーカー",
+        "非鉄金属メーカー",
+        "セメントメーカー",
+        "ガラスメーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "refractories-steel",
+          "name": "鉄鋼向け",
+          "description": "鉄鋼業向けの耐火物等の販売です。2026年３月期の外部顧客への売上高は11,853百万円でした。",
+          "customers": [
+            "鉄鋼メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "refractories-other-industries",
+          "name": "非鉄金属・セメント・ガラス向けなど",
+          "description": "非鉄金属、セメント、ガラス、その他窯業及び環境装置関係炉向けの耐火物等の販売です。2026年３月期の外部顧客への売上高は12,324百万円でした。",
+          "customers": [
+            "非鉄金属メーカー",
+            "セメントメーカー",
+            "ガラスメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "engineering",
+      "name": "エンジニアリング",
+      "description": "耐火物を使用する各種工業用窯炉、環境設備等の設計・施工を行っており、必要に応じてメンテナンス工事等を請け負っています。2026年３月期の外部顧客への売上高は5,407百万円でした。",
+      "customers": [
+        "工業用窯炉を使用する鉄鋼・非鉄金属等のメーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "engineering-steel",
+          "name": "鉄鋼向け",
+          "description": "鉄鋼業向けの窯炉・環境設備の設計・施工です。2026年３月期の外部顧客への売上高は624百万円でした。",
+          "customers": [
+            "鉄鋼メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "engineering-other-industries",
+          "name": "非鉄金属向けなど",
+          "description": "非鉄金属など鉄鋼以外の業種向けの窯炉・環境設備の設計・施工です。2026年３月期の外部顧客への売上高は4,782百万円でした。",
+          "customers": [
+            "非鉄金属メーカー等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "耐火れんがや不定形耐火物などの耐火物を鉄鋼・非鉄金属・セメント・ガラスメーカーなどへ販売し、工業用窯炉や環境設備の設計・施工とメンテナンス工事も請け負って収益を得る会社です。",
+    "products": [
+      "塩基性れんが・高アルミナ質れんが・粘土質れんが・珪石れんが等の各種耐火れんが",
+      "不定形耐火物",
+      "工業用窯炉・環境設備の設計・施工",
+      "メンテナンス工事"
+    ],
+    "customers": [
+      "鉄鋼メーカー",
+      "非鉄金属メーカー",
+      "セメントメーカー",
+      "ガラスメーカー",
+      "その他窯業メーカー"
+    ],
+    "revenueSources": [
+      "耐火物等の製品販売による売上高",
+      "窯炉・環境設備の設計・施工による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ヨータイ",
+        "description": "大阪府貝塚市に本店を置く耐火物の専門メーカーで、連結子会社１社とグループを構成します。2026年３月期の連結従業員数は537人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "耐火れんが・不定形耐火物と窯炉工事",
+        "description": "塩基性れんが、高アルミナ質れんが、粘土質れんが、珪石れんが等の各種耐火れんが及び不定形耐火物等を製造販売し、耐火物を使用する各種工業用窯炉・環境設備等の設計・施工とメンテナンス工事も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "鉄鋼メーカーなどのお客様",
+        "description": "鉄鋼、非鉄金属、セメント、ガラスなどの高熱工業のお客様に提供します。主要な顧客である東京製鐵株式会社への売上高は4,273百万円でした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年３月期の売上高は29,585百万円で、耐火物等が24,177百万円、エンジニアリングが5,407百万円でした。過去最高の売上高を更新しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は2,469百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +165,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 30109000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 564,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +185,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 31065000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 578,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +205,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32531000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 531,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +225,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32948000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 538,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +245,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 34425000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 537,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +253,179 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1936,
+      "title": "大阪窯業耐火煉瓦株式会社を設立",
+      "description": "耐火煉瓦製造を主たる目的として、大阪セメント株式会社（現・住友大阪セメント株式会社）その他の出資により、大阪市北区に大阪窯業耐火煉瓦株式会社を設立しました。",
+      "significance": "現在の当社の創立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1937,
+      "title": "岡山クレー工場を建設し操業開始",
+      "description": "岡山クレー工場（現・吉永工場第二製造所、岡山県備前市）を建設し、操業を開始しました。",
+      "significance": "岡山県備前市における生産拠点の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1938,
+      "title": "日生工場を建設し操業開始",
+      "description": "日生工場（岡山県備前市）を建設し、操業を開始しました。",
+      "significance": "備前市の生産体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "大阪証券取引所に株式を上場",
+      "description": "大阪証券取引所に株式を上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "吉永工場を建設し操業開始",
+      "description": "吉永工場（岡山県備前市）を建設し、操業を開始しました。",
+      "significance": "現在の主力工場のひとつです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "技術研究所を設置",
+      "description": "研究開発部門を統合し、技術研究所（岡山県備前市）を設置しました。",
+      "significance": "研究開発体制を一元化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "商号を株式会社ヨータイに変更",
+      "description": "商号を株式会社ヨータイと変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "大阪窯業株式会社を吸収合併",
+      "description": "大阪窯業株式会社を吸収合併し、貝塚工場（大阪府貝塚市）、瑞浪工場（岐阜県瑞浪市）ほかを承継しました。",
+      "significance": "現在の本店所在地である貝塚の工場を承継しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "オーワイケー・ファーネス株式会社を吸収合併",
+      "description": "子会社のオーワイケー・ファーネス株式会社を吸収合併しました。",
+      "significance": "エンジニアリング体制の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "本店を大阪府貝塚市へ移転",
+      "description": "本店を大阪府貝塚市二色中町８番１（現在地）に移転しました。",
+      "significance": "現在の本店所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "営口新窯耐耐火材料有限公司を完全子会社化",
+      "description": "2004年７月に出資した営口新窯耐耐火材料有限公司（中国・遼寧省大石橋市）へ追加出資し、完全子会社化しました。",
+      "significance": "中国拠点の子会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所と大阪証券取引所の現物市場統合に伴い、東京証券取引所市場第一部に上場しました。",
+      "significance": "取引所の市場統合への対応です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しに伴い、東京証券取引所プライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "柴田窯業原料株式会社の事業を譲り受け",
+      "description": "柴田窯業原料株式会社の耐火物原料の製造事業を譲り受け、瑞浪工場土岐製造所として操業を開始しました。",
+      "significance": "原料製造体制を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "営口窯耐進出口有限公司を設立",
+      "description": "営口窯耐進出口有限公司（中国・遼寧省大石橋市）を完全子会社として設立しました。",
+      "significance": "現在の唯一の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "営口新窯耐耐火材料有限公司の全出資持分を譲渡",
+      "description": "営口新窯耐耐火材料有限公司の全出資持分を譲渡しました。",
+      "significance": "中国拠点の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sumitomo-osaka-cement",
+      "relationship": "major-shareholder",
+      "description": "住友大阪セメント株式会社は、2026年３月31日現在で当社株式の12.87％を保有する主要株主です。1936年の当社設立時の出資者のひとつであり、当社グループは同社へ製品・築炉工事等を販売しているほか、同社へ土地・建物等を貸与しています。当社も同社の株式128,800株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +433,47 @@
       "publisher": "株式会社ヨータイ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHT7.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YHT7",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "永年に亘る耐火物製造技術の歴史と経験を後世に継承しつつ、独自の技術を生かして、革新する時代に即した新しい技術と製品を創出し、顧客の満足度を高めるとともに、社会に貢献する誠実な企業を目指すとしています。目標とする経営指標については、収益力の維持とESG経営の推進により財務価値・非財務価値を高め、社会と調和し、持続的に企業価値を向上し続ける企業を目指すとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1936年の創立以来の耐火物専門メーカーとして、各種耐火れんがと不定形耐火物の製造販売に加え、耐火物を使用する工業用窯炉・環境設備の設計・施工とメンテナンス工事までを一貫して手掛ける体制があります。鉄鋼メーカー等の顧客とは、製品を納入した後、顧客の使用高に応じて収益を認識する預託在庫取引も行っており、耐火物等セグメントの売上高には預託在庫取引による売上高9,007百万円が含まれます。",
+        "basis": "【事業の内容】の事業区分の記載、セグメント情報における報告セグメントごとの売上高、監査上の主要な検討事項における預託在庫取引の記載に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは耐火物等（2026年３月期の外部顧客への売上高24,177百万円）とエンジニアリング（同5,407百万円）の２事業で構成されます。本邦の外部顧客への売上高が連結売上高の90％を超えています。業種別の内訳は鉄鋼向けが12,478百万円、その他（非鉄金属・セメント・ガラス等）が17,106百万円で、主要な顧客である東京製鐵株式会社への売上高は4,273百万円です。",
+        "basis": "セグメント情報の報告セグメントごとの売上高と業種別内訳、【関連情報】における地域ごとの情報及び主要な顧客ごとの情報に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

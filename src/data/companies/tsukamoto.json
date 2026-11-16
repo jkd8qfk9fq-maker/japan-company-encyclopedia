@@ -4,15 +4,207 @@
   "name": "ツカモトコーポレーション",
   "officialName": "株式会社ツカモトコーポレーション",
   "nameEn": "TSUKAMOTO CORPORATION CO., LTD.",
-  "description": null,
+  "shortNameEn": "TSUKAMOTO CORPORATION CO., LTD.",
+  "description": "1812年に創業し、ユニフォームやアパレルなどの洋装、着物などの和装、健康・生活関連機器の企画・販売と建物の賃貸を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "yosou",
+      "name": "洋装事業",
+      "description": "洋装関連商品の企画及び販売を行う事業です。2026年3月期の外部顧客への売上高は5,139百万円でした。",
+      "customers": [
+        "ユニフォームを導入する企業・団体",
+        "量販店等のアパレル販売先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "uniform",
+          "name": "ユニフォーム事業",
+          "description": "当社ユニフォーム・SP事業部が行うユニフォーム商品の企画及び販売です。2026年3月期の売上高は4,615百万円でした。",
+          "customers": [
+            "ユニフォームを導入する企業・団体"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "apparel",
+          "name": "アパレル事業",
+          "description": "ホーム・ファッション事業部のアパレル部が行う、レディスOEMやメンズ等の洋装関連商品の企画及び販売です。2026年3月期の売上高は524百万円でした。",
+          "customers": [
+            "量販店等のアパレル販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "kenko-seikatsu",
+      "name": "健康・生活事業",
+      "description": "健康・環境分野の生活関連機器の企画及び販売を行う事業です。2026年3月期の外部顧客への売上高は2,593百万円でした。",
+      "customers": [
+        "家電量販店",
+        "サウナ機器等を導入する事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "aim",
+          "name": "エイム事業部",
+          "description": "当社エイム事業部が行う、サウナ機器等の健康・生活関連機器の企画及び販売です。金額は独立して開示されていません。",
+          "customers": [
+            "家電量販店",
+            "サウナ機器等を導入する事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "wellness",
+          "name": "ツカモトウェルネス",
+          "description": "連結子会社のツカモトウェルネス株式会社が行う健康・生活関連の事業です。金額は独立して開示されていません。",
+          "customers": [
+            "健康・生活関連商品の購入者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "building-rental",
+      "name": "建物の賃貸業",
+      "description": "自社保有の建物の賃貸を行う事業です。2026年3月期の外部顧客への売上高は991百万円でした。",
+      "customers": [
+        "建物の賃借人（テナント）"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "wasou",
+      "name": "和装事業",
+      "description": "和装関連商品の加工及び販売を行う事業で、主に連結子会社のツカモト市田株式会社が行っています。2026年3月期の外部顧客への売上高は970百万円でした。",
+      "customers": [
+        "着物等の和装関連商品の購入者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "home-furnishing",
+      "name": "ホームファニシング事業",
+      "description": "ホームファニシング商品の企画及び販売を行う事業で、当社ホーム・ファッション事業部が行っています。2026年3月期の外部顧客への売上高は407百万円でした。",
+      "customers": [
+        "ホームファニシング商品の購入者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他事業",
+      "description": "報告セグメントに含まれない新規事業等です。2026年3月期の外部顧客への売上高は4百万円でした。",
+      "customers": [
+        "新規事業等の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "ユニフォームやアパレル等の洋装関連商品、着物等の和装関連商品、健康・生活関連機器を企画・販売し、自社保有建物の賃貸も行う事業モデルです。",
+    "products": [
+      "ユニフォーム",
+      "アパレル製品（レディスOEM・メンズ等）",
+      "和装関連商品（着物等）",
+      "ホームファニシング商品",
+      "サウナ機器等の健康・生活関連機器"
+    ],
+    "customers": [
+      "ユニフォームを導入する企業・団体",
+      "量販店等のアパレル販売先",
+      "着物等の和装関連商品の購入者",
+      "家電量販店",
+      "建物の賃借人（テナント）"
+    ],
+    "revenueSources": [
+      "洋装関連商品の販売の対価",
+      "和装関連商品の加工・販売の対価",
+      "ホームファニシング商品の販売の対価",
+      "健康・生活関連機器の販売の対価",
+      "建物の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ツカモトコーポレーション",
+        "description": "1812年に創業し、1920年に株式会社として設立されました。本店は東京都中央区にあり、2026年3月31日現在の連結従業員数は180人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "繊維製品と生活関連機器、建物の賃貸",
+        "description": "ユニフォームやアパレル等の洋装関連商品、着物等の和装関連商品、ホームファニシング商品、サウナ機器等の健康・生活関連機器を企画・販売し、自社保有の建物も賃貸しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "企業・団体や販売先、テナント",
+        "description": "ユニフォームを導入する企業・団体、量販店等のアパレル販売先、家電量販店、建物のテナントなどが顧客です。売上高の10％以上を占める販売先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "商品の販売と建物の賃貸が収益",
+        "description": "収益は、洋装・和装・ホームファニシングの各商品と健康・生活関連機器の販売の対価、建物の賃貸料が中心です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の業績",
+        "description": "2026年3月期の売上高は10,106百万円、親会社株主に帰属する当期純利益は177百万円で、前期の当期純損失から黒字に転換しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +219,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11528528000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 236,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +239,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11900710000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 198,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +259,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13726387000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 188,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +279,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14054779000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 189,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号）等を第106期の期首から適用しており、第105期に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +300,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16159327000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 180,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +308,157 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1812,
+      "title": "創業",
+      "description": "現在の事業の起源となる商いが創業されました。",
+      "significance": "当社の事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1920,
+      "title": "株式会社塚本商店を設立",
+      "description": "株式会社塚本商店が設立され、創業以来の業務を継承しました。",
+      "significance": "法人としての当社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "塚本商事株式会社に商号変更",
+      "description": "商号を塚本商事株式会社に変更しました。",
+      "significance": "商社としての体制の時代の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "東京証券取引所市場第一部銘柄に指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "上場市場での位置づけが高まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "ツカモト株式会社に商号変更",
+      "description": "商号をツカモト株式会社に変更しました。",
+      "significance": "現在のブランド名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "持株会社体制への移行と商号変更",
+      "description": "会社分割により事業を分社化する体制に移行し、株式会社ツカモトコーポレーションに商号を変更しました。",
+      "significance": "現在の社名とグループ体制の転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "市田株式会社の株式を取得",
+      "description": "和装事業の市田株式会社の株式を取得しました。",
+      "significance": "和装事業の再編の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "ツカモト市田株式会社を設立し和装事業を統合",
+      "description": "ツカモト市田株式会社を設立し、和装事業を統合しました。",
+      "significance": "現在の和装事業の担い手の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "グループ7社を吸収合併",
+      "description": "ツカモトアパレル株式会社、市田株式会社などグループ7社を吸収合併しました。",
+      "significance": "事業会社としての体制への再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ツカモトウェルネス株式会社を設立",
+      "description": "健康・生活事業の連結子会社としてツカモトウェルネス株式会社を設立しました。",
+      "significance": "成長領域と位置づける事業の担い手の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "aeon",
+      "relationship": "customer",
+      "description": "主要取引先です。特定投資株式の保有目的に、当社の主要取引先でもあり、主に健康・生活事業、洋装事業にて安定した取引を保っている旨が記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "isetan-mitsukoshi-holdings",
+      "relationship": "customer",
+      "description": "取引先です。特定投資株式の保有目的に、主に洋装事業、和装事業にて安定した取引を保っている旨が記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "matsuya",
+      "relationship": "customer",
+      "description": "取引先です。特定投資株式の保有目的に、主に和装事業にて安定した取引を保っている旨が記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +466,53 @@
       "publisher": "株式会社ツカモトコーポレーション",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDV3.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YDV3",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-15",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026-2028年度を計画期間とする中期経営計画を策定し、「受け継ぐ力、未来へ～創業220年に向けた基盤づくり～」のもと、「組み方・商品・売り方・考え方」の4つの改革を全社で推進するとしています。事業ポートフォリオを成長・安定・改善・再生の4区分に整理し、不採算構造や従来型のビジネスモデルの見直しを進め、安定的な利益創出体質の確立を目指すとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "ユニフォーム事業と建物賃貸事業が安定領域として収益基盤を支え、和装・アパレルは改善領域、健康・生活事業は再生領域として位置づけられており、事業ポートフォリオの組み替えと不採算の解消が経営の中心課題になっています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等に、各事業の4区分への整理（成長領域はツカモトウェルネス事業及びホームファニシング事業、安定領域はユニフォーム事業及び建物賃貸事業、改善領域は和装事業及びアパレル事業、再生領域は健康・生活事業）と、黒字体質への転換を最優先とする位置づけが記載されている事実に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "経営理念として社訓と「私たちの信条（Credo）」を定め、「美しい生活がいい。」を企業スローガンに、ライフスタイル提案型の企業グループとして和文化の継承と流通革新に取り組むとしています。中期経営計画では、培ってきた事業基盤や信頼を活かすことを掲げています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "1812年の創業以来の長い事業の歴史を持ち、和装から洋装、健康・生活分野まで、生活に関連する幅広い領域の商品を扱っている点が特徴です。",
+        "basis": "沿革に1812年の創業と和装事業の継続が、事業の内容に和装・洋装・ホームファニシング・健康・生活・建物の賃貸の5事業の展開が記載されている事実に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
