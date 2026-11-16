@@ -4,15 +4,237 @@
   "name": "カワサキ",
   "officialName": "株式会社カワサキ",
   "nameEn": "Kawasaki & Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Kawasaki & Co.",
+  "description": "大阪泉州地域で物流倉庫の賃貸・営業倉庫業を中核に、シェニール織タオルなどの服飾雑貨の企画・販売とホテル運営を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "real-estate",
+      "primary": true
+    },
+    {
+      "industryId": "retail"
+    },
+    {
+      "industryId": "entertainment"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "rental-warehouse",
+      "name": "賃貸・倉庫事業",
+      "description": "大阪府泉州地域を中心に、自社保有の物流倉庫などの賃貸と、商品の保管・荷役を行う営業倉庫業を営む事業です。倉庫の屋根を活用した太陽光発電も行っています。2023年3月に大型物流施設「カワサキテクノプラザ」が、2024年1月に「カワサキ貝塚テクノプラザ」が竣工しました。2025年8月期の外部顧客への売上高は1,402百万円で、全社の売上高の過半を占める中核事業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "物流倉庫を利用する事業者",
+        "商品の保管・荷役を委託する事業者"
+      ],
+      "children": [
+        {
+          "id": "warehouse-rental",
+          "name": "物流倉庫等の賃貸",
+          "description": "自社保有の物流倉庫や賃貸物件を事業者に貸し出す部門です。",
+          "customers": [
+            "物流倉庫を利用する事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "warehousing",
+          "name": "営業倉庫",
+          "description": "顧客の商品の保管と荷役作業を行う部門です。",
+          "customers": [
+            "商品の保管・荷役を委託する事業者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "solar-power",
+          "name": "太陽光発電",
+          "description": "所有する倉庫の建屋の屋根を活用して太陽光発電を行う部門です。2018年2月に開始しました。",
+          "customers": [
+            "電力の購入者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "apparel",
+      "name": "服飾事業",
+      "description": "シェニール織物を素材とするタオルやハンカチ、バッグ、婦人ウエアなどを「レイクアルスター」ブランドで企画し、国内と中国・台湾・フィリピン・インドネシアなどで外注生産して、小売店・専門店・百貨店・通販会社などを通じて販売する事業です。大阪市中央区と泉大津市に直営のレイクアルスターブティックも出店しています。2025年8月期の外部顧客への売上高は537百万円です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "小売店・専門店・百貨店",
+        "通販会社",
+        "直営店の来店客"
+      ],
+      "children": [
+        {
+          "id": "chenille-textiles",
+          "name": "シェニール織タオル・婦人身の回り品",
+          "description": "シェニール織の高級タオルやハンカチ、バッグなどの婦人身の回り品です。「レイクアルスター」ブランドで、主にシニア女性向けに販売しています。",
+          "customers": [
+            "小売店・専門店・百貨店",
+            "通販会社"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "womens-wear",
+          "name": "婦人ウエア",
+          "description": "ブラウスやセーターなどの婦人ウエアです。",
+          "customers": [
+            "小売店・専門店・百貨店",
+            "通販会社"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "bath-toiletry",
+          "name": "バス・トイレタリー製品",
+          "description": "バス用品やトイレタリー製品です。",
+          "customers": [
+            "小売店・専門店・百貨店",
+            "通販会社"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "hotel",
+      "name": "ホテル事業",
+      "description": "南海本線泉大津駅前のホテルレイクアルスターアルザ泉大津を運営する事業です。2004年10月に開設し、2023年4月から当社が直営しています。2025年8月期の外部顧客への売上高は350百万円です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "宿泊客",
+        "宴会・レストランの利用客"
+      ],
+      "children": [
+        {
+          "id": "lodging",
+          "name": "宿泊",
+          "description": "ホテルレイクアルスターアルザ泉大津での宿泊サービスです。",
+          "customers": [
+            "宿泊客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "banquet",
+          "name": "宴会",
+          "description": "ホテルでの宴会サービスです。",
+          "customers": [
+            "宴会の利用客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "restaurant",
+          "name": "レストラン",
+          "description": "ホテルでのレストラン営業です。",
+          "customers": [
+            "レストランの利用客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社保有の物流倉庫の賃貸料と保管・荷役の対価を収益の柱に、「レイクアルスター」ブランドの服飾雑貨の販売とホテルの宿泊・料飲でも収益を得る事業モデルです。",
+    "products": [
+      "物流倉庫の賃貸と営業倉庫（商品の保管・荷役）",
+      "シェニール織高級タオル・ハンカチなどの服飾雑貨",
+      "バッグや婦人ウエア",
+      "ホテルの宿泊・宴会・レストラン",
+      "倉庫の屋根を活用した太陽光発電"
+    ],
+    "customers": [
+      "物流倉庫を利用する事業者",
+      "小売店・専門店・百貨店・通販会社",
+      "ホテルの宿泊客・宴会利用客"
+    ],
+    "revenueSources": [
+      "倉庫の賃貸料と保管・荷役の対価",
+      "服飾雑貨の販売",
+      "ホテルの宿泊・料飲料金",
+      "太陽光発電による収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "倉庫と服飾とホテルを営む会社",
+        "description": "株式会社カワサキは、大阪府泉北郡忠岡町に本店を置き、1971年の創業以来、服飾雑貨の企画・販売を手がけてきた会社です。2025年8月31日現在の従業員数は61人です。その他の関係会社である株式会社KWSが、当社の議決権の40.1％を保有しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "倉庫・服飾雑貨・ホテルを提供",
+        "description": "物流倉庫の賃貸と商品の保管・荷役を行う営業倉庫業、「レイクアルスター」ブランドのタオル・ハンカチ・バッグなどの服飾雑貨、泉大津市のホテルでの宿泊・宴会・レストランを提供しています。倉庫の屋根を活用した太陽光発電も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "事業者と個人の顧客",
+        "description": "物流倉庫は商品の保管場所を必要とする事業者が利用し、服飾雑貨は百貨店・専門店・通販会社などを通じて主にシニア女性に届けられ、ホテルはビジネス利用や観光の宿泊客が利用しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "賃貸料と商品販売・宿泊料飲で収益を得る",
+        "description": "倉庫の賃貸料と保管・荷役の対価、服飾雑貨の販売、ホテルの宿泊・料飲料金などで収益を得ています。2025年8月期の売上高は2,291百万円で、前期比5.0％増となりました。賃貸・倉庫事業が売上高の過半を占めています。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益338百万円",
+        "description": "2025年8月期の当期純利益は338百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年8月期",
@@ -27,11 +249,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4583641000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 34,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -49,11 +271,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5258133000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 33,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -71,11 +293,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5355826000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 55,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -93,11 +315,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5554727000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 59,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -115,18 +337,159 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5755510000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 61,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1971,
+      "title": "株式会社川部装飾を設立",
+      "description": "大阪府泉佐野市に株式会社川部装飾を設立しました。",
+      "significance": "現在のカワサキの創業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "株式会社カワサキに商号変更",
+      "description": "1972年に株式会社川崎装飾への変更を経て、商号を株式会社カワサキに変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "シェニールタオルの輸入・販売を開始",
+      "description": "シェニールタオルの輸入と販売を開始しました。",
+      "significance": "服飾事業の中核商品の取り扱いが始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "「レイクアルスター」ブランドを立ち上げ",
+      "description": "「レイクアルスター」ブランドを立ち上げ、オリジナル柄のシェニールタオルの展開を開始しました。",
+      "significance": "現在まで続く主力ブランドです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "賃貸用倉庫を建設し不動産貸付業を開始",
+      "description": "大阪府泉北郡忠岡町に賃貸用倉庫を建設し、不動産貸付業を開始しました。",
+      "significance": "現在の中核である賃貸・倉庫事業の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ホテルレイクアルスターアルザ泉大津を開設",
+      "description": "事業内容にホテル業を追加し、大阪府泉大津市にホテルレイクアルスターアルザ泉大津を開設しました。",
+      "significance": "ホテル事業の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式を公開しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "太陽光発電事業を開始",
+      "description": "所有する倉庫の建屋の屋根を活用した太陽光発電事業を開始しました。",
+      "significance": "賃貸・倉庫事業の中で新しい収益の柱が加わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "オーアンドケイ株式会社を吸収合併し個別決算へ移行",
+      "description": "子会社のオーアンドケイ株式会社を吸収合併し、連結決算から個別決算へ移行しました。",
+      "significance": "現在の非連結の体制になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "大型物流施設「カワサキテクノプラザ」が竣工",
+      "description": "大型物流施設「カワサキテクノプラザ」が竣工しました。",
+      "significance": "賃貸・倉庫事業の設備の大型化・近代化の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ホテルレイクアルスターアルザ泉大津を直営化",
+      "description": "ホテルレイクアルスターアルザ泉大津の運営を当社の直営に切り替えました。",
+      "significance": "ホテル事業を自社で運営する体制になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "「カワサキ貝塚テクノプラザ」が竣工",
+      "description": "大阪府貝塚市に「カワサキ貝塚テクノプラザ」が竣工しました。",
+      "significance": "大型物流施設の拡充が続きました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "hikari-tsushin",
+      "relationship": "major-shareholder",
+      "description": "【大株主の状況】に載る事業会社で、2025年8月31日現在、発行済株式（自己株式を除く）の総数に対する所有株式数の割合7.45％の大株主です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -134,13 +497,47 @@
       "publisher": "株式会社カワサキ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100X6HQ.pdf",
       "publishedAt": "2025-11-25",
-      "accessedAt": "2026-09-28"
+      "docId": "S100X6HQ",
+      "asOf": "2025-08-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "社是「合掌の心」のもと、服飾事業では「レイクアルスター」ブランドの強化に向けて新製品の開発と販売チャネルの拡大、在庫削減に取り組み、賃貸・倉庫事業では設備の大型化・近代化と立地の有利さを生かして倉庫需要に対応し、ホテル事業ではサービス品質の維持・向上とリピーターの獲得、稼働率の向上を図るとしています。",
+        "asOf": "2025-11-25",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "自社保有の倉庫が大阪府泉州地域に集積し、カワサキテクノプラザのような大型で新しい物流施設を保有しているため、立地と設備の両面で倉庫を利用する事業者の需要に応えられる体制です。",
+        "basis": "主要な設備の状況に泉州地域の倉庫群とカワサキテクノプラザなどの大型施設が印字されていることと、経営方針で立地の有利さを生かして倉庫需要に対応する方針が印字されていることによる。",
+        "asOf": "2025-11-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の過半を倉庫の賃貸・営業倉庫業が占める一方、創業以来の服飾事業では自社ブランド「レイクアルスター」を展開し、ホテル事業も持つ、倉庫事業を核とした複合経営の会社です。",
+        "basis": "セグメント情報における外部顧客への売上高の構成と、事業の内容および沿革の記述による。",
+        "asOf": "2025-11-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年8月期",
     "asOf": "2025-08-31",

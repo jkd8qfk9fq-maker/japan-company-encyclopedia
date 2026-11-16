@@ -4,15 +4,162 @@
   "name": "イメージ情報開発",
   "officialName": "イメージ情報開発株式会社",
   "nameEn": "Image Information Inc.",
-  "description": null,
+  "shortNameEn": "Image Information",
+  "description": "企業に対し、IT戦略の支援からシステムの設計構築、運用保守、業務アウトソーシングまでを総合的に提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "グロース"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "it-solutions",
+      "name": "ITソリューション",
+      "description": "IT戦略の支援及びシステムの設計構築、提供したシステムの運用・保守、IT関連機器やソフトウエアの仕入・販売と自社開発パッケージソフトウエアの製造・販売を行う事業です。当社と連結子会社のイメージ情報システム株式会社が展開しています。2026年3月期の売上高は614百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "業務改革や課題解決を進める企業",
+        "沖電気工業",
+        "株式会社アイオス"
+      ],
+      "children": [
+        {
+          "id": "consulting-design-build",
+          "name": "コンサルティング／設計／構築",
+          "description": "IT戦略の支援及びシステムの設計構築を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "業務改革や課題解決を進める企業"
+          ]
+        },
+        {
+          "id": "operation-maintenance",
+          "name": "運用／保守",
+          "description": "コンサルティング／設計／構築で顧客に提供したシステムの運用・保守を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "システムを導入した顧客企業"
+          ]
+        },
+        {
+          "id": "product-sales",
+          "name": "商品販売",
+          "description": "IT関連機器やソフトウエアの仕入・販売、自社開発パッケージソフトウエアの製造・販売を行います。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "IT関連機器やソフトウエアを導入する企業"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bpo-services",
+      "name": "BPO・サービス",
+      "description": "決済処理や会員管理等の業務を代行する事業です。主に連結子会社のイメージ情報システム株式会社が展開しています。2026年3月期の売上高は117百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "customers": [
+        "決済処理や会員管理等を委託する企業"
+      ],
+      "children": [
+        {
+          "id": "business-outsourcing",
+          "name": "業務受託",
+          "description": "企業の業務を代行するサービスです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "業務を委託する企業"
+          ]
+        },
+        {
+          "id": "payment-services",
+          "name": "決済サービス",
+          "description": "決済処理を代行するサービスです。商店街向けのクレジット包括契約処理も源流の一つです。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "customers": [
+            "決済処理を委託する企業や商店街等"
+          ]
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "特定のメーカーやパッケージソフトウエアに依存せず、顧客企業のビジネス戦略に沿ったシステムの設計構築・運用保守と業務アウトソーシングをワンストップで提供し、その対価を得る事業モデルです。",
+    "products": [
+      "IT戦略の支援とシステムの設計構築",
+      "顧客に提供したシステムの運用・保守",
+      "IT関連機器やソフトウエアの販売、自社開発パッケージソフトウエアの製造・販売",
+      "決済処理や会員管理等の業務代行"
+    ],
+    "customers": [
+      "業務改革や課題解決を進める企業",
+      "金融・製造業・サービス業等の企業",
+      "地域の商店街・商工会議所等"
+    ],
+    "revenueSources": [
+      "システムの設計構築・運用保守の対価",
+      "IT関連機器やソフトウエア、自社開発パッケージソフトウエアの販売対価",
+      "業務代行サービスの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京・千代田区に本店を置く会社",
+        "description": "イメージ情報開発は東京都千代田区神田猿楽町に本店を置く会社です。2026年3月31日現在のグループは当社と連結子会社1社（イメージ情報システム株式会社）で構成され、連結従業員数は57人です。当連結会計年度に連結子会社化した3社は、当連結会計年度末に全株式を売却し、連結の範囲から外れています。"
+      },
+      {
+        "kind": "offering",
+        "title": "ITソリューションとBPO・サービス",
+        "description": "ITソリューションとして、IT戦略の支援とシステムの設計構築、提供したシステムの運用・保守、IT関連機器やソフトウエアの販売と自社開発パッケージソフトウエアの製造・販売を行い、BPO・サービスとして決済処理や会員管理等の業務代行を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "主な顧客は企業",
+        "description": "顧客は業務改革や課題解決を進める企業で、主要な顧客として沖電気工業と株式会社アイオスが印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "ITソリューションが売上の中心",
+        "description": "収益はシステムの設計構築や運用保守、業務代行などのサービスの対価と、機器・ソフトウエアの販売対価です。2026年3月期の売上高は731百万円で、内訳はITソリューションが614百万円、BPO・サービスが117百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失259百万円",
+        "description": "2026年3月期は親会社株主に帰属する当期純損失259百万円を計上し、前期の当期純損失36百万円から損失幅が拡大しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +174,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 337534000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 57,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +194,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 358772000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 56,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +214,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 336844000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 54,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +234,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 308107000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 54,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +254,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 631029000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 57,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +262,179 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1975,
+      "title": "イメージ情報開発株式会社を設立",
+      "description": "東京都杉並区久我山に、イメージ情報開発株式会社を設立しました。",
+      "significance": "会社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "複合処理事業を開始",
+      "description": "コンピュータデータとイメージデータの複合処理事業を開始しました。",
+      "significance": "創業当初の事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "システムインテグレーション事業に進出",
+      "description": "システムインテグレーション事業に進出しました。",
+      "significance": "現在のITソリューション事業につながる進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "商店街向けクレジット包括契約処理センターを開設",
+      "description": "商店街向けクレジット包括契約処理センターを開設しました。",
+      "significance": "現在のBPO・サービスの決済処理につながる取組です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "大阪証券取引所ヘラクレスに上場",
+      "description": "大阪証券取引所ヘラクレスに株式を上場しました（現在は東京証券取引所グロース市場に上場）。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "イクオス株式会社を設立し連結子会社化",
+      "description": "イクオス株式会社（現・株式会社マーベラント）を設立し、連結子会社化しました。",
+      "significance": "連結子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "株式会社北栄を持分法適用関連会社化",
+      "description": "株式会社北栄を株式取得により持分法適用関連会社としました。",
+      "significance": "持分法適用関連会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "株式会社北栄を持分法適用関連会社から除外",
+      "description": "株式会社北栄の株式の一部売却により、持分法適用関連会社から除外しました。",
+      "significance": "関連会社の除外です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "イメージ情報システム株式会社を新設",
+      "description": "分社型新設分割を行い、連結子会社のイメージ情報システム株式会社を新設しました。",
+      "significance": "現在の唯一の連結子会社の新設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社マーベラントの全株式を譲渡",
+      "description": "株式会社マーベラントの全株式を譲渡し、連結子会社から除外しました。",
+      "significance": "連結子会社の除外です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQグロース市場からグロース市場に移行しました。",
+      "significance": "市場区分の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社エンジニアファームを設立し連結子会社化",
+      "description": "株式会社エンジニアファームを設立し、連結子会社化しました。",
+      "significance": "M&A・子会社化の推進による拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社バニヤンズを連結子会社化",
+      "description": "株式会社バニヤンズを連結子会社化しました。",
+      "significance": "M&A・子会社化の推進による拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社TENJIN SYSTEM CONSULTINGを連結子会社化",
+      "description": "株式会社TENJIN SYSTEM CONSULTINGを連結子会社化しました。",
+      "significance": "M&A・子会社化の推進による拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "サイブリッジ合同会社と資本業務提携契約を締結",
+      "description": "サイブリッジ合同会社との間で資本業務提携契約を締結しました。同社はその他の関係会社となっています。",
+      "significance": "事業構造改革の起点となる提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "連結子会社3社の全株式を売却",
+      "description": "株式会社エンジニアファーム、株式会社バニヤンズ、株式会社TENJIN SYSTEM CONSULTINGのそれぞれの全株式を売却し、連結の範囲から除外しました。",
+      "significance": "経営資源の集中によるグループ再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "oki-electric-industry",
+      "relationship": "customer",
+      "description": "【主要な顧客ごとの情報】に、ITソリューションの主要な顧客として印字されています（2026年3月期）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +442,53 @@
       "publisher": "イメージ情報開発株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YLT6.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YLT6",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 連結子会社のイメージ情報システム株式会社について、2026年5月14日開催の取締役会で、当社が同社を吸収合併すること（効力発生日は当初2026年7月1日）を決議し、その後2026年6月19日開催の取締役会で効力発生日を2026年8月1日へ延期しています（重要な後発事象に印字）。本登録は2026年3月31日現在のグループ構成（当社と連結子会社1社）に基づいており、合併後の取扱いは人の確認が必要です。",
+      "businessModel: 【事業等のリスク】に、当社グループが継続して損失を計上し、継続企業の前提に重要な疑義を生じさせる事象又は状況が引き続き存在していることが印字されています。継続企業の前提に関する開示の取扱いは人の確認が必要です。",
+      "businessStructure: 連結子会社のイメージ情報システム株式会社について、2026年5月14日開催の取締役会で、当社が同社を吸収合併すること（効力発生日は当初2026年7月1日）を決議し、その後2026年6月19日開催の取締役会で効力発生日を2026年8月1日へ延期しています（重要な後発事象に印字）。本登録は2026年3月31日現在のグループ構成（当社と連結子会社1社）に基づいており、合併後の取扱いは人の確認が必要です。",
+      "businessStructure: 【事業等のリスク】に、当社グループが継続して損失を計上し、継続企業の前提に重要な疑義を生じさせる事象又は状況が引き続き存在していることが印字されています。継続企業の前提に関する開示の取扱いは人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "理念として「先取の精神を持って先進ITの習得に努め、その応用による独創的サービスを創造し、変革を目指す企業の発展に貢献する」を掲げています。2025年3月期から2027年3月期を対象とした3ケ年の中期経営計画では、事業規模の拡大と収益性の向上、継続的な成長を実現する事業モデルの確立、企業価値の向上と株主還元を中期目標とし、資金調達と積極的な事業投資、組織再編とガバナンス、事業推進力の強化、M&A及び企業提携の推進、会社環境の改善に取り組むとしています。当連結会計年度末の連結子会社3社の除外に続き、サイブリッジグループとの連携を強化し、事業構造改革とコスト削減を進めるとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "特定のメーカーやパッケージソフト等に依存せず、顧客企業のビジネス戦略に沿った柔軟なシステム実現をうたい、IT戦略の支援から設計構築・運用保守・業務アウトソーシングまでをワンストップで提供している点が特徴です。",
+        "basis": "【事業の内容】に、特定のメーカーやパッケージソフト等に依存しないこと、顧客企業のビジネス戦略に沿った柔軟なシステム実現とワンストップでの総合的なサービス提供が特徴として印字されている。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "ITソリューションが外部顧客への売上高の約84％を占める構成で、主要な顧客として沖電気工業と株式会社アイオスが印字されています。2026年3月期の売上高は731百万円で、前期から13.2％増えました。",
+        "basis": "セグメント注記の外部顧客への売上高（ITソリューション614,117千円）と【主要な顧客ごとの情報】の印字、MD&Aに売上高731,630千円（前年同期比13.2％増）が印字されている。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

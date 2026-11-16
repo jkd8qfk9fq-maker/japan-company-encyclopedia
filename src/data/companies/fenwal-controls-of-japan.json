@@ -4,15 +4,167 @@
   "name": "日本フェンオール",
   "officialName": "日本フェンオール株式会社",
   "nameEn": "Fenwal Controls of Japan, Ltd.",
-  "description": null,
+  "shortNameEn": "Fenwal Controls of Japan, Ltd.",
+  "description": "熱のコントロールを基礎技術として、火災警報・消火システム、消防ポンプ、温度制御機器、医療機器などを手がける防災・制御機器メーカーのグループです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "electronics",
+      "primary": true
+    },
+    {
+      "industryId": "semiconductors",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "ssp",
+      "name": "防消火事業（SSP部門）",
+      "description": "火災警報システム、消火システム、爆発抑制システムの開発・製造・販売と、同システムの設計・施工・保守、エンジニアリングサービスを行う事業です。2025年12月期の外部顧客への売上高は4,839百万円です。",
+      "products": [
+        "火災報知設備",
+        "HFC-227ea高速消火システム",
+        "爆発抑制装置",
+        "二酸化炭素消火設備",
+        "スプリンクラー消火設備",
+        "保守点検サービス"
+      ],
+      "customers": [
+        "電力などの基幹産業の事業者",
+        "プラント事業者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "fire-pump",
+      "name": "消防ポンプ事業（消防ポンプ部門）",
+      "description": "連結子会社の株式会社シバウラ防災製作所が、消防ポンプ、消防ポンプ積載車、保安ポンプ、全自動消火システムなどの消防・防災機器を開発・製造・販売する事業です。2025年12月期の外部顧客への売上高は3,612百万円です。",
+      "products": [
+        "消防ポンプ",
+        "消防ポンプ積載車",
+        "保安ポンプ",
+        "全自動消火システム"
+      ],
+      "customers": [
+        "国や地方自治体"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "thermal",
+      "name": "温度制御事業（サーマル部門）",
+      "description": "温度調節器、半導体製造装置用熱板及び装置、高温炉用熱電対、その他温度制御機器等の開発・製造・販売と、同システムの設計・サービスを行う事業です。2025年12月期の外部顧客への売上高は2,108百万円です。",
+      "products": [
+        "半導体製造装置用熱板",
+        "温度センサー",
+        "デジタル温度調節器",
+        "恒温恒湿槽用温度調節器"
+      ],
+      "customers": [
+        "半導体製造装置メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "medical",
+      "name": "医療事業（メディカル部門）",
+      "description": "人工腎臓透析装置及び医療機器の開発・設計・製造・サービスを行う事業です。2025年12月期の外部顧客への売上高は1,395百万円です。東レ・メディカル株式会社との間で、人工腎臓透析装置等の製造委託に関する基本契約を結んでいます。",
+      "products": [
+        "人工腎臓透析装置"
+      ],
+      "customers": [
+        "東レ・メディカル株式会社"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "pwba",
+      "name": "プリント基板事業（PWBA部門）",
+      "description": "プリント基板の実装組立、アートワーク設計、ノイズ(EMC)対策を行う事業です。2025年12月期の外部顧客への売上高は954百万円です。",
+      "products": [
+        "プリント基板の実装組立",
+        "アートワーク設計",
+        "ノイズ(EMC)対策"
+      ],
+      "customers": [
+        "事務機器・産業機器メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "火災警報・消火システムや消防ポンプなどの防災機器と、温度調節器や半導体製造装置用熱板などの温度制御機器、人工腎臓透析装置などを開発・製造・販売し、設計・施工・保守まで担う事業モデルです。",
+    "products": [
+      "火災報知設備・消火システム",
+      "消防ポンプ・消防ポンプ積載車",
+      "温度調節器・半導体製造装置用熱板",
+      "人工腎臓透析装置",
+      "プリント基板の実装組立"
+    ],
+    "customers": [
+      "電力などの基幹産業の事業者",
+      "国や地方自治体",
+      "東レ・メディカル株式会社",
+      "半導体製造装置メーカー"
+    ],
+    "revenueSources": [
+      "防災機器・システムの販売と設計・施工・保守の対価",
+      "温度制御機器の販売の対価",
+      "医療機器の製造・販売の対価",
+      "プリント基板実装組立の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と連結子会社1社のグループ",
+        "description": "日本フェンオールは東京都千代田区に本社を置き、連結子会社1社（株式会社シバウラ防災製作所）とグループを構成しています。2025年12月31日現在の従業員数は271人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "防災・消防ポンプ・温度制御・医療・基板の5部門",
+        "description": "熱のコントロールを基礎技術として、防消火事業（SSP部門）、消防ポンプ事業、温度制御事業（サーマル部門）、医療事業（メディカル部門）、プリント基板事業（PWBA部門）の5部門で、製品の開発・製造・販売と設計・施工・保守を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "基幹産業・官公庁・医療分野が顧客",
+        "description": "電力などの基幹産業やプラントの事業者、国や地方自治体などが顧客です。医療事業では東レ・メディカル株式会社が主要な顧客で、人工腎臓透析装置等の製造委託に関する基本契約を結んでいます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2025年12月期の売上高は12,909百万円で、前期から3.1％増えました。内訳は防消火事業が4,839百万円、消防ポンプ事業が3,612百万円、温度制御事業が2,108百万円、医療事業が1,395百万円、プリント基板事業が954百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は1,247百万円で、前期の1,115百万円から増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -27,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11921994000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 261,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +199,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12312816000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 273,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第62期の期首から適用しており、第62期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -67,7 +220,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12680192000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 278,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +240,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13585098000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 275,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +260,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14607861000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 271,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +268,196 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1961,
+      "title": "日本フェンオールを設立",
+      "description": "米国フェンオール社・三井物産株式会社・日本電熱株式会社の三社の出資により、各種制御装置及び火災探知装置の製造及び販売を目的として、日本フェンオール株式会社が東京都港区に設立されました。",
+      "significance": "熱のコントロールを基礎技術とする、現在の防災・制御機器事業の出発点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "長野工場を建設",
+      "description": "長野県南安曇郡豊科町に自社工場（現在の長野工場）を建設しました。",
+      "significance": "現在の生産の中核拠点ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "八王子センターを設置",
+      "description": "東京都八王子市に技術・管理センターとして、八王子センター（現在のR&Dセンター）を設置しました。",
+      "significance": "研究開発拠点の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "医療分野に進出",
+      "description": "医療分野への進出のため、定款の一部を変更し、事業目的に医療用具の設計・製造及び販売を追加しました。前年には医療用具製造業の許可も取得しています。",
+      "significance": "現在の医療事業（メディカル部門）への進出です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "米国フェンオール社の親会社から株式を買い取る",
+      "description": "米国フェンオール社の親会社であるWalter Kidde & Co., Inc.と技術協力を維持しつつ、同社が保有する株式62％のすべてを買い取りました。",
+      "significance": "米国資本から独立し、独自の経営に移りました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "日本エス・エス・ピーを吸収合併",
+      "description": "医療用機器分野の拡大と設計・製造・販売の一体化のため、子会社日本エス・エス・ピー株式会社を吸収合併しました。",
+      "significance": "医療事業の体制を当社本体に一本化しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "本店を飯田橋に移転",
+      "description": "本店を東京都千代田区飯田橋に移転しました。",
+      "significance": "現在の本店所在地になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "資本市場への参加の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "ジャスダック証券取引所に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東京証券取引所市場第二部に市場変更",
+      "description": "東京証券取引所市場第二部に市場変更しました。",
+      "significance": "東証の市場に移りました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "フェンオール設備を吸収合併",
+      "description": "防災部門の体制強化と経営の効率化を目的として、子会社フェンオール設備株式会社を吸収合併しました。",
+      "significance": "防消火事業の施工・保守体制を本体に集約しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "長野工場がJCSS認定と校正事業者の登録を受ける",
+      "description": "長野工場が、独立行政法人製品評価技術基盤機構よりJCSS認定及び計量法に基づく校正事業者として登録を受けました。",
+      "significance": "温度計測の校正まで担える体制が整いました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "シバウラ防災製作所を連結子会社化",
+      "description": "株式会社シバウラ防災製作所の全株式を取得し、連結子会社化しました。",
+      "significance": "消防ポンプ事業がグループに加わり、現在の5部門体制の基礎ができました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "西華産業と資本業務提携を締結",
+      "description": "西華産業株式会社と資本業務提携を締結しました。",
+      "significance": "現在の資本業務提携先との関係の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "香港子会社の清算が結了",
+      "description": "FENWAL CONTROLS OF JAPAN(H.K.),LIMITED（日本芬翁（香港）有限公司）の清算が結了しました。前年12月には深圳の子会社の清算も結了しています。",
+      "significance": "プリント基板事業の海外拠点を整理しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "seika",
+      "relationship": "major-shareholder",
+      "description": "2024年6月に資本業務提携を締結した提携先で、2025年12月31日現在、当社株式の23.32％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "shin-nippon-air-technologies",
+      "relationship": "major-shareholder",
+      "description": "2025年12月31日現在、当社株式の2.43％を保有する大株主です。当社は、防消火事業の製品等の販売・提供において取引関係の維持強化のため、同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "nagawa",
+      "relationship": "major-shareholder",
+      "description": "2025年12月31日現在、当社株式の1.77％を保有する大株主です。当社は、防消火事業において協業などの検討のため、同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "yokowo",
+      "relationship": "major-shareholder",
+      "description": "2025年12月31日現在、当社株式の1.70％を保有する大株主です。当社は、同社の各事業との協業・新規事業の検討のため、同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +465,37 @@
       "publisher": "日本フェンオール株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XU9W.pdf",
       "publishedAt": "2026-03-30",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XU9W",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画2025を策定し、選択と集中による事業構造の整備、新製品開発による収益基盤の強化、人的資本の取り組みと成長基盤への積極的な投資、ガバナンス体制の更なる強化を重点施策としています。事業ポートフォリオの見直しにより中核事業である防災及び制御機器に経営資源を集中させ、資本業務提携先であり広範な顧客基盤を保有する西華産業株式会社とのより一層緊密な関係を構築し、防災事業を中心とした販売領域の拡大を図るとしています。",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1961年の設立以来、熱のコントロールを基礎技術として防災と温度制御の分野で製品を開発・製造し、火災警報・消火システムでは設計・施工・保守までを自ら担う体制を持っています。防災機器と、半導体製造装置用熱板などの温度制御機器の両方を事業として持ち、温度センサーの校正事業者としての登録も受けています。",
+        "basis": "事業の内容に、熱のコントロールを基礎技術とすること、防消火事業が火災警報システム・消火システムの開発・製造・販売及び設計・施工・保守を行うこと、サーマル部門が半導体製造装置用熱板及び装置を扱うことが印字され、沿革に長野工場のJCSS認定・校正事業者の登録が印字されていること",
+        "asOf": "2026-03-30",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

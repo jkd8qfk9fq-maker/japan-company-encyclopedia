@@ -4,15 +4,195 @@
   "name": "ドリームインキュベータ",
   "officialName": "株式会社ドリームインキュベータ",
   "nameEn": "Dream Incubator Inc.",
-  "description": null,
+  "shortNameEn": "Dream Incubator Inc.",
+  "description": "大企業の事業創造や成長戦略の立案を支援するコンサルティングと、スタートアップ企業への投資育成を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    },
+    {
+      "industryId": "finance",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "business-produce",
+      "name": "ビジネスプロデュース",
+      "description": "大企業向けの事業創造支援や成長戦略立案支援を行う事業です。2026年3月期の外部顧客への売上高は6,787百万円で、売上高全体の約8割を占める中核事業です。",
+      "products": [
+        "戦略コンサルティング",
+        "M&A支援",
+        "ソーシャルインパクトボンド"
+      ],
+      "customers": [
+        "大企業を中心とする企業顧客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "strategy-consulting",
+          "name": "戦略コンサルティング",
+          "description": "事業創造支援や成長戦略立案支援を行うサービスです。金額は独立して開示されていません。",
+          "products": [
+            "戦略コンサルティング"
+          ],
+          "customers": [
+            "大企業を中心とする企業顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "children": []
+        },
+        {
+          "id": "m-and-a-support",
+          "name": "M&A支援",
+          "description": "M&Aに関するファイナンシャル・アドバイザリーを提供するサービスです。金額は独立して開示されていません。",
+          "products": [
+            "M&A支援"
+          ],
+          "customers": [
+            "大企業を中心とする企業顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "children": []
+        },
+        {
+          "id": "social-impact-bond",
+          "name": "ソーシャルインパクトボンド",
+          "description": "ソーシャルインパクトボンド（SIB）を活用したファンドの運営を行うサービスです。金額は独立して開示されていません。",
+          "products": [
+            "ソーシャルインパクトボンド（SIB）ファンド運営"
+          ],
+          "customers": [
+            "地方自治体等の成果発注者",
+            "ファンドへの出資者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "venture-investment",
+      "name": "ベンチャー投資",
+      "description": "スタートアップ企業等への投資育成を行う事業です。2026年3月期の外部顧客への売上高は1,904百万円でした。",
+      "products": [
+        "投資育成",
+        "投資事業組合の運営・管理"
+      ],
+      "customers": [
+        "投資先のスタートアップ企業等",
+        "投資事業組合への出資者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "investment-development",
+          "name": "投資育成",
+          "description": "スタートアップ企業等へ投資し、育成を行う事業です。金額は独立して開示されていません。",
+          "products": [
+            "投資育成"
+          ],
+          "customers": [
+            "投資先のスタートアップ企業等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "children": []
+        },
+        {
+          "id": "fund-management",
+          "name": "投資事業組合の運営・管理",
+          "description": "投資事業組合の財産の運用及び管理を行う事業です。金額は独立して開示されていません。",
+          "products": [
+            "投資事業組合の運営・管理"
+          ],
+          "customers": [
+            "投資事業組合への出資者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "children": []
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "事業創造支援や成長戦略立案支援を行うビジネスプロデュース事業と、スタートアップ企業等への投資育成を行うインキュベーション事業を営む会社です。",
+    "products": [
+      "戦略コンサルティング",
+      "M&A支援",
+      "ソーシャルインパクトボンド（SIB）を活用したファンド運営",
+      "スタートアップ企業等への投資育成",
+      "投資事業組合の運営・管理"
+    ],
+    "customers": [
+      "大企業を中心とする企業顧客",
+      "投資先のスタートアップ企業等"
+    ],
+    "revenueSources": [
+      "コンサルティング及びアドバイザリーの対価",
+      "ファンド運営に係る収入",
+      "投資先の売却による収入と出資先ファンドからの分配金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京都千代田区に本社を置く事業創造の会社",
+        "description": "東京都千代田区霞が関に本社を置き、ベトナムやインドなど海外の連結子会社を含むグループで事業を行っています。連結従業員数は222人です（2026年3月31日現在）。東京証券取引所プライム市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "ビジネスプロデュースとベンチャー投資",
+        "description": "事業創造支援や成長戦略立案支援を行うビジネスプロデュースと、スタートアップ企業等への投資育成や投資事業組合の運営を行うベンチャー投資の2事業を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "大企業を中心とする顧客",
+        "description": "ビジネスプロデュースの主な顧客は、事業創造や既存事業の変革に取り組む大企業です。外部顧客への売上高のうち10％以上を占める特定の相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は8,691百万円で、前期の6,183百万円から増えました。内訳はビジネスプロデュースが6,787百万円、ベンチャー投資が1,904百万円です。既存顧客からの継続的な受注の獲得や、投資先のトレードセールによる売却益の実現などが増収の背景として挙げられています。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,593百万円でした（前期は170百万円）。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +207,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12454000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 773,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21917000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 136,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +247,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15208000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 220,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +267,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13158000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 214,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号　2022年10月28日）等を第25期の期首から適用しており、第24期に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +288,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11738000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 222,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +296,179 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2000,
+      "title": "設立",
+      "description": "事業戦略策定と実行支援を中核としたインキュベーション事業を目的として、東京都港区に設立されました。",
+      "significance": "現在の会社の創業です。創立者は堀紘一です。",
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "東京証券取引所マザーズ市場に上場",
+      "description": "東京証券取引所マザーズ市場に上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "東京証券取引所市場第一部に上場しました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "ベトナムにコンサルティング子会社を設立",
+      "description": "ベトナムにおけるコンサルティング及びインキュベーション事業を目的として、Dream Incubator (Vietnam)Joint Stock Company（現Dream Incubator Southeast Asia Joint Stock Company）を設立しました。",
+      "significance": "海外展開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "アイペットを連結子会社化",
+      "description": "株式会社アイペット（現アイペットホールディングス株式会社）の発行済株式数の82.11％（議決権ベース）を取得し、連結子会社としました。",
+      "significance": "ペット保険事業を持つ会社がグループに入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "DI Pan Pacific Inc.を設立",
+      "description": "ベンチャー株式等への投資事業を目的として、DI Pan Pacific Inc.を設立しました。",
+      "significance": "ベンチャー投資の体制整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "DIインドデジタル投資組合を組成",
+      "description": "インドの有望企業への投資を目的とするDIインドデジタル投資組合を組成しました。",
+      "significance": "インド投資の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "アイペット損害保険がマザーズに上場",
+      "description": "アイペット損害保険株式会社（現アイペットホールディングス株式会社）が東京証券取引所マザーズに上場しました。",
+      "significance": "子会社の上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "DIMENSION投資事業有限責任組合を組成",
+      "description": "日本の有望企業への投資を目的とするDIMENSION投資事業有限責任組合を組成しました。",
+      "significance": "国内投資ファンドの組成です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "電通グループと資本業務提携を開始",
+      "description": "株式会社電通グループと資本業務提携を開始しました。",
+      "significance": "大株主との提携関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "Next Riseソーシャル・インパクト・ファンドを組成",
+      "description": "社会課題解決を目的として、ソーシャルインパクトボンド（SIB）を活用したNext Rise ソーシャル・インパクト・ファンド投資事業有限責任組合を組成しました。",
+      "significance": "ソーシャルインパクトボンド事業の本格化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "DIMENSION投資事業有限責任組合を連結の範囲から除外",
+      "description": "DIMENSION株式会社の譲渡に伴い、DIMENSION投資事業有限責任組合を連結子会社から除外しました。",
+      "significance": "グループ構成の見直しです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "アイペットホールディングスの全株式を譲渡",
+      "description": "アイペットホールディングス株式会社の全株式を譲渡しました。",
+      "significance": "ペット保険のグループ会社が離れ、事業構成が大きく変わる転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "山口フィナンシャルグループと資本業務提携を開始",
+      "description": "株式会社山口フィナンシャルグループと資本業務提携契約を開始しました。",
+      "significance": "2社目の大株主との提携関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "dentsu-group",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】で「その他の関係会社」として記載され、2026年3月31日現在の議決権の被所有割合は23.03％です。業務提携の関係があり、2021年5月に資本業務提携を開始しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "yamaguchi-financial-group",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】で「その他の関係会社」として記載され、2026年3月31日現在の議決権の被所有割合は22.05％です。業務提携の関係があり、2024年4月に資本業務提携を開始しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +476,54 @@
       "publisher": "株式会社ドリームインキュベータ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD1A.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YD1A",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「ドリームインキュベータ」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E3%83%89%E3%83%AA%E3%83%BC%E3%83%A0%E3%82%A4%E3%83%B3%E3%82%AD%E3%83%A5%E3%83%99%E3%83%BC%E3%82%BF",
+      "accessedAt": "2026-11-16"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "ミッションである「社会を変える 事業を創る。」の実現と企業価値向上の両立に向け、コア・ケイパビリティであるビジネスプロデュース事業に経営資源を集中する方針を示しています。産業プロデュース＆ビジネスプロデュース、ストラテジー＆インストレーション、テクノロジー＆アンプリファイ、グローバル戦略共創の4つの提供価値を柱に、強固な収益基盤の確立と人材投資の強化に取り組むとしています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "事業の構想から戦略立案、仲間の集結、実行まで、事業創造のプロセス全体を一貫して支援できる点が特徴です。インキュベーション事業で培ったスタートアップ投資の知見や、国内・海外の大企業、ベンチャー、政府、投資家など多様な連携先とのつながりも支援に生かしています。",
+        "basis": "【事業の内容】と【経営方針、経営環境及び対処すべき課題等】における事業創造のプロセスと連携に関する記載に基づきます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "株式会社電通グループと株式会社山口フィナンシャルグループがその他の関係会社として議決権の2割超を保有し（2026年3月31日現在の被所有割合はそれぞれ23.03％と22.05％）、いずれとも資本業務提携を行っています。2023年1月にアイペットホールディングスの全株式を譲渡して以降は、コンサルティングとベンチャー投資の2事業に絞った構成となっています。",
+        "basis": "【関係会社の状況】と【沿革】の記載に基づきます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

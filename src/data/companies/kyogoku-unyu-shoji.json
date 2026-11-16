@@ -4,7 +4,8 @@
   "name": "京極運輸商事",
   "officialName": "京極運輸商事株式会社",
   "nameEn": "Kyogoku unyu shoji Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Kyogoku unyu shoji Co., Ltd.",
+  "description": "石油類や化学製品の液体輸送を主力とし、港湾物流、ドラム缶の販売、タンク洗浄まで担う総合物流会社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,8 +16,135 @@
       "market": "メイン"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "energy",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "domestic-transport",
+      "name": "国内輸送事業",
+      "description": "タンクローリーによる石油類・化学製品等の液体貨物の輸送を主力とし、一般貨物の輸送や貨物運送の取次、関連施設での構内作業を行う事業です。2026年3月期の外部顧客への売上高は3,960百万円でした。",
+      "customers": [
+        "石油類・化学製品等の荷主",
+        "一般貨物の荷主"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "drum-pail",
+      "name": "ドラム缶・ペール缶事業",
+      "description": "ドラム缶・ペール缶などの石油類容器の売買と、その配送を行う事業です。産業廃棄物用や化学品用の更生缶（再生したドラム缶）の販売も行っています。2026年3月期の外部顧客への売上高は2,461百万円でした。",
+      "customers": [
+        "容器を必要とする事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "energy",
+      "name": "エネルギー事業",
+      "description": "石油類の賃貸借や売買、石油製品類とその副産物の売買を行う事業です。連結子会社の京極石油株式会社がENEOS株式会社の特約店として石油燃料を供給しています。2026年3月期の外部顧客への売上高は959百万円でした。",
+      "customers": [
+        "石油製品の購入者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "tank-cleaning",
+      "name": "タンク洗浄事業",
+      "description": "石油・化学製品等の貯蔵タンクの洗浄や修理、配管工事を行う事業です。連結子会社の日本タンクサービス株式会社が担っています。2026年3月期の外部顧客への売上高は689百万円でした。",
+      "customers": [
+        "貯蔵タンクを保有する事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "international-logistics",
+      "name": "国際物流事業",
+      "description": "港湾荷役や貨物の保管、輸出入貨物の通関業務、倉庫での保管貨物の入出庫や荷捌などの作業を行う事業です。関連施設での構内作業も行っています。2026年3月期の外部顧客への売上高は631百万円でした。",
+      "customers": [
+        "荷主",
+        "船舶運航業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "タンクローリーによる石油類・化学製品の輸送を中心に、港湾荷役や倉庫保管、ドラム缶・ペール缶の販売、石油製品の販売、貯蔵タンクの洗浄・修理で収益を得る事業モデルです。",
+    "products": [
+      "タンクローリーによる石油類・化学製品等の液体貨物輸送",
+      "港湾荷役・倉庫保管・通関業務",
+      "ドラム缶・ペール缶等の容器の販売と配送",
+      "石油製品類の販売",
+      "貯蔵タンクの洗浄・修理、配管工事"
+    ],
+    "customers": [
+      "石油類・化学製品等の荷主",
+      "港湾貨物の荷主・船舶運航業者",
+      "容器を購入する事業者",
+      "石油製品の購入者",
+      "貯蔵タンクを保有する事業者"
+    ],
+    "revenueSources": [
+      "貨物運送の運賃と運送取扱の対価",
+      "港湾荷役料・保管料・運賃",
+      "ドラム缶・ペール缶等の販売収入",
+      "石油製品類の販売収入",
+      "タンク洗浄・修理工事の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京証券取引所スタンダード市場と名古屋証券取引所メイン市場に上場する物流会社",
+        "description": "京極運輸商事は東京都中央区に本店を置き、当社と連結子会社2社、持分法適用関連会社1社で企業集団を構成しています。2026年3月31日現在の連結従業員数は315人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "液体輸送を柱に5つの事業を営む",
+        "description": "タンクローリーによる石油類・化学製品等の液体輸送を主力とする国内輸送事業のほか、港湾荷役や倉庫保管などを担う国際物流事業、ドラム缶・ペール缶などの容器を販売するドラム缶・ペール缶事業、石油製品類を販売するエネルギー事業、貯蔵タンクの洗浄・修理を行うタンク洗浄事業を営んでいます。"
+      },
+      {
+        "kind": "customer",
+        "title": "石油・化学分野の荷主と、主要な顧客のENEOS",
+        "description": "顧客は石油類や化学製品の荷主が中心です。ENEOS株式会社は全セグメントにわたる主要な顧客で、連結子会社の京極石油株式会社は同社の特約店です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は8,702百万円",
+        "description": "2026年3月期の売上高は8,702百万円で、前期の8,421百万円から増えました。国内輸送事業が3,960百万円、ドラム缶・ペール缶事業が2,461百万円、エネルギー事業が959百万円、タンク洗浄事業が689百万円、国際物流事業が631百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は172百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は172百万円で、前期は103百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +159,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3791947000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 313,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +179,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3945565000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 312,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +199,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4348673000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 303,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,12 +219,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4241345000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 311,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号　2022年10月28日。以下「2022年改正会計基準」という。）等を第85期の期首から適用しており、第84期に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっております。なお、2022年改正会計基準については第20―３項ただし書きに定める経過的な取扱いを適用し、「税効果会計に係る会計基準の適用指針」（企業会計基準適用指針第28号　2022年10月28日）については第65―２項(２)ただし書きに定める経過的な取扱いを適用しております。この結果、第85期に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -111,7 +240,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4682145000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 315,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,8 +248,189 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1891,
+      "title": "京極高通が創業",
+      "description": "京極家9代目の京極高通が創業し、石油製品や液体化学品等に関連した運送事業を始めました。",
+      "significance": "創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営方針、経営環境及び対処すべき課題等】"
+    },
+    {
+      "year": 1947,
+      "title": "株式会社京極社を設立",
+      "description": "個人営業を改め、東京都中央区新川に株式会社京極社が設立されました。設立時の事業所は川崎作業所、金町作業所、横浜出張所でした。",
+      "significance": "法人としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "一般区域貨物自動車運送事業を再開",
+      "description": "一般区域貨物自動車運送事業を再開しました。",
+      "significance": "現在の国内輸送事業の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "ドラム缶工場を建設し操業開始",
+      "description": "ドラム缶工場を建設し、操業を開始しました。",
+      "significance": "現在のドラム缶・ペール缶事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "通関業を開始",
+      "description": "税関貨物取扱人の免許を得て、通関業を開始しました。",
+      "significance": "現在の国際物流事業につながる業務の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "株式会社弥生京極社を設立",
+      "description": "株式会社弥生京極社を設立しました。同社は現在、持分法適用関連会社です。",
+      "significance": "現在のグループ体制の一角です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "京極運輸商事株式会社に改称",
+      "description": "株式会社京極社を京極運輸商事株式会社と改称しました。同年に京浜港における一般港湾運送事業の免許も取得しています。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "株式の店頭売買を開始",
+      "description": "日本証券業協会に登録し、株式の店頭売買を開始しました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "倉庫営業を開始",
+      "description": "浮島倉庫を開設し、倉庫営業を開始しました。",
+      "significance": "国際物流事業の保管業務の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "日本タンクサービス株式会社を設立",
+      "description": "タンククリーニング部門を分離し、日本タンクサービス株式会社を設立しました。同社は現在の連結子会社です。",
+      "significance": "現在のタンク洗浄事業の担い手の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "京極石油株式会社を設立",
+      "description": "石油部門を分離し、当社の全額出資で京極石油株式会社を設立しました。同社は現在の連結子会社で、ENEOS株式会社の特約店です。",
+      "significance": "現在のエネルギー事業の担い手の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "三菱石油株式会社の関係会社となる",
+      "description": "三菱石油株式会社（現・ENEOS株式会社）の関係会社となりました。",
+      "significance": "ENEOSグループとの資本関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "ENEOSホールディングス株式会社の関係会社となる",
+      "description": "株式の継承により、JXホールディングス株式会社（現・ENEOSホールディングス株式会社）の関係会社となりました。",
+      "significance": "現在の資本関係につながる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "京浜京極運送株式会社を吸収合併",
+      "description": "100％子会社の京浜京極運送株式会社を吸収合併しました。",
+      "significance": "グループ再編の出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQスタンダードからスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "株式会社TSトランスポートを吸収合併",
+      "description": "100％子会社の株式会社TSトランスポートを吸収合併しました。",
+      "significance": "グループ再編の出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "名古屋証券取引所メイン市場に上場",
+      "description": "名古屋証券取引所メイン市場に上場しました。",
+      "significance": "二つ目の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "eneos-holdings",
+      "relationship": "other-affiliated-company",
+      "description": "有価証券報告書の関係会社の状況に「その他の関係会社」として記載されている会社で、2026年3月31日現在の議決権の被所有割合は34.96％です。同社の子会社であるENEOS株式会社は当社グループの全セグメントにわたる主要な顧客であり、連結子会社の京極石油株式会社はENEOS株式会社の特約店です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -128,13 +438,47 @@
       "publisher": "京極運輸商事株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGY5.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YGY5",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2023年度から3ヵ年の第2次中期経営計画を策定し、「事業価値の向上」「サステナビリティへの取り組み」「人的資本の充実」の3つをテーマに掲げています。事業価値の向上ではデジタル化の推進や、キャッシュ・フローの範囲内での設備投資、新規事業の創造に取り組み、サステナビリティでは燃費の向上や3Rの推進による二酸化炭素の排出削減、人的資本では働き甲斐のある職場づくりと多様性の推進を進めるとしています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "石油類・化学製品等の液体貨物の輸送に長く携わり、タンクローリー輸送から港湾荷役、容器の販売、タンクの洗浄まで、石油・化学分野の物流を一貫して担える体制を持つ点が特徴です。ENEOSグループとの資本関係と取引関係が事業基盤を支えています。",
+        "basis": "事業の内容、関係会社の状況及び関連情報におけるENEOSグループとの関係と主要な顧客の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "石油・化学製品の液体輸送を主力とする総合物流会社で、国内輸送事業は主として関東一円で営業しています。2026年3月期の売上高は8,702百万円、従業員数は315人で、業界内では中小規模の事業者です。",
+        "basis": "事業の内容及び連結経営指標等における営業地域と規模の記載に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

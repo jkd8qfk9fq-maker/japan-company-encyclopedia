@@ -4,15 +4,115 @@
   "name": "歌舞伎座",
   "officialName": "株式会社歌舞伎座",
   "nameEn": "KABUKI-ZA CO., LTD.",
-  "description": null,
+  "shortNameEn": "KABUKI-ZA CO., LTD.",
+  "description": "東京・銀座の劇場『歌舞伎座』の土地と建物を所有して賃貸し、劇場内の食堂や売店も運営する会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "real-estate",
+      "primary": true
+    },
+    {
+      "industryId": "retail",
+      "primary": false
+    },
+    {
+      "industryId": "food",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "real-estate-rental",
+      "name": "不動産賃貸事業",
+      "description": "当社と連結子会社の歌舞伎座サービス株式会社が土地と建物を所有し、これを賃貸する事業です。劇場『歌舞伎座』は松竹株式会社に賃貸しており、劇場の敷地は一部を松竹株式会社などから借り受け、一部を松竹株式会社へ賃貸しています。2026年2月期の外部顧客への売上高は2,026百万円でした。",
+      "customers": [
+        "劇場を賃借する松竹株式会社",
+        "店舗や住宅のテナント"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "shops",
+      "name": "売店事業",
+      "description": "連結子会社の歌舞伎座サービス株式会社が、主に劇場内と地下広場（木挽町広場）で歌舞伎関連商品や土産物を販売する売店を営業する事業です。2026年2月期の外部顧客への売上高は815百万円でした。",
+      "customers": [
+        "歌舞伎座の来場者",
+        "観光客"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "food-and-beverage",
+      "name": "食堂・飲食事業",
+      "description": "連結子会社の歌舞伎座サービス株式会社が、主に劇場内と地下広場（木挽町広場）で食堂・飲食店舗を営業する事業です。2026年2月期の外部顧客への売上高は791百万円でした。",
+      "customers": [
+        "歌舞伎座の来場者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "劇場などの不動産を賃貸するほか、連結子会社が劇場内や地下広場で食堂や売店を営み、賃料と劇場来場者の消費から収益を得る事業モデルです。",
+    "products": [
+      "劇場『歌舞伎座』や店舗・住宅などの不動産賃貸",
+      "劇場内と地下広場の食堂・飲食店舗",
+      "歌舞伎関連商品や土産物を販売する売店"
+    ],
+    "customers": [
+      "劇場を賃借する松竹株式会社などのテナント",
+      "歌舞伎座の来場者や観光客"
+    ],
+    "revenueSources": [
+      "不動産の賃料収入",
+      "食堂・飲食店舗の売上",
+      "売店の商品販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "銀座の劇場『歌舞伎座』を所有する会社",
+        "description": "歌舞伎座は東京都中央区銀座四丁目に本店を置き、連結子会社の歌舞伎座サービス株式会社とグループを構成しています。2026年2月期の従業員数は38人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "劇場の賃貸と、劇場内の食と売店を提供",
+        "description": "土地と建物を所有して劇場や店舗などを賃貸する不動産賃貸事業と、連結子会社が劇場内や地下広場で食堂・飲食店舗と売店を営む事業を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "劇場を借りる松竹と、観劇に訪れる来場者",
+        "description": "不動産賃貸事業の主な相手は劇場を賃借する松竹株式会社で、食堂・飲食事業と売店事業の顧客は歌舞伎座の来場者です。2026年2月期の売上高の48.1％は松竹株式会社向けでした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "賃料と来場者の消費で収益を得る",
+        "description": "2026年2月期の売上高は3,632百万円で、事業別では不動産賃貸事業が2,026百万円、売店事業が815百万円、食堂・飲食事業が791百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益284百万円",
+        "description": "2026年2月期の親会社株主に帰属する当期純利益は284百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,7 +127,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11078904000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 47,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +147,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10624781000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 45,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第99期の期首から適用しており、第99期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -67,7 +168,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10543816000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 43,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +188,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11293105000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 39,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +208,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11367812000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 38,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +216,117 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1949,
+      "title": "株式会社歌舞伎座を設立",
+      "description": "戦後、東京大空襲で焼失した歌舞伎座の復興に際し、株式会社歌舞伎座が設立されました。敷地は所有者の松竹株式会社から借り受け、劇場は演劇の興行を行う松竹株式会社に賃貸する形で出発しました。",
+      "significance": "現在の歌舞伎座グループの出発点であり、不動産の所有・賃貸を軸とする事業の形がこの時点で定まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1951,
+      "title": "劇場『歌舞伎座』が開場",
+      "description": "1950年12月に劇場が竣工し、1951年1月に歌舞伎座が開場しました。",
+      "significance": "戦後の歌舞伎興行の拠点が再建され、当社の賃貸事業の中核となる劇場が稼働を始めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "東京証券取引所に株式を上場",
+      "description": "当社の株式が東京証券取引所に上場しました。",
+      "significance": "上場企業としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "食堂・売店を担う子会社を設立",
+      "description": "劇場内の食堂や売店を担う株式会社歌舞伎座サービスが設立され、同年に歌舞伎座サービス株式会社へ社名変更しました。",
+      "significance": "現在の連結子会社につながる、劇場内の食と物販の担い手が設けられました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "建替えのため劇場を閉場",
+      "description": "建替えのため、2010年4月末日をもって劇場歌舞伎座が閉場し、劇場や歌舞伎座ビルなどが取り壊されました。",
+      "significance": "約60年使われた劇場の建替えが始まり、完成までの間は事業の中心を欠く転機となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "現在の連結子会社・歌舞伎座サービス株式会社が発足",
+      "description": "歌舞伎座サービス株式会社と歌舞伎座事業株式会社が合併し、歌舞伎座サービス株式会社が存続会社となりました。",
+      "significance": "食堂・飲食事業と売店事業を担う現在の連結子会社の体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "新しい劇場『歌舞伎座』が開場",
+      "description": "2013年2月に劇場が竣工し、3月に地下広場の木挽町広場がオープン、4月に新しい歌舞伎座が開場しました。",
+      "significance": "建替えが完了し、劇場の賃貸と劇場内の食・物販を一体で営む現在の事業の姿が戻りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "shochiku",
+      "relationship": "other-affiliated-company",
+      "description": "松竹株式会社は、関係会社の状況において「その他の関係会社」とされている会社です。当社は劇場『歌舞伎座』を松竹株式会社に賃貸し、松竹株式会社はその劇場で歌舞伎の興行を行っています。劇場の敷地は一部を松竹株式会社などから借り受け、一部を松竹株式会社へ賃貸しています。松竹株式会社は当社グループの最大の顧客でもあり、2026年2月28日現在、当社の発行済株式（自己株式を除く）の13.73％を保有する筆頭株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "shimizu",
+      "relationship": "major-shareholder",
+      "description": "清水建設株式会社は、2026年2月28日現在、当社の発行済株式（自己株式を除く）の8.64％を保有する大株主の事業会社です。当社も清水建設株式会社の株式を保有し、不動産賃貸事業における主要関係先として位置づけています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "kitazawa-sangyo",
+      "relationship": "business-partner",
+      "description": "北沢産業株式会社は、当社が株式を保有する会社で、株式の保有状況において食堂・飲食事業における関係先として位置づけられています。取引の向きが印字されていないため、業務提携先として結びました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +334,45 @@
       "publisher": "株式会社歌舞伎座",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y65X.pdf",
       "publishedAt": "2026-05-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y65X",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-14"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「歌舞伎座」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E6%AD%8C%E8%88%9E%E4%BC%8E%E5%BA%A7",
+      "accessedAt": "2026-11-16"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "歌舞伎の殿堂である『歌舞伎座』が多くの人に楽しんでもらえる場であるよう、快適で安心・安全な劇場環境と、歌舞伎座ならではの食やサービスを提供していく方針です。不動産賃貸事業では保有物件の価値向上に努め、広告媒体の活用などによる収益向上と、劇場や附帯施設の保全業務を計画的に実施できる体制づくりを進めます。売店事業では、増加傾向にある外国人観光客に魅力的な商品を揃え、マーケティングや在庫管理に注力します。",
+        "asOf": "2026-05-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "日本で唯一の歌舞伎専用の劇場である『歌舞伎座』の土地と建物を所有し、興行を行う松竹株式会社へ長期的に賃貸していることに加え、劇場内と地下広場で食堂と売店を自ら運営し、観劇に訪れる来場者の食と買い物の需要を劇場の中で取り込める体制が強みとして読み取れます。",
+        "basis": "事業の内容における賃貸と食堂・売店の運営の記載、関係会社の状況における松竹株式会社との関係、および歌舞伎座が日本で唯一の歌舞伎専用劇場であることに基づく",
+        "asOf": "2026-05-26",
+        "sourceIds": [
+          "yuho-2026",
+          "wikipedia"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",

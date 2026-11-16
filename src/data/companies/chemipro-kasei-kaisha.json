@@ -4,15 +4,180 @@
   "name": "ケミプロ化成",
   "officialName": "ケミプロ化成株式会社",
   "nameEn": "CHEMIPRO KASEI KAISHA, LTD.",
-  "description": null,
+  "shortNameEn": "CHEMIPRO KASEI KAISHA, LTD.",
+  "description": "紫外線吸収剤などの化学品と木材保存薬剤を製造販売する、神戸市に本社を置く化学メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "chemicals",
+      "name": "化学品事業",
+      "description": "紫外線吸収剤を主力に、酸化防止剤、製紙用薬剤、写真薬中間体、電子材料などを製造販売する事業です。他社向けの受託製造製品も扱います。2026年3月期の売上高は8,018百万円で、姫路工場、相生工場、明石工場、福島工場が生産拠点です。",
+      "products": [
+        "紫外線吸収剤",
+        "酸化防止剤",
+        "製紙用薬剤",
+        "写真薬中間体",
+        "電子材料",
+        "受託製造製品"
+      ],
+      "customers": [
+        "ＢＡＳＦジャパン株式会社をはじめとする化学品の需要家",
+        "受託製造の委託先企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "uv-absorbers",
+          "name": "紫外線吸収剤",
+          "description": "主力製品です。樹脂などの劣化を防ぐために使われる添加剤で、関連会社のアイエスシー化学を吸収合併した明石工場などで製造しています。",
+          "products": [
+            "紫外線吸収剤"
+          ],
+          "customers": [
+            "化学品の需要家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other-chemicals",
+          "name": "酸化防止剤・製紙用薬剤・写真薬中間体・電子材料",
+          "description": "酸化防止剤、製紙用薬剤、写真薬中間体、電子材料（有機EL材料を含む）などを製造販売しています。福島工場は有機EL材料の製造と研究の拠点です。",
+          "products": [
+            "酸化防止剤",
+            "製紙用薬剤",
+            "写真薬中間体",
+            "電子材料"
+          ],
+          "customers": [
+            "化学品の需要家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "contract-manufacturing",
+          "name": "受託製造製品",
+          "description": "他社の製品を受託して製造する製品です。化学品事業の取引高の3割程度を占めるまでに拡大しています。",
+          "products": [
+            "受託製造製品"
+          ],
+          "customers": [
+            "製造を委託する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "home-industry",
+      "name": "ホーム産業事業",
+      "description": "木材保存薬剤などを製造販売する事業です。大阪工場が生産拠点で、2026年3月期の売上高は927百万円でした。ホームセンター向け塗料などの開発・販売拡大も目指しています。",
+      "products": [
+        "木材保存薬剤",
+        "ホームセンター向け塗料"
+      ],
+      "customers": [
+        "ホームセンターなどの販売先",
+        "株式会社ダスキンなどの取引先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "wood-preservatives",
+          "name": "木材保存薬剤",
+          "description": "ホーム産業事業の主力製品で、木材を腐れや虫害から守る薬剤です。",
+          "products": [
+            "木材保存薬剤"
+          ],
+          "customers": [
+            "ホームセンターなどの販売先"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "有機化学合成の技術を基盤に、紫外線吸収剤をはじめとする化学品と木材保存薬剤を自社工場で製造し、化学品メーカーなどへ販売する事業モデルです。",
+    "products": [
+      "紫外線吸収剤",
+      "酸化防止剤",
+      "製紙用薬剤",
+      "写真薬中間体",
+      "電子材料",
+      "受託製造製品",
+      "木材保存薬剤"
+    ],
+    "customers": [
+      "ＢＡＳＦジャパン株式会社をはじめとする化学品の需要家",
+      "受託製造の委託先企業",
+      "ホームセンターなどの販売先"
+    ],
+    "revenueSources": [
+      "化学品の製品販売による売上高",
+      "受託製造による売上高",
+      "木材保存薬剤などの製品販売による売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "神戸市に本社を置く非連結の化学メーカー",
+        "description": "ケミプロ化成は神戸市中央区に本社を置き、連結財務諸表は作成していません。2026年3月31日現在の従業員数は222人で、関連会社が1社あります。"
+      },
+      {
+        "kind": "offering",
+        "title": "紫外線吸収剤などの化学品と木材保存薬剤を製造",
+        "description": "紫外線吸収剤、酸化防止剤、製紙用薬剤、写真薬中間体、電子材料などの化学品と、木材保存薬剤を、姫路・相生・明石・福島・大阪の各工場で製造しています。他社製品の受託製造も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "主な販売先は化学品メーカーなど",
+        "description": "製品は化学品メーカーなどに販売しています。2026年3月期の主要な顧客はＢＡＳＦジャパン株式会社で、化学品事業の販売先です。ホーム産業事業では株式会社ダスキンが主力取引先の一つです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は8,946百万円で、前期の9,710百万円から7.9％減少しました。化学品事業が8,018百万円、ホーム産業事業が927百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の当期純利益は294百万円で、前期の128百万円から増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +192,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4574594000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 237,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +214,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4595539000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 230,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +236,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4679600000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 225,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +258,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4777291000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 216,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +280,139 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4999669000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 222,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1982,
+      "title": "ケミプロ化成株式会社を設立",
+      "description": "有機化学工業薬品の製造・販売を目的として、神戸市にケミプロ化成株式会社が設立されました。",
+      "significance": "会社の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "アイエスシー化学を共同出資で設立",
+      "description": "石原産業株式会社、正華産業株式会社と共同出資により、紫外線吸収剤の製造を目的に、関連会社アイエスシー化学株式会社が設立されました。",
+      "significance": "主力製品である紫外線吸収剤の製造体制の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "竹内シーピー化学を吸収合併",
+      "description": "経営の効率化のため、子会社の竹内シーピー化学株式会社を吸収合併しました。現在の姫路工場につながります。",
+      "significance": "生産拠点の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "シーピーゼットとの合併で商号をケミプロ化成に変更",
+      "description": "実質上の存続会社であるケミプロ化成株式会社が形式上の存続会社に吸収合併され、その後、商号がケミプロ化成株式会社に変更されました。事業年度の期数は実質上の存続会社のものを引き継いでいます。",
+      "significance": "現在の会社の法的な成り立ちです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "日本証券業協会に店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "アイエスシー化学を吸収合併",
+      "description": "アイエスシー化学株式会社を吸収合併しました。現在の明石工場につながります。",
+      "significance": "紫外線吸収剤の製造を自社に取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "東洋木材防腐を吸収合併しホーム産業部門を開始",
+      "description": "事業の多角化と安定化のため、東洋木材防腐株式会社を吸収合併しました。現在のホーム産業事業につながります。",
+      "significance": "第二の事業の柱の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "福島研究所を竣工",
+      "description": "業容拡大のため、福島県田村市滝根町に福島研究所を竣工しました。",
+      "significance": "研究開発拠点の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "福島工場を竣工",
+      "description": "福島工場が竣工しました。有機EL材料の製造と研究の拠点です。",
+      "significance": "新規分野の生産拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、スタンダード市場に上場することになりました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "duskin",
+      "relationship": "business-partner",
+      "description": "当社のホーム産業事業における主力取引先の一つで、売買取引があります。同社の害虫獣駆除サービスとの相乗効果による市場占有率の拡大強化のため、当社は同社の取引先持株会に加入し、同社株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +420,47 @@
       "publisher": "ケミプロ化成株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIYR.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YIYR",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年3月期を初年度とする第3期中期経営計画『ケミプロ化成経営革新プランⅢ～Flexible for Sustainability～』を推進し、「稼ぐ力の向上」「収益体質の強化」「持続可能性の追求」を重点方針としています。受託製品の展開強化や新規事業の展開・強化、既存事業・製品の販売強化などに取り組むとしています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "創業以来培ってきた有機化学合成の技術力を背景に、主力の紫外線吸収剤を持つほか、受託ビジネスが化学品事業の取引高の3割程度を占めるまでに拡大しており、特定の大口取引先との協力関係と受託製造の両輪で事業を進めています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】が、有機化学合成の技術力を背景に受託ビジネスが取引高ベースで化学品事業の30％程度になったこと、特定の大口取引先の協力を得ながら成長してきたことを述べている。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "属するファインケミカル業界では需要の低迷と廉価販売攻勢が続き、主力製品である紫外線吸収剤の需要も回復しなかったため、2026年3月期は減収となりました。特定の販売先への依存度が高いことが経営成績に影響を与える要因として挙げられています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】が、ファインケミカル業界の需要低迷と廉価販売攻勢、紫外線吸収剤の需要が回復しなかったこと、特定販売先への依存度が高いことを述べている。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

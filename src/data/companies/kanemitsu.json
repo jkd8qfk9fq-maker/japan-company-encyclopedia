@@ -4,15 +4,141 @@
   "name": "カネミツ",
   "officialName": "株式会社カネミツ",
   "nameEn": "KANEMITSU CORPORATION",
-  "description": null,
+  "shortNameEn": "Kanemitsu Corporation",
+  "description": "兵庫県明石市に本社を置き、自動車や農業機械向けの鋼板製プーリを主力とする自動車部品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "japan",
+      "name": "日本",
+      "description": "当社と連結子会社の松本精工株式会社、株式会社津村製作所が担う地域区分です。鋼板製プーリを中心に、トランスミッション部品、xEV部品、電動パワーステアリング部品などを製造・販売しています。2026年3月期の外部顧客への売上高は8,130百万円でした。",
+      "customers": [
+        "自動車メーカー",
+        "自動車部品メーカー",
+        "農業機械メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "japan-pulley",
+          "name": "プーリ",
+          "description": "自動車エンジンのウォーターポンプ、クランクシャフト、オルタネータ、パワーステアリングなどに装着される鋼板製プーリです。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "japan-transmission",
+          "name": "トランスミッション",
+          "description": "トランスミッション向けの部品です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "japan-other",
+          "name": "その他",
+          "description": "xEV部品、電動パワーステアリング部品、モーターコア関連部品など、プーリとトランスミッション以外の製品です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "southeast-asia",
+      "name": "東南アジア",
+      "description": "タイのKANEMITSU PULLEY CO., LTD.とインドネシアのPT. KANEMITSU SGS INDONESIAが担う地域区分です。プーリを中心に自動車部品等を生産・販売しています。2026年3月期の外部顧客への売上高は2,087百万円でした。",
+      "customers": [
+        "自動車メーカー",
+        "自動車部品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "china",
+      "name": "中国",
+      "description": "中国の佛山金光汽車零部件有限公司が担う地域区分です。プーリを中心に自動車部品等を生産・販売しています。2026年3月期の外部顧客への売上高は822百万円でした。",
+      "customers": [
+        "自動車メーカー",
+        "自動車部品メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "鋼板を回転成形法で一体成形したプーリなどを国内外の工場で製造し、自動車メーカーや部品メーカーへ販売して売上を得ています。",
+    "products": [
+      "鋼板製プーリ",
+      "トランスミッション部品",
+      "xEV部品",
+      "電動パワーステアリング部品",
+      "モーターコア関連部品"
+    ],
+    "customers": [
+      "自動車メーカー",
+      "自動車部品メーカー",
+      "農業機械メーカー",
+      "一般機械メーカー"
+    ],
+    "revenueSources": [
+      "製品の販売"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "会社",
+        "description": "兵庫県明石市に本社を置き、連結子会社5社と関連会社1社でグループを構成しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "製品",
+        "description": "鋼板製プーリを中心に、トランスミッション部品や電動車向け部品などを設計・開発し、製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "顧客",
+        "description": "国内の自動車会社や主要な部品会社に製品を供給し、農業機械や一般機械向けにも供給しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上",
+        "description": "2026年3月期の売上高は11,039百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は742百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +153,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9267320000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 613,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9957950000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 607,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10962686000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 596,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11671189000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 577,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +233,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12723736000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 569,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +241,208 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1947,
+      "title": "前身の（資）金光銅工熔接所を設立",
+      "description": "兵庫県明石市東本町に、（資）金光銅工熔接所が設立されました。当初はパイプや板金などの溶接業、工具箱の製作などを営んでいました。",
+      "significance": "現在のカネミツの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "回転成形法によるプーリを開発",
+      "description": "独自開発の回転成形法によるプーリの開発に成功し、自動車部品メーカー等へのプーリの納入を開始しました。",
+      "significance": "主力製品である鋼板製プーリの事業が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "三木工場を竣工",
+      "description": "兵庫県三木市に三木工場を竣工しました。",
+      "significance": "業容の拡大に対応する生産拠点の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "株式会社カネミツを設立",
+      "description": "兵庫県神戸市に株式会社カネミツが設立されました。",
+      "significance": "現在の法人格の母体ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "前身を吸収合併し本社を明石市に移転",
+      "description": "（資）金光銅工熔接所を吸収合併するとともに、本社を兵庫県明石市大蔵本町に構えました。",
+      "significance": "前身の事業を株式会社カネミツが引き継ぎました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "商号を株式会社カネミツに変更",
+      "description": "株式の額面金額変更のため、淇水堂印刷株式会社が旧株式会社カネミツを吸収合併し、株式会社カネミツに商号変更しました。",
+      "significance": "現在の商号になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "タイに現地法人を設立",
+      "description": "タイに現地法人KANEMITSU PULLEY CO., LTD.（連結子会社）を設立しました。",
+      "significance": "海外生産体制の構築が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "加西工場を竣工",
+      "description": "兵庫県加西市に加西工場を竣工しました。",
+      "significance": "国内の生産拠点が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "中国に現地法人を設立",
+      "description": "中国に現地法人佛山金光汽車零部件有限公司（連結子会社）を設立しました。",
+      "significance": "中国での生産・販売体制ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "インドに合弁会社を設立",
+      "description": "インドに現地資本と合弁でJBM KANEMITSU PULLEYS PRIVATE LIMITED（関連会社）を設立しました。",
+      "significance": "インド市場への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "インドネシアに合弁会社を設立",
+      "description": "インドネシアに現地資本と合弁でPT. KANEMITSU SGS INDONESIA（連結子会社）を設立しました。",
+      "significance": "東南アジアの生産体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "長崎工場を竣工",
+      "description": "長崎県長崎市に長崎工場を竣工しました。",
+      "significance": "国内に新たな生産拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "松本精工株式会社を連結子会社化",
+      "description": "松本精工株式会社の全株式を取得し、連結子会社化しました。",
+      "significance": "当社製品の機械加工を担う会社がグループに入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "明石工場を閉鎖",
+      "description": "兵庫県明石市の明石工場を閉鎖しました。",
+      "significance": "生産拠点の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "株式会社津村製作所を連結子会社化",
+      "description": "株式会社津村製作所の全株式を取得し、連結子会社化しました。",
+      "significance": "金属プレス加工の事業がグループに入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所のスタンダード市場に移行しました。",
+      "significance": "現在の上場市場になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "株式会社キーネクストを設立",
+      "description": "本社内（兵庫県明石市）に（有）米澤工作所と合弁で株式会社キーネクスト（関連会社）を設立しました。",
+      "significance": "モーターコア関連部品の製造・販売を行う関連会社ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "aisin",
+      "relationship": "customer",
+      "description": "主要な顧客です。有報の主要な顧客ごとの情報に、2026年3月期の顧客として記載されており、関連するセグメントは日本です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連情報】"
+    },
+    {
+      "companyId": "bando-chemical-industries",
+      "relationship": "major-shareholder",
+      "description": "大株主の事業会社です。2026年3月31日現在の大株主の状況では、バンドー化学株式会社が141,220株を保有し、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は2.76％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +450,37 @@
       "publisher": "株式会社カネミツ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE6U.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YE6U",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "プーリに代わる事業の柱をロボット部品事業と捉え、第10次中期経営計画に示した事業ポートフォリオの推進に取り組むとしています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1961年に独自開発した回転成形法でプーリを1枚の鋼板から一体成形できることが強みです。この塑性加工技術は、トランスミッション部品や電動車向け部品、ロボット部品にも応用されています。",
+        "basis": "【事業の内容】に、回転成形法による一体成形の成功と、塑性加工技術の応用先が記載されていること",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

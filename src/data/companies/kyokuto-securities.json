@@ -4,15 +4,134 @@
   "name": "極東証券",
   "officialName": "極東証券株式会社",
   "nameEn": "KYOKUTO SECURITIES CO., LTD.",
-  "description": null,
+  "shortNameEn": "KYOKUTO SECURITIES CO., LTD.",
+  "description": "東京都中央区に本店を置き、対面での対話を軸に有価証券の売買の取次ぎや引受けなどを行う証券会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "finance",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "financial-instruments",
+      "name": "金融商品取引業",
+      "description": "当社が第一種金融商品取引業及び第二種金融商品取引業を営み、有価証券の売買等及び売買等の受託、有価証券の引受け及び売出し、有価証券の募集及び売出しの取扱い等を行う事業です。連結子会社の株式会社FEインベストも第二種金融商品取引業を営み、同社が組成する投資ファンドの運営・管理を行っています。金額は単一セグメントのため独立して開示されていません。",
+      "customers": [
+        "富裕層を中心とする個人のお客さま",
+        "法人のお客さま"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "fund-management",
+          "name": "投資ファンドの運営・管理",
+          "description": "連結子会社の株式会社FEインベストが組成する投資ファンドの運営・管理を行う事業です。",
+          "customers": [
+            "投資ファンドの投資家"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "investment",
+      "name": "投資業",
+      "description": "連結子会社の株式会社FEインベストが自己資金を利用して、主に長期投資による安定的収益の確保を目的として行う投資事業です。金額は独立して開示されていません。",
+      "customers": [
+        "投資先企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産業",
+      "description": "連結子会社の極東プロパティ株式会社が営む不動産業で、主として当社の本支店の店舗等を賃貸しています。金額は独立して開示されていません。",
+      "customers": [
+        "当社グループ"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "research",
+      "name": "調査・研究業",
+      "description": "非連結子会社の株式会社極東証券経済研究所が、主として当社の委託に基づき、国内外における経済、金融市場の調査・研究を行う事業です。金額は独立して開示されていません。",
+      "customers": [
+        "当社グループ"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "お客さまとの対面での対話を軸に、株式や債券、投資信託の販売で手数料を得るほか、自己資金による投資やトレーディングでも収益を得る事業モデルです。",
+    "products": [
+      "株式",
+      "債券",
+      "投資信託",
+      "投資ファンド"
+    ],
+    "customers": [
+      "富裕層を中心とする個人のお客さま",
+      "法人のお客さま"
+    ],
+    "revenueSources": [
+      "株式や投資信託の売買の取次ぎや引受けなどによる受入手数料",
+      "債券などのトレーディングによる収益",
+      "保有する債券の利子や収益分配金などの金融収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京証券取引所プライム市場に上場する証券会社",
+        "description": "極東証券は東京都中央区日本橋茅場町に本店を置く証券会社で、東京証券取引所プライム市場に上場しています。連結子会社2社とともにグループを構成し、2026年3月31日現在の連結従業員数は238人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "有価証券の売買・引受けとグループの投資・不動産・調査研究",
+        "description": "第一種金融商品取引業及び第二種金融商品取引業として、有価証券の売買等及び売買等の受託、有価証券の引受け及び売出し、募集及び売出しの取扱いを行います。連結子会社が投資ファンドの運営・管理と自己資金による投資、不動産の賃貸、経済・金融市場の調査・研究も担っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "富裕層を中心とするお客さま",
+        "description": "富裕層向けの金融サービスを中核としており、個人や法人のお客さまが主な顧客です。営業収益の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の営業収益は8,317百万円",
+        "description": "2026年3月期の営業収益は8,317百万円で、前期から327百万円増えました。株式の売買が活況で委託手数料が増えたほか、投資信託の販売が好調で募集・売出しの取扱手数料も増えたことによります。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は4,790百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は4,790百万円で、前期から343百万円増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +146,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 46106000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 247,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +166,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 47301000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 234,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +186,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 53675000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 236,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +206,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 51609000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 236,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号）等を第82期の期首から適用し、第81期に係る主要な経営指標等は当該会計基準等を遡って適用した後の指標"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +227,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 52509000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 238,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +235,119 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1947,
+      "title": "冨士証券株式会社を設立",
+      "description": "東京都中央区日本橋茅場町に、前身の冨士証券株式会社が設立されました。",
+      "significance": "創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "極東証券株式会社に商号変更",
+      "description": "冨士証券の経営を継承して新発足し、東京証券取引所の正会員となったうえで、商号を極東証券株式会社に変更しました。",
+      "significance": "現在の商号と体制の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "証券業の免許を取得",
+      "description": "証券取引法の改正による免許制への移行に伴い、証券業の免許を取得しました。",
+      "significance": "免許制の下での証券業の継続です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "引受け及び売出しを行う業務の免許を受ける",
+      "description": "引受け及び売出しを行う業務の免許を受けました。",
+      "significance": "引受業務への参入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "総合証券会社となる",
+      "description": "総合証券会社となりました。同年に株式会社極東証券経済研究所を設立しています。",
+      "significance": "事業の総合化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "極東プロパティ株式会社を設立",
+      "description": "不動産事業を担う極東プロパティ株式会社を設立しました。",
+      "significance": "現在のグループ体制の一部です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。同年に株式会社FEインベストを設立しています。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東京証券取引所市場第一部指定",
+      "description": "東京証券取引所市場第一部の指定を受けました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "第一種金融商品取引業者等の登録を受ける",
+      "description": "金融商品取引法の施行に伴い、第一種金融商品取引業者及び第二種金融商品取引業者の登録を受けました。",
+      "significance": "現行法制の下での登録です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分変更に伴い、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "heiwa-real-estate",
+      "relationship": "business-partner",
+      "description": "金融商品取引を含めた当社の取引先であり、証券業界と長期にわたり深い関わりを有する事業パートナーです。当社は同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +355,47 @@
       "publisher": "極東証券株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEU4.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YEU4",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営の基本理念として「信は萬事の基と為す」を掲げ、信頼を原点としたFace to Face（お客さまとの対面での直接対話型）のビジネスモデルと健全経営による安定的成長確保を基本方針としています。中期事業計画（2024年度～2026年度）では「収益基盤の拡大・充実」「人的資本の充実」「コンプライアンスの徹底」を対処すべき課題に設定し、独自のビジネスモデルを強化して収益力の向上に取り組んでいます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "創立以来堅持してきた対面営業により、営業員の「親切・丁寧な対応」がお客さまから高い評価を得ており、新規に口座を開設したお客さまのうち既存のお客さまからの紹介を契機とする割合は当期65.2％と高い水準にあります。お客さま満足度（ＣＸ指標）も2025年度調査で6.52と前回調査から向上しています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における顧客満足度の指標と対面営業の記載に基づきます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "富裕層向けの金融サービスを中核事業としてきた独立系の証券会社です。収益の中心は証券市場における仲介業者として得られる手数料収入等であり、市場環境の変化の影響を受けやすい一方、健全な財務基盤のもと自己資本による投資も行い、収益源の多様化を通じて安定性の確保に努めています。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における収益構造の記載に基づきます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

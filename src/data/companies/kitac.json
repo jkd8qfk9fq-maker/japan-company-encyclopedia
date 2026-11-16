@@ -4,15 +4,136 @@
   "name": "キタック",
   "officialName": "株式会社キタック",
   "nameEn": "KITAC CORPORATION",
-  "description": null,
+  "shortNameEn": "KITAC CORPORATION",
+  "description": "新潟県を地盤に地質調査や土木設計を行う建設コンサルタント事業を中核とし、印刷・ＷＥＢ広告と不動産賃貸も手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "construction-consulting",
+      "name": "建設コンサルタント事業",
+      "description": "新潟県内を中心に地質調査や土木設計などを行う事業です。当社が地質調査・土木設計等を担い、地すべりの多い新潟県で培った技術力を背景に「防災のキタック」とも呼ばれています。2025年10月期の外部顧客への売上高は3,100百万円でした。",
+      "customers": [
+        "国土交通省や新潟県などの官公庁"
+      ],
+      "sourceIds": [
+        "yuho-2025",
+        "wikipedia"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "geological-survey-and-design",
+          "name": "地質調査・土木設計等",
+          "description": "当社が新潟県内を中心に営む地質調査や土木設計などの業務です。金額は区分して開示されていません。",
+          "customers": [
+            "国や地方公共団体などの官公庁"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "surveying",
+          "name": "測量",
+          "description": "連結子会社の株式会社広川測量社が新潟県内を中心に営む測量業務です。金額は区分して開示されていません。",
+          "customers": [
+            "測量を必要とする顧客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸等事業",
+      "description": "主に新潟県内において、賃貸用オフィスビルや賃貸住宅などの不動産賃貸を行う事業です。2025年10月期の外部顧客への売上高は186百万円でした。",
+      "customers": [
+        "賃貸物件の入居者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "web-solutions",
+      "name": "ＷＥＢソリューション事業",
+      "description": "新潟県内を中心に、顧客の印刷物の作成や自社印刷物の作成、およびＷＥＢ広告の作成を行う事業です。2025年10月期の外部顧客への売上高は181百万円でした。",
+      "customers": [
+        "印刷物やＷＥＢ広告を必要とする顧客"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "国や地方公共団体などから地質調査や土木設計を受託し、子会社による測量、印刷物やＷＥＢ広告の作成、不動産賃貸も行う事業モデルです。",
+    "products": [
+      "地質調査・土木設計等の建設コンサルタントサービス",
+      "測量業務",
+      "印刷物の作成",
+      "ＷＥＢ広告の作成",
+      "不動産賃貸（賃貸用オフィスビル・賃貸住宅）"
+    ],
+    "customers": [
+      "国土交通省や新潟県などの官公庁",
+      "印刷物やＷＥＢ広告を必要とする顧客",
+      "賃貸物件の入居者"
+    ],
+    "revenueSources": [
+      "建設コンサルタント業務の受託による対価",
+      "印刷物・ＷＥＢ広告の作成の受託による対価",
+      "不動産の賃貸による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "新潟に本社を置く建設コンサルタント",
+        "description": "キタックは新潟市中央区に本社を置き、連結子会社1社（株式会社広川測量社）とグループを構成しています。2025年10月20日現在の従業員数は197人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "地質調査・土木設計から測量、印刷・賃貸まで",
+        "description": "新潟県内を中心に地質調査・土木設計等の建設コンサルタント事業と測量を行い、顧客の印刷物の作成やＷＥＢ広告の作成、不動産賃貸も手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "官公庁が主な顧客",
+        "description": "主な顧客は社会資本整備を行う国や地方公共団体などです。主要な顧客である新潟県への売上高は2025年10月期に925百万円、国土交通省への売上高は900百万円で、いずれも建設コンサルタント事業に属しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2025年10月期の売上高は3,467百万円",
+        "description": "2025年10月期の売上高は3,467百万円でした。建設コンサルタント事業が3,100百万円、不動産賃貸等事業が186百万円、ＷＥＢソリューション事業が181百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2025年10月期の純利益は207百万円",
+        "description": "2025年10月期の親会社株主に帰属する当期純利益は207百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年10月期",
@@ -27,7 +148,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2655840000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 188,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +168,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2855784000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 187,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第50期の期首から適用しており、第50期以降の主要な経営指標等は当該会計基準等を適用した後の数値である。"
     },
     {
       "fiscalYear": "2023年10月期",
@@ -67,7 +189,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3026892000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 184,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +209,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3293650000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 191,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "前連結会計年度（第52期）より、ＷＥＢソリューション事業に係る損益について、営業外損益に表示する方法から売上高に表示する方法に変更したため、第51期以前の売上高については当該表示方法の変更を反映した数値となっている。"
     },
     {
       "fiscalYear": "2025年10月期",
@@ -107,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3532524000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 197,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,7 +238,148 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1973,
+      "title": "北日本技術コンサルタント株式会社を設立",
+      "description": "地質調査及び土木設計を主業務として、新潟市関屋田町に北日本技術コンサルタント株式会社を設立しました。あわせて建設コンサルタントと測量業者の登録を行いました。",
+      "significance": "現在のキタックの創業です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "本社を新潟市平島へ移転",
+      "description": "本社を新潟市平島１丁目へ移転しました。",
+      "significance": "新潟を地盤とする経営の拠点を整えました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "株式会社キタックに社名変更",
+      "description": "社名（商号）を株式会社キタックに変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "地すべり自動観測システムを開発",
+      "description": "地すべり自動観測システムを開発し、技術審査証明を受けました。",
+      "significance": "地すべり分野の技術力の基盤となる開発です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "本社を新潟市新光町へ移転",
+      "description": "新潟市新光町10番地２へ本社を移転し、技術士センタービルⅠが竣工しました。",
+      "significance": "現在の本社所在地への移転です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "美術館（資料館）を開設",
+      "description": "新潟市新光町10番地２に美術館（資料館）を開設しました。",
+      "significance": "後に知足美術館として続く文化活動の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "全社でISO9001認証を取得し、株式を店頭登録",
+      "description": "全社でISO9001認証を取得し、株式を日本証券業協会に店頭売買銘柄として登録しました。",
+      "significance": "株式公開への第一歩となった登録です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "株式をジャスダック証券取引所に上場しました。",
+      "significance": "取引所市場への上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "子会社3社の事業を譲り受け、清算を結了",
+      "description": "子会社の新栄エンジニア株式会社、株式会社クリエイティブ蒼風、哈爾濱新龍工程技術開発有限公司の3社の営業全部を譲り受け、その後3社の清算を結了しました。",
+      "significance": "グループの事業を当社に集約しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "技術士センタービルⅡを竣工",
+      "description": "新潟市新光町10番地３に技術士センタービルⅡを竣工しました。",
+      "significance": "本社機能の拡張です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "中国子会社の清算を結了",
+      "description": "子会社の哈爾濱北友土木工程開発有限公司の清算を結了しました。",
+      "significance": "中国子会社がすべて整理されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所ＪＡＳＤＡＱ（スタンダード）に上場",
+      "description": "東京証券取引所と大阪証券取引所の証券市場統合に伴い、東京証券取引所ＪＡＳＤＡＱ（スタンダード）に上場しました。",
+      "significance": "東京証券取引所の市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社広川測量社を子会社化",
+      "description": "株式会社広川測量社を株式取得により子会社化しました。",
+      "significance": "現在の連結子会社となった取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、ＪＡＳＤＡＱからスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +388,54 @@
       "publisher": "株式会社キタック",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XFRF.pdf",
       "publishedAt": "2026-01-19",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XFRF",
+      "asOf": "2025-10-20",
+      "accessedAt": "2026-11-13"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「キタック」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E3%82%AD%E3%82%BF%E3%83%83%E3%82%AF",
+      "accessedAt": "2026-11-16"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「稼ぐ力」「働く環境の改善」「多様な人材の活用」の3本を経営方針の柱に据え、国土強靭化施策や公共インフラの維持・補修などの需要に対応しながら、高度・先端技術の活用による他社との差別化、コスト競争力と高品質、人材育成と技術者教育の強化に取り組む方針です。",
+        "asOf": "2026-01-19",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "地質調査と建設コンサルタントで長年培った技術力を活かした提案力に加え、防災・減災対策や公共インフラの老朽化対策について調査から設計までを一貫して担える総合力と、環境分野も含む豊富な業務経験が強みです。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、地質調査業及び建設コンサルタント業で長年培った技術力を活かした提案力と、調査から設計までの一貫した総合力、環境分野も含む豊富な業務経験により受注の確保に努めた旨が印字されているため。",
+        "asOf": "2026-01-19",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "国や地方自治体などの行う社会資本整備の計画・調査や設計業務を創業以来続けてきた会社で、地域の業界におけるリーディングカンパニーとしての地位を確立してきたと自ら位置づけています。防災・減災対策やインフラ老朽化対策の需要が続く環境の中で事業を行っています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、創業以来、国や地方自治体などの行う社会資本整備の計画・調査や設計業務を行い、地域の業界におけるリーディングカンパニーとしての地位を確立してきた旨と、防災・減災対策や公共インフラの老朽化対策の需要が予想される旨が印字されているため。",
+        "asOf": "2026-01-19",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年10月期",
     "asOf": "2025-10-20",
