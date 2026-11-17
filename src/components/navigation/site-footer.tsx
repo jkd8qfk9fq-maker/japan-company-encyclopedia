@@ -37,6 +37,7 @@ export async function SiteFooter() {
               <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/terms">用語集</Link></li>
             )}
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/search">検索</Link></li>
+            <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/screening">財務で探す</Link></li>
           </ul>
         </nav>
         <nav aria-label="サポート">
