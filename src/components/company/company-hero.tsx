@@ -12,6 +12,7 @@ import { segmentTone, structureBranches } from "./business-structure";
 import { FavoriteButton } from "./favorite-button";
 import { KeyFacts } from "./key-facts";
 import { ShareActions } from "./share-actions";
+import { PushCompanyToggle } from "@/components/engagement/push-controls";
 
 const EXCHANGE_NAME: Record<Company["listings"][number]["exchange"], string> = {
   tse: "東証",
@@ -140,6 +141,7 @@ export function CompanyHero({
             </a>
           )}
           <FavoriteButton companyId={company.id} companyName={company.name} />
+          <PushCompanyToggle companyId={company.id} companyName={company.name} />
           <ShareActions url={siteUrl(`/companies/${company.id}`)} text={`${company.name}とは？｜${SITE_NAME}`} />
           <Link
             href={`/contact?company=${company.id}`}

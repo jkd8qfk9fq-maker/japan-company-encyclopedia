@@ -9,6 +9,7 @@ import { ANALYTICS_TOKEN, BASE_PATH, OG_IMAGES, SITE_DESCRIPTION, SITE_NAME, SIT
 import { THEME_SCRIPT } from "@/lib/storage/theme-script";
 import "./globals.css";
 import { AnalyticsConsent } from "@/components/analytics/analytics-consent";
+import { PushSync } from "@/components/engagement/push-controls";
 
 /*
  * Three faces, three jobs:
@@ -98,6 +99,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteFooter />
         <BottomNavigation />
         <ServiceWorkerRegistration />
+        <PushSync />
         <AnalyticsConsent />
         {ANALYTICS_TOKEN && (
           <script

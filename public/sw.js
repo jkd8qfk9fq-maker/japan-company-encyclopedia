@@ -137,3 +137,44 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(handleRevalidated(request));
   }
 });
+
+/*
+ * Notifications for followed companies (JCE-059). The site sends only a fact — "〇〇の新しい決算データが公開されました"
+ * — and the page it is about; a tap opens that page. Only this site's own pages are ever opened from a notification.
+ */
+self.addEventListener("push", (event) => {
+  let data = {};
+  try {
+    data = event.data ? event.data.json() : {};
+  } catch {
+    data = {};
+  }
+  const title = typeof data.title === "string" ? data.title : "日本企業百科事典";
+  const body = typeof data.body === "string" ? data.body : "フォロー中の会社に新しい情報があります";
+  event.waitUntil(
+    self.registration.showNotification(title, {
+      body,
+      tag: typeof data.tag === "string" ? data.tag : undefined,
+      icon: "/icons/icon-192.png",
+      badge: "/icons/icon-192.png",
+      data: { url: typeof data.url === "string" ? data.url : "/notifications" },
+    }),
+  );
+});
+
+self.addEventListener("notificationclick", (event) => {
+  event.notification.close();
+  let target;
+  try {
+    target = new URL(event.notification.data && event.notification.data.url ? event.notification.data.url : "/notifications", self.location.origin);
+  } catch {
+    return;
+  }
+  if (target.origin !== self.location.origin) return;
+  event.waitUntil(
+    self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((windows) => {
+      for (const w of windows) if (w.url === target.href && "focus" in w) return w.focus();
+      return self.clients.openWindow(target.href);
+    }),
+  );
+});

@@ -19,7 +19,7 @@ describe("wrangler.jsonc", () => {
       run_worker_first: ["/*", "!/_next/*"],
     });
   });
-  it("is served at kigyo-hyakka.com; its only code redirects old addresses (JCE-039)", () => {
+  it("is served at kigyo-hyakka.com; its code redirects old addresses (JCE-039) and answers /api/push (JCE-059)", () => {
     expect(wrangler.main).toBe("worker/index.ts");
     expect(wrangler.workers_dev).toBe(true);
     expect(wrangler.routes).toEqual([
@@ -27,9 +27,15 @@ describe("wrangler.jsonc", () => {
       { pattern: "www.kigyo-hyakka.com", custom_domain: true },
     ]);
   });
-  it("holds no secret and no binding but the assets", () => {
+  it("holds no secret, and no binding but the assets and the notification service of JCE-059", () => {
     expect(JSON.stringify(wrangler)).not.toMatch(/key|token|secret|password/i);
-    expect(Object.keys(wrangler).sort()).toEqual(["assets", "compatibility_date", "main", "name", "routes", "workers_dev"]);
+    expect(Object.keys(wrangler).sort()).toEqual(["assets", "compatibility_date", "d1_databases", "main", "name", "ratelimits", "routes", "triggers", "workers_dev"]);
+    // JCE-059: one database for push subscriptions, the half-hourly announcement, and a rate limit on subscribing. The
+    // VAPID keys are Worker secrets, never here.
+    expect(wrangler.d1_databases).toEqual([{ binding: "PUSH_DB", database_name: "kigyo-push", database_id: "9790ec13-5ba6-417c-9c8e-d7d293953af1", migrations_dir: "migrations" }]);
+    expect(wrangler.triggers).toEqual({ crons: ["*/30 * * * *"] });
+    expect(wrangler.ratelimits).toEqual([{ name: "PUSH_LIMIT", namespace_id: "3001", simple: { limit: 20, period: 60 } }]);
+    expect(wrangler.vars).toBeUndefined();
   });
 });
 
