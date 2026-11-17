@@ -46,3 +46,10 @@ export const siteUrl = (path: string) => new URL(`${BASE_PATH}${path}`, SITE_URL
 /** The share image every page falls back to (JCE-054). A page that sets its own openGraph must include it: Next
  *  replaces the parent's openGraph whole, so leaving it out drops the picture. */
 export const OG_IMAGES = [{ url: `${BASE_PATH}/og/default.png`, width: 1200, height: 630, alt: SITE_NAME }];
+
+/**
+ * Google Analytics 4 (JCE-056): loaded only for readers who chose 「同意する」, the choice shared with the other
+ * kigyo-hyakka.com sites through one cookie. Public by design (every page that loads the tag names it). Empty until
+ * the operator creates the property: until then no banner shows and nothing changes.
+ */
+export const GA_MEASUREMENT_ID: string = "";

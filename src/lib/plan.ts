@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { useLocalStore } from "@/hooks/use-local-store";
 import { planStore, type StoredPlan } from "@/lib/storage/stores";
+import { trackEvent } from "@/lib/analytics/runtime";
 
 /**
  * The YUGENQ premium plan on this site (JCE-043). The plan is sold and checked on the 企業タイプ診断 site; its
@@ -36,6 +37,7 @@ export async function checkPlan(code: string): Promise<PlanResponse> {
  * parent-domain cookie, here. Card details never touch either site.
  */
 export async function startCheckout(returnTo: string): Promise<void> {
+  trackEvent("begin_checkout");
   const response = await fetch(CHECKOUT_ENDPOINT, {
     method: "POST",
     headers: { "content-type": "application/json" },
