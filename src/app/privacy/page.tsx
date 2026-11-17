@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ADS_ENABLED } from "@/components/ads/ad-slot";
-import { GA_MEASUREMENT_ID, SITE_NAME } from "@/lib/site";
+import { SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
@@ -48,37 +48,6 @@ const SECTIONS: { id: string; title: string; body: React.ReactNode }[] = [
       </p>
     ),
   },
-  // Shown only once Google Analytics is switched on (GA_MEASUREMENT_ID), so the page never says more or less than the
-  // site does (JCE-036, JCE-056).
-  ...(GA_MEASUREMENT_ID
-    ? [
-        {
-          id: "google-analytics",
-          title: "Google アナリティクス（同意した場合のみ）",
-          body: (
-            <>
-              <p>
-                利用者が「同意する」を選んだ場合にだけ、Google LLC の「Google アナリティクス」を使って、利用状況（利用者数、閲覧したページ、どこから来たか、使っている端末など）の統計を取ります。目的は、本サイトと関連サイトの改善です。「同意しない」を選んでも、本サイトのすべての機能をお使いいただけます。
-              </p>
-              <p className="mt-3">
-                送信先は Google LLC です。送信される情報は、Cookie（_ga など）に保存されるブラウザごとのランダムなID、閲覧したページのアドレス（パスと、流入元を示す utm_ で始まる値のみ）、参照元、ページの題名、端末・ブラウザの種類、画面の大きさ、言語、IPアドレスから推定されるおおよその地域、操作の名前（「プランの申し込みを始めた」のみ）です。検索した言葉や、アドレスの「#」以降は送りません。送る前に本サイトのスクリプトが確かめ、それらが含まれる送信は止めます。広告のための利用（Google シグナル、広告のパーソナライズ）は行いません。
-              </p>
-              <p className="mt-3">
-                同意の選択は、Cookie（yugenq_consent_ga）に1年間保存し、関連サイト（企業タイプ診断、最初の一社）と共有します。ページ下の「閲覧統計の設定」から、いつでも取り消せます（Google アナリティクスの Cookie も消します）。Google が提供する
-                <a href="https://tools.google.com/dlpage/gaoptout?hl=ja" className="link-ink" rel="noopener noreferrer">
-                  オプトアウト アドオン
-                </a>
-                でも止められます。Google による情報の扱いは
-                <a href="https://policies.google.com/technologies/partner-sites?hl=ja" className="link-ink" rel="noopener noreferrer">
-                  Google のサービスを使用するサイトやアプリから収集した情報の Google による使用
-                </a>
-                をご覧ください。
-              </p>
-            </>
-          ),
-        },
-      ]
-    : []),
   {
     id: "hosting",
     title: "配信の記録",

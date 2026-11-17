@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { AnalyticsSettingsButton } from "@/components/analytics/analytics-consent";
 import { featureRepository, termRepository } from "@/lib/repositories";
 import { SITE_NAME, SITE_NAME_EN } from "@/lib/site";
 
@@ -48,7 +47,6 @@ export async function SiteFooter() {
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/terms-of-use">利用規約</Link></li>
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/privacy">プライバシーポリシー</Link></li>
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/settings">設定</Link></li>
-            <AnalyticsSettingsButton />
           </ul>
         </nav>
       </div>

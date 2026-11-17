@@ -969,26 +969,3 @@ link from every company to its own website. The operator's mockup was taken as a
   notices), when the host is printed by more than one company (a notice service such as pronexus, a parent's site), or
   when the filing cannot be read. An address printed as http:// is linked as https:// when the site answers there.
   First read 2026-11-17: 3,403 of 3,883 entries linked (255 print no address, 197 filings unreadable, 28 shared hosts). Data: `src/data/websites.json`; `tests/strategy-and-websites.test.ts` checks every address cites the entry's own 有報.
-
-### JCE-056 · 2026-11-17 · Accepted (operator) — Google Analytics after consent, implemented here and shared by cookie
-
-The operator wanted to see, across every service, how many people use them and what they read — "using Google
-Analytics or similar" — and chose (2026-11-17) Google Analytics 4 on every site, for readers who agree, with the
-cookieless counts (JCE-036) kept for everyone.
-
-- **Cookieless counts are unchanged** (Cloudflare Web Analytics, every page view, no banner). They are the measure of
-  real traffic; the zone's request totals are mostly crawlers.
-- **Google Analytics only after 「同意する」.** A banner asks once (`src/components/analytics/analytics-consent.tsx`);
-  both answers are the same size and every page works either way. The choice is the cookie `yugenq_consent_ga` on
-  `.kigyo-hyakka.com`, the same name the 企業タイプ診断 site reads (its CTS-042), so one choice covers both — but the
-  code is this site's own: the shared script of the other sites is neither loaded nor copied (D-040). 「閲覧統計の設定」
-  in the footer withdraws it and removes Google's cookies.
-- **Only the path leaves the browser.** Every request Google's tag makes (sendBeacon, fetch, XHR, image) passes
-  `src/lib/analytics/guard.ts` first: each address is cut to origin + path + `utm_*`, and a request that still mentions
-  a search term, token or long fragment seen on the page is not sent. Search terms (`/search?q=…`) never reach Google,
-  whatever Google's own automatic measurement is set to (checked in a browser with the real gtag.js).
-- **No advertising use**: ad storage, ad user data and ad personalisation denied; Google signals off. One event,
-  `begin_checkout`, a name only.
-- **Off until configured**: `GA_MEASUREMENT_ID` in `src/lib/site.ts` is empty until the operator creates the property;
-  until then no banner, no tag, and /privacy shows nothing about Google Analytics. The /privacy section appears with
-  the ID (recipient, information sent, purpose, how to stop it), so the page never says more or less than the site does.
