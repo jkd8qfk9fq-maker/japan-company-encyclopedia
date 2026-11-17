@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ApplicationSettings } from "@/components/settings/application-settings";
+import { SyncPanel } from "@/components/settings/sync-panel";
 import { ThemeSetting } from "@/components/settings/theme-setting";
 
 export const metadata: Metadata = {
@@ -32,6 +33,10 @@ export default function SettingsPage() {
 
         <Section eyebrow="Application" title="アプリ">
           <ApplicationSettings />
+        </Section>
+
+        <Section eyebrow="Sync" title="別の端末で引き継ぐ">
+          <SyncPanel />
         </Section>
 
         <Section eyebrow="Support" title="サポート">

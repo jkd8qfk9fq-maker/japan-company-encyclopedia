@@ -34,6 +34,8 @@ export const STORAGE_KEYS = {
   pushCompanies: "push-companies",
   /** JCE-060: screening conditions the reader saved, in this browser only. */
   screeningSaved: "screening-saved-conditions",
+  /** JCE-065: the link this browser last mailed to move its lists — the key to withdraw it, and when it ends. */
+  syncPending: "sync-pending",
 } as const;
 
 export type StorageKey = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];
