@@ -992,3 +992,12 @@ cookieless counts (JCE-036) kept for everyone.
 - **Off until configured**: `GA_MEASUREMENT_ID` in `src/lib/site.ts` is empty until the operator creates the property;
   until then no banner, no tag, and /privacy shows nothing about Google Analytics. The /privacy section appears with
   the ID (recipient, information sent, purpose, how to stop it), so the page never says more or less than the site does.
+
+**Incident, 2026-11-17 05:30–05:51 UTC.** The first release of this decision took every page down: the analytics
+runtime imported the measurement ID from `src/lib/site.ts`, which throws in a production bundle without the server-only
+`SITE_URL` ("SITE_URL is not set"). The direct-import test (`tests/client-imports.test.ts`) did not see it — the import
+went Client Component → `src/lib/analytics/runtime.ts` → `site.ts` — and the development server does not throw, so the
+local checks passed. Restored by rolling the Worker back to the previous version (60e3d254), then reverted in git
+(8ec3ef0b). Fixed by keeping the ID in `src/lib/analytics/config.ts` (no imports) and by a second test that follows
+every import of every Client Component. A release that adds client code is now checked on the production static
+build (`npm run build:static`) in a browser for page errors before it goes out.
