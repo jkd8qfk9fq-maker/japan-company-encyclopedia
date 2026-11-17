@@ -4,15 +4,141 @@
   "name": "サムコ",
   "officialName": "サムコ 株式会社",
   "nameEn": "SAMCO INC.",
-  "description": null,
+  "shortNameEn": "SAMCO",
+  "description": "半導体や電子部品の製造に使う薄膜形成・加工装置を製造・販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "semiconductors",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "semiconductor-equipment",
+      "name": "半導体等電子部品製造装置事業",
+      "description": "半導体等電子部品製造装置の製造及び販売を行う単一セグメントの事業です。薄膜を形成するＣＶＤ装置、薄膜を微細加工するエッチング装置、基板表面などをクリーニングする洗浄装置、その他装置の製造・販売と、部品・保守メンテナンスを行っています。製造は自社の設計企画により協力会社に委託し、製品出荷の前に独自のプログラムソフトを入力し、仕様検査・出荷検査を経て販売しています。2026年7月期の売上高は10,800百万円です。",
+      "customers": [
+        "半導体メーカー",
+        "電子部品メーカー",
+        "大学等の研究機関"
+      ],
+      "children": [
+        {
+          "id": "cvd",
+          "name": "ＣＶＤ装置",
+          "description": "反応性の気体を基板上に供給し、化学反応によって薄膜を形成する装置です。液体原料を用いるＬＳ－ＣＶＤ装置や、原子層堆積装置（ＡＬＤ装置）を含みます。2026年7月期の外部顧客への売上高は1,440百万円です。",
+          "customers": [
+            "半導体メーカー",
+            "電子部品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "etching",
+          "name": "エッチング装置",
+          "description": "各種基板上の半導体薄膜や絶縁膜など、微細加工が必要な材料をドライ加工する装置です。トルネードＩＣＰを利用する装置では、高密度プラズマを安定して生成し、高速で高精度の微細加工が可能です。2026年7月期の外部顧客への売上高は7,004百万円です。",
+          "customers": [
+            "半導体メーカー",
+            "電子部品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "cleaning",
+          "name": "洗浄装置",
+          "description": "実装基板や各種半導体基板などを溶液を用いずドライ洗浄する装置です。水蒸気を用いたプラズマ処理装置であるAqua Plasma洗浄装置を含みます。2026年7月期の外部顧客への売上高は832百万円です。",
+          "customers": [
+            "半導体メーカー",
+            "電子部品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "parts-maintenance",
+          "name": "部品・メンテナンス",
+          "description": "部品の販売と保守メンテナンスです。台湾を中心とする保守サービス業務は現地法人「莎姆克股份有限公司」へ委託しています。2026年7月期の外部顧客への売上高は1,523百万円です。",
+          "customers": [
+            "半導体メーカー",
+            "電子部品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "半導体・電子部品メーカー向けに、薄膜を形成するＣＶＤ装置やＡＬＤ装置、薄膜を微細加工するエッチング装置、基板を洗浄する洗浄装置を製造・販売し、部品・保守メンテナンスでも対価を得る事業モデルです。",
+    "products": [
+      "ＣＶＤ装置",
+      "エッチング装置",
+      "洗浄装置",
+      "その他装置",
+      "部品・メンテナンス"
+    ],
+    "customers": [
+      "化合物半導体デバイスメーカー",
+      "シリコン半導体メーカー",
+      "電子部品メーカー",
+      "大学等の研究機関"
+    ],
+    "revenueSources": [
+      "装置の販売代金",
+      "部品の販売代金",
+      "保守メンテナンスの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "サムコ",
+        "description": "1979年に設立された半導体等電子部品製造装置メーカーで、本社は京都市伏見区にあります。2026年7月31日現在の従業員数は201人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ＣＶＤ・エッチング・洗浄装置",
+        "description": "薄膜を形成するＣＶＤ装置や原子層堆積（ＡＬＤ）装置、薄膜を微細加工するエッチング装置、基板表面などをクリーニングする洗浄装置を自社で設計企画し、協力会社に製造を委託しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "半導体・電子部品メーカーと研究機関",
+        "description": "化合物半導体やシリコン半導体のメーカー、ＭＥＭＳなどの電子部品メーカー、大学等の研究機関に、営業所を通じて、海外については一部現地販売代理店に委託して販売しています。主要な販売先としてスカイワークスフィルターソリューションズジャパン株式会社が売上高の10.0％を占めています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "装置の販売代金",
+        "description": "2026年7月期の売上高は10,800百万円でした。品目別ではエッチング装置が7,004百万円、部品・メンテナンスが1,523百万円、ＣＶＤ装置が1,440百万円、洗浄装置が832百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年7月期の当期純利益は2,230百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年7月期",
@@ -27,13 +153,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10057532000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 173,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -49,13 +175,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11144255000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 175,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -71,13 +197,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12299793000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 183,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -93,13 +219,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13558675000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 191,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -125,32 +251,234 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
+  "history": [
     {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第46期(2024/08/01－2025/07/31)",
-      "publisher": "サムコ 株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WVTP.pdf",
-      "publishedAt": "2025-10-20",
-      "accessedAt": "2026-09-29"
+      "year": 1979,
+      "title": "株式会社サムコインターナショナル研究所の設立",
+      "description": "半導体製造装置の製造及び販売を目的として株式会社サムコインターナショナル研究所を設立しました。",
+      "significance": "サムコの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
     },
+    {
+      "year": 1980,
+      "title": "国産初のプラズマＣＶＤ装置の開発・販売",
+      "description": "国産初のプラズマＣＶＤ装置の開発、販売を開始しました。",
+      "significance": "現在のＣＶＤ装置事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "本社の移転",
+      "description": "本社を京都市伏見区（現・竹田藁屋町）に移転しました。",
+      "significance": "現在の本社所在地になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "研究開発センターの開設",
+      "description": "京都市伏見区に研究開発センターを開設しました。",
+      "significance": "研究開発型企業の基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "サービス部門の営業譲受け",
+      "description": "サムコエンジニアリング株式会社より、サービス部門の営業を譲り受けました。",
+      "significance": "保守サービス体制を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "店頭上場",
+      "description": "日本証券業協会に株式を店頭上場しました。",
+      "significance": "最初の株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "高速ディープエッチング技術の導入",
+      "description": "（独）ロバート・ボッシュ社よりシリコンの高速ディープエッチング技術を導入しました。",
+      "significance": "エッチング技術の幅が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "サムコ株式会社への社名変更とジャスダック上場",
+      "description": "株式会社サムコインターナショナル研究所からサムコ 株式会社へ社名を変更し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "台湾に保守サービスの現地法人を設立",
+      "description": "台湾に保守サービスのための現地法人「莎姆克股份有限公司」を設立しました。",
+      "significance": "台湾での保守サービス体制ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "ＳｉＣパワーデバイス向けエッチング装置の発売",
+      "description": "ＳｉＣパワーデバイス向け本格量産用ドライエッチング装置ＲＩＥ－６００ｉＰＣの開発、販売を開始しました。",
+      "significance": "化合物半導体の量産向け装置に展開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "東京証券取引所市場第二部から同第一部銘柄に指定されました。",
+      "significance": "東証第一部に上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "原子層堆積（ＡＬＤ）装置の発売",
+      "description": "電子デバイス向け原子層堆積装置ＡＬ－１の開発、販売を開始しました。",
+      "significance": "ＡＬＤ装置が製品群に加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "Aqua Plasma洗浄装置の発売",
+      "description": "Aqua Plasmaを用いたプラズマ洗浄装置ＡＱ－２０００の開発、販売を開始しました。",
+      "significance": "洗浄装置の製品群が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "クラスターツールシステムの発売",
+      "description": "電子デバイス製造向けクラスターツールシステム「クラスターＨＴＭ」の販売を開始しました。",
+      "significance": "複数工程を束ねるシステム製品を投入しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "現在の上場市場になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "先端技術開発棟の開設",
+      "description": "京都市伏見区に先端技術開発棟を開設しました。",
+      "significance": "装置開発とデモ実験の拠点が拡充されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "adtec-plasma-technology",
+      "relationship": "supplier",
+      "description": "特定投資株式の保有目的に「主要仕入先」と印字された主要な仕入先です。当社は同社の株式60,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "murata-manufacturing",
+      "relationship": "business-partner",
+      "description": "取引関係を維持してきた取引先です。2007年12月から2024年1月まで村田製作所取引先持株会の会員として毎月一定額を拠出し、同社の株式を買い付けてきました。当社は同社の株式69,300株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第47期(2025/08/01－2026/07/31)",
       "publisher": "サムコ 株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z9F4.pdf",
       "publishedAt": "2026-10-22",
-      "accessedAt": "2026-11-14",
       "docId": "S100Z9F4",
-      "asOf": "2026-07-31"
+      "asOf": "2026-07-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画（第47期～第49期）を策定し、新しいプロセス及び新規装置の開発・販売、生産機販売の強化、海外販売の拡大、生産体制の拡充、更なる成長に向けた人材育成・活躍の実現を重点課題として取り組むとしています。研究開発型企業として培った技術力を磨き、蓄積した技術を生産機市場で活かして事業規模の拡大を図るとしています。",
+        "asOf": "2026-10-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の約65％をエッチング装置が占め、化合物半導体分野の設備投資需要が伸びを支えています。海外売上高は6,454百万円で売上高の59.8％を占め、国内売上高を上回っています。",
+        "basis": "【関連情報】の製品及びサービスごとの情報（エッチング装置7,004,567千円、合計10,800,467千円）と地域ごとの情報（日本4,346,267千円）、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の海外売上高6,454百万円・海外売上高比率59.8％の印字に基づく。",
+        "asOf": "2026-10-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "液体原料を使うＬＳ－ＣＶＤ装置、トルネードＩＣＰを利用するエッチング装置、原子層堆積（ＡＬＤ）装置など、独自の薄膜技術に基づく装置群を持ち、研究開発向けで培った技術を生産機市場にも展開していることが特徴です。",
+        "basis": "【事業の内容】の各装置の概要（ＬＳ－ＣＶＤ装置が液体原料を用いる旨、トルネードＩＣＰを利用するエッチング装置、ＡＬＤ装置の記載）と【経営方針、経営環境及び対処すべき課題等】の「研究開発型企業として成長してきた高度な技術力」「蓄積した技術を生産機市場で活かす」旨の印字に基づく。",
+        "asOf": "2026-10-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年7月期",
     "asOf": "2026-07-31",

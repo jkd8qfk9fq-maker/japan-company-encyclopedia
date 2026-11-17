@@ -4,15 +4,166 @@
   "name": "オータケ",
   "officialName": "株式会社オータケ",
   "nameEn": "OTAKE CORPORATION",
-  "description": null,
+  "shortNameEn": "OTAKE CORPORATION",
+  "description": "バルブや継手、パイプなどの管工機材をメーカーから仕入れて販売する、名古屋市中区に本社を置く専門商社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "piping-materials-wholesale",
+      "name": "管工機材卸売業",
+      "description": "当社の唯一の報告セグメントで、バルブ類・継手類・パイプ類などの管工機材をメーカーから仕入れて販売する専門商社の事業です。2026年５月期の顧客との契約から生じる収益は35,551百万円でした。連結子会社の株式会社田中産業も配管資材の販売を行っており、連結従業員数は315人です。",
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "valves",
+          "name": "バルブ類",
+          "description": "バルブ類の販売です。2026年５月期の売上高は11,650百万円で、品目別で最大です。",
+          "customers": [
+            "管工事会社・設備工事会社などの施工事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "fittings",
+          "name": "継手類",
+          "description": "継手類の販売です。2026年５月期の売上高は6,502百万円でした。",
+          "customers": [
+            "管工事会社・設備工事会社などの施工事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "pipes",
+          "name": "パイプ類",
+          "description": "パイプ類の販売です。2026年５月期の売上高は5,648百万円でした。",
+          "customers": [
+            "管工事会社・設備工事会社などの施工事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "other-products",
+          "name": "その他",
+          "description": "上記以外の管工機材の販売です。2026年５月期の売上高は4,497百万円でした。",
+          "customers": [
+            "管工事会社・設備工事会社などの施工事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "hvac-equipment",
+          "name": "冷暖房機器類",
+          "description": "冷暖房機器類の販売です。2026年５月期の売上高は3,999百万円でした。",
+          "customers": [
+            "管工事会社・設備工事会社などの施工事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        },
+        {
+          "id": "sanitary-plumbing",
+          "name": "衛生・給排水類",
+          "description": "衛生・給排水類の販売です。2026年５月期の売上高は3,253百万円でした。",
+          "customers": [
+            "管工事会社・設備工事会社などの施工事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【収益認識関係】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-leasing",
+      "name": "不動産賃貸業",
+      "description": "報告セグメントに含まれないその他の事業です。2026年５月期の不動産賃貸収入は102百万円で、賃貸物件は東京都江東区ほかに８件あります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "管工機材メーカーからバルブ類・継手類・パイプ類などを仕入れ、管工事会社などの取引先へ販売して収益を得る会社です。",
+    "products": [
+      "バルブ類",
+      "継手類",
+      "パイプ類",
+      "冷暖房機器類",
+      "衛生・給排水類",
+      "その他の管工機材",
+      "不動産賃貸物件"
+    ],
+    "customers": [
+      "管工事会社・設備工事会社などの施工事業者",
+      "建設設備関連の事業者"
+    ],
+    "revenueSources": [
+      "管工機材の販売による売上高",
+      "不動産賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "オータケ",
+        "description": "名古屋市中区に本社を置く管工機材の専門商社です。連結子会社１社・非連結子会社１社とグループを構成し、2026年５月期の連結従業員数は315人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "管工機材",
+        "description": "バルブ類・継手類・パイプ類・冷暖房機器類・衛生・給排水類などの管工機材を、メーカーから仕入れて販売します。不動産賃貸も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "顧客",
+        "description": "管工事会社や建設設備関連の事業者などが顧客です。売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "管工機材の販売を中心に、2026年５月期の売上高は35,653百万円でした。不動産賃貸収入102百万円を含みます。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年５月期の親会社株主に帰属する当期純利益は878百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026",
+      "wikipedia"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2025年5月期",
@@ -27,12 +178,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15388398000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 300,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
-      ]
+        "yuho-2026"
+      ],
+      "note": "第73期（2025年５月期）より連結財務諸表を作成しているため、それ以前の連結経営指標等については記載しておりません。"
     },
     {
       "fiscalYear": "2026年5月期",
@@ -55,32 +207,223 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
+  "history": [
     {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第73期(2024/06/01－2025/05/31)",
-      "publisher": "株式会社オータケ",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WLHT.pdf",
-      "publishedAt": "2025-08-28",
-      "accessedAt": "2026-09-30"
+      "year": 1952,
+      "title": "株式会社大嶽商店を設立",
+      "description": "名古屋市西区に株式会社大嶽商店を設立しました。",
+      "significance": "現在の当社の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
     },
+    {
+      "year": 1976,
+      "title": "株式会社木谷バルブを子会社化",
+      "description": "大阪市の株式会社木谷バルブを子会社化しました。",
+      "significance": "関西・九州方面への展開の起点で、現在の関西支店・九州支店につながります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "商号を株式会社オータケに変更",
+      "description": "商号を株式会社大嶽商店から株式会社オータケに変更しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "店頭売買銘柄に登録",
+      "description": "日本証券業協会の店頭売買銘柄に登録されました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "連結子会社２社を吸収合併",
+      "description": "連結子会社の株式会社木谷バルブ及び株式会社イシイを吸収合併し、関西支店、九州支店及び東京支店を開設しました。",
+      "significance": "子会社網を支店体制へ再編しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "中国器材株式会社を子会社化",
+      "description": "中国器材株式会社を100％子会社化しました。",
+      "significance": "現在の非連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "本社を名古屋市中区へ移転",
+      "description": "本社を名古屋市中区（現在地）へ移転しました。",
+      "significance": "現在の本社所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、ＪＡＳＤＡＱ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社田中産業を子会社化",
+      "description": "大阪府堺市の株式会社田中産業を子会社化しました。",
+      "significance": "現在の唯一の連結子会社で、翌期からの連結財務諸表の作成につながりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kitz",
+      "relationship": "supplier",
+      "description": "当社の主力販売商品であるバルブ等を製造する重要な取引先です。当社は同社株式1,233,794株を保有しています。同社も当社の大株主で、2026年５月31日現在の所有割合は8.62％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okaya-and-co",
+      "relationship": "customer",
+      "description": "当社の主力販売商品である継手等を購入する重要な取引先です。当社は同社株式55,200株を保有しています。同社も当社の大株主で、2026年５月31日現在の所有割合は4.16％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ck-san-etsu",
+      "relationship": "supplier",
+      "description": "当社の主力販売商品である継手等を製造する重要な取引先です。当社は同社株式66,300株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "technoflex",
+      "relationship": "supplier",
+      "description": "当社の主力販売商品である継手等を製造する主要取引先です。当社は同社株式40,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yoshitake",
+      "relationship": "supplier",
+      "description": "当社の主力販売商品であるバルブ等を製造する主要取引先です。当社は同社株式56,720株を保有しています。同社も当社の大株主で、2026年５月31日現在の所有割合は1.96％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "toagosei",
+      "relationship": "supplier",
+      "description": "当社の主力販売商品である樹脂素材等を製造する取引先です。当社は同社株式13,750株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第74期(2025/06/01－2026/05/31)",
       "publisher": "株式会社オータケ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z9XT.pdf",
       "publishedAt": "2026-10-27",
-      "accessedAt": "2026-11-14",
       "docId": "S100Z9XT",
-      "asOf": "2026-05-31"
+      "asOf": "2026-05-31",
+      "accessedAt": "2026-11-13"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「オータケ」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E3%82%AA%E3%83%BC%E3%82%B1",
+      "accessedAt": "2026-11-17"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 特別調査委員会の調査結果として、商流に競合他社が介在する一部取引が独占禁止法上の不当な取引制限に該当する可能性が高いこと、及び競合他社からの仕入価格に含まれる設備メーカーから直接購入した価格との差額は本来の売上原価を構成するものではないことが指摘され、追加情報に記載されています。本登録の売上高及び親会社株主に帰属する当期純利益は、この指摘による計上区分の変更の影響を受けない数値です。",
+      "businessStructure: 特別調査委員会の調査結果として、商流に競合他社が介在する一部取引が独占禁止法上の不当な取引制限に該当する可能性が高いこと、及び競合他社からの仕入価格に含まれる設備メーカーから直接購入した価格との差額は本来の売上原価を構成するものではないことが指摘され、追加情報に記載されています。本登録の売上高及び親会社株主に帰属する当期純利益は、この指摘による計上区分の変更の影響を受けない数値です。"
+    ]
   },
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "第２次中期経営計画（2025年５月期～2027年５月期）では、管工機材業界における商品調達力・供給力・提案力・販売力に磨きをかけ、社会環境整備と未来環境創造に貢献することを基本方針とし、既存事業の収益力強化、事業領域拡大による成長促進、サステナビリティ・人的資本経営の実践などを戦略ビジョンに掲げています。経営方針では営業基盤・商品開拓の強化、商品構成の変革、人材育成の強化・活用を重点施策としています。",
+        "asOf": "2026-10-27",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "本社・名古屋支店のほか札幌・新潟・東京・静岡・北陸・関西・九州・北関東の各支店と神奈川営業所、名古屋・浦安の物流センターを構え、全国への供給体制を持っています。バルブ類を最大とする６つの品目区分を取り扱い、主力メーカーとの取引関係を通じて商品調達力を確保していることが読み取れます。",
+        "basis": "【主要な設備の状況】に印字された全国の支店・物流センターの配置と、収益認識関係の収益分解情報における品目別売上高、【事業の内容】の記載に基づきます。",
+        "asOf": "2026-10-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは管工機材卸売業のみの単一セグメントで、2026年５月期の売上高は35,653百万円（前年同期比8.1％増）でした。売上高の10％以上を占める顧客はなく、顧客は分散しています。業界は建設設備関連事業や民間設備投資の動向の影響を受け、同業他社との競争が激しい環境にあるとされています。",
+        "basis": "セグメント情報（報告セグメントは管工機材卸売業のみ）及び【関連情報】の主要な顧客ごとの情報、【経営方針、経営環境及び対処すべき課題等】の経営環境の記載と、経営成績等の状況の概要に基づきます。",
+        "asOf": "2026-10-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年5月期",
     "asOf": "2026-05-31",
