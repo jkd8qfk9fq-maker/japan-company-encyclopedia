@@ -4,7 +4,8 @@
   "name": "デュアルタップ",
   "officialName": "株式会社デュアルタップ",
   "nameEn": "Dualtap Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Dualtap Co., Ltd.",
+  "description": "東京23区を中心に資産運用型マンション「XEBEC」を開発・販売し、賃貸管理や建物管理、マレーシアでの建物管理も手がける不動産会社です。",
   "listings": [
     {
       "exchange": "tse",
@@ -15,8 +16,154 @@
       "market": "メイン"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "real-estate",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "real-estate-sales",
+      "name": "不動産販売事業",
+      "description": "東京23区を中心に、資産運用型マンション「XEBEC（ジーベック）」の企画・開発・販売を行う事業です。中古区分マンションや開発用不動産の仕入・販売も行っています。2026年６月期の外部顧客への売上高は3,929百万円でした。",
+      "customers": [
+        "個人投資家",
+        "リート・不動産ファンド",
+        "企業法人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "investment-condominiums",
+          "name": "資産運用型マンション",
+          "description": "専有面積が概ね30㎡未満の１Ｋタイプの部屋を中心とするマンションで、「XEBEC（ジーベック）」が主力です。2026年６月期の販売実績は2,905百万円（87戸）でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "compact-condominiums",
+          "name": "コンパクト型マンション",
+          "description": "専有面積30㎡から50㎡程度のタイプの部屋のマンションです。2026年６月期の販売実績は531百万円（11戸）でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-real-estate-sales",
+          "name": "その他不動産",
+          "description": "土地の販売を含む、その他の不動産の販売です。2026年６月期の販売実績は493百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-management",
+      "name": "不動産管理事業",
+      "description": "当社が分譲した「XEBEC（ジーベック）」やその他の資産運用型マンションの賃貸管理、仲介及び建物管理を行う事業です。所有者から賃借して賃料収入を保証し転貸するサブリース業務、家賃の集金代行や契約管理を行う賃貸管理業務、自社所有不動産の賃貸を行っています。2026年６月期の外部顧客への売上高は1,188百万円でした。",
+      "customers": [
+        "マンションの所有者",
+        "入居者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "rental-management",
+          "name": "賃貸管理",
+          "description": "サブリース業務や家賃の集金代行、入居・退去に関する契約管理などを行う賃貸管理です。2026年６月期の販売実績は849百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "building-management",
+          "name": "建物管理",
+          "description": "連結子会社の株式会社デュアルタップコミュニティ、株式会社建物管理サービス、朝日管理株式会社がマンションの建物管理を行っています。2026年６月期の販売実績は339百万円でした。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    },
+    {
+      "id": "overseas-real-estate",
+      "name": "海外不動産事業",
+      "description": "海外投資家が購入した当社開発・販売物件「XEBEC（ジーベック）」の海外窓口業務のアフターサービスと、マレーシアを主軸とする建物管理を行う事業です。ジョホールとクアラルンプールに事務所を置き、管理戸数は19,131戸に達しています。2026年６月期の外部顧客への売上高は404百万円でした。",
+      "customers": [
+        "海外投資家",
+        "マレーシアの住宅・商業施設の所有者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "資産運用型マンション「XEBEC（ジーベック）」を企画・開発して投資家やファンドに販売し、分譲後の賃貸管理・建物管理とマレーシアでの建物管理で継続的な収益を得ています。",
+    "products": [
+      "資産運用型マンション「XEBEC（ジーベック）」",
+      "コンパクト型マンション",
+      "中古区分マンション・開発用不動産"
+    ],
+    "customers": [
+      "個人投資家",
+      "リート・不動産ファンド・企業法人",
+      "マンションの所有者",
+      "海外投資家"
+    ],
+    "revenueSources": [
+      "不動産の販売",
+      "賃貸管理・サブリースの手数料と賃料",
+      "建物管理の受託",
+      "海外での建物管理の受託"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "デュアルタップ",
+        "description": "デュアルタップは東京都中央区に本社を置く不動産会社で、連結子会社７社などとグループを構成しています。2026年６月30日現在の連結従業員数は227人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "XEBECと管理サービス",
+        "description": "「23区・駅近・高機能マンション」をコンセプトに資産運用型マンション「XEBEC（ジーベック）」を企画・開発し、分譲後の賃貸管理や建物管理までグループで提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "投資家とマンション所有者",
+        "description": "販売先は個人投資家やリート、不動産ファンド、企業法人などで、管理事業では分譲したマンションの所有者や入居者、マレーシアの住宅・商業施設の所有者が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高5,522百万円",
+        "description": "2026年６月期の売上高は5,522百万円でした。事業別では不動産販売事業が3,929百万円、不動産管理事業が1,188百万円、海外不動産事業が404百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益51百万円",
+        "description": "2026年６月期は、親会社株主に帰属する当期純利益51百万円を計上しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -31,11 +178,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2046789000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 150,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -51,11 +198,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2201703000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 219,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -71,11 +218,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1788171000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 215,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -91,11 +238,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2348141000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 219,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -119,32 +266,181 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2006,
+      "title": "株式会社デュアルタップを設立",
+      "description": "不動産販売事業を目的として、東京都品川区東五反田に株式会社デュアルタップを設立しました。",
+      "significance": "現在の会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "「XEBEC」シリーズの販売を開始",
+      "description": "資産運用型マンション「XEBEC（ジーベック）」シリーズの販売を開始しました。",
+      "significance": "現在の主力ブランドの開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "初の単独プロジェクト「XEBEC中延」の開発・販売を開始",
+      "description": "初の単独プロジェクトとして「XEBEC中延」の開発及び販売を開始しました。",
+      "significance": "自社開発の本格化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "株式会社D-style Plusを設立",
+      "description": "不動産賃貸事業の拡充のため、株式会社D-style Plusを設立しました。",
+      "significance": "賃貸事業への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "マレーシアに子会社を設立",
+      "description": "海外不動産事業を目的として、マレーシアにDUTA PACIFIC MANAGEMENT MALAYSIA SDN.BHD.（現・DUALTAP MALAYSIA SDN.BHD.）を設立しました。",
+      "significance": "海外不動産事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "株式会社デュアルタップアセットマネジメントを設立",
+      "description": "海外不動産に関するコンサルティングを目的として、株式会社Duta Pacific Management（現・株式会社デュアルタップアセットマネジメント）を設立しました。",
+      "significance": "海外投資家向け窓口業務の体制整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "DUALTAP BUILDING MANAGEMENT SDN.BHD.の全株式を取得",
+      "description": "マレーシアでの建物管理事業を目的として、DUALTAP BUILDING MANAGEMENT SDN.BHD.の全株式を取得しました。",
+      "significance": "マレーシアでの建物管理事業の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "マレーシアにATS DUALTAP SDN.BHD.を設立",
+      "description": "マレーシアでのファシリティマネジメント事業を目的として、ATS DUALTAP SDN.BHD.を設立しました。",
+      "significance": "海外事業の領域拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "市場区分の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "G7 PROPERTIES SDN.BHD.の株式を取得",
+      "description": "マレーシアでの建物管理事業を目的として、G7 PROPERTIES SDN.BHD.の株式を取得しました。",
+      "significance": "クアラルンプールでの建物管理の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "名古屋証券取引所メイン市場に上場",
+      "description": "名古屋証券取引所メイン市場に株式を上場しました。",
+      "significance": "２か所目の上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "朝日管理株式会社の全株式を取得",
+      "description": "建物管理事業の拡充のため、朝日管理株式会社の全株式を取得しました。",
+      "significance": "建物管理事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
-    {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第19期(2024/07/01－2025/06/30)",
-      "publisher": "株式会社デュアルタップ",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WRQP.pdf",
-      "publishedAt": "2025-09-26",
-      "accessedAt": "2026-09-29"
-    },
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第20期(2025/07/01－2026/06/30)",
       "publisher": "株式会社デュアルタップ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z4KK.pdf",
       "publishedAt": "2026-09-28",
-      "accessedAt": "2026-11-14",
       "docId": "S100Z4KK",
-      "asOf": "2026-06-30"
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 連結子会社の株式会社デュアルタップコミュニティは、2026年８月１日を効力発生日として、株式会社シティインデックスホスピタリティがザ・レジデンス白金スイート（東京都港区白金台）で営む事業を吸収分割により承継しています（重要な後発事象の注記に記載）。本登録は2026年６月30日現在の体制に基づいています。",
+      "businessStructure: 連結子会社の株式会社デュアルタップコミュニティは、2026年８月１日を効力発生日として、株式会社シティインデックスホスピタリティがザ・レジデンス白金スイート（東京都港区白金台）で営む事業を吸収分割により承継しています（重要な後発事象の注記に記載）。本登録は2026年６月30日現在の体制に基づいています。"
+    ]
   },
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "企業理念として、不動産の販売を通じてお客様の幸福に貢献する「笑顔創造企業」を掲げています。不動産販売事業を主力事業としつつ、採算性を重視し安易な拡大路線を取らない方針のもと、関連事業の拡大や新規事業への進出も視野に、長期安定的な企業価値の創造に努めています。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "開発・販売から分譲後の賃貸管理・建物管理までをグループで一貫して担うため、販売した物件の管理受託を継続的に積み上げられる体制を持っています。マレーシアでは管理戸数19,131戸まで建物管理の基盤を広げています。",
+        "basis": "【事業の内容】に、不動産販売事業で「XEBEC」を企画・開発・分譲すること、不動産管理事業で分譲物件の賃貸管理・建物管理を行うこと、海外不動産事業でマレーシアの管理戸数が19,131戸に達していることが印字されています。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "東京都への人口流入が続く都心の賃貸需要を背景に、東京23区の資産運用型マンションに特化した事業を展開しています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、東京都の転入超過が続き20代の転入超過が最も多いこと、都内の賃貸物件への需要は安定的に推移し賃料も上昇基調にあることが印字されています。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",

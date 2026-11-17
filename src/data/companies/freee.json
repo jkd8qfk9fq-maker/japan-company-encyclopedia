@@ -4,15 +4,167 @@
   "name": "フリー",
   "officialName": "フリー株式会社",
   "nameEn": "freee K.K.",
-  "description": null,
+  "shortNameEn": "freee K.K.",
+  "description": "個人事業主と中小企業向けに、クラウド会計ソフトや人事労務ソフトなどを一体で提供する統合型経営プラットフォームを運営しています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "platform",
+      "name": "プラットフォーム事業",
+      "description": "個人事業主及び従業員1,000名以下の法人を対象に、会計・人事労務などのバックオフィス業務を効率化するクラウドサービスを提供する単一セグメントの事業です。当社グループは当社と連結子会社5社及び持分法適用関連会社1社の合計7社で構成され、本社は東京都品川区にあります。2026年6月期の売上高は42,441百万円、連結従業員数は2026年6月30日現在2,327名です。",
+      "customers": [
+        "個人事業主",
+        "従業員1,000名以下の法人",
+        "会計事務所"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "accounting",
+          "name": "freee会計",
+          "description": "銀行口座やクレジットカードとの同期で取引を自動で取り込み、AIが仕訳を行う統合型クラウド会計ソフトです。請求書発行や入金消込などの上流工程も同じソフトで扱えます。",
+          "customers": [
+            "個人事業主",
+            "法人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "hr",
+          "name": "freee人事労務",
+          "description": "給与計算、勤怠管理、保険・行政手続、マイナンバー管理などを一元化する統合型クラウド人事労務ソフトです。勤怠管理の「freee勤怠管理Plus」や「freee AIタレントマネジメントシリーズ」も提供しています。",
+          "customers": [
+            "法人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "sales-management",
+          "name": "freee販売",
+          "description": "商談開始から受注・発注後の納品管理まで、案件単位で販売管理業務を行える統合型クラウド販売管理ソフトです。",
+          "customers": [
+            "個人事業主",
+            "法人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "tax-filing",
+          "name": "freee申告",
+          "description": "「freee会計」と連携し、財務情報から税務申告書を自動で作成して電子申告まで行えるクラウド型税務申告ソフトです。会計事務所や小規模法人に提供しています。",
+          "customers": [
+            "会計事務所",
+            "小規模法人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "e-contract",
+          "name": "freeeサイン",
+          "description": "契約書の作成、社内承認、電子契約の締結、契約書管理までをクラウド上で完結できる電子契約サービスです。",
+          "customers": [
+            "個人事業主",
+            "法人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "finance-services",
+          "name": "金融サービス",
+          "description": "事業用クレジットカード「freeeカード」「freeeカード Unlimited」と、ファクタリングサービス「FREENANCE by freee」を提供し、スモールビジネスの資金繰りを支援しています。連結子会社のフリー創業融資サポート株式会社は資金調達のサポート事業を行っています。",
+          "customers": [
+            "個人事業主",
+            "中小企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "会計・人事労務・販売管理・電子契約などのクラウドサービスを月額課金で提供し、クレジットカードなどの金融サービスとあわせてスモールビジネスの経営を支援しています。",
+    "products": [
+      "freee会計",
+      "freee人事労務",
+      "freee販売",
+      "freee申告",
+      "freeeサイン",
+      "freeeカード・freeeカード Unlimited",
+      "FREENANCE by freee（ファクタリング）",
+      "freee会社設立・freee開業"
+    ],
+    "customers": [
+      "個人事業主",
+      "従業員1,000名以下の法人",
+      "会計事務所"
+    ],
+    "revenueSources": [
+      "クラウドサービスの月額利用料などの継続課金収益",
+      "クレジットカード・ファクタリングなどの金融サービスの収益"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "フリーグループ",
+        "description": "フリーと連結子会社5社及び持分法適用関連会社1社のグループで、プラットフォーム事業の単一セグメントを営んでいます。"
+      },
+      {
+        "kind": "offering",
+        "title": "統合型クラウドサービスと金融サービス",
+        "description": "会計・人事労務・販売管理・税務申告・電子契約などのクラウドサービスと、事業用クレジットカードやファクタリングなどの金融サービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "スモールビジネス",
+        "description": "個人事業主と従業員1,000名以下の法人が、経理や人事労務などのバックオフィス業務に利用しています。有料課金ユーザー企業数は2026年6月末時点で694,586件です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年6月期の売上高は42,441百万円で、有料課金ユーザー企業数の増加と利用単価の上昇による継続収益の拡大を主因に、前期から27.6％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年6月期の親会社株主に帰属する当期純利益は1,077百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,11 +179,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 36428622000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 916,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -47,11 +199,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27059061000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1299,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -67,11 +219,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16952345000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1722,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -87,11 +239,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19663283000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1901,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -115,32 +267,175 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
+  "history": [
     {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第13期(2024/07/01－2025/06/30)",
-      "publisher": "フリー株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WQR3.pdf",
-      "publishedAt": "2025-09-25",
-      "accessedAt": "2026-09-29"
+      "year": 2012,
+      "title": "CFO株式会社の設立",
+      "description": "東京都港区にCFO株式会社を設立しました。",
+      "significance": "フリーの起源となる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
     },
     {
+      "year": 2013,
+      "title": "「freee会計」のリリースと商号変更",
+      "description": "クラウド会計ソフトfreee（現・freee会計）をリリースし、商号をCFO株式会社からフリー株式会社に変更しました。",
+      "significance": "主力サービスの提供開始と現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "「freee人事労務」の前身をリリース",
+      "description": "クラウド給与計算ソフトfreee（現・freee人事労務）をリリースしました。",
+      "significance": "会計に次ぐ第2の柱となる人事労務領域への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "みずほ銀行とのAPI連携",
+      "description": "株式会社みずほ銀行とAPI連携を行いました。メガバンクとのAPI連携は国内初でした。",
+      "significance": "金融機関とのデータ連携を広げる転機になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "東京証券取引所マザーズへの上場",
+      "description": "東京証券取引所マザーズ（現・グロース市場）に株式を上場しました。",
+      "significance": "上場企業となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "株式会社サイトビジットの子会社化",
+      "description": "電子契約サービス「NINJA SIGN（現・freeeサイン）」を提供する株式会社サイトビジットを子会社化しました。",
+      "significance": "M&Aによるサービスラインナップ拡充の進展です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "Mikatus株式会社の完全子会社化と吸収合併",
+      "description": "Mikatus株式会社を完全子会社化し、吸収合併しました。税理士事務所向けの電子申告ソフト「A-SaaS」の提供を開始しました。",
+      "significance": "会計事務所向け事業の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "sweeep株式会社・Why株式会社の子会社化と「pasture」事業の承継",
+      "description": "sweeep株式会社とWhy株式会社を子会社化し、エン・ジャパン株式会社のフリーランス管理ツール「pasture」事業を会社分割により承継しました。",
+      "significance": "請求書処理の自動化やIT管理、業務委託管理へ領域を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "GMOクリエイターズネットワーク株式会社の完全子会社化と吸収合併",
+      "description": "GMOクリエイターズネットワーク株式会社を完全子会社化し、吸収合併しました。ファクタリングサービス「FREENANCE by freee」の提供を開始しました。",
+      "significance": "金融サービスの強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "株式会社ロジクラの完全子会社化",
+      "description": "株式会社ロジクラを完全子会社化し、「freee在庫管理」の提供を開始しました。",
+      "significance": "在庫管理領域への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "rakus",
+      "relationship": "major-shareholder",
+      "description": "2026年6月30日現在、発行済株式（自己株式を除く）の4.94％にあたる2,950,000株を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
+  "sources": [
+    {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第14期(2025/07/01－2026/06/30)",
+      "title": "有価証券報告書－第14期（2025年7月1日－2026年6月30日）",
       "publisher": "フリー株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z4LO.pdf",
       "publishedAt": "2026-09-28",
-      "accessedAt": "2026-11-14",
       "docId": "S100Z4LO",
-      "asOf": "2026-06-30"
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「スモールビジネスを、世界の主役に。」をミッションに掲げ、「だれもが自由に経営できる統合型経営プラットフォーム」の実現を目指しています。生成AIの進展を踏まえ、人が操作する体験から業務そのものをAIエージェントに任せる体験への転換を進めており、会計事務所向けの統合型AIエージェント「freee Agent Hub」や、法人顧客向けの「freee AIアシスタント」を提供しています。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の拡大は、有料課金ユーザー企業数の増加と利用単価の上昇の両方から生じています。会計と人事労務を起点に、販売管理・電子契約・金融サービスへ利用を広げることが単価上昇の経路になっています。",
+        "basis": "事業の内容におけるサービスラインナップとM&Aの経緯、経営成績等の分析における売上高の増加要因（有料課金ユーザー企業数の増加とARPUの上昇）の説明に基づきます。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "会計帳簿だけでなく請求書発行や入金消込といった上流の業務までを一つのソフトで扱う統合型の設計が特徴です。銀行口座やクレジットカードとの同期による自動仕訳と、380本以上のパブリックAPIによる外部サービスとの連携が、単機能のソフトとの違いになっています。",
+        "basis": "事業の内容『freeeが選ばれる理由』における統合型の設計、自動仕訳、パブリックAPIの説明に基づきます。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "同社は、スモールビジネス向けのクラウド会計ソフトとクラウド人事労務ソフトの市場規模を合計で約1.7兆円と推計しています。中小企業のバックオフィス向けクラウドソフトの利用率は5割に届かず、個人事業主のクラウド会計ソフトの利用率も4割弱にとどまるため、クラウドへの移行余地が大きい市場です。",
+        "basis": "経営方針における市場規模の推計とクラウド利用率の説明、経営成績等の分析における市場認識に基づきます。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",

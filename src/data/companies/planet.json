@@ -4,15 +4,188 @@
   "name": "プラネット",
   "officialName": "株式会社プラネット",
   "nameEn": "PLANET, INC.",
-  "description": null,
+  "shortNameEn": "PLANET",
+  "description": "日用品・化粧品等のメーカーと卸売業の間で受発注などの取引データを交換するEDIサービスを提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "edi-services",
+      "name": "EDIサービス",
+      "description": "資材サプライヤー・メーカー・卸売業間の商取引に必要なデータ交換を行うサービスです。業界で統一されたフォーマットと標準化されたコードを利用することで、参加企業は複数の企業とEDIを容易に開始できます。当社の中核サービスで、2026年7月期の販売実績では売上高の全額を占めています。",
+      "customers": [
+        "日用品・化粧品メーカー",
+        "ペットフード・ペット用品メーカー",
+        "OTC医薬品メーカー",
+        "卸売業",
+        "資材サプライヤー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "core-edi",
+          "name": "基幹EDI",
+          "description": "日用品・化粧品、ペットフード・ペット用品、OTC医薬品業界等の各メーカーと卸売業間の取引業務の効率化を支援するEDIサービスで、受発注から決済までの20種類のデータを稼動しています。",
+          "customers": [
+            "メーカー",
+            "卸売業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "miteos",
+          "name": "MITEOS",
+          "description": "基幹EDIを利用している卸売業と取引先メーカーとの双方向のデータ交換を支援するサービスで、Webブラウザ上で受注処理と仕入情報の作成・送信ができます。",
+          "customers": [
+            "卸売業",
+            "メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "web-ordering",
+          "name": "Web発注",
+          "description": "プラネット参加メーカーと卸売業間のEDIを支援するサービスで、インターネットを利用し、パソコンで簡単にEDIを行うことができます。",
+          "customers": [
+            "メーカー",
+            "卸売業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "sales-report",
+          "name": "販売レポートサービス",
+          "description": "卸売業からメーカーに送信された販売データを当社が代行受信し、集計・加工した定型帳票や条件抽出したデータをデイリーにバイヤーズネット上で提供するサービスです。",
+          "customers": [
+            "メーカー",
+            "卸売業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "materials-edi",
+          "name": "資材EDI",
+          "description": "一般消費財メーカーと資材サプライヤー間の取引業務の効率化を支援するEDIサービスで、受発注から決済までの15種類のデータを稼動しています。",
+          "customers": [
+            "一般消費財メーカー",
+            "資材サプライヤー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "logistics-edi",
+          "name": "ロジスティクスEDI",
+          "description": "物流に関する各種データをメーカー・卸売業間で交換する取り組みで、出荷予定データ（ASNデータ）の活用が日用品・化粧品業界の大手企業を中心に広がっています。",
+          "customers": [
+            "メーカー",
+            "卸売業",
+            "物流事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "database-services",
+      "name": "データベースサービス",
+      "description": "EDIサービスの納品先指定に用いられる「標準取引先コード」の情報を提供する「取引先データベース」などのサービスです。小売店舗や卸売業の物流センター等全国約52万件の情報を検索し利用できます。なお「商品データベース」サービスは株式会社プロダクト・レジストリ・サービスへの業務及び機能の移行に伴い、2026年3月末をもって終了しました。",
+      "customers": [
+        "メーカー",
+        "卸売業",
+        "小売業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "メーカーと卸売業などが業界統一のフォーマットで取引データを交換するEDIサービスと、取引先・商品のデータベースサービスを提供し、参加企業から利用料を得ています。",
+    "products": [
+      "基幹EDI",
+      "MITEOS",
+      "Web発注",
+      "販売レポートサービス",
+      "資材EDI",
+      "ロジスティクスEDI",
+      "取引先データベース"
+    ],
+    "customers": [
+      "日用品・化粧品メーカー",
+      "ペットフード・ペット用品メーカー",
+      "OTC医薬品メーカー",
+      "卸売業",
+      "小売業",
+      "資材サプライヤー"
+    ],
+    "revenueSources": [
+      "EDIサービスの利用料",
+      "データベースサービスの利用料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "プラネット",
+        "description": "1985年に日用品雑貨化粧品業界のメーカー・卸売業間のデータ交換を行うVAN運営会社として設立され、東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "EDIサービスとデータベースサービス",
+        "description": "メーカーと卸売業の間の受発注から決済までのデータ交換を行う「基幹EDI」などのEDIサービスと、「標準取引先コード」の情報を提供する「取引先データベース」などを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "メーカー・卸売業・小売業",
+        "description": "日用品・化粧品、ペットフード・ペット用品、OTC医薬品などのメーカーと卸売業、小売業が参加し、統一フォーマットと標準コードで複数の企業と取引データを交換しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年7月期の売上高は3,148百万円でした。販売実績ではEDI事業が売上高の全額を占めています。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年7月期の当期純利益は412百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年7月期",
@@ -27,13 +200,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5161268000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 46,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -49,13 +222,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5345435000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 46,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -71,13 +244,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5426031000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 47,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -93,13 +266,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5635688000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 46,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -125,32 +298,232 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
+  "history": [
     {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第40期(2024/08/01－2025/07/31)",
-      "publisher": "株式会社プラネット",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WW9E.pdf",
-      "publishedAt": "2025-10-22",
-      "accessedAt": "2026-09-28"
+      "year": 1985,
+      "title": "プラネットを設立",
+      "description": "日用品雑貨化粧品業界のメーカー、卸店間のデータ交換を行うVAN運営会社として、東京都千代田区に株式会社プラネットを設立しました。",
+      "significance": "当社の創業です。前年にはライオン株式会社とユニ・チャーム株式会社による端末機共同利用が記者発表されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
     },
+    {
+      "year": 1986,
+      "title": "仕入・販売・発注データの稼動を開始",
+      "description": "仕入データ、販売データが本格稼動を開始し、同年には発注データ、請求照合データも本格稼働を開始しました。",
+      "significance": "EDIサービスの本格的な開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "資材EDIが稼動開始",
+      "description": "一般消費財メーカーと資材サプライヤー間の取引を支援する資材EDIが稼動を開始し、同年には商品データベースサービスも稼働を開始しました。",
+      "significance": "サービスの対象が資材取引と商品情報へ広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "取引先データベースサービスが稼働開始",
+      "description": "EDIサービスの納品先指定に用いられる「標準取引先コード」の情報を提供する取引先データベースサービスが稼働を開始しました。",
+      "significance": "データベースサービスの中核が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "Web受発注サービスが稼働開始",
+      "description": "Web受発注サービスが稼働を開始し、同年にはシングルポータル「バイヤーズネット」のサービスも稼働を開始しました。",
+      "significance": "インターネットを利用したEDIへ展開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "店頭市場（ジャスダック）に株式を公開",
+      "description": "店頭市場（ジャスダック）に株式を公開し、同年には株式会社ジャスダック証券取引所に株式を上場しました。",
+      "significance": "上場会社となりました（現在は東京証券取引所スタンダード市場に上場しています）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "EDIユーザーが1000社を突破",
+      "description": "当社のEDIサービスのユーザーが1000社を突破しました。",
+      "significance": "参加企業の広がりを示す節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "株式会社True Dataを関連会社化",
+      "description": "カスタマー・コミュニケーションズ株式会社（現 株式会社True Data）の株式を追加取得し、関連会社としました。",
+      "significance": "マーケティング情報分野の関連会社を持ちました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "MITEOSが稼働開始",
+      "description": "Web受注－仕入通信サービス「MITEOS（ミテオス）」が稼働を開始しました。",
+      "significance": "卸売業とメーカーの双方向のデータ交換を支援するサービスが加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "ネットワーク基盤を第7世代へ入れ替え",
+      "description": "EDIサービスのデータ処理を行うネットワーク基盤を、第7世代となる新システムへ入れ替えました。",
+      "significance": "中核インフラの刷新です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所スタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "プロダクト・レジストリ・サービスを共同設立",
+      "description": "一般消費財の商品情報の一元管理および提供を目的とし、株式会社PALTAC、株式会社あらたとの共同出資により合弁会社「株式会社プロダクト・レジストリ・サービス」を設立しました。",
+      "significance": "商品データベース事業の移行先となる合弁会社を設立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "商品データベースサービスを終了",
+      "description": "商品データベースサービスについて、株式会社プロダクト・レジストリ・サービスへ業務及び機能を移行し、2026年3月末をもってサービスを終了しました。",
+      "significance": "データベース事業のうち商品情報の分野を合弁会社へ移管しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "tis",
+      "relationship": "other-affiliated-company",
+      "description": "2026年7月1日にTIS株式会社と株式会社インテックの合併により商号変更した会社で、当社の議決権の15.82％を保有するその他の関係会社です。当社は同社にネットワークの運用監視業務とシステム開発を委託しており、役員の兼任があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "lion",
+      "relationship": "other-affiliated-company",
+      "description": "当社の議決権の15.82％を保有するその他の関係会社で、当社は同社に通信処理サービス等を提供しており、役員の兼任があります。1985年の当社設立の発起に関わった日用品メーカーです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "true-data",
+      "relationship": "affiliate",
+      "description": "当社が議決権の24.29％を直接所有する関連会社で、マーケティング情報の処理及び提供を行っています。2008年に株式を追加取得して関連会社としました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "arata",
+      "relationship": "business-partner",
+      "description": "株式会社PALTACとともに共同出資により、一般消費財の商品情報の一元管理と提供を行う合弁会社プロダクト・レジストリ・サービスを設立した相手先です。当社は同合弁会社へ商品データベースの業務と機能を移行しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
+  "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第41期(2025/08/01－2026/07/31)",
       "publisher": "株式会社プラネット",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z91A.pdf",
       "publishedAt": "2026-10-21",
-      "accessedAt": "2026-11-14",
       "docId": "S100Z91A",
-      "asOf": "2026-07-31"
+      "asOf": "2026-07-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中立的な立場から標準化されたサービスを「広く遍く」提供する情報インフラ企業として、主力の基幹EDIサービスの基盤を維持・提供し続けるとともに、生活者の豊かな暮らしを支える「インフラ×ソリューションプロバイダー」へ進化し、持続的な企業価値の向上を目指すとしています。",
+        "asOf": "2026-10-21",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "日用品・化粧品に加えペットフード・ペット用品、OTC医薬品や隣接業界へのEDIサービスの横展開と、ロジスティクスEDIなど業界共通課題を解決するソリューションの提供により、収益の上乗せを図る構造です。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の中長期的な会社の経営戦略及び会社の対処すべき課題、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】のサービス別の活動状況に基づきます。",
+        "asOf": "2026-10-21",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1985年の設立以来、業界で統一されたフォーマットと標準化されたコードによる中立的なVAN運営を続けており、参加企業は複数の企業とのEDIを容易に開始できる点が強みです。取引先データベースは全国約52万件の情報を収録しています。",
+        "basis": "【事業の内容】の各サービスの位置付け及び【経営方針、経営環境及び対処すべき課題等】の会社の経営の基本方針に基づきます。",
+        "asOf": "2026-10-21",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントは単一で、2026年7月期の販売実績はEDI事業が売上高3,148百万円の全額を占めています。売上高の10％以上を占める顧客はなく、収益は多数の参加企業からの利用料に分散しています。",
+        "basis": "セグメント情報等（単一セグメント）及び主要な顧客ごとの情報、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の販売実績に基づきます。",
+        "asOf": "2026-10-21",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年7月期",
     "asOf": "2026-07-31",

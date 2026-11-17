@@ -4,15 +4,127 @@
   "name": "やまみ",
   "officialName": "株式会社やまみ",
   "nameEn": "Yamami Company",
-  "description": null,
+  "shortNameEn": "Yamami Company",
+  "description": "広島県三原市に本社を置き、豆腐や厚揚げ、油揚げなどを製造して小売業や卸売業などに販売する食品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "tofu-manufacturing-sales",
+      "name": "豆腐等製造販売事業",
+      "description": "豆腐とその関連製品である厚揚げ、油揚げなどを製造し販売する、唯一の報告セグメントです。広島県三原市の本社工場、滋賀県甲賀市の関西工場、静岡県駿東郡の富士山麓工場で製造し、九州地方から関東地方までの広域に販売しています。2026年6月期の売上高は23,238百万円です。",
+      "customers": [
+        "小売業",
+        "卸売業",
+        "外食業やコンビニエンスストアなどの企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "tofu",
+          "name": "豆腐",
+          "description": "充填ライン、２Ｐライン、６Ｂライン、京型ラインなどで、さまざまなサイズの豆腐を製造します。加工技術が求められるカット済み豆腐も製造しています。",
+          "customers": [
+            "小売業",
+            "卸売業",
+            "外食業やコンビニエンスストアなどの企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "atsuage",
+          "name": "厚揚げ",
+          "description": "厚揚げを製造し、豆腐とともに販売しています。",
+          "customers": [
+            "小売業",
+            "卸売業",
+            "外食業やコンビニエンスストアなどの企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "aburaage",
+          "name": "油揚げ",
+          "description": "油揚げを製造し、豆腐とともに販売しています。",
+          "customers": [
+            "小売業",
+            "卸売業",
+            "外食業やコンビニエンスストアなどの企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "大豆などの原料を仕入れ、本社工場、関西工場、富士山麓工場で豆腐や厚揚げ、油揚げを製造し、小売業や卸売業、外食業などに販売して収益を得ています。",
+    "products": [
+      "豆腐",
+      "厚揚げ",
+      "油揚げ",
+      "カット済み豆腐"
+    ],
+    "customers": [
+      "小売業",
+      "卸売業",
+      "外食業やコンビニエンスストアなどの企業（業務用）"
+    ],
+    "revenueSources": [
+      "豆腐、厚揚げ、油揚げ等の製品の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "やまみ",
+        "description": "広島県三原市に本社を置く、連結子会社のない会社です。2026年6月期の従業員数は276人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "豆腐・厚揚げ・油揚げの製造",
+        "description": "大豆、フィルム、トレイ、副資材（にがり等）を仕入れ、本社工場、関西工場、富士山麓工場の各ラインで、機械化と一部ラインの完全自動化により豆腐、厚揚げ、油揚げなどを製造します。"
+      },
+      {
+        "kind": "customer",
+        "title": "小売業・卸売業と業務用顧客",
+        "description": "主な顧客は小売業と卸売業で、外食業やコンビニエンスストアなどへの業務用販売も行っています。主要な顧客である株式会社日本アクセスへの売上高は、売上高全体の10.1％を占めます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の販売による売上高",
+        "description": "2026年6月期の売上高は23,238百万円で、前事業年度と比べ10.3％増加しました。全工場で前事業年度を上回り、特に関東エリアで主要取引先への販売が拡大しました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年6月期の当期純利益は1,921百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,13 +139,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7685363000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 265,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -49,13 +161,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8289624000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 241,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -71,13 +183,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9508671000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 267,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -93,13 +205,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10432392000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 256,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -125,32 +237,177 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
+  "history": [
     {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第51期(2024/07/01－2025/06/30)",
-      "publisher": "株式会社やまみ",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WQUM.pdf",
-      "publishedAt": "2025-09-25",
-      "accessedAt": "2026-09-30"
+      "year": 1975,
+      "title": "有限会社やまみを設立",
+      "description": "広島県尾道市において、野菜のパック詰めを事業内容として有限会社やまみを設立しました。",
+      "significance": "会社の起源です。前身は野菜のパック詰め事業でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
     },
     {
+      "year": 1978,
+      "title": "豆腐製造販売事業に参入",
+      "description": "地元の豆腐製造業者より事業譲渡を受け、豆腐製造販売業に進出しました。",
+      "significance": "現在の主力事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "三原市の工場へ移転し全自動ラインを導入",
+      "description": "三原市沼田川沿いの豆腐製造工場を買い取り、全自動の豆腐製造ラインを導入して生産を開始しました。",
+      "significance": "機械化による大量生産の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "沼田川の洪水により工場が被災",
+      "description": "沼田川の洪水により工場が被害を受け、再稼動が困難な状況となりました。",
+      "significance": "本社工場の移転につながった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "本社工場を移転し株式会社やまみに改組",
+      "description": "現在の本社所在地である三原市西部工業団地に新工場を建設し、株式会社やまみに改組しました。木綿ライン、京型ライン、充填ラインが稼動しました。",
+      "significance": "現在の社名と本社工場の体制が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "関西工場を建設",
+      "description": "滋賀県甲賀市に関西工場を建設し、厚揚げラインとカット３Ｐラインが稼動しました。大阪営業所も設置しました。",
+      "significance": "近畿地方への供給体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "東京証券取引所ＪＡＳＤＡＱ（スタンダード）に上場",
+      "description": "東京証券取引所ＪＡＳＤＡＱ（スタンダード）に株式を上場しました。",
+      "significance": "上場企業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "富士山麓工場を建設し東証市場第一部銘柄に指定",
+      "description": "静岡県駿東郡に富士山麓工場を建設しました。同年、東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "関東地方への供給拠点の新設です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証プライム市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場へ移行しました。",
+      "significance": "市場区分の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東証スタンダード市場に市場変更",
+      "description": "東京証券取引所スタンダード市場に市場変更しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "第三工場で厚揚げラインを増設",
+      "description": "本社工場の第三工場において厚揚げラインを増設しました。",
+      "significance": "主力製品の生産能力の増強です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "hiroshima-gas",
+      "relationship": "business-partner",
+      "description": "広島ガス株式会社と共同で、未利用LNG冷熱の融通と高効率冷凍機の導入による省エネルギー事業を開始しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【サステナビリティに関する考え方及び取組】"
+    }
+  ],
+  "sources": [
+    {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第52期(2025/07/01－2026/06/30)",
+      "title": "有価証券報告書－第52期（2025年７月１日－2026年６月30日）",
       "publisher": "株式会社やまみ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z4J8.pdf",
       "publishedAt": "2026-09-28",
-      "accessedAt": "2026-11-14",
       "docId": "S100Z4J8",
-      "asOf": "2026-06-30"
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "他社に先駆けて製造工程の機械化などの設備投資を行い、大量かつ安価な製品を提供することで成長してきた戦略を続け、今後も積極的な設備投資により生産能力と生産効率の向上を図ります。地盤の中四国地方と近畿地方でのシェアの維持・拡大に加え、富士山麓工場を活用して国内最大規模の市場である関東地域への営業活動を本格化し、シェア拡大を図ることを重点戦略としています。あわせて、作りにくいが高需要の製品の自動化に取り組み、製品の品質と価値を取引先に認知してもらうことで販売単価の上昇を目指します。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "機械化により作業員の手が触れる部分を限定し、一部ラインの完全自動化と機械による加熱冷却殺菌を行うことで衛生面で高いレベルの製品製造ができ、短時間で大量生産が可能なラインにより1個当たりの製造単価を引き下げ、価格競争力のある製品製造を行っていることが強みです。加工技術の高さが求められるカット済み豆腐なども高い時間当たり製造能力で製造しています。全工場で食品安全マネジメントの国際規格FSSC22000を取得しています。",
+        "basis": "事業の内容における事業の特長の記載と、経営方針における食品安全衛生への取組みの記載に基づきます。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "豆腐製造事業では、零細企業主体から事業規模の大きな企業への淘汰が進んでおり、同社は豆腐製造事業者の中ではトップクラスの設備投資を行う大規模なメーカーとして、中四国地方と近畿地方でシェアを獲得し、関東地方への供給を本格化させています。2026年6月期の売上高は23,238百万円です。",
+        "basis": "経営方針における経営環境の記載と、経営成績の分析における売上高の記載に基づきます。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",
