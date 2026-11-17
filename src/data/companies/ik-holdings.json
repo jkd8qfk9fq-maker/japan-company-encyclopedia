@@ -1,22 +1,184 @@
 {
   "id": "ik-holdings",
   "code": "2722",
-  "name": "IKホールディングス",
+  "name": "ＩＫホールディングス",
   "officialName": "株式会社IKホールディングス",
   "nameEn": "IK HOLDINGS Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "IK HOLDINGS Co.,Ltd.",
+  "description": "雑貨・食品・化粧品を、生協や通販会社への卸売とテレビ通販・ネット通販・店舗での小売で販売するグループの持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "プレミア"
+      "market": "プレミア市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "sales-marketing",
+      "name": "セールスマーケティング事業",
+      "description": "雑貨類・食品類・化粧品類を、生活協同組合、通信販売会社、小売店舗、海外企業などへ卸販売する事業です。連結子会社の株式会社アイケイが担っています。2026年5月期の外部顧客への売上高は11,733百万円でした。",
+      "customers": [
+        "生活協同組合",
+        "通信販売会社",
+        "小売店舗",
+        "海外企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "sm-coop-mailorder",
+          "name": "生協・通販向け卸売",
+          "description": "生活協同組合と通信販売会社向けの卸売です。収益認識の注記では、2026年5月期の生協・通販区分の収益は8,228百万円と印字されています。",
+          "customers": [
+            "生活協同組合",
+            "通信販売会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "sm-stores",
+          "name": "店舗向け卸売",
+          "description": "ドラッグストアやバラエティストアなどの小売店舗向けの卸売です。収益認識の注記では、2026年5月期の店舗区分の収益は3,441百万円と印字されています。",
+          "customers": [
+            "ドラッグストア・バラエティストア等の小売店舗"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "sm-overseas",
+          "name": "海外向け卸売",
+          "description": "海外企業向けの卸売です。収益認識の注記では、2026年5月期の海外区分の収益は63百万円と印字されています。",
+          "customers": [
+            "海外企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    },
+    {
+      "id": "direct-marketing",
+      "name": "ダイレクトマーケティング事業",
+      "description": "雑貨類・食品類・化粧品類を最終消費者に直接販売する小売事業です。連結子会社の株式会社フードコスメと株式会社プライムダイレクトが担っています。2026年5月期の外部顧客への売上高は2,832百万円でした。",
+      "customers": [
+        "最終消費者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "dm-tv",
+          "name": "ＴＶショッピング",
+          "description": "テレビ通販での販売です。ストック型（定期購入型）商品の放映に絞り込んでいます。収益認識の注記では、2026年5月期のＴＶ区分の収益は347百万円と印字されています。",
+          "customers": [
+            "最終消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "dm-ec",
+          "name": "インターネットショッピング",
+          "description": "ネット通販での販売です。収益認識の注記では、2026年5月期のＥＣ区分の収益は1,280百万円と印字されています。",
+          "customers": [
+            "最終消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        },
+        {
+          "id": "dm-shop",
+          "name": "韓国コスメの店舗販売",
+          "description": "韓国化粧品の店舗「hince」での販売です。2026年5月期の末時点の店舗数は3店舗です。収益認識の注記では、2026年5月期のＳＨＯＰ区分の収益は1,204百万円と印字されています。",
+          "customers": [
+            "最終消費者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "生活協同組合や通信販売会社、小売店舗などへ雑貨・食品・化粧品を卸販売する事業と、テレビ通販・ネット通販・韓国コスメの店舗で最終消費者に直接販売する事業で収益を得ています。",
+    "products": [
+      "雑貨類",
+      "食品類",
+      "化粧品類（韓国コスメを含む）",
+      "プライベートブランド商品"
+    ],
+    "customers": [
+      "生活協同組合",
+      "通信販売会社",
+      "ドラッグストア・バラエティストア等の小売店舗",
+      "海外企業",
+      "最終消費者"
+    ],
+    "revenueSources": [
+      "卸売による商品販売の対価",
+      "テレビ通販・ネット通販・店舗での小売販売の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ＩＫホールディングス",
+        "description": "2022年12月に持株会社体制へ移行した持株会社で、本社は名古屋市中村区にあります。連結子会社3社とともにグループを構成し、2026年5月31日現在の連結従業員数は177人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "雑貨・食品・化粧品の卸売と小売",
+        "description": "雑貨類・食品類・化粧品類を、生活協同組合や通信販売会社、小売店舗、海外企業へ卸販売する事業と、テレビ通販・ネット通販・韓国コスメの店舗で最終消費者に直接販売する事業を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "生協・通販会社などの事業者と最終消費者",
+        "description": "卸売では生活協同組合や通信販売会社、小売店舗などが商品を仕入れて販売し、小売では最終消費者がテレビ通販やネット通販、店舗で商品を購入します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年5月期の売上高は14,568百万円で、前期と比べて4.2％減少しました。テレビ通販の売上が減ったダイレクトマーケティング事業の減収が、セールスマーケティング事業の増収を上回ったことによります。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年5月期の親会社株主に帰属する当期純利益は214百万円でした。前期は321百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年5月期",
@@ -31,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2504647000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 224,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +213,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1970395000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 222,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +233,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2170245000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 195,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +253,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2388002000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 180,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +273,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2552965000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 177,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,22 +281,147 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1982,
+      "title": "アイケイ商事有限会社を設立",
+      "description": "名古屋市中村区に、住宅設備機器販売および贈答用品ならびに記念品用雑貨の販売を目的とするアイケイ商事有限会社を設立しました。現在の株式会社アイケイの前身です。",
+      "significance": "グループの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "雑貨類カタログ「わくわくショッピング」を創刊",
+      "description": "雑貨類のカタログ「わくわくショッピング」を創刊し、カタログによる販売を始めました。",
+      "significance": "生協向けを中心とするカタログ販売の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "食品類カタログ「美食宅配」を創刊",
+      "description": "食品類のカタログ「美食宅配」を創刊し、食品の取り扱いを広げました。",
+      "significance": "現在の食品類の販売につながる展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "日本証券業協会に株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "株式会社フードコスメを設立",
+      "description": "東京都中央区に株式会社フードコスメを設立しました。現在の連結子会社で、ダイレクトマーケティング事業を担っています。",
+      "significance": "化粧品の小売事業の担い手の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "持株会社体制へ移行し、商号をＩＫホールディングスに変更",
+      "description": "2022年12月に持株会社体制へ移行し、当社の商号を株式会社ＩＫホールディングスに変更しました。事業は新設した子会社が引き継ぎました。",
+      "significance": "現在の持株会社体制の成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社getpopを設立し、SNS広告事業を移した",
+      "description": "2025年10月17日に100％出資子会社として株式会社getpopを設立し、当社が譲り受けたSNS広告事業を同社へ譲渡しました。同社は連結の範囲には含まれていません。",
+      "significance": "SNSマーケティングを担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "連結子会社の再編（吸収合併と吸収分割）",
+      "description": "2026年2月1日を効力発生日として、株式会社アイケイが株式会社プライムダイレクトを吸収合併し、アイケイのストック型事業を新設の株式会社ＰＤが吸収分割で承継しました。株式会社ＰＤは同日付で株式会社プライムダイレクトに商号を変更しています。",
+      "significance": "卸売事業への集約とストック型事業の独立を図る再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第45期(2025/06/01－2026/05/31)",
-      "publisher": "株式会社IKホールディングス",
+      "publisher": "株式会社ＩＫホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YYQQ.pdf",
       "publishedAt": "2026-08-26",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YYQQ",
+      "asOf": "2026-05-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念に「ファンつくり」を掲げ、お客様の立場に立つ「お客様立場主義」を追求しています。中期経営計画「IK WAY to 2028」では、韓国コスメを柱としたK-Beautyの展開、EC販路での売上シェアの拡大、得意先ブランドで商品を供給するODMの本格化を柱としてきましたが、計画と実績との乖離が生じたため同計画を取り下げ、新たに設置したグループ経営改革会議で、抜本的な成長戦略の再構築や組織再編を検討するとしています。",
+        "asOf": "2026-08-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1983年に愛知県生活協同組合連合会と口座を開設して以来の生協との取引の積み重ねがあり、生協・通販、店舗、海外と複数の卸売の販路を持つことが、販路の偏りを抑える土台になっています。",
+        "basis": "【沿革】に1983年4月の愛知県生活協同組合連合会との口座開設と職域生協との取引開始が印字され、【事業の内容】にセールスマーケティング事業の卸売先として生活協同組合、通信販売会社、小売店舗、海外企業等が印字されていること。",
+        "asOf": "2026-08-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年5月期は、卸売のセールスマーケティング事業が売上高の中心で、テレビ通販の縮小が続くダイレクトマーケティング事業を補う構図になっています。",
+        "basis": "セグメント情報に、2026年5月期の外部顧客への売上高としてセールスマーケティング事業11,733,637千円とダイレクトマーケティング事業2,832,251千円が印字され、MD&Aにテレビ通販の売上が減少を続けていることが印字されていること。",
+        "asOf": "2026-08-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年5月期",
     "asOf": "2026-05-31",
