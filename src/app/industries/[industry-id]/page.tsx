@@ -10,6 +10,7 @@ import { SectionTabs, type SectionLink } from "@/components/navigation/section-t
 import { INDUSTRY_IMAGES } from "@/assets/industries";
 import { IndustryFiguresBlock } from "@/components/industry/industry-figures";
 import { IndustryHero } from "@/components/industry/industry-hero";
+import { JobPath } from "@/components/industry/job-path";
 import { IndustryNetwork } from "@/components/industry/industry-network";
 import { ValueChain } from "@/components/industry/value-chain";
 import { RichText } from "@/components/rich-text/rich-text";
@@ -128,6 +129,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
               <IndustryNetwork industryId={listing.id} data={map} />
             </div>
           </div>
+          {companies.length > 0 && <JobPath industryName={listing.name} companies={companies} />}
           {industry && <p className="figures mt-10 text-xs text-muted-foreground">最終更新 {formatDateJa(industry.updatedAt)}</p>}
         </CompanySection>
 

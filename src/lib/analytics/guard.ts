@@ -135,4 +135,4 @@ export function cookieString(name: string, value: string, opts: { hostname: stri
 }
 
 /** Event names the site sends: a name only, never a value. */
-export type TrackedEvent = "begin_checkout";
+export type TrackedEvent = "begin_checkout" | "encyclopedia_to_diagnosis";

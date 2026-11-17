@@ -1136,3 +1136,14 @@ answers sent to a server, which the diagnosis site's invariant 6 forbids, so it 
   `src/assets/fonts/og`), because `next/og` cannot read the WOFF2 files the pages use. `tests/rankings.test.ts` fails
   when an image would need a character the subset lacks, and checks each ranking's top entries against sums and
   medians taken straight from the data files.
+
+### JCE-063 · 2026-11-17 · Accepted (operator) — A reading order for job hunting on every industry page (P2-2)
+
+The operator's implementation plan (P2-2, 2026-11-17) asked for a path between the 企業タイプ診断 and this site.
+
+- Under 業界の仕組み, every industry page with companies shows 「就活で〇〇業界を調べるなら」 (`#job-path`): read how
+  the industry works; line up its three largest companies by latest printed revenue on 見比べ (JCE-061) — a size,
+  said to be not a ranking of good or bad; check the fit on the 企業タイプ診断, whose premium ES advice is mentioned in
+  one line. The 企業タイプ診断's matched industries link here (its CTS-043).
+- The link to the diagnosis is an ordinary link; a click sends the event name `encyclopedia_to_diagnosis`, after
+  consent only (JCE-056). Nothing about the reader goes with it.
