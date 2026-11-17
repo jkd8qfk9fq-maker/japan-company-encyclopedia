@@ -7,8 +7,9 @@
 #   propose  runs only when detect found something (on the schedule, or by hand with `propose`). Applies the updates
 #            that pass verify-financials and the schema/integrity rules — on a NEW BRANCH — runs the integrity suite and
 #            the type check, refuses any change outside the data it may write, records the run in pipeline/runs/, and
-#            opens a pull request. It never pushes to main and never merges: the site changes only when a person merges
-#            the pull request (Cloudflare rebuilds main). A company that fails or is held is left exactly as it was.
+#            opens a pull request. It never pushes to main. It merges only when the repository variable
+#            AUTO_MERGE_FINANCIALS is "1" and every change passed the gate (JCE-058, proposed; off by default — then a
+#            person merges, as JCE-024 says). Cloudflare rebuilds main. A company that fails or is held is left exactly as it was.
 #
 # Repository settings this needs: the secret EDINET_API_KEY; Settings → Actions → General → "Allow GitHub Actions to
 # create and approve pull requests" (for the pull request; nothing here approves one). The secret EDINETDB_API_KEY
@@ -249,6 +250,7 @@ jobs:
           fi
 
       - name: Record the run and open a pull request
+        id: pr
         run: |
           if [ -z "$(git status --porcelain src/data)" ]; then
             echo "Nothing verified to propose." >> "$GITHUB_STEP_SUMMARY"
@@ -257,6 +259,10 @@ jobs:
           day=$(date -u +%Y-%m-%d)
           mkdir -p pipeline/runs
           cp out/refresh-report.json "pipeline/runs/financials-${day}-${{ github.run_id }}.json"
+          # The other reports the auto-merge gate reads (JCE-058), kept with the run so its verdict can be checked later.
+          for r in interim quarterly amendment; do
+            if [ -f "out/${r}-report.json" ]; then cp "out/${r}-report.json" "pipeline/runs/${r}-${day}-${{ github.run_id }}.json"; fi
+          done
           branch="auto/financials-${day}-${{ github.run_id }}"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -265,8 +271,28 @@ jobs:
           git commit -m "Financial figures from new 有価証券報告書 (${day})" -m "Applied by the refresh-financials workflow after verify-financials, the schema/integrity rules, the integrity suite and the type check. Review the diff before merging."
           git push origin "HEAD:refs/heads/${branch}"
           if [ -f out/amendment-summary.md ]; then { echo; cat out/amendment-summary.md; } >> out/summary.md; fi
-          gh pr create --base main --head "$branch" --title "財務データの更新（${day}、新しい有価証券報告書）" --body-file out/summary.md
+          # Whether this pull request could merge itself (JCE-058, proposed). Always written into the body, so the
+          # person who merges sees the verdict even while automatic merging is off.
+          node scripts/pipeline/auto-merge-gate.mjs --base HEAD~1 --reports out --json out/gate.json --summary out/gate.md
+          { echo; cat out/gate.md; } >> out/summary.md
+          url=$(gh pr create --base main --head "$branch" --title "財務データの更新（${day}、新しい有価証券報告書）" --body-file out/summary.md)
+          echo "url=$url" >> "$GITHUB_OUTPUT"
           cat out/summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      # JCE-058 (proposed): merge only when the operator has switched it on (repository variable AUTO_MERGE_FINANCIALS =
+      # "1"; unset or anything else = off, the JCE-024 behaviour) AND every change in the pull request was vouched for
+      # (scripts/pipeline/auto-merge-gate.mjs). Held, failed or amended companies are never in a merged pull request.
+      - name: Merge automatically when every change was vouched for (off unless AUTO_MERGE_FINANCIALS=1)
+        if: steps.pr.outputs.url != '' && vars.AUTO_MERGE_FINANCIALS == '1'
+        env:
+          PR_URL: ${{ steps.pr.outputs.url }}
+        run: |
+          if [ "$(node -e 'console.log(require("./out/gate.json").eligible === true)')" = "true" ]; then
+            gh pr merge "$PR_URL" --squash --delete-branch
+            echo "Merged automatically (JCE-058): every change passed the checks." >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "Left for a person: the gate's conditions were not all met (see the pull request body)." >> "$GITHUB_STEP_SUMMARY"
+          fi
 
       - name: Save the EDINET cache
         if: always()

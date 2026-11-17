@@ -74,12 +74,26 @@ describe("refresh-financials workflow", () => {
     expect(propose).toContain("src/data/companies/[a-z0-9-]+\\.json|src/data/revisions/[a-z0-9-]+\\.json|pipeline/amendments-index\\.json");
   });
 
-  it("pushes a branch and opens a pull request — never main, never a merge, never an approval", () => {
+  it("pushes a branch and opens a pull request — never main, never an approval", () => {
     expect(propose).toMatch(/git push origin "HEAD:refs\/heads\/\$\{branch\}"/);
     expect(propose).toMatch(/branch="auto\/financials-/);
     expect(body).not.toMatch(/git push[^\n]*\bmain\b/);
-    expect(body).not.toMatch(/gh pr (merge|review)/);
+    expect(body).not.toMatch(/gh pr review/);
     expect(propose).toContain("gh pr create --base main");
+  });
+
+  it("merges only when the operator switched it on AND the gate passed every change (JCE-058); otherwise a person merges (JCE-024)", () => {
+    // Exactly one merge, in exactly one step, and that step is guarded by the repository variable.
+    expect(body.match(/gh pr merge/g)).toHaveLength(1);
+    const step = propose.slice(propose.lastIndexOf("- name:", propose.indexOf("gh pr merge")), propose.indexOf("gh pr merge"));
+    expect(step).toContain("if: steps.pr.outputs.url != '' && vars.AUTO_MERGE_FINANCIALS == '1'");
+    // ...and inside it, only when the gate's verdict for this pull request is yes.
+    expect(step).toContain('require("./out/gate.json").eligible === true');
+    // The verdict is computed for every pull request and written into its body before it is opened.
+    expect(propose.indexOf("node scripts/pipeline/auto-merge-gate.mjs --base HEAD~1 --reports out --json out/gate.json")).toBeGreaterThan(-1);
+    expect(propose.indexOf("cat out/gate.md; } >> out/summary.md")).toBeLessThan(propose.indexOf("gh pr create"));
+    // The merge never bypasses review rules: no admin override.
+    expect(body).not.toMatch(/gh pr merge[^\n]*--admin/);
   });
 
   it("audits new 訂正有価証券報告書 daily, report only — reading each company's filing from its entry", () => {
@@ -94,6 +108,8 @@ describe("refresh-financials workflow", () => {
 
   it("records the run in the repository, with the pull request", () => {
     expect(propose).toContain('cp out/refresh-report.json "pipeline/runs/financials-');
+    // ...and the reports the auto-merge gate reads, so its verdict can be re-checked from the repository (JCE-058).
+    expect(propose).toContain('for r in interim quarterly amendment; do');
     expect(propose).toContain("git add src/data pipeline/amendments-index.json pipeline/runs");
   });
 
