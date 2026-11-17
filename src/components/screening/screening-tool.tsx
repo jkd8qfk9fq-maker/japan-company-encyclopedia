@@ -10,13 +10,14 @@ import {
   applyConditions,
   EMPTY_CONDITIONS,
   REVENUE_BANDS,
-  SAVED_CONDITIONS_LIMIT,
+  SAVED_CONDITIONS_LIMITS,
   SORT_LABELS,
   sortRows,
   type Conditions,
   type ScreeningIndex,
   type SortKey,
 } from "@/lib/screening";
+import { usePlan } from "@/lib/plan";
 import { savedScreeningsStore } from "@/lib/storage/stores";
 import { formatYen } from "@/lib/utils/format";
 import { cn } from "@/lib/utils";
@@ -53,6 +54,7 @@ export function ScreeningTool() {
   const [sort, setSort] = useState<SortKey>("revenue");
   const [shown, setShown] = useState(PAGE);
   const saved = useLocalStore(savedScreeningsStore);
+  const savedLimit = usePlan() ? SAVED_CONDITIONS_LIMITS.premium : SAVED_CONDITIONS_LIMITS.free;
 
   useEffect(() => {
     fetch("/screening.json")
@@ -133,15 +135,15 @@ export function ScreeningTool() {
           </button>
           <button
             type="button"
-            disabled={saved.length >= SAVED_CONDITIONS_LIMIT}
-            onClick={() => savedScreeningsStore.set([{ name: summary(c, names), conditions: c }, ...saved].slice(0, SAVED_CONDITIONS_LIMIT))}
+            disabled={saved.length >= savedLimit}
+            onClick={() => savedScreeningsStore.set([{ name: summary(c, names), conditions: c }, ...saved].slice(0, savedLimit))}
             className="min-h-11 rounded-full bg-navy px-4 text-sm font-medium text-white disabled:opacity-50"
           >
             この条件を保存
           </button>
         </div>
         <div>
-          <p className="text-xs text-muted-foreground">保存した条件（この端末だけ・{saved.length}/{SAVED_CONDITIONS_LIMIT}）</p>
+          <p className="text-xs text-muted-foreground">保存した条件（この端末だけ・{saved.length}/{savedLimit}{savedLimit === SAVED_CONDITIONS_LIMITS.free ? `・プレミアムプランでは${SAVED_CONDITIONS_LIMITS.premium}件まで` : ""}）</p>
           <ul className="mt-1 space-y-1">
             {saved.map((s, i) => (
               <li key={i} className="flex items-center gap-2 text-sm">

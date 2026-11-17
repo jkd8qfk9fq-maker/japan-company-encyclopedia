@@ -25,11 +25,6 @@ export const ADS_ENABLED = ADSENSE_SLOT !== null;
 
 export function AdSlot({ placement }: { placement: AdPlacement }) {
   if (!ADSENSE_SLOT) return null;
-  // Labelled as advertising, visually separate from content, and never between a claim and its sources.
-  return (
-    <aside aria-label="広告" data-ad-placement={placement} className="my-12 border-y border-border py-4">
-      <p className="mb-2 text-xs text-muted-foreground">広告</p>
-      <AdUnit client={ADSENSE_CLIENT} slot={ADSENSE_SLOT} />
-    </aside>
-  );
+  // The label and frame are drawn by AdUnit, so a reader with the premium plan gets neither (JCE-064).
+  return <AdUnit client={ADSENSE_CLIENT} slot={ADSENSE_SLOT} placement={placement} />;
 }

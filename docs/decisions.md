@@ -1147,3 +1147,17 @@ The operator's implementation plan (P2-2, 2026-11-17) asked for a path between t
   one line. The 企業タイプ診断's matched industries link here (its CTS-043).
 - The link to the diagnosis is an ordinary link; a click sends the event name `encyclopedia_to_diagnosis`, after
   consent only (JCE-056). Nothing about the reader goes with it.
+
+### JCE-064 · 2026-11-17 · Accepted (operator) — Premium benefits here, and the 7-day trial (P2-1)
+
+The operator's implementation plan (P2-1, 2026-11-17) asked to rebuild the YUGENQ premium plan around what exists and
+to add a 7-day trial; the 企業タイプ診断 site sells it (its CTS-044).
+
+- **Benefits here, each a setting**: 3社の見比べ (`COMPARE_LIMITS`, JCE-061), 20 saved conditions in 財務で探す
+  (`SAVED_CONDITIONS_LIMITS`, JCE-060; free keeps 3), and no ads — the ad unit draws nothing, not even its label,
+  and loads no ad script for a reader with the plan. 業界比較 and 財務の深掘り (JCE-043/044) are unchanged.
+- **Not a benefit**: notifications for followed companies have no per-plan limit (`PUSH_MAX_COMPANIES` is unset, so
+  everyone is unlimited); a larger limit is not sold until a smaller free one exists.
+- **Trial wording**: `PLAN_TRIAL_DAYS` in `src/lib/plan.ts` says what the plan's Checkout gives; the premium gate's
+  button reads 「7日間無料で試す（その後 月額390円）」 and says cancelling within the trial costs nothing. The number
+  follows the 企業タイプ診断 site's, which owns the Checkout.
