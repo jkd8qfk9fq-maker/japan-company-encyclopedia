@@ -30,6 +30,8 @@ export const STORAGE_KEYS = {
   notificationsSeen: "notifications-seen",
   /** JCE-052: how many steps the reader has taken in the connection explorer. */
   exploreSteps: "explore-steps",
+  /** JCE-060: screening conditions the reader saved, in this browser only. */
+  screeningSaved: "screening-saved-conditions",
 } as const;
 
 export type StorageKey = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];

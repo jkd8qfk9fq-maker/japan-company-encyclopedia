@@ -1049,3 +1049,20 @@ switched on.
   A merge made with the workflow's token does not start other workflows (GitHub's rule); Cloudflare still rebuilds main.
 - `tests/refresh-workflow.test.ts` pins that the only `gh pr merge` is in the step guarded by the variable and the
   gate's verdict, and that nothing pushes to main or approves.
+
+### JCE-060 · 2026-11-17 · Accepted (operator) — 財務で探す: screening on printed figures, in the browser
+
+The operator's implementation plan (P1-2, 2026-11-17) asked for a simple financial screening. It lives at
+`/screening` (「財務で探す」; `/explore` already serves つながりをたどる, JCE-052).
+
+- **Only figures the site already shows**: latest revenue and employees as printed, 5期の売上高の伸び (latest ÷ five
+  years earlier, as on the industry pages), and the two ratios JCE-038 allows (純利益率・海外売上高比率), computed by the
+  same code (`companyMetrics`, `revenueGrowth5y`). No stock-market figure, no score, no ranking label: invariant 4 holds.
+  Industry and 本社の都道府県 come from the entry and the EDINET code list.
+- **A missing figure is not a pass and not a zero**: a company without the figure a condition asks about is left out
+  and counted, and the page says how many (「データなし」). Sorting puts such companies last.
+- **Nothing leaves the browser**: `/screening.json` (about 2,900 rows, released companies only) is built with the
+  site and filtered on the reader's device. Saved conditions (three per browser) are kept only through
+  `src/lib/storage` (`screening-saved-conditions`).
+- `tests/screening.test.ts` holds the rules and checks three conditions against counts read straight from the data
+  files: 自動車 × 1兆円以上 (27 companies), 純利益率10%以上 × 従業員1,000人以上 (272, 14 データなし), 東京都 × 5期で1.5倍以上 (406).
