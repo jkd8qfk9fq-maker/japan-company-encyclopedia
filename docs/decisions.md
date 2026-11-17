@@ -1066,3 +1066,23 @@ The operator's implementation plan (P1-2, 2026-11-17) asked for a simple financi
   `src/lib/storage` (`screening-saved-conditions`).
 - `tests/screening.test.ts` holds the rules and checks three conditions against counts read straight from the data
   files: 自動車 × 1兆円以上 (27 companies), 純利益率10%以上 × 従業員1,000人以上 (272, 14 データなし), 東京都 × 5期で1.5倍以上 (406).
+
+### JCE-061 · 2026-11-17 · Accepted (operator) — 企業を見比べる: two or three companies side by side
+
+The operator's implementation plan (P1-3, 2026-11-17) asked for a side-by-side comparison of two or three companies,
+shared by link, with the third company as a premium benefit.
+
+- **`/compare?ids=a,b,c`**, reached from 「見比べる」 on every company page and from the footer. The address is the whole
+  state, so a link opens the same comparison; which companies a reader picks is never sent anywhere — the page draws
+  them in the browser from `/compare.json`, built with the site (released companies only).
+- **Only what the company page already shows**: the latest year's revenue, net income and employees as printed, with
+  the filing's own labels; 純利益率 and 海外売上高比率 (JCE-038) and 5期の売上高の伸び (JCE-041/043) from the same code
+  (`companyMetrics`, `revenueGrowth5y`), labelled 計算値 with the formula. A figure not printed shows 「データなし」. Under
+  the table, each company's filing and fiscal year, linked. No verdict and no "which is better": invariant 4 holds.
+- **設立年 is not shown.** The entries hold no founding date as a field, and a history event's year is not always the
+  founding of the present company (トヨタ自動車's 1937 is トヨタ自動車工業). It is added only when the data has it.
+- **Plan**: two companies free, three with the YUGENQ premium plan (`COMPARE_LIMITS`, a setting for P2-1). As with
+  JCE-043 the gate is a view switch over public figures. The premium gate now keeps the address's query when it sends
+  a buyer to checkout, so the reader returns to the same comparison.
+- 最初の一社's own 見比べ (industry, business and the reader's notes) is a different feature in another project; its
+  『準備中』 is lifted there, separately (D-040: nothing is shared in code).
