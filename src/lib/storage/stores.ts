@@ -1,4 +1,5 @@
 import { STORAGE_KEYS, parseRaw, read, write, remove, type StorageKey } from "./storage";
+import { isConditions, type Conditions } from "@/lib/screening";
 
 /**
  * Typed repositories over the raw storage layer, one per kind of user-local
@@ -213,3 +214,15 @@ export function recordExploreStep(): void {
   exploreStepsStore.set(exploreStepsStore.get() + 1);
   recordActivity();
 }
+
+// ---------------------------------------------------------------------------
+// JCE-060: saved screening conditions — this browser only, never sent anywhere.
+
+export type SavedScreening = { name: string; conditions: Conditions };
+
+function parseSavedScreenings(value: unknown): SavedScreening[] | null {
+  if (!Array.isArray(value)) return null;
+  return value.filter((v): v is SavedScreening => !!v && typeof v === "object" && typeof (v as SavedScreening).name === "string" && isConditions((v as SavedScreening).conditions));
+}
+
+export const savedScreeningsStore = createStore<SavedScreening[]>(STORAGE_KEYS.screeningSaved, [], parseSavedScreenings);

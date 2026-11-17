@@ -32,6 +32,8 @@ export const STORAGE_KEYS = {
   exploreSteps: "explore-steps",
   /** JCE-059: the followed companies whose new results this browser is notified about (a subset of favorites). */
   pushCompanies: "push-companies",
+  /** JCE-060: screening conditions the reader saved, in this browser only. */
+  screeningSaved: "screening-saved-conditions",
 } as const;
 
 export type StorageKey = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];

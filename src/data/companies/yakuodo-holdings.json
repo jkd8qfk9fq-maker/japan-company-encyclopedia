@@ -4,15 +4,147 @@
   "name": "薬王堂ホールディングス",
   "officialName": "株式会社薬王堂ホールディングス",
   "nameEn": "YAKUODO　HOLDINGS　Co．，Ltd.",
-  "description": null,
+  "shortNameEn": "yakuodo-holdings",
+  "description": "岩手県に本社を置く持株会社で、東北地方を中心にドラッグストアを展開します。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "drugstore",
+      "name": "ドラッグストア事業",
+      "description": "医薬品や化粧品、食品や日用雑貨を扱うドラッグストア事業です。2026年2月期の売上高は163,808百万円です。",
+      "products": [
+        "医薬品",
+        "化粧品",
+        "食料品",
+        "日用雑貨"
+      ],
+      "customers": [
+        "地域のお客様"
+      ],
+      "children": [
+        {
+          "id": "food",
+          "name": "フード",
+          "description": "食品の販売です。2026年2月期の売上高は79,763百万円です。",
+          "products": [
+            "食品"
+          ],
+          "customers": [
+            "地域のお客様"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "home",
+          "name": "ホーム",
+          "description": "日用品の販売です。2026年2月期の売上高は35,422百万円です。",
+          "products": [
+            "日用品"
+          ],
+          "customers": [
+            "地域のお客様"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "health",
+          "name": "ヘルス",
+          "description": "医薬品の販売です。2026年2月期の売上高は26,417百万円です。",
+          "products": [
+            "医薬品"
+          ],
+          "customers": [
+            "地域のお客様"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "beauty",
+          "name": "ビューティ",
+          "description": "化粧品の販売です。2026年2月期の売上高は21,954百万円です。",
+          "products": [
+            "化粧品"
+          ],
+          "customers": [
+            "地域のお客様"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "東北地方を中心にドラッグストアを展開し、医薬品や化粧品、食品や日用雑貨を販売し、2026年2月期の売上高は163,808百万円です。",
+    "products": [
+      "医薬品",
+      "化粧品",
+      "食品",
+      "日用雑貨"
+    ],
+    "customers": [
+      "地域のお客様"
+    ],
+    "revenueSources": [
+      "ドラッグストアでの商品販売による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "岩手県に本社を置く持株会社",
+        "description": "当社と連結子会社2社で、2026年2月28日現在456店舗のドラッグストアを展開します。"
+      },
+      {
+        "kind": "offering",
+        "title": "医薬品や化粧品、食品や日用雑貨の販売",
+        "description": "医薬品や化粧品、食品や日用雑貨をそろえたドラッグストアを運営します。"
+      },
+      {
+        "kind": "customer",
+        "title": "東北地方と関東地方のお客様",
+        "description": "東北地方を中心に、関東地方でも店舗を利用するお客様に商品を販売します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "商品の販売による売上高",
+        "description": "店舗での商品販売が売上高となります。2026年2月期の売上高は163,808百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "新規出店とローコストオペレーション",
+        "description": "新規出店を進めるとともに、店舗作業の削減と物流の効率化に取り組みます。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -52,7 +184,8 @@
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年3月31日）等を第4期の期首から適用しています。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -115,7 +248,158 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1978,
+      "title": "都南プラザドラッグの創業",
+      "description": "西郷辰弘と西郷喜代子が、岩手県紫波郡都南村永井（現在の盛岡市永井）で都南プラザドラッグを創業しました。",
+      "significance": "ドラッグストア事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式会社薬王堂の設立",
+      "description": "有限会社薬王堂を組織変更し、株式会社薬王堂として設立しました。",
+      "significance": "会社組織としての基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "450坪型スーパードラッグストア「矢巾店」の開店",
+      "description": "岩手県紫波郡に県内初の450坪型スーパードラッグストア「矢巾店」を開店し、本社を岩手県紫波郡矢巾町に移転しました。",
+      "significance": "大型店舗の展開が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "宮城県への進出",
+      "description": "宮城県栗原市に宮城県進出第1号店として「金成店」を開店しました。",
+      "significance": "県外への出店が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "青森県への進出",
+      "description": "青森県八戸市に青森県進出第1号店として「八戸新井田店」を開店しました。",
+      "significance": "青森県への出店が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "株式上場",
+      "description": "株式会社ジャスダック証券取引所に株式を上場しました。",
+      "significance": "株式公開により資金調達の道が開けました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "東京証券取引所市場第一部銘柄への指定",
+      "description": "東京証券取引所市場第一部銘柄に指定されました。",
+      "significance": "上場市場が第一部に上がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "福島県への進出",
+      "description": "福島県福島市に福島県進出第1号店として「福島太平寺店」を開店しました。",
+      "significance": "福島県への出店が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "薬王堂ホールディングスの設立と上場",
+      "description": "株式会社薬王堂が単独株式移転により当社を設立し、東京証券取引所市場第一部に株式を上場しました。株式会社薬王堂は2019年8月に上場廃止となりました。",
+      "significance": "持株会社体制が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "本社事務所の移転",
+      "description": "本社事務所を岩手県盛岡市盛岡駅西通二丁目9番1号に移転しました。登記上の本店は岩手県紫波郡矢巾町医大通二丁目7番7号のままです。",
+      "significance": "本社機能を盛岡市に移しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場への移行",
+      "description": "東京証券取引所プライム市場へ移行しました。",
+      "significance": "上場市場がプライム市場に移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "監査等委員会設置会社への移行",
+      "description": "監査等委員会設置会社へ移行しました。",
+      "significance": "監査等委員会設置会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "南東北地区の食品・非食品一括物流の開始",
+      "description": "株式会社薬王堂が宮城県白石市の物流センターで、南東北地区の食品・非食品一括物流を開始しました。",
+      "significance": "南東北地区の物流が一本化されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "栃木県への進出",
+      "description": "株式会社薬王堂が栃木県那須塩原市に栃木県進出第1号店として360坪型ドラッグストア「黒磯鍋掛店」を開店しました。",
+      "significance": "関東地方への出店が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "茨城県への進出",
+      "description": "株式会社薬王堂が茨城県日立市に茨城県進出第1号店として300坪型ドラッグストア「日立大沼店」を開店しました。",
+      "significance": "茨城県への出店が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,11 +408,35 @@
       "publisher": "株式会社薬王堂ホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y4K3.pdf",
       "publishedAt": "2026-05-21",
-      "accessedAt": "2026-10-02"
+      "docId": "S100Y4K3",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-10-02"
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念は「お客様に喜んで戴ける店をつくる」です。2025年4月に策定した中期経営計画に基づき、出店戦略、店舗戦略、物流戦略、採用とManavi戦略、DX戦略の5つの戦略を軸に、2030年2月期までに累計450店舗の新規出店を目指します。",
+        "asOf": "2026-05-21",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "東北地方の6県と関東地方の2県に、2026年2月28日現在456店舗のドラッグストアを展開します。岩手県に本社を置き、東北地方でのドミナント強化と関東地方への出店を進めます。",
+        "basis": "【事業の内容】と【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の記載に基づきます。",
+        "asOf": "2026-05-21",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  }
 }

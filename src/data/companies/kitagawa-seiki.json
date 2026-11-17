@@ -4,15 +4,146 @@
   "name": "北川精機",
   "officialName": "北川精機株式会社",
   "nameEn": "KITAGAWA SEIKI CO.,LTD.",
-  "description": null,
+  "shortNameEn": "KITAGAWA SEIKI CO.,LTD.",
+  "description": "プリント基板や新素材の成形に使うプレス装置やラミネータ装置、搬送機械を製造販売する産業機械メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "industrial-machinery",
+      "name": "産業機械事業",
+      "description": "プリント基板プレス装置、新素材プレス装置、ラミネータ装置、FA・搬送機械を当社が製造し、得意先に販売する事業です。中国の得意先へは、連結子会社の北川精机貿易（上海）有限公司が販売します。2026年6月期の販売高は6,505百万円です。",
+      "customers": [
+        "プリント基板・銅張積層板メーカーなどの得意先",
+        "中国の得意先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "pcb-press",
+          "name": "プリント基板プレス装置",
+          "description": "銅張積層板・多層基板の成形に使うプレス装置です。多層プリント基板成形プレスや大型真空積層プレスなどがあります。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【沿革】"
+        },
+        {
+          "id": "new-material-press",
+          "name": "新素材プレス装置",
+          "description": "複合材など新素材の成形に使うプレス装置です。高温複合成形用ホットプレスや熱可塑性樹脂シート成形用真空プレス装置、CFRTP用積層成形装置などがあります。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【沿革】"
+        },
+        {
+          "id": "laminator",
+          "name": "ラミネータ装置",
+          "description": "基板材料の積層に使う装置です。多段真空ラミネータ装置などがあります。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【沿革】"
+        },
+        {
+          "id": "fa-conveying",
+          "name": "FA・搬送機械",
+          "description": "工場内の搬送に使う機械です。フロアーリフトや油圧エレベーター、ソリッドストッカーなどがあります。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【沿革】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "連結子会社のホクセイ工業株式会社が製造する油圧機器を、同社が直接得意先に販売する事業です。報告セグメントには含まれておらず、2026年6月期の販売高は102百万円です。",
+      "customers": [
+        "油圧機器の得意先"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "hydraulic-equipment",
+          "name": "油圧機器",
+          "description": "ホクセイ工業株式会社が製造する油圧機器です。金額は独立して開示されていません。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "熱・圧力・真空の制御技術を基に、案件ごとに仕様を設計するプリント基板プレス装置などを製造し、国内外の得意先に販売する仕組みです。",
+    "products": [
+      "プリント基板プレス装置",
+      "新素材プレス装置",
+      "ラミネータ装置",
+      "FA・搬送機械",
+      "油圧機器"
+    ],
+    "customers": [
+      "プリント基板・銅張積層板メーカーなどの得意先",
+      "中国の得意先",
+      "油圧機器の得意先"
+    ],
+    "revenueSources": [
+      "産業機械の製造販売代金",
+      "油圧機器の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "北川精機",
+        "description": "1957年に広島県府中市で株式会社寿製作所として設立され、広島県府中市に本社を置き、東京証券取引所スタンダード市場に上場しています。2026年6月30日現在の従業員数は161人で、連結子会社2社があります。"
+      },
+      {
+        "kind": "offering",
+        "title": "プレス装置・ラミネータ装置・搬送機械",
+        "description": "プリント基板プレス装置、新素材プレス装置、ラミネータ装置、FA・搬送機械を製造し、連結子会社のホクセイ工業株式会社は油圧機器を製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "国内外の得意先",
+        "description": "製品は案件ごとに個別の仕様に基づいて設計・製造し、国内の得意先のほか、中国では連結子会社の北川精机貿易（上海）有限公司を通じて販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高6,607百万円",
+        "description": "2026年6月期の売上高は6,607百万円で、産業機械事業が6,505百万円、その他が102百万円です。前期に比べて6.1％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益750百万円",
+        "description": "2026年6月期の親会社株主に帰属する当期純利益は750百万円で、前期は394百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,11 +158,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2774789000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 154,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -47,11 +178,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3502196000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 157,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -67,11 +198,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4762921000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 154,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -87,11 +218,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5077610000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 151,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -115,32 +246,237 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
+  "history": [
     {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第69期(2024/07/01－2025/06/30)",
-      "publisher": "北川精機株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WQMF.pdf",
-      "publishedAt": "2025-09-26",
-      "accessedAt": "2026-09-29"
+      "year": 1957,
+      "title": "株式会社寿製作所を設立",
+      "description": "合板機械の製造販売を目的として、広島県府中市府川町に株式会社寿製作所を設立しました。",
+      "significance": "会社の創立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
     },
+    {
+      "year": 1958,
+      "title": "合板用ホットプレスを開発",
+      "description": "合板用ホットプレスを開発し、製造販売を開始しました。",
+      "significance": "現在のプレス技術につながる起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "商号を北川精機株式会社に変更",
+      "description": "商号を北川精機株式会社に変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "搬送機械部門へ進出",
+      "description": "新規事業分野として搬送機械部門への進出を図り、フロアーリフト、油圧エレベーターを開発し、製造販売を開始しました。",
+      "significance": "FA・搬送機械事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1982,
+      "title": "多層プリント基板成形プレスを開発",
+      "description": "多層プリント基板成形プレス（基板を何層も重ねた高精度のプレス機）を開発し、製造販売を開始しました。",
+      "significance": "現在の主力事業であるプリント基板プレス装置の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "大型真空積層プレスを開発",
+      "description": "大型真空積層プレス（20段プレス）を開発し、製造販売を開始しました。",
+      "significance": "真空積層技術の展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "高温複合成形用ホットプレスを開発",
+      "description": "高温複合成形用ホットプレス（不活性ガス内で最高温度600℃に加熱成型）を開発し、製造販売を開始しました。",
+      "significance": "新素材プレス分野への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "ホクセイ工業株式会社を連結子会社化",
+      "description": "油圧ユニットの安定確保を図るため株式会社日本油圧電業を買収し、商号をホクセイ工業株式会社（現・連結子会社）に変更しました。",
+      "significance": "油圧機器事業のグループ化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "日本証券業協会に株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録銘柄として登録しました。",
+      "significance": "資本市場への初参加です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "多段真空ラミネータ装置を開発",
+      "description": "多段真空ラミネータ装置を開発し、製造販売を開始しました。",
+      "significance": "ラミネータ装置の展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "北川精机貿易（上海）有限公司を設立",
+      "description": "産業機械事業の販売強化を図るため、中国に北川精机貿易（上海）有限公司（現・連結子会社）を設立しました。",
+      "significance": "中国の販売拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "ソーラーシステム事業から撤退",
+      "description": "電気二重層キャパシタ及び太陽光発電用シリコンウェハー（ソーラーシステム事業）の製造から撤退しました。",
+      "significance": "事業の選択と集中です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "熱可塑性樹脂シート成形用真空プレス装置を開発",
+      "description": "熱可塑性樹脂シート成形用真空プレス装置を開発し、製造販売を開始しました。",
+      "significance": "新素材分野の製品拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "CFRTP用積層成形装置を開発",
+      "description": "CFRTP（一方向連続繊維）用積層成形装置を開発しました。",
+      "significance": "炭素繊維複合材分野への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "長崎技術センターを新設",
+      "description": "長崎県長崎市御船蔵町に長崎技術センターを新設しました。",
+      "significance": "設計2拠点体制（広島・長崎）の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "ibiden",
+      "relationship": "customer",
+      "description": "イビデン株式会社は、産業機械事業の取引先（販売先）として、営業上の取引関係を維持・強化するために株式を保有する相手です。2026年6月30日現在の保有株式数は36,811株です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第70期(2025/07/01－2026/06/30)",
       "publisher": "北川精機株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z4C6.pdf",
       "publishedAt": "2026-09-28",
-      "accessedAt": "2026-11-14",
       "docId": "S100Z4C6",
-      "asOf": "2026-06-30"
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画「KITAGAWA 2030」では「世界のDXを支える唯一無二の企業」を目指す姿とし、成長市場における新製品の早期投入と既存技術・製品の周辺分野への展開、生産能力の拡大と収益性向上の両立、設計2拠点体制による技術開発力の強化、人的資本経営の推進を重点課題に掲げています。経営の基本方針として、「熱・圧力・真空制御技術」をベースに先端技術との融合を図り、独創的で高性能な製品の開発を通じて幅広い業界のものづくりを支えることを掲げています。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "創立以来培った熱・圧力・真空の制御技術を基に、案件ごとに個別の仕様で設計・製造するプレス装置を手がけ、海外メーカーのAI関連投資を背景に銅張積層板・多層基板成形用プレス装置の需要を取り込んでいます。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】に、「熱・圧力・真空制御技術」をベースに独創的で高性能な製品の開発を通じて幅広い業界のものづくりを支えてきたことが印字されています。MD&Aに、主要製品は案件毎に個別の仕様に基づいて設計・製造を行うこと、海外メーカーによるAI関連投資を背景に銅張積層板・多層基板成形用のプレス装置の需要が増加したことが印字されています。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年6月期の地域別の売上高は、日本2,932百万円、中国2,261百万円、台湾768百万円、その他645百万円で、海外向けが半分以上を占めています。",
+        "basis": "【セグメント情報等】の関連情報に、2026年6月期の地域ごとの売上高として、日本2,932,178千円、中国2,261,472千円、台湾768,943千円、その他645,198千円、合計6,607,792千円と印字されています。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",

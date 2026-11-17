@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ExternalLink, Flag } from "lucide-react";
+import { Columns3, ExternalLink, Flag } from "lucide-react";
 import { Fragment } from "react";
 import { RichText } from "@/components/rich-text/rich-text";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
@@ -142,6 +142,13 @@ export function CompanyHero({
           )}
           <FavoriteButton companyId={company.id} companyName={company.name} />
           <PushCompanyToggle companyId={company.id} companyName={company.name} />
+          <Link
+            href={`/compare?ids=${company.id}`}
+            className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border px-4 text-sm transition-colors hover:border-foreground"
+          >
+            <Columns3 className="size-4" aria-hidden />
+            見比べる
+          </Link>
           <ShareActions url={siteUrl(`/companies/${company.id}`)} text={`${company.name}とは？｜${SITE_NAME}`} />
           <Link
             href={`/contact?company=${company.id}`}
