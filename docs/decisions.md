@@ -968,4 +968,4 @@ link from every company to its own website. The operator's mockup was taken as a
   The origin is kept and linked in the hero, cited to that filing. No link when the filing prints no address (newspaper
   notices), when the host is printed by more than one company (a notice service such as pronexus, a parent's site), or
   when the filing cannot be read. An address printed as http:// is linked as https:// when the site answers there.
-  Data: `src/data/websites.json`; `tests/strategy-and-websites.test.ts` checks every address cites the entry's own 有報.
+  First read 2026-11-17: 3,403 of 3,883 entries linked (255 print no address, 197 filings unreadable, 28 shared hosts). Data: `src/data/websites.json`; `tests/strategy-and-websites.test.ts` checks every address cites the entry's own 有報.

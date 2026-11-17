@@ -42,7 +42,9 @@ OUT = ROOT / "src/data/websites.json"
 EDINET_PDF = re.compile(r"^https://disclosure2dl\.edinet-fsa\.go\.jp/searchdocument/pdf/(S1[0-9A-Z]{6})\.pdf$")
 # Where the 公告掲載方法 field ends: the next field of the same table, or a note.
 FIELD_END = re.compile(r"株主に対する特典|（注）|\(注\)|第[0-9０-９一二三四五六七八九]+【|【提出会社の参考情報】")
-URL = re.compile(r"(?:https?://)?(?:[a-z0-9-]+\.)+[a-z]{2,}(?:/[A-Za-z0-9\-._~/%?=&#]*)?", re.I)
+# Case-sensitive on purpose: hosts are printed in lower case, and the page header that follows an address on the next
+# line (「EDINET提出書類」) is upper case — so 「…co.jp」 + 「EDINET」 rejoined is read as co.jp, not co.jpedinet.
+URL = re.compile(r"(?:https?://)?(?:[a-z0-9-]+\.)+[a-z]{2,}(?:/[A-Za-z0-9\-._~/%?=&#]*)?")
 
 
 def latest_yuho(company: dict):
@@ -81,6 +83,9 @@ def address(field: str) -> str | None:
             continue
         parts = urlsplit(raw if re.match(r"https?://", raw, re.I) else "https://" + raw)
         host = parts.hostname
+        # A host cut short by the PDF's line break (「www.showa」) or glued to a file name (「….co.jp.html」) is not used.
+        if host and (re.search(r"\.(html?|php|pdf|aspx?)$", host) or (host.startswith("www.") and host.count(".") < 2)):
+            continue
         if host:
             return f"{parts.scheme.lower()}://{host.lower()}/"
     return None
@@ -128,6 +133,9 @@ def main() -> None:
     if CACHE.exists():
         for line in CACHE.read_text().splitlines():
             r = json.loads(line)
+            # Re-read the address from the kept text, so a fix to `address` applies without downloading again.
+            if r.get("field") and "error" not in r:
+                r["url"] = address(r["field"])
             done[r["id"]] = r
     todo = []
     for cid, c in companies.items():
