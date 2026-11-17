@@ -1,4 +1,4 @@
-import { GA_MEASUREMENT_ID } from "@/lib/site";
+import { GA_MEASUREMENT_ID } from "./config";
 import {
   CONSENT_COOKIE,
   cleanAddress,

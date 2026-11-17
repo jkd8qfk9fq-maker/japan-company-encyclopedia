@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ADS_ENABLED } from "@/components/ads/ad-slot";
-import { GA_MEASUREMENT_ID, SITE_NAME } from "@/lib/site";
+import { GA_MEASUREMENT_ID } from "@/lib/analytics/config";
+import { SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "プライバシーポリシー",

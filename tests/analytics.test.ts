@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { cleanAddress, cleanRequest, cookieDomain, cookieString, isGoogleMeasurement, readConsent, secretsIn } from "@/lib/analytics/guard";
-import { GA_MEASUREMENT_ID } from "@/lib/site";
+import { GA_MEASUREMENT_ID } from "@/lib/analytics/config";
 
 /** JCE-056: Google Analytics only after consent, and only the path of a page leaves the browser. */
 
