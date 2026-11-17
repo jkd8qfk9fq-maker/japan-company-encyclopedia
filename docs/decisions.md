@@ -1028,7 +1028,7 @@ shown, and to keep the rest unreleased until a person has looked.
 - Invariant 1 is unchanged: what the released pages say is sourced; what could not be verified is absent and, where it
   matters, the note says so.
 
-### JCE-058 · 2026-11-17 · Proposed (awaiting the operator) — A financial-update pull request may merge itself when every change was vouched for
+### JCE-058 · 2026-11-17 · Accepted (operator, 2026-11-17) — A financial-update pull request may merge itself when every change was vouched for
 
 Changes JCE-024's "the site changes only when a person merges the pull request", for one case. An evaluation
 (2026-11-17) found quarterly figures waiting on unmerged pull requests (#5, #6): the checks run daily, but the page
