@@ -1,15 +1,37 @@
+import releasedWithNotesJson from "@/data/released-with-notes.json";
 import { checkCompany, type ContentContext } from "@/lib/content/integrity";
+import { parseContent, releasedWithNotesSchema } from "@/lib/content/schemas";
 import type { Company } from "@/types/company";
 
 /**
- * The release line: what a reader of the public site can see. A company is released when its page
- * has been written and passed the gates (`published`). `figures-only` and `needs-attention` entries
- * stay in the repository and in the admin editor, but have no public page — they are not listed,
- * not searched, not in the sitemap, not linked from another company, and their URL is a 404.
- * Promoting an entry to `published` is what releases it; nothing else has to change.
+ * Needs-attention entries released with their notes shown (JCE-057): the notes record facts a reader should know —
+ * a tender offer, an event after the balance-sheet date, a stock split, the basis a table follows — not something
+ * missing or doubtful. An explicit list, reviewed and committed, so what is public never depends on a guess at runtime.
  */
-export function isReleased(company: Pick<Company, "status">): boolean {
-  return company.status.state === "published";
+const releasedWithNotes = new Set(
+  parseContent(releasedWithNotesSchema, releasedWithNotesJson, "src/data/released-with-notes.json").companies,
+);
+
+/**
+ * The release line: what a reader of the public site can see. A company is released when its page
+ * has been written and passed the gates (`published`), or when it is a `needs-attention` entry on the reviewed list
+ * of JCE-057 — its page then shows the notes. `figures-only` and the other `needs-attention` entries stay in the
+ * repository and in the admin editor, but have no public page — they are not listed, not searched, not in the
+ * sitemap, not linked from another company, and their URL is a 404.
+ */
+export function isReleased(company: Pick<Company, "id" | "status">): boolean {
+  return company.status.state === "published" || (company.status.state === "needs-attention" && releasedWithNotes.has(company.id));
+}
+
+/** The notes of a released needs-attention entry, as a reader sees them (JCE-057); none for any other entry. */
+export function publicNotes(company: Pick<Company, "id" | "status">): string[] {
+  if (company.status.state !== "needs-attention" || !releasedWithNotes.has(company.id)) return [];
+  // The editors' notes start with the section they concern ("businessModel: …"): the reader needs the fact, not the
+  // field name. One fact written against two sections appears once.
+  const seen = new Set<string>();
+  return company.status.notes
+    .map((n) => n.replace(/^[A-Za-z]+:\s*/, "").trim())
+    .filter((n) => n.length > 0 && !seen.has(n) && seen.add(n));
 }
 
 export type Readiness = {

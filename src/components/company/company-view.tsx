@@ -31,6 +31,8 @@ import { RelatedCompanies, type ResolvedRelation } from "./related-companies";
 import { SectionTabs, type SectionLink } from "@/components/navigation/section-tabs";
 import { SourceIndex } from "./source-index";
 import { ValueChainFlow } from "./value-chain-flow";
+import { CompanyNotes } from "@/components/company/company-notes";
+import { publicNotes } from "@/lib/release";
 
 /**
  * The body of a company page — hero to footer — and nothing around it. One component, two callers: the public page
@@ -99,6 +101,7 @@ export async function CompanyView({ company }: { company: Company }) {
         headquarters={await headquartersRepository.get(company.id)}
         website={await websiteRepository.get(company.id)}
       />
+      <CompanyNotes notes={publicNotes(company)} />
       <SectionTabs sections={sections} containerId="company-sections" tabbed="mobile" />
       <div id="company-sections">
 

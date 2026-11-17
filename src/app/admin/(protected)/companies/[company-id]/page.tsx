@@ -45,7 +45,7 @@ export default async function AdminCompany({ params }: PageProps<"/admin/compani
           </div>
         </div>
         <p className="mt-2 text-sm text-muted-foreground">
-          最終更新 {formatDateJa(company.updatedAt)} ・ 状態 {company.status.state === "published" ? "公開" : company.status.state === "figures-only" ? "数値のみ（非公開）" : "要確認（非公開）"}
+          最終更新 {formatDateJa(company.updatedAt)} ・ 状態 {company.status.state === "published" ? "公開" : company.status.state === "figures-only" ? "数値のみ（非公開）" : isReleased(company) ? "要確認（注記付きで公開・JCE-057）" : "要確認（非公開）"}
         </p>
         {company.status.state === "needs-attention" && (
           <ul className="mt-3 list-disc space-y-1 pl-5 text-sm">{company.status.notes.map((n) => <li key={n}>{n}</li>)}</ul>

@@ -2,22 +2,26 @@ import { describe, expect, it } from "vitest";
 import { companies } from "@/data/companies";
 import { features } from "@/data/features";
 import { terms } from "@/data/terms";
-import { isReleased, releaseReadiness } from "@/lib/release";
+import releasedWithNotes from "@/data/released-with-notes.json";
+import { isReleased, publicNotes, releaseReadiness } from "@/lib/release";
 import { companyRepository } from "@/lib/repositories";
 
 /**
- * The release line: only `published` companies are visible to readers; everything else stays
- * in the repository for the admin editor and is released by promotion, not by a code change.
+ * The release line: `published` companies, and the needs-attention entries on the reviewed list of JCE-057 (their
+ * notes shown), are visible to readers; everything else stays in the repository for the admin editor and is released
+ * by promotion or by the list, not by a code change.
  */
 
 const unreleased = companies.find((c) => c.status.state === "figures-only");
 const released = companies.find((c) => c.status.state === "published");
 
 describe("release line", () => {
-  it("releases exactly the published companies", () => {
-    expect(isReleased({ status: { state: "published" } })).toBe(true);
-    expect(isReleased({ status: { state: "figures-only" } })).toBe(false);
-    expect(isReleased({ status: { state: "needs-attention", notes: ["x"] } })).toBe(false);
+  it("releases the published companies and the listed needs-attention entries, nothing else", () => {
+    const listed = releasedWithNotes.companies[0]!;
+    expect(isReleased({ id: "any-company", status: { state: "published" } })).toBe(true);
+    expect(isReleased({ id: listed, status: { state: "figures-only" } })).toBe(false);
+    expect(isReleased({ id: "not-on-the-list", status: { state: "needs-attention", notes: ["x"] } })).toBe(false);
+    expect(isReleased({ id: listed, status: { state: "needs-attention", notes: ["x"] } })).toBe(true);
   });
 
   it("lists only released companies publicly, and every registered one to the admin", async () => {
@@ -53,7 +57,33 @@ describe("release readiness", () => {
   };
 
   it("finds every published entry ready — the published tier is held to exactly these rules", () => {
-    for (const c of companies.filter(isReleased)) expect(releaseReadiness(c, context), c.id).toEqual({ ready: true, problems: [], notes: [] });
+    for (const c of companies.filter((x) => x.status.state === "published")) expect(releaseReadiness(c, context), c.id).toEqual({ ready: true, problems: [], notes: [] });
+  });
+
+  it("holds every entry released with notes to the same rules, with only facts in its notes (JCE-057)", () => {
+    const byId = new Map(companies.map((c) => [c.id, c]));
+    expect(new Set(releasedWithNotes.companies).size).toBe(releasedWithNotes.companies.length);
+    for (const id of releasedWithNotes.companies) {
+      const c = byId.get(id);
+      expect(c, `${id} is registered`).toBeDefined();
+      expect(c!.status.state, id).toBe("needs-attention");
+      expect(releaseReadiness(c!, context).problems, id).toEqual([]);
+      expect(c!.financials.some((f) => f.revenue === null || f.netIncome === null), `${id}: no blank figures`).toBe(false);
+      const notes = publicNotes(c!);
+      expect(notes.length, id).toBeGreaterThan(0);
+      for (const n of notes) {
+        // Nothing missing or doubtful, and no editors' working language, on a public page.
+        expect(n, id).not.toMatch(/取得できな|補う必要|確認が必要|確認する必要|人の確認|要確認|確認できな|undefined|見当たりません|不一致|一致しな|未確認|判断できな/);
+        expect(n, id).not.toMatch(/financialNotes|TAXONOMY|証拠パック|エントリー|リサーチログ|sourceId|書くこと|を確認すること|^[A-Za-z]+:/);
+      }
+    }
+  });
+
+  it("shows a released entry's notes without the editors' section names, each fact once", () => {
+    const fake = { id: releasedWithNotes.companies[0]!, status: { state: "needs-attention" as const, notes: ["businessModel: 同じ事実。", "businessStructure: 同じ事実。", "history: 別の事実。"] } };
+    expect(publicNotes(fake)).toEqual(["同じ事実。", "別の事実。"]);
+    expect(publicNotes({ id: "not-on-the-list", status: { state: "needs-attention", notes: ["x"] } })).toEqual([]);
+    expect(publicNotes({ id: fake.id, status: { state: "published" } })).toEqual([]);
   });
 
   it("says what a figures-only entry still lacks, instead of calling it ready", () => {

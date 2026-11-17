@@ -1001,3 +1001,26 @@ local checks passed. Restored by rolling the Worker back to the previous version
 (8ec3ef0b). Fixed by keeping the ID in `src/lib/analytics/config.ts` (no imports) and by a second test that follows
 every import of every Client Component. A release that adds client code is now checked on the production static
 build (`npm run build:static`) in a browser for page errors before it goes out.
+
+### JCE-057 · 2026-11-17 · Accepted (operator) — Needs-attention entries whose notes are only facts are released, notes shown
+
+An evaluation of the service (2026-11-17) found 1,491 written entries without a page — 42% of the written content —
+because JCE-018 releases only `published`. Reading their notes, most do not say that anything is missing or doubtful:
+they record facts a reader should know (a tender offer, an event after the balance-sheet date, a stock split, a
+merger, a planned move, which basis a table follows). The operator chose (2026-11-17) to release those, with the notes
+shown, and to keep the rest unreleased until a person has looked.
+
+- **An explicit list, not a runtime rule**: `src/data/released-with-notes.json` (907 entries at the first release),
+  validated by `releasedWithNotesSchema` and read by `isReleased` (`src/lib/release.ts`). The entries keep their
+  `needs-attention` state and notes, so the integrity rules for that state still hold; nothing is promoted silently.
+- **Who is on it**: notes that are facts only — none that says something could not be obtained, must be added or
+  checked, or does not match; no editors' working language (field names, evidence packs, instructions); no blank figure;
+  and the entry passes the published tier's checks (`releaseReadiness`) with no problem. `tests/release.test.ts` holds
+  every listed entry to all of this, so a later edit that adds a doubt to a listed entry fails the build.
+- **The reader sees the notes**: 「この企業についての注記」 under the company header (`company-notes.tsx`), folded, with
+  the editors' section names removed and each fact once, and a line saying the page reflects the filing's fiscal year.
+- **Still unreleased** (584): notes that something is to be added or confirmed or may be wrong (354), notes in the
+  editors' working language or otherwise unclassified (224), blank figures (6). They are released one by one as a
+  person resolves them — promotion to `published`, or adding the id here once the notes are facts only.
+- Invariant 1 is unchanged: what the released pages say is sourced; what could not be verified is absent and, where it
+  matters, the note says so.

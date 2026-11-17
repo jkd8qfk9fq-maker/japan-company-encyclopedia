@@ -337,6 +337,14 @@ export const websitesSchema = z.strictObject({
   companies: z.record(kebab, z.strictObject({ url: z.string().regex(/^https?:\/\/[a-z0-9.-]+\/$/), sourceId: kebab })),
 });
 
+/** JCE-057: the needs-attention entries released with their notes shown — an explicit, reviewed list. */
+export const releasedWithNotesSchema = z.strictObject({
+  decision: text,
+  decidedAt: isoDate,
+  rule: text,
+  companies: z.array(kebab),
+});
+
 /** Parse or throw an error that names the file and the exact field. */
 export function parseContent<T>(schema: z.ZodType<T>, value: unknown, label: string): T {
   const result = schema.safeParse(value);
