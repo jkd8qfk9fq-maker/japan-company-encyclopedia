@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { assetRequest, redirectTarget } from "../worker/index";
+import { assetRequest, redirectTarget, withShareImageType } from "../worker/index";
 
 describe("worker redirects", () => {
   it("sends the old workers.dev address and www. to kigyo-hyakka.com, keeping the path", () => {
@@ -27,5 +27,16 @@ describe("assetRequest", () => {
     expect(assetRequest(request)).toBe(request);
     const page = new Request("https://kigyo-hyakka.com/discover/");
     expect(assetRequest(page)).toBe(page);
+  });
+});
+
+describe("withShareImageType", () => {
+  it("labels a ranking's share image as PNG, and nothing else", () => {
+    const asset = () => new Response("png", { headers: { "content-type": "application/octet-stream", "cache-control": "x" } });
+    const image = withShareImageType("/rankings/net-margin/opengraph-image", asset());
+    expect(image.headers.get("content-type")).toBe("image/png");
+    expect(image.headers.get("cache-control")).toBe("x");
+    expect(withShareImageType("/rankings/net-margin/", asset()).headers.get("content-type")).toBe("application/octet-stream");
+    expect(withShareImageType("/x/opengraph-image", new Response("no", { status: 404 })).status).toBe(404);
   });
 });
