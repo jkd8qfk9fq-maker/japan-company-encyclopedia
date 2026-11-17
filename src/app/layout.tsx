@@ -8,6 +8,7 @@ import { ServiceWorkerRegistration } from "@/components/pwa/service-worker-regis
 import { ANALYTICS_TOKEN, BASE_PATH, OG_IMAGES, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import { THEME_SCRIPT } from "@/lib/storage/theme-script";
 import "./globals.css";
+import { AnalyticsConsent } from "@/components/analytics/analytics-consent";
 
 /*
  * Three faces, three jobs:
@@ -97,6 +98,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SiteFooter />
         <BottomNavigation />
         <ServiceWorkerRegistration />
+        <AnalyticsConsent />
         {ANALYTICS_TOKEN && (
           <script
             defer
