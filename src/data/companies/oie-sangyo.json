@@ -4,15 +4,142 @@
   "name": "尾家産業",
   "officialName": "尾家産業株式会社",
   "nameEn": "OIE SANGYO CO., LTD.",
-  "description": null,
+  "description": "ホテルやレストラン、病院・高齢者施設などに食品を届ける、全国展開の業務用食品卸売会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "food",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "food-wholesale",
+      "name": "食品卸売事業",
+      "description": "ホテル・レストラン・居酒屋・事業所給食などの外食業態、病院・高齢者施設などのヘルスケアフード業態、テイクアウト・デリバリーなどの中食業態に食品を卸売する、当社グループ唯一の報告セグメントです。2026年3月期の売上高は129,321百万円で、連結売上高のほぼ全てを占めます。物流やシステムの支援、キャッシュアンドキャリー（C&C）店舗の運営、プライベートブランド商品の開発・販売も行っています。倉庫業は重要性が乏しいため、セグメント別の記載が省略されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "frozen-food",
+          "name": "冷凍食品",
+          "description": "冷凍食品の販売です。2026年3月期の売上高は67,912百万円で、商品区分の中で最も大きい区分です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "room-temperature-food",
+          "name": "常温食品",
+          "description": "常温食品の販売です。2026年3月期の売上高は44,371百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "refrigerated-food",
+          "name": "冷蔵食品",
+          "description": "冷蔵食品の販売です。2026年3月期の売上高は13,784百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "non-food",
+          "name": "非食品",
+          "description": "食品以外の商品の販売です。2026年3月期の売上高は2,443百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "alcoholic-beverages",
+          "name": "酒類",
+          "description": "酒類の販売です。2026年3月期の売上高は638百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "warehouse",
+          "name": "倉庫業",
+          "description": "倉庫業です。重要性が乏しいため報告セグメントには含まれておらず、2026年3月期の売上高は171百万円です。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "外食・給食・中食の事業者に、常温・冷蔵・冷凍の食品や自社ブランド商品を仕入れて販売し、自社の物流網と店舗でも届ける事業モデルです。",
+    "products": [
+      "常温食品",
+      "冷蔵食品",
+      "冷凍食品",
+      "酒類",
+      "非食品",
+      "プライベートブランド商品（「サンホーム」「燦宝夢」など）"
+    ],
+    "customers": [
+      "ホテル・レストラン・居酒屋などの外食事業者",
+      "事業所給食などの給食事業者",
+      "病院・高齢者施設などのヘルスケアフード事業者",
+      "テイクアウト・デリバリーなどの中食事業者",
+      "C&C店舗を利用する飲食店などの事業者"
+    ],
+    "revenueSources": [
+      "食品・酒類・非食品などの商品の販売代金",
+      "C&C店舗での販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "当社と子会社2社のグループ",
+        "description": "当社と、連結子会社の寿屋商事株式会社、非連結子会社のウェルユー・フード株式会社でグループを構成しています。全国に支店や営業所、物流拠点を持ち、2026年3月期の連結従業員数は873人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "業務用食品の卸売とPB商品の開発・販売",
+        "description": "ホテル・レストランなどの外食、病院・高齢者施設などのヘルスケアフード、テイクアウト・デリバリーなどの中食の各業態に、常温・冷蔵・冷凍の食品、酒類、非食品を販売しています。自社開発のプライベートブランド商品も扱い、物流や受発注システムの支援、C&C（キャッシュアンドキャリー）店舗「サンプラザ」や「ももひこや」の運営も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "外食・給食・ヘルスケアフードの事業者が顧客",
+        "description": "主な顧客は、ホテル・レストラン・居酒屋などの外食事業者、事業所給食の事業者、病院・高齢者施設などです。食材提案会の開催や、開業準備の段階からの支援で新規の取引先を広げており、2026年3月期には約1,000軒の新規ユーザーとの取引が始まりました。売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "食品の販売で売上を得る",
+        "description": "2026年3月期の連結売上高は129,321百万円で、前期比8.4％増でした。商品別では冷凍食品が67,912百万円、常温食品が44,371百万円、冷蔵食品が13,784百万円と、冷凍・常温の食品が中心です。本邦の外部顧客への売上高が全体の90％を超えています。"
+      },
+      {
+        "kind": "profit",
+        "title": "提案営業と商品の拡充で収益を確保する",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は2,806百万円でした。季節ごとの食材提案会の開催、ヘルスケア向けを含むプライベートブランド商品の拡充、食品安全の認証であるFSSC22000の取得拠点の拡大などを通じて、商品の確保と適正な価格での提供に注力しています。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2024年3月期",
@@ -27,12 +154,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12694000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 760,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第64期（2024年3月期）より連結財務諸表を作成しており、それ以前の期については連結経営指標等を記載していません。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -47,7 +175,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14476000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 838,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +195,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 16970000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 873,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -75,8 +203,283 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1947,
+      "title": "尾家商店を創業",
+      "description": "故尾家百彦が大阪市内に個人商店「尾家商店」を創業し、レストラン・ホテル・喫茶店・食堂などへの食品材料の販売を開始しました。",
+      "significance": "会社の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "株式会社尾家商店を設立",
+      "description": "株式会社尾家商店を設立し、法人として事業を行う体制になりました。",
+      "significance": "法人化による組織の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "PB商品「サンホーム」の開発と関東進出",
+      "description": "プライベートブランド商品「サンホーム」を開発し、販売を開始しました。同年、関東地区進出の基盤として東京都中野区に東京営業所を開設しました。",
+      "significance": "自社ブランド商品の展開と全国展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "尾家産業株式会社に改称",
+      "description": "本社を大阪市北区豊崎の現在地に新築移転し、社名を尾家産業株式会社に改称しました。",
+      "significance": "現在の社名と本社の基礎ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "三温度分離式配送車を導入",
+      "description": "温度帯別商品管理を一層徹底するため、常温・冷蔵・冷凍の三温度分離式配送車を導入しました。同年、東京都大田区の東京流通センター内に東京支店を開設しました。",
+      "significance": "温度帯ごとに品質を保つ物流体制の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "C&C店舗の第1号店を開設",
+      "description": "サンプラザ姫路店を開設し、キャッシュアンドキャリー（C&C）店舗の事業を開始しました。",
+      "significance": "現在のC&C業態「サンプラザ」の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場会社としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "東京証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "市場第一部銘柄に指定",
+      "description": "東京・大阪証券取引所市場第一部銘柄に指定されました。",
+      "significance": "第一部銘柄への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "寿屋商事を連結子会社化",
+      "description": "徳島市で業務用食品卸売事業を行う壽屋商事株式会社（現・寿屋商事株式会社）の発行株式数の100％を取得し、連結子会社化しました。",
+      "significance": "四国地区の事業基盤が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ウェルユー・フードを子会社化",
+      "description": "ウェルユー・フード株式会社の発行株式数の100％を取得し、非連結子会社化しました。",
+      "significance": "グループ会社の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "sapporo-holdings",
+      "relationship": "supplier",
+      "description": "酒類の仕入先です。同社の株式を保有し、酒類の安定的な調達と関係強化を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fuji-oil",
+      "relationship": "supplier",
+      "description": "食品の仕入先です。同社の株式を保有し、常温・冷凍食品の安定的な調達と関係強化を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "niitaka",
+      "relationship": "supplier",
+      "description": "非食品の仕入先です。同社の株式を保有し、非食品の安定的な調達と関係強化を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kagome",
+      "relationship": "supplier",
+      "description": "食品の仕入先です。同社の株式を保有し、常温・冷凍食品の安定的な調達と関係強化を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippn",
+      "relationship": "supplier",
+      "description": "食品の仕入先です。同社の株式を保有し、常温食品の安定的な調達と関係強化を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "umios",
+      "relationship": "supplier",
+      "description": "冷凍食品の仕入先です（旧社名はマルハニチロ株式会社）。同社の株式を保有し、冷凍食品の安定的な調達と関係強化を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "showa-sangyo",
+      "relationship": "supplier",
+      "description": "食品の仕入先です。同社の株式を保有し、常温食品の安定的な調達と関係強化を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "biken-techno",
+      "relationship": "supplier",
+      "description": "建物の保守・点検を依頼している取引先です。同社の株式を保有し、安定的な事業活動の維持継続を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "gourmet-kineya",
+      "relationship": "customer",
+      "description": "外食業態の重要な顧客です。同社の株式を保有し、取引関係の維持・拡大を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fujio-food-group",
+      "relationship": "customer",
+      "description": "外食業態の重要な顧客です。同社の株式を保有し、取引関係の維持・拡大を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kanmonkai",
+      "relationship": "customer",
+      "description": "外食業態の重要な顧客です。同社の株式を保有し、取引関係の維持・拡大を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "imperial-hotel",
+      "relationship": "customer",
+      "description": "宿泊施設の重要な顧客です。同社の株式を保有し、取引関係の維持・拡大を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fujita-kanko",
+      "relationship": "customer",
+      "description": "宿泊施設の重要な顧客です。同社の株式を保有し、取引関係の維持・拡大を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "royal-holdings",
+      "relationship": "customer",
+      "description": "外食業態、宿泊施設の重要な顧客です。同社の株式を保有し、取引関係の維持・拡大を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "oizumi",
+      "relationship": "customer",
+      "description": "外食業態の重要な顧客です。同社の株式を保有し、取引関係の維持・拡大を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "h2o-retailing",
+      "relationship": "customer",
+      "description": "外食業態の重要な顧客です。同社の株式を保有し、取引関係の維持・拡大を図る旨が開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "itochu",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、発行済株式（自己株式を除く）の2.48％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -84,13 +487,47 @@
       "publisher": "尾家産業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDVR.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YDVR",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "長期ビジョン「OIE vision 2035」に「食を通じて関わる全ての人に「おいしさ」「やさしさ」「笑顔」を届ける「いい会社」の実現」を掲げています。2026年3月期から始まった第6次中期経営計画では、「Change! Challenge! Create!」（変われ！ 挑め！ 創り出せ！）をスローガンに、収益力の強化（ヘルスケアフードとプライベートブランド商品を重点施策とする）、事業領域の拡大（C&C業態の店舗拡大、ECビジネス、海外市場への商品供給）、経営基盤の整備・強化（健康経営の推進）を重点戦略としています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "創業以来、取扱商品の拡大と各地への営業拠点の設置を進め、数少ない全国的な業務用食品卸売業としての基盤を確立してきたとしています。経営の基本方針では、顧客第一主義を基軸に、取引先にとってなくてはならない存在となることを経営理念に掲げています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【沿革】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は、報告セグメントである食品卸売事業がほぼ全てを占め、商品別では冷凍食品と常温食品の2区分で全体の約87％を占めます。地区別では関西地区が54,003百万円と最も大きく、関東地区が34,828百万円と続きます。",
+        "basis": "セグメント情報の【関連情報】（製品及びサービスごとの情報、当連結会計年度）および経営成績等の分析に印字された地区別売上高と、連結売上高129,321百万円との比較による。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,15 +4,154 @@
   "name": "東鉄工業",
   "officialName": "東鉄工業株式会社",
   "nameEn": "TOTETSU KOGYO CO.,LTD.",
-  "description": null,
+  "shortNameEn": "TOTETSU KOGYO",
+  "description": "鉄道工事を中心とする総合建設業として、土木工事と建築工事を企画から施工、監理まで手がけます。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "civil-engineering",
+      "name": "土木事業",
+      "description": "土木工事全般の企画、設計、施工、監理を手がけます。2026年3月期の外部顧客への売上高は107,980百万円で、前期比7.1％増です。",
+      "products": [
+        "土木工事"
+      ],
+      "customers": [
+        "東日本旅客鉄道株式会社をはじめとする鉄道事業者",
+        "公共事業体",
+        "民間事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "building-construction",
+      "name": "建築事業",
+      "description": "建築工事全般の企画、設計、施工、監理を手がけます。2026年3月期の外部顧客への売上高は45,905百万円で、前期比7.6％減です。",
+      "products": [
+        "建築工事"
+      ],
+      "customers": [
+        "東日本旅客鉄道株式会社をはじめとする鉄道事業者",
+        "公共事業体",
+        "民間事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "鉄道関連製品の製造及び販売、不動産賃貸事業、環境事業などを営みます。報告セグメントには含まれません。2026年3月期の外部顧客への売上高は9,132百万円で、前期比4.3％減です。",
+      "products": [
+        "鉄道関連製品",
+        "不動産賃貸",
+        "環境事業"
+      ],
+      "customers": [
+        "鉄道事業者",
+        "民間事業者"
+      ],
+      "children": [
+        {
+          "id": "railway-products",
+          "name": "鉄道関連製品の製造及び販売",
+          "description": "鉄道関連製品の製造及び販売を手がけます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "real-estate-leasing",
+          "name": "不動産賃貸事業",
+          "description": "商業ビル等の賃貸事業を営みます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "environmental-business",
+          "name": "環境事業",
+          "description": "発電事業や緑化事業などの環境事業を営みます。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道工事を中心とする総合建設業として、土木工事と建築工事を企画から施工、監理まで手がけます。",
+    "products": [
+      "土木工事",
+      "建築工事",
+      "鉄道関連製品",
+      "不動産賃貸",
+      "環境事業"
+    ],
+    "customers": [
+      "東日本旅客鉄道株式会社",
+      "公営・民間鉄道事業者",
+      "公共事業体",
+      "民間事業者"
+    ],
+    "revenueSources": [
+      "土木工事・建築工事の請負による収入",
+      "鉄道関連製品の販売による収入",
+      "不動産賃貸による収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "鉄道工事に強みを持つ総合建設業",
+        "description": "東鉄工業グループは、当社と子会社5社で構成され、関連会社1社とともに建設業を中心に事業を展開しています。従業員数は1,921人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "土木工事と建築工事の企画から施工、監理まで",
+        "description": "土木工事と建築工事の企画、設計、施工、監理を手がけ、鉄道関連製品の製造販売や不動産賃貸、環境事業も営みます。"
+      },
+      {
+        "kind": "customer",
+        "title": "鉄道事業者や公共事業体、民間事業者",
+        "description": "東日本旅客鉄道をはじめとする鉄道事業者や、公共事業体、民間事業者に工事や製品を提供します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "工事の請負代金と製品の販売代金",
+        "description": "工事の請負代金や鉄道関連製品の販売代金などが売上高となります。2026年3月期の売上高は163,018百万円で、前期比1.8％増です。"
+      },
+      {
+        "kind": "profit",
+        "title": "売上高から費用を差し引いた当期純利益",
+        "description": "売上高から費用を差し引いた残りが当期純利益となります。2026年3月期の親会社株主に帰属する当期純利益は12,845百万円で、前期比1,280百万円増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +166,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 98525154000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1856,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +186,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 103490067000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1883,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +206,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 111483492000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1853,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +226,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 120777353000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1864,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +246,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 133975028000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1921,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +254,196 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1943,
+      "title": "東京鐡道工業株式会社の設立",
+      "description": "国鉄の輸送力確保のため、鉄道省の要請で関東地方の国鉄関係業者が集まり、東京鐡道工業株式会社として設立しました。",
+      "significance": "会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "一般建設業者としての再発足",
+      "description": "国鉄の発注方法が指名競争入札制度に改められたため、一般建設業者として再発足しました。",
+      "significance": "一般建設業者としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "商号を東鉄工業株式会社に変更",
+      "description": "商号を東鉄工業株式会社に変更しました。",
+      "significance": "現在の商号となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第二部への上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式市場への上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "東京証券取引所市場第一部への上場",
+      "description": "東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "東京証券取引所市場第一部への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "子会社トーコーリホームの設立",
+      "description": "子会社の株式会社トーコーリホーム（現在の東鉄創建株式会社）を設立しました。",
+      "significance": "現在の東鉄創建株式会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "鉄道支店の設置",
+      "description": "鉄道支店を設置しました。",
+      "significance": "鉄道工事の体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "三和機工の子会社化",
+      "description": "三和機工株式会社（現在の東鉄機工株式会社）の全株式を取得し、子会社化しました。",
+      "significance": "現在の東鉄機工株式会社の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "本社の移転",
+      "description": "本社を東京都新宿区信濃町34番地に移転しました。",
+      "significance": "現在の本社の所在地となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "興和化成の子会社化",
+      "description": "興和化成株式会社の一部株式を取得し、子会社化しました。",
+      "significance": "鉄道関連製品の製造販売をグループに加えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場への移行",
+      "description": "市場区分の再編に伴い、上場市場を東京証券取引所プライム市場に移行しました。",
+      "significance": "現在の上場市場となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "全溶の子会社化",
+      "description": "株式会社全溶の一部株式を取得し、子会社化しました。",
+      "significance": "土木工事の施工を担う連結子会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東日本旅客鉄道がその他の関係会社に該当",
+      "description": "東日本旅客鉄道株式会社が当社のその他の関係会社に該当しました。",
+      "significance": "東日本旅客鉄道株式会社がその他の関係会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "DX推進室の設置",
+      "description": "本部を再編し、DX推進室を設置しました。",
+      "significance": "建設現場のデジタル化を進める体制を整えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "本部の再編（予定）",
+      "description": "グループ業務支援室の設置や業務改善推進本部からイノベーション推進本部への組織改正など、本部の再編を予定しています。有報の提出時点では予定です。",
+      "significance": "有報の提出時点では予定であり、実施の有無は確認できていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "east-japan-railway",
+      "relationship": "other-affiliated-company",
+      "description": "2026年3月31日現在、議決権の22.12％を保有されるその他の関係会社です。同社の建設工事を請け負っており、役員を1名兼任しています。2026年3月期の同社に対する売上高は118,458百万円で、主要な得意先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "nippon-densetsu-kogyo",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の株式の3.15％を保有する大株主です。JR東日本関連の鉄道電気設備会社として、工事で連携しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tokyu",
+      "relationship": "customer",
+      "description": "東急株式会社から建設工事を受注しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sotetsu-holdings",
+      "relationship": "customer",
+      "description": "相鉄ホールディングス株式会社から建設工事を受注しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +451,55 @@
       "publisher": "東鉄工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YA1U.pdf",
       "publishedAt": "2026-06-11",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YA1U",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年6月に予定されていた本部の再編（グループ業務支援室の設置、業務改善推進本部からイノベーション推進本部への組織改正など）は、有報の提出時点では予定であり、実施の有無は確認できていません。",
+      "businessStructure: 2026年6月に予定されていた本部の再編（グループ業務支援室の設置、業務改善推進本部からイノベーション推進本部への組織改正など）は、有報の提出時点では予定であり、実施の有無は確認できていません。",
+      "history: 2026年6月に予定されていた本部の再編（グループ業務支援室の設置、業務改善推進本部からイノベーション推進本部への組織改正など）は、有報の提出時点では予定であり、実施の有無は確認できていません。",
+      "industry: 2026年6月に予定されていた本部の再編（グループ業務支援室の設置、業務改善推進本部からイノベーション推進本部への組織改正など）は、有報の提出時点では予定であり、実施の有無は確認できていません。",
+      "relatedCompanies: 2026年6月に予定されていた本部の再編（グループ業務支援室の設置、業務改善推進本部からイノベーション推進本部への組織改正など）は、有報の提出時点では予定であり、実施の有無は確認できていません。",
+      "terms: 2026年6月に予定されていた本部の再編（グループ業務支援室の設置、業務改善推進本部からイノベーション推進本部への組織改正など）は、有報の提出時点では予定であり、実施の有無は確認できていません。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2043年の創業100周年に向け、交通インフラメンテナンスのリーディングカンパニーを目指す長期ビジョン「TOTETSU VISION 100」を掲げています。5つの戦略を軸とする中期経営計画「アクションプラン2029」では、3つの重点事業領域を中心に事業拡大を進めます。",
+        "asOf": "2026-06-11",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "長年の鉄道工事で培った技術力と、省人化のための大型保線機械を活用した施工ノウハウを持ちます。特殊資格と技術力を活かし、道路橋の長寿命化対応工事や線路下の推進工事など、難易度の高い工事に対応しています。",
+        "basis": "2026年3月期の経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の記載に基づきます。",
+        "asOf": "2026-06-11",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は163,018百万円で、前期比1.8％増、親会社株主に帰属する当期純利益は12,845百万円で、前期比1,280百万円増加しました。東日本旅客鉄道株式会社が主要な得意先で、同社に対する売上高は118,458百万円です。",
+        "basis": "2026年3月期の経営成績と主要な顧客ごとの情報の記載に基づきます。",
+        "asOf": "2026-06-11",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

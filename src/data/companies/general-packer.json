@@ -4,19 +4,151 @@
   "name": "ゼネラルパッカー",
   "officialName": "ゼネラルパッカー株式会社",
   "nameEn": "GENERAL PACKER CO., LTD.",
-  "description": null,
+  "shortNameEn": "GENERAL PACKER CO., LTD.",
+  "description": "自動包装機械と食品製菓製造機械の設計・製造・販売と保守サービスを行う機械メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "packaging-machinery",
+      "name": "包装機械事業",
+      "description": "自動包装機械と包装システムの設計・製造・販売と保守サービスを行う事業です。主力商品は給袋自動包装機です。2026年7月期の外部顧客への売上高は10,036百万円で、前期に比べ10.2％増えました。当社のほか、中国の蘇州日技通用包装机械有限公司と錦通日技包装科技（江蘇）有限公司が製造・販売を、米国のGeneral Packer America Corporationが販売と保守サービスを担っています。",
+      "customers": [
+        "包装機械を導入する国内外の企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "automatic-packaging-machines",
+          "name": "自動包装機械・包装システム",
+          "description": "給袋自動包装機を主力に、自動包装機械と包装システムの設計・製造・販売を行います。売上高は独立して開示されていません。",
+          "customers": [
+            "包装機械を導入する国内外の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "maintenance-service",
+          "name": "保守サービス",
+          "description": "販売した自動包装機械の保守サービスを行います。中国では蘇州日技通用包装机械有限公司が、米国ではGeneral Packer America Corporationも担います。売上高は独立して開示されていません。",
+          "customers": [
+            "包装機械を導入した企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "production-machinery",
+      "name": "生産機械事業",
+      "description": "食品製菓製造機械と装置の設計・製造・販売と保守サービスを行う事業です。連結子会社のオサ機械株式会社が担っています。2026年7月期の外部顧客への売上高は1,162百万円で、前期に比べ16.2％増えました。",
+      "customers": [
+        "食品・製菓メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "chocolate-machinery",
+          "name": "チョコレート製造機械",
+          "description": "チョコレート製造にかかわる全工程の機械を取り扱い、長年培った経験と技術力をもとに、顧客からの受注ごとに個別のカスタマイズを行います。売上高は独立して開示されていません。",
+          "customers": [
+            "食品・製菓メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【研究開発活動】"
+        },
+        {
+          "id": "confectionery-equipment",
+          "name": "グミ等の製造装置",
+          "description": "チョコレート製造の技術とノウハウを応用した、グミ等の製造装置の開発や仕様検討にも取り組んでいます。売上高は独立して開示されていません。",
+          "customers": [
+            "食品・製菓メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【研究開発活動】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "主力の給袋自動包装機を中心とする自動包装機械と包装システムを国内外に販売し、チョコレート製造機械をはじめとする食品製菓製造機械の製造販売と保守サービスで対価を得るモデルです。",
+    "products": [
+      "給袋自動包装機",
+      "自動包装機械・包装システム",
+      "チョコレート製造機械をはじめとする食品製菓製造機械・装置",
+      "保守サービス"
+    ],
+    "customers": [
+      "包装機械を導入する国内外の企業",
+      "食品・製菓メーカー"
+    ],
+    "revenueSources": [
+      "自動包装機械・包装システムの販売代金",
+      "食品製菓製造機械・装置の販売代金",
+      "保守サービスの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ゼネラルパッカー",
+        "description": "ゼネラルパッカーと連結子会社3社でグループを構成します。2026年7月期の従業員数は229人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "包装機械と生産機械",
+        "description": "給袋自動包装機を主力とする自動包装機械と包装システム、チョコレート製造の全工程の機械をはじめとする食品製菓製造機械と装置の設計・製造・販売と、保守サービスを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "製造業の企業と食品・製菓メーカー",
+        "description": "顧客は、包装工程の自動化や省力化を進める国内外の企業と、食品・製菓メーカーです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "機械の販売代金と保守の対価",
+        "description": "主な収入は、自動包装機械や食品製菓製造機械の販売代金と、保守サービスの対価です。2026年7月期の売上高は11,198百万円で、前期に比べ10.8％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年7月期の親会社株主に帰属する当期純利益は828百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年7月期",
@@ -31,11 +163,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5794515000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 198,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -51,11 +183,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6324796000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 208,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -71,11 +203,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6876716000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 208,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -91,11 +223,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7474706000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 215,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -119,32 +251,196 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1961,
+      "title": "自動包装機の販売会社を設立",
+      "description": "自動包装機の販売を目的として、名古屋市中区に東陽商事有限会社が設立されました。",
+      "significance": "現在の会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "株式会社ゼネラルパッカーを設立",
+      "description": "自動包装機の製造を目的として、名古屋市西区に株式会社ゼネラルパッカーが設立されました。",
+      "significance": "製造を担う会社の設立で、現在の商号の由来です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "合併によりゼネラルパッカー株式会社が発足",
+      "description": "ゼネラルパッカー販売株式会社が株式会社ゼネラルパッカーを吸収合併し、商号をゼネラルパッカー株式会社に変更しました。本店は現在地の愛知県北名古屋市です。",
+      "significance": "現在の会社の法人としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "株式を店頭登録",
+      "description": "当社株式を日本証券業協会へ店頭登録しました。",
+      "significance": "資本市場への第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、株式会社ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "名古屋証券取引所市場第二部に上場",
+      "description": "名古屋証券取引所市場第二部に株式を上場しました。",
+      "significance": "現在の名古屋証券取引所メイン市場につながる上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "ワイ・イー・データと資本業務提携",
+      "description": "株式会社ワイ・イー・データ（現 株式会社ＦＡＭＳ）と資本業務提携契約を締結しました。",
+      "significance": "現在のその他の関係会社であるＦＡＭＳとの関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "中国に蘇州日技通用包装机械有限公司を設立",
+      "description": "中国江蘇省常熟市に蘇州日技通用包装机械有限公司（現 連結子会社）を設立しました。",
+      "significance": "海外の製造・販売拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "オサ機械株式会社を完全子会社化",
+      "description": "オサ機械株式会社の全株式を取得し、完全子会社化しました。",
+      "significance": "生産機械事業を担う会社のグループ入りです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "米国にGeneral Packer America Corporationを設立",
+      "description": "米国イリノイ州にGeneral Packer America Corporation（現 連結子会社）を設立しました。",
+      "significance": "北米での販売と保守サービスの拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東証スタンダード市場と名証メイン市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しに伴いスタンダード市場へ移行し、名古屋証券取引所の市場区分見直しに伴いメイン市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "一宮工場を新設",
+      "description": "愛知県一宮市に一宮工場を新設しました。",
+      "significance": "包装機械の生産体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
-    {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第64期(2024/08/01－2025/07/31)",
-      "publisher": "ゼネラルパッカー株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WWCW.pdf",
-      "publishedAt": "2025-10-23",
-      "accessedAt": "2026-09-29"
-    },
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第65期(2025/08/01－2026/07/31)",
       "publisher": "ゼネラルパッカー株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z9C1.pdf",
       "publishedAt": "2026-10-22",
-      "accessedAt": "2026-11-14",
       "docId": "S100Z9C1",
-      "asOf": "2026-07-31"
+      "asOf": "2026-07-31",
+      "accessedAt": "2026-11-13"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「ゼネラルパッカー」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E3%82%BC%E3%83%8D%E3%83%A9%E3%83%AB%E3%83%91%E3%83%83%E3%82%BC%E3%83%BC",
+      "accessedAt": "2026-11-17"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 重要な後発事象として、2026年10月５日付でインドに General Packer India Private Limited を設立し、特定子会社とした旨が記載されています（2026年６月19日開催の取締役会で決議）。登録は2026年７月31日現在のグループ構造（連結子会社３社）で行っており、期間後の子会社設立の反映には人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2027年7月期から2029年7月期までの第8次中期経営計画では、「飛躍的成長に向けたグローバル展開の加速と事業領域の拡大」を基本戦略とし、グローバル市場で信頼され、支持されるグループづくりと、ワンストップで応えるソリューション提供を目指すとしています。省人化や環境配慮型製品の商品化、生産体制とアフターサービス体制の充実、アライアンスやM&Aの推進にも取り組むとしています。",
+        "asOf": "2026-10-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年7月期は、両事業とも海外向け案件の増加が増収に寄与し、売上高は過去最高となりました。期間後のインド子会社の設立も、基本戦略であるグローバル展開の加速に沿った動きです。",
+        "basis": "経営成績の分析に、包装機械事業と生産機械事業のいずれも海外向け案件の増加が増収に寄与し、売上高が過去最高となった旨が、重要な後発事象にインドでの子会社設立が記載されていることによるものです。",
+        "asOf": "2026-10-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "包装機械事業は、ロータリー式充填包装技術を基盤に高性能化・高機能化を進め、主力の給袋自動包装機の販売が伸びています。生産機械事業は、チョコレート製造の全工程の機械を取り扱う技術とノウハウを持ち、顧客からの受注ごとに個別のカスタマイズに応じています。",
+        "basis": "研究開発活動に、ロータリー式充填包装技術を基盤とする製品開発と、チョコレート製造にかかわる全工程の機械を取り扱い個別のカスタマイズを行う旨が記載されていることによるものです。",
+        "asOf": "2026-10-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "自動包装機械の中堅メーカーで、給袋自動包装機を主力商品として事業を展開しています。",
+        "basis": "Wikipediaの記事冒頭で自動包装機械の中堅メーカーと紹介され、経営成績の分析でも給袋自動包装機が主力商品とされていることによるものです。",
+        "asOf": "2026-10-22",
+        "sourceIds": [
+          "yuho-2026",
+          "wikipedia"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年7月期",
     "asOf": "2026-07-31",

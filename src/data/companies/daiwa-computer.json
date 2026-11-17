@@ -4,15 +4,153 @@
   "name": "大和コンピューター",
   "officialName": "株式会社大和コンピューター",
   "nameEn": "DAIWA COMPUTER CO., LTD.",
-  "description": null,
+  "shortNameEn": "DAIWA COMPUTER CO., LTD.",
+  "description": "受託開発を中心とするソフトウェア開発と、SaaS型ソフトウェアサービスを二つの柱とし、農業も手がける情報サービス会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "software-development",
+      "name": "ソフトウェア開発関連事業",
+      "description": "顧客から請け負った受託開発を中心に、システム／ソフトウェアの設計・開発・導入と保守のサービスを提供し、ソフトウェア開発プロセスの改善やCMMI導入のコンサルテーションも行う事業です。2026年7月期の外部顧客への売上高は2,467百万円です。",
+      "customers": [
+        "製造・流通・サービス業などの企業",
+        "ＳＣＳＫ株式会社",
+        "株式会社大塚商会"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "service-integration",
+      "name": "サービスインテグレーション事業",
+      "description": "SaaS型によるソフトウェアサービスの提供と、関連するシステムのコンサルティングから設計・開発・導入、保守、ハードウェアの販売・導入、サプライ供給までで、導入システムや企業活動を一体で支援する事業です。2026年7月期の外部顧客への売上高は594百万円です。",
+      "customers": [
+        "SaaS型ソフトウェアサービスを導入する企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "fit-com",
+          "name": "株式会社フィット・コム",
+          "description": "サービスインテグレーション事業を担う連結子会社（特定子会社）です。当社製品の販売と、同社製品のシステム開発業務の当社への委託を行っています。",
+          "customers": [
+            "SaaS型ソフトウェアサービスを導入する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない区分です。各メーカーのソフトウェアからハードウェアまでのシステム販売と、農作物の生産・加工・販売等を行っています。2026年7月期の外部顧客への売上高は177百万円です。",
+      "customers": [
+        "システムを導入する企業",
+        "農作物の購買者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "roots",
+          "name": "株式会社ルーツ",
+          "description": "静岡県袋井市で農作物の生産・加工・販売と、農業生産に必要な資材等の製造・施工を行う連結子会社です。当社からの農作物の生産委託を受けています。",
+          "customers": [
+            "農作物の購買者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "asakoi-noen",
+          "name": "浅小井農園株式会社",
+          "description": "滋賀県近江八幡市でトマトの生産・加工・運搬・販売を行う連結子会社です。",
+          "customers": [
+            "農作物の購買者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "顧客企業から請け負うシステムの設計・開発・導入・保守と、SaaS型ソフトウェアサービスの提供で対価を得る事業モデルです。",
+    "products": [
+      "受託開発による情報システム",
+      "CMMI導入コンサルテーション",
+      "SaaS型ソフトウェアサービス",
+      "SaaS型スクール管理システム「プラチナスクール」",
+      "ソフトウェア・ハードウェア製品",
+      "農作物"
+    ],
+    "customers": [
+      "製造・流通・サービス業などの企業",
+      "ＳＣＳＫ株式会社",
+      "株式会社大塚商会"
+    ],
+    "revenueSources": [
+      "受託開発・保守サービスの提供の対価",
+      "SaaS型ソフトウェアサービスの提供の対価",
+      "システム販売の対価",
+      "農作物の販売の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "大和コンピューター",
+        "description": "大阪府高槻市に本社を置き、東京証券取引所スタンダード市場に上場する情報サービス会社です。2026年7月期の連結従業員数は196人で、連結子会社は3社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ソフトウェア開発とSaaS型サービス",
+        "description": "受託開発を中心とするソフトウェア開発関連事業と、SaaS型ソフトウェアサービス等を提供するサービスインテグレーション事業を主な事業とし、システム販売や農業に関する活動も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "幅広い業種の企業顧客",
+        "description": "主な顧客は製造・流通・サービス業をはじめとする幅広い業種の企業です。セグメント注記の主要な顧客ごとの情報では、ＳＣＳＫ株式会社と株式会社大塚商会がソフトウェア開発関連事業の主要な顧客として挙げられています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年7月期の売上高は3,239百万円",
+        "description": "2026年7月期の売上高は3,239百万円で、前期比1.1％増でした。内訳はソフトウェア開発関連事業が2,467百万円、サービスインテグレーション事業が594百万円、その他が177百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年7月期の親会社株主に帰属する当期純利益は217百万円",
+        "description": "2026年7月期の親会社株主に帰属する当期純利益は217百万円で、前期比47.9％減でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年7月期",
@@ -27,11 +165,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4408666000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 190,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -47,11 +185,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4783430000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 196,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -67,11 +205,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5101027000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 187,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -87,11 +225,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5365134000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 191,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -115,32 +253,187 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
+  "history": [
     {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第49期(2024/08/01－2025/07/31)",
-      "publisher": "株式会社大和コンピューター",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WXEV.pdf",
-      "publishedAt": "2025-10-29",
-      "accessedAt": "2026-09-29"
+      "year": 1977,
+      "title": "大和コンピューターを設立",
+      "description": "ソフトウェアの開発等を目的として、株式会社大和コンピューターが設立されました。",
+      "significance": "現在の大和コンピューターの起点です。設立時の資本金額は書いていません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
     },
+    {
+      "year": 2003,
+      "title": "CMMIコンサルティング事業を開始",
+      "description": "ソフトウェア開発プロセスのモデルであるCMMIの導入コンサルテーションを行う事業を開始しました。",
+      "significance": "プロセス改善のコンサルテーションが、ソフトウェア開発関連事業の柱の一つになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "株式会社ジャスダック証券取引所に上場しました。",
+      "significance": "株式を公開し、上場会社としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "SaaS型スクール管理システム「プラチナスクール」の提供開始",
+      "description": "SaaS型スクール管理システム「プラチナスクール」の提供を開始しました。",
+      "significance": "自社サービスとしてのSaaS型ソフトウェアサービスの展開が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "フィットネス・コミュニケーションズを子会社化",
+      "description": "フィットネス・コミュニケーションズ株式会社を子会社化しました。同社は2012年に株式会社フィット・コムへ商号を変更し、サービスインテグレーション事業を担っています。",
+      "significance": "サービスインテグレーション事業の中核子会社がグループに加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "アイ・アンド・コム（沖縄）を吸収合併",
+      "description": "連結子会社のアイ・アンド・コム株式会社（沖縄）を吸収合併しました。",
+      "significance": "国内の開発子会社を当社に集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "株式会社ルーツを設立し農業に参入",
+      "description": "農作物の生産・加工・販売を目的として、静岡県袋井市に株式会社ルーツ（100％子会社）を設立しました。",
+      "significance": "農業に関する活動が始まり、現在のスマート農業への取組につながっています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "二本社制へ移行",
+      "description": "東京本部を東京本社に改称し、大阪の本社との二本社制としました。",
+      "significance": "大阪と東京の二本社体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "CMMI V2.0で成熟度レベル5を達成",
+      "description": "CMMI V2.0で成熟度レベル5を達成しました。",
+      "significance": "ソフトウェア開発プロセスの成熟度が最高位の評価を得ました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、東京証券取引所のJASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場であるスタンダード市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "浅小井農園を子会社化",
+      "description": "浅小井農園株式会社を子会社化しました。",
+      "significance": "トマトの生産・加工・販売を行う会社が加わり、農業に関する活動が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "CMMI V3.0で成熟度レベル5を達成",
+      "description": "CMMI V3.0で成熟度レベル5を達成しました。",
+      "significance": "最新版のモデルでも最高位の成熟度を維持しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "otsuka",
+      "relationship": "customer",
+      "description": "ソフトウェア開発関連事業の主要な顧客です。同社のパッケージ「SMILE」シリーズの開発に原本開発から長きに渡り関与しており、取引関係の維持・強化を目的として同社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    }
+  ],
+  "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第50期(2025/08/01－2026/07/31)",
       "publisher": "株式会社大和コンピューター",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100ZA4D.pdf",
       "publishedAt": "2026-10-27",
-      "accessedAt": "2026-11-14",
       "docId": "S100ZA4D",
-      "asOf": "2026-07-31"
+      "asOf": "2026-07-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年9月に、2030年7月期を最終年度とする中期経営計画「DCX2030」を策定しました。創業50周年を迎える2027年を一つの節目と捉え、第二創業期としての変革を推進する計画です。AI等の利活用によるソフトウェア開発の生産性と品質の向上、自社クラウドサービスやスマート農業分野への成長投資、パートナー企業との協業によるソリューション提案の拡大、人的資本への積極投資を軸にしています。クラウドサービスやスマート農業などの注力領域は、受託開発に並ぶ収益の柱へと育成・拡大していく方針です。",
+        "asOf": "2026-10-27",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "ソフトウェア開発プロセスの国際的なモデルであるCMMIで最高位の成熟度レベル5を達成している開発プロセスの成熟度と、受託開発からSaaS型サービス、保守までをグループ内で一貫して提供できる体制が強みです。",
+        "basis": "【沿革】にCMMI V3.0で成熟度レベル5を達成したこと（2024年）が印字されていることと、【事業の内容】に受託開発・設計・開発・導入・保守とSaaS型ソフトウェアサービスの双方が事業として印字されていること",
+        "asOf": "2026-10-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "情報サービス産業では、DX推進や働き方改革、人手不足への対応に向けたシステム投資需要が堅調に推移しているとされています。同社の売上高はソフトウェア開発関連事業が全体の4分の3以上を占めています。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、情報サービス産業において企業のIT投資意欲が底堅く、システム投資需要が堅調に推移したと印字されていることと、セグメント注記の外部顧客への売上高でソフトウェア開発関連事業が2,467百万円と全体3,239百万円の大半を占めること",
+        "asOf": "2026-10-27",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年7月期",
     "asOf": "2026-07-31",

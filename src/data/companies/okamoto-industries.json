@@ -4,15 +4,204 @@
   "name": "オカモト",
   "officialName": "オカモト株式会社",
   "nameEn": "OKAMOTO INDUSTRIES, INC.",
-  "description": null,
+  "shortNameEn": "Okamoto",
+  "description": "プラスチックフイルムや壁紙などの産業用製品と、コンドームなどの生活用品をつくり販売するメーカーです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "industrial-products",
+      "name": "産業用製品",
+      "description": "プラスチックフイルム、壁紙、自動車内装材、産業資材などの製造・仕入及び販売を行っています。2026年3月期の外部顧客への売上高は75,756百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "plastic-film",
+          "name": "プラスチックフイルム",
+          "description": "プラスチックフイルムの製造・仕入及び販売を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "wallpaper",
+          "name": "壁紙",
+          "description": "壁紙の製造・仕入及び販売を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "automotive-interior",
+          "name": "自動車内装材",
+          "description": "自動車内装材の製造・仕入及び販売を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "industrial-materials",
+          "name": "産業資材",
+          "description": "産業資材の製造・仕入及び販売を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "daily-goods",
+      "name": "生活用品",
+      "description": "医療・日用品、シューズ、衣料・スポーツ用品の製造・仕入及び販売を行っています。2026年3月期の外部顧客への売上高は32,040百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "medical-daily",
+          "name": "医療・日用品",
+          "description": "医療・日用品の製造・仕入及び販売を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "shoes",
+          "name": "シューズ",
+          "description": "シューズの製造・仕入及び販売を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "clothing-sports",
+          "name": "衣料・スポーツ用品",
+          "description": "衣料・スポーツ用品の製造・仕入及び販売を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業セグメントで、グループ内の物流事業及び太陽光発電事業等を含みます。2026年3月期の外部顧客への売上高は243百万円です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "logistics",
+          "name": "物流事業",
+          "description": "グループ内の物流事業を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "solar-power",
+          "name": "太陽光発電事業",
+          "description": "太陽光発電事業を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "産業用製品と生活用品を製造・仕入し、加工事業者や消費者に販売しています。",
+    "products": [
+      "プラスチックフイルム",
+      "壁紙",
+      "自動車内装材",
+      "産業資材",
+      "コンドーム",
+      "医療・日用品",
+      "手袋",
+      "シューズ",
+      "衣料・スポーツ用品",
+      "カイロ",
+      "除湿剤"
+    ],
+    "customers": [
+      "加工事業者",
+      "食品メーカー",
+      "小売店",
+      "ドラッグストア",
+      "消費者"
+    ],
+    "revenueSources": [
+      "産業用製品の販売",
+      "生活用品の販売",
+      "物流受託事業",
+      "太陽光発電事業"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京都文京区に本社を置く化成品メーカー",
+        "description": "オカモト株式会社は、東京都文京区に本社を置く化成品メーカーで、1934年に設立しました。連結従業員数は2,593人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "プラスチックフイルムなどの産業用製品と生活用品",
+        "description": "プラスチックフイルム、壁紙、自動車内装材などの産業用製品と、コンドームや医療・日用品、シューズなどの生活用品を提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "加工事業者と消費者",
+        "description": "産業用製品は加工事業者向けに、生活用品は消費者向けに販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高",
+        "description": "2026年3月期の売上高は108,040百万円（前期比1.0％減）で、産業用製品が75,756百万円、生活用品が32,040百万円、その他が243百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は4,855百万円（前期比27.3％減）でした。"
+      }
+    ],
+    "suppliers": [
+      {
+        "name": "調達先",
+        "description": "プラスチック製品などの原材料を調達する相手先で、原材料の安定確保のため関係強化を図っています。",
+        "businessIds": [
+          "industrial-products"
+        ]
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +216,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 74916000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2757,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +236,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 79099000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2819,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +256,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 91581000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2775,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +276,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 94464000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2704,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +296,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 110631000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2593,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +304,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第130期(2025/04/01－2026/03/31)",
-      "publisher": "オカモト株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHXH.pdf",
-      "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-29",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +315,557 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1934,
+      "title": "日本ゴム工業株式会社を設立",
+      "description": "1934年1月、東京市荏原区戸越町（現在の東京都品川区平塚）に日本ゴム工業株式会社として設立しました。",
+      "significance": "ゴム製品の製造から始まった会社の出発点となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "東京証券取引所に上場",
+      "description": "1949年6月、東京証券取引所に上場しました。",
+      "significance": "株式を公開し、資金調達の基盤ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "理研ゴムと合併し日本理研ゴムに改称",
+      "description": "1958年2月、理研ゴム株式会社と合併し、商号を日本理研ゴム株式会社と改めました。",
+      "significance": "合併により事業の規模が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "大阪出張所を開設",
+      "description": "1958年8月、大阪出張所（現大阪支店）を開設しました。",
+      "significance": "関西での販売拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "本社を現在地に移転",
+      "description": "1961年6月、本社を東京都文京区の現在地に移転しました。",
+      "significance": "東京都文京区に本社を構えました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "神奈川工場を設立",
+      "description": "1961年8月、神奈川県座間市に神奈川工場を設立しました。",
+      "significance": "生産体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第一部銘柄となる",
+      "description": "1961年10月、東京証券取引所市場第一部銘柄となりました。",
+      "significance": "市場第一部への指定により、会社の信用が高まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "名古屋営業所を開設",
+      "description": "1963年9月、名古屋営業所を開設しました。",
+      "significance": "中部地方での販売拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "群馬工場を設立",
+      "description": "1964年4月、群馬県太田市に群馬工場を設立しました。",
+      "significance": "群馬県に生産拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "米国にOM.,Inc.を設立",
+      "description": "1965年3月、米国にOM.,Inc.（現Okamoto U.S.A.,Inc.、現連結子会社）を設立しました。",
+      "significance": "海外進出の第一歩となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "岡本ゴム工業と合併し岡本理研ゴムに改称",
+      "description": "1968年2月、岡本ゴム工業株式会社と合併し、商号を岡本理研ゴム株式会社と改めました。",
+      "significance": "岡本の名を冠した会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "東京証券取引所貸借銘柄に選定",
+      "description": "1969年2月、東京証券取引所貸借銘柄に選定されました。",
+      "significance": "株式の流動性が高まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "茨城工場を設立",
+      "description": "1972年6月、子会社株式会社岡本理研茨城製作所を吸収し、茨城工場を設立しました。",
+      "significance": "茨城県に生産拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "ゼブラケンコー自転車を合併",
+      "description": "1976年5月、ゼブラケンコー自転車株式会社を合併しました。",
+      "significance": "自転車事業を取り込み、事業の幅が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "福岡営業所を開設",
+      "description": "1981年4月、福岡営業所を開設しました。",
+      "significance": "九州での販売拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "創立50周年",
+      "description": "1984年2月、創立50周年を迎えました。",
+      "significance": "創業から半世紀の節目となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "静岡工場を設立",
+      "description": "1985年3月、静岡県榛原郡吉田町に静岡工場を設立し、神奈川工場の製造設備を移設拡充しました。",
+      "significance": "主力の生産拠点が静岡に移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "オカモト株式会社に改称",
+      "description": "1985年10月、社名を岡本理研ゴム株式会社よりオカモト株式会社に改めました。",
+      "significance": "現在の社名となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "神奈川工場を閉鎖",
+      "description": "1985年12月、神奈川工場を閉鎖しました。",
+      "significance": "生産拠点が静岡工場に集約されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "ミシュラン社と合弁会社を設立",
+      "description": "1989年7月、フランスのミシュラン社と合弁会社ミシュランオカモトタイヤ株式会社を設立し、当社群馬工場のタイヤ製造設備を譲渡しました。",
+      "significance": "タイヤ事業で海外メーカーと提携しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "福島工場を設立",
+      "description": "1993年10月、子会社岡本ゴム株式会社より営業譲受けで、福島県いわき市に福島工場を設立しました。",
+      "significance": "東北に生産拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "タイにSiam Okamotoを設立",
+      "description": "1998年10月、株式譲受けで、タイ王国にラテックス手袋製造会社Siam Okamoto Co.,Ltd.（現連結子会社）を設立しました。",
+      "significance": "タイでの手袋生産が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "タイヤの合弁事業を解消",
+      "description": "2000年3月、タイヤの合弁事業を解消し、ミシュランオカモトタイヤ株式会社の株式を売却しました。",
+      "significance": "タイヤ事業から撤退しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "ヒルソン・デックを連結子会社とする",
+      "description": "2000年4月、株式譲受けによりヒルソン・デック株式会社を連結子会社としました。",
+      "significance": "医療・日用品の事業が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "オカモト新和を連結子会社とする",
+      "description": "2001年10月、新和産業株式会社がオカモト化成品販売株式会社より営業譲受け、オカモト新和株式会社に商号変更し、連結子会社としました。",
+      "significance": "化成品の販売体制が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "オカモトフットウェアを吸収合併",
+      "description": "2002年10月、連結子会社オカモトフットウェア株式会社を吸収合併しました。",
+      "significance": "シューズ事業の体制が統合されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "世界長を連結子会社とする",
+      "description": "2004年9月、世界長株式会社を吸収分割により連結子会社としました。",
+      "significance": "シューズの販売事業を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "イチジク製薬を連結子会社とする",
+      "description": "2005年3月、イチジク製薬株式会社を株式取得により連結子会社としました。",
+      "significance": "医薬品の事業が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "シューズ製品の営業部門を世界長へ統合",
+      "description": "2007年3月、当社シューズ製品の営業部門を世界長株式会社へ統合しました。",
+      "significance": "シューズ事業の営業体制が集約されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "Okamoto Sandusky Manufacturing,LLCを設立",
+      "description": "2007年7月、米国にOkamoto Sandusky Manufacturing,LLCを設立しました。",
+      "significance": "北米での生産拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "Okamoto North AmericaとOkamoto Realtyを設立",
+      "description": "2008年4月、Okamoto North America,Inc.（現連結子会社）及びOkamoto Realty,LLCを設立しました。",
+      "significance": "北米での持株会社体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "北米子会社を再編",
+      "description": "2010年7月、連結子会社Okamoto Realty,LLCとOkamoto Sandusky Manufacturing,LLCは、Okamoto Realty,LLCを存続会社とした吸収合併を行い、商号をOkamoto Sandusky Manufacturing,LLCに変更しました。",
+      "significance": "北米の子会社の体制が整理されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "世界長とユニオン・ロイヤルを合併",
+      "description": "2010年10月、連結子会社世界長株式会社と株式会社ユニオン・ロイヤルは、世界長株式会社を存続会社とした吸収合併を行い、商号を世界長ユニオン株式会社に変更しました。",
+      "significance": "シューズ販売の子会社が統合されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "米国子会社を再編しSanduskyを新設",
+      "description": "2010年12月、連結子会社Okamoto U.S.A.,Inc.とOkamoto Sandusky Manufacturing,LLCは、Okamoto U.S.A.,Inc.を存続会社とした吸収合併を行い、同時に産業用製品事業（自動車内装材及び部品）を会社分割し、Okamoto North America,Inc.の完全子会社として新たにOkamoto Sandusky Manufacturing,LLC（現連結子会社）を設立しました。",
+      "significance": "北米の自動車内装材事業の体制が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "海外子会社5社を連結子会社とする",
+      "description": "2015年3月、非連結子会社であった船堀ゴム株式会社、Apollotex Co., Ltd.、Okamoto Rubber Products Co., Ltd.、岡本貿易（深セン）有限公司、Vina Okamoto Co., Ltd.を連結子会社としました。",
+      "significance": "連結の範囲が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "理研コランダムを持分法適用会社とする",
+      "description": "2015年6月、株式の追加取得に伴い理研コランダム株式会社を持分法適用会社としました。",
+      "significance": "研磨布紙などの事業との関係が深まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "理研コランダムを連結子会社とする",
+      "description": "2017年9月、株式の追加取得に伴い理研コランダム株式会社を連結子会社としました。",
+      "significance": "研磨布紙などの事業が連結の範囲に入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "つくば工場を設立",
+      "description": "2018年3月、茨城県牛久市につくば工場を設立しました。",
+      "significance": "壁紙などの生産拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "ApollotexをOkamoto Manufacturing (Thailand)に改称",
+      "description": "2019年1月、連結子会社Apollotex Co.,Ltd.の商号をOkamoto Manufacturing（Thailand)Co.,Ltd.に変更しました。",
+      "significance": "タイの子会社の名称が統一されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "武漢岡本汽車内飾新材料を設立",
+      "description": "2021年12月、中国に武漢岡本汽車内飾新材料有限公司を設立しました。",
+      "significance": "中国での自動車内装材の生産拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場へ移行",
+      "description": "2022年4月、東京証券取引所の市場区分見直しにより市場第一部からプライム市場へ移行しました。",
+      "significance": "最上位の市場区分での取引が続いています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "世界長ユニオンを吸収合併",
+      "description": "2023年4月、連結子会社世界長ユニオン株式会社を吸収合併しました。",
+      "significance": "シューズ販売の子会社が本体に統合されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "武漢岡本汽車内飾新材料を連結子会社とする",
+      "description": "2024年4月、非連結子会社であった武漢岡本汽車内飾新材料有限公司を連結子会社としました。",
+      "significance": "中国の自動車内装材事業が連結の範囲に入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "理研コランダムを完全子会社とする",
+      "description": "2024年11月、株式の追加取得に伴い理研コランダム株式会社を完全子会社としました。",
+      "significance": "研磨布紙などの事業が完全にグループに入りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "岡山工場を設立",
+      "description": "2025年10月、岡山県井原市に岡山工場を設立しました。",
+      "significance": "西日本の生産・物流の拠点ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "marubeni",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の発行済株式（自己株式を除く）の8.44％を保有する大株主です。有報の特定投資株式の表では、大手総合商社として、原材料の確実かつ継続的な調達及び製品の販売体制の強化を目的として保有していると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "ts-tech",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の発行済株式（自己株式を除く）の1.95％を保有する大株主です。有報の特定投資株式の表では、大手自動車部品メーカーとして、産業用製品事業における製品開発及び販売体制の構築を目的として保有していると印字され、当事業年度は更なる関係強化のため株式を追加取得しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "mitsubishi-pencil",
+      "relationship": "business-partner",
+      "description": "有報の特定投資株式の表では、筆記用具及びテープのメーカーとして、市場創出・販路開拓についての相互協力と、プラスチック製品のリサイクル事業の共同推進を目的として保有していると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第130期(2025/04/01－2026/03/31)",
+      "publisher": "オカモト株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHXH.pdf",
+      "publishedAt": "2026-06-24",
+      "docId": "S100YHXH",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-09"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "産業用製品事業と生活用品事業それぞれで研究開発を進め、事業の多角化と生産・販売面での相乗効果を創出し、原材料価格や為替の変動に対応できる体質の強化と、高付加価値の新製品の投入によるブランド力の強化に取り組みます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "1934年の創業以来培ってきた素材の研究と高度な技術を基盤に、独自の技術で人々の生活に役立つ商品を多面的に開発し、オリジナルブランド「オカモト」への信頼感を高めて、国内・国際市場で強い競争力を維持します。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は108,040百万円（前期比1.0％減）で、報告セグメント別の外部顧客への売上高は産業用製品75,756百万円、生活用品32,040百万円、その他243百万円です。地域別売上高は日本66,225百万円、米国19,089百万円、中国14,846百万円、アジア3,927百万円、その他地域3,951百万円です。売上高の10％以上を占める相手先はありません。",
+        "basis": "セグメント注記の外部顧客への売上高（産業用製品75,756百万円・生活用品32,040百万円・その他243百万円）、地域ごとの情報（日本66,225百万円・米国19,089百万円・中国14,846百万円・アジア3,927百万円・その他地域3,951百万円）、主要な顧客ごとの情報による。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
+  "segmentRevenue": {
+    "fiscalYear": "2026年3月期",
+    "periodEnd": "2026-03-31",
+    "label": "外部顧客への売上高",
+    "items": [
+      {
+        "businessId": "industrial-products",
+        "amount": 75756000000
+      },
+      {
+        "businessId": "daily-goods",
+        "amount": 32040000000
+      },
+      {
+        "businessId": "other",
+        "amount": 243000000
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【セグメント情報】"
   }
 }

@@ -1,18 +1,216 @@
 {
   "id": "revolution",
   "code": "8894",
-  "name": "REVOLUTION",
+  "name": "ＲＥＶＯＬＵＴＩＯＮ",
   "officialName": "株式会社REVOLUTION",
   "nameEn": "REVOLUTION CO.,LTD.",
-  "description": null,
+  "shortNameEn": "REVOLUTION",
+  "description": "不動産の販売・保有管理を中核に、不動産担保融資と不動産クラウドファンディングを展開する不動産・投資会社です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "real-estate",
+      "primary": true
+    },
+    {
+      "industryId": "finance",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "crowdfunding",
+      "name": "クラウドファンディング事業",
+      "description": "連結子会社のWeCapital株式会社を中心に、不動産等の投資対象に対し、主に不特定多数の個人から資金調達を行い投資まで行う事業です。2025年10月期の外部顧客への売上高は31,239百万円でした。",
+      "products": [
+        "不動産クラウドファンディング",
+        "レンディング型クラウドファンディング",
+        "アート関連クラウドファンディング"
+      ],
+      "customers": [
+        "個人投資家",
+        "不動産事業者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "cf-estate",
+          "name": "不動産クラウドファンディング",
+          "description": "ヤマワケエステート株式会社が、不動産を投資対象とするクラウドファンディングを行う分野です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "cf-lending",
+          "name": "レンディング型クラウドファンディング",
+          "description": "ヤマワケレンディング株式会社が、貸付を投資対象とするクラウドファンディングを行う分野です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "cf-art",
+          "name": "アート関連クラウドファンディング",
+          "description": "ヤマワケアート株式会社が、アートを投資対象とするクラウドファンディングを行う分野です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "東京等の大都市圏を中心として、不動産の販売・仲介業務と、不動産の保有・管理業務を行う事業です。2025年10月期の外部顧客への売上高は3,329百万円でした。",
+      "products": [
+        "不動産の販売",
+        "不動産の仲介",
+        "不動産の保有・管理"
+      ],
+      "customers": [
+        "不動産の購入者",
+        "不動産の売却希望者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "re-sales",
+          "name": "不動産の販売・仲介",
+          "description": "当社及び株式会社REVOLUTION REALTYが、東京等の大都市圏を中心に不動産の販売・仲介業務を行う分野です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "re-holding",
+          "name": "不動産の保有・管理",
+          "description": "2024年12月に子会社化した株式会社REVO GINZA１及び株式会社REVO GINZA２が、不動産の保有・管理業務を行う分野です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-credit",
+      "name": "不動産クレジット事業",
+      "description": "子会社の株式会社REVOLUTION FINANCEが、主に不動産を担保として資金を提供する貸金事業です。2025年10月期の外部顧客への売上高は1百万円でした。",
+      "products": [
+        "不動産担保融資"
+      ],
+      "customers": [
+        "不動産担保融資の利用者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "credit-loans",
+          "name": "不動産担保融資",
+          "description": "不動産を担保とした融資等を行う分野です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "investment",
+      "name": "投資事業",
+      "description": "子会社のJapan Allocation Fund SPCを通じて、国内外の企業や有価証券等の金融商品への投資を目的としたSPC等への投資を行う事業です。2025年10月期は売上高がなく、新規の投資は停止しています。",
+      "products": [
+        "金融商品への出資",
+        "上場会社の第三者割当増資の引き受け"
+      ],
+      "customers": [],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "inv-spc",
+          "name": "SPC等への投資",
+          "description": "国内外の企業や有価証券等の金融商品への投資を目的としたSPC等への投資を通じて、投資リターンの獲得を目指す分野です。",
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "不動産事業と、子会社を通じた不動産クレジット事業・クラウドファンディング事業で収益を得る不動産・投資会社です。",
+    "products": [
+      "不動産の販売・仲介",
+      "不動産の保有・管理",
+      "不動産担保融資",
+      "不動産クラウドファンディング",
+      "金融商品への投資"
+    ],
+    "customers": [
+      "不動産の購入者",
+      "個人投資家",
+      "不動産担保融資の利用者"
+    ],
+    "revenueSources": [
+      "不動産の販売代金",
+      "利息・融資手数料",
+      "不動産賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ＲＥＶＯＬＵＴＩＯＮ",
+        "description": "当社と連結子会社9社でグループを構成しています。連結の従業員数は2025年10月31日現在で64人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "不動産と金融の事業",
+        "description": "不動産の販売・仲介や保有・管理を行う不動産事業に加え、不動産担保融資の不動産クレジット事業、不特定多数から資金を集めて投資まで行うクラウドファンディング事業、金融商品への投資事業を営んでいます。"
+      },
+      {
+        "kind": "customer",
+        "title": "不動産の購入者と個人投資家",
+        "description": "不動産事業では不動産の購入者等を顧客とし、クラウドファンディング事業では主に不特定多数の個人投資家から資金を調達します。不動産クレジット事業では不動産を担保とする融資の利用者に資金を提供します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "不動産とクラウドファンディングの売上",
+        "description": "2025年10月期の売上高は34,570百万円でした。事業別ではクラウドファンディング事業が31,239百万円、不動産事業が3,329百万円、不動産クレジット事業が1百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失",
+        "description": "クラウドファンディング事業を中心とする減損損失の計上などにより、2025年10月期の親会社株主に帰属する当期純損失は17,232百万円となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2021年10月期",
@@ -27,7 +225,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1659151000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 36,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +245,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1677105000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 32,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号 2020年3月31日）等を第37期（2022年10月期）の期首から適用しており、第37期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっている。"
     },
     {
       "fiscalYear": "2023年10月期",
@@ -67,7 +266,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1291716000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 17,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +286,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19054862000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 56,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +306,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1511518000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 64,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +314,177 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1986,
+      "title": "有限会社原弘産を設立",
+      "description": "有限会社原弘産を設立しました。",
+      "significance": "現在の当社グループの起源です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式会社原弘産に組織変更",
+      "description": "株式会社原弘産に組織変更し、自社分譲マンション（アドバンスシリーズ）の販売を開始しました。",
+      "significance": "不動産販売を本格化させた転機です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "大阪証券取引所市場第2部に上場",
+      "description": "当社株式が大阪証券取引所市場第2部に上場しました。",
+      "significance": "株式上場の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第2部に上場",
+      "description": "大阪証券取引所と東京証券取引所の現物市場の統合に伴い、東京証券取引所市場第2部に上場しました。",
+      "significance": "現在の上場市場につながる移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "商号を株式会社REVOLUTIONに変更し、投資事業を開始",
+      "description": "商号を株式会社REVOLUTIONに変更しました。あわせて、国内外企業や有価証券等の金融商品への投資による投資リターン獲得を目的として、投資事業を開始しました。",
+      "significance": "現在の社名と、投資会社としての性格の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "不動産金融子会社を設立し、ファイナンス事業を開始",
+      "description": "不動産金融子会社を新たに設立し、ファイナンス事業（現不動産クレジット事業）を開始しました。",
+      "significance": "不動産と金融を組み合わせる事業展開の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "本店所在地を東京都千代田区に変更",
+      "description": "本店所在地を東京都千代田区紀尾井町に変更しました。あわせて臨時株主総会で経営陣を刷新しています。",
+      "significance": "事業を東京都内に集中させる経営転換の節目です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "WeCapital株式会社を子会社化",
+      "description": "WeCapital株式会社の株式の過半数を取得し、孫会社を含む計6社を子会社化しました。",
+      "significance": "クラウドファンディング事業への参入であり、現在の売上構成の中心が生まれました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "株式会社REVO GINZA１・株式会社REVO GINZA２を子会社化",
+      "description": "株式会社REVO GINZA１及び株式会社REVO GINZA２の全株式を取得し、2社を子会社化しました。",
+      "significance": "東京都内の一等地の不動産を保有する会社の取得です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
       "id": "yuho-2025",
-      "title": "有価証券報告書－第40期(2024/11/01－2025/10/31)",
-      "publisher": "株式会社REVOLUTION",
+      "title": "有価証券報告書－第40期（2024年11月1日－2025年10月31日）",
+      "publisher": "株式会社ＲＥＶＯＬＵＴＩＯＮ（EDINET）",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XI3C.pdf",
       "publishedAt": "2026-01-29",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XI3C",
+      "asOf": "2025-10-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 株式併合：2024年10月21日付で、普通株式・Ａ種種類株式及び第１回Ｂ種種類株式について10株を１株に併合した。株式関連の指標は、第36期（2021年10月期）の期首に株式併合が行われたと仮定して算定されている（経営指標等の注記に基づく）。",
+      "businessModel: 提出後の関係会社変更：2026年1月9日付で、Ethan Willammarkets11号投資事業有限責任組合が当社のその他の関係会社に該当することとなった。同組合は、第10回新株予約権（第三者割当）の割当先である。本登録は2025年10月31日現在の構造に基づく。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "社名に込めた「Change in the way of thinking」を掲げ、「守」「破」「離」の理念のもと、不動産再販や不動産クレジット事業を中核に据え、都心一等地を多数確保できる独自の購入ネットワークを活用したバリューアップ戦略を推進するとともに、「不動産×テック」をテーマに掲げたM＆Aを駆使し、事業の拡大を目指すとしています。",
+        "asOf": "2026-01-29",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "第40期はWeCapital株式会社グループの連結化によりクラウドファンディング事業が売上の中心となる構成に変わりました。一方で、同事業が当初の事業計画から大きく乖離して多額の減損損失を計上したため、経営方針では同事業の早期立て直しと安定的な収益化、第三者委員会の提言を踏まえたガバナンス強化が課題として掲げられています。",
+        "basis": "【セグメント情報】の報告セグメントごとの売上高、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の経営成績の概要及び【経営方針、経営環境及び対処すべき課題等】の対処すべき課題の記載に基づく",
+        "asOf": "2026-01-29",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "disclosed": {
+        "text": "不動産事業において長年積み重ねてきた知識と経験を基礎とし、世界有数の資産運用会社や投資銀行、コマーシャルバンクなどとのネットワークを活用し、不動産会社としてのみならず投資会社としても成長を目指すとしています。",
+        "asOf": "2026-01-29",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "経営方針では、都心一等地を多数確保できる独自の購入ネットワークがバリューアップ戦略の基盤として挙げられています。また、クラウドファンディング事業は資金調達から投資までをグループ内で行う体制であり、不動産事業と金融事業を併せ持つ構成が事業内容から読み取れます。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の経営方針及び【セグメント情報】の報告セグメントの概要の記載に基づく",
+        "asOf": "2026-01-29",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2025年10月期の外部顧客への売上高は、クラウドファンディング事業31,239百万円、不動産事業3,329百万円、不動産クレジット事業1百万円、投資事業は売上高がありません。売上はすべて本邦の外部顧客に対するもので、地域ごとの情報は開示されていません。当期は売上高の10％以上を占める顧客はありませんが、前期は不動産事業で株式会社サンライズと柴田商事株式会社が主要な顧客でした。",
+        "basis": "【セグメント情報】の報告セグメントごとの売上高及び【関連情報】の地域ごとの情報・主要な顧客ごとの情報の記載に基づく",
+        "asOf": "2026-01-29",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年10月期",
     "asOf": "2025-10-31",

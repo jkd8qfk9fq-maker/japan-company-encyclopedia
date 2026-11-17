@@ -4,15 +4,194 @@
   "name": "栗林商船",
   "officialName": "栗林商船株式会社",
   "nameEn": "Kuribayashi Steamship Co., Ltd.",
-  "description": null,
+  "shortNameEn": "Kuribayashi Steamship Co., Ltd.",
+  "description": "北海道・東北と本州を結ぶ内航海運を主力に、海陸一貫輸送を手がける海運会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "kuribayashi-steamship",
+      "name": "栗林商船株式会社",
+      "description": "東京都千代田区に本社を置き、当社と連結子会社14社でグループを構成しています。海上運送業を主たる事業とする内航船社で、2026年3月期の連結従業員数は1,110人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "shipping-business",
+          "name": "海運事業",
+          "description": "内航海運業、外航海運業、一般旅客フェリー事業、港湾運送事業を行う主力セグメントです。2026年3月期の外部顧客への売上高は48,411百万円です。",
+          "customers": [
+            "紙製品・鋼材・商品車両等の荷主企業",
+            "フェリーの旅客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】",
+          "children": [
+            {
+              "id": "domestic-shipping",
+              "name": "内航海運業",
+              "description": "日本国内での内航運送業、内航運送取扱業、内航船舶貸渡業、一般旅客フェリー事業に従事しています。主な連結子会社は栗林物流システム株式会社、青函フェリー株式会社、栗林マリタイム株式会社です。",
+              "customers": [
+                "国内の荷主企業",
+                "フェリーの旅客"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "ocean-shipping",
+              "name": "外航海運業",
+              "description": "東南アジア地域での外航定期航路運送業、外航不定期航路運送業、外航船舶貸渡業に従事しています。主な連結子会社は栗林物流システム株式会社です。",
+              "customers": [
+                "東南アジア地域の荷主企業"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "port-transport",
+              "name": "港湾運送業等",
+              "description": "日本国内での港湾運送業、港湾荷役業、港湾運送関連事業、利用運送業に従事しています。主な関係会社は栗林運輸株式会社、八千代運輸株式会社、共栄陸運株式会社、三陸運輸株式会社、三陸輸送株式会社、大和運輸株式会社です。",
+              "customers": [
+                "港湾を利用する荷主企業・船会社"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "ship-supplies",
+              "name": "船舶用物品販売業等",
+              "description": "関係会社への船舶用燃料油販売、船舶用品販売、船舶小口修理、船舶管理、トレーラー賃貸等の事業に従事しています。主な連結子会社は株式会社ケイセブン、栗林マリタイム株式会社です。",
+              "customers": [
+                "グループ関係会社",
+                "船会社"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            }
+          ]
+        },
+        {
+          "id": "hotel-business",
+          "name": "ホテル事業",
+          "description": "北海道登別市でリゾートホテル事業に従事しています。2026年3月期の外部顧客への売上高は2,507百万円です。主な連結子会社は株式会社登別グランドホテルです。",
+          "customers": [
+            "ホテルの宿泊客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "real-estate-business",
+          "name": "不動産事業",
+          "description": "北海道室蘭市を中心に店舗等の不動産賃貸・管理事業に従事しています。2026年3月期の外部顧客への売上高は568百万円です。主な連結子会社は株式会社セブンです。",
+          "customers": [
+            "不動産の賃借人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other-business",
+          "name": "その他事業",
+          "description": "報告セグメントに含まれない区分で、青果卸事業、豆類・雑穀卸事業等に従事しています。2026年3月期の外部顧客への売上高は2,337百万円です。主な連結子会社は北千生氣株式会社、株式会社鈴木商店です。",
+          "customers": [
+            "青果・豆類雑穀の購入事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "RORO船の定期航路輸送と港湾運送をグループで担って荷主から運賃を得る海運事業を中核に、フェリー・ホテル・不動産賃貸も営む事業モデルです。",
+    "products": [
+      "内航定期航路輸送",
+      "RORO船による車両・貨物輸送",
+      "一般旅客フェリー",
+      "港湾運送・荷役",
+      "外航海運",
+      "船舶用燃料油・用品の販売",
+      "ホテル運営（登別温泉）",
+      "不動産賃貸",
+      "青果・豆類雑穀の卸売"
+    ],
+    "customers": [
+      "紙製品・鋼材・商品車両等の荷主企業",
+      "フェリーの旅客",
+      "ホテルの宿泊客",
+      "不動産の賃借人",
+      "青果・豆類雑穀の購入事業者"
+    ],
+    "revenueSources": [
+      "海上運送の運賃収入",
+      "フェリーの運賃収入",
+      "港湾運送・荷役の対価",
+      "船舶用物品の販売代金",
+      "ホテルの宿泊料等",
+      "不動産の賃料",
+      "卸売の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "栗林商船株式会社",
+        "description": "東京都千代田区に本社を置き、当社と連結子会社14社でグループを構成しています。2026年3月期の連結従業員数は1,110人で、東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "海運を中核に多角的に提供",
+        "description": "内航海運・外航海運・一般旅客フェリー・港湾運送の海運事業を中核に、船舶用物品販売、ホテル事業、不動産事業、青果・豆類雑穀の卸売を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "荷主企業と旅客・宿泊客に提供",
+        "description": "紙製品や鋼材、商品車両などを輸送する荷主企業に定期航路輸送を提供し、フェリーは一般旅客、ホテルは宿泊客に提供します。連結売上高の10％以上を占める特定の顧客はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高は53,825百万円",
+        "description": "2026年3月期の売上高は53,825百万円でした。セグメント別では海運事業48,411百万円、ホテル事業2,507百万円、不動産事業568百万円、その他事業2,337百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は3,724百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は3,724百万円でした。前連結会計年度は2,013百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +206,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23055943000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1108,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +226,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 24543700000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1098,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +246,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 29796516000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1109,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +266,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 33716917000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1107,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +286,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 36140758000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1110,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +294,202 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1919,
+      "title": "栗林商船株式会社を設立",
+      "description": "栗林合名会社の船舶部門を分離し、栗林商船株式会社を設立しました。あわせて室蘭と本州の間に定期航路を開設しました。",
+      "significance": "当社グループの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1924,
+      "title": "芝浦運輸（現・栗林運輸）を設立",
+      "description": "東京都港区に芝浦運輸株式会社（現・連結子会社の栗林運輸株式会社）を設立しました。",
+      "significance": "港湾運送を担うグループ会社の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1937,
+      "title": "登別グランドホテルを設立",
+      "description": "北海道登別市に株式会社登別グランドホテル（現・連結子会社）を設立しました。",
+      "significance": "現在のホテル事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "東京証券取引所に上場",
+      "description": "東京証券取引所に株式を上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1966,
+      "title": "栗林近海汽船（現・栗林物流システム）を設立",
+      "description": "東京都千代田区に栗林近海汽船株式会社（現・連結子会社の栗林物流システム株式会社）を設立しました。",
+      "significance": "内航不定期航路と外航航路を担う中核子会社の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "国内初のロールオン・ロールオフ船を建造",
+      "description": "国内初のロールオン・ロールオフ船「神珠丸」を建造しました。",
+      "significance": "現在の主力であるRORO船輸送の先駆けです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "所有船舶が全てロールオン・ロールオフ船となる",
+      "description": "逐次船舶のリプレースを行い、当社所有船舶は全てロールオン・ロールオフ船となりました。",
+      "significance": "RORO船への船隊統一の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "栗林運輸が連結子会社となる",
+      "description": "栗林運輸株式会社が連結子会社となりました。",
+      "significance": "港湾運送を含む海陸一貫輸送体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "設立100周年を迎える",
+      "description": "設立100周年を迎えました。",
+      "significance": "創業から1世紀の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "北日本海運が連結子会社となる",
+      "description": "北日本海運株式会社が連結子会社となり、共栄運輸株式会社と行っていた「青函フェリー」事業の活性化と運営強化を図りました。",
+      "significance": "青函フェリー事業の体制強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "青函フェリー株式会社を設立し、スタンダード市場へ移行",
+      "description": "共栄運輸株式会社と北日本海運株式会社の合併により青函フェリー株式会社を設立しました。東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "フェリー事業の統合と現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社鈴木商店が連結子会社となる",
+      "description": "株式会社鈴木商店が連結子会社となりました。",
+      "significance": "その他事業（豆類・雑穀卸）の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "oji-holdings",
+      "relationship": "customer",
+      "description": "海上輸送の主要取引先であり、取引関係の維持・強化のため当社が株式を保有しています。2026年3月31日現在、同社は当社株式の6.71％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-japan-steel-works",
+      "relationship": "customer",
+      "description": "海上輸送の主要取引先であり、取引関係の維持・強化のため当社が株式を保有しています。2026年3月31日現在、同社は当社株式の6.64％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-paper-industries",
+      "relationship": "customer",
+      "description": "海上輸送の主要取引先であり、取引関係の維持・強化のため当社が株式を保有しています。2026年3月31日現在、同社は当社株式の5.58％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-steel",
+      "relationship": "customer",
+      "description": "海上輸送の主要取引先であり、取引関係の維持・強化のため当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "jfe-holdings",
+      "relationship": "customer",
+      "description": "海上輸送の主要取引先であり、取引関係の維持・強化のため当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "rinko",
+      "relationship": "customer",
+      "description": "海上輸送の主要取引先であり、取引関係の維持・強化のため当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-chemical-group",
+      "relationship": "customer",
+      "description": "当社グループ会社の海上輸送の主要取引先であり、取引関係の維持・強化のため当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sanoyas-holdings",
+      "relationship": "supplier",
+      "description": "船舶整備などの取引先であり、取引関係の維持・強化のため当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +497,59 @@
       "publisher": "栗林商船株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKD9.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YKD9",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年4月1日を効力発生日として、連結子会社の三陸運輸株式会社を株式交換により完全子会社化した（2026年3月31日現在の議決権所有割合は89.6％）。本登録は2026年3月31日現在のグループ構成に基づく。",
+      "businessModel: 2026年4月1日を効力発生日として、連結子会社の株式会社ケイセブンを株式交換により完全子会社化した（2026年3月31日現在の議決権所有割合は54.7％）。本登録は2026年3月31日現在のグループ構成に基づく。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念として「環境保全に努め、安全で効率的な海陸一貫輸送を通して社会に貢献する」ことを掲げています。中期経営計画（令和7年度から令和9年度）では、モーダルシフトへの対応、安全対策の強化、効率的な運航形態の追求、人材の確保を対処すべき課題とし、北海道定期航路では令和7年10月からRORO船を増やして6隻体制とし、輸送能力の強化を図る方針です。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "成長の軸は、トラック輸送から海上輸送へのモーダルシフトの受け皿になることです。北海道定期航路の増船による輸送能力の強化と、採算性を重視した近海航路の運航で、輸送量の変動に対応する構えです。",
+        "basis": "経営方針の対処すべき課題（モーダルシフトへの対応）、MD&Aの経営成績の概要における国内定期航路事業・近海航路の記載、セグメント情報の海運事業の売上構成",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "北海道・東北と本州を結ぶ定期航路網と、RORO船による海上輸送から港湾運送までをグループで担う海陸一貫輸送の体制が強みです。1919年の設立以来の航路運営の蓄積があり、所有船舶は全てRORO船に統一されています。",
+        "basis": "事業の内容のグループ構成と事業区分、沿革の定期航路開設とRORO船化の記載、関係会社の状況の港湾運送子会社の記載",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "内航海運を主力とする船社で、2026年3月期の売上高53,825百万円のうち海運事業が48,411百万円を占めます。本邦の外部顧客への売上高が連結売上高の90％を超える、国内中心の構成です。",
+        "basis": "セグメント情報の外部顧客への売上高と関連情報（地域ごとの情報の省略基準）、MD&Aの販売実績",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

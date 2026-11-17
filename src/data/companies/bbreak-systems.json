@@ -4,15 +4,135 @@
   "name": "ビーブレイクシステムズ",
   "officialName": "株式会社ビーブレイクシステムズ",
   "nameEn": "bBreak Systems Company, Limited",
-  "description": null,
+  "shortNameEn": "bBreak Systems",
+  "description": "自社開発のクラウドERP「MA-EYES」を販売するパッケージ事業と、顧客先に常駐して開発を行うシステムインテグレーション事業を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "package",
+      "name": "パッケージ事業",
+      "description": "自社開発のクラウドERP「MA-EYES」を中心に、企業の基幹業務システムを開発し、エンドユーザーに直接（一部はシステムインテグレーターを介して）販売する事業です。導入時の対価と、継続利用による対価で売上を構成しています。2026年6月期の外部顧客への売上高は735百万円でした。",
+      "customers": [
+        "ERPを導入するサービス業などの企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "ma-eyes",
+          "name": "MA-EYES",
+          "description": "管理会計を中核に、グループウェア、販売管理、購買管理、経費管理、勤怠管理、財務会計、在庫管理などを備えたクラウドERPです。システム開発・派遣・インターネット・コンサル業向けのVシリーズと、広告業向けのAシリーズがあり、SaaS版と一括導入版があります。顧客ごとに必要な機能は、基盤を用意して個別部分を開発する「セミオーダー」の手法で実現しています。",
+          "customers": [
+            "労働集約型・プロジェクト型のサービス業の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "j-fusion-solution",
+          "name": "J-Fusionソリューション",
+          "description": "自社開発の基幹業務システム開発・稼動環境ソフトウエア「J-Fusion」を用いて、企業向けにシステムの受託開発を行うソリューションです。ECサイトの決済サービス提供企業向けの取引管理システムなどで導入実績があります。",
+          "customers": [
+            "基幹システムの開発を委託する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "system-integration",
+      "name": "システムインテグレーション事業",
+      "description": "主に顧客企業先に常駐して、顧客のシステム開発を行う事業です。開発言語がJavaの案件に特化し、受託開発のほか、システムインテグレーター経由の受託やIT人材の派遣も行っています。2026年6月期の外部顧客への売上高は650百万円でした。",
+      "customers": [
+        "システム開発を委託する企業",
+        "システムインテグレーター"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "humalance",
+          "name": "Humalance",
+          "description": "当社が運営するフリーランス向けの案件紹介サイトです。登録したフリーランスを含むビジネスパートナーに、請け負った開発を委託することがあります。有料職業紹介サービス「Humalanceコネクト」も提供しています。",
+          "customers": [
+            "フリーランスの技術者",
+            "開発リソースを求める企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社開発のクラウドERP「MA-EYES」をSaaSや一括導入の形で企業に提供し、顧客先に常駐する受託開発やIT人材の派遣でも収益を得る事業モデルです。",
+    "products": [
+      "クラウドERP「MA-EYES」（Vシリーズ・Aシリーズ）",
+      "基幹システムの受託開発「J-Fusionソリューション」",
+      "フリーランス向け案件紹介サイト「Humalance」"
+    ],
+    "customers": [
+      "ERPを導入するサービス業などの企業",
+      "システム開発を委託する企業"
+    ],
+    "revenueSources": [
+      "ERPの導入時に受領する対価と、継続利用により生じる対価",
+      "受託開発とIT人材派遣の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "単体で事業を行う会社",
+        "description": "ビーブレイクシステムズは東京都品川区に本社を置き、企業集団を形成せず単体で事業を行っています。2026年6月30日現在の従業員数は145人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "クラウドERPと常駐開発",
+        "description": "自社開発のクラウドERP「MA-EYES」を提供するパッケージ事業と、顧客企業先に常駐してシステム開発を行うシステムインテグレーション事業を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "サービス業などの企業が顧客",
+        "description": "主な顧客は、プロジェクト型の業務を行うサービス業などのERP導入企業と、システム開発を委託する企業です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "パッケージ事業が売上の中心",
+        "description": "2026年6月期の売上高は1,386百万円で、前期から0.7％増えました。セグメント別ではパッケージ事業が735百万円、システムインテグレーション事業が650百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益は102百万円",
+        "description": "2026年6月期の当期純利益は102百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,14 +147,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1433232000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 131,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
-      ]
+        "yuho-2026"
+      ],
+      "note": "2026年1月1日付で普通株式1株につき3株の株式分割を行っており、主要な経営指標等の株式関連の指標は、当該分割が第20期の期首に行われたと仮定して算定されています（主要な経営指標等の推移の注記に記載）。"
     },
     {
       "fiscalYear": "2023年6月期",
@@ -49,13 +170,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1527271000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 141,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -71,13 +192,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1645457000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 148,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -93,13 +214,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1714468000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 150,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -125,32 +246,171 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
+  "history": [
     {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第23期(2024/07/01－2025/06/30)",
-      "publisher": "株式会社ビーブレイクシステムズ",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WR2U.pdf",
-      "publishedAt": "2025-09-26",
-      "accessedAt": "2026-09-29"
+      "year": 2002,
+      "title": "ビーブレイクシステムズを設立",
+      "description": "東京都品川区に株式会社ビーブレイクシステムズが設立されました。ドイツのERPベンダーであるSAP社の日本法人出身のシステムコンサルタント2名を中心とする起業でした。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
     },
+    {
+      "year": 2002,
+      "title": "「J-Fusion」をリリース",
+      "description": "セミオーダー型システム開発の稼動環境ソフトウエア「J-Fusion」がリリースされました。",
+      "significance": "現在のJ-Fusionソリューションの基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "ERP「MA-EYES」をリリース",
+      "description": "統合型基幹業務パッケージ（ERP）「MA-EYES（エムエーアイズ）」がリリースされました。",
+      "significance": "現在の主力製品の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "MA-EYESのSaaS版と一括導入版をリリース",
+      "description": "「MA-EYES」の一括導入版とSaaS版がリリースされ、クライアント・サーバー型からクラウドでの提供へ移行しました。",
+      "significance": "クラウドERPへの転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "「GLOBAL EYES」をリリース",
+      "description": "海外拠点の統合管理システム「GLOBAL EYES」がリリースされました。",
+      "significance": "製品ラインナップの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "東京証券取引所マザーズ市場に上場",
+      "description": "東京証券取引所マザーズ市場に株式を上場しました。",
+      "significance": "上場企業となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "「Humalance」を開始",
+      "description": "フリーランス向けの案件紹介サイト「Humalance（ヒューマランス）」の提供が始まりました。",
+      "significance": "フリーランス活用の仕組みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "「Humalanceコネクト」を開始",
+      "description": "職業紹介サービス「Humalanceコネクト」の提供が始まりました。",
+      "significance": "人材紹介への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "グロース市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、マザーズ市場からグロース市場へ移行しました。",
+      "significance": "市場再編への対応です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "スタンダード市場へ市場変更",
+      "description": "2026年3月に、東京証券取引所グロース市場からスタンダード市場へ市場変更しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "internet-initiative-japan",
+      "relationship": "customer",
+      "description": "【セグメント情報等】の主要な顧客ごとの情報に主要な顧客として載る企業で、パッケージ事業とシステムインテグレーション事業の両方に関連する顧客として開示されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
+  "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第24期(2025/07/01－2026/06/30)",
       "publisher": "株式会社ビーブレイクシステムズ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z448.pdf",
       "publishedAt": "2026-09-28",
-      "accessedAt": "2026-11-14",
       "docId": "S100Z448",
-      "asOf": "2026-06-30"
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年1月1日付で普通株式1株につき3株の株式分割を行っており、主要な経営指標等の推移の注記に、当該株式分割が第20期の期首に行われたと仮定して指標を算定している旨が記載されています。分割に伴う指標の取扱いには人の確認が必要です。",
+      "businessStructure: 2026年1月1日付で普通株式1株につき3株の株式分割を行っており、主要な経営指標等の推移の注記に、当該株式分割が第20期の期首に行われたと仮定して指標を算定している旨が記載されています。分割に伴う指標の取扱いには人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念「世界が認めるシステム及びサービスを世に広める活動を通じて、社会の発展に貢献する」のもと、クラウドERP「MA-EYES」の拡販でパッケージ事業を拡大し、システムインテグレーション事業は開発言語の特化と技術力で推進する方針です。パッケージ事業では、需要動向を捉えた機能拡張や新業種向け機能の開発、基盤技術を大幅に更新した次世代MA-EYESの開発・販売、AIとの連携やAIエンジニアの育成を進めます。優先課題として、パッケージ機能とサービスの拡充、営業力の強化、Humalanceによる開発リソース確保を通じたシステムインテグレーション事業の拡大、人材の獲得と育成、内部管理体制の強化を挙げています。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "MA-EYESは、基盤部分を用意して顧客ごとに異なる部分を開発する「セミオーダー」の手法により、顧客要望に沿った機能を実現しながら開発工数と費用を抑えられます。この手法で、業務プロセスの変更が難しいサービス業や、従業員数100人以上1,000人未満の規模の企業でもERP導入のハードルが下がりました。システムインテグレーション事業では、開発言語をJavaに特化して技術的な差別化を図っています。",
+        "basis": "【事業の内容】のパッケージ事業の説明（セミオーダーの手法と対象企業規模）と、システムインテグレーション事業の説明（Java案件への特化）に基づきます。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上ではパッケージ事業が全体の過半を占め、会社はこの事業を「重点事業」と位置付けて資源を投入し拡大を図る方針です。システムインテグレーション事業は、継続的な取引関係により受注の波が小さい安定した事業と位置付けられています。主要な顧客として株式会社インターネットイニシアティブが両セグメントにまたがって開示されています。",
+        "basis": "セグメント注記の外部顧客への売上高、MD&Aの経営成績等の分析（重点事業の位置付け）、【事業の内容】のSI事業の説明、【セグメント情報等】の主要な顧客ごとの情報に基づきます。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",

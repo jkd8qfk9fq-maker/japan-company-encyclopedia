@@ -4,15 +4,131 @@
   "name": "オーシャンシステム",
   "officialName": "株式会社オーシャンシステム",
   "nameEn": "OCEAN SYSTEM CORPORATION",
-  "description": null,
+  "shortNameEn": "OCEAN SYSTEM",
+  "description": "食品スーパー「チャレンジャー」と「業務スーパー」の店舗運営、宅配弁当、食材宅配を手がける食品小売グループです。",
   "listings": [
     {
       "exchange": "tse",
       "market": "スタンダード"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "ocean-system-group",
+      "name": "オーシャンシステムグループの事業",
+      "description": "当社は新潟県三条市に本店を置き、連結子会社2社とともに「食」に関わる事業を展開するグループです。2026年3月期の連結売上高は96,055百万円で、連結の従業員数は1,029人です（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "gyomu-super",
+          "name": "業務スーパー事業",
+          "description": "「業務スーパー」の店舗展開及びフランチャイズエリア内におけるサブFCの指導・管理を行っています。フランチャイザーである神戸物産との契約に基づき、新潟県、福島県、宮城県、茨城県、群馬県、山形県、長野県、富山県、秋田県、北海道、熊本県で展開し、連結子会社のカワサキがサブフランチャイジーとして店舗を運営しています。当社グループの当期末の直営店舗数は80店舗です。外部顧客への売上高は52,267百万円です（2026年3月期）。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "supermarket",
+          "name": "スーパーマーケット事業",
+          "description": "食品スーパー「チャレンジャー」による店舗展開を行っています。新潟県で展開しています。外部顧客への売上高は27,472百万円です（2026年3月期）。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "bento",
+          "name": "弁当給食事業",
+          "description": "「フレッシュランチ39」等のブランドによる企業宅配弁当の製造及び販売、惣菜等の受託製造、企業内食堂の運営受託を行っています。連結子会社のサンキューオールジャパンが「フレッシュランチ39」のフランチャイズ展開を行っています。外部顧客への売上高は10,828百万円です（2026年3月期）。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "food-delivery",
+          "name": "食材宅配事業",
+          "description": "「ヨシケイ」ブランドによる夕食材料セット等の宅配を行っています。ヨシケイ開発とのフランチャイズ契約に基づき、新潟県、群馬県、北海道の全域及び栃木県の一部で展開しています。外部顧客への売上高は4,960百万円です（2026年3月期）。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ryokan-other",
+          "name": "旅館、その他事業",
+          "description": "旅館「海風亭寺泊日本海」及びその他飲食店の運営を行っています。外部顧客への売上高は526百万円です（2026年3月期）。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "食品スーパーと業務スーパーの店舗で食品を販売し、企業向け宅配弁当と夕食材料の宅配で売上を得る事業モデルです。",
+    "products": [
+      "食品スーパー「チャレンジャー」の店舗販売",
+      "「業務スーパー」の店舗販売",
+      "企業向け宅配弁当「フレッシュランチ39」",
+      "夕食材料セット「ヨシケイ」",
+      "旅館「海風亭寺泊日本海」の宿泊・飲食"
+    ],
+    "customers": [
+      "食品スーパーや業務スーパーに来店する一般消費者",
+      "宅配弁当を利用する企業",
+      "食材宅配を利用する家庭",
+      "旅館や飲食店の利用客"
+    ],
+    "revenueSources": [
+      "食品スーパーの店舗販売",
+      "業務スーパーの店舗販売",
+      "宅配弁当の製造・販売",
+      "食材宅配",
+      "旅館・飲食店の運営"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "本店とグループ体制",
+        "description": "当社は新潟県三条市に本店を置く会社で、連結子会社のサンキューオールジャパンとカワサキの2社とともにグループを構成しています。連結の従業員数は1,029人です（2026年3月31日現在）。"
+      },
+      {
+        "kind": "offering",
+        "title": "食品小売と宅配サービス",
+        "description": "食品スーパー「チャレンジャー」と「業務スーパー」の店舗で食品を販売し、「フレッシュランチ39」の宅配弁当と「ヨシケイ」の夕食材料セットを届けます。旅館「海風亭寺泊日本海」なども運営しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "来店客と宅配の利用者",
+        "description": "顧客は食品スーパーや業務スーパーに来店する一般消費者、宅配弁当を利用する企業、食材宅配を利用する家庭です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "店舗販売と宅配による売上",
+        "description": "2026年3月期の連結売上高は96,055百万円で、最も大きいのは業務スーパー事業の52,267百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,144百万円となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +143,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8852606000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 952,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9073412000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 980,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10356708000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1026,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11204651000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1004,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12141423000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 1029,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +231,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第48期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社オーシャンシステム",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKNJ.pdf",
-      "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-28"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-28",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +242,74 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [],
+  "relatedCompanies": [
+    {
+      "companyId": "kobe-bussan",
+      "relationship": "business-partner",
+      "description": "業務スーパー事業のフランチャイズ本部であり、当社は同社とのフランチャイズ契約に基づき「業務スーパー」を展開しています。当社は同社の株式160,000株を保有し、保有目的として営業上の取引関係の維持及び強化が印字されています。業務提携等の関係にある取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "株式の保有状況／特定投資株式"
+    },
+    {
+      "companyId": "hiday-hidaka",
+      "relationship": "business-partner",
+      "description": "令和７年10月に同社とフランチャイズ契約を締結し、同社が展開する「熱烈中華食堂日高屋」を令和８年４月に日本海側で初出店しました。業務提携等の関係にある取引先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【経営方針、経営環境及び対処すべき課題等】"
+    }
+  ],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第48期(2025/04/01－2026/03/31)",
+      "publisher": "株式会社オーシャンシステム",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKNJ.pdf",
+      "publishedAt": "2026-06-25",
+      "docId": "S100YKNJ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "published"
+  },
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "令和６年度から令和８年度の３カ年を対象とする中期経営計画「IDEA & INNOVATION で、新たな価値をつくる」に取り組んでいます。事業部間の連携を深化させ、リアル店舗とネットの融合に取り組み、従業員の満足度向上と人材の確保・育成を進める方針です。スーパーマーケット事業、業務スーパー事業及び弁当給食事業の拡大と、直営店とサブFC店との相乗効果による出店エリアの拡大を目指しています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "「より良いものをより安く」の理念のもと、商品調達コストの削減分をお客様に還元することを基本方針としています。スーパーマーケット事業、業務スーパー事業、弁当給食事業、食材宅配事業、旅館事業の5事業を事業部制で展開し、フランチャイズ契約によるブランド展開と直営店・サブFC店の組み合わせで出店エリアを広げています。",
+        "basis": "経営方針、事業の内容、重要な契約等に基づく。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "報告セグメントはスーパーマーケット事業、業務スーパー事業、弁当給食事業、食材宅配事業、旅館、その他事業の5つです。2026年3月期の外部顧客への売上高は、業務スーパー事業が52,267百万円と最も大きく、スーパーマーケット事業が27,472百万円、弁当給食事業が10,828百万円、食材宅配事業が4,960百万円、旅館、その他事業が526百万円でした。地域別では本邦以外の外部顧客への売上高はなく、売上高の10％以上を占める相手先はありません。",
+        "basis": "セグメント情報（報告セグメントの外部顧客への売上高、地域ごとの情報、主要な顧客ごとの情報）に基づく。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }

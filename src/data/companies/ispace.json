@@ -1,18 +1,133 @@
 {
   "id": "ispace",
   "code": "9348",
-  "name": "ispace",
+  "name": "ｉｓｐａｃｅ",
   "officialName": "株式会社ispace",
   "nameEn": "ispace, inc.",
-  "description": null,
+  "shortNameEn": "ispace, inc.",
+  "description": "自社開発の月着陸船と探査車で顧客の荷物を月へ運び、月のデータを提供する月面開発事業を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "lunar-development",
+      "name": "月面開発事業",
+      "description": "自社で開発する月着陸船（ランダー）と月面探査車（ローバー）を用いて、顧客の荷物を月へ輸送するペイロードサービスと、月のデータを取得・提供するデータサービスを行う、単一セグメントの事業です。2026年3月期の売上高は3,307百万円でした。",
+      "customers": [
+        "各国の宇宙機関",
+        "研究機関",
+        "民間企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "payload-service",
+          "name": "ペイロードサービス",
+          "description": "顧客の荷物（ペイロード）をランダーやローバーに搭載し、月まで輸送するサービスです。打上げ前の技術的なアドバイスと調整から、月面到着後の実験の支援、電力供給やデータ通信までを含みます。2026年3月期の外部顧客への売上高は2,333百万円でした。",
+          "customers": [
+            "各国の宇宙機関",
+            "研究機関",
+            "民間企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "data-service",
+          "name": "データサービス",
+          "description": "ミッションを通じて取得した月の画像や環境・資源等のデータを、顧客に提供するサービスです。当面はミッションごとのデータ取得を行い、将来的には蓄積したデータの大規模データベースをサブスクリプション型で提供する構想が示されています。サービス別の売上高は区分して掲記されていません。",
+          "customers": [
+            "各国の宇宙機関",
+            "研究機関",
+            "民間企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "partnership-research",
+          "name": "パートナーシップサービス・受託研究・その他",
+          "description": "パートナーシップサービスと受託研究、その他の合計で、2026年3月期の外部顧客への売上高は973百万円でした。受託研究は当連結会計年度から新たに計上された区分です。",
+          "customers": [
+            "各国の宇宙機関",
+            "研究機関",
+            "民間企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社開発のランダーとローバーで顧客の荷物を月へ輸送する対価と、取得した月のデータを提供する対価を得る仕組みです。",
+    "products": [
+      "ペイロードサービス（ランダーとローバーによる月への荷物の輸送）",
+      "データサービス（ミッションで取得した月の画像や環境・資源等のデータの提供）",
+      "パートナーシップサービス",
+      "受託研究"
+    ],
+    "customers": [
+      "各国の宇宙機関",
+      "研究機関",
+      "民間企業"
+    ],
+    "revenueSources": [
+      "ペイロードの重量に応じた輸送の対価",
+      "月のデータの提供対価",
+      "パートナーシップサービスと受託研究の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ｉｓｐａｃｅ",
+        "description": "東京都中央区に本店を置き、連結子会社3社とグループを構成しています。2026年3月31日現在の連結従業員数は333人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "ペイロードサービスとデータサービス",
+        "description": "自社で開発するランダー（月着陸船）とローバー（月面探査車）を用いて、顧客の荷物を月まで輸送するペイロードサービスと、ミッションで取得した月のデータを提供するデータサービスを行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "宇宙機関・研究機関・民間企業",
+        "description": "顧客は各国の宇宙機関や研究機関、民間企業です。2026年3月期の主要な顧客は、米国のドレイパー研究所、欧州宇宙機関、台湾国家宇宙センターでした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高3,307百万円",
+        "description": "2026年3月期の売上高は3,307百万円で、ペイロードサービスが2,333百万円、パートナーシップサービス・受託研究・その他が973百万円でした。前期に比べて30.3％減りました。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失8,152百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純損失は8,152百万円で、前期は11,945百万円の親会社株主に帰属する当期純損失でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +142,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8831549000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 164,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +162,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": -2347606000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 216,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +182,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9745256000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 282,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +202,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7007587000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 317,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "ミッション２については、2025年１月の打上げを契機に履行義務の充足に係る進捗度を合理的に見積もることができるようになったため、収益の認識方法を原価回収基準から進捗度に基づく方法に変更しています。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15173485000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 333,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +231,219 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2010,
+      "title": "合同会社ホワイトレーベルスペース・ジャパンを設立",
+      "description": "民間によるローバー（月面探査車）開発と、世界初の民間月面探査レース「Google Lunar XPRIZE」への参加を目指し、袴田武史が合同会社ホワイトレーベルスペース・ジャパン（現当社）を埼玉県入間市に設立しました。",
+      "significance": "現在のispaceの創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "株式会社ispaceに組織変更し、HAKUTOとして始動",
+      "description": "合同会社を株式会社に組織変更し、社名を株式会社ispaceに変更した後、Google Lunar XPRIZEに日本唯一のチーム「HAKUTO」として独自に参加しました。",
+      "significance": "現在の社名となり、月面探査への挑戦が本格化した出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "ローバーがGoogle Lunar XPRIZEの中間賞を受賞",
+      "description": "HAKUTOで開発するローバーが、宇宙空間でも機能する性能を持つことが評価され、Google Lunar XPRIZEの中間賞を受賞しました。",
+      "significance": "ローバー技術が国際的に評価された出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "ランダーの開発に着手",
+      "description": "月面開発事業への本格進出に向け、月着陸船（ランダー）の自社開発に着手しました。あわせて米国子会社の再編を行い、日本を本社とする体制に改めました。",
+      "significance": "ローバー開発から月輸送事業への転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "ルクセンブルクにispace EUROPE S.A.を設立",
+      "description": "ルクセンブルク大公国政府と月の資源開発に関する覚書を締結し、子会社ispace EUROPE S.A.をルクセンブルク市に設立しました。",
+      "significance": "ローバー開発を担う欧州拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "HAKUTO-Rプログラムを立ち上げ",
+      "description": "Google Lunar XPRIZEの終了に伴いHAKUTOプログラムを終了し、日本初の民間月面探査の実現を目指す技術実証プログラム「HAKUTO-R」の立ち上げと、SpaceX社のファルコン９ロケットでの打上げを公表しました。",
+      "significance": "レースへの参加から、自社ミッションによる事業化への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "ＮＡＳＡのＣＬＰＳタスクオーダーＣＰ-12に採択",
+      "description": "米国子会社が、ドレイパー研究所を中心とするチームの一員として、ＮＡＳＡの商業月面輸送サービス（ＣＬＰＳ）のタスクオーダーＣＰ-12のサービスプロバイダーに採択されました。",
+      "significance": "米国ミッション受注の基盤となった採択です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "ミッション１の打上げを実施",
+      "description": "民間月面探査プログラムのミッション１の打上げを、フロリダ州ケープカナベラル宇宙基地より実施しました。",
+      "significance": "民間企業として世界で初めて月面着陸に挑戦した打上げです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所グロース市場に上場",
+      "description": "東京証券取引所グロース市場に株式を上場しました。",
+      "significance": "上場企業として事業を展開する段階に入った出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "ミッション１が月周回までの到達を実証",
+      "description": "ミッション１はマイルストーンのSuccess８までを完了しましたが、月面着陸にあたるSuccess９の完了は困難と判断されました。",
+      "significance": "月周回までの輸送能力を実証する一方、月面着陸技術の課題が明確になった結果です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "ミッション２の打上げを実施し、HAKUTO-Rが終了",
+      "description": "ミッション２「SMBC x HAKUTO-R VENTURE MOON」の打上げを実施しましたが、月面着陸の完了は困難と判断されました。同年、パートナー企業との契約満了をもってHAKUTO-Rプログラムの終了が発表されました。",
+      "significance": "２度目の技術実証の結果と、技術実証プログラムの区切りです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "日米ランダーを新モデル「ULTRA」に統合",
+      "description": "日米で個別に開発してきたランダーモデルを共通プラットフォームの新モデル「ULTRA」に統合し、開発体制をＣＴＯ直下に集約する構造改革を発表しました。あわせて、通信・測位サービス「ルナ・コネクトサービス」の立ち上げ検討の開始も発表されました。",
+      "significance": "商業ミッションに向けた開発体制の再構築です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "takasago-thermal-engineering",
+      "relationship": "customer",
+      "description": "ミッション２で月面用水電解装置の輸送に関するペイロードサービス契約を締結した顧客です。主要な顧客ごとの情報にも継続して掲載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "companyId": "niterra",
+      "relationship": "customer",
+      "description": "ミッション１で固体電池の輸送に関するペイロードサービス契約を締結した顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "companyId": "euglena",
+      "relationship": "customer",
+      "description": "ミッション２で微細藻類培養装置の輸送に関するペイロードサービス契約を締結した顧客です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "companyId": "kddi",
+      "relationship": "business-partner",
+      "description": "月周回衛星を活用した通信・測位サービス「ルナ・コネクトサービス」について、地上局の運用および利用に関する共同検討を進めるべく基本合意書を締結しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第16期(2025/04/01－2026/03/31)",
-      "publisher": "株式会社ispace",
+      "publisher": "株式会社ｉｓｐａｃｅ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YL5W.pdf",
       "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YL5W",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 継続企業の前提に関する重要事象等が記載されています。多額の先行研究開発投資と長期の開発期間を要する事業のため継続的な損失と営業キャッシュ・フローのマイナスが続いており、継続企業の前提に重要な疑義を生じさせるような事象又は状況が存在するとされています。一方で、対応策を実施していることなどから、継続企業の前提に関する重要な不確実性は認められないと判断されています。継続企業の前提に関する取扱いには人の確認が必要です。",
+      "businessModel: 2022年２月19日付で普通株式１株につき20株の割合で株式分割を行っています（主要な経営指標等の注記に記載）。",
+      "businessModel: 開示後発事象として、2026年３月27日の取締役会で、米国子会社ispace technologies U.S., inc.に関する開発中のランダー関連取引の見直しと人員最適化の実施が決議されています。米国ミッションスケジュールの再設定に伴うもので、この影響は2026年３月期の連結財務諸表には含まれていません。本登録は2026年３月31日現在のグループ構造と数値で行っています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "地球と月が一つのエコシステムとなる経済圏の創出を目的とし、ミッション１とミッション２の技術実証で得た経験を活かして品質向上の反復を進めるとしています。日米で個別に開発してきたランダーを共通プラットフォームの新モデル「ULTRA」に統合し、2028年のミッション３と2029年のミッション４に向けた開発を進め、ミッション４以降は年２回から３回のミッションとランダーの量産化によるコスト低減を目指すとしています。あわせて、蓄積した月のデータを活用するデータプラットフォームの構築も掲げています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "小型で軽量なランダーとローバーに集中し、民生品を活用して開発コストを抑える開発の進め方が強みです。2010年の創業以来続けてきたローバー開発の蓄積に加え、ミッション１とミッション２で月周回軌道までの輸送と運用を経験していることも土台になっています。",
+        "basis": "【事業の内容】に、小型ランダーへの戦略的集中と民生品（ＣＯＴＳ品）の活用による低コスト化、2010年以来のローバー開発の継続が印字されています。同じく【事業の内容】に、ミッション１とミッション２の実施と、ランダーをミッション・コントロール・センターから運用する体制が印字されています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "月面開発事業の単一セグメントで事業を行う民間宇宙企業です。2026年3月期の売上高のうち、米国のドレイパー研究所向けが1,706百万円、欧州宇宙機関向けが526百万円、台湾国家宇宙センター向けが451百万円と、宇宙機関や研究機関向けが中心です。",
+        "basis": "【セグメント情報等】の関連情報（主要な顧客ごとの情報）に、2026年3月期の顧客別売上高としてドレイパー研究所1,706,237千円、欧州宇宙機関526,221千円、台湾国家宇宙センター451,229千円が印字され、月面開発事業の単一セグメントであることが印字されています。",
+        "asOf": "2026-06-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

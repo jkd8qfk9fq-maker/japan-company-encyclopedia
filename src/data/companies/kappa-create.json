@@ -4,15 +4,126 @@
   "name": "カッパ・クリエイト",
   "officialName": "カッパ・クリエイト株式会社",
   "nameEn": "KAPPA-CREATE CO., LTD.",
-  "description": null,
+  "shortNameEn": "KAPPA-CREATE CO., LTD.",
+  "description": "回転寿司チェーン「かっぱ寿司」を直営展開し、子会社がコンビニエンスストア等向けの寿司・調理パンを製造販売する外食企業です。",
   "listings": [
     {
       "exchange": "tse",
       "market": "プライム"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "conveyor-belt-sushi-business",
+      "name": "回転寿司事業",
+      "description": "当社が国内・海外で回転寿司チェーン「かっぱ寿司」を直営展開する事業です。2026年3月期の外部顧客への売上高は59,245百万円で、当連結会計年度末の店舗数は299店舗でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "domestic-stores",
+          "name": "国内の回転寿司店",
+          "description": "当社が国内において、直営による回転寿司店「かっぱ寿司」のチェーン展開を行っています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "overseas-stores",
+          "name": "海外の回転寿司店",
+          "description": "連結子会社のカッパ・クリエイトコリア株式会社が韓国で、PT KAPPA CREATE INDONESIAがインドネシアで、回転寿司店を運営しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    },
+    {
+      "id": "delica-business",
+      "name": "デリカ事業",
+      "description": "連結子会社の株式会社ジャパンフレッシュが、本州・九州地区においてコンビニエンスストアやスーパーマーケット向けの寿司・調理パンの製造、販売を行う事業です。2026年3月期の外部顧客への売上高は13,948百万円でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "delica-products",
+          "name": "寿司・調理パン・デザートの製造販売",
+          "description": "寿司・調理パンの製造、販売に加え、デザート製品の製造、販売を行い、コンビニエンスストアやスーパーマーケット等に販売しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "delica-factories",
+          "name": "生産工場",
+          "description": "埼玉県上尾市の上尾工場は当社が所有し、株式会社ジャパンフレッシュに貸与されており、同社は名古屋工場等の工場で製品を生産しています。",
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【主要な設備の状況】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "当社は回転寿司チェーン「かっぱ寿司」を国内・海外で直営展開し、連結子会社の株式会社ジャパンフレッシュがコンビニエンスストアやスーパーマーケット向けの寿司・調理パン等を製造・販売します。",
+    "products": [
+      "回転寿司店「かっぱ寿司」の店舗運営",
+      "コンビニエンスストア・スーパーマーケット向けの寿司・調理パンの製造・販売",
+      "デザート製品の製造・販売"
+    ],
+    "customers": [
+      "回転寿司店の来店客（個人消費者）",
+      "コンビニエンスストア・スーパーマーケット等の小売事業者"
+    ],
+    "revenueSources": [
+      "直営回転寿司店の店舗売上",
+      "デリカ製品の卸売売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "コロワイドグループの外食企業",
+        "description": "当社と連結子会社4社で構成され、2026年3月31日現在の連結従業員数は801人です。当社は株式会社コロワイドの間接子会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "回転寿司店の運営とデリカ製品の製造販売",
+        "description": "回転寿司チェーン「かっぱ寿司」を直営で展開し、連結子会社がコンビニエンスストア等向けの寿司・調理パンを製造・販売します。"
+      },
+      {
+        "kind": "customer",
+        "title": "来店客と小売事業者が顧客",
+        "description": "回転寿司店では来店客に寿司を提供し、デリカ事業ではコンビニエンスストアやスーパーマーケットに製品を販売します。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高73,193百万円",
+        "description": "2026年3月期の売上高は73,193百万円で、回転寿司事業が59,245百万円、デリカ事業が13,948百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失394百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純損失は394百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +138,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11727000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 790,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +158,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8696000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 798,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +178,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10108000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 784,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +198,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10889000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 799,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +218,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10244000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 801,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +226,6 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
-    {
-      "id": "yuho-2026",
-      "title": "有価証券報告書－第48期(2025/04/01－2026/03/31)",
-      "publisher": "カッパ・クリエイト株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDD5.pdf",
-      "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
-    }
-  ],
-  "status": {
-    "state": "figures-only"
-  },
-  "updatedAt": "2026-09-30",
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
@@ -142,5 +237,236 @@
       "yuho-2026"
     ],
     "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 1973,
+      "title": "ジェム・エンタープライズの設立",
+      "description": "創業者の徳山淳和は長野県長野市に株式会社ジェム・エンタープライズを設立し、ショッピング・ストアー等への寿司の製造販売と「ミスタードーナツ」のフランチャイズ店の営業を開始しました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "前身である長野フーズの設立",
+      "description": "株式会社ジェム・エンタープライズから寿司部門を分離独立し、当社の前身である有限会社長野フーズを設立しました。",
+      "significance": "現在の会社の前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "「かっぱ寿司」第1号店のオープン",
+      "description": "回転寿司店「かっぱ寿司」の第1号店を長野市にオープンしました。",
+      "significance": "回転寿司事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1983,
+      "title": "株式会社日伸食品としての設立",
+      "description": "有限会社日伸食品を組織変更し、株式会社日伸食品として設立しました。",
+      "significance": "株式会社としての出発です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "株式会社ニッシンへの商号変更",
+      "description": "商号を株式会社ニッシンに変更しました。",
+      "significance": "店舗網の拡大期の商号です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "株式の店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "東京証券取引所市場第一部への上場",
+      "description": "東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "取引所上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "韓国子会社の設立",
+      "description": "韓国・釜山広域市にカッパ・クリエイトコリア株式会社を設立しました。",
+      "significance": "海外展開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "ジャパンフレッシュの子会社化",
+      "description": "株式会社ジャパンフレッシュの株式を取得し、連結子会社としました。",
+      "significance": "デリカ事業の基盤が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "持株会社制への移行",
+      "description": "持株会社制に移行し、カッパ・クリエイトホールディングス株式会社に商号変更するとともに、回転寿司事業を承継した会社がカッパ・クリエイト株式会社となりました。",
+      "significance": "グループ体制の転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "コロワイドグループ入り",
+      "description": "株式会社ＳＰＣカッパによる公開買付けにより同社の子会社となり、コロワイドグループに属することになりました。",
+      "significance": "現在の親会社関係の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "韓国子会社の株式譲渡",
+      "description": "当社が保有するカッパ・クリエイトコリア株式会社の全株式を、株式会社レインズインターナショナルへ譲渡しました。",
+      "significance": "韓国事業から一時的に撤退しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "韓国子会社の再子会社化",
+      "description": "カッパ・クリエイトコリア株式会社の株式を取得し、連結子会社としました。",
+      "significance": "韓国事業に再び取り組む体制になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "インドネシア子会社の設立",
+      "description": "PT KAPPA CREATE INDONESIAを設立し、連結子会社としました。",
+      "significance": "東南アジアへの展開の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [],
+  "sources": [
+    {
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第48期",
+      "publisher": "カッパ・クリエイト株式会社",
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YDD5.pdf",
+      "publishedAt": "2026-06-22",
+      "docId": "S100YDD5",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-10"
+    }
+  ],
+  "status": {
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 当社を被告として、株式会社はま寿司から2023年12月27日付けで東京地方裁判所に損害賠償の支払いを求める等の訴訟が提起され、係属しています。有報では、今後の推移によって将来の連結業績に影響を及ぼす可能性がある一方、現時点でその影響額を合理的に見積ることが困難であるため、連結財務諸表には反映していないとされています。"
+    ]
+  },
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "当社グループは、「お客様の喜びが私たちの喜びです」を社是とし、中長期的な経営戦略として強い既存店づくり、成長投資、コストの最適化、ESGの取組み、コンプライアンスの強化を進め、基幹事業である回転寿司事業を安定的な成長軌道に戻すことで、持続的な成長と中長期的な企業価値の向上を目指しています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "当連結会計年度は、既存店の改装や注文専用高速レーン等の設備導入、新規出店のほか、韓国・インドネシアでの出店が進められており、掲げる既存店強化と成長投資の方針に沿った取組みが見られます。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における中長期的な会社の経営戦略の記載と、経営者による分析における回転寿司事業の取組みの記載",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "国内の直営店舗網と、切付マイスター・サービスマイスターの育成による調理・接客技術の標準化が店舗運営の強みです。また、コロワイドグループの業態間連携によるメニュー開発や共同調達を活用できる体制も強みです。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における強い既存店づくりとコストの最適化の記載",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "回転寿司事業が売上高の大部分を占め、デリカ事業が続きます。地域ごとの情報は、本邦の外部顧客への売上高が連結売上高の90％を超えるため記載が省略されており、売上高の10％以上を占める主要な顧客もないため、その情報も省略されています。",
+        "basis": "セグメント情報の外部顧客への売上高、関連情報の地域ごとの情報と主要な顧客ごとの情報",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
+  "segmentRevenue": {
+    "fiscalYear": "2026年3月期",
+    "periodEnd": "2026-03-31",
+    "label": "外部顧客への売上高",
+    "items": [
+      {
+        "businessId": "conveyor-belt-sushi-business",
+        "amount": 59245000000
+      },
+      {
+        "businessId": "delica-business",
+        "amount": 13948000000
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【セグメント情報】"
   }
 }

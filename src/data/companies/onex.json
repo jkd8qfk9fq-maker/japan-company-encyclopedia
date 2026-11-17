@@ -4,15 +4,144 @@
   "name": "オーネックス",
   "officialName": "株式会社オーネックス",
   "nameEn": "ONEX Corporation",
-  "description": null,
+  "shortNameEn": "ONEX Corporation",
+  "description": "自動車部品や産業機械部品などの金属部品に浸炭・窒化などの熱処理加工を施す金属熱処理加工事業と、工業製品等の運送事業を営む会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "transportation",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "metal-heat-treatment",
+      "name": "金属熱処理加工事業",
+      "description": "当社と連結子会社の株式会社オーネックステックセンターが、取引先の金属部品に浸炭熱処理、窒化熱処理、焼入・焼戻し・焼なましなどの熱処理加工を施す事業です。2026年6月期の外部顧客への売上高は4,680百万円でした。",
+      "children": [
+        {
+          "id": "carburizing",
+          "name": "浸炭熱処理",
+          "description": "金属部品に浸炭熱処理を施す加工です。",
+          "customers": [
+            "自動車部品メーカー",
+            "建設機械部品メーカー",
+            "産業工作機械メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "nitriding",
+          "name": "窒化熱処理",
+          "description": "金属部品に窒化熱処理を施す加工です。",
+          "customers": [
+            "自動車部品メーカー",
+            "建設機械部品メーカー",
+            "産業工作機械メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "quenching-tempering-annealing",
+          "name": "焼入・焼戻し・焼なまし",
+          "description": "金属部品に焼入、焼戻し、焼なましなどの熱処理を施す加工です。",
+          "customers": [
+            "自動車部品メーカー",
+            "建設機械部品メーカー",
+            "産業工作機械メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ],
+      "customers": [
+        "自動車部品メーカー",
+        "建設機械部品メーカー",
+        "産業工作機械メーカー"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "transportation",
+      "name": "運送事業",
+      "description": "連結子会社の株式会社オーネックスラインが一般貨物運送業の認可を受けて営む、工業製品及び機械の運送及び荷役の事業です。当社と株式会社オーネックステックセンターから、取引先との熱処理製品等の運送も受託しています。2026年6月期の外部顧客への売上高は614百万円でした。",
+      "customers": [
+        "工業製品・機械の運送を委託する事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "取引先から預かった金属部品に浸炭熱処理や窒化熱処理、焼入・焼戻しなどの加工を施して対価を得る受託加工が中核で、グループ会社が熱処理製品等の運送も担う事業モデルです。",
+    "products": [
+      "浸炭熱処理",
+      "窒化熱処理",
+      "焼入・焼戻し・焼なまし",
+      "工業製品及び機械の運送・荷役"
+    ],
+    "customers": [
+      "自動車部品メーカー",
+      "建設機械部品メーカー",
+      "産業工作機械メーカー"
+    ],
+    "revenueSources": [
+      "金属熱処理加工の対価",
+      "運送及び荷役の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "オーネックス",
+        "description": "1951年に大屋熱処理株式会社として設立され、東京都港区に本店を置き、東京証券取引所スタンダード市場に上場する会社です。2026年6月30日現在の連結従業員数は251人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "金属熱処理加工と運送",
+        "description": "取引先の金属部品に浸炭熱処理、窒化熱処理、焼入・焼戻し・焼なましなどを施す金属熱処理加工事業と、工業製品及び機械の運送及び荷役を行う運送事業を営んでいます。"
+      },
+      {
+        "kind": "customer",
+        "title": "部品メーカー各社",
+        "description": "自動車関連、建設機械関連、産業工作機械関連の部品メーカーが主な取引先です。特定投資株式の保有目的には、NITTAN、古河機械金属、カヤバなどが金属熱処理事業の重要顧客として印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "加工と運送の対価",
+        "description": "2026年6月期の売上高は5,294百万円でした。事業別では金属熱処理加工事業が4,680百万円、運送事業が614百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年6月期の親会社株主に帰属する当期純利益は382百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,11 +156,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5435652000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 277,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -47,11 +176,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5653592000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 263,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -67,11 +196,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5276190000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 247,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -87,11 +216,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5252204000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 244,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -115,32 +244,237 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
+  "history": [
     {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第74期(2024/07/01－2025/06/30)",
-      "publisher": "株式会社オーネックス",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WRVO.pdf",
-      "publishedAt": "2025-09-29",
-      "accessedAt": "2026-09-29"
+      "year": 1951,
+      "title": "大屋熱処理株式会社の設立",
+      "description": "個人事業の大同熱処理工業所を母体に、東京都大田区雪ヶ谷に大屋熱処理株式会社（現在の株式会社オーネックス）が設立され、東京都大田区仲池上で操業を開始しました。",
+      "significance": "現在の会社の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
     },
+    {
+      "year": 1958,
+      "title": "ガス浸炭方法への転換開始",
+      "description": "浸炭焼入れの方法を固形浸炭からガスを用いるガス浸炭へ転換し始め、1965年10月に完全に転換しました。",
+      "significance": "主力の浸炭熱処理の技術基盤が固まった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "厚木工場の操業開始",
+      "description": "神奈川県厚木市の内陸工業団地に取得した用地で、厚木工場の操業を開始しました。",
+      "significance": "現在の主力工場の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "大屋運輸株式会社の設立",
+      "description": "大屋運輸株式会社（現在の株式会社オーネックスライン）が設立されました。",
+      "significance": "現在の運送事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "山口工場の操業開始",
+      "description": "山口県厚狭郡山陽町（現在の山陽小野田市）に山口工場が操業を開始しました。",
+      "significance": "中国地方の生産拠点が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "東松山工場の操業開始",
+      "description": "埼玉県東松山市の東松山工業団地に騎西工場の設備を移転し、新たな設備も設置して東松山工場の操業を開始しました。",
+      "significance": "現在の主力工場の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "社名を株式会社オーネックスに変更",
+      "description": "CIをグループ全体で実施し、社名を株式会社オーネックスとしました。",
+      "significance": "現在の社名になった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "日本証券業協会に株式を登録",
+      "description": "日本証券業協会に株式を登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "株式会社オーネックステックセンターの設立",
+      "description": "株式会社オーネックステックセンターが設立されました。",
+      "significance": "現在の連結子会社で、金属熱処理加工事業を担います。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "テックセンター三重工場の操業開始",
+      "description": "株式会社オーネックステックセンターの三重工場が三重県亀山市の亀山・関テクノヒルズ工業団地で操業を開始し、株式会社オーネックス三重営業所も開設されました。",
+      "significance": "近畿・東海エリアの拠点が加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分変更により、スタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "本店を東京都港区へ移転",
+      "description": "本店を東京都港区芝五丁目29番18号に移転しました。",
+      "significance": "現在の本店所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "furukawa",
+      "relationship": "customer",
+      "description": "古河機械金属株式会社は、当社の金属熱処理事業における産業工作機械関連の重要顧客であり、取引関係等の維持・強化を図るために当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "chugai-ro",
+      "relationship": "supplier",
+      "description": "中外炉工業株式会社は、熱処理炉及び資材の発注先であり、設備の最新情報を得るなど事業上の取引関係等の維持・強化を図るために当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-gear",
+      "relationship": "customer",
+      "description": "日本ギア工業株式会社は、当社の金属熱処理事業における産業工作機械関連の重要顧客であり、取引関係等の維持・強化を図るために当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "npr-riken",
+      "relationship": "customer",
+      "description": "リケンNPR株式会社は、当社の金属熱処理事業における自動車部品関連の重要顧客であり、取引関係等の維持・強化を図るために当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "tsubakimoto-chain",
+      "relationship": "customer",
+      "description": "株式会社椿本チエインは、当社の金属熱処理事業における自動車部品関連の重要顧客であり、取引関係等の維持・強化を図るために当社が株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
+  "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第75期(2025/07/01－2026/06/30)",
       "publisher": "株式会社オーネックス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z50O.pdf",
       "publishedAt": "2026-09-30",
-      "accessedAt": "2026-11-14",
       "docId": "S100Z50O",
-      "asOf": "2026-06-30"
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: [object Object]",
+      "businessStructure: [object Object]"
+    ]
   },
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営戦略として、熱処理技術力の向上と新しい熱処理技術への取組み、環境の変化に対応した柔軟な事業展開、顧客志向を徹底した提案型営業、ITを活用したワークスタイルの変革、人材の育成の5項目を柱に掲げています。経営環境への対応では、エネルギー・原材料価格の高騰に対して電力の契約プランの見直しや設備の機械化・自動化の検討、金属熱処理炉の効率的な稼働など生産の効率化を図るとしています。",
+        "asOf": "2026-09-30",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "浸炭、窒化、焼入・焼戻し・焼なましなど複数の熱処理工法に対応し、技術研究所で金属熱処理の技術の研究・開発を行っています。生産拠点は厚木工場、東松山工場、山口工場と、近畿・東海エリアを受け持つ子会社の三重工場があり、運送子会社が熱処理製品等の運送まで担う体制です。",
+        "basis": "【セグメント情報】の報告セグメントの概要に主な内容として浸炭熱処理、窒化熱処理、焼入・焼戻し・焼なましが印字され、【沿革】に金属熱処理の技術の研究・開発のため研究室（現・技術研究所）を設置したことが印字され、【主要な設備の状況】に厚木工場、東松山工場、山口工場と子会社の三重工場が金属熱処理加工事業の設備として印字されている。",
+        "asOf": "2026-09-30",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "金属熱処理加工は取引先の部品に加工を施す受託加工のため、取引先である自動車関連、建設機械関連、産業工作機械関連の生産動向に受注が左右される事業構造です。2026年6月期は、自動車関連と建設機械関連の受注が減少した一方、産業工作機械関連の受注は増加しました。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に、主力取引業界である自動車関連、建設機械関連の受注は減少したものの産業工作機械関連は増加したことが印字され、【事業の内容】に取引先の品物に熱処理加工を施す事業であることが印字されている。",
+        "asOf": "2026-09-30",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",
