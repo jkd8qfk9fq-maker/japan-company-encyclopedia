@@ -7,6 +7,7 @@ import type { Industry } from "@/types/industry";
 import type { Revision } from "@/types/revision";
 import type { Source } from "@/types/source";
 import type { Term } from "@/types/term";
+import type { WebsiteData } from "@/types/website";
 
 /**
  * Runtime schemas for repository content.
@@ -330,6 +331,12 @@ export const headquartersSchema = z.strictObject({
   companies: z.record(kebab, z.strictObject({ prefecture: z.enum(PREFECTURE_NAMES), municipality: text })),
 });
 
+export const websitesSchema = z.strictObject({
+  locator: text,
+  readAt: isoDate,
+  companies: z.record(kebab, z.strictObject({ url: z.string().regex(/^https?:\/\/[a-z0-9.-]+\/$/), sourceId: kebab })),
+});
+
 /** Parse or throw an error that names the file and the exact field. */
 export function parseContent<T>(schema: z.ZodType<T>, value: unknown, label: string): T {
   const result = schema.safeParse(value);
@@ -352,6 +359,7 @@ export type SchemaAgreement = [
   Assert<Equals<z.infer<typeof sourceSchema>, Source>>,
   Assert<Equals<z.infer<typeof companySchema>, Company>>,
   Assert<Equals<z.infer<typeof headquartersSchema>, HeadquartersData>>,
+  Assert<Equals<z.infer<typeof websitesSchema>, WebsiteData>>,
   Assert<Equals<z.infer<typeof industrySchema>, Industry>>,
   Assert<Equals<z.infer<typeof termSchema>, Term>>,
   Assert<Equals<z.infer<typeof featureSchema>, Feature>>,

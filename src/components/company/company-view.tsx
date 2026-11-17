@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AdSlot } from "@/components/ads/ad-slot";
 import type { Company } from "@/types/company";
-import { companyRepository, headquartersRepository } from "@/lib/repositories";
+import { companyRepository, headquartersRepository, websiteRepository } from "@/lib/repositories";
 import { formatDateJa } from "@/lib/utils/format";
 import { companyMetrics } from "@/lib/company-metrics";
 import { financialDeepDive } from "@/lib/financial-deep-dive";
@@ -94,7 +94,11 @@ export async function CompanyView({ company }: { company: Company }) {
 
   return (
     <>
-      <CompanyHero company={company} headquarters={await headquartersRepository.get(company.id)} />
+      <CompanyHero
+        company={company}
+        headquarters={await headquartersRepository.get(company.id)}
+        website={await websiteRepository.get(company.id)}
+      />
       <SectionTabs sections={sections} containerId="company-sections" tabbed="mobile" />
       <div id="company-sections">
 
@@ -137,8 +141,13 @@ export async function CompanyView({ company }: { company: Company }) {
       )}
 
       {company.perspectives && (
-        <CompanySection id="perspectives" eyebrow="Strategy" title="これからどうする？何が強み？">
-          <PerspectivesSection perspectives={company.perspectives} sources={company.sources} />
+        <CompanySection
+          id="perspectives"
+          eyebrow="Strategy & Strengths"
+          title="どうやって成長し、なぜ勝てるのか"
+          lead="文は会社が有価証券報告書に書いた言葉のまま。目標の数字・売上の構図・業界の中の位置は、データから自動で描いています。"
+        >
+          <PerspectivesSection company={company} />
         </CompanySection>
       )}
 

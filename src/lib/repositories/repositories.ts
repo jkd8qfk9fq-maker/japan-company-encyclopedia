@@ -4,6 +4,7 @@ import type { Headquarters, HeadquartersData } from "@/types/headquarters";
 import type { Industry } from "@/types/industry";
 import type { Revision, RevisionTargetType } from "@/types/revision";
 import type { Term } from "@/types/term";
+import type { Website } from "@/types/website";
 
 /**
  * The only way the UI reads content.
@@ -65,4 +66,11 @@ export interface HeadquartersRepository {
   get(companyId: string): Promise<Headquarters | null>;
   /** Every placed company id with its head office, in no particular order. */
   list(): Promise<[string, Headquarters][]>;
+}
+
+export interface WebsiteRepository {
+  /** Where the address was read: 【株式事務の概要】公告掲載方法. */
+  locator(): Promise<string>;
+  /** The company's own website, or null when its filing prints none of its own. */
+  get(companyId: string): Promise<Website | null>;
 }

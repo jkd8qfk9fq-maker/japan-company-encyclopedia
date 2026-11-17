@@ -1,10 +1,11 @@
 import { companies } from "@/data/companies";
 import headquartersJson from "@/data/headquarters.json";
+import websitesJson from "@/data/websites.json";
 import { features } from "@/data/features";
 import { industries } from "@/data/industries";
 import { terms } from "@/data/terms";
 import { join } from "node:path";
-import { headquartersSchema, parseContent } from "@/lib/content/schemas";
+import { headquartersSchema, parseContent, websitesSchema } from "@/lib/content/schemas";
 import { isReleased } from "@/lib/release";
 import type { Company, RelatedCompany } from "@/types/company";
 import { FileRevisionRepository } from "./file-revision-repository";
@@ -12,6 +13,7 @@ import type {
   CompanyRepository,
   FeatureRepository,
   HeadquartersRepository,
+  WebsiteRepository,
   IndustryRepository,
   RevisionRepository,
   TermRepository,
@@ -138,5 +140,16 @@ export const headquartersRepository: HeadquartersRepository = {
   },
   async list() {
     return headquartersEntries;
+  },
+};
+
+const websites = parseContent(websitesSchema, websitesJson, "src/data/websites.json");
+
+export const websiteRepository: WebsiteRepository = {
+  async locator() {
+    return websites.locator;
+  },
+  async get(companyId) {
+    return websites.companies[companyId] ?? null;
   },
 };

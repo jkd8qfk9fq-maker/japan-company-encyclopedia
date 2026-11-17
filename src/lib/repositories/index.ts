@@ -9,5 +9,6 @@ export {
   industryRepository,
   revisionRepository,
   termRepository,
+  websiteRepository,
 } from "./static-repositories";
 export type * from "./repositories";
