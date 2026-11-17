@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { applyPlan, checkPlan, isValidCode, PLAN_PAGE, startCheckout, usePlan } from "@/lib/plan";
+import { applyPlan, checkPlan, isValidCode, PLAN_PAGE, PLAN_TRIAL_DAYS, startCheckout, usePlan } from "@/lib/plan";
 
 /**
  * Wraps a part of the page that belongs to the YUGENQ premium plan (JCE-043). The static HTML always holds the
@@ -62,13 +62,14 @@ export function PremiumGate({
           disabled={buying === "sending"}
           className="rounded-md bg-foreground px-5 py-2.5 text-sm font-medium text-background disabled:opacity-50"
         >
-          {buying === "sending" ? "お支払い画面へ…" : "プレミアムプランに申し込む（月額390円）"}
+          {buying === "sending" ? "お支払い画面へ…" : PLAN_TRIAL_DAYS > 0 ? `${PLAN_TRIAL_DAYS}日間無料で試す（その後 月額390円）` : "プレミアムプランに申し込む（月額390円）"}
         </button>
         <span className="text-xs text-muted-foreground">お支払いは Stripe の画面で。済むとこのページに戻ります。</span>
       </div>
       {buying === "error" && <p className="mt-2 text-xs text-muted-foreground">いまは申し込みの画面を開けませんでした。しばらくしてからもう一度お試しください。</p>}
       <p className="mt-3 text-sm leading-6">
         プレミアムプラン（月額390円・税込）は、企業タイプ診断・最初の一社と共通です。
+        {PLAN_TRIAL_DAYS > 0 && `はじめの${PLAN_TRIAL_DAYS}日間は無料で、その間に解約すれば料金はかかりません。`}
         <a href={PLAN_PAGE} className="ml-1 underline underline-offset-2 hover:text-foreground" target="_blank" rel="noopener">
           プランの内容と申し込み
         </a>

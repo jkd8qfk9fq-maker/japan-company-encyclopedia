@@ -104,8 +104,8 @@ export function sortRows(rows: ScreeningRow[], key: SortKey): ScreeningRow[] {
   });
 }
 
-/** Saved conditions per browser. A free browser keeps this many; the premium plan may raise it (P2-1). */
-export const SAVED_CONDITIONS_LIMIT = 3;
+/** Saved conditions per browser: free, and with the YUGENQ premium plan (P2-1, JCE-064). A setting, not a rule. */
+export const SAVED_CONDITIONS_LIMITS = { free: 3, premium: 20 } as const;
 
 export function isConditions(value: unknown): value is Conditions {
   if (!value || typeof value !== "object") return false;

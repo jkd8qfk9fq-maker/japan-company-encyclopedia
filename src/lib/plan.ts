@@ -16,6 +16,11 @@ import { trackEvent } from "@/lib/analytics/runtime";
 export const PLAN_ENDPOINT = "https://shindan.kigyo-hyakka.com/api/plan";
 export const CHECKOUT_ENDPOINT = "https://shindan.kigyo-hyakka.com/api/checkout";
 export const PLAN_PAGE = "https://shindan.kigyo-hyakka.com/plan/";
+/**
+ * The free trial the plan's Checkout gives (P2-1, JCE-064). The Checkout is the 企業タイプ診断 site's; this number is
+ * only what this site says about it, so it must follow that site's trial (its CTS-044). 0 = no trial.
+ */
+export const PLAN_TRIAL_DAYS = 7;
 const COOKIE = "yugenq_plan";
 const CODE_PATTERN = /^sub_[A-Za-z0-9]{8,64}$/;
 
