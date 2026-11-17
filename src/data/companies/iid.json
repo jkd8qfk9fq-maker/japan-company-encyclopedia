@@ -4,15 +4,161 @@
   "name": "イード",
   "officialName": "株式会社イード",
   "nameEn": "IID，Inc.",
-  "description": null,
+  "shortNameEn": "IID, Inc.",
+  "description": "自動車やアニメなど専門分野に特化したWebメディアを多数運営し、広告やコンテンツの提供、リサーチやEC支援を行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "media",
+      "primary": true
+    },
+    {
+      "industryId": "it",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "creator-platform",
+      "name": "クリエイタープラットフォーム事業（CP事業）",
+      "description": "自社プラットフォーム「iid-CMP」で運営するWebメディアやコンテンツを通じて、顧客企業へマーケティングサービス（インターネット広告及びデータ・コンテンツ提供）を提供する事業です。2026年６月末時点で21ジャンル86個のWebメディア及びコンテンツを運営しており、2026年６月期の売上高は5,491百万円でした。",
+      "customers": [
+        "広告を出稿する顧客企業",
+        "データ・コンテンツを利用する企業",
+        "ECサイトの利用者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "web-media",
+          "name": "Webメディア・コンテンツ運営",
+          "description": "自動車専門サイト「レスポンス」やゲーム情報サイト「インサイド」、アニメ情報サイト「アニメ！アニメ！」など、各ジャンルに特化した情報（ニュース記事）及びコンテンツをインターネットを通じて提供しています。",
+          "customers": [
+            "Webメディアの利用者",
+            "広告を出稿する顧客企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ec-services",
+          "name": "ECサイト運営・支援",
+          "description": "連結子会社の株式会社エンファクトリーがECサイト「STYLE STORE」を運営し、株式会社ネットショップ総研がECサイトの運営代行とコンサルティング、SAVAWAY株式会社が複数ネットショップの一元管理システム「TEMPOSTAR」を提供しています。",
+          "customers": [
+            "ECサイトを運営する企業",
+            "ECサイトの利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "creator-solution",
+      "name": "クリエイターソリューション事業（CS事業）",
+      "description": "顧客企業に対してリサーチソリューションとメディアコマース（ECソリューション）を提供する事業です。2026年６月期の売上高は461百万円でした。",
+      "customers": [
+        "調査を依頼する顧客企業",
+        "ECサイトを構築・運営する企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "research-solution",
+          "name": "リサーチソリューション",
+          "description": "大規模な定量調査から生活者個人に対する定性調査まで、高度なネットリサーチからリアルな行動観察まで、幅広いリサーチメニューで顧客企業の要望に対応しています。",
+          "customers": [
+            "調査を依頼する顧客企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "ec-solution",
+          "name": "ECソリューション",
+          "description": "自社開発のECシステム「marbleASP」の提供を中心に、デザインの自由度が高く外部システムとの連携APIを多数備えたECサイトの構築を支援しています。",
+          "customers": [
+            "ECサイトを構築・運営する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社プラットフォームで運営するWebメディアを通じて顧客企業から広告料金やデータ・コンテンツ利用料金を受け取り、リサーチとECシステムの提供でも対価を得る事業モデルです。",
+    "products": [
+      "Webメディア「レスポンス」「インサイド」「アニメ！アニメ！」など21ジャンル86媒体",
+      "インターネット広告",
+      "データ・コンテンツ提供",
+      "リサーチソリューション",
+      "ECシステム「marbleASP」",
+      "ECサイト「STYLE STORE」"
+    ],
+    "customers": [
+      "広告を出稿する顧客企業",
+      "データ・コンテンツを利用する企業",
+      "調査を依頼する企業",
+      "ECサイトを構築・運営する企業"
+    ],
+    "revenueSources": [
+      "顧客企業から支払われる広告料金",
+      "データ・コンテンツの利用料金",
+      "ECサイト運営による収入",
+      "リサーチの対価",
+      "ECシステムの提供による対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "専門メディアを多数運営するコンテンツマーケティング企業",
+        "description": "イードは東京都中野区に本社を置き、連結子会社８社と持分法適用関連会社２社でグループを構成しています。2026年６月30日現在の連結従業員数は244人で、東京証券取引所グロース市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "Webメディアを基盤とするマーケティングサービスとソリューション",
+        "description": "「iid-CMP」で運営する21ジャンル86個のWebメディアを通じたマーケティングサービスとデータ・コンテンツの提供に加え、リサーチソリューションとECソリューションを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "広告や調査、EC支援を求める顧客企業",
+        "description": "顧客企業は広告の出稿やデータ・コンテンツの利用、調査の依頼、ECサイトの構築・運営支援を通じて同社のサービスを使います。2026年６月期は、売上高の10％以上を占める特定の相手先はありませんでした。"
+      },
+      {
+        "kind": "revenue",
+        "title": "広告料金とコンテンツ利用料金が中心",
+        "description": "2026年６月期の売上高は5,952百万円で、クリエイタープラットフォーム事業が5,491百万円、クリエイターソリューション事業が461百万円でした。売上高は前期比2.2％減りました。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は311百万円",
+        "description": "2026年６月期の親会社株主に帰属する当期純利益は311百万円で、前期比1.1％増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,11 +173,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3828699000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 205,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -47,11 +193,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4172762000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 239,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -67,11 +213,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4266003000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 227,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -87,11 +233,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4638432000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 230,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -115,32 +261,149 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 2000,
+      "title": "株式会社インターネット総合研究所の子会社として設立",
+      "description": "株式会社インターネット総合研究所の100％子会社として、株式会社IRIコマース＆テクノロジー（IRI-CT）の商号で事業を開始しました。同年にブロードバンド系総合情報サイト「RBB TODAY」の営業権を取得し、Webメディアの運営を始めました。",
+      "significance": "現在のイードの母体ができた出来事で、Webメディア事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "ECシステム「marbleASP」の事業を取得",
+      "description": "インプルーブテクノロジーズ株式会社よりeコマースASP事業「marbleASP」の営業権を取得し、運営を開始しました。",
+      "significance": "現在のCS事業のECソリューションにつながる事業の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "旧株式会社イードとの合併と商号変更",
+      "description": "100％子会社の旧株式会社イードと合併し、商号を「株式会社イード」に変更しました。",
+      "significance": "現在の社名と会社のかたちが定まった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "「ScanNetSecurity」の運営会社を子会社化",
+      "description": "セキュリティ情報サイト「ScanNetSecurity」を運営する株式会社ネットセキュリティ総合研究所の株式を取得し、完全子会社としました。",
+      "significance": "専門メディアをM&Aで広げる手法を続けた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東京証券取引所マザーズ市場に上場",
+      "description": "東京証券取引所マザーズ市場に上場しました。同年には絵本・児童書のメディアサイト「絵本ナビ」を運営する株式会社絵本ナビの株式を取得し子会社化しました。",
+      "significance": "上場により公開会社となった転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "SAVAWAY株式会社を子会社化",
+      "description": "ECショップの管理システム「TEMPOSTAR」を提供するNHN SAVAWAY株式会社（現・SAVAWAY株式会社）の全株式を取得し、子会社化しました。",
+      "significance": "CP事業のシステム収益の基盤を広げた取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、マザーズ市場からグロース市場へ移行しました。同年にはエフ・アイ・ティー・パシフィック株式会社の株式を取得し子会社化しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社エディトを子会社化",
+      "description": "機関投資家向け専門誌「J-MONEY」など金融機関向け専門情報を手がける株式会社エディトを子会社化しました。同年には子会社のマイケル株式会社を吸収合併しました。",
+      "significance": "金融・専門情報のジャンルへ広げた取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "株式会社webCGと株式会社Sun Smileを子会社化",
+      "description": "自動車専門サイト「webCG」を運営する株式会社webCGの全株式を取得し子会社化しました。また、EC事業を運営する株式会社Sun Smileの全株式を取得し子会社化しました。",
+      "significance": "当期もM&Aによる事業拡大が続いていることを示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
-    {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第26期(2024/07/01－2025/06/30)",
-      "publisher": "株式会社イード",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WQQU.pdf",
-      "publishedAt": "2025-09-24",
-      "accessedAt": "2026-09-29"
-    },
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第27期(2025/07/01－2026/06/30)",
       "publisher": "株式会社イード",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z4I4.pdf",
       "publishedAt": "2026-09-28",
-      "accessedAt": "2026-11-14",
       "docId": "S100Z4I4",
-      "asOf": "2026-06-30"
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 期間後の2026年８月14日開催の取締役会において、連結子会社である株式会社エンファクトリーの保有株式の全てを株式会社パソナグループに売却することを決議し、同日付で株式譲渡契約を締結し、2026年９月１日付で全株式を譲渡しています。登録は2026年６月30日現在のグループ構造（株式会社エンファクトリーは連結子会社）で行っており、期間後の子会社株式譲渡の反映には人の確認が必要です。",
+      "businessStructure: 期間後の2026年８月14日開催の取締役会において、連結子会社である株式会社エンファクトリーの保有株式の全てを株式会社パソナグループに売却することを決議し、同日付で株式譲渡契約を締結し、2026年９月１日付で全株式を譲渡しています。登録は2026年６月30日現在のグループ構造（株式会社エンファクトリーは連結子会社）で行っており、期間後の子会社株式譲渡の反映には人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-11-14",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "M&AによるWebメディアやコンテンツの取得でクリエイタープラットフォーム事業を拡大し、広告収入に過度に依存しない多様な収益ポートフォリオの構築、AI関連ビジネスを含む新規サービスの創出、エンジニアリング力の強化に取り組むとしています。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "沿革にはWebメディアや事業の取得が設立以来多数並んでおり、M&Aによる事業拡大が継続していることが読み取れます。",
+        "basis": "【沿革】に、2000年の「RBB TODAY」の営業権取得から2026年の株式会社webCG及び株式会社Sun Smileの子会社化まで、メディアや事業の取得が継続して記載されていることによる。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "21ジャンル86個のWebメディアを自社プラットフォーム「iid-CMP」で運営し、各ジャンルに特化した専門情報を蓄積していることが強みになっています。",
+        "basis": "【事業の内容】に、2026年６月末時点で21ジャンル86個のWebメディア及びコンテンツを「iid-CMP」にて運営し、各メディアジャンルに特化した情報（ニュース記事）及びコンテンツを提供していることが記載されていることによる。",
+        "asOf": "2026-09-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",
