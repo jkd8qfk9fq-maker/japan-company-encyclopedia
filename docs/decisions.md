@@ -1117,3 +1117,22 @@ shared by link, with the third company as a premium benefit.
   a buyer to checkout, so the reader returns to the same comparison.
 - 最初の一社's own 見比べ (industry, business and the reader's notes) is a different feature in another project; its
   『準備中』 is lifted there, separately (D-040: nothing is shared in code).
+
+### JCE-062 · 2026-11-17 · Accepted (operator) — 業界ランキング from the registered data only
+
+The operator's implementation plan (P2-3, 2026-11-17) asked for regularly published indicators, including an
+「産業タイプマップ」 built from diagnosis answers. The operator chose (2026-11-17) the rankings only: the map would need
+answers sent to a server, which the diagnosis site's invariant 6 forbids, so it is not built.
+
+- **`/rankings`** and four pages: 海外売上高比率が高い業界, 売上高の伸びが大きい業界, 従業員数の伸びが大きい業界,
+  純利益率が高い業界. Each value is the one `buildIndustryFigures` already gives the 業界の数字 tab (JCE-042/047) —
+  `src/lib/rankings.ts` only orders them — so a ranking cannot disagree with the industry pages.
+- **Method on every page**: the formula, how many companies stand behind each industry's figure, how a missing figure is
+  handled, and which fiscal years the latest figures are. An industry with fewer than five companies behind its
+  figure is listed apart, not ranked. The wording is an order (「〜が高い業界」「大きい順」) and says it is not a verdict.
+- **Follows the data**: the pages and their share images are built with the site, so a data update re-ranks them;
+  nothing is edited by hand.
+- **Share images** (`opengraph-image.tsx`) are drawn at build time by `next/og` with a subset of Noto Sans JP (OFL,
+  `src/assets/fonts/og`), because `next/og` cannot read the WOFF2 files the pages use. `tests/rankings.test.ts` fails
+  when an image would need a character the subset lacks, and checks each ranking's top entries against sums and
+  medians taken straight from the data files.

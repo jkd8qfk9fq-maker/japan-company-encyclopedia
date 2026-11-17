@@ -39,6 +39,7 @@ export async function SiteFooter() {
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/search">検索</Link></li>
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/screening">財務で探す</Link></li>
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/compare">企業を見比べる</Link></li>
+            <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/rankings">業界ランキング</Link></li>
           </ul>
         </nav>
         <nav aria-label="サポート">

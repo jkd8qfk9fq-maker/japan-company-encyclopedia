@@ -42,12 +42,23 @@ export function assetRequest(request: Request): Request {
   return new Request(url.toString(), request);
 }
 
+/**
+ * The share images of JCE-062 are exported as `…/opengraph-image`, with no extension, so the assets server cannot tell
+ * they are PNG; a crawler that trusts the header would not show them. Only a successful answer is relabelled.
+ */
+export function withShareImageType(pathname: string, response: Response): Response {
+  if (!pathname.endsWith("/opengraph-image") || !response.ok) return response;
+  const out = new Response(response.body, response);
+  out.headers.set("content-type", "image/png");
+  return out;
+}
+
 const worker = {
   async fetch(request: Request, env: Env): Promise<Response> {
     const target = REDIRECT_OLD_HOST ? redirectTarget(request.url) : null;
     if (target) return Response.redirect(target, 301);
     if (new URL(request.url).pathname.startsWith("/api/push/")) return handlePush(request, env, pushStore(env));
-    return env.ASSETS.fetch(assetRequest(request));
+    return withShareImageType(new URL(request.url).pathname, await env.ASSETS.fetch(assetRequest(request)));
   },
   // Every 30 minutes (wrangler.jsonc › triggers): announce what /updates.json — the live site — newly lists.
   async scheduled(_controller: unknown, env: Env): Promise<void> {
