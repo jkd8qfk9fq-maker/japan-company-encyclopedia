@@ -50,6 +50,9 @@ export default async function HomePage() {
     companiesByPrefecture(),
   ]);
   const summaries = companies.map(toCompanySummary);
+  // D10: counts of what the entries actually hold, never an estimate of readers or use.
+  const sourceCount = companies.reduce((acc, c) => acc + c.sources.length, 0);
+  const yearCount = companies.reduce((acc, c) => acc + c.financials.length, 0);
   const featured = featuredCompanies(companies);
   const recent = recentlyUpdated(companies);
 
@@ -136,7 +139,11 @@ export default async function HomePage() {
               <dt className="text-xs font-semibold text-muted-foreground">一次資料を重視</dt>
               <dd className="mt-2 flex items-start gap-2 text-xs leading-5 text-muted-foreground">
                 <FileText className="mt-0.5 size-5 shrink-0 text-foreground" aria-hidden />
-                有価証券報告書・EDINETなどの公開資料に基づく情報
+                <span>
+                  有価証券報告書・EDINETなどの公開資料に基づく情報。出典にした資料
+                  <span className="figures font-semibold text-foreground">{sourceCount.toLocaleString("ja-JP")}</span>件、転記した決算
+                  <span className="figures font-semibold text-foreground">{yearCount.toLocaleString("ja-JP")}</span>期分
+                </span>
               </dd>
             </div>
           </dl>
