@@ -18,7 +18,8 @@ export function PremiumGate({
 }: {
   title: string;
   teaser: string;
-  /** Where on this page the buyer lands after paying: the company page's 財務, or an industry's 数字 (JCE-051). */
+  /** Where on this page the buyer lands after paying: the company page's 財務, or an industry's 数字 (JCE-051). The
+   * query is kept, so the 見比べ page (JCE-061) returns with the same companies. */
   returnAnchor?: string;
   children: React.ReactNode;
 }) {
@@ -53,7 +54,7 @@ export function PremiumGate({
           onClick={async () => {
             setBuying("sending");
             try {
-              await startCheckout(`${window.location.origin}${window.location.pathname}#${returnAnchor}`);
+              await startCheckout(`${window.location.origin}${window.location.pathname}${window.location.search}#${returnAnchor}`);
             } catch {
               setBuying("error");
             }
