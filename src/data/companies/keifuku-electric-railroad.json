@@ -4,15 +4,132 @@
   "name": "京福電気鉄道",
   "officialName": "京福電気鉄道株式会社",
   "nameEn": "Keifuku Electric Railroad Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Keifuku Electric Railroad Co.,Ltd.",
+  "description": "京都で鉄軌道事業、福井でバス・タクシー事業を営み、不動産賃貸やホテル・水族館も手がける京阪グループの会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "keifuku-electric-railroad",
+      "name": "京福電気鉄道株式会社",
+      "description": "京都市中京区に本店を置き、運輸業・不動産業・レジャー・サービス業を営む会社です。京阪ホールディングス株式会社の連結子会社で、連結子会社は６社です。2026年３月期の営業収益は14,881百万円で、2026年３月31日現在の連結従業員数は569人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "keifuku-electric-railroad-transportation",
+          "name": "運輸業",
+          "description": "当社が嵐山線・北野線の鉄軌道事業と叡山ケーブル・ロープウェイを営み、子会社がバス運送事業（京都バス株式会社、京福バス株式会社）とタクシー事業（ケイカン交通株式会社、福井交通株式会社）を担う事業です。2026年３月期の外部顧客への営業収益は7,889百万円です。",
+          "customers": [
+            "鉄道・ケーブルカー・ロープウェイの利用者",
+            "バス・タクシーの利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "keifuku-electric-railroad-real-estate",
+          "name": "不動産業",
+          "description": "賃貸マンションや駅ビル、ボートレース三国の施設などの不動産賃貸事業と、不動産販売事業を行う事業です。当社のほか、京福不動産株式会社と三国観光産業株式会社が担っています。2026年３月期の外部顧客への営業収益は5,780百万円です。",
+          "customers": [
+            "賃貸物件の賃借人",
+            "不動産の購入者",
+            "競艇場施設の賃借人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "keifuku-electric-railroad-leisure",
+          "name": "レジャー・サービス業",
+          "description": "ホテル京福福井駅前などのホテル業、越前松島水族館の水族館業、嵐山駅ビルなどでの物販業、広告代理店業を行う事業です。京福不動産株式会社と三国観光産業株式会社が担っています。2026年３月期の外部顧客への営業収益は1,210百万円です。",
+          "customers": [
+            "ホテルの宿泊客",
+            "水族館の入館者",
+            "駅ビルの買い物客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道・バス・タクシーなどの運輸業を中核に、沿線の不動産賃貸やホテル・水族館などのレジャー事業を組み合わせ、地域の交通とにぎわいづくりから収益を得る事業モデルです。",
+    "products": [
+      "嵐山線・北野線の鉄道と叡山ケーブル・ロープウェイの運行",
+      "京都・福井での路線バス・貸切バスの運行",
+      "福井地区でのタクシー事業",
+      "賃貸マンション・駅ビル・競艇場施設などの不動産賃貸",
+      "不動産の販売",
+      "ホテル京福福井駅前の運営",
+      "越前松島水族館の運営",
+      "嵐山駅ビルなどでの物販"
+    ],
+    "customers": [
+      "鉄道・ケーブルカー・ロープウェイの利用者",
+      "バス・タクシーの利用者",
+      "賃貸物件の賃借人と不動産の購入者",
+      "ホテル・水族館の利用者"
+    ],
+    "revenueSources": [
+      "運輸業の営業収益（旅客運輸収入、バス・タクシーの運賃など）",
+      "不動産業の営業収益（賃料収入と不動産販売の代金）",
+      "レジャー・サービス業の営業収益（宿泊料、入館料、商品の販売代金など）"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "京福電気鉄道",
+        "description": "1942年に設立され、東京証券取引所スタンダード市場に上場しています。京阪ホールディングス株式会社の連結子会社で、連結子会社は６社です。2026年３月31日現在の連結従業員数は569人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "鉄道・バス・タクシーと不動産・レジャー事業",
+        "description": "京都地区では鉄軌道事業を、福井地区ではバス・タクシー事業を中心に運輸業を営み、あわせて沿線の不動産賃貸・販売、ホテル・水族館などのレジャー・サービス業を手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "沿線の住民と観光客",
+        "description": "沿線地域の住民の日常の足として、また嵐山や比叡山、福井の観光地を訪れる観光客の移動手段として利用されています。不動産賃貸では賃借人を、ホテル・水族館では利用者を顧客としています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年３月期の営業収益は14,881百万円",
+        "description": "2026年３月期の営業収益は14,881百万円で、前期の14,459百万円から2.9％増加しました。セグメント別の外部顧客への営業収益は、運輸業が7,889百万円、不動産業が5,780百万円、レジャー・サービス業が1,210百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年３月期の親会社株主に帰属する当期純利益は1,833百万円",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は1,833百万円でした。前期は1,736百万円の親会社株主に帰属する当期純利益でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +144,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8096000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 752,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +164,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9463000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 718,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +184,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11779000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 675,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +204,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 13656000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 613,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 15720000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 569,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +232,107 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1942,
+      "title": "京福電気鉄道を設立",
+      "description": "前身の京都電燈会社から、発電・配電部門を切り離した残りの電鉄部門（越前線、叡山線、嵐山線、架空索道線）を継承し、京福電気鉄道株式会社が設立されました。",
+      "significance": "会社の設立です。電力会社から電鉄専業として独立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1946,
+      "title": "京都バスを設立",
+      "description": "京都バス株式会社が設立されました。",
+      "significance": "現在のバス運送事業の基幹会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "大阪証券取引所と京都証券取引所に上場",
+      "description": "大阪証券取引所市場第一部銘柄及び京都証券取引所市場銘柄へ上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "三国観光産業を設立",
+      "description": "三国観光産業株式会社が設立されました。",
+      "significance": "現在の福井地区の不動産・レジャー事業の基幹会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "叡山本線と鞍馬線を叡山電鉄へ譲渡",
+      "description": "前年に設立した叡山電鉄株式会社へ、叡山本線及び鞍馬線の鉄道事業を譲渡しました。",
+      "significance": "自社の鉄道路線が嵐山線・北野線に絞られました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "越前本線と三国芦原線をえちぜん鉄道へ譲渡",
+      "description": "えちぜん鉄道株式会社へ、永平寺線を除く越前本線及び三国芦原線の鉄道事業を譲渡しました。",
+      "significance": "福井地区の鉄道事業から撤退し、福井ではバス・タクシー事業が中心になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第二部へ移行",
+      "description": "東京証券取引所と大阪証券取引所の現物市場の統合により、大阪証券取引所市場第二部銘柄から東京証券取引所市場第二部銘柄へ上場指定替えとなりました。",
+      "significance": "現在の東京証券取引所スタンダード市場につながる移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "keihan-holdings",
+      "relationship": "parent",
+      "description": "親会社です。2026年３月31日現在、議決権の43.47％を保有されています。【関係会社の状況】には、借入金等の保証予約と役員の兼任が記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "nippon-parking-development",
+      "relationship": "major-shareholder",
+      "description": "2026年３月31日現在、発行済株式（自己株式を除く）の総数に対する所有株式数の割合9.53％を保有する大株主である事業会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "kyosan-electric-manufacturing",
+      "relationship": "business-partner",
+      "description": "安全輸送設備に関する取引会社であり、当社は関係維持のため同社株式を特定投資株式として保有しています。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +340,45 @@
       "publisher": "京福電気鉄道株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEN3.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YEN3",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営ビジョンとして「沿線深耕～私たちのまちをさらに楽しくにぎやかに～」を掲げ、京都地区では鉄軌道事業を、福井地区ではバス・タクシー事業を中心とした交通インフラを核に、地域と協働して沿線の魅力を高めることで企業価値の向上を図るとしています。2026年６月に定めた「京福グループ中期経営計画2028」（2026年度～2028年度）では、安全・安心に関する取り組みの継続、沿線地域との連携によるにぎわいづくり、一定規模の不動産投資を継続的に行う不動産賃貸事業の展開などを基本戦略としています。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年３月期は、嵐山線で観光利用が堅調だった運輸業に加え、新たに取得した賃貸物件からの賃料収入やボートレース三国の施設賃貸収入が寄与した不動産業が伸び、営業収益は前期比2.9％増の14,881百万円となりました。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の経営成績の概要の記載に基づく",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "京都エリアではインバウンドを中心に観光客のさらなる増加が見込まれ、福井エリアでは北陸新幹線の金沢・敦賀間延伸開業後の環境変化が今後も続くと会社は見ています。一方で、人口減少・少子高齢化の進行やバス・タクシー事業での運転士不足といった課題にも直面しています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の経営環境と【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の記載に基づく",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

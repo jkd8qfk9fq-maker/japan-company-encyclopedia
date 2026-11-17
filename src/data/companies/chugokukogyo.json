@@ -4,15 +4,144 @@
   "name": "中国工業",
   "officialName": "中国工業株式会社",
   "nameEn": "CHUGOKUKOGYO CO.,LTD.",
-  "description": null,
+  "shortNameEn": "Chugokukogyo Co., Ltd.",
+  "description": "広島県呉市を拠点に、高圧ガス容器やLPガス貯槽などの高圧機器を中心に、鉄構機器、施設機器、運送の4事業を営むメーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    },
+    {
+      "industryId": "transportation",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "chugokukogyo",
+      "name": "中国工業株式会社",
+      "description": "広島県呉市に本社・工場を置き（登記上の本店は広島市中区）、高圧機器、鉄構機器、施設機器、運送の4事業を行う会社です。当社と連結子会社2社、非連結子会社4社でグループを構成し、2026年3月31日現在の従業員数は376人です。東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "high-pressure-equipment",
+          "name": "高圧機器事業",
+          "description": "高圧ガス容器（LPガス及びその他の一般高圧ガス）、LPガスバルク貯槽、LPガス設備、LPガス貯槽、その他の高圧ガス貯槽の製造販売と、高圧ガス関連設備の設計施工を行う事業です。高圧ガスプラント工事の一部は連結子会社の高圧プラント検査株式会社が請け負っています。2026年3月期の売上高は9,069百万円でした。",
+          "customers": [
+            "LPガス事業者やガス供給事業者",
+            "高圧ガスを使う産業分野の事業者",
+            "プラント工事の発注者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "transport",
+          "name": "運送事業",
+          "description": "一般区域貨物運送業、引越業、倉庫業を行う事業です。当社の製品等の輸送・保管は、連結子会社の中鋼運輸株式会社が主として行っています。2026年3月期の売上高は2,188百万円でした。",
+          "customers": [
+            "当社グループの製品の輸送・保管",
+            "貨物輸送や引越、倉庫を利用する荷主"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "facility-equipment",
+          "name": "施設機器事業",
+          "description": "飼料用タンク及びコンテナ、廃水処理装置、畜産機材、薬品タンク、脱臭装置、その他各種FRP（強化プラスチック）製品の製造販売を行う事業です。2026年3月期の売上高は1,957百万円でした。",
+          "customers": [
+            "畜産・飼料関連の事業者",
+            "薬品メーカー",
+            "廃水処理設備を導入する事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "steel-equipment",
+          "name": "鉄構機器事業",
+          "description": "鉄鋼メーカー向けインナーカバー及びその他各種鉄構製品の製造販売を行う事業です。2026年3月期の売上高は536百万円でした。",
+          "customers": [
+            "鉄鋼メーカー",
+            "鉄構製品を使う事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "高圧ガス容器やLPガス貯槽・設備などの高圧機器を製造販売し、鉄構機器やFRP製の施設機器、子会社による運送とあわせて収益を得る事業モデルです。",
+    "products": [
+      "高圧ガス容器（LPガス及びその他の一般高圧ガス）",
+      "LPガスバルク貯槽、LPガス設備、LPガス貯槽、その他の高圧ガス貯槽",
+      "高圧ガス関連設備の設計施工",
+      "鉄鋼メーカー向けインナーカバーなどの各種鉄構製品",
+      "飼料用タンク及びコンテナ、廃水処理装置、畜産機材、薬品タンク、脱臭装置などのFRP製品",
+      "一般区域貨物運送、引越、倉庫のサービス"
+    ],
+    "customers": [
+      "LPガス事業者やガス供給事業者",
+      "鉄鋼メーカー",
+      "畜産・飼料関連の事業者や薬品メーカー",
+      "貨物の輸送や保管を委託する荷主"
+    ],
+    "revenueSources": [
+      "高圧機器の製造販売と関連設備の設計施工による売上",
+      "鉄構機器の製造販売による売上",
+      "施設機器の製造販売による売上",
+      "運送事業の輸送・保管による売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "中国工業",
+        "description": "広島県呉市に本社・工場を置きます。1950年に設立し、連結子会社2社と非連結子会社4社でグループを構成します。2026年3月31日現在の従業員数は376人です。東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "高圧機器を中心とする4事業",
+        "description": "高圧機器、鉄構機器、施設機器、運送の4事業を営みます。2026年3月期の売上高は、高圧機器事業が9,069百万円、運送事業が2,188百万円、施設機器事業が1,957百万円、鉄構機器事業が536百万円でした。"
+      },
+      {
+        "kind": "customer",
+        "title": "ガス事業者、鉄鋼メーカー、荷主など",
+        "description": "LPガスなどのガス事業者、鉄鋼メーカー、畜産・飼料関連の事業者や薬品メーカー、荷主企業が販売先です。売上高の10％以上を占める特定の販売先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品の製造販売と運送サービスによる売上",
+        "description": "収益は、高圧ガス容器やLPガス貯槽・設備などの製品の製造販売、高圧ガス関連設備の設計施工と、運送事業の輸送・保管サービスから得ています。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の親会社株主に帰属する当期純利益は312百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は312百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +156,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4734000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 391,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +176,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4952000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 384,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第74期の期首より棚卸資産の評価方法を変更しており、第73期（2023年3月期）の主要な経営指標等は、この会計方針を遡って適用した後の数値です。"
     },
     {
       "fiscalYear": "2024年3月期",
@@ -67,7 +197,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5553000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 379,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +217,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5866000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 370,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +237,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6489000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 376,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +245,117 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1950,
+      "title": "中国工業株式会社を設立",
+      "description": "広島県賀茂郡西条町（現東広島市）に中国工業株式会社を設立し、呉市広町の旧軍施設（現呉工場）で一般鉄構製品の製造を開始しました。",
+      "significance": "現在の事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "高圧ガス容器の製造を開始",
+      "description": "高圧ガス容器の製造を開始しました。",
+      "significance": "現在の主力である高圧機器事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1959,
+      "title": "中国鋼材株式会社を設立し運送事業を開始",
+      "description": "中国鋼材株式会社（現連結子会社の中鋼運輸株式会社）を設立し、一般区域貨物運送業を開始しました。",
+      "significance": "現在の運送事業と連結子会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京証券取引所市場第二部などに上場",
+      "description": "株式を東京証券取引所市場第二部と広島証券取引所に上場しました。",
+      "significance": "上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "市場第一部に指定替え",
+      "description": "株式を東京・大阪両証券取引所で市場第一部に指定替えしました。",
+      "significance": "上場市場での位置づけが変わった節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "高圧プラント検査株式会社を設立",
+      "description": "高圧プラント検査株式会社（現連結子会社）を設立し、高圧ガスプラントの検査及び配管工事業を開始しました。",
+      "significance": "現在の連結子会社2社のうち1社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "複合容器「プラコンポ20Kg容器」を発売",
+      "description": "液化石油ガス用オールプラスチック製複合容器（プラコンポ20Kg容器）を発売しました。",
+      "significance": "高圧ガス容器の新製品です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場再編に伴い、スタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "hiroshima-gas",
+      "relationship": "customer",
+      "description": "特定投資株式の保有目的に「高圧機器事業の主要販売先であり、安定的な取引関係の維持・強化のため保有」と個別に記載されている販売先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nippon-steel",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に載る事業会社で、2026年3月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は5.09％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "miyairi-valve-mfg",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に載る事業会社で、2026年3月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合は3.01％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +363,55 @@
       "publisher": "中国工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHRE.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YHRE",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営課題として、容器・バルク貯槽の売上拡大、販売価格の是正、生産性の向上、新製品の開発に取り組むとしています。高圧ガス容器では蓄積した技術と顧客基盤を活かし、LPガスバルク貯槽の更新需要の取り込みや、IT産業等で使われる工業用ガスに対応した特殊ガス用容器など新規分野の開拓を進め、「スマートガスネットワーク構想」に向けた高圧ガス容器の開発も進めています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期は、高圧機器事業がプラント工事の受注等の減少で減収となった一方、鉄構機器事業、施設機器事業、運送事業はいずれも増収となり、全体の売上高は前期から90百万円減の13,752百万円となりました。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の経営成績の記載に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1955年に高圧ガス容器の製造を始めて以来、半世紀以上にわたって蓄積した技術と数千社に及ぶ顧客基盤を持ちます。容器や貯槽の製造販売に加え、連結子会社の高圧プラント検査によるプラント工事・検査、中鋼運輸による製品の輸送・保管までをグループで担う体制をとっています。",
+        "basis": "【事業の内容】の事業の内容と、【経営方針、経営環境及び対処すべき課題等】の経営課題の記載に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "主要事業の高圧機器事業は、人口減と世帯数減、エネルギー供給源の多様化による競争の激化の影響を受け、今後の需要の予測が難しい環境にあると会社は説明しています。その中で、LPガス容器については蓄積した技術と顧客基盤による業界での優位性を活かす方針です。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の経営環境と経営課題の記載に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

@@ -4,18 +4,287 @@
   "name": "テーオーホールディングス",
   "officialName": "株式会社テーオーホールディングス",
   "nameEn": "T.O. Holdings CO.,LTD.",
-  "description": null,
+  "shortNameEn": "T.O. Holdings CO.,LTD.",
+  "description": "北海道函館市に本社を置き、自動車販売、ホームセンター、木材、建設、不動産賃貸などを営むグループの持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
-      "exchange": "sse"
+      "exchange": "sse",
+      "market": "本則市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    },
+    {
+      "industryId": "retail",
+      "primary": false
+    },
+    {
+      "industryId": "construction",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "automobile",
+      "name": "自動車関連事業",
+      "description": "連結子会社の函館日産自動車、北見日産自動車、北見三菱自動車販売、オホーツクスズキ販売が、自動車ディーラーとして自動車の販売と修理を行っています。2026年5月期の外部顧客への売上高は8,973百万円で、グループで最も大きい事業です。",
+      "customers": [
+        "自動車を購入する個人のお客様",
+        "自動車の修理・整備を依頼するお客様"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "hakodate-nissan",
+          "name": "函館日産自動車",
+          "description": "北海道函館市の連結子会社（議決権100.0％）で、日産車の販売と修理を行う自動車ディーラーです。",
+          "customers": [
+            "自動車を購入する個人のお客様",
+            "自動車の修理・整備を依頼するお客様"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "kitami-nissan",
+          "name": "北見日産自動車",
+          "description": "北海道北見市の連結子会社（議決権100.0％）で、日産車の販売と修理を行う自動車ディーラーです。",
+          "customers": [
+            "自動車を購入する個人のお客様",
+            "自動車の修理・整備を依頼するお客様"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "kitami-mitsubishi-motors-sales",
+          "name": "北見三菱自動車販売",
+          "description": "北海道北見市の連結子会社（議決権100.0％）で、三菱車の販売と修理を行う自動車ディーラーです。",
+          "customers": [
+            "自動車を購入する個人のお客様",
+            "自動車の修理・整備を依頼するお客様"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        },
+        {
+          "id": "ohotsuku-suzuki",
+          "name": "オホーツクスズキ販売",
+          "description": "北海道北見市の連結子会社（議決権100.0％、間接所有を含む）で、スズキ車の販売と修理を行う自動車ディーラーです。",
+          "customers": [
+            "自動車を購入する個人のお客様",
+            "自動車の修理・整備を依頼するお客様"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    },
+    {
+      "id": "distribution",
+      "name": "流通事業",
+      "description": "連結子会社のテーオーデパートが家具販売とクレジットカード（割賦販売）・消費者ローン（自社ローン）業務を、テーオーリテイリングがDIY用品・食料品等を販売するホームセンターを、fikaがDVD・CD等のレンタルを行っています。2026年5月期の外部顧客への売上高は7,887百万円です。",
+      "customers": [
+        "家具を購入する個人のお客様",
+        "ホームセンターでDIY用品・食料品を購入する個人のお客様",
+        "クレジットカード・消費者ローンを利用するお客様"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "t-o-department",
+          "name": "テーオーデパート",
+          "description": "北海道函館市の連結子会社（議決権100.0％）で、家具の販売と、クレジットカード（割賦販売）業務および付随する消費者ローン（自社ローン）業務を行っています。",
+          "customers": [
+            "家具を購入する個人のお客様",
+            "クレジットカード・消費者ローンを利用するお客様"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "t-o-retailing",
+          "name": "テーオーリテイリング",
+          "description": "北海道函館市の連結子会社（議決権81.0％）で、DIY用品及び食料品等を販売するホームセンターを北海道各地で運営しています。",
+          "customers": [
+            "ホームセンターでDIY用品・食料品を購入する個人のお客様"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "fika",
+          "name": "fika",
+          "description": "北海道函館市の連結子会社（議決権100.0％）で、DVD等のレンタル事業を行っています。",
+          "customers": [
+            "DVD等をレンタルする個人のお客様"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関係会社の状況】"
+        }
+      ]
+    },
+    {
+      "id": "timber",
+      "name": "木材事業",
+      "description": "連結子会社のテーオーフォレストが、一般建築用建材及び合板などの木材・建材資材を販売しています。2026年5月期の外部顧客への売上高は3,071百万円です。",
+      "customers": [
+        "全国の小売店",
+        "建設会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "t-o-forest",
+          "name": "テーオーフォレスト",
+          "description": "北海道函館市の連結子会社（議決権100.0％）で、木材・建材資材等の販売を行い、函館支店・盛岡支店などの拠点を持ちます。その他の区分では住宅のアフターメンテナンス業も行っています。",
+          "customers": [
+            "全国の小売店",
+            "建設会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "construction",
+      "name": "建設事業",
+      "description": "連結子会社の小泉建設が、土木工事、舗装工事、ビル・商業施設等の建設工事を行っています。2026年5月期の外部顧客への売上高は2,952百万円です。",
+      "customers": [
+        "土木・建築工事の発注者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "koizumi-kensetsu",
+          "name": "小泉建設",
+          "description": "北海道函館市の連結子会社（議決権100.0％）で、土木工事、舗装工事、ビル・商業施設等の建設工事業を行っています。",
+          "customers": [
+            "土木・建築工事の発注者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate-rental",
+      "name": "不動産賃貸事業",
+      "description": "当社が、土地・建物（マンション・戸建住宅・事務所・倉庫等）の賃貸事業を行っています。2026年5月期の外部顧客への売上高は234百万円です。",
+      "customers": [
+        "マンション・戸建住宅・事務所・倉庫等の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない区分で、住宅事業、損害保険代理店業、持株会社である当社の経営指導料が含まれます。連結子会社のテーオー総合サービスが火災保険・損害保険の保険代理店業、生命保険の募集業及びリース業を行っています。2026年5月期の外部顧客への売上高は423百万円です。",
+      "customers": [
+        "保険の契約者",
+        "住宅のアフターメンテナンスを依頼するお客様"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "子会社を通じて自動車ディーラー、小売、木材・建材販売、建設工事、不動産賃貸を行い、各事業の販売・請負・賃貸による収入を得る事業モデルです。",
+    "products": [
+      "自動車の販売と修理・整備",
+      "家具、DIY用品・食料品等の小売商品",
+      "木材・建材資材・合板",
+      "土木・建築工事の請負",
+      "土地・建物（マンション・戸建住宅・事務所・倉庫等）の賃貸"
+    ],
+    "customers": [
+      "自動車を購入・整備する個人のお客様",
+      "ホームセンター・家具専門店の来店客",
+      "全国の小売店・建設会社",
+      "土木・建築工事の発注者",
+      "賃貸物件の賃借人"
+    ],
+    "revenueSources": [
+      "自動車の販売・修理による売上",
+      "家具・DIY用品・食料品等の販売による売上",
+      "木材・建材の販売による売上",
+      "建設工事の請負による売上",
+      "不動産の賃貸収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社テーオーホールディングス",
+        "description": "北海道函館市に本社を置く持株会社で、当社と子会社11社でグループを構成しています。2026年5月期の従業員数は440人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "５つの報告セグメントとその他の事業",
+        "description": "自動車関連、流通、木材、建設、不動産賃貸の５つを報告セグメントとし、その他に住宅事業や損害保険代理店業を行っています。自動車関連は子会社４社が自動車ディーラーとして販売と修理を担います。"
+      },
+      {
+        "kind": "customer",
+        "title": "地域の個人客から全国の事業者まで",
+        "description": "自動車や家具、DIY用品・食料品は主に北海道の個人のお客様に販売し、木材・建材は全国の小売店や建設会社に販売しています。建設工事は発注者から請け負い、不動産は賃借人に貸し出しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年5月期の売上高は23,543百万円",
+        "description": "2026年5月期の売上高は23,543百万円で、前期比2.7％減少しました。自動車関連と流通が売上高の中心です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年5月期は当期純損失52百万円",
+        "description": "2026年5月期の親会社株主に帰属する当期純損失は52百万円でした（前期は7百万円の当期純損失）。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年5月期",
@@ -30,7 +299,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1074431000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 577,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -50,7 +319,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 472383000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 516,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -70,7 +339,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 605596000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 480,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -90,7 +359,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 599661000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 464,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -110,7 +379,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 526526000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 440,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -118,8 +387,158 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1950,
+      "title": "函館市で「小笠原商店」を創業",
+      "description": "北海道函館市において、木材販売及び衣料品販売の個人経営「小笠原商店」を創業しました。",
+      "significance": "当社の創業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1955,
+      "title": "株式会社小笠原商店を設立",
+      "description": "「小笠原商店」を法人化し、株式会社小笠原商店を設立しました。",
+      "significance": "法人としての起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "商号を株式会社テーオー小笠原に変更",
+      "description": "商号を株式会社小笠原商店から株式会社テーオー小笠原に変更しました。",
+      "significance": "テーオーの商号の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "吸収合併と事業部制への改組",
+      "description": "株式会社テーオーハウス及び東京ゴールド木材株式会社を吸収合併し、木材事業部、流通事業部に加えて住宅事業部、保険事業部などを置く５事業部体制としました。",
+      "significance": "複合事業の体制が整った出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式を店頭登録",
+      "description": "株式を店頭登録銘柄として社団法人日本証券業協会に登録しました。",
+      "significance": "株式公開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "小泉建設に資本参加",
+      "description": "北海道函館市の小泉建設株式会社に資本参加しました（現・連結子会社）。",
+      "significance": "建設事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "函館日産自動車の株式を取得",
+      "description": "北海道函館市の函館日産自動車株式会社の株式を取得しました（現・連結子会社）。",
+      "significance": "自動車関連事業への本格参入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "北見日産自動車の株式を取得",
+      "description": "北海道北見市の北見日産自動車株式会社の株式を取得しました（現・連結子会社）。",
+      "significance": "自動車関連事業の地域拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "持株会社体制へ移行し商号を変更",
+      "description": "商号を「株式会社テーオーホールディングス」に変更し、会社分割による持株会社体制へ移行しました。木材・住宅事業は株式会社テーオーフォレスト、流通事業は株式会社テーオーデパートと株式会社テーオーリテイリングなどに承継されました。",
+      "significance": "現在のグループ体制の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "北見三菱自動車販売の株式を取得",
+      "description": "北海道北見市の北見三菱自動車販売株式会社の株式を取得しました（現・連結子会社）。",
+      "significance": "自動車関連事業の取り扱いブランド拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場ＪＡＳＤＡＱ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "札幌証券取引所本則市場に上場",
+      "description": "札幌証券取引所本則市場に株式を上場しました。",
+      "significance": "重複上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nissan",
+      "relationship": "business-partner",
+      "description": "連結子会社の函館日産自動車と北見日産自動車が、日産自動車の自動車ディーラーとして自動車の販売及び修理事業を行っています（2026年5月31日現在）。仕入の向きは有報に印字されていないため、業務提携等の関係として記録します。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "companyId": "suzuki",
+      "relationship": "business-partner",
+      "description": "連結子会社のオホーツクスズキ販売が、スズキの自動車ディーラーとして自動車の販売及び修理事業を行っています（2026年5月31日現在）。仕入の向きは有報に印字されていないため、業務提携等の関係として記録します。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -127,13 +546,55 @@
       "publisher": "株式会社テーオーホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YYIN.pdf",
       "publishedAt": "2026-08-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YYIN",
+      "asOf": "2026-05-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "当連結会計年度を最終年度とした中期経営計画「TO PLAN 2026」に掲げた「既存事業の収益力を最大限に発揮し、持続可能な企業へと成長するための基盤づくり」の実現に向け、コア事業を中心とした業績の回復および財務体質の強化に取り組みました。",
+        "asOf": "2026-08-25",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+      },
+      "analysis": {
+        "text": "自動車関連、流通、木材、建設、不動産賃貸という性格の異なる５事業を北海道を地盤に併せ持ち、景気や消費動向の影響を受けやすい小売・自動車と、賃貸のような継続収入の事業を組み合わせた構成です。",
+        "basis": "セグメント情報等の外部顧客への売上高、事業の内容、関係会社の状況、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（経営成績等の状況の概要）に基づく",
+        "asOf": "2026-08-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "函館市を発祥の地として、自動車ディーラー、小売店舗、建設、不動産賃貸まで地域に密着した複数の事業を持ち、主要な設備の多くが北海道内にあります。木材事業は函館・盛岡の拠点から全国の小売店・建設会社へ販売しています。",
+        "basis": "セグメント情報等の外部顧客への売上高、事業の内容、主要な設備の状況、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（経営成績等の状況の概要）に基づく",
+        "asOf": "2026-08-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "外部顧客への売上高では自動車関連が8,973百万円と最大で、次いで流通が7,887百万円であり、この２事業でグループ売上高の中心を占めています。",
+        "basis": "セグメント情報等の外部顧客への売上高、事業の内容に基づく",
+        "asOf": "2026-08-25",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年5月期",
     "asOf": "2026-05-31",

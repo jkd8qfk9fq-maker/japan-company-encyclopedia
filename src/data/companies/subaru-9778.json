@@ -4,15 +4,143 @@
   "name": "昴",
   "officialName": "株式会社昴",
   "nameEn": "SUBARU CO., LTD.",
-  "description": null,
+  "shortNameEn": "SUBARU",
+  "description": "鹿児島県鹿児島市に本社を置き、九州を中心に幼児から高校卒業生までを対象とする学習塾を運営する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "human-resources",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "cram-school",
+      "name": "学習塾事業",
+      "description": "幼児、小学生、中学生、高校生及び高校卒業生を対象とする学習塾の企画、運営を行う単一セグメントの事業です。2026年2月28日現在、鹿児島県、宮崎県、熊本県、福岡県、沖縄県に62校舎を展開し、2026年2月期の売上高は3,375百万円、従業員数は300人です。株式会社ナガセの東進衛星予備校システムによる映像授業の運営も行っています。",
+      "customers": [
+        "幼児・小学生・中学生・高校生・高校卒業生とその保護者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "junior-high",
+          "name": "中学部",
+          "description": "中学生を対象とする部門で、2026年2月期の売上高は1,723百万円と部門別で最大です。難関校や公立トップ校の志望者への学習指導を行っています。",
+          "customers": [
+            "中学生とその保護者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "elementary",
+          "name": "幼児・小学部",
+          "description": "幼児と小学生を対象とする部門で、2026年2月期の売上高は917百万円です。有名私立校の志望者を対象とする受験ラサールもこの部門に含まれます。",
+          "customers": [
+            "幼児・小学生とその保護者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "high-school",
+          "name": "高等部",
+          "description": "高校生と高校卒業生を対象とする部門で、2026年2月期の売上高は457百万円です。沖縄部門では浪人生の減少を受けて現役高校生を中心とする運営への移行を進めています。",
+          "customers": [
+            "高校生・高校卒業生とその保護者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "individual-tutoring",
+          "name": "個別指導",
+          "description": "生徒一人ひとりに合わせた個別指導の部門で、2026年2月期の売上高は188百万円です。2025年10月には、どこに住んでいてもオンラインで個別指導が受けられる「すばる個別オンライン」を開始しました。",
+          "customers": [
+            "個別指導を希望する生徒とその保護者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other",
+          "name": "その他",
+          "description": "合宿収入等からなる部門で、2026年2月期の売上高は88百万円です。",
+          "customers": [
+            "塾生とその保護者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "鹿児島・宮崎・熊本・福岡・沖縄に学習塾の校舎を展開し、集団指導と個別指導の授業料等で収益を得る事業モデルです。",
+    "products": [
+      "中学部・幼児小学部・高等部の集団指導",
+      "個別指導（通塾型とオンライン型）",
+      "東進衛星予備校の衛星講義による学習支援",
+      "合宿等の特別講習"
+    ],
+    "customers": [
+      "幼児・小学生・中学生・高校生・高校卒業生とその保護者"
+    ],
+    "revenueSources": [
+      "授業料等の受講料",
+      "合宿収入等"
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "flow": [
+      {
+        "kind": "company",
+        "title": "昴",
+        "description": "鹿児島県鹿児島市に本社を置き、東京証券取引所スタンダード市場に上場しています。2026年2月28日現在の従業員数は300人、校舎数は62校舎です。"
+      },
+      {
+        "kind": "offering",
+        "title": "学習塾の運営",
+        "description": "幼児・小学部、中学部、高等部、個別指導の各部門で学習塾を運営し、東進衛星予備校の衛星講義も提供しています。AIを活用した自立学習支援システム（昴LMS）に模試データを結び付け、個別に最適化された学習支援も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "塾生とその保護者",
+        "description": "顧客は、難関校や公立トップ校などを志望する幼児から高校卒業生までの生徒とその保護者です。募集要項に基づき、直接生徒を募集しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高3,375百万円",
+        "description": "2026年2月期の売上高は3,375百万円（前期比2.2％減）でした。部門別の売上高は、中学部が1,723百万円、幼児・小学部が917百万円、高等部が457百万円、個別指導が188百万円、その他（合宿収入等）が88百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益40百万円",
+        "description": "2026年2月期の当期純利益は40百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年2月期",
@@ -27,7 +155,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3452590000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 292,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -49,14 +177,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3603693000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 311,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第65期の期首から適用しており、第65期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2024年2月期",
@@ -71,7 +200,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3639155000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 308,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -93,7 +222,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3570581000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 305,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -115,7 +244,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3621300000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 300,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
@@ -125,8 +254,159 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1972,
+      "title": "鶴丸予備校を法人化",
+      "description": "1965年9月に創設された鶴丸予備校を、有限会社教学社鶴丸予備校として法人化し、本社を鹿児島市に設置しました。",
+      "significance": "現在の昴の起源となる学習塾の法人化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "受験ラサールを設置",
+      "description": "ラ・サール中・高校など有名私立校の志望者を対象とした受験ラサールを設置しました。",
+      "significance": "難関私立校受験に特化した指導の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "株式会社昴と合併",
+      "description": "組織変更のため、株式会社昴と合併しました。",
+      "significance": "現在の会社形態への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "宮崎県へ進出",
+      "description": "宮崎県宮崎市大塚町に大塚校を開設し、宮崎県へ進出しました。",
+      "significance": "鹿児島県外への展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "株式を店頭登録",
+      "description": "当社株式を日本証券業協会へ店頭登録しました。",
+      "significance": "株式公開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "熊本県へ進出",
+      "description": "熊本県熊本市水前寺に受験ラサール水前寺を開設し、熊本県へ進出しました。",
+      "significance": "九州での校舎網の拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "福岡県へ進出",
+      "description": "福岡県福岡市早良区に西新校と室見校を開設し、福岡県へ進出しました。",
+      "significance": "九州の主要都市への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "初の個別指導教室を開設",
+      "description": "鹿児島県鹿児島市加治屋町に初の個別指導教室を開設しました。",
+      "significance": "個別指導部門の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所へ上場",
+      "description": "日本証券業協会の店頭登録を取り消し、ジャスダック証券取引所へ上場しました。",
+      "significance": "取引所市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "東進衛星予備校の運営を開始",
+      "description": "鹿児島県鹿児島市と宮崎県宮崎市に東進衛星予備校の運営を開設しました。",
+      "significance": "映像授業による指導の導入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "株式会社タケジヒューマンマインドの全株式を取得",
+      "description": "株式会社タケジヒューマンマインドの全株式を取得しました。",
+      "significance": "M&Aによる事業の取り込みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所JASDAQ（スタンダード）から新市場区分のスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "株式会社タケジヒューマンマインドを吸収合併",
+      "description": "2020年に子会社化した株式会社タケジヒューマンマインドを吸収合併しました。",
+      "significance": "グループ再編の完了です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "「すばる個別オンライン」を開始",
+      "description": "どこに住んでいてもオンラインで個別指導が受けられる「すばる個別オンライン」を開始しました。",
+      "significance": "オンライン指導への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nagase-brothers",
+      "relationship": "business-partner",
+      "description": "株式会社ナガセは、東進衛星予備校システムの衛星講義等を受講することによる学習支援の提携先です。2020年2月29日に提携契約を締結し、期間満了の1年前までに終了の申し入れがない限り5年間自動更新される契約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +414,55 @@
       "publisher": "株式会社昴",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y5RU.pdf",
       "publishedAt": "2026-05-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Y5RU",
+      "asOf": "2026-02-28",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-10-02",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "指導理念として「我が子、我が事と思い、厳しく指導する」「学力、気力、体力を養成する」「責任をもって一人残らず第一志望校に合格させる」を掲げています。中長期的な経営戦略では、将来の九州全域への事業展開を視野に入れ、沖縄を新たな挑戦の場として進出し、地元鹿児島の経営基盤の充実強化に努めるとし、ブランド力の強化、人材の育成、経営の効率化の促進を課題としています。優先的に対処すべき課題として、AIを搭載した昴LMSや昴AI必勝ナビ、集団授業のライブ配信、すばる個別オンラインによるDXへの取り組み、少子化と学力低下への対応、採用活動の強化を挙げています。",
+        "asOf": "2026-05-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年2月期は、西都城校の近隣校への統廃合や加世田校・枕崎校の閉校など校舎の再編を進める一方、個別指導谷山教室の移転や新中山校の開校、すばる個別オンラインの開始を行い、通年の入学者数は前年度を僅かに上回りました。",
+        "basis": "経営成績等の状況の概要における記載に基づく",
+        "asOf": "2026-05-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1965年に鹿児島市で創設された鶴丸予備校を起源とし、鹿児島県内に31校の校舎を持つ地域密着の校舎網と、ラ・サール中・高校など有名私立校の志望者を対象とする受験ラサールの指導を持っています。",
+        "basis": "沿革及び主要な設備の状況における記載に基づく",
+        "asOf": "2026-05-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "学習塾事業の単一セグメントで、2026年2月期の部門別売上高では中学部が1,723百万円と全体の約半分を占め、幼児・小学部が917百万円、高等部が457百万円と続き、中学生向けの指導が事業の中心です。",
+        "basis": "収益認識関係の注記における部門別売上高の構成に基づく",
+        "asOf": "2026-05-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年2月期",
     "asOf": "2026-02-28",

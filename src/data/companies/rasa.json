@@ -4,15 +4,169 @@
   "name": "ラサ商事",
   "officialName": "ラサ商事株式会社",
   "nameEn": "Rasa  Corporation",
-  "description": null,
+  "shortNameEn": "Rasa Corporation",
+  "description": "鉱産物や産業機械、化学品などを扱い、プラント工事や不動産賃貸も行う専門商社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    },
+    {
+      "industryId": "machinery",
+      "primary": false
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "rasa",
+      "name": "ラサ商事株式会社",
+      "description": "東京都中央区に本社を置く専門商社です。連結子会社2社と持分法適用関連会社1社があり、2026年3月31日現在の従業員数は262人です。東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "industrial-construction-machinery",
+          "name": "産機・建機関連事業",
+          "description": "広範囲の流体に対応できる流送機器などの販売・メンテナンスと、シールド掘進機や各種小型建設機械の販売・レンタル・メンテナンスを行う事業です。2026年3月期の外部顧客への売上高は9,990百万円で、当社グループで最も大きい事業です。主力商品は、関連会社の大平洋機工株式会社が製造するワーマンポンプです。",
+          "customers": [
+            "製鉄・精錬・電力・化学・半導体などの工場やプラントの事業者",
+            "建設事業者",
+            "官公庁"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "chemical-products",
+          "name": "化成品関連事業",
+          "description": "自動車関連をはじめ、建材、電気、電子分野などの幅広い業界に、多種多様な合成樹脂・化学製品を販売する事業です。2026年3月期の外部顧客への売上高は6,718百万円です。",
+          "customers": [
+            "自動車・建材・電気・電子分野のメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "resources-metal-materials",
+          "name": "資源・金属素材関連事業",
+          "description": "ジルコンサンドを中心とする鉱産物や、その他物資などの輸出入・販売を行う事業です。2026年3月期の外部顧客への売上高は5,549百万円です。ジルコンサンドは、オーストラリアのアイルカ社と日本における総販売代理店契約を結んで仕入れています。",
+          "customers": [
+            "耐火材・鋳造・セラミックスなどのメーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "environmental-equipment",
+          "name": "環境設備関連事業",
+          "description": "ドイツから高圧ポンプ類を輸入して下水汚泥・産業廃棄物処理などの用途に販売するほか、当社が独自技術を持つ水砕スラグ製造設備「ラサ・システム」の販売と改修・改造を行う事業です。2026年3月期の外部顧客への売上高は3,087百万円です。",
+          "customers": [
+            "製鉄所",
+            "下水・産業廃棄物処理施設の事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "plant-equipment-works",
+          "name": "プラント・設備工事関連事業",
+          "description": "石油精製、石油化学、ガス関連などの分野のプラントや関連設備工事について、設計、施工、メンテナンス工事を行う事業です。2026年3月期の外部顧客への売上高は2,595百万円です。施工は連結子会社の旭テック株式会社も担います。",
+          "customers": [
+            "石油精製・石油化学・ガス関連の事業者",
+            "各種工場の事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "real-estate-leasing",
+          "name": "不動産賃貸関連事業",
+          "description": "当社グループが保有する不動産を活用し、テナントへ賃貸する事業です。2026年3月期の外部顧客への収益は259百万円です。連結子会社のラサ・リアルエステート株式会社が物件の活用を担います。",
+          "customers": [
+            "賃貸物件のテナント"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "国内外のメーカーから鉱産物やポンプなどの機械、化学品を仕入れて国内の工場やプラントの事業者などに販売し、設備工事や不動産賃貸も行う事業モデルです。",
+    "products": [
+      "ジルコンサンドを中心とする鉱産物",
+      "ワーマンポンプなどの流送機器・産業機械と建設機械",
+      "ドイツ製高圧ポンプと水砕スラグ製造設備「ラサ・システム」",
+      "合成樹脂・化学製品",
+      "プラント・設備工事の設計・施工・メンテナンス",
+      "賃貸不動産"
+    ],
+    "customers": [
+      "製鉄・精錬・電力・化学・半導体などの工場やプラントの事業者",
+      "自動車・建材・電気・電子分野のメーカー",
+      "下水・廃棄物処理などに関わる官公庁や事業者",
+      "賃貸物件のテナント"
+    ],
+    "revenueSources": [
+      "商品の販売代金",
+      "設備工事の請負代金",
+      "不動産の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ラサ商事",
+        "description": "東京都中央区に本社を置く専門商社です。連結子会社2社と持分法適用関連会社1社があり、2026年3月31日現在の従業員数は262人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "6事業の商品・サービス",
+        "description": "ジルコンサンドを中心とする鉱産物、ワーマンポンプなどの流送機器や建設機械、ドイツ製高圧ポンプや水砕スラグ製造設備、合成樹脂・化学製品を取り扱い、プラント・設備工事と不動産賃貸も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "工場・プラント事業者など",
+        "description": "主な販売先は、製鉄・精錬・電力・化学・半導体などの工場やプラントの事業者、自動車・建材・電気・電子分野のメーカー、下水・産業廃棄物処理に関わる官公庁や事業者です。売上高の10％以上を占める特定の相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は28,201百万円",
+        "description": "2026年3月期の売上高は28,201百万円で、前連結会計年度比で6.1％増えました。事業別では、産機・建機関連が9,990百万円、化成品関連が6,718百万円、資源・金属素材関連が5,549百万円、環境設備関連が3,087百万円、プラント・設備工事関連が2,595百万円、不動産賃貸関連が259百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の当期純利益は2,378百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は2,378百万円で、前連結会計年度比で14.4％増えました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +181,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19156000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 262,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +201,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20100000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 241,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +221,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21450000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 253,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +241,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21861000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 258,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +261,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23433000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 262,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +269,192 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1939,
+      "title": "ラサ商事株式会社を設立",
+      "description": "ラサ工業株式会社の製品を販売する目的で、東京都中央区京橋にラサ商事株式会社を設立しました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1958,
+      "title": "ワーマンポンプの総販売代理店契約を締結",
+      "description": "日曹製鋼株式会社（現在の大平洋金属株式会社）と「ニッソ・ワーマンポンプ」の総販売代理店契約を締結し、販売を開始しました。",
+      "significance": "主力商品であるワーマンポンプの取扱いの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "アイルカ社とジルコンサンドの代理店契約を締結",
+      "description": "ウエストラリアンサンド社（現在のアイルカ社・オーストラリア）とジルコンサンドの輸入販売代理店契約を締結しました。1978年には総販売代理店契約となりました。",
+      "significance": "資源・金属素材関連事業の中核商品の供給体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "大平洋機工株式会社が関連会社になる",
+      "description": "大平洋金属株式会社が大平洋機工株式会社を設立したことに伴い、ワーマンポンプの総販売代理店契約の相手先は大平洋機工株式会社に変更されました。同時に当社が出資し、同社は当社の関連会社となりました。",
+      "significance": "現在のグループ体制につながる出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "プツマイスター社と総販売代理店契約を締結",
+      "description": "プツマイスター社（ドイツ）と高圧ピストンポンプなどの総販売代理店契約を締結しました。",
+      "significance": "環境設備関連事業の取扱商品の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "東京証券取引所市場第一部銘柄へ指定",
+      "description": "東京証券取引所市場第一部銘柄へ指定されました。",
+      "significance": "市場第一部への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "旭テック株式会社を子会社化",
+      "description": "旭テック株式会社（現在の連結子会社）を子会社化しました。",
+      "significance": "プラント・設備工事関連事業の施工体制の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "ラサ・リアルエステート株式会社を設立",
+      "description": "ラサ・リアルエステート株式会社（現在の連結子会社）を、新設分割により設立しました。",
+      "significance": "不動産賃貸関連事業の体制整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "市場の再編に伴い、東京証券取引所スタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "イズミ株式会社を吸収合併",
+      "description": "当社を存続会社として、完全子会社のイズミ株式会社を吸収合併しました。",
+      "significance": "グループ再編の完了です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "rasa-industries",
+      "relationship": "business-partner",
+      "description": "産機・建機関連事業における商品の仕入先であり販売先でもある取引先で、安定的な取引・協力関係の維持・強化のため、当社が株式41,916株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sanki-engineering",
+      "relationship": "customer",
+      "description": "産機・建機関連及び環境設備関連事業における商品の販売先で、安定的な取引・協力関係の維持・強化のため、当社が株式46,000株を保有しています。当事業年度に一部を売却しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-chemical-group",
+      "relationship": "business-partner",
+      "description": "化成品関連事業における商品の仕入先であり販売先でもある取引先で、安定的な取引・協力関係の維持・強化のため、当社が株式38,264株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "kubota",
+      "relationship": "customer",
+      "description": "産機・建機関連事業における商品の販売先で、安定的な取引・協力関係の維持・強化のため、当社が株式24,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "meiko-trans",
+      "relationship": "supplier",
+      "description": "資源・金属素材関連事業における物流関連の取引先で、安定的な取引・協力関係の維持・強化のため、当社が株式15,000株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "ishihara-sangyo-kaisha",
+      "relationship": "customer",
+      "description": "産機・建機関連事業における商品の販売先で、安定的な取引・協力関係の維持・強化のため、当社が株式14,100株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "central-glass",
+      "relationship": "customer",
+      "description": "産機・建機関連事業における商品の販売先で、安定的な取引・協力関係の維持・強化のため、当社が株式5,600株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "sakai-chemical-industry",
+      "relationship": "customer",
+      "description": "産機・建機関連事業における商品の販売先で、安定的な取引・協力関係の維持・強化のため、当社が株式4,205株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +462,55 @@
       "publisher": "ラサ商事株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJIY.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YJIY",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年3月期から2028年3月期までの3か年を計画期間とする中期経営計画「“Step Forward”Rasa 2027～成長のステージへ～」に取り組んでいます。重点施策は、新規・成長分野への取り組み、既存領域の深耕、事業活動を通じたサステナビリティ経営の推進の3つです。社会インフラを支える付加価値創出企業として、既存事業の安定的成長にとどまらず新たなステージを目指すとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期は、環境設備関連の売上高が前連結会計年度の1,858百万円から3,087百万円へ大きく増え、全体の増収をけん引しました。産機・建機関連は売上高がやや減った一方で、部品・整備の需要が好調だったと開示されています。",
+        "basis": "セグメント情報の外部顧客への売上高と、MD&Aの経営成績の概要・分析に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "オーストラリアのアイルカ社のジルコンサンド、大平洋機工株式会社のワーマンポンプ、ドイツのメーカー3社の高圧ポンプなど、国内外のメーカーとの総販売代理店契約に基づく仕入れ体制が特徴です。自社技術の水砕スラグ製造設備「ラサ・システム」は、製鉄所の溶融スラグを粒状化する設備で、国内の製鉄所だけでなく海外にも納入実績があります。ポンプは部品交換で長期使用でき、現場でメンテナンスできる点も強みとされています。",
+        "basis": "事業の内容とセグメント情報に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "専門商社として、資源・金属素材、産機・建機、環境設備、化成品、プラント・設備工事、不動産賃貸の6事業を展開しています。売上高が最も大きいのは産機・建機関連で、ワーマンポンプは耐食・耐磨耗ポンプのトップクラスのシェアを維持していると開示されています。",
+        "basis": "事業の内容とセグメント情報の外部顧客への売上高に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

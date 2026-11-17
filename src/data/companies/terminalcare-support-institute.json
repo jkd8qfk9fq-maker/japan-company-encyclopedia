@@ -4,19 +4,153 @@
   "name": "T．S．I",
   "officialName": "株式会社T．S．I",
   "nameEn": "Terminalcare　Support　Institute　Inc．",
-  "description": null,
+  "shortNameEn": "Terminalcare Support Institute Inc.",
+  "description": "サービス付き高齢者向け住宅「アンジェス」の運営と、訪問介護や訪問看護などの介護サービスを提供する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     },
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "nursing-care",
+      "name": "介護事業",
+      "description": "サービス付き高齢者向け住宅「アンジェス」の運営と、訪問介護、訪問看護、居宅介護支援を行う事業です。当社が担い、2025年12月期の外部顧客への売上高は4,823百万円です。2025年12月末時点で36拠点1,210室を運営しています。",
+      "customers": [
+        "要介護認定を受けた高齢者とその家族"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "elderly-housing",
+          "name": "サービス付き高齢者向け住宅",
+          "description": "「アンジェス」の名称で、状況把握サービス（安否確認）と生活相談サービスに加え、住まいと生活支援サービス、食事を提供する事業です。要介護2～3程度の方を主な入居者とし、看取りまで対応しています。",
+          "customers": [
+            "要介護認定を受けた高齢者とその家族"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "home-visit-care",
+          "name": "訪問介護",
+          "description": "「ケアステーションあんじぇす」の名称で、主に「アンジェス」の入居者に対して、食事・排泄・入浴の支援や生活援助を行う事業です。住宅のスタッフが兼務し、24時間を通した見守りを行っています。",
+          "customers": [
+            "要介護認定を受けた高齢者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "home-visit-nursing",
+          "name": "訪問看護",
+          "description": "「訪問看護ステーションルーチェ」の名称で、「アンジェス」の入居者の終末期ケアなどを担う事業です。2023年に再開し、大型拠点では事業所を併設しています。",
+          "customers": [
+            "医療的ケアを必要とする高齢者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "care-management",
+          "name": "居宅介護支援",
+          "description": "「ケアプランセンターえんじゅ」の名称で、ケアマネージャーが利用者のケアプランを作成する事業です。主に「アンジェス」の入居者を対象としています。",
+          "customers": [
+            "要介護・要支援認定を受けた高齢者とその家族"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "連結子会社の株式会社北山住宅販売が、「アンジェス」の設計・建築と保有を行う事業です。土地オーナーと建築請負契約を結ぶほか、自ら取得した土地・建物を保有して当社に貸し付けています。2025年12月期の外部顧客への売上高は62百万円です。",
+      "customers": [
+        "サービス付き高齢者向け住宅の建築を発注する土地オーナー"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "サービス付き高齢者向け住宅の運営と介護サービスの提供に、住宅の設計・建築と保有を行う子会社を組み合わせ、家賃や介護サービスへの対価などを得る事業モデルです。",
+    "products": [
+      "サービス付き高齢者向け住宅「アンジェス」の運営",
+      "訪問介護・介護予防訪問介護サービス",
+      "訪問看護サービス",
+      "居宅介護支援サービス",
+      "サービス付き高齢者向け住宅の設計・建築請負と保有・賃貸"
+    ],
+    "customers": [
+      "要介護認定を受けた高齢者とその家族",
+      "サービス付き高齢者向け住宅の建築を発注する土地オーナー"
+    ],
+    "revenueSources": [
+      "入居者からの家賃と生活支援サービスへの対価",
+      "介護保険制度に基づく介護サービスへの対価",
+      "建築請負工事の対価と不動産の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社Ｔ．Ｓ．Ｉ",
+        "description": "京都市西京区に本店を置き、東京証券取引所グロース市場と名古屋証券取引所メイン市場に上場する会社です。連結子会社1社を持ち、2025年12月期の従業員数は511人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "高齢者向け住宅と介護サービス",
+        "description": "サービス付き高齢者向け住宅「アンジェス」を36拠点1,210室運営し、併設した訪問介護事業所、訪問看護事業所、居宅介護支援事業所によるサービスを提供するほか、連結子会社が住宅の設計・建築と保有を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "要介護認定を受けた高齢者",
+        "description": "主な顧客は、要介護1以上の認定を受けた高齢者とその家族です。特養の入所待機者層を主な入居者として想定しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2025年12月期の売上高は4,886百万円",
+        "description": "2025年12月期の売上高は4,886百万円でした。内訳は、介護事業が4,823百万円、不動産事業が62百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2025年12月期の親会社株主に帰属する当期純利益は81百万円",
+        "description": "2025年12月期の親会社株主に帰属する当期純利益は81百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年12月期",
@@ -31,7 +165,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 927370000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 336,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,12 +185,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1084778000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 389,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第13期の期首から適用しており、第13期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年12月期",
@@ -71,7 +206,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1191708000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 425,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,12 +226,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1328597000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 451,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "当社グループの建築物件等に係る控除対象外消費税等の会計処理について、第16期より、従来の長期前払費用に計上し5年間で均等償却する方法から、個々の固定資産の取得原価に算入する方法に変更しており、第15期に係る主要な経営指標等については、当該会計方針の変更を反映した遡及適用後の数値を記載しております。第14期以前に係る累積的影響額については、第15期の期首の純資産額に反映させております。"
     },
     {
       "fiscalYear": "2025年12月期",
@@ -111,7 +247,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1414813000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 511,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,22 +255,137 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2010,
+      "title": "訪問看護事業を目的に設立",
+      "description": "京都市西京区にて、訪問看護事業を営むことを目的として、代表取締役社長の北山忠雄が当社を設立しました。",
+      "significance": "会社の設立であり、終末期ケアを支援する現在の事業の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "サービス付き高齢者向け住宅事業を開始",
+      "description": "滋賀県大津市の「アンジェスおごと」の運営を開始し、サービス付き高齢者向け住宅事業を始めました。同年に訪問介護と居宅介護支援も始めており、住宅に介護サービスを併設する形ができました。",
+      "significance": "現在の主力事業の開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "株式会社北山住宅販売を子会社化",
+      "description": "サービス付き高齢者向け住宅の設計・建築を行う株式会社北山住宅販売の株式を取得し、子会社化しました。",
+      "significance": "住宅の設計・建築を担う会社がグループに入りました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "株式会社北山住宅販売を完全子会社化",
+      "description": "株式会社北山住宅販売の株式を追加取得し、完全子会社化しました。",
+      "significance": "設計・建築から運営までをグループ内で一貫して行う体制が整いました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "東京証券取引所マザーズに上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、マザーズ市場からグロース市場に移行しました。",
+      "significance": "現在の東京証券取引所での市場区分になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "初の訪問看護併設型の拠点を開設",
+      "description": "滋賀県彦根市の「アンジェス彦根河瀬」の運営を開始し、当社初の訪問看護併設型の拠点を開設しました。祖業である訪問看護事業も再開しています。",
+      "significance": "介護と医療の両方を支援する拠点モデルへの転換点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "東京都へ進出し、名古屋証券取引所メイン市場に上場",
+      "description": "東京都八王子市の「アンジェス八王子」の運営を開始して東京都へ進出し、名古屋証券取引所メイン市場に株式を上場しました。",
+      "significance": "関東圏への展開と、2つ目の取引所への上場です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "japan-property-management-center",
+      "relationship": "business-partner",
+      "description": "当社と連結子会社が、同社の高齢者専用賃貸住宅一括借上システムのパートナー制度に加入している提携先です。同社が土地・建物を一括借上げし、当社が転貸を受けて運営するサービス付き高齢者向け住宅「アンジェス」は、本書提出日現在で11拠点あります。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
       "title": "有価証券報告書－第16期(2025/01/01－2025/12/31)",
-      "publisher": "株式会社T．S．I",
+      "publisher": "株式会社Ｔ．Ｓ．Ｉ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XU5X.pdf",
       "publishedAt": "2026-03-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XU5X",
+      "asOf": "2025-12-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "介護運営会社である当社と、サービス付き高齢者向け住宅の建築を行う連結子会社による、設計・建築から運営までの一気通貫したサービス提供によって各地域でのドミナント展開を進め、2023年からは訪問看護事業所を併設したモデルで新規開設を行い、1棟あたりの付加価値と収益性の向上を図るとしています。",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "サービス付き高齢者向け住宅の設計・建築に特化した連結子会社をグループ内に持ち、土地取得、設計・建築、建物保有、運営までを内製化していることと、拠点ごとに自社の営業担当者を置き、紹介会社を使わずに地域のケアマネージャーや病院のソーシャルワーカーと関係を築いて入居者を確保していることが土台になっています。",
+        "basis": "【事業の内容】の「事業の特徴」に、連結子会社による設計・建築と運営の一気通貫、自社営業部隊の配置、ドミナント戦略が印字されていること",
+        "asOf": "2026-03-26",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年12月期",
     "asOf": "2025-12-31",

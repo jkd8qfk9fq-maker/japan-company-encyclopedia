@@ -4,15 +4,138 @@
   "name": "梅乃宿酒造",
   "officialName": "梅乃宿酒造株式会社",
   "nameEn": "UMENOYADO BREWERY CO.,LTD.",
-  "description": null,
+  "shortNameEn": "UMENOYADO BREWERY CO.,LTD.",
+  "description": "奈良県葛城市の酒蔵で、日本酒と梅酒などの日本酒リキュールを製造し、国内外で販売しています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "umenoyado-brewery",
+      "name": "梅乃宿酒造株式会社",
+      "description": "奈良県葛城市に本社と本社工場を置く酒蔵です。関係会社はなく、2026年6月30日現在の従業員数は71人です。2026年4月に東京証券取引所スタンダード市場へ上場しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "liquor-business",
+          "name": "酒類製造販売事業",
+          "description": "酒類の製造と国内外での販売を行う単一セグメントです。2026年6月期の売上高は3,091百万円で、国内市場が75.1％（BtoBが60.8％、BtoCが14.3％）、海外市場が24.9％の構成です。",
+          "customers": [
+            "酒販店・酒類専門業者、卸売業者",
+            "直営店・ECショップを利用する一般消費者",
+            "海外の販売代理店・量販店"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報等】",
+          "children": [
+            {
+              "id": "sake",
+              "name": "日本酒",
+              "description": "純米大吟醸や純米吟醸などの特定名称酒を中心に、少量で高品質な醸造を行う伝統事業です。雄町米や山田錦などの酒造好適米を用い、契約農家と連携して原料米を確保しています。",
+              "customers": [
+                "酒販店・酒類専門業者、卸売業者",
+                "直営店・ECショップを利用する一般消費者",
+                "海外の販売代理店・量販店"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "sake-liqueur",
+              "name": "日本酒リキュール",
+              "description": "日本酒を仕込みに使った梅酒と、果肉をふんだんにブレンドした「あらごしシリーズ」などの果実リキュールを製造・販売します。2001年に日本酒蔵として先駆的に梅酒の製造・販売を始め、現在の販売の中心となっています。",
+              "customers": [
+                "酒販店・酒類専門業者、卸売業者",
+                "直営店・ECショップを利用する一般消費者",
+                "海外の販売代理店・量販店"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "spirits-and-foods",
+              "name": "スピリッツ・発酵食品",
+              "description": "ジンなどのスピリッツの製造・販売のほか、酒粕やドレッシングなどの発酵をテーマとした食品も国内向けに販売しています。",
+              "customers": [
+                "酒販店・酒類専門業者、卸売業者",
+                "直営店・ECショップを利用する一般消費者",
+                "海外の販売代理店・量販店"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社蔵で醸造する日本酒と日本酒仕込みの梅酒や果実リキュールを、酒販店や卸売業者への販売と直営店・ECでの直販で届ける事業モデルです。",
+    "products": [
+      "日本酒（純米大吟醸・純米吟醸などの特定名称酒）",
+      "日本酒リキュール（梅酒・あらごしシリーズなどの果実リキュール）",
+      "スピリッツ（ジンなど）",
+      "発酵食品（酒粕・ドレッシングなど）"
+    ],
+    "customers": [
+      "酒販店・酒類専門業者、卸売業者",
+      "直営店・ECショップを利用する一般消費者",
+      "海外の販売代理店・量販店"
+    ],
+    "revenueSources": [
+      "酒類等の製品販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "梅乃宿酒造",
+        "description": "奈良県葛城市に本社と本社工場を置く酒蔵です。2026年6月30日現在の従業員数は71人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "日本酒と日本酒リキュールの製造",
+        "description": "自社蔵で日本酒を醸造し、日本酒仕込みの梅酒や果肉をふんだんに使った「あらごしシリーズ」などの果実リキュールを製造します。"
+      },
+      {
+        "kind": "customer",
+        "title": "酒販店・卸売業者と一般消費者",
+        "description": "国内では酒販店などの専門業者や卸売業者へ販売するほか、直営店やECショップで消費者へ直販します。海外では24の国と地域に販路を持ちます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年6月期の売上高は3,091百万円",
+        "description": "2026年6月期の売上高は3,091百万円で、前事業年度比15.1％増となりました。国内BtoBの増収や、北米・台湾をはじめとする海外売上の増加が寄与したと開示されています。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年6月期の当期純利益は322百万円",
+        "description": "2026年6月期の当期純利益は322百万円で、前事業年度比33.6％増となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -27,14 +150,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3116599000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 54,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第72期の期首から適用しており、第72期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年6月期",
@@ -49,11 +173,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3333617000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 62,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +195,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2950308000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 71,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,14 +217,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3192868000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 72,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2025年４月17日付で普通株式１株につき20株の割合で株式分割を行っております。第74期の期首に当該株式分割が行われたと仮定して経営指標等を算定しております。"
     },
     {
       "fiscalYear": "2026年6月期",
@@ -115,17 +240,88 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3534789000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 71,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1893,
+      "title": "吉田熊太郎商店を創業",
+      "description": "創業者の吉田熊太郎が、現在の奈良県葛城市において、日本酒の製造・販売を目的として当社の前身である吉田熊太郎商店を創業しました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1950,
+      "title": "梅乃宿酒造株式会社を設立",
+      "description": "事業拡大のため事業を法人化し、奈良県葛城市に日本酒製造業を目的とした梅乃宿酒造株式会社を設立しました。",
+      "significance": "現在の会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "日本酒仕込みの梅酒の製造・販売を開始",
+      "description": "リキュール製造免許を取得し、日本酒蔵としては先駆的であった日本酒仕込みの梅酒の製造・販売を開始しました。",
+      "significance": "現在の主力商品である日本酒リキュール事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "米国に販売会社UMENOYADO USA.INCを設立",
+      "description": "アメリカでの酒類販売会社としてUMENOYADO USA.INCを設立しました。同社は2022年に清算されています。",
+      "significance": "海外販売の現地拠点化の取り組みです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "梅乃宿ホールディングス株式会社を設立し持株会社体制へ",
+      "description": "梅乃宿ホールディングス株式会社を設立し、当社はその子会社となりました。",
+      "significance": "グループ体制の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "持株会社等を吸収合併し、新蔵へ本社・製造場を移転",
+      "description": "梅乃宿ホールディングス株式会社と有限会社エミューコーポレーションを吸収合併しました。同年、奈良県葛城市寺口に新蔵を建設し、本社・製造場を移転しました。",
+      "significance": "単体体制への回帰と現在の生産拠点の確立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "東京証券取引所スタンダード市場に上場",
+      "description": "2026年4月に東京証券取引所スタンダード市場へ上場しました。",
+      "significance": "上場会社としての新たな段階です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -134,13 +330,50 @@
       "publisher": "梅乃宿酒造株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z3LJ.pdf",
       "publishedAt": "2026-09-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100Z3LJ",
+      "asOf": "2026-06-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 主要な経営指標等の推移の注記に、2025年４月17日付で普通株式１株につき20株の割合で株式分割を行った旨が記載されています。自社の株式分割の取扱いには人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「新しい酒文化を創造する」をパーパスに掲げ、BtoB事業とBtoC事業の好循環を生む「UMENOYADO LOOP」を事業成長モデルとして、定番商品の安定した販売を新商品開発やマーケティングへの投資につなげ、その成果をBtoB事業の販路・売上拡大に波及させる循環を目指しています。",
+        "asOf": "2026-09-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【事業の内容】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "日本酒蔵として先駆的に日本酒仕込みの梅酒へ進出した実績があり、果肉感を残す製法の「あらごしシリーズ」を主力商品に育てています。2017年以降は杜氏制度を廃止し、醸造時の分析データを活用した酒造りで品質の安定化を進めています。",
+        "basis": "事業の内容の商品の特徴と生産体制の記載に基づく",
+        "asOf": "2026-09-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "国内の酒類市場が縮小傾向にあるなかで、2024年時点で国産リキュール市場の16.7％のシェアを占めています（出所：株式会社富士経済「2026年食品マーケティング便覧No.3」）。",
+        "basis": "事業の内容の商品の特徴と経営方針の経営環境の記載に基づく",
+        "asOf": "2026-09-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",

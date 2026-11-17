@@ -4,19 +4,147 @@
   "name": "セブン工業",
   "officialName": "セブン工業株式会社",
   "nameEn": "SEVEN INDUSTRIES CO.,LTD.",
-  "description": null,
+  "shortNameEn": "SEVEN INDUSTRIES CO.,LTD.",
+  "description": "集成材を使った内装部材と構造部材を生産販売する、岐阜県美濃加茂市の住宅部材メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "interior-building-materials",
+      "name": "内装建材事業",
+      "description": "集成材等を使用した内装部材（階段・手摺・カウンター・和風造作材・框・洋風造作材）を生産販売する事業です。2026年3月期の外部顧客への売上高は8,289百万円でした。",
+      "customers": [
+        "住宅関連事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】",
+      "children": [
+        {
+          "id": "interior-parts",
+          "name": "内装部材",
+          "description": "階段、手摺、カウンター、和風造作材、框、洋風造作材などの内装部材の生産販売です。",
+          "customers": [
+            "住宅関連事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "wood-structure",
+      "name": "木構造事業",
+      "description": "集成材等を使用した構造部材（プレカット加工材・住宅パネル）の生産販売を行う事業で、施設建築及び住宅構造躯体の建て方請負いも含まれます。2026年3月期の外部顧客への売上高は7,287百万円でした。",
+      "customers": [
+        "住宅関連事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】",
+      "children": [
+        {
+          "id": "precut-and-panels",
+          "name": "構造部材（プレカット加工材・住宅パネル）",
+          "description": "プレカット加工材や住宅パネルなどの構造部材の生産販売です。",
+          "customers": [
+            "住宅関連事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "facility-construction",
+          "name": "施設建築",
+          "description": "施設建築及び住宅構造躯体の建て方請負いです。",
+          "customers": [
+            "住宅関連事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "rental",
+      "name": "賃貸事業",
+      "description": "不動産の賃貸管理を行う事業で、報告セグメントに含まれない「その他」の区分です。2026年3月期の外部顧客への売上高は12百万円でした。",
+      "customers": [
+        "不動産の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    }
+  ],
+  "businessModel": {
+    "description": "集成材等の住宅部材を品目別に生産販売する内装建材事業と木構造事業を二つの柱とし、不動産の賃貸管理も行って収益を得る事業モデルです。",
+    "products": [
+      "内装部材（階段・手摺・カウンター・和風造作材・框・洋風造作材）",
+      "構造部材（プレカット加工材・住宅パネル）",
+      "施設建築・住宅構造躯体の建て方請負い"
+    ],
+    "customers": [
+      "住宅関連事業者"
+    ],
+    "revenueSources": [
+      "売上高（2026年3月期 15,589百万円）"
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "flow": [
+      {
+        "kind": "company",
+        "title": "セブン工業",
+        "description": "岐阜県美濃加茂市に本社を置く住宅部材メーカーで、東京証券取引所スタンダード市場と名古屋証券取引所メイン市場に上場しています。2026年3月期の従業員数は376人でした。"
+      },
+      {
+        "kind": "offering",
+        "title": "集成材の住宅部材と施設建築",
+        "description": "集成材等を使用した内装部材と構造部材を品目別に生産販売し、施設建築や住宅構造躯体の建て方請負いも行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "住宅関連事業者",
+        "description": "住宅関連事業者が主な顧客で、売上高の10％以上を占める単一の外部顧客は存在しないと印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高 15,589百万円",
+        "description": "2026年3月期の売上高は15,589百万円でした。内訳は内装建材事業8,289百万円、木構造事業7,287百万円、その他（賃貸事業）12百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失 127百万円",
+        "description": "2026年3月期の当期純損失は127百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,11 +159,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6948000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 404,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -53,11 +181,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7090000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 399,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -75,11 +203,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6219000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 392,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -97,11 +225,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6313000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 378,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -119,18 +247,149 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6097000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 376,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1961,
+      "title": "丸七白川口市売木材株式会社を設立",
+      "description": "丸七白川口市売木材株式会社を設立し、東洋林業株式会社東洋木材市場の浜問屋として木材市売業を開始しました。",
+      "significance": "現在のセブン工業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "集成材の生産を開始",
+      "description": "株式会社丸七から集成材部門の営業権を譲り受け、集成材の生産を開始しました。あわせて商号を丸七住研工業株式会社に変更しました。",
+      "significance": "現在の主力である集成材事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "構造用大断面集成材工場を建設",
+      "description": "構造用大断面集成材工場を建設しました。",
+      "significance": "大断面集成材への事業拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "セブン工業株式会社に商号変更",
+      "description": "企業イメージの確立を図るため、商号をセブン工業株式会社に変更しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "名古屋証券取引所市場第二部に上場",
+      "description": "名古屋証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場企業としての起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "東京証券取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "住友商事が公開買付けにより議決権の50.7％を取得",
+      "description": "当社の株式の公開買付けにより、住友商事株式会社が議決権の50.7％を取得しました。",
+      "significance": "住友商事の傘下に入った転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "構造用集成材の生産を中止",
+      "description": "構造用集成材及び構造用大断面集成材の生産を中止しました。あわせて、丸七ミヤマ工業株式会社を吸収合併しました。",
+      "significance": "事業の選択と集中を進めた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "ベトナムのCAD設計積算企業の株式を取得",
+      "description": "CAD設計積算を主な事業とするベトナム企業S.E.V.E.N - VIET INDUSTRIES JOINT STOCK COMPANY（現、J-VIET JOINT STOCK COMPANY）の株式を取得しました。",
+      "significance": "海外関連会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "住友商事が保有株式の全部を譲渡",
+      "description": "住友商事株式会社が保有していた当社株式の全部を、都築木材株式会社及び西垣林業株式会社に譲渡しました。",
+      "significance": "住友商事の傘下を離れた転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場とメイン市場へ移行",
+      "description": "東京証券取引所及び名古屋証券取引所の市場区分の見直しにより、両取引所における市場第二部から、それぞれスタンダード市場、メイン市場に変更しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "都築木材が公開買付けにより西垣林業の保有株式の一部を取得",
+      "description": "都築木材株式会社が公開買付けにより、西垣林業株式会社が所有する当社株式の一部を取得しました。",
+      "significance": "主要株主の構成が変わった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "daito-trust-construction",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、主要販売先であり、円滑な取引関係を維持するため同社の協力会持株会に加入していると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -138,13 +397,58 @@
       "publisher": "セブン工業株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YEA0.pdf",
       "publishedAt": "2026-06-19",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YEA0",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年４月に、集成材等の製造販売を主たる事業とする山口工業株式会社の全株式を取得し、完全子会社化しています（沿革に記載され、経営方針では本年４月に取得した子会社の事業特性を活かす旨が記載されています）。これは決算日（2026年３月31日）後の出来事であり、本登録は2026年３月期の構造で登録しています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "新設住宅着工戸数が減少し今後も緩やかな縮小が見込まれるなか、非住宅建築向けの提案力を強化して木造化領域の拡大と新市場開拓を推進し、パネル事業を核としたユニット化による新商品開発や完全プレカット階段の拡充など省施工化ソリューションを展開するとしています。内装建材事業と木構造事業の二つの柱を活かし、両領域のシナジー創出を図る施策も進めるとしています。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高のほぼ全てを住宅部材の二事業が占めるため、新設住宅着工戸数の縮小が続く住宅市場への依存が構造的な前提になっています。そのため、非住宅分野への展開と省施工化商品の拡充が進むかどうかが、今後の売上構成を左右します。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】における新設住宅着工戸数の見通しと非住宅分野・省施工化の方針の記載と、【セグメント情報等】における二事業の売上構成に基づきます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1976年に集成材の生産を始めて以来の集成材の加工技術を持ち、内装部材と構造部材の双方を自社工場で生産する体制を備えています。そのため、住宅の内装から構造躯体までを木材部材で一貫して供給できます。",
+        "basis": "【沿革】における1976年の集成材生産開始の記載と、【事業の内容】における内装建材事業と木構造事業の記載に基づきます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "住宅部材の供給先である新設住宅着工戸数はかつての100万戸超から足元では約80万戸を割り込む水準に減少しています。一方で、カーボンニュートラルに向けた木造化・木質化の推進により、非住宅分野での木材需要は拡大の流れにあります。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】における新設住宅着工戸数の水準と木材利用拡大の記載に基づきます。",
+        "asOf": "2026-06-19",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

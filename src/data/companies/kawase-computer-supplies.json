@@ -4,18 +4,152 @@
   "name": "カワセコンピュータサプライ",
   "officialName": "カワセコンピュータサプライ株式会社",
   "nameEn": "KAWASE COMPUTER SUPPLIES CO., LTD.",
-  "description": null,
+  "shortNameEn": "KAWASE COMPUTER SUPPLIES CO., LTD.",
+  "description": "ビジネスフォームの印刷と、データ印字・印刷のアウトソーシング受託を中心とする情報処理サービスを行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
-      "exchange": "fse"
+      "exchange": "fse",
+      "market": "本則市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "media",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "business-forms",
+      "name": "ビジネスフォーム事業",
+      "description": "帳票デザインから製版、印刷、加工までビジネスフォームの生産工程を自社内で一貫して行う事業です。2026年3月期の外部顧客への売上高は1,562百万円でした。",
+      "customers": [
+        "企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "id": "information-processing",
+      "name": "情報処理事業",
+      "description": "システム開発によるデータ編集・加工から、インクジェット高速プリンタやフルカラーオンデマンド機によるデータ印字・印刷のアウトソーシング受託、製本加工・封入封緘・発送のメーリング業務、電子帳票・電子画面管理までを行う事業です。2026年3月期の外部顧客への売上高は1,234百万円でした。",
+      "customers": [
+        "地方自治体・外郭団体",
+        "企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】",
+      "children": [
+        {
+          "id": "data-editing",
+          "name": "データ編集・加工",
+          "description": "システム開発によるデータの編集・加工の受託です。",
+          "customers": [
+            "地方自治体・外郭団体",
+            "企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "data-printing-outsourcing",
+          "name": "データ印字・印刷のアウトソーシング受託",
+          "description": "インクジェット高速プリンタやフルカラーオンデマンド機によるデータ印字・印刷の受託です。",
+          "customers": [
+            "地方自治体・外郭団体",
+            "企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "mailing",
+          "name": "メーリング業務",
+          "description": "製本加工、封入封緘、発送までを行うメーリング業務です。",
+          "customers": [
+            "地方自治体・外郭団体",
+            "企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "electronic-forms",
+          "name": "電子帳票・電子画面管理",
+          "description": "電子帳票や電子画面の管理に関するサービスです。",
+          "customers": [
+            "地方自治体・外郭団体",
+            "企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "帳票デザインから製版、印刷、加工までを自社で一貫生産するビジネスフォーム事業と、データ編集・加工から印字・印刷、発送までを受託する情報処理事業で収益を得る事業モデルです。",
+    "products": [
+      "ビジネスフォーム（帳票・伝票類）",
+      "データ印字・印刷のアウトソーシングサービス",
+      "メーリングサービス（製本加工・封入封緘・発送）",
+      "電子帳票・電子画面管理サービス"
+    ],
+    "customers": [
+      "企業",
+      "地方自治体・外郭団体"
+    ],
+    "revenueSources": [
+      "売上高（2026年3月期 2,797百万円）"
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "flow": [
+      {
+        "kind": "company",
+        "title": "カワセコンピュータサプライ",
+        "description": "東京都中央区に本社を置く印刷・情報処理の会社で、東京証券取引所スタンダード市場と福岡証券取引所本則市場に上場しています。2026年3月期の従業員数は102人でした。"
+      },
+      {
+        "kind": "offering",
+        "title": "ビジネスフォームと情報処理サービス",
+        "description": "帳票デザインから製版、印刷、加工までを自社内で一貫して行うビジネスフォームの製造と、データ編集・加工から印字・印刷、製本加工、封入封緘、発送までを受託する情報処理サービスを提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "企業、地方自治体・外郭団体",
+        "description": "企業や地方自治体、外郭団体が主な顧客で、情報処理事業では地方自治体を中心に新規案件の獲得に取り組んでいます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "売上高 2,797百万円",
+        "description": "2026年3月期の売上高は2,797百万円でした。内訳はビジネスフォーム事業1,562百万円、情報処理事業1,234百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益 66百万円",
+        "description": "2026年3月期の当期純利益は66百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -30,11 +164,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2546111000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 114,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -52,11 +186,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2390809000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 105,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -74,14 +208,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2288972000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 98,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号 2022年10月28日）等を第70期の期首から適用しており、第69期に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標となっております。"
     },
     {
       "fiscalYear": "2025年3月期",
@@ -96,11 +231,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2389941000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 99,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -118,18 +253,201 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2486728000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 102,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1955,
+      "title": "川瀬紙工株式会社を設立",
+      "description": "大阪市旭区（現・城東区）に川瀬紙工株式会社を設立し、コンピュータ用連続伝票の販売を開始しました。",
+      "significance": "現在のカワセコンピュータサプライの起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "DP袋の製造・販売を開始",
+      "description": "DP袋（写真現像袋）の製造・販売を開始しました。",
+      "significance": "印刷加工製品への事業の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "商号をカワセコンピュータサプライ株式会社に変更",
+      "description": "商号を川瀬紙工株式会社からカワセコンピュータサプライ株式会社に変更しました。",
+      "significance": "現在の商号の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "データ処理事業に着手",
+      "description": "インクジェット高速出力機を大阪工場に設置し、データ処理事業（現・情報処理事業）に着手しました。",
+      "significance": "現在の情報処理事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "ホストコンピュータを導入",
+      "description": "データ処理事業の拡大を目的として、ホストコンピュータを導入しました。",
+      "significance": "情報処理事業の処理体制の基盤整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "上場企業としての起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "生産拠点を情報センターへ集約",
+      "description": "大阪工場、東京工場及び東京情報処理センターを集約し、千葉県佐倉市のちばリサーチパーク内に生産拠点として情報センターを統合しました。",
+      "significance": "現在の単一生産拠点体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所と大阪証券取引所の現物市場の統合に伴い、東京証券取引所市場第二部に上場しました。",
+      "significance": "東京証券取引所への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "福岡証券取引所本則市場に上場",
+      "description": "福岡証券取引所本則市場に株式を上場しました。",
+      "significance": "二市場上場の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "daido-metal",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、当社における製品の販売先であり、国内販路の維持・強化および相互の取り組みによる将来的な企業価値向上のため株式を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "edion",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、当社における製品の販売先であり、国内販路の維持・強化および相互の取り組みによる将来的な企業価値向上のため株式を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "fukuyama-transporting",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、当社における製品の販売先であり、国内販路の維持・強化および相互の取り組みによる将来的な企業価値向上のため株式を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "okasan-securities-group",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、当社における製品の販売先であり、国内販路の維持・強化および相互の取り組みによる将来的な企業価値向上のため株式を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "juroku-financial-group",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、当社における製品の販売先であり、また取引銀行であり、円滑な資金調達のための良好な関係を維持・強化するため株式を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsubishi-ufj-financial-group",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、当社における製品の販売先であり、また取引銀行であり、円滑な資金調達のための良好な関係を維持・強化するため株式を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mizuho-financial-group",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、当社における製品の販売先であり、また取引銀行であり、円滑な資金調達のための良好な関係を維持・強化するため株式を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "senshu-ikeda-holdings",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、当社における製品の販売先であり、また取引銀行であり、円滑な資金調達のための良好な関係を維持・強化するため株式を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-nanto-bank",
+      "relationship": "customer",
+      "description": "【株式の保有状況】の特定投資株式の保有目的に、当社における製品の販売先であり、また取引銀行であり、円滑な資金調達のための良好な関係を維持・強化するため株式を保有すると印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -137,13 +455,45 @@
       "publisher": "カワセコンピュータサプライ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YMBT.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YMBT",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "ビジネスフォームをベースとする印刷・印字技術とオンデマンド・デジタル処理技術を融合した総合的な情報処理サービスを提供し、「顧客第一主義」のもと得意先企業に高品質の製品・サービスを提供することを基本方針としています。今後は情報処理事業に一層傾斜させ、「紙」「電子」「デザインQR・AR」などを用いるクロスメディア企業としてのポジションを築くことを目指しています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の過半数を占めるビジネスフォーム事業は、請求書や明細書の電子化が進み需要が縮小していく市場にあります。そのため、情報処理事業への傾斜を進められるかが、今後の売上構成の変化を左右します。",
+        "basis": "【事業等のリスク】におけるビジネスフォーム事業の売上構成と市場の縮小に関する記載と、【経営方針、経営環境及び対処すべき課題等】における情報処理事業へ傾斜させる方針に基づきます。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "帳票デザインから製版、印刷、加工までを自社内で一貫して行う体制を持ち、情報センターでは完全セキュリティ下の一貫生産体制を備えています。そのため、大量の個人情報を扱うデータの出力業務を自社で完結させることができます。",
+        "basis": "【事業の内容】における一貫生産の記載と、【経営方針、経営環境及び対処すべき課題等】における完全セキュリティ下の一貫生産体制の記載に基づきます。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

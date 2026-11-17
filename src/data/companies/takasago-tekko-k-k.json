@@ -4,15 +4,138 @@
   "name": "高砂鐵工",
   "officialName": "高砂鐵工株式会社",
   "nameEn": "TAKASAGO TEKKO K.K.,",
-  "description": null,
+  "shortNameEn": "TAKASAGO TEKKO K.K.",
+  "description": "みがき帯鋼や冷間圧延ステンレス鋼帯などの鉄鋼製品を製造・販売し、不動産の賃貸・管理も行う会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "steel-products",
+      "name": "鉄鋼製品事業",
+      "description": "みがき帯鋼、みがき特殊帯鋼、エンボス製品を含む冷間圧延ステンレス鋼帯、ステンレス加工製品などを製造・販売する事業です。当社のほか、連結子会社のタカサゴスチール株式会社も製造・販売に携わっています。2026年3月期の外部顧客への売上高は11,927百万円です。",
+      "customers": [
+        "自動車部品メーカー",
+        "寿産業株式会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "polished-steel-strip",
+          "name": "みがき帯鋼・みがき特殊帯鋼",
+          "description": "1925年に製造を始めた同社の主力製品群です。製品区分ごとの売上高は独立して開示されていません。",
+          "customers": [
+            "自動車部品メーカー等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "stainless-steel-strip",
+          "name": "冷間圧延ステンレス鋼帯",
+          "description": "エンボス製品を含む冷間圧延ステンレス鋼帯です。一部の作業工程は連結子会社のタカサゴスチール株式会社に下請させています。製品区分ごとの売上高は独立して開示されていません。",
+          "customers": [
+            "自動車部品メーカー等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "stainless-processed-products",
+          "name": "ステンレス加工製品",
+          "description": "ステンレス鋼を加工した製品です。製品区分ごとの売上高は独立して開示されていません。",
+          "customers": [
+            "自動車部品メーカー等"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "不動産の賃貸と管理を行う事業です。当社と連結子会社の株式会社タカテツライフが展開しています。2026年3月期の外部顧客への売上高は186百万円です。",
+      "customers": [
+        "不動産の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "原材料を日本製鉄などから調達し、本社工場と子会社で帯鋼やステンレス鋼帯を製造して、自動車部品メーカーなどに販売する事業モデルです。",
+    "products": [
+      "みがき帯鋼",
+      "みがき特殊帯鋼",
+      "エンボス製品を含む冷間圧延ステンレス鋼帯",
+      "ステンレス加工製品",
+      "不動産の賃貸・管理"
+    ],
+    "customers": [
+      "自動車部品メーカー",
+      "寿産業株式会社"
+    ],
+    "revenueSources": [
+      "鉄鋼製品の販売による対価",
+      "不動産の賃貸・管理による対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "東京都板橋区に本社工場を置く",
+        "description": "同社は東京都板橋区に本店と本社工場を置き、連結子会社２社とグループを構成しています。2026年３月31日現在の連結従業員数は152人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "鉄鋼製品の製造・販売と不動産事業を行う",
+        "description": "鉄鋼製品事業ではみがき帯鋼、みがき特殊帯鋼、冷間圧延ステンレス鋼帯、ステンレス加工製品などを製造・販売し、不動産事業では不動産の賃貸・管理を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車業界が主な最終ユーザー",
+        "description": "製品の主な最終ユーザーは自動車業界で、主要な顧客は寿産業株式会社です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年３月期の売上高は12,113百万円",
+        "description": "2026年３月期の売上高は12,113百万円で、前期比0.1％増となりました。ステンレス事業での市況価格の低下によるマイナス要因があった一方、みがき帯鋼事業とプレスプレート事業で売上数量が増え、販売価格の改善効果もありました。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年３月期の親会社株主に帰属する当期純利益は362百万円",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は362百万円となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +150,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3898000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 145,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +170,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4314000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 148,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +190,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4406000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 151,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4736000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 150,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5093000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 152,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +238,177 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1923,
+      "title": "高砂工業の鉄工部門が分離独立して設立",
+      "description": "1916年に設立された高砂工業株式会社の鉄工部門が分離独立して設立され、暖房用放熱器、ボイラー、その他諸機械の製造を開始しました。",
+      "significance": "現在の高砂鐵工の創業です。設立時の資本金額は歴史に書かない規則のため記載していません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1925,
+      "title": "東京鋼帯工業を合併し、みがき帯鋼の製造を開始",
+      "description": "日本で最初にみがき帯鋼の製造を開始した東京鋼帯工業株式会社を合併し、鋼帯工場としてみがき帯鋼の製造を開始しました。",
+      "significance": "現在の主力製品であるみがき帯鋼の事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1937,
+      "title": "志村工場を新設",
+      "description": "東京都板橋区に志村工場（現・本社工場）を新設し、みがき帯鋼、みがき特殊帯鋼などの製造を開始しました。",
+      "significance": "現在の本社工場の前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1954,
+      "title": "会社更生法による更生手続を申立",
+      "description": "会社更生法による更生手続の申立を行い、1954年12月に手続が開始され、1958年12月に終了しました。",
+      "significance": "経営再建を経た時期を示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1961,
+      "title": "東京・大阪両証券取引所第二部に上場",
+      "description": "東京・大阪両証券取引所第二部に上場しました（大阪証券取引所は2003年3月に上場を廃止しています）。",
+      "significance": "上場会社としての起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "高砂ステンレス加工販売を設立",
+      "description": "高砂ステンレス加工販売株式会社（後の高砂加工販売株式会社）を設立しました。",
+      "significance": "ステンレス製品の販売体制を担った子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1965,
+      "title": "リコーパネルを設立",
+      "description": "リコーパネル株式会社（後の高砂パネル株式会社）を設立しました。",
+      "significance": "当時の事業多角化の動きです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "高砂不動産を設立",
+      "description": "高砂不動産株式会社（現・株式会社タカテツライフ）を設立しました。",
+      "significance": "現在の不動産事業を担う子会社の前身です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "タカサゴスチールを設立",
+      "description": "タカサゴスチール株式会社を設立しました。",
+      "significance": "現在の鉄鋼製品事業の中核子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "高砂加工販売を吸収合併",
+      "description": "連結子会社の高砂加工販売株式会社を当社に吸収合併しました。",
+      "significance": "グループ再編の出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "高砂パネルを解散",
+      "description": "連結子会社の高砂パネル株式会社を解散しました。",
+      "significance": "グループ再編の出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "みがき帯鋼事業拠点を本社工場に移転統合",
+      "description": "ステンレス事業の冷延・熱処理設備を廃止し、みがき帯鋼事業拠点（東京都江東区）を本社工場（東京都板橋区）に移転統合しました。",
+      "significance": "みがき帯鋼への集中を進めた再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "みがき帯鋼などに特化する新事業体制を立ち上げ",
+      "description": "みがき帯鋼事業、エンボス製品、加工品事業に特化する新事業体制を立ち上げました。",
+      "significance": "現在の事業構成の土台です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nippon-steel",
+      "relationship": "other-affiliated-company",
+      "description": "日本製鉄株式会社は、【関係会社の状況】で「その他の関係会社」とされる会社で、2026年３月31日現在の議決権の被所有割合は30.8％（直接）です。当社は製品の原材料を主に同社から、日鉄物産株式会社などの商社を経由して購入しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "major-shareholder",
+      "description": "三井物産株式会社は、【大株主の状況】に載る事業会社で、2026年３月31日現在の所有株式数の割合は16.65％です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "hanwa",
+      "relationship": "supplier",
+      "description": "阪和興業株式会社は、日本製鉄株式会社からの原材料の購入を経由する２商社のうちの１社です。購入の取引金額は商社に対する会計帳簿上の取引に基づいて記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関連当事者情報】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +416,55 @@
       "publisher": "高砂鐵工株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YH3H.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YH3H",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年度から2026年度を対象とする2026年度中期計画を策定し、みがき帯鋼では「短納期、小ロット、高品質により日本のモノづくり現場を支える」、エンボス事業では機能性・意匠性の両面で暮らしに快適さと彩りを添える、プレスプレート事業ではハイエンドニーズに応える商品力で世界の電子部品産業の発展に貢献する、ステンレス流通事業では小ロット短納期などのサービス拡充と地域密着営業の強化を基本方針としています。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高のほとんどを占める鉄鋼製品事業の中で、みがき帯鋼、エンボス、プレスプレート、ステンレス流通の製品分野ごとに方針を分けて取り組む形です。",
+        "basis": "鉄鋼製品事業の外部顧客への売上高11,927百万円が連結売上高12,113百万円の大部分を占め、中期計画の基本方針が鉄鋼製品事業の製品分野ごとに定められている事実に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "みがき帯鋼は1925年に製造を始めて以来の主力製品であり、短納期・小ロット・高品質を打ち出して日本のモノづくり現場の需要に応える位置づけです。",
+        "basis": "1925年に日本で最初にみがき帯鋼の製造を開始した東京鋼帯工業株式会社を合併して以来みがき帯鋼を製造している事実と、中期計画でみがき帯鋼の基本方針として短納期・小ロット・高品質が掲げられている事実に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "製品の最大の最終ユーザーは自動車業界であり、原材料はその他の関係会社である日本製鉄株式会社から商社を経由して調達する構造です。",
+        "basis": "経営環境の説明で製品の最終ユーザーである自動車業界の動向が業績に影響を与える主な要因とされている事実と、【関係会社の状況】で日本製鉄株式会社がその他の関係会社として原材料の購入先とされている事実に基づきます。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

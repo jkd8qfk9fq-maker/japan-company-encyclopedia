@@ -4,15 +4,130 @@
   "name": "エスティック",
   "officialName": "株式会社エスティック",
   "nameEn": "ESTIC　CORPORATION",
-  "description": null,
+  "shortNameEn": "ESTIC CORPORATION",
+  "description": "大阪府守口市のメーカーで、自動車の組立工程などに使うネジ締付工具のナットランナや、受注生産のネジ締付装置を製造販売しています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "estic",
+      "name": "ネジ締付工具・装置事業",
+      "description": "大阪府守口市に本社を置きます。グループは当社と連結子会社2社（ESTIC (THAILAND) CO.,LTD.、ESTIC AMERICA, INC.）、持分法適用関連会社1社（SHANGHAI ESTIC CO.,LTD.）の4社で構成され、2026年3月20日現在の従業員数は228人です。東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "hand-nutrunner",
+          "name": "ハンドナットランナ",
+          "description": "ナットランナをハンディタイプにした締付工具です。作業者が直接手に持って締め付けを行い、パルス制御技術で締め付け時の反力を軽減しながら、ナットランナと同等の締め付け精度管理ができます。2026年3月期の売上高は4,440百万円でした。",
+          "customers": [
+            "自動車メーカー及び自動車部品メーカーなどの製造業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "screw-tightening-device",
+          "name": "ネジ締付装置",
+          "description": "ユーザー仕様に基づきナットランナを組み込み、オーダーメードで設計製作するネジ締め付け専用の自動機械または半自動機械です。自動車や自動車部品などの組立工程、特に量産ラインで使用されます。2026年3月期の売上高は1,721百万円でした。",
+          "customers": [
+            "自動車メーカー及び自動車部品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "nutrunner",
+          "name": "ナットランナ",
+          "description": "ACサーボモーター、センサー、コントローラで構成され、ネジの締め付けを精密に管理する工具です。機械装置に組み込んで使用するため、主にセットメーカーに対して販売しています。2026年3月期の売上高は1,206百万円でした。",
+          "customers": [
+            "セットメーカー（機械装置メーカー）",
+            "自動車メーカー及び自動車部品メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        },
+        {
+          "id": "other-products",
+          "name": "その他",
+          "description": "サーボプレスと、当社製品の修理・点検などです。サーボプレスはナットランナの技術を応用したプレス機で、主に圧入、カシメ、打ち抜き等に使用されます。【関連情報】の製品区分では「その他」としてまとめて開示されており、2026年3月期の売上高は664百万円でした。",
+          "customers": [
+            "当社製品を導入した製造業の事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【関連情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "ACサーボモーターでネジの締め付けを精密に管理するナットランナなどの工具と、ネジ締付装置を製造販売し、修理・点検と合わせて収益を得る事業モデルです。",
+    "products": [
+      "ナットランナ",
+      "ハンドナットランナ",
+      "サーボプレス",
+      "ネジ締付装置",
+      "当社製品の修理・点検"
+    ],
+    "customers": [
+      "自動車メーカー及び自動車部品メーカー",
+      "セットメーカー（機械装置メーカー）"
+    ],
+    "revenueSources": [
+      "ネジ締付工具及びネジ締付装置の製造販売による売上",
+      "当社製品の修理・点検による売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "エスティック",
+        "description": "大阪府守口市に本社を置きます。1993年に太陽鉄工株式会社のナットランナ事業を分離独立させて設立しました。グループは当社と連結子会社2社、持分法適用関連会社1社の4社で、2026年3月20日現在の従業員数は228人です。東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "ネジ締付工具とネジ締付装置",
+        "description": "ネジ締付工具と装置の単一セグメントです。2026年3月期の製品別売上高は、ハンドナットランナが4,440百万円、ネジ締付装置が1,721百万円、ナットランナが1,206百万円、その他（サーボプレス、修理・点検）が664百万円でした。"
+      },
+      {
+        "kind": "customer",
+        "title": "自動車メーカーと自動車部品メーカー",
+        "description": "製品は主に国内外の自動車メーカーや自動車部品メーカーの組立工程で、ネジの締め付けに使われます。ナットランナは機械装置に組み込んで使うため、主にセットメーカーに対して販売しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "工具と装置の製造販売による売上",
+        "description": "収益は、ネジ締付工具とネジ締付装置の製造販売と、製品の修理・点検から得ます。2026年3月期の売上高は8,033百万円で、ネジ締付装置の販売が伸びたことなどにより前期比1.9％増となりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の親会社株主に帰属する当期純利益は1,163百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,163百万円でした。前期は1,181百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +142,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7280329000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 203,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +162,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 8326256000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 207,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第30期の期首から適用しており、第30期以降の主要な経営指標等は当該会計基準等を適用した後の指標となっています。"
     },
     {
       "fiscalYear": "2024年3月期",
@@ -67,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 9383701000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 215,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +203,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10570859000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 230,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（2022年改正）等を第33期の期首から適用しており、第32期に係る主要な経営指標等は当該会計基準等を遡って適用した後の指標となっています。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +224,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11503873000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 228,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +232,190 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1993,
+      "title": "太陽鉄工のナットランナ事業を分離独立させて設立",
+      "description": "太陽鉄工株式会社（現・株式会社TAIYO）の事業部門であったナットランナ事業を分離独立させ、大阪市東淀川区に株式会社エスティックを設立しました。",
+      "significance": "現在のネジ締付工具・装置事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "ハンドナットランナの販売開始",
+      "description": "作業者が手に持って使えるハンドナットランナの販売を開始しました。",
+      "significance": "現在の主力製品であるハンドナットランナの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "中国・上海にSHANGHAI ESTIC CO.,LTD.を設立",
+      "description": "中国におけるネジ締付装置の生産拠点として、上海市に現地法人SHANGHAI ESTIC CO.,LTD.を設立しました。",
+      "significance": "海外拠点の第一歩で、現在は持分法適用関連会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "パルス制御技術に関する特許を取得",
+      "description": "パルス制御技術に関する特許（ネジ締め装置の制御方法及び装置）を取得しました。",
+      "significance": "ハンドナットランナの反力軽減を支える中核技術の権利化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "東京証券取引所マザーズへ上場",
+      "description": "東京証券取引所マザーズへ株式を上場しました。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "サーボプレスの販売開始",
+      "description": "ナットランナの技術を応用したサーボプレスの販売を開始しました。",
+      "significance": "締付工具からプレス機へ製品領域を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "タイにESTIC (THAILAND) CO.,LTD.を設立",
+      "description": "タイ、インド及び東南アジアにおけるネジ締付装置の販売拠点として、バンコク市に現地法人ESTIC (THAILAND) CO.,LTD.を設立しました。",
+      "significance": "東南アジア向け販売体制の拠点で、現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "米国にESTIC AMERICA, INC.を設立",
+      "description": "北米及び中南米地域におけるネジ締付装置の販売拠点として、米国ケンタッキー州に現地法人ESTIC AMERICA, INC.を設立しました。",
+      "significance": "北米向け販売体制の拠点で、現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "東京証券取引所市場第二部へ市場変更",
+      "description": "東京証券取引所市場第二部へ市場変更しました。",
+      "significance": "上場市場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "本社を東郷事業所へ移転",
+      "description": "大阪府守口市の東郷事業所敷地内に新社屋を建設し、本社を移転しました。",
+      "significance": "現在の本社所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分見直しに伴い、東京証券取引所スタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "技術開発センター（TDC）を開設",
+      "description": "大阪府守口市に技術開発センター（TDC）を開設しました。",
+      "significance": "研究開発体制の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "nichiden",
+      "relationship": "major-shareholder",
+      "description": "大株主の状況に載る事業会社で、2026年3月20日現在、発行済株式（自己株式を除く）の11.23％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第33期(2025/03/21－2026/03/20)",
+      "title": "訂正有価証券報告書－第33期(2025/03/21－2026/03/20)",
       "publisher": "株式会社エスティック",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YCSO.pdf",
-      "publishedAt": "2026-06-17",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YSNM.pdf",
+      "publishedAt": "2026-07-28",
+      "docId": "S100YSNM",
+      "asOf": "2026-03-20",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 主要な経営指標等の推移の注記に、2021年12月21日付で普通株式１株につき４株の割合で株式分割を行った旨が記載されています。自社の株式分割の取扱いには人の確認が必要です。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "事業ターゲットを世界に置き、新製品開発と既存製品のバージョンアップ開発に注力するとともに、海外での販売拡大を図り、世界市場をマーケットとしたグローバル企業を目指しています。中長期の経営戦略として、世界市場での販売拡大のためのサービス拠点の充実、新製品開発や事業提携・買収も視野に入れた事業領域の拡大、株主価値の向上を掲げています。",
+        "asOf": "2026-07-28",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "ハンドナットランナは、パルス制御技術（日本・米国で特許取得）により、高い締め付けトルクでも手にかかる反力を軽減し、手持ちの工具でナットランナと同等の締め付け精度管理を実現しています。ネジ締め付け理論に基づき、ネジが緩まない締め付け管理を行う点も特徴です。",
+        "basis": "【事業の内容】のハンドナットランナの説明と用語説明（パルス制御技術、ネジ締め付け理論）の記載に基づく",
+        "asOf": "2026-07-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "製品は生産設備の一部を構成するため、主な顧客である自動車産業の設備投資動向の影響を受けやすい事業です。2026年3月期は海外売上高が売上高全体の67.6％を占め、国内を上回っています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の対処すべき課題と、【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の地域別売上高の記載に基づく",
+        "asOf": "2026-07-28",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-20",

@@ -4,15 +4,159 @@
   "name": "センコン物流",
   "officialName": "センコン物流株式会社",
   "nameEn": "SENKON LOGISTICS CO., LTD.",
-  "description": null,
+  "shortNameEn": "Senkon Logistics Co.,Ltd.",
+  "description": "宮城県名取市に本社を置き、ホンダ車の販売と運送・倉庫の物流事業を営む会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "automotive",
+      "primary": true
+    },
+    {
+      "industryId": "transportation",
+      "primary": false
+    },
+    {
+      "industryId": "energy",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "senkon-logistics",
+      "name": "センコン物流株式会社",
+      "description": "宮城県名取市に本社を置き、当社と連結子会社7社でグループを構成しています。運送、倉庫、乗用車販売、再生可能エネルギー、その他の5事業を営み、2026年3月期の連結従業員数は473人です。東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "passenger-car-sales",
+          "name": "乗用車販売事業",
+          "description": "連結子会社の株式会社ホンダカーズ埼玉西が、本田技研工業株式会社の製造する車両の仕入・販売・修理等と中古自動車の仕入・販売を行い、株式会社センコンエンタープライズも中古自動車の仕入・販売を行う事業です。2026年3月期の外部顧客への営業収益は10,120百万円です。",
+          "customers": [
+            "新車・中古車の購入者",
+            "車検・点検修理の利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "transport",
+          "name": "運送事業",
+          "description": "顧客の国内貨物と輸出入貨物の国内輸送を行う事業で、当社と山陰センコン物流株式会社が担っています。2026年3月期の外部顧客への営業収益は5,222百万円です。",
+          "customers": [
+            "貨物の運搬を委託する荷主企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "warehouse",
+          "name": "倉庫事業",
+          "description": "顧客から預かった貨物の保管、輸出入貨物の保税蔵置と通関手続、荷造梱包や解装などの諸作業、物流業務の一括受託を行う事業で、当社と山陰センコン物流株式会社が担っています。2026年3月期の外部顧客への営業収益は4,124百万円です。",
+          "customers": [
+            "貨物の保管を委託する荷主企業",
+            "輸出入を行う事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other",
+          "name": "その他の事業",
+          "description": "不動産の売買・賃貸等の不動産事業と葬祭事業を株式会社センコンエンタープライズが、採石事業を株式会社センコン・マテリアルが行う事業です。2026年3月期の外部顧客への営業収益は235百万円です。",
+          "customers": [
+            "不動産の購入者・賃借人",
+            "葬祭の利用者",
+            "砕石を購入する事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "renewable-energy",
+          "name": "再生可能エネルギー事業",
+          "description": "太陽光発電施設と風力発電施設を利用した売電を行う事業で、株式会社センコンエンタープライズが担っています。2026年3月期の外部顧客への営業収益は215百万円です。",
+          "customers": [
+            "電力会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "荷主の貨物を運び、預かって保管する物流事業と、連結子会社がホンダ車の新車・中古車販売や整備を行うことで対価を得る事業モデルです。",
+    "products": [
+      "貨物の運送サービス",
+      "倉庫での保管・荷役、保税蔵置と通関手続、物流業務の一括受託",
+      "ホンダ車の新車・中古車の販売と車検・点検修理",
+      "太陽光発電・風力発電による売電",
+      "不動産の売買・賃貸、葬祭、採石"
+    ],
+    "customers": [
+      "貨物の運搬や保管を委託する荷主企業",
+      "輸出入貨物の通関手続を依頼する事業者",
+      "新車・中古車の購入者",
+      "車検や点検修理を利用する顧客",
+      "不動産の購入者・賃借人、葬祭の利用者"
+    ],
+    "revenueSources": [
+      "運送の対価",
+      "保管料・荷役の対価と通関手続の手数料、物流業務の受託料",
+      "車両の販売代金と整備の対価",
+      "売電収入",
+      "不動産の売却代金と賃料、葬祭の施行料、砕石の販売代金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "センコン物流株式会社",
+        "description": "宮城県名取市に本社を置き、当社と連結子会社7社でグループを構成しています。運送、倉庫、乗用車販売、再生可能エネルギー、その他の5事業を営み、2026年3月期の連結従業員数は473人です。東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "物流サービスとホンダ車の販売・整備",
+        "description": "東北各地などの営業所と物流センターで、貨物の運送、倉庫での保管や荷役、保税蔵置と通関手続、物流業務の一括受託（3PL）を提供し、連結子会社がホンダ車の新車・中古車販売と車検・点検修理を行います。太陽光・風力発電による売電、不動産事業、葬祭事業、採石事業も営んでいます。"
+      },
+      {
+        "kind": "customer",
+        "title": "荷主企業と車の購入者が顧客",
+        "description": "物流事業の顧客は、化学製品や農業機械などの貨物の運搬・保管を委託する荷主企業や、輸出入貨物の通関手続を依頼する事業者です。乗用車販売事業の顧客は、新車・中古車の購入者や車検・点検修理を利用する顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の営業収益は19,919百万円",
+        "description": "2026年3月期の営業収益は19,919百万円（前期比5.8％増）でした。事業別では、乗用車販売事業が10,120百万円、運送事業が5,222百万円、倉庫事業が4,124百万円、その他の事業が235百万円、再生可能エネルギー事業が215百万円です。化学製品などの輸送量の増加や高価格帯の新車販売の増加、中古車販売と車検・点検修理の堅調な取扱いが増収につながりました。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の親会社株主に帰属する当期純利益は48百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は48百万円でした。前期は499百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +171,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5012119000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 430,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +191,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5399003000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 422,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -59,78 +203,264 @@
       "periodEnd": "2024-03-31",
       "revenue": 17543417000,
       "revenueLabel": "営業収益",
-      "profit": 588079000,
+      "profit": 515120000,
       "profitLabel": "経常利益",
-      "netIncome": 383878000,
+      "netIncome": 333372000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益",
-      "totalAssets": 18029245000,
+      "totalAssets": 18051592000,
       "totalAssetsLabel": "総資産額",
-      "netAssets": 5760651000,
+      "netAssets": 5710039000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 448,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2026年3月期の有価証券報告書（訂正有価証券報告書による訂正後）において、役員退職慰労引当金の期末要支給額の算定の誤りによる過少計上の訂正が行われたため、この期の数値は前期の有価証券報告書に記載された値から変更されています。"
     },
     {
       "fiscalYear": "2025年3月期",
       "periodEnd": "2025-03-31",
       "revenue": 18824835000,
       "revenueLabel": "営業収益",
-      "profit": 935308000,
+      "profit": 925133000,
       "profitLabel": "経常利益",
-      "netIncome": 506407000,
+      "netIncome": 499981000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益",
-      "totalAssets": 18836671000,
+      "totalAssets": 18862843000,
       "totalAssetsLabel": "総資産額",
-      "netAssets": 6123975000,
+      "netAssets": 6067012000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 449,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "2026年3月期の有価証券報告書（訂正有価証券報告書による訂正後）において、役員退職慰労引当金の期末要支給額の算定の誤りによる過少計上の訂正が行われたため、この期の数値は前期の有価証券報告書に記載された値から変更されています。"
     },
     {
       "fiscalYear": "2026年3月期",
       "periodEnd": "2026-03-31",
       "revenue": 19919026000,
       "revenueLabel": "営業収益",
-      "profit": 556355000,
+      "profit": 370744000,
       "profitLabel": "経常利益",
-      "netIncome": 167333000,
+      "netIncome": 48508000,
       "netIncomeLabel": "親会社株主に帰属する当期純利益",
-      "totalAssets": 18631793000,
+      "totalAssets": 18718197000,
       "totalAssetsLabel": "総資産額",
-      "netAssets": 6436487000,
+      "netAssets": 6254146000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 473,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "この期の数値は、2026年11月10日に提出された訂正有価証券報告書による訂正後のものです。訂正は、役員退職慰労引当金の期末要支給額の算定の誤りによる過少計上の修正です。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1959,
+      "title": "株式会社仙台梱包運搬社を設立",
+      "description": "宮城県仙台市郡山（現仙台市太白区）に株式会社仙台梱包運搬社を設立し、仙台市を事業区域とする一般区域（限定）貨物自動車運送事業の免許を受け、運送事業を開始しました。",
+      "significance": "現在のセンコン物流の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1964,
+      "title": "倉庫事業を開始",
+      "description": "倉庫業の許可を受け、倉庫事業を開始しました。",
+      "significance": "運送に続く第2の事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1978,
+      "title": "ホンダ車販売の子会社を設立",
+      "description": "埼玉県狭山市に株式会社ホンダベルノ埼玉南（現株式会社ホンダカーズ埼玉西）を設立しました。",
+      "significance": "現在の乗用車販売事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "商号をセンコン物流株式会社に変更",
+      "description": "商号を株式会社仙台梱包運搬社からセンコン物流株式会社に変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました（現東京証券取引所スタンダード市場）。",
+      "significance": "株式公開の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "通関業の許可を取得",
+      "description": "通関業の許可を受け、港営業所（現仙台港営業所）で営業を開始しました。",
+      "significance": "輸出入貨物の取扱いを広げる節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "株式会社センコンエンタープライズを設立",
+      "description": "宮城県名取市に子会社株式会社センコンエンタープライズを設立しました。",
+      "significance": "中古車販売や再生可能エネルギー、不動産、葬祭の各事業を担う子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "日立物流と資本・業務提携",
+      "description": "株式会社日立物流（現ロジスティード株式会社）と資本・業務提携を行いました。",
+      "significance": "大手物流会社との提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "山陰センコン物流株式会社を設立",
+      "description": "島根営業所を分社化し、島根県松江市に山陰センコン物流株式会社を設立しました。",
+      "significance": "中国地方の運送・倉庫事業の体制を整えた節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "富士ロジテックホールディングスと資本・業務提携",
+      "description": "株式会社富士ロジテックホールディングスと資本・業務提携を行いました。",
+      "significance": "物流会社との提携の広がりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "認定通関業者（AEO）の認定を取得",
+      "description": "横浜税関から認定通関業者（AEO）の認定を受けました。",
+      "significance": "通関業務の信頼性を示す認定です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分見直しにより、JASDAQ市場からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "honda",
+      "relationship": "supplier",
+      "description": "連結子会社の株式会社ホンダカーズ埼玉西が行う乗用車販売事業は、本田技研工業株式会社が製造する車両の仕入・販売・修理等を行っており、同社は当社グループの車両の仕入先です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "companyId": "sekisui-jushi",
+      "relationship": "business-partner",
+      "description": "当社が営む運送事業・倉庫事業において、同社及び同社のグループ会社と取引関係があり、取引関係の維持・強化と安定調達の確保を目的として株式29,016株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "nikkon-holdings",
+      "relationship": "business-partner",
+      "description": "同じ物流事業を営む会社であり、当社が営む運送事業・倉庫事業において取引関係があり、相互の連携による業務効率の向上や輸送体制の安定化が見込まれる関係の維持・強化を目的として株式4,000株を保有しています（2026年3月31日現在）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第67期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第67期(2025/04/01－2026/03/31)",
       "publisher": "センコン物流株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKGW.pdf",
-      "publishedAt": "2026-06-25",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100ZDPU.pdf",
+      "publishedAt": "2026-11-10",
+      "docId": "S100ZDPU",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「物流は社会を支える重要な軸」との経営方針のもと、陸・海・空の複合一貫輸送システムを構築し、ソリューション型の営業活動を展開すること、物流事業では3PL（企業物流の包括的受託）やアウトソーシング、フォワーディング、レコードマネジメントサービス、トランクルームの専業化に注力すること、乗用車販売事業では販売体制の強化とサービス部門の充実により収益基盤の強化を図ることを掲げています。また、ES（従業員満足度）経営の観点から労働環境の改善やプロフェッショナルの育成に取り組み、事業ポートフォリオの最適化を通じて経営資源の有効活用を図るとしています。",
+        "asOf": "2026-11-10",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "東北各地を中心に営業所と物流センターの網を持ち、運送と倉庫を一体で提供できる体制があります。低温倉庫は農林水産省の政府倉庫指定を受けており、米穀の保管や品質検査などの付帯作業の取扱いがあります。また、通関業の許可と認定通関業者（AEO）の認定により、輸出入貨物の保管から通関までを一貫して担うことができます。",
+        "basis": "事業の内容、沿革、主要な設備の状況、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-11-10",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "営業収益の内訳は、乗用車販売事業が10,120百万円と過半を占め、運送事業の5,222百万円と倉庫事業の4,124百万円を合わせた物流の2事業が約5割弱を占めます。物流と自動車販売の二つの柱で事業を構成している点が特徴です。",
+        "basis": "セグメント情報の報告セグメントごとの外部顧客への営業収益",
+        "asOf": "2026-11-10",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

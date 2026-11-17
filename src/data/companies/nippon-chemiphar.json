@@ -4,15 +4,137 @@
   "name": "日本ケミファ",
   "officialName": "日本ケミファ株式会社",
   "nameEn": "NIPPON CHEMIPHAR CO., LTD.",
-  "description": null,
+  "shortNameEn": "NIPPON CHEMIPHAR CO., LTD.",
+  "description": "医療用医薬品を中核に、臨床検査薬や安全性試験の受託などを手がける医薬品メーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "nippon-chemiphar",
+      "name": "日本ケミファ株式会社",
+      "description": "東京都千代田区に本社を置く医薬品メーカーです。医療用医薬品を中核として、医療・健康・美容関連事業を行っており、当社と連結子会社４社、関連会社１社の６社でグループを構成しています。2026年３月31日現在の従業員数は878人です。東京証券取引所スタンダード市場に上場しています。",
+      "customers": [
+        "医薬品卸売業者",
+        "医療機関"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "iyakuhin-jigyo",
+          "name": "医薬品事業",
+          "description": "医療用医薬品の製造・販売を主に行う報告セグメントです。連結子会社の日本薬品工業株式会社とNippon Chemiphar Vietnam Co., Ltd.が製造を担い、関連会社のジャパンソファルシム株式会社が医薬品の仕入・販売を行っています。2026年３月期の外部顧客への売上高は31,868百万円です。",
+          "customers": [
+            "医薬品卸売業者",
+            "医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "children": [
+            {
+              "id": "iryouyou-iyakuhin",
+              "name": "医療用医薬品",
+              "description": "ジェネリック医薬品と、ウラリット配合錠、ソレトン錠、カルバン錠などの主力品・新薬を製造・販売する事業です。新薬では、がん領域の導入品とδオピオイド受容体作動薬「NC-2800」などの開発も進めています。2026年３月期の外部顧客への売上高は26,431百万円です。",
+              "customers": [
+                "医薬品卸売業者",
+                "医療機関"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【研究開発活動】"
+            },
+            {
+              "id": "rinsho-kensayaku",
+              "name": "臨床検査薬",
+              "description": "アレルギー検査キット「ドロップスクリーン」などの臨床検査薬を製造・販売する事業です。2026年３月期の外部顧客への売上高は5,344百万円です。",
+              "customers": [
+                "医薬品卸売業者",
+                "医療機関"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            }
+          ]
+        },
+        {
+          "id": "sonota",
+          "name": "その他",
+          "description": "安全性試験の受託等、ヘルスケア事業及び不動産賃貸事業を行う区分で、報告セグメントではありません。連結子会社の株式会社化合物安全性研究所が医薬品等の安全性試験の受託を担っています。2026年３月期の外部顧客への売上高は1,222百万円です。",
+          "customers": [
+            "医薬品メーカーなど"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社グループの工場で製造した医療用医薬品と臨床検査薬を、医薬品卸売業者を通じて医療機関などへ販売し、代金を得る事業モデルです。",
+    "products": [
+      "医療用医薬品",
+      "臨床検査薬",
+      "安全性試験の受託"
+    ],
+    "customers": [
+      "医薬品卸売業者",
+      "医療機関"
+    ],
+    "revenueSources": [
+      "医療用医薬品の販売代金",
+      "臨床検査薬の販売代金",
+      "安全性試験の受託料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日本ケミファ株式会社",
+        "description": "1950年に日立化学株式会社として設立され、1970年に現在の社名となりました。東京都千代田区に本社を置き、連結子会社４社と関連会社１社でグループを構成しています。2026年３月31日現在の従業員数は878人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "医療用医薬品と臨床検査薬",
+        "description": "医薬品事業では、ジェネリック医薬品と主力品・新薬の医療用医薬品、ドロップスクリーンなどの臨床検査薬を製造・販売しています。その他として、安全性試験の受託等、ヘルスケア事業及び不動産賃貸事業も行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "医薬品卸売業者を通じて医療機関へ",
+        "description": "製品は医薬品卸売業者を通じて医療機関などに届けられます。主要な顧客ごとの情報では、株式会社メディセオとアルフレッサ株式会社が主要顧客として印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年３月期の売上高は33,090百万円",
+        "description": "2026年３月期の売上高は33,090百万円で、前連結会計年度比1.6％増となりました。医薬品事業の外部顧客への売上高は31,868百万円（うち医療用医薬品26,431百万円、臨床検査薬5,344百万円）、その他は1,222百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年３月期の当期純利益は198百万円",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は198百万円で、前連結会計年度比32.8％減となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +149,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18501000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 809,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +169,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18534000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 872,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +189,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 18460000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 887,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +209,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19167000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 855,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +229,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 19510000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 878,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +237,317 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1950,
+      "title": "日立化学株式会社を設立",
+      "description": "東京都に日立化学株式会社（旧商号）を設立しました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "日本薬品工業株式会社を買収",
+      "description": "日本薬品工業株式会社（現・連結子会社）を買収しました。",
+      "significance": "現在の製造の中核会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "日本ケミファ株式会社に商号変更",
+      "description": "日本ケミファ株式会社に商号を変更しました。",
+      "significance": "現在の社名の由来です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式上場の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1973,
+      "title": "三郷市に研究所を開設",
+      "description": "埼玉県三郷市に研究所を開設しました。",
+      "significance": "研究開発拠点の設置です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1975,
+      "title": "本社を千代田区に移転",
+      "description": "東京都千代田区（現在地）に本社を移転しました。",
+      "significance": "現在の本社所在地への移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "東京証券取引所市場第一部に指定替え",
+      "description": "東京証券取引所市場第一部銘柄に指定替えとなりました。",
+      "significance": "上場市場での位置付けの変化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "ジャパンソファルシム株式会社を設立",
+      "description": "ジャパンソファルシム株式会社（現・関連会社）を設立しました。",
+      "significance": "現在の関連会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1976,
+      "title": "臨床検査薬事業に進出",
+      "description": "臨床検査薬事業に進出しました。",
+      "significance": "現在の３つの事業ドメインの一つである臨床検査薬の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1977,
+      "title": "茨城工場を開設し医薬品製造を開始",
+      "description": "茨城県真壁郡（現・筑西市）に茨城工場（現・日本薬品工業つくば工場）を開設し、医薬品の製造を開始しました。",
+      "significance": "自社製造の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "株式会社化合物安全性研究所を買収",
+      "description": "株式会社化合物安全性研究所（現・連結子会社）を買収しました。",
+      "significance": "安全性試験の受託事業の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "「ウラリット－Ｕ」を発売",
+      "description": "「ウラリット－Ｕ（現・ウラリット－Ｕ配合散）」を発売しました。",
+      "significance": "主力品の発売です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1992,
+      "title": "「ウラリット錠」を発売",
+      "description": "「ウラリット錠（現・ウラリット配合錠）」を発売しました。",
+      "significance": "主力品の発売です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "「ソレトン錠」を発売",
+      "description": "「ソレトン錠」を発売しました。",
+      "significance": "主力品の発売です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "「カルバン錠」を発売",
+      "description": "「カルバン錠」を発売しました。",
+      "significance": "主力品の発売です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "ランバクシー社と包括的資本業務提携契約を締結",
+      "description": "インドのRanbaxy Laboratories Limitedと包括的資本業務提携契約を締結しました。",
+      "significance": "海外製薬会社との提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "日本薬品工業を連結子会社化",
+      "description": "ランバクシー社との包括的資本業務提携関係の解消に伴い、日本薬品工業を連結子会社としました。",
+      "significance": "グループ体制の転換点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "株式交換により日本薬品工業を完全子会社化",
+      "description": "株式交換により日本薬品工業を完全子会社としました。",
+      "significance": "製造子会社の完全子会社化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "茨城工場を日本薬品工業へ承継し、つくば工場に改称",
+      "description": "吸収分割により茨城工場を日本薬品工業へ承継し、つくば工場に改称しました。",
+      "significance": "現在のつくば工場の体制です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "ベトナムに合弁会社を設立し、同年に完全子会社化",
+      "description": "日本薬品工業がベトナムのMST社と合弁会社を設立し、同年にMST社から出資持分のすべてを譲り受けてNippon Chemiphar Vietnam Co., Ltd.（現・連結子会社）に社名を変更しました。",
+      "significance": "海外生産拠点の確保です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "ベトナム工場が竣工",
+      "description": "Nippon Chemiphar Vietnamのベトナム工場（ホーチミン市）が竣工しました。",
+      "significance": "海外生産拠点の稼働開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "「ドロップスクリーン」の販売を開始",
+      "description": "アレルギー検査キット「ドロップスクリーン 特異的IgE測定キット ST-1」と測定装置「ドロップスクリーンA-１」の販売を開始しました。",
+      "significance": "臨床検査薬の主力製品の発売です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "Delta-Fly Pharmaとライセンス契約を締結",
+      "description": "Delta-Fly Pharma株式会社と「DFP-17729」に関する国内における販売権並びに製造権についてライセンス契約を締結しました。",
+      "significance": "新薬開発の提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "住友ファーマと共同研究開発契約を締結",
+      "description": "住友ファーマ株式会社と「NC-2800」に関する共同研究開発契約及びオプション契約を締結しました。",
+      "significance": "新薬開発の提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "Delta-Fly Pharmaと「DFP-14323」のライセンス契約を締結",
+      "description": "Delta-Fly Pharma株式会社と「DFP-14323」に関する国内独占的販売権についてライセンス契約を締結しました。",
+      "significance": "新薬開発の提携です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "南京寧和衡信製薬と「NC-2500」のライセンス契約を締結",
+      "description": "中国の南京寧和衡信製薬有限公司と「NC-2500」の中国におけるライセンス契約を締結しました。",
+      "significance": "自社創製品の海外展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所スタンダード市場へ移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "つくば工場３号棟２階の実装工事が完了",
+      "description": "日本薬品工業つくば工場３号棟２階の実装工事が完了しました。",
+      "significance": "増産体制の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "delta-fly-pharma",
+      "relationship": "business-partner",
+      "description": "がん領域の開発品についてライセンス契約を締結している業務提携等の関係にある会社です。「DFP-17729」の国内における販売権並びに製造権と、「DFP-14323」の国内独占的販売権を取得しており、いずれも臨床試験が進行中です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【研究開発活動】"
+    },
+    {
+      "companyId": "sumitomo-pharma",
+      "relationship": "business-partner",
+      "description": "δオピオイド受容体作動薬「NC-2800」について共同研究開発契約及びオプション契約を締結している業務提携等の関係にある会社です。同社は日本医療研究開発機構（AMED）のCiCLE事業に分担機関として参画し、フェーズⅡa臨床試験が進められています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【研究開発活動】"
+    },
+    {
+      "companyId": "zeria-pharmaceutical",
+      "relationship": "major-shareholder",
+      "description": "2026年３月31日現在、当社の株式の3.32％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +555,55 @@
       "publisher": "日本ケミファ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YBOB.pdf",
       "publishedAt": "2026-06-15",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YBOB",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念として「医薬品を中核としたトータルヘルスケアで人々の健康で豊かな生活に貢献する」ことを掲げ、中長期的な経営戦略として「ジェネリック医薬品」「臨床検査薬」、アルカリ化療法剤を含めた「新薬開発」という３つの事業ドメインを構成し、それらを海外にも展開することで、持続的な発展と企業価値の最大化を図っていくとしています。",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "ジェネリック医薬品では「品質第一」の企業文化の醸成とグループ横断の品質保証体制の強化に取り組み、医療用医薬品の供給不足に対応する増産と安定供給を進めています。新薬開発では、導入品と自社創製品の臨床試験を提携先と共同で進めています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等、経営成績等の状況の概要、研究開発活動に基づく",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "ベトナム工場では、日本の工場と同じ製造方法で医薬品を製造し、日本国内の工場と同水準の品質を確保しながら、国内工場からの製造移管と他社製品の受託製造を進めています。アレルギー検査キット「ドロップスクリーン」は国内累計設置台数が1,800台を超えています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等、事業の内容、経営成績等の状況の概要に基づく",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年３月期の外部顧客への売上高は、医薬品事業が31,868百万円（うち医療用医薬品26,431百万円、臨床検査薬5,344百万円）、その他が1,222百万円です。主要な顧客ごとの情報では、株式会社メディセオとアルフレッサ株式会社が主要顧客として印字されています。",
+        "basis": "セグメント情報の関連情報（製品及びサービスごとの情報、主要な顧客ごとの情報）、経営成績等の状況の概要に基づく",
+        "asOf": "2026-06-15",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

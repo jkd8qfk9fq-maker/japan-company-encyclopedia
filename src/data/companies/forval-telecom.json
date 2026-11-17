@@ -4,15 +4,124 @@
   "name": "フォーバルテレコム",
   "officialName": "株式会社フォーバルテレコム",
   "nameEn": "FORVAL TELECOM,INC.",
-  "description": null,
+  "shortNameEn": "FORVAL TELECOM,INC.",
+  "description": "電力・都市ガスとIP電話などの通信サービスを法人や個人に提供し、自社の課金・請求の仕組みでまとめて請求する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "energy",
+      "primary": true
+    },
+    {
+      "industryId": "telecommunications",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "forval-telecom",
+      "name": "株式会社フォーバルテレコム",
+      "description": "東京都港区に本社を置き、連結子会社2社（タクトシステム株式会社、株式会社保険ステーション）とグループを構成しています。通信サービス、電力・都市ガスの小売、コンサルティングの3事業を展開し、2026年3月期の売上高は23,973百万円、従業員数は197人です。東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "utility",
+          "name": "ユーティリティ・ビジネス",
+          "description": "登録小売電気事業者として電力「Elenovaでんき」を、登録ガス小売事業者として都市ガス「Elenovaガス」を法人顧客に提供する事業です。2026年3月期の外部顧客への売上高は10,851百万円で、売上高全体の45.3％を占める最大の事業です。",
+          "customers": [
+            "法人顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "ip-and-mobile-solutions",
+          "name": "IP ＆ Mobileソリューション・ビジネス",
+          "description": "法人向けVoIPサービス「スマートひかり」やスマートフォンを使うFMCサービス「どこでもホン」、光回線サービス「iSmartひかり」、個人向けインターネット接続サービス「iSmart接続-Fひかり」など、情報通信サービス全般と情報通信機器の販売を行う事業です。通信設備は一部分を保有するのみで、保有していない設備による通信サービスは電気通信事業者などから仕入れて提供しています。2026年3月期の外部顧客への売上高は9,377百万円です。",
+          "customers": [
+            "法人顧客",
+            "個人顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "consulting",
+          "name": "コンサルティング・ビジネス",
+          "description": "経営支援コンサルティング、保険サービス、セキュリティサービス、コンテンツソリューション、DXコンサルティングなどを行う事業です。連結子会社の株式会社保険ステーションとタクトシステム株式会社も担い、2026年3月期の外部顧客への売上高は3,743百万円です。",
+          "customers": [
+            "法人顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "通信サービスと電力・ガスを中小法人や個人に提供し、自ら構築した顧客データベースと課金・請求システムによる一括請求を事業の土台とする事業モデルです。",
+    "products": [
+      "法人向けVoIPサービス「スマートひかり」やFMCサービス「どこでもホン」、光回線サービス「iSmartひかり」",
+      "自社ブランド「fitコール」の割引電話サービスと個人向けインターネット接続サービス「iSmart接続-Fひかり」",
+      "小売電力「Elenovaでんき」と都市ガス「Elenovaガス」",
+      "経営支援コンサルティング、保険サービス、セキュリティサービス、コンテンツソリューション、DXコンサルティング",
+      "情報通信機器の販売"
+    ],
+    "customers": [
+      "中小法人を中心とする法人顧客",
+      "個人顧客"
+    ],
+    "revenueSources": [
+      "通信サービスの利用料",
+      "電力・都市ガスの販売代金",
+      "情報通信機器の販売代金",
+      "コンサルティング、保険サービスなどの対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社フォーバルテレコム",
+        "description": "東京都港区に本社を置き、連結子会社2社とグループを構成しています。親会社の株式会社フォーバルが議決権の70.2％を保有し、2026年3月期の従業員数は197人で、東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "通信・電力ガス・コンサルティング",
+        "description": "自社ブランド「fitコール」の割引電話サービスをはじめ、法人向けVoIPや光回線、個人向けインターネット接続を提供し、電力「Elenovaでんき」と都市ガス「Elenovaガス」の小売、経営支援コンサルティングや保険サービスなども手がけています。"
+      },
+      {
+        "kind": "customer",
+        "title": "中小法人と個人",
+        "description": "主要な顧客は中小法人で、個人顧客にもインターネット接続サービスなどを提供しています。利用代金は、自社で構築した顧客データベースと課金・請求システムを使ってまとめて請求し、回収しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は23,973百万円",
+        "description": "2026年3月期の売上高は23,973百万円（前期比6.7％減）でした。事業別ではユーティリティ・ビジネスが10,851百万円、IP ＆ Mobileソリューション・ビジネスが9,377百万円、コンサルティング・ビジネスが3,743百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の当期純利益は985百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は985百万円（前期比34.5％増）でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +136,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2342800000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 314,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +156,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2459774000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 309,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +176,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2924469000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 302,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +196,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3320530000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 302,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +216,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3941165000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 197,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +224,108 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1995,
+      "title": "フォーバル・インターナショナル・テレコミュニケーションズとして設立",
+      "description": "「フォーバル・インターナショナル・テレコミュニケーションズ株式会社」（略称fit）として設立され、自社ブランド「fitコール」で国際電話サービスなどを開始しました。",
+      "significance": "現在の通信サービス事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "株式会社フォーバルテレコムに社名変更",
+      "description": "社名を「株式会社フォーバルテレコム」に変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所マザーズ市場に上場",
+      "description": "東京証券取引所マザーズ市場に上場しました（証券コード9445）。",
+      "significance": "株式を公開しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "ビー・ビー・コミュニケーションズを設立",
+      "description": "ソフトバンクグループのビー・ビー・テクノロジー株式会社と共同で「ビー・ビー・コミュニケーションズ株式会社」を設立し、法人向けVoIPサービス「BBフォン」を開始しました。",
+      "significance": "法人向けIP電話への展開を本格化させました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "株式会社トライ・エックスを子会社化",
+      "description": "オン・デマンド印刷に強みを持つ株式会社トライ・エックスを買収し、子会社化しました。",
+      "significance": "印刷・ドキュメント分野へ事業を広げました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "株式会社FISソリューションズが発足",
+      "description": "グローバル・ワン株式会社とケイ・ワイズファクトリー株式会社が合併し、株式会社FISソリューションズに社名変更しました。",
+      "significance": "グループの再編が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "ビー・ビー・コミュニケーションズを売却",
+      "description": "ビー・ビー・コミュニケーションズ株式会社を売却しました。",
+      "significance": "合弁事業から撤退しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、スタンダード市場へ移行しました。",
+      "significance": "現在の上場市場になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "forval",
+      "relationship": "parent",
+      "description": "株式会社フォーバルは当社の親会社で、2026年3月31日現在、発行済株式（自己株式を除く。）の総数に対する所有株式数の割合70.15％を保有しています。関係会社の状況には、サービスの利用及び取次と役員の兼任があることが印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "hikari-tsushin",
+      "relationship": "major-shareholder",
+      "description": "株式会社光通信は、2026年3月31日現在、当社の株式167,500株（発行済株式（自己株式を除く。）の総数に対する所有株式数の割合1.00％）を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +333,55 @@
       "publisher": "株式会社フォーバルテレコム",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJ9I.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJ9I",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "親会社フォーバルの「社会価値創出企業」という目指す姿のもと、情報通信サービスの分野で、ユーザーの視点に立ったより良いサービスを創造し提供していくことで新たな社会価値の実現を目指すとしています。中長期的には、中小法人ユーザーを主要ターゲットとして、超高速通信インフラを利活用したサービスメニューを創出し、成長力の強化に努めていく所存であるとしています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の内訳は、ユーティリティ・ビジネスが10,851百万円と全体の45.3％を占めて最大で、IP ＆ Mobileソリューション・ビジネスが9,377百万円、コンサルティング・ビジネスが3,743百万円です。当期は連結子会社2社を親会社へ譲渡して連結範囲から除外したことにより売上高は前期比6.7％減となりましたが、電力・ガスの契約件数は堅調に伸びたとされています。",
+        "basis": "セグメント情報の報告セグメントごとの外部顧客への売上高、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "自ら構築した顧客データベースと課金・請求システムを持ち、顧客への請求と回収を自社で行う「ビリングプロバイダー」であることが土台になっています。通信設備は一部分を保有するのみで、保有していない設備によるサービスは電気通信事業者などから仕入れて提供するため、仕入先からは通信回線などを一括して卸売する大口ユーザーとして位置付けられるとされています。",
+        "basis": "事業の内容のサービス提供形態とビリングプロバイダーの記述、セグメント情報の外部顧客への売上高",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "親会社の株式会社フォーバルが2026年3月31日現在で議決権の70.15％を保有する上場子会社です。売上高の半分近くを電力・都市ガスの小売が占め、通信サービスと合わせて中小法人向けに複数のインフラサービスを提供しています。特定の顧客への売上高が連結売上高の10％以上を占める顧客はないとされています。",
+        "basis": "大株主の状況、関係会社の状況、関連情報の主要な顧客ごとの情報、セグメント情報の外部顧客への売上高",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

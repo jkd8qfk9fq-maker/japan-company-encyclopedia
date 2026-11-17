@@ -4,15 +4,144 @@
   "name": "アツギ",
   "officialName": "アツギ株式会社",
   "nameEn": "ATSUGI CO., LTD.",
-  "description": null,
+  "shortNameEn": "ATSUGI CO., LTD.",
+  "description": "レッグウェアとインナーウェアを製造販売する繊維メーカーで、不動産の販売・賃貸や介護関連の事業も手がけています。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "chemicals",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "textile",
+      "name": "繊維事業",
+      "description": "レッグウェア及びインナーウェア等の製造、仕入、販売を行う、当社グループの主力事業です。当社と株式会社レナウンインクス、アツギ東北株式会社、中国の子会社などが製造・仕入・販売を担い、物流業務の請負も含みます。2026年3月期の外部顧客への売上高は20,156百万円で、グループ全体の約94％を占めています。女性向けストッキングの主力ブランドは「ASTIGU（アスティーグ）」です。",
+      "customers": [
+        "衣料品の小売店・量販店",
+        "OEM（相手先ブランド製造）の発注元企業"
+      ],
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "legwear",
+          "name": "レッグウェア",
+          "description": "パンティストッキング、タイツ、ソックス類などのレッグウェアの製造販売です。2026年3月期の売上高は11,060百万円で、適正価格への見直しで単価は上昇しましたが、販売数量の減少により前期を下回りました。",
+          "customers": [
+            "衣料品の小売店・量販店",
+            "OEM（相手先ブランド製造）の発注元企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "innerwear",
+          "name": "インナーウェア",
+          "description": "メリヤス肌着、ファンデーション、ランジェリーなどのインナーウェアの製造販売です。2026年3月期の売上高は9,095百万円で、衣料専門店やEC販路、OEM（相手先ブランド製造）における販売が好調でした。",
+          "customers": [
+            "衣料専門店",
+            "EC販路の購入者",
+            "OEM（相手先ブランド製造）の発注元企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "分譲土地の購入及び販売と、土地及び建物の賃貸を行う事業です。2026年3月期の外部顧客への売上高は697百万円です。保有資産の有効活用を進めており、2024年10月からは神奈川県海老名市に所有する土地の賃貸を行っています。",
+      "customers": [
+        "分譲土地の購入者",
+        "土地・建物の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other",
+      "name": "その他",
+      "description": "報告セグメントに含まれない事業で、介護用品の仕入・販売、認知症高齢者向けグループホームの運営、太陽光発電による売電を行っています。連結子会社のアツギケア株式会社などが担い、2026年3月期の外部顧客への売上高は615百万円です。",
+      "customers": [
+        "介護用品の購入者",
+        "グループホームの入居者",
+        "電力会社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "自社工場や子会社で製造し仕入れたレッグウェアとインナーウェアを、小売店やEC、OEM（相手先ブランド製造）で販売して収益を得る事業モデルです。",
+    "products": [
+      "レッグウェア（パンティストッキング、タイツ、ソックス類など）",
+      "インナーウェア（肌着、ファンデーション、ランジェリーなど）",
+      "介護用品"
+    ],
+    "customers": [
+      "衣料品の小売店・量販店",
+      "EC販路の購入者",
+      "OEM（相手先ブランド製造）の発注元企業"
+    ],
+    "revenueSources": [
+      "レッグウェア・インナーウェア等の製品の販売代金",
+      "不動産の販売代金と賃貸料",
+      "介護用品の販売代金、グループホームの運営収入、太陽光発電による売電収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "アツギ",
+        "description": "神奈川県海老名市に本社を置き、当社と連結子会社8社の計9社でグループを構成しています。2026年3月期の従業員数は1,207人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "繊維事業を中心とする事業展開",
+        "description": "繊維事業ではレッグウェアとインナーウェアの製造、仕入、販売を行い、ほかに不動産事業と、介護用品の販売やグループホームの運営、太陽光発電による売電などの事業を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "小売店やECを通じた販売",
+        "description": "製品は衣料品の小売店や量販店、EC販路などを通じて販売し、OEM（相手先ブランド製造）として取引先ブランドの製品も製造しています。最大の販売先は株式会社しまむらで、2026年3月期の販売実績の28.5％を占めています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は21,469百万円",
+        "description": "2026年3月期の売上高は21,469百万円で、前期比1.9％減少しました。繊維事業が20,156百万円、不動産事業が697百万円、その他が615百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の親会社株主に帰属する当期純損失は1,137百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純損失は1,137百万円で、前期の376百万円の純損失から損失が拡大しました。円安の進行による調達コストの上昇や製造コストの悪化などが影響しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +156,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 32145000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 1456,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +176,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 30932000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 1400,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +196,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 33441000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 1443,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +216,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 31662000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 1273,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +236,7 @@
       "totalAssetsLabel": "総資産",
       "netAssets": 32010000000,
       "netAssetsLabel": "純資産",
-      "employees": null,
+      "employees": 1207,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +244,207 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1947,
+      "title": "厚木編織株式会社を設立",
+      "description": "創業者である堀禄助が、現在の本社所在地である神奈川県海老名市で厚木編織株式会社を設立し、捕鯨用ロープ、撚糸、靴下、メリヤス肌着等の製造販売を開始しました。",
+      "significance": "現在の当社の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1952,
+      "title": "シームレスストッキングの製造販売に着手",
+      "description": "シームレスストッキング及びタイツの製造販売に着手しました。",
+      "significance": "レッグウェア事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1960,
+      "title": "厚木ナイロン工業株式会社に商号変更",
+      "description": "厚木ナイロン工業株式会社に商号を変更しました。同年、東京店頭売買承認銘柄として株式を公開しました。",
+      "significance": "「厚木ナイロン」の商号と株式公開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1962,
+      "title": "東京証券取引所市場第一部などに上場",
+      "description": "東京、大阪、名古屋の各証券取引所市場第一部及び福岡証券取引所に上場しました。前年には東京証券取引所市場第二部に上場しています。",
+      "significance": "主要市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "パンティストッキングの製造販売開始",
+      "description": "パンティストッキングの製造販売を開始しました。",
+      "significance": "後に主力製品となるパンティストッキングの起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "アツギ株式会社に商号変更",
+      "description": "厚木ナイロン商事株式会社を吸収合併し、アツギ株式会社に商号を変更しました。",
+      "significance": "現在の商号の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "アツギケア株式会社を設立",
+      "description": "介護用品の製造販売を目的として、アツギケア株式会社を設立しました。",
+      "significance": "介護関連事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "中国に靴下製造会社を設立",
+      "description": "中国での靴下製造を目的として、煙台厚木華潤靴下有限公司を設立しました。",
+      "significance": "中国での生産の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "厚木靴下（煙台）有限公司を設立",
+      "description": "中国での靴下製造を目的として、厚木靴下（煙台）有限公司を設立しました。",
+      "significance": "中国生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "太陽光発電による売電を開始",
+      "description": "宮城県白石市で、太陽光発電による売電を開始しました。",
+      "significance": "売電事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "株式会社レナウンインクスを子会社化",
+      "description": "旧レナウンのインナー部門である株式会社レナウンインクスを、株式取得により子会社化しました。",
+      "significance": "インナーウェア事業の拡大です。",
+      "sourceIds": [
+        "yuho-2026",
+        "wikipedia"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "煙台阿姿誼靴下有限公司を設立",
+      "description": "煙台厚木華潤靴下有限公司の工場移転を目的として、煙台阿姿誼靴下有限公司を設立しました。",
+      "significance": "中国工場の移転に伴う新会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所プライム市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "市場区分の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "アツギ東北株式会社の生産業務を終了",
+      "description": "グループ生産体制の効率化及び最適化を図るため、国内生産拠点のアツギ東北株式会社の生産業務を終了しました。",
+      "significance": "国内生産体制の見直しです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の再選択により、プライム市場からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "煙台阿姿誼靴下有限公司が2社を吸収合併",
+      "description": "煙台阿姿誼靴下有限公司が、煙台厚木針織有限公司と厚木靴下（煙台）有限公司を吸収合併しました。",
+      "significance": "中国生産体制の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "shimamura",
+      "relationship": "customer",
+      "description": "繊維事業の主要な販売先です。主要な顧客ごとの情報では、関連するセグメントは繊維事業と印字されています。2026年3月期の販売実績は、総販売実績の28.5％を占めています。当社は同社の株式327,350株を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】"
+    },
+    {
+      "companyId": "toray",
+      "relationship": "supplier",
+      "description": "繊維製品の原料の調達先です。株式の保有状況では、原料の調達を行っており、事業上の関係を勘案して良好な関係の維持・強化を図るために同社株式1,787,000株を保有すると印字されています。同社は2026年3月31日現在、当社の株式6.40％を保有する大株主でもあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "onward-holdings",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の株式3.82％を保有する大株主の事業会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "asahi-kasei",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の株式2.15％を保有する大株主の事業会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +452,62 @@
       "publisher": "アツギ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YKV3.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-29"
+      "docId": "S100YKV3",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
+    },
+    {
+      "id": "wikipedia",
+      "title": "Wikipedia「アツギ」",
+      "publisher": "Wikipedia",
+      "url": "https://ja.wikipedia.org/wiki/%E3%82%A2%E3%83%84%E3%82%AE",
+      "accessedAt": "2026-11-17"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画『アツギグループ 中期経営計画 2025-2027』では、「顧客視点による価値の最大化」「新たな発想による価値創造」「圧倒的な競争力強化」「人的資本経営による組織力の強化」「資産の有効活用推進」の5つを基本方針として取り組んできました。しかし、コスト上昇などの影響で経営目標が未達となったことから、同計画を取り下げ、収益構造の改革を含む抜本的な見直しに着手するとしています。新たな中期経営計画は、策定が可能となった段階で速やかに開示するとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期は、既存のストッキング・タイツの販売が伸び悩む一方、OEM（相手先ブランド製造）等における販売が伸長しました。新たに開発した機能性を有する高付加価値商品を市場に投入し、Z世代向けの商品を拡販するなど、新たな顧客層の拡大に向けた取り組みも進めています。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の経営成績等の状況の概要に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1947年の創業以来、レッグウェアの製造販売を続けてきた専門メーカーです。中国・煙台市に自社工場を持ち、国内では連結子会社が製造と物流を担う体制を備えています。インナーウェアでは旧レナウンのインナー部門を引き継いだ株式会社レナウンインクスを傘下に持ち、衣料専門店やEC、OEMなど幅広い販路があります。",
+        "basis": "事業の内容、主要な設備の状況、沿革に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期の売上高は、繊維事業が20,156百万円で全体の約94％を占め、不動産事業が697百万円、その他が615百万円です。販売先別では株式会社しまむら向けが販売実績の28.5％を占める最大の販売先です。本邦の外部顧客への売上高が連結売上高の90％を超えており、国内中心の事業構成です。",
+        "basis": "セグメント情報の報告セグメントごとの売上高、主要な顧客ごとの情報、地域ごとの情報に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

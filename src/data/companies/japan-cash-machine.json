@@ -1,18 +1,146 @@
 {
   "id": "japan-cash-machine",
   "code": "6418",
-  "name": "日本金銭機械",
+  "name": "JCM",
   "officialName": "日本金銭機械株式会社",
   "nameEn": "JAPAN CASH MACHINE CO.,LTD.",
-  "description": null,
+  "shortNameEn": "JAPAN CASH MACHINE CO.,LTD.",
+  "description": "紙幣識別機や紙幣・硬貨の還流ユニットなど金銭関連機器を製造・販売し、カジノ、金融・流通・交通、パチンコホールの各市場に供給する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "プライム"
+      "market": "プライム市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "machinery",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "japan-cash-machine",
+      "name": "日本金銭機械株式会社",
+      "description": "大阪市浪速区難波中に本社を置く金銭関連機器メーカーで、当社と連結子会社14社でグループを構成しています。2026年3月期の連結売上高は31,557百万円、連結従業員数は572人です。東京証券取引所プライム市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "global-gaming",
+          "name": "グローバルゲーミング",
+          "description": "カジノホール及びOEM顧客向けの紙幣識別機・還流ユニット並びにゲーミング用プリンター製品等の販売を行います。2026年3月期の外部顧客への売上高は21,471百万円で、連結売上高の最大の事業です。",
+          "customers": [
+            "カジノホール",
+            "ゲーミングマシンのOEM顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "overseas-commercial",
+          "name": "海外コマーシャル",
+          "description": "海外の金融・流通・交通市場向けの紙幣識別機・還流ユニット等の販売を行います。2026年3月期の外部顧客への売上高は4,716百万円です。",
+          "customers": [
+            "金融機関",
+            "流通事業者",
+            "交通機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "amusement-equipment",
+          "name": "遊技場向機器",
+          "description": "パチンコホール向けのスマート遊技機専用ユニット、メダル自動補給システム、紙幣搬送システムをはじめとする周辺設備機器等の販売を行います。2026年3月期の外部顧客への売上高は3,278百万円です。",
+          "customers": [
+            "パチンコホール"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "domestic-commercial",
+          "name": "国内コマーシャル",
+          "description": "国内の金融・流通・交通市場向けの紙幣・硬貨還流ユニット等の販売を行います。入出金機・釣銭機はスーパーマーケット等で、自動精算機はクリニック等で使われます。2026年3月期の外部顧客への売上高は2,089百万円です。",
+          "customers": [
+            "金融機関",
+            "スーパーマーケット等の小売店",
+            "交通機関",
+            "クリニック等の医療機関"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "国内工場と香港・フィリピンの製造子会社で貨幣処理機器を製造し、北米・欧州・アジア・中南米の販売子会社を通じて、カジノ運営事業者や金融機関・小売店、交通機関、パチンコホールに販売する事業モデルです。",
+    "products": [
+      "紙幣識別機ユニット",
+      "紙幣還流ユニット",
+      "硬貨還流ユニット",
+      "プリンターユニット",
+      "入出金機・釣銭機",
+      "自動精算機",
+      "現金回収業務自動化システム",
+      "OEM端末機",
+      "スマート遊技機専用ユニット",
+      "メダル自動補給システム",
+      "紙幣搬送システム"
+    ],
+    "customers": [
+      "カジノホール及びゲーミングマシンのOEM顧客",
+      "海外・国内の金融機関、流通事業者、交通機関",
+      "クリニック等の医療機関",
+      "パチンコホール"
+    ],
+    "revenueSources": [
+      "金銭関連機器の製品販売代金",
+      "OEM供給の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "日本金銭機械（JCM）",
+        "description": "大阪市浪速区難波中に本社を置く金銭関連機器メーカーで、当社と連結子会社14社でグループを構成しています。2026年3月期の連結従業員数は572人で、東京証券取引所プライム市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "貨幣処理機器の製造",
+        "description": "紙幣識別機ユニットや紙幣・硬貨還流ユニット、プリンターユニット、入出金機・釣銭機、パチンコホール向けのスマート遊技機専用ユニットやメダル自動補給システムなどを、国内工場と香港・フィリピンの製造子会社で製造しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "カジノ・金融・流通・交通・遊技場の各市場へ販売",
+        "description": "北米・欧州のカジノホールやOEM顧客、海外と国内の金融・流通・交通市場、国内のパチンコホールへ、各地の販売子会社を通じて販売しています。主要な顧客としてAristocrat Technologies Inc.が開示されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は31,557百万円",
+        "description": "2026年3月期の連結売上高は31,557百万円（前期比16.6％減）でした。事業別ではグローバルゲーミングが21,471百万円、海外コマーシャルが4,716百万円、遊技場向機器が3,278百万円、国内コマーシャルが2,089百万円です。地域別では北米が16,064百万円、欧州が7,482百万円、日本が5,379百万円、その他の地域が2,630百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益は4,692百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は4,692百万円（前期比23.1％増）でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +155,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23169310000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 528,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +175,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 27163392000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 526,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +195,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 28655470000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 564,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +215,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 32031025000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 570,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +235,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 35845371000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 572,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,22 +243,317 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1955,
+      "title": "日本金銭機械株式会社を設立",
+      "description": "国産金銭登録機の販売、修理及び関連業務を目的として、大阪市南区日本橋筋（現中央区）に日本金銭機械株式会社を設立しました。",
+      "significance": "現在のJCMグループの起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "メーカーへ転換し製造販売を開始",
+      "description": "東住吉工場（大阪市東住吉区西今川町）を新設してメーカーへ転換し、金銭登録機の製造販売を開始しました。",
+      "significance": "製造業としての歩みの始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1969,
+      "title": "貨幣処理機器の製造販売を開始",
+      "description": "金銭登録機から、現在の主力である貨幣処理機器の製造販売を開始しました。",
+      "significance": "現在の主力事業の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "香港に子会社を設立",
+      "description": "金銭登録機の海外生産を目的として、香港に子会社JCM GOLD (H.K.)LTD.及びSHAFTY CO.,LTD.を設立しました。",
+      "significance": "海外生産の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "米国販売子会社を設立し遊技場向機器を開始",
+      "description": "米国における当社製品の販売拠点として、子会社JCM AMERICAN CORP.を設立しました。また、遊技場向機器の製造販売を開始しました。",
+      "significance": "北米市場と遊技場市場の開拓の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "長浜工場を設置",
+      "description": "生産能力増強のため、長浜工場（滋賀県長浜市）を設置しました。",
+      "significance": "国内生産体制の拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "大阪証券取引所に株式を上場",
+      "description": "大阪証券取引所市場第二部特別指定銘柄に株式を上場しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "欧州の販売子会社を設立",
+      "description": "欧州における当社製品の販売拠点として、子会社JAPAN CASH MACHINE GERMANY GMBH.（現JCM EUROPE GMBH.）を設立しました。",
+      "significance": "欧州市場の開拓の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に株式を上場しました。",
+      "significance": "東証上場の実現です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "東証・大証の市場第一部に指定",
+      "description": "東京証券取引所および大阪証券取引所の市場第一部に指定されました。",
+      "significance": "上場市場での地位の向上です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "タイにソフトウェア開発子会社を設立",
+      "description": "ソフトウェア開発を目的として、タイに子会社J-CASH MACHINE(THAILAND)CO.,LTD.を設立しました。",
+      "significance": "開発体制の海外展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "JCMシステムズを子会社化し事業を承継",
+      "description": "株式会社サミーシステムズ（現JCMシステムズ株式会社）の全株式を取得して子会社化し、当社の遊技場向機器事業を同社へ分割して承継しました。",
+      "significance": "遊技場向機器事業の体制再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "FUTURELOGIC GROUP, LLC.を子会社化",
+      "description": "ゲーミング市場向けプリンターユニットの製造・販売会社であるFUTURELOGIC GROUP, LLC.の全持分を取得し、同社の子会社を含めて子会社化しました。",
+      "significance": "プリンター事業の獲得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "シルバー電研株式会社の一部事業を譲受",
+      "description": "遊技場向機器事業の技術開発力の強化と収益力の改善を目的として、シチズン時計株式会社の連結子会社であったシルバー電研株式会社の事業の一部譲受けを完了しました。",
+      "significance": "遊技場向機器の技術基盤の強化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "国内のコマーシャル販売事業を当社に承継",
+      "description": "JCMシステムズ株式会社の国内金融・流通・交通市場向け貨幣処理機器等の販売事業を、吸収分割により当社に承継しました。",
+      "significance": "国内販売体制の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "フィリピンに製造子会社を設立",
+      "description": "当社製品の製造を目的として、フィリピンラグナ州にJ-CASH MACHINE GLOBAL MANUFACTURING(PHILIPPINES)INC.を設立しました。",
+      "significance": "製造体制の海外展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行し中南米に販売子会社を設立",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。また、北米及び中南米の販売拠点としてJCM COMMERCE MECHATRONICS, INC.を、中南米の販売強化のためJCM COMERCIO MECATRONICA BRASIL LTDAを設立しました。",
+      "significance": "現在の市場区分と販売網の成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "本店を大阪市浪速区難波中に移転",
+      "description": "本店を大阪市浪速区難波中に移転しました。",
+      "significance": "現在の本店所在地の成立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "遊技場向機器販売事業等を当社に承継",
+      "description": "JCMシステムズ株式会社の遊技場向機器販売事業等を、吸収分割により当社に承継しました。",
+      "significance": "国内事業体制の再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "監査等委員会設置会社に移行",
+      "description": "監査役会設置会社から監査等委員会設置会社に移行しました。",
+      "significance": "ガバナンス体制の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "東京本社不動産を売却し港区へ移転",
+      "description": "資産の効率化や業務の生産性向上、従業員の働き方改革を目的として、東京本社不動産を売却し、東京都港区へ移転しました。",
+      "significance": "拠点体制の見直しです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "JCMメイホウの全株式を譲渡",
+      "description": "JCMメイホウ株式会社（現株式会社メイホウ）の全株式を譲渡し、同社は当期から連結の範囲から除かれています。",
+      "significance": "グループ再編の一環です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "icom",
+      "relationship": "business-partner",
+      "description": "特定投資株式として33,500株を保有しています。保有目的は、主としてゲーミング事業での取引関係等の維持・強化のためと印字されています。当期に新規取得した銘柄です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "joshin",
+      "relationship": "business-partner",
+      "description": "特定投資株式として225,000株を保有しています。保有目的は、主として遊技場向機器事業で取引があり、取引関係等の維持・強化のためと印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "shinko-shoji",
+      "relationship": "supplier",
+      "description": "特定投資株式として20,000株を保有しています。保有目的は、当社製品で使用する部材の仕入で取引があり、取引関係等の維持・強化のためと印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
-      "title": "有価証券報告書－第73期(2025/04/01－2026/03/31)",
+      "title": "訂正有価証券報告書－第73期(2025/04/01－2026/03/31)",
       "publisher": "日本金銭機械株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YHD7.pdf",
-      "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-29"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YRPE.pdf",
+      "publishedAt": "2026-07-23",
+      "docId": "S100YRPE",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年3月16日開催の取締役会において、富士通フロンテック株式会社との間で、同社が運営する中・小型リサイクラー／ディスペンサー製造・販売事業を譲り受けることを決議し、同日付で事業譲渡契約を締結しています。譲受日は2026年7月1日を予定しており、本登録は2026年3月31日現在の体制で行っています。",
+      "businessModel: 連結子会社のJCM GOLD(H.K.)LTD.は、2024年11月8日開催の臨時取締役会において解散及び清算手続きを開始することを決議し、現在清算手続き中です。2026年3月31日現在も連結子会社（貨幣処理機器等の製造）として登録しています。"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年5月に策定した中期経営計画「JCM Global Vision 2032～Next Growth Stage～」では、グローバルゲーミング事業の安定収益を基盤に、コマーシャル事業を次なる収益の柱として確立するとともに、事業ポートフォリオ、資本配分、人材及びサステナビリティの各領域を強化し、企業価値の最大化を図るとしています。",
+        "asOf": "2026-07-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "北米のカジノ市場向け販売を収益の基盤としつつ、欧州での販売基盤の強化と北中南米での市場開拓によって海外コマーシャル事業を育成し、富士通フロンテック株式会社からの中・小型リサイクラー／ディスペンサー事業の譲受など、事業ポートフォリオの変革を進める戦略とみられます。",
+        "basis": "経営方針、経営環境及び対処すべき課題等の経営戦略等、重要な契約等、セグメント情報の報告セグメントごとの売上高、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-07-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "1955年の創業以来、貨幣処理に特化して蓄積した紙幣識別・還流のコアテクノロジーと、香港・フィリピンでの製造、北米・欧州・アジア・中南米での販売をグループ内で担う一貫した体制が強みとみられます。北米と欧州の販売子会社は、いずれも売上高が連結売上高の10％を超える規模を持つ拠点です。",
+        "basis": "事業の内容、沿革、関係会社の状況、研究開発活動",
+        "asOf": "2026-07-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "当期は、国内コマーシャル市場と遊技場向機器市場で前期の新紙幣発行に伴う更新特需の反動が大きく、スマート遊技機の普及も想定を下回りました。一方でグローバルゲーミングは北米のカジノホテル等向け需要が堅調で、連結売上高の最大の事業となっています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等の経営環境、セグメント情報の報告セグメントごとの売上高と地域ごとの情報、MD&Aの経営成績等の状況の概要",
+        "asOf": "2026-07-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

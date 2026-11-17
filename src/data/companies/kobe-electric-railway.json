@@ -4,15 +4,239 @@
   "name": "神戸電鉄",
   "officialName": "神戸電鉄株式会社",
   "nameEn": "Kobe Electric Railway Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Kobe Electric Railway Co.,Ltd.",
+  "description": "神戸市北部と三田・有馬方面を結ぶ鉄道を中核に、バス・タクシー、不動産、流通などの事業を沿線地域で展開する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    },
+    {
+      "industryId": "retail",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "kobe-electric-railway",
+      "name": "神戸電鉄株式会社",
+      "description": "神戸市兵庫区に本店を置く鉄道会社で、子会社7社、関連会社1社及びその他の関係会社1社とグループを構成しています。運輸業、不動産業及び流通業の3つを報告セグメントとし、2026年3月期の営業収益は23,347百万円、連結従業員数は827人です。東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "transportation",
+          "name": "運輸業",
+          "description": "鉄道事業、バス事業及びタクシー業で構成される中核事業です。2026年3月期の外部顧客への営業収益は14,037百万円で、最大の報告セグメントです。",
+          "customers": [
+            "鉄道・バス・タクシーの利用客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】",
+          "children": [
+            {
+              "id": "railway",
+              "name": "鉄道事業",
+              "description": "当社が運営する鉄道事業で、有馬線・三田線・粟生線・公園都市線等を有し、営業キロは69.6キロです。2026年3月期の鉄道事業の営業収益は9,949百万円でした。",
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+            },
+            {
+              "id": "bus",
+              "name": "バス事業",
+              "description": "連結子会社の神鉄バス株式会社が乗合バス・貸切バスを運営しています。2026年3月期のバス事業の営業収益は1,793百万円でした。",
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【関係会社の状況】"
+            },
+            {
+              "id": "taxi",
+              "name": "タクシー業",
+              "description": "連結子会社の大阪神鉄豊中タクシー株式会社と神鉄タクシー株式会社がタクシー事業を運営しています。2026年3月期のタクシー業の営業収益は2,314百万円でした。",
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【関係会社の状況】"
+            }
+          ]
+        },
+        {
+          "id": "real-estate",
+          "name": "不動産業",
+          "description": "土地建物販売業及び土地建物賃貸業で構成されます。2026年3月期の外部顧客への営業収益は1,856百万円で、当期は土地建物賃貸業が中心でした。",
+          "customers": [
+            "不動産の購入者",
+            "賃貸物件の入居者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】",
+          "children": [
+            {
+              "id": "property-leasing",
+              "name": "土地建物賃貸業",
+              "description": "当社が保有する賃貸物件のテナント誘致や、駐車場の管理運営受託等を行っています。2026年3月期の営業収益は2,047百万円（内部収益を含む）でした。",
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+            },
+            {
+              "id": "property-sales",
+              "name": "土地建物販売業",
+              "description": "当社が行う土地建物の販売事業です。2026年3月期の営業収益は0百万円でした。",
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+            }
+          ]
+        },
+        {
+          "id": "retail-segment",
+          "name": "流通業",
+          "description": "食品スーパー業、コンビニ業及び飲食業で構成されます。2026年3月期の外部顧客への営業収益は5,279百万円です。",
+          "customers": [
+            "店舗の来店客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】",
+          "children": [
+            {
+              "id": "supermarket",
+              "name": "食品スーパー業",
+              "description": "連結子会社の株式会社神鉄エンタープライズが食品スーパーを運営し、移動スーパー「とくし丸」も運行しています。2026年3月期の営業収益は3,867百万円（内部収益を含む）でした。",
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+            },
+            {
+              "id": "convenience-restaurant",
+              "name": "コンビニ業・飲食業",
+              "description": "連結子会社の神鉄観光株式会社がコンビニ業と飲食業を運営しています。2026年3月期の営業収益はコンビニ業が1,053百万円、飲食業が356百万円（いずれも内部収益を含む）でした。",
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【関係会社の状況】"
+            }
+          ]
+        },
+        {
+          "id": "other-business",
+          "name": "その他",
+          "description": "報告セグメントに含まれない事業セグメントで、保育事業及び健康事業並びに建設業を含んでいます。2026年3月期の外部顧客への営業収益は2,174百万円です。",
+          "customers": [
+            "施設の利用者",
+            "建設工事の発注者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】",
+          "children": [
+            {
+              "id": "childcare-health",
+              "name": "保育事業及び健康事業・介護事業",
+              "description": "当社が駅に近接する施設等で保育事業及び健康事業と介護事業を行っています。2026年3月期の保育事業及び健康事業の営業収益は740百万円（内部収益を含む）でした。",
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "construction-facility",
+              "name": "建設業・施設管理・警備業",
+              "description": "連結子会社の株式会社神鉄コミュニティサービスが建設業と施設の管理・警備業を行っています。2026年3月期の営業収益は建設業が1,593百万円、施設管理・警備業が1,479百万円（いずれも内部収益を含む）でした。",
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【関係会社の状況】"
+            },
+            {
+              "id": "travel-finance-onsen",
+              "name": "旅行業・金融業・温泉給湯業等",
+              "description": "連結子会社の神鉄観光株式会社が旅行業と広告代理業を、株式会社神鉄ビジネスサポートが金融業と情報システムサービス業を、持分法適用関連会社の株式会社有馬温泉企業が温泉給湯業を行っています。",
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "鉄道・バス・タクシーの運輸業を中核に、不動産の販売・賃貸、食品スーパー等の流通業、保育・建設等のその他事業で収益を得る事業モデルです。",
+    "products": [
+      "鉄道事業（有馬線・三田線・粟生線・公園都市線など、営業キロ69.6キロ）",
+      "連結子会社によるバス事業・タクシー事業",
+      "土地建物の販売・賃貸",
+      "食品スーパー・コンビニ・飲食店の運営",
+      "保育事業及び健康事業、介護事業、建設業、施設管理・警備業"
+    ],
+    "customers": [
+      "鉄道・バス・タクシーの利用客",
+      "不動産の購入者・賃貸物件の入居者",
+      "食品スーパー等の店舗の来店客"
+    ],
+    "revenueSources": [
+      "旅客運輸収入を中心とする運輸収入",
+      "土地建物の販売収入と賃貸収入",
+      "食品スーパー等の商品販売収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "神戸電鉄株式会社",
+        "description": "神戸市兵庫区に本店を置き、連結子会社7社及び持分法適用関連会社1社とグループを構成し、2026年3月期の連結従業員数は827人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "運輸業を中核とする事業展開",
+        "description": "鉄道・バス・タクシーの運輸業を中核に、不動産業、流通業及びその他の事業を、神戸市北部を中心とする沿線地域で展開しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "沿線地域の利用客・住民",
+        "description": "主な顧客は、鉄道・バス・タクシーの利用客や食品スーパー等の来店客、不動産の購入者・入居者など、沿線地域の住民です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の営業収益は23,347百万円",
+        "description": "2026年3月期の営業収益は23,347百万円（前期比5.5％増）でした。事業別では運輸業が14,037百万円、不動産業が1,856百万円、流通業が5,279百万円、その他が2,174百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の当期純利益は1,462百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は1,462百万円（前期比27.1％増）でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,12 +251,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 20626000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 864,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第147期（2022年3月期）の期首から適用しており、第147期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっておりますと経営指標等の注記に印字されています。"
     },
     {
       "fiscalYear": "2023年3月期",
@@ -47,7 +272,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 21243000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 872,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +292,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 22942000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 884,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +312,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 23539000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 816,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +332,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 25286000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 827,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +340,188 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1926,
+      "title": "会社の設立",
+      "description": "神戸有馬電気鉄道株式会社を設立しました。",
+      "significance": "創業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1928,
+      "title": "神有線の運輸営業開始",
+      "description": "神有線（現有馬線）の運輸営業を開始しました。",
+      "significance": "鉄道事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1947,
+      "title": "合併と商号変更",
+      "description": "神戸有馬電気鉄道株式会社と三木電気鉄道株式会社が合併し、神有三木電気鉄道株式会社に商号を変更しました。",
+      "significance": "現在の事業基盤の形成です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "神戸電気鉄道への商号変更",
+      "description": "神戸電気鉄道株式会社に商号を変更しました。",
+      "significance": "社名の変遷です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "大阪証券取引所に上場",
+      "description": "大阪証券取引所に上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "乗合バス営業の開始",
+      "description": "乗合バスの営業を開始しました。",
+      "significance": "バス事業の開始です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1957,
+      "title": "不動産事業の開始",
+      "description": "不動産事業の営業を開始しました。",
+      "significance": "不動産業への参入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "神戸高速鉄道への乗入れ",
+      "description": "神戸高速鉄道の新開地駅への乗入れ運輸営業を開始しました。",
+      "significance": "都心へのアクセスができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1980,
+      "title": "流通事業の開始",
+      "description": "流通事業の営業を開始しました。",
+      "significance": "流通業への参入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1988,
+      "title": "神戸電鉄への商号変更",
+      "description": "神戸電鉄株式会社に商号を変更しました。",
+      "significance": "現在の社名の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "自動車事業の譲渡",
+      "description": "自動車事業を神鉄バス株式会社に営業譲渡しました。",
+      "significance": "バス事業の子会社への集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "介護事業の開始",
+      "description": "介護事業の営業を開始しました。",
+      "significance": "生活支援事業への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2001,
+      "title": "健康・保育事業の開始",
+      "description": "健康・保育事業の営業を開始しました。",
+      "significance": "沿線生活サービスの拡充です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "流通事業の再編",
+      "description": "流通事業のうち食品スーパー事業を株式会社神鉄エンタープライズに、駅売店業を神鉄観光株式会社に事業譲渡しました。",
+      "significance": "流通事業の子会社への集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場への移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からプライム市場に移行しました。",
+      "significance": "市場区分の変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "スタンダード市場への移行",
+      "description": "東京証券取引所のプライム市場からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "hankyu-hanshin-holdings",
+      "relationship": "other-affiliated-company",
+      "description": "【関係会社の状況】において「その他の関係会社」として記載されており、当社の議決権の29.0％（うち1.0％は間接保有）を保有しています。有価証券報告書を提出している会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "sanyo-electric-railway",
+      "relationship": "business-partner",
+      "description": "同じ鉄道事業者として、同社グループとの事業連携を通じた協業関係の維持・強化のため、当社が同社の株式22,050株を保有し、同社も当社の株式を保有していることが、特定投資株式の保有目的に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +529,55 @@
       "publisher": "神戸電鉄株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YAZT.pdf",
       "publishedAt": "2026-06-12",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YAZT",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念として「『安心』・『安全』・『快適』をお届けすることで、お客様の豊かな暮らしを実現し、地域社会に貢献します」を掲げ、2030年度時点における“あるべき企業像”を示した長期経営ビジョン「神鉄グループみらいビジョン2030」（『暮らしに彩を添える地域の共創プラットフォーム』）を策定しています。その実行計画である「中期経営計画2026」（2023～2026年度）では、コロナ禍により落ち込んだ「収益力」をコロナ禍前の水準に回復させるとともに「財務の健全性」を着実に進展させることとし、事業戦略として、新しい時代に対応した収益構造の構築、沿線活性化、成長投資・新規投資による収益拡大、ステークホルダーへの貢献・還元を掲げています。",
+        "asOf": "2026-06-12",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "当連結会計年度は、運輸業の外部顧客への営業収益が14,037百万円と連結営業収益の約6割を占め、2025年1月に実施した運賃改定の寄与や旅客人員の回復により増収となりました。中期経営計画が掲げる収益力の回復は、最大事業である運輸業の増収が牽引する形で進んでいます。",
+        "basis": "セグメント情報の外部顧客への営業収益と、MD&Aの経営成績の状況の概要に基づく。",
+        "asOf": "2026-06-12",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "鉄道・バス・タクシーをグループで一体的に運営し、沿線の移動手段を面的に担っている点が特徴です。加えて、食品スーパーや駅近接の保育・健康施設など沿線の生活サービスをグループで展開し、神戸市との連携事業による駅周辺の活性化など、沿線価値の向上と一体となった事業運営を行っています。",
+        "basis": "事業の内容と、MD&Aの経営成績の状況の概要に基づく。",
+        "asOf": "2026-06-12",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "神戸市北部から三田・有馬方面を結ぶ地域鉄道事業者で、営業キロは69.6キロ、2026年3月期の旅客人員は56,033千人でした。外部顧客への営業収益の10％以上を占める顧客はなく、不特定多数の利用客との取引で構成されています。",
+        "basis": "MD&Aの提出会社の運輸成績と、セグメント情報の関連情報（主要な顧客ごとの情報）に基づく。",
+        "asOf": "2026-06-12",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

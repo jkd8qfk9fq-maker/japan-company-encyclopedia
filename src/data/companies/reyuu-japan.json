@@ -1,40 +1,133 @@
 {
   "id": "reyuu-japan",
   "code": "9425",
-  "name": "ReYuuJapan",
+  "name": "ReYuu Japan",
   "officialName": "ReYuu Japan株式会社",
   "nameEn": "ReYuu Japan Inc.",
-  "description": null,
+  "shortNameEn": "ReYuu Japan Inc.",
+  "description": "中古のスマートフォン等の通信端末を買い取って整備し、事業者や個人に販売するリユースモバイル事業を営む会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "reyuu-japan",
+      "name": "ReYuu Japan株式会社",
+      "description": "大阪市北区に本店を置き、東京都港区にも本社機能を置く2本社制のリユースモバイル事業者です。連結財務諸表は作成しておらず、子会社はありません。2025年10月31日現在の従業員数は34人で、東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "reuse",
+          "name": "リユース関連事業",
+          "description": "スマートフォン、タブレット、パソコン等の通信端末機器について、リユース品を中心に売買する事業です。サプライヤーからの仕入や、不要となった機器を消費者や企業から直接買い取ることで調達し、大阪市北区のモバイルリファビッシュセンターで査定、データ消去、外装クリーニングなどの処理を施して販売します。2025年10月期の売上高は6,140百万円です。MVNO事業者や携帯代理店、卸売業者、小売業者、一般企業、海外市場へ販売するとともに、自社運営サイトおよび外部ECモールで個人向けのオンライン販売も実施しています。",
+          "customers": [
+            "MVNO事業者や携帯販売代理店、卸売業者、小売業者",
+            "一般企業",
+            "海外市場の取引先",
+            "自社運営サイトや外部ECモールで購入する個人"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "other",
+          "name": "その他の事業",
+          "description": "法人向け通信端末機器のレンタル等を行う事業です。リユース関連事業で調達し整備した通信端末機器を法人顧客にレンタルし、レンタル利用料を受け取ります。2025年10月期の売上高は119百万円です。",
+          "customers": [
+            "通信端末機器をレンタルする法人顧客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "消費者や企業から通信端末を直接買い取り、または仕入れて、査定・データ消去・クリーニングを施したリユース端末として販売し、販売収入を得る事業モデルです。",
+    "products": [
+      "リユースモバイル端末（スマートフォン・タブレット・パソコン等）",
+      "法人向け通信端末機器レンタル"
+    ],
+    "customers": [
+      "MVNO事業者・携帯販売代理店・卸売業者・小売業者",
+      "一般企業",
+      "海外市場の取引先",
+      "自社運営サイトや外部ECモールで購入する個人"
+    ],
+    "revenueSources": [
+      "リユースモバイル端末の販売収入",
+      "法人向け通信端末機器のレンタル利用料収入"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ReYuu Japan株式会社",
+        "description": "大阪市北区に本社を置き、東京都港区にも本社機能を置く2本社制です。2025年10月31日現在の従業員数は34人で、子会社はなく、東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "リユース端末の販売と法人向けレンタル",
+        "description": "調達した通信端末機器をモバイルリファビッシュセンターで査定、データ消去、外装クリーニングなどの処理を施し、リユースモバイル端末として販売します。整備した端末を法人向けにレンタルする事業も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "事業者と個人が顧客",
+        "description": "顧客はMVNO事業者、携帯販売代理店、卸売業者、小売業者、一般企業、海外市場の取引先で、自社運営サイトおよび外部ECモールを通じて個人にも販売します。レンタルは法人顧客向けです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2025年10月期の売上高は6,259百万円",
+        "description": "2025年10月期の売上高は6,259百万円でした。事業別では、リユース関連事業が6,140百万円、その他の事業が119百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2025年10月期の当期純損失は225百万円",
+        "description": "2025年10月期の当期純損失は225百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ]
+  },
   "financials": [
     {
-      "fiscalYear": "2021年10月期",
-      "periodEnd": "2021-10-31",
+      "fiscalYear": "2022年4月期",
+      "periodEnd": "2022-04-30",
       "revenue": 5457439000,
       "revenueLabel": "売上高",
       "profit": -121632000,
-      "profitLabel": "経常利益",
+      "profitLabel": "経常利益又は経常損失（△）",
       "netIncome": -228490000,
       "netIncomeLabel": "当期純利益又は当期純損失（△）",
       "totalAssets": 1888142000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 1310771000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 69,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）等を第34期の期首から適用しており、第34期以降の指標は適用後の指標となっている。"
     },
     {
       "fiscalYear": "2022年10月期",
@@ -42,21 +135,22 @@
       "revenue": 1551764000,
       "revenueLabel": "売上高",
       "profit": -127373000,
-      "profitLabel": "経常利益",
+      "profitLabel": "経常利益又は経常損失（△）",
       "netIncome": -178102000,
       "netIncomeLabel": "当期純利益又は当期純損失（△）",
       "totalAssets": 1572702000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 1132669000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 63,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "第35期は、決算期変更により2022年５月１日から2022年10月31日までの６ヵ月間となっている。"
     },
     {
       "fiscalYear": "2023年10月期",
@@ -64,18 +158,18 @@
       "revenue": 4089201000,
       "revenueLabel": "売上高",
       "profit": -204118000,
-      "profitLabel": "経常利益",
+      "profitLabel": "経常利益又は経常損失（△）",
       "netIncome": -81005000,
       "netIncomeLabel": "当期純利益又は当期純損失（△）",
       "totalAssets": 1917619000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 1051961000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 32,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -86,18 +180,18 @@
       "revenue": 4731991000,
       "revenueLabel": "売上高",
       "profit": -79890000,
-      "profitLabel": "経常利益",
+      "profitLabel": "経常利益又は経常損失（△）",
       "netIncome": -86162000,
       "netIncomeLabel": "当期純利益又は当期純損失（△）",
       "totalAssets": 1887882000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 866457000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 27,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
@@ -108,39 +202,207 @@
       "revenue": 6259161000,
       "revenueLabel": "売上高",
       "profit": -189350000,
-      "profitLabel": "経常利益",
+      "profitLabel": "経常利益又は経常損失（△）",
       "netIncome": -225658000,
       "netIncomeLabel": "当期純利益又は当期純損失（△）",
       "totalAssets": 2268814000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 1369041000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 34,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2025"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1988,
+      "title": "日本テレホン株式会社を設立",
+      "description": "電話回線の利用権および通信機器のレンタルを目的として、大阪市北区芝田に日本テレホン株式会社を設立しました。",
+      "significance": "会社の創業です。当初の事業は電話回線の利用権と通信機器のレンタルでした。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "携帯電話販売事業を開始",
+      "description": "携帯電話販売事業を開始しました。",
+      "significance": "通信端末の販売へ事業を広げた転機です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "古物商許可を取得",
+      "description": "古物商許可を取得しました。",
+      "significance": "中古品の売買に必要な許可で、後のリユースモバイル事業の基盤となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "ジャスダック証券取引所に株式を上場しました。",
+      "significance": "株式上場です。その後、市場の統合や再編に伴って上場市場が移っています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "中古携帯電話機「エコたん」の販売と買取を開始",
+      "description": "中古携帯電話機「エコたん」の販売と買取を開始しました。",
+      "significance": "リユースモバイル端末の取扱いを開始した、現在の主力事業の起点です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "法人向けスマートフォンレンタルサービスの提供を開始",
+      "description": "法人向けスマートフォンレンタルサービスの提供を開始しました。",
+      "significance": "現在の「その他の事業」の中心である法人向けレンタルの開始です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "兼松コミュニケーションズと業務提携契約を締結",
+      "description": "兼松コミュニケーションズ株式会社との間で、リユースモバイル事業に関する業務提携契約を締結しました。",
+      "significance": "リユースモバイル事業の提携基盤を築いた出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "モバイルリファビッシュセンターを移転拡張",
+      "description": "リユースモバイル事業の拡大に伴い、モバイルリファビッシュセンターを大阪市北区長柄西に移転拡張しました。同年、リユースモバイル事業者認証を取得しました。",
+      "significance": "調達した端末の査定・データ消去・クリーニングを行う整備拠点の拡充です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "株式会社ショーケースが親会社となり、スタンダード市場へ移行",
+      "description": "株式会社ショーケースが当社の親会社となりました。また、東京証券取引所の市場再編に伴い、スタンダード市場に移行しました。",
+      "significance": "資本関係と上場市場の双方が変わった年です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "運営店舗の譲渡・閉店を終え、ブランドを「ReYuu」に刷新",
+      "description": "リユース関連事業へ経営資源を集中するため、運営店舗の事業譲渡および閉店が完了しました。また、中古携帯電話機のブランド「エコたん」を「ReYuu」にリニューアルしました。",
+      "significance": "店舗事業から撤し、リユース関連事業への集中を明確にした転機です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "ReYuu Japan株式会社へ商号変更",
+      "description": "「日本テレホン株式会社」から「ReYuu Japan株式会社」へ商号を変更しました。同年、AIフュージョンキャピタルグループ株式会社が当社株式の間接所有により当社の親会社となりました。",
+      "significance": "ブランドと社名を統一した年です。親会社の異動も続いています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "親会社の異動とSeacastleの筆頭株主化",
+      "description": "株式会社ショーケースによる当社株式の一部譲渡により、同社とAIフュージョンキャピタルグループ株式会社は当社の親会社に該当しなくなりました。主要株主の異動により、Seacastle Singapore Pte. Ltd.が当社のその他の関係会社および主要株主である筆頭株主となりました。",
+      "significance": "期首に親会社だったショーケースが親会社でなくなり、筆頭株主がSeacastleに替わった資本構成の大きな変化です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "internet-initiative-japan",
+      "relationship": "customer",
+      "description": "株式会社インターネットイニシアティブは通信事業者です。主要な相手先別の販売実績において2期連続で最大の顧客であり、売掛金の相手先としても最大です（2025年10月31日現在）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
-      "title": "有価証券報告書－第38期(2024/11/01－2025/10/31)",
+      "title": "訂正有価証券報告書－第38期(2024/11/01－2025/10/31)",
       "publisher": "ReYuu Japan株式会社",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XIBW.pdf",
-      "publishedAt": "2026-01-30",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Y4GM.pdf",
+      "publishedAt": "2026-05-18",
+      "docId": "S100Y4GM",
+      "asOf": "2025-10-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 継続企業の前提に関する重要事象等として、2022年4月期に損失を計上して以降も損失の計上が継続していることから、継続企業の前提に重要な疑義を生じさせるような事象又は状況が存在すると記載されています。一方で、売上高の拡大や資金面での流動性の確保等により、継続企業の前提に関する重要な不確実性は認められないと判断されています。",
+      "businessModel: 2025年10月14日開催の取締役会で子会社設立の準備開始を決議し、2026年１月22日に暗号資産トレジャリー事業を行うReDigital株式会社（出資比率70.0％）を設立しています（重要な後発事象）。本登録は2025年10月31日現在の構造（子会社なし・単体）で登録しています。",
+      "財務: 変則決算。2022-10 の期は 6 か月。他の年と期間の長さが違うので、businessModel の data.financialNotes にその旨を書くこと"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "コーポレート・アイデンティティ「ReYuu」のもとでリユースモバイル端末を扱うリユース関連事業を軸に、持続的な企業価値の向上に取り組む方針です。経営上の重要な課題として、商品の安定的な調達体制の確保（国内外の新規仕入先の開拓、既存パートナー企業との買取連携の強化、企業からの業務端末買取を中心としたエンド調達の強化）と、市場展開と事業基盤の強化（卸販売・買取・レンタル・商品保証・キッティングを組み合わせた総合端末サービスの提供、香港や中東地域等での海外取引基盤の拡充）を挙げています。",
+        "asOf": "2026-05-18",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の98.1％をリユース関連事業が占め、その他の事業は法人向けレンタル等で1.9％にとどまります。販売先は株式会社インターネットイニシアティブと株式会社オプテージの2社で売上高の約4割を占めるなど、大口の事業者向け販売への依存度が高い構造です。",
+        "basis": "販売実績の事業部門別・相手先別の記載と収益認識関係注記に基づく",
+        "asOf": "2026-05-18",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "新品端末の価格が高止まりし、リユースモバイル端末への需要が高まる市場で、中古端末の買取から整備・販売までを一貫して手がける専門事業者です。大阪市北区に自社のモバイルリファビッシュセンターを持ち、リユースモバイルの業界団体の設立にも参画しています。",
+        "basis": "事業の内容、経営環境の記載と沿革に基づく",
+        "asOf": "2026-05-18",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年10月期",
     "asOf": "2025-10-31",

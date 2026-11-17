@@ -4,15 +4,164 @@
   "name": "ウチヤマホールディングス",
   "officialName": "株式会社ウチヤマホールディングス",
   "nameEn": "UCHIYAMA　HOLDINGS　Co．，Ltd．",
-  "description": null,
+  "shortNameEn": "UCHIYAMA HOLDINGS Co., Ltd.",
+  "description": "北九州市を拠点に介護施設の運営を主力とし、カラオケ店や居酒屋、不動産事業も展開する持株会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    },
+    {
+      "industryId": "entertainment",
+      "primary": false
+    },
+    {
+      "industryId": "food",
+      "primary": false
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "uchiyama-holdings",
+      "name": "株式会社ウチヤマホールディングス",
+      "description": "福岡県北九州市小倉北区に本社を置く持株会社で、連結子会社である株式会社さわやか倶楽部とPT. Sawayaka Fujindo Indonesiaの2社とグループを構成しています。2026年3月期の従業員数は2,331人です。東京証券取引所スタンダード市場に上場しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "nursing-care",
+          "name": "介護事業",
+          "description": "有料老人ホームやグループホーム、デイサービスセンターなどを運営し、介護保険に基づく介護サービスを提供する事業です。2026年3月31日現在で116ヶ所195事業所を展開し、2026年3月期の外部顧客への売上高は24,457百万円でした。",
+          "customers": [
+            "要介護・要支援の認定を受けた高齢者",
+            "障がいのある子どもとその家族"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "karaoke",
+          "name": "カラオケ事業",
+          "description": "「コロッケ倶楽部」の屋号でカラオケ店を運営する事業です。2026年3月31日現在で64店舗を展開し、2026年3月期の外部顧客への売上高は4,110百万円でした。",
+          "customers": [
+            "カラオケ店の来店客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "restaurant",
+          "name": "飲食事業",
+          "description": "「かんてきや」「再生酒場」「フジヤマ桜」などの居酒屋を運営する事業です。2026年3月31日現在で9店舗を展開し、2026年3月期の外部顧客への売上高は581百万円でした。",
+          "customers": [
+            "居酒屋の来店客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "real-estate",
+          "name": "不動産事業",
+          "description": "賃貸マンションの賃貸・管理や、不動産物件の売買・仲介を行う事業です。2026年3月期の外部顧客への売上高は325百万円でした。",
+          "customers": [
+            "賃貸住宅の入居者",
+            "不動産の売買・仲介を希望する顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        },
+        {
+          "id": "other",
+          "name": "その他",
+          "description": "報告セグメントに含まれない事業で、インドネシアでの職業訓練事業、特定技能外国人材への支援業務、有料職業紹介事業、学習塾事業などを行っています。2026年3月期の外部顧客への売上高は102百万円でした。",
+          "customers": [
+            "外国人材の紹介・支援を希望する企業",
+            "学習塾の利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【セグメント情報】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "介護保険に基づく介護サービスの提供で介護報酬を得る介護事業を中核に、カラオケ店と居酒屋の店舗運営、不動産事業を組み合わせた事業モデルです。",
+    "products": [
+      "有料老人ホーム（介護付ホーム・住宅型有料老人ホーム）",
+      "グループホーム",
+      "ショートステイ",
+      "デイサービス",
+      "訪問介護・訪問看護",
+      "障がい児通所支援事業（放課後等デイサービス）",
+      "カラオケ店「コロッケ倶楽部」",
+      "居酒屋「かんてきや」「再生酒場」「フジヤマ桜」など",
+      "賃貸マンションの賃貸・管理",
+      "不動産の売買・仲介"
+    ],
+    "customers": [
+      "要介護・要支援の認定を受けた高齢者",
+      "障がいのある子どもとその家族",
+      "カラオケ店・居酒屋の来店客",
+      "賃貸住宅の入居者や不動産の売買を希望する顧客"
+    ],
+    "revenueSources": [
+      "介護サービスの提供に対する介護報酬と利用者負担分",
+      "カラオケ店・居酒屋の店舗売上",
+      "不動産の賃貸料収入と売買・仲介の手数料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ウチヤマホールディングス",
+        "description": "福岡県北九州市小倉北区に本社を置く持株会社です。連結子会社は株式会社さわやか倶楽部とPT. Sawayaka Fujindo Indonesiaの2社で、2026年3月期の従業員数は2,331人です。東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "介護サービスと店舗運営",
+        "description": "子会社の株式会社さわやか倶楽部を通じて、有料老人ホームを中心とする介護サービスを提供し、カラオケ店「コロッケ倶楽部」と居酒屋を運営しています。不動産の賃貸・管理・売買や、外国人材への支援業務・職業紹介なども行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "高齢者と店舗の来店客",
+        "description": "介護サービスは、要介護・要支援の認定を受けた高齢者とその家族が利用し、サービス費用は介護保険の枠組みでまかなわれます。カラオケ店と居酒屋は、子どもから高齢者まで幅広い来店客を対象としています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は29,577百万円",
+        "description": "2026年3月期の売上高は29,577百万円で、前期比1.6％増となりました。事業別では介護事業が24,457百万円、カラオケ事業が4,110百万円、飲食事業が581百万円、不動産事業が325百万円、その他が102百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の親会社株主に帰属する当期純利益は296百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は296百万円で、前期比85.6％減となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +176,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12885201000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2206,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +196,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12262382000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2333,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +216,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12367209000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2269,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +236,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14242203000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2268,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」等を第19期の期首から適用しており、第18期に係る主要な経営指標等は、当該会計基準等を遡って適用した後の数値となっております。また、第19期の親会社株主に帰属する当期純利益には、繰延税金資産の追加計上に伴い法人税等調整額（益）を計上したことによる増加が含まれております。"
     },
     {
       "fiscalYear": "2026年3月期",
@@ -107,7 +257,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 14342908000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 2331,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +265,129 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1971,
+      "title": "内山ビルを設立",
+      "description": "創業者の内山文治が、福岡県北九州市小倉北区に、不動産の販売や賃貸管理を行う内山ビル株式会社を設立しました。",
+      "significance": "当社グループの起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1991,
+      "title": "カラオケ事業に進出",
+      "description": "有限会社サイトウが、福岡県北九州市八幡西区にカラオケボックス1号店『コロッケ倶楽部黒崎店』を開店しました。",
+      "significance": "現在のカラオケ事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "飲食事業に進出",
+      "description": "飲食店舗運営のため株式会社ゼンコーポレーションを設立し、福岡県北九州市小倉北区に居酒屋『酒膳房然』を開店しました。",
+      "significance": "飲食事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "介護事業に参入",
+      "description": "内山ビル株式会社が、福岡県北九州市戸畑区に介護付ホームとデイサービスの併設施設『さわやかパークサイド新川』を開所し、介護事業に参入しました。",
+      "significance": "現在の主力事業への参入です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "さわやか倶楽部を設立",
+      "description": "内山ビル株式会社の介護部門を新設分割し、株式会社さわやか倶楽部を設立しました。",
+      "significance": "介護事業を担う中核子会社が独立しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "ウチヤマホールディングスを設立",
+      "description": "株式移転により、株式会社さわやか倶楽部と株式会社ボナーの持株会社として、株式会社ウチヤマホールディングスを設立しました。",
+      "significance": "現在の持株会社体制の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "JASDAQ市場に上場",
+      "description": "当社が、大阪証券取引所（現東京証券取引所）JASDAQ市場（スタンダード）に株式を上場しました。",
+      "significance": "株式公開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "東京証券取引所市場第一部に指定",
+      "description": "当社が、東京証券取引所市場第一部に指定されました。",
+      "significance": "市場第一部への昇格です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "インドネシアに合弁会社を設立",
+      "description": "株式会社さわやか倶楽部とPT. FUJINDO SERVIS INDONESIAとの合弁会社として、インドネシアにPT. Sawayaka Fujindo Indonesiaを設立しました。",
+      "significance": "海外での職業訓練事業の拠点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "登録支援機関として登録",
+      "description": "当社が、特定技能外国人材への支援業務を行う登録支援機関として登録し、同年には有料職業紹介事業の許可も取得しました。",
+      "significance": "外国人材の支援・紹介事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "さわやか倶楽部がボナーを吸収合併",
+      "description": "株式会社さわやか倶楽部を存続会社として、株式会社ボナーを吸収合併しました。",
+      "significance": "グループの事業会社が株式会社さわやか倶楽部に一本化されました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "daiichikosho",
+      "relationship": "major-shareholder",
+      "description": "2026年3月31日現在、当社の株式500,000株（発行済株式（自己株式を除く）の総数に対する割合2.57％）を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +395,58 @@
       "publisher": "株式会社ウチヤマホールディングス",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YJMS.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YJMS",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-12"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 連結子会社である株式会社さわやか倶楽部は、2026年5月19日開催の取締役会において、株式会社さくらライフコミュニケーション（北海道旭川市で介護施設等を運営）の発行済株式の全てを取得し子会社化することを決議し、2026年5月30日付で株式譲渡契約を締結しました（重要な後発事象に記載）。企業結合日は2026年6月30日とされています。登録は2026年3月31日現在の体制（連結子会社2社）で行っています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2025年5月20日に公表した中期経営計画（2026年3月期から2028年3月期）では、「成長戦略」と「持続可能な成長への基盤作り」をテーマの中心に置き、既存事業の充実に加えて、介護事業を中心としたM&Aや新規事業の開発などを積極的に検討するとしています。介護事業では、有料老人ホームの年間200床の開設を目標に掲げています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の内訳では介護事業が24,457百万円と全体の8割以上を占め、収益の中心は介護事業です。カラオケ事業は4,110百万円で前期から減少し、飲食事業も581百万円と縮小しています。",
+        "basis": "セグメント情報の外部顧客への売上高とMD&Aの経営成績の概要に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "介護事業では、有料老人ホームなどの入居型施設にデイサービスや訪問介護などの事業所を併設し、入居者が必要とする介護サービスを組み合わせて提供しています。一部施設を除いて入居一時金を受領しない料金形態を採用しており、既存施設の平均入居率は2026年3月期で93.9％と安定しています。",
+        "basis": "事業の内容とMD&Aの経営成績の概要に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "介護事業は北九州市を中心とする九州地域を基盤に、2026年3月31日現在で全国116ヶ所195事業所まで展開を広げています。介護報酬は、サービスを提供した都道府県の国民健康保険団体連合会への請求を通じて受け取る仕組みで、主要な顧客ごとの情報には福岡県国民健康保険団体連合会が挙がっています。",
+        "basis": "事業の内容と関連情報の主要な顧客ごとの情報に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

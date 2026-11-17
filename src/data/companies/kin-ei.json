@@ -4,15 +4,183 @@
   "name": "きんえい",
   "officialName": "株式会社きんえい",
   "nameEn": "Kin-Ei　Corp.",
-  "description": null,
+  "shortNameEn": "Kin-Ei Corp.",
+  "description": "大阪市阿倍野区で映画館「あべのアポロシネマ」を運営し、ビルの賃貸も行う、近鉄グループの会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "real-estate",
+      "primary": true
+    },
+    {
+      "industryId": "entertainment",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "kin-ei",
+      "name": "株式会社きんえい",
+      "description": "大阪市阿倍野区に本社を置き、映画館の運営とビルの賃貸を単体で行う会社です。2026年1月31日現在の従業員数は45人で、東京証券取引所スタンダード市場に上場しています。親会社は近鉄グループホールディングス株式会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "real-estate",
+          "name": "不動産事業",
+          "description": "大阪市阿倍野区の「きんえいアポロビル」の賃貸や駐車場の運営、「あべのルシアス」の賃貸・運営管理などを行う事業で、2026年1月期の外部顧客への売上高は2,059百万円です。",
+          "customers": [
+            "テナントとして入居する店舗・事業者",
+            "駐車場の利用者",
+            "宝くじの購入者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "children": [
+            {
+              "id": "tenant-leasing",
+              "name": "テナント賃貸・ビル運営管理",
+              "description": "「きんえいアポロビル」をテナントビルとして賃貸し、「ヴィアあべのウォーク」内に所有する店舗区画の賃貸を行うほか、大阪市の再開発ビル「あべのルシアス」の賃貸・運営管理業務を行っています。",
+              "customers": [
+                "テナントとして入居する店舗・事業者"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "parking",
+              "name": "駐車場",
+              "description": "「きんえいアポロビル」に付帯する「きんえいアポロ駐車場」を経営しています。",
+              "customers": [
+                "駐車場の利用者"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "lottery",
+              "name": "宝くじ売店",
+              "description": "あべのハルカス店とアポロビル地下2階の宝くじ売店、計2店を経営しています。",
+              "customers": [
+                "宝くじの購入者"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            }
+          ]
+        },
+        {
+          "id": "cinema-amusement",
+          "name": "シネマ・アミューズメント事業",
+          "description": "映画館「あべのアポロシネマ」とゲームセンター2店を経営する事業で、2026年1月期の外部顧客への売上高は1,712百万円です。",
+          "customers": [
+            "映画の観客",
+            "ゲームセンターの利用者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】",
+          "children": [
+            {
+              "id": "cinema",
+              "name": "映画興行",
+              "description": "9スクリーンで構成されるシネマコンプレックス「あべのアポロシネマ」を大阪市阿倍野区で運営し、邦画・洋画の封切作品を上映しています。一部のフロアは近鉄不動産株式会社から賃借しています。",
+              "customers": [
+                "映画の観客"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            },
+            {
+              "id": "game-center",
+              "name": "ゲームセンター",
+              "description": "アポロビル3階と4階にゲームセンターを計2店経営しています。",
+              "customers": [
+                "ゲームセンターの利用者"
+              ],
+              "sourceIds": [
+                "yuho-2026"
+              ],
+              "locator": "【事業の内容】"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "映画館の入場料やゲームセンターの利用料、所有ビルの賃料や駐車場の料金、ビルの運営管理の対価などで収入を得る事業モデルです。",
+    "products": [
+      "映画の上映（あべのアポロシネマ）",
+      "ゲームセンターの運営",
+      "テナントビルの賃貸",
+      "ビルの運営管理業務",
+      "駐車場の運営",
+      "宝くじの販売"
+    ],
+    "customers": [
+      "映画の観客",
+      "ゲームセンターの利用者",
+      "テナントとして入居する店舗・事業者",
+      "駐車場の利用者",
+      "宝くじの購入者"
+    ],
+    "revenueSources": [
+      "映画の入場料",
+      "ゲームセンターの利用料",
+      "ビルの賃貸料・共益費",
+      "ビルの運営管理業務の対価",
+      "駐車場の料金"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "株式会社きんえい",
+        "description": "大阪市阿倍野区に本社を置き、連結子会社を持たず単体で事業を展開しています。2026年1月31日現在の従業員数は45人で、東京証券取引所スタンダード市場に上場しています。親会社は近鉄グループホールディングス株式会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "映画館の運営とビルの賃貸",
+        "description": "9スクリーンのシネマコンプレックス「あべのアポロシネマ」とゲームセンター2店を経営し、「きんえいアポロビル」などの賃貸や駐車場の運営、「あべのルシアス」の賃貸・運営管理を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "観客とテナントが顧客",
+        "description": "顧客は、映画の観客やゲームセンターの利用者、ビルに入居するテナント店舗、駐車場の利用者、宝くじの購入者などです。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年1月期の売上高は3,771百万円",
+        "description": "2026年1月期の売上高は3,771百万円で、前期比5.6％増でした。不動産事業が2,059百万円、シネマ・アミューズメント事業が1,712百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年1月期の当期純利益は200百万円",
+        "description": "2026年1月期の当期純利益は200百万円で、前期比29.6％増でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年1月期",
@@ -27,14 +195,15 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2221515000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 41,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号）及び「収益認識に関する会計基準の適用指針」（企業会計基準適用指針第30号）を第125期の期首から適用しております。"
     },
     {
       "fiscalYear": "2023年1月期",
@@ -49,11 +218,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2319551000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 45,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +240,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2449703000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 42,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +262,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2580682000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 46,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +284,156 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2759534000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 45,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1937,
+      "title": "株式会社大鉄映画劇場として設立",
+      "description": "大阪鉄道株式会社の社長や阪神急行電鉄株式会社の小林一三氏らの発起によって、株式会社大鉄映画劇場として発足しました。",
+      "significance": "映画興行を祖業とする会社の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1944,
+      "title": "商号を株式会社近畿映画劇場に変更",
+      "description": "商号を株式会社近畿映画劇場に変更し、映画興行を中心に事業を進めました。",
+      "significance": "近鉄グループの映画会社としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1949,
+      "title": "大阪証券取引所に上場",
+      "description": "株式を大阪証券取引所に上場しました。",
+      "significance": "上場会社としての歩みが始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "近映アポロビル（現きんえいアポロビル）の開業",
+      "description": "近映アポロビル（現きんえいアポロビル）を開業し、直営劇場や遊戯場、駐車場のほか賃貸店舗を収容して、不動産賃貸部門を拡充しました。",
+      "significance": "映画興行に不動産賃貸が加わり、経営の多角化が進みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "「アポロシネマ8」の開業と商号変更",
+      "description": "「あべのルシアス」に6スクリーン、アポロビルに2スクリーンの計8スクリーンで構成される大阪市内初のシネマコンプレックス「アポロシネマ8」（現「あべのアポロシネマ」）を開業し、あべのルシアスの賃貸・運営管理業務を開始しました。同時に商号を株式会社きんえいに変更しました。",
+      "significance": "現在の主力施設と現社名がそろった転機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "「ヴィアあべのウォーク」内店舗施設の賃貸業務開始",
+      "description": "「ヴィアあべのウォーク」内に所有する店舗施設の賃貸業務を開始しました。",
+      "significance": "阿倍野エリアでの賃貸事業の対象が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所第二部に移行",
+      "description": "市場の統合により、東京証券取引所第二部に上場することになりました。",
+      "significance": "東京証券取引所の上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "新スクリーン「プラスワン」の営業開始",
+      "description": "「あべのアポロシネマ」に新スクリーン「プラスワン」の営業を開始し、9スクリーン体制になりました。",
+      "significance": "シネマコンプレックスの規模が現在の形になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "きんえいアポロビルの耐震補強工事完工",
+      "description": "「きんえいアポロビル」の耐震補強工事が完工しました。",
+      "significance": "主力の賃貸ビルの安全性が高まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の新市場区分に従い、同取引所スタンダード市場に移行しました。",
+      "significance": "現在の市場区分での上場が続いています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kintetsu-group-holdings",
+      "relationship": "parent",
+      "description": "近鉄グループホールディングス株式会社は当社の親会社で、2026年1月31日現在、当社の議決権の63.0％を保有しています（うち57.0％は子会社を通じた間接保有で、退職給付信託分を含みます）。当社は同社のキャッシュ・マネジメント・システムに余剰資金を預け入れており、役員の兼任もあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "kintetsu-department-store",
+      "relationship": "major-shareholder",
+      "description": "株式会社近鉄百貨店は、【大株主の状況】に記載される事業会社で、2026年1月31日現在、発行済株式（自己株式を除く）の0.62％を所有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "toho-9602",
+      "relationship": "supplier",
+      "description": "東宝株式会社は映画の配給会社で、当社が上映する映画の配給元の一つです。【主な資産及び負債の内容】の買掛金の相手先として記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主な資産及び負債の内容】"
+    },
+    {
+      "companyId": "shochiku",
+      "relationship": "supplier",
+      "description": "松竹株式会社は映画の配給会社で、当社が上映する映画の配給元の一つです。【主な資産及び負債の内容】の買掛金の相手先として記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【主な資産及び負債の内容】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +441,55 @@
       "publisher": "株式会社きんえい",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XZ5Y.pdf",
       "publishedAt": "2026-04-20",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XZ5Y",
+      "asOf": "2026-01-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "主軸である劇場事業を今後も継続・発展させるため、安心・快適に映画を鑑賞できる環境を整備し、あべの・天王寺エリア唯一の映画館として、周辺の大規模集客施設と連携して相乗効果を生む劇場事業を展開する方針です。収益に不確実性が伴う映画興行を持続的に運営するには経営基盤の強化が不可欠であり、不動産賃貸事業の収支の安定化が重要だとして、環境の変化に適応力の高いテナントの見極めやビル管理コストの低減に努めるとしています。",
+        "asOf": "2026-04-20",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "売上高の過半を占める不動産事業の賃貸収入が土台となり、作品の人気によって収入が変動しやすい映画興行を同じエリアで続ける構成になっています。",
+        "basis": "セグメント別の売上高構成（不動産事業2,059百万円、シネマ・アミューズメント事業1,712百万円）と経営戦略の記載に基づく",
+        "asOf": "2026-04-20",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "あべの・天王寺エリアで唯一の映画館であり、自社の映画館と賃貸ビルが同じエリアに集まっているため、周辺の商業施設と共同でイベントを行うなど、立地を生かした集客ができる点が特徴です。",
+        "basis": "経営方針及び経営成績等の分析における「エリア唯一の映画館」と周辺施設との連携の記載に基づく",
+        "asOf": "2026-04-20",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "大阪市阿倍野区の「あべのルシアス」と「きんえいアポロビル」に拠点を集中させ、周辺の大型商業施設と連携しながら映画館と賃貸ビルを運営する、地域密着型の事業者です。",
+        "basis": "事業の内容と主要な設備の状況における拠点の記載に基づく",
+        "asOf": "2026-04-20",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年1月期",
     "asOf": "2026-01-31",

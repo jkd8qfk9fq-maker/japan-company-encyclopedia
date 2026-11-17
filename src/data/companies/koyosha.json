@@ -4,19 +4,123 @@
   "name": "光陽社",
   "officialName": "株式会社光陽社",
   "nameEn": "KOYOSHA INC.",
-  "description": null,
+  "shortNameEn": "KOYOSHA INC.",
+  "description": "製版から印刷・製本・配送までを一貫して手がける、東京都文京区に本店を置く印刷会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     },
     {
       "exchange": "nse",
-      "market": "メイン"
+      "market": "メイン市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "media",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "koyosha",
+      "name": "株式会社光陽社",
+      "description": "東京都文京区に本店を置き、製版から印刷・製本・配送までを手がける印刷会社です。連結子会社2社（絵本の印刷製本・配送を行う株式会社ニコモ、印刷物の製造・販売を行う株式会社ノコム）とともに、印刷関連事業の単一セグメントで事業を行っています。2026年3月期の売上高は4,830百万円、従業員数は172人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "koyosha-product-creation",
+          "name": "製品制作部門",
+          "description": "デジタル対応した画像処理技術を核に、オフセット印刷用写真版の製版、ディスプレイ、映像・マルチメディアコンテンツの制作を行います。2026年3月期の販売実績は783百万円でした。",
+          "customers": [
+            "印刷物の発注企業",
+            "広告主"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "koyosha-printing",
+          "name": "印刷部門",
+          "description": "企画、デザイン、DTP製作のトータルフローと、カラーマネジメントを核とした印刷、加工、アッセンブリ、納品までのワンストップサービスを提供します。絵本の印刷、製本、配送も行います。2026年3月期の販売実績は4,046百万円でした。",
+          "customers": [
+            "出版社",
+            "印刷物の発注企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "koyosha-goods",
+          "name": "商品部門",
+          "description": "印刷に関連する消耗品等を販売します。2026年3月期の販売実績は0百万円でした。",
+          "customers": [
+            "印刷物の発注企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "製版・画像処理、企画から納品までの印刷、印刷関連商品の販売を行い、発注企業から印刷物の制作・納品の対価を得る事業です。",
+    "products": [
+      "オフセット印刷用写真版",
+      "印刷物（絵本を含む）",
+      "ディスプレイ・映像コンテンツ",
+      "印刷関連消耗品"
+    ],
+    "customers": [
+      "出版社",
+      "一般企業・広告主"
+    ],
+    "revenueSources": [
+      "製品制作売上高",
+      "印刷売上高",
+      "商品売上高"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "光陽社",
+        "description": "東京都文京区に本店を置きます。1949年に大阪市でオフセット印刷用写真版の製造販売を主たる事業として設立しました。2026年3月31日現在の従業員数は172人です。東京証券取引所スタンダード市場と名古屋証券取引所メイン市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "製版から納品までの一貫生産",
+        "description": "画像処理技術を核としたオフセット印刷用写真版の製版と、企画・デザイン・DTP製作から印刷、加工、アッセンブリ、納品までのワンストップサービスを提供します。環境配慮型印刷のカーボンゼロプリント等も手がけます。"
+      },
+      {
+        "kind": "customer",
+        "title": "出版社・一般企業",
+        "description": "出版社や一般企業など、印刷物を発注する顧客に販売します。売上高の10％以上を占める特定の相手先はありません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "部門別販売による売上高4,830百万円",
+        "description": "2026年3月期の売上高は4,830百万円です。事業部門別の販売実績は、印刷が4,046百万円、製品制作が783百万円、商品が0百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益84百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は84百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -31,7 +135,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1757212000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 189,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -51,7 +155,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1815559000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 187,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -71,7 +175,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1957501000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 181,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -91,7 +195,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1788953000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 174,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -111,7 +215,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 1818328000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 172,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -119,7 +223,128 @@
       ]
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1949,
+      "title": "光陽社を設立",
+      "description": "大阪市東区（現中央区）谷町において、オフセット印刷用写真版の製造販売を主たる事業として設立しました。",
+      "significance": "会社の始まりです。製版が創業事業でした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1984,
+      "title": "中国・深セン市に合弁会社を設立",
+      "description": "中国広東省深セン市に合弁会社深セン美光彩色印刷股ブン有限公司（後に深セン美光実業股ブン有限公司と改称）を設立しました。",
+      "significance": "海外拠点への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "大阪証券取引所市場第二部に株式上場",
+      "description": "大阪証券取引所市場第二部（特別指定銘柄）に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "デジタルセンター『ダブル・クロック大阪』を開設",
+      "description": "大阪市中央区にデジタルセンター『ダブル・クロック大阪』を開設しました。",
+      "significance": "デジタル対応の拠点展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "中国合弁会社を売却",
+      "description": "中国合弁会社深セン美光実業股ブン有限公司を売却しました。",
+      "significance": "海外合弁事業から撤退しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "株式会社双葉紙工社を連結子会社化",
+      "description": "株式会社双葉紙工社の発行済株式の100％を取得し、連結子会社としました。",
+      "significance": "印刷周辺事業を取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "オンデマンドPOP事業を譲受け",
+      "description": "株式会社帆風よりオンデマンドPOP事業を譲り受け、K-CAP部として業務を開始しました。",
+      "significance": "オンデマンド印刷分野への展開です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "株式会社双葉紙工社を吸収合併",
+      "description": "株式会社双葉紙工社を吸収合併し、オフィスサポートセンターとしました。あわせてプリンティングセンター等を飯能プリンティングセンターBASE（埼玉県飯能市）へ移転しました。",
+      "significance": "生産拠点の集約です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "株式会社ニコモを設立",
+      "description": "東京都文京区に株式会社ニコモを設立しました（100％出資）。",
+      "significance": "絵本の印刷製本・配送を行う現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "株式会社ノコムを設立",
+      "description": "東京都文京区に株式会社ノコムを設立しました（100％出資）。",
+      "significance": "印刷物の製造・販売を行う現在の連結子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第二部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場の一つです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "名古屋証券取引所メイン市場に上場",
+      "description": "名古屋証券取引所メイン市場に株式を上場しました。",
+      "significance": "二つ目の上場市場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -128,13 +353,58 @@
       "publisher": "株式会社光陽社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YLWX.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YLWX",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2026年３月８日付で普通株式１株につき５株の割合で株式分割を行っています（主要な経営指標等の注記に記載）。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中期経営計画（2025年度～2027年度）のもと、カーボンゼロプリント、カーボンニュートラルプリント等の環境配慮型印刷の刷新と販路拡大、企画から発送まで自社内の一貫生産体制を活かした提案営業、デジタルマーケティングやダイレクトメールの提案力強化を進める方針です。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高は4,830百万円で前期比2.2％増となりました。カーボンオフセット関連の売上が好調で、当初計画を上回りました。部門別では印刷と製品制作が増収となる一方、商品は大きく減少しました。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "長年製版で培った画像処理・印刷技術と、企画から発送までを自社内で完結できる一貫生産体制を持ちます。カーボンオフセットを組み合わせた環境配慮型印刷を、当社ならではの提案として打ち出しています。",
+        "basis": "【事業の内容】と【経営方針、経営環境及び対処すべき課題等】に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "主力の商業印刷業界は、印刷物のデジタル化や広告の減少、原材料価格の高騰などで厳しい経営環境が続いています。その中で環境貢献や業務負担の軽減につながる製品を求める企業が増えており、当社は環境配慮型印刷やデジタルとの連携で対応を進めています。",
+        "basis": "【経営方針、経営環境及び対処すべき課題等】の業界動向に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

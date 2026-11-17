@@ -4,15 +4,171 @@
   "name": "タカセ",
   "officialName": "タカセ株式会社",
   "nameEn": "TAKASE CORPORATION",
-  "description": null,
+  "shortNameEn": "TAKASE CORPORATION",
+  "description": "国内外で運送・保管・作業を組み合わせた総合物流サービスを提供し、貨物自動車による実運送や倉庫内作業もグループで担う物流企業です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "integrated-logistics",
+      "name": "総合物流事業",
+      "description": "国内外で「運送」「保管」「作業」といった物流サービスを組み合わせて提供する事業で、貨物運送の取次を行う利用運送サービス、貨物の保管サービス、倉庫内オペレーション等の作業サービスのほか、倉庫施設の賃貸も行います。2026年３月期の外部顧客への営業収益は8,410百万円で、グループ最大の事業です。当社および海外子会社４社が担います。",
+      "customers": [
+        "貨物の運送・保管・作業を委託する顧客企業",
+        "倉庫施設の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "freight-forwarding",
+          "name": "利用運送サービス",
+          "description": "貨物運送の取次を行うサービスです。",
+          "customers": [
+            "貨物の運送を委託する顧客企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "cargo-storage",
+          "name": "保管サービス",
+          "description": "顧客の貨物を倉庫で保管するサービスです。",
+          "customers": [
+            "貨物の保管を委託する顧客企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "warehouse-operations",
+          "name": "倉庫内オペレーション等の作業サービス",
+          "description": "倉庫内での荷役・流通加工等の作業を行うサービスです。",
+          "customers": [
+            "倉庫内作業を委託する顧客企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "warehouse-leasing",
+          "name": "倉庫施設の賃貸",
+          "description": "当社グループの倉庫施設を顧客に賃貸する事業です。",
+          "customers": [
+            "倉庫施設の賃借人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "trucking",
+      "name": "運送事業",
+      "description": "貨物自動車による実運送を行う事業で、連結子会社の株式会社タカセ運輸集配システムが担います。主に総合物流事業の運送分野を受け持ち、2026年３月期の外部顧客への営業収益は52百万円でした。",
+      "customers": [
+        "貨物の運送を委託する顧客企業",
+        "当社グループ各社"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "other-businesses",
+      "name": "その他の事業",
+      "description": "報告セグメントに含まれない、付随的な収益を獲得するに過ぎない構成単位の事業で、トラックシャーシの保管場所を賃貸する事業等を含みます。2026年３月期の外部顧客への営業収益は28百万円でした。",
+      "customers": [
+        "トラックシャーシ保管場所等の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "distribution-processing",
+      "name": "流通加工事業",
+      "description": "人材派遣又は業務受託により倉庫内オペレーションを行う事業で、連結子会社のタカセ物流株式会社が担います。主に総合物流事業向けの倉庫内作業を受け持つため、外部顧客への営業収益は開示されておらず、セグメント間の内部営業収益のみが計上されています。",
+      "customers": [
+        "当社グループ各社",
+        "倉庫内作業を委託する顧客企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "顧客の貨物について、運送の取次である利用運送、保管、倉庫内での流通加工作業を組み合わせて提供し、物流サービスの対価を得る事業モデルです。",
+    "products": [
+      "利用運送サービス（貨物運送の取次）",
+      "貨物の保管サービス",
+      "倉庫内オペレーション（流通加工等）の作業サービス",
+      "貨物自動車による実運送",
+      "倉庫施設の賃貸"
+    ],
+    "customers": [
+      "貨物の運送・保管・作業を委託する企業",
+      "倉庫施設の賃借人"
+    ],
+    "revenueSources": [
+      "営業収益（2026年３月期 8,491百万円）"
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "flow": [
+      {
+        "kind": "company",
+        "title": "タカセ",
+        "description": "1922年に東京市芝区新橋で設立された物流会社で、東京証券取引所スタンダード市場に上場しています。連結子会社６社と非連結子会社１社を持ち、2026年３月期の連結従業員数は199人でした。"
+      },
+      {
+        "kind": "offering",
+        "title": "総合物流サービスの提供",
+        "description": "運送・保管・作業を組み合わせた総合物流サービスを中心に、貨物自動車による実運送、倉庫内オペレーションを行う流通加工、倉庫施設の賃貸を提供しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "顧客企業",
+        "description": "顧客は貨物の運送や保管、倉庫内作業を委託する企業です。総合物流事業の主要な顧客としてピクシブ株式会社と株式会社東宝ステラがあり、倉庫施設の賃借人も顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "営業収益 8,491百万円",
+        "description": "2026年３月期の営業収益は8,491百万円で、前期から1.8％増加しました。内訳は総合物流事業8,410百万円、運送事業52百万円、その他の事業28百万円で、流通加工事業は外部顧客への営業収益の開示がありません。"
+      },
+      {
+        "kind": "profit",
+        "title": "親会社株主に帰属する当期純利益 159百万円",
+        "description": "2026年３月期の親会社株主に帰属する当期純利益は159百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6625293000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 230,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6890906000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 232,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7225611000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 220,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +243,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7349224000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 207,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +263,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 7664106000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 199,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +271,167 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1922,
+      "title": "株式会社髙瀬組の設立",
+      "description": "海陸運送取扱業、倉庫業を目的として、東京市芝区新橋において株式会社髙瀬組を設立しました。",
+      "significance": "当社の設立です。現在の本店所在地である新橋の地で、運送取扱と倉庫業から始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "髙瀬運輸株式会社への社名変更",
+      "description": "髙瀬運輸株式会社に社名を変更しました。",
+      "significance": "運送事業を中心とする業態への転換を示す社名変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1968,
+      "title": "タカセディストリビューションシステムの設立",
+      "description": "国内物流事業展開のため、子会社株式会社タカセディストリビューションシステムを設立しました。",
+      "significance": "国内物流事業の展開の起点となった子会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1971,
+      "title": "タカセ陸送株式会社の設立",
+      "description": "貨物自動車運送事業を目的として、子会社タカセ陸送株式会社（現・株式会社タカセ運輸集配システム）を設立しました。",
+      "significance": "現在の連結子会社で運送事業を担う会社の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "子会社の合併とタカセ株式会社への社名変更",
+      "description": "子会社株式会社タカセディストリビューションシステムを合併し、タカセ株式会社に社名を変更しました。",
+      "significance": "現在の社名となった出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1989,
+      "title": "株式の公開",
+      "description": "店頭売買登録銘柄として株式を公開しました。",
+      "significance": "株式公開の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "香港子会社の設立",
+      "description": "香港に子会社ADD SYSTEM COMPANY LIMITEDを設立しました。",
+      "significance": "海外展開のうちアジア拠点の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1998,
+      "title": "米国法人の設立",
+      "description": "ロサンゼルス駐在員事務所を改組し、米国法人としてTAKASE ADD SYSTEM,INC.を設立しました。",
+      "significance": "北米における現地法人の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2003,
+      "title": "上海子会社の設立",
+      "description": "上海駐在員事務所を改組し、中国法人として高瀬物流（上海）有限公司を設立しました。",
+      "significance": "中国事業の現地法人の設立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所への上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所市場への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "タカセ物流株式会社への商号変更",
+      "description": "株式会社マルワの商号をタカセ物流株式会社に変更しました。",
+      "significance": "現在の連結子会社で流通加工事業を担う会社の商号変更です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "高瀬国際貨運代理（上海）有限公司の設立",
+      "description": "中国国内の総合物流事業展開を目的に、高瀬国際貨運代理（上海）有限公司を設立しました。",
+      "significance": "中国の連結子会社の設立です。同社は現在の特定子会社です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場への移行",
+      "description": "東京証券取引所の市場区分見直しにより、同取引所ＪＡＳＤＡＱ（スタンダード）からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "daito-koun",
+      "relationship": "major-shareholder",
+      "description": "【大株主の状況】に筆頭株主として印字され、2026年３月31日現在の所有割合は8.22％です。同社の貨物の流通加工業務を当社が受託する主要な顧客でもあり、当社も同社の株式を保有する相互保有の関係にあります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "mitsui-o-s-k-lines",
+      "relationship": "supplier",
+      "description": "【株式の保有状況】の特定投資株式に、総合物流事業における主要な海上実運送業務の委託先として印字されています。同社の関連会社を含め、海上の実運送業務を委託しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "yamato-holdings",
+      "relationship": "supplier",
+      "description": "【株式の保有状況】の特定投資株式に、総合物流事業における主要な国内実運送業務の委託先として印字されています。国内の実運送業務を委託しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +439,58 @@
       "publisher": "タカセ株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YD4T.pdf",
       "publishedAt": "2026-06-17",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YD4T",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2024年10月１日付で普通株式１株につき２株の割合で株式分割を行っています。主要な経営指標等の注記に、第106期の数値は当該株式分割が第106期の期首に行われたと仮定して算出されている旨が記載されています。本登録は株式分割後の株式数に基づく指標で登録しています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "社是として「ＡＤＤ ＳＹＳＴＥＭ」（物流システムの創造にたゆまぬ努力を続け、顧客に貢献すること）を掲げ、顧客目線を大切にしながら革新的なサービス開発と確実な業務の実行によって社会に貢献するとしています。中長期的な経営戦略では、2025年度から「既存事業の収益力強化と新たな収益構造を確立する」ことをテーマに、「足元の業績立て直し」「事業基盤の強化」「新たな事業領域・価値の創造」「骨太の収益構造の確立」に取り組むとしています。2026年度は、既存サービスのＣＯＬ（コンテンツクラウド＋オンデマンドプリント＋ロジスティクス）と医療機器物流を掛け合わせた新サービスの構築や、協業によるシナジーが見込める企業とのＭ＆Ａの検討などを掲げています。",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "営業収益の柱は総合物流事業8,410百万円で、連結営業収益8,491百万円のほぼ全てを占めます。運送事業と流通加工事業は主に総合物流事業向けの実運送と倉庫内作業を担うグループ内の分担であり、海外は米国・香港・上海の現地法人が総合物流事業を担っています。",
+        "basis": "セグメント情報における事業別の外部顧客への営業収益と関係会社の状況における連結子会社の事業内容の記載に基づく",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "競争力の源泉は、東京・川崎の湾岸地区などに自社の倉庫施設を持ち、人の手によるきめ細やかな流通加工業務に機械やシステムを組み合わせて提供できる体制にあります。通関業の許可や認定通関業者（ＡＥＯ通関業者）の認定、医療機器製造業の免許など、取扱貨物の幅を広げる許認可も備えています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における強みの記載と、主要な設備の状況における自社倉庫施設の記載、および沿革における許認可の記載に基づく",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "物流業界では物価高や為替変動の影響が残り、人件費をはじめとするコスト上昇への対応が課題となる環境にあります。当社グループは営業収益84億91百万円の規模で、国内物流と国際物流の双方を手がけ、社会貢献度の高い分野への物流サービス提供や新規顧客の獲得を重点課題として位置づけています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における経営環境と重点課題の記載と、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析における記載に基づく",
+        "asOf": "2026-06-17",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

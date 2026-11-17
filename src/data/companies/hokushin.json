@@ -4,15 +4,122 @@
   "name": "ホクシン",
   "officialName": "ホクシン株式会社",
   "nameEn": "HOKUSHIN　CO．，LTD．",
-  "description": null,
+  "shortNameEn": "HOKUSHIN CO., LTD.",
+  "description": "木材チップ等を原料とするＭＤＦ（中密度繊維板）「スターウッド」を製造し、住宅建材向けに販売する木質ボードメーカーです。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "construction",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "hokushin",
+      "name": "ホクシン株式会社",
+      "description": "大阪府岸和田市に本社及び工場を置き、ＭＤＦ（中密度繊維板）の製造及び販売を行うメーカーです。ＭＤＦ事業の単一セグメントで、2026年3月期の売上高は10,267百万円、従業員数は167人です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "hokushin-starwood",
+          "name": "スターウッド",
+          "description": "主力のＭＤＦ（中密度繊維板）製品です。建材用途やフロア基材用途、構造用途に販売されており、2026年3月期の販売実績は5,726百万円でした。",
+          "customers": [
+            "建材商社",
+            "住宅設備・建材メーカー",
+            "株式会社ＬＩＸＩＬ",
+            "双日建材株式会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "hokushin-starwood-tfb",
+          "name": "スターウッドＴＦＢ",
+          "description": "ＭＤＦ（中密度繊維板）製品の一つで、2026年3月期の販売実績は3,511百万円でした。",
+          "customers": [
+            "建材商社",
+            "住宅設備・建材メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "hokushin-imported-goods",
+          "name": "商品（輸入商品）",
+          "description": "海外から仕入れる輸入商品の販売で、2026年3月期の販売実績は1,029百万円でした。入荷量の調整を行っています。",
+          "customers": [
+            "建材商社",
+            "住宅設備・建材メーカー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "大阪府岸和田市の本社工場でＭＤＦを製造し、建材商社や住宅設備メーカー等へ販売して収益を得る事業モデルです。",
+    "products": [
+      "ＭＤＦ（中密度繊維板）「スターウッド」",
+      "ＭＤＦ（中密度繊維板）「スターウッドＴＦＢ」",
+      "輸入商品"
+    ],
+    "customers": [
+      "建材商社",
+      "住宅設備・建材メーカー",
+      "株式会社ＬＩＸＩＬ",
+      "双日建材株式会社"
+    ],
+    "revenueSources": [
+      "ＭＤＦ製品の販売による売上",
+      "輸入商品の販売による売上"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ホクシン",
+        "description": "大阪府岸和田市に本社を置きます。1950年に北新合板株式会社として設立し、1985年に現商号へ変更しました。2026年3月31日現在の従業員数は167人です。東京証券取引所スタンダード市場に上場しています。"
+      },
+      {
+        "kind": "offering",
+        "title": "ＭＤＦ（中密度繊維板）の製造販売",
+        "description": "木材チップ等の木質原料を繊維化し、接着剤とともに成形したＭＤＦを自社工場で製造します。主力製品は「スターウッド」と「スターウッドＴＦＢ」で、住宅の建材やフロア基材、構造材などに使われます。あわせて輸入商品の販売も行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "建材商社・住宅設備メーカー",
+        "description": "住宅建材市場を中心に、建材商社や住宅設備・建材メーカーへ販売します。主要な顧客は株式会社ＬＩＸＩＬと双日建材株式会社で、2社で売上高の2割を超えます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "製品販売による売上高10,267百万円",
+        "description": "2026年3月期の売上高は10,267百万円です。品目別の販売実績は、スターウッドが5,726百万円、スターウッドＴＦＢが3,511百万円、商品が1,029百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純損失27百万円",
+        "description": "2026年3月期の当期純損失は27百万円です。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,11 +134,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5535486000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 188,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -49,11 +156,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5790661000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 193,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -71,11 +178,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5944597000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 189,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -93,11 +200,11 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5823450000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 182,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -115,18 +222,186 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5890820000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 167,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1950,
+      "title": "北新合板株式会社を設立",
+      "description": "大阪市大正区に北新合板株式会社を設立し、北新化工株式会社の本社工場を譲り受けて合板の製造・販売を開始しました。",
+      "significance": "会社の始まりです。前身は合板メーカーでした。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1972,
+      "title": "ＭＤＦ「スターウッド」の製造・販売を開始",
+      "description": "子会社の株式会社北新合板製造所において、ＭＤＦ（中密度繊維板、製品名スターウッド）の製造・販売を開始しました。",
+      "significance": "現在の主力事業であるＭＤＦ事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1979,
+      "title": "子会社３社を吸収合併",
+      "description": "株式会社北新合板製造所、北新化学工業株式会社及び北新モルパ工業株式会社を吸収合併しました。",
+      "significance": "グループの生産体制を当社に集約しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1985,
+      "title": "合板の製造・販売を中止し、ホクシン株式会社に商号変更",
+      "description": "合板の製造・販売を中止し、本社を大阪府岸和田市へ移転して、商号をホクシン株式会社に変更しました。",
+      "significance": "合板からＭＤＦ専業へ転換し、現在に続く社名と本社所在地になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1986,
+      "title": "大阪証券取引所市場第二部に上場",
+      "description": "大阪証券取引所市場第二部に株式を上場しました。",
+      "significance": "株式公開を果たした節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "「スターウッドＴＦＢ」の製造・販売を開始",
+      "description": "ＭＤＦ（中密度繊維板、製品名スターウッドＴＦＢ）の製造・販売を開始しました。",
+      "significance": "現在の主力製品の一つが加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1995,
+      "title": "東京証券取引所市場第一部に上場",
+      "description": "大阪証券取引所市場第一部銘柄に指定され、東京証券取引所市場第一部に株式を上場しました。",
+      "significance": "全国市場での上場を果たしました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "豪州子会社の資産及び営業権を譲渡",
+      "description": "子会社STARWOOD AUSTRALIA PTY. LTD.の資産及び営業権を現地企業へ譲渡しました。",
+      "significance": "海外生産から撤退し、国内生産への集中を進めました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "株式会社大亀の全株式を取得",
+      "description": "大阪府岸和田市の株式会社大亀の全株式を取得し、子会社化しました。",
+      "significance": "同業の取り込みによる事業基盤の拡大です（同社は2009年に事業譲受のうえ清算）。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "子会社Ｃ＆Ｈの株式51％を大建工業へ譲渡",
+      "description": "子会社Ｃ＆Ｈ株式会社の株式51％を大建工業株式会社（現・ＤＡＩＫＥＮ株式会社）へ譲渡しました。",
+      "significance": "Ｃ＆Ｈが関連会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "Ｃ＆Ｈの株式51％を取得し子会社化",
+      "description": "大建工業株式会社（現・ＤＡＩＫＥＮ株式会社）より関連会社Ｃ＆Ｈ株式会社の株式51％を取得し、子会社化しました。",
+      "significance": "Ｃ＆Ｈを再びグループに取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "Ｃ＆Ｈを吸収合併",
+      "description": "子会社Ｃ＆Ｈ株式会社を吸収合併しました。",
+      "significance": "現在の単体経営の体制が固まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、市場第一部からスタンダード市場へ移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "kanematsu",
+      "relationship": "other-affiliated-company",
+      "description": "その他の関係会社であり、当社の議決権の26.5％を所有しています。関係会社の状況に記載されており、取引はありません。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    },
+    {
+      "companyId": "eidai",
+      "relationship": "customer",
+      "description": "ＭＤＦの主要な販売先です。特定投資株式の保有目的に、ＭＤＦの主要販売先であり取引関係を維持・強化するためと個別に記載されています。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "mitsui-chemicals",
+      "relationship": "supplier",
+      "description": "接着剤等の主要な資材の供給元です。特定投資株式の保有目的に、接着剤等の主要資材供給元であり取引関係を維持・強化するためと個別に記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    },
+    {
+      "companyId": "the-keihin",
+      "relationship": "supplier",
+      "description": "ＭＤＦの荷役・配送業務の委託先です。特定投資株式の保有目的に、ＭＤＦの荷役・配送業務委託先であり取引関係を維持・強化するためと個別に記載されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +409,55 @@
       "publisher": "ホクシン株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGLJ.pdf",
       "publishedAt": "2026-06-23",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YGLJ",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年4月にスタートした中期経営計画（REBUILD & CREATE VALUE 2028）の重点施策として、構造用ＭＤＦの拡販、海外ＭＤＦ工場との連携強化によるＯＥＭ生産への切替え、繊維廃棄物を主原料とするリサイクル建材PANECO® board Mの量産・販売を掲げ、住宅建材市場に加えて非住宅分野の開拓を進める方針です。",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高は10,267百万円で前期と比べて微増となりました。国内製品のスターウッドは構造用途の拡販などにより前期を上回りましたが、スターウッドＴＦＢと輸入商品は販売量の減少により前期を下回りました。価格改定や生産面のコストダウンは一定の収益改善に貢献したものの、原材料価格や経費の上昇を吸収するには至りませんでした。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】の経営成績の分析に基づく",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "木質原料からＭＤＦを一貫生産する専業メーカーとして、岸和田の本社工場に生産機能を集約しています。高耐力や防湿・防露性といった構造材料としての特性を訴求し、環境配慮型商品としての付加価値の追求を掲げています。",
+        "basis": "【事業の内容】と【経営方針、経営環境及び対処すべき課題等】に基づく",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "事業は新設住宅着工戸数に左右される住宅市場との結びつきが深く、当期は住宅取得マインドの低下や建築確認申請の長期化により着工戸数が低調に推移しました。販売面では株式会社ＬＩＸＩＬと双日建材株式会社の2社で売上高の2割を超えるなど、上位の販売先への集中が見られます。",
+        "basis": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】と【関連情報】の主要な顧客ごとの情報に基づく",
+        "asOf": "2026-06-23",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

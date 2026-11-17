@@ -4,15 +4,183 @@
   "name": "システムズ・デザイン",
   "officialName": "システムズ・デザイン株式会社",
   "nameEn": "SYSTEMS DESIGN CO., Ltd.",
-  "description": null,
+  "shortNameEn": "SYSTEMS DESIGN CO., Ltd.",
+  "description": "大手・中堅企業の業務システムの開発と、コンタクトセンターなどの業務受託を行う情報サービス会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "system-development",
+      "name": "システム開発事業",
+      "description": "製造、物流、流通、通信、金融、医療、文教など様々な業種の大手・中堅企業向けの業務システムを開発する事業です。2026年3月期の外部顧客に対する売上高は5,615百万円です。連結子会社のうち1社（シェアードシステム株式会社）がこの事業を行っています。",
+      "customers": [
+        "製造・物流・流通・通信・金融・医療・文教等の大手・中堅企業"
+      ],
+      "children": [
+        {
+          "id": "system-integration",
+          "name": "システムインテグレーション",
+          "description": "情報システムの調査分析・企画からシステム開発、インフラ構築、保守・運用まで一貫したサービスを提供しています。",
+          "customers": [
+            "大手・中堅企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "solution",
+          "name": "ソリューション",
+          "description": "ソフトウエアを利用したソリューションや、webやネットワークの構築、ハンディターミナルやスマートフォンに対応したミドルウェアパッケージソフト等を提供しています。",
+          "customers": [
+            "大手・中堅企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "outsourcing",
+      "name": "アウトソーシング事業",
+      "description": "コンタクトセンターや業務処理の受託など、顧客の業務を代行するサービスを行う事業です。2026年3月期の外部顧客に対する売上高は4,378百万円です。連結子会社のうち2社（株式会社アイカム、株式会社フォー）がこの事業を行っています。",
+      "customers": [
+        "業務の代行を委託する企業"
+      ],
+      "children": [
+        {
+          "id": "contact-center",
+          "name": "コンタクトセンターサービス",
+          "description": "コールセンターサービスとして、インバウンド・アウトバウンドを問わず、顧客の要請に応える多彩なサービスを提供しています。",
+          "customers": [
+            "コールセンター業務を委託する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "business-processing",
+          "name": "ビジネスプロセッシングサービス",
+          "description": "個別システムの企画から開発・運用までのサポートをはじめ、その前後処理を含めたトータルなアウトソーシングまで幅広いサービスを提供しています。",
+          "customers": [
+            "業務処理を委託する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "data-entry",
+          "name": "データエントリーサービス",
+          "description": "オペレーターによるデータ入力業務のほか、ドキュメントの電子化や電子データのファイル形式変換を行っています。",
+          "customers": [
+            "データ入力業務を委託する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "product-service",
+          "name": "プロダクトサービス",
+          "description": "パッケージソフトウエア等の媒体制作に伴うCD-ROMの大量プレス、梱包資材の調達・印刷から実際の梱包作業までを一貫してサポートしています。",
+          "customers": [
+            "ソフトウエア等の媒体制作を委託する企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "id-card-solution",
+          "name": "ID/ICカード発行ソリューションサービス",
+          "description": "自社開発のカード発行システムを用いたID/ICカードの受託発行と、ID/ICカード発行システムの販売・保守を提供しています。",
+          "customers": [
+            "ID/ICカードの発行を委託する企業・団体"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "企業の業務システムの開発から保守・運用までの一貫したサービスと、業務処理の受託サービスを提供し、その対価を得る事業モデルです。",
+    "products": [
+      "業務システムの開発（システムインテグレーション）",
+      "ソフトウエアを利用したソリューションとミドルウェアパッケージソフト",
+      "コンタクトセンターサービス",
+      "ビジネスプロセッシングサービス",
+      "データエントリーサービス",
+      "ID/ICカード発行ソリューション"
+    ],
+    "customers": [
+      "製造・物流・流通・通信・金融・医療・文教等の大手・中堅企業",
+      "業務処理を委託する企業"
+    ],
+    "revenueSources": [
+      "システム開発・保守運用のサービス対価",
+      "アウトソーシングサービスの受託対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "システムズ・デザイン",
+        "description": "1967年に設立された情報サービス会社です。システム開発事業とアウトソーシング事業の2事業を行い、連結子会社は3社で、2026年3月31日現在の連結従業員数は553人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "システム開発と業務受託",
+        "description": "情報システムの調査分析・企画から開発、インフラ構築、保守・運用までの一貫したサービスと、コンタクトセンター、データエントリー、ID/ICカード発行などの業務受託サービスを提供します。"
+      },
+      {
+        "kind": "customer",
+        "title": "大手・中堅企業",
+        "description": "製造、物流、流通、通信、金融、医療、文教など様々な業種の大手・中堅企業が顧客です。主要な顧客としてピー・シー・エーと本田技研工業が印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は9,993百万円",
+        "description": "2026年3月期の売上高は9,993百万円で、前連結会計年度比4.0％増となりました。事業別ではシステム開発事業が5,615百万円、アウトソーシング事業が4,378百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の親会社株主に帰属する当期純利益は393百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は393百万円で、前連結会計年度の297百万円から増加しました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +195,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3878731000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 504,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +215,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4195734000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 518,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +235,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4459115000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 522,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +255,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4616819000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 545,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +275,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4815848000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 553,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +283,137 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1967,
+      "title": "システムズ・デザイン株式会社を設立",
+      "description": "情報処理業務を目的として、東京都荒川区にシステムズ・デザイン株式会社を設立し、データソリューション業務を開始しました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1970,
+      "title": "システムオペレーション業務とシステム開発業務に進出",
+      "description": "大型汎用コンピュータ（FACOM 230‐25）を導入し、システムオペレーション業務及びシステム開発業務に進出しました。",
+      "significance": "現在のシステム開発事業の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "千代田電子計算株式会社と山梨千代田計算株式会社を吸収合併",
+      "description": "千代田電子計算株式会社及び山梨千代田計算株式会社を吸収合併し、事業本部制の導入、大阪営業所の支社への昇格、山梨営業所の設置等の機構改革を実施しました。",
+      "significance": "グループ再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "ジャスダック証券取引所に株式を上場",
+      "description": "ジャスダック証券取引所に株式を上場しました。",
+      "significance": "株式上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "シェアードシステム株式会社を子会社化",
+      "description": "シェアードシステム株式会社の株式を取得して子会社化しました。現在の連結子会社です。",
+      "significance": "システム開発事業の連結子会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "株式会社アイカムを子会社化",
+      "description": "株式会社アイカムの株式を取得して子会社化しました。現在の連結子会社です。",
+      "significance": "アウトソーシング事業の連結子会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "株式会社フォーを子会社化",
+      "description": "株式会社フォーの株式を取得して子会社化しました。現在の連結子会社です。",
+      "significance": "アウトソーシング事業の連結子会社の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "株式会社アイデスの全株式を譲渡",
+      "description": "子会社であった株式会社アイデスの全株式を譲渡しました。",
+      "significance": "グループの事業再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分再編に伴い、スタンダード市場に移行しました。",
+      "significance": "市場区分の移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "本社を西新宿に移転",
+      "description": "業務の拡大に伴い、本社を東京都新宿区西新宿の新宿三井ビルディングに移転しました。",
+      "significance": "現在の本社への移転です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "pca",
+      "relationship": "customer",
+      "description": "主要な顧客です。2026年3月期の主要な顧客ごとの情報に記載され、関連するセグメントはシステム開発事業とアウトソーシング事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "honda",
+      "relationship": "customer",
+      "description": "主要な顧客です。2026年3月期の主要な顧客ごとの情報に記載され、関連するセグメントはシステム開発事業とアウトソーシング事業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報等】"
+    },
+    {
+      "companyId": "sunnexta-group",
+      "relationship": "business-partner",
+      "description": "同社の子会社と業務提携契約を締結しており、協業体制の安定化と相互理解の深化を目的として、同社の株式29,400株を保有しています（2026年3月31日現在）。同社も当社の株式を保有しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【株式の保有状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +421,55 @@
       "publisher": "システムズ・デザイン株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YGLS.pdf",
       "publishedAt": "2026-06-22",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YGLS",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2024年3月期から第8次中期経営計画を進めており、「ONE sdc －ステークホルダーとともに新たなステージへ－」を基本メッセージに、「安定的収益を拡大する」と「社会の持続的な成長に貢献する」の2つをビジョンとして定めています。システム開発事業ではソリューションビジネスの拡充や業種別戦略の強化、アウトソーシング事業ではオンサイトビジネスの強化や低収益ビジネスの見直しに取り組む方針です。企業理念は「ステークホルダーとともに社会の持続的な成長に貢献する」、企業ビジョンは「デジタルサービス企業として価値ある技術・サービスを提供し続ける」です。",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2026年3月期の売上高9,993百万円のうち、システム開発事業が5,615百万円と過半を占め、アウトソーシング事業が4,378百万円であり、開発と業務受託の2事業の組み合わせで収益を得ています。2026年3月期にはシステム開発事業でIoTベンチャー企業と資本業務提携を行い、AI統合ソリューションを共同で開発しました。",
+        "basis": "セグメント情報の外部顧客に対する売上高と、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の記述に基づく",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "システム開発では、情報システムの調査分析・企画から開発、インフラ構築、保守・運用までを一貫して提供できる体制を持ち、ローコード開発ツール等を活用したソリューション提供を得意としています。アウトソーシングでは、業態別に行ってきたサービスで培った技術力と品質を活かし、複数のサービスを組み合わせた複合的な提供に取り組んでいます。",
+        "basis": "事業の内容と経営環境の記述に基づく",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "情報サービス分野では、生成AIをはじめとするテクノロジーへの対応投資を背景に、モダナイゼーション需要に伴うサービスが市場拡大のけん引役となる見通しとされる一方、ユーザー企業の内製化の加速や高度IT人材の不足が課題とされています。同社は大手・中堅企業向けのシステム開発と業務受託の2事業で展開しています。",
+        "basis": "経営環境の記述と事業の内容に基づく",
+        "asOf": "2026-06-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

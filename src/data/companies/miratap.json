@@ -4,15 +4,151 @@
   "name": "ミラタップ",
   "officialName": "株式会社ミラタップ",
   "nameEn": "miratap inc.",
-  "description": null,
+  "shortNameEn": "miratap inc.",
+  "description": "住宅設備機器や建築資材を、誰でも同一条件・同一価格で買える「ワンプライス」でEC販売し、デザイン性の高い住宅づくりのサービスも手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    },
+    {
+      "industryId": "construction"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "housing-equipment-ec",
+      "name": "住設・建材EC事業",
+      "description": "住宅設備機器や建築資材の企画開発・輸入・販売を行う事業です。設計事務所・ゼネコン・工務店といった建築のプロと、施主である一般消費者に対し、購入者の属性にかかわらず誰でも同一条件・同一価格で購入できる「ワンプライス」でEC販売しています。現物の商品を確認できないというECの弱みを補うため、東京、大阪、仙台、名古屋、京都、福岡の6拠点にショールーム、札幌、横浜の2拠点に無人ショールーム（スマートショールーム®）を開設し、要望に応じてショールームスタッフが内装提案も行っています。2025年9月期の外部顧客への売上高は15,119百万円でした。主要な顧客として渡辺パイプ株式会社が印字されています。",
+      "customers": [
+        "設計事務所・ゼネコン・工務店などの建築のプロ",
+        "施主である一般消費者"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "housing",
+      "name": "住宅事業",
+      "description": "建売住宅や注文住宅の販売、リノベーション、デザイン性の高い住宅設計を可能とするサービスを行う事業です。デザイン性の高い住宅を実現するために開発した独自の「デザインコード」を加盟工務店に提供する「ASOLIE」や、家づくりを希望する方と専門家をつなぐプラットフォーム「SUVACO」、リノベーションの「リノベりす」を運営しています。2025年9月期の外部顧客への売上高は1,627百万円でした。",
+      "customers": [
+        "住宅の購入・建築を希望する一般消費者",
+        "ASOLIEに加盟する工務店"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "housing-spec",
+          "name": "建売住宅事業",
+          "description": "建売住宅の販売を行う事業です。",
+          "customers": [
+            "住宅の購入を希望する一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "housing-custom",
+          "name": "注文住宅事業",
+          "description": "注文住宅の建築を行う事業です。",
+          "customers": [
+            "住宅の建築を希望する一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "housing-renovation",
+          "name": "リノベーション事業",
+          "description": "既存住宅のリノベーションを行う事業で、「リノベりす」を運営しています。",
+          "customers": [
+            "リノベーションを希望する一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "housing-service",
+          "name": "サービス事業",
+          "description": "デザイン性の高い住宅設計を可能とするサービス事業です。独自の「デザインコード」を加盟工務店に提供する「ASOLIE」や、家づくりを希望する方と専門家をつなぐプラットフォーム「SUVACO」の運営を行っています。",
+          "customers": [
+            "ASOLIEに加盟する工務店",
+            "家づくりを希望する一般消費者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "自社で企画開発や輸入を行う住宅設備機器・建築資材を、購入者の属性にかかわらず同一条件・同一価格の「ワンプライス」でEC販売し、ショールームでの内装提案や加盟工務店へのデザイン支援も行います。",
+    "products": [
+      "住宅設備機器",
+      "建築資材",
+      "オリジナル商品（自社開発商品と海外輸入商品）"
+    ],
+    "customers": [
+      "設計事務所・ゼネコン・工務店などの建築のプロ",
+      "施主である一般消費者",
+      "ASOLIEに加盟する工務店"
+    ],
+    "revenueSources": [
+      "住宅設備機器・建築資材のEC販売代金",
+      "建売住宅・注文住宅の販売代金",
+      "ASOLIEやSUVACOなどのサービス収入"
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】",
+    "flow": [
+      {
+        "kind": "company",
+        "title": "ミラタップ",
+        "description": "大阪市北区に本店を置く会社です。2025年9月30日現在の連結従業員数は289人で、非連結子会社2社があります。2025年9月には連結子会社だった株式会社ベストブライトの全株式を譲渡しました。"
+      },
+      {
+        "kind": "offering",
+        "title": "住設・建材のEC販売と住宅サービス",
+        "description": "住宅設備機器や建築資材を企画開発・輸入しECで販売するほか、建売住宅・注文住宅・リノベーションと、デザイン性の高い住宅設計を可能とするサービス（ASOLIE、SUVACOなど）を展開しています。"
+      },
+      {
+        "kind": "customer",
+        "title": "建築のプロと一般消費者",
+        "description": "設計事務所・ゼネコン・工務店といった建築のプロと、施主である一般消費者が顧客です。セグメント情報の主要な顧客として渡辺パイプ株式会社が印字されています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2025年9月期の売上高は16,746百万円",
+        "description": "2025年9月期の売上高は16,746百万円で、前年同期比3.9％増でした。事業別では、住設・建材EC事業が15,119百万円、住宅事業が1,627百万円でした。"
+      },
+      {
+        "kind": "profit",
+        "title": "2025年9月期の親会社株主に帰属する当期純損失は447百万円",
+        "description": "2025年9月期の親会社株主に帰属する当期純損失は447百万円でした。前期は親会社株主に帰属する当期純利益635百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年9月期",
@@ -27,7 +163,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2800681000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 238,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +183,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3053727000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 251,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +203,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 3574946000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 274,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +223,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2903745000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 289,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -95,8 +231,109 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1979,
+      "title": "株式会社三輪として設立される",
+      "description": "建築資材の輸入販売を目的として、大阪市淀川区に株式会社三輪が設立されました。",
+      "significance": "当社の起源となる出来事です。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "インターネット通信販売事業を開始",
+      "description": "住宅設備機器、建築資材のインターネット通信販売事業を開始しました。",
+      "significance": "現在の主力である住設・建材EC事業の始まりです。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "社名を株式会社サンワカンパニーに変更",
+      "description": "社名を株式会社三輪から株式会社サンワカンパニーに変更しました。",
+      "significance": "創業時の社名から変更されました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所マザーズに株式を上場",
+      "description": "東京証券取引所マザーズに株式を上場しました。",
+      "significance": "株式公開を果たしました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所グロース市場へ移行",
+      "description": "東京証券取引所の市場区分の見直しにより、マザーズ市場からグロース市場に移行しました。",
+      "significance": "上場市場がグロース市場になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "株式会社ベストブライトを子会社化",
+      "description": "株式会社ベストブライトの全株式を取得し、子会社化しました。",
+      "significance": "住宅事業の体制が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "社名を株式会社ミラタップに変更",
+      "description": "社名を株式会社サンワカンパニーから株式会社ミラタップに変更しました。",
+      "significance": "現在の社名になりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "SUVACO事業及びリノベりす事業を譲り受ける",
+      "description": "株式会社Linkrop（旧社名 SUVACO株式会社）から、SUVACO事業及びリノベりす事業を譲り受けました。",
+      "significance": "住宅事業のサービスが加わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "株式会社ベストブライトの全株式を譲渡",
+      "description": "連結子会社であった株式会社ベストブライトの全株式を譲渡し、資本関係を解消しました。",
+      "significance": "ベストブライトは連結子会社から外れました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsubishi-estate",
+      "relationship": "business-partner",
+      "description": "重要な契約等に、大阪本社における定期建物賃貸借契約の相手先として印字されている会社です（契約年月日は2024年12月１日）。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【重要な契約等】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -104,13 +341,47 @@
       "publisher": "株式会社ミラタップ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XCKW.pdf",
       "publishedAt": "2025-12-24",
-      "accessedAt": "2026-09-29"
+      "docId": "S100XCKW",
+      "asOf": "2025-09-30",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "中長期的な経営戦略として、国内事業の収益基盤強化、海外事業の成長拡大、新事業の創造、経営基盤の強化の4つを重点課題としています。国内では認知拡大や非住宅・リフォーム・リノベーション領域の集客拡大、ECプラットフォームの刷新に取り組み、海外では既進出国を中心にブランドの浸透を図るとしています。新事業では、ASOLIEネットワークの拡大に加え、「シェア」「知財」「人材」の3軸でシナジーが見込める領域でのM&Aを推進するとしています。",
+        "asOf": "2025-12-24",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "売上高の約8割を占めるオリジナル商品（自社開発商品と国内で独占的に販売できる海外輸入商品）と、購入者の属性にかかわらず同一条件・同一価格とする「ワンプライス」の仕組みが特徴です。インターネット通信販売で流通プロセスを簡素化し、現物を確認できるショールームを主要都市と無人型で合計8拠点開設してECの弱みを補っています。",
+        "basis": "事業の内容及び経営方針、経営環境及び対処すべき課題等に基づく",
+        "asOf": "2025-12-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "住宅業界では建築コストの高水準や新設住宅着工戸数の減少傾向が続く一方、中古住宅やリフォーム市場は堅調に推移しているとされています。会社は、自社の事業規模に比べて業界の市場規模は巨大で、認知度はまだ低いことから収益獲得の余地は大きいと認識しています。",
+        "basis": "経営方針、経営環境及び対処すべき課題等及び経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析に基づく",
+        "asOf": "2025-12-24",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年9月期",
     "asOf": "2025-09-30",

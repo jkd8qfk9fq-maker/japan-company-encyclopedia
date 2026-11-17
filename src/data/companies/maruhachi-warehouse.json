@@ -4,15 +4,157 @@
   "name": "丸八倉庫",
   "officialName": "丸八倉庫株式会社",
   "nameEn": "Maruhachi Warehouse Company, Limited",
-  "description": null,
+  "shortNameEn": "Maruhachi Warehouse Company, Limited",
+  "description": "東京都江東区に本社を置き、倉庫での貨物保管や運送を行う物流事業と、賃貸マンションなどの不動産事業を営む会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "transportation",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "logistics",
+      "name": "物流事業",
+      "description": "首都圏と仙台の営業所で貨物の保管・荷役作業と貸倉庫を行い、連結子会社の東北丸八運輸株式会社が東北地区で貨物自動車運送と当社の保管貨物の一部の配送を担う事業です。2025年11月期の外部顧客への売上高は4,260百万円でした。",
+      "customers": [
+        "貨物を預ける荷主企業",
+        "貨物の運送を委託する企業"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "logistics-warehouse",
+          "name": "倉庫業務",
+          "description": "貨物の保管、荷役作業、貸倉庫を行う業務です。保管・荷役業務の一部は東北丸八運輸株式会社に依頼しています。",
+          "customers": [
+            "貨物を預ける荷主企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "logistics-trucking",
+          "name": "運送業務",
+          "description": "東北丸八運輸株式会社が貨物自動車運送事業法に基づき、東北地区を拠点として貨物自動車運送を行う業務です。当社の保管貨物の一部の配送も請け負っています。",
+          "customers": [
+            "貨物の運送を委託する企業"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "不動産の造成・売買・仲介・賃貸及び管理とコンサルテーションを行う事業で、賃貸マンションやオフィスビル、商業ビルなどの賃貸も行っています。連結子会社の丸八クリエイト株式会社も同様の業務を行います。2025年11月期の外部顧客への売上高は670百万円でした。",
+      "customers": [
+        "賃貸マンション・オフィスビルの入居者",
+        "不動産の売買・仲介・管理を委託する顧客"
+      ],
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "real-estate-rental",
+          "name": "不動産賃貸",
+          "description": "賃貸マンション「プレノ清澄庭園」「グランデュオ西荻窪」「グランデュオ用賀」や春日部商業ビルなど、マンション、オフィスビル等の賃貸を行う業務です。",
+          "customers": [
+            "賃貸マンション・オフィスビルの入居者"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【主要な設備の状況】"
+        },
+        {
+          "id": "real-estate-services",
+          "name": "不動産の造成・売買・仲介・管理",
+          "description": "不動産の造成、売買、仲介及び管理とコンサルテーションを行う業務です。丸八クリエイト株式会社においても同様の業務を行っています。",
+          "customers": [
+            "不動産の売買・仲介・管理を委託する顧客"
+          ],
+          "sourceIds": [
+            "yuho-2025"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "荷主から貨物を預かり保管料や荷役料を得る物流事業を中核とし、賃貸マンションやオフィスビルなどの不動産賃貸でも収益を得る事業モデルです。",
+    "products": [
+      "貨物の保管・荷役（倉庫業務）",
+      "貸倉庫",
+      "貨物自動車運送（運送業務）",
+      "不動産の賃貸（マンション・オフィスビル等）",
+      "不動産の造成・売買・仲介・管理"
+    ],
+    "customers": [
+      "貨物を預ける荷主企業",
+      "貨物の運送を委託する企業",
+      "賃貸マンション・オフィスビルの入居者",
+      "不動産の売買・仲介・管理を委託する顧客"
+    ],
+    "revenueSources": [
+      "保管料・荷役料などの物流収入",
+      "運送収入",
+      "不動産賃貸料収入",
+      "不動産の売買・仲介による収入"
+    ],
+    "sourceIds": [
+      "yuho-2025"
+    ],
+    "locator": "【事業の内容】",
+    "flow": [
+      {
+        "kind": "company",
+        "title": "丸八倉庫",
+        "description": "1934年に創立し、東京証券取引所スタンダード市場に上場しています。当社と連結子会社２社でグループを構成し、2025年11月30日現在の連結の従業員数は102人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "倉庫・運送と不動産のサービス",
+        "description": "首都圏と仙台の営業所で貨物の保管・荷役と貸倉庫を提供し、連結子会社が東北地区で運送を担います。あわせて賃貸マンションやオフィスビルなどの不動産賃貸と、不動産の売買・仲介・管理を行います。"
+      },
+      {
+        "kind": "customer",
+        "title": "荷主と不動産の顧客",
+        "description": "物流では貨物を預ける荷主企業が、不動産では賃貸物件の入居者や不動産の売買・管理を委託する顧客が取引先です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "保管料と賃貸料",
+        "description": "2025年11月期の売上高は4,931百万円で、物流事業が4,260百万円、不動産事業が670百万円でした。保管料・荷役料や運送収入、不動産賃貸料などが収益源です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2025年11月期の親会社株主に帰属する当期純利益は311百万円でした。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2021年11月期",
@@ -27,7 +169,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10329727000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 108,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,12 +189,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 10636585000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 115,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「収益認識に関する会計基準」（企業会計基準第29号　2020年３月31日）等を第127期の期首から適用しており、第127期以降に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2023年11月期",
@@ -67,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 11096093000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 114,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,12 +230,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12145292000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 108,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2025"
-      ]
+      ],
+      "note": "「法人税、住民税及び事業税等に関する会計基準」（企業会計基準第27号　2022年10月28日。以下「2022年改正会計基準」という。）等を第130期の期首から適用しており、第129期に係る主要な経営指標等については、当該会計基準等を遡って適用した後の指標等となっております。なお、2022年改正会計基準については第20－３項ただし書きに定める経過的な取扱いを適用し、「税効果会計に係る会計基準の適用指針」（企業会計基準適用指針第28号　2022年10月28日）については第65－２項(2)ただし書きに定める経過的な取扱いを適用しております。この結果、第130期に係る主要な経営指標等については、当該会計基準等を適用した後の指標等となっております。"
     },
     {
       "fiscalYear": "2025年11月期",
@@ -107,7 +251,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 12842306000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 102,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +259,168 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1934,
+      "title": "丸八倉庫の創立",
+      "description": "丸八倉庫株式会社が創立しました。",
+      "significance": "現在の物流事業と不動産事業の源流となる会社がここから始まりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1938,
+      "title": "三菱倉庫から倉庫を買収し清澄営業所を開設",
+      "description": "三菱倉庫株式会社より同社所有の倉庫を買収し、清澄営業所を開設しました。",
+      "significance": "東京・江東区での倉庫事業の基盤が形づくられました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1939,
+      "title": "倉庫証券の発行許可を取得",
+      "description": "倉庫証券の発行許可を受けました。",
+      "significance": "倉庫業としての公的な基盤が整いました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1948,
+      "title": "高橋営業所で倉庫復興工事に着手",
+      "description": "東京都江東区の高橋営業所の戦災跡地に倉庫復興工事に着手しました。",
+      "significance": "戦後の復興とともに倉庫事業を立て直す歩みとなりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1963,
+      "title": "東京証券取引所市場第二部に上場",
+      "description": "東京証券取引所市場第二部に上場しました。",
+      "significance": "上場会社として資本市場に加わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1967,
+      "title": "自動車運送取扱事業の登録許可を取得",
+      "description": "自動車運送取扱事業の登録許可を受けました。",
+      "significance": "保管に加えて運送の取り扱いへ事業が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1981,
+      "title": "東北丸八運輸を設立",
+      "description": "宮城県仙台市若林区に東北丸八運輸株式会社を設立しました。",
+      "significance": "現在の連結子会社であり、東北地区の運送と保管・荷役を担う拠点となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1987,
+      "title": "宅地建物取引業の免許を取得",
+      "description": "宅地建物取引業免許を取得しました。",
+      "significance": "現在の不動産事業につながる許認可を得ました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "丸八興産を吸収合併",
+      "description": "丸八興産株式会社を吸収合併しました。",
+      "significance": "グループの事業基盤を集約しました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "丸八クリエイトを設立",
+      "description": "東京都江東区に丸八クリエイト株式会社を全額出資して設立しました。",
+      "significance": "現在の連結子会社であり、不動産事業を担う会社となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "春日部市で商業ビル賃貸事業を開始",
+      "description": "埼玉県春日部市で商業ビル賃貸事業を開始しました。",
+      "significance": "不動産賃貸の展開が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2018,
+      "title": "賃貸マンション「プレノ清澄庭園」が竣工",
+      "description": "賃貸マンション「プレノ清澄庭園」が竣工し、稼働しました。",
+      "significance": "自社保有の賃貸マンションによる不動産賃貸の基盤が加わりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場へ移行",
+      "description": "東京証券取引所市場第二部からスタンダード市場へ移行しました。",
+      "significance": "市場再編に伴い、現在の上場市場となりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2025,
+      "title": "賃貸マンション２棟を取得",
+      "description": "賃貸マンション「グランデュオ西荻窪」と「グランデュオ用賀」を取得しました。",
+      "significance": "東京23区内の賃貸マンションが加わり、不動産事業の収益基盤が広がりました。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "hochiki",
+      "relationship": "major-shareholder",
+      "description": "2025年11月30日現在、当社の発行済株式（自己株式を除く）の総数の2.62％を保有する大株主として開示されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "daiho",
+      "relationship": "major-shareholder",
+      "description": "2025年11月30日現在、当社の発行済株式（自己株式を除く）の総数の2.36％を保有する大株主として開示されています。",
+      "sourceIds": [
+        "yuho-2025"
+      ],
+      "locator": "【大株主の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2025",
@@ -124,13 +428,55 @@
       "publisher": "丸八倉庫株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100XN1B.pdf",
       "publishedAt": "2026-02-25",
-      "accessedAt": "2026-09-30"
+      "docId": "S100XN1B",
+      "asOf": "2025-11-30",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2022年１月に、2026年11月期を最終年度とする５ヶ年の新中期経営計画を策定し、安定的かつ持続的成長に向けて施策を実行しています。永年蓄積してきた3PLのノウハウを駆使して個々のお客さまのニーズに応えることを強みとし、お客さまの物品を保管するのみならず、物流に関する課題解決に向けて『物流コンシェルジュ』的な役割を担い、ソリューション提案を引き続き実行するとしています。経営理念として「お客さまに完全な業務を提供する」「社業の発展を通じて市民生活の向上に貢献する」「人間尊重の経営に徹する」を掲げ、お客さまに選ばれる物流カンパニーを目指すとしています。",
+        "asOf": "2026-02-25",
+        "sourceIds": [
+          "yuho-2025"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "2025年11月期の売上高の内訳は、物流事業が4,260百万円と全体の約86％を占め、不動産事業が670百万円でした。物流事業では埼玉県所沢市の新規倉庫と千葉県八街市の新規文書保管センターが稼働し、不動産事業では2025年に取得した東京23区内の賃貸マンション２棟が安定稼働するなど、両事業で収益基盤の増強が進んでいます。",
+        "basis": "報告セグメントごとの外部顧客への売上高と、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析におけるセグメント別の施策の記載に基づく",
+        "asOf": "2026-02-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "首都圏の営業所と仙台営業所による倉庫拠点を長年運営し、保管・荷役から連結子会社による東北地区の運送までをグループで担える体制を持つため、荷主の物流課題に一貫して対応できます。",
+        "basis": "事業の内容、主要な設備の状況及び関係会社の状況の記載に基づく",
+        "asOf": "2026-02-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "物流業界では保管残高が前年を上回る水準で推移する傾向がみられる一方、人手不足や諸物価の高騰によるコスト上昇と競争の激化が続いているとされています。そのなかで当社は東京証券取引所スタンダード市場に上場し、物流と不動産の２事業を営んでいます。",
+        "basis": "経営方針、経営環境及び対処すべき課題等における経営環境の記載に基づく",
+        "asOf": "2026-02-25",
+        "sourceIds": [
+          "yuho-2025"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2025年11月期",
     "asOf": "2025-11-30",

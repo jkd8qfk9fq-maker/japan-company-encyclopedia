@@ -4,15 +4,121 @@
   "name": "大田花き",
   "officialName": "株式会社大田花き",
   "nameEn": "Ota Floriculture Auction Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "Ota Floriculture Auction Co.,Ltd.",
+  "description": "東京都中央卸売市場大田市場で花きの卸売を行う、日本最大の花き卸売会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "trading",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "floriculture-wholesale",
+      "name": "花き卸売事業",
+      "description": "卸売市場法に基づき、東京都中央卸売市場大田市場において花きの卸売を行う単一セグメントです。2026年3月期の売上高は3,661百万円です。グループは連結子会社2社（株式会社九州大田花き、株式会社大田ウィングス）と持分法適用関連会社3社などで構成され、九州・東北での花き卸売・問屋業や、大田市場内での倉庫の賃貸も行っています。",
+      "customers": [
+        "生花店などの買参人",
+        "花き小売業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "consignment",
+          "name": "受託品",
+          "description": "生産者から販売を受託した花きを、セリや相対取引で買参人に販売する区分です。2026年3月期の販売実績は2,545百万円です。",
+          "customers": [
+            "生花店などの買参人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "purchased",
+          "name": "買付品",
+          "description": "買い付けて在庫として販売する花きの区分です。2026年3月期の販売実績は661百万円です。",
+          "customers": [
+            "生花店などの買参人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        },
+        {
+          "id": "other-sales",
+          "name": "その他",
+          "description": "受託品・買付品以外の販売の区分です。2026年3月期の販売実績は454百万円です。",
+          "customers": [
+            "生花店などの買参人",
+            "花き小売業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "生産者から集荷した花きを大田市場でセリや相対取引により買参人へ販売し、販売代金などで収益を得る事業モデルです。",
+    "products": [
+      "切花",
+      "鉢物",
+      "洋らん",
+      "種苗"
+    ],
+    "customers": [
+      "生花店などの買参人",
+      "花き小売業者"
+    ],
+    "revenueSources": [
+      "花きの販売代金（受託品・買付品）",
+      "倉庫の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "大田花き",
+        "description": "東京都大田区に本社を置く連結会社で、連結子会社2社と持分法適用関連会社3社を持ちます。2026年3月期の従業員数は186人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "大田市場での花き卸売",
+        "description": "東京都中央卸売市場大田市場において、切花や鉢物をセリ下げ方式のセリや相対取引で取り扱う花き卸売業を営んでいます。"
+      },
+      {
+        "kind": "customer",
+        "title": "生花店などの買参人",
+        "description": "生産者から集荷した花きを、生花店などの買参人へ販売します。売上高の10％以上を占める顧客はいません。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は3,661百万円",
+        "description": "2026年3月期の売上高は3,661百万円で、前期比5.1％減となりました。受託品が2,545百万円、買付品が661百万円、その他が454百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の親会社株主に帰属する当期純利益は82百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は82百万円で、前期比62.9％減となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +133,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4689000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 189,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +153,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 4934000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 189,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +173,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5040000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 184,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +193,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5201000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 186,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,15 +213,197 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5222000000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 186,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
         "yuho-2026"
-      ]
+      ],
+      "note": "第38期より主要な経営指標等の金額の表示単位を千円単位から百万円単位に変更しており、第34期から第37期の数値についても百万円単位で表示しています。そのため、千円単位で記載された前期の有価証券報告書の数値とは表示が異なります。"
     }
   ],
-  "history": [],
+  "history": [
+    {
+      "year": 1989,
+      "title": "株式会社大田花きを設立",
+      "description": "東京都中央卸売市場大田市場花き部へ入場するため、株式会社大田花きを設立しました。",
+      "significance": "当社の創業です。実質上の存続会社は1989年設立の同社であり、事業年度の期数も同社のものを継承しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1990,
+      "title": "大田市場で花きの卸売業務を開始",
+      "description": "大田市場花き部の開場にあわせ、日本初のセリ下げ方式によるセリ機械、鮮度保持流通のための定温倉庫、自動搬送設備を設置し、花きの卸売業務を開始しました。",
+      "significance": "現在の事業の基盤ができた出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1996,
+      "title": "形式上の存続会社と合併",
+      "description": "株式の額面金額を変更するため、形式上の存続会社である株式会社ケイ・エヌ・エス（商号を株式会社大田花きに変更）と合併し、同社の事業を全面的に継承しました。",
+      "significance": "現在の法人格の成り立ちを示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1997,
+      "title": "日本証券業協会に株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1999,
+      "title": "自動物流センターが完成",
+      "description": "自動物流センターが完成し、操業を開始しました。",
+      "significance": "物流機能の強化を示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "花き施設整備有限会社を設立",
+      "description": "株式会社フラワーオークションジャパンとともに花き施設整備有限会社を設立しました。",
+      "significance": "現在の持分法適用関連会社です。大田市場内の業者向けに倉庫を賃貸しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "日本証券業協会への店頭登録を取り消し、ジャスダック証券取引所に株式を上場しました。",
+      "significance": "上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "株式会社とうほくフラワーサポートを設立",
+      "description": "株式会社石巻花卉園芸等とともに株式会社とうほくフラワーサポートを設立しました。",
+      "significance": "現在の持分法適用関連会社です。東北地方での花き・関連資材の卸売・問屋業を担います。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "株式会社ディーオーシーの株式を取得",
+      "description": "株式会社ディーオーシーの株式を100％取得し、子会社としました。",
+      "significance": "現在の持分法適用関連会社（所有割合38.9％）です。種苗販売や花き小売を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "株式会社大田花き花の生活研究所を設立",
+      "description": "花き業界初のシンクタンクとして、株式会社大田花き花の生活研究所を設立しました。",
+      "significance": "現在の非連結子会社です。花きに関する研究や情報サービスの提供を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "MPS-GPAを取得",
+      "description": "日本の花き卸売市場としては初めて、世界でも2番目に、MPS-GPA（花き市場工程管理認証プログラム）を取得しました。",
+      "significance": "市場の工程管理に関する認証の取得です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "株式会社九州大田花きを設立",
+      "description": "株式会社九州大田花きを設立しました。",
+      "significance": "現在の連結子会社です。九州地方で花き類の卸売・問屋業を営んでいます。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "大阪証券取引所JASDAQに上場",
+      "description": "ジャスダック証券取引所と大阪証券取引所の合併に伴い、大阪証券取引所JASDAQに上場しました。",
+      "significance": "取引所の合併に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "東京証券取引所と大阪証券取引所の統合に伴い、東京証券取引所JASDAQ（スタンダード）に上場しました。",
+      "significance": "取引所の統合に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "株式会社大田ウィングスを設立",
+      "description": "株式会社大田ウィングスを設立しました。",
+      "significance": "現在の連結子会社です。大田市場の業者向けに花き類を保管する倉庫を賃貸しています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "OTA花ステーションが完成",
+      "description": "株式会社大田ウィングスで、保冷機能を備えた物流施設「OTA花ステーション」が完成しました。",
+      "significance": "鮮度保持のための物流基盤の整備です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の上場市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "株式会社東日本板橋花きを子会社化",
+      "description": "株式会社東日本板橋花きの株式を100％取得し、子会社としました。",
+      "significance": "2026年3月期の期末後の出来事であり、期末時点のグループ構成には含まれていません。首都圏の販売ネットワークの強化を目的としています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
@@ -124,13 +412,58 @@
       "publisher": "株式会社大田花き",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YLK4.pdf",
       "publishedAt": "2026-06-26",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YLK4",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-14"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 重要な後発事象として、2026年３月27日開催の取締役会において株式会社東日本板橋花きの全株式を取得して子会社化することを決議し、同日付で株式譲渡契約を締結し、2026年４月１日付で全株式を取得した旨が記載されています。株式の取得は当連結会計年度末（2026年３月31日）後の事象であるため、本登録は2026年３月期の構造で登録しています。"
+    ]
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "2026年4月に子会社化した株式会社東日本板橋花きをグループ戦略上の重要な花き卸売市場と位置付け、首都圏需要をよりきめ細かく捉える体制を構築するとともに、サプライチェーン全体の最適化を推進してシナジーの最大化を図るとしています。戦略テーマとして、日本最大規模の花き取引所ビジネスの確立、鮮度保持機能の強化と効率的・合理的物流の実現、サプライチェーン全体を通じた相乗効果ビジネスの創出を掲げています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "大田市場での卸売を中核に、九州と東北の関連会社による地方の卸売・問屋業と、大田市場内の倉庫賃貸が補完する構成になっています。",
+        "basis": "【事業の内容】および【関係会社の状況】に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "日本初のセリ下げ方式によるセリ機械、鮮度保持のための定温倉庫や自動搬送設備を備えた大田市場で卸売を行い、花保ちの比較試験を行う試験室や卸売市場総合情報システムを持つ点が特徴です。",
+        "basis": "【沿革】に基づく",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "disclosed": {
+        "text": "花き業界では、国内生産者の高齢化や後継者不足の進行に加え、気候変動に起因する異常気象の影響により生産の不安定化が進み、エネルギー価格や資材価格の高騰、物流の問題など、生産・物流・販売を取り巻く課題が重なっているとしています。",
+        "asOf": "2026-06-26",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",

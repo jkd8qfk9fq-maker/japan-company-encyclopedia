@@ -4,15 +4,178 @@
   "name": "夢みつけ隊",
   "officialName": "夢みつけ隊株式会社",
   "nameEn": "YUMEMITSUKETAI Co.,Ltd.",
-  "description": null,
+  "shortNameEn": "YUMEMITSUKETAI Co., Ltd.",
+  "description": "中高年男性を中心とするカタログ通販を主力に、不動産の販売・賃貸と通所介護サービスを営む会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "retail",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate"
+    }
+  ],
+  "businesses": [
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "販売用不動産の売却と賃貸を行う事業です。大阪府に2物件、山梨県に1物件の計3物件の販売用不動産を所有しており、そのうち1物件では売却時までの収益確保を目的に賃貸を行っています。2026年3月期の外部顧客への売上高は159百万円で、販売用不動産の売却により売上高全体の中で最大の事業となりました。",
+      "customers": [
+        "不動産の購入者",
+        "不動産の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "property-sales",
+          "name": "販売用不動産の売却",
+          "description": "所有する販売用不動産の売却を行っています。金額は独立して開示されていません。",
+          "customers": [
+            "不動産の購入者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "property-leasing",
+          "name": "不動産の賃貸",
+          "description": "所有する販売用不動産のうち1物件について、売却時までの収益確保を目的に賃貸を行っています。金額は独立して開示されていません。",
+          "customers": [
+            "不動産の賃借人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "mail-order-retail",
+      "name": "通販小売事業",
+      "description": "中高年男性を中心ターゲットとした通信販売の事業です。カタログ通信販売のほか、健康食品や消耗品などのリピート品を継続する頒布販売、外部のインターネットショッピングモールへの出店によるインターネット通信販売を行い、顧客獲得や顧客管理のノウハウによる他企業への役務の提供も行っています。2026年3月期の外部顧客への売上高は130百万円です。",
+      "customers": [
+        "中高年男性を中心とする個人の顧客",
+        "役務の提供を受ける企業"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "catalog-mail-order",
+          "name": "カタログ通信販売",
+          "description": "自社発行のカタログによる通信販売です。中高年男性を中心ターゲットとし、光学機器、健康機器、アウトドア用品など独自性の高い商品を取り扱っています。金額は独立して開示されていません。",
+          "customers": [
+            "中高年男性を中心とする個人の顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "subscription-and-internet-sales",
+          "name": "頒布販売・インターネット通信販売",
+          "description": "健康食品や消耗品などのリピート品を継続する頒布販売と、外部のインターネットショッピングモールへの出店によるインターネット通信販売です。金額は独立して開示されていません。",
+          "customers": [
+            "個人の顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "services-and-call-center",
+          "name": "役務の提供・コールセンター業務",
+          "description": "顧客獲得や顧客管理のノウハウによる他企業への役務の提供と、受注・問い合わせに対応するコールセンター業務です。金額は独立して開示されていません。",
+          "customers": [
+            "役務の提供を受ける企業",
+            "個人の顧客"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "care",
+      "name": "介護事業",
+      "description": "連結子会社のライフステージ株式会社が、千葉県八千代市で通所介護（デイサービス）施設「八千代フィットネスデイサービス」を運営する事業です。利用者が自立した日常生活を営むことと、家族の介護負担の軽減を目標に、心身の特性と能力に応じた通所介護サービスを提供しています。2026年3月期の外部顧客への売上高は59百万円です。",
+      "customers": [
+        "通所介護サービスの利用者とその家族"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "カタログ通販で独自性の高い商品を販売し、不動産の売却・賃貸と、子会社による通所介護サービスも行う事業モデルです。",
+    "products": [
+      "カタログ通信販売による光学機器・健康機器・アウトドア用品などの商品",
+      "健康食品や消耗品などの頒布販売・インターネット通信販売",
+      "販売用不動産の売却・賃貸",
+      "通所介護（デイサービス）サービス"
+    ],
+    "customers": [
+      "中高年男性を中心とする個人の顧客",
+      "不動産の購入者・賃借人",
+      "通所介護サービスの利用者"
+    ],
+    "revenueSources": [
+      "通信販売による商品の販売代金",
+      "不動産の売却代金と賃貸料",
+      "通所介護サービスの対価"
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】",
+    "flow": [
+      {
+        "kind": "company",
+        "title": "夢みつけ隊株式会社",
+        "description": "東京都千代田区に本社を置く会社で、連結子会社1社と持分法適用関連会社1社を持ち、2026年3月31日現在の連結従業員数は7人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "通販・不動産・介護の3事業",
+        "description": "通販小売事業、不動産事業、介護事業の3つを報告セグメントとしています。"
+      },
+      {
+        "kind": "customer",
+        "title": "中高年男性の個人顧客など",
+        "description": "通販小売事業は中高年男性を中心とする個人、不動産事業は不動産の購入者や賃借人、介護事業は通所介護サービスの利用者を顧客としています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は349百万円",
+        "description": "2026年3月期の売上高は349百万円です。不動産事業が159百万円、通販小売事業が130百万円、介護事業が59百万円で、売上高は前期から39.3％増えました。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の当期純利益は154百万円",
+        "description": "2026年3月期の親会社株主に帰属する当期純利益は154百万円で、前期から71.2％増えました。"
+      }
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -27,7 +190,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2198812000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 13,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -47,7 +210,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2088417000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 12,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -67,7 +230,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2474101000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 11,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -87,7 +250,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2425332000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 10,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -107,7 +270,7 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 2894590000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 7,
       "currency": "JPY",
       "accountingStandard": "jgaap",
       "sourceIds": [
@@ -115,8 +278,149 @@
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 1980,
+      "title": "株式会社コスミックを設立",
+      "description": "独自性に富んだ高付加価値商品の通信販売を目的として、東京都台東区に株式会社コスミックを設立しました。",
+      "significance": "現在の夢みつけ隊の創業です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1993,
+      "title": "決算期を3月に変更",
+      "description": "決算期を9月から3月に変更しました。",
+      "significance": "現在の3月決算の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 1994,
+      "title": "商号を株式会社夢みつけ隊に変更",
+      "description": "会社の商号を株式会社夢みつけ隊に変更しました。",
+      "significance": "現在の社名の由来です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2000,
+      "title": "株式を店頭登録",
+      "description": "日本証券業協会に株式を店頭登録しました。",
+      "significance": "株式公開の第一歩です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2002,
+      "title": "コールセンター子会社を設立",
+      "description": "沖縄県那覇市に有限会社アネシスコールセンター（現・株式会社ホット・コミュニケーション）を設立し、受注業務の委託を開始しました。",
+      "significance": "コールセンター機能の基盤です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2004,
+      "title": "ジャスダック証券取引所に上場",
+      "description": "商号をSTEILAR C.K.M株式会社に変更し、日本証券業協会への店頭登録を取り消してジャスダック証券取引所に株式を上場しました。",
+      "significance": "取引所への上場です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2006,
+      "title": "介護事業のライフステージを子会社化",
+      "description": "子会社を通じて、デイサービス（通所介護）を行うライフステージ有限会社（現・ライフステージ株式会社）の株式を取得し、子会社化しました。",
+      "significance": "介護事業への進出です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2007,
+      "title": "連結子会社2社を吸収合併",
+      "description": "株式会社クリスタルアースと有限会社アストロ（STEILAR C.K.M株式会社への商号変更を経た会社）を吸収合併しました。",
+      "significance": "グループ再編です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2011,
+      "title": "商号を夢みつけ隊株式会社に変更",
+      "description": "会社の商号を夢みつけ隊株式会社に変更しました。",
+      "significance": "現在の正式社名になりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "東京証券取引所JASDAQ（スタンダード）に上場",
+      "description": "東京証券取引所と大阪証券取引所の統合に伴い、東京証券取引所JASDAQ（スタンダード）に上場しました。",
+      "significance": "東証への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "本社を千代田区へ移転",
+      "description": "東京都千代田区神田東松下町に本社を移転しました。",
+      "significance": "現在の本社所在地です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "東京証券取引所スタンダード市場に移行",
+      "description": "東京証券取引所の市場区分の見直しにより、JASDAQ（スタンダード）からスタンダード市場に移行しました。",
+      "significance": "現在の市場区分です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "連結子会社ホット・コミュニケーションの全株式を売却",
+      "description": "連結子会社である株式会社ホット・コミュニケーションの全保有株式を売却し、連結の範囲から除外しました。",
+      "significance": "コールセンター子会社のグループ離脱です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "giken-holdings",
+      "relationship": "affiliate",
+      "description": "関係会社の状況で持分法適用関連会社とされる会社です。土木・建設、型枠貸与事業を営んでおり、2026年3月31日現在の議決権の所有割合は22.3％です。役員の兼任があります。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【関係会社の状況】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -124,13 +428,47 @@
       "publisher": "夢みつけ隊株式会社",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YE9G.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-30"
+      "docId": "S100YE9G",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "published"
   },
-  "updatedAt": "2026-09-30",
+  "updatedAt": "2026-11-16",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "設立以来、中高年男性をターゲットにした「付加価値訴求型通販」を展開し、「新しさ」「夢」「面白さ」などを基本コンセプトとする「ウォンツ商品」で日本一のウォンツ創造企業を目指すとしています。商品戦略ではウォンツ商品の開発強化とブランド化、顧客戦略では中高年男性層の拡大に加えて女性市場も視野に入れた新しい顧客の拡大に注力するとしています。不動産事業では賃貸収入の増加と販売用不動産の売却の検討、通所介護事業では利用者数の増加と業務の効率化を課題としています。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "カタログを眺めて欲しいものを見つける楽しさを訴求する品揃えと、電話を通じた顧客対応を行うコールセンター機能が、通信販売の強みとして読み取れます。",
+        "basis": "事業の内容、経営方針、経営環境及び対処すべき課題等に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "2026年3月期は、販売用不動産の売却により不動産事業が最大のセグメントとなりました。主要な顧客として、通販小売事業と不動産事業の相手先である株式会社ピコイと、不動産事業の相手先であるフリージアソリューション株式会社が開示されています。",
+        "basis": "セグメント情報等、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析に基づく",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
