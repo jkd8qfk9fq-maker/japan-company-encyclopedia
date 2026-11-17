@@ -1050,6 +1050,37 @@ switched on.
 - `tests/refresh-workflow.test.ts` pins that the only `gh pr merge` is in the step guarded by the variable and the
   gate's verdict, and that nothing pushes to main or approves.
 
+### JCE-059 · 2026-11-17 · Accepted (operator) — Notifications for followed companies (Web Push), the one thing kept on a server
+
+JCE-052 kept every engagement feature in the browser and left push notifications for a separate decision, because a
+closed browser cannot be reached without a subscription stored on a server. The operator decided it (implementation
+prompt P1-1, 2026-11-17): Web Push, not e-mail — no address to hold, in keeping with "no login, data in the browser".
+
+- **Opt-in, per company.** Under 「フォロー」 on a company page, 「決算・更新の通知を受け取る」 appears while the company
+  is followed; お知らせ switches it for every followed company or stops it all. Unfollowing stops that company's
+  notifications. The list of companies stays in the browser (`push-companies`) as before; only a reader who switches
+  notifications on sends it, with the push address and keys their browser made.
+- **What is stored, and nothing else** (D1 `kigyo-push`, `migrations/0001_push.sql`): the push endpoint, its two keys,
+  the company ids, and the date the browser last sent its list. No IP address, user agent, name or e-mail. Removed on
+  「通知をすべて止める」, when the list empties, when the push service answers 404/410, and after 180 days without use.
+- **What is sent**: "〇〇の新しい決算データが公開されました" (有報・半期報告書・決算短信) or "〇〇の掲載内容が更新されました"
+  (a correction) and the company's page — a fact, never advice. Encrypted for the browser (RFC 8291) and signed with
+  the site's VAPID key (RFC 8292), implemented on WebCrypto in `worker/push/` and checked byte for byte against
+  RFC 8291's worked example. The VAPID subject is the site's contact page, so no person's e-mail reaches a push service.
+- **When**: a scheduled run every 30 minutes reads `/updates.json` — what the LIVE site lists — and announces each event
+  once (`push_seen`); the first run only records what is already there. A notification therefore never points at a page
+  that has not changed yet, whether the update came from a merged pull request or anything else. Pushes per run are
+  capped (`PUSH_SENDS_PER_RUN`, default 40) and the rest go out in the next run.
+- **Limits are a setting**: `PUSH_MAX_COMPANIES` (unset = no limit, the initial setting; a hard ceiling of 2,000 bounds
+  one request). The free/premium split can be set later without a code change.
+- **Safety**: subscriptions only from this site's pages (Origin), JSON only, 64 KB at most, rate-limited per IP; only the
+  browsers' push services are accepted as endpoints, so the worker can never be pointed at another address; a
+  notification opens only this site's pages.
+- **iOS**: Safari delivers web notifications only to a site added to the home screen; elsewhere on iPhone and iPad the
+  page explains that instead of offering a button that cannot work.
+- **Off until configured**: the VAPID key pair is set as Worker secrets (`VAPID_PUBLIC_KEY`, `VAPID_PRIVATE_KEY`), never
+  in the repository. Without them `/api/push/key` answers `available: false` and the pages offer nothing.
+
 ### JCE-060 · 2026-11-17 · Accepted (operator) — 財務で探す: screening on printed figures, in the browser
 
 The operator's implementation plan (P1-2, 2026-11-17) asked for a simple financial screening. It lives at

@@ -12,6 +12,7 @@ import { segmentTone, structureBranches } from "./business-structure";
 import { FavoriteButton } from "./favorite-button";
 import { KeyFacts } from "./key-facts";
 import { ShareActions } from "./share-actions";
+import { PushCompanyToggle } from "@/components/engagement/push-controls";
 
 const EXCHANGE_NAME: Record<Company["listings"][number]["exchange"], string> = {
   tse: "東証",
@@ -140,6 +141,7 @@ export function CompanyHero({
             </a>
           )}
           <FavoriteButton companyId={company.id} companyName={company.name} />
+          <PushCompanyToggle companyId={company.id} companyName={company.name} />
           <Link
             href={`/compare?ids=${company.id}`}
             className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border px-4 text-sm transition-colors hover:border-foreground"

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { NotificationsList } from "@/components/engagement/notifications-list";
+import { PushAllToggle } from "@/components/engagement/push-controls";
 
 export const metadata: Metadata = {
   title: "お知らせ",
@@ -15,6 +16,9 @@ export default function NotificationsPage() {
       <h1 className="mt-3 font-serif text-[2rem] font-semibold">お知らせ</h1>
       <p className="prose-ja mt-3 text-muted-foreground">フォローした会社が新しい決算を出すと、ここに並びます。</p>
       <div className="mt-10">
+        <div className="mb-8">
+          <PushAllToggle />
+        </div>
         <NotificationsList />
       </div>
     </div>

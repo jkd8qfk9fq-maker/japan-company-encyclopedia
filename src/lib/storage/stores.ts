@@ -55,7 +55,20 @@ export function toggleFavorite(companyId: string): boolean {
     ? current.filter((id) => id !== companyId)
     : [companyId, ...current];
   favoritesStore.set(next);
+  // Unfollowing also stops that company's notifications (JCE-059): one is a subset of the other.
+  if (!next.includes(companyId) && pushCompaniesStore.get().includes(companyId)) {
+    pushCompaniesStore.set(pushCompaniesStore.get().filter((id) => id !== companyId));
+  }
   return next.includes(companyId);
+}
+
+// JCE-059: which followed companies this browser receives notifications for. The list itself stays here; when
+// notifications are on, the same ids are sent to the site's push service so it knows whom to notify.
+export const pushCompaniesStore = createStore<string[]>(STORAGE_KEYS.pushCompanies, [], parseIdList);
+
+export function setPushForCompany(companyId: string, on: boolean): void {
+  const current = pushCompaniesStore.get().filter((id) => id !== companyId);
+  pushCompaniesStore.set(on ? [companyId, ...current] : current);
 }
 
 // ---------------------------------------------------------------------------

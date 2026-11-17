@@ -15,5 +15,16 @@
     "binding": "ASSETS",
     "not_found_handling": "404-page",
     "run_worker_first": ["/*", "!/_next/*"]
-  }
+  },
+  // Notifications for followed companies (JCE-059). The subscriptions (anonymous: push address, its keys, company ids)
+  // live in D1; migrations/0001_push.sql. The VAPID key pair is set as Worker secrets (VAPID_PUBLIC_KEY,
+  // VAPID_PRIVATE_KEY), never here; without them the feature reports itself off and the page offers nothing.
+  "d1_databases": [
+    { "binding": "PUSH_DB", "database_name": "kigyo-push", "database_id": "9790ec13-5ba6-417c-9c8e-d7d293953af1", "migrations_dir": "migrations" }
+  ],
+  // Every 30 minutes: announce what /updates.json newly lists (worker/index.ts › scheduled).
+  "triggers": { "crons": ["*/30 * * * *"] },
+  "ratelimits": [
+    { "name": "PUSH_LIMIT", "namespace_id": "3001", "simple": { "limit": 20, "period": 60 } }
+  ]
 }
