@@ -226,3 +226,14 @@ function parseSavedScreenings(value: unknown): SavedScreening[] | null {
 }
 
 export const savedScreeningsStore = createStore<SavedScreening[]>(STORAGE_KEYS.screeningSaved, [], parseSavedScreenings);
+
+// ---------------------------------------------------------------------------
+// JCE-065: the link this browser mailed to move its lists, until it is used or expires.
+
+export type SyncPending = { cancelKey: string; expiresAt: number };
+
+export const syncPendingStore = createStore<SyncPending | null>(STORAGE_KEYS.syncPending, null, (value) => {
+  if (!value || typeof value !== "object") return null;
+  const v = value as Partial<SyncPending>;
+  return typeof v.cancelKey === "string" && typeof v.expiresAt === "number" ? { cancelKey: v.cancelKey, expiresAt: v.expiresAt } : null;
+});

@@ -1161,3 +1161,26 @@ to add a 7-day trial; the 企業タイプ診断 site sells it (its CTS-044).
 - **Trial wording**: `PLAN_TRIAL_DAYS` in `src/lib/plan.ts` says what the plan's Checkout gives; the premium gate's
   button reads 「7日間無料で試す（その後 月額390円）」 and says cancelling within the trial costs nothing. The number
   follows the 企業タイプ診断 site's, which owns the Checkout.
+
+### JCE-065 · 2026-11-17 · Accepted (operator) — Moving a reader's lists to another device by an e-mailed link (P2-4)
+
+The operator's implementation plan (P2-4, 2026-11-17) asked for moving browser-only data between devices without
+accounts. The operator chose (2026-11-17) the encyclopedia's own lists only; the 企業タイプ診断's answers and results
+are not moved (its invariant 6).
+
+- **What moves**: follows, recently viewed, followed industries, saved screening conditions (`src/lib/sync-data.ts`,
+  shared by the page and the Worker). Not the purchase code (its own e-mail recovery exists), not notification
+  subscriptions (each belongs to one browser; the new device switches them on itself), not activity counts.
+- **How**: 設定 → 「別の端末で引き継ぐ」 posts the lists and an address to `/api/sync/start`. The Worker stores the
+  lists in D1 (`sync_transfers`, migration 0002) under the SHA-256 of a random one-time token, mails
+  `https://kigyo-hyakka.com/sync/#t=<token>` through Resend, and keeps nothing else — no address, IP or user agent.
+  The token is in the fragment, which browsers never send; `/sync` removes it from the address at once.
+- **Limits**: 30 minutes, read once (`DELETE … RETURNING`), withdrawn by the sending browser (a second random key it
+  keeps), replaced by its next link, pruned by the half-hourly schedule; `SYNC_LIMIT` 6 requests a minute per IP.
+- **Merging, never overwriting**: the receiving page shows what would be added and writes only after 「この端末に取り込む」;
+  lists are united, nothing on the receiving device is dropped.
+- **Identifiers and notifications**: the transfer's keys are random and short-lived and are never tied to a push
+  subscription (whose id is the hash of its own endpoint); nothing links either to a person.
+- **Operator**: apply migration 0002 to the production database; `RESEND_API_KEY` is already a Worker secret, and
+  the sender `sync@kigyo-hyakka.com` uses the domain Resend already sends from. Without a key the feature reports
+  itself off.

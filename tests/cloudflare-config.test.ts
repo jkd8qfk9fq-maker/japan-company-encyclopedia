@@ -34,7 +34,11 @@ describe("wrangler.jsonc", () => {
     // VAPID keys are Worker secrets, never here.
     expect(wrangler.d1_databases).toEqual([{ binding: "PUSH_DB", database_name: "kigyo-push", database_id: "9790ec13-5ba6-417c-9c8e-d7d293953af1", migrations_dir: "migrations" }]);
     expect(wrangler.triggers).toEqual({ crons: ["*/30 * * * *"] });
-    expect(wrangler.ratelimits).toEqual([{ name: "PUSH_LIMIT", namespace_id: "3001", simple: { limit: 20, period: 60 } }]);
+    expect(wrangler.ratelimits).toEqual([
+      { name: "PUSH_LIMIT", namespace_id: "3001", simple: { limit: 20, period: 60 } },
+      // JCE-065: moving a reader's lists to another device, in the same database.
+      { name: "SYNC_LIMIT", namespace_id: "3002", simple: { limit: 6, period: 60 } },
+    ]);
     expect(wrangler.vars).toBeUndefined();
   });
 });
