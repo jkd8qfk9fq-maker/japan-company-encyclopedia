@@ -52,4 +52,4 @@ export const OG_IMAGES = [{ url: `${BASE_PATH}/og/default.png`, width: 1200, hei
  * kigyo-hyakka.com sites through one cookie. Public by design (every page that loads the tag names it). Empty until
  * the operator creates the property: until then no banner shows and nothing changes.
  */
-export const GA_MEASUREMENT_ID: string = "";
+export const GA_MEASUREMENT_ID: string = "G-LK6W6HRM10";
