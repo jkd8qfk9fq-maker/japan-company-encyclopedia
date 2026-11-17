@@ -1010,17 +1010,20 @@ they record facts a reader should know (a tender offer, an event after the balan
 merger, a planned move, which basis a table follows). The operator chose (2026-11-17) to release those, with the notes
 shown, and to keep the rest unreleased until a person has looked.
 
-- **An explicit list, not a runtime rule**: `src/data/released-with-notes.json` (907 entries at the first release),
-  validated by `releasedWithNotesSchema` and read by `isReleased` (`src/lib/release.ts`). The entries keep their
+- **An explicit list, not a runtime rule**: `src/data/released-with-notes.json`,
+  validated by `releasedWithNotesSchema` and read by `isReleased` (`src/lib/release.ts`); 880 entries at the first
+  release. The entries keep their
   `needs-attention` state and notes, so the integrity rules for that state still hold; nothing is promoted silently.
 - **Who is on it**: notes that are facts only — none that says something could not be obtained, must be added or
-  checked, or does not match; no editors' working language (field names, evidence packs, instructions); no blank figure;
+  checked, or does not match; none that says the filing contradicts itself or leaves open whether something happened
+  (食い違い・整合しない・分からない); no editors' working language (field names, evidence packs, instructions); no blank figure;
   and the entry passes the published tier's checks (`releaseReadiness`) with no problem. `tests/release.test.ts` holds
   every listed entry to all of this, so a later edit that adds a doubt to a listed entry fails the build.
 - **The reader sees the notes**: 「この企業についての注記」 under the company header (`company-notes.tsx`), folded, with
   the editors' section names removed and each fact once, and a line saying the page reflects the filing's fiscal year.
-- **Still unreleased** (584): notes that something is to be added or confirmed or may be wrong (354), notes in the
-  editors' working language or otherwise unclassified (224), blank figures (6). They are released one by one as a
+- **Still unreleased** (611): notes that something is to be added or confirmed or may be wrong (354), notes in the
+  editors' working language or otherwise unclassified (224), notes on a contradiction or an open question (27), blank
+  figures (6). They are released one by one as a
   person resolves them — promotion to `published`, or adding the id here once the notes are facts only.
 - Invariant 1 is unchanged: what the released pages say is sourced; what could not be verified is absent and, where it
   matters, the note says so.

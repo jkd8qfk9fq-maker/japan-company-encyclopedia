@@ -74,7 +74,9 @@ describe("release readiness", () => {
       for (const n of notes) {
         // Nothing missing or doubtful, and no editors' working language, on a public page.
         expect(n, id).not.toMatch(/取得できな|補う必要|確認が必要|確認する必要|人の確認|要確認|確認できな|undefined|見当たりません|不一致|一致しな|未確認|判断できな/);
-        expect(n, id).not.toMatch(/financialNotes|TAXONOMY|証拠パック|エントリー|リサーチログ|sourceId|書くこと|を確認すること|^[A-Za-z]+:/);
+        // Nor a filing that contradicts itself, or a question the filing leaves open (いずれ = "each", not a gap).
+        expect(n, id).not.toMatch(/食い違|整合し|分からな|わからな|特定でき|矛盾|齟齬|(?<!い)ずれ/);
+        expect(n, id).not.toMatch(/financialNotes|TAXONOMY|証拠パック|エントリー|リサーチログ|sourceId|書くこと|を確認すること|確認してほしい|してください|すること(。|$|\s)|^[A-Za-z]+:/);
       }
     }
   });
