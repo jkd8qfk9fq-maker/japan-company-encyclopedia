@@ -4,15 +4,179 @@
   "name": "アズパートナーズ",
   "officialName": "株式会社アズパートナーズ",
   "nameEn": "As Partners CO.,LTD.",
-  "description": null,
+  "shortNameEn": "As Partners CO.,LTD.",
+  "description": "介護付きホームなどの介護サービスと、シニア不動産の開発・再生を首都圏で展開する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "pharmaceuticals",
+      "primary": true
+    },
+    {
+      "industryId": "real-estate",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "senior",
+      "name": "シニア事業",
+      "description": "介護付きホーム（介護付有料老人ホーム）、デイサービス及びショートステイの運営を行う事業です。2026年3月期の外部顧客への売上高は15,462百万円で、2026年3月31日現在、首都圏を中心に介護付きホーム33事業所、デイサービス19事業所、ショートステイ4事業所の合計56事業所を展開しています。",
+      "customers": [
+        "要介護・要支援認定を受けた高齢者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "care-homes",
+          "name": "介護付きホーム事業",
+          "description": "特定施設入居者生活介護の指定を受けた有料老人ホーム33事業所の運営です。当社とベンダーで共同開発したIoT/ICTプラットフォーム「EGAO link」を全ての介護付きホームに導入しています。",
+          "customers": [
+            "要介護認定を受けた高齢者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "day-service",
+          "name": "デイサービス事業",
+          "description": "通所介護の指定を受けたデイサービスセンター19事業所の運営です。",
+          "customers": [
+            "要介護・要支援認定を受けた高齢者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "short-stay",
+          "name": "ショートステイ事業",
+          "description": "短期入所生活介護の指定を受けたショートステイ4事業所の運営です。",
+          "customers": [
+            "要介護・要支援認定を受けた高齢者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    },
+    {
+      "id": "real-estate",
+      "name": "不動産事業",
+      "description": "介護付きホーム等のシニア不動産の開発、老朽化した集合住宅等の再生、収益不動産の保有・賃貸を行う事業です。2026年3月期の外部顧客への売上高は8,198百万円です。",
+      "customers": [
+        "不動産事業者・投資家",
+        "賃貸マンション・事務所の賃借人"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【セグメント情報】",
+      "children": [
+        {
+          "id": "senior-development",
+          "name": "シニア開発事業",
+          "description": "当社が土地を仕入れ介護付きホーム等を開発し、不動産事業者や投資家等へ売却する事業です。他社が運営する介護付きホーム等の開発をアレンジする「他社事業サポート」型の開発も行っています。",
+          "customers": [
+            "不動産事業者・投資家（ヘルスケアリート等）"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "solution",
+          "name": "ソリューション事業",
+          "description": "老朽化した集合住宅等の不動産を取得し、既存入居者の移転交渉や建物解体を経て、主に不動産業者やエンドユーザー等に土地を売却する再生事業です。",
+          "customers": [
+            "不動産業者・エンドユーザー"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "income-property",
+          "name": "収益不動産事業",
+          "description": "賃貸マンションや事務所等の収益不動産を取得し、テナント・賃借人等へ賃貸する事業です。",
+          "customers": [
+            "賃貸マンション・事務所のテナント・賃借人"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ]
+    }
+  ],
+  "businessModel": {
+    "description": "介護付きホーム・デイサービス・ショートステイの運営による介護報酬と利用料に加え、介護付きホーム等の開発・売却や不動産賃貸で収益を得る事業モデルです。",
+    "products": [
+      "介護付きホーム（介護付有料老人ホーム）の運営",
+      "デイサービス（通所介護）の運営",
+      "ショートステイ（短期入所生活介護）の運営",
+      "介護付きホーム等のシニア不動産の開発・売却",
+      "老朽化した集合住宅等の不動産の再生",
+      "賃貸マンション・事務所等の賃貸"
+    ],
+    "customers": [
+      "要介護・要支援認定を受けた高齢者とその家族",
+      "不動産事業者・投資家",
+      "賃貸マンション・事務所のテナント・賃借人"
+    ],
+    "revenueSources": [
+      "介護報酬と利用料（家賃・管理費・水道光熱費・食費等）",
+      "介護付きホーム等の開発物件の売却代金",
+      "再生した不動産の売却代金",
+      "収益不動産の賃貸料"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "アズパートナーズ",
+        "description": "東京都千代田区に本社を置く会社です。子会社を持たない単独会社で、2026年3月31日現在の従業員数は985人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "介護サービスの運営とシニア不動産の開発・再生",
+        "description": "介護付きホーム33事業所、デイサービス19事業所、ショートステイ4事業所を首都圏中心に運営し、介護付きホーム等の開発・売却、老朽化した不動産の再生、収益不動産の賃貸を行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "要介護高齢者と不動産事業者・投資家",
+        "description": "介護サービスは要介護・要支援認定を受けた高齢者が利用し、開発した介護付きホーム等は不動産事業者や投資家に売却しています。"
+      },
+      {
+        "kind": "revenue",
+        "title": "2026年3月期の売上高は23,661百万円",
+        "description": "2026年3月期の売上高は23,661百万円で、前年同期比32.1％増となりました。シニア事業が15,462百万円、不動産事業が8,198百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "2026年3月期の当期純利益は1,184百万円",
+        "description": "2026年3月期の当期純利益は1,184百万円で、前年同期比23.8％増となりました。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年3月期",
@@ -22,16 +186,16 @@
       "profit": 297877000,
       "profitLabel": "経常利益",
       "netIncome": 484939000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 11814216000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 1683706000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 680,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -44,16 +208,16 @@
       "profit": 244465000,
       "profitLabel": "経常利益",
       "netIncome": 229712000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 14744742000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 1864938000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 721,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -66,16 +230,16 @@
       "profit": 865872000,
       "profitLabel": "経常利益",
       "netIncome": 563567000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 15952381000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 2380026000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 811,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -88,16 +252,16 @@
       "profit": 1350348000,
       "profitLabel": "経常利益",
       "netIncome": 956657000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 21407641000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 4162977000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 879,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
@@ -110,23 +274,143 @@
       "profit": 1616060000,
       "profitLabel": "経常利益",
       "netIncome": 1184715000,
-      "netIncomeLabel": "当期純利益又は当期純損失（△）",
+      "netIncomeLabel": "当期純利益",
       "totalAssets": 24361577000,
       "totalAssetsLabel": "総資産額",
       "netAssets": 5171648000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 985,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
         "yuho-2026"
       ]
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
+  "history": [
+    {
+      "year": 2004,
+      "title": "株式会社タカラレーベンの子会社として設立",
+      "description": "株式会社タカラレーベン（現MIRARTHホールディングス株式会社）の出資を受け、子会社として東京都千代田区内幸町に株式会社アズパートナーズを設立しました。",
+      "significance": "会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2005,
+      "title": "初の介護付きホーム「アズハイム横浜東寺尾」を開設",
+      "description": "神奈川県横浜市に介護付きホーム「アズハイム横浜東寺尾」（当社１棟目）を開設し、同一敷地内にデイサービスセンターを併設しました（当社１事業所目）。",
+      "significance": "シニア事業の出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2008,
+      "title": "介護付きホーム事業を譲り受け",
+      "description": "株式会社ハートフルより介護付きホーム事業を譲り受け、神奈川県横浜市に介護付きホーム「アズハイム横浜上大岡」を開設しました。",
+      "significance": "事業譲受による拡大の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "収益不動産事業を開始",
+      "description": "賃貸マンションや事務所等の収益不動産を取得し賃貸する収益不動産事業を開始しました。",
+      "significance": "不動産事業の柱の一つが加わりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2010,
+      "title": "株式会社こころケアプランを吸収合併",
+      "description": "株式会社こころケアプランを吸収合併し、埼玉県さいたま市に介護付きホーム「アズハイム南浦和」を開設しました。",
+      "significance": "合併による事業所拡大です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "ソリューション事業を本格的に開始",
+      "description": "入居者の移転交渉を含むソリューション事業（老朽化不動産の再生事業）を大田区池上１丁目案件から本格的に開始し、東京都練馬区に初のショートステイ・デイサービスセンター併設業態の「アズハイムテラス練馬」を開設しました。",
+      "significance": "不動産事業の再生事業とショートステイ業態が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "IoT/ICTプラットフォーム「EGAO link」の導入を開始",
+      "description": "当社とベンダーで共同開発したIoT/ICTプラットフォーム「EGAO link」を全ての介護付きホームへの導入を開始しました（2020年８月に全ホームへの導入を完了）。",
+      "significance": "介護DXの中核となる基盤が整いました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "初の自社開発物件「アズハイム三鷹」を開設",
+      "description": "東京都三鷹市に当社初の自社開発物件である介護付きホーム「アズハイム三鷹」を開設しました。",
+      "significance": "シニア開発事業の自社開発が具体化しました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "東京証券取引所スタンダード市場に上場",
+      "description": "2024年４月４日に東京証券取引所スタンダード市場に株式を上場しました。",
+      "significance": "上場企業としての出発点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "シニア事業所が56事業所となる",
+      "description": "神奈川県横浜市にデイサービスセンター「アズハイム青葉台デイサービスセンター」（当社19事業所目）を開設し、シニア事業所が56事業所となりました。",
+      "significance": "首都圏ドミナント展開の到達点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mirarth-holdings",
+      "relationship": "major-shareholder",
+      "description": "2004年11月に株式会社タカラレーベン（現MIRARTHホールディングス株式会社）の子会社として設立されました。出資割合は徐々に低下し、2026年3月31日現在では同社が発行済株式（自己株式を除く）の9.53％（342,000株）を保有する株主として大株主の状況に印字されています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【大株主の状況】"
+    },
+    {
+      "companyId": "aiphone",
+      "relationship": "business-partner",
+      "description": "当社が運営する全ての介護付きホームに導入しているIoT/ICTプラットフォーム「EGAO link」を、当社と共同開発した事業パートナーです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
   "sources": [
     {
       "id": "yuho-2026",
@@ -134,13 +418,51 @@
       "publisher": "株式会社アズパートナーズ",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100YIQV.pdf",
       "publishedAt": "2026-06-24",
-      "accessedAt": "2026-09-28"
+      "docId": "S100YIQV",
+      "asOf": "2026-03-31",
+      "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 2022年２月２日付で普通株式１株につき100株の割合で、2023年11月14日付で普通株式１株につき50株の割合で株式分割を実施したと経営指標等の注記に印字されています。本登録は分割後の株式数に基づく指標で登録しています。",
+      "businessStructure: 2022年２月２日付で普通株式１株につき100株の割合で、2023年11月14日付で普通株式１株につき50株の割合で株式分割を実施したと経営指標等の注記に印字されています。本登録は分割後の株式数に基づく指標で登録しています。"
+    ]
   },
-  "updatedAt": "2026-09-28",
+  "updatedAt": "2026-11-17",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「世代を超えた暮らし提案型企業」を使命とし、シニア事業ではIoT/ICTプラットフォーム「EGAO link」を事業の核として生産性向上と科学的介護を磨き介護DXを推進するとともに、介護付きホームの大規模化を進めます。不動産事業では老朽化した共同住宅等を価値ある不動産に再生する提案を継続し、シニア事業の運営ノウハウを活かしたシニア開発（自社運営と他社事業サポートの両面）を広げていきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "当社とベンダーで共同開発した「EGAO link」で見守り・ナースコール対応・介護記録をスマートフォンで処理し、創出された時間を入居者一人ひとりの個別ケアに充てていることが特徴です。開設２年以上の介護付きホームの期中平均稼働率は93.5％と高く、首都圏に56事業所を集中的に展開するドミナント戦略で入居者と人材の確保を図っています。",
+        "basis": "セグメント情報（報告セグメントごとの外部顧客への売上高）と事業の内容（事業所数とEGAO linkの説明）、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（稼働率の推移）に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "シニア事業が売上高の最大の事業で、2026年3月期の外部顧客への売上高は15,462百万円です。主要な顧客ごとの情報では、シニア事業の主要な顧客として東京都国民健康保険団体連合会が、不動産事業の主要な顧客としてニンジャ特定目的会社が印字されています。不動産事業の売上高は開発物件の売却状況によって変動しやすい構成です。",
+        "basis": "セグメント情報（報告セグメントごとの外部顧客への売上高）と関連情報（主要な顧客ごとの情報）、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析（セグメント別の業績）に基づきます。",
+        "asOf": "2026-06-24",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年3月期",
     "asOf": "2026-03-31",
