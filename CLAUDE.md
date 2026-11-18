@@ -95,6 +95,12 @@ npm run content:refresh-financials -- --all  # dry run: registered companies wit
 
 **Gate every commit on exit codes**, not on grepped output: `npx tsc --noEmit -p . && npx eslint src tests && npx vitest run && git commit …`. Two commits on 2026-09-14 went in broken because a command checked `grep`'s status instead, and one on 2026-09-21 for the same reason — `npm test | grep "Tests "` matches the summary line whether or not the run passed.
 
+**Pre-registration updates do not go to main on their own** (JCE-067). Bringing a `figures-only` entry up to a newer
+filing before its registration (financials, workforce, a new source) is committed together with that registration,
+never alone: a newer filing can leave a figure blank, a blank figure needs `needs-attention` (invariant 1), and only the
+registration merge sets it — registration itself refuses anything but `figures-only`. Committed alone, the entry fails
+`tests/data-integrity.test.ts` until it is registered, and every workflow gated on that suite stops with it.
+
 **Never restore a file with `git checkout` while uncommitted work is in flight.** The pattern "plant a wrong figure → confirm the checker rejects it → `git checkout` the file" silently reverted a company's newly backfilled fields to HEAD on 2026-09-21, and the broken entry was committed. Copy the file to the scratchpad first and restore from that copy.
 
 ---
