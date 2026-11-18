@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, ArrowRight, MapPin, ShieldCheck, TrendingUp, type LucideIcon } from "lucide-react";
 import { SourceList } from "@/components/sources/source-list";
 import { companyMetrics } from "@/lib/company-metrics";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
@@ -10,16 +10,16 @@ import type { Company, Perspective, Perspectives } from "@/types/company";
 import type { Industry } from "@/types/industry";
 import type { Source } from "@/types/source";
 
-const ITEMS: { key: keyof Perspectives; question: string; label: string }[] = [
-  { key: "strategy", question: "どうやって成長する？", label: "成長戦略" },
-  { key: "competitiveAdvantage", question: "なぜ勝てる？", label: "競争優位性" },
-  { key: "industryPosition", question: "業界の中での立ち位置", label: "業界内の位置づけ" },
+const ITEMS: { key: keyof Perspectives; question: string; label: string; icon: LucideIcon }[] = [
+  { key: "strategy", question: "どうやって成長する？", label: "成長戦略", icon: TrendingUp },
+  { key: "competitiveAdvantage", question: "なぜ勝てる？", label: "競争優位性", icon: ShieldCheck },
+  { key: "industryPosition", question: "業界の中での立ち位置", label: "業界内の位置づけ", icon: MapPin },
 ];
 
 /**
  * 戦略と強み (JCE-055): how the company grows and why it wins, rather than only what it announced. Two columns on a
  * wide screen — the company's words on the left, numbers and diagrams on the right — one column on a phone, numbers
- * first. The words are the company's own, whole sentences, the first shown and the rest one tap away; what the
+ * first, the three questions swiped through side by side (JCE-070). The words are the company's own, whole sentences, the first shown and the rest one tap away; what the
  * company says and what this encyclopedia infers stay apart and labelled (JCE-024). The numbers and the diagrams are
  * drawn from the entry's data and its industry's structure, so every company gets them without anyone writing them,
  * and each block names its source and the date it describes.
@@ -39,17 +39,37 @@ export async function PerspectivesSection({ company }: { company: Company }) {
     // `display: contents` on a phone so their children join the one flow and take the phone order.
     <div className="flex flex-col gap-6 lg:grid lg:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] lg:items-start lg:gap-x-12">
       <div className="contents lg:block lg:space-y-6">
-        <div className="order-2 space-y-6 lg:order-none">
-          {present.map(({ key, question, label }, index) => (
-            <PerspectiveCard
-              key={key}
-              number={index + 1}
-              question={question}
-              label={label}
-              perspective={perspectives[key] as Perspective}
-              sources={company.sources}
-            />
-          ))}
+        <div className="order-2 lg:order-none">
+          {/* On a phone the three questions sit side by side and are swiped through, so the section is read as three
+              answers rather than a long column of text; a wide screen stacks them as before. CSS only (scroll snap). */}
+          {present.length > 1 && (
+            <p className="mb-2 flex items-center gap-1.5 text-xs text-muted-foreground lg:hidden">
+              {present.map((i) => i.label).join("・")}
+              <span aria-hidden className="inline-flex items-center gap-0.5 border-l border-border pl-1.5">
+                横にスワイプ
+                <ArrowRight className="size-3" />
+              </span>
+            </p>
+          )}
+          <div
+            role="region"
+            aria-label={present.map((i) => i.label).join("・")}
+            tabIndex={0}
+            className="-mx-5 flex snap-x snap-mandatory items-start gap-3 overflow-x-auto scroll-px-5 px-5 pb-2 md:-mx-8 md:scroll-px-8 md:px-8 lg:mx-0 lg:block lg:space-y-6 lg:overflow-visible lg:px-0 lg:pb-0"
+          >
+            {present.map(({ key, question, label, icon }, index) => (
+              <PerspectiveCard
+                key={key}
+                number={index + 1}
+                total={present.length}
+                question={question}
+                label={label}
+                icon={icon}
+                perspective={perspectives[key] as Perspective}
+                sources={company.sources}
+              />
+            ))}
+          </div>
         </div>
         {industry && (
           <div className="order-4 lg:order-none">
@@ -186,24 +206,41 @@ function Statement({ text }: { text: string }) {
 
 function PerspectiveCard({
   number,
+  total,
   question,
   label,
+  icon: Icon,
   perspective,
   sources,
 }: {
   number: number;
+  total: number;
   question: string;
   label: string;
+  icon: LucideIcon;
   perspective: Perspective;
   sources: Source[];
 }) {
   const names = perspective.disclosed ? quotedNames(perspective.disclosed.text) : [];
   return (
-    <article aria-label={label} className="rounded-md border border-border bg-card p-5 md:p-7">
-      <header className="flex flex-wrap items-baseline gap-x-3 gap-y-1 border-b border-border pb-3">
-        <span className="figures text-sm font-semibold text-navy dark:text-ink">{String(number).padStart(2, "0")}</span>
-        <h3 className="text-lg font-semibold md:text-xl">{question}</h3>
-        <span className="text-xs text-muted-foreground">{label}</span>
+    <article
+      aria-label={label}
+      className={`shrink-0 snap-start rounded-md border border-border bg-card p-5 md:p-7 lg:w-auto ${total > 1 ? "w-[86%] sm:w-[70%]" : "w-full"}`}
+    >
+      <header className="flex items-center gap-3 border-b border-border pb-3">
+        <span aria-hidden className="grid size-10 shrink-0 place-items-center rounded-full bg-navy text-white">
+          <Icon className="size-5" />
+        </span>
+        <div className="min-w-0 flex-1">
+          <h3 className="text-base font-semibold sm:text-lg md:text-xl">{question}</h3>
+          <p className="text-xs text-muted-foreground">{label}</p>
+        </div>
+        <span className="figures shrink-0 text-xs text-muted-foreground">
+          {number}
+          <span aria-hidden>/</span>
+          <span className="sr-only">／全</span>
+          {total}
+        </span>
       </header>
 
       {names.length > 0 && (
@@ -280,12 +317,13 @@ function GrowthMap({ company, shares }: { company: Company; shares: NonNullable<
           </li>
         ))}
       </ul>
-      <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-xs text-muted-foreground">
-        {anyGrowth && (
+      {/* A legend only when there are two colours to tell apart. */}
+      {anyGrowth && (
+        <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-xs text-muted-foreground">
           <li className="flex items-center gap-1.5"><span aria-hidden className="size-2.5 rounded-sm bg-growth" />成長を掲げる事業</li>
-        )}
-        <li className="flex items-center gap-1.5"><span aria-hidden className="size-2.5 rounded-sm bg-navy/80 dark:bg-ink/70" />そのほかの事業</li>
-      </ul>
+          <li className="flex items-center gap-1.5"><span aria-hidden className="size-2.5 rounded-sm bg-navy/80 dark:bg-ink/70" />そのほかの事業</li>
+        </ul>
+      )}
       <div className="mt-3 space-y-1 border-t border-border pt-3">
         <Meta>
           割合は計算値：各事業の{shares.label} ÷ 合計（{shares.fiscalYear}・有価証券報告書【セグメント情報】）。
@@ -352,14 +390,15 @@ function IndustryPosition({ company, industry }: { company: Company; industry: I
 
         <div className="rounded-md bg-paper p-3">
           {industry.structure === "chain" ? (
-            <ol className="space-y-1.5">
+            // The stages read left to right and wrap, so the whole flow fits on a phone screen at once.
+            <ol className="flex flex-wrap items-center gap-x-1 gap-y-1.5">
               {stages.map((c, i) => (
-                <li key={c.id}>
-                  {i > 0 && <ArrowDown aria-hidden className="mx-auto mb-1.5 size-3.5 text-muted-foreground" />}
-                  <div className={`flex items-center justify-between gap-2 ${pill(c.id)}`}>
-                    <span>{c.name}</span>
-                    {here(c.id) && <span className="text-[0.6875rem] text-white/80">{company.name}はここ</span>}
-                  </div>
+                <li key={c.id} className="flex items-center gap-1">
+                  {i > 0 && <ArrowRight aria-hidden className="size-3.5 shrink-0 text-muted-foreground" />}
+                  <span className={pill(c.id)}>
+                    {c.name}
+                    {here(c.id) && <span className="block text-[0.6875rem] text-white/80">{company.name}はここ</span>}
+                  </span>
                 </li>
               ))}
             </ol>
