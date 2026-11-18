@@ -1271,3 +1271,16 @@ anyway — chosen when the address is registered, and receivable later.
   the rest go out in the next run. Sent through Resend from `notice@kigyo-hyakka.com` (`MAIL_NOTIFY_FROM`).
 - **Abuse**: sign-ups only from this site's pages (Origin), JSON only, 64 KB at most, rate-limited per IP and per
   recipient address (`MAIL_LIMIT`), so the confirmation mail cannot be used to flood someone's inbox.
+
+### JCE-070 · 2026-11-18 · Accepted (operator) — 戦略と強み made to read at a glance on a phone
+
+The operator asked (2026-11-18) for the 戦略と強み section to be easier to grasp, on phones too, for every company. On a
+phone it ran about four screens of stacked text. Same data and the same company words (JCE-055 unchanged); only the
+layout changed, in the shared component, so all 3,326 entries with the section get it at once:
+
+- **The three questions side by side on a phone**: 成長戦略・競争優位性・業界内の位置づけ are swiped through (CSS scroll
+  snap, no script), the next card peeking in, a 「横にスワイプ」 hint and n/total on each card; a wide screen stacks them
+  as before. Each question carries an icon (成長 ↗, 強み 🛡, 位置 📍) so the three read as three different answers.
+- **The industry flow in one line**: a chain industry's stages read left to right with arrows and wrap, instead of a
+  column of boxes — the whole flow fits on a phone screen; the company's stage is still marked when it is known.
+- **The growth legend only when there are two colours** — a lone 「そのほかの事業」 key explained nothing.
