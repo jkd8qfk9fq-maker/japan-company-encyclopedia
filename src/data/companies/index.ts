@@ -119,6 +119,7 @@ import alphaSystems from "./alpha-systems.json";
 import alphapolis from "./alphapolis.json";
 import alphapurchase from "./alphapurchase.json";
 import alphaxFoodSystem from "./alphax-food-system.json";
+import alpicoHoldings from "./alpico-holdings.json";
 import alpsAlpine from "./alps-alpine.json";
 import alsok from "./alsok.json";
 import alt from "./alt.json";
@@ -7810,4 +7811,5 @@ export const companies: Company[] = Object.entries({
   "village-vanguard": villageVanguard,
   "wel-dish": welDish,
   tsukuruba: tsukuruba,
+  "alpico-holdings": alpicoHoldings,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
