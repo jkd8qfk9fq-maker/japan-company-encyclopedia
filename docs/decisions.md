@@ -1242,3 +1242,32 @@ push endpoints allow-listed — and the transport/header layer weak:
 - Out of this repo, recorded for the operator: the diagnosis site shares the plain-HTTP and CSP findings, and its
   /api/* answers carry no security headers; both need the same treatment in that repository plus the Cloudflare
   "Always Use HTTPS" setting as a second layer.
+
+### JCE-069 · 2026-11-18 · Accepted (operator) — Notifications by e-mail, for readers whose browser will not show them
+
+JCE-059 chose Web Push alone ("no address to hold"). In use, the browser's permission is what stops it: Safari on
+iPhone offers it only to a site on the home screen, many browsers block or silence the prompt, managed PCs forbid it,
+and a reader who once said no is never asked again. The operator asked (2026-11-18) for the news to reach readers
+anyway — chosen when the address is registered, and receivable later.
+
+- **Three ways, none required** (お知らせ › 受け取り方): the お知らせ list itself (as before — every new filing of a
+  followed company stays there to read later, no permission, nothing sent), **e-mail**, or the browser's notifications
+  (JCE-059, unchanged). Where push cannot work or was refused, the company page points to 「メールで受け取る」.
+- **What the reader chooses at registration**: the address and the kinds of news — 新しい決算の公開 (有報・半期・短信)
+  and/or 掲載内容の更新 (訂正) — for every company they follow. The list follows the browser's follows (`MailSync`, as
+  `PushSync`); unfollowing everything ends the sign-up.
+- **Double opt-in**: nothing is sent but the confirmation mail until its link (24 hours, once) is opened; an
+  unconfirmed address is deleted after 24 hours. Registering again from the same browser replaces the earlier sign-up.
+- **What is stored** (D1 `kigyo-push`, `migrations/0003_mail_notify.sql`): the address, the company ids, the kinds,
+  a random stop key and the hash of the browser's key. The browser keeps its key and only a masked address
+  (`mail-notify`). This departs from JCE-059/JCE-065's "no address held" for this one feature, on the reader's choice,
+  and the privacy policy says so (`/privacy#mail`).
+- **Stopping**: every mail carries a stop link (`/notifications/mail/#s=…`) and RFC 8058 one-click headers, so the
+  mail client's own 配信停止 works; お知らせ › 「メールの配信を止める」 too. Each deletes the address at once.
+- **What is sent and when**: the same facts as push (`messageFor`) and the company pages, after the push run in the
+  same half-hourly schedule, from the same live `/updates.json`, with its own `mail_seen` so neither channel holds the
+  other back. One mail per address per run lists every followed company with news, so a busy filing day is one mail.
+  At most `MAIL_SENDS_PER_RUN` (default 40) mails a run; `mail_delivered` remembers who already got which event, and
+  the rest go out in the next run. Sent through Resend from `notice@kigyo-hyakka.com` (`MAIL_NOTIFY_FROM`).
+- **Abuse**: sign-ups only from this site's pages (Origin), JSON only, 64 KB at most, rate-limited per IP and per
+  recipient address (`MAIL_LIMIT`), so the confirmation mail cannot be used to flood someone's inbox.
