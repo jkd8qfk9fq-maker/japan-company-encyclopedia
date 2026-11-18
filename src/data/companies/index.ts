@@ -3752,6 +3752,7 @@ import wealthManagement from "./wealth-management.json";
 import weathernews from "./weathernews.json";
 import wedgeHoldings from "./wedge-holdings.json";
 import weds from "./weds.json";
+import welDish from "./wel-dish.json";
 import welby from "./welby.json";
 import welciaHoldings from "./welcia-holdings.json";
 import wellcoHoldings from "./wellco-holdings.json";
@@ -7806,4 +7807,5 @@ export const companies: Company[] = Object.entries({
   zojirushi: zojirushi,
   digitalcube: digitalcube,
   "village-vanguard": villageVanguard,
+  "wel-dish": welDish,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
