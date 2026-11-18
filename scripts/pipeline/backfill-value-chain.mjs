@@ -8,7 +8,8 @@
  * New registrations get these from draft-entry and merge-fragments, and refresh-financials keeps them current; this
  * is for the entries registered before they existed. Each is transcribed and checked (segment-revenue.mjs): a
  * table that does not add up, or a segment whose name matches no business, is left out, never approximated. It reads
- * the same document the entry's figures came from (the source's docID) — never a newer one, which is
+ * the same document the entry's figures came from (the source's docID; for an entry citing only the company's own copy,
+ * the EDINET filing of the same period, added as a source) — never a newer one, which is
  * refresh-financials' job — so the year it writes is a year the entry already has. Dry run unless --write.
  *
  * Every change is a facts-layer write (ownership.mjs); the run is checked by the integrity suite in the workflow
@@ -16,7 +17,7 @@
  */
 import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { downloadDocument, readCsvRows, scrubSecrets, textBlockToText } from "../research/edinet.mjs";
+import { downloadDocument, findAnnualReports, readCsvRows, scrubSecrets, textBlockToText } from "../research/edinet.mjs";
 import { shareFigures, workforceFigures } from "../research/evidence-pack.mjs";
 import { assertMachineWrite } from "./ownership.mjs";
 import { labelDocumentsFor, namedSegmentFacts, regionalNoteOf, regionalRevenueBlock, segmentRevenueBlock } from "./segment-revenue.mjs";
@@ -43,7 +44,48 @@ function filingOf(entry) {
     const docID = source?.docId ?? source?.url?.match(/\/(S[0-9A-Z]{7})\.pdf$/)?.[1];
     if (docID) return { latest, docID, sourceId: id };
   }
-  return { problem: "最新年度の出典に EDINET の書類 ID がない" };
+  return { latest, problem: "最新年度の出典に EDINET の書類 ID がない" };
+}
+
+const addMonths = (iso, months) => {
+  const d = new Date(`${iso}T00:00:00Z`);
+  d.setUTCMonth(d.getUTCMonth() + months);
+  return d.toISOString().slice(0, 10);
+};
+
+/**
+ * The newest year's 有価証券報告書 on EDINET, for an entry whose sources cite only the company's own copy (the
+ * hand-researched entries: toyota, sony-group, …). Matched by securities code and the exact period end of the year the
+ * entry already has — one original filing (docTypeCode 120), or nothing. The figures added from it cite it as a new
+ * EDINET source; the company's copy is left as it was, so no source is said to be a document it is not.
+ */
+async function resolveFiling(entry) {
+  const found = filingOf(entry);
+  if (found.docID || !found.latest || !/^[0-9A-Z]{4}$/.test(entry.code ?? "")) return found;
+  const { latest } = found;
+  const reports = (await findAnnualReports(entry.code, latest.periodEnd, addMonths(latest.periodEnd, 6))).filter(
+    (r) => r.docTypeCode === "120" && r.periodEnd === latest.periodEnd,
+  );
+  if (reports.length !== 1) return { problem: `最新年度の出典に EDINET の書類 ID がなく、EDINET でも同じ期の有報が${reports.length === 0 ? "見つからない" : "1件に定まらない"}` };
+  const report = reports[0];
+  const taken = new Set(entry.sources.map((s) => s.id));
+  let sourceId = `edinet-yuho-${latest.periodEnd.slice(0, 4)}`;
+  for (let n = 2; taken.has(sourceId); n++) sourceId = `edinet-yuho-${latest.periodEnd.slice(0, 4)}-${n}`;
+  return {
+    latest,
+    docID: report.docID,
+    sourceId,
+    newSource: {
+      id: sourceId,
+      title: report.docDescription || "有価証券報告書",
+      publisher: "EDINET（金融庁）",
+      url: `https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/${report.docID}.pdf`,
+      publishedAt: report.submitDateTime.slice(0, 10),
+      accessedAt: new Date().toISOString().slice(0, 10),
+      docId: report.docID,
+      asOf: latest.periodEnd,
+    },
+  };
 }
 
 /** The workforce block an entry gets from those rows, or null when the filing tags none of it. */
@@ -74,9 +116,27 @@ if (probe) {
   // Read-only: what a filing actually tags, so element names are checked against real filings, not assumed.
   const wanted = /Salary|LengthOfService|AverageAge|NumberOfEmployees$|ExternalCustomers|GeographicalAreas|SegmentInformation|NetSales$|Revenue|PerShare|IssuedShares/;
   for (const id of probe) {
-    const found = filingOf(read(id));
+    const found = await resolveFiling(read(id));
     if (!found.docID) { console.log(`${id}: ${found.problem}`); continue; }
+    if (found.newSource) console.log(`${id}: EDINET で見つけた有報 ${JSON.stringify(found.newSource)}`);
     const rows = await rowsOf(found.docID);
+    // An entry citing a 訂正有価証券報告書: read the same figures from the original it amends and say whether they agree,
+    // so the correction's XBRL is checked against the filing as first submitted rather than trusted on its own.
+    const cited = read(id).sources.find((s) => s.id === found.sourceId);
+    if (/訂正/.test(cited?.title ?? "") && /^[0-9A-Z]{4}$/.test(read(id).code ?? "")) {
+      const reports = await findAnnualReports(read(id).code, found.latest.periodEnd, addMonths(found.latest.periodEnd, 12));
+      const parent = reports.find((r) => r.docID === found.docID)?.parentDocID ?? null;
+      const originals = reports.filter((r) => r.docTypeCode === "120" && r.periodEnd === found.latest.periodEnd);
+      const original = originals.find((r) => r.docID === parent) ?? (originals.length === 1 ? originals[0] : null);
+      if (!original) console.log(`AMEND-CHECK ${id} cited=${found.docID} parent=${parent} original=NOT-FOUND`);
+      else {
+        const a = JSON.stringify(shareFigures(rows));
+        const b = JSON.stringify(shareFigures(await rowsOf(original.docID)));
+        console.log(`AMEND-CHECK ${id} cited=${found.docID} original=${original.docID} cited=${a} original=${b} ${a === b ? "MATCH" : "DIFFER"}`);
+      }
+    }
+    // Many ids at once is a check, not an investigation: print only the lines above.
+    if (probe.length > 12) continue;
     console.log(`=== ${id} ${found.docID} (${rows.length} rows)`);
     for (const r of rows.filter((r) => wanted.test(r["要素ID"] ?? "") && /^CurrentYear/.test(r["コンテキストID"] ?? "") && !/TextBlock$/.test(r["要素ID"]))) {
       console.log([r["要素ID"], r["項目名"], r["コンテキストID"], r["単位"], String(r["値"]).slice(0, 40)].join("\t"));
@@ -109,7 +169,7 @@ const candidates = readdirSync(dir)
 const counts = { written: 0, none: 0, skipped: 0, failed: 0, workforce: 0, shareFacts: 0, segmentRevenue: 0, regionalRevenue: 0 };
 const lines = [];
 for (const { id, entry } of candidates) {
-  const found = filingOf(entry);
+  const found = await resolveFiling(entry).catch((error) => ({ problem: `EDINET の検索に失敗 ${scrubSecrets(String(error.message)).slice(0, 120)}` }));
   if (!found.docID) { counts.skipped++; lines.push(`- ${id}: 見送り（${found.problem}）`); continue; }
   try {
     const rows = await rowsOf(found.docID);
@@ -134,7 +194,7 @@ for (const { id, entry } of candidates) {
     }
     if (Object.keys(added).length === 0) { counts.none++; continue; }
     for (const key of Object.keys(added)) counts[key]++;
-    const next = { ...entry, ...added };
+    const next = { ...entry, ...added, ...(found.newSource ? { sources: [...entry.sources, found.newSource] } : {}) };
     assertMachineWrite(entry, next, "backfill-value-chain");
     if (write) writeFileSync(join(dir, `${id}.json`), `${JSON.stringify(next, null, 2)}\n`);
     counts.written++;
