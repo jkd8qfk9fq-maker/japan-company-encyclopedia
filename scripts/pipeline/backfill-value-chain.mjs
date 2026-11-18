@@ -120,6 +120,23 @@ if (probe) {
     if (!found.docID) { console.log(`${id}: ${found.problem}`); continue; }
     if (found.newSource) console.log(`${id}: EDINET で見つけた有報 ${JSON.stringify(found.newSource)}`);
     const rows = await rowsOf(found.docID);
+    // An entry citing a 訂正有価証券報告書: read the same figures from the original it amends and say whether they agree,
+    // so the correction's XBRL is checked against the filing as first submitted rather than trusted on its own.
+    const cited = read(id).sources.find((s) => s.id === found.sourceId);
+    if (/訂正/.test(cited?.title ?? "") && /^[0-9A-Z]{4}$/.test(read(id).code ?? "")) {
+      const reports = await findAnnualReports(read(id).code, found.latest.periodEnd, addMonths(found.latest.periodEnd, 12));
+      const parent = reports.find((r) => r.docID === found.docID)?.parentDocID ?? null;
+      const originals = reports.filter((r) => r.docTypeCode === "120" && r.periodEnd === found.latest.periodEnd);
+      const original = originals.find((r) => r.docID === parent) ?? (originals.length === 1 ? originals[0] : null);
+      if (!original) console.log(`AMEND-CHECK ${id} cited=${found.docID} parent=${parent} original=NOT-FOUND`);
+      else {
+        const a = JSON.stringify(shareFigures(rows));
+        const b = JSON.stringify(shareFigures(await rowsOf(original.docID)));
+        console.log(`AMEND-CHECK ${id} cited=${found.docID} original=${original.docID} cited=${a} original=${b} ${a === b ? "MATCH" : "DIFFER"}`);
+      }
+    }
+    // Many ids at once is a check, not an investigation: print only the lines above.
+    if (probe.length > 12) continue;
     console.log(`=== ${id} ${found.docID} (${rows.length} rows)`);
     for (const r of rows.filter((r) => wanted.test(r["要素ID"] ?? "") && /^CurrentYear/.test(r["コンテキストID"] ?? "") && !/TextBlock$/.test(r["要素ID"]))) {
       console.log([r["要素ID"], r["項目名"], r["コンテキストID"], r["単位"], String(r["値"]).slice(0, 40)].join("\t"));
