@@ -66,9 +66,18 @@ try {
       "  X-Frame-Options: DENY",
       "  Referrer-Policy: strict-origin-when-cross-origin",
       "  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()",
-      "  Strict-Transport-Security: max-age=31536000",
+      "  Strict-Transport-Security: max-age=31536000; includeSubDomains",
       // Same policy as next.config.ts (see the reason there).
-      "  Content-Security-Policy: object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
+      "  Content-Security-Policy: object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests",
+      // The full policy in report-only mode, as in next.config.ts / worker/index.ts (audit 2026-11-18).
+      "  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://pagead2.googlesyndication.com https://static.cloudflareinsights.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'",
+      // The service worker's own rules (next.config.ts has the same block): without this section the live sw.js was
+      // served cacheable under the generic policy — the audit of 2026-11-18 found exactly that. worker/index.ts sets
+      // these on the response as well, so they no longer depend on _headers alone.
+      "/sw.js",
+      "  Content-Type: application/javascript; charset=utf-8",
+      "  Cache-Control: no-cache, no-store, must-revalidate",
+      "  Content-Security-Policy: default-src 'self'; script-src 'self'",
       "",
     ].join("\n"),
   );

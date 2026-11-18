@@ -53,8 +53,21 @@ export async function endSession(): Promise<void> {
 /**
  * The requesting client's address, as far as the host reports it. Used only
  * as input to an HMAC for rate limiting, never stored.
+ *
+ * Order matters (security audit 2026-11-18): the first `x-forwarded-for`
+ * value is whatever the client claims, so keying a rate limit on it lets an
+ * attacker mint a fresh identity per attempt by rotating the header.
+ * `cf-connecting-ip` is written by Cloudflare itself and cannot be spoofed
+ * by the client when the site is reached through Cloudflare, so it wins;
+ * `x-real-ip` (set by the nearest proxy) is next, and the forwarded-for
+ * claim remains only as a last resort for local development.
  */
 export async function clientAddress(): Promise<string> {
   const h = await headers();
-  return h.get("x-forwarded-for")?.split(",")[0]?.trim() || h.get("x-real-ip") || "unknown";
+  return (
+    h.get("cf-connecting-ip") ||
+    h.get("x-real-ip") ||
+    h.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+    "unknown"
+  );
 }
