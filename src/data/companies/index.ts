@@ -3624,6 +3624,7 @@ import tsukamoto from "./tsukamoto.json";
 import tsukijiUoichiba from "./tsukiji-uoichiba.json";
 import tsukishimaHoldings from "./tsukishima-holdings.json";
 import tsukubaBank from "./tsukuba-bank.json";
+import tsukuruba from "./tsukuruba.json";
 import tsumuraAndCo from "./tsumura-and-co.json";
 import tsunaguGroupHoldings from "./tsunagu-group-holdings.json";
 import tsuruhaHoldings from "./tsuruha-holdings.json";
@@ -7808,4 +7809,5 @@ export const companies: Company[] = Object.entries({
   digitalcube: digitalcube,
   "village-vanguard": villageVanguard,
   "wel-dish": welDish,
+  tsukuruba: tsukuruba,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
