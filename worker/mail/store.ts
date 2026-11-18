@@ -38,9 +38,15 @@ const chunks = <T>(items: T[], size: number) => Array.from({ length: Math.ceil(i
 const parseKinds = (text: string): MailKind[] => text.split(",").filter((k): k is MailKind => (MAIL_KINDS as string[]).includes(k));
 
 export function d1MailStore(db: D1Like): MailStore {
+  // Each row is written only while its subscription exists, in the same batch: a list update racing a stop (seen live
+  // on 2026-11-18) must not leave a company id behind once the sign-up is gone.
   const follows = (id: string, companies: string[]) => [
     db.prepare("DELETE FROM mail_follows WHERE subscription_id = ?").bind(id),
-    ...companies.map((c) => db.prepare("INSERT OR IGNORE INTO mail_follows (subscription_id, company_id) VALUES (?, ?)").bind(id, c)),
+    ...companies.map((c) =>
+      db
+        .prepare("INSERT OR IGNORE INTO mail_follows (subscription_id, company_id) SELECT ?, ? WHERE EXISTS (SELECT 1 FROM mail_subscriptions WHERE id = ?)")
+        .bind(id, c, id),
+    ),
   ];
   return {
     async create(r) {
@@ -125,6 +131,9 @@ export function d1MailStore(db: D1Like): MailStore {
         db.prepare("DELETE FROM mail_follows WHERE subscription_id IN (SELECT id FROM mail_subscriptions WHERE confirmed_at IS NULL AND created_at < ?)").bind(unconfirmedBefore),
         db.prepare("DELETE FROM mail_subscriptions WHERE confirmed_at IS NULL AND created_at < ?").bind(unconfirmedBefore),
         db.prepare("DELETE FROM mail_seen WHERE seen_at < ? AND key != '__bootstrap__'").bind(seenBefore),
+        // Anything a race still left behind.
+        db.prepare("DELETE FROM mail_follows WHERE subscription_id NOT IN (SELECT id FROM mail_subscriptions)").bind(),
+        db.prepare("DELETE FROM mail_delivered WHERE subscription_id NOT IN (SELECT id FROM mail_subscriptions)").bind(),
       ]);
     },
   };
