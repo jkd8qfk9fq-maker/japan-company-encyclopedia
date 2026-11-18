@@ -4,15 +4,168 @@
   "name": "グリッド",
   "officialName": "株式会社グリッド",
   "nameEn": "GRID Inc.",
-  "description": null,
+  "shortNameEn": "GRID Inc.",
+  "description": "AIと数理最適化で社会インフラの計画を最適化する技術を提供し、系統用蓄電所の開発も手がける会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "グロース"
+      "market": "グロース市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
+  "industries": [
+    {
+      "industryId": "it",
+      "primary": true
+    },
+    {
+      "industryId": "energy",
+      "primary": false
+    }
+  ],
+  "businesses": [
+    {
+      "id": "ai-business",
+      "name": "AI事業",
+      "description": "AI技術や数理最適化技術を用いたAIエンジンの開発、AIエンジンを組み込んだシステムの開発、運用・サポートを提供する事業です。電力、製造・運輸、都市・交通の社会インフラ３分野に注力し、2026年６月期の外部顧客への売上高は2,362百万円でした。主要な顧客として九州電力株式会社が印字されています。",
+      "children": [
+        {
+          "id": "electric-power",
+          "name": "電力分野",
+          "description": "国内電力事業者向けに、電力需要の予測に基づく発電所の需給計画を最適化するプログラムの開発や技術サービスを提供する分野です。2026年６月期の売上高は1,407百万円でした。",
+          "customers": [
+            "電力会社"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "manufacturing-transport",
+          "name": "製造・運輸分野",
+          "description": "船舶やトラックによる輸送計画を最適化する技術サービスや、サプライチェーン全体の計画最適化を提供する分野です。2026年６月期の売上高は477百万円でした。",
+          "customers": [
+            "製造業や運輸業の企業"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "urban-traffic",
+          "name": "都市・交通分野",
+          "description": "鉄道事業者向けに車両や乗務員の運用計画を自動で生成する技術サービスや、高速道路の渋滞予測システムを提供する分野です。2026年６月期の売上高は402百万円でした。",
+          "customers": [
+            "鉄道事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "customers": [
+        "電力会社",
+        "製造業や運輸業の企業",
+        "鉄道事業者"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    },
+    {
+      "id": "infra-asset-business",
+      "name": "インフラアセット事業",
+      "description": "系統用蓄電所の設計、開発及び譲渡と、電力系統への接続に関する調査や申込みの支援などを行う事業です。土地の選定から設計、調達、建設までを担い、開発した蓄電所を事業主へ譲渡します。2026年６月期の外部顧客への売上高は756百万円でした。主要な顧客として株式会社エー・ディー・ワークスが印字されています。",
+      "children": [
+        {
+          "id": "storage-development",
+          "name": "系統用蓄電所の開発・譲渡",
+          "description": "土地の選定、電力系統への接続申込み、蓄電所の設計から調達、建設までを行い、開発した系統用蓄電所を事業主へ譲渡する事業です。",
+          "customers": [
+            "蓄電所の事業主"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "grid-connection-support",
+          "name": "電力系統接続支援",
+          "description": "電力系統への接続に関する調査や申込みの名義変更など、蓄電所の系統接続を支援する業務です。",
+          "customers": [
+            "蓄電所の事業主"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
+      ],
+      "customers": [
+        "蓄電所の事業主"
+      ],
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】"
+    }
+  ],
+  "businessModel": {
+    "description": "電力などの社会インフラの計画業務を数式化してAIエンジンを開発し、システムの実装から運用・サポートまで一貫して提供する事業モデルです。",
+    "products": [
+      "AIエンジンの開発",
+      "計画最適化アプリケーションReNom APPS（ReNom POWER、ReNom VESSEL、ReNom SCM、ReNom Railway）",
+      "生成AIサービスGeNom for Energy",
+      "系統用蓄電所の設計・開発・譲渡",
+      "電力系統接続支援"
+    ],
+    "customers": [
+      "電力会社",
+      "製造業や運輸業の企業",
+      "鉄道事業者",
+      "蓄電所の事業主"
+    ],
+    "revenueSources": [
+      "AI開発とシステム開発の対価",
+      "運用・サポートの対価",
+      "蓄電所の譲渡代金",
+      "電力系統接続支援の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "グリッド",
+        "description": "2009年に再生エネルギー事業の会社として設立され、AI開発事業へ転換した会社です。2026年６月30日現在の従業員数は139人です。"
+      },
+      {
+        "kind": "offering",
+        "title": "計画最適化と蓄電所開発",
+        "description": "AI事業ではAIエンジンの開発からシステム実装、運用・サポートまでを提供し、インフラアセット事業では系統用蓄電所の設計、開発及び譲渡などを行っています。"
+      },
+      {
+        "kind": "customer",
+        "title": "社会インフラの事業者",
+        "description": "電力会社を中心に、製造・運輸分野の企業や鉄道事業者などの大手企業が主な顧客です。インフラアセット事業では蓄電所の事業主が顧客です。"
+      },
+      {
+        "kind": "revenue",
+        "title": "開発の対価と蓄電所の譲渡代金",
+        "description": "2026年６月期の売上高は3,119百万円でした。AI事業が2,362百万円、インフラアセット事業が756百万円です。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益",
+        "description": "2026年６月期の当期純利益は345百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ]
+  },
   "financials": [
     {
       "fiscalYear": "2022年6月期",
@@ -127,30 +280,188 @@
       "note": "当事業年度より、従来の「AI事業」の単一セグメントから、「AI事業」及び「インフラアセット事業」の２つの報告セグメントに変更しております。前事業年度のセグメント情報は、変更後の報告セグメント区分に基づき作成しております。"
     }
   ],
-  "history": [],
-  "relatedCompanies": [],
-  "sources": [
+  "history": [
     {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第16期(2024/07/01－2025/06/30)",
-      "publisher": "株式会社グリッド",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WQ2M.pdf",
-      "publishedAt": "2025-09-25",
-      "accessedAt": "2026-09-29"
+      "year": 2009,
+      "title": "株式会社グリッドの設立",
+      "description": "再生エネルギー事業に取り組む目的で、東京都港区に株式会社グリッドが設立されました。",
+      "significance": "現在の会社の起点です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
     },
+    {
+      "year": 2010,
+      "title": "太陽光発電システムの販売開始",
+      "description": "太陽光発電システムの販売を開始し、エネルギーソリューション事業を始めました。",
+      "significance": "設立当初の事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "発電電力量予測の研究開発を開始",
+      "description": "気象解析を基に、発電所の発電電力量の予測に取り組む研究開発を開始しました。",
+      "significance": "AI事業への転換の契機です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2015,
+      "title": "AI開発事業の開始",
+      "description": "AI開発事業を開始しました。",
+      "significance": "現在のAI事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2016,
+      "title": "AIフレームワークReNomの開発",
+      "description": "AIフレームワークReNom（リノーム）を開発しました。",
+      "significance": "計画最適化の基盤技術の確立です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "大手商社３社との資本業務提携",
+      "description": "三井物産株式会社、伊藤忠商事株式会社、丸紅株式会社と資本業務提携を行いました。",
+      "significance": "大手企業との関係構築の節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "エネルギーソリューション事業からの撤退",
+      "description": "エネルギーソリューション事業から撤退しました。",
+      "significance": "AI事業への集中を示す出来事です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "東京証券取引所グロース市場への上場",
+      "description": "東京証券取引所グロース市場に株式を上場しました。",
+      "significance": "上場会社となった節目です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2024,
+      "title": "蓄電所関連サービスの開始",
+      "description": "蓄電所関連サービスの提供を開始しました。",
+      "significance": "インフラアセット事業の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "系統用蓄電所の開発開始",
+      "description": "系統用蓄電所（高圧）の開発を開始しました。",
+      "significance": "新たな報告セグメントの本格化です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "relatedCompanies": [
+    {
+      "companyId": "mitsui-and-co",
+      "relationship": "business-partner",
+      "description": "三井物産株式会社とは、2017年３月に資本業務提携を行っています。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "itochu",
+      "relationship": "business-partner",
+      "description": "伊藤忠商事株式会社とは、2017年３月に資本業務提携を行っています。2026年６月30日現在、同社は当社の発行済株式（自己株式を除く）の2.12％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "companyId": "marubeni",
+      "relationship": "business-partner",
+      "description": "丸紅株式会社とは、2017年３月に資本業務提携を行っています。2026年６月30日現在、同社は当社の発行済株式（自己株式を除く）の2.12％を保有する大株主です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
+  "sources": [
     {
       "id": "yuho-2026",
       "title": "有価証券報告書－第17期(2025/07/01－2026/06/30)",
       "publisher": "株式会社グリッド",
       "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z4LV.pdf",
       "publishedAt": "2026-09-29",
+      "docId": "S100Z4LV",
+      "asOf": "2026-06-30",
       "accessedAt": "2026-11-13"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: [object Object]"
+    ]
   },
-  "updatedAt": "2026-09-29",
+  "updatedAt": "2026-11-18",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "「INFRASTRUCTURE＋LIFE＋INNOVATION」を企業理念に掲げ、社会インフラ領域で計画最適化の研究開発と社会実装を進め、電力、製造・運輸、都市・交通の３分野に注力しています。系統用蓄電所の開発及び譲渡などを行うインフラアセット事業を新たな収益の柱と位置付け、２事業体制へ移行しました。インフラアセット事業では高圧の開発から大規模な特別高圧の開発へ案件規模の拡大を図ります。",
+        "asOf": "2026-09-29",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "社会インフラの現場業務に詳しい技術者が、業務を数式化してシミュレータを開発し、数理最適化と機械学習などを組み合わせたAIエンジンで短時間に最適な計画を導く手法を持っています。開発した仕組みをReNom APPSとして共通化し、複数の分野へ展開できる形にしています。",
+        "basis": "【事業の内容】に、業務知識の豊富なエンジニアが計画対象業務を数式化してシミュレータを開発し、数理最適化やメタヒューリスティクスに機械学習や強化学習を組み合わせたAIエンジンを開発することが印字されている。【事業の内容】に、開発実績の共通部分をまとめたReNom APPSにより開発の効率化を図ることが印字されている。",
+        "asOf": "2026-09-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "売上高の中心はAI事業で、2026年６月期は全体の約４分の３を占めています。AI事業の中では電力分野が最も大きく、分野別売上高の約６割を占めています。当事業年度から加わったインフラアセット事業は全体の約４分の１の規模です。",
+        "basis": "【セグメント情報等】に、2026年６月期の外部顧客への売上高としてAI事業2,362百万円、インフラアセット事業756百万円が印字されている。【収益認識関係】の分解情報に、AI事業の分野別売上高として電力1,407百万円、製造・運輸477百万円、都市・交通402百万円、その他75百万円が印字されている。",
+        "asOf": "2026-09-29",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
+  },
   "workforce": {
     "fiscalYear": "2026年6月期",
     "asOf": "2026-06-30",
