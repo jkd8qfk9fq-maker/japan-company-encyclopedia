@@ -1402,6 +1402,7 @@ import jET from "./j-e-t.json";
 import jEscomHoldings from "./j-escom-holdings.json";
 import jFrontRetailing from "./j-front-retailing.json";
 import jFrontier from "./j-frontier.json";
+import jGroupHoldings from "./j-group-holdings.json";
 import jHoldings from "./j-holdings.json";
 import jLease from "./j-lease.json";
 import jMax from "./j-max.json";
@@ -7812,4 +7813,5 @@ export const companies: Company[] = Object.entries({
   "wel-dish": welDish,
   tsukuruba: tsukuruba,
   "alpico-holdings": alpicoHoldings,
+  "j-group-holdings": jGroupHoldings,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
