@@ -3708,6 +3708,7 @@ import veritasInSilico from "./veritas-in-silico.json";
 import verite from "./verite.json";
 import vertex from "./vertex.json";
 import viaHoldings from "./via-holdings.json";
+import villageVanguard from "./village-vanguard.json";
 import virtualexHoldings from "./virtualex-holdings.json";
 import vis from "./vis.json";
 import vision from "./vision.json";
@@ -7804,4 +7805,5 @@ export const companies: Company[] = Object.entries({
   zett: zett,
   zojirushi: zojirushi,
   digitalcube: digitalcube,
+  "village-vanguard": villageVanguard,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
