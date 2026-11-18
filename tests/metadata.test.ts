@@ -183,4 +183,14 @@ describe("value chain and comparison data (JCE-038)", () => {
     expect(errors({ businessModel }).join()).toContain("copper");
     expect(errors({ workforce: { ...workforce, fiscalYear: "2020年3月期" } }).join()).toContain("財務にない年度");
   });
+
+  it("accept sourced share facts (JCE-066), and refuse them for a year not in the table, empty, or from Wikipedia", () => {
+    const shareFacts = { fiscalYear: "2026年3月期", asOf: "2026-03-31", dividendPerShare: 40, issuedShares: 12_000_000, sourceIds: ["yuho-2026"] };
+    expect(companySchema.safeParse({ ...base, shareFacts }).success).toBe(true);
+    expect(errors({ shareFacts })).toEqual([]);
+    expect(errors({ shareFacts: { ...shareFacts, fiscalYear: "2020年3月期" } }).join()).toContain("財務にない年度");
+    expect(errors({ shareFacts: { ...shareFacts, dividendPerShare: null, issuedShares: null } }).join()).toContain("どちらも空");
+    expect(errors({ shareFacts: { ...shareFacts, sourceIds: ["wikipedia"] } }).join()).toContain("Wikipedia");
+    expect(companySchema.safeParse({ ...base, shareFacts: { ...shareFacts, stockPrice: 3000 } }).success).toBe(false);
+  });
 });

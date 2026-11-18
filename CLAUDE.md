@@ -40,7 +40,9 @@ variables, and never reference them in the application. Decision recorded in
    entry"). **Three ratios are allowed** (operator decision 2026-11-09, `docs/decisions.md` JCE-038): each business's
    share of segment revenue, 純利益率 and 海外売上高比率 — computed by code on the page from printed figures of one
    year (`src/lib/company-metrics.ts`, `src/lib/value-chain.ts`), labelled 計算値 with their formula, never stored,
-   never written by hand or by an agent, never estimated. 平均年間給与・平均勤続年数 (提出会社) are shown as printed.
+   never written by hand or by an agent, never estimated. 平均年間給与・平均勤続年数 (提出会社) are shown as printed, and so
+   are 1株当たり配当額・発行済株式総数 (提出会社, `shareFacts`, operator decision 2026-11-18, JCE-066) — still never a share
+   price, market value or yield: no source this site may republish provides prices (J-Quants is private use only).
    **Prose** cites revenue and net income only (`docs/agent-brief.md`, checked by `scripts/pipeline/prose-policy.mjs`).
 5. **Users never edit content.** They can report errors. Corrections go through admin and leave a
    `Revision`.

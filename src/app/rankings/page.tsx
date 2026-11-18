@@ -39,6 +39,11 @@ export default async function RankingsPage() {
           </li>
         ))}
       </ul>
+      <p className="mt-8 text-sm text-muted-foreground">
+        診断を受けた人の4軸の傾向を産業ごとにまとめた
+        <a href="https://shindan.kigyo-hyakka.com/map/" className="underline underline-offset-2" target="_blank" rel="noopener">産業タイプマップ</a>
+        は、企業タイプ診断のサイトにあります（集計に加えることを選んだ人の値だけを、合計として集計したものです）。
+      </p>
     </div>
   );
 }

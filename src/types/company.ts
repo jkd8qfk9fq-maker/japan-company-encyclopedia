@@ -140,6 +140,14 @@ export type Workforce = Sourced & {
   averageTenureMonths: number | null;
 };
 
+/** JCE-066: 1株当たり配当額 and 発行済株式総数 of the 提出会社, as 主要な経営指標等の推移 prints them. */
+export type ShareFacts = Sourced & {
+  fiscalYear: string;
+  asOf: string;
+  dividendPerShare: number | null;
+  issuedShares: number | null;
+};
+
 export type AccountingStandard = "ifrs" | "jgaap" | "usgaap";
 
 /**
@@ -409,6 +417,7 @@ export type Company = {
   segmentRevenue?: SegmentRevenue;
   regionalRevenue?: RegionalRevenue;
   workforce?: Workforce;
+  shareFacts?: ShareFacts;
   history: HistoryEvent[];
 
   relatedCompanies: RelatedCompany[];

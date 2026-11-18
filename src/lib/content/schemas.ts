@@ -209,6 +209,16 @@ export const companySchema = z.strictObject({
       ...sourced,
     })
     .optional(),
+  // JCE-066: 1株当たり配当額 (円) and 発行済株式総数 of the 提出会社 as printed — never a price, a yield or a market value.
+  shareFacts: z
+    .strictObject({
+      fiscalYear: text,
+      asOf: isoDate,
+      dividendPerShare: z.number().nonnegative().nullable(),
+      issuedShares: z.number().int().positive().nullable(),
+      ...sourced,
+    })
+    .optional(),
   history: z.array(
     z.strictObject({
       // 1500: some 沿革 begin before 1600 (住友金属鉱山 dates its founding to 1590)

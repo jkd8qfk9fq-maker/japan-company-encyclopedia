@@ -1184,3 +1184,19 @@ are not moved (its invariant 6).
 - **Operator**: apply migration 0002 to the production database; `RESEND_API_KEY` is already a Worker secret, and
   the sender `sync@kigyo-hyakka.com` uses the domain Resend already sends from. Without a key the feature reports
   itself off.
+
+### JCE-066 · 2026-11-18 · Accepted (operator) — 1株当たり配当額 and 発行済株式総数 as printed; no prices (P1-4)
+
+The operator's implementation plan (P1-4) asked for share price, market value and dividend yield as reference figures.
+Its own condition was to check first that a provider allows them to be shown: J-Quants (JPX) is limited to private
+use by individuals and forbids showing its data to others (its corporate service, J-Quants Pro, needs a contract), and
+EDINET DB carries no share prices. The operator chose (2026-11-18) to show only what the 有価証券報告書 prints.
+
+- **`shareFacts`**: 1株当たり配当額 (円) and 発行済株式総数 of the 提出会社, from 主要な経営指標等の推移 (XBRL
+  `DividendPaidPerShareSummaryOfBusinessResults` and `TotalNumberOfIssuedSharesSummaryOfBusinessResults`, the filer's own
+  context first), for the year the entry's newest financials come from, with the filing as its source. Extracted by
+  code (`shareFigures`), never typed; a missing or ambiguous figure is left out.
+- **Kept current like 従業員の状況**: written by `backfill-value-chain` for registered entries, by `draft-entry` for new
+  ones, carried by `refresh-financials` with a newer filing; a facts-layer field (`ownership.mjs`).
+- **On the page**: two cells in 比較の目安, marked as printed values, with the line that price, market value and yield are
+  not shown. Invariant 4 says so too. A price feed would need a licensed source (e.g. J-Quants Pro) and a new decision.

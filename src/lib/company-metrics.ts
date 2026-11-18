@@ -16,6 +16,8 @@ export type CompanyMetrics = {
   netProfitMargin: Ratio | null;
   overseasSalesRatio: Ratio | null;
   workforce: Company["workforce"] | null;
+  /** JCE-066: 1株当たり配当額 and 発行済株式総数 of the 提出会社, as printed. Never a price, a yield or a market value. */
+  shareFacts: Company["shareFacts"] | null;
   /** Up to three top-level businesses, largest printed segment revenue first (else the entry's own order). */
   topBusinesses: string[];
 };
@@ -63,6 +65,7 @@ export function companyMetrics(company: Company): CompanyMetrics | null {
     netProfitMargin,
     overseasSalesRatio,
     workforce: company.workforce ?? null,
+    shareFacts: company.shareFacts ?? null,
     topBusinesses: ranked.slice(0, 3).map((b) => b.name),
   };
 }

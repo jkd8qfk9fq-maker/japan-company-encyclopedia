@@ -232,6 +232,18 @@ for (const id of ids) {
       locator: "【従業員の状況】（提出会社の状況）",
     };
   }
+  // 1株当たり配当額・発行済株式総数 (JCE-066): the current year only, as printed, for the same reasons as 従業員の状況.
+  const sh = pack.shares;
+  if (current && sh && (sh.dividendPerShare !== null || sh.issuedShares !== null)) {
+    draft.shareFacts = {
+      fiscalYear: current.fiscalYear,
+      asOf: current.periodEnd,
+      dividendPerShare: sh.dividendPerShare,
+      issuedShares: sh.issuedShares,
+      sourceIds: [filingSourceId],
+      locator: "【主要な経営指標等の推移】（提出会社の経営指標等）",
+    };
+  }
   // JCE-038. Regional revenue needs only the table's revenue to be checked against, so it is settled here; segment
   // revenue waits for the businesses (merge-fragments, refresh-financials), so its facts ride along as they are.
   if (current) {

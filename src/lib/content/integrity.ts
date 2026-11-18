@@ -182,6 +182,13 @@ export function checkCompany(company: Company, context: ContentContext): string[
     }
     e.push(...citationErrors(w.sourceIds, src, where), ...noWikipedia(w.sourceIds, where));
   }
+  if (company.shareFacts) {
+    const s = company.shareFacts;
+    const where = `1株当たり配当額・発行済株式数「${s.fiscalYear}」`;
+    if (!fiscalYears.has(s.fiscalYear)) e.push(`${where}: 財務にない年度です`);
+    if (s.dividendPerShare === null && s.issuedShares === null) e.push(`${where}: どちらも空なら書きません`);
+    e.push(...citationErrors(s.sourceIds, src, where), ...noWikipedia(s.sourceIds, where));
+  }
 
   for (const h of company.history) e.push(...citationErrors(h.sourceIds, src, `歴史「${h.year} ${h.title}」`));
 
