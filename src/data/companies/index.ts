@@ -2301,6 +2301,7 @@ import nipponHume from "./nippon-hume.json";
 import nipponIchiSoftware from "./nippon-ichi-software.json";
 import nipponInformationDevelopment from "./nippon-information-development.json";
 import nipponInsure from "./nippon-insure.json";
+import nipponKanryuIndustry from "./nippon-kanryu-industry.json";
 import nipponKanzaiHoldings from "./nippon-kanzai-holdings.json";
 import nipponKayaku from "./nippon-kayaku.json";
 import nipponKinzoku from "./nippon-kinzoku.json";
@@ -7302,6 +7303,7 @@ export const companies: Company[] = Object.entries({
   "nippon-concept": nipponConcept,
   "nippon-express-holdings": nipponExpressHoldings,
   "nippon-gas": nipponGas,
+  "nippon-kanryu-industry": nipponKanryuIndustry,
   "nippon-kanzai-holdings": nipponKanzaiHoldings,
   "nippon-seiki": nipponSeiki,
   "nippon-television-holdings": nipponTelevisionHoldings,
