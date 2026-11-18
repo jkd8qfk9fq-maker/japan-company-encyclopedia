@@ -49,6 +49,12 @@ try {
       NEXT_PUBLIC_BASE_PATH: "",
       SITE_URL: siteUrl,
       NODE_ENV: "production",
+      // The data outgrew Node's default heap (about 2 GB) on 2026-11-18, when shareFacts and the segment tables reached
+      // every entry: the Cloudflare build died with "JavaScript heap out of memory" and nothing deployed for hours.
+      // Workers Builds give the build 8 GB; 6 GB leaves room for the rest. A heap size set by the caller wins.
+      NODE_OPTIONS: /max-old-space-size/.test(process.env.NODE_OPTIONS ?? "")
+        ? process.env.NODE_OPTIONS
+        : `${process.env.NODE_OPTIONS ?? ""} --max-old-space-size=6144`.trim(),
       // The Google Fonts in src/assets/fonts/google instead of a download during the build (JCE-040): Google's answer
       // sometimes broke next/font on Cloudflare. next/font reads local files only from a path starting with "/", so
       // a Windows build keeps downloading.
