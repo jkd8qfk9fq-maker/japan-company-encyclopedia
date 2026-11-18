@@ -2685,6 +2685,7 @@ import regal from "./regal.json";
 import reiwaAccountingHoldings from "./reiwa-accounting-holdings.json";
 import reloGroup from "./relo-group.json";
 import remixpoint from "./remixpoint.json";
+import renaissance from "./renaissance.json";
 import renascience from "./renascience.json";
 import renesasElectronics from "./renesas-electronics.json";
 import renetjapangroup from "./renetjapangroup.json";
@@ -5514,6 +5515,7 @@ export const companies: Company[] = Object.entries({
   rebase: rebase,
   recomm: recomm,
   remixpoint: remixpoint,
+  renaissance: renaissance,
   renascience: renascience,
   renetjapangroup: renetjapangroup,
   rengo: rengo,
