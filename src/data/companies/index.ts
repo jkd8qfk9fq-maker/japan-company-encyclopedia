@@ -684,6 +684,7 @@ import digitalHoldings from "./digital-holdings.json";
 import digitalInformationTechnologies from "./digital-information-technologies.json";
 import digitalMediaProfessionals from "./digital-media-professionals.json";
 import digitalPlus from "./digital-plus.json";
+import digitalcube from "./digitalcube.json";
 import digitalift from "./digitalift.json";
 import dijetIndustrial from "./dijet-industrial.json";
 import dip from "./dip.json";
@@ -7802,4 +7803,5 @@ export const companies: Company[] = Object.entries({
   zero: zero,
   zett: zett,
   zojirushi: zojirushi,
+  digitalcube: digitalcube,
 }).map(([file, data]) => parseContent(companySchema, data, `src/data/companies/${file}.json`));
