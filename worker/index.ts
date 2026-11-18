@@ -33,6 +33,62 @@ export function redirectTarget(requestUrl: string): string | null {
 }
 
 /**
+ * Plain HTTP must never serve the site (security audit 2026-11-18): the apex answered 200 over http:// because the
+ * Cloudflare "Always Use HTTPS" setting does not cover it, and an HSTS header sent over plain HTTP is ignored by
+ * browsers, so a first visit could be intercepted or rewritten. The Worker upgrades every http:// request itself,
+ * so the guarantee lives in code, not in a dashboard setting. Local previews stay on HTTP.
+ */
+export function httpsUpgradeTarget(requestUrl: string): string | null {
+  const url = new URL(requestUrl);
+  if (url.protocol !== "http:") return null;
+  if (url.hostname === "localhost" || url.hostname === "127.0.0.1" || url.hostname === "[::1]") return null;
+  url.protocol = "https:";
+  url.port = "";
+  return url.toString();
+}
+
+const HSTS = "max-age=31536000; includeSubDomains";
+const CSP = "object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests";
+/**
+ * The full script policy is not enforced yet: the pages carry Next.js inline scripts and AdSense / Analytics load
+ * from several hosts, so an enforced script-src would break them. Report-Only collects what a real policy would
+ * have blocked, in the browser console, without breaking anything — the step before enforcing it.
+ */
+const CSP_REPORT_ONLY =
+  "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://static.cloudflareinsights.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://pagead2.googlesyndication.com https://static.cloudflareinsights.com; frame-src https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'";
+
+/**
+ * Every response this Worker serves carries the security headers itself. The static export's `_headers` file
+ * (scripts/build-static.mjs) states the same values, but a header that only exists there depends on the assets
+ * layer honouring it — the /sw.js rules were in fact lost that way (audit 2026-11-18: the live service worker was
+ * cacheable and carried the generic CSP, not its own). Setting them here covers pages, the 404 page and the
+ * /api/push + /api/sync JSON answers alike.
+ */
+export function withSecurityHeaders(pathname: string, response: Response): Response {
+  const out = new Response(response.body, response);
+  if (pathname === "/sw.js") {
+    // The service worker must never be served from an HTTP cache, or a broken worker could outlive its fix.
+    out.headers.set("Content-Type", "application/javascript; charset=utf-8");
+    out.headers.set("Cache-Control", "no-cache, no-store, must-revalidate");
+    out.headers.set("Content-Security-Policy", "default-src 'self'; script-src 'self'");
+    return out;
+  }
+  out.headers.set("Strict-Transport-Security", HSTS);
+  out.headers.set("X-Content-Type-Options", "nosniff");
+  out.headers.set("X-Frame-Options", "DENY");
+  out.headers.set("Referrer-Policy", "strict-origin-when-cross-origin");
+  out.headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=(), payment=(), usb=()");
+  out.headers.set("Content-Security-Policy", CSP);
+  out.headers.set("Content-Security-Policy-Report-Only", CSP_REPORT_ONLY);
+  return out;
+}
+
+/** A 301 that itself carries HSTS, so even a redirect answer starts the browser's HTTPS-only memory. */
+function redirectResponse(target: string): Response {
+  return new Response(null, { status: 301, headers: { Location: target, "Strict-Transport-Security": HSTS } });
+}
+
+/**
  * The request to hand the assets binding, with any `$` in the path written as `%24`.
  *
  * Next.js names the prefetch files of dynamic routes after the segment (`__next.companies.$d$company-id.__PAGE__.txt`).
@@ -60,11 +116,14 @@ export function withShareImageType(pathname: string, response: Response): Respon
 
 const worker = {
   async fetch(request: Request, env: Env): Promise<Response> {
+    const { pathname } = new URL(request.url);
+    const upgrade = httpsUpgradeTarget(request.url);
+    if (upgrade) return redirectResponse(upgrade);
     const target = REDIRECT_OLD_HOST ? redirectTarget(request.url) : null;
-    if (target) return Response.redirect(target, 301);
-    if (new URL(request.url).pathname.startsWith("/api/push/")) return handlePush(request, env, pushStore(env));
-    if (new URL(request.url).pathname.startsWith("/api/sync/")) return handleSync(request, env, syncStore(env));
-    return withShareImageType(new URL(request.url).pathname, await env.ASSETS.fetch(assetRequest(request)));
+    if (target) return redirectResponse(target);
+    if (pathname.startsWith("/api/push/")) return withSecurityHeaders(pathname, await handlePush(request, env, pushStore(env)));
+    if (pathname.startsWith("/api/sync/")) return withSecurityHeaders(pathname, await handleSync(request, env, syncStore(env)));
+    return withSecurityHeaders(pathname, withShareImageType(pathname, await env.ASSETS.fetch(assetRequest(request))));
   },
   // Every 30 minutes (wrangler.jsonc › triggers): announce what /updates.json — the live site — newly lists.
   async scheduled(_controller: unknown, env: Env): Promise<void> {

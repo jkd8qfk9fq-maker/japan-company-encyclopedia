@@ -1214,3 +1214,31 @@ daily financial refresh and every backfill gated on it.
   workforce. Not setting `needs-attention` early: that would break the registration guard.
 - stemrim's update (52450851), committed alone, is reverted to its last passing state; it returns with its registration.
 - CLAUDE.md says so, for every session that runs the procedure.
+
+### JCE-068 · 2026-11-18 · Accepted (operator) — Security hardening after an authorised audit of the YUGENQ services
+
+The operator asked for a demonstration attack on his own services and for the weak points found to be fixed, repeatedly.
+A non-destructive audit (external probes with curl + code review; report in the operator's audit folder, not this repo)
+found the content itself well guarded — no exposed secrets or sensitive paths, no CORS reflection, parameterised SQL,
+push endpoints allow-listed — and the transport/header layer weak:
+
+- **Plain HTTP served the site.** `http://kigyo-hyakka.com/` answered 200; an HSTS header received over plain HTTP is
+  ignored, so a first visit could be intercepted. The Worker now upgrades every http:// request itself
+  (`httpsUpgradeTarget`), so the guarantee is in code rather than only in a Cloudflare dashboard setting.
+- **The Worker sets the security headers on every response it serves** (`withSecurityHeaders`): pages, the 404 page and
+  the /api/push + /api/sync JSON answers. HSTS gains `includeSubDomains` (preload stays a separate, later step: it is
+  only safe once every subdomain is confirmed HTTPS-only). The static export's `_headers` states the same values.
+- **/sw.js had lost its own rules in production**: `next.config.ts` gives it `no-store` and a restrictive CSP, but
+  `scripts/build-static.mjs` never wrote that block into `_headers`, and the live file was cacheable under the generic
+  policy. The block is now written, and the Worker sets the same rules on the response, so they no longer depend on
+  `_headers` alone.
+- **A full Content-Security-Policy is sent Report-Only** (same value in `next.config.ts`, `worker/index.ts` and
+  `scripts/build-static.mjs`): it records what an enforced `script-src` would block, without breaking AdSense /
+  Analytics. Enforcing it is a later decision, taken from what the reports show.
+- **Rate limits no longer key on a spoofable header**: `clientAddress()` preferred the first `x-forwarded-for` value,
+  which the client itself supplies, so the admin-login and report limits could be rotated away. `cf-connecting-ip`
+  (written by Cloudflare, not the client) now wins, then `x-real-ip`.
+- **`/.well-known/security.txt`** (RFC 9116) points vulnerability reports at the contact page.
+- Out of this repo, recorded for the operator: the diagnosis site shares the plain-HTTP and CSP findings, and its
+  /api/* answers carry no security headers; both need the same treatment in that repository plus the Cloudflare
+  "Always Use HTTPS" setting as a second layer.

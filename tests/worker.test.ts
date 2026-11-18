@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { assetRequest, redirectTarget, withShareImageType } from "../worker/index";
+import { assetRequest, httpsUpgradeTarget, redirectTarget, withSecurityHeaders, withShareImageType } from "../worker/index";
 
 describe("worker redirects", () => {
   it("sends the old workers.dev address and www. to kigyo-hyakka.com, keeping the path", () => {
@@ -27,6 +27,40 @@ describe("assetRequest", () => {
     expect(assetRequest(request)).toBe(request);
     const page = new Request("https://kigyo-hyakka.com/discover/");
     expect(assetRequest(page)).toBe(page);
+  });
+});
+
+describe("httpsUpgradeTarget (audit 2026-11-18)", () => {
+  it("upgrades plain HTTP to HTTPS, keeping path and query", () => {
+    expect(httpsUpgradeTarget("http://kigyo-hyakka.com/companies/toyota/?q=1")).toBe("https://kigyo-hyakka.com/companies/toyota/?q=1");
+    expect(httpsUpgradeTarget("http://www.kigyo-hyakka.com/")).toBe("https://www.kigyo-hyakka.com/");
+  });
+  it("leaves HTTPS and local previews alone", () => {
+    expect(httpsUpgradeTarget("https://kigyo-hyakka.com/")).toBeNull();
+    expect(httpsUpgradeTarget("http://localhost:8787/")).toBeNull();
+    expect(httpsUpgradeTarget("http://127.0.0.1:3000/")).toBeNull();
+  });
+});
+
+describe("withSecurityHeaders (audit 2026-11-18)", () => {
+  it("adds the full header set to a page response", () => {
+    const out = withSecurityHeaders("/companies/toyota/", new Response("ok"));
+    expect(out.headers.get("strict-transport-security")).toContain("includeSubDomains");
+    expect(out.headers.get("x-content-type-options")).toBe("nosniff");
+    expect(out.headers.get("x-frame-options")).toBe("DENY");
+    expect(out.headers.get("content-security-policy")).toContain("frame-ancestors 'none'");
+    expect(out.headers.get("content-security-policy-report-only")).toContain("script-src");
+  });
+  it("gives /sw.js its own no-store rules instead of the generic policy", () => {
+    const out = withSecurityHeaders("/sw.js", new Response("js", { headers: { "cache-control": "public, max-age=0" } }));
+    expect(out.headers.get("cache-control")).toBe("no-cache, no-store, must-revalidate");
+    expect(out.headers.get("content-security-policy")).toBe("default-src 'self'; script-src 'self'");
+    expect(out.headers.get("content-type")).toContain("application/javascript");
+  });
+  it("covers API JSON answers too, without touching their cache rule", () => {
+    const out = withSecurityHeaders("/api/push/key", new Response("{}", { headers: { "content-type": "application/json", "cache-control": "no-store" } }));
+    expect(out.headers.get("x-content-type-options")).toBe("nosniff");
+    expect(out.headers.get("cache-control")).toBe("no-store");
   });
 });
 
