@@ -4,38 +4,127 @@
   "name": "シルバーライフ",
   "officialName": "株式会社シルバーライフ",
   "nameEn": "SILVER LIFE CO., LTD.",
-  "description": null,
+  "shortNameEn": "SILVER LIFE CO., LTD.",
+  "description": "高齢者向け配食サービスのフランチャイズ本部を運営し、加盟店や高齢者施設などへ調理済み食材を販売する会社です。",
   "listings": [
     {
       "exchange": "tse",
-      "market": "スタンダード"
+      "market": "スタンダード市場"
     }
   ],
-  "industries": [],
-  "businesses": [],
-  "financials": [
+  "industries": [
     {
-      "fiscalYear": "2021年7月期",
-      "periodEnd": "2021-07-31",
-      "revenue": 10050070000,
-      "revenueLabel": "売上高",
-      "profit": 973127000,
-      "profitLabel": "経常利益",
-      "netIncome": 546109000,
-      "netIncomeLabel": "当期純利益",
-      "totalAssets": 8262323000,
-      "totalAssetsLabel": "総資産額",
-      "netAssets": 4926335000,
-      "netAssetsLabel": "純資産額",
-      "employees": null,
-      "currency": "JPY",
-      "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "industryId": "food",
+      "primary": true
+    }
+  ],
+  "businesses": [
+    {
+      "id": "silver-life",
+      "name": "食材製造販売事業",
+      "description": "東京都新宿区に本社を置き、高齢者向け配食サービスのフランチャイズ本部の運営と、加盟店や高齢者施設などへの調理済み食材の販売を行う事業です。当社と連結子会社1社でグループを構成し、提出会社の従業員数は2026年7月31日現在で399人です。2026年7月期の売上高は16,212百万円です。",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
+      ],
+      "locator": "【事業の内容】",
+      "children": [
+        {
+          "id": "fc-stores",
+          "name": "FC加盟店向け販売",
+          "description": "「まごころ弁当」「配食のふれ愛」「宅食ライフ」の3つのブランドで配食店舗をフランチャイズ方式で展開し、加盟店に経営指導を行うとともに、弁当のおかずとなる調理済み食材や、弁当用に炊飯する米、使用する備品などを販売しています。2026年7月末現在の加盟店は3ブランドの合計で899店舗で、2026年7月期の売上高は9,392百万円です。",
+          "customers": [
+            "フランチャイズ加盟店"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "facility-sales",
+          "name": "高齢者施設等向け販売",
+          "description": "自社工場で製造した食材や仕入れた食材を、高齢者施設や障がい者施設などに販売しています。「まごころ食材サービス」「こだわりシェフ」「おてがるシェフ」などのサービスで冷凍食材を届けており、2026年7月期の売上高は2,516百万円です。",
+          "customers": [
+            "高齢者施設",
+            "障がい者施設"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        },
+        {
+          "id": "direct-and-other",
+          "name": "直販・その他",
+          "description": "ECを主体とした冷凍弁当の一般消費者への直接販売のほか、OEM受託による製造品の販売や、加須倉庫と連結子会社の成田冷蔵株式会社で冷凍商材のピッキングや保管を行う倉庫業を営んでいます。2026年7月期の売上高は4,303百万円です。",
+          "customers": [
+            "一般消費者",
+            "OEMを委託する事業者",
+            "冷凍商材の保管を委託する事業者"
+          ],
+          "sourceIds": [
+            "yuho-2026"
+          ],
+          "locator": "【事業の内容】"
+        }
       ]
-    },
+    }
+  ],
+  "businessModel": {
+    "description": "自社工場などでつくった調理済み食材をフランチャイズ加盟店や高齢者施設に販売し、ECでは冷凍弁当を一般消費者へ直接届けて対価を得ます。",
+    "products": [
+      "おかずなどの調理済み食材",
+      "冷凍弁当",
+      "高齢者施設向けの冷凍食材",
+      "弁当用の米や備品"
+    ],
+    "customers": [
+      "フランチャイズ加盟店",
+      "高齢者施設・障がい者施設",
+      "ECを利用する一般消費者",
+      "OEMを委託する事業者"
+    ],
+    "revenueSources": [
+      "加盟店への食材などの販売代金",
+      "加盟店からのロイヤリティ等",
+      "高齢者施設等への食材の販売代金",
+      "冷凍弁当の直接販売の代金",
+      "OEM受託製造品の販売代金",
+      "倉庫業の保管・作業の対価"
+    ],
+    "flow": [
+      {
+        "kind": "company",
+        "title": "シルバーライフ",
+        "description": "東京都新宿区に本社を置く、高齢者向け配食サービスのフランチャイズ本部で、食材の製造と販売を行う会社です。"
+      },
+      {
+        "kind": "offering",
+        "title": "調理済み食材と冷凍弁当",
+        "description": "群馬工場と栃木工場などの自社工場や仕入先で製造した調理済み食材と冷凍弁当を用意します。"
+      },
+      {
+        "kind": "customer",
+        "title": "加盟店・施設・一般消費者",
+        "description": "フランチャイズ加盟店や高齢者施設などに食材を販売し、ECでは一般消費者へ冷凍弁当を直接届けます。"
+      },
+      {
+        "kind": "revenue",
+        "title": "食材代金とロイヤリティ",
+        "description": "食材などの販売代金と、加盟店からのロイヤリティなどを受け取ります。"
+      },
+      {
+        "kind": "profit",
+        "title": "当期純利益825百万円",
+        "description": "2026年7月期の当期純利益は825百万円でした。"
+      }
+    ],
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【事業の内容】"
+  },
+  "financials": [
     {
       "fiscalYear": "2022年7月期",
       "periodEnd": "2022-07-31",
@@ -49,13 +138,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5304378000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 173,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -71,13 +160,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 5916194000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 232,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -93,13 +182,13 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6423815000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 305,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
     },
     {
@@ -115,42 +204,231 @@
       "totalAssetsLabel": "総資産額",
       "netAssets": 6972111000,
       "netAssetsLabel": "純資産額",
-      "employees": null,
+      "employees": 336,
       "currency": "JPY",
       "accountingStandard": "jgaap",
-      "revenueBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
-      "netIncomeBasis": "提出会社単体（連結子会社がなく連結財務諸表を作成していないため）",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
       "sourceIds": [
-        "yuho-2025"
+        "yuho-2026"
       ]
+    },
+    {
+      "fiscalYear": "2026年7月期",
+      "periodEnd": "2026-07-31",
+      "revenue": 16212562000,
+      "revenueLabel": "売上高",
+      "profit": 1191586000,
+      "profitLabel": "経常利益",
+      "netIncome": 825681000,
+      "netIncomeLabel": "当期純利益",
+      "totalAssets": 10939835000,
+      "totalAssetsLabel": "総資産額",
+      "netAssets": 7627669000,
+      "netAssetsLabel": "純資産額",
+      "employees": 399,
+      "currency": "JPY",
+      "accountingStandard": "jgaap",
+      "revenueBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "netIncomeBasis": "提出会社単体（連結財務諸表を作成していないため）",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "note": "第19期から連結財務諸表を作成している。連結初年度で、連結子会社のみなし取得日を当期末日としたため、当期の連結は貸借対照表のみであり、連結の経営成績の推移は記載されていない。そのため、この登録の財務数値は提出会社の個別の経営指標等によっている。"
     }
   ],
-  "history": [],
+  "workforce": {
+    "fiscalYear": "2026年7月期",
+    "asOf": "2026-07-31",
+    "employees": 399,
+    "averageAnnualSalary": 4743000,
+    "averageTenureYears": 3.7,
+    "averageTenureMonths": null,
+    "sourceIds": [
+      "yuho-2026"
+    ],
+    "locator": "【従業員の状況】（提出会社の状況）"
+  },
+  "history": [
+    {
+      "year": 2007,
+      "title": "株式会社シルバーライフを設立",
+      "description": "東京都世田谷区に株式会社シルバーライフを設立し、同年11月に直営の第1号店を東京都世田谷区に開業しました。",
+      "significance": "現在の会社の起源です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2009,
+      "title": "「まごころ弁当」のフランチャイズを開始",
+      "description": "主力ブランド「まごころ弁当」のフランチャイズチェーンを開始しました。",
+      "significance": "現在の事業の中心であるフランチャイズ展開の始まりです。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2012,
+      "title": "高齢者施設等向けの食材販売を開始",
+      "description": "高齢者施設等向けの食材販売「まごころ食材サービス」を開始しました。",
+      "significance": "加盟店向けに次ぐ販売先の柱ができました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2013,
+      "title": "自社工場を取得",
+      "description": "群馬県邑楽郡邑楽町に自社工場を取得しました。同年、株式会社ネクストコミュニティを吸収合併しています。",
+      "significance": "食材の自社製造の体制が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2014,
+      "title": "「配食のふれ愛」のフランチャイズを開始",
+      "description": "第2のブランド「配食のふれ愛」のフランチャイズチェーンを開始し、OEM販売も開始しました。",
+      "significance": "ブランドと販売の形が広がりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2017,
+      "title": "東京証券取引所マザーズ市場に上場",
+      "description": "東京証券取引所マザーズ市場に株式を上場しました。",
+      "significance": "上場会社となりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2019,
+      "title": "冷凍弁当の直接販売を開始",
+      "description": "冷凍弁当の直接販売「まごころケア食」の販売を開始しました。",
+      "significance": "一般消費者への直接販売が始まりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2020,
+      "title": "東京証券取引所市場第一部へ市場変更",
+      "description": "東京証券取引所市場第一部への上場市場の変更を行いました。",
+      "significance": "上場市場がマザーズから市場第一部に移りました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2021,
+      "title": "栃木工場の稼働を開始",
+      "description": "栃木県足利市で栃木工場の稼働を開始しました。同年、第3のブランド「宅食ライフ」のフランチャイズチェーンも開始しています。",
+      "significance": "製造拠点が2工場体制になり、ブランドが3つになりました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2022,
+      "title": "プライム市場へ移行",
+      "description": "市場区分の見直しにより、東京証券取引所の市場第一部からプライム市場に移行しました。",
+      "significance": "市場再編に伴う移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2023,
+      "title": "スタンダード市場へ移行",
+      "description": "東京証券取引所のプライム市場からスタンダード市場に移行しました。同年、冷凍弁当の直接販売「ライフミール」の販売も開始しています。",
+      "significance": "現在の上場市場であるスタンダード市場への移行です。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    },
+    {
+      "year": 2026,
+      "title": "成田冷蔵株式会社を子会社化",
+      "description": "冷蔵倉庫業を営む成田冷蔵株式会社を子会社化しました。",
+      "significance": "初めての連結子会社で、冷蔵倉庫の物流機能をグループに取り込みました。",
+      "sourceIds": [
+        "yuho-2026"
+      ],
+      "locator": "【沿革】"
+    }
+  ],
   "relatedCompanies": [],
   "sources": [
     {
-      "id": "yuho-2025",
-      "title": "有価証券報告書－第18期(2024/08/01－2025/07/31)",
+      "id": "yuho-2026",
+      "title": "有価証券報告書－第19期(2025/08/01－2026/07/31)",
       "publisher": "株式会社シルバーライフ",
-      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100WWED.pdf",
-      "publishedAt": "2025-10-24",
-      "accessedAt": "2026-09-30"
+      "url": "https://disclosure2dl.edinet-fsa.go.jp/searchdocument/pdf/S100Z8TU.pdf",
+      "publishedAt": "2026-10-22",
+      "docId": "S100Z8TU",
+      "asOf": "2026-07-31",
+      "accessedAt": "2026-11-18"
     }
   ],
   "status": {
-    "state": "figures-only"
+    "state": "needs-attention",
+    "notes": [
+      "businessModel: 連結初年度（第19期）のため連結の経営成績の推移がなく、この登録の財務数値は提出会社の個別の経営指標等によっている。連結の経営成績が開示される翌期以降は、連結の数値への切り替えが望ましい。"
+    ]
   },
-  "updatedAt": "2026-09-30",
-  "workforce": {
-    "fiscalYear": "2025年7月期",
-    "asOf": "2025-07-31",
-    "employees": 336,
-    "averageAnnualSalary": 5301000,
-    "averageTenureYears": 2.7,
-    "averageTenureMonths": null,
-    "sourceIds": [
-      "yuho-2025"
-    ],
-    "locator": "【従業員の状況】（提出会社の状況）"
+  "updatedAt": "2026-11-18",
+  "perspectives": {
+    "strategy": {
+      "disclosed": {
+        "text": "経営理念に「食の観点から誰もが安心して歳を重ねていける社会を作ります」を掲げ、各販売区分の売上の拡大に取り組みながら、食材の製造や保管、発送の内製化など、製造体制の強化を進める方針です。",
+        "asOf": "2026-10-22",
+        "sourceIds": [
+          "yuho-2026"
+        ],
+        "locator": "【経営方針、経営環境及び対処すべき課題等】"
+      },
+      "analysis": {
+        "text": "フランチャイズ加盟店の店舗数が減少傾向にあるなかで、店舗数の拡大による成長から、1店舗あたりの売上の増加による成長へと方針を転換するとしています。",
+        "basis": "経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析に記載された経営戦略の現状と見通しに基づく",
+        "asOf": "2026-10-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "competitiveAdvantage": {
+      "analysis": {
+        "text": "3つのブランドで899店舗（2026年7月末現在）のフランチャイズ網を持ち、群馬工場と栃木工場の自社工場、加須倉庫や成田冷蔵の物流拠点まで、製造から保管、配送をグループで担う体制を持っています。",
+        "basis": "事業の内容、主要な設備の状況、関係会社の状況の記載に基づく",
+        "asOf": "2026-10-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    },
+    "industryPosition": {
+      "analysis": {
+        "text": "高齢者向け配食のフランチャイズ本部として加盟店向けの販売が売上の中心で、あわせて高齢者施設向けの食材販売と、ECでの冷凍弁当の直接販売も手がけています。施設向けでは、人手不足を背景にした調理の外部委託の需要の拡大が追い風になっています。",
+        "basis": "事業の内容と、経営者による財政状態、経営成績及びキャッシュ・フローの状況の分析の記載に基づく",
+        "asOf": "2026-10-22",
+        "sourceIds": [
+          "yuho-2026"
+        ]
+      }
+    }
   }
 }
