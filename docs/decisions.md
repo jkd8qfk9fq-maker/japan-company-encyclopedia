@@ -1200,3 +1200,17 @@ EDINET DB carries no share prices. The operator chose (2026-11-18) to show only 
   ones, carried by `refresh-financials` with a newer filing; a facts-layer field (`ownership.mjs`).
 - **On the page**: two cells in 比較の目安, marked as printed values, with the line that price, market value and yield are
   not shown. Invariant 4 says so too. A price feed would need a licensed source (e.g. J-Quants Pro) and a new decision.
+
+### JCE-067 · 2026-11-18 · Accepted (operator) — A pre-registration update is committed with the registration, not before
+
+On 2026-11-18 the update of `figures-only` entries to a newer filing ahead of their registration ("procedure b") was
+committed to main on its own three times (canbas, tms, stemrim). Each time the newer filing left a figure blank; the
+integrity rule asks for `needs-attention` for that (invariant 1), but registration refuses any entry that is not
+`figures-only` (double registration guard in `autopilot-lib.mjs`), and only the registration merge sets
+`needs-attention` with its note. Between the two commits main failed `tests/data-integrity.test.ts`, which stopped the
+daily financial refresh and every backfill gated on it.
+
+- **Rule**: the pre-registration update travels with the registration (the staging merge), as 1d0f0ea7 already did for
+  workforce. Not setting `needs-attention` early: that would break the registration guard.
+- stemrim's update (52450851), committed alone, is reverted to its last passing state; it returns with its registration.
+- CLAUDE.md says so, for every session that runs the procedure.
