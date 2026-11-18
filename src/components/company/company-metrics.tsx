@@ -9,6 +9,7 @@ import type { Source } from "@/types/source";
  */
 export function CompanyMetrics({ metrics, sources }: { metrics: Metrics; sources: Source[] }) {
   const w = metrics.workforce;
+  const s = metrics.shareFacts;
   const tenure =
     w && w.averageTenureYears !== null
       ? w.averageTenureMonths !== null
@@ -33,12 +34,22 @@ export function CompanyMetrics({ metrics, sources }: { metrics: Metrics; sources
       note: `${w.fiscalYear}${w.employees !== null ? `・提出会社の従業員${w.employees.toLocaleString("ja-JP")}人` : ""}`,
     },
     tenure && { label: "平均勤続年数（提出会社）", value: tenure, note: w!.fiscalYear },
+    s && s.dividendPerShare !== null && {
+      label: "1株当たり配当額（提出会社）",
+      value: `${s.dividendPerShare.toLocaleString("ja-JP", { maximumFractionDigits: 2 })}円`,
+      note: `${s.fiscalYear}・有価証券報告書の印字`,
+    },
+    s && s.issuedShares !== null && {
+      label: "発行済株式総数（提出会社）",
+      value: `${s.issuedShares.toLocaleString("ja-JP")}株`,
+      note: `${s.fiscalYear}末・有価証券報告書の印字`,
+    },
     metrics.topBusinesses.length > 0 && { label: "主な事業", value: metrics.topBusinesses.join("・"), note: null },
   ].filter((item): item is { label: string; value: string; note: string | null } => Boolean(item));
   if (items.length === 0) return null;
 
   const sourceIds = [
-    ...new Set([...(metrics.netProfitMargin?.sourceIds ?? []), ...(metrics.overseasSalesRatio?.sourceIds ?? []), ...(w?.sourceIds ?? [])]),
+    ...new Set([...(metrics.netProfitMargin?.sourceIds ?? []), ...(metrics.overseasSalesRatio?.sourceIds ?? []), ...(w?.sourceIds ?? []), ...(s?.sourceIds ?? [])]),
   ];
 
   return (
@@ -57,6 +68,7 @@ export function CompanyMetrics({ metrics, sources }: { metrics: Metrics; sources
       <p className="mt-2 text-xs leading-5 text-muted-foreground">
         「計算値」は有価証券報告書に印字された数値から当サイトが計算したものです。
         {w && "給与と勤続年数は提出会社（グループ全体ではない）の値です。"}
+        {s && "1株当たり配当額と発行済株式総数は有価証券報告書に印字された値で、株価・時価総額・配当利回りは扱いません。"}
       </p>
       {sourceIds.length > 0 && <SourceList sources={sources} sourceIds={sourceIds} />}
     </div>

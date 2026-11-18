@@ -1169,7 +1169,36 @@ export function workforceFigures(rows, nonConsolidated = false) {
   };
 }
 
-// Not bumped for `workforce` (JCE-038): a version change rebuilds every pack, and a pack without the field only
+/**
+ * 1株当たり配当額 and 発行済株式総数 of the 提出会社, as 主要な経営指標等の推移 prints them (JCE-066). The filer's own
+ * (non-consolidated) context first; a filer without consolidated statements tags them without the member. Two
+ * different values in one context mean the row is not one figure, so it is left out rather than chosen.
+ */
+export function shareFigures(rows) {
+  const value = (element, contexts) => {
+    for (const context of contexts) {
+      const values = [
+        ...new Set(
+          rows
+            .filter((r) => r["要素ID"] === `jpcrp_cor:${element}` && r["コンテキストID"] === context)
+            .map((r) => Number(String(r["値"]).replace(/,/g, "")))
+            .filter((v) => Number.isFinite(v)),
+        ),
+      ];
+      if (values.length === 1) return values[0];
+      if (values.length > 1) return null;
+    }
+    return null;
+  };
+  const dividend = value("DividendPaidPerShareSummaryOfBusinessResults", ["CurrentYearDuration_NonConsolidatedMember", "CurrentYearDuration"]);
+  const shares = value("TotalNumberOfIssuedSharesSummaryOfBusinessResults", ["CurrentYearInstant_NonConsolidatedMember", "CurrentYearInstant"]);
+  return {
+    dividendPerShare: dividend !== null && dividend >= 0 ? dividend : null,
+    issuedShares: shares !== null && Number.isInteger(shares) && shares > 0 ? shares : null,
+  };
+}
+
+// Not bumped for `workforce` (JCE-038) or `shareFacts` (JCE-066): a version change rebuilds every pack, and a pack without the field only
 // means a draft without 従業員の状況. Packs gain it as they are rebuilt for a new filing.
 export const EXTRACTOR_VERSION = 8;
 
@@ -1420,6 +1449,7 @@ async function packFor(companyId, code4, from, to) {
     warnings,
     figures,
     workforce: workforceFigures(rows, figures.nonConsolidated),
+    shares: shareFigures(rows),
     // JCE-038: segment revenue as tagged (with each member's Japanese name, to be matched to the businesses once
     // they are written) and the note 地域ごとの情報 is read from. Both checked again where they become entry data.
     segmentFacts: namedSegmentFacts(rows, await labelDocumentsFor(latest.docID).catch(() => [])),

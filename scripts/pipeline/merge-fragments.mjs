@@ -108,6 +108,7 @@ export function mergeEntry(companyId) {
     financials: draft.financials,
     // 従業員の状況 is transcribed from the XBRL like the five-year table (JCE-038); a draft from an older pack has none.
     ...(draft.workforce ? { workforce: draft.workforce } : {}),
+    ...(draft.shareFacts ? { shareFacts: draft.shareFacts } : {}),
     history: [],
     relatedCompanies: [],
     sources: [],
@@ -212,7 +213,7 @@ export function mergeEntry(companyId) {
     const registered = JSON.parse(readFileSync(registeredPath, "utf8"));
     const years = new Set(entry.financials.map((f) => f.fiscalYear));
     const ids = new Set(entry.businesses.map((b) => b.id));
-    for (const key of ["workforce", "segmentRevenue", "regionalRevenue"]) {
+    for (const key of ["workforce", "shareFacts", "segmentRevenue", "regionalRevenue"]) {
       const kept = registered[key];
       if (entry[key] || !kept || !years.has(kept.fiscalYear)) continue;
       if (key === "segmentRevenue" && !kept.items.every((i) => ids.has(i.businessId))) continue;

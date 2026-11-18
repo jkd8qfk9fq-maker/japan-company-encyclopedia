@@ -17,7 +17,7 @@
 import { readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { downloadDocument, readCsvRows, scrubSecrets, textBlockToText } from "../research/edinet.mjs";
-import { workforceFigures } from "../research/evidence-pack.mjs";
+import { shareFigures, workforceFigures } from "../research/evidence-pack.mjs";
 import { assertMachineWrite } from "./ownership.mjs";
 import { labelDocumentsFor, namedSegmentFacts, regionalNoteOf, regionalRevenueBlock, segmentRevenueBlock } from "./segment-revenue.mjs";
 
@@ -58,6 +58,12 @@ function workforceBlock(latest, sourceId, figures) {
   };
 }
 
+/** JCE-066: 1株当たり配当額・発行済株式総数 of the 提出会社, as printed, or null when the filing tags neither. */
+function shareBlock(latest, sourceId, figures) {
+  if (figures.dividendPerShare === null && figures.issuedShares === null) return null;
+  return { fiscalYear: latest.fiscalYear, asOf: latest.periodEnd, ...figures, sourceIds: [sourceId], locator: "【主要な経営指標等の推移】（提出会社の経営指標等）" };
+}
+
 async function rowsOf(docID) {
   const zip = await downloadDocument(docID, 5);
   if (!zip) throw new Error(`EDINET が CSV を返さなかった（${docID}）`);
@@ -66,7 +72,7 @@ async function rowsOf(docID) {
 
 if (probe) {
   // Read-only: what a filing actually tags, so element names are checked against real filings, not assumed.
-  const wanted = /Salary|LengthOfService|AverageAge|NumberOfEmployees$|ExternalCustomers|GeographicalAreas|SegmentInformation|NetSales$|Revenue/;
+  const wanted = /Salary|LengthOfService|AverageAge|NumberOfEmployees$|ExternalCustomers|GeographicalAreas|SegmentInformation|NetSales$|Revenue|PerShare|IssuedShares/;
   for (const id of probe) {
     const found = filingOf(read(id));
     if (!found.docID) { console.log(`${id}: ${found.problem}`); continue; }
@@ -76,6 +82,7 @@ if (probe) {
       console.log([r["要素ID"], r["項目名"], r["コンテキストID"], r["単位"], String(r["値"]).slice(0, 40)].join("\t"));
     }
     console.log(`workforceFigures → ${JSON.stringify(workforceFigures(rows))}`);
+    console.log(`shareFigures → ${JSON.stringify(shareFigures(rows))}`);
     const entry = read(id);
     const facts = namedSegmentFacts(rows, await labelDocumentsFor(found.docID));
     console.log(`segmentFacts → ${JSON.stringify(facts)}`);
@@ -95,11 +102,11 @@ const candidates = readdirSync(dir)
   .map((f) => f.replace(/\.json$/, ""))
   .filter((id) => !ids || ids.has(id))
   .map((id) => ({ id, entry: read(id) }))
-  .filter(({ entry }) => !entry.workforce || !entry.regionalRevenue || (!entry.segmentRevenue && entry.businesses.length >= 2))
+  .filter(({ entry }) => !entry.workforce || !entry.shareFacts || !entry.regionalRevenue || (!entry.segmentRevenue && entry.businesses.length >= 2))
   .filter(({ entry }) => tier === "all" || entry.status.state === "published")
   .slice(0, limit);
 
-const counts = { written: 0, none: 0, skipped: 0, failed: 0, workforce: 0, segmentRevenue: 0, regionalRevenue: 0 };
+const counts = { written: 0, none: 0, skipped: 0, failed: 0, workforce: 0, shareFacts: 0, segmentRevenue: 0, regionalRevenue: 0 };
 const lines = [];
 for (const { id, entry } of candidates) {
   const found = filingOf(entry);
@@ -111,6 +118,10 @@ for (const { id, entry } of candidates) {
     if (!entry.workforce) {
       const block = workforceBlock(found.latest, found.sourceId, workforceFigures(rows, nonConsolidated));
       if (block) added.workforce = block;
+    }
+    if (!entry.shareFacts) {
+      const block = shareBlock(found.latest, found.sourceId, shareFigures(rows));
+      if (block) added.shareFacts = block;
     }
     if (!entry.segmentRevenue && entry.businesses.length >= 2) {
       const facts = namedSegmentFacts(rows, await labelDocumentsFor(found.docID));
@@ -134,9 +145,9 @@ for (const { id, entry } of candidates) {
 }
 
 const summary = [
-  `## 従業員の状況・事業別の売上・地域別の売上の追加（${write ? "書き込み" : "試行"}）`,
+  `## 従業員の状況・1株当たり配当額と発行済株式数・事業別の売上・地域別の売上の追加（${write ? "書き込み" : "試行"}）`,
   "",
-  `対象 ${candidates.length} 社: 更新 ${counts.written}（従業員の状況 ${counts.workforce}・事業別 ${counts.segmentRevenue}・地域別 ${counts.regionalRevenue}）・追加なし ${counts.none}・見送り ${counts.skipped}・失敗 ${counts.failed}`,
+  `対象 ${candidates.length} 社: 更新 ${counts.written}（従業員の状況 ${counts.workforce}・1株配当と株式数 ${counts.shareFacts}・事業別 ${counts.segmentRevenue}・地域別 ${counts.regionalRevenue}）・追加なし ${counts.none}・見送り ${counts.skipped}・失敗 ${counts.failed}`,
   "",
   "追加なし・一部だけの会社は、有報がタグを付けていない（米国基準など）、合計が合わない、セグメント名が事業名と一致しない、地域の表が省略されている、のどれか。推測では埋めない。",
   "",

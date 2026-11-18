@@ -113,7 +113,7 @@ const strip = (/** @type {string} */ s) => s.replace(/\s*\(docID [^)]+\)/, "");
 /**
  * What adding the new filing's year would change. Pure: no file, no process state.
  * @param {{ entry: any, draft: any, pack: any, today: string }} input
- * @returns {{ kind: "hold", reasons: string[] } | { kind: "current" } | { kind: "update", financials: any[], source: any | null, added: any[], dropped: any[], workforce: any | null, segmentRevenue: any | null, regionalRevenue: any | null }}
+ * @returns {{ kind: "hold", reasons: string[] } | { kind: "current" } | { kind: "update", financials: any[], source: any | null, added: any[], dropped: any[], workforce: any | null, shareFacts: any | null, segmentRevenue: any | null, regionalRevenue: any | null }}
  */
 export function planFinancialsRefresh({ entry, draft, pack, today }) {
   const reasons = [];
@@ -161,12 +161,13 @@ export function planFinancialsRefresh({ entry, draft, pack, today }) {
   // a year that has left the table would leave it pointing at nothing.
   const stillInTable = (/** @type {any} */ block) => (block && financials.some((/** @type {any} */ r) => r.fiscalYear === block.fiscalYear) ? block : null);
   const workforce = draft.workforce ?? stillInTable(entry.workforce);
+  const shareFacts = draft.shareFacts ?? stillInTable(entry.shareFacts);
   // The two revenue tables (JCE-038) follow the newest filing the same way; segment revenue is matched to the
   // entry's businesses by the filing's own segment names, and is left out when they no longer match.
   const newest = [...financials].sort((/** @type {any} */ a, /** @type {any} */ b) => a.periodEnd.localeCompare(b.periodEnd)).at(-1);
   const segmentRevenue = segmentRevenueBlock(draft.segmentFacts, entry.businesses ?? [], newest, sourceIds[0]) ?? stillInTable(entry.segmentRevenue);
   const regionalRevenue = draft.regionalRevenue ?? stillInTable(entry.regionalRevenue);
-  return { kind: "update", financials, source, added, dropped, workforce, segmentRevenue, regionalRevenue };
+  return { kind: "update", financials, source, added, dropped, workforce, shareFacts, segmentRevenue, regionalRevenue };
 }
 
 /** `before`/`after` for a Revision: the figures of the years that left and the years that arrived. */
@@ -390,10 +391,12 @@ export function refreshOne(id, { apply, newest, today, retry = false, rehearse =
   const next = {
     ...entry,
     workforce: undefined,
+    shareFacts: undefined,
     segmentRevenue: undefined,
     regionalRevenue: undefined,
     financials: plan.financials,
     ...(plan.workforce ? { workforce: plan.workforce } : {}),
+    ...(plan.shareFacts ? { shareFacts: plan.shareFacts } : {}),
     ...(plan.segmentRevenue ? { segmentRevenue: plan.segmentRevenue } : {}),
     ...(plan.regionalRevenue ? { regionalRevenue: plan.regionalRevenue } : {}),
     sources: plan.source ? [...entry.sources, plan.source] : entry.sources,
