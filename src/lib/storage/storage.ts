@@ -36,6 +36,8 @@ export const STORAGE_KEYS = {
   screeningSaved: "screening-saved-conditions",
   /** JCE-065: the link this browser last mailed to move its lists — the key to withdraw it, and when it ends. */
   syncPending: "sync-pending",
+  /** JCE-069: this browser's e-mail notification sign-up — its key, a masked address to show, and what it receives. */
+  mailNotify: "mail-notify",
 } as const;
 
 export type StorageKey = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];

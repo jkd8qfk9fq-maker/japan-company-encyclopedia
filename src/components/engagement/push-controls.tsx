@@ -3,6 +3,7 @@
 // Client Components: notifications are a browser permission and a subscription only the browser can make (JCE-059).
 
 import { BellOff, BellRing } from "lucide-react";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { useLocalStore } from "@/hooks/use-local-store";
 import { disablePush, enablePush, pushAvailability, syncPush, type PushAvailability } from "@/lib/push";
@@ -22,7 +23,7 @@ const NOTE: Partial<Record<PushAvailability["state"], string>> = {
 };
 
 const FAILED: Record<string, string> = {
-  denied: "通知が許可されなかったため、設定していません。",
+  denied: "通知が許可されなかったため、設定していません。メールでも受け取れます。",
   failed: "通知の設定ができませんでした。時間をおいて、もう一度お試しください。",
   limit: "通知を受け取れる会社の数の上限を超えています。",
 };
@@ -37,7 +38,12 @@ export function PushCompanyToggle({ companyId, companyName }: { companyId: strin
   if (!favorites.includes(companyId) || !availability) return null;
   if (availability.state !== "ready") {
     const note = NOTE[availability.state];
-    return note ? <p className="mt-2 max-w-md text-xs leading-5 text-muted-foreground">{note}</p> : null;
+    return (
+      <p className="mt-2 max-w-md text-xs leading-5 text-muted-foreground">
+        {note && <>{note} </>}
+        <MailLink />
+      </p>
+    );
   }
   const on = pushed.includes(companyId);
   return (
@@ -61,8 +67,21 @@ export function PushCompanyToggle({ companyId, companyName }: { companyId: strin
         {on ? "決算の通知: オン" : "決算・更新の通知を受け取る"}
         <span className="sr-only">：{companyName}</span>
       </button>
-      {message && <p className="mt-1 text-xs text-muted-foreground" role="status">{message}</p>}
+      {message && (
+        <p className="mt-1 text-xs text-muted-foreground" role="status">
+          {message} <MailLink />
+        </p>
+      )}
     </div>
+  );
+}
+
+/** JCE-069: where a browser cannot or will not show notifications, the same news by e-mail. */
+function MailLink() {
+  return (
+    <Link href="/notifications#mail" className="underline underline-offset-2">
+      メールで受け取る
+    </Link>
   );
 }
 

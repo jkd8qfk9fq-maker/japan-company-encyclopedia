@@ -38,6 +38,8 @@ describe("wrangler.jsonc", () => {
       { name: "PUSH_LIMIT", namespace_id: "3001", simple: { limit: 20, period: 60 } },
       // JCE-065: moving a reader's lists to another device, in the same database.
       { name: "SYNC_LIMIT", namespace_id: "3002", simple: { limit: 6, period: 60 } },
+      // JCE-069: notifications by e-mail, in the same database.
+      { name: "MAIL_LIMIT", namespace_id: "3003", simple: { limit: 10, period: 60 } },
     ]);
     expect(wrangler.vars).toBeUndefined();
   });

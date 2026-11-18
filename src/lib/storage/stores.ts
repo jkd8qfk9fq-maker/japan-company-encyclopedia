@@ -237,3 +237,16 @@ export const syncPendingStore = createStore<SyncPending | null>(STORAGE_KEYS.syn
   const v = value as Partial<SyncPending>;
   return typeof v.cancelKey === "string" && typeof v.expiresAt === "number" ? { cancelKey: v.cancelKey, expiresAt: v.expiresAt } : null;
 });
+
+// ---------------------------------------------------------------------------
+// JCE-069: e-mail notifications. The address itself is not kept here — only a masked form to show which one it was.
+
+export type MailNotify = { manageKey: string; hint: string; kinds: ("results" | "corrections")[]; confirmed: boolean };
+
+export const mailNotifyStore = createStore<MailNotify | null>(STORAGE_KEYS.mailNotify, null, (value) => {
+  if (!value || typeof value !== "object") return null;
+  const v = value as Partial<MailNotify>;
+  if (typeof v.manageKey !== "string" || typeof v.hint !== "string" || !Array.isArray(v.kinds)) return null;
+  const kinds = v.kinds.filter((k): k is MailNotify["kinds"][number] => k === "results" || k === "corrections");
+  return { manageKey: v.manageKey, hint: v.hint, kinds, confirmed: v.confirmed === true };
+});

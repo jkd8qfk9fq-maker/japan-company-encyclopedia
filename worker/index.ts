@@ -1,8 +1,8 @@
 /**
  * The site lives at kigyo-hyakka.com (JCE-039). This Worker sends the old free address
  * (nihonkigyohyakka.<account>.workers.dev) and www. to it, so links already shared keep working, and answers
- * /api/push/* and a half-hourly schedule for notifications of followed companies (JCE-059), /api/sync/* for moving a
- * reader's lists to another device (JCE-065); every page and file is
+ * /api/push/* and a half-hourly schedule for notifications of followed companies (JCE-059), /api/mail/* for the same
+ * notifications by e-mail (JCE-069), /api/sync/* for moving a reader's lists to another device (JCE-065); every page and file is
  * still the static export, served by the assets binding. /_next/* skips this Worker (wrangler.jsonc), so page
  * assets cost no invocation.
  */
@@ -12,15 +12,19 @@ const REDIRECT_OLD_HOST = true;
 
 import { handlePush, runNotifications, type PushEnv, type Updates } from "./push/api";
 import { d1Store } from "./push/store";
+import { handleMail, runMailNotifications, type MailEnv } from "./mail/api";
+import { d1MailStore } from "./mail/store";
 import { handleSync, type SyncEnv } from "./sync/api";
 import { d1SyncStore } from "./sync/store";
 
-type Env = PushEnv & SyncEnv & { ASSETS: { fetch(request: Request): Promise<Response> } };
+type Env = PushEnv & MailEnv & SyncEnv & { ASSETS: { fetch(request: Request): Promise<Response> } };
 
 // Notifications for followed companies (JCE-059): D1 when bound (wrangler.jsonc), otherwise the feature reports itself off.
 const pushStore = (env: Env) => (env.PUSH_DB ? d1Store(env.PUSH_DB as Parameters<typeof d1Store>[0]) : null);
 // Moving lists between devices (JCE-065) keeps its short-lived rows in the same database.
 const syncStore = (env: Env) => (env.PUSH_DB ? d1SyncStore(env.PUSH_DB as Parameters<typeof d1SyncStore>[0]) : null);
+// E-mail notifications (JCE-069), for readers whose browser will not show web notifications: same database.
+const mailStore = (env: Env) => (env.PUSH_DB ? d1MailStore(env.PUSH_DB as Parameters<typeof d1MailStore>[0]) : null);
 
 /** Where a request should go instead, or null to serve it. Only known old hosts move: local previews are left alone. */
 export function redirectTarget(requestUrl: string): string | null {
@@ -122,16 +126,19 @@ const worker = {
     const target = REDIRECT_OLD_HOST ? redirectTarget(request.url) : null;
     if (target) return redirectResponse(target);
     if (pathname.startsWith("/api/push/")) return withSecurityHeaders(pathname, await handlePush(request, env, pushStore(env)));
+    if (pathname.startsWith("/api/mail/")) return withSecurityHeaders(pathname, await handleMail(request, env, mailStore(env)));
     if (pathname.startsWith("/api/sync/")) return withSecurityHeaders(pathname, await handleSync(request, env, syncStore(env)));
     return withSecurityHeaders(pathname, withShareImageType(pathname, await env.ASSETS.fetch(assetRequest(request))));
   },
-  // Every 30 minutes (wrangler.jsonc › triggers): announce what /updates.json — the live site — newly lists.
+  // Every 30 minutes (wrangler.jsonc › triggers): announce what /updates.json — the live site — newly lists, by push and by e-mail.
   async scheduled(_controller: unknown, env: Env): Promise<void> {
     await syncStore(env)?.prune(Date.now());
-    await runNotifications(env, pushStore(env), async () => {
-      const response = await env.ASSETS.fetch(new Request(`https://${CANONICAL_HOST}/updates.json`));
-      return (await response.json()) as Updates;
-    });
+    // Read once for both channels, so push and e-mail announce the same list.
+    let updates: Promise<Updates> | null = null;
+    const load = () =>
+      (updates ??= env.ASSETS.fetch(new Request(`https://${CANONICAL_HOST}/updates.json`)).then((r) => r.json() as Promise<Updates>));
+    await runNotifications(env, pushStore(env), load);
+    await runMailNotifications(env, mailStore(env), load);
   },
 };
 

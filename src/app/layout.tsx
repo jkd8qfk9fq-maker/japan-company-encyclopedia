@@ -9,6 +9,7 @@ import { ANALYTICS_TOKEN, BASE_PATH, OG_IMAGES, SITE_DESCRIPTION, SITE_NAME, SIT
 import { THEME_SCRIPT } from "@/lib/storage/theme-script";
 import "./globals.css";
 import { AnalyticsConsent } from "@/components/analytics/analytics-consent";
+import { MailSync } from "@/components/engagement/mail-notify";
 import { PushSync } from "@/components/engagement/push-controls";
 
 /*
@@ -100,6 +101,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <BottomNavigation />
         <ServiceWorkerRegistration />
         <PushSync />
+        <MailSync />
         <AnalyticsConsent />
         {ANALYTICS_TOKEN && (
           <script
