@@ -75,7 +75,7 @@ export function CompanyReportBlock({ company, report, siteUrl }: { company: Comp
               {[company.officialName, company.code && `証券コード ${company.code}`, report.industryName && `${report.industryName}業界`].filter(Boolean).join("・")}
             </p>
           </div>
-          <p className="text-right text-xs text-muted-foreground">
+          <p className="text-xs text-muted-foreground sm:text-right">
             最新期 {latest.fiscalYear}
             <br />
             全数値の出典は末尾に記載
@@ -93,21 +93,22 @@ export function CompanyReportBlock({ company, report, siteUrl }: { company: Comp
           <h4 className="text-xs font-semibold">5期の数字（有価証券報告書の印字値）</h4>
           <div className="mt-1.5 overflow-x-auto">
             <table className="w-full min-w-[34rem] border-collapse text-xs">
+              <caption className="sr-only">5期の数字（有価証券報告書の印字値）</caption>
               <thead>
                 <tr className="border-b border-foreground text-left">
-                  <th className="px-2 py-1.5 font-medium">決算期</th>
-                  <th className="px-2 py-1.5 text-right font-medium">{latest.revenueLabel}</th>
-                  <th className="px-2 py-1.5 text-right font-medium">{latest.profitLabel ?? "利益"}</th>
-                  <th className="px-2 py-1.5 text-right font-medium">{latest.netIncomeLabel}</th>
-                  <th className="px-2 py-1.5 text-right font-medium">総資産</th>
-                  <th className="px-2 py-1.5 text-right font-medium">純資産</th>
-                  <th className="px-2 py-1.5 text-right font-medium">従業員</th>
+                  <th scope="col" className="sticky left-0 bg-card px-2 py-1.5 font-medium">決算期</th>
+                  <th scope="col" className="px-2 py-1.5 text-right font-medium">{latest.revenueLabel}</th>
+                  <th scope="col" className="px-2 py-1.5 text-right font-medium">{latest.profitLabel ?? "利益"}</th>
+                  <th scope="col" className="px-2 py-1.5 text-right font-medium">{latest.netIncomeLabel}</th>
+                  <th scope="col" className="px-2 py-1.5 text-right font-medium">総資産</th>
+                  <th scope="col" className="px-2 py-1.5 text-right font-medium">純資産</th>
+                  <th scope="col" className="px-2 py-1.5 text-right font-medium">従業員</th>
                 </tr>
               </thead>
               <tbody>
                 {report.periods.map((p) => (
                   <tr key={p.periodEnd} className="border-b border-border">
-                    <td className="px-2 py-1.5 whitespace-nowrap">{p.fiscalYear}</td>
+                    <th scope="row" className="sticky left-0 bg-card px-2 py-1.5 text-left font-normal whitespace-nowrap">{p.fiscalYear}</th>
                     <td className="figures px-2 py-1.5 text-right whitespace-nowrap">{yen(p.revenue)}</td>
                     <td className="figures px-2 py-1.5 text-right whitespace-nowrap">{yen(p.profit)}</td>
                     <td className="figures px-2 py-1.5 text-right whitespace-nowrap">{yen(p.netIncome)}</td>
@@ -119,6 +120,7 @@ export function CompanyReportBlock({ company, report, siteUrl }: { company: Comp
               </tbody>
             </table>
           </div>
+<p className="no-print mt-1 text-[0.6875rem] text-muted-foreground sm:hidden">表は横にスクロールできます。</p>
           <p className="mt-1 text-[0.6875rem] text-muted-foreground">「—」は、その期の有価証券報告書に印字がない数字です（推計では埋めていません）。</p>
         </section>
 
@@ -139,25 +141,26 @@ export function CompanyReportBlock({ company, report, siteUrl }: { company: Comp
             </h4>
             <div className="mt-1.5 overflow-x-auto">
               <table className="w-full min-w-[40rem] border-collapse text-xs">
+                <caption className="sr-only">業界の中での位置</caption>
                 <thead>
                   <tr className="border-b border-foreground text-left">
-                    <th className="px-2 py-1.5 font-medium">指標</th>
-                    <th className="px-2 py-1.5 text-right font-medium whitespace-nowrap">この会社</th>
-                    <th className="px-2 py-1.5 text-right font-medium whitespace-nowrap">業界の中央値</th>
-                    <th className="px-2 py-1.5 text-right font-medium whitespace-nowrap">第1〜第3四分位</th>
-                    <th className="px-2 py-1.5 text-right font-medium whitespace-nowrap">大きい順の位置</th>
+                    <th scope="col" className="sticky left-0 bg-card px-2 py-1.5 font-medium">指標</th>
+                    <th scope="col" className="px-2 py-1.5 text-right font-medium whitespace-nowrap">この会社</th>
+                    <th scope="col" className="px-2 py-1.5 text-right font-medium whitespace-nowrap">業界の中央値</th>
+                    <th scope="col" className="px-2 py-1.5 text-right font-medium whitespace-nowrap">第1〜第3四分位</th>
+                    <th scope="col" className="px-2 py-1.5 text-right font-medium whitespace-nowrap">大きい順の位置</th>
                   </tr>
                 </thead>
                 <tbody>
                   {computed.map((m) => (
                     <tr key={m.key} className="border-b border-border align-top">
-                      <td className="px-2 py-1.5">
+                      <th scope="row" className="sticky left-0 max-w-[11rem] bg-card px-2 py-1.5 text-left font-normal">
                         {m.label}
                         <span className="block text-[0.6875rem] text-muted-foreground">
                           {m.computed ? `計算値：${m.formula}` : m.formula}
                           {m.note && `・${m.note}`}
                         </span>
-                      </td>
+                      </th>
                       <td className="figures px-2 py-1.5 text-right font-semibold whitespace-nowrap">{format(m.unit, m.value)}</td>
                       <PlacementCells unit={m.unit} placement={m.placement} />
                     </tr>
