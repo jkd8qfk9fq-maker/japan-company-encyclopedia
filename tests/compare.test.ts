@@ -1,8 +1,10 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { companies as allCompanies } from "@/data/companies";
-import { barShares, COMPARE_LIMITS, COMPARE_MAX, compareHref, parseIds } from "@/lib/compare";
-import { buildCompareIndex, compareRow } from "@/lib/compare-index";
+import { barShares, COMPARE_LIMITS, COMPARE_MAX, compareHref, expandReportRow, parseIds } from "@/lib/compare";
+import { buildCompareIndex, buildCompareReportIndex, compareRow } from "@/lib/compare-index";
+import { companyReport } from "@/lib/company-report";
+import { formatMetric } from "@/lib/utils/format";
 import { isReleased } from "@/lib/release";
 import { companyRepository } from "@/lib/repositories";
 import type { Company } from "@/types/company";
@@ -11,7 +13,7 @@ import type { Company } from "@/types/company";
 
 describe("the address", () => {
   it("reads distinct well-formed ids, in order, at most COMPARE_MAX", () => {
-    expect(parseIds("toyota,honda,toyota,,Bad_Id,nissan,mazda")).toEqual(["toyota", "honda", "nissan"].slice(0, COMPARE_MAX));
+    expect(parseIds("toyota,honda,toyota,,Bad_Id,nissan,mazda")).toEqual(["toyota", "honda", "nissan", "mazda"].slice(0, COMPARE_MAX));
     expect(parseIds(null)).toEqual([]);
     expect(parseIds("../etc,<script>")).toEqual([]);
   });
@@ -19,8 +21,9 @@ describe("the address", () => {
     expect(parseIds(new URL(compareHref(["toyota", "honda"]), "https://x").searchParams.get("ids"))).toEqual(["toyota", "honda"]);
     expect(compareHref([])).toBe("/compare");
   });
-  it("lets the free view line up two and the plan three (a setting, P2-1)", () => {
-    expect(COMPARE_LIMITS).toEqual({ free: 2, premium: 3 });
+  it("lets the free view line up two and the plan five (a setting, P2-1; comps of two to five, JCE-073)", () => {
+    expect(COMPARE_LIMITS).toEqual({ free: 2, premium: 5 });
+    expect(parseIds("a,b,c,d,e,f")).toEqual(["a", "b", "c", "d", "e"]);
   });
 });
 
@@ -105,5 +108,55 @@ describe("the published index", async () => {
     expect(row.netMargin).toBe(Math.round((latest.netIncome! / latest.revenue!) * 1000) / 10);
     expect(row.growth5y).toBe(Math.round((latest.revenue! / years[0]!.revenue!) * 100) / 100);
     expect(row.source?.url).toBe(raw.sources.find((s) => s.id === latest.sourceIds[0])!.url);
+  });
+});
+
+describe("業界の中での位置 for the comps table (JCE-073)", async () => {
+  const released = await companyRepository.list();
+  const index = buildCompareReportIndex(released, "2026-11-19");
+
+  // The table and the 企業レポート must never disagree: every company's row, expanded from the compact file, prints
+  // exactly what its report prints — value, median, quartiles, rank and share, wording and note.
+  it("prints for every released company exactly what its 企業レポート prints", () => {
+    const printed = (m: { label: string; formula: string; computed: boolean; unit: Parameters<typeof formatMetric>[0]; value: number; note?: string; placement: { members: number; median: number; q1: number; q3: number; rank: number; topPercent: number } | null }) => [
+      m.label,
+      m.formula,
+      m.computed,
+      m.note ?? "",
+      formatMetric(m.unit, m.value),
+      m.placement ? [m.placement.members, m.placement.rank, m.placement.topPercent, ...[m.placement.median, m.placement.q1, m.placement.q3].map((v) => formatMetric(m.unit, v))] : null,
+    ];
+    let checked = 0;
+    for (const company of released) {
+      const report = companyReport(company, released);
+      const row = expandReportRow(index, company.id);
+      if (!report) {
+        expect(row).toBeNull();
+        continue;
+      }
+      expect(row, company.id).not.toBeNull();
+      expect(row!.fiscalYear).toBe(report.periods.at(-1)!.fiscalYear);
+      expect([row!.industry, row!.industryMembers, row!.comparableMembers]).toEqual([report.industryName, report.industryMembers, report.comparableMembers]);
+      expect(row!.metrics.map(printed), company.id).toEqual(report.metrics.map(printed));
+      checked += row!.metrics.length;
+    }
+    expect(checked).toBeGreaterThan(released.length * 5);
+  }, 120_000);
+
+  it("is written compactly: industry distributions once, and only the wording that differs", () => {
+    expect(index.distributions.length).toBeLessThan(Object.keys(index.rows).length / 4);
+    expect(JSON.stringify(index).length).toBeLessThan(3_000_000);
+    expect(Object.keys(index.definitions).sort()).toEqual(["average-salary", "equity-ratio", "net-margin", "overseas-ratio", "profit-margin", "revenue", "revenue-growth-5y", "revenue-per-employee"]);
+  });
+
+  it("holds no stock-market figure (invariant 4)", () => {
+    expect(JSON.stringify(index)).not.toMatch(/PER|PBR|ROE|ROA|株価|時価総額|配当利回り|格付け|評点/);
+  });
+
+  it("gives no row for an unknown id, and refuses a row whose distribution is missing", () => {
+    expect(expandReportRow(index, "no-such-company")).toBeNull();
+    const id = Object.keys(index.rows)[0]!;
+    const broken = { ...index, distributions: [] };
+    if (index.rows[id]!.metrics.some((m) => m.distribution !== undefined)) expect(expandReportRow(broken, id)).toBeNull();
   });
 });

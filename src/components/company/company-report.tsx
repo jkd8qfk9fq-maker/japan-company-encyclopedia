@@ -1,5 +1,5 @@
 import type { CompanyReport as Report, Placement, ReportMetric, Share, Unit } from "@/lib/company-report";
-import { formatDateJa, formatYen } from "@/lib/utils/format";
+import { formatDateJa, formatMetric, formatYen } from "@/lib/utils/format";
 import type { Company } from "@/types/company";
 import { ReportPrintButton } from "./report-print-button";
 
@@ -9,12 +9,7 @@ import { ReportPrintButton } from "./report-print-button";
  * this site can stand behind — the printed figures, their sources, and arithmetic on them labelled 計算値.
  */
 
-const format = (unit: Unit, v: number) => {
-  if (unit === "yen") return formatYen(v);
-  if (unit === "percent") return `${(v * 100).toFixed(1)}%`;
-  if (unit === "times") return `${v.toFixed(2)}倍`;
-  return `${Math.round(v / 10_000).toLocaleString("ja-JP")}万円`;
-};
+const format = formatMetric;
 
 const yen = (v: number | null) => (v === null ? "—" : formatYen(v));
 

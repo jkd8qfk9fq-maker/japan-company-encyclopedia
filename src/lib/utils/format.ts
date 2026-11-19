@@ -1,3 +1,5 @@
+import type { Unit } from "@/lib/company-report";
+
 /**
  * Japanese number and date formatting.
  *
@@ -50,6 +52,17 @@ export function formatYen(value: number): string {
     return `${sign}${grouped.format(man)}万円`;
   }
   return `${sign}${grouped.format(abs)}円`;
+}
+
+/**
+ * A computed-layer metric (JCE-073) in its unit: the 企業レポート and the 見比べ table print the same value the same
+ * way. A ratio is held as a fraction and shown to 0.1%.
+ */
+export function formatMetric(unit: Unit, value: number): string {
+  if (unit === "yen") return formatYen(value);
+  if (unit === "percent") return `${(value * 100).toFixed(1)}%`;
+  if (unit === "times") return `${value.toFixed(2)}倍`;
+  return `${Math.round(value / 10_000).toLocaleString("ja-JP")}万円`;
 }
 
 /** Axis labels: one unit, at most one decimal. "12兆円", "2.5兆円", "8,000億円". */

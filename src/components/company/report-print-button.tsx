@@ -8,12 +8,13 @@ import { Printer } from "lucide-react";
  * body's other children — a plain child selector, because the earlier rule (hide everything that neither is nor holds
  * the report, via :has()) printed a blank page when Chrome laid the print out with custom margins (QA, 2026-11-19).
  */
-export function ReportPrintButton() {
+/** `target` is the id of what to print: a company's report, or the 見比べ table (JCE-073). */
+export function ReportPrintButton({ target = "company-report" }: { target?: string }) {
   return (
     <button
       type="button"
       onClick={() => {
-        const report = document.getElementById("company-report");
+        const report = document.getElementById(target);
         if (!report) return;
         const root = document.documentElement;
         // Paper is white: in dark mode the report's light text would vanish on it, so the theme is lifted while printing.

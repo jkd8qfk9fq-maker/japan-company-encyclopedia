@@ -2,7 +2,7 @@ import { buildCompareIndex } from "@/lib/compare-index";
 import { companyRepository, industryRepository } from "@/lib/repositories";
 
 /**
- * The 見比べ index (JCE-061): one row per released company, built with the site. The page picks its two or three
+ * The 見比べ index (JCE-061): one row per released company, built with the site. The page picks its two to five
  * companies from it in the browser, so which companies a reader compares is never sent anywhere.
  */
 export const dynamic = "force-static";

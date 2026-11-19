@@ -7,6 +7,8 @@ import Link from "next/link";
 import { X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { PremiumGate } from "@/components/company/premium-gate";
+import { ReportPrintButton } from "@/components/company/report-print-button";
+import { ComparePlacement } from "./compare-placement";
 import { barShares, COMPARE_LIMITS, compareHref, parseIds, type CompareIndex, type CompareRow } from "@/lib/compare";
 import { usePlan } from "@/lib/plan";
 import { formatYen } from "@/lib/utils/format";
@@ -19,7 +21,12 @@ type Metric = {
   format: (v: number) => string;
 };
 
-const distinct = (values: (string | null)[]) => [...new Set(values.filter((v): v is string => v !== null))].join("／");
+// With five companies the filings' own wordings of one line ran to a dozen lines of row header; past two, the row
+// says so in plain words (each wording is still on its company page).
+const distinct = (values: (string | null)[]) => {
+  const labels = [...new Set(values.filter((v): v is string => v !== null))];
+  return labels.length > 2 ? "各社が印字した行（名前は会社ごとに異なります）" : labels.join("／");
+};
 
 const METRICS: Metric[] = [
   { key: "revenue", label: "売上高", note: (rows) => distinct(rows.map((r) => r.revenueLabel)) || "印字どおり", format: formatYen },
@@ -139,85 +146,107 @@ export function CompareTool() {
           企業のページの「見比べる」からも追加できます。
         </p>
       ) : (
-        <section aria-label="見比べ" className="overflow-x-auto">
-          <table className="w-full min-w-[34rem] border-collapse text-sm">
-            <caption className="sr-only">{shown.map((r) => r.name).join("・")}の見比べ</caption>
-            <thead>
-              <tr className="border-b border-border text-left">
-                <th scope="col" className="w-40 py-3 pr-3 text-xs font-medium text-muted-foreground">項目</th>
-                {shown.map((r) => (
-                  <th key={r.id} scope="col" className="py-3 pr-3 align-bottom">
-                    <Link href={`/companies/${r.id}`} className="font-medium underline-offset-2 hover:underline">{r.name}</Link>
-                    <span className="block text-xs font-normal text-muted-foreground">{r.industry ?? "—"}・{r.fiscalYear ?? "決算期なし"}</span>
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {METRICS.map((m) => {
-                const values = shown.map((r) => r[m.key]);
-                const shares = barShares(values);
-                return (
-                  <tr key={m.key} className="border-b border-border align-top">
-                    <th scope="row" className="py-3 pr-3 text-left font-medium">
-                      {m.label}
-                      <span className="mt-0.5 block text-xs font-normal leading-5 text-muted-foreground">{m.note(shown)}</span>
-                    </th>
-                    {values.map((v, i) => (
-                      <td key={shown[i]!.id} className="py-3 pr-3">
-                        {v === null ? (
-                          <span className="text-muted-foreground">データなし</span>
-                        ) : (
-                          <>
-                            <span className="figures">{m.format(v)}</span>
-                            {m.key === "growth5y" && shown[i]!.growthFrom && <span className="block text-xs text-muted-foreground">{shown[i]!.growthFrom}から</span>}
-                            <span className="mt-1.5 block h-2 rounded-full bg-muted" aria-hidden>
-                              <span className={v < 0 ? "block h-2 rounded-full bg-seal" : "block h-2 rounded-full bg-navy"} style={{ width: `${Math.max(2, shares[i]! * 100)}%` }} />
-                            </span>
-                          </>
-                        )}
-                      </td>
+        <>
+          {plan && (
+            <div className="no-print flex flex-wrap items-center gap-3">
+              <ReportPrintButton target="compare-report" />
+              <p className="text-xs text-muted-foreground">表と業界の中での位置、出典をA4にまとめます。ブラウザの印刷画面で「PDFに保存」を選ぶと PDF になります。</p>
+            </div>
+          )}
+          <article id="compare-report" aria-label="見比べ" className="space-y-8">
+            {/* Paper has no page heading around it: the printed copy carries its own. */}
+            <header className="hidden border-b-2 border-foreground pb-2 print:block">
+              <p className="text-[0.6875rem] tracking-[0.12em] text-muted-foreground">日本企業百科事典 見比べ</p>
+              <p className="mt-1 font-serif text-xl font-semibold">{shown.map((r) => r.name).join("・")}</p>
+            </header>
+            <section aria-label="見比べ" className="overflow-x-auto">
+              <table className="w-full min-w-[34rem] border-collapse text-sm">
+                <caption className="sr-only">{shown.map((r) => r.name).join("・")}の見比べ</caption>
+                <thead>
+                  <tr className="border-b border-border text-left">
+                    <th scope="col" className="sticky left-0 z-10 w-36 min-w-[7.5rem] bg-background py-3 pr-3 text-xs font-medium text-muted-foreground">項目</th>
+                    {shown.map((r) => (
+                      <th key={r.id} scope="col" className="min-w-[8rem] py-3 pr-3 align-bottom">
+                        <Link href={`/companies/${r.id}`} className="font-medium underline-offset-2 hover:underline">{r.name}</Link>
+                        <span className="block text-xs font-normal text-muted-foreground">{r.industry ?? "—"}・{r.fiscalYear ?? "決算期なし"}</span>
+                      </th>
                     ))}
                   </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        </section>
-      )}
+                </thead>
+                <tbody>
+                  {METRICS.map((m) => {
+                    const values = shown.map((r) => r[m.key]);
+                    const shares = barShares(values);
+                    return (
+                      <tr key={m.key} className="border-b border-border align-top">
+                        <th scope="row" className="sticky left-0 z-10 min-w-[7.5rem] bg-background py-3 pr-3 text-left font-medium">
+                          {m.label}
+                          <span className="mt-0.5 block text-xs font-normal leading-5 text-muted-foreground">{m.note(shown)}</span>
+                        </th>
+                        {values.map((v, i) => (
+                          <td key={shown[i]!.id} className="py-3 pr-3">
+                            {v === null ? (
+                              <span className="text-muted-foreground">データなし</span>
+                            ) : (
+                              <>
+                                <span className="figures">{m.format(v)}</span>
+                                {m.key === "growth5y" && shown[i]!.growthFrom && <span className="block text-xs text-muted-foreground">{shown[i]!.growthFrom}から</span>}
+                                <span className="mt-1.5 block h-2 rounded-full bg-muted" aria-hidden>
+                                  <span className={v < 0 ? "block h-2 rounded-full bg-seal" : "block h-2 rounded-full bg-navy dark:bg-ink"} style={{ width: `${Math.max(2, shares[i]! * 100)}%` }} />
+                                </span>
+                              </>
+                            )}
+                          </td>
+                        ))}
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </section>
 
-      {held > 0 && (
-        <PremiumGate
-          title={`${COMPARE_LIMITS.premium}社目の見比べ`}
-          teaser={`無料では${COMPARE_LIMITS.free}社まで並べられます。プレミアムプランでは${COMPARE_LIMITS.premium}社を一度に並べられます（いま選んでいる${chosen.length}社目：${chosen.slice(limit).map((r) => r.name).join("・")}）。`}
-          returnAnchor="compare"
-        >
-          {null}
-        </PremiumGate>
-      )}
+            {plan && <ComparePlacement shown={shown} />}
 
-      {shown.length > 0 && (
-        <section aria-label="出典" className="text-xs leading-6 text-muted-foreground">
-          <p className="font-medium text-foreground">出典（決算期）</p>
-          <ul className="mt-1">
-            {shown.map((r) => (
-              <li key={r.id}>
-                {r.name}：
-                {r.source ? (
-                  <a href={r.source.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-foreground">
-                    {r.source.title}
-                  </a>
-                ) : (
-                  "出典なし"
-                )}
-                {r.fiscalYear ? `（${r.fiscalYear}）` : ""}
-              </li>
-            ))}
-          </ul>
-          <p className="mt-2">
-            数値は各社の最新期の有価証券報告書に印字された値と、そこから計算した値です（{index.asOf} 時点の掲載データ）。決算期・会計基準・連結の範囲が会社ごとに異なることがあります。事実を並べたもので、良し悪しや投資の判断を示すものではありません。
-          </p>
-        </section>
+            <section aria-label="出典" className="text-xs leading-6 text-muted-foreground">
+              <p className="font-medium text-foreground">出典（決算期）</p>
+              <ul className="mt-1">
+                {shown.map((r) => (
+                  <li key={r.id}>
+                    {r.name}：
+                    {r.source ? (
+                      <a href={r.source.url} target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:text-foreground">
+                        {r.source.title}
+                      </a>
+                    ) : (
+                      "出典なし"
+                    )}
+                    {r.fiscalYear ? `（${r.fiscalYear}）` : ""}
+                    {r.source && <span className="hidden break-all print:inline"> {r.source.url}</span>}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-2">
+                数値は各社の最新期の有価証券報告書に印字された値と、そこから計算した値です（{index.asOf} 時点の掲載データ）。決算期・会計基準・連結の範囲が会社ごとに異なることがあります。事実を並べたもので、良し悪しや投資の判断を示すものではありません。株価・時価総額・バリュエーション、信用評価や格付けは含みません。
+              </p>
+              {plan && (
+                <p className="mt-1 hidden print:block">
+                  プレミアムプランの方は、出典の記載を残したまま、この見比べを印刷・PDFにして社内外の方に提示できます。出典：日本企業百科事典 {window.location.origin}
+                  {compareHref(shown.map((r) => r.id))}
+                </p>
+              )}
+            </section>
+          </article>
+
+          {!plan && (
+            <PremiumGate
+              title="業界の中での位置と、5社までの見比べ"
+              teaser={`プレミアムプランでは${COMPARE_LIMITS.premium}社までを一度に並べ、各社が自分の業界の掲載企業の中でどこにいるか（売上高・利益率・自己資本比率・1人あたり売上高・平均年間給与などの中央値・第1〜第3四分位・順位）を同じ表で読み、出典つきで印刷・PDFにできます。${held > 0 ? `いま選んでいる${chosen.slice(limit).map((r) => r.name).join("・")}も並びます。` : ""}`}
+              returnAnchor="compare"
+            >
+              {null}
+            </PremiumGate>
+          )}
+        </>
       )}
     </div>
   );
