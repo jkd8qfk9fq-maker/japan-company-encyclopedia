@@ -132,7 +132,10 @@ export function CompanyReportBlock({ company, report, siteUrl }: { company: Comp
         {computed.length > 0 && (
           <section className="mt-5">
             <h4 className="text-xs font-semibold">
-              業界の中での位置{report.industryName ? `（${report.industryName}業界・掲載企業${report.industryMembers}社、各社の最新期）` : ""}
+              業界の中での位置
+              {report.industryName
+                ? `（${report.industryName}業界・掲載企業${report.industryMembers}社のうち、最新期がこの会社と1年以内に終わる${report.comparableMembers}社）`
+                : ""}
             </h4>
             <div className="mt-1.5 overflow-x-auto">
               <table className="w-full min-w-[40rem] border-collapse text-xs">

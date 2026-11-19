@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { companyReport, placementOf, quantile } from "../src/lib/company-report";
+import { companyReport, placementOf, profitLineKind, quantile } from "../src/lib/company-report";
 import { median } from "../src/lib/industry-figures";
 import type { Company, IndustryId } from "../src/types/company";
 
@@ -91,6 +91,32 @@ describe("companyReport", () => {
     const ifrs = companyReport(members[3], members)!.metrics.find((m) => m.key === "profit-margin")!;
     expect(ifrs.label).toBe("税引前利益率");
     expect(ifrs.placement).toBeNull();
+  });
+
+  it("reads the line from its meaning, so a company in loss stays among its own line's peers", () => {
+    expect(profitLineKind("経常利益又は経常損失（△）")).toBe("経常利益");
+    expect(profitLineKind("経常損失(△)")).toBe("経常利益");
+    expect(profitLineKind("連結経常利益")).toBe("経常利益");
+    expect(profitLineKind("税引前利益（△は損失）")).toBe("税引前利益");
+    expect(profitLineKind("税金等調整前当期純利益")).toBe("税引前利益");
+    expect(profitLineKind("営業利益")).toBe("営業利益");
+    expect(profitLineKind(null)).toBeNull();
+    const loss = company("e", "retail", [100, 100, 100, 100, 100], { netIncome: -10, profit: -8, profitLabel: "経常損失(△)", netAssets: 40, totalAssets: 100 });
+    const margin = companyReport(members[2], [...members, loss])!.metrics.find((m) => m.key === "profit-margin")!;
+    // a, b, c and the loss-making e all print 経常利益: four peers, e last
+    expect(margin.placement).toMatchObject({ members: 4, rank: 1 });
+    expect(companyReport(loss, [...members, loss])!.metrics.find((m) => m.key === "profit-margin")).toMatchObject({ label: "経常利益率", value: -0.08, placement: { rank: 4, members: 4 } });
+  });
+
+  it("leaves out peers whose latest year ends more than about a year away", () => {
+    const stale = {
+      ...company("old", "retail", [100, 100, 100, 100, 999], { netIncome: 1 }),
+      financials: years([100, 100, 100, 100, 999], { netIncome: 1 }).map((r, i) => ({ ...r, fiscalYear: `${2018 + i}年3月期`, periodEnd: `${2018 + i}-03-31` })),
+    } as unknown as Company;
+    const r = companyReport(members[2], [...members, stale])!;
+    expect(r.industryMembers).toBe(5);
+    expect(r.comparableMembers).toBe(4);
+    expect(r.metrics.find((m) => m.key === "revenue")!.placement).toMatchObject({ members: 4, rank: 3 });
   });
 
   it("gives no metric for a figure the filing does not print, and no placement without another company", () => {
