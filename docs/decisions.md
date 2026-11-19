@@ -1350,3 +1350,9 @@ spend the trust the verification exists to build).
 - **What it never becomes**: no advice and no rating (invariant 4), no contact or personal data, no unlisted
   companies, and the free entry page is unchanged — the report is a premium arrangement of what is already
   public on the site plus the computed layer, not a paywall over facts.
+- **Comparison as built (2026-11-19)**: `/compare` lines up five companies with the plan (two free). Beside the
+  printed figures, each company's 業界の中での位置 is read from `/compare-report.json`, built at build time by the
+  same `companyReport` as its 企業レポート — `tests/compare.test.ts` checks every released company prints the same
+  strings in both. Each company is placed in its own industry, never ranked against the others on the table. The
+  file is one for everyone (which companies a reader lines up is never sent) and written compactly: 3,900
+  companies share fewer than 200 industry distributions. The printed copy uses the report's print layout.
