@@ -176,6 +176,17 @@ export function checkCompany(company: Company, context: ContentContext): string[
     if (new Set(r.items.map((i) => i.region)).size !== r.items.length) e.push(`${where}: 同じ地域が重複しています`);
     e.push(...yenErrors(r.items.map((i) => i.amount), where), ...citationErrors(r.sourceIds, src, where), ...noWikipedia(r.sourceIds, where));
   }
+  // A label is the row's own name. Header text — 回次, 決算年月, 和暦の年月, the block title 経営指標等 — taken along with it
+  // (2026-11-19: five entries) is not part of any row heading a filing prints.
+  const rows: { fiscalYear: string; labels: (string | null)[] }[] = [
+    ...company.financials.map((r) => ({ fiscalYear: r.fiscalYear, labels: [r.revenueLabel, r.profitLabel, r.netIncomeLabel, r.totalAssetsLabel, r.netAssetsLabel] })),
+    ...(company.interimFinancials ?? []).map((r) => ({ fiscalYear: r.fiscalYear, labels: [r.revenueLabel, r.netIncomeLabel] })),
+  ];
+  for (const r of rows) {
+    for (const label of r.labels) {
+      if (label && /回次|決算年月|経営指標等|令和[0-9０-９元]|平成[0-9０-９]/.test(label)) e.push(`財務「${r.fiscalYear}」: 行名「${label}」に表の見出しが混じっています`);
+    }
+  }
   if (company.workforce) {
     const w = company.workforce;
     const where = `従業員の状況「${w.fiscalYear}」`;
