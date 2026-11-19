@@ -61,7 +61,7 @@ export function NotificationsList() {
         <p className="text-sm text-muted-foreground">フォロー中の会社の、この{data.days}日間の新しい決算はまだありません。</p>
       ) : (
         <ol className="m-0 list-none divide-y divide-border border-y border-border p-0">
-          {mine.map(([id, kind, day, title]) => {
+          {mine.map(([id, kind, day, title, summary]) => {
             const fresh = day > seenAtOpen;
             return (
               <li key={`${id}-${kind}-${title}`}>
@@ -77,6 +77,8 @@ export function NotificationsList() {
                       {title}
                       {!title.includes(KIND[kind]) && <span className="text-xs">（{KIND[kind]}）</span>}
                     </span>
+                    {/* What the filing says (JCE-071): the period and its printed revenue and net income. */}
+                    {summary && <span className="figures mt-1 block text-sm">{summary}</span>}
                   </span>
                 </Link>
               </li>

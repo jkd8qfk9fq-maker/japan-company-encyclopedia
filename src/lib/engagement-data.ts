@@ -2,6 +2,7 @@ import { buildIndustryFigures } from "@/lib/industry-figures";
 import { companyMetrics } from "@/lib/company-metrics";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
 import { firstSentence, toPlainText } from "@/lib/rich-text";
+import { formatYen } from "@/lib/utils/format";
 import type { Company, IndustryId, RelationshipKind } from "@/types/company";
 import type { Revision } from "@/types/revision";
 
@@ -66,8 +67,12 @@ export type UpdatesData = {
   asOf: string;
   days: number;
   names: Record<string, string>;
-  /** [companyId, kind, date (YYYY-MM-DD), title] */
-  events: [string, UpdateKind, string, string][];
+  /**
+   * [companyId, kind, date (YYYY-MM-DD), title, summary?]. The summary (JCE-071) is what the filing itself says —
+   * the period and its printed revenue and net income — and is absent on a correction and on a filing whose
+   * figures the entry does not hold. Optional, so a file written before it existed still reads.
+   */
+  events: [string, UpdateKind, string, string, string?][];
 };
 
 const UPDATE_DAYS = 120;
@@ -77,15 +82,28 @@ const shiftDays = (iso: string, days: number) => {
   return d.toISOString().slice(0, 10);
 };
 
+/**
+ * What a filing says, in one line (JCE-071): the period it reports and the entry's own printed figures for that
+ * period — revenue and net income, the two figures prose may cite (invariant 4), under the labels the record
+ * carries. No change rate is computed; a figure the record does not hold is left out, and a period with neither
+ * figure gets no summary.
+ */
+const summaryOf = (period: string, revenueLabel: string, revenue: number | null, netIncomeLabel: string, netIncome: number | null): string | undefined => {
+  const parts: string[] = [];
+  if (revenue !== null) parts.push(`${revenueLabel} ${formatYen(revenue)}`);
+  if (netIncome !== null) parts.push(`${netIncomeLabel} ${formatYen(netIncome)}`);
+  return parts.length > 0 ? `${period}：${parts.join("、")}` : undefined;
+};
+
 /** What each company filed recently, from its own sources and the corrections recorded for it. */
 export function buildUpdates(companies: Company[], revisions: Revision[], today: string): UpdatesData {
   const from = shiftDays(today, -UPDATE_DAYS);
   const events: UpdatesData["events"] = [];
   const names: Record<string, string> = {};
-  const push = (c: Company, kind: UpdateKind, date: string | undefined, title: string) => {
+  const push = (c: Company, kind: UpdateKind, date: string | undefined, title: string, summary?: string) => {
     if (!date || date < from || date > today) return;
     names[c.id] = c.name;
-    events.push([c.id, kind, date, title]);
+    events.push(summary ? [c.id, kind, date, title, summary] : [c.id, kind, date, title]);
   };
   const byId = new Map(companies.map((c) => [c.id, c]));
   for (const c of companies) {
@@ -94,9 +112,13 @@ export function buildUpdates(companies: Company[], revisions: Revision[], today:
     // earlier, and that older half is not news.
     const perFiling = <T extends { sourceIds: string[]; periodEnd: string }>(records: T[]) =>
       [...new Map([...records].sort((a, b) => a.periodEnd.localeCompare(b.periodEnd)).map((r) => [r.sourceIds[0], r])).values()];
-    for (const f of perFiling(c.financials)) push(c, "yuho", sourceDate(f.sourceIds), `${f.fiscalYear}の有価証券報告書`);
-    for (const h of perFiling(c.interimFinancials ?? [])) push(c, "hanki", sourceDate(h.sourceIds), `${h.fiscalYear}の半期報告書`);
-    for (const q of c.quarterlyEarnings ?? []) push(c, "tanshin", q.disclosedAt, `${q.fiscalYear} 第${q.quarter}四半期の決算短信`);
+    for (const f of perFiling(c.financials))
+      push(c, "yuho", sourceDate(f.sourceIds), `${f.fiscalYear}の有価証券報告書`, summaryOf(f.fiscalYear, f.revenueLabel, f.revenue, f.netIncomeLabel, f.netIncome));
+    for (const h of perFiling(c.interimFinancials ?? []))
+      push(c, "hanki", sourceDate(h.sourceIds), `${h.fiscalYear}の半期報告書`, summaryOf(`${h.fiscalYear} 中間期`, h.revenueLabel, h.revenue, h.netIncomeLabel, h.netIncome));
+    // A 決算短信 record carries no labels of its own; the quarterly section calls the same two lines 売上 and 純利益.
+    for (const q of c.quarterlyEarnings ?? [])
+      push(c, "tanshin", q.disclosedAt, `${q.fiscalYear} 第${q.quarter}四半期の決算短信`, summaryOf(`${q.fiscalYear} 第${q.quarter}四半期（累計）`, "売上", q.revenue, "純利益", q.netIncome));
   }
   for (const r of revisions) {
     if (r.targetType !== "company" || !/-correct(ed|ion)(-\d+)?$/.test(r.id)) continue;
