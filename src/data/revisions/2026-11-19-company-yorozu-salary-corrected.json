@@ -1,0 +1,14 @@
+{
+  "id": "2026-11-19-company-yorozu-salary-corrected",
+  "targetType": "company",
+  "targetId": "yorozu",
+  "changedAt": "2026-11-19",
+  "reason": "有価証券報告書（EDINET S100YGY8）の【従業員の状況】（提出会社の状況）は平均年間給与を千円単位で6,387千円と印字している。XBRL の値の単位の扱いが印字と合わず、6,387,000,000円として取り込まれていた。印字どおり6,387,000円に訂正する。",
+  "summary": "平均年間給与（提出会社）を6,387,000,000円から6,387,000円に訂正（有報の印字 6,387千円）",
+  "before": {
+    "workforce.averageAnnualSalary": 6387000000
+  },
+  "after": {
+    "workforce.averageAnnualSalary": 6387000
+  }
+}

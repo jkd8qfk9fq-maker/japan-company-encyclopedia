@@ -1,0 +1,14 @@
+{
+  "id": "2026-11-19-company-imv-salary-corrected",
+  "targetType": "company",
+  "targetId": "imv",
+  "changedAt": "2026-11-19",
+  "reason": "有価証券報告書（EDINET S100XAL6）の【従業員の状況】（提出会社の状況）は平均年間給与を千円単位で8,038千円と印字している。XBRL の値の単位の扱いが印字と合わず、8,038,000,000円として取り込まれていた。印字どおり8,038,000円に訂正する。",
+  "summary": "平均年間給与（提出会社）を8,038,000,000円から8,038,000円に訂正（有報の印字 8,038千円）",
+  "before": {
+    "workforce.averageAnnualSalary": 8038000000
+  },
+  "after": {
+    "workforce.averageAnnualSalary": 8038000
+  }
+}

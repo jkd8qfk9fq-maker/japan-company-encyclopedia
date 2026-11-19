@@ -5,6 +5,9 @@ import type { Industry } from "@/types/industry";
 import type { Source } from "@/types/source";
 import type { Term } from "@/types/term";
 
+/** 平均年間給与 in yen: 100万円 to 1億円. Outside it the figure was read in the wrong unit, not paid (2026-11-19). */
+export const SALARY_RANGE = [1_000_000, 100_000_000] as const;
+
 /**
  * Content rules beyond the shape the schemas check — the executable form of
  * CLAUDE.md invariants 1, 2 and 4. Shared by the local editor (a save that
@@ -177,6 +180,11 @@ export function checkCompany(company: Company, context: ContentContext): string[
     const w = company.workforce;
     const where = `従業員の状況「${w.fiscalYear}」`;
     if (!fiscalYears.has(w.fiscalYear)) e.push(`${where}: 財務にない年度です`);
+    // The filing prints 平均年間給与 in 千円 or 円; a value off by a factor of a thousand (XBRL scaled wrongly against
+    // the printed table, found 2026-11-19 in ten entries) falls far outside what any 提出会社 pays on average.
+    if (w.averageAnnualSalary !== null && (w.averageAnnualSalary < SALARY_RANGE[0] || w.averageAnnualSalary > SALARY_RANGE[1])) {
+      e.push(`${where}: 平均年間給与 ${w.averageAnnualSalary.toLocaleString("ja-JP")}円 は単位の誤りの疑いがあります（有報の印字で確かめてください）`);
+    }
     if (w.averageTenureMonths !== null && w.averageTenureYears !== null && !Number.isInteger(w.averageTenureYears)) {
       e.push(`${where}: 勤続年数を「年・月」で書くときは年を整数にします`);
     }
