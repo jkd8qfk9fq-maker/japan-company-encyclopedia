@@ -1320,3 +1320,33 @@ written out; this decision arranges it into a course instead of a daily lottery.
   when it belongs to one.
 - **The journey is one**: the course is linked from the diagnosis result's learning path and from 最初の一社, and
   its last step leads to following a company (JCE-059), which is where the alerts of JCE-071 begin.
+
+### JCE-073 · 2026-11-19 · Accepted (operator) — The premium company report: printable, comparable, and still only verified figures
+
+The operator asked (2026-11-19) for the B2B form of the encyclopedia: a company's data summarised so a premium
+reader can print it, analyse it and compare companies — with the quality bar set from what real services sell
+(market research 2026-11-19: TDB/TSR credit reports, Shared Research's sponsored reports, SPEEDA's comps).
+What is bought in those markets is not data but a per-purpose judgement format; what none of them can offer is a
+figure traceable to its filing. The report is therefore an exit of the same supply chain, under the same
+invariants — and two of the research's top recommendations are refused by them: no stock price or valuation is
+ever added (invariant 4), and no credit score or failure probability is invented (a fabricated judgement would
+spend the trust the verification exists to build).
+
+- **The one-page summary** (`/companies/[id]/report`, premium): modelled on the first page of a TSR report with
+  the rating replaced by verified facts — the company's own description, five periods of printed figures, the
+  segment and region composition of revenue, its industry position from the computed layer below, and every
+  figure's source. A print layout of its own (the diagnosis site's CTS-037 pattern), made to be handed to a
+  third party: premium includes the right to present it, which the credit bureaus expressly forbid.
+- **The computed layer**: metrics computed from printed figures only, each labelled 計算値 — margins beyond the
+  three prose ratios of JCE-038 live here, in tables, never in prose — with the industry median, quartiles, the
+  company's rank and percentile beside them (the industry is the full listed population under one definition,
+  which is the moat). Comparison extends `/compare` (JCE-061) with the same table for two to five companies
+  and the same print layout.
+- **Data added in this order, each with its source**: (1) segment profit and margin from the filings' segment
+  information; (2) major shareholders, holder categories and officers, from the annual filing; (3) company
+  forecasts and medium-term plan targets from the 決算短信 — always badged 会社予想（短信） apart from
+  有報検証済み, with the forecast's progress against the recorded quarters updated by the existing pipeline;
+  (4) capital expenditure, depreciation and R&D from the annual filing.
+- **What it never becomes**: no advice and no rating (invariant 4), no contact or personal data, no unlisted
+  companies, and the free entry page is unchanged — the report is a premium arrangement of what is already
+  public on the site plus the computed layer, not a paywall over facts.
