@@ -1163,7 +1163,10 @@ export function workforceFigures(rows, nonConsolidated = false) {
   const months = value(about("AverageLengthOfServiceMonths"), own);
   return {
     employees: value("NumberOfEmployees", nonConsolidated ? own : own.slice(0, 1)),
-    averageAnnualSalary: salary !== null && Number.isInteger(salary) && salary > 0 ? salary : null,
+    // Some filers tag the yen value scaled wrongly against the table they print in 千円 (4,950 or 5,247,000,000 for
+    // 4,950千円). The scale cannot be read back with certainty, so a value no 提出会社 could pay on average is left
+    // out, never rescaled (src/lib/content/integrity.ts › SALARY_RANGE holds the same bounds).
+    averageAnnualSalary: salary !== null && Number.isInteger(salary) && salary >= 1_000_000 && salary <= 100_000_000 ? salary : null,
     averageTenureYears: value(about("AverageLengthOfServiceYears"), own),
     averageTenureMonths: months !== null && Number.isInteger(months) && months >= 0 && months <= 11 ? months : null,
   };

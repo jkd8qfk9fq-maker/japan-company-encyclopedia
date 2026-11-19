@@ -54,4 +54,12 @@ describe("workforceFigures", () => {
     ];
     expect(workforceFigures(rows)).toEqual({ employees: null, averageAnnualSalary: null, averageTenureYears: null, averageTenureMonths: null });
   });
+
+  it("leaves out a salary read in the wrong unit, never rescaling it (2026-11-19: ten entries, 4,950千円 read as 4,950 or as 5,247,000,000)", () => {
+    for (const wrong of [4_950, 6_132, 5_247_000_000, 8_759_000_000]) {
+      expect(workforceFigures([row(about("AverageAnnualSalary"), own, wrong)]).averageAnnualSalary).toBeNull();
+    }
+    // A holding company with three staff prints 35,175,984円 in 円: inside the range, kept as printed.
+    expect(workforceFigures([row(about("AverageAnnualSalary"), own, 35_175_984)]).averageAnnualSalary).toBe(35_175_984);
+  });
 });
