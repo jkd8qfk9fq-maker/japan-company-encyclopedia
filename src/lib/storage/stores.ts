@@ -206,6 +206,27 @@ export const notificationsSeenStore = createStore<string>(STORAGE_KEYS.notificat
   typeof value === "string" && (value === "" || DAY.test(value)) ? value : null,
 );
 
+// JCE-072: the course's answers, by question id. A step is done by answering it (right or wrong — the explanation
+// is the lesson), and the course badge is every step of the current course answered; both are read back from this
+// store, never kept anywhere else. The daily question's answer counts too when it is one of the course's steps.
+export type LearnAnswer = { choice: string; correct: boolean };
+export const learnStore = createStore<Record<string, LearnAnswer>>(STORAGE_KEYS.learnAnswers, {}, (value) => {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  const out: Record<string, LearnAnswer> = {};
+  for (const [id, a] of Object.entries(value as Record<string, unknown>)) {
+    const x = a as Partial<LearnAnswer>;
+    if (typeof x?.choice === "string" && typeof x.correct === "boolean") out[id] = { choice: x.choice, correct: x.correct };
+  }
+  return out;
+});
+
+export function recordLearnAnswer(questionId: string, answer: LearnAnswer): void {
+  const current = learnStore.get();
+  if (current[questionId]) return; // the first answer counts, as with the daily question
+  learnStore.set({ ...current, [questionId]: answer });
+  recordActivity();
+}
+
 export const exploreStepsStore = createStore<number>(STORAGE_KEYS.exploreSteps, 0, (value) =>
   typeof value === "number" && Number.isFinite(value) && value >= 0 ? Math.floor(value) : null,
 );

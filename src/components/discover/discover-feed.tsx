@@ -564,6 +564,7 @@ function PauseCard({ index, met }: { index: number; met: number }) {
       {streak.current > 0 && <p className="mt-3 text-sm text-white/75">{streak.current}日続けて、日本の会社を知っています。</p>}
       <ul className="mt-6 grid max-w-sm gap-2 text-sm">
         <li><Link href="/quiz" className="flex items-center justify-between rounded-xl border border-white/15 bg-white/5 px-4 py-3 hover:bg-white/10">今日の1問に答える<ArrowRight className="size-4" aria-hidden /></Link></li>
+        <li><Link href="/learn" className="flex items-center justify-between rounded-xl border border-white/15 bg-white/5 px-4 py-3 hover:bg-white/10">有報の読み方入門（12ステップ）に挑戦する<ArrowRight className="size-4" aria-hidden /></Link></li>
         <li><Link href="/explore" className="flex items-center justify-between rounded-xl border border-white/15 bg-white/5 px-4 py-3 hover:bg-white/10">気になった会社のつながりをたどる<ArrowRight className="size-4" aria-hidden /></Link></li>
         <li><Link href="/discover/collection" className="flex items-center justify-between rounded-xl border border-white/15 bg-white/5 px-4 py-3 hover:bg-white/10">マイ企業図鑑と記録を見る<ArrowRight className="size-4" aria-hidden /></Link></li>
       </ul>

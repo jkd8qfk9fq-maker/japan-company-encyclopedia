@@ -1,6 +1,7 @@
 import { buildIndustryFigures } from "@/lib/industry-figures";
 import { companyMetrics } from "@/lib/company-metrics";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
+import { quarterlyView } from "@/lib/quarterly";
 import { firstSentence, toPlainText } from "@/lib/rich-text";
 import { formatYen } from "@/lib/utils/format";
 import type { Company, IndustryId, RelationshipKind } from "@/types/company";
@@ -136,7 +137,7 @@ export function buildUpdates(companies: Company[], revisions: Revision[], today:
 
 export type QuizQuestion = {
   id: string;
-  kind: "revenue" | "overseas" | "describe";
+  kind: "revenue" | "overseas" | "describe" | "segment" | "quarterly";
   prompt: string;
   /** For "describe": the company's own description with its name hidden. */
   clue?: string;
@@ -206,6 +207,63 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
         options: [a, b].map((x) => ({ id: x.c.id, label: x.c.name })),
         answer: hi.c.id,
         explain: `${hi.c.name}：${hi.o.percent}%（${hi.o.fiscalYear}）／${lo.c.name}：${lo.o.percent}%（${lo.o.fiscalYear}）。計算値：${hi.o.formula}。`,
+        industry: ind,
+      });
+    }
+    // 事業別の売上 — the largest business's share of the segment note's total (計算値, JCE-038), 15 points apart so
+    // the answer is the printed breakdown and not a coin toss between near-equals (JCE-072).
+    const withSegment = members
+      .map((c) => {
+        const seg = c.segmentRevenue;
+        if (!seg || seg.items.length < 2) return null;
+        const total = seg.items.reduce((sum, i) => sum + i.amount, 0);
+        const top = [...seg.items].sort((a, b) => b.amount - a.amount)[0]!;
+        const business = c.businesses.find((b) => b.id === top.businessId);
+        if (total <= 0 || top.amount <= 0 || !business) return null;
+        return { c, share: Math.round((top.amount / total) * 1000) / 10, topName: business.shortName ?? business.name, topAmount: top.amount, fiscalYear: seg.fiscalYear, label: seg.label };
+      })
+      .filter((x): x is NonNullable<typeof x> => x !== null)
+      .sort((a, b) => hash(`s${a.c.id}`) - hash(`s${b.c.id}`));
+    for (let i = 0; i + 1 < withSegment.length && i < 8; i += 2) {
+      const [a, b] = [withSegment[i], withSegment[i + 1]];
+      if (Math.abs(a.share - b.share) < 15) continue;
+      const hi = a.share > b.share ? a : b;
+      const lo = hi === a ? b : a;
+      questions.push({
+        id: `segment-${a.c.id}-${b.c.id}`,
+        kind: "segment",
+        prompt: `${industryName}の2社。売上のうち、いちばん大きな事業が占める割合が高いのはどっち？`,
+        options: [a, b].map((x) => ({ id: x.c.id, label: x.c.name })),
+        answer: hi.c.id,
+        explain: `${hi.c.name}：最大の事業は「${hi.topName}」で ${hi.share}%（${hi.fiscalYear}）／${lo.c.name}：「${lo.topName}」で ${lo.share}%。計算値：事業別の${hi.label}のうち最大の事業の金額 ÷ 事業別の合計。`,
+        industry: ind,
+      });
+    }
+    // 四半期の動き — the newest cumulative quarter's revenue growth against the same period a year earlier, as the
+    // company page's 四半期の動き computes it (JCE-049), 10 points apart (JCE-072).
+    const withQuarterly = members
+      .map((c) => {
+        const view = quarterlyView(c);
+        const point = view?.points.filter((p) => p.key !== "fy" && p.revenueChange !== null).at(-1);
+        if (!view || !point || point.revenue === null || point.priorRevenue === null || point.revenueChange === null) return null;
+        return { c, view, point, change: Math.round(point.revenueChange * 1000) / 10 };
+      })
+      .filter((x): x is NonNullable<typeof x> => x !== null)
+      .sort((a, b) => hash(`q${a.c.id}`) - hash(`q${b.c.id}`));
+    for (let i = 0; i + 1 < withQuarterly.length && i < 8; i += 2) {
+      const [a, b] = [withQuarterly[i], withQuarterly[i + 1]];
+      if (Math.abs(a.change - b.change) < 10) continue;
+      const hi = a.change > b.change ? a : b;
+      const lo = hi === a ? b : a;
+      const pct = (v: number) => `${v > 0 ? "+" : ""}${v}%`;
+      const side = (x: typeof hi) => `${x.c.name}：${x.view.fiscalYear} ${x.point.label}（累計）の売上 ${yen(x.point.revenue!)}（前年の同じ時期 ${yen(x.point.priorRevenue!)}、${pct(x.change)}）`;
+      questions.push({
+        id: `quarterly-${a.c.id}-${b.c.id}`,
+        kind: "quarterly",
+        prompt: `${industryName}の2社。今期の四半期（累計）で、前年の同じ時期より売上の伸びが大きいのはどっち？`,
+        options: [a, b].map((x) => ({ id: x.c.id, label: x.c.name })),
+        answer: hi.c.id,
+        explain: `${side(hi)}／${side(lo)}。計算値：今期の売上 ÷ 前年の同じ時期の売上 − 1。四半期の売上は決算短信と半期報告書の数値です。`,
         industry: ind,
       });
     }
