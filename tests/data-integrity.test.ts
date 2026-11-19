@@ -94,6 +94,20 @@ function companyTexts(c: Company): [string, string][] {
   ];
 }
 
+// The official-website links (JCE-055) cite a 有報 by source id. A job that moves an entry to a newer filing and drops
+// the old source leaves the link citing nothing — 21 did on 2026-11-19 — so the suite every workflow is gated on checks
+// it, not only tests/strategy-and-websites.test.ts, which those jobs do not run.
+describe("official websites", () => {
+  const sites = (JSON.parse(readFileSync(join(process.cwd(), "src/data/websites.json"), "utf8")) as { companies: Record<string, { sourceId: string }> }).companies;
+  const byId = new Map(companies.map((c) => [c.id, c]));
+  it("cite a source the company still has", () => {
+    const broken = Object.entries(sites)
+      .filter(([id, w]) => !byId.get(id)?.sources.some((s) => s.id === w.sourceId))
+      .map(([id, w]) => `${id}: ${w.sourceId}`);
+    expect(broken).toEqual([]);
+  });
+});
+
 describe("registries", () => {
   it("has unique, kebab-case ids everywhere", () => {
     for (const [name, items] of [
