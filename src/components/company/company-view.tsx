@@ -4,6 +4,8 @@ import type { Company } from "@/types/company";
 import { companyRepository, headquartersRepository, websiteRepository } from "@/lib/repositories";
 import { formatDateJa } from "@/lib/utils/format";
 import { companyMetrics } from "@/lib/company-metrics";
+import { companyReport } from "@/lib/company-report";
+import { SITE_URL } from "@/lib/site";
 import { financialDeepDive } from "@/lib/financial-deep-dive";
 import { industryComparison } from "@/lib/industry-comparison";
 import { buildValueChain } from "@/lib/value-chain";
@@ -24,6 +26,7 @@ import { quarterlyView } from "@/lib/quarterly";
 import { FinancialDeepDiveBlock } from "./financial-deep-dive";
 import { IndustryComparisonBlock } from "./industry-comparison";
 import { QuarterlySection } from "./quarterly-section";
+import { CompanyReportBlock } from "./company-report";
 import { PremiumGate } from "./premium-gate";
 import { HistoryTimeline } from "./history-timeline";
 import { PerspectivesSection } from "./perspectives-section";
@@ -72,6 +75,8 @@ export async function CompanyView({ company }: { company: Company }) {
   const comparison = industryComparison(company, released);
   // 財務の深掘り (JCE-044): the five-year structure beside the industry's year-by-year median.
   const deepDive = financialDeepDive(company, released);
+  // 企業レポート (JCE-073): the printable summary with the computed layer, premium.
+  const report = companyReport(company, released);
   // 半期の動き (JCE-045): the newest 半期報告書, when one has been read for the company.
   const chainSourceIds = [
     ...new Set([
@@ -89,6 +94,7 @@ export async function CompanyView({ company }: { company: Company }) {
     ...(company.perspectives ? [{ id: "perspectives", label: "戦略と強み" }] : []),
     ...(hasConnections ? [{ id: "connections", label: "つながり" }] : []),
     { id: "financials", label: "財務" },
+    ...(report ? [{ id: "report", label: "レポート" }] : []),
     ...(company.history.length > 0 ? [{ id: "history", label: "歴史" }] : []),
     ...(company.industries.length > 0 ? [{ id: "industry", label: "業界" }] : []),
     ...(company.sources.length > 0 ? [{ id: "sources", label: "出典" }] : []),
@@ -230,6 +236,23 @@ export async function CompanyView({ company }: { company: Company }) {
         )}
         <FinancialSection company={company} />
       </CompanySection>
+
+      {report && (
+        <CompanySection
+          id="report"
+          eyebrow="Report"
+          title="企業レポート"
+          lead="5期の印字値、売上の構成、業界の中での位置（中央値・四分位・順位）と全出典を1枚にまとめた、印刷・PDF用のレポートです。"
+        >
+          <PremiumGate
+            title="企業レポート（印刷・PDF）"
+            teaser={`${company.name}の5期の数字、事業別・地域別の売上の構成、${report.industryName ?? "業界"}の掲載企業の中での位置（中央値・第1〜第3四分位・順位）と、すべての出典を1枚にまとめて印刷・PDFにできます。株価や評価は含まず、出典を残したまま第三者に提示できます。`}
+            returnAnchor="report"
+          >
+            <CompanyReportBlock company={company} report={report} siteUrl={SITE_URL.origin} />
+          </PremiumGate>
+        </CompanySection>
+      )}
 
       {company.history.length > 0 && (
         <CompanySection
