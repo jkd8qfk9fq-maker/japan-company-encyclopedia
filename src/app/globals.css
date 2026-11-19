@@ -269,31 +269,57 @@
 }
 
 /*
- * 企業レポート (JCE-073): printing from its button shows the report alone. Everything that neither is the report,
- * holds it, nor sits inside it is taken out of the print, so the page breaks fall in the report, not in the page
- * around it. An ordinary print of the page (without the button) is unchanged.
+ * 企業レポート (JCE-073): its print button copies the report into #report-print-root, a direct child of <body>, and
+ * marks the body; printing then shows that copy alone. Off the button, the copy is not on the page, and an ordinary
+ * print of the page is unchanged.
  */
+#report-print-root {
+  display: none;
+}
 @media print {
-  body[data-print="report"] *:not(:has(#company-report)):not(#company-report):not(#company-report *) {
+  body[data-print="report"] > *:not(#report-print-root) {
     display: none !important;
-  }
-  body[data-print="report"] :has(> #company-report),
-  body[data-print="report"] :has(#company-report) {
-    margin: 0 !important;
-    padding: 0 !important;
-    border: 0 !important;
-    max-width: none !important;
-    background: none !important;
   }
   html:has(body[data-print="report"]),
   body[data-print="report"] {
     background: #fff !important;
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
-  body[data-print="report"] .no-print {
-    display: none !important;
-  }
-  body[data-print="report"] #company-report {
+  body[data-print="report"] #report-print-root {
+    display: block;
     font-size: 10pt;
+  }
+  body[data-print="report"] #report-print-root article {
+    border: 0;
+    padding: 0;
+  }
+  /* Paper is denser than a screen: tighter gaps keep a typical company on one sheet, and no row or the closing note
+     is cut in half across two. */
+  body[data-print="report"] #report-print-root section {
+    margin-top: 0.75rem;
+  }
+  body[data-print="report"] #report-print-root :is(td, th) {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+  body[data-print="report"] #report-print-root :is(tr, footer, li) {
+    break-inside: avoid;
+  }
+  /* On screen the tables scroll sideways on a phone; on paper they must fit the sheet — trillion-yen figures
+     (31兆3,795億円) made トヨタ's run off the right edge (QA, 2026-11-19). */
+  body[data-print="report"] #report-print-root .overflow-x-auto {
+    overflow: visible;
+  }
+  body[data-print="report"] #report-print-root table {
+    min-width: 0 !important;
+    width: 100%;
+    font-size: 8pt;
+  }
+  body[data-print="report"] #report-print-root :is(td, th) {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
   }
   @page {
     size: A4;
