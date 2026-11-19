@@ -115,6 +115,22 @@ export function median(values: number[]): number | null {
   return sorted.length % 2 ? sorted[mid] : (sorted[mid - 1] + sorted[mid]) / 2;
 }
 
+/**
+ * The q-quantile (0 ≤ q ≤ 1) by linear interpolation between the two nearest ranks — the same rule `median`
+ * applies at q = 0.5, so a quartile and a median taken from the same list can never disagree about the middle.
+ * Used for the 四分位 of the premium report's computed layer (JCE-073).
+ */
+export function quantile(values: number[], q: number): number | null {
+  if (values.length === 0) return null;
+  const sorted = [...values].sort((a, b) => a - b);
+  if (sorted.length === 1) return sorted[0]!;
+  const pos = q * (sorted.length - 1);
+  const base = Math.floor(pos);
+  const rest = pos - base;
+  const next = sorted[base + 1];
+  return next === undefined ? sorted[base]! : sorted[base]! + rest * (next - sorted[base]!);
+}
+
 function sum(companies: Company[], pick: (latest: FinancialRecord) => number | null): IndustrySum {
   let total = 0;
   let counted = 0;
