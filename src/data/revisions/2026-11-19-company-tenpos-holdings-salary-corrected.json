@@ -1,0 +1,14 @@
+{
+  "id": "2026-11-19-company-tenpos-holdings-salary-corrected",
+  "targetType": "company",
+  "targetId": "tenpos-holdings",
+  "changedAt": "2026-11-19",
+  "reason": "有価証券報告書（EDINET S100YS8T）の【従業員の状況】（提出会社の状況）は平均年間給与を千円単位で6,132千円と印字している。XBRL の値の単位の扱いが印字と合わず、6,132円として取り込まれていた。印字どおり6,132,000円に訂正する。",
+  "summary": "平均年間給与（提出会社）を6,132円から6,132,000円に訂正（有報の印字 6,132千円）",
+  "before": {
+    "workforce.averageAnnualSalary": 6132
+  },
+  "after": {
+    "workforce.averageAnnualSalary": 6132000
+  }
+}
