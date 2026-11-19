@@ -30,6 +30,14 @@ export function formatYen(value: number): string {
     const oku = totalOku % MAN;
     return `${sign}${grouped.format(cho)}兆${oku > 0 ? `${grouped.format(oku)}億` : ""}円`;
   }
+  if (abs >= OKU && abs < 10 * OKU) {
+    // Below 10億 a whole 億 is too coarse: 1億2,970万 printed as "1億円" was 23% off (従業員1人あたり売上高, found in
+    // QA 2026-11-19), and a small company's 1.5億 revenue read as 2億. 億 with its 万 remainder, as 兆 keeps its 億.
+    const totalMan = Math.round(abs / MAN);
+    const oku = Math.floor(totalMan / MAN);
+    const man = totalMan % MAN;
+    return `${sign}${grouped.format(oku)}億${man > 0 ? `${grouped.format(man)}万` : ""}円`;
+  }
   if (abs >= OKU) {
     const oku = Math.round(abs / OKU);
     // 9,999.6億 rounds to 10,000億, which is 1兆.
