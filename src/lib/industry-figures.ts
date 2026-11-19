@@ -138,7 +138,7 @@ export function revenueGrowth5y(company: Company): number | null {
   return first !== null && last !== null && first > 0 && last > 0 ? last / first : null;
 }
 
-function overseasRatio(company: Company): number | null {
+export function overseasRatio(company: Company): number | null {
   const regional = company.regionalRevenue;
   if (!regional || regional.items.filter((i) => i.domestic).length !== 1) return null;
   const total = regional.items.reduce((acc, i) => acc + i.amount, 0);

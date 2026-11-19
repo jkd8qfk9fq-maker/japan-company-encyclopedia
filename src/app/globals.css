@@ -267,3 +267,36 @@
     scroll-behavior: auto !important;
   }
 }
+
+/*
+ * 企業レポート (JCE-073): printing from its button shows the report alone. Everything that neither is the report,
+ * holds it, nor sits inside it is taken out of the print, so the page breaks fall in the report, not in the page
+ * around it. An ordinary print of the page (without the button) is unchanged.
+ */
+@media print {
+  body[data-print="report"] *:not(:has(#company-report)):not(#company-report):not(#company-report *) {
+    display: none !important;
+  }
+  body[data-print="report"] :has(> #company-report),
+  body[data-print="report"] :has(#company-report) {
+    margin: 0 !important;
+    padding: 0 !important;
+    border: 0 !important;
+    max-width: none !important;
+    background: none !important;
+  }
+  html:has(body[data-print="report"]),
+  body[data-print="report"] {
+    background: #fff !important;
+  }
+  body[data-print="report"] .no-print {
+    display: none !important;
+  }
+  body[data-print="report"] #company-report {
+    font-size: 10pt;
+  }
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+}
