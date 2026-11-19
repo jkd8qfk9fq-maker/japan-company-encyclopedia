@@ -1,0 +1,14 @@
+{
+  "id": "2026-11-19-company-mikuni-revenue-label-corrected",
+  "targetType": "company",
+  "targetId": "mikuni",
+  "changedAt": "2026-11-19",
+  "reason": "財務5年表の売上の行名に、有報の表の見出し（回次・決算年月・和暦の年月、「連結経営指標等」）が混じって取り込まれていた（「期決算年月令和４年３月令和５年３月令和６年３月令和７年３月令和８年３月売上高」）。行名そのものは末尾の「売上高」で、数字は変えていない。取り込み側（evidence-pack の labelBefore）も見出しを取り除くよう直した。",
+  "summary": "財務5年表（5期）の売上の行名を「期決算年月令和４年３月令和５年３月令和６年３月令和７年３月令…」から「売上高」に訂正（数字は変更なし）",
+  "before": {
+    "financials[].revenueLabel": "期決算年月令和４年３月令和５年３月令和６年３月令和７年３月令和８年３月売上高"
+  },
+  "after": {
+    "financials[].revenueLabel": "売上高"
+  }
+}

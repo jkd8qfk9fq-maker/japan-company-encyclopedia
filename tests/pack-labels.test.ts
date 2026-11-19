@@ -45,4 +45,18 @@ describe("printed row labels", () => {
     const f = (fiveYearFigures as (...args: unknown[]) => unknown)(rows, "2026-09-30", [], text) as { revenue: { label: string }[] };
     expect(f.revenue[0].label).toBe("売上収益");
   });
+
+  // 2026-11-19: five entries carried the whole table header in revenueLabel — 和暦 年月 columns and a 「(1）連結経営指標等」
+  // prefix were not recognised as header, so the walk back from the figures kept them (green-cross-holdings, mikuni,
+  // kuribayashi-steamship, misonoza-theatrical, rion).
+  it.each([
+    ["和暦の決算年月（3桁の回次の直後から）", "連結経営指標等 回次第121期第122期第123期第124期第125期決算年月令和４年３月令和５年３月令和６年３月令和７年３月令和８年３月売上高(百万円)1,031,1031,395,5311,635,0231,707,9441,845,840"],
+    ["(1）連結経営指標等 と 第１期 の回次", "(1）連結経営指標等回次第１期第２期決算年月令和７年４月令和８年４月売上高(百万円)1,031,1031,395,5311,635,0231,707,9441,845,840"],
+    ["(1)連結経営指標等 の直後", "(1)連結経営指標等売上高(百万円)1,031,1031,395,5311,635,0231,707,9441,845,840"],
+    ["平成の決算年月", "回次第121期第122期決算年月平成30年３月平成31年３月売上高(百万円)1,031,1031,395,5311,635,0231,707,9441,845,840"],
+  ])("do not keep the table header (%s)", (_, head) => {
+    const text = `${head} 親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）(百万円)△113,19888,52898,761113,958127,499`;
+    const f = (fiveYearFigures as (...args: unknown[]) => unknown)(rows, "2026-03-31", [], text) as { revenue: { label: string }[] };
+    expect(f.revenue[0].label).toBe("売上高");
+  });
 });

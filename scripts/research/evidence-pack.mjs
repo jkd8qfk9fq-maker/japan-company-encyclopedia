@@ -388,6 +388,16 @@ function labelBefore(table, at) {
         // part of the header too — it used to survive and the label read 「期売上収益」.
         .replace(/^(?:[0-9０-９]{1,4}\s*年)?\s*(?:[0-9０-９]{1,2}\s*月\s*期?)?\s*(?:[0-9０-９]{1,2}\s*日)?/, "")
         .replace(/^[年月日度回次)）\s]+/, "")
+        // The rest of the table's header, when the walk back reaches it (2026-11-19: five entries kept it whole). The
+        // block's own title 「(1）連結経営指標等」, the 回次 row 「第１期第２期…」 (a three-digit 回次 leaves its 期 behind,
+        // since the walk stops after the number), the 決算年月 heading, and 和暦 year-months 「令和７年４月…」, which the
+        // 西暦 rule above does not cover.
+        .replace(/^[（(]\s*[0-9０-９]+\s*[）)]\s*/, "")
+        .replace(/^(?:連結|提出会社の)?経営指標等/, "")
+        .replace(/^(?:第\s*[0-9０-９]+\s*)?期(?=第|決算年月)/, "")
+        .replace(/^(?:第\s*[0-9０-９]+\s*期)+/, "")
+        .replace(/^決算年月/, "")
+        .replace(/^(?:(?:令和|平成|昭和)\s*(?:[0-9０-９]{1,2}|元)\s*年\s*[0-9０-９]{1,2}\s*月\s*期?)+/, "")
         // A footnote marker attached to the row label: 「売上高（注）２」.
         .replace(/[（(]\s*注\s*[）)]\s*[0-9０-９]*\s*$/, "")
         // A memo sub-line folded into the same row's label: 証券会社 print
