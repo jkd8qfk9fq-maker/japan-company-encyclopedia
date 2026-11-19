@@ -1284,3 +1284,39 @@ layout changed, in the shared component, so all 3,326 entries with the section g
 - **The industry flow in one line**: a chain industry's stages read left to right with arrows and wrap, instead of a
   column of boxes — the whole flow fits on a phone screen; the company's stage is still marked when it is known.
 - **The growth legend only when there are two colours** — a lone 「そのほかの事業」 key explained nothing.
+
+### JCE-071 · 2026-11-19 · Accepted (operator) — Filing alerts carry the verified figures, not just the fact
+
+The operator asked (2026-11-19) to make the high-entry markets concrete, starting with disclosure alerts. The
+market line is already drawn by others (IR BANK's alert β, 2026-11-06: free is a next-morning digest, instant is
+paid), and every competitor's alert stops at the filing title. What none of them sends is the verified content.
+JCE-059/069 already deliver the fact within the half hour; this decision adds what the filing actually says.
+
+- **The event carries its figures.** `buildUpdates` adds, for a yuho / hanki / tanshin event, a summary built only
+  from the entry's own printed figures for the period the filing reports: the period label, revenue and net
+  income (the two figures prose may cite, invariant 4). No computed change rate is added; where the filing itself
+  prints a change rate it is the filing's, cited as such. A correction event carries no figures.
+- **Every channel shows it.** The お知らせ list shows the summary under the event; the push body and the mail body
+  include it when present (`messageFor` in the worker), still a fact and never advice, still opening only the
+  company's page.
+- **No new store, no new permission.** The summary rides in `/updates.json` like the event itself; the worker
+  reads it from the live file it already polls. Nothing about a reader changes.
+- **Later, not now**: per-kind subscription filters (a D1 migration) and the followed companies' upcoming
+  announcement calendar from the EDINET DB calendar the pipeline already reads (JCE-049) are separate decisions
+  when they are built.
+
+### JCE-072 · 2026-11-19 · Accepted (operator) — A first course: 有報の読み方入門, built from the quiz pool
+
+The operator asked (2026-11-19) to systematise the learning side: the demand is not more data but a guided way to
+read it (NISA accounts 26.47M with 38.0% never used, FSA 2025-03; the top reason for not investing is not knowing
+how, 28.8%, JSDA 2024). The quiz pool (JCE-052) is already generated from printed figures with the answer's basis
+written out; this decision arranges it into a course instead of a daily lottery.
+
+- **`/learn`**: a twelve-step course, each step one pool question grouped by theme (事業の姿 → 5期の数字 →
+  事業別の売上 → 海外の売上 → 四半期の動き), the explanation shown after answering, and a link into the company
+  page section the question came from, so a step ends inside a real entry.
+- **Progress is the reader's own**: steps done and the course badge live in `src/lib/storage/` with the streak
+  and achievements (JCE-052); nothing is sent anywhere. The daily question is unchanged and counts as its step
+  when it belongs to one.
+- **The journey is one**: the course is linked from the diagnosis result's learning path and from 最初の一社, and
+  its last step leads to following a company (JCE-059), which is where the alerts of JCE-071 begin.
