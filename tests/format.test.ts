@@ -23,6 +23,16 @@ describe("formatYen — Japanese 万/億/兆 grouping", () => {
     expect(formatYen(367_012_000_000)).toBe("3,670億円");
   });
 
+  it("keeps the 万 below 10億, where a whole 億 is too coarse", () => {
+    expect(formatYen(129_700_000)).toBe("1億2,970万円");
+    expect(formatYen(150_000_000)).toBe("1億5,000万円");
+    expect(formatYen(300_000_000)).toBe("3億円");
+    expect(formatYen(-512_340_000)).toBe("−5億1,234万円");
+    // 9億9,999.6万 rounds into 10億, which is printed by the 億 rule.
+    expect(formatYen(999_996_000)).toBe("10億円");
+    expect(formatYen(1_000_000_000)).toBe("10億円");
+  });
+
   it("formats 万", () => {
     expect(formatYen(52_000_000)).toBe("5,200万円");
   });
