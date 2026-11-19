@@ -194,6 +194,16 @@
 }
 
 @layer components {
+  /*
+   * A horizontal scroller is the containing block of what it holds. Screen-reader text (sr-only) is positioned
+   * absolutely; inside a scroller that is not itself positioned it escaped the scroller's clipping, sat where the
+   * off-screen card would be (919px on a 390px phone, the third card of 戦略と強み) and widened the whole page, so
+   * iPhone Safari zoomed the page out (operator report, 2026-11-19). In this layer, so a scroller that is sticky or
+   * absolute keeps its own position from its utility class.
+   */
+  .overflow-x-auto {
+    position: relative;
+  }
   /* Figures align in columns wherever they appear. */
   .figures {
     font-variant-numeric: tabular-nums lining-nums;
