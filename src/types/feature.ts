@@ -8,11 +8,20 @@ import type { Source } from "./source";
  * sentences — the feature is an entry point into the encyclopedia, not a
  * separate magazine.
  */
+/** One row of a feature's data table: a label (a company or industry name, linked when `href` is set) and the computed values beside it. */
+export type FeatureTableRow = { label: string; href?: string; values: string[] };
+
 export type FeatureBlock =
   | { type: "paragraph"; text: string; sourceIds?: string[] }
   | { type: "heading"; text: string }
   | { type: "quote"; text: string; attribution: string; sourceIds: string[] }
-  | { type: "company-callout"; companyId: string; text: string };
+  | { type: "company-callout"; companyId: string; text: string }
+  /**
+   * A table computed at build time from the released companies' printed figures (JCE-074). The rows are
+   * built by `src/lib/feature-articles.ts`, never written by hand; `note` states the formula, the scope
+   * and that the values are 計算値, in the same words the rankings use.
+   */
+  | { type: "data-table"; title?: string; columns: string[]; rows: FeatureTableRow[]; note: string };
 
 export type Feature = {
   /** kebab-case slug, also the route segment. */

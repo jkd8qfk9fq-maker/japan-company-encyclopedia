@@ -70,6 +70,41 @@ export async function FeatureArticle({ feature }: { feature: Feature }) {
                   <SourceList sources={feature.sources} sourceIds={block.sourceIds} className="mt-1" />
                 </figure>
               );
+            case "data-table":
+              return (
+                <figure key={i} className="my-12">
+                  {block.title && <figcaption className="mb-3 font-serif text-lg font-semibold">{block.title}</figcaption>}
+                  <div className="overflow-x-auto">
+                    <table className="w-full border-t border-foreground text-[0.9375rem]">
+                      <thead>
+                        <tr className="border-b border-border text-left text-xs text-muted-foreground">
+                          <th scope="col" className="py-2 pr-3 font-medium">名称</th>
+                          {block.columns.map((col) => (
+                            <th key={col} scope="col" className="py-2 pl-3 text-right font-medium">{col}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {block.rows.map((row) => (
+                          <tr key={row.label} className="border-b border-border">
+                            <th scope="row" className="py-2.5 pr-3 text-left font-medium">
+                              {row.href ? (
+                                <Link href={row.href} className="link-ink">{row.label}</Link>
+                              ) : (
+                                row.label
+                              )}
+                            </th>
+                            {row.values.map((value, j) => (
+                              <td key={j} className="figures py-2.5 pl-3 text-right whitespace-nowrap">{value}</td>
+                            ))}
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  <p className="mt-3 text-xs leading-6 text-muted-foreground">{block.note}</p>
+                </figure>
+              );
             case "company-callout": {
               const company = callouts.get(block.companyId);
               if (!company) return null;
