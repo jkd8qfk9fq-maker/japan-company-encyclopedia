@@ -43,6 +43,21 @@ export default async function PrefecturePage({ params }: PageProps<"/prefectures
   for (const c of companies) if (c.industry) industryCounts.set(c.industry, (industryCounts.get(c.industry) ?? 0) + 1);
   const topIndustries = [...industryCounts].sort((a, b) => b[1] - a[1]).slice(0, 5);
 
+  // The introduction paragraph (JCE-074): the same counts the table below shows, written out — the top industries
+  // and where the head offices gather. The wording follows the shape of the counts, so a prefecture with two
+  // companies (and perhaps two municipalities with one each) reads as naturally as Tokyo does.
+  const introIndustries = topIndustries.slice(0, 3);
+  const largestMunicipalityCount = municipalities[0]?.[1].length ?? 0;
+  const largestMunicipalities = municipalities.filter(([, list]) => list.length === largestMunicipalityCount).map(([name]) => name);
+  const municipalityClause =
+    municipalities.length === 1
+      ? `本社はすべて${municipalities[0]![0]}にあります。`
+      : largestMunicipalityCount <= 1
+        ? `本社は${municipalities.length}の市区町村に1社ずつ分かれています。`
+        : largestMunicipalities.length === 1
+          ? `本社がもっとも多い市区町村は${largestMunicipalities[0]}で、${largestMunicipalityCount}社あります。`
+          : `本社がもっとも多い市区町村は${largestMunicipalities.slice(0, 3).join("・")}${largestMunicipalities.length > 3 ? "など" : ""}で、各${largestMunicipalityCount}社です。`;
+
   const index = PREFECTURES.findIndex((p) => p.id === prefecture.id);
   const [previous, next] = [PREFECTURES[index - 1], PREFECTURES[index + 1]];
 
@@ -59,6 +74,14 @@ export default async function PrefecturePage({ params }: PageProps<"/prefectures
         {prefecture.name}
         <span className="ml-2 text-base font-normal text-muted-foreground md:text-lg">に本社がある企業</span>
       </h1>
+
+      {companies.length > 0 && (
+        <p className="prose-ja mt-5 max-w-3xl text-muted-foreground">
+          {prefecture.name}に本社を置く掲載企業は{companies.length.toLocaleString("ja-JP")}社です。
+          {introIndustries.length > 0 && `多い業界は${introIndustries.map(([name, n]) => `${name}（${n}社）`).join("、")}です。`}
+          {municipalityClause}
+        </p>
+      )}
 
       <div className="mt-6 grid gap-8 lg:grid-cols-[minmax(0,1fr)_18rem] lg:gap-10">
         <div className="min-w-0">

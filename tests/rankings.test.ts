@@ -3,7 +3,7 @@ import { describe, expect, it } from "vitest";
 import { companyRepository } from "@/lib/repositories";
 import { buildIndustryFigures, type IndustryFigures, type IndustryFiguresData } from "@/lib/industry-figures";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
-import { buildRanking, buildRankings, MIN_COMPANIES, RANKING_IDS, SHARE_IMAGE_TEXT } from "@/lib/rankings";
+import { buildRanking, buildRankings, MIN_COMPANIES, rankingReading, RANKING_IDS, SHARE_IMAGE_TEXT } from "@/lib/rankings";
 
 /**
  * 業界ランキング (JCE-062): an order over figures the industry pages already compute. Checked here against sums and
@@ -29,6 +29,29 @@ describe("buildRanking", () => {
     expect(r.rows.map((x) => [x.rank, x.id])).toEqual([[1, "b"], [2, "a"], [2, "c"]]);
     expect(r.excluded).toEqual([{ id: "d", name: "え", companies: MIN_COMPANIES - 1 }, { id: "e", name: "お", companies: 0 }]);
     expect(r.format(0.0512)).toBe("5.1%");
+  });
+});
+
+describe("rankingReading (JCE-074)", () => {
+  it("reads the top row and the median of the ranking's own rows, and formats the gap", () => {
+    const r = buildRanking(
+      "net-margin",
+      data([
+        industry("a", "あ", { value: 0.05, companies: 10 }),
+        industry("b", "い", { value: 0.08, companies: 10 }),
+        industry("c", "う", { value: 0.05, companies: 7 }),
+      ]),
+    );
+    const reading = rankingReading(r);
+    expect(reading?.top.id).toBe("b");
+    expect(reading?.medianValue).toBe(0.05);
+    expect(r.formatDifference(reading!.top.value - reading!.medianValue)).toBe("3.0ポイント");
+    const growth = buildRanking("employee-growth", data([]));
+    expect(growth.formatDifference(0.25)).toBe("0.25倍");
+  });
+
+  it("is null when the ranking has no rows", () => {
+    expect(rankingReading(buildRanking("net-margin", data([])))).toBeNull();
   });
 });
 
