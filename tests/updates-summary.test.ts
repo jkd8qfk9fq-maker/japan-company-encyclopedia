@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildUpdates } from "../src/lib/engagement-data";
+import { buildUpdates, shortRevenueLabel } from "../src/lib/engagement-data";
 import type { Company } from "../src/types/company";
 import type { Revision } from "../src/types/revision";
 
@@ -44,7 +44,7 @@ const company = (over: Record<string, unknown> = {}): Company =>
 describe("buildUpdates summaries", () => {
   it("puts the period and its printed revenue and net income on a yuho event", () => {
     const { events } = buildUpdates([company()], [], TODAY);
-    expect(events).toEqual([["example", "yuho", "2026-10-20", "2026年3月期の有価証券報告書", "2026年3月期：売上高 3,670億円、親会社株主に帰属する当期純利益 123億円"]]);
+    expect(events).toEqual([["example", "yuho", "2026-10-20", "2026年3月期の有価証券報告書", "2026年3月期：売上高 3,670億円、純利益 123億円"]]);
   });
 
   it("takes the newest period a filing reports, not the older years it also prints", () => {
@@ -72,7 +72,7 @@ describe("buildUpdates summaries", () => {
       sourceIds: ["hanki-2027"],
     };
     const { events } = buildUpdates([company({ financials: [], interimFinancials: [half] })], [], TODAY);
-    expect(events).toEqual([["example", "hanki", "2026-11-10", "2027年3月期の半期報告書", "2027年3月期 中間期：売上収益 2,000億円、親会社の所有者に帰属する中間利益 −50億円"]]);
+    expect(events).toEqual([["example", "hanki", "2026-11-10", "2027年3月期の半期報告書", "2027年3月期 中間期：売上収益 2,000億円、純利益 −50億円"]]);
   });
 
   it("labels a quarter's lines 売上 and 純利益, as the quarterly section does, and marks them cumulative", () => {
@@ -104,7 +104,15 @@ describe("buildUpdates summaries", () => {
   it("keeps the figure that is held when the other is not, and never computes a change", () => {
     const onlyIncome = fin({ revenue: null });
     const { events } = buildUpdates([company({ financials: [onlyIncome] })], [], TODAY);
-    expect(events[0]![4]).toBe("2026年3月期：親会社株主に帰属する当期純利益 123億円");
+    expect(events[0]![4]).toBe("2026年3月期：純利益 123億円");
     expect(events[0]![4]).not.toMatch(/%|前年|増減/);
+  });
+
+  it("shortens the top line's name to the word a reader says, keeping the filing's own word", () => {
+    expect(shortRevenueLabel("売上収益（IFRS）")).toBe("売上収益");
+    expect(shortRevenueLabel("売上高(営業収益)")).toBe("売上高");
+    expect(shortRevenueLabel("営業収益")).toBe("営業収益");
+    expect(shortRevenueLabel("経常収益")).toBe("経常収益");
+    expect(shortRevenueLabel("収益：IFRS")).toBe("収益");
   });
 });

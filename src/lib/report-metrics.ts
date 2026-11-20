@@ -43,11 +43,17 @@ export type ReportMetric = {
   sourceIds: string[];
   /** Null when the industry has too few companies printing the figure for a distribution to mean anything. */
   industry: IndustryPosition | null;
+  /** Why the distribution's set is narrower than the industry, when it is. */
+  note?: string;
 };
 
 export type ReportMetrics = {
   industryId: IndustryId | null;
   industryName: string | null;
+  /** Released companies of the industry, this company included. */
+  industryMembers: number;
+  /** Of those, the ones whose latest year is close enough to compare (PEER_WINDOW_DAYS). */
+  comparableMembers: number;
   metrics: ReportMetric[];
 };
 
@@ -78,6 +84,23 @@ function primaryIndustry(company: Company): IndustryId | null {
 }
 
 const ratio = (num: number | null, den: number | null) => (num !== null && den !== null && den > 0 ? num / den : null);
+
+/**
+ * Which line the filing's profit row is, read from its own label: the same line is worded many ways (経常利益,
+ * 経常利益又は経常損失（△）, 経常損失(△), 連結経常利益 …), and a company in loss prints the loss wording of the
+ * same line. Only the same kind of line is compared; null when the label names none of them. (All-company audit
+ * of the report, 2026-11-19: matched on exact wording, loss-makers fell out of their peers entirely.)
+ */
+export function profitLineKind(label: string | null | undefined): "経常利益" | "税引前利益" | "営業利益" | null {
+  if (!label) return null;
+  if (/経常/.test(label)) return "経常利益";
+  if (/税引前|税金等調整前/.test(label)) return "税引前利益";
+  if (/営業/.test(label)) return "営業利益";
+  return null;
+}
+
+/** A peer's latest year counts only when it ends within this many days of the company's own latest year. */
+export const PEER_WINDOW_DAYS = 400;
 
 /**
  * 純利益率 can only be read when the two lines cover the same perimeter: where a filing prints revenue without
@@ -114,6 +137,10 @@ type Def = {
   read: (c: Company) => number | null;
   fiscalYear: (c: Company) => string | null;
   sourceIds: (c: Company) => string[];
+  /** Narrows the distribution's peers to the companies this metric is comparable with. */
+  narrow?: (company: Company) => ((c: Company) => boolean) | null;
+  /** Why the distribution's set is narrower than the industry, when it is. */
+  note?: (company: Company) => string | null;
 };
 
 const latestYear = (c: Company) => latestOf(c)?.fiscalYear ?? null;
@@ -138,14 +165,24 @@ const DEFS: Def[] = [
   {
     key: "profit-margin",
     unit: "percent",
-    title: (c) => `${latestOf(c)?.profitLabel ?? "利益"}率`,
+    title: (c) => `${profitLineKind(latestOf(c)?.profitLabel) ?? "利益"}率`,
     formula: (c) => {
       const r = latestOf(c)!;
       return `${r.profitLabel} ÷ ${r.revenueLabel}`;
     },
+    // The line is read by meaning, not wording: a company printing 経常損失(△) belongs with the 経常利益
+    // companies, and 経常利益 (J-GAAP) is never ranked beside 税引前利益 (IFRS, US GAAP) — different lines.
     read: (c) => {
       const r = latestOf(c);
-      return r ? ratio(r.profit, r.revenue) : null;
+      return r && profitLineKind(r.profitLabel) ? ratio(r.profit, r.revenue) : null;
+    },
+    narrow: (company) => {
+      const kind = profitLineKind(latestOf(company)?.profitLabel);
+      return kind ? (c) => profitLineKind(latestOf(c)?.profitLabel) === kind : null;
+    },
+    note: (company) => {
+      const kind = profitLineKind(latestOf(company)?.profitLabel);
+      return kind ? `${kind}を印字する会社だけで比べています` : null;
     },
     fiscalYear: latestYear,
     sourceIds: latestSources,
@@ -260,13 +297,27 @@ export function reportMetrics(company: Company, companies: Company[]): ReportMet
   const industryId = primaryIndustry(company);
   const members = industryId ? companies.filter((c) => primaryIndustry(c) === industryId) : [];
   if (industryId && !members.some((c) => c.id === company.id)) members.push(company);
+  // Peers whose latest year is far from this company's would compare different times; they stay out of the
+  // distributions (all-company audit, 2026-11-19: the oldest gap was 4.25 years).
+  const ownEnd = latestOf(company)?.periodEnd;
+  const comparable =
+    ownEnd === undefined
+      ? members
+      : members.filter((c) => {
+          const end = latestOf(c)?.periodEnd;
+          return end !== undefined && Math.abs(Date.parse(end) - Date.parse(ownEnd)) <= PEER_WINDOW_DAYS * 86_400_000;
+        });
 
   const metrics: ReportMetric[] = [];
   for (const def of DEFS) {
     const value = def.read(company);
     const fiscalYear = def.fiscalYear(company);
     if (value === null || fiscalYear === null) continue;
-    const values = members.map((c) => def.read(c)).filter((v): v is number => v !== null);
+    const keep = def.narrow?.(company) ?? null;
+    const peers = keep ? comparable.filter(keep) : comparable;
+    const values = peers.map((c) => def.read(c)).filter((v): v is number => v !== null);
+    const industry = industryPosition(value, values);
+    const note = def.note?.(company) ?? null;
     metrics.push({
       key: def.key,
       title: def.title(company),
@@ -275,12 +326,15 @@ export function reportMetrics(company: Company, companies: Company[]): ReportMet
       value,
       fiscalYear,
       sourceIds: def.sourceIds(company),
-      industry: industryPosition(value, values),
+      industry,
+      ...(note && industry ? { note } : {}),
     });
   }
   return {
     industryId,
     industryName: industryId ? INDUSTRY_LABELS[industryId].name : null,
+    industryMembers: members.length,
+    comparableMembers: comparable.length,
     metrics,
   };
 }

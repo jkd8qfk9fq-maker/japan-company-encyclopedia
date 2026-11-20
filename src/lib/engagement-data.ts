@@ -89,6 +89,19 @@ const shiftDays = (iso: string, days: number) => {
  * carries. No change rate is computed; a figure the record does not hold is left out, and a period with neither
  * figure gets no summary.
  */
+/**
+ * The top line's name as a reader says it: the filing's own word, without the annotations a five-year table carries
+ * (「売上収益（IFRS）」→ 売上収益, 「売上高(営業収益)」→ 売上高). The company page keeps the full label.
+ */
+export const shortRevenueLabel = (label: string) => label.replace(/[（(].*$/, "").replace(/[：:].*$/, "").trim() || label;
+
+/**
+ * Net income is written 純利益 in an alert, as the quarterly section writes it: the filings' labels for the same line
+ * run to 「親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）」, which no notification can show.
+ * A loss keeps its minus sign, so 純利益 −5億円 is read as a loss.
+ */
+const NET_INCOME = "純利益";
+
 const summaryOf = (period: string, revenueLabel: string, revenue: number | null, netIncomeLabel: string, netIncome: number | null): string | undefined => {
   const parts: string[] = [];
   if (revenue !== null) parts.push(`${revenueLabel} ${formatYen(revenue)}`);
@@ -114,12 +127,12 @@ export function buildUpdates(companies: Company[], revisions: Revision[], today:
     const perFiling = <T extends { sourceIds: string[]; periodEnd: string }>(records: T[]) =>
       [...new Map([...records].sort((a, b) => a.periodEnd.localeCompare(b.periodEnd)).map((r) => [r.sourceIds[0], r])).values()];
     for (const f of perFiling(c.financials))
-      push(c, "yuho", sourceDate(f.sourceIds), `${f.fiscalYear}の有価証券報告書`, summaryOf(f.fiscalYear, f.revenueLabel, f.revenue, f.netIncomeLabel, f.netIncome));
+      push(c, "yuho", sourceDate(f.sourceIds), `${f.fiscalYear}の有価証券報告書`, summaryOf(f.fiscalYear, shortRevenueLabel(f.revenueLabel), f.revenue, NET_INCOME, f.netIncome));
     for (const h of perFiling(c.interimFinancials ?? []))
-      push(c, "hanki", sourceDate(h.sourceIds), `${h.fiscalYear}の半期報告書`, summaryOf(`${h.fiscalYear} 中間期`, h.revenueLabel, h.revenue, h.netIncomeLabel, h.netIncome));
+      push(c, "hanki", sourceDate(h.sourceIds), `${h.fiscalYear}の半期報告書`, summaryOf(`${h.fiscalYear} 中間期`, shortRevenueLabel(h.revenueLabel), h.revenue, NET_INCOME, h.netIncome));
     // A 決算短信 record carries no labels of its own; the quarterly section calls the same two lines 売上 and 純利益.
     for (const q of c.quarterlyEarnings ?? [])
-      push(c, "tanshin", q.disclosedAt, `${q.fiscalYear} 第${q.quarter}四半期の決算短信`, summaryOf(`${q.fiscalYear} 第${q.quarter}四半期（累計）`, "売上", q.revenue, "純利益", q.netIncome));
+      push(c, "tanshin", q.disclosedAt, `${q.fiscalYear} 第${q.quarter}四半期の決算短信`, summaryOf(`${q.fiscalYear} 第${q.quarter}四半期（累計）`, "売上", q.revenue, NET_INCOME, q.netIncome));
   }
   for (const r of revisions) {
     if (r.targetType !== "company" || !/-correct(ed|ion)(-\d+)?$/.test(r.id)) continue;

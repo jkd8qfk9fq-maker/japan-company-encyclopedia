@@ -22,10 +22,33 @@
 
   .report :global(table) {
     font-size: 11px;
+    width: 100%;
   }
 
   .report :global(section) {
     break-inside: avoid;
+  }
+
+  /* On screen the tables scroll sideways on a phone; on paper they must fit the sheet — trillion-yen
+     figures (31兆3,795億円) ran a wide table off the A4 edge in print QA (2026-11-19). */
+  .report :global(.overflow-x-auto) {
+    overflow: visible;
+  }
+
+  .report :global(td),
+  .report :global(th) {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+
+  .report :global(tr),
+  .report :global(footer) {
+    break-inside: avoid;
+  }
+
+  /* The first column is sticky on screen so a scrolled table keeps its row names; on paper it is static. */
+  .report :global(th) {
+    position: static;
   }
 }
 

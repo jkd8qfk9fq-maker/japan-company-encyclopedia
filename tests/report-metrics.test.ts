@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { quantile } from "../src/lib/industry-figures";
-import { industryPosition, reportMetrics } from "../src/lib/report-metrics";
+import { industryPosition, profitLineKind, reportMetrics } from "../src/lib/report-metrics";
 import type { Company, FinancialRecord, IndustryId } from "../src/types/company";
 
 /**
@@ -79,6 +79,21 @@ describe("industryPosition", () => {
   });
 });
 
+describe("profitLineKind", () => {
+  it("reads the line from its meaning, including the loss wording of the same line", () => {
+    expect(profitLineKind("経常利益")).toBe("経常利益");
+    expect(profitLineKind("経常利益又は経常損失（△）")).toBe("経常利益");
+    expect(profitLineKind("経常損失(△)")).toBe("経常利益");
+    expect(profitLineKind("連結経常利益")).toBe("経常利益");
+    expect(profitLineKind("税引前利益（△は損失）")).toBe("税引前利益");
+    expect(profitLineKind("税金等調整前当期純利益")).toBe("税引前利益");
+    expect(profitLineKind("営業利益")).toBe("営業利益");
+    expect(profitLineKind("当期利益")).toBeNull();
+    expect(profitLineKind(null)).toBeNull();
+    expect(profitLineKind(undefined)).toBeNull();
+  });
+});
+
 describe("reportMetrics", () => {
   it("computes the latest year's ratios from printed figures, with the industry distribution", () => {
     const layer = reportMetrics(target, retailers);
@@ -154,6 +169,34 @@ describe("reportMetrics", () => {
     expect(perEmployee.industry).toBeNull();
     // The margin still has six values behind it, so its distribution stands.
     expect(layer.metrics.find((m) => m.key === "net-margin")!.industry).not.toBeNull();
+  });
+
+  it("reads the profit line from its meaning, so a loss-worded label stays among its own line's peers", () => {
+    const loss = company("loss", "retail", [prev(), rec({ profit: -80, profitLabel: "経常損失(△)" })]);
+    const margin = reportMetrics(loss, [...retailers, loss]).metrics.find((m) => m.key === "profit-margin")!;
+    expect(margin.title).toBe("経常利益率");
+    expect(margin.value).toBeCloseTo(-0.08);
+    // The six 経常利益 retailers and the loss-maker: seven values, the loss last.
+    expect(margin.industry).toMatchObject({ members: 7, rank: 7 });
+    expect(margin.note).toBe("経常利益を印字する会社だけで比べています");
+  });
+
+  it("never ranks a different profit line beside this one", () => {
+    const ifrs = company("ifrs", "retail", [prev(), rec({ profit: 900, profitLabel: "税引前利益" })]);
+    const margin = reportMetrics(target, [...retailers, ifrs]).metrics.find((m) => m.key === "profit-margin")!;
+    expect(margin.industry).toMatchObject({ members: 6 });
+    const own = reportMetrics(ifrs, [...retailers, ifrs]).metrics.find((m) => m.key === "profit-margin")!;
+    expect(own.title).toBe("税引前利益率");
+    expect(own.value).toBeCloseTo(0.9);
+    expect(own.industry).toBeNull();
+  });
+
+  it("leaves out peers whose latest year ends more than about a year away", () => {
+    const stale = company("stale", "retail", [rec({ fiscalYear: "2022年3月期", periodEnd: "2022-03-31", netIncome: 990 })]);
+    const layer = reportMetrics(target, [...retailers, stale]);
+    expect(layer.industryMembers).toBe(7);
+    expect(layer.comparableMembers).toBe(6);
+    expect(layer.metrics.find((m) => m.key === "net-margin")!.industry).toMatchObject({ members: 6, rank: 3 });
   });
 
   it("computes the five-year growth from the first and last of five printed years", () => {

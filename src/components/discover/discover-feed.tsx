@@ -270,11 +270,12 @@ function IntroCard({
   return (
     <Screen index={index} className="justify-center-safe bg-[radial-gradient(120%_80%_at_80%_0%,#1e3a5f_0%,#0a0f1a_55%,#05070b_100%)] px-6 pt-20 pb-14 text-white [@media(max-height:700px)]:pt-14 [@media(max-height:700px)]:pb-4">
       <p className="text-xs font-semibold tracking-[0.2em] text-amber-300 [@media(max-height:700px)]:hidden">DISCOVER</p>
-      <h1 className="mt-2 font-serif text-[2rem] leading-tight font-semibold [@media(max-height:700px)]:text-[1.5rem]">
+      {/* An h2, not the page's h1: the server-rendered introduction above the feed carries the h1 (JCE-074). */}
+      <h2 className="mt-2 font-serif text-[2rem] leading-tight font-semibold [@media(max-height:700px)]:text-[1.5rem]">
         今日、出会う
         <br />
         日本の会社。
-      </h1>
+      </h2>
       <p className="mt-3 max-w-sm text-sm leading-relaxed text-white/70 [@media(max-height:700px)]:hidden">
         上にスワイプすると、次の会社。気になる会社のつながりをたどると、知らなかった会社に出会えます。
       </p>

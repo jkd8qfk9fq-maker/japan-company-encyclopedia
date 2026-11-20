@@ -137,11 +137,12 @@ export function CompanyReport({ company, companies }: { company: Company; compan
                 <h2 className="font-serif text-lg font-semibold">5期の数字（有価証券報告書の印字値）</h2>
                 <div className="mt-3 overflow-x-auto">
                   <table className="w-full border-collapse text-sm">
+                    <caption className="sr-only">5期の数字（有価証券報告書の印字値）</caption>
                     <thead>
                       <tr className="border-b border-foreground/40 text-left">
-                        <th className="py-2 pr-3 font-medium whitespace-nowrap">項目</th>
+                        <th scope="col" className="sticky left-0 bg-background py-2 pr-3 font-medium whitespace-nowrap">項目</th>
                         {records.map((r) => (
-                          <th key={r.periodEnd} className="figures py-2 pr-3 text-right font-medium whitespace-nowrap">
+                          <th scope="col" key={r.periodEnd} className="figures py-2 pr-3 text-right font-medium whitespace-nowrap">
                             {r.fiscalYear}
                           </th>
                         ))}
@@ -150,7 +151,7 @@ export function CompanyReport({ company, companies }: { company: Company; compan
                     <tbody>
                       {lines.map((line) => (
                         <tr key={line.label} className="border-b border-border/70">
-                          <td className="py-1.5 pr-3 whitespace-nowrap">{line.label}</td>
+                          <th scope="row" className="sticky left-0 bg-background py-1.5 pr-3 text-left font-normal whitespace-nowrap">{line.label}</th>
                           {records.map((r) => {
                             const v = line.pick(r);
                             return (
@@ -164,6 +165,7 @@ export function CompanyReport({ company, companies }: { company: Company; compan
                     </tbody>
                   </table>
                 </div>
+                <p className="mt-1 text-xs text-muted-foreground sm:hidden">表は横にスクロールできます。</p>
                 <p className="mt-2 text-xs leading-5 text-muted-foreground">
                   金額は有価証券報告書の「主要な経営指標等の推移」に印字されたとおり。項目名は最新期の有報の表記です。
                 </p>
@@ -199,29 +201,34 @@ export function CompanyReport({ company, companies }: { company: Company; compan
                 <p className="mt-1 max-w-3xl text-sm leading-6 text-muted-foreground">
                   印字値から計算した値（計算値）です。業界の分布は、主たる産業が同じ掲載企業
                   {layer.industryName && `（${layer.industryName}）`}
-                  の各社の最新期から同じ計算をしたもので、中央値・四分位・順位・パーセンタイル（その値より小さい会社の割合）を並べています。位置を示すもので、会社の良し悪しを判定するものではありません。
+                  {layer.industryMembers > 0
+                    ? `${layer.industryMembers}社のうち、最新期がこの会社と1年以内に終わる${layer.comparableMembers}社の最新期から同じ計算をしたもので`
+                    : "の各社の最新期から同じ計算をしたもので"}
+                  、中央値・四分位・順位・パーセンタイル（その値より小さい会社の割合）を並べています。位置を示すもので、会社の良し悪しを判定するものではありません。
                 </p>
                 <div className="mt-3 overflow-x-auto">
                   <table className="w-full border-collapse text-sm">
+                    <caption className="sr-only">計算値と、業界の中での位置</caption>
                     <thead>
                       <tr className="border-b border-foreground/40 text-left">
-                        <th className="py-2 pr-3 font-medium whitespace-nowrap">指標（計算値）</th>
-                        <th className="py-2 pr-3 font-medium whitespace-nowrap">自社</th>
-                        <th className="py-2 pr-3 text-right font-medium whitespace-nowrap">業界の中央値</th>
-                        <th className="py-2 pr-3 text-right font-medium whitespace-nowrap">四分位（第1〜第3）</th>
-                        <th className="py-2 pr-3 text-right font-medium whitespace-nowrap">順位</th>
-                        <th className="py-2 text-right font-medium whitespace-nowrap">パーセンタイル</th>
+                        <th scope="col" className="sticky left-0 bg-background py-2 pr-3 font-medium whitespace-nowrap">指標（計算値）</th>
+                        <th scope="col" className="py-2 pr-3 font-medium whitespace-nowrap">自社</th>
+                        <th scope="col" className="py-2 pr-3 text-right font-medium whitespace-nowrap">業界の中央値</th>
+                        <th scope="col" className="py-2 pr-3 text-right font-medium whitespace-nowrap">四分位（第1〜第3）</th>
+                        <th scope="col" className="py-2 pr-3 text-right font-medium whitespace-nowrap">順位</th>
+                        <th scope="col" className="py-2 text-right font-medium whitespace-nowrap">パーセンタイル</th>
                       </tr>
                     </thead>
                     <tbody>
                       {layer.metrics.map((m) => (
                         <tr key={m.key} className="border-b border-border/70 align-top">
-                          <td className="py-2 pr-3">
+                          <th scope="row" className="sticky left-0 max-w-[11rem] bg-background py-2 pr-3 text-left font-normal">
                             <span className="whitespace-nowrap">{m.title}</span>
                             <span className="block text-xs text-muted-foreground">
                               {m.formula}（{m.fiscalYear}）
                             </span>
-                          </td>
+                            {m.note && <span className="block text-xs text-muted-foreground">{m.note}</span>}
+                          </th>
                           <td className="figures py-2 pr-3 font-medium whitespace-nowrap">{formatValue(m, m.value)}</td>
                           <td className="figures py-2 pr-3 text-right whitespace-nowrap">{m.industry ? formatValue(m, m.industry.median) : "—"}</td>
                           <td className="figures py-2 pr-3 text-right whitespace-nowrap">
@@ -236,6 +243,7 @@ export function CompanyReport({ company, companies }: { company: Company; compan
                     </tbody>
                   </table>
                 </div>
+                <p className="mt-1 text-xs text-muted-foreground sm:hidden">表は横にスクロールできます。</p>
                 <p className="mt-2 text-xs leading-5 text-muted-foreground">
                   「—」は、その指標を計算できる会社が業界に少なく、分布を示していないものです（自社の値は印字値から計算できています）。前期比は、会計基準と売上の範囲が前期と同じ場合だけ計算しています。
                 </p>
