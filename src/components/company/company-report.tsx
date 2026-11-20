@@ -102,7 +102,7 @@ export function CompanyReport({ company, companies }: { company: Company; compan
   const usedSources = usedSourceIds.map((id) => company.sources.find((s) => s.id === id)).filter((s) => s !== undefined);
 
   return (
-    <div className={`company-report mx-auto max-w-4xl px-5 pt-10 pb-16 md:px-8 ${styles.report}`}>
+    <div className={`company-report mx-auto max-w-4xl px-5 pt-7 pb-16 md:px-8 ${styles.report}`}>
       <div className="flex items-center justify-between gap-4 print:hidden">
         <Link href={`/companies/${company.id}`} className="text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground">
           ← {company.name}のページへ

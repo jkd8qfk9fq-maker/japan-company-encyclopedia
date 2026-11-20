@@ -9,11 +9,11 @@ export function CompanyCard({ company }: { company: CompanySummary }) {
   return (
     <Link
       href={`/companies/${company.id}`}
-      className="group flex h-full flex-col border-t border-foreground pt-5 pb-8 transition-colors"
+      className="group flex h-full flex-col border-t border-foreground pt-4 pb-6 transition-colors"
     >
       <p className="figures text-xs text-muted-foreground">{company.code}</p>
       {company.shortNameEn && (
-        <p className="wordmark mt-3 text-[2rem] leading-none break-words md:text-[2.5rem]" aria-hidden>
+        <p className="wordmark mt-2 text-[1.375rem] leading-none break-words md:text-[1.625rem]" aria-hidden>
           {company.shortNameEn}
         </p>
       )}
@@ -22,8 +22,8 @@ export function CompanyCard({ company }: { company: CompanySummary }) {
       </p>
       {/* The one-line description (JCE-074): the directory itself reads as content, not only as a list of names.
           Null on a figures-only summary, which the release line keeps out of this page anyway. */}
-      {company.description && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{company.description}</p>}
-      <ul className="mt-4 flex flex-wrap gap-x-3 gap-y-1 text-sm text-muted-foreground" aria-label="主な事業">
+      {company.description && <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{company.description}</p>}
+      <ul className="mt-3 flex flex-wrap gap-x-3 gap-y-1 text-sm text-muted-foreground" aria-label="主な事業">
         {company.businesses.slice(0, 4).map((business) => (
           <li key={business}>{business}</li>
         ))}

@@ -10,13 +10,13 @@ export const metadata: Metadata = {
 
 export default function LearnPage() {
   return (
-    <div className="mx-auto max-w-2xl px-5 pt-12 pb-16 md:px-8 md:pt-16">
+    <div className="mx-auto max-w-2xl px-5 pt-8 pb-16 md:px-8 md:pt-10">
       <p className="eyebrow" aria-hidden>Reading filings</p>
       <h1 className="mt-3 font-serif text-[2rem] font-semibold">有報の読み方入門</h1>
       <p className="prose-ja mt-3 text-muted-foreground">
         有価証券報告書は、会社の姿を会社自身の数字で読むための文書です。このコースは実際の上場企業の数値を使った12ステップで、事業の姿 → 5期の数字 → 事業別の売上 → 海外の売上 → 四半期の動き、の順に読み方をたどります。進み具合はこのブラウザにだけ残ります。
       </p>
-      <div className="mt-8">
+      <div className="mt-6">
         <LearnCourse />
       </div>
       <p className="mt-8 text-sm">

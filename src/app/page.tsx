@@ -81,7 +81,7 @@ export default async function HomePage() {
     <>
       {/* HERO */}
       <section aria-labelledby="home-hero" className="border-b border-border bg-paper">
-        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-8 px-5 py-10 md:px-8 md:py-12 lg:grid-cols-[21rem_minmax(0,1fr)_21rem] lg:items-center lg:gap-10">
+        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-8 px-5 py-8 md:px-8 md:py-10 lg:grid-cols-[21rem_minmax(0,1fr)_21rem] lg:items-center lg:gap-10">
           <div>
             <h1 id="home-hero" className="font-serif text-[1.75rem] leading-[1.5] font-semibold sm:text-[2rem] lg:text-[1.875rem]">
               企業を知ることは、

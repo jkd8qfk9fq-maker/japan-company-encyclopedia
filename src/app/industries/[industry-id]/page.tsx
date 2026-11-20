@@ -86,15 +86,16 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
 
   return (
     <article>
-      <header className="mx-auto max-w-6xl px-5 pt-10 pb-6 md:px-8 md:pt-14">
+      <header className="mx-auto max-w-6xl px-5 pt-7 pb-5 md:px-8 md:pt-10">
         <p className="text-xs tracking-[0.18em] text-muted-foreground">
           <Link href="/industries" className="hover:text-foreground hover:underline">
             業界
           </Link>{" "}
           ／ {listing.name}
         </p>
-        {/* break-words: "Telecommunications" is wider than a 320px screen at this size. */}
-        <p className="wordmark mt-3 text-[clamp(2.25rem,8vw,4.5rem)] break-words" aria-hidden>
+        {/* A label, not a poster (JCE-077, the company hero rule): break-words stays, "Telecommunications"
+            is wider than a 320px screen even at this size. */}
+        <p className="wordmark mt-3 text-[clamp(1.25rem,4vw,1.75rem)] break-words" aria-hidden>
           {listing.nameEn}
         </p>
         <h1 className="mt-2 font-serif text-[1.75rem] font-semibold md:text-[2.25rem]">{listing.name}業界</h1>
