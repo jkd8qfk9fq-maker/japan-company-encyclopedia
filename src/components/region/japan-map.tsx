@@ -1,6 +1,6 @@
 "use client";
 
-import map from "@/assets/japan/prefectures.json";
+import mapJson from "@/assets/japan/prefectures.json";
 import Link from "next/link";
 import { Minus, Plus, Maximize2 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
@@ -16,6 +16,15 @@ export const MAP_STEPS = [
 ];
 
 const opacityFor = (count: number) => [...MAP_STEPS].reverse().find((s) => count >= s.from)?.opacity ?? 0;
+
+/** The shape of src/assets/japan/prefectures.json, written out because JSON modules are `unknown` (JCE-076). */
+export type JapanMapData = {
+  viewBox: string;
+  inset: { x: number; y: number; width: number; height: number };
+  prefectures: { code: string; d: string; x: number; y: number }[];
+};
+
+const map = mapJson as JapanMapData;
 
 const [FX, FY, FW, FH] = map.viewBox.split(" ").map(Number);
 const FULL = { x: FX, y: FY, w: FW, h: FH };
