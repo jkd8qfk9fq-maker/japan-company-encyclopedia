@@ -105,16 +105,17 @@ export async function handlePush(request: Request, env: PushEnv, store: PushStor
 /** Recorded on the first run and never pruned: from then on, every new event is announced. */
 export const BOOTSTRAP_KEY = "__bootstrap__";
 
-/** The shape of /updates.json (src/lib/engagement-data.ts): [companyId, kind, date, label]. */
-export type Updates = { names: Record<string, string>; events: [string, string, string, string][] };
+/** The shape of /updates.json (src/lib/engagement-data.ts): [companyId, kind, date, label, summary?]. */
+export type Updates = { names: Record<string, string>; events: [string, string, string, string, string?][] };
 
-/** The notification text: a fact, never advice (invariant 4). */
-export function messageFor(companyId: string, kinds: string[], names: Record<string, string>) {
+/** The notification text: a fact, never advice (invariant 4). The summaries are the filings' own printed figures (JCE-071). */
+export function messageFor(companyId: string, kinds: string[], names: Record<string, string>, summaries: string[] = []) {
   const name = names[companyId] ?? companyId;
   const isResults = kinds.some((k) => k === "yuho" || k === "hanki" || k === "tanshin");
+  const facts = [...new Set(summaries.filter(Boolean))];
   return {
     title: "日本企業百科事典",
-    body: isResults ? `${name}の新しい決算データが公開されました` : `${name}の掲載内容が更新されました`,
+    body: (isResults ? `${name}の新しい決算データが公開されました` : `${name}の掲載内容が更新されました`) + (facts.length > 0 ? `\n${facts.join("\n")}` : ""),
     url: `/companies/${companyId}/`,
     tag: `company-${companyId}`,
   };
@@ -133,7 +134,9 @@ export async function runNotifications(env: PushEnv, store: PushStore | null, lo
   await store.prune(new Date(now.getTime() - 180 * day).toISOString(), new Date(now.getTime() - 150 * day).toISOString());
 
   const updates = await loadUpdates();
-  const keyOf = (e: Updates["events"][number]) => e.join("|");
+  // An event is its company, kind, date and title: the summary (JCE-071) rides along but is not part of the
+  // identity, so a file that gains summaries does not make everything already announced look new again.
+  const keyOf = (e: Updates["events"][number]) => e.slice(0, 4).join("|");
   if (await store.isEmptySeen()) {
     // A marker, so a first run that finds nothing listed still counts as the first run.
     await store.markSeen([BOOTSTRAP_KEY, ...updates.events.map(keyOf)], iso);
@@ -153,7 +156,7 @@ export async function runNotifications(env: PushEnv, store: PushStore | null, lo
   for (const [companyId, events] of byCompany) {
     const recipients = followers.filter((f) => f.companyId === companyId);
     if (sent + gone + failed + recipients.length > budget && sent + gone + failed > 0) break; // next run continues here
-    const message = messageFor(companyId, events.map((e) => e[1]), updates.names);
+    const message = messageFor(companyId, events.map((e) => e[1]), updates.names, events.map((e) => e[4]).filter((s): s is string => Boolean(s)));
     for (const r of recipients) {
       const result = await sendPush(r.subscription, message, vapid, send);
       if (result === "gone") {

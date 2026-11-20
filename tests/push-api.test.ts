@@ -160,6 +160,24 @@ describe("scheduled announcements", () => {
     expect(messageFor("toyota", ["correction"], { toyota: "トヨタ自動車" }).body).toBe("トヨタ自動車の掲載内容が更新されました");
     expect(messageFor("x", ["hanki"], {}).body).toBe("xの新しい決算データが公開されました");
   });
+
+  it("carries the filing's own figures under the fact, once each (JCE-071)", () => {
+    const summary = "2027年3月期 第1四半期（累計）：売上 1,000億円、純利益 50億円";
+    expect(messageFor("toyota", ["tanshin"], { toyota: "トヨタ自動車" }, [summary, summary]).body).toBe(`トヨタ自動車の新しい決算データが公開されました\n${summary}`);
+    expect(messageFor("toyota", ["tanshin"], { toyota: "トヨタ自動車" }).body).toBe("トヨタ自動車の新しい決算データが公開されました");
+  });
+
+  it("does not announce an event again when its file gains a summary (JCE-071)", async () => {
+    const store = memoryStore();
+    const env = await vapidKeys();
+    const b = await browser();
+    await handlePush(post("/api/push/subscribe", { subscription: b.subscription, companies: ["toyota"] }), env, store);
+    const { calls, send } = pushService();
+    await runNotifications(env, store, async () => updates([["toyota", "yuho", "2026-06-20", "有報"]]), send);
+    const withSummary = updates([["toyota", "yuho", "2026-06-20", "有報", "2026年3月期：売上高 3,670億円、純利益 123億円"]]);
+    expect(await runNotifications(env, store, async () => withSummary, send)).toMatchObject({ announced: 0 });
+    expect(calls).toHaveLength(0);
+  });
 });
 
 describe("the first-run marker", () => {

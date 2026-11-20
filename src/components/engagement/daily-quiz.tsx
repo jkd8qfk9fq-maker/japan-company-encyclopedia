@@ -5,7 +5,8 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLocalStore } from "@/hooks/use-local-store";
 import type { QuizQuestion } from "@/lib/engagement-data";
-import { jstToday, quizStore, recordQuizAnswer } from "@/lib/storage/stores";
+import { buildCourseSteps } from "@/lib/learn-course";
+import { jstToday, quizStore, recordLearnAnswer, recordQuizAnswer } from "@/lib/storage/stores";
 import { loadQuiz } from "./load";
 
 /** Days since 2026-01-01 in JST: the same question for every reader on the same day. */
@@ -39,6 +40,8 @@ export function DailyQuiz({ compact = false }: { compact?: boolean }) {
   const answered = answers[day];
   const shown = answered ? pool.find((x) => x.id === answered.id) ?? q : q;
   const correctCount = Object.values(answers).filter((a) => a.correct).length;
+  // JCE-072: when today's question is one of the course's steps, answering it here does that step too.
+  const isCourseStep = buildCourseSteps(pool).some((s) => s.question.id === shown.id);
 
   return (
     <div className={`rounded-md border border-border bg-card ${compact ? "p-4" : "p-5 md:p-6"}`}>
@@ -55,7 +58,10 @@ export function DailyQuiz({ compact = false }: { compact?: boolean }) {
               <button
                 type="button"
                 disabled={Boolean(answered)}
-                onClick={() => recordQuizAnswer(day, { id: shown.id, choice: o.id, correct: right })}
+                onClick={() => {
+                  recordQuizAnswer(day, { id: shown.id, choice: o.id, correct: right });
+                  if (isCourseStep) recordLearnAnswer(shown.id, { choice: o.id, correct: right });
+                }}
                 className={`flex min-h-11 w-full items-center justify-between gap-2 rounded-md border px-4 py-2 text-left text-sm transition-colors ${
                   state === "idle"
                     ? "border-border hover:border-foreground"

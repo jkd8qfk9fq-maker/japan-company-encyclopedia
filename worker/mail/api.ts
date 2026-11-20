@@ -157,7 +157,8 @@ export async function runMailNotifications(env: MailEnv, store: MailStore | null
   await store.prune(new Date(now.getTime() - CONFIRM_WINDOW_MS).toISOString(), new Date(now.getTime() - 150 * 24 * 3600 * 1000).toISOString());
 
   const updates = await loadUpdates();
-  const keyOf = (e: Updates["events"][number]) => e.join("|");
+  // The same identity as the push run: the summary (JCE-071) is not part of it (see worker/push/api.ts).
+  const keyOf = (e: Updates["events"][number]) => e.slice(0, 4).join("|");
   if (await store.isEmptySeen()) {
     await store.markSeen([BOOTSTRAP_KEY, ...updates.events.map(keyOf)], iso);
     return { bootstrap: true as const, recorded: updates.events.length };
@@ -207,10 +208,15 @@ export async function runMailNotifications(env: MailEnv, store: MailStore | null
 
 /** One mail: each company's fact and page, newest first, and how to stop. */
 export function digest(to: string, stopKey: string, events: Updates["events"], names: Record<string, string>) {
-  const byCompany = new Map<string, string[]>();
-  for (const [companyId, kind] of events) byCompany.set(companyId, [...(byCompany.get(companyId) ?? []), kind]);
-  const lines = [...byCompany].map(([companyId, kinds]) => {
-    const m = messageFor(companyId, kinds, names);
+  const byCompany = new Map<string, { kinds: string[]; summaries: string[] }>();
+  for (const [companyId, kind, , , summary] of events) {
+    const entry = byCompany.get(companyId) ?? { kinds: [], summaries: [] };
+    entry.kinds.push(kind);
+    if (summary) entry.summaries.push(summary);
+    byCompany.set(companyId, entry);
+  }
+  const lines = [...byCompany].map(([companyId, { kinds, summaries }]) => {
+    const m = messageFor(companyId, kinds, names, summaries);
     return `・${m.body}\n  ${SITE}${m.url}`;
   });
   const first = names[[...byCompany.keys()][0]!] ?? [...byCompany.keys()][0]!;

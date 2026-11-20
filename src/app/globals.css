@@ -277,3 +277,20 @@
     scroll-behavior: auto !important;
   }
 }
+
+/*
+ * Printing the premium company report (JCE-073): on paper the report is the document, so the site's
+ * chrome — header, footer, bottom navigation — is not printed with it. Keyed to the report's wrapper
+ * class, so no other page's printout changes. The report's own print sizing lives in its CSS module.
+ */
+@media print {
+  body:has(.company-report) > header,
+  body:has(.company-report) > footer,
+  body:has(.company-report) > nav {
+    display: none !important;
+  }
+
+  body:has(.company-report) {
+    padding-bottom: 0 !important;
+  }
+}
