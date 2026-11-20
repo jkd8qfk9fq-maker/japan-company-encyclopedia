@@ -6,7 +6,7 @@ import type { Feature, FeatureBlock } from "@/types/feature";
 import type { Source } from "@/types/source";
 
 /**
- * The editorial features (JCE-074): three cross-cutting readings of the encyclopedia, built at build time
+ * The editorial features (JCE-074): cross-cutting readings of the encyclopedia, built at build time
  * from the released companies only. Every figure in the prose and in the tables is computed here from the
  * entries' printed figures — the same inputs `buildIndustryFigures` and `companyMetrics` use — and
  * interpolated into the sentences, so a number in the text cannot drift from the data. Aggregates are
@@ -30,6 +30,19 @@ const times2 = (v: number) => `${v.toFixed(2)}倍`;
 const manYen = (v: number) =>
   `${(v / 10000).toLocaleString("ja-JP", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}万円`;
 const count = (n: number) => `${n.toLocaleString("ja-JP")}社`;
+const people = (n: number) => `${n.toLocaleString("ja-JP", { maximumFractionDigits: 1 })}人`;
+const manYen0 = (v: number) => `${Math.round(v / 10000).toLocaleString("ja-JP")}万円`;
+const yen = (v: number) => `${Number.isInteger(v) ? v.toLocaleString("ja-JP") : v.toFixed(1)}円`;
+
+/** The latest printed year of a company, by period end — the year every "latest" figure below reads. */
+function latestRecord(company: Company) {
+  return [...company.financials].sort((a, b) => a.periodEnd.localeCompare(b.periodEnd)).at(-1);
+}
+
+/** The industry a company is counted under, the same primary-industry rule as `buildIndustryFigures`. */
+function primaryIndustryId(company: Company) {
+  return (company.industries.find((ref) => ref.primary) ?? company.industries[0])?.industryId ?? null;
+}
 
 /** Overseas ratio of one company, from its 地域ごとの情報 as printed (the JCE-038 ratio, via companyMetrics). */
 function overseasOf(company: Company): { ratio: number; fiscalYear: string } | null {
@@ -282,7 +295,286 @@ function growthArticle(companies: Company[]): Feature {
   };
 }
 
-/** The three features, newest data first: a pure function of the released companies, rebuilt with the site. */
+function employeesArticle(companies: Company[]): Feature {
+  const data = buildIndustryFigures(companies);
+  const withEmp = companies
+    .map((c) => ({ company: c, latest: latestRecord(c) }))
+    .filter(
+      (x): x is { company: Company; latest: NonNullable<ReturnType<typeof latestRecord>> } =>
+        x.latest !== undefined && x.latest.employees !== null,
+    );
+  const total = data.totals.employees;
+  const overallMedian = median(withEmp.map((x) => x.latest.employees!))!;
+  const over10000 = withEmp.filter((x) => x.latest.employees! >= 10000).length;
+  const under100 = withEmp.filter((x) => x.latest.employees! < 100).length;
+
+  const totalRows = [...data.industries].sort((a, b) => b.employees.total - a.employees.total);
+  const top3Share = totalRows.slice(0, 3).reduce((acc, i) => acc + i.employees.total, 0) / total;
+  const telecom = data.industries.find((i) => i.id === "telecommunications")!;
+  const ntt = withEmp.find((x) => x.company.id === "ntt")!;
+  const nttShare = ntt.latest.employees! / telecom.employees.total;
+
+  const medianRows = data.industries
+    .map((i) => {
+      const values = withEmp.filter((x) => primaryIndustryId(x.company) === i.id).map((x) => x.latest.employees!);
+      return { industry: i, median: median(values), n: values.length };
+    })
+    .filter((x): x is { industry: (typeof data.industries)[number]; median: number; n: number } => x.median !== null && x.n >= 10)
+    .sort((a, b) => b.median - a.median);
+  const topMedian = medianRows[0]!;
+  const bottomMedian = medianRows.at(-1)!;
+
+  const topCompanies = [...withEmp].sort((a, b) => b.latest.employees! - a.latest.employees!).slice(0, 10);
+
+  const body: FeatureBlock[] = [
+    {
+      type: "paragraph",
+      text: `掲載企業${count(companies.length)}のうち、最新期の従業員数を印字したのは${count(withEmp.length)}で、その人数を合計すると${people(total)}になります。ここでの従業員数は、有価証券報告書の「主要な経営指標等の推移」に印字された人数で、連結財務諸表を作る会社ではグループ全体の人数です。各社のページにある「従業員の状況」（提出会社だけの人数）とは数え方が違うため、混ぜずにこちらだけを使います。会社の規模の中央値は${people(overallMedian)}でした。`,
+      sourceIds: ["edinet"],
+    },
+    {
+      type: "data-table",
+      title: "業界別の従業員数（合計）",
+      columns: ["従業員数の合計", "対象"],
+      rows: totalRows.map((i) => ({
+        label: INDUSTRY_LABELS[i.id].name,
+        href: `/industries/${i.id}`,
+        values: [people(i.employees.total), count(i.employees.companies)],
+      })),
+      note: "従業員数は各社の有価証券報告書「主要な経営指標等の推移」の印字どおりで、合計はその単純な足し算です（計算値は合計と割合だけです）。最新期に人数を印字していない会社は対象に含みません。",
+    },
+    {
+      type: "paragraph",
+      text: `もっとも多いのは[[industry:automotive|自動車]]で、[[industry:electronics|電機・エレクトロニクス]]、[[industry:chemicals|化学]]が続きます。この3業界で全体の${pct1(top3Share)}を占めます。顔ぶれは、部品メーカーまで含めた製造業の裾野の広さを映したものです。一方、[[industry:telecommunications|通信]]は${count(telecom.companies)}しかないのに${people(telecom.employees.total)}と上位に入ります。そのうち[[company:ntt|NTT]]1社が${people(ntt.latest.employees!)}で、業界の${pct1(nttShare)}です。会社の少ない業界では、1社の大きさがそのまま業界の姿になります。`,
+      sourceIds: ["edinet"],
+    },
+    { type: "heading", text: "会社の大きさで見る：中央値の地図" },
+    {
+      type: "data-table",
+      title: "業界別の従業員数（中央値）",
+      columns: ["従業員数の中央値（計算値）", "対象"],
+      rows: medianRows.map((x) => ({
+        label: INDUSTRY_LABELS[x.industry.id].name,
+        href: `/industries/${x.industry.id}`,
+        values: [people(x.median), count(x.n)],
+      })),
+      note: "計算値：最新期の従業員数を会社ごとに取り、業界の中央値を取ったもの。対象が10社未満の業界は載せていません。",
+    },
+    {
+      type: "paragraph",
+      text: `合計ではなく中央値で見ると、[[industry:automotive|自動車]]（${people(topMedian.median)}）がここでも首位で、大企業が集まる業界であることがわかります。対照的なのは[[industry:it|IT・ソフトウェア]]で、会社数は全業界でもっとも多いのに中央値は小さく、小さな会社が多い業界です。もっとも小さいのは[[industry:real-estate|不動産]]（${people(bottomMedian.median)}）で、資産を持って回す事業は少ない人数で成り立ちます。`,
+      sourceIds: ["edinet"],
+    },
+    { type: "heading", text: "会社で見る：10万人を超える会社" },
+    {
+      type: "data-table",
+      title: "従業員数の多い会社",
+      columns: ["従業員数", "対象期"],
+      rows: topCompanies.map((x) => ({
+        label: x.company.name,
+        href: `/companies/${x.company.id}`,
+        values: [people(x.latest.employees!), x.latest.fiscalYear],
+      })),
+      note: "従業員数は各社の有価証券報告書「主要な経営指標等の推移」の印字どおりで、計算値ではありません。並びはその人数によるものです。",
+    },
+    {
+      type: "paragraph",
+      text: `規模の幅も見えてきます。従業員が1万人以上の会社は${count(over10000)}ある一方で、100人未満の会社も${count(under100)}あります。「上場企業」という同じ枠の中に、数十万人のグループと、数十人の会社が並んでいます。`,
+      sourceIds: ["edinet"],
+    },
+  ];
+
+  return {
+    id: "employees-by-industry",
+    title: "従業員の人数から見る業界地図",
+    subtitle: "最新期の従業員数を業界ごとに合計し、会社の規模の中央値と並べた地図です。合計の大きさと、典型的な会社の大きさは、別の姿を見せます。",
+    body,
+    relatedCompanies: topCompanies.slice(0, 6).map((x) => x.company.id),
+    relatedIndustries: ["automotive", "electronics", "chemicals", "transportation", "telecommunications", "it", "real-estate"],
+    relatedTerms: ["annual-securities-report"],
+    sources: [EDINET],
+    status: { state: "published" },
+    publishedAt: PUBLISHED_AT,
+  };
+}
+
+function dividendsArticle(companies: Company[]): Feature {
+  const withDiv = companies.filter((c) => c.shareFacts && c.shareFacts.dividendPerShare !== null);
+  const paying = withDiv.filter((c) => c.shareFacts!.dividendPerShare! > 0);
+  const zero = withDiv
+    .filter((c) => c.shareFacts!.dividendPerShare! === 0)
+    .sort((a, b) => a.id.localeCompare(b.id));
+  const noFigure = companies.length - withDiv.length;
+  const share = paying.length / withDiv.length;
+  const medianDiv = median(paying.map((c) => c.shareFacts!.dividendPerShare!))!;
+
+  const industryRows = [...new Set(withDiv.map((c) => primaryIndustryId(c)).filter((v): v is NonNullable<typeof v> => v !== null))]
+    .map((id) => {
+      const cs = withDiv.filter((c) => primaryIndustryId(c) === id);
+      const pay = cs.filter((c) => c.shareFacts!.dividendPerShare! > 0).length;
+      return { id, n: cs.length, pay, share: pay / cs.length };
+    })
+    .filter((x) => x.n >= 10)
+    .sort((a, b) => b.share - a.share || b.n - a.n);
+  const bottomRow = industryRows.at(-1)!;
+
+  const bands: { label: string; test: (v: number) => boolean }[] = [
+    { label: "10円未満", test: (v) => v < 10 },
+    { label: "10円以上50円未満", test: (v) => v >= 10 && v < 50 },
+    { label: "50円以上100円未満", test: (v) => v >= 50 && v < 100 },
+    { label: "100円以上", test: (v) => v >= 100 },
+  ];
+  const bandRows = bands.map((b) => {
+    const n = paying.filter((c) => b.test(c.shareFacts!.dividendPerShare!)).length;
+    return { label: b.label, n, share: n / paying.length };
+  });
+
+  const body: FeatureBlock[] = [
+    {
+      type: "paragraph",
+      text: `有価証券報告書の「主要な経営指標等の推移」には、1株当たり配当額が印字されています（提出会社の金額）。掲載企業のうち、この金額が読み取れたのは${count(withDiv.length)}でした。そのうち配当額が0円でなかった会社は${count(paying.length)}で、割合は${pct1(share)}です。残りの${count(noFigure)}は、この表から配当額が読み取れなかった会社で、配当を出していないとは限りません。`,
+      sourceIds: ["edinet"],
+    },
+    {
+      type: "data-table",
+      title: "業界別の配当を出す会社の割合",
+      columns: ["配当を出す会社", "対象", "割合（計算値）"],
+      rows: industryRows.map((x) => ({
+        label: INDUSTRY_LABELS[x.id].name,
+        href: `/industries/${x.id}`,
+        values: [count(x.pay), count(x.n), pct1(x.share)],
+      })),
+      note: "割合は計算値：1株当たり配当額が0円でない会社 ÷ 配当額が印字された会社。金額そのものは各社の有価証券報告書「主要な経営指標等の推移」の印字どおりです。対象が10社未満の業界は載せていません。",
+    },
+    {
+      type: "paragraph",
+      text: `業界ごとの差はほとんどありません。もっとも低い[[industry:human-resources|人材サービス]]でも${pct1(bottomRow.share)}で、並べた全業界が98%を超えています。「配当を出すかどうか」は、業界の色を分けるものではなく、上場企業にほぼ共通する前提に近いことがわかります。`,
+      sourceIds: ["edinet"],
+    },
+    { type: "heading", text: "0円だった7社" },
+    {
+      type: "data-table",
+      title: "1株当たり配当額が0円と印字された会社",
+      columns: ["1株当たり配当額", "対象期"],
+      rows: zero.map((c) => ({
+        label: c.name,
+        href: `/companies/${c.id}`,
+        values: [yen(0), c.shareFacts!.fiscalYear],
+      })),
+      note: "1株当たり配当額は各社の有価証券報告書「主要な経営指標等の推移」の印字どおりで、計算値ではありません。",
+    },
+    {
+      type: "paragraph",
+      text: `0円と印字されたのは${count(zero.length)}だけでした。顔ぶれは塗料、機械、食品、教育などに散らばっていて、特定の業界に固まったものではありません。配当額が読み取れた会社の中では、0円のほうが例外です。`,
+      sourceIds: ["edinet"],
+    },
+    { type: "heading", text: `金額の分布：中央値は${yen(medianDiv)}` },
+    {
+      type: "data-table",
+      title: "1株当たり配当額の分布（配当を出す会社）",
+      columns: ["会社数", "割合（計算値）"],
+      rows: bandRows.map((b) => ({ label: b.label, values: [count(b.n), pct1(b.share)] })),
+      note: "金額は各社の有価証券報告書の印字どおり。会社数と割合は、その金額の幅に入る会社を数えた計算値です。",
+    },
+    {
+      type: "paragraph",
+      text: `配当を出す会社の1株当たり配当額の中央値は${yen(medianDiv)}でした。ただし、この金額は株式分割の経緯や発行済株式数の違いで大きく変わるため、金額の大小を会社どうしで比べても、株主への戻し方の手厚さは測れません。株価から求める配当利回りは、このサイトでは株価を扱わないため出しません。金額そのものは、各社の企業ページに、発行済株式総数と並べて印字どおりに載せています。`,
+      sourceIds: ["edinet"],
+    },
+  ];
+
+  return {
+    id: "how-many-companies-pay-dividends",
+    title: "配当を出す会社はどれくらいあるか",
+    subtitle: "有価証券報告書に印字された1株当たり配当額を数えると、「出すかどうか」よりも「0円が例外」という姿が見えてきます。",
+    body,
+    relatedCompanies: zero.map((c) => c.id),
+    relatedIndustries: ["finance", "trading", "retail", "human-resources", "energy", "construction"],
+    relatedTerms: ["annual-securities-report"],
+    sources: [EDINET],
+    status: { state: "published" },
+    publishedAt: PUBLISHED_AT,
+  };
+}
+
+function revenuePerEmployeeArticle(companies: Company[]): Feature {
+  const data = buildIndustryFigures(companies);
+  const withRpe = companies
+    .map((c) => ({ company: c, latest: latestRecord(c) }))
+    .filter(
+      (x): x is { company: Company; latest: NonNullable<ReturnType<typeof latestRecord>> } =>
+        x.latest !== undefined && x.latest.revenue !== null && x.latest.employees !== null && x.latest.employees > 0,
+    )
+    .map((x) => ({ company: x.company, value: x.latest.revenue! / x.latest.employees! }));
+  const overallMedian = median(withRpe.map((x) => x.value))!;
+  const ratioOfSums = data.reference.revenuePerEmployee!;
+
+  const industryRows = data.industries
+    .map((i) => {
+      const values = withRpe.filter((x) => primaryIndustryId(x.company) === i.id).map((x) => x.value);
+      return { industry: i, median: median(values), n: values.length };
+    })
+    .filter((x): x is { industry: (typeof data.industries)[number]; median: number; n: number } => x.median !== null && x.n >= 10)
+    .sort((a, b) => b.median - a.median);
+  const topRow = industryRows[0]!;
+  const bottomRow = industryRows.at(-1)!;
+  const gap = topRow.median / bottomRow.median;
+
+  const body: FeatureBlock[] = [
+    {
+      type: "paragraph",
+      text: `各社について、同じ期の売上高と従業員数から「売上高 ÷ 従業員数」（計算値）を求めました。両方がそろった${count(withRpe.length)}の中央値は${manYen0(overallMedian)}です。一方、全社の売上高の合計を従業員数の合計で割ると${manYen0(ratioOfSums)}になり、中央値より大きくなります。売上の大きな会社に引っ張られる合計ベースと、典型的な会社を見る中央値とで、姿が変わります。`,
+      sourceIds: ["edinet"],
+    },
+    {
+      type: "data-table",
+      title: "業界別の従業員1人あたり売上高（中央値）",
+      columns: ["1人あたり売上高の中央値（計算値）", "対象"],
+      rows: industryRows.map((x) => ({
+        label: INDUSTRY_LABELS[x.industry.id].name,
+        href: `/industries/${x.industry.id}`,
+        values: [manYen0(x.median), count(x.n)],
+      })),
+      note: "計算値：最新期の売上高 ÷ 従業員数を会社ごとに求め、業界の中央値を取ったもの。売上高と従業員数は有価証券報告書「主要な経営指標等の推移」の印字値です。対象が10社未満の業界は載せていません。",
+    },
+    {
+      type: "paragraph",
+      text: `上位は[[industry:trading|商社]]（${manYen0(topRow.median)}）、[[industry:energy|エネルギー]]、[[industry:real-estate|不動産]]で、下位は[[industry:it|IT・ソフトウェア]]と[[industry:human-resources|人材サービス]]（${manYen0(bottomRow.median)}）です。首位と最下位の差は${times2(gap)}あります。商社のように商品の取扱高がそのまま売上になる事業や、装置と資産で回す事業では、人数の割に売上が大きくなります。反対に、人の労働そのものを提供する事業では、売上は人数にほぼ比例して増えるため、1人あたりは小さくなります。`,
+      sourceIds: ["edinet"],
+    },
+    { type: "heading", text: "読むときの注意：範囲の混ざりと、効率ではないこと" },
+    {
+      type: "paragraph",
+      text: "各社の数字は、その会社の報告書が印字した同じ期の売上高と従業員数です。連結財務諸表を作る会社は連結の数字、作らない会社は単体の数字で、区分は会社によって異なります。子会社に工場や店舗を持つかどうかで、同じ事業でも数字の範囲が変わるため、業界をまたいだ比較には、この混ざりがついて回ります。",
+    },
+    {
+      type: "paragraph",
+      text: "もう一つ、この数字は効率の順位ではありません。売上を人数で割ったものは、事業の形の違い——何を売り、どんな資産と人で回しているか——を映す数字です。業界ページの「数字」でも、合計ベースの従業員1人あたり売上高を計算値として表示しています。中央値と合計ベースの両方から読むのが、この特集の使い方です。",
+    },
+  ];
+
+  return {
+    id: "revenue-per-employee-by-industry",
+    title: "従業員1人あたり売上高の業界差",
+    subtitle: `同じ期の売上高と従業員数から計算すると、業界の中央値の差は${times2(gap)}あります。効率ではなく、事業の形の違いとして読みます。`,
+    body,
+    relatedCompanies: [],
+    relatedIndustries: ["trading", "energy", "real-estate", "retail", "it", "human-resources"],
+    relatedTerms: ["annual-securities-report"],
+    sources: [EDINET],
+    status: { state: "published" },
+    publishedAt: PUBLISHED_AT,
+  };
+}
+
+/** The features, newest data first: a pure function of the released companies, rebuilt with the site. */
 export function buildFeatures(companies: Company[]): Feature[] {
-  return [overseasArticle(companies), salaryArticle(companies), growthArticle(companies)];
+  return [
+    overseasArticle(companies),
+    salaryArticle(companies),
+    growthArticle(companies),
+    employeesArticle(companies),
+    dividendsArticle(companies),
+    revenuePerEmployeeArticle(companies),
+  ];
 }
