@@ -26,6 +26,11 @@ const EXCHANGE_NAME: Record<Company["listings"][number]["exchange"], string> = {
  * in one sentence, what it is made of (one chip per business, in the colour the rest of the page uses for it), and
  * how big it is (the key facts). Nothing here is decoration and nothing is invented: every chip and figure is the
  * entry's own data, and a part with no data is left out.
+ *
+ * JCE-077: the first view must carry the facts, not just the name. The wordmark is a label, not a poster — it is
+ * set small so that on a phone the description, the business chips and the key facts all land in the first
+ * screen, and the sections below start within it. The key facts stay size-only (invariant 4): density comes
+ * from composition, never from adding growth rates or rankings here.
  */
 export function CompanyHero({
   company,
@@ -41,15 +46,15 @@ export function CompanyHero({
   const industries = [...company.industries].sort((a, b) => Number(b.primary ?? false) - Number(a.primary ?? false));
   const { branches } = structureBranches(company.businesses);
 
-  // A long wordmark ("MITSUBISHI CORPORATION") wraps to two lines at the size a short one ("KIRIN") can take.
+  // A label, not a poster (JCE-077): even a long wordmark ("MITSUBISHI CORPORATION") stays on the small tier.
   const wordmarkSize =
     (company.shortNameEn?.length ?? 0) > 12
-      ? "text-[clamp(2.5rem,8vw,4.5rem)]"
-      : "text-[clamp(3.25rem,11vw,5.5rem)]";
+      ? "text-[clamp(1.25rem,4vw,1.75rem)]"
+      : "text-[clamp(1.5rem,5vw,2.25rem)]";
 
   return (
     <section id="overview" aria-labelledby="company-name" className="scroll-mt-28">
-      <div className="mx-auto max-w-6xl px-5 pt-10 pb-8 md:px-8 md:pt-14">
+      <div className="mx-auto max-w-6xl px-5 pt-7 pb-6 md:px-8 md:pt-10 md:pb-8">
         <p className="text-xs tracking-[0.18em] text-muted-foreground">
           <span className="figures">証券コード {company.code}</span>
           {company.listings.length > 0 && (
@@ -77,17 +82,17 @@ export function CompanyHero({
         </p>
 
         {company.shortNameEn && (
-          <p aria-hidden className={`wordmark mt-4 break-words ${wordmarkSize}`}>
+          <p aria-hidden className={`wordmark mt-3 break-words ${wordmarkSize}`}>
             {company.shortNameEn}
           </p>
         )}
-        <h1 id="company-name" className="mt-3 font-serif text-[1.75rem] font-semibold tracking-[0.04em] md:text-[2.125rem]">
+        <h1 id="company-name" className="mt-2 font-serif text-[1.75rem] font-semibold tracking-[0.04em] md:text-[2.125rem]">
           {company.name}
         </h1>
         <p className="text-sm text-muted-foreground">{company.officialName}</p>
 
         {company.description ? (
-          <p className="mt-5 max-w-[38rem] text-[1.1875rem] leading-[1.85] md:text-[1.375rem]">
+          <p className="mt-4 max-w-[42rem] text-[1.0625rem] leading-[1.8] md:text-[1.1875rem]">
             <RichText text={company.description} />
           </p>
         ) : (
@@ -95,13 +100,13 @@ export function CompanyHero({
             A figures-only entry. The reader is told what this page is and what it is not, where the 3-second
             sentence would be — rather than meeting a blank space and guessing.
           */
-          <p className="mt-5 max-w-3xl text-[0.9375rem] leading-7 text-muted-foreground">
+          <p className="mt-4 max-w-3xl text-[0.9375rem] leading-7 text-muted-foreground">
             この会社の解説はまだ作成していません。下の財務データは有価証券報告書のXBRLから機械的に取り出し、有報の印字と突き合わせたものです。
           </p>
         )}
 
         {branches.length > 1 && (
-          <ul aria-label="主な事業" className="mt-6 flex flex-wrap gap-2">
+          <ul aria-label="主な事業" className="mt-5 flex flex-wrap gap-2">
             {branches.map((business, index) => (
               <li key={business.id}>
                 <a
@@ -120,11 +125,11 @@ export function CompanyHero({
           </ul>
         )}
 
-        <div className="mt-10">
+        <div className="mt-6">
           <KeyFacts records={company.financials} sources={company.sources} />
         </div>
 
-        <div className="mt-5 flex flex-wrap gap-3">
+        <div className="mt-4 flex flex-wrap gap-3">
           {/* JCE-055: the company's own site, at the address its 有報 prints for its electronic notices. */}
           {website && (
             <a
