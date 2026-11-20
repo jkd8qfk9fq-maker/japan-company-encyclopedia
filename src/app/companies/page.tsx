@@ -27,7 +27,7 @@ export default async function CompaniesPage() {
       <p className="eyebrow" aria-hidden>Companies</p>
       <h1 className="mt-3 font-serif text-[2rem] font-semibold md:text-[3rem]">企業</h1>
       <p className="prose-ja mt-4 max-w-2xl text-muted-foreground">
-        会社名ではなく、何をしている会社なのかから。気になる企業を選んでください。
+        日本企業百科事典に掲載している日本の上場企業{companies.length.toLocaleString("ja-JP")}社の一覧です。各社の記載は有価証券報告書（EDINET）に基づいて書かれていて、企業ページでは事業の内容・財務・沿革を出典とともに読めます。掲載の線引きは、記載を出典で検証できたかどうかです。数字だけを先に集めた会社は、本文と出典がそろうまでこの一覧には出していないため、ここにある会社はすべて「何をしている会社か」を読める会社です。会社名ではなく、何をしている会社なのかから選んでください。
       </p>
       <div className="mt-12">
         <CompanyDirectory companies={summaries} industries={industries} />

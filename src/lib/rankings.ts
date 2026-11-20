@@ -1,4 +1,4 @@
-import type { IndustryFigures, IndustryFiguresData } from "@/lib/industry-figures";
+import { median, type IndustryFigures, type IndustryFiguresData } from "@/lib/industry-figures";
 import type { IndustryId } from "@/types/company";
 
 /**
@@ -25,6 +25,8 @@ export type Ranking = {
   /** Who is counted and how a missing figure is handled. */
   basis: string;
   format: (value: number) => string;
+  /** A gap between two values of this ranking: percentage points for a share, a multiple for a growth. */
+  formatDifference: (value: number) => string;
   rows: RankingRow[];
   /** Industries left out, with the number of companies behind their figure (0 = no company prints it). */
   excluded: { id: IndustryId; name: string; companies: number }[];
@@ -36,6 +38,7 @@ type Def = Omit<Ranking, "id" | "rows" | "excluded"> & {
 
 const percent = (v: number) => `${(v * 100).toFixed(1)}%`;
 const times = (v: number) => `${v.toFixed(2)}倍`;
+const points = (v: number) => `${(v * 100).toFixed(1)}ポイント`;
 
 const DEFS: Record<RankingId, Def> = {
   "overseas-sales": {
@@ -44,6 +47,7 @@ const DEFS: Record<RankingId, Def> = {
     formula: "日本以外の売上高 ÷ 地域別売上高の合計（会社ごと）の中央値",
     basis: "有価証券報告書の「地域ごとの情報」に日本と日本以外の売上高を印字した会社だけを数えます。地域別の情報がない会社は除き、0%とは扱いません。",
     format: percent,
+    formatDifference: points,
     pick: (i) => i.overseasSalesRatio,
   },
   "revenue-growth": {
@@ -52,6 +56,7 @@ const DEFS: Record<RankingId, Def> = {
     formula: "最新期の売上高 ÷ 5期前の売上高（会社ごと）の中央値。1.00倍が横ばい",
     basis: "5期分の売上高がそろった会社だけを数えます。期がそろわない会社・売上高が0以下の期がある会社は除きます。",
     format: times,
+    formatDifference: times,
     pick: (i) => i.revenueGrowth5y,
   },
   "employee-growth": {
@@ -60,6 +65,7 @@ const DEFS: Record<RankingId, Def> = {
     formula: "5期そろった会社の従業員数（連結）の合計で、最新期 ÷ 5期前",
     basis: "5期分の従業員数がそろった会社だけを、同じ顔ぶれで足し合わせます。期がそろわない会社は除きます。会社の入れ替わりによる増減は含みません。",
     format: times,
+    formatDifference: times,
     pick: (i, data) => {
       const series = data.indexes.employees.industries.find((s) => s.id === i.id);
       return series && series.values.length === 5 ? { value: series.values[4]! / 100, companies: series.companies } : null;
@@ -71,6 +77,7 @@ const DEFS: Record<RankingId, Def> = {
     formula: "業界の純利益の合計 ÷ 売上高の合計（最新期）",
     basis: "最新期の売上高と純利益の両方を印字した会社だけを数えます。赤字の会社も含めて合計します。",
     format: percent,
+    formatDifference: points,
     pick: (i) => i.netProfitMargin,
   },
 };
@@ -94,6 +101,19 @@ export function buildRanking(id: RankingId, data: IndustryFiguresData): Ranking 
 }
 
 export const buildRankings = (data: IndustryFiguresData) => RANKING_IDS.map((id) => buildRanking(id, data));
+
+/**
+ * The one-paragraph reading of a ranking (JCE-074): its top industry and the middle of its own order, taken from
+ * the rows themselves — the paragraph above the table can therefore never disagree with the table under it.
+ */
+export type RankingReading = { top: RankingRow; medianValue: number };
+
+export function rankingReading(ranking: Ranking): RankingReading | null {
+  const top = ranking.rows[0];
+  if (!top) return null;
+  const medianValue = median(ranking.rows.map((r) => r.value));
+  return medianValue === null ? null : { top, medianValue };
+}
 
 /** Every string the share images draw, so the subset font can be checked to cover them (tests/rankings.test.ts). */
 export const SHARE_IMAGE_TEXT = [

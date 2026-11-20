@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { buildRanking, MIN_COMPANIES, RANKING_IDS, type RankingId } from "@/lib/rankings";
+import { buildRanking, MIN_COMPANIES, rankingReading, RANKING_IDS, type RankingId } from "@/lib/rankings";
 import { rankingFigures } from "@/lib/rankings-data";
 
 type Props = { params: Promise<{ "ranking-id": string }> };
@@ -29,6 +29,7 @@ export default async function RankingPage({ params }: Props) {
   if (!isRankingId(id)) notFound();
   const data = await rankingFigures();
   const ranking = buildRanking(id, data);
+  const reading = rankingReading(ranking);
   const companies = ranking.rows.reduce((acc, r) => acc + r.companies, 0);
   const years = new Map<string, number>();
   for (const i of data.industries) for (const y of i.fiscalYears) years.set(y.fiscalYear, (years.get(y.fiscalYear) ?? 0) + y.companies);
@@ -40,6 +41,17 @@ export default async function RankingPage({ params }: Props) {
       <p className="text-sm"><Link href="/rankings" className="underline underline-offset-2">業界ランキング</Link></p>
       <h1 className="mt-2 font-serif text-3xl font-semibold">{ranking.title}</h1>
       <p className="mt-2 text-sm text-muted-foreground">{ranking.measure}の大きい順。業界の良し悪しを示すものではありません。</p>
+
+      {reading && (
+        <section aria-labelledby="reading" className="mt-8">
+          <h2 id="reading" className="font-serif text-lg font-semibold">この並びから読み取れること</h2>
+          <p className="prose-ja mt-2 text-sm leading-7 text-muted-foreground">
+            首位は{reading.top.name}で、{ranking.format(reading.top.value)}です。順位をつけた{ranking.rows.length}業界の中央値は
+            {ranking.format(reading.medianValue)}で、首位との差は{ranking.formatDifference(reading.top.value - reading.medianValue)}あります。対象は
+            {ranking.rows.length}業界・計{companies.toLocaleString("ja-JP")}社で、数字はいずれも有価証券報告書の印字値から求めた計算値です。
+          </p>
+        </section>
+      )}
 
       <ol className="mt-8 divide-y divide-border border-y border-border">
         {ranking.rows.map((row) => (
