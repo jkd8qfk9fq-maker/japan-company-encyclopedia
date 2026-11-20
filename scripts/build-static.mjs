@@ -19,7 +19,9 @@ const root = process.cwd();
 const norm = (/** @type {string} */ p) => relative(root, p).split(sep).join("/");
 
 // Everything the build needs, and nothing it must not take (no secrets, no working files, no history).
-const TOP = ["src", "public", "package.json", "package-lock.json", "tsconfig.json", "next.config.ts", "next-env.d.ts", "postcss.config.mjs", "postcss.config.js", "components.json"];
+// tsconfig.base.json travels with tsconfig.json: since JCE-076 the root tsconfig only extends the base file,
+// so a copy without it cannot load its compiler options at all.
+const TOP = ["src", "public", "package.json", "package-lock.json", "tsconfig.json", "tsconfig.base.json", "next.config.ts", "next-env.d.ts", "postcss.config.mjs", "postcss.config.js", "components.json"];
 // What a static export cannot hold: pages and actions that need a server.
 const LEFT_OUT = ["src/app/admin", "src/app/report", "src/components/admin", "src/components/settings/report-form.tsx"];
 
