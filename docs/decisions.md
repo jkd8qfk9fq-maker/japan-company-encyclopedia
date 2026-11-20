@@ -1375,6 +1375,18 @@ spend the trust the verification exists to build).
 
 **やらないこと**: プランの値下げ・廃止、診断サイト側のゲート変更、ゲート部品や購入導線の削除（再び閉じるときに必要）。
 
+## JCE-076 — 2026-11-21: 型チェックのメモリ削減 — resolveJsonModule を切り、tsconfig を extends で間接化する
+
+**背景（実測、2026-11-20〜21）**: PR#44 の本番ビルドは `next build` の型チェック段階で JavaScript heap out of memory（既定上限 約2,049MB）となり失敗した。原因はコードではなく型プログラムの大きさ: `resolveJsonModule: true` のため、生成バレル `src/data/companies/index.ts` が静的 import する企業 JSON 約3,900社分が全て推論リテラル型としてプログラムに入り、tsc の実測で 5,162 ファイル / Memory used 2,791,370K だった。企業数が増えるほど悪化する構造。PR#45 でビルドのヒープを 4096MB に上げて急場をしのいだが、恒常対策としてここで型側を痩せさせる。
+
+**決めること**:
+1. **JSON モジュールの型は `unknown` とし、検証は実行時に寄せる。** `src/types/json-modules.d.ts` に `declare module "*.json"` を置き、`resolveJsonModule` を切る。内容 JSON は全て読み込み時に検証される（企業・業界・用語は `parseContent` の zod スキーマ、本社・ウェブサイトも static-repositories で同じ）ため、推論型を捨てても検証の強さは変わらない。直接読む数ファイル（日本地図、released-with-notes、テストでの利用）は import 側に型注釈を付ける。
+2. **tsconfig は `tsconfig.json`（extends のみ）＋ `tsconfig.base.json`（実体）にする。** Next.js 16.3.5 は `verifyTypeScriptSetup` → `writeConfigurationDefaults` で tsconfig.json を書き戻し `resolveJsonModule: true` を強制するが、同関数には「tsconfig が `extends` か `references` を持つ場合は書き換えを bail する」分岐がある（node_modules/next/dist/lib/typescript/writeConfigurationDefaults.js で確認）。また型チェック本体（runTypeCheck.js）のオプション合成は `{ ...requiredConfig, ...effectiveConfiguration.options }` でユーザー設定が後勝ちなので、解析済み設定の `resolveJsonModule: false` が Next の要求値に勝つ。`next dev --webpack` 起動＋企業ページ描画の前後で tsconfig 両ファイルのハッシュが不変であることを実測して確認した（2026-11-21）。この間接化を将来 tsconfig.json へ戻す（inline 化する）と書き戻しが復活し、ビルドが再び落ちる。戻さないこと。
+3. **実測効果（単体 tsc、`--extendedDiagnostics`、tsbuildinfo 削除後の比較）**: プログラム 5,162 → 1,194 ファイル（JSON 3,969 → 0）、Memory used 2,747,756K → 644,051K（約 −77%）、Total time 43.16s → 18.55s。新規エラー 0 件（変更前後でエラー集合は完全一致、残る 142 件は検証環境に .next/types と next-env.d.ts が無いための既知の対象外のみ）。
+4. **フォールバックは PR#45 のヒープ 4096MB。** 将来の Next のバージョンアップで extends 回避が効かなくなった場合（tsconfig.json が書き戻される、`resolveJsonModule` が true に戻る等）は、この対策は静かに失効し、ビルドは 4096MB ヒープで当面持ちこたえる。Next を更新したら、dev 起動後に tsconfig.json が書き換わっていないかを一度確認すること。
+
+**やらないこと**: データ JSON と生成バレル（src/data/companies/index.ts）への変更、`typescript.ignoreBuildErrors` 等での型チェック自体の無効化。
+
 ## JCE-077 — 2026-11-21: ファーストビューの情報密度を上げる（ワードマークは「ラベル」であって「ポスター」ではない）
 
 **背景（運営者の指摘、2026-11-21）**: 企業ページを開いた瞬間の情報量が少なく、主要な数字（売上高・純利益・従業員数）に届くまでスクロールが多い。原因は情報の不足ではなく配置で、英字ワードマークが最大5.5remの表示サイズで画面を占有し、説明文の大きな行間と余白が KeyFacts を折り返し以下に押し出していた。他ページにも同型の問題（業界ページのワードマーク、一覧カードのワードマーク、学習ページの上部余白）がある。
