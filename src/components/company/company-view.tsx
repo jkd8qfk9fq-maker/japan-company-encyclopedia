@@ -229,6 +229,17 @@ export async function CompanyView({ company }: { company: Company }) {
           </div>
         )}
         <FinancialSection company={company} />
+        {/* JCE-073: the same figures as a printable premium report, with the computed layer and industry position. */}
+        <Link
+          href={`/companies/${company.id}/report`}
+          className="mt-10 flex items-center justify-between gap-3 rounded-md border border-foreground/20 bg-card px-4 py-3 text-sm hover:border-foreground"
+        >
+          <span>
+            <span className="block font-medium">企業レポート（プレミアム）</span>
+            <span className="block text-xs text-muted-foreground">5期の数字・売上の内訳・計算値と業界の中での位置を、印刷できる1枚に</span>
+          </span>
+          <span aria-hidden>→</span>
+        </Link>
       </CompanySection>
 
       {company.history.length > 0 && (

@@ -38,6 +38,8 @@ export const STORAGE_KEYS = {
   syncPending: "sync-pending",
   /** JCE-069: this browser's e-mail notification sign-up — its key, a masked address to show, and what it receives. */
   mailNotify: "mail-notify",
+  /** JCE-072: the reader's answers in the 有報の読み方入門 course, by question id — the steps done, and the badge they add up to. */
+  learnAnswers: "learn-answers",
 } as const;
 
 export type StorageKey = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];

@@ -208,4 +208,11 @@ describe("the scheduled mails", () => {
     expect(mail.text).toContain(`https://kigyo-hyakka.com/notifications/mail/#s=${"k".repeat(43)}`);
     expect(mail.text).not.toMatch(/買い|売り|おすすめ|株価/);
   });
+
+  it("puts the filing's figures in the body, under the fact, and keeps them out of the subject (JCE-071)", () => {
+    const withSummary: Updates["events"][number] = ["toyota", "yuho", "2026-11-18", "有価証券報告書", "2026年3月期：売上高 3,670億円、純利益 123億円"];
+    const mail = digest("r@example.com", "k".repeat(43), [withSummary], updates([]).names);
+    expect(mail.subject).toBe("トヨタ自動車の新しい決算データが公開されました");
+    expect(mail.text).toContain("・トヨタ自動車の新しい決算データが公開されました\n2026年3月期：売上高 3,670億円、純利益 123億円\n  https://kigyo-hyakka.com/companies/toyota/");
+  });
 });

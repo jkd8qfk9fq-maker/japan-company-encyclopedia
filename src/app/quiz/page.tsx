@@ -18,6 +18,8 @@ export default function QuizPage() {
         <DailyQuiz />
       </div>
       <p className="mt-8 text-sm">
+        <Link href="/learn" className="underline underline-offset-4">有報の読み方入門（全12ステップ）</Link>
+        <span className="mx-2 text-muted-foreground">・</span>
         <Link href="/discover/collection" className="underline underline-offset-4">連続日数と実績を見る</Link>
         <span className="mx-2 text-muted-foreground">・</span>
         <Link href="/discover" className="underline underline-offset-4">DISCOVER で会社に出会う</Link>

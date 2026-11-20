@@ -22,6 +22,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: url("/companies") },
     { url: url("/discover") },
     { url: url("/quiz") },
+    { url: url("/learn") },
     { url: url("/explore") },
     { url: url("/network") },
     { url: url("/help") },
