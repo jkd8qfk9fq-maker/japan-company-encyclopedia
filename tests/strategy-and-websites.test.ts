@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import websites from "@/data/websites.json";
+import websitesJson from "@/data/websites.json";
 import { companies } from "@/data/companies";
 import { strategyTargets, growthBusinessIds, quotedNames, sentences } from "@/lib/strategy";
 import type { Company } from "@/types/company";
@@ -43,7 +43,9 @@ describe("targets read from a strategy (JCE-055)", () => {
 
 describe("official websites (src/data/websites.json)", () => {
   const byId = new Map(companies.map((c) => [c.id, c]));
-  const entries = Object.entries(websites.companies as Record<string, { url: string; sourceId: string }>);
+  // JSON modules are `unknown` (JCE-076); the companies table is read in this shape.
+  const websites = websitesJson as { companies: Record<string, { url: string; sourceId: string }> };
+  const entries = Object.entries(websites.companies);
 
   it("cites each address to the company's own 有価証券報告書", () => {
     for (const [id, w] of entries) {

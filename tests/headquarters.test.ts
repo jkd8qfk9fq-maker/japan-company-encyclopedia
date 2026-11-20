@@ -1,10 +1,15 @@
 import { describe, expect, it } from "vitest";
 import { join } from "node:path";
 import { placeAddress, readMunicipalities } from "../scripts/pipeline/sync-headquarters.mjs";
-import map from "@/assets/japan/prefectures.json";
-import headquarters from "@/data/headquarters.json";
+import mapJson from "@/assets/japan/prefectures.json";
+import headquartersJson from "@/data/headquarters.json";
 import { companies } from "@/data/companies";
 import { PREFECTURES } from "@/lib/prefectures";
+import type { JapanMapData } from "@/components/region/japan-map";
+
+// JSON modules are `unknown` (JCE-076); these two files are read here in the shapes this test uses.
+const map = mapJson as JapanMapData;
+const headquarters = headquartersJson as { companies: Record<string, unknown> };
 
 const municipalities = readMunicipalities(join(process.cwd(), "pipeline/municipalities.tsv"));
 const place = (address: string) => placeAddress(address, municipalities);

@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { companies } from "@/data/companies";
 import { features } from "@/data/features";
 import { terms } from "@/data/terms";
-import releasedWithNotes from "@/data/released-with-notes.json";
+import releasedWithNotesJson from "@/data/released-with-notes.json";
 import { isReleased, publicNotes, releaseReadiness } from "@/lib/release";
 import { companyRepository } from "@/lib/repositories";
 
@@ -11,6 +11,9 @@ import { companyRepository } from "@/lib/repositories";
  * notes shown), are visible to readers; everything else stays in the repository for the admin editor and is released
  * by promotion or by the list, not by a code change.
  */
+
+// JSON modules are `unknown` (JCE-076); only the company id list is read here.
+const releasedWithNotes = releasedWithNotesJson as { companies: string[] };
 
 const unreleased = companies.find((c) => c.status.state === "figures-only");
 const released = companies.find((c) => c.status.state === "published");
