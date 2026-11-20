@@ -17,7 +17,7 @@ import {
   type ScreeningIndex,
   type SortKey,
 } from "@/lib/screening";
-import { usePlan } from "@/lib/plan";
+import { PREMIUM_FEATURES_OPEN, usePlan } from "@/lib/plan";
 import { savedScreeningsStore } from "@/lib/storage/stores";
 import { formatYen } from "@/lib/utils/format";
 import { cn } from "@/lib/utils";
@@ -54,7 +54,7 @@ export function ScreeningTool() {
   const [sort, setSort] = useState<SortKey>("revenue");
   const [shown, setShown] = useState(PAGE);
   const saved = useLocalStore(savedScreeningsStore);
-  const savedLimit = usePlan() ? SAVED_CONDITIONS_LIMITS.premium : SAVED_CONDITIONS_LIMITS.free;
+  const savedLimit = usePlan() || PREMIUM_FEATURES_OPEN ? SAVED_CONDITIONS_LIMITS.premium : SAVED_CONDITIONS_LIMITS.free;
 
   useEffect(() => {
     fetch("/screening.json")

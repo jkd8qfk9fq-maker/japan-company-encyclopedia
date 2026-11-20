@@ -8,7 +8,7 @@ import { X } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import { PremiumGate } from "@/components/company/premium-gate";
 import { barShares, COMPARE_LIMITS, compareHref, parseIds, type CompareIndex, type CompareRow } from "@/lib/compare";
-import { usePlan } from "@/lib/plan";
+import { PREMIUM_FEATURES_OPEN, usePlan } from "@/lib/plan";
 import { formatYen } from "@/lib/utils/format";
 
 type Metric = {
@@ -36,7 +36,7 @@ export function CompareTool() {
   const [ids, setIds] = useState<string[] | null>(null);
   const [query, setQuery] = useState("");
   const plan = usePlan();
-  const limit = plan ? COMPARE_LIMITS.premium : COMPARE_LIMITS.free;
+  const limit = plan || PREMIUM_FEATURES_OPEN ? COMPARE_LIMITS.premium : COMPARE_LIMITS.free;
 
   useEffect(() => {
     // The address is read after hydration: the static page cannot know it, and a shared link must open as sent.
