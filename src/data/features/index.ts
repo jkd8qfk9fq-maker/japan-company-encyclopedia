@@ -1,4 +1,11 @@
+import { companies } from "@/data/companies";
+import { buildFeatures } from "@/lib/feature-articles";
+import { isReleased } from "@/lib/release";
 import type { Feature } from "@/types/feature";
 
-/** Features will be JSON files parsed with featureSchema, like every other content type. None yet. */
-export const features: Feature[] = [];
+/**
+ * The features are built, not stored (JCE-074): every figure in an article is computed from the released
+ * companies' printed figures at build time, so an article can never disagree with the data it reads.
+ * `buildFeatures` returns them in display order; the repository sorts by publishedAt.
+ */
+export const features: Feature[] = buildFeatures(companies.filter(isReleased));
