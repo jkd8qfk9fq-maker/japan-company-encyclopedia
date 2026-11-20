@@ -21,6 +21,13 @@ export const PLAN_PAGE = "https://shindan.kigyo-hyakka.com/plan/";
  * only what this site says about it, so it must follow that site's trial (its CTS-044). 0 = no trial.
  */
 export const PLAN_TRIAL_DAYS = 7;
+/**
+ * JCE-075: while the encyclopedia runs on advertising and reader growth, every premium-gated feature on THIS
+ * site is open to all readers. The plan itself is unchanged — still sold on the 診断 site, still what removes
+ * ads here (the ad unit reads the real plan, never this flag) — and setting this back to false restores the
+ * gates exactly as they were.
+ */
+export const PREMIUM_FEATURES_OPEN = true;
 const COOKIE = "yugenq_plan";
 const CODE_PATTERN = /^sub_[A-Za-z0-9]{8,64}$/;
 

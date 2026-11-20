@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { applyPlan, checkPlan, isValidCode, PLAN_PAGE, PLAN_TRIAL_DAYS, startCheckout, usePlan } from "@/lib/plan";
+import { applyPlan, checkPlan, isValidCode, PLAN_PAGE, PLAN_TRIAL_DAYS, PREMIUM_FEATURES_OPEN, startCheckout, usePlan } from "@/lib/plan";
 
 /**
  * Wraps a part of the page that belongs to the YUGENQ premium plan (JCE-043). The static HTML always holds the
@@ -28,7 +28,7 @@ export function PremiumGate({
   const [status, setStatus] = useState<"idle" | "sending" | "inactive" | "error">("idle");
   const [buying, setBuying] = useState<"idle" | "sending" | "error">("idle");
 
-  if (plan) return <>{children}</>;
+  if (plan || PREMIUM_FEATURES_OPEN) return <>{children}</>;
 
   const submit = async (event: React.FormEvent) => {
     event.preventDefault();
