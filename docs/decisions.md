@@ -1284,3 +1284,81 @@ layout changed, in the shared component, so all 3,326 entries with the section g
 - **The industry flow in one line**: a chain industry's stages read left to right with arrows and wrap, instead of a
   column of boxes — the whole flow fits on a phone screen; the company's stage is still marked when it is known.
 - **The growth legend only when there are two colours** — a lone 「そのほかの事業」 key explained nothing.
+
+### JCE-071 · 2026-11-19 · Accepted (operator) — Filing alerts carry the verified figures, not just the fact
+
+The operator asked (2026-11-19) to make the high-entry markets concrete, starting with disclosure alerts. The
+market line is already drawn by others (IR BANK's alert β, 2026-11-06: free is a next-morning digest, instant is
+paid), and every competitor's alert stops at the filing title. What none of them sends is the verified content.
+JCE-059/069 already deliver the fact within the half hour; this decision adds what the filing actually says.
+
+- **The event carries its figures.** `buildUpdates` adds, for a yuho / hanki / tanshin event, a summary built only
+  from the entry's own printed figures for the period the filing reports: the period label, revenue and net
+  income (the two figures prose may cite, invariant 4). No computed change rate is added; where the filing itself
+  prints a change rate it is the filing's, cited as such. A correction event carries no figures.
+- **Every channel shows it.** The お知らせ list shows the summary under the event; the push body and the mail body
+  include it when present (`messageFor` in the worker), still a fact and never advice, still opening only the
+  company's page.
+- **No new store, no new permission.** The summary rides in `/updates.json` like the event itself; the worker
+  reads it from the live file it already polls. Nothing about a reader changes.
+- **Later, not now**: per-kind subscription filters (a D1 migration) and the followed companies' upcoming
+  announcement calendar from the EDINET DB calendar the pipeline already reads (JCE-049) are separate decisions
+  when they are built.
+
+### JCE-072 · 2026-11-19 · Accepted (operator) — A first course: 有報の読み方入門, built from the quiz pool
+
+The operator asked (2026-11-19) to systematise the learning side: the demand is not more data but a guided way to
+read it (NISA accounts 26.47M with 38.0% never used, FSA 2025-03; the top reason for not investing is not knowing
+how, 28.8%, JSDA 2024). The quiz pool (JCE-052) is already generated from printed figures with the answer's basis
+written out; this decision arranges it into a course instead of a daily lottery.
+
+- **`/learn`**: a twelve-step course, each step one pool question grouped by theme (事業の姿 → 5期の数字 →
+  事業別の売上 → 海外の売上 → 四半期の動き), the explanation shown after answering, and a link into the company
+  page section the question came from, so a step ends inside a real entry.
+- **Progress is the reader's own**: steps done and the course badge live in `src/lib/storage/` with the streak
+  and achievements (JCE-052); nothing is sent anywhere. The daily question is unchanged and counts as its step
+  when it belongs to one.
+- **The journey is one**: the course is linked from the diagnosis result's learning path and from 最初の一社, and
+  its last step leads to following a company (JCE-059), which is where the alerts of JCE-071 begin.
+
+### JCE-073 · 2026-11-19 · Accepted (operator) — The premium company report: printable, comparable, and still only verified figures
+
+The operator asked (2026-11-19) for the B2B form of the encyclopedia: a company's data summarised so a premium
+reader can print it, analyse it and compare companies — with the quality bar set from what real services sell
+(market research 2026-11-19: TDB/TSR credit reports, Shared Research's sponsored reports, SPEEDA's comps).
+What is bought in those markets is not data but a per-purpose judgement format; what none of them can offer is a
+figure traceable to its filing. The report is therefore an exit of the same supply chain, under the same
+invariants — and two of the research's top recommendations are refused by them: no stock price or valuation is
+ever added (invariant 4), and no credit score or failure probability is invented (a fabricated judgement would
+spend the trust the verification exists to build).
+
+- **The one-page summary** (`/companies/[id]/report`, premium): modelled on the first page of a TSR report with
+  the rating replaced by verified facts — the company's own description, five periods of printed figures, the
+  segment and region composition of revenue, its industry position from the computed layer below, and every
+  figure's source. A print layout of its own (the diagnosis site's CTS-037 pattern), made to be handed to a
+  third party: premium includes the right to present it, which the credit bureaus expressly forbid.
+- **The computed layer**: metrics computed from printed figures only, each labelled 計算値 — margins beyond the
+  three prose ratios of JCE-038 live here, in tables, never in prose — with the industry median, quartiles, the
+  company's rank and percentile beside them (the industry is the full listed population under one definition,
+  which is the moat). Comparison extends `/compare` (JCE-061) with the same table for two to five companies
+  and the same print layout.
+- **Data added in this order, each with its source**: (1) segment profit and margin from the filings' segment
+  information; (2) major shareholders, holder categories and officers, from the annual filing; (3) company
+  forecasts and medium-term plan targets from the 決算短信 — always badged 会社予想（短信） apart from
+  有報検証済み, with the forecast's progress against the recorded quarters updated by the existing pipeline;
+  (4) capital expenditure, depreciation and R&D from the annual filing.
+- **What it never becomes**: no advice and no rating (invariant 4), no contact or personal data, no unlisted
+  companies, and the free entry page is unchanged — the report is a premium arrangement of what is already
+  public on the site plus the computed layer, not a paywall over facts.
+
+## JCE-074 — 2026-11-20: AdSense 却下（有用性の低いコンテンツ）への対応：独自編集コンテンツの層を作り、未完成の公開面をなくす
+
+**背景（実測、2026-11-20）**: AdSense の審査結果は却下。管理画面に明示された理由は「有用性の低いコンテンツ」1件のみ。サイトの所有権確認は通過、ads.txt は承認済み。広告コードが描画されていない件（JCE-039、ADSENSE_SLOT=null）は指摘されていない。公開ページの本文量は中央値 約2,400字（最短859字）で薄くはなく、却下の主因は「有報データから自動生成されたテンプレートページの集合」という見え方と、開設初期でトラフィック信号が弱いことにあると判断する。加えて /features が「特集はまだ公開していません」の空ページのままサイトマップに含まれ、業界ページに「解説は準備中」の表示が残っている。未完成の公開面は審査で直接のマイナスになる。
+
+**決めること**:
+1. **未完成の公開面をなくす。** 空のページ、準備中表示、プレースホルダー文を公開面に残さない。内容が無いページは、内容ができるまでサイトマップと導線から外す（ページ自体の削除ではなく公開ラインの管理として行う）。
+2. **特集（/features）を実装し、独自編集記事を公開する。** 記事は掲載企業の検証済み数値（印字値と、計算値と明記した集計）だけから書く横断の読み物とし、各記事に出典と集計の範囲を明記する。企業ページの要約の寄せ集めにしない。本文で使える数値は従来どおり売上高と純利益（不変条件）、集計の計算値は「計算値」と表示する。
+3. **再審査は対策の本番反映後に1回だけリクエストする。** 無変更での再申請はしない。反映後の再申請までは、登録の進展（公開社数の増加）と通常の更新を続ける。
+4. **広告の実装方式（JCE-039）は変えない。** 理由に挙がっていないため。承認後に ADSENSE_SLOT を設定する従来手順のままとする。
+
+**やらないこと**: 記事量産のための薄い自動生成記事、キーワード詰め込み、トラフィックの購入。百科事典の哲学（出典拘束・誇張なし）の外にある対策は採らない。

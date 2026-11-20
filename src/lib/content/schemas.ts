@@ -290,6 +290,13 @@ const featureBlockSchema = z.discriminatedUnion("type", [
   z.strictObject({ type: z.literal("heading"), text }),
   z.strictObject({ type: z.literal("quote"), text, attribution: text, sourceIds: z.array(kebab) }),
   z.strictObject({ type: z.literal("company-callout"), companyId: kebab, text }),
+  z.strictObject({
+    type: z.literal("data-table"),
+    title: text.optional(),
+    columns: z.array(text),
+    rows: z.array(z.strictObject({ label: text, href: z.string().optional(), values: z.array(text) })),
+    note: text,
+  }),
 ]);
 
 export const featureSchema = z.strictObject({
