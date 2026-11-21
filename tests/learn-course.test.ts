@@ -21,6 +21,9 @@ const q = (id: string, kind: QuizQuestion["kind"], industry: string | null): Qui
   answer: "a",
   explain: id,
   industry,
+  sourceIds: ["yuho-2026"],
+  sourceTitle: "有価証券報告書－第1期",
+  period: "2026年3月期",
 });
 
 /** A pool rich in every kind: 6 per kind, spread over 6 industries. */
@@ -100,6 +103,7 @@ const segmentCompany = (id: string, top: number, rest: number) =>
   company({
     id,
     name: id,
+    sources: [{ id: "s1", title: "有価証券報告書－第1期", publisher: "会社", url: "https://example.jp", publishedAt: "2026-06-01", accessedAt: "2026-10-01" }],
     businesses: [
       { id: "b1", name: "主力事業" },
       { id: "b2", name: "副次事業" },
@@ -133,6 +137,7 @@ const quarterlyCompany = (id: string, now: number, before: number) =>
   company({
     id,
     name: id,
+    sources: [{ id: "tanshin", title: "決算短信", publisher: "会社", url: "https://example.jp", publishedAt: "2026-08-04", accessedAt: "2026-10-01" }],
     quarterlyEarnings: [quarter("2027-03-31", now), quarter("2026-03-31", before)],
   });
 
@@ -145,6 +150,9 @@ describe("buildQuizPool — segment and quarterly questions", () => {
     expect(found[0]!.explain).toContain("80%");
     expect(found[0]!.explain).toContain("計算値");
     expect(found[0]!.options.map((o) => o.id).sort()).toEqual(["concentrated", "spread"]);
+    expect(found[0]!.sourceIds).toEqual(["s1"]);
+    expect(found[0]!.sourceTitle).toContain("有価証券報告書");
+    expect(found[0]!.period).toBe("2026年3月期");
   });
 
   it("skips a segment pair whose shares are too close to call", () => {
@@ -160,6 +168,9 @@ describe("buildQuizPool — segment and quarterly questions", () => {
     expect(found[0]!.explain).toContain("+20%");
     expect(found[0]!.explain).toContain("-10%");
     expect(found[0]!.explain).toContain("計算値");
+    expect(found[0]!.sourceIds).toEqual(["tanshin"]);
+    expect(found[0]!.sourceTitle).toBe("決算短信");
+    expect(found[0]!.period).toContain("2027年3月期");
   });
 
   it("skips a quarterly pair whose growth is too close to call", () => {
@@ -177,4 +188,98 @@ describe("the course on the real entries", () => {
     const poolIds = new Set(pool.map((x) => x.id));
     expect(steps.every((s) => poolIds.has(s.question.id))).toBe(true);
   }, 180_000);
+
+  it("gives every pool question a source and a period, on the real entries", async () => {
+    const pool = buildQuizPool(await companyRepository.list());
+    expect(pool.length).toBeGreaterThan(0);
+    for (const q of pool) {
+      expect(q.sourceIds.length).toBeGreaterThan(0);
+      expect(q.sourceTitle.length).toBeGreaterThan(0);
+      expect(q.period.length).toBeGreaterThan(0);
+    }
+    // The two describe questions that shipped without a source in JCE-084: both are now attributed to the filing
+    // the business structure cites.
+    const pole = pool.find((x) => x.id === "describe-pole-to-win-holdings");
+    expect(pole?.sourceIds).toEqual(["yuho-2026"]);
+    expect(pole?.sourceTitle).toContain("有価証券報告書－第17期");
+    expect(pole?.period).toBe("2026年1月期");
+    const agora = pool.find((x) => x.id === "describe-agora-hospitality-group");
+    expect(agora?.sourceIds).toEqual(["yuho-2025"]);
+    expect(agora?.sourceTitle).toContain("有価証券報告書－第88期");
+    expect(agora?.period).toBe("2025年12月期");
+  }, 180_000);
+});
+
+// ---------------------------------------------------------------------------------------------------------------
+// JCE-085: every pool question carries its source and period, so a lesson can always show its citation.
+
+const fin = (revenue: number, fiscalYear = "2026年3月期", periodEnd = "2026-03-31") => ({
+  fiscalYear,
+  periodEnd,
+  revenue,
+  revenueLabel: "売上高",
+  profit: null,
+  profitLabel: null,
+  netIncome: 5_000_000_000,
+  netIncomeLabel: "当期純利益",
+  totalAssets: null,
+  totalAssetsLabel: null,
+  netAssets: null,
+  netAssetsLabel: null,
+  employees: null,
+  currency: "JPY",
+  accountingStandard: "jgaap",
+  sourceIds: ["yuho-2026"],
+});
+
+const citedCompany = (id: string, over: Record<string, unknown> = {}) =>
+  company({
+    id,
+    name: id,
+    financials: [fin(100_000_000_000)],
+    sources: [{ id: "yuho-2026", title: "有価証券報告書－第1期", publisher: "会社", url: "https://example.jp", publishedAt: "2026-06-01", accessedAt: "2026-10-01" }],
+    ...over,
+  });
+
+const describedCompany = (id: string, over: Record<string, unknown> = {}) =>
+  citedCompany(id, {
+    description: "ゲームデバッグやソフトウェアテストなど、サービスの開発・運用の各工程を支援するソリューションを提供する持株会社です。",
+    businesses: [{ id: "b1", name: "サービス事業", description: "事業", sourceIds: ["yuho-2026"] }],
+    ...over,
+  });
+
+describe("buildQuizPool — JCE-085: a source and a period on every question", () => {
+  it("cites both companies and both years on a revenue comparison", () => {
+    const pool = buildQuizPool([
+      citedCompany("big", { financials: [fin(1_000_000_000_000)] }),
+      citedCompany("small", { financials: [fin(100_000_000_000, "2025年12月期", "2025-12-31")] }),
+    ]);
+    const found = pool.filter((x) => x.kind === "revenue");
+    expect(found).toHaveLength(1);
+    expect(found[0]!.answer).toBe("big");
+    expect(found[0]!.sourceIds).toEqual(expect.arrayContaining(["yuho-2026"]));
+    expect(found[0]!.sourceTitle).toContain("有価証券報告書");
+    expect(found[0]!.period).toBe("2026年3月期／2025年12月期");
+  });
+
+  it("attributes a description question to the filing the business structure cites", () => {
+    const pool = buildQuizPool([describedCompany("target"), citedCompany("other1"), citedCompany("other2"), citedCompany("other3")]);
+    const found = pool.filter((x) => x.kind === "describe");
+    expect(found).toHaveLength(1);
+    expect(found[0]!.answer).toBe("target");
+    expect(found[0]!.sourceIds).toEqual(["yuho-2026"]);
+    expect(found[0]!.sourceTitle).toContain("有価証券報告書");
+    expect(found[0]!.period).toBe("2026年3月期");
+    expect(found[0]!.explain).toContain("2026年3月期");
+    expect(found[0]!.explain).not.toContain("日本企業百科事典の解説から");
+  });
+
+  it("asks no describe question when the description's basis cannot be named", () => {
+    const noBusiness = describedCompany("target-a", { businesses: [] });
+    const staleBusiness = describedCompany("target-b", {
+      businesses: [{ id: "b1", name: "サービス事業", description: "事業", sourceIds: ["yuho-2020"] }],
+    });
+    const pool = buildQuizPool([noBusiness, staleBusiness, citedCompany("o1"), citedCompany("o2"), citedCompany("o3")]);
+    expect(pool.filter((x) => x.kind === "describe")).toEqual([]);
+  });
 });
