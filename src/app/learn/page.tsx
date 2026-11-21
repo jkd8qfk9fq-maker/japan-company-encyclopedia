@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { LearnCourse } from "@/components/engagement/learn-course";
 import { MicroLessons } from "@/components/engagement/micro-lessons";
+import { TrainingHistory } from "@/components/engagement/training-history";
 
 export const metadata: Metadata = {
   title: "有報の読み方入門",
@@ -12,15 +13,16 @@ export const metadata: Metadata = {
 /**
  * The five steps of one training cycle (JCE-082): predict before the figures are seen, meet the disclosure,
  * check the prediction against the printed result, take the feedback the review queue brings back, and let
- * the record accumulate. Each step names the place on the site where it happens; the steps that need a
- * calendar of future disclosures are Phase 2 (docs/decisions.md, JCE-082).
+ * the record accumulate. Each step names the place on the site where it happens. Since JCE-083 the cycle is
+ * real, not a rehearsal: a prediction recorded on a company page waits for that company's actual next filing
+ * and is checked against its printed figures.
  */
 const STEPS: { n: number; title: string; text: string; href: string; link: string }[] = [
-  { n: 1, title: "予測", text: "決算の数字を見る前に、売上と利益の方向を自分で予想します。予想を立てるところから訓練は始まります。", href: "#lesson-predict-the-direction", link: "先読みのレッスンへ" },
+  { n: 1, title: "予測", text: "決算の数字を見る前に、売上と利益の方向を自分で予想します。予想を立てるところから訓練は始まります。レッスンで型を学んだら、企業ページで次の決算への予測を記録します（記録した予測は変更できません）。", href: "#lesson-predict-the-direction", link: "先読みのレッスンへ" },
   { n: 2, title: "開示", text: "実際の決算が出たら、開示された実績を確認します。定期便に今週の開示が並びます。", href: "/digest", link: "決算定期便へ" },
-  { n: 3, title: "照合", text: "自分の予測と実績を比べます。クイズの答え合わせと、各社の企業レポート（分析5観点）が照合の場です。", href: "/digest", link: "定期便で照合する" },
+  { n: 3, title: "照合", text: "自分の予測と実績を比べます。開示がサイトに載ると、企業ページと定期便に、あなたの予測と実績の印字値が並びます。", href: "/digest", link: "定期便で照合する" },
   { n: 4, title: "フィードバック", text: "見落とした問題は、復習キューが間隔をあけて連れ戻します。間違えたところが、次の訓練の材料です。", href: "#review-queue", link: "復習キューへ" },
-  { n: 5, title: "蓄積", text: "答えた問題と終えたレッスンは、あなたの訓練の記録として残ります。読んだ会社の積み重ねが、見る力の土台になります。", href: "#training-record", link: "訓練の記録へ" },
+  { n: 5, title: "蓄積", text: "答えた問題、終えたレッスン、予測とその照合は、会社ごとの訓練の記録として残ります。読んだ会社の積み重ねが、見る力の土台になります。", href: "#training-history", link: "訓練の記録へ" },
 ];
 
 export default function LearnPage() {
@@ -53,6 +55,9 @@ export default function LearnPage() {
 
       <div className="mt-10">
         <MicroLessons />
+      </div>
+      <div className="mt-16 border-t border-border pt-10">
+        <TrainingHistory />
       </div>
       <section aria-label="12ステップのコース" className="mt-16 border-t border-border pt-10">
         <p className="eyebrow" aria-hidden>Course</p>

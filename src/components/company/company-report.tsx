@@ -1,11 +1,15 @@
 import Link from "next/link";
 import { RichText } from "@/components/rich-text/rich-text";
+import { PredictionPanel } from "@/components/engagement/prediction-panel";
+import { predictionDataFor } from "@/lib/predictions";
 import { reportMetrics, type ReportMetric } from "@/lib/report-metrics";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
 import { formatDateJa, formatYen } from "@/lib/utils/format";
 import type { Company, FinancialRecord } from "@/types/company";
+import type { Revision } from "@/types/revision";
 import { PremiumGate } from "./premium-gate";
 import { CompanyAnalysisSection } from "./company-analysis";
+import { DataProvenance } from "./data-provenance";
 import { ReportPrintButton } from "./report-print-button";
 import styles from "./company-report.module.css";
 
@@ -77,7 +81,7 @@ function Composition({ title, parts, fiscalYear }: { title: string; parts: { nam
   );
 }
 
-export function CompanyReport({ company, companies }: { company: Company; companies: Company[] }) {
+export function CompanyReport({ company, companies, revisions }: { company: Company; companies: Company[]; revisions: Revision[] }) {
   const records = byPeriod(company.financials);
   const latest = records.at(-1);
   const lines = records.length > 0 ? printedLines(records) : [];
@@ -279,6 +283,14 @@ export function CompanyReport({ company, companies }: { company: Company; compan
           </div>
         </PremiumGate>
       </div>
+
+      {/* JCE-083: the reader's own prediction and its check sit outside the gate — the training cycle is the
+          free layer's core — and the figures' provenance follows it, so any reader can verify the data. */}
+      <div className="mt-10">
+        <PredictionPanel companyId={company.id} data={predictionDataFor(company)} />
+      </div>
+
+      <DataProvenance company={company} metrics={layer.metrics} revisions={revisions} />
 
       <CompanyAnalysisSection company={company} companies={companies} />
     </div>

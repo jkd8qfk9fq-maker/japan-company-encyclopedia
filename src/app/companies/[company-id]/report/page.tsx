@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { CompanyReport } from "@/components/company/company-report";
-import { companyRepository } from "@/lib/repositories";
+import { companyRepository, revisionRepository } from "@/lib/repositories";
 import { SITE_NAME } from "@/lib/site";
 
 /*
@@ -32,5 +32,6 @@ export default async function CompanyReportPage({ params }: PageProps<"/companie
   const company = await companyRepository.get((await params)["company-id"]);
   if (!company) notFound();
   const companies = await companyRepository.list();
-  return <CompanyReport company={company} companies={companies} />;
+  const revisions = await revisionRepository.listCorrectionsForTarget("company", company.id);
+  return <CompanyReport company={company} companies={companies} revisions={revisions} />;
 }
