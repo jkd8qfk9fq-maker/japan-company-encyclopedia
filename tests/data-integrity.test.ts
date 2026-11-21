@@ -4,13 +4,15 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { companies } from "@/data/companies";
 import { features } from "@/data/features";
+import { indicators } from "@/data/indicators";
+import industryIndicatorsData from "@/data/industry-indicators.json";
 import { industries } from "@/data/industries";
 import { terms } from "@/data/terms";
 import { extractReferences, findMalformedMarkup } from "@/lib/rich-text";
 import type { Business, Company } from "@/types/company";
 import { INDUSTRY_IDS, RELATIONSHIP_KINDS } from "@/types/company";
 import { checkCompany, checkIndustry, checkTerm } from "@/lib/content/integrity";
-import { approvalSchema, parseContent, revisionSchema } from "@/lib/content/schemas";
+import { approvalSchema, industryIndicatorsSchema, parseContent, revisionSchema } from "@/lib/content/schemas";
 import type { Revision } from "@/types/revision";
 import type { Source } from "@/types/source";
 
@@ -360,6 +362,41 @@ describe("revisions", () => {
       expect(target!.changedAt <= r.changedAt, `${r.id} is later than what it corrects`).toBe(true);
       const after = (r.after ?? {}) as { approval?: unknown };
       if (after.approval !== undefined) expect(approvalSchema.safeParse(after.approval).success, r.id).toBe(true);
+    }
+  });
+});
+
+describe("indicators (JCE-078)", () => {
+  it("have unique ids and a real history behind every snapshot", () => {
+    expect(new Set(indicators.map((i) => i.id)).size).toBe(indicators.length);
+    for (const indicator of indicators) {
+      // Ten years of monthly or quarterly observations, as the data book holds them.
+      expect(indicator.observations.length, indicator.id).toBeGreaterThanOrEqual(24);
+    }
+  });
+
+  it("hold observations in strictly ascending, unduplicated date order", () => {
+    for (const indicator of indicators) {
+      const dates = indicator.observations.map((o) => o.date);
+      expect(new Set(dates).size, indicator.id).toBe(dates.length);
+      expect([...dates].sort(), indicator.id).toEqual(dates);
+      // The snapshot was taken no earlier than its latest observation.
+      expect(indicator.updatedAt >= dates.at(-1)!, indicator.id).toBe(true);
+      for (const o of indicator.observations) expect(Number.isFinite(o.value), `${indicator.id} ${o.date}`).toBe(true);
+    }
+  });
+
+  it("map industries only to indicators that exist, at most once per pair", () => {
+    const parsed = industryIndicatorsSchema.parse(industryIndicatorsData);
+    const ids = new Set(indicators.map((i) => i.id));
+    const pairs = new Set<string>();
+    for (const link of parsed.links) {
+      expect(ids.has(link.indicatorId), `${link.industryId} → ${link.indicatorId}`).toBe(true);
+      const pair = `${link.industryId}:${link.indicatorId}`;
+      expect(pairs.has(pair), pair).toBe(false);
+      pairs.add(pair);
+      // A mapping note explains the structure of the link; it never asserts causality.
+      expect(link.note, pair).not.toMatch(/上がれば|下がれば|押し上げ|押し下げ/);
     }
   });
 });

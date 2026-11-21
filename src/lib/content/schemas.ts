@@ -8,6 +8,7 @@ import type { Revision } from "@/types/revision";
 import type { Source } from "@/types/source";
 import type { Term } from "@/types/term";
 import type { WebsiteData } from "@/types/website";
+import type { Indicator, IndustryIndicators } from "@/types/indicator";
 
 /**
  * Runtime schemas for repository content.
@@ -314,6 +315,27 @@ export const featureSchema = z.strictObject({
   publishedAt: isoDate,
 });
 
+/** An economic-indicator snapshot (JCE-078 §4): the publisher's values only, never a site-made figure. */
+export const indicatorSchema = z.strictObject({
+  id: kebab,
+  name: text,
+  source: z.strictObject({
+    name: text,
+    url: z.string().regex(/^https:\/\//, "https:// で始まる URL である必要があります"),
+  }),
+  unit: text,
+  frequency: z.enum(["monthly", "quarterly"]),
+  observations: z
+    .array(z.strictObject({ date: isoDate, value: z.number().finite() }))
+    .min(1, "観測値が1件以上必要です"),
+  updatedAt: isoDate,
+});
+
+/** The industry → indicator mapping (JCE-078 §4): an editorial table, versioned like other content. */
+export const industryIndicatorsSchema = z.strictObject({
+  links: z.array(z.strictObject({ industryId: z.enum(INDUSTRY_IDS), indicatorId: kebab, note: text })),
+});
+
 const approverSchema = z.strictObject({ id: kebab, name: text, kind: z.enum(["operator", "person", "agent"]) });
 
 /** A formal approval is a person's; an agent's is a proxy and must say on whose authority, and on what basis. */
@@ -389,4 +411,6 @@ export type SchemaAgreement = [
   Assert<Equals<z.infer<typeof termSchema>, Term>>,
   Assert<Equals<z.infer<typeof featureSchema>, Feature>>,
   Assert<Equals<z.infer<typeof revisionSchema>, Revision>>,
+  Assert<Equals<z.infer<typeof indicatorSchema>, Indicator>>,
+  Assert<Equals<z.infer<typeof industryIndicatorsSchema>, IndustryIndicators>>,
 ];
