@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { indicators } from "@/data/indicators";
 import { listIndustryPages } from "@/lib/industries";
 import { PREFECTURES } from "@/lib/prefectures";
 import { RANKING_IDS } from "@/lib/rankings";
@@ -26,6 +27,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: url("/discover/") },
     { url: url("/quiz/") },
     { url: url("/learn/") },
+    { url: url("/analysis/") },
+    ...indicators.map((i) => ({ url: url(`/indicators/${i.id}/`), lastModified: i.updatedAt })),
     { url: url("/explore/") },
     { url: url("/network/") },
     { url: url("/help/") },

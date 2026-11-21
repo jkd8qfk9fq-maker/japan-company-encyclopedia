@@ -5,6 +5,7 @@ import { INDUSTRY_LABELS } from "@/lib/industry-labels";
 import { formatDateJa, formatYen } from "@/lib/utils/format";
 import type { Company, FinancialRecord } from "@/types/company";
 import { PremiumGate } from "./premium-gate";
+import { CompanyAnalysisSection } from "./company-analysis";
 import { ReportPrintButton } from "./report-print-button";
 import styles from "./company-report.module.css";
 
@@ -278,6 +279,8 @@ export function CompanyReport({ company, companies }: { company: Company; compan
           </div>
         </PremiumGate>
       </div>
+
+      <CompanyAnalysisSection company={company} companies={companies} />
     </div>
   );
 }

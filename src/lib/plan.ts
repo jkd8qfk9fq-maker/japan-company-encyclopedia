@@ -28,6 +28,15 @@ export const PLAN_TRIAL_DAYS = 7;
  * gates exactly as they were.
  */
 export const PREMIUM_FEATURES_OPEN = true;
+/**
+ * JCE-078: the analysis layer (5観点の分析レポート) is a NEW paid layer, gated independently of
+ * PREMIUM_FEATURES_OPEN. JCE-075 opened this site's existing features for good; this flag never
+ * re-closes them, and the existing plan does not open the analysis layer either — whether it is
+ * included, and at what tier, is the Phase 3 decision (spec §6, §10). Phase 1 ships the structure
+ * with the layer closed: every reader sees each perspective's own values and industry medians, and
+ * the distributions, trends and indicator links wait behind this flag.
+ */
+export const ANALYSIS_FEATURES_OPEN = false;
 const COOKIE = "yugenq_plan";
 const CODE_PATTERN = /^sub_[A-Za-z0-9]{8,64}$/;
 
