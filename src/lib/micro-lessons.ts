@@ -30,10 +30,10 @@ export type MicroQuestion = {
   companyId: string;
   companyName?: string;
   /** Kept when the question was generated per company (JCE-082), so the citation travels with it. */
-  sourceIds?: string[];
-  sourceTitle?: string;
+  sourceIds: string[];
+  sourceTitle: string;
   /** The period the figures belong to, shown beside the question wherever a figure appears. */
-  period?: string;
+  period: string;
 };
 
 export type MicroLesson = {
@@ -280,6 +280,11 @@ const fromPool = (q: QuizQuestion): MicroQuestion => ({
   answer: q.answer,
   explain: q.explain,
   companyId: q.answer,
+  // A pool question carries its citation like a lesson question does (JCE-085): dropping it here is what left
+  // eleven questions in /lessons.json without a source or a period.
+  sourceIds: q.sourceIds,
+  sourceTitle: q.sourceTitle,
+  period: q.period,
 });
 
 const fromLesson = (q: LessonQuestion): MicroQuestion => ({

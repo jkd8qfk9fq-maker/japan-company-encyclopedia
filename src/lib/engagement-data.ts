@@ -159,6 +159,12 @@ export type QuizQuestion = {
   /** What the answer rests on, in the entries' words and printed figures. */
   explain: string;
   industry: string | null;
+  /** The filing records the answer rests on — both companies' for a comparison question. */
+  sourceIds: string[];
+  /** The answer company's source title, shown as the citation; the explanation names the other side. */
+  sourceTitle: string;
+  /** The period the figures belong to — both companies' years when they differ. Always shown. */
+  period: string;
 };
 
 const yen = (v: number) => {
@@ -172,6 +178,12 @@ const hash = (s: string) => {
   for (const ch of s) h = Math.imul(h ^ ch.charCodeAt(0), 16777619);
   return h >>> 0;
 };
+
+/** The title of the first of `ids` the entry holds — undefined when the citation cannot be resolved. */
+const sourceTitleOf = (c: Company, ids: string[]): string | undefined => c.sources.find((s) => ids.includes(s.id))?.title;
+
+/** Two periods as one display string: one year when they agree, both when they differ. */
+const periodsOf = (...years: string[]) => [...new Set(years)].join("／");
 
 export function buildQuizPool(companies: Company[]): QuizQuestion[] {
   const questions: QuizQuestion[] = [];
@@ -193,6 +205,8 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
       const big = a.r!.revenue! >= b.r!.revenue! ? a : b;
       const small = big === a ? b : a;
       if (big.r!.revenue! < small.r!.revenue! * 1.3) continue;
+      const title = sourceTitleOf(big.c, big.r!.sourceIds);
+      if (!title) continue; // a comparison whose answer cannot be cited gets no question
       questions.push({
         id: `revenue-${a.c.id}-${b.c.id}`,
         kind: "revenue",
@@ -201,6 +215,9 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
         answer: big.c.id,
         explain: `${big.c.name}：${big.r!.revenueLabel} ${yen(big.r!.revenue!)}（${big.r!.fiscalYear}）／${small.c.name}：${small.r!.revenueLabel} ${yen(small.r!.revenue!)}（${small.r!.fiscalYear}）。どちらも有価証券報告書の数値です。`,
         industry: ind,
+        sourceIds: [...new Set([...a.r!.sourceIds, ...b.r!.sourceIds])],
+        sourceTitle: title,
+        period: periodsOf(a.r!.fiscalYear, b.r!.fiscalYear),
       });
     }
     // 海外売上高比率が高いのは？ — computed from each filing's regional revenue (計算値, JCE-038), 15 points apart.
@@ -213,6 +230,8 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
       if (Math.abs(a.o.percent - b.o.percent) < 15) continue;
       const hi = a.o.percent > b.o.percent ? a : b;
       const lo = hi === a ? b : a;
+      const title = sourceTitleOf(hi.c, hi.o.sourceIds);
+      if (!title) continue;
       questions.push({
         id: `overseas-${a.c.id}-${b.c.id}`,
         kind: "overseas",
@@ -221,6 +240,9 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
         answer: hi.c.id,
         explain: `${hi.c.name}：${hi.o.percent}%（${hi.o.fiscalYear}）／${lo.c.name}：${lo.o.percent}%（${lo.o.fiscalYear}）。計算値：${hi.o.formula}。`,
         industry: ind,
+        sourceIds: [...new Set([...a.o.sourceIds, ...b.o.sourceIds])],
+        sourceTitle: title,
+        period: periodsOf(a.o.fiscalYear, b.o.fiscalYear),
       });
     }
     // 事業別の売上 — the largest business's share of the segment note's total (計算値, JCE-038), 15 points apart so
@@ -233,7 +255,7 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
         const top = [...seg.items].sort((a, b) => b.amount - a.amount)[0]!;
         const business = c.businesses.find((b) => b.id === top.businessId);
         if (total <= 0 || top.amount <= 0 || !business) return null;
-        return { c, share: Math.round((top.amount / total) * 1000) / 10, topName: business.shortName ?? business.name, topAmount: top.amount, fiscalYear: seg.fiscalYear, label: seg.label };
+        return { c, share: Math.round((top.amount / total) * 1000) / 10, topName: business.shortName ?? business.name, topAmount: top.amount, fiscalYear: seg.fiscalYear, label: seg.label, sourceIds: seg.sourceIds };
       })
       .filter((x): x is NonNullable<typeof x> => x !== null)
       .sort((a, b) => hash(`s${a.c.id}`) - hash(`s${b.c.id}`));
@@ -242,6 +264,8 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
       if (Math.abs(a.share - b.share) < 15) continue;
       const hi = a.share > b.share ? a : b;
       const lo = hi === a ? b : a;
+      const title = sourceTitleOf(hi.c, hi.sourceIds);
+      if (!title) continue;
       questions.push({
         id: `segment-${a.c.id}-${b.c.id}`,
         kind: "segment",
@@ -250,6 +274,9 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
         answer: hi.c.id,
         explain: `${hi.c.name}：最大の事業は「${hi.topName}」で ${hi.share}%（${hi.fiscalYear}）／${lo.c.name}：「${lo.topName}」で ${lo.share}%。計算値：事業別の${hi.label}のうち最大の事業の金額 ÷ 事業別の合計。`,
         industry: ind,
+        sourceIds: [...new Set([...a.sourceIds, ...b.sourceIds])],
+        sourceTitle: title,
+        period: periodsOf(a.fiscalYear, b.fiscalYear),
       });
     }
     // 四半期の動き — the newest cumulative quarter's revenue growth against the same period a year earlier, as the
@@ -270,6 +297,8 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
       const lo = hi === a ? b : a;
       const pct = (v: number) => `${v > 0 ? "+" : ""}${v}%`;
       const side = (x: typeof hi) => `${x.c.name}：${x.view.fiscalYear} ${x.point.label}（累計）の売上 ${yen(x.point.revenue!)}（前年の同じ時期 ${yen(x.point.priorRevenue!)}、${pct(x.change)}）`;
+      const title = sourceTitleOf(hi.c, hi.point.sourceIds);
+      if (!title) continue;
       questions.push({
         id: `quarterly-${a.c.id}-${b.c.id}`,
         kind: "quarterly",
@@ -278,6 +307,9 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
         answer: hi.c.id,
         explain: `${side(hi)}／${side(lo)}。計算値：今期の売上 ÷ 前年の同じ時期の売上 − 1。四半期の売上は決算短信と半期報告書の数値です。`,
         industry: ind,
+        sourceIds: [...new Set([...a.point.sourceIds, ...b.point.sourceIds])],
+        sourceTitle: title,
+        period: periodsOf(`${a.view.fiscalYear} ${a.point.label}`, `${b.view.fiscalYear} ${b.point.label}`),
       });
     }
     // この説明はどの会社？ — the company's own first sentence with its names hidden, against three of its industry peers.
@@ -290,6 +322,16 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
         .reduce((text, n) => text.split(n).join("この会社"), plain(c.description, 140));
       // A clue that still names the company, or is too short to be a description, is not a fair question.
       if (hidden.includes(c.name) || hidden.length < 20) continue;
+      // The clue is the entry's own one-sentence description — a summary of the business structure — so it is
+      // attributed to the filing the structure cites, and to the year that filing reports. A description whose
+      // basis cannot be named gets no question (JCE-085).
+      const businessSourceIds = [...new Set(c.businesses.flatMap((b) => b.sourceIds))];
+      const rec = [...c.financials]
+        .sort((a, b) => a.periodEnd.localeCompare(b.periodEnd))
+        .reverse()
+        .find((r) => r.sourceIds.some((id) => businessSourceIds.includes(id)));
+      const title = rec ? sourceTitleOf(c, rec.sourceIds) : undefined;
+      if (!rec || !title) continue;
       const options = [c, ...others].sort((a, b) => hash(`${c.id}:${a.id}`) - hash(`${c.id}:${b.id}`)).map((x) => ({ id: x.id, label: x.name }));
       questions.push({
         id: `describe-${c.id}`,
@@ -298,8 +340,11 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
         clue: hidden,
         options,
         answer: c.id,
-        explain: `${c.name}の説明です。日本企業百科事典の解説から。`,
+        explain: `${c.name}の説明です。${title}（${rec.fiscalYear}）の事業の内容から。`,
         industry: ind,
+        sourceIds: rec.sourceIds,
+        sourceTitle: title,
+        period: rec.fiscalYear,
       });
     }
   }

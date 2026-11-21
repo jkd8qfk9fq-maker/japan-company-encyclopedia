@@ -223,6 +223,9 @@ const poolQ = (id: string, kind: QuizQuestion["kind"], industry: string | null =
   answer: "x",
   explain: "根拠",
   industry,
+  sourceIds: ["s"],
+  sourceTitle: "有価証券報告書",
+  period: "2026年3月期",
 });
 
 const lessonQ = (id: string, kind: LessonQuestion["kind"]): LessonQuestion => ({
@@ -298,6 +301,20 @@ describe("buildMicroCourse", () => {
     }
     const ids = units.flatMap((u) => u.lessons.flatMap((l) => l.questions.map((q) => q.id)));
     expect(new Set(ids).size).toBe(ids.length);
+  });
+
+  it("gives every bound question a source and a period (JCE-085)", () => {
+    // The pool is the leak: a pool question that loses its citation in fromPool reaches /lessons.json without
+    // one, as eleven did in JCE-084. The type now requires the three fields on both sides of the binding.
+    for (const unit of units) {
+      for (const lesson of unit.lessons) {
+        for (const q of lesson.questions) {
+          expect(q.sourceIds.length).toBeGreaterThan(0);
+          expect(q.sourceTitle.length).toBeGreaterThan(0);
+          expect(q.period.length).toBeGreaterThan(0);
+        }
+      }
+    }
   });
 
   it("gives every unit at least one predict-first question", () => {

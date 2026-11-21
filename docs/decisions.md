@@ -1499,3 +1499,19 @@ spend the trust the verification exists to build).
 **実装したこと**: src/lib/lesson-questions.ts（生成種別7種を追加: segment-top / overseas-ratio / employees / growth-employees / shares / quarterly-direction / quarterly-progress。各社上限は既存と同じ72問）、src/lib/micro-lessons.ts（単元2・3の仕様と束ね）、src/components/engagement/training-history.tsx（種別ラベル追加）、tests/micro-lessons.test.ts（新種別の生成・ガードと、全単元の束ね・先読み型の存在を検証。JCE-082 の「後続単元は構造のみ」テストは本決定で置き換えた）。
 
 **やらないこと**: 会社予想・設備投資・大株主データの新規収集（JCE-073 の追加順序に従い、データ整備は別タスク）、四半期への予測の拡張（JCE-083 の年次限定を維持）、進捗率を会社予想比と偽る表示。
+
+## JCE-085 — 2026-11-22: 学習クイズの出典・期間の欠落修正（/lessons.json 全30問への引用付与）
+
+**背景**: 本番確認（2026-11-22 03:14）で、/lessons.json の全30問のうち11問に構造化フィールド sourceIds・period が無いことが判明した。JCE-082/084 の規則「全問が sourceIds・出典タイトル・対象期間を保持し画面に常時表示」を厳密に満たしていなかった。
+
+**欠落の原因**: 11問はすべて比較プール（JCE-052、src/lib/engagement-data.ts の buildQuizPool）由来だった。プールの QuizQuestion 型が出典・期間のフィールドを持たず、束ね側（src/lib/micro-lessons.ts の fromPool）もそれらを MicroQuestion へ渡していなかった。1社型の生成器（lesson-questions.ts）は JCE-082 の時点で全問に sourceIds・sourceTitle・period を付けていたため、欠落はプール由来の11問に限られた。内訳: revenue 2問、quarterly 3問、segment 2問、overseas 2問、describe 2問。うち9問は解説文に対象期間と出典種別（有価証券報告書／決算短信）が書かれていたが、構造化フィールドとしては無かった。describe 2問（describe-pole-to-win-holdings、describe-agora-hospitality-group）は解説文にも期間・具体的出典がなく「日本企業百科事典の解説から。」だけだった。
+
+**設計判断**:
+1. **プール側で引用を生成する**。QuizQuestion に sourceIds・sourceTitle・period を必須フィールドとして追加し、5種別すべてで生成時に埋める。比較問題（2社型）は両社のレコードの sourceIds の和集合、sourceTitle は正解側の会社の出典タイトル（解説文が両社の数字と期間を併記しているため）、period は両社の対象期間（一致すれば1期、異なれば「2026年3月期／2025年12月期」のように両方を併記）。
+2. **describe 問題の出典は事業構造が指す有報**。説明文はエントリの一文要約で、内容は事業構造（businesses）の要約である。出典は、事業構造が指す sourceIds と一致する最新の年次レコード（＝その有報）とし、期間はその期。ポールトゥウィン: 有価証券報告書－第17期（2025/02/01－2026/01/31）、2026年1月期、yuho-2026。アゴーラホスピタリティーグループ: 有価証券報告書－第88期（2025/01/01－2025/12/31）、2025年12月期、yuho-2025。いずれも事業構造の sourceIds と最新レコードの sourceIds が一致することをデータで確認した。解説文も「{出典タイトル}（{対象期間}）の事業の内容から。」に改めた。
+3. **出典が名指しできない問題は出さない**。出典タイトルが解決できない比較問題、事業構造の出典と一致する年次レコードが無い describe 問題は生成しない（欠落のまま出さない）。これは不変条件1・2の帰結であり、JCE-082 の出題ガードと同じ方針。
+4. **再発防止は型とテスト**。MicroQuestion の sourceIds・sourceTitle・period を任意から必須にし、fromPool が3つとも渡す（渡し忘れはコンパイルエラーになる）。テストは3層: (a) プール生成の単体テスト（比較問題の両社引用、describe の事業構造由来の引用、根拠が無い場合の出題なし）(b) 実データテスト（プール全問に引用があること、describe 2問の出典・期間の完全一致）(c) 束ね後のテスト（コースに束ねられた全問に引用があること）。新しい種別・プールを足すときは、この3層のテストが欠落を検出する。
+
+**実装したこと**: src/lib/engagement-data.ts（QuizQuestion への3フィールド追加、sourceTitleOf・periodsOf 補助関数、5種別への付与、describe の事業構造由来の出典特定と解説文の改稿）、src/lib/micro-lessons.ts（fromPool の受け渡し、MicroQuestion の3フィールド必須化）、tests/learn-course.test.ts（JCE-085 の単体・実データテスト、既存の segment・quarterly フィクスチャへの出典追加）、tests/micro-lessons.test.ts（束ね後の全問引用テスト）。/quiz.json（12ステップコースと日替わりクイズの共有プール）も同じ修正の恩恵を受け、出力に引用が付くようになった。表示側（micro-lessons.tsx の「対象期間」「出典」表示）は既にフィールド対応済みで変更なし。
+
+**やらないこと**: 会社予想・設備投資・大株主データの新規収集、describe 問題の出典を説明文の執筆履歴に遡ること（説明文に sourceIds が存在しないため、事業構造由来の帰属を約束として記録する——説明文を別の文書から書き直す場合は帰属も事業構造とともに移すこと）、総合スコア・格付け、投資助言、株価系指標。
