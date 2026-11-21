@@ -8,6 +8,8 @@ import { financialDeepDive } from "@/lib/financial-deep-dive";
 import { industryComparison } from "@/lib/industry-comparison";
 import { buildValueChain } from "@/lib/value-chain";
 import { SourceList } from "@/components/sources/source-list";
+import { PredictionPanel } from "@/components/engagement/prediction-panel";
+import { predictionDataFor } from "@/lib/predictions";
 import { BusinessList } from "./business-list";
 import { BusinessModel } from "./business-model";
 import { BusinessStructure } from "./business-structure";
@@ -229,6 +231,11 @@ export async function CompanyView({ company }: { company: Company }) {
           </div>
         )}
         <FinancialSection company={company} />
+        {/* JCE-083: STEP 1/3 of the training cycle — the reader's own prediction of the next filing, and its
+            check when the filing arrives. User-local state only; the section is drawn for every entry. */}
+        <div className="mt-10">
+          <PredictionPanel companyId={company.id} data={predictionDataFor(company)} />
+        </div>
         {/* JCE-073: the same figures as a printable premium report, with the computed layer and industry position. */}
         <Link
           href={`/companies/${company.id}/report`}

@@ -42,6 +42,8 @@ export const STORAGE_KEYS = {
   learnAnswers: "learn-answers",
   /** JCE-082: the micro-lesson layer's progress — answers by question id, lessons done by day, and the review queue's schedule. */
   microProgress: "micro-lesson-progress",
+  /** JCE-083: the reader's own predictions of a company's next filing, written once per company, metric and baseline period. */
+  predictions: "company-predictions",
 } as const;
 
 export type StorageKey = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];

@@ -19,6 +19,8 @@ import type { LessonQuestion } from "@/lib/lesson-questions";
 
 export type MicroQuestion = {
   id: string;
+  /** The reading the question practises (the pool's or the lesson generator's kind) — the training history groups by it. */
+  kind: string;
   prompt: string;
   clue?: string;
   options: { id: string; label: string }[];
@@ -149,6 +151,7 @@ const PLANNED_UNITS: { id: string; title: string; intro: string; plannedLessons:
 
 const fromPool = (q: QuizQuestion): MicroQuestion => ({
   id: q.id,
+  kind: q.kind,
   prompt: q.prompt,
   clue: q.clue,
   options: q.options,
@@ -159,6 +162,7 @@ const fromPool = (q: QuizQuestion): MicroQuestion => ({
 
 const fromLesson = (q: LessonQuestion): MicroQuestion => ({
   id: q.id,
+  kind: q.kind,
   prompt: q.prompt,
   options: q.options,
   answer: q.answer,

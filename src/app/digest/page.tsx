@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { DigestVerifications } from "@/components/engagement/digest-verifications";
 import { buildDigest, type DigestEvent } from "@/lib/digest";
 import { buildUpdates, type UpdateKind } from "@/lib/engagement-data";
 import { companyRepository, revisionRepository } from "@/lib/repositories";
@@ -37,8 +38,10 @@ export default async function DigestPage() {
         <span className="mx-2 text-muted-foreground">・</span>
         <Link href="/learn#review-queue" className="underline underline-offset-4">STEP 4：復習キュー</Link>
         <span className="mx-2 text-muted-foreground">・</span>
-        <Link href="/learn#training-record" className="underline underline-offset-4">STEP 5：訓練の記録</Link>
+        <Link href="/learn#training-history" className="underline underline-offset-4">STEP 5：訓練の記録</Link>
       </p>
+
+      <DigestVerifications />
 
       <DigestSection title="今週の決算" events={digest.thisWeek} empty="今週（月曜から日曜まで）の開示は、まだありません。" />
       <DigestSection title="先週の決算" events={digest.lastWeek} empty="先週の開示はありません。" />

@@ -1,4 +1,5 @@
 import { STORAGE_KEYS, parseRaw, read, write, remove, type StorageKey } from "./storage";
+import { addPrediction, type Prediction } from "@/lib/predictions";
 import { scheduleReview, type ReviewState } from "@/lib/review-queue";
 import { isConditions, type Conditions } from "@/lib/screening";
 
@@ -285,6 +286,41 @@ export function recordMicroLessonDone(lessonId: string): void {
 export const exploreStepsStore = createStore<number>(STORAGE_KEYS.exploreSteps, 0, (value) =>
   typeof value === "number" && Number.isFinite(value) && value >= 0 ? Math.floor(value) : null,
 );
+
+// ---------------------------------------------------------------------------
+// JCE-083: the reader's predictions of a company's next filing. Written once per company, metric and
+// baseline period — a recorded reading is never replaced, and the record carries no result: the outcome is
+// derived from the site's data when it is shown (src/lib/predictions.ts). This browser only, like the rest.
+
+const DATE_ONLY = /^\d{4}-\d{2}-\d{2}$/;
+
+export const predictionsStore = createStore<Prediction[]>(STORAGE_KEYS.predictions, [], (value) => {
+  if (!Array.isArray(value)) return null;
+  const out: Prediction[] = [];
+  for (const v of value) {
+    const p = v as Partial<Prediction>;
+    if (
+      typeof p?.companyId === "string" && ID_PATTERN.test(p.companyId) &&
+      (p.metric === "revenue" || p.metric === "net-income") &&
+      (p.direction === "up" || p.direction === "down") &&
+      typeof p.baselinePeriodEnd === "string" && DATE_ONLY.test(p.baselinePeriodEnd) &&
+      typeof p.baselineFiscalYear === "string" && p.baselineFiscalYear.length > 0 &&
+      typeof p.recordedAt === "string" && !Number.isNaN(Date.parse(p.recordedAt))
+    ) {
+      out.push({ companyId: p.companyId, metric: p.metric, direction: p.direction, baselinePeriodEnd: p.baselinePeriodEnd, baselineFiscalYear: p.baselineFiscalYear, recordedAt: p.recordedAt });
+    }
+  }
+  return out;
+});
+
+/** Record a prediction. Returns false when one already stands for the same company, metric and baseline. */
+export function recordPrediction(next: Omit<Prediction, "recordedAt">): boolean {
+  const { list, added } = addPrediction(predictionsStore.get(), { ...next, recordedAt: new Date().toISOString() });
+  if (!added) return false;
+  predictionsStore.set(list);
+  recordActivity();
+  return true;
+}
 
 export function recordExploreStep(): void {
   exploreStepsStore.set(exploreStepsStore.get() + 1);

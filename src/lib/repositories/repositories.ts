@@ -56,6 +56,12 @@ export interface RevisionRepository {
   /** Newest first. */
   list(): Promise<Revision[]>;
   listForTarget(targetType: RevisionTargetType, targetId: string): Promise<Revision[]>;
+  /**
+   * The corrections recorded for one target, newest first. A page rendered once per company cannot afford
+   * list()'s read of every revision file; the file names carry the id, which names the target and the
+   * correction, so this reads only the candidates and verifies them by content.
+   */
+  listCorrectionsForTarget(targetType: RevisionTargetType, targetId: string): Promise<Revision[]>;
   get(id: string): Promise<Revision | null>;
 }
 
