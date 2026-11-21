@@ -51,7 +51,8 @@ export default async function IndustriesPage() {
       <SectionTabs sections={sections} containerId="industries-tabs" tabbed="always" />
 
       <div id="industries-tabs">
-        <CompanySection id="list" eyebrow="Industries" title="業界一覧" lead="業界を選ぶと、その業界の仕組み・企業・つながりが開きます。">
+        {/* JCE-080: the first panel under the tabs gives up the section's full top padding — the tabs already separate it from the header. */}
+        <CompanySection id="list" eyebrow="Industries" title="業界一覧" lead="業界を選ぶと、その業界の仕組み・企業・つながりが開きます。" className="pt-8 md:pt-12">
           {/*
             Photograph tiles, after the operator's request to design the list through its images (2026-11-01). Two
             across on a phone, three to four on a wide screen, all the same size: the order is the taxonomy's and
