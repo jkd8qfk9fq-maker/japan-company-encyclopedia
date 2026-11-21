@@ -104,7 +104,8 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
       <SectionTabs sections={sections} containerId="industry-tabs" tabbed="always" />
 
       <div id="industry-tabs">
-        <CompanySection id="about" eyebrow="About" title={industry?.structure === "chain" ? "業界の流れ" : "業界の仕組み"}>
+        {/* JCE-080: the first panel under the tabs gives up the section's full top padding — the tabs already separate it from the header. */}
+        <CompanySection id="about" eyebrow="About" title={industry?.structure === "chain" ? "業界の流れ" : "業界の仕組み"} className="pt-8 md:pt-12">
           <IndustryHero image={INDUSTRY_IMAGES[listing.id]} eyebrow={listing.nameEn} title={`${listing.name}業界の仕組み`} priority />
           {industry ? (
             <div className="mt-8">
