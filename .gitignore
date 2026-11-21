@@ -78,3 +78,9 @@ pipeline/reserved.tsv
 # Local Worker secrets for `wrangler dev` (e.g. a throwaway VAPID pair, JCE-059). Never committed.
 .dev.vars
 .wrangler/
+
+# JCE-079: sharded deploy slices and generated wrangler configs (built by scripts/partition-static.mjs in CI)
+/out-main/
+/out-shard-*/
+/wrangler.generated.*.jsonc
+/.deploy-manifest.json
