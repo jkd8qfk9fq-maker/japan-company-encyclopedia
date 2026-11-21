@@ -27,6 +27,13 @@ const KIND_LABELS: Record<string, string> = {
   segment: "事業別の売上を読む",
   quarterly: "四半期の動きを読む",
   describe: "事業の説明から会社を見分ける",
+  "segment-top": "最大の事業を読む",
+  "overseas-ratio": "海外売上比率を読む",
+  employees: "従業員1人あたり売上を読む",
+  "growth-employees": "従業員数の増減を読む",
+  shares: "発行済株式総数を読む",
+  "quarterly-direction": "四半期の増減を予想する",
+  "quarterly-progress": "進捗の目安を読む",
 };
 
 const jstDayOf = (iso: string) => new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Tokyo" }).format(new Date(iso));
