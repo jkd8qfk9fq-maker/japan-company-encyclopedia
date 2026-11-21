@@ -5,7 +5,7 @@ import { weekEnd, weekStart } from "../src/lib/jst-dates";
 import { buildLessonQuestions, type LessonQuestion } from "../src/lib/lesson-questions";
 import { buildMicroCourse } from "../src/lib/micro-lessons";
 import { dueReviewIds, scheduleReview } from "../src/lib/review-queue";
-import type { Company, FinancialRecord, IndustryId } from "../src/types/company";
+import type { Company, FinancialRecord, IndustryId, InterimRecord } from "../src/types/company";
 
 /**
  * The micro-lesson layer (JCE-082): questions generated per company from printed figures only, a course
@@ -85,6 +85,133 @@ describe("buildLessonQuestions", () => {
   });
 });
 
+describe("buildLessonQuestions — the JCE-084 kinds", () => {
+  it("asks for the largest business of the segment note, and not when the top two are close", () => {
+    const withSegments = (topAmount: number, secondAmount: number) =>
+      ({
+        ...company("s", [prev(), rec()]),
+        businesses: [
+          { id: "b1", name: "事業1" },
+          { id: "b2", name: "事業2" },
+        ],
+        segmentRevenue: {
+          fiscalYear: "2026年3月期",
+          periodEnd: "2026-03-31",
+          label: "外部顧客への売上高",
+          items: [
+            { businessId: "b1", amount: topAmount },
+            { businessId: "b2", amount: secondAmount },
+          ],
+          sourceIds: ["yuho-2026"],
+        },
+      }) as unknown as Company;
+    const q = buildLessonQuestions([withSegments(60_000_000_000, 40_000_000_000)]).find((x) => x.kind === "segment-top");
+    expect(q?.answer).toBe("b1");
+    expect(q?.explain).toContain("計算値");
+    expect(q?.explain).toContain("60%");
+    expect(q?.period).toBe("2026年3月期");
+    const close = buildLessonQuestions([withSegments(52_000_000_000, 48_000_000_000)]);
+    expect(close.some((x) => x.kind === "segment-top")).toBe(false);
+  });
+
+  it("asks the overseas share as a computed ratio, from the regional breakdown", () => {
+    const c = {
+      ...company("o", [prev(), rec()]),
+      regionalRevenue: {
+        fiscalYear: "2026年3月期",
+        periodEnd: "2026-03-31",
+        label: "売上高",
+        items: [
+          { region: "日本", domestic: true, amount: 60_000_000_000 },
+          { region: "北米", domestic: false, amount: 40_000_000_000 },
+        ],
+        sourceIds: ["yuho-2026"],
+      },
+    } as unknown as Company;
+    const q = buildLessonQuestions([c]).find((x) => x.kind === "overseas-ratio");
+    expect(q?.answer).toBe("p40");
+    expect(q?.explain).toContain("計算値");
+    expect(q?.sourceIds).toContain("yuho-2026");
+  });
+
+  it("asks revenue per employee as a computed value, and the headcount's direction with a guard", () => {
+    const qs2 = buildLessonQuestions([company("e", [prev({ employees: 80 }), rec({ employees: 100 })])]);
+    const per = qs2.find((x) => x.kind === "employees");
+    expect(per?.options.find((o) => o.id === per.answer)?.label).toBe("10億円");
+    expect(per?.explain).toContain("計算値");
+    const dir = qs2.find((x) => x.kind === "growth-employees");
+    expect(dir?.answer).toBe("up"); // 80人 → 100人
+    const flat = buildLessonQuestions([company("e2", [prev({ employees: 100 }), rec({ employees: 101 })])]);
+    expect(flat.some((x) => x.kind === "growth-employees")).toBe(false); // +1% is under the guard
+  });
+
+  it("asks the issued share count as printed", () => {
+    const c = {
+      ...company("h", [prev(), rec()]),
+      shareFacts: { fiscalYear: "2026年3月期", asOf: "2026-03-31", dividendPerShare: 50, issuedShares: 1_000_000, sourceIds: ["yuho-2026"] },
+    } as unknown as Company;
+    const q = buildLessonQuestions([c]).find((x) => x.kind === "shares");
+    expect(q?.options.find((o) => o.id === q.answer)?.label).toBe("1,000,000株");
+    expect(q?.period).toBe("2026年3月期");
+  });
+
+  it("asks the quarter's direction predict-first, and its progress against the previous full year", () => {
+    const half = (fiscalYear: string, periodEnd: string, revenue: number): InterimRecord =>
+      ({
+        fiscalYear,
+        period: "H1",
+        periodStart: periodEnd.slice(0, 4) + "-04-01",
+        periodEnd,
+        revenue,
+        revenueLabel: "売上高",
+        profit: null,
+        profitLabel: null,
+        netIncome: 1_000_000_000,
+        netIncomeLabel: "当期純利益",
+        currency: "JPY",
+        accountingStandard: "jgaap",
+        sourceIds: ["yuho-2026"],
+      }) as InterimRecord;
+    const c = {
+      ...company("q", [prev(), rec()]),
+      interimFinancials: [half("2026年3月期", "2025-09-30", 50_000_000_000), half("2027年3月期", "2026-09-30", 60_000_000_000)],
+    } as unknown as Company;
+    const qs3 = buildLessonQuestions([c]);
+    const dir = qs3.find((x) => x.kind === "quarterly-direction");
+    expect(dir?.answer).toBe("up"); // 中間期 500億 → 600億
+    expect(dir?.prompt).toContain("予想してから確かめましょう");
+    expect(dir?.explain).toContain("計算値");
+    expect(dir?.period).toContain("2027年3月期");
+    const progress = qs3.find((x) => x.kind === "quarterly-progress");
+    expect(progress?.options.find((o) => o.id === progress.answer)?.label).toBe("約6割"); // 600億 ÷ 前年通期 1,000億
+    expect(progress?.explain).toContain("途中経過");
+  });
+
+  it("does not ask a quarterly direction about a near-flat half", () => {
+    const half = (fiscalYear: string, periodEnd: string, revenue: number): InterimRecord =>
+      ({
+        fiscalYear,
+        period: "H1",
+        periodStart: periodEnd.slice(0, 4) + "-04-01",
+        periodEnd,
+        revenue,
+        revenueLabel: "売上高",
+        profit: null,
+        profitLabel: null,
+        netIncome: 1_000_000_000,
+        netIncomeLabel: "当期純利益",
+        currency: "JPY",
+        accountingStandard: "jgaap",
+        sourceIds: ["yuho-2026"],
+      }) as InterimRecord;
+    const c = {
+      ...company("q2", [prev(), rec()]),
+      interimFinancials: [half("2026年3月期", "2025-09-30", 59_000_000_000), half("2027年3月期", "2026-09-30", 60_000_000_000)],
+    } as unknown as Company;
+    expect(buildLessonQuestions([c]).some((x) => x.kind === "quarterly-direction")).toBe(false); // +1.7% is under the guard
+  });
+});
+
 const poolQ = (id: string, kind: QuizQuestion["kind"], industry: string | null = "retail"): QuizQuestion => ({
   id,
   kind,
@@ -121,15 +248,35 @@ describe("buildMicroCourse", () => {
     poolQ("rev-1", "revenue"),
     poolQ("rev-2", "revenue"),
     poolQ("qtr-1", "quarterly"),
+    poolQ("qtr-2", "quarterly"),
+    poolQ("qtr-3", "quarterly"),
     poolQ("seg-1", "segment"),
+    poolQ("seg-2", "segment"),
     poolQ("ovs-1", "overseas"),
+    poolQ("ovs-2", "overseas"),
+    poolQ("dsc-1", "describe"),
+    poolQ("dsc-2", "describe"),
   ];
   const lessonPool: LessonQuestion[] = [
     lessonQ("fig-1", "figure"),
     lessonQ("fig-2", "figure"),
+    lessonQ("fig-3", "figure"),
     lessonQ("gr-1", "growth-revenue"),
     lessonQ("gr-2", "growth-revenue"),
+    lessonQ("gr-3", "growth-revenue"),
     lessonQ("gp-1", "growth-profit"),
+    lessonQ("gp-2", "growth-profit"),
+    lessonQ("st-1", "segment-top"),
+    lessonQ("or-1", "overseas-ratio"),
+    lessonQ("em-1", "employees"),
+    lessonQ("ge-1", "growth-employees"),
+    lessonQ("sh-1", "shares"),
+    lessonQ("sh-2", "shares"),
+    lessonQ("qd-1", "quarterly-direction"),
+    lessonQ("qd-2", "quarterly-direction"),
+    lessonQ("qd-3", "quarterly-direction"),
+    lessonQ("qd-4", "quarterly-direction"),
+    lessonQ("qp-1", "quarterly-progress"),
   ];
   const units = buildMicroCourse(pool, lessonPool);
 
@@ -142,10 +289,22 @@ describe("buildMicroCourse", () => {
     for (const lesson of first.lessons) expect(lesson.questions.length).toBeGreaterThanOrEqual(2);
   });
 
-  it("keeps the later units as structure only", () => {
+  it("binds units two and three to five lessons each, with no question used twice in the course", () => {
+    expect(units.map((u) => u.id)).toEqual(["revenue-and-profit", "reading-the-business", "quarterly-motion"]);
     for (const unit of units.slice(1)) {
-      expect(unit.lessons).toHaveLength(0);
-      expect(unit.plannedLessons.length).toBeGreaterThan(0);
+      expect(unit.lessons).toHaveLength(5);
+      expect(unit.plannedLessons).toHaveLength(0);
+      for (const lesson of unit.lessons) expect(lesson.questions.length).toBeGreaterThanOrEqual(2);
+    }
+    const ids = units.flatMap((u) => u.lessons.flatMap((l) => l.questions.map((q) => q.id)));
+    expect(new Set(ids).size).toBe(ids.length);
+  });
+
+  it("gives every unit at least one predict-first question", () => {
+    const predictFirst = new Set(["growth-revenue", "growth-profit", "growth-employees", "quarterly-direction"]);
+    for (const unit of units) {
+      const kinds = unit.lessons.flatMap((l) => l.questions.map((q) => q.kind));
+      expect(kinds.some((k) => predictFirst.has(k))).toBe(true);
     }
   });
 
