@@ -27,6 +27,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: url("/discover/") },
     { url: url("/quiz/") },
     { url: url("/learn/") },
+    { url: url("/digest/") },
     { url: url("/analysis/") },
     ...indicators.map((i) => ({ url: url(`/indicators/${i.id}/`), lastModified: i.updatedAt })),
     { url: url("/explore/") },

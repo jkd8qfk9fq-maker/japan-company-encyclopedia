@@ -2,6 +2,7 @@
 
 import type { ConnectionsData, QuizQuestion, UpdatesData } from "@/lib/engagement-data";
 import type { LearnStep } from "@/lib/learn-course";
+import type { MicroUnit } from "@/lib/micro-lessons";
 
 // Not imported from lib/site: that module resolves SITE_URL, which only the server has.
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
@@ -26,3 +27,4 @@ export const loadConnections = () => load<ConnectionsData>("/connections.json");
 export const loadUpdates = () => load<UpdatesData>("/updates.json");
 export const loadQuiz = () => load<QuizQuestion[]>("/quiz.json");
 export const loadLearn = () => load<LearnStep[]>("/learn.json");
+export const loadLessons = () => load<MicroUnit[]>("/lessons.json");

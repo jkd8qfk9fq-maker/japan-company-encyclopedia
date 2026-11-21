@@ -1,4 +1,5 @@
 import { STORAGE_KEYS, parseRaw, read, write, remove, type StorageKey } from "./storage";
+import { scheduleReview, type ReviewState } from "@/lib/review-queue";
 import { isConditions, type Conditions } from "@/lib/screening";
 
 /**
@@ -225,6 +226,60 @@ export function recordLearnAnswer(questionId: string, answer: LearnAnswer): void
   if (current[questionId]) return; // the first answer counts, as with the daily question
   learnStore.set({ ...current, [questionId]: answer });
   recordActivity();
+}
+
+// ---------------------------------------------------------------------------
+// JCE-082: the micro-lesson layer. One store for the whole of it — answers (the first one counts, as in the
+// course), the day each lesson was finished (which is also what the weekly progress counts), and the review
+// queue's schedule. Like every store here it stays in this browser.
+
+export type MicroAnswer = { choice: string; correct: boolean; day: string };
+export type MicroProgress = {
+  answers: Record<string, MicroAnswer>;
+  lessons: Record<string, string>;
+  review: Record<string, ReviewState>;
+};
+
+const emptyMicroProgress: MicroProgress = { answers: {}, lessons: {}, review: {} };
+
+export const microProgressStore = createStore<MicroProgress>(STORAGE_KEYS.microProgress, emptyMicroProgress, (value) => {
+  if (!value || typeof value !== "object" || Array.isArray(value)) return null;
+  const v = value as Partial<MicroProgress>;
+  const answers: Record<string, MicroAnswer> = {};
+  if (v.answers && typeof v.answers === "object") {
+    for (const [id, a] of Object.entries(v.answers)) {
+      const x = a as Partial<MicroAnswer>;
+      if (typeof x?.choice === "string" && typeof x.correct === "boolean" && typeof x.day === "string" && DAY.test(x.day)) answers[id] = { choice: x.choice, correct: x.correct, day: x.day };
+    }
+  }
+  const lessons: Record<string, string> = {};
+  if (v.lessons && typeof v.lessons === "object") {
+    for (const [id, day] of Object.entries(v.lessons)) if (typeof day === "string" && DAY.test(day)) lessons[id] = day;
+  }
+  const review: Record<string, ReviewState> = {};
+  if (v.review && typeof v.review === "object") {
+    for (const [id, s] of Object.entries(v.review)) {
+      const x = s as Partial<ReviewState>;
+      if (typeof x?.stage === "number" && Number.isFinite(x.stage) && typeof x.due === "string" && DAY.test(x.due)) review[id] = { stage: Math.max(0, Math.floor(x.stage)), due: x.due };
+    }
+  }
+  return { answers, lessons, review };
+});
+
+export function recordMicroAnswer(questionId: string, answer: { choice: string; correct: boolean }): void {
+  const day = jstToday();
+  const current = microProgressStore.get();
+  const answers = current.answers[questionId] ? current.answers : { ...current.answers, [questionId]: { ...answer, day } };
+  // Every answer — the first in a lesson, and each one in the review queue — moves the question's next review.
+  const review = { ...current.review, [questionId]: scheduleReview(current.review[questionId], answer.correct, day) };
+  microProgressStore.set({ ...current, answers, review });
+  recordActivity(day);
+}
+
+export function recordMicroLessonDone(lessonId: string): void {
+  const current = microProgressStore.get();
+  if (current.lessons[lessonId]) return;
+  microProgressStore.set({ ...current, lessons: { ...current.lessons, [lessonId]: jstToday() } });
 }
 
 export const exploreStepsStore = createStore<number>(STORAGE_KEYS.exploreSteps, 0, (value) =>

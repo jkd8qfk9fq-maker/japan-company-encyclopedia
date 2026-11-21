@@ -40,6 +40,8 @@ export const STORAGE_KEYS = {
   mailNotify: "mail-notify",
   /** JCE-072: the reader's answers in the 有報の読み方入門 course, by question id — the steps done, and the badge they add up to. */
   learnAnswers: "learn-answers",
+  /** JCE-082: the micro-lesson layer's progress — answers by question id, lessons done by day, and the review queue's schedule. */
+  microProgress: "micro-lesson-progress",
 } as const;
 
 export type StorageKey = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];
