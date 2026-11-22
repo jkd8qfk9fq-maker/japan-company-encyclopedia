@@ -1,5 +1,5 @@
 import { z } from "zod";
-import { INDUSTRY_IDS, RELATIONSHIP_KINDS, type Company } from "@/types/company";
+import { INDUSTRY_IDS, RELATIONSHIP_KINDS, STATEMENT_ROLES, type Company } from "@/types/company";
 import { PREFECTURE_NAMES } from "@/lib/prefectures";
 import type { Feature } from "@/types/feature";
 import type { HeadquartersData } from "@/types/headquarters";
@@ -143,6 +143,24 @@ export const companySchema = z.strictObject({
       ...sourced,
     }),
   ),
+  // JCE-092: the full statements behind the learning layer's Phase B exercises — printed rows only,
+  // cross-checked against `financials` (tests/data-integrity.test.ts), never a computed figure.
+  financialStatements: z
+    .array(
+      z.strictObject({
+        fiscalYear: text,
+        periodEnd: isoDate,
+        accountingStandard: z.enum(["ifrs", "jgaap", "usgaap"]),
+        incomeStatement: z
+          .array(z.strictObject({ role: z.enum(STATEMENT_ROLES), label: text, amount: z.number().int() }))
+          .min(1),
+        balanceSheet: z
+          .array(z.strictObject({ role: z.enum(STATEMENT_ROLES), label: text, amount: z.number().int() }))
+          .min(1),
+        ...sourced,
+      }),
+    )
+    .optional(),
   interimFinancials: z
     .array(
       z.strictObject({

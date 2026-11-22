@@ -1,7 +1,7 @@
 import { companyMetrics } from "@/lib/company-metrics";
 import { quarterlyView } from "@/lib/quarterly";
 import { formatYen } from "@/lib/utils/format";
-import type { Company, FinancialRecord } from "@/types/company";
+import type { Company, FinancialRecord, StatementLine, StatementRole } from "@/types/company";
 
 /**
  * Lesson questions (JCE-082, rebuilt in JCE-090): generated per company from the entry's own printed
@@ -39,7 +39,13 @@ export type LessonQuestionKind =
   | "relation-stages"
   | "relation-net-assets"
   | "label-reading"
-  | "region-find";
+  | "region-find"
+  | "detail-sga"
+  | "detail-special"
+  | "detail-working-capital"
+  | "detail-borrowings"
+  | "detail-goodwill"
+  | "detail-depreciation";
 
 /** A small excerpt of a company's own table, printed figures as filed, shown with the question. */
 export type QuestionTable = {
@@ -132,6 +138,12 @@ export function buildLessonQuestions(companies: Company[]): LessonQuestion[] {
   const relationNetAssets: LessonQuestion[] = [];
   const labelReading: LessonQuestion[] = [];
   const regionFind: LessonQuestion[] = [];
+  const detailSga: LessonQuestion[] = [];
+  const detailSpecial: LessonQuestion[] = [];
+  const detailWorkingCapital: LessonQuestion[] = [];
+  const detailBorrowings: LessonQuestion[] = [];
+  const detailGoodwill: LessonQuestion[] = [];
+  const detailDepreciation: LessonQuestion[] = [];
 
   const ordered = [...companies].sort((a, b) => hash(`lesson-${a.id}`) - hash(`lesson-${b.id}`));
   for (const c of ordered) {
@@ -489,6 +501,182 @@ export function buildLessonQuestions(companies: Company[]): LessonQuestion[] {
       }
     }
 
+    // 明細の読み (JCE-092, Phase B): the full statements the entry now carries, for the companies that
+    // have them. The excerpt is the real section of the real table, and what is asked is still the
+    // reading — the largest line of a breakdown, the set of rows that are not yet cash, every row a
+    // borrowing is split across, how a book value is built — never a value to memorise. A company
+    // whose statement lacks the section a question needs gets no question of that kind.
+    {
+      const stmt = [...(c.financialStatements ?? [])].sort((a, b) => a.periodEnd.localeCompare(b.periodEnd)).at(-1);
+      const stmtSource = stmt ? (c.sources.find((s) => stmt.sourceIds.includes(s.id)) ?? c.sources.find((s) => s.id === stmt.sourceIds[0])) : undefined;
+      if (stmt && stmtSource) {
+        const sbase = { companyId: c.id, companyName: c.name, industry: primaryIndustry(c), sourceIds: stmt.sourceIds, sourceTitle: stmtSource.title };
+        const pl = stmt.incomeStatement;
+        const bs = stmt.balanceSheet;
+        const ofRole = (lines: StatementLine[], role: StatementRole) => lines.filter((l) => l.role === role);
+        const oneOf = (lines: StatementLine[], role: StatementRole) => lines.find((l) => l.role === role);
+        const excerpt = (lines: StatementLine[], what: string): QuestionTable => ({
+          caption: `${c.name}の${what}から抜粋。金額は有価証券報告書の印字値です。`,
+          columns: ["項目", stmt.fiscalYear],
+          rows: lines.map((l) => [l.label, formatYen(l.amount)]),
+        });
+
+        // 販管費の内訳: the largest line of the breakdown the note prints, and the gap it explains.
+        const sgaItems = ofRole(pl, "sga-item");
+        const sgaTotal = oneOf(pl, "selling-general-and-administrative-expenses");
+        const grossLine = oneOf(pl, "gross-profit");
+        const opLine = oneOf(pl, "operating-income");
+        if (sgaItems.length >= 3 && sgaTotal && grossLine && opLine) {
+          const byAmount = [...sgaItems].sort((a, b) => b.amount - a.amount);
+          const top = byAmount[0]!;
+          if (byAmount[1] && top.amount > byAmount[1].amount) {
+            const optionItems = sgaItems.filter((l) => byAmount.slice(0, 4).includes(l));
+            const opGross = oneOf(pl, "operating-gross-profit");
+            detailSga.push({
+              ...sbase,
+              id: `detail-sga-${c.id}`,
+              kind: "detail-sga",
+              prompt: `${c.name}の損益計算書の抜粋です。販売費及び一般管理費の内訳の中で、金額がいちばん大きい項目はどれでしょう？`,
+              table: excerpt([grossLine, ...(opGross ? [opGross] : []), sgaTotal, ...sgaItems, opLine], "連結損益計算書"),
+              options: optionItems.map((l) => ({ id: `item-${sgaItems.indexOf(l)}`, label: l.label })),
+              answer: `item-${sgaItems.indexOf(top)}`,
+              explain: `いちばん大きいのは「${top.label}」で ${formatYen(top.amount)}、販管費全体 ${formatYen(sgaTotal.amount)} の約${Math.round((top.amount / sgaTotal.amount) * 100)}%です（計算値：内訳の印字値 ÷ 販管費の印字値）。内訳に並ぶのは主な項目だけなので、合計は販管費全体と一致しません。粗利と営業利益の差はこの販管費で、その中身は注記の内訳でしか読めません。`,
+              period: stmt.fiscalYear,
+            });
+          }
+        }
+
+        // 特別損益の内訳: the largest one-off line between ordinary income and pre-tax income.
+        const specials = [
+          ...ofRole(pl, "extraordinary-income-item").map((line) => ({ line, side: "特別利益" })),
+          ...ofRole(pl, "extraordinary-loss-item").map((line) => ({ line, side: "特別損失" })),
+        ];
+        if (specials.length >= 3 && oneOf(pl, "ordinary-income") && oneOf(pl, "income-before-income-taxes")) {
+          const byAbs = [...specials].sort((a, b) => Math.abs(b.line.amount) - Math.abs(a.line.amount));
+          const top = byAbs[0]!;
+          if (byAbs[1] && Math.abs(top.line.amount) > Math.abs(byAbs[1].line.amount)) {
+            const optionSet = specials.filter((s) => byAbs.slice(0, 5).includes(s));
+            const section = pl.filter((l) =>
+              ["ordinary-income", "extraordinary-income-item", "extraordinary-income", "extraordinary-loss-item", "extraordinary-loss", "income-before-income-taxes"].includes(l.role),
+            );
+            detailSpecial.push({
+              ...sbase,
+              id: `detail-special-${c.id}`,
+              kind: "detail-special",
+              prompt: `${c.name}の損益計算書の抜粋です。経常利益の下に並ぶ特別利益・特別損失の中で、金額がいちばん大きい項目はどれでしょう？`,
+              table: excerpt(section, "連結損益計算書"),
+              options: optionSet.map((s) => ({ id: `sp-${specials.indexOf(s)}`, label: s.line.label })),
+              answer: `sp-${specials.indexOf(top)}`,
+              explain: `いちばん大きいのは${top.side}の「${top.line.label}」で ${formatYen(top.line.amount)} です。特別損益は、その期だけの出来事による利益と損失で、経常利益と税引前利益の間に置かれます。本業の実力を見る経常利益と分けるために、この段があります。`,
+              period: stmt.fiscalYear,
+            });
+          }
+        }
+
+        // まだ現金になっていない資産: receivables and inventories picked out of the current assets.
+        const cashLine = oneOf(bs, "cash-and-deposits");
+        const recvLines = ofRole(bs, "accounts-receivable");
+        const invLines = ofRole(bs, "inventories");
+        const totalCaLine = oneOf(bs, "total-current-assets");
+        if (cashLine && recvLines.length >= 1 && invLines.length >= 1 && totalCaLine) {
+          const join = (ls: StatementLine[]) => ls.map((l) => l.label).join("と");
+          const sumOf = (ls: StatementLine[]) => ls.reduce((a, l) => a + l.amount, 0);
+          const section = bs.filter((l) => ["cash-and-deposits", "accounts-receivable", "inventories", "other-current-assets", "total-current-assets"].includes(l.role));
+          detailWorkingCapital.push({
+            ...sbase,
+            id: `detail-working-capital-${c.id}`,
+            kind: "detail-working-capital",
+            prompt: `${c.name}の貸借対照表（流動資産）の抜粋です。売ったのにまだ受け取っていない代金と、買ったのにまだ売れていない在庫——「まだ現金になっていない資産」にあたる行の組はどれでしょう？`,
+            table: excerpt(section, "連結貸借対照表"),
+            options: [
+              { id: "both", label: `${join(recvLines)} と ${join(invLines)}` },
+              { id: "cash-mix", label: `${cashLine.label} と ${join(invLines)}` },
+              { id: "recv-only", label: join(recvLines) },
+              { id: "inv-only", label: join(invLines) },
+            ],
+            answer: "both",
+            explain: `「${join(recvLines)}」（${formatYen(sumOf(recvLines))}）は売った代金の未回収分、「${join(invLines)}」（${formatYen(sumOf(invLines))}）は売る前の在庫で、どちらもまだ現金ではありません。2つの合計は ${formatYen(sumOf(recvLines) + sumOf(invLines))} で、流動資産 ${formatYen(totalCaLine.amount)} の一部です（計算値：各行の印字値の合計）。資産の大きさだけでなく、中身が現金かどうかを見るのが読み方です。`,
+            period: stmt.fiscalYear,
+          });
+        }
+
+        // 借入の全部の行: borrowings and bonds, split across current and non-current by due date.
+        const BORROW_ROLES: StatementRole[] = ["short-term-borrowings", "current-portion-of-long-term-borrowings", "current-portion-of-bonds", "bonds", "long-term-borrowings"];
+        const borrowLines = bs.filter((l) => BORROW_ROLES.includes(l.role));
+        if (borrowLines.length >= 3) {
+          const n = borrowLines.length;
+          const counts = [...new Set([n - 1, n, n + 1, n + 2])].filter((x) => x >= 2).sort((a, b) => a - b);
+          const section = bs.filter((l) =>
+            ["accounts-payable", ...BORROW_ROLES, "other-current-liabilities", "total-current-liabilities", "other-non-current-liabilities", "total-non-current-liabilities"].includes(l.role),
+          );
+          const totalBorrow = borrowLines.reduce((a, l) => a + l.amount, 0);
+          detailBorrowings.push({
+            ...sbase,
+            id: `detail-borrowings-${c.id}`,
+            kind: "detail-borrowings",
+            prompt: `${c.name}の貸借対照表（負債の部）の抜粋です。借入と社債——返す時期で流動と固定に分かれて印字される行は、全部で何行あるでしょう？`,
+            table: excerpt(section, "連結貸借対照表"),
+            options: counts.map((x) => ({ id: `count-${x}`, label: `${x}行` })),
+            answer: `count-${n}`,
+            explain: `借入・社債の行は ${n}行あります：${borrowLines.map((l) => `「${l.label}」`).join("、")}。1年以内に返す分は流動負債に、それより先の分は固定負債に分かれて印字されるため、借入の全体は1行では読めません。合計は ${formatYen(totalBorrow)} です（計算値：各行の印字値の合計）。買掛金は仕入先への未払いで、借入とは別の行です。`,
+            period: stmt.fiscalYear,
+          });
+        }
+
+        // のれんと無形固定資産: the largest of the assets with no physical form.
+        const goodwillLine = oneOf(bs, "goodwill");
+        const intangibleItems = ofRole(bs, "intangible-asset-item");
+        const totalIntLine = oneOf(bs, "total-intangible-assets");
+        if (goodwillLine && intangibleItems.length >= 1 && totalIntLine) {
+          const rows = [goodwillLine, ...intangibleItems];
+          const byAmount = [...rows].sort((a, b) => b.amount - a.amount);
+          const top = byAmount[0]!;
+          if (byAmount[1] && top.amount > byAmount[1].amount) {
+            const section = bs.filter((l) => ["goodwill", "intangible-asset-item", "total-intangible-assets"].includes(l.role));
+            detailGoodwill.push({
+              ...sbase,
+              id: `detail-goodwill-${c.id}`,
+              kind: "detail-goodwill",
+              prompt: `${c.name}の貸借対照表（無形固定資産）の抜粋です。形のない資産の中で、金額がいちばん大きい行はどれでしょう？`,
+              table: excerpt(section, "連結貸借対照表"),
+              options: rows.map((l) => ({ id: `int-${rows.indexOf(l)}`, label: l.label })),
+              answer: `int-${rows.indexOf(top)}`,
+              explain: `いちばん大きいのは「${top.label}」で ${formatYen(top.amount)}、無形固定資産の合計 ${formatYen(totalIntLine.amount)} の大半です（計算値：行の印字値と合計の印字値の比較）。「${goodwillLine.label}」は、会社を買収したときに払った対価が、受け入れた純資産を超えた分——ブランドや顧客との関係など、単独では売れない価値への支払いです。形のない資産は、行の名前から中身を読むしかありません。`,
+              period: stmt.fiscalYear,
+            });
+          }
+        }
+
+        // 帳簿価額の組み立て: one equipment category's three printed lines — cost, accumulated
+        // depreciation, and the book value they leave. The question is the construction, not a value.
+        const triples: { gross: StatementLine; acc: StatementLine; net: StatementLine }[] = [];
+        for (const g of ofRole(bs, "ppe-gross")) {
+          const acc = ofRole(bs, "accumulated-depreciation").find((l) => l.label === `減価償却累計額、${g.label}`);
+          const net = ofRole(bs, "ppe-net").find((l) => l.label === `${g.label}（純額）`);
+          if (acc && net && Math.abs(g.amount + acc.amount - net.amount) <= 2_000_000) triples.push({ gross: g, acc, net });
+        }
+        if (triples.length > 0) {
+          const t = [...triples].sort((a, b) => b.net.amount - a.net.amount)[0]!;
+          detailDepreciation.push({
+            ...sbase,
+            id: `detail-depreciation-${c.id}`,
+            kind: "detail-depreciation",
+            prompt: `${c.name}の貸借対照表の抜粋です。最下段の「${t.net.label}」——いまの帳簿価額は、上の2行からどう読むものでしょう？`,
+            table: excerpt([t.gross, t.acc, t.net], "連結貸借対照表"),
+            options: [
+              { id: "minus", label: "取得価額から減価償却累計額を引いたもの" },
+              { id: "plus", label: "取得価額に減価償却累計額を足したもの" },
+              { id: "acc-only", label: "減価償却累計額そのもの" },
+              { id: "gross-only", label: "取得価額そのもの" },
+            ],
+            answer: "minus",
+            explain: `帳簿価額は、取得価額 ${formatYen(t.gross.amount)} から、使った分を積み上げた減価償却累計額 ${formatYen(Math.abs(t.acc.amount))} を引いた残りです（計算値：${formatYen(t.gross.amount)} − ${formatYen(Math.abs(t.acc.amount))} ≒ ${formatYen(t.net.amount)}。印字の丸めでわずかにずれることがあります）。設備は買ったときの値段ではなく、この残りの価額で資産に残ります。`,
+            period: stmt.fiscalYear,
+          });
+        }
+      }
+    }
+
     // 四半期の動き (JCE-049) — the direction of the newest cumulative quarter against the same period a
     // year earlier, asked predict-first and read with a clue, as with the annual directions.
     const view = quarterlyView(c);
@@ -539,5 +727,11 @@ export function buildLessonQuestions(companies: Company[]): LessonQuestion[] {
     ...relationNetAssets.slice(0, CAP),
     ...labelReading.slice(0, CAP),
     ...regionFind.slice(0, CAP),
+    ...detailSga.slice(0, CAP),
+    ...detailSpecial.slice(0, CAP),
+    ...detailWorkingCapital.slice(0, CAP),
+    ...detailBorrowings.slice(0, CAP),
+    ...detailGoodwill.slice(0, CAP),
+    ...detailDepreciation.slice(0, CAP),
   ];
 }

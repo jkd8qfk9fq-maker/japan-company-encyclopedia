@@ -278,6 +278,110 @@ export type FinancialRecord = Sourced & {
 };
 
 /**
+ * The structural role of one row of a full statement (JCE-092) — what the row IS in the statement's
+ * own architecture, as opposed to what the filer calls it. Labels differ by company and standard;
+ * roles are the closed set a lesson can ask about, so a question can name a stage or a section
+ * without depending on one filer's wording. A role may repeat within one statement (the SG&A note's
+ * items, the components of inventories, the categories of property, plant and equipment).
+ */
+export const STATEMENT_ROLES = [
+  // The income statement, in the filing's own order.
+  "revenue",
+  "cost-of-sales",
+  "gross-profit",
+  "other-operating-revenue-item",
+  "operating-gross-profit",
+  "selling-general-and-administrative-expenses",
+  "sga-item",
+  "operating-income",
+  "non-operating-income-item",
+  "non-operating-income",
+  "non-operating-expense-item",
+  "non-operating-expense",
+  "ordinary-income",
+  "extraordinary-income-item",
+  "extraordinary-income",
+  "extraordinary-loss-item",
+  "extraordinary-loss",
+  "income-before-income-taxes",
+  "income-taxes-item",
+  "income-taxes",
+  "net-income",
+  "non-controlling-interests",
+  "net-income-attributable-to-parent",
+  // The balance sheet: assets.
+  "cash-and-deposits",
+  "accounts-receivable",
+  "inventories",
+  "other-current-assets",
+  "total-current-assets",
+  "ppe-gross",
+  "accumulated-depreciation",
+  "ppe-net",
+  "total-property-plant-and-equipment",
+  "goodwill",
+  "intangible-asset-item",
+  "total-intangible-assets",
+  "total-investments-and-other-assets",
+  "total-non-current-assets",
+  "total-assets",
+  // The balance sheet: liabilities.
+  "accounts-payable",
+  "short-term-borrowings",
+  "current-portion-of-long-term-borrowings",
+  "current-portion-of-bonds",
+  "other-current-liabilities",
+  "total-current-liabilities",
+  "bonds",
+  "long-term-borrowings",
+  "other-non-current-liabilities",
+  "total-non-current-liabilities",
+  "total-liabilities",
+  // The balance sheet: net assets.
+  "share-capital",
+  "capital-surplus",
+  "retained-earnings",
+  "treasury-shares",
+  "total-shareholders-equity",
+  "accumulated-other-comprehensive-income",
+  "share-acquisition-rights",
+  "total-net-assets",
+] as const;
+
+export type StatementRole = (typeof STATEMENT_ROLES)[number];
+
+/** One row of a full statement, as the filing prints it (JCE-092). Amounts are whole yen, signed as filed. */
+export type StatementLine = {
+  role: StatementRole;
+  /** The filer's own wording for the row. A note item's label drops the note's suffix (「、販売費及び一般管理費」). */
+  label: string;
+  amount: number;
+};
+
+/**
+ * One consolidated fiscal year's two statements in full (JCE-092): the income statement and the
+ * balance sheet as ordered rows, read mechanically from the same 有価証券報告書 the entry's
+ * `financials` rest on, and cross-checked against them before being kept (the overlapping lines —
+ * revenue, the middle profit line, net income, total assets, net assets — must agree exactly).
+ *
+ * This exists for the learning layer's Phase B exercises, which practise reading the stages and
+ * sections the five-year summary omits. It is deliberately NOT a second summary: the rows are the
+ * statement itself, in the filing's order, with nothing computed and nothing carried forward.
+ * Only the rows the exercises read are kept; a row the filing prints that no exercise uses (an
+ * allowance, a lease obligation) is not transcribed, and a row that could not be cross-checked is
+ * left out rather than estimated (invariant 1).
+ */
+export type FinancialStatements = Sourced & {
+  /** Display label as the company uses it, e.g. "2026年3月期" — the same label as the matching `financials` record. */
+  fiscalYear: string;
+  /** YYYY-MM-DD, the last day of the fiscal year. Matches the `financials` record of the same year. */
+  periodEnd: string;
+  accountingStandard: AccountingStandard;
+  incomeStatement: StatementLine[];
+  balanceSheet: StatementLine[];
+};
+
+/**
  * What the company itself says (in its 有価証券報告書 — 経営方針、経営環境及び対処すべき課題等 — or its own materials), as of
  * a stated date. A disclosure, not an assessment.
  */
@@ -410,6 +514,8 @@ export type Company = {
   perspectives?: Perspectives;
 
   financials: FinancialRecord[];
+  /** Full statements for the learning layer's Phase B exercises (JCE-092), oldest first. Present only where a filing's XBRL has been read and cross-checked. */
+  financialStatements?: FinancialStatements[];
   /** The halves (JCE-045), oldest first. Absent until a 半期報告書 has been read for the company. */
   interimFinancials?: InterimRecord[];
   /** First and third quarters from 決算短信 via EDINET DB (JCE-049), oldest first. */
