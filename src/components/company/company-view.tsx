@@ -102,6 +102,7 @@ export async function CompanyView({ company }: { company: Company }) {
         company={company}
         headquarters={await headquartersRepository.get(company.id)}
         website={await websiteRepository.get(company.id)}
+        toc={sections}
       />
       <CompanyNotes notes={publicNotes(company)} />
       <SectionTabs sections={sections} containerId="company-sections" tabbed="mobile" />

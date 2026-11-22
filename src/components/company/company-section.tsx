@@ -28,7 +28,7 @@ export function CompanySection({
       data-tab-panel={id}
       aria-labelledby={`${id}-heading`}
       className={cn(
-        "scroll-mt-28 py-14 md:py-[4.5rem]",
+        "scroll-mt-28 py-10 md:py-[4.5rem]",
         tone === "paper" && "border-t border-border bg-paper",
         className,
       )}

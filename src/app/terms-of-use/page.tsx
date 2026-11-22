@@ -30,7 +30,7 @@ const SECTIONS: { title: string; body: React.ReactNode }[] = [
     title: "プレミアムプラン",
     body: (
       <p>
-        有料のプレミアムプランの料金、支払い、解約などの条件は、<a href={`${DIAGNOSIS_URL}tokushoho/`} className="link-ink">特定商取引法に基づく表記</a> と <a href={`${DIAGNOSIS_URL}plan/`} className="link-ink">プランのページ</a> に定めます。
+        有料のプレミアムプランの料金、支払い、解約などの条件は、<a href={`${DIAGNOSIS_URL}tokushoho/`} className="link-ink">特定商取引法に基づく表記</a> と <a href={`${DIAGNOSIS_URL}plan/`} className="link-ink">プランのページ</a> に定めます。学習サービス「分析訓練環境」有料βの条件は、<Link href="/tokushoho" className="link-ink">特定商取引法に基づく表記（有料β）</Link> に定めます。
       </p>
     ),
   },

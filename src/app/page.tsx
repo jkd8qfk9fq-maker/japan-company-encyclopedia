@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, FileText } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { INDUSTRY_IMAGES } from "@/assets/industries";
 import { SearchSuggest } from "@/components/search/search-suggest";
 import { AdSlot } from "@/components/ads/ad-slot";
@@ -19,6 +19,18 @@ import { INDUSTRY_IDS } from "@/types/company";
 /** 企業タイプ診断, a separate YUGENQ service (the DISCOVER feed links to it too). */
 const SHINDAN_URL = "https://shindan.kigyo-hyakka.com/";
 
+/** The free-trial survey form (YUGENQ account): the 無料の分析体験 entry point, also linked from Instagram. */
+const TRIAL_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSei-pGt3NT9g_eH_1ZfABzO418OrbfqSSYo2F5Z8H4HxNT7lQ/viewform";
+
+/** The doors into the services, shown right under the search box (JCE-087). */
+const SERVICE_ENTRIES: { eyebrow: string; title: string; text: string; href: string; external?: boolean }[] = [
+  { eyebrow: "学習", title: "有報の読み方入門", text: "実際の決算を使い、読む→予測する→検証する力を鍛える、3〜4分のマイクロレッスン。", href: "/learn" },
+  { eyebrow: "決算定期便", title: "今週の開示", text: "決算が出た企業を、検証済みの数字と読み方つきで届けます。", href: "/digest" },
+  { eyebrow: "分析", title: "5観点で読む企業分析", text: "規模・成長・収益性・財務の安定・外部環境との接続を、計算値と業界の中での位置で読みます。", href: "/analysis" },
+  { eyebrow: "企業", title: "企業を探す", text: "上場企業の解説と財務データ。何をしている会社かが、まずわかります。", href: "/companies" },
+  { eyebrow: "無料体験", title: "無料の分析体験", text: "1社を5ステップで読み解く体験のご案内。約3分のアンケートから申し込めます。", href: TRIAL_FORM_URL, external: true },
+];
+
 export const metadata = {
   title: { absolute: `${SITE_NAME}｜何をしている会社かがわかる` },
   description: SITE_DESCRIPTION,
@@ -35,11 +47,12 @@ function SectionTitle({ id, children }: { id: string; children: React.ReactNode 
 }
 
 /**
- * The front page, after the operator's design reference (2026-10-11): a hero with search and three
- * facts about the site, then three columns — where to start, companies with their numbers, and what
- * to read next. Everything shown is something the site has: the reference's market-cap filters,
- * fiscal-year filters, compare tool, logos, saved-companies link and market-wide chart are not built
- * and are left out rather than drawn as dead controls. No stock data, no rankings (CLAUDE.md invariant 4).
+ * The front page. Since JCE-087 the first screen carries no slogan: a compact search, the doors into the
+ * services (learn / digest / analysis / companies / the free trial), and the site's counts as one line —
+ * then DISCOVER, the diagnosis, the daily habits, and three columns of reading. Everything shown is
+ * something the site has: the reference's market-cap filters, fiscal-year filters, compare tool, logos,
+ * saved-companies link and market-wide chart are not built and are left out rather than drawn as dead
+ * controls. No stock data, no rankings (CLAUDE.md invariant 4).
  */
 export default async function HomePage() {
   const [companies, features, researchedIndustries, terms, regions] = await Promise.all([
@@ -79,21 +92,14 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* HERO */}
+      {/* HERO (JCE-087): no slogan. The first screen is the search box and the doors into the services,
+          so a reader reaches what they came for in one tap; the site's counts follow as one quiet line. */}
       <section aria-labelledby="home-hero" className="border-b border-border bg-paper">
-        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-8 px-5 py-8 md:px-8 md:py-10 lg:grid-cols-[21rem_minmax(0,1fr)_21rem] lg:items-center lg:gap-10">
-          <div>
-            <h1 id="home-hero" className="font-serif text-[1.75rem] leading-[1.5] font-semibold sm:text-[2rem] lg:text-[1.875rem]">
-              企業を知ることは、
-              <br />
-              日本経済を知ること。
-            </h1>
-            <p className="mt-4 max-w-sm text-sm leading-7 text-muted-foreground">
-              日本の上場企業を、ビジネス・財務・沿革の3つの軸から、一次情報に基づいてわかりやすく解説します。
-            </p>
-          </div>
-
-          <div>
+        <div className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-10">
+          <h1 id="home-hero" className="sr-only">
+            {SITE_NAME}
+          </h1>
+          <div className="mx-auto max-w-2xl">
             <SearchSuggest id="home-search" variant="hero" />
             {examples.length > 0 && (
               <div className="mt-4 flex flex-wrap items-center gap-2">
@@ -111,42 +117,54 @@ export default async function HomePage() {
             )}
           </div>
 
-          <dl className="grid grid-cols-2 gap-x-6 gap-y-5 border-t border-border pt-6 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-8">
-            <div>
-              <dt className="text-xs font-semibold text-muted-foreground">掲載企業</dt>
-              <dd className="mt-1 font-serif text-[2rem] leading-none font-semibold">
-                <span className="figures">{companies.length.toLocaleString("ja-JP")}</span>
-                <span className="ml-1 text-sm">社</span>
-              </dd>
-            </div>
-            <div>
-              <dt className="text-xs font-semibold text-muted-foreground">業界</dt>
-              <dd className="mt-1 font-serif text-[2rem] leading-none font-semibold">
-                <span className="figures">{industries.length}</span>
-                <span className="ml-1 text-sm">分類</span>
-              </dd>
-            </div>
-            <div>
-              <dt className="text-xs font-semibold text-muted-foreground">本社のある都道府県</dt>
-              <dd className="mt-1 font-serif text-[2rem] leading-none font-semibold">
-                <Link href="/prefectures" className="hover:underline hover:underline-offset-4">
-                  <span className="figures">{prefecturesWithCompanies.length}</span>
-                  <span className="ml-1 text-sm">都道府県</span>
-                </Link>
-              </dd>
-            </div>
-            <div>
-              <dt className="text-xs font-semibold text-muted-foreground">一次資料を重視</dt>
-              <dd className="mt-2 flex items-start gap-2 text-xs leading-5 text-muted-foreground">
-                <FileText className="mt-0.5 size-5 shrink-0 text-foreground" aria-hidden />
-                <span>
-                  有価証券報告書・EDINETなどの公開資料に基づく情報。出典にした資料
-                  <span className="figures font-semibold text-foreground">{sourceCount.toLocaleString("ja-JP")}</span>件、転記した決算
-                  <span className="figures font-semibold text-foreground">{yearCount.toLocaleString("ja-JP")}</span>期分
-                </span>
-              </dd>
-            </div>
-          </dl>
+          <nav aria-label="サービスへの入口" className="mt-8">
+            <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {SERVICE_ENTRIES.map((entry) => {
+                const card = (
+                  <>
+                    <span className="min-w-0 flex-1">
+                      <span className="block text-[0.6875rem] font-semibold tracking-[0.2em] text-seal">{entry.eyebrow}</span>
+                      <span className="mt-1 block font-serif text-lg leading-snug font-semibold">{entry.title}</span>
+                      <span className="mt-1 block text-xs leading-5 text-muted-foreground">{entry.text}</span>
+                    </span>
+                    <ArrowRight className="mt-1 size-5 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden />
+                  </>
+                );
+                const className = "group flex h-full items-start gap-4 rounded-md border border-border bg-card px-4 py-4 transition-colors hover:border-foreground";
+                return (
+                  <li key={entry.title}>
+                    {entry.external ? (
+                      <a href={entry.href} target="_blank" rel="noopener noreferrer" className={className}>
+                        {card}
+                        <span className="sr-only">（新しいタブで開きます）</span>
+                      </a>
+                    ) : (
+                      <Link href={entry.href} className={className}>
+                        {card}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
+            </ul>
+          </nav>
+
+          {/* D10 counts, compressed to one line (JCE-087): still counted from the entries themselves. */}
+          <p className="mt-8 border-t border-border pt-5 text-xs leading-6 text-muted-foreground">
+            掲載企業 <span className="figures font-semibold text-foreground">{companies.length.toLocaleString("ja-JP")}</span>社
+            <span aria-hidden className="mx-1.5">・</span>
+            業界 <span className="figures font-semibold text-foreground">{industries.length}</span>分類
+            <span aria-hidden className="mx-1.5">・</span>
+            本社のある都道府県{" "}
+            <Link href="/prefectures" className="hover:underline hover:underline-offset-4">
+              <span className="figures font-semibold text-foreground">{prefecturesWithCompanies.length}</span>都道府県
+            </Link>
+            <span aria-hidden className="mx-1.5">・</span>
+            出典にした資料 <span className="figures font-semibold text-foreground">{sourceCount.toLocaleString("ja-JP")}</span>件
+            <span aria-hidden className="mx-1.5">・</span>
+            転記した決算 <span className="figures font-semibold text-foreground">{yearCount.toLocaleString("ja-JP")}</span>期分
+            （有価証券報告書・EDINETなどの一次資料に基づく）
+          </p>
         </div>
       </section>
 
