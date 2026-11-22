@@ -271,6 +271,14 @@ const UNIT_THREE: { id: string; title: string; intro: string; lessons: LessonSpe
   ],
 };
 
+/**
+ * Every lesson id in the course, derived from the three unit specs above — the single source the static
+ * export's generateStaticParams reads, so the pre-rendered lesson pages can never drift from the course
+ * the specs define (a hand-kept list in the page is what left /learn/lesson/[lesson-id] out of the export
+ * and failed the JCE-088 deploy until this was added).
+ */
+export const MICRO_LESSON_IDS: string[] = [UNIT_ONE, UNIT_TWO, UNIT_THREE].flatMap((unit) => unit.lessons.map((lesson) => lesson.id));
+
 const fromPool = (q: QuizQuestion): MicroQuestion => ({
   id: q.id,
   kind: q.kind,
