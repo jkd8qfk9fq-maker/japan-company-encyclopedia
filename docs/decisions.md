@@ -1515,3 +1515,21 @@ spend the trust the verification exists to build).
 **実装したこと**: src/lib/engagement-data.ts（QuizQuestion への3フィールド追加、sourceTitleOf・periodsOf 補助関数、5種別への付与、describe の事業構造由来の出典特定と解説文の改稿）、src/lib/micro-lessons.ts（fromPool の受け渡し、MicroQuestion の3フィールド必須化）、tests/learn-course.test.ts（JCE-085 の単体・実データテスト、既存の segment・quarterly フィクスチャへの出典追加）、tests/micro-lessons.test.ts（束ね後の全問引用テスト）。/quiz.json（12ステップコースと日替わりクイズの共有プール）も同じ修正の恩恵を受け、出力に引用が付くようになった。表示側（micro-lessons.tsx の「対象期間」「出典」表示）は既にフィールド対応済みで変更なし。
 
 **やらないこと**: 会社予想・設備投資・大株主データの新規収集、describe 問題の出典を説明文の執筆履歴に遡ること（説明文に sourceIds が存在しないため、事業構造由来の帰属を約束として記録する——説明文を別の文書から書き直す場合は帰属も事業構造とともに移すこと）、総合スコア・格付け、投資助言、株価系指標。
+
+## JCE-086 — 2026-11-22: 決算定期便のメール配信の下準備（送信はしない）
+
+**背景**: ハイブリッド事業の有料βでは「決算定期便」をメールで届けることが前提になっている（経営稟議の導線：無料体験 → メール等の直接接点 → 有料）。/digest ページは本番稼働中だが、メール配信の仕組みは無かった。今回は送信は行わず、下書きの生成までを作る（宛先リストはまだ存在しないため）。
+
+**設計判断**:
+1. **文面は /digest と同じ生成元から作る**。開示データは公開中の /updates.json（JCE-052 の buildUpdates の出力、JCE-071 の検証済み数字つき要約）を読み、週の切り分けと文面化だけをメール側で行う。buildUpdates 自体の再実装はしない。
+2. **文面テンプレートは `src/lib/digest-email.ts`（ランタイム import なし）**。週の算術は `src/lib/jst-dates.ts`、読み方のラベルは `src/lib/digest.ts` の `readingFor` と同じ内容を写した。写しにしたのは、配信スクリプトが素の Node でこのモジュールを直接 import するため（`@/` エイリアスや副作用のあるモジュールには依存できない。Node 22.18 以降の型除去で読む）。写しのズレは `tests/digest-email.test.ts` のパリティテスト（メールの週が /digest の週と一致すること）で検出する。
+3. **メールの構成**。件名は「今週の開示 N件（月曜〜日曜）」。本文は (a) 今週の決算短信を最大3件——「先に予測して、答え合わせ」の訓練に使えるものとして、種別だけの規則で選ぶ（順位付け・推奨ではない）(b) 今週の開示一覧を最大12件、残りは /digest への導線 (c) 自分の予測の照合（/digest）と訓練の記録（/learn#training-history）への導線 (d) 読み方レッスン（/learn）への導線 (e) 数字についての注記と配信停止の案内。先週の件数は1行だけ記す。
+4. **線引きはページと同じ**。数字は開示が載せた売上高と純利益だけで、対象期間を必ず併記する。訂正イベントには数字を付けない。計算値はメールに含めない。株価・PER/PBR/ROE・推奨・スコア・格付けは文面に入らない（禁止語のテストがある）。
+5. **配信スクリプト `scripts/digest/send-weekly-digest.mjs` は下書きだけを作る**。宛先 CSV（`scripts/digest/recipients.csv`、見本は `recipients.example.csv`）と文面から `scripts/digest/drafts/<日付>-digest-draft.md` を書く。送信処理は実装しない（将来の送信は Gmail コネクタ経由を想定し、スクリプト内に明記）。宛先が空の場合は下書きを書いたうえで「送信対象なし」と表示して終了する（exit 0）。宛先の形式誤り（メールアドレスの形が正しくない行）は推測で直さず終了する。重複アドレスは1通にまとめる。
+6. **宛先リストと下書きは git 管理外**（.gitignore に追加）。実アドレスを公開 repo に入れない。運用手順は `docs/digest-email-ops.md` に置いた（配信タイミングは毎週月曜 07:30 JST を推奨としつつ最終決定は未定、文面の確認手順、退会は当面返信による手動対応）。
+
+**実装したこと**: src/lib/digest-email.ts（文面テンプレート）、scripts/digest/send-weekly-digest.mjs（下書き生成スクリプト）、scripts/digest/recipients.example.csv（宛先リストの見本）、docs/digest-email-ops.md（運用手順書）、tests/digest-email.test.ts（文面・週のパリティ・禁止語・スクリプトの動作確認）、.gitignore（recipients.csv と drafts/ を管理外に）。
+
+**動作確認**: 実データ（公開中の /updates.json、2026-11-22 週）で実行し、下書きが生成されることを確認した。今週72件・先週1,206件で、/digest 本番確認（JCE-082）の件数と一致した。一覧は12件までで「ほか 60件」と表示された。宛先が空のため「送信対象なし」で終了し、送信は行っていない。
+
+**やらないこと**: 実際のメール送信（Gmail コネクタ経由の送信も今回は行わない）、送信元アドレス・配信頻度の最終決定、退会リンクの実装、送信処理の自動化、JCE-069 のメール通知システムとの統合。
