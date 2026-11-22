@@ -3,7 +3,7 @@ import { buildDigest } from "../src/lib/digest";
 import type { QuizQuestion, UpdatesData } from "../src/lib/engagement-data";
 import { weekEnd, weekStart } from "../src/lib/jst-dates";
 import { buildLessonQuestions, type LessonQuestion } from "../src/lib/lesson-questions";
-import { buildMicroCourse } from "../src/lib/micro-lessons";
+import { buildMicroCourse, MICRO_LESSON_IDS } from "../src/lib/micro-lessons";
 import { dueReviewIds, scheduleReview } from "../src/lib/review-queue";
 import type { Company, FinancialRecord, IndustryId, InterimRecord } from "../src/types/company";
 
@@ -329,6 +329,13 @@ describe("buildMicroCourse", () => {
     expect(buildMicroCourse(pool, lessonPool)).toEqual(units);
     const thin = buildMicroCourse([], []);
     expect(thin[0]!.lessons.every((l) => l.questions.length === 0)).toBe(true);
+  });
+
+  it("derives MICRO_LESSON_IDS from the same specs the course binds — all fifteen lessons, in course order", () => {
+    // The static export pre-renders /learn/lesson/[lesson-id] from this list (generateStaticParams). If it
+    // drifted from the specs, a lesson would silently vanish from the export — the JCE-088 deploy failure.
+    expect(MICRO_LESSON_IDS).toHaveLength(15);
+    expect(MICRO_LESSON_IDS).toEqual(units.flatMap((u) => u.lessons.map((l) => l.id)));
   });
 });
 

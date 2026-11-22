@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { LessonPlayer } from "@/components/engagement/lesson-player";
 import { LEARN } from "@/lib/learning-ui";
+import { MICRO_LESSON_IDS } from "@/lib/micro-lessons";
+
+export function generateStaticParams() {
+  return MICRO_LESSON_IDS.map((id) => ({ "lesson-id": id }));
+}
 
 export const metadata: Metadata = {
   title: "レッスン",
