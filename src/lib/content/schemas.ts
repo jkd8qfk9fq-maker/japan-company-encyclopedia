@@ -81,6 +81,11 @@ export const businessSchema: z.ZodType<BusinessShape> = z.lazy(() =>
 export const companySchema = z.strictObject({
   id: kebab,
   code: z.string().regex(/^[0-9][0-9A-Z]{3}$/, "証券コードは4桁です"),
+  // JCE-093: the filer's stable identities, copied from the official EDINET code list by
+  // scripts/pipeline/assign-identity-codes.mjs. Optional because a filer the list does not
+  // carry as listed (delisted, or not yet in the list) has neither — never inferred.
+  edinetCode: z.string().regex(/^E[0-9]{5}$/, "EDINETコードは E と5桁の数字です").optional(),
+  corporateNumber: z.string().regex(/^[0-9]{13}$/, "法人番号は13桁の数字です").optional(),
   name: text,
   officialName: text,
   nameEn: text.optional(),
