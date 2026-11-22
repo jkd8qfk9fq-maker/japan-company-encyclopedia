@@ -47,6 +47,13 @@ const KIND_LABELS: Record<string, string> = {
   "relation-net-assets": "純資産と利益の関係を読む",
   "label-reading": "項目の名前から物差しを読む",
   "region-find": "地域別の表を読む",
+  // The JCE-092 detail readings: the real breakdowns of the real statements.
+  "detail-sga": "販管費の内訳を読む",
+  "detail-special": "特別損益の内訳を読む",
+  "detail-working-capital": "まだ現金になっていない資産を読む",
+  "detail-borrowings": "借入の行を全部探す",
+  "detail-goodwill": "無形固定資産の内訳を読む",
+  "detail-depreciation": "帳簿価額の組み立てを読む",
 };
 
 const jstDayOf = (iso: string) => new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Tokyo" }).format(new Date(iso));

@@ -278,6 +278,153 @@ describe("buildLessonQuestions — the JCE-090 readings", () => {
   });
 });
 
+describe("buildLessonQuestions — the JCE-092 detail readings (Phase B)", () => {
+  // A company whose entry carries the full statements, transcribed from its filing: the stage
+  // arithmetic closes (100 − 60 = 40, 40 − 25 = 15, 15.5 + 2 − 6.5 = 11, 11 − 2 = 9) and the
+  // five-year record agrees with the same rows, as the integrity rules demand of the real data.
+  const line = (role: string, label: string, amount: number) => ({ role, label, amount });
+  const stmtCompany = (id: string, sga: [string, number][] = [["給料及び手当", 12_000_000_000], ["広告宣伝費", 5_000_000_000], ["研究開発費", 3_000_000_000]]): Company =>
+    ({
+      ...company(id, [
+        prev({ profit: 12_000_000_000, netIncome: 4_000_000_000 }),
+        rec({ profit: 15_500_000_000, netIncome: 9_000_000_000 }),
+      ]),
+      financialStatements: [
+        {
+          fiscalYear: "2026年3月期",
+          periodEnd: "2026-03-31",
+          accountingStandard: "jgaap",
+          sourceIds: ["yuho-2026"],
+          incomeStatement: [
+            line("revenue", "売上高", 100_000_000_000),
+            line("cost-of-sales", "売上原価", 60_000_000_000),
+            line("gross-profit", "売上総利益", 40_000_000_000),
+            line("selling-general-and-administrative-expenses", "販売費及び一般管理費", 25_000_000_000),
+            ...sga.map(([label, amount]) => line("sga-item", label, amount)),
+            line("operating-income", "営業利益", 15_000_000_000),
+            line("non-operating-income", "営業外収益", 1_000_000_000),
+            line("non-operating-expense", "営業外費用", 500_000_000),
+            line("ordinary-income", "経常利益", 15_500_000_000),
+            line("extraordinary-income-item", "固定資産売却益", 2_000_000_000),
+            line("extraordinary-income", "特別利益", 2_000_000_000),
+            line("extraordinary-loss-item", "減損損失", 6_000_000_000),
+            line("extraordinary-loss-item", "災害損失", 500_000_000),
+            line("extraordinary-loss", "特別損失", 6_500_000_000),
+            line("income-before-income-taxes", "税引前当期純利益", 11_000_000_000),
+            line("income-taxes", "法人税等", 2_000_000_000),
+            line("net-income", "当期純利益", 9_000_000_000),
+          ],
+          balanceSheet: [
+            line("cash-and-deposits", "現金及び預金", 30_000_000_000),
+            line("accounts-receivable", "受取手形及び売掛金", 25_000_000_000),
+            line("inventories", "商品及び製品", 10_000_000_000),
+            line("inventories", "仕掛品", 4_000_000_000),
+            line("other-current-assets", "その他、流動資産", 1_000_000_000),
+            line("total-current-assets", "流動資産合計", 70_000_000_000),
+            line("ppe-gross", "建物及び構築物", 50_000_000_000),
+            line("accumulated-depreciation", "減価償却累計額、建物及び構築物", -30_000_000_000),
+            line("ppe-net", "建物及び構築物（純額）", 20_000_000_000),
+            line("total-property-plant-and-equipment", "有形固定資産合計", 20_000_000_000),
+            line("goodwill", "のれん", 8_000_000_000),
+            line("intangible-asset-item", "ソフトウエア", 3_000_000_000),
+            line("total-intangible-assets", "無形固定資産合計", 11_000_000_000),
+            line("total-investments-and-other-assets", "投資その他の資産合計", 99_000_000_000),
+            line("total-non-current-assets", "固定資産合計", 130_000_000_000),
+            line("total-assets", "資産合計", 200_000_000_000),
+            line("accounts-payable", "買掛金", 15_000_000_000),
+            line("short-term-borrowings", "短期借入金", 10_000_000_000),
+            line("current-portion-of-long-term-borrowings", "１年内返済予定の長期借入金", 5_000_000_000),
+            line("other-current-liabilities", "その他、流動負債", 10_000_000_000),
+            line("total-current-liabilities", "流動負債合計", 40_000_000_000),
+            line("bonds", "社債", 20_000_000_000),
+            line("long-term-borrowings", "長期借入金", 60_000_000_000),
+            line("total-non-current-liabilities", "固定負債合計", 80_000_000_000),
+            line("total-liabilities", "負債合計", 120_000_000_000),
+            line("total-shareholders-equity", "株主資本合計", 78_000_000_000),
+            line("total-net-assets", "純資産合計", 80_000_000_000),
+          ],
+        },
+      ],
+    }) as unknown as Company;
+
+  const qs = buildLessonQuestions([stmtCompany("stmt")]);
+  const ofKind = (kind: string) => qs.find((x) => x.kind === kind);
+
+  it("asks for the largest line of the SG&A breakdown, on the real P/L excerpt", () => {
+    const q = ofKind("detail-sga");
+    expect(q).toBeDefined();
+    expect(q?.options.find((o) => o.id === q?.answer)?.label).toBe("給料及び手当");
+    expect(q?.table?.rows.some((r) => r[0] === "販売費及び一般管理費")).toBe(true);
+    expect(q?.explain).toContain("計算値");
+  });
+
+  it("asks for the largest special item, between ordinary and pre-tax income", () => {
+    const q = ofKind("detail-special");
+    expect(q?.options.find((o) => o.id === q?.answer)?.label).toBe("減損損失");
+    expect(q?.explain).toContain("特別損失");
+  });
+
+  it("asks which rows are not yet cash, among the current assets", () => {
+    const q = ofKind("detail-working-capital");
+    expect(q?.answer).toBe("both");
+    expect(q?.options.find((o) => o.id === "both")?.label).toContain("受取手形及び売掛金");
+    expect(q?.options.find((o) => o.id === "both")?.label).toContain("仕掛品");
+  });
+
+  it("asks how many rows the borrowings are split across, current and non-current together", () => {
+    const q = ofKind("detail-borrowings");
+    expect(q?.options.find((o) => o.id === q?.answer)?.label).toBe("4行");
+    expect(q?.explain).toContain("計算値");
+  });
+
+  it("asks for the largest of the intangible assets, goodwill among them", () => {
+    const q = ofKind("detail-goodwill");
+    expect(q?.options.find((o) => o.id === q?.answer)?.label).toBe("のれん");
+  });
+
+  it("asks how a book value is built from the three printed lines — the construction, not a value", () => {
+    const q = ofKind("detail-depreciation");
+    expect(q?.answer).toBe("minus");
+    expect(q?.table?.rows.map((r) => r[0])).toEqual(["建物及び構築物", "減価償却累計額、建物及び構築物", "建物及び構築物（純額）"]);
+    expect(q?.explain).toContain("計算値");
+  });
+
+  it("keeps the statement's own citation and period on every detail question", () => {
+    for (const kind of ["detail-sga", "detail-special", "detail-working-capital", "detail-borrowings", "detail-goodwill", "detail-depreciation"]) {
+      const q = ofKind(kind);
+      expect(q?.sourceIds).toEqual(["yuho-2026"]);
+      expect(q?.sourceTitle).toBe("有価証券報告書－第1期");
+      expect(q?.period).toBe("2026年3月期");
+      expect(q?.table).toBeDefined();
+    }
+  });
+
+  it("asks nothing of a company whose entry carries no statements", () => {
+    const plain = buildLessonQuestions([company("plain", [prev(), rec()])]);
+    expect(plain.some((x) => x.kind.startsWith("detail-"))).toBe(false);
+  });
+
+  it("asks no largest-line question when the top two of a breakdown are level", () => {
+    const tied = buildLessonQuestions([stmtCompany("tied", [["給料及び手当", 12_000_000_000], ["広告宣伝費", 12_000_000_000], ["研究開発費", 3_000_000_000]])]);
+    expect(tied.some((x) => x.kind === "detail-sga")).toBe(false);
+  });
+
+  it("binds each detail reading into the lesson the design assigns it to", () => {
+    const units = buildMicroCourse([], buildLessonQuestions([stmtCompany("bind")]));
+    const lesson = (id: string) => units.flatMap((u) => u.lessons).find((l) => l.id === id);
+    expect(lesson("gross-vs-operating")?.questions.some((q) => q.kind === "detail-sga")).toBe(true);
+    expect(lesson("special-items-gap")?.questions.some((q) => q.kind === "detail-special")).toBe(true);
+    expect(lesson("assets-not-cash")?.questions.some((q) => q.kind === "detail-working-capital")).toBe(true);
+    expect(lesson("find-all-borrowings")?.questions.some((q) => q.kind === "detail-borrowings")).toBe(true);
+    expect(lesson("invisible-assets")?.questions.some((q) => q.kind === "detail-goodwill")).toBe(true);
+    expect(lesson("book-value")?.questions.some((q) => q.kind === "detail-depreciation")).toBe(true);
+    // The three-question lessons size their minutes to the enlarged form.
+    for (const id of ["gross-vs-operating", "special-items-gap", "assets-not-cash", "find-all-borrowings", "invisible-assets", "book-value"]) {
+      expect(lesson(id)?.minutes).toBe(7);
+    }
+  });
+});
+
 const poolQ = (id: string, kind: QuizQuestion["kind"], industry: string | null = "retail"): QuizQuestion => ({
   id,
   kind,
@@ -298,7 +445,18 @@ const PREDICT_KINDS: LessonQuestion["kind"][] = ["growth-revenue", "growth-profi
 
 /** The kinds whose generated questions carry an excerpt table (JCE-090); the fake pool honours that too,
  *  so the JCE-091 walkthrough has a table to lift. */
-const TABLE_KINDS: LessonQuestion["kind"][] = ["find-row", "relation-stages", "relation-net-assets", "region-find"];
+const TABLE_KINDS: LessonQuestion["kind"][] = [
+  "find-row",
+  "relation-stages",
+  "relation-net-assets",
+  "region-find",
+  "detail-sga",
+  "detail-special",
+  "detail-working-capital",
+  "detail-borrowings",
+  "detail-goodwill",
+  "detail-depreciation",
+];
 
 const lessonQ = (id: string, kind: LessonQuestion["kind"]): LessonQuestion => ({
   id,

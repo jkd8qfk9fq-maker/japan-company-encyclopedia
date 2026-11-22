@@ -176,11 +176,47 @@ export function checkCompany(company: Company, context: ContentContext): string[
     if (new Set(r.items.map((i) => i.region)).size !== r.items.length) e.push(`${where}: 同じ地域が重複しています`);
     e.push(...yenErrors(r.items.map((i) => i.amount), where), ...citationErrors(r.sourceIds, src, where), ...noWikipedia(r.sourceIds, where));
   }
+  // JCE-092. The full statements are transcribed from the same filing as the five-year record, so
+  // the rows that name the same figure must agree with that record exactly. This is what keeps a
+  // detail row from drifting away from the verified figures the rest of the site shows, and it is
+  // also the standing re-check of the extraction: any later edit to either side breaks it loudly.
+  if (company.financialStatements) {
+    const stmtYears = company.financialStatements.map((s) => s.fiscalYear);
+    if (new Set(stmtYears).size !== stmtYears.length) e.push("財務諸表: 同じ年度が重複しています");
+    for (const s of company.financialStatements) {
+      const where = `財務諸表「${s.fiscalYear}」`;
+      const rec = company.financials.find((f) => f.fiscalYear === s.fiscalYear);
+      if (!rec) {
+        e.push(`${where}: 財務にない年度です`);
+        continue;
+      }
+      if (s.periodEnd !== rec.periodEnd) e.push(`${where}: 決算日が財務と一致しません`);
+      e.push(
+        ...yenErrors([...s.incomeStatement, ...s.balanceSheet].map((l) => l.amount), where),
+        ...citationErrors(s.sourceIds, src, where),
+        ...noWikipedia(s.sourceIds, where),
+      );
+      const one = (lines: typeof s.incomeStatement, role: string) => lines.find((l) => l.role === role)?.amount ?? null;
+      const pairs: [string, number | null, number | null][] = [
+        ["売上", one(s.incomeStatement, "revenue"), rec.revenue],
+        ["純利益", one(s.incomeStatement, rec.netIncomeLabel.includes("親会社") ? "net-income-attributable-to-parent" : "net-income"), rec.netIncome],
+        ["総資産", one(s.balanceSheet, "total-assets"), rec.totalAssets],
+        ["純資産", one(s.balanceSheet, "total-net-assets"), rec.netAssets],
+      ];
+      if (rec.profitLabel === "経常利益") pairs.push(["経常利益", one(s.incomeStatement, "ordinary-income"), rec.profit]);
+      else if (rec.profitLabel?.includes("税引前")) pairs.push(["税引前利益", one(s.incomeStatement, "income-before-income-taxes"), rec.profit]);
+      for (const [label, detail, summary] of pairs) {
+        if (detail === null) e.push(`${where}: ${label}の行がありません`);
+        else if (summary !== null && detail !== summary) e.push(`${where}: ${label}が財務の値と一致しません`);
+      }
+    }
+  }
   // A label is the row's own name. Header text — 回次, 決算年月, 和暦の年月, the block title 経営指標等 — taken along with it
   // (2026-11-19: five entries) is not part of any row heading a filing prints.
   const rows: { fiscalYear: string; labels: (string | null)[] }[] = [
     ...company.financials.map((r) => ({ fiscalYear: r.fiscalYear, labels: [r.revenueLabel, r.profitLabel, r.netIncomeLabel, r.totalAssetsLabel, r.netAssetsLabel] })),
     ...(company.interimFinancials ?? []).map((r) => ({ fiscalYear: r.fiscalYear, labels: [r.revenueLabel, r.netIncomeLabel] })),
+    ...(company.financialStatements ?? []).map((s) => ({ fiscalYear: s.fiscalYear, labels: [...s.incomeStatement, ...s.balanceSheet].map((l) => l.label) })),
   ];
   for (const r of rows) {
     for (const label of r.labels) {

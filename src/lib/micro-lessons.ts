@@ -124,6 +124,7 @@ const UNIT_ONE: { id: string; title: string; intro: string; lessons: LessonSpec[
       slots: [
         { from: "authored", questionId: "diff-gross-operating" },
         { from: "lesson", kind: "relation-stages", count: 1 },
+        { from: "lesson", kind: "detail-sga", count: 1 },
       ],
     },
     {
@@ -184,6 +185,7 @@ const UNIT_TWO: { id: string; title: string; intro: string; lessons: LessonSpec[
       slots: [
         { from: "authored", questionId: "diff-ordinary-net" },
         { from: "lesson", kind: "relation-stages", count: 1 },
+        { from: "lesson", kind: "detail-special", count: 1 },
       ],
     },
     {
@@ -343,6 +345,7 @@ const UNIT_FOUR: { id: string; title: string; intro: string; lessons: LessonSpec
       slots: [
         { from: "authored", questionId: "concept-ar-inventory" },
         { from: "authored", questionId: "concept-black-ink" },
+        { from: "lesson", kind: "detail-working-capital", count: 1 },
       ],
     },
     {
@@ -356,6 +359,7 @@ const UNIT_FOUR: { id: string; title: string; intro: string; lessons: LessonSpec
       slots: [
         { from: "authored", questionId: "procedure-borrowings" },
         { from: "authored", questionId: "classify-debt-split" },
+        { from: "lesson", kind: "detail-borrowings", count: 1 },
       ],
     },
   ],
@@ -416,6 +420,7 @@ const UNIT_FIVE: { id: string; title: string; intro: string; lessons: LessonSpec
       slots: [
         { from: "authored", questionId: "classify-goodwill" },
         { from: "authored", questionId: "concept-goodwill" },
+        { from: "lesson", kind: "detail-goodwill", count: 1 },
       ],
     },
     {
@@ -423,12 +428,13 @@ const UNIT_FIVE: { id: string; title: string; intro: string; lessons: LessonSpec
       title: "資産の金額は、買った値段ではない",
       minutes: 3,
       body: [
-        "建物や機械は、買った金額から減価償却の累計を引いた「帳簿価額」で貸借対照表に載ります。表に並ぶのは純額で、買った金額そのものは注記や附属明細表の側にあります。",
+        "建物や機械は、買った金額から減価償却の累計を引いた「帳簿価額」で貸借対照表に載ります。表に並ぶ金額の中心は純額で、買った金額と累計額は、会社によって表の中に3行で並ぶことも、注記や附属明細表の側にあることもあります。",
         "帳簿価額の小さい古い工場は「価値が低い」のではなく、長く使ってきた姿です。減価償却費は毎期、売上原価や販管費の中の費用として損益計算書にも現れます。資産が減っていく動きと費用は、同じことの両面です。",
       ],
       slots: [
         { from: "authored", questionId: "concept-depreciation" },
         { from: "authored", questionId: "concept-depreciation-pl" },
+        { from: "lesson", kind: "detail-depreciation", count: 1 },
       ],
     },
   ],
