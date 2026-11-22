@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLocalStore } from "@/hooks/use-local-store";
 import { courseFraction, LEARN, lessonDone, nextLessonId, POINTS, pointsBreakdown, unitFraction, unitStyle, type UnitStyle } from "@/lib/learning-ui";
+import type { QuestionTable } from "@/lib/lesson-questions";
 import type { MicroLesson, MicroQuestion, MicroUnit } from "@/lib/micro-lessons";
 import { verifyPrediction, type PredictionData } from "@/lib/predictions";
 import { dueReviewIds } from "@/lib/review-queue";
@@ -14,23 +15,82 @@ import { LearnButton, ProgressRing } from "./learn-ui";
 
 /**
  * The lesson player (JCE-088): one step on one screen — read, predict, immediate feedback — instead of the
- * old page where a whole lesson and its questions were read by scrolling. The top bar fills by step; the
+ * old page where a whole lesson and its questions were read by scrolling. Since JCE-091 the read steps
+ * are the lesson's learn block: the stumbling point, the concept and its diagram, and a guided reading
+ * of the real excerpt, and only then the questions. The top bar fills by step; the
  * answer check is a fixed button at the foot; the verdict arrives as a sheet over the foot with the reason
  * and the filing's figures again, because the explanation is the lesson. Progress is the same store the
  * path reads (JCE-082), so leaving halfway costs nothing: the answered questions stay answered, and the
  * node on the path shows the lesson in progress.
  */
 
-type Step = { kind: "read"; text: string } | { kind: "question"; q: MicroQuestion };
+/**
+ * A read step of the learn block (JCE-091): the stumbling point first, then the concept, its diagram of
+ * the statement's form, and the guided reading of the real thing — its excerpt table and citation ride
+ * along when the lesson has one. The questions come only after all of it.
+ */
+type ReadStep = {
+  kind: "read";
+  part: "stumble" | "concept" | "diagram" | "walkthrough";
+  text?: string;
+  table?: QuestionTable;
+  cite?: { period: string; sourceTitle: string };
+};
+type Step = ReadStep | { kind: "question"; q: MicroQuestion };
+
+const READ_HEADINGS: Record<ReadStep["part"], string> = {
+  stumble: "つまずく場所",
+  concept: "読む",
+  diagram: "表の形",
+  walkthrough: "実物で、一緒に読む",
+};
 
 /** The predict-first kinds (JCE-082): the step is headed 予測して、確かめる only for these; the structure
  *  questions of JCE-090 practise a reading, and the ordering questions an arrangement. */
 const PREDICT_KINDS = new Set(["growth-revenue", "growth-profit", "growth-employees", "quarterly-direction"]);
 
 const lessonSteps = (lesson: MicroLesson): Step[] => [
-  ...lesson.body.map((text): Step => ({ kind: "read", text })),
+  ...(lesson.stumble ? [{ kind: "read", part: "stumble", text: lesson.stumble } as Step] : []),
+  ...lesson.body.map((text): Step => ({ kind: "read", part: "concept", text })),
+  ...(lesson.diagram ? [{ kind: "read", part: "diagram", table: lesson.diagram } as Step] : []),
+  ...(lesson.guide ?? []).map(
+    (text, i): Step => ({
+      kind: "read",
+      part: "walkthrough",
+      text,
+      ...(i === 0 && lesson.guideTable ? { table: lesson.guideTable, cite: lesson.guideCite } : {}),
+    }),
+  ),
   ...lesson.questions.map((q): Step => ({ kind: "question", q })),
 ];
+
+/** An excerpt of a table — a company's own, printed as filed, or an authored diagram of the form.
+ *  `figures` right-aligns the amount columns, as the question steps have always shown them. */
+function ExcerptTable({ table, figures = false }: { table: QuestionTable; figures?: boolean }) {
+  return (
+    <figure className="overflow-x-auto rounded-2xl border-2" style={{ borderColor: LEARN.line }}>
+      <table className="w-full border-collapse text-sm">
+        <thead>
+          <tr style={{ backgroundColor: LEARN.track }}>
+            {table.columns.map((c) => (
+              <th key={c} className="px-3 py-2 text-left font-bold" style={{ color: LEARN.navy }}>{c}</th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {table.rows.map((row, ri) => (
+            <tr key={ri} className="border-t" style={{ borderColor: LEARN.line }}>
+              {row.map((cell, ci) => (
+                <td key={ci} className={`px-3 py-2 ${ci === 0 ? "font-medium" : figures ? "figures text-right" : ""}`} style={{ color: LEARN.ink }}>{cell}</td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {table.caption && <figcaption className="px-3 py-2 text-xs leading-5" style={{ color: LEARN.muted }}>{table.caption}</figcaption>}
+    </figure>
+  );
+}
 
 function PlayerRun({
   steps,
@@ -104,8 +164,19 @@ function PlayerRun({
       <div className="flex-1 py-8">
         {step.kind === "read" && (
           <div>
-            <p className="text-xs font-bold tracking-[0.14em]" style={{ color: accent.main }}>読む</p>
-            <p className="mt-3 text-lg leading-9" style={{ color: LEARN.ink }}>{step.text}</p>
+            <p className="text-xs font-bold tracking-[0.14em]" style={{ color: accent.main }}>{READ_HEADINGS[step.part]}</p>
+            {step.text && <p className="mt-3 text-lg leading-9" style={{ color: LEARN.ink }}>{step.text}</p>}
+            {step.table && (
+              <div className="mt-4">
+                <ExcerptTable table={step.table} figures={Boolean(step.cite)} />
+                {step.cite && (
+                  <p className="figures mt-2 text-xs leading-5" style={{ color: LEARN.muted }}>
+                    {step.cite.period && <>対象期間：{step.cite.period}　</>}
+                    {step.cite.sourceTitle && <>出典：{step.cite.sourceTitle}</>}
+                  </p>
+                )}
+              </div>
+            )}
           </div>
         )}
         {q && (
@@ -117,27 +188,9 @@ function PlayerRun({
               <p className="mt-3 rounded-2xl px-4 py-3 text-sm leading-6" style={{ backgroundColor: accent.soft, color: LEARN.ink }}>「{q.clue}」</p>
             )}
             {q.table && (
-              <figure className="mt-4 overflow-x-auto rounded-2xl border-2" style={{ borderColor: LEARN.line }}>
-                <table className="w-full border-collapse text-sm">
-                  <thead>
-                    <tr style={{ backgroundColor: LEARN.track }}>
-                      {q.table.columns.map((c) => (
-                        <th key={c} className="px-3 py-2 text-left font-bold" style={{ color: LEARN.navy }}>{c}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {q.table.rows.map((row, ri) => (
-                      <tr key={ri} className="border-t" style={{ borderColor: LEARN.line }}>
-                        {row.map((cell, ci) => (
-                          <td key={ci} className={`px-3 py-2 ${ci === 0 ? "font-medium" : "figures text-right"}`} style={{ color: LEARN.ink }}>{cell}</td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-                {q.table.caption && <figcaption className="px-3 py-2 text-xs leading-5" style={{ color: LEARN.muted }}>{q.table.caption}</figcaption>}
-              </figure>
+              <div className="mt-4">
+                <ExcerptTable table={q.table} figures />
+              </div>
             )}
             {isOrder ? (
               <div className="mt-5 grid gap-4">
