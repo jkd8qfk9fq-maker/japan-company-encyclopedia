@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLocalStore } from "@/hooks/use-local-store";
 import type { MicroUnit } from "@/lib/micro-lessons";
+import { unitStyle } from "@/lib/learning-ui";
 import { METRIC_LABELS, verifyPrediction, type PredictionData } from "@/lib/predictions";
 import { REVIEW_INTERVALS_DAYS } from "@/lib/review-queue";
 import { jstToday, microProgressStore, predictionsStore } from "@/lib/storage/stores";
@@ -78,6 +79,7 @@ export function TrainingHistory() {
   const stageCounts = REVIEW_INTERVALS_DAYS.map((_, stage) => Object.values(progress.review).filter((s) => s.stage === stage).length);
 
   let checkedCount = 0;
+  let pendingCount = 0;
   const outcomes = { matched: 0, missed: 0, flat: 0 };
   if (predData) {
     for (const p of predictions) {
@@ -87,6 +89,8 @@ export function TrainingHistory() {
       if (v.status === "verified") {
         checkedCount += 1;
         outcomes[v.outcome] += 1;
+      } else if (v.status === "pending") {
+        pendingCount += 1;
       }
     }
   }
@@ -148,6 +152,44 @@ export function TrainingHistory() {
         <p className="mt-4 text-sm text-muted-foreground">まだ記録がありません。上のレッスンに答えると、ここに積み上がります。</p>
       ) : (
         <>
+          {/* The headline facts first (JCE-088): how far the path has come, and the predictions carried
+              through to verification — the count that grows on filing days, not only on study days. */}
+          {units && (
+            <>
+              <dl className="figures mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                {[
+                  { label: "レッスン完了", value: `${Object.keys(progress.lessons).length}／${units.reduce((s, u) => s + u.lessons.length, 0)}` },
+                  { label: "答えた問題", value: `${totalAnswers} 問` },
+                  { label: "検証を終えた予測", value: `${checkedCount} 件` },
+                  { label: "検証待ちの予測", value: `${pendingCount} 件` },
+                ].map((s) => (
+                  <div key={s.label} className="rounded-md border border-border bg-card p-4 text-center">
+                    <dt className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">{s.label}</dt>
+                    <dd className="mt-1 text-lg font-bold">{s.value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <div className="mt-4 grid gap-3">
+                {units
+                  .filter((u) => u.lessons.length > 0)
+                  .map((u, ui) => {
+                    const done = u.lessons.filter((l) => progress.lessons[l.id]).length;
+                    return (
+                      <div key={u.id}>
+                        <p className="figures flex items-baseline justify-between text-sm">
+                          <span className="font-medium">単元「{u.title}」</span>
+                          <span className="text-muted-foreground">{done}／{u.lessons.length}</span>
+                        </p>
+                        <div className="mt-1.5 h-3 overflow-hidden rounded-full bg-muted">
+                          <div className="h-full rounded-full transition-all" style={{ width: `${u.lessons.length ? (done / u.lessons.length) * 100 : 0}%`, backgroundColor: unitStyle(ui).main }} />
+                        </div>
+                      </div>
+                    );
+                  })}
+              </div>
+            </>
+          )}
+
           <div className="mt-6 grid gap-3">
             {checkedCount > 0 && (
               <div className="rounded-md border border-border bg-card p-4 md:p-5">
