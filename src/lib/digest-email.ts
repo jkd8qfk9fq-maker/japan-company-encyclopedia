@@ -35,11 +35,11 @@ const KIND: Record<UpdateKind, string> = { yuho: "有価証券報告書", hanki:
 const readingFor = (kind: UpdateKind, companyId: string): { label: string; href: string } => {
   switch (kind) {
     case "tanshin":
-      return { label: "読み方：先に予想して、答え合わせ（マイクロレッスン）", href: "/learn#micro-revenue-and-profit" };
+      return { label: "読み方：先に予想して、答え合わせ（マイクロレッスン）", href: "/learn#micro-five-profits" };
     case "correction":
       return { label: "読み方：訂正は企業ページの数字で確かめる", href: `/companies/${companyId}#financials` };
     default:
-      return { label: "読み方：売上と利益の違い（マイクロレッスン）", href: "/learn#micro-revenue-and-profit" };
+      return { label: "読み方：利益は5つある（マイクロレッスン）", href: "/learn#micro-five-profits" };
   }
 };
 

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
  * and is checked against its printed figures.
  */
 const STEPS: { n: number; title: string; text: string; href: string; link: string }[] = [
-  { n: 1, title: "予測", text: "決算の数字を見る前に、売上と利益の方向を自分で予想します。予想を立てるところから訓練は始まります。レッスンで型を学んだら、企業ページで次の決算への予測を記録します（記録した予測は変更できません）。", href: "/learn/lesson/predict-the-direction", link: "先読みのレッスンへ" },
+  { n: 1, title: "予測", text: "決算の数字を見る前に、売上と利益の方向を自分で予想します。予想を立てるところから訓練は始まります。レッスンで型を学んだら、企業ページで次の決算への予測を記録します（記録した予測は変更できません）。", href: "/learn/lesson/predict-with-clues", link: "先読みのレッスンへ" },
   { n: 2, title: "開示", text: "実際の決算が出たら、開示された実績を確認します。定期便に今週の開示が並びます。", href: "/digest", link: "決算定期便へ" },
   { n: 3, title: "照合", text: "自分の予測と実績を比べます。開示がサイトに載ると、企業ページと定期便に、あなたの予測と実績の印字値が並びます。", href: "/digest", link: "定期便で照合する" },
   { n: 4, title: "フィードバック", text: "見落とした問題は、復習キューが間隔をあけて連れ戻します。間違えたところが、次の訓練の材料です。", href: "/learn/review", link: "復習キューへ" },
