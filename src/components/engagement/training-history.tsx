@@ -35,6 +35,18 @@ const KIND_LABELS: Record<string, string> = {
   shares: "発行済株式総数を読む",
   "quarterly-direction": "四半期の増減を予想する",
   "quarterly-progress": "進捗の目安を読む",
+  // The JCE-090 readings: structure first, values never. The labels above for the retired kinds stay —
+  // an answer recorded under the old course keeps the name of the reading it practised.
+  order: "項目の並び順を読む",
+  "stage-diff": "段階の差の内訳を読む",
+  classify: "項目の区分を読む",
+  procedure: "読み方の手順を選ぶ",
+  concept: "表の仕組みを読む",
+  "find-row": "実物の表から項目を探す",
+  "relation-stages": "段階利益の関係を読む",
+  "relation-net-assets": "純資産と利益の関係を読む",
+  "label-reading": "項目の名前から物差しを読む",
+  "region-find": "地域別の表を読む",
 };
 
 const jstDayOf = (iso: string) => new Intl.DateTimeFormat("sv-SE", { timeZone: "Asia/Tokyo" }).format(new Date(iso));
@@ -62,8 +74,9 @@ export function TrainingHistory() {
   const totalAnswers = Object.keys(progress.answers).length;
   const hasRecord = totalAnswers > 0 || predictions.length > 0 || Object.keys(progress.lessons).length > 0;
 
-  // Question id → the company and the reading it practises, from the bound course.
-  const questionOf = new Map<string, { companyId: string; companyName?: string; kind: string }>();
+  // Question id → the company and the reading it practises, from the bound course. A structure question
+  // (JCE-090) is about no company: it counts toward the spread of readings, never toward a company's trail.
+  const questionOf = new Map<string, { companyId: string | null; companyName?: string; kind: string }>();
   for (const unit of units ?? [])
     for (const lesson of unit.lessons)
       for (const q of lesson.questions) questionOf.set(q.id, { companyId: q.companyId, companyName: q.companyName, kind: q.kind });
@@ -114,7 +127,7 @@ export function TrainingHistory() {
   };
   for (const [id, a] of Object.entries(progress.answers)) {
     const q = questionOf.get(id);
-    if (!q) continue;
+    if (!q || !q.companyId) continue;
     push(q.companyId, nameOf(q.companyId, q.companyName), {
       day: a.day,
       text: `レッスンの問題（${KIND_LABELS[q.kind] ?? q.kind}）：${a.correct ? "正解" : "正解ではなかった"}`,

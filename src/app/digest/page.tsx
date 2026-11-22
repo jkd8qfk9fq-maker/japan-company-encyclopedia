@@ -34,7 +34,7 @@ export default async function DigestPage() {
         ここは、学んだ読み方を実際の決算で試す、分析訓練の実践の場です。使い方の順序は、まず自分の予測を立てる（STEP 1）、開示された実績を確認する（STEP 2）、予測と実績を照合する（STEP 3）。予測の型はマイクロレッスンで学べます。各社の開示には、対象期間と検証済みの実績、その決算の読み方（マイクロレッスン）と企業レポート（分析5観点）への道筋を付けています。数字は各社の開示が載せた売上高と純利益そのものです。
       </p>
       <p className="mt-3 text-sm">
-        <Link href="/learn/lesson/predict-the-direction" className="underline underline-offset-4">STEP 1：先読みのレッスンで予測の型を学ぶ</Link>
+        <Link href="/learn/lesson/predict-with-clues" className="underline underline-offset-4">STEP 1：先読みのレッスンで予測の型を学ぶ</Link>
         <span className="mx-2 text-muted-foreground">・</span>
         <Link href="/learn/review" className="underline underline-offset-4">STEP 4：復習キュー</Link>
         <span className="mx-2 text-muted-foreground">・</span>

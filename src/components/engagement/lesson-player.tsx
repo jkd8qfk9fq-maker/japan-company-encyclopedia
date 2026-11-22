@@ -23,6 +23,10 @@ import { LearnButton, ProgressRing } from "./learn-ui";
 
 type Step = { kind: "read"; text: string } | { kind: "question"; q: MicroQuestion };
 
+/** The predict-first kinds (JCE-082): the step is headed 予測して、確かめる only for these; the structure
+ *  questions of JCE-090 practise a reading, and the ordering questions an arrangement. */
+const PREDICT_KINDS = new Set(["growth-revenue", "growth-profit", "growth-employees", "quarterly-direction"]);
+
 const lessonSteps = (lesson: MicroLesson): Step[] => [
   ...lesson.body.map((text): Step => ({ kind: "read", text })),
   ...lesson.questions.map((q): Step => ({ kind: "question", q })),
@@ -47,6 +51,7 @@ function PlayerRun({
   const progress = useLocalStore(microProgressStore);
   const [idx, setIdx] = useState(0);
   const [selected, setSelected] = useState<string | null>(null);
+  const [orderSel, setOrderSel] = useState<string[]>([]);
   const [checkedHere, setCheckedHere] = useState<Record<string, boolean>>({});
   const [sessionAnswered, setSessionAnswered] = useState(0);
   const [finished, setFinished] = useState(false);
@@ -55,15 +60,21 @@ function PlayerRun({
   const q = step?.kind === "question" ? step.q : null;
   const stored = q ? progress.answers[q.id] : undefined;
   const checked = q ? (checkedHere[q.id] ?? (prefilled ? Boolean(stored) : false)) : false;
-  const shownChoice = q ? (checkedHere[q.id] ? selected : prefilled && checked ? (stored?.choice ?? null) : selected) : null;
-  const correct = q ? shownChoice === q.answer : false;
+  // An order question (JCE-090) is answered by arranging every option: the choice, in the store and in
+  // the verdict alike, is the arranged ids joined by "," — the same string shape a single choice uses.
+  const isOrder = q?.format === "order";
+  const orderShown: string[] = q && isOrder ? (checkedHere[q.id] ? orderSel : prefilled && checked ? (stored?.choice ? stored.choice.split(",") : []) : orderSel) : [];
+  const shownChoice = q ? (isOrder ? (orderShown.length ? orderShown.join(",") : null) : checkedHere[q.id] ? selected : prefilled && checked ? (stored?.choice ?? null) : selected) : null;
+  const correct = q ? shownChoice !== null && shownChoice === q.answer : false;
 
   if (finished) return <>{renderComplete({ answered: sessionAnswered })}</>;
   if (!step) return null;
 
   const check = () => {
-    if (!q || selected === null) return;
-    recordMicroAnswer(q.id, { choice: selected, correct: selected === q.answer });
+    if (!q) return;
+    const choice = isOrder ? (orderSel.length === q.options.length ? orderSel.join(",") : null) : selected;
+    if (choice === null) return;
+    recordMicroAnswer(q.id, { choice, correct: choice === q.answer });
     setCheckedHere((m) => ({ ...m, [q.id]: true }));
     setSessionAnswered((n) => n + 1);
     onSessionAnswer();
@@ -71,6 +82,7 @@ function PlayerRun({
 
   const next = () => {
     setSelected(null);
+    setOrderSel([]);
     if (idx + 1 >= steps.length) setFinished(true);
     else setIdx(idx + 1);
   };
@@ -98,12 +110,78 @@ function PlayerRun({
         )}
         {q && (
           <div>
-            <p className="text-xs font-bold tracking-[0.14em]" style={{ color: accent.main }}>予測して、確かめる</p>
+            <p className="text-xs font-bold tracking-[0.14em]" style={{ color: accent.main }}>{isOrder ? "並べ替えて、確かめる" : PREDICT_KINDS.has(q.kind) ? "予測して、確かめる" : "読み方を確かめる"}</p>
             <p className="mt-3 text-xl font-bold leading-8" style={{ color: LEARN.ink }}>{q.prompt}</p>
             {q.period && <p className="figures mt-2 text-sm" style={{ color: LEARN.muted }}>対象期間：{q.period}</p>}
             {q.clue && (
               <p className="mt-3 rounded-2xl px-4 py-3 text-sm leading-6" style={{ backgroundColor: accent.soft, color: LEARN.ink }}>「{q.clue}」</p>
             )}
+            {q.table && (
+              <figure className="mt-4 overflow-x-auto rounded-2xl border-2" style={{ borderColor: LEARN.line }}>
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr style={{ backgroundColor: LEARN.track }}>
+                      {q.table.columns.map((c) => (
+                        <th key={c} className="px-3 py-2 text-left font-bold" style={{ color: LEARN.navy }}>{c}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {q.table.rows.map((row, ri) => (
+                      <tr key={ri} className="border-t" style={{ borderColor: LEARN.line }}>
+                        {row.map((cell, ci) => (
+                          <td key={ci} className={`px-3 py-2 ${ci === 0 ? "font-medium" : "figures text-right"}`} style={{ color: LEARN.ink }}>{cell}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                {q.table.caption && <figcaption className="px-3 py-2 text-xs leading-5" style={{ color: LEARN.muted }}>{q.table.caption}</figcaption>}
+              </figure>
+            )}
+            {isOrder ? (
+              <div className="mt-5 grid gap-4">
+                <div>
+                  <p className="text-sm font-bold" style={{ color: LEARN.muted }}>あなたの並び（{orderShown.length}／{q.options.length}）</p>
+                  <ol className="mt-2 grid gap-2">
+                    {orderShown.map((id, i) => {
+                      const o = q.options.find((x) => x.id === id);
+                      if (!o) return null;
+                      return (
+                        <li key={id}>
+                          <button
+                            type="button"
+                            disabled={checked}
+                            onClick={() => setOrderSel((s) => s.filter((x) => x !== id))}
+                            className="flex min-h-12 w-full items-center gap-3 rounded-2xl border-2 px-4 py-3 text-left text-base font-medium"
+                            style={{ borderColor: checked ? (correct ? LEARN.cta : LEARN.wrong) : accent.main, backgroundColor: accent.soft, color: LEARN.ink }}
+                          >
+                            <span className="figures grid size-7 shrink-0 place-items-center rounded-full text-sm font-bold text-white" style={{ backgroundColor: accent.main }}>{i + 1}</span>
+                            <span>{o.label}</span>
+                          </button>
+                        </li>
+                      );
+                    })}
+                    {orderShown.length === 0 && <li className="text-sm" style={{ color: LEARN.muted }}>下の項目を、表に出てくる順にタップしてください。</li>}
+                  </ol>
+                </div>
+                <ul className="grid gap-2">
+                  {q.options.filter((o) => !orderShown.includes(o.id)).map((o) => (
+                    <li key={o.id}>
+                      <button
+                        type="button"
+                        disabled={checked}
+                        onClick={() => setOrderSel((s) => [...s, o.id])}
+                        className="flex min-h-12 w-full items-center rounded-2xl border-2 px-4 py-3 text-left text-base font-medium"
+                        style={{ borderColor: LEARN.line, backgroundColor: "#ffffff", color: LEARN.ink }}
+                      >
+                        {o.label}
+                      </button>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
             <ul className="mt-5 grid gap-3">
               {q.options.map((o) => {
                 const isChosen = shownChoice === o.id;
@@ -127,6 +205,7 @@ function PlayerRun({
                 );
               })}
             </ul>
+            )}
           </div>
         )}
       </div>
@@ -143,11 +222,13 @@ function PlayerRun({
               {q.period && <>対象期間：{q.period}　</>}
               {q.sourceTitle && <>出典：{q.sourceTitle}</>}
             </p>
-            <p className="mt-1 text-sm">
-              <Link href={`/companies/${q.companyId}`} className="font-bold underline underline-offset-2" style={{ color: LEARN.navy }}>
-                {q.companyName ? `${q.companyName}のページで確かめる` : "企業ページで確かめる"}
-              </Link>
-            </p>
+            {q.companyId && (
+              <p className="mt-1 text-sm">
+                <Link href={`/companies/${q.companyId}`} className="font-bold underline underline-offset-2" style={{ color: LEARN.navy }}>
+                  {q.companyName ? `${q.companyName}のページで確かめる` : "企業ページで確かめる"}
+                </Link>
+              </p>
+            )}
             <div className="mt-4">
               <LearnButton onClick={next} color={correct ? LEARN.cta : LEARN.wrong} dark={correct ? LEARN.ctaDark : "#b92f35"}>
                 {idx + 1 >= steps.length ? "結果を見る" : "つぎへ"}
@@ -158,9 +239,15 @@ function PlayerRun({
       ) : (
         <div className="sticky bottom-0 pb-1">
           {q ? (
-            <LearnButton onClick={check} disabled={selected === null}>
-              {selected === null ? "選択肢を選んでください" : "こたえあわせ"}
-            </LearnButton>
+            isOrder ? (
+              <LearnButton onClick={check} disabled={orderSel.length !== q.options.length}>
+                {orderSel.length !== q.options.length ? "すべて並べてください" : "こたえあわせ"}
+              </LearnButton>
+            ) : (
+              <LearnButton onClick={check} disabled={selected === null}>
+                {selected === null ? "選択肢を選んでください" : "こたえあわせ"}
+              </LearnButton>
+            )
           ) : (
             <LearnButton onClick={next}>{idx + 1 >= steps.length ? "結果を見る" : "つぎへ"}</LearnButton>
           )}

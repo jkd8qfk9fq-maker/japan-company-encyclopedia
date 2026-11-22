@@ -8,10 +8,11 @@ import { dueReviewIds, scheduleReview } from "../src/lib/review-queue";
 import type { Company, FinancialRecord, IndustryId, InterimRecord } from "../src/types/company";
 
 /**
- * The micro-lesson layer (JCE-082): questions generated per company from printed figures only, a course
- * bound deterministically from the pools, a review schedule that widens and resets, and a digest that
- * splits filings by week. A figure the records do not hold — or a year too flat to ask a direction about —
- * produces no question, never an invented one.
+ * The micro-lesson layer (JCE-082, course rebuilt in JCE-090): questions generated per company from
+ * printed figures only — asking for a reading, never for a value — a course bound deterministically
+ * from the pools and the authored structure questions, a review schedule that widens and resets, and a
+ * digest that splits filings by week. A figure the records do not hold — or a year too flat to ask a
+ * direction about, or a company no clue can be built for — produces no question, never an invented one.
  */
 
 const rec = (over: Partial<FinancialRecord> = {}): FinancialRecord =>
@@ -38,6 +39,9 @@ const rec = (over: Partial<FinancialRecord> = {}): FinancialRecord =>
 const prev = (over: Partial<FinancialRecord> = {}): FinancialRecord =>
   rec({ fiscalYear: "2025年3月期", periodEnd: "2025-03-31", revenue: 80_000_000_000, netIncome: 4_000_000_000, ...over });
 
+const prev2 = (over: Partial<FinancialRecord> = {}): FinancialRecord =>
+  rec({ fiscalYear: "2024年3月期", periodEnd: "2024-03-31", revenue: 64_000_000_000, netIncome: 3_200_000_000, employees: 80, ...over });
+
 const company = (id: string, financials: FinancialRecord[], industry: IndustryId = "retail"): Company =>
   ({
     id,
@@ -50,42 +54,77 @@ const company = (id: string, financials: FinancialRecord[], industry: IndustryId
     sources: [{ id: "yuho-2026", title: "有価証券報告書－第1期", publisher: "会社", url: "https://example.jp", publishedAt: "2026-06-01", accessedAt: "2026-10-01" }],
   }) as unknown as Company;
 
-describe("buildLessonQuestions", () => {
-  const qs = buildLessonQuestions([company("a", [prev(), rec()])]);
+describe("buildLessonQuestions — directions, always with a clue (JCE-090)", () => {
+  const qs = buildLessonQuestions([company("a", [prev2(), prev(), rec()])]);
 
-  it("asks the latest printed revenue as a four-choice question, with its source", () => {
-    // The previous year at half the latest figure is far enough away to be a fair distractor.
-    const q = buildLessonQuestions([company("a2", [prev({ revenue: 50_000_000_000 }), rec()])]).find((x) => x.kind === "figure");
-    expect(q).toBeDefined();
-    expect(q!.options).toHaveLength(4);
-    expect(q!.options.find((o) => o.id === q!.answer)?.label).toContain("1,000億");
-    expect(q!.sourceIds).toContain("yuho-2026");
-    expect(q!.sourceTitle).toContain("有価証券報告書");
-    expect(q!.period).toBe("2026年3月期");
-  });
-
-  it("asks the direction of revenue and of net income as computed values", () => {
+  it("asks the direction of revenue and of net income as computed values, with a clue to read first", () => {
     const rev = qs.find((x) => x.kind === "growth-revenue");
     expect(rev?.answer).toBe("up"); // 800億 → 1,000億
     expect(rev?.explain).toContain("計算値");
+    expect(rev?.clue).toContain("手がかり");
+    expect(rev?.clue).toContain("計算値"); // the prior year's move, from the two printed figures before the pair
     const profit = qs.find((x) => x.kind === "growth-profit");
     expect(profit?.answer).toBe("up"); // 40億 → 50億
+    expect(profit?.clue).toBeDefined();
     expect(rev?.period).toBe("2025年3月期 → 2026年3月期");
   });
 
+  it("builds the clue from the business mix when the segment note has a clear largest business", () => {
+    const c = {
+      ...company("seg", [prev(), rec()]),
+      businesses: [
+        { id: "b1", name: "事業1" },
+        { id: "b2", name: "事業2" },
+      ],
+      segmentRevenue: {
+        fiscalYear: "2026年3月期",
+        periodEnd: "2026-03-31",
+        label: "外部顧客への売上高",
+        items: [
+          { businessId: "b1", amount: 70_000_000_000 },
+          { businessId: "b2", amount: 30_000_000_000 },
+        ],
+        sourceIds: ["yuho-2026"],
+      },
+    } as unknown as Company;
+    const rev = buildLessonQuestions([c]).find((x) => x.kind === "growth-revenue");
+    expect(rev?.clue).toContain("最大の事業は「事業1」");
+    expect(rev?.clue).toContain("70%");
+  });
+
+  it("asks no direction when no clue can be built — two records and no segment note is a coin toss", () => {
+    const two = buildLessonQuestions([company("nc", [prev(), rec()])]);
+    expect(two.some((x) => x.kind === "growth-revenue")).toBe(false);
+    expect(two.some((x) => x.kind === "growth-profit")).toBe(false);
+  });
+
   it("does not ask a direction about a near-flat year, nor about a loss-making one", () => {
-    const flat = buildLessonQuestions([company("b", [prev({ revenue: 99_000_000_000 }), rec()])]);
+    const flat = buildLessonQuestions([company("b", [prev2(), prev({ revenue: 99_000_000_000 }), rec()])]);
     expect(flat.some((x) => x.kind === "growth-revenue")).toBe(false);
-    const loss = buildLessonQuestions([company("c", [prev({ netIncome: -1_000_000_000 }), rec()])]);
+    const loss = buildLessonQuestions([company("c", [prev2(), prev({ netIncome: -1_000_000_000 }), rec()])]);
     expect(loss.some((x) => x.kind === "growth-profit")).toBe(false);
   });
 
+  it("asks the headcount's direction with the same clue rule and guard", () => {
+    const qs2 = buildLessonQuestions([company("e", [prev2({ employees: 64 }), prev({ employees: 80 }), rec({ employees: 100 })])]);
+    const dir = qs2.find((x) => x.kind === "growth-employees");
+    expect(dir?.answer).toBe("up"); // 80人 → 100人
+    expect(dir?.clue).toBeDefined();
+    const flat = buildLessonQuestions([company("e2", [prev2({ employees: 99 }), prev({ employees: 100 }), rec({ employees: 101 })])]);
+    expect(flat.some((x) => x.kind === "growth-employees")).toBe(false); // +1% is under the guard
+  });
+
+  it("never asks for a value: the retired kinds are not generated", () => {
+    const kinds = new Set(qs.map((x) => x.kind as string));
+    for (const retired of ["figure", "shares", "employees", "overseas-ratio", "quarterly-progress"]) expect(kinds.has(retired)).toBe(false);
+  });
+
   it("is deterministic for the same companies", () => {
-    expect(buildLessonQuestions([company("a", [prev(), rec()])])).toEqual(qs);
+    expect(buildLessonQuestions([company("a", [prev2(), prev(), rec()])])).toEqual(qs);
   });
 });
 
-describe("buildLessonQuestions — the JCE-084 kinds", () => {
+describe("buildLessonQuestions — the JCE-090 readings", () => {
   it("asks for the largest business of the segment note, and not when the top two are close", () => {
     const withSegments = (topAmount: number, secondAmount: number) =>
       ({
@@ -114,7 +153,61 @@ describe("buildLessonQuestions — the JCE-084 kinds", () => {
     expect(close.some((x) => x.kind === "segment-top")).toBe(false);
   });
 
-  it("asks the overseas share as a computed ratio, from the regional breakdown", () => {
+  it("asks which row of the company's own table a stage is — the answer is a row, never a value", () => {
+    const q = buildLessonQuestions([company("fr", [prev(), rec()])]).find((x) => x.kind === "find-row");
+    expect(q).toBeDefined();
+    expect(q!.table).toBeDefined();
+    expect(q!.table!.rows.flat().join(" ")).toContain("1,000億"); // the printed figures ride along in the excerpt
+    expect(q!.options.map((o) => o.id)).toContain(q!.answer);
+    expect(["revenue", "profit", "net", "assets", "liabilities", "net-assets"]).toContain(q!.answer);
+    expect(q!.sourceIds).toContain("yuho-2026");
+    expect(q!.period).toBe("2026年3月期");
+  });
+
+  it("asks which stage decided the last line's move, when the stages diverged", () => {
+    // Middle line +12.5%, last line +100%: the gap opened below the middle line.
+    const after = buildLessonQuestions([
+      company("ra", [prev({ profit: 8_000_000_000, netIncome: 4_000_000_000 }), rec({ profit: 9_000_000_000, netIncome: 8_000_000_000 })]),
+    ]).find((x) => x.kind === "relation-stages");
+    expect(after?.answer).toBe("after-middle");
+    expect(after?.table).toBeDefined();
+    expect(after?.explain).toContain("計算値");
+    // Revenue +50%, middle line +10%, last line tracking the middle: the gap opened above the middle line.
+    const toMiddle = buildLessonQuestions([
+      company("rb", [prev({ revenue: 80_000_000_000, profit: 10_000_000_000, netIncome: 5_000_000_000 }), rec({ revenue: 120_000_000_000, profit: 11_000_000_000, netIncome: 5_500_000_000 })]),
+    ]).find((x) => x.kind === "relation-stages");
+    expect(toMiddle?.answer).toBe("to-middle");
+    // Stages moving together ask nothing: revenue, the middle line and the last line all +25%.
+    const together = buildLessonQuestions([company("rc", [prev2({ profit: 8_000_000_000 }), prev({ profit: 10_000_000_000 }), rec({ profit: 12_500_000_000 })])]);
+    expect(together.some((x) => x.kind === "relation-stages")).toBe(false);
+  });
+
+  it("reads the company's own labels: the yardstick from the middle line, the owner from the last line", () => {
+    const standard = buildLessonQuestions([company("ls", [prev(), rec({ netIncomeLabel: "純利益" })])]).find((x) => x.kind === "label-reading");
+    expect(standard?.answer).toBe("jgaap"); // 経常利益 is printed, and the record's standard is jgaap
+    const owner = buildLessonQuestions([company("lo", [prev(), rec({ profitLabel: null, profit: null, netIncomeLabel: "親会社株主に帰属する当期純利益" })])]).find(
+      (x) => x.kind === "label-reading",
+    );
+    expect(owner?.answer).toBe("parent");
+    // A label and a standard that disagree ask nothing.
+    const disagree = buildLessonQuestions([company("ld", [prev(), rec({ accountingStandard: "ifrs" as FinancialRecord["accountingStandard"], netIncomeLabel: "純利益" })])]);
+    expect(disagree.some((x) => x.kind === "label-reading" && x.id.startsWith("label-standard"))).toBe(false);
+  });
+
+  it("asks what piled up in net assets, against the printed profit", () => {
+    const q = buildLessonQuestions([company("na", [prev({ netAssets: 75_000_000_000 }), rec({ netAssets: 80_000_000_000, netIncome: 5_000_000_000 })])]).find(
+      (x) => x.kind === "relation-net-assets",
+    );
+    expect(q?.answer).toBe("about"); // +50億 of net assets against 50億 of profit
+    expect(q?.table).toBeDefined();
+    expect(q?.explain).toContain("計算値");
+    const less = buildLessonQuestions([company("na2", [prev({ netAssets: 79_000_000_000 }), rec({ netAssets: 80_000_000_000, netIncome: 5_000_000_000 })])]).find(
+      (x) => x.kind === "relation-net-assets",
+    );
+    expect(less?.answer).toBe("less"); // +10億 against 50億 of profit
+  });
+
+  it("asks which amounts feed the overseas ratio, on the regional table as printed", () => {
     const c = {
       ...company("o", [prev(), rec()]),
       regionalRevenue: {
@@ -128,34 +221,14 @@ describe("buildLessonQuestions — the JCE-084 kinds", () => {
         sourceIds: ["yuho-2026"],
       },
     } as unknown as Company;
-    const q = buildLessonQuestions([c]).find((x) => x.kind === "overseas-ratio");
-    expect(q?.answer).toBe("p40");
+    const q = buildLessonQuestions([c]).find((x) => x.kind === "region-find");
+    expect(q?.answer).toBe("non-domestic");
+    expect(q?.table?.rows.map((r) => r[0])).toEqual(["日本", "北米"]);
     expect(q?.explain).toContain("計算値");
     expect(q?.sourceIds).toContain("yuho-2026");
   });
 
-  it("asks revenue per employee as a computed value, and the headcount's direction with a guard", () => {
-    const qs2 = buildLessonQuestions([company("e", [prev({ employees: 80 }), rec({ employees: 100 })])]);
-    const per = qs2.find((x) => x.kind === "employees");
-    expect(per?.options.find((o) => o.id === per.answer)?.label).toBe("10億円");
-    expect(per?.explain).toContain("計算値");
-    const dir = qs2.find((x) => x.kind === "growth-employees");
-    expect(dir?.answer).toBe("up"); // 80人 → 100人
-    const flat = buildLessonQuestions([company("e2", [prev({ employees: 100 }), rec({ employees: 101 })])]);
-    expect(flat.some((x) => x.kind === "growth-employees")).toBe(false); // +1% is under the guard
-  });
-
-  it("asks the issued share count as printed", () => {
-    const c = {
-      ...company("h", [prev(), rec()]),
-      shareFacts: { fiscalYear: "2026年3月期", asOf: "2026-03-31", dividendPerShare: 50, issuedShares: 1_000_000, sourceIds: ["yuho-2026"] },
-    } as unknown as Company;
-    const q = buildLessonQuestions([c]).find((x) => x.kind === "shares");
-    expect(q?.options.find((o) => o.id === q.answer)?.label).toBe("1,000,000株");
-    expect(q?.period).toBe("2026年3月期");
-  });
-
-  it("asks the quarter's direction predict-first, and its progress against the previous full year", () => {
+  it("asks the quarter's direction predict-first, with a clue, and not about a near-flat half", () => {
     const half = (fiscalYear: string, periodEnd: string, revenue: number): InterimRecord =>
       ({
         fiscalYear,
@@ -172,43 +245,35 @@ describe("buildLessonQuestions — the JCE-084 kinds", () => {
         accountingStandard: "jgaap",
         sourceIds: ["yuho-2026"],
       }) as InterimRecord;
-    const c = {
-      ...company("q", [prev(), rec()]),
-      interimFinancials: [half("2026年3月期", "2025-09-30", 50_000_000_000), half("2027年3月期", "2026-09-30", 60_000_000_000)],
-    } as unknown as Company;
-    const qs3 = buildLessonQuestions([c]);
-    const dir = qs3.find((x) => x.kind === "quarterly-direction");
+    const withSegments = (id: string, halves: InterimRecord[]) =>
+      ({
+        ...company(id, [prev(), rec()]),
+        businesses: [
+          { id: "b1", name: "事業1" },
+          { id: "b2", name: "事業2" },
+        ],
+        segmentRevenue: {
+          fiscalYear: "2026年3月期",
+          periodEnd: "2026-03-31",
+          label: "外部顧客への売上高",
+          items: [
+            { businessId: "b1", amount: 70_000_000_000 },
+            { businessId: "b2", amount: 30_000_000_000 },
+          ],
+          sourceIds: ["yuho-2026"],
+        },
+        interimFinancials: halves,
+      }) as unknown as Company;
+    const dir = buildLessonQuestions([withSegments("q", [half("2026年3月期", "2025-09-30", 50_000_000_000), half("2027年3月期", "2026-09-30", 60_000_000_000)])]).find(
+      (x) => x.kind === "quarterly-direction",
+    );
     expect(dir?.answer).toBe("up"); // 中間期 500億 → 600億
-    expect(dir?.prompt).toContain("予想してから確かめましょう");
+    expect(dir?.prompt).toContain("手がかりを読んでから");
+    expect(dir?.clue).toContain("最大の事業は「事業1」");
     expect(dir?.explain).toContain("計算値");
     expect(dir?.period).toContain("2027年3月期");
-    const progress = qs3.find((x) => x.kind === "quarterly-progress");
-    expect(progress?.options.find((o) => o.id === progress.answer)?.label).toBe("約6割"); // 600億 ÷ 前年通期 1,000億
-    expect(progress?.explain).toContain("途中経過");
-  });
-
-  it("does not ask a quarterly direction about a near-flat half", () => {
-    const half = (fiscalYear: string, periodEnd: string, revenue: number): InterimRecord =>
-      ({
-        fiscalYear,
-        period: "H1",
-        periodStart: periodEnd.slice(0, 4) + "-04-01",
-        periodEnd,
-        revenue,
-        revenueLabel: "売上高",
-        profit: null,
-        profitLabel: null,
-        netIncome: 1_000_000_000,
-        netIncomeLabel: "当期純利益",
-        currency: "JPY",
-        accountingStandard: "jgaap",
-        sourceIds: ["yuho-2026"],
-      }) as InterimRecord;
-    const c = {
-      ...company("q2", [prev(), rec()]),
-      interimFinancials: [half("2026年3月期", "2025-09-30", 59_000_000_000), half("2027年3月期", "2026-09-30", 60_000_000_000)],
-    } as unknown as Company;
-    expect(buildLessonQuestions([c]).some((x) => x.kind === "quarterly-direction")).toBe(false); // +1.7% is under the guard
+    const flat = buildLessonQuestions([withSegments("q2", [half("2026年3月期", "2025-09-30", 59_000_000_000), half("2027年3月期", "2026-09-30", 60_000_000_000)])]);
+    expect(flat.some((x) => x.kind === "quarterly-direction")).toBe(false); // +1.7% is under the guard
   });
 });
 
@@ -228,12 +293,16 @@ const poolQ = (id: string, kind: QuizQuestion["kind"], industry: string | null =
   period: "2026年3月期",
 });
 
+const PREDICT_KINDS: LessonQuestion["kind"][] = ["growth-revenue", "growth-profit", "growth-employees", "quarterly-direction"];
+
 const lessonQ = (id: string, kind: LessonQuestion["kind"]): LessonQuestion => ({
   id,
   kind,
   companyId: "x",
   companyName: "X社",
   industry: "retail",
+  // The generator never emits a direction question without a clue (JCE-090); the fake pool honours the same contract.
+  ...(PREDICT_KINDS.includes(kind) ? { clue: "手がかり：テスト用の手がかり（計算値）。" } : {}),
   prompt: `問題 ${id}`,
   options: [
     { id: "up", label: "増えた" },
@@ -246,95 +315,92 @@ const lessonQ = (id: string, kind: LessonQuestion["kind"]): LessonQuestion => ({
   period: "2026年3月期",
 });
 
-describe("buildMicroCourse", () => {
-  const pool: QuizQuestion[] = [
-    poolQ("rev-1", "revenue"),
-    poolQ("rev-2", "revenue"),
-    poolQ("qtr-1", "quarterly"),
-    poolQ("qtr-2", "quarterly"),
-    poolQ("qtr-3", "quarterly"),
-    poolQ("seg-1", "segment"),
-    poolQ("seg-2", "segment"),
-    poolQ("ovs-1", "overseas"),
-    poolQ("ovs-2", "overseas"),
-    poolQ("dsc-1", "describe"),
-    poolQ("dsc-2", "describe"),
-  ];
+describe("buildMicroCourse — the JCE-090 course", () => {
+  const pool: QuizQuestion[] = [poolQ("dsc-1", "describe"), poolQ("dsc-2", "describe")];
   const lessonPool: LessonQuestion[] = [
-    lessonQ("fig-1", "figure"),
-    lessonQ("fig-2", "figure"),
-    lessonQ("fig-3", "figure"),
-    lessonQ("gr-1", "growth-revenue"),
-    lessonQ("gr-2", "growth-revenue"),
-    lessonQ("gr-3", "growth-revenue"),
-    lessonQ("gp-1", "growth-profit"),
-    lessonQ("gp-2", "growth-profit"),
+    ...[1, 2, 3, 4, 5].map((n) => lessonQ(`fr-${n}`, "find-row")),
+    ...[1, 2, 3, 4, 5].map((n) => lessonQ(`rs-${n}`, "relation-stages")),
+    ...[1, 2, 3].map((n) => lessonQ(`lr-${n}`, "label-reading")),
     lessonQ("st-1", "segment-top"),
-    lessonQ("or-1", "overseas-ratio"),
-    lessonQ("em-1", "employees"),
     lessonQ("ge-1", "growth-employees"),
-    lessonQ("sh-1", "shares"),
-    lessonQ("sh-2", "shares"),
+    lessonQ("rna-1", "relation-net-assets"),
+    lessonQ("rf-1", "region-find"),
     lessonQ("qd-1", "quarterly-direction"),
-    lessonQ("qd-2", "quarterly-direction"),
-    lessonQ("qd-3", "quarterly-direction"),
-    lessonQ("qd-4", "quarterly-direction"),
-    lessonQ("qp-1", "quarterly-progress"),
+    lessonQ("gr-1", "growth-revenue"),
+    lessonQ("gp-1", "growth-profit"),
   ];
   const units = buildMicroCourse(pool, lessonPool);
+  const allQuestions = units.flatMap((u) => u.lessons.flatMap((l) => l.questions));
 
-  it("binds the first unit's five lessons to ten questions, none used twice", () => {
-    const first = units[0]!;
-    expect(first.lessons).toHaveLength(5);
-    const ids = first.lessons.flatMap((l) => l.questions.map((q) => q.id));
-    expect(ids).toHaveLength(10);
-    expect(new Set(ids).size).toBe(10);
-    for (const lesson of first.lessons) expect(lesson.questions.length).toBeGreaterThanOrEqual(2);
+  it("binds six units of 27 lessons, in the order the stumbling points are resolved", () => {
+    expect(units.map((u) => u.id)).toEqual(["five-profits", "why-net-moves", "consolidated-yardstick", "balance-sheet-photo", "two-statements-linked", "reading-the-real-thing"]);
+    expect(units.map((u) => u.lessons.length)).toEqual([5, 4, 4, 5, 5, 4]);
+    for (const unit of units) expect(unit.plannedLessons).toHaveLength(0);
   });
 
-  it("binds units two and three to five lessons each, with no question used twice in the course", () => {
-    expect(units.map((u) => u.id)).toEqual(["revenue-and-profit", "reading-the-business", "quarterly-motion"]);
-    for (const unit of units.slice(1)) {
-      expect(unit.lessons).toHaveLength(5);
-      expect(unit.plannedLessons).toHaveLength(0);
-      for (const lesson of unit.lessons) expect(lesson.questions.length).toBeGreaterThanOrEqual(2);
-    }
-    const ids = units.flatMap((u) => u.lessons.flatMap((l) => l.questions.map((q) => q.id)));
+  it("gives every lesson at least two questions, and uses no question twice", () => {
+    for (const unit of units) for (const lesson of unit.lessons) expect(lesson.questions.length).toBeGreaterThanOrEqual(2);
+    const ids = allQuestions.map((q) => q.id);
     expect(new Set(ids).size).toBe(ids.length);
   });
 
-  it("gives every bound question a source and a period (JCE-085)", () => {
-    // The pool is the leak: a pool question that loses its citation in fromPool reaches /lessons.json without
-    // one, as eleven did in JCE-084. The type now requires the three fields on both sides of the binding.
-    for (const unit of units) {
-      for (const lesson of unit.lessons) {
-        for (const q of lesson.questions) {
-          expect(q.sourceIds.length).toBeGreaterThan(0);
-          expect(q.sourceTitle.length).toBeGreaterThan(0);
-          expect(q.period.length).toBeGreaterThan(0);
-        }
+  it("keeps the citations honest on both sides of the rebuild (JCE-085, JCE-090)", () => {
+    for (const q of allQuestions) {
+      expect(q.sourceTitle.length).toBeGreaterThan(0);
+      if (q.companyId !== null) {
+        // A question about a company carries the filing's citation and the figures' period.
+        expect(q.sourceIds.length).toBeGreaterThan(0);
+        expect(q.period.length).toBeGreaterThan(0);
+      } else {
+        // An authored structure question states no company fact: no company, no records, no period —
+        // its citation is the general basis in sourceTitle.
+        expect(q.sourceIds).toHaveLength(0);
+        expect(q.period).toBe("");
       }
     }
   });
 
-  it("gives every unit at least one predict-first question", () => {
-    const predictFirst = new Set(["growth-revenue", "growth-profit", "growth-employees", "quarterly-direction"]);
-    for (const unit of units) {
-      const kinds = unit.lessons.flatMap((l) => l.questions.map((q) => q.kind));
-      expect(kinds.some((k) => predictFirst.has(k))).toBe(true);
+  it("binds the kept questions and none of the retired ones", () => {
+    const kinds = allQuestions.map((q) => q.kind);
+    expect(kinds.filter((k) => k === "segment-top")).toHaveLength(1); // the one structure-reading question of the old course, kept
+    expect(kinds.filter((k) => k === "describe")).toHaveLength(2); // kept, as the finale's business-reading material
+    for (const retired of ["figure", "shares", "employees", "overseas-ratio", "quarterly-progress", "revenue", "segment", "overseas", "quarterly"]) {
+      expect(kinds).not.toContain(retired);
     }
   });
 
-  it("is deterministic, and leaves a lesson shorter rather than padding it", () => {
-    expect(buildMicroCourse(pool, lessonPool)).toEqual(units);
-    const thin = buildMicroCourse([], []);
-    expect(thin[0]!.lessons.every((l) => l.questions.length === 0)).toBe(true);
+  it("gives the ordering questions the order format, with the answer as the arranged ids", () => {
+    const orders = allQuestions.filter((q) => q.format === "order");
+    expect(orders.map((q) => q.id).sort()).toEqual(["order-bs-sections", "order-pl-stages", "order-tax-steps"]);
+    for (const q of orders) {
+      expect(q.answer.split(",").sort()).toEqual(q.options.map((o) => o.id).sort());
+    }
   });
 
-  it("derives MICRO_LESSON_IDS from the same specs the course binds — all fifteen lessons, in course order", () => {
+  it("concentrates the predict-first questions where a clue exists — the consolidated unit and the finale", () => {
+    const predictFirst = new Set(["growth-revenue", "growth-profit", "growth-employees", "quarterly-direction"]);
+    const byUnit = units.map((u) => u.lessons.flatMap((l) => l.questions.map((q) => q.kind)));
+    expect(byUnit[2]!.some((k) => predictFirst.has(k))).toBe(true);
+    expect(byUnit[5]!.some((k) => predictFirst.has(k))).toBe(true);
+    // Every bound direction question carries its clue through the binding.
+    for (const q of allQuestions) if (predictFirst.has(q.kind)) expect(q.clue).toBeDefined();
+  });
+
+  it("is deterministic, and leaves a generated slot empty rather than padding it", () => {
+    expect(buildMicroCourse(pool, lessonPool)).toEqual(units);
+    const thin = buildMicroCourse([], []);
+    // The authored structure questions bind without any pool; the balance-sheet unit's later lessons are
+    // all authored, while its first lesson's generated slot stays empty.
+    expect(thin[3]!.lessons.slice(1).every((l) => l.questions.length === 2)).toBe(true);
+    expect(thin[3]!.lessons[0]!.questions).toHaveLength(1);
+    // A generated slot the pools cannot fill leaves the lesson shorter — never padded.
+    expect(thin[0]!.lessons[0]!.questions.map((q) => q.id)).toEqual(["order-pl-stages"]);
+  });
+
+  it("derives MICRO_LESSON_IDS from the same specs the course binds — all 27 lessons, in course order", () => {
     // The static export pre-renders /learn/lesson/[lesson-id] from this list (generateStaticParams). If it
     // drifted from the specs, a lesson would silently vanish from the export — the JCE-088 deploy failure.
-    expect(MICRO_LESSON_IDS).toHaveLength(15);
+    expect(MICRO_LESSON_IDS).toHaveLength(27);
     expect(MICRO_LESSON_IDS).toEqual(units.flatMap((u) => u.lessons.map((l) => l.id)));
   });
 });
