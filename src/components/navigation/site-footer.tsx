@@ -49,6 +49,7 @@ export async function SiteFooter() {
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/help">使い方・よくある質問</Link></li>
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/contact">お問い合わせ・誤りの報告</Link></li>
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/terms-of-use">利用規約</Link></li>
+            <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/tokushoho">特定商取引法に基づく表記</Link></li>
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/privacy">プライバシーポリシー</Link></li>
             <li><Link className="inline-flex min-h-11 items-center hover:underline" href="/settings">設定</Link></li>
             <AnalyticsSettingsButton />

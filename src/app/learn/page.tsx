@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BetaOffer } from "@/components/engagement/beta-offer";
 import { LearnCourse } from "@/components/engagement/learn-course";
 import { MicroLessons } from "@/components/engagement/micro-lessons";
 import { TrainingHistory } from "@/components/engagement/training-history";
@@ -52,6 +53,8 @@ export default function LearnPage() {
           ))}
         </ol>
       </section>
+
+      <BetaOffer />
 
       <div className="mt-10">
         <MicroLessons />

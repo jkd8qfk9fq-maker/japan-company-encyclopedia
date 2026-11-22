@@ -35,6 +35,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: url("/help/") },
     { url: url("/contact/") },
     { url: url("/terms-of-use/") },
+    { url: url("/tokushoho/") },
     { url: url("/industries/") },
     { url: url("/screening/") },
     { url: url("/compare/") },

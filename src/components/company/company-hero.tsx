@@ -9,6 +9,7 @@ import type { Company } from "@/types/company";
 import type { Headquarters } from "@/types/headquarters";
 import type { Website } from "@/types/website";
 import { segmentTone, structureBranches } from "./business-structure";
+import type { SectionLink } from "@/components/navigation/section-tabs";
 import { FavoriteButton } from "./favorite-button";
 import { KeyFacts } from "./key-facts";
 import { ShareActions } from "./share-actions";
@@ -31,30 +32,54 @@ const EXCHANGE_NAME: Record<Company["listings"][number]["exchange"], string> = {
  * set small so that on a phone the description, the business chips and the key facts all land in the first
  * screen, and the sections below start within it. The key facts stay size-only (invariant 4): density comes
  * from composition, never from adding growth rates or rankings here.
+ *
+ * JCE-087: tighter still, on the operator's screenshot review. The wordmark drops to label size, the vertical
+ * rhythm compresses, and the official name is not repeated as its own line when it is only the company name
+ * with a corporate-form affix (株式会社極洋 under 極洋 told the reader nothing twice). At the bottom, a
+ * one-line table of contents names what this page holds — only the sections this entry actually has, plus
+ * the analysis report — so "what is on this page" is answerable before scrolling.
  */
+
+/**
+ * The official name minus its corporate-form affixes, for the duplication check below. Width and spacing
+ * variants of the same name (ＡＣＳＬ vs ACSL, filed names with a space between words) count as the same:
+ * the comparison normalises them, the displayed text is never touched.
+ */
+function stripCorporateForm(name: string): string {
+  return name
+    .replace(/[Ａ-Ｚａ-ｚ０-９]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0xfee0))
+    .replace(/[\s　]/g, "")
+    .replace(/^(株式会社|有限会社|合同会社)/, "")
+    .replace(/(株式会社|有限会社|合同会社)$/, "");
+}
 export function CompanyHero({
   company,
   headquarters,
   website,
+  toc,
 }: {
   company: Company;
   headquarters?: Headquarters | null;
   website?: Website | null;
+  /** The sections this entry actually has, for the "このページの内容" line (JCE-087). */
+  toc?: SectionLink[];
 }) {
   const yuho = website ? company.sources.find((s) => s.id === website.sourceId) : undefined;
   const prefecture = headquarters ? prefectureByName(headquarters.prefecture) : null;
   const industries = [...company.industries].sort((a, b) => Number(b.primary ?? false) - Number(a.primary ?? false));
   const { branches } = structureBranches(company.businesses);
 
-  // A label, not a poster (JCE-077): even a long wordmark ("MITSUBISHI CORPORATION") stays on the small tier.
+  // A label, not a poster (JCE-077, tightened in JCE-087): even a long wordmark stays at label size.
   const wordmarkSize =
     (company.shortNameEn?.length ?? 0) > 12
-      ? "text-[clamp(1.25rem,4vw,1.75rem)]"
-      : "text-[clamp(1.5rem,5vw,2.25rem)]";
+      ? "text-[clamp(1.125rem,3.5vw,1.375rem)]"
+      : "text-[clamp(1.25rem,4vw,1.5rem)]";
+  // The official name earns its own line only when it says more than the name plus 株式会社 (JCE-087).
+  const showOfficialName = stripCorporateForm(company.officialName) !== stripCorporateForm(company.name);
 
   return (
     <section id="overview" aria-labelledby="company-name" className="scroll-mt-28">
-      <div className="mx-auto max-w-6xl px-5 pt-7 pb-6 md:px-8 md:pt-10 md:pb-8">
+      <div className="mx-auto max-w-6xl px-5 pt-5 pb-5 md:px-8 md:pt-10 md:pb-8">
         <p className="text-xs tracking-[0.18em] text-muted-foreground">
           <span className="figures">証券コード {company.code}</span>
           {company.listings.length > 0 && (
@@ -82,17 +107,17 @@ export function CompanyHero({
         </p>
 
         {company.shortNameEn && (
-          <p aria-hidden className={`wordmark mt-3 break-words ${wordmarkSize}`}>
+          <p aria-hidden className={`wordmark mt-2 break-words ${wordmarkSize}`}>
             {company.shortNameEn}
           </p>
         )}
-        <h1 id="company-name" className="mt-2 font-serif text-[1.75rem] font-semibold tracking-[0.04em] md:text-[2.125rem]">
+        <h1 id="company-name" className="mt-1 font-serif text-[1.625rem] font-semibold tracking-[0.04em] md:text-[2.125rem]">
           {company.name}
         </h1>
-        <p className="text-sm text-muted-foreground">{company.officialName}</p>
+        {showOfficialName && <p className="text-sm text-muted-foreground">{company.officialName}</p>}
 
         {company.description ? (
-          <p className="mt-4 max-w-[42rem] text-[1.0625rem] leading-[1.8] md:text-[1.1875rem]">
+          <p className="mt-3 max-w-[42rem] text-[1.0625rem] leading-[1.8] md:text-[1.1875rem]">
             <RichText text={company.description} />
           </p>
         ) : (
@@ -100,13 +125,13 @@ export function CompanyHero({
             A figures-only entry. The reader is told what this page is and what it is not, where the 3-second
             sentence would be — rather than meeting a blank space and guessing.
           */
-          <p className="mt-4 max-w-3xl text-[0.9375rem] leading-7 text-muted-foreground">
+          <p className="mt-3 max-w-3xl text-[0.9375rem] leading-7 text-muted-foreground">
             この会社の解説はまだ作成していません。下の財務データは有価証券報告書のXBRLから機械的に取り出し、有報の印字と突き合わせたものです。
           </p>
         )}
 
         {branches.length > 1 && (
-          <ul aria-label="主な事業" className="mt-5 flex flex-wrap gap-2">
+          <ul aria-label="主な事業" className="mt-4 flex flex-wrap gap-2">
             {branches.map((business, index) => (
               <li key={business.id}>
                 <a
@@ -125,11 +150,11 @@ export function CompanyHero({
           </ul>
         )}
 
-        <div className="mt-6">
+        <div className="mt-5">
           <KeyFacts records={company.financials} sources={company.sources} />
         </div>
 
-        <div className="mt-4 flex flex-wrap gap-3">
+        <div className="mt-3 flex flex-wrap gap-3">
           {/* JCE-055: the company's own site, at the address its 有報 prints for its electronic notices. */}
           {website && (
             <a
@@ -163,6 +188,29 @@ export function CompanyHero({
             誤りを報告
           </Link>
         </div>
+
+        {/* JCE-087: what this page holds, in one line at the top — only the sections this entry has,
+            plus the analysis report. The SectionTabs below remain the way to move while reading. */}
+        {toc && toc.length > 0 && (
+          <nav aria-label="このページの内容" className="mt-4 border-t border-border pt-3">
+            <p className="text-xs leading-6 text-muted-foreground">
+              <span className="font-semibold text-foreground">このページの内容</span>
+              <span aria-hidden className="mx-2">―</span>
+              {toc.map((s, i) => (
+                <Fragment key={s.id}>
+                  {i > 0 && <span aria-hidden className="mx-1">・</span>}
+                  <a href={`#${s.id}`} className="underline-offset-4 hover:text-foreground hover:underline">
+                    {s.label}
+                  </a>
+                </Fragment>
+              ))}
+              <span aria-hidden className="mx-1">・</span>
+              <Link href={`/companies/${company.id}/report`} className="underline-offset-4 hover:text-foreground hover:underline">
+                分析・レポート
+              </Link>
+            </p>
+          </nav>
+        )}
       </div>
     </section>
   );
