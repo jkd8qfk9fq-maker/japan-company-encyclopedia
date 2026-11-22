@@ -1,10 +1,12 @@
 import type { QuizQuestion } from "@/lib/engagement-data";
+import { LESSON_GUIDES } from "@/lib/lesson-guide";
 import type { LessonQuestion, QuestionTable } from "@/lib/lesson-questions";
 import { STRUCTURE_QUESTION_BY_ID } from "@/lib/structure-questions";
 
 /**
- * The micro-lesson layer (JCE-082, course rebuilt in JCE-090): short lessons — a few paragraphs of
- * reading, then two questions — arranged into units, on top of the twelve-step course (JCE-072). The
+ * The micro-lesson layer (JCE-082, course rebuilt in JCE-090, learn block added in JCE-091): short
+ * lessons — first the stumbling point, the concept and a guided reading of the real thing, then two
+ * questions — arranged into units, on top of the twelve-step course (JCE-072). The
  * hybrid design in one structure: the units teach the basics, and the readings are practised on real
  * companies' filings, so what is learned is used again on the numbers the earnings digest (決算定期便)
  * later brings back.
@@ -55,10 +57,23 @@ export type MicroQuestion = {
 export type MicroLesson = {
   id: string;
   title: string;
-  /** A reader-facing estimate of the minutes the lesson takes. */
+  /** A reader-facing estimate of the minutes the lesson takes — learn block and questions together (JCE-091). */
   minutes: number;
-  /** Short paragraphs of reading before the questions. General method only — no company facts. */
+  /** The moment this lesson unsticks, shown before anything is taught (JCE-091, src/lib/lesson-guide.ts). */
+  stumble?: string;
+  /** Short paragraphs teaching the concept before the questions. General method only — no company facts. */
   body: string[];
+  /** An authored diagram of the statement's form, shown with the concept prose (JCE-091). Structure only. */
+  diagram?: QuestionTable;
+  /** The guided reading of the real thing, read after the concept and before the questions (JCE-091). */
+  guide?: string[];
+  /**
+   * The excerpt the guided reading walks through: a bound question's table when one carries one, else the
+   * lesson's authored excerpt of the form. Printed figures as filed, or items and sections only.
+   */
+  guideTable?: QuestionTable;
+  /** The citation of the excerpt above, when it is a bound question's table. */
+  guideCite?: { period: string; sourceTitle: string };
   questions: MicroQuestion[];
 };
 
@@ -591,7 +606,27 @@ export function buildMicroCourse(pool: QuizQuestion[], lessonPool: LessonQuestio
     id: unit.id,
     title: unit.title,
     intro: unit.intro,
-    lessons: unit.lessons.map((spec) => ({ id: spec.id, title: spec.title, minutes: spec.minutes, body: spec.body, questions: take(spec) })),
+    lessons: unit.lessons.map((spec) => {
+      const questions = take(spec);
+      // The learn block (JCE-091, src/lib/lesson-guide.ts): the stumbling point, the concept diagram and
+      // the guided reading are authored per lesson; the excerpt the reading walks through is the first
+      // bound question's table when one carries one — the same excerpt the question then asks about —
+      // and falls back to the lesson's authored excerpt of the form when none does.
+      const guide = LESSON_GUIDES[spec.id];
+      const tableQuestion = guide?.liftGuideTable === false ? undefined : questions.find((q) => q.table);
+      return {
+        id: spec.id,
+        title: spec.title,
+        minutes: guide?.minutes ?? spec.minutes,
+        stumble: guide?.stumble,
+        body: spec.body,
+        diagram: guide?.diagram,
+        guide: guide?.guide ?? [],
+        guideTable: tableQuestion?.table ?? guide?.guideTable,
+        guideCite: tableQuestion ? { period: tableQuestion.period, sourceTitle: tableQuestion.sourceTitle } : undefined,
+        questions,
+      };
+    }),
     plannedLessons: [],
   });
   return UNITS.map(bind);

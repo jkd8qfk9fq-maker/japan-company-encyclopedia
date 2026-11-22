@@ -3,6 +3,7 @@ import { buildDigest } from "../src/lib/digest";
 import type { QuizQuestion, UpdatesData } from "../src/lib/engagement-data";
 import { weekEnd, weekStart } from "../src/lib/jst-dates";
 import { buildLessonQuestions, type LessonQuestion } from "../src/lib/lesson-questions";
+import { LESSON_GUIDES } from "../src/lib/lesson-guide";
 import { buildMicroCourse, MICRO_LESSON_IDS } from "../src/lib/micro-lessons";
 import { dueReviewIds, scheduleReview } from "../src/lib/review-queue";
 import type { Company, FinancialRecord, IndustryId, InterimRecord } from "../src/types/company";
@@ -295,6 +296,10 @@ const poolQ = (id: string, kind: QuizQuestion["kind"], industry: string | null =
 
 const PREDICT_KINDS: LessonQuestion["kind"][] = ["growth-revenue", "growth-profit", "growth-employees", "quarterly-direction"];
 
+/** The kinds whose generated questions carry an excerpt table (JCE-090); the fake pool honours that too,
+ *  so the JCE-091 walkthrough has a table to lift. */
+const TABLE_KINDS: LessonQuestion["kind"][] = ["find-row", "relation-stages", "relation-net-assets", "region-find"];
+
 const lessonQ = (id: string, kind: LessonQuestion["kind"]): LessonQuestion => ({
   id,
   kind,
@@ -303,6 +308,7 @@ const lessonQ = (id: string, kind: LessonQuestion["kind"]): LessonQuestion => ({
   industry: "retail",
   // The generator never emits a direction question without a clue (JCE-090); the fake pool honours the same contract.
   ...(PREDICT_KINDS.includes(kind) ? { clue: "手がかり：テスト用の手がかり（計算値）。" } : {}),
+  ...(TABLE_KINDS.includes(kind) ? { table: { columns: ["項目", "2026年3月期"], rows: [["売上高", "1,000億円"]] } } : {}),
   prompt: `問題 ${id}`,
   options: [
     { id: "up", label: "増えた" },
@@ -402,6 +408,95 @@ describe("buildMicroCourse — the JCE-090 course", () => {
     // drifted from the specs, a lesson would silently vanish from the export — the JCE-088 deploy failure.
     expect(MICRO_LESSON_IDS).toHaveLength(27);
     expect(MICRO_LESSON_IDS).toEqual(units.flatMap((u) => u.lessons.map((l) => l.id)));
+  });
+});
+
+describe("buildMicroCourse — the JCE-091 learn block", () => {
+  const pool: QuizQuestion[] = [poolQ("dsc-1", "describe"), poolQ("dsc-2", "describe")];
+  const lessonPool: LessonQuestion[] = [
+    ...[1, 2, 3, 4, 5].map((n) => lessonQ(`fr-${n}`, "find-row")),
+    ...[1, 2, 3, 4, 5].map((n) => lessonQ(`rs-${n}`, "relation-stages")),
+    ...[1, 2, 3].map((n) => lessonQ(`lr-${n}`, "label-reading")),
+    lessonQ("st-1", "segment-top"),
+    lessonQ("ge-1", "growth-employees"),
+    lessonQ("rna-1", "relation-net-assets"),
+    lessonQ("rf-1", "region-find"),
+    lessonQ("qd-1", "quarterly-direction"),
+    lessonQ("gr-1", "growth-revenue"),
+    lessonQ("gp-1", "growth-profit"),
+  ];
+  const units = buildMicroCourse(pool, lessonPool);
+  const lessons = units.flatMap((u) => u.lessons);
+
+  it("covers every lesson id with an authored guide — no lesson reaches its questions untaught", () => {
+    expect(Object.keys(LESSON_GUIDES).sort()).toEqual([...MICRO_LESSON_IDS].sort());
+  });
+
+  it("gives all 27 lessons the full learn block: stumbling point, concept prose, guided reading", () => {
+    // The learn block is authored per lesson, so it is present even when the pools are empty.
+    for (const unit of buildMicroCourse([], [])) {
+      for (const lesson of unit.lessons) {
+        expect(lesson.stumble, lesson.id).toBeTruthy();
+        expect(lesson.body.length, lesson.id).toBeGreaterThanOrEqual(2);
+        expect(lesson.guide?.length, lesson.id).toBeGreaterThanOrEqual(1);
+      }
+    }
+    for (const lesson of lessons) {
+      expect(lesson.stumble, lesson.id).toBeTruthy();
+      expect(lesson.guide?.length, lesson.id).toBeGreaterThanOrEqual(1);
+    }
+  });
+
+  it("sizes the minutes to the enlarged lesson, not to the old four steps", () => {
+    for (const lesson of lessons) {
+      expect(lesson.minutes, lesson.id).toBeGreaterThanOrEqual(5);
+      expect(lesson.minutes, lesson.id).toBeLessThanOrEqual(7);
+    }
+    expect(lessons.find((l) => l.id === "predict-with-clues")?.minutes).toBe(7); // the finale: 4 questions
+  });
+
+  it("lifts a bound question's table into the walkthrough, with that question's citation", () => {
+    const plMap = lessons.find((l) => l.id === "pl-map")!;
+    const tableQuestion = plMap.questions.find((q) => q.table);
+    expect(tableQuestion).toBeDefined();
+    expect(plMap.guideTable).toEqual(tableQuestion!.table);
+    expect(plMap.guideCite).toEqual({ period: "2026年3月期", sourceTitle: "有価証券報告書" });
+    const piles = lessons.find((l) => l.id === "profit-piles-up")!;
+    expect(piles.guideTable).toBeDefined();
+    expect(piles.guideCite?.sourceTitle).toBe("有価証券報告書");
+  });
+
+  it("lets a lesson opt out of the lift, when the excerpt that binds may be the other statement's", () => {
+    // shades-of-red binds a row-finding question whose excerpt may be the balance-sheet summary; its
+    // guided reading is about the profit stages' signs, so it walks through in prose instead.
+    const shades = lessons.find((l) => l.id === "shades-of-red")!;
+    expect(shades.questions.some((q) => q.table)).toBe(true);
+    expect(shades.guideTable).toBeUndefined();
+    expect(shades.guideCite).toBeUndefined();
+    expect(shades.guide?.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it("falls back to the authored excerpt of the form where no bound question carries a table", () => {
+    // left-and-right binds two authored questions — no company table exists — so its walkthrough reads
+    // the balance sheet's form itself, and carries no company citation.
+    const thin = buildMicroCourse([], []);
+    const leftRight = thin[3]!.lessons.find((l) => l.id === "left-and-right")!;
+    expect(leftRight.guideTable).toBeDefined();
+    expect(leftRight.guideCite).toBeUndefined();
+    // A lesson whose questions never carry a table and which authors no excerpt walks through in prose.
+    const longName = lessons.find((l) => l.id === "the-long-name")!;
+    expect(longName.guideTable).toBeUndefined();
+    expect(longName.guide?.length).toBeGreaterThanOrEqual(1);
+  });
+
+  it("teaches with authored diagrams of the form — structure only, on the lessons that need a picture", () => {
+    const withDiagram = lessons.filter((l) => l.diagram);
+    expect(withDiagram.length).toBeGreaterThanOrEqual(15);
+    const plMap = lessons.find((l) => l.id === "pl-map")!;
+    expect(plMap.diagram?.rows.map((r) => r[0])).toContain("売上総利益");
+    expect(plMap.diagram?.rows.map((r) => r[0])).toContain("当期純利益");
+    // A diagram names items and sections; it never carries an amount.
+    for (const lesson of withDiagram) for (const row of lesson.diagram!.rows) for (const cell of row) expect(cell).not.toMatch(/円|億|,/);
   });
 });
 
