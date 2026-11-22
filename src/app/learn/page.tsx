@@ -4,6 +4,7 @@ import { BetaOffer } from "@/components/engagement/beta-offer";
 import { LearnCourse } from "@/components/engagement/learn-course";
 import { MicroLessons } from "@/components/engagement/micro-lessons";
 import { TrainingHistory } from "@/components/engagement/training-history";
+import { LEARN } from "@/lib/learning-ui";
 
 export const metadata: Metadata = {
   title: "有報の読み方入門",
@@ -19,10 +20,10 @@ export const metadata: Metadata = {
  * and is checked against its printed figures.
  */
 const STEPS: { n: number; title: string; text: string; href: string; link: string }[] = [
-  { n: 1, title: "予測", text: "決算の数字を見る前に、売上と利益の方向を自分で予想します。予想を立てるところから訓練は始まります。レッスンで型を学んだら、企業ページで次の決算への予測を記録します（記録した予測は変更できません）。", href: "#lesson-predict-the-direction", link: "先読みのレッスンへ" },
+  { n: 1, title: "予測", text: "決算の数字を見る前に、売上と利益の方向を自分で予想します。予想を立てるところから訓練は始まります。レッスンで型を学んだら、企業ページで次の決算への予測を記録します（記録した予測は変更できません）。", href: "/learn/lesson/predict-the-direction", link: "先読みのレッスンへ" },
   { n: 2, title: "開示", text: "実際の決算が出たら、開示された実績を確認します。定期便に今週の開示が並びます。", href: "/digest", link: "決算定期便へ" },
   { n: 3, title: "照合", text: "自分の予測と実績を比べます。開示がサイトに載ると、企業ページと定期便に、あなたの予測と実績の印字値が並びます。", href: "/digest", link: "定期便で照合する" },
-  { n: 4, title: "フィードバック", text: "見落とした問題は、復習キューが間隔をあけて連れ戻します。間違えたところが、次の訓練の材料です。", href: "#review-queue", link: "復習キューへ" },
+  { n: 4, title: "フィードバック", text: "見落とした問題は、復習キューが間隔をあけて連れ戻します。間違えたところが、次の訓練の材料です。", href: "/learn/review", link: "復習キューへ" },
   { n: 5, title: "蓄積", text: "答えた問題、終えたレッスン、予測とその照合は、会社ごとの訓練の記録として残ります。読んだ会社の積み重ねが、見る力の土台になります。", href: "#training-history", link: "訓練の記録へ" },
 ];
 
@@ -32,10 +33,23 @@ export default function LearnPage() {
       <p className="eyebrow" aria-hidden>Reading filings</p>
       <h1 className="mt-3 font-serif text-[2rem] font-semibold">有報の読み方入門</h1>
       <p className="prose-ja mt-3 text-muted-foreground">
-        ここは、金融の知識を覚える場所ではなく、企業を分析する力を鍛える訓練の場です。実際の上場企業の決算を使い、自分で読み、予測し、結果を検証することで、企業を見る力を継続的に鍛えます。まずは3〜4分のマイクロレッスンで、売上と利益の違いを実在の企業の数字で読みます。進み具合はこのブラウザにだけ残ります。
+        ここは、金融の知識を覚える場所ではなく、企業を分析する力を鍛える訓練の場です。実際の上場企業の決算を使い、自分で読み、予測し、結果を検証することで、企業を見る力を継続的に鍛えます。進み具合はこのブラウザにだけ残ります。
       </p>
 
-      <section aria-label="分析訓練の5ステップ" className="mt-8">
+      {/* The path comes first (JCE-088): what to do next, and how far you have come, without scrolling.
+          The learning area is white-based with its own bright palette; the rest of the page keeps the
+          encyclopedia's theme. */}
+      <div className="mt-8 rounded-3xl border-2 bg-white p-5 sm:p-7" style={{ borderColor: LEARN.line, color: LEARN.ink }}>
+        <MicroLessons />
+      </div>
+
+      <div className="mt-16 border-t border-border pt-10">
+        <TrainingHistory />
+      </div>
+
+      <BetaOffer />
+
+      <section aria-label="分析訓練の5ステップ" className="mt-16 border-t border-border pt-10">
         <h2 className="font-serif text-[1.375rem] font-semibold">分析訓練の5ステップ</h2>
         <p className="prose-ja mt-1 text-sm text-muted-foreground">1社を読むたびに、この順序で回します。</p>
         <ol className="mt-4 grid gap-3">
@@ -54,14 +68,6 @@ export default function LearnPage() {
         </ol>
       </section>
 
-      <BetaOffer />
-
-      <div className="mt-10">
-        <MicroLessons />
-      </div>
-      <div className="mt-16 border-t border-border pt-10">
-        <TrainingHistory />
-      </div>
       <section aria-label="12ステップのコース" className="mt-16 border-t border-border pt-10">
         <p className="eyebrow" aria-hidden>Course</p>
         <h2 className="mt-2 font-serif text-[1.375rem] font-semibold">12ステップで通して読む</h2>
