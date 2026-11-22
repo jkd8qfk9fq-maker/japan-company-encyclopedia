@@ -139,9 +139,42 @@ describe("registries", () => {
   });
 });
 
+describe("identity codes (JCE-093)", () => {
+  // An EDINET code names one filer and a corporate number names one corporation. Two
+  // entries carrying the same one would make the pipeline join filings to the wrong
+  // company, so uniqueness is part of the guarantee, not a nicety.
+  it("never gives two companies the same EDINET code", () => {
+    const seen = new Map<string, string>();
+    const duplicates: string[] = [];
+    for (const c of companies) {
+      if (!c.edinetCode) continue;
+      const first = seen.get(c.edinetCode);
+      if (first) duplicates.push(`${c.edinetCode}: ${first}, ${c.id}`);
+      else seen.set(c.edinetCode, c.id);
+    }
+    expect(duplicates).toEqual([]);
+  });
+
+  it("never gives two companies the same corporate number", () => {
+    const seen = new Map<string, string>();
+    const duplicates: string[] = [];
+    for (const c of companies) {
+      if (!c.corporateNumber) continue;
+      const first = seen.get(c.corporateNumber);
+      if (first) duplicates.push(`${c.corporateNumber}: ${first}, ${c.id}`);
+      else seen.set(c.corporateNumber, c.id);
+    }
+    expect(duplicates).toEqual([]);
+  });
+});
+
 describe.each(companies.map((c) => [c.id, c] as const))("company %s", (_, company) => {
   it("has well-formed identity fields", () => {
     expect(company.code).toMatch(/^[0-9][0-9A-Z]{3}$/);
+    // JCE-093: the EDINET code and corporate number are optional — a filer the official
+    // code list does not carry as listed has neither — but when present they are exact.
+    if (company.edinetCode !== undefined) expect(company.edinetCode).toMatch(/^E[0-9]{5}$/);
+    if (company.corporateNumber !== undefined) expect(company.corporateNumber).toMatch(/^[0-9]{13}$/);
     expect(company.name.trim()).not.toBe("");
     expect(company.officialName.trim()).not.toBe("");
     expect(company.listings.length).toBeGreaterThan(0);

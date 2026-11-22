@@ -13,7 +13,7 @@
  */
 
 export const FIELD_LAYERS = /** @type {const} */ ({
-  facts: ["code", "officialName", "nameEn", "listings", "financials", "interimFinancials", "quarterlyEarnings", "workforce", "shareFacts", "segmentRevenue", "regionalRevenue"],
+  facts: ["code", "edinetCode", "corporateNumber", "officialName", "nameEn", "listings", "financials", "financialStatements", "interimFinancials", "quarterlyEarnings", "workforce", "shareFacts", "segmentRevenue", "regionalRevenue"],
   detail: ["name", "shortNameEn", "description", "industries", "businesses", "businessModel", "history", "relatedCompanies", "perspectives"],
   meta: ["id", "sources", "status", "updatedAt"],
 });

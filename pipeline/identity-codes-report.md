@@ -1,0 +1,265 @@
+# ID基盤の付与レポート（JCE-093、EDINETコードリスト 2026-11-22 現在）
+
+対象エントリー 3900 社 ／ 付与した 3704 社 ／ 付与済みで一致 0 社 ／ 競合 0 社 ／ 突合できなかった 196 社
+
+突合は証券コードで行い、値は金融庁の EDINET コードリストの行をそのまま写した。名称での突合や推測での補完はしていない。
+
+## 突合できなかった会社
+
+### 上場廃止（リストに非上場として残り、証券コードがない）（189社）
+
+- 3856 Abalance株式会社（abalance、needs-attention） — リストでは非上場（EDINETコード E05713、証券コードなし）
+- 9787 イオンディライト株式会社（aeon-delight、figures-only） — リストでは非上場（EDINETコード E04874、証券コードなし）
+- 8905 イオンモール株式会社（aeon-mall、figures-only） — リストでは非上場（EDINETコード E04002、証券コードなし）
+- 5836 株式会社エージェント・インシュアランス・グループ（agent-insurance-group、figures-only） — リストでは非上場（EDINETコード E38164、証券コードなし）
+- 9377 株式会社エージーピー（agp、figures-only） — リストでは非上場（EDINETコード E04366、証券コードなし）
+- 5577 株式会社アイデミー（aidemy、figures-only） — リストでは非上場（EDINETコード E38690、証券コードなし）
+- 8515 アイフル株式会社（aiful、figures-only） — リストでは非上場（EDINETコード E03721、証券コードなし）
+- 3546 アレンザホールディングス株式会社（alleanza-holdings、figures-only） — リストでは非上場（EDINETコード E32382、証券コードなし）
+- 3814 株式会社アルファクス・フード・システム（alphax-food-system、figures-only） — リストでは非上場（EDINETコード E05633、証券コードなし）
+- 260A 株式会社オルツ（alt、figures-only） — リストでは非上場（EDINETコード E39967、証券コードなし）
+- 7183 あんしん保証株式会社（anshin-guarantor-service、figures-only） — リストでは非上場（EDINETコード E31905、証券コードなし）
+- 2830 アヲハタ株式会社（aohata、figures-only） — リストでは非上場（EDINETコード E00503、証券コードなし）
+- 6173 株式会社アクアライン（aqualine、figures-only） — リストでは非上場（EDINETコード E31694、証券コードなし）
+- 3264 株式会社アスコット（ascot、figures-only） — リストでは非上場（EDINETコード E21391、証券コードなし）
+- 3526 芦森工業株式会社（ashimori-industry、figures-only） — リストでは非上場（EDINETコード E00577、証券コードなし）
+- 9223 株式会社ASNOVA（asnova、figures-only） — リストでは非上場（EDINETコード E35797、証券コードなし）
+- 5259 ＢＢＤイニシアティブ株式会社（bbd-initiative、figures-only） — リストでは非上場（EDINETコード E38288、証券コードなし）
+- 3328 BEENOS株式会社（beenos、figures-only） — リストでは非上場（EDINETコード E03437、証券コードなし）
+- 4316 株式会社ビーマップ（bemap、figures-only） — リストでは非上場（EDINETコード E05228、証券コードなし）
+- 1726 株式会社ビーアールホールディングス（br-holdings、figures-only） — リストでは非上場（EDINETコード E00312、証券コードなし）
+- 3655 株式会社ブレインパッド（brainpad、figures-only） — リストでは非上場（EDINETコード E25817、証券コードなし）
+- 3540 株式会社歯愛メディカル（c-i-medical、figures-only） — リストでは非上場（EDINETコード E32453、証券コードなし）
+- 7739 キヤノン電子株式会社（canon-electronics、figures-only） — リストでは非上場（EDINETコード E02301、証券コードなし）
+- 4834 キャリアバンク株式会社（career-bank、figures-only） — リストでは非上場（EDINETコード E05176、証券コードなし）
+- 2150 株式会社ケアネット（carenet、figures-only） — リストでは非上場（EDINETコード E05684、証券コードなし）
+- 3688 株式会社CARTA HOLDINGS（carta-holdings、figures-only） — リストでは非上場（EDINETコード E22007、証券コードなし）
+- 7379 株式会社サーキュレーション（circulation、figures-only） — リストでは非上場（EDINETコード E36731、証券コードなし）
+- 6060 こころネット株式会社（cocolonet、figures-only） — リストでは非上場（EDINETコード E26443、証券コードなし）
+- 3458 株式会社シーアールイー（cre、figures-only） — リストでは非上場（EDINETコード E31441、証券コードなし）
+- 6373 大同工業株式会社（daido-kogyo、figures-only） — リストでは非上場（EDINETコード E01580、証券コードなし）
+- 1712 株式会社ダイセキ環境ソリューション（daiseki-eco-solution、figures-only） — リストでは非上場（EDINETコード E05444、証券コードなし）
+- 7116 ダイワ通信株式会社（daiwa-tsushin、figures-only） — リストでは非上場（EDINETコード E38202、証券コードなし）
+- 2389 株式会社デジタルホールディングス（digital-holdings、figures-only） — リストでは非上場（EDINETコード E05374、証券コードなし）
+- 5070 株式会社ドラフト（draft、figures-only） — リストでは非上場（EDINETコード E35535、証券コードなし）
+- 3079 ディーブイエックス株式会社（dvx、figures-only） — リストでは非上場（EDINETコード E03005、証券コードなし）
+- 3294 株式会社イーグランド（e-grand、figures-only） — リストでは非上場（EDINETコード E30124、証券コードなし）
+- 6486 イーグル工業株式会社（eagle-industry、needs-attention） — リストでは非上場（EDINETコード E01414、証券コードなし）
+- 5585 エコナビスタ株式会社（econavista、figures-only） — リストでは非上場（EDINETコード E38765、証券コードなし）
+- 3136 株式会社エコノス（econos、figures-only） — リストでは非上場（EDINETコード E31588、証券コードなし）
+- 8208 株式会社エンチョー（encho、figures-only） — リストでは非上場（EDINETコード E03109、証券コードなし）
+- 3260 株式会社エスポア（espoir、needs-attention） — リストでは非上場（EDINETコード E04086、証券コードなし）
+- 7092 株式会社Fast Fitness Japan（fast-fitness-japan、figures-only） — リストでは非上場（EDINETコード E35318、証券コードなし）
+- 7088 株式会社フォーラムエンジニアリング（forum-engineering、figures-only） — リストでは非上場（EDINETコード E35487、証券コードなし）
+- 6542 株式会社FCホールディングス（founder-s-consultants-holdings、figures-only） — リストでは非上場（EDINETコード E32683、証券コードなし）
+- 6312 フロイント産業株式会社（freund、figures-only） — リストでは非上場（EDINETコード E01706、証券コードなし）
+- 8209 株式会社フレンドリー（friendly、figures-only） — リストでは非上場（EDINETコード E03110、証券コードなし）
+- 2763 株式会社エフティグループ（ftgroup、figures-only） — リストでは非上場（EDINETコード E03405、証券コードなし）
+- 7605 株式会社フジ・コーポレーション（fuji-7605、figures-only） — リストでは非上場（EDINETコード E03315、証券コードなし）
+- 5009 富士興産株式会社（fuji-kosan、figures-only） — リストでは非上場（EDINETコード E01076、証券コードなし）
+- 5017 富士石油株式会社（fuji-oil-5017、figures-only） — リストでは非上場（EDINETコード E01082、証券コードなし）
+- 9749 富士ソフト株式会社（fuji-soft、figures-only） — リストでは非上場（EDINETコード E04810、証券コードなし）
+- 6406 フジテック株式会社（fujitec、figures-only） — リストでは非上場（EDINETコード E01622、証券コードなし）
+- 6755 株式会社富士通ゼネラル（fujitsu-general、figures-only） — リストでは非上場（EDINETコード E01775、証券コードなし）
+- 4449 株式会社ギフティ（giftee、figures-only） — リストでは非上場（EDINETコード E35096、証券コードなし）
+- 4171 株式会社グローバルインフォメーション（global-information、figures-only） — リストでは非上場（EDINETコード E36172、証券コードなし）
+- 6026 GMO TECH株式会社（gmo-tech、figures-only） — リストでは非上場（EDINETコード E31055、証券コードなし）
+- 3319 株式会社ゴルフダイジェスト・オンライン（golf-digest-online、figures-only） — リストでは非上場（EDINETコード E05391、証券コードなし）
+- 7467 萩原電気ホールディングス株式会社（hagiwara-electric-holdings、figures-only） — リストでは非上場（EDINETコード E02828、証券コードなし）
+- 2344 平安レイサービス株式会社（heian-ceremony-service、figures-only） — リストでは非上場（EDINETコード E05319、証券コードなし）
+- 7205 日野自動車株式会社（hino-motors-7205、figures-only） — リストでは非上場（EDINETコード E02146、証券コードなし）
+- 4530 久光製薬株式会社（hisamitsu-pharmaceutical、figures-only） — リストでは非上場（EDINETコード E00944、証券コードなし）
+- 3593 株式会社ホギメディカル（hogy-medical、figures-only） — リストでは非上場（EDINETコード E02315、証券コードなし）
+- 9600 株式会社アイネット（i-net、figures-only） — リストでは非上場（EDINETコード E04919、証券コードなし）
+- 6879 株式会社IMAGICA GROUP（imagica-group、figures-only） — リストでは非上場（EDINETコード E01862、証券コードなし）
+- 9479 株式会社インプレスホールディングス（impress-holdings、figures-only） — リストでは非上場（EDINETコード E00733、証券コードなし）
+- 9338 株式会社INFORICH（inforich、figures-only） — リストでは非上場（EDINETコード E38192、証券コードなし）
+- 5595 株式会社QPS研究所（institute-for-q-shu-pioneers-of-space、figures-only） — リストでは非上場（EDINETコード E39137、証券コードなし）
+- 9161 ID&Eホールディングス株式会社（integrated-design-and-engineering-holdings、figures-only） — リストでは非上場（EDINETコード E38017、証券コードなし）
+- 8940 株式会社インテリックス（intellex、figures-only） — リストでは非上場（EDINETコード E04036、証券コードなし）
+- 2692 伊藤忠食品株式会社（itochu-shokuhin、figures-only） — リストでは非上場（EDINETコード E02931、証券コードなし）
+- 3480 株式会社ジェイ・エス・ビー（j-s-b、figures-only） — リストでは非上場（EDINETコード E25148、証券コードなし）
+- 7408 株式会社ジャムコ（jamco、figures-only） — リストでは非上場（EDINETコード E02254、証券コードなし）
+- 7386 ジャパンワランティサポート株式会社（japan-warranty-support、figures-only） — リストでは非上場（EDINETコード E37773、証券コードなし）
+- 7082 株式会社ジモティー（jimoty、needs-attention） — リストでは非上場（EDINETコード E35289、証券コードなし）
+- 4556 株式会社カイノス（kainos-laboratories、figures-only） — リストでは非上場（EDINETコード E00977、証券コードなし）
+- 6416 桂川電機株式会社（katsuragawa-electric、figures-only） — リストでは非上場（EDINETコード E02000、証券コードなし）
+- 1743 コーアツ工業株式会社（koatsu-kogyo、figures-only） — リストでは非上場（EDINETコード E00299、証券コードなし）
+- 4367 広栄化学株式会社（koei-chemical、figures-only） — リストでは非上場（EDINETコード E00837、証券コードなし）
+- 6297 鉱研工業株式会社（koken-boring-machine、figures-only） — リストでは非上場（EDINETコード E01699、証券コードなし）
+- 5352 黒崎播磨株式会社（krosaki-harima、figures-only） — リストでは非上場（EDINETコード E01150、証券コードなし）
+- 7709 クボテック株式会社（kubotek、figures-only） — リストでは非上場（EDINETコード E02337、証券コードなし）
+- 6973 協栄産業株式会社（kyoei-sangyo、figures-only） — リストでは非上場（EDINETコード E01619、証券コードなし）
+- 5856 株式会社エルアイイーエイチ（life-intelligent-enterprise-holdings、figures-only） — リストでは非上場（EDINETコード E01329、証券コードなし）
+- 4267 株式会社ライトワークス（lightworks、figures-only） — リストでは非上場（EDINETコード E37358、証券コードなし）
+- 3978 株式会社マクロミル（macromill、figures-only） — リストでは非上場（EDINETコード E05372、証券コードなし）
+- 6489 前澤工業株式会社（maezawa-industries、figures-only） — リストでは非上場（EDINETコード E01672、証券コードなし）
+- 7925 前澤化成工業株式会社（maezawa-kasei-industries、figures-only） — リストでは非上場（EDINETコード E00861、証券コードなし）
+- 4917 株式会社マンダム（mandom、figures-only） — リストでは非上場（EDINETコード E01027、証券コードなし）
+- 9067 株式会社丸運（maruwn、figures-only） — リストでは非上場（EDINETコード E04182、証券コードなし）
+- 7317 株式会社松屋アールアンドディ（matsuya-r-and-d、figures-only） — リストでは非上場（EDINETコード E35560、証券コードなし）
+- 6670 株式会社MCJ（mcj、figures-only） — リストでは非上場（EDINETコード E02090、証券コードなし）
+- 4824 株式会社メディアシーク（mediaseek、figures-only） — リストでは非上場（EDINETコード E05161、証券コードなし）
+- 3902 メディカル・データ・ビジョン株式会社（medical-data-vision、figures-only） — リストでは非上場（EDINETコード E31056、証券コードなし）
+- 6095 メドピア株式会社（medpeer、figures-only） — リストでは非上場（EDINETコード E30650、証券コードなし）
+- 7451 三菱食品株式会社（mitsubishi-shokuhin、figures-only） — リストでは非上場（EDINETコード E02558、証券コードなし）
+- 7999 MUTOHホールディングス株式会社（mutoh-holdings、figures-only） — リストでは非上場（EDINETコード E02305、証券コードなし）
+- 9384 内外トランスライン株式会社（naigai-trans-line、figures-only） — リストでは非上場（EDINETコード E21799、証券コードなし）
+- 6411 中野冷機株式会社（nakano-refrigerators、figures-only） — リストでは非上場（EDINETコード E01671、証券コードなし）
+- 9275 株式会社ナルミヤ・インターナショナル（narumiya-international、figures-only） — リストでは非上場（EDINETコード E34249、証券コードなし）
+- 6734 株式会社ニューテック（newtech、figures-only） — リストでは非上場（EDINETコード E02072、証券コードなし）
+- 3341 日本調剤株式会社（nihon-chouzai、figures-only） — リストでは非上場（EDINETコード E05422、証券コードなし）
+- 6930 日本アンテナ株式会社（nippon-antenna、figures-only） — リストでは非上場（EDINETコード E01848、証券コードなし）
+- 9386 日本コンセプト株式会社（nippon-concept、figures-only） — リストでは非上場（EDINETコード E26869、証券コードなし）
+- 5476 日本高周波鋼業株式会社（nippon-koshuha-steel、figures-only） — リストでは非上場（EDINETコード E01240、証券コードなし）
+- 4690 日本パレットプール株式会社（nippon-pallet-pool、figures-only） — リストでは非上場（EDINETコード E05001、証券コードなし）
+- 9260 西本Wismettacホールディングス株式会社（nishimoto、figures-only） — リストでは非上場（EDINETコード E33381、証券コードなし）
+- 6293 日精樹脂工業株式会社（nissei-plastic-industrial、figures-only） — リストでは非上場（EDINETコード E01695、証券コードなし）
+- 7490 日新商事株式会社（nissin-shoji、needs-attention） — リストでは非上場（EDINETコード E02845、証券コードなし）
+- 2162 nms ホールディングス株式会社（nms-holdings、figures-only） — リストでは非上場（EDINETコード E05676、証券コードなし）
+- 7240 NOK株式会社（nok、needs-attention） — リストでは非上場（EDINETコード E02176、証券コードなし）
+- 3541 株式会社農業総合研究所（nousouken、figures-only） — リストでは非上場（EDINETコード E32351、証券コードなし）
+- 8289 株式会社Olympicグループ（olympic-group、figures-only） — リストでは非上場（EDINETコード E03132、証券コードなし）
+- 4800 オリコン株式会社（oricon、figures-only） — リストでは非上場（EDINETコード E05143、証券コードなし）
+- 5596 アウトルックコンサルティング株式会社（outlookconsulting、figures-only） — リストでは非上場（EDINETコード E39126、証券コードなし）
+- 7250 太平洋工業株式会社（pacific-industrial、figures-only） — リストでは非上場（EDINETコード E02178、証券コードなし）
+- 3847 パシフィックシステム株式会社（pacific-systems、figures-only） — リストでは非上場（EDINETコード E05687、証券コードなし）
+- 8283 株式会社PALTAC（paltac、figures-only） — リストでは非上場（EDINETコード E02691、証券コードなし）
+- 7817 パラマウントベッドホールディングス株式会社（paramount-bed-holdings、figures-only） — リストでは非上場（EDINETコード E25664、証券コードなし）
+- 7455 株式会社パリミキホールディングス（paris-miki-holdings、figures-only） — リストでは非上場（EDINETコード E03249、証券コードなし）
+- 2743 ピクセルカンパニーズ株式会社（pixelcompanyz、figures-only） — リストでは非上場（EDINETコード E02949、証券コードなし）
+- 3924 株式会社ランドコンピュータ（r-and-d-computer、figures-only） — リストでは非上場（EDINETコード E31948、証券コードなし）
+- 4384 ラクスル株式会社（raksul、figures-only） — リストでは非上場（EDINETコード E33966、証券コードなし）
+- 6096 株式会社レアジョブ（rarejob、figures-only） — リストでは非上場（EDINETコード E30682、証券コードなし）
+- 176A レジル株式会社（rezil、figures-only） — リストでは非上場（EDINETコード E39488、証券コードなし）
+- 7445 株式会社ライトオン（right-on、needs-attention） — リストでは非上場（EDINETコード E03240、証券コードなし）
+- 9691 株式会社両毛システムズ（ryomo-systems、needs-attention） — リストでは非上場（EDINETコード E04855、証券コードなし）
+- 2374 セントケア・ホールディング株式会社（saint-care-holding、figures-only） — リストでは非上場（EDINETコード E05354、証券コードなし）
+- 7255 株式会社桜井製作所（sakurai、figures-only） — リストでは非上場（EDINETコード E01644、証券コードなし）
+- 7922 三光産業株式会社（sanko-sangyo、figures-only） — リストでは非上場（EDINETコード E00712、証券コードなし）
+- 1841 サンユー建設株式会社（sanyu-construction、figures-only） — リストでは非上場（EDINETコード E00101、証券コードなし）
+- 9776 札幌臨床検査センター株式会社（sapporo-clinical-laboratory、figures-only） — リストでは非上場（EDINETコード E04950、証券コードなし）
+- 7420 佐鳥電機株式会社（satori-electric、figures-only） — リストでは非上場（EDINETコード E02793、証券コードなし）
+- 6901 澤藤電機株式会社（sawafuji-electric、figures-only） — リストでは非上場（EDINETコード E01885、証券コードなし）
+- 165A SBIレオスひふみ株式会社（sbi-rheos-hifumi、figures-only） — リストでは非上場（EDINETコード E39170、証券コードなし）
+- 7163 住信SBIネット銀行株式会社（sbi-sumishin-net-bank、figures-only） — リストでは非上場（EDINETコード E26990、証券コードなし）
+- 9719 SCSK株式会社（scsk、figures-only） — リストでは非上場（EDINETコード E04830、証券コードなし）
+- 3198 ＳＦＰホールディングス株式会社（sfp-holdings、figures-only） — リストでは非上場（EDINETコード E31029、証券コードなし）
+- 6957 株式会社芝浦電子（shibaura-electronics、figures-only） — リストでは非上場（EDINETコード E01960、証券コードなし）
+- 8141 新光商事株式会社（shinko-shoji、needs-attention） — リストでは非上場（EDINETコード E02664、証券コードなし）
+- 5660 神鋼鋼線工業株式会社（shinko-wire、figures-only） — リストでは非上場（EDINETコード E01282、証券コードなし）
+- 5903 シンポ株式会社（shinpo、figures-only） — リストでは非上場（EDINETコード E02448、証券コードなし）
+- 5103 昭和ホールディングス株式会社（showa-holdings、figures-only） — リストでは非上場（EDINETコード E01088、証券コードなし）
+- 3961 シルバーエッグ・テクノロジー株式会社（silver-egg-technology、figures-only） — リストでは非上場（EDINETコード E32624、証券コードなし）
+- 6197 株式会社ソラスト（solasto、figures-only） — リストでは非上場（EDINETコード E04878、証券コードなし）
+- 1757 株式会社創建エース（souken-ace、figures-only） — リストでは非上場（EDINETコード E00288、証券コードなし）
+- 7718 スター精密株式会社（star-micronics、figures-only） — リストでは非上場（EDINETコード E02302、証券コードなし）
+- 7635 杉田エース株式会社（sugita-ace、figures-only） — リストでは非上場（EDINETコード E02910、証券コードなし）
+- 6403 水道機工株式会社（suido-kiko-kaisha、figures-only） — リストでは非上場（EDINETコード E01646、証券コードなし）
+- 1776 三井住建道路株式会社（sumiken-mitsui-road、figures-only） — リストでは非上場（EDINETコード E00272、証券コードなし）
+- 1949 住友電設株式会社（sumitomo-densetsu、figures-only） — リストでは非上場（EDINETコード E00114、証券コードなし）
+- 1821 三井住友建設株式会社（sumitomo-mitsui-construction、figures-only） — リストでは非上場（EDINETコード E00085、証券コードなし）
+- 5191 住友理工株式会社（sumitomo-riko、figures-only） — リストでは非上場（EDINETコード E01097、証券コードなし）
+- 7623 株式会社サンオータス（sunautas、figures-only） — リストでは非上場（EDINETコード E03326、証券コードなし）
+- 7450 株式会社サンデー（sunday、figures-only） — リストでは非上場（EDINETコード E03245、証券コードなし）
+- 2180 株式会社サニーサイドアップグループ（sunny-side-up-group、figures-only） — リストでは非上場（EDINETコード E21381、証券コードなし）
+- 3094 株式会社スーパーバリュー（super-value、figures-only） — リストでは非上場（EDINETコード E03523、証券コードなし）
+- 4319 TAC株式会社（tac、figures-only） — リストでは非上場（EDINETコード E05231、証券コードなし）
+- 4974 タカラバイオ株式会社（takara-bio、figures-only） — リストでは非上場（EDINETコード E02474、証券コードなし）
+- 4080 株式会社田中化学研究所（tanaka-chemical、figures-only） — リストでは非上場（EDINETコード E01050、証券コードなし）
+- 3787 株式会社テクノマセマティカル（techno-mathematical、figures-only） — リストでは非上場（EDINETコード E05445、証券コードなし）
+- 7958 天馬株式会社（tenma、figures-only） — リストでは非上場（EDINETコード E00857、証券コードなし）
+- 6937 古河電池株式会社（the-furukawa-battery、figures-only） — リストでは非上場（EDINETコード E01917、証券コードなし）
+- 3271 株式会社THEグローバル社（the-global、figures-only） — リストでは非上場（EDINETコード E24340、証券コードなし）
+- 1948 株式会社弘電社（the-kodensha、figures-only） — リストでは非上場（EDINETコード E02569、証券コードなし）
+- 1884 日本道路株式会社（the-nippon-road、figures-only） — リストでは非上場（EDINETコード E00067、証券コードなし）
+- 4333 株式会社東邦システムサイエンス（toho-system-science、figures-only） — リストでは非上場（EDINETコード E05252、証券コードなし）
+- 5727 東邦チタニウム株式会社（toho-titanium、figures-only） — リストでは非上場（EDINETコード E01301、証券コードなし）
+- 5484 東北特殊鋼株式会社（tohoku-steel、needs-attention） — リストでは非上場（EDINETコード E01245、証券コードなし）
+- 7923 トーイン株式会社（toin、figures-only） — リストでは非上場（EDINETコード E00713、証券コードなし）
+- 4745 株式会社東京個別指導学院（tokyo-individualized-educational-institute、figures-only） — リストでは非上場（EDINETコード E05067、証券コードなし）
+- 7732 株式会社トプコン（topcon、figures-only） — リストでは非上場（EDINETコード E02299、証券コードなし）
+- 4551 鳥居薬品株式会社（torii-pharmaceutical、figures-only） — リストでは非上場（EDINETコード E00934、証券コードなし）
+- 1890 東洋建設株式会社（toyo-construction、figures-only） — リストでは非上場（EDINETコード E00082、証券コードなし）
+- 6210 TOYOイノベックス株式会社（toyo-innovex、figures-only） — リストでは非上場（EDINETコード E01528、証券コードなし）
+- 6201 株式会社豊田自動織機（toyota-industries-6201、figures-only） — リストでは非上場（EDINETコード E01514、証券コードなし）
+- 3347 株式会社トラスト（trust、figures-only） — リストでは非上場（EDINETコード E02977、証券コードなし）
+- 9164 株式会社トライト（tryt、needs-attention） — リストでは非上場（EDINETコード E37764、証券コードなし）
+- 3990 UUUM株式会社（uuum、figures-only） — リストでは非上場（EDINETコード E33359、証券コードなし）
+- 3681 株式会社ブイキューブ（v-cube、figures-only） — リストでは非上場（EDINETコード E30114、証券コードなし）
+- 4494 バリオセキュア株式会社（vario-secure、figures-only） — リストでは非上場（EDINETコード E35544、証券コードなし）
+- 4173 株式会社WACUL（wacul、figures-only） — リストでは非上場（EDINETコード E36323、証券コードなし）
+- 9927 株式会社ワットマン（watt-mann、figures-only） — リストでは非上場（EDINETコード E03186、証券コードなし）
+- 7940 ウェーブロックホールディングス株式会社（wavelock-holdings、figures-only） — リストでは非上場（EDINETコード E33050、証券コードなし）
+- 3141 ウエルシアホールディングス株式会社（welcia-holdings、figures-only） — リストでは非上場（EDINETコード E21035、証券コードなし）
+- 9696 株式会社ウィザス（with-us、figures-only） — リストでは非上場（EDINETコード E04850、証券コードなし）
+- 7426 株式会社山大（yamadai、figures-only） — リストでは非上場（EDINETコード E02798、証券コードなし）
+- 8279 株式会社ヤオコー（yaoko、figures-only） — リストでは非上場（EDINETコード E03127、証券コードなし）
+- 4957 ヤスハラケミカル株式会社（yasuhara-chemical、figures-only） — リストでは非上場（EDINETコード E01033、証券コードなし）
+- 7229 株式会社ユタカ技研（yutaka-giken、figures-only） — リストでは非上場（EDINETコード E02236、証券コードなし）
+
+### 上場提出者としての行がリストにない（2社）
+
+- 4659 株式会社エイジス（ajis、figures-only） — 上場提出者としての行がない（同名行: E04975、提出者種別「内国法人・組合（有価証券報告書等の提出義務者以外）」）
+- 9066 株式会社日新（nissin、figures-only） — 上場提出者としての行がない（同名行: E40649、提出者種別「内国法人・組合（有価証券報告書等の提出義務者以外）」）
+
+### リストに該当行がない（4社）
+
+- 6048 株式会社デザインワン・ジャパン（designone-japan、figures-only） — 証券コードでも名称でもリストに該当行がない
+- 202A 株式会社豆蔵デジタルホールディングス（mamezo-digital-holdings、figures-only） — 証券コードでも名称でもリストに該当行がない
+- 7105 三菱ロジスネクスト株式会社（mitsubishi-logisnext、figures-only） — 証券コードでも名称でもリストに該当行がない
+- 3770 株式会社ザッパラス（zappallas、figures-only） — 証券コードでも名称でもリストに該当行がない
+
+### 同名の行が複数あり同定できない（1社）
+
+- 6028 テクノプロ・ホールディングス株式会社（technopro-holdings、figures-only） — 同名の行が 2 件あり同定できない（E31030、E40900）
+
+## 名称の表記がリストと違う会社（コードで突合し付与した。商号変更の反映漏れの可能性があるため人が確認する）
+
+- 3750 adr120s: エントリー「株式会社ADR120S（旧会社名　株式会社サイトリ細胞研究所）」 ／ リスト「ＡＤＲバイオメディカルホールディングス株式会社」
+- 7463 advan-group: エントリー「株式会社アドヴァングループ」 ／ リスト「株式会社アドヴァン」
+- 3672 altplusinc: エントリー「株式会社オルトプラス」 ／ リスト「株式会社オルトプラスホールディングス」
+- 2464 aoba-bbt: エントリー「株式会社Aoba-BBT」 ／ リスト「株式会社ＡｏｂａーＢＢＴ」
+- 6459 daiwa-industries: エントリー「大和冷機工業株式会社」 ／ リスト「だいわ株式会社」
+- 4598 delta-fly-pharma: エントリー「Delta－Fly　Pharma　株式会社」 ／ リスト「ＤｅｌｔａーＦｌｙ　Ｐｈａｒｍａ株式会社」
+- 6093 escrow-agent-japan: エントリー「株式会社エスクロー・エージェント・ジャパン」 ／ リスト「ミトラグループ株式会社」
+- 3104 fujibo-holdings: エントリー「富士紡ホールディングス株式会社」 ／ リスト「フジボウホールディングス株式会社」
+- 3647 g-three-holdings: エントリー「株式会社ジー・スリーホールディングス」 ／ リスト「株式会社アスリナ」
+- 6420 galilei: エントリー「ガリレイ株式会社」 ／ リスト「ガリレイホールディングス株式会社」
+- 2681 geo-holdings: エントリー「株式会社ゲオホールディングス」 ／ リスト「株式会社セカンドリテイリング」
+- 3695 gmo-product-platform: エントリー「GMOプロダクトプラットフォーム株式会社 (旧会社名　GMOリサーチ＆AI株式会社)」 ／ リスト「ＧＭＯプロダクトプラットフォーム株式会社」
+- 6412 heiwa: エントリー「株式会社平和」 ／ リスト「株式会社平和ホールディングス」
+- 5902 hokkan-holdings: エントリー「ホッカンホールディングス株式会社」 ／ リスト「ホッカン株式会社」
+- 3055 hokuyaku-takeyama-holdings: エントリー「株式会社ほくやく・竹山ホールディングス」 ／ リスト「株式会社ＴＳＵＭＵＧＵ　ＨＯＬＤＩＮＧＳ」
+- 7561 hurxley: エントリー「株式会社ハークスレイ」 ／ リスト「株式会社ハークスレイホールディングス」
+- 4444 infonet: エントリー「株式会社インフォネット」 ／ リスト「株式会社インフォネットグループ」
+- 5842 integral: エントリー「インテグラル株式会社」 ／ リスト「インテグラル・グループ株式会社」
+- 8595 jafco-group: エントリー「ジャフコ グループ株式会社」 ／ リスト「株式会社ＪＡＦＣＯ」
+- 6072 jibannet-holdings: エントリー「地盤ネットホールディングス株式会社」 ／ リスト「株式会社ＥＲＴＨ　Ｇｒｏｕｐ」
+- 7702 jms: エントリー「株式会社ジェイ・エム・エス」 ／ リスト「株式会社ジェイ・エム・エス（称号　株式会社　ＪＭＳ）」
+- 5891 kairikiya: エントリー「株式会社魁力屋」 ／ リスト「株式会社ＳＡＫＩＧＡＫＥホールディングス」
+- 368A kitazato: エントリー「株式会社北里コーポレーション」 ／ リスト「株式会社北里」
+- 3547 kushikatsu-tanaka-holdings: エントリー「株式会社串カツ田中ホールディングス」 ／ リスト「株式会社ユニシアホールディングス」
+- 2345 kushim: エントリー「株式会社クシム」 ／ リスト「株式会社ＨＯＤＬ１」
+- 9552 m-and-a-research-institute-holdings: エントリー「株式会社クオンツ総研ホールディングス （旧会社名　株式会社M＆A総研ホールディングス）」 ／ リスト「株式会社クオンツ総研ホールディングス」
+- 3168 merf: エントリー「株式会社MERF（旧会社名　黒谷株式会社）」 ／ リスト「株式会社ＭＥＲＦ」
+- 9227 microwave-chemical: エントリー「マイクロ波化学株式会社」 ／ リスト「ＭＷＣＣ株式会社」
+- 3664 mobcast-holdings: エントリー「株式会社モブキャストホールディングス」 ／ リスト「株式会社ＷＩＺＥ」
+- 6634 ncxx-group: エントリー「株式会社ネクスグループ」 ／ リスト「株式会社ＪＮグループ」
+- 5991 nhk-spring: エントリー「日本発条株式会社」 ／ リスト「日本発條株式会社」
+- 2108 nippon-beet-sugar-manufacturing: エントリー「日本甜菜製糖株式会社」 ／ リスト「株式会社ニッテン」
+- 9160 novarese: エントリー「株式会社ノバレーゼ」 ／ リスト「株式会社オンザページ」
+- 3850 ntt-data-intramart: エントリー「株式会社エヌ・ティ・ティ・データ・イントラマート」 ／ リスト「株式会社イントラマート」
+- 3182 oisix-ra-daichi: エントリー「オイシックス・ラ・大地株式会社」 ／ リスト「オイシックス株式会社」
+- 3840 path: エントリー「パス株式会社」 ／ リスト「株式会社ヴィクトン」
+- 5250 prime-strategy: エントリー「プライム・ストラテジー株式会社」 ／ リスト「ＧＭＯプライム・ストラテジー株式会社」
+- 6417 sankyo: エントリー「株式会社　SANKYO（登記社名　株式会社　三共）」 ／ リスト「株式会社三共」
+- 2501 sapporo-holdings: エントリー「サッポロホールディングス株式会社」 ／ リスト「サッポロビール株式会社」
+- 6196 strike: エントリー「株式会社ストライク」 ／ リスト「株式会社ストライクグループ」
+- 2587 suntory-beverage-and-food: エントリー「サントリー食品インターナショナル株式会社」 ／ リスト「サントリービバレッジ＆フード株式会社」
+- 3306 the-nihon-seima: エントリー「日本製麻株式会社」 ／ リスト「ＳＥＩＭＡホールディングス株式会社」
+- 3626 tis: エントリー「TIS株式会社」 ／ リスト「ＴＩＳＩ株式会社」
+- 3479 tkp: エントリー「株式会社ティーケーピー（2026年6月1日付で株式会社TKPへ商号変更を予定しております。）」 ／ リスト「株式会社ＴＫＰ」
+- 4891 tms: エントリー「株式会社ティムス」 ／ リスト「㈱ティムス」
+- 4172 towa-hi-system: エントリー「東和ハイシステム株式会社」 ／ リスト「Ｈｉクラテス株式会社」
+

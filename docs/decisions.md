@@ -1634,3 +1634,20 @@ spend the trust the verification exists to build).
 **実装したこと**: src/types/company.ts（StatementRole / StatementLine / FinancialStatements と Company.financialStatements）、src/lib/content/schemas.ts（同スキーマ）、scripts/research/statement-details.mjs（EDINET XBRL からの取り込みと照合）、対象5社のデータと改訂記録、src/lib/content/integrity.ts（financialStatements の担保：出典の解決・年度の重複・金額の単位と、financials との照合。tests/data-integrity.test.ts が全社に対して実行する）、src/lib/lesson-questions.ts（生成6種別）、src/lib/micro-lessons.ts（6レッスンへのスロット追加）、src/lib/lesson-guide.ts（該当レッスンの誘導文と所要時間の更新）、src/components/engagement/training-history.tsx（新種別のラベル）、tests/micro-lessons.test.ts（Phase B の担保）。
 
 **やらないこと**: 企業ページへの全文表示の追加、既存レッスンの問いの作り替え、進捗ストアの形式変更、株価系指標の出題、対象社の拡大。
+
+## JCE-093 — 2026-11-23: ID基盤（Phase 0）— 全エントリーへ EDINETコードと法人番号を付ける
+
+**背景**: データ基盤クラウドシステム化スキーム（2026-11-23）の Phase 0。エントリーの企業同定は証券コードと社名しかなく、証券コードの変更・商号変更をまたいで書類を機械的に結ぶ鍵がなかった。企業マスタ（pipeline/listing.tsv、sync-listing.mjs）はすでに EDINETコードと法人番号を持つが、エントリー側に対応がなかった。本回はその対応をエントリーに刻む。
+
+**設計判断**:
+1. **値は金融庁の EDINET コードリストだけから写す**。突合の鍵は証券コード（企業マスタと同じ方式）。名称での突合はしない——同名の別法人が実在し、名称は表記ゆれも大きい。リストが上場提出者として証券コードで引けない会社には付けない（推測で埋めない、不変条件1）。値の正しさは「公式リストの行をそのまま写したこと」にあり、付与は scripts/pipeline/assign-identity-codes.mjs が冪等に行う（既存値と違う値が来たら競合として止め、人が確認するまで書き換えない）。
+2. **フィールドは任意（optional）**。`edinetCode`（E＋5桁）と `corporateNumber`（13桁）を `code` の直後に置く。付けられない会社がある以上、必須にはできない。形式と一意性（一つの EDINETコード・法人番号を2社が持たない）は tests/data-integrity.test.ts が担保する。
+3. **`updatedAt` は変えない、会社ごとの改訂記録も作らない**。これは内容の編集ではなく公式リスト由来の同定情報の付与であり、現時点でどのページにも表示されない。記録は本決裁と、付与スクリプトが出す pipeline/identity-codes-report.md が担う（sync-listing が台帳同期を要約で記録する作法と同じ）。
+4. **実測（コードリスト 2026-11-22 現在、エントリー 3,900社）**: 証券コードで突合し両コードを付与できたのは **3,704社**（全社とも法人番号まで揃った）。突合できなかった **196社**の内訳は、上場廃止でリストに非上場として残り証券コードを持たない会社が189社、同名行が複数あり同定できない会社が1社（テクノプロ・ホールディングス）、上場提出者としての行がない会社が2社、コードでも名称でも該当行がない会社が4社。詳細はレポートに全社分を記録した。これらの会社への付与は、企業マスタ側の履歴（上場廃止の確定情報）と合わせて別途判断する。
+5. **名称の表記差異が46社**あった（コードでは突合し付与済み）。大半は商号変更をエントリーかリストのどちらかが未反映のものと、旧字体・称号などの表記差異であり、レポートに全件を挙げた。エントリーの商号そのものの追随は登録パイプライン側の仕事として切り分ける。
+
+**Phase 0 で残るもの（今回は実装しない）**: 企業マスタの履歴テーブルとの突合の常時化（sync-listing の historyLines は既にある。エントリー側のコード変更・社名変更への追随は Phase 4 の適用自動化で扱う）。未突合196社への付与判断。EDINETコード・法人番号の企業ページへの表示（鮮度表示と合わせて Phase 5）。
+
+**実装したこと**: src/types/company.ts（Company.edinetCode / corporateNumber）、src/lib/content/schemas.ts（同スキーマ）、scripts/pipeline/assign-identity-codes.mjs（コードリストからの突合・付与・レポート。sync-listing.mjs のパーサと台帳化を再利用し、書き込み前に ownership の assertMachineWrite で検査する）、対象3,704社のデータ、pipeline/identity-codes-report.md（未突合196社と名称差異46社の全件記録）、tests/data-integrity.test.ts（形式の担保を identity fields の検査へ追加、EDINETコードと法人番号の一意性の検査を新設）、scripts/pipeline/ownership.mjs（新2フィールドを facts 層へ登録。あわせて JCE-092 で追加された financialStatements の登録漏れも同じ層へ登録した——プログラムが有報から抽出して書き込む事実データであり、自動書き込みの検査が正しく通るためにも facts が正しい置き場所である）。
+
+**やらないこと**: 未突合の会社への名称突合での付与、企業ページへの表示追加、企業マスタ（listing.tsv）の作り替え、証券コード自体の変更への追随。

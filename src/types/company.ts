@@ -490,6 +490,19 @@ export type Company = {
   id: string;
   /** 証券コード. A string: codes are identifiers, and newer codes contain letters. */
   code: string;
+  /**
+   * EDINETコード (JCE-093). The filer's identity in EDINET: unlike the securities code and the
+   * company name it does not change when either of those does, so it is the key the data
+   * pipeline joins filings on. Present only where the official EDINET code list
+   * (金融庁) matched this entry's securities code; never filled in by inference.
+   */
+  edinetCode?: string;
+  /**
+   * 法人番号 (JCE-093). The 13-digit corporate number from the same EDINET code list row as
+   * `edinetCode`, tying the filer to the national corporate register across code changes.
+   * Absent where the list carries no number for the matched filer.
+   */
+  corporateNumber?: string;
   /** Display name, e.g. "トヨタ自動車". */
   name: string;
   /** 商号 as registered, e.g. "トヨタ自動車株式会社". */
