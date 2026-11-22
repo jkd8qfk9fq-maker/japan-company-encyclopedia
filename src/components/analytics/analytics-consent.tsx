@@ -2,6 +2,7 @@
 
 // A Client Component: the choice lives in a cookie and Google's tag runs in the browser (JCE-056).
 
+import Link from "next/link";
 import { useEffect, useSyncExternalStore } from "react";
 import {
   clearGaCookies,
@@ -18,6 +19,11 @@ const serverSnapshot = () => "unknown" as const;
 /**
  * Asks once whether Google Analytics may be used. Nothing renders, and nothing is asked, until a measurement ID is
  * set. Both answers are the same size, and every page works either way.
+ *
+ * The banner is a one-line strip (JCE-089): the full explanation — what is sent, the one-year cookie shared with the
+ * related sites, how to withdraw — lives in the privacy policy's Google Analytics section, linked from the strip, so
+ * a first visit is not covered by the explanation itself. The wording that decides the choice (consent-only, and
+ * every feature works without it) and both buttons stay in the strip.
  */
 export function AnalyticsConsent() {
   const consent = useSyncExternalStore(subscribeConsent, consentSnapshot, serverSnapshot);
@@ -33,25 +39,28 @@ export function AnalyticsConsent() {
     <div
       role="region"
       aria-label="閲覧統計（Google アナリティクス）について"
-      className="fixed inset-x-0 bottom-[calc(3.5rem+env(safe-area-inset-bottom))] z-50 border-t border-border bg-background px-4 py-4 shadow-[0_-4px_16px_rgba(0,0,0,0.12)] md:bottom-0"
+      className="fixed inset-x-0 bottom-[calc(3.5rem+env(safe-area-inset-bottom))] z-50 border-t border-border bg-background px-4 py-2.5 shadow-[0_-4px_16px_rgba(0,0,0,0.12)] md:bottom-0"
     >
-      <div className="mx-auto max-w-2xl text-sm leading-relaxed">
-        <p className="font-semibold">閲覧統計（Google アナリティクス）について</p>
-        <p className="mt-1 text-muted-foreground">
-          サイトの改善のため、同意いただいた場合にだけ、Google アナリティクスで閲覧の統計を取ります。Google には、Cookie によるブラウザごとのランダムなID、見たページ（アドレスのパス）、参照元、端末やブラウザの種類などが送られます。検索した言葉は送りません。同意の選択は Cookie に1年間保存し、企業タイプ診断などの関連サイトと共有します。同意しなくても、すべての機能を使えます。
+      <div className="mx-auto flex max-w-3xl flex-wrap items-center gap-x-4 gap-y-2">
+        <p className="min-w-0 flex-1 text-xs leading-relaxed sm:text-sm">
+          <span className="font-semibold">閲覧統計について：</span>
+          サイト改善のため、同意した場合にだけ Google アナリティクスで閲覧統計を取ります。同意しなくても、すべての機能を使えます。
+          <Link href="/privacy#google-analytics" className="link-ink ml-1 whitespace-nowrap">
+            詳しく見る
+          </Link>
         </p>
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="flex gap-2">
           <button
             type="button"
             onClick={() => saveConsent("granted")}
-            className="min-h-11 min-w-32 rounded-md bg-navy px-5 text-sm font-medium text-white hover:opacity-90"
+            className="min-h-11 rounded-md bg-navy px-4 text-sm font-medium whitespace-nowrap text-white hover:opacity-90"
           >
             同意する
           </button>
           <button
             type="button"
             onClick={() => saveConsent("denied")}
-            className="min-h-11 min-w-32 rounded-md border border-border px-5 text-sm font-medium hover:bg-muted"
+            className="min-h-11 rounded-md border border-border px-4 text-sm font-medium whitespace-nowrap hover:bg-muted"
           >
             同意しない
           </button>
