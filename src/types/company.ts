@@ -318,6 +318,8 @@ export const STATEMENT_ROLES = [
   "income-before-income-taxes",
   "income-taxes-item",
   "income-taxes",
+  "continuing-profit",
+  "discontinued-profit",
   "net-income",
   "non-controlling-interests",
   "net-income-attributable-to-parent",
