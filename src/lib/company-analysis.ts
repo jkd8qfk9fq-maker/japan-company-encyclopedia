@@ -1,4 +1,4 @@
-import { changeBetween } from "@/lib/financial-summary";
+import { decompositionGroups } from "@/lib/analysis-decomposition";
 import {
   industryPosition,
   PEER_WINDOW_DAYS,
@@ -25,17 +25,21 @@ import type { Company, FinancialRecord, IndustryId } from "@/types/company";
  * industry median; the distribution as a whole (quartiles, rank, percentile), the multi-period
  * trends and the indicator links are the paid part, gated separately in `plan.ts`
  * (ANALYSIS_FEATURES_OPEN) — never by re-closing what JCE-075 opened.
+ *
+ * JCE-096 adds the decomposition groups (`analysis-decomposition.ts`) under the same perspectives
+ * and the same boundary; B1's group carries 純資産の増減 and its 前期比, replacing the single
+ * net-assets change row this layer used to add on its own.
  */
 
-export type AnalysisUnit = MetricUnit | "yen" | "people";
+export type AnalysisUnit = MetricUnit | "yen" | "people" | "points";
 
 export type AnalysisRow = {
   key: string;
   title: string;
   /** The formula for a computed row; for a printed row, where the figure is printed. */
   formula: string;
-  /** 計算値 (computed from printed figures) or 印字値 (as the filing prints it). */
-  kind: "computed" | "printed";
+  /** 計算値 (computed from printed figures), 印字値 (as the filing prints it) or 推計値 (an estimate, E1). */
+  kind: "computed" | "printed" | "estimated";
   unit: AnalysisUnit;
   value: number;
   fiscalYear: string;
@@ -48,12 +52,26 @@ export type AnalysisPerspectiveId = "scale" | "growth" | "profitability" | "stab
 
 export type AnalysisSeriesPoint = { fiscalYear: string; periodEnd: string; value: number };
 
+/**
+ * A decomposition group (JCE-096): several rows whose parts add up to the change they break down
+ * (A1's two effects and the profit change, B1's parts of the net-assets change, …). The note carries
+ * the group's own cautions and, for A2, the aggregate detail that belongs to the paid part.
+ */
+export type AnalysisGroup = {
+  id: string;
+  title: string;
+  rows: AnalysisRow[];
+  note?: string;
+};
+
 export type AnalysisPerspective = {
   id: AnalysisPerspectiveId;
   title: string;
   /** What this perspective reads, in structural terms only — never a causal claim. */
   intro: string;
   rows: AnalysisRow[];
+  /** Decomposition groups under this perspective (JCE-096); empty when none can be computed. */
+  groups: AnalysisGroup[];
   /** Printed trend shown in the paid part (成長: 売上高, 財務の安定: 純資産). */
   series?: { title: string; points: AnalysisSeriesPoint[] };
 };
@@ -141,34 +159,6 @@ function printedRows(company: Company, peers: Company[]): AnalysisRow[] {
   return rows;
 }
 
-/** 純資産の前期比, under the free summary's comparability rule: same accounting standard as the year before. */
-function netAssetsChange(c: Company): number | null {
-  const records = byPeriod(c.financials);
-  const latest = records.at(-1);
-  const previous = records.at(-2);
-  if (!latest || !previous) return null;
-  if (previous.accountingStandard !== latest.accountingStandard) return null;
-  return changeBetween(latest.netAssets, previous.netAssets);
-}
-
-function netAssetsChangeRow(company: Company, peers: Company[]): AnalysisRow | null {
-  const latest = latestOf(company);
-  const value = netAssetsChange(company);
-  if (!latest || value === null) return null;
-  const values = peers.map(netAssetsChange).filter((v): v is number => v !== null);
-  return {
-    key: "net-assets-growth-1y",
-    title: "純資産の前期比",
-    formula: `最新期の${latest.netAssetsLabel ?? "純資産"} ÷ 前期の${latest.netAssetsLabel ?? "純資産"} − 1`,
-    kind: "computed",
-    unit: "percent-change",
-    value,
-    fiscalYear: latest.fiscalYear,
-    sourceIds: latest.sourceIds,
-    industry: industryPosition(value, values),
-  };
-}
-
 function seriesOf(company: Company, pick: (r: FinancialRecord) => number | null): AnalysisSeriesPoint[] {
   return byPeriod(company.financials)
     .map((r) => {
@@ -214,21 +204,22 @@ export function companyAnalysis(company: Company, companies: Company[]): Company
   const pick = (keys: string[]): AnalysisRow[] =>
     keys.map((k) => byKey.get(k)).filter((m): m is ReportMetric => m !== undefined).map(fromMetric);
 
-  const stabilityRows = pick(["equity-ratio"]);
-  const netAssetsRow = netAssetsChangeRow(company, peers);
-  if (netAssetsRow) stabilityRows.push(netAssetsRow);
-
   const rowsById: Record<AnalysisPerspectiveId, AnalysisRow[]> = {
     scale: printedRows(company, peers),
     growth: pick(["revenue-growth-1y", "net-income-growth-1y", "revenue-growth-5y"]),
     profitability: pick(["net-margin", "profit-margin", "asset-turnover", "revenue-per-employee", "net-income-per-employee"]),
-    stability: stabilityRows,
+    stability: pick(["equity-ratio"]),
     environment: pick(["overseas-ratio"]),
   };
   const seriesById: Partial<Record<AnalysisPerspectiveId, AnalysisPerspective["series"]>> = {
     growth: { title: "売上高の推移（印字値）", points: seriesOf(company, (r) => r.revenue) },
     stability: { title: "純資産の推移（印字値）", points: seriesOf(company, (r) => r.netAssets) },
   };
+
+  // The decomposition groups (JCE-096) join their perspectives; B1 carries 純資産の前期比 inside its
+  // group, which is why the old single row of that name no longer stands on its own.
+  const groupsById: Record<AnalysisPerspectiveId, AnalysisGroup[]> = { scale: [], growth: [], profitability: [], stability: [], environment: [] };
+  for (const { perspective, group } of decompositionGroups(company, companies)) groupsById[perspective].push(group);
 
   return {
     industryId: layer.industryId,
@@ -238,7 +229,8 @@ export function companyAnalysis(company: Company, companies: Company[]): Company
     perspectives: ANALYSIS_PERSPECTIVE_GUIDE.map((meta) => ({
       ...meta,
       rows: rowsById[meta.id],
+      groups: groupsById[meta.id],
       ...(seriesById[meta.id] && seriesById[meta.id]!.points.length >= 2 ? { series: seriesById[meta.id] } : {}),
-    })).filter((p) => p.rows.length > 0),
+    })).filter((p) => p.rows.length > 0 || p.groups.length > 0),
   };
 }

@@ -16,6 +16,7 @@ import { AnalysisGate } from "./analysis-gate";
 const percent = (v: number) => `${(v * 100).toFixed(1).replace("-", "−")}%`;
 const percentChange = (v: number) => `${v > 0 ? "+" : v < 0 ? "−" : ""}${Math.abs(v * 100).toFixed(1)}%`;
 const times = (v: number) => `${v.toFixed(2)}倍`;
+const points = (v: number) => `${v > 0 ? "+" : v < 0 ? "−" : ""}${Math.abs(v * 100).toFixed(2)}pt`;
 
 function formatValue(row: AnalysisRow, value: number): string {
   switch (row.unit) {
@@ -23,6 +24,8 @@ function formatValue(row: AnalysisRow, value: number): string {
       return percent(value);
     case "percent-change":
       return percentChange(value);
+    case "points":
+      return points(value);
     case "times":
       return times(value);
     case "yen-per-person":
@@ -38,7 +41,7 @@ function RowTitle({ row }: { row: AnalysisRow }) {
     <>
       <span className="whitespace-nowrap">{row.title}</span>
       <span className="ml-2 rounded-sm border border-border px-1 py-0.5 text-[0.65rem] whitespace-nowrap text-muted-foreground">
-        {row.kind === "computed" ? "計算値" : "印字値"}
+        {row.kind === "computed" ? "計算値" : row.kind === "estimated" ? "推計値" : "印字値"}
       </span>
       <span className="block text-xs text-muted-foreground">
         {row.formula}（{row.fiscalYear}）
@@ -146,7 +149,13 @@ export function CompanyAnalysisSection({ company, companies }: { company: Compan
           <div key={p.id}>
             <h3 className="font-serif text-lg font-semibold">{p.title}</h3>
             <p className="mt-1 max-w-3xl text-sm leading-6 text-muted-foreground">{p.intro}</p>
-            <FreeTable rows={p.rows} />
+            {p.rows.length > 0 && <FreeTable rows={p.rows} />}
+            {p.groups.map((g) => (
+              <div key={g.id}>
+                <h4 className="mt-6 font-serif text-base font-semibold">{g.title}</h4>
+                <FreeTable rows={g.rows} />
+              </div>
+            ))}
           </div>
         ))}
       </div>
@@ -157,7 +166,14 @@ export function CompanyAnalysisSection({ company, companies }: { company: Compan
             {analysis.perspectives.map((p) => (
               <div key={p.id}>
                 <h3 className="font-serif text-lg font-semibold">{p.title} — 分布の全体像</h3>
-                <DetailTable rows={p.rows} />
+                {p.rows.length > 0 && <DetailTable rows={p.rows} />}
+                {p.groups.map((g) => (
+                  <div key={g.id}>
+                    <h4 className="mt-6 font-serif text-base font-semibold">{g.title}</h4>
+                    <DetailTable rows={g.rows} />
+                    {g.note && <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">{g.note}</p>}
+                  </div>
+                ))}
                 {p.series && (
                   <div className="mt-5">
                     <h4 className="font-serif text-base font-semibold">{p.series.title}</h4>
