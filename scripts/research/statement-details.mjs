@@ -18,13 +18,19 @@
  * Usage:
  *   node scripts/research/statement-details.mjs <company-id> [<company-id> ...] [--write]
  * Without --write it prints what it would add. Needs EDINET_API_KEY (see scripts/research/edinet.mjs).
+ *
+ * --write --bulk (JCE-098): the mass-expansion mode. Cache-only — a company whose filing is not
+ * already in the local document cache is skipped, never fetched — and, following the JCE-097
+ * backfill precedent for mechanical bulk additions, it writes no per-company revision file and
+ * does not touch `updatedAt`; the batch is recorded in docs/decisions.md instead. Each company
+ * prints one machine-readable result line (BULK-RESULT …) for the batch log.
  */
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { downloadDocument, readCsvRows } from "./edinet.mjs";
+import { cacheDir, downloadDocument, readCsvRows } from "./edinet.mjs";
 
 const root = process.cwd();
-const TODAY = "2026-11-22";
+const TODAY = "2026-11-23";
 
 /** The filer's label for a stage row names both signs ("営業利益又は営業損失（△）"); the printed row names one. */
 function stageLabel(label, amount) {
@@ -262,20 +268,44 @@ function checkYear(pl, bs, rec) {
 async function main() {
   const args = process.argv.slice(2);
   const write = args.includes("--write");
+  const bulk = args.includes("--bulk");
   const ids = args.filter((a) => !a.startsWith("--"));
   if (ids.length === 0) throw new Error("company id を1つ以上指定してください");
   for (const id of ids) {
     const entryPath = join(root, "src/data/companies", `${id}.json`);
     const entry = JSON.parse(readFileSync(entryPath, "utf8"));
+    if (bulk && entry.financialStatements) {
+      console.log(`BULK-RESULT ${id} already-has-statements`);
+      continue;
+    }
     const records = [...entry.financials].sort((a, b) => a.periodEnd.localeCompare(b.periodEnd));
     const latest = records.at(-1);
     const source = entry.sources.find((s) => latest.sourceIds.includes(s.id)) ?? entry.sources.find((s) => s.id === latest.sourceIds[0]);
     const docId = source.docId ?? /S[0-9A-Z]{7}/.exec(source.url ?? "")?.[0];
-    if (!docId) { console.log(`${id}: 書類IDが特定できない`); continue; }
+    if (!docId) {
+      console.log(`${id}: 書類IDが特定できない`);
+      if (bulk) console.log(`BULK-RESULT ${id} no-doc-id`);
+      continue;
+    }
+    if (bulk && !existsSync(join(cacheDir(), "documents", `${docId}-5.zip`))) {
+      console.log(`BULK-RESULT ${id} not-cached ${docId}`);
+      continue;
+    }
     const zip = await downloadDocument(docId, 5).catch(() => null);
     console.log(`${id}: docID ${docId}`);
-    if (!zip) { console.log("  CSVを取得できない"); continue; }
-    const rows = readCsvRows(zip);
+    if (!zip) {
+      console.log("  CSVを取得できない");
+      if (bulk) console.log(`BULK-RESULT ${id} no-csv ${docId}`);
+      continue;
+    }
+    let rows;
+    try {
+      rows = readCsvRows(zip);
+    } catch (error) {
+      console.log(`  CSVを読めない — ${error.message}`);
+      if (bulk) console.log(`BULK-RESULT ${id} unreadable-csv ${docId}`);
+      continue;
+    }
     const years = [
       { ctx: "Prior1Year", rec: records.at(-2) },
       { ctx: "CurrentYear", rec: latest },
@@ -314,12 +344,19 @@ async function main() {
         fiscalYear: rec.fiscalYear,
         periodEnd: rec.periodEnd,
         accountingStandard: rec.accountingStandard,
+        // JCE-098 (asFiledIn): the document actually read. Both years come out of this one filing,
+        // so naming it is what lets a later change inside the block claim to be as-filed.
+        docId,
         incomeStatement: pl,
         balanceSheet: bs,
         sourceIds: rec.sourceIds,
       });
     }
-    if (built.length === 0) { console.log("  採用できる年度がない"); continue; }
+    if (built.length === 0) {
+      console.log("  採用できる年度がない");
+      if (bulk) console.log(`BULK-RESULT ${id} no-usable-year standard=${latest.accountingStandard}`);
+      continue;
+    }
     if (!write) {
       for (const b of built) {
         console.log(`  --- ${b.fiscalYear} P/L ---`);
@@ -327,6 +364,13 @@ async function main() {
         console.log(`  --- ${b.fiscalYear} B/S ---`);
         for (const l of b.balanceSheet) console.log(`    [${l.role}] ${l.label}: ${l.amount}`);
       }
+      continue;
+    }
+    if (bulk) {
+      // JCE-098 bulk mode: the field only — no updatedAt change, no per-company revision
+      // (the JCE-097 backfill precedent; the batch is recorded in docs/decisions.md).
+      writeFileSync(entryPath, `${JSON.stringify({ ...entry, financialStatements: built }, null, 2)}\n`);
+      console.log(`BULK-RESULT ${id} written years=${built.map((b) => b.fiscalYear).join("|")} standard=${latest.accountingStandard}`);
       continue;
     }
     const next = { ...entry, financialStatements: built, updatedAt: TODAY };
