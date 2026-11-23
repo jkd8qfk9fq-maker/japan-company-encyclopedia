@@ -306,12 +306,83 @@ describe("display conditions (suppressed whole, never approximated)", () => {
   });
 });
 
+describe("A3 segment contribution (JCE-097)", () => {
+  const segCompany = (over: { current?: [string, number][]; prior?: [string, number][]; revenue1?: number; priorEnd?: string } = {}): Company =>
+    ({
+      ...company("seg-fixture", "machinery", [
+        rec({ fiscalYear: "2025年3月期", periodEnd: "2025-03-31", revenue: 1000 }),
+        rec({ revenue: over.revenue1 ?? 1200 }),
+      ]),
+      businesses: [
+        { id: "alpha", name: "アルファ事業" },
+        { id: "beta", name: "ベータ事業" },
+        { id: "gamma", name: "ガンマ事業" },
+        { id: "other", name: "その他" },
+      ],
+      segmentRevenue: {
+        fiscalYear: "2026年3月期",
+        periodEnd: "2026-03-31",
+        label: "外部顧客への売上高",
+        items: (over.current ?? [["alpha", 700], ["beta", 380], ["other", 100]]).map(([businessId, amount]) => ({ businessId, amount })),
+        previous: {
+          fiscalYear: "2025年3月期",
+          periodEnd: over.priorEnd ?? "2025-03-31",
+          items: (over.prior ?? [["alpha", 600], ["beta", 300], ["other", 90]]).map(([businessId, amount]) => ({ businessId, amount })),
+        },
+        sourceIds: ["s"],
+        locator: "【セグメント情報】",
+      },
+      sources: [{ id: "s" }],
+    }) as unknown as Company;
+
+  it("splits the revenue change into per-business contributions in points, with the adjustment as its own row", () => {
+    const r = runDecompModule("a3", segCompany(), [segCompany()]);
+    expect(rowOf(r, "a3-alpha")!.value).toBeCloseTo(0.1, 12);
+    expect(rowOf(r, "a3-beta")!.value).toBeCloseTo(0.08, 12);
+    expect(rowOf(r, "a3-other")!.value).toBeCloseTo(0.01, 12);
+    expect(rowOf(r, "a3-revenue-change")!.value).toBe(200);
+    expect(rowOf(r, "a3-adjustment")!.value).toBe(10);
+    expect(ok(r).rows.map((row) => row.key)).toEqual(["a3-alpha", "a3-beta", "a3-other", "a3-revenue-change", "a3-adjustment"]);
+  });
+
+  it("property: the contributions over the prior revenue, plus the adjustment, add up to the revenue change", () => {
+    const c = segCompany();
+    const g = ok(runDecompModule("a3", c, [c]));
+    const parts = g.rows.filter((row) => row.unit === "points").reduce((a, row) => a + row.value * 1000, 0);
+    const adjustment = g.rows.find((row) => row.key === "a3-adjustment")!.value;
+    expect(parts + adjustment).toBe(200);
+  });
+
+  it("omits the adjustment row when the common businesses explain the whole change", () => {
+    const c = segCompany({ prior: [["alpha", 600], ["beta", 300], ["other", 80]] });
+    const r = runDecompModule("a3", c, [c]);
+    expect(r.status).toBe("ok");
+    expect(rowOf(r, "a3-adjustment")).toBeUndefined();
+  });
+
+  it("puts a business that exists in only one year into the adjustment, and says so", () => {
+    const c = segCompany({ current: [["alpha", 700], ["beta", 380], ["gamma", 50], ["other", 100]] });
+    const g = ok(runDecompModule("a3", c, [c]));
+    expect(g.rows.some((row) => row.key === "a3-gamma")).toBe(false);
+    expect(g.note).toContain("片方の期にしかない事業");
+  });
+
+  it("is suppressed without a prior-year column, with fewer than two common businesses, or on a year mismatch", () => {
+    const bare = company("bare", "machinery", [rec({ fiscalYear: "2025年3月期", periodEnd: "2025-03-31" }), rec({})]);
+    expect(runDecompModule("a3", bare, [bare]).status).toBe("suppressed");
+    const oneCommon = segCompany({ prior: [["alpha", 600], ["gamma", 300]] });
+    expect(runDecompModule("a3", oneCommon, [oneCommon]).status).toBe("suppressed");
+    const mismatch = segCompany({ priorEnd: "2024-03-31" });
+    expect(runDecompModule("a3", mismatch, [mismatch]).status).toBe("suppressed");
+  });
+});
+
 describe("real data reconciliation", () => {
   it("computes every module for the registered Misumi entry", () => {
     const released = companies.filter(isReleased);
     const target = released.find((c) => c.id === "misumi-group")!;
     expect(target).toBeDefined();
-    for (const id of ["a1", "a2", "b1", "c1", "e1", "f2", "f3", "d1", "f1"]) {
+    for (const id of ["a1", "a2", "a3", "b1", "c1", "e1", "f2", "f3", "d1", "f1"]) {
       expect(runDecompModule(id, target, released).status, id).toBe("ok");
     }
   });

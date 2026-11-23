@@ -6,7 +6,8 @@ import type { AnalysisGroup, AnalysisPerspectiveId, AnalysisRow } from "@/lib/co
 /**
  * The decomposition layer of the analysis SaaS (JCE-096, Phase 1): the macro-style decompositions of the
  * operator's 分析システム提案 (完全版仕様) as pure functions over the printed five-year records — A1 増益分解
- * (Bennet midpoint), A2 業界成長への寄与度 (leave-one-out), B1 純資産の増減分解, C1 資産増減の調達内訳,
+ * (Bennet midpoint), A2 業界成長への寄与度 (leave-one-out), A3 セグメント寄与 (JCE-097, Phase 1.5: the
+ * segment note's own two years of one filing), B1 純資産の増減分解, C1 資産増減の調達内訳,
  * E1 トレンド乖離 (Theil–Sen extrapolation), F2 利益率の安定性, F3 成長の資産効率, and — under the operator's
  * 2026-11-23 decision recorded in JCE-096 — D1 純資産利益率 and F1 DuPont/Shapley, which live only in this
  * analysis layer, labelled 計算値 like every computed row here.
@@ -304,6 +305,116 @@ const a2: DecompModuleDef = {
           "親子上場の会社同士では、売上が二重に数えられている場合があります。",
       },
     };
+  },
+};
+
+/* ---------- A3: セグメント寄与 (JCE-097) ---------- */
+
+type A3Values = {
+  totalChange: number;
+  base: number;
+  parts: { businessId: string; name: string; change: number; contribution: number }[];
+  adjustment: number;
+  oneSided: number;
+};
+
+function a3Values(c: Company): A3Values | null {
+  const seg = c.segmentRevenue;
+  if (!seg?.previous) return null;
+  const checked = pairCheck(c, { scope: true });
+  if ("reason" in checked) return null;
+  const { prev, latest } = checked.pair;
+  // The two segment years must be the pair's own years: the block's current year is the newest record's
+  // year and its prior column is the record before it (integrity keeps the prior year among the records;
+  // this keeps the difference on the records the comparability rules were checked against).
+  if (latest.periodEnd !== seg.periodEnd || prev.periodEnd !== seg.previous.periodEnd) return null;
+  if (prev.revenue === null || latest.revenue === null || prev.revenue <= 0) return null;
+  const priorById = new Map(seg.previous.items.map((i) => [i.businessId, i.amount]));
+  const currentIds = new Set(seg.items.map((i) => i.businessId));
+  const parts: A3Values["parts"] = [];
+  for (const item of seg.items) {
+    const before = priorById.get(item.businessId);
+    if (before === undefined) continue;
+    const change = item.amount - before;
+    parts.push({
+      businessId: item.businessId,
+      name: c.businesses.find((b) => b.id === item.businessId)?.name ?? item.businessId,
+      change,
+      contribution: change / prev.revenue,
+    });
+  }
+  if (parts.length < 2) return null;
+  const oneSided = seg.items.filter((i) => !priorById.has(i.businessId)).length + seg.previous.items.filter((i) => !currentIds.has(i.businessId)).length;
+  const totalChange = latest.revenue - prev.revenue;
+  const adjustment = totalChange - parts.reduce((a, p) => a + p.change, 0);
+  return { totalChange, base: prev.revenue, parts, adjustment, oneSided };
+}
+
+const a3: DecompModuleDef = {
+  id: "a3",
+  version: 1,
+  title: "セグメント別の売上寄与",
+  perspectives: ["growth"],
+  kind: "calculated",
+  run: (company) => {
+    const seg = company.segmentRevenue;
+    if (!seg?.previous) return suppressed("前期のセグメント売上が登録されていません");
+    const checked = pairCheck(company, { scope: true });
+    if ("reason" in checked) return suppressed(checked.reason);
+    const values = a3Values(company);
+    if (!values) return suppressed("両期に共通する事業が2つ未満か、前期の売上高が正ではありません");
+    const { prev, latest } = checked.pair;
+    const fiscalYear = latest.fiscalYear;
+    const sourceIds = seg.sourceIds;
+    const rows: AnalysisRow[] = [
+      ...[...values.parts]
+        .sort((a, b) => b.contribution - a.contribution)
+        .map(
+          (p): AnalysisRow => ({
+            key: `a3-${p.businessId}`,
+            title: `${p.name}の寄与`,
+            formula: "その事業の売上高の増減 ÷ 前期の売上高",
+            kind: "computed",
+            unit: "points",
+            value: p.contribution,
+            fiscalYear,
+            sourceIds,
+            industry: null,
+          }),
+        ),
+      {
+        key: "a3-revenue-change",
+        title: "売上高の増減",
+        formula: `最新期の${latest.revenueLabel} − 前期の${prev.revenueLabel}`,
+        kind: "computed",
+        unit: "yen",
+        value: values.totalChange,
+        fiscalYear,
+        sourceIds,
+        industry: null,
+      },
+      ...(values.adjustment !== 0
+        ? [
+            {
+              key: "a3-adjustment",
+              title: "調整額",
+              formula: "売上高の増減 − 両期に共通する事業の増減の合計",
+              kind: "computed" as const,
+              unit: "yen" as const,
+              value: values.adjustment,
+              fiscalYear,
+              sourceIds,
+              industry: null,
+            } satisfies AnalysisRow,
+          ]
+        : []),
+    ];
+    const notes = [
+      "前期のセグメント売上は、同じ有報のセグメント情報の前期欄によります。",
+      values.oneSided > 0 ? "片方の期にしかない事業の金額は、調整額に含まれます。" : null,
+      bigChangeNote(checked.pair),
+    ].filter((n): n is string => n !== null);
+    return { status: "ok", group: { id: "a3", title: "セグメント別の売上寄与", rows, note: notes.join("") } };
   },
 };
 
@@ -827,7 +938,7 @@ const f1: DecompModuleDef = {
 
 /* ---------- registry and entry point ---------- */
 
-export const DECOMP_MODULES: DecompModuleDef[] = [a1, a2, b1, c1, e1, f2, f3, d1, f1];
+export const DECOMP_MODULES: DecompModuleDef[] = [a1, a2, a3, b1, c1, e1, f2, f3, d1, f1];
 
 function runDef(def: DecompModuleDef, company: Company, companies: Company[]): DecompResult {
   const peers = comparablePeers(company, companies);

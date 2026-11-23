@@ -251,6 +251,7 @@ for (const id of ids) {
     if (regional) draft.regionalRevenue = regional;
   }
   if (pack.segmentFacts) draft.segmentFacts = pack.segmentFacts;
+  if (pack.segmentPriorFacts) draft.segmentPriorFacts = pack.segmentPriorFacts;
   if (mixed.length > 0) draft._会計基準がそろわない項目 = mixed;
   const candidates = noteCandidates(pack, financials);
   if (candidates.length > 0) draft._注記の候補 = candidates;

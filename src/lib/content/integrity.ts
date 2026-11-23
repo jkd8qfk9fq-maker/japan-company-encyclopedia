@@ -168,6 +168,20 @@ export function checkCompany(company: Company, context: ContentContext): string[
     if (new Set(ids).size !== ids.length) e.push(`${where}: 同じ事業が重複しています`);
     for (const id of ids) if (!topLevelIds.has(id)) e.push(`${where}: 事業「${id}」は最上位の事業にありません`);
     e.push(...yenErrors(s.items.map((i) => i.amount), where), ...citationErrors(s.sourceIds, src, where), ...noWikipedia(s.sourceIds, where));
+    // JCE-097. The prior year's column rides on the same block: it must be one of the entry's own financial
+    // years, the one immediately before the segment year, with the same checks on its amounts — a prior set
+    // pointing at a year the entry does not have would let the analysis layer difference two filings.
+    if (s.previous) {
+      const p = s.previous;
+      const pwhere = `事業別の売上「${s.fiscalYear}」の前期「${p.fiscalYear}」`;
+      const pids = p.items.map((i) => i.businessId);
+      if (new Set(pids).size !== pids.length) e.push(`${pwhere}: 同じ事業が重複しています`);
+      for (const id of pids) if (!topLevelIds.has(id)) e.push(`${pwhere}: 事業「${id}」は最上位の事業にありません`);
+      e.push(...yenErrors(p.items.map((i) => i.amount), pwhere));
+      const record = company.financials.find((f) => f.fiscalYear === p.fiscalYear && f.periodEnd === p.periodEnd);
+      if (!record) e.push(`${pwhere}: 前期は財務レコードにある年度でなければなりません`);
+      if (p.periodEnd >= s.periodEnd) e.push(`${pwhere}: 前期の期末は当期より前でなければなりません`);
+    }
   }
   if (company.regionalRevenue) {
     const r = company.regionalRevenue;

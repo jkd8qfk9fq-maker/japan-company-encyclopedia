@@ -208,6 +208,13 @@ export const companySchema = z.strictObject({
       periodEnd: isoDate,
       label: text,
       items: z.array(z.strictObject({ businessId: kebab, amount: z.number().int().nonnegative() })).min(1),
+      previous: z
+        .strictObject({
+          fiscalYear: text,
+          periodEnd: isoDate,
+          items: z.array(z.strictObject({ businessId: kebab, amount: z.number().int().nonnegative() })).min(1),
+        })
+        .optional(),
       ...sourced,
     })
     .optional(),

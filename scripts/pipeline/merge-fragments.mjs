@@ -25,7 +25,7 @@ import { join } from "node:path";
 import { cacheDir } from "../research/edinet.mjs";
 import { fragmentFiles, loadState } from "./company-state.mjs";
 import { dedupeGaps, normalizeGap, parseLegacyTaxonomyNote } from "./taxonomy-gaps.mjs";
-import { segmentRevenueBlock } from "./segment-revenue.mjs";
+import { priorRecordFor, segmentRevenueBlock, segmentRevenuePreviousBlock } from "./segment-revenue.mjs";
 
 /** Which top-level entry keys each agent stage is allowed to write. */
 export const STAGE_FIELDS = {
@@ -204,7 +204,14 @@ export function mergeEntry(companyId) {
   const newest = [...entry.financials].sort((a, b) => a.periodEnd.localeCompare(b.periodEnd)).at(-1);
   if (draft.regionalRevenue) entry.regionalRevenue = draft.regionalRevenue;
   const segments = newest && segmentRevenueBlock(draft.segmentFacts, entry.businesses, newest, newest.sourceIds[0]);
-  if (segments) entry.segmentRevenue = segments;
+  if (segments) {
+    // JCE-097: the prior column of the same filing rides on the block, when the year before the newest
+    // ends a normal twelve months earlier.
+    const prior = priorRecordFor(entry.financials, newest.periodEnd);
+    const previous = prior && segmentRevenuePreviousBlock(draft.segmentPriorFacts, entry.businesses, prior);
+    if (previous) segments.previous = previous;
+    entry.segmentRevenue = segments;
+  }
   // A draft from a pack built before these existed has none of them, and a promotion or an explanation update would
   // then drop what the backfill (backfill-value-chain.mjs) already gave the registered entry. Kept while they still
   // fit: their year is in the table, and every business they name is still there.
@@ -217,6 +224,7 @@ export function mergeEntry(companyId) {
       const kept = registered[key];
       if (entry[key] || !kept || !years.has(kept.fiscalYear)) continue;
       if (key === "segmentRevenue" && !kept.items.every((i) => ids.has(i.businessId))) continue;
+      if (key === "segmentRevenue" && kept.previous && (!years.has(kept.previous.fiscalYear) || !kept.previous.items.every((i) => ids.has(i.businessId)))) continue;
       entry[key] = kept;
     }
   }

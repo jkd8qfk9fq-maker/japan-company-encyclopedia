@@ -47,7 +47,7 @@ import { dirname, join } from "node:path";
 import { financialsDifferences } from "../research/amendments.mjs";
 import { cacheDir, ensureIndexCache, indexDir, jstToday, scrubSecrets } from "../research/edinet.mjs";
 import { loadState, saveState } from "./company-state.mjs";
-import { segmentRevenueBlock } from "./segment-revenue.mjs";
+import { priorRecordFor, segmentRevenueBlock, segmentRevenuePreviousBlock } from "./segment-revenue.mjs";
 import { assertMachineWrite } from "./ownership.mjs";
 import { loadEntries } from "./jobs.mjs";
 import { readPack, rebuildPack } from "./pack.mjs";
@@ -165,7 +165,14 @@ export function planFinancialsRefresh({ entry, draft, pack, today }) {
   // The two revenue tables (JCE-038) follow the newest filing the same way; segment revenue is matched to the
   // entry's businesses by the filing's own segment names, and is left out when they no longer match.
   const newest = [...financials].sort((/** @type {any} */ a, /** @type {any} */ b) => a.periodEnd.localeCompare(b.periodEnd)).at(-1);
-  const segmentRevenue = segmentRevenueBlock(draft.segmentFacts, entry.businesses ?? [], newest, sourceIds[0]) ?? stillInTable(entry.segmentRevenue);
+  const builtSegment = segmentRevenueBlock(draft.segmentFacts, entry.businesses ?? [], newest, sourceIds[0]);
+  if (builtSegment) {
+    // JCE-097: the prior column of the same filing, when the year before the newest is a normal year back.
+    const prior = priorRecordFor(financials, newest.periodEnd);
+    const previous = prior && segmentRevenuePreviousBlock(draft.segmentPriorFacts, entry.businesses ?? [], prior);
+    if (previous) builtSegment.previous = previous;
+  }
+  const segmentRevenue = builtSegment ?? stillInTable(entry.segmentRevenue);
   const regionalRevenue = draft.regionalRevenue ?? stillInTable(entry.regionalRevenue);
   return { kind: "update", financials, source, added, dropped, workforce, shareFacts, segmentRevenue, regionalRevenue };
 }

@@ -113,6 +113,18 @@ export type SegmentRevenue = Sourced & {
   /** The XBRL item the amounts are tagged with (「外部顧客への売上高」「外部顧客への売上収益」), which measures the revenue line. */
   label: string;
   items: { businessId: string; amount: number }[];
+  /**
+   * The prior year's column of the same filing's segment note (JCE-097): the same note prints both years, so
+   * the prior amounts carry this block's sources and label, and a change taken between them is a change as
+   * filed in one document. Present only when the whole prior column could be transcribed and matched to the
+   * businesses — never a partial set. Read by the analysis layer (A3) only; the page's table stays the
+   * newest year alone.
+   */
+  previous?: {
+    fiscalYear: string;
+    periodEnd: string;
+    items: { businessId: string; amount: number }[];
+  };
 };
 
 /**
