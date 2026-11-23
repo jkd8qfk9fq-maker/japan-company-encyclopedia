@@ -120,42 +120,48 @@
 }
 
 .dark {
-  --background: oklch(0.155 0 0);
-  --foreground: oklch(0.955 0 0);
-  --paper: oklch(0.195 0.003 85);
-  --ink: oklch(0.78 0.08 255);
-  --rule: oklch(0.955 0 0);
-  --seal: oklch(0.68 0.17 27);
-  --navy: oklch(0.27 0.05 258);
+  /*
+   * The house theme since 2026-11-23 (operator design): a deep navy night, not a neutral black — the colour of the
+   * front-page photograph — with cards one step lighter so dense blocks separate without heavy borders. Blue
+   * carries data (revenue, links), the 朱 seal marks section titles, and nothing signals gain or loss.
+   */
+  --background: oklch(0.17 0.028 262);
+  --foreground: oklch(0.96 0.005 262);
+  --paper: oklch(0.2 0.032 262);
+  --ink: oklch(0.76 0.11 252);
+  --rule: oklch(0.96 0.005 262);
+  --seal: oklch(0.66 0.2 25);
+  --navy: oklch(0.3 0.07 258);
   --growth: oklch(0.74 0.13 165);
 
-  --card: oklch(0.195 0 0);
+  --card: oklch(0.215 0.032 262);
   --card-foreground: var(--foreground);
-  --popover: oklch(0.195 0 0);
+  --popover: oklch(0.235 0.034 262);
   --popover-foreground: var(--foreground);
-  --primary: oklch(0.955 0 0);
-  --primary-foreground: oklch(0.155 0 0);
-  --secondary: oklch(0.25 0 0);
-  --secondary-foreground: oklch(0.955 0 0);
-  --muted: oklch(0.25 0 0);
-  --muted-foreground: oklch(0.72 0 0);
-  --accent: oklch(0.25 0 0);
-  --accent-foreground: oklch(0.955 0 0);
+  --primary: oklch(0.96 0.005 262);
+  --primary-foreground: oklch(0.17 0.028 262);
+  --secondary: oklch(0.27 0.034 262);
+  --secondary-foreground: oklch(0.96 0.005 262);
+  --muted: oklch(0.27 0.034 262);
+  /* 0.75 keeps small labels above 4.5:1 on the card colour. */
+  --muted-foreground: oklch(0.75 0.02 262);
+  --accent: oklch(0.27 0.034 262);
+  --accent-foreground: oklch(0.96 0.005 262);
   --destructive: oklch(0.7 0.17 25);
-  --border: oklch(1 0 0 / 14%);
-  --input: oklch(1 0 0 / 18%);
+  --border: oklch(0.85 0.03 262 / 13%);
+  --input: oklch(0.85 0.03 262 / 20%);
   --ring: var(--ink);
-  --chart-1: oklch(0.42 0 0);
+  --chart-1: oklch(0.42 0.02 262);
   --chart-2: var(--ink);
-  /* Selected for the dark surface, not flipped: CVD ΔE 16.2, both >= 3:1. */
-  --chart-revenue: #076798;
-  --chart-net-income: #6d92d6;
-  --segment-1: #8fa9e6;
-  --segment-2: #4f9fd6;
-  --segment-3: #c49a5a;
-  --segment-4: #e3d3ad;
-  --segment-5: #7fb0a0;
-  --segment-6: #b8bcc0;
+  /* Revenue in the data blue, net income in a warm coral: separated by hue and lightness (CVD-safe), both >= 3:1. */
+  --chart-revenue: #3f7fe0;
+  --chart-net-income: #f07a6a;
+  --segment-1: #5b8def;
+  --segment-2: #f0a04b;
+  --segment-3: #4fb98a;
+  --segment-4: #b58df0;
+  --segment-5: #e0c25b;
+  --segment-6: #9aa6b8;
 }
 
 @layer base {

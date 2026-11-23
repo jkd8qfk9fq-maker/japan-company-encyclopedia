@@ -23,19 +23,24 @@ export default async function CompaniesPage() {
   })).filter((i) => i.count > 0);
 
   return (
-    <div className="mx-auto max-w-6xl px-5 pt-8 pb-8 md:px-8 md:pt-12">
+    <div className="mx-auto max-w-6xl px-5 pt-5 pb-8 md:px-8 md:pt-10">
       <p className="eyebrow" aria-hidden>Companies</p>
-      <h1 className="mt-3 font-serif text-[2rem] font-semibold md:text-[3rem]">企業</h1>
+      <h1 className="mt-1 flex items-baseline gap-3 font-serif text-[1.75rem] font-semibold md:text-[2.5rem]">
+        企業
+        <span className="figures font-sans text-sm font-normal text-muted-foreground">{companies.length.toLocaleString("ja-JP")}社</span>
+      </h1>
       {/*
         JCE-080: the header is compressed (the hub intro's type tier, tighter margins) so the search
         field and the first companies land in a phone's first view — with .prose-ja's double line
         height the introduction alone cost ~440px and no company was visible without scrolling.
         The words are unchanged.
       */}
-      <p className="mt-4 max-w-2xl text-[0.9375rem] leading-7 text-muted-foreground">
+      {/* 2026-11-23: the introduction folds behind one line, so the search and the list open the first screen. */}
+      <details className="mt-2 max-w-2xl text-sm leading-7 text-muted-foreground">
+        <summary className="cursor-pointer text-xs text-muted-foreground">この一覧について</summary>
         日本企業百科事典に掲載している日本の上場企業{companies.length.toLocaleString("ja-JP")}社の一覧です。各社の記載は有価証券報告書（EDINET）に基づいて書かれていて、企業ページでは事業の内容・財務・沿革を出典とともに読めます。掲載の線引きは、記載を出典で検証できたかどうかです。数字だけを先に集めた会社は、本文と出典がそろうまでこの一覧には出していないため、ここにある会社はすべて「何をしている会社か」を読める会社です。会社名ではなく、何をしている会社なのかから選んでください。
-      </p>
-      <div className="mt-8">
+      </details>
+      <div className="mt-4">
         <CompanyDirectory companies={summaries} industries={industries} />
       </div>
     </div>

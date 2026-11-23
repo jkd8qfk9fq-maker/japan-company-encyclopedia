@@ -67,10 +67,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#fdfdfd" },
-    { media: "(prefers-color-scheme: dark)", color: "#1c1c1c" },
-  ],
+  // The house theme is dark (2026-11-23): the browser chrome takes its navy whatever the OS setting.
+  themeColor: "#0f1626",
   viewportFit: "cover",
 };
 

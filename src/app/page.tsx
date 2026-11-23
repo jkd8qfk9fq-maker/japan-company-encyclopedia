@@ -1,13 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
-import { INDUSTRY_IMAGES } from "@/assets/industries";
+import { ArrowRight, BookOpen, CalendarDays, ChartColumn, Compass, Layers, Network, SlidersHorizontal, Sparkles, type LucideIcon } from "lucide-react";
+import { HUB_IMAGES, INDUSTRY_IMAGES } from "@/assets/industries";
+import { CompanyMark } from "@/components/company/company-mark";
 import { SearchSuggest } from "@/components/search/search-suggest";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { JapanMap, JapanMapLegend } from "@/components/region/japan-map";
 import { ReaderTrail } from "@/components/company/reader-trail";
 import { FeaturedCompanyCard } from "@/components/home/featured-company-card";
 import { toCompanySummary } from "@/lib/company-summary";
+import { toPlainText } from "@/lib/rich-text";
 import { featuredCompanies, recentlyUpdated, shortDate } from "@/lib/home";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
 import { PREFECTURES } from "@/lib/prefectures";
@@ -22,13 +24,19 @@ const SHINDAN_URL = "https://shindan.kigyo-hyakka.com/";
 /** The free-trial survey form (YUGENQ account): the 無料の分析体験 entry point, also linked from Instagram. */
 const TRIAL_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSei-pGt3NT9g_eH_1ZfABzO418OrbfqSSYo2F5Z8H4HxNT7lQ/viewform";
 
-/** The doors into the services, shown right under the search box (JCE-087). */
-const SERVICE_ENTRIES: { eyebrow: string; title: string; text: string; href: string; external?: boolean }[] = [
-  { eyebrow: "学習", title: "有報の読み方入門", text: "実際の決算を使い、読む→予測する→検証する力を鍛える、3〜4分のマイクロレッスン。", href: "/learn" },
-  { eyebrow: "決算定期便", title: "今週の開示", text: "決算が出た企業を、検証済みの数字と読み方つきで届けます。", href: "/digest" },
-  { eyebrow: "分析", title: "5観点で読む企業分析", text: "規模・成長・収益性・財務の安定・外部環境との接続を、計算値と業界の中での位置で読みます。", href: "/analysis" },
-  { eyebrow: "企業", title: "企業を探す", text: "上場企業の解説と財務データ。何をしている会社かが、まずわかります。", href: "/companies" },
-  { eyebrow: "無料体験", title: "無料の分析体験", text: "1社を5ステップで読み解く体験のご案内。約3分のアンケートから申し込めます。", href: TRIAL_FORM_URL, external: true },
+/** A figure tile of the home strip: a stretched link makes the whole tile open the list it counts. */
+const TILE = "relative bg-card/90 px-3 py-2.5 backdrop-blur transition-colors hover:bg-muted";
+
+/** The doors into the services (JCE-087), as a compact icon grid since the 2026-11-23 redesign. */
+const SERVICE_DOORS: { label: string; note: string; href: string; icon: LucideIcon; external?: boolean }[] = [
+  { label: "学習", note: "有報を読む", href: "/learn", icon: BookOpen },
+  { label: "分析", note: "5観点で読む", href: "/analysis", icon: ChartColumn },
+  { label: "業界", note: "業界から探す", href: "/industries", icon: Layers },
+  { label: "定期便", note: "今週の開示", href: "/digest", icon: CalendarDays },
+  { label: "発見", note: "今日の3社", href: "/discover", icon: Compass },
+  { label: "つながり", note: "立体でたどる", href: "/network", icon: Network },
+  { label: "財務で探す", note: "条件で絞る", href: "/screening", icon: SlidersHorizontal },
+  { label: "無料体験", note: "1社を読み解く", href: TRIAL_FORM_URL, icon: Sparkles, external: true },
 ];
 
 export const metadata = {
@@ -40,7 +48,7 @@ export const metadata = {
 /** Section title with the 朱 rule (see globals.css .seal-mark). */
 function SectionTitle({ id, children }: { id: string; children: React.ReactNode }) {
   return (
-    <h2 id={id} className="seal-mark font-serif text-[1.375rem] leading-tight font-semibold">
+    <h2 id={id} className="seal-mark text-lg leading-tight font-semibold md:text-[1.375rem]">
       {children}
     </h2>
   );
@@ -81,6 +89,11 @@ export default async function HomePage() {
 
   // Search examples are companies with a written page, so a click always lands on something worth reading.
   const examples = featured.length > 0 ? featured : recent;
+  // The swiped row: the largest written companies (featuredCompanies orders by revenue as printed).
+  const spotlight = featuredCompanies(companies, 8);
+  // Ties written in the released entries, each counted once from the side that records it.
+  const tieCount = companies.reduce((acc, c) => acc + c.relatedCompanies.length, 0);
+  const latestUpdate = recent[0]?.updatedAt ?? null;
 
   // What to read next: features when there are any, otherwise the glossary.
   const reading =
@@ -92,102 +105,168 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* HERO (JCE-087): no slogan. The first screen is the search box and the doors into the services,
-          so a reader reaches what they came for in one tap; the site's counts follow as one quiet line. */}
-      <section aria-labelledby="home-hero" className="border-b border-border bg-paper">
-        <div className="mx-auto max-w-7xl px-5 py-8 md:px-8 md:py-10">
-          <h1 id="home-hero" className="sr-only">
-            {SITE_NAME}
+      {/* HERO (2026-11-23 redesign, after the operator's mockup): the promise in one line over the night photograph,
+          the search right under it, then the site's own figures as a strip of tiles — the place a market ticker
+          would sit on a finance site. Never a share price or index (invariant 4): only counts of what the
+          encyclopedia holds, each computed from the entries. */}
+      <section aria-labelledby="home-hero" className="relative overflow-hidden border-b border-border">
+        <Image src={HUB_IMAGES.map} alt="" fill priority placeholder="blur" sizes="100vw" className="object-cover opacity-45" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
+        <div className="relative mx-auto max-w-7xl px-4 pt-7 pb-5 md:px-8 md:pt-14 md:pb-8">
+          <h1 id="home-hero" className="font-serif text-[1.875rem] leading-[1.3] font-semibold tracking-[0.04em] text-balance md:text-[2.75rem]">
+            日本企業を、
+            <br />
+            構造から理解する。
           </h1>
-          <div className="mx-auto max-w-2xl">
+          <p className="mt-2 text-sm text-foreground/80 md:text-base">何をしている会社か、誰とつながっているか。有価証券報告書から。</p>
+          <div className="mt-5 max-w-2xl">
             <SearchSuggest id="home-search" variant="hero" />
-            {examples.length > 0 && (
-              <div className="mt-4 flex flex-wrap items-center gap-2">
-                <span className="text-xs text-muted-foreground">検索例</span>
-                {examples.slice(0, 5).map((c) => (
-                  <Link
-                    key={c.id}
-                    href={`/search?q=${encodeURIComponent(c.name)}`}
-                    className="inline-flex min-h-8 items-center rounded-full border border-border bg-card px-3.5 text-xs hover:border-foreground"
-                  >
-                    {c.name}
-                  </Link>
-                ))}
-              </div>
-            )}
           </div>
+          {examples.length > 0 && (
+            <div className="-mx-4 mt-3 flex items-center gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] md:mx-0 md:px-0">
+              <span className="shrink-0 text-xs text-muted-foreground">検索例</span>
+              {examples.slice(0, 6).map((c) => (
+                <Link
+                  key={c.id}
+                  href={`/companies/${c.id}`}
+                  className="inline-flex min-h-9 shrink-0 items-center rounded-full border border-border bg-card/80 px-3.5 text-xs backdrop-blur hover:border-foreground"
+                >
+                  {c.name}
+                </Link>
+              ))}
+            </div>
+          )}
 
-          <nav aria-label="サービスへの入口" className="mt-8">
-            <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {SERVICE_ENTRIES.map((entry) => {
-                const card = (
-                  <>
-                    <span className="min-w-0 flex-1">
-                      <span className="block text-[0.6875rem] font-semibold tracking-[0.2em] text-seal">{entry.eyebrow}</span>
-                      <span className="mt-1 block font-serif text-lg leading-snug font-semibold">{entry.title}</span>
-                      <span className="mt-1 block text-xs leading-5 text-muted-foreground">{entry.text}</span>
-                    </span>
-                    <ArrowRight className="mt-1 size-5 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden />
-                  </>
-                );
-                const className = "group flex h-full items-start gap-4 rounded-md border border-border bg-card px-4 py-4 transition-colors hover:border-foreground";
-                return (
-                  <li key={entry.title}>
-                    {entry.external ? (
-                      <a href={entry.href} target="_blank" rel="noopener noreferrer" className={className}>
-                        {card}
-                        <span className="sr-only">（新しいタブで開きます）</span>
-                      </a>
-                    ) : (
-                      <Link href={entry.href} className={className}>
-                        {card}
-                      </Link>
-                    )}
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-
-          {/* D10 counts, compressed to one line (JCE-087): still counted from the entries themselves. */}
-          <p className="mt-8 border-t border-border pt-5 text-xs leading-6 text-muted-foreground">
-            掲載企業 <span className="figures font-semibold text-foreground">{companies.length.toLocaleString("ja-JP")}</span>社
-            <span aria-hidden className="mx-1.5">・</span>
-            業界 <span className="figures font-semibold text-foreground">{industries.length}</span>分類
-            <span aria-hidden className="mx-1.5">・</span>
-            本社のある都道府県{" "}
-            <Link href="/prefectures" className="hover:underline hover:underline-offset-4">
-              <span className="figures font-semibold text-foreground">{prefecturesWithCompanies.length}</span>都道府県
-            </Link>
-            <span aria-hidden className="mx-1.5">・</span>
-            出典にした資料 <span className="figures font-semibold text-foreground">{sourceCount.toLocaleString("ja-JP")}</span>件
-            <span aria-hidden className="mx-1.5">・</span>
-            転記した決算 <span className="figures font-semibold text-foreground">{yearCount.toLocaleString("ja-JP")}</span>期分
-            （有価証券報告書・EDINETなどの一次資料に基づく）
+          {/* D10 counts as tiles: still counted from the entries themselves, never readers or use. */}
+          <dl className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-4">
+            <div className={TILE}>
+              <dt className="text-[0.6875rem] text-muted-foreground">掲載企業</dt>
+              <dd className="figures mt-0.5 text-xl leading-tight font-semibold">
+                {companies.length.toLocaleString("ja-JP")}
+                <span className="ml-0.5 text-xs font-normal text-muted-foreground">社</span>
+              </dd>
+              <Link href="/companies" className="absolute inset-0">
+                <span className="sr-only">掲載企業の一覧へ</span>
+              </Link>
+            </div>
+            <div className={TILE}>
+              <dt className="text-[0.6875rem] text-muted-foreground">業界</dt>
+              <dd className="figures mt-0.5 text-xl leading-tight font-semibold">
+                {industries.length}
+                <span className="ml-0.5 text-xs font-normal text-muted-foreground">分類</span>
+              </dd>
+              <Link href="/industries" className="absolute inset-0">
+                <span className="sr-only">業界の一覧へ</span>
+              </Link>
+            </div>
+            <div className={TILE}>
+              <dt className="text-[0.6875rem] text-muted-foreground">企業のつながり</dt>
+              <dd className="figures mt-0.5 text-xl leading-tight font-semibold">
+                {tieCount.toLocaleString("ja-JP")}
+                <span className="ml-0.5 text-xs font-normal text-muted-foreground">本</span>
+              </dd>
+              <Link href="/network" className="absolute inset-0">
+                <span className="sr-only">企業ネットワークへ</span>
+              </Link>
+            </div>
+            <div className={TILE}>
+              <dt className="text-[0.6875rem] text-muted-foreground">最新の更新</dt>
+              <dd className="figures mt-0.5 text-xl leading-tight font-semibold">
+                {latestUpdate ? shortDate(latestUpdate) : "—"}
+              </dd>
+              <Link href="/digest" className="absolute inset-0">
+                <span className="sr-only">今週の開示へ</span>
+              </Link>
+            </div>
+          </dl>
+          <p className="mt-2 text-[0.6875rem] text-muted-foreground">
+            出典にした資料 <span className="figures">{sourceCount.toLocaleString("ja-JP")}</span>件・転記した決算{" "}
+            <span className="figures">{yearCount.toLocaleString("ja-JP")}</span>期分（有価証券報告書・EDINET などの一次資料）
           </p>
         </div>
       </section>
 
+      {/* The largest written companies, swiped sideways: a dense card each — mark, name, code, industry, one line. */}
+      {examples.length > 0 && (
+        <section aria-labelledby="home-companies" className="border-b border-border">
+          <div className="mx-auto max-w-7xl px-4 py-5 md:px-8">
+            <div className="flex items-baseline justify-between gap-3">
+              <h2 id="home-companies" className="seal-mark text-base font-semibold">解説つきの主な企業</h2>
+              <Link href="/companies" className="inline-flex min-h-11 items-center gap-1 text-xs text-ink">
+                すべて見る
+                <ArrowRight className="size-3.5" aria-hidden />
+              </Link>
+            </div>
+            <ul className="-mx-4 mt-2 flex snap-x snap-mandatory gap-2.5 overflow-x-auto scroll-px-4 px-4 pb-1 [scrollbar-width:none] md:mx-0 md:grid md:grid-cols-3 md:px-0">
+              {spotlight.map((c) => {
+                const primary = c.industries.find((i) => i.primary) ?? c.industries[0];
+                return (
+                  <li key={c.id} className="w-[82%] shrink-0 snap-start md:w-auto">
+                    <Link href={`/companies/${c.id}`} className="flex h-full gap-3 rounded-lg border border-border bg-card p-3 transition-colors hover:border-foreground/40">
+                      <CompanyMark name={c.name} />
+                      <span className="min-w-0 flex-1">
+                        <span className="flex items-baseline gap-2">
+                          <span className="truncate font-semibold">{c.name}</span>
+                          <span className="figures shrink-0 rounded bg-muted px-1.5 text-[0.625rem] text-muted-foreground">
+                            {c.code}
+                            {primary ? `・${INDUSTRY_LABELS[primary.industryId].name}` : ""}
+                          </span>
+                        </span>
+                        <span className="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground">{c.description ? toPlainText(c.description) : ""}</span>
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* The doors into the services as one compact grid (JCE-087's cards, condensed): icon, name, what it is. */}
+      <nav aria-label="サービスへの入口" className="border-b border-border">
+        <ul className="mx-auto grid max-w-7xl grid-cols-4 gap-px bg-border md:grid-cols-8">
+          {SERVICE_DOORS.map(({ href, label, note, icon: Icon, external }) => (
+            <li key={label} className="bg-background">
+              {external ? (
+                <a href={href} target="_blank" rel="noopener noreferrer" className="flex min-h-20 flex-col items-center justify-center gap-1 px-1 py-3 text-center transition-colors hover:bg-card">
+                  <Icon className="size-5 text-ink" aria-hidden strokeWidth={1.75} />
+                  <span className="text-xs font-semibold">{label}</span>
+                  <span className="text-[0.625rem] leading-3 text-muted-foreground">{note}</span>
+                  <span className="sr-only">（新しいタブで開きます）</span>
+                </a>
+              ) : (
+                <Link href={href} className="flex min-h-20 flex-col items-center justify-center gap-1 px-1 py-3 text-center transition-colors hover:bg-card">
+                  <Icon className="size-5 text-ink" aria-hidden strokeWidth={1.75} />
+                  <span className="text-xs font-semibold">{label}</span>
+                  <span className="text-[0.625rem] leading-3 text-muted-foreground">{note}</span>
+                </Link>
+              )}
+            </li>
+          ))}
+        </ul>
+      </nav>
+
       {/* DISCOVER (JCE-046): for the reader with nothing to look up yet. */}
-      <section aria-labelledby="home-discover" className="bg-neutral-950 text-white">
-        <Link href="/discover" className="group mx-auto flex max-w-7xl items-center gap-5 px-5 py-6 md:px-8">
+      <section aria-labelledby="home-discover" className="border-b border-border bg-card">
+        <Link href="/discover" className="group mx-auto flex max-w-7xl items-center gap-4 px-4 py-4 md:px-8">
           <div className="min-w-0 flex-1">
-            <p className="text-[0.6875rem] font-semibold tracking-[0.2em] text-amber-300">DISCOVER</p>
-            <h2 id="home-discover" className="mt-1 font-serif text-[1.25rem] leading-snug font-semibold">
+            <p className="text-[0.6875rem] font-semibold tracking-[0.2em] text-seal">DISCOVER</p>
+            <h2 id="home-discover" className="mt-0.5 text-base leading-snug font-semibold">
               調べたい会社がなくても。スワイプで、知らなかった会社に出会う。
             </h2>
-            <p className="mt-1 text-xs text-white/60">今日の3社・つながる会社をたどる・マイ企業図鑑</p>
+            <p className="mt-0.5 text-xs text-muted-foreground">今日の3社・つながる会社をたどる・マイ企業図鑑</p>
           </div>
-          <ArrowRight className="size-6 shrink-0 text-amber-300 transition-transform group-hover:translate-x-1" aria-hidden />
+          <ArrowRight className="size-5 shrink-0 text-seal transition-transform group-hover:translate-x-1" aria-hidden />
         </Link>
       </section>
 
       {/* 企業タイプ診断: the YUGENQ diagnosis on its own site, in its own words. The answers stay in the reader's browser. */}
       <section aria-labelledby="home-shindan" className="border-b border-border bg-paper">
-        <a href={SHINDAN_URL} className="group mx-auto flex max-w-7xl items-center gap-5 px-5 py-6 md:px-8">
+        <a href={SHINDAN_URL} className="group mx-auto flex max-w-7xl items-center gap-4 px-4 py-4 md:px-8">
           <div className="min-w-0 flex-1">
             <p className="text-[0.6875rem] font-semibold tracking-[0.2em] text-muted-foreground">企業タイプ診断</p>
-            <h2 id="home-shindan" className="mt-1 font-serif text-[1.25rem] leading-snug font-semibold">
+            <h2 id="home-shindan" className="mt-0.5 text-base leading-snug font-semibold">
               あなたに近いのは、どんなタイプの会社？
             </h2>
             <p className="mt-1 text-xs text-muted-foreground">
@@ -204,17 +283,17 @@ export default async function HomePage() {
       {/* JCE-052: two short daily habits beside DISCOVER. Links, not widgets: the home page stays light. */}
       <section aria-label="毎日の楽しみ" className="border-b border-border">
         <div className="mx-auto grid max-w-7xl gap-px bg-border sm:grid-cols-2">
-          <Link href="/quiz" className="group flex items-center gap-4 bg-background px-5 py-5 md:px-8">
+          <Link href="/quiz" className="group flex items-center gap-4 bg-background px-4 py-3.5 md:px-8">
             <span className="min-w-0 flex-1">
               <span className="block text-[0.6875rem] font-semibold tracking-[0.2em] text-seal">今日の1問</span>
-              <span className="mt-1 block font-serif text-lg font-semibold">売上が大きいのはどっち？ 毎日1問、30秒。</span>
+              <span className="mt-0.5 block text-[0.9375rem] font-semibold">売上が大きいのはどっち？ 毎日1問、30秒。</span>
             </span>
             <ArrowRight className="size-5 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden />
           </Link>
-          <Link href="/network" className="group flex items-center gap-4 bg-background px-5 py-5 md:px-8">
+          <Link href="/network" className="group flex items-center gap-4 bg-background px-4 py-3.5 md:px-8">
             <span className="min-w-0 flex-1">
               <span className="block text-[0.6875rem] font-semibold tracking-[0.2em] text-seal">企業ネットワーク</span>
-              <span className="mt-1 block font-serif text-lg font-semibold">取引先、競合、親会社。立体の地図で回して、たどる。</span>
+              <span className="mt-0.5 block text-[0.9375rem] font-semibold">取引先、競合、親会社。立体の地図で回して、たどる。</span>
             </span>
             <ArrowRight className="size-5 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden />
           </Link>
@@ -225,7 +304,7 @@ export default async function HomePage() {
 
       {/* WHERE: head offices on the map. Every prefecture is a link; the list beside it is the same data in words. */}
       <section aria-labelledby="home-map" className="border-b border-border">
-        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-10 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-center lg:gap-16">
+        <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-6 px-4 py-8 md:px-8 md:py-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-center lg:gap-16">
           <div>
             <SectionTitle id="home-map">本社所在地から探す</SectionTitle>
             <p className="mt-4 max-w-md text-sm leading-7 text-muted-foreground">
@@ -260,7 +339,7 @@ export default async function HomePage() {
       </section>
 
       {/* WHAT: industries, each with its photograph. Ordered by how many companies the encyclopedia has in them. */}
-      <section aria-labelledby="home-industries" className="mx-auto max-w-7xl px-5 pt-12 md:px-8 md:pt-16">
+      <section aria-labelledby="home-industries" className="mx-auto max-w-7xl px-4 pt-8 md:px-8 md:pt-14">
         <div className="flex items-baseline justify-between gap-4">
           <SectionTitle id="home-industries">業界から探す</SectionTitle>
           <Link href="/industries" className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-sm text-ink">
@@ -268,7 +347,7 @@ export default async function HomePage() {
             <ArrowRight className="size-4" aria-hidden />
           </Link>
         </div>
-        <ul className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+        <ul className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-4">
           {topIndustries.map((industry) => (
             <li key={industry.id}>
               <Link href={`/industries/${industry.id}`} className="group block overflow-hidden rounded-md border border-border bg-card">
@@ -295,7 +374,7 @@ export default async function HomePage() {
       </section>
 
       {/* WHO: companies with their numbers, and what to read next. */}
-      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-12 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-[minmax(0,1fr)_19rem] lg:gap-12">
+      <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-10 px-4 py-8 md:px-8 md:py-14 lg:grid-cols-[minmax(0,1fr)_19rem] lg:gap-12">
         {/* COMPANIES */}
         <section aria-labelledby="home-featured" className="min-w-0">
           <div className="flex items-baseline justify-between gap-4">

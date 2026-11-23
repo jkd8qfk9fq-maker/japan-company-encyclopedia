@@ -118,6 +118,7 @@ export async function CompanyView({ company }: { company: Company }) {
         website={await websiteRepository.get(company.id)}
         toc={sections}
         hasConnections={hasConnections}
+        related={relations.map((r) => ({ id: r.company.id, name: r.company.name }))}
       />
       <CompanyNotes notes={publicNotes(company)} />
       <SectionTabs sections={sections} containerId="company-sections" tabbed="mobile" />

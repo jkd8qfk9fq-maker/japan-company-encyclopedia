@@ -12,6 +12,8 @@ import { segmentTone, structureBranches } from "./business-structure";
 import type { SectionLink } from "@/components/navigation/section-tabs";
 import { FavoriteButton } from "./favorite-button";
 import { KeyFacts } from "./key-facts";
+import { CompanyMark } from "./company-mark";
+import { CompanySnapshot } from "./company-snapshot";
 import { ShareActions } from "./share-actions";
 import { PushCompanyToggle } from "@/components/engagement/push-controls";
 
@@ -62,6 +64,7 @@ export function CompanyHero({
   website,
   toc,
   hasConnections,
+  related = [],
 }: {
   company: Company;
   headquarters?: Headquarters | null;
@@ -70,6 +73,8 @@ export function CompanyHero({
   toc?: SectionLink[];
   /** Whether the page has a つながり section, inbound ties included (JCE-094). Defaults to this entry's own ties. */
   hasConnections?: boolean;
+  /** Released companies this entry names as ties, for the first-view card (2026-11-23). */
+  related?: { id: string; name: string }[];
 }) {
   const yuho = website ? company.sources.find((s) => s.id === website.sourceId) : undefined;
   const prefecture = headquarters ? prefectureByName(headquarters.prefecture) : null;
@@ -86,13 +91,30 @@ export function CompanyHero({
 
   return (
     <section id="overview" aria-labelledby="company-name" className="scroll-mt-28">
-      <div className="mx-auto max-w-6xl px-5 pt-5 pb-5 md:px-8 md:pt-10 md:pb-8">
-        <p className="text-xs tracking-[0.18em] text-muted-foreground">
-          <span className="figures">証券コード {company.code}</span>
-          {company.listings.length > 0 && (
-            <> ・ {company.listings.map((l) => `${EXCHANGE_NAME[l.exchange]}${l.market ?? ""}`).join("・")}</>
-          )}
-          {industries.length > 0 && " ・ "}
+      <div className="mx-auto max-w-6xl px-4 pt-4 pb-4 md:px-8 md:pt-8 md:pb-6">
+        {/* 2026-11-23 redesign: the code and market as one pill, the name and its mark side by side, and the
+            industry and head office as a quiet line under the name — the mockup's order, every item a fact. */}
+        <div className="flex items-start gap-3">
+          <div className="min-w-0 flex-1">
+            <p className="inline-flex max-w-full items-center rounded-full border border-border bg-card px-2.5 py-0.5 text-[0.6875rem] text-muted-foreground">
+              <span className="figures truncate">
+                証券コード {company.code}
+                {company.listings.length > 0 && <> ・ {company.listings.map((l) => `${EXCHANGE_NAME[l.exchange]}${l.market ?? ""}`).join("・")}</>}
+              </span>
+            </p>
+            <h1 id="company-name" className="mt-2 font-serif text-[2rem] leading-tight font-semibold tracking-[0.04em] break-words md:text-[2.5rem]">
+              {company.name}
+            </h1>
+            {company.shortNameEn && (
+              <p aria-hidden className={`wordmark mt-0.5 break-words ${wordmarkSize}`}>
+                {company.shortNameEn}
+              </p>
+            )}
+          </div>
+          <CompanyMark name={company.name} className="mt-1 size-16 text-[1.75rem] md:size-20 md:text-[2.25rem]" />
+        </div>
+        {showOfficialName && <p className="mt-0.5 text-xs text-muted-foreground">{company.officialName}</p>}
+        <p className="mt-1.5 text-[0.6875rem] leading-5 text-muted-foreground">
           {industries.map((ref, i) => (
             <Fragment key={ref.industryId}>
               {i > 0 && " ／ "}
@@ -101,10 +123,10 @@ export function CompanyHero({
               </Link>
             </Fragment>
           ))}
-          {/* Where the head office is (EDINET code list), and a way to the other companies of that prefecture. */}
           {headquarters && prefecture && (
             <>
-              {" ・ 本社 "}
+              {industries.length > 0 && " ・ "}
+              {"本社 "}
               <Link href={`/prefectures/${prefecture.id}`} className="underline-offset-4 hover:text-foreground hover:underline">
                 {prefecture.name}
               </Link>
@@ -113,18 +135,8 @@ export function CompanyHero({
           )}
         </p>
 
-        {company.shortNameEn && (
-          <p aria-hidden className={`wordmark mt-2 break-words ${wordmarkSize}`}>
-            {company.shortNameEn}
-          </p>
-        )}
-        <h1 id="company-name" className="mt-1 font-serif text-[1.625rem] font-semibold tracking-[0.04em] md:text-[2.125rem]">
-          {company.name}
-        </h1>
-        {showOfficialName && <p className="text-sm text-muted-foreground">{company.officialName}</p>}
-
         {company.description ? (
-          <p className="mt-3 max-w-[42rem] text-[1.0625rem] leading-[1.8] md:text-[1.1875rem]">
+          <p className="mt-2.5 max-w-[42rem] text-[1rem] leading-[1.75] md:text-[1.125rem]">
             <RichText text={company.description} />
           </p>
         ) : (
@@ -138,12 +150,12 @@ export function CompanyHero({
         )}
 
         {branches.length > 1 && (
-          <ul aria-label="主な事業" className="mt-4 flex flex-wrap gap-2">
+          <ul aria-label="主な事業" className="mt-3 flex flex-wrap gap-1.5">
             {branches.map((business, index) => (
               <li key={business.id}>
                 <a
                   href="#business"
-                  className="inline-flex min-h-9 items-center gap-2 rounded-full border border-border px-3.5 text-[0.8125rem] transition-colors hover:border-foreground"
+                  className="inline-flex min-h-9 items-center gap-2 rounded-full border border-border bg-card px-3 text-[0.8125rem] transition-colors hover:border-foreground"
                 >
                   <span
                     aria-hidden
@@ -157,39 +169,41 @@ export function CompanyHero({
           </ul>
         )}
 
-        <div className="mt-5">
+        <div className="mt-3">
           <KeyFacts records={company.financials} sources={company.sources} />
         </div>
+        <CompanySnapshot company={company} related={related} />
 
         {/* JCE-094: the first view ends with the three ways into the page — the ties, the figures over time,
             and the training this company carries — as buttons, so the reader picks a depth here instead of
             meeting the sections in scroll order. On a phone each opens its tab (SectionTabs follows the hash). */}
-        <nav aria-label="この会社の読み方" className="mt-4 flex flex-wrap gap-2">
+        <nav aria-label="この会社の読み方" className="mt-3 grid grid-cols-3 gap-2">
           {(hasConnections ?? company.relatedCompanies.length > 0) && (
             <a
               href="#connections"
-              className="inline-flex min-h-11 items-center rounded-full bg-foreground px-4 text-sm font-medium text-background transition-opacity hover:opacity-85"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg bg-foreground px-2 text-[0.8125rem] font-semibold text-background transition-opacity hover:opacity-85"
             >
               つながりを見る
             </a>
           )}
           <a
             href="#financials"
-            className="inline-flex min-h-11 items-center rounded-full border border-border px-4 text-sm transition-colors hover:border-foreground"
+            className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border bg-card px-2 text-[0.8125rem] transition-colors hover:border-foreground"
           >
             数字の推移
           </a>
           {company.financials.length > 0 && (
             <a
               href="#training"
-              className="inline-flex min-h-11 items-center rounded-full border border-border px-4 text-sm transition-colors hover:border-foreground"
+              className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border bg-card px-2 text-[0.8125rem] transition-colors hover:border-foreground"
             >
               この会社で学ぶ
             </a>
           )}
         </nav>
 
-        <div className="mt-3 flex flex-wrap gap-3">
+        {/* 2026-11-23: the page actions as one swiped row, so they cost one line of the first screen. */}
+        <div className="-mx-4 mt-3 flex gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] md:mx-0 md:flex-wrap md:px-0 [&>*]:shrink-0">
           {/* JCE-055: the company's own site, at the address its 有報 prints for its electronic notices. */}
           {website && (
             <a

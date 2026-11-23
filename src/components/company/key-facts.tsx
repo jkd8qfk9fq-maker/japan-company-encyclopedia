@@ -33,18 +33,17 @@ export function KeyFacts({ records, sources }: { records: FinancialRecord[]; sou
 
   return (
     <div>
-      {/* Side by side at every width — on a phone too, where stacking three figures cost a screen of scrolling. */}
-      <dl className="grid grid-cols-3 border-y border-border border-t-foreground">
-        {facts.map((fact, i) => (
-          <div key={fact.label} className={i > 0 ? "border-l border-border py-3 pl-3 sm:py-5 sm:pl-6" : "py-3 pr-3 sm:py-5 sm:pr-6"}>
+      {/* Side by side at every width, as three tiles (2026-11-23 redesign): label, figure, period. */}
+      <dl className="grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-border bg-border">
+        {facts.map((fact) => (
+          <div key={fact.label} className="bg-card px-2.5 py-2.5 sm:px-4 sm:py-3.5">
             <dt className="line-clamp-2 text-[0.625rem] leading-4 text-muted-foreground sm:text-xs sm:leading-5">{fact.label}</dt>
-            <dd className="figures mt-1 font-serif text-[1rem] leading-tight font-semibold sm:mt-1.5 sm:text-[1.625rem] md:text-[1.875rem]">
-              {fact.value}
-            </dd>
+            <dd className="figures mt-1 text-[1.0625rem] leading-tight font-semibold tracking-tight sm:text-[1.5rem] md:text-[1.75rem]">{fact.value}</dd>
+            <dd className="figures mt-0.5 text-[0.625rem] text-muted-foreground">{latest.fiscalYear}</dd>
           </div>
         ))}
       </dl>
-      <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted-foreground">
+      <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.6875rem] text-muted-foreground">
         <p className="figures">{latest.fiscalYear}・連結</p>
         {badgeSources.length > 0 && (
           <p className="flex flex-wrap items-center gap-1.5">
