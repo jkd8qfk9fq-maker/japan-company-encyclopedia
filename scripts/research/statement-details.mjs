@@ -94,6 +94,8 @@ const PL_SLOTS = [
   { element: "IncomeTaxesCurrent", role: "income-taxes-item" },
   { element: "IncomeTaxesDeferred", role: "income-taxes-item" },
   { elements: ["IncomeTaxes", "IncomeTaxExpenseIFRS"], role: "income-taxes" },
+  { element: "ProfitLossFromContinuingOperationsIFRS", role: "continuing-profit" },
+  { element: "ProfitLossFromDiscontinuedOperationsIFRS", role: "discontinued-profit" },
   { elements: ["ProfitLoss", "ProfitLossIFRS"], role: "net-income" },
   { elements: ["ProfitLossAttributableToNonControllingInterests", "ProfitLossAttributableToNonControllingInterestsIFRS"], role: "non-controlling-interests" },
   { elements: ["ProfitLossAttributableToOwnersOfParent", "ProfitLossAttributableToOwnersOfParentIFRS"], role: "net-income-attributable-to-parent" },
@@ -394,7 +396,14 @@ function checkYear(pl, bs, rec) {
   }
   if (op !== null && noi !== null && noe !== null && ord !== null) close("営業＋営業外収益−営業外費用＝経常", op + noi - noe, ord);
   if (ord !== null && pre !== null) close("経常＋特別利益−特別損失＝税引前", ord + (ei ?? 0) - (el ?? 0), pre);
-  if (pre !== null && tax !== null && net !== null) close("税引前−法人税等＝当期純利益", pre - tax, net);
+  const cont = one(pl, "continuing-profit"), disc = one(pl, "discontinued-profit");
+  if (cont !== null) {
+    // IFRS with discontinued operations: the printed pre-tax is the continuing-operations
+    // figure, so the stage closes in two steps — pre-tax less tax is the continuing profit,
+    // and continuing plus discontinued is the net profit (JCE-103, verified on Bridgestone).
+    if (pre !== null && tax !== null) close("税引前−法人税等＝継続事業からの当期純利益", pre - tax, cont);
+    if (net !== null) close("継続＋非継続＝当期純利益", cont + (disc ?? 0), net);
+  } else if (pre !== null && tax !== null && net !== null) close("税引前−法人税等＝当期純利益", pre - tax, net);
   if (net !== null && attr !== null) close("当期純利益−非支配帰属＝親会社帰属", net - (nci ?? 0), attr);
   const ca = one(bs, "total-current-assets"), nca = one(bs, "total-non-current-assets"), ta = one(bs, "total-assets");
   const cl = one(bs, "total-current-liabilities"), ncl = one(bs, "total-non-current-liabilities"), tl = one(bs, "total-liabilities"), na = one(bs, "total-net-assets");
