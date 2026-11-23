@@ -13,6 +13,8 @@ export type SearchEntry = {
   id: string;
   title: string;
   subtitle: string;
+  /** A short identifying line shown beside the title: a company's code and industry (2026-11-23). */
+  meta?: string;
   href: string;
   /** Pre-normalised text the query is matched against. */
   haystack: string;
