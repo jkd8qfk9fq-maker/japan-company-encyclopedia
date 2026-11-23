@@ -14,7 +14,7 @@
  *   out-shard-<k>/                 shard k's slice (its companies under companies/, plus a copy of 404.html)
  *   wrangler.generated.main.jsonc  wrangler.jsonc with the assets directory pointed at out-main/
  *   wrangler.generated.shard-<k>.jsonc
- *   .deploy-manifest.json          [{ name, config, files }] in deploy order (shards first, main last)
+ *   .deploy-manifest.json          [{ name, config, files }], shards then main (the workflow deploys main first)
  *
  * The assignment is recomputed from the actual files on every run: companies are grouped into prefix
  * "atoms" (first character; a first character whose files exceed the atom cap is split by its first two
@@ -186,7 +186,7 @@ ${routes}
   );
 });
 
-// --- Verify the slices and write the deploy manifest (shards first, main last). ---
+// --- Verify the slices and write the deploy manifest (shards, then main; the workflow deploys main first). ---
 const manifest = [];
 let accounted = 0;
 shards.forEach((shard, k) => {

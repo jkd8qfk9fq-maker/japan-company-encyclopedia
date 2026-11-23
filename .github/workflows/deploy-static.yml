@@ -39,14 +39,35 @@ jobs:
           SITE_URL: https://kigyo-hyakka.com
       - name: Split the export into Worker slices
         run: node scripts/partition-static.mjs
-      - name: Deploy every slice (shards first, main last)
+      # The previous build's script chunks stay served alongside the new ones (2026-11-23). The slices are deployed
+      # one Worker at a time, about seven minutes in all; during that window a page from one build asked for
+      # /_next/static chunks that only the other build had, and company pages (トヨタ, 本田技研工業) failed to open
+      # on phones. Chunk names are content-hashed, so keeping both sets on the main Worker is safe.
+      - name: Restore the previous build's script chunks
+        uses: actions/cache/restore@v4
+        with:
+          path: .prev-static
+          key: next-static-${{ github.run_id }}
+          restore-keys: next-static-
+      - name: Serve the previous chunks too, and keep this build's for the next run
+        run: |
+          set -euo pipefail
+          if [ -d .prev-static ]; then rsync -a --ignore-existing .prev-static/ out-main/_next/static/; fi
+          rm -rf .prev-static && cp -r out/_next/static .prev-static
+          echo "main slice: $(find out-main -type f | wc -l) files"
+      - uses: actions/cache/save@v4
+        with:
+          path: .prev-static
+          key: next-static-${{ github.run_id }}
+      - name: Deploy every slice (main first, then the shards)
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
         run: |
           set -euo pipefail
           count=$(jq 'length' .deploy-manifest.json)
-          for i in $(seq 0 $((count - 1))); do
+          # Main first: once it serves both builds' chunks, every page — old shard or new — finds its scripts.
+          for i in $((count - 1)) $(seq 0 $((count - 2))); do
             name=$(jq -r ".[$i].name" .deploy-manifest.json)
             config=$(jq -r ".[$i].config" .deploy-manifest.json)
             echo "== Deploying $name with $config"

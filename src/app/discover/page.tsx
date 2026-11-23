@@ -9,27 +9,25 @@ export const metadata: Metadata = {
 };
 
 /**
- * The discovery feed (JCE-046). Below the introduction, the feed fills the screen between the header and, on
- * phones, the bottom navigation, so one card is one screen. The introduction is rendered on the server above
- * that frame (JCE-074): the page explains itself in its own HTML, and the frame below keeps its exact height,
- * so the feed's one-card-one-screen layout is untouched — the reader scrolls past the introduction once.
+ * The discovery feed (JCE-046). One card is one screen, between the header and (on phones) the bottom navigation,
+ * and the page itself scrolls and snaps from card to card (2026-11-23; before, the cards scrolled inside a frame
+ * of their own under an introduction that scrolled with the page). The short introduction is server-rendered
+ * above the first card (JCE-074), so the page still explains itself in its own HTML.
  */
 export default function DiscoverPage() {
   return (
     <div>
-      <section className="mx-auto max-w-md px-5 pt-8 pb-5">
-        <p className="eyebrow" aria-hidden>Discover</p>
-        <h1 className="mt-2 font-serif text-[1.75rem] leading-snug font-semibold">今日、出会う日本の会社</h1>
-        <p className="prose-ja mt-3 text-sm leading-7 text-muted-foreground">
-          DISCOVERは、知らなかった日本の上場企業にスワイプで1社ずつ出会うフィードです。カードは各社の有価証券報告書に基づく百科事典の記載から作られていて、報告書が書く強みや、取引先・競合といった会社同士のつながりをたどれます。会社名や業界から探すときは
-          <Link href="/companies" className="underline underline-offset-2 hover:text-foreground">企業一覧</Link>
-          へ、数字から業界を読むときは
-          <Link href="/features" className="underline underline-offset-2 hover:text-foreground">特集</Link>
-          へどうぞ。
+      {/* The introduction is one compact block above the first card, in the page's own scroll (2026-11-23): the
+          feed below no longer has a scroll of its own. */}
+      <section className="mx-auto max-w-md px-5 pt-4 pb-3">
+        <h1 className="font-serif text-[1.375rem] leading-snug font-semibold">今日、出会う日本の会社</h1>
+        <p className="mt-1 text-xs leading-5 text-muted-foreground">
+          上にスワイプで1社ずつ。カードは有価証券報告書に基づく記載から作っています。名前や業界から探すなら
+          <Link href="/companies" className="underline underline-offset-2 hover:text-foreground">企業一覧</Link>へ。
         </p>
       </section>
-      <div className="h-[calc(100svh-var(--header-height)-3.5rem-env(safe-area-inset-bottom))] bg-neutral-950 md:h-[calc(100svh-var(--header-height))]">
-        <div className="mx-auto h-full max-w-md">
+      <div className="bg-neutral-950">
+        <div className="mx-auto max-w-md">
           <DiscoverFeed />
         </div>
       </div>
