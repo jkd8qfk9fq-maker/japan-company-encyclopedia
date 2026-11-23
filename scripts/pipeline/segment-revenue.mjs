@@ -38,20 +38,24 @@ const amountOf = (/** @type {string} */ v) => {
 };
 
 /**
- * The current year's external revenue per segment member, as tagged. Null when the filing tags none, or when the
- * members do not add up to its own total.
+ * One year's external revenue per segment member, as tagged — the current year (`CurrentYearDuration`) or the
+ * prior year's column of the same note (`Prior1YearDuration`, JCE-097). Null when the filing tags none, or when
+ * the members do not add up to its own total.
  * @param {Record<string, string>[]} rows the type=5 CSV rows
+ * @param {string} [period] the duration context of the year to read
  * @returns {{ label: string, items: { member: string, other: boolean, amount: number }[] } | null}
  */
-export function segmentRevenueFacts(rows) {
+export function segmentRevenueFacts(rows, period = "CurrentYearDuration") {
+  const head = new RegExp(`^${period}(_|$)`);
+  const strip = new RegExp(`^${period}_?`);
   const elements = [...new Set(rows.map((r) => r["要素ID"]).filter((e) => ELEMENT.test(e ?? "")))];
   for (const element of elements) {
-    const tagged = rows.filter((r) => r["要素ID"] === element && /^CurrentYearDuration(_|$)/.test(r["コンテキストID"] ?? ""));
+    const tagged = rows.filter((r) => r["要素ID"] === element && head.test(r["コンテキストID"] ?? ""));
     if (tagged.length === 0) continue;
     /** @type {Map<string, Set<number | null>>} */
     const byContext = new Map();
     for (const r of tagged) {
-      const context = r["コンテキストID"].replace(/^CurrentYearDuration_?/, "");
+      const context = r["コンテキストID"].replace(strip, "");
       if (!byContext.has(context)) byContext.set(context, new Set());
       byContext.get(context)?.add(amountOf(r["値"]));
     }
@@ -262,11 +266,47 @@ export function regionalRevenueBlock(note, year, sourceId) {
 }
 
 /** Segment facts with each member's Japanese name attached, as packs and drafts store them. */
-export function namedSegmentFacts(/** @type {Record<string, string>[]} */ rows, /** @type {string[]} */ labelDocs) {
-  const facts = segmentRevenueFacts(rows);
+export function namedSegmentFacts(/** @type {Record<string, string>[]} */ rows, /** @type {string[]} */ labelDocs, /** @type {string} */ period = "CurrentYearDuration") {
+  const facts = segmentRevenueFacts(rows, period);
   if (!facts) return null;
   const labels = memberLabels(labelDocs);
   return { label: facts.label, items: facts.items.map((i) => ({ ...i, name: i.other ? "その他" : (labels.get(i.member) ?? null) })) };
+}
+
+/**
+ * The financial record a segment year's prior column belongs to (JCE-097): the record immediately before the
+ * segment year, ending a normal twelve months earlier. A gap outside 340–400 days means a year is missing
+ * between them or a fiscal-year change sits in between, and the filing's prior column is then not that
+ * record's year — no prior block rather than a difference across two different filings' years.
+ * @param {{ fiscalYear: string, periodEnd: string }[]} financials
+ * @param {string} periodEnd the segment year's period end
+ */
+export function priorRecordFor(financials, periodEnd) {
+  const sorted = [...financials].sort((a, b) => a.periodEnd.localeCompare(b.periodEnd));
+  const at = sorted.findIndex((r) => r.periodEnd === periodEnd);
+  if (at <= 0) return null;
+  const prev = sorted[at - 1];
+  const gapDays = (Date.parse(periodEnd) - Date.parse(prev.periodEnd)) / 86_400_000;
+  return gapDays >= 340 && gapDays <= 400 ? prev : null;
+}
+
+/**
+ * The entry's `segmentRevenue.previous` from the prior column of the same filing, or null. The same
+ * all-or-nothing rules as the current year's block: every tagged member must map to a business, and the
+ * members must fit within the prior year's revenue line — a partial prior set is never stored.
+ * @param {{ items: { member: string, other: boolean, amount: number, name?: string | null }[] } | null | undefined} priorFacts
+ * @param {{ id: string, name: string, shortName?: string }[]} businesses
+ * @param {{ fiscalYear: string, periodEnd: string, revenue: number | null }} priorYear
+ * @returns {{ fiscalYear: string, periodEnd: string, items: { businessId: string, amount: number }[] } | null}
+ */
+export function segmentRevenuePreviousBlock(priorFacts, businesses, priorYear) {
+  if (!priorFacts || businesses.length < 2) return null;
+  const labels = new Map(priorFacts.items.filter((i) => i.name).map((i) => [i.member, /** @type {string} */ (i.name)]));
+  const mapped = mapSegmentsToBusinesses(priorFacts, labels, businesses);
+  if ("problem" in mapped) return null;
+  const sum = mapped.items.reduce((total, i) => total + i.amount, 0);
+  if (priorYear.revenue == null || sum > priorYear.revenue + 1_000_000 * mapped.items.length) return null;
+  return { fiscalYear: priorYear.fiscalYear, periodEnd: priorYear.periodEnd, items: mapped.items };
 }
 
 /** The label linkbases of a filing (its type=1 zip, which the five-year table's dates already download). */

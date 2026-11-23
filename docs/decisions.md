@@ -1713,3 +1713,21 @@ spend the trust the verification exists to build).
 **実測（全社計算、公開2,993社・全社に financials あり）**: 表示社数は A1 2,775社／A2 2,929社／B1 2,938社／C1 2,788社／E1 2,196社／F2 2,740社／F3 2,935社／D1 2,731社／F1 2,873社。非表示率は最大で E1 の26.6%（5期一貫性と ±30% 超の変動を含む系列の除外による）で、全モジュールがスキームの撤退条件（非表示率30%超）以内に収まったため、閾値は30%／突合5%のまま JCE-096 の条件として固定する。
 
 **やらないこと**: 不変条件4の本文の書き換え、本文側への ROE 型指標の表示、結果の保存（静的生成時に計算する）、ANALYSIS_FEATURES_OPEN の変更、asFiledIn の導入（フェーズ2）。
+
+## JCE-097 — 2026-11-23: 分析SaaS Phase 1.5 — A3 セグメント寄与（前期セグメント売上の登録と寄与度分解）
+
+**背景**: JCE-096 でフェーズ1.5に残した A3（セグメント寄与分解）は、segmentRevenue が最新期のみで前期比較情報がなく増減が取れないことが前提条件だった。実測（2026-11-23）で、最新有報の XBRL（CSV）にはセグメント別の外部顧客への売上高が当期（CurrentYearDuration）と前期（Prior1YearDuration）の両コンテキストでタグ付けされており、現行の抽出（segment-revenue.mjs）がそのまま前期にも使えることを確認した。キャッシュ済みの実有報7社すべてで前期セグメントが抽出でき、事業への対応付けと前期の印字売上高への突合が通った。増減を同一有報の前期欄で取るため、JCE-096 でフェーズ2送りにした asFiledIn の考え方を、このモジュールに限って先行して満たす。
+
+**設計判断**:
+1. **データモデル**: `SegmentRevenue` に任意の `previous`（fiscalYear・periodEnd・items）を追加する。前期値も同じ有報の同じ注記の前期欄の印字値であり、出典（sourceIds・locator・label）は当期のブロックと共有する。別ブロックにしないのは、前期だけが独立に存在する状態（当期が落ちたのに前期だけ残る）を作らないため。
+2. **前期レコードの同定**: 前期として紐づける財務レコードは、セグメント年度の直前のレコードで、periodEnd の間隔が340日以上400日以内（通常の12か月期）のものだけとする。間隔がこの範囲を外れる組（年度の欠落、決算期変更の前後）は前期を付けない。決算期変更の判定に期間の月数ではなく間隔を使うのは JCE-096 の代理判定と同旨。
+3. **前期ブロックの採否は全か無か**。有報自身の合計と合わない、前期のセグメント名が事業に対応付かない、前期セグメントの合計が前期の印字売上高を超える場合は、前期ブロック自体を付けない（一部のセグメントだけの前期は作らない。当期ブロックの採否ルールと同じ）。
+4. **A3 の表示**: 主表示は寄与度（pt）＝セグメントの売上増減 ÷ 前期の全社売上高とし、寄与率（ΔR_seg ÷ ΔR）は使わない（完全版仕様どおり）。両期に共通する事業についてだけ増減を取り、片方の期にしかない事業（新設・廃止・改称で対応付かないもの）の金額は調整額に含める。調整額（全社売上の増減 − 共通事業の増減の合計）は独立行で出し、セグメント側へ配分しない。共通事業が2未満の会社はモジュール自体を出さない。
+5. **配置と境界**: A3 は観点2「成長」に置く。行の業界分布は付けない（事業の対応が会社ごとに異なり、分布に意味がないため）。有料境界と ANALYSIS_FEATURES_OPEN は変更しない。
+6. **登録経路**: evidence-pack が segmentPriorFacts（前期の事実）も作り、draft-entry → merge-fragments／refresh-financials が当期ブロックに previous を付ける。既登録の1,755社は backfill-segment-prior.mjs で、エントリが既に引用している同じ有報から前期だけを足す（新しい有報へは進めない。それは refresh-financials の仕事）。
+
+**実装したこと**: src/types/company.ts・src/lib/content/schemas.ts（SegmentRevenue.previous の追加）、src/lib/content/integrity.ts（前期の重複・最上位事業・金額・財務レコードとの一致チェック）、scripts/pipeline/segment-revenue.mjs（segmentRevenueFacts／namedSegmentFacts への期間パラメータ、segmentRevenuePreviousBlock と priorRecordFor の新設）、scripts/research/evidence-pack.mjs・draft-entry.mjs（segmentPriorFacts の生成と受け渡し）、scripts/pipeline/merge-fragments.mjs・refresh-financials.mjs（当期ブロックへの previous の付加と、保持時の前期チェック）、scripts/pipeline/backfill-segment-prior.mjs（新規：既登録分への前期の追加。引用済みの有報だけを読み、Prior1YearDuration の期末が前期レコードの期末と一致することも有報のコンテキストで照合する）、src/lib/analysis-decomposition.ts（A3 を式レジストリに追加し観点2「成長」へ接続）、tests/segment-revenue.test.ts・tests/analysis-decomposition.test.ts（前期抽出の単体テスト、A3 のゴールデン・性質・表示条件テスト、実データ突合への A3 追加）。
+
+**実測**: 実現可能性の事前実測では、キャッシュ済みの実有報9件すべてに前期コンテキストがあり、エントリに対応付いた7件すべてで前期セグメントの抽出・対応付け・前期印字売上高への突合が通った。backfill（公開済みを対象）では、候補1,041社に対し追加1,009社・追加なし18社・見送り14社（すべて「前期レコードが通常の12か月前にない」）・失敗0件。A3 の表示社数は公開2,993社中1,007社で、前期を登録できた1,009社のうち2社だけが revenueBasis の不一致で非表示になった（対象母集団に対する非表示率0.2%。スキームの撤退条件30%以内）。
+
+**やらないこと**: 前期セグメントの本文・企業ページ表への表示（A3 の入力としてのみ使う。segmentRevenue の表示は従来どおり最新期のみ）、寄与率の表示、片方の期にしかない事業の増減の推定、ANALYSIS_FEATURES_OPEN の変更。

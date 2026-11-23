@@ -1466,6 +1466,9 @@ async function packFor(companyId, code4, from, to) {
     // JCE-038: segment revenue as tagged (with each member's Japanese name, to be matched to the businesses once
     // they are written) and the note 地域ごとの情報 is read from. Both checked again where they become entry data.
     segmentFacts: namedSegmentFacts(rows, await labelDocumentsFor(latest.docID).catch(() => [])),
+    // JCE-097: the same note's prior-year column, for the A3 segment contribution. Read from this filing
+    // alone (never the previous filing), so a change is always a difference as filed in one document.
+    segmentPriorFacts: namedSegmentFacts(rows, await labelDocumentsFor(latest.docID).catch(() => []), "Prior1YearDuration"),
     regionalNote: regionalNoteOf(rows),
     previousFiling: previous?.filing ?? null,
     // All six series, not just revenue and net income. 清水建設 finalised the
