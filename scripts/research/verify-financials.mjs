@@ -23,6 +23,24 @@ import { cacheDir } from "./edinet.mjs";
 const normalize = (s) => s.normalize("NFKC").replace(/\s+/g, "");
 
 /**
+ * A filing can shorten a row label by dropping the loss alternative: the
+ * 第49期 report of クラウディアホールディングス prints 「経常利益又は経常損失（△）」
+ * while its 第50期 prints just 「経常利益」 for the very same row (JCE-095). The
+ * stored label is the wording of the filing it was registered from and is never
+ * rewritten, so the printed-table check also accepts the label with that
+ * trailing alternative removed. Only that suffix is forgiven — it must start
+ * with 「又は」 and end with 「（△）」 at the very end of the label; any other
+ * wording difference still fails.
+ */
+const LOSS_ALTERNATIVE = /又は.*\(△\)$/;
+const labelIsPrinted = (table, label) => {
+  const printed = normalize(label);
+  if (table.includes(printed)) return true;
+  const shortened = printed.replace(LOSS_ALTERNATIVE, "");
+  return shortened.length > 0 && shortened !== printed && table.includes(shortened);
+};
+
+/**
  * Net income is profit attributable to the owners of the parent, and its label
  * has to say so: 「当期純利益」 alone is the line that still includes
  * non-controlling interests, and a reader cannot tell the two apart.
@@ -145,7 +163,7 @@ for (const row of entry.financials) {
       continue;
     }
     // The label must be printed in the filing's own 主要な経営指標等の推移.
-    if (indicators && !indicators.includes(normalize(label))) {
+    if (indicators && !labelIsPrinted(indicators, label)) {
       problems.push(`${row.fiscalYear} ${kind}: ラベル「${label}」が有報の主要な経営指標等の推移に見当たりません`);
     }
     // The printed table runs labels into their figures, so the check above cannot
@@ -213,7 +231,7 @@ for (const row of entry.financials) {
     // Without this check a truncated label (「経常利益」 where the filing prints
     // 「経常利益又は経常損失（△）」) reached three drafts unnoticed.
     const shownLabel = { 利益: row.profitLabel, 総資産: row.totalAssetsLabel, 純資産: row.netAssetsLabel }[kind];
-    if (shownLabel && indicators && !indicators.includes(normalize(shownLabel))) {
+    if (shownLabel && indicators && !labelIsPrinted(indicators, shownLabel)) {
       problems.push(`${row.fiscalYear} ${kind}: ラベル「${shownLabel}」が有報の主要な経営指標等の推移に見当たりません`);
     }
     if (!tagged.includes(stored)) {
