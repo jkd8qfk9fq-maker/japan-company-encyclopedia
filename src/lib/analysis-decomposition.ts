@@ -22,8 +22,11 @@ import type { AnalysisGroup, AnalysisPerspectiveId, AnalysisRow } from "@/lib/co
  * JCE-098 (Phase 2) adds the detail modules — A-full 営業利益の3要因分解, B2 純資産の完全分解,
  * D2 増分ROIC — over `financialStatements` (JCE-092, expanded in JCE-098): the two newest statement
  * years of one filing, so their difference is a difference as filed in that one document (the block's
- * docId is the statements layer's asFiledIn, JCE-098). C2 資金ギャップ is not here: it is defined over
- * a cash-flow statement, and no CF rows are registered anywhere yet (decisions, JCE-098).
+ * docId is the statements layer's asFiledIn, JCE-098).
+ *
+ * JCE-102 (SaaS Step 3) adds C2 資金ギャップ over the cash-flow rows registered in the same blocks:
+ * the filer's own fixed-asset acquisition outflow and operating cash flow of the newest year, and
+ * the change in working capital (売上債権 + 棚卸資産 − 仕入債務) between the two balance sheets.
  */
 
 export type DecompResult = { status: "ok"; group: AnalysisGroup } | { status: "suppressed"; reason: string };
@@ -705,9 +708,13 @@ function b2Values(c: Company): B2Values | null {
   const aoci = delta("accumulated-other-comprehensive-income");
   const capital = cap1 - cap0 + delta("capital-surplus");
   const treasury = delta("treasury-shares");
+  // For an IFRS filer the statements' 純資産 is the parent-attributable equity (that is what
+  // `financials` records), so a change in non-controlling interests is not a component of its
+  // change and must not be decomposed as one (JCE-102).
   const nciPresent =
-    sLine(pair.prev, "balanceSheet", "non-controlling-interests") !== null ||
-    sLine(pair.latest, "balanceSheet", "non-controlling-interests") !== null;
+    pair.latest.accountingStandard !== "ifrs" &&
+    (sLine(pair.prev, "balanceSheet", "non-controlling-interests") !== null ||
+      sLine(pair.latest, "balanceSheet", "non-controlling-interests") !== null);
   const nci = nciPresent ? delta("non-controlling-interests") : null;
   const dE = na1 - na0;
   return {
@@ -827,6 +834,120 @@ const c1: DecompModuleDef = {
     ];
     const note = bigChangeNote(checked.pair);
     return { status: "ok", group: { id: "c1", title: "総資産の増減と調達の内訳", rows, ...(note ? { note } : {}) } };
+  },
+};
+
+/* ---------- C2: 資金ギャップ (JCE-102) ---------- */
+
+type C2Values = {
+  operatingCashFlow: number;
+  capex: number;
+  capexLabel: string;
+  workingCapital: number;
+  workingCapitalChange: number;
+  gap: number;
+};
+
+/** Working capital from the printed balance-sheet lines: 売上債権 + 棚卸資産 − 仕入債務. */
+function workingCapitalOf(s: FinancialStatements): number | null {
+  // Trade receivables and payables print either as one combined line or as components
+  // （受取手形・売掛金・電子記録債権・契約資産 …) — the components are disjoint lines of the
+  // same total, so the role's lines are summed.
+  const sumRole = (role: StatementRole): number | null => {
+    const lines = s.balanceSheet.filter((l) => l.role === role);
+    return lines.length > 0 ? lines.reduce((a, l) => a + l.amount, 0) : null;
+  };
+  const receivables = sumRole("accounts-receivable");
+  const payables = sumRole("accounts-payable");
+  if (receivables === null || payables === null) return null;
+  const inv = s.balanceSheet.filter((l) => l.role === "inventories");
+  if (inv.length === 0) return null;
+  // A filer may print both the components of inventories and their total （棚卸資産）: the total is
+  // the line that equals the sum of the others, and counting it as another component would invent
+  // working capital. Where no line reads as the total, the components are summed.
+  let inventories: number;
+  if (inv.length === 1) {
+    inventories = inv[0].amount;
+  } else {
+    const sum = inv.reduce((a, l) => a + l.amount, 0);
+    // The total is the line whose remainder matches it best (printed lines are rounded to the
+    // nearest million, so the match is allowed one unit per printed line involved).
+    let total: number | null = null;
+    let best = Infinity;
+    for (const l of inv) {
+      const residual = Math.abs(l.amount - (sum - l.amount));
+      if (residual <= inv.length * 1_000_000 && residual < best) {
+        best = residual;
+        total = l.amount;
+      }
+    }
+    inventories = total ?? sum;
+  }
+  return receivables + inventories - payables;
+}
+
+function c2Values(c: Company): C2Values | null {
+  const pair = stmtPairOf(c);
+  if (!pair) return null;
+  const wc0 = workingCapitalOf(pair.prev);
+  const wc1 = workingCapitalOf(pair.latest);
+  if (wc0 === null || wc1 === null) return null;
+  const cf = pair.latest.cashFlowStatement;
+  if (!cf) return null;
+  const op = cf.find((l) => l.role === "operating-cash-flow")?.amount ?? null;
+  const capexLine = cf.find((l) => l.role === "capital-expenditure");
+  if (op === null || !capexLine) return null;
+  // The acquisition line is filed as an outflow (negative); the gap is stated in outlay amounts.
+  const capex = Math.abs(capexLine.amount);
+  return {
+    operatingCashFlow: op,
+    capex,
+    capexLabel: capexLine.label,
+    workingCapital: wc1,
+    workingCapitalChange: wc1 - wc0,
+    gap: capex + (wc1 - wc0) - op,
+  };
+}
+
+const c2: DecompModuleDef = {
+  id: "c2",
+  version: 1,
+  title: "資金ギャップ",
+  perspectives: ["stability"],
+  kind: "calculated",
+  run: (company, ctx) => {
+    if (!stmtPairOf(company)) return suppressed("明細（財務諸表）が2期分ありません");
+    const values = c2Values(company);
+    if (!values) return suppressed("キャッシュ・フロー明細または運転資本の材料が揃いません");
+    const pair = stmtPairOf(company)!;
+    const fiscalYear = pair.latest.fiscalYear;
+    const sourceIds = stmtSources(pair);
+    const row = (key: string, title: string, formula: string, value: number, kind: AnalysisRow["kind"], read: (v: C2Values) => number | null): AnalysisRow => ({
+      key,
+      title,
+      formula,
+      kind,
+      unit: "yen",
+      value,
+      fiscalYear,
+      sourceIds,
+      industry: position(value, ctx.peers, (c) => {
+        const v = c2Values(c);
+        return v ? read(v) : null;
+      }),
+    });
+    const rows: AnalysisRow[] = [
+      row("c2-operating-cash-flow", "営業キャッシュフロー", "有価証券報告書のキャッシュ・フロー計算書に印字された値", values.operatingCashFlow, "printed", (v) => v.operatingCashFlow),
+      row("c2-capex", "設備投資", `投資キャッシュ・フローの「${values.capexLabel}」の支出額`, values.capex, "computed", (v) => v.capex),
+      row("c2-working-capital", "運転資本（期末）", "売上債権 + 棚卸資産 − 仕入債務", values.workingCapital, "computed", (v) => v.workingCapital),
+      row("c2-working-capital-change", "運転資本の増減", "最新期の運転資本 − 前期の運転資本", values.workingCapitalChange, "computed", (v) => v.workingCapitalChange),
+      row("c2-gap", "資金ギャップ", "設備投資 + 運転資本の増減 − 営業キャッシュフロー", values.gap, "computed", (v) => v.gap),
+    ];
+    const notes = ["資金ギャップが正の期は、設備投資と運転資本の増加が営業キャッシュフローを上回り、その分を手元資金や調達で賄ったことを示します。"];
+    if (values.capexLabel !== "有形固定資産の取得による支出") {
+      notes.push(`設備投資は、有報の投資キャッシュ・フローに「${values.capexLabel}」と印字された行によります。`);
+    }
+    return { status: "ok", group: { id: "c2", title: "資金ギャップ", rows, note: notes.join("") } };
   },
 };
 
@@ -1301,7 +1422,7 @@ const f1: DecompModuleDef = {
 
 /* ---------- registry and entry point ---------- */
 
-export const DECOMP_MODULES: DecompModuleDef[] = [a1, aFull, a2, a3, b1, b2, c1, e1, f2, f3, d1, d2, f1];
+export const DECOMP_MODULES: DecompModuleDef[] = [a1, aFull, a2, a3, b1, b2, c1, c2, e1, f2, f3, d1, d2, f1];
 
 function runDef(def: DecompModuleDef, company: Company, companies: Company[]): DecompResult {
   const peers = comparablePeers(company, companies);

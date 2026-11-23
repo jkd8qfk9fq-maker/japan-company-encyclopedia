@@ -166,6 +166,10 @@ export const companySchema = z.strictObject({
         balanceSheet: z
           .array(z.strictObject({ role: z.enum(STATEMENT_ROLES), label: text, amount: z.number().int() }))
           .min(1),
+        cashFlowStatement: z
+          .array(z.strictObject({ role: z.enum(STATEMENT_ROLES), label: text, amount: z.number().int() }))
+          .min(1)
+          .optional(),
         ...sourced,
       }),
     )

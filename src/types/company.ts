@@ -358,6 +358,11 @@ export const STATEMENT_ROLES = [
   "accumulated-other-comprehensive-income",
   "share-acquisition-rights",
   "total-net-assets",
+  // The cash-flow statement (JCE-102): only the two rows the analysis layer's C2 module rests on —
+  // the operating total, cross-checked against the same filing's 経営指標等 summary, and the
+  // acquisition-of-fixed-assets outflow the filer itself prints in investing cash flow.
+  "operating-cash-flow",
+  "capital-expenditure",
 ] as const;
 
 export type StatementRole = (typeof STATEMENT_ROLES)[number];
@@ -401,6 +406,14 @@ export type FinancialStatements = Sourced & {
   docId?: string;
   incomeStatement: StatementLine[];
   balanceSheet: StatementLine[];
+  /**
+   * The cash-flow rows the analysis layer's C2 module rests on (JCE-102), read from the same filing
+   * as the two statements above: the operating-cash-flow total (kept only where it agrees exactly
+   * with the same filing's 経営指標等 summary of the same figure) and the filer's own
+   * acquisition-of-fixed-assets outflow in investing cash flow. Optional: a year whose rows could
+   * not be read or cross-checked carries no cash-flow rows rather than an estimated one.
+   */
+  cashFlowStatement?: StatementLine[];
 };
 
 /**
