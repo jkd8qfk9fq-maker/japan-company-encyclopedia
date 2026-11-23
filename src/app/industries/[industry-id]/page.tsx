@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { OG_IMAGES } from "@/lib/site";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -9,7 +10,6 @@ import { PremiumGate } from "@/components/company/premium-gate";
 import { SectionTabs, type SectionLink } from "@/components/navigation/section-tabs";
 import { INDUSTRY_IMAGES } from "@/assets/industries";
 import { IndustryFiguresBlock } from "@/components/industry/industry-figures";
-import { IndustryHero } from "@/components/industry/industry-hero";
 import { JobPath } from "@/components/industry/job-path";
 import { IndustryNetwork } from "@/components/industry/industry-network";
 import { ValueChain } from "@/components/industry/value-chain";
@@ -86,19 +86,25 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
 
   return (
     <article>
-      <header className="mx-auto max-w-6xl px-5 pt-7 pb-5 md:px-8 md:pt-10">
-        <p className="text-xs tracking-[0.18em] text-muted-foreground">
-          <Link href="/industries" className="hover:text-foreground hover:underline">
-            業界
-          </Link>{" "}
-          ／ {listing.name}
-        </p>
-        {/* A label, not a poster (JCE-077, the company hero rule): break-words stays, "Telecommunications"
-            is wider than a 320px screen even at this size. */}
-        <p className="wordmark mt-3 text-[clamp(1.25rem,4vw,1.75rem)] break-words" aria-hidden>
-          {listing.nameEn}
-        </p>
-        <h1 className="mt-2 font-serif text-[1.75rem] font-semibold md:text-[2.25rem]">{listing.name}業界</h1>
+      {/* 2026-11-23 (JCE-099): the industry's photograph is the header's ground — one image, not a band in the
+          first tab — so the tabs and the explanation start within a phone's first screen. */}
+      <header className="relative overflow-hidden border-b border-border">
+        <Image src={INDUSTRY_IMAGES[listing.id]} alt="" fill priority placeholder="blur" sizes="100vw" className="object-cover opacity-40" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/70 to-background" />
+        <div className="relative mx-auto max-w-6xl px-5 pt-5 pb-5 md:px-8 md:pt-10 md:pb-8">
+          <p className="text-xs tracking-[0.18em] text-muted-foreground">
+            <Link href="/industries" className="hover:text-foreground hover:underline">
+              業界
+            </Link>{" "}
+            ／ {listing.name}
+          </p>
+          {/* A label, not a poster (JCE-077, the company hero rule): break-words stays, "Telecommunications"
+              is wider than a 320px screen even at this size. */}
+          <p className="wordmark mt-2 text-[clamp(1.125rem,4vw,1.5rem)] break-words" aria-hidden>
+            {listing.nameEn}
+          </p>
+          <h1 className="mt-1 font-serif text-[1.75rem] leading-tight font-semibold md:text-[2.25rem]">{listing.name}業界</h1>
+        </div>
       </header>
 
       <SectionTabs sections={sections} containerId="industry-tabs" tabbed="always" />
@@ -106,9 +112,8 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
       <div id="industry-tabs">
         {/* JCE-080: the first panel under the tabs gives up the section's full top padding — the tabs already separate it from the header. */}
         <CompanySection id="about" eyebrow="About" title={industry?.structure === "chain" ? "業界の流れ" : "業界の仕組み"} className="pt-8 md:pt-12">
-          <IndustryHero image={INDUSTRY_IMAGES[listing.id]} eyebrow={listing.nameEn} title={`${listing.name}業界の仕組み`} priority />
           {industry ? (
-            <div className="mt-8">
+            <div>
               <p className="max-w-3xl text-[1.0625rem] leading-[1.95]">
                 <RichText text={industry.description} />
               </p>
@@ -137,7 +142,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
 
         <CompanySection id="companies" eyebrow="Companies" title={`${listing.name}業界の企業`}>
           {companies.length > 0 ? (
-            <ul className="grid gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
+            <ul className="grid grid-cols-[minmax(0,1fr)] gap-2 sm:grid-cols-2 lg:grid-cols-3">
               {companies.map((company) => (
                 <li key={company.id}>
                   <CompanyCard company={toCompanySummary(company)} />

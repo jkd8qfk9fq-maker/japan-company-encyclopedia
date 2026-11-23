@@ -12,7 +12,7 @@ export default function ComparePage() {
   return (
     <div id="compare" className="mx-auto max-w-6xl px-5 py-10 md:px-8">
       <p className="text-xs font-semibold tracking-widest text-muted-foreground">COMPARE</p>
-      <h1 className="mt-2 font-serif text-3xl font-semibold">企業を見比べる</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">企業を見比べる</h1>
       <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
         有価証券報告書の数値で、2〜3社を横に並べます。アドレスをそのまま送れば、同じ見比べを共有できます。選んだ企業はどこにも送られません。
       </p>

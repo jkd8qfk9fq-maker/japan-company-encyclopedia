@@ -22,9 +22,9 @@ function Section({ eyebrow, title, children }: { eyebrow: string; title: string;
 
 export default function SettingsPage() {
   return (
-    <div className="mx-auto max-w-3xl px-5 pt-12 pb-8 md:px-8 md:pt-20">
+    <div className="mx-auto max-w-3xl px-5 pt-5 pb-8 md:px-8 md:pt-10">
       <p className="eyebrow" aria-hidden>Settings</p>
-      <h1 className="mt-3 font-serif text-[2rem] font-semibold md:text-[3rem]">設定</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">設定</h1>
 
       <div className="mt-12">
         <Section eyebrow="Appearance" title="表示">

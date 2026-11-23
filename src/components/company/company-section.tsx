@@ -28,7 +28,8 @@ export function CompanySection({
       data-tab-panel={id}
       aria-labelledby={`${id}-heading`}
       className={cn(
-        "scroll-mt-28 py-10 md:py-[4.5rem]",
+        // 2026-11-23 (JCE-099): denser rhythm — a section opens with its content, not with a screen of air.
+        "scroll-mt-28 py-7 md:py-12",
         tone === "paper" && "border-t border-border bg-paper",
         className,
       )}
@@ -37,11 +38,11 @@ export function CompanySection({
         <p className="eyebrow" aria-hidden>
           {eyebrow}
         </p>
-        <h2 id={`${id}-heading`} className="seal-mark mt-2 font-serif text-[1.5rem] font-semibold md:text-[1.75rem]">
+        <h2 id={`${id}-heading`} className="seal-mark mt-1 font-serif text-[1.25rem] leading-snug font-semibold md:text-[1.625rem]">
           {title}
         </h2>
-        {lead && <div className="mt-3 max-w-3xl text-[0.9375rem] leading-7 text-muted-foreground">{lead}</div>}
-        <div className="mt-8 md:mt-9">{children}</div>
+        {lead && <div className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">{lead}</div>}
+        <div className="mt-5 md:mt-7">{children}</div>
       </div>
     </section>
   );

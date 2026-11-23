@@ -29,9 +29,9 @@ const STEPS: { n: number; title: string; text: string; href: string; link: strin
 
 export default function LearnPage() {
   return (
-    <div className="mx-auto max-w-2xl px-5 pt-8 pb-16 md:px-8 md:pt-10">
+    <div className="mx-auto max-w-2xl px-5 pt-5 pb-16 md:px-8 md:pt-5">
       <p className="eyebrow" aria-hidden>Reading filings</p>
-      <h1 className="mt-3 font-serif text-[2rem] font-semibold">有報の読み方入門</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">有報の読み方入門</h1>
       <p className="prose-ja mt-3 text-muted-foreground">
         ここは、金融の知識を覚える場所ではなく、企業を分析する力を鍛える訓練の場です。実際の上場企業の決算を使い、自分で読み、予測し、結果を検証することで、企業を見る力を継続的に鍛えます。進み具合はこのブラウザにだけ残ります。
       </p>

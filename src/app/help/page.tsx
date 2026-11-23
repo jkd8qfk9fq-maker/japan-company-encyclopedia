@@ -67,10 +67,10 @@ export default function HelpPage() {
     url: siteUrl("/help"),
   };
   return (
-    <div className="mx-auto max-w-3xl px-5 pt-12 pb-8 md:px-8 md:pt-20">
+    <div className="mx-auto max-w-3xl px-5 pt-5 pb-8 md:px-8 md:pt-10">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structured).replace(/</g, "\\u003c") }} />
       <p className="eyebrow" aria-hidden>Help</p>
-      <h1 className="mt-3 font-serif text-[2rem] font-semibold md:text-[2.75rem]">使い方・よくある質問</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">使い方・よくある質問</h1>
       <p className="prose-ja mt-4 text-muted-foreground">はじめての方へ、4つの使い方と、よくいただく質問をまとめました。</p>
 
       <h2 className="mt-12 font-serif text-xl font-semibold">使い方</h2>

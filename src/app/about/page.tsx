@@ -30,9 +30,9 @@ const PRINCIPLES = [
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-3xl px-5 pt-12 pb-8 md:px-8 md:pt-20">
+    <div className="mx-auto max-w-3xl px-5 pt-5 pb-8 md:px-8 md:pt-10">
       <p className="eyebrow" aria-hidden>About</p>
-      <h1 className="mt-3 font-serif text-[2rem] font-semibold md:text-[2.75rem]">このサービスについて</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">このサービスについて</h1>
       <p className="mt-8 text-[1.25rem] leading-[1.9] md:text-[1.5rem]">
         {SITE_NAME}は、日本の上場企業を、会社名ではなく「何をしている会社なのか」から理解するための百科事典です。
       </p>

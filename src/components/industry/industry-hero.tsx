@@ -22,7 +22,7 @@ export function IndustryHero({
   priority?: boolean;
 }) {
   return (
-    <div className="relative h-36 overflow-hidden rounded-md bg-foreground md:h-64">
+    <div className="relative h-28 overflow-hidden rounded-lg bg-foreground md:h-48">
       <Image
         src={image}
         alt=""
