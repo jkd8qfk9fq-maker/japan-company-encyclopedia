@@ -6,13 +6,21 @@ import { planStore, type StoredPlan } from "@/lib/storage/stores";
 import { trackEvent } from "@/lib/analytics/runtime";
 
 /**
- * The YUGENQ premium plan on this site (JCE-043). The plan is sold and checked on the 企業タイプ診断 site; its
- * `/api/plan` accepts this site's origin and answers whether a purchase code is paid for now. The code reaches
+ * The YUGENQ premium plan on this site (JCE-043). The plan is sold on the 企業タイプ診断 site; the code reaches
  * this site in one of two ways: the reader types it in, or the 診断 site left it in a cookie on the parent
- * domain after a successful check (`yugenq_plan`). Either way it is sent only to that endpoint, and what comes
- * back is kept in localStorage through the storage layer (invariant 7). Nothing about the reader is sent.
+ * domain after a successful check (`yugenq_plan`). What comes back from a check is kept in localStorage
+ * through the storage layer (invariant 7). Nothing about the reader is sent.
+ *
+ * JCE-100: the check itself moved here. This site's own Worker now keeps the billing record (Stripe webhooks
+ * write entitlements into D1) and answers at `/api/plan` on this origin, with the same shape and rule as the
+ * borrowed check. During the move a code is asked in both places and either "paid" answer wins: a code the
+ * new record does not hold yet is still answered by the 診断 site exactly as before, so no reader's plan
+ * closes while the record fills in. The fallback goes away once the webhook is live and the held codes are
+ * recorded here (SaaS Step 2).
  */
 
+export const OWN_PLAN_ENDPOINT = "/api/plan";
+/** The borrowed check on the 企業タイプ診断 site — the migration fallback of JCE-100, asked second. */
 export const PLAN_ENDPOINT = "https://shindan.kigyo-hyakka.com/api/plan";
 export const CHECKOUT_ENDPOINT = "https://shindan.kigyo-hyakka.com/api/checkout";
 export const PLAN_PAGE = "https://shindan.kigyo-hyakka.com/plan/";
@@ -42,14 +50,32 @@ const CODE_PATTERN = /^sub_[A-Za-z0-9]{8,64}$/;
 
 type PlanResponse = { active: false } | { active: true; code: string; paidUntil: number; checkAfter: number };
 
-export async function checkPlan(code: string): Promise<PlanResponse> {
-  const response = await fetch(PLAN_ENDPOINT, {
+async function askPlan(endpoint: string, code: string): Promise<PlanResponse> {
+  const response = await fetch(endpoint, {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ code }),
   });
   if (!response.ok) throw new Error(`plan check failed: ${response.status}`);
   return (await response.json()) as PlanResponse;
+}
+
+/**
+ * Whether the code is paid for now (JCE-100): this site's own record first, the 診断 site's borrowed check
+ * second, and either "paid" answer wins. An unreachable own endpoint (not live yet, no record) simply leaves
+ * the answer to the borrowed check, whose failure still throws as it always did — a failed check keeps the
+ * stored plan until it is no longer paid for.
+ */
+export async function checkPlan(code: string): Promise<PlanResponse> {
+  let own: PlanResponse | null = null;
+  try {
+    own = await askPlan(OWN_PLAN_ENDPOINT, code);
+  } catch {
+    own = null;
+  }
+  if (own?.active) return own;
+  const legacy = await askPlan(PLAN_ENDPOINT, code);
+  return legacy.active ? legacy : (own ?? legacy);
 }
 
 /**

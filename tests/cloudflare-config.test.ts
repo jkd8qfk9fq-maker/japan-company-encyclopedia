@@ -40,6 +40,8 @@ describe("wrangler.jsonc", () => {
       { name: "SYNC_LIMIT", namespace_id: "3002", simple: { limit: 6, period: 60 } },
       // JCE-069: notifications by e-mail, in the same database.
       { name: "MAIL_LIMIT", namespace_id: "3003", simple: { limit: 10, period: 60 } },
+      // JCE-100: plan checks against this site's own billing record, in the same database.
+      { name: "BILLING_LIMIT", namespace_id: "3004", simple: { limit: 30, period: 60 } },
     ]);
     expect(wrangler.vars).toBeUndefined();
   });

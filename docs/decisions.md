@@ -1775,3 +1775,28 @@ spend the trust the verification exists to build).
 5. **ナビ**：下部はホーム／企業を探す／業界／比較／保存の5つ。残りの行き先はヘッダーのメニュー（`<details>`、JavaScript 不要）に名前と一言で並べる。
 
 **やらないこと（次の段）**: ハブページの見出しの共通化、企業一覧の段階読み込み、業界ページの写真帯の縮小、企業ページ下部の節の規格統一。
+
+## JCE-100 — 2026-11-23: 課金・権利付与の実体を百科事典側に持つ（SaaS 構築 Step 1）と、月390円プランの新規受付停止
+
+（運営者の指示では「JCE-099」だったが、その番号は同日のダーク UI の決定（PR #81）が使用済みのため、JCE-100 として記録する。）
+
+**背景**: 運営者が SaaS 構築順を確定した（Step 1 課金の実体 → Step 2 分析の有料境界＋PDF → Step 3 データ拡充の残り〔CF明細・IFRS・未キャッシュ〕 → Step 4 取得の完全無人化＋30日実証 → Step 5 経済指標8指標 → Step 6 層分離＋API提供 → Step 7 E本格版）。百科事典には課金の実体がなく、プラン判定は企業タイプ診断サイトの Worker が Stripe を都度照会する借用だった。あわせて Phase 4 決定（2026-11-23：月390円は新規受付停止＝廃止確定）を実行する。
+
+**実測（現行仕様、2026-11-23）**:
+- 判定経路: 購入コードは Stripe の subscription id（`sub_…`）。読者の入力か、診断サイトが親ドメインに残す Cookie `yugenq_plan` で百科事典に届き、`src/lib/plan.ts` が診断サイトの `POST /api/plan` へ送る。診断 Worker は自前の `STRIPE_SECRET_KEY` で `subscriptions/{id}` を都度取得し、有効判定は status が active / trialing、`paidUntil` = 期間末、`checkAfter` = min(paidUntil, +3日)。結果は localStorage（planStore）に保持する。Checkout は診断 Worker の `POST /api/checkout` が Worker 変数 `STRIPE_PRICE_ID`（月390円・7日間トライアル、CTS-044）でセッションを作る。
+- Stripe（YUGENQ live）: 価格は2件のみ — 月390円 `price_1UaaqIFm3JfKaAku4nCDuxC8`（商品 `prod_Vbi8yQUiLyTvDW`）と学習β 月1,100円 `price_1UeI7zFm3JfKaAkuHmwYpG9X`（商品 `prod_VfdOFlTGPrGzNo`）。サブスクは1件のみで運営者自身の契約（`sub_1UbAI9Fm3JfKaAkuMuVK6CZs`、metadata purpose=operator、100%割引、全期間 charges 0件）。Payment Link は学習βの1件（`plink_1UeI86Fm3JfKaAkuBy1zmQw0`）のみで、390円の価格は使っていない。
+
+**設計判断**:
+1. **ストアは既存の D1（kigyo-push、PUSH_DB）に足す**。`migrations/0004_billing.sql` で `entitlements`（コード＝subscription id を主キーに、状態・paidUntil・出所）と `billing_events`（Webhook の冪等記録）を追加する。新しい基盤・新しいデータベースは作らない。受信と判定は既存 Worker（worker/index.ts）に `worker/billing/` を足して担う — 通知（JCE-059/065/069）と同じ worker/store+api の形。
+2. **Webhook**: `POST /api/billing/webhook`。`STRIPE_WEBHOOK_SECRET`（Worker シークレット）で署名を検証する（HMAC-SHA256、`t.body`、5分の tolerance、定数時間比較）。`customer.subscription.created/updated/deleted` と `invoice.paid` を処理し、イベント id で冪等にする。シークレット未設定・ストア未接続なら 503 を返し、機能は「未設定」として何も壊さない。学習βの Payment Link 経由の契約も `customer.subscription.created` で同じ表に入る（販売条件・価格・計測条件〔〜2027-01-31、合格線〕は変えない）。
+3. **判定**: `POST /api/plan`（自サイト）を新設し、診断 `/api/plan` と同じ応答形・同じ有効判定（active/trialing かつ paidUntil が未来、checkAfter = min(paidUntil, +3日)）を D1 から返す。ストアが読めない場合は 503 を返し、クライアントのフォールバックを促す。
+4. **移行方式は union（有効な答えを優先）**: `plan.ts` の checkPlan は自サイト → 診断の順に聞き、どちらかが有効なら有効とする。D1 にまだ無い既存コードは診断側の答えで従来どおり開くため、移行中に既存の表示は壊れない。Webhook のライブ登録と既存コードの D1 への移し替えが済んだら診断フォールバックを外す（Step 2 へ引き継ぎ）。
+5. **βの権利記録**: 手動付与は同じ `entitlements` に `source = 'beta-manual'` として記録できる形にする（行の出所を必ず残す）。βの販売は Payment Link のまま変えない。
+6. **フラグは変更しない**: `PREMIUM_FEATURES_OPEN` と `ANALYSIS_FEATURES_OPEN` には触らない（有料境界を開くのは Step 2）。
+
+**月390円の新規受付停止（Phase 4 決定の実行）**:
+- Stripe の月390円の価格を inactive にする。inactive な価格では Checkout セッションを作れないため、診断・百科事典・最初の一社の全申込導線で新規加入が成立しなくなる。運営者自身の既存契約は解約しない（価格の inactive 化で既存サブスクは止まらない）。
+- 実行結果（2026-11-23）: 販売していた価格は商品のデフォルト価格で、そのままでは inactive にできなかったため、代替のデフォルト価格（`price_1UeusrFm3JfKaAkuWNbxGdMb`、同額・metadata に「販売しない placeholder」と明記）を作ってデフォルトを移してから、販売していた価格を inactive にした。商品の metadata にも sales_status=closed を記録した。検証: inactive な価格で Checkout セッションを作ろうとすると Stripe が「The price specified is inactive」と返して失敗すること、運営者の契約 `sub_1UbAI9Fm3JfKaAkuMuVK6CZs` が active のままであることを確認した。
+- 診断サイトの /plan ページの文案差し替えと Worker の `/api/checkout` の恒久停止は、-MBTI repo をこの環境から clone できず、その repo のゲート（`npm run check`）を回せないため今回は行わない。価格の停止で申込自体は成立しない。残件として記録する。
+
+**やらないこと**: Stripe ダッシュボードでの Webhook エンドポイント登録と `STRIPE_WEBHOOK_SECRET` の設定（運営者のライブ操作）、D1 マイグレーション 0004 の本番適用、診断フォールバックの撤去、学習βの販売条件の変更、-MBTI repo の変更。

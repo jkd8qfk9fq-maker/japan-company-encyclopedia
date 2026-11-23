@@ -2,7 +2,8 @@
  * The site lives at kigyo-hyakka.com (JCE-039). This Worker sends the old free address
  * (nihonkigyohyakka.<account>.workers.dev) and www. to it, so links already shared keep working, and answers
  * /api/push/* and a half-hourly schedule for notifications of followed companies (JCE-059), /api/mail/* for the same
- * notifications by e-mail (JCE-069), /api/sync/* for moving a reader's lists to another device (JCE-065); every page and file is
+ * notifications by e-mail (JCE-069), /api/sync/* for moving a reader's lists to another device (JCE-065), /api/plan and
+ * /api/billing/* for this site's own billing record (JCE-100); every page and file is
  * still the static export, served by the assets binding. /_next/* skips this Worker (wrangler.jsonc), so page
  * assets cost no invocation.
  */
@@ -16,8 +17,10 @@ import { handleMail, runMailNotifications, type MailEnv } from "./mail/api";
 import { d1MailStore } from "./mail/store";
 import { handleSync, type SyncEnv } from "./sync/api";
 import { d1SyncStore } from "./sync/store";
+import { handleBilling, type BillingEnv } from "./billing/api";
+import { d1BillingStore } from "./billing/store";
 
-type Env = PushEnv & MailEnv & SyncEnv & { ASSETS: { fetch(request: Request): Promise<Response> } };
+type Env = PushEnv & MailEnv & SyncEnv & BillingEnv & { ASSETS: { fetch(request: Request): Promise<Response> } };
 
 // Notifications for followed companies (JCE-059): D1 when bound (wrangler.jsonc), otherwise the feature reports itself off.
 const pushStore = (env: Env) => (env.PUSH_DB ? d1Store(env.PUSH_DB as Parameters<typeof d1Store>[0]) : null);
@@ -25,6 +28,8 @@ const pushStore = (env: Env) => (env.PUSH_DB ? d1Store(env.PUSH_DB as Parameters
 const syncStore = (env: Env) => (env.PUSH_DB ? d1SyncStore(env.PUSH_DB as Parameters<typeof d1SyncStore>[0]) : null);
 // E-mail notifications (JCE-069), for readers whose browser will not show web notifications: same database.
 const mailStore = (env: Env) => (env.PUSH_DB ? d1MailStore(env.PUSH_DB as Parameters<typeof d1MailStore>[0]) : null);
+// Billing entitlements (JCE-100): the plan record this site keeps itself, in the same database.
+const billingStore = (env: Env) => (env.PUSH_DB ? d1BillingStore(env.PUSH_DB as Parameters<typeof d1BillingStore>[0]) : null);
 
 /** Where a request should go instead, or null to serve it. Only known old hosts move: local previews are left alone. */
 export function redirectTarget(requestUrl: string): string | null {
@@ -128,6 +133,7 @@ const worker = {
     if (pathname.startsWith("/api/push/")) return withSecurityHeaders(pathname, await handlePush(request, env, pushStore(env)));
     if (pathname.startsWith("/api/mail/")) return withSecurityHeaders(pathname, await handleMail(request, env, mailStore(env)));
     if (pathname.startsWith("/api/sync/")) return withSecurityHeaders(pathname, await handleSync(request, env, syncStore(env)));
+    if (pathname === "/api/plan" || pathname.startsWith("/api/billing/")) return withSecurityHeaders(pathname, await handleBilling(request, env, billingStore(env)));
     return withSecurityHeaders(pathname, withShareImageType(pathname, await env.ASSETS.fetch(assetRequest(request))));
   },
   // Every 30 minutes (wrangler.jsonc › triggers): announce what /updates.json — the live site — newly lists, by push and by e-mail.
