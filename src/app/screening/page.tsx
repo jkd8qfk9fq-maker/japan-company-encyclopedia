@@ -13,9 +13,7 @@ export default function ScreeningPage() {
     <div className="mx-auto max-w-6xl px-5 py-10 md:px-8">
       <p className="text-xs font-semibold tracking-widest text-muted-foreground">SCREENING</p>
       <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">財務で探す</h1>
-      <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
-        有価証券報告書に印字された数値と、そこから計算した値だけで、掲載企業を絞り込めます。条件はこの端末の中だけで使われ、どこにも送られません。
-      </p>
+      <p className="mt-1.5 max-w-2xl text-sm leading-6 text-muted-foreground">有価証券報告書の数値と計算値で、掲載企業を絞り込めます。条件はこの端末の中だけで使われます。</p>
       <div className="mt-8">
         <ScreeningTool />
       </div>
