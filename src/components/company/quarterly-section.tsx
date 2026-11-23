@@ -60,7 +60,7 @@ export function QuarterlySection({ view, sources }: { view: QuarterlyView; sourc
           </p>
         </div>
       )}
-      <SourceList sources={sources} sourceIds={sourceIds} className="mt-2" />
+      <SourceList sources={sources} sourceIds={sourceIds} variant="refs" className="mt-2" />
     </div>
   );
 }

@@ -76,7 +76,7 @@ function Breakdown({ company }: { company: Company }) {
           />
         )}
       </div>
-      <SourceList sources={company.sources} sourceIds={sourceIds} className="mt-4" />
+      <SourceList sources={company.sources} sourceIds={sourceIds} variant="refs" className="mt-4" />
     </div>
   );
 }
@@ -326,7 +326,7 @@ export function FinancialSection({ company }: { company: Company }) {
         </div>
       </details>
 
-      <SourceList sources={sources} sourceIds={sourceIds} className="mt-2" />
+      <SourceList sources={sources} sourceIds={sourceIds} variant="refs" className="mt-2" />
     </div>
   );
 }

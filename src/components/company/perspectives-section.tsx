@@ -176,6 +176,7 @@ function KeyNumbers({
         <SourceList
           sources={company.sources}
           sourceIds={[...new Set([...(targets.length ? (strategy?.sourceIds ?? []) : []), ...(latest?.sourceIds ?? []), ...(overseas?.sourceIds ?? [])])]}
+          variant="refs"
         />
       </div>
     </section>
@@ -260,7 +261,7 @@ function PerspectiveCard({
             <Meta>
               会社の説明・有価証券報告書{perspective.disclosed.locator ?? ""}・{formatDateJa(perspective.disclosed.asOf)}時点
             </Meta>
-            <SourceList sources={sources} sourceIds={perspective.disclosed.sourceIds} />
+            <SourceList sources={sources} sourceIds={perspective.disclosed.sourceIds} variant="refs" />
           </div>
         </div>
       )}
@@ -272,7 +273,7 @@ function PerspectiveCard({
           <p className="mt-2 text-sm text-muted-foreground">根拠：{perspective.analysis.basis}</p>
           <div className="mt-2">
             <Meta>{formatDateJa(perspective.analysis.asOf)}時点の資料による</Meta>
-            <SourceList sources={sources} sourceIds={perspective.analysis.sourceIds} />
+            <SourceList sources={sources} sourceIds={perspective.analysis.sourceIds} variant="refs" />
           </div>
         </div>
       )}
@@ -331,7 +332,7 @@ function GrowthMap({ company, shares }: { company: Company; shares: NonNullable<
             ? "緑は、会社の成長戦略の文で、成長・拡大・強化などと同じ文に名前が挙がった事業です。"
             : "会社の成長戦略の文に、成長を掲げる事業の名前は見つかりませんでした。"}
         </Meta>
-        <SourceList sources={company.sources} sourceIds={company.segmentRevenue?.sourceIds} />
+        <SourceList sources={company.sources} sourceIds={company.segmentRevenue?.sourceIds} variant="refs" />
       </div>
     </figure>
   );

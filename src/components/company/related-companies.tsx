@@ -51,7 +51,10 @@ function Row({ company, label, description, sources, sourceIds, from }: {
           <p className="text-sm leading-7 text-muted-foreground">{description}</p>
         </details>
       )}
-      <SourceList sources={sources} sourceIds={sourceIds} />
+      {/* JCE-094: this entry's own ties reference the page's 出典一覧 by number. A tie written in another
+          company's entry rests on that company's sources, which are not in this page's index, so it keeps
+          the full folded list — the claim is its filing's, and its sources travel with it. */}
+      <SourceList sources={sources} sourceIds={sourceIds} variant={from ? "details" : "refs"} />
     </li>
   );
 }

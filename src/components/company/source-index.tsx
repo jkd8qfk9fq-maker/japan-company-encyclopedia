@@ -7,10 +7,10 @@ function businessSourceIds(businesses: Business[]): string[] {
 }
 
 /**
- * Every source on the page in one place, each with the sections that rest on it. The per-section "出典を見る"
- * stays where it is; this answers the other question — "what is this page built from?" — without opening seven
- * of them. Section names are derived from the entry's own `sourceIds`, so the list cannot claim a use the data
- * does not record.
+ * Every source on the page in one place, each with the sections that rest on it. Since JCE-094 this list is
+ * the page's single full rendering of its sources: each entry carries a `source-<id>` anchor and the number the
+ * per-section references (SourceList variant="refs") point at, in this same order. Section names are derived
+ * from the entry's own `sourceIds`, so the list cannot claim a use the data does not record.
  */
 export function SourceIndex({ company, hasInbound }: { company: Company; hasInbound: boolean }) {
   if (company.sources.length === 0) return null;
@@ -30,7 +30,7 @@ export function SourceIndex({ company, hasInbound }: { company: Company; hasInbo
         {company.sources.map((source, i) => {
           const sections = usedIn(source.id);
           return (
-            <li key={source.id} className="grid grid-cols-[2rem_1fr] gap-x-2">
+            <li key={source.id} id={`source-${source.id}`} className="grid scroll-mt-40 grid-cols-[2rem_1fr] gap-x-2">
               <span className="figures pt-0.5 text-sm text-muted-foreground">[{i + 1}]</span>
               <div>
                 <p className="leading-7 font-medium">{source.title}</p>

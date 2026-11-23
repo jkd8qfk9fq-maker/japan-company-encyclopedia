@@ -107,7 +107,7 @@ export function HistoryTimeline({ events, sources }: { events: HistoryEvent[]; s
         </dl>
       </details>
 
-      <SourceList sources={sources} sourceIds={allSourceIds} className="mt-2" />
+      <SourceList sources={sources} sourceIds={allSourceIds} variant="refs" className="mt-2" />
     </div>
   );
 }

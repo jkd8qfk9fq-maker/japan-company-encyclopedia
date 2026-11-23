@@ -1,5 +1,4 @@
-import { SourceList } from "@/components/sources/source-list";
-import { formatYen } from "@/lib/utils/format";
+import { formatDateJa, formatYen } from "@/lib/utils/format";
 import type { FinancialRecord } from "@/types/company";
 import type { Source } from "@/types/source";
 
@@ -8,6 +7,10 @@ import type { Source } from "@/types/source";
  * each with the filing's own label. Only what the latest record carries is shown — a null is left out rather than
  * drawn as a dash, because a row of dashes reads as a broken page, not as "the filing does not print this".
  * Size, not performance: no growth rate, no margin, nothing to rank companies by (CLAUDE.md invariant 4).
+ *
+ * JCE-094: under the figures sits the provenance badge — the filing these figures rest on, by its own title,
+ * with the date it was last checked — linked to that source's entry in the page's 出典一覧. One badge, here at
+ * the first figures a reader meets, instead of a folded "出典を見る" under every block down the page.
  */
 export function KeyFacts({ records, sources }: { records: FinancialRecord[]; sources: Source[] }) {
   const latest = [...records].sort((a, b) => a.periodEnd.localeCompare(b.periodEnd)).at(-1);
@@ -23,6 +26,11 @@ export function KeyFacts({ records, sources }: { records: FinancialRecord[]; sou
   ].filter((fact): fact is { label: string; value: string } => Boolean(fact));
   if (facts.length === 0) return null;
 
+  const badgeSources = latest.sourceIds
+    .map((id) => sources.find((s) => s.id === id))
+    .filter((s): s is Source => s !== undefined);
+  const lastAccessed = badgeSources.map((s) => s.accessedAt).sort().at(-1);
+
   return (
     <div>
       {/* Side by side at every width — on a phone too, where stacking three figures cost a screen of scrolling. */}
@@ -36,9 +44,23 @@ export function KeyFacts({ records, sources }: { records: FinancialRecord[]; sou
           </div>
         ))}
       </dl>
-      <div className="flex flex-wrap items-center gap-x-4 text-xs text-muted-foreground">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs text-muted-foreground">
         <p className="figures">{latest.fiscalYear}・連結</p>
-        <SourceList sources={sources} sourceIds={latest.sourceIds} />
+        {badgeSources.length > 0 && (
+          <p className="flex flex-wrap items-center gap-1.5">
+            <span>出典</span>
+            {badgeSources.map((source) => (
+              <a
+                key={source.id}
+                href={`#source-${source.id}`}
+                className="rounded-full border border-border px-2 py-0.5 leading-5 transition-colors hover:border-foreground hover:text-foreground"
+              >
+                <span className="figures">[{sources.indexOf(source) + 1}]</span> {source.title}
+              </a>
+            ))}
+            {lastAccessed && <span className="figures">最終確認 {formatDateJa(lastAccessed)}</span>}
+          </p>
+        )}
       </div>
     </div>
   );
