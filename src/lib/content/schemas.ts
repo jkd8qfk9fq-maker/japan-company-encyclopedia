@@ -156,6 +156,10 @@ export const companySchema = z.strictObject({
         fiscalYear: text,
         periodEnd: isoDate,
         accountingStandard: z.enum(["ifrs", "jgaap", "usgaap"]),
+        docId: z
+          .string()
+          .regex(/^S[0-9A-Z]{7}$/, "EDINET の書類 ID（S100XXXX）である必要があります")
+          .optional(),
         incomeStatement: z
           .array(z.strictObject({ role: z.enum(STATEMENT_ROLES), label: text, amount: z.number().int() }))
           .min(1),

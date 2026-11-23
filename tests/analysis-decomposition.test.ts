@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { bennetA1, runDecompModule, shapleyProduct3, theilSen, type DecompResult } from "../src/lib/analysis-decomposition";
+import { bennetA1, bennetAFull, runDecompModule, shapleyProduct3, theilSen, type DecompResult } from "../src/lib/analysis-decomposition";
 import { companies } from "../src/data/companies";
 import { isReleased } from "../src/lib/release";
-import type { Company, FinancialRecord, IndustryId } from "../src/types/company";
+import type { Company, FinancialRecord, FinancialStatements, IndustryId, StatementLine } from "../src/types/company";
 
 /**
  * The decomposition layer (JCE-096): golden values hand-computed from printed figures, the algebraic
@@ -382,8 +382,318 @@ describe("real data reconciliation", () => {
     const released = companies.filter(isReleased);
     const target = released.find((c) => c.id === "misumi-group")!;
     expect(target).toBeDefined();
-    for (const id of ["a1", "a2", "a3", "b1", "c1", "e1", "f2", "f3", "d1", "f1"]) {
+    for (const id of ["a1", "a2", "a3", "b1", "c1", "e1", "f2", "f3", "d1", "f1", "a-full", "b2", "d2"]) {
       expect(runDecompModule(id, target, released).status, id).toBe("ok");
     }
+  });
+});
+
+/* ---------- Phase 2 detail modules (JCE-098) ---------- */
+
+const line = (role: StatementLine["role"], amount: number, label: string = role): StatementLine => ({ role, label, amount });
+
+/**
+ * Misumi's printed statement lines for 2025年3月期 → 2026年3月期 (yen), copied from its filings as
+ * registered — the golden values below are hand-computed from these figures, so they stay fixed
+ * even when the registered data moves on to a newer filing.
+ */
+const MISUMI_STMT: { prev: FinancialStatements; latest: FinancialStatements } = {
+  prev: {
+    fiscalYear: "2025年3月期",
+    periodEnd: "2025-03-31",
+    accountingStandard: "jgaap",
+    docId: "S100YB3N",
+    sourceIds: ["s"],
+    incomeStatement: [
+      line("revenue", 401_987_000_000),
+      line("gross-profit", 186_990_000_000),
+      line("selling-general-and-administrative-expenses", 140_509_000_000),
+      line("operating-income", 46_480_000_000),
+      line("income-before-income-taxes", 49_940_000_000),
+      line("income-taxes", 13_285_000_000),
+      line("net-income", 36_654_000_000),
+      line("non-controlling-interests", 105_000_000),
+      line("net-income-attributable-to-parent", 36_549_000_000),
+    ],
+    balanceSheet: [
+      line("cash-and-deposits", 159_296_000_000),
+      line("total-assets", 419_574_000_000),
+      line("share-capital", 14_483_000_000),
+      line("capital-surplus", 24_585_000_000),
+      line("treasury-shares", -28_352_000_000),
+      line("accumulated-other-comprehensive-income", 45_020_000_000),
+      line("non-controlling-interests", 1_116_000_000),
+      line("total-net-assets", 352_064_000_000),
+    ],
+  },
+  latest: {
+    fiscalYear: "2026年3月期",
+    periodEnd: "2026-03-31",
+    accountingStandard: "jgaap",
+    docId: "S100YB3N",
+    sourceIds: ["s"],
+    incomeStatement: [
+      line("revenue", 441_383_000_000),
+      line("gross-profit", 206_015_000_000),
+      line("selling-general-and-administrative-expenses", 158_402_000_000),
+      line("operating-income", 47_613_000_000),
+      line("income-before-income-taxes", 48_498_000_000),
+      line("income-taxes", 7_873_000_000),
+      line("net-income", 40_625_000_000),
+      line("non-controlling-interests", 167_000_000),
+      line("net-income-attributable-to-parent", 40_457_000_000),
+    ],
+    balanceSheet: [
+      line("cash-and-deposits", 112_941_000_000),
+      line("total-assets", 464_969_000_000),
+      line("share-capital", 14_727_000_000),
+      line("capital-surplus", 24_721_000_000),
+      line("treasury-shares", -52_392_000_000),
+      line("accumulated-other-comprehensive-income", 70_094_000_000),
+      line("non-controlling-interests", 1_383_000_000),
+      line("total-net-assets", 382_509_000_000),
+    ],
+  },
+};
+
+const stmtCompany = (
+  id: string,
+  industry: IndustryId,
+  prev: FinancialStatements,
+  latest: FinancialStatements,
+  over: Partial<Company> = {},
+): Company =>
+  ({
+    ...company(id, industry, [
+      rec({ fiscalYear: prev.fiscalYear, periodEnd: prev.periodEnd, revenue: 1000, totalAssets: 2000, netAssets: 800 }),
+      rec({ fiscalYear: latest.fiscalYear, periodEnd: latest.periodEnd, revenue: 1200, totalAssets: 2200, netAssets: 900 }),
+    ]),
+    financialStatements: [prev, latest],
+    ...over,
+  }) as unknown as Company;
+
+const misumiStmt = stmtCompany("misumi-stmt", "machinery", MISUMI_STMT.prev, MISUMI_STMT.latest);
+
+describe("golden values, Phase 2 (Misumi statements, hand-computed from the printed lines)", () => {
+  it("A-full splits the operating-income change into revenue, gross-margin and SG&A effects", () => {
+    const r = runDecompModule("a-full", misumiStmt, [misumiStmt]);
+    expect(rowOf(r, "a-full-revenue-effect")!.value).toBeCloseTo(4_402_462_246, -2);
+    expect(rowOf(r, "a-full-gross-effect")!.value).toBeCloseTo(668_175_185, -2);
+    expect(rowOf(r, "a-full-sga-effect")!.value).toBeCloseTo(-3_938_686_433, -2);
+    // The residue of the lines' own rounding is its own row, never absorbed into an effect.
+    expect(rowOf(r, "a-full-residual")!.value).toBeCloseTo(1_049_002, -2);
+    expect(rowOf(r, "a-full-op-change")!.value).toBe(1_133_000_000);
+  });
+
+  it("B2 opens B1's residual into the balance sheet's own sections", () => {
+    const r = runDecompModule("b2", misumiStmt, [misumiStmt]);
+    expect(rowOf(r, "b2-net-assets-change")!.value).toBe(30_445_000_000);
+    expect(rowOf(r, "b2-net-income")!.value).toBe(40_457_000_000);
+    expect(rowOf(r, "b2-net-income")!.kind).toBe("printed");
+    expect(rowOf(r, "b2-aoci-change")!.value).toBe(25_074_000_000);
+    expect(rowOf(r, "b2-capital-change")!.value).toBe(380_000_000);
+    expect(rowOf(r, "b2-treasury-change")!.value).toBe(-24_040_000_000);
+    expect(rowOf(r, "b2-nci-change")!.value).toBe(267_000_000);
+    expect(rowOf(r, "b2-residual")!.value).toBe(-11_693_000_000);
+    expect(ok(r).note).toContain("1%を超えています");
+  });
+
+  it("D2 reads the incremental return on the capital Misumi added, with no funding rate where there is no debt", () => {
+    const r = runDecompModule("d2", misumiStmt, [misumiStmt]);
+    expect(rowOf(r, "d2-incremental-roic")!.value).toBeCloseTo(0.0751073, 6);
+    expect(rowOf(r, "d2-nopat-change")!.value).toBeCloseTo(5_768_241_371, -2);
+    expect(rowOf(r, "d2-ic-change")!.value).toBe(76_800_000_000);
+    expect(rowOf(r, "d2-funding-rate")).toBeUndefined();
+  });
+});
+
+/** A small synthetic filer with debt and a printed interest line, for D2's funding rate and the exact-zero cases. */
+const syntheticStmt = (over: { prev?: Partial<FinancialStatements>; latest?: Partial<FinancialStatements> } = {}): Company => {
+  const prev: FinancialStatements = {
+    fiscalYear: "2025年3月期",
+    periodEnd: "2025-03-31",
+    accountingStandard: "jgaap",
+    sourceIds: ["s"],
+    incomeStatement: [
+      line("revenue", 10_000),
+      line("gross-profit", 4_000),
+      line("selling-general-and-administrative-expenses", 3_000),
+      line("operating-income", 1_000),
+      line("income-before-income-taxes", 1_000),
+      line("income-taxes", 300),
+      line("net-income", 700),
+    ],
+    balanceSheet: [
+      line("cash-and-deposits", 200),
+      line("long-term-borrowings", 500),
+      line("share-capital", 500),
+      line("capital-surplus", 100),
+      line("total-net-assets", 1_000),
+    ],
+    ...over.prev,
+  };
+  const latest: FinancialStatements = {
+    fiscalYear: "2026年3月期",
+    periodEnd: "2026-03-31",
+    accountingStandard: "jgaap",
+    sourceIds: ["s"],
+    incomeStatement: [
+      line("revenue", 12_000),
+      line("gross-profit", 5_100),
+      line("selling-general-and-administrative-expenses", 3_600),
+      line("operating-income", 1_500),
+      line("non-operating-expense-item", 15, "支払利息"),
+      line("income-before-income-taxes", 1_500),
+      line("income-taxes", 450),
+      line("net-income", 1_050),
+    ],
+    balanceSheet: [
+      line("cash-and-deposits", 200),
+      line("long-term-borrowings", 800),
+      line("share-capital", 500),
+      line("capital-surplus", 100),
+      line("total-net-assets", 1_300),
+    ],
+    ...over.latest,
+  };
+  return stmtCompany("synthetic-stmt", "machinery", prev, latest);
+};
+
+describe("Phase 2 properties and display conditions", () => {
+  it("A-full's effects are exact, with a zero residue, when operating income is gross profit minus SG&A", () => {
+    const rand = mulberry32(5);
+    for (let i = 0; i < 200; i++) {
+      const r0 = 1 + rand() * 1e12;
+      const r1 = 1 + rand() * 1e12;
+      const gp0 = rand() * r0 * 0.6;
+      const gp1 = rand() * r1 * 0.6;
+      const s0 = rand() * r0 * 0.4;
+      const s1 = rand() * r1 * 0.4;
+      const d = bennetAFull(r0, gp0, s0, gp0 - s0, r1, gp1, s1, gp1 - s1);
+      expect(d.residual).toBeCloseTo(0, 3);
+      expect(d.revenueEffect + d.grossEffect + d.sgaEffect).toBeCloseTo(d.opChange, 3);
+    }
+  });
+
+  it("D2 prices the increment at the clipped tax rate and compares it with the printed funding rate", () => {
+    const c = syntheticStmt();
+    const r = runDecompModule("d2", c, [c]);
+    expect(rowOf(r, "d2-ic-change")!.value).toBe(600);
+    expect(rowOf(r, "d2-nopat-change")!.value).toBeCloseTo(350, 9);
+    expect(rowOf(r, "d2-incremental-roic")!.value).toBeCloseTo(350 / 600, 12);
+    expect(rowOf(r, "d2-funding-rate")!.value).toBeCloseTo(15 / 650, 12);
+    expect(ok(r).note).toContain("上回っています");
+  });
+
+  it("B2's residual is zero when the named sections explain the whole change, and the NCI row is omitted without NCI", () => {
+    const c = syntheticStmt();
+    const r = runDecompModule("b2", c, [c]);
+    expect(rowOf(r, "b2-residual")!.value).toBe(-750);
+    expect(rowOf(r, "b2-nci-change")).toBeUndefined();
+    const explained = syntheticStmt({
+      latest: {
+        balanceSheet: [
+          line("cash-and-deposits", 200),
+          line("long-term-borrowings", 800),
+          line("share-capital", 500),
+          line("capital-surplus", 100),
+          line("total-net-assets", 1_750),
+        ],
+      },
+    });
+    // ΔE = 750 = net income 1,050 with everything else flat except a −300 movement the formula
+    // cannot name; give the year a matching AOCI line instead and the residual closes.
+    const withAoci = stmtCompany("explained", "machinery", explained.financialStatements![0]!, {
+      ...explained.financialStatements![1]!,
+      balanceSheet: [...explained.financialStatements![1]!.balanceSheet, line("accumulated-other-comprehensive-income", -300)],
+    });
+    expect(rowOf(runDecompModule("b2", withAoci, [withAoci]), "b2-residual")!.value).toBe(0);
+  });
+
+  it("suppresses all three modules on a single statement year and on a docId mismatch", () => {
+    const single = stmtCompany("single", "machinery", MISUMI_STMT.prev, MISUMI_STMT.latest, {
+      financialStatements: [MISUMI_STMT.latest],
+    });
+    for (const id of ["a-full", "b2", "d2"]) expect(runDecompModule(id, single, [single]).status).toBe("suppressed");
+    const mixed = stmtCompany("mixed", "machinery", MISUMI_STMT.prev, { ...MISUMI_STMT.latest, docId: "S100ZZZZ" });
+    for (const id of ["a-full", "b2", "d2"]) expect(runDecompModule(id, mixed, [mixed]).status).toBe("suppressed");
+  });
+
+  it("A-full is suppressed when SG&A is missing in one year or the P/L form changes between years", () => {
+    const noSga = stmtCompany("nosga", "machinery", MISUMI_STMT.prev, {
+      ...MISUMI_STMT.latest,
+      incomeStatement: MISUMI_STMT.latest.incomeStatement.filter((l) => l.role !== "selling-general-and-administrative-expenses"),
+    });
+    expect(runDecompModule("a-full", noSga, [noSga]).status).toBe("suppressed");
+    const ogpPrev: FinancialStatements = {
+      ...MISUMI_STMT.prev,
+      incomeStatement: [
+        line("revenue", 401_987_000_000),
+        line("gross-profit", 180_000_000_000),
+        line("other-operating-revenue-item", 6_990_000_000),
+        line("operating-gross-profit", 186_990_000_000),
+        line("selling-general-and-administrative-expenses", 140_509_000_000),
+        line("operating-income", 46_480_000_000),
+      ],
+    };
+    const formChanged = stmtCompany("form", "machinery", ogpPrev, MISUMI_STMT.latest);
+    expect(runDecompModule("a-full", formChanged, [formChanged]).status).toBe("suppressed");
+    const ogpBoth = stmtCompany("ogp", "machinery", ogpPrev, {
+      ...MISUMI_STMT.latest,
+      incomeStatement: [
+        line("revenue", 441_383_000_000),
+        line("gross-profit", 198_000_000_000),
+        line("other-operating-revenue-item", 8_015_000_000),
+        line("operating-gross-profit", 206_015_000_000),
+        line("selling-general-and-administrative-expenses", 158_402_000_000),
+        line("operating-income", 47_613_000_000),
+      ],
+    });
+    const ogpResult = runDecompModule("a-full", ogpBoth, [ogpBoth]);
+    expect(ogpResult.status).toBe("ok");
+    expect(ok(ogpResult).note).toContain("営業総利益");
+  });
+
+  it("D2 is suppressed for finance, for a shrinking capital base, for a small increment and for a pre-tax loss", () => {
+    const bank = stmtCompany("bank-stmt", "finance", MISUMI_STMT.prev, MISUMI_STMT.latest);
+    expect(runDecompModule("d2", bank, [bank]).status).toBe("suppressed");
+    const shrinking = syntheticStmt({
+      latest: {
+        balanceSheet: [
+          line("cash-and-deposits", 200),
+          line("long-term-borrowings", 100),
+          line("share-capital", 500),
+          line("capital-surplus", 100),
+          line("total-net-assets", 900),
+        ],
+      },
+    });
+    expect(runDecompModule("d2", shrinking, [shrinking]).status).toBe("suppressed");
+    const small = syntheticStmt({
+      latest: {
+        balanceSheet: [
+          line("cash-and-deposits", 200),
+          line("long-term-borrowings", 520),
+          line("share-capital", 500),
+          line("capital-surplus", 100),
+          line("total-net-assets", 1_010),
+        ],
+      },
+    });
+    expect(runDecompModule("d2", small, [small]).status).toBe("suppressed");
+    const loss = syntheticStmt({
+      latest: {
+        incomeStatement: [
+          line("revenue", 12_000),
+          line("gross-profit", 5_100),
+          line("selling-general-and-administrative-expenses", 3_600),
+          line("operating-income", 1_500),
+          line("income-before-income-taxes", -100),
+          line("income-taxes", 450),
+          line("net-income", 1_050),
+        ],
+      },
+    });
+    expect(runDecompModule("d2", loss, [loss]).status).toBe("suppressed");
   });
 });
