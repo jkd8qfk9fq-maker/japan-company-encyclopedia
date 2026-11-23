@@ -38,6 +38,10 @@ const EXCHANGE_NAME: Record<Company["listings"][number]["exchange"], string> = {
  * with a corporate-form affix (株式会社極洋 under 極洋 told the reader nothing twice). At the bottom, a
  * one-line table of contents names what this page holds — only the sections this entry actually has, plus
  * the analysis report — so "what is on this page" is answerable before scrolling.
+ *
+ * JCE-094: the hero is the fixed first view of the three-layer page — name, one-line description, the size
+ * figures with their provenance badge (KeyFacts), and three buttons into the page (つながり / 数字の推移 /
+ * この会社で学ぶ). Everything below the hero is depth the reader opens, in that order.
  */
 
 /**
@@ -57,12 +61,15 @@ export function CompanyHero({
   headquarters,
   website,
   toc,
+  hasConnections,
 }: {
   company: Company;
   headquarters?: Headquarters | null;
   website?: Website | null;
   /** The sections this entry actually has, for the "このページの内容" line (JCE-087). */
   toc?: SectionLink[];
+  /** Whether the page has a つながり section, inbound ties included (JCE-094). Defaults to this entry's own ties. */
+  hasConnections?: boolean;
 }) {
   const yuho = website ? company.sources.find((s) => s.id === website.sourceId) : undefined;
   const prefecture = headquarters ? prefectureByName(headquarters.prefecture) : null;
@@ -153,6 +160,34 @@ export function CompanyHero({
         <div className="mt-5">
           <KeyFacts records={company.financials} sources={company.sources} />
         </div>
+
+        {/* JCE-094: the first view ends with the three ways into the page — the ties, the figures over time,
+            and the training this company carries — as buttons, so the reader picks a depth here instead of
+            meeting the sections in scroll order. On a phone each opens its tab (SectionTabs follows the hash). */}
+        <nav aria-label="この会社の読み方" className="mt-4 flex flex-wrap gap-2">
+          {(hasConnections ?? company.relatedCompanies.length > 0) && (
+            <a
+              href="#connections"
+              className="inline-flex min-h-11 items-center rounded-full bg-foreground px-4 text-sm font-medium text-background transition-opacity hover:opacity-85"
+            >
+              つながりを見る
+            </a>
+          )}
+          <a
+            href="#financials"
+            className="inline-flex min-h-11 items-center rounded-full border border-border px-4 text-sm transition-colors hover:border-foreground"
+          >
+            数字の推移
+          </a>
+          {company.financials.length > 0 && (
+            <a
+              href="#training"
+              className="inline-flex min-h-11 items-center rounded-full border border-border px-4 text-sm transition-colors hover:border-foreground"
+            >
+              この会社で学ぶ
+            </a>
+          )}
+        </nav>
 
         <div className="mt-3 flex flex-wrap gap-3">
           {/* JCE-055: the company's own site, at the address its 有報 prints for its electronic notices. */}

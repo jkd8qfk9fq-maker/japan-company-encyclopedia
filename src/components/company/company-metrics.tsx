@@ -70,7 +70,7 @@ export function CompanyMetrics({ metrics, sources }: { metrics: Metrics; sources
         {w && "給与と勤続年数は提出会社（グループ全体ではない）の値です。"}
         {s && "1株当たり配当額と発行済株式総数は有価証券報告書に印字された値で、株価・時価総額・配当利回りは扱いません。"}
       </p>
-      {sourceIds.length > 0 && <SourceList sources={sources} sourceIds={sourceIds} />}
+      {sourceIds.length > 0 && <SourceList sources={sources} sourceIds={sourceIds} variant="refs" />}
     </div>
   );
 }

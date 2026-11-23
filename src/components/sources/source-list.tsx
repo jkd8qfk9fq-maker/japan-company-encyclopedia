@@ -14,11 +14,21 @@ export function SourceList({
   sources,
   sourceIds,
   className,
+  variant = "details",
 }: {
   sources: Source[];
   /** Show only these. Omit to show every source. */
   sourceIds?: string[];
   className?: string;
+  /**
+   * "details" (default): the full source cards, folded into a <details> here.
+   * "refs" (JCE-094): a one-line reference — the source's number in the page's own 出典一覧
+   * (SourceIndex, same `sources` order), linked to its entry there. For pages that carry the
+   * full list once at the bottom, so the line "出典を見る" does not repeat under every section.
+   * Only for sources that are in that page's index: a tie written in another company's entry
+   * rests on that company's sources, which are not in this page's index, and keeps "details".
+   */
+  variant?: "details" | "refs";
 }) {
   const shown = sourceIds
     ? sourceIds
@@ -26,6 +36,26 @@ export function SourceList({
         .filter((s): s is Source => s !== undefined)
     : sources;
   if (shown.length === 0) return null;
+
+  if (variant === "refs") {
+    return (
+      <p className={`text-xs leading-6 text-muted-foreground ${className ?? ""}`}>
+        出典{" "}
+        {shown.map((source) => (
+          <a
+            key={source.id}
+            href={`#source-${source.id}`}
+            className="figures mx-0.5 underline-offset-4 hover:text-foreground hover:underline"
+          >
+            [{sources.indexOf(source) + 1}]
+          </a>
+        ))}
+        <a href="#sources" className="ml-1 underline-offset-4 hover:text-foreground hover:underline">
+          出典一覧
+        </a>
+      </p>
+    );
+  }
 
   const lastAccessed = shown.map((s) => s.accessedAt).sort().at(-1);
 

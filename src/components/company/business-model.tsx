@@ -97,7 +97,7 @@ export function BusinessModel({ model, sources }: { model: BusinessModelData; so
           </div>
         )}
       </div>
-      <SourceList sources={sources} sourceIds={model.sourceIds} className="mt-6" />
+      <SourceList sources={sources} sourceIds={model.sourceIds} variant="refs" className="mt-6" />
     </div>
   );
 }

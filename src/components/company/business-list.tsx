@@ -86,14 +86,14 @@ export function BusinessList({ businesses, sources }: { businesses: Business[]; 
                       {business.children && business.children.length > 0 && <SubBusinesses items={business.children} />}
                     </details>
                   )}
-                  <SourceList sources={sources} sourceIds={business.sourceIds} />
+                  <SourceList sources={sources} sourceIds={business.sourceIds} variant="refs" />
                 </div>
               </div>
             </li>
           );
         })}
       </ol>
-      {via && <SourceList sources={sources} sourceIds={via.sourceIds} className="mt-3" />}
+      {via && <SourceList sources={sources} sourceIds={via.sourceIds} variant="refs" className="mt-3" />}
     </div>
   );
 }
