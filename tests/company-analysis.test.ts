@@ -82,16 +82,20 @@ describe("companyAnalysis", () => {
     expect(scale.rows.every((r) => r.industry === null)).toBe(true);
   });
 
-  it("computes the net-assets change only across the same accounting standard", () => {
+  it("carries the net-assets change in the B1 group, only across the same accounting standard", () => {
     const same = companyAnalysis(target, retailers);
     const stability = same.perspectives.find((p) => p.id === "stability")!;
-    const change = stability.rows.find((r) => r.key === "net-assets-growth-1y")!;
+    const b1 = stability.groups.find((g) => g.id === "b1")!;
+    expect(b1).toBeDefined();
+    const change = b1.rows.find((r) => r.key === "b1-net-assets-growth")!;
     expect(change.value).toBeCloseTo(800 / 700 - 1);
+    // The old stand-alone row is gone: the change now stands inside its decomposition.
+    expect(stability.rows.some((r) => r.key === "net-assets-growth-1y")).toBe(false);
 
     const switched = company("sw", "retail", [prev({ accountingStandard: "ifrs" }), rec()]);
     const analysis2 = companyAnalysis(switched, [...retailers, switched]);
     const stability2 = analysis2.perspectives.find((p) => p.id === "stability")!;
-    expect(stability2.rows.some((r) => r.key === "net-assets-growth-1y")).toBe(false);
+    expect(stability2.groups.some((g) => g.id === "b1")).toBe(false);
   });
 
   it("attaches the printed trends to growth and stability, never a combined score", () => {
