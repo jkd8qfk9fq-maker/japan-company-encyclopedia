@@ -199,6 +199,12 @@
   }
 }
 
+/* DISCOVER (2026-11-23): the page is the feed's scroller; it snaps to the cards, aligned right under the header. */
+html:has(#discover-feed) {
+  scroll-snap-type: y proximity;
+  scroll-padding-top: var(--header-height);
+}
+
 @layer components {
   /*
    * A horizontal scroller is the containing block of what it holds. Screen-reader text (sr-only) is positioned

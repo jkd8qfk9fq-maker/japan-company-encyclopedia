@@ -44,7 +44,7 @@ export async function SiteHeader() {
         {/* On phones: the bell and the menu, which lists every page the bottom bar does not (2026-11-23). */}
         <div className="-mr-3 flex items-center md:hidden">
           <NotificationBell />
-          <SiteMenu hidden={hidden} />
+          <SiteMenu hidden={[...hidden]} />
         </div>
 
         <div className="hidden items-center gap-2 md:flex">
@@ -58,7 +58,7 @@ export async function SiteHeader() {
             <Settings className="size-[1.15rem]" aria-hidden />
             <span className="sr-only">設定</span>
           </NavLink>
-          <SiteMenu hidden={hidden} />
+          <SiteMenu hidden={[...hidden]} />
         </div>
       </div>
     </header>

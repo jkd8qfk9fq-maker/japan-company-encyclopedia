@@ -106,7 +106,10 @@ export function DiscoverFeed() {
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setSlots(next);
     setShown(PAGE);
-    scroller.current?.scrollTo({ top: 0 });
+    // Back to the first card on a new filter — only when the reader is already inside the feed, so the page does
+    // not jump on first load.
+    const feed = scroller.current;
+    if (feed && feed.getBoundingClientRect().top < 0) feed.scrollIntoView({ block: "start" });
   }, [ordered, cards, industry]);
 
   const follow = useCallback((at: number, from: DiscoverCard, to: { id: string; label: string }) => {
@@ -127,6 +130,7 @@ export function DiscoverFeed() {
   useEffect(() => {
     const root = scroller.current;
     if (!root) return;
+    // The page itself scrolls now, so cards are observed against the viewport.
     const timers = new Map<Element, number>();
     const observer = new IntersectionObserver(
       (entries) => {
@@ -143,7 +147,7 @@ export function DiscoverFeed() {
           }
         }
       },
-      { root, threshold: 0.6 },
+      { threshold: 0.6 },
     );
     root.querySelectorAll("[data-slot]").forEach((el) => observer.observe(el));
     return () => {
@@ -169,7 +173,7 @@ export function DiscoverFeed() {
 
   if (failed) {
     return (
-      <div className="flex h-full items-center justify-center p-8 text-center text-white/80">
+      <div className="flex h-[calc(100svh-var(--header-height)-3.5rem-env(safe-area-inset-bottom))] md:h-[calc(100svh-var(--header-height))] items-center justify-center p-8 text-center text-white/80">
         カードを読み込めませんでした。通信状態を確かめて、もう一度開いてください。
       </div>
     );
@@ -178,8 +182,12 @@ export function DiscoverFeed() {
   const today = ordered.slice(0, 3);
 
   return (
-    <div className="relative h-full">
-      <div className="absolute inset-x-0 top-0 z-20 flex gap-2 overflow-x-auto px-4 pt-3 pb-2 [scrollbar-width:none]">
+    <div id="discover-feed" className="relative">
+      {/* 2026-11-23: one scroll for the whole page. The feed used to scroll inside a box of its own under an
+          introduction that scrolled with the page — two scrolls on one screen, and the reader could not tell which
+          one a swipe would move. The cards now sit in the page, one screen each, and the page snaps to them
+          (globals.css, html:has(#discover-feed)); the industry chips stay pinned under the header. */}
+      <div className="sticky top-(--header-height) z-20 -mb-12 flex h-12 gap-2 overflow-x-auto px-4 pt-3 pb-2 [scrollbar-width:none]">
         {[{ id: "all", name: "すべて" }, ...chips].map((i) => (
           <button
             key={i.id}
@@ -200,9 +208,9 @@ export function DiscoverFeed() {
         <FollowChooser industries={industries} following={following} onToggle={toggleFollowedIndustry} onClose={closeChooser} />
       )}
 
-      <div ref={scroller} className="h-full snap-y snap-mandatory overflow-y-auto overscroll-contain [scrollbar-width:none]">
+      <div ref={scroller}>
         {cards === null ? (
-          <div className="flex h-full items-center justify-center text-sm text-white/70">企業を集めています…</div>
+          <div className="flex h-[calc(100svh-var(--header-height)-3.5rem-env(safe-area-inset-bottom))] md:h-[calc(100svh-var(--header-height))] items-center justify-center text-sm text-white/70">企業を集めています…</div>
         ) : (
           slots.slice(0, shown).map((slot, index) => {
             if (slot.kind === "intro") {
@@ -244,7 +252,7 @@ export function DiscoverFeed() {
 
 function Screen({ index, company, children, className = "" }: { index: number; company?: string; children: React.ReactNode; className?: string }) {
   return (
-    <section data-slot={index} data-company={company} className={`relative flex h-full snap-start snap-always flex-col overflow-hidden ${className}`}>
+    <section data-slot={index} data-company={company} className={`relative flex h-[calc(100svh-var(--header-height)-3.5rem-env(safe-area-inset-bottom))] md:h-[calc(100svh-var(--header-height))] snap-start snap-always flex-col overflow-hidden ${className}`}>
       {children}
     </section>
   );
@@ -514,7 +522,7 @@ function FollowChooser({
   onClose: () => void;
 }) {
   return (
-    <div role="dialog" aria-modal="true" aria-labelledby="follow-title" className="absolute inset-0 z-30 flex flex-col bg-neutral-950/95 px-5 pt-6 pb-5 text-white backdrop-blur">
+    <div role="dialog" aria-modal="true" aria-labelledby="follow-title" className="fixed inset-0 z-50 flex flex-col bg-neutral-950/95 px-5 pt-[calc(env(safe-area-inset-top)+1.5rem)] pb-[calc(env(safe-area-inset-bottom)+1.25rem)] text-white backdrop-blur">
       <h2 id="follow-title" className="font-serif text-xl font-semibold">
         気になる業界をフォロー
       </h2>
