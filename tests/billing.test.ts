@@ -1,0 +1,194 @@
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { handleBilling, planOfEntitlement, verifyStripeSignature } from "../worker/billing/api";
+import { memoryBillingStore } from "../worker/billing/store";
+import { checkPlan, OWN_PLAN_ENDPOINT, PLAN_ENDPOINT } from "@/lib/plan";
+
+/** JCE-100: this site's own billing record — webhook intake, the entitlement store, its /api/plan, and the client's move to it. */
+
+const ORIGIN = "https://kigyo-hyakka.com";
+const SECRET = "whsec_test_secret_for_billing";
+const NOW = new Date("2026-11-23T10:00:00.000Z");
+const CODE = "sub_1UbAI9Fm3JfKaAkuMuVK6CZs";
+const PERIOD_END_S = 1798761600; // 2027-01-01T00:00:00Z — after NOW (2026-11-23), so a plan ending then is paid
+const PERIOD_END_MS = PERIOD_END_S * 1000;
+const CHECK_AFTER_MS = NOW.getTime() + 3 * 24 * 60 * 60 * 1000; // min(paidUntil, now + 3 days) lands here
+
+const hex = (bytes: Uint8Array) => [...bytes].map((b) => b.toString(16).padStart(2, "0")).join("");
+
+async function sign(secret: string, body: string, atMs: number): Promise<string> {
+  const t = Math.floor(atMs / 1000);
+  const key = await crypto.subtle.importKey("raw", new TextEncoder().encode(secret), { name: "HMAC", hash: "SHA-256" }, false, ["sign"]);
+  const v1 = hex(new Uint8Array(await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(`${t}.${body}`))));
+  return `t=${t},v1=${v1}`;
+}
+
+const webhookRequest = async (body: string, signature: string) =>
+  new Request(`${ORIGIN}/api/billing/webhook`, { method: "POST", headers: { "stripe-signature": signature }, body });
+
+const planRequest = (code: unknown, origin: string | null = ORIGIN) =>
+  new Request(`${ORIGIN}/api/plan`, {
+    method: "POST",
+    headers: { "content-type": "application/json", ...(origin ? { origin } : {}) },
+    body: JSON.stringify({ code }),
+  });
+
+const subscriptionEvent = (id: string, type: string, sub: Record<string, unknown>) =>
+  JSON.stringify({ id, type, data: { object: { id: CODE, customer: "cus_VcP6IAqHA649zF", ...sub } } });
+
+describe("verifyStripeSignature", () => {
+  const body = `{"id":"evt_1","type":"customer.subscription.created"}`;
+  it("accepts a signature Stripe would send", async () => {
+    expect(await verifyStripeSignature(SECRET, body, await sign(SECRET, body, NOW.getTime()), NOW.getTime())).toBe(true);
+  });
+  it("accepts when any of several v1 signatures matches (secret rotation)", async () => {
+    const good = await sign(SECRET, body, NOW.getTime());
+    const v1 = good.split("v1=")[1];
+    expect(await verifyStripeSignature(SECRET, body, `t=${Math.floor(NOW.getTime() / 1000)},v1=${"0".repeat(64)},v1=${v1}`, NOW.getTime())).toBe(true);
+  });
+  it("rejects a tampered body, a wrong secret, and a stale timestamp", async () => {
+    const header = await sign(SECRET, body, NOW.getTime());
+    expect(await verifyStripeSignature(SECRET, `${body} `, header, NOW.getTime())).toBe(false);
+    expect(await verifyStripeSignature("whsec_other", body, header, NOW.getTime())).toBe(false);
+    expect(await verifyStripeSignature(SECRET, body, header, NOW.getTime() + 10 * 60 * 1000)).toBe(false);
+    expect(await verifyStripeSignature(SECRET, body, "not-a-header", NOW.getTime())).toBe(false);
+  });
+});
+
+describe("the entitlement store", () => {
+  it("keeps a field an event does not carry, and reports each event id once", async () => {
+    const store = memoryBillingStore();
+    await store.upsert({ code: CODE, customerId: "cus_1", email: "a@example.jp", status: "active", paidUntil: 100, source: "stripe", now: NOW.toISOString() });
+    await store.upsert({ code: CODE, customerId: null, email: null, status: "active", paidUntil: 200, source: "stripe", now: NOW.toISOString() });
+    expect(await store.get(CODE)).toEqual({ code: CODE, customerId: "cus_1", email: "a@example.jp", status: "active", paidUntil: 200, source: "stripe" });
+    expect(await store.markEvent("evt_1", "invoice.paid", NOW.toISOString())).toBe(true);
+    expect(await store.markEvent("evt_1", "invoice.paid", NOW.toISOString())).toBe(false);
+    expect(await store.get("sub_unknown")).toBeNull();
+  });
+});
+
+describe("planOfEntitlement — the borrowed check's rule, on this record", () => {
+  const base = { code: CODE, customerId: null, email: null, source: "stripe" };
+  it("counts active and trialing as paid, until the period ends", () => {
+    expect(planOfEntitlement({ ...base, status: "trialing", paidUntil: PERIOD_END_MS }, NOW.getTime())).toEqual({
+      active: true,
+      code: CODE,
+      paidUntil: PERIOD_END_MS,
+      checkAfter: Math.min(PERIOD_END_MS, NOW.getTime() + 3 * 24 * 60 * 60 * 1000),
+    });
+    expect(planOfEntitlement({ ...base, status: "active", paidUntil: NOW.getTime() }, NOW.getTime())).toEqual({ active: false });
+    expect(planOfEntitlement({ ...base, status: "past_due", paidUntil: PERIOD_END_MS }, NOW.getTime())).toEqual({ active: false });
+    expect(planOfEntitlement({ ...base, status: "canceled", paidUntil: PERIOD_END_MS }, NOW.getTime())).toEqual({ active: false });
+  });
+});
+
+describe("handleBilling", () => {
+  it("answers not-configured until the webhook secret is set", async () => {
+    const store = memoryBillingStore();
+    const body = subscriptionEvent("evt_1", "customer.subscription.created", { status: "active", current_period_end: PERIOD_END_S });
+    const res = await handleBilling(await webhookRequest(body, await sign(SECRET, body, NOW.getTime())), {}, store, NOW);
+    expect(res.status).toBe(503);
+  });
+
+  it("records a subscription from a signed webhook, and /api/plan then answers paid", async () => {
+    const store = memoryBillingStore();
+    const env = { STRIPE_WEBHOOK_SECRET: SECRET };
+    const body = subscriptionEvent("evt_1", "customer.subscription.created", { status: "trialing", current_period_end: PERIOD_END_S });
+    const res = await handleBilling(await webhookRequest(body, await sign(SECRET, body, NOW.getTime())), env, store, NOW);
+    expect(res.status).toBe(200);
+    const plan = await handleBilling(planRequest(CODE), env, store, NOW);
+    expect(await plan.json()).toEqual({ active: true, code: CODE, paidUntil: PERIOD_END_MS, checkAfter: CHECK_AFTER_MS });
+  });
+
+  it("rejects a webhook whose signature does not match", async () => {
+    const store = memoryBillingStore();
+    const body = subscriptionEvent("evt_1", "customer.subscription.created", { status: "active", current_period_end: PERIOD_END_S });
+    const res = await handleBilling(await webhookRequest(body, await sign("whsec_wrong", body, NOW.getTime())), { STRIPE_WEBHOOK_SECRET: SECRET }, store, NOW);
+    expect(res.status).toBe(400);
+    expect(await store.get(CODE)).toBeNull();
+  });
+
+  it("changes nothing when Stripe redelivers an event", async () => {
+    const store = memoryBillingStore();
+    const env = { STRIPE_WEBHOOK_SECRET: SECRET };
+    const created = subscriptionEvent("evt_1", "customer.subscription.created", { status: "active", current_period_end: PERIOD_END_S });
+    await handleBilling(await webhookRequest(created, await sign(SECRET, created, NOW.getTime())), env, store, NOW);
+    const deleted = subscriptionEvent("evt_1", "customer.subscription.deleted", { status: "canceled", ended_at: PERIOD_END_S - 1000 });
+    const again = await handleBilling(await webhookRequest(deleted, await sign(SECRET, deleted, NOW.getTime())), env, store, NOW);
+    expect(await again.json()).toEqual({ received: true, duplicate: true });
+    expect((await store.get(CODE))?.status).toBe("active"); // the redelivery reused evt_1, so the delete never applied
+  });
+
+  it("closes the plan when the subscription is deleted, at its end time", async () => {
+    const store = memoryBillingStore();
+    const env = { STRIPE_WEBHOOK_SECRET: SECRET };
+    const created = subscriptionEvent("evt_1", "customer.subscription.created", { status: "active", current_period_end: PERIOD_END_S });
+    await handleBilling(await webhookRequest(created, await sign(SECRET, created, NOW.getTime())), env, store, NOW);
+    const deleted = subscriptionEvent("evt_2", "customer.subscription.deleted", { status: "canceled", ended_at: PERIOD_END_S - 1000 });
+    await handleBilling(await webhookRequest(deleted, await sign(SECRET, deleted, NOW.getTime())), env, store, NOW);
+    const plan = await handleBilling(planRequest(CODE), env, store, NOW);
+    expect(await plan.json()).toEqual({ active: false });
+  });
+
+  it("extends the paid period on invoice.paid and keeps the e-mail it prints", async () => {
+    const store = memoryBillingStore();
+    const env = { STRIPE_WEBHOOK_SECRET: SECRET };
+    const created = subscriptionEvent("evt_1", "customer.subscription.created", { status: "active", current_period_end: PERIOD_END_S });
+    await handleBilling(await webhookRequest(created, await sign(SECRET, created, NOW.getTime())), env, store, NOW);
+    const invoice = JSON.stringify({
+      id: "evt_2",
+      type: "invoice.paid",
+      data: { object: { subscription: CODE, customer: "cus_VcP6IAqHA649zF", customer_email: "reader@example.jp", lines: { data: [{ period: { end: PERIOD_END_S + 2592000 } }] } } },
+    });
+    await handleBilling(await webhookRequest(invoice, await sign(SECRET, invoice, NOW.getTime())), env, store, NOW);
+    const ent = await store.get(CODE);
+    expect(ent?.paidUntil).toBe((PERIOD_END_S + 2592000) * 1000);
+    expect(ent?.email).toBe("reader@example.jp");
+    expect(ent?.status).toBe("active");
+  });
+
+  it("answers /api/plan for unknown and malformed codes as not paid, and refuses other origins", async () => {
+    const store = memoryBillingStore();
+    const env = { STRIPE_WEBHOOK_SECRET: SECRET };
+    expect(await (await handleBilling(planRequest("sub_12345678"), env, store, NOW)).json()).toEqual({ active: false });
+    expect(await (await handleBilling(planRequest("not-a-code"), env, store, NOW)).json()).toEqual({ active: false });
+    expect((await handleBilling(planRequest(CODE, "https://example.com"), env, store, NOW)).status).toBe(403);
+    expect((await handleBilling(planRequest(CODE), env, null, NOW)).status).toBe(503);
+  });
+});
+
+describe("checkPlan — the client's move to this site's own check (JCE-100)", () => {
+  afterEach(() => vi.unstubAllGlobals());
+
+  const stubFetch = (answers: Record<string, { status?: number; body?: unknown } | "throw">) => {
+    const calls: string[] = [];
+    vi.stubGlobal(
+      "fetch",
+      vi.fn(async (url: string) => {
+        calls.push(url);
+        const answer = answers[url];
+        if (!answer || answer === "throw") throw new Error("network");
+        return { ok: (answer.status ?? 200) < 300, status: answer.status ?? 200, json: async () => answer.body };
+      }),
+    );
+    return calls;
+  };
+  const paid = { active: true, code: CODE, paidUntil: PERIOD_END_MS, checkAfter: PERIOD_END_MS };
+
+  it("takes this site's own answer when it says paid, without asking the 診断 site", async () => {
+    const calls = stubFetch({ [OWN_PLAN_ENDPOINT]: { body: paid }, [PLAN_ENDPOINT]: { body: { active: false } } });
+    expect(await checkPlan(CODE)).toEqual(paid);
+    expect(calls).toEqual([OWN_PLAN_ENDPOINT]);
+  });
+
+  it("still opens a code only the borrowed check knows (a code this record does not hold yet)", async () => {
+    stubFetch({ [OWN_PLAN_ENDPOINT]: { body: { active: false } }, [PLAN_ENDPOINT]: { body: paid } });
+    expect(await checkPlan(CODE)).toEqual(paid);
+  });
+
+  it("falls back when this site's endpoint is not live yet, and reports not-paid when neither says paid", async () => {
+    stubFetch({ [OWN_PLAN_ENDPOINT]: { status: 503 }, [PLAN_ENDPOINT]: { body: { active: false } } });
+    expect(await checkPlan(CODE)).toEqual({ active: false });
+    stubFetch({ [OWN_PLAN_ENDPOINT]: "throw", [PLAN_ENDPOINT]: { body: paid } });
+    expect(await checkPlan(CODE)).toEqual(paid);
+  });
+});

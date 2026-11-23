@@ -103,7 +103,7 @@ export function PremiumGate({
       {status === "inactive" && <p className="mt-2 text-xs text-muted-foreground">このコードのプランは、いま有効ではありません。</p>}
       {status === "error" && <p className="mt-2 text-xs text-muted-foreground">確認できませんでした。しばらくしてからもう一度お試しください。</p>}
       <p className="mt-3 text-xs leading-5 text-muted-foreground">
-        購入コードは、プランの確認のためだけに企業タイプ診断のサーバーへ送られ、このブラウザに保存されます。氏名や閲覧の記録は送られません。
+        購入コードは、プランの確認のためだけに送信され、このブラウザに保存されます。氏名や閲覧の記録は送られません。
       </p>
     </div>
   );
