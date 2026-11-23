@@ -9,7 +9,9 @@ export const BETA_PAYMENT_URL = "https://buy.stripe.com/aFa14ndejgJt5Cq38NgnK00"
  * (operator report, 2026-11-22), so the enrolment path opens: a Stripe Payment Link, with the terms stated
  * on /tokushoho. The copy is kept exact about the boundary that matters — the learning itself stays free,
  * the beta adds the digest by mail and early word of new features, and nothing here is investment advice.
- * No gate is wired to the payment (ANALYSIS_FEATURES_OPEN is unchanged): enrolment is confirmed by hand.
+ * No gate is wired to this payment itself: enrolment is confirmed by hand. (JCE-101 later opened the
+ * analysis layer on the JCE-100 entitlement record; a beta subscription recorded there is a code like
+ * any other, but this offer's terms — price, measurement window, gates — are unchanged by that.)
  */
 export function BetaOffer() {
   return (

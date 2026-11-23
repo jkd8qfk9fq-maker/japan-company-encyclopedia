@@ -24,7 +24,10 @@ import type { Company, FinancialRecord, IndustryId } from "@/types/company";
  * Free / paid boundary (spec §2, §5): the free part of the analysis is each row's own value and the
  * industry median; the distribution as a whole (quartiles, rank, percentile), the multi-period
  * trends and the indicator links are the paid part, gated separately in `plan.ts`
- * (ANALYSIS_FEATURES_OPEN) — never by re-closing what JCE-075 opened.
+ * (ANALYSIS_FEATURES_OPEN) — never by re-closing what JCE-075 opened. JCE-101 (SaaS Step 2)
+ * opened that gate on the billing record: the paid part renders only for a reader whose code
+ * JCE-100's entitlement check (this site's own record, the borrowed check as fallback) says is
+ * paid, and the printable report's PDF holds the paid part under the same boundary.
  *
  * JCE-096 adds the decomposition groups (`analysis-decomposition.ts`) under the same perspectives
  * and the same boundary; B1's group carries 純資産の増減 and its 前期比, replacing the single

@@ -141,7 +141,7 @@ export function CompanyAnalysisSection({ company, companies }: { company: Compan
         。観点ごとに位置を示すもので、5観点を合成したスコアや格付けは作りません。
       </p>
       <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
-        無料で見られるのは各観点の要点（自社の値と業界の中央値）までです。分布の全体像・推移・経済指標との接続は分析レイヤーの範囲です。
+        無料で見られるのは各観点の要点（自社の値と業界の中央値）までです。分布の全体像・推移・経済指標との接続は分析レイヤーの範囲で、有効な購入コードで開きます。開いた状態で印刷・PDF保存すると、分析を含むレポート全体が1つの文書になります。
       </p>
 
       <div className="mt-8 space-y-10">

@@ -1800,3 +1800,25 @@ spend the trust the verification exists to build).
 - 診断サイトの /plan ページの文案差し替えと Worker の `/api/checkout` の恒久停止は、-MBTI repo をこの環境から clone できず、その repo のゲート（`npm run check`）を回せないため今回は行わない。価格の停止で申込自体は成立しない。残件として記録する。
 
 **やらないこと**: Stripe ダッシュボードでの Webhook エンドポイント登録と `STRIPE_WEBHOOK_SECRET` の設定（運営者のライブ操作）、D1 マイグレーション 0004 の本番適用、診断フォールバックの撤去、学習βの販売条件の変更、-MBTI repo の変更。
+
+## JCE-101 — 2026-11-23: SaaS Step 1 の移行完了（Webhook 登録・シークレット設定・D1 0004 本番適用）と Step 2（分析の有料境界＋PDF）
+
+運営者指示「進めて」（2026-11-23）を受け、JCE-100 で「やらないこと」に残した移行作業と、構築順 Step 2 を実施した。
+
+**Step 1 移行の完了（ライブ操作、2026-11-23）**:
+1. **D1 マイグレーション 0004 を本番適用**: Cloudflare API で kigyo-push に `entitlements`／`billing_events` を作成し、`d1_migrations` に 0004_billing.sql を記録した。適用後に両テーブルの存在を実測した。
+2. **Stripe Webhook を登録**: エンドポイント `we_1UevW3Fm3JfKaAkuBPZMnXMg`、`https://kigyo-hyakka.com/api/billing/webhook`、対象はコードが処理する4イベント（customer.subscription.created/updated/deleted、invoice.paid）、状態 enabled。登録前はエンドポイント 0 件だったことを確認した。
+3. **STRIPE_WEBHOOK_SECRET を Worker（nihonkigyohyakka）のシークレットに設定**: 発行された signing secret はメモリ内でのみ受け渡し、値そのものはファイル・ログ・文書のどこにも残していない。設定後に Worker のシークレット名一覧に STRIPE_WEBHOOK_SECRET があることを確認した。
+4. **既存コードの移し替え**: 運営者の契約 `sub_1UbAI9Fm3JfKaAkuMuVK6CZs` を Stripe の現行値（status active、customer `cus_VcP6IAqHA649zF`、期間末はサブスクリプションアイテムの current_period_end）で `entitlements` に登録した（source = 'stripe'）。
+5. **診断フォールバックは今回は外さない**: JCE-100 の設計判断4は「Webhook のライブ登録と移し替えが済んだら外す」としたが、移行直後の安全のため union 方式を当面維持する。フォールバックがある限り既存コードの表示は壊れず、撤去は実績（Webhook の実イベント処理）を確認してから別途行う。
+
+**Step 2 — 分析の有料境界**:
+1. **ANALYSIS_FEATURES_OPEN = true に変更し、意味を「分析レイヤーの on/off」に改めた**。有料境界の本体はフラグではなく権利判定（`analysisEntitled`）: 保存されたプランが支払期間内にあるブラウザだけが全分析（分布・推移・経済指標との接続）を描画する。権利の確認は JCE-100 の union 判定（自サイト entitlements → 診断フォールバック）のまま。
+2. **AnalysisGate を PremiumGate と同じ形に作り替えた**: 権利なしではゲート内の子要素を描画せず、無料範囲の説明と購入コードの入力欄だけを出す。権利ありでは全分析を出す。フラグが false の間は JCE-078 の「提供を準備しています」の表示に戻る（レイヤー自体の停止スイッチとして残す）。
+3. **無料範囲は変えない**: 各観点の自社の値＋業界の中央値は従来どおり全読者に公開する。PREMIUM_FEATURES_OPEN の挙動、/learn の開放状態、学習βの価格・計測条件には触れていない。新しい Stripe 価格は作っていない（分析単体の販売価格が必要になったら運営者の授権を別途得る）。
+
+**Step 2 — PDF 出力**:
+- 切り分けの結果、PDF 生成経路は新設しない。JCE-073 の印刷経路（レポート専用印刷 CSS＋印刷ボタン）が既に文書としての出力を担っており、不足は「PDFであることの明示」と「有料境界と印刷の関係」だけだった。
+- 印刷ボタンの文言を「印刷・PDFで保存」に変更し、印刷範囲が画面と同じ境界に従うことを明記した: 権利ありのブラウザでは分析を含むレポート全体が、権利なしでは無料範囲だけが印刷・PDF化され、ゲートの案内自体は印刷されない（print:hidden）。
+
+**検証**: 新規テスト tests/analysis-gate.test.ts（境界判定4件）。本番確認（デプロイ後）: 自サイト POST /api/plan が移し替えたコードに有効を返すこと、Webhook への不正署名が 400 を返すこと、レポートページでゲート表示・権利あり表示・PDF 出力の3点。

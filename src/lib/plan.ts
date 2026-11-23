@@ -39,12 +39,26 @@ export const PREMIUM_FEATURES_OPEN = true;
 /**
  * JCE-078: the analysis layer (5観点の分析レポート) is a NEW paid layer, gated independently of
  * PREMIUM_FEATURES_OPEN. JCE-075 opened this site's existing features for good; this flag never
- * re-closes them, and the existing plan does not open the analysis layer either — whether it is
- * included, and at what tier, is the Phase 3 decision (spec §6, §10). Phase 1 ships the structure
- * with the layer closed: every reader sees each perspective's own values and industry medians, and
- * the distributions, trends and indicator links wait behind this flag.
+ * re-closes them.
+ *
+ * JCE-101 (SaaS Step 2): the layer is live. This flag is now the layer's on/off switch — while it
+ * is true, the full analysis (distributions, trends, indicator links and the printable full
+ * report) opens only for a reader whose purchase code the billing record (JCE-100: this site's
+ * own entitlements, with the 診断 site's check as the migration fallback) says is paid, through
+ * `analysisEntitled` below. The free part — each perspective's own values and the industry
+ * median — stays open to every reader either way. Setting this flag back to false returns the
+ * layer to its "in preparation" note without touching the entitlement record.
  */
-export const ANALYSIS_FEATURES_OPEN = false;
+export const ANALYSIS_FEATURES_OPEN = true;
+
+/**
+ * Whether this browser's stored plan opens the analysis layer (JCE-101): the layer must be live
+ * and the stored plan must still be within its paid period. `usePlan` already clears a plan the
+ * moment it lapses, so this is the same truth the gate renders by, kept pure for tests.
+ */
+export function analysisEntitled(plan: StoredPlan | null, now = Date.now()): boolean {
+  return ANALYSIS_FEATURES_OPEN && plan !== null && plan.paidUntil > now;
+}
 const COOKIE = "yugenq_plan";
 const CODE_PATTERN = /^sub_[A-Za-z0-9]{8,64}$/;
 
