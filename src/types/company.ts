@@ -389,6 +389,16 @@ export type FinancialStatements = Sourced & {
   /** YYYY-MM-DD, the last day of the fiscal year. Matches the `financials` record of the same year. */
   periodEnd: string;
   accountingStandard: AccountingStandard;
+  /**
+   * The EDINET document these rows were actually read from (JCE-098: the statements layer's asFiledIn).
+   * Both years of a block are read from one filing — the newer year's own column and its prior-year
+   * column — so a change computed inside the block is a change as filed in that one document, even
+   * where the older year's own `financials` record cites the filing of its own year. Optional:
+   * blocks registered before JCE-098 carry it only where the reading document is still identifiable
+   * from the entry's sources (the backfill's rule); a block without it is read the same, it just
+   * cannot prove the one-filing property.
+   */
+  docId?: string;
   incomeStatement: StatementLine[];
   balanceSheet: StatementLine[];
 };

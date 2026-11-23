@@ -205,6 +205,12 @@ export function checkCompany(company: Company, context: ContentContext): string[
         continue;
       }
       if (s.periodEnd !== rec.periodEnd) e.push(`${where}: 決算日が財務と一致しません`);
+      // JCE-098: a block that names the filing it was read from (asFiledIn) must name one of the
+      // entry's own sources — the same resolution rule sourceIds follow, applied to the document id.
+      const docId = s.docId;
+      if (docId && !src.some((source) => source.docId === docId || (source.url ?? "").includes(docId))) {
+        e.push(`${where}: 書類IDが出典にありません`);
+      }
       e.push(
         ...yenErrors([...s.incomeStatement, ...s.balanceSheet].map((l) => l.amount), where),
         ...citationErrors(s.sourceIds, src, where),
