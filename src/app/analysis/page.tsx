@@ -88,7 +88,7 @@ export default async function AnalysisPage() {
                 {indicator.name}
               </Link>
               {latest && (
-                <span className="figures ml-2 whitespace-nowrap text-muted-foreground">
+                <span className="figures block text-muted-foreground sm:ml-2 sm:inline sm:whitespace-nowrap">
                   {observationPeriodLabel(indicator, latest.date)}: {formatIndicatorValue(indicator, latest.value)}
                   {indicator.unit}
                 </span>
