@@ -1668,3 +1668,18 @@ spend the trust the verification exists to build).
 **実装したこと**: src/components/company/company-view.tsx（セクション順の再編、つながりのL1要約、学ぶセクション新設、財務の内部再編）、company-hero.tsx（導線3ボタン、hasConnections の受け渡し）、key-facts.tsx（出典バッジ）、source-index.tsx（各項目へのアンカー）、src/components/sources/source-list.tsx（variant="refs"）、business-list.tsx / business-model.tsx / financial-section.tsx / quarterly-section.tsx / company-metrics.tsx / history-timeline.tsx / perspectives-section.tsx / related-companies.tsx（出典表示の参照化。related-companies は自社の関係のみ参照化し inbound は全文のまま）。
 
 **やらないこと**: ホームの再設計（分析 §3-2）と学習の双方向リンク（§3-3）は次段。企業レポート（/report）の体裁、データ・スキーマの変更、有料境界そのものの変更。
+
+## JCE-095 — 2026-11-23: 検証のラベル照合 — 有報が「又は…（△）」を落とした短縮表記を同一行として扱う
+
+**背景**: refresh-financials が 2026-11-21 から3日連続で失敗した。原因はクラウディアホールディングス（3607）1社で、取得の失敗ではなく検証（verify-financials）のラベル照合だった。同社の第50期有報（docID S100ZIVB、2026-11-20 提出）の「主要な経営指標等の推移」は、行ラベルを短縮形で印字する——「経常利益」「親会社株主に帰属する当期純利益」。登録済みラベルは出典である第49期有報の表記「経常利益又は経常損失（△）」「親会社株主に帰属する当期純利益又は親会社株主に帰属する当期純損失（△）」であり、検証が完全一致を求めるため、2022〜2025年8月期の8件（純利益4件・利益4件）が落ちた。行の並びと値は従来どおりで、過去年度の値も登録済みと一致している（probe で実ラベルを確認済み）。
+
+**設計判断**:
+1. **直すのは検証側の照合だけ**。登録済みラベルは出典有報の表記そのものであり、正しく記録されているため書き換えない。エントリデータにも触らない。
+2. **許す差異は末尾の選択肢サフィックスだけに限定する**。照合時に、ラベルの末尾が「又は」で始まり「（△）」で終わる部分を取り除いた形でも照合し、それで一致すれば同一行として扱う。それ以外の表記差異（サフィックスが末尾にない、（△）で終わらない、行そのものが違う）は従来どおり失敗させる。任意の表記ゆれを許す緩い照合にはしない。
+3. **照合箇所は2か所とも同じ規則にする**。売上・純利益のラベル照合と、利益・総資産・純資産の表示ラベル照合の両方に同じ `labelIsPrinted` を使う。
+
+**実装したこと**: scripts/research/verify-financials.mjs（`labelIsPrinted` を追加し、ラベル照合2か所を置き換え）、tests/verify-financials.test.ts（新規：フィクスチャの証拠パックでスクリプトを実走させ、短縮形の受理・全文形の受理・（△）なし選択肢の拒否・別行の拒否・末尾でないサフィックスの拒否を担保）。
+
+**実測**: 修正前 dry run（refresh-financials kuraudia-holdings）は8件のラベル不一致で失敗（exit 1）。修正後は would-update（2026年8月期を追加）・失敗0件（exit 0）。単体テスト5件全通過。
+
+**やらないこと**: 登録済みラベルの書き換え、抽出側（draft-entry）の変更、サフィックス以外の表記ゆれの許容。
