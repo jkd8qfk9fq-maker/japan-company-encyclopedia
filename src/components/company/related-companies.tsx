@@ -32,23 +32,24 @@ function Row({ company, label, description, sources, sourceIds, from }: {
 }) {
   const short = firstSentence(description);
   return (
-    <li className="border-b border-border py-3.5">
-      <p className="text-[0.9375rem] leading-7">
-        <Link href={`/companies/${company.id}`} className="font-serif font-semibold hover:underline">
+    // 2026-11-23 (JCE-099): a dense row — name and kind on one line, the reason in one small paragraph.
+    <li className="border-b border-border py-2.5">
+      <p className="text-[0.9375rem] leading-6">
+        <Link href={`/companies/${company.id}`} className="font-semibold hover:underline">
           {company.name}
         </Link>
         <span className="ml-2 inline-flex rounded-full border border-border px-2 text-[0.6875rem] leading-5 text-muted-foreground">
           {from ? `${from}から見て「${label}」` : label}
         </span>
       </p>
-      <p className="mt-1 text-sm leading-7 text-muted-foreground">{short}</p>
+      <p className="mt-0.5 text-[0.8125rem] leading-6 text-muted-foreground">{short}</p>
       {short !== description && (
         <details className="group">
           <summary className="inline-flex min-h-9 cursor-pointer list-none items-center gap-1.5 text-xs text-muted-foreground select-none hover:text-foreground [&::-webkit-details-marker]:hidden">
             <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
             続きを読む
           </summary>
-          <p className="text-sm leading-7 text-muted-foreground">{description}</p>
+          <p className="text-[0.8125rem] leading-6 text-muted-foreground">{description}</p>
         </details>
       )}
       {/* JCE-094: this entry's own ties reference the page's 出典一覧 by number. A tie written in another

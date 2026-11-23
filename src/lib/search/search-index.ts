@@ -26,6 +26,7 @@ export async function buildSearchIndex(): Promise<SearchEntry[]> {
       id: c.id,
       title: c.name,
       subtitle: c.description ? toPlainText(c.description) : `${c.officialName}（証券コード${c.code}）`,
+      meta: [c.code, INDUSTRY_LABELS[(c.industries.find((r) => r.primary) ?? c.industries[0])?.industryId]?.name].filter(Boolean).join("・"),
       href: `/companies/${c.id}`,
       sortKey: c.name,
       keys: [c.name, c.officialName, c.nameEn ?? "", c.shortNameEn ?? "", c.code].filter(Boolean).map(normalizeForSearch),

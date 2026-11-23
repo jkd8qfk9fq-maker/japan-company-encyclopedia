@@ -150,7 +150,10 @@ export function SearchSuggest({
               >
                 <span className="w-8 shrink-0 text-[0.6875rem] text-muted-foreground">{KIND_LABEL[entry.kind]}</span>
                 <span className="min-w-0">
-                  <span className="block truncate font-serif text-[0.9375rem] font-semibold">{entry.title}</span>
+                  <span className="flex items-baseline gap-2">
+                    <span className="truncate text-[0.9375rem] font-semibold">{entry.title}</span>
+                    {entry.meta && <span className="figures shrink-0 text-[0.6875rem] text-muted-foreground">{entry.meta}</span>}
+                  </span>
                   {entry.subtitle && <span className="block truncate text-xs text-muted-foreground">{entry.subtitle}</span>}
                 </span>
               </li>
