@@ -157,7 +157,9 @@ export function MicroLessons() {
                   const isSelected = selected === lesson.id;
                   return (
                     <li key={lesson.id} id={lesson.id === nextId ? "next-node" : undefined} className="scroll-mt-28">
-                      <div className="flex flex-col items-center" style={{ transform: `translateX(${OFFSETS[li % OFFSETS.length]}px)` }}>
+                      {/* w-fit: the zigzag moves the node, not a full-width box — a shifted full-width box widened the page by
+                          the offset on a phone (2026-11-23, /learn was 400px wide on a 390px screen). */}
+                      <div className="mx-auto flex w-fit flex-col items-center" style={{ transform: `translateX(${OFFSETS[li % OFFSETS.length]}px)` }}>
                         {state === "next" && (
                           <span className="mb-1.5 animate-bounce rounded-full px-3 py-1 text-xs font-bold text-white" style={{ backgroundColor: style.main }}>
                             次はここ
