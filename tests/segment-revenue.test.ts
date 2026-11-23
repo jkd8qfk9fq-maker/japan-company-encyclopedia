@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { mapSegmentsToBusinesses, memberLabels, regionalRevenueFromText, segmentRevenueBlock, segmentRevenueFacts } from "../scripts/pipeline/segment-revenue.mjs";
+import { mapSegmentsToBusinesses, memberLabels, namedSegmentFacts, priorRecordFor, regionalRevenueFromText, segmentRevenueBlock, segmentRevenueFacts, segmentRevenuePreviousBlock } from "../scripts/pipeline/segment-revenue.mjs";
 
 /**
  * Segment revenue from the XBRL (JCE-038). The rows are shaped as A&Aマテリアル's FY2025 filing tags them (probe of
@@ -102,6 +102,91 @@ describe("segmentRevenueFacts — AGC's IFRS spelling", () => {
     const facts = segmentRevenueFacts(rows)!;
     expect(facts.label).toBe("外部顧客への売上高");
     expect(facts.items).toHaveLength(6);
+  });
+});
+
+describe("segmentRevenueFacts — the prior year's column of the same note (JCE-097)", () => {
+  const prow = (context: string, value: string) => ({
+    要素ID: "jpcrp_cor:RevenuesFromExternalCustomers",
+    項目名: "外部顧客への売上高",
+    コンテキストID: `Prior1YearDuration${context ? `_${context}` : ""}`,
+    単位: "円",
+    値: value,
+  });
+  const priorFiling = [
+    prow(`${P}ConstructionAndBuildingMaterialsReportableSegmentsMember`, "20000000000"),
+    prow(`${P}IndustrialGoodsAndEngineeringReportableSegmentsMember`, "21000000000"),
+    prow("ReportableSegmentsMember", "41000000000"),
+    prow("OperatingSegmentsNotIncludedInReportableSegmentsAndOtherRevenueGeneratingBusinessActivitiesMember", "50000000"),
+    prow("TotalOfReportableSegmentsAndOthersMember", "41050000000"),
+  ];
+
+  it("reads the prior year's members and checks them against the prior year's own total", () => {
+    const facts = segmentRevenueFacts(priorFiling, "Prior1YearDuration")!;
+    expect(facts.items.map((i) => [i.other, i.amount])).toEqual([[false, 20000000000], [false, 21000000000], [true, 50000000]]);
+  });
+
+  it("keeps the two years apart: each period reads only its own contexts", () => {
+    const both = [...filing.slice(0, -1), ...priorFiling]; // the fixture's stray prior row would double-tag a member
+    expect(segmentRevenueFacts(both)?.items.map((i) => i.amount)).toEqual([23067000000, 22575000000, 56000000]);
+    expect(segmentRevenueFacts(both, "Prior1YearDuration")?.items.map((i) => i.amount)).toEqual([20000000000, 21000000000, 50000000]);
+  });
+
+  it("refuses a prior set that does not add up to either of the filing's totals", () => {
+    const broken = priorFiling.map((r) => (r.コンテキストID.includes("ConstructionAndBuildingMaterials") ? { ...r, 値: "1" } : r));
+    expect(segmentRevenueFacts(broken, "Prior1YearDuration")).toBeNull();
+  });
+
+  it("names the prior members from the same linkbase", () => {
+    const named = namedSegmentFacts(priorFiling, [lab], "Prior1YearDuration")!;
+    expect(named.items.map((i) => i.name)).toEqual(["建設・建材事業", "工業製品・エンジニアリング事業", "その他"]);
+  });
+});
+
+describe("segmentRevenuePreviousBlock and priorRecordFor (JCE-097)", () => {
+  const priorFacts = {
+    label: "外部顧客への売上高",
+    items: [
+      { member: "a", other: false, amount: 20_000_000_000, name: "建設・建材事業" },
+      { member: "b", other: false, amount: 21_000_000_000, name: "工業製品・エンジニアリング事業" },
+      { member: "c", other: true, amount: 50_000_000, name: "その他" },
+    ],
+  };
+  const year = (revenue: number | null) => ({ fiscalYear: "2025年3月期", periodEnd: "2025-03-31", revenue });
+
+  it("builds the prior block when every member maps and the sum fits the prior revenue", () => {
+    expect(segmentRevenuePreviousBlock(priorFacts, businesses, year(45_700_000_000))).toEqual({
+      fiscalYear: "2025年3月期",
+      periodEnd: "2025-03-31",
+      items: [
+        { businessId: "construction-materials", amount: 20_000_000_000 },
+        { businessId: "industrial-products-engineering", amount: 21_000_000_000 },
+        { businessId: "other", amount: 50_000_000 },
+      ],
+    });
+  });
+
+  it("refuses a prior set that adds up to more than the prior revenue line", () => {
+    expect(segmentRevenuePreviousBlock(priorFacts, businesses, year(30_000_000_000))).toBeNull();
+  });
+
+  it("refuses the whole prior set when one member's name matches no business (a renamed segment)", () => {
+    const renamed = { ...priorFacts, items: priorFacts.items.map((i) => (i.member === "a" ? { ...i, name: "建材ソリューション事業" } : i)) };
+    expect(segmentRevenuePreviousBlock(renamed, businesses, year(45_700_000_000))).toBeNull();
+  });
+
+  it("picks the record a normal twelve months before the segment year, and nothing else", () => {
+    const records = [
+      { fiscalYear: "2024年3月期", periodEnd: "2024-03-31" },
+      { fiscalYear: "2025年3月期", periodEnd: "2025-03-31" },
+      { fiscalYear: "2026年3月期", periodEnd: "2026-03-31" },
+    ];
+    expect(priorRecordFor(records, "2026-03-31")?.fiscalYear).toBe("2025年3月期");
+    expect(priorRecordFor(records, "2024-03-31")).toBeNull(); // no earlier record
+    const skipped = [records[0], records[2]];
+    expect(priorRecordFor(skipped, "2026-03-31")).toBeNull(); // a missing year between them
+    const short = [records[0], { fiscalYear: "2025年9月期", periodEnd: "2025-09-30" }, records[2]];
+    expect(priorRecordFor(short, "2026-03-31")).toBeNull(); // a fiscal-year change in between
   });
 });
 
