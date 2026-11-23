@@ -1887,3 +1887,51 @@ spend the trust the verification exists to build).
 **検証**: data-integrity スイート58,648件全通過、対象テスト（analysis-decomposition）41件全通過。
 
 **Step 3 の完了**: 第1〜第4トランシェ（JCE-102〜105）で Step 3 は完了。残件は米国基準の明細対応、金融業型 IFRS の専用マップ、拡張要素で印字ラベルのない行の扱い（設計判断として別途）、IFRS の D2（有利子負債の内訳が検証できないため）の4点で、いずれも推測で埋めない原則による意図的な除外。
+
+## JCE-106 — 2026-11-24: SaaS Step 4 — 取得の完全無人化の棚卸し、訂正の自動適用、30日実証の開始
+
+運営者指示「進めていって」（2026-11-23）と構築順 Step 4。役割分担: 設計 = engineering、実装 = engineering、検証 = data-quality。
+
+### 棚卸し（実ファイル・実 cron・実 Actions 設定からの実測）
+
+| 工程 | 実体 | 自動化の実情 |
+|---|---|---|
+| 新規有報の検知（登録済み会社） | refresh-financials（Actions、日次07:00 JST）detect | 無人。検証→適用→PR まで propose が無人。マージは自動マージゲート（JCE-058）が実装済みだが repository variable AUTO_MERGE_FINANCIALS が未設定＝**現行は人がマージ**（有効化は運営者の判断事項として残す） |
+| 半期報告書（160/170） | interim-financials（同じ workflow 内、JCE-045） | 無人。ただし対象は **published のみ** |
+| 決算短信 Q1/Q3 | quarterly-earnings（同じ workflow 内、JCE-049、EDINET DB 日次枠80） | 無人。照合が閉じない会社は held |
+| 訂正有報（130） | amendment-audit（同じ workflow 内、日次） | **検知と推奨まで無人、適用は手元で1社ずつ手動**（apply-amendment、pipeline/state のある機械だけ）← 本件で自動化 |
+| 新規会社の検知 | watch-new-filings（ローカル、cron edinet-filings-watcher 毎日07:40） | 検知は無人。本文生成（AI）と承認は人 — 基盤スキームでも「最も残る」工程として分離済み |
+| statement-details（明細拡充） | 手動トランシェのみ（Step 3 で実施） | **定期実行なし**。workflow への追加は本書の「workflow 追加分」で分離 |
+| つながり（relatedCompanies） | 登録時のみ。refresh は segment/regional/workforce を差し替える | 本文工程に属し自動化しない |
+| 公開 | 分割デプロイ（Actions） | push 以降は無人 |
+
+### 実装1: 訂正の自動適用 `scripts/pipeline/apply-amendments-auto.mjs`
+
+監査の推奨（auditAction）を固定ルールで振り分け、適用は既存の apply-amendment.mjs（検証・スキーマ・整合性・ロールバックのゲート付き）に一社ずつ委ねる。自動で進めるのは (a) record-only（財務も本文も変わらない。エントリーは変えず処理済みとして閉じる）(b) already-current（登録値が既に有効文書と一致）(c) update-financials で登録値が原本と一致しているもの（陳腐化ではなく訂正と確定できるもの）(d) 本文のみ変更の needs-attention フラグ付け。登録値が原本とも一致しない会社・不完全な訂正・未登録会社は必ず保留し、理由つきで報告する。pipeline/state の identity が無い会社は、エントリーだけから合成する（identityFromEntry と同じ事実＋出典の publishedAt を提出日とする。既存 state は上書きしない）。既定はドライランで、`--apply` のときだけ書く。
+
+### 実装2: 30日実証 `scripts/pipeline/unattended-proof.mjs` と実証設計
+
+- **無人の範囲**: 検知→検証→適用（PR 作成まで）→記録。マージは現行（AUTO_MERGE_FINANCIALS 未設定）では人の行為なので範囲外とし、代わりに保留・失敗件数を毎日記録して滞留を見えるようにする。運営者が variable を有効化した場合は、その時点で範囲をマージまで広げて記録し直す。
+- **日次記録**: その日の EDINET 日次索引から、登録済み会社が提出した 120/130/160/170 を全件取り、各書類が「どのレーンが持っているか」を証拠で判定する（エントリーの到達期末・引用 docID、訂正索引、コミット済み実行記録 pipeline/runs、ウォッチャーのキュー）。判定できないものは推測で accounted にしない。
+- **検知漏れの定義**: accounted でなく、提出から3日（日次レーン＋索引確定の余裕）を超えた書類。見たが検証で止めた書類は「保留」として別に数える。interim レーンの対象外（published 以外の 160/170）は「対象外」として別に数える。索引が確定していない日は記録を書かずに止まる（綺麗な日として書かない）。
+- **照合の性質**: 記録は「その時点の証拠」で判定する。未マージ PR の中の処理は証拠に見えないため、日次は早期警告、**週次の再照合（過去7日をその時点の証拠で再判定）が正式な判定**とする。
+- **置き場と実行**: 日次ログは goal の hidden_files（step4-proof/unattended-log.jsonl）に追記する。実行は Hatch cron `jce-step4-daily-proof`（毎日08:30 JST、ウォッチャー07:40 と Actions 07:00 の後）と `jce-step4-weekly-reconcile`（日曜09:30 JST）。EDINET API（書類一覧）だけを使い、EDINET DB の共有枠には触れない。
+- **実証期間**: **2026-11-24 開始、2026-12-23 までの30日間**。完了条件は「30日無人＋検知漏れゼロ（週次再照合の判定で）」。
+
+### ベースライン計測（実証開始前の過去日での試走）
+
+2026-11-19: 検知26件・漏れ0（対象外6）。2026-11-20: 検知43件・**漏れ2件** — ともに公開企業の訂正半期報告書（170）で、ニプロ S100ZIZ3（2026-11-20提出）とセンコン物流 S100ZDPO（2026-11-10提出）。半期の訂正を能動的に適用するレーンが無く（interim は次回処理時に 170 を取り込む設計だが、この2社は実行記録に現れていない）、Step 4 の最初の発見として記録する。実証期間中に解消するか、週次再照合で追う。なお半期の index 行の periodEnd は提出者により年度末と半期末が混在するため、照合には使わない（interim-financials の既知の注意と同じ）。
+
+### 試走（12社、ドライラン、実測）
+
+候補は索引全体で268社。先頭12社で全区分を実測: record-only 7社、would-apply 3社（aeon・ai-storm・amiya、いずれも本文フラグ付け）、already-current 1社（arclands）、**held 1社（alt — apply-amendment 自身の検証は通過したが、ステージングした次エントリーが validate-file で落ちたため自動適用せず保留。既存データ側の問題が表面化したもので、バッチが作った変更ではない）**。ゲートが止めるべきものを止めることを含め、設計どおりに動いた。全268社の走査はダウンロード量が大きいため日次には載せず、workflow 追加後の Actions 側（キャッシュあり）で回す前提とする。ドライランでも pipeline/state（gitignore 対象の作業状態）だけは合成され得るが、エントリーデータは書かない。
+
+### workflow 追加分（ユーザーが GitHub Web UI で追加する分）
+
+`.github/workflows/` は GitHub コネクタの push では作成・更新できないため、次の2点は `docs/jce-106-workflow-addition.md` に正確な差分を用意して分離した。**未追加の間は「実装済み」とは言わない**。(1) propose ジョブに apply-amendments-auto --apply のステップを追加し、訂正の自動適用を日次 PR に同梱する。(2) statement-details の定期実行ステップ。追加されるまでは、訂正の自動適用は手元での --apply 実行が可能で、日次 cron がドライランで保留件数を実証ログに残す。
+
+### やらないこと
+
+- AUTO_MERGE_FINANCIALS の有効化（JCE-058 のスイッチは運営者の判断事項。有効化されれば無人の範囲がマージまで広がる）。
+- 本文生成・つながりの自動化（AI 依存工程は基盤から分離済み。新規登録の検知キューは既に無人）。
+- 米国基準・金融業型 IFRS の明細（Step 3 残件のまま）。
