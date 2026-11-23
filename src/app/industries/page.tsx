@@ -40,12 +40,18 @@ export default async function IndustriesPage() {
 
   return (
     <div>
-      <header className="mx-auto max-w-6xl px-5 pt-8 pb-6 md:px-8 md:pt-10">
-        <IndustryHero image={HUB_IMAGES.header} eyebrow="Industries" title="業界から、日本の産業を見る" priority />
-        <h1 className="mt-6 font-serif text-[1.875rem] font-semibold md:text-[2.5rem]">業界</h1>
-        <p className="mt-3 max-w-2xl text-[0.9375rem] leading-7 text-muted-foreground">
-          企業を、業界の中での位置と、業界どうしのつながりから見る。業界の仕組みを知ると、会社の役割が見えてきます。
-        </p>
+      {/* 2026-11-23 (JCE-099): the photograph is the header's ground, not a band above it — the title and the
+          lead sit on it, so the tabs and the first industries land in a phone's first screen. */}
+      <header className="relative overflow-hidden border-b border-border">
+        <Image src={HUB_IMAGES.header} alt="" fill priority placeholder="blur" sizes="100vw" className="object-cover opacity-40" />
+        <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/30 via-background/70 to-background" />
+        <div className="relative mx-auto max-w-6xl px-5 pt-6 pb-5 md:px-8 md:pt-12 md:pb-8">
+          <p className="eyebrow" aria-hidden>Industries</p>
+          <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">業界から、日本の産業を見る</h1>
+          <p className="mt-2 max-w-2xl text-sm leading-6 text-foreground/80">
+            企業を、業界の中での位置と、業界どうしのつながりから見る。業界の仕組みを知ると、会社の役割が見えてきます。
+          </p>
+        </div>
       </header>
 
       <SectionTabs sections={sections} containerId="industries-tabs" tabbed="always" />

@@ -10,9 +10,9 @@ export const metadata: Metadata = {
 
 export default function QuizPage() {
   return (
-    <div className="mx-auto max-w-2xl px-5 pt-12 pb-16 md:px-8 md:pt-16">
+    <div className="mx-auto max-w-2xl px-5 pt-5 pb-16 md:px-8 md:pt-5">
       <p className="eyebrow" aria-hidden>Daily quiz</p>
-      <h1 className="mt-3 font-serif text-[2rem] font-semibold">今日の1問</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">今日の1問</h1>
       <p className="prose-ja mt-3 text-muted-foreground">日本の会社について、毎日1問。日付が変わると（日本時間の0時）新しい問題になります。</p>
       <div className="mt-8">
         <DailyQuiz />

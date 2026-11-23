@@ -13,9 +13,9 @@ export default async function FeaturesPage() {
   const features = await featureRepository.list();
 
   return (
-    <div className="mx-auto max-w-6xl px-5 pt-12 pb-8 md:px-8 md:pt-20">
+    <div className="mx-auto max-w-6xl px-5 pt-5 pb-8 md:px-8 md:pt-10">
       <p className="eyebrow" aria-hidden>Features</p>
-      <h1 className="mt-3 font-serif text-[2rem] font-semibold md:text-[3rem]">特集</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">特集</h1>
       <p className="prose-ja mt-4 max-w-2xl text-muted-foreground">
         一つの問いから、企業と業界をまたいで読む。
       </p>

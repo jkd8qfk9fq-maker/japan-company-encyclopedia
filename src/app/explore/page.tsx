@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 export default function ExplorePage() {
   return (
-    <div className="mx-auto max-w-3xl px-5 pt-12 pb-16 md:px-8 md:pt-16">
+    <div className="mx-auto max-w-3xl px-5 pt-5 pb-16 md:px-8 md:pt-5">
       <p className="eyebrow" aria-hidden>Explore</p>
-      <h1 className="mt-3 font-serif text-[2rem] font-semibold">つながりをたどる</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">つながりをたどる</h1>
       <p className="prose-ja mt-3 text-muted-foreground">
         競合、仕入先と顧客、親会社と子会社。会社をタップすると、その会社のつながりに移ります。
       </p>

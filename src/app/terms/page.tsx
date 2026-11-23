@@ -18,9 +18,9 @@ export default async function TermsPage() {
   const byId = new Map(terms.map((t) => [t.id, t]));
 
   return (
-    <div className="mx-auto max-w-3xl px-5 pt-12 pb-8 md:px-8 md:pt-20">
+    <div className="mx-auto max-w-3xl px-5 pt-5 pb-8 md:px-8 md:pt-10">
       <p className="eyebrow" aria-hidden>Terms</p>
-      <h1 className="mt-3 font-serif text-[2rem] font-semibold md:text-[3rem]">用語集</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">用語集</h1>
       <p className="prose-ja mt-4 text-muted-foreground">
         企業と業界を理解するために必要な言葉だけを集めています。本文中の点線の言葉を押すと、その場で意味を確認できます。
       </p>

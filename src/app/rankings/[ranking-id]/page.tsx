@@ -39,7 +39,7 @@ export default async function RankingPage({ params }: Props) {
   return (
     <div className="mx-auto max-w-4xl px-5 py-10 md:px-8">
       <p className="text-sm"><Link href="/rankings" className="underline underline-offset-2">業界ランキング</Link></p>
-      <h1 className="mt-2 font-serif text-3xl font-semibold">{ranking.title}</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">{ranking.title}</h1>
       <p className="mt-2 text-sm text-muted-foreground">{ranking.measure}の大きい順。業界の良し悪しを示すものではありません。</p>
 
       {reading && (

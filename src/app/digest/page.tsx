@@ -27,9 +27,9 @@ export default async function DigestPage() {
   const digest = buildDigest(buildUpdates(companies, revisions, today), today);
 
   return (
-    <div className="mx-auto max-w-3xl px-5 pt-8 pb-16 md:px-8 md:pt-10">
+    <div className="mx-auto max-w-3xl px-5 pt-5 pb-16 md:px-8 md:pt-5">
       <p className="eyebrow" aria-hidden>Earnings digest</p>
-      <h1 className="mt-3 font-serif text-[2rem] font-semibold">決算定期便</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">決算定期便</h1>
       <p className="prose-ja mt-3 text-muted-foreground">
         ここは、学んだ読み方を実際の決算で試す、分析訓練の実践の場です。使い方の順序は、まず自分の予測を立てる（STEP 1）、開示された実績を確認する（STEP 2）、予測と実績を照合する（STEP 3）。予測の型はマイクロレッスンで学べます。各社の開示には、対象期間と検証済みの実績、その決算の読み方（マイクロレッスン）と企業レポート（分析5観点）への道筋を付けています。数字は各社の開示が載せた売上高と純利益そのものです。
       </p>

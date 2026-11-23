@@ -26,9 +26,9 @@ const TOPICS: { title: string; body: string }[] = [
 export default async function ContactPage() {
   const companies = (await companyRepository.list()).map((c) => ({ id: c.id, name: c.name }));
   return (
-    <div className="mx-auto max-w-3xl px-5 pt-12 pb-8 md:px-8 md:pt-20">
+    <div className="mx-auto max-w-3xl px-5 pt-5 pb-8 md:px-8 md:pt-10">
       <p className="eyebrow" aria-hidden>Contact</p>
-      <h1 className="mt-3 font-serif text-[2rem] font-semibold md:text-[2.75rem]">お問い合わせ・誤りの報告</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">お問い合わせ・誤りの報告</h1>
       <p className="prose-ja mt-4 text-muted-foreground">
         掲載内容は公開資料にもとづいていますが、誤りや古い情報が含まれることがあります。お気づきの点やご意見は、運営者 YUGENQ のフォームからお送りください。
       </p>

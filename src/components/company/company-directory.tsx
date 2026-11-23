@@ -2,6 +2,9 @@
 
 import { Search, X } from "lucide-react";
 import { useDeferredValue, useMemo, useState } from "react";
+
+/** Companies drawn at a time (2026-11-23): all 3,119 at once made the page about 720,000px tall on a phone. */
+const PAGE = 60;
 import type { CompanySummary } from "@/lib/company-summary";
 import { normalizeForSearch } from "@/lib/search/normalize";
 import { cn } from "@/lib/utils";
@@ -25,6 +28,7 @@ export function CompanyDirectory({
 }) {
   const [query, setQuery] = useState("");
   const [industry, setIndustry] = useState<IndustryId | null>(null);
+  const [shown, setShown] = useState(PAGE);
   const deferredQuery = useDeferredValue(query);
 
   const indexed = useMemo(
@@ -48,16 +52,19 @@ export function CompanyDirectory({
 
   return (
     <div>
-      <div className="flex flex-col gap-6">
+      <div className="flex flex-col gap-3">
         <label className="relative block max-w-xl">
           <span className="sr-only">企業名・証券コードで絞り込む</span>
           <Search aria-hidden className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted-foreground" />
           <input
             type="search"
             value={query}
-            onChange={(e) => setQuery(e.target.value)}
+            onChange={(e) => {
+              setQuery(e.target.value);
+              setShown(PAGE);
+            }}
             placeholder="企業名・証券コードで絞り込む"
-            className="h-12 w-full rounded-full border border-input bg-background pr-11 pl-11 text-base outline-none placeholder:text-muted-foreground focus-visible:border-foreground"
+            className="h-12 w-full rounded-full border border-input bg-card pr-11 pl-11 text-base outline-none placeholder:text-muted-foreground focus-visible:border-foreground"
           />
           {query && (
             <button
@@ -79,7 +86,10 @@ export function CompanyDirectory({
                 key={item.id ?? "all"}
                 type="button"
                 aria-pressed={selected}
-                onClick={() => setIndustry(item.id)}
+                onClick={() => {
+                  setIndustry(item.id);
+                  setShown(PAGE);
+                }}
                 className={cn(
                   "inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-full border px-4 text-sm transition-colors",
                   selected ? "border-foreground bg-foreground text-background" : "border-border hover:border-foreground",
@@ -93,18 +103,29 @@ export function CompanyDirectory({
         </div>
       </div>
 
-      <p className="figures mt-10 text-sm text-muted-foreground" aria-live="polite">
+      <p className="figures mt-4 text-xs text-muted-foreground" aria-live="polite">
         {results.length}社
       </p>
 
       {results.length > 0 ? (
-        <ul className="mt-4 grid grid-cols-[minmax(0,1fr)] gap-x-10 sm:grid-cols-2 lg:grid-cols-3">
-          {results.map((company) => (
-            <li key={company.id}>
-              <CompanyCard company={company} />
-            </li>
-          ))}
-        </ul>
+        <>
+          <ul className="mt-2 grid grid-cols-[minmax(0,1fr)] gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            {results.slice(0, shown).map((company) => (
+              <li key={company.id}>
+                <CompanyCard company={company} />
+              </li>
+            ))}
+          </ul>
+          {shown < results.length && (
+            <button
+              type="button"
+              onClick={() => setShown((n) => n + PAGE)}
+              className="mt-4 flex min-h-11 w-full items-center justify-center rounded-lg border border-border bg-card text-sm transition-colors hover:border-foreground"
+            >
+              さらに{Math.min(PAGE, results.length - shown)}社を表示（{shown}／{results.length}社）
+            </button>
+          )}
+        </>
       ) : (
         <div className="mt-8 border-t border-foreground py-16">
           <p className="font-serif text-xl font-semibold">該当する企業が見つかりませんでした。</p>

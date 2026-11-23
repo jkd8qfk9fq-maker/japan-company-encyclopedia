@@ -27,9 +27,9 @@ export default async function AnalysisPage() {
   }
 
   return (
-    <div className="mx-auto max-w-3xl px-5 pt-8 pb-16 md:px-8 md:pt-10">
+    <div className="mx-auto max-w-3xl px-5 pt-5 pb-16 md:px-8 md:pt-5">
       <p className="eyebrow" aria-hidden>Analysis</p>
-      <h1 className="mt-3 font-serif text-[2rem] font-semibold">企業分析（5観点）</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">企業分析（5観点）</h1>
       <p className="prose-ja mt-3 text-muted-foreground">
         企業の数字を、規模と地位・成長・収益性・財務の安定・外部環境との接続の5観点で読む仕組みです。各社のレポートページ（企業ページの「企業レポート」）に、その会社の分析が付いています。
       </p>

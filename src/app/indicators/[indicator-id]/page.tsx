@@ -74,13 +74,13 @@ export default async function IndicatorPage({ params }: PageProps<"/indicators/[
   const related = industriesForIndicator(indicator.id);
 
   return (
-    <div className="mx-auto max-w-3xl px-5 pt-8 pb-16 md:px-8 md:pt-10">
+    <div className="mx-auto max-w-3xl px-5 pt-5 pb-16 md:px-8 md:pt-5">
       <p className="text-sm">
         <Link href="/analysis" className="text-muted-foreground underline underline-offset-4 hover:text-foreground">
           ← 企業分析（5観点）へ
         </Link>
       </p>
-      <h1 className="mt-4 font-serif text-[2rem] font-semibold">{indicator.name}</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">{indicator.name}</h1>
       <p className="mt-2 text-sm leading-6 text-muted-foreground">
         出典:{" "}
         <a href={indicator.source.url} target="_blank" rel="noopener" className="underline underline-offset-4">
