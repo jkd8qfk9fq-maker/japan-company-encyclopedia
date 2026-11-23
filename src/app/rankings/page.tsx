@@ -17,8 +17,11 @@ export default async function RankingsPage() {
     <div className="mx-auto max-w-6xl px-5 py-10 md:px-8">
       <p className="text-xs font-semibold tracking-widest text-muted-foreground">RANKINGS</p>
       <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">業界ランキング</h1>
-      <p className="mt-3 max-w-2xl text-sm leading-7 text-muted-foreground">
-        掲載している{data.totals.companies.toLocaleString("ja-JP")}社の有価証券報告書の数値から、業界ごとに集計して並べました。数値が大きい順の並びで、業界の良し悪しを示すものではありません。数字の裏付けとなる会社が{MIN_COMPANIES}社未満の業界は順位をつけていません。
+      <p className="mt-1.5 max-w-2xl text-sm leading-6 text-muted-foreground">
+        掲載{data.totals.companies.toLocaleString("ja-JP")}社の有価証券報告書の数値を、業界ごとに集計して大きい順に並べました。
+      </p>
+      <p className="mt-1 max-w-2xl text-[0.6875rem] leading-5 text-muted-foreground">
+        業界の良し悪しを示すものではありません。裏付けとなる会社が{MIN_COMPANIES}社未満の業界は順位をつけていません。
       </p>
       <ul className="mt-8 grid gap-5 md:grid-cols-2">
         {rankings.map((r) => (

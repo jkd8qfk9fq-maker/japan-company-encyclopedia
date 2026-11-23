@@ -13,9 +13,7 @@ export default function NetworkPage() {
     <div className="mx-auto max-w-4xl px-5 pt-5 pb-16 md:px-8 md:pt-5">
       <p className="eyebrow" aria-hidden>Network</p>
       <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">企業ネットワーク</h1>
-      <p className="prose-ja mt-3 text-muted-foreground">
-誰から仕入れ、誰に売り、誰と競っているか。1社を真ん中に置いて、回して眺め、気になる会社へ移れます。
-      </p>
+      <p className="mt-1.5 max-w-2xl text-sm leading-6 text-muted-foreground">誰から仕入れ、誰に売り、誰と競っているか。1社を真ん中に置いてたどれます。</p>
       <div className="mt-8">
         <NetworkStage />
       </div>
