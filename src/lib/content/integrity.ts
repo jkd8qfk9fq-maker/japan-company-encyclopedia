@@ -212,10 +212,16 @@ export function checkCompany(company: Company, context: ContentContext): string[
         e.push(`${where}: 書類IDが出典にありません`);
       }
       e.push(
-        ...yenErrors([...s.incomeStatement, ...s.balanceSheet].map((l) => l.amount), where),
+        ...yenErrors([...s.incomeStatement, ...s.balanceSheet, ...(s.cashFlowStatement ?? [])].map((l) => l.amount), where),
         ...citationErrors(s.sourceIds, src, where),
         ...noWikipedia(s.sourceIds, where),
       );
+      // JCE-102: a cash-flow block is kept whole or not at all — the two rows C2 rests on, together.
+      if (s.cashFlowStatement) {
+        const cfRoles = new Set(s.cashFlowStatement.map((l) => l.role));
+        if (!cfRoles.has("operating-cash-flow")) e.push(`${where}: キャッシュ・フローに営業キャッシュフローの行がありません`);
+        if (!cfRoles.has("capital-expenditure")) e.push(`${where}: キャッシュ・フローに設備投資の行がありません`);
+      }
       const one = (lines: typeof s.incomeStatement, role: string) => lines.find((l) => l.role === role)?.amount ?? null;
       const pairs: [string, number | null, number | null][] = [
         ["売上", one(s.incomeStatement, "revenue"), rec.revenue],
@@ -236,7 +242,7 @@ export function checkCompany(company: Company, context: ContentContext): string[
   const rows: { fiscalYear: string; labels: (string | null)[] }[] = [
     ...company.financials.map((r) => ({ fiscalYear: r.fiscalYear, labels: [r.revenueLabel, r.profitLabel, r.netIncomeLabel, r.totalAssetsLabel, r.netAssetsLabel] })),
     ...(company.interimFinancials ?? []).map((r) => ({ fiscalYear: r.fiscalYear, labels: [r.revenueLabel, r.netIncomeLabel] })),
-    ...(company.financialStatements ?? []).map((s) => ({ fiscalYear: s.fiscalYear, labels: [...s.incomeStatement, ...s.balanceSheet].map((l) => l.label) })),
+    ...(company.financialStatements ?? []).map((s) => ({ fiscalYear: s.fiscalYear, labels: [...s.incomeStatement, ...s.balanceSheet, ...(s.cashFlowStatement ?? [])].map((l) => l.label) })),
   ];
   for (const r of rows) {
     for (const label of r.labels) {

@@ -382,7 +382,7 @@ describe("real data reconciliation", () => {
     const released = companies.filter(isReleased);
     const target = released.find((c) => c.id === "misumi-group")!;
     expect(target).toBeDefined();
-    for (const id of ["a1", "a2", "a3", "b1", "c1", "e1", "f2", "f3", "d1", "f1", "a-full", "b2", "d2"]) {
+    for (const id of ["a1", "a2", "a3", "b1", "c1", "c2", "e1", "f2", "f3", "d1", "f1", "a-full", "b2", "d2"]) {
       expect(runDecompModule(id, target, released).status, id).toBe("ok");
     }
   });
@@ -417,6 +417,11 @@ const MISUMI_STMT: { prev: FinancialStatements; latest: FinancialStatements } = 
     ],
     balanceSheet: [
       line("cash-and-deposits", 159_296_000_000),
+      line("accounts-receivable", 78_390_000_000, "受取手形及び売掛金"),
+      line("inventories", 57_186_000_000, "商品及び製品"),
+      line("inventories", 3_661_000_000, "仕掛品"),
+      line("inventories", 8_805_000_000, "原材料及び貯蔵品"),
+      line("accounts-payable", 21_189_000_000, "支払手形及び買掛金"),
       line("total-assets", 419_574_000_000),
       line("share-capital", 14_483_000_000),
       line("capital-surplus", 24_585_000_000),
@@ -424,6 +429,10 @@ const MISUMI_STMT: { prev: FinancialStatements; latest: FinancialStatements } = 
       line("accumulated-other-comprehensive-income", 45_020_000_000),
       line("non-controlling-interests", 1_116_000_000),
       line("total-net-assets", 352_064_000_000),
+    ],
+    cashFlowStatement: [
+      line("operating-cash-flow", 60_461_000_000, "営業活動によるキャッシュ・フロー"),
+      line("capital-expenditure", -15_434_000_000, "固定資産の取得による支出"),
     ],
   },
   latest: {
@@ -445,6 +454,11 @@ const MISUMI_STMT: { prev: FinancialStatements; latest: FinancialStatements } = 
     ],
     balanceSheet: [
       line("cash-and-deposits", 112_941_000_000),
+      line("accounts-receivable", 98_520_000_000, "受取手形及び売掛金"),
+      line("inventories", 60_171_000_000, "商品及び製品"),
+      line("inventories", 3_094_000_000, "仕掛品"),
+      line("inventories", 10_172_000_000, "原材料及び貯蔵品"),
+      line("accounts-payable", 29_852_000_000, "支払手形及び買掛金"),
       line("total-assets", 464_969_000_000),
       line("share-capital", 14_727_000_000),
       line("capital-surplus", 24_721_000_000),
@@ -452,6 +466,10 @@ const MISUMI_STMT: { prev: FinancialStatements; latest: FinancialStatements } = 
       line("accumulated-other-comprehensive-income", 70_094_000_000),
       line("non-controlling-interests", 1_383_000_000),
       line("total-net-assets", 382_509_000_000),
+    ],
+    cashFlowStatement: [
+      line("operating-cash-flow", 52_190_000_000, "営業活動によるキャッシュ・フロー"),
+      line("capital-expenditure", -14_288_000_000, "固定資産の取得による支出"),
     ],
   },
 };
@@ -504,6 +522,65 @@ describe("golden values, Phase 2 (Misumi statements, hand-computed from the prin
     expect(rowOf(r, "d2-nopat-change")!.value).toBeCloseTo(5_768_241_371, -2);
     expect(rowOf(r, "d2-ic-change")!.value).toBe(76_800_000_000);
     expect(rowOf(r, "d2-funding-rate")).toBeUndefined();
+  });
+
+  it("C2 states Misumi's funding gap from the printed cash-flow and working-capital lines", () => {
+    const r = runDecompModule("c2", misumiStmt, [misumiStmt]);
+    // Working capital: 2025 = 78,390 + (57,186 + 3,661 + 8,805) − 21,189 = 126,853M;
+    // 2026 = 98,520 + (60,171 + 3,094 + 10,172) − 29,852 = 142,105M (hand-computed, in millions).
+    expect(rowOf(r, "c2-operating-cash-flow")!.value).toBe(52_190_000_000);
+    expect(rowOf(r, "c2-operating-cash-flow")!.kind).toBe("printed");
+    expect(rowOf(r, "c2-capex")!.value).toBe(14_288_000_000);
+    expect(rowOf(r, "c2-working-capital")!.value).toBe(142_105_000_000);
+    expect(rowOf(r, "c2-working-capital-change")!.value).toBe(15_252_000_000);
+    // Gap = capex + ΔWC − operating CF = 14,288 + 15,252 − 52,190 = −22,650M.
+    expect(rowOf(r, "c2-gap")!.value).toBe(-22_650_000_000);
+    expect(ok(r).note).toContain("固定資産の取得による支出");
+  });
+});
+
+describe("C2 funding gap (JCE-102)", () => {
+  it("does not double-count inventories where the filing prints components and their total", () => {
+    const prev: FinancialStatements = {
+      ...MISUMI_STMT.prev,
+      balanceSheet: [
+        line("accounts-receivable", 100, "受取手形及び売掛金"),
+        line("inventories", 40, "商品及び製品"),
+        line("inventories", 10, "原材料及び貯蔵品"),
+        line("inventories", 50, "棚卸資産"),
+        line("accounts-payable", 30, "支払手形及び買掛金"),
+      ],
+    };
+    const latest: FinancialStatements = {
+      ...MISUMI_STMT.latest,
+      balanceSheet: [
+        line("accounts-receivable", 120, "受取手形及び売掛金"),
+        line("inventories", 44, "商品及び製品"),
+        line("inventories", 11, "原材料及び貯蔵品"),
+        line("inventories", 55, "棚卸資産"),
+        line("accounts-payable", 35, "支払手形及び買掛金"),
+      ],
+    };
+    const c = stmtCompany("c2-total-inventories", "machinery", prev, latest);
+    const r = runDecompModule("c2", c, [c]);
+    // WC = 120 + 55 − 35 = 140 (the printed total), not 120 + 44 + 11 + 55 − 35.
+    expect(rowOf(r, "c2-working-capital")!.value).toBe(140);
+  });
+
+  it("is suppressed whole where the newest year carries no cash-flow rows", () => {
+    const latest: FinancialStatements = { ...MISUMI_STMT.latest };
+    delete latest.cashFlowStatement;
+    const c = stmtCompany("c2-no-cf", "machinery", MISUMI_STMT.prev, latest);
+    expect(runDecompModule("c2", c, [c]).status).toBe("suppressed");
+  });
+
+  it("is suppressed whole where a working-capital line is not printed", () => {
+    const prev: FinancialStatements = {
+      ...MISUMI_STMT.prev,
+      balanceSheet: MISUMI_STMT.prev.balanceSheet.filter((l) => l.role !== "accounts-payable"),
+    };
+    const c = stmtCompany("c2-no-payables", "machinery", prev, MISUMI_STMT.latest);
+    expect(runDecompModule("c2", c, [c]).status).toBe("suppressed");
   });
 });
 
