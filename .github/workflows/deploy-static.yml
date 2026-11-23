@@ -50,5 +50,7 @@ jobs:
             name=$(jq -r ".[$i].name" .deploy-manifest.json)
             config=$(jq -r ".[$i].config" .deploy-manifest.json)
             echo "== Deploying $name with $config"
+            # A repack can move a prefix between shards; free its route from the old Worker first (JCE-079).
+            node scripts/release-shard-routes.mjs "$config"
             npx -y wrangler@4 deploy --config "$config"
           done
