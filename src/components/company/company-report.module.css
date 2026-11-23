@@ -3,6 +3,12 @@
  * (header, footer, bottom navigation, ads) is not part of it. This module is only loaded by the report
  * page, so these print rules can only ever apply there. Type tightens so five periods and the computed
  * layer fit A4 in one to two pages.
+ *
+ * JCE-101: the printout is also the PDF output of the analysis layer (Step 2). The full analysis
+ * sections (分布・推移・経済指標) render only for an entitled browser (analysis-gate.tsx), so a
+ * PDF saved without an entitlement holds the free part only — the same boundary as the screen.
+ * The analysis tables are wider than the summary tables (四分位・順位・パーセンタイル), so they
+ * get one step smaller type rather than a sideways cut.
  */
 @media print {
   .report {
