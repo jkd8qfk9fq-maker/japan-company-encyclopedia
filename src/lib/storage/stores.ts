@@ -106,7 +106,8 @@ export type UserSettings = {
 
 const THEMES: readonly ThemePreference[] = ["system", "light", "dark"];
 
-export const defaultSettings: UserSettings = { theme: "system" };
+// Dark is the house theme (operator design, 2026-11-23): a reader who has not chosen sees the dark layout.
+export const defaultSettings: UserSettings = { theme: "dark" };
 
 export const settingsStore = createStore<UserSettings>(
   STORAGE_KEYS.settings,

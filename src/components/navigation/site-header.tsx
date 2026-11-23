@@ -5,6 +5,7 @@ import { SearchSuggest } from "@/components/search/search-suggest";
 import { featureRepository, termRepository } from "@/lib/repositories";
 import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
 import { NavLink } from "./nav-link";
+import { SiteMenu } from "./site-menu";
 import { desktopNavigation } from "./navigation-items";
 
 /**
@@ -40,8 +41,11 @@ export async function SiteHeader() {
           ))}
         </nav>
 
-        {/* On phones the bell is the header's only control: お知らせ has no place in the bottom bar. */}
-        <NotificationBell className="-mr-3 md:hidden" />
+        {/* On phones: the bell and the menu, which lists every page the bottom bar does not (2026-11-23). */}
+        <div className="-mr-3 flex items-center md:hidden">
+          <NotificationBell />
+          <SiteMenu hidden={hidden} />
+        </div>
 
         <div className="hidden items-center gap-2 md:flex">
           <SearchSuggest id="header-search" variant="header" />
@@ -54,6 +58,7 @@ export async function SiteHeader() {
             <Settings className="size-[1.15rem]" aria-hidden />
             <span className="sr-only">設定</span>
           </NavLink>
+          <SiteMenu hidden={hidden} />
         </div>
       </div>
     </header>

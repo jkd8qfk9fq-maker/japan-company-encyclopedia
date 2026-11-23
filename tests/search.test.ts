@@ -40,8 +40,13 @@ describe("searchEntries", () => {
     entry("c", ["電池"], "電池"),
   ];
 
-  it("puts an exact key first, then every other match in 50音順", () => {
-    expect(searchEntries(entries, "電池").map((e) => e.id)).toEqual(["c", "a", "b"]);
+  it("puts an exact key first, then a name that starts with the query, then text that only mentions it", () => {
+    expect(searchEntries(entries, "電池").map((e) => e.id)).toEqual(["c", "b", "a"]);
+  });
+
+  it("lists the company named by the query above one whose business text mentions it (トヨタ, 2026-11-23)", () => {
+    const list = [entry("kamei", ["カメイ"], "カメイ トヨタ車の販売"), entry("toyota", ["トヨタ自動車"], "トヨタ自動車"), entry("mtoyota", ["豊田通商"], "豊田通商 トヨタグループ")];
+    expect(searchEntries(list, "トヨタ").map((e) => e.id)).toEqual(["toyota", "kamei", "mtoyota"]);
   });
 
   it("orders by the reading when one is given, hiragana and katakana alike", () => {
