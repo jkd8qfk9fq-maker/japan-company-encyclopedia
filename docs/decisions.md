@@ -1027,6 +1027,13 @@ shown, and to keep the rest unreleased until a person has looked.
   person resolves them — promotion to `published`, or adding the id here once the notes are facts only.
 - Invariant 1 is unchanged: what the released pages say is sourced; what could not be verified is absent and, where it
   matters, the note says so.
+- **2026-11-23, +126 (1,006 listed)**: at the operator's request, the 711 unreleased entries were run through the same
+  rules (`releaseReadiness` and the note patterns of `tests/release.test.ts`), and every note of the 172 that passed
+  was read by Claude. 126 whose notes are facts only were added (going-concern disclosures as printed, tender offers,
+  stock splits, post-balance-sheet events, lawsuits). Left out: 46 whose notes leave something to confirm or decide
+  that the patterns did not catch (確認できません, 人による確認を推奨, an open question about the filing, a
+  provisional industry), and 32 whose notes were stored as the text `[object Object]` — a defect to repair before they
+  can be judged.
 
 ### JCE-058 · 2026-11-17 · Accepted (operator, 2026-11-17) — A financial-update pull request may merge itself when every change was vouched for
 
