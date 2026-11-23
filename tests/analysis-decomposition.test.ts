@@ -386,6 +386,25 @@ describe("real data reconciliation", () => {
       expect(runDecompModule(id, target, released).status, id).toBe("ok");
     }
   });
+
+  it("computes the statement modules for IFRS entries registered in JCE-103", () => {
+    const released = companies.filter(isReleased);
+    // AGC: IFRS statements with cash-flow lines, so C2 closes from IFRS working capital.
+    const agc = released.find((c) => c.id === "agc")!;
+    expect(agc).toBeDefined();
+    for (const id of ["a-full", "b2", "c2"]) {
+      expect(runDecompModule(id, agc, released).status, `agc ${id}`).toBe("ok");
+    }
+    // Bridgestone: discontinued operations are registered as their own printed lines, and
+    // the decomposition closes on the total net profit.
+    const bridgestone = released.find((c) => c.id === "bridgestone")!;
+    expect(bridgestone).toBeDefined();
+    for (const id of ["a-full", "b2"]) {
+      expect(runDecompModule(id, bridgestone, released).status, `bridgestone ${id}`).toBe("ok");
+    }
+    const latest = bridgestone.financialStatements!.at(-1)!;
+    expect(latest.incomeStatement.some((l) => l.role === "discontinued-profit")).toBe(true);
+  });
 });
 
 /* ---------- Phase 2 detail modules (JCE-098) ---------- */
