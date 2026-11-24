@@ -1,0 +1,37 @@
+name: PR checks
+
+# The commit gate (CLAUDE.md "Gate every commit on exit codes") run on every pull request into main, so a change made
+# in the hosted admin app (JCE-109) — or anywhere else — is tested before it can be merged. The admin app's 承認管理
+# reads this run's result and lets an approver merge only when it passed. Each step's exit code decides; nothing is
+# grepped.
+
+on:
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: pr-checks-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    name: typecheck, lint, tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      NODE_OPTIONS: --max-old-space-size=6144
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      # Route and asset types come from Next's type generation; without them tsc cannot resolve image imports.
+      - run: npx next typegen
+      - run: npx tsc --noEmit -p .
+      - run: npx eslint src tests
+      - run: npx vitest run --maxWorkers=2

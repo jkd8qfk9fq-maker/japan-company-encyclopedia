@@ -172,7 +172,7 @@ export function renderDashboard(d: DashboardData, identity: { email: string; exp
     ? pulls.length
       ? `<div class="tw"><table><thead><tr><th>番号</th><th>題名</th><th>状態</th><th>作成日</th></tr></thead><tbody>${pulls
           .slice(0, 8)
-          .map((p) => `<tr><td>#${p.number}</td><td><a href="${esc(p.url)}">${esc(p.title)}</a>${p.fromAdmin ? ' <span class="pill">管理画面</span>' : ""}</td><td>${CHECK_LABEL[p.checks]}</td><td>${esc(p.created.slice(0, 10))}</td></tr>`)
+          .map((p) => `<tr><td>#${p.number}</td><td><a href="/approvals/${p.number}">${esc(p.title)}</a>${p.fromAdmin ? ' <span class="pill">管理画面</span>' : ""}</td><td>${CHECK_LABEL[p.checks]}</td><td>${esc(p.created.slice(0, 10))}</td></tr>`)
           .join("")}</tbody></table></div><p class="muted"><a href="/approvals">承認管理ですべて見る</a></p>`
       : `<p class="muted">承認待ちの変更はありません。</p>`
     : `<p class="bad">取得できません：${esc(d.pulls.error)}</p>`;
