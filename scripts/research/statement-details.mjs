@@ -314,6 +314,36 @@ const CF_CAPEX_ELEMENTS = [
   "PurchaseOfPropertyPlantAndEquipmentAndIntangibleAssetsInvCFIFRS",
 ];
 
+const CF_INV_ELEMENT = {
+  jgaap: "NetCashProvidedByUsedInInvestmentActivities",
+  ifrs: "NetCashProvidedByUsedInInvestingActivitiesIFRS",
+};
+const CF_INV_SUMMARY_ELEMENT = {
+  jgaap: "NetCashProvidedByUsedInInvestingActivitiesSummaryOfBusinessResults",
+  ifrs: "CashFlowsFromUsedInInvestingActivitiesIFRSSummaryOfBusinessResults",
+};
+
+/**
+ * The depreciation line of the operating section (JCE-110), found by the filer's printed label rather than one
+ * element name: filers tag it 減価償却費, 減価償却費及び償却費 or 減価償却費及びその他の償却費 under different
+ * elements. Exactly one operating-section row whose label starts with 減価償却 is taken; none, or more than one
+ * (e.g. 減価償却費 and 減価償却費（のれんを除く） printed side by side), keeps no row rather than choosing.
+ */
+function findDepreciation(map) {
+  const hits = [];
+  for (const [element, entry] of map) {
+    if (!/OpeCF(IFRS)?$/.test(element)) continue;
+    const label = cfOperatingLabel(entry.label);
+    if (label.startsWith("減価償却")) hits.push({ ...entry, label });
+  }
+  if (hits.length === 1) return { entry: hits[0] };
+  return { reason: hits.length === 0 ? "減価償却費の行が読めない" : `減価償却費の行が複数ある (${hits.map((h) => h.label).join("・")})` };
+}
+
+function cfOperatingLabel(label) {
+  return label.replace(/、営業活動によるキャッシュ・フロー（IFRS）$/, "").replace(/、営業活動によるキャッシュ・フロー$/, "").trim();
+}
+
 /** A capex row's taxonomy label carries its section as a suffix, like a note item's does. */
 function cfItemLabel(label) {
   return label.replace(/、投資活動によるキャッシュ・フロー（IFRS）$/, "").replace(/、投資活動によるキャッシュ・フロー$/, "").trim();
@@ -343,8 +373,30 @@ function buildCashFlow(map, standard) {
     lines: [
       { role: "operating-cash-flow", label: stageLabel(op.label, op.amount), amount: op.amount },
       { role: "capital-expenditure", label: capexLabel, amount: capex.amount },
+      ...cashFlowExtras(map, standard).lines,
     ],
   };
+}
+
+/**
+ * The two rows JCE-110 adds, each optional on its own: a year whose depreciation line or investing total
+ * cannot be read or checked keeps its operating and capex rows and simply lacks that row (the reason is logged).
+ */
+function cashFlowExtras(map, standard) {
+  const lines = [];
+  const notes = [];
+  const dep = findDepreciation(map);
+  if (dep.entry) lines.push({ role: "depreciation", label: dep.entry.label, amount: dep.entry.amount });
+  else notes.push(dep.reason);
+  const inv = map.get(CF_INV_ELEMENT[standard] ?? CF_INV_ELEMENT.jgaap);
+  const invSummary = map.get(CF_INV_SUMMARY_ELEMENT[standard] ?? CF_INV_SUMMARY_ELEMENT.jgaap);
+  // Unlike the operating total, the summary is required: every consolidated filer prints it in 経営指標等, and
+  // requiring it means a mistaken element name yields no row rather than an unchecked one.
+  if (!inv) notes.push("投資キャッシュフローの行が読めない");
+  else if (!invSummary) notes.push("投資キャッシュフローの経営指標等の値が読めない");
+  else if (invSummary.amount !== inv.amount) notes.push(`投資キャッシュフローが経営指標等の値と一致しない (${inv.amount} ≠ ${invSummary.amount})`);
+  else lines.push({ role: "investing-cash-flow", label: stageLabel(inv.label, inv.amount), amount: inv.amount });
+  return { lines, notes };
 }
 
 const byRole = (lines, role) => lines.filter((l) => l.role === role);
@@ -512,6 +564,81 @@ function cashflowBackfill(ids, write) {
 }
 
 /**
+ * The --cashflow-extras backfill (JCE-110, 意味の層 第2段階): add the depreciation line and the investing total
+ * to cash-flow blocks already registered, reading the filing each block names. Purely additive: a year is touched
+ * only where the re-read operating total and capex line equal the registered ones exactly, and only the rows that
+ * could be read and checked are added. Without --fetch it is cache-only like every bulk mode; with --fetch
+ * (the hand-started Actions run, which holds the EDINET key) a document not in the cache is downloaded once.
+ * No revision, no `updatedAt` (the JCE-097/098 bulk precedent).
+ */
+async function cashflowExtrasBackfill(ids, write, fetchMissing) {
+  const same = (a, b) => a && b && a.label === b.label && a.amount === b.amount;
+  for (const id of ids) {
+    const entryPath = join(root, "src/data/companies", `${id}.json`);
+    const entry = JSON.parse(readFileSync(entryPath, "utf8"));
+    const blocks = entry.financialStatements ?? [];
+    const todo = blocks.filter((s) => s.cashFlowStatement && s.docId && !s.cashFlowStatement.some((l) => l.role === "depreciation" || l.role === "investing-cash-flow"));
+    if (todo.length === 0) {
+      console.log(`CFX-RESULT ${id} nothing-to-do`);
+      continue;
+    }
+    const next = blocks.map((s) => ({ ...s }));
+    const notes = [];
+    let added = 0;
+    for (const docId of [...new Set(todo.map((s) => s.docId))]) {
+      let zip = cachedZipPath(docId);
+      if (!zip && fetchMissing) {
+        try {
+          zip = await downloadDocument(docId, 5);
+          await new Promise((r) => setTimeout(r, 300));
+        } catch (error) {
+          notes.push(`download-failed ${docId}: ${error.message}`);
+          continue;
+        }
+      }
+      if (!zip) {
+        notes.push(`not-cached ${docId}`);
+        continue;
+      }
+      let rows;
+      try {
+        rows = readCsvRows(zip);
+      } catch (error) {
+        notes.push(`unreadable-csv ${docId}: ${error.message}`);
+        continue;
+      }
+      const inDoc = next.map((s, i) => [s, i]).filter(([s]) => s.docId === docId);
+      const currentEnd = inDoc.map(([s]) => s.periodEnd).sort().at(-1);
+      for (const [s, i] of inDoc) {
+        if (!todo.includes(blocks[i])) continue;
+        const ctx = s.periodEnd === currentEnd ? "CurrentYear" : "Prior1Year";
+        let map, base;
+        try {
+          map = contextRows(rows, `${ctx}Duration`);
+          base = buildCashFlow(map, s.accountingStandard);
+        } catch (error) {
+          notes.push(`${s.fiscalYear}: ${error.message}`);
+          continue;
+        }
+        const registered = s.cashFlowStatement;
+        const role = (lines, r) => lines?.find((l) => l.role === r);
+        if (!base.lines || !same(role(base.lines, "operating-cash-flow"), role(registered, "operating-cash-flow")) || !same(role(base.lines, "capital-expenditure"), role(registered, "capital-expenditure"))) {
+          notes.push(`${s.fiscalYear}: 再読した営業CF・設備投資が登録済みと一致しない`);
+          continue;
+        }
+        const extras = cashFlowExtras(map, s.accountingStandard);
+        notes.push(...extras.notes.map((n) => `${s.fiscalYear}: ${n}`));
+        if (extras.lines.length === 0) continue;
+        next[i] = { ...s, cashFlowStatement: [...registered, ...extras.lines] };
+        added += extras.lines.length;
+      }
+    }
+    if (added > 0 && write) writeFileSync(entryPath, `${JSON.stringify({ ...entry, financialStatements: next }, null, 2)}\n`);
+    console.log(`CFX-RESULT ${id} added=${added}${notes.length > 0 ? ` notes=${notes.join("／")}` : ""}`);
+  }
+}
+
+/**
  * The --balance-sheet backfill (JCE-102): re-read the filing each block names and widen the
  * balance sheet where the element map has grown (trade-receivable / trade-payable components,
  * for C2's working capital). Purely additive by construction: a year is rewritten only where
@@ -612,6 +739,10 @@ async function main() {
   const bulk = args.includes("--bulk");
   const ids = args.filter((a) => !a.startsWith("--"));
   if (ids.length === 0) throw new Error("company id を1つ以上指定してください");
+  if (args.includes("--cashflow-extras")) {
+    await cashflowExtrasBackfill(ids, write, args.includes("--fetch"));
+    return;
+  }
   if (args.includes("--cashflow")) {
     cashflowBackfill(ids, write);
     return;

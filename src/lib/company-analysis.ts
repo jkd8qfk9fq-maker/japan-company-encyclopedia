@@ -65,6 +65,8 @@ export type AnalysisGroup = {
   title: string;
   rows: AnalysisRow[];
   note?: string;
+  /** The likely-scope-change flag (a ±30% swing in revenue or total assets), carried with the meaning layer's sentences (JCE-110). */
+  caution?: string;
 };
 
 export type AnalysisPerspective = {

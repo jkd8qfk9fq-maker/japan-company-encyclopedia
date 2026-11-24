@@ -113,6 +113,11 @@ function bigChangeNote(pair: Pair): string | null {
   return parts.length > 0 ? `前期比で${parts.join("と")}が30%を超えて変動しています。連結範囲の変更などが含まれている場合があります。` : null;
 }
 
+const caution = (pair: Pair): { caution?: string } => {
+  const note = bigChangeNote(pair);
+  return note ? { caution: note } : {};
+};
+
 function position(own: number, peers: Company[], read: (c: Company) => number | null): IndustryPosition | null {
   const values = peers.map(read).filter((v): v is number => v !== null);
   return industryPosition(own, values);
@@ -205,6 +210,7 @@ const a1: DecompModuleDef = {
           row("a1-net-income-change", "純利益の増減", `最新期の${latest.netIncomeLabel} − 前期の${prev.netIncomeLabel}`, values.netIncomeChange, (v) => v.netIncomeChange),
         ],
         ...(notes.length > 0 ? { note: notes.join("") } : {}),
+        ...caution(checked.pair),
       },
     };
   },
@@ -423,7 +429,7 @@ const a3: DecompModuleDef = {
       values.oneSided > 0 ? "片方の期にしかない事業の金額は、調整額に含まれます。" : null,
       bigChangeNote(checked.pair),
     ].filter((n): n is string => n !== null);
-    return { status: "ok", group: { id: "a3", title: "セグメント別の売上寄与", rows, note: notes.join("") } };
+    return { status: "ok", group: { id: "a3", title: "セグメント別の売上寄与", rows, note: notes.join(""), ...caution(checked.pair) } };
   },
 };
 
@@ -658,6 +664,7 @@ const b1: DecompModuleDef = {
         title: "純資産の増減の内訳",
         rows,
         note: "その他増減には、配当や自己株式の取得、その他包括利益、資本取引のほか、非支配株主持分の変動も含まれます。",
+        ...caution(checked.pair),
       },
     };
   },
@@ -833,7 +840,7 @@ const c1: DecompModuleDef = {
         : []),
     ];
     const note = bigChangeNote(checked.pair);
-    return { status: "ok", group: { id: "c1", title: "総資産の増減と調達の内訳", rows, ...(note ? { note } : {}) } };
+    return { status: "ok", group: { id: "c1", title: "総資産の増減と調達の内訳", rows, ...(note ? { note } : {}), ...caution(checked.pair) } };
   },
 };
 
@@ -846,6 +853,12 @@ type C2Values = {
   workingCapital: number;
   workingCapitalChange: number;
   gap: number;
+  /** JCE-110: printed where registered; absent rows are simply not shown. */
+  depreciation: number | null;
+  depreciationLabel: string | null;
+  investingCashFlow: number | null;
+  /** The prior year's capex outlay from the same filing's prior column, when that block carries it. */
+  prevCapex: number | null;
 };
 
 /** Working capital from the printed balance-sheet lines: 売上債権 + 棚卸資産 − 仕入債務. */
@@ -899,7 +912,15 @@ function c2Values(c: Company): C2Values | null {
   if (op === null || !capexLine) return null;
   // The acquisition line is filed as an outflow (negative); the gap is stated in outlay amounts.
   const capex = Math.abs(capexLine.amount);
+  const dep = cf.find((l) => l.role === "depreciation") ?? null;
+  // Only across one filing: the formula promises 同じ有報の前期欄, so two blocks read from different documents are not compared.
+  const sameFiling = pair.prev.docId !== undefined && pair.prev.docId === pair.latest.docId;
+  const prevCapexLine = sameFiling ? (pair.prev.cashFlowStatement?.find((l) => l.role === "capital-expenditure") ?? null) : null;
   return {
+    depreciation: dep?.amount ?? null,
+    depreciationLabel: dep?.label ?? null,
+    investingCashFlow: cf.find((l) => l.role === "investing-cash-flow")?.amount ?? null,
+    prevCapex: prevCapexLine ? Math.abs(prevCapexLine.amount) : null,
     operatingCashFlow: op,
     capex,
     capexLabel: capexLine.label,
@@ -942,6 +963,30 @@ const c2: DecompModuleDef = {
       row("c2-working-capital", "運転資本（期末）", "売上債権 + 棚卸資産 − 仕入債務", values.workingCapital, "computed", (v) => v.workingCapital),
       row("c2-working-capital-change", "運転資本の増減", "最新期の運転資本 − 前期の運転資本", values.workingCapitalChange, "computed", (v) => v.workingCapitalChange),
       row("c2-gap", "資金ギャップ", "設備投資 + 運転資本の増減 − 営業キャッシュフロー", values.gap, "computed", (v) => v.gap),
+      ...(values.prevCapex !== null && values.prevCapex > 0
+        ? [
+            {
+              key: "c2-capex-growth",
+              title: "設備投資の前期比",
+              formula: "最新期の設備投資 ÷ 前期の設備投資 − 1（同じ有報の前期欄）",
+              kind: "computed" as const,
+              unit: "percent-change" as const,
+              value: values.capex / values.prevCapex - 1,
+              fiscalYear,
+              sourceIds,
+              industry: position(values.capex / values.prevCapex - 1, ctx.peers, (c) => {
+                const v = c2Values(c);
+                return v && v.prevCapex !== null && v.prevCapex > 0 ? v.capex / v.prevCapex - 1 : null;
+              }),
+            } satisfies AnalysisRow,
+          ]
+        : []),
+      ...(values.depreciation !== null
+        ? [row("c2-depreciation", values.depreciationLabel ?? "減価償却費", "有価証券報告書のキャッシュ・フロー計算書（営業活動）に印字された値", values.depreciation, "printed", (v) => v.depreciation)]
+        : []),
+      ...(values.investingCashFlow !== null
+        ? [row("c2-investing-cash-flow", "投資キャッシュフロー", "有価証券報告書のキャッシュ・フロー計算書に印字された値", values.investingCashFlow, "printed", (v) => v.investingCashFlow)]
+        : []),
     ];
     const notes = ["資金ギャップが正の期は、設備投資と運転資本の増加が営業キャッシュフローを上回り、その分を手元資金や調達で賄ったことを示します。"];
     if (values.capexLabel !== "有形固定資産の取得による支出") {

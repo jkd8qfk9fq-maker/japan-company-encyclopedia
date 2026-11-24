@@ -1,6 +1,8 @@
 import Link from "next/link";
+import { formatAnalysisValue } from "@/lib/analysis-format";
 import { companyAnalysis, type AnalysisRow } from "@/lib/company-analysis";
 import { formatIndicatorValue, indicatorsForIndustry, observationPeriodLabel } from "@/lib/indicators";
+import { MEANING_QUESTIONS, meaningSummary, type MeaningQuestion, type MeaningSentence } from "@/lib/meaning-layer";
 import { formatYen } from "@/lib/utils/format";
 import type { Company } from "@/types/company";
 import { AnalysisGate } from "./analysis-gate";
@@ -13,28 +15,7 @@ import { AnalysisGate } from "./analysis-gate";
  * verdict: positions are shown per perspective, never combined (spec §7).
  */
 
-const percent = (v: number) => `${(v * 100).toFixed(1).replace("-", "−")}%`;
-const percentChange = (v: number) => `${v > 0 ? "+" : v < 0 ? "−" : ""}${Math.abs(v * 100).toFixed(1)}%`;
-const times = (v: number) => `${v.toFixed(2)}倍`;
-const points = (v: number) => `${v > 0 ? "+" : v < 0 ? "−" : ""}${Math.abs(v * 100).toFixed(2)}pt`;
-
-function formatValue(row: AnalysisRow, value: number): string {
-  switch (row.unit) {
-    case "percent":
-      return percent(value);
-    case "percent-change":
-      return percentChange(value);
-    case "points":
-      return points(value);
-    case "times":
-      return times(value);
-    case "yen-per-person":
-    case "yen":
-      return formatYen(value);
-    case "people":
-      return `${value.toLocaleString("ja-JP")}人`;
-  }
-}
+const formatValue = formatAnalysisValue;
 
 function RowTitle({ row }: { row: AnalysisRow }) {
   return (
@@ -115,6 +96,46 @@ function DetailTable({ rows }: { rows: AnalysisRow[] }) {
   );
 }
 
+function MeaningBlock({ sentences }: { sentences: MeaningSentence[] }) {
+  const questions = (Object.keys(MEANING_QUESTIONS) as MeaningQuestion[]).filter((q) => sentences.some((s) => s.question === q));
+  return (
+    <div className="mt-6 rounded-md border border-border p-4 sm:p-5">
+      <h3 className="font-serif text-lg font-semibold">この会社の今</h3>
+      <p className="mt-1 text-xs leading-5 text-muted-foreground">
+        下の分析の数字を読む順に並べた要約です。文中の数字は下の表と同じ値で、良い・悪いの判断は含みません。
+      </p>
+      <div className="mt-4 space-y-4">
+        {questions.map((q) => (
+          <div key={q}>
+            <p className="text-xs font-semibold tracking-wide text-muted-foreground">{MEANING_QUESTIONS[q]}</p>
+            <ul className="mt-1.5 space-y-2.5">
+              {sentences
+                .filter((s) => s.question === q)
+                .map((s) => (
+                  <li key={s.id} className="text-[0.95rem] leading-7">
+                    {s.parts.map((p, i) =>
+                      typeof p === "string" || "label" in p ? (
+                        <span key={i}>{typeof p === "string" ? p : p.label}</span>
+                      ) : (
+                        <span key={i} className="figures font-semibold whitespace-nowrap">
+                          {p.text}
+                        </span>
+                      ),
+                    )}
+                    <span className="block text-xs text-muted-foreground">
+                      根拠：「{s.groupTitle}」（{s.fiscalYear}・{s.kind === "printed" ? "印字値" : "計算値"}）
+                    </span>
+                    {s.caution && <span className="block text-xs text-muted-foreground">※{s.caution}</span>}
+                  </li>
+                ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 export function CompanyAnalysisSection({ company, companies }: { company: Company; companies: Company[] }) {
   const analysis = companyAnalysis(company, companies);
   if (analysis.perspectives.length === 0) return null;
@@ -127,11 +148,13 @@ export function CompanyAnalysisSection({ company, companies }: { company: Compan
   collect(company.businesses);
 
   const segmentTotal = company.segmentRevenue?.items.reduce((acc, i) => acc + i.amount, 0) ?? 0;
+  const meaning = meaningSummary(analysis.perspectives.flatMap((p) => p.groups));
   const linkedIndicators = analysis.industryId ? indicatorsForIndustry(analysis.industryId) : [];
 
   return (
     <section className="mt-12">
       <h2 className="font-serif text-xl font-semibold">分析（5観点）</h2>
+      {meaning.length > 0 && <MeaningBlock sentences={meaning} />}
       <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
         この会社の数字を、規模と地位・成長・収益性・財務の安定・外部環境との接続の5観点で読みます。印字値は有価証券報告書のとおり、計算値には計算式を併記します。業界の分布は主たる産業が同じ掲載企業
         {analysis.industryName && `（${analysis.industryName}）`}

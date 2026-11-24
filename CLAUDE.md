@@ -44,6 +44,8 @@ variables, and never reference them in the application. Decision recorded in
    are 1株当たり配当額・発行済株式総数 (提出会社, `shareFacts`, operator decision 2026-11-18, JCE-066) — still never a share
    price, market value or yield: no source this site may republish provides prices (J-Quants is private use only).
    **Prose** cites revenue and net income only (`docs/agent-brief.md`, checked by `scripts/pipeline/prose-policy.mjs`).
+   The analysis layer's 「この会社の今」 sentences are not prose: code builds them from fixed templates and the decomposition
+   rows shown beside them, with no judgment word (JCE-110, `src/lib/meaning-layer.ts`).
 5. **Users never edit content.** They can report errors. Corrections go through admin and leave a
    `Revision`.
 6. **kebab-case for every external name**: file names, folder names, route segments, data ids,
