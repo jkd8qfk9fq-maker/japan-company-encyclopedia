@@ -49,7 +49,8 @@ async function mailLink(env: AdminEnv, to: string, link: string): Promise<void> 
       text: `次のリンクから管理画面にログインできます（15分間有効）。\n\n${link}\n\n心当たりがない場合は、このメールを破棄してください。`,
     }),
   });
-  if (!response.ok) throw new Error(`resend ${response.status}`);
+  // The reason is logged (status and Resend's message, never the key) so a failed sign-in can be diagnosed.
+  if (!response.ok) throw new Error(`resend ${response.status}: ${(await response.text()).slice(0, 300)}`);
 }
 
 function editorForm(kind: EditableKind, id: string, text: string, sha: string, extra: { summary?: string; reason?: string; confirm?: boolean; isNew?: boolean } = {}) {
@@ -96,7 +97,12 @@ ${sent ? `<div class="card ok">登録されているアドレスであれば、�
       // The same answer whether or not the address is allowed: the page does not say who the operators are.
       if (!limited && EMAIL.test(email) && allowedEmails(env).has(email)) {
         const token = await sign(env, "link", email, Date.now() + LINK_TTL_MS);
-        await mailLink(env, email, `${url.origin}/auth?t=${encodeURIComponent(token)}`);
+        try {
+          await mailLink(env, email, `${url.origin}/auth?t=${encodeURIComponent(token)}`);
+        } catch (error) {
+          console.error(`sign-in mail failed: ${String(error)}`);
+          return page("ログイン", `<h1>ログイン</h1>${errorList(["ログイン用のメールを送れませんでした。時間をおいてもう一度試してください。続く場合は運営の設定（メール送信）を確認します。"])}<p><a href="/login">戻る</a></p>`, { status: 502 });
+        }
       }
       return redirect("/login?sent=1");
     }

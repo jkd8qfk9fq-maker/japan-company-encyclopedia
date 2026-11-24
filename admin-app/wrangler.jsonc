@@ -14,5 +14,7 @@
   "workers_dev": false,
   "preview_urls": false,
   "vars": { "GITHUB_REPO": "jkd8qfk9fq-maker/japan-company-encyclopedia", "SITE_ORIGIN": "https://kigyo-hyakka.com" },
+  // Logs kept in Workers Logs, so a failed sign-in mail or GitHub call can be read afterwards.
+  "observability": { "enabled": true },
   "ratelimits": [{ "name": "LOGIN_LIMIT", "namespace_id": "3101", "simple": { "limit": 5, "period": 60 } }]
 }
