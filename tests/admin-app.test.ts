@@ -197,3 +197,57 @@ describe("admin console: failures are shown, not thrown", () => {
     }
   });
 });
+
+describe("admin console: company sections (stage 4)", () => {
+  const toyota = async () => JSON.parse((await import("node:fs")).readFileSync("src/data/companies/toyota.json", "utf8")) as Record<string, unknown>;
+  const form = (entries: [string, string][]) => {
+    const f = new FormData();
+    for (const [k, v] of entries) f.append(k, v);
+    return f;
+  };
+
+  it("changes only the basic fields, and the draft passes the same review as the JSON editor", async () => {
+    const { applySection } = await import("../admin-app/src/company-form");
+    const { previewEdit } = await import("../src/lib/content/content-edit");
+    const current = await toyota();
+    const draft = applySection("basic", current, form([["name", String(current.name)], ["officialName", String(current.officialName)], ["nameEn", String(current.nameEn)], ["shortNameEn", ""], ["description", String(current.description)]]));
+    expect(draft.shortNameEn).toBeUndefined();
+    expect(draft.businesses).toEqual(current.businesses);
+    const companyIds = new Set((await import("node:fs")).readdirSync("src/data/companies").filter((f) => f.endsWith(".json")).map((f) => f.slice(0, -5)));
+    const termIds = new Set((await import("node:fs")).readdirSync("src/data/terms").map((f) => f.slice(0, -5)));
+    const preview = previewEdit("company", "toyota", current, draft, { companyIds, termIds, featureIds: new Set() });
+    expect(preview.ok ? [] : preview.errors).toEqual([]);
+    if (preview.ok) expect(preview.changes.map((c) => c.field)).toEqual(["shortNameEn"]);
+    // A form cannot get past a rule the JSON editor enforces: the description stays one sentence.
+    const twoSentences = applySection("basic", current, form([["name", String(current.name)], ["officialName", String(current.officialName)], ["description", `${current.description}もう一文。`]]));
+    const refused = previewEdit("company", "toyota", current, twoSentences, { companyIds, termIds, featureIds: new Set() });
+    expect(refused.ok).toBe(false);
+  });
+
+  it("adds a history event only with a year, title, description and a source; deletes on request", async () => {
+    const { applySection } = await import("../admin-app/src/company-form");
+    const current = await toyota();
+    const events = current.history as { year: number; title: string; description: string; significance?: string; sourceIds: string[] }[];
+    const keep = (i: number): [string, string][] => [[`h${i}_year`, String(events[i]!.year)], [`h${i}_title`, events[i]!.title], [`h${i}_description`, events[i]!.description], [`h${i}_significance`, events[i]!.significance ?? ""], ...events[i]!.sourceIds.map((s): [string, string] => [`h${i}_src`, s])];
+    const all = events.flatMap((_, i) => keep(i));
+    const noSource = applySection("history", current, form([...all, ["hnew_year", "2030"], ["hnew_title", "t"], ["hnew_description", "d"]]));
+    expect((noSource.history as unknown[]).length).toBe(events.length);
+    const added = applySection("history", current, form([...all, ["h0_delete", "1"], ["hnew_year", "2030"], ["hnew_title", "t"], ["hnew_description", "d"], ["hnew_src", "yuho-2026"]]));
+    const list = added.history as { year: number }[];
+    expect(list.length).toBe(events.length);
+    expect(list.at(-1)!.year).toBe(2030);
+  });
+
+  it("sets industries with one primary, and adds or removes sources", async () => {
+    const { applySection } = await import("../admin-app/src/company-form");
+    const current = await toyota();
+    const ind = applySection("industries", current, form([["ind0", "automotive"], ["ind1", "finance"], ["ind2", "automotive"], ["primary", "0"]]));
+    expect(ind.industries).toEqual([{ industryId: "automotive", primary: true }, { industryId: "finance" }]);
+    const sources = current.sources as { id: string; title?: string; publisher?: string; url?: string; publishedAt?: string; accessedAt?: string }[];
+    const keep = sources.flatMap((s, i) => (["title", "publisher", "url", "publishedAt", "accessedAt"] as const).map((k): [string, string] => [`s${i}_${k}`, s[k] ?? ""]));
+    const next = applySection("sources", current, form([...keep, ["s0_delete", "1"], ["snew_id", "new-source"], ["snew_title", "新しい資料"]]));
+    const ids = (next.sources as { id: string }[]).map((s) => s.id);
+    expect(ids).not.toContain(sources[0]!.id);
+    expect(ids.at(-1)).toBe("new-source");
+  });
+});

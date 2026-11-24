@@ -53,7 +53,7 @@ h1{font-size:1.45rem;margin:2px 0 14px;letter-spacing:.01em}h2{font-size:.98rem;
 .pill{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 8px;border-radius:99px;border:1px solid currentColor;white-space:nowrap}
 table{width:100%;border-collapse:collapse;font-size:.85rem}th,td{text-align:left;padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:500;font-size:.75rem}
 td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}.tw{overflow-x:auto}
-input,textarea,button,select{font:inherit;color:inherit}input[type=text],input[type=email],input[type=search],textarea,select{width:100%;background:#0a0f1c;border:1px solid var(--line);border-radius:8px;padding:9px}
+input,textarea,button,select{font:inherit;color:inherit}input[type=text],input[type=email],input[type=search],input[type=number],input[type=url],input[type=date],textarea,select{width:100%;background:#0a0f1c;border:1px solid var(--line);border-radius:8px;padding:9px}
 textarea{min-height:55vh;font:12.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace}
 button,.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#fff;border:0;border-radius:8px;padding:9px 16px;font-weight:700;cursor:pointer;min-height:40px}
 button.ghost{background:none;color:var(--fg);border:1px solid var(--line)}
