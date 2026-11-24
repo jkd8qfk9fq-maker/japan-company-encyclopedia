@@ -2,6 +2,7 @@ import { buildSave, EDIT_DIRECTORY, EDIT_ID, previewEdit, saveInputErrors, type 
 import type { ContentContext } from "../../src/lib/content/integrity";
 import { LINK_TTL_MS, readCookie, SESSION_COOKIE, SESSION_TTL_MS, sessionCookie, sign, verify } from "./auth";
 import { accessIdentity } from "./access";
+import { applySection, isCompanyTab, renderBasicForm, renderHistoryForm, renderIndustriesForm, renderOverview, renderReadOnly, renderSourcesForm, tabBar } from "./company-form";
 import { CHECK_LABEL, dashboardData, parseRevisionNames, renderDashboard } from "./dashboard";
 import { allowedEmails, missingSettings, ROLE_LABEL, roleOf, usesAccess, type AdminEnv } from "./env";
 import { GitHub, mergeBlockers } from "./github";
@@ -296,32 +297,55 @@ ${sent ? `<div class="card ok">登録されているアドレスであれば、�
       return view("用語を追加", `<h1>用語を追加：${esc(id)}</h1><p class="muted">既存の用語「affiliate」の形を下書きにしています。内容をすべて書き換えてください。</p>${editorForm("term", id, JSON.stringify(template, null, 2), "", { isNew: true })}`, {});
     }
 
-    const edit = path.match(/^\/edit\/(company|term)\/([a-z0-9-]+)$/);
+    const edit = path.match(/^\/edit\/(company|term)\/([a-z0-9-]+)(\/section)?$/);
     if (edit) {
       const kind = KINDS[edit[1]!]!;
       const id = edit[2]!;
+      const section = Boolean(edit[3]) && kind === "company";
       if (!EDIT_ID.test(id)) return view("エラー", "<p>id が正しくありません。</p>", { status: 400 });
       const filePath = `src/data/${EDIT_DIRECTORY[kind]}/${id}.json`;
       const current = await github.file(filePath);
 
       if (request.method === "GET") {
         if (!current) return view("見つかりません", `<p>${esc(filePath)} がありません。</p>`, { status: 404 });
-        return view(`${id} を直す`, `<h1>${esc(id)} を直す</h1><p class="muted"><a href="${esc(env.SITE_ORIGIN)}/${kind === "company" ? "companies" : "terms"}/${esc(id)}">公開ページ</a> ・ main の版 ${esc(current.sha.slice(0, 7))}</p>${editorForm(kind, id, current.text, current.sha)}`, {});
+        if (kind === "company") {
+          // Section tabs (stage 4): every form builds a draft that goes through the same review as the JSON editor.
+          const tabParam = url.searchParams.get("tab");
+          const tab = isCompanyTab(tabParam) ? tabParam : "overview";
+          const c = JSON.parse(current.text) as Record<string, unknown>;
+          const content =
+            tab === "overview" ? renderOverview(c, current.sha, env.SITE_ORIGIN)
+            : tab === "basic" ? renderBasicForm(c, current.sha)
+            : tab === "business" ? renderReadOnly(c, "businesses", id)
+            : tab === "financials" ? renderReadOnly(c, "financials", id)
+            : tab === "history" ? renderHistoryForm(c, current.sha)
+            : tab === "industries" ? renderIndustriesForm(c, current.sha)
+            : tab === "sources" ? renderSourcesForm(c, current.sha)
+            : editorForm(kind, id, current.text, current.sha);
+          return view(`${String(c.name ?? id)} を直す`, `<h1>${esc(c.name ?? id)} <span class="muted" style="font-size:.9rem">${esc(id)}</span></h1>${tabBar(id, tab)}${content}`, { crumbs: [["企業管理", "/companies"], [String(c.name ?? id)]] });
+        }
+        return view(`${id} を直す`, `<h1>${esc(id)} を直す</h1><p class="muted"><a href="${esc(env.SITE_ORIGIN)}/terms/${esc(id)}">公開ページ</a> ・ main の版 ${esc(current.sha.slice(0, 7))}</p>${editorForm(kind, id, current.text, current.sha)}`, { crumbs: [["用語管理", "/terms"], [id]] });
       }
 
       const form = await request.formData();
       const isNew = form.get("new") === "1";
       const base = String(form.get("base") ?? "");
-      const text = String(form.get("draft") ?? "");
+      let text = String(form.get("draft") ?? "");
       const summary = String(form.get("summary") ?? "").trim();
       const reason = String(form.get("reason") ?? "").trim();
       const confirm = form.get("confirm") === "1";
-      const action = form.get("action") === "save" ? "save" : "preview";
+      // A section form arrives without a draft: build it from the form, then review it like any JSON draft.
+      const action = !section && form.get("action") === "save" ? "save" : "preview";
       const again = (errors: string[], note = "") =>
         view(`${id} を直す`, `<h1>${esc(id)} を直す</h1>${errorList(errors)}${note}${editorForm(kind, id, text, base, { summary, reason, confirm, isNew })}`, { status: errors.length ? 422 : 200 });
 
       if (isNew ? current !== null : !current || current.sha !== base) {
         return again([isNew ? "同じ id のファイルがすでにあります。" : "編集を始めた後に、このファイルが main で変更されました。ページを開き直して、最新の内容から編集してください。"]);
+      }
+      if (section && current) {
+        const tabValue = String(form.get("tab") ?? "");
+        if (!isCompanyTab(tabValue)) return again(["編集の項目が正しくありません。"]);
+        text = JSON.stringify(applySection(tabValue, JSON.parse(current.text) as Record<string, unknown>, form), null, 2);
       }
       let draft: unknown;
       try {
