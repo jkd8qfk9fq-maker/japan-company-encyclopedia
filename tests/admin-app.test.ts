@@ -69,3 +69,42 @@ describe("admin app: requests", () => {
     expect(response.headers.get("set-cookie")).toMatch(/^kigyo_admin=.+; Path=\/; HttpOnly; Secure; SameSite=Lax; Max-Age=43200$/);
   });
 });
+
+describe("admin app: behind Cloudflare Access", () => {
+  const team = "team.cloudflareaccess.com";
+  const aud = "test-aud";
+  const accessEnv: AdminEnv = { ...env, RESEND_API_KEY: undefined, ACCESS_TEAM_DOMAIN: team, ACCESS_AUD: aud };
+  const b64url = (bytes: Uint8Array) => btoa(String.fromCharCode(...bytes)).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  const text = (value: unknown) => b64url(new TextEncoder().encode(JSON.stringify(value)));
+
+  async function setup() {
+    const pair = (await crypto.subtle.generateKey({ name: "RSASSA-PKCS1-v1_5", modulusLength: 2048, publicExponent: new Uint8Array([1, 0, 1]), hash: "SHA-256" }, true, ["sign", "verify"])) as CryptoKeyPair;
+    const jwk = { ...(await crypto.subtle.exportKey("jwk", pair.publicKey)), kid: "k1" };
+    const fetcher = (async () => new Response(JSON.stringify({ keys: [jwk] }))) as unknown as typeof fetch;
+    const token = async (claims: Record<string, unknown>) => {
+      const head = `${text({ alg: "RS256", kid: "k1" })}.${text(claims)}`;
+      const sig = new Uint8Array(await crypto.subtle.sign("RSASSA-PKCS1-v1_5", pair.privateKey, new TextEncoder().encode(head)));
+      return `${head}.${b64url(sig)}`;
+    };
+    return { fetcher, token };
+  }
+
+  it("takes the address from a valid token for this application only", async () => {
+    const { accessEmail } = await import("../admin-app/src/access");
+    const { fetcher, token } = await setup();
+    const exp = Math.floor(Date.now() / 1000) + 600;
+    const good = await token({ aud: [aud], iss: `https://${team}`, exp, email: "Owner@example.com" });
+    expect(await accessEmail(accessEnv, good, Date.now(), fetcher)).toBe("owner@example.com");
+    expect(await accessEmail(accessEnv, await token({ aud: ["other-app"], iss: `https://${team}`, exp, email: "owner@example.com" }), Date.now(), fetcher)).toBeNull();
+    expect(await accessEmail(accessEnv, await token({ aud: [aud], iss: `https://${team}`, exp: 1, email: "owner@example.com" }), Date.now(), fetcher)).toBeNull();
+    expect(await accessEmail(accessEnv, `${good.slice(0, -4)}AAAA`, Date.now(), fetcher)).toBeNull();
+  });
+
+  it("does not ask for the mail key, and refuses a request that did not pass Access", async () => {
+    expect(missingSettings(accessEnv)).toEqual([]);
+    const response = await worker.fetch(new Request("https://admin.kigyo-hyakka.com/"), accessEnv);
+    expect(response.status).toBe(403);
+    const login = await worker.fetch(new Request("https://admin.kigyo-hyakka.com/login"), accessEnv);
+    expect(login.headers.get("location")).toBe("/");
+  });
+});
