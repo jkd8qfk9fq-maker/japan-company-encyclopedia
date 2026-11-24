@@ -1,6 +1,6 @@
 "use client";
 
-import { BookOpen, Check, ChevronDown, Clock, MapPin } from "lucide-react";
+import { BookOpen, Check, ChevronDown, ChevronRight, Clock, MapPin } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useLocalStore } from "@/hooks/use-local-store";
@@ -19,7 +19,7 @@ import {
 import type { MicroLesson, MicroUnit } from "@/lib/micro-lessons";
 import { METRIC_LABELS, verifyPrediction, type PredictionData } from "@/lib/predictions";
 import { dueReviewIds } from "@/lib/review-queue";
-import { jstToday, microProgressStore, predictionsStore } from "@/lib/storage/stores";
+import { jstToday, microProgressStore, predictionsStore, quizStore } from "@/lib/storage/stores";
 import { loadLessons, loadPredictions } from "./load";
 import { ProgressRing } from "./learn-ui";
 
@@ -41,6 +41,7 @@ export function MicroLessons() {
   const [failed, setFailed] = useState(false);
   const progress = useLocalStore(microProgressStore);
   const predictions = useLocalStore(predictionsStore);
+  const quiz = useLocalStore(quizStore);
   const [today] = useState(() => jstToday());
   const [selected, setSelected] = useState<string | null>(null);
   const [guidebook, setGuidebook] = useState<string | null>(null);
@@ -57,6 +58,7 @@ export function MicroLessons() {
   const course = courseFraction(units, progress);
   const nextId = nextLessonId(units, progress);
   const dueCount = dueReviewIds(progress.review, today).length;
+  const nextLesson = units.flatMap((u) => u.lessons).find((l) => l.id === nextId) ?? null;
 
   const verified = predictions.map((p) => ({ p, v: predData?.[p.companyId] ? verifyPrediction(p, predData[p.companyId]) : null }));
   const verifiedCount = verified.filter((x) => x.v?.status === "verified").length;
@@ -90,23 +92,14 @@ export function MicroLessons() {
         </div>
       </div>
 
-      {dueCount > 0 && (
-        <div id="review-queue" className="mt-6 scroll-mt-24">
-          <Link
-            href="/learn/review"
-            className="flex items-center gap-4 rounded-3xl border-2 border-dashed p-4"
-            style={{ borderColor: LEARN.cta, backgroundColor: LEARN.ctaSoft }}
-          >
-            <span className="grid size-14 shrink-0 place-items-center rounded-full text-white" style={{ backgroundColor: LEARN.cta, boxShadow: `0 4px 0 ${LEARN.ctaDark}` }}>
-              <Clock className="size-7" />
-            </span>
-            <span>
-              <span className="block font-bold" style={{ color: LEARN.navy }}>復習キュー（{dueCount}問）</span>
-              <span className="block text-sm" style={{ color: LEARN.muted }}>間隔をあけて戻ってきた問題です。正解すると次の復習は少し先になります。</span>
-            </span>
-          </Link>
-        </div>
-      )}
+      {/* 今日の訓練 (JCE-108): the three things a visit can do, each with its own way in and a check when done —
+          so opening the app answers "what do I do now" before the path is read. Nothing is lost by leaving one. */}
+      <TodayPlan
+        nextLesson={nextLesson}
+        lessonDoneToday={Object.values(progress.lessons).includes(today)}
+        quizAnswered={quiz[today]}
+        dueCount={dueCount}
+      />
 
       {units.map((unit, ui) => {
         const style = unitStyle(ui);
@@ -312,5 +305,81 @@ function NodeDetail({ lesson, state, doneDay }: { lesson: MicroLesson; state: No
         {done ? "もう一度見る" : state === "doing" ? "つづきからはじめる" : "はじめる"}
       </Link>
     </div>
+  );
+}
+
+function TodayPlan({
+  nextLesson,
+  lessonDoneToday,
+  quizAnswered,
+  dueCount,
+}: {
+  nextLesson: MicroLesson | null;
+  lessonDoneToday: boolean;
+  quizAnswered: { correct: boolean } | undefined;
+  dueCount: number;
+}) {
+  const rows: { key: string; href: string; label: string; detail: string; done: boolean }[] = [
+    nextLesson
+      ? {
+          key: "lesson",
+          href: `/learn/lesson/${nextLesson.id}`,
+          label: lessonDoneToday ? "次のレッスン（今日は1本終えました）" : "次のレッスン",
+          detail: `${nextLesson.title}（約${nextLesson.minutes}分）`,
+          done: lessonDoneToday,
+        }
+      : { key: "lesson", href: "/learn/review", label: "レッスン", detail: "全レッスンを終えました。復習で定着させます", done: true },
+    {
+      key: "quiz",
+      href: "/quiz",
+      label: "今日の1問",
+      detail: quizAnswered ? `回答済み（${quizAnswered.correct ? "正解" : "不正解。解説を読み直せます"}）` : "30秒。日本時間の0時に新しい問題になります",
+      done: Boolean(quizAnswered),
+    },
+    {
+      key: "review",
+      href: "/learn/review",
+      label: "復習",
+      detail: dueCount > 0 ? `${dueCount}問が復習の時期です` : "今日の復習はありません",
+      done: dueCount === 0,
+    },
+  ];
+  const left = rows.filter((r) => !r.done).length;
+  return (
+    <section id="review-queue" aria-labelledby="today-plan" className="mt-6 scroll-mt-24">
+      <div className="flex items-baseline justify-between gap-3">
+        <h2 id="today-plan" className="text-lg font-bold" style={{ color: LEARN.navy }}>今日の訓練</h2>
+        <p className="figures text-xs font-bold" style={{ color: left === 0 ? LEARN.ctaDark : LEARN.muted }}>
+          {left === 0 ? "今日の分は終わりました" : `残り${left}つ`}
+        </p>
+      </div>
+      <ul className="mt-3 grid gap-2">
+        {rows.map((row) => (
+          <li key={row.key}>
+            <Link
+              href={row.href}
+              className="flex min-h-14 items-center gap-3 rounded-2xl border-2 px-4 py-3"
+              style={{ borderColor: row.done ? LEARN.line : LEARN.cta, backgroundColor: row.done ? "#fff" : LEARN.ctaSoft }}
+            >
+              <span
+                className="grid size-8 shrink-0 place-items-center rounded-full border-2"
+                style={{ borderColor: row.done ? LEARN.cta : LEARN.line, backgroundColor: row.done ? LEARN.cta : "#fff", color: "#fff" }}
+                aria-hidden
+              >
+                {row.done && <Check className="size-4" strokeWidth={3} />}
+              </span>
+              <span className="min-w-0 flex-1">
+                <span className="block text-sm font-bold" style={{ color: LEARN.navy }}>
+                  {row.label}
+                  <span className="sr-only">{row.done ? "（済み）" : "（まだ）"}</span>
+                </span>
+                <span className="block text-xs leading-5" style={{ color: LEARN.muted }}>{row.detail}</span>
+              </span>
+              <ChevronRight className="size-5 shrink-0" style={{ color: row.done ? LEARN.muted : LEARN.ctaDark }} aria-hidden />
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </section>
   );
 }
