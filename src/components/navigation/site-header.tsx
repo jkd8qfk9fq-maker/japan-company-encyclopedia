@@ -4,6 +4,7 @@ import { SearchSuggest } from "@/components/search/search-suggest";
 import { featureRepository, termRepository } from "@/lib/repositories";
 import { SITE_NAME, SITE_TAGLINE, TRAINING_APP_NAME } from "@/lib/site";
 import { HeaderBrand } from "./header-brand";
+import { MainNav } from "./main-nav";
 import { NavLink } from "./nav-link";
 import { SiteMenu } from "./site-menu";
 import { desktopNavigation } from "./navigation-items";
@@ -25,18 +26,7 @@ export async function SiteHeader() {
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-6 px-5 md:px-8">
         <HeaderBrand siteName={SITE_NAME} tagline={SITE_TAGLINE} appName={TRAINING_APP_NAME} />
 
-        <nav aria-label="メイン" className="hidden items-center gap-1 lg:flex">
-          {items.map((item) => (
-            <NavLink
-              key={item.href}
-              href={item.href}
-              className="inline-flex min-h-11 items-center px-4 text-[0.9375rem] font-medium text-foreground/80 transition-colors hover:text-foreground"
-              activeClassName="text-foreground underline decoration-seal decoration-2 underline-offset-[0.7rem]"
-            >
-              {item.label}
-            </NavLink>
-          ))}
-        </nav>
+        <MainNav items={items.map(({ href, label }) => ({ href, label }))} />
 
         {/* On phones: the bell and the menu, which lists every page the bottom bar does not (2026-11-23). */}
         <div className="-mr-3 flex items-center md:hidden">

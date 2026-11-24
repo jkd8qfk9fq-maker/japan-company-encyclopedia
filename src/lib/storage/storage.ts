@@ -44,6 +44,8 @@ export const STORAGE_KEYS = {
   microProgress: "micro-lesson-progress",
   /** JCE-083: the reader's own predictions of a company's next filing, written once per company, metric and baseline period. */
   predictions: "company-predictions",
+  /** JCE-108: the reader closed the 分析訓練 install suggestion — it is not shown again in this browser. */
+  trainingInstallDismissed: "training-install-dismissed",
 } as const;
 
 export type StorageKey = (typeof STORAGE_KEYS)[keyof typeof STORAGE_KEYS];
