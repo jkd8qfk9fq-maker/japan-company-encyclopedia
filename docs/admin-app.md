@@ -15,7 +15,7 @@ Cloudflare のダッシュボード → Workers & Pages → **kigyo-admin** → 
 | 名前 | 値 |
 |---|---|
 | `ADMIN_EMAILS` | ログインできるメールアドレス。複数はカンマ区切り |
-| `GITHUB_TOKEN` | GitHub の Fine-grained トークン。Repository access は `japan-company-encyclopedia` だけ、Permissions は Contents: Read and write、Pull requests: Read and write |
+| `GITHUB_TOKEN` | GitHub の Fine-grained トークン。Repository access は `japan-company-encyclopedia` だけ、Permissions は Contents: Read and write、Pull requests: Read and write（どちらかが Read only だと、承認管理のマージが GitHub に 403 で拒否される。2026-11-24 に実際に起きた） |
 | `RESEND_API_KEY` | （予備）Access を使わない場合だけ。ログイン用メールを送る Resend の API キー。kigyo-hyakka.com を認証済みのアカウントのもの |
 
 GitHub のトークンは github.com → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token で作る。期限が来たら作り直して `GITHUB_TOKEN` を差し替える（全員がログアウトされる）。
