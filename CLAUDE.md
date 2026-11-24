@@ -107,7 +107,8 @@ registration merge sets it — registration itself refuses anything but `figures
 
 ## Adding or correcting a company
 
-**Correcting** published content: use the local admin editor — `docs/correction-workflow.md`. Do not
+**Correcting** published content: use the local admin editor — `docs/correction-workflow.md` — or the hosted admin app
+(admin.kigyo-hyakka.com, `docs/admin-app.md`, JCE-109), which runs the same checks and turns the edit into a pull request. Do not
 hand-edit JSON for a factual correction without also writing a Revision file; the editor does both.
 
 **Adding** a company — two paths, both ending in the same `companySchema` shape and both gated by

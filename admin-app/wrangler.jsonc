@@ -1,0 +1,18 @@
+{
+  // The hosted admin app (JCE-109): edits to published content become pull requests on GitHub, never direct writes.
+  // Deployed by Cloudflare Workers Builds from this folder (root directory admin-app/), separately from the site.
+  // Secrets, set by the operator in the Cloudflare dashboard (never in this file):
+  //   ADMIN_EMAILS   — the addresses allowed to sign in, comma separated
+  //   GITHUB_TOKEN   — fine-grained token for this repository: Contents and Pull requests, read and write
+  //   RESEND_API_KEY — for the sign-in mail
+  // Without them the app says what is missing and does nothing else.
+  "name": "kigyo-admin",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "routes": [{ "pattern": "admin.kigyo-hyakka.com", "custom_domain": true }],
+  "workers_dev": false,
+  "preview_urls": false,
+  "vars": { "GITHUB_REPO": "jkd8qfk9fq-maker/japan-company-encyclopedia", "SITE_ORIGIN": "https://kigyo-hyakka.com" },
+  "ratelimits": [{ "name": "LOGIN_LIMIT", "namespace_id": "3101", "simple": { "limit": 5, "period": 60 } }]
+}
