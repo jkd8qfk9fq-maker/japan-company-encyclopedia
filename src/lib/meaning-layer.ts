@@ -44,7 +44,7 @@ export type MeaningSentence = {
 };
 
 /** At most this many sentences per question; the block holds at most five in all. */
-const PER_QUESTION: Record<MeaningQuestion, number> = { q1: 4, q2: 1, q3: 0 };
+const PER_QUESTION: Record<MeaningQuestion, number> = { q1: 4, q2: 2, q3: 0 };
 export const MAX_SENTENCES = 5;
 
 type Item = string | MeaningLabel | AnalysisRow;
@@ -141,6 +141,22 @@ const TEMPLATES: Template[] = [
     },
   },
   {
+    id: "q2-margin",
+    question: "q2",
+    groupId: "a4",
+    build: (_row, group) => {
+      // A4's rows are sorted by margin, highest first, as margin / share pairs.
+      const top = group.rows.find((r) => r.key.startsWith("a4-margin-"));
+      const share = top ? group.rows.find((r) => r.key === top.key.replace("a4-margin-", "a4-share-")) : undefined;
+      // The measure comes from the formula (「セグメントの営業利益 ÷ …」), the name from the title minus 「の{measure}率」:
+      // a business name may itself contain 「の」.
+      const measure = top ? /^セグメントの(.+?) ÷/.exec(top.formula)?.[1] : undefined;
+      const name = top && measure ? stripSuffix(top.title, `の${measure}率`) : null;
+      if (!top || !share || !measure || !name) return null;
+      return [{ label: measure }, "率が最も高いのは", { label: name }, "で ", top, "。売上構成比は ", share, "。"];
+    },
+  },
+  {
     id: "q2-segment",
     question: "q2",
     groupId: "a3",
@@ -188,18 +204,19 @@ function toSentence(t: Template, group: AnalysisGroup, items: Item[]): MeaningSe
 /** 「この会社の今」 from the company's computable decomposition groups (any order, duplicates allowed). */
 export function meaningSummary(groups: AnalysisGroup[]): MeaningSentence[] {
   const byId = new Map(groups.map((g) => [g.id, g]));
-  const out: MeaningSentence[] = [];
-  const used: Record<MeaningQuestion, number> = { q1: 0, q2: 0, q3: 0 };
+  const built: Record<MeaningQuestion, MeaningSentence[]> = { q1: [], q2: [], q3: [] };
   for (const t of TEMPLATES) {
-    if (out.length >= MAX_SENTENCES || used[t.question] >= PER_QUESTION[t.question]) continue;
+    if (built[t.question].length >= PER_QUESTION[t.question]) continue;
     const group = byId.get(t.groupId);
     if (!group) continue;
     const items = t.build((key) => group.rows.find((r) => r.key === key), group);
     if (!items || !items.some(isRow)) continue;
-    out.push(toSentence(t, group, items));
-    used[t.question]++;
+    built[t.question].push(toSentence(t, group, items));
   }
-  return out;
+  // Within the five, the later questions keep their sentences and Q1 gives up its last ones: a reader with Q1 answered
+  // in three sentences is better served than one who never sees what earns the money.
+  const later = [...built.q2, ...built.q3];
+  return [...built.q1.slice(0, Math.max(0, MAX_SENTENCES - later.length)), ...later].slice(0, MAX_SENTENCES);
 }
 
 export const sentenceText = (s: MeaningSentence): string =>

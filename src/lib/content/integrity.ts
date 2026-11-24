@@ -182,6 +182,15 @@ export function checkCompany(company: Company, context: ContentContext): string[
       if (!record) e.push(`${pwhere}: 前期は財務レコードにある年度でなければなりません`);
       if (p.periodEnd >= s.periodEnd) e.push(`${pwhere}: 前期の期末は当期より前でなければなりません`);
     }
+    // JCE-110. Segment profit covers exactly the businesses of the revenue table — the margin of one segment is
+    // never shown beside a table that has more or fewer segments than it.
+    if (s.profit) {
+      const fwhere = `事業別の売上「${s.fiscalYear}」のセグメント利益`;
+      const fids = s.profit.items.map((i) => i.businessId);
+      if (new Set(fids).size !== fids.length) e.push(`${fwhere}: 同じ事業が重複しています`);
+      if (fids.length !== ids.length || !ids.every((id) => fids.includes(id))) e.push(`${fwhere}: 売上の表と同じ事業の組でなければなりません`);
+      e.push(...yenErrors(s.profit.items.flatMap((i) => [i.profit, i.sales]), fwhere));
+    }
   }
   if (company.regionalRevenue) {
     const r = company.regionalRevenue;

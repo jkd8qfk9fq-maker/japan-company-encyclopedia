@@ -433,6 +433,48 @@ const a3: DecompModuleDef = {
   },
 };
 
+/* ---------- A4: セグメント別の利益率 (JCE-110 第3段階) ---------- */
+
+/**
+ * Each segment's margin on its own sales (the note's profit over the note's sales, inter-segment included — the base
+ * the profit was earned on) and its share of the revenue table (external revenue over the table's total, the share
+ * JCE-038 already allows). The residual その他 is listed in neither: it is not a business a reader can name.
+ */
+const a4: DecompModuleDef = {
+  id: "a4",
+  version: 1,
+  title: "セグメント別の利益率",
+  perspectives: ["profitability"],
+  kind: "calculated",
+  run: (company) => {
+    const seg = company.segmentRevenue;
+    if (!seg?.profit) return suppressed("セグメント利益が登録されていません");
+    const total = seg.items.reduce((a, i) => a + i.amount, 0);
+    if (total <= 0) return suppressed("事業別の売上の合計が正ではありません");
+    const label = seg.profit.label;
+    const named = seg.profit.items
+      .map((p) => ({ ...p, business: company.businesses.find((b) => b.id === p.businessId) }))
+      .filter((p) => p.business && p.business.name.normalize("NFKC").trim() !== "その他");
+    if (named.length < 2) return suppressed("名前のある事業が2つ未満です");
+    const rows: AnalysisRow[] = [];
+    for (const p of [...named].sort((a, b) => b.profit / b.sales - a.profit / a.sales)) {
+      const name = p.business!.shortName ?? p.business!.name;
+      const base = { kind: "computed" as const, fiscalYear: seg.fiscalYear, sourceIds: seg.sourceIds, industry: null };
+      rows.push({ ...base, key: `a4-margin-${p.businessId}`, title: `${name}の${label}率`, formula: `セグメントの${label} ÷ セグメントの売上高（セグメント間を含む）`, unit: "percent", value: p.profit / p.sales });
+      rows.push({ ...base, key: `a4-share-${p.businessId}`, title: `${name}の売上構成比`, formula: `その事業の${seg.label} ÷ 事業別の${seg.label}の合計`, unit: "percent", value: (seg.items.find((i) => i.businessId === p.businessId)?.amount ?? 0) / total });
+    }
+    return {
+      status: "ok",
+      group: {
+        id: "a4",
+        title: "セグメント別の利益率",
+        rows,
+        note: `セグメントの${label}と売上高は有報のセグメント情報の印字値で、利益率は計算値です。全社費用などの調整額はどの事業にも配分していません。`,
+      },
+    };
+  },
+};
+
 /* ---------- statement pairs (JCE-098, Phase 2) ---------- */
 
 type StmtPair = { prev: FinancialStatements; latest: FinancialStatements };
@@ -1467,7 +1509,7 @@ const f1: DecompModuleDef = {
 
 /* ---------- registry and entry point ---------- */
 
-export const DECOMP_MODULES: DecompModuleDef[] = [a1, aFull, a2, a3, b1, b2, c1, c2, e1, f2, f3, d1, d2, f1];
+export const DECOMP_MODULES: DecompModuleDef[] = [a1, aFull, a2, a3, a4, b1, b2, c1, c2, e1, f2, f3, d1, d2, f1];
 
 function runDef(def: DecompModuleDef, company: Company, companies: Company[]): DecompResult {
   const peers = comparablePeers(company, companies);

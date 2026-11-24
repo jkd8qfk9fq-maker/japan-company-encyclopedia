@@ -55,6 +55,11 @@ on:
         required: false
         type: boolean
         default: false
+      backfill_segment_profit:
+        description: "Instead of detection: add segment profit (JCE-110) to entries with a segment revenue table, from the filing that table cites, and open a pull request into the branch this runs on"
+        required: false
+        type: boolean
+        default: false
       probe:
         description: "Instead of detection: print the XBRL rows of these companies' filings that the value chain reads (comma-separated ids; writes nothing)"
         required: false
@@ -71,7 +76,7 @@ concurrency:
 jobs:
   detect:
     # A backfill or a probe is a separate, hand-started run; it does not also detect.
-    if: github.event_name == 'schedule' || (inputs.backfill_workforce == '' && inputs.probe == '' && !inputs.backfill_cashflow_extras)
+    if: github.event_name == 'schedule' || (inputs.backfill_workforce == '' && inputs.probe == '' && !inputs.backfill_cashflow_extras && !inputs.backfill_segment_profit)
     runs-on: ubuntu-latest
     timeout-minutes: 60
     outputs:
@@ -322,7 +327,7 @@ jobs:
   # second detector; it fills a field entries registered before 2026-11-09 lack. Same rules as propose: a new branch,
   # the integrity suite and the type check, nothing outside src/data, a pull request a person merges.
   backfill:
-    if: github.event_name == 'workflow_dispatch' && (inputs.backfill_workforce != '' || inputs.probe != '' || inputs.backfill_cashflow_extras)
+    if: github.event_name == 'workflow_dispatch' && (inputs.backfill_workforce != '' || inputs.probe != '' || inputs.backfill_cashflow_extras || inputs.backfill_segment_profit)
     runs-on: ubuntu-latest
     timeout-minutes: 240
     permissions:
@@ -335,6 +340,7 @@ jobs:
       TIER: ${{ inputs.backfill_workforce }}
       PROBE: ${{ inputs.probe }}
       CFX: ${{ inputs.backfill_cashflow_extras && '1' || '' }}
+      SEGP: ${{ inputs.backfill_segment_profit && '1' || '' }}
       LIMIT: ${{ inputs.limit || '150' }}
       BASE: ${{ github.ref_name }}
       GH_TOKEN: ${{ github.token }}
@@ -385,8 +391,15 @@ jobs:
             echo "会社別の理由はこの実行のログ（Add 減価償却費 and 投資キャッシュ・フロー）にあります。"
           } > out/summary.md
 
+      # JCE-110 第3段階: the filing each segment table already cites — not a new filing, so not a detector.
+      - name: Add segment profit
+        if: env.SEGP != ''
+        run: |
+          mkdir -p out
+          node scripts/pipeline/backfill-segment-profit.mjs --tier all --write --summary out/summary.md
+
       - name: Check the result
-        if: env.TIER != '' || env.CFX != ''
+        if: env.TIER != '' || env.CFX != '' || env.SEGP != ''
         run: |
           npx next typegen
           npx tsc --noEmit -p .
@@ -399,10 +412,21 @@ jobs:
           fi
 
       - name: Open a pull request
-        if: env.TIER != '' || env.CFX != ''
+        if: env.TIER != '' || env.CFX != '' || env.SEGP != ''
         run: |
           cat out/summary.md >> "$GITHUB_STEP_SUMMARY"
           if [ -z "$(git status --porcelain src/data)" ]; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$SEGP" ]; then
+            branch="auto/segment-profit-$(date -u +%Y-%m-%d)-${{ github.run_id }}"
+            git switch -c "$branch"
+            git add src/data/companies
+            git commit -m "事業別の売上にセグメント利益を追加（JCE-110）" -m "Read by backfill-segment-profit.mjs from the filing each segment table cites; one profit measure and one sales element closing against the filing's totals, every business covered."
+            git push origin "HEAD:refs/heads/${branch}"
+            gh pr create --base "$BASE" --head "$branch" --title "事業別の売上にセグメント利益を追加" --body-file out/summary.md
+            exit 0
+          fi
           if [ -n "$CFX" ]; then
             branch="auto/cashflow-extras-$(date -u +%Y-%m-%d)-${{ github.run_id }}"
             git config user.name "github-actions[bot]"
