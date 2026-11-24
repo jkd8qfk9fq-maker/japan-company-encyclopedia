@@ -108,3 +108,13 @@ describe("admin app: behind Cloudflare Access", () => {
     expect(login.headers.get("location")).toBe("/");
   });
 });
+
+describe("admin app: pages", () => {
+  it("lets the browser send this app's own origin with its forms, and nowhere else", async () => {
+    const response = await worker.fetch(new Request("https://admin.kigyo-hyakka.com/login"), env);
+    expect(response.headers.get("referrer-policy")).toBe("same-origin");
+    // A post that says it came from nowhere is still refused.
+    const nullOrigin = await worker.fetch(new Request("https://admin.kigyo-hyakka.com/login", { method: "POST", headers: { origin: "null" }, body: new URLSearchParams({ email: "owner@example.com" }) }), env);
+    expect(nullOrigin.status).toBe(403);
+  });
+});
