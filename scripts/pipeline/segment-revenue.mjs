@@ -46,12 +46,29 @@ const amountOf = (/** @type {string} */ v) => {
  * @returns {{ label: string, items: { member: string, other: boolean, amount: number }[] } | null}
  */
 export function segmentRevenueFacts(rows, period = "CurrentYearDuration") {
-  const head = new RegExp(`^${period}(_|$)`);
-  const strip = new RegExp(`^${period}_?`);
   const elements = [...new Set(rows.map((r) => r["要素ID"]).filter((e) => ELEMENT.test(e ?? "")))];
   for (const element of elements) {
+    const facts = memberFacts(rows, element, period);
+    if (facts) return { label: facts.label.replace(/[（(]IFRS[)）]/g, "").trim() || "外部顧客への売上高", items: facts.items };
+  }
+  return null;
+}
+
+/**
+ * One element's values per segment member for one year, held to the same rules as the revenue table: every member
+ * tagged once, and the members adding up (within the note's rounding) to the filing's own reportable or overall total.
+ * Shared by the revenue table and the segment profit block (JCE-110), so both read members the same way.
+ * @param {Record<string, string>[]} rows
+ * @param {string} element the full element id, e.g. jppfs_cor:OperatingIncome
+ * @param {string} period
+ * @returns {{ label: string, items: { member: string, other: boolean, amount: number }[] } | null}
+ */
+export function memberFacts(rows, element, period = "CurrentYearDuration") {
+  const head = new RegExp(`^${period}(_|$)`);
+  const strip = new RegExp(`^${period}_?`);
+  {
     const tagged = rows.filter((r) => r["要素ID"] === element && head.test(r["コンテキストID"] ?? ""));
-    if (tagged.length === 0) continue;
+    if (tagged.length === 0) return null;
     /** @type {Map<string, Set<number | null>>} */
     const byContext = new Map();
     for (const r of tagged) {
@@ -88,10 +105,60 @@ export function segmentRevenueFacts(rows, period = "CurrentYearDuration") {
       return Math.abs(sum(/** @type {any[]} */ (list)) - /** @type {number} */ (total)) <= unit * /** @type {any[]} */ (list).length;
     });
     if (!fits) return null;
-    const label = (tagged[0]["項目名"] ?? "外部顧客への売上高").replace(/[（(]IFRS[)）]/g, "").trim();
-    return { label, items };
+    return { label: (tagged[0]["項目名"] ?? "").trim(), items };
   }
-  return null;
+}
+
+/** The measures filers tag segment profit with, as found in real filings (2026-11-24 probe: ADEKA, アキレス, AGS, SUBARU). */
+const SEGMENT_PROFIT_ELEMENTS = ["jppfs_cor:OperatingIncome", "jppfs_cor:OrdinaryIncome", "jpigp_cor:OperatingProfitLossIFRS", "jpigp_cor:ProfitLossBeforeTaxIFRS"];
+/** The segment's own sales including inter-segment sales — the base a segment's profit is earned on. */
+const SEGMENT_SALES_ELEMENTS = ["jppfs_cor:NetSales", "jppfs_cor:OperatingRevenue1", "jpigp_cor:RevenueIFRS"];
+
+/**
+ * Segment profit and the segment's own sales for one year (JCE-110 第3段階), or the reason there are none. Exactly one
+ * profit element and one sales element must be tagged per member and close against the filing's own total; two
+ * candidates that both close (a filer tagging 営業利益 and 経常利益 per segment) is ambiguous and gives nothing.
+ * @param {Record<string, string>[]} rows
+ * @param {string} [period]
+ */
+export function segmentProfitFacts(rows, period = "CurrentYearDuration") {
+  const pick = (elements) => {
+    const found = elements.map((e) => memberFacts(rows, e, period)).filter((f) => f !== null);
+    return found.length === 1 ? found[0] : found.length === 0 ? { problem: "none" } : { problem: "ambiguous" };
+  };
+  const profit = pick(SEGMENT_PROFIT_ELEMENTS);
+  if ("problem" in profit) return { problem: profit.problem === "none" ? "セグメント利益が無いか、合計と一致しない" : "セグメント利益の要素が複数ある" };
+  const sales = pick(SEGMENT_SALES_ELEMENTS);
+  if ("problem" in sales) return { problem: sales.problem === "none" ? "セグメントの売上高が無いか、合計と一致しない" : "セグメントの売上高の要素が複数ある" };
+  return { profit, sales };
+}
+
+/**
+ * The entry's `segmentRevenue.profit` (JCE-110), or the reason there is none: every business of the revenue table gets
+ * its segment's profit and own sales, or nothing is stored — never a partial set beside a full revenue table.
+ * @param {ReturnType<typeof segmentProfitFacts>} facts
+ * @param {Map<string, string>} labels member id → Japanese name (memberLabels)
+ * @param {{ id: string, name: string, shortName?: string }[]} businesses
+ * @param {{ items: { businessId: string }[] }} revenue the entry's segmentRevenue
+ */
+export function segmentProfitBlock(facts, labels, businesses, revenue) {
+  if ("problem" in facts) return { problem: facts.problem };
+  const profit = mapSegmentsToBusinesses(facts.profit, labels, businesses);
+  if ("problem" in profit) return { problem: `利益: ${profit.problem}` };
+  const sales = mapSegmentsToBusinesses(facts.sales, labels, businesses);
+  if ("problem" in sales) return { problem: `売上: ${sales.problem}` };
+  const salesOf = new Map(sales.items.map((i) => [i.businessId, i.amount]));
+  const profitOf = new Map(profit.items.map((i) => [i.businessId, i.amount]));
+  const items = [];
+  for (const { businessId } of revenue.items) {
+    const p = profitOf.get(businessId);
+    const s = salesOf.get(businessId);
+    if (p === undefined || s === undefined) return { problem: `事業 ${businessId} の利益または売上がない` };
+    if (s <= 0) return { problem: `事業 ${businessId} の売上が正でない` };
+    items.push({ businessId, profit: p, sales: s });
+  }
+  const label = facts.profit.label.replace(/[（(]IFRS[)）]/g, "").replace(/又は.*$/, "").replace(/（△.*?）$/, "").trim();
+  return { label: label || "セグメント利益", items };
 }
 
 /**

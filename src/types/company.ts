@@ -125,6 +125,15 @@ export type SegmentRevenue = Sourced & {
     periodEnd: string;
     items: { businessId: string; amount: number }[];
   };
+  /**
+   * The same note's segment profit and each segment's own sales (inter-segment sales included), for the same year
+   * (JCE-110 第3段階). `label` is the measure the filer reports segments on (営業利益, 経常利益, …). Present only
+   * when every business of `items` has both — never a partial set. Read by the analysis layer for the segment margin.
+   */
+  profit?: {
+    label: string;
+    items: { businessId: string; profit: number; sales: number }[];
+  };
 };
 
 /**

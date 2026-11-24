@@ -86,6 +86,34 @@ describe("meaning layer", () => {
     out.forEach((s) => checkSentence(s, full));
   });
 
+  it("names the segment with the highest margin, and Q1 yields its last sentence to Q2 within five", () => {
+    const a4: AnalysisGroup = {
+      id: "a4",
+      title: "セグメント別の利益率",
+      rows: [
+        row("a4-margin-x", "暮らしの素材事業の営業利益率", 0.123, { unit: "percent", formula: "セグメントの営業利益 ÷ セグメントの売上高（セグメント間を含む）" }),
+        row("a4-share-x", "暮らしの素材事業の売上構成比", 0.25, { unit: "percent" }),
+        row("a4-margin-y", "機械事業の営業利益率", 0.05, { unit: "percent", formula: "セグメントの営業利益 ÷ セグメントの売上高（セグメント間を含む）" }),
+        row("a4-share-y", "機械事業の売上構成比", 0.75, { unit: "percent" }),
+      ],
+    };
+    const b1: AnalysisGroup = {
+      id: "b1",
+      title: "純資産の増減の内訳",
+      rows: [row("b1-net-assets-change", "純資産の増減", 1_000_000_000), row("b1-net-income", "うち当期純利益", 2_000_000_000, { kind: "printed" }), row("b1-other-change", "その他増減", -1_000_000_000)],
+    };
+    const seg: AnalysisGroup = {
+      id: "a3",
+      title: "セグメント別の売上寄与",
+      rows: [row("a3-x", "暮らしの素材事業の寄与", 0.05, { unit: "points" }), row("a3-y", "機械事業の寄与", 0.01, { unit: "points" }), row("a3-revenue-change", "売上高の増減", 3_000_000_000)],
+    };
+    const groups = [a1(-12_000_000_000), b1, a4, seg, { id: "c2", title: "資金ギャップ", rows: [row("c2-operating-cash-flow", "営業キャッシュフロー", 1, { kind: "printed" }), row("c2-capex", "設備投資", 1)] }];
+    const out = meaningSummary(groups);
+    expect(out.map((s) => s.id)).toEqual(["q1-net-income", "q1-profit-split", "q1-capex-cash", "q2-margin", "q2-segment"]);
+    expect(sentenceText(out[3]!)).toBe("営業利益率が最も高いのは暮らしの素材事業で 12.3%。売上構成比は 25.0%。");
+    out.forEach((s) => checkSentence(s, groups));
+  });
+
   it("builds nothing from a group that was suppressed", () => {
     expect(meaningSummary([])).toEqual([]);
     const partial: AnalysisGroup = { id: "a1", title: "x", rows: [row("a1-revenue-effect", "売上効果", 1)] };

@@ -223,6 +223,12 @@ export const companySchema = z.strictObject({
           items: z.array(z.strictObject({ businessId: kebab, amount: z.number().int().nonnegative() })).min(1),
         })
         .optional(),
+      profit: z
+        .strictObject({
+          label: text,
+          items: z.array(z.strictObject({ businessId: kebab, profit: z.number().int(), sales: z.number().int().positive() })).min(1),
+        })
+        .optional(),
       ...sourced,
     })
     .optional(),
