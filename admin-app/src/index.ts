@@ -1,10 +1,11 @@
 import { buildSave, EDIT_DIRECTORY, EDIT_ID, previewEdit, saveInputErrors, type EditableKind } from "../../src/lib/content/content-edit";
 import type { ContentContext } from "../../src/lib/content/integrity";
 import { LINK_TTL_MS, readCookie, SESSION_COOKIE, SESSION_TTL_MS, sessionCookie, sign, verify } from "./auth";
-import { accessEmail } from "./access";
+import { accessIdentity } from "./access";
+import { CHECK_LABEL, dashboardData, parseRevisionNames, renderDashboard } from "./dashboard";
 import { allowedEmails, missingSettings, usesAccess, type AdminEnv } from "./env";
 import { GitHub } from "./github";
-import { errorList, esc, page, redirect } from "./html";
+import { errorList, esc, navFor, page, redirect, type PageOptions } from "./html";
 
 /**
  * 百科事典の管理アプリ (JCE-109), at admin.kigyo-hyakka.com. A company or a term is edited as its JSON; the draft passes
@@ -122,40 +123,97 @@ ${sent ? `<div class="card ok">登録されているアドレスであれば、�
       return usesAccess(env) ? redirect("/cdn-cgi/access/logout") : redirect("/login", { "set-cookie": sessionCookie("", 0) });
     }
 
-    const user = usesAccess(env)
-      ? await accessEmail(env, request.headers.get("cf-access-jwt-assertion"))
-      : await verify(env, "session", readCookie(request, SESSION_COOKIE));
+    const identity = usesAccess(env)
+      ? await accessIdentity(env, request.headers.get("cf-access-jwt-assertion"))
+      : await verify(env, "session", readCookie(request, SESSION_COOKIE)).then((email) => (email ? { email, expires: null as number | null } : null));
+    const user = identity?.email ?? null;
     if (usesAccess(env) && (!user || !allowedEmails(env).has(user))) {
       return page("ログインできません", `<h1>ログインできません</h1><p>このアドレスには管理画面の権限がありません。</p>`, { status: 403 });
     }
     if (!user || !allowedEmails(env).has(user)) return redirect("/login");
     const github = new GitHub(env);
+    // Every signed-in page: the console frame, with the navigation marked for where the reader is.
+    const view = (title: string, body: string, extra: Omit<PageOptions, "user"> & { signedIn?: boolean } = {}) =>
+      page(title, body, { nav: navFor(path), ...extra, user });
 
     if (path === "/" && request.method === "GET") {
-      let proposals = "";
+      const data = await dashboardData(env, github, async () => (await companyIndex(env)).length);
+      return view("ダッシュボード", renderDashboard(data, { email: user, expires: identity?.expires ?? null }, env));
+    }
+
+    if (path === "/settings") {
+      const status = await github.status();
+      const row = (label: string, value: string) => `<tr><th style="width:38%">${esc(label)}</th><td>${value}</td></tr>`;
+      const set = (v: unknown) => (v ? '<span class="ok">設定済み</span>' : '<span class="bad">未設定</span>');
+      return view(
+        "システム設定",
+        `<h1>システム設定</h1><div class="grid g2">
+<section class="panel"><h2>認証</h2><table>${row("ログイン方式", usesAccess(env) ? "Cloudflare Access（ワンタイムコード）" : "メールのリンク")}${row("Access チーム", esc(env.ACCESS_TEAM_DOMAIN ?? "—"))}${row("ログイン中", esc(user))}${row("許可アドレス（ADMIN_EMAILS）", `${set(env.ADMIN_EMAILS)}（${allowedEmails(env).size}件）`)}</table>
+<p class="muted">許可するアドレスは Cloudflare Zero Trust の Access ポリシーと、Worker のシークレット ADMIN_EMAILS の両方で決まります。値はこの画面に出しません。</p></section>
+<section class="panel"><h2>GitHub</h2><table>${row("リポジトリ", esc(env.GITHUB_REPO))}${row("トークン（GITHUB_TOKEN）", set(env.GITHUB_TOKEN))}${status.ok ? row("接続", '<span class="ok">接続中</span>') + row("書き込み権限", status.push ? '<span class="ok">あり</span>' : '<span class="bad">なし</span>') + row("API の残り", `${status.remaining.toLocaleString("ja-JP")} / ${status.limit.toLocaleString("ja-JP")}（毎時）`) : row("接続", `<span class="bad">接続できません</span> ${esc(status.error)}`)}</table>
+<p class="muted">変更は main 向けのプルリクエストになり、テストが通ってからマージすると公開されます。この画面から本番のデータを直接は書き換えません。</p></section>
+<section class="panel"><h2>公開サイト</h2><table>${row("百科事典", `<a href="${esc(env.SITE_ORIGIN)}">${esc(env.SITE_ORIGIN)}</a>`)}${row("メール送信（予備のログイン用）", set(env.RESEND_API_KEY))}</table></section>
+</div>`,
+        { crumbs: [["システム設定"]] },
+      );
+    }
+
+    if (path === "/approvals") {
+      let body: string;
       try {
-        const list = await github.openProposals();
-        proposals = list.length
-          ? `<ul class="plain">${list.map((p) => `<li><a href="${esc(p.url)}">#${p.number} ${esc(p.title)}</a> <span class="muted">${esc(p.created.slice(0, 10))}</span></li>`).join("")}</ul>`
-          : `<p class="muted">マージ待ちの変更はありません。</p>`;
+        const pulls = await github.openPulls(50);
+        body = pulls.length
+          ? `<div class="panel tw"><table><thead><tr><th>番号</th><th>題名</th><th>作成</th><th>テスト</th><th>作成日</th></tr></thead><tbody>${pulls
+              .map((p) => `<tr><td>#${p.number}</td><td><a href="${esc(p.url)}">${esc(p.title)}</a>${p.draft ? ' <span class="pill">下書き</span>' : ""}</td><td>${p.fromAdmin ? "管理画面" : esc(p.author)}</td><td>${CHECK_LABEL[p.checks]}</td><td>${esc(p.created.slice(0, 10))}</td></tr>`)
+              .join("")}</tbody></table></div>`
+          : `<div class="panel"><p class="muted">承認待ちの変更はありません。</p></div>`;
       } catch (error) {
-        proposals = errorList([`GitHub に接続できません：${String(error).slice(0, 160)}`]);
+        body = errorList([`GitHub から読めませんでした：${String(error).slice(0, 160)}`]);
       }
-      return page(
-        "ホーム",
-        `<h1>管理</h1>
-<div class="card"><h2 style="margin-top:0">企業を直す</h2><form method="get" action="/companies" class="row"><input type="search" name="q" placeholder="社名・証券コード・id" required style="flex:1"><button type="submit">探す</button></form></div>
-<div class="card"><h2 style="margin-top:0">用語集</h2><p><a href="/terms">用語の一覧・編集</a> ・ <a href="/new/term">用語を追加</a></p></div>
-<h2>マージ待ちの変更（この管理画面から作ったもの）</h2>${proposals}
-<p class="muted">編集は、出典のある事実だけ。保存すると変更記録（Revision）つきのプルリクエストになり、テストが通ってから GitHub でマージすると公開されます。</p>`,
-        { signedIn: true },
+      return view("承認管理", `<h1>承認管理</h1><p class="muted">開いているプルリクエストと、そのテストの結果です。テストが通ったものを GitHub でマージすると公開されます。</p>${body}`, { crumbs: [["承認管理"]] });
+    }
+
+    if (path === "/revisions") {
+      const kind = url.searchParams.get("kind") ?? "";
+      const q = (url.searchParams.get("q") ?? "").trim().toLowerCase();
+      const pageNo = Math.max(1, Number(url.searchParams.get("page") ?? "1") || 1);
+      const all = parseRevisionNames(await github.ids("revisions")).filter((r) => (!kind || r.kind === kind) && (!q || r.name.includes(q)));
+      const per = 50;
+      const rows = all.slice((pageNo - 1) * per, pageNo * per);
+      const qs = (n: number) => `/revisions?${new URLSearchParams({ ...(kind ? { kind } : {}), ...(q ? { q } : {}), page: String(n) })}`;
+      const kinds = [["", "すべて"], ["company", "企業"], ["term", "用語"], ["industry", "業界"]];
+      return view(
+        "変更履歴",
+        `<h1>変更履歴</h1><form method="get" class="row panel" style="margin-bottom:14px"><select name="kind" style="width:auto">${kinds.map(([v, l]) => `<option value="${v}"${v === kind ? " selected" : ""}>${l}</option>`).join("")}</select><input type="search" name="q" value="${esc(q)}" placeholder="対象の id・日付で絞る" style="flex:1;min-width:160px"><button type="submit">絞り込む</button></form>
+<p class="muted">${all.length.toLocaleString("ja-JP")}件（新しい順）</p>
+<div class="panel tw"><table><thead><tr><th>日付</th><th>種類</th><th>記録</th></tr></thead><tbody>${rows
+          .map((r) => `<tr><td>${esc(r.day)}</td><td>${esc({ company: "企業", term: "用語", industry: "業界" }[r.kind] ?? r.kind)}</td><td><a href="/revisions/${esc(r.name)}"><code>${esc(r.rest)}</code></a></td></tr>`)
+          .join("")}</tbody></table></div>
+<p class="row" style="margin-top:10px">${pageNo > 1 ? `<a href="${esc(qs(pageNo - 1))}">← 前へ</a>` : ""}<span class="muted">${pageNo} / ${Math.max(1, Math.ceil(all.length / per))}</span>${pageNo * per < all.length ? `<a href="${esc(qs(pageNo + 1))}">次へ →</a>` : ""}</p>`,
+        { crumbs: [["変更履歴"]] },
+      );
+    }
+
+    const revision = path.match(/^\/revisions\/([0-9a-z-]+)$/);
+    if (revision) {
+      const name = revision[1]!;
+      const r = await github.json<Record<string, unknown>>(`src/data/revisions/${name}.json`);
+      if (!r) return view("見つかりません", `<p>変更記録 ${esc(name)} はありません。</p>`, { status: 404 });
+      const approval = r.approval as { approver?: { name?: string; kind?: string }; approvedAt?: string } | undefined;
+      const field = (label: string, v: unknown) => `<tr><th style="width:24%">${esc(label)}</th><td>${esc(v ?? "—")}</td></tr>`;
+      return view(
+        `変更記録 ${name}`,
+        `<h1 style="word-break:break-all">${esc(name)}</h1>
+<section class="panel"><table>${field("対象", `${r.targetType ?? ""} / ${r.targetId ?? ""}`)}${field("日時", r.changedAt)}${field("要約", r.summary)}${field("理由と根拠", r.reason)}${field("承認", approval ? `${approval.approver?.name ?? ""}（${approval.approver?.kind ?? ""}）${approval.approvedAt ?? ""}` : "記録なし")}</table></section>
+<section class="panel" style="margin-top:14px"><h2>変更前後（記録そのまま）</h2><pre style="white-space:pre-wrap;word-break:break-all;font-size:12px;max-height:60vh;overflow:auto">${esc(JSON.stringify({ before: r.before, after: r.after }, null, 2))}</pre></section>`,
+        { crumbs: [["変更履歴", "/revisions"], [name]] },
       );
     }
 
     if (path === "/companies") {
       const q = (url.searchParams.get("q") ?? "").trim().toLowerCase();
       const rows = q ? (await companyIndex(env)).filter((r) => r.id.includes(q) || r.title.toLowerCase().includes(q) || (r.meta ?? "").toLowerCase().includes(q)).slice(0, 40) : [];
-      return page(
+      return view(
         "企業を探す",
         `<h1>企業を探す</h1><form method="get" class="row"><input type="search" name="q" value="${esc(q)}" style="flex:1"><button type="submit">探す</button></form>
 <ul class="plain">${rows.map((r) => `<li><a href="/edit/company/${esc(r.id)}">${esc(r.title)}</a> <span class="muted">${esc(r.meta)} ・ ${esc(r.id)}</span></li>`).join("") || (q ? `<li class="muted">見つかりません（掲載済みの企業だけを探せます）。</li>` : "")}</ul>`,
@@ -165,32 +223,32 @@ ${sent ? `<div class="card ok">登録されているアドレスであれば、�
 
     if (path === "/terms") {
       const ids = [...(await github.ids("terms"))].sort();
-      return page("用語集", `<h1>用語集</h1><p><a href="/new/term">用語を追加</a></p><ul class="plain">${ids.map((id) => `<li><a href="/edit/term/${esc(id)}">${esc(id)}</a></li>`).join("")}</ul>`, { signedIn: true });
+      return view("用語集", `<h1>用語集</h1><p><a href="/new/term">用語を追加</a></p><ul class="plain">${ids.map((id) => `<li><a href="/edit/term/${esc(id)}">${esc(id)}</a></li>`).join("")}</ul>`, {});
     }
 
     if (path === "/new/term" && request.method === "GET") {
       const id = (url.searchParams.get("id") ?? "").trim();
       if (!EDIT_ID.test(id)) {
-        return page("用語を追加", `<h1>用語を追加</h1><form method="get" class="row"><label for="id" style="width:100%">新しい用語の id（英小文字・数字・ハイフン）</label><input type="text" id="id" name="id" pattern="[a-z0-9]+(-[a-z0-9]+)*" required style="flex:1"><button type="submit">次へ</button></form>`, { signedIn: true });
+        return view("用語を追加", `<h1>用語を追加</h1><form method="get" class="row"><label for="id" style="width:100%">新しい用語の id（英小文字・数字・ハイフン）</label><input type="text" id="id" name="id" pattern="[a-z0-9]+(-[a-z0-9]+)*" required style="flex:1"><button type="submit">次へ</button></form>`, {});
       }
       if (await github.file(`src/data/terms/${id}.json`)) return redirect(`/edit/term/${id}`);
       // Start from an existing term's shape, with this id: the schema tells what each field must hold.
       const sample = await github.file("src/data/terms/affiliate.json");
       const template = sample ? { ...(JSON.parse(sample.text) as Record<string, unknown>), id } : { id };
-      return page("用語を追加", `<h1>用語を追加：${esc(id)}</h1><p class="muted">既存の用語「affiliate」の形を下書きにしています。内容をすべて書き換えてください。</p>${editorForm("term", id, JSON.stringify(template, null, 2), "", { isNew: true })}`, { signedIn: true });
+      return view("用語を追加", `<h1>用語を追加：${esc(id)}</h1><p class="muted">既存の用語「affiliate」の形を下書きにしています。内容をすべて書き換えてください。</p>${editorForm("term", id, JSON.stringify(template, null, 2), "", { isNew: true })}`, {});
     }
 
     const edit = path.match(/^\/edit\/(company|term)\/([a-z0-9-]+)$/);
     if (edit) {
       const kind = KINDS[edit[1]!]!;
       const id = edit[2]!;
-      if (!EDIT_ID.test(id)) return page("エラー", "<p>id が正しくありません。</p>", { status: 400, signedIn: true });
+      if (!EDIT_ID.test(id)) return view("エラー", "<p>id が正しくありません。</p>", { status: 400 });
       const filePath = `src/data/${EDIT_DIRECTORY[kind]}/${id}.json`;
       const current = await github.file(filePath);
 
       if (request.method === "GET") {
-        if (!current) return page("見つかりません", `<p>${esc(filePath)} がありません。</p>`, { status: 404, signedIn: true });
-        return page(`${id} を直す`, `<h1>${esc(id)} を直す</h1><p class="muted"><a href="${esc(env.SITE_ORIGIN)}/${kind === "company" ? "companies" : "terms"}/${esc(id)}">公開ページ</a> ・ main の版 ${esc(current.sha.slice(0, 7))}</p>${editorForm(kind, id, current.text, current.sha)}`, { signedIn: true });
+        if (!current) return view("見つかりません", `<p>${esc(filePath)} がありません。</p>`, { status: 404 });
+        return view(`${id} を直す`, `<h1>${esc(id)} を直す</h1><p class="muted"><a href="${esc(env.SITE_ORIGIN)}/${kind === "company" ? "companies" : "terms"}/${esc(id)}">公開ページ</a> ・ main の版 ${esc(current.sha.slice(0, 7))}</p>${editorForm(kind, id, current.text, current.sha)}`, {});
       }
 
       const form = await request.formData();
@@ -202,7 +260,7 @@ ${sent ? `<div class="card ok">登録されているアドレスであれば、�
       const confirm = form.get("confirm") === "1";
       const action = form.get("action") === "save" ? "save" : "preview";
       const again = (errors: string[], note = "") =>
-        page(`${id} を直す`, `<h1>${esc(id)} を直す</h1>${errorList(errors)}${note}${editorForm(kind, id, text, base, { summary, reason, confirm, isNew })}`, { signedIn: true, status: errors.length ? 422 : 200 });
+        view(`${id} を直す`, `<h1>${esc(id)} を直す</h1>${errorList(errors)}${note}${editorForm(kind, id, text, base, { summary, reason, confirm, isNew })}`, { status: errors.length ? 422 : 200 });
 
       if (isNew ? current !== null : !current || current.sha !== base) {
         return again([isNew ? "同じ id のファイルがすでにあります。" : "編集を始めた後に、このファイルが main で変更されました。ページを開き直して、最新の内容から編集してください。"]);
@@ -229,9 +287,9 @@ ${sent ? `<div class="card ok">登録されているアドレスであれば、�
         body: `## 変更の要約\n${summary}\n\n## 理由と根拠\n${reason}\n\n## 変わる項目\n${preview.changes.map((c) => `- \`${c.field}\``).join("\n")}\n\n変更記録: \`src/data/revisions/${saved.revisionId}.json\`\n\n管理画面（admin.kigyo-hyakka.com）から作成。テストが通ったらマージしてください。`,
         files: saved.files,
       });
-      return page("作成しました", `<h1>プルリクエストを作りました</h1><div class="card ok"><a href="${esc(pr.url)}">#${pr.number}</a> を GitHub で確認し、テストが通ったらマージしてください。マージすると公開されます。</div><p><a href="/">管理のホームへ</a></p>`, { signedIn: true });
+      return view("作成しました", `<h1>プルリクエストを作りました</h1><div class="card ok"><a href="${esc(pr.url)}">#${pr.number}</a> を GitHub で確認し、テストが通ったらマージしてください。マージすると公開されます。</div><p><a href="/">管理のホームへ</a></p>`, {});
     }
 
-    return page("見つかりません", "<p>このページはありません。</p>", { status: 404, signedIn: true });
+    return view("見つかりません", "<p>このページはありません。</p>", { status: 404 });
   },
 };
