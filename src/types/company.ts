@@ -365,6 +365,10 @@ export const STATEMENT_ROLES = [
   // acquisition-of-fixed-assets outflow the filer itself prints in investing cash flow.
   "operating-cash-flow",
   "capital-expenditure",
+  // JCE-110 (意味の層 第2段階): the operating section's depreciation line as the filer prints it, and the
+  // investing total, cross-checked against the 経営指標等 summary like the operating total. Both optional.
+  "depreciation",
+  "investing-cash-flow",
 ] as const;
 
 export type StatementRole = (typeof STATEMENT_ROLES)[number];

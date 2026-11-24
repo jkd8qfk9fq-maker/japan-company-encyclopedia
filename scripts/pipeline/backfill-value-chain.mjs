@@ -114,7 +114,8 @@ async function rowsOf(docID) {
 
 if (probe) {
   // Read-only: what a filing actually tags, so element names are checked against real filings, not assumed.
-  const wanted = /Salary|LengthOfService|AverageAge|NumberOfEmployees$|ExternalCustomers|GeographicalAreas|SegmentInformation|NetSales$|Revenue|PerShare|IssuedShares/;
+  // JCE-110 adds the cash-flow rows (depreciation, investing total) and segment profit, checked here before any bulk run.
+  const wanted = /Salary|LengthOfService|AverageAge|NumberOfEmployees$|ExternalCustomers|GeographicalAreas|SegmentInformation|NetSales$|Revenue|PerShare|IssuedShares|Depreciation|Invest(ing|ment)Activities|SegmentProfit|ProfitLoss|OperatingIncome|OperatingProfit/;
   for (const id of probe) {
     const found = await resolveFiling(read(id));
     if (!found.docID) { console.log(`${id}: ${found.problem}`); continue; }
