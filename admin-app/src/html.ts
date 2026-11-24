@@ -29,7 +29,9 @@ export function page(title: string, body: string, opts: { signedIn?: boolean; st
     headers: {
       "content-type": "text/html; charset=utf-8",
       "cache-control": "no-store",
-      "referrer-policy": "no-referrer",
+      // same-origin, not no-referrer: under no-referrer the browser posts this app's own forms with `Origin: null`,
+      // and the origin check in index.ts then refused the operator's own 「確認する」 (2026-11-24).
+      "referrer-policy": "same-origin",
       "x-frame-options": "DENY",
       "x-content-type-options": "nosniff",
       "content-security-policy": "default-src 'none'; style-src 'unsafe-inline'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'",
