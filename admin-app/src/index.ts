@@ -70,6 +70,18 @@ function editorForm(kind: EditableKind, id: string, text: string, sha: string, e
 
 export default {
   async fetch(request: Request, env: AdminEnv): Promise<Response> {
+    // An unexpected failure (GitHub down, a token without a permission) shows a page in the app's own words and is
+    // logged, instead of Cloudflare's bare "Worker threw exception" (1101).
+    try {
+      return await handle(request, env);
+    } catch (error) {
+      console.error(`unhandled: ${request.method} ${new URL(request.url).pathname}: ${String(error)}`);
+      return page("エラー", `<h1>処理できませんでした</h1>${errorList([String(error).slice(0, 240)])}<p><a href="/">ダッシュボードへ戻る</a></p>`, { status: 500 });
+    }
+  },
+};
+
+async function handle(request: Request, env: AdminEnv): Promise<Response> {
     const url = new URL(request.url);
     const path = url.pathname;
 
@@ -158,7 +170,18 @@ ${sent ? `<div class="card ok">登録されているアドレスであれば、�
         if (String(form.get("sha") ?? "") !== pr.sha) return refused(["確認した後にプルリクエストが更新されました。開き直して、最新の内容で確認してください。"]);
         if (blockers.length) return refused(blockers);
         const who = user.replace(/^(.{2}).*@/, "$1…@");
-        const result = await github.merge(number, pr.sha, `${pr.title} (#${number})`, `管理画面で承認してマージ（${who}、テスト成功を確認、${new Date().toISOString()}）`);
+        let result: { sha: string };
+        try {
+          result = await github.merge(number, pr.sha, `${pr.title} (#${number})`, `管理画面で承認してマージ（${who}、テスト成功を確認、${new Date().toISOString()}）`);
+        } catch (error) {
+          console.error(`merge failed: ${String(error)}`);
+          const denied = /: 403 /.test(String(error));
+          return refused([
+            denied
+              ? "GitHub がマージを拒否しました。GitHub のトークン（GITHUB_TOKEN）に、このリポジトリの Contents と Pull requests の「Read and write」の権限が必要です（システム設定を参照）。"
+              : `GitHub でマージできませんでした：${String(error).slice(0, 160)}`,
+          ]);
+        }
         return view(`#${number}`, `<h1>マージしました</h1><div class="card ok">#${number}「${esc(pr.title)}」を main にマージしました（${esc(result.sha.slice(0, 7))}）。公開の配信が自動で始まります。</div><p><a href="/approvals">承認管理へ</a></p>`, { crumbs: [["承認管理", "/approvals"], [`#${number}`]] });
       }
 
@@ -373,5 +396,4 @@ ${sent ? `<div class="card ok">登録されているアドレスであれば、�
     }
 
     return view("見つかりません", "<p>このページはありません。</p>", { status: 404 });
-  },
-};
+}

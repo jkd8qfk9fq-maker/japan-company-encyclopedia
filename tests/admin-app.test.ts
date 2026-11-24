@@ -182,6 +182,22 @@ describe("admin console: roles and merging (stage 3)", () => {
   });
 });
 
+describe("admin console: failures are shown, not thrown", () => {
+  it("answers with the app's own error page when something underneath fails", async () => {
+    // A signed-in request whose GitHub calls fail (the test has no network): the page must still answer.
+    const session = await sign(env, "session", "owner@example.com", Date.now() + 60_000);
+    const original = globalThis.fetch;
+    globalThis.fetch = (async () => { throw new Error("network down"); }) as typeof fetch;
+    try {
+      const response = await worker.fetch(new Request("https://admin.kigyo-hyakka.com/terms", { headers: { cookie: `kigyo_admin=${session}` } }), env);
+      expect(response.status).toBe(500);
+      expect(await response.text()).toContain("処理できませんでした");
+    } finally {
+      globalThis.fetch = original;
+    }
+  });
+});
+
 describe("admin console: company sections (stage 4)", () => {
   const toyota = async () => JSON.parse((await import("node:fs")).readFileSync("src/data/companies/toyota.json", "utf8")) as Record<string, unknown>;
   const form = (entries: [string, string][]) => {
