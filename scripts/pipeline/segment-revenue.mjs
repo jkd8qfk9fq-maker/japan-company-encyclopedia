@@ -63,7 +63,7 @@ export function segmentRevenueFacts(rows, period = "CurrentYearDuration") {
  * @param {string} period
  * @returns {{ label: string, items: { member: string, other: boolean, amount: number }[] } | null}
  */
-export function memberFacts(rows, element, period = "CurrentYearDuration") {
+export function memberFacts(rows, element, period = "CurrentYearDuration", strict = false) {
   const head = new RegExp(`^${period}(_|$)`);
   const strip = new RegExp(`^${period}_?`);
   {
@@ -74,7 +74,10 @@ export function memberFacts(rows, element, period = "CurrentYearDuration") {
     for (const r of tagged) {
       const context = r["コンテキストID"].replace(strip, "");
       if (!byContext.has(context)) byContext.set(context, new Set());
-      byContext.get(context)?.add(amountOf(r["値"]));
+      // strict (segment profit, JCE-110): a 「－」 is "not presented", not zero — read as zero, an all-dash column
+      // closes against a dash total (キッコーマン's 税引前利益 by segment) and would print 0.0% margins.
+      const raw = String(r["値"] ?? "").trim();
+      byContext.get(context)?.add(strict && (raw === "" || /^[－\-—]$/.test(raw)) ? null : amountOf(r["値"]));
     }
     const one = (/** @type {string} */ context) => {
       const values = byContext.get(context);
@@ -123,7 +126,7 @@ const SEGMENT_SALES_ELEMENTS = ["jppfs_cor:NetSales", "jppfs_cor:OperatingRevenu
  */
 export function segmentProfitFacts(rows, period = "CurrentYearDuration") {
   const pick = (elements) => {
-    const found = elements.map((e) => memberFacts(rows, e, period)).filter((f) => f !== null);
+    const found = elements.map((e) => memberFacts(rows, e, period, true)).filter((f) => f !== null);
     return found.length === 1 ? found[0] : found.length === 0 ? { problem: "none" } : { problem: "ambiguous" };
   };
   const profit = pick(SEGMENT_PROFIT_ELEMENTS);

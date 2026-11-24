@@ -48,6 +48,14 @@ describe("segment profit (JCE-110)", () => {
     expect(segmentProfitBlock(segmentProfitFacts(broken), labels, businesses, revenue)).toEqual({ problem: "セグメント利益が無いか、合計と一致しない" });
   });
 
+  it("treats a dash as not presented, not as zero (an all-dash column closes against a dash total)", () => {
+    const dashes = [
+      ...filing.filter((r) => r.要素ID === "jppfs_cor:NetSales"),
+      ...filing.filter((r) => r.要素ID === "jppfs_cor:OperatingIncome").map((r) => ({ ...r, 要素ID: "jpigp_cor:ProfitLossBeforeTaxIFRS", 値: "－" })),
+    ];
+    expect(segmentProfitFacts(dashes)).toEqual({ problem: "セグメント利益が無いか、合計と一致しない" });
+  });
+
   it("stores nothing when two profit measures both close (ambiguous)", () => {
     const both = [...filing, ...filing.filter((r) => r.要素ID === "jppfs_cor:OperatingIncome").map((r) => ({ ...r, 要素ID: "jppfs_cor:OrdinaryIncome" }))];
     expect(segmentProfitFacts(both)).toEqual({ problem: "セグメント利益の要素が複数ある" });
