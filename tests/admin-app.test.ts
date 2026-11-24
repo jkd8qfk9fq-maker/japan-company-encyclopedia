@@ -149,3 +149,35 @@ describe("admin console: dashboard figures (2026-11-24)", () => {
     expect(html).not.toMatch(/\d{1,3},\d{3}/); // no figure appears when none could be read
   });
 });
+
+describe("admin console: roles and merging (stage 3)", () => {
+  const roles: AdminEnv = { ...env, ADMIN_EMAILS: "editor@example.com", APPROVER_EMAILS: "boss@example.com", VIEWER_EMAILS: "reader@example.com" };
+
+  it("gives each address its highest role, and lets all three sign in", async () => {
+    const { roleOf } = await import("../admin-app/src/env");
+    expect(roleOf(roles, "Boss@example.com")).toBe("approver");
+    expect(roleOf(roles, "editor@example.com")).toBe("editor");
+    expect(roleOf(roles, "reader@example.com")).toBe("viewer");
+    expect(roleOf(roles, "stranger@example.com")).toBeNull();
+    expect([...allowedEmails(roles)].sort()).toEqual(["boss@example.com", "editor@example.com", "reader@example.com"]);
+  });
+
+  it("keeps a viewer out of every write", async () => {
+    const session = await sign(roles, "session", "reader@example.com", Date.now() + 60_000);
+    const cookie = `kigyo_admin=${session}`;
+    for (const [method, path] of [["POST", "/edit/company/toyota"], ["GET", "/new/term?id=x"], ["POST", "/approvals/1/merge"]] as const) {
+      const response = await worker.fetch(new Request(`https://admin.kigyo-hyakka.com${path}`, { method, headers: { cookie, origin: "https://admin.kigyo-hyakka.com" }, body: method === "POST" ? new URLSearchParams({}) : undefined }), roles);
+      expect(response.status).toBe(403);
+    }
+  });
+
+  it("lists why a pull request cannot be merged, and nothing when it can", async () => {
+    const { mergeBlockers } = await import("../admin-app/src/github");
+    const ready = { number: 1, title: "t", body: "", url: "", state: "open", merged: false, draft: false, mergeable: true, mergeableState: "clean", author: "a", branch: "admin/x", sha: "abc", created: "", files: [], runs: [], checks: "passed" as const };
+    expect(mergeBlockers(ready)).toEqual([]);
+    expect(mergeBlockers({ ...ready, checks: "failed" })).toContain("テストが失敗しています。");
+    expect(mergeBlockers({ ...ready, checks: "none" })).toContain("テストの結果がありません。");
+    expect(mergeBlockers({ ...ready, mergeable: false, mergeableState: "dirty" })).toContain("main と食い違いがあり、このままではマージできません。");
+    expect(mergeBlockers({ ...ready, state: "closed", merged: true })).toContain("すでにマージされています。");
+  });
+});

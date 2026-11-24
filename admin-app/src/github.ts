@@ -115,6 +115,35 @@ export class GitHub {
     }
   }
 
+  /** One pull request in full: what it changes, its checks, and whether GitHub can merge it as it stands. */
+  async pull(number: number): Promise<PullDetail> {
+    const [p, files] = await Promise.all([
+      this.call<{ number: number; title: string; body: string | null; html_url: string; state: string; merged: boolean; draft: boolean; mergeable: boolean | null; mergeable_state: string; user: { login: string }; head: { ref: string; sha: string }; created_at: string }>(`/pulls/${number}`),
+      this.call<{ filename: string; status: string; additions: number; deletions: number }[]>(`/pulls/${number}/files?per_page=100`),
+    ]);
+    const runs = await this.call<{ check_runs: { name: string; status: string; conclusion: string | null; html_url: string }[] }>(`/commits/${p.head.sha}/check-runs?per_page=50`);
+    const list = runs.check_runs;
+    const checks: PullSummary["checks"] = list.some((r) => r.status !== "completed")
+      ? "running"
+      : list.some((r) => r.conclusion && !["success", "skipped", "neutral"].includes(r.conclusion))
+        ? "failed"
+        : list.length
+          ? "passed"
+          : "none";
+    return {
+      number: p.number, title: p.title, body: p.body ?? "", url: p.html_url, state: p.state, merged: p.merged, draft: p.draft,
+      mergeable: p.mergeable, mergeableState: p.mergeable_state, author: p.user.login, branch: p.head.ref, sha: p.head.sha, created: p.created_at,
+      files: files.map((f) => ({ name: f.filename, status: f.status, additions: f.additions, deletions: f.deletions })),
+      runs: list.map((r) => ({ name: r.name, status: r.status, conclusion: r.conclusion, url: r.html_url })),
+      checks,
+    };
+  }
+
+  /** Squash-merge, only if the head is still the commit the approver looked at (GitHub refuses otherwise). */
+  async merge(number: number, sha: string, title: string, message: string): Promise<{ merged: boolean; sha: string }> {
+    return this.call(`/pulls/${number}/merge`, { method: "PUT", body: JSON.stringify({ sha, merge_method: "squash", commit_title: title, commit_message: message }) });
+  }
+
   /** Open pull requests this app made (branches under admin/). */
   async openProposals(): Promise<{ number: number; title: string; url: string; created: string }[]> {
     const pulls = await this.call<{ number: number; title: string; html_url: string; created_at: string; head: { ref: string } }[]>(`/pulls?state=open&per_page=50`);
@@ -133,3 +162,35 @@ export type PullSummary = {
   fromAdmin: boolean;
   checks: "passed" | "failed" | "running" | "none" | "unknown";
 };
+
+export type PullDetail = {
+  number: number;
+  title: string;
+  body: string;
+  url: string;
+  state: string;
+  merged: boolean;
+  draft: boolean;
+  mergeable: boolean | null;
+  mergeableState: string;
+  author: string;
+  branch: string;
+  sha: string;
+  created: string;
+  files: { name: string; status: string; additions: number; deletions: number }[];
+  runs: { name: string; status: string; conclusion: string | null; url: string }[];
+  checks: PullSummary["checks"];
+};
+
+/** Why a pull request cannot be merged from the app right now, in the operator's words; empty when it can. */
+export function mergeBlockers(p: PullDetail): string[] {
+  const out: string[] = [];
+  if (p.state !== "open") out.push(p.merged ? "すでにマージされています。" : "閉じられています。");
+  if (p.draft) out.push("下書きのプルリクエストです。");
+  if (p.checks === "running") out.push("テストがまだ終わっていません。");
+  if (p.checks === "failed") out.push("テストが失敗しています。");
+  if (p.checks === "none" || p.checks === "unknown") out.push("テストの結果がありません。");
+  if (p.mergeable === false || p.mergeableState === "dirty") out.push("main と食い違いがあり、このままではマージできません。");
+  if (p.mergeable === null) out.push("GitHub がマージできるかを計算中です。少し待って開き直してください。");
+  return out;
+}

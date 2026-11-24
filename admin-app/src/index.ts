@@ -3,8 +3,8 @@ import type { ContentContext } from "../../src/lib/content/integrity";
 import { LINK_TTL_MS, readCookie, SESSION_COOKIE, SESSION_TTL_MS, sessionCookie, sign, verify } from "./auth";
 import { accessIdentity } from "./access";
 import { CHECK_LABEL, dashboardData, parseRevisionNames, renderDashboard } from "./dashboard";
-import { allowedEmails, missingSettings, usesAccess, type AdminEnv } from "./env";
-import { GitHub } from "./github";
+import { allowedEmails, missingSettings, ROLE_LABEL, roleOf, usesAccess, type AdminEnv } from "./env";
+import { GitHub, mergeBlockers } from "./github";
 import { errorList, esc, navFor, page, redirect, type PageOptions } from "./html";
 
 /**
@@ -132,9 +132,67 @@ ${sent ? `<div class="card ok">登録されているアドレスであれば、�
     }
     if (!user || !allowedEmails(env).has(user)) return redirect("/login");
     const github = new GitHub(env);
+    const role = roleOf(env, user)!;
     // Every signed-in page: the console frame, with the navigation marked for where the reader is.
     const view = (title: string, body: string, extra: Omit<PageOptions, "user"> & { signedIn?: boolean } = {}) =>
-      page(title, body, { nav: navFor(path), ...extra, user });
+      page(title, body, { nav: navFor(path), ...extra, user: `${user}（${ROLE_LABEL[role]}）` });
+
+    // 閲覧 may read everything and change nothing: every write is a POST or the new-term form.
+    if (role === "viewer" && (request.method === "POST" || path.startsWith("/new/"))) {
+      return view("権限がありません", `<h1>権限がありません</h1><p>このアカウントは閲覧のみです。編集は「編集」または「承認」の権限が必要です。</p>`, { status: 403 });
+    }
+
+    const approval = path.match(/^\/approvals\/(\d+)(\/merge)?$/);
+    if (approval) {
+      const number = Number(approval[1]);
+      const pr = await github.pull(number);
+      const blockers = mergeBlockers(pr);
+
+      if (approval[2] && request.method === "POST") {
+        const form = await request.formData();
+        const refused = (why: string[]) =>
+          view(`#${number}`, `<h1>マージしませんでした</h1>${errorList(why)}<p><a href="/approvals/${number}">プルリクエストに戻る</a></p>`, { status: 409, crumbs: [["承認管理", "/approvals"], [`#${number}`]] });
+        if (role !== "approver") return refused(["マージには「承認」の権限が必要です。"]);
+        if (form.get("confirm") !== "1") return refused(["確認のチェックを入れてください。"]);
+        if (String(form.get("sha") ?? "") !== pr.sha) return refused(["確認した後にプルリクエストが更新されました。開き直して、最新の内容で確認してください。"]);
+        if (blockers.length) return refused(blockers);
+        const who = user.replace(/^(.{2}).*@/, "$1…@");
+        const result = await github.merge(number, pr.sha, `${pr.title} (#${number})`, `管理画面で承認してマージ（${who}、テスト成功を確認、${new Date().toISOString()}）`);
+        return view(`#${number}`, `<h1>マージしました</h1><div class="card ok">#${number}「${esc(pr.title)}」を main にマージしました（${esc(result.sha.slice(0, 7))}）。公開の配信が自動で始まります。</div><p><a href="/approvals">承認管理へ</a></p>`, { crumbs: [["承認管理", "/approvals"], [`#${number}`]] });
+      }
+
+      const statusOf = (r: { status: string; conclusion: string | null }) =>
+        r.status !== "completed" ? '<span class="pill warn">実行中</span>' : r.conclusion === "success" ? '<span class="pill ok">成功</span>' : `<span class="pill bad">${esc(r.conclusion ?? "不明")}</span>`;
+      const mergePanel =
+        role !== "approver"
+          ? `<p class="muted">マージは「承認」の権限を持つ人が行います。</p>`
+          : blockers.length
+            ? `<div class="card"><p>いまはマージできません：</p>${errorList(blockers)}</div>`
+            : `<form method="post" action="/approvals/${number}/merge" class="card"><input type="hidden" name="sha" value="${esc(pr.sha)}">
+<label class="row"><input type="checkbox" name="confirm" value="1"> 変更内容とテストの結果を確認した。マージすると公開サイトに反映される</label>
+<p><button type="submit">承認してマージする</button></p></form>`;
+      return view(
+        `#${number} ${pr.title}`,
+        `<h1>#${number} ${esc(pr.title)}</h1>
+<div class="grid g2">
+<section class="panel"><h2>概要</h2><table>
+<tr><th style="width:30%">状態</th><td>${pr.merged ? '<span class="pill ok">マージ済み</span>' : pr.state === "open" ? '<span class="pill">オープン</span>' : '<span class="pill">クローズ</span>'} ${CHECK_LABEL[pr.checks]}</td></tr>
+<tr><th>作成</th><td>${pr.branch.startsWith("admin/") ? "管理画面" : esc(pr.author)} ・ ${esc(pr.created.slice(0, 10))}</td></tr>
+<tr><th>ブランチ</th><td><code>${esc(pr.branch)}</code> ・ ${esc(pr.sha.slice(0, 7))}</td></tr>
+<tr><th>GitHub</th><td><a href="${esc(pr.url)}">GitHub で開く</a></td></tr></table>
+<h2 style="margin-top:14px">テスト</h2>${pr.runs.length ? `<table>${pr.runs.map((r) => `<tr><td>${esc(r.name)}</td><td>${statusOf(r)}</td></tr>`).join("")}</table>` : `<p class="muted">テストの記録がありません。</p>`}
+<h2 style="margin-top:14px">承認</h2>${mergePanel}</section>
+<section class="panel"><h2>変わるファイル（${pr.files.length}）</h2><div class="tw"><table><thead><tr><th>ファイル</th><th class="num">追加</th><th class="num">削除</th></tr></thead><tbody>${pr.files
+          .map((f) => {
+            const rev = f.name.match(/^src\/data\/revisions\/(.+)\.json$/);
+            return `<tr><td>${rev ? `<a href="/revisions/${esc(rev[1])}"><code>${esc(f.name)}</code></a>` : `<code>${esc(f.name)}</code>`}</td><td class="num ok">+${f.additions}</td><td class="num bad">−${f.deletions}</td></tr>`;
+          })
+          .join("")}</tbody></table></div>
+<h2 style="margin-top:14px">説明</h2><pre style="white-space:pre-wrap;word-break:break-word;font:inherit;margin:0">${esc(pr.body || "（説明なし）")}</pre></section>
+</div>`,
+        { crumbs: [["承認管理", "/approvals"], [`#${number}`]] },
+      );
+    }
 
     if (path === "/" && request.method === "GET") {
       const data = await dashboardData(env, github, async () => (await companyIndex(env)).length);
@@ -148,8 +206,8 @@ ${sent ? `<div class="card ok">登録されているアドレスであれば、�
       return view(
         "システム設定",
         `<h1>システム設定</h1><div class="grid g2">
-<section class="panel"><h2>認証</h2><table>${row("ログイン方式", usesAccess(env) ? "Cloudflare Access（ワンタイムコード）" : "メールのリンク")}${row("Access チーム", esc(env.ACCESS_TEAM_DOMAIN ?? "—"))}${row("ログイン中", esc(user))}${row("許可アドレス（ADMIN_EMAILS）", `${set(env.ADMIN_EMAILS)}（${allowedEmails(env).size}件）`)}</table>
-<p class="muted">許可するアドレスは Cloudflare Zero Trust の Access ポリシーと、Worker のシークレット ADMIN_EMAILS の両方で決まります。値はこの画面に出しません。</p></section>
+<section class="panel"><h2>認証</h2><table>${row("ログイン方式", usesAccess(env) ? "Cloudflare Access（ワンタイムコード）" : "メールのリンク")}${row("Access チーム", esc(env.ACCESS_TEAM_DOMAIN ?? "—"))}${row("ログイン中", esc(user))}${row("あなたの権限", ROLE_LABEL[role])}${row("承認（APPROVER_EMAILS）", `${set(env.APPROVER_EMAILS)}`)}${row("編集（ADMIN_EMAILS）", `${set(env.ADMIN_EMAILS)}`)}${row("閲覧（VIEWER_EMAILS）", `${set(env.VIEWER_EMAILS)}`)}${row("ログインできる人数", `${allowedEmails(env).size}人`)}</table>
+<p class="muted">権限は3段階：閲覧（見るだけ）・編集（プルリクエストを作る）・承認（テストが通ったものをマージする）。ログインできるのは Cloudflare Zero Trust の Access ポリシーと、Worker のシークレットの両方にあるアドレスだけです。値はこの画面に出しません。</p></section>
 <section class="panel"><h2>GitHub</h2><table>${row("リポジトリ", esc(env.GITHUB_REPO))}${row("トークン（GITHUB_TOKEN）", set(env.GITHUB_TOKEN))}${status.ok ? row("接続", '<span class="ok">接続中</span>') + row("書き込み権限", status.push ? '<span class="ok">あり</span>' : '<span class="bad">なし</span>') + row("API の残り", `${status.remaining.toLocaleString("ja-JP")} / ${status.limit.toLocaleString("ja-JP")}（毎時）`) : row("接続", `<span class="bad">接続できません</span> ${esc(status.error)}`)}</table>
 <p class="muted">変更は main 向けのプルリクエストになり、テストが通ってからマージすると公開されます。この画面から本番のデータを直接は書き換えません。</p></section>
 <section class="panel"><h2>公開サイト</h2><table>${row("百科事典", `<a href="${esc(env.SITE_ORIGIN)}">${esc(env.SITE_ORIGIN)}</a>`)}${row("メール送信（予備のログイン用）", set(env.RESEND_API_KEY))}</table></section>
@@ -164,13 +222,13 @@ ${sent ? `<div class="card ok">登録されているアドレスであれば、�
         const pulls = await github.openPulls(50);
         body = pulls.length
           ? `<div class="panel tw"><table><thead><tr><th>番号</th><th>題名</th><th>作成</th><th>テスト</th><th>作成日</th></tr></thead><tbody>${pulls
-              .map((p) => `<tr><td>#${p.number}</td><td><a href="${esc(p.url)}">${esc(p.title)}</a>${p.draft ? ' <span class="pill">下書き</span>' : ""}</td><td>${p.fromAdmin ? "管理画面" : esc(p.author)}</td><td>${CHECK_LABEL[p.checks]}</td><td>${esc(p.created.slice(0, 10))}</td></tr>`)
+              .map((p) => `<tr><td>#${p.number}</td><td><a href="/approvals/${p.number}">${esc(p.title)}</a>${p.draft ? ' <span class="pill">下書き</span>' : ""}</td><td>${p.fromAdmin ? "管理画面" : esc(p.author)}</td><td>${CHECK_LABEL[p.checks]}</td><td>${esc(p.created.slice(0, 10))}</td></tr>`)
               .join("")}</tbody></table></div>`
           : `<div class="panel"><p class="muted">承認待ちの変更はありません。</p></div>`;
       } catch (error) {
         body = errorList([`GitHub から読めませんでした：${String(error).slice(0, 160)}`]);
       }
-      return view("承認管理", `<h1>承認管理</h1><p class="muted">開いているプルリクエストと、そのテストの結果です。テストが通ったものを GitHub でマージすると公開されます。</p>${body}`, { crumbs: [["承認管理"]] });
+      return view("承認管理", `<h1>承認管理</h1><p class="muted">開いているプルリクエストと、そのテスト（型・lint・全テスト）の結果です。テストが通ったものを「承認」の権限でマージすると公開されます。</p>${body}`, { crumbs: [["承認管理"]] });
     }
 
     if (path === "/revisions") {

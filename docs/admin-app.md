@@ -35,3 +35,17 @@ GitHub のトークンは github.com → Settings → Developer settings → Per
 - 配置：`admin-app/`（Cloudflare Worker `kigyo-admin`。Workers Builds が main への push で配信）。サイト本体（静的書き出し）とは別の Worker
 - ログイン：メールのリンク。署名の鍵は `GITHUB_TOKEN` と `ADMIN_EMAILS` から作るので、どちらかを変えると全員ログアウトされる。登録外のアドレスにも同じ応答を返し、誰が運営者かを明かさない。IPごとに1分5回まで
 - 書き込み：main から `admin/<Revision id>` のブランチを作り、1コミットでプルリクエストを作るだけ。マージは運営者
+
+## 権限（2026-11-24 再設計 第3段階）
+
+| 権限 | シークレット | できること |
+|---|---|---|
+| 閲覧 | `VIEWER_EMAILS` | すべての画面を見る。何も変えられない |
+| 編集 | `ADMIN_EMAILS` | 企業・用語を直してプルリクエストを作る |
+| 承認 | `APPROVER_EMAILS` | 編集に加え、テストが通ったプルリクエストを「承認管理」からマージする |
+
+複数のアドレスはカンマ区切り。新しい人を入れるときは、そのアドレスを Cloudflare Zero Trust → Access → Applications「百科事典 管理」のポリシーにも足す（両方にある人だけが入れる）。
+
+## プルリクエストのテスト
+
+main 向けのプルリクエストには、GitHub Actions の `PR checks`（`.github/workflows/pr-checks.yml`：型チェック・lint・全テスト）が自動で走る。承認管理はその結果を読み、成功・main と食い違いなし・下書きでない、のときだけ「承認してマージする」を出す。マージ直前にもう一度確かめ、確認した後に更新されていたらマージしない。マージは squash で、コミットに「管理画面で承認してマージ」と承認者（伏せ字）・時刻を残す。
