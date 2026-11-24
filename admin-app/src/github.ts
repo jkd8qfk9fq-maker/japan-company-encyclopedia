@@ -9,8 +9,8 @@ import type { AdminEnv } from "./env";
 export class GitHub {
   constructor(private readonly env: AdminEnv) {}
 
-  private async call<T>(path: string, init: RequestInit = {}): Promise<T> {
-    const response = await fetch(`https://api.github.com/repos/${this.env.GITHUB_REPO}${path}`, {
+  private async call<T>(path: string, init: RequestInit = {}, root = false): Promise<T> {
+    const response = await fetch(root ? `https://api.github.com${path}` : `https://api.github.com/repos/${this.env.GITHUB_REPO}${path}`, {
       ...init,
       headers: {
         authorization: `Bearer ${this.env.GITHUB_TOKEN}`,
@@ -71,9 +71,65 @@ export class GitHub {
     return { number: pr.number, url: pr.html_url };
   }
 
+  /** Whether the token reaches the repository, may write to it, and how much of the hourly API allowance is left. */
+  async status(): Promise<{ ok: true; push: boolean; defaultBranch: string; remaining: number; limit: number; reset: number } | { ok: false; error: string }> {
+    try {
+      const [repo, rate] = await Promise.all([
+        this.call<{ default_branch: string; permissions?: { push?: boolean } }>(""),
+        this.call<{ resources: { core: { remaining: number; limit: number; reset: number } } }>("/rate_limit", {}, true),
+      ]);
+      return { ok: true, push: Boolean(repo.permissions?.push), defaultBranch: repo.default_branch, ...rate.resources.core };
+    } catch (error) {
+      return { ok: false, error: String(error).slice(0, 200) };
+    }
+  }
+
+  /** Every open pull request with the state of its checks (the repository's tests). */
+  async openPulls(limit = 30): Promise<PullSummary[]> {
+    const pulls = await this.call<{ number: number; title: string; html_url: string; created_at: string; user: { login: string }; head: { ref: string; sha: string }; draft: boolean }[]>(`/pulls?state=open&per_page=${limit}`);
+    return Promise.all(
+      pulls.map(async (p) => {
+        let checks: PullSummary["checks"] = "none";
+        try {
+          const runs = await this.call<{ check_runs: { status: string; conclusion: string | null }[] }>(`/commits/${p.head.sha}/check-runs?per_page=50`);
+          const list = runs.check_runs;
+          if (list.some((r) => r.status !== "completed")) checks = "running";
+          else if (list.some((r) => r.conclusion && !["success", "skipped", "neutral"].includes(r.conclusion))) checks = "failed";
+          else if (list.length) checks = "passed";
+        } catch {
+          checks = "unknown";
+        }
+        return { number: p.number, title: p.title, url: p.html_url, created: p.created_at, author: p.user.login, branch: p.head.ref, draft: p.draft, fromAdmin: p.head.ref.startsWith("admin/"), checks };
+      }),
+    );
+  }
+
+  /** One file's JSON on main, parsed; null when missing or not JSON. */
+  async json<T>(path: string): Promise<T | null> {
+    const file = await this.file(path);
+    if (!file) return null;
+    try {
+      return JSON.parse(file.text) as T;
+    } catch {
+      return null;
+    }
+  }
+
   /** Open pull requests this app made (branches under admin/). */
   async openProposals(): Promise<{ number: number; title: string; url: string; created: string }[]> {
     const pulls = await this.call<{ number: number; title: string; html_url: string; created_at: string; head: { ref: string } }[]>(`/pulls?state=open&per_page=50`);
     return pulls.filter((p) => p.head.ref.startsWith("admin/")).map((p) => ({ number: p.number, title: p.title, url: p.html_url, created: p.created_at }));
   }
 }
+
+export type PullSummary = {
+  number: number;
+  title: string;
+  url: string;
+  created: string;
+  author: string;
+  branch: string;
+  draft: boolean;
+  fromAdmin: boolean;
+  checks: "passed" | "failed" | "running" | "none" | "unknown";
+};

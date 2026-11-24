@@ -118,3 +118,34 @@ describe("admin app: pages", () => {
     expect(nullOrigin.status).toBe(403);
   });
 });
+
+describe("admin console: dashboard figures (2026-11-24)", () => {
+  it("reads revision file names into day, kind and the rest, newest first", async () => {
+    const { parseRevisionNames } = await import("../admin-app/src/dashboard");
+    const refs = parseRevisionNames(["2026-11-01-company-toyota-abc123", "2026-11-24-term-ebitda-1a2b3c", "not-a-revision", "2026-11-24-company-zero-quarterly-added"]);
+    expect(refs.map((r) => r.name)).toEqual(["2026-11-24-term-ebitda-1a2b3c", "2026-11-24-company-zero-quarterly-added", "2026-11-01-company-toyota-abc123"]);
+    expect(refs[2]).toMatchObject({ day: "2026-11-01", kind: "company", rest: "toyota-abc123" });
+  });
+
+  it("counts by month for the last twelve months, empty months included", async () => {
+    const { monthlyCounts, parseRevisionNames } = await import("../admin-app/src/dashboard");
+    const rows = monthlyCounts(parseRevisionNames(["2026-11-02-company-a-1", "2026-11-03-term-b-2", "2025-12-01-industry-c-3", "2025-11-30-company-old-4"]), "2026-11-24");
+    expect(rows).toHaveLength(12);
+    expect(rows[0]!.month).toBe("2025-12");
+    expect(rows[0]).toMatchObject({ industry: 1, company: 0 });
+    expect(rows.at(-1)).toMatchObject({ month: "2026-11", company: 1, term: 1 });
+    expect(rows.reduce((s, r) => s + r.company + r.term + r.industry, 0)).toBe(3); // 2025-11 is outside the window
+  });
+
+  it("says a figure could not be read instead of showing a number", async () => {
+    const { renderDashboard } = await import("../admin-app/src/dashboard");
+    const failed = { ok: false as const, error: "GitHub 500" };
+    const html = renderDashboard(
+      { at: Date.now(), today: "2026-11-24", companyFiles: failed, published: failed, terms: failed, revisions: failed, pulls: failed, recent: failed, github: { ok: false, error: "GitHub 500" } },
+      { email: "owner@example.com", expires: null },
+      env,
+    );
+    expect(html.match(/取得できません/g)!.length).toBeGreaterThanOrEqual(5);
+    expect(html).not.toMatch(/\d{1,3},\d{3}/); // no figure appears when none could be read
+  });
+});

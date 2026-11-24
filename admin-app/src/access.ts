@@ -23,6 +23,11 @@ async function keys(team: string, fetcher: typeof fetch): Promise<Jwk[]> {
 
 /** The verified address in an Access token, or null. */
 export async function accessEmail(env: AdminEnv, token: string | null, now = Date.now(), fetcher: typeof fetch = fetch): Promise<string | null> {
+  return (await accessIdentity(env, token, now, fetcher))?.email ?? null;
+}
+
+/** The verified address and the moment the Access session ends (shown on the dashboard), or null. */
+export async function accessIdentity(env: AdminEnv, token: string | null, now = Date.now(), fetcher: typeof fetch = fetch): Promise<{ email: string; expires: number } | null> {
   if (!token || !env.ACCESS_TEAM_DOMAIN || !env.ACCESS_AUD) return null;
   const [h, p, s] = token.split(".");
   if (!h || !p || !s) return null;
@@ -39,7 +44,7 @@ export async function accessEmail(env: AdminEnv, token: string | null, now = Dat
     if (!aud.includes(env.ACCESS_AUD)) return null;
     if (claims.iss !== `https://${env.ACCESS_TEAM_DOMAIN}`) return null;
     if (typeof claims.exp !== "number" || claims.exp * 1000 < now) return null;
-    return typeof claims.email === "string" ? claims.email.toLowerCase() : null;
+    return typeof claims.email === "string" ? { email: claims.email.toLowerCase(), expires: claims.exp * 1000 } : null;
   } catch {
     return null;
   }
