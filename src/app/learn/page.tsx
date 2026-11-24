@@ -5,6 +5,7 @@ import { BetaOffer } from "@/components/engagement/beta-offer";
 import { LearnCourse } from "@/components/engagement/learn-course";
 import { MicroLessons } from "@/components/engagement/micro-lessons";
 import { TrainingHistory } from "@/components/engagement/training-history";
+import { TrainingInstall } from "@/components/engagement/training-install";
 import { LEARN } from "@/lib/learning-ui";
 
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ export default function LearnPage() {
       <p className="mt-1.5 max-w-2xl text-sm leading-6 text-muted-foreground">
         実際の決算で、読む→予測する→答え合わせを繰り返し、企業を見る力を鍛えます。進み具合はこのブラウザにだけ残ります。
       </p>
+      <TrainingInstall />
 
       {/* The path comes first (JCE-088): what to do next, and how far you have come, without scrolling.
           The learning area is white-based with its own bright palette; the rest of the page keeps the

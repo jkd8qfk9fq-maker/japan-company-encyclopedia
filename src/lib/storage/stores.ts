@@ -363,3 +363,7 @@ export const mailNotifyStore = createStore<MailNotify | null>(STORAGE_KEYS.mailN
   const kinds = v.kinds.filter((k): k is MailNotify["kinds"][number] => k === "results" || k === "corrections");
   return { manageKey: v.manageKey, hint: v.hint, kinds, confirmed: v.confirmed === true };
 });
+
+export const trainingInstallDismissedStore = createStore<boolean>(STORAGE_KEYS.trainingInstallDismissed, false, (value) =>
+  typeof value === "boolean" ? value : null,
+);
