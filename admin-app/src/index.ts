@@ -1,7 +1,8 @@
 import { buildSave, EDIT_DIRECTORY, EDIT_ID, previewEdit, saveInputErrors, type EditableKind } from "../../src/lib/content/content-edit";
 import type { ContentContext } from "../../src/lib/content/integrity";
 import { LINK_TTL_MS, readCookie, SESSION_COOKIE, SESSION_TTL_MS, sessionCookie, sign, verify } from "./auth";
-import { allowedEmails, missingSettings, type AdminEnv } from "./env";
+import { accessEmail } from "./access";
+import { allowedEmails, missingSettings, usesAccess, type AdminEnv } from "./env";
 import { GitHub } from "./github";
 import { errorList, esc, page, redirect } from "./html";
 
@@ -78,6 +79,9 @@ export default {
 
     const missing = missingSettings(env);
 
+    // Behind Cloudflare Access the address comes from its signed token; the mailed-link pages are not used.
+    if (usesAccess(env) && (path === "/login" || path === "/auth")) return redirect("/");
+
     if (path === "/login" && request.method === "GET") {
       const sent = url.searchParams.get("sent") === "1";
       return page(
@@ -114,9 +118,16 @@ ${sent ? `<div class="card ok">登録されているアドレスであれば、�
       return redirect("/", { "set-cookie": sessionCookie(session, SESSION_TTL_MS / 1000) });
     }
 
-    if (path === "/logout" && request.method === "POST") return redirect("/login", { "set-cookie": sessionCookie("", 0) });
+    if (path === "/logout" && request.method === "POST") {
+      return usesAccess(env) ? redirect("/cdn-cgi/access/logout") : redirect("/login", { "set-cookie": sessionCookie("", 0) });
+    }
 
-    const user = await verify(env, "session", readCookie(request, SESSION_COOKIE));
+    const user = usesAccess(env)
+      ? await accessEmail(env, request.headers.get("cf-access-jwt-assertion"))
+      : await verify(env, "session", readCookie(request, SESSION_COOKIE));
+    if (usesAccess(env) && (!user || !allowedEmails(env).has(user))) {
+      return page("ログインできません", `<h1>ログインできません</h1><p>このアドレスには管理画面の権限がありません。</p>`, { status: 403 });
+    }
     if (!user || !allowedEmails(env).has(user)) return redirect("/login");
     const github = new GitHub(env);
 

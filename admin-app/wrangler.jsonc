@@ -4,7 +4,7 @@
   // Secrets, set by the operator in the Cloudflare dashboard (never in this file):
   //   ADMIN_EMAILS   — the addresses allowed to sign in, comma separated
   //   GITHUB_TOKEN   — fine-grained token for this repository: Contents and Pull requests, read and write
-  //   RESEND_API_KEY — for the sign-in mail
+  //   RESEND_API_KEY — only for the e-mailed-link sign-in, used when Cloudflare Access is not configured
   // Without them the app says what is missing and does nothing else.
   "name": "kigyo-admin",
   "main": "src/index.ts",
@@ -13,7 +13,16 @@
   "routes": [{ "pattern": "admin.kigyo-hyakka.com", "custom_domain": true }],
   "workers_dev": false,
   "preview_urls": false,
-  "vars": { "GITHUB_REPO": "jkd8qfk9fq-maker/japan-company-encyclopedia", "SITE_ORIGIN": "https://kigyo-hyakka.com" },
+  // Sign-in is Cloudflare Access (one-time code by mail, sent by Cloudflare); its team domain and this app's audience
+  // tag are public identifiers, not secrets. Who may pass is set in Access and again in ADMIN_EMAILS.
+  "vars": {
+    "GITHUB_REPO": "jkd8qfk9fq-maker/japan-company-encyclopedia",
+    "SITE_ORIGIN": "https://kigyo-hyakka.com",
+    "ACCESS_TEAM_DOMAIN": "shiny-dust-0401.cloudflareaccess.com",
+    "ACCESS_AUD": "caa0808c1c7fc05dd9b04feb99649a8c854ddc372e5a24f8f6fd4cf44e227a0d"
+  },
+  // Secrets in the dashboard survive a deploy only when wrangler is told to keep what it does not manage.
+  "keep_vars": true,
   // Logs kept in Workers Logs, so a failed sign-in mail or GitHub call can be read afterwards.
   "observability": { "enabled": true },
   "ratelimits": [{ "name": "LOGIN_LIMIT", "namespace_id": "3101", "simple": { "limit": 5, "period": 60 } }]
