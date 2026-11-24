@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TRAINING_APP_METADATA } from "@/lib/site";
 import Link from "next/link";
 import { DigestVerifications } from "@/components/engagement/digest-verifications";
 import { buildDigest, type DigestEvent } from "@/lib/digest";
@@ -6,6 +7,7 @@ import { buildUpdates, type UpdateKind } from "@/lib/engagement-data";
 import { companyRepository, revisionRepository } from "@/lib/repositories";
 
 export const metadata: Metadata = {
+  ...TRAINING_APP_METADATA,
   title: "決算定期便",
   description: "今週と先週に出た決算を、学んだ読み方で自分の予測と照合して読む、分析訓練の実践の場。各社の開示に、対象期間と検証済みの実績、関連するマイクロレッスンと企業レポート（分析5観点）への道筋を付けています。",
   alternates: { canonical: "/digest" },

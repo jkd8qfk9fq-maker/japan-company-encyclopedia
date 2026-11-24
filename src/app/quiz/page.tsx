@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { TRAINING_APP_METADATA } from "@/lib/site";
 import Link from "next/link";
 import { DailyQuiz } from "@/components/engagement/daily-quiz";
 
 export const metadata: Metadata = {
+  ...TRAINING_APP_METADATA,
   title: "今日の1問",
   description: "日本の上場企業について、毎日1問。答えは各社の有価証券報告書の数値と百科事典の解説から。",
   alternates: { canonical: "/quiz" },

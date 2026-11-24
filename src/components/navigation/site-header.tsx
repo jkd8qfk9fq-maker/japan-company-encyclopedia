@@ -1,9 +1,9 @@
-import Link from "next/link";
 import { Settings } from "lucide-react";
 import { NotificationBell } from "@/components/engagement/notification-bell";
 import { SearchSuggest } from "@/components/search/search-suggest";
 import { featureRepository, termRepository } from "@/lib/repositories";
-import { SITE_NAME, SITE_TAGLINE } from "@/lib/site";
+import { SITE_NAME, SITE_TAGLINE, TRAINING_APP_NAME } from "@/lib/site";
+import { HeaderBrand } from "./header-brand";
 import { NavLink } from "./nav-link";
 import { SiteMenu } from "./site-menu";
 import { desktopNavigation } from "./navigation-items";
@@ -23,10 +23,7 @@ export async function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 h-(--header-height) border-b border-border/70 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-6 px-5 md:px-8">
-        <Link href="/" className="seal-mark flex flex-col py-1 leading-tight outline-offset-4">
-          <span className="font-serif text-[1.25rem] font-semibold tracking-[0.08em] md:text-[1.5rem]">{SITE_NAME}</span>
-          <span className="hidden text-xs text-muted-foreground md:block">{SITE_TAGLINE}</span>
-        </Link>
+        <HeaderBrand siteName={SITE_NAME} tagline={SITE_TAGLINE} appName={TRAINING_APP_NAME} />
 
         <nav aria-label="メイン" className="hidden items-center gap-1 lg:flex">
           {items.map((item) => (

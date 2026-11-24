@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TRAINING_APP_METADATA } from "@/lib/site";
 import Link from "next/link";
 import { BetaOffer } from "@/components/engagement/beta-offer";
 import { LearnCourse } from "@/components/engagement/learn-course";
@@ -7,6 +8,7 @@ import { TrainingHistory } from "@/components/engagement/training-history";
 import { LEARN } from "@/lib/learning-ui";
 
 export const metadata: Metadata = {
+  ...TRAINING_APP_METADATA,
   title: "有報の読み方入門",
   description: "実際の上場企業の決算を使い、自分で読み、予測し、結果を検証することで、企業を見る力を継続的に鍛える分析訓練。3〜4分のマイクロレッスンと復習キュー、そして12ステップのコース。",
   alternates: { canonical: "/learn" },

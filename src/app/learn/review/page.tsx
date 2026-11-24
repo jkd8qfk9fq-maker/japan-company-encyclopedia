@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import { TRAINING_APP_METADATA } from "@/lib/site";
 import { ReviewPlayer } from "@/components/engagement/lesson-player";
 import { LEARN } from "@/lib/learning-ui";
 
 export const metadata: Metadata = {
+  ...TRAINING_APP_METADATA,
   title: "復習キュー",
   description: "以前に答えた問題を、間隔をあけてもう一度。正解すると次の復習は少し先に、間違えると明日また出ます。",
   alternates: { canonical: "/learn" },

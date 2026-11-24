@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { TRAINING_APP_METADATA } from "@/lib/site";
 import { LessonPlayer } from "@/components/engagement/lesson-player";
 import { LEARN } from "@/lib/learning-ui";
 import { MICRO_LESSON_IDS } from "@/lib/micro-lessons";
@@ -8,6 +9,7 @@ export function generateStaticParams() {
 }
 
 export const metadata: Metadata = {
+  ...TRAINING_APP_METADATA,
   title: "レッスン",
   description: "実在企業の決算で読み方を鍛えるマイクロレッスン。1画面1ステップで、読んで、予測して、その場で確かめます。",
   alternates: { canonical: "/learn" },
