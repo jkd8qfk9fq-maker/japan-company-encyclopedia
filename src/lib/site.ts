@@ -3,6 +3,11 @@ export const SITE_NAME_EN = "Japanese Companies";
 export const SITE_TAGLINE_EN = "Understand the companies behind Japan.";
 /** The line under the name in the header. */
 export const SITE_TAGLINE = "日本企業を、構造から理解する。";
+/** The second pillar's name (JCE-108): the training app that runs on this site's /learn, /quiz and /digest. */
+export const TRAINING_APP_NAME = "分析訓練";
+export const TRAINING_APP_DESCRIPTION =
+  "決算を読む前に予想し、出た数字で答え合わせする。有価証券報告書の読み方を、1日数分のレッスンと今日の1問で身につける学習アプリ。";
+
 export const SITE_DESCRIPTION =
   "日本の上場企業を、会社名ではなく「何をしている会社なのか」から理解するための企業百科事典。";
 
@@ -46,3 +51,14 @@ export const siteUrl = (path: string) => new URL(`${BASE_PATH}${path}`, SITE_URL
 /** The share image every page falls back to (JCE-054). A page that sets its own openGraph must include it: Next
  *  replaces the parent's openGraph whole, so leaving it out drops the picture. */
 export const OG_IMAGES = [{ url: `${BASE_PATH}/og/default.png`, width: 1200, height: 630, alt: SITE_NAME }];
+
+/**
+ * What makes /learn, /quiz and /digest install as the training app rather than the encyclopedia (JCE-108): their
+ * own manifest, home-screen icon and title. Spread into each page's own metadata: a layout's `manifest` loses to
+ * the root app/manifest.ts, a page's does not (checked in the rendered head).
+ */
+export const TRAINING_APP_METADATA = {
+  manifest: `${BASE_PATH}/learn/manifest.webmanifest`,
+  icons: { apple: `${BASE_PATH}/icons/training-apple-touch-icon.png` },
+  appleWebApp: { capable: true, title: TRAINING_APP_NAME, statusBarStyle: "default" as const },
+};

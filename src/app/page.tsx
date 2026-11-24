@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, BookOpen, CalendarDays, ChartColumn, Compass, Layers, Network, SlidersHorizontal, Sparkles, type LucideIcon } from "lucide-react";
+import { ArrowRight, ChartColumn, Compass, Layers, Network, SlidersHorizontal, Sparkles, type LucideIcon } from "lucide-react";
 import { HUB_IMAGES, INDUSTRY_IMAGES } from "@/assets/industries";
 import { CompanyMark } from "@/components/company/company-mark";
 import { SearchSuggest } from "@/components/search/search-suggest";
@@ -15,7 +15,8 @@ import { INDUSTRY_LABELS } from "@/lib/industry-labels";
 import { PREFECTURES } from "@/lib/prefectures";
 import { companiesByPrefecture } from "@/lib/regions";
 import { companyRepository, featureRepository, industryRepository, termRepository } from "@/lib/repositories";
-import { SITE_DESCRIPTION, SITE_NAME } from "@/lib/site";
+import { MICRO_LESSON_IDS } from "@/lib/micro-lessons";
+import { SITE_DESCRIPTION, SITE_NAME, TRAINING_APP_NAME } from "@/lib/site";
 import { INDUSTRY_IDS } from "@/types/company";
 
 /** 企業タイプ診断, a separate YUGENQ service (the DISCOVER feed links to it too). */
@@ -29,11 +30,9 @@ const TILE = "relative bg-card/90 px-3 py-2.5 backdrop-blur transition-colors ho
 
 /** The doors into the services (JCE-087), as a compact icon grid since the 2026-11-23 redesign. */
 const SERVICE_DOORS: { label: string; note: string; href: string; icon: LucideIcon; external?: boolean }[] = [
-  { label: "学習", note: "有報を読む", href: "/learn", icon: BookOpen },
-  { label: "分析", note: "5観点で読む", href: "/analysis", icon: ChartColumn },
   { label: "業界", note: "業界から探す", href: "/industries", icon: Layers },
-  { label: "定期便", note: "今週の開示", href: "/digest", icon: CalendarDays },
   { label: "発見", note: "今日の3社", href: "/discover", icon: Compass },
+  { label: "分析", note: "5観点で読む", href: "/analysis", icon: ChartColumn },
   { label: "つながり", note: "立体でたどる", href: "/network", icon: Network },
   { label: "財務で探す", note: "条件で絞る", href: "/screening", icon: SlidersHorizontal },
   { label: "無料体験", note: "1社を読み解く", href: TRIAL_FORM_URL, icon: Sparkles, external: true },
@@ -56,8 +55,9 @@ function SectionTitle({ id, children }: { id: string; children: React.ReactNode 
 
 /**
  * The front page. Since JCE-087 the first screen carries no slogan: a compact search, the doors into the
- * services (learn / digest / analysis / companies / the free trial), and the site's counts as one line —
- * then DISCOVER, the diagnosis, the daily habits, and three columns of reading. Everything shown is
+ * encyclopedia's tools, and the site's counts as one line — then the second pillar, 分析訓練 (JCE-108: the
+ * course, the daily question and the digest are in that app, not spread over this page), DISCOVER, the
+ * diagnosis, and three columns of reading. Everything shown is
  * something the site has: the reference's market-cap filters, fiscal-year filters, compare tool, logos,
  * saved-companies link and market-wide chart are not built and are left out rather than drawn as dead
  * controls. No stock data, no rankings (CLAUDE.md invariant 4).
@@ -225,7 +225,7 @@ export default async function HomePage() {
 
       {/* The doors into the services as one compact grid (JCE-087's cards, condensed): icon, name, what it is. */}
       <nav aria-label="サービスへの入口" className="border-b border-border">
-        <ul className="mx-auto grid max-w-7xl grid-cols-4 gap-px bg-border md:grid-cols-8">
+        <ul className="mx-auto grid max-w-7xl grid-cols-3 gap-px bg-border md:grid-cols-6">
           {SERVICE_DOORS.map(({ href, label, note, icon: Icon, external }) => (
             <li key={label} className="bg-background">
               {external ? (
@@ -246,6 +246,26 @@ export default async function HomePage() {
           ))}
         </ul>
       </nav>
+
+      {/* The second pillar (JCE-108): 分析訓練, the training app — the course, the daily question, the week's
+          filings and the review queue in one place, instead of four separate rows here. */}
+      <section aria-labelledby="home-training" className="border-b border-border">
+        <Link href="/learn" className="group mx-auto flex max-w-7xl items-center gap-4 px-4 py-5 md:px-8 md:py-6">
+          <div className="min-w-0 flex-1">
+            <p className="text-[0.6875rem] font-semibold tracking-[0.2em] text-[#3fa91c]">{TRAINING_APP_NAME} ・ 学習アプリ</p>
+            <h2 id="home-training" className="mt-1 text-[1.0625rem] leading-snug font-semibold md:text-[1.25rem]">
+              決算を、予想してから読む。有報が読めるようになる、1日5分。
+            </h2>
+            <p className="mt-1 text-xs text-muted-foreground">
+              レッスン<span className="figures">{MICRO_LESSON_IDS.length}</span>本・今日の1問・決算定期便・復習。進み具合はこのブラウザにだけ残ります。
+            </p>
+          </div>
+          <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#2e7d12] px-4 py-2 text-sm font-semibold text-white transition-transform group-hover:translate-x-0.5">
+            はじめる
+            <ArrowRight className="size-4" aria-hidden />
+          </span>
+        </Link>
+      </section>
 
       {/* DISCOVER (JCE-046): for the reader with nothing to look up yet. */}
       <section aria-labelledby="home-discover" className="border-b border-border bg-card">
@@ -278,26 +298,6 @@ export default async function HomePage() {
             <ArrowRight className="size-4" aria-hidden />
           </span>
         </a>
-      </section>
-
-      {/* JCE-052: two short daily habits beside DISCOVER. Links, not widgets: the home page stays light. */}
-      <section aria-label="毎日の楽しみ" className="border-b border-border">
-        <div className="mx-auto grid max-w-7xl gap-px bg-border sm:grid-cols-2">
-          <Link href="/quiz" className="group flex items-center gap-4 bg-background px-4 py-3.5 md:px-8">
-            <span className="min-w-0 flex-1">
-              <span className="block text-[0.6875rem] font-semibold tracking-[0.2em] text-seal">今日の1問</span>
-              <span className="mt-0.5 block text-[0.9375rem] font-semibold">売上が大きいのはどっち？ 毎日1問、30秒。</span>
-            </span>
-            <ArrowRight className="size-5 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden />
-          </Link>
-          <Link href="/network" className="group flex items-center gap-4 bg-background px-4 py-3.5 md:px-8">
-            <span className="min-w-0 flex-1">
-              <span className="block text-[0.6875rem] font-semibold tracking-[0.2em] text-seal">企業ネットワーク</span>
-              <span className="mt-0.5 block text-[0.9375rem] font-semibold">取引先、競合、親会社。立体の地図で回して、たどる。</span>
-            </span>
-            <ArrowRight className="size-5 shrink-0 transition-transform group-hover:translate-x-1" aria-hidden />
-          </Link>
-        </div>
       </section>
 
       <ReaderTrail companies={summaries.map(({ id, name }) => ({ id, name }))} />
