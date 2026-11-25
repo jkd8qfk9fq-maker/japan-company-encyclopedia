@@ -126,7 +126,7 @@ describe("refresh-financials workflow", () => {
     expect(uses.length).toBeGreaterThan(0);
     for (const l of uses) expect(l, l).toMatch(/@v\d+/);
     const inputLines = code.filter((l) => l.includes("${{ inputs."));
-    expect(inputLines.map((l) => l.trim().split(":")[0])).toEqual(["REHEARSE_ID", "LIMIT", "TIER", "PROBE", "CFX", "SEGP", "LIMIT"]);
+    expect(inputLines.map((l) => l.trim().split(":")[0])).toEqual(["REHEARSE_ID", "LIMIT", "TIER", "PROBE", "CFX", "SEGP", "Q3", "LIMIT"]);
   });
 
   it("keeps everything it downloads outside src/ and pipeline/", () => {

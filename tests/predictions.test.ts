@@ -168,6 +168,24 @@ describe("predictionDataFor / buildPredictionData", () => {
     expect(Object.keys(d.sources)).toEqual(["yuho-2026"]);
   });
 
+  it("explains the newest year with the 「この会社の今」 sentences only when asked (company and report pages)", () => {
+    const two = company([
+      fin({ fiscalYear: "2025年3月期", periodEnd: "2025-03-31", profit: 10_000_000_000, profitLabel: "経常利益" }),
+      fin({ profit: 6_000_000_000, profitLabel: "経常利益", netIncome: 3_000_000_000 }),
+    ]);
+    (two as unknown as { industries: unknown[] }).industries = [{ industryId: "food", primary: true }];
+    expect(predictionDataFor(two).explanation).toBeUndefined();
+    const explained = predictionDataFor(two, { explain: true }).explanation;
+    expect(explained?.fiscalYear).toBe("2026年3月期");
+    expect(explained?.sentences.map((s) => s.text)).toEqual([
+      "純利益の増減は前期比 −20億円。",
+      "経常利益の増減 −40億円 のうち、売上の増減による分は 0円、利益率の変化による分は −40億円。",
+    ]);
+    expect(explained?.sentences[0]!.basis).toBe("利益増減の内訳（寄与度分解）・計算値");
+    // The bulk file every page can fetch stays lean.
+    expect(buildPredictionData([two]).a!.explanation).toBeUndefined();
+  });
+
   it("skips companies with no annual figures", () => {
     expect(buildPredictionData([company([])])).toEqual({});
     expect(Object.keys(buildPredictionData([company([fin()])]))).toEqual(["a"]);

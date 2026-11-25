@@ -287,7 +287,7 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
       {/* JCE-083: the reader's own prediction and its check sit outside the gate — the training cycle is the
           free layer's core — and the figures' provenance follows it, so any reader can verify the data. */}
       <div className="mt-10">
-        <PredictionPanel companyId={company.id} data={predictionDataFor(company)} />
+        <PredictionPanel companyId={company.id} data={predictionDataFor(company, { explain: true })} />
       </div>
 
       <DataProvenance company={company} metrics={layer.metrics} revisions={revisions} />

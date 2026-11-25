@@ -179,6 +179,54 @@ describe("buildQuizPool — segment and quarterly questions", () => {
   });
 });
 
+const a1Record = (fiscalYear: string, periodEnd: string, revenue: number, profit: number) => ({
+  fiscalYear,
+  periodEnd,
+  revenue,
+  revenueLabel: "売上高",
+  profit,
+  profitLabel: "経常利益",
+  netIncome: Math.round(profit / 2),
+  netIncomeLabel: "当期純利益",
+  totalAssets: 900_000_000_000,
+  netAssets: 500_000_000_000,
+  employees: 1000,
+  currency: "JPY",
+  accountingStandard: "jgaap",
+  sourceIds: ["y"],
+});
+const decomposeCompany = (id: string, profitNow: number) =>
+  company({
+    id,
+    name: id,
+    sources: [{ id: "y", title: "有価証券報告書－第2期", publisher: "会社", url: "https://example.jp", publishedAt: "2026-06-01", accessedAt: "2026-10-01" }],
+    financials: [a1Record("2025年3月期", "2025-03-31", 100_000_000_000, 10_000_000_000), a1Record("2026年3月期", "2026-03-31", 102_000_000_000, profitNow)],
+  });
+
+describe("buildQuizPool — the meaning layer's reading question (JCE-110)", () => {
+  it("asks which part moved the profit, with the 「この会社の今」 sentence as the answer", () => {
+    // Revenue +2%, profit 10 → 6: almost all of the fall is the margin.
+    const found = buildQuizPool([decomposeCompany("squeezed", 6_000_000_000)]).filter((x) => x.kind === "decompose");
+    expect(found).toHaveLength(1);
+    expect(found[0]!.prompt).toBe("squeezedの経常利益は前期から減りました。この増減に大きく効いたのは？");
+    expect(found[0]!.answer).toBe("a1-margin-effect");
+    expect(found[0]!.explain).toMatch(/^経常利益の増減 −40億円 のうち、売上の増減による分は \+1億5,882万円、利益率の変化による分は −42億円。/);
+    expect(found[0]!.links).toEqual([{ href: "/companies/squeezed/report", label: "squeezedの分析（この会社の今）を見る" }]);
+    expect(found[0]!.period).toBe("2026年3月期");
+  });
+
+  it("asks nothing when the two parts are too close to call", () => {
+    // Revenue +20% and margin up a little: the two effects are of similar size.
+    const c = company({
+      id: "even",
+      name: "even",
+      sources: [{ id: "y", title: "有価証券報告書", publisher: "会社", url: "https://example.jp", publishedAt: "2026-06-01", accessedAt: "2026-10-01" }],
+      financials: [a1Record("2025年3月期", "2025-03-31", 100_000_000_000, 10_000_000_000), a1Record("2026年3月期", "2026-03-31", 120_000_000_000, 14_400_000_000)],
+    });
+    expect(buildQuizPool([c]).filter((x) => x.kind === "decompose")).toEqual([]);
+  });
+});
+
 describe("the course on the real entries", () => {
   it("fills all twelve steps, with every theme present", async () => {
     const pool = buildQuizPool(await companyRepository.list());

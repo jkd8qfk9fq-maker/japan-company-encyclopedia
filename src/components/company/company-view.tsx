@@ -88,7 +88,7 @@ export async function CompanyView({ company }: { company: Company }) {
     ]),
   ];
   // The reader's own prediction and its check (JCE-083), drawn for every entry that has a year to predict from.
-  const prediction = predictionDataFor(company);
+  const prediction = predictionDataFor(company, { explain: true });
   // The L1 head of the つながり section: how many ties this entry carries, by kind (its own filing's words only —
   // ties written elsewhere are counted apart, as they are in the list itself).
   const tieKindCounts = new Map<RelationshipKind, number>();

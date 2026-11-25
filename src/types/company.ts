@@ -134,6 +134,25 @@ export type SegmentRevenue = Sourced & {
     label: string;
     items: { businessId: string; profit: number; sales: number }[];
   };
+  /**
+   * The same note's capex by segment (JCE-110, Q3) — the J-GAAP 有形固定資産及び無形固定資産の増加額, the IFRS 非流動資産の
+   * 増加額 or 設備投資等の概要's table, named in `label`. Every business of `items`, or none.
+   */
+  capex?: {
+    label: string;
+    items: { businessId: string; amount: number }[];
+  };
+};
+
+/**
+ * The group's R&D expense for one filing year, as printed (JCE-110, Q3): the 研究開発活動 section's total, or the
+ * IFRS note's 当期に費用認識した研究開発費, or 研究開発費 within 販売費及び一般管理費 — `label` says which.
+ */
+export type ResearchAndDevelopment = Sourced & {
+  fiscalYear: string;
+  periodEnd: string;
+  label: string;
+  amount: number;
 };
 
 /**
@@ -585,6 +604,7 @@ export type Company = {
   quarterlyEarnings?: QuarterlyRecord[];
   segmentRevenue?: SegmentRevenue;
   regionalRevenue?: RegionalRevenue;
+  researchAndDevelopment?: ResearchAndDevelopment;
   workforce?: Workforce;
   shareFacts?: ShareFacts;
   history: HistoryEvent[];

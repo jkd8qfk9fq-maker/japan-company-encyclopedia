@@ -475,6 +475,75 @@ const a4: DecompModuleDef = {
   },
 };
 
+/* ---------- A5: 研究開発費 / A6: 事業別の設備投資 (JCE-110, Q3 何に力を入れているか) ---------- */
+
+/** The year's R&D as printed, and its size against the same year's printed revenue (計算値). */
+const a5: DecompModuleDef = {
+  id: "a5",
+  version: 1,
+  title: "研究開発費",
+  perspectives: ["growth"],
+  kind: "calculated",
+  run: (company) => {
+    const rd = company.researchAndDevelopment;
+    if (!rd) return suppressed("研究開発費が登録されていません");
+    const record = company.financials.find((f) => f.periodEnd === rd.periodEnd);
+    if (!record || record.revenue === null || record.revenue <= 0) return suppressed("同じ年度の売上高がありません");
+    const base = { fiscalYear: rd.fiscalYear, industry: null };
+    return {
+      status: "ok",
+      group: {
+        id: "a5",
+        title: "研究開発費",
+        rows: [
+          { ...base, key: "a5-rnd", title: rd.label, formula: `有価証券報告書${rd.locator ? `の${rd.locator}` : ""}に印字された値`, kind: "printed", unit: "yen", value: rd.amount, sourceIds: rd.sourceIds },
+          { ...base, key: "a5-rnd-ratio", title: `${rd.label}の売上高に対する割合`, formula: `${rd.label} ÷ ${record.revenueLabel}`, kind: "computed", unit: "percent", value: rd.amount / record.revenue, sourceIds: [...new Set([...rd.sourceIds, ...record.sourceIds])] },
+        ],
+      },
+    };
+  },
+};
+
+/**
+ * Where the capex went, by segment: each named business's share of the segment note's capex total (計算値). The
+ * residual その他 is left out of the rows as in A4, but kept in the total — a share is of everything the note allocates.
+ */
+const a6: DecompModuleDef = {
+  id: "a6",
+  version: 1,
+  title: "事業別の設備投資",
+  perspectives: ["growth"],
+  kind: "calculated",
+  run: (company) => {
+    const seg = company.segmentRevenue;
+    if (!seg?.capex) return suppressed("事業別の設備投資が登録されていません");
+    const label = seg.capex.label;
+    const total = seg.capex.items.reduce((a, i) => a + i.amount, 0);
+    if (total <= 0) return suppressed("事業別の設備投資の合計が正ではありません");
+    const named = seg.capex.items
+      .map((i) => ({ ...i, business: company.businesses.find((b) => b.id === i.businessId) }))
+      .filter((i) => i.business && i.business.name.normalize("NFKC").trim() !== "その他");
+    if (named.length < 2) return suppressed("名前のある事業が2つ未満です");
+    const rows: AnalysisRow[] = [...named]
+      .sort((a, b) => b.amount - a.amount)
+      .map((i) => ({
+        key: `a6-capex-share-${i.businessId}`,
+        title: `${i.business!.shortName ?? i.business!.name}が占める割合`,
+        formula: `その事業の${label} ÷ 事業別の${label}の合計`,
+        kind: "computed",
+        unit: "percent",
+        value: i.amount / total,
+        fiscalYear: seg.fiscalYear,
+        sourceIds: seg.sourceIds,
+        industry: null,
+      }));
+    return {
+      status: "ok",
+      group: { id: "a6", title: "事業別の設備投資", rows, note: `${label}は有報のセグメント情報の印字値で、割合は計算値です。` },
+    };
+  },
+};
+
 /* ---------- statement pairs (JCE-098, Phase 2) ---------- */
 
 type StmtPair = { prev: FinancialStatements; latest: FinancialStatements };
@@ -1509,7 +1578,7 @@ const f1: DecompModuleDef = {
 
 /* ---------- registry and entry point ---------- */
 
-export const DECOMP_MODULES: DecompModuleDef[] = [a1, aFull, a2, a3, a4, b1, b2, c1, c2, e1, f2, f3, d1, d2, f1];
+export const DECOMP_MODULES: DecompModuleDef[] = [a1, aFull, a2, a3, a4, a5, a6, b1, b2, c1, c2, e1, f2, f3, d1, d2, f1];
 
 function runDef(def: DecompModuleDef, company: Company, companies: Company[]): DecompResult {
   const peers = comparablePeers(company, companies);

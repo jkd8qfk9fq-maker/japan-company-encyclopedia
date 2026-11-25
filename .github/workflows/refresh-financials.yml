@@ -60,6 +60,11 @@ on:
         required: false
         type: boolean
         default: false
+      backfill_q3:
+        description: "Instead of detection: add capex by segment and R&D (JCE-110 Q3) from filings the entries already cite, and open a pull request into the branch this runs on"
+        required: false
+        type: boolean
+        default: false
       probe:
         description: "Instead of detection: print the XBRL rows of these companies' filings that the value chain reads (comma-separated ids; writes nothing)"
         required: false
@@ -76,7 +81,7 @@ concurrency:
 jobs:
   detect:
     # A backfill or a probe is a separate, hand-started run; it does not also detect.
-    if: github.event_name == 'schedule' || (inputs.backfill_workforce == '' && inputs.probe == '' && !inputs.backfill_cashflow_extras && !inputs.backfill_segment_profit)
+    if: github.event_name == 'schedule' || (inputs.backfill_workforce == '' && inputs.probe == '' && !inputs.backfill_cashflow_extras && !inputs.backfill_segment_profit && !inputs.backfill_q3)
     runs-on: ubuntu-latest
     timeout-minutes: 60
     outputs:
@@ -327,7 +332,7 @@ jobs:
   # second detector; it fills a field entries registered before 2026-11-09 lack. Same rules as propose: a new branch,
   # the integrity suite and the type check, nothing outside src/data, a pull request a person merges.
   backfill:
-    if: github.event_name == 'workflow_dispatch' && (inputs.backfill_workforce != '' || inputs.probe != '' || inputs.backfill_cashflow_extras || inputs.backfill_segment_profit)
+    if: github.event_name == 'workflow_dispatch' && (inputs.backfill_workforce != '' || inputs.probe != '' || inputs.backfill_cashflow_extras || inputs.backfill_segment_profit || inputs.backfill_q3)
     runs-on: ubuntu-latest
     timeout-minutes: 240
     permissions:
@@ -341,6 +346,7 @@ jobs:
       PROBE: ${{ inputs.probe }}
       CFX: ${{ inputs.backfill_cashflow_extras && '1' || '' }}
       SEGP: ${{ inputs.backfill_segment_profit && '1' || '' }}
+      Q3: ${{ inputs.backfill_q3 && '1' || '' }}
       LIMIT: ${{ inputs.limit || '150' }}
       BASE: ${{ github.ref_name }}
       GH_TOKEN: ${{ github.token }}
@@ -398,8 +404,15 @@ jobs:
           mkdir -p out
           node scripts/pipeline/backfill-segment-profit.mjs --tier all --write --summary out/summary.md
 
+      # JCE-110 Q3: filings the entries already cite — not a new filing, so not a detector.
+      - name: Add capex by segment and R&D
+        if: env.Q3 != ''
+        run: |
+          mkdir -p out
+          node scripts/pipeline/backfill-q3.mjs --tier all --write --summary out/summary.md
+
       - name: Check the result
-        if: env.TIER != '' || env.CFX != '' || env.SEGP != ''
+        if: env.TIER != '' || env.CFX != '' || env.SEGP != '' || env.Q3 != ''
         run: |
           npx next typegen
           npx tsc --noEmit -p .
@@ -412,12 +425,21 @@ jobs:
           fi
 
       - name: Open a pull request
-        if: env.TIER != '' || env.CFX != '' || env.SEGP != ''
+        if: env.TIER != '' || env.CFX != '' || env.SEGP != '' || env.Q3 != ''
         run: |
           cat out/summary.md >> "$GITHUB_STEP_SUMMARY"
           if [ -z "$(git status --porcelain src/data)" ]; then exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$Q3" ]; then
+            branch="auto/q3-facts-$(date -u +%Y-%m-%d)-${{ github.run_id }}"
+            git switch -c "$branch"
+            git add src/data/companies
+            git commit -m "事業別の設備投資と研究開発費を追加（JCE-110 Q3）" -m "Read by backfill-q3.mjs from filings the entries already cite; capex by segment closing against the filing's total with every business covered, R&D the consolidated printed total below the year's revenue."
+            git push origin "HEAD:refs/heads/${branch}"
+            gh pr create --base "$BASE" --head "$branch" --title "事業別の設備投資と研究開発費を追加" --body-file out/summary.md
+            exit 0
+          fi
           if [ -n "$SEGP" ]; then
             branch="auto/segment-profit-$(date -u +%Y-%m-%d)-${{ github.run_id }}"
             git switch -c "$branch"
