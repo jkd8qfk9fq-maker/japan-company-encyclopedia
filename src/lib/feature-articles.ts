@@ -98,7 +98,7 @@ function overseasArticle(companies: Company[]): Feature {
       columns: ["海外売上高比率（計算値）", "対象"],
       rows: industryRows.map((i) => ({
         label: INDUSTRY_LABELS[i.id].name,
-        href: `/industries/${i.id}`,
+        href: `/features/overseas-sales-geography/rankings/${i.id}`,
         values: [pct1(i.overseasSalesRatio!.value), count(i.overseasSalesRatio!.companies)],
         bar: i.overseasSalesRatio!.value,
       })),
@@ -183,7 +183,7 @@ function salaryArticle(companies: Company[]): Feature {
       columns: ["平均年間給与の中央値", "対象"],
       rows: rows.map((i) => ({
         label: INDUSTRY_LABELS[i.id].name,
-        href: `/industries/${i.id}`,
+        href: `/features/average-salary-by-industry/rankings/${i.id}`,
         values: [manYen(i.salaryMedian!.value), count(i.salaryMedian!.companies)],
         bar: i.salaryMedian!.value,
       })),
@@ -268,7 +268,7 @@ function growthArticle(companies: Company[]): Feature {
       columns: ["5期の伸び（計算値）", "対象"],
       rows: rows.map((i) => ({
         label: INDUSTRY_LABELS[i.id].name,
-        href: `/industries/${i.id}`,
+        href: `/features/five-year-revenue-growth/rankings/${i.id}`,
         values: [times2(i.revenueGrowth5y!.value), count(i.revenueGrowth5y!.companies)],
         bar: i.revenueGrowth5y!.value,
       })),
@@ -379,7 +379,7 @@ function employeesArticle(companies: Company[]): Feature {
       columns: ["従業員数の合計", "対象"],
       rows: totalRows.map((i) => ({
         label: INDUSTRY_LABELS[i.id].name,
-        href: `/industries/${i.id}`,
+        href: `/features/employees-by-industry/rankings/${i.id}`,
         values: [people(i.employees.total), count(i.employees.companies)],
         bar: i.employees.total,
       })),
@@ -397,7 +397,7 @@ function employeesArticle(companies: Company[]): Feature {
       columns: ["従業員数の中央値（計算値）", "対象"],
       rows: medianRows.map((x) => ({
         label: INDUSTRY_LABELS[x.industry.id].name,
-        href: `/industries/${x.industry.id}`,
+        href: `/features/employees-by-industry/rankings/${x.industry.id}`,
         values: [people(x.median), count(x.n)],
         bar: x.median,
       })),
@@ -497,7 +497,7 @@ function dividendsArticle(companies: Company[]): Feature {
       columns: ["割合（計算値）", "配当を出す会社", "対象"],
       rows: industryRows.map((x) => ({
         label: INDUSTRY_LABELS[x.id].name,
-        href: `/industries/${x.id}`,
+        href: `/features/how-many-companies-pay-dividends/rankings/${x.id}`,
         values: [pct1(x.share), count(x.pay), count(x.n)],
         bar: x.share,
       })),
@@ -601,7 +601,7 @@ function revenuePerEmployeeArticle(companies: Company[]): Feature {
       columns: ["1人あたり売上高の中央値（計算値）", "対象"],
       rows: industryRows.map((x) => ({
         label: INDUSTRY_LABELS[x.industry.id].name,
-        href: `/industries/${x.industry.id}`,
+        href: `/features/revenue-per-employee-by-industry/rankings/${x.industry.id}`,
         values: [manYen0(x.median), count(x.n)],
         bar: x.median,
       })),
