@@ -34,6 +34,7 @@ import { SectionTabs, type SectionLink } from "@/components/navigation/section-t
 import { SourceIndex } from "./source-index";
 import { ValueChainFlow } from "./value-chain-flow";
 import { CompanyNotes } from "@/components/company/company-notes";
+import { ReportCta } from "./report-cta";
 import { publicNotes } from "@/lib/release";
 
 /**
@@ -120,6 +121,9 @@ export async function CompanyView({ company }: { company: Company }) {
         hasConnections={hasConnections}
         related={relations.map((r) => ({ id: r.company.id, name: r.company.name }))}
       />
+      {/* JCE-125: the premium report's one entrance, at the end of the first view — promoted from the tail of
+          the 財務 section, where only a reader who scrolled to the bottom of the figures ever met it. */}
+      <ReportCta companyId={company.id} />
       <CompanyNotes notes={publicNotes(company)} />
       <SectionTabs sections={sections} containerId="company-sections" tabbed="mobile" />
       <div id="company-sections">
@@ -323,17 +327,8 @@ export async function CompanyView({ company }: { company: Company }) {
         ) : (
           metrics && <CompanyMetrics metrics={metrics} sources={company.sources} />
         )}
-        {/* JCE-073: the same figures as a printable premium report, with the computed layer and industry position. */}
-        <Link
-          href={`/companies/${company.id}/report`}
-          className="mt-10 flex items-center justify-between gap-3 rounded-md border border-foreground/20 bg-card px-4 py-3 text-sm hover:border-foreground"
-        >
-          <span>
-            <span className="block font-medium">企業レポート（プレミアム）</span>
-            <span className="block text-xs text-muted-foreground">5期の数字・売上の内訳・計算値と業界の中での位置を、印刷できる1枚に</span>
-          </span>
-          <span aria-hidden>→</span>
-        </Link>
+        {/* JCE-125: the premium report's card that sat here (JCE-073) is removed — its entrance is now the
+            band directly under the hero (ReportCta), and one page does not carry the same door twice. */}
       </CompanySection>
 
       {company.history.length > 0 && (
