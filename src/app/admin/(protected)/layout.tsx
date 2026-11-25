@@ -8,6 +8,7 @@ export const dynamic = "force-dynamic";
 const NAV = [
   { href: "/admin", label: "ダッシュボード" },
   { href: "/admin/reports", label: "報告" },
+  { href: "/admin/entrance", label: "入口フォーム" },
   { href: "/admin/companies", label: "企業" },
   { href: "/admin/drafts", label: "下書き" },
   { href: "/admin/queue", label: "登録キュー" },

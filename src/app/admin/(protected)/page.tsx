@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { loadEntranceView } from "@/lib/admin/entrance-form";
 import { companyRepository } from "@/lib/repositories";
 import { getReportRepository } from "@/lib/reports";
 import { formatDateJa } from "@/lib/utils/format";
@@ -7,6 +8,7 @@ export default async function AdminDashboard() {
   const companies = await companyRepository.listAll();
   const reports = getReportRepository();
   const activeReports = reports ? await reports.count({ statuses: ["open", "investigating"] }) : null;
+  const entrance = loadEntranceView();
   const attention = companies.filter((c) => c.status.state === "needs-attention");
   const recent = [...companies].sort((a, b) => b.updatedAt.localeCompare(a.updatedAt)).slice(0, 8);
 
@@ -14,13 +16,14 @@ export default async function AdminDashboard() {
     { label: "掲載企業", value: <>{companies.length}</>, href: "/admin/companies" },
     { label: "要確認", value: <>{attention.length}</>, href: "/admin/companies" },
     { label: "対応中の報告", value: <>{activeReports ?? "—"}</>, href: "/admin/reports" },
+    { label: "入口フォーム未対応", value: <>{entrance.available ? entrance.summary.pending : "—"}</>, href: "/admin/entrance" },
   ];
 
   return (
     <div className="space-y-14">
       <h1 className="font-serif text-3xl font-semibold">ダッシュボード</h1>
 
-      <dl className="grid gap-4 sm:grid-cols-3">
+      <dl className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {stats.map((s) => (
           <Link key={s.label} href={s.href} className="rounded-md border border-border p-5 hover:border-foreground">
             <dt className="text-sm text-muted-foreground">{s.label}</dt>
