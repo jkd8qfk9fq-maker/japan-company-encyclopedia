@@ -8,7 +8,7 @@ import { isReleased } from "@/lib/release";
 import type { Company, IndustryId } from "@/types/company";
 
 /**
- * 特集×業界の企業ランキング (JCE-116): the industry rows of a feature's tables link to a ranking of
+ * 特集×業界の企業ランキング (JCE-119): the industry rows of a feature's tables link to a ranking of
  * that industry's companies by the feature's own figure. Checked here against the same inputs the
  * features and industry figures use, recomputed from the data files — a ranking's value must be the
  * encyclopedia's value, and its median must be the figure the feature's table prints for the industry.
@@ -22,7 +22,7 @@ const primaryId = (c: Company): IndustryId | null =>
 
 const links = featureRankingLinks(features);
 
-describe("feature rankings (JCE-116)", () => {
+describe("feature rankings (JCE-119)", () => {
   it("links every industry row of the features' tables to a ranking, never to the industry page", () => {
     let industryRows = 0;
     for (const feature of features) {

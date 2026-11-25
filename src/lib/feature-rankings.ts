@@ -4,7 +4,7 @@ import type { Company, IndustryId } from "@/types/company";
 import type { Feature } from "@/types/feature";
 
 /**
- * 特集×業界の企業ランキング (JCE-116): a feature's industry table links here instead of to the industry
+ * 特集×業界の企業ランキング (JCE-119): a feature's industry table links here instead of to the industry
  * page — the companies of that industry, ordered by the very figure the feature aggregates into its
  * median. Each company's value comes from the same input through the same function the feature itself
  * uses (`revenueGrowth5y`, the printed figure, or — for the overseas ratio — the printed regional

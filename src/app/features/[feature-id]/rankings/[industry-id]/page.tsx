@@ -9,7 +9,7 @@ export const dynamicParams = false;
 
 /**
  * The routes are exactly the (feature, industry) pairs the features' industry tables link to
- * (JCE-116): derived from the built features, so a link can never land on a missing page.
+ * (JCE-119): derived from the built features, so a link can never land on a missing page.
  */
 export function generateStaticParams() {
   const pairs = featureRankingLinks(features);

@@ -72,7 +72,7 @@ describe("features (JCE-074)", () => {
     table!.rows.forEach((row, k) => {
       const industry = expected[k]!;
       expect(row.label).toBe(INDUSTRY_LABELS[industry.id].name);
-      // JCE-116: the industry rows link to the feature×industry company ranking, not the industry page.
+      // JCE-119: the industry rows link to the feature×industry company ranking, not the industry page.
       expect(row.href).toBe(`/features/average-salary-by-industry/rankings/${industry.id}`);
       expect(row.values[0]).toBe(manYen(industry.salaryMedian!.value));
       expect(row.values[1]).toBe(`${industry.salaryMedian!.companies.toLocaleString("ja-JP")}社`);
