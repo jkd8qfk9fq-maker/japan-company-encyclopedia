@@ -61,4 +61,8 @@ export const TRAINING_APP_METADATA = {
   manifest: `${BASE_PATH}/learn/manifest.webmanifest`,
   icons: { apple: `${BASE_PATH}/icons/training-apple-touch-icon.png` },
   appleWebApp: { capable: true, title: TRAINING_APP_NAME, statusBarStyle: "default" as const },
+  // Next renders appleWebApp.capable under the standard name `mobile-web-app-capable` only. iOS versions that
+  // look for the Apple name would open the home-screen icon in Safari instead of as an app, so the training
+  // pages carry that name too (JCE-125).
+  other: { "apple-mobile-web-app-capable": "yes" },
 };
