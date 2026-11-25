@@ -255,7 +255,7 @@ describe("features (JCE-074)", () => {
   });
 });
 
-describe("feature photographs (JCE-112)", () => {
+describe("feature photographs (JCE-113)", () => {
   it("are keyed by published feature ids only", async () => {
     const { FEATURE_IMAGES } = await import("@/assets/features");
     const ids = new Set(features.map((f) => f.id));

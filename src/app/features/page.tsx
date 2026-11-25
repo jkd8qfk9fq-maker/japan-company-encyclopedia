@@ -37,7 +37,7 @@ function themesOf(features: Feature[]) {
 }
 
 /**
- * The features list, laid out like the magazine and news front pages readers scan every day (JCE-112): a photograph
+ * The features list, laid out like the magazine and news front pages readers scan every day (JCE-113): a photograph
  * band with the page's name, the themes as a row of chips, the newest feature as a lead with its headline figures,
  * then 新着 as a thumbnail list beside a sidebar. The sidebar of those sites ranks by page views; this site has no
  * view counts it may show, so its list ranks nothing — it puts each feature's headline figure first (数字で選ぶ), the

@@ -7,8 +7,8 @@ import { formatDateJa } from "@/lib/utils/format";
 import type { Feature } from "@/types/feature";
 
 /**
- * A feature as it is listed (JCE-111, JCE-112). Three shapes, after the magazine and news sites readers already
- * know how to scan (JCE-112): `lead` — photograph, title and the headline figures side by side, for the newest
+ * A feature as it is listed (JCE-111, JCE-113). Three shapes, after the magazine and news sites readers already
+ * know how to scan (JCE-113): `lead` — photograph, title and the headline figures side by side, for the newest
  * feature; `row` — a thumbnail list item with date, title and a two-line lead, for 新着; `default` — a card, for
  * 次に読む at the foot of an article. Every figure shown is one of the feature's own computed keyFigures.
  */

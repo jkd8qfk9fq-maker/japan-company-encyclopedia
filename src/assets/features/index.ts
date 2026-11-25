@@ -7,7 +7,7 @@ import mapPort from "../industries/map-port.jpg";
 import realEstate from "../industries/real-estate.jpg";
 
 /**
- * Photographs for the features (JCE-112). They are the industry pages' own Unsplash / Pexels photographs
+ * Photographs for the features (JCE-113). They are the industry pages' own Unsplash / Pexels photographs
  * (src/assets/industries, provenance in its SOURCES.md), reused rather than fetched anew: each shows the kind of
  * scene a feature is about — a port for overseas sales, an office for pay — and never a company, product or brand.
  * A feature without an entry here is shown on its colour block, as before; the picture carries no claim.

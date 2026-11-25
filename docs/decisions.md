@@ -2026,6 +2026,8 @@ spend the trust the verification exists to build).
 
 **Q3「何に力を入れているか」（2026-11-25、運営者「完璧な構築までどんどん進めて」）**：probe（ADEKA・SUBARU・キーエンス・アキレス）で要素を実書類と照合した。研究開発費は【研究開発活動】の総額（`ResearchAndDevelopmentExpensesResearchAndDevelopmentActivities`）、IFRS の当期に費用認識した研究開発費、販売費及び一般管理費の研究開発費の順に、連結・メンバーなしの文脈だけを読む（セグメントや提出会社の値は採らない）。事業別の設備投資はセグメント情報の「有形固定資産及び無形固定資産の増加額」、IFRS の「非流動資産の増加額」（期末時点の事実）、設備投資等の概要の順に、セグメント利益と同じ規則（各会員1値・会社の合計と一致・「－」は記載なし・全事業）で読む。データは `researchAndDevelopment`（最上位、財務レコードの年度・売上高未満を integrity が検査）と `segmentRevenue.capex`。分析は A5「研究開発費」（印字値と売上高比）と A6「事業別の設備投資」（事業ごとの割合、その他は除く）。文は「事業別に見ると、{項目}の x% は〇〇。」、なければ「研究開発費は x で、売上高の y%。」。5文の配分は Q1 3・Q2 1・Q3 1 とし、三つの問いに一度ずつ答える（Q2 は利益率の文、なければ寄与の文）。既登録分は手動入力 `backfill_q3`（各社が既に引用している有報だけを読む）。意図の断定はしない（「力を入れている」とは書かず、お金の配分の事実だけ）。
 
+**Q3 の実測（2026-11-25、Actions 実行 45546506269・PR #116）**：全3,900件のうち、研究開発費2,049社（【研究開発活動】の総額1,969・販売費及び一般管理費75・IFRS 5）、事業別の設備投資1,059社（有形固定資産及び無形固定資産の増加額1,045・設備投資額11・非流動資産の増加額3）。登録しなかった主な理由：研究開発費の印字がない1,800（研究開発をしていない、または金額を書かない会社）、事業別の設備投資が無いか合計と一致しない681、研究開発費が売上高以上または売上高がない34。研究開発費が売上高の3割を超える16社は創薬ベンチャーが中心で、印字どおり。公開3,119社で「この会社の今」は4〜5文が2,200社、Q3 の文が出る会社は研究開発費か事業別の設備投資を持つ会社。
+
 **分析訓練との接続**：(1) 予測の照合（STEP 3）に STEP 4 フィードバックとして、照合した年度と同じ年度の「この会社の今」の Q1 文（純利益の増減・利益の分解・設備投資）を表示する（会社ページと分析レポートのみ。一括の /predictions.json には含めない）。(2) 今日の1問に「読み解き」の問いを追加：「〇〇の経常利益は前期から減りました。この増減に大きく効いたのは？ 売上の増減／利益率の変化」。片方がもう片方の2倍以上のときだけ出題し、答え合わせは「この会社の今」の文そのもの。12ステップのコースは変えない。
 
 **誤読ケースの人手確認（2026-11-25）**：純利益が2割以上減り、設備投資が3割以上増え、営業CFが設備投資を上回る売上高3,000億円以上の4社（SUBARU・ネクソン・武蔵精密工業・電源開発）の文を読んだ。SUBARU は「利益減＝危ない」ではなく、設備投資 +37.2%・減価償却費 2,711億円・営業CF 3,582億円が並び、メモの狙いどおりに読める。武蔵精密工業と電源開発は、経常利益が増えたのに純利益が減っており、文だけでは食い違って見えた。そこで、純利益と利益の行が逆向きに動いた期に限り、純利益の文に A1 の差（税・特別損益などの変動）を添える（「純利益の増減は前期比 −65億円。このうち税・特別損益などの変動による分は −88億円。」）。ネクソンは運転資本の材料がなく、設備投資の文が出ない（C2 の条件どおり）。
@@ -2048,7 +2050,39 @@ spend the trust the verification exists to build).
 
 **やらないこと**：スクロール連動の演出（データが単純なため）、写真の追加（特集の写真の方針は変えない）、文中の数字の手書き。
 
-## JCE-112 — 2026-11-25: 特集一覧を「雑誌・ニュースの表紙」の型に — 写真・テーマ・注目・新着・サイドバー
+### JCE-112 · 2026-11-25 · Accepted (operator) — A five-year table with no parent-attributable row: the total 当期利益, under its own label, with a disclosure note
+
+日本電波工業 (6779) and ＨＯＹＡ (7741) could not be registered at all. Both are IFRS filers whose
+連結経営指標等 prints no parent-attributable profit row: the five-year table's only bottom line is
+「当期利益」, the total including non-controlling interests (tagged `ProfitLossIFRSSummaryOfBusinessResults`;
+the attributable element is not tagged, and the attributable figure exists only in the P&L, for two years —
+no five-year series can be built from it). The extractor refused the total as net income and
+verify-financials' attribution rule refused the label, so intake failed both companies. The distinction the
+rules protect is real — for ＨＯＹＡ the total (251,451百万円) and the parent-attributable profit
+(253,085百万円) measurably differ — so presenting the total *as* parent-attributable net income would
+fabricate (invariant 1). Asked, the operator decided (2026-11-25): **relax the attribution requirement for
+this case only, and register both companies.**
+
+- **Scope, kept narrow.** The relaxation covers only the label/attribution requirement, and only where the
+  five-year table prints no attributable row at all. The extractor's fallback
+  (`NET_INCOME_TOTAL_ELEMENTS` in `evidence-pack.mjs`) fires solely when no attributable element is tagged
+  in the table the pack reads, so a filer that tags an attributable row is always served that row and can
+  never reach the exception. The rule is not disabled, and no other company is affected.
+- **The figures are the filing's, as printed.** Values come from the tagged total, unaltered. The series
+  keeps the filing's own printed label (「当期利益」); it is never renamed to 当期純利益 or worded to suggest
+  parent attribution. The page's column title and the ratio formula already use the entry's label verbatim,
+  so both show 当期利益.
+- **Disclosure is mandatory and machine-checked.** The pack flags the case
+  (`figures.netIncomeIsTotalProfit`) and warns; every financials row of the entry must carry a note stating
+  that the summary's profit is 当期利益 including non-controlling interests and differs from the
+  parent-attributable profit. verify-financials admits the unattributed label only when the pack flag is
+  set, the matched candidate is the total element, and the row's note carries that disclosure — otherwise
+  the old failure stands.
+- EXTRACTOR_VERSION 10 → 11, so packs built before the fallback rebuild instead of being reused.
+
+（記録上の注記：登録ツリー jce-live の decisions.md では JCE-039 として記録されたが、main の JCE-039 は AdSense の決定で既に使われているため、main では JCE-112 に振り替えて収録した。内容は同一。）
+
+## JCE-113 — 2026-11-25: 特集一覧を「雑誌・ニュースの表紙」の型に — 写真・テーマ・注目・新着・サイドバー
 
 運営者指示（2026-11-25）：参考デザイン（画像）を添えて「特集記事のデザインを、市場のデザインも分析して構築する」。
 

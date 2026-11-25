@@ -56,6 +56,16 @@ const labelIsPrinted = (table, label) => {
  */
 const PARENT_ATTRIBUTION = /((親会社|当社)の?(株主|所有者)に?帰属|当社に帰属|(親会社|当社)(株主|所有者)持分)/;
 /**
+ * The one element that names the TOTAL bottom line — 当期利益 including
+ * non-controlling interests. It can appear among the pack's netIncome
+ * candidates only via the extractor's last-resort fallback (JCE-039), which
+ * fires solely when the filer's five-year table tags no parent-attributable
+ * row at all, so its presence here is itself the proof of that condition.
+ */
+const TOTAL_PROFIT_ELEMENT = /(^|:)ProfitLossIFRSSummaryOfBusinessResults$/;
+/** The disclosure the exception below demands, in the entry row's own note. */
+const TOTAL_PROFIT_DISCLOSURE = /非支配株主/;
+/**
  * …but never the comprehensive-income row, which sits directly beneath net income
  * in these tables and is worded almost identically (NTT prints both
  * 「当社に帰属する当期利益」 and 「当社に帰属する当期包括利益」).
@@ -114,6 +124,9 @@ function index(candidates) {
   return map;
 }
 
+/** A dash year tags no value at all; format it as the filing prints it rather than crash on null. */
+const fmtYen = (v) => (v === null || v === undefined ? "－" : v.toLocaleString("ja-JP"));
+
 const revenue = index(evidence.figures.revenue);
 const netIncome = index(evidence.figures.netIncome);
 const problems = [];
@@ -148,17 +161,29 @@ for (const row of entry.financials) {
   ]) {
     const candidates = tagged.get(taggedDateFor(row.periodEnd));
     if (!candidates) {
+      // Absent on both sides is a match here too: a first consolidated year
+      // consolidated for the balance sheet only prints 「－」 for the year,
+      // and the XBRL element does not tag the period at all (リッジアイ
+      // 第9期）. Only a stored value against an untagged period is a problem.
+      if (stored === null) continue;
       problems.push(`${row.fiscalYear} ${kind}: この決算期 (${row.periodEnd}) は有報のXBRLに含まれていません`);
       continue;
     }
     if (stored === null) {
-      problems.push(`${row.fiscalYear} ${kind}: 空欄ですが、XBRLには ${candidates[0].yen.toLocaleString("ja-JP")} 円 があります`);
+      // Absent on both sides is a match, not a gap: a pre-revenue filer tags
+      // its top line as 「－」 for every year (キャンバス), so the tagged
+      // candidate itself carries null. Only a stored null against a tagged
+      // value is a gap.
+      if (candidates.every((c) => c.yen === null || c.yen === undefined)) continue;
+      problems.push(
+        `${row.fiscalYear} ${kind}: 空欄ですが、XBRLには ${fmtYen(candidates.find((c) => c.yen !== null && c.yen !== undefined)?.yen)} 円 があります`,
+      );
       continue;
     }
     checked++;
     if (!candidates.some((c) => c.yen === stored)) {
       problems.push(
-        `${row.fiscalYear} ${kind}: 記載 ${stored.toLocaleString("ja-JP")} 円 ≠ XBRL ${candidates.map((c) => `${c.yen.toLocaleString("ja-JP")}（${c.label}）`).join(" / ")}`,
+        `${row.fiscalYear} ${kind}: 記載 ${stored.toLocaleString("ja-JP")} 円 ≠ XBRL ${candidates.map((c) => `${fmtYen(c.yen)}（${c.label}）`).join(" / ")}`,
       );
       continue;
     }
@@ -174,10 +199,28 @@ for (const row of entry.financials) {
     // wording to copy. Requiring one would reject every single-entity filer —
     // most small caps — over a distinction that does not exist for them.
     if (kind === "純利益" && !evidence.figures.nonConsolidated && !PARENT_ATTRIBUTION.test(label)) {
-      problems.push(
-        `${row.fiscalYear} 純利益: ラベル「${label}」に親会社帰属の明示がありません。` +
-          `非支配株主分を含む当期純利益と区別できないため、有報の表記をそのまま使うこと`,
-      );
+      // The narrow exception (operator decision 2026-11-25, JCE-039): the
+      // filer's five-year table prints no parent-attributable row, so the
+      // bottom line can only be the total 当期利益. It is admitted under its
+      // own printed label — never reworded to suggest attribution — and only
+      // when the row's note discloses that the figure includes
+      // non-controlling interests and differs from the parent-attributable
+      // profit. The pack flag plus the matched candidate's element pin the
+      // case to the fallback; a filer WITH an attributable row can never
+      // reach this branch with the total, because the extractor serves the
+      // attributable series instead. Anything else still fails here.
+      const matched = candidates.find((c) => c.yen === stored);
+      const totalProfitException =
+        evidence.figures.netIncomeIsTotalProfit === true &&
+        matched !== undefined &&
+        TOTAL_PROFIT_ELEMENT.test(matched.element ?? "") &&
+        TOTAL_PROFIT_DISCLOSURE.test(row.note ?? "");
+      if (!totalProfitException) {
+        problems.push(
+          `${row.fiscalYear} 純利益: ラベル「${label}」に親会社帰属の明示がありません。` +
+            `非支配株主分を含む当期純利益と区別できないため、有報の表記をそのまま使うこと`,
+        );
+      }
     }
     if (kind === "純利益" && COMPREHENSIVE_INCOME.test(label)) {
       problems.push(`${row.fiscalYear} 純利益: ラベル「${label}」は包括利益の行です。当期純利益の行を使うこと`);
