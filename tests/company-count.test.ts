@@ -28,6 +28,7 @@ describe("company counts", () => {
   it("on the home page comes from the public company list", () => {
     const home = readFileSync(join(process.cwd(), "src/app/page.tsx"), "utf8");
     expect(home).toMatch(/companyRepository\.list\(\)/);
-    expect(home).toMatch(/掲載企業<\/dt>[\s\S]{0,200}\{companies\.length\.toLocaleString\("ja-JP"\)\}/);
+    // The label may carry its other languages (JCE-123); the figure under it is still the public list's length.
+    expect(home).toMatch(/掲載企業[^\n]{0,60}<\/dt>[\s\S]{0,200}\{companies\.length\.toLocaleString\("ja-JP"\)\}/);
   });
 });

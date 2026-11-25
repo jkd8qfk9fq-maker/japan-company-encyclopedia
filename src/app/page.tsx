@@ -4,6 +4,8 @@ import { ArrowRight, ChartColumn, Compass, Layers, Network, SlidersHorizontal, S
 import { HUB_IMAGES, INDUSTRY_IMAGES } from "@/assets/industries";
 import { CompanyMark } from "@/components/company/company-mark";
 import { SearchSuggest } from "@/components/search/search-suggest";
+import { T } from "@/components/i18n/t";
+import type { Message } from "@/lib/i18n";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { JapanMap, JapanMapLegend } from "@/components/region/japan-map";
 import { ReaderTrail } from "@/components/company/reader-trail";
@@ -29,13 +31,13 @@ const TRIAL_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSei-pGt3NT9g_eH
 const TILE = "relative bg-card/90 px-3 py-2.5 backdrop-blur transition-colors hover:bg-muted";
 
 /** The doors into the services (JCE-087), as a compact icon grid since the 2026-11-23 redesign. */
-const SERVICE_DOORS: { label: string; note: string; href: string; icon: LucideIcon; external?: boolean }[] = [
-  { label: "業界", note: "業界から探す", href: "/industries", icon: Layers },
-  { label: "発見", note: "今日の3社", href: "/discover", icon: Compass },
-  { label: "分析", note: "5観点で読む", href: "/analysis", icon: ChartColumn },
-  { label: "つながり", note: "立体でたどる", href: "/network", icon: Network },
-  { label: "財務で探す", note: "条件で絞る", href: "/screening", icon: SlidersHorizontal },
-  { label: "無料体験", note: "1社を読み解く", href: TRIAL_FORM_URL, icon: Sparkles, external: true },
+const SERVICE_DOORS: { label: Message; note: Message; href: string; icon: LucideIcon; external?: boolean }[] = [
+  { label: { ja: "業界", en: "Industries" }, note: { ja: "業界から探す", en: "Browse by industry" }, href: "/industries", icon: Layers },
+  { label: { ja: "発見", en: "Discover" }, note: { ja: "今日の3社", en: "Today's three" }, href: "/discover", icon: Compass },
+  { label: { ja: "分析", en: "Analysis" }, note: { ja: "5観点で読む", en: "Five perspectives" }, href: "/analysis", icon: ChartColumn },
+  { label: { ja: "つながり", en: "Network" }, note: { ja: "立体でたどる", en: "Ties in 3D" }, href: "/network", icon: Network },
+  { label: { ja: "財務で探す", en: "Screener" }, note: { ja: "条件で絞る", en: "Filter by figures" }, href: "/screening", icon: SlidersHorizontal },
+  { label: { ja: "無料体験", en: "Free trial" }, note: { ja: "1社を読み解く", en: "One company, read (JP)" }, href: TRIAL_FORM_URL, icon: Sparkles, external: true },
 ];
 
 export const metadata = {
@@ -98,9 +100,9 @@ export default async function HomePage() {
   // What to read next: features when there are any, otherwise the glossary.
   const reading =
     features.length > 0
-      ? { heading: "特集を読む", href: "/features", all: "特集をすべて見る", items: features.slice(0, 3).map((f) => ({ key: f.id, href: `/features/${f.id}`, title: f.title, text: f.subtitle ?? "" })) }
+      ? { heading: { ja: "特集を読む", en: "Features" } as Message, href: "/features", all: { ja: "特集をすべて見る", en: "All features" } as Message, items: features.slice(0, 3).map((f) => ({ key: f.id, href: `/features/${f.id}`, title: f.title, text: f.subtitle ?? "" })) }
       : terms.length > 0
-        ? { heading: "用語を知る", href: "/terms", all: "用語集を見る", items: terms.slice(0, 3).map((t) => ({ key: t.id, href: `/terms#${t.id}`, title: t.term, text: t.description })) }
+        ? { heading: { ja: "用語を知る", en: "Glossary" } as Message, href: "/terms", all: { ja: "用語集を見る", en: "Open the glossary" } as Message, items: terms.slice(0, 3).map((t) => ({ key: t.id, href: `/terms#${t.id}`, title: t.term, text: t.description })) }
         : null;
 
   return (
@@ -114,17 +116,24 @@ export default async function HomePage() {
         <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
         <div className="relative mx-auto max-w-7xl px-4 pt-7 pb-5 md:px-8 md:pt-14 md:pb-8">
           <h1 id="home-hero" className="font-serif text-[1.875rem] leading-[1.3] font-semibold tracking-[0.04em] text-balance md:text-[2.75rem]">
-            日本企業を、
-            <br />
-            構造から理解する。
+            <span data-l="ja" lang="ja">
+              日本企業を、
+              <br />
+              構造から理解する。
+            </span>
+            <span data-l="en" lang="en">
+              Understand Japanese companies,
+              <br />
+              from how they are built.
+            </span>
           </h1>
-          <p className="mt-2 text-sm text-foreground/80 md:text-base">何をしている会社か、誰とつながっているか。有価証券報告書から。</p>
+          <p className="mt-2 text-sm text-foreground/80 md:text-base"><T m={{ ja: "何をしている会社か、誰とつながっているか。有価証券報告書から。", en: "What each company does, and who it is tied to — from its annual securities report." }} /></p>
           <div className="mt-5 max-w-2xl">
             <SearchSuggest id="home-search" variant="hero" />
           </div>
           {examples.length > 0 && (
             <div className="-mx-4 mt-3 flex items-center gap-2 overflow-x-auto px-4 pb-1 [scrollbar-width:none] md:mx-0 md:px-0">
-              <span className="shrink-0 text-xs text-muted-foreground">検索例</span>
+              <span className="shrink-0 text-xs text-muted-foreground"><T m={{ ja: "検索例", en: "Try" }} /></span>
               {examples.slice(0, 6).map((c) => (
                 <Link
                   key={c.id}
@@ -140,48 +149,52 @@ export default async function HomePage() {
           {/* D10 counts as tiles: still counted from the entries themselves, never readers or use. */}
           <dl className="mt-4 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border md:grid-cols-4">
             <div className={TILE}>
-              <dt className="text-[0.6875rem] text-muted-foreground">掲載企業</dt>
+              <dt className="text-[0.6875rem] text-muted-foreground"><T m={{ ja: "掲載企業", en: "Companies" }} /></dt>
               <dd className="figures mt-0.5 text-xl leading-tight font-semibold">
                 {companies.length.toLocaleString("ja-JP")}
-                <span className="ml-0.5 text-xs font-normal text-muted-foreground">社</span>
+                <span className="ml-0.5 text-xs font-normal text-muted-foreground"><T m={{ ja: "社", en: "" }} /></span>
               </dd>
               <Link href="/companies" className="absolute inset-0">
-                <span className="sr-only">掲載企業の一覧へ</span>
+                <span className="sr-only"><T m={{ ja: "掲載企業の一覧へ", en: "All companies" }} /></span>
               </Link>
             </div>
             <div className={TILE}>
-              <dt className="text-[0.6875rem] text-muted-foreground">業界</dt>
+              <dt className="text-[0.6875rem] text-muted-foreground"><T m={{ ja: "業界", en: "Industries" }} /></dt>
               <dd className="figures mt-0.5 text-xl leading-tight font-semibold">
                 {industries.length}
-                <span className="ml-0.5 text-xs font-normal text-muted-foreground">分類</span>
+                <span className="ml-0.5 text-xs font-normal text-muted-foreground"><T m={{ ja: "分類", en: "" }} /></span>
               </dd>
               <Link href="/industries" className="absolute inset-0">
-                <span className="sr-only">業界の一覧へ</span>
+                <span className="sr-only"><T m={{ ja: "業界の一覧へ", en: "All industries" }} /></span>
               </Link>
             </div>
             <div className={TILE}>
-              <dt className="text-[0.6875rem] text-muted-foreground">企業のつながり</dt>
+              <dt className="text-[0.6875rem] text-muted-foreground"><T m={{ ja: "企業のつながり", en: "Company ties" }} /></dt>
               <dd className="figures mt-0.5 text-xl leading-tight font-semibold">
                 {tieCount.toLocaleString("ja-JP")}
-                <span className="ml-0.5 text-xs font-normal text-muted-foreground">本</span>
+                <span className="ml-0.5 text-xs font-normal text-muted-foreground"><T m={{ ja: "本", en: "" }} /></span>
               </dd>
               <Link href="/network" className="absolute inset-0">
-                <span className="sr-only">企業ネットワークへ</span>
+                <span className="sr-only"><T m={{ ja: "企業ネットワークへ", en: "Company network" }} /></span>
               </Link>
             </div>
             <div className={TILE}>
-              <dt className="text-[0.6875rem] text-muted-foreground">最新の更新</dt>
+              <dt className="text-[0.6875rem] text-muted-foreground"><T m={{ ja: "最新の更新", en: "Last update" }} /></dt>
               <dd className="figures mt-0.5 text-xl leading-tight font-semibold">
                 {latestUpdate ? shortDate(latestUpdate) : "—"}
               </dd>
               <Link href="/digest" className="absolute inset-0">
-                <span className="sr-only">今週の開示へ</span>
+                <span className="sr-only"><T m={{ ja: "今週の開示へ", en: "This week's filings" }} /></span>
               </Link>
             </div>
           </dl>
           <p className="mt-2 text-[0.6875rem] text-muted-foreground">
-            出典にした資料 <span className="figures">{sourceCount.toLocaleString("ja-JP")}</span>件・転記した決算{" "}
-            <span className="figures">{yearCount.toLocaleString("ja-JP")}</span>期分（有価証券報告書・EDINET などの一次資料）
+            <T
+              m={{
+                ja: `出典にした資料 ${sourceCount.toLocaleString("ja-JP")}件・転記した決算 ${yearCount.toLocaleString("ja-JP")}期分（有価証券報告書・EDINET などの一次資料）`,
+                en: `${sourceCount.toLocaleString("en-US")} source documents, ${yearCount.toLocaleString("en-US")} fiscal years transcribed (annual securities reports, EDINET and other primary sources)`,
+              }}
+            />
           </p>
         </div>
       </section>
@@ -191,9 +204,9 @@ export default async function HomePage() {
         <section aria-labelledby="home-companies" className="border-b border-border">
           <div className="mx-auto max-w-7xl px-4 py-5 md:px-8">
             <div className="flex items-baseline justify-between gap-3">
-              <h2 id="home-companies" className="seal-mark text-base font-semibold">解説つきの主な企業</h2>
+              <h2 id="home-companies" className="seal-mark text-base font-semibold"><T m={{ ja: "解説つきの主な企業", en: "Major companies with profiles" }} /></h2>
               <Link href="/companies" className="inline-flex min-h-11 items-center gap-1 text-xs text-ink">
-                すべて見る
+                <T m={{ ja: "すべて見る", en: "See all" }} />
                 <ArrowRight className="size-3.5" aria-hidden />
               </Link>
             </div>
@@ -209,7 +222,7 @@ export default async function HomePage() {
                           <span className="truncate font-semibold">{c.name}</span>
                           <span className="figures shrink-0 rounded bg-muted px-1.5 text-[0.625rem] text-muted-foreground">
                             {c.code}
-                            {primary ? `・${INDUSTRY_LABELS[primary.industryId].name}` : ""}
+                            {primary && <T m={{ ja: `・${INDUSTRY_LABELS[primary.industryId].name}`, en: ` · ${INDUSTRY_LABELS[primary.industryId].nameEn}` }} />}
                           </span>
                         </span>
                         <span className="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground">{c.description ? toPlainText(c.description) : ""}</span>
@@ -224,22 +237,22 @@ export default async function HomePage() {
       )}
 
       {/* The doors into the services as one compact grid (JCE-087's cards, condensed): icon, name, what it is. */}
-      <nav aria-label="サービスへの入口" className="border-b border-border">
+      <nav aria-label="サービスへの入口 / Services" className="border-b border-border">
         <ul className="mx-auto grid max-w-7xl grid-cols-3 gap-px bg-border md:grid-cols-6">
           {SERVICE_DOORS.map(({ href, label, note, icon: Icon, external }) => (
-            <li key={label} className="bg-background">
+            <li key={href} className="bg-background">
               {external ? (
                 <a href={href} target="_blank" rel="noopener noreferrer" className="flex min-h-20 flex-col items-center justify-center gap-1 px-1 py-3 text-center transition-colors hover:bg-card">
                   <Icon className="size-5 text-ink" aria-hidden strokeWidth={1.75} />
-                  <span className="text-xs font-semibold">{label}</span>
-                  <span className="text-[0.625rem] leading-3 text-muted-foreground">{note}</span>
-                  <span className="sr-only">（新しいタブで開きます）</span>
+                  <span className="text-xs font-semibold"><T m={label} /></span>
+                  <span className="text-[0.625rem] leading-3 text-muted-foreground"><T m={note} /></span>
+                  <span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span>
                 </a>
               ) : (
                 <Link href={href} className="flex min-h-20 flex-col items-center justify-center gap-1 px-1 py-3 text-center transition-colors hover:bg-card">
                   <Icon className="size-5 text-ink" aria-hidden strokeWidth={1.75} />
-                  <span className="text-xs font-semibold">{label}</span>
-                  <span className="text-[0.625rem] leading-3 text-muted-foreground">{note}</span>
+                  <span className="text-xs font-semibold"><T m={label} /></span>
+                  <span className="text-[0.625rem] leading-3 text-muted-foreground"><T m={note} /></span>
                 </Link>
               )}
             </li>
@@ -252,16 +265,21 @@ export default async function HomePage() {
       <section aria-labelledby="home-training" className="border-b border-border">
         <Link href="/learn" className="group mx-auto flex max-w-7xl items-center gap-4 px-4 py-5 md:px-8 md:py-6">
           <div className="min-w-0 flex-1">
-            <p className="text-[0.6875rem] font-semibold tracking-[0.2em] text-[#3fa91c]">{TRAINING_APP_NAME} ・ 学習アプリ</p>
+            <p className="text-[0.6875rem] font-semibold tracking-[0.2em] text-[#3fa91c]"><T m={{ ja: `${TRAINING_APP_NAME} ・ 学習アプリ`, en: "TRAINING · LEARNING APP" }} /></p>
             <h2 id="home-training" className="mt-1 text-[1.0625rem] leading-snug font-semibold md:text-[1.25rem]">
-              決算を、予想してから読む。有報が読めるようになる、1日5分。
+              <T m={{ ja: "決算を、予想してから読む。有報が読めるようになる、1日5分。", en: "Predict the results, then read them. Five minutes a day to read a filing (in Japanese)." }} />
             </h2>
             <p className="mt-1 text-xs text-muted-foreground">
-              レッスン<span className="figures">{MICRO_LESSON_IDS.length}</span>本・今日の1問・決算定期便・復習。進み具合はこのブラウザにだけ残ります。
+              <T
+                m={{
+                  ja: `レッスン${MICRO_LESSON_IDS.length}本・今日の1問・決算定期便・復習。進み具合はこのブラウザにだけ残ります。`,
+                  en: `${MICRO_LESSON_IDS.length} lessons, a daily question, a filings digest and review. Your progress stays in this browser.`,
+                }}
+              />
             </p>
           </div>
           <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-[#2e7d12] px-4 py-2 text-sm font-semibold text-white transition-transform group-hover:translate-x-0.5">
-            はじめる
+            <T m={{ ja: "はじめる", en: "Start" }} />
             <ArrowRight className="size-4" aria-hidden />
           </span>
         </Link>
@@ -273,9 +291,9 @@ export default async function HomePage() {
           <div className="min-w-0 flex-1">
             <p className="text-[0.6875rem] font-semibold tracking-[0.2em] text-seal">DISCOVER</p>
             <h2 id="home-discover" className="mt-0.5 text-base leading-snug font-semibold">
-              調べたい会社がなくても。スワイプで、知らなかった会社に出会う。
+              <T m={{ ja: "調べたい会社がなくても。スワイプで、知らなかった会社に出会う。", en: "Nothing to look up? Swipe to meet companies you did not know." }} />
             </h2>
-            <p className="mt-0.5 text-xs text-muted-foreground">今日の3社・つながる会社をたどる・マイ企業図鑑</p>
+            <p className="mt-0.5 text-xs text-muted-foreground"><T m={{ ja: "今日の3社・つながる会社をたどる・マイ企業図鑑", en: "Today's three · follow the ties · your collection" }} /></p>
           </div>
           <ArrowRight className="size-5 shrink-0 text-seal transition-transform group-hover:translate-x-1" aria-hidden />
         </Link>
@@ -285,16 +303,16 @@ export default async function HomePage() {
       <section aria-labelledby="home-shindan" className="border-b border-border bg-paper">
         <a href={SHINDAN_URL} className="group mx-auto flex max-w-7xl items-center gap-4 px-4 py-4 md:px-8">
           <div className="min-w-0 flex-1">
-            <p className="text-[0.6875rem] font-semibold tracking-[0.2em] text-muted-foreground">企業タイプ診断</p>
+            <p className="text-[0.6875rem] font-semibold tracking-[0.2em] text-muted-foreground"><T m={{ ja: "企業タイプ診断", en: "COMPANY TYPE QUIZ" }} /></p>
             <h2 id="home-shindan" className="mt-0.5 text-base leading-snug font-semibold">
-              あなたに近いのは、どんなタイプの会社？
+              <T m={{ ja: "あなたに近いのは、どんなタイプの会社？", en: "Which type of company is closest to you? (in Japanese)" }} />
             </h2>
             <p className="mt-1 text-xs text-muted-foreground">
-              60の産業 × 16の性格。質問に答えると、自分に近い産業と企業がわかります。回答はブラウザの外に送られません。
+              <T m={{ ja: "60の産業 × 16の性格。質問に答えると、自分に近い産業と企業がわかります。回答はブラウザの外に送られません。", en: "60 industries × 16 types. Answer a few questions to find the industries and companies closest to you. Your answers never leave your browser." }} />
             </p>
           </div>
           <span className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-foreground px-4 py-2 text-sm font-semibold text-background transition-transform group-hover:translate-x-0.5">
-            診断する
+            <T m={{ ja: "診断する", en: "Take it" }} />
             <ArrowRight className="size-4" aria-hidden />
           </span>
         </a>
@@ -306,16 +324,16 @@ export default async function HomePage() {
       <section aria-labelledby="home-map" className="border-b border-border">
         <div className="mx-auto grid max-w-7xl grid-cols-[minmax(0,1fr)] gap-6 px-4 py-8 md:px-8 md:py-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] lg:items-center lg:gap-16">
           <div>
-            <SectionTitle id="home-map">本社所在地から探す</SectionTitle>
+            <SectionTitle id="home-map"><T m={{ ja: "本社所在地から探す", en: "Browse by head office" }} /></SectionTitle>
             <p className="mt-4 max-w-md text-sm leading-7 text-muted-foreground">
-              掲載企業の本社がある都道府県を、地図に色の濃さで示しました。都道府県を選ぶと、そこに本社がある企業を市区町村ごとに一覧できます。
+              <T m={{ ja: "掲載企業の本社がある都道府県を、地図に色の濃さで示しました。都道府県を選ぶと、そこに本社がある企業を市区町村ごとに一覧できます。", en: "The map shades each prefecture by how many listed companies have their head office there. Choose one to list its companies by city." }} />
             </p>
             <ol className="mt-6 grid max-w-md grid-cols-2 gap-x-6 border-t border-border">
               {topPrefectures.map((p) => (
                 <li key={p.id} className="border-b border-border">
                   <Link href={`/prefectures/${p.id}`} className="group flex min-h-11 items-baseline justify-between gap-3 py-2 text-sm">
                     <span className="group-hover:underline group-hover:underline-offset-4">{p.name}</span>
-                    <span className="figures text-xs text-muted-foreground">{regions.counts[p.id].toLocaleString("ja-JP")}社</span>
+                    <span className="figures text-xs text-muted-foreground">{regions.counts[p.id].toLocaleString("ja-JP")}<T m={{ ja: "社", en: "" }} /></span>
                   </Link>
                 </li>
               ))}
@@ -324,7 +342,7 @@ export default async function HomePage() {
               href="/prefectures"
               className="mt-6 inline-flex min-h-11 items-center gap-2 rounded-full border border-foreground px-5 text-sm hover:bg-foreground hover:text-background"
             >
-              47都道府県の一覧と地図を見る
+              <T m={{ ja: "47都道府県の一覧と地図を見る", en: "All 47 prefectures and the map" }} />
               <ArrowRight className="size-4" aria-hidden />
             </Link>
           </div>
@@ -332,7 +350,7 @@ export default async function HomePage() {
             <JapanMap counts={regions.counts} className="mx-auto max-w-[30rem]" />
             <figcaption className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
               <JapanMapLegend />
-              <span className="text-[0.6875rem] text-muted-foreground">出典：金融庁 EDINETコードリスト（加工）</span>
+              <span className="text-[0.6875rem] text-muted-foreground"><T m={{ ja: "出典：金融庁 EDINETコードリスト（加工）", en: "Source: EDINET code list, Financial Services Agency (processed)" }} /></span>
             </figcaption>
           </figure>
         </div>
@@ -341,9 +359,9 @@ export default async function HomePage() {
       {/* WHAT: industries, each with its photograph. Ordered by how many companies the encyclopedia has in them. */}
       <section aria-labelledby="home-industries" className="mx-auto max-w-7xl px-4 pt-8 md:px-8 md:pt-14">
         <div className="flex items-baseline justify-between gap-4">
-          <SectionTitle id="home-industries">業界から探す</SectionTitle>
+          <SectionTitle id="home-industries"><T m={{ ja: "業界から探す", en: "Browse by industry" }} /></SectionTitle>
           <Link href="/industries" className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-sm text-ink">
-            すべての業界を見る
+            <T m={{ ja: "すべての業界を見る", en: "All industries" }} />
             <ArrowRight className="size-4" aria-hidden />
           </Link>
         </div>
@@ -363,9 +381,9 @@ export default async function HomePage() {
                 </span>
                 <span className="flex flex-col gap-0.5 px-3 py-2.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-2">
                   <span className="font-serif text-[0.9375rem] font-semibold group-hover:underline group-hover:underline-offset-4">
-                    {industry.name}
+                    <T m={{ ja: industry.name, en: industry.nameEn }} />
                   </span>
-                  <span className="figures text-xs text-muted-foreground">{industry.count}社</span>
+                  <span className="figures text-xs text-muted-foreground"><T m={{ ja: `${industry.count}社`, en: `${industry.count} companies` }} /></span>
                 </span>
               </Link>
             </li>
@@ -378,14 +396,14 @@ export default async function HomePage() {
         {/* COMPANIES */}
         <section aria-labelledby="home-featured" className="min-w-0">
           <div className="flex items-baseline justify-between gap-4">
-            <SectionTitle id="home-featured">解説つきの企業</SectionTitle>
+            <SectionTitle id="home-featured"><T m={{ ja: "解説つきの企業", en: "Companies with profiles" }} /></SectionTitle>
             <Link href="/companies" className="inline-flex min-h-11 shrink-0 items-center gap-1.5 text-sm text-ink">
-              すべての企業を見る
+              <T m={{ ja: "すべての企業を見る", en: "All companies" }} />
               <ArrowRight className="size-4" aria-hidden />
             </Link>
           </div>
           <p className="mt-2 text-sm text-muted-foreground">
-            事業の構造・ビジネスモデル・沿革までを、有価証券報告書に基づいて書いた企業です。
+            <T m={{ ja: "事業の構造・ビジネスモデル・沿革までを、有価証券報告書に基づいて書いた企業です。", en: "Companies whose business structure, model and history are written up from their annual securities reports (in Japanese)." }} />
           </p>
           <div className="mt-6 grid gap-5">
             {featured.map((company) => (
@@ -395,10 +413,10 @@ export default async function HomePage() {
         </section>
 
         {/* WHAT TO READ NEXT */}
-        <aside aria-label="読みもの" className="grid content-start gap-10">
+        <aside aria-label="読みもの / Reading" className="grid content-start gap-10">
           {reading && (
             <section aria-labelledby="home-reading">
-              <SectionTitle id="home-reading">{reading.heading}</SectionTitle>
+              <SectionTitle id="home-reading"><T m={reading.heading} /></SectionTitle>
               <ul className="mt-5 border-t border-border">
                 {reading.items.map((item) => (
                   <li key={item.key} className="border-b border-border">
@@ -413,14 +431,14 @@ export default async function HomePage() {
                 ))}
               </ul>
               <Link href={reading.href} className="mt-2 inline-flex min-h-11 items-center gap-1.5 text-sm text-ink">
-                {reading.all}
+                <T m={reading.all} />
                 <ArrowRight className="size-4" aria-hidden />
               </Link>
             </section>
           )}
 
           <section aria-labelledby="home-recent">
-            <SectionTitle id="home-recent">最近更新された企業</SectionTitle>
+            <SectionTitle id="home-recent"><T m={{ ja: "最近更新された企業", en: "Recently updated" }} /></SectionTitle>
             <ul className="mt-5 border-t border-border">
               {recent.map((company) => {
                 const primary = company.industries.find((i) => i.primary) ?? company.industries[0];
@@ -433,7 +451,7 @@ export default async function HomePage() {
                         </span>
                         <span className="figures mt-0.5 block text-xs text-muted-foreground">
                           {company.code}
-                          {primary && ` ｜ ${INDUSTRY_LABELS[primary.industryId].name}`}
+                          {primary && <T m={{ ja: ` ｜ ${INDUSTRY_LABELS[primary.industryId].name}`, en: ` | ${INDUSTRY_LABELS[primary.industryId].nameEn}` }} />}
                         </span>
                       </span>
                       <time dateTime={company.updatedAt} className="figures shrink-0 pt-0.5 text-xs text-muted-foreground">

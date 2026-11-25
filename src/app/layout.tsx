@@ -3,9 +3,11 @@ import { Bodoni_Moda, Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
 import { BottomNavigation } from "@/components/navigation/bottom-navigation";
 import { SiteFooter } from "@/components/navigation/site-footer";
 import { SiteHeader } from "@/components/navigation/site-header";
+import { T } from "@/components/i18n/t";
 import { OfflineIndicator } from "@/components/pwa/offline-indicator";
 import { ServiceWorkerRegistration } from "@/components/pwa/service-worker-registration";
 import { ANALYTICS_TOKEN, BASE_PATH, OG_IMAGES, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+import { localeCss } from "@/lib/i18n";
 import { THEME_SCRIPT } from "@/lib/storage/theme-script";
 import "./globals.css";
 import { AnalyticsConsent } from "@/components/analytics/analytics-consent";
@@ -82,13 +84,15 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <head>
         {/* Sets the theme class before first paint, so a dark-mode reader never sees a white flash. */}
         <script dangerouslySetInnerHTML={{ __html: THEME_SCRIPT }} />
+        {/* Shows the reader's language and hides the others (JCE-123); the script above sets data-lang. */}
+        <style dangerouslySetInnerHTML={{ __html: localeCss() }} />
       </head>
       <body className="flex min-h-dvh flex-col pb-[calc(3.5rem+env(safe-area-inset-bottom))] md:pb-0">
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:rounded-md focus:bg-foreground focus:px-4 focus:py-2 focus:text-background"
         >
-          本文へ移動
+          <T m={{ ja: "本文へ移動", en: "Skip to content" }} />
         </a>
         <SiteHeader />
         <OfflineIndicator />

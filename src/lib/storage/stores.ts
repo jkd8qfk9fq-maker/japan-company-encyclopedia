@@ -2,6 +2,7 @@ import { STORAGE_KEYS, parseRaw, read, write, remove, type StorageKey } from "./
 import { addPrediction, type Prediction } from "@/lib/predictions";
 import { scheduleReview, type ReviewState } from "@/lib/review-queue";
 import { isConditions, type Conditions } from "@/lib/screening";
+import { DEFAULT_LOCALE, isLocale, type Locale } from "@/lib/i18n";
 
 /**
  * Typed repositories over the raw storage layer, one per kind of user-local
@@ -102,21 +103,24 @@ export type ThemePreference = "system" | "light" | "dark";
 
 export type UserSettings = {
   theme: ThemePreference;
+  /** The interface language (JCE-123). Read before first paint by the same script as the theme. */
+  language: Locale;
 };
 
 const THEMES: readonly ThemePreference[] = ["system", "light", "dark"];
 
 // Dark is the house theme (operator design, 2026-11-23): a reader who has not chosen sees the dark layout.
-export const defaultSettings: UserSettings = { theme: "dark" };
+export const defaultSettings: UserSettings = { theme: "dark", language: DEFAULT_LOCALE };
 
 export const settingsStore = createStore<UserSettings>(
   STORAGE_KEYS.settings,
   defaultSettings,
   (value) => {
     if (typeof value !== "object" || value === null) return null;
-    const theme = (value as { theme?: unknown }).theme;
+    const { theme, language } = value as { theme?: unknown; language?: unknown };
     return {
       theme: THEMES.includes(theme as ThemePreference) ? (theme as ThemePreference) : "system",
+      language: isLocale(language) ? language : DEFAULT_LOCALE,
     };
   },
 );

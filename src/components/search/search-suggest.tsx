@@ -3,10 +3,22 @@
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useId, useMemo, useRef, useState } from "react";
+import { T } from "@/components/i18n/t";
+import { useLocalStore } from "@/hooks/use-local-store";
+import type { Message } from "@/lib/i18n";
 import { searchEntries, type SearchEntry, type SearchKind } from "@/lib/search/search";
+import { settingsStore } from "@/lib/storage/stores";
 import { cn } from "@/lib/utils";
 
-const KIND_LABEL: Record<SearchKind, string> = { company: "企業", industry: "業界", term: "用語", feature: "特集" };
+const KIND_LABEL: Record<SearchKind, Message> = {
+  company: { ja: "企業", en: "Co." },
+  industry: { ja: "業界", en: "Ind." },
+  term: { ja: "用語", en: "Term" },
+  feature: { ja: "特集", en: "Feat." },
+};
+
+/** An attribute cannot hold <T>, so the field reads the chosen language for its placeholder (JCE-123). */
+const PLACEHOLDER: Message = { ja: "企業名・証券コード・業界・用語で検索", en: "Company, code or industry" };
 const MAX = 8;
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
@@ -33,12 +45,14 @@ function loadIndex() {
 export function SearchSuggest({
   id,
   variant,
-  placeholder = "企業名・証券コード・業界・用語で検索",
+  placeholder: placeholderProp,
 }: {
   id: string;
   variant: "header" | "hero";
   placeholder?: string;
 }) {
+  const language = useLocalStore(settingsStore).language;
+  const placeholder = placeholderProp ?? PLACEHOLDER[language];
   const router = useRouter();
   const listId = useId();
   const [entries, setEntries] = useState<SearchEntry[] | null>(null);
@@ -121,7 +135,7 @@ export function SearchSuggest({
           }}
           className={cn(
             "w-full border border-input bg-card pr-3 outline-offset-2 placeholder:text-muted-foreground",
-            variant === "hero" ? "h-14 pl-11 text-base" : "h-11 w-56 pl-9 text-sm lg:w-72",
+            variant === "hero" ? "h-14 pl-11 text-base" : "h-11 w-56 pl-9 text-sm lg:w-60 xl:w-52 2xl:w-72",
           )}
         />
         {shown && (
@@ -148,7 +162,7 @@ export function SearchSuggest({
                 onMouseEnter={() => setActive(i)}
                 className={cn("flex min-h-11 cursor-pointer items-baseline gap-3 px-3 py-2", i === active && "bg-muted")}
               >
-                <span className="w-8 shrink-0 text-[0.6875rem] text-muted-foreground">{KIND_LABEL[entry.kind]}</span>
+                <span className="w-8 shrink-0 text-[0.6875rem] text-muted-foreground"><T m={KIND_LABEL[entry.kind]} /></span>
                 <span className="min-w-0">
                   <span className="flex items-baseline gap-2">
                     <span className="truncate text-[0.9375rem] font-semibold">{entry.title}</span>
@@ -159,14 +173,14 @@ export function SearchSuggest({
               </li>
             ))}
             <li role="presentation" className="border-t border-border px-3 py-2 text-xs text-muted-foreground">
-              Enterですべての結果を見る
+              <T m={{ ja: "Enterですべての結果を見る", en: "Press Enter for all results" }} />
             </li>
           </ul>
         )}
       </div>
       {variant === "hero" && (
         <button type="submit" className="h-14 shrink-0 bg-ink px-7 text-base font-medium text-background hover:opacity-90">
-          検索
+          <T m={{ ja: "検索", en: "Search" }} />
         </button>
       )}
     </form>

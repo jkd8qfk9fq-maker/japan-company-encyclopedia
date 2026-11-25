@@ -8,6 +8,7 @@ import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { MENU_ITEMS } from "./navigation-items";
+import { T } from "@/components/i18n/t";
 
 /**
  * The header menu (JCE-099): every destination the bottom bar does not carry, by name, in one panel. Still a
@@ -41,7 +42,7 @@ export function SiteMenu({ hidden }: { hidden: string[] }) {
     <details ref={ref} className="group relative">
       <summary className="flex size-11 cursor-pointer list-none items-center justify-center text-muted-foreground transition-colors hover:text-foreground [&::-webkit-details-marker]:hidden">
         <Menu className="size-5" aria-hidden />
-        <span className="sr-only">メニュー</span>
+        <span className="sr-only"><T m={{ ja: "メニュー", en: "Menu" }} /></span>
       </summary>
       <nav
         aria-label="すべてのページ"
@@ -58,8 +59,8 @@ export function SiteMenu({ hidden }: { hidden: string[] }) {
                 }}
                 className="block min-h-14 px-3 py-2 transition-colors hover:bg-muted"
               >
-                <span className="block text-sm font-semibold">{item.label}</span>
-                <span className="block text-[0.6875rem] leading-4 text-muted-foreground">{item.note}</span>
+                <span className="block text-sm font-semibold"><T m={item.label} /></span>
+                <span className="block text-[0.6875rem] leading-4 text-muted-foreground"><T m={item.note} /></span>
               </Link>
             </li>
           ))}
