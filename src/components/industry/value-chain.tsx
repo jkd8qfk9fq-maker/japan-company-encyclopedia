@@ -33,7 +33,7 @@ function StageCard({
         dashed ? "border-dashed border-muted-foreground" : "border-border",
       )}
     >
-      <div className="relative aspect-[3/2] bg-muted">
+      <div className="relative aspect-[5/2] bg-muted sm:aspect-[2/1]">
         {image && (
           <Image src={image} alt="" fill placeholder="blur" sizes="(min-width: 64rem) 18rem, 100vw" className="object-cover" />
         )}

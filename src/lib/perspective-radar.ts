@@ -1,7 +1,7 @@
 import type { AnalysisPerspectiveId, AnalysisRow, CompanyAnalysis } from "@/lib/company-analysis";
 
 /**
- * The five perspectives as one picture (JCE-115): for each perspective, one named indicator and where the company's
+ * The five perspectives as one picture (JCE-118): for each perspective, one named indicator and where the company's
  * value sits in its industry — the percentile the analysis tables already print (the share of the industry's
  * companies whose value is below this one). The outer the point, the larger the value within the industry; the
  * 50 ring is the industry median.

@@ -204,7 +204,7 @@ export function PositionBar({ value, median, q1, q3 }: { value: number; median: 
 }
 
 /**
- * The five perspectives as a radar (JCE-115): each axis is one named indicator's percentile within the industry
+ * The five perspectives as a radar (JCE-118): each axis is one named indicator's percentile within the industry
  * (perspective-radar.ts). Rings at 25 / 50 / 75 mark the industry's quartiles, the dashed 50 ring its median. The
  * points are joined only to give the shape; the area is not a figure and nothing is summed. An axis without a
  * distribution keeps its label, says 分布なし and has no point.
