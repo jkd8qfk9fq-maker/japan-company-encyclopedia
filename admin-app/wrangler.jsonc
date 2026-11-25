@@ -13,6 +13,9 @@
   "routes": [{ "pattern": "admin.kigyo-hyakka.com", "custom_domain": true }],
   "workers_dev": false,
   "preview_urls": false,
+  // JCE-117: the entrance form's answers (a contact email = personal data) live only in this KV namespace, never in
+  // the repository. The namespace id is a public identifier, like the Access audience tag above.
+  "kv_namespaces": [{ "binding": "ENTRANCE_KV", "id": "f203f7196c0149df9cf44e35aace9f55" }],
   // Sign-in is Cloudflare Access (one-time code by mail, sent by Cloudflare); its team domain and this app's audience
   // tag are public identifiers, not secrets. Who may pass is set in Access and again in ADMIN_EMAILS.
   "vars": {

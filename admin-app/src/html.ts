@@ -7,13 +7,14 @@
 export const esc = (value: unknown) =>
   String(value ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 
-export type NavKey = "dashboard" | "companies" | "terms" | "approvals" | "revisions" | "settings";
+export type NavKey = "dashboard" | "companies" | "terms" | "approvals" | "entrance" | "revisions" | "settings";
 
 export const NAV: { key: NavKey; href: string; label: string; icon: string }[] = [
   { key: "dashboard", href: "/", label: "ダッシュボード", icon: "M3 13h8V3H3zm10 8h8V11h-8zM3 21h8v-6H3zm10-18v6h8V3z" },
   { key: "companies", href: "/companies", label: "企業管理", icon: "M3 21V7l6-4 6 4v14M15 21V11h6v10M7 9h4M7 13h4M7 17h4" },
   { key: "terms", href: "/terms", label: "用語管理", icon: "M4 4h12a4 4 0 0 1 4 4v12H8a4 4 0 0 1-4-4zM8 8h8M8 12h6" },
   { key: "approvals", href: "/approvals", label: "承認管理", icon: "M9 12l2 2 4-4M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7z" },
+  { key: "entrance", href: "/entrance", label: "入口フォーム", icon: "M4 6h16v12H4zM4 7l8 6 8-6" },
   { key: "revisions", href: "/revisions", label: "変更履歴", icon: "M12 8v4l3 2M3 12a9 9 0 1 0 3-6.7M3 4v4h4" },
   { key: "settings", href: "/settings", label: "システム設定", icon: "M12 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19 12a7 7 0 0 0-.1-1.2l2-1.6-2-3.4-2.4 1a7 7 0 0 0-2-1.2L14 3h-4l-.5 2.6a7 7 0 0 0-2 1.2l-2.4-1-2 3.4 2 1.6a7 7 0 0 0 0 2.4l-2 1.6 2 3.4 2.4-1a7 7 0 0 0 2 1.2L10 21h4l.5-2.6a7 7 0 0 0 2-1.2l2.4 1 2-3.4-2-1.6c.1-.4.1-.8.1-1.2z" },
 ];
@@ -23,6 +24,7 @@ export const navFor = (path: string): NavKey | null => {
   if (path.startsWith("/companies") || path.startsWith("/edit/company")) return "companies";
   if (path.startsWith("/terms") || path.startsWith("/edit/term") || path.startsWith("/new/term")) return "terms";
   if (path.startsWith("/approvals")) return "approvals";
+  if (path.startsWith("/entrance")) return "entrance";
   if (path.startsWith("/revisions")) return "revisions";
   if (path.startsWith("/settings")) return "settings";
   return null;
