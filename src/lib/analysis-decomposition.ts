@@ -970,7 +970,21 @@ type C2Values = {
   investingCashFlow: number | null;
   /** The prior year's capex outlay from the same filing's prior column, when that block carries it. */
   prevCapex: number | null;
+  /** JCE-122: the prior year's depreciation, from the same filing's prior column only. */
+  prevDepreciation: number | null;
 };
+
+/** JCE-122: capex measured against the same year's depreciation — above 1 the year's outlay exceeded the year's wear. */
+const capexDepreciationRatioOf = (v: C2Values): number | null =>
+  v.depreciation !== null && v.depreciation > 0 ? v.capex / v.depreciation : null;
+/** JCE-122: the same measure for the prior year of the pair, from the same filing's prior column. */
+const capexDepreciationRatioPrevOf = (v: C2Values): number | null =>
+  v.prevCapex !== null && v.prevDepreciation !== null && v.prevDepreciation > 0 ? v.prevCapex / v.prevDepreciation : null;
+/** JCE-122: capex measured against the operating cash flow that came in the same year. */
+const capexOperatingRatioOf = (v: C2Values): number | null => (v.operatingCashFlow > 0 ? v.capex / v.operatingCashFlow : null);
+/** JCE-122: depreciation's own movement across the pair, from the same filing's prior column. */
+const depreciationGrowthOf = (v: C2Values): number | null =>
+  v.depreciation !== null && v.prevDepreciation !== null && v.prevDepreciation > 0 ? v.depreciation / v.prevDepreciation - 1 : null;
 
 /** Working capital from the printed balance-sheet lines: 売上債権 + 棚卸資産 − 仕入債務. */
 function workingCapitalOf(s: FinancialStatements): number | null {
@@ -1027,11 +1041,13 @@ function c2Values(c: Company): C2Values | null {
   // Only across one filing: the formula promises 同じ有報の前期欄, so two blocks read from different documents are not compared.
   const sameFiling = pair.prev.docId !== undefined && pair.prev.docId === pair.latest.docId;
   const prevCapexLine = sameFiling ? (pair.prev.cashFlowStatement?.find((l) => l.role === "capital-expenditure") ?? null) : null;
+  const prevDepLine = sameFiling ? (pair.prev.cashFlowStatement?.find((l) => l.role === "depreciation") ?? null) : null;
   return {
     depreciation: dep?.amount ?? null,
     depreciationLabel: dep?.label ?? null,
     investingCashFlow: cf.find((l) => l.role === "investing-cash-flow")?.amount ?? null,
     prevCapex: prevCapexLine ? Math.abs(prevCapexLine.amount) : null,
+    prevDepreciation: prevDepLine?.amount ?? null,
     operatingCashFlow: op,
     capex,
     capexLabel: capexLine.label,
@@ -1097,6 +1113,81 @@ const c2: DecompModuleDef = {
         : []),
       ...(values.investingCashFlow !== null
         ? [row("c2-investing-cash-flow", "投資キャッシュフロー", "有価証券報告書のキャッシュ・フロー計算書に印字された値", values.investingCashFlow, "printed", (v) => v.investingCashFlow)]
+        : []),
+      // JCE-122: the year's capex measured against what the year brought in and what it wore out. A ratio whose
+      // denominator is not a positive printed figure is not stated (operating CF at or below zero, depreciation
+      // absent or zero) — the row is simply not there, as with the other conditional rows of this group.
+      ...(capexOperatingRatioOf(values) !== null
+        ? [
+            {
+              key: "c2-capex-operating-ratio",
+              title: "設備投資の営業キャッシュフローに対する割合",
+              formula: "設備投資 ÷ 営業キャッシュフロー",
+              kind: "computed" as const,
+              unit: "percent" as const,
+              value: capexOperatingRatioOf(values)!,
+              fiscalYear,
+              sourceIds,
+              industry: position(capexOperatingRatioOf(values)!, ctx.peers, (c) => {
+                const v = c2Values(c);
+                return v ? capexOperatingRatioOf(v) : null;
+              }),
+            } satisfies AnalysisRow,
+          ]
+        : []),
+      ...(capexDepreciationRatioOf(values) !== null
+        ? [
+            {
+              key: "c2-capex-depreciation-ratio",
+              title: "減価償却費に対する設備投資の割合",
+              formula: "設備投資 ÷ 減価償却費",
+              kind: "computed" as const,
+              unit: "percent" as const,
+              value: capexDepreciationRatioOf(values)!,
+              fiscalYear,
+              sourceIds,
+              industry: position(capexDepreciationRatioOf(values)!, ctx.peers, (c) => {
+                const v = c2Values(c);
+                return v ? capexDepreciationRatioOf(v) : null;
+              }),
+            } satisfies AnalysisRow,
+          ]
+        : []),
+      ...(capexDepreciationRatioPrevOf(values) !== null
+        ? [
+            {
+              key: "c2-capex-depreciation-ratio-prev",
+              title: "前期の減価償却費に対する設備投資の割合",
+              formula: "前期の設備投資 ÷ 前期の減価償却費（同じ有報の前期欄）",
+              kind: "computed" as const,
+              unit: "percent" as const,
+              value: capexDepreciationRatioPrevOf(values)!,
+              fiscalYear: pair.prev.fiscalYear,
+              sourceIds,
+              industry: position(capexDepreciationRatioPrevOf(values)!, ctx.peers, (c) => {
+                const v = c2Values(c);
+                return v ? capexDepreciationRatioPrevOf(v) : null;
+              }),
+            } satisfies AnalysisRow,
+          ]
+        : []),
+      ...(depreciationGrowthOf(values) !== null
+        ? [
+            {
+              key: "c2-depreciation-growth",
+              title: `${values.depreciationLabel ?? "減価償却費"}の前期比`,
+              formula: `最新期の${values.depreciationLabel ?? "減価償却費"} ÷ 前期の${values.depreciationLabel ?? "減価償却費"} − 1（同じ有報の前期欄）`,
+              kind: "computed" as const,
+              unit: "percent-change" as const,
+              value: depreciationGrowthOf(values)!,
+              fiscalYear,
+              sourceIds,
+              industry: position(depreciationGrowthOf(values)!, ctx.peers, (c) => {
+                const v = c2Values(c);
+                return v ? depreciationGrowthOf(v) : null;
+              }),
+            } satisfies AnalysisRow,
+          ]
         : []),
     ];
     const notes = ["資金ギャップが正の期は、設備投資と運転資本の増加が営業キャッシュフローを上回り、その分を手元資金や調達で賄ったことを示します。"];

@@ -104,15 +104,41 @@ const TEMPLATES: Template[] = [
       // keep a profit fall in an investment year from being read as trouble. Each extra figure only where registered.
       const growth = row("c2-capex-growth");
       const dep = row("c2-depreciation");
-      return [
+      const depGrowth = row("c2-depreciation-growth");
+      const parts: Item[] = [
         "この期の設備投資は ",
         capex,
         ...(growth ? ["（前期比 ", growth, "）"] : []),
-        ...(dep ? ["、", { label: dep.title }, "は ", dep] : []),
+        ...(dep ? ["、", { label: dep.title }, "は ", dep, ...(depGrowth ? ["（前期比 ", depGrowth, "）"] : [])] : []),
         "、営業キャッシュフローは ",
         op,
         "。",
       ];
+      // JCE-122 (意味の層フェーズ2): the same year's capex measured against the operating cash flow — how much of
+      // what came in the outlay amounts to. A size stated next to the inflow, never a verdict on it.
+      const opRatio = row("c2-capex-operating-ratio");
+      if (opRatio) parts.push("設備投資は営業キャッシュフローの ", opRatio, "にあたる。");
+      // JCE-122: capex against depreciation in both years of the filing. The direction of each year's comparison
+      // is read off the two ratio rows (above 100% is capex above depreciation); the sentence states the two
+      // ratios and the pair of directions, and nothing about why. An exactly-equal year states neither
+      // direction, so the pair of clauses is not built then.
+      const depRatio = row("c2-capex-depreciation-ratio");
+      const depRatioPrev = row("c2-capex-depreciation-ratio-prev");
+      if (depRatio && depRatioPrev && depRatio.value !== 1 && depRatioPrev.value !== 1) {
+        parts.push("減価償却費に対する設備投資の割合は、前期 ", depRatioPrev, "、最新期 ", depRatio, "。");
+        const now = depRatio.value > 1;
+        const before = depRatioPrev.value > 1;
+        parts.push(
+          now && before
+            ? "設備投資は前期・最新期とも減価償却費を上回っている。"
+            : !now && !before
+              ? "設備投資は前期・最新期とも減価償却費を下回っている。"
+              : before
+                ? "設備投資は前期は減価償却費を上回り、最新期は下回っている。"
+                : "設備投資は前期は減価償却費を下回り、最新期は上回っている。",
+        );
+      }
+      return parts;
     },
   },
   {

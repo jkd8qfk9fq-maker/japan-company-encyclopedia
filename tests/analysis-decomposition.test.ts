@@ -555,6 +555,78 @@ describe("golden values, Phase 2 (Misumi statements, hand-computed from the prin
     // Gap = capex + ΔWC − operating CF = 14,288 + 15,252 − 52,190 = −22,650M.
     expect(rowOf(r, "c2-gap")!.value).toBe(-22_650_000_000);
     expect(ok(r).note).toContain("固定資産の取得による支出");
+    // JCE-122: capex against the year's operating cash flow. Misumi's registered lines carry no
+    // depreciation, so the depreciation measures are not stated.
+    expect(rowOf(r, "c2-capex-operating-ratio")!.value).toBeCloseTo(14_288 / 52_190, 10);
+    expect(rowOf(r, "c2-capex-depreciation-ratio")).toBeUndefined();
+    expect(rowOf(r, "c2-capex-depreciation-ratio-prev")).toBeUndefined();
+    expect(rowOf(r, "c2-depreciation-growth")).toBeUndefined();
+  });
+});
+
+describe("C2 investment measures (JCE-122)", () => {
+  const withDep = (): Company => {
+    const prev: FinancialStatements = {
+      ...MISUMI_STMT.prev,
+      cashFlowStatement: [
+        line("operating-cash-flow", 50_000_000_000, "営業活動によるキャッシュ・フロー"),
+        line("capital-expenditure", -10_000_000_000, "固定資産の取得による支出"),
+        line("depreciation", 8_000_000_000, "減価償却費"),
+      ],
+    };
+    const latest: FinancialStatements = {
+      ...MISUMI_STMT.latest,
+      cashFlowStatement: [
+        line("operating-cash-flow", 40_000_000_000, "営業活動によるキャッシュ・フロー"),
+        line("capital-expenditure", -16_000_000_000, "固定資産の取得による支出"),
+        line("depreciation", 10_000_000_000, "減価償却費"),
+      ],
+    };
+    return stmtCompany("c2-dep", "machinery", prev, latest);
+  };
+
+  it("states capex against depreciation in both years and depreciation's own movement", () => {
+    const c = withDep();
+    const r = runDecompModule("c2", c, [c]);
+    expect(rowOf(r, "c2-capex-operating-ratio")!.value).toBeCloseTo(0.4, 10);
+    expect(rowOf(r, "c2-capex-depreciation-ratio")!.value).toBeCloseTo(1.6, 10);
+    const prev = rowOf(r, "c2-capex-depreciation-ratio-prev")!;
+    expect(prev.value).toBeCloseTo(1.25, 10);
+    expect(prev.fiscalYear).toBe("2025年3月期");
+    expect(rowOf(r, "c2-depreciation-growth")!.value).toBeCloseTo(0.25, 10);
+    expect(rowOf(r, "c2-depreciation-growth")!.title).toBe("減価償却費の前期比");
+  });
+
+  it("states no prior-year measure where the pair is not one filing's two columns", () => {
+    const prev: FinancialStatements = { ...MISUMI_STMT.prev };
+    delete prev.docId;
+    const c = stmtCompany("c2-dep-nodoc", "machinery", prev, {
+      ...MISUMI_STMT.latest,
+      cashFlowStatement: [
+        line("operating-cash-flow", 40_000_000_000, "営業活動によるキャッシュ・フロー"),
+        line("capital-expenditure", -16_000_000_000, "固定資産の取得による支出"),
+        line("depreciation", 10_000_000_000, "減価償却費"),
+      ],
+    });
+    const r = runDecompModule("c2", c, [c]);
+    // The latest year's own ratio stands; everything read from the prior column is absent.
+    expect(rowOf(r, "c2-capex-depreciation-ratio")!.value).toBeCloseTo(16_000 / 10_000, 10);
+    expect(rowOf(r, "c2-capex-depreciation-ratio-prev")).toBeUndefined();
+    expect(rowOf(r, "c2-depreciation-growth")).toBeUndefined();
+    expect(rowOf(r, "c2-capex-growth")).toBeUndefined();
+  });
+
+  it("states no operating-cash-flow ratio where the year's operating cash flow is not positive", () => {
+    const latest: FinancialStatements = {
+      ...MISUMI_STMT.latest,
+      cashFlowStatement: [
+        line("operating-cash-flow", -5_000_000_000, "営業活動によるキャッシュ・フロー"),
+        line("capital-expenditure", -16_000_000_000, "固定資産の取得による支出"),
+      ],
+    };
+    const c = stmtCompany("c2-neg-op", "machinery", MISUMI_STMT.prev, latest);
+    const r = runDecompModule("c2", c, [c]);
+    expect(rowOf(r, "c2-capex-operating-ratio")).toBeUndefined();
   });
 });
 

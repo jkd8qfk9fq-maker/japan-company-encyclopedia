@@ -51,7 +51,13 @@ function checkSentence(s: MeaningSentence, groups: AnalysisGroup[]) {
     // The table's own string; a change row adds only the plus sign the table's 「増減」 column implies.
     const table = formatAnalysisValue(r!, r!.value);
     expect(p.text).toBe(SIGNED_ROWS.has(r!.key) && r!.value > 0 && !table.startsWith("+") ? `+${table}` : table);
-    expect(r!.fiscalYear).toBe(s.fiscalYear);
+    if (r!.key.endsWith("-prev")) {
+      // A prior-year figure (JCE-122) carries its own year — one of the years its group itself spans.
+      expect(group!.rows.map((x) => x.fiscalYear)).toContain(r!.fiscalYear);
+      expect(r!.fiscalYear).not.toBe(s.fiscalYear);
+    } else {
+      expect(r!.fiscalYear).toBe(s.fiscalYear);
+    }
   }
 }
 
@@ -84,6 +90,48 @@ describe("meaning layer", () => {
     const out = meaningSummary(full);
     expect(sentenceText(out[0]!)).toBe("この期の設備投資は 950億円（前期比 +40.0%）、減価償却費は 600億円、営業キャッシュフローは 1,200億円。");
     out.forEach((s) => checkSentence(s, full));
+  });
+
+  it("measures capex against the year's cash flow and against depreciation in both years (JCE-122)", () => {
+    const c2 = (extra: AnalysisRow[]): AnalysisGroup => ({
+      id: "c2",
+      title: "資金ギャップ",
+      rows: [
+        row("c2-operating-cash-flow", "営業キャッシュフロー", 120_000_000_000, { kind: "printed" }),
+        row("c2-capex", "設備投資", 95_000_000_000),
+        row("c2-depreciation", "減価償却費", 60_000_000_000, { kind: "printed" }),
+        ...extra,
+      ],
+    });
+    const ratios = (latest: number, prev: number): AnalysisRow[] => [
+      row("c2-capex-depreciation-ratio", "減価償却費に対する設備投資の割合", latest, { unit: "percent" }),
+      row("c2-capex-depreciation-ratio-prev", "前期の減価償却費に対する設備投資の割合", prev, { unit: "percent", fiscalYear: "2025年3月期" }),
+    ];
+    const full = [
+      c2([
+        row("c2-depreciation-growth", "減価償却費の前期比", 0.25, { unit: "percent-change" }),
+        row("c2-capex-operating-ratio", "設備投資の営業キャッシュフローに対する割合", 95 / 120, { unit: "percent" }),
+        ...ratios(95 / 60, 1.25),
+      ]),
+    ];
+    const out = meaningSummary(full);
+    expect(sentenceText(out[0]!)).toBe(
+      "この期の設備投資は 950億円、減価償却費は 600億円（前期比 +25.0%）、営業キャッシュフローは 1,200億円。" +
+        "設備投資は営業キャッシュフローの 79.2%にあたる。" +
+        "減価償却費に対する設備投資の割合は、前期 125.0%、最新期 158.3%。" +
+        "設備投資は前期・最新期とも減価償却費を上回っている。",
+    );
+    out.forEach((s) => checkSentence(s, full));
+    // The pair of directions, stated for each of the other three combinations.
+    expect(sentenceText(meaningSummary([c2(ratios(0.8, 0.6))])[0]!)).toContain("設備投資は前期・最新期とも減価償却費を下回っている。");
+    expect(sentenceText(meaningSummary([c2(ratios(1.4, 0.6))])[0]!)).toContain("設備投資は前期は減価償却費を下回り、最新期は上回っている。");
+    expect(sentenceText(meaningSummary([c2(ratios(0.6, 1.4))])[0]!)).toContain("設備投資は前期は減価償却費を上回り、最新期は下回っている。");
+    // An exactly-equal year states neither direction: the ratio clauses are not built.
+    const equal = meaningSummary([c2(ratios(1, 1.4))]);
+    expect(sentenceText(equal[0]!)).not.toContain("減価償却費に対する設備投資の割合は");
+    equal.forEach((s) => checkSentence(s, [c2(ratios(1, 1.4))]));
+    // Without the prior year's ratio there is no two-year statement, and no operating ratio either.
+    expect(sentenceText(meaningSummary([c2(ratios(1.4, 0.6).slice(0, 1))])[0]!)).toBe("この期の設備投資は 950億円、減価償却費は 600億円、営業キャッシュフローは 1,200億円。");
   });
 
   it("names the segment with the highest margin, answering each question before any twice (3 / 1 / 1)", () => {
