@@ -9,6 +9,7 @@ import { featureSections, readingMinutes } from "@/lib/feature-meta";
 import { companyRepository, termRepository } from "@/lib/repositories";
 import { formatDateJa } from "@/lib/utils/format";
 import type { Feature, FeatureBlock } from "@/types/feature";
+import { FEATURE_IMAGES } from "@/assets/features";
 import { accentFor, FeatureCard } from "./feature-card";
 import { ReadingProgress } from "./reading-progress";
 
@@ -93,6 +94,7 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
   const sections = featureSections(feature);
   const minutes = readingMinutes(feature);
   const ownIndex = Math.max(0, [feature, ...others].findIndex((f) => f.id === feature.id));
+  const photo = FEATURE_IMAGES[feature.id];
   // Each heading block's number, by its position in the body (the same order featureSections uses).
   const headingNumber = new Map(feature.body.flatMap((b, i) => (b.type === "heading" ? [i] : [])).map((bodyIndex, n) => [bodyIndex, n + 1]));
 
@@ -116,7 +118,14 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
   return (
     <article>
       <ReadingProgress targetId="feature-body" />
-      <header className={`text-white ${accentFor(ownIndex)}`}>
+      <header className={`relative isolate overflow-hidden text-white ${photo ? "bg-navy" : accentFor(ownIndex)}`}>
+        {photo && (
+          <>
+            <Image src={photo} alt="" fill priority placeholder="blur" sizes="100vw" className="-z-10 object-cover opacity-60" />
+            {/* Navy over the photograph, heaviest where the title is, so the words read on any picture. */}
+            <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/85 to-navy/30" />
+          </>
+        )}
         <div className="mx-auto max-w-6xl px-5 pt-8 pb-20 md:px-8 md:pt-14 md:pb-28">
           <nav aria-label="パンくず" className="text-xs text-white/70">
             <Link href="/features" className="hover:underline">特集</Link>
@@ -133,7 +142,7 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
       </header>
 
       {feature.keyFigures && feature.keyFigures.length > 0 && (
-        <div className="mx-auto -mt-12 max-w-6xl px-5 md:-mt-16 md:px-8">
+        <div className="relative z-10 mx-auto -mt-12 max-w-6xl px-5 md:-mt-16 md:px-8">
           <ul className="grid gap-3 sm:grid-cols-3">
             {feature.keyFigures.map((k) => (
               <li key={k.label} className="rounded-xl border border-border bg-card p-5 shadow-sm md:p-6">
