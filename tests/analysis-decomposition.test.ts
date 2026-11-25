@@ -340,9 +340,14 @@ describe("A3 segment contribution (JCE-097)", () => {
     expect(rowOf(r, "a3-alpha")!.value).toBeCloseTo(0.1, 12);
     expect(rowOf(r, "a3-beta")!.value).toBeCloseTo(0.08, 12);
     expect(rowOf(r, "a3-other")!.value).toBeCloseTo(0.01, 12);
+    // JCE-124: each business's yen change follows its contribution row, in the same order.
+    expect(rowOf(r, "a3-alpha-change")!.value).toBe(100);
+    expect(rowOf(r, "a3-beta-change")!.value).toBe(80);
+    expect(rowOf(r, "a3-other-change")!.value).toBe(10);
+    expect(rowOf(r, "a3-alpha-change")!.formula).toBe("その事業の売上高 − 前期の売上高");
     expect(rowOf(r, "a3-revenue-change")!.value).toBe(200);
     expect(rowOf(r, "a3-adjustment")!.value).toBe(10);
-    expect(ok(r).rows.map((row) => row.key)).toEqual(["a3-alpha", "a3-beta", "a3-other", "a3-revenue-change", "a3-adjustment"]);
+    expect(ok(r).rows.map((row) => row.key)).toEqual(["a3-alpha", "a3-alpha-change", "a3-beta", "a3-beta-change", "a3-other", "a3-other-change", "a3-revenue-change", "a3-adjustment"]);
   });
 
   it("property: the contributions over the prior revenue, plus the adjustment, add up to the revenue change", () => {

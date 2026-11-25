@@ -199,12 +199,21 @@ const TEMPLATES: Template[] = [
     build: (row, group) => {
       const total = row("a3-revenue-change");
       if (!total || total.value === 0) return null;
-      // A3's rows are sorted by contribution, largest first: the largest part in the direction of the total change.
-      const parts = group.rows.filter((r) => r.key !== "a3-revenue-change" && r.key !== "a3-adjustment");
+      // A3's contribution rows are sorted by contribution, largest first. Each is followed by its yen
+      // change row (JCE-124), so the parts are the rows in points, not every row but the total.
+      const parts = group.rows.filter((r) => r.unit === "points");
       const top = total.value > 0 ? parts[0] : parts.at(-1);
       const name = top ? stripSuffix(top.title, "の寄与") : null;
       if (!top || !name || Math.sign(top.value) !== Math.sign(total.value)) return null;
-      return ["売上高の増減 ", total, ` のうち、${total.value > 0 ? "増加" : "減少"}への寄与が最も大きいのは`, { label: name }, "で ", top, "。"];
+      const head = ["売上高の増減 ", total, ` のうち、${total.value > 0 ? "増加" : "減少"}への寄与が最も大きいのは`, { label: name }, "で ", top];
+      // The yen form states the amount only when 「のうち」 is arithmetically true: the top contributor's
+      // yen change moves with the total and is no larger than it (JCE-124: 895 of 1,428 A3 companies pass;
+      // the rest keep the points-only form, and no contribution rate is stated — JCE-097).
+      const change = row(`a3-${top.key.slice(3)}-change`);
+      if (change && Math.sign(change.value) === Math.sign(total.value) && Math.abs(change.value) <= Math.abs(total.value)) {
+        return [...head, "（増減 ", change, "）。"];
+      }
+      return [...head, "。"];
     },
   },
   {
@@ -239,9 +248,17 @@ const TEMPLATES: Template[] = [
  */
 export const SIGNED_ROWS = new Set(["a1-net-income-change", "a1-profit-change", "a1-revenue-effect", "a1-margin-effect", "a1-bridge", "b1-net-assets-change", "b1-other-change", "a3-revenue-change"]);
 
+/**
+ * A segment's yen change (JCE-124) states a change too, but its key carries the business id:
+ * a3-{businessId}-change. The same plus-sign rule applies to it as to the fixed change rows.
+ */
+export function isSignedRowKey(key: string): boolean {
+  return SIGNED_ROWS.has(key) || /^a3-.+-change$/.test(key);
+}
+
 export function figureText(row: AnalysisRow): string {
   const text = formatAnalysisValue(row, row.value);
-  return SIGNED_ROWS.has(row.key) && row.value > 0 && !text.startsWith("+") ? `+${text}` : text;
+  return isSignedRowKey(row.key) && row.value > 0 && !text.startsWith("+") ? `+${text}` : text;
 }
 
 const isRow = (i: Item): i is AnalysisRow => typeof i !== "string" && "key" in i;
