@@ -8,6 +8,8 @@ import { INDUSTRY_LABELS } from "@/lib/industry-labels";
 import { companyAnalysis } from "@/lib/company-analysis";
 import { financialSummary, type SummaryKey } from "@/lib/financial-summary";
 import { meaningSummary } from "@/lib/meaning-layer";
+import { MIN_RADAR_AXES, radarAxes } from "@/lib/perspective-radar";
+import { formatAnalysisValue } from "@/lib/analysis-format";
 import { formatDateJa, formatYen } from "@/lib/utils/format";
 import type { Company, FinancialRecord } from "@/types/company";
 import type { Revision } from "@/types/revision";
@@ -15,7 +17,7 @@ import { PremiumGate } from "./premium-gate";
 import { CompanyAnalysisSection, MeaningBlock } from "./company-analysis";
 import { DataProvenance } from "./data-provenance";
 import { ReportPrintButton } from "./report-print-button";
-import { Donut, PositionBar, TrendChart } from "./report-charts";
+import { Donut, PerspectiveRadar, PositionBar, TrendChart } from "./report-charts";
 import styles from "./company-report.module.css";
 
 /**
@@ -147,6 +149,8 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
   const summary = financialSummary(company.financials);
   const analysis = companyAnalysis(company, companies);
   const meaning = meaningSummary(analysis.perspectives.flatMap((p) => p.groups));
+  const axes = radarAxes(analysis);
+  const positionedAxes = axes.filter((a) => a.percentile !== null).length;
 
   const businessNames = new Map<string, string>();
   const collect = (bs: Company["businesses"]) => bs.forEach((b) => {
@@ -468,6 +472,37 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
               title={ch("analysis").title}
               lead="規模と地位・成長・収益性・財務の安定・外部環境との接続の5つの問いで、数字を読みます。各観点を開くと、自社の値と業界の中央値の表が出ます。5観点を合成したスコアや格付けは作りません。"
             >
+              {positionedAxes >= MIN_RADAR_AXES && (
+                <div className="mb-6 grid items-center gap-6 rounded-xl border border-border bg-card p-4 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:p-6">
+                  <figure>
+                    <PerspectiveRadar axes={axes} />
+                    <figcaption className="mt-2 text-center text-xs leading-5 text-muted-foreground">
+                      外側ほど、その指標の値が業界{analysis.industryName && `（${analysis.industryName}）`}の中で大きい。点線は業界の中央値。
+                    </figcaption>
+                  </figure>
+                  <div>
+                    <h3 className="font-serif text-base font-semibold">5観点の業界内の位置</h3>
+                    <ul className="mt-3 divide-y divide-border">
+                      {axes.map((a) => (
+                        <li key={a.perspective} className="py-2.5">
+                          <p className="flex items-baseline justify-between gap-3 text-sm">
+                            <span className="font-medium">{a.perspectiveTitle}</span>
+                            <span className="figures font-semibold">{a.percentile === null ? "分布なし" : `パーセンタイル ${a.percentile}`}</span>
+                          </p>
+                          <p className="figures mt-0.5 text-xs text-muted-foreground">
+                            {a.indicator}
+                            {a.row && <> {formatAnalysisValue(a.row, a.row.value)}（{a.row.fiscalYear}）</>}
+                            {a.row?.industry && <> ・ {a.row.industry.rank}位 / {a.row.industry.members}社</>}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="mt-3 text-xs leading-5 text-muted-foreground">
+                      各軸は観点ごとの代表の指標1つで、パーセンタイルは業界でその値より小さい会社の割合です。大きいことは良いことを意味せず（自己資本比率や海外売上高比率は会社の形を示すもの）、5つを足したり面積で比べたりする点数ではありません。
+                    </p>
+                  </div>
+                </div>
+              )}
               <CompanyAnalysisSection company={company} companies={companies} analysis={analysis} folded />
             </Chapter>
           )}
