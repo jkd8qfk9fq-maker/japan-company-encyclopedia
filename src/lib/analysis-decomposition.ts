@@ -382,20 +382,35 @@ const a3: DecompModuleDef = {
     const fiscalYear = latest.fiscalYear;
     const sourceIds = seg.sourceIds;
     const rows: AnalysisRow[] = [
+      // JCE-124: each business's yen change follows its contribution row, so the Q2 sentence can
+      // state the amount the points stand for — the row is the sentence's source, as in JCE-122.
       ...[...values.parts]
         .sort((a, b) => b.contribution - a.contribution)
-        .map(
-          (p): AnalysisRow => ({
-            key: `a3-${p.businessId}`,
-            title: `${p.name}の寄与`,
-            formula: "その事業の売上高の増減 ÷ 前期の売上高",
-            kind: "computed",
-            unit: "points",
-            value: p.contribution,
-            fiscalYear,
-            sourceIds,
-            industry: null,
-          }),
+        .flatMap(
+          (p): AnalysisRow[] => [
+            {
+              key: `a3-${p.businessId}`,
+              title: `${p.name}の寄与`,
+              formula: "その事業の売上高の増減 ÷ 前期の売上高",
+              kind: "computed",
+              unit: "points",
+              value: p.contribution,
+              fiscalYear,
+              sourceIds,
+              industry: null,
+            },
+            {
+              key: `a3-${p.businessId}-change`,
+              title: `${p.name}の増減`,
+              formula: "その事業の売上高 − 前期の売上高",
+              kind: "computed",
+              unit: "yen",
+              value: p.change,
+              fiscalYear,
+              sourceIds,
+              industry: null,
+            },
+          ],
         ),
       {
         key: "a3-revenue-change",
