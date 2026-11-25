@@ -31,8 +31,17 @@
     width: 100%;
   }
 
-  .report :global(section) {
+  /* JCE-114: a chapter is now longer than a page, and keeping it whole left most of page 1 blank; what must not
+     split is a chart, a card, a list row or a table row. A chapter title stays with what follows it. */
+  .report :global(figure),
+  .report :global(li),
+  .report :global(details > summary) {
     break-inside: avoid;
+  }
+
+  .report :global(h2),
+  .report :global(h3) {
+    break-after: avoid;
   }
 
   /* On screen the tables scroll sideways on a phone; on paper they must fit the sheet — trillion-yen

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { formatAnalysisValue } from "@/lib/analysis-format";
-import { companyAnalysis, type AnalysisRow } from "@/lib/company-analysis";
+import { companyAnalysis, type AnalysisRow, type CompanyAnalysis } from "@/lib/company-analysis";
 import { formatIndicatorValue, indicatorsForIndustry, observationPeriodLabel } from "@/lib/indicators";
 import { MEANING_QUESTIONS, meaningSummary, type MeaningQuestion, type MeaningSentence } from "@/lib/meaning-layer";
 import { formatYen } from "@/lib/utils/format";
@@ -96,7 +96,7 @@ function DetailTable({ rows }: { rows: AnalysisRow[] }) {
   );
 }
 
-function MeaningBlock({ sentences }: { sentences: MeaningSentence[] }) {
+export function MeaningBlock({ sentences }: { sentences: MeaningSentence[] }) {
   const questions = (Object.keys(MEANING_QUESTIONS) as MeaningQuestion[]).filter((q) => sentences.some((s) => s.question === q));
   return (
     <div className="mt-6 rounded-md border border-border p-4 sm:p-5">
@@ -136,8 +136,24 @@ function MeaningBlock({ sentences }: { sentences: MeaningSentence[] }) {
   );
 }
 
-export function CompanyAnalysisSection({ company, companies }: { company: Company; companies: Company[] }) {
-  const analysis = companyAnalysis(company, companies);
+/**
+ * `folded` (the premium report's layout, JCE-114): the summary 「この会社の今」 is shown by the report itself at its
+ * top, so it is left out here, and each perspective opens from its title — the page reads as a list of the five
+ * questions, and the report's print path opens every fold so the PDF still carries every table.
+ */
+export function CompanyAnalysisSection({
+  company,
+  companies,
+  folded = false,
+  analysis: given,
+}: {
+  company: Company;
+  companies: Company[];
+  folded?: boolean;
+  /** The report computes the analysis once for its own summary and passes it here. */
+  analysis?: CompanyAnalysis;
+}) {
+  const analysis = given ?? companyAnalysis(company, companies);
   if (analysis.perspectives.length === 0) return null;
 
   const businessNames = new Map<string, string>();
@@ -152,9 +168,11 @@ export function CompanyAnalysisSection({ company, companies }: { company: Compan
   const linkedIndicators = analysis.industryId ? indicatorsForIndustry(analysis.industryId) : [];
 
   return (
-    <section className="mt-12">
-      <h2 className="font-serif text-xl font-semibold">分析（5観点）</h2>
-      {meaning.length > 0 && <MeaningBlock sentences={meaning} />}
+    <section className={folded ? "" : "mt-12"}>
+      {!folded && <h2 className="font-serif text-xl font-semibold">分析（5観点）</h2>}
+      {!folded && meaning.length > 0 && <MeaningBlock sentences={meaning} />}
+      {!folded && (
+        <>
       <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
         この会社の数字を、規模と地位・成長・収益性・財務の安定・外部環境との接続の5観点で読みます。印字値は有価証券報告書のとおり、計算値には計算式を併記します。業界の分布は主たる産業が同じ掲載企業
         {analysis.industryName && `（${analysis.industryName}）`}
@@ -166,24 +184,48 @@ export function CompanyAnalysisSection({ company, companies }: { company: Compan
       <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
         無料で見られるのは各観点の要点（自社の値と業界の中央値）までです。分布の全体像・推移・経済指標との接続は分析レイヤーの範囲で、有効な購入コードで開きます。開いた状態で印刷・PDF保存すると、分析を含むレポート全体が1つの文書になります。
       </p>
+        </>
+      )}
 
-      <div className="mt-8 space-y-10">
-        {analysis.perspectives.map((p) => (
-          <div key={p.id}>
-            <h3 className="font-serif text-lg font-semibold">{p.title}</h3>
-            <p className="mt-1 max-w-3xl text-sm leading-6 text-muted-foreground">{p.intro}</p>
-            {p.rows.length > 0 && <FreeTable rows={p.rows} />}
-            {p.groups.map((g) => (
-              <div key={g.id}>
-                <h4 className="mt-6 font-serif text-base font-semibold">{g.title}</h4>
-                <FreeTable rows={g.rows} />
-              </div>
-            ))}
-          </div>
-        ))}
+      <div className={folded ? "mt-5 space-y-3" : "mt-8 space-y-10"}>
+        {analysis.perspectives.map((p) => {
+          const body = (
+            <>
+              {p.rows.length > 0 && <FreeTable rows={p.rows} />}
+              {p.groups.map((g) => (
+                <div key={g.id}>
+                  <h4 className="mt-6 font-serif text-base font-semibold">{g.title}</h4>
+                  <FreeTable rows={g.rows} />
+                </div>
+              ))}
+            </>
+          );
+          return folded ? (
+            <details key={p.id} className="group rounded-xl border border-border bg-card px-4 py-3 sm:px-5">
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-3 [&::-webkit-details-marker]:hidden">
+                <span>
+                  <span className="block font-serif text-base font-semibold">{p.title}</span>
+                  <span className="mt-0.5 block text-sm leading-6 text-muted-foreground">{p.intro}</span>
+                </span>
+                <span className="mt-1 shrink-0 text-xs font-medium text-muted-foreground print:hidden">
+                  <span className="group-open:hidden">表を開く ＋</span>
+                  <span className="hidden group-open:inline">閉じる －</span>
+                </span>
+              </summary>
+              <div className="pb-2">{body}</div>
+            </details>
+          ) : (
+            <div key={p.id}>
+              <h3 className="font-serif text-lg font-semibold">{p.title}</h3>
+              <p className="mt-1 max-w-3xl text-sm leading-6 text-muted-foreground">{p.intro}</p>
+              {body}
+            </div>
+          );
+        })}
       </div>
 
-      <div className="mt-10">
+      {(() => {
+        const gated = (
         <AnalysisGate>
           <div className="space-y-10">
             {analysis.perspectives.map((p) => (
@@ -274,7 +316,25 @@ export function CompanyAnalysisSection({ company, companies }: { company: Compan
             ))}
           </div>
         </AnalysisGate>
-      </div>
+        );
+        return folded ? (
+          <details className="group mt-3 rounded-xl border border-border bg-card px-4 py-3 sm:px-5">
+            <summary className="flex cursor-pointer list-none items-start justify-between gap-3 [&::-webkit-details-marker]:hidden">
+              <span>
+                <span className="block font-serif text-base font-semibold">分布の全体像・推移・経済指標</span>
+                <span className="mt-0.5 block text-sm leading-6 text-muted-foreground">5観点それぞれの四分位・順位・パーセンタイルと、5期の推移、業界に対応づけた公的統計。</span>
+              </span>
+              <span className="mt-1 shrink-0 text-xs font-medium text-muted-foreground print:hidden">
+                <span className="group-open:hidden">開く ＋</span>
+                <span className="hidden group-open:inline">閉じる －</span>
+              </span>
+            </summary>
+            <div className="pt-4 pb-2">{gated}</div>
+          </details>
+        ) : (
+          <div className="mt-10">{gated}</div>
+        );
+      })()}
     </section>
   );
 }
