@@ -254,3 +254,11 @@ describe("features (JCE-074)", () => {
     expect(prose("overseas-sales-geography")).toContain(overseas.keyFigures![0]!.value);
   });
 });
+
+describe("feature photographs (JCE-112)", () => {
+  it("are keyed by published feature ids only", async () => {
+    const { FEATURE_IMAGES } = await import("@/assets/features");
+    const ids = new Set(features.map((f) => f.id));
+    for (const id of Object.keys(FEATURE_IMAGES)) expect(ids, id).toContain(id);
+  });
+});
