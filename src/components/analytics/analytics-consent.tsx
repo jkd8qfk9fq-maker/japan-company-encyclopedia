@@ -40,7 +40,7 @@ export function AnalyticsConsent() {
     <div
       role="region"
       aria-label="閲覧統計（Google アナリティクス）について"
-      className="fixed inset-x-0 bottom-[calc(3.5rem+env(safe-area-inset-bottom))] z-50 border-t border-border bg-background px-4 py-2 shadow-[0_-4px_16px_rgba(0,0,0,0.12)] md:bottom-0"
+      className="fixed inset-x-0 print:hidden bottom-[calc(3.5rem+env(safe-area-inset-bottom))] z-50 border-t border-border bg-background px-4 py-2 shadow-[0_-4px_16px_rgba(0,0,0,0.12)] md:bottom-0"
     >
       <div className="mx-auto flex max-w-3xl flex-wrap items-center gap-x-4 gap-y-2">
         <p className="min-w-0 basis-full text-xs leading-relaxed sm:basis-0 sm:flex-1 sm:text-sm">
