@@ -3,7 +3,7 @@ import { companies } from "../src/data/companies";
 import { formatAnalysisValue } from "../src/lib/analysis-format";
 import { companyAnalysis, type AnalysisGroup, type AnalysisRow } from "../src/lib/company-analysis";
 import { isReleased } from "../src/lib/release";
-import { MAX_SENTENCES, meaningSummary, SIGNED_ROWS, sentenceText, type MeaningSentence } from "../src/lib/meaning-layer";
+import { isSignedRowKey, MAX_SENTENCES, meaningSummary, sentenceText, type MeaningSentence } from "../src/lib/meaning-layer";
 
 /**
  * The meaning layer (JCE-110). The rules under test are the operator's design memo of 2026-11-25:
@@ -50,7 +50,7 @@ function checkSentence(s: MeaningSentence, groups: AnalysisGroup[]) {
     expect(r, `${s.id}: ${p.rowKey}`).toBeDefined();
     // The table's own string; a change row adds only the plus sign the table's 「増減」 column implies.
     const table = formatAnalysisValue(r!, r!.value);
-    expect(p.text).toBe(SIGNED_ROWS.has(r!.key) && r!.value > 0 && !table.startsWith("+") ? `+${table}` : table);
+    expect(p.text).toBe(isSignedRowKey(r!.key) && r!.value > 0 && !table.startsWith("+") ? `+${table}` : table);
     if (r!.key.endsWith("-prev")) {
       // A prior-year figure (JCE-122) carries its own year — one of the years its group itself spans.
       expect(group!.rows.map((x) => x.fiscalYear)).toContain(r!.fiscalYear);
@@ -210,32 +210,65 @@ describe("meaning layer", () => {
   });
 
   it("names the largest segment only when it moves with the total", () => {
-    const seg = (total: number, a: number, b: number): AnalysisGroup => ({
+    // JCE-124: the yen change row follows each contribution row. The sentence states the amount only
+    // when 「のうち」 is arithmetically true — the top contributor's change moves with the total and is
+    // no larger than it — and otherwise keeps the points-only form.
+    const seg = (total: number, a: number, b: number, ax?: number, bx?: number): AnalysisGroup => ({
       id: "a3",
       title: "セグメント別の売上寄与",
       rows: [
         row("a3-x", "機械事業の寄与", a, { unit: "points" }),
+        ...(ax === undefined ? [] : [row("a3-x-change", "機械事業の増減", ax)]),
         row("a3-y", "素材事業の寄与", b, { unit: "points" }),
+        ...(bx === undefined ? [] : [row("a3-y-change", "素材事業の増減", bx)]),
         row("a3-revenue-change", "売上高の増減", total),
       ],
     });
-    expect(sentenceText(meaningSummary([seg(30_000_000_000, 0.08, 0.01)])[0]!)).toContain("増加への寄与が最も大きいのは機械事業");
-    expect(sentenceText(meaningSummary([seg(-30_000_000_000, 0.01, -0.08)])[0]!)).toContain("減少への寄与が最も大きいのは素材事業");
+    expect(sentenceText(meaningSummary([seg(30_000_000_000, 0.08, 0.01, 24_000_000_000, 3_000_000_000)])[0]!)).toBe(
+      "売上高の増減 +300億円 のうち、増加への寄与が最も大きいのは機械事業で +8.00pt（増減 +240億円）。",
+    );
+    expect(sentenceText(meaningSummary([seg(-30_000_000_000, 0.01, -0.08, 3_000_000_000, -24_000_000_000)])[0]!)).toBe(
+      "売上高の増減 −300億円 のうち、減少への寄与が最も大きいのは素材事業で −8.00pt（増減 −240億円）。",
+    );
+    // Without the change rows the points-only form stands, as before.
+    expect(sentenceText(meaningSummary([seg(30_000_000_000, 0.08, 0.01)])[0]!)).toBe(
+      "売上高の増減 +300億円 のうち、増加への寄与が最も大きいのは機械事業で +8.00pt。",
+    );
+    // A change larger than the total, or in the opposite direction, is not stated as 「のうち」.
+    expect(sentenceText(meaningSummary([seg(30_000_000_000, 0.08, 0.01, 40_000_000_000, 3_000_000_000)])[0]!)).toBe(
+      "売上高の増減 +300億円 のうち、増加への寄与が最も大きいのは機械事業で +8.00pt。",
+    );
+    expect(sentenceText(meaningSummary([seg(30_000_000_000, 0.08, 0.01, -5_000_000_000, 3_000_000_000)])[0]!)).toBe(
+      "売上高の増減 +300億円 のうち、増加への寄与が最も大きいのは機械事業で +8.00pt。",
+    );
     expect(meaningSummary([seg(30_000_000_000, -0.01, -0.02)])).toEqual([]);
   });
 
   it("holds every released company to the rules", { timeout: 300_000 }, () => {
     const released = companies.filter(isReleased);
     let withSummary = 0;
+    let q2Segment = 0;
+    let q2SegmentYen = 0;
     for (const c of released) {
       const groups = companyAnalysis(c, released).perspectives.flatMap((p) => p.groups);
       const out = meaningSummary(groups);
       expect(out.length).toBeLessThanOrEqual(MAX_SENTENCES);
       expect(new Set(out.map((s) => s.id)).size).toBe(out.length);
-      out.forEach((s) => checkSentence(s, groups));
+      out.forEach((s) => {
+        checkSentence(s, groups);
+        // JCE-124: the yen form of q2-segment (the top contributor's amount beside its points).
+        if (s.id === "q2-segment") {
+          q2Segment++;
+          if (sentenceText(s).includes("（増減 ")) q2SegmentYen++;
+        }
+      });
       if (out.length > 0) withSummary++;
     }
     // Almost every non-financial company has two comparable years; a collapse here means a template broke.
     expect(withSummary).toBeGreaterThan(2500);
+    // JCE-124: most q2-segment sentences state the amount (measured 128 of 184 at implementation);
+    // a collapse means the guard or the change rows broke.
+    expect(q2Segment).toBeGreaterThan(150);
+    expect(q2SegmentYen).toBeGreaterThan(100);
   });
 });
