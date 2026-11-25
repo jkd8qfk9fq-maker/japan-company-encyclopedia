@@ -43,8 +43,11 @@ export type MeaningSentence = {
   caution?: string;
 };
 
-/** At most this many sentences per question; the block holds at most five in all. */
-const PER_QUESTION: Record<MeaningQuestion, number> = { q1: 4, q2: 2, q3: 0 };
+/**
+ * At most this many sentences per question; the block holds at most five in all. 3 / 1 / 1 answers each of the three
+ * questions once before any is answered twice (operator: the limits may be changed as needed, 2026-11-24).
+ */
+const PER_QUESTION: Record<MeaningQuestion, number> = { q1: 3, q2: 1, q3: 1 };
 export const MAX_SENTENCES = 5;
 
 type Item = string | MeaningLabel | AnalysisRow;
@@ -66,7 +69,14 @@ const TEMPLATES: Template[] = [
     groupId: "a1",
     build: (row) => {
       const ni = row("a1-net-income-change");
-      return ni ? ["純利益の増減は前期比 ", ni, "。"] : null;
+      if (!ni) return null;
+      // When net income and the profit line above it moved in opposite directions (経常利益 up, 純利益 down), the
+      // bridge between them is what a reader needs next — found in the manual misreading check (武蔵精密工業,
+      // 電源開発, 2026-11-25). It is A1's own row: profit change + bridge = net income change.
+      const change = row("a1-profit-change");
+      const bridge = row("a1-bridge");
+      const opposite = change && bridge && ni.value !== 0 && change.value !== 0 && Math.sign(ni.value) !== Math.sign(change.value);
+      return opposite ? ["純利益の増減は前期比 ", ni, "。このうち税・特別損益などの変動による分は ", bridge, "。"] : ["純利益の増減は前期比 ", ni, "。"];
     },
   },
   {
@@ -171,13 +181,37 @@ const TEMPLATES: Template[] = [
       return ["売上高の増減 ", total, ` のうち、${total.value > 0 ? "増加" : "減少"}への寄与が最も大きいのは`, { label: name }, "で ", top, "。"];
     },
   },
+  {
+    id: "q3-capex",
+    question: "q3",
+    groupId: "a6",
+    build: (_row, group) => {
+      // A6's rows are sorted by amount, largest first. The measure comes from the formula, the name from the title.
+      const top = group.rows[0];
+      const measure = top ? /^その事業の(.+?) ÷/.exec(top.formula)?.[1] : undefined;
+      const name = top ? stripSuffix(top.title, "が占める割合") : null;
+      if (!top || !measure || !name) return null;
+      return ["事業別に見ると、", { label: measure }, "の ", top, " は", { label: name }, "。"];
+    },
+  },
+  {
+    id: "q3-rnd",
+    question: "q3",
+    groupId: "a5",
+    build: (row) => {
+      const amount = row("a5-rnd");
+      const ratio = row("a5-rnd-ratio");
+      if (!amount || !ratio) return null;
+      return [{ label: amount.title }, "は ", amount, " で、売上高の ", ratio, "。"];
+    },
+  },
 ];
 
 /**
  * Rows that state a change carry an explicit plus sign in a sentence: in a table the column says
  * 「増減」, but 「前期比 465億円」 alone does not say which way. The figure is otherwise the table's string.
  */
-export const SIGNED_ROWS = new Set(["a1-net-income-change", "a1-profit-change", "a1-revenue-effect", "a1-margin-effect", "b1-net-assets-change", "b1-other-change", "a3-revenue-change"]);
+export const SIGNED_ROWS = new Set(["a1-net-income-change", "a1-profit-change", "a1-revenue-effect", "a1-margin-effect", "a1-bridge", "b1-net-assets-change", "b1-other-change", "a3-revenue-change"]);
 
 export function figureText(row: AnalysisRow): string {
   const text = formatAnalysisValue(row, row.value);

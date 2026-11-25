@@ -63,6 +63,19 @@ export function VerificationBlock({ prediction, data, companyName }: { predictio
         実績：{v.actual.fiscalYear} {formatYen(v.actual.value)}（基準の{v.baseline.fiscalYear} {formatYen(v.baseline.value)}、計算値：前期比 {pct(v.change)}）。{outcomeText}
       </p>
       {titles.length > 0 && <p className="mt-1 text-xs leading-5 text-muted-foreground">出典：{titles.join("／")}</p>}
+      {data.explanation && data.explanation.fiscalYear === v.actual.fiscalYear && (
+        <div className="mt-3 border-t border-border/70 pt-3">
+          <p className="text-xs font-semibold tracking-wide text-muted-foreground">STEP 4 フィードバック：この期の数字の内訳（この会社の今）</p>
+          <ul className="mt-1.5 space-y-1.5">
+            {data.explanation.sentences.map((s) => (
+              <li key={s.text} className="text-sm leading-6">
+                {s.text}
+                <span className="block text-xs text-muted-foreground">根拠：{s.basis}（{data.explanation!.fiscalYear}）</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </div>
   );
 }

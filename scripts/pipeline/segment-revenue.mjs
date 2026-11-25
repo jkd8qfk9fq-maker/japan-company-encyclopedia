@@ -137,6 +137,46 @@ export function segmentProfitFacts(rows, period = "CurrentYearDuration") {
 }
 
 /**
+ * Capex by segment as the segment note tags it (JCE-110, Q3), in the order a filer's note is read: the J-GAAP note's
+ * 有形固定資産及び無形固定資産の増加額, the IFRS note's 非流動資産の増加額 (an instant fact), then 設備投資等の概要's own
+ * per-segment table. The first that is tagged for every member and closes against the filing's total is taken; a dash
+ * is "not presented", as for segment profit. `label` is the printed item, shortened to what a reader recognises.
+ */
+const SEGMENT_CAPEX_ELEMENTS = [
+  { element: "jpcrp_cor:IncreaseInPropertyPlantAndEquipmentAndIntangibleAssets", period: "CurrentYearDuration", label: "有形固定資産及び無形固定資産の増加額" },
+  { element: "jpigp_cor:AdditionsToNonCurrentAssetsIFRS", period: "CurrentYearInstant", label: "非流動資産の増加額" },
+  { element: "jpcrp_cor:CapitalExpendituresOverviewOfCapitalExpendituresEtc", period: "CurrentYearDuration", label: "設備投資額" },
+];
+
+/**
+ * The entry's `segmentRevenue.capex`, or the reason there is none — every business of the revenue table covered, and
+ * at least one amount above zero (an all-zero column is a note that does not allocate capex at all).
+ * @param {Record<string, string>[]} rows
+ * @param {Map<string, string>} labels
+ * @param {{ id: string, name: string, shortName?: string }[]} businesses
+ * @param {{ items: { businessId: string }[] }} revenue
+ */
+export function segmentCapexBlock(rows, labels, businesses, revenue) {
+  for (const candidate of SEGMENT_CAPEX_ELEMENTS) {
+    const facts = memberFacts(rows, candidate.element, candidate.period, true);
+    if (!facts) continue;
+    const mapped = mapSegmentsToBusinesses(facts, labels, businesses);
+    if ("problem" in mapped) return { problem: `設備投資: ${mapped.problem}` };
+    const byId = new Map(mapped.items.map((i) => [i.businessId, i.amount]));
+    const items = [];
+    for (const { businessId } of revenue.items) {
+      const amount = byId.get(businessId);
+      if (amount === undefined) return { problem: `事業 ${businessId} の設備投資がない` };
+      if (amount < 0) return { problem: `事業 ${businessId} の設備投資が負` };
+      items.push({ businessId, amount });
+    }
+    if (!items.some((i) => i.amount > 0)) return { problem: "事業別の設備投資がすべて0" };
+    return { label: candidate.label, items };
+  }
+  return { problem: "事業別の設備投資が無いか、合計と一致しない" };
+}
+
+/**
  * The entry's `segmentRevenue.profit` (JCE-110), or the reason there is none: every business of the revenue table gets
  * its segment's profit and own sales, or nothing is stored — never a partial set beside a full revenue table.
  * @param {ReturnType<typeof segmentProfitFacts>} facts

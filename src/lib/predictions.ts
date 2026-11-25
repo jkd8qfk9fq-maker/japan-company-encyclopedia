@@ -1,3 +1,6 @@
+import { runDecompModule } from "@/lib/analysis-decomposition";
+import type { AnalysisGroup } from "@/lib/company-analysis";
+import { meaningSummary, sentenceText } from "@/lib/meaning-layer";
 import type { Company, FinancialRecord } from "@/types/company";
 
 /**
@@ -67,6 +70,12 @@ export type CompanyPredictionData = {
   records: PredictionRecord[];
   /** The sources the records rest on, by id — titles only, for the citation under a check. */
   sources: Record<string, string>;
+  /**
+   * STEP 4 フィードバック (JCE-110): the newest year's 「この会社の今」 sentences on what made the profit move —
+   * shown under a check only when they are about the very year the check was made against, so 「なぜ外れたか」 is
+   * read from the decomposition, not guessed. Company and report pages only; the bulk /predictions.json omits it.
+   */
+  explanation?: { fiscalYear: string; sentences: { text: string; basis: string }[] };
 };
 
 export type PredictionData = Record<string, CompanyPredictionData>;
@@ -74,7 +83,23 @@ export type PredictionData = Record<string, CompanyPredictionData>;
 const byPeriodEnd = (records: FinancialRecord[]): FinancialRecord[] =>
   [...records].sort((a, b) => a.periodEnd.localeCompare(b.periodEnd));
 
-export function predictionDataFor(company: Company): CompanyPredictionData {
+/** The Q1 sentences a check is explained with: the net-income change, its two parts, and capex beside operating CF. */
+const EXPLAIN_IDS = new Set(["q1-net-income", "q1-profit-split", "q1-capex-cash"]);
+
+function explanationFor(company: Company): CompanyPredictionData["explanation"] {
+  // The sentences read the company's own rows only; the peer set (industry positions) does not enter them.
+  const groups = ["a1", "c2"]
+    .map((id) => runDecompModule(id, company, [company]))
+    .flatMap((r): AnalysisGroup[] => (r.status === "ok" ? [r.group] : []));
+  const sentences = meaningSummary(groups).filter((s) => EXPLAIN_IDS.has(s.id));
+  if (sentences.length === 0) return undefined;
+  return {
+    fiscalYear: sentences[0]!.fiscalYear,
+    sentences: sentences.map((s) => ({ text: sentenceText(s), basis: `${s.groupTitle}・${s.kind === "printed" ? "印字値" : "計算値"}` })),
+  };
+}
+
+export function predictionDataFor(company: Company, options: { explain?: boolean } = {}): CompanyPredictionData {
   const records = byPeriodEnd(company.financials);
   const usedIds = new Set(records.flatMap((r) => r.sourceIds));
   const sources: Record<string, string> = {};
@@ -93,6 +118,10 @@ export function predictionDataFor(company: Company): CompanyPredictionData {
       sourceIds: r.sourceIds,
     })),
     sources,
+    ...(options.explain ? (() => {
+      const explanation = explanationFor(company);
+      return explanation ? { explanation } : {};
+    })() : {}),
   };
 }
 

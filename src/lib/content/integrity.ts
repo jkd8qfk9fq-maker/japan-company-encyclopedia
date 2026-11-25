@@ -191,6 +191,22 @@ export function checkCompany(company: Company, context: ContentContext): string[
       if (fids.length !== ids.length || !ids.every((id) => fids.includes(id))) e.push(`${fwhere}: 売上の表と同じ事業の組でなければなりません`);
       e.push(...yenErrors(s.profit.items.flatMap((i) => [i.profit, i.sales]), fwhere));
     }
+    if (s.capex) {
+      const cwhere = `事業別の売上「${s.fiscalYear}」の事業別設備投資`;
+      const cids = s.capex.items.map((i) => i.businessId);
+      if (new Set(cids).size !== cids.length) e.push(`${cwhere}: 同じ事業が重複しています`);
+      if (cids.length !== ids.length || !ids.every((id) => cids.includes(id))) e.push(`${cwhere}: 売上の表と同じ事業の組でなければなりません`);
+      e.push(...yenErrors(s.capex.items.map((i) => i.amount), cwhere));
+    }
+  }
+  // JCE-110. R&D belongs to one of the entry's own years and is printed below that year's revenue.
+  if (company.researchAndDevelopment) {
+    const r = company.researchAndDevelopment;
+    const where = `研究開発費「${r.fiscalYear}」`;
+    const record = company.financials.find((f) => f.fiscalYear === r.fiscalYear && f.periodEnd === r.periodEnd);
+    if (!record) e.push(`${where}: 財務レコードにある年度でなければなりません`);
+    else if (record.revenue !== null && r.amount >= record.revenue) e.push(`${where}: 売上高以上になっています`);
+    e.push(...yenErrors([r.amount], where), ...citationErrors(r.sourceIds, src, where), ...noWikipedia(r.sourceIds, where));
   }
   if (company.regionalRevenue) {
     const r = company.regionalRevenue;

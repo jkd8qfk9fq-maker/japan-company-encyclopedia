@@ -1,6 +1,8 @@
+import { runDecompModule } from "@/lib/analysis-decomposition";
 import { buildIndustryFigures } from "@/lib/industry-figures";
 import { companyMetrics } from "@/lib/company-metrics";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
+import { meaningSummary, sentenceText } from "@/lib/meaning-layer";
 import { quarterlyView } from "@/lib/quarterly";
 import { firstSentence, toPlainText } from "@/lib/rich-text";
 import { formatYen } from "@/lib/utils/format";
@@ -150,7 +152,7 @@ export function buildUpdates(companies: Company[], revisions: Revision[], today:
 
 export type QuizQuestion = {
   id: string;
-  kind: "revenue" | "overseas" | "describe" | "segment" | "quarterly";
+  kind: "revenue" | "overseas" | "describe" | "segment" | "quarterly" | "decompose";
   prompt: string;
   /** For "describe": the company's own description with its name hidden. */
   clue?: string;
@@ -165,6 +167,8 @@ export type QuizQuestion = {
   sourceTitle: string;
   /** The period the figures belong to — both companies' years when they differ. Always shown. */
   period: string;
+  /** Where the answer screen links to; absent, each option is a company and links to its page. */
+  links?: { href: string; label: string }[];
 };
 
 const yen = (v: number) => {
@@ -345,6 +349,44 @@ export function buildQuizPool(companies: Company[]): QuizQuestion[] {
         sourceIds: rec.sourceIds,
         sourceTitle: title,
         period: rec.fiscalYear,
+      });
+    }
+    // 読み解き（JCE-110）— the meaning layer's own question, asked before its answer is shown: a profit change, and which
+    // of its two parts (A1: 売上の増減による分 / 利益率の変化による分) moved it more. Only where one part is at least twice the
+    // other, so the answer is the decomposition and not a toss-up; the explanation is the 「この会社の今」 sentence itself.
+    const decomposed = members
+      .map((c) => {
+        const result = runDecompModule("a1", c, [c]);
+        if (result.status !== "ok") return null;
+        const row = (key: string) => result.group.rows.find((r) => r.key === key);
+        const [rev, margin, change] = [row("a1-revenue-effect"), row("a1-margin-effect"), row("a1-profit-change")];
+        if (!rev || !margin || !change || change.value === 0) return null;
+        const [big, small] = Math.abs(rev.value) >= Math.abs(margin.value) ? [rev, margin] : [margin, rev];
+        if (Math.abs(big.value) < 2 * Math.abs(small.value)) return null;
+        const sentence = meaningSummary([result.group]).find((s) => s.id === "q1-profit-split");
+        return sentence ? { c, group: result.group, change, answer: big.key, sentence } : null;
+      })
+      .filter((x): x is NonNullable<typeof x> => x !== null)
+      .sort((a, b) => hash(`a1${a.c.id}`) - hash(`a1${b.c.id}`));
+    for (const x of decomposed.slice(0, 4)) {
+      const title = sourceTitleOf(x.c, x.change.sourceIds);
+      if (!title) continue;
+      const line = x.change.title.replace(/の増減$/, "");
+      questions.push({
+        id: `decompose-${x.c.id}`,
+        kind: "decompose",
+        prompt: `${x.c.name}の${line}は前期から${x.change.value > 0 ? "増えました" : "減りました"}。この増減に大きく効いたのは？`,
+        options: [
+          { id: "a1-revenue-effect", label: "売上の増減" },
+          { id: "a1-margin-effect", label: "利益率の変化" },
+        ],
+        answer: x.answer,
+        explain: `${sentenceText(x.sentence)}（計算値。売上の増減による分 ＝ 売上高の増減 ×（前期と最新期の利益率の平均）、利益率の変化による分 ＝ 利益率の増減 ×（前期と最新期の売上高の平均）。二つを足すと${line}の増減になります。）`,
+        industry: ind,
+        sourceIds: x.change.sourceIds,
+        sourceTitle: title,
+        period: x.change.fiscalYear,
+        links: [{ href: `/companies/${x.c.id}/report`, label: `${x.c.name}の分析（この会社の今）を見る` }],
       });
     }
   }

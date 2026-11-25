@@ -86,7 +86,7 @@ describe("meaning layer", () => {
     out.forEach((s) => checkSentence(s, full));
   });
 
-  it("names the segment with the highest margin, and Q1 yields its last sentence to Q2 within five", () => {
+  it("names the segment with the highest margin, answering each question before any twice (3 / 1 / 1)", () => {
     const a4: AnalysisGroup = {
       id: "a4",
       title: "セグメント別の利益率",
@@ -109,9 +109,50 @@ describe("meaning layer", () => {
     };
     const groups = [a1(-12_000_000_000), b1, a4, seg, { id: "c2", title: "資金ギャップ", rows: [row("c2-operating-cash-flow", "営業キャッシュフロー", 1, { kind: "printed" }), row("c2-capex", "設備投資", 1)] }];
     const out = meaningSummary(groups);
-    expect(out.map((s) => s.id)).toEqual(["q1-net-income", "q1-profit-split", "q1-capex-cash", "q2-margin", "q2-segment"]);
+    expect(out.map((s) => s.id)).toEqual(["q1-net-income", "q1-profit-split", "q1-capex-cash", "q2-margin"]);
     expect(sentenceText(out[3]!)).toBe("営業利益率が最も高いのは暮らしの素材事業で 12.3%。売上構成比は 25.0%。");
     out.forEach((s) => checkSentence(s, groups));
+  });
+
+  it("answers 何に力を入れているか with where capex went, else with R&D", () => {
+    const a6: AnalysisGroup = {
+      id: "a6",
+      title: "事業別の設備投資",
+      rows: [
+        row("a6-capex-share-x", "化学品が占める割合", 0.72, { unit: "percent", formula: "その事業の有形固定資産及び無形固定資産の増加額 ÷ 事業別の有形固定資産及び無形固定資産の増加額の合計" }),
+        row("a6-capex-share-y", "食品が占める割合", 0.2, { unit: "percent", formula: "その事業の有形固定資産及び無形固定資産の増加額 ÷ 事業別の有形固定資産及び無形固定資産の増加額の合計" }),
+      ],
+    };
+    const a5: AnalysisGroup = {
+      id: "a5",
+      title: "研究開発費",
+      rows: [row("a5-rnd", "研究開発費", 19_304_000_000, { kind: "printed" }), row("a5-rnd-ratio", "研究開発費の売上高に対する割合", 0.0449, { unit: "percent" })],
+    };
+    const both = meaningSummary([a5, a6]);
+    expect(both.map((s) => sentenceText(s))).toEqual(["事業別に見ると、有形固定資産及び無形固定資産の増加額の 72.0% は化学品。"]);
+    both.forEach((s) => checkSentence(s, [a5, a6]));
+    const rndOnly = meaningSummary([a5]);
+    expect(rndOnly.map((s) => sentenceText(s))).toEqual(["研究開発費は 193億円 で、売上高の 4.5%。"]);
+    rndOnly.forEach((s) => checkSentence(s, [a5]));
+  });
+
+  it("adds the bridge when net income and the profit line moved in opposite directions", () => {
+    const g: AnalysisGroup = {
+      id: "a1",
+      title: "利益増減の内訳（寄与度分解）",
+      rows: [
+        row("a1-revenue-effect", "売上効果", 22_000_000),
+        row("a1-margin-effect", "利益率効果", 2_200_000_000),
+        row("a1-profit-change", "経常利益の増減", 2_200_000_000),
+        row("a1-bridge", "税・特別損益・非支配株主帰属分などの変動", -8_700_000_000),
+        row("a1-net-income-change", "純利益の増減", -6_500_000_000),
+      ],
+    };
+    const out = meaningSummary([g]);
+    expect(sentenceText(out[0]!)).toBe("純利益の増減は前期比 −65億円。このうち税・特別損益などの変動による分は −87億円。");
+    out.forEach((s) => checkSentence(s, [g]));
+    // Same direction: the plain sentence.
+    expect(sentenceText(meaningSummary([a1(-12_000_000_000)])[0]!)).toBe("純利益の増減は前期比 −120億円。");
   });
 
   it("builds nothing from a group that was suppressed", () => {

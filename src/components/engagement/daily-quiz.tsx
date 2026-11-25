@@ -85,9 +85,9 @@ export function DailyQuiz({ compact = false }: { compact?: boolean }) {
           <p className="font-medium">{answered.correct ? "正解です。" : "残念、こちらが正解でした。"}</p>
           <p className="text-muted-foreground">{shown.explain}</p>
           <p className="flex flex-wrap gap-x-4 gap-y-1">
-            {shown.options.map((o) => (
-              <Link key={o.id} href={`/companies/${o.id}`} className="underline underline-offset-2 hover:text-foreground">
-                {o.label}を見る
+            {(shown.links ?? shown.options.map((o) => ({ href: `/companies/${o.id}`, label: `${o.label}を見る` }))).map((l) => (
+              <Link key={l.href} href={l.href} className="underline underline-offset-2 hover:text-foreground">
+                {l.label}
               </Link>
             ))}
           </p>
