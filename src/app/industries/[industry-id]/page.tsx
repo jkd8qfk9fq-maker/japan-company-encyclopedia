@@ -114,12 +114,22 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
         <CompanySection id="about" eyebrow="About" title={industry?.structure === "chain" ? "業界の流れ" : "業界の仕組み"} className="pt-8 md:pt-12">
           {industry ? (
             <div>
-              <p className="max-w-3xl text-[1.0625rem] leading-[1.95]">
-                <RichText text={industry.description} />
-              </p>
+              {/* 2026-11-25 (operator): the full explanation pushed the flow diagram below the first screen. It is
+                  shown as three lines in a smaller size and opens in place, so the diagram is what the reader meets. */}
+              <details className="group max-w-3xl">
+                <summary className="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  <p className="line-clamp-3 text-[0.9375rem] leading-[1.85] group-open:line-clamp-none md:text-base">
+                    <RichText text={industry.description} />
+                  </p>
+                  <span className="mt-1 inline-flex min-h-8 items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground">
+                    <span className="group-open:hidden">続きを読む ＋</span>
+                    <span className="hidden group-open:inline">閉じる －</span>
+                  </span>
+                </summary>
+              </details>
               <SourceList sources={industry.sources} sourceIds={industry.sourceIds} className="mt-2" />
               {industry.categories.length > 0 && (
-                <div className="mt-10">
+                <div className="mt-6">
                   <ValueChain industry={industry} companies={companies} />
                 </div>
               )}

@@ -43,7 +43,7 @@ export function KeyFacts({ records, sources }: { records: FinancialRecord[]; sou
           </div>
         ))}
       </dl>
-      <div className="mt-1.5 flex flex-wrap items-center gap-x-3 gap-y-1 text-[0.6875rem] text-muted-foreground">
+      <div className="mt-1.5 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[0.6875rem] text-muted-foreground sm:gap-x-3">
         <p className="figures">{latest.fiscalYear}・連結</p>
         {badgeSources.length > 0 && (
           <p className="flex flex-wrap items-center gap-1.5">
@@ -54,7 +54,8 @@ export function KeyFacts({ records, sources }: { records: FinancialRecord[]; sou
                 href={`#source-${source.id}`}
                 className="rounded-full border border-border px-2 py-0.5 leading-5 transition-colors hover:border-foreground hover:text-foreground"
               >
-                <span className="figures">[{sources.indexOf(source) + 1}]</span> {source.title}
+                <span className="figures">[{sources.indexOf(source) + 1}]</span> <span className="hidden sm:inline">{source.title}</span>
+                <span className="sm:hidden">有報</span>
               </a>
             ))}
             {lastAccessed && <span className="figures">最終確認 {formatDateJa(lastAccessed)}</span>}

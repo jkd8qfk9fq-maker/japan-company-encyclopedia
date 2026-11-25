@@ -136,7 +136,7 @@ export function CompanyHero({
         </p>
 
         {company.description ? (
-          <p className="mt-2.5 max-w-[42rem] text-[1rem] leading-[1.75] md:text-[1.125rem]">
+          <p className="mt-2 max-w-[42rem] text-[0.9375rem] leading-[1.7] md:mt-2.5 md:text-[1.125rem] md:leading-[1.75]">
             <RichText text={company.description} />
           </p>
         ) : (
@@ -150,12 +150,12 @@ export function CompanyHero({
         )}
 
         {branches.length > 1 && (
-          <ul aria-label="主な事業" className="mt-3 flex flex-wrap gap-1.5">
+          <ul aria-label="主な事業" className="-mx-4 mt-2.5 flex gap-1.5 overflow-x-auto px-4 pb-1 [scrollbar-width:none] md:mx-0 md:mt-3 md:flex-wrap md:px-0 [&>*]:shrink-0">
             {branches.map((business, index) => (
               <li key={business.id}>
                 <a
                   href="#business"
-                  className="inline-flex min-h-9 items-center gap-2 rounded-full border border-border bg-card px-3 text-[0.8125rem] transition-colors hover:border-foreground"
+                  className="inline-flex min-h-8 items-center gap-2 rounded-full border border-border bg-card px-3 text-[0.8125rem] whitespace-nowrap transition-colors hover:border-foreground md:min-h-9"
                 >
                   <span
                     aria-hidden
@@ -241,7 +241,7 @@ export function CompanyHero({
         {/* JCE-087: what this page holds, in one line at the top — only the sections this entry has,
             plus the analysis report. The SectionTabs below remain the way to move while reading. */}
         {toc && toc.length > 0 && (
-          <nav aria-label="このページの内容" className="mt-4 border-t border-border pt-3">
+          <nav aria-label="このページの内容" className="mt-4 hidden border-t border-border pt-3 md:block">
             <p className="text-xs leading-6 text-muted-foreground">
               <span className="font-semibold text-foreground">このページの内容</span>
               <span aria-hidden className="mx-2">―</span>
