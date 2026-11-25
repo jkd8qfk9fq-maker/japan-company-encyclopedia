@@ -2049,3 +2049,35 @@ spend the trust the verification exists to build).
 6. **データ**：`Feature` に `topic`・`keyFigures`・`takeaways` を追加。いずれも feature-articles.ts で本文と同じ計算値から組み立て、手書きしない（JCE-074 の規則のまま）。配当の2表は「割合」を先頭の列に並べ替えた（棒が割合を描くため）。
 
 **やらないこと**：スクロール連動の演出（データが単純なため）、写真の追加（特集の写真の方針は変えない）、文中の数字の手書き。
+
+### JCE-112 · 2026-11-25 · Accepted (operator) — A five-year table with no parent-attributable row: the total 当期利益, under its own label, with a disclosure note
+
+日本電波工業 (6779) and ＨＯＹＡ (7741) could not be registered at all. Both are IFRS filers whose
+連結経営指標等 prints no parent-attributable profit row: the five-year table's only bottom line is
+「当期利益」, the total including non-controlling interests (tagged `ProfitLossIFRSSummaryOfBusinessResults`;
+the attributable element is not tagged, and the attributable figure exists only in the P&L, for two years —
+no five-year series can be built from it). The extractor refused the total as net income and
+verify-financials' attribution rule refused the label, so intake failed both companies. The distinction the
+rules protect is real — for ＨＯＹＡ the total (251,451百万円) and the parent-attributable profit
+(253,085百万円) measurably differ — so presenting the total *as* parent-attributable net income would
+fabricate (invariant 1). Asked, the operator decided (2026-11-25): **relax the attribution requirement for
+this case only, and register both companies.**
+
+- **Scope, kept narrow.** The relaxation covers only the label/attribution requirement, and only where the
+  five-year table prints no attributable row at all. The extractor's fallback
+  (`NET_INCOME_TOTAL_ELEMENTS` in `evidence-pack.mjs`) fires solely when no attributable element is tagged
+  in the table the pack reads, so a filer that tags an attributable row is always served that row and can
+  never reach the exception. The rule is not disabled, and no other company is affected.
+- **The figures are the filing's, as printed.** Values come from the tagged total, unaltered. The series
+  keeps the filing's own printed label (「当期利益」); it is never renamed to 当期純利益 or worded to suggest
+  parent attribution. The page's column title and the ratio formula already use the entry's label verbatim,
+  so both show 当期利益.
+- **Disclosure is mandatory and machine-checked.** The pack flags the case
+  (`figures.netIncomeIsTotalProfit`) and warns; every financials row of the entry must carry a note stating
+  that the summary's profit is 当期利益 including non-controlling interests and differs from the
+  parent-attributable profit. verify-financials admits the unattributed label only when the pack flag is
+  set, the matched candidate is the total element, and the row's note carries that disclosure — otherwise
+  the old failure stands.
+- EXTRACTOR_VERSION 10 → 11, so packs built before the fallback rebuild instead of being reused.
+
+（記録上の注記：登録ツリー jce-live の decisions.md では JCE-039 として記録されたが、main の JCE-039 は AdSense の決定で既に使われているため、main では JCE-112 に振り替えて収録した。内容は同一。）
