@@ -354,7 +354,7 @@ const featureBlockSchema = z.discriminatedUnion("type", [
     type: z.literal("data-table"),
     title: text.optional(),
     columns: z.array(text),
-    rows: z.array(z.strictObject({ label: text, href: z.string().optional(), values: z.array(text) })),
+    rows: z.array(z.strictObject({ label: text, href: z.string().optional(), values: z.array(text), bar: z.number().optional() })),
     note: text,
   }),
 ]);
@@ -366,6 +366,9 @@ export const featureSchema = z.strictObject({
   heroImage: z.string().optional(),
   heroImageAlt: z.string().optional(),
   body: z.array(featureBlockSchema),
+  topic: text.optional(),
+  keyFigures: z.array(z.strictObject({ value: text, label: text })).optional(),
+  takeaways: z.array(text).optional(),
   relatedCompanies: z.array(kebab),
   relatedIndustries: z.array(z.enum(INDUSTRY_IDS)),
   relatedTerms: z.array(kebab),

@@ -1,20 +1,86 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Clock, ListOrdered } from "lucide-react";
 import { AdSlot } from "@/components/ads/ad-slot";
 import { RichText } from "@/components/rich-text/rich-text";
 import { SourceList } from "@/components/sources/source-list";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
+import { featureSections, readingMinutes } from "@/lib/feature-meta";
 import { companyRepository, termRepository } from "@/lib/repositories";
 import { formatDateJa } from "@/lib/utils/format";
-import type { Feature } from "@/types/feature";
+import type { Feature, FeatureBlock } from "@/types/feature";
+import { accentFor, FeatureCard } from "./feature-card";
+import { ReadingProgress } from "./reading-progress";
 
 /**
- * The editorial register: larger type, a narrower measure, more air. Still
- * the same system — a feature's sentences link into companies, industries and
- * terms, and every factual paragraph can show its sources.
+ * A feature, laid out answer-first (JCE-111). Data-led sites that hold readers put the finding before the
+ * argument: the headline figures and 「この特集のポイント」 come first, the sections are listed and linkable
+ * (a sticky table of contents on wide screens, a collapsible one on phones), and a table of numbers is shown
+ * as bars with the printed value beside each — the bar only draws the value, it carries no figure of its own.
+ * Long tables show their first rows and fold the rest, so the page does not become a scroll through a list.
+ * Everything here is still the same data: the blocks, figures and takeaways come from feature-articles.ts.
  */
-export async function FeatureArticle({ feature }: { feature: Feature }) {
+
+const VISIBLE_ROWS = 8;
+
+type TableRow = Extract<FeatureBlock, { type: "data-table" }>["rows"][number];
+
+function BarRow({ row, max, hasBars, rest }: { row: TableRow; max: number; hasBars: boolean; rest: string[] }) {
+  // Name and value on one line, the bar full width beneath: on a phone a bar squeezed between the two was a few
+  // pixels wide and could not be compared. The bar uses the text colour so it reads in both themes.
+  return (
+    <li className="py-3">
+      <div className="flex items-baseline justify-between gap-3">
+        <span className="min-w-0 text-[0.9375rem] leading-snug font-medium">
+          {row.href ? <Link href={row.href} className="link-ink">{row.label}</Link> : row.label}
+        </span>
+        <span className="figures shrink-0 text-right text-[1rem] font-semibold whitespace-nowrap">{row.values[0]}</span>
+      </div>
+      {hasBars && (
+        <div className="mt-1.5 h-2 overflow-hidden rounded-full bg-muted" aria-hidden>
+          <div className="h-full rounded-full bg-foreground/70" style={{ width: `${(Math.abs(row.bar!) / max) * 100}%` }} />
+        </div>
+      )}
+      {row.values.length > 1 && (
+        <p className="figures mt-1 text-right text-xs text-muted-foreground">
+          {row.values.slice(1).map((v, j) => `${rest[j] ?? ""} ${v}`.trim()).join("　")}
+        </p>
+      )}
+    </li>
+  );
+}
+
+function BarTable({ block }: { block: Extract<FeatureBlock, { type: "data-table" }> }) {
+  const max = Math.max(...block.rows.map((r) => Math.abs(r.bar ?? 0)));
+  const hasBars = max > 0 && block.rows.every((r) => r.bar !== undefined);
+  const [primary, ...rest] = block.columns;
+
+  const head = block.rows.slice(0, VISIBLE_ROWS);
+  const tail = block.rows.slice(VISIBLE_ROWS);
+  return (
+    <figure className="my-10 rounded-xl border border-border bg-card p-5 md:p-6">
+      {block.title && <figcaption className="font-serif text-lg leading-snug font-semibold">{block.title}</figcaption>}
+      <p className="mt-1 text-xs text-muted-foreground">{hasBars ? `棒の長さは「${primary}」` : primary}</p>
+      <ol className="mt-3 divide-y divide-border/70">
+        {head.map((row) => <BarRow key={row.label} row={row} max={max} hasBars={hasBars} rest={rest} />)}
+      </ol>
+      {tail.length > 0 && (
+        <details className="group">
+          <summary className="mt-2 flex min-h-11 cursor-pointer list-none items-center justify-center rounded-md border border-border text-sm font-medium hover:bg-muted [&::-webkit-details-marker]:hidden">
+            <span className="group-open:hidden">残り{tail.length}件を表示</span>
+            <span className="hidden group-open:inline">閉じる</span>
+          </summary>
+          <ol className="divide-y divide-border/70">
+            {tail.map((row) => <BarRow key={row.label} row={row} max={max} hasBars={hasBars} rest={rest} />)}
+          </ol>
+        </details>
+      )}
+      <p className="mt-4 border-t border-border pt-3 text-xs leading-6 text-muted-foreground">{block.note}</p>
+    </figure>
+  );
+}
+
+export async function FeatureArticle({ feature, others = [] }: { feature: Feature; others?: Feature[] }) {
   const [companies, terms] = await Promise.all([
     companyRepository.getMany(feature.relatedCompanies),
     termRepository.getMany(feature.relatedTerms),
@@ -24,151 +90,208 @@ export async function FeatureArticle({ feature }: { feature: Feature }) {
       feature.body.flatMap((b) => (b.type === "company-callout" ? [b.companyId] : [])),
     )).map((c) => [c.id, c]),
   );
+  const sections = featureSections(feature);
+  const minutes = readingMinutes(feature);
+  const ownIndex = Math.max(0, [feature, ...others].findIndex((f) => f.id === feature.id));
+  // Each heading block's number, by its position in the body (the same order featureSections uses).
+  const headingNumber = new Map(feature.body.flatMap((b, i) => (b.type === "heading" ? [i] : [])).map((bodyIndex, n) => [bodyIndex, n + 1]));
+
+  const toc = (
+    <ol className="space-y-1 text-sm">
+      {feature.takeaways && feature.takeaways.length > 0 && (
+        <li><a href="#points" className="block rounded-md px-2 py-1.5 hover:bg-muted">この特集のポイント</a></li>
+      )}
+      {sections.map((s) => (
+        <li key={s.id}>
+          <a href={`#${s.id}`} className="flex gap-2 rounded-md px-2 py-1.5 leading-snug hover:bg-muted">
+            <span className="figures text-muted-foreground">{String(s.index).padStart(2, "0")}</span>
+            <span>{s.title}</span>
+          </a>
+        </li>
+      ))}
+      <li><a href="#feature-sources" className="block rounded-md px-2 py-1.5 hover:bg-muted">出典</a></li>
+    </ol>
+  );
 
   return (
     <article>
-      <header className="bg-foreground text-background">
-        <div className="mx-auto max-w-4xl px-5 pt-16 pb-16 md:px-8 md:pt-28 md:pb-24">
-          <p className="eyebrow !text-background/60">Feature</p>
-          <h1 className="mt-6 font-serif text-[2.25rem] leading-[1.4] font-semibold md:text-[3.75rem]">{feature.title}</h1>
-          {feature.subtitle && <p className="mt-8 max-w-2xl text-lg leading-[1.9] text-background/80 md:text-xl">{feature.subtitle}</p>}
-          <p className="figures mt-10 text-sm text-background/60">{formatDateJa(feature.publishedAt)}</p>
+      <ReadingProgress targetId="feature-body" />
+      <header className={`text-white ${accentFor(ownIndex)}`}>
+        <div className="mx-auto max-w-6xl px-5 pt-8 pb-20 md:px-8 md:pt-14 md:pb-28">
+          <nav aria-label="パンくず" className="text-xs text-white/70">
+            <Link href="/features" className="hover:underline">特集</Link>
+            {feature.topic && <> ／ <span>{feature.topic}</span></>}
+          </nav>
+          <h1 className="mt-4 max-w-4xl font-serif text-[1.875rem] leading-[1.35] font-semibold md:text-[3rem]">{feature.title}</h1>
+          {feature.subtitle && <p className="mt-5 max-w-3xl text-[1.0625rem] leading-[1.9] text-white/85 md:text-lg">{feature.subtitle}</p>}
+          <p className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-white/70">
+            <span className="inline-flex items-center gap-1"><Clock className="size-3.5" aria-hidden />約{minutes}分で読めます</span>
+            <span className="figures">{formatDateJa(feature.publishedAt)}</span>
+            <span>出典：有価証券報告書（EDINET）</span>
+          </p>
         </div>
       </header>
 
+      {feature.keyFigures && feature.keyFigures.length > 0 && (
+        <div className="mx-auto -mt-12 max-w-6xl px-5 md:-mt-16 md:px-8">
+          <ul className="grid gap-3 sm:grid-cols-3">
+            {feature.keyFigures.map((k) => (
+              <li key={k.label} className="rounded-xl border border-border bg-card p-5 shadow-sm md:p-6">
+                <p className="figures text-[2rem] leading-none font-semibold md:text-[2.5rem]">{k.value}</p>
+                <p className="mt-2 text-sm leading-snug text-muted-foreground">{k.label}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       {feature.heroImage && (
-        <div className="relative mx-auto aspect-[16/9] max-w-6xl">
+        <div className="relative mx-auto mt-10 aspect-[16/9] max-w-6xl">
           <Image src={feature.heroImage} alt={feature.heroImageAlt ?? ""} fill className="object-cover" sizes="(min-width: 1152px) 1152px, 100vw" priority />
         </div>
       )}
 
-      <div className="mx-auto max-w-[42rem] px-5 py-16 md:px-0 md:py-24">
-        {feature.body.map((block, i) => {
-          switch (block.type) {
-            case "heading":
-              return (
-                <h2 key={i} className="mt-16 mb-6 font-serif text-[1.625rem] font-semibold first:mt-0 md:text-[2rem]">
-                  {block.text}
-                </h2>
-              );
-            case "paragraph":
-              return (
-                <div key={i} className="mb-8">
-                  <p className="text-[1.125rem] leading-[2.05] tracking-[0.02em]">
-                    <RichText text={block.text} />
-                  </p>
-                  {block.sourceIds && <SourceList sources={feature.sources} sourceIds={block.sourceIds} className="mt-1" />}
-                </div>
-              );
-            case "quote":
-              return (
-                <figure key={i} className="my-14 border-l-2 border-foreground pl-6">
-                  <blockquote className="font-serif text-[1.375rem] leading-[1.8] font-semibold md:text-[1.625rem]">
-                    <RichText text={block.text} />
-                  </blockquote>
-                  <figcaption className="mt-4 text-sm text-muted-foreground">{block.attribution}</figcaption>
-                  <SourceList sources={feature.sources} sourceIds={block.sourceIds} className="mt-1" />
-                </figure>
-              );
-            case "data-table":
-              return (
-                <figure key={i} className="my-12">
-                  {block.title && <figcaption className="mb-3 font-serif text-lg font-semibold">{block.title}</figcaption>}
-                  <div className="overflow-x-auto">
-                    <table className="w-full border-t border-foreground text-[0.9375rem]">
-                      <thead>
-                        <tr className="border-b border-border text-left text-xs text-muted-foreground">
-                          <th scope="col" className="py-2 pr-3 font-medium">名称</th>
-                          {block.columns.map((col) => (
-                            <th key={col} scope="col" className="py-2 pl-3 text-right font-medium">{col}</th>
-                          ))}
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {block.rows.map((row) => (
-                          <tr key={row.label} className="border-b border-border">
-                            <th scope="row" className="py-2.5 pr-3 text-left font-medium">
-                              {row.href ? (
-                                <Link href={row.href} className="link-ink">{row.label}</Link>
-                              ) : (
-                                row.label
-                              )}
-                            </th>
-                            {row.values.map((value, j) => (
-                              <td key={j} className="figures py-2.5 pl-3 text-right whitespace-nowrap">{value}</td>
-                            ))}
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                  <p className="mt-3 text-xs leading-6 text-muted-foreground">{block.note}</p>
-                </figure>
-              );
-            case "company-callout": {
-              const company = callouts.get(block.companyId);
-              if (!company) return null;
-              return (
-                <Link
-                  key={i}
-                  href={`/companies/${company.id}`}
-                  className="group my-12 block rounded-md bg-paper p-6 md:p-8"
-                >
-                  {company.shortNameEn && <p className="wordmark text-3xl" aria-hidden>{company.shortNameEn}</p>}
-                  <p className="mt-1 font-serif text-xl font-semibold group-hover:underline">{company.name}</p>
-                  <p className="mt-3 text-[0.9375rem] leading-7 text-muted-foreground">{block.text}</p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm">
-                    企業ページを見る <ArrowRight className="size-4" aria-hidden />
-                  </span>
-                </Link>
-              );
-            }
-          }
-        })}
+      <div id="feature-body" className="mx-auto grid max-w-6xl gap-10 px-5 pt-10 pb-16 md:px-8 lg:grid-cols-[15rem_minmax(0,42rem)] lg:justify-between lg:pt-14">
+        <aside className="hidden lg:block" aria-label="目次">
+          <div className="sticky top-24">
+            <p className="flex items-center gap-1.5 px-2 text-xs font-semibold tracking-[0.12em] text-muted-foreground">
+              <ListOrdered className="size-3.5" aria-hidden /> 目次
+            </p>
+            <div className="mt-2">{toc}</div>
+          </div>
+        </aside>
 
-        <AdSlot placement="feature-inline" />
+        <div className="min-w-0">
+          {feature.takeaways && feature.takeaways.length > 0 && (
+            <section id="points" aria-labelledby="points-title" className="scroll-mt-24 rounded-xl border-l-4 border-seal bg-paper p-5 md:p-7">
+              <h2 id="points-title" className="text-sm font-semibold tracking-[0.12em] text-seal">この特集のポイント</h2>
+              <ol className="mt-3 space-y-3">
+                {feature.takeaways.map((t, i) => (
+                  <li key={i} className="flex gap-3 text-[1rem] leading-[1.85]">
+                    <span className="figures mt-0.5 flex size-6 shrink-0 items-center justify-center rounded-full bg-seal text-xs font-semibold text-white">{i + 1}</span>
+                    <span><RichText text={t} /></span>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )}
 
-        <SourceList sources={feature.sources} className="mt-16 border-t border-border pt-4" />
-      </div>
+          {sections.length > 0 && (
+            <details className="mt-6 rounded-xl border border-border lg:hidden">
+              <summary className="flex min-h-12 cursor-pointer list-none items-center gap-2 px-4 text-sm font-semibold [&::-webkit-details-marker]:hidden">
+                <ListOrdered className="size-4" aria-hidden /> 目次（{sections.length + 1}項目）
+              </summary>
+              <div className="border-t border-border p-2">{toc}</div>
+            </details>
+          )}
 
-      {(companies.length > 0 || feature.relatedIndustries.length > 0 || terms.length > 0) && (
-        <aside aria-labelledby="feature-explore" className="bg-paper py-16">
-          <div className="mx-auto max-w-4xl px-5 md:px-8">
-            <h2 id="feature-explore" className="eyebrow">Explore</h2>
-            <div className="mt-8 grid gap-10 md:grid-cols-3">
+          <div className="mt-10">
+            {feature.body.map((block, i) => {
+              switch (block.type) {
+                case "heading": {
+                  const headingIndex = headingNumber.get(i)!;
+                  return (
+                    <h2 key={i} id={`section-${headingIndex}`} className="mt-14 mb-5 scroll-mt-24 border-t border-foreground pt-5 font-serif text-[1.5rem] leading-snug font-semibold first:mt-0 md:text-[1.875rem]">
+                      <span className="figures mb-1 block text-sm font-normal text-muted-foreground">{String(headingIndex).padStart(2, "0")}</span>
+                      {block.text}
+                    </h2>
+                  );
+                }
+                case "paragraph":
+                  return (
+                    <div key={i} className="mb-7">
+                      <p className="text-[1.0625rem] leading-[2] tracking-[0.02em] md:text-[1.125rem]">
+                        <RichText text={block.text} />
+                      </p>
+                      {block.sourceIds && <SourceList sources={feature.sources} sourceIds={block.sourceIds} className="mt-1" />}
+                    </div>
+                  );
+                case "quote":
+                  return (
+                    <figure key={i} className="my-12 border-l-4 border-navy pl-6">
+                      <blockquote className="font-serif text-[1.375rem] leading-[1.8] font-semibold md:text-[1.625rem]">
+                        <RichText text={block.text} />
+                      </blockquote>
+                      <figcaption className="mt-4 text-sm text-muted-foreground">{block.attribution}</figcaption>
+                      <SourceList sources={feature.sources} sourceIds={block.sourceIds} className="mt-1" />
+                    </figure>
+                  );
+                case "data-table":
+                  return <BarTable key={i} block={block} />;
+                case "company-callout": {
+                  const company = callouts.get(block.companyId);
+                  if (!company) return null;
+                  return (
+                    <Link key={i} href={`/companies/${company.id}`} className="group my-10 block rounded-xl border border-border bg-paper p-6 transition-shadow hover:shadow-md md:p-8">
+                      <p className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">この特集の企業</p>
+                      {company.shortNameEn && <p className="wordmark mt-2 text-3xl" aria-hidden>{company.shortNameEn}</p>}
+                      <p className="mt-1 font-serif text-xl font-semibold group-hover:underline">{company.name}</p>
+                      <p className="mt-3 text-[0.9375rem] leading-7 text-muted-foreground">{block.text}</p>
+                      <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium">
+                        企業ページを見る <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                      </span>
+                    </Link>
+                  );
+                }
+              }
+            })}
+          </div>
+
+          <AdSlot placement="feature-inline" />
+
+          <div id="feature-sources" className="scroll-mt-24">
+            <SourceList sources={feature.sources} className="mt-12 border-t border-border pt-4" />
+          </div>
+
+          {(companies.length > 0 || feature.relatedIndustries.length > 0 || terms.length > 0) && (
+            <aside aria-labelledby="feature-explore" className="mt-12 rounded-xl bg-paper p-5 md:p-7">
+              <h2 id="feature-explore" className="font-serif text-lg font-semibold">この特集から調べる</h2>
               {companies.length > 0 && (
-                <div>
-                  <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">この特集の企業</p>
-                  <ul className="mt-3 space-y-2">
+                <div className="mt-4">
+                  <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">企業</p>
+                  <ul className="mt-2 flex flex-wrap gap-2">
                     {companies.map((c) => (
-                      <li key={c.id}><Link href={`/companies/${c.id}`} className="link-ink">{c.name}</Link></li>
+                      <li key={c.id}><Link href={`/companies/${c.id}`} className="inline-flex min-h-9 items-center rounded-full border border-border bg-card px-3 text-sm hover:border-foreground">{c.name}</Link></li>
                     ))}
                   </ul>
                 </div>
               )}
               {feature.relatedIndustries.length > 0 && (
-                <div>
+                <div className="mt-4">
                   <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">業界</p>
-                  <ul className="mt-3 space-y-2">
+                  <ul className="mt-2 flex flex-wrap gap-2">
                     {feature.relatedIndustries.map((id) => (
-                      <li key={id}><Link href={`/industries/${id}`} className="link-ink">{INDUSTRY_LABELS[id].name}</Link></li>
+                      <li key={id}><Link href={`/industries/${id}`} className="inline-flex min-h-9 items-center rounded-full border border-border bg-card px-3 text-sm hover:border-foreground">{INDUSTRY_LABELS[id].name}</Link></li>
                     ))}
                   </ul>
                 </div>
               )}
               {terms.length > 0 && (
-                <div>
+                <div className="mt-4">
                   <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">用語</p>
-                  <ul className="mt-3 space-y-2">
+                  <ul className="mt-2 flex flex-wrap gap-2">
                     {terms.map((t) => (
-                      <li key={t.id}><Link href={`/terms#${t.id}`} className="link-ink">{t.term}</Link></li>
+                      <li key={t.id}><Link href={`/terms#${t.id}`} className="inline-flex min-h-9 items-center rounded-full border border-border bg-card px-3 text-sm hover:border-foreground">{t.term}</Link></li>
                     ))}
                   </ul>
                 </div>
               )}
-            </div>
+            </aside>
+          )}
+        </div>
+      </div>
+
+      {others.length > 0 && (
+        <section aria-labelledby="next-features" className="border-t border-border bg-paper py-12 md:py-16">
+          <div className="mx-auto max-w-6xl px-5 md:px-8">
+            <h2 id="next-features" className="font-serif text-xl font-semibold md:text-2xl">次に読む特集</h2>
+            <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {others.slice(0, 3).map((f) => (
+                <li key={f.id}><FeatureCard feature={f} index={[feature, ...others].findIndex((x) => x.id === f.id)} /></li>
+              ))}
+            </ul>
           </div>
-        </aside>
+        </section>
       )}
     </article>
   );

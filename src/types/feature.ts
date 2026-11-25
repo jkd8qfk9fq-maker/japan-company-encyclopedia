@@ -9,7 +9,13 @@ import type { Source } from "./source";
  * separate magazine.
  */
 /** One row of a feature's data table: a label (a company or industry name, linked when `href` is set) and the computed values beside it. */
-export type FeatureTableRow = { label: string; href?: string; values: string[] };
+export type FeatureTableRow = {
+  label: string;
+  href?: string;
+  values: string[];
+  /** The row's main figure as a number (JCE-111), drawn as a bar beside the printed value; the bar never carries a figure of its own. */
+  bar?: number;
+};
 
 export type FeatureBlock =
   | { type: "paragraph"; text: string; sourceIds?: string[] }
@@ -32,6 +38,12 @@ export type Feature = {
   heroImage?: string;
   heroImageAlt?: string;
   body: FeatureBlock[];
+  /** A one- or two-word theme shown on the card and above the title (JCE-111), e.g. 「海外売上」. */
+  topic?: string;
+  /** Two or three headline figures for the top of the article and its card — computed like the tables, never typed. */
+  keyFigures?: { value: string; label: string }[];
+  /** 「この特集のポイント」: the findings in two or three sentences, each built from the same computed values as the body. */
+  takeaways?: string[];
   relatedCompanies: string[];
   relatedIndustries: IndustryId[];
   relatedTerms: string[];

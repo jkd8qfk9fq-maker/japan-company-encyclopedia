@@ -27,5 +27,9 @@ export async function generateMetadata({ params }: PageProps<"/features/[feature
 export default async function FeaturePage({ params }: PageProps<"/features/[feature-id]">) {
   const feature = await featureRepository.get((await params)["feature-id"]);
   if (!feature) notFound();
-  return <FeatureArticle feature={feature} />;
+  // 次に読む: the rest of the list in its own order, starting after this one so each article points onward.
+  const all = await featureRepository.list();
+  const at = all.findIndex((f) => f.id === feature.id);
+  const others = [...all.slice(at + 1), ...all.slice(0, Math.max(0, at))];
+  return <FeatureArticle feature={feature} others={others} />;
 }
