@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 /**
- * The premium report's entrance (JCE-125), directly under the hero of every company page. Until now the only
+ * The premium report's entrance (JCE-126), directly under the hero of every company page. Until now the only
  * doors were a text link in the hero's one-line contents and a card at the tail of the 財務 section, so a reader
  * who never scrolled that far never learned the report existed. The band sits at the end of the first view —
  * same place on a phone and on a desktop — and says what the report holds before asking for the tap: the

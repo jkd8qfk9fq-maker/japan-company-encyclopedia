@@ -121,7 +121,7 @@ export async function CompanyView({ company }: { company: Company }) {
         hasConnections={hasConnections}
         related={relations.map((r) => ({ id: r.company.id, name: r.company.name }))}
       />
-      {/* JCE-125: the premium report's one entrance, at the end of the first view — promoted from the tail of
+      {/* JCE-126: the premium report's one entrance, at the end of the first view — promoted from the tail of
           the 財務 section, where only a reader who scrolled to the bottom of the figures ever met it. */}
       <ReportCta companyId={company.id} />
       <CompanyNotes notes={publicNotes(company)} />
@@ -327,7 +327,7 @@ export async function CompanyView({ company }: { company: Company }) {
         ) : (
           metrics && <CompanyMetrics metrics={metrics} sources={company.sources} />
         )}
-        {/* JCE-125: the premium report's card that sat here (JCE-073) is removed — its entrance is now the
+        {/* JCE-126: the premium report's card that sat here (JCE-073) is removed — its entrance is now the
             band directly under the hero (ReportCta), and one page does not carry the same door twice. */}
       </CompanySection>
 
