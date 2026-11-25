@@ -1,8 +1,12 @@
 "use client";
 
 import { useEffect, useState, useSyncExternalStore } from "react";
+import { T } from "@/components/i18n/t";
 import { useLocalStore } from "@/hooks/use-local-store";
-import { activityStore, discoveredStore, exploreStepsStore, favoritesStore, quizStore, recentlyViewedStore } from "@/lib/storage/stores";
+import { activityStore, discoveredStore, exploreStepsStore, favoritesStore, quizStore, recentlyViewedStore, settingsStore } from "@/lib/storage/stores";
+
+/** A confirm() dialog cannot hold markup, so it reads the chosen language itself (JCE-123). */
+const ask = (ja: string, en: string) => window.confirm(settingsStore.get().language === "en" ? en : ja);
 
 type InstallPromptEvent = Event & { prompt: () => Promise<void>; userChoice: Promise<{ outcome: string }> };
 
@@ -43,12 +47,12 @@ export function ApplicationSettings() {
   return (
     <div className="divide-y divide-border">
       <div className="py-5">
-        <p className="font-medium">アプリとして使う</p>
+        <p className="font-medium"><T m={{ ja: "アプリとして使う", en: "Use as an app" }} /></p>
         {standalone ? (
-          <p className="mt-1 text-sm text-muted-foreground">アプリとしてインストール済みです。</p>
+          <p className="mt-1 text-sm text-muted-foreground"><T m={{ ja: "アプリとしてインストール済みです。", en: "Installed as an app." }} /></p>
         ) : installEvent ? (
           <>
-            <p className="mt-1 text-sm text-muted-foreground">ホーム画面から起動でき、一度開いたページはオフラインでも読めます。</p>
+            <p className="mt-1 text-sm text-muted-foreground"><T m={{ ja: "ホーム画面から起動でき、一度開いたページはオフラインでも読めます。", en: "Open it from your home screen; pages you have opened can be read offline." }} /></p>
             <button
               type="button"
               onClick={async () => {
@@ -57,22 +61,24 @@ export function ApplicationSettings() {
               }}
               className="mt-3 inline-flex min-h-11 items-center rounded-full bg-foreground px-5 text-sm text-background"
             >
-              インストール
+              <T m={{ ja: "インストール", en: "Install" }} />
             </button>
           </>
         ) : (
           <p className="mt-1 text-sm leading-7 text-muted-foreground">
-            {isIos
-              ? "Safariの共有ボタンから「ホーム画面に追加」を選ぶと、アプリとして使えます。"
-              : "ブラウザのメニューから「アプリをインストール」または「ホーム画面に追加」を選ぶと、アプリとして使えます。"}
+            {isIos ? (
+              <T m={{ ja: "Safariの共有ボタンから「ホーム画面に追加」を選ぶと、アプリとして使えます。", en: "In Safari, tap Share, then Add to Home Screen, to use it as an app." }} />
+            ) : (
+              <T m={{ ja: "ブラウザのメニューから「アプリをインストール」または「ホーム画面に追加」を選ぶと、アプリとして使えます。", en: "Choose Install app or Add to Home screen in your browser menu to use it as an app." }} />
+            )}
           </p>
         )}
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-4 py-5">
         <div>
-          <p className="font-medium">閲覧履歴</p>
-          <p className="figures mt-1 text-sm text-muted-foreground">この端末に{recent.length}件保存されています。</p>
+          <p className="font-medium"><T m={{ ja: "閲覧履歴", en: "Viewing history" }} /></p>
+          <p className="figures mt-1 text-sm text-muted-foreground"><T m={{ ja: `この端末に${recent.length}件保存されています。`, en: `${recent.length} saved on this device.` }} /></p>
         </div>
         <button
           type="button"
@@ -80,37 +86,37 @@ export function ApplicationSettings() {
           onClick={() => recentlyViewedStore.clear()}
           className="inline-flex min-h-11 items-center rounded-full border border-border px-5 text-sm hover:border-foreground disabled:opacity-40"
         >
-          履歴を消去
+          <T m={{ ja: "履歴を消去", en: "Clear history" }} />
         </button>
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-4 py-5">
         <div>
-          <p className="font-medium">フォロー中の企業</p>
-          <p className="figures mt-1 text-sm text-muted-foreground">この端末に{favorites.length}件保存されています。</p>
+          <p className="font-medium"><T m={{ ja: "フォロー中の企業", en: "Followed companies" }} /></p>
+          <p className="figures mt-1 text-sm text-muted-foreground"><T m={{ ja: `この端末に${favorites.length}件保存されています。`, en: `${favorites.length} saved on this device.` }} /></p>
         </div>
         <button
           type="button"
           disabled={favorites.length === 0}
           onClick={() => {
-            if (window.confirm("フォロー中の企業をすべて消去しますか？")) favoritesStore.clear();
+            if (ask("フォロー中の企業をすべて消去しますか？", "Remove every followed company?")) favoritesStore.clear();
           }}
           className="inline-flex min-h-11 items-center rounded-full border border-border px-5 text-sm hover:border-foreground disabled:opacity-40"
         >
-          すべて消去
+          <T m={{ ja: "すべて消去", en: "Clear all" }} />
         </button>
       </div>
 
       <div className="flex flex-wrap items-center justify-between gap-4 py-5">
         <div>
-          <p className="font-medium">マイ企業図鑑と記録</p>
-          <p className="figures mt-1 text-sm text-muted-foreground">出会った企業{discovered.length}社・会社を知った日{days.length}日・今日の1問の答え{Object.keys(quiz).length}件。</p>
+          <p className="font-medium"><T m={{ ja: "マイ企業図鑑と記録", en: "My collection and records" }} /></p>
+          <p className="figures mt-1 text-sm text-muted-foreground"><T m={{ ja: `出会った企業${discovered.length}社・会社を知った日${days.length}日・今日の1問の答え${Object.keys(quiz).length}件。`, en: `${discovered.length} companies met, ${days.length} active days, ${Object.keys(quiz).length} daily answers.` }} /></p>
         </div>
         <button
           type="button"
           disabled={discovered.length + days.length + Object.keys(quiz).length === 0}
           onClick={() => {
-            if (window.confirm("マイ企業図鑑、連続日数、今日の1問の答え、つながりの記録をすべて消去しますか？")) {
+            if (ask("マイ企業図鑑、連続日数、今日の1問の答え、つながりの記録をすべて消去しますか？", "Clear your collection, streak, daily answers and exploration record?")) {
               discoveredStore.clear();
               activityStore.clear();
               quizStore.clear();
@@ -119,7 +125,7 @@ export function ApplicationSettings() {
           }}
           className="inline-flex min-h-11 items-center rounded-full border border-border px-5 text-sm hover:border-foreground disabled:opacity-40"
         >
-          すべて消去
+          <T m={{ ja: "すべて消去", en: "Clear all" }} />
         </button>
       </div>
     </div>

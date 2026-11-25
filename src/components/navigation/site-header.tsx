@@ -1,8 +1,11 @@
 import { Settings } from "lucide-react";
 import { NotificationBell } from "@/components/engagement/notification-bell";
+import { LanguageMenu } from "@/components/i18n/language-picker";
+import { T } from "@/components/i18n/t";
 import { SearchSuggest } from "@/components/search/search-suggest";
 import { featureRepository, termRepository } from "@/lib/repositories";
-import { SITE_NAME, SITE_TAGLINE, TRAINING_APP_NAME } from "@/lib/site";
+import { LANGUAGE_NOTE } from "@/lib/i18n";
+import { SITE_NAME, SITE_NAME_EN, SITE_TAGLINE, SITE_TAGLINE_EN, TRAINING_APP_NAME } from "@/lib/site";
 import { HeaderBrand } from "./header-brand";
 import { MainNav } from "./main-nav";
 import { NavLink } from "./nav-link";
@@ -22,32 +25,41 @@ export async function SiteHeader() {
   const items = desktopNavigation.filter((item) => !hidden.has(item.href));
 
   return (
+    <>
     <header className="sticky top-0 z-40 h-(--header-height) border-b border-border/70 bg-background/90 backdrop-blur supports-[backdrop-filter]:bg-background/80">
-      <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-6 px-5 md:px-8">
-        <HeaderBrand siteName={SITE_NAME} tagline={SITE_TAGLINE} appName={TRAINING_APP_NAME} />
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between gap-4 px-5 md:px-8 2xl:gap-6">
+        <HeaderBrand siteName={SITE_NAME} siteNameEn={SITE_NAME_EN} tagline={SITE_TAGLINE} taglineEn={SITE_TAGLINE_EN} appName={TRAINING_APP_NAME} />
 
         <MainNav items={items.map(({ href, label }) => ({ href, label }))} />
 
         {/* On phones: the bell and the menu, which lists every page the bottom bar does not (2026-11-23). */}
         <div className="-mr-3 flex items-center md:hidden">
           <NotificationBell />
+          <LanguageMenu />
           <SiteMenu hidden={[...hidden]} />
         </div>
 
         <div className="hidden items-center gap-2 md:flex">
           <SearchSuggest id="header-search" variant="header" />
           <NotificationBell />
+          <LanguageMenu />
           <NavLink
             href="/settings"
             className="flex size-11 items-center justify-center text-muted-foreground transition-colors hover:text-foreground"
             activeClassName="text-foreground"
           >
             <Settings className="size-[1.15rem]" aria-hidden />
-            <span className="sr-only">設定</span>
+            <span className="sr-only"><T m={{ ja: "設定", en: "Settings" }} /></span>
           </NavLink>
           <SiteMenu hidden={[...hidden]} />
         </div>
       </div>
     </header>
+    {/* For a reader of another language: what is and is not translated (JCE-123). Shown only while a language other
+        than Japanese is chosen; outside the sticky header so it scrolls away and the header keeps its height. */}
+    <p className="hidden border-b border-border/70 bg-paper px-5 py-1.5 text-center text-[0.6875rem] leading-4 text-muted-foreground md:px-8 [html[data-lang]_&]:block">
+      <T m={LANGUAGE_NOTE} />
+    </p>
+    </>
   );
 }

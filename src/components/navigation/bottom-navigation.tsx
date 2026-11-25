@@ -5,6 +5,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { T } from "@/components/i18n/t";
 import { activeHref, isTrainingPath, mobileNavigation, trainingNavigation } from "./navigation-items";
 
 /** Icons always carry a text label: an icon alone is ambiguous for most of these. */
@@ -29,7 +30,7 @@ export function BottomNavigation() {
               )}
             >
               <Icon className="size-5" aria-hidden strokeWidth={1.75} />
-              <span>{label}</span>
+              <span><T m={label} /></span>
             </Link>
           </li>
         ))}

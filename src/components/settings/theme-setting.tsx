@@ -1,13 +1,15 @@
 "use client";
 
+import { T } from "@/components/i18n/t";
 import { useLocalStore } from "@/hooks/use-local-store";
+import type { Message } from "@/lib/i18n";
 import { settingsStore, type ThemePreference } from "@/lib/storage/stores";
 import { cn } from "@/lib/utils";
 
-const OPTIONS: { value: ThemePreference; label: string }[] = [
-  { value: "system", label: "端末の設定に合わせる" },
-  { value: "light", label: "ライト" },
-  { value: "dark", label: "ダーク" },
+const OPTIONS: { value: ThemePreference; label: Message }[] = [
+  { value: "system", label: { ja: "端末の設定に合わせる", en: "Match device" } },
+  { value: "light", label: { ja: "ライト", en: "Light" } },
+  { value: "dark", label: { ja: "ダーク", en: "Dark" } },
 ];
 
 function applyTheme(theme: ThemePreference) {
@@ -22,7 +24,7 @@ export function ThemeSetting() {
 
   return (
     <fieldset>
-      <legend className="font-medium">表示モード</legend>
+      <legend className="font-medium"><T m={{ ja: "表示モード", en: "Theme" }} /></legend>
       <div className="mt-3 grid gap-2 sm:grid-cols-3">
         {OPTIONS.map((option) => {
           const checked = settings.theme === option.value;
@@ -45,7 +47,7 @@ export function ThemeSetting() {
                 }}
                 className="size-4 accent-foreground"
               />
-              {option.label}
+              <T m={option.label} />
             </label>
           );
         })}

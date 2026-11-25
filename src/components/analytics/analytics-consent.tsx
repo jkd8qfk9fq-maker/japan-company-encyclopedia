@@ -3,6 +3,7 @@
 // A Client Component: the choice lives in a cookie and Google's tag runs in the browser (JCE-056).
 
 import Link from "next/link";
+import { T } from "@/components/i18n/t";
 import { useEffect, useSyncExternalStore } from "react";
 import {
   clearGaCookies,
@@ -44,10 +45,10 @@ export function AnalyticsConsent() {
     >
       <div className="mx-auto flex max-w-3xl flex-wrap items-center gap-x-4 gap-y-2">
         <p className="min-w-0 basis-full text-xs leading-relaxed sm:basis-0 sm:flex-1 sm:text-sm">
-          <span className="font-semibold">閲覧統計：</span>
-          同意した場合だけ Google アナリティクスで閲覧統計を取ります。同意しなくても、すべての機能を使えます。
+          <span className="font-semibold"><T m={{ ja: "閲覧統計：", en: "Analytics: " }} /></span>
+          <T m={{ ja: "同意した場合だけ Google アナリティクスで閲覧統計を取ります。同意しなくても、すべての機能を使えます。", en: "Google Analytics is used only if you agree. Every feature works either way." }} />
           <Link href="/privacy#google-analytics" className="link-ink ml-1 whitespace-nowrap">
-            詳しく見る
+            <T m={{ ja: "詳しく見る", en: "Details (JP)" }} />
           </Link>
         </p>
         <div className="ml-auto flex gap-2">
@@ -56,14 +57,14 @@ export function AnalyticsConsent() {
             onClick={() => saveConsent("granted")}
             className="min-h-10 rounded-md bg-navy px-4 text-sm font-medium whitespace-nowrap text-white hover:opacity-90"
           >
-            同意する
+            <T m={{ ja: "同意する", en: "Agree" }} />
           </button>
           <button
             type="button"
             onClick={() => saveConsent("denied")}
             className="min-h-10 rounded-md border border-border px-4 text-sm font-medium whitespace-nowrap hover:bg-muted"
           >
-            同意しない
+            <T m={{ ja: "同意しない", en: "Decline" }} />
           </button>
         </div>
       </div>
@@ -78,7 +79,7 @@ export function AnalyticsSettingsButton() {
   return (
     <li>
       <button type="button" onClick={resetConsent} className="inline-flex min-h-11 items-center hover:underline">
-        閲覧統計の設定
+        <T m={{ ja: "閲覧統計の設定", en: "Analytics settings" }} />
       </button>
     </li>
   );
