@@ -14,7 +14,8 @@ import { formatDateJa, formatYen } from "@/lib/utils/format";
 import type { Company, FinancialRecord } from "@/types/company";
 import type { Revision } from "@/types/revision";
 import { PremiumGate } from "./premium-gate";
-import { CompanyAnalysisSection, MeaningBlock } from "./company-analysis";
+import { MeaningGate } from "./analysis-gate";
+import { CompanyAnalysisSection, MeaningBlock, MeaningEntrance } from "./company-analysis";
 import { DataProvenance } from "./data-provenance";
 import { ReportPrintButton } from "./report-print-button";
 import { Donut, PerspectiveRadar, PositionBar, TrendChart } from "./report-charts";
@@ -284,7 +285,11 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
                 {summary.fiscalYear}の印字値。前期比は計算値（最新期 ÷ 前期 − 1）で、会計基準と売上の範囲が前期と同じ場合だけ示します。
               </p>
             )}
-            {meaning.length > 0 && <MeaningBlock sentences={meaning} />}
+            {meaning.length > 0 && (
+              <MeaningGate fallback={<MeaningEntrance sentences={meaning} />}>
+                <MeaningBlock sentences={meaning} />
+              </MeaningGate>
+            )}
           </Chapter>
 
           <PremiumGate
