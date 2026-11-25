@@ -202,3 +202,57 @@ export function PositionBar({ value, median, q1, q3 }: { value: number; median: 
     </div>
   );
 }
+
+/**
+ * The five perspectives as a radar (JCE-115): each axis is one named indicator's percentile within the industry
+ * (perspective-radar.ts). Rings at 25 / 50 / 75 mark the industry's quartiles, the dashed 50 ring its median. The
+ * points are joined only to give the shape; the area is not a figure and nothing is summed. An axis without a
+ * distribution keeps its label, says 分布なし and has no point.
+ */
+export function PerspectiveRadar({ axes }: { axes: { perspectiveTitle: string; indicator: string; percentile: number | null }[] }) {
+  // Wide enough that the side labels (外部環境との接続) fit beside the ring rather than off the drawing.
+  const W = 460;
+  const H = 360;
+  const cx = W / 2;
+  const cy = 188;
+  const R = 122;
+  const n = axes.length;
+  const angle = (i: number) => -Math.PI / 2 + (2 * Math.PI * i) / n;
+  const at = (i: number, p: number) => [cx + Math.cos(angle(i)) * R * (p / 100), cy + Math.sin(angle(i)) * R * (p / 100)] as const;
+  const ring = (p: number) => axes.map((_, i) => at(i, p).join(",")).join(" ");
+  const shown = axes.map((a, i) => (a.percentile === null ? null : at(i, a.percentile)));
+  const polygon = shown.filter((pt): pt is readonly [number, number] => pt !== null).map((pt) => pt.join(",")).join(" ");
+  return (
+    <svg viewBox={`0 0 ${W} ${H}`} className="mx-auto h-auto w-full max-w-[34rem]" role="img" aria-label={`5観点の業界内の位置：${axes.map((a) => `${a.perspectiveTitle}（${a.indicator}）${a.percentile ?? "分布なし"}`).join("、")}`}>
+      {[25, 75, 100].map((p) => (
+        <polygon key={p} points={ring(p)} fill="none" className="stroke-border" strokeWidth={p === 100 ? 1.2 : 0.8} />
+      ))}
+      <polygon points={ring(50)} fill="none" className="stroke-muted-foreground" strokeWidth={1.2} strokeDasharray="4 3" />
+      {axes.map((_, i) => {
+        const [x, y] = at(i, 100);
+        return <line key={i} x1={cx} y1={cy} x2={x} y2={y} className="stroke-border" strokeWidth={0.8} />;
+      })}
+      {polygon && <polygon points={polygon} className="fill-[var(--chart-revenue)] stroke-[var(--ink)]" fillOpacity={0.3} strokeWidth={2} strokeLinejoin="round" />}
+      {shown.map((pt, i) =>
+        pt === null ? null : (
+          <circle key={i} cx={pt[0]} cy={pt[1]} r={4.5} className="fill-[var(--ink)] stroke-background" strokeWidth={1.5} />
+        ),
+      )}
+      {axes.map((a, i) => {
+        const [x, y] = at(i, 100);
+        const dx = Math.cos(angle(i));
+        const anchor = Math.abs(dx) < 0.2 ? "middle" : dx > 0 ? "start" : "end";
+        const lx = x + dx * 10;
+        const ly = y + Math.sin(angle(i)) * 14 + (Math.sin(angle(i)) < -0.5 ? -16 : 0);
+        return (
+          <text key={a.perspectiveTitle} x={lx} y={ly} textAnchor={anchor} className="text-[13px]">
+            <tspan className="fill-foreground font-semibold">{a.perspectiveTitle}</tspan>
+            <tspan x={lx} dy={16} className="fill-muted-foreground text-[11.5px]">
+              {a.percentile === null ? "分布なし" : `${a.indicator.length > 8 ? `${a.indicator.slice(0, 7)}…` : a.indicator} ${a.percentile}`}
+            </tspan>
+          </text>
+        );
+      })}
+    </svg>
+  );
+}

@@ -53,10 +53,43 @@ describe("report page", async () => {
     expect(html).toContain(latest.fiscalYear);
   });
 
+  it("draws the five-perspective radar with its explanation", () => {
+    expect(html).toContain("5観点の業界内の位置");
+    expect(html).toContain("点数ではありません");
+  });
+
   it("shows no market figure (invariant 4)", () => {
     for (const word of ["PER", "PBR", "時価総額", "配当利回り"]) expect(html, word).not.toContain(word);
     // 株価 appears once, in the disclaimer that says the report holds none.
     expect(html.split("株価").length - 1).toBe(1);
     expect(html).toContain("株価・評価・推奨は含みません");
+  });
+});
+
+describe("five-perspective radar (JCE-115)", async () => {
+  const { companyAnalysis } = await import("@/lib/company-analysis");
+  const { radarAxes } = await import("@/lib/perspective-radar");
+
+  it("reads each axis from one named row's own industry percentile, never a blend", () => {
+    for (const company of released.slice(0, 80)) {
+      const analysis = companyAnalysis(company, released);
+      const axes = radarAxes(analysis);
+      expect(axes.map((a) => a.perspectiveTitle)).toEqual(["規模と地位", "成長", "収益性", "財務の安定", "外部環境との接続"]);
+      const rows = analysis.perspectives.flatMap((p) => p.rows);
+      for (const a of axes) {
+        if (a.percentile === null) continue;
+        const row = rows.find((r) => r.key === a.row!.key)!;
+        expect(a.percentile, `${company.id} ${a.perspective}`).toBe(row.industry!.percentile);
+        expect(a.indicator).toBe(row.title);
+        expect(a.percentile).toBeGreaterThanOrEqual(0);
+        expect(a.percentile).toBeLessThanOrEqual(100);
+      }
+    }
+  }, 60_000);
+
+  it("falls back in a fixed order only when the first indicator has no distribution", () => {
+    const axes = radarAxes(companyAnalysis(agc, released));
+    const growth = axes.find((a) => a.perspective === "growth")!;
+    expect(["revenue-growth-5y", "revenue-growth-1y"]).toContain(growth.row!.key);
   });
 });
