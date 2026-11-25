@@ -2,17 +2,18 @@ import Link from "next/link";
 import { formatAnalysisValue } from "@/lib/analysis-format";
 import { companyAnalysis, type AnalysisRow, type CompanyAnalysis } from "@/lib/company-analysis";
 import { formatIndicatorValue, indicatorsForIndustry, observationPeriodLabel } from "@/lib/indicators";
-import { MEANING_QUESTIONS, meaningSummary, type MeaningQuestion, type MeaningSentence } from "@/lib/meaning-layer";
+import { MEANING_QUESTIONS, meaningQuestions, meaningSummary, type MeaningSentence } from "@/lib/meaning-layer";
 import { formatYen } from "@/lib/utils/format";
 import type { Company } from "@/types/company";
-import { AnalysisGate } from "./analysis-gate";
+import { AnalysisGate, MeaningGate } from "./analysis-gate";
 
 /**
  * The five-perspective analysis on the report page (JCE-078, Phase 1–2). The free part — each
- * perspective's own values with the industry median — is rendered for every reader; the full
- * distributions, the printed trends, the segment composition and the linked economic indicators
- * sit behind the analysis layer's own gate (see analysis-gate.tsx). Nothing here is a score or a
- * verdict: positions are shown per perspective, never combined (spec §7).
+ * perspective's own values with the industry median, and the questions of 「この会社の今」 — is
+ * rendered for every reader; the meaning layer's answers, the full distributions, the printed
+ * trends, the segment composition and the linked economic indicators sit behind the analysis
+ * layer's own gate (see analysis-gate.tsx). Nothing here is a score or a verdict: positions are
+ * shown per perspective, never combined (spec §7).
  */
 
 const formatValue = formatAnalysisValue;
@@ -96,8 +97,32 @@ function DetailTable({ rows }: { rows: AnalysisRow[] }) {
   );
 }
 
+/**
+ * The free entrance to 「この会社の今」 (JCE-120): the heading and the questions this company's summary
+ * answers — no sentence, no figure. The answers themselves are the analysis layer's core and render
+ * inside MeaningGate for an entitled reader.
+ */
+export function MeaningEntrance({ sentences }: { sentences: MeaningSentence[] }) {
+  const questions = meaningQuestions(sentences);
+  return (
+    <div className="mt-6 rounded-md border border-border p-4 sm:p-5">
+      <h3 className="font-serif text-lg font-semibold">この会社の今</h3>
+      <p className="mt-1 text-xs leading-5 text-muted-foreground">
+        下の分析の数字を、3つの問いに答える文章に組み立てた要約です。文中の数字は下の表と同じ値で、良い・悪いの判断は含みません。答えは分析レイヤーの範囲で、有効な購入コードで開きます。
+      </p>
+      <ul className="mt-4 space-y-2">
+        {questions.map((q) => (
+          <li key={q} className="text-xs font-semibold tracking-wide text-muted-foreground">
+            {MEANING_QUESTIONS[q]}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export function MeaningBlock({ sentences }: { sentences: MeaningSentence[] }) {
-  const questions = (Object.keys(MEANING_QUESTIONS) as MeaningQuestion[]).filter((q) => sentences.some((s) => s.question === q));
+  const questions = meaningQuestions(sentences);
   return (
     <div className="mt-6 rounded-md border border-border p-4 sm:p-5">
       <h3 className="font-serif text-lg font-semibold">この会社の今</h3>
@@ -170,7 +195,11 @@ export function CompanyAnalysisSection({
   return (
     <section className={folded ? "" : "mt-12"}>
       {!folded && <h2 className="font-serif text-xl font-semibold">分析（5観点）</h2>}
-      {!folded && meaning.length > 0 && <MeaningBlock sentences={meaning} />}
+      {!folded && meaning.length > 0 && (
+        <MeaningGate fallback={<MeaningEntrance sentences={meaning} />}>
+          <MeaningBlock sentences={meaning} />
+        </MeaningGate>
+      )}
       {!folded && (
         <>
       <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
@@ -182,7 +211,7 @@ export function CompanyAnalysisSection({
         。観点ごとに位置を示すもので、5観点を合成したスコアや格付けは作りません。
       </p>
       <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
-        無料で見られるのは各観点の要点（自社の値と業界の中央値）までです。分布の全体像・推移・経済指標との接続は分析レイヤーの範囲で、有効な購入コードで開きます。開いた状態で印刷・PDF保存すると、分析を含むレポート全体が1つの文書になります。
+        無料で見られるのは各観点の要点（自社の値と業界の中央値）と、「この会社の今」の問いまでです。その答え（数字を文章に組み立てた要約）、分布の全体像・推移・経済指標との接続は分析レイヤーの範囲で、有効な購入コードで開きます。開いた状態で印刷・PDF保存すると、分析を含むレポート全体が1つの文書になります。
       </p>
         </>
       )}

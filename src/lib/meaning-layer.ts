@@ -255,3 +255,8 @@ export function meaningSummary(groups: AnalysisGroup[]): MeaningSentence[] {
 
 export const sentenceText = (s: MeaningSentence): string =>
   s.parts.map((p) => (typeof p === "string" ? p : "label" in p ? p.label : p.text)).join("");
+
+/** The questions a summary answers, in the fixed q1 → q2 → q3 order — what the free entrance may show (JCE-120). */
+export function meaningQuestions(sentences: MeaningSentence[]): MeaningQuestion[] {
+  return (Object.keys(MEANING_QUESTIONS) as MeaningQuestion[]).filter((q) => sentences.some((s) => s.question === q));
+}
