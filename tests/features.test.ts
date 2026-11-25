@@ -166,9 +166,11 @@ describe("features (JCE-074)", () => {
     expect(industryTable!.rows).toHaveLength(expectedIndustries.length);
     industryTable!.rows.forEach((row, k) => {
       expect(row.label).toBe(INDUSTRY_LABELS[expectedIndustries[k]!.id].name);
-      expect(row.values[0]).toBe(count(expectedIndustries[k]!.pay));
-      expect(row.values[1]).toBe(count(expectedIndustries[k]!.n));
-      expect(row.values[2]).toBe(pct1(expectedIndustries[k]!.share));
+      // JCE-111: the share comes first because the bar draws it; the bar is that share, not a figure of its own.
+      expect(row.values[0]).toBe(pct1(expectedIndustries[k]!.share));
+      expect(row.values[1]).toBe(count(expectedIndustries[k]!.pay));
+      expect(row.values[2]).toBe(count(expectedIndustries[k]!.n));
+      expect(row.bar).toBe(expectedIndustries[k]!.share);
     });
 
     const zero = withDiv.filter((c) => c.shareFacts!.dividendPerShare === 0).sort((a, b) => a.id.localeCompare(b.id));
@@ -189,8 +191,9 @@ describe("features (JCE-074)", () => {
     bandTable!.rows.forEach((row, k) => {
       const n = paying.filter((c) => bands[k]![0](c.shareFacts!.dividendPerShare!)).length;
       expect(row.label).toBe(bands[k]![1]);
-      expect(row.values[0]).toBe(count(n));
-      expect(row.values[1]).toBe(pct1(n / paying.length));
+      expect(row.values[0]).toBe(pct1(n / paying.length));
+      expect(row.values[1]).toBe(count(n));
+      expect(row.bar).toBe(n / paying.length);
     });
 
     const text = prose("how-many-companies-pay-dividends");
@@ -225,5 +228,29 @@ describe("features (JCE-074)", () => {
     expect(text).toContain(manYen0(median(withRpe.map((x) => x.value))!));
     expect(text).toContain(manYen0(figures.reference.revenuePerEmployee!));
     expect(text).toContain(times2(expected[0]!.m! / expected.at(-1)!.m!));
+  });
+
+  it("gives every feature its card and top-of-article material (JCE-111), built from the same data", () => {
+    for (const f of features) {
+      expect(f.topic, f.id).toBeTruthy();
+      expect(f.keyFigures?.length, f.id).toBeGreaterThanOrEqual(2);
+      expect(f.keyFigures!.length, f.id).toBeLessThanOrEqual(3);
+      expect(f.takeaways?.length, f.id).toBeGreaterThanOrEqual(2);
+      expect(f.takeaways!.length, f.id).toBeLessThanOrEqual(3);
+      // A bar draws the row's own value: present on a chart's every row or none, and never negative.
+      for (const b of f.body) {
+        if (b.type !== "data-table") continue;
+        const withBar = b.rows.filter((r) => r.bar !== undefined);
+        expect([0, b.rows.length], `${f.id}: ${b.title}`).toContain(withBar.length);
+        for (const r of withBar) expect(r.bar!, `${f.id}: ${r.label}`).toBeGreaterThanOrEqual(0);
+      }
+      // Every table sits under a heading, so the table of contents reaches it.
+      const firstTable = f.body.findIndex((b) => b.type === "data-table");
+      const firstHeading = f.body.findIndex((b) => b.type === "heading");
+      if (firstTable >= 0) expect(firstHeading, f.id).toBeLessThan(firstTable);
+    }
+    // The headline figure of the overseas feature is the median the body states.
+    const overseas = features.find((f) => f.id === "overseas-sales-geography")!;
+    expect(prose("overseas-sales-geography")).toContain(overseas.keyFigures![0]!.value);
   });
 });

@@ -100,6 +100,7 @@ function overseasArticle(companies: Company[]): Feature {
         label: INDUSTRY_LABELS[i.id].name,
         href: `/industries/${i.id}`,
         values: [pct1(i.overseasSalesRatio!.value), count(i.overseasSalesRatio!.companies)],
+        bar: i.overseasSalesRatio!.value,
       })),
       note: "計算値：日本以外の売上高 ÷ 地域別売上高の合計を会社ごとに求め、業界の中央値を取ったもの。対象は地域別の売上高を印字した会社のみで、対象が3社未満の業界は載せていません。有価証券報告書に基づく集計で、業界ランキング（海外売上高比率）と同じ算出方法です。",
     },
@@ -117,6 +118,7 @@ function overseasArticle(companies: Company[]): Feature {
         label: company.name,
         href: `/companies/${company.id}`,
         values: [pct1(o.ratio), o.fiscalYear],
+        bar: o.ratio,
       })),
       note: "計算値：日本以外の売上高 ÷ 地域別売上高の合計（各社の有価証券報告書「地域ごとの情報」の印字値から算出）。対象期は地域別情報の対象となった事業年度です。",
     },
@@ -134,6 +136,17 @@ function overseasArticle(companies: Company[]): Feature {
 
   return {
     id: "overseas-sales-geography",
+    topic: "海外売上",
+    keyFigures: [
+      { value: pct1(medianRatio), label: `海外売上高比率の中央値（対象${count(withRatio.length)}）` },
+      { value: count(over50), label: "売上の半分以上を海外で得ている会社" },
+      { value: pct1(weighted), label: "売上高で重みづけした海外の割合" },
+    ],
+    takeaways: [
+      `業界の中央値で最も高いのは[[industry:${industryRows[0]!.id}|${INDUSTRY_LABELS[industryRows[0]!.id].name}]]の${pct1(industryRows[0]!.overseasSalesRatio!.value)}。`,
+      `会社で最も高いのは[[company:${topCompany.company.id}|${topCompany.company.name}]]の${pct1(topCompany.o.ratio)}。`,
+      `対象は地域別の売上高を開示した${count(withRatio.length)}だけで、開示していない会社は「わからない」として除いています。`,
+    ],
     title: "海外売上高比率から見る日本の上場企業",
     subtitle: "売上のどれだけを海外で得ているか。地域別の売上高を開示した会社だけを集計すると、輸出産業のイメージとは少し違う地図が見えてきます。",
     body,
@@ -163,6 +176,7 @@ function salaryArticle(companies: Company[]): Feature {
       text: `有価証券報告書の「従業員の状況」には、提出会社（単体）の平均年間給与が印字されています。掲載企業${count(companies.length)}のうち${count(salaries.length)}がこの金額を載せており、全体の中央値は${manYen(overall)}でした。この特集では、対象が10社以上ある業界について、業界ごとの中央値を並べます。金額はすべて報告書の印字どおりで、計算値は中央値と倍率だけです。`,
       sourceIds: ["edinet"],
     },
+    { type: "heading", text: "業界で見る：平均年間給与の中央値" },
     {
       type: "data-table",
       title: "業界別の平均年間給与（中央値）",
@@ -171,6 +185,7 @@ function salaryArticle(companies: Company[]): Feature {
         label: INDUSTRY_LABELS[i.id].name,
         href: `/industries/${i.id}`,
         values: [manYen(i.salaryMedian!.value), count(i.salaryMedian!.companies)],
+        bar: i.salaryMedian!.value,
       })),
       note: "各社の金額は有価証券報告書「従業員の状況」の平均年間給与（提出会社）の印字どおり。中央値とその算出は計算値です。対象が10社未満の業界は載せていません。",
     },
@@ -192,6 +207,16 @@ function salaryArticle(companies: Company[]): Feature {
 
   return {
     id: "average-salary-by-industry",
+    topic: "給与",
+    keyFigures: [
+      { value: manYen(overall), label: `平均年間給与の中央値（対象${count(salaries.length)}）` },
+      { value: manYen(topRow.salaryMedian!.value), label: `最も高い業界：${INDUSTRY_LABELS[topRow.id].name}` },
+      { value: times2(gap), label: "最も高い業界と低い業界の差" },
+    ],
+    takeaways: [
+      `業界の中央値は[[industry:${topRow.id}|${INDUSTRY_LABELS[topRow.id].name}]]の${manYen(topRow.salaryMedian!.value)}が最も高く、[[industry:${bottomRow.id}|${INDUSTRY_LABELS[bottomRow.id].name}]]の${manYen(bottomRow.salaryMedian!.value)}が最も低い。`,
+      "金額は連結グループではなく提出会社単体の平均で、持株会社では高く出ることがあります。",
+    ],
     title: "平均年間給与の業界地図",
     subtitle: "有価証券報告書に印字された提出会社の平均年間給与を、業界ごとに中央値で並べた地図です。雇用の形の違いと合わせて読みます。",
     body,
@@ -236,6 +261,7 @@ function growthArticle(companies: Company[]): Feature {
       text: `掲載企業のうち、5期分の売上高がそろったのは${count(withGrowth.length)}でした。各社について「最新期の売上高 ÷ 5期前の売上高」（計算値）を求めると、中央値は${times2(medianGrowth)}、伸びた会社が${count(up)}（${pct1(up / withGrowth.length)}）、縮んだ会社が${count(down)}（${pct1(down / withGrowth.length)}）でした。起点となる期には、コロナ禍で売上が落ち込んだ時期を含む会社が多いため、伸びには落ち込みからの戻りも混ざっています。`,
       sourceIds: ["edinet"],
     },
+    { type: "heading", text: "業界で見る：売上の伸びの中央値" },
     {
       type: "data-table",
       title: "業界別の5期の売上成長（中央値）",
@@ -244,6 +270,7 @@ function growthArticle(companies: Company[]): Feature {
         label: INDUSTRY_LABELS[i.id].name,
         href: `/industries/${i.id}`,
         values: [times2(i.revenueGrowth5y!.value), count(i.revenueGrowth5y!.companies)],
+        bar: i.revenueGrowth5y!.value,
       })),
       note: "計算値：最新期の売上高 ÷ 5期前の売上高を会社ごとに求め、業界の中央値を取ったもの。売上高は有価証券報告書の印字値。5期分がそろわない会社は除き、対象が10社未満の業界は載せていません。",
     },
@@ -261,6 +288,7 @@ function growthArticle(companies: Company[]): Feature {
         label: x.company.name,
         href: `/companies/${x.company.id}`,
         values: [times2(x.growth), `${x.first.fiscalYear}→${x.last.fiscalYear}`],
+        bar: x.growth,
       })),
       note: "計算値：最新期の売上高 ÷ 5期前の売上高。母数が小さいと倍率が大きく振れるため、5期前の売上高が100億円未満の会社は除いています。売上高は各社の有価証券報告書の印字値です。",
     },
@@ -272,6 +300,7 @@ function growthArticle(companies: Company[]): Feature {
         label: x.company.name,
         href: `/companies/${x.company.id}`,
         values: [times2(x.growth), `${x.first.fiscalYear}→${x.last.fiscalYear}`],
+        bar: x.growth,
       })),
       note: "計算値：最新期の売上高 ÷ 5期前の売上高。1.00倍未満が縮小です。対象の限定は上の表と同じです。",
     },
@@ -283,6 +312,17 @@ function growthArticle(companies: Company[]): Feature {
 
   return {
     id: "five-year-revenue-growth",
+    topic: "成長",
+    keyFigures: [
+      { value: times2(medianGrowth), label: `5期の売上の伸びの中央値（対象${count(withGrowth.length)}）` },
+      { value: count(up), label: "5期前より売上が増えた会社" },
+      { value: count(down), label: "5期前より売上が減った会社" },
+    ],
+    takeaways: [
+      `業界の中央値で最も伸びたのは[[industry:${topRow.id}|${INDUSTRY_LABELS[topRow.id].name}]]の${times2(topRow.revenueGrowth5y!.value)}、最も小さいのは[[industry:${bottomRow.id}|${INDUSTRY_LABELS[bottomRow.id].name}]]の${times2(bottomRow.revenueGrowth5y!.value)}。`,
+      `5期前の売上高が100億円以上の会社で最も伸びたのは[[company:${bigTop[0]!.company.id}|${bigTop[0]!.company.name}]]の${times2(bigTop[0]!.growth)}。`,
+      "倍率だけでは、同じ事業が育ったのか、買収などで会社の形が変わったのかは区別できません。",
+    ],
     title: "5期の売上成長で見る業界の伸びと縮み",
     subtitle: "5期分の売上高がそろった会社について、伸びの中央値を業界ごとに並べ、大きく伸びた会社と縮んだ会社を見ます。",
     body,
@@ -332,6 +372,7 @@ function employeesArticle(companies: Company[]): Feature {
       text: `掲載企業${count(companies.length)}のうち、最新期の従業員数を印字したのは${count(withEmp.length)}で、その人数を合計すると${people(total)}になります。ここでの従業員数は、有価証券報告書の「主要な経営指標等の推移」に印字された人数で、連結財務諸表を作る会社ではグループ全体の人数です。各社のページにある「従業員の状況」（提出会社だけの人数）とは数え方が違うため、混ぜずにこちらだけを使います。会社の規模の中央値は${people(overallMedian)}でした。`,
       sourceIds: ["edinet"],
     },
+    { type: "heading", text: "業界で見る：従業員の合計" },
     {
       type: "data-table",
       title: "業界別の従業員数（合計）",
@@ -340,6 +381,7 @@ function employeesArticle(companies: Company[]): Feature {
         label: INDUSTRY_LABELS[i.id].name,
         href: `/industries/${i.id}`,
         values: [people(i.employees.total), count(i.employees.companies)],
+        bar: i.employees.total,
       })),
       note: "従業員数は各社の有価証券報告書「主要な経営指標等の推移」の印字どおりで、合計はその単純な足し算です（計算値は合計と割合だけです）。最新期に人数を印字していない会社は対象に含みません。",
     },
@@ -357,6 +399,7 @@ function employeesArticle(companies: Company[]): Feature {
         label: INDUSTRY_LABELS[x.industry.id].name,
         href: `/industries/${x.industry.id}`,
         values: [people(x.median), count(x.n)],
+        bar: x.median,
       })),
       note: "計算値：最新期の従業員数を会社ごとに取り、業界の中央値を取ったもの。対象が10社未満の業界は載せていません。",
     },
@@ -374,6 +417,7 @@ function employeesArticle(companies: Company[]): Feature {
         label: x.company.name,
         href: `/companies/${x.company.id}`,
         values: [people(x.latest.employees!), x.latest.fiscalYear],
+        bar: x.latest.employees!,
       })),
       note: "従業員数は各社の有価証券報告書「主要な経営指標等の推移」の印字どおりで、計算値ではありません。並びはその人数によるものです。",
     },
@@ -386,6 +430,17 @@ function employeesArticle(companies: Company[]): Feature {
 
   return {
     id: "employees-by-industry",
+    topic: "雇用",
+    keyFigures: [
+      { value: people(total), label: `掲載企業の従業員数の合計` },
+      { value: pct1(top3Share), label: "上位3業界が占める割合" },
+      { value: people(overallMedian), label: "1社あたりの従業員数の中央値" },
+    ],
+    takeaways: [
+      `従業員の合計が最も多い業界は[[industry:${totalRows[0]!.id}|${INDUSTRY_LABELS[totalRows[0]!.id].name}]]。`,
+      `1社あたりの中央値で最も大きいのは[[industry:${topMedian.industry.id}|${INDUSTRY_LABELS[topMedian.industry.id].name}]]の${people(topMedian.median)}。`,
+      `従業員数が最も多い会社は[[company:${topCompanies[0]!.company.id}|${topCompanies[0]!.company.name}]]の${people(topCompanies[0]!.latest.employees!)}。`,
+    ],
     title: "従業員の人数から見る業界地図",
     subtitle: "最新期の従業員数を業界ごとに合計し、会社の規模の中央値と並べた地図です。合計の大きさと、典型的な会社の大きさは、別の姿を見せます。",
     body,
@@ -435,14 +490,16 @@ function dividendsArticle(companies: Company[]): Feature {
       text: `有価証券報告書の「主要な経営指標等の推移」には、1株当たり配当額が印字されています（提出会社の金額）。掲載企業のうち、この金額が読み取れたのは${count(withDiv.length)}でした。そのうち配当額が0円でなかった会社は${count(paying.length)}で、割合は${pct1(share)}です。残りの${count(noFigure)}は、この表から配当額が読み取れなかった会社で、配当を出していないとは限りません。`,
       sourceIds: ["edinet"],
     },
+    { type: "heading", text: "業界で見る：配当を出す会社の割合" },
     {
       type: "data-table",
       title: "業界別の配当を出す会社の割合",
-      columns: ["配当を出す会社", "対象", "割合（計算値）"],
+      columns: ["割合（計算値）", "配当を出す会社", "対象"],
       rows: industryRows.map((x) => ({
         label: INDUSTRY_LABELS[x.id].name,
         href: `/industries/${x.id}`,
-        values: [count(x.pay), count(x.n), pct1(x.share)],
+        values: [pct1(x.share), count(x.pay), count(x.n)],
+        bar: x.share,
       })),
       note: "割合は計算値：1株当たり配当額が0円でない会社 ÷ 配当額が印字された会社。金額そのものは各社の有価証券報告書「主要な経営指標等の推移」の印字どおりです。対象が10社未満の業界は載せていません。",
     },
@@ -472,8 +529,8 @@ function dividendsArticle(companies: Company[]): Feature {
     {
       type: "data-table",
       title: "1株当たり配当額の分布（配当を出す会社）",
-      columns: ["会社数", "割合（計算値）"],
-      rows: bandRows.map((b) => ({ label: b.label, values: [count(b.n), pct1(b.share)] })),
+      columns: ["割合（計算値）", "会社数"],
+      rows: bandRows.map((b) => ({ label: b.label, values: [pct1(b.share), count(b.n)], bar: b.share })),
       note: "金額は各社の有価証券報告書の印字どおり。会社数と割合は、その金額の幅に入る会社を数えた計算値です。",
     },
     {
@@ -485,6 +542,17 @@ function dividendsArticle(companies: Company[]): Feature {
 
   return {
     id: "how-many-companies-pay-dividends",
+    topic: "配当",
+    keyFigures: [
+      { value: pct1(share), label: `配当を出す会社の割合（対象${count(withDiv.length)}）` },
+      { value: yen(medianDiv), label: "1株当たり配当額の中央値（配当を出す会社）" },
+      { value: count(zero.length), label: "1株当たり配当額が0円の会社" },
+    ],
+    takeaways: [
+      `1株当たり配当額が印字された${count(withDiv.length)}のうち、${pct1(share)}が配当を出しています。`,
+      `配当を出す会社の割合が最も低い業界は[[industry:${bottomRow.id}|${INDUSTRY_LABELS[bottomRow.id].name}]]の${pct1(bottomRow.share)}。`,
+      "配当額は提出会社の印字値で、株価に対する利回りなどは計算していません。",
+    ],
     title: "配当を出す会社はどれくらいあるか",
     subtitle: "有価証券報告書に印字された1株当たり配当額を数えると、「出すかどうか」よりも「0円が例外」という姿が見えてきます。",
     body,
@@ -526,6 +594,7 @@ function revenuePerEmployeeArticle(companies: Company[]): Feature {
       text: `各社について、同じ期の売上高と従業員数から「売上高 ÷ 従業員数」（計算値）を求めました。両方がそろった${count(withRpe.length)}の中央値は${manYen0(overallMedian)}です。一方、全社の売上高の合計を従業員数の合計で割ると${manYen0(ratioOfSums)}になり、中央値より大きくなります。売上の大きな会社に引っ張られる合計ベースと、典型的な会社を見る中央値とで、姿が変わります。`,
       sourceIds: ["edinet"],
     },
+    { type: "heading", text: "業界で見る：1人あたり売上高の中央値" },
     {
       type: "data-table",
       title: "業界別の従業員1人あたり売上高（中央値）",
@@ -534,6 +603,7 @@ function revenuePerEmployeeArticle(companies: Company[]): Feature {
         label: INDUSTRY_LABELS[x.industry.id].name,
         href: `/industries/${x.industry.id}`,
         values: [manYen0(x.median), count(x.n)],
+        bar: x.median,
       })),
       note: "計算値：最新期の売上高 ÷ 従業員数を会社ごとに求め、業界の中央値を取ったもの。売上高と従業員数は有価証券報告書「主要な経営指標等の推移」の印字値です。対象が10社未満の業界は載せていません。",
     },
@@ -555,6 +625,16 @@ function revenuePerEmployeeArticle(companies: Company[]): Feature {
 
   return {
     id: "revenue-per-employee-by-industry",
+    topic: "生産性",
+    keyFigures: [
+      { value: manYen0(overallMedian), label: `従業員1人あたり売上高の中央値（対象${count(withRpe.length)}）` },
+      { value: times2(gap), label: "最も高い業界と低い業界の中央値の差" },
+      { value: manYen0(topRow.median), label: `最も高い業界：${INDUSTRY_LABELS[topRow.industry.id].name}` },
+    ],
+    takeaways: [
+      `業界の中央値は[[industry:${topRow.industry.id}|${INDUSTRY_LABELS[topRow.industry.id].name}]]が最も高く、[[industry:${bottomRow.industry.id}|${INDUSTRY_LABELS[bottomRow.industry.id].name}]]が最も低い（差は${times2(gap)}）。`,
+      "差は効率の良し悪しではなく、仕入れの大きさや人の働き方といった事業の形の違いを表します。",
+    ],
     title: "従業員1人あたり売上高の業界差",
     subtitle: `同じ期の売上高と従業員数から計算すると、業界の中央値の差は${times2(gap)}あります。効率ではなく、事業の形の違いとして読みます。`,
     body,
