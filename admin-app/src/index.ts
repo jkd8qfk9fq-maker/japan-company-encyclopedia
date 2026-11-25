@@ -4,6 +4,7 @@ import { LINK_TTL_MS, readCookie, SESSION_COOKIE, SESSION_TTL_MS, sessionCookie,
 import { accessIdentity } from "./access";
 import { applySection, isCompanyTab, renderBasicForm, renderHistoryForm, renderIndustriesForm, renderOverview, renderReadOnly, renderSourcesForm, tabBar } from "./company-form";
 import { CHECK_LABEL, dashboardData, parseRevisionNames, renderDashboard } from "./dashboard";
+import { isEntranceStatus, loadEntrance, renderEntrance, updateEntranceEntry } from "./entrance";
 import { allowedEmails, missingSettings, ROLE_LABEL, roleOf, usesAccess, type AdminEnv } from "./env";
 import { GitHub, mergeBlockers } from "./github";
 import { errorList, esc, navFor, page, redirect, type PageOptions } from "./html";
@@ -234,7 +235,8 @@ ${sent ? `<div class="card ok">登録されているアドレスであれば、�
 <p class="muted">権限は3段階：閲覧（見るだけ）・編集（プルリクエストを作る）・承認（テストが通ったものをマージする）。ログインできるのは Cloudflare Zero Trust の Access ポリシーと、Worker のシークレットの両方にあるアドレスだけです。値はこの画面に出しません。</p></section>
 <section class="panel"><h2>GitHub</h2><table>${row("リポジトリ", esc(env.GITHUB_REPO))}${row("トークン（GITHUB_TOKEN）", set(env.GITHUB_TOKEN))}${status.ok ? row("接続", '<span class="ok">接続中</span>') + row("書き込み権限", status.push ? '<span class="ok">あり</span>' : '<span class="bad">なし</span>') + row("API の残り", `${status.remaining.toLocaleString("ja-JP")} / ${status.limit.toLocaleString("ja-JP")}（毎時）`) : row("接続", `<span class="bad">接続できません</span> ${esc(status.error)}`)}</table>
 <p class="muted">変更は main 向けのプルリクエストになり、テストが通ってからマージすると公開されます。この画面から本番のデータを直接は書き換えません。</p></section>
-<section class="panel"><h2>公開サイト</h2><table>${row("百科事典", `<a href="${esc(env.SITE_ORIGIN)}">${esc(env.SITE_ORIGIN)}</a>`)}${row("メール送信（予備のログイン用）", set(env.RESEND_API_KEY))}</table></section>
+<section class="panel"><h2>公開サイト</h2><table>${row("百科事典", `<a href="${esc(env.SITE_ORIGIN)}">${esc(env.SITE_ORIGIN)}</a>`)}${row("メール送信（予備のログイン用）", set(env.RESEND_API_KEY))}${row("入口フォームの回答（KV）", set(env.ENTRANCE_KV))}</table>
+<p class="muted">入口フォームの回答は連絡先メールを含むため、リポジトリには置かず、このアプリ専用の KV にだけ置きます（JCE-117）。</p></section>
 </div>`,
         { crumbs: [["システム設定"]] },
       );
@@ -253,6 +255,30 @@ ${sent ? `<div class="card ok">登録されているアドレスであれば、�
         body = errorList([`GitHub から読めませんでした：${String(error).slice(0, 160)}`]);
       }
       return view("承認管理", `<h1>承認管理</h1><p class="muted">開いているプルリクエストと、そのテスト（型・lint・全テスト）の結果です。テストが通ったものを「承認」の権限でマージすると公開されます。</p>${body}`, { crumbs: [["承認管理"]] });
+    }
+
+    if (path === "/entrance" && request.method === "GET") {
+      const entranceView = await loadEntrance(env.ENTRANCE_KV);
+      return view("入口フォーム", renderEntrance(entranceView, role !== "viewer"), { crumbs: [["入口フォーム"]] });
+    }
+
+    if (path === "/entrance/update" && request.method === "POST") {
+      // The handling record is operational data in KV, not published content: no pull request (JCE-117).
+      if (!env.ENTRANCE_KV) {
+        return view("入口フォーム", `${errorList(["回答の保存先（KV）がまだ設定されていません。"])}<p><a href="/entrance">入口フォームへ戻る</a></p>`, { status: 409, crumbs: [["入口フォーム", "/entrance"], ["保存"]] });
+      }
+      const form = await request.formData();
+      const responseId = String(form.get("responseId") ?? "");
+      const status = form.get("status");
+      const memo = String(form.get("memo") ?? "");
+      if (!responseId || !isEntranceStatus(status)) {
+        return view("入口フォーム", `${errorList(["ステータスが正しくありません。"])}<p><a href="/entrance">入口フォームへ戻る</a></p>`, { status: 422, crumbs: [["入口フォーム", "/entrance"], ["保存"]] });
+      }
+      const saved = await updateEntranceEntry(env.ENTRANCE_KV, responseId, { status, memo });
+      if (!saved) {
+        return view("入口フォーム", `${errorList(["その回答が見つかりませんでした。同期の直後で変わった可能性があります。開き直してください。"])}<p><a href="/entrance">入口フォームへ戻る</a></p>`, { status: 404, crumbs: [["入口フォーム", "/entrance"], ["保存"]] });
+      }
+      return redirect("/entrance");
     }
 
     if (path === "/revisions") {

@@ -66,7 +66,7 @@ describe("report page", async () => {
   });
 });
 
-describe("five-perspective radar (JCE-115)", async () => {
+describe("five-perspective radar (JCE-118)", async () => {
   const { companyAnalysis } = await import("@/lib/company-analysis");
   const { radarAxes } = await import("@/lib/perspective-radar");
 

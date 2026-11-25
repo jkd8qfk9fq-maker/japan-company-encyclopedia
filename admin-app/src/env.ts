@@ -1,5 +1,12 @@
 export type RateLimit = { limit: (options: { key: string }) => Promise<{ success: boolean }> };
 
+/** The slice of a Workers KV namespace binding this app uses (the entrance form's answers, JCE-117). */
+export type EntranceKv = {
+  get: (key: string) => Promise<string | null>;
+  put: (key: string, value: string) => Promise<void>;
+  list: (options: { prefix: string; cursor?: string }) => Promise<{ keys: { name: string }[]; list_complete: boolean; cursor?: string }>;
+};
+
 export type AdminEnv = {
   /** Editors: may make pull requests. */
   ADMIN_EMAILS?: string;
@@ -12,6 +19,8 @@ export type AdminEnv = {
   GITHUB_REPO: string;
   SITE_ORIGIN: string;
   LOGIN_LIMIT?: RateLimit;
+  /** The entrance form's answers (personal data) live only here — never in the repository (JCE-117). Unset → the page says so. */
+  ENTRANCE_KV?: EntranceKv;
   /** Cloudflare Access (JCE-109): the team domain and this application's audience tag. When both are set, sign-in is Access's. */
   ACCESS_TEAM_DOMAIN?: string;
   ACCESS_AUD?: string;

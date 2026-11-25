@@ -46,6 +46,15 @@ GitHub のトークンは github.com → Settings → Developer settings → Per
 
 複数のアドレスはカンマ区切り。新しい人を入れるときは、そのアドレスを Cloudflare Zero Trust → Access → Applications「百科事典 管理」のポリシーにも足す（両方にある人だけが入れる）。
 
+## 入口フォーム（2026-11-25 追加、JCE-117）
+
+「入口フォーム」では、無料の1社分析体験への申込（サイトと Instagram のプロフィールにある Google フォームの回答）を管理する：回答一覧（受信日時・メール・気になる企業・β希望）、ファネル集計（回答数／未対応／体験提供済み／β案内済み）、対応ステータス（未対応／体験提供済み／β案内済み／見送り）とメモ。
+
+- **置き場所**：回答は連絡先メールを含む個人情報のため、リポジトリには置かない。このアプリ専用の Cloudflare KV 名前空間 `kigyo-admin-entrance` にだけ置き、`ENTRANCE_KV` としてバインドする（`admin-app/wrangler.jsonc`）。Next 側の管理画面が `.data/entrance-form.json` にだけ置く規則（JCE-115）を、ローカルファイルを持てない Worker に移した形。
+- **同期**：アプリは Google に接続しない。毎朝の新規回答チェックと同じ Google Forms コネクタの出力を、`scripts/admin/sync-entrance-kv.mjs` が KV へ取り込む（回答項目は Google が正、対応ステータスとメモは KV の既存値を保持し、同期で消さない）。実行には環境変数 `CLOUDFLARE_ACCOUNT_ID` と `CLOUDFLARE_API_TOKEN`（Workers KV Storage の編集権限だけのトークン）が要る。トークンは実行環境にだけ置き、リポジトリには書かない。
+- **対応の保存**：ステータスとメモは掲載コンテンツではなく運用データなので、プルリクエストではなく KV へ直接書く（Next 側でも状態ファイルへの直接書き込みだった）。閲覧権限では保存できない。
+- KV バインドが無い間は、画面は「未設定」と表示する（回答ゼロと取り違えない）。
+
 ## プルリクエストのテスト
 
 main 向けのプルリクエストには、GitHub Actions の `PR checks`（`.github/workflows/pr-checks.yml`：型チェック・lint・全テスト）が自動で走る。承認管理はその結果を読み、成功・main と食い違いなし・下書きでない、のときだけ「承認してマージする」を出す。マージ直前にもう一度確かめ、確認した後に更新されていたらマージしない。マージは squash で、コミットに「管理画面で承認してマージ」と承認者（伏せ字）・時刻を残す。

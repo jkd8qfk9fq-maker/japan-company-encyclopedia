@@ -251,3 +251,90 @@ describe("admin console: company sections (stage 4)", () => {
     expect(ids.at(-1)).toBe("new-source");
   });
 });
+
+describe("admin console: entrance form (JCE-117)", () => {
+  const entry = (responseId: string, over: Record<string, unknown> = {}) => ({
+    responseId,
+    submittedAt: "2026-11-25T01:00:00.000Z",
+    email: "applicant@example.com",
+    company: "トヨタ自動車",
+    betaInterest: true,
+    status: "new",
+    memo: "",
+    statusUpdatedAt: null,
+    ...over,
+  });
+  const fakeKv = (seed: Record<string, string> = {}) => {
+    const store = new Map(Object.entries(seed));
+    return {
+      store,
+      get: async (key: string) => store.get(key) ?? null,
+      put: async (key: string, value: string) => void store.set(key, value),
+      list: async ({ prefix }: { prefix: string }) => ({
+        keys: [...store.keys()].filter((k) => k.startsWith(prefix)).map((name) => ({ name })),
+        list_complete: true,
+      }),
+    };
+  };
+
+  it("says the store is not set up when there is no KV binding, instead of showing zero answers", async () => {
+    const { loadEntrance } = await import("../admin-app/src/entrance");
+    const view = await loadEntrance(undefined);
+    expect(view.available).toBe(false);
+    expect(view.entries).toEqual([]);
+  });
+
+  it("lists answers newest first and counts the funnel", async () => {
+    const { loadEntrance } = await import("../admin-app/src/entrance");
+    const kv = fakeKv({
+      "resp:old": JSON.stringify(entry("old", { status: "delivered", betaInterest: false })),
+      "resp:new": JSON.stringify(entry("new", { submittedAt: "2026-11-25T03:00:00.000Z", status: "beta-sent" })),
+      meta: JSON.stringify({ formId: "f", syncedAt: "2026-11-25T04:00:00.000Z" }),
+      "resp:broken": "{not json",
+    });
+    const view = await loadEntrance(kv);
+    expect(view.available).toBe(true);
+    expect(view.entries.map((e) => e.responseId)).toEqual(["new", "old"]); // the broken record is skipped
+    expect(view.summary).toEqual({ total: 2, pending: 0, delivered: 1, betaSent: 1, betaInterest: 1 });
+    expect(view.syncedAt).toBe("2026-11-25T04:00:00.000Z");
+  });
+
+  it("records the handling on the entry itself, and nothing for an unknown answer", async () => {
+    const { updateEntranceEntry } = await import("../admin-app/src/entrance");
+    const kv = fakeKv({ "resp:a": JSON.stringify(entry("a")) });
+    expect(await updateEntranceEntry(kv, "a", { status: "delivered", memo: "体験を送った" }, "2026-11-25T05:00:00.000Z")).toBe(true);
+    const saved = JSON.parse(kv.store.get("resp:a")!);
+    expect(saved).toMatchObject({ status: "delivered", memo: "体験を送った", statusUpdatedAt: "2026-11-25T05:00:00.000Z", email: "applicant@example.com" });
+    expect(await updateEntranceEntry(kv, "missing", { status: "delivered" })).toBe(false);
+  });
+
+  it("serves the page signed in, saves a handling update, and keeps a viewer read-only", async () => {
+    const kv = fakeKv({ "resp:a": JSON.stringify(entry("a")) });
+    const withKv: AdminEnv = { ...env, ENTRANCE_KV: kv };
+    const session = await sign(withKv, "session", "owner@example.com", Date.now() + 60_000);
+    const cookie = { cookie: `kigyo_admin=${session}` };
+    const pageRes = await worker.fetch(new Request("https://admin.kigyo-hyakka.com/entrance", { headers: cookie }), withKv);
+    expect(pageRes.status).toBe(200);
+    const html = await pageRes.text();
+    expect(html).toContain("入口フォーム");
+    expect(html).toContain("トヨタ自動車");
+    expect(html).toContain("applicant@example.com"); // the operator sees the contact address — behind sign-in only
+
+    const post = await worker.fetch(
+      new Request("https://admin.kigyo-hyakka.com/entrance/update", {
+        method: "POST",
+        headers: { ...cookie, origin: "https://admin.kigyo-hyakka.com" },
+        body: new URLSearchParams({ responseId: "a", status: "beta-sent", memo: "βの案内を送った" }),
+      }),
+      withKv,
+    );
+    expect(post.status).toBe(303);
+    expect(JSON.parse(kv.store.get("resp:a")!)).toMatchObject({ status: "beta-sent", memo: "βの案内を送った" });
+
+    const viewerEnv: AdminEnv = { ...env, ADMIN_EMAILS: "editor@example.com", VIEWER_EMAILS: "owner@example.com", ENTRANCE_KV: kv };
+    const viewerSession = await sign(viewerEnv, "session", "owner@example.com", Date.now() + 60_000);
+    const viewerPage = await worker.fetch(new Request("https://admin.kigyo-hyakka.com/entrance", { headers: { cookie: `kigyo_admin=${viewerSession}` } }), viewerEnv);
+    expect(viewerPage.status).toBe(200);
+    expect(await viewerPage.text()).not.toContain('action="/entrance/update"');
+  });
+});
