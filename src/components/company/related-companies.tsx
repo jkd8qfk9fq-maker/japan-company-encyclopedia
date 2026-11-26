@@ -3,6 +3,7 @@ import { SourceList } from "@/components/sources/source-list";
 import { firstSentence } from "@/lib/rich-text";
 import type { Company, RelatedCompany, RelationshipKind } from "@/types/company";
 import type { Source } from "@/types/source";
+import { L } from "@/components/i18n/label";
 
 export const RELATIONSHIP_LABEL: Record<RelationshipKind, string> = {
   "same-industry": "同じ業界",
@@ -36,19 +37,19 @@ function Row({ company, label, description, sources, sourceIds, from }: {
     <li className="border-b border-border py-2.5">
       <p className="text-[0.9375rem] leading-6">
         <Link href={`/companies/${company.id}`} className="font-semibold hover:underline">
-          {company.name}
+          <L s={company.name} />
         </Link>
         <span className="ml-2 inline-flex rounded-full border border-border px-2 text-[0.6875rem] leading-5 text-muted-foreground">
           {from ? `${from}から見て「${label}」` : label}
         </span>
       </p>
-      <p className="mt-0.5 text-[0.8125rem] leading-6 text-muted-foreground">{short}</p>
+      <p className="mt-0.5 text-[0.8125rem] leading-6 text-muted-foreground"><L s={short} /></p>
       {short !== description && (
         <details className="group">
           <summary className="inline-flex min-h-9 cursor-pointer list-none items-center gap-1.5 text-xs text-muted-foreground select-none hover:text-foreground [&::-webkit-details-marker]:hidden">
-            <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
+            <span data-l="ja" lang="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
             続きを読む
-          </summary>
+          </span><span data-l="en" lang="en"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>Read more</span></summary>
           <p className="text-[0.8125rem] leading-6 text-muted-foreground">{description}</p>
         </details>
       )}

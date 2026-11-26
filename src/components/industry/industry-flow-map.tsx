@@ -7,6 +7,7 @@ import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import type { IndustryMapData, MapFlow } from "@/lib/industry-map";
 import type { IndustryId } from "@/types/company";
+import { T } from "@/components/i18n/t";
 
 /** Wide screens and phones draw the same diagram, each with its own measurements. */
 const LAYOUTS = [
@@ -65,7 +66,7 @@ export function IndustryFlowMap({ data }: { data: IndustryMapData }) {
               <span className="flex min-w-0 flex-col">
                 <span className="font-serif text-[0.9375rem] leading-snug font-semibold">{i.name}</span>
                 <span className={cn("figures text-xs", selected === i.id ? "opacity-80" : "text-muted-foreground")}>
-                  {i.companies.length}社{lines > 0 ? `・線 ${lines}本` : ""}
+                  <span data-l="ja" lang="ja">{i.companies.length}社{lines > 0 ? `・線 ${lines}本` : ""}</span><span data-l="en" lang="en">{i.companies.length} companies{lines > 0 ? `・線 ${lines}本` : ""}</span>
                 </span>
               </span>
             </button>
@@ -76,8 +77,8 @@ export function IndustryFlowMap({ data }: { data: IndustryMapData }) {
       {data.flows.length > 0 && (
         <div className="mt-10 rounded-md border border-border bg-background p-4 md:p-6">
           <div className="flex justify-between text-xs text-muted-foreground">
-            <span>売る側の業界</span>
-            <span>買う側の業界</span>
+            <span><T m={{ ja: "売る側の業界", en: "Selling industry" }} /></span>
+            <span><T m={{ ja: "買う側の業界", en: "Buying industry" }} /></span>
           </div>
 
           {/* The same diagram twice, laid out for each width: a phone gets its own geometry at its real size (labels at
@@ -160,12 +161,12 @@ export function IndustryFlowMap({ data }: { data: IndustryMapData }) {
           <section aria-labelledby="industry-panel-heading">
             <div className="flex flex-wrap items-baseline justify-between gap-3 border-b border-foreground pb-3">
               <h3 id="industry-panel-heading" className="font-serif text-2xl font-semibold">
-                {industry.name}の企業
-                <span className="figures ml-3 text-sm font-normal text-muted-foreground">{industry.companies.length}社</span>
+                <span data-l="ja" lang="ja">{industry.name}の企業
+                <span className="figures ml-3 text-sm font-normal text-muted-foreground"><span data-l="ja" lang="ja">{industry.companies.length}社</span><span data-l="en" lang="en">{industry.companies.length} companies</span></span></span><span data-l="en" lang="en">{industry.name} companies <span className="figures ml-3 text-sm font-normal text-muted-foreground"><span data-l="ja" lang="ja">{industry.companies.length}社</span><span data-l="en" lang="en">{industry.companies.length} companies</span></span></span>
               </h3>
               <Link href={`/industries/${industry.id}`} className="link-ink inline-flex min-h-11 items-center text-sm">
-                {industry.name}業界のページへ
-              </Link>
+                <span data-l="ja" lang="ja">{industry.name}業界のページへ
+              </span><span data-l="en" lang="en">Go to the {industry.name} industry page</span></Link>
             </div>
 
             {shownFlows.length > 0 && (
@@ -199,7 +200,7 @@ export function IndustryFlowMap({ data }: { data: IndustryMapData }) {
                   <Link href={`/companies/${company.id}`} className="font-serif text-lg font-semibold hover:underline">
                     {company.name}
                   </Link>
-                  {!company.primary && <span className="ml-2 text-xs text-muted-foreground">（主な業界は別）</span>}
+                  {!company.primary && <span className="ml-2 text-xs text-muted-foreground"><T m={{ ja: "（主な業界は別）", en: "(excluding main industry)" }} /></span>}
                   {company.ties.length > 0 && (
                     <dl className="mt-2 space-y-1 text-sm">
                       {(["仕入先", "顧客"] as const).map((role) => {
@@ -225,7 +226,7 @@ export function IndustryFlowMap({ data }: { data: IndustryMapData }) {
             </ul>
           </section>
         ) : (
-          <p className="text-sm text-muted-foreground">産業を選ぶと、その産業の企業と取引のつながりが一覧で表示されます。</p>
+          <p className="text-sm text-muted-foreground"><T m={{ ja: "産業を選ぶと、その産業の企業と取引のつながりが一覧で表示されます。", en: "Select an industry to see a list of its companies and trade connections." }} /></p>
         )}
       </div>
     </div>

@@ -37,7 +37,7 @@ describe("interface languages", () => {
     expect(css).toContain('[data-l]:not([data-l="ja"]){display:none}');
     for (const l of LOCALES.filter((x) => x !== DEFAULT_LOCALE)) {
       expect(css).toContain(`html[data-lang="${l}"] [data-l="ja"]{display:none}`);
-      expect(css).toContain(`html[data-lang="${l}"] [data-l="${l}"]{display:revert}`);
+      expect(css).toContain(`html[data-lang="${l}"] [data-l="${l}"]{display:contents}`);
     }
   });
 

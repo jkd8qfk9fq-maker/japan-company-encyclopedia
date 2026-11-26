@@ -5,6 +5,9 @@ import { RichText } from "@/components/rich-text/rich-text";
 import { SourceList } from "@/components/sources/source-list";
 import type { Company } from "@/types/company";
 import type { Industry } from "@/types/industry";
+import { T } from "@/components/i18n/t";
+import { ContentText } from "@/components/i18n/content-text";
+import { L } from "@/components/i18n/label";
 
 function Stage({
   category,
@@ -27,14 +30,14 @@ function Stage({
             {String(index + 1).padStart(2, "0")}
           </p>
         )}
-        <h3 className="mt-1 font-serif text-xl font-semibold">{category.name}</h3>
+        <h3 className="mt-1 font-serif text-xl font-semibold"><ContentText text={category.name} /></h3>
         <p className="mt-2 text-[0.9375rem] leading-7">
           <RichText text={category.description} />
         </p>
         <SourceList sources={industry.sources} sourceIds={category.sourceIds} className="mt-2" />
       </div>
       <div>
-        <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">掲載している企業</p>
+        <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground"><T m={{ ja: "掲載している企業", en: "Listed companies" }} /></p>
         {placed.length > 0 ? (
           <ul className="mt-3 flex flex-wrap gap-2">
             {placed.map((company) => (
@@ -43,13 +46,13 @@ function Stage({
                   href={`/companies/${company.id}`}
                   className="inline-flex min-h-11 items-center rounded-full border border-foreground px-4 text-sm hover:bg-foreground hover:text-background"
                 >
-                  {company.name}
+                  <L s={company.name} />
                 </Link>
               </li>
             ))}
           </ul>
         ) : (
-          <p className="mt-3 text-sm text-muted-foreground">まだ掲載していません。</p>
+          <p className="mt-3 text-sm text-muted-foreground"><T m={{ ja: "まだ掲載していません。", en: "None listed yet." }} /></p>
         )}
       </div>
     </div>
@@ -92,10 +95,10 @@ export function IndustryStructure({ industry, companies }: { industry: Industry;
       {inputs.length > 0 && (
         <section aria-labelledby={`${industry.id}-inputs`} className="mt-14">
           <h3 id={`${industry.id}-inputs`} className="font-serif text-xl font-semibold">
-            工程を支える産業
+            <T m={{ ja: "工程を支える産業", en: "Supporting industries" }} />
           </h3>
           <p className="mt-2 text-[0.9375rem] leading-7 text-muted-foreground">
-            流れの中の一つの段階ではなく、上の工程で使われる装置や材料をつくる産業です。
+            <T m={{ ja: "流れの中の一つの段階ではなく、上の工程で使われる装置や材料をつくる産業です。", en: "Not a single stage in the flow, but industries that make the equipment and materials used in the stages above." }} />
           </p>
           {/* One column, like the stages: two-up cards left ~10 characters per line. */}
           <ul className="mt-6 space-y-4">

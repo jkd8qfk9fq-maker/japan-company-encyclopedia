@@ -2,6 +2,9 @@ import { SourceList } from "@/components/sources/source-list";
 import type { QuarterlyPoint, QuarterlyView } from "@/lib/quarterly";
 import { formatYen } from "@/lib/utils/format";
 import type { Source } from "@/types/source";
+import { T } from "@/components/i18n/t";
+import { F } from "@/components/i18n/figure";
+import { L } from "@/components/i18n/label";
 
 const change = (v: number | null) => (v === null ? null : `${v >= 0 ? "▲" : "▼"}${Math.abs(v * 100).toFixed(1)}%`);
 const SOURCE_NOTE = { "edinet-db": "決算短信（EDINET DB）", hanki: "半期報告書", yuho: "有価証券報告書" } as const;
@@ -19,10 +22,10 @@ export function QuarterlySection({ view, sources }: { view: QuarterlyView; sourc
   const sourceIds = [...new Set(view.points.flatMap((p) => p.sourceIds))];
   return (
     <div className="mb-12">
-      <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">四半期の動き（累計）</h3>
+      <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground"><T m={{ ja: "四半期の動き（累計）", en: "Quarterly trends (cumulative)" }} /></h3>
       <p className="mt-2 text-sm leading-6 text-muted-foreground">
-        {view.fiscalYear}の期首からの累計。濃い棒が今期、薄い棒が前期（{view.priorFiscalYear}）の同じ時点です。
-      </p>
+        <span data-l="ja" lang="ja"><F s={view.fiscalYear} />の期首からの累計。濃い棒が今期、薄い棒が前期（{view.priorFiscalYear}）の同じ時点です。
+      </span><span data-l="en" lang="en">Cumulative total from the start of <F s={view.fiscalYear} />. The dark bar is the current fiscal year; the light bar is the same point in the previous fiscal year ({view.priorFiscalYear}).</span></p>
 
       <ul className="mt-4 space-y-3" aria-label={`${view.fiscalYear}の売上の累計`}>
         {view.points.map((p) => (
@@ -35,7 +38,7 @@ export function QuarterlySection({ view, sources }: { view: QuarterlyView; sourc
         {view.points.map((p) => (
           <div key={p.key} className="grid grid-cols-[4.5rem_1fr] gap-x-3 gap-y-1 py-3 sm:grid-cols-[6rem_1fr_1fr]">
             <dt className="row-span-2 sm:row-span-1">
-              {p.label}
+              <L s={p.label} />
               <span className="mt-0.5 block text-[0.6875rem] text-muted-foreground">{SOURCE_NOTE[(p.source ?? p.priorSource)!]}</span>
             </dt>
             <Figure name="売上" now={p.revenue} prior={p.priorRevenue} delta={p.revenueChange} pending={p.key !== "fy"} />
@@ -44,19 +47,21 @@ export function QuarterlySection({ view, sources }: { view: QuarterlyView; sourc
         ))}
       </dl>
       <p className="mt-2 text-xs leading-5 text-muted-foreground">
-        前年同期比は計算値：今期の累計 ÷ 前期の同じ時点の累計 − 1（前期が0以下のときは付けません）。▲▼は増減の向きで、良し悪しではありません。純利益は親会社株主（所有者）に帰属する純利益。通期の行は前期の有価証券報告書の数値です。
+        <T m={{ ja: "前年同期比は計算値：今期の累計 ÷ 前期の同じ時点の累計 − 1（前期が0以下のときは付けません）。▲▼は増減の向きで、良し悪しではありません。純利益は親会社株主（所有者）に帰属する純利益。通期の行は前期の有価証券報告書の数値です。", en: "Year-on-year change is computed: current cumulative total ÷ cumulative total at the same point in the previous fiscal year − 1 (not shown when the previous fiscal year is 0 or less). ▲▼ show the direction of change, not good or bad. Net income is net income attributable to owners of the parent. Full-year rows use figures from the previous fiscal year's annual securities report." }} />
       </p>
       {view.usesEdinetDb && (
         <div className="mt-3 rounded-md border border-border bg-card p-3 text-xs leading-5 text-muted-foreground">
           <p>
-            第1・第3四半期の数値は、会社が発表した決算短信を
+            <span data-l="ja" lang="ja">第1・第3四半期の数値は、会社が発表した決算短信を
             <a href="https://edinetdb.jp/" className="mx-0.5 font-medium text-foreground underline underline-offset-2" rel="noopener">
               Powered by EDINET DB
             </a>
             が構造化したデータです（百万円未満は切り捨て）。中間期は半期報告書、通期は有価証券報告書（いずれも EDINET）から。
-          </p>
+          </span><span data-l="en" lang="en">Q1 and Q3 figures are data structured by <a href="https://edinetdb.jp/" className="mx-0.5 font-medium text-foreground underline underline-offset-2" rel="noopener">
+              Powered by EDINET DB
+            </a> from the earnings releases published by each company (amounts under ¥1 million are rounded down). Interim figures come from semiannual reports, and full-year figures from annual securities reports (both on EDINET).</span></p>
           <p className="mt-1">
-            EDINET DB のデータは公開資料を機械的に処理した情報で、投資助言ではありません。解析の過程で誤差が生じることがあるため、重要な判断には会社の決算短信の原本をご確認ください。当サイトは EDINET DB の数値を、同じ会社の半期報告書・有価証券報告書の数値と照合してから掲載しています。
+            <T m={{ ja: "EDINET DB のデータは公開資料を機械的に処理した情報で、投資助言ではありません。解析の過程で誤差が生じることがあるため、重要な判断には会社の決算短信の原本をご確認ください。当サイトは EDINET DB の数値を、同じ会社の半期報告書・有価証券報告書の数値と照合してから掲載しています。", en: "EDINET DB data is information machine-processed from public documents and is not investment advice. Errors may arise during analysis, so for important decisions please check the company's original earnings release. This site publishes EDINET DB figures only after checking them against the figures in the same company's semiannual and annual securities reports." }} />
           </p>
         </div>
       )}
@@ -68,10 +73,10 @@ export function QuarterlySection({ view, sources }: { view: QuarterlyView; sourc
 function Figure({ name, now, prior, delta, pending }: { name: string; now: number | null; prior: number | null; delta: number | null; pending: boolean }) {
   return (
     <dd className="figures min-w-0">
-      <span className="text-xs text-muted-foreground">{name} </span>
+      <span className="text-xs text-muted-foreground"><L s={name} /> </span>
       <span className="font-medium">{now !== null ? formatYen(now) : pending ? "未発表" : "—"}</span>
       {delta !== null && <span className="ml-1.5 text-xs">{change(delta)}</span>}
-      {prior !== null && <span className="block text-xs text-muted-foreground">前期 {formatYen(prior)}</span>}
+      {prior !== null && <span className="block text-xs text-muted-foreground"><span data-l="ja" lang="ja">前期 <F s={formatYen(prior)} /></span><span data-l="en" lang="en">Previous FY <F s={formatYen(prior)} /></span></span>}
     </dd>
   );
 }
@@ -80,11 +85,11 @@ function Bars({ point, max }: { point: QuarterlyPoint; max: number }) {
   const width = (v: number | null) => (v === null || v <= 0 ? 0 : Math.max(1, (v / max) * 100));
   return (
     <li className="grid grid-cols-[4.5rem_1fr] items-center gap-3 text-xs sm:grid-cols-[6rem_1fr]">
-      <span className="text-muted-foreground">{point.label}</span>
+      <span className="text-muted-foreground"><L s={point.label} /></span>
       <span className="space-y-1">
         <span className="flex items-center gap-2">
           <span className="block h-2.5 rounded-r-[3px] bg-foreground/25" style={{ width: `${width(point.priorRevenue)}%` }} aria-hidden />
-          {point.priorRevenue !== null && <span className="figures shrink-0 text-muted-foreground">{formatYen(point.priorRevenue)}</span>}
+          {point.priorRevenue !== null && <span className="figures shrink-0 text-muted-foreground"><F s={formatYen(point.priorRevenue)} /></span>}
         </span>
         <span className="flex items-center gap-2">
           <span className="block h-2.5 rounded-r-[3px] bg-foreground" style={{ width: `${width(point.revenue)}%` }} aria-hidden />

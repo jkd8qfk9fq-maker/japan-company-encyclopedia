@@ -6,6 +6,9 @@ import { MEANING_QUESTIONS, meaningQuestions, meaningSummary, type MeaningSenten
 import { formatYen } from "@/lib/utils/format";
 import type { Company } from "@/types/company";
 import { AnalysisGate, MeaningGate } from "./analysis-gate";
+import { T } from "@/components/i18n/t";
+import { F } from "@/components/i18n/figure";
+import { L } from "@/components/i18n/label";
 
 /**
  * The five-perspective analysis on the report page (JCE-078, Phase 1–2). The free part — each
@@ -21,14 +24,14 @@ const formatValue = formatAnalysisValue;
 function RowTitle({ row }: { row: AnalysisRow }) {
   return (
     <>
-      <span className="whitespace-nowrap">{row.title}</span>
+      <span className="whitespace-nowrap"><L s={row.title} /></span>
       <span className="ml-2 rounded-sm border border-border px-1 py-0.5 text-[0.65rem] whitespace-nowrap text-muted-foreground">
-        {row.kind === "computed" ? "計算値" : row.kind === "estimated" ? "推計値" : "印字値"}
+        {row.kind === "computed" ? <T m={{ ja: "計算値", en: "Computed" }} /> : row.kind === "estimated" ? "推計値" : "印字値"}
       </span>
       <span className="block text-xs text-muted-foreground">
-        {row.formula}（{row.fiscalYear}）
+        <L s={row.formula} />（<F s={row.fiscalYear} />）
       </span>
-      {row.note && <span className="block text-xs text-muted-foreground">{row.note}</span>}
+      {row.note && <span className="block text-xs text-muted-foreground"><L s={row.note} /></span>}
     </>
   );
 }
@@ -39,9 +42,9 @@ function FreeTable({ rows }: { rows: AnalysisRow[] }) {
       <table className="w-full border-collapse text-sm">
         <thead>
           <tr className="border-b border-foreground/40 text-left">
-            <th scope="col" className="sticky left-0 bg-background py-2 pr-3 font-medium whitespace-nowrap">指標</th>
-            <th scope="col" className="py-2 pr-3 text-right font-medium whitespace-nowrap">自社</th>
-            <th scope="col" className="py-2 text-right font-medium whitespace-nowrap">業界の中央値</th>
+            <th scope="col" className="sticky left-0 bg-background py-2 pr-3 font-medium whitespace-nowrap"><T m={{ ja: "指標", en: "Metric" }} /></th>
+            <th scope="col" className="py-2 pr-3 text-right font-medium whitespace-nowrap"><T m={{ ja: "自社", en: "Company" }} /></th>
+            <th scope="col" className="py-2 text-right font-medium whitespace-nowrap"><T m={{ ja: "業界の中央値", en: "Industry median" }} /></th>
           </tr>
         </thead>
         <tbody>
@@ -66,12 +69,12 @@ function DetailTable({ rows }: { rows: AnalysisRow[] }) {
       <table className="w-full border-collapse text-sm">
         <thead>
           <tr className="border-b border-foreground/40 text-left">
-            <th scope="col" className="sticky left-0 bg-background py-2 pr-3 font-medium whitespace-nowrap">指標</th>
-            <th scope="col" className="py-2 pr-3 text-right font-medium whitespace-nowrap">自社</th>
-            <th scope="col" className="py-2 pr-3 text-right font-medium whitespace-nowrap">業界の中央値</th>
-            <th scope="col" className="py-2 pr-3 text-right font-medium whitespace-nowrap">四分位（第1〜第3）</th>
-            <th scope="col" className="py-2 pr-3 text-right font-medium whitespace-nowrap">順位</th>
-            <th scope="col" className="py-2 text-right font-medium whitespace-nowrap">パーセンタイル</th>
+            <th scope="col" className="sticky left-0 bg-background py-2 pr-3 font-medium whitespace-nowrap"><T m={{ ja: "指標", en: "Metric" }} /></th>
+            <th scope="col" className="py-2 pr-3 text-right font-medium whitespace-nowrap"><T m={{ ja: "自社", en: "Company" }} /></th>
+            <th scope="col" className="py-2 pr-3 text-right font-medium whitespace-nowrap"><T m={{ ja: "業界の中央値", en: "Industry median" }} /></th>
+            <th scope="col" className="py-2 pr-3 text-right font-medium whitespace-nowrap"><T m={{ ja: "四分位（第1〜第3）", en: "Quartiles (1st–3rd)" }} /></th>
+            <th scope="col" className="py-2 pr-3 text-right font-medium whitespace-nowrap"><T m={{ ja: "順位", en: "Rank" }} /></th>
+            <th scope="col" className="py-2 text-right font-medium whitespace-nowrap"><T m={{ ja: "パーセンタイル", en: "Percentile" }} /></th>
           </tr>
         </thead>
         <tbody>
@@ -106,9 +109,9 @@ export function MeaningEntrance({ sentences }: { sentences: MeaningSentence[] })
   const questions = meaningQuestions(sentences);
   return (
     <div className="mt-6 rounded-md border border-border p-4 sm:p-5">
-      <h3 className="font-serif text-lg font-semibold">この会社の今</h3>
+      <h3 className="font-serif text-lg font-semibold"><T m={{ ja: "この会社の今", en: "This Company Now" }} /></h3>
       <p className="mt-1 text-xs leading-5 text-muted-foreground">
-        下の分析の数字を、3つの問いに答える文章に組み立てた要約です。文中の数字は下の表と同じ値で、良い・悪いの判断は含みません。答えは分析レイヤーの範囲で、有効な購入コードで開きます。
+        <T m={{ ja: "下の分析の数字を、3つの問いに答える文章に組み立てた要約です。文中の数字は下の表と同じ値で、良い・悪いの判断は含みません。答えは分析レイヤーの範囲で、有効な購入コードで開きます。", en: "A summary that turns the figures in the analysis below into text answering three questions. The figures in the text match the table below, and it contains no judgment of good or bad. The answers are part of the analysis layer and open with a valid purchase code." }} />
       </p>
       <ul className="mt-4 space-y-2">
         {questions.map((q) => (
@@ -125,9 +128,9 @@ export function MeaningBlock({ sentences }: { sentences: MeaningSentence[] }) {
   const questions = meaningQuestions(sentences);
   return (
     <div className="mt-6 rounded-md border border-border p-4 sm:p-5">
-      <h3 className="font-serif text-lg font-semibold">この会社の今</h3>
+      <h3 className="font-serif text-lg font-semibold"><T m={{ ja: "この会社の今", en: "This Company Now" }} /></h3>
       <p className="mt-1 text-xs leading-5 text-muted-foreground">
-        下の分析の数字を読む順に並べた要約です。文中の数字は下の表と同じ値で、良い・悪いの判断は含みません。
+        <T m={{ ja: "下の分析の数字を読む順に並べた要約です。文中の数字は下の表と同じ値で、良い・悪いの判断は含みません。", en: "A summary that lays out the figures in the analysis below in reading order. The figures in the text match the table below, and it contains no judgment of good or bad." }} />
       </p>
       <div className="mt-4 space-y-4">
         {questions.map((q) => (
@@ -143,13 +146,13 @@ export function MeaningBlock({ sentences }: { sentences: MeaningSentence[] }) {
                         <span key={i}>{typeof p === "string" ? p : p.label}</span>
                       ) : (
                         <span key={i} className="figures font-semibold whitespace-nowrap">
-                          {p.text}
+                          <L s={p.text} />
                         </span>
                       ),
                     )}
                     <span className="block text-xs text-muted-foreground">
-                      根拠：「{s.groupTitle}」（{s.fiscalYear}・{s.kind === "printed" ? "印字値" : "計算値"}）
-                    </span>
+                      <span data-l="ja" lang="ja">根拠：「<L s={s.groupTitle} />」（<F s={s.fiscalYear} />・{s.kind === "printed" ? <T m={{ ja: "印字値", en: "Printed value" }} /> : <T m={{ ja: "計算値", en: "Computed" }} />}）
+                    </span><span data-l="en" lang="en">Basis: &quot;<L s={s.groupTitle} />&quot; (<F s={s.fiscalYear} />, {s.kind === "printed" ? <T m={{ ja: "印字値", en: "Printed value" }} /> : <T m={{ ja: "計算値", en: "Computed" }} />})</span></span>
                     {s.caution && <span className="block text-xs text-muted-foreground">※{s.caution}</span>}
                   </li>
                 ))}
@@ -194,7 +197,7 @@ export function CompanyAnalysisSection({
 
   return (
     <section className={folded ? "" : "mt-12"}>
-      {!folded && <h2 className="font-serif text-xl font-semibold">分析（5観点）</h2>}
+      {!folded && <h2 className="font-serif text-xl font-semibold"><T m={{ ja: "分析（5観点）", en: "Analysis (5 perspectives)" }} /></h2>}
       {!folded && meaning.length > 0 && (
         <MeaningGate fallback={<MeaningEntrance sentences={meaning} />}>
           <MeaningBlock sentences={meaning} />
@@ -203,15 +206,17 @@ export function CompanyAnalysisSection({
       {!folded && (
         <>
       <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
-        この会社の数字を、規模と地位・成長・収益性・財務の安定・外部環境との接続の5観点で読みます。印字値は有価証券報告書のとおり、計算値には計算式を併記します。業界の分布は主たる産業が同じ掲載企業
+        <span data-l="ja" lang="ja">この会社の数字を、規模と地位・成長・収益性・財務の安定・外部環境との接続の5観点で読みます。印字値は有価証券報告書のとおり、計算値には計算式を併記します。業界の分布は主たる産業が同じ掲載企業
         {analysis.industryName && `（${analysis.industryName}）`}
         {analysis.industryMembers > 0
           ? `${analysis.industryMembers}社のうち、最新期がこの会社と1年以内に終わる${analysis.comparableMembers}社から作り、分布を示せる会社が5社に満たない指標では中央値も出しません`
-          : "から作ります"}
+          : <T m={{ ja: "から作ります", en: "is built from" }} />}
         。観点ごとに位置を示すもので、5観点を合成したスコアや格付けは作りません。
-      </p>
+      </span><span data-l="en" lang="en">This company&apos;s figures are read from five perspectives: scale and position, growth, profitability, financial stability, and links to the external environment. Printed values are as in the annual securities report; computed values show their formulas. The industry distribution covers {analysis.industryName && `（${analysis.industryName}）`} listed companies with the same main industry {analysis.industryMembers > 0
+          ? `${analysis.industryMembers}社のうち、最新期がこの会社と1年以内に終わる${analysis.comparableMembers}社から作り、分布を示せる会社が5社に満たない指標では中央値も出しません`
+          : <T m={{ ja: "から作ります", en: "is built from" }} />}. Each perspective shows a position; no composite score or rating of the five is created.</span></p>
       <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
-        無料で見られるのは各観点の要点（自社の値と業界の中央値）と、「この会社の今」の問いまでです。その答え（数字を文章に組み立てた要約）、分布の全体像・推移・経済指標との接続は分析レイヤーの範囲で、有効な購入コードで開きます。開いた状態で印刷・PDF保存すると、分析を含むレポート全体が1つの文書になります。
+        <T m={{ ja: "無料で見られるのは各観点の要点（自社の値と業界の中央値）と、「この会社の今」の問いまでです。その答え（数字を文章に組み立てた要約）、分布の全体像・推移・経済指標との接続は分析レイヤーの範囲で、有効な購入コードで開きます。開いた状態で印刷・PDF保存すると、分析を含むレポート全体が1つの文書になります。", en: "For free, you can see the key points for each perspective (the company's value and the industry median) and the \"This company now\" questions. The answers (summaries that turn the numbers into sentences), the full distribution, trends, and links to economic indicators are part of the analysis layer, which opens with a valid purchase code. If you print or save as PDF while it is open, the entire report, including the analysis, becomes a single document." }} />
       </p>
         </>
       )}
@@ -223,7 +228,7 @@ export function CompanyAnalysisSection({
               {p.rows.length > 0 && <FreeTable rows={p.rows} />}
               {p.groups.map((g) => (
                 <div key={g.id}>
-                  <h4 className="mt-6 font-serif text-base font-semibold">{g.title}</h4>
+                  <h4 className="mt-6 font-serif text-base font-semibold"><L s={g.title} /></h4>
                   <FreeTable rows={g.rows} />
                 </div>
               ))}
@@ -233,19 +238,19 @@ export function CompanyAnalysisSection({
             <details key={p.id} className="group rounded-xl border border-border bg-card px-4 py-3 sm:px-5">
               <summary className="flex cursor-pointer list-none items-start justify-between gap-3 [&::-webkit-details-marker]:hidden">
                 <span>
-                  <span className="block font-serif text-base font-semibold">{p.title}</span>
+                  <span className="block font-serif text-base font-semibold"><L s={p.title} /></span>
                   <span className="mt-0.5 block text-sm leading-6 text-muted-foreground">{p.intro}</span>
                 </span>
                 <span className="mt-1 shrink-0 text-xs font-medium text-muted-foreground print:hidden">
-                  <span className="group-open:hidden">表を開く ＋</span>
-                  <span className="hidden group-open:inline">閉じる －</span>
+                  <span className="group-open:hidden"><T m={{ ja: "表を開く ＋", en: "Open table +" }} /></span>
+                  <span className="hidden group-open:inline"><T m={{ ja: "閉じる －", en: "Close −" }} /></span>
                 </span>
               </summary>
               <div className="pb-2">{body}</div>
             </details>
           ) : (
             <div key={p.id}>
-              <h3 className="font-serif text-lg font-semibold">{p.title}</h3>
+              <h3 className="font-serif text-lg font-semibold"><L s={p.title} /></h3>
               <p className="mt-1 max-w-3xl text-sm leading-6 text-muted-foreground">{p.intro}</p>
               {body}
             </div>
@@ -259,31 +264,31 @@ export function CompanyAnalysisSection({
           <div className="space-y-10">
             {analysis.perspectives.map((p) => (
               <div key={p.id}>
-                <h3 className="font-serif text-lg font-semibold">{p.title} — 分布の全体像</h3>
+                <h3 className="font-serif text-lg font-semibold"><span data-l="ja" lang="ja"><L s={p.title} /> — 分布の全体像</span><span data-l="en" lang="en"><L s={p.title} /> — Full distribution</span></h3>
                 {p.rows.length > 0 && <DetailTable rows={p.rows} />}
                 {p.groups.map((g) => (
                   <div key={g.id}>
-                    <h4 className="mt-6 font-serif text-base font-semibold">{g.title}</h4>
+                    <h4 className="mt-6 font-serif text-base font-semibold"><L s={g.title} /></h4>
                     <DetailTable rows={g.rows} />
-                    {g.note && <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">{g.note}</p>}
+                    {g.note && <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground"><L s={g.note} /></p>}
                   </div>
                 ))}
                 {p.series && (
                   <div className="mt-5">
-                    <h4 className="font-serif text-base font-semibold">{p.series.title}</h4>
+                    <h4 className="font-serif text-base font-semibold"><L s={p.series.title} /></h4>
                     <div className="mt-2 overflow-x-auto">
                       <table className="border-collapse text-sm">
                         <tbody>
                           <tr className="border-b border-border/70">
-                            <th scope="row" className="py-1.5 pr-3 text-left font-normal whitespace-nowrap">期</th>
+                            <th scope="row" className="py-1.5 pr-3 text-left font-normal whitespace-nowrap"><T m={{ ja: "期", en: "Fiscal year" }} /></th>
                             {p.series.points.map((pt) => (
-                              <td key={pt.periodEnd} className="figures py-1.5 pr-3 text-right whitespace-nowrap">{pt.fiscalYear}</td>
+                              <td key={pt.periodEnd} className="figures py-1.5 pr-3 text-right whitespace-nowrap"><F s={pt.fiscalYear} /></td>
                             ))}
                           </tr>
                           <tr className="border-b border-border/70">
-                            <th scope="row" className="py-1.5 pr-3 text-left font-normal whitespace-nowrap">金額</th>
+                            <th scope="row" className="py-1.5 pr-3 text-left font-normal whitespace-nowrap"><T m={{ ja: "金額", en: "Amount" }} /></th>
                             {p.series.points.map((pt) => (
-                              <td key={pt.periodEnd} className="figures py-1.5 pr-3 text-right whitespace-nowrap">{formatYen(pt.value)}</td>
+                              <td key={pt.periodEnd} className="figures py-1.5 pr-3 text-right whitespace-nowrap"><F s={formatYen(pt.value)} /></td>
                             ))}
                           </tr>
                         </tbody>
@@ -293,10 +298,10 @@ export function CompanyAnalysisSection({
                 )}
                 {p.id === "environment" && company.segmentRevenue && segmentTotal > 0 && (
                   <div className="mt-5">
-                    <h4 className="font-serif text-base font-semibold">事業別の構成（{company.segmentRevenue.fiscalYear}）</h4>
+                    <h4 className="font-serif text-base font-semibold"><span data-l="ja" lang="ja">事業別の構成（<F s={company.segmentRevenue.fiscalYear} />）</span><span data-l="en" lang="en">Breakdown by business (<F s={company.segmentRevenue.fiscalYear} />)</span></h4>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      {company.segmentRevenue.label}の内訳は有価証券報告書の印字値、割合は計算値です。
-                    </p>
+                      <span data-l="ja" lang="ja"><L s={company.segmentRevenue.label} />の内訳は有価証券報告書の印字値、割合は計算値です。
+                    </span><span data-l="en" lang="en">The <L s={company.segmentRevenue.label} /> breakdown shows values as printed in the annual securities report; percentages are computed.</span></p>
                     <table className="mt-2 w-full max-w-xl border-collapse text-sm">
                       <tbody>
                         {[...company.segmentRevenue.items]
@@ -304,7 +309,7 @@ export function CompanyAnalysisSection({
                           .map((i) => (
                             <tr key={i.businessId} className="border-b border-border/70">
                               <td className="py-1.5 pr-3">{businessNames.get(i.businessId) ?? i.businessId}</td>
-                              <td className="figures py-1.5 pr-3 text-right whitespace-nowrap">{formatYen(i.amount)}</td>
+                              <td className="figures py-1.5 pr-3 text-right whitespace-nowrap"><F s={formatYen(i.amount)} /></td>
                               <td className="figures py-1.5 text-right whitespace-nowrap text-muted-foreground">
                                 {((i.amount / segmentTotal) * 100).toFixed(1)}%
                               </td>
@@ -316,9 +321,9 @@ export function CompanyAnalysisSection({
                 )}
                 {p.id === "environment" && linkedIndicators.length > 0 && (
                   <div className="mt-5">
-                    <h4 className="font-serif text-base font-semibold">関連する経済指標</h4>
+                    <h4 className="font-serif text-base font-semibold"><T m={{ ja: "関連する経済指標", en: "Related economic indicators" }} /></h4>
                     <p className="mt-1 max-w-3xl text-sm leading-6 text-muted-foreground">
-                      この業界に対応づけた公的統計です。環境の提示であり、この会社の業績との因果を示すものではありません。
+                      <T m={{ ja: "この業界に対応づけた公的統計です。環境の提示であり、この会社の業績との因果を示すものではありません。", en: "Official statistics matched to this industry. They show the environment and do not indicate a causal link to this company's results." }} />
                     </p>
                     <ul className="mt-2 space-y-3">
                       {linkedIndicators.map(({ indicator, note }) => {
@@ -326,15 +331,15 @@ export function CompanyAnalysisSection({
                         return (
                           <li key={indicator.id} className="text-sm leading-6">
                             <Link href={`/indicators/${indicator.id}`} className="font-medium underline underline-offset-4">
-                              {indicator.name}
+                              <L s={indicator.name} />
                             </Link>
                             {latest && (
                               <span className="figures ml-2 whitespace-nowrap">
                                 {observationPeriodLabel(indicator, latest.date)}: {formatIndicatorValue(indicator, latest.value)}
-                                {indicator.unit}
+                                <L s={indicator.unit} />
                               </span>
                             )}
-                            <span className="block text-muted-foreground">{note}</span>
+                            <span className="block text-muted-foreground"><L s={note} /></span>
                           </li>
                         );
                       })}
@@ -350,12 +355,12 @@ export function CompanyAnalysisSection({
           <details className="group mt-3 rounded-xl border border-border bg-card px-4 py-3 sm:px-5">
             <summary className="flex cursor-pointer list-none items-start justify-between gap-3 [&::-webkit-details-marker]:hidden">
               <span>
-                <span className="block font-serif text-base font-semibold">分布の全体像・推移・経済指標</span>
-                <span className="mt-0.5 block text-sm leading-6 text-muted-foreground">5観点それぞれの四分位・順位・パーセンタイルと、5期の推移、業界に対応づけた公的統計。</span>
+                <span className="block font-serif text-base font-semibold"><T m={{ ja: "分布の全体像・推移・経済指標", en: "Full distribution, trends, and economic indicators" }} /></span>
+                <span className="mt-0.5 block text-sm leading-6 text-muted-foreground"><T m={{ ja: "5観点それぞれの四分位・順位・パーセンタイルと、5期の推移、業界に対応づけた公的統計。", en: "Quartiles, rank, and percentile for each of the 5 perspectives, the 5-fiscal-year trend, and official statistics matched to the industry." }} /></span>
               </span>
               <span className="mt-1 shrink-0 text-xs font-medium text-muted-foreground print:hidden">
-                <span className="group-open:hidden">開く ＋</span>
-                <span className="hidden group-open:inline">閉じる －</span>
+                <span className="group-open:hidden"><T m={{ ja: "開く ＋", en: "Open +" }} /></span>
+                <span className="hidden group-open:inline"><T m={{ ja: "閉じる －", en: "Close −" }} /></span>
               </span>
             </summary>
             <div className="pt-4 pb-2">{gated}</div>

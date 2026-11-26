@@ -12,6 +12,9 @@ import type { Feature, FeatureBlock } from "@/types/feature";
 import { FEATURE_IMAGES } from "@/assets/features";
 import { accentFor, FeatureCard } from "./feature-card";
 import { ReadingProgress } from "./reading-progress";
+import { T } from "@/components/i18n/t";
+import { F } from "@/components/i18n/figure";
+import { L } from "@/components/i18n/label";
 
 /**
  * A feature, laid out answer-first (JCE-111). Data-led sites that hold readers put the finding before the
@@ -33,7 +36,7 @@ function BarRow({ row, max, hasBars, rest }: { row: TableRow; max: number; hasBa
     <li className="py-3">
       <div className="flex items-baseline justify-between gap-3">
         <span className="min-w-0 text-[0.9375rem] leading-snug font-medium">
-          {row.href ? <Link href={row.href} className="link-ink">{row.label}</Link> : row.label}
+          {row.href ? <Link href={row.href} className="link-ink"><L s={row.label} /></Link> : row.label}
         </span>
         <span className="figures shrink-0 text-right text-[1rem] font-semibold whitespace-nowrap">{row.values[0]}</span>
       </div>
@@ -60,7 +63,7 @@ function BarTable({ block }: { block: Extract<FeatureBlock, { type: "data-table"
   const tail = block.rows.slice(VISIBLE_ROWS);
   return (
     <figure className="my-10 rounded-xl border border-border bg-card p-5 md:p-6">
-      {block.title && <figcaption className="font-serif text-lg leading-snug font-semibold">{block.title}</figcaption>}
+      {block.title && <figcaption className="font-serif text-lg leading-snug font-semibold"><L s={block.title} /></figcaption>}
       <p className="mt-1 text-xs text-muted-foreground">{hasBars ? `棒の長さは「${primary}」` : primary}</p>
       <ol className="mt-3 divide-y divide-border/70">
         {head.map((row) => <BarRow key={row.label} row={row} max={max} hasBars={hasBars} rest={rest} />)}
@@ -68,15 +71,15 @@ function BarTable({ block }: { block: Extract<FeatureBlock, { type: "data-table"
       {tail.length > 0 && (
         <details className="group">
           <summary className="mt-2 flex min-h-11 cursor-pointer list-none items-center justify-center rounded-md border border-border text-sm font-medium hover:bg-muted [&::-webkit-details-marker]:hidden">
-            <span className="group-open:hidden">残り{tail.length}件を表示</span>
-            <span className="hidden group-open:inline">閉じる</span>
+            <span className="group-open:hidden"><span data-l="ja" lang="ja">残り{tail.length}件を表示</span><span data-l="en" lang="en">Show remaining {tail.length}</span></span>
+            <span className="hidden group-open:inline"><T m={{ ja: "閉じる", en: "Close" }} /></span>
           </summary>
           <ol className="divide-y divide-border/70">
             {tail.map((row) => <BarRow key={row.label} row={row} max={max} hasBars={hasBars} rest={rest} />)}
           </ol>
         </details>
       )}
-      <p className="mt-4 border-t border-border pt-3 text-xs leading-6 text-muted-foreground">{block.note}</p>
+      <p className="mt-4 border-t border-border pt-3 text-xs leading-6 text-muted-foreground"><L s={block.note} /></p>
     </figure>
   );
 }
@@ -101,17 +104,17 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
   const toc = (
     <ol className="space-y-1 text-sm">
       {feature.takeaways && feature.takeaways.length > 0 && (
-        <li><a href="#points" className="block rounded-md px-2 py-1.5 hover:bg-muted">この特集のポイント</a></li>
+        <li><a href="#points" className="block rounded-md px-2 py-1.5 hover:bg-muted"><T m={{ ja: "この特集のポイント", en: "Key points of this feature" }} /></a></li>
       )}
       {sections.map((s) => (
         <li key={s.id}>
           <a href={`#${s.id}`} className="flex gap-2 rounded-md px-2 py-1.5 leading-snug hover:bg-muted">
             <span className="figures text-muted-foreground">{String(s.index).padStart(2, "0")}</span>
-            <span>{s.title}</span>
+            <span><L s={s.title} /></span>
           </a>
         </li>
       ))}
-      <li><a href="#feature-sources" className="block rounded-md px-2 py-1.5 hover:bg-muted">出典</a></li>
+      <li><a href="#feature-sources" className="block rounded-md px-2 py-1.5 hover:bg-muted"><T m={{ ja: "出典", en: "Sources" }} /></a></li>
     </ol>
   );
 
@@ -128,15 +131,15 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
         )}
         <div className="mx-auto max-w-6xl px-5 pt-8 pb-20 md:px-8 md:pt-14 md:pb-28">
           <nav aria-label="パンくず" className="text-xs text-white/70">
-            <Link href="/features" className="hover:underline">特集</Link>
+            <Link href="/features" className="hover:underline"><T m={{ ja: "特集", en: "Features" }} /></Link>
             {feature.topic && <> ／ <span>{feature.topic}</span></>}
           </nav>
-          <h1 className="mt-4 max-w-4xl font-serif text-[1.875rem] leading-[1.35] font-semibold md:text-[3rem]">{feature.title}</h1>
-          {feature.subtitle && <p className="mt-5 max-w-3xl text-[1.0625rem] leading-[1.9] text-white/85 md:text-lg">{feature.subtitle}</p>}
+          <h1 className="mt-4 max-w-4xl font-serif text-[1.875rem] leading-[1.35] font-semibold md:text-[3rem]"><L s={feature.title} /></h1>
+          {feature.subtitle && <p className="mt-5 max-w-3xl text-[1.0625rem] leading-[1.9] text-white/85 md:text-lg"><L s={feature.subtitle} /></p>}
           <p className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-white/70">
-            <span className="inline-flex items-center gap-1"><Clock className="size-3.5" aria-hidden />約{minutes}分で読めます</span>
-            <span className="figures">{formatDateJa(feature.publishedAt)}</span>
-            <span>出典：有価証券報告書（EDINET）</span>
+            <span className="inline-flex items-center gap-1"><span data-l="ja" lang="ja"><Clock className="size-3.5" aria-hidden />約{minutes}分で読めます</span><span data-l="en" lang="en"><Clock className="size-3.5" aria-hidden />About {minutes} min read</span></span>
+            <span className="figures"><F s={formatDateJa(feature.publishedAt)} /></span>
+            <span><T m={{ ja: "出典：有価証券報告書（EDINET）", en: "Sources: annual securities reports (EDINET)" }} /></span>
           </p>
         </div>
       </header>
@@ -146,8 +149,8 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
           <ul className="grid gap-3 sm:grid-cols-3">
             {feature.keyFigures.map((k) => (
               <li key={k.label} className="rounded-xl border border-border bg-card p-5 shadow-sm md:p-6">
-                <p className="figures text-[2rem] leading-none font-semibold md:text-[2.5rem]">{k.value}</p>
-                <p className="mt-2 text-sm leading-snug text-muted-foreground">{k.label}</p>
+                <p className="figures text-[2rem] leading-none font-semibold md:text-[2.5rem]"><F s={k.value} /></p>
+                <p className="mt-2 text-sm leading-snug text-muted-foreground"><L s={k.label} /></p>
               </li>
             ))}
           </ul>
@@ -164,8 +167,8 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
         <aside className="hidden lg:block" aria-label="目次">
           <div className="sticky top-24">
             <p className="flex items-center gap-1.5 px-2 text-xs font-semibold tracking-[0.12em] text-muted-foreground">
-              <ListOrdered className="size-3.5" aria-hidden /> 目次
-            </p>
+              <span data-l="ja" lang="ja"><ListOrdered className="size-3.5" aria-hidden /> 目次
+            </span><span data-l="en" lang="en"><ListOrdered className="size-3.5" aria-hidden /> contents</span></p>
             <div className="mt-2">{toc}</div>
           </div>
         </aside>
@@ -173,7 +176,7 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
         <div className="min-w-0">
           {feature.takeaways && feature.takeaways.length > 0 && (
             <section id="points" aria-labelledby="points-title" className="scroll-mt-24 rounded-xl border-l-4 border-seal bg-paper p-5 md:p-7">
-              <h2 id="points-title" className="text-sm font-semibold tracking-[0.12em] text-seal">この特集のポイント</h2>
+              <h2 id="points-title" className="text-sm font-semibold tracking-[0.12em] text-seal"><T m={{ ja: "この特集のポイント", en: "Key points of this feature" }} /></h2>
               <ol className="mt-3 space-y-3">
                 {feature.takeaways.map((t, i) => (
                   <li key={i} className="flex gap-3 text-[1rem] leading-[1.85]">
@@ -188,8 +191,8 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
           {sections.length > 0 && (
             <details className="mt-6 rounded-xl border border-border lg:hidden">
               <summary className="flex min-h-12 cursor-pointer list-none items-center gap-2 px-4 text-sm font-semibold [&::-webkit-details-marker]:hidden">
-                <ListOrdered className="size-4" aria-hidden /> 目次（{sections.length + 1}項目）
-              </summary>
+                <span data-l="ja" lang="ja"><ListOrdered className="size-4" aria-hidden /> 目次（{sections.length + 1}項目）
+              </span><span data-l="en" lang="en"><ListOrdered className="size-4" aria-hidden /> Contents ({sections.length + 1} items)</span></summary>
               <div className="border-t border-border p-2">{toc}</div>
             </details>
           )}
@@ -202,7 +205,7 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
                   return (
                     <h2 key={i} id={`section-${headingIndex}`} className="mt-14 mb-5 scroll-mt-24 border-t border-foreground pt-5 font-serif text-[1.5rem] leading-snug font-semibold first:mt-0 md:text-[1.875rem]">
                       <span className="figures mb-1 block text-sm font-normal text-muted-foreground">{String(headingIndex).padStart(2, "0")}</span>
-                      {block.text}
+                      <L s={block.text} />
                     </h2>
                   );
                 }
@@ -232,12 +235,12 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
                   if (!company) return null;
                   return (
                     <Link key={i} href={`/companies/${company.id}`} className="group my-10 block rounded-xl border border-border bg-paper p-6 transition-shadow hover:shadow-md md:p-8">
-                      <p className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">この特集の企業</p>
+                      <p className="text-xs font-semibold tracking-[0.12em] text-muted-foreground"><T m={{ ja: "この特集の企業", en: "Companies in this feature" }} /></p>
                       {company.shortNameEn && <p className="wordmark mt-2 text-3xl" aria-hidden>{company.shortNameEn}</p>}
-                      <p className="mt-1 font-serif text-xl font-semibold group-hover:underline">{company.name}</p>
-                      <p className="mt-3 text-[0.9375rem] leading-7 text-muted-foreground">{block.text}</p>
+                      <p className="mt-1 font-serif text-xl font-semibold group-hover:underline"><L s={company.name} /></p>
+                      <p className="mt-3 text-[0.9375rem] leading-7 text-muted-foreground"><L s={block.text} /></p>
                       <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium">
-                        企業ページを見る <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+                        <span data-l="ja" lang="ja">企業ページを見る <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span><span data-l="en" lang="en">View company page <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span>
                       </span>
                     </Link>
                   );
@@ -254,30 +257,30 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
 
           {(companies.length > 0 || feature.relatedIndustries.length > 0 || terms.length > 0) && (
             <aside aria-labelledby="feature-explore" className="mt-12 rounded-xl bg-paper p-5 md:p-7">
-              <h2 id="feature-explore" className="font-serif text-lg font-semibold">この特集から調べる</h2>
+              <h2 id="feature-explore" className="font-serif text-lg font-semibold"><T m={{ ja: "この特集から調べる", en: "Explore from this feature" }} /></h2>
               {companies.length > 0 && (
                 <div className="mt-4">
-                  <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">企業</p>
+                  <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground"><T m={{ ja: "企業", en: "Companies" }} /></p>
                   <ul className="mt-2 flex flex-wrap gap-2">
                     {companies.map((c) => (
-                      <li key={c.id}><Link href={`/companies/${c.id}`} className="inline-flex min-h-9 items-center rounded-full border border-border bg-card px-3 text-sm hover:border-foreground">{c.name}</Link></li>
+                      <li key={c.id}><Link href={`/companies/${c.id}`} className="inline-flex min-h-9 items-center rounded-full border border-border bg-card px-3 text-sm hover:border-foreground"><L s={c.name} /></Link></li>
                     ))}
                   </ul>
                 </div>
               )}
               {feature.relatedIndustries.length > 0 && (
                 <div className="mt-4">
-                  <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">業界</p>
+                  <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground"><T m={{ ja: "業界", en: "Industry" }} /></p>
                   <ul className="mt-2 flex flex-wrap gap-2">
                     {feature.relatedIndustries.map((id) => (
-                      <li key={id}><Link href={`/industries/${id}`} className="inline-flex min-h-9 items-center rounded-full border border-border bg-card px-3 text-sm hover:border-foreground">{INDUSTRY_LABELS[id].name}</Link></li>
+                      <li key={id}><Link href={`/industries/${id}`} className="inline-flex min-h-9 items-center rounded-full border border-border bg-card px-3 text-sm hover:border-foreground"><T m={{ ja: INDUSTRY_LABELS[id].name, en: INDUSTRY_LABELS[id].nameEn }} /></Link></li>
                     ))}
                   </ul>
                 </div>
               )}
               {terms.length > 0 && (
                 <div className="mt-4">
-                  <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">用語</p>
+                  <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground"><T m={{ ja: "用語", en: "Terms" }} /></p>
                   <ul className="mt-2 flex flex-wrap gap-2">
                     {terms.map((t) => (
                       <li key={t.id}><Link href={`/terms#${t.id}`} className="inline-flex min-h-9 items-center rounded-full border border-border bg-card px-3 text-sm hover:border-foreground">{t.term}</Link></li>
@@ -293,7 +296,7 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
       {others.length > 0 && (
         <section aria-labelledby="next-features" className="border-t border-border bg-paper py-12 md:py-16">
           <div className="mx-auto max-w-6xl px-5 md:px-8">
-            <h2 id="next-features" className="font-serif text-xl font-semibold md:text-2xl">次に読む特集</h2>
+            <h2 id="next-features" className="font-serif text-xl font-semibold md:text-2xl"><T m={{ ja: "次に読む特集", en: "Next features to read" }} /></h2>
             <ul className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {others.slice(0, 3).map((f) => (
                 <li key={f.id}><FeatureCard feature={f} index={[feature, ...others].findIndex((x) => x.id === f.id)} /></li>

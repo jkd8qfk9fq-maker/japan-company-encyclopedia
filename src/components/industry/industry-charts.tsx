@@ -1,6 +1,9 @@
 import Link from "next/link";
 import type { IndexSeries, IndustryFigures } from "@/lib/industry-figures";
 import { formatYen } from "@/lib/utils/format";
+import { T } from "@/components/i18n/t";
+import { F } from "@/components/i18n/figure";
+import { L } from "@/components/i18n/label";
 
 /**
  * The chart forms of the figures tab (JCE-042), after the look of the operator's economic data book: a row of
@@ -43,7 +46,7 @@ export function Donut({
   hrefOf,
 }: {
   parts: ReturnType<typeof partsOf>;
-  title: string;
+  title: React.ReactNode;
   format: (value: number) => string;
   centre: { value: string; label: string };
   /** Where a part leads: an industry's figures on the hub, a company's page on an industry page. その他 leads nowhere,
@@ -56,7 +59,8 @@ export function Donut({
   // were solid, so with dashes the last circle drawn caught every tap and no part could be opened.
   const starts = parts.map((_, i) => parts.slice(0, i).reduce((acc, q) => acc + q.share, 0));
   const arcs = parts.map((p, i) => ({ ...p, ink: inkOf(i, parts.length, p.id), path: sector(starts[i], starts[i] + p.share, R, W), mid: starts[i] + p.share / 2, href: p.id === "other" || !hrefOf ? null : hrefOf(p.id) }));
-  const label = `${title}。${parts.map((p) => `${p.name} ${percent(p.share)}`).join("、")}`;
+  // A translated title is markup (JCE-124); the screen-reader label then starts from the parts.
+  const label = `${typeof title === "string" ? `${title}。` : ""}${parts.map((p) => `${p.name} ${percent(p.share)}`).join("、")}`;
   return (
     <figure className="m-0 grid items-center gap-6 sm:grid-cols-[11rem_1fr]">
       <svg viewBox="0 0 180 180" role="img" aria-label={label} className="mx-auto h-auto w-44">
@@ -98,7 +102,7 @@ export function Donut({
           {arcs.map((a) => (
             <li key={a.id} className="grid grid-cols-[0.75rem_1fr_auto_3.5em] items-center gap-2 py-0.5">
               <span className="inline-block size-3 rounded-sm" style={{ background: a.ink }} aria-hidden />
-              <span className="truncate">{a.href === null ? a.name : <Link href={a.href} className="hover:underline">{a.name}</Link>}</span>
+              <span className="truncate">{a.href === null ? a.name : <Link href={a.href} className="hover:underline"><L s={a.name} /></Link>}</span>
               <span className="figures text-muted-foreground">{format(a.value)}</span>
               <span className="figures text-right text-muted-foreground">{percent(a.share)}</span>
             </li>
@@ -143,15 +147,15 @@ export function IndexSparkline({ series, reference, width = 220, height = 96 }: 
 }
 
 /** A "latest" card after the data book: the figure, then ▲▼ against a reference, then a line of context. */
-export function FigureCard({ label, value, delta, context }: { label: string; value: string; delta?: { text: string; up: boolean | null } | null; context?: string }) {
+export function FigureCard({ label, value, delta, context }: { label: React.ReactNode; value: string; delta?: { text: string; up: boolean | null } | null; context?: React.ReactNode }) {
   return (
     <div className="border-t border-foreground py-3 pr-3 sm:py-4">
       <p className="text-[0.625rem] leading-4 text-muted-foreground sm:text-xs sm:leading-5">{label}</p>
-      <p className="figures mt-1 font-serif text-[1.375rem] leading-tight font-semibold sm:text-[1.75rem]">{value}</p>
+      <p className="figures mt-1 font-serif text-[1.375rem] leading-tight font-semibold sm:text-[1.75rem]"><F s={value} /></p>
       {delta && (
         <p className="figures mt-1 text-xs" style={delta.up === null ? undefined : { color: delta.up ? "oklch(0.45 0.12 150)" : "oklch(0.5 0.17 25)" }}>
           {delta.up === null ? "" : delta.up ? "▲ " : "▼ "}
-          {delta.text}
+          <L s={delta.text} />
         </p>
       )}
       {context && <p className="figures mt-0.5 text-xs text-muted-foreground">{context}</p>}
@@ -179,14 +183,14 @@ export function PerformanceTable({ industries, reference }: { industries: Indust
       <table className="figures w-full min-w-[36rem] text-sm">
         <thead>
           <tr className="border-b border-foreground text-left text-xs text-muted-foreground">
-            <th className="py-2 pr-3 font-medium">業界</th>
-            <th className="py-2 pr-3 text-right font-medium">企業</th>
-            <th className="py-2 pr-3 text-right font-medium">売上高</th>
-            <th className="py-2 pr-3 text-right font-medium">純利益率</th>
-            <th className="py-2 pr-1 text-right font-medium">vs 全体</th>
-            <th className="py-2 pr-3 text-right font-medium">5期の伸び</th>
-            <th className="py-2 pr-1 text-right font-medium">vs 全体</th>
-            <th className="py-2 text-right font-medium">上位3社</th>
+            <th className="py-2 pr-3 font-medium"><T m={{ ja: "業界", en: "Industry" }} /></th>
+            <th className="py-2 pr-3 text-right font-medium"><T m={{ ja: "企業", en: "Companies" }} /></th>
+            <th className="py-2 pr-3 text-right font-medium"><T m={{ ja: "売上高", en: "Revenue" }} /></th>
+            <th className="py-2 pr-3 text-right font-medium"><T m={{ ja: "純利益率", en: "Net margin" }} /></th>
+            <th className="py-2 pr-1 text-right font-medium"><T m={{ ja: "vs 全体", en: "vs all" }} /></th>
+            <th className="py-2 pr-3 text-right font-medium"><T m={{ ja: "5期の伸び", en: "5-year growth" }} /></th>
+            <th className="py-2 pr-1 text-right font-medium"><T m={{ ja: "vs 全体", en: "vs all" }} /></th>
+            <th className="py-2 text-right font-medium"><T m={{ ja: "上位3社", en: "Top 3 companies" }} /></th>
           </tr>
         </thead>
         <tbody>
@@ -197,22 +201,22 @@ export function PerformanceTable({ industries, reference }: { industries: Indust
               <tr key={i.id} className="border-b border-border">
                 <td className="py-2 pr-3">
                   <Link href={`/industries/${i.id}#figures`} className="hover:underline">
-                    {i.name}
+                    <L s={i.name} />
                   </Link>
                 </td>
                 <td className="py-2 pr-3 text-right">{i.companies}</td>
-                <td className="py-2 pr-3 text-right">{formatYen(i.revenue.total)}</td>
+                <td className="py-2 pr-3 text-right"><F s={formatYen(i.revenue.total)} /></td>
                 <td className="py-2 pr-3 text-right">{i.netProfitMargin ? percent(i.netProfitMargin.value) : "—"}</td>
-                <td className="py-2 pr-1 text-right" style={tone(m.up)}>{m.text}</td>
+                <td className="py-2 pr-1 text-right" style={tone(m.up)}><L s={m.text} /></td>
                 <td className="py-2 pr-3 text-right">{i.revenueGrowth5y ? `${i.revenueGrowth5y.value.toFixed(2)}倍` : "—"}</td>
-                <td className="py-2 pr-1 text-right" style={tone(g.up)}>{g.text}</td>
+                <td className="py-2 pr-1 text-right" style={tone(g.up)}><L s={g.text} /></td>
                 <td className="py-2 text-right">{i.top3Share ? percent(i.top3Share.value) : "—"}</td>
               </tr>
             );
           })}
         </tbody>
       </table>
-      <p className="mt-2 text-xs text-muted-foreground">▲＝全業界の値を上回る　▼＝下回る（良し悪しの判定ではありません）。全業界の純利益率は全社の純利益の合計 ÷ 売上高の合計、5期の伸びは全社の中央値。</p>
+      <p className="mt-2 text-xs text-muted-foreground"><T m={{ ja: "▲＝全業界の値を上回る　▼＝下回る（良し悪しの判定ではありません）。全業界の純利益率は全社の純利益の合計 ÷ 売上高の合計、5期の伸びは全社の中央値。", en: "▲ = above the all-industry value; ▼ = below it (not a judgment of good or bad). The all-industry net margin is total net income of all companies ÷ total revenue; 5-year growth is the median across all companies." }} /></p>
     </div>
   );
 }

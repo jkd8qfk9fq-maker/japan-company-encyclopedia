@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { buildRanking, MIN_COMPANIES, rankingReading, RANKING_IDS, type RankingId } from "@/lib/rankings";
 import { rankingFigures } from "@/lib/rankings-data";
+import { L } from "@/components/i18n/label";
 
 type Props = { params: Promise<{ "ranking-id": string }> };
 
@@ -39,14 +40,14 @@ export default async function RankingPage({ params }: Props) {
   return (
     <div className="mx-auto max-w-4xl px-5 py-10 md:px-8">
       <p className="text-sm"><Link href="/rankings" className="underline underline-offset-2">業界ランキング</Link></p>
-      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">{ranking.title}</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]"><L s={ranking.title} /></h1>
       <p className="mt-2 text-sm text-muted-foreground">{ranking.measure}の大きい順。業界の良し悪しを示すものではありません。</p>
 
       {reading && (
         <section aria-labelledby="reading" className="mt-8">
           <h2 id="reading" className="font-serif text-lg font-semibold">この並びから読み取れること</h2>
           <p className="prose-ja mt-2 text-sm leading-7 text-muted-foreground">
-            首位は{reading.top.name}で、{ranking.format(reading.top.value)}です。順位をつけた{ranking.rows.length}業界の中央値は
+            首位は<L s={reading.top.name} />で、{ranking.format(reading.top.value)}です。順位をつけた{ranking.rows.length}業界の中央値は
             {ranking.format(reading.medianValue)}で、首位との差は{ranking.formatDifference(reading.top.value - reading.medianValue)}あります。対象は
             {ranking.rows.length}業界・計{companies.toLocaleString("ja-JP")}社で、数字はいずれも有価証券報告書の印字値から求めた計算値です。
           </p>
@@ -58,7 +59,7 @@ export default async function RankingPage({ params }: Props) {
           <li key={row.id} className="grid grid-cols-[3rem_minmax(0,1fr)_auto] items-center gap-3 py-3 text-sm">
             <span className="figures text-muted-foreground">{row.rank}位</span>
             <span>
-              <Link href={`/industries/${row.id}`} className="font-medium underline-offset-2 hover:underline">{row.name}</Link>
+              <Link href={`/industries/${row.id}`} className="font-medium underline-offset-2 hover:underline"><L s={row.name} /></Link>
               <span className="mt-1 block h-1.5 rounded-full bg-muted" aria-hidden>
                 <span className="block h-1.5 rounded-full bg-navy" style={{ width: `${max > 0 ? Math.max(2, (Math.abs(row.value) / max) * 100) : 0}%` }} />
               </span>
@@ -82,13 +83,13 @@ export default async function RankingPage({ params }: Props) {
         <h2 id="method" className="font-serif text-lg font-semibold">算出方法</h2>
         <dl className="mt-2 grid gap-2 sm:grid-cols-[8rem_minmax(0,1fr)]">
           <dt className="text-muted-foreground">計算式</dt>
-          <dd>{ranking.formula}</dd>
+          <dd><L s={ranking.formula} /></dd>
           <dt className="text-muted-foreground">対象企業</dt>
           <dd>
             掲載企業{data.totals.companies.toLocaleString("ja-JP")}社のうち、順位をつけた{ranking.rows.length}業界で計{companies.toLocaleString("ja-JP")}社。会社は主な業界1つに数えます。
           </dd>
           <dt className="text-muted-foreground">欠損の扱い</dt>
-          <dd>{ranking.basis}</dd>
+          <dd><L s={ranking.basis} /></dd>
           <dt className="text-muted-foreground">決算期</dt>
           <dd>
             各社の最新期（有価証券報告書）。多い順に{topYears.map(([y, n]) => `${y} ${n.toLocaleString("ja-JP")}社`).join("、")}。決算期が同じ日とは限りません。

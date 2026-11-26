@@ -1,5 +1,7 @@
 import type { FinancialDeepDive as DeepDive, Trend } from "@/lib/financial-deep-dive";
 import { formatYen } from "@/lib/utils/format";
+import { T } from "@/components/i18n/t";
+import { L } from "@/components/i18n/label";
 
 /**
  * 財務の深掘り (JCE-044), drawn on the server: one small chart per reading, the company in ink and the industry
@@ -57,50 +59,50 @@ function TrendChart({ trend }: { trend: Trend }) {
 function Delta({ trend }: { trend: Trend }) {
   const own = [...trend.company].reverse().find((p) => p.value !== null)?.value ?? null;
   const ind = [...trend.industry].reverse().find((p) => p.value !== null)?.value ?? null;
-  if (own === null || ind === null) return <p className="figures mt-1 text-xs text-muted-foreground">業界の値なし</p>;
+  if (own === null || ind === null) return <p className="figures mt-1 text-xs text-muted-foreground"><T m={{ ja: "業界の値なし", en: "No industry value" }} /></p>;
   const diff = own - ind;
   const up = Math.abs(diff) < 1e-9 ? null : diff > 0;
   const shown = trend.unit === "percent" ? `${(Math.abs(diff) * 100).toFixed(1)}pt` : fmt(trend.unit, Math.abs(diff));
   return (
     <p className="figures mt-1 text-xs" style={up === null ? undefined : { color: up ? "oklch(0.45 0.12 150)" : "oklch(0.5 0.17 25)" }}>
-      {up === null ? "業界の中央値と同じ" : `${up ? "▲" : "▼"} ${shown}（vs. 業界の中央値 ${fmt(trend.unit, ind)}）`}
+      {up === null ? <T m={{ ja: "業界の中央値と同じ", en: "Same as industry median" }} /> : `${up ? "▲" : "▼"} ${shown}（vs. 業界の中央値 ${fmt(trend.unit, ind)}）`}
     </p>
   );
 }
 
-const GROUPS: { title: string; lead: string; keys: string[] }[] = [
-  { title: "利益率の推移", lead: "売上のうち、どれだけが利益として残っているか。5期でどちらへ動いているか。", keys: ["net-margin", "profit-margin"] },
-  { title: "財務の健全性", lead: "持っているもののうち、借りたものではなく自分のものがどれだけか。", keys: ["equity-ratio"] },
-  { title: "従業員1人あたり", lead: "働く人ひとりが生む売上と利益。人手で稼ぐ会社か、設備や仕組みで稼ぐ会社か。", keys: ["revenue-per-employee", "net-income-per-employee"] },
-  { title: "規模の推移", lead: "5期前を100として、資産・自己資本・人員がどう動いたか。", keys: ["total-assets-index", "net-assets-index", "employees-index"] },
+const GROUPS: { title: React.ReactNode; lead: React.ReactNode; keys: string[] }[] = [
+  { title: <T m={{ ja: "利益率の推移", en: "Profit margin trends" }} />, lead: <T m={{ ja: "売上のうち、どれだけが利益として残っているか。5期でどちらへ動いているか。", en: "How much of revenue remains as profit, and which way it has moved over 5 fiscal years." }} />, keys: ["net-margin", "profit-margin"] },
+  { title: <T m={{ ja: "財務の健全性", en: "Financial health" }} />, lead: <T m={{ ja: "持っているもののうち、借りたものではなく自分のものがどれだけか。", en: "How much of what the company holds is its own, rather than borrowed." }} />, keys: ["equity-ratio"] },
+  { title: <T m={{ ja: "従業員1人あたり", en: "Per employee" }} />, lead: <T m={{ ja: "働く人ひとりが生む売上と利益。人手で稼ぐ会社か、設備や仕組みで稼ぐ会社か。", en: "Revenue and profit generated per worker. Whether the company earns through people or through equipment and systems." }} />, keys: ["revenue-per-employee", "net-income-per-employee"] },
+  { title: <T m={{ ja: "規模の推移", en: "Scale trends" }} />, lead: <T m={{ ja: "5期前を100として、資産・自己資本・人員がどう動いたか。", en: "How assets, equity and headcount have moved, with 5 fiscal years ago as 100." }} />, keys: ["total-assets-index", "net-assets-index", "employees-index"] },
 ];
 
 export function FinancialDeepDiveBlock({ deepDive }: { deepDive: DeepDive }) {
   const byKey = new Map(deepDive.trends.map((t) => [t.key, t]));
   return (
     <div className="mb-12">
-      <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">財務の深掘り（プレミアム）</h3>
+      <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground"><T m={{ ja: "財務の深掘り（プレミアム）", en: "Financial deep dive (Premium)" }} /></h3>
       <p className="mt-2 text-sm leading-6 text-muted-foreground">
-        5期の数値から、会社の構造がどう動いているかを読む。濃い線がこの会社、薄い線が{deepDive.industryName}業界の掲載企業の中央値（同じ期の位置どうし）。▲▼は最新期の中央値との差で、良し悪しの判定ではありません。
-      </p>
+        <span data-l="ja" lang="ja">5期の数値から、会社の構造がどう動いているかを読む。濃い線がこの会社、薄い線が{deepDive.industryName}業界の掲載企業の中央値（同じ期の位置どうし）。▲▼は最新期の中央値との差で、良し悪しの判定ではありません。
+      </span><span data-l="en" lang="en">Reads how the company&apos;s structure is shifting from 5 fiscal years of figures. The dark line is this company; the light line is the median of listed companies in the {deepDive.industryName} industry (compared at the same point in each fiscal year). ▲▼ show the difference from the latest fiscal year&apos;s median and are not a judgment of good or bad.</span></p>
       {GROUPS.map((group) => {
         const trends = group.keys.map((k) => byKey.get(k)).filter((t): t is Trend => t !== undefined);
         if (trends.length === 0) return null;
         return (
-          <div key={group.title} className="mt-8">
+          <div key={group.keys.join()} className="mt-8">
             <h4 className="font-serif text-lg font-semibold">{group.title}</h4>
             <p className="mt-1 text-sm text-muted-foreground">{group.lead}</p>
             <ul className="mt-4 grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
               {trends.map((trend) => (
                 <li key={trend.key} className="min-w-0">
-                  <p className="text-sm font-medium">{trend.title}</p>
+                  <p className="text-sm font-medium"><L s={trend.title} /></p>
                   <Delta trend={trend} />
                   <div className="mt-2 max-w-xs">
                     <TrendChart trend={trend} />
                   </div>
                   <p className="mt-1 text-xs leading-5 text-muted-foreground">
-                    計算値：{trend.formula}。業界 {trend.industryCompanies}社。
-                  </p>
+                    <span data-l="ja" lang="ja">計算値：<L s={trend.formula} />。業界 {trend.industryCompanies}社。
+                  </span><span data-l="en" lang="en">Computed: <L s={trend.formula} />. Industry: {trend.industryCompanies} companies.</span></p>
                 </li>
               ))}
             </ul>
@@ -108,7 +110,7 @@ export function FinancialDeepDiveBlock({ deepDive }: { deepDive: DeepDive }) {
         );
       })}
       <p className="mt-6 text-xs leading-5 text-muted-foreground">
-        すべて有価証券報告書に印字された同じ年度の数値どうしの割り算です。数値の無い年度は線が途切れ、補っていません。株価にもとづく指標（ROE・PER など）は扱いません。
+        <T m={{ ja: "すべて有価証券報告書に印字された同じ年度の数値どうしの割り算です。数値の無い年度は線が途切れ、補っていません。株価にもとづく指標（ROE・PER など）は扱いません。", en: "All are ratios between figures from the same fiscal year as printed in the annual securities reports. Where a year has no figure, the line breaks and is not filled in. Share price–based indicators (ROE, PER, etc.) are not covered." }} />
       </p>
     </div>
   );

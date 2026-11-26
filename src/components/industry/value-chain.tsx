@@ -8,6 +8,9 @@ import { firstSentence } from "@/lib/rich-text";
 import { cn } from "@/lib/utils";
 import type { Company } from "@/types/company";
 import type { Industry } from "@/types/industry";
+import { T } from "@/components/i18n/t";
+import { ContentText } from "@/components/i18n/content-text";
+import { L } from "@/components/i18n/label";
 
 type Category = Industry["categories"][number];
 
@@ -47,15 +50,15 @@ function StageCard({
         )}
       </div>
       <div className="flex flex-1 flex-col p-4">
-        <h4 className="font-serif text-lg leading-snug font-semibold">{category.name}</h4>
+        <h4 className="font-serif text-lg leading-snug font-semibold"><ContentText text={category.name} /></h4>
         <p className="mt-2 text-[0.8125rem] leading-6">
           <RichText text={firstSentence(category.description)} />
         </p>
         <details className="group mt-1">
           <summary className="inline-flex min-h-9 cursor-pointer list-none items-center gap-1.5 text-xs text-muted-foreground select-none hover:text-foreground [&::-webkit-details-marker]:hidden">
-            <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
+            <span data-l="ja" lang="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
             詳しく
-          </summary>
+          </span><span data-l="en" lang="en"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>Learn more</span></summary>
           <p className="text-[0.8125rem] leading-6">
             <RichText text={category.description} />
           </p>
@@ -70,13 +73,13 @@ function StageCard({
                     href={`/companies/${company.id}`}
                     className="inline-flex min-h-8 items-center rounded-full border border-foreground px-3 text-xs hover:bg-foreground hover:text-background"
                   >
-                    {company.name}
+                    <L s={company.name} />
                   </Link>
                 </li>
               ))}
             </ul>
           ) : (
-            <p className="text-xs text-muted-foreground">掲載企業はまだありません</p>
+            <p className="text-xs text-muted-foreground"><T m={{ ja: "掲載企業はまだありません", en: "No listed companies yet" }} /></p>
           )}
         </div>
       </div>
@@ -85,7 +88,7 @@ function StageCard({
 }
 
 /** One of the bands across the top, cut as a chevron like the reference: where in the chain this column is. */
-function Zone({ label, sub, tone }: { label: string; sub: string; tone: "light" | "dark" }) {
+function Zone({ label, sub, tone }: { label: React.ReactNode; sub: React.ReactNode; tone: "light" | "dark" }) {
   return (
     <div
       className={cn(
@@ -116,7 +119,7 @@ export function ValueChain({ industry, companies }: { industry: Industry; compan
   if (industry.structure !== "chain") {
     return (
       <section aria-label={`${industry.name}業界の事業の分類`}>
-        <Zone label="事業の分類" sub={`${industry.categories.length}つの分野に分けて見る`} tone="dark" />
+        <Zone label={<T m={{ ja: "事業の分類", en: "Business classification" }} />} sub={`${industry.categories.length}つの分野に分けて見る`} tone="dark" />
         <ul className="mt-5 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:pb-0 lg:grid-cols-3">
           {industry.categories.map((category) => (
             <li key={category.id} className="w-[78%] shrink-0 snap-start sm:w-auto">
@@ -136,7 +139,7 @@ export function ValueChain({ industry, companies }: { industry: Industry; compan
     <div className={cn("grid grid-cols-[minmax(0,1fr)] gap-6", inputs.length > 0 && "lg:grid-cols-[minmax(0,1fr)_minmax(0,3.2fr)]")}>
       {inputs.length > 0 && (
         <section aria-label="工程を支える産業" className="order-2 lg:order-1">
-          <Zone label="支える産業" sub="工程で使われる装置・材料" tone="light" />
+          <Zone label={<T m={{ ja: "支える産業", en: "Supporting industries" }} />} sub="工程で使われる装置・材料" tone="light" />
           <ul className="relative mt-5 flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 sm:grid sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:pb-0 lg:grid-cols-1">
             {inputs.map((category, i) => (
               <li key={category.id} className="w-[78%] shrink-0 snap-start sm:w-auto">
@@ -154,7 +157,7 @@ export function ValueChain({ industry, companies }: { industry: Industry; compan
       )}
 
       <section aria-label={`${industry.name}ができるまでの流れ`} className="order-1 lg:order-2">
-        <Zone label="つくる工程" sub={stages.map((s) => s.name.replace(/（.*?）/, "")).join(" → ")} tone="dark" />
+        <Zone label={<T m={{ ja: "つくる工程", en: "Production stages" }} />} sub={stages.map((s) => s.name.replace(/（.*?）/, "")).join(" → ")} tone="dark" />
         {/* A phone swipes along the cards (as the chain reads) instead of scrolling past a column of them. */}
         <ol
           className={cn(

@@ -5,6 +5,7 @@ import { DigestVerifications } from "@/components/engagement/digest-verification
 import { buildDigest, type DigestEvent } from "@/lib/digest";
 import { buildUpdates, type UpdateKind } from "@/lib/engagement-data";
 import { companyRepository, revisionRepository } from "@/lib/repositories";
+import { L } from "@/components/i18n/label";
 
 export const metadata: Metadata = {
   ...TRAINING_APP_METADATA,
@@ -61,7 +62,7 @@ function DigestSection({ title, events, empty }: { title: string; events: Digest
   return (
     <section aria-label={title} className="mt-10">
       <h2 className="font-serif text-[1.375rem] font-semibold">
-        {title}
+        <L s={title} />
         <span className="figures ml-3 text-sm font-normal text-muted-foreground">{events.length} 件</span>
       </h2>
       {events.length === 0 ? (
@@ -77,15 +78,15 @@ function DigestSection({ title, events, empty }: { title: string; events: Digest
                 <Link href={`/companies/${e.companyId}`} className="hover:underline underline-offset-4">
                   {e.companyName}
                 </Link>
-                <span className="ml-2 text-sm font-normal text-muted-foreground">{e.title}</span>
+                <span className="ml-2 text-sm font-normal text-muted-foreground"><L s={e.title} /></span>
               </p>
-              {e.summary && <p className="figures mt-1 text-sm text-muted-foreground">{e.summary}</p>}
+              {e.summary && <p className="figures mt-1 text-sm text-muted-foreground"><L s={e.summary} /></p>}
               <p className="mt-2.5 flex flex-wrap gap-x-4 gap-y-1 text-sm">
                 <Link href={`/companies/${e.companyId}/report`} className="underline underline-offset-2 hover:text-foreground">
                   企業レポート（分析5観点）
                 </Link>
                 <Link href={e.reading.href} className="underline underline-offset-2 hover:text-foreground">
-                  {e.reading.label}
+                  <L s={e.reading.label} />
                 </Link>
               </p>
             </li>

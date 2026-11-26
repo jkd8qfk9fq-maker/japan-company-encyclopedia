@@ -4,6 +4,7 @@ import { Bell, BellRing } from "lucide-react";
 import { useLocalStore } from "@/hooks/use-local-store";
 import { favoritesStore, toggleFavorite } from "@/lib/storage/stores";
 import { cn } from "@/lib/utils";
+import { T } from "@/components/i18n/t";
 
 /**
  * 「フォロー」 (JCE-052; was 「保存」): a company to come back to, and whose new filings appear in お知らせ. Still a
@@ -24,8 +25,8 @@ export function FavoriteButton({ companyId, companyName }: { companyId: string; 
       )}
     >
       {saved ? <BellRing className="size-4" aria-hidden /> : <Bell className="size-4" aria-hidden />}
-      {saved ? "フォロー中" : "フォロー"}
-      <span className="sr-only">：{companyName}（新しい決算をお知らせに表示）</span>
+      {saved ? <T m={{ ja: "フォロー中", en: "Following" }} /> : <T m={{ ja: "フォロー", en: "Follow" }} />}
+      <span className="sr-only"><span data-l="ja" lang="ja">：{companyName}（新しい決算をお知らせに表示）</span><span data-l="en" lang="en">: {companyName} (new earnings shown in notifications)</span></span>
     </button>
   );
 }

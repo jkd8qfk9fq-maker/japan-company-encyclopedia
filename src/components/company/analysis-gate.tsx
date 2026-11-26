@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ANALYSIS_FEATURES_OPEN, analysisEntitled, applyPlan, checkPlan, isValidCode, usePlan } from "@/lib/plan";
+import { T } from "@/components/i18n/t";
 
 /**
  * The gate of the analysis layer (JCE-078), opened by JCE-101 (SaaS Step 2). The free part of
@@ -41,7 +42,7 @@ function CodeEntryForm({ id, entry }: { id: string; entry: ReturnType<typeof use
     <>
       <form onSubmit={entry.submit} className="mt-4 flex max-w-md flex-wrap items-center gap-2">
         <label htmlFor={id} className="sr-only">
-          購入コード
+          <T m={{ ja: "購入コード", en: "Purchase code" }} />
         </label>
         <input
           id={id}
@@ -57,11 +58,11 @@ function CodeEntryForm({ id, entry }: { id: string; entry: ReturnType<typeof use
           disabled={!isValidCode(entry.code) || entry.status === "sending"}
           className="rounded-md bg-foreground px-4 py-2 text-sm text-background disabled:opacity-50"
         >
-          {entry.status === "sending" ? "確認中…" : "コードで開く"}
+          {entry.status === "sending" ? <T m={{ ja: "確認中…", en: "Checking…" }} /> : <T m={{ ja: "コードで開く", en: "Open with code" }} />}
         </button>
       </form>
-      {entry.status === "inactive" && <p className="mt-2 text-xs text-muted-foreground">このコードは、いま有効ではありません。</p>}
-      {entry.status === "error" && <p className="mt-2 text-xs text-muted-foreground">確認できませんでした。しばらくしてからもう一度お試しください。</p>}
+      {entry.status === "inactive" && <p className="mt-2 text-xs text-muted-foreground"><T m={{ ja: "このコードは、いま有効ではありません。", en: "This code is not currently valid." }} /></p>}
+      {entry.status === "error" && <p className="mt-2 text-xs text-muted-foreground"><T m={{ ja: "確認できませんでした。しばらくしてからもう一度お試しください。", en: "Could not verify. Please try again later." }} /></p>}
     </>
   );
 }
@@ -74,13 +75,13 @@ export function AnalysisGate({ children }: { children: React.ReactNode }) {
     return (
       <div className="rounded-md border border-border bg-paper p-5 print:hidden md:p-6">
         <p className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">ANALYSIS</p>
-        <h3 className="mt-1 font-serif text-lg font-semibold">分析の詳細（分布・推移・経済指標）</h3>
+        <h3 className="mt-1 font-serif text-lg font-semibold"><T m={{ ja: "分析の詳細（分布・推移・経済指標）", en: "Analysis details (distribution, trends, economic indicators)" }} /></h3>
         <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
-          各観点の要点（自社の値と業界の中央値）は上の表で無料で公開しています。「この会社の今」の答え、分布の全体像（四分位・順位・パーセンタイル）、複数期の推移、業界に対応づけた経済指標との接続は、分析レイヤーとして提供を準備しています。販売の形が決まり次第、この場所で案内します。
+          <T m={{ ja: "各観点の要点（自社の値と業界の中央値）は上の表で無料で公開しています。「この会社の今」の答え、分布の全体像（四分位・順位・パーセンタイル）、複数期の推移、業界に対応づけた経済指標との接続は、分析レイヤーとして提供を準備しています。販売の形が決まり次第、この場所で案内します。", en: "The key points for each perspective (the company's value and the industry median) are free in the table above. The answer to \"This Company Now,\" the full distribution (quartiles, rank, percentile), multi-year trends, and links to economic indicators mapped to the industry are being prepared as an analysis layer. We will announce details here once the sales format is decided." }} />
         </p>
         <p className="mt-3 text-sm">
           <Link href="/analysis" className="underline underline-offset-4">
-            分析の考え方と5観点について
+            <T m={{ ja: "分析の考え方と5観点について", en: "About the analysis approach and the 5 perspectives" }} />
           </Link>
         </p>
       </div>
@@ -92,17 +93,17 @@ export function AnalysisGate({ children }: { children: React.ReactNode }) {
   return (
     <div className="rounded-md border border-border bg-paper p-5 print:hidden md:p-6">
       <p className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">ANALYSIS</p>
-      <h3 className="mt-1 font-serif text-lg font-semibold">分析の詳細（分布・推移・経済指標）</h3>
+      <h3 className="mt-1 font-serif text-lg font-semibold"><T m={{ ja: "分析の詳細（分布・推移・経済指標）", en: "Analysis details (distribution, trends, economic indicators)" }} /></h3>
       <p className="mt-2 max-w-2xl text-sm leading-6 text-muted-foreground">
-        各観点の要点（自社の値と業界の中央値）は上の表で無料で公開しています。分布の全体像（四分位・順位・パーセンタイル）、複数期の推移、業界に対応づけた経済指標との接続と、分析を含むレポート全体の印刷・PDF保存は、有効な購入コードをお持ちの方の範囲です。冒頭の「この会社の今」の答えも、同じコードで開きます。コードを入力すると、このブラウザで全分析が開きます。
+        <T m={{ ja: "各観点の要点（自社の値と業界の中央値）は上の表で無料で公開しています。分布の全体像（四分位・順位・パーセンタイル）、複数期の推移、業界に対応づけた経済指標との接続と、分析を含むレポート全体の印刷・PDF保存は、有効な購入コードをお持ちの方の範囲です。冒頭の「この会社の今」の答えも、同じコードで開きます。コードを入力すると、このブラウザで全分析が開きます。", en: "The key points for each perspective (the company's value and the industry median) are free in the table above. The full distribution (quartiles, rank, percentile), multi-year trends, links to economic indicators mapped to the industry, and printing or saving the entire report, including the analysis, as a PDF are available to those with a valid purchase code. The answer to \"This Company Now\" at the top opens with the same code. Enter the code to open the full analysis in this browser." }} />
       </p>
       <CodeEntryForm id="analysis-plan-code" entry={entry} />
       <p className="mt-3 text-xs leading-5 text-muted-foreground">
-        購入コードは、権利の確認のためだけに送信され、このブラウザに保存されます。氏名や閲覧の記録は送られません。
+        <T m={{ ja: "購入コードは、権利の確認のためだけに送信され、このブラウザに保存されます。氏名や閲覧の記録は送られません。", en: "The purchase code is sent only to verify entitlement and is saved in this browser. Your name and browsing history are not sent." }} />
       </p>
       <p className="mt-3 text-sm">
         <Link href="/analysis" className="underline underline-offset-4">
-          分析の考え方と5観点について
+          <T m={{ ja: "分析の考え方と5観点について", en: "About the analysis approach and the 5 perspectives" }} />
         </Link>
       </p>
     </div>
@@ -129,7 +130,7 @@ export function MeaningGate({ children, fallback }: { children: React.ReactNode;
       {fallback}
       <CodeEntryForm id="meaning-plan-code" entry={entry} />
       <p className="mt-3 text-xs leading-5 text-muted-foreground">
-        購入コードは、権利の確認のためだけに送信され、このブラウザに保存されます。氏名や閲覧の記録は送られません。
+        <T m={{ ja: "購入コードは、権利の確認のためだけに送信され、このブラウザに保存されます。氏名や閲覧の記録は送られません。", en: "The purchase code is sent only to verify entitlement and is saved in this browser. Your name and browsing history are not sent." }} />
       </p>
     </div>
   );

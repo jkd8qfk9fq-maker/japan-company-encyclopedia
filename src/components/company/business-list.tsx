@@ -4,18 +4,26 @@ import { firstSentence } from "@/lib/rich-text";
 import type { Business } from "@/types/company";
 import type { Source } from "@/types/source";
 import { SegmentMark, segmentTone, structureBranches } from "./business-structure";
+import { T } from "@/components/i18n/t";
+import { ContentText } from "@/components/i18n/content-text";
+import { L } from "@/components/i18n/label";
 
 const MAX_ITEMS = 4;
 
-function Items({ label, items }: { label: string; items?: string[] }) {
+function Items({ label, items }: { label: React.ReactNode; items?: string[] }) {
   if (!items || items.length === 0) return null;
   return (
     <div className="text-xs leading-6">
       <dt className="text-muted-foreground">{label}</dt>
       <dd className="text-foreground">
         {/* Plain text through RichText so the glossary words in a product name are explained too. */}
-        <RichText text={items.slice(0, MAX_ITEMS).join(" ・ ")} />
-        {items.length > MAX_ITEMS && <span className="figures text-muted-foreground"> ほか{items.length - MAX_ITEMS}件</span>}
+        {items.slice(0, MAX_ITEMS).map((item, i) => (
+          <span key={i}>
+            {i > 0 && " ・ "}
+            <RichText text={item} />
+          </span>
+        ))}
+        {items.length > MAX_ITEMS && <span className="figures text-muted-foreground"> <span data-l="ja" lang="ja">ほか{items.length - MAX_ITEMS}件</span><span data-l="en" lang="en">{items.length - MAX_ITEMS} more</span></span>}
       </dd>
     </div>
   );
@@ -26,7 +34,7 @@ function SubBusinesses({ items }: { items: Business[] }) {
     <ul className="mt-4 space-y-4 border-l border-border pl-4">
       {items.map((child) => (
         <li key={child.id}>
-          <p className="font-serif font-semibold">{child.name}</p>
+          <p className="font-serif font-semibold"><ContentText text={child.name} /></p>
           <p className="mt-1 text-sm leading-7">
             <RichText text={child.description} />
           </p>
@@ -50,8 +58,8 @@ export function BusinessList({ businesses, sources }: { businesses: Business[]; 
     <div>
       {via && (
         <p className="mb-5 text-sm leading-7 text-muted-foreground">
-          報告セグメントは「{via.name}」の1つです。下はその中の事業です。
-        </p>
+          <span data-l="ja" lang="ja">報告セグメントは「<L s={via.name} />」の1つです。下はその中の事業です。
+        </span><span data-l="en" lang="en">The reportable segment is one: &quot;<L s={via.name} />&quot;. Below are the businesses within it.</span></p>
       )}
       {/* Four across at most: five or six businesses make two even rows of three rather than four and a straggler. */}
       <ol className={`grid gap-4 sm:grid-cols-2 ${branches.length === 4 ? "lg:grid-cols-4" : branches.length >= 3 ? "lg:grid-cols-3" : ""}`}>
@@ -63,23 +71,23 @@ export function BusinessList({ businesses, sources }: { businesses: Business[]; 
               <span aria-hidden className="block h-1.5" style={{ background: segmentTone(index) ?? "var(--border)" }} />
               <div className="flex flex-1 flex-col p-5">
                 <div className="flex items-center justify-between gap-3">
-                  <h3 className="font-serif text-xl leading-snug font-semibold">{business.name}</h3>
+                  <h3 className="font-serif text-xl leading-snug font-semibold"><ContentText text={business.name} /></h3>
                   <SegmentMark index={index} />
                 </div>
                 <p className="mt-3 text-sm leading-7">
                   <RichText text={short} />
                 </p>
                 <dl className="mt-3 space-y-1">
-                  <Items label="製品・サービス" items={business.products} />
-                  <Items label="顧客" items={business.customers} />
+                  <Items label={<T m={{ ja: "製品・サービス", en: "Products and services" }} />} items={business.products} />
+                  <Items label={<T m={{ ja: "顧客", en: "Customers" }} />} items={business.customers} />
                 </dl>
                 <div className="mt-auto pt-3">
                   {hasMore && (
                     <details className="group">
                       <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 text-sm text-muted-foreground select-none hover:text-foreground [&::-webkit-details-marker]:hidden">
-                        <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
+                        <span data-l="ja" lang="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
                         詳しく読む
-                      </summary>
+                      </span><span data-l="en" lang="en"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>Read more</span></summary>
                       <p className="mt-2 text-sm leading-7">
                         <RichText text={business.description} />
                       </p>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CompareTool } from "@/components/compare/compare-tool";
+import { L } from "@/components/i18n/label";
 
 export const metadata: Metadata = {
   title: "企業を見比べる",
@@ -25,7 +26,7 @@ export default function ComparePage() {
           { label: "小売3社", ids: "seven-and-i-holdings,aeon,fast-retailing" },
         ].map((preset) => (
           <a key={preset.ids} href={`/compare?ids=${preset.ids}`} className="inline-flex min-h-9 items-center rounded-full border border-border bg-card px-3 hover:border-foreground">
-            {preset.label}
+            <L s={preset.label} />
           </a>
         ))}
       </p>

@@ -14,6 +14,9 @@ import {
 import { formatDateJa } from "@/lib/utils/format";
 import { SITE_NAME } from "@/lib/site";
 import type { Indicator } from "@/types/indicator";
+import { F } from "@/components/i18n/figure";
+import { T } from "@/components/i18n/t";
+import { L } from "@/components/i18n/label";
 
 /*
  * One page per indicator (JCE-078 §4) — the only per-indicator route; the count grows with the
@@ -80,13 +83,13 @@ export default async function IndicatorPage({ params }: PageProps<"/indicators/[
           ← 企業分析（5観点）へ
         </Link>
       </p>
-      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">{indicator.name}</h1>
+      <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]"><L s={indicator.name} /></h1>
       <p className="mt-2 text-sm leading-6 text-muted-foreground">
         出典:{" "}
         <a href={indicator.source.url} target="_blank" rel="noopener" className="underline underline-offset-4">
-          {indicator.source.name}
+          <L s={indicator.source.name} />
         </a>
-        ・単位: {indicator.unit}・頻度: {indicator.frequency === "monthly" ? "月次" : "四半期"}・スナップショット時点: {formatDateJa(indicator.updatedAt)}
+        ・単位: <L s={indicator.unit} />・頻度: {indicator.frequency === "monthly" ? "月次" : "四半期"}・スナップショット時点: <F s={formatDateJa(indicator.updatedAt)} />
       </p>
       <p className="mt-3 max-w-2xl text-sm leading-6 text-muted-foreground">
         公表された値をそのまま収録したものです。この指標は企業を取り巻く環境を示すもので、特定の会社や業界の業績を予測するものではありません。
@@ -97,14 +100,14 @@ export default async function IndicatorPage({ params }: PageProps<"/indicators/[
           <h2 className="font-serif text-lg font-semibold">最新の値</h2>
           <p className="figures mt-2 text-2xl font-semibold">
             {formatIndicatorValue(indicator, latest.value)}
-            <span className="ml-1 text-base font-normal">{indicator.unit}</span>
+            <span className="ml-1 text-base font-normal"><L s={indicator.unit} /></span>
           </p>
           <p className="mt-1 text-sm text-muted-foreground">
             {observationPeriodLabel(indicator, latest.date)}
             {previous && (
               <>
                 ・前回（{observationPeriodLabel(indicator, previous.date)}）: {formatIndicatorValue(indicator, previous.value)}
-                {indicator.unit}
+                <L s={indicator.unit} />
                 {change !== null && (
                   <>
                     ・前回比 {(change * 100).toFixed(1).replace("-", "−")}%（計算値: 最新値 ÷ 前回値 − 1）
@@ -124,7 +127,7 @@ export default async function IndicatorPage({ params }: PageProps<"/indicators/[
             <thead>
               <tr className="border-b border-foreground/40 text-left">
                 <th scope="col" className="py-2 pr-6 font-medium">期間</th>
-                <th scope="col" className="py-2 text-right font-medium">値（{indicator.unit}）</th>
+                <th scope="col" className="py-2 text-right font-medium">値（<L s={indicator.unit} />）</th>
               </tr>
             </thead>
             <tbody>
@@ -149,9 +152,9 @@ export default async function IndicatorPage({ params }: PageProps<"/indicators/[
             {related.map(({ industryId, note }) => (
               <li key={industryId}>
                 <Link href={`/industries/${industryId}`} className="underline underline-offset-4">
-                  {INDUSTRY_LABELS[industryId].name}
+                  <T m={{ ja: INDUSTRY_LABELS[industryId].name, en: INDUSTRY_LABELS[industryId].nameEn }} />
                 </Link>
-                <span className="block text-muted-foreground">{note}</span>
+                <span className="block text-muted-foreground"><L s={note} /></span>
               </li>
             ))}
           </ul>

@@ -2,6 +2,9 @@ import { RELATIONSHIP_LABEL } from "./related-companies";
 import { segmentShares } from "@/lib/strategy";
 import { formatYenAxis } from "@/lib/utils/format";
 import type { Company, FinancialRecord, RelationshipKind } from "@/types/company";
+import { T } from "@/components/i18n/t";
+import { F } from "@/components/i18n/figure";
+import { L } from "@/components/i18n/label";
 
 /**
  * The company's first-view dashboard (2026-11-23 redesign, after the operator's mockup): the five years as one small
@@ -47,20 +50,20 @@ function TrendChart({ records }: { records: FinancialRecord[] }) {
         <span className="flex items-center gap-2.5">
           <span className="inline-flex items-center gap-1">
             <span aria-hidden className="size-2 rounded-[2px] bg-(--chart-revenue)" />
-            {last.revenueLabel}
+            <L s={last.revenueLabel} />
           </span>
           <span className="inline-flex items-center gap-1">
-            <span aria-hidden className="size-2 rounded-full bg-(--chart-net-income)" />
+            <span data-l="ja" lang="ja"><span aria-hidden className="size-2 rounded-full bg-(--chart-net-income)" />
             純利益（別の目盛り）
-          </span>
+          </span><span data-l="en" lang="en"><span aria-hidden className="size-2 rounded-full bg-(--chart-net-income)" />Net income (separate scale)</span></span>
         </span>
-        <span className="figures">{years.length}期</span>
+        <span className="figures"><span data-l="ja" lang="ja">{years.length}期</span><span data-l="en" lang="en">Fiscal year {years.length}</span></span>
       </figcaption>
       {/* The first and latest revenue as text, not on the bars: a label inside a bar fails on a thin one. */}
       <p className="figures mt-1 text-xs">
-        <span className="text-muted-foreground">{years[0]!.fiscalYear}</span> {formatYenAxis(years[0]!.revenue!)}
+        <span className="text-muted-foreground"><F s={years[0]!.fiscalYear} /></span> <F s={formatYenAxis(years[0]!.revenue!)} />
         <span className="mx-1 text-muted-foreground">→</span>
-        <span className="text-muted-foreground">{last.fiscalYear}</span> <span className="font-semibold">{formatYenAxis(last.revenue!)}</span>
+        <span className="text-muted-foreground"><F s={last.fiscalYear} /></span> <span className="font-semibold"><F s={formatYenAxis(last.revenue!)} /></span>
       </p>
       <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`${years[0]!.fiscalYear}から${last.fiscalYear}までの${last.revenueLabel}と純利益`} className="mt-1 h-auto max-h-44 w-full">
         <line x1={left} x2={W - right} y1={top + plotH} y2={top + plotH} stroke="currentColor" strokeOpacity={0.25} />
@@ -114,7 +117,7 @@ function Composition({ company }: { company: Company }) {
         {items.map((item, i) => (
           <li key={item.name} className="flex items-center gap-1.5">
             <span aria-hidden className="size-2 shrink-0 rounded-full" style={{ background: `var(--segment-${(i % 6) + 1})` }} />
-            <span className="min-w-0 flex-1 truncate">{item.name}</span>
+            <span className="min-w-0 flex-1 truncate"><L s={item.name} /></span>
             <span className="figures shrink-0 tabular-nums">{item.percent}%</span>
           </li>
         ))}
@@ -136,7 +139,7 @@ export function CompanySnapshot({ company, related }: { company: Company; relate
     <div className="mt-3 grid gap-2.5 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
       {hasChart && (
         <a href="#financials" className="block rounded-lg border border-border bg-card p-3 transition-colors hover:border-foreground/40">
-          <p className="seal-mark text-[0.8125rem] font-semibold">業績の推移（連結）</p>
+          <p className="seal-mark text-[0.8125rem] font-semibold"><T m={{ ja: "業績の推移（連結）", en: "Performance trends (consolidated)" }} /></p>
           <div className="mt-1.5">
             <TrendChart records={company.financials} />
           </div>
@@ -146,16 +149,16 @@ export function CompanySnapshot({ company, related }: { company: Company; relate
         <div className="grid gap-2.5 sm:grid-cols-2 md:grid-cols-1">
           {shares && (
             <a href="#business" className="block rounded-lg border border-border bg-card p-3 transition-colors hover:border-foreground/40">
-              <p className="seal-mark text-[0.8125rem] font-semibold">事業の構成</p>
+              <p className="seal-mark text-[0.8125rem] font-semibold"><T m={{ ja: "事業の構成", en: "Business breakdown" }} /></p>
               <p className="mt-0.5 mb-1.5 text-[0.625rem] text-muted-foreground">
-                {shares.label}・{shares.fiscalYear}（計算値）
-              </p>
+                <span data-l="ja" lang="ja"><L s={shares.label} />・<F s={shares.fiscalYear} />（計算値）
+              </span><span data-l="en" lang="en"><L s={shares.label} /> · <F s={shares.fiscalYear} /> (computed)</span></p>
               <Composition company={company} />
             </a>
           )}
           {ties.length > 0 && (
             <a href="#connections" className="flex flex-col rounded-lg border border-border bg-card p-3 transition-colors hover:border-foreground/40">
-              <p className="seal-mark text-[0.8125rem] font-semibold">関連企業</p>
+              <p className="seal-mark text-[0.8125rem] font-semibold"><T m={{ ja: "関連企業", en: "Related companies" }} /></p>
               <ul className="mt-1.5 space-y-1 text-xs">
                 {ties.slice(0, 3).map((t) => (
                   <li key={`${t.companyId}-${t.relationship}`} className="min-w-0">
@@ -164,7 +167,7 @@ export function CompanySnapshot({ company, related }: { company: Company; relate
                   </li>
                 ))}
               </ul>
-              <span className="mt-auto pt-1.5 text-[0.6875rem] text-ink">全{ties.length}件を見る →</span>
+              <span className="mt-auto pt-1.5 text-[0.6875rem] text-ink"><span data-l="ja" lang="ja">全{ties.length}件を見る →</span><span data-l="en" lang="en">See all {ties.length} →</span></span>
             </a>
           )}
         </div>

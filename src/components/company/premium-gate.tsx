@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { applyPlan, checkPlan, isValidCode, PLAN_PAGE, PLAN_TRIAL_DAYS, PREMIUM_FEATURES_OPEN, startCheckout, usePlan } from "@/lib/plan";
+import { T } from "@/components/i18n/t";
 
 /**
  * Wraps a part of the page that belongs to the YUGENQ premium plan (JCE-043). The static HTML always holds the
@@ -16,8 +17,8 @@ export function PremiumGate({
   returnAnchor = "financials",
   children,
 }: {
-  title: string;
-  teaser: string;
+  title: React.ReactNode;
+  teaser: React.ReactNode;
   /** Where on this page the buyer lands after paying: the company page's 財務, or an industry's 数字 (JCE-051). The
    * query is kept, so the 見比べ page (JCE-061) returns with the same companies. */
   returnAnchor?: string;
@@ -62,26 +63,30 @@ export function PremiumGate({
           disabled={buying === "sending"}
           className="rounded-md bg-foreground px-5 py-2.5 text-sm font-medium text-background disabled:opacity-50"
         >
-          {buying === "sending" ? "お支払い画面へ…" : PLAN_TRIAL_DAYS > 0 ? `${PLAN_TRIAL_DAYS}日間無料で試す（その後 月額390円）` : "プレミアムプランに申し込む（月額390円）"}
+          {buying === "sending" ? <T m={{ ja: "お支払い画面へ…", en: "Going to payment…" }} /> : PLAN_TRIAL_DAYS > 0 ? `${PLAN_TRIAL_DAYS}日間無料で試す（その後 月額390円）` : "プレミアムプランに申し込む（月額390円）"}
         </button>
-        <span className="text-xs text-muted-foreground">お支払いは Stripe の画面で。済むとこのページに戻ります。</span>
+        <span className="text-xs text-muted-foreground"><T m={{ ja: "お支払いは Stripe の画面で。済むとこのページに戻ります。", en: "Payment is made on the Stripe screen. You'll return to this page when it's done." }} /></span>
       </div>
-      {buying === "error" && <p className="mt-2 text-xs text-muted-foreground">いまは申し込みの画面を開けませんでした。しばらくしてからもう一度お試しください。</p>}
+      {buying === "error" && <p className="mt-2 text-xs text-muted-foreground"><T m={{ ja: "いまは申し込みの画面を開けませんでした。しばらくしてからもう一度お試しください。", en: "We couldn't open the sign-up screen right now. Please try again later." }} /></p>}
       <p className="mt-3 text-sm leading-6">
-        プレミアムプラン（月額390円・税込）は、企業タイプ診断・最初の一社と共通です。
+        <span data-l="ja" lang="ja">プレミアムプラン（月額390円・税込）は、企業タイプ診断・最初の一社と共通です。
         {PLAN_TRIAL_DAYS > 0 && `はじめの${PLAN_TRIAL_DAYS}日間は無料で、その間に解約すれば料金はかかりません。`}
         <a href={PLAN_PAGE} className="ml-1 underline underline-offset-2 hover:text-foreground" target="_blank" rel="noopener">
-          プランの内容と申し込み
+          <T m={{ ja: "プランの内容と申し込み", en: "Plan details and sign-up" }} />
         </a>
         ・すでに申し込んだ方は
         <a href={`${PLAN_PAGE}#recover`} className="ml-1 underline underline-offset-2 hover:text-foreground" target="_blank" rel="noopener">
-          メールで復元
+          <T m={{ ja: "メールで復元", en: "Restore by email" }} />
         </a>
         （開いたあと、このページを再読み込みしてください）
-      </p>
+      </span><span data-l="en" lang="en">The Premium plan (¥390 per month, tax included) is shared with the Company Type Quiz and First Company. {PLAN_TRIAL_DAYS > 0 && `はじめの${PLAN_TRIAL_DAYS}日間は無料で、その間に解約すれば料金はかかりません。`}<a href={PLAN_PAGE} className="ml-1 underline underline-offset-2 hover:text-foreground" target="_blank" rel="noopener">
+          <T m={{ ja: "プランの内容と申し込み", en: "Plan details and sign-up" }} />
+        </a>. If you&apos;ve already signed up, <a href={`${PLAN_PAGE}#recover`} className="ml-1 underline underline-offset-2 hover:text-foreground" target="_blank" rel="noopener">
+          <T m={{ ja: "メールで復元", en: "Restore by email" }} />
+        </a> (then reload this page)</span></p>
       <form onSubmit={submit} className="mt-4 flex max-w-md flex-wrap items-center gap-2">
         <label htmlFor="plan-code" className="sr-only">
-          購入コード
+          <T m={{ ja: "購入コード", en: "Purchase code" }} />
         </label>
         <input
           id="plan-code"
@@ -97,13 +102,13 @@ export function PremiumGate({
           disabled={!isValidCode(code) || status === "sending"}
           className="rounded-md bg-foreground px-4 py-2 text-sm text-background disabled:opacity-50"
         >
-          {status === "sending" ? "確認中…" : "コードで開く"}
+          {status === "sending" ? <T m={{ ja: "確認中…", en: "Checking…" }} /> : <T m={{ ja: "コードで開く", en: "Open with code" }} />}
         </button>
       </form>
-      {status === "inactive" && <p className="mt-2 text-xs text-muted-foreground">このコードのプランは、いま有効ではありません。</p>}
-      {status === "error" && <p className="mt-2 text-xs text-muted-foreground">確認できませんでした。しばらくしてからもう一度お試しください。</p>}
+      {status === "inactive" && <p className="mt-2 text-xs text-muted-foreground"><T m={{ ja: "このコードのプランは、いま有効ではありません。", en: "The plan for this code is not currently active." }} /></p>}
+      {status === "error" && <p className="mt-2 text-xs text-muted-foreground"><T m={{ ja: "確認できませんでした。しばらくしてからもう一度お試しください。", en: "Could not verify. Please try again later." }} /></p>}
       <p className="mt-3 text-xs leading-5 text-muted-foreground">
-        購入コードは、プランの確認のためだけに送信され、このブラウザに保存されます。氏名や閲覧の記録は送られません。
+        <T m={{ ja: "購入コードは、プランの確認のためだけに送信され、このブラウザに保存されます。氏名や閲覧の記録は送られません。", en: "The purchase code is sent only to verify your plan and is saved in this browser. Your name and browsing history are not sent." }} />
       </p>
     </div>
   );

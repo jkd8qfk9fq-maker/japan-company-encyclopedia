@@ -7,7 +7,7 @@ import { useId, useState } from "react";
  * chosen one is shown. Client-side because choosing is an interaction; the charts themselves stay server SVG, and
  * every panel is in the HTML, so nothing is fetched when a tab is chosen.
  */
-export function ChartTabs({ tabs, children }: { tabs: { id: string; label: string }[]; children: React.ReactNode[] }) {
+export function ChartTabs({ tabs, children }: { tabs: { id: string; label: React.ReactNode }[]; children: React.ReactNode[] }) {
   const [active, setActive] = useState(0);
   const base = useId();
   return (

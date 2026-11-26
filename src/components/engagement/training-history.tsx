@@ -9,6 +9,7 @@ import { METRIC_LABELS, verifyPrediction, type PredictionData } from "@/lib/pred
 import { REVIEW_INTERVALS_DAYS } from "@/lib/review-queue";
 import { jstToday, microProgressStore, predictionsStore } from "@/lib/storage/stores";
 import { loadLessons, loadPredictions } from "./load";
+import { F } from "@/components/i18n/figure";
 
 /**
  * The training record (JCE-083): STEP 5, the accumulation. Two things are shown, both as plain facts —
@@ -185,7 +186,7 @@ export function TrainingHistory() {
                 ].map((s) => (
                   <div key={s.label} className="rounded-md border border-border bg-card p-4 text-center">
                     <dt className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">{s.label}</dt>
-                    <dd className="mt-1 text-lg font-bold">{s.value}</dd>
+                    <dd className="mt-1 text-lg font-bold"><F s={s.value} /></dd>
                   </div>
                 ))}
               </dl>

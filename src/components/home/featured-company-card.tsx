@@ -5,6 +5,8 @@ import { chartRecords, latestRecord } from "@/lib/home";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
 import { formatYen, formatYenAxis } from "@/lib/utils/format";
 import type { Company } from "@/types/company";
+import { F } from "@/components/i18n/figure";
+import { L } from "@/components/i18n/label";
 
 const WIDTH = 440;
 const HEIGHT = 200;
@@ -34,7 +36,7 @@ export function FeaturedCompanyCard({ company }: { company: Company }) {
             href={`/companies/${company.id}`}
             className="outline-offset-4 after:absolute after:inset-0 group-hover:underline group-hover:underline-offset-4"
           >
-            {company.name}
+            <L s={company.name} />
           </Link>
         </h3>
         <p className="figures mt-1 text-sm text-muted-foreground">
@@ -48,14 +50,14 @@ export function FeaturedCompanyCard({ company }: { company: Company }) {
             <dl className="grid grid-cols-2 gap-4">
               <div>
                 <dt className="text-xs text-muted-foreground">売上高</dt>
-                <dd className="figures mt-1 font-serif text-[1.125rem] font-semibold whitespace-nowrap">{formatYen(latest.revenue)}</dd>
+                <dd className="figures mt-1 font-serif text-[1.125rem] font-semibold whitespace-nowrap"><F s={formatYen(latest.revenue)} /></dd>
               </div>
               <div>
                 <dt className="text-xs text-muted-foreground">純利益</dt>
-                <dd className="figures mt-1 font-serif text-[1.125rem] font-semibold whitespace-nowrap">{formatYen(latest.netIncome)}</dd>
+                <dd className="figures mt-1 font-serif text-[1.125rem] font-semibold whitespace-nowrap"><F s={formatYen(latest.netIncome)} /></dd>
               </div>
             </dl>
-            <p className="mt-2 text-xs text-muted-foreground">{latest.fiscalYear}</p>
+            <p className="mt-2 text-xs text-muted-foreground"><F s={latest.fiscalYear} /></p>
           </div>
         )}
       </div>

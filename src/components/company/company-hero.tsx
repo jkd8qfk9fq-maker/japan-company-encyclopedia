@@ -16,6 +16,9 @@ import { CompanyMark } from "./company-mark";
 import { CompanySnapshot } from "./company-snapshot";
 import { ShareActions } from "./share-actions";
 import { PushCompanyToggle } from "@/components/engagement/push-controls";
+import { T } from "@/components/i18n/t";
+import { ContentText } from "@/components/i18n/content-text";
+import { L } from "@/components/i18n/label";
 
 const EXCHANGE_NAME: Record<Company["listings"][number]["exchange"], string> = {
   tse: "東証",
@@ -23,6 +26,19 @@ const EXCHANGE_NAME: Record<Company["listings"][number]["exchange"], string> = {
   fse: "福証",
   sse: "札証",
 };
+const EXCHANGE_NAME_EN: Record<Company["listings"][number]["exchange"], string> = {
+  tse: "TSE",
+  nse: "NSE",
+  fse: "FSE",
+  sse: "SSE",
+};
+/** The market segment as the exchanges name it in English; an unknown spelling is shown as printed. */
+function marketEn(market: string | undefined | null): string {
+  if (!market) return "";
+  const m = market.normalize("NFKC").replace(/市場$/, "");
+  const names: Record<string, string> = { プライム: "Prime", スタンダード: "Standard", グロース: "Growth", プレミア: "Premier", メイン: "Main", ネクスト: "Next", "Q-Board": "Q-Board", アンビシャス: "Ambitious", 本則: "Main Board", "TOKYO PRO Market": "TOKYO PRO Market" };
+  return names[m] ?? market;
+}
 
 /**
  * The first view, after the approved mockup: who it is (code, market, industries), what it is called, what it does
@@ -98,12 +114,20 @@ export function CompanyHero({
           <div className="min-w-0 flex-1">
             <p className="inline-flex max-w-full items-center rounded-full border border-border bg-card px-2.5 py-0.5 text-[0.6875rem] text-muted-foreground">
               <span className="figures truncate">
-                証券コード {company.code}
-                {company.listings.length > 0 && <> ・ {company.listings.map((l) => `${EXCHANGE_NAME[l.exchange]}${l.market ?? ""}`).join("・")}</>}
+                <T m={{ ja: `証券コード ${company.code}`, en: `Securities code ${company.code}` }} />
+                {company.listings.length > 0 && (
+                  <T
+                    m={{
+                      ja: ` ・ ${company.listings.map((l) => `${EXCHANGE_NAME[l.exchange]}${l.market ?? ""}`).join("・")}`,
+                      en: ` · ${company.listings.map((l) => [EXCHANGE_NAME_EN[l.exchange], marketEn(l.market)].filter(Boolean).join(" ")).join(", ")}`,
+                    }}
+                  />
+                )}
               </span>
             </p>
             <h1 id="company-name" className="mt-2 font-serif text-[2rem] leading-tight font-semibold tracking-[0.04em] break-words md:text-[2.5rem]">
-              {company.name}
+              {/* The English name is EDINET's own (提出者名（英字）), not a translation. */}
+              {company.nameEn ? <T m={{ ja: company.name, en: company.nameEn }} /> : company.name}
             </h1>
             {company.shortNameEn && (
               <p aria-hidden className={`wordmark mt-0.5 break-words ${wordmarkSize}`}>
@@ -119,16 +143,16 @@ export function CompanyHero({
             <Fragment key={ref.industryId}>
               {i > 0 && " ／ "}
               <Link href={`/industries/${ref.industryId}`} className="underline-offset-4 hover:text-foreground hover:underline">
-                {INDUSTRY_LABELS[ref.industryId].name}
+                <T m={{ ja: INDUSTRY_LABELS[ref.industryId].name, en: INDUSTRY_LABELS[ref.industryId].nameEn }} />
               </Link>
             </Fragment>
           ))}
           {headquarters && prefecture && (
             <>
-              {industries.length > 0 && " ・ "}
-              {"本社 "}
+              {industries.length > 0 && <T m={{ ja: " ・ ", en: " · " }} />}
+              {<T m={{ ja: "本社 ", en: "HQ " }} />}
               <Link href={`/prefectures/${prefecture.id}`} className="underline-offset-4 hover:text-foreground hover:underline">
-                {prefecture.name}
+                <L s={prefecture.name} />
               </Link>
               {headquarters.municipality}
             </>
@@ -145,7 +169,7 @@ export function CompanyHero({
             sentence would be — rather than meeting a blank space and guessing.
           */
           <p className="mt-3 max-w-3xl text-[0.9375rem] leading-7 text-muted-foreground">
-            この会社の解説はまだ作成していません。下の財務データは有価証券報告書のXBRLから機械的に取り出し、有報の印字と突き合わせたものです。
+            <T m={{ ja: "この会社の解説はまだ作成していません。下の財務データは有価証券報告書のXBRLから機械的に取り出し、有報の印字と突き合わせたものです。", en: "We haven't written a profile for this company yet. The financial data below was extracted mechanically from the XBRL of the annual securities report and checked against the printed report." }} />
           </p>
         )}
 
@@ -162,7 +186,7 @@ export function CompanyHero({
                     className="size-2.5 rounded-[2px] border border-foreground/15"
                     style={{ background: segmentTone(index) }}
                   />
-                  {business.shortName ?? business.name}
+                  <ContentText text={business.shortName ?? business.name} />
                 </a>
               </li>
             ))}
@@ -183,21 +207,21 @@ export function CompanyHero({
               href="#connections"
               className="inline-flex min-h-11 items-center justify-center rounded-lg bg-foreground px-2 text-[0.8125rem] font-semibold text-background transition-opacity hover:opacity-85"
             >
-              つながりを見る
+              <T m={{ ja: "つながりを見る", en: "See connections" }} />
             </a>
           )}
           <a
             href="#financials"
             className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border bg-card px-2 text-[0.8125rem] transition-colors hover:border-foreground"
           >
-            数字の推移
+            <T m={{ ja: "数字の推移", en: "Numbers over time" }} />
           </a>
           {company.financials.length > 0 && (
             <a
               href="#training"
               className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border bg-card px-2 text-[0.8125rem] transition-colors hover:border-foreground"
             >
-              この会社で学ぶ
+              <T m={{ ja: "この会社で学ぶ", en: "Learn from this company" }} />
             </a>
           )}
         </nav>
@@ -213,10 +237,10 @@ export function CompanyHero({
               title={`${yuho?.title ?? "有価証券報告書"}【株式事務の概要】公告掲載方法に記載のアドレス`}
               className="inline-flex min-h-11 items-center gap-2 rounded-full bg-navy px-4 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
-              公式サイト
+              <span data-l="ja" lang="ja">公式サイト
               <span className="figures text-xs text-white/75">{new URL(website.url).hostname}</span>
               <ExternalLink className="size-3.5" aria-hidden />
-              <span className="sr-only">（新しいタブで開きます）</span>
+              <span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span><span data-l="en" lang="en">Official website<span className="figures text-xs text-white/75">{new URL(website.url).hostname}</span><ExternalLink className="size-3.5" aria-hidden /><span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span>
             </a>
           )}
           <FavoriteButton companyId={company.id} companyName={company.name} />
@@ -225,17 +249,17 @@ export function CompanyHero({
             href={`/compare?ids=${company.id}`}
             className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border px-4 text-sm transition-colors hover:border-foreground"
           >
-            <Columns3 className="size-4" aria-hidden />
+            <span data-l="ja" lang="ja"><Columns3 className="size-4" aria-hidden />
             見比べる
-          </Link>
+          </span><span data-l="en" lang="en"><Columns3 className="size-4" aria-hidden />Compare</span></Link>
           <ShareActions url={siteUrl(`/companies/${company.id}`)} text={`${company.name}とは？｜${SITE_NAME}`} />
           <Link
             href={`/contact?company=${company.id}`}
             className="inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
-            <Flag className="size-4" aria-hidden />
+            <span data-l="ja" lang="ja"><Flag className="size-4" aria-hidden />
             誤りを報告
-          </Link>
+          </span><span data-l="en" lang="en"><Flag className="size-4" aria-hidden />Report an error</span></Link>
         </div>
 
         {/* JCE-087: what this page holds, in one line at the top — only the sections this entry has,
@@ -243,19 +267,19 @@ export function CompanyHero({
         {toc && toc.length > 0 && (
           <nav aria-label="このページの内容" className="mt-4 hidden border-t border-border pt-3 md:block">
             <p className="text-xs leading-6 text-muted-foreground">
-              <span className="font-semibold text-foreground">このページの内容</span>
+              <span className="font-semibold text-foreground"><T m={{ ja: "このページの内容", en: "On this page" }} /></span>
               <span aria-hidden className="mx-2">―</span>
               {toc.map((s, i) => (
                 <Fragment key={s.id}>
-                  {i > 0 && <span aria-hidden className="mx-1">・</span>}
+                  {i > 0 && <span aria-hidden className="mx-1"><T m={{ ja: "・", en: "·" }} /></span>}
                   <a href={`#${s.id}`} className="underline-offset-4 hover:text-foreground hover:underline">
                     {s.label}
                   </a>
                 </Fragment>
               ))}
-              <span aria-hidden className="mx-1">・</span>
+              <span aria-hidden className="mx-1"><T m={{ ja: "・", en: "·" }} /></span>
               <Link href={`/companies/${company.id}/report`} className="underline-offset-4 hover:text-foreground hover:underline">
-                分析・レポート
+                <T m={{ ja: "分析・レポート", en: "Analysis & report" }} />
               </Link>
             </p>
           </nav>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_NAME, siteUrl } from "@/lib/site";
 import { DIAGNOSIS_URL } from "@/lib/support";
+import { L } from "@/components/i18n/label";
 
 export const metadata: Metadata = {
   title: "使い方・よくある質問",
@@ -79,7 +80,7 @@ export default function HelpPage() {
           <li key={step.title} className="grid gap-2 border-b border-border py-6 md:grid-cols-[3rem_1fr]">
             <span className="figures font-display text-2xl text-seal" aria-hidden>{String(i + 1).padStart(2, "0")}</span>
             <div>
-              <p className="font-medium">{step.title}</p>
+              <p className="font-medium"><L s={step.title} /></p>
               <p className="mt-1 text-sm leading-7 text-muted-foreground">{step.body}</p>
             </div>
           </li>

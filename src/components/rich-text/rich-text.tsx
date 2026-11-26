@@ -4,7 +4,9 @@ import { listIndustryPages } from "@/lib/industries";
 import { companyRepository, termRepository } from "@/lib/repositories";
 import { parseRichText, withoutUnavailableLinks } from "@/lib/rich-text";
 import { linkTerms } from "@/lib/term-linking";
+import { translationRepository } from "@/lib/repositories";
 import { TermReference } from "./term-reference";
+import { L } from "@/components/i18n/label";
 
 const HREF = {
   company: (id: string) => `/companies/${id}`,
@@ -19,6 +21,23 @@ const HREF = {
  * page (or an industry without one) is also left as plain text: no reader is sent to a 404.
  */
 export async function RichText({ text }: { text: string }) {
+  // JCE-124: an English reference translation, when one passed the checks, is rendered beside the Japanese and the
+  // reader's language picks one (the same CSS as the interface). Links inside it point at the same pages.
+  const en = await translationRepository.find("en", text);
+  if (!en) return <Segments text={text} />;
+  return (
+    <>
+      <span data-l="ja" lang="ja">
+        <Segments text={text} />
+      </span>
+      <span data-l="en" lang="en">
+        <Segments text={en} />
+      </span>
+    </>
+  );
+}
+
+async function Segments({ text }: { text: string }) {
   const parsed = parseRichText(text);
   const refs = (kind: string) => parsed.flatMap((s) => (s.type === "reference" && s.kind === kind ? [s.id] : []));
   const [releasedCompanies, industryPages] = await Promise.all([
@@ -39,10 +58,10 @@ export async function RichText({ text }: { text: string }) {
   return (
     <>
       {segments.map((segment, i) => {
-        if (segment.type === "text") return <Fragment key={i}>{segment.text}</Fragment>;
+        if (segment.type === "text") return <Fragment key={i}><L s={segment.text} /></Fragment>;
         if (segment.kind === "term") {
           const term = terms.get(segment.id);
-          if (!term) return <Fragment key={i}>{segment.label}</Fragment>;
+          if (!term) return <Fragment key={i}><L s={segment.label} /></Fragment>;
           return (
             <TermReference
               key={i}
@@ -56,7 +75,7 @@ export async function RichText({ text }: { text: string }) {
         }
         return (
           <Link key={i} href={HREF[segment.kind](segment.id)} className="link-ink">
-            {segment.label}
+            <L s={segment.label} />
           </Link>
         );
       })}

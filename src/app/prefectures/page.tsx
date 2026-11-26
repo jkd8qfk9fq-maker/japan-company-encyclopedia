@@ -4,6 +4,7 @@ import { JapanMap, JapanMapLegend } from "@/components/region/japan-map";
 import { HeadquartersSource } from "@/components/region/headquarters-source";
 import { PREFECTURES, REGIONS } from "@/lib/prefectures";
 import { companiesByPrefecture } from "@/lib/regions";
+import { L } from "@/components/i18n/label";
 
 export const metadata: Metadata = {
   title: "本社所在地から探す",
@@ -49,7 +50,7 @@ export default async function PrefecturesPage() {
                       href={`/prefectures/${p.id}`}
                       className="flex min-h-9 items-baseline justify-between gap-3 border-b border-border py-1.5 text-sm hover:underline hover:underline-offset-4"
                     >
-                      <span>{p.name}</span>
+                      <span><L s={p.name} /></span>
                       <span className="figures text-xs text-muted-foreground">{(counts[p.id] ?? 0).toLocaleString("ja-JP")}社</span>
                     </Link>
                   </li>

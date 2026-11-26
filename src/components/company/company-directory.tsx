@@ -10,6 +10,7 @@ import { normalizeForSearch } from "@/lib/search/normalize";
 import { cn } from "@/lib/utils";
 import type { IndustryId } from "@/types/company";
 import { CompanyCard } from "./company-card";
+import { T } from "@/components/i18n/t";
 
 /**
  * /companies: filter by name/code and by industry.
@@ -54,7 +55,7 @@ export function CompanyDirectory({
     <div>
       <div className="flex flex-col gap-3">
         <label className="relative block max-w-xl">
-          <span className="sr-only">企業名・証券コードで絞り込む</span>
+          <span className="sr-only"><T m={{ ja: "企業名・証券コードで絞り込む", en: "Filter by company name or securities code" }} /></span>
           <Search aria-hidden className="pointer-events-none absolute top-1/2 left-4 size-4 -translate-y-1/2 text-muted-foreground" />
           <input
             type="search"
@@ -73,7 +74,7 @@ export function CompanyDirectory({
               className="absolute top-1/2 right-1.5 flex size-10 -translate-y-1/2 items-center justify-center rounded-full text-muted-foreground hover:text-foreground"
             >
               <X className="size-4" aria-hidden />
-              <span className="sr-only">入力を消す</span>
+              <span className="sr-only"><T m={{ ja: "入力を消す", en: "Clear input" }} /></span>
             </button>
           )}
         </label>
@@ -104,8 +105,8 @@ export function CompanyDirectory({
       </div>
 
       <p className="figures mt-4 text-xs text-muted-foreground" aria-live="polite">
-        {results.length}社
-      </p>
+        <span data-l="ja" lang="ja">{results.length}社
+      </span><span data-l="en" lang="en">{results.length} companies</span></p>
 
       {results.length > 0 ? (
         <>
@@ -122,14 +123,14 @@ export function CompanyDirectory({
               onClick={() => setShown((n) => n + PAGE)}
               className="mt-4 flex min-h-11 w-full items-center justify-center rounded-lg border border-border bg-card text-sm transition-colors hover:border-foreground"
             >
-              さらに{Math.min(PAGE, results.length - shown)}社を表示（{shown}／{results.length}社）
-            </button>
+              <span data-l="ja" lang="ja">さらに{Math.min(PAGE, results.length - shown)}社を表示（{shown}／{results.length}社）
+            </span><span data-l="en" lang="en">Show {Math.min(PAGE, results.length - shown)} more companies ({shown} / {results.length} companies)</span></button>
           )}
         </>
       ) : (
         <div className="mt-8 border-t border-foreground py-16">
-          <p className="font-serif text-xl font-semibold">該当する企業が見つかりませんでした。</p>
-          <p className="mt-3 text-muted-foreground">企業名または証券コードを確認してください。</p>
+          <p className="font-serif text-xl font-semibold"><T m={{ ja: "該当する企業が見つかりませんでした。", en: "No matching companies found." }} /></p>
+          <p className="mt-3 text-muted-foreground"><T m={{ ja: "企業名または証券コードを確認してください。", en: "Check the company name or securities code." }} /></p>
         </div>
       )}
     </div>

@@ -6,6 +6,7 @@ import { HeadquartersSource } from "@/components/region/headquarters-source";
 import { PrefectureCompanies } from "@/components/region/prefecture-companies";
 import { PREFECTURES, prefectureById } from "@/lib/prefectures";
 import { companiesByPrefecture, type PlacedCompany } from "@/lib/regions";
+import { L } from "@/components/i18n/label";
 
 export const dynamicParams = false;
 
@@ -67,17 +68,17 @@ export default async function PrefecturePage({ params }: PageProps<"/prefectures
         <Link href="/prefectures" className="hover:text-foreground hover:underline">
           本社所在地
         </Link>{" "}
-        ／ {prefecture.region} ／ {prefecture.name}
+        ／ {prefecture.region} ／ <L s={prefecture.name} />
       </p>
 
       <h1 className="mt-6 font-serif text-[1.875rem] font-semibold md:text-[2.5rem]">
-        {prefecture.name}
+        <L s={prefecture.name} />
         <span className="ml-2 text-base font-normal text-muted-foreground md:text-lg">に本社がある企業</span>
       </h1>
 
       {companies.length > 0 && (
         <p className="prose-ja mt-5 max-w-3xl text-muted-foreground">
-          {prefecture.name}に本社を置く掲載企業は{companies.length.toLocaleString("ja-JP")}社です。
+          <L s={prefecture.name} />に本社を置く掲載企業は{companies.length.toLocaleString("ja-JP")}社です。
           {introIndustries.length > 0 && `多い業界は${introIndustries.map(([name, n]) => `${name}（${n}社）`).join("、")}です。`}
           {municipalityClause}
         </p>
@@ -106,7 +107,7 @@ export default async function PrefecturePage({ params }: PageProps<"/prefectures
                 <dd className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
                   {topIndustries.map(([name, n]) => (
                     <span key={name}>
-                      {name}
+                      <L s={name} />
                       <span className="figures ml-1 text-xs text-muted-foreground">{n}社</span>
                     </span>
                   ))}
@@ -131,14 +132,14 @@ export default async function PrefecturePage({ params }: PageProps<"/prefectures
             <nav aria-label="隣の都道府県" className="mt-4 flex justify-between gap-3 text-sm">
               {previous ? (
                 <Link href={`/prefectures/${previous.id}`} className="inline-flex min-h-11 items-center hover:underline">
-                  ← {previous.name}
+                  ← <L s={previous.name} />
                 </Link>
               ) : (
                 <span />
               )}
               {next && (
                 <Link href={`/prefectures/${next.id}`} className="inline-flex min-h-11 items-center hover:underline">
-                  {next.name} →
+                  <L s={next.name} /> →
                 </Link>
               )}
             </nav>

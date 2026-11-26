@@ -1,6 +1,9 @@
 import { formatDateJa, formatYen } from "@/lib/utils/format";
 import type { FinancialRecord } from "@/types/company";
 import type { Source } from "@/types/source";
+import { T } from "@/components/i18n/t";
+import { F } from "@/components/i18n/figure";
+import { L } from "@/components/i18n/label";
 
 /**
  * The company's size at a glance, under the 3-second layer: the latest year's revenue, net income and headcount,
@@ -22,7 +25,7 @@ export function KeyFacts({ records, sources }: { records: FinancialRecord[]; sou
       value: formatYen(latest.revenue),
     },
     latest.netIncome !== null && { label: latest.netIncomeLabel, value: formatYen(latest.netIncome) },
-    latest.employees !== null && { label: "従業員数（連結）", value: `${latest.employees.toLocaleString("ja-JP")}人` },
+    latest.employees !== null && { label: <T m={{ ja: "従業員数（連結）", en: "Employees (consolidated)" }} />, value: `${latest.employees.toLocaleString("ja-JP")}人` },
   ].filter((fact): fact is { label: string; value: string } => Boolean(fact));
   if (facts.length === 0) return null;
 
@@ -37,28 +40,28 @@ export function KeyFacts({ records, sources }: { records: FinancialRecord[]; sou
       <dl className="grid grid-cols-3 gap-px overflow-hidden rounded-lg border border-border bg-border">
         {facts.map((fact) => (
           <div key={fact.label} className="bg-card px-2.5 py-2.5 sm:px-4 sm:py-3.5">
-            <dt className="line-clamp-2 text-[0.625rem] leading-4 text-muted-foreground sm:text-xs sm:leading-5">{fact.label}</dt>
-            <dd className="figures mt-1 text-[1.0625rem] leading-tight font-semibold tracking-tight sm:text-[1.5rem] md:text-[1.75rem]">{fact.value}</dd>
-            <dd className="figures mt-0.5 text-[0.625rem] text-muted-foreground">{latest.fiscalYear}</dd>
+            <dt className="line-clamp-2 text-[0.625rem] leading-4 text-muted-foreground sm:text-xs sm:leading-5"><L s={fact.label} /></dt>
+            <dd className="figures mt-1 text-[1.0625rem] leading-tight font-semibold tracking-tight sm:text-[1.5rem] md:text-[1.75rem]"><F s={fact.value} /></dd>
+            <dd className="figures mt-0.5 text-[0.625rem] text-muted-foreground"><F s={latest.fiscalYear} /></dd>
           </div>
         ))}
       </dl>
       <div className="mt-1.5 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[0.6875rem] text-muted-foreground sm:gap-x-3">
-        <p className="figures">{latest.fiscalYear}・連結</p>
+        <p className="figures"><span data-l="ja" lang="ja"><F s={latest.fiscalYear} />・連結</span><span data-l="en" lang="en"><F s={latest.fiscalYear} /> · Consolidated</span></p>
         {badgeSources.length > 0 && (
           <p className="flex flex-wrap items-center gap-1.5">
-            <span>出典</span>
+            <span><T m={{ ja: "出典", en: "Sources" }} /></span>
             {badgeSources.map((source) => (
               <a
                 key={source.id}
                 href={`#source-${source.id}`}
                 className="rounded-full border border-border px-2 py-0.5 leading-5 transition-colors hover:border-foreground hover:text-foreground"
               >
-                <span className="figures">[{sources.indexOf(source) + 1}]</span> <span className="hidden sm:inline">{source.title}</span>
-                <span className="sm:hidden">有報</span>
+                <span className="figures">[{sources.indexOf(source) + 1}]</span> <span className="hidden sm:inline"><L s={source.title} /></span>
+                <span className="sm:hidden"><T m={{ ja: "有報", en: "Securities report" }} /></span>
               </a>
             ))}
-            {lastAccessed && <span className="figures">最終確認 {formatDateJa(lastAccessed)}</span>}
+            {lastAccessed && <span className="figures"><span data-l="ja" lang="ja">最終確認 <F s={formatDateJa(lastAccessed)} /></span><span data-l="en" lang="en">Last checked <F s={formatDateJa(lastAccessed)} /></span></span>}
           </p>
         )}
       </div>

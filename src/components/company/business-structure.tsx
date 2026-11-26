@@ -1,6 +1,8 @@
 import { cn } from "@/lib/utils";
 import type { Business, Company } from "@/types/company";
 import styles from "./business-structure.module.css";
+import { T } from "@/components/i18n/t";
+import { ContentText } from "@/components/i18n/content-text";
 
 /**
  * The company-specific business structure — the most important component in
@@ -31,42 +33,9 @@ function leavesOf(business: Business): { items: string[]; kind: "children" | "pr
   return { items: business.products ?? [], kind: "products" };
 }
 
-const SEGMENT_TONES = 6;
-
-/**
- * The level of the structure the page draws as "the businesses". One top-level business with sub-businesses (a
- * company reporting a single segment, like Tokyo Electron) would otherwise draw one lonely branch and hide the level
- * that actually says what the company makes, so its children are drawn instead, under it (`via`). This only chooses
- * which existing level is drawn; nothing is added. Shared by the diagram, the cards and the hero, so every marker
- * on the page points at the same business.
- */
-export function structureBranches(businesses: Business[]): { via: Business | null; branches: Business[] } {
-  const only = businesses.length === 1 ? businesses[0] : null;
-  const via = only && only.children && only.children.length > 0 ? only : null;
-  return { via, branches: via ? via.children! : businesses };
-}
-
-/** A business's colour, or none past the sixth: the number then carries the identity alone. */
-export function segmentTone(index: number): string | undefined {
-  return index < SEGMENT_TONES ? `var(--segment-${index + 1})` : undefined;
-}
-
-/**
- * A business's marker: its number on its colour. The same mark labels the business in this diagram and in the list
- * under it (business-list.tsx), so the two read as one object. The number carries the identity — colour only helps
- * the eye — and past the sixth business there is no colour left, so the mark is the number alone.
- */
-export function SegmentMark({ index }: { index: number }) {
-  return (
-    <span aria-hidden className="figures inline-flex shrink-0 items-center gap-1.5 font-sans text-xs font-semibold text-muted-foreground">
-      {segmentTone(index) && (
-        // Text never sits on the colour: a swatch beside the number keeps contrast the same in light and dark.
-        <span className="size-2.5 rounded-[2px]" style={{ background: segmentTone(index) }} />
-      )}
-      {String(index + 1).padStart(2, "0")}
-    </span>
-  );
-}
+export { SegmentMark, segmentTone, structureBranches } from "./segment-mark";
+import { SegmentMark, structureBranches } from "./segment-mark";
+import { L } from "@/components/i18n/label";
 
 function RootNode({ company, align }: { company: Company; align: "center" | "start" }) {
   return (
@@ -81,7 +50,7 @@ function RootNode({ company, align }: { company: Company; align: "center" | "sta
           {company.shortNameEn}
         </span>
       )}
-      <span className={cn("text-sm", company.shortNameEn && "mt-1 opacity-75")}>{company.name}</span>
+      <span className={cn("text-sm", company.shortNameEn && "mt-1 opacity-75")}><L s={company.name} /></span>
     </div>
   );
 }
@@ -91,9 +60,9 @@ function NodeName({ business, index }: { business: Business; index: number }) {
   return (
     <span className="flex min-h-12 items-center justify-center gap-2.5 rounded-md border border-foreground bg-background px-4 py-2 font-serif text-[1.0625rem] leading-snug font-semibold">
       <SegmentMark index={index} />
-      {label}
+      <ContentText text={label} />
       {business.shortName && business.shortName !== business.name && (
-        <span className="sr-only">（{business.name}）</span>
+        <span className="sr-only">（<L s={business.name} />）</span>
       )}
     </span>
   );
@@ -103,8 +72,8 @@ function NodeName({ business, index }: { business: Business; index: number }) {
 function ViaNode({ business }: { business: Business }) {
   return (
     <span className="relative z-10 inline-flex min-h-10 items-center rounded-full border border-border bg-background px-4 text-sm">
-      <span className="mr-2 text-xs text-muted-foreground">単一セグメント</span>
-      <span className="font-medium">{business.name}</span>
+      <span className="mr-2 text-xs text-muted-foreground"><T m={{ ja: "単一セグメント", en: "Single segment" }} /></span>
+      <span className="font-medium"><ContentText text={business.name} /></span>
     </span>
   );
 }
@@ -139,7 +108,7 @@ function Columns({ company, branches, via }: { company: Company; branches: Busin
                     <li key={item}>{item}</li>
                   ))}
                   {items.length > MAX_LEAVES && (
-                    <li className="figures text-xs">ほか{items.length - MAX_LEAVES}件</li>
+                    <li className="figures text-xs"><span data-l="ja" lang="ja">ほか{items.length - MAX_LEAVES}件</span><span data-l="en" lang="en">{items.length - MAX_LEAVES} more</span></li>
                   )}
                 </ul>
               )}
@@ -179,7 +148,7 @@ function Spine({ company, branches, via }: { company: Company; branches: Busines
                       <li key={item}>{item}</li>
                     ))}
                     {items.length > MAX_LEAVES && (
-                      <li className="figures text-xs leading-6">ほか{items.length - MAX_LEAVES}件</li>
+                      <li className="figures text-xs leading-6"><span data-l="ja" lang="ja">ほか{items.length - MAX_LEAVES}件</span><span data-l="en" lang="en">{items.length - MAX_LEAVES} more</span></li>
                     )}
                   </ul>
                 )}
@@ -220,8 +189,8 @@ export function BusinessStructure({ company }: { company: Company }) {
         id={`${company.id}-structure-caption`}
         className="mt-6 text-center text-xs leading-5 text-muted-foreground"
       >
-        {company.name}の事業構造。区分は同社の開示に基づきます。
-      </figcaption>
+        <span data-l="ja" lang="ja"><L s={company.name} />の事業構造。区分は同社の開示に基づきます。
+      </span><span data-l="en" lang="en">Business structure of <L s={company.name} />. Categories follow the company&apos;s disclosures.</span></figcaption>
     </figure>
   );
 }

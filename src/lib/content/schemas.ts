@@ -458,6 +458,21 @@ export function parseContent<T>(schema: z.ZodType<T>, value: unknown, label: str
 // Schema ⇄ type agreement. If a field is added to a type but not a schema (or
 // the reverse), one of these lines stops compiling.
 
+/**
+ * A file of reference translations for one entry (JCE-124): src/data/translations/<locale>/{companies,industries,terms}/<id>.json. Each
+ * key is hashText() of the exact Japanese it translates (src/lib/translation-check.ts), so editing the Japanese
+ * orphans the old translation instead of leaving it beside text it no longer matches.
+ */
+export const translationFileSchema = z.strictObject({
+  subject: z.strictObject({ kind: z.enum(["company", "industry", "term"]), id: kebab }),
+  locale: z.enum(["en"]),
+  method: z.literal("ai-reference-translation"),
+  model: text,
+  updatedAt: isoDate,
+  entries: z.record(z.string().regex(/^[0-9a-f]{16}$/), text),
+});
+export type TranslationFile = z.infer<typeof translationFileSchema>;
+
 // Flatten intersections (`Sourced & {...}`) so structurally identical types compare equal.
 type Deep<T> = T extends (infer U)[] ? Deep<U>[] : T extends object ? { [K in keyof T]: Deep<T[K]> } : T;
 type Equals<A, B> =

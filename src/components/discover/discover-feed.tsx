@@ -9,6 +9,7 @@ import { computeStreak } from "@/lib/streak";
 import { activityStore, discoveredStore, followedIndustriesStore, jstToday, recordDiscovered, toggleFollowedIndustry } from "@/lib/storage/stores";
 import { formatYen } from "@/lib/utils/format";
 import { feedOrder, loadDiscoverFeed, todayInJapan } from "./discover-data";
+import { F } from "@/components/i18n/figure";
 
 const SHINDAN_URL = "https://shindan.kigyo-hyakka.com";
 const PAGE = 8;
@@ -379,7 +380,7 @@ function CompanyCard({
           </button>
           {card.revenue && (
             <span className="text-white/60">
-              売上高 <span className="figures">{formatYen(card.revenue.amount)}</span>（{card.revenue.fiscalYear}）
+              売上高 <span className="figures"><F s={formatYen(card.revenue.amount)} /></span>（<F s={card.revenue.fiscalYear} />）
             </span>
           )}
         </div>
@@ -445,7 +446,7 @@ function Hook({ hook }: { hook: NonNullable<DiscoverCard["hook"]> }) {
           売上の <span className="figures text-xl font-semibold text-amber-300">{hook.percent}%</span> が海外
         </p>
         <p className="mt-1 text-[0.6875rem] text-white/55">
-          計算値：{hook.formula}（{hook.fiscalYear}）
+          計算値：{hook.formula}（<F s={hook.fiscalYear} />）
         </p>
       </div>
     );
