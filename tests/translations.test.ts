@@ -6,7 +6,7 @@ import { industries } from "@/data/industries";
 import { terms } from "@/data/terms";
 import { parseContent, translationFileSchema } from "@/lib/content/schemas";
 import { translatableStrings } from "@/lib/translatable";
-import { checkTranslation, englishFigures, hashText, japaneseFigures } from "@/lib/translation-check";
+import { checkTranslation, englishFigures, figuresAmbiguous, hashText, japaneseAmounts, japaneseFigures } from "@/lib/translation-check";
 
 // JCE-128: reference translations are shown only when they pass these checks; the files must hold nothing else.
 
@@ -37,6 +37,13 @@ describe("checkTranslation", () => {
     expect(checkTranslation("[[company:toyota|トヨタ自動車]]の子会社です。", "A subsidiary of [[company:honda|Toyota Motor]].")).not.toEqual([]);
     expect(checkTranslation("「Zoff」を展開します。", "It runs stores.")).not.toEqual([]);
     expect(checkTranslation("メガネを販売します。", "It sells メガネ.")).not.toEqual([]);
+  });
+
+  it("reads 千・百・十 groups the way a reader does, and flags texts the checker folds differently (JCE-132)", () => {
+    expect(japaneseAmounts("9,982億３千４百万円")).toEqual([998_234_000_000]);
+    expect(japaneseAmounts("1億2千万人")).toEqual([120_000_000]);
+    expect(figuresAmbiguous("9,982億３千４百万円")).toBe(true);
+    expect(figuresAmbiguous("2,517億71百万円、5千人、2026年3月期")).toBe(false);
   });
 
   it("rejects a translation much shorter than its source", () => {
