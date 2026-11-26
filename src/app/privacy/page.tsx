@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ADS_ENABLED } from "@/components/ads/ad-slot";
 import { GA_MEASUREMENT_ID } from "@/lib/analytics/config";
 import { SITE_NAME } from "@/lib/site";
+import { L } from "@/components/i18n/label";
 
 export const metadata: Metadata = {
   title: "プライバシーポリシー",
@@ -216,7 +217,7 @@ export default function PrivacyPage() {
               {String(i + 1).padStart(2, "0")}
             </span>
             <div>
-              <h2 className="font-serif text-lg font-semibold">{section.title}</h2>
+              <h2 className="font-serif text-lg font-semibold"><L s={section.title} /></h2>
               <div className="prose-ja mt-3">{section.body}</div>
             </div>
           </li>

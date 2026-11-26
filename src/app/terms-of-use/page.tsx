@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { SITE_NAME } from "@/lib/site";
 import { DIAGNOSIS_URL } from "@/lib/support";
+import { L } from "@/components/i18n/label";
 
 export const metadata: Metadata = {
   title: "利用規約",
@@ -51,7 +52,7 @@ export default function TermsOfUsePage() {
           <li key={section.title} className="grid gap-3 border-b border-border py-8 md:grid-cols-[4rem_1fr]">
             <span className="figures font-display text-xl text-muted-foreground" aria-hidden>{String(i + 1).padStart(2, "0")}</span>
             <div>
-              <h2 className="font-serif text-lg font-semibold">{section.title}</h2>
+              <h2 className="font-serif text-lg font-semibold"><L s={section.title} /></h2>
               <div className="prose-ja mt-2 text-sm leading-7 text-muted-foreground">{section.body}</div>
             </div>
           </li>

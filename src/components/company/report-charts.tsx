@@ -1,6 +1,7 @@
 import { profitLineKind } from "@/lib/report-metrics";
 import { formatYen } from "@/lib/utils/format";
 import type { FinancialRecord } from "@/types/company";
+import { L } from "@/components/i18n/label";
 
 /**
  * The premium report's charts (JCE-114): server-rendered SVG, so they print and save to PDF exactly as shown and
@@ -55,12 +56,12 @@ export function TrendChart({ records }: { records: FinancialRecord[] }) {
 
   const caption = (
     <figcaption className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
-        <span className="inline-flex items-center gap-1.5"><span className="size-2.5 rounded-sm bg-[var(--ink)]" />{latest.revenueLabel}</span>
-        {profitLabel && <span className="inline-flex items-center gap-1.5"><span className="size-2.5 rounded-sm bg-[var(--chart-revenue)]" />{profitLabel}</span>}
+        <span className="inline-flex items-center gap-1.5"><span className="size-2.5 rounded-sm bg-[var(--ink)]" /><L s={latest.revenueLabel} /></span>
+        {profitLabel && <span className="inline-flex items-center gap-1.5"><span className="size-2.5 rounded-sm bg-[var(--chart-revenue)]" /><L s={profitLabel} /></span>}
         {shown.length > 0 && (
-          <span className="inline-flex items-center gap-1.5"><span className="h-0.5 w-4 bg-seal" />{profitLabel}÷{latest.revenueLabel}（計算値・右目盛）</span>
+          <span className="inline-flex items-center gap-1.5"><span data-l="ja"><span className="h-0.5 w-4 bg-seal" />{profitLabel}÷{latest.revenueLabel}（計算値・右目盛）</span><span data-l="en"><span className="h-0.5 w-4 bg-seal" />{profitLabel} ÷ {latest.revenueLabel} (computed, right axis)</span></span>
         )}
-        <span className="ml-auto">単位：{unit.name}</span>
+        <span className="ml-auto"><span data-l="ja">単位：<L s={unit.name} /></span><span data-l="en">Unit: <L s={unit.name} /></span></span>
       </figcaption>
   );
 
@@ -168,12 +169,12 @@ export function Donut({ title, parts, unitLabel }: { title: string; parts: { nam
         <text x={90} y={108} textAnchor="middle" className="fill-muted-foreground text-[10px]">{slices[0]!.name.length > 9 ? `${slices[0]!.name.slice(0, 8)}…` : slices[0]!.name}</text>
       </svg>
       <figcaption className="w-full min-w-0">
-        <p className="text-xs text-muted-foreground">{unitLabel}に占める割合（計算値）</p>
+        <p className="text-xs text-muted-foreground"><span data-l="ja"><L s={unitLabel} />に占める割合（計算値）</span><span data-l="en">Share of <L s={unitLabel} /> (computed)</span></p>
         <ul className="mt-2 space-y-2">
           {slices.map((s, i) => (
             <li key={s.name} className="flex items-baseline gap-2 text-sm">
               <span className="mt-1 size-2.5 shrink-0 rounded-full" style={{ background: SHADES[i % SHADES.length] }} />
-              <span className="min-w-0 flex-1">{s.name}</span>
+              <span className="min-w-0 flex-1"><L s={s.name} /></span>
               <span className="figures font-semibold">{((s.amount / total) * 100).toFixed(1)}%</span>
             </li>
           ))}

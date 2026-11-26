@@ -2,6 +2,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import type { Company } from "@/types/company";
 import type { Connection, Lane } from "./connection-map";
+import { L } from "@/components/i18n/label";
 
 /**
  * Where each kind of tie sits around the company, in degrees (0 = right, 90 = down): owners above, suppliers to the
@@ -89,7 +90,7 @@ export function ConnectionNetwork({ company, lanes }: { company: Company; lanes:
             {company.shortNameEn}
           </span>
         )}
-        <span className={cn("text-xs", company.shortNameEn && "mt-1 opacity-80")}>{company.name}</span>
+        <span className={cn("text-xs", company.shortNameEn && "mt-1 opacity-80")}><L s={company.name} /></span>
       </div>
 
       <ul>
@@ -106,10 +107,10 @@ export function ConnectionNetwork({ company, lanes }: { company: Company; lanes:
                 lane === "up" || lane === "down" ? "border-ink" : lane === "other" ? "border-dashed border-muted-foreground" : "border-foreground",
               )}
             >
-              <span className="font-serif text-sm font-semibold">{connection.company.name}</span>
+              <span className="font-serif text-sm font-semibold"><L s={connection.company.name} /></span>
               <span className="mt-0.5 text-[0.6875rem] text-muted-foreground">
-                {connection.label}
-                {connection.inbound && <span className="sr-only">（{connection.company.name}の項目に記載）</span>}
+                <L s={connection.label} />
+                {connection.inbound && <span className="sr-only"><span data-l="ja">（<L s={connection.company.name} />の項目に記載）</span><span data-l="en">(Described in the entry for <L s={connection.company.name} />)</span></span>}
               </span>
             </Link>
           </li>
@@ -120,8 +121,8 @@ export function ConnectionNetwork({ company, lanes }: { company: Company; lanes:
               href="#related-companies-list"
               className="flex min-h-12 w-28 items-center justify-center rounded-md border border-border bg-card text-sm hover:border-foreground"
             >
-              ほか{rest}社
-            </a>
+              <span data-l="ja">ほか{rest}社
+            </span><span data-l="en">{rest} more companies</span></a>
           </li>
         )}
       </ul>

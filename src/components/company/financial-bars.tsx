@@ -1,5 +1,6 @@
 import { chooseScale, columnPath } from "@/lib/charts/financial-chart-geometry";
 import type { FinancialRecord } from "@/types/company";
+import { L } from "@/components/i18n/label";
 
 const W = 560;
 const H = 260;
@@ -77,7 +78,7 @@ export function FinancialBars({
   return (
     <figure className="m-0">
       <figcaption className="text-sm font-medium">
-        {title} <span className="font-normal text-muted-foreground">（{unit.name}）</span>
+        <L s={title} /> <span className="font-normal text-muted-foreground">（<L s={unit.name} />）</span>
       </figcaption>
 
       <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={label} className="mt-3 hidden h-auto w-full sm:block">

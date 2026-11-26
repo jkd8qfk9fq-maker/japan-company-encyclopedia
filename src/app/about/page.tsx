@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { ADS_ENABLED } from "@/components/ads/ad-slot";
 import Link from "next/link";
 import { SITE_NAME } from "@/lib/site";
+import { L } from "@/components/i18n/label";
 
 export const metadata: Metadata = {
   title: "このサービスについて",
@@ -44,7 +45,7 @@ export default function AboutPage() {
               {String(i + 1).padStart(2, "0")}
             </span>
             <div>
-              <h2 className="font-serif text-xl font-semibold">{p.title}</h2>
+              <h2 className="font-serif text-xl font-semibold"><L s={p.title} /></h2>
               <p className="prose-ja mt-3">{p.body}</p>
             </div>
           </li>

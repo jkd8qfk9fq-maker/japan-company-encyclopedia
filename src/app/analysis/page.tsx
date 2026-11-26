@@ -5,6 +5,8 @@ import { INDUSTRY_LABELS } from "@/lib/industry-labels";
 import { formatIndicatorValue, indicators, indicatorsForIndustry, latestObservation, observationPeriodLabel } from "@/lib/indicators";
 import { companyRepository } from "@/lib/repositories";
 import { INDUSTRY_IDS } from "@/types/company";
+import { T } from "@/components/i18n/t";
+import { L } from "@/components/i18n/label";
 
 export const metadata: Metadata = {
   title: "企業分析（5観点）",
@@ -45,7 +47,7 @@ export default async function AnalysisPage() {
         {ANALYSIS_PERSPECTIVE_GUIDE.map((p, i) => (
           <section key={p.id}>
             <h3 className="font-serif text-lg font-semibold">
-              {i + 1}. {p.title}
+              {i + 1}. <L s={p.title} />
             </h3>
             <p className="mt-1 text-sm leading-6 text-muted-foreground">{p.intro}</p>
           </section>
@@ -62,7 +64,7 @@ export default async function AnalysisPage() {
           return (
             <li key={id} className="text-sm leading-6">
               <Link href={`/industries/${id}`} className="underline underline-offset-4">
-                {INDUSTRY_LABELS[id].name}
+                <T m={{ ja: INDUSTRY_LABELS[id].name, en: INDUSTRY_LABELS[id].nameEn }} />
               </Link>
               <span className="figures ml-2 text-muted-foreground">{counts.get(id) ?? 0}社</span>
               {linked.length > 0 && (
@@ -85,12 +87,12 @@ export default async function AnalysisPage() {
           return (
             <li key={indicator.id} className="text-sm leading-6">
               <Link href={`/indicators/${indicator.id}`} className="underline underline-offset-4">
-                {indicator.name}
+                <L s={indicator.name} />
               </Link>
               {latest && (
                 <span className="figures block text-muted-foreground sm:ml-2 sm:inline sm:whitespace-nowrap">
                   {observationPeriodLabel(indicator, latest.date)}: {formatIndicatorValue(indicator, latest.value)}
-                  {indicator.unit}
+                  <L s={indicator.unit} />
                 </span>
               )}
             </li>

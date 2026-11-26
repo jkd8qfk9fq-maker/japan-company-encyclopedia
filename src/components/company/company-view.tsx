@@ -36,6 +36,9 @@ import { ValueChainFlow } from "./value-chain-flow";
 import { CompanyNotes } from "@/components/company/company-notes";
 import { ReportCta } from "./report-cta";
 import { publicNotes } from "@/lib/release";
+import { T } from "@/components/i18n/t";
+import { F } from "@/components/i18n/figure";
+import { L } from "@/components/i18n/label";
 
 /**
  * The body of a company page — hero to footer — and nothing around it. One component, two callers: the public page
@@ -100,15 +103,15 @@ export async function CompanyView({ company }: { company: Company }) {
   // The hero is above the tabs and always shown, so it is not one of them. JCE-094 order: the ties first
   // (the page's second section, straight after the first view), then the training, then the detail layers.
   const sections: SectionLink[] = [
-    ...(hasConnections ? [{ id: "connections", label: "つながり" }] : []),
-    ...(prediction.records.length > 0 ? [{ id: "training", label: "学ぶ" }] : []),
-    ...(company.businesses.length > 0 ? [{ id: "business", label: "事業" }] : []),
-    ...(chain || company.businessModel ? [{ id: "value-chain", label: "モノとお金" }] : []),
-    ...(company.perspectives ? [{ id: "perspectives", label: "戦略と強み" }] : []),
-    { id: "financials", label: "財務" },
-    ...(company.history.length > 0 ? [{ id: "history", label: "歴史" }] : []),
-    ...(company.industries.length > 0 ? [{ id: "industry", label: "業界" }] : []),
-    ...(company.sources.length > 0 ? [{ id: "sources", label: "出典" }] : []),
+    ...(hasConnections ? [{ id: "connections", label: <T m={{ ja: "つながり", en: "Connections" }} /> }] : []),
+    ...(prediction.records.length > 0 ? [{ id: "training", label: <T m={{ ja: "学ぶ", en: "Learn" }} /> }] : []),
+    ...(company.businesses.length > 0 ? [{ id: "business", label: <T m={{ ja: "事業", en: "Business" }} /> }] : []),
+    ...(chain || company.businessModel ? [{ id: "value-chain", label: <T m={{ ja: "モノとお金", en: "Goods and money" }} /> }] : []),
+    ...(company.perspectives ? [{ id: "perspectives", label: <T m={{ ja: "戦略と強み", en: "Strategy and strengths" }} /> }] : []),
+    { id: "financials", label: <T m={{ ja: "財務", en: "Financials" }} /> },
+    ...(company.history.length > 0 ? [{ id: "history", label: <T m={{ ja: "歴史", en: "History" }} /> }] : []),
+    ...(company.industries.length > 0 ? [{ id: "industry", label: <T m={{ ja: "業界", en: "Industry" }} /> }] : []),
+    ...(company.sources.length > 0 ? [{ id: "sources", label: <T m={{ ja: "出典", en: "Sources" }} /> }] : []),
   ];
 
   return (
@@ -132,25 +135,31 @@ export async function CompanyView({ company }: { company: Company }) {
         <CompanySection
           id="connections"
           eyebrow="Connections"
-          title="産業の中の位置と、つながり"
-          lead="線は、有価証券報告書に書かれた関係だけです。線の種類で関係の性質を区別します。"
+          title={<T m={{ ja: "産業の中の位置と、つながり", en: "Position in the industry and connections" }} />}
+          lead={<T m={{ ja: "線は、有価証券報告書に書かれた関係だけです。線の種類で関係の性質を区別します。", en: "Lines show only relationships stated in the annual securities report. The line type distinguishes the nature of each relationship." }} />}
           tone="paper"
         >
           {/* JCE-094, L1: the ties at a glance — how many, of what kinds, and the first three as doors to the
               companies themselves. The map and the full list below are the same ties in full (L2). */}
           <div className="mb-8">
             <p className="text-[0.9375rem] leading-7">
-              この会社につながる会社は全{relations.length + inbound.length}件
+              <span data-l="ja">この会社につながる会社は全{relations.length + inbound.length}件
               {relations.length > 0 && (
                 <>
                   （
                   {[...tieKindCounts.entries()].map(([kind, count]) => `${RELATIONSHIP_LABEL[kind]} ${count}件`).join("・")}
-                  {inbound.length > 0 && <>／ほかの会社の項目に書かれた関係 {inbound.length}件</>}）
+                  {inbound.length > 0 && <><span data-l="ja">／ほかの会社の項目に書かれた関係 {inbound.length}件</span><span data-l="en">/ {inbound.length} relationships described in other companies&apos; entries</span></>}）
                 </>
               )}
-              {relations.length === 0 && inbound.length > 0 && <>（ほかの会社の項目に書かれた関係）</>}
+              {relations.length === 0 && inbound.length > 0 && <><T m={{ ja: "（ほかの会社の項目に書かれた関係）", en: "(relationships written in other companies' entries)" }} /></>}
               です。
-            </p>
+            </span><span data-l="en">{relations.length + inbound.length} companies are connected to this company{relations.length > 0 && (
+                <>
+                  （
+                  {[...tieKindCounts.entries()].map(([kind, count]) => `${RELATIONSHIP_LABEL[kind]} ${count}件`).join("・")}
+                  {inbound.length > 0 && <><span data-l="ja">／ほかの会社の項目に書かれた関係 {inbound.length}件</span><span data-l="en">/ {inbound.length} relationships described in other companies&apos; entries</span></>}）
+                </>
+              )}{relations.length === 0 && inbound.length > 0 && <><T m={{ ja: "（ほかの会社の項目に書かれた関係）", en: "(relationships written in other companies' entries)" }} /></>}.</span></p>
             {relations.length > 0 && (
               <ul aria-label="主なつながり" className="mt-3 flex flex-wrap items-center gap-2">
                 {relations.slice(0, 3).map(({ company: tied, relation }) => (
@@ -159,12 +168,12 @@ export async function CompanyView({ company }: { company: Company }) {
                       href={`/companies/${tied.id}`}
                       className="inline-flex min-h-9 items-center gap-2 rounded-full border border-border bg-card px-3.5 text-[0.8125rem] transition-colors hover:border-foreground"
                     >
-                      {tied.name}
+                      <L s={tied.name} />
                       <span className="text-xs text-muted-foreground">{RELATIONSHIP_LABEL[relation.relationship]}</span>
                     </Link>
                   </li>
                 ))}
-                {relations.length > 3 && <li className="text-xs text-muted-foreground">ほか{relations.length - 3}件は下の一覧に</li>}
+                {relations.length > 3 && <li className="text-xs text-muted-foreground"><span data-l="ja">ほか{relations.length - 3}件は下の一覧に</span><span data-l="en">{relations.length - 3} more in the list below</span></li>}
               </ul>
             )}
           </div>
@@ -174,9 +183,9 @@ export async function CompanyView({ company }: { company: Company }) {
                 <ConnectionNetwork company={company} lanes={lanes} />
               </div>
               <ul aria-label="線の種類" className="mt-3 hidden flex-wrap gap-x-6 gap-y-1 text-xs text-muted-foreground md:flex">
-                <li className="flex items-center gap-2"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-foreground" />資本関係</li>
-                <li className="flex items-center gap-2"><span aria-hidden className="h-0 w-8 border-t-[2.5px] border-ink" />取引（仕入先・顧客）</li>
-                <li className="flex items-center gap-2"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-dashed border-muted-foreground" />向きの書かれていない関係</li>
+                <li className="flex items-center gap-2"><span data-l="ja"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-foreground" />資本関係</span><span data-l="en"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-foreground" /> Capital relationship</span></li>
+                <li className="flex items-center gap-2"><span data-l="ja"><span aria-hidden className="h-0 w-8 border-t-[2.5px] border-ink" />取引（仕入先・顧客）</span><span data-l="en"><span aria-hidden className="h-0 w-8 border-t-[2.5px] border-ink" /> Transaction (supplier/customer)</span></li>
+                <li className="flex items-center gap-2"><span data-l="ja"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-dashed border-muted-foreground" />向きの書かれていない関係</span><span data-l="en"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-dashed border-muted-foreground" /> Relationship with no stated direction</span></li>
               </ul>
               <div className="md:hidden">
                 <ConnectionMap company={company} lanes={lanes} />
@@ -189,8 +198,8 @@ export async function CompanyView({ company }: { company: Company }) {
                 className="mb-3 flex items-center justify-between gap-3 rounded-md bg-[#161616] px-4 py-3 text-sm text-[#f6f4ef] hover:bg-black"
               >
                 <span>
-                  <span className="block font-medium">立体のネットワークで見る</span>
-                  <span className="block text-xs text-white/60">この会社を真ん中に、取引先・資本・競合のつながりを回して眺める</span>
+                  <span className="block font-medium"><T m={{ ja: "立体のネットワークで見る", en: "View as a 3D network" }} /></span>
+                  <span className="block text-xs text-white/60"><T m={{ ja: "この会社を真ん中に、取引先・資本・競合のつながりを回して眺める", en: "Place this company at the center and rotate to view its trading partner, capital, and competitor connections" }} /></span>
                 </span>
                 <span aria-hidden>→</span>
               </Link>
@@ -200,12 +209,12 @@ export async function CompanyView({ company }: { company: Company }) {
                 className="mb-6 flex items-center justify-between gap-3 rounded-md border border-foreground/20 bg-card px-4 py-3 text-sm hover:border-foreground"
               >
                 <span>
-                  <span className="block font-medium">つながりをたどる</span>
-                  <span className="block text-xs text-muted-foreground">取引先・競合・親子会社を1社ずつ移りながら、知らない会社に出会う</span>
+                  <span className="block font-medium"><T m={{ ja: "つながりをたどる", en: "Follow the connections" }} /></span>
+                  <span className="block text-xs text-muted-foreground"><T m={{ ja: "取引先・競合・親子会社を1社ずつ移りながら、知らない会社に出会う", en: "Move from one trading partner, competitor, or parent/subsidiary to the next and discover companies you don't know" }} /></span>
                 </span>
                 <span aria-hidden>→</span>
               </Link>
-              <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">関係の一覧</h3>
+              <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground"><T m={{ ja: "関係の一覧", en: "List of relationships" }} /></h3>
               <div className="mt-3">
                 <RelatedCompanies relations={relations} inbound={inbound} sources={company.sources} />
               </div>
@@ -218,8 +227,8 @@ export async function CompanyView({ company }: { company: Company }) {
         <CompanySection
           id="training"
           eyebrow="Training"
-          title="この会社で学ぶ"
-          lead="次の決算でこの会社の売上と純利益がどう動くか、数字が出る前に自分の読みを記録し、開示後に印字値と照合します。企業ページそのものが訓練の入口です（JCE-094）。"
+          title={<T m={{ ja: "この会社で学ぶ", en: "Learn from this company" }} />}
+          lead={<T m={{ ja: "次の決算でこの会社の売上と純利益がどう動くか、数字が出る前に自分の読みを記録し、開示後に印字値と照合します。企業ページそのものが訓練の入口です（JCE-094）。", en: "Record your own forecast of how this company's revenue and net income will move in the next earnings release before the figures are out, then check it against the printed values after disclosure. The company page itself is the entry point for the training (JCE-094)." }} />}
         >
           {/* JCE-083: STEP 1/3 of the training cycle — the reader's own prediction of the next filing, and its
               check when the filing arrives. User-local state only. JCE-094: its own section, straight after
@@ -232,8 +241,8 @@ export async function CompanyView({ company }: { company: Company }) {
         <CompanySection
           id="business"
           eyebrow="Business Structure"
-          title="何でできている会社か"
-          lead="図は事業の全体像、下のカードはそれぞれの事業です。区分は同社の開示に基づきます。"
+          title={<T m={{ ja: "何でできている会社か", en: "What the company is made of" }} />}
+          lead={<T m={{ ja: "図は事業の全体像、下のカードはそれぞれの事業です。区分は同社の開示に基づきます。", en: "The diagram shows the business as a whole, and the cards below show each business. The divisions are based on the company's disclosures." }} />}
           tone="paper"
         >
           <BusinessStructure company={company} />
@@ -247,8 +256,8 @@ export async function CompanyView({ company }: { company: Company }) {
         <CompanySection
           id="value-chain"
           eyebrow="Value Chain"
-          title="モノとお金の流れ"
-          lead="調達から事業、顧客までのモノの流れと、その逆に流れるお金を描いています。カードを選ぶと、つながりと詳しい説明が下に出ます。線の太さは取引の大きさを表しません（有価証券報告書に金額がないため）。"
+          title={<T m={{ ja: "モノとお金の流れ", en: "Flow of goods and money" }} />}
+          lead={<T m={{ ja: "調達から事業、顧客までのモノの流れと、その逆に流れるお金を描いています。カードを選ぶと、つながりと詳しい説明が下に出ます。線の太さは取引の大きさを表しません（有価証券報告書に金額がないため）。", en: "Shows the flow of goods from procurement through the business to customers, and the money flowing in the opposite direction. Select a card to see its connections and a detailed explanation below. Line thickness does not indicate transaction size (the annual securities report gives no amounts)." }} />}
         >
           {/* JCE-094: the flow and the five steps to revenue were two sections saying the same thing twice
               (the third telling of the business, after the structure cards). One section now: the flow, then
@@ -261,9 +270,9 @@ export async function CompanyView({ company }: { company: Company }) {
           )}
           {company.businessModel && (
             <div className={chain ? "mt-12" : undefined}>
-              <h3 className="font-serif text-lg font-semibold">つくって、届けて、売上になるまで</h3>
+              <h3 className="font-serif text-lg font-semibold"><T m={{ ja: "つくって、届けて、売上になるまで", en: "From making and delivering to revenue" }} /></h3>
               <p className="mt-1 max-w-3xl text-sm leading-6 text-muted-foreground">
-                会社から利益まで、事業の流れを順に並べています。有価証券報告書で確かめられた段階だけを描いています。
+                <T m={{ ja: "会社から利益まで、事業の流れを順に並べています。有価証券報告書で確かめられた段階だけを描いています。", en: "Lays out the business flow in order, from the company to profit. Only stages confirmed in the annual securities report are shown." }} />
               </p>
               <div className="mt-6">
                 <BusinessModel model={company.businessModel} sources={company.sources} />
@@ -277,8 +286,8 @@ export async function CompanyView({ company }: { company: Company }) {
         <CompanySection
           id="perspectives"
           eyebrow="Strategy & Strengths"
-          title="どうやって成長し、なぜ勝てるのか"
-          lead="文は会社が有価証券報告書に書いた言葉のまま。目標の数字・売上の構図・業界の中の位置は、データから自動で描いています。"
+          title={<T m={{ ja: "どうやって成長し、なぜ勝てるのか", en: "How it grows and why it wins" }} />}
+          lead={<T m={{ ja: "文は会社が有価証券報告書に書いた言葉のまま。目標の数字・売上の構図・業界の中の位置は、データから自動で描いています。", en: "The text is in the company's own words from its annual securities report. Target figures, the revenue structure, and position within the industry are drawn automatically from the data." }} />}
         >
           <PerspectivesSection company={company} />
         </CompanySection>
@@ -287,8 +296,8 @@ export async function CompanyView({ company }: { company: Company }) {
       <CompanySection
         id="financials"
         eyebrow="Financials"
-        title="売上と利益の推移"
-        lead="最新期の数字と前期比、5期のグラフ（数字を選んで切り替え）、売上の内訳の順に並べています。四半期の動きと比較は、開いて見る形に畳んでいます。規模の違う数字は同じ目盛りに載せず、別々のグラフにしています。"
+        title={<T m={{ ja: "売上と利益の推移", en: "Revenue and profit trends" }} />}
+        lead={<T m={{ ja: "最新期の数字と前期比、5期のグラフ（数字を選んで切り替え）、売上の内訳の順に並べています。四半期の動きと比較は、開いて見る形に畳んでいます。規模の違う数字は同じ目盛りに載せず、別々のグラフにしています。", en: "Arranged in this order: latest fiscal year figures with year on year change, a 5-year chart (select a figure to switch), and the revenue breakdown. Quarterly movements and comparisons are collapsed so you can open them. Figures of different scales are not placed on the same axis but shown in separate charts." }} />}
       >
         {/* JCE-094: the old fifth section held everything at once — the latest figures, the quarters, the
             yardsticks, the industry comparison, the deep dive, the table and the CSV. It is taken apart into
@@ -301,9 +310,9 @@ export async function CompanyView({ company }: { company: Company }) {
         {quarterly && (
           <details className="group mb-12">
             <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 text-sm text-muted-foreground select-none hover:text-foreground [&::-webkit-details-marker]:hidden">
-              <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
+              <span data-l="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
               四半期の動きを見る
-            </summary>
+            </span><span data-l="en">View <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span> quarters of movement</span></summary>
             <div className="mt-4">
               <QuarterlySection view={quarterly} sources={company.sources} />
             </div>
@@ -312,7 +321,7 @@ export async function CompanyView({ company }: { company: Company }) {
         {comparison ? (
           <div className="mb-12">
             <PremiumGate
-              title="業界比較"
+              title={<T m={{ ja: "業界比較", en: "Industry comparison" }} />}
               teaser={`${comparison.industryName}業界の掲載企業${comparison.members}社の中での位置（売上高・純利益率・5期の伸び・海外売上高比率・平均年間給与の順位と中央値との差）に加え、5期の利益率・自己資本比率・従業員1人あたりの売上と利益・資産と人員の推移を、業界の中央値と重ねて読めます。`}
             >
               <IndustryComparisonBlock comparison={comparison} />
@@ -335,8 +344,8 @@ export async function CompanyView({ company }: { company: Company }) {
         <CompanySection
           id="history"
           eyebrow="History"
-          title="いまの形になるまで"
-          lead="すべての出来事ではなく、現在の事業につながる転換点だけを選んでいます。"
+          title={<T m={{ ja: "いまの形になるまで", en: "How it became what it is today" }} />}
+          lead={<T m={{ ja: "すべての出来事ではなく、現在の事業につながる転換点だけを選んでいます。", en: "Not every event, only the turning points that lead to the current business." }} />}
           tone="paper"
         >
           <HistoryTimeline events={company.history} sources={company.sources} />
@@ -344,13 +353,13 @@ export async function CompanyView({ company }: { company: Company }) {
       )}
 
       {company.industries.length > 0 && (
-        <CompanySection id="industry" eyebrow="Industry" title="業界のどこにいる？">
+        <CompanySection id="industry" eyebrow="Industry" title={<T m={{ ja: "業界のどこにいる？", en: "Where does it stand in the industry?" }} />}>
           <CompanyIndustries company={company} />
         </CompanySection>
       )}
 
       {company.sources.length > 0 && (
-        <CompanySection id="sources" eyebrow="Sources" title="出典" className="border-t border-foreground">
+        <CompanySection id="sources" eyebrow="Sources" title={<T m={{ ja: "出典", en: "Sources" }} />} className="border-t border-foreground">
           <SourceIndex company={company} hasInbound={inbound.length > 0} />
         </CompanySection>
       )}
@@ -363,9 +372,9 @@ export async function CompanyView({ company }: { company: Company }) {
 
       <footer className="mx-auto max-w-6xl px-5 md:px-8">
         <div className="border-t border-border pt-8 text-xs leading-6 text-muted-foreground">
-          <p className="figures">最終更新 {formatDateJa(company.updatedAt)}</p>
+          <p className="figures"><span data-l="ja">最終更新 <F s={formatDateJa(company.updatedAt)} /></span><span data-l="en">Last updated <F s={formatDateJa(company.updatedAt)} /></span></p>
           <p>
-            この項目は公開資料に基づいて作成されています。誤りを見つけた場合は、ページ上部の「誤りを報告」からお知らせください。
+            <T m={{ ja: "この項目は公開資料に基づいて作成されています。誤りを見つけた場合は、ページ上部の「誤りを報告」からお知らせください。", en: "This entry is based on publicly available materials. If you find an error, please let us know via \"Report an error\" at the top of the page." }} />
           </p>
         </div>
       </footer>

@@ -12,6 +12,7 @@ import { dueReviewIds } from "@/lib/review-queue";
 import { jstToday, microProgressStore, predictionsStore, recordMicroAnswer, recordMicroLessonDone } from "@/lib/storage/stores";
 import { loadLessons, loadPredictions } from "./load";
 import { LearnButton, ProgressRing } from "./learn-ui";
+import { F } from "@/components/i18n/figure";
 
 /**
  * The lesson player (JCE-088): one step on one screen — read, predict, immediate feedback — instead of the
@@ -171,7 +172,7 @@ function PlayerRun({
                 <ExcerptTable table={step.table} figures={Boolean(step.cite)} />
                 {step.cite && (
                   <p className="figures mt-2 text-xs leading-5" style={{ color: LEARN.muted }}>
-                    {step.cite.period && <>対象期間：{step.cite.period}　</>}
+                    {step.cite.period && <>対象期間：<F s={step.cite.period} />　</>}
                     {step.cite.sourceTitle && <>出典：{step.cite.sourceTitle}</>}
                   </p>
                 )}
@@ -183,7 +184,7 @@ function PlayerRun({
           <div>
             <p className="text-xs font-bold tracking-[0.14em]" style={{ color: accent.main }}>{isOrder ? "並べ替えて、確かめる" : PREDICT_KINDS.has(q.kind) ? "予測して、確かめる" : "読み方を確かめる"}</p>
             <p className="mt-3 text-xl font-bold leading-8" style={{ color: LEARN.ink }}>{q.prompt}</p>
-            {q.period && <p className="figures mt-2 text-sm" style={{ color: LEARN.muted }}>対象期間：{q.period}</p>}
+            {q.period && <p className="figures mt-2 text-sm" style={{ color: LEARN.muted }}>対象期間：<F s={q.period} /></p>}
             {q.clue && (
               <p className="mt-3 rounded-2xl px-4 py-3 text-sm leading-6" style={{ backgroundColor: accent.soft, color: LEARN.ink }}>「{q.clue}」</p>
             )}
@@ -272,7 +273,7 @@ function PlayerRun({
             </p>
             <p className="mt-2 text-sm leading-6" style={{ color: LEARN.ink }}>{q.explain}</p>
             <p className="figures mt-2 text-xs leading-5" style={{ color: LEARN.muted }}>
-              {q.period && <>対象期間：{q.period}　</>}
+              {q.period && <>対象期間：<F s={q.period} />　</>}
               {q.sourceTitle && <>出典：{q.sourceTitle}</>}
             </p>
             {q.companyId && (

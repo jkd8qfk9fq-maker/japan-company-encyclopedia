@@ -1,6 +1,7 @@
 import { BASE_PATH } from "@/lib/site";
 import type { IndustryMapData } from "@/lib/industry-map";
 import type { IndustryId } from "@/types/company";
+import { T } from "@/components/i18n/t";
 
 const W = 820;
 const H = 640;
@@ -189,10 +190,10 @@ export function IndustryNetwork({ industryId, data }: { industryId: IndustryId; 
         </svg>
       </div>
       <figcaption className="mt-3 text-xs leading-5 text-muted-foreground">
-        中心が{name.get(industryId)}業界、内側の点がこの業界の企業（主な業界で数えて{members.length}社
-        {(self?.companies.filter((c) => c.primary).length ?? 0) > members.length ? "まで表示" : ""}
+        <span data-l="ja">中心が{name.get(industryId)}業界、内側の点がこの業界の企業（主な業界で数えて{members.length}社
+        {(self?.companies.filter((c) => c.primary).length ?? 0) > members.length ? <T m={{ ja: "まで表示", en: "Showing up to" }} /> : ""}
         ）、外側の円が取引でつながる業界です。線は有価証券報告書に「仕入先」「顧客」と書かれた関係で、円の数字はその数です。
-      </figcaption>
+      </span><span data-l="en">The center is the {name.get(industryId)} industry, the inner dots are companies in this industry ({members.length} companies counted by main industry{(self?.companies.filter((c) => c.primary).length ?? 0) > members.length ? <T m={{ ja: "まで表示", en: "Showing up to" }} /> : ""}), and the outer circles are industries connected through trade. Lines are relationships described as &quot;suppliers&quot; or &quot;customers&quot; in annual securities reports, and the numbers in the circles are their counts.</span></figcaption>
       {others.length > 0 && (
         <ul className="mt-4 flex flex-wrap gap-2 text-xs">
           {others.map(([id, count]) => (

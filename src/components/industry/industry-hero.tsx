@@ -17,8 +17,8 @@ export function IndustryHero({
   priority = false,
 }: {
   image: StaticImageData;
-  eyebrow: string;
-  title: string;
+  eyebrow: React.ReactNode;
+  title: React.ReactNode;
   priority?: boolean;
 }) {
   return (

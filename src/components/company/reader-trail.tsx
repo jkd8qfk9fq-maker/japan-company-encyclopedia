@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useLocalStore } from "@/hooks/use-local-store";
 import { favoritesStore, recentlyViewedStore } from "@/lib/storage/stores";
+import { T } from "@/components/i18n/t";
 
 /**
  * The reader's own trail: saved companies and recently viewed ones. Renders
@@ -22,8 +23,8 @@ export function ReaderTrail({ companies }: { companies: TrailCompany[] }) {
   const byId = new Map(companies.map((c) => [c.id, c]));
 
   const groups = [
-    { title: "フォロー中の企業", ids: favorites },
-    { title: "最近見た企業", ids: recent },
+    { title: <T m={{ ja: "フォロー中の企業", en: "Followed companies" }} />, ids: favorites },
+    { title: <T m={{ ja: "最近見た企業", en: "Recently viewed companies" }} />, ids: recent },
   ]
     .map((g) => ({ ...g, items: g.ids.map((id) => byId.get(id)).filter((c): c is TrailCompany => !!c) }))
     .filter((g) => g.items.length > 0);
@@ -33,8 +34,8 @@ export function ReaderTrail({ companies }: { companies: TrailCompany[] }) {
   return (
     <section aria-label="あなたの閲覧" className="mx-auto max-w-6xl px-5 pt-16 md:px-8">
       <div className="grid gap-10 md:grid-cols-2">
-        {groups.map((group) => (
-          <div key={group.title}>
+        {groups.map((group, groupIndex) => (
+          <div key={groupIndex}>
             <h2 className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">{group.title}</h2>
             <ul className="mt-3 flex flex-wrap gap-2">
               {group.items.slice(0, 8).map((company) => (

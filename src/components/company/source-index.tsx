@@ -1,6 +1,8 @@
 import { ExternalLink } from "lucide-react";
 import { formatDateJa } from "@/lib/utils/format";
 import type { Business, Company } from "@/types/company";
+import { T } from "@/components/i18n/t";
+import { DocTitle, F } from "@/components/i18n/figure";
 
 function businessSourceIds(businesses: Business[]): string[] {
   return businesses.flatMap((b) => [...b.sourceIds, ...businessSourceIds(b.children ?? [])]);
@@ -33,14 +35,14 @@ export function SourceIndex({ company, hasInbound }: { company: Company; hasInbo
             <li key={source.id} id={`source-${source.id}`} className="grid scroll-mt-40 grid-cols-[2rem_1fr] gap-x-2">
               <span className="figures pt-0.5 text-sm text-muted-foreground">[{i + 1}]</span>
               <div>
-                <p className="leading-7 font-medium">{source.title}</p>
+                <p className="leading-7 font-medium"><DocTitle title={source.title} /></p>
                 <p className="text-xs leading-5 text-muted-foreground">
-                  {source.publisher}
-                  {source.publishedAt && <> · {formatDateJa(source.publishedAt)}</>}
-                  {" · "}最終確認 {formatDateJa(source.accessedAt)}
+                  <span data-l="ja"><DocTitle title={source.publisher} />
+                  {source.publishedAt && <> · <F s={formatDateJa(source.publishedAt)} /></>}
+                  {" · "}最終確認 <F s={formatDateJa(source.accessedAt)} /></span><span data-l="en"><DocTitle title={source.publisher} />{source.publishedAt && <> · <F s={formatDateJa(source.publishedAt)} /></>}{" · "}Last checked <F s={formatDateJa(source.accessedAt)} /></span>
                 </p>
                 {sections.length > 0 && (
-                  <p className="mt-1 text-xs leading-5 text-muted-foreground">使われている項目：{sections.join("・")}</p>
+                  <p className="mt-1 text-xs leading-5 text-muted-foreground"><span data-l="ja">使われている項目：{sections.join("・")}</span><span data-l="en">Items used: {sections.join("・")}</span></p>
                 )}
                 <a
                   href={source.url}
@@ -48,9 +50,9 @@ export function SourceIndex({ company, hasInbound }: { company: Company; hasInbo
                   rel="noopener noreferrer"
                   className="link-ink mt-1 inline-flex min-h-8 items-center gap-1 text-xs break-all"
                 >
-                  原文を開く
+                  <span data-l="ja">原文を開く
                   <ExternalLink className="size-3" aria-hidden />
-                  <span className="sr-only">（新しいタブで開きます）</span>
+                  <span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span><span data-l="en">Open original<ExternalLink className="size-3" aria-hidden /><span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span>
                 </a>
               </div>
             </li>
@@ -59,7 +61,7 @@ export function SourceIndex({ company, hasInbound }: { company: Company; hasInbo
       </ol>
       {hasInbound && (
         <p className="mt-8 text-xs leading-5 text-muted-foreground">
-          「ほかの企業の項目に書かれた関係」の出典は、その企業の項目の出典です（関係の一覧の各項目から開けます）。
+          <T m={{ ja: "「ほかの企業の項目に書かれた関係」の出典は、その企業の項目の出典です（関係の一覧の各項目から開けます）。", en: "Sources for \"relationships described in other companies' entries\" are the sources of those companies' entries (you can open them from each entry in the list of relationships)." }} />
         </p>
       )}
     </div>

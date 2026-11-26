@@ -5,13 +5,15 @@ import { toPlainText } from "@/lib/rich-text";
 import { cn } from "@/lib/utils";
 import { formatYen } from "@/lib/utils/format";
 import { COMPANY_NODE, type ValueChain, type ValueChainLink } from "@/lib/value-chain";
-import { SegmentMark } from "./business-structure";
+import { SegmentMark } from "./segment-mark";
+import { T } from "@/components/i18n/t";
+import { F } from "@/components/i18n/figure";
 
 type Mode = "all" | "goods" | "money";
-const MODES: { id: Mode; label: string }[] = [
-  { id: "all", label: "すべて表示" },
-  { id: "goods", label: "モノの流れ" },
-  { id: "money", label: "お金の流れ" },
+const MODES: { id: Mode; label: React.ReactNode }[] = [
+  { id: "all", label: <T m={{ ja: "すべて表示", en: "Show all" }} /> },
+  { id: "goods", label: <T m={{ ja: "モノの流れ", en: "Flow of goods" }} /> },
+  { id: "money", label: <T m={{ ja: "お金の流れ", en: "Flow of money" }} /> },
 ];
 
 type Path = { key: string; d: string; flow: ValueChainLink["flow"]; ends: [string, string] };
@@ -144,7 +146,7 @@ export function ValueChainFlow({ chain, companyName }: { chain: ValueChain; comp
           )}
         >
           {chain.suppliers.length > 0 && (
-            <Column title="調達">
+            <Column title={<T m={{ ja: "調達", en: "Procurement" }} />}>
               {chain.suppliers.map((s) => (
                 <button key={s.id} type="button" data-node={s.id} aria-pressed={selected === s.id} onClick={() => setSelected(s.id)} className={nodeClass(s.id)}>
                   <span className="block text-sm font-semibold">{s.name}</span>
@@ -153,7 +155,7 @@ export function ValueChainFlow({ chain, companyName }: { chain: ValueChain; comp
             </Column>
           )}
 
-          <Column title="自社の事業">
+          <Column title={<T m={{ ja: "自社の事業", en: "Own business" }} />}>
             <div
               data-node={COMPANY_NODE}
               className={cn("space-y-2 rounded-md border border-dashed p-2", selected === COMPANY_NODE ? "border-ink" : "border-border")}
@@ -176,9 +178,9 @@ export function ValueChainFlow({ chain, companyName }: { chain: ValueChain; comp
             </div>
           </Column>
 
-          <Column title="顧客">
+          <Column title={<T m={{ ja: "顧客", en: "Customers" }} />}>
             {chain.customers.length === 0 ? (
-              <p className="text-xs leading-6 text-muted-foreground">顧客の書かれた事業がありません。</p>
+              <p className="text-xs leading-6 text-muted-foreground"><T m={{ ja: "顧客の書かれた事業がありません。", en: "No business with customers is described." }} /></p>
             ) : (
               chain.customers.map((c) => (
                 <button key={c.id} type="button" data-node={c.id} aria-pressed={selected === c.id} onClick={() => setSelected(c.id)} className={nodeClass(c.id)}>
@@ -191,11 +193,11 @@ export function ValueChainFlow({ chain, companyName }: { chain: ValueChain; comp
 
         {chain.suppliers.length === 0 && (
           // Said, not left blank: an absent column would read as "buys nothing" rather than "not established".
-          <p className="relative mt-6 text-xs leading-6 text-muted-foreground">調達先は、有価証券報告書から一般的な呼び名で確かめられたものがまだないため描いていません。</p>
+          <p className="relative mt-6 text-xs leading-6 text-muted-foreground"><T m={{ ja: "調達先は、有価証券報告書から一般的な呼び名で確かめられたものがまだないため描いていません。", en: "Suppliers are not shown because none have yet been confirmed under a common name from the annual securities report." }} /></p>
         )}
         <ul aria-label="線の種類" className="relative mt-6 hidden flex-wrap justify-end gap-x-6 gap-y-1 text-xs text-muted-foreground md:flex">
-          <li className="flex items-center gap-2"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-ink" />モノの流れ（調達・製品・サービス）</li>
-          <li className="flex items-center gap-2"><span aria-hidden className="h-0 w-8 border-t-2 border-dotted border-[var(--segment-5)]" />お金の流れ（代金・売上）</li>
+          <li className="flex items-center gap-2"><span data-l="ja"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-ink" />モノの流れ（調達・製品・サービス）</span><span data-l="en"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-ink" />Flow of goods (procurement, products, services)</span></li>
+          <li className="flex items-center gap-2"><span data-l="ja"><span aria-hidden className="h-0 w-8 border-t-2 border-dotted border-[var(--segment-5)]" />お金の流れ（代金・売上）</span><span data-l="en"><span aria-hidden className="h-0 w-8 border-t-2 border-dotted border-[var(--segment-5)]" />Flow of money (payments, revenue)</span></li>
         </ul>
       </div>
 
@@ -204,7 +206,7 @@ export function ValueChainFlow({ chain, companyName }: { chain: ValueChain; comp
   );
 }
 
-function Column({ title, children }: { title: string; children: React.ReactNode }) {
+function Column({ title, children }: { title: React.ReactNode; children: React.ReactNode }) {
   return (
     <div className="flex flex-col justify-center gap-2">
       <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">{title}</h3>
@@ -234,25 +236,25 @@ function Detail({ chain, selected, mode }: { chain: ValueChain; selected: string
         <>
           <div className="flex flex-wrap items-baseline gap-3 border-b border-border pb-3">
             <h3 className="font-serif text-lg font-semibold">{segment.name}</h3>
-            <span className="rounded-full bg-muted px-3 py-0.5 text-xs text-muted-foreground">事業</span>
+            <span className="rounded-full bg-muted px-3 py-0.5 text-xs text-muted-foreground"><T m={{ ja: "事業", en: "Business" }} /></span>
           </div>
           {(segment.amount !== null || segment.products.length > 0) && (
             <dl className="mt-4 grid gap-4 sm:grid-cols-3">
               {segment.amount !== null && chain.revenue && (
                 <div>
-                  <dt className="text-xs text-muted-foreground">{chain.revenue.label}（{chain.revenue.fiscalYear}）</dt>
-                  <dd className="figures mt-1 font-serif text-lg font-semibold">{formatYen(segment.amount)}</dd>
+                  <dt className="text-xs text-muted-foreground">{chain.revenue.label}（<F s={chain.revenue.fiscalYear} />）</dt>
+                  <dd className="figures mt-1 font-serif text-lg font-semibold"><F s={formatYen(segment.amount)} /></dd>
                 </div>
               )}
               {segment.share !== null && (
                 <div>
-                  <dt className="text-xs text-muted-foreground">事業の合計に占める割合（計算値）</dt>
+                  <dt className="text-xs text-muted-foreground"><T m={{ ja: "事業の合計に占める割合（計算値）", en: "Share of total business (computed)" }} /></dt>
                   <dd className="figures mt-1 font-serif text-lg font-semibold">{segment.share.toFixed(1)}%</dd>
                 </div>
               )}
               {segment.products.length > 0 && (
                 <div>
-                  <dt className="text-xs text-muted-foreground">主な製品・サービス</dt>
+                  <dt className="text-xs text-muted-foreground"><T m={{ ja: "主な製品・サービス", en: "Main products and services" }} /></dt>
                   <dd className="mt-1 text-sm leading-6">{segment.products.slice(0, 4).join("、")}</dd>
                 </div>
               )}
@@ -265,7 +267,7 @@ function Detail({ chain, selected, mode }: { chain: ValueChain; selected: string
         <>
           <div className="flex flex-wrap items-baseline gap-3 border-b border-border pb-3">
             <h3 className="font-serif text-lg font-semibold">{supplier.name}</h3>
-            <span className="rounded-full bg-muted px-3 py-0.5 text-xs text-muted-foreground">調達先</span>
+            <span className="rounded-full bg-muted px-3 py-0.5 text-xs text-muted-foreground"><T m={{ ja: "調達先", en: "Suppliers" }} /></span>
           </div>
           <p className="mt-4 text-[0.9375rem] leading-7">{toPlainText(supplier.description)}</p>
         </>
@@ -273,12 +275,12 @@ function Detail({ chain, selected, mode }: { chain: ValueChain; selected: string
       {customer && (
         <div className="flex flex-wrap items-baseline gap-3 border-b border-border pb-3">
           <h3 className="font-serif text-lg font-semibold">{customer.name}</h3>
-          <span className="rounded-full bg-muted px-3 py-0.5 text-xs text-muted-foreground">顧客</span>
+          <span className="rounded-full bg-muted px-3 py-0.5 text-xs text-muted-foreground"><T m={{ ja: "顧客", en: "Customers" }} /></span>
         </div>
       )}
       {lines.length > 0 && (
         <div className="mt-4">
-          <h4 className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">つながり</h4>
+          <h4 className="text-xs font-semibold tracking-[0.08em] text-muted-foreground"><T m={{ ja: "つながり", en: "Connections" }} /></h4>
           <ul className="mt-2 space-y-1 text-sm leading-6">
             {lines.map((line) => <li key={line}>{line}</li>)}
           </ul>

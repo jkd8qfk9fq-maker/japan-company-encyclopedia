@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useRef, useState, useSyncExternalStore } from "react";
 import { cn } from "@/lib/utils";
 
-export type SectionLink = { id: string; label: string };
+export type SectionLink = { id: string; label: React.ReactNode };
 
 const PHONE = "(max-width: 47.99rem)";
 const SWIPE_MIN = 64;

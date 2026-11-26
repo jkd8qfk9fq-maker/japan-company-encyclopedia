@@ -4,6 +4,8 @@ import { cn } from "@/lib/utils";
 import type { Company, RelationshipKind } from "@/types/company";
 import styles from "./connection-map.module.css";
 import { RELATIONSHIP_LABEL } from "./related-companies";
+import { T } from "@/components/i18n/t";
+import { L } from "@/components/i18n/label";
 
 export type Lane = "owners" | "up" | "down" | "group" | "other";
 
@@ -100,10 +102,10 @@ function LaneBox({ lane, items, className }: { lane: Lane; items: Connection[]; 
               href={`/companies/${item.company.id}`}
               className="inline-flex min-h-11 flex-col justify-center rounded-md border border-border px-3 py-1.5 leading-tight hover:border-foreground"
             >
-              <span className="font-serif text-[0.9375rem] font-semibold">{item.company.name}</span>
+              <span className="font-serif text-[0.9375rem] font-semibold"><L s={item.company.name} /></span>
               <span className="mt-0.5 text-[0.6875rem] text-muted-foreground">
-                {item.label}
-                {item.inbound && <span className="sr-only">（{item.company.name}の項目に記載）</span>}
+                <L s={item.label} />
+                {item.inbound && <span className="sr-only"><span data-l="ja">（<L s={item.company.name} />の項目に記載）</span><span data-l="en">(Described in the entry for <L s={item.company.name} />)</span></span>}
               </span>
             </Link>
           </li>
@@ -111,8 +113,8 @@ function LaneBox({ lane, items, className }: { lane: Lane; items: Connection[]; 
         {items.length > MAX_PER_LANE && (
           <li>
             <a href="#related-companies-list" className="link-ink inline-flex min-h-11 items-center px-1 text-sm">
-              ほか{items.length - MAX_PER_LANE}社
-            </a>
+              <span data-l="ja">ほか{items.length - MAX_PER_LANE}社
+            </span><span data-l="en">{items.length - MAX_PER_LANE} more companies</span></a>
           </li>
         )}
       </ul>
@@ -173,7 +175,7 @@ export function ConnectionMap({ company, lanes }: { company: Company; lanes: Rec
               {company.shortNameEn}
             </span>
           )}
-          <span className={cn("text-sm", company.shortNameEn && "mt-1 opacity-80")}>{company.name}</span>
+          <span className={cn("text-sm", company.shortNameEn && "mt-1 opacity-80")}><L s={company.name} /></span>
         </div>
         {has("down") && (
           <>
@@ -190,8 +192,7 @@ export function ConnectionMap({ company, lanes }: { company: Company; lanes: Rec
       </div>
       {has("other") && <LaneBox lane="other" items={lanes.other} className="mt-6" />}
       <figcaption id={`${company.id}-connections-caption`} className="mt-5 text-xs leading-5 text-muted-foreground">
-        有価証券報告書に書かれた関係だけを表示しています。矢印はモノやサービスの流れ、縦の線は資本関係、点線の枠は向きのない関係です。
-        関係ごとの説明と出典は下の一覧にあります。
+        <T m={{ ja: "有価証券報告書に書かれた関係だけを表示しています。矢印はモノやサービスの流れ、縦の線は資本関係、点線の枠は向きのない関係です。 関係ごとの説明と出典は下の一覧にあります。", en: "Only relationships stated in the annual securities report are shown. Arrows indicate the flow of goods or services, vertical lines indicate capital relationships, and dotted frames indicate relationships with no direction. Explanations and sources for each relationship are in the list below." }} />
       </figcaption>
     </figure>
   );

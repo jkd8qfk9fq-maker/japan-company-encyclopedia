@@ -15,8 +15,8 @@ export function CompanySection({
   tone = "plain",
 }: {
   id: string;
-  eyebrow: string;
-  title: string;
+  eyebrow: React.ReactNode;
+  title: React.ReactNode;
   lead?: React.ReactNode;
   children: React.ReactNode;
   className?: string;

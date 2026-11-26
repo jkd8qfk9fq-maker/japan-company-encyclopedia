@@ -6,6 +6,8 @@ import { firstSentence } from "@/lib/rich-text";
 import { cn } from "@/lib/utils";
 import type { BusinessModel as BusinessModelData, BusinessModelStepKind } from "@/types/company";
 import type { Source } from "@/types/source";
+import { T } from "@/components/i18n/t";
+import { ContentText } from "@/components/i18n/content-text";
 
 const STEP_LABEL: Record<BusinessModelStepKind, string> = {
   company: "会社",
@@ -49,7 +51,7 @@ export function BusinessModel({ model, sources }: { model: BusinessModelData; so
                 <p className={cn("figures text-xs tracking-[0.12em]", last ? "opacity-75" : "text-muted-foreground")}>
                   {String(i + 1).padStart(2, "0")} {STEP_LABEL[step.kind]}
                 </p>
-                <p className="mt-2 font-serif text-lg leading-snug font-semibold">{step.title}</p>
+                <p className="mt-2 font-serif text-lg leading-snug font-semibold"><ContentText text={step.title} /></p>
                 <p className={cn("mt-2 text-[0.8125rem] leading-6", last ? "opacity-90" : "")}>
                   <RichText text={firstSentence(step.description)} />
                 </p>
@@ -61,15 +63,15 @@ export function BusinessModel({ model, sources }: { model: BusinessModelData; so
 
       <details className="group mt-6">
         <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 text-sm text-muted-foreground select-none hover:text-foreground [&::-webkit-details-marker]:hidden">
-          <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
+          <span data-l="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
           各段階を詳しく読む
-        </summary>
+        </span><span data-l="en"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>Read about each stage in detail</span></summary>
         <dl className="mt-4 max-w-4xl divide-y divide-border border-y border-border">
           {steps.map((step) => (
             <div key={step.kind} className="grid gap-x-8 gap-y-1 py-5 md:grid-cols-[9rem_1fr]">
               <dt className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">{STEP_LABEL[step.kind]}</dt>
               <dd>
-                <p className="font-serif text-lg font-semibold">{step.title}</p>
+                <p className="font-serif text-lg font-semibold"><ContentText text={step.title} /></p>
                 <p className="mt-1 text-[0.9375rem] leading-7">
                   <RichText text={step.description} />
                 </p>
@@ -85,7 +87,7 @@ export function BusinessModel({ model, sources }: { model: BusinessModelData; so
         </p>
         {model.revenueSources.length > 0 && (
           <div>
-            <h3 className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">売上の源泉</h3>
+            <h3 className="text-xs font-semibold tracking-[0.08em] text-muted-foreground"><T m={{ ja: "売上の源泉", en: "Sources of revenue" }} /></h3>
             <ul className="mt-3 space-y-2">
               {model.revenueSources.map((source) => (
                 <li key={source} className="flex gap-3 text-sm leading-7">

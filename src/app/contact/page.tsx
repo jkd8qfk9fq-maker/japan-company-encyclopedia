@@ -5,6 +5,7 @@ import { ContactCompanyNote } from "@/components/settings/contact-company-note";
 import { companyRepository } from "@/lib/repositories";
 import { SITE_NAME } from "@/lib/site";
 import { CONTACT_FORM_URL } from "@/lib/support";
+import { L } from "@/components/i18n/label";
 
 export const metadata: Metadata = {
   title: "お問い合わせ・誤りの報告",
@@ -51,7 +52,7 @@ export default async function ContactPage() {
       <ul className="mt-4 border-t border-foreground">
         {TOPICS.map((t) => (
           <li key={t.title} className="border-b border-border py-5">
-            <p className="font-medium">{t.title}</p>
+            <p className="font-medium"><L s={t.title} /></p>
             <p className="mt-1 text-sm leading-7 text-muted-foreground">{t.body}</p>
           </li>
         ))}

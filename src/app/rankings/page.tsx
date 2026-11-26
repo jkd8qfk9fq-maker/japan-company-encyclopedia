@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { buildRankings, MIN_COMPANIES } from "@/lib/rankings";
 import { rankingFigures } from "@/lib/rankings-data";
+import { L } from "@/components/i18n/label";
 
 export const metadata: Metadata = {
   title: "業界ランキング",
@@ -27,13 +28,13 @@ export default async function RankingsPage() {
         {rankings.map((r) => (
           <li key={r.id} className="rounded-md border border-border p-5">
             <h2 className="font-serif text-xl font-semibold">
-              <Link href={`/rankings/${r.id}`} className="underline-offset-4 hover:underline">{r.title}</Link>
+              <Link href={`/rankings/${r.id}`} className="underline-offset-4 hover:underline"><L s={r.title} /></Link>
             </h2>
             <p className="mt-1 text-xs text-muted-foreground">{r.measure}</p>
             <ol className="mt-3 space-y-1 text-sm">
               {r.rows.slice(0, 3).map((row) => (
                 <li key={row.id} className="flex justify-between gap-3">
-                  <span><span className="figures mr-2 text-muted-foreground">{row.rank}位</span>{row.name}</span>
+                  <span><span className="figures mr-2 text-muted-foreground">{row.rank}位</span><L s={row.name} /></span>
                   <span className="figures">{r.format(row.value)}</span>
                 </li>
               ))}

@@ -4,8 +4,12 @@ import websitesJson from "@/data/websites.json";
 import { features } from "@/data/features";
 import { industries } from "@/data/industries";
 import { terms } from "@/data/terms";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { join } from "node:path";
-import { headquartersSchema, parseContent, websitesSchema } from "@/lib/content/schemas";
+import { headquartersSchema, parseContent, translationFileSchema, websitesSchema } from "@/lib/content/schemas";
+import { checkTranslation, hashText } from "@/lib/translation-check";
+import { translatableStrings } from "@/lib/translatable";
+import { toPlainText } from "@/lib/rich-text";
 import { isReleased } from "@/lib/release";
 import type { Company, RelatedCompany } from "@/types/company";
 import { FileRevisionRepository } from "./file-revision-repository";
@@ -17,6 +21,7 @@ import type {
   IndustryRepository,
   RevisionRepository,
   TermRepository,
+  TranslationRepository,
 } from "./repositories";
 
 /**
@@ -151,5 +156,61 @@ export const websiteRepository: WebsiteRepository = {
   },
   async get(companyId) {
     return websites.companies[companyId] ?? null;
+  },
+};
+
+type TranslationKind = "company" | "industry" | "term";
+const TRANSLATION_ROOT = join(process.cwd(), "src", "data", "translations");
+
+/**
+ * Built once, on first use. An entry is kept only if its key is the hash of a text its entry has now and it passes
+ * checkTranslation against that text: a translation is never shown beside Japanese it was not made from (JCE-128).
+ * Read from the file system rather than imported, so thousands of files do not pass through the bundler.
+ */
+let translationIndex: { text: Map<string, string>; coverage: Map<string, { translated: number; total: number }> } | null = null;
+function translations() {
+  if (translationIndex) return translationIndex;
+  const text = new Map<string, string>();
+  const coverage = new Map<string, { translated: number; total: number }>();
+  const subjects: Record<TranslationKind, (id: string) => unknown> = {
+    company: (id) => companyMap.get(id),
+    industry: (id) => industryMap.get(id),
+    term: (id) => termMap.get(id),
+  };
+  for (const kind of Object.keys(subjects) as TranslationKind[]) {
+    const folder = { company: "companies", industry: "industries", term: "terms" }[kind];
+    const dir = join(TRANSLATION_ROOT, "en", folder);
+    if (!existsSync(dir)) continue;
+    for (const name of readdirSync(dir).filter((f) => f.endsWith(".json"))) {
+      const file = parseContent(translationFileSchema, JSON.parse(readFileSync(join(dir, name), "utf8")), `translations/en/${folder}/${name}`);
+      const subject = subjects[kind](file.subject.id);
+      if (!subject) continue;
+      const sources = translatableStrings(subject);
+      let translated = 0;
+      for (const ja of sources) {
+        const en = file.entries[hashText(ja)];
+        if (!en || checkTranslation(ja, en).length > 0) continue;
+        text.set(ja, en);
+        // Cards and metadata show rich text flattened; the flattened Japanese finds the flattened translation.
+        const plain = toPlainText(ja);
+        if (plain !== ja) text.set(plain, toPlainText(en));
+        translated++;
+      }
+      coverage.set(`${kind}:${file.subject.id}`, { translated, total: sources.length });
+    }
+  }
+  translationIndex = { text, coverage };
+  return translationIndex;
+}
+
+export const translationRepository: TranslationRepository = {
+  async find(_locale, ja) {
+    return translations().text.get(ja) ?? null;
+  },
+  lookup(_locale, ja) {
+    return translations().text.get(ja) ?? null;
+  },
+  async coverage(kind, id) {
+    return translations().coverage.get(`${kind}:${id}`) ?? { translated: 0, total: 0 };
   },
 };

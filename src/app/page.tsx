@@ -20,6 +20,7 @@ import { companyRepository, featureRepository, industryRepository, termRepositor
 import { MICRO_LESSON_IDS } from "@/lib/micro-lessons";
 import { SITE_DESCRIPTION, SITE_NAME, TRAINING_APP_NAME } from "@/lib/site";
 import { INDUSTRY_IDS } from "@/types/company";
+import { L } from "@/components/i18n/label";
 
 /** 企業タイプ診断, a separate YUGENQ service (the DISCOVER feed links to it too). */
 const SHINDAN_URL = "https://shindan.kigyo-hyakka.com/";
@@ -116,12 +117,12 @@ export default async function HomePage() {
         <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
         <div className="relative mx-auto max-w-7xl px-4 pt-7 pb-5 md:px-8 md:pt-14 md:pb-8">
           <h1 id="home-hero" className="font-serif text-[1.875rem] leading-[1.3] font-semibold tracking-[0.04em] text-balance md:text-[2.75rem]">
-            <span data-l="ja" lang="ja">
+            <span data-l="ja">
               日本企業を、
               <br />
               構造から理解する。
             </span>
-            <span data-l="en" lang="en">
+            <span data-l="en">
               Understand Japanese companies,
               <br />
               from how they are built.
@@ -140,7 +141,7 @@ export default async function HomePage() {
                   href={`/companies/${c.id}`}
                   className="inline-flex min-h-9 shrink-0 items-center rounded-full border border-border bg-card/80 px-3.5 text-xs backdrop-blur hover:border-foreground"
                 >
-                  {c.name}
+                  <L s={c.name} />
                 </Link>
               ))}
             </div>
@@ -219,10 +220,10 @@ export default async function HomePage() {
                       <CompanyMark name={c.name} />
                       <span className="min-w-0 flex-1">
                         <span className="flex items-baseline gap-2">
-                          <span className="truncate font-semibold">{c.name}</span>
+                          <span className="truncate font-semibold"><L s={c.name} /></span>
                           <span className="figures shrink-0 rounded bg-muted px-1.5 text-[0.625rem] text-muted-foreground">
                             {c.code}
-                            {primary && <T m={{ ja: `・${INDUSTRY_LABELS[primary.industryId].name}`, en: ` · ${INDUSTRY_LABELS[primary.industryId].nameEn}` }} />}
+                            {primary && <T m={{ ja: `・$<T m={{ ja: INDUSTRY_LABELS[primary.industryId].name, en: INDUSTRY_LABELS[primary.industryId].nameEn }} />`, en: ` · ${INDUSTRY_LABELS[primary.industryId].nameEn}` }} />}
                           </span>
                         </span>
                         <span className="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground">{c.description ? toPlainText(c.description) : ""}</span>
@@ -332,7 +333,7 @@ export default async function HomePage() {
               {topPrefectures.map((p) => (
                 <li key={p.id} className="border-b border-border">
                   <Link href={`/prefectures/${p.id}`} className="group flex min-h-11 items-baseline justify-between gap-3 py-2 text-sm">
-                    <span className="group-hover:underline group-hover:underline-offset-4">{p.name}</span>
+                    <span className="group-hover:underline group-hover:underline-offset-4"><L s={p.name} /></span>
                     <span className="figures text-xs text-muted-foreground">{regions.counts[p.id].toLocaleString("ja-JP")}<T m={{ ja: "社", en: "" }} /></span>
                   </Link>
                 </li>
@@ -422,10 +423,10 @@ export default async function HomePage() {
                   <li key={item.key} className="border-b border-border">
                     <Link href={item.href} className="group block py-4">
                       <span className="flex items-start justify-between gap-3 font-serif text-base leading-snug font-semibold">
-                        <span className="group-hover:underline group-hover:underline-offset-4">{item.title}</span>
+                        <span className="group-hover:underline group-hover:underline-offset-4"><L s={item.title} /></span>
                         <ArrowRight className="mt-1 size-4 shrink-0 text-muted-foreground" aria-hidden />
                       </span>
-                      {item.text && <span className="mt-1.5 line-clamp-2 block text-xs leading-5 text-muted-foreground">{item.text}</span>}
+                      {item.text && <span className="mt-1.5 line-clamp-2 block text-xs leading-5 text-muted-foreground"><L s={item.text} /></span>}
                     </Link>
                   </li>
                 ))}
@@ -447,11 +448,11 @@ export default async function HomePage() {
                     <Link href={`/companies/${company.id}`} className="group flex items-start justify-between gap-3 py-3.5">
                       <span className="min-w-0">
                         <span className="block truncate font-serif text-[0.9375rem] font-semibold group-hover:underline group-hover:underline-offset-4">
-                          {company.name}
+                          <L s={company.name} />
                         </span>
                         <span className="figures mt-0.5 block text-xs text-muted-foreground">
                           {company.code}
-                          {primary && <T m={{ ja: ` ｜ ${INDUSTRY_LABELS[primary.industryId].name}`, en: ` | ${INDUSTRY_LABELS[primary.industryId].nameEn}` }} />}
+                          {primary && <T m={{ ja: ` ｜ $<T m={{ ja: INDUSTRY_LABELS[primary.industryId].name, en: INDUSTRY_LABELS[primary.industryId].nameEn }} />`, en: ` | ${INDUSTRY_LABELS[primary.industryId].nameEn}` }} />}
                         </span>
                       </span>
                       <time dateTime={company.updatedAt} className="figures shrink-0 pt-0.5 text-xs text-muted-foreground">

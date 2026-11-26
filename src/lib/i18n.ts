@@ -4,9 +4,10 @@
  * (kept in this browser's settings) shows one and hides the rest with CSS, before first paint. So switching needs no
  * second build, no second set of URLs and no request, and every static page stays one file.
  *
- * Only interface text is translated. A company's own content — its business, history, figures and their labels —
- * stays in the Japanese of the filing it was taken from: a translation would be a new claim no filing states
- * (invariant 1), so a reader of another language is told so instead (LANGUAGE_NOTE).
+ * Interface text is translated by hand, here and in each component. Entry text (a company's business, an industry's
+ * explanation, a glossary entry) is shown in an AI reference translation when one passed the mechanical checks
+ * (JCE-128, src/lib/translation-check.ts) — the same figures, links and Latin-script names — and in Japanese
+ * otherwise; the reader is told which prevails (LANGUAGE_NOTE).
  *
  * Adding a language: add it to LOCALES and LOCALE_META, then give every Message its text — `Message` requires each
  * locale, so the type check lists what is missing.
@@ -35,8 +36,10 @@ export function isLocale(value: unknown): value is Locale {
 export function localeCss(): string {
   const others = LOCALES.filter((l) => l !== DEFAULT_LOCALE);
   return [
-    `[data-l]:not([data-l="${DEFAULT_LOCALE}"]){display:none}`,
-    ...others.map((l) => `html[data-lang="${l}"] [data-l="${DEFAULT_LOCALE}"]{display:none}html[data-lang="${l}"] [data-l="${l}"]{display:revert}`),
+    // The shown language's span is `display: contents`: it adds no box, so a sentence wrapped whole (text and the
+    // links inside it, JCE-128) lays out in a flex row or a grid exactly as the bare text and links did.
+    `[data-l="${DEFAULT_LOCALE}"]{display:contents}[data-l]:not([data-l="${DEFAULT_LOCALE}"]){display:none}`,
+    ...others.map((l) => `html[data-lang="${l}"] [data-l="${DEFAULT_LOCALE}"]{display:none}html[data-lang="${l}"] [data-l="${l}"]{display:contents}`),
     // A block that exists only for another language (LANGUAGE_NOTE) stays hidden for Japanese readers.
   ].join("");
 }
@@ -44,5 +47,5 @@ export function localeCss(): string {
 /** Shown under the header to a reader who chose a language other than Japanese. */
 export const LANGUAGE_NOTE: Message = {
   ja: "",
-  en: "Menus and labels are in English. Company profiles, figures and their sources stay in the Japanese of the filings they come from — they are not machine-translated.",
+  en: "Company text is an AI reference translation of the Japanese, made from the companies' filings; where they differ, the Japanese prevails. Text not yet translated is shown in Japanese. Switch to 日本語 to read the original.",
 };

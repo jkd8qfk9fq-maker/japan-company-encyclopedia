@@ -24,6 +24,9 @@ import { companyRepository, featureRepository, industryRepository } from "@/lib/
 import { toPlainText } from "@/lib/rich-text";
 import { formatDateJa } from "@/lib/utils/format";
 import type { IndustryId } from "@/types/company";
+import { T } from "@/components/i18n/t";
+import { F } from "@/components/i18n/figure";
+import { L } from "@/components/i18n/label";
 
 export const dynamicParams = false;
 
@@ -77,11 +80,11 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
 
   // Tabs, at every width (operator request, 2026-10-20): what the industry is, who is in it, who it trades with.
   const sections: SectionLink[] = [
-    { id: "about", label: "仕組み" },
+    { id: "about", label: <T m={{ ja: "仕組み", en: "How it works" }} /> },
     { id: "companies", label: `企業 ${companies.length}` },
-    ...(hasConnections ? [{ id: "connections", label: "つながり" }] : []),
-    ...(figures ? [{ id: "figures", label: "数字" }] : []),
-    ...(features.length > 0 ? [{ id: "features", label: "特集" }] : []),
+    ...(hasConnections ? [{ id: "connections", label: <T m={{ ja: "つながり", en: "Connections" }} /> }] : []),
+    ...(figures ? [{ id: "figures", label: <T m={{ ja: "数字", en: "Numbers" }} /> }] : []),
+    ...(features.length > 0 ? [{ id: "features", label: <T m={{ ja: "特集", en: "Features" }} /> }] : []),
   ];
 
   return (
@@ -94,16 +97,16 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
         <div className="relative mx-auto max-w-6xl px-5 pt-5 pb-5 md:px-8 md:pt-10 md:pb-8">
           <p className="text-xs tracking-[0.18em] text-muted-foreground">
             <Link href="/industries" className="hover:text-foreground hover:underline">
-              業界
+              <T m={{ ja: "業界", en: "Industry" }} />
             </Link>{" "}
-            ／ {listing.name}
+            ／ <L s={listing.name} />
           </p>
           {/* A label, not a poster (JCE-077, the company hero rule): break-words stays, "Telecommunications"
               is wider than a 320px screen even at this size. */}
           <p className="wordmark mt-2 text-[clamp(1.125rem,4vw,1.5rem)] break-words" aria-hidden>
             {listing.nameEn}
           </p>
-          <h1 className="mt-1 font-serif text-[1.75rem] leading-tight font-semibold md:text-[2.25rem]">{listing.name}業界</h1>
+          <h1 className="mt-1 font-serif text-[1.75rem] leading-tight font-semibold md:text-[2.25rem]"><span data-l="ja"><L s={listing.name} />業界</span><span data-l="en"><L s={listing.name} /> industry</span></h1>
         </div>
       </header>
 
@@ -122,8 +125,8 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
                     <RichText text={industry.description} />
                   </p>
                   <span className="mt-1 inline-flex min-h-8 items-center gap-1 text-xs font-medium text-muted-foreground hover:text-foreground">
-                    <span className="group-open:hidden">続きを読む ＋</span>
-                    <span className="hidden group-open:inline">閉じる －</span>
+                    <span className="group-open:hidden"><T m={{ ja: "続きを読む ＋", en: "Read more +" }} /></span>
+                    <span className="hidden group-open:inline"><T m={{ ja: "閉じる －", en: "Close −" }} /></span>
                   </span>
                 </summary>
               </details>
@@ -136,18 +139,18 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
             </div>
           ) : (
             <p className="mt-6 max-w-3xl text-[0.9375rem] leading-7 text-muted-foreground">
-              この業界の工程の解説は、出典を確認したうえで準備中です。下の図は、掲載企業の有価証券報告書に書かれた取引の関係から描いています。
+              <T m={{ ja: "この業界の工程の解説は、出典を確認したうえで準備中です。下の図は、掲載企業の有価証券報告書に書かれた取引の関係から描いています。", en: "An explanation of this industry's processes is in preparation, pending source verification. The diagram below is drawn from the business relationships described in the annual securities reports of the companies listed." }} />
             </p>
           )}
 
           <div className="mt-14">
-            <h3 className="seal-mark font-serif text-xl font-semibold">企業と、つながる業界</h3>
+            <h3 className="seal-mark font-serif text-xl font-semibold"><T m={{ ja: "企業と、つながる業界", en: "Companies and connected industries" }} /></h3>
             <div className="mt-6">
               <IndustryNetwork industryId={listing.id} data={map} />
             </div>
           </div>
           {companies.length > 0 && <JobPath industryName={listing.name} companies={companies} />}
-          {industry && <p className="figures mt-10 text-xs text-muted-foreground">最終更新 {formatDateJa(industry.updatedAt)}</p>}
+          {industry && <p className="figures mt-10 text-xs text-muted-foreground"><span data-l="ja">最終更新 <F s={formatDateJa(industry.updatedAt)} /></span><span data-l="en">Last updated <F s={formatDateJa(industry.updatedAt)} /></span></p>}
         </CompanySection>
 
         <CompanySection id="companies" eyebrow="Companies" title={`${listing.name}業界の企業`}>
@@ -160,7 +163,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
               ))}
             </ul>
           ) : (
-            <p className="text-muted-foreground">この業界の企業はまだ掲載していません。</p>
+            <p className="text-muted-foreground"><T m={{ ja: "この業界の企業はまだ掲載していません。", en: "No companies in this industry have been listed yet." }} /></p>
           )}
         </CompanySection>
 
@@ -188,14 +191,14 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
           <CompanySection
             id="connections"
             eyebrow="Connections"
-            title="どの業界と取引している？"
-            lead="業界として何を仕入れ、どこへ売るかと、掲載企業の有価証券報告書に「仕入先」「顧客」として書かれた企業どうしの関係。"
+            title={<T m={{ ja: "どの業界と取引している？", en: "Which industries does it trade with?" }} />}
+            lead={<T m={{ ja: "業界として何を仕入れ、どこへ売るかと、掲載企業の有価証券報告書に「仕入先」「顧客」として書かれた企業どうしの関係。", en: "What the industry buys and where it sells, and the relationships between companies described as \"suppliers\" and \"customers\" in the annual securities reports of listed companies." }} />}
           >
             {industry && links.length > 0 && (
               <div className="mb-10 grid gap-8 md:grid-cols-2">
                 {[
-                  { title: "仕入れる元の業界", direction: "from" as const },
-                  { title: "売る先の業界", direction: "to" as const },
+                  { title: <T m={{ ja: "仕入れる元の業界", en: "Industries it buys from" }} />, direction: "from" as const },
+                  { title: <T m={{ ja: "売る先の業界", en: "Industries it sells to" }} />, direction: "to" as const },
                 ].map((side) => {
                   const rows = links.filter((l) => l.direction === side.direction);
                   return rows.length > 0 ? (
@@ -205,7 +208,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
                         {rows.map((link) => (
                           <li key={link.industryId} className="py-3">
                             <Link href={`/industries/${link.industryId}`} className="font-serif font-semibold hover:underline">
-                              {INDUSTRY_LABELS[link.industryId].name}
+                              <T m={{ ja: INDUSTRY_LABELS[link.industryId].name, en: INDUSTRY_LABELS[link.industryId].nameEn }} />
                             </Link>
                             <p className="mt-1 text-sm leading-6">
                               <RichText text={link.description} />
@@ -221,11 +224,11 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
             )}
             <div className="grid gap-8 md:grid-cols-2">
               {[
-                { title: "この業界から売る先", flows: sells, other: (f: (typeof sells)[number]) => f.to },
-                { title: "この業界が仕入れる元", flows: buys, other: (f: (typeof sells)[number]) => f.from },
-              ].map((side) =>
+                { title: <T m={{ ja: "この業界から売る先", en: "Where this industry sells" }} />, flows: sells, other: (f: (typeof sells)[number]) => f.to },
+                { title: <T m={{ ja: "この業界が仕入れる元", en: "Where this industry buys" }} />, flows: buys, other: (f: (typeof sells)[number]) => f.from },
+              ].map((side, sideIndex) =>
                 side.flows.length > 0 ? (
-                  <div key={side.title}>
+                  <div key={sideIndex}>
                     <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">{side.title}</h3>
                     <ul className="mt-3 divide-y divide-border border-y border-border">
                       {side.flows.map((flow) => (
@@ -234,7 +237,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
                             <Link href={`/industries/${side.other(flow)}`} className="font-serif font-semibold hover:underline">
                               {name(side.other(flow))}
                             </Link>
-                            <span className="figures text-xs text-muted-foreground">{flow.pairs.length}組</span>
+                            <span className="figures text-xs text-muted-foreground"><span data-l="ja">{flow.pairs.length}組</span><span data-l="en">{flow.pairs.length} pairs</span></span>
                           </p>
                           <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm">
                             {flow.pairs.map((pair) => (
@@ -257,18 +260,18 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
               )}
             </div>
             <Link href="/industries#map" className="mt-6 inline-flex min-h-11 items-center text-sm link-ink">
-              産業マップで全体を見る
+              <T m={{ ja: "産業マップで全体を見る", en: "See the whole picture on the industry map" }} />
             </Link>
           </CompanySection>
         )}
 
         {features.length > 0 && (
-          <CompanySection id="features" eyebrow="Feature" title="特集">
+          <CompanySection id="features" eyebrow="Feature" title={<T m={{ ja: "特集", en: "Features" }} />}>
             <ul className="border-t border-foreground">
               {features.map((feature) => (
                 <li key={feature.id} className="border-b border-border">
                   <Link href={`/features/${feature.id}`} className="block py-6 font-serif text-xl font-semibold hover:underline">
-                    {feature.title}
+                    <L s={feature.title} />
                   </Link>
                 </li>
               ))}

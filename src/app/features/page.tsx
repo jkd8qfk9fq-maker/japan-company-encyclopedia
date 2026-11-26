@@ -6,6 +6,9 @@ import { FEATURE_IMAGES, FEATURES_HERO_IMAGE } from "@/assets/features";
 import { FeatureCard, accentFor } from "@/components/feature/feature-card";
 import { featureRepository } from "@/lib/repositories";
 import type { Feature } from "@/types/feature";
+import { T } from "@/components/i18n/t";
+import { F } from "@/components/i18n/figure";
+import { L } from "@/components/i18n/label";
 
 export const metadata: Metadata = {
   title: "特集",
@@ -58,16 +61,16 @@ export default async function FeaturesPage() {
           <p className="flex items-center gap-3 text-xs font-semibold tracking-[0.3em] text-[oklch(0.82_0.08_80)]" aria-hidden>
             FEATURES <span className="h-px w-10 bg-current" />
           </p>
-          <h1 className="mt-3 font-serif text-[2.75rem] leading-none font-semibold md:text-[4.5rem]">特集</h1>
-          <p className="mt-5 max-w-xl font-serif text-[1.0625rem] leading-relaxed text-white/90 md:text-xl">一つの問いから、企業と業界をまたいで読む。</p>
-          <p className="mt-2 max-w-xl text-xs leading-relaxed text-white/65 md:text-sm">数字はすべて掲載企業の有価証券報告書から計算しています。</p>
+          <h1 className="mt-3 font-serif text-[2.75rem] leading-none font-semibold md:text-[4.5rem]"><T m={{ ja: "特集", en: "Features" }} /></h1>
+          <p className="mt-5 max-w-xl font-serif text-[1.0625rem] leading-relaxed text-white/90 md:text-xl"><T m={{ ja: "一つの問いから、企業と業界をまたいで読む。", en: "Read across companies and industries, starting from a single question." }} /></p>
+          <p className="mt-2 max-w-xl text-xs leading-relaxed text-white/65 md:text-sm"><T m={{ ja: "数字はすべて掲載企業の有価証券報告書から計算しています。", en: "All figures are calculated from the annual securities reports of the companies listed." }} /></p>
         </div>
       </section>
 
       <div className="mx-auto max-w-6xl px-5 md:px-8">
         {themes.length > 0 && (
           <nav aria-label="テーマ" className="relative z-10 -mt-6 flex items-center gap-3 overflow-x-auto rounded-2xl border border-border bg-card px-4 py-3 shadow-sm md:px-6">
-            <span className="shrink-0 text-sm font-semibold">テーマ</span>
+            <span className="shrink-0 text-sm font-semibold"><T m={{ ja: "テーマ", en: "Themes" }} /></span>
             <ul className="flex gap-2">
               {themes.map(({ topic, first }) => {
                 const Icon = iconFor(topic);
@@ -84,7 +87,7 @@ export default async function FeaturesPage() {
         )}
 
         {!lead ? (
-          <p className="mt-14 border-t border-foreground pt-8 text-muted-foreground">特集はまだ公開していません。</p>
+          <p className="mt-14 border-t border-foreground pt-8 text-muted-foreground"><T m={{ ja: "特集はまだ公開していません。", en: "No features have been published yet." }} /></p>
         ) : (
           <>
             <div className="mt-8 md:mt-10">
@@ -95,8 +98,8 @@ export default async function FeaturesPage() {
               {rest.length > 0 && (
                 <section aria-labelledby="latest-title">
                   <h2 id="latest-title" className="flex items-center gap-3 border-b border-border pb-3 font-serif text-xl font-semibold md:text-2xl">
-                    <span aria-hidden className="h-6 w-1 rounded-full bg-seal" /> 新着の特集
-                  </h2>
+                    <span data-l="ja"><span aria-hidden className="h-6 w-1 rounded-full bg-seal" /> 新着の特集
+                  </span><span data-l="en"><span aria-hidden className="h-6 w-1 rounded-full bg-seal" /> Latest features</span></h2>
                   <ul className="divide-y divide-border border-b border-border">
                     {rest.map((f, i) => (
                       <li key={f.id}><FeatureCard feature={f} index={i + 1} size="row" /></li>
@@ -107,7 +110,7 @@ export default async function FeaturesPage() {
 
               <aside className="space-y-6">
                 <section aria-labelledby="figures-title" className="overflow-hidden rounded-2xl border border-border bg-card">
-                  <h2 id="figures-title" className="bg-navy px-5 py-3.5 font-serif text-base font-semibold text-white">数字で選ぶ</h2>
+                  <h2 id="figures-title" className="bg-navy px-5 py-3.5 font-serif text-base font-semibold text-white"><T m={{ ja: "数字で選ぶ", en: "Browse by numbers" }} /></h2>
                   <ol className="divide-y divide-border px-4">
                     {features.map((f, i) => {
                       const k = f.keyFigures?.[0];
@@ -120,10 +123,10 @@ export default async function FeaturesPage() {
                               {image && <Image src={image} alt="" fill sizes="3.5rem" className="object-cover" />}
                             </span>
                             <span className="min-w-0">
-                              <span className="line-clamp-2 text-sm leading-snug font-semibold group-hover:underline">{f.title}</span>
+                              <span className="line-clamp-2 text-sm leading-snug font-semibold group-hover:underline"><L s={f.title} /></span>
                               {k && (
                                 <span className="mt-1 block text-xs text-muted-foreground">
-                                  <span className="figures font-semibold text-foreground">{k.value}</span> {k.label}
+                                  <span className="figures font-semibold text-foreground"><F s={k.value} /></span> <L s={k.label} />
                                 </span>
                               )}
                             </span>
@@ -136,7 +139,7 @@ export default async function FeaturesPage() {
 
                 {themes.length > 0 && (
                   <section aria-labelledby="themes-title" className="rounded-2xl border border-border bg-muted/40 p-5">
-                    <h2 id="themes-title" className="font-serif text-base font-semibold">テーマから探す</h2>
+                    <h2 id="themes-title" className="font-serif text-base font-semibold"><T m={{ ja: "テーマから探す", en: "Browse by theme" }} /></h2>
                     <ul className="mt-4 grid grid-cols-3 gap-2">
                       {themes.map(({ topic, first, count }) => {
                         const Icon = iconFor(topic);
@@ -145,7 +148,7 @@ export default async function FeaturesPage() {
                             <Link href={`/features/${first.id}`} className="flex h-full flex-col items-center gap-1.5 rounded-lg bg-card px-1 py-3 text-center text-xs font-medium shadow-sm hover:bg-muted">
                               <Icon className="size-5" aria-hidden />
                               {topic}
-                              {count > 1 && <span className="figures text-[0.6875rem] text-muted-foreground">{count}本</span>}
+                              {count > 1 && <span className="figures text-[0.6875rem] text-muted-foreground"><span data-l="ja">{count}本</span><span data-l="en">{count} features</span></span>}
                             </Link>
                           </li>
                         );
@@ -161,11 +164,11 @@ export default async function FeaturesPage() {
         <Link href="/about" className="group relative isolate mt-14 flex flex-col gap-5 overflow-hidden rounded-2xl bg-navy px-6 py-8 text-white md:flex-row md:items-center md:justify-between md:px-10 md:py-10">
           <div aria-hidden className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_85%_30%,oklch(0.45_0.09_258),transparent_60%)]" />
           <div>
-            <p className="text-sm text-white/75">有価証券報告書で読む、日本の上場企業</p>
-            <p className="mt-2 font-serif text-[1.5rem] leading-snug font-semibold md:text-[2rem]">何をしている会社かが、わかる。</p>
+            <p className="text-sm text-white/75"><T m={{ ja: "有価証券報告書で読む、日本の上場企業", en: "Japanese listed companies, read through annual securities reports" }} /></p>
+            <p className="mt-2 font-serif text-[1.5rem] leading-snug font-semibold md:text-[2rem]"><T m={{ ja: "何をしている会社かが、わかる。", en: "Understand what a company does." }} /></p>
           </div>
           <span className="inline-flex shrink-0 items-center gap-2 self-start rounded-full border border-white/70 px-5 py-2.5 text-sm font-medium group-hover:bg-white group-hover:text-navy md:self-auto">
-            日本企業百科事典について <ArrowRight className="size-4" aria-hidden />
+            <span data-l="ja">日本企業百科事典について <ArrowRight className="size-4" aria-hidden /></span><span data-l="en">About the Japanese Company Encyclopedia <ArrowRight className="size-4" aria-hidden /></span>
           </span>
         </Link>
       </div>

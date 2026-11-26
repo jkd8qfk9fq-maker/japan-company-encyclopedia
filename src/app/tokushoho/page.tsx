@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { SITE_NAME } from "@/lib/site";
+import { L } from "@/components/i18n/label";
 
 export const metadata: Metadata = {
   title: "特定商取引法に基づく表記",
@@ -56,7 +57,7 @@ export default function TokushohoPage() {
       <dl className="mt-10 border-t border-foreground">
         {ROWS.map((row) => (
           <div key={row.label} className="grid gap-1.5 border-b border-border py-6 md:grid-cols-[12rem_1fr] md:gap-6">
-            <dt className="font-serif text-[0.9375rem] font-semibold">{row.label}</dt>
+            <dt className="font-serif text-[0.9375rem] font-semibold"><L s={row.label} /></dt>
             <dd className="prose-ja text-sm leading-7 text-muted-foreground">{row.body}</dd>
           </div>
         ))}

@@ -12,6 +12,7 @@ import {
 } from "@/lib/predictions";
 import { predictionsStore, recordPrediction } from "@/lib/storage/stores";
 import { formatYen } from "@/lib/utils/format";
+import { F } from "@/components/i18n/figure";
 
 /**
  * The prediction panel (JCE-083): STEP 1 and STEP 3 of the training cycle, on the company's own page and
@@ -60,7 +61,7 @@ export function VerificationBlock({ prediction, data, companyName }: { predictio
         {companyName}の{label}：あなたの予測は「{directionLabel(prediction.direction)}」（{recordedLabel(prediction.recordedAt)}に記録）。
       </p>
       <p className="figures mt-1 text-sm leading-6">
-        実績：{v.actual.fiscalYear} {formatYen(v.actual.value)}（基準の{v.baseline.fiscalYear} {formatYen(v.baseline.value)}、計算値：前期比 {pct(v.change)}）。{outcomeText}
+        実績：<F s={v.actual.fiscalYear} /> <F s={formatYen(v.actual.value)} />（基準の<F s={v.baseline.fiscalYear} /> <F s={formatYen(v.baseline.value)} />、計算値：前期比 {pct(v.change)}）。{outcomeText}
       </p>
       {titles.length > 0 && <p className="mt-1 text-xs leading-5 text-muted-foreground">出典：{titles.join("／")}</p>}
       {data.explanation && data.explanation.fiscalYear === v.actual.fiscalYear && (
@@ -70,7 +71,7 @@ export function VerificationBlock({ prediction, data, companyName }: { predictio
             {data.explanation.sentences.map((s) => (
               <li key={s.text} className="text-sm leading-6">
                 {s.text}
-                <span className="block text-xs text-muted-foreground">根拠：{s.basis}（{data.explanation!.fiscalYear}）</span>
+                <span className="block text-xs text-muted-foreground">根拠：{s.basis}（<F s={data.explanation!.fiscalYear} />）</span>
               </li>
             ))}
           </ul>
@@ -96,7 +97,7 @@ export function PredictionPanel({ companyId, data }: { companyId: string; data: 
       <p className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">分析訓練 ・ STEP 1 予測 ／ STEP 3 照合</p>
       <h3 className="mt-2 font-serif text-lg font-semibold">次の決算を、自分で読む</h3>
       <p className="prose-ja mt-2 text-sm leading-6 text-muted-foreground">
-        次の有価証券報告書で、{data.name}の売上と純利益が最新期（{latest.fiscalYear}）より増えるか減るか——数字が出る前に、自分の読みを記録します。
+        次の有価証券報告書で、{data.name}の売上と純利益が最新期（<F s={latest.fiscalYear} />）より増えるか減るか——数字が出る前に、自分の読みを記録します。
         記録した予測はあとから変更できません。開示がこのサイトに載ったら、実績の印字値と照合してここに表示します。
         これは企業を見る力を鍛えるための訓練で、売買の判断のためのものではありません。記録はこのブラウザにだけ残ります。
       </p>
@@ -108,7 +109,7 @@ export function PredictionPanel({ companyId, data }: { companyId: string; data: 
           return (
             <div key={metric} className="rounded-md border border-border/70 p-4">
               <p className="figures text-sm leading-6">
-                {METRIC_LABELS[metric]}：基準は{latest.fiscalYear}の {value !== null ? formatYen(value) : "—"}（印字値）。次の期は？
+                {METRIC_LABELS[metric]}：基準は<F s={latest.fiscalYear} />の {value !== null ? formatYen(value) : "—"}（印字値）。次の期は？
               </p>
               {recorded ? (
                 <p className="mt-2 text-sm leading-6">

@@ -4,6 +4,8 @@ import { RichText } from "@/components/rich-text/rich-text";
 import { companyRepository, industryRepository } from "@/lib/repositories";
 import { INDUSTRY_LABELS } from "@/lib/industry-labels";
 import type { Company } from "@/types/company";
+import { T } from "@/components/i18n/t";
+import { L } from "@/components/i18n/label";
 
 /**
  * "業界" — where the company sits. For an industry whose structure has been
@@ -29,13 +31,13 @@ export async function CompanyIndustries({ company }: { company: Company }) {
             {INDUSTRY_LABELS[ref.industryId].nameEn}
           </p>
           <h3 className="mt-2 font-serif text-2xl font-semibold">
-            {INDUSTRY_LABELS[ref.industryId].name}
-            {ref.primary && <span className="ml-3 align-middle text-xs font-normal text-muted-foreground">主な業界</span>}
+            <T m={{ ja: INDUSTRY_LABELS[ref.industryId].name, en: INDUSTRY_LABELS[ref.industryId].nameEn }} />
+            {ref.primary && <span className="ml-3 align-middle text-xs font-normal text-muted-foreground"><T m={{ ja: "主な業界", en: "Main industries" }} /></span>}
           </h3>
 
           {placements.length > 0 && industry && (
             <div className="mt-5">
-              <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">業界の中での位置</p>
+              <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground"><T m={{ ja: "業界の中での位置", en: "Position within the industry" }} /></p>
               <ol className="mt-3 flex flex-wrap items-center gap-2 text-sm">
                 {[
                   ...industry.categories.filter((c) => c.role !== "input"),
@@ -48,7 +50,7 @@ export async function CompanyIndustries({ company }: { company: Company }) {
                       {i > 0 && industry.structure === "chain" && category.role !== "input" && (
                         <ArrowRight aria-hidden className="size-3 text-muted-foreground" />
                       )}
-                      {firstInput && <span className="ml-2 text-xs text-muted-foreground">支える産業：</span>}
+                      {firstInput && <span className="ml-2 text-xs text-muted-foreground"><T m={{ ja: "支える産業：", en: "Industries it supports:" }} /></span>}
                       <span
                         className={
                           here
@@ -56,8 +58,8 @@ export async function CompanyIndustries({ company }: { company: Company }) {
                             : "rounded-full border border-border px-3 py-1 text-muted-foreground"
                         }
                       >
-                        {category.name}
-                        {here && <span className="sr-only">（{company.name}はここ）</span>}
+                        <L s={category.name} />
+                        {here && <span className="sr-only"><span data-l="ja">（<L s={company.name} />はここ）</span><span data-l="en">(<L s={company.name} /> is here)</span></span>}
                       </span>
                     </li>
                   );
@@ -74,12 +76,12 @@ export async function CompanyIndustries({ company }: { company: Company }) {
 
           {peers.length > 0 && (
             <div className="mt-5">
-              <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground">同じ業界の企業</p>
+              <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground"><T m={{ ja: "同じ業界の企業", en: "Companies in the same industry" }} /></p>
               <ul className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-sm">
                 {peers.slice(0, 6).map((peer) => (
                   <li key={peer.id}>
                     <Link href={`/companies/${peer.id}`} className="link-ink">
-                      {peer.name}
+                      <L s={peer.name} />
                     </Link>
                   </li>
                 ))}
@@ -91,8 +93,8 @@ export async function CompanyIndustries({ company }: { company: Company }) {
             href={`/industries/${ref.industryId}`}
             className="mt-auto inline-flex min-h-11 items-center gap-1.5 pt-6 text-sm font-medium"
           >
-            {INDUSTRY_LABELS[ref.industryId].name}業界を見る
-            <ArrowRight className="size-4" aria-hidden />
+            <span data-l="ja"><T m={{ ja: INDUSTRY_LABELS[ref.industryId].name, en: INDUSTRY_LABELS[ref.industryId].nameEn }} />業界を見る
+            <ArrowRight className="size-4" aria-hidden /></span><span data-l="en"><T m={{ ja: INDUSTRY_LABELS[ref.industryId].name, en: INDUSTRY_LABELS[ref.industryId].nameEn }} />View the industry<ArrowRight className="size-4" aria-hidden /></span>
           </Link>
         </li>
       ))}

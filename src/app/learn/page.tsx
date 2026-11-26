@@ -7,6 +7,7 @@ import { MicroLessons } from "@/components/engagement/micro-lessons";
 import { TrainingHistory } from "@/components/engagement/training-history";
 import { TrainingInstall } from "@/components/engagement/training-install";
 import { LEARN } from "@/lib/learning-ui";
+import { L } from "@/components/i18n/label";
 
 export const metadata: Metadata = {
   ...TRAINING_APP_METADATA,
@@ -60,8 +61,8 @@ export default function LearnPage() {
           {STEPS.map((s) => (
             <li key={s.n} className="rounded-md border border-border bg-card p-4 md:p-5">
               <p className="text-xs font-semibold tracking-[0.12em] text-muted-foreground">STEP {s.n}</p>
-              <p className="mt-1 font-medium">{s.title}</p>
-              <p className="mt-1 text-sm leading-6 text-muted-foreground">{s.text}</p>
+              <p className="mt-1 font-medium"><L s={s.title} /></p>
+              <p className="mt-1 text-sm leading-6 text-muted-foreground"><L s={s.text} /></p>
               <p className="mt-2 text-sm">
                 <Link href={s.href} className="underline underline-offset-2 hover:text-foreground">
                   {s.link}
