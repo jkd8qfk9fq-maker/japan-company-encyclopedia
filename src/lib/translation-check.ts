@@ -54,6 +54,50 @@ export function japaneseFigures(text: string): number[] {
   return out.map(key);
 }
 
+const SMALL: Record<string, number> = { 千: 1e3, 百: 1e2, 十: 10 };
+const BIG: Record<string, number> = { 兆: 1e12, 億: 1e8, 万: 1e4 };
+
+/**
+ * The amounts in Japanese prose read the way a Japanese reader reads them: 千・百・十 make a group and 万・億・兆
+ * multiply it, so 「9,982億3千4百万円」 is 998,234,000,000. japaneseFigures folds these differently (JCE-132).
+ */
+export function japaneseAmounts(text: string): number[] {
+  const t = withoutMarkup(text.normalize("NFKC"));
+  const out: number[] = [];
+  let cur: { value: number; group: number; end: number; lastBig: number } | null = null;
+  const flush = () => {
+    if (cur) out.push(cur.value + cur.group);
+    cur = null;
+  };
+  for (const m of t.matchAll(/(\d[\d,]*(?:\.\d+)?)([千百十])?(兆|億|万)?/g)) {
+    const start = m.index ?? 0;
+    const big = m[3] ? BIG[m[3]] : 0;
+    if (!cur || start !== cur.end || (big && big >= cur.lastBig)) {
+      flush();
+      cur = { value: 0, group: 0, end: 0, lastBig: Infinity };
+    }
+    cur.group += num(m[1]) * (m[2] ? SMALL[m[2]] : 1);
+    if (big) {
+      cur.value += cur.group * big;
+      cur.group = 0;
+      cur.lastBig = big;
+    }
+    cur.end = start + m[0].length;
+  }
+  flush();
+  return out.map(key);
+}
+
+/**
+ * True when checkTranslation's folding of the figures differs from the amounts a reader sees. Such a text is not
+ * translated (JCE-132): a translation that matched the checker would state a wrong amount.
+ */
+export function figuresAmbiguous(ja: string): boolean {
+  const a = [...japaneseFigures(ja)].sort((x, y) => x - y).join();
+  const b = [...japaneseAmounts(ja)].sort((x, y) => x - y).join();
+  return a !== b;
+}
+
 /** The figures in English prose ("¥251.77 billion" is one figure), and the words that may stand for a small number. */
 export function englishFigures(text: string): { digits: number[]; words: number[]; months: number[] } {
   const t = withoutMarkup(text.normalize("NFKC"));

@@ -26,7 +26,7 @@ import { spawn } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { sentences } from "../../src/lib/rich-text.ts";
-import { checkTranslation, hashText } from "../../src/lib/translation-check.ts";
+import { checkTranslation, figuresAmbiguous, hashText } from "../../src/lib/translation-check.ts";
 import { translatableStrings } from "../../src/lib/translatable.ts";
 import { classifyExecutorFailure, cleanEnv } from "./ai-executor.mjs";
 
@@ -151,7 +151,10 @@ for (const entry of entries) {
   const file = files.get(entry.id);
   const pending = translatableStrings(entry, fields ?? undefined)
     .map((ja) => ({ id: entry.id, k: hashText(ja), ja }))
-    .filter((i) => !file.entries[i.k] || checkTranslation(i.ja, file.entries[i.k]).length > 0);
+    .filter((i) => !file.entries[i.k] || checkTranslation(i.ja, file.entries[i.k]).length > 0)
+    // A text whose amounts the checker folds differently from a reader is never sent: a translation that passed would
+    // state a wrong amount (JCE-132). It stays in Japanese, and costs nothing.
+    .filter((i) => !figuresAmbiguous(i.ja));
   if (pending.length === 0) continue;
   stats.entries++;
   stats.texts += pending.length;
