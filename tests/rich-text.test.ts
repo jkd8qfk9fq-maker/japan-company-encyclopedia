@@ -51,4 +51,13 @@ describe("firstSentence", () => {
     expect(firstSentence("[[term:wafer|ウェーハ。]]を使う会社です。次。")).toBe("[[term:wafer|ウェーハ。]]を使う会社です。");
     expect(firstSentence("句点のない文")).toBe("句点のない文");
   });
+
+  it("sentences cut where firstSentence cuts and join back to the source", async () => {
+    const { firstSentence, sentences } = await import("../src/lib/rich-text");
+    for (const s of ["一文目です。「二。」文目です。三", "一文目です。二文目です。 ", "句点のない文", ""]) {
+      expect(sentences(s).join("")).toBe(s);
+      expect(sentences(s)[0]).toBe(firstSentence(s));
+    }
+    expect(sentences("一文目です。「二。」文目です。三")).toEqual(["一文目です。", "「二。」文目です。", "三"]);
+  });
 });

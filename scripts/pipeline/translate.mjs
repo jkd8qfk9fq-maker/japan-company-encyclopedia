@@ -1,21 +1,31 @@
 /**
- * Reference translations of entry text into English (JCE-128).
+ * Reference translations of entry text into English (JCE-128; token savings JCE-129).
  *
- *   node scripts/pipeline/translate.mjs --kind company --fields description,businesses [--status published] [--limit 100] [--concurrency 4] [--only <id,id>] [--dry-run]
+ *   node scripts/pipeline/translate.mjs --kind company --fields description,businesses [--status published] [--limit 100] [--concurrency 4] [--only <id,id>] [--model haiku] [--retry-model sonnet] [--dry-run]
  *   node scripts/pipeline/translate.mjs --kind industry
  *   node scripts/pipeline/translate.mjs --kind term
  *
  * For each entry, the Japanese texts with no stored translation are sent in batches to `claude -p` (the operator's
  * own Claude Code login, as in ai-executor.mjs; no key is handled here). What comes back is kept only if it passes
  * checkTranslation (src/lib/translation-check.ts): the same figures, the same links, every Latin-script name kept.
- * A text that fails is retried once with the problems named, then left untranslated — the page shows the Japanese.
+ * A text that fails is retried once, on --retry-model, with the problems named, then left untranslated — the page
+ * shows the Japanese.
  *
- * Files: src/data/translations/en/{companies,industries,terms}/<id>.json, keyed by hashText(japanese). Keys no longer matching a text of
- * the entry are dropped on each run. Nothing here edits an entry.
+ * Nothing is paid for twice (JCE-129):
+ * - A text is sent as its sentences and comes back sentence by sentence, so the card's first sentence — a text of
+ *   its own, looked up on its own — is the first English sentence, not a second call.
+ * - A text already translated anywhere (another company's identical segment label) is reused, unless its English
+ *   names the company it was written for.
+ * - The rules go in the system prompt, which the API caches across calls; the cheap model goes first and only what
+ *   it fails is sent to the stronger one. The checks are the same for both.
+ *
+ * Files: src/data/translations/en/{companies,industries,terms}/<id>.json, keyed by hashText(japanese). Keys no longer
+ * matching a text of the entry are dropped on each run. Nothing here edits an entry.
  */
 import { spawn } from "node:child_process";
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { sentences } from "../../src/lib/rich-text.ts";
 import { checkTranslation, hashText } from "../../src/lib/translation-check.ts";
 import { translatableStrings } from "../../src/lib/translatable.ts";
 import { classifyExecutorFailure, cleanEnv } from "./ai-executor.mjs";
@@ -31,79 +41,158 @@ const statusFilter = flag("status");
 const limit = Number(flag("limit", "100000"));
 const concurrency = Number(flag("concurrency", "4"));
 const only = flag("only")?.split(",") ?? null;
-const model = flag("model", "sonnet");
+const firstModel = flag("model", "haiku");
+const retryModel = flag("retry-model", "sonnet");
 const dryRun = args.includes("--dry-run");
-const BATCH_CHARS = 5000;
-const BATCH_ITEMS = 60;
-const MODEL_LABEL = `claude-${model}`;
+const BATCH_CHARS = 6000;
+const BATCH_ITEMS = 80;
 const today = new Date().toLocaleDateString("sv-SE", { timeZone: "Asia/Tokyo" });
 
+const FOLDERS = { company: "companies", industry: "industries", term: "terms" };
 const DATA = { company: "src/data/companies", industry: "src/data/industries", term: "src/data/terms" }[kind];
 if (!DATA) throw new Error(`unknown --kind ${kind}`);
-const outDir = join("src/data/translations/en", { company: "companies", industry: "industries", term: "terms" }[kind]);
+const TRANSLATIONS = "src/data/translations/en";
+const outDir = join(TRANSLATIONS, FOLDERS[kind]);
 
 const RULES = `You translate Japanese text from a Japanese encyclopedia of listed companies into English for readers who do not read Japanese. The text was written from each company's annual securities report (有価証券報告書). The English is shown as a labelled reference translation beside the original.
 
 Rules — a translation that breaks one is discarded:
-1. Translate faithfully. Add nothing (no explanation, background, judgment or praise) and leave nothing out.
+1. Translate faithfully. Add nothing (no explanation, background, judgment or praise) and leave nothing out. Where the Japanese leaves the subject unsaid or writes 同社/当社, write "the company" or "it" — never a name the sentence does not contain.
 2. Keep every figure. Write numbers in digits, never words. Amounts: convert units exactly (450,760百万円 → ¥450,760 million; 2,517億71百万円 → ¥251,771 million; 1,234億円 → ¥123.4 billion; 3兆円 → ¥3 trillion). Fiscal periods: 2026年3月期 → the fiscal year ended March 2026. Do not add a number the Japanese does not have (no "No. 1" unless it says 1位, no years it does not give).
 3. Keep link markup exactly: [[company:toyota|トヨタ自動車]] → [[company:toyota|Toyota Motor]]. Only the label after | is translated; the kind and id never change, and no link is added or removed.
 4. Keep every word written in Latin letters exactly as written (Zoff, iPhone, DX, BPO).
 5. Proper names: use the English name given in the glossary when there is one; otherwise use the official romanized or English form if you are sure of it, else Hepburn romanization. Never leave Japanese characters.
 6. Plain, neutral encyclopedia English. Short labels (a business segment name such as ライフケア事業) become short labels ("Life Care Business").
 
-Answer with JSON only, no prose and no code fence: {"items":[{"k":"<key>","en":"<translation>"}]} with one item per input item, same keys.`;
+Each input item's "ja" is a list of the sentences of one text. Answer with JSON only, no prose and no code fence: {"items":[{"k":"<key>","en":["<sentence 1>","<sentence 2>"]}]} — one item per input item, same keys, one English sentence per Japanese sentence, in order.`;
 
-function loadEntries() {
-  const files = readdirSync(DATA).filter((f) => f.endsWith(".json"));
-  const entries = [];
-  for (const f of files) {
-    const entry = JSON.parse(readFileSync(join(DATA, f), "utf8"));
-    if (!entry.id) continue;
-    if (only && !only.includes(entry.id)) continue;
-    if (statusFilter && entry.status?.state !== statusFilter) continue;
-    entries.push(entry);
-  }
-  return entries.sort((a, b) => a.id.localeCompare(b.id));
+function loadEntries(dir) {
+  return readdirSync(dir)
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => JSON.parse(readFileSync(join(dir, f), "utf8")))
+    .filter((e) => e.id);
 }
+
+const companies = new Map(loadEntries("src/data/companies").map((e) => [e.id, e]));
+const entries = (kind === "company" ? [...companies.values()] : loadEntries(DATA))
+  .filter((e) => (!only || only.includes(e.id)) && (!statusFilter || e.status?.state === statusFilter))
+  .sort((a, b) => a.id.localeCompare(b.id))
+  .slice(0, limit);
+const byId = new Map(entries.map((e) => [e.id, e]));
 
 function loadFile(id) {
   const path = join(outDir, `${id}.json`);
   if (existsSync(path)) return JSON.parse(readFileSync(path, "utf8"));
-  return { subject: { kind, id }, locale: "en", method: "ai-reference-translation", model: MODEL_LABEL, updatedAt: today, entries: {} };
+  return { subject: { kind, id }, locale: "en", method: "ai-reference-translation", model: `claude-${firstModel}`, updatedAt: today, entries: {} };
 }
 
 function saveFile(entry, file) {
   // Only keys that still match a text of the entry: an edited Japanese text takes its old translation with it.
   const live = new Set(translatableStrings(entry).map(hashText));
-  const entries = Object.fromEntries(Object.entries(file.entries).filter(([k]) => live.has(k)).sort(([a], [b]) => a.localeCompare(b)));
-  if (Object.keys(entries).length === 0) return;
+  const kept = Object.fromEntries(Object.entries(file.entries).filter(([k]) => live.has(k)).sort(([a], [b]) => a.localeCompare(b)));
+  if (Object.keys(kept).length === 0) return;
   mkdirSync(outDir, { recursive: true });
-  writeFileSync(join(outDir, `${entry.id}.json`), `${JSON.stringify({ ...file, model: MODEL_LABEL, updatedAt: today, entries }, null, 2)}\n`);
+  writeFileSync(join(outDir, `${entry.id}.json`), `${JSON.stringify({ ...file, updatedAt: today, entries: kept }, null, 2)}\n`);
 }
 
 // English names the filings give (EDINET's 英語名), for the entry itself and every company its text links to.
-const englishNames = new Map(
-  readdirSync("src/data/companies")
-    .filter((f) => f.endsWith(".json"))
-    .map((f) => JSON.parse(readFileSync(join("src/data/companies", f), "utf8")))
-    .filter((c) => c.nameEn)
-    .map((c) => [c.id, { name: c.name, nameEn: c.nameEn }]),
-);
 function glossary(entry) {
   const ids = new Set(kind === "company" ? [entry.id] : []);
   for (const m of JSON.stringify(entry).matchAll(/\[\[company:([a-z0-9-]+)\|/g)) ids.add(m[1]);
   return [...ids].flatMap((id) => {
-    const n = englishNames.get(id);
-    return n ? [`${n.name} = ${n.nameEn}`] : [];
+    const c = companies.get(id);
+    return c?.nameEn ? [`${c.name} = ${c.nameEn}`] : [];
   });
 }
 
-function callClaude(prompt) {
+/** The distinctive words of a company's English name ("HOYA", "Toyota") — a reused text must not carry them elsewhere. */
+const GENERIC = new Set(["co", "ltd", "inc", "corporation", "corp", "company", "holdings", "group", "the", "and", "of", "japan", "kabushiki", "kaisha"]);
+function nameWords(id) {
+  const c = companies.get(id);
+  if (!c?.nameEn) return [];
+  return [...String(c.nameEn).matchAll(/[A-Za-z][A-Za-z0-9&'-]{2,}/g)].map((m) => m[0]).filter((w) => !GENERIC.has(w.toLowerCase()));
+}
+
+// Translation memory: every stored translation of every kind, by its Japanese text, with the entry it was made for.
+/** @type {Map<string, {en: string, from: string}>} */
+const memory = new Map();
+const files = new Map();
+for (const [k, folder] of Object.entries(FOLDERS)) {
+  const dir = join(TRANSLATIONS, folder);
+  if (!existsSync(dir)) continue;
+  const subjects = k === kind ? byId : null;
+  for (const f of readdirSync(dir).filter((n) => n.endsWith(".json"))) {
+    const file = JSON.parse(readFileSync(join(dir, f), "utf8"));
+    if (subjects?.has(file.subject.id)) files.set(file.subject.id, file);
+    const subject = k === "company" ? companies.get(file.subject.id) : subjects?.get(file.subject.id);
+    if (!subject) continue;
+    for (const ja of translatableStrings(subject)) {
+      const en = file.entries[hashText(ja)];
+      if (en && !memory.has(ja)) memory.set(ja, { en, from: k === "company" ? file.subject.id : "" });
+    }
+  }
+}
+for (const e of entries) if (!files.has(e.id)) files.set(e.id, loadFile(e.id));
+
+/** A stored translation of `ja` usable for entry `id`, or null. */
+function recall(ja, id) {
+  const hit = memory.get(ja);
+  if (!hit) return null;
+  if (hit.from && hit.from !== id && nameWords(hit.from).some((w) => hit.en.includes(w) && !ja.includes(w))) return null;
+  return checkTranslation(ja, hit.en).length === 0 ? hit.en : null;
+}
+
+const stats = { entries: 0, texts: 0, reused: 0, derived: 0, sentChars: 0, stored: 0, rejected: 0, cost: 0 };
+let stop = null;
+
+/** @type {{id:string, k:string, ja:string, problems?:string[]}[]} */
+let todo = [];
+for (const entry of entries) {
+  const file = files.get(entry.id);
+  const pending = translatableStrings(entry, fields ?? undefined)
+    .map((ja) => ({ id: entry.id, k: hashText(ja), ja }))
+    .filter((i) => !file.entries[i.k] || checkTranslation(i.ja, file.entries[i.k]).length > 0);
+  if (pending.length === 0) continue;
+  stats.entries++;
+  stats.texts += pending.length;
+  todo.push(...pending);
+}
+
+function store(item, en) {
+  stats.stored++;
+  if (dryRun) return;
+  files.get(item.id).entries[item.k] = en;
+  memory.set(item.ja, { en, from: kind === "company" ? item.id : "" });
+}
+
+/** Resolves what needs no call: a text translated before, or a first sentence of a text translated in this run. */
+function resolveFromMemory(items, sentencePairs) {
+  const rest = [];
+  const touched = new Set();
+  for (const item of items) {
+    let en = recall(item.ja, item.id);
+    if (en) stats.reused++;
+    else {
+      const pair = sentencePairs.get(`${item.id}\u0000${item.ja}`);
+      if (pair && checkTranslation(item.ja, pair).length === 0) {
+        en = pair;
+        stats.derived++;
+      }
+    }
+    if (en) {
+      store(item, en);
+      touched.add(item.id);
+    } else rest.push(item);
+  }
+  if (!dryRun) for (const id of touched) saveFile(byId.get(id), files.get(id));
+  return rest;
+}
+
+function callClaude(prompt, model) {
   return new Promise((resolve) => {
     const child = spawn(
       "claude",
-      ["-p", prompt, "--model", model, "--output-format", "json", "--no-session-persistence", "--strict-mcp-config", "--disable-slash-commands", "--tools", "", "--max-budget-usd", "1"],
+      ["-p", prompt, "--model", model, "--system-prompt", RULES, "--output-format", "json", "--no-session-persistence", "--strict-mcp-config", "--disable-slash-commands", "--tools", "", "--max-budget-usd", "1"],
       { stdio: ["ignore", "pipe", "pipe"], env: cleanEnv(process.env) },
     );
     let out = "";
@@ -137,15 +226,6 @@ function parseItems(text) {
   }
 }
 
-/** @param {{k:string, ja:string, problems?:string[]}[]} items */
-async function translateBatch(items, names) {
-  const input = items.map((i) => ({ k: i.k, ja: i.ja, ...(i.problems ? { previous_attempt_rejected_because: i.problems } : {}) }));
-  const prompt = `${RULES}\n\nGlossary:\n${names.length ? names.join("\n") : "(none)"}\n\nInput:\n${JSON.stringify({ items: input })}`;
-  const r = await callClaude(prompt);
-  if (!r.ok) return { ok: false, kind: r.kind, text: r.text, results: new Map() };
-  return { ok: true, cost: r.cost, results: new Map(parseItems(r.text).map((i) => [String(i.k), String(i.en ?? "")])) };
-}
-
 function batches(items) {
   const out = [];
   let cur = [];
@@ -163,74 +243,89 @@ function batches(items) {
   return out;
 }
 
-const entries = loadEntries().slice(0, limit);
-const byId = new Map(entries.map((e) => [e.id, e]));
-const files = new Map();
-const stats = { entries: 0, texts: 0, stored: 0, rejected: 0, cost: 0 };
-let stop = null;
-
-// Texts are batched across entries: a one-line description per company would otherwise be one call per company.
-/** @type {{id:string, k:string, ja:string, problems?:string[]}[]} */
-let todo = [];
-for (const entry of entries) {
-  const file = loadFile(entry.id);
-  files.set(entry.id, file);
-  const pending = translatableStrings(entry, fields ?? undefined)
-    .map((ja) => ({ id: entry.id, k: hashText(ja), ja }))
-    .filter((i) => !file.entries[i.k] || checkTranslation(i.ja, file.entries[i.k]).length > 0);
-  if (pending.length === 0) continue;
-  stats.entries++;
-  stats.texts += pending.length;
-  todo.push(...pending);
+/** The English for one item: sentence-aligned when the model kept one sentence per sentence. */
+function readAnswer(item, answer) {
+  const ja = sentences(item.ja);
+  const en = (Array.isArray(answer) ? answer : [answer]).map((s) => String(s ?? "").trim()).filter(Boolean);
+  return { full: en.join(" "), aligned: en.length === ja.length && ja.length > 1 ? en : null, ja };
 }
 
-async function runBatch(batch, retry) {
+async function runBatch(batch, model, retry, sentencePairs) {
   const ids = [...new Set(batch.map((i) => i.id))];
   const names = [...new Set(ids.flatMap((id) => glossary(byId.get(id))))];
-  const r = await translateBatch(batch.map((i) => ({ k: `${i.id}/${i.k}`, ja: i.ja, problems: i.problems })), names);
+  const input = batch.map((i) => ({ k: `${i.id}/${i.k}`, ja: sentences(i.ja), ...(i.problems ? { previous_attempt_rejected_because: i.problems } : {}) }));
+  stats.sentChars += batch.reduce((n, i) => n + i.ja.length, 0);
+  const r = await callClaude(`Glossary:\n${names.length ? names.join("\n") : "(none)"}\n\nInput:\n${JSON.stringify({ items: input })}`, model);
   if (!r.ok) {
     if (r.kind === "rate-limit" || r.kind === "auth" || r.kind === "budget") stop = `${r.kind}: ${r.text}`;
     retry.push(...batch);
     return;
   }
   stats.cost += r.cost ?? 0;
+  const results = new Map(parseItems(r.text).map((i) => [String(i.k), i.en]));
   for (const item of batch) {
-    const en = (r.results.get(`${item.id}/${item.k}`) ?? "").trim();
-    const problems = checkTranslation(item.ja, en);
+    const { full, aligned, ja } = readAnswer(item, results.get(`${item.id}/${item.k}`));
+    const problems = checkTranslation(item.ja, full);
     if (problems.length === 0) {
-      files.get(item.id).entries[item.k] = en;
-      stats.stored++;
+      store(item, full);
+      // The first sentence is a text of its own wherever a card shows it: keep its English for resolveFromMemory.
+      if (aligned) sentencePairs.set(`${item.id}\u0000${ja[0]}`, aligned[0]);
     } else retry.push({ ...item, problems });
   }
   // Saved as it goes, so a stopped run keeps what it paid for.
   for (const id of ids) saveFile(byId.get(id), files.get(id));
 }
 
-if (!dryRun) {
-  for (let attempt = 0; attempt < 2 && todo.length > 0 && !stop; attempt++) {
-    const queue = batches(todo);
+/** First sentences of other pending texts of the same entry wait one round: they usually come free with them. */
+function splitDerivable(items) {
+  const longer = new Set(items.filter((i) => sentences(i.ja).length > 1).map((i) => `${i.id}\u0000${sentences(i.ja)[0]}`));
+  const send = [];
+  const wait = [];
+  for (const i of items) (longer.has(`${i.id}\u0000${i.ja}`) ? wait : send).push(i);
+  return { send, wait };
+}
+
+const sentencePairs = new Map();
+todo = resolveFromMemory(todo, sentencePairs);
+const reusedBefore = stats.reused;
+if (dryRun) {
+  const { send, wait } = splitDerivable(todo);
+  const chars = (xs) => xs.reduce((n, i) => n + i.ja.length, 0);
+  console.log(`[dry run] ${kind}: ${stats.entries} entries, ${stats.texts} texts without a translation`);
+  console.log(`  reused from stored translations: ${reusedBefore}`);
+  console.log(`  first sentences expected to come with their text: ${wait.length} (${chars(wait)} chars)`);
+  console.log(`  to send: ${send.length} texts (${chars(send)} chars)`);
+} else {
+  // Round 0: everything but derivable first sentences, on the first model. Then the first sentences that did not come
+  // free, and every rejected text with its problems, on the retry model.
+  let { send, wait } = splitDerivable(todo);
+  for (let round = 0; round < 2 && !stop; round++) {
+    const model = round === 0 ? firstModel : retryModel;
+    const queue = batches(send);
     const retry = [];
     let done = 0;
     const total = queue.length;
     await Promise.all(
       Array.from({ length: concurrency }, async () => {
         while (queue.length > 0 && !stop) {
-          await runBatch(queue.shift(), retry);
+          await runBatch(queue.shift(), model, retry, sentencePairs);
           done++;
-          if (done % 20 === 0) console.log(`pass ${attempt + 1}: ${done}/${total} batches — stored ${stats.stored}, $${stats.cost.toFixed(2)}`);
+          if (done % 20 === 0) console.log(`round ${round + 1} (${model}): ${done}/${total} batches — stored ${stats.stored}, $${stats.cost.toFixed(2)}`);
         }
       }),
     );
     if (stop) retry.push(...queue.flat());
-    todo = retry;
+    send = [...resolveFromMemory(wait, sentencePairs), ...retry];
+    wait = [];
   }
+  todo = send;
   stats.rejected = todo.length;
   for (const item of todo.filter((i) => i.problems).slice(0, 10)) console.log(`  ✗ ${item.id}: ${item.problems.join(" / ")} — ${item.ja.slice(0, 40)}`);
+  console.log(
+    `${kind}: ${stats.entries} entries, ${stats.texts} texts — stored ${stats.stored} (reused ${stats.reused}, first sentences derived ${stats.derived}), ` +
+      `left in Japanese ${stats.rejected}; sent ${stats.sentChars} chars, $${stats.cost.toFixed(2)}`,
+  );
 }
-console.log(
-  `${dryRun ? "[dry run] " : ""}${kind}: ${stats.entries} entries with ${stats.texts} texts to translate` +
-    (dryRun ? "" : ` — stored ${stats.stored}, left in Japanese ${stats.rejected}, $${stats.cost.toFixed(2)}`),
-);
 if (stop) {
   console.error(`stopped: ${stop}`);
   process.exit(2);

@@ -96,12 +96,25 @@ const CLOSE = new Set(["]", "」", "）", ")", "』"]);
  * shortened, never rephrased; the full text is always one click away.
  */
 export function firstSentence(source: string): string {
+  return sentences(source)[0] ?? source;
+}
+
+/** The sentences of a rich-text string, cut where firstSentence cuts; joined without a separator they are the string. */
+export function sentences(source: string): string[] {
+  const out: string[] = [];
   let depth = 0;
+  let start = 0;
   for (let i = 0; i < source.length; i++) {
     const ch = source[i];
     if (OPEN.has(ch)) depth++;
     else if (CLOSE.has(ch)) depth = Math.max(0, depth - 1);
-    else if (ch === "。" && depth === 0) return source.slice(0, i + 1);
+    else if (ch === "。" && depth === 0) {
+      out.push(source.slice(start, i + 1));
+      start = i + 1;
+    }
   }
-  return source;
+  const rest = source.slice(start);
+  if (rest.trim() || out.length === 0) out.push(rest);
+  else if (rest) out[out.length - 1] += rest;
+  return out;
 }
