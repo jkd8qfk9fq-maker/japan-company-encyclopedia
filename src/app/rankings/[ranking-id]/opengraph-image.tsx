@@ -3,7 +3,6 @@ import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { buildRanking, RANKING_IDS, type RankingId } from "@/lib/rankings";
 import { rankingFigures } from "@/lib/rankings-data";
-import { L } from "@/components/i18n/label";
 
 /**
  * The share image of a ranking (JCE-062), drawn at build time from the same figures as the page. The font is a
@@ -37,13 +36,13 @@ export default async function Image({ params }: { params: Promise<{ "ranking-id"
           <div style={{ fontSize: 30 }}>日本企業百科事典</div>
           <div style={{ fontSize: 24, color: MUTED, marginLeft: 12 }}>業界ランキング</div>
         </div>
-        <div style={{ fontSize: 56, marginTop: 28 }}><L s={ranking.title} /></div>
+        <div style={{ fontSize: 56, marginTop: 28 }}>{ranking.title}</div>
         <div style={{ fontSize: 24, color: MUTED, marginTop: 6 }}>{ranking.measure}</div>
         <div style={{ display: "flex", flexDirection: "column", gap: 14, marginTop: 30 }}>
           {top.map((row) => (
             <div key={row.id} style={{ display: "flex", alignItems: "center", gap: 20, fontSize: 30 }}>
               <div style={{ width: 70, color: MUTED }}>{`${row.rank}位`}</div>
-              <div style={{ width: 340 }}><L s={row.name} /></div>
+              <div style={{ width: 340 }}>{row.name}</div>
               <div style={{ display: "flex", flex: 1, height: 18, background: "#e7e3da", borderRadius: 9 }}>
                 <div style={{ width: `${max > 0 ? Math.max(2, (Math.abs(row.value) / max) * 100) : 0}%`, height: 18, background: NAVY, borderRadius: 9 }} />
               </div>
