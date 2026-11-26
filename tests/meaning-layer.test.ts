@@ -8,7 +8,7 @@ import { isSignedRowKey, MAX_SENTENCES, meaningSummary, sentenceText, type Meani
 /**
  * The meaning layer (JCE-110). The rules under test are the operator's design memo of 2026-11-25:
  * every number in a sentence is the table's number (same row, same formatting), no judgment word,
- * no figure in the template text, nothing built from a suppressed module, at most five sentences.
+ * no figure in the template text, nothing built from a suppressed module, at most seven sentences.
  */
 
 /** Words that would turn a structural sentence into a verdict, a prediction or advice. */
@@ -134,7 +134,7 @@ describe("meaning layer", () => {
     expect(sentenceText(meaningSummary([c2(ratios(1.4, 0.6).slice(0, 1))])[0]!)).toBe("この期の設備投資は 950億円、減価償却費は 600億円、営業キャッシュフローは 1,200億円。");
   });
 
-  it("names the segment with the highest margin, answering each question before any twice (3 / 1 / 1)", () => {
+  it("names the segment with the highest margin, answering each question before any twice (3 / 2 / 2)", () => {
     const a4: AnalysisGroup = {
       id: "a4",
       title: "セグメント別の利益率",
@@ -157,8 +157,10 @@ describe("meaning layer", () => {
     };
     const groups = [a1(-12_000_000_000), b1, a4, seg, { id: "c2", title: "資金ギャップ", rows: [row("c2-operating-cash-flow", "営業キャッシュフロー", 1, { kind: "printed" }), row("c2-capex", "設備投資", 1)] }];
     const out = meaningSummary(groups);
-    expect(out.map((s) => s.id)).toEqual(["q1-net-income", "q1-profit-split", "q1-capex-cash", "q2-margin"]);
+    expect(out.map((s) => s.id)).toEqual(["q1-net-income", "q1-profit-split", "q1-capex-cash", "q2-margin", "q2-largest-share"]);
     expect(sentenceText(out[3]!)).toBe("営業利益率が最も高いのは暮らしの素材事業で 12.3%。売上構成比は 25.0%。");
+    // JCE-127: the second Q2 sentence names the largest share — a different business than the margin's top here.
+    expect(sentenceText(out[4]!)).toBe("売上構成比が最も大きいのは機械事業で 75.0%。");
     out.forEach((s) => checkSentence(s, groups));
   });
 
@@ -177,8 +179,19 @@ describe("meaning layer", () => {
       rows: [row("a5-rnd", "研究開発費", 19_304_000_000, { kind: "printed" }), row("a5-rnd-ratio", "研究開発費の売上高に対する割合", 0.0449, { unit: "percent" })],
     };
     const both = meaningSummary([a5, a6]);
-    expect(both.map((s) => sentenceText(s))).toEqual(["事業別に見ると、有形固定資産及び無形固定資産の増加額の 72.0% は化学品。"]);
+    // JCE-127: with the Q3 cap at two, capex and R&D stand together; the second capex business yields to R&D.
+    expect(both.map((s) => sentenceText(s))).toEqual([
+      "事業別に見ると、有形固定資産及び無形固定資産の増加額の 72.0% は化学品。",
+      "研究開発費は 193億円 で、売上高の 4.5%。",
+    ]);
     both.forEach((s) => checkSentence(s, [a5, a6]));
+    // Capex alone: the second business follows in the same shape.
+    const capexOnly = meaningSummary([a6]);
+    expect(capexOnly.map((s) => sentenceText(s))).toEqual([
+      "事業別に見ると、有形固定資産及び無形固定資産の増加額の 72.0% は化学品。",
+      "次いで、有形固定資産及び無形固定資産の増加額の 20.0% は食品。",
+    ]);
+    capexOnly.forEach((s) => checkSentence(s, [a6]));
     const rndOnly = meaningSummary([a5]);
     expect(rndOnly.map((s) => sentenceText(s))).toEqual(["研究開発費は 193億円 で、売上高の 4.5%。"]);
     rndOnly.forEach((s) => checkSentence(s, [a5]));
@@ -242,6 +255,54 @@ describe("meaning layer", () => {
       "売上高の増減 +300億円 のうち、増加への寄与が最も大きいのは機械事業で +8.00pt。",
     );
     expect(meaningSummary([seg(30_000_000_000, -0.01, -0.02)])).toEqual([]);
+  });
+
+  it("names the second segment contributor under the same guards (JCE-127)", () => {
+    const seg = (total: number, a: number, b: number, ax?: number, bx?: number): AnalysisGroup => ({
+      id: "a3",
+      title: "セグメント別の売上寄与",
+      rows: [
+        row("a3-x", "機械事業の寄与", a, { unit: "points" }),
+        ...(ax === undefined ? [] : [row("a3-x-change", "機械事業の増減", ax)]),
+        row("a3-y", "素材事業の寄与", b, { unit: "points" }),
+        ...(bx === undefined ? [] : [row("a3-y-change", "素材事業の増減", bx)]),
+        row("a3-revenue-change", "売上高の増減", total),
+      ],
+    });
+    const up = meaningSummary([seg(30_000_000_000, 0.08, 0.01, 24_000_000_000, 3_000_000_000)]);
+    expect(up.map((s) => s.id)).toEqual(["q2-segment", "q2-segment-second"]);
+    expect(sentenceText(up[1]!)).toBe("次いで増加への寄与が大きいのは素材事業で +1.00pt（増減 +30億円）。");
+    up.forEach((s) => checkSentence(s, [seg(30_000_000_000, 0.08, 0.01, 24_000_000_000, 3_000_000_000)]));
+    // Falling total: the ranking reads from the negative end; the second name follows the largest faller.
+    const down = meaningSummary([seg(-30_000_000_000, -0.02, -0.08, -6_000_000_000, -24_000_000_000)]);
+    expect(down.map((s) => s.id)).toEqual(["q2-segment", "q2-segment-second"]);
+    expect(sentenceText(down[1]!)).toBe("次いで減少への寄与が大きいのは機械事業で −2.00pt（増減 −60億円）。");
+    // A second part moving against the total is not named.
+    const against = meaningSummary([seg(-30_000_000_000, 0.01, -0.08, 3_000_000_000, -24_000_000_000)]);
+    expect(against.map((s) => s.id)).toEqual(["q2-segment"]);
+    // Without the change rows the second sentence keeps the points-only form.
+    const pointsOnly = meaningSummary([seg(30_000_000_000, 0.08, 0.01)]);
+    expect(sentenceText(pointsOnly[1]!)).toBe("次いで増加への寄与が大きいのは素材事業で +1.00pt。");
+    // A second amount larger than the total is not stated as part of it.
+    const tooLarge = meaningSummary([seg(30_000_000_000, 0.08, 0.01, 24_000_000_000, 40_000_000_000)]);
+    expect(sentenceText(tooLarge[1]!)).toBe("次いで増加への寄与が大きいのは素材事業で +1.00pt。");
+  });
+
+  it("states the working-capital movement with its sign (JCE-127)", () => {
+    const c2 = (wc: number): AnalysisGroup => ({
+      id: "c2",
+      title: "資金ギャップ",
+      rows: [
+        row("c2-operating-cash-flow", "営業キャッシュフロー", 120_000_000_000, { kind: "printed" }),
+        row("c2-capex", "設備投資", 95_000_000_000),
+        row("c2-working-capital-change", "運転資本の増減", wc),
+      ],
+    });
+    const up = meaningSummary([c2(120_000_000_000)]);
+    expect(up.map((s) => s.id)).toEqual(["q1-capex-cash", "q1-working-capital"]);
+    expect(sentenceText(up[1]!)).toBe("運転資本の増減は +1,200億円。");
+    up.forEach((s) => checkSentence(s, [c2(120_000_000_000)]));
+    expect(sentenceText(meaningSummary([c2(-5_000_000_000)])[1]!)).toBe("運転資本の増減は −50億円。");
   });
 
   it("holds every released company to the rules", { timeout: 300_000 }, () => {
