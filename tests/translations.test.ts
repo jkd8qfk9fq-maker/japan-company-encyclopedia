@@ -79,6 +79,7 @@ describe("translation files", () => {
         }
       }
       expect(failures).toEqual([]);
-    });
+      // Every stored translation is checked, and there are tens of thousands of them.
+    }, 120_000);
   }
 });
