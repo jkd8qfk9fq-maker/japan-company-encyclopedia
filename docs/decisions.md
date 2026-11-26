@@ -2409,3 +2409,19 @@ JCE-131 の登録後のデータ品質監査（data-quality 役）で見つけ�
 **対応**：保存済みの全訳90,819件を、正しい日本語の金額の組み立て（千・百・十と万・億・兆のグループ化）で読み直して監査した。検査の数字と正しい金額が食い違う文は全体で44件、そのうち訳の数字が正しい金額と一致しない42件を取り除いた（該当の文は日本語で表示される）。内訳は JCE-131 で入った36件と、それ以前からあった6件。残る2件（INPEX の「2,643十億立方フィート」→「2,643 Bcf」など）は監査側の読み違いで、訳は正しいため残した。
 
 **今後の規則**：原文の数字の折り畳みが正しい金額と食い違う文については、検査を通る形に金額を割って書くことをせず、訳を登録しない（日本語で出す）。これは JCE-128 の「通らなかった訳は保存しない」の運用の明確化で、検査そのものは変更しない。検査の折り畳みを正しいグループ化に合わせる変更は、保存済みの全訳の有効性に影響するため、やる場合は別の決定で扱う。
+
+## JCE-133 — 2026-11-26: 課金の権利判定を商品別に分離する（¥390 のコードで分析レイヤーが開く問題の修正）
+
+運営者指示「権利判定も商品別に分離する」（2026-11-26、実測結果の報告を受けての承認）。
+
+**欠陥（実測、2026-11-26）**：Stripe（YUGENQ の単一アカウント）には商品が2つある — 月390円「企業タイプ診断 プレミアムプラン」（`prod_Vbi8yQUiLyTvDW`、現行価格 `price_1UeusrFm3JfKaAkuWNbxGdMb`）と月1,100円「日本企業百科事典 学習βプラン」（`prod_VfdOFlTGPrGzNo`、価格 `price_1UeI7zFm3JfKaAkuHmwYpG9X`）。請求自体は商品・購読ごとに独立している。しかし JCE-100 の権利記録（`entitlements`）は商品を持たず、`worker/billing` の Webhook は受けた全購読を区別なく記録し、`/api/plan` は「有効な購読なら active」を返していた。そのため月390円のコードでも月1,100円の分析レイヤー（JCE-101 の `analysisEntitled`）が開く状態だった。現在の外部購読者はどちらの商品も0件（存在する購読は運営者自身の390円テスト契約1件のみ）で、実害はまだ無い。
+
+**対応**：
+1. **記録に商品を持たせる**：`migrations/0005_billing_product.sql` で `entitlements` に `product_id` と `price_id`（どちらも nullable）を追加。Webhook の `applySubscription` は購読の最初の item の price から商品・価格を記録し、`applyInvoicePaid` は line の price が商品を名乗っていればそれで補う（invoice が status を動かさない従来規則は維持）。どちらのストア実装（D1・メモリ）も、商品を名乗らないイベントで記録済みの商品を消さない（COALESCE の従来規則を新カラムにも適用）。
+2. **`/api/plan` の応答に `plan` を追加**：`"analysis"` は記録がβ商品（`prod_VfdOFlTGPrGzNo`）と確認できた購読だけ。390円の商品・未知の商品・商品が記録されていない移行前の行はすべて `"premium"`（分析を開くのは確認できたβ購読だけ、という安全側）。既存フィールド（active/code/paidUntil/checkAfter）は不変で、追加のみ。商品IDの定数と判定（`planKindOf`）は `worker/billing/api.ts` に集約し、根拠として Stripe 実測日（2026-11-26）をコメントに残した。
+3. **クライアント**：`StoredPlan` に `kind: "analysis" | "premium"` を持たせる。移行前に保存された kind 無しの記録は読み込み時に `"premium"` として扱い、次のチェックで更新される。`checkPlan` の統合規則は、種別については自サイトの答えだけを正とする（自サイトが "analysis" と答えた場合だけ analysis）。借り物の診断サイト check しか答えなかった場合は、その check は390円プランのためのものなので kind は `"premium"` とする。有効・無効の union 規則（どちらかが有効なら有効）自体は変えていない。
+4. **使う側の分離**：`analysisEntitled` は `kind === "analysis"` のときだけ true。広告抑制（ad-unit）と PREMIUM 系の判定は従来どおり、どちらの商品でも有効な購読なら支払っている読者として扱う（現行仕様を変えない）。MeaningGate / AnalysisGate の文面は変更なし。診断サイト側の Worker は変更しない（このリポジトリの外）。請求そのものも変更しない。
+
+**本番適用の順序（運営者の手作業が必要）**：D1 マイグレーションはデプロイワークフローに含まれておらず、0004 も運営者が本番適用した（JCE-101）。0005 も同じく、**この変更のデプロイ前に（または同時に）運営者が本番 D1（kigyo-push）へ適用する**こと。適用前に Worker だけが先行すると、`entitlements` の読み書きがカラム不在で失敗し、`/api/plan` は 503 を返してクライアントが借り物 check にフォールバックする（premium としては開くが分析は開かない）安全側に倒れる。Webhook の upsert が失敗したイベントは再送されても冪等記録が先に残るため、適用はデプロイ前が確実。
+
+**検証**：`tests/billing.test.ts` を拡張（β購読イベント→商品が記録され応答が `plan: "analysis"`、390円購読→`"premium"` で `analysisEntitled` が false、商品無しの行→`"premium"`、invoice.paid の line から商品が補われる経路、自サイトが "analysis" と答えた場合に checkPlan がその種別を運ぶこと）。`tests/analysis-gate.test.ts` の境界テストはβプランを対象に読み替え、390円プランでは開かないケースを追加。billing / analysis-gate / meaning-gate / premium-benefits / client-imports の各テスト通過、tsc・eslint は終了コード0。

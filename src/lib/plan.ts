@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import { useLocalStore } from "@/hooks/use-local-store";
-import { planStore, type StoredPlan } from "@/lib/storage/stores";
+import { planStore, type PlanKind, type StoredPlan } from "@/lib/storage/stores";
 import { trackEvent } from "@/lib/analytics/runtime";
 
 /**
@@ -17,6 +17,12 @@ import { trackEvent } from "@/lib/analytics/runtime";
  * new record does not hold yet is still answered by the 診断 site exactly as before, so no reader's plan
  * closes while the record fills in. The fallback goes away once the webhook is live and the held codes are
  * recorded here (SaaS Step 2).
+ *
+ * JCE-133: the answer now also says which plan a code is, and the two plans are judged separately. This
+ * site's own record knows the subscription's product and answers "analysis" only for the ¥1,100 学習β
+ * product; the borrowed check exists for the ¥390 plan, so a code only it confirms counts as "premium" and
+ * never opens the analysis layer. Everything else about the union rule is unchanged: either "paid" answer
+ * still counts as paid for the premium benefits and for ad suppression.
  */
 
 export const OWN_PLAN_ENDPOINT = "/api/plan";
@@ -52,43 +58,59 @@ export const PREMIUM_FEATURES_OPEN = true;
 export const ANALYSIS_FEATURES_OPEN = true;
 
 /**
- * Whether this browser's stored plan opens the analysis layer (JCE-101): the layer must be live
- * and the stored plan must still be within its paid period. `usePlan` already clears a plan the
- * moment it lapses, so this is the same truth the gate renders by, kept pure for tests.
+ * Whether this browser's stored plan opens the analysis layer (JCE-101): the layer must be live, the
+ * stored plan must still be within its paid period, and — since JCE-133 — the plan must be the ¥1,100
+ * 学習β plan itself. A ¥390 premium code is still a paid plan (it suppresses ads and opens the premium
+ * features), but it no longer opens this layer. `usePlan` already clears a plan the moment it lapses,
+ * so this is the same truth the gate renders by, kept pure for tests.
  */
 export function analysisEntitled(plan: StoredPlan | null, now = Date.now()): boolean {
-  return ANALYSIS_FEATURES_OPEN && plan !== null && plan.paidUntil > now;
+  return ANALYSIS_FEATURES_OPEN && plan !== null && plan.kind === "analysis" && plan.paidUntil > now;
 }
 const COOKIE = "yugenq_plan";
 const CODE_PATTERN = /^sub_[A-Za-z0-9]{8,64}$/;
 
-type PlanResponse = { active: false } | { active: true; code: string; paidUntil: number; checkAfter: number };
+/** A check's answer, with the plan kind settled (JCE-133): every active answer carries one. */
+type PlanResponse = { active: false } | { active: true; code: string; paidUntil: number; checkAfter: number; plan: PlanKind };
 
-async function askPlan(endpoint: string, code: string): Promise<PlanResponse> {
+/** An answer as it arrives on the wire: only this site's own check prints `plan`, and only since JCE-133. */
+type RawPlanResponse = { active: false } | { active: true; code: string; paidUntil: number; checkAfter: number; plan?: string };
+
+async function askPlan(endpoint: string, code: string): Promise<RawPlanResponse> {
   const response = await fetch(endpoint, {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ code }),
   });
   if (!response.ok) throw new Error(`plan check failed: ${response.status}`);
-  return (await response.json()) as PlanResponse;
+  return (await response.json()) as RawPlanResponse;
 }
 
 /**
- * Whether the code is paid for now (JCE-100): this site's own record first, the 診断 site's borrowed check
- * second, and either "paid" answer wins. An unreachable own endpoint (not live yet, no record) simply leaves
- * the answer to the borrowed check, whose failure still throws as it always did — a failed check keeps the
- * stored plan until it is no longer paid for.
+ * Whether the code is paid for now (JCE-100), and which plan it is (JCE-133): this site's own record
+ * first, the 診断 site's borrowed check second, and either "paid" answer wins. The kind comes from this
+ * site's own record alone — its answer is trusted as printed, and anything it does not call "analysis"
+ * (an older answer with no plan field, the ¥390 product, an unrecorded product) counts as "premium". A
+ * code only the borrowed check confirms is the ¥390 plan it exists for, so it too counts as "premium":
+ * the borrowed check can keep a premium plan open, never the analysis layer. An unreachable own endpoint
+ * (not live yet, no record) simply leaves the answer to the borrowed check, whose failure still throws as
+ * it always did — a failed check keeps the stored plan until it is no longer paid for.
  */
 export async function checkPlan(code: string): Promise<PlanResponse> {
   let own: PlanResponse | null = null;
   try {
-    own = await askPlan(OWN_PLAN_ENDPOINT, code);
+    const raw = await askPlan(OWN_PLAN_ENDPOINT, code);
+    own = raw.active
+      ? { active: true, code: raw.code, paidUntil: raw.paidUntil, checkAfter: raw.checkAfter, plan: raw.plan === "analysis" ? "analysis" : "premium" }
+      : { active: false };
   } catch {
     own = null;
   }
   if (own?.active) return own;
-  const legacy = await askPlan(PLAN_ENDPOINT, code);
+  const rawLegacy = await askPlan(PLAN_ENDPOINT, code);
+  const legacy: PlanResponse = rawLegacy.active
+    ? { active: true, code: rawLegacy.code, paidUntil: rawLegacy.paidUntil, checkAfter: rawLegacy.checkAfter, plan: "premium" }
+    : { active: false };
   return legacy.active ? legacy : (own ?? legacy);
 }
 
@@ -110,7 +132,9 @@ export async function startCheckout(returnTo: string): Promise<void> {
 }
 
 export function applyPlan(result: PlanResponse): StoredPlan | null {
-  const plan = result.active ? { code: result.code, paidUntil: result.paidUntil, checkAfter: result.checkAfter } : null;
+  const plan: StoredPlan | null = result.active
+    ? { code: result.code, paidUntil: result.paidUntil, checkAfter: result.checkAfter, kind: result.plan }
+    : null;
   if (plan) planStore.set(plan);
   else planStore.clear();
   return plan;

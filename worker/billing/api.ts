@@ -9,7 +9,29 @@ import { type BillingStore, type Entitlement } from "./store";
  * active / trialing, paid until the period's end, re-check in at most three days). Checkout stays the 診断
  * site's for now, and the client still falls back to the borrowed check for codes this record does not hold
  * yet (src/lib/plan.ts), so nothing a reader already has changes while the record fills in.
+ *
+ * JCE-133: the record now also holds which product a subscription belongs to, and /api/plan says which plan
+ * a paid code is. Until now any live subscription opened every paid layer, so a ¥390 code opened the ¥1,100
+ * analysis layer too; the two plans are billed separately and are now judged separately. Billing itself is
+ * unchanged — only the entitlement judgement moved.
  */
+
+/**
+ * The two products on the one YUGENQ Stripe account, as measured at Stripe on 2026-11-26: the ¥390/month
+ * 企業タイプ診断 premium plan and the ¥1,100/month 学習β plan. A code counts as "analysis" only when the
+ * record confirms its subscription is the β product; the ¥390 product, a product this record does not
+ * know, and a row written before products were recorded (productId null) all count as "premium" — the
+ * analysis layer opens for confirmed β subscriptions only.
+ */
+export const ANALYSIS_PRODUCT_ID = "prod_VfdOFlTGPrGzNo";
+export const PREMIUM_PRODUCT_ID = "prod_Vbi8yQUiLyTvDW";
+
+export type PlanKind = "analysis" | "premium";
+
+/** Which plan a recorded entitlement is (JCE-133): the product decides, never the price or the status. */
+export function planKindOf(ent: Entitlement): PlanKind {
+  return ent.productId === ANALYSIS_PRODUCT_ID ? "analysis" : "premium";
+}
 
 export type BillingEnv = {
   BILLING_LIMIT?: RateLimit;
@@ -32,7 +54,15 @@ const json = (body: unknown, status = 200) =>
 /** The answer /api/plan gives for a recorded entitlement — the borrowed check's planOf, on this site's record. */
 export function planOfEntitlement(ent: Entitlement, now = Date.now()) {
   if (!PAID.has(ent.status) || ent.paidUntil <= now) return { active: false as const };
-  return { active: true as const, code: ent.code, paidUntil: ent.paidUntil, checkAfter: Math.min(ent.paidUntil, now + RECHECK_MS) };
+  return {
+    active: true as const,
+    code: ent.code,
+    paidUntil: ent.paidUntil,
+    checkAfter: Math.min(ent.paidUntil, now + RECHECK_MS),
+    // JCE-133: which plan this code is, so the client can open the analysis layer for β codes only. The
+    // fields above are unchanged from the borrowed check's shape; this one is an addition.
+    plan: planKindOf(ent),
+  };
 }
 
 const hex = (bytes: Uint8Array) => [...bytes].map((b) => b.toString(16).padStart(2, "0")).join("");
@@ -72,24 +102,33 @@ export async function verifyStripeSignature(secret: string, body: string, header
   return signatures.some((s) => sameHex(s, expected));
 }
 
+/** A price as Stripe prints it on a subscription item or an invoice line: its product may be an id or the object. */
+type StripePrice = { id?: string; product?: string | { id?: string } };
+
 type StripeSubscription = {
   id?: string;
   status?: string;
   customer?: string | { id?: string };
   current_period_end?: number;
   ended_at?: number | null;
-  items?: { data?: { current_period_end?: number }[] };
+  items?: { data?: { current_period_end?: number; price?: StripePrice }[] };
 };
 
 type StripeInvoice = {
   subscription?: string | { id?: string } | null;
   customer?: string | { id?: string } | null;
   customer_email?: string | null;
-  lines?: { data?: { period?: { end?: number } }[] };
+  lines?: { data?: { period?: { end?: number }; price?: StripePrice }[] };
 };
 
 const idOf = (value: string | { id?: string } | null | undefined): string | null =>
   typeof value === "string" ? value : value && typeof value.id === "string" ? value.id : null;
+
+/** The product and price a Stripe price names (JCE-133), either of which may simply not be printed. */
+const productOf = (price: StripePrice | undefined): { productId: string | null; priceId: string | null } => ({
+  productId: idOf(price?.product),
+  priceId: typeof price?.id === "string" ? price.id : null,
+});
 
 /** The period end as Stripe prints it, on the subscription itself or on its first item (the borrowed check reads both). */
 const periodEndSeconds = (sub: StripeSubscription): number => sub.current_period_end ?? sub.items?.data?.[0]?.current_period_end ?? 0;
@@ -97,6 +136,9 @@ const periodEndSeconds = (sub: StripeSubscription): number => sub.current_period
 async function applySubscription(store: BillingStore, sub: StripeSubscription, deleted: boolean, nowIso: string): Promise<void> {
   if (typeof sub.id !== "string" || !SUBSCRIPTION_ID.test(sub.id) || typeof sub.status !== "string") return;
   const endSeconds = deleted && typeof sub.ended_at === "number" ? sub.ended_at : periodEndSeconds(sub);
+  // The product and price ride on the first item (JCE-133). An event that prints neither keeps what the
+  // record already holds — the store never lets a null erase a recorded product.
+  const { productId, priceId } = productOf(sub.items?.data?.[0]?.price);
   await store.upsert({
     code: sub.id,
     customerId: idOf(sub.customer),
@@ -104,6 +146,8 @@ async function applySubscription(store: BillingStore, sub: StripeSubscription, d
     status: sub.status,
     paidUntil: endSeconds * 1000,
     source: "stripe",
+    productId,
+    priceId,
     now: nowIso,
   });
 }
@@ -114,6 +158,11 @@ async function applyInvoicePaid(store: BillingStore, invoice: StripeInvoice, now
   const ends = (invoice.lines?.data ?? []).map((l) => l.period?.end).filter((e): e is number => typeof e === "number");
   if (ends.length === 0) return;
   const existing = await store.get(code);
+  // An invoice line names the price it charged (JCE-133): when it does, it can fill in the product a
+  // subscription event has not recorded yet. The status rule below is unchanged — a paid invoice still
+  // proves the period, not the status.
+  const priced = (invoice.lines?.data ?? []).find((l) => l.price);
+  const { productId, priceId } = productOf(priced?.price);
   await store.upsert({
     code,
     customerId: idOf(invoice.customer),
@@ -123,6 +172,8 @@ async function applyInvoicePaid(store: BillingStore, invoice: StripeInvoice, now
     status: existing?.status ?? "active",
     paidUntil: Math.max(...ends) * 1000,
     source: "stripe",
+    productId,
+    priceId,
     now: nowIso,
   });
 }

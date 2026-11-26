@@ -7,9 +7,12 @@ import type { StoredPlan } from "@/lib/storage/stores";
  * industry median) is outside the gate; the full analysis renders only when the layer is live
  * AND this browser holds a plan still inside its paid period — the plan the JCE-100 union check
  * (this site's entitlements, the borrowed check as fallback) last confirmed.
+ *
+ * JCE-133: the plan must also be the ¥1,100 学習β plan itself (kind "analysis"). A ¥390 premium
+ * plan inside its paid period is still a paid plan, but it no longer opens this layer.
  */
 const NOW = Date.parse("2026-11-23T00:00:00Z");
-const plan = (paidUntil: number): StoredPlan => ({ code: "sub_12345678", paidUntil, checkAfter: paidUntil });
+const plan = (paidUntil: number): StoredPlan => ({ code: "sub_12345678", paidUntil, checkAfter: paidUntil, kind: "analysis" });
 
 describe("analysisEntitled — the analysis layer's boundary (JCE-101)", () => {
   it("the layer is live (Step 2 opened it)", () => {
@@ -20,8 +23,12 @@ describe("analysisEntitled — the analysis layer's boundary (JCE-101)", () => {
     expect(analysisEntitled(null, NOW)).toBe(false);
   });
 
-  it("a plan inside its paid period opens the full analysis", () => {
+  it("a β plan inside its paid period opens the full analysis", () => {
     expect(analysisEntitled(plan(NOW + 60_000), NOW)).toBe(true);
+  });
+
+  it("a ¥390 premium plan inside its paid period does not open it (JCE-133)", () => {
+    expect(analysisEntitled({ ...plan(NOW + 60_000), kind: "premium" }, NOW)).toBe(false);
   });
 
   it("a lapsed plan does not open it, even before usePlan clears it", () => {
