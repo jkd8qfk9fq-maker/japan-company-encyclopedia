@@ -59,7 +59,7 @@ export async function CompanyIndustries({ company }: { company: Company }) {
                         }
                       >
                         <L s={category.name} />
-                        {here && <span className="sr-only"><span data-l="ja" lang="ja">（<L s={company.name} />はここ）</span><span data-l="en" lang="en">(<L s={company.name} /> is here)</span></span>}
+                        {here && <span className="sr-only"><span data-l="ja">（<L s={company.name} />はここ）</span><span data-l="en">(<L s={company.name} /> is here)</span></span>}
                       </span>
                     </li>
                   );
@@ -93,8 +93,8 @@ export async function CompanyIndustries({ company }: { company: Company }) {
             href={`/industries/${ref.industryId}`}
             className="mt-auto inline-flex min-h-11 items-center gap-1.5 pt-6 text-sm font-medium"
           >
-            <span data-l="ja" lang="ja"><T m={{ ja: INDUSTRY_LABELS[ref.industryId].name, en: INDUSTRY_LABELS[ref.industryId].nameEn }} />業界を見る
-            <ArrowRight className="size-4" aria-hidden /></span><span data-l="en" lang="en"><T m={{ ja: INDUSTRY_LABELS[ref.industryId].name, en: INDUSTRY_LABELS[ref.industryId].nameEn }} />View the industry<ArrowRight className="size-4" aria-hidden /></span>
+            <span data-l="ja"><T m={{ ja: INDUSTRY_LABELS[ref.industryId].name, en: INDUSTRY_LABELS[ref.industryId].nameEn }} />業界を見る
+            <ArrowRight className="size-4" aria-hidden /></span><span data-l="en"><T m={{ ja: INDUSTRY_LABELS[ref.industryId].name, en: INDUSTRY_LABELS[ref.industryId].nameEn }} />View the industry<ArrowRight className="size-4" aria-hidden /></span>
           </Link>
         </li>
       ))}

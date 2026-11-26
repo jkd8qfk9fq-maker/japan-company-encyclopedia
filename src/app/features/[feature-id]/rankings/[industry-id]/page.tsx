@@ -54,31 +54,31 @@ export default async function FeatureRankingPage({ params }: Props) {
     <div className="mx-auto max-w-4xl px-5 py-10 md:px-8">
       <p className="text-sm">
         <Link href={`/features/${feature.id}`} className="underline underline-offset-2">
-          <span data-l="ja" lang="ja">特集「<L s={feature.title} />」
-        </span><span data-l="en" lang="en">Feature: &quot;<L s={feature.title} />&quot;</span></Link>
+          <span data-l="ja">特集「<L s={feature.title} />」
+        </span><span data-l="en">Feature: &quot;<L s={feature.title} />&quot;</span></Link>
       </p>
       <h1 className="mt-1 font-serif text-[1.625rem] leading-tight font-semibold md:text-[2.25rem]">
-        <span data-l="ja" lang="ja">{ranking.industryName}の{ranking.metric}ランキング
-      </span><span data-l="en" lang="en">{ranking.metric} ranking of {ranking.industryName}</span></h1>
+        <span data-l="ja">{ranking.industryName}の{ranking.metric}ランキング
+      </span><span data-l="en">{ranking.metric} ranking of {ranking.industryName}</span></h1>
       <p className="mt-2 text-sm leading-7 text-muted-foreground">
-        <span data-l="ja" lang="ja">特集「<L s={feature.title} />」で業界の中央値を並べた{ranking.metric}を、{ranking.industryName}に属する会社ごとに
+        <span data-l="ja">特集「<L s={feature.title} />」で業界の中央値を並べた{ranking.metric}を、{ranking.industryName}に属する会社ごとに
         高い順に並べたものです。対象は{ranking.valueLabel}が分かる{ranking.rows.length.toLocaleString("ja-JP")}社で、
         {ranking.medianValue !== null && (
           <>
-            <span data-l="ja" lang="ja">中央値は{ranking.format(ranking.medianValue)}でした。
-          </span><span data-l="en" lang="en">The median was {ranking.format(ranking.medianValue)}.</span></>
+            <span data-l="ja">中央値は{ranking.format(ranking.medianValue)}でした。
+          </span><span data-l="en">The median was {ranking.format(ranking.medianValue)}.</span></>
         )}
         並びは値そのものの順序で、会社の良し悪しを示すものではありません。
-      </span><span data-l="en" lang="en">In the feature &quot;<L s={feature.title} />&quot;, this ranks the industry median {ranking.metric} from highest to lowest for the companies in {ranking.industryName}. It covers {ranking.rows.length.toLocaleString("ja-JP")} companies with known {ranking.valueLabel}. {ranking.medianValue !== null && (
+      </span><span data-l="en">In the feature &quot;<L s={feature.title} />&quot;, this ranks the industry median {ranking.metric} from highest to lowest for the companies in {ranking.industryName}. It covers {ranking.rows.length.toLocaleString("ja-JP")} companies with known {ranking.valueLabel}. {ranking.medianValue !== null && (
           <>
-            <span data-l="ja" lang="ja">中央値は{ranking.format(ranking.medianValue)}でした。
-          </span><span data-l="en" lang="en">The median was {ranking.format(ranking.medianValue)}.</span></>
+            <span data-l="ja">中央値は{ranking.format(ranking.medianValue)}でした。
+          </span><span data-l="en">The median was {ranking.format(ranking.medianValue)}.</span></>
         )}The ordering reflects the values themselves and does not indicate how good or bad a company is.</span></p>
 
       <ol className="mt-8 divide-y divide-border border-y border-border">
         {ranking.rows.map((row) => (
           <li key={row.companyId} className="grid grid-cols-[3rem_minmax(0,1fr)_auto] items-center gap-3 py-3 text-sm">
-            <span className="figures text-muted-foreground"><span data-l="ja" lang="ja">{row.rank}位</span><span data-l="en" lang="en">No. {row.rank}</span></span>
+            <span className="figures text-muted-foreground"><span data-l="ja">{row.rank}位</span><span data-l="en">No. {row.rank}</span></span>
             <span>
               <Link href={`/companies/${row.companyId}`} className="font-medium underline-offset-2 hover:underline">
                 <L s={row.name} />
@@ -111,22 +111,22 @@ export default async function FeatureRankingPage({ params }: Props) {
           <dd><L s={ranking.formula} /></dd>
           <dt className="text-muted-foreground"><T m={{ ja: "対象企業", en: "Companies covered" }} /></dt>
           <dd>
-            <span data-l="ja" lang="ja"><L s={ranking.basis} />会社は主な業界1つに数えます。
-          </span><span data-l="en" lang="en"><L s={ranking.basis} />Each company is counted in one main industry.</span></dd>
+            <span data-l="ja"><L s={ranking.basis} />会社は主な業界1つに数えます。
+          </span><span data-l="en"><L s={ranking.basis} />Each company is counted in one main industry.</span></dd>
           <dt className="text-muted-foreground"><T m={{ ja: "特集", en: "Features" }} /></dt>
           <dd>
-            <span data-l="ja" lang="ja"><Link href={`/features/${feature.id}`} className="underline underline-offset-2">
+            <span data-l="ja"><Link href={`/features/${feature.id}`} className="underline underline-offset-2">
               <L s={feature.title} />
             </Link>
             （業界別の中央値はこちら）
-          </span><span data-l="en" lang="en"><Link href={`/features/${feature.id}`} className="underline underline-offset-2">
+          </span><span data-l="en"><Link href={`/features/${feature.id}`} className="underline underline-offset-2">
               <L s={feature.title} />
             </Link> (industry medians here)</span></dd>
           <dt className="text-muted-foreground"><T m={{ ja: "業界", en: "Industry" }} /></dt>
           <dd>
             <Link href={`/industries/${ranking.industryId}`} className="underline underline-offset-2">
-              <span data-l="ja" lang="ja">{ranking.industryName}の業界ページ
-            </span><span data-l="en" lang="en">{ranking.industryName} industry page</span></Link>
+              <span data-l="ja">{ranking.industryName}の業界ページ
+            </span><span data-l="en">{ranking.industryName} industry page</span></Link>
           </dd>
           <dt className="text-muted-foreground"><T m={{ ja: "更新", en: "Updated" }} /></dt>
           <dd><T m={{ ja: "掲載データの更新にあわせて、サイトの公開時に自動で集計し直します。", en: "Recalculated automatically when the site is published, in step with updates to the data." }} /></dd>

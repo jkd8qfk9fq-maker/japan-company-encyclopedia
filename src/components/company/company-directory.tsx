@@ -105,8 +105,8 @@ export function CompanyDirectory({
       </div>
 
       <p className="figures mt-4 text-xs text-muted-foreground" aria-live="polite">
-        <span data-l="ja" lang="ja">{results.length}社
-      </span><span data-l="en" lang="en">{results.length} companies</span></p>
+        <span data-l="ja">{results.length}社
+      </span><span data-l="en">{results.length} companies</span></p>
 
       {results.length > 0 ? (
         <>
@@ -123,8 +123,8 @@ export function CompanyDirectory({
               onClick={() => setShown((n) => n + PAGE)}
               className="mt-4 flex min-h-11 w-full items-center justify-center rounded-lg border border-border bg-card text-sm transition-colors hover:border-foreground"
             >
-              <span data-l="ja" lang="ja">さらに{Math.min(PAGE, results.length - shown)}社を表示（{shown}／{results.length}社）
-            </span><span data-l="en" lang="en">Show {Math.min(PAGE, results.length - shown)} more companies ({shown} / {results.length} companies)</span></button>
+              <span data-l="ja">さらに{Math.min(PAGE, results.length - shown)}社を表示（{shown}／{results.length}社）
+            </span><span data-l="en">Show {Math.min(PAGE, results.length - shown)} more companies ({shown} / {results.length} companies)</span></button>
           )}
         </>
       ) : (

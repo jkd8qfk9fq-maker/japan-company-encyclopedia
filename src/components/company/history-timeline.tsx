@@ -59,9 +59,9 @@ export function HistoryTimeline({ events, sources }: { events: HistoryEvent[]; s
 
       <details className="group mt-6">
         <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 text-sm text-muted-foreground select-none hover:text-foreground [&::-webkit-details-marker]:hidden">
-          <span data-l="ja" lang="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
+          <span data-l="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
           全{sorted.length}件を「出来事」と「意味」で読む
-        </span><span data-l="en" lang="en">Read all {sorted.length} items of <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span> by &quot;event&quot; and &quot;meaning&quot;</span></summary>
+        </span><span data-l="en">Read all {sorted.length} items of <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span> by &quot;event&quot; and &quot;meaning&quot;</span></summary>
         <table className="mt-4 hidden w-full border-collapse text-left md:table">
           <caption className="sr-only"><T m={{ ja: "主な転換点（年・出来事・意味）", en: "Key turning points (year, event, meaning)" }} /></caption>
           <thead>

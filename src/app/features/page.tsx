@@ -98,8 +98,8 @@ export default async function FeaturesPage() {
               {rest.length > 0 && (
                 <section aria-labelledby="latest-title">
                   <h2 id="latest-title" className="flex items-center gap-3 border-b border-border pb-3 font-serif text-xl font-semibold md:text-2xl">
-                    <span data-l="ja" lang="ja"><span aria-hidden className="h-6 w-1 rounded-full bg-seal" /> 新着の特集
-                  </span><span data-l="en" lang="en"><span aria-hidden className="h-6 w-1 rounded-full bg-seal" /> Latest features</span></h2>
+                    <span data-l="ja"><span aria-hidden className="h-6 w-1 rounded-full bg-seal" /> 新着の特集
+                  </span><span data-l="en"><span aria-hidden className="h-6 w-1 rounded-full bg-seal" /> Latest features</span></h2>
                   <ul className="divide-y divide-border border-b border-border">
                     {rest.map((f, i) => (
                       <li key={f.id}><FeatureCard feature={f} index={i + 1} size="row" /></li>
@@ -148,7 +148,7 @@ export default async function FeaturesPage() {
                             <Link href={`/features/${first.id}`} className="flex h-full flex-col items-center gap-1.5 rounded-lg bg-card px-1 py-3 text-center text-xs font-medium shadow-sm hover:bg-muted">
                               <Icon className="size-5" aria-hidden />
                               {topic}
-                              {count > 1 && <span className="figures text-[0.6875rem] text-muted-foreground"><span data-l="ja" lang="ja">{count}本</span><span data-l="en" lang="en">{count} features</span></span>}
+                              {count > 1 && <span className="figures text-[0.6875rem] text-muted-foreground"><span data-l="ja">{count}本</span><span data-l="en">{count} features</span></span>}
                             </Link>
                           </li>
                         );
@@ -168,7 +168,7 @@ export default async function FeaturesPage() {
             <p className="mt-2 font-serif text-[1.5rem] leading-snug font-semibold md:text-[2rem]"><T m={{ ja: "何をしている会社かが、わかる。", en: "Understand what a company does." }} /></p>
           </div>
           <span className="inline-flex shrink-0 items-center gap-2 self-start rounded-full border border-white/70 px-5 py-2.5 text-sm font-medium group-hover:bg-white group-hover:text-navy md:self-auto">
-            <span data-l="ja" lang="ja">日本企業百科事典について <ArrowRight className="size-4" aria-hidden /></span><span data-l="en" lang="en">About the Japanese Company Encyclopedia <ArrowRight className="size-4" aria-hidden /></span>
+            <span data-l="ja">日本企業百科事典について <ArrowRight className="size-4" aria-hidden /></span><span data-l="en">About the Japanese Company Encyclopedia <ArrowRight className="size-4" aria-hidden /></span>
           </span>
         </Link>
       </div>

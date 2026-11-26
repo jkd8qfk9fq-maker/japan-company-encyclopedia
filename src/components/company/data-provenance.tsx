@@ -34,18 +34,18 @@ export function DataProvenance({ company, metrics, revisions }: { company: Compa
     <section aria-label="このデータの確かめ方" className="mt-12 border-t border-border pt-8 print:hidden">
       <h2 className="font-serif text-lg font-semibold"><T m={{ ja: "このデータの確かめ方", en: "How to verify this data" }} /></h2>
       <p className="prose-ja mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
-        <span data-l="ja" lang="ja">このレポートの数字は、有価証券報告書に印字された値をそのまま載せたものと、その印字値から計算した値（計算値）だけです。
+        <span data-l="ja">このレポートの数字は、有価証券報告書に印字された値をそのまま載せたものと、その印字値から計算した値（計算値）だけです。
         数字の出どころは、以下の出典で確かめられます。百科事典全体の編集方針は
         <Link href="/about#data-heading" className="underline underline-offset-2 hover:text-foreground"><T m={{ ja: "データの出典と加工について", en: "About data sources and processing" }} /></Link>
         にあります。
-      </span><span data-l="en" lang="en">The figures in this report are only the values printed in the annual securities report, reproduced as they are, and values computed from those printed values (computed). You can verify where the figures come from in the sources below. The encyclopedia&apos;s overall editorial policy is available at <Link href="/about#data-heading" className="underline underline-offset-2 hover:text-foreground"><T m={{ ja: "データの出典と加工について", en: "About data sources and processing" }} /></Link>.</span></p>
+      </span><span data-l="en">The figures in this report are only the values printed in the annual securities report, reproduced as they are, and values computed from those printed values (computed). You can verify where the figures come from in the sources below. The encyclopedia&apos;s overall editorial policy is available at <Link href="/about#data-heading" className="underline underline-offset-2 hover:text-foreground"><T m={{ ja: "データの出典と加工について", en: "About data sources and processing" }} /></Link>.</span></p>
 
       <dl className="mt-5 grid gap-6 text-sm leading-6 md:grid-cols-2">
         <div>
           <dt className="text-xs font-semibold tracking-[0.12em] text-muted-foreground"><T m={{ ja: "対象期間", en: "Period covered" }} /></dt>
           <dd className="figures mt-1.5">
-            <span data-l="ja" lang="ja"><F s={first.fiscalYear} />から<F s={latest.fiscalYear} />まで、{records.length}期分の有価証券報告書の「主要な経営指標等の推移」です（最新期の期末は<F s={formatDateJa(latest.periodEnd)} />）。
-          </span><span data-l="en" lang="en">Key management indicators from the annual securities reports, from <F s={first.fiscalYear} /> to <F s={latest.fiscalYear} />, covering {records.length} fiscal years (the latest fiscal year ends <F s={formatDateJa(latest.periodEnd)} />).</span></dd>
+            <span data-l="ja"><F s={first.fiscalYear} />から<F s={latest.fiscalYear} />まで、{records.length}期分の有価証券報告書の「主要な経営指標等の推移」です（最新期の期末は<F s={formatDateJa(latest.periodEnd)} />）。
+          </span><span data-l="en">Key management indicators from the annual securities reports, from <F s={first.fiscalYear} /> to <F s={latest.fiscalYear} />, covering {records.length} fiscal years (the latest fiscal year ends <F s={formatDateJa(latest.periodEnd)} />).</span></dd>
         </div>
 
         {metrics.length > 0 && (
@@ -78,7 +78,7 @@ export function DataProvenance({ company, metrics, revisions }: { company: Compa
                   {s.publishedAt && ` ・ 公表 ${formatDateJa(s.publishedAt)}`}
                   {s.docId && ` ・ EDINET文書ID ${s.docId}`}）
                 </span>
-                <span className="block text-xs text-muted-foreground"><span data-l="ja" lang="ja">この百科事典が原資料を確認した日：<F s={formatDateJa(s.accessedAt)} /></span><span data-l="en" lang="en">Date this encyclopedia checked the original sources: <F s={formatDateJa(s.accessedAt)} /></span></span>
+                <span className="block text-xs text-muted-foreground"><span data-l="ja">この百科事典が原資料を確認した日：<F s={formatDateJa(s.accessedAt)} /></span><span data-l="en">Date this encyclopedia checked the original sources: <F s={formatDateJa(s.accessedAt)} /></span></span>
               </li>
             ))}
           </ul>

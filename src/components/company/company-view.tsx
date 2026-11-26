@@ -139,21 +139,21 @@ export async function CompanyView({ company }: { company: Company }) {
               companies themselves. The map and the full list below are the same ties in full (L2). */}
           <div className="mb-8">
             <p className="text-[0.9375rem] leading-7">
-              <span data-l="ja" lang="ja">この会社につながる会社は全{relations.length + inbound.length}件
+              <span data-l="ja">この会社につながる会社は全{relations.length + inbound.length}件
               {relations.length > 0 && (
                 <>
                   （
                   {[...tieKindCounts.entries()].map(([kind, count]) => `${RELATIONSHIP_LABEL[kind]} ${count}件`).join("・")}
-                  {inbound.length > 0 && <><span data-l="ja" lang="ja">／ほかの会社の項目に書かれた関係 {inbound.length}件</span><span data-l="en" lang="en">/ {inbound.length} relationships described in other companies&apos; entries</span></>}）
+                  {inbound.length > 0 && <><span data-l="ja">／ほかの会社の項目に書かれた関係 {inbound.length}件</span><span data-l="en">/ {inbound.length} relationships described in other companies&apos; entries</span></>}）
                 </>
               )}
               {relations.length === 0 && inbound.length > 0 && <><T m={{ ja: "（ほかの会社の項目に書かれた関係）", en: "(relationships written in other companies' entries)" }} /></>}
               です。
-            </span><span data-l="en" lang="en">{relations.length + inbound.length} companies are connected to this company{relations.length > 0 && (
+            </span><span data-l="en">{relations.length + inbound.length} companies are connected to this company{relations.length > 0 && (
                 <>
                   （
                   {[...tieKindCounts.entries()].map(([kind, count]) => `${RELATIONSHIP_LABEL[kind]} ${count}件`).join("・")}
-                  {inbound.length > 0 && <><span data-l="ja" lang="ja">／ほかの会社の項目に書かれた関係 {inbound.length}件</span><span data-l="en" lang="en">/ {inbound.length} relationships described in other companies&apos; entries</span></>}）
+                  {inbound.length > 0 && <><span data-l="ja">／ほかの会社の項目に書かれた関係 {inbound.length}件</span><span data-l="en">/ {inbound.length} relationships described in other companies&apos; entries</span></>}）
                 </>
               )}{relations.length === 0 && inbound.length > 0 && <><T m={{ ja: "（ほかの会社の項目に書かれた関係）", en: "(relationships written in other companies' entries)" }} /></>}.</span></p>
             {relations.length > 0 && (
@@ -169,7 +169,7 @@ export async function CompanyView({ company }: { company: Company }) {
                     </Link>
                   </li>
                 ))}
-                {relations.length > 3 && <li className="text-xs text-muted-foreground"><span data-l="ja" lang="ja">ほか{relations.length - 3}件は下の一覧に</span><span data-l="en" lang="en">{relations.length - 3} more in the list below</span></li>}
+                {relations.length > 3 && <li className="text-xs text-muted-foreground"><span data-l="ja">ほか{relations.length - 3}件は下の一覧に</span><span data-l="en">{relations.length - 3} more in the list below</span></li>}
               </ul>
             )}
           </div>
@@ -179,9 +179,9 @@ export async function CompanyView({ company }: { company: Company }) {
                 <ConnectionNetwork company={company} lanes={lanes} />
               </div>
               <ul aria-label="線の種類" className="mt-3 hidden flex-wrap gap-x-6 gap-y-1 text-xs text-muted-foreground md:flex">
-                <li className="flex items-center gap-2"><span data-l="ja" lang="ja"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-foreground" />資本関係</span><span data-l="en" lang="en"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-foreground" /> Capital relationship</span></li>
-                <li className="flex items-center gap-2"><span data-l="ja" lang="ja"><span aria-hidden className="h-0 w-8 border-t-[2.5px] border-ink" />取引（仕入先・顧客）</span><span data-l="en" lang="en"><span aria-hidden className="h-0 w-8 border-t-[2.5px] border-ink" /> Transaction (supplier/customer)</span></li>
-                <li className="flex items-center gap-2"><span data-l="ja" lang="ja"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-dashed border-muted-foreground" />向きの書かれていない関係</span><span data-l="en" lang="en"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-dashed border-muted-foreground" /> Relationship with no stated direction</span></li>
+                <li className="flex items-center gap-2"><span data-l="ja"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-foreground" />資本関係</span><span data-l="en"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-foreground" /> Capital relationship</span></li>
+                <li className="flex items-center gap-2"><span data-l="ja"><span aria-hidden className="h-0 w-8 border-t-[2.5px] border-ink" />取引（仕入先・顧客）</span><span data-l="en"><span aria-hidden className="h-0 w-8 border-t-[2.5px] border-ink" /> Transaction (supplier/customer)</span></li>
+                <li className="flex items-center gap-2"><span data-l="ja"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-dashed border-muted-foreground" />向きの書かれていない関係</span><span data-l="en"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-dashed border-muted-foreground" /> Relationship with no stated direction</span></li>
               </ul>
               <div className="md:hidden">
                 <ConnectionMap company={company} lanes={lanes} />
@@ -306,9 +306,9 @@ export async function CompanyView({ company }: { company: Company }) {
         {quarterly && (
           <details className="group mb-12">
             <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 text-sm text-muted-foreground select-none hover:text-foreground [&::-webkit-details-marker]:hidden">
-              <span data-l="ja" lang="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
+              <span data-l="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
               四半期の動きを見る
-            </span><span data-l="en" lang="en">View <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span> quarters of movement</span></summary>
+            </span><span data-l="en">View <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span> quarters of movement</span></summary>
             <div className="mt-4">
               <QuarterlySection view={quarterly} sources={company.sources} />
             </div>
@@ -377,7 +377,7 @@ export async function CompanyView({ company }: { company: Company }) {
 
       <footer className="mx-auto max-w-6xl px-5 md:px-8">
         <div className="border-t border-border pt-8 text-xs leading-6 text-muted-foreground">
-          <p className="figures"><span data-l="ja" lang="ja">最終更新 <F s={formatDateJa(company.updatedAt)} /></span><span data-l="en" lang="en">Last updated <F s={formatDateJa(company.updatedAt)} /></span></p>
+          <p className="figures"><span data-l="ja">最終更新 <F s={formatDateJa(company.updatedAt)} /></span><span data-l="en">Last updated <F s={formatDateJa(company.updatedAt)} /></span></p>
           <p>
             <T m={{ ja: "この項目は公開資料に基づいて作成されています。誤りを見つけた場合は、ページ上部の「誤りを報告」からお知らせください。", en: "This entry is based on publicly available materials. If you find an error, please let us know via \"Report an error\" at the top of the page." }} />
           </p>

@@ -26,7 +26,7 @@ export function FavoriteButton({ companyId, companyName }: { companyId: string; 
     >
       {saved ? <BellRing className="size-4" aria-hidden /> : <Bell className="size-4" aria-hidden />}
       {saved ? <T m={{ ja: "フォロー中", en: "Following" }} /> : <T m={{ ja: "フォロー", en: "Follow" }} />}
-      <span className="sr-only"><span data-l="ja" lang="ja">：{companyName}（新しい決算をお知らせに表示）</span><span data-l="en" lang="en">: {companyName} (new earnings shown in notifications)</span></span>
+      <span className="sr-only"><span data-l="ja">：{companyName}（新しい決算をお知らせに表示）</span><span data-l="en">: {companyName} (new earnings shown in notifications)</span></span>
     </button>
   );
 }

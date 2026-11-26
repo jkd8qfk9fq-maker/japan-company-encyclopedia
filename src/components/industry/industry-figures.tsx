@@ -53,8 +53,8 @@ function Bars({
 function Formula({ text, companies }: { text: React.ReactNode; companies: number }) {
   return (
     <p className="mt-2 text-xs leading-5 text-muted-foreground">
-      <span data-l="ja" lang="ja">計算値：{text}。{companies}社。
-    </span><span data-l="en" lang="en">Computed: {text}. {companies} companies.</span></p>
+      <span data-l="ja">計算値：{text}。{companies}社。
+    </span><span data-l="en">Computed: {text}. {companies} companies.</span></p>
   );
 }
 
@@ -242,7 +242,7 @@ export function IndustryFiguresOverview({ data }: { data: IndustryFiguresData })
                 <li key={s.id} className="min-w-0">
                   <p className="truncate text-sm">
                     <Link href={`/industries/${s.id}#figures`} className="hover:underline"><L s={s.name} /></Link>
-                    <span className="figures ml-1 text-xs text-muted-foreground"><span data-l="ja" lang="ja">{s.companies}社</span><span data-l="en" lang="en">{s.companies} companies</span></span>
+                    <span className="figures ml-1 text-xs text-muted-foreground"><span data-l="ja">{s.companies}社</span><span data-l="en">{s.companies} companies</span></span>
                   </p>
                   <IndexSparkline series={s} reference={set.all} />
                 </li>
@@ -419,14 +419,14 @@ export function IndustryFiguresBlock({
       </div>
       {figures.domesticOverseas && (
         <p className="mt-3 text-xs leading-5 text-muted-foreground">
-          <span data-l="ja" lang="ja">国内・海外は、地域ごとの情報を印字した{figures.domesticOverseas.companies}社の金額の合計（日本と、それ以外の地域の合計）。会社により売上高・売上収益など項目名と決算期が異なります。
-        </span><span data-l="en" lang="en">Domestic and overseas are the total amounts of the {figures.domesticOverseas.companies} companies that print regional information (Japan, and the total of all other regions). Item names such as revenue and fiscal year-ends differ by company.</span></p>
+          <span data-l="ja">国内・海外は、地域ごとの情報を印字した{figures.domesticOverseas.companies}社の金額の合計（日本と、それ以外の地域の合計）。会社により売上高・売上収益など項目名と決算期が異なります。
+        </span><span data-l="en">Domestic and overseas are the total amounts of the {figures.domesticOverseas.companies} companies that print regional information (Japan, and the total of all other regions). Item names such as revenue and fiscal year-ends differ by company.</span></p>
       )}
 
       {index && index.values.length === 5 && (
         <div className="mt-10">
           <h3 className="font-serif text-lg font-semibold"><T m={{ ja: "5期の推移（指数）", en: "5-year trend (index)" }} /></h3>
-          <p className="mt-1 text-sm text-muted-foreground"><span data-l="ja" lang="ja">5期前＝100。項目ごとに、その項目が5期そろった会社の合計。細い線は全業界の売上高（{all.companies}社）。</span><span data-l="en" lang="en">5 fiscal years ago = 100. For each item, the total of companies with all 5 fiscal years of data for that item. The thin line is revenue for all industries ({all.companies} companies).</span></p>
+          <p className="mt-1 text-sm text-muted-foreground"><span data-l="ja">5期前＝100。項目ごとに、その項目が5期そろった会社の合計。細い線は全業界の売上高（{all.companies}社）。</span><span data-l="en">5 fiscal years ago = 100. For each item, the total of companies with all 5 fiscal years of data for that item. The thin line is revenue for all industries ({all.companies} companies).</span></p>
           <div className="mt-4 max-w-2xl">
             <MultiIndexChart
               lines={[

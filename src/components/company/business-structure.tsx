@@ -108,7 +108,7 @@ function Columns({ company, branches, via }: { company: Company; branches: Busin
                     <li key={item}>{item}</li>
                   ))}
                   {items.length > MAX_LEAVES && (
-                    <li className="figures text-xs"><span data-l="ja" lang="ja">ほか{items.length - MAX_LEAVES}件</span><span data-l="en" lang="en">{items.length - MAX_LEAVES} more</span></li>
+                    <li className="figures text-xs"><span data-l="ja">ほか{items.length - MAX_LEAVES}件</span><span data-l="en">{items.length - MAX_LEAVES} more</span></li>
                   )}
                 </ul>
               )}
@@ -148,7 +148,7 @@ function Spine({ company, branches, via }: { company: Company; branches: Busines
                       <li key={item}>{item}</li>
                     ))}
                     {items.length > MAX_LEAVES && (
-                      <li className="figures text-xs leading-6"><span data-l="ja" lang="ja">ほか{items.length - MAX_LEAVES}件</span><span data-l="en" lang="en">{items.length - MAX_LEAVES} more</span></li>
+                      <li className="figures text-xs leading-6"><span data-l="ja">ほか{items.length - MAX_LEAVES}件</span><span data-l="en">{items.length - MAX_LEAVES} more</span></li>
                     )}
                   </ul>
                 )}
@@ -189,8 +189,8 @@ export function BusinessStructure({ company }: { company: Company }) {
         id={`${company.id}-structure-caption`}
         className="mt-6 text-center text-xs leading-5 text-muted-foreground"
       >
-        <span data-l="ja" lang="ja"><L s={company.name} />の事業構造。区分は同社の開示に基づきます。
-      </span><span data-l="en" lang="en">Business structure of <L s={company.name} />. Categories follow the company&apos;s disclosures.</span></figcaption>
+        <span data-l="ja"><L s={company.name} />の事業構造。区分は同社の開示に基づきます。
+      </span><span data-l="en">Business structure of <L s={company.name} />. Categories follow the company&apos;s disclosures.</span></figcaption>
     </figure>
   );
 }

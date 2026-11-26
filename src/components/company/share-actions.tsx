@@ -43,9 +43,9 @@ export function ShareActions({ url, text }: { url: string; text: string }) {
   return (
     <div className="flex flex-wrap gap-3">
       <a href={xHref} target="_blank" rel="noopener noreferrer" className={pill}>
-        <span data-l="ja" lang="ja"><span aria-hidden className="font-semibold">𝕏</span>
+        <span data-l="ja"><span aria-hidden className="font-semibold">𝕏</span>
         Xで共有
-        <span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span><span data-l="en" lang="en"><span aria-hidden className="font-semibold">𝕏</span>Share on X<span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span>
+        <span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span><span data-l="en"><span aria-hidden className="font-semibold">𝕏</span>Share on X<span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span>
       </a>
       <button type="button" onClick={copy} className={pill}>
         {copied ? <Check className="size-4" aria-hidden /> : <Link2 className="size-4" aria-hidden />}
@@ -53,9 +53,9 @@ export function ShareActions({ url, text }: { url: string; text: string }) {
       </button>
       {canShare && (
         <button type="button" onClick={share} className={pill}>
-          <span data-l="ja" lang="ja"><Share2 className="size-4" aria-hidden />
+          <span data-l="ja"><Share2 className="size-4" aria-hidden />
           アプリで共有
-        </span><span data-l="en" lang="en"><Share2 className="size-4" aria-hidden />Share via app</span></button>
+        </span><span data-l="en"><Share2 className="size-4" aria-hidden />Share via app</span></button>
       )}
     </div>
   );

@@ -41,13 +41,13 @@ export default async function TermsPage() {
                 <p className="prose-ja">{term.description}</p>
                 {term.relatedTermIds && term.relatedTermIds.length > 0 && (
                   <p className="mt-3 text-sm text-muted-foreground">
-                    <span data-l="ja" lang="ja">関連：
+                    <span data-l="ja">関連：
                     {term.relatedTermIds.map((id, i) => (
                       <span key={id}>
                         {i > 0 && "、"}
                         <Link href={`#${id}`} className="link-ink">{byId.get(id)?.term ?? id}</Link>
                       </span>
-                    ))}</span><span data-l="en" lang="en">Related: {term.relatedTermIds.map((id, i) => (
+                    ))}</span><span data-l="en">Related: {term.relatedTermIds.map((id, i) => (
                       <span key={id}>
                         {i > 0 && "、"}
                         <Link href={`#${id}`} className="link-ink">{byId.get(id)?.term ?? id}</Link>

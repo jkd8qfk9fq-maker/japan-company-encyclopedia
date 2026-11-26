@@ -42,7 +42,7 @@ export function SourceList({
   if (variant === "refs") {
     return (
       <p className={`text-xs leading-6 text-muted-foreground ${className ?? ""}`}>
-        <span data-l="ja" lang="ja">出典{" "}
+        <span data-l="ja">出典{" "}
         {shown.map((source) => (
           <a
             key={source.id}
@@ -54,7 +54,7 @@ export function SourceList({
         ))}
         <a href="#sources" className="ml-1 underline-offset-4 hover:text-foreground hover:underline">
           <T m={{ ja: "出典一覧", en: "Sources" }} />
-        </a></span><span data-l="en" lang="en">Sources {" "}{shown.map((source) => (
+        </a></span><span data-l="en">Sources {" "}{shown.map((source) => (
           <a
             key={source.id}
             href={`#source-${source.id}`}
@@ -74,13 +74,13 @@ export function SourceList({
   return (
     <details className={`group text-sm ${className ?? ""}`}>
       <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 text-muted-foreground transition-colors select-none hover:text-foreground [&::-webkit-details-marker]:hidden">
-        <span data-l="ja" lang="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">
+        <span data-l="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">
           ›
         </span>
         出典を見る
-        <span className="figures text-xs"><span data-l="ja" lang="ja">（{shown.length}件）</span><span data-l="en" lang="en">({shown.length})</span></span></span><span data-l="en" lang="en"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">
+        <span className="figures text-xs"><span data-l="ja">（{shown.length}件）</span><span data-l="en">({shown.length})</span></span></span><span data-l="en"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">
           ›
-        </span>View sources<span className="figures text-xs"><span data-l="ja" lang="ja">（{shown.length}件）</span><span data-l="en" lang="en">({shown.length})</span></span></span>
+        </span>View sources<span className="figures text-xs"><span data-l="ja">（{shown.length}件）</span><span data-l="en">({shown.length})</span></span></span>
       </summary>
       <div className="mt-2 border-l border-border pl-4">
         <ol className="space-y-4">
@@ -97,16 +97,16 @@ export function SourceList({
                 rel="noopener noreferrer"
                 className="link-ink mt-1 inline-flex min-h-8 items-center gap-1 text-xs break-all"
               >
-                <span data-l="ja" lang="ja">原文を開く
+                <span data-l="ja">原文を開く
                 <ExternalLink className="size-3" aria-hidden />
-                <span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span><span data-l="en" lang="en">Open original<ExternalLink className="size-3" aria-hidden /><span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span>
+                <span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span><span data-l="en">Open original<ExternalLink className="size-3" aria-hidden /><span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span>
               </a>
             </li>
           ))}
         </ol>
         {lastAccessed && (
           <p className="figures mt-4 text-xs text-muted-foreground">
-            <span data-l="ja" lang="ja">最終確認 <F s={formatDateJa(lastAccessed)} /></span><span data-l="en" lang="en">Last checked <F s={formatDateJa(lastAccessed)} /></span>
+            <span data-l="ja">最終確認 <F s={formatDateJa(lastAccessed)} /></span><span data-l="en">Last checked <F s={formatDateJa(lastAccessed)} /></span>
           </p>
         )}
       </div>

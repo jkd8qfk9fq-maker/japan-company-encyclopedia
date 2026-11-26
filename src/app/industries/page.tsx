@@ -98,8 +98,8 @@ export default async function IndustriesPage() {
                         </span>
                       )}
                       <span className="mt-2 flex flex-wrap items-center gap-1.5 text-[0.6875rem]">
-                        <span className="figures rounded-full bg-white/90 px-2 py-0.5 text-black"><span data-l="ja" lang="ja">{industry.companyCount}社</span><span data-l="en" lang="en">{industry.companyCount} companies</span></span>
-                        {lines > 0 && <span className="figures rounded-full border border-white/70 px-2 py-0.5"><span data-l="ja" lang="ja">線 {lines}本</span><span data-l="en" lang="en">{lines} lines</span></span>}
+                        <span className="figures rounded-full bg-white/90 px-2 py-0.5 text-black"><span data-l="ja">{industry.companyCount}社</span><span data-l="en">{industry.companyCount} companies</span></span>
+                        {lines > 0 && <span className="figures rounded-full border border-white/70 px-2 py-0.5"><span data-l="ja">線 {lines}本</span><span data-l="en">{lines} lines</span></span>}
                         {!industry.researched && <span className="rounded-full bg-black/45 px-2 py-0.5 ring-1 ring-white/60"><T m={{ ja: "解説は準備中", en: "Explanation coming soon" }} /></span>}
                       </span>
                     </span>
@@ -116,10 +116,10 @@ export default async function IndustriesPage() {
           title={<T m={{ ja: "業界から業界へ", en: "Industry to Industry" }} />}
           lead={
             <>
-              <span data-l="ja" lang="ja">掲載企業の有価証券報告書に「仕入先」「顧客」として書かれた関係だけを集め、売る側の業界から買う側の業界へ線を引いています（
+              <span data-l="ja">掲載企業の有価証券報告書に「仕入先」「顧客」として書かれた関係だけを集め、売る側の業界から買う側の業界へ線を引いています（
               <span className="figures">{map.industries.length}</span>業界・取引の組<span className="figures">{pairs}</span>
               件）。産業を選ぶと、その産業の企業と取引のつながりが開きます。出典は各企業のページにあります。
-            </span><span data-l="en" lang="en">We collect only the relationships described as &quot;suppliers&quot; or &quot;customers&quot; in the annual securities reports of listed companies, and draw lines from the selling industry to the buying industry (<span className="figures">{map.industries.length}</span> industries, <span className="figures">{pairs}</span> trading pairs). Select an industry to open its companies and trading links. Sources are on each company&apos;s page.</span></>
+            </span><span data-l="en">We collect only the relationships described as &quot;suppliers&quot; or &quot;customers&quot; in the annual securities reports of listed companies, and draw lines from the selling industry to the buying industry (<span className="figures">{map.industries.length}</span> industries, <span className="figures">{pairs}</span> trading pairs). Select an industry to open its companies and trading links. Sources are on each company&apos;s page.</span></>
           }
         >
           <IndustryHero image={HUB_IMAGES.map} eyebrow="Industry Map" title={<T m={{ ja: "業界から業界へ、モノとサービスの流れ", en: "The Flow of Goods and Services, Industry to Industry" }} />} />
@@ -135,8 +135,8 @@ export default async function IndustriesPage() {
           title={<T m={{ ja: "数字で見る", en: "By the Numbers" }} />}
           lead={
             <>
-              <span data-l="ja" lang="ja">掲載企業<span className="figures">{figures.totals.companies}</span>社の有価証券報告書の数値を、業界ごとに足し合わせたものです。規模、純利益率、5期の伸び、上位3社への集中、海外売上高比率。すべて印字された数値の計算値で、推定はしていません。
-            </span><span data-l="en" lang="en">Figures from the annual securities reports of <span className="figures">{figures.totals.companies}</span> listed companies, summed by industry: scale, net margin, 5-year growth, concentration in the top 3 companies, and overseas revenue ratio. All are computed from printed figures; nothing is estimated.</span></>
+              <span data-l="ja">掲載企業<span className="figures">{figures.totals.companies}</span>社の有価証券報告書の数値を、業界ごとに足し合わせたものです。規模、純利益率、5期の伸び、上位3社への集中、海外売上高比率。すべて印字された数値の計算値で、推定はしていません。
+            </span><span data-l="en">Figures from the annual securities reports of <span className="figures">{figures.totals.companies}</span> listed companies, summed by industry: scale, net margin, 5-year growth, concentration in the top 3 companies, and overseas revenue ratio. All are computed from printed figures; nothing is estimated.</span></>
           }
         >
           {/* Premium since JCE-051 (operator, 2026-11-15). */}
@@ -152,8 +152,8 @@ export default async function IndustriesPage() {
 
       <p className="mx-auto max-w-6xl px-5 pb-12 text-xs text-muted-foreground md:px-8">
         <Link href="/companies" className="inline-flex min-h-11 items-center gap-1.5 hover:text-foreground">
-          <span data-l="ja" lang="ja">企業の一覧から探す
-          <ArrowRight className="size-3.5" aria-hidden /></span><span data-l="en" lang="en">Browse the company list <ArrowRight className="size-3.5" aria-hidden /></span>
+          <span data-l="ja">企業の一覧から探す
+          <ArrowRight className="size-3.5" aria-hidden /></span><span data-l="en">Browse the company list <ArrowRight className="size-3.5" aria-hidden /></span>
         </Link>
       </p>
     </div>

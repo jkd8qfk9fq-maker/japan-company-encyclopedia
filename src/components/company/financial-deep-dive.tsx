@@ -83,8 +83,8 @@ export function FinancialDeepDiveBlock({ deepDive }: { deepDive: DeepDive }) {
     <div className="mb-12">
       <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground"><T m={{ ja: "財務の深掘り（プレミアム）", en: "Financial deep dive (Premium)" }} /></h3>
       <p className="mt-2 text-sm leading-6 text-muted-foreground">
-        <span data-l="ja" lang="ja">5期の数値から、会社の構造がどう動いているかを読む。濃い線がこの会社、薄い線が{deepDive.industryName}業界の掲載企業の中央値（同じ期の位置どうし）。▲▼は最新期の中央値との差で、良し悪しの判定ではありません。
-      </span><span data-l="en" lang="en">Reads how the company&apos;s structure is shifting from 5 fiscal years of figures. The dark line is this company; the light line is the median of listed companies in the {deepDive.industryName} industry (compared at the same point in each fiscal year). ▲▼ show the difference from the latest fiscal year&apos;s median and are not a judgment of good or bad.</span></p>
+        <span data-l="ja">5期の数値から、会社の構造がどう動いているかを読む。濃い線がこの会社、薄い線が{deepDive.industryName}業界の掲載企業の中央値（同じ期の位置どうし）。▲▼は最新期の中央値との差で、良し悪しの判定ではありません。
+      </span><span data-l="en">Reads how the company&apos;s structure is shifting from 5 fiscal years of figures. The dark line is this company; the light line is the median of listed companies in the {deepDive.industryName} industry (compared at the same point in each fiscal year). ▲▼ show the difference from the latest fiscal year&apos;s median and are not a judgment of good or bad.</span></p>
       {GROUPS.map((group) => {
         const trends = group.keys.map((k) => byKey.get(k)).filter((t): t is Trend => t !== undefined);
         if (trends.length === 0) return null;
@@ -101,8 +101,8 @@ export function FinancialDeepDiveBlock({ deepDive }: { deepDive: DeepDive }) {
                     <TrendChart trend={trend} />
                   </div>
                   <p className="mt-1 text-xs leading-5 text-muted-foreground">
-                    <span data-l="ja" lang="ja">計算値：<L s={trend.formula} />。業界 {trend.industryCompanies}社。
-                  </span><span data-l="en" lang="en">Computed: <L s={trend.formula} />. Industry: {trend.industryCompanies} companies.</span></p>
+                    <span data-l="ja">計算値：<L s={trend.formula} />。業界 {trend.industryCompanies}社。
+                  </span><span data-l="en">Computed: <L s={trend.formula} />. Industry: {trend.industryCompanies} companies.</span></p>
                 </li>
               ))}
             </ul>

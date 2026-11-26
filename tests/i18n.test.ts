@@ -27,9 +27,9 @@ describe("interface languages", () => {
 
   it("renders each language in its own marked span", () => {
     const html = renderToStaticMarkup(createElement(T, { m: { ja: "ホーム", en: "Home" } }));
-    expect(html).toBe('<span data-l="ja" lang="ja">ホーム</span><span data-l="en" lang="en">Home</span>');
+    expect(html).toBe('<span data-l="ja">ホーム</span><span data-l="en">Home</span>');
     // An empty translation is left out rather than drawn as an empty span.
-    expect(renderToStaticMarkup(createElement(T, { m: { ja: "社", en: "" } }))).toBe('<span data-l="ja" lang="ja">社</span>');
+    expect(renderToStaticMarkup(createElement(T, { m: { ja: "社", en: "" } }))).toBe('<span data-l="ja">社</span>');
   });
 
   it("hides every language but Japanese by default, and switches on <html data-lang>", () => {

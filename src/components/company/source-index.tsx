@@ -37,12 +37,12 @@ export function SourceIndex({ company, hasInbound }: { company: Company; hasInbo
               <div>
                 <p className="leading-7 font-medium"><DocTitle title={source.title} /></p>
                 <p className="text-xs leading-5 text-muted-foreground">
-                  <span data-l="ja" lang="ja"><DocTitle title={source.publisher} />
+                  <span data-l="ja"><DocTitle title={source.publisher} />
                   {source.publishedAt && <> · <F s={formatDateJa(source.publishedAt)} /></>}
-                  {" · "}最終確認 <F s={formatDateJa(source.accessedAt)} /></span><span data-l="en" lang="en"><DocTitle title={source.publisher} />{source.publishedAt && <> · <F s={formatDateJa(source.publishedAt)} /></>}{" · "}Last checked <F s={formatDateJa(source.accessedAt)} /></span>
+                  {" · "}最終確認 <F s={formatDateJa(source.accessedAt)} /></span><span data-l="en"><DocTitle title={source.publisher} />{source.publishedAt && <> · <F s={formatDateJa(source.publishedAt)} /></>}{" · "}Last checked <F s={formatDateJa(source.accessedAt)} /></span>
                 </p>
                 {sections.length > 0 && (
-                  <p className="mt-1 text-xs leading-5 text-muted-foreground"><span data-l="ja" lang="ja">使われている項目：{sections.join("・")}</span><span data-l="en" lang="en">Items used: {sections.join("・")}</span></p>
+                  <p className="mt-1 text-xs leading-5 text-muted-foreground"><span data-l="ja">使われている項目：{sections.join("・")}</span><span data-l="en">Items used: {sections.join("・")}</span></p>
                 )}
                 <a
                   href={source.url}
@@ -50,9 +50,9 @@ export function SourceIndex({ company, hasInbound }: { company: Company; hasInbo
                   rel="noopener noreferrer"
                   className="link-ink mt-1 inline-flex min-h-8 items-center gap-1 text-xs break-all"
                 >
-                  <span data-l="ja" lang="ja">原文を開く
+                  <span data-l="ja">原文を開く
                   <ExternalLink className="size-3" aria-hidden />
-                  <span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span><span data-l="en" lang="en">Open original<ExternalLink className="size-3" aria-hidden /><span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span>
+                  <span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span><span data-l="en">Open original<ExternalLink className="size-3" aria-hidden /><span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span>
                 </a>
               </div>
             </li>

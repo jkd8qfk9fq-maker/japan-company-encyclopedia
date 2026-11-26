@@ -53,11 +53,11 @@ function TrendChart({ records }: { records: FinancialRecord[] }) {
             <L s={last.revenueLabel} />
           </span>
           <span className="inline-flex items-center gap-1">
-            <span data-l="ja" lang="ja"><span aria-hidden className="size-2 rounded-full bg-(--chart-net-income)" />
+            <span data-l="ja"><span aria-hidden className="size-2 rounded-full bg-(--chart-net-income)" />
             純利益（別の目盛り）
-          </span><span data-l="en" lang="en"><span aria-hidden className="size-2 rounded-full bg-(--chart-net-income)" />Net income (separate scale)</span></span>
+          </span><span data-l="en"><span aria-hidden className="size-2 rounded-full bg-(--chart-net-income)" />Net income (separate scale)</span></span>
         </span>
-        <span className="figures"><span data-l="ja" lang="ja">{years.length}期</span><span data-l="en" lang="en">Fiscal year {years.length}</span></span>
+        <span className="figures"><span data-l="ja">{years.length}期</span><span data-l="en">Fiscal year {years.length}</span></span>
       </figcaption>
       {/* The first and latest revenue as text, not on the bars: a label inside a bar fails on a thin one. */}
       <p className="figures mt-1 text-xs">
@@ -151,8 +151,8 @@ export function CompanySnapshot({ company, related }: { company: Company; relate
             <a href="#business" className="block rounded-lg border border-border bg-card p-3 transition-colors hover:border-foreground/40">
               <p className="seal-mark text-[0.8125rem] font-semibold"><T m={{ ja: "事業の構成", en: "Business breakdown" }} /></p>
               <p className="mt-0.5 mb-1.5 text-[0.625rem] text-muted-foreground">
-                <span data-l="ja" lang="ja"><L s={shares.label} />・<F s={shares.fiscalYear} />（計算値）
-              </span><span data-l="en" lang="en"><L s={shares.label} /> · <F s={shares.fiscalYear} /> (computed)</span></p>
+                <span data-l="ja"><L s={shares.label} />・<F s={shares.fiscalYear} />（計算値）
+              </span><span data-l="en"><L s={shares.label} /> · <F s={shares.fiscalYear} /> (computed)</span></p>
               <Composition company={company} />
             </a>
           )}
@@ -167,7 +167,7 @@ export function CompanySnapshot({ company, related }: { company: Company; relate
                   </li>
                 ))}
               </ul>
-              <span className="mt-auto pt-1.5 text-[0.6875rem] text-ink"><span data-l="ja" lang="ja">全{ties.length}件を見る →</span><span data-l="en" lang="en">See all {ties.length} →</span></span>
+              <span className="mt-auto pt-1.5 text-[0.6875rem] text-ink"><span data-l="ja">全{ties.length}件を見る →</span><span data-l="en">See all {ties.length} →</span></span>
             </a>
           )}
         </div>

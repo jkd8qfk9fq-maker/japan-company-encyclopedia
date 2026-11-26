@@ -59,9 +59,9 @@ export function TrendChart({ records }: { records: FinancialRecord[] }) {
         <span className="inline-flex items-center gap-1.5"><span className="size-2.5 rounded-sm bg-[var(--ink)]" /><L s={latest.revenueLabel} /></span>
         {profitLabel && <span className="inline-flex items-center gap-1.5"><span className="size-2.5 rounded-sm bg-[var(--chart-revenue)]" /><L s={profitLabel} /></span>}
         {shown.length > 0 && (
-          <span className="inline-flex items-center gap-1.5"><span data-l="ja" lang="ja"><span className="h-0.5 w-4 bg-seal" />{profitLabel}÷{latest.revenueLabel}（計算値・右目盛）</span><span data-l="en" lang="en"><span className="h-0.5 w-4 bg-seal" />{profitLabel} ÷ {latest.revenueLabel} (computed, right axis)</span></span>
+          <span className="inline-flex items-center gap-1.5"><span data-l="ja"><span className="h-0.5 w-4 bg-seal" />{profitLabel}÷{latest.revenueLabel}（計算値・右目盛）</span><span data-l="en"><span className="h-0.5 w-4 bg-seal" />{profitLabel} ÷ {latest.revenueLabel} (computed, right axis)</span></span>
         )}
-        <span className="ml-auto"><span data-l="ja" lang="ja">単位：<L s={unit.name} /></span><span data-l="en" lang="en">Unit: <L s={unit.name} /></span></span>
+        <span className="ml-auto"><span data-l="ja">単位：<L s={unit.name} /></span><span data-l="en">Unit: <L s={unit.name} /></span></span>
       </figcaption>
   );
 
@@ -169,7 +169,7 @@ export function Donut({ title, parts, unitLabel }: { title: string; parts: { nam
         <text x={90} y={108} textAnchor="middle" className="fill-muted-foreground text-[10px]">{slices[0]!.name.length > 9 ? `${slices[0]!.name.slice(0, 8)}…` : slices[0]!.name}</text>
       </svg>
       <figcaption className="w-full min-w-0">
-        <p className="text-xs text-muted-foreground"><span data-l="ja" lang="ja"><L s={unitLabel} />に占める割合（計算値）</span><span data-l="en" lang="en">Share of <L s={unitLabel} /> (computed)</span></p>
+        <p className="text-xs text-muted-foreground"><span data-l="ja"><L s={unitLabel} />に占める割合（計算値）</span><span data-l="en">Share of <L s={unitLabel} /> (computed)</span></p>
         <ul className="mt-2 space-y-2">
           {slices.map((s, i) => (
             <li key={s.name} className="flex items-baseline gap-2 text-sm">

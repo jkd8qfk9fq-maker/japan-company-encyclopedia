@@ -68,9 +68,9 @@ export function CompanyMetrics({ metrics, sources }: { metrics: Metrics; sources
         ))}
       </dl>
       <p className="mt-2 text-xs leading-5 text-muted-foreground">
-        <span data-l="ja" lang="ja">「計算値」は有価証券報告書に印字された数値から当サイトが計算したものです。
+        <span data-l="ja">「計算値」は有価証券報告書に印字された数値から当サイトが計算したものです。
         {w && <T m={{ ja: "給与と勤続年数は提出会社（グループ全体ではない）の値です。", en: "Salary and years of service are for the filing company alone, not the whole group." }} />}
-        {s && <T m={{ ja: "1株当たり配当額と発行済株式総数は有価証券報告書に印字された値で、株価・時価総額・配当利回りは扱いません。", en: "Dividend per share and total shares issued are values printed in the annual securities report. Share price, market capitalization and dividend yield are not covered." }} />}</span><span data-l="en" lang="en">&quot;Computed&quot; means calculated by this site from values printed in the annual securities report. {w && <T m={{ ja: "給与と勤続年数は提出会社（グループ全体ではない）の値です。", en: "Salary and years of service are for the filing company alone, not the whole group." }} />}{s && <T m={{ ja: "1株当たり配当額と発行済株式総数は有価証券報告書に印字された値で、株価・時価総額・配当利回りは扱いません。", en: "Dividend per share and total shares issued are values printed in the annual securities report. Share price, market capitalization and dividend yield are not covered." }} />}</span>
+        {s && <T m={{ ja: "1株当たり配当額と発行済株式総数は有価証券報告書に印字された値で、株価・時価総額・配当利回りは扱いません。", en: "Dividend per share and total shares issued are values printed in the annual securities report. Share price, market capitalization and dividend yield are not covered." }} />}</span><span data-l="en">&quot;Computed&quot; means calculated by this site from values printed in the annual securities report. {w && <T m={{ ja: "給与と勤続年数は提出会社（グループ全体ではない）の値です。", en: "Salary and years of service are for the filing company alone, not the whole group." }} />}{s && <T m={{ ja: "1株当たり配当額と発行済株式総数は有価証券報告書に印字された値で、株価・時価総額・配当利回りは扱いません。", en: "Dividend per share and total shares issued are values printed in the annual securities report. Share price, market capitalization and dividend yield are not covered." }} />}</span>
       </p>
       {sourceIds.length > 0 && <SourceList sources={sources} sourceIds={sourceIds} variant="refs" />}
     </div>

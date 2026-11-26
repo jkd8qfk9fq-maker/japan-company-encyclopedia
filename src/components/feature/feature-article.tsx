@@ -71,7 +71,7 @@ function BarTable({ block }: { block: Extract<FeatureBlock, { type: "data-table"
       {tail.length > 0 && (
         <details className="group">
           <summary className="mt-2 flex min-h-11 cursor-pointer list-none items-center justify-center rounded-md border border-border text-sm font-medium hover:bg-muted [&::-webkit-details-marker]:hidden">
-            <span className="group-open:hidden"><span data-l="ja" lang="ja">残り{tail.length}件を表示</span><span data-l="en" lang="en">Show remaining {tail.length}</span></span>
+            <span className="group-open:hidden"><span data-l="ja">残り{tail.length}件を表示</span><span data-l="en">Show remaining {tail.length}</span></span>
             <span className="hidden group-open:inline"><T m={{ ja: "閉じる", en: "Close" }} /></span>
           </summary>
           <ol className="divide-y divide-border/70">
@@ -137,7 +137,7 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
           <h1 className="mt-4 max-w-4xl font-serif text-[1.875rem] leading-[1.35] font-semibold md:text-[3rem]"><L s={feature.title} /></h1>
           {feature.subtitle && <p className="mt-5 max-w-3xl text-[1.0625rem] leading-[1.9] text-white/85 md:text-lg"><L s={feature.subtitle} /></p>}
           <p className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-white/70">
-            <span className="inline-flex items-center gap-1"><span data-l="ja" lang="ja"><Clock className="size-3.5" aria-hidden />約{minutes}分で読めます</span><span data-l="en" lang="en"><Clock className="size-3.5" aria-hidden />About {minutes} min read</span></span>
+            <span className="inline-flex items-center gap-1"><span data-l="ja"><Clock className="size-3.5" aria-hidden />約{minutes}分で読めます</span><span data-l="en"><Clock className="size-3.5" aria-hidden />About {minutes} min read</span></span>
             <span className="figures"><F s={formatDateJa(feature.publishedAt)} /></span>
             <span><T m={{ ja: "出典：有価証券報告書（EDINET）", en: "Sources: annual securities reports (EDINET)" }} /></span>
           </p>
@@ -167,8 +167,8 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
         <aside className="hidden lg:block" aria-label="目次">
           <div className="sticky top-24">
             <p className="flex items-center gap-1.5 px-2 text-xs font-semibold tracking-[0.12em] text-muted-foreground">
-              <span data-l="ja" lang="ja"><ListOrdered className="size-3.5" aria-hidden /> 目次
-            </span><span data-l="en" lang="en"><ListOrdered className="size-3.5" aria-hidden /> contents</span></p>
+              <span data-l="ja"><ListOrdered className="size-3.5" aria-hidden /> 目次
+            </span><span data-l="en"><ListOrdered className="size-3.5" aria-hidden /> contents</span></p>
             <div className="mt-2">{toc}</div>
           </div>
         </aside>
@@ -191,8 +191,8 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
           {sections.length > 0 && (
             <details className="mt-6 rounded-xl border border-border lg:hidden">
               <summary className="flex min-h-12 cursor-pointer list-none items-center gap-2 px-4 text-sm font-semibold [&::-webkit-details-marker]:hidden">
-                <span data-l="ja" lang="ja"><ListOrdered className="size-4" aria-hidden /> 目次（{sections.length + 1}項目）
-              </span><span data-l="en" lang="en"><ListOrdered className="size-4" aria-hidden /> Contents ({sections.length + 1} items)</span></summary>
+                <span data-l="ja"><ListOrdered className="size-4" aria-hidden /> 目次（{sections.length + 1}項目）
+              </span><span data-l="en"><ListOrdered className="size-4" aria-hidden /> Contents ({sections.length + 1} items)</span></summary>
               <div className="border-t border-border p-2">{toc}</div>
             </details>
           )}
@@ -240,7 +240,7 @@ export async function FeatureArticle({ feature, others = [] }: { feature: Featur
                       <p className="mt-1 font-serif text-xl font-semibold group-hover:underline"><L s={company.name} /></p>
                       <p className="mt-3 text-[0.9375rem] leading-7 text-muted-foreground"><L s={block.text} /></p>
                       <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium">
-                        <span data-l="ja" lang="ja">企業ページを見る <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span><span data-l="en" lang="en">View company page <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span>
+                        <span data-l="ja">企業ページを見る <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span><span data-l="en">View company page <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span>
                       </span>
                     </Link>
                   );

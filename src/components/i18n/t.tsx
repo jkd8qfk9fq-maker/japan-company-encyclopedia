@@ -1,4 +1,4 @@
-import { LOCALE_META, LOCALES, type Message } from "@/lib/i18n";
+import { LOCALES, type Message } from "@/lib/i18n";
 
 /**
  * One piece of interface text in every language; the CSS from `localeCss` shows the reader's (JCE-123). Works in
@@ -10,7 +10,9 @@ export function T({ m }: { m: Message }) {
     <>
       {LOCALES.map((l) =>
         m[l] ? (
-          <span key={l} data-l={l} lang={LOCALE_META[l].htmlLang}>
+          // No `lang` here: only the reader's language is ever shown, and <html lang> already says which (JCE-124 —
+          // the attribute on every span of every page cost the static export about 5% in bytes).
+          <span key={l} data-l={l}>
             {m[l]}
           </span>
         ) : null,

@@ -47,9 +47,9 @@ function Row({ company, label, description, sources, sourceIds, from }: {
       {short !== description && (
         <details className="group">
           <summary className="inline-flex min-h-9 cursor-pointer list-none items-center gap-1.5 text-xs text-muted-foreground select-none hover:text-foreground [&::-webkit-details-marker]:hidden">
-            <span data-l="ja" lang="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
+            <span data-l="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
             続きを読む
-          </span><span data-l="en" lang="en"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>Read more</span></summary>
+          </span><span data-l="en"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>Read more</span></summary>
           <p className="text-[0.8125rem] leading-6 text-muted-foreground">{description}</p>
         </details>
       )}

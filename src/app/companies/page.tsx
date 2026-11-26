@@ -27,8 +27,8 @@ export default async function CompaniesPage() {
     <div className="mx-auto max-w-6xl px-5 pt-5 pb-8 md:px-8 md:pt-10">
       <p className="eyebrow" aria-hidden>Companies</p>
       <h1 className="mt-1 flex items-baseline gap-3 font-serif text-[1.75rem] font-semibold md:text-[2.5rem]">
-        <span data-l="ja" lang="ja">企業
-        <span className="figures font-sans text-sm font-normal text-muted-foreground"><span data-l="ja" lang="ja">{companies.length.toLocaleString("ja-JP")}社</span><span data-l="en" lang="en">{companies.length.toLocaleString("ja-JP")} companies</span></span></span><span data-l="en" lang="en">Companies <span className="figures font-sans text-sm font-normal text-muted-foreground"><span data-l="ja" lang="ja">{companies.length.toLocaleString("ja-JP")}社</span><span data-l="en" lang="en">{companies.length.toLocaleString("ja-JP")} companies</span></span></span>
+        <span data-l="ja">企業
+        <span className="figures font-sans text-sm font-normal text-muted-foreground"><span data-l="ja">{companies.length.toLocaleString("ja-JP")}社</span><span data-l="en">{companies.length.toLocaleString("ja-JP")} companies</span></span></span><span data-l="en">Companies <span className="figures font-sans text-sm font-normal text-muted-foreground"><span data-l="ja">{companies.length.toLocaleString("ja-JP")}社</span><span data-l="en">{companies.length.toLocaleString("ja-JP")} companies</span></span></span>
       </h1>
       {/*
         JCE-080: the header is compressed (the hub intro's type tier, tighter margins) so the search
@@ -38,9 +38,9 @@ export default async function CompaniesPage() {
       */}
       {/* 2026-11-23: the introduction folds behind one line, so the search and the list open the first screen. */}
       <details className="mt-2 max-w-2xl text-sm leading-7 text-muted-foreground">
-        <span data-l="ja" lang="ja"><summary className="cursor-pointer text-xs text-muted-foreground"><T m={{ ja: "この一覧について", en: "About this list" }} /></summary>
+        <span data-l="ja"><summary className="cursor-pointer text-xs text-muted-foreground"><T m={{ ja: "この一覧について", en: "About this list" }} /></summary>
         日本企業百科事典に掲載している日本の上場企業{companies.length.toLocaleString("ja-JP")}社の一覧です。各社の記載は有価証券報告書（EDINET）に基づいて書かれていて、企業ページでは事業の内容・財務・沿革を出典とともに読めます。掲載の線引きは、記載を出典で検証できたかどうかです。数字だけを先に集めた会社は、本文と出典がそろうまでこの一覧には出していないため、ここにある会社はすべて「何をしている会社か」を読める会社です。会社名ではなく、何をしている会社なのかから選んでください。
-      </span><span data-l="en" lang="en"><summary className="cursor-pointer text-xs text-muted-foreground"><T m={{ ja: "この一覧について", en: "About this list" }} /></summary>This is a list of {companies.length.toLocaleString("ja-JP")} listed Japanese companies featured in the Japanese Company Encyclopedia. Each company&apos;s entry is written from its annual securities report (EDINET), and on each company page you can read about its business, financials, and history along with sources. We include a company only if its entry can be verified against sources. Companies for which we have gathered only numbers are left off this list until the text and sources are ready, so every company here is one where you can read what it does. Choose by what a company does, not by its name.</span></details>
+      </span><span data-l="en"><summary className="cursor-pointer text-xs text-muted-foreground"><T m={{ ja: "この一覧について", en: "About this list" }} /></summary>This is a list of {companies.length.toLocaleString("ja-JP")} listed Japanese companies featured in the Japanese Company Encyclopedia. Each company&apos;s entry is written from its annual securities report (EDINET), and on each company page you can read about its business, financials, and history along with sources. We include a company only if its entry can be verified against sources. Companies for which we have gathered only numbers are left off this list until the text and sources are ready, so every company here is one where you can read what it does. Choose by what a company does, not by its name.</span></details>
       <div className="mt-4">
         <CompanyDirectory companies={summaries} industries={industries} />
       </div>

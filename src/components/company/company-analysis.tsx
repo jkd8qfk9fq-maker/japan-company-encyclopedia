@@ -151,8 +151,8 @@ export function MeaningBlock({ sentences }: { sentences: MeaningSentence[] }) {
                       ),
                     )}
                     <span className="block text-xs text-muted-foreground">
-                      <span data-l="ja" lang="ja">根拠：「<L s={s.groupTitle} />」（<F s={s.fiscalYear} />・{s.kind === "printed" ? <T m={{ ja: "印字値", en: "Printed value" }} /> : <T m={{ ja: "計算値", en: "Computed" }} />}）
-                    </span><span data-l="en" lang="en">Basis: &quot;<L s={s.groupTitle} />&quot; (<F s={s.fiscalYear} />, {s.kind === "printed" ? <T m={{ ja: "印字値", en: "Printed value" }} /> : <T m={{ ja: "計算値", en: "Computed" }} />})</span></span>
+                      <span data-l="ja">根拠：「<L s={s.groupTitle} />」（<F s={s.fiscalYear} />・{s.kind === "printed" ? <T m={{ ja: "印字値", en: "Printed value" }} /> : <T m={{ ja: "計算値", en: "Computed" }} />}）
+                    </span><span data-l="en">Basis: &quot;<L s={s.groupTitle} />&quot; (<F s={s.fiscalYear} />, {s.kind === "printed" ? <T m={{ ja: "印字値", en: "Printed value" }} /> : <T m={{ ja: "計算値", en: "Computed" }} />})</span></span>
                     {s.caution && <span className="block text-xs text-muted-foreground">※{s.caution}</span>}
                   </li>
                 ))}
@@ -206,13 +206,13 @@ export function CompanyAnalysisSection({
       {!folded && (
         <>
       <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
-        <span data-l="ja" lang="ja">この会社の数字を、規模と地位・成長・収益性・財務の安定・外部環境との接続の5観点で読みます。印字値は有価証券報告書のとおり、計算値には計算式を併記します。業界の分布は主たる産業が同じ掲載企業
+        <span data-l="ja">この会社の数字を、規模と地位・成長・収益性・財務の安定・外部環境との接続の5観点で読みます。印字値は有価証券報告書のとおり、計算値には計算式を併記します。業界の分布は主たる産業が同じ掲載企業
         {analysis.industryName && `（${analysis.industryName}）`}
         {analysis.industryMembers > 0
           ? `${analysis.industryMembers}社のうち、最新期がこの会社と1年以内に終わる${analysis.comparableMembers}社から作り、分布を示せる会社が5社に満たない指標では中央値も出しません`
           : <T m={{ ja: "から作ります", en: "is built from" }} />}
         。観点ごとに位置を示すもので、5観点を合成したスコアや格付けは作りません。
-      </span><span data-l="en" lang="en">This company&apos;s figures are read from five perspectives: scale and position, growth, profitability, financial stability, and links to the external environment. Printed values are as in the annual securities report; computed values show their formulas. The industry distribution covers {analysis.industryName && `（${analysis.industryName}）`} listed companies with the same main industry {analysis.industryMembers > 0
+      </span><span data-l="en">This company&apos;s figures are read from five perspectives: scale and position, growth, profitability, financial stability, and links to the external environment. Printed values are as in the annual securities report; computed values show their formulas. The industry distribution covers {analysis.industryName && `（${analysis.industryName}）`} listed companies with the same main industry {analysis.industryMembers > 0
           ? `${analysis.industryMembers}社のうち、最新期がこの会社と1年以内に終わる${analysis.comparableMembers}社から作り、分布を示せる会社が5社に満たない指標では中央値も出しません`
           : <T m={{ ja: "から作ります", en: "is built from" }} />}. Each perspective shows a position; no composite score or rating of the five is created.</span></p>
       <p className="mt-2 max-w-3xl text-sm leading-6 text-muted-foreground">
@@ -264,7 +264,7 @@ export function CompanyAnalysisSection({
           <div className="space-y-10">
             {analysis.perspectives.map((p) => (
               <div key={p.id}>
-                <h3 className="font-serif text-lg font-semibold"><span data-l="ja" lang="ja"><L s={p.title} /> — 分布の全体像</span><span data-l="en" lang="en"><L s={p.title} /> — Full distribution</span></h3>
+                <h3 className="font-serif text-lg font-semibold"><span data-l="ja"><L s={p.title} /> — 分布の全体像</span><span data-l="en"><L s={p.title} /> — Full distribution</span></h3>
                 {p.rows.length > 0 && <DetailTable rows={p.rows} />}
                 {p.groups.map((g) => (
                   <div key={g.id}>
@@ -298,10 +298,10 @@ export function CompanyAnalysisSection({
                 )}
                 {p.id === "environment" && company.segmentRevenue && segmentTotal > 0 && (
                   <div className="mt-5">
-                    <h4 className="font-serif text-base font-semibold"><span data-l="ja" lang="ja">事業別の構成（<F s={company.segmentRevenue.fiscalYear} />）</span><span data-l="en" lang="en">Breakdown by business (<F s={company.segmentRevenue.fiscalYear} />)</span></h4>
+                    <h4 className="font-serif text-base font-semibold"><span data-l="ja">事業別の構成（<F s={company.segmentRevenue.fiscalYear} />）</span><span data-l="en">Breakdown by business (<F s={company.segmentRevenue.fiscalYear} />)</span></h4>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      <span data-l="ja" lang="ja"><L s={company.segmentRevenue.label} />の内訳は有価証券報告書の印字値、割合は計算値です。
-                    </span><span data-l="en" lang="en">The <L s={company.segmentRevenue.label} /> breakdown shows values as printed in the annual securities report; percentages are computed.</span></p>
+                      <span data-l="ja"><L s={company.segmentRevenue.label} />の内訳は有価証券報告書の印字値、割合は計算値です。
+                    </span><span data-l="en">The <L s={company.segmentRevenue.label} /> breakdown shows values as printed in the annual securities report; percentages are computed.</span></p>
                     <table className="mt-2 w-full max-w-xl border-collapse text-sm">
                       <tbody>
                         {[...company.segmentRevenue.items]

@@ -27,10 +27,10 @@ export async function RichText({ text }: { text: string }) {
   if (!en) return <Segments text={text} />;
   return (
     <>
-      <span data-l="ja" lang="ja">
+      <span data-l="ja">
         <Segments text={text} />
       </span>
-      <span data-l="en" lang="en">
+      <span data-l="en">
         <Segments text={en} />
       </span>
     </>

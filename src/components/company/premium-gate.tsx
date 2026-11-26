@@ -69,7 +69,7 @@ export function PremiumGate({
       </div>
       {buying === "error" && <p className="mt-2 text-xs text-muted-foreground"><T m={{ ja: "いまは申し込みの画面を開けませんでした。しばらくしてからもう一度お試しください。", en: "We couldn't open the sign-up screen right now. Please try again later." }} /></p>}
       <p className="mt-3 text-sm leading-6">
-        <span data-l="ja" lang="ja">プレミアムプラン（月額390円・税込）は、企業タイプ診断・最初の一社と共通です。
+        <span data-l="ja">プレミアムプラン（月額390円・税込）は、企業タイプ診断・最初の一社と共通です。
         {PLAN_TRIAL_DAYS > 0 && `はじめの${PLAN_TRIAL_DAYS}日間は無料で、その間に解約すれば料金はかかりません。`}
         <a href={PLAN_PAGE} className="ml-1 underline underline-offset-2 hover:text-foreground" target="_blank" rel="noopener">
           <T m={{ ja: "プランの内容と申し込み", en: "Plan details and sign-up" }} />
@@ -79,7 +79,7 @@ export function PremiumGate({
           <T m={{ ja: "メールで復元", en: "Restore by email" }} />
         </a>
         （開いたあと、このページを再読み込みしてください）
-      </span><span data-l="en" lang="en">The Premium plan (¥390 per month, tax included) is shared with the Company Type Quiz and First Company. {PLAN_TRIAL_DAYS > 0 && `はじめの${PLAN_TRIAL_DAYS}日間は無料で、その間に解約すれば料金はかかりません。`}<a href={PLAN_PAGE} className="ml-1 underline underline-offset-2 hover:text-foreground" target="_blank" rel="noopener">
+      </span><span data-l="en">The Premium plan (¥390 per month, tax included) is shared with the Company Type Quiz and First Company. {PLAN_TRIAL_DAYS > 0 && `はじめの${PLAN_TRIAL_DAYS}日間は無料で、その間に解約すれば料金はかかりません。`}<a href={PLAN_PAGE} className="ml-1 underline underline-offset-2 hover:text-foreground" target="_blank" rel="noopener">
           <T m={{ ja: "プランの内容と申し込み", en: "Plan details and sign-up" }} />
         </a>. If you&apos;ve already signed up, <a href={`${PLAN_PAGE}#recover`} className="ml-1 underline underline-offset-2 hover:text-foreground" target="_blank" rel="noopener">
           <T m={{ ja: "メールで復元", en: "Restore by email" }} />

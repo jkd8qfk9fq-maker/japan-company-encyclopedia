@@ -60,10 +60,10 @@ export function SyncPanel() {
       {status === "error" && <p role="alert"><T m={{ ja: "送れませんでした。しばらくしてから、もう一度お試しください。", en: "Couldn't send. Please try again later." }} /></p>}
       {active && (
         <p className="text-muted-foreground">
-          <span data-l="ja" lang="ja">送ったリンクは{until}まで有効です。もう一度送ると、前のリンクは使えなくなります。
+          <span data-l="ja">送ったリンクは{until}まで有効です。もう一度送ると、前のリンクは使えなくなります。
           <button type="button" onClick={() => cancelSync().then(() => setStatus("idle"))} className="ml-2 underline underline-offset-2">
             <T m={{ ja: "送ったリンクを取り消す", en: "Revoke the link you sent" }} />
-          </button></span><span data-l="en" lang="en">The link we sent is valid until {until}. If you send it again, the previous link will stop working. <button type="button" onClick={() => cancelSync().then(() => setStatus("idle"))} className="ml-2 underline underline-offset-2">
+          </button></span><span data-l="en">The link we sent is valid until {until}. If you send it again, the previous link will stop working. <button type="button" onClick={() => cancelSync().then(() => setStatus("idle"))} className="ml-2 underline underline-offset-2">
             <T m={{ ja: "送ったリンクを取り消す", en: "Revoke the link you sent" }} />
           </button></span>
         </p>

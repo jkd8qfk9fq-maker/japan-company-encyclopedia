@@ -24,8 +24,8 @@ export function QuarterlySection({ view, sources }: { view: QuarterlyView; sourc
     <div className="mb-12">
       <h3 className="text-xs font-semibold tracking-[0.12em] text-muted-foreground"><T m={{ ja: "四半期の動き（累計）", en: "Quarterly trends (cumulative)" }} /></h3>
       <p className="mt-2 text-sm leading-6 text-muted-foreground">
-        <span data-l="ja" lang="ja"><F s={view.fiscalYear} />の期首からの累計。濃い棒が今期、薄い棒が前期（{view.priorFiscalYear}）の同じ時点です。
-      </span><span data-l="en" lang="en">Cumulative total from the start of <F s={view.fiscalYear} />. The dark bar is the current fiscal year; the light bar is the same point in the previous fiscal year ({view.priorFiscalYear}).</span></p>
+        <span data-l="ja"><F s={view.fiscalYear} />の期首からの累計。濃い棒が今期、薄い棒が前期（{view.priorFiscalYear}）の同じ時点です。
+      </span><span data-l="en">Cumulative total from the start of <F s={view.fiscalYear} />. The dark bar is the current fiscal year; the light bar is the same point in the previous fiscal year ({view.priorFiscalYear}).</span></p>
 
       <ul className="mt-4 space-y-3" aria-label={`${view.fiscalYear}の売上の累計`}>
         {view.points.map((p) => (
@@ -52,12 +52,12 @@ export function QuarterlySection({ view, sources }: { view: QuarterlyView; sourc
       {view.usesEdinetDb && (
         <div className="mt-3 rounded-md border border-border bg-card p-3 text-xs leading-5 text-muted-foreground">
           <p>
-            <span data-l="ja" lang="ja">第1・第3四半期の数値は、会社が発表した決算短信を
+            <span data-l="ja">第1・第3四半期の数値は、会社が発表した決算短信を
             <a href="https://edinetdb.jp/" className="mx-0.5 font-medium text-foreground underline underline-offset-2" rel="noopener">
               Powered by EDINET DB
             </a>
             が構造化したデータです（百万円未満は切り捨て）。中間期は半期報告書、通期は有価証券報告書（いずれも EDINET）から。
-          </span><span data-l="en" lang="en">Q1 and Q3 figures are data structured by <a href="https://edinetdb.jp/" className="mx-0.5 font-medium text-foreground underline underline-offset-2" rel="noopener">
+          </span><span data-l="en">Q1 and Q3 figures are data structured by <a href="https://edinetdb.jp/" className="mx-0.5 font-medium text-foreground underline underline-offset-2" rel="noopener">
               Powered by EDINET DB
             </a> from the earnings releases published by each company (amounts under ¥1 million are rounded down). Interim figures come from semiannual reports, and full-year figures from annual securities reports (both on EDINET).</span></p>
           <p className="mt-1">
@@ -76,7 +76,7 @@ function Figure({ name, now, prior, delta, pending }: { name: string; now: numbe
       <span className="text-xs text-muted-foreground"><L s={name} /> </span>
       <span className="font-medium">{now !== null ? formatYen(now) : pending ? "未発表" : "—"}</span>
       {delta !== null && <span className="ml-1.5 text-xs">{change(delta)}</span>}
-      {prior !== null && <span className="block text-xs text-muted-foreground"><span data-l="ja" lang="ja">前期 <F s={formatYen(prior)} /></span><span data-l="en" lang="en">Previous FY <F s={formatYen(prior)} /></span></span>}
+      {prior !== null && <span className="block text-xs text-muted-foreground"><span data-l="ja">前期 <F s={formatYen(prior)} /></span><span data-l="en">Previous FY <F s={formatYen(prior)} /></span></span>}
     </dd>
   );
 }

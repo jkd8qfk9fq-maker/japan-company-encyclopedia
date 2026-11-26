@@ -110,7 +110,7 @@ export function ConnectionNetwork({ company, lanes }: { company: Company; lanes:
               <span className="font-serif text-sm font-semibold"><L s={connection.company.name} /></span>
               <span className="mt-0.5 text-[0.6875rem] text-muted-foreground">
                 <L s={connection.label} />
-                {connection.inbound && <span className="sr-only"><span data-l="ja" lang="ja">（<L s={connection.company.name} />の項目に記載）</span><span data-l="en" lang="en">(Described in the entry for <L s={connection.company.name} />)</span></span>}
+                {connection.inbound && <span className="sr-only"><span data-l="ja">（<L s={connection.company.name} />の項目に記載）</span><span data-l="en">(Described in the entry for <L s={connection.company.name} />)</span></span>}
               </span>
             </Link>
           </li>
@@ -121,8 +121,8 @@ export function ConnectionNetwork({ company, lanes }: { company: Company; lanes:
               href="#related-companies-list"
               className="flex min-h-12 w-28 items-center justify-center rounded-md border border-border bg-card text-sm hover:border-foreground"
             >
-              <span data-l="ja" lang="ja">ほか{rest}社
-            </span><span data-l="en" lang="en">{rest} more companies</span></a>
+              <span data-l="ja">ほか{rest}社
+            </span><span data-l="en">{rest} more companies</span></a>
           </li>
         )}
       </ul>

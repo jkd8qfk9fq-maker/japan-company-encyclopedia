@@ -106,7 +106,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
           <p className="wordmark mt-2 text-[clamp(1.125rem,4vw,1.5rem)] break-words" aria-hidden>
             {listing.nameEn}
           </p>
-          <h1 className="mt-1 font-serif text-[1.75rem] leading-tight font-semibold md:text-[2.25rem]"><span data-l="ja" lang="ja"><L s={listing.name} />業界</span><span data-l="en" lang="en"><L s={listing.name} /> industry</span></h1>
+          <h1 className="mt-1 font-serif text-[1.75rem] leading-tight font-semibold md:text-[2.25rem]"><span data-l="ja"><L s={listing.name} />業界</span><span data-l="en"><L s={listing.name} /> industry</span></h1>
         </div>
       </header>
 
@@ -150,7 +150,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
             </div>
           </div>
           {companies.length > 0 && <JobPath industryName={listing.name} companies={companies} />}
-          {industry && <p className="figures mt-10 text-xs text-muted-foreground"><span data-l="ja" lang="ja">最終更新 <F s={formatDateJa(industry.updatedAt)} /></span><span data-l="en" lang="en">Last updated <F s={formatDateJa(industry.updatedAt)} /></span></p>}
+          {industry && <p className="figures mt-10 text-xs text-muted-foreground"><span data-l="ja">最終更新 <F s={formatDateJa(industry.updatedAt)} /></span><span data-l="en">Last updated <F s={formatDateJa(industry.updatedAt)} /></span></p>}
         </CompanySection>
 
         <CompanySection id="companies" eyebrow="Companies" title={`${listing.name}業界の企業`}>
@@ -237,7 +237,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[i
                             <Link href={`/industries/${side.other(flow)}`} className="font-serif font-semibold hover:underline">
                               {name(side.other(flow))}
                             </Link>
-                            <span className="figures text-xs text-muted-foreground"><span data-l="ja" lang="ja">{flow.pairs.length}組</span><span data-l="en" lang="en">{flow.pairs.length} pairs</span></span>
+                            <span className="figures text-xs text-muted-foreground"><span data-l="ja">{flow.pairs.length}組</span><span data-l="en">{flow.pairs.length} pairs</span></span>
                           </p>
                           <ul className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-sm">
                             {flow.pairs.map((pair) => (

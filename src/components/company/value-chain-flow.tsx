@@ -196,8 +196,8 @@ export function ValueChainFlow({ chain, companyName }: { chain: ValueChain; comp
           <p className="relative mt-6 text-xs leading-6 text-muted-foreground"><T m={{ ja: "調達先は、有価証券報告書から一般的な呼び名で確かめられたものがまだないため描いていません。", en: "Suppliers are not shown because none have yet been confirmed under a common name from the annual securities report." }} /></p>
         )}
         <ul aria-label="線の種類" className="relative mt-6 hidden flex-wrap justify-end gap-x-6 gap-y-1 text-xs text-muted-foreground md:flex">
-          <li className="flex items-center gap-2"><span data-l="ja" lang="ja"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-ink" />モノの流れ（調達・製品・サービス）</span><span data-l="en" lang="en"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-ink" />Flow of goods (procurement, products, services)</span></li>
-          <li className="flex items-center gap-2"><span data-l="ja" lang="ja"><span aria-hidden className="h-0 w-8 border-t-2 border-dotted border-[var(--segment-5)]" />お金の流れ（代金・売上）</span><span data-l="en" lang="en"><span aria-hidden className="h-0 w-8 border-t-2 border-dotted border-[var(--segment-5)]" />Flow of money (payments, revenue)</span></li>
+          <li className="flex items-center gap-2"><span data-l="ja"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-ink" />モノの流れ（調達・製品・サービス）</span><span data-l="en"><span aria-hidden className="h-0 w-8 border-t-[1.5px] border-ink" />Flow of goods (procurement, products, services)</span></li>
+          <li className="flex items-center gap-2"><span data-l="ja"><span aria-hidden className="h-0 w-8 border-t-2 border-dotted border-[var(--segment-5)]" />お金の流れ（代金・売上）</span><span data-l="en"><span aria-hidden className="h-0 w-8 border-t-2 border-dotted border-[var(--segment-5)]" />Flow of money (payments, revenue)</span></li>
         </ul>
       </div>
 

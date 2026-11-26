@@ -51,8 +51,8 @@ export function ReportPrintButton({ className }: { className?: string }) {
       }}
       className={className ?? "inline-flex items-center gap-2 rounded-md bg-foreground px-4 py-2 text-sm font-medium text-background"}
     >
-      <span data-l="ja" lang="ja"><Download className="size-4" aria-hidden />
+      <span data-l="ja"><Download className="size-4" aria-hidden />
       印刷・PDFで保存
-    </span><span data-l="en" lang="en"><Download className="size-4" aria-hidden />Print / save as PDF</span></button>
+    </span><span data-l="en"><Download className="size-4" aria-hidden />Print / save as PDF</span></button>
   );
 }

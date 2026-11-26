@@ -43,7 +43,7 @@ function Meta({ feature }: { feature: Feature }) {
   return (
     <span className="flex items-center gap-3 text-xs text-muted-foreground">
       <span className="figures"><F s={formatDateJa(feature.publishedAt)} /></span>
-      <span className="inline-flex items-center gap-1"><span data-l="ja" lang="ja"><Clock className="size-3.5" aria-hidden />約{readingMinutes(feature)}分</span><span data-l="en" lang="en"><Clock className="size-3.5" aria-hidden /> approx. {readingMinutes(feature)} min</span></span>
+      <span className="inline-flex items-center gap-1"><span data-l="ja"><Clock className="size-3.5" aria-hidden />約{readingMinutes(feature)}分</span><span data-l="en"><Clock className="size-3.5" aria-hidden /> approx. {readingMinutes(feature)} min</span></span>
     </span>
   );
 }
@@ -66,7 +66,7 @@ function LeadCard({ feature, index }: { feature: Feature; index: number }) {
         </h3>
         {feature.subtitle && <p className="mt-4 text-[0.9375rem] leading-7 text-muted-foreground"><L s={feature.subtitle} /></p>}
         <span className="mt-auto inline-flex items-center gap-1.5 border-t border-border pt-4 text-sm font-semibold text-navy dark:text-foreground">
-          <span data-l="ja" lang="ja">続きを読む <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span><span data-l="en" lang="en">Read more <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span>
+          <span data-l="ja">続きを読む <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span><span data-l="en">Read more <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden /></span>
         </span>
       </div>
       {first && (
@@ -130,7 +130,7 @@ export function FeatureCard({ feature, index, size = "default" }: { feature: Fea
         <p className="mt-auto flex items-center justify-between pt-4">
           <Meta feature={feature} />
           <span className="inline-flex items-center gap-1 text-xs font-medium">
-            <span data-l="ja" lang="ja">読む <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden /></span><span data-l="en" lang="en">Read <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden /></span>
+            <span data-l="ja">読む <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden /></span><span data-l="en">Read <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-0.5" aria-hidden /></span>
           </span>
         </p>
       </div>

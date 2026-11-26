@@ -216,20 +216,20 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
         <div className="mx-auto max-w-6xl px-5 pt-6 pb-8 md:px-8 md:pt-8 md:pb-12">
           <div className="flex items-center justify-between gap-4 print:hidden">
             <Link href={`/companies/${company.id}`} className="inline-flex items-center gap-1 text-sm text-white/75 hover:text-white hover:underline">
-              <span data-l="ja" lang="ja"><ArrowLeft className="size-4" aria-hidden /> <L s={company.name} />のページへ
-            </span><span data-l="en" lang="en">Go to the page for <ArrowLeft className="size-4" aria-hidden /> <L s={company.name} /></span></Link>
+              <span data-l="ja"><ArrowLeft className="size-4" aria-hidden /> <L s={company.name} />のページへ
+            </span><span data-l="en">Go to the page for <ArrowLeft className="size-4" aria-hidden /> <L s={company.name} /></span></Link>
             <ReportPrintButton className="inline-flex items-center gap-2 rounded-md border border-white/60 px-4 py-2 text-sm font-medium text-white hover:bg-white hover:text-navy" />
           </div>
           <p className="mt-6 text-xs font-semibold tracking-[0.25em] text-[oklch(0.82_0.08_80)] print:text-muted-foreground"><T m={{ ja: "PREMIUM ANALYSIS ／ 企業レポート", en: "PREMIUM ANALYSIS / Company report" }} /></p>
           <h1 className="mt-2 font-serif text-[2rem] leading-tight font-semibold md:text-[3rem]"><L s={company.name} /></h1>
           <p className="figures mt-2 text-sm text-white/75 print:text-muted-foreground">
-            <span data-l="ja" lang="ja">{company.officialName} ・ 証券コード {company.code}
-            {industryName && <> <span data-l="ja" lang="ja">・ {industryName}</span><span data-l="en" lang="en">· {industryName}</span></>}</span><span data-l="en" lang="en">{company.officialName} · Securities code {company.code}{industryName && <> <span data-l="ja" lang="ja">・ {industryName}</span><span data-l="en" lang="en">· {industryName}</span></>}</span>
+            <span data-l="ja">{company.officialName} ・ 証券コード {company.code}
+            {industryName && <> <span data-l="ja">・ {industryName}</span><span data-l="en">· {industryName}</span></>}</span><span data-l="en">{company.officialName} · Securities code {company.code}{industryName && <> <span data-l="ja">・ {industryName}</span><span data-l="en">· {industryName}</span></>}</span>
           </p>
           <p className="mt-4 inline-flex flex-wrap items-center gap-x-3 gap-y-1 rounded-full border border-white/30 px-4 py-1.5 text-xs text-white/85 print:border-border print:text-muted-foreground">
-            {latest && <span><span data-l="ja" lang="ja">最新期 <F s={latest.fiscalYear} /></span><span data-l="en" lang="en">Latest fiscal year <F s={latest.fiscalYear} /></span></span>}
+            {latest && <span><span data-l="ja">最新期 <F s={latest.fiscalYear} /></span><span data-l="en">Latest fiscal year <F s={latest.fiscalYear} /></span></span>}
             <span aria-hidden>|</span>
-            <span><span data-l="ja" lang="ja">データ時点 <F s={formatDateJa(company.updatedAt)} /></span><span data-l="en" lang="en">Data as of <F s={formatDateJa(company.updatedAt)} /></span></span>
+            <span><span data-l="ja">データ時点 <F s={formatDateJa(company.updatedAt)} /></span><span data-l="en">Data as of <F s={formatDateJa(company.updatedAt)} /></span></span>
             <span aria-hidden>|</span>
             <span><T m={{ ja: "出典：有価証券報告書（EDINET）", en: "Sources: annual securities reports (EDINET)" }} /></span>
           </p>
@@ -253,8 +253,8 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
           <div className="sticky top-24 space-y-4">
             <div className="rounded-xl border border-border bg-card p-2">
               <p className="flex items-center gap-1.5 px-3 pt-2 pb-1 text-xs font-semibold tracking-[0.12em] text-muted-foreground">
-                <span data-l="ja" lang="ja"><ListOrdered className="size-3.5" aria-hidden /> 目次
-              </span><span data-l="en" lang="en"><ListOrdered className="size-3.5" aria-hidden /> contents</span></p>
+                <span data-l="ja"><ListOrdered className="size-3.5" aria-hidden /> 目次
+              </span><span data-l="en"><ListOrdered className="size-3.5" aria-hidden /> contents</span></p>
               {toc}
             </div>
             <div className="rounded-xl border border-border bg-card p-4 text-xs leading-5 text-muted-foreground">
@@ -285,8 +285,8 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
             )}
             {summary && (
               <p className="mt-2 text-xs text-muted-foreground">
-                <span data-l="ja" lang="ja"><F s={summary.fiscalYear} />の印字値。前期比は計算値（最新期 ÷ 前期 − 1）で、会計基準と売上の範囲が前期と同じ場合だけ示します。
-              </span><span data-l="en" lang="en">Printed values for <F s={summary.fiscalYear} />. Year on year is a computed value (latest fiscal year ÷ prior fiscal year − 1) and is shown only when the accounting standard and revenue scope match the prior fiscal year.</span></p>
+                <span data-l="ja"><F s={summary.fiscalYear} />の印字値。前期比は計算値（最新期 ÷ 前期 − 1）で、会計基準と売上の範囲が前期と同じ場合だけ示します。
+              </span><span data-l="en">Printed values for <F s={summary.fiscalYear} />. Year on year is a computed value (latest fiscal year ÷ prior fiscal year − 1) and is shown only when the accounting standard and revenue scope match the prior fiscal year.</span></p>
             )}
             {meaning.length > 0 && (
               <MeaningGate fallback={<MeaningEntrance sentences={meaning} />}>
@@ -359,13 +359,13 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
                   <div className="grid gap-4 md:grid-cols-2">
                     {company.segmentRevenue && (
                       <div className="rounded-xl border border-border bg-card p-4 md:p-5">
-                        <h3 className="font-serif text-base font-semibold"><span data-l="ja" lang="ja">事業別の<L s={company.segmentRevenue.label} /><span className="figures ml-1 text-sm font-normal text-muted-foreground">（<F s={company.segmentRevenue.fiscalYear} />）</span></span><span data-l="en" lang="en"><L s={company.segmentRevenue.label} /><span className="figures ml-1 text-sm font-normal text-muted-foreground">（<F s={company.segmentRevenue.fiscalYear} />）</span> by business</span></h3>
+                        <h3 className="font-serif text-base font-semibold"><span data-l="ja">事業別の<L s={company.segmentRevenue.label} /><span className="figures ml-1 text-sm font-normal text-muted-foreground">（<F s={company.segmentRevenue.fiscalYear} />）</span></span><span data-l="en"><L s={company.segmentRevenue.label} /><span className="figures ml-1 text-sm font-normal text-muted-foreground">（<F s={company.segmentRevenue.fiscalYear} />）</span> by business</span></h3>
                         <div className="mt-4"><Donut title={`事業別の${company.segmentRevenue.label}`} parts={segmentParts} unitLabel={company.segmentRevenue.label} /></div>
                       </div>
                     )}
                     {company.regionalRevenue && (
                       <div className="rounded-xl border border-border bg-card p-4 md:p-5">
-                        <h3 className="font-serif text-base font-semibold"><span data-l="ja" lang="ja">地域別の<L s={company.regionalRevenue.label} /><span className="figures ml-1 text-sm font-normal text-muted-foreground">（<F s={company.regionalRevenue.fiscalYear} />）</span></span><span data-l="en" lang="en"><L s={company.regionalRevenue.label} /><span className="figures ml-1 text-sm font-normal text-muted-foreground">（<F s={company.regionalRevenue.fiscalYear} />）</span> by region</span></h3>
+                        <h3 className="font-serif text-base font-semibold"><span data-l="ja">地域別の<L s={company.regionalRevenue.label} /><span className="figures ml-1 text-sm font-normal text-muted-foreground">（<F s={company.regionalRevenue.fiscalYear} />）</span></span><span data-l="en"><L s={company.regionalRevenue.label} /><span className="figures ml-1 text-sm font-normal text-muted-foreground">（<F s={company.regionalRevenue.fiscalYear} />）</span> by region</span></h3>
                         <div className="mt-4"><Donut title={`地域別の${company.regionalRevenue.label}`} parts={regionParts} unitLabel={company.regionalRevenue.label} /></div>
                       </div>
                     )}
@@ -392,9 +392,9 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
                 >
                   {positioned.length > 0 && (
                     <p className="mb-3 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
-                      <span className="inline-flex items-center gap-1.5"><span data-l="ja" lang="ja"><span className="size-3 rounded-full bg-[var(--ink)]" />この会社</span><span data-l="en" lang="en"><span className="size-3 rounded-full bg-[var(--ink)]" />This company</span></span>
-                      <span className="inline-flex items-center gap-1.5"><span data-l="ja" lang="ja"><span className="h-3 w-0.5 bg-muted-foreground" />業界の中央値</span><span data-l="en" lang="en"><span className="h-3 w-0.5 bg-muted-foreground" />Industry median</span></span>
-                      <span className="inline-flex items-center gap-1.5"><span data-l="ja" lang="ja"><span className="h-2.5 w-5 rounded-full bg-[var(--chart-revenue)]/35" />業界の中ほど半分（第1〜第3四分位）</span><span data-l="en" lang="en"><span className="h-2.5 w-5 rounded-full bg-[var(--chart-revenue)]/35" />Middle half of the industry (1st to 3rd quartile)</span></span>
+                      <span className="inline-flex items-center gap-1.5"><span data-l="ja"><span className="size-3 rounded-full bg-[var(--ink)]" />この会社</span><span data-l="en"><span className="size-3 rounded-full bg-[var(--ink)]" />This company</span></span>
+                      <span className="inline-flex items-center gap-1.5"><span data-l="ja"><span className="h-3 w-0.5 bg-muted-foreground" />業界の中央値</span><span data-l="en"><span className="h-3 w-0.5 bg-muted-foreground" />Industry median</span></span>
+                      <span className="inline-flex items-center gap-1.5"><span data-l="ja"><span className="h-2.5 w-5 rounded-full bg-[var(--chart-revenue)]/35" />業界の中ほど半分（第1〜第3四分位）</span><span data-l="en"><span className="h-2.5 w-5 rounded-full bg-[var(--chart-revenue)]/35" />Middle half of the industry (1st to 3rd quartile)</span></span>
                     </p>
                   )}
                   <ul className="divide-y divide-border rounded-xl border border-border bg-card">
@@ -402,15 +402,15 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
                       <li key={m.key} className="grid gap-2 px-4 py-3.5 sm:grid-cols-[minmax(0,13rem)_6.5rem_minmax(0,1fr)] sm:items-center sm:gap-4 md:px-5">
                         <div className="min-w-0">
                           <p className="text-sm font-medium"><L s={m.title} /></p>
-                          <p className="text-xs text-muted-foreground"><span data-l="ja" lang="ja"><F s={m.fiscalYear} />・計算値</span><span data-l="en" lang="en"><F s={m.fiscalYear} /> · computed</span></p>
+                          <p className="text-xs text-muted-foreground"><span data-l="ja"><F s={m.fiscalYear} />・計算値</span><span data-l="en"><F s={m.fiscalYear} /> · computed</span></p>
                         </div>
                         <p className="figures text-lg font-semibold sm:text-right">{formatValue(m, m.value)}</p>
                         {m.industry ? (
                           <div>
                             <PositionBar value={m.value} median={m.industry.median} q1={m.industry.q1} q3={m.industry.q3} />
                             <p className="figures mt-1 text-xs text-muted-foreground">
-                              <span data-l="ja" lang="ja">中央値 {formatValue(m, m.industry.median)} ・ {m.industry.rank}位 / {m.industry.members}社
-                            </span><span data-l="en" lang="en">Median {formatValue(m, m.industry.median)} · No. {m.industry.rank} of {m.industry.members} companies</span></p>
+                              <span data-l="ja">中央値 {formatValue(m, m.industry.median)} ・ {m.industry.rank}位 / {m.industry.members}社
+                            </span><span data-l="en">Median {formatValue(m, m.industry.median)} · No. {m.industry.rank} of {m.industry.members} companies</span></p>
                           </div>
                         ) : (
                           <p className="text-xs text-muted-foreground"><T m={{ ja: "業界で比べられる会社が少ないため、分布は示していません。", en: "The distribution is not shown because few companies in the industry are comparable." }} /></p>
@@ -420,13 +420,13 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
                   </ul>
                   <Fold label={<T m={{ ja: "計算式と分布の表（中央値・四分位・順位・パーセンタイル）", en: "Formulas and distribution table (median, quartiles, rank, percentile)" }} />}>
                     <p className="max-w-3xl text-xs leading-5 text-muted-foreground">
-                      <span data-l="ja" lang="ja">業界の分布は、主たる産業が同じ掲載企業
+                      <span data-l="ja">業界の分布は、主たる産業が同じ掲載企業
                       {layer.industryName && `（${layer.industryName}）`}
                       {layer.industryMembers > 0
                         ? `${layer.industryMembers}社のうち、最新期がこの会社と1年以内に終わる${layer.comparableMembers}社の最新期から同じ計算をしたもので`
                         : <T m={{ ja: "の各社の最新期から同じ計算をしたもので", en: "computed the same way from each company's latest fiscal year in" }} />}
                       す。パーセンタイルは、その値より小さい会社の割合です。
-                    </span><span data-l="en" lang="en">The industry distribution covers {layer.industryName && `（${layer.industryName}）`} listed companies with the same primary industry{layer.industryMembers > 0
+                    </span><span data-l="en">The industry distribution covers {layer.industryName && `（${layer.industryName}）`} listed companies with the same primary industry{layer.industryMembers > 0
                         ? `${layer.industryMembers}社のうち、最新期がこの会社と1年以内に終わる${layer.comparableMembers}社の最新期から同じ計算をしたもので`
                         : <T m={{ ja: "の各社の最新期から同じ計算をしたもので", en: "computed the same way from each company's latest fiscal year in" }} />}. The percentile is the share of companies with a smaller value.</span></p>
                     <div className="mt-3 overflow-x-auto">
@@ -487,8 +487,8 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
                   <figure>
                     <PerspectiveRadar axes={axes} />
                     <figcaption className="mt-2 text-center text-xs leading-5 text-muted-foreground">
-                      <span data-l="ja" lang="ja">外側ほど、その指標の値が業界{analysis.industryName && `（${analysis.industryName}）`}の中で大きい。点線は業界の中央値。
-                    </span><span data-l="en" lang="en">The further out, the larger the metric&apos;s value within the industry {analysis.industryName && `（${analysis.industryName}）`}. The dotted line is the industry median.</span></figcaption>
+                      <span data-l="ja">外側ほど、その指標の値が業界{analysis.industryName && `（${analysis.industryName}）`}の中で大きい。点線は業界の中央値。
+                    </span><span data-l="en">The further out, the larger the metric&apos;s value within the industry {analysis.industryName && `（${analysis.industryName}）`}. The dotted line is the industry median.</span></figcaption>
                   </figure>
                   <div>
                     <h3 className="font-serif text-base font-semibold"><T m={{ ja: "5観点の業界内の位置", en: "Position within the industry on five perspectives" }} /></h3>
@@ -502,7 +502,7 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
                           <p className="figures mt-0.5 text-xs text-muted-foreground">
                             <L s={a.indicator} />
                             {a.row && <> {formatAnalysisValue(a.row, a.row.value)}（<F s={a.row.fiscalYear} />）</>}
-                            {a.row?.industry && <> <span data-l="ja" lang="ja">・ {a.row.industry.rank}位 / {a.row.industry.members}社</span><span data-l="en" lang="en">· No. {a.row.industry.rank} of {a.row.industry.members} companies</span></>}
+                            {a.row?.industry && <> <span data-l="ja">・ {a.row.industry.rank}位 / {a.row.industry.members}社</span><span data-l="en">· No. {a.row.industry.rank} of {a.row.industry.members} companies</span></>}
                           </p>
                         </li>
                       ))}
@@ -540,9 +540,9 @@ export function CompanyReport({ company, companies, revisions }: { company: Comp
             <DataProvenance company={company} metrics={layer.metrics} revisions={revisions} />
             <footer className="mt-8 border-t border-border pt-4 text-xs leading-5 text-muted-foreground">
               <p>
-                <span data-l="ja" lang="ja">日本企業百科事典のプレミアムレポートです。数値は有価証券報告書など上記の出典に印字された値と、そこから計算した値（計算値）だけを使い、株価・評価・推奨は含みません。データ時点: <F s={formatDateJa(company.updatedAt)} />。
+                <span data-l="ja">日本企業百科事典のプレミアムレポートです。数値は有価証券報告書など上記の出典に印字された値と、そこから計算した値（計算値）だけを使い、株価・評価・推奨は含みません。データ時点: <F s={formatDateJa(company.updatedAt)} />。
                 プレミアムプランの特典として、このレポートは印刷して第三者への提示にも使えます。
-              </span><span data-l="en" lang="en">A Premium report from the Japan Company Encyclopedia. It uses only values printed in the sources above, such as annual securities reports, and values computed from them (computed values), and includes no stock prices, ratings, or recommendations. Data as of <F s={formatDateJa(company.updatedAt)} />. As a Premium plan benefit, this report can be printed and shown to third parties.</span></p>
+              </span><span data-l="en">A Premium report from the Japan Company Encyclopedia. It uses only values printed in the sources above, such as annual securities reports, and values computed from them (computed values), and includes no stock prices, ratings, or recommendations. Data as of <F s={formatDateJa(company.updatedAt)} />. As a Premium plan benefit, this report can be printed and shown to third parties.</span></p>
             </footer>
           </Chapter>
         </div>

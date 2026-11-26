@@ -117,12 +117,12 @@ export default async function HomePage() {
         <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/70 to-background" />
         <div className="relative mx-auto max-w-7xl px-4 pt-7 pb-5 md:px-8 md:pt-14 md:pb-8">
           <h1 id="home-hero" className="font-serif text-[1.875rem] leading-[1.3] font-semibold tracking-[0.04em] text-balance md:text-[2.75rem]">
-            <span data-l="ja" lang="ja">
+            <span data-l="ja">
               日本企業を、
               <br />
               構造から理解する。
             </span>
-            <span data-l="en" lang="en">
+            <span data-l="en">
               Understand Japanese companies,
               <br />
               from how they are built.

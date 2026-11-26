@@ -105,7 +105,7 @@ function LaneBox({ lane, items, className }: { lane: Lane; items: Connection[]; 
               <span className="font-serif text-[0.9375rem] font-semibold"><L s={item.company.name} /></span>
               <span className="mt-0.5 text-[0.6875rem] text-muted-foreground">
                 <L s={item.label} />
-                {item.inbound && <span className="sr-only"><span data-l="ja" lang="ja">（<L s={item.company.name} />の項目に記載）</span><span data-l="en" lang="en">(Described in the entry for <L s={item.company.name} />)</span></span>}
+                {item.inbound && <span className="sr-only"><span data-l="ja">（<L s={item.company.name} />の項目に記載）</span><span data-l="en">(Described in the entry for <L s={item.company.name} />)</span></span>}
               </span>
             </Link>
           </li>
@@ -113,8 +113,8 @@ function LaneBox({ lane, items, className }: { lane: Lane; items: Connection[]; 
         {items.length > MAX_PER_LANE && (
           <li>
             <a href="#related-companies-list" className="link-ink inline-flex min-h-11 items-center px-1 text-sm">
-              <span data-l="ja" lang="ja">ほか{items.length - MAX_PER_LANE}社
-            </span><span data-l="en" lang="en">{items.length - MAX_PER_LANE} more companies</span></a>
+              <span data-l="ja">ほか{items.length - MAX_PER_LANE}社
+            </span><span data-l="en">{items.length - MAX_PER_LANE} more companies</span></a>
           </li>
         )}
       </ul>

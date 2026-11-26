@@ -63,9 +63,9 @@ export function BusinessModel({ model, sources }: { model: BusinessModelData; so
 
       <details className="group mt-6">
         <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 text-sm text-muted-foreground select-none hover:text-foreground [&::-webkit-details-marker]:hidden">
-          <span data-l="ja" lang="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
+          <span data-l="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
           各段階を詳しく読む
-        </span><span data-l="en" lang="en"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>Read about each stage in detail</span></summary>
+        </span><span data-l="en"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>Read about each stage in detail</span></summary>
         <dl className="mt-4 max-w-4xl divide-y divide-border border-y border-border">
           {steps.map((step) => (
             <div key={step.kind} className="grid gap-x-8 gap-y-1 py-5 md:grid-cols-[9rem_1fr]">

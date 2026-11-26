@@ -47,7 +47,7 @@ export function KeyFacts({ records, sources }: { records: FinancialRecord[]; sou
         ))}
       </dl>
       <div className="mt-1.5 flex flex-wrap items-center gap-x-2.5 gap-y-1 text-[0.6875rem] text-muted-foreground sm:gap-x-3">
-        <p className="figures"><span data-l="ja" lang="ja"><F s={latest.fiscalYear} />・連結</span><span data-l="en" lang="en"><F s={latest.fiscalYear} /> · Consolidated</span></p>
+        <p className="figures"><span data-l="ja"><F s={latest.fiscalYear} />・連結</span><span data-l="en"><F s={latest.fiscalYear} /> · Consolidated</span></p>
         {badgeSources.length > 0 && (
           <p className="flex flex-wrap items-center gap-1.5">
             <span><T m={{ ja: "出典", en: "Sources" }} /></span>
@@ -61,7 +61,7 @@ export function KeyFacts({ records, sources }: { records: FinancialRecord[]; sou
                 <span className="sm:hidden"><T m={{ ja: "有報", en: "Securities report" }} /></span>
               </a>
             ))}
-            {lastAccessed && <span className="figures"><span data-l="ja" lang="ja">最終確認 <F s={formatDateJa(lastAccessed)} /></span><span data-l="en" lang="en">Last checked <F s={formatDateJa(lastAccessed)} /></span></span>}
+            {lastAccessed && <span className="figures"><span data-l="ja">最終確認 <F s={formatDateJa(lastAccessed)} /></span><span data-l="en">Last checked <F s={formatDateJa(lastAccessed)} /></span></span>}
           </p>
         )}
       </div>

@@ -237,10 +237,10 @@ export function CompanyHero({
               title={`${yuho?.title ?? "有価証券報告書"}【株式事務の概要】公告掲載方法に記載のアドレス`}
               className="inline-flex min-h-11 items-center gap-2 rounded-full bg-navy px-4 text-sm font-medium text-white transition-opacity hover:opacity-90"
             >
-              <span data-l="ja" lang="ja">公式サイト
+              <span data-l="ja">公式サイト
               <span className="figures text-xs text-white/75">{new URL(website.url).hostname}</span>
               <ExternalLink className="size-3.5" aria-hidden />
-              <span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span><span data-l="en" lang="en">Official website<span className="figures text-xs text-white/75">{new URL(website.url).hostname}</span><ExternalLink className="size-3.5" aria-hidden /><span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span>
+              <span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span><span data-l="en">Official website<span className="figures text-xs text-white/75">{new URL(website.url).hostname}</span><ExternalLink className="size-3.5" aria-hidden /><span className="sr-only"><T m={{ ja: "（新しいタブで開きます）", en: "(opens in a new tab)" }} /></span></span>
             </a>
           )}
           <FavoriteButton companyId={company.id} companyName={company.name} />
@@ -249,17 +249,17 @@ export function CompanyHero({
             href={`/compare?ids=${company.id}`}
             className="inline-flex min-h-11 items-center gap-2 rounded-full border border-border px-4 text-sm transition-colors hover:border-foreground"
           >
-            <span data-l="ja" lang="ja"><Columns3 className="size-4" aria-hidden />
+            <span data-l="ja"><Columns3 className="size-4" aria-hidden />
             見比べる
-          </span><span data-l="en" lang="en"><Columns3 className="size-4" aria-hidden />Compare</span></Link>
+          </span><span data-l="en"><Columns3 className="size-4" aria-hidden />Compare</span></Link>
           <ShareActions url={siteUrl(`/companies/${company.id}`)} text={`${company.name}とは？｜${SITE_NAME}`} />
           <Link
             href={`/contact?company=${company.id}`}
             className="inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-sm text-muted-foreground transition-colors hover:text-foreground"
           >
-            <span data-l="ja" lang="ja"><Flag className="size-4" aria-hidden />
+            <span data-l="ja"><Flag className="size-4" aria-hidden />
             誤りを報告
-          </span><span data-l="en" lang="en"><Flag className="size-4" aria-hidden />Report an error</span></Link>
+          </span><span data-l="en"><Flag className="size-4" aria-hidden />Report an error</span></Link>
         </div>
 
         {/* JCE-087: what this page holds, in one line at the top — only the sections this entry has,

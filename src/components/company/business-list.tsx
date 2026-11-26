@@ -23,7 +23,7 @@ function Items({ label, items }: { label: React.ReactNode; items?: string[] }) {
             <RichText text={item} />
           </span>
         ))}
-        {items.length > MAX_ITEMS && <span className="figures text-muted-foreground"> <span data-l="ja" lang="ja">ほか{items.length - MAX_ITEMS}件</span><span data-l="en" lang="en">{items.length - MAX_ITEMS} more</span></span>}
+        {items.length > MAX_ITEMS && <span className="figures text-muted-foreground"> <span data-l="ja">ほか{items.length - MAX_ITEMS}件</span><span data-l="en">{items.length - MAX_ITEMS} more</span></span>}
       </dd>
     </div>
   );
@@ -58,8 +58,8 @@ export function BusinessList({ businesses, sources }: { businesses: Business[]; 
     <div>
       {via && (
         <p className="mb-5 text-sm leading-7 text-muted-foreground">
-          <span data-l="ja" lang="ja">報告セグメントは「<L s={via.name} />」の1つです。下はその中の事業です。
-        </span><span data-l="en" lang="en">The reportable segment is one: &quot;<L s={via.name} />&quot;. Below are the businesses within it.</span></p>
+          <span data-l="ja">報告セグメントは「<L s={via.name} />」の1つです。下はその中の事業です。
+        </span><span data-l="en">The reportable segment is one: &quot;<L s={via.name} />&quot;. Below are the businesses within it.</span></p>
       )}
       {/* Four across at most: five or six businesses make two even rows of three rather than four and a straggler. */}
       <ol className={`grid gap-4 sm:grid-cols-2 ${branches.length === 4 ? "lg:grid-cols-4" : branches.length >= 3 ? "lg:grid-cols-3" : ""}`}>
@@ -85,9 +85,9 @@ export function BusinessList({ businesses, sources }: { businesses: Business[]; 
                   {hasMore && (
                     <details className="group">
                       <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 text-sm text-muted-foreground select-none hover:text-foreground [&::-webkit-details-marker]:hidden">
-                        <span data-l="ja" lang="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
+                        <span data-l="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
                         詳しく読む
-                      </span><span data-l="en" lang="en"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>Read more</span></summary>
+                      </span><span data-l="en"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>Read more</span></summary>
                       <p className="mt-2 text-sm leading-7">
                         <RichText text={business.description} />
                       </p>

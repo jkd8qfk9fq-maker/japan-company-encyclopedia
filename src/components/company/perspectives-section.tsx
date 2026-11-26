@@ -49,8 +49,8 @@ export async function PerspectivesSection({ company }: { company: Company }) {
             <p className="mb-2 flex items-center gap-1.5 text-xs text-muted-foreground lg:hidden">
               {present.map((i) => i.label).join("・")}
               <span aria-hidden className="inline-flex items-center gap-0.5 border-l border-border pl-1.5">
-                <span data-l="ja" lang="ja">横にスワイプ
-                <ArrowRight className="size-3" /></span><span data-l="en" lang="en">Swipe sideways <ArrowRight className="size-3" /></span>
+                <span data-l="ja">横にスワイプ
+                <ArrowRight className="size-3" /></span><span data-l="en">Swipe sideways <ArrowRight className="size-3" /></span>
               </span>
             </p>
           )}
@@ -130,9 +130,9 @@ function KeyNumbers({
       {targets.length > 0 && strategy && (
         <div className="bg-navy px-5 py-6 text-white md:px-6">
           <p className="flex items-center gap-2 text-xs font-semibold tracking-[0.08em] text-white/80">
-            <span data-l="ja" lang="ja"><span aria-hidden className="h-3 w-1 rounded-full bg-growth" />
+            <span data-l="ja"><span aria-hidden className="h-3 w-1 rounded-full bg-growth" />
             会社が掲げる目標
-          </span><span data-l="en" lang="en"><span aria-hidden className="h-3 w-1 rounded-full bg-growth" /> Targets set by the company</span></p>
+          </span><span data-l="en"><span aria-hidden className="h-3 w-1 rounded-full bg-growth" /> Targets set by the company</span></p>
           <dl className="mt-4 grid grid-cols-[minmax(0,1fr)] gap-5 sm:grid-cols-2">
             {targets.map((t) => (
               <div key={`${t.metric}-${t.value}`}>
@@ -151,7 +151,7 @@ function KeyNumbers({
       )}
       {hasNow && latest && (
         <div className="px-5 py-5 md:px-6">
-          <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground"><span data-l="ja" lang="ja">いまの数字（<F s={latest.fiscalYear} />）</span><span data-l="en" lang="en">Current figures (<F s={latest.fiscalYear} />)</span></p>
+          <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground"><span data-l="ja">いまの数字（<F s={latest.fiscalYear} />）</span><span data-l="en">Current figures (<F s={latest.fiscalYear} />)</span></p>
           <dl className="mt-3 grid grid-cols-2 gap-4">
             {latest.revenue !== null && (
               <div>
@@ -172,10 +172,10 @@ function KeyNumbers({
       <div className="space-y-1 border-t border-border px-5 py-3 md:px-6">
         {targets.length > 0 && strategy && (
           <Meta>
-            <span data-l="ja" lang="ja">目標：有価証券報告書{strategy.locator ?? ""}の文言から抜き出し・<F s={formatDateJa(strategy.asOf)} />時点
-          </span><span data-l="en" lang="en">Targets: extracted from the wording of the annual securities report {strategy.locator ?? ""} · as of <F s={formatDateJa(strategy.asOf)} /></span></Meta>
+            <span data-l="ja">目標：有価証券報告書{strategy.locator ?? ""}の文言から抜き出し・<F s={formatDateJa(strategy.asOf)} />時点
+          </span><span data-l="en">Targets: extracted from the wording of the annual securities report {strategy.locator ?? ""} · as of <F s={formatDateJa(strategy.asOf)} /></span></Meta>
         )}
-        {hasNow && latest && <Meta><span data-l="ja" lang="ja">いまの数字：<F s={latest.fiscalYear} />の有価証券報告書</span><span data-l="en" lang="en">Current figures: from the annual securities report of <F s={latest.fiscalYear} /></span></Meta>}
+        {hasNow && latest && <Meta><span data-l="ja">いまの数字：<F s={latest.fiscalYear} />の有価証券報告書</span><span data-l="en">Current figures: from the annual securities report of <F s={latest.fiscalYear} /></span></Meta>}
         <SourceList
           sources={company.sources}
           sourceIds={[...new Set([...(targets.length ? (strategy?.sourceIds ?? []) : []), ...(latest?.sourceIds ?? []), ...(overseas?.sourceIds ?? [])])]}
@@ -194,9 +194,9 @@ function Statement({ text }: { text: string }) {
       {rest.length > 0 && (
         <details className="group mt-2">
           <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 text-sm text-ink select-none [&::-webkit-details-marker]:hidden">
-            <span data-l="ja" lang="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
+            <span data-l="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
             続きを読む（あと{rest.length}文）
-          </span><span data-l="en" lang="en"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span> Read more ({rest.length} more sentences)</span></summary>
+          </span><span data-l="en"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span> Read more ({rest.length} more sentences)</span></summary>
           <ul className="mt-1 space-y-2 border-l border-border pl-4 text-[0.9375rem] leading-7">
             {rest.map((s, i) => (
               <li key={i}>{s}</li>
@@ -262,8 +262,8 @@ function PerspectiveCard({
           <Statement text={perspective.disclosed.text} />
           <div className="mt-3">
             <Meta>
-              <span data-l="ja" lang="ja">会社の説明・有価証券報告書{perspective.disclosed.locator ?? ""}・<F s={formatDateJa(perspective.disclosed.asOf)} />時点
-            </span><span data-l="en" lang="en">Company description · annual securities report {perspective.disclosed.locator ?? ""} · as of <F s={formatDateJa(perspective.disclosed.asOf)} /></span></Meta>
+              <span data-l="ja">会社の説明・有価証券報告書{perspective.disclosed.locator ?? ""}・<F s={formatDateJa(perspective.disclosed.asOf)} />時点
+            </span><span data-l="en">Company description · annual securities report {perspective.disclosed.locator ?? ""} · as of <F s={formatDateJa(perspective.disclosed.asOf)} /></span></Meta>
             <SourceList sources={sources} sourceIds={perspective.disclosed.sourceIds} variant="refs" />
           </div>
         </div>
@@ -273,9 +273,9 @@ function PerspectiveCard({
         <div className="mt-5 border-l-2 border-ink pl-4">
           <p className="text-xs font-semibold text-ink"><T m={{ ja: "編集部の分析（推論）", en: "Editorial analysis (inference)" }} /></p>
           <Statement text={perspective.analysis.text} />
-          <p className="mt-2 text-sm text-muted-foreground"><span data-l="ja" lang="ja">根拠：<L s={perspective.analysis.basis} /></span><span data-l="en" lang="en">Basis: <L s={perspective.analysis.basis} /></span></p>
+          <p className="mt-2 text-sm text-muted-foreground"><span data-l="ja">根拠：<L s={perspective.analysis.basis} /></span><span data-l="en">Basis: <L s={perspective.analysis.basis} /></span></p>
           <div className="mt-2">
-            <Meta><span data-l="ja" lang="ja"><F s={formatDateJa(perspective.analysis.asOf)} />時点の資料による</span><span data-l="en" lang="en">Based on materials as of <F s={formatDateJa(perspective.analysis.asOf)} /></span></Meta>
+            <Meta><span data-l="ja"><F s={formatDateJa(perspective.analysis.asOf)} />時点の資料による</span><span data-l="en">Based on materials as of <F s={formatDateJa(perspective.analysis.asOf)} /></span></Meta>
             <SourceList sources={sources} sourceIds={perspective.analysis.sourceIds} variant="refs" />
           </div>
         </div>
@@ -324,16 +324,16 @@ function GrowthMap({ company, shares }: { company: Company; shares: NonNullable<
       {/* A legend only when there are two colours to tell apart. */}
       {anyGrowth && (
         <ul className="mt-4 flex flex-wrap gap-x-5 gap-y-1 text-xs text-muted-foreground">
-          <li className="flex items-center gap-1.5"><span data-l="ja" lang="ja"><span aria-hidden className="size-2.5 rounded-sm bg-growth" />成長を掲げる事業</span><span data-l="en" lang="en"><span aria-hidden className="size-2.5 rounded-sm bg-growth" /> Businesses targeted for growth</span></li>
-          <li className="flex items-center gap-1.5"><span data-l="ja" lang="ja"><span aria-hidden className="size-2.5 rounded-sm bg-navy/80 dark:bg-ink/70" />そのほかの事業</span><span data-l="en" lang="en"><span aria-hidden className="size-2.5 rounded-sm bg-navy/80 dark:bg-ink/70" /> Other businesses</span></li>
+          <li className="flex items-center gap-1.5"><span data-l="ja"><span aria-hidden className="size-2.5 rounded-sm bg-growth" />成長を掲げる事業</span><span data-l="en"><span aria-hidden className="size-2.5 rounded-sm bg-growth" /> Businesses targeted for growth</span></li>
+          <li className="flex items-center gap-1.5"><span data-l="ja"><span aria-hidden className="size-2.5 rounded-sm bg-navy/80 dark:bg-ink/70" />そのほかの事業</span><span data-l="en"><span aria-hidden className="size-2.5 rounded-sm bg-navy/80 dark:bg-ink/70" /> Other businesses</span></li>
         </ul>
       )}
       <div className="mt-3 space-y-1 border-t border-border pt-3">
         <Meta>
-          <span data-l="ja" lang="ja">割合は計算値：各事業の<L s={shares.label} /> ÷ 合計（<F s={shares.fiscalYear} />・有価証券報告書【セグメント情報】）。
+          <span data-l="ja">割合は計算値：各事業の<L s={shares.label} /> ÷ 合計（<F s={shares.fiscalYear} />・有価証券報告書【セグメント情報】）。
           {anyGrowth
             ? <T m={{ ja: "緑は、会社の成長戦略の文で、成長・拡大・強化などと同じ文に名前が挙がった事業です。", en: "Green marks businesses named in the same sentence as growth, expansion, strengthening and the like in the company's growth strategy text." }} />
-            : <T m={{ ja: "会社の成長戦略の文に、成長を掲げる事業の名前は見つかりませんでした。", en: "No business named as a growth driver was found in the company's growth strategy text." }} />}</span><span data-l="en" lang="en">Shares are computed: each business&apos;s <L s={shares.label} /> ÷ total (<F s={shares.fiscalYear} />, annual securities report [Segment information]). {anyGrowth
+            : <T m={{ ja: "会社の成長戦略の文に、成長を掲げる事業の名前は見つかりませんでした。", en: "No business named as a growth driver was found in the company's growth strategy text." }} />}</span><span data-l="en">Shares are computed: each business&apos;s <L s={shares.label} /> ÷ total (<F s={shares.fiscalYear} />, annual securities report [Segment information]). {anyGrowth
             ? <T m={{ ja: "緑は、会社の成長戦略の文で、成長・拡大・強化などと同じ文に名前が挙がった事業です。", en: "Green marks businesses named in the same sentence as growth, expansion, strengthening and the like in the company's growth strategy text." }} />
             : <T m={{ ja: "会社の成長戦略の文に、成長を掲げる事業の名前は見つかりませんでした。", en: "No business named as a growth driver was found in the company's growth strategy text." }} />}</span>
         </Meta>
@@ -385,8 +385,8 @@ function IndustryPosition({ company, industry }: { company: Company; industry: I
       <figcaption>
         <p className="text-xs font-semibold tracking-[0.08em] text-muted-foreground"><T m={{ ja: "業界の中の位置", en: "Position in the industry" }} /></p>
         <p className="mt-1 font-semibold">
-          <span data-l="ja" lang="ja"><L s={industry.name} />業界の{industry.structure === "chain" ? <T m={{ ja: "流れ", en: "Flow" }} /> : <T m={{ ja: "顔ぶれ", en: "Key players" }} />}
-          {placements.length > 0 && <span className="font-normal"><span data-l="ja" lang="ja">と、<L s={company.name} />のいる場所</span><span data-l="en" lang="en">And where <L s={company.name} /> is</span></span>}</span><span data-l="en" lang="en">{industry.structure === "chain" ? <T m={{ ja: "流れ", en: "Flow" }} /> : <T m={{ ja: "顔ぶれ", en: "Key players" }} />}{placements.length > 0 && <span className="font-normal"><span data-l="ja" lang="ja">と、<L s={company.name} />のいる場所</span><span data-l="en" lang="en">And where <L s={company.name} /> is</span></span>} in the <L s={industry.name} /> industry</span>
+          <span data-l="ja"><L s={industry.name} />業界の{industry.structure === "chain" ? <T m={{ ja: "流れ", en: "Flow" }} /> : <T m={{ ja: "顔ぶれ", en: "Key players" }} />}
+          {placements.length > 0 && <span className="font-normal"><span data-l="ja">と、<L s={company.name} />のいる場所</span><span data-l="en">And where <L s={company.name} /> is</span></span>}</span><span data-l="en">{industry.structure === "chain" ? <T m={{ ja: "流れ", en: "Flow" }} /> : <T m={{ ja: "顔ぶれ", en: "Key players" }} />}{placements.length > 0 && <span className="font-normal"><span data-l="ja">と、<L s={company.name} />のいる場所</span><span data-l="en">And where <L s={company.name} /> is</span></span>} in the <L s={industry.name} /> industry</span>
         </p>
       </figcaption>
 
@@ -403,7 +403,7 @@ function IndustryPosition({ company, industry }: { company: Company; industry: I
                   {i > 0 && <ArrowRight aria-hidden className="size-3.5 shrink-0 text-muted-foreground" />}
                   <span className={pill(c.id)}>
                     <L s={c.name} />
-                    {here(c.id) && <span className="block text-[0.6875rem] text-white/80"><span data-l="ja" lang="ja"><L s={company.name} />はここ</span><span data-l="en" lang="en"><L s={company.name} /> is here</span></span>}
+                    {here(c.id) && <span className="block text-[0.6875rem] text-white/80"><span data-l="ja"><L s={company.name} />はここ</span><span data-l="en"><L s={company.name} /> is here</span></span>}
                   </span>
                 </li>
               ))}
@@ -413,20 +413,20 @@ function IndustryPosition({ company, industry }: { company: Company; industry: I
               {stages.map((c) => (
                 <li key={c.id} className={pill(c.id)}>
                   <L s={c.name} />
-                  {here(c.id) && <span className="block text-[0.6875rem] text-white/80"><span data-l="ja" lang="ja"><L s={company.name} />はここ</span><span data-l="en" lang="en"><L s={company.name} /> is here</span></span>}
+                  {here(c.id) && <span className="block text-[0.6875rem] text-white/80"><span data-l="ja"><L s={company.name} />はここ</span><span data-l="en"><L s={company.name} /> is here</span></span>}
                 </li>
               ))}
             </ul>
           )}
           {inputs.length > 0 && (
             <p className="mt-2 text-xs text-muted-foreground">
-              <span data-l="ja" lang="ja">支える産業：
+              <span data-l="ja">支える産業：
               {inputs.map((c) => (
                 <span key={c.id} className={here(c.id) ? "font-semibold text-foreground" : ""}>
                   <L s={c.name} />
                   {here(c.id) && `（${company.name}）`}{" "}
                 </span>
-              ))}</span><span data-l="en" lang="en">Industry it supports: {inputs.map((c) => (
+              ))}</span><span data-l="en">Industry it supports: {inputs.map((c) => (
                 <span key={c.id} className={here(c.id) ? "font-semibold text-foreground" : ""}>
                   <L s={c.name} />
                   {here(c.id) && `（${company.name}）`}{" "}
@@ -442,13 +442,13 @@ function IndustryPosition({ company, industry }: { company: Company; industry: I
 
       <div className="mt-4 space-y-1 border-t border-border pt-3">
         <Meta>
-          <span data-l="ja" lang="ja"><L s={industry.name} />業界の整理（<F s={formatDateJa(industry.updatedAt)} />時点、掲載企業の有価証券報告書から）。
-          {placements.length === 0 && `${company.name}がどの段階にいるかは、まだ整理していません。`}</span><span data-l="en" lang="en"><L s={industry.name} /> industry overview (as of <F s={formatDateJa(industry.updatedAt)} />, from the annual securities reports of listed companies). {placements.length === 0 && `${company.name}がどの段階にいるかは、まだ整理していません。`}</span>
+          <span data-l="ja"><L s={industry.name} />業界の整理（<F s={formatDateJa(industry.updatedAt)} />時点、掲載企業の有価証券報告書から）。
+          {placements.length === 0 && `${company.name}がどの段階にいるかは、まだ整理していません。`}</span><span data-l="en"><L s={industry.name} /> industry overview (as of <F s={formatDateJa(industry.updatedAt)} />, from the annual securities reports of listed companies). {placements.length === 0 && `${company.name}がどの段階にいるかは、まだ整理していません。`}</span>
         </Meta>
         <SourceList sources={industry.sources} sourceIds={sourceIds.length > 0 ? sourceIds : industry.sourceIds} />
         <Link href={`/industries/${industry.id}`} className="inline-flex min-h-11 items-center text-sm text-ink">
-          <span data-l="ja" lang="ja"><L s={industry.name} />業界のしくみを見る →
-        </span><span data-l="en" lang="en">See how the <L s={industry.name} /> industry works →</span></Link>
+          <span data-l="ja"><L s={industry.name} />業界のしくみを見る →
+        </span><span data-l="en">See how the <L s={industry.name} /> industry works →</span></Link>
       </div>
     </figure>
   );

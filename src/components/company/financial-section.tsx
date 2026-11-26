@@ -88,8 +88,8 @@ export function FinancialSection({ company }: { company: Company }) {
   if (records.length === 0) {
     return (
       <p className="prose-ja text-muted-foreground">
-        <span data-l="ja" lang="ja">{companyName}の業績データは、出典を確認できた範囲がまだないため掲載していません。
-      </span><span data-l="en" lang="en">Performance data for {companyName} is not shown because there is not yet a range for which sources could be confirmed.</span></p>
+        <span data-l="ja">{companyName}の業績データは、出典を確認できた範囲がまだないため掲載していません。
+      </span><span data-l="en">Performance data for {companyName} is not shown because there is not yet a range for which sources could be confirmed.</span></p>
     );
   }
 
@@ -175,36 +175,36 @@ export function FinancialSection({ company }: { company: Company }) {
     <div>
       <ChartTabs tabs={charts.map((c) => ({ id: c.id, label: c.label }))}>{charts.map((c) => c.panel)}</ChartTabs>
       <p className="figures mt-4 text-xs text-muted-foreground">
-        <span data-l="ja" lang="ja">{spanLabel(sorted)}・連結。グラフは数字ごとに目盛りが別です（数値はそれぞれの棒に表示）。
-      </span><span data-l="en" lang="en">{spanLabel(sorted)}, consolidated. Each chart has its own scale (values are shown on each bar).</span></p>
+        <span data-l="ja">{spanLabel(sorted)}・連結。グラフは数字ごとに目盛りが別です（数値はそれぞれの棒に表示）。
+      </span><span data-l="en">{spanLabel(sorted)}, consolidated. Each chart has its own scale (values are shown on each bar).</span></p>
 
       <Breakdown company={company} />
 
       <div className="mt-8 max-w-3xl space-y-2 text-xs leading-6 text-muted-foreground">
         {standards.length === 1 ? (
-          <p><span data-l="ja" lang="ja">すべての年度が{STANDARD_NAME[standards[0]]}による数値です。</span><span data-l="en" lang="en">All fiscal years use figures under {STANDARD_NAME[standards[0]]}.</span></p>
+          <p><span data-l="ja">すべての年度が{STANDARD_NAME[standards[0]]}による数値です。</span><span data-l="en">All fiscal years use figures under {STANDARD_NAME[standards[0]]}.</span></p>
         ) : (
           <p>
-            <span data-l="ja" lang="ja">会計基準が異なる年度を含みます（
+            <span data-l="ja">会計基準が異なる年度を含みます（
             {standards.map((s) => STANDARD_NAME[s]).join("・")}
             ）。基準をまたぐ年度の数値は、厳密には比較できません。
-          </span><span data-l="en" lang="en">Includes fiscal years under different accounting standards ({standards.map((s) => STANDARD_NAME[s]).join("・")}). Figures across standards are not strictly comparable.</span></p>
+          </span><span data-l="en">Includes fiscal years under different accounting standards ({standards.map((s) => STANDARD_NAME[s]).join("・")}). Figures across standards are not strictly comparable.</span></p>
         )}
         {revenueLabels.length > 1 && (
-          <p><span data-l="ja" lang="ja">売上にあたる項目の名称が年度により異なります（{revenueLabels.join("・")}）。</span><span data-l="en" lang="en">The name of the item corresponding to revenue differs by fiscal year ({revenueLabels.join("・")}).</span></p>
+          <p><span data-l="ja">売上にあたる項目の名称が年度により異なります（{revenueLabels.join("・")}）。</span><span data-l="en">The name of the item corresponding to revenue differs by fiscal year ({revenueLabels.join("・")}).</span></p>
         )}
         {bases.length > 1 && (
           <p>
-            <span data-l="ja" lang="ja">売上の集計範囲が年度により異なります（
+            <span data-l="ja">売上の集計範囲が年度により異なります（
             {bases.map((b) => `${b.years}：${b.basis}`).join("／")}
             ）。範囲をまたぐ年度の売上は、そのままでは比較できません。
-          </span><span data-l="en" lang="en">The scope of revenue aggregation differs by fiscal year ({bases.map((b) => `${b.years}：${b.basis}`).join("／")}). Revenue across different scopes cannot be compared as is.</span></p>
+          </span><span data-l="en">The scope of revenue aggregation differs by fiscal year ({bases.map((b) => `${b.years}：${b.basis}`).join("／")}). Revenue across different scopes cannot be compared as is.</span></p>
         )}
         {mismatched.length > 0 && (
           <p className="font-medium text-foreground">
-            <span data-l="ja" lang="ja">{mismatched.length === sorted.length ? <T m={{ ja: "全年度", en: "All years" }} /> : spanLabel(mismatched)}は、売上と純利益の集計範囲が異なります（売上：
+            <span data-l="ja">{mismatched.length === sorted.length ? <T m={{ ja: "全年度", en: "All years" }} /> : spanLabel(mismatched)}は、売上と純利益の集計範囲が異なります（売上：
             {mismatched.at(-1)!.revenueBasis}／純利益：{mismatched.at(-1)!.netIncomeBasis}）。この期間の2本の棒の差は、利益率を表しません。
-          </span><span data-l="en" lang="en">For {mismatched.length === sorted.length ? <T m={{ ja: "全年度", en: "All years" }} /> : spanLabel(mismatched)}, the scope of revenue and net income differs (revenue: {mismatched.at(-1)!.revenueBasis} / net income: {mismatched.at(-1)!.netIncomeBasis}). The gap between the two bars in this period does not represent the profit margin.</span></p>
+          </span><span data-l="en">For {mismatched.length === sorted.length ? <T m={{ ja: "全年度", en: "All years" }} /> : spanLabel(mismatched)}, the scope of revenue and net income differs (revenue: {mismatched.at(-1)!.revenueBasis} / net income: {mismatched.at(-1)!.netIncomeBasis}). The gap between the two bars in this period does not represent the profit margin.</span></p>
         )}
         {notes.map((r) => (
           <p key={r.periodEnd}>
@@ -212,16 +212,16 @@ export function FinancialSection({ company }: { company: Company }) {
           </p>
         ))}
         {netIncomeLabels.length > 1 && (
-          <p><span data-l="ja" lang="ja">純利益にあたる項目の名称が年度により異なります（{netIncomeLabels.join("・")}）。</span><span data-l="en" lang="en">The name of the item corresponding to net income differs by fiscal year ({netIncomeLabels.join("・")}).</span></p>
+          <p><span data-l="ja">純利益にあたる項目の名称が年度により異なります（{netIncomeLabels.join("・")}）。</span><span data-l="en">The name of the item corresponding to net income differs by fiscal year ({netIncomeLabels.join("・")}).</span></p>
         )}
         <p><T m={{ ja: "グラフの数値は単位未満を四捨五入しています。正確な数値は下の表をご覧ください。", en: "Chart values are rounded to the nearest unit. See the table below for exact figures." }} /></p>
       </div>
 
       <details className="group mt-6">
         <summary className="inline-flex min-h-11 cursor-pointer list-none items-center gap-1.5 text-sm text-muted-foreground select-none hover:text-foreground [&::-webkit-details-marker]:hidden">
-          <span data-l="ja" lang="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
+          <span data-l="ja"><span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span>
           数値を表で見る
-        </span><span data-l="en" lang="en">View <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span> figures in a table</span></summary>
+        </span><span data-l="en">View <span aria-hidden className="inline-block transition-transform group-open:rotate-90">›</span> figures in a table</span></summary>
         <p className="mt-1 text-xs text-muted-foreground">
           {/* A data: link, so the file is made on the server with the page and the download needs no script or request. */}
           <a
@@ -236,7 +236,7 @@ export function FinancialSection({ company }: { company: Company }) {
         <div className="mt-3 overflow-x-auto">
           <table className="figures w-full min-w-[46rem] border-collapse text-sm">
             <caption className="pb-2 text-left text-xs text-muted-foreground">
-              <span data-l="ja" lang="ja">単位：百万円{hasEmployees ? <T m={{ ja: "（従業員数は人）", en: "(employees in people)" }} /> : ""}</span><span data-l="en" lang="en">Unit: million yen{hasEmployees ? <T m={{ ja: "（従業員数は人）", en: "(employees in people)" }} /> : ""}</span>
+              <span data-l="ja">単位：百万円{hasEmployees ? <T m={{ ja: "（従業員数は人）", en: "(employees in people)" }} /> : ""}</span><span data-l="en">Unit: million yen{hasEmployees ? <T m={{ ja: "（従業員数は人）", en: "(employees in people)" }} /> : ""}</span>
             </caption>
             <thead>
               <tr className="border-b border-foreground text-left text-xs text-muted-foreground">
@@ -303,7 +303,7 @@ export function FinancialSection({ company }: { company: Company }) {
             {hasProfit && (
               <div className="flex gap-2">
                 <dt className="shrink-0"><T m={{ ja: "「利益」は", en: "\"Profit\" is" }} /></dt>
-                <dd><span data-l="ja" lang="ja">有価証券報告書が売上と純利益の間に掲げている行です（{profitLabels.join("・")}）。</span><span data-l="en" lang="en">the line the annual securities report presents between revenue and net income ({profitLabels.join("・")}).</span></dd>
+                <dd><span data-l="ja">有価証券報告書が売上と純利益の間に掲げている行です（{profitLabels.join("・")}）。</span><span data-l="en">the line the annual securities report presents between revenue and net income ({profitLabels.join("・")}).</span></dd>
               </div>
             )}
             {hasTotalAssets && totalAssetsLabels.length > 0 && (
