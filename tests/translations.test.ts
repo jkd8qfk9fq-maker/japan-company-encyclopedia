@@ -18,6 +18,22 @@ describe("checkTranslation", () => {
     expect(checkTranslation("2026年3月期の売上収益は450,760百万円でした。", "Revenue for the fiscal year ended March 2026 was ¥450.76 billion.")).toEqual([]);
   });
 
+  it("reads a coefficient written with 千・百・十 places as one figure (JCE-136)", () => {
+    expect(japaneseFigures("売上高は5億3千万円です")).toEqual([530_000_000]);
+    expect(japaneseFigures("売上高は9,982億3千4百万円です")).toEqual([998_234_000_000]);
+    expect(japaneseFigures("売上高は1億2千3百万円です")).toEqual([123_000_000]);
+    expect(japaneseFigures("生産量は2,643十億立方フィートです")).toEqual([2_643_000_000_000]);
+    expect(japaneseFigures("営業収益は0百万円でした")).toEqual([0]);
+    // No digit in the run: a unit note or a magnitude phrase is not a printed figure.
+    expect(japaneseFigures("資本金は百万円です")).toEqual([]);
+    expect(japaneseFigures("数人から数十万人まで使えます")).toEqual([]);
+    expect(checkTranslation("売上高は5億3千万円です。", "Revenue was ¥530 million.")).toEqual([]);
+    expect(checkTranslation("売上高は9,982億3千4百万円です。", "Revenue was ¥998,234 million.")).toEqual([]);
+    // A place or section unit inside an ordinary word is not a figure.
+    expect(japaneseFigures("十分な体制を整え、万一に備えます")).toEqual([]);
+    expect(japaneseFigures("2026年3月期")).toEqual([2026, 3]);
+  });
+
   it("rejects a changed, dropped or added figure", () => {
     expect(checkTranslation("売上高は100億円です。", "Revenue is ¥1 billion.")).not.toEqual([]);
     expect(checkTranslation("2025年に設立されました。", "It was founded.")).not.toEqual([]);
@@ -39,10 +55,12 @@ describe("checkTranslation", () => {
     expect(checkTranslation("メガネを販売します。", "It sells メガネ.")).not.toEqual([]);
   });
 
-  it("reads 千・百・十 groups the way a reader does, and flags texts the checker folds differently (JCE-132)", () => {
+  it("reads 千・百・十 groups the way a reader does, and the checker now reads them the same way (JCE-132, JCE-136)", () => {
     expect(japaneseAmounts("9,982億３千４百万円")).toEqual([998_234_000_000]);
     expect(japaneseAmounts("1億2千万人")).toEqual([120_000_000]);
-    expect(figuresAmbiguous("9,982億３千４百万円")).toBe(true);
+    // Until JCE-136 the checker's folding differed on such texts and figuresAmbiguous flagged them (JCE-132);
+    // with the folding aligned, the two readings agree and nothing is flagged.
+    expect(figuresAmbiguous("9,982億３千４百万円")).toBe(false);
     expect(figuresAmbiguous("2,517億71百万円、5千人、2026年3月期")).toBe(false);
   });
 
