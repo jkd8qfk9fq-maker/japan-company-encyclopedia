@@ -223,7 +223,7 @@ export default async function HomePage() {
                           <span className="truncate font-semibold"><L s={c.name} /></span>
                           <span className="figures shrink-0 rounded bg-muted px-1.5 text-[0.625rem] text-muted-foreground">
                             {c.code}
-                            {primary && <T m={{ ja: `・$<T m={{ ja: INDUSTRY_LABELS[primary.industryId].name, en: INDUSTRY_LABELS[primary.industryId].nameEn }} />`, en: ` · ${INDUSTRY_LABELS[primary.industryId].nameEn}` }} />}
+                            {primary && <T m={{ ja: `・${INDUSTRY_LABELS[primary.industryId].name}`, en: ` · ${INDUSTRY_LABELS[primary.industryId].nameEn}` }} />}
                           </span>
                         </span>
                         <span className="mt-1 line-clamp-2 text-xs leading-5 text-muted-foreground">{c.description ? toPlainText(c.description) : ""}</span>
@@ -452,7 +452,7 @@ export default async function HomePage() {
                         </span>
                         <span className="figures mt-0.5 block text-xs text-muted-foreground">
                           {company.code}
-                          {primary && <T m={{ ja: ` ｜ $<T m={{ ja: INDUSTRY_LABELS[primary.industryId].name, en: INDUSTRY_LABELS[primary.industryId].nameEn }} />`, en: ` | ${INDUSTRY_LABELS[primary.industryId].nameEn}` }} />}
+                          {primary && <T m={{ ja: ` ｜ ${INDUSTRY_LABELS[primary.industryId].name}`, en: ` | ${INDUSTRY_LABELS[primary.industryId].nameEn}` }} />}
                         </span>
                       </span>
                       <time dateTime={company.updatedAt} className="figures shrink-0 pt-0.5 text-xs text-muted-foreground">
