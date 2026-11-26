@@ -6,7 +6,7 @@
  *
  * Interface text is translated by hand, here and in each component. Entry text (a company's business, an industry's
  * explanation, a glossary entry) is shown in an AI reference translation when one passed the mechanical checks
- * (JCE-124, src/lib/translation-check.ts) — the same figures, links and Latin-script names — and in Japanese
+ * (JCE-128, src/lib/translation-check.ts) — the same figures, links and Latin-script names — and in Japanese
  * otherwise; the reader is told which prevails (LANGUAGE_NOTE).
  *
  * Adding a language: add it to LOCALES and LOCALE_META, then give every Message its text — `Message` requires each
@@ -37,7 +37,7 @@ export function localeCss(): string {
   const others = LOCALES.filter((l) => l !== DEFAULT_LOCALE);
   return [
     // The shown language's span is `display: contents`: it adds no box, so a sentence wrapped whole (text and the
-    // links inside it, JCE-124) lays out in a flex row or a grid exactly as the bare text and links did.
+    // links inside it, JCE-128) lays out in a flex row or a grid exactly as the bare text and links did.
     `[data-l="${DEFAULT_LOCALE}"]{display:contents}[data-l]:not([data-l="${DEFAULT_LOCALE}"]){display:none}`,
     ...others.map((l) => `html[data-lang="${l}"] [data-l="${DEFAULT_LOCALE}"]{display:none}html[data-lang="${l}"] [data-l="${l}"]{display:contents}`),
     // A block that exists only for another language (LANGUAGE_NOTE) stays hidden for Japanese readers.

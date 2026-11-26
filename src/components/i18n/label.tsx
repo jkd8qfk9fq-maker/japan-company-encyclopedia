@@ -4,7 +4,7 @@ import { UI_DICTIONARY_EN } from "@/lib/ui-dictionary-en";
 
 /**
  * A label that reaches the page as a plain string — a metric's name, a filing's line label, a heading defined in
- * src/lib — with its English from the dictionary, or its exact English figure form (JCE-124). Unknown strings are
+ * src/lib — with its English from the dictionary, or its exact English figure form (JCE-128). Unknown strings are
  * shown as written. Server Components only: the dictionary stays out of the browser bundles.
  */
 export function L({ s }: { s: string }) {

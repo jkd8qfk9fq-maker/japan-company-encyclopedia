@@ -10,7 +10,7 @@ export function T({ m }: { m: Message }) {
     <>
       {LOCALES.map((l) =>
         m[l] ? (
-          // No `lang` here: only the reader's language is ever shown, and <html lang> already says which (JCE-124 —
+          // No `lang` here: only the reader's language is ever shown, and <html lang> already says which (JCE-128 —
           // the attribute on every span of every page cost the static export about 5% in bytes).
           <span key={l} data-l={l}>
             {m[l]}

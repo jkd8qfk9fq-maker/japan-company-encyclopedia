@@ -24,7 +24,7 @@ variables, and never reference them in the application. Decision recorded in
    prose as much as numbers: a business description, a history event and a "why it matters" line
    are all claims. A fact that could not be verified against a source is left out, or set to
    `null`, and the entry's `status` becomes `needs-attention` with a note saying what is missing.
-   One exception (operator decision 2026-11-26, JCE-124): an English **reference translation** of entry text, labelled as
+   One exception (operator decision 2026-11-26, JCE-128): an English **reference translation** of entry text, labelled as
    such, stored apart in `src/data/translations/` and shown only after `checkTranslation` confirms it keeps every figure,
    link and Latin-script name of the Japanese and adds none. The Japanese prevails; never hand-write or edit a translation.
 2. **Every factual section is sourced.** `Business`, `BusinessModel`, `FinancialRecord`,
@@ -89,7 +89,7 @@ npm run db:migrate            # applies db/migrations to DATABASE_URL
 npm run content:check         # integrity tests + typecheck + lint, before committing content
 npm run content:diff          # read-only: changed data files, new revisions, diff
 npm run content:autopilot -- status          # registration queue → review sheets (docs/auto-registration.md); `approve` is the only step that registers
-npm run content:translate -- --kind company --fields description,businesses --status published   # English reference translations (JCE-124); resumes where it stopped
+npm run content:translate -- --kind company --fields description,businesses --status published   # English reference translations (JCE-128); resumes where it stopped
 npm run content:refresh-financials -- --all  # dry run: registered companies with a newer 有報 (Actions detects this daily — the one EDINET detector)
 ```
 

@@ -459,7 +459,7 @@ export function parseContent<T>(schema: z.ZodType<T>, value: unknown, label: str
 // the reverse), one of these lines stops compiling.
 
 /**
- * A file of reference translations for one entry (JCE-124): src/data/translations/<locale>/{companies,industries,terms}/<id>.json. Each
+ * A file of reference translations for one entry (JCE-128): src/data/translations/<locale>/{companies,industries,terms}/<id>.json. Each
  * key is hashText() of the exact Japanese it translates (src/lib/translation-check.ts), so editing the Japanese
  * orphans the old translation instead of leaving it beside text it no longer matches.
  */

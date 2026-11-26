@@ -8,8 +8,14 @@
  *
  *   navigations          network-first → cached copy of that page → /offline
  *   /_next/static/*      cache-first (content-hashed, immutable)
- *   /icons/*, manifest   stale-while-revalidate (not content-hashed, so they must refresh)
+ *   /icons/*, manifests  stale-while-revalidate (not content-hashed, so they must refresh)
  *   everything else      untouched (straight to network)
+ *
+ * One worker serves both apps on this origin: the encyclopedia (shell below) and 分析訓練 (JCE-125), whose
+ * shell — /learn, its own manifest and icon — is pre-cached too, so the installed training app opens at once
+ * and still shows its screen offline. Registration stays site-wide on purpose: this worker also carries the
+ * push notifications (JCE-059), and narrowing registration to /learn would silently take them, and offline
+ * reading, away from readers who never open the course.
  *
  * The page that REGISTERED the worker was loaded before the worker existed, so
  * the fetch handler never saw it. On activate, every open same-origin window is
@@ -18,13 +24,22 @@
  *
  * Bump VERSION when this strategy changes; old caches are deleted on activate.
  */
-const VERSION = "v2";
+const VERSION = "v3";
 const SHELL_CACHE = `shell-${VERSION}`;
 const PAGE_CACHE = `pages-${VERSION}`;
 const STATIC_CACHE = `static-${VERSION}`;
 const PAGE_CACHE_LIMIT = 60;
 
-const SHELL_URLS = ["/", "/offline", "/manifest.webmanifest", "/icons/icon-192.png"];
+const SHELL_URLS = [
+  "/",
+  "/offline",
+  "/manifest.webmanifest",
+  "/icons/icon-192.png",
+  // The training app's shell (JCE-125): its start page, manifest and home-screen icon.
+  "/learn/",
+  "/learn/manifest.webmanifest",
+  "/icons/training-192.png",
+];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -133,7 +148,11 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  if (url.pathname.startsWith("/icons/") || url.pathname === "/manifest.webmanifest") {
+  if (
+    url.pathname.startsWith("/icons/") ||
+    url.pathname === "/manifest.webmanifest" ||
+    url.pathname === "/learn/manifest.webmanifest"
+  ) {
     event.respondWith(handleRevalidated(request));
   }
 });

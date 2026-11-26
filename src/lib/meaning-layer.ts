@@ -44,11 +44,13 @@ export type MeaningSentence = {
 };
 
 /**
- * At most this many sentences per question; the block holds at most five in all. 3 / 1 / 1 answers each of the three
+ * At most this many sentences per question; the block holds at most seven in all. 3 / 2 / 2 answers each of the three
  * questions once before any is answered twice (operator: the limits may be changed as needed, 2026-11-24).
+ * JCE-127 raised q2 / q3 from 1 to 2 and the total from 5 to 7 with the templates added there: Q2 was the
+ * thinnest answer (1,472 of 3,133 companies) and Q3's two allocations (capex, R&D) rarely stood together.
  */
-const PER_QUESTION: Record<MeaningQuestion, number> = { q1: 3, q2: 1, q3: 1 };
-export const MAX_SENTENCES = 5;
+const PER_QUESTION: Record<MeaningQuestion, number> = { q1: 3, q2: 2, q3: 2 };
+export const MAX_SENTENCES = 7;
 
 type Item = string | MeaningLabel | AnalysisRow;
 type Lookup = (key: string) => AnalysisRow | undefined;
@@ -177,6 +179,18 @@ const TEMPLATES: Template[] = [
     },
   },
   {
+    id: "q1-working-capital",
+    question: "q1",
+    groupId: "c2",
+    build: (row) => {
+      // JCE-127: the year's working-capital movement (売上債権 + 棚卸資産 − 仕入債務) — money that went into
+      // receivables and inventory, or came back from them. C2's own computed row, stated with its sign.
+      const change = row("c2-working-capital-change");
+      if (!change) return null;
+      return [{ label: change.title }, "は ", change, "。"];
+    },
+  },
+  {
     id: "q2-margin",
     question: "q2",
     groupId: "a4",
@@ -193,18 +207,65 @@ const TEMPLATES: Template[] = [
     },
   },
   {
+    id: "q2-largest-share",
+    question: "q2",
+    groupId: "a4",
+    build: (_row, group) => {
+      // JCE-127: A4's share rows state each named business's share of the segment revenue table. The largest
+      // is what the company mostly sells — the size fact beside q2-margin's rate fact, from the same rows.
+      const shares = group.rows.filter((r) => r.key.startsWith("a4-share-"));
+      const top = shares.reduce<AnalysisRow | undefined>((best, r) => (best === undefined || r.value > best.value ? r : best), undefined);
+      const name = top ? stripSuffix(top.title, "の売上構成比") : null;
+      if (!top || !name || top.value <= 0) return null;
+      return ["売上構成比が最も大きいのは", { label: name }, "で ", top, "。"];
+    },
+  },
+  {
     id: "q2-segment",
     question: "q2",
     groupId: "a3",
     build: (row, group) => {
       const total = row("a3-revenue-change");
       if (!total || total.value === 0) return null;
-      // A3's rows are sorted by contribution, largest first: the largest part in the direction of the total change.
-      const parts = group.rows.filter((r) => r.key !== "a3-revenue-change" && r.key !== "a3-adjustment");
+      // A3's contribution rows are sorted by contribution, largest first. Each is followed by its yen
+      // change row (JCE-124), so the parts are the rows in points, not every row but the total.
+      const parts = group.rows.filter((r) => r.unit === "points");
       const top = total.value > 0 ? parts[0] : parts.at(-1);
       const name = top ? stripSuffix(top.title, "の寄与") : null;
       if (!top || !name || Math.sign(top.value) !== Math.sign(total.value)) return null;
-      return ["売上高の増減 ", total, ` のうち、${total.value > 0 ? "増加" : "減少"}への寄与が最も大きいのは`, { label: name }, "で ", top, "。"];
+      const head = ["売上高の増減 ", total, ` のうち、${total.value > 0 ? "増加" : "減少"}への寄与が最も大きいのは`, { label: name }, "で ", top];
+      // The yen form states the amount only when 「のうち」 is arithmetically true: the top contributor's
+      // yen change moves with the total and is no larger than it (JCE-124: 895 of 1,428 A3 companies pass;
+      // the rest keep the points-only form, and no contribution rate is stated — JCE-097).
+      const change = row(`a3-${top.key.slice(3)}-change`);
+      if (change && Math.sign(change.value) === Math.sign(total.value) && Math.abs(change.value) <= Math.abs(total.value)) {
+        return [...head, "（増減 ", change, "）。"];
+      }
+      return [...head, "。"];
+    },
+  },
+  {
+    id: "q2-segment-second",
+    question: "q2",
+    groupId: "a3",
+    build: (row, group) => {
+      // JCE-127: the second contributor, for the companies whose Q2 answer is A3 (no segment profit, so no
+      // A4). The total is not restated — q2-segment directly above states it — and the same guards apply:
+      // the second part must move with the total, and its yen amount is stated only when it is no larger
+      // than the total, so the amount never reads as more than the whole it is part of.
+      const total = row("a3-revenue-change");
+      if (!total || total.value === 0) return null;
+      const parts = group.rows.filter((r) => r.unit === "points");
+      if (parts.length < 2) return null;
+      const second = total.value > 0 ? parts[1] : parts.at(-2);
+      const name = second ? stripSuffix(second.title, "の寄与") : null;
+      if (!second || !name || second.value === 0 || Math.sign(second.value) !== Math.sign(total.value)) return null;
+      const head = [`次いで${total.value > 0 ? "増加" : "減少"}への寄与が大きいのは`, { label: name }, "で ", second];
+      const change = row(`a3-${second.key.slice(3)}-change`);
+      if (change && Math.sign(change.value) === Math.sign(total.value) && Math.abs(change.value) <= Math.abs(total.value)) {
+        return [...head, "（増減 ", change, "）。"];
+      }
+      return [...head, "。"];
     },
   },
   {
@@ -231,17 +292,44 @@ const TEMPLATES: Template[] = [
       return [{ label: amount.title }, "は ", amount, " で、売上高の ", ratio, "。"];
     },
   },
+  {
+    id: "q3-capex-second",
+    question: "q3",
+    groupId: "a6",
+    build: (_row, group) => {
+      // JCE-127: the second business in A6's amount order, in q3-capex's own shape, so the pair reads as one
+      // allocation list. Built only when the first row parses the same way — 次いで needs its antecedent.
+      const parse = (r: AnalysisRow | undefined) => {
+        const measure = r ? /^その事業の(.+?) ÷/.exec(r.formula)?.[1] : undefined;
+        const name = r ? stripSuffix(r.title, "が占める割合") : null;
+        return measure && name ? { measure, name } : null;
+      };
+      const first = parse(group.rows[0]);
+      const second = group.rows[1];
+      const parsed = parse(second);
+      if (!first || !second || !parsed) return null;
+      return ["次いで、", { label: parsed.measure }, "の ", second, " は", { label: parsed.name }, "。"];
+    },
+  },
 ];
 
 /**
  * Rows that state a change carry an explicit plus sign in a sentence: in a table the column says
  * 「増減」, but 「前期比 465億円」 alone does not say which way. The figure is otherwise the table's string.
  */
-export const SIGNED_ROWS = new Set(["a1-net-income-change", "a1-profit-change", "a1-revenue-effect", "a1-margin-effect", "a1-bridge", "b1-net-assets-change", "b1-other-change", "a3-revenue-change"]);
+export const SIGNED_ROWS = new Set(["a1-net-income-change", "a1-profit-change", "a1-revenue-effect", "a1-margin-effect", "a1-bridge", "b1-net-assets-change", "b1-other-change", "a3-revenue-change", "c2-working-capital-change"]);
+
+/**
+ * A segment's yen change (JCE-124) states a change too, but its key carries the business id:
+ * a3-{businessId}-change. The same plus-sign rule applies to it as to the fixed change rows.
+ */
+export function isSignedRowKey(key: string): boolean {
+  return SIGNED_ROWS.has(key) || /^a3-.+-change$/.test(key);
+}
 
 export function figureText(row: AnalysisRow): string {
   const text = formatAnalysisValue(row, row.value);
-  return SIGNED_ROWS.has(row.key) && row.value > 0 && !text.startsWith("+") ? `+${text}` : text;
+  return isSignedRowKey(row.key) && row.value > 0 && !text.startsWith("+") ? `+${text}` : text;
 }
 
 const isRow = (i: Item): i is AnalysisRow => typeof i !== "string" && "key" in i;
@@ -273,7 +361,7 @@ export function meaningSummary(groups: AnalysisGroup[]): MeaningSentence[] {
     if (!items || !items.some(isRow)) continue;
     built[t.question].push(toSentence(t, group, items));
   }
-  // Within the five, the later questions keep their sentences and Q1 gives up its last ones: a reader with Q1 answered
+  // Within the seven, the later questions keep their sentences and Q1 gives up its last ones: a reader with Q1 answered
   // in three sentences is better served than one who never sees what earns the money.
   const later = [...built.q2, ...built.q3];
   return [...built.q1.slice(0, Math.max(0, MAX_SENTENCES - later.length)), ...later].slice(0, MAX_SENTENCES);

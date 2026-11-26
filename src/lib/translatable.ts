@@ -1,5 +1,5 @@
 /**
- * Which texts of an entry a reference translation may stand for (JCE-124). Pure and free of "@/" imports: the
+ * Which texts of an entry a reference translation may stand for (JCE-128). Pure and free of "@/" imports: the
  * translation script and the repository both use it, so what is translated and what may be shown are the same set.
  */
 import { firstSentence } from "./rich-text.ts";

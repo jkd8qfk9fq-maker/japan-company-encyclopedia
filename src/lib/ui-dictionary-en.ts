@@ -1,5 +1,5 @@
 /**
- * English for interface words and printed labels that reach the page as plain strings (JCE-124): metric names,
+ * English for interface words and printed labels that reach the page as plain strings (JCE-128): metric names,
  * the filings' own line labels (売上高, 親会社株主に帰属する当期純利益…), chart and table headings defined in src/lib.
  * Generated with the translation tooling, reviewed in the diff; a string not listed is shown as written.
  */

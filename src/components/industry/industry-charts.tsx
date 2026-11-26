@@ -59,7 +59,7 @@ export function Donut({
   // were solid, so with dashes the last circle drawn caught every tap and no part could be opened.
   const starts = parts.map((_, i) => parts.slice(0, i).reduce((acc, q) => acc + q.share, 0));
   const arcs = parts.map((p, i) => ({ ...p, ink: inkOf(i, parts.length, p.id), path: sector(starts[i], starts[i] + p.share, R, W), mid: starts[i] + p.share / 2, href: p.id === "other" || !hrefOf ? null : hrefOf(p.id) }));
-  // A translated title is markup (JCE-124); the screen-reader label then starts from the parts.
+  // A translated title is markup (JCE-128); the screen-reader label then starts from the parts.
   const label = `${typeof title === "string" ? `${title}。` : ""}${parts.map((p) => `${p.name} ${percent(p.share)}`).join("、")}`;
   return (
     <figure className="m-0 grid items-center gap-6 sm:grid-cols-[11rem_1fr]">

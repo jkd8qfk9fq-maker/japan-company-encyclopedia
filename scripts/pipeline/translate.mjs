@@ -1,5 +1,5 @@
 /**
- * Reference translations of entry text into English (JCE-124).
+ * Reference translations of entry text into English (JCE-128).
  *
  *   node scripts/pipeline/translate.mjs --kind company --fields description,businesses [--status published] [--limit 100] [--concurrency 4] [--only <id,id>] [--dry-run]
  *   node scripts/pipeline/translate.mjs --kind industry

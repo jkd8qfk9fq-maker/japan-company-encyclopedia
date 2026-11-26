@@ -8,7 +8,7 @@ import { parseContent, translationFileSchema } from "@/lib/content/schemas";
 import { translatableStrings } from "@/lib/translatable";
 import { checkTranslation, englishFigures, hashText, japaneseFigures } from "@/lib/translation-check";
 
-// JCE-124: reference translations are shown only when they pass these checks; the files must hold nothing else.
+// JCE-128: reference translations are shown only when they pass these checks; the files must hold nothing else.
 
 describe("checkTranslation", () => {
   it("folds 兆・億・百万 into one figure and matches converted English amounts", () => {

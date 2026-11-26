@@ -1,5 +1,5 @@
 /**
- * The English form of a figure the site prints in Japanese notation (JCE-124): 「9,477億円」 → "¥947.7 billion",
+ * The English form of a figure the site prints in Japanese notation (JCE-128): 「9,477億円」 → "¥947.7 billion",
  * 「2026年3月期」 → "FY ended Mar 2026", 「37,752人」 → "37,752 people". Pure arithmetic on the printed digits — no
  * rounding beyond what the Japanese already shows — so the English says exactly what the Japanese says. A string it
  * does not recognise in full is returned unchanged rather than guessed at.

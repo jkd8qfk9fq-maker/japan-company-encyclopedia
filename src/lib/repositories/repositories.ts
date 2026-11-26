@@ -81,7 +81,7 @@ export interface WebsiteRepository {
   get(companyId: string): Promise<Website | null>;
 }
 
-/** Reference translations (JCE-124): only ones that match their entry's current text and pass the checks. */
+/** Reference translations (JCE-128): only ones that match their entry's current text and pass the checks. */
 export interface TranslationRepository {
   /** The translation of exactly this Japanese text, or null — the caller then shows the Japanese. */
   find(locale: "en", text: string): Promise<string | null>;

@@ -16,7 +16,7 @@ export type CompanySummary = {
   shortNameEn?: string;
   /** null on a figures-only entry, where nobody has written it yet. */
   description: string | null;
-  /** Its English reference translation, when one passed the checks (JCE-124). */
+  /** Its English reference translation, when one passed the checks (JCE-128). */
   descriptionEn?: string;
   businesses: string[];
   industries: { id: IndustryId; name: string; primary: boolean }[];

@@ -21,7 +21,7 @@ const HREF = {
  * page (or an industry without one) is also left as plain text: no reader is sent to a 404.
  */
 export async function RichText({ text }: { text: string }) {
-  // JCE-124: an English reference translation, when one passed the checks, is rendered beside the Japanese and the
+  // JCE-128: an English reference translation, when one passed the checks, is rendered beside the Japanese and the
   // reader's language picks one (the same CSS as the interface). Links inside it point at the same pages.
   const en = await translationRepository.find("en", text);
   if (!en) return <Segments text={text} />;

@@ -164,7 +164,7 @@ const TRANSLATION_ROOT = join(process.cwd(), "src", "data", "translations");
 
 /**
  * Built once, on first use. An entry is kept only if its key is the hash of a text its entry has now and it passes
- * checkTranslation against that text: a translation is never shown beside Japanese it was not made from (JCE-124).
+ * checkTranslation against that text: a translation is never shown beside Japanese it was not made from (JCE-128).
  * Read from the file system rather than imported, so thousands of files do not pass through the bundler.
  */
 let translationIndex: { text: Map<string, string>; coverage: Map<string, { translated: number; total: number }> } | null = null;

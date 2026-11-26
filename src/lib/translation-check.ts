@@ -1,5 +1,5 @@
 /**
- * The checks a reference translation must pass before it is stored or shown (JCE-124). Pure, and free of "@/"
+ * The checks a reference translation must pass before it is stored or shown (JCE-128). Pure, and free of "@/"
  * imports, because the translation script (scripts/pipeline/translate.mjs) runs it under plain Node.
  *
  * A translation is shown in place of the filing's Japanese only when it says no more and no less that can be checked

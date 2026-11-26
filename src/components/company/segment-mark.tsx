@@ -1,7 +1,7 @@
 import type { Business } from "@/types/company";
 
 // Split from business-structure.tsx so a Client Component (value-chain-flow.tsx) can draw the marker without
-// importing the diagram, which reads translations on the server (JCE-124).
+// importing the diagram, which reads translations on the server (JCE-128).
 
 const SEGMENT_TONES = 6;
 
